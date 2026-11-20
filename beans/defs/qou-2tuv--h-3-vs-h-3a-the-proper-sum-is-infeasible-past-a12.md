@@ -1,13 +1,13 @@
 ---
 # qou-2tuv
 title: 'H_3 vs H_{3A}: the proper sum is infeasible past A~12, so substitution cannot fix the heavy-atom rows'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-11-17T23:08:21Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-v2om
 ---
 
@@ -1698,3 +1698,9 @@ Measured on #8521 (`brane_tower_isospin_diagnosis.py`): with V_hat_i = z*a_i+b_i
 ## 2026-11-20 — W2: what the six-term sweep's divergence actually was (PR #8578, merged as fd5853d8cc)
 - **li2q mode, the default.** The −2.43e15 MeV term 2 was a truncated divergent power series, not a pole. The sweep had its own Li_2^q, summed to a fixed 300 terms with no check on the series' radius of convergence (|z| < q0), and the D volumes 1.2824 and 1.1337 lie outside that radius. On the negative axis the function is analytic: −Li_2^q(−V) = (q−1/q)·Σ_k log(1 + V q^{−(2k+1)}). The sweep now uses `_li_2_q_util.li_2_q` (qou-cw27). Results: p 23.46, n 21.26, D 42.39, T 64.66, 3He 69.32, 4He 103.04 MeV. That is a ~97% miss for every isotope, so the six-term formula itself is still the open problem.
 - **brane-legacy mode, Φ_q.** This one is a GENUINE pole at V = q0, and both D volumes are past it. Owner instruction 2026-11-20 was to report the divergence: term 2 and term 3 now return inf instead of skipping terms. Doing that exposed a second hidden defect: term 2 was 0 for EVERY isotope in every convention, because a dict was passed to Φ_q and the resulting TypeError was swallowed by `except: pass`.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8215, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-08-22: "beans(qou-2tuv): 4He closes the pattern — max|V_hat| is A-invariant, and the failed guess is dead code"). The work may be partly or fully done. Read the bean before you close it.

@@ -1,13 +1,13 @@
 ---
 # qou-cb98
 title: Cite [blitvic2012-clt] at prop:hecke-satisfies-blitvic-hypothesis
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:12Z
-updated_at: 2026-10-04T15:17:25Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-mub3
 ---
 
@@ -21,3 +21,7 @@ Source: `blitvic2012-clt` (bib key; PDF not committed to this repo)
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8486, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

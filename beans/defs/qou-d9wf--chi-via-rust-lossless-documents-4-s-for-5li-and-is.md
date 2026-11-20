@@ -1,13 +1,13 @@
 ---
 # qou-d9wf
 title: chi_via_rust_lossless documents ~4 s for 5Li and is still running at 10 min — the cost model is off by >150x, with no progress output
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T13:29:22Z
-updated_at: 2026-10-04T15:16:56Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-trd0
 ---
 
@@ -144,3 +144,7 @@ Four hours, both atoms in one invocation. ⁵Li's result is written before ⁶Li
 begins, so an interruption during ⁶Li still banks ⁵Li. Extrapolating the >10 s/λ
 rate, ⁶Li's 385 λ is on the order of an hour by itself; the 4 h budget is sized so
 the pair is not the binding constraint again.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8396, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

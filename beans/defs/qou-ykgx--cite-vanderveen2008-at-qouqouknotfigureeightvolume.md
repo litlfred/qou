@@ -1,14 +1,14 @@
 ---
 # qou-ykgx
 title: Cite [vanderveen2008] at qou:QOU.Knot.FigureEightVolume.borromeanKashaev
-status: in-progress
+status: todo
 pr: 8438
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:27Z
-updated_at: 2026-10-04T15:17:47Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-1qhv
 ---
 
@@ -22,3 +22,7 @@ Source: `library/arxiv-math-0611181v2/0611181v2.pdf` (`vanderveen2008`)
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8438, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

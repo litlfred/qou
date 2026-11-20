@@ -1,14 +1,14 @@
 ---
 # qou-u8w5
 title: 'GAP: deuteron C_knot=5.853 needs eigenphase-weighted handle-commutator charge on the NON-abelian H_6 interface braid (trefoil H_2 scalar channel proved null)'
-status: in-progress
+status: todo
 pr: 8344
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-02T20:08:58Z
-updated_at: 2026-10-04T15:19:56Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-v2om
 ---
 
@@ -54,3 +54,7 @@ normalization resolution. Do NOT re-attempt a scalar trefoil invariant — prove
 ## Progress Update (PR #8344)
 - Formalized in Lean 4.24.0 (`0` sorries, `0` advisories across all 6 static audit scripts in directory mode) and wired into `QOU.lean`.
 - Verified at `mp.dps = 50` with 2-commit witness stamp (`291dd36ab34a42866efb444b586e05f0b621971e` -> `38f4a86a95df28f43dea57e331b0e3b812f7f526`) in PR #8344.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8344, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

@@ -1,14 +1,14 @@
 ---
 # qou-u8oy
 title: Vector 3 (multi-level jet tower) is NOT open — conj:binding-manybody-eq-jet-filtration already carries it
-status: in-progress
+status: todo
 pr: 8302
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T08:45:07Z
-updated_at: 2026-10-04T15:25:27Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-v2om
 ---
 
@@ -108,3 +108,7 @@ existed, so every witness it wrote carried a dead pointer. Fixed at the
 producer; payload byte-identical (also across mpmath 1.3.0 -> 1.4.1).
 
 SO: the remaining research target under this conjecture is (2) alone.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8302, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

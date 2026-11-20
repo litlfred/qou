@@ -1,11 +1,11 @@
 ---
 # qou-gd90
 title: 'qou-q425 torus links gcd(r,s)>1: exact periodic-state correction to MiddleWeightTraces, then prove'
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-10-12T18:13:10Z
-updated_at: 2026-11-18T08:33:33Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-59vq
 ---
 
@@ -57,3 +57,9 @@ Parent `qou-xhci` → `qou-59vq`. The old parent was missing or absent, so the b
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
 
 - Round 74 (`lane-e667`): Formalized `qou-gd90`, `qou-gzsp`, `qou-h56b`, `qou-hah4`, `qou-luq7` in `QOU.Foundations.PeriodicStateTriangularInversionWeightSpaceEquivarianceBlockScalingWeightedDecomposition` with 80-dps `mpmath` 2-commit witness stamp (`90a852e5501c98f68c32c2d227ae5dc2719d5bb6` -> `ae44845094878bbd65a4bf4b8065339b39d10e57`, `scriptHash=0a79a20314ed167467fce31136d40aeaf330204cb85b728199138a30d69455e2`) in PR `litlfred/qou#8399` (`status: in-progress`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8399, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-10-12: "qou-gd90/qou-q425: bean appends — full-twist scalar proved"). The work may be partly or fully done. Read the bean before you close it.

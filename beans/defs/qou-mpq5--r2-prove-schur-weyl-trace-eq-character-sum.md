@@ -1,13 +1,13 @@
 ---
 # qou-mpq5
 title: 'R2: prove (1)↔(2) Schur-Weyl — tr over (ℂ^N)^{⊗n} = Σ_{λ⊢n}(dim V_λ)χ_λ (partition fn = character sum)'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-02T18:33:15Z
-updated_at: 2026-11-17T12:24:25Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-59vq
 ---
 
@@ -75,3 +75,9 @@ Mathlib gap, deliberately NOT faked. R2 is therefore *conditionally* proved
 - Formalized in `folio/quantum-observable-universe/lean/QOU/Foundations/AddableCellRatioFakeDegreeTwoRowBallotWeightTensorPowerCharacterOrbitTrace.lean` (Lean 4.24.0, `0` `sorry`, `0` `axiom`, `0` warnings, `0` directory-mode static vacuity & borrowed-name advisories).
 - 80-dps `mpmath` numerical witness stamped in `computations/probes/addable-cell-ratio-fake-degree-two-row-ballot-weight-tensor-power-character-orbit-trace.witness.json` (`scriptHash = 0309390e769d`, `scriptCommitSha = c43b700db42337a2547c8ff1e2a1665156dd27ea`, `HEAD = d46ecc77d14e0e9528cfc49310e88f4e88eb306a`).
 - PR: https://github.com/litlfred/qou/pull/8340 (`ready: d46ecc77d14e0e9528cfc49310e88f4e88eb306a`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8340, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-08-19: "beans(qou-jr8y): closed -- the orphaned mpq5 fragment landed with #4600"). The work may be partly or fully done. Read the bean before you close it.

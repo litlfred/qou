@@ -1,13 +1,13 @@
 ---
 # qou-sa14
 title: 'raw-float64 backlog triaged by what draining would require: 72 pct is ordinary scalar work, not the solver wall the large entries suggest'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T13:19:30Z
-updated_at: 2026-11-18T07:38:33Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-9nnz
 ---
 
@@ -152,3 +152,7 @@ Ranks 1-6, 9, 10 and 14 of the on-disk top-14 are excluded (regeneration-blocked
 contended, orphan, owner-call, or mine-in-progress). The first genuinely
 screenable entries are **#7 `all-nuclides-sdp-admissibility` (336)** and **#8
 `deltalambda/he4-binding-k-stage2` (316)**.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8388, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

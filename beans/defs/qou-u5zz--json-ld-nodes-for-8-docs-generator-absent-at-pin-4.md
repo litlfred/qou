@@ -1,12 +1,12 @@
 ---
 # qou-u5zz
 title: JSON-LD nodes for 8 docs (generator absent at pin 428ca5c)
-status: in-progress
+status: todo
 type: task
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T15:10:23Z
-updated_at: 2026-11-16T19:28:00Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-n4r9
 ---
 
@@ -25,3 +25,7 @@ Extracted 2026-10-04 from the prose of session log `qou-m6sp` (work had no bean)
     6. `library/arxiv-2601.07906v2`: 116 `.jsonld` (`manifest.jsonld=1`, `sections=34/34`, `blocks=80`)
     7. `library/arxiv-2501.00914v2`: 102 `.jsonld` (`manifest.jsonld=1`, `sections=26/26`, `blocks=74`)
     8. `library/arxiv-2305.07425v1`: 36 `.jsonld` (`manifest.jsonld=1`, `sections=15/15`, `blocks=19`)
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8167, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

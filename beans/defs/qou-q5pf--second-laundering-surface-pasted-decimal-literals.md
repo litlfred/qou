@@ -1,13 +1,13 @@
 ---
 # qou-q5pf
 title: 'Second laundering surface: pasted decimal literals in high-dps files (153 candidate files, defect rate UNMEASURED)'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-03T20:22:55Z
-updated_at: 2026-11-18T07:38:33Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-9nnz
 ---
 
@@ -60,3 +60,7 @@ launch blind.
   instance landed **while** `qou-b7cf` was reaching zero and was outside its
   file list. A drain that reaches zero on a moving `main` has not closed the
   class; only re-running the detector shows the live count.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8388, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

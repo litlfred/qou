@@ -1,14 +1,14 @@
 ---
 # qou-xfog
 title: Remark interpreting 1908.07065v3.pdf at docs/audits/2026-07-12-alien-calculus-review-binding-gevr…
-status: in-progress
+status: todo
 pr: 8435
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:36:10Z
-updated_at: 2026-10-04T15:23:35Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-vva9
 ---
 
@@ -42,3 +42,7 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   Non-perturbative approaches to the quantum Seiberg–Witten curve
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [grassi-gu-marino2019qsw] as the citation key when you do it.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8435, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

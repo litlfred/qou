@@ -1,13 +1,13 @@
 ---
 # qou-k6ks
 title: S-polynomial reduction needs R to have no quasi-zeros (Lei-Pawlowski); check the QOU assumption is stated and used
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T16:22:40Z
-updated_at: 2026-10-04T15:24:15Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-q4oa
 ---
 
@@ -165,3 +165,7 @@ definitions the Hecke system is **not** a GS basis (`hecke_not_gs_basis_four`),
 so `heckeCost_well_defined`'s new `hgs` hypothesis is currently unsatisfiable
 at `n = 4` — the "no quasi-zeros" hypothesis is not what is blocking the Hecke
 route; the missing Bokut–Shiao completion is.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8467, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

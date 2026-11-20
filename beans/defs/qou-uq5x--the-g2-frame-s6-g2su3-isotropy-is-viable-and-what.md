@@ -1,14 +1,14 @@
 ---
 # qou-uq5x
 title: 'The G2 frame: S6 = G2/SU(3) isotropy is viable, and what it actually costs'
-status: in-progress
+status: todo
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
     - 8f-flavour
 created_at: 2026-09-04T02:31:24Z
-updated_at: 2026-11-16T18:32:12Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-8lxd
 ---
 
@@ -60,3 +60,7 @@ Was in-progress with no bean update since 2026-09-04 and no main commit naming i
   - Formalizes $J$-commuting endomorphisms (`ComplexEnd3`) and proves `ComplexEnd3.su3_annihilates_top_exterior_power`: every traceless $J$-commuting derivation $D \in \mathfrak{su}(3)_{e_1}$ ($\operatorname{tr}_{\mathbb{C}}(D) = 0$) acts with weight $(0,0)$ on $\Lambda^3_{\mathbb{C}} W \cong \mathbb{C}$ ($\Lambda^3_{\mathbb{C}} W \cong \mathbf{1}$) and satisfies $\operatorname{tr}_{\mathbb{R}}(D) = 0 \wedge \operatorname{tr}_{\mathbb{R}}(J D) = 0$, plus `exterior_algebra_dimension_split` ($1 + 3 + 3 + 1 = 8$).
 - **50-dps / exact matrix verification (`computations/probes/ribbon_twist_z6_hypercharge_hirzebruch_probe.py` + `ribbon-twist-z6-hypercharge-hirzebruch.witness.json`)**:
   - Explicitly constructs $J = L_{e_1}$ and all 8 real $6 \times 6$ Gell-Mann generators $D_a$ ($a = 1..8$) of $\mathfrak{su}(3)_{e_1} \subset \mathfrak{so}(6)$, verifying $J^2 = -I_6$, $[D_a, J] = 0$, $D_a^T + D_a = 0$, and $\operatorname{tr}_{\mathbb{R}}(D_a) = \operatorname{tr}_{\mathbb{R}}(J D_a) = 0$ (`allPassed: true`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8149, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

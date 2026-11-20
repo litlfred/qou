@@ -1,14 +1,14 @@
 ---
 # qou-20sx
 title: Weak-isospin (up/down-type) grading orthogonal to generation winding — the convergence target unlocking charmed-hadron masses + sin^2theta_W + hypercharge Y
-status: in-progress
+status: todo
 type: feature
 priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-ew
 created_at: 2026-08-02T19:10:31Z
-updated_at: 2026-10-10T18:10:00Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-8lxd
 ---
 
@@ -47,3 +47,7 @@ Upstream dependencies are outside this node: flavour SU(3) (`qou-j3w6`, owner ch
 
 ## Round 66 Update (PR #8239)
 - Formalized in `WeakIsospinGradingColourFibreRoutesLightQuarkExtractionTauLogConvexityAndPmnsCarrier.lean` and verified via 80-dps `mpmath` witness in PR #8239.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8211, #8239, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

@@ -1,13 +1,13 @@
 ---
 # qou-5h5x
 title: 'D4: convention-D completion — class B drained, class A (gram.py) documented blocked'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-14T16:21:57Z
-updated_at: 2026-10-10T07:47:05Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-cdx1
 ---
 
@@ -189,3 +189,7 @@ problem rather than a coverage one. Coverage without a controlled vocabulary
 buys nothing, since the only consumer that reads the field could not parse 10
 of 11 D-spellings. Staying `todo` on #1 and #2; `qou-ng7j` carries the
 vocabulary half.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8280, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

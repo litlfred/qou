@@ -1,13 +1,13 @@
 ---
 # qou-cds5
 title: 'S5 (SCIENCE): verify the r* D-frame band BEFORE re-scoring the six Delta_lambda ansaetze'
-status: in-progress
+status: todo
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-10-04T15:15:06Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-v2om
 ---
 
@@ -80,3 +80,7 @@ find the one ansatz that lands, and call it closure.
      - On the canonical `borromean` word (`qou-hu1f`): `c₃^cabled(D) = 0.191529 MeV`, giving `r*_D(borromean) = 2.458116` (per-isotope `[2.213893, 2.762901]`, strictly above `[2.04, 2.16]`).
   3. **Fate of `r_both` and the six `Δ_λ` ansaetze:** Under Convention D, `∑_λ y_λ^D = 0.062025` is `1.953×` larger than `∑_λ y_λ^C = 0.031752`, so `r_both^D = r_geom^D · ∑_λ y_λ^D = 2.871237` overshoots `r*_D(grouped) = 1.549361` by `+85.32%` (refuting the C-frame `1.504 vs 1.585` near-miss as a normalization artifact). None of the six pruned `Δ_λ` ansaetze is rescued.
 - **Status:** Kept at `in-progress` pending owner review and PR merge.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8181, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

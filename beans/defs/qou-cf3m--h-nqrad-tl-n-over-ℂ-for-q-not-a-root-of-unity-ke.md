@@ -1,11 +1,11 @@
 ---
 # qou-cf3m
 title: H_n(q)/rad ≅ TL_n over ℂ for q not a root of unity; kernel of the Hecke action on (ℂ²)^{⊗n} (also OS kernel r>n at n=2)
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-10-12T20:03:36Z
-updated_at: 2026-11-18T08:22:48Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-59vq
 ---
 
@@ -32,3 +32,7 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 H_n(q)/rad ≅ TL_n over ℂ at q not a root of unity is proved (#7768, merged 2026-10-13). **Still open:** positive characteristic, roots of unity, and the OS kernel for r>n at n=2. This bean now tracks only those.
 
 - Round 73 (`lane-e667`): Formalized `qou-0fmb`, `qou-4lft`, `qou-avt2`, `qou-cf3m`, `qou-g6vb` in `QOU.Foundations.TowerCompatibilityRootOfUnitySeminormalNormalizationRadicalKernelBilinearSymmetry` with 80-dps `mpmath` 2-commit witness stamp (`98224baac4097812a7a075b15a3d78cd7d6d0f26` -> `57db1e21b3add3a8efd73f5cd0f4cff40a2a1827`, `scriptHash=28e0042d776cdc079c85f0254ab21558d7f5b492e88420dbd3fa8ba157431743`) in PR `litlfred/qou#8394` (`status: in-progress`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8394, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

@@ -1,13 +1,13 @@
 ---
 # qou-7pb0
 title: 'A (BACKUP): fetch clean Braden-Northover arXiv 1206.6004 LaTeX source → exact sec4 j-normalization; kills the tau0 0.6% convention residual (only fixes the small band, not the binding constraint)'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-25T12:02:29Z
-updated_at: 2026-11-16T19:28:00Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-3l2l
 ---
 
@@ -19,3 +19,7 @@ parent: qou-3l2l
   - Dual Weierstrass models `E_{5τ₀} : y² = x³ - 675x - 79650` (`j = -25/2`) and `E_{τ₀} : y² = x³ - 435x - 4210` (`j = -121945/32`), plus complete `(5, 5, 5, 1)` eigenbasis and minimal polynomial `(M_RR - I)(M_RR - 5I) = 0` for `M_RR` (`sigma12-065.tex` eq. `(RRstau)`).
   - Resolves the `0.6%` `τ₀` residual (`tau0_prose_typo_six_permille_resolved`): line 607 of `sigma12-065.tex` prints the prose approximation `-0.5 + 0.185576 i` (a single-digit `5` vs `6` typo in the 4th decimal place) whereas inverting `j(τ₀) = -121945/32` gives `Im(τ₀) = 0.186676462462809923206162881363…` (`275/46669 ≈ 0.5892%` discrepancy).
 - **50-dps probe + witness:** `computations/probes/braden_northover_j_normalization_stokes_probe.py` & `braden-northover-j-normalization-stokes.witness.json` (`12/12` assertions passed).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8167, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

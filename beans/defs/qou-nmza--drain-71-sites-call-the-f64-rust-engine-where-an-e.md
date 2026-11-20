@@ -1,13 +1,13 @@
 ---
 # qou-nmza
 title: 'DRAIN: 71 sites call the f64 Rust engine where an exact MPFR sibling exists'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T13:16:05Z
-updated_at: 2026-10-10T07:55:52Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-9nnz
 ---
 
@@ -365,3 +365,7 @@ is the float64 axis (sibling of `qou-840k`, as the bean itself says). Keep
 open, re-home.
 
 Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8381, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

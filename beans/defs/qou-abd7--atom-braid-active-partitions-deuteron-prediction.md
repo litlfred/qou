@@ -1,11 +1,11 @@
 ---
 # qou-abd7
 title: atom_braid_active_partitions deuteron prediction fails at exact h
-status: in-progress
+status: todo
 type: bug
 priority: normal
 created_at: 2026-10-13T00:00:00Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-v2om
 ---
 
@@ -60,3 +60,7 @@ has not landed — check before acting.
 ## Parented 2026-11-15 (owner-approved bean triage)
 
 Parent `(none)` → `qou-v2om`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8313, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

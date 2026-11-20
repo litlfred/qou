@@ -1,14 +1,14 @@
 ---
 # qou-j6lf
 title: 'R1: prove β=ln q dictionary — Boltzmann weight e^{-βE_λ} ≡ Frobenius weight y_λ(q); read off E_λ'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - 8f-qcd
     - reorg-2026-10-04
 created_at: 2026-08-02T18:33:15Z
-updated_at: 2026-10-10T07:16:10Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-8lxd
 ---
 
@@ -48,3 +48,7 @@ Was in-progress with no bean update since 2026-08-02 and no main commit naming i
 - **Status:** `in-progress` (awaiting human review; no unilateral closure).
 - **PR:** `litlfred/qou#8173` (head `ad97deb87bc648e5c129faba2fa1d69d9619253c`, script commit `bdc558a8f10d26666ba057c81bf22753e6d0aca0`).
 - **Summary:** Formalized exact Boltzmann-Frobenius dictionary (beta = ln q, E_lambda = -(ln y_lambda(q))/(ln q)) and energy-ordering theorems in QOU/Eightfold/BoltzmannOSPositivityAndColourSaddle.lean + 50-dps witness probe in PR litlfred/qou#8173 (head ad97deb87bc648e5c129faba2fa1d69d9619253c).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8173, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

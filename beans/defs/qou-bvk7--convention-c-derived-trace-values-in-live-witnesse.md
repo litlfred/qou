@@ -1,13 +1,13 @@
 ---
 # qou-bvk7
 title: Convention-C derived TRACE VALUES in live witnesses — invisible to both convention-C witness detectors
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T12:49:41Z
-updated_at: 2026-11-17T11:39:37Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-cdx1
 ---
 
@@ -171,3 +171,7 @@ artifact beside it is correct, so no published number is wrong today.
 blocked behind `qou-lnog`. The per-file reading this bean asked for is complete.
 
 **2026-10-10 — survivor 1 moved (owner picked "move to fsh-guts").** The orphan `computations/probes/option-e-deuteron-delta-lambda-probe.witness.json` is now at `fsh-guts/deprecated/computations/probes/` on branch `cat/cat-harness/fsh-guts` (commit `8a0b888de8`), with a README saying why it is frozen. It is removed from main. The live copy at `computations/option-e-deuteron-delta-lambda-probe.witness.json` is untouched. Survivor 2 stays blocked behind `qou-lnog`, so this bean stays `todo`.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8324, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

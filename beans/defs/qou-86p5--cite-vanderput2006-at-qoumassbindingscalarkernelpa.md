@@ -1,7 +1,7 @@
 ---
 # qou-86p5
 title: Cite [vanderput2006] at QOU/Mass/BindingScalarKernelParityExclusion.lean — fix the E(r,d,b) pointer (crmath-2011 is Bugeaud, not van der Put–Reversat); Thm 3.4/3.5 state it in English
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - qdiff-stokes
     - reorg-2026-10-04
 created_at: 2026-09-07T08:36:06Z
-updated_at: 2026-10-04T15:12:07Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-mub3
 ---
 
@@ -30,3 +30,7 @@ DONE on PR #7032 (9506827931): the Lean docstring and -- Ref: block now cite van
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8486, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

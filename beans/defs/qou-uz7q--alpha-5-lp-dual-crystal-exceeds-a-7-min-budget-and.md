@@ -1,13 +1,13 @@
 ---
 # qou-uz7q
 title: alpha_5_lp_dual_crystal exceeds a 7-min budget and lacks the required progress logging — but editing it drifts scriptHash for zero payload change
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T08:55:10Z
-updated_at: 2026-10-04T15:16:20Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-5vkl
 ---
 
@@ -701,3 +701,9 @@ than a list of alarms, because the first detector's 20 hits were the alarm and
 they were all mine.
 
 - **Round 95 PR (`litlfred/qou#8505`)**: Formalized `DualCrystalProgressLoggingLedger`, `canonicalDualCrystalProgressLoggingLedger`, `dual_crystal_two_square_composition`, and `round_ninety_five_joint_certificate` in `QOU.Foundations.CyclicShiftExploratoryWitnessAuditInteriorMaximumConeObstructionAnchorScriptlessWitnessPartitionSlugDriftDuplicateReconciliationDualCrystalProgressLogging` with 80-dps witness (`HEAD = 420a7c37f74e9880c86f0d911e737f7383abb435`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8505, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-08-24: "bean(qou-uz7q): step 1 complete — 2 of 6 refuted, 4 long and none of them measured"). The work may be partly or fully done. Read the bean before you close it.

@@ -1,13 +1,13 @@
 ---
 # qou-j6gb
 title: mpf_import_time_dps_audit is NOT wired into precision-gates.sh — 288 findings, 185 proven lossy, gate silent
-status: in-progress
+status: todo
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-10T02:36:03Z
-updated_at: 2026-10-04T15:11:38Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-9nnz
 ---
 
@@ -1042,3 +1042,9 @@ Re-close it when the work its body names is actually done.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8349, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-08-15: "beans: close qou-s41x; record post-merge state on qou-j6gb"). The work may be partly or fully done. Read the bean before you close it.

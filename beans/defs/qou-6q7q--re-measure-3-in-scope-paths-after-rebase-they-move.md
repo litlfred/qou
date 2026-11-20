@@ -1,13 +1,13 @@
 ---
 # qou-6q7q
 title: 'Re-measure 3 in-scope paths after rebase: they moved on main while the sweep ran'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T13:37:53Z
-updated_at: 2026-10-04T15:23:13Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-trd0
 ---
 
@@ -214,3 +214,7 @@ fault. Checkpointed, so `--resume` continues from there. Its `TIMEOUT` count has
 reached **7**, one beyond `qou-uz7q`'s six; per that bean's result a `TIMEOUT`
 verdict is not evidence of a slow producer, so the seventh needs the same
 measurement before anyone treats it as one.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8396, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

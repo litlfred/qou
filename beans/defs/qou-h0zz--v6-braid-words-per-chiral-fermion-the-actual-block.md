@@ -1,7 +1,7 @@
 ---
 # qou-h0zz
 title: 'V6: braid words per chiral fermion -- the actual blocker for T(t)'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - 8f-open
 created_at: 2026-08-10T18:34:14Z
-updated_at: 2026-11-17T23:08:21Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-8lxd
 ---
 
@@ -391,3 +391,9 @@ precedent, and `conj:sm-hypercharge-invariant` stays open.
 ## 2026-11-17 sibling sweep
 2 of 4 chiral-fermion words still to scope. PR #7712, branch claude/chiral-fermion-word-scope-2026-10-10. Left: the last two words, then PR review.
 Recorded 2026-11-17 from the stale-sibling-session sweep (table: /mnt/project-files/qou-sibling-consolidation/table.md). Source session archived; work not lost.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8200, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-10-12: "qou-h0zz: the lepton half of the braid-word blocker is already derived"). The work may be partly or fully done. Read the bean before you close it.

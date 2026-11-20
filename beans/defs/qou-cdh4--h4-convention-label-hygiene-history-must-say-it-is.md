@@ -1,13 +1,13 @@
 ---
 # qou-cdh4
 title: 'H4 (hygiene): convention-label hygiene — history must say it is history'
-status: in-progress
+status: todo
 type: task
 priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-11-17T11:48:14Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-10v9
 ---
 
@@ -142,3 +142,9 @@ rather than be laundered, root-caused above to the `qou-j6il` stale binary.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-16 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8328, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-08-16: "H4(qou-cdh4): registries were already labelled — and one sentence describing a closed question as open"). The work may be partly or fully done. Read the bean before you close it.

@@ -1,14 +1,14 @@
 ---
 # qou-rgiz
 title: 'Arc: alpha_EM per-loop measure 1/(8pi) — non-abelian Stokes germ route (owner-gated on MOC/Phi, low program-value)'
-status: in-progress
+status: todo
 type: feature
 priority: normal
 tags:
     - sm-26
     - reorg-2026-10-04
 created_at: 2026-08-29T16:24:57Z
-updated_at: 2026-11-16T19:28:00Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-3l2l
 blocked_by:
     - 08a2
@@ -39,3 +39,7 @@ Was in-progress with no bean update since 2026-09-03 and no main commit naming i
   - `em_germ_nonvanishing_at_self_dual_vs_discrete_shadow`: at `q = 1`, the EM-singlet moment numerator `P(q) = q² - 1` vanishes (`P(1) = 0`) while its first-order `q`-germ `P'(1) = 2 ≠ 0` is non-vanishing (`m_F'(1) = -1` at 50 dps), whereas a point-pinned discrete shadow (`q = i` F-construction) has zero `q`-derivative everywhere.
   - `single_generator_sterile_and_two_generator_live`: single-generator commutator `[A, A] = 0` vanishes identically (abelian transport sterility on `σ₁³`), whereas two-generator root matrices `(heckeRootGen1, heckeRootGen2)` have non-zero commutator `[[1, 1], [-1, -1]] ≠ 0` with trace `0`.
   - `nonsterile_germ_does_not_fix_period_scale` & `cubic_ladder_vs_cs_resummation_discrepancy`: proves that germ non-sterility (`g ≠ 0`) does not fix the MOC/Φ proportionality constant `c` (`c₁ ≠ c₂ → c₁·g ≠ c₂·g`), and the truncated cubic ladder `1 + x + x² + x³` differs from the all-orders CS resummation `1/(1 - x)` by `-x⁴ ≠ 0` for all `x ≠ 0`.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8167, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

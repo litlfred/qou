@@ -1,7 +1,7 @@
 ---
 # qou-d8de
 title: 'GAP W1: construct the q-difference prolongation D_q from the color spectral curve Σ'
-status: in-progress
+status: todo
 pr: 8200
 type: task
 priority: normal
@@ -10,7 +10,7 @@ tags:
     - 8f-open
     - reorg-2026-10-04
 created_at: 2026-08-01T01:43:06Z
-updated_at: 2026-10-10T08:26:41Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-8lxd
 ---
 
@@ -381,3 +381,9 @@ Two things worth surfacing for anyone scoping from the front list:
 
 ## Progress (2026-11-16, PR #8200)
 - [x] Formalized `spectralCubicE1`, `spectralCubicE2`, `spectralCubicE3`, `spectralCubicP1`, `spectralCubicP2`, `spectralCubicP3`, `spectral_cubic_p1_p2_closed_form`, and `spectral_cubic_power_sums_and_ramified_parity` in `folio/quantum-observable-universe/lean/QOU/Eightfold/TauAnchoredRatioChiralBraidWritheAndSpectralCubicPowerSums.lean` + 50-dps mpmath witness (`qou_d8de_spectral_cubic_power_sums_and_ramified_parity`) in PR #8200 (`ec7070e7f1b47f4548cd7f98fc2a7948b28854b0`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8200, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-09-13: "lean(qou-d8de): close the prose-only finite-order step -- it was pigeonhole, not Moebius"). The work may be partly or fully done. Read the bean before you close it.

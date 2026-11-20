@@ -1,13 +1,13 @@
 ---
 # qou-ohaz
 title: 'GAP: model-to-PDE uniformity of the two-regime pair-collision model — the surviving lock-uniformity caveat. Phase-1 ODE calculus is theorem-grade (pair_phase1_riccati.lean); Gamma-growth escape closed in-model; what is NOT established is that the NS/q-NS PDE dynamics follows the two-regime ODE through the approach (strain locality, core deformation, V1-d2 phase-plane fidelity). Next honest step: derive the ODE system as a controlled reduction of the vortex-filament/Biot-Savart PDE with error bounds, or find the PDE effect that breaks it.'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-14T16:06:54Z
-updated_at: 2026-10-04T15:12:57Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-a3n3
 ---
 
@@ -60,3 +60,7 @@ Was in-progress with no bean update since 2026-09-03 and no main commit naming i
 ## Progress Update (Round 91 — lane-cf11)
 - Formalized in `folio/quantum-observable-universe/lean/QOU/QBeta/HookEvenMomentAndBorromeanTripleBrick.lean` with 80-dps probe `computations/probes/hook_even_moment_and_borromean_triple_brick_probe.py` and witness `computations/probes/hook-even-moment-and-borromean-triple-brick.witness.json`.
 - PR: https://github.com/litlfred/qou/pull/8343 (`feat/qou-b9cj-ogrk-ohaz-omr7-ooqh-po72`, HEAD `8c185bc247a4dfba4e6316715175039c0defb340`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8343, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

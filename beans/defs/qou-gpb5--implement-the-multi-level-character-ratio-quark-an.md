@@ -1,13 +1,13 @@
 ---
 # qou-gpb5
 title: 'Implement the multi-level character ratio: quark and nuclear-jet levels are unbuilt'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T06:49:42Z
-updated_at: 2026-10-04T15:13:07Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-10v9
 ---
 
@@ -318,3 +318,9 @@ Was in-progress with no bean update since 2026-09-05 and no main commit naming i
 ## 2026-11-15 — γγ-built nucleon (PR #7741, `h2_gg_atom/`, `h2_gg_electron/`; owner decision C)
 
 On three strands every γγ word is a power of V = σ₀σ₁⁻¹, so a γγ-built nucleon is V^m. Pre-registered and measured: only V³ and V⁶ pass reading 3 at every level (m = 3…7); proton and neutron are then the same word, so there is no flavour on three strands. With a γγ electron (V³ or V⁶) H₂ passes every level and the only passing bond is V³. Every γγ word has χ_(1³) = 1 (#7896). Scope (a). Bearing on this bean: every-level reading 3 (closing strands from the top) is now implemented in h2_one_rule_probe.level_chars; it is a positivity test per level, not the character ratio R this bean asks for.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8345, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-09-05: "merge: intra-word ordering — beta_Bor confinement core, the invariance proved in Lean, and the 5.045e-4 residual retract"). The work may be partly or fully done. Read the bean before you close it.

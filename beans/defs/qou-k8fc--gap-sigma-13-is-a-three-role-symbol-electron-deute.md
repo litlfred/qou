@@ -1,14 +1,14 @@
 ---
 # qou-k8fc
 title: 'GAP: sigma_1^3 is a three-role symbol (electron / deuteron / nucleon binding factor in H_3) and the deuteron role is unsupported'
-status: in-progress
+status: todo
 pr: 8302
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T21:21:18Z
-updated_at: 2026-10-04T15:20:23Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-v2om
 ---
 
@@ -74,3 +74,7 @@ WHAT WOULD CLOSE IT. Cheapest first:
 BLOCKED ON: nothing. This is a naming/provenance audit, not new math.
 Related: qou-e5jf (the adjudication), qou-985x (A's tracker), PR #4619 (an
 OPEN sibling working the sigma_1^3 NA-Stokes sector).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8302, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

@@ -1,13 +1,13 @@
 ---
 # qou-z8x9
 title: script-QA sweeper audits ZERO qou producers — its only root is folio-assistant/computations, which holds no .py
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T09:19:22Z
-updated_at: 2026-10-04T15:24:21Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-5vkl
 ---
 
@@ -121,3 +121,7 @@ are under `_deprecated/` and the top-15 output cap means the full severity
 split is UNMEASURED; do not quote a breakdown off that sample.
 
 - **Round 96 PR (`litlfred/qou#8510`)**: Formalized `ScriptSweeperRootDiscrepancyLedger`, `canonicalScriptSweeperRootDiscrepancyLedger`, `script_sweeper_two_square_composition`, and `round_ninety_six_joint_certificate` in `QOU.Foundations.AnchorRefillArrivalPartitionUnifiedIterativeTableOrphanAuditEnvironmentVersionCensusNoncommutativeTacticSiteAuditScriptSweeperRootDiscrepancy` with 80-dps witness (`HEAD = 9861bd624187df98849a08e324f09311a00ff969`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8510, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

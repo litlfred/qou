@@ -1,7 +1,7 @@
 ---
 # qou-9gpo
 title: 'PROVE(lean): confinement_frobenius_reciprocity — theorem confinement_frobenius_reciprocity [ctx : ConfinementFrobeniusReciprocityContext] : [cited bertsimas1997,manuscript]'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
@@ -12,7 +12,7 @@ tags:
     - reorg-2026-10-04
     - lean
 created_at: 2026-08-01T23:31:07Z
-updated_at: 2026-10-04T15:22:25Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-l2vh
 ---
 
@@ -45,3 +45,7 @@ identifier, so a conjunctive `<...>` of projections never matches.
 
 The original text is kept above, not deleted: the Tractability line is per-item and is accurate;
 only the Next-step verdict is being corrected.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8308, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

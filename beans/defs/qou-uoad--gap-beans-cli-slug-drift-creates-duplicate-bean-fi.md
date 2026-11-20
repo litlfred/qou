@@ -1,13 +1,13 @@
 ---
 # qou-uoad
 title: 'GAP: beans CLI slug drift creates duplicate bean files on --body-append'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T13:22:41Z
-updated_at: 2026-10-04T15:19:46Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-5vkl
 ---
 
@@ -50,3 +50,7 @@ of signal (the 14,688-duplicate incident of 2026-08-04 is the precedent),
 and re-landing a duplicate can *undo* a hand fix, as it nearly did here.
 
 - **Round 95 PR (`litlfred/qou#8505`)**: Formalized `SlugDriftDuplicateReconciliationLedger`, `canonicalSlugDriftDuplicateReconciliationLedger`, `slug_drift_duplicate_excess_and_recovery`, and `slug_drift_cubic_factorization` in `QOU.Foundations.CyclicShiftExploratoryWitnessAuditInteriorMaximumConeObstructionAnchorScriptlessWitnessPartitionSlugDriftDuplicateReconciliationDualCrystalProgressLogging` with 80-dps witness (`HEAD = 420a7c37f74e9880c86f0d911e737f7383abb435`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8505, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

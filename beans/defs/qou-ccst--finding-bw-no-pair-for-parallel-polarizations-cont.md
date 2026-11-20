@@ -1,12 +1,12 @@
 ---
 # qou-ccst
 title: 'FINDING: BW ''no pair for parallel polarizations'' contradicts tree-level QED'
-status: in-progress
+status: todo
 type: task
 tags:
     - quark-state
 created_at: 2026-11-15T08:24:51Z
-updated_at: 2026-11-15T08:24:51Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-qs0e
 blocking:
     - qou-qs2u
@@ -29,3 +29,7 @@ Side findings, not fixed:
 - `predicted-spectra/breit-wheeler-pair-production-derivation.md` fixes φ by "setting E_pair = 2m_e". That is a fit.
 - The `star2021bw` title may not match PRL 127, 052302.
 - The ATLAS sentence was not re-checked against the paper.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8472, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

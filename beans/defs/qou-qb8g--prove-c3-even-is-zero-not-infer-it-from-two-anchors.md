@@ -1,14 +1,14 @@
 ---
 # qou-qb8g
 title: c_3's bar-parity is UNDETERMINED — neither named split is derived
-status: in-progress
+status: todo
 pr: 8245
 type: task
 priority: medium
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T11:45:00Z
-updated_at: 2026-11-17T07:09:00Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-avtq
 ---
 
@@ -383,3 +383,9 @@ Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap 
 
 - [x] PR #8245 (`dea5885f0b662330ff1d63757512b50427bbc370`): formalized `sleak_reparametrisation_bijective`, `kappa21_numerator_antipalindromic`, and `c3_bar_parity_from_odd_kappa` in `QOU/QBeta/ThetaKChannelC3BarParityAndHabiroRigidity.lean` (`0 sorry`, `0 axiom`, `0 vacuity`), proving `kappa_{(2,1)}` is bar-odd and `c_3 = -kappa*S` is bar-odd iff `S` is bar-even.
 - [ ] Awaiting Merge Manager integration and owner review (kept `in-progress` per no-unilateral-closure policy).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8245, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-08-29: "chore(beans): avt1 G2 + qb8g alpha_D obstruction now proved-lean (landed)"). The work may be partly or fully done. Read the bean before you close it.

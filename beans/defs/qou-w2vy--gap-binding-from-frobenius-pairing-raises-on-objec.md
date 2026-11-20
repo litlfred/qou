@@ -1,14 +1,14 @@
 ---
 # qou-w2vy
 title: 'GAP: binding_from_frobenius_pairing raises on object dtype -- latent behind term 1''s hang'
-status: in-progress
+status: todo
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-31T04:44:27Z
-updated_at: 2026-10-04T15:14:52Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-v2om
 ---
 
@@ -417,3 +417,9 @@ nothing validates that a bean file carries the header its name implies.
   1. Both the Rust MPFR LP kernel (`_lp_kernel_steps`) and the Python cached COO object-dtype fallback (`_HAS_LP_KERNEL = False`, accumulating in `dtype=object` via row/col index arrays) in `computations/hecke_core_legacy.py` execute cleanly without raising `TypeError: no supported conversion for types: (dtype('float64'), dtype('O'))`, with `0.0` relative difference at `k_cap = 3` (`(2, 1)` block).
   2. Live post-`qou-oiz3` return-type contract recorded: `atom_character_raw` casts `(chi, log_norm)` to `(float, float)` at its return boundary, while `atom_markov_trace`, `atom_frobenius_norm_sq`, and `binding_from_frobenius_pairing` return `mpmath.mpf`. Per the bean recommendation, `atom_character_raw`'s public `(float, float, int)` return signature is left unchanged so downstream callers (`sdp_cross_channel.py`) are unaffected.
 - **Status:** Kept at `in-progress` pending owner review and PR merge.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8181, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-09-04: "beans(qou-w2vy): retract my own "input precision NOT measured" — the corpus closed it on 2026-08-31"). The work may be partly or fully done. Read the bean before you close it.

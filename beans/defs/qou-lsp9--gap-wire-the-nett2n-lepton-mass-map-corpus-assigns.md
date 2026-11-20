@@ -1,7 +1,7 @@
 ---
 # qou-lsp9
 title: 'GAP: wire the net(T(2,n)) -> lepton mass map. Corpus assigns T(2,n) to generations but the Morgan-Voyce net is a normal-form coefficient, NOT a mass: net ratios 1.2455 and 1.2408 vs observed 206.8 and 16.8. Until wired, the ladder has no predictive content at n=9 to test against the LEP no-4th-lepton bound. Prerequisite to any numerical falsification.'
-status: in-progress
+status: todo
 pr: 8196
 type: task
 priority: normal
@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - 8f-mass
 created_at: 2026-08-01T22:05:54Z
-updated_at: 2026-10-10T07:15:55Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-8lxd
 ---
 
@@ -53,3 +53,9 @@ deliberately -- a class was excluded, the goal was not achieved.
 
 ## Progress (2026-11-16, PR #8196)
 - [x] Formalized `twoStepReadout`, `nextRecurrenceTerm`, `two_step_recurrence_expansion`, `twoStepReadout_pos_of_nonneg_weights`, and `node_requires_negative_alpha` in `folio/quantum-observable-universe/lean/QOU/Eightfold/LeptonReadoutHiggsScaleMesonSyllableAndIcosahedralOrbit.lean` + 50-dps mpmath witness (`qou_lsp9_two_step_readout_and_node_sign`) in PR #8196 (`38b68fa660bb34e2ffb7a2e1a09e5c4f5308e2cf`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8196, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-08-07: "lean(qou-lsp9): positivity closes the node escape the rigidity law leaves open"). The work may be partly or fully done. Read the bean before you close it.

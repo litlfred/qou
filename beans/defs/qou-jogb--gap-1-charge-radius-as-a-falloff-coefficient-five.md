@@ -1,7 +1,7 @@
 ---
 # qou-jogb
 title: 'Gap 1: charge radius as a falloff coefficient -- five routes, and the proton-radius-puzzle block may be stale'
-status: in-progress
+status: todo
 pr: 8203
 type: task
 priority: normal
@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - 8f-mass
 created_at: 2026-09-13T05:32:01Z
-updated_at: 2026-10-10T07:15:57Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-8lxd
 ---
 
@@ -70,3 +70,7 @@ thing here not covered elsewhere is the staleness question on
 
 ## Progress (2026-11-16, PR #8203)
 - [x] Formalized `formFactorLinearDrop`, `uniformBallRmsResidual`, and `he3_binding_length_fivefold_improvement` in `folio/quantum-observable-universe/lean/QOU/Eightfold/RootOfUnityCutoffIsotopeHyperfineBetaCoulombAndSymplecticRoots.lean` + 50-dps mpmath witness (`qou_jogb_he3_binding_length_fivefold_improvement`) in PR #8203 (`74a091a53fd300f6f906db42c72c6a5e3e84e7b3`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8203, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

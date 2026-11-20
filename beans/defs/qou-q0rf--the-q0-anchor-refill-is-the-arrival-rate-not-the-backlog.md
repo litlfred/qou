@@ -1,13 +1,13 @@
 ---
 # qou-q0rf
 title: The q0-anchor refill ratchet is RED on main (NEW 147) — and the arrival rate, not the backlog, is the thing to fix
-status: in-progress
+status: todo
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-03T04:40:00Z
-updated_at: 2026-10-10T07:56:22Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-cdx1
 ---
 
@@ -200,3 +200,7 @@ Third correction of this session, and the same class each time: a claim about a
 bean made without reading that bean's own primary text closely enough. The first
 was `qou-m7py` (called satisfied off one grepped line), the second was the
 66-unscoped paper classifier.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8384, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

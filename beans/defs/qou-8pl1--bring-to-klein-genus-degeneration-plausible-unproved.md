@@ -1,14 +1,14 @@
 ---
 # qou-8pl1
 title: 'PLAUSIBLE-NOT-PROVED: Bring → Klein quartic genus degeneration'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-flavour
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-11-16T18:56:59Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-8lxd
 ---
 
@@ -123,3 +123,7 @@ it. Renaming is the owner's call.
 - **Lean 4 formalization (`folio/quantum-observable-universe/lean/QOU/Eightfold/FlavourCartanOctetDecuplet.lean`, `0` `sorry`, wired into `QOU.lean`)**:
   - Proves `bring_genus_pinching_and_s4_competitors`: formalizes the topological invariants of pinching 1 non-separating cycle from $g = 4$ to $g = 3$ ($\chi(4) = -6 \to \chi(3) = -4$, $\Delta\chi = +2$, $b_1 : 8 \to 6$), the Hurwitz bounds $84(3-1) = 168$ and $84(4-1) = 252$, and the common $S_4$ divisibility $24 \mid 120$ (Bring), $24 \mid 168$ (Klein, index 7), and $24 \mid 96$ (Fermat quartic competitor, index 4).
 - **Witness (`computations/probes/flavour-cartan-octet-decuplet-degeneration.witness.json`)**: `allPassed: true` (`q0Anchor: "independent"`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8155, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

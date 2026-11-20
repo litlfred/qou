@@ -1,13 +1,13 @@
 ---
 # qou-rug0
 title: Fixed-.parent-count path resolution is wrong in the vendored layout — audit the remaining shims
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T10:32:58Z
-updated_at: 2026-10-04T15:19:11Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-trd0
 ---
 
@@ -63,3 +63,7 @@ The vendored `mass_at_3A_proper.tower_term_li2q` raised
 `ModuleNotFoundError: No module named 'qou_substrate'` from `q_parameter.py:56`.
 After the fixes it gets through to `pyhecke`, a genuine optional native
 dependency, which is a different and legitimate failure.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8411, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

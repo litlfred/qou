@@ -1,12 +1,12 @@
 ---
 # qou-3kni
 title: 'Two conj: labels named by the pole-to-cusp producers have no carrier -- and neither producer can be re-run here to fix the docstring'
-status: in-progress
+status: todo
 pr: 8283
 type: task
 priority: normal
 created_at: 2026-09-14T19:57:29Z
-updated_at: 2026-10-11T07:39:45Z
+updated_at: 2026-11-20T16:06:50Z
 parent: b9cj
 ---
 
@@ -548,3 +548,9 @@ on the `A_ω → S` identification, which is an open conjecture.
 - **PR:** https://github.com/litlfred/qou/pull/8283 (head `f53a095b5ee34373c44ef4b0b400e85b12af4c1c`, Commit 1 `0e2f86d58bac8f2f07854f3515aabf15d9779cd3`)
 - **Lean 4 Module & Theorems:** `QOU/AlphaEM/MellorMelvinModDeltaAndBws0DegreeFourClosure.lean` (`pole_to_cusp_carrier_inventory_and_gb_pl_tetrahedron_match`)
 - **80-dps Witness:** `computations/probes/round56-mellor-melvin-bws0-stokes-dt-qholonomic.witness.json` (`scriptHash: d98411981e4d`, `allPassed: true`, `0` raw `float64`)
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8283, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-10-11: "beans(qou-3kni): item 3 done — surface drained 26 -> 0; bean stays todo"). The work may be partly or fully done. Read the bean before you close it.

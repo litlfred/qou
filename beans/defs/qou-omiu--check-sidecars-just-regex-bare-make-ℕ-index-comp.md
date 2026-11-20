@@ -1,13 +1,13 @@
 ---
 # qou-omiu
 title: 'check-sidecars JUST regex: bare ≤/≥ make ℕ index comparisons read as archimedean (§7c false positive)'
-status: in-progress
+status: todo
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T21:56:07Z
-updated_at: 2026-10-04T15:15:37Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-trd0
 ---
 
@@ -192,3 +192,9 @@ wiring it is already owned by bean `qou-8plu` ("reach strict green and wire it")
 Left alone.
 
 **This half of qou-omiu closes as measured-and-declined, not as work.**
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8403, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-08-24: "beans(qou-omiu): §7c half closed on main — and their fix beats mine by 45 files"). The work may be partly or fully done. Read the bean before you close it.

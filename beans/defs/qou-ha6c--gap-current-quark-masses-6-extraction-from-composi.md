@@ -1,7 +1,7 @@
 ---
 # qou-ha6c
 title: 'GAP: m_u, m_d — only m_d − m_u is extractable (δ_QCD = Δ_pn + E_EM); E_EM is gating object 4-B (m_s/m_c, m_b/m_t split out 2026-09-03)'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - 8f-mass
     - sm-26
 created_at: 2026-07-31T20:15:07Z
-updated_at: 2026-10-10T07:15:51Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-8lxd
 blocked_by:
     - qou-bn8e
@@ -28,3 +28,7 @@ Tower status [reading: qou-ggdk]: ORDER-ZERO-ONLY — single-crossing pairwise C
 
 ## Round 66 Update (PR #8239)
 - Formalized in `WeakIsospinGradingColourFibreRoutesLightQuarkExtractionTauLogConvexityAndPmnsCarrier.lean` and verified via 80-dps `mpmath` witness in PR #8239.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8239, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

@@ -1,7 +1,7 @@
 ---
 # qou-kebu
 title: 'T2b: derive per-strand twist multisets from framed braid words'
-status: in-progress
+status: todo
 type: task
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - 8f-tseries
     - 8f-open
 created_at: 2026-08-04T10:16:22Z
-updated_at: 2026-11-16T18:32:12Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-8lxd
 blocked_by:
     - qou-qvpl
@@ -187,3 +187,7 @@ on `qou-8lxd`.
 - **Lean 4 formalization (`folio/quantum-observable-universe/lean/QOU/StandardModel/RibbonTwistZ6Hypercharge.lean`, `0` `sorry`, wired into `QOU.lean`)**:
   - Formalizes `strandTwistSum` and proves `battery_survivors_produce_exact_twist_sums` verifying that both survivor multiset families $A = ((-1,-1,-1), (-1,0,0), (0,0,0), (0,1,1))$ and $B = ((-1,-1,-1), (-1,-1,1), (0,0,0), (0,1,1))$ produce the exact twist-sum spectrum $[T(e), T(d), T(\nu), T(u)] = [-3, -1, 0, +2]$, satisfy $3 \mid (\tau + T(t))$, and force the Baez–Huerta $\mathbb{Z}_6$ quantization $6 \mid (2\tau + 3w + 3Y_t)$ across all 8 chiral states (`firstGenChiralStates_all_valid_z6`).
   - Establishes why 3-strand framed ribbon twists succeed where 1-component Seifert knot signatures $\sigma(K) \in 2\mathbb{Z}$ fail (`knot_signature_even_obstruction`): per-strand framing $t_i \in \{-1, 0, +1\}$ reaches both odd ($-3, -1$) and even ($0, +2$) numerators over $3$.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8149, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

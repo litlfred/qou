@@ -1,7 +1,7 @@
 ---
 # qou-b1k4
 title: 'GAP: m_b, m_t — no carrier for t; b = T(2,7)^σ has Vol=0; nothing derived at any order'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - 8f-mass
 created_at: 2026-09-03T08:31:18Z
-updated_at: 2026-10-10T07:15:52Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-8lxd
 blocked_by:
     - qou-qpj9
@@ -30,3 +30,7 @@ Tower status [reading: qou-ggdk]: no attack of either kind exists; by constructi
 
 ## Implementation Note (PR #8232)
 - Implemented in `folio/quantum-observable-universe/lean/QOU/Eightfold/HeavyQuarkDoubletObstructionFreezeOutTruncationWeinbergBlockNormCkmParameterCountAndNeutrinoZeroVolume.lean` and `computations/probes/heavy_quark_doublet_obstruction_freeze_out_truncation_weinberg_block_norm_ckm_parameter_count_and_neutrino_zero_volume_probe.py` (witness `computations/probes/heavy-quark-doublet-obstruction-freeze-out-truncation-weinberg-block-norm-ckm-parameter-count-and-neutrino-zero-volume.witness.json`, `5c9df8778eb7e1128541cebe1318fc29ba5b5b7e`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8232, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

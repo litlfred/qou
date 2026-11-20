@@ -1,13 +1,13 @@
 ---
 # qou-jbo8
 title: 'Optional Mathlib-gap infra: Lean measure-realization of G_k via gaussianReal mgf — NOT cheap (cost estimate corrected 2026-08-01)'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T15:13:34Z
-updated_at: 2026-11-17T11:01:49Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-c8p8
 ---
 
@@ -50,3 +50,7 @@ Stone–Weierstrass) — same optional status, likewise not on any critical path
 - Verified with 80-dps `mpmath` probe and 2-commit witness stamp (`COMMIT1 = b0bb4be019c48c6d750a29bf091882a789b109a9`, `COMMIT2 = 74c1cf2230253f7a4d2cbdca2850c03f0413149f`, `scriptHash = a7de56fcc07c`, `allPassed = true`).
 - Opened PR https://github.com/litlfred/qou/pull/8320 (`ready-to-merge`, `release`, `ready: 74c1cf2230253f7a4d2cbdca2850c03f0413149f`).
 - Keeping bean at `status: in-progress` pending merge and verification.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8320, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

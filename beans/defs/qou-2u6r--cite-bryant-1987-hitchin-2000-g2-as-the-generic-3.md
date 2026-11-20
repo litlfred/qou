@@ -1,13 +1,13 @@
 ---
 # qou-2u6r
 title: 'CITE: Bryant 1987 / Hitchin 2000 (G2 as the generic-3-form stabiliser) is neither held nor registered — U — G2FrameDimensions.lean:75; baez2002 does not contain it'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:06:06Z
-updated_at: 2026-10-04T15:17:54Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-mub3
 ---
 
@@ -61,3 +61,7 @@ narrative rather than to any theorem's statement. What is asserted-and-unsourced
 the reading, not a proved conclusion.
 
 Found by the citation-gap sweep, `docs/audits/2026-09-04-citation-gap-inventory.md`.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8475, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

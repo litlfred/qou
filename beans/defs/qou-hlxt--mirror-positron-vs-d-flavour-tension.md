@@ -1,7 +1,7 @@
 ---
 # qou-hlxt
 title: 'Tension: σ ↦ σ⁻¹ is the positron (BW) and the d flavour (quark_template / 6a) — which reading is derivable?'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
@@ -10,7 +10,7 @@ tags:
     - charge-conjugation
 parent: qou-qs0e
 created_at: 2026-11-15T10:00:00Z
-updated_at: 2026-11-15T18:20:00Z
+updated_at: 2026-11-20T16:06:50Z
 ---
 
 Owner, relayed by coordinator 2026-11-15: open this bean and frame it; do NOT resolve it by
@@ -77,3 +77,7 @@ stream 6a's `quarkLetter` reads it as d. The colour tube's u–d element is the 
 showed the weak vertex is a scalar multiple of. Caveat: the sign rule is stated data of the
 upstream conjecture (its open question 2), so this counts sources and does not derive a
 reading. Option (1) gains corroboration; nothing is chosen. Status stays todo.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8439, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

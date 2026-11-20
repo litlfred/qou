@@ -1,12 +1,12 @@
 ---
 # qou-kb8t
 title: S4 Simulator pages as declared assets
-status: in-progress
+status: todo
 type: feature
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T15:10:16Z
-updated_at: 2026-11-16T19:28:00Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-n4r9
 ---
 
@@ -23,3 +23,7 @@ Owner hard rule: no math or physics content is changed. Every story ends with a 
 - **Accounting of the missing/parked pages (reported, not invented):**
   - 2 `simulator({...})` blocks in `folio/quantum-observable-universe/mass-theory/` carry `todo-html` (`sim:descent-rate-probe` -> `simulators/descent_rate_probe.html`, `sim:multi-level-jet-sum` -> `simulators/multi_level_jet_sum.html`); their HTML pages were never authored and are not invented per S4.
   - 2 unreferenced HTML files (`fsh-guts/deprecated/simulators/double_slit.html`, `fsh-guts/deprecated/simulators/empty.html`, plus `fsh-guts/deprecated/ruby-3d-viewer.html`) remain parked on `cat/cat-harness/fsh-guts`.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8167, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

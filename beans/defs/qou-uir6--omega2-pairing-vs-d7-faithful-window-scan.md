@@ -1,11 +1,11 @@
 ---
 # qou-uir6
 title: 'Omega_2 pairing vs D7: report the faithful-window scan of P(z) as the result; convention-D values are a two-row diagnostic'
-status: in-progress
+status: todo
 type: task
 priority: high
 created_at: 2026-10-12T19:30:00Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-za3q
 ---
 **Recreated 2026-10-12** (stream 4 of #7735, session_01PmZzY27QHceKGXwNivRt64). The original bean,
@@ -68,3 +68,7 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 ## Progress Update (Round 93 — lane-cf11)
 - Formalized in `folio/quantum-observable-universe/lean/QOU/QBeta/FaithfulWindowAndPretzelWronskianBrick.lean` with 80-dps probe `computations/probes/faithful_window_and_pretzel_wronskian_brick_probe.py` and witness `computations/probes/faithful-window-and-pretzel-wronskian-brick.witness.json`.
 - PR: https://github.com/litlfred/qou/pull/8353 (`feat/qou-b9cj-uir6-upbq-v1eu-v4in-v7ro`, HEAD `026764a8eae99d01d2339d820089a669110ba022`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8353, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

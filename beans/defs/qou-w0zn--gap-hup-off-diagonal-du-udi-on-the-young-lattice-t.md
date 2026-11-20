@@ -1,14 +1,14 @@
 ---
 # qou-w0zn
 title: 'GAP: hup off-diagonal (DU-UD=I) on the Young lattice — the last brick of the RSK-free SW-3 route'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - close-candidate
 created_at: 2026-08-21T19:57:29Z
-updated_at: 2026-11-17T11:34:45Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-1oif
 ---
 
@@ -190,3 +190,9 @@ fourth instance of this class in one session and the second one I authored.
 - Verified with 80-dps `mpmath` probe and 2-commit witness stamp (`COMMIT1 = 13e718201144523610e11912018cdb123e6155b3`, `COMMIT2 = 06940a10b90934e8a8d7233d592147be01aa5979`, `scriptHash = 01e1202f7b26`, `allPassed = true`).
 - Opened PR https://github.com/litlfred/qou/pull/8323 (`ready-to-merge`, `release`, `ready: 06940a10b90934e8a8d7233d592147be01aa5979`).
 - Keeping bean at `status: in-progress` pending merge and verification.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8323, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-09-08: "beans(qou-7dzg closed, qou-w0zn advanced): batch 7 -- and route 2 landed unconditionally"). The work may be partly or fully done. Read the bean before you close it.

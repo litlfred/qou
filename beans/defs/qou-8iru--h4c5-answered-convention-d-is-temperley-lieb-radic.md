@@ -1,13 +1,13 @@
 ---
 # qou-8iru
 title: 'H4/C5 answered: convention D IS Temperley-Lieb. Radical = TL ideal, dim H_n/rad = Catalan(n). Interface gain 2->5 params.'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T14:54:13Z
-updated_at: 2026-11-16T19:15:00Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-rtxm
 ---
 
@@ -581,3 +581,9 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 ## 2026-11-16 — Convention D = Temperley–Lieb Catalan Quotient Table (`n = 2..7`) in Lean (PR #8162)
 - Formalized `su2SurvivingDimSqSum`, `catalanNumberTable`, `heckeFactorialDim`, `tlRadicalDim`, and `tl_catalan_dimension_table_n2_to_n7` (`∑_{λ ⊢ n, ℓ(λ) ≤ 2} (f^λ)² = Catalan(n) = (2, 5, 14, 42, 132, 429)`, `dim rad(H_n(q)) = n! - Catalan(n) = (0, 1, 10, 78, 588, 4611)`, and `dim TL_n(q) + dim rad(H_n(q)) = n!`) in `folio/quantum-observable-universe/lean/QOU/Foundations/WenzlTemperleyLiebH4Keystone.lean` (wired into `QOU.lean`, 0 `sorry`).
 - PR: https://github.com/litlfred/qou/pull/8162 (commit `f3dcbfe5fb51a67f3233319674c13a3791ba91d2`). Status kept `in-progress`.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8162, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-09-27: "beans(qou-7vht, qou-8iru): item 1 closed and the dimension chain with it — still not an isomorphism"). The work may be partly or fully done. Read the bean before you close it.

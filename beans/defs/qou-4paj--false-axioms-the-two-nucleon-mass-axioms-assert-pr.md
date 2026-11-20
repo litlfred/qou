@@ -1,14 +1,14 @@
 ---
 # qou-4paj
 title: 'FALSE AXIOMS: the two nucleon-mass axioms assert propositions whose negations are provable'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-09-04T02:40:09Z
-updated_at: 2026-11-16T18:28:22Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-wp3h
 ---
 
@@ -82,3 +82,7 @@ invisible. Nothing was looking for false axioms.
   2. `folio/quantum-observable-universe/knots-particles-confinement/categorical-neutron.lean`: replaced `neutron_mass_from_substrate_axiom` with sorry-free theorems `neutron_mass_from_substrate : neutron_mass q₀ = 7.32772475341775 / (1 - q₀⁻¹) ^ 2 + (1 / 2) * (q₀ - q₀⁻¹)` (`rfl`) and `bare_neutron_carrier_not_939 : ¬ (|neutron_mass q₀ - 939.565| < 1)` (`by unfold neutron_mass q₀; norm_num [abs_lt]`).
   3. Updated `docs/audits/2026-09-04-two-false-nucleon-mass-axioms.md` with the resolution record.
 - Kept at `status: in-progress` pending PR #8147 merge and owner verification.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8147, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

@@ -1,14 +1,14 @@
 ---
 # qou-41qf
 title: Remark interpreting 2111.04763v2.pdf at QOU.QBeta.StokesQZeroDTCount
-status: in-progress
+status: todo
 pr: 8277
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:49Z
-updated_at: 2026-10-04T15:23:37Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-aqfj
 ---
 
@@ -35,3 +35,7 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 - **PR:** https://github.com/litlfred/qou/pull/8277 (head `8f4f568482d5a937ac700b4605cc7c48271faae8`, Commit 1 `0a62bee9d3e501101e220bcafa8c3a9fee1d0d25`)
 - **Lean 4 Module & Theorems:** `QOU/QBeta/StokesMonodromyGGMSandwichAndTrivialFlatConnection.lean` (`trivial_flat_connection_extended_stokes_commutator` citing `[garoufalidis2021a]` & `[garoufalidis-gu-marino2023peacock]`)
 - **80-dps Witness:** `computations/probes/round55-tau-loop-markov-nucleon-stokes-monodromy.witness.json` (`scriptHash: 1de39a3b3d7c`, `allPassed: true`, `0` raw `float64`)
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8277, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

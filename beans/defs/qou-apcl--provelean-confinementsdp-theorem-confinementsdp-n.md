@@ -1,7 +1,7 @@
 ---
 # qou-apcl
 title: 'PROVE(lean): ConfinementSDP — theorem ConfinementSDP (n : ℕ) [HasConfinementSDPData n] (h : slaterStrict n) [HasConfinem [cited boyd-vandenberghe-2004,manuscript]'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
@@ -12,7 +12,7 @@ tags:
     - cite-boyd-vandenberghe-2004
     - reorg-2026-10-04
 created_at: 2026-08-01T23:31:05Z
-updated_at: 2026-10-04T15:22:26Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-l2vh
 ---
 
@@ -46,3 +46,7 @@ can supply it.
 
 So this is the honest pattern, not a defect, and the corpus self-corrected it here without the
 bean being touched. Third independent instance of the same defect class found in this arc.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8319, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

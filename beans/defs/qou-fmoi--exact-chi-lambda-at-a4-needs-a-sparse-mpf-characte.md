@@ -1,13 +1,13 @@
 ---
 # qou-fmoi
 title: Exact chi_lambda at A=4 needs a sparse-mpf character product (dense mpmath is ~571 h)
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T09:11:25Z
-updated_at: 2026-10-10T07:25:44Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-v2om
 ---
 
@@ -448,3 +448,7 @@ the result nobody re-checks.
 ## 2026-10-10 — second consumer hits the same wall
 
 `computations/brane_tower_isospin_diagnosis.py`, ported in issue litlfred/qou#7552 to `per_generator_V_hat_3A` with `QOU_H3A_MPF=1`, computes proton through helium-3 at mpf and fails at helium-4: `syt_prefix_cache` hands an object-dtype matrix to `scipy.sparse` (ValueError, mass_at_3A_proper.py:431 -> syt_prefix_cache.py:199). The witness records helium-4 as not computed rather than falling back to float64. Carrier for the port: `qou-g16t`.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8345, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

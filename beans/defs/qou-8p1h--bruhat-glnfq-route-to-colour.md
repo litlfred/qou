@@ -1,14 +1,14 @@
 ---
 # qou-8p1h
 title: 'qou-8p1x/h: Bruhat / GL_n(F_q) realisation of H_n(q) as a native route to PSL(2,7)'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-colour
 created_at: 2026-08-07T12:40:00Z
-updated_at: 2026-10-10T13:49:32Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-8lxd
 ---
 
@@ -110,3 +110,7 @@ were run partly against `main` at a different commit.
 
 ## Progress Note (2026-11-16)
 - Formalized Bruhat / GL_3(F_2) = PSL(2,7) order 168 = 7*6*4, 7 Fano points + 7 lines = 14, and Bruhat length polynomial sum_{w in S_3} 2^{l(w)} = 21 complete flags in `QOU/Eightfold/BringThetaBruhatAndMesonH3.lean` (`bruhat_gl3_f2_psl27_and_fano_flag_certificate`) + 50-dps probe `bring_theta_bruhat_and_meson_h3_probe.py` (PR `litlfred/qou#8163`, head `bc5c91877bf9516be8cbcc8cd12c1a6501a5e983`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8163, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

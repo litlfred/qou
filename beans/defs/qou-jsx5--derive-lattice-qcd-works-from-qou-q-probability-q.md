@@ -1,14 +1,14 @@
 ---
 # qou-jsx5
 title: 'DERIVE: lattice-QCD works from QOU — q-probability + q-CLT + O-S reflection positivity'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - 8f-qcd
     - reorg-2026-10-04
 created_at: 2026-08-02T18:14:05Z
-updated_at: 2026-10-10T07:16:08Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-8lxd
 blocked_by:
     - qou-ud3o
@@ -104,3 +104,7 @@ continuum limit = open, coupled to SU(3) (`qou-ni4b`) + Λ_QCD.
 - **Status:** `in-progress` (awaiting human review; no unilateral closure).
 - **PR:** `litlfred/qou#8173` (head `ad97deb87bc648e5c129faba2fa1d69d9619253c`, script commit `bdc558a8f10d26666ba057c81bf22753e6d0aca0`).
 - **Summary:** Formalized discrete Osterwalder-Schrader reflection positivity (non-negative Gram squares and diagonal reflection weights) and q-CLT moment positivity in QOU/Eightfold/BoltzmannOSPositivityAndColourSaddle.lean + 50-dps witness probe in PR litlfred/qou#8173 (head ad97deb87bc648e5c129faba2fa1d69d9619253c).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8173, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

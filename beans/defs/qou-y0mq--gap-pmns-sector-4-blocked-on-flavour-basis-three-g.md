@@ -1,7 +1,7 @@
 ---
 # qou-y0mq
 title: 'GAP: PMNS sector (4) — blocked on flavour basis + three-generation structure'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - 8f-ew
 created_at: 2026-07-31T20:15:08Z
-updated_at: 2026-10-10T18:10:00Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-20sx
 blocked_by:
     - qou-y7vg
@@ -32,3 +32,7 @@ Owner decision 7b (ofri, 2026-10-10): the electroweak (`8f-ew`) beans are groupe
 
 ## Round 66 Update (PR #8239)
 - Formalized in `WeakIsospinGradingColourFibreRoutesLightQuarkExtractionTauLogConvexityAndPmnsCarrier.lean` and verified via 80-dps `mpmath` witness in PR #8239.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8239, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

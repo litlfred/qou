@@ -1,13 +1,13 @@
 ---
 # qou-bfdb
 title: pyhecke.gram.q0 is a float64 module constant reached by ~1027 witness-writing producers
-status: in-progress
+status: todo
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-03T12:47:15Z
-updated_at: 2026-11-17T11:39:37Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-9nnz
 ---
 
@@ -52,3 +52,7 @@ while its docstring still claimed 1.4e-16 agreement, and the real
 divergence was 2288 % (fixed in PR #6489). If this is done as a twin,
 the twin needs a test that fails when the two disagree - not a docstring
 recording a measurement that nothing re-runs.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8324, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

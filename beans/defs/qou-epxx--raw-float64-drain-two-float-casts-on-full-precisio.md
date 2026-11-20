@@ -1,13 +1,13 @@
 ---
 # qou-epxx
 title: 'raw-float64 drain: two float() casts on full-precision inputs — q0_proton in bn_minus_bp_brane_tower_parity_probe (~44 digits lost) and CAL-1 m_e + AME_B in atom_vhyp_bar_trace_test (~2e-17, in the arithmetic not just the witness)'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-26T14:28:50Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-9nnz
 ---
 
@@ -495,3 +495,9 @@ Commit `49df609730`.
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8332, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-09-26: "beans(qou-epxx): the g1 run completed and REFUTED my own prediction -- zero numbers moved"). The work may be partly or fully done. Read the bean before you close it.

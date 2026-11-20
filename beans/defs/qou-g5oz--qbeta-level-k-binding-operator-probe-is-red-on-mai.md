@@ -1,13 +1,13 @@
 ---
 # qou-g5oz
 title: 'qbeta_level_k_binding_operator_probe is RED on main since the ordering ruling: both headline findings are grouped-only, and its witness still says allPassed'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T16:04:30Z
-updated_at: 2026-10-04T15:23:01Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-9nnz
 ---
 
@@ -94,3 +94,7 @@ sympy, scipy and clarabel. `mp.eig` returns a different shape under mpmath
 1.3.0 than 1.4.1 and this probe CRASHES under 1.3.0 (`TypeError: cannot create
 mpf from [mpf(...)]` at line 396). Pinned to 1.4.1, which is what the corpus's
 most recent witnesses record. Nothing in the repo pins it.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8345, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

@@ -1,13 +1,13 @@
 ---
 # qou-ywie
 title: 'GAP: log_ratio_binding_prototype has the same float64 defect as qou-vsqh, in the log channel'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-31T04:26:46Z
-updated_at: 2026-11-18T07:50:47Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-9nnz
 ---
 
@@ -47,3 +47,7 @@ re-run and refresh `log-ratio-binding-prototype.witness.json`. Expect the physic
 numbers not to move and the derivation residual to.
 
 Not fixed in the taxonomy PR: it is a producer + witness change and wants its own.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8391, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

@@ -1,14 +1,14 @@
 ---
 # qou-j3w6
 title: 'DECISION (owner): condition 5 and the eightfold fundamental — keep N=2 + second object W, weaken to epimorphism, top-power Λ^N, or nothing'
-status: in-progress
+status: todo
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
     - 8f-decide
 created_at: 2026-09-03T15:35:48Z
-updated_at: 2026-11-16T18:56:59Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-8lxd
 ---
 
@@ -24,3 +24,9 @@ Owner decision 4d (ofri, 2026-10-10): nothing changes for now. Condition 5 ($\La
 - **Lean 4 formalization of Owner Decision 4d two-object split (`folio/quantum-observable-universe/lean/QOU/Eightfold/FlavourCartanOctetDecuplet.lean`, `0` `sorry`, wired into `QOU.lean`)**:
   - Proves `su6_spin_flavour_56_and_condition5_split`: keeps Condition 5 ($\Lambda^2 V \cong \mathbf{1}$, $N = 2$) on the single-fibre spin/weak module $V$ (where $\dim \Lambda^3 V = \binom{2}{3} = 0$, killing the 3-row antisymmetric spin diagram) while introducing the conditional $N = 3$ flavour module $W$ ($\Lambda^3 W \cong \mathbf{1}$, $\dim \Lambda^3 W = \binom{3}{3} = 1$), and proves that their tensor product $W \otimes V \cong \mathbb{C}^6$ yields the exact ground-state baryon spectrum $\mathrm{Sym}^3(\mathbb{C}^6) = (\mathbf{10}, \mathbf{4}) \oplus (\mathbf{8}, \mathbf{2}) \oplus (\mathbf{1}, \mathbf{0}) = 40 + 16 + 0 = 56$.
 - **Witness (`computations/probes/flavour-cartan-octet-decuplet-degeneration.witness.json`)**: `allPassed: true` (`q0Anchor: "independent"`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8155, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-09-03: "beans(qou-icj2): eightfold session closed — PR #6458 merged, four fronts completed, qou-j3w6 decision left open for the "). The work may be partly or fully done. Read the bean before you close it.

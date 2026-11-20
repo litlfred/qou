@@ -1,7 +1,7 @@
 ---
 # qou-lxh5
 title: Build the level-3 (SU(3)) channel and test it against a colour observable
-status: in-progress
+status: todo
 pr: 8192
 type: task
 priority: normal
@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - 8f-colour
 created_at: 2026-08-16T12:55:00Z
-updated_at: 2026-10-10T17:30:00Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-8lxd
 ---
 
@@ -82,3 +82,7 @@ one).
 - [x] 50-dps `mpmath` probe `computations/probes/cp_bar_parity_level3_channel_and_wigner_s3_pinning_probe.py` and stamped witness `computations/probes/cp-bar-parity-level3-channel-and-wigner-s3-pinning.witness.json` (`allPassed: true`, `scriptHash: d2a06f0c494a`, `scriptCommitSha: c0214e17e49e615dc65e266a92be3d79589d2874`)
 - [x] Opened PR `litlfred/qou#8192` (`82fe2aa092fb7be41555f2084a2891bcea71c295`)
 - [ ] Awaiting merge and final closure verification
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8192, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

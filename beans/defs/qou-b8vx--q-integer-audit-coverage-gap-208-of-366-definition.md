@@ -1,13 +1,13 @@
 ---
 # qou-b8vx
 title: 'q-integer audit coverage gap: 208 of 366 definitions are not symbolically evaluable (q0-pinned or needing module globals) — the convention of those 208 is UNMEASURED'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T14:02:19Z
-updated_at: 2026-10-10T07:55:53Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-4cu3
 ---
 
@@ -533,3 +533,9 @@ the two is how the convention question came to look 57 beans deep. Keep open,
 re-home with `qou-qint`/`qou-gl58`.
 
 Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8319, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-09-13: "audit(qou-b8vx): retract my own "29 genuinely q0-pinned" — 23 were my bug; 81 -> 102"). The work may be partly or fully done. Read the bean before you close it.

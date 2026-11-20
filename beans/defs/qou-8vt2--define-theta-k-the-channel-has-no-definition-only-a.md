@@ -1,14 +1,14 @@
 ---
 # qou-8vt2
 title: 'DEFINE ϑ_K: the channel has no definition for it, only a docstring phrase'
-status: in-progress
+status: todo
 pr: 8245
 type: task
 priority: critical
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T00:00:00Z
-updated_at: 2026-11-17T07:09:00Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-avtq
 ---
 
@@ -937,3 +937,9 @@ Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap 
 
 - [x] PR #8245 (`dea5885f0b662330ff1d63757512b50427bbc370`): formalized `harmonic_sign_flip_forces_diagonal_straddle` and `murakami_colour_boost_forces_n_eq_one` in `QOU/QBeta/ThetaKChannelC3BarParityAndHabiroRigidity.lean` (`0 sorry`, `0 axiom`, `0 vacuity`), backed by 80-dps witness `round53-thetak-c3-barparity-habiro-fermat-fivetwo.witness.json`.
 - [ ] Awaiting Merge Manager integration and owner review (kept `in-progress` per no-unilateral-closure policy).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8245, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-08-08: "beans(qou-8vt2): AV1 resolved NEGATIVE — no glyph collision, and theta_K IS c_3"). The work may be partly or fully done. Read the bean before you close it.

@@ -1,7 +1,7 @@
 ---
 # qou-t0hl
 title: 'V1: close writhe-independence — w(B_3)=0 is DERIVABLE from the gluon unit'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - 8f-open
     - reorg-2026-10-04
 created_at: 2026-08-10T18:23:24Z
-updated_at: 2026-11-16T19:05:33Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-8lxd
 ---
 
@@ -112,3 +112,7 @@ there — its own closing comment points at `factors_through_iff` in
   - Proves by `decide` (`magnusMuBar123_gluon_and_borromean`): `magnusMuBar123 gluonUnit = 0`, `magnusMuBar123 borromean = 1`, and all degree-2 Magnus coefficients (`c12`, `c23`, `c13`) of `borromean(x_2)` vanish.
   - Proves **unconditionally** (`0` assumed hypotheses) `borromean_gluon_unconditional_separating_pair` (`writhe borromean = writhe gluonUnit ∧ magnusMuBar123 borromean ≠ magnusMuBar123 gluonUnit`) and `magnusMuBar123_not_factoring_through_writhe` (`¬ ∃ f : Int → Int, ∀ β : BraidWord, magnusMuBar123 β = f (writhe β)`).
 - **Probe & Witness (`computations/probes/magnus_triple_linking_and_flavour_gradings_probe.py` + `magnus-triple-linking-and-flavour-gradings.witness.json`)**: `allPassed: true` (`q0Anchor: "independent"`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8159, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

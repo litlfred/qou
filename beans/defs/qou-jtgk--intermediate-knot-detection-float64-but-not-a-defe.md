@@ -1,13 +1,13 @@
 ---
 # qou-jtgk
 title: 'intermediate_knot_detection: float64 but NOT a defect — 1.2e-14 worst error at A=40, both verdicts robust, and draining needs hecke_core'
-status: in-progress
+status: todo
 type: task
 priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T13:13:40Z
-updated_at: 2026-10-04T15:25:58Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-9nnz
 ---
 
@@ -80,3 +80,7 @@ the hard part. Worth doing then, not before.
 1.2e-14. Those go through `G @ x` and a norm ratio, which can cancel; I measured
 the **NF vector**, which is what they all derive from, and did not measure them
 separately because `hecke_core.G` has no exact counterpart to compare against.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8349, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

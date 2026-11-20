@@ -1,14 +1,14 @@
 ---
 # qou-yw3v
 title: 'G1-opt1 (flavour Cartan): extend GMN to flavour hypercharge Y_f=B+S+C; derive strangeness S and charm C as KNOT CHARGES (higher Milnor / additional linking invariants) completing Q=I3+(B+S+C)/2. Builds on Y=B=mu-bar_123 (#4597) + T3 (#4618). FLAVOUR SU(3)/SU(4), not colour.'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-flavour
 created_at: 2026-08-02T20:19:12Z
-updated_at: 2026-11-16T18:56:59Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-8lxd
 ---
 
@@ -24,3 +24,7 @@ parent: qou-8lxd
     * all 8 pseudoscalar meson octet states $(K^+, K^0, \pi^+, \pi^0, \eta_8, \pi^-, \bar{K}^0, K^-)$ (`mesonOctet_flavour_cartan_exact`), and
     * 6 charmed baryons $(\Lambda_c^+, \Sigma_c^{++}, \Sigma_c^+, \Sigma_c^0, \Xi_{cc}^{++}, \Omega_c^0)$ (`charmedBaryons_flavour_cartan_exact`).
 - **Probe & Witness (`computations/probes/flavour_cartan_octet_decuplet_degeneration_probe.py` + `flavour-cartan-octet-decuplet-degeneration.witness.json`)**: `allPassed: true` (`36/36` states verified, `q0Anchor: "independent"`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8155, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

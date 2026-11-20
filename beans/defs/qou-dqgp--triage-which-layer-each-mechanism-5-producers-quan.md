@@ -1,13 +1,13 @@
 ---
 # qou-dqgp
 title: 'TRIAGE: which LAYER each mechanism-5 producer''s quantity belongs to'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T19:47:01Z
-updated_at: 2026-10-04T15:14:16Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-10v9
 ---
 
@@ -117,3 +117,7 @@ triage exists to scope, not to perform.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-24 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8332, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

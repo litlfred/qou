@@ -1,13 +1,13 @@
 ---
 # qou-5w53
 title: 'GAP: Δ_λ binding magnitude via extended Bloch group'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T13:22:26Z
-updated_at: 2026-10-04T15:20:35Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-v2om
 ---
 
@@ -45,3 +45,7 @@ CHEAPEST NEXT FOOTHOLD: bean qou-fl4t (restore the DG flattening monomial droppe
 whitehead_c_sigma_torsion.py). Not a per-lambda ansatz, so it escapes #5234's scaling wall,
 and one-loop-triangulation-invariance.witness.json:248 records that the c=1 calibration used
 to justify dropping it cannot detect its absence.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8287, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

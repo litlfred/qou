@@ -1,13 +1,13 @@
 ---
 # qou-y6h7
 title: 'LP degenerates under convention D: dual runs to solver bound because det G = 0 -- re-pose on H_n/rad = TL_n'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-10T02:23:24Z
-updated_at: 2026-10-04T15:21:18Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-cdx1
 ---
 
@@ -250,3 +250,7 @@ rather than defaulted.
 
 Note the sibling's guard has the same latent ambiguity and was presumably
 written for the same reason; whichever answer is right probably applies to both.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8423, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

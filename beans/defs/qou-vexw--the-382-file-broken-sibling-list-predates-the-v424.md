@@ -1,13 +1,13 @@
 ---
 # qou-vexw
 title: The 382-file broken-sibling list predates the v4.24 lambda reservation, so it undercounts
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T11:50:38Z
-updated_at: 2026-10-04T15:24:51Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-trd0
 ---
 
@@ -73,3 +73,7 @@ shorter path is what `AGENTS.md` implies and it silently yields
 **Scope note (a):** this is "the census is stale", not "the corpus is more
 broken than believed" — the delta is unmeasured, and step 1 is what measures
 it. It could be small.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8411, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

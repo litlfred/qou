@@ -1,13 +1,13 @@
 ---
 # qou-rj7d
 title: 'The 60-dps record of a SHORT decimal: 734 confirmed fields the float64-padding ratchet cannot see, including CAL-1 m_e'
-status: in-progress
+status: todo
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T08:40:07Z
-updated_at: 2026-11-18T07:38:33Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-9nnz
 ---
 
@@ -144,3 +144,7 @@ gain, and it should be the owner's call rather than a consequence of this bean.
 
 Probe (scratch, not committed): the two-pass script is reproducible from the
 description above; the exact test is ~40 lines.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8388, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

@@ -1,13 +1,13 @@
 ---
 # qou-m7py
 title: 'D2: Rust gram.rs TR_M[5]=z^3 bug is load-bearing under convention D'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-14T16:21:57Z
-updated_at: 2026-10-10T13:20:00Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-cdx1
 ---
 
@@ -542,3 +542,9 @@ Probe `computations/probes/v9_element_ybe_structure_probe.py`, 5/5, exact sympy 
 column work `L·Catalan(A)` ≈ 780 × 2.6e21. No route to A = 40 was found. Scope (a): this is about the
 v9 element *as constructed*; whether a strand-labelled element (a modelling change, owner's call)
 would be integrable is untested.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8378, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-08-15: "docs(pyhecke-native): native gram path ENABLED — qou-m7py resolved"). The work may be partly or fully done. Read the bean before you close it.

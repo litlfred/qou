@@ -1,13 +1,13 @@
 ---
 # qou-85o2
 title: canonical-isotope-witness Z21-Z99 (98 shards) predate the C-excision; a spot re-run moved 2.19x and the cause is NOT isolated
-status: in-progress
+status: todo
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T08:08:03Z
-updated_at: 2026-10-04T15:15:36Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-v2om
 ---
 
@@ -137,3 +137,7 @@ one. Now installed via `sys.modules` pre-registration (cannot be overtaken)
 plus an assertion on each module's `__file__` before any number is trusted.
 An attribution probe that cannot prove its counterfactual took effect is worse
 than no probe.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8296, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

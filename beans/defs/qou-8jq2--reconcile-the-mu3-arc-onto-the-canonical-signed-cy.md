@@ -1,13 +1,13 @@
 ---
 # qou-8jq2
 title: Reconcile the mu3 arc onto the canonical signed cyclic Markov trace (non-cyclic perblock vs tr_M)
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T09:09:03Z
-updated_at: 2026-11-16T19:15:00Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-rtxm
 ---
 
@@ -81,3 +81,7 @@ A=3 words can be re-expressed Brunnian-ly, which would collapse the question ent
 ## 2026-11-16 — Signed Cyclic Markov Trace vs Non-Cyclic Per-Block Modulus Readout in Lean (PR #8162)
 - Formalized `signed_trace_abs_le_perblock_modulus` (`|y₁ · c₁ + y₂ · c₂| ≤ y₁ · |c₁| + y₂ · |c₂|` for `y₁, y₂ ≥ 0`) and `perblock_modulus_overshoot_and_nonadditivity_witness` (strict inequality on opposite-sign block characters and explicit refutation of additivity for `T_abs`) in `folio/quantum-observable-universe/lean/QOU/Foundations/WenzlTemperleyLiebH4Keystone.lean` (wired into `QOU.lean`, 0 `sorry`).
 - PR: https://github.com/litlfred/qou/pull/8162 (commit `f3dcbfe5fb51a67f3233319674c13a3791ba91d2`). Status kept `in-progress`.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8162, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

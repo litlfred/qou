@@ -1,13 +1,13 @@
 ---
 # qou-yzl8
 title: 'main is RED: QJucysMurphy.lean uses ring on a NONCOMMUTATIVE algebra — 6 sites, none compile'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T13:30:42Z
-updated_at: 2026-10-04T15:21:24Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-5vkl
 ---
 
@@ -55,3 +55,7 @@ report that its owner can act on -- rather than editing a sibling's
 bean or its code.
 
 - **Round 96 PR (`litlfred/qou#8510`)**: Formalized `NoncommutativeTacticSiteLedger`, `canonicalNoncommutativeTacticSiteLedger`, `noncommutative_tactic_double_and_cascade_recovery`, and `noncommutative_site_cubic_factorization` in `QOU.Foundations.AnchorRefillArrivalPartitionUnifiedIterativeTableOrphanAuditEnvironmentVersionCensusNoncommutativeTacticSiteAuditScriptSweeperRootDiscrepancy` with 80-dps witness (`HEAD = 9861bd624187df98849a08e324f09311a00ff969`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8510, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

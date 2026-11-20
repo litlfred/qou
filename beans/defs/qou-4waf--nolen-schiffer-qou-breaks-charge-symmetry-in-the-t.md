@@ -1,13 +1,13 @@
 ---
 # qou-4waf
 title: 'Nolen-Schiffer: QOU breaks charge symmetry in the TOPOLOGICAL channel, not the flavour channel'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T10:23:06Z
-updated_at: 2026-10-04T15:21:42Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-10v9
 ---
 
@@ -177,3 +177,7 @@ needs its own argument, which is the same place the r0=1.2 fm formula fails.
 
 ## Round 69 Update (PR #8249)
 - Formalized in `ToffoliDimensionMismatchHeckeOffsetHypernuclearRatioNielsenThurstonAndNolenSchiffer.lean` and verified via 80-dps `mpmath` witness in PR #8249.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8249, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

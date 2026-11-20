@@ -1,14 +1,14 @@
 ---
 # qou-wyy9
 title: 'G1-opt3 (flavour Cartan): flavour SU(3)/SU(4) eightfold-way weight lattice from the Bring/icosahedral SUBSTRATE geometry (qou-d7h1 #4600; Elliott SU(3) q=1 corner). S,C = weights in the framework''s own geometry. Framework-native, harder.'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-flavour
 created_at: 2026-08-02T20:19:12Z
-updated_at: 2026-11-16T19:05:33Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-8lxd
 blocked_by:
     - qou-8pl3
@@ -44,3 +44,7 @@ fan: `qou-yw3v` (opt1), `qou-n6ls` (opt2), `qou-10zv` (opt4).
     * $\mathbf{20}_M = 8_{C=0} + (6 + \bar{3})_{C=1} + 3_{C=2} = 8 + 9 + 3 = 20$ ($J = 1/2$ charmed baryon tower),
     * $\mathbf{4}_A = 1_{C=0} + 3_{C=1} = 4$.
 - **Witness (`computations/probes/magnus-triple-linking-and-flavour-gradings.witness.json`)**: `allPassed: true` (`q0Anchor: "independent"`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8159, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

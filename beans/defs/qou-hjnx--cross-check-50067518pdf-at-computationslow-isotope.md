@@ -1,14 +1,14 @@
 ---
 # qou-hjnx
 title: Cross-check 50067518.pdf at computations/low_isotope_mass_table.py
-status: in-progress
+status: todo
 pr: 8380
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:36:35Z
-updated_at: 2026-10-04T15:18:21Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-8hur
 ---
 
@@ -36,3 +36,7 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 - [x] Non-vacuous Lean 4.24.0 theorems proved (`0` `sorry`, `0` `axiom`, `0` directory-mode audit advisories)
 - [x] 80-dps `mpmath` probe and 2-commit witness stamped (`35b03645ad735c533bdb60a9a19a56165e5833fa`, `scriptHash: 197841ead85d03085a06e8bf1a078fa708f1da7e60c96d98a12ad24512b472a1`)
 - [ ] Awaiting Merge Manager merge of `litlfred/qou#8380`
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8380, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

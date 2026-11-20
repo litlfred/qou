@@ -1,13 +1,13 @@
 ---
 # qou-pb4c
 title: 'Downstream of the convention-D chi-matrix-m migration: 23 consumers, 14 witnesses, tr_M moved 15.4%'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T14:18:01Z
-updated_at: 2026-10-04T15:18:54Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-cdx1
 ---
 
@@ -105,3 +105,7 @@ separately if it is not already covered.
    order, record the per-quantity ppm/percent movement.
 3. Report the impact by *physical quantity*, not by file count — the
    `qou-eea0` "total impact" standard.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8384, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

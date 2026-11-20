@@ -1,14 +1,14 @@
 ---
 # qou-ohl6
 title: Cross-check 0706.2213v3.pdf at computations/one_loop_torsion.py (and the two implementations its …
-status: in-progress
+status: todo
 pr: 8386
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T16:12:54Z
-updated_at: 2026-10-04T15:18:15Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-8hur
 ---
 
@@ -30,3 +30,7 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 - [x] Non-vacuous Lean 4.24.0 theorems proved (`0` `sorry`, `0` `axiom`, `0` directory-mode audit advisories)
 - [x] 80-dps `mpmath` probe and 2-commit witness stamped (`dc2e35b36f4ebb7e9b1575a73bdbe33cb67ee130`, `scriptHash: 2ebaf0631eb0504b9d6d5bd79a3a8425d49d4ffed0fadf6b52c241edb18846dc`)
 - [ ] Awaiting Merge Manager merge of `litlfred/qou#8386`
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8386, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

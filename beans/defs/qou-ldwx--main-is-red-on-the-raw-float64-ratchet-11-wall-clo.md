@@ -1,13 +1,13 @@
 ---
 # qou-ldwx
 title: 'main is RED on the raw-float64 ratchet: 11 wall-clock ''seconds'' fields in an otherwise exemplary NO-FLOAT64 witness'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T14:35:27Z
-updated_at: 2026-10-04T15:21:24Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-9nnz
 ---
 
@@ -89,3 +89,7 @@ which main adds raw-float64 fields that no producer-side fix catches". The
 commit is immutable; this entry is the correction of record. The PR body for
 #7318 says only that the entries are inherited and byte-identical, which is
 accurate and needs no change.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8378, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

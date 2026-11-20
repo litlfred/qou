@@ -1,13 +1,13 @@
 ---
 # qou-ju05
 title: 'B (convention C): 14 actionable z_C sites + 2 C-specialised closed forms'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-25T16:31:28Z
-updated_at: 2026-10-04T15:16:31Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-cdx1
 ---
 
@@ -51,3 +51,7 @@ CORROBORATION: their bean qou-lp5d reaches this bean's 'unmigratable by
 substitution' conclusion by symbolic measurement — z_C is bar-EVEN, z_D is
 neither, and ord(z - 1/2) at q=1 is 2 for C against 1 for D — where this bean
 argued it from decayLadder_zC_threeRow_ne_zero. Two independent routes.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8357, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

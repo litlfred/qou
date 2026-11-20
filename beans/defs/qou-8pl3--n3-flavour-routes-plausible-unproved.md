@@ -1,14 +1,14 @@
 ---
 # qou-8pl3
 title: 'PLAUSIBLE-NOT-PROVED: routes to N = 3 for the flavour fundamental'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-flavour
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-11-16T18:56:59Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-8lxd
 ---
 
@@ -496,3 +496,7 @@ docs/audits/2026-09-03-fibre-functors-do-not-change-the-category.md §4.
 - **Lean 4 formalization (`folio/quantum-observable-universe/lean/QOU/Eightfold/FlavourCartanOctetDecuplet.lean`, `0` `sorry`, wired into `QOU.lean`)**:
   - Proves `su6_spin_flavour_56_and_condition5_split` combining the single-fibre $N = 2$ row-cap (`weylDimSym3 2 = 4`, `weylDimMixed3 2 = 2`, `weylDimAlt3 2 = 0`) with the $N = 3$ flavour object $W$ (`weylDimSym3 3 = 10`, `weylDimMixed3 3 = 8`, `weylDimAlt3 3 = 1`, $10 + 2 \times 8 + 1 = 27$) to establish the Kronecker decomposition $\dim \mathrm{Sym}^3(\mathbb{C}^3 \otimes \mathbb{C}^2) = 10 \times 4 + 8 \times 2 + 1 \times 0 = 56$.
 - **Witness (`computations/probes/flavour-cartan-octet-decuplet-degeneration.witness.json`)**: `allPassed: true` (`q0Anchor: "independent"`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8155, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

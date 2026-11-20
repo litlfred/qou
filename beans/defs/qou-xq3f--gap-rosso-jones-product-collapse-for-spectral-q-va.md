@@ -1,13 +1,13 @@
 ---
 # qou-xq3f
 title: 'GAP: Rosso-Jones product-collapse for spectral Q-value decomposition (Lean)'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-22T19:36:58Z
-updated_at: 2026-11-17T08:44:47Z
+updated_at: 2026-11-20T16:06:50Z
 parent: b9cj
 ---
 
@@ -205,3 +205,9 @@ GENERAL-X TELESCOPE COMPLETE (sorry-free, all 4 bricks): telescope_generalX prov
 - **PR**: [`litlfred/qou#8288`](https://github.com/litlfred/qou/pull/8288) (`feat/qou-b9cj-6poy-q64u-regz-w3eg-xq3f`, HEAD `3f9d9bb7e2af7c3353cc2779b429d84aae572cda`).
 - **Lean Module**: `folio/quantum-observable-universe/lean/QOU/QBeta/NeumannZagierDeterminantAndVassilievMilnorBrick.lean` (wired into `QOU.lean`, compiled with Lean 4.24.0, 0 findings across all 7 static Lean audits).
 - **80-dps Probe & Witness**: `computations/probes/neumann_zagier_determinant_and_vassiliev_milnor_brick_probe.py` & `computations/probes/neumann-zagier-determinant-and-vassiliev-milnor-brick.witness.json` (`scriptCommitSha = b4b438fbfa2d06efdb0e7b096ec45a7a03973e2b`, `scriptHash = cf7e93178098`, `outputHash = c7210b5eb72906d3c61c7e19a0c46a0a3457be0f703d99c7dd7475108da381b1`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8288, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-08-28: "beans(qou-xq3f): record general telescope already proved; re-scope T-n1 to carrier bridge"). The work may be partly or fully done. Read the bean before you close it.

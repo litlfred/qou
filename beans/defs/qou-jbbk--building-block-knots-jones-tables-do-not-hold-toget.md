@@ -1,7 +1,7 @@
 ---
 # qou-jbbk
 title: 'The building-block-knots Jones tables do not hold together: two printed values are unattainable by their own polynomials, and seven rows carry a q^{1-g^2} shift'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
@@ -10,7 +10,7 @@ tags:
     - knot-theory
     - numerics
 created_at: 2026-08-22T06:45:00Z
-updated_at: 2026-10-04T15:24:51Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-mub3
 ---
 
@@ -151,3 +151,7 @@ these six values would still be wrong afterwards.
 
 `main` touched none of this bean's files (`building-block-knots-table{1,3,5}-data`),
 so nothing here is stale.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8480, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

@@ -1,13 +1,13 @@
 ---
 # qou-kn46
 title: raw-float64 ratchet baseline is calibrated on STALE witnesses, so a refresh reads as a regression
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T07:39:37Z
-updated_at: 2026-10-04T15:23:11Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-9nnz
 ---
 
@@ -68,3 +68,7 @@ happened to be serialized with a decimal point. Both are equally red.
    integer should still be serialized as an int), but it turns a red
    "precision regression" into an accurate "exactness regression", which
    is a different and much cheaper fix.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8357, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

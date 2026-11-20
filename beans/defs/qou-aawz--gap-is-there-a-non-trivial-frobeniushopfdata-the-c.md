@@ -1,13 +1,13 @@
 ---
 # qou-aawz
 title: 'GAP: is there a NON-TRIVIAL FrobeniusHopfData? the corpus only exhibits A = 1'
-status: in-progress
+status: todo
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T19:59:47Z
-updated_at: 2026-11-20T09:00:00Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-ddmn
 ---
 
@@ -192,3 +192,7 @@ entirely on the trivial object, exactly as when this bean was opened.
 
 ## Note from W12 (2026-11-20, PR #8537) — informational, status untouched
 `QOU.IdemLine.model` (in `FrobeniusHopfNilpotentAndNonFieldModel.lean`) is a sorry-free `FrobeniusHopfData` — all six antipode laws, Frobenius relation, snakes — on an object A = eR that is NOT isomorphic to 𝟙 and not zero (any commutative ring with an idempotent e ∉ {0,1}, e.g. S × S). So "the corpus only exhibits A = 1" no longer holds literally. It does not close this bean's intent: A is a proper summand of 𝟙, and `retract_of_unit` proves every model satisfying `ConvolutionLeft` is a retract of 𝟙. The `k[G]` question (anti-automorphism package without ConvolutionLeft) is untouched.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8448, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

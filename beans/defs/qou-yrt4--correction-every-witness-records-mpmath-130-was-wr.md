@@ -1,13 +1,13 @@
 ---
 # qou-yrt4
 title: 'CORRECTION: ''every witness records mpmath 1.3.0'' was wrong -- 703 already record 1.4.1, and a migration is in flight'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T20:20:48Z
-updated_at: 2026-10-04T15:18:12Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-5vkl
 ---
 
@@ -54,3 +54,7 @@ Found while checking whether my v-hat conversion broke a consumer control arm
 v-hat-z-transfer-phase5d-4.witness.json is its own producer.
 
 - **Round 96 PR (`litlfred/qou#8510`)**: Formalized `EnvironmentVersionCensusLedger`, `canonicalEnvironmentVersionCensusLedger`, `environment_census_polarization`, and `environment_census_diff_sq` in `QOU.Foundations.AnchorRefillArrivalPartitionUnifiedIterativeTableOrphanAuditEnvironmentVersionCensusNoncommutativeTacticSiteAuditScriptSweeperRootDiscrepancy` with 80-dps witness (`HEAD = 9861bd624187df98849a08e324f09311a00ff969`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8510, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

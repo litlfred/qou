@@ -1,13 +1,13 @@
 ---
 # qou-7e67
 title: 'A^(1/3): owner-approved plan -- tier+halt propagation, scope-restrict, derive archimedean id, binding-derived size; NO measured-radius input'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T11:51:31Z
-updated_at: 2026-10-04T15:16:13Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-v2om
 ---
 
@@ -98,3 +98,7 @@ which the framework can quote a validated Coulomb energy. Below ~12 the radius
 law is the wrong form; at and above ~12 the radius law is fine but the
 coordination law is unresolved AND the exact-trace validation is out of reach.
 State that limitation wherever a Coulomb number is published.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8292, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

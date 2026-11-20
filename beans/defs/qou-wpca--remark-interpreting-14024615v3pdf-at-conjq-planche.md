@@ -1,14 +1,14 @@
 ---
 # qou-wpca
 title: Remark interpreting 1402.4615v3.pdf at conj:q-plancherel-asymptotic-skeleton
-status: in-progress
+status: todo
 pr: 8431
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T16:13:10Z
-updated_at: 2026-11-18T10:40:05Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-aqfj
 ---
 
@@ -37,3 +37,7 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 - Formalized in `folio/quantum-observable-universe/lean/QOU/QBeta/AnisotropicContentHelicityOhtsukiQBorelRound72.lean` (wired into `folio/quantum-observable-universe/lean/QOU.lean`).
 - Verified at 80-dps precision in `computations/probes/round72_anisotropic_content_helicity_ohtsuki_qborel_probe.py` with 2-commit witness `computations/probes/round72-anisotropic-content-helicity-ohtsuki-qborel.witness.json`.
 - PR: https://github.com/litlfred/qou/pull/8431 (`ready: 9f16804370f4cb20ca3c9ba012e7448a071f0f7c`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8431, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

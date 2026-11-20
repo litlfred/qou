@@ -1,14 +1,14 @@
 ---
 # qou-d7h1
 title: 'GAP: Eightfold Way flavor SU(3) from QOU components — distinguish from colour SU(3), then derive octet/decuplet organization'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-flavour
 created_at: 2026-08-02T17:29:24Z
-updated_at: 2026-11-16T18:56:59Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-8lxd
 ---
 
@@ -461,3 +461,9 @@ Was in-progress with no bean update since 2026-09-05 and no main commit naming i
   - Explicitly separates colour $\mathrm{SU}(3)_c$ (locked in the 1-dimensional totally antisymmetric baryon singlet $\Lambda^3(\mathbf{3}_c) = \mathbf{1}_c$, `weylDimAlt3 3 = 1`, carrying $I_3 = S = C = 0$) from flavour $\mathrm{SU}(3)_f$ (carrying $(2I_3, Y_f = B + S + C)$ across `baryonOctet`, `baryonDecuplet`, and `mesonOctet`).
   - Proves `su6_spin_flavour_56_and_condition5_split`: because $\Lambda^3(\mathbf{3}_c) = \mathbf{1}_c$ is totally antisymmetric, Fermi statistics forces the $L = 0$ spin-flavour wave function in $W_{\mathrm{flavour}} \otimes V_{\mathrm{spin}} \cong \mathbb{C}^3 \otimes \mathbb{C}^2 \cong \mathbb{C}^6$ to lie in $\mathrm{Sym}^3(\mathbb{C}^6)$ of dimension $\binom{8}{3} = 56$. Pairing identical $S_3$ Young diagrams $(3) \otimes (3)$, $(2,1) \otimes (2,1)$, and $(1^3) \otimes (1^3)$ gives $10 \times 4 + 8 \times 2 + 1 \times 0 = 40 + 16 + 0 = 56$ — deriving the ground-state baryon octet ($J = 1/2$) and decuplet ($J = 3/2$) while excluding an $L = 0$ flavour singlet because $\dim \Lambda^3(\mathbb{C}^2_{\mathrm{spin}}) = \binom{2}{3} = 0$.
 - **Witness (`computations/probes/flavour-cartan-octet-decuplet-degeneration.witness.json`)**: `allPassed: true` (`q0Anchor: "independent"`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8155, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-08-25: "content(qou-d7h1): wire the proved gate scope into the chapter; inventory overturns the recorded gap list"). The work may be partly or fully done. Read the bean before you close it.

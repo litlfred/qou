@@ -1,13 +1,13 @@
 ---
 # qou-tfv2
 title: 'GAP: ground_state_ordering_argmin_sweep fails its own cross-check at 28% on main'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T11:05:30Z
-updated_at: 2026-10-04T15:20:03Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-trd0
 ---
 
@@ -55,3 +55,7 @@ Determine which side is wrong. The `corpus` side reads committed values; the
 `closed` side evaluates the closed form in-file. Given `qou-5t68` (a committed
 upstream 17–23% stale) the corpus side is not automatically the reference —
 establish which is authoritative before "fixing" either to match the other.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8407, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

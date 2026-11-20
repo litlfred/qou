@@ -1,13 +1,13 @@
 ---
 # qou-2joi
 title: y_lambda closed form cites the wrong Lusztig paper; BLM is absent and the DOI contradicts itself
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T13:20:20Z
-updated_at: 2026-10-04T15:14:28Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-q4oa
 ---
 
@@ -203,3 +203,9 @@ Was in-progress with no bean update since 2026-08-24 and no main commit naming i
 ## Progress (PR #8443)
 - Formalized in `folio/quantum-observable-universe/lean/QOU/Eightfold/BarParityReadoutPartitionWeightBraidedTraceSurfaceGenusPolarizationPair.lean` (wired in `QOU.lean`).
 - 80-dps numerical witness stamped in `computations/probes/qou_10v9_2djn_2joi_4khc_51l1_8ava_probe.witness.json` (`Commit 1` = `76eb5ed3bb589e3c0713062c1916ff3df6e16b60`, `HEAD` = `bd4d50a998e0b0519e966f309ff7ef17c810abac`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8443, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-08-24: "bean(qou-2joi): both disagreements resolved; the straddle is a class of 11"). The work may be partly or fully done. Read the bean before you close it.

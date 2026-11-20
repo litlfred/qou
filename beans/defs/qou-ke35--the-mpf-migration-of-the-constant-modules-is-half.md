@@ -1,11 +1,11 @@
 ---
 # qou-ke35
 title: The mpf migration of the constant modules is HALF DONE, and a consumer that never raises mp.dps now records 15 digits where it used to record 17
-status: in-progress
+status: todo
 type: task
 priority: high
 created_at: 2026-09-13T16:24:39Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-9nnz
 ---
 
@@ -209,3 +209,9 @@ general explanation.
 ## Parented 2026-11-15 (owner-approved bean triage)
 
 Parent `(none)` → `qou-9nnz`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8357, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-09-14: "beans(qou-ke35, qou-sogb): the constant modules' mpf migration is half done — and my r5 lead from it is ruled out, teste"). The work may be partly or fully done. Read the bean before you close it.

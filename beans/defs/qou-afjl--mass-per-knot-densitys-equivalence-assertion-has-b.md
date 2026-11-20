@@ -1,13 +1,13 @@
 ---
 # qou-afjl
 title: mass_per_knot_density's equivalence assertion has been RED on main since 2026-08-21 — a commit called it a rename, but the old name now means a different density
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T04:49:12Z
-updated_at: 2026-10-04T15:21:30Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-9nnz
 ---
 
@@ -256,3 +256,7 @@ which normaliser does `tr_M(𝓑₃)` take in the canonical chain, and why does 
 sorry-free Lean closed form not reproduce it? The table is computed in
 `mass_per_knot_density.py` rather than quoted, so it cannot go stale against the
 functions it describes.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8319, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

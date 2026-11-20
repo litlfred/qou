@@ -1,13 +1,13 @@
 ---
 # qou-ezne
 title: 'CITE: Riera-Rodriguez 1992 §2 sources the unsourced 240 and B = Delta/Gamma — M — EmCouplingBringZeroMode.lean, em-coupling-bring-zero-mode.md'
-status: in-progress
+status: todo
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:03:28Z
-updated_at: 2026-10-04T15:14:45Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-mub3
 ---
 
@@ -64,3 +64,7 @@ assumptions into cited classical literature — the honest tier for an imported 
 
 Found by the citation-gap sweep, `docs/audits/2026-09-04-citation-gap-inventory.md`;
 first spotted in `docs/audits/2026-09-04-how-the-hyperbolic-volume-could-arise-from-qou.md` §4.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8480, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

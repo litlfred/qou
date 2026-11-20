@@ -1,13 +1,13 @@
 ---
 # qou-8r6b
 title: 'Pose the composition feasibility program: variable = interface letter (1−e)σ + eσ⁻¹, feasible set = reading 3 on the composite; first enumeration at A=2'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-16T05:49:42Z
-updated_at: 2026-11-15T17:25:00Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-v2om
 ---
 
@@ -29,3 +29,7 @@ The owner ruled that the γγ selection rule also covers the nuclear bond letter
 
 ## 2026-10-12 — SCOPE CORRECTION of the A = 2 parity finding (convolution flow)
 'Every odd power fails on (5,1)' was measured for |m| ≤ 3 only, and is FALSE beyond it. Exact split (ConvolutionFlowParity.lean, exit 0; probe convolution_flow_parity_probe.py 5/5): χ(Wσ^m) = q^m a_S + (−q⁻¹)^m a_A with (5,1) a_S = 0.021792, a_A = 0.700431. Odd m infeasible iff q^{2m} < a_A/a_S ≈ 32.1, i.e. m < 16.63: odd m ≤ 15 fail, odd m ≥ 17 feasible (checked directly at m = 17). Even m ≥ 0 all feasible; negative odd m fail. Feasible power letters for m ∈ [−8, 20]: −8,−6,−4,−2, 0..16 even, 17..20. The parity is the cos(πt) of the convolution flow σ^t = q^t P_S + q^{−t} e^{±iπt} P_A, and it holds only until the Sym channel's q^{2m} overtakes a_A/a_S. Not fitted; no letter selected.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8308, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

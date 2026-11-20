@@ -1,13 +1,13 @@
 ---
 # qou-omr7
 title: 'Magnus probes: d_q was the hook product, weight inverted (4 files)'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-03T04:40:28Z
-updated_at: 2026-10-04T15:13:17Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-m6dn
 ---
 
@@ -270,3 +270,9 @@ Was in-progress with no bean update since 2026-09-11 and no main commit naming i
 ## Progress Update (Round 91 — lane-cf11)
 - Formalized in `folio/quantum-observable-universe/lean/QOU/QBeta/HookEvenMomentAndBorromeanTripleBrick.lean` with 80-dps probe `computations/probes/hook_even_moment_and_borromean_triple_brick_probe.py` and witness `computations/probes/hook-even-moment-and-borromean-triple-brick.witness.json`.
 - PR: https://github.com/litlfred/qou/pull/8343 (`feat/qou-b9cj-ogrk-ohaz-omr7-ooqh-po72`, HEAD `8c185bc247a4dfba4e6316715175039c0defb340`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8343, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-09-04: "beans(qou-omr7): he4-sparse complete, and this bean's own "2 of 4" count was wrong"). The work may be partly or fully done. Read the bean before you close it.

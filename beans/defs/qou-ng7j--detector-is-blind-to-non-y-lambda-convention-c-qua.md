@@ -1,13 +1,13 @@
 ---
 # qou-ng7j
 title: Detector is blind to non-y_lambda convention-C quantities (tr_M, z); Schur-Weyl is the real per-weight test
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-10T18:42:38Z
-updated_at: 2026-10-10T07:47:08Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-cdx1
 ---
 
@@ -407,3 +407,9 @@ payload field `cache_convention_normalised`, live verdict correctly unchanged.
 3. **The blindness this bean is actually titled for is untouched**: a bare
    `tr_M` or `z` value still looks identical under either convention, and only
    producer provenance fixes it. Nothing above changes that.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8378, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-09-15: "excise(qou-ng7j): the z row closes too — 16 convention-C z values in unlabelled fields"). The work may be partly or fully done. Read the bean before you close it.

@@ -1,13 +1,13 @@
 ---
 # qou-qs1x
 title: 'GAP: flavour readout from γγ needs a word (product) of letters, and the photon letter orientation is underived'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - quark-state
 created_at: 2026-11-15T08:45:00Z
-updated_at: 2026-11-15T08:45:00Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-usxh
 ---
 
@@ -47,3 +47,7 @@ Open:
 ## 2026-11-15 — γγ-built nucleon (PR #7741, `h2_gg_atom/`, `h2_gg_electron/`; owner decision C)
 
 On three strands every γγ word is a power of V = σ₀σ₁⁻¹, so a γγ-built nucleon is V^m. Pre-registered and measured: only V³ and V⁶ pass reading 3 at every level (m = 3…7); proton and neutron are then the same word, so there is no flavour on three strands. With a γγ electron (V³ or V⁶) H₂ passes every level and the only passing bond is V³. Every γγ word has χ_(1³) = 1 (#7896). Scope (a). Bearing on this bean: a three-strand γγ word cannot carry a flavour bit; per-letter readout needs letters outside V or more strands.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8439, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

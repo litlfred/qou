@@ -1,13 +1,13 @@
 ---
 # qou-slpd
 title: 'ROAST: slope ½ is a definition, not a derivation — and the two ½s are order vs level'
-status: in-progress
+status: todo
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T02:00:00Z
-updated_at: 2026-10-04T15:15:05Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-q4oa
 ---
 
@@ -282,3 +282,9 @@ Unclaimed. Status moved `in-progress` → `todo`.
 ## Progress (PR #8457)
 - Formalized in `folio/quantum-observable-universe/lean/QOU/Eightfold/PairingSpaceActionRetypeRuledOddProjectionLetterInvolutionPullbackQuotientKernelMultiplierSlope.lean` (wired in `QOU.lean`).
 - 80-dps numerical witness stamped in `computations/probes/qou_10v9_h0ou_hlx8_hlxp_i9gk_slpd_probe.witness.json` (`Commit 1` = `6615e05829d98e7dc8f3151a6136022620b0fa75`, `HEAD` = `87f824354a46b08a4af8436ed872967b2f3dfc59`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8457, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-08-08: "lean(qou-slpd): the Newton slope is the q-Gevrey LEVEL — item 5, chain closed"). The work may be partly or fully done. Read the bean before you close it.

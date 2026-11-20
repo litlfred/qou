@@ -1,13 +1,13 @@
 ---
 # qou-soj6
 title: 'GAP: braid_encoding_audit has ZERO assertions and reports allPassed=true'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T15:12:00Z
-updated_at: 2026-10-04T15:19:47Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-trd0
 ---
 
@@ -125,3 +125,7 @@ in the tree (`…62285923893` in the census, `…62380758782` in a live assertio
 and `gap_a4_T2_per_knot_vol_probe_perknot_rerun`'s `*_matches_documented`
 assertions were **already red before** the regeneration — they report a real
 disagreement and must not be re-pinned. Full measurement on `qou-7zff`.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8407, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

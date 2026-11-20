@@ -1,14 +1,14 @@
 ---
 # qou-buxs
 title: 'Delta_lambda binding sign = chiral T3 / Wigner-SU(4) grading (qou-20sx child). The 6 failed ansatze + retracted deuteron closure supplied non-negative MAGNITUDE (|Delta_lambda|=dim, gluonic/colour); the missing MIXED-SIGN structure sgn(w0^{S_lambda''}) (n=3:1+/2-, n=6:6+/5-, PROBE-4) is the chiral T3 grading (weak force is chiral). TEST: does the derived weak-isospin T3 (qou-tdrd) reproduce the mixed-sign Delta_lambda pattern? Would close Delta_lambda (Track-A blocker) + charm/strange + EW with ONE object. Framework hook: QOU.MassTheory.SU4SupermultipletGate. Chiral-EFT lit: arXiv:0811.1338 (Epelbaum-Hammer-Meissner RMP 2009), 1105.2919 (Machleidt-Entem).'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-ew
 created_at: 2026-08-02T19:31:44Z
-updated_at: 2026-10-10T18:10:00Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-20sx
 ---
 
@@ -39,3 +39,9 @@ Owner decision 7b (ofri, 2026-10-10): the electroweak (`8f-ew`) beans are groupe
 - **Status:** `in-progress` (awaiting human review; no unilateral closure).
 - **PR:** `litlfred/qou#8173` (head `ad97deb87bc648e5c129faba2fa1d69d9619253c`, script commit `bdc558a8f10d26666ba057c81bf22753e6d0aca0`).
 - **Summary:** Formalized chiral T3 / Wigner-SU(4) grading sign and binding anomaly sign alignment in QOU/Eightfold/BoltzmannOSPositivityAndColourSaddle.lean + 50-dps witness probe in PR litlfred/qou#8173 (head ad97deb87bc648e5c129faba2fa1d69d9619253c).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8173, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-08-29: "qou-buxs: caveat 3 resolved by corpus-grep, and it resolves NEGATIVELY"). The work may be partly or fully done. Read the bean before you close it.

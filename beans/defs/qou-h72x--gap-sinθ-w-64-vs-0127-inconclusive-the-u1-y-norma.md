@@ -1,7 +1,7 @@
 ---
 # qou-h72x
 title: 'GAP: sin²θ_W — 64 % vs 0.127 % (inconclusive); the U(1)_Y normalisation inherits open Y and N=3'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - sm-26
     - reorg-2026-10-04
 created_at: 2026-09-03T08:31:35Z
-updated_at: 2026-10-10T18:10:00Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-20sx
 blocked_by:
     - qou-q377
@@ -35,3 +35,7 @@ Owner decision 7b (ofri, 2026-10-10): the electroweak (`8f-ew`) beans are groupe
 
 ## Implementation Note (PR #8232)
 - Implemented in `folio/quantum-observable-universe/lean/QOU/Eightfold/HeavyQuarkDoubletObstructionFreezeOutTruncationWeinbergBlockNormCkmParameterCountAndNeutrinoZeroVolume.lean` and `computations/probes/heavy_quark_doublet_obstruction_freeze_out_truncation_weinberg_block_norm_ckm_parameter_count_and_neutrino_zero_volume_probe.py` (witness `computations/probes/heavy-quark-doublet-obstruction-freeze-out-truncation-weinberg-block-norm-ckm-parameter-count-and-neutrino-zero-volume.witness.json`, `5c9df8778eb7e1128541cebe1318fc29ba5b5b7e`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8232, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

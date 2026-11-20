@@ -1,13 +1,13 @@
 ---
 # qou-7q3s
 title: Cross-check 0401068v1 (1).pdf at computations/aj_masbaum_crosscheck.py
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T16:12:44Z
-updated_at: 2026-11-17T11:44:32Z
+updated_at: 2026-11-20T16:06:50Z
 pr: 8325
 parent: qou-8hur
 ---
@@ -34,3 +34,7 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 
 ### Progress (Round 61)
 - Formalized Lean 4 theorems, 80-dps mpmath probe, and 2-commit witness chain in PR #8325 (`5b31e8e9599f35d940975c6c2937ae31bf0eaa65`). Status kept `in-progress` pending PR merge.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8325, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

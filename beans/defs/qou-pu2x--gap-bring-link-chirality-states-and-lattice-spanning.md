@@ -1,13 +1,13 @@
 ---
 # qou-pu2x
 title: 'GAP: Bring-link chirality — which object are the states, and does Γ₄ span M₂(ℝ) (Borel density)'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - 8f-open
 created_at: 2026-11-15T12:00:00Z
-updated_at: 2026-11-15T08:52:50Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-wqto
 pr: 8221
 ---
@@ -71,3 +71,7 @@ Stays `todo` (rule 13a). Session: https://claude.ai/code/session_01A1NHnUY3QMcdo
 
 ## Implementation Note (PR #8221)
 - Implemented in `folio/quantum-observable-universe/lean/QOU/Eightfold/TorusZeroVolumeConnectedRankOneBringChiralityMassClosureAndJordanTwentySix.lean` and `computations/probes/torus_zero_volume_connected_rank_one_bring_chirality_mass_closure_and_jordan_twenty_six_probe.py` (witness `computations/probes/torus-zero-volume-connected-rank-one-bring-chirality-mass-closure-and-jordan-twenty-six.witness.json`, `3849d3633186444056f013bfbcda743be84b0a9c`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8221, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

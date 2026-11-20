@@ -1,14 +1,14 @@
 ---
 # qou-pc85
 title: 'EM-linking route 2: the MUTUAL O''Hara channel is integrable WITHOUT O''Hara''s theorem — no diagonal singularity, so bounded+measurable suffices (qou-o6ml)'
-status: in-progress
+status: todo
 pr: 8306
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T09:22:10Z
-updated_at: 2026-10-04T15:18:59Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-v2om
 ---
 
@@ -263,3 +263,9 @@ greppable; nobody has adjudicated whether any of them supplies the O'Hara
 theorem the mutual channel was said not to need. Holding a source and having
 checked it are different claims — that distinction is what `qou-pc85` was
 originally about.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8306, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+**Review before closing:** a main commit subject names this bean with a closing word (2026-09-13: "lean(qou-pc85): close the two proofs — verified sorry-free against the library SOURCE"). The work may be partly or fully done. Read the bean before you close it.

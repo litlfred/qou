@@ -1,14 +1,14 @@
 ---
 # qou-v8qx
 title: w_3 second base case via the ramified double cover (adjoin q^1/2, x^1/2) — the one route nothing excludes
-status: in-progress
+status: todo
 pr: 8199
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T07:00:39Z
-updated_at: 2026-10-04T15:25:31Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-frzo
 ---
 
@@ -71,3 +71,7 @@ results differ.
 - [x] Formalized in `folio/quantum-observable-universe/lean/QOU/MassTheory/RouteCDTChiralityAndQBridgeTaming.lean` (`0` `sorry`, `0` `axiom`, `0 CRITICAL, 0 advisory` across all 7 static vacuity/borrowed-name audits) and wired into `QOU.lean`.
 - [x] Verified exact rational witness in `computations/probes/route-c-dt-chirality-and-qbridge-taming.witness.json` (`scriptHash: d89ffef0f347`, `scriptCommitSha: d6aa2e9463a3ba079ec1d472e356f34252ece779`, `allPassed: true`, `0` raw `float64` fields).
 - [ ] Awaiting Merge Manager merge of PR #8199 (`1f4bf9af7d58a057599a62f5a8d42748dc742ea8`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8199, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

@@ -1,7 +1,7 @@
 ---
 # qou-8p1e
 title: 'qou-8pl1/e: the colour route after the marked-pair exclusion — which premise gets dropped?'
-status: in-progress
+status: todo
 pr: 8200
 type: task
 priority: normal
@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - 8f-colour
 created_at: 2026-08-07T11:05:00Z
-updated_at: 2026-10-10T13:49:31Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-8lxd
 ---
 
@@ -142,3 +142,7 @@ were run partly against `main` at a different commit.
 
 ## Progress (2026-11-16, PR #8200)
 - [x] Formalized `nodalGeometricGenus`, `surfaceHomologyRank`, and `nodal_genus_bookkeeping_and_imaginary_split` in `folio/quantum-observable-universe/lean/QOU/Eightfold/TauAnchoredRatioChiralBraidWritheAndSpectralCubicPowerSums.lean` + 50-dps mpmath witness (`qou_8p1e_nodal_genus_bookkeeping_and_imaginary_split`) in PR #8200 (`ec7070e7f1b47f4548cd7f98fc2a7948b28854b0`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8200, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

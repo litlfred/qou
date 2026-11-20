@@ -1,7 +1,7 @@
 ---
 # qou-yf1y
 title: 'Instance declaration + config: qou.json and qou.config.json replace three retired spellings'
-status: in-progress
+status: todo
 type: feature
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - config
     - reorg-2026-10-04
 created_at: 2026-09-26T11:18:46Z
-updated_at: 2026-11-16T19:28:00Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-n4r9
 ---
 
@@ -146,3 +146,7 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 - **Verified on `origin/main` (`dc12b128cc`):**
   - `qou.json` and `qou.config.json` are live at the repository root (`name: "qou"`, `needs: ["folio-assistant-sci"]`, `dependencies.folioAssistant` pinned to `.folio-assistant-pin = 82b389982a73701b77f723d34d42c77acf41b5b4`).
   - All three retired config/declaration spellings (`folio.config.json`, `harness.config.json`, `harness.json`) are completely absent from `origin/main`.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8167, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

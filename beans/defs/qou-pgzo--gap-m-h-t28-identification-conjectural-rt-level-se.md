@@ -1,7 +1,7 @@
 ---
 # qou-pgzo
 title: 'GAP: m_H — T(2,8) identification conjectural; RT level selection + invariant→mass map open; probes within 2×'
-status: in-progress
+status: todo
 pr: 8196
 type: task
 priority: normal
@@ -10,7 +10,7 @@ tags:
     - reorg-2026-10-04
     - 8f-mass
 created_at: 2026-09-03T08:31:51Z
-updated_at: 2026-10-10T07:15:53Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-8lxd
 ---
 
@@ -27,3 +27,7 @@ Tower status [reading: qou-ggdk]: MIXED — RT at a root of unity is a fibre-lev
 
 ## Progress (2026-11-16, PR #8196)
 - [x] Formalized `twoStrandComponents`, `twoStrandEulerChar`, `twoStrandGenus`, `t27_knot_vs_t28_link_invariants`, `scalarSquaredMass`, and `scalarSquaredMass_strictMono_in_quartic` in `folio/quantum-observable-universe/lean/QOU/Eightfold/LeptonReadoutHiggsScaleMesonSyllableAndIcosahedralOrbit.lean` + 50-dps mpmath witness (`qou_pgzo_t27_t28_surface_and_quartic_scale`) in PR #8196 (`38b68fa660bb34e2ffb7a2e1a09e5c4f5308e2cf`).
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8196, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.

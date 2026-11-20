@@ -1,13 +1,13 @@
 ---
 # qou-plck
 title: 'Planck length: already ruled a CAL-4 violation in the corpus — the live reading is categorical, not metric'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T10:56:11Z
-updated_at: 2026-10-04T15:22:05Z
+updated_at: 2026-11-20T16:06:50Z
 parent: qou-ddmn
 ---
 
@@ -70,3 +70,7 @@ NEW FINDING, recorded not resolved: THREE inequivalent objects carry the name
 The corpus already separates the first two explicitly. Share vs dimensional
 differ by 10.633x at the proton q0. Which one a given block MEANS is an author
 question. STAYS OPEN.
+
+## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
+
+Status `in-progress` → `todo`. The claim came from batch PR(s) #8462, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
