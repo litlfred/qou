@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-20T21:00:00Z
+updated_at: 2026-11-20T20:30:00Z
 parent: qou-10v9
 ---
 
@@ -4167,3 +4167,11 @@ Owner 18:30 ("Q_β must be DERIVED, not chosen"), routes R2/R5/R3. Pre-registere
 - **R3:** these hold: 10 letters, knot closure, σ₁³ left-divides (σ₁σ₂)⁵ (6 cofactors). These do not hold as stated: the split is not unique (40 placements) and is not produced by GS reduction; no R2 move exists in a positive word; the quadratic-step count is order-dependent (25/30); tr_zD((σ₁σ₂)⁵) = q²(q¹²+q⁸−1)/(q²+1)² ∉ ℤ[q^{±1/2}] (`zD_T35`); B_n W ≠ c·B_p. The block's Q formula is not defined under convention D. A dated authorNote was added to `beta-decay-skein-properties.ts`.
 Bean stays open.
 - Addendum (relation to #8616 `flavour_split`): T⁻T⁺ on W₋ is the commutant element [2]²P₃/₂ + P₁/₂ (`FE_quad`), not a Hecke element. ε_C is n/p symmetric (`epsC_J1_from_p`, consistent with `trace_ρn_eq_trace_ρp`) and uses no K-weighting. It fixes only the block weights y₃:y₂₁ = [2]²:1. The n/p difference enters only through the element Δ_S (channel (ii)), and `isospinHalf_deltaS` shows that element is invisible on isospin ½. A γγ derivation still needs an n/p-distinct element that reaches the isospin-½ block.
+
+## 2026-11-20 — photon colour weights φ₀, φ₁: what forces them (PR #8634, Lean sorry-free, scope stated per item)
+Photon γ(φ)=1+φ₀σ₀+φ₁σ₁+φ₀₁σ₀σ₁⁻¹. Lean `QOU/QuarkState/PhotonColourWeightConstraints.lean`.
+- NF(β_Bor)=[1−h⁴,−h³−h⁵,h³,−h²,h²+h⁴,0]: e⁻ coordinate 0, so EVERY factorisation γ(φ)γ(ψ)=β_Bor has e⁻ channel φ₀₁ψ₀+φ₁ψ₀₁=0 (`FactorsBorromean.eChannel_eq_zero`). The e⁻ needed for Q_β cannot come from factorising β_Bor, whatever φ₀, φ₁ are.
+- Factorisation alone does NOT force φ₀=φ₁=0: measured 8 solutions at h=1/2, 2/9, 3 (probe `computations/probes/photon_colour_weights_solution_set_probe.py`, mpmath 60 dps); 2 = Borromean pair, 6 have φ₀,φ₁≠0. Proved: φ₁=0 ⟺ ψ₀=0 on the solution set, and either forces the Borromean pair with vertex weights {qh, −q⁻¹h}.
+- Bar image of a photon is a photon iff φ₀+φ₁=0; bar-closed pair + factorisation ⇒ Borromean pair (`borromean_of_barClosed`, needs h≠0, h²+2≠0). Then e⁻ channel = φ₀₁ψ₀−φ₀ψ₀₁.
+- Flip (Δ-conjugation) closure forces φ₀₁=0; three-term photons never factor β_Bor (scope b, certificate h²(h²+2)=0). Neutral in trivial+sign blocks forces φ₀₁=0, φ₀+φ₁=0 (same no-go).
+OWNER DECISION: is "bar image of a photon is a photon" an admissible premise? Yes ⇒ φ₀=φ₁=0 derived. No ⇒ φ₀,φ₁ underived (8-point set; picking by residual would be a fit). Default if no answer: nothing changes; φ₀,φ₁ stay recorded as underived. Bean stays open (rule 13a).
