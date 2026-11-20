@@ -6,7 +6,7 @@ Both endpoints are singular limits in the archimedean sense. Standard physics tr
 
 **Conjecture.** The Big Bang and heat-death endpoints are the standard-part of evaluation at specific named surreals.
 
-Let $\mathbf{QOU}_{1 + \varepsilon}$ be the surreal QOU at $q = 1 + \varepsilon$. We define
+Let $\mathbf{QOU}_{1 + \varepsilon}$ be the surreal QOU at $q = 1 + \varepsilon$. Define
 $$
   \mathbf{BigBang}_{1 + \varepsilon} := \mathrm{St}_{\mathrm{QOU}}(\mathbf{QOU}_{1 + \varepsilon}).
 $$
