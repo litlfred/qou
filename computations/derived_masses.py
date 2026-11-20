@@ -524,8 +524,14 @@ def borromean_v3_connected_qed_proton_mev(q=None, k_weighted: bool = False) -> m
                        = −2(q² − 1)⁴(q⁴ + q² + 1) / (27 q⁶)
         M_p^{QED,conn} = m_e · w(q) · |tr_conn(p, V³)|,
     where w(q) = q if `k_weighted=True` (K_p^{⊗3} weight q) and 1 otherwise.
-    At q_0, M_p^{QED,conn} ≈ +0.000220077 MeV (+0.22008 keV), closing 96.2% of the
-    211 ppb (+0.22881 keV) μ–p substrate tension to +8.06 ppb (+0.36σ).
+    At q_0 and with the m_e scale, M_p^{QED,conn} ≈ +0.000220077 MeV (+0.22008 keV).
+
+    NOT A DERIVED PREDICTION (2026-11-19, bean qou-99qc). The word dependence of the
+    "connected" trace comes only from keeping quark pairs 1-2 and 2-3 and dropping 1-3;
+    summed over all three pairs the insertion is word-independent (`trace_QPair_diff_word`).
+    The m_e scale and the weighting options were chosen against targets (the 211 ppb μ–p
+    tension among them), so the figure is a record of a selected combination and does not
+    "close" that tension. The canonical masses are `canonical_mass.proton_neutron_mass_mev`.
     """
     with mp.workdps(max(50, mp.mp.dps)):
         q0 = _resolve_q(q)
@@ -556,6 +562,10 @@ def borromean_v3_connected_qed_diff_mev(q=None, weighting: str = "plain") -> mp.
         - 'KnKp'  : q⁻¹ tr_conn(n) − q tr_conn(p)           (≈ −0.000344840 MeV)
         - 'Kp3'   : tr_conn(n) − q tr_conn(p)               (≈ −0.000355900 MeV)
         - 'q'     : q (tr_conn(n) − tr_conn(p))             (≈ −0.000368176 MeV)
+
+    NOT A DERIVED PREDICTION (2026-11-19, bean qou-99qc): the four weightings and the
+    m_e scale are choices compared against targets, and the word dependence comes only
+    from dropping quark pair 1-3. See `borromean_v3_connected_qed_proton_mev`.
     """
     with mp.workdps(max(50, mp.mp.dps)):
         q0 = _resolve_q(q)
