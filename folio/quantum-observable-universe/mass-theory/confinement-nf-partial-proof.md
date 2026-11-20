@@ -41,7 +41,7 @@ The three claims $T_1, T_2, T_3$ decompose and are discharged as follows.
 ### Theorem $T_3$ (strong duality)
 
 The QOU operator-selection LP per [Knot operator selection as linear program with LP duality](#prop:operator-selection-lp)
-is a finite-dim convex program over partitions of $n$. We verify:
+is a finite-dim convex program over partitions of $n$. Check:
 
 - **Bounded.** Variables $t_\lambda \ge 0$ for $\lambda \vdash n$,
   bounded above by the normalisation constraint
