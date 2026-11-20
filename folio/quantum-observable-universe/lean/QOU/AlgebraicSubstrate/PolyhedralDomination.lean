@@ -108,7 +108,8 @@ def toDomination : Domination A Δ where
     simpa [Function.comp, F.map_inf] using F.mono (P.le_val_add a b)
 
 @[simp] theorem toDomination_val (a : A) :
-    (F.toDomination).val a = F.φ (P.val a) := rfl
+    (F.toDomination).val a = F.φ (P.val a) := by
+  dsimp [toDomination]
 
 /-- The face **separates** `a` from `b` when it reads `a` as strictly
 dominant. This is the LP-feasibility predicate. -/
@@ -151,7 +152,23 @@ so `squeeze_of_face_separation` has content only for a face exhibited to
 separate — the LP test must actually be *run*, not merely posited. -/
 theorem trivialFace_separates_nothing (P : PolyDomination A Γ) (a b : A) :
     ¬ (trivialFace (Δ := Δ) P).Separates a b := by
-  simp [Face.Separates, trivialFace]
+  dsimp [Face.Separates, trivialFace]
+  exact lt_irrefl ⊤
+
+/-- Face separation is asymmetric and forces the difference `cost - budget` to be
+non-zero via negation invariance of the polyhedral valuation. -/
+theorem squeeze_sub_of_face_separation {P : PolyDomination A Γ} (F : Face P Δ)
+    {cost budget : A} (h : F.Separates cost budget) :
+    ¬ F.Separates budget cost ∧ cost - budget ≠ 0 := by
+  constructor
+  · dsimp [Face.Separates] at h ⊢
+    exact lt_asymm h
+  · have hneg : F.Separates cost (-budget) := by
+      dsimp [Face.Separates] at h ⊢
+      rw [P.val_neg]
+      exact h
+    have hadd : cost + (-budget) ≠ 0 := squeeze_of_face_separation F hneg
+    rwa [sub_eq_add_neg]
 
 /-! ## `Domination` is the one-face case -/
 
