@@ -15,6 +15,35 @@ export default proposition({
   authorNotes: [
     {
       kind: "status",
+      date: "2026-11-20",
+      body:
+        "**Magnitude comparison WITHDRAWN; the algebra is untouched.** The " +
+        "$+0.12\\%$ agreement with AME2020 recorded in the 2026-07-04 note " +
+        "below, and the $+11.99\\%$ undressed figure, were computed from a " +
+        "$\\Delta\\mathrm{tr}$ built on the **pre-2026-09-05 atom word**. " +
+        "That word buckets the $B_3$ confinement letters by generator, " +
+        "realising $\\sigma_0^3\\sigma_1^{-3}$; since $\\sigma_0$ and " +
+        "$\\sigma_1$ do not commute it is a different element of $H_3(q)$ " +
+        "from the interleaved $\\beta_{\\mathrm{Bor}}$ the construction " +
+        "names — 82% away at $q_0$, where the interleaved word matches the " +
+        "Lean closed form to $5\\times 10^{-60}$ (owner ruling 2026-09-05, " +
+        "commit `7db032fb48`, bean `qou-hu1f`). On the canonical word " +
+        "$\\Delta\\mathrm{tr}$ for the deuteron is $4.047\\times$ " +
+        "smaller ($0.59517 \\to 0.14705$), and the live chain no longer " +
+        "supports a sub-percent agreement. The replacement figure is " +
+        "deliberately NOT asserted: the producer witness is refreshed and " +
+        "self-consistent (`tr_m_atom_via_transfer` cross-checks " +
+        "$\\mathrm{tr}_M^{\\mathrm{atom}}(D)$ against the independent " +
+        "Hoefsmit witness and passes; 16 witnesses carry the live value), " +
+        "but whether the dressing has any magnitude content on the " +
+        "canonical word is a re-derivation, not a renumbering. The " +
+        "`grouped` intra-order path still reproduces the old word, so the " +
+        "superseded number stays reachable. The exact identities and their " +
+        "Lean are unaffected — they are stated for ANY " +
+        "$\\Delta\\mathrm{tr}$.",
+    },
+    {
+      kind: "status",
       date: "2026-07-04",
       body:
         "**Algebra Lean-formalized (conditional on `conj:borromean-quark`); " +
@@ -70,6 +99,11 @@ export default proposition({
     engine: "python+mpmath",
     script: "computations/probes/probe_d_dressing_is_proton_net.py",
     witness: "computations/probes/probe-d-dressing-is-proton-net.witness.json",
-    status: "verified",
+    // "failed", not "verified": the witness's binding_candidate_subpercent
+    // assertion does not hold on the canonical (interleaved Borromean) atom
+    // word. The EXACT identities are unaffected and remain Lean-formalized —
+    // this field reports the state of the cited computation, not of the
+    // proposition. See the 2026-11-20 author note.
+    status: "failed",
   },
 });
