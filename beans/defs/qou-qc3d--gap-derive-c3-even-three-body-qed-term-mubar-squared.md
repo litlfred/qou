@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-20T09:05:12Z
-updated_at: 2026-11-20T09:05:12Z
+updated_at: 2026-11-20T18:00:00Z
 parent: qou-7xl8
 ---
 
@@ -20,3 +20,12 @@ MilnorTripleLinkingMagnus) supplies c3. Single-functional scale c_em = alpha_em�
 (alpha_em conditional on the Witten-κ sorry). Diagnostic ONLY — a derivation must not be tuned to it:
 reaching the mu–p gap through the proton would need kappa = c3/c_em = 0.05006.
 Also open: the wide-class classification is measured at q = 2 only.
+
+
+---
+
+**2026-11-20 — PR #8565 (`claude/two-term-qed-derivation-2026-11-20`), `QEDHigherOrderCovariance.lean` (17 thms, sorry-free, lean-direct exit 0) + `computations/probes/two_term_qed_derivation_joint_pin_probe.py` + `docs/audits/2026-11-20-two-term-qed-derivation.md`.**
+- All-orders local class: covariance forces y_ab = t·x_ab with one t in {0, −h} (`exact_local_covariant`); the exact per-pair rescaling factor on V³ is 1 (`facU_borromean`), so the second-order (two-insertion) term of the local class is 0 for p and n.
+- Naive photon-exchange double sum D is not braid-covariant (shifts by −(Q0Q1)² under σ1σ1⁻¹); its completion S²/2 = 0 on V³.
+- No degree≤2 (order-α) charge weight couples to μ̄₁₂₃ (`quad_alternating_eq_zero`). The even degree-4 c₃ μ̄² term remains the only braid-dependent survivor; c₃ still underived.
+- Joint pin (scope (a), conditional on α_em form B): α_em pins q0 +0.053 ppb from the proton identity, the muon identity +11.614 ppb. A proton-only term reaching m_μ sends α⁻¹ to +79.00 ppb. So no proton-side term (derived or not) satisfies m_μ and α_em together; the evidence points at the muon carrier (qou-6gf9).

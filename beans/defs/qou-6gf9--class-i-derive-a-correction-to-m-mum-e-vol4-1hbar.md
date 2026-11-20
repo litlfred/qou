@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T09:31:00Z
-updated_at: 2026-11-16T17:56:00Z
+updated_at: 2026-11-20T18:00:00Z
 parent: qou-2002
 ---
 
@@ -324,3 +324,12 @@ Was in-progress with no bean update since 2026-09-04 and no main commit naming i
     - $\Delta_{h^2} c_2(q_0) = c_2(q_0) - h(q_0)^4/4 = -w(q_0)^2 h(q_0)^2 / 4 = -1.297437419491036 \times 10^{-6}$ ($6.18549 \times t_{\text{2018}}$, $6.14419 \times t_{\text{live}}$).
   - Neither $n=1$ nor $n=2$ (nor their Laurent-vs-$h^2$-Taylor shifts) lies inside the $[1.8 \times 10^{-7}, 2.4 \times 10^{-7}]$ $\mu\text{--}p$ carrier residual window.
 - **PR**: `https://github.com/litlfred/qou/pull/8142` (`7ba86df415ad231cf6e834adee99dcb383115c6d`).
+
+
+---
+
+**2026-11-20 — PR #8565 (`claude/two-term-qed-derivation-2026-11-20`), `QEDHigherOrderCovariance.lean` (17 thms, sorry-free, lean-direct exit 0) + `computations/probes/two_term_qed_derivation_joint_pin_probe.py` + `docs/audits/2026-11-20-two-term-qed-derivation.md`.**
+- All-orders local class: covariance forces y_ab = t·x_ab with one t in {0, −h} (`exact_local_covariant`); the exact per-pair rescaling factor on V³ is 1 (`facU_borromean`), so the second-order (two-insertion) term of the local class is 0 for p and n.
+- Naive photon-exchange double sum D is not braid-covariant (shifts by −(Q0Q1)² under σ1σ1⁻¹); its completion S²/2 = 0 on V³.
+- No degree≤2 (order-α) charge weight couples to μ̄₁₂₃ (`quad_alternating_eq_zero`). The even degree-4 c₃ μ̄² term remains the only braid-dependent survivor; c₃ still underived.
+- Joint pin (scope (a), conditional on α_em form B): α_em pins q0 +0.053 ppb from the proton identity, the muon identity +11.614 ppb. A proton-only term reaching m_μ sends α⁻¹ to +79.00 ppb. So no proton-side term (derived or not) satisfies m_μ and α_em together; the evidence points at the muon carrier (qou-6gf9).

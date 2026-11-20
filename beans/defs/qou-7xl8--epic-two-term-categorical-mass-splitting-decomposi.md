@@ -9,7 +9,7 @@ tags:
     - 1ppq
     - cottingham
 created_at: 2026-11-18T19:52:23Z
-updated_at: 2026-11-18T22:13:31Z
+updated_at: 2026-11-20T18:00:00Z
 ---
 
 Master epic for deriving, formalizing in Lean 4 (over real QOU/Mathlib types, 0 sorry, 0 axiom, adversarially checked), and auditing the downstream compute/1ppQ consequences of the two-term categorical mass and isospin-splitting decomposition:
@@ -22,3 +22,12 @@ Master epic for deriving, formalizing in Lean 4 (over real QOU/Mathlib types, 0 
 2. **Claim-level citations & mandatory Lean proofs**:
    - All citations to the newly ingested Cottingham / Compton subtraction function / lattice QCD+QED papers (`borsanyi-et-al-2015`, `gasser-leutwyler-rusetsky-2020-epjc`, `gasser-leutwyler-rusetsky-2021`, `walker-loud-carlson-miller-2012`, `can-qcdsf-2025`, `horsley-et-al-2016-qcd-qed`) and Hecke idempotent / modified quantum dimension / Stokes papers (`aiston-morton-1997`, `hadji-morton-2009`, `geer-patureau-mirand-turaev-2009`, `geer-patureau-mirand-turaev-2013`, `yekutieli2015`, `broda2002`, `pimsner-popa-1986`, `jones2015vonneumann`) must link to exact `library/<doc-id>/blocks/<block-id>` claim nodes.
    - Every cited mathematical claim must be proved in Lean 4 over real `QOU.*` and `Mathlib.*` imports (`scripts/lean-verify.sh`), followed by an adversarial review pass (`lean-proof-vacuity-audit`, `lean-borrowed-name-audit.py`, `lean-definition-collapsed-audit.py`).
+
+
+---
+
+**2026-11-20 — PR #8565 (`claude/two-term-qed-derivation-2026-11-20`), `QEDHigherOrderCovariance.lean` (17 thms, sorry-free, lean-direct exit 0) + `computations/probes/two_term_qed_derivation_joint_pin_probe.py` + `docs/audits/2026-11-20-two-term-qed-derivation.md`.**
+- All-orders local class: covariance forces y_ab = t·x_ab with one t in {0, −h} (`exact_local_covariant`); the exact per-pair rescaling factor on V³ is 1 (`facU_borromean`), so the second-order (two-insertion) term of the local class is 0 for p and n.
+- Naive photon-exchange double sum D is not braid-covariant (shifts by −(Q0Q1)² under σ1σ1⁻¹); its completion S²/2 = 0 on V³.
+- No degree≤2 (order-α) charge weight couples to μ̄₁₂₃ (`quad_alternating_eq_zero`). The even degree-4 c₃ μ̄² term remains the only braid-dependent survivor; c₃ still underived.
+- Joint pin (scope (a), conditional on α_em form B): α_em pins q0 +0.053 ppb from the proton identity, the muon identity +11.614 ppb. A proton-only term reaching m_μ sends α⁻¹ to +79.00 ppb. So no proton-side term (derived or not) satisfies m_μ and α_em together; the evidence points at the muon carrier (qou-6gf9).
