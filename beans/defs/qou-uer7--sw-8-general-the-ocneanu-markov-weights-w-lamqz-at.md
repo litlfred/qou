@@ -894,3 +894,14 @@ combined.** It wants its own bean and its own branch, and the first brick is alm
 Lean lemma for how `hookLength` changes under `addCell` — which does not exist in the corpus (I
 added `hook_twoRow_row0`/`row1` for the two-row case only). Nothing downstream is blocked on it:
 convention D is canonical per the 2026-08-15 ruling.
+
+## 2026-11-20T21:28:46Z — arbitrary z is CLOSED, every n (PR #8689)
+
+QOU/SchurWeyl/OcneanuMarkovTraceEveryZ.lean: SeminormalRep.ocneanuMarkovTraceEveryZ gives a
+MarkovTraceFamily at every z (field K, q and q² not roots of unity), and
+ocneanuMarkovTraceColimit the OcneanuTrace.MarkovTrace on H_∞(q). Route: interpolation in z,
+not a hook identity — ocneanuWeight is polynomial in z, equals wenzlWeight r (q²) at
+z_r (ocneanuWeight_wenzlZ), the z_r are infinitely many, and normalisation / branching / the
+rep-level Markov condition are each linear in the weight with z-free coefficients. The standing
+"do not finish arbitrary z" note was about the Wenzl route; it does not apply to this one.
+Axioms: propext, Classical.choice, Quot.sound.

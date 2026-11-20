@@ -29,3 +29,9 @@ Epic `qou-dxbw` and all eight child features give their counts (1803 carriers, 1
 The scanner is rewritten at the cited path, with explicit definitions and a 4-case `--selftest` calibration. Result: 1560 carriers, 1040 uninhabited, 3 toy-only, 517 inhabited. This does not match the epic's 1803 / 1336, because the epic's definitions could not be recovered.
 
 **Still open:** no satisfiability verdict. Parameter bundles (`HeckeParams`, 354 consumers) top the ranking even though they are trivially inhabitable. The bean stays in-progress until a per-carrier agent verdict separates hypotheses from axiom-fields.
+
+## 2026-11-20T21:28:46Z — the 21 VACUOUS triage carriers worked (PRs #8691 part A, #8690 part B)
+
+Owner instruction: repair, don't close or delete. Part A: 4 encode the claim, 2 partial, 5 GAP.
+Part B: 0 full, 8 partial/GAP, DiscreteVortex left to main's #8180 repair. Residuals: qou-k7ra,
+qou-k7rb. Bean stays in-progress (per-carrier verdicts for the rest of the 1007 still open).

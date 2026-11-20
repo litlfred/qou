@@ -88,3 +88,9 @@ parent: qou-dxbw
 
 - All three `MarkovTraceAxioms` classes (`BraidKnot`, `Hecke`, `Braiding`) could be filled in one line and carried no trace. They are removed. The factorisation theorems keep their names and are proved over any genuine `OcneanuTrace.MarkovTrace`, for ascending affine words (`tr_chainWord`). The general-word version is false, and the scope is stated. The `QOU.Braiding` duplicate is deleted. At n = 2 the result is proved on the concrete `H₂(q)`.
 - **Still the M4 gap:** no genuine `OcneanuTrace.MarkovTrace` exists on `H_∞(q)` at `q ≠ 1`.
+
+## 2026-11-20T21:28:46Z — correction + status
+
+Earlier this session I described "a genuine Markov trace on H_∞(q) at q≠1" as open. That was
+wrong: HeckeColimitMarkovTrace (convention D) and WenzlMarkovTraceInstance (every level r)
+already had it. What was open was arbitrary z; closed in PR #8689 (see qou-uer7).
