@@ -17,7 +17,8 @@
 
     (`borromean_eq_two_photons`).
 
-  Each factor is a four-term element `1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁` with
+  Each factor is a photon `γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁` in the sense of
+  `def:photon` (`QOU.Photon.photon`, imported, not redefined here) with
   `φ₁ = 0`:
 
       1 + q h V    = 1 − q h²·a + q h·ab,
@@ -33,11 +34,14 @@
   -- Ref: [iwahori1964] https://doi.org/10.15083/00039809
   -- Ref: [kassel2008] https://doi.org/10.1007/978-0-387-68548-9
 -/
+import QOU.Photon
 import Mathlib.Algebra.Algebra.Basic
 import Mathlib.Tactic.Module
 import Mathlib.Tactic.NoncommRing
 
 namespace QOU.Mass.BorromeanPhotonFactorisation
+
+open QOU.Photon (photon Colour)
 
 variable {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
 
@@ -125,9 +129,6 @@ theorem vertex_cubic_factor (H : HeckeH3Rel h a b) :
     module
   rw [this, hc, sub_self]
 
-/-- The photon `γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁` (four terms, as in `def:photon`). -/
-def photon (φ₀ φ₁ φ₀₁ : R) (a b : A) : A := 1 + φ₀ • a + φ₁ • b + φ₀₁ • (a * b)
-
 /-- `1 + q h V`. -/
 def photonPlus (q h : R) (a b : A) : A := 1 + (q * h) • vertex h a b
 
@@ -135,12 +136,12 @@ def photonPlus (q h : R) (a b : A) : A := 1 + (q * h) • vertex h a b
 def photonMinus (q' h : R) (a b : A) : A := 1 - (q' * h) • vertex h a b
 
 theorem photonPlus_eq (q h : R) (a b : A) :
-    photonPlus q h a b = photon (-(q * h ^ 2)) 0 (q * h) a b := by
+    photonPlus q h a b = photon a b (⟨-(q * h ^ 2), 0, q * h⟩ : Colour R) := by
   simp only [photonPlus, photon, vertex_eq, zero_smul, add_zero, smul_sub, smul_smul]
   module
 
 theorem photonMinus_eq (q' h : R) (a b : A) :
-    photonMinus q' h a b = photon (q' * h ^ 2) 0 (-(q' * h)) a b := by
+    photonMinus q' h a b = photon a b (⟨q' * h ^ 2, 0, -(q' * h)⟩ : Colour R) := by
   simp only [photonMinus, photon, vertex_eq, zero_smul, add_zero, smul_sub, smul_smul]
   module
 
@@ -172,7 +173,8 @@ theorem borromean_eq_two_photons (H : HeckeH3Rel h a b) {q q' : R}
 theorem borromean_eq_photon_product (H : HeckeH3Rel h a b) {q q' : R}
     (hh : q - q' = h) (hq : q * q' = 1) :
     vertex h a b * vertex h a b * vertex h a b
-      = photon (-(q * h ^ 2)) 0 (q * h) a b * photon (q' * h ^ 2) 0 (-(q' * h)) a b := by
+      = photon a b (⟨-(q * h ^ 2), 0, q * h⟩ : Colour R)
+        * photon a b (⟨q' * h ^ 2, 0, -(q' * h)⟩ : Colour R) := by
   rw [← photonPlus_eq, ← photonMinus_eq, borromean_eq_two_photons H hh hq]
 
 end QOU.Mass.BorromeanPhotonFactorisation
