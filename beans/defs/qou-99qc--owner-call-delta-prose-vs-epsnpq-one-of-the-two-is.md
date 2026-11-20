@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-20T19:15:00Z
+updated_at: 2026-11-20T19:45:00Z
 parent: qou-10v9
 ---
 
@@ -4151,3 +4151,7 @@ Pre-registered (bc02ecd75c), prediction confirmed. Same functionals as ε-L1: F1
 - Arm φ (symbolic φ₀,φ₁,ψ₀,ψ₁; single γ(φ₀,φ₁,φ₀₁)): first-order u↔d coefficients 0; asymmetry vanishes identically.
 - Proof scope (b): F2 in Lean, `QOU.BraidsAndKnots.HeckeWeightSpaceSymmetry` (generic CommRing, q·qi = 1, sorry-free): `trace_ρn_eq_trace_ρp` (Δ = σ₀σ₁σ₀ conjugates W_p's rep into W_n's for every free-algebra element), `photon_symmetric`, `vertex_symmetric`, `trace_vertex` (tr_W V = −h²), `flavour_split` ((qi·tr_Wn − q·tr_Wp) = −h·tr_Wp for every element). F1 by exact basis check on the six standard words of H₃(q) (not in Lean).
 - Implication for the scored Q_β cell (#8586, 18:27 ruling): ε_flavour(V³) = (q²−1)P(q)/(q⁴(q²+1)³) is exactly −h·tr_W(V³)/[2]³. Every bit of its n/p asymmetry is the K^{⊗3} weighting h; the γγ element enters only through a u↔d-symmetric trace. So the photon's weights φ₀, φ₁ cannot produce an n−p split when both nucleons carry the same element. Under these functionals a γγ derivation of Q_β can put the n/p difference only in (i) the trace's K-weighting (conjecture C1), or (ii) different elements for n and p (C2), never in the photon channel.
+
+## 2026-11-20T19:45Z — pair-nucleon data table restated with the ruled photon (PR #8629)
+
+Owner 18:22: "pair-nucleon table: restate it with the new photon." `tbl:four-term-pair-nucleon-table1-data` had no producer or recorded weights. New producer `computations/four_term_pair_nucleon_table.py` (exact ℚ(q), proton q₀, 70 dps, 7/7): the OLD form γ_old(0.0487, 0.0487, 0.02)² reproduces all six recorded entries at 3 dp; the ruled photon at the same weights gives 1 1.005→1.004, σ₀ 0.099→0.090 (0.0988698→0.0904259), others unchanged at 3 dp (moves ≤ 4e-4), via γ(φ₀,φ₁,φ₀₁) = γ_old(φ₀ − hφ₀₁, φ₁, φ₀₁). Weights labelled in block + witness: 0.0487 = fit to 2m_e (Breit–Wheeler), 0.02 unsourced; the record pins only a ∈ [0.0486, 0.0490], b = 0.020 on a 1e-4 × 1e-3 grid. Worked illustration, not a prediction. Second column: eigenvalue pair γ₊γ₋ = V³ (no e⁻ term). Nucleon nets 0.999/0.811 photon-independent by construction (confinement universality), not recomputed — no producer for them is on record. Not merged.
