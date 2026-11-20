@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-11-20T15:44:30.002725+00:00",
-  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
+  "computedAt": "2026-11-20T19:59:27.451339+00:00",
+  "commitSha": "2615f1c746a7c2e9397ace17bba98fe9288a9ca6",
   "assertions": [
     {
       "name": "A1_bond_constants_agree_two_routes",
@@ -49,8 +49,8 @@
   "durationMs": 4,
   "computation": "pairwise_ceiling_is_overstated_probe",
   "scriptFile": "pairwise_ceiling_is_overstated_probe.py",
-  "scriptHash": "80adbf582ee3",
-  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "scriptHash": "770e33de59ef",
+  "scriptCommitSha": "8a51be2e1185d397db5b6dafc674326efda41dce",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -64,6 +64,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "cvxpy": "absent",
     "pyhecke_native_build": "930c010e26215e56"
   },

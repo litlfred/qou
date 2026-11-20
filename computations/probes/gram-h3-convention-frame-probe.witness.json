@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy(exact over Q(q,z))",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T14:26:01.642829+00:00",
-  "commitSha": "f7652e4964e134b4d36b72101d062c92f1876a35",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T19:58:59.249467+00:00",
+  "commitSha": "2615f1c746a7c2e9397ace17bba98fe9288a9ca6",
   "assertions": [
     {
       "name": "det_at_z_D_is_identically_zero",
@@ -44,8 +44,8 @@
   "durationMs": 0,
   "computation": "gram-h3-convention-frame-probe",
   "scriptFile": "gram_h3_convention_frame_probe.py",
-  "scriptHash": "7fd1674c9516",
-  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "scriptHash": "cb598941e3fe",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -53,14 +53,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -106,7 +107,7 @@
   },
   "check2_reference_is_convention_D": {
     "reference": "computations/gram-matrix-dual.witness.json",
-    "max_abs_diff_vs_G_at_z_D": "0.000000000000000227264075720741273907625482732497579844541628981500376491760",
+    "max_abs_diff_vs_G_at_z_D": "0.000000000000000227264075720741273907625482732497643592847667677077950587368",
     "worst_cell": [
       3,
       4
@@ -115,13 +116,13 @@
   },
   "check3_red_assertion_is_the_convention_gap": {
     "assertion": "gram_h3_symbolic_matches_pyhecke",
-    "recorded_computed": "0.000000000000000227264075720741273907625482732497579844541628981500376473648620336752",
-    "max_abs_C_minus_D_at_q0": "0.172185190490940929096115386080555407552846395833154213471847",
+    "recorded_computed": "0.0000000000000002272640757207412739076254827324976435928476676770779505873678515221255",
+    "max_abs_C_minus_D_at_q0": "0.172185190490940929096115386080555407552846395833106792973974",
     "worst_cell": [
       3,
       5
     ],
-    "abs_diff_recorded_vs_exact": "0.172185190490940701832039665339281499927363663335574368930218",
+    "abs_diff_recorded_vs_exact": "0.172185190490940701832039665339281499927363663335463200126306",
     "reproduces_recorded_value": false,
     "why_not_to_the_last_digit": "the recorded value is (C-frame symbolic at 50 dps) minus the FLOAT64 reference the regression script reads out of gram-matrix-dual.witness.json; this probe differences two EXACT frames. The two therefore agree only to the float64 rounding of that reference entry (~1e-16), which is what the diff above is."
   },
@@ -181,10 +182,10 @@
   "convention_D_closed_form_note": "every D-frame entry is a rational function of q with denominator a power of (q²+1) — the u = √q parametrisation the Lean file is built on is not needed under D, which also removes the Real.sqrt that forces that file onto ℝ (AGENTS.md §7c)",
   "context": {
     "block": "prop:gram-matrix-h3-symbolic",
-    "lean": "content/quantum-observable-universe/lean/QOU/Interactions/GramMatrixH3Symbolic.lean",
+    "lean": "folio/quantum-observable-universe/lean/QOU/Interactions/GramMatrixH3Symbolic.lean",
     "bean": "qou-bm4i",
     "scope": "(b) structural exclusion per AGENTS.md — the invariant is the exact determinant factorisation in check4, not a probe"
   },
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Value": "1.109978582751380807591669095610768879874499121873578736072814240181799"
 }
