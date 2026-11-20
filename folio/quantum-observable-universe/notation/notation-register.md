@@ -1,4 +1,4 @@
-Every mathematical symbol used in this paper belongs to exactly one register. The tables below group symbols by the chapter where we first introduce each. Within a chapter, we sort entries alphabetically by concept name.
+Every mathematical symbol used in this paper belongs to exactly one register. The tables below group symbols by the chapter where one first introduces each. Within a chapter, one sorts entries alphabetically by concept name.
 
 ### Quantum universes (Chapter 1)
 
