@@ -9,7 +9,7 @@ tags:
     - quantum-universe-axioms
     - part-1-foundations
 created_at: 2026-11-19T08:46:33Z
-updated_at: 2026-11-20T08:40:00Z
+updated_at: 2026-11-20T19:10:00Z
 parent: qou-d4kh
 ---
 
@@ -44,3 +44,14 @@ Cross-linked beans: `qou-d4kh` (parent epic), `qou-x4nh` (*V2 Part I Foundations
 
 ## 2026-11-20 — REOPENED by W14 (https://claude.ai/code/session_01VQDpPgB5vPb2GEcGuZ9xxN): the completion is not on main
 Measured on main 917b69399: Ch 1 (`quantum-universes`) still has L1 4 / L2 10 / L3 22 / L4 48; Ch 2 has L1 3 / L2 17 / L3 67 / L4 20 (`voice-leak-audit.ts`). `frobenius-hopf-substrate.*` is not in `quantum-universes/`; `SemisimpleBlockData` occurs nowhere in `lean/QOU`. No branch dated 2026-11-18..20 or PR carrying the work was found. The work may sit in an unpushed container; if it is pushed, re-close.
+
+## 2026-11-20 — W14b (qou-d4kh): 10 premature-q hits handed to V0
+
+The owner chose option A for the Chapter 1 premature-q question: the 10 L4 premature-q hits stay in place for V0 to absorb, because V0 rewrites the same lines (removing axiom 4, reframing K₀/Chern). Measured on `main` with `folio/pipeline/voice-leak-audit.ts`:
+
+- `quantum-universes/quantum-universe.md:22`, `:30`: `dim_q(λ)`
+- `quantum-universes/grothendieck-group-of-a-qou.md:11` (`dim_q(X) = tr(id_X)`), `:17` (multiplicativity), `:19` (`[n+1]_q`)
+- `quantum-universes/chern-character.md:31`: `q`
+- `quantum-universes/su2-characters-and-quantum-dimension.md:11` (`SU_q`), `:14` and `:19` (`[n+1]_q`), `:17` (`[2]_q`)
+
+When V0 lands, keep a single glyph for the register symbol `dim_q = tr(id)` (no second symbol). Then run `voice-leak-ratchet.ts --shrink`. The ratchet baseline already carries these 10, so V0 may lower them but never raise them.
