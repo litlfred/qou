@@ -9,6 +9,9 @@ export default lemma({
     validation: "not_checked",
   },
   uses: ["prop:braiding-induced-ordering"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): For example, for $H_n(q)$ at generic $q$ neither condition is established here." },
+  ],
   tags: [
     "arrow-of-time",
     "well-ordering",

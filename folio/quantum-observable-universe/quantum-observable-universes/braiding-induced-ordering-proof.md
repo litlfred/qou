@@ -26,7 +26,7 @@ and their first difference occurs before $v$ begins.  Hence
 $u\,w\,v \prec_c u\,w'\,v$.  This is the admissibility
 condition of an
 ([admissible system](#unital-groebner-bases:def:admissible-system))
-on the free monoid; it uses only concatenation, not the Hecke or
+on the free monoid; it uses only concatenation, not the quadratic or
 Yang--Baxter relations.  $\square$
 
 Neither part uses a braiding hypothesis.

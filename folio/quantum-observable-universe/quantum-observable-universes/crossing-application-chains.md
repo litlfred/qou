@@ -6,4 +6,4 @@ Fix $n \geq 2$ strands. A *tick* is one application of a crossing. On words in t
 
 (c) Suppose some crossing has finite order, $s_i^{k+1} = 1$. Then every state lies on a closed chain. In particular, this holds when $s_i^{2} = 1$, as for the adjacent transpositions in $S_n$, the image of $B_n$ under a symmetric braiding.
 
-Neither (b) nor (c) covers every state monoid. For example, for $H_n(q)$ at generic $q$ neither condition is established here.
+Neither (b) nor (c) covers every state monoid.
