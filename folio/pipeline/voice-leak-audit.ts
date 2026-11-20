@@ -37,8 +37,14 @@
  * skipped everywhere; inline math is removed for L1-L3 (L4a reads math).
  *
  *   bun run folio/pipeline/voice-leak-audit.ts [--json] [--quiet] [--class L1,L2,L3,L4]
+ *   bun run folio/pipeline/voice-leak-audit.ts --check-baseline        # merge gate
+ *   bun run folio/pipeline/voice-leak-audit.ts --write-baseline        # drain only
  *
- * Exit 1 if any non-advisory hit, else 0.
+ * Exit 1 if any non-advisory hit, else 0. With --check-baseline: exit 1 only
+ * if some file has MORE failing hits of some class than BASELINE_PATH records
+ * (a file absent from the baseline counts as 0). --write-baseline lowers the
+ * recorded counts to the current ones and never raises one: the baseline
+ * drains, it does not grow. To accept a new leak, fix it instead.
  */
 import { existsSync, readFileSync } from "node:fs";
 import { join, relative } from "node:path";
@@ -241,6 +247,38 @@ export async function audit(paperDir: string, classes: Set<LeakClass>): Promise<
   return { scanned, reports };
 }
 
+export const BASELINE_PATH = "folio/pipeline/voice-leak-baseline.json";
+type Counts = Record<string, Partial<Record<LeakClass, number>>>;
+export function countFailing(reports: FileReport[]): Counts {
+  const c: Counts = {};
+  for (const r of reports) for (const h of r.hits) {
+    if (h.advisory) continue;
+    const e = (c[r.file] ??= {});
+    e[h.cls] = (e[h.cls] ?? 0) + 1;
+  }
+  return c;
+}
+/** Files whose count of some class exceeds the baseline. */
+export function ratchetGrowth(now: Counts, base: Counts): string[] {
+  const out: string[] = [];
+  for (const [f, e] of Object.entries(now))
+    for (const [cls, n] of Object.entries(e)) {
+      const b = base[f]?.[cls as LeakClass] ?? 0;
+      if (n! > b) out.push(`${f}: ${cls} ${b} -> ${n}`);
+    }
+  return out.sort();
+}
+/** Lower each recorded count to the current one; never raise; drop zeros. */
+export function drainBaseline(now: Counts, base: Counts): Counts {
+  const out: Counts = {};
+  for (const [f, e] of Object.entries(base))
+    for (const [cls, b] of Object.entries(e)) {
+      const n = Math.min(b!, now[f]?.[cls as LeakClass] ?? 0);
+      if (n > 0) (out[f] ??= {})[cls as LeakClass] = n;
+    }
+  return out;
+}
+
 if (import.meta.main) {
   const args = process.argv.slice(2);
   const json = args.includes("--json");
@@ -251,6 +289,23 @@ if (import.meta.main) {
   );
   const paperDir = args.find((a, i) => !a.startsWith("--") && args[i - 1] !== "--class") ?? "folio/quantum-observable-universe";
   const { scanned, reports } = await audit(paperDir, classes);
+  if (args.includes("--check-baseline") || args.includes("--write-baseline")) {
+    const { existsSync: ex, readFileSync: rd, writeFileSync: wr } = await import("node:fs");
+    const now = countFailing(reports);
+    const base: Counts = ex(BASELINE_PATH) ? JSON.parse(rd(BASELINE_PATH, "utf8")).counts : {};
+    if (args.includes("--write-baseline")) {
+      const next = ex(BASELINE_PATH) && !args.includes("--init") ? drainBaseline(now, base) : now;
+      const total = Object.values(next).reduce((a, e) => a + Object.values(e).reduce((x, y) => x + y!, 0), 0);
+      const sorted = Object.fromEntries(Object.entries(next).sort(([a], [b]) => a.localeCompare(b)));
+      wr(BASELINE_PATH, JSON.stringify({ schema: "voice-leak-baseline/v1", note: "Drains, never grows. Regenerate only with --write-baseline.", total, counts: sorted }, null, 1) + "\n");
+      console.log(`voice-leak-audit: baseline written, ${total} failing hits in ${Object.keys(next).length} files`);
+      process.exit(0);
+    }
+    const grown = ratchetGrowth(now, base);
+    for (const g of grown) console.log(`GROWTH ${g}`);
+    console.log(`voice-leak-audit --check-baseline: ${grown.length} file/class count(s) above baseline`);
+    process.exit(grown.length ? 1 : 0);
+  }
   const failing = reports.filter((r) => r.hits.some((h) => !h.advisory)).length;
   if (json) console.log(JSON.stringify({ scanned, failing, reports }, null, 2));
   else {

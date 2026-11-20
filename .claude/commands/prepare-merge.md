@@ -237,6 +237,20 @@ surface the duplicates in step 6) saves a full review cycle.
   crashes, first-person work tone). When rewriting, consult
   `one-voice-style-guide` for the author voice profile.
   Fix voice / style inconsistencies before proceeding.
+- **Voice-leak ratchet (BLOCKING on growth).** Run
+  `bun run folio/pipeline/voice-leak-audit.ts --check-baseline`. It fails when
+  any file has more failing hits than `folio/pipeline/voice-leak-baseline.json`
+  records, in any of four classes:
+  - L1: prose about the Lean formalisation;
+  - L2: backticked Lean or repository identifiers;
+  - L3: first or second person;
+  - L4: reading-order anachronisms in Chapters 1–2.
+
+  Fix a new leak in the prose. Do not raise the baseline: `--write-baseline`
+  only ever lowers counts, so run it after a drain to record progress. Added on
+  owner approval of option 5 of the `[W14 ask]` (epic `qou-d4kh`, 2026-11-20).
+  Existing leaks are grandfathered, so a branch that does not touch a leaky
+  block is unaffected.
 
 ## 4. 100% Lean — build + resolutions
 

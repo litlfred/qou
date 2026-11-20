@@ -70,3 +70,16 @@ describe("L4 premature q (Chapter 1 only)", () => {
     expect(failing("$a \\quad b \\equiv c$", { premature: true })).toEqual([]);
   });
 });
+
+describe("baseline ratchet (merge gate)", () => {
+  const { ratchetGrowth, drainBaseline } = require("./voice-leak-audit");
+  it("flags growth, including a file absent from the baseline", () => {
+    expect(ratchetGrowth({ a: { L3: 2 }, b: { L1: 1 } }, { a: { L3: 1 } })).toEqual(["a: L3 1 -> 2", "b: L1 0 -> 1"]);
+  });
+  it("passes a drain", () => {
+    expect(ratchetGrowth({ a: { L3: 1 } }, { a: { L3: 3 } })).toEqual([]);
+  });
+  it("draining lowers, never raises, and drops zeros", () => {
+    expect(drainBaseline({ a: { L3: 5 }, c: { L1: 2 } }, { a: { L3: 3 }, b: { L2: 4 } })).toEqual({ a: { L3: 3 } });
+  });
+});
