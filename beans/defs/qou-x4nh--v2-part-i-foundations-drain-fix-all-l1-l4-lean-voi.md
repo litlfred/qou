@@ -1,7 +1,7 @@
 ---
 # qou-x4nh
 title: 'V2 [Part I Foundations Drain]: Fix All L1-L4 Lean, Voice & Anachronism Leaks in Ch 1 (quantum-universes) & Ch 2 (quantum-observable-universes)'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - fourth-wall-lean
     - part-1-foundations
 created_at: 2026-11-19T08:35:24Z
-updated_at: 2026-11-20T08:40:00Z
+updated_at: 2026-11-20T15:40:00Z
 parent: qou-d4kh
 ---
 
@@ -49,3 +49,6 @@ Source witness: `computations/audits/monograph-lean-and-voice-leak-audit.witness
 
 ## 2026-11-20 — REOPENED by W14 (https://claude.ai/code/session_01VQDpPgB5vPb2GEcGuZ9xxN): the completion is not on main
 Measured on main 917b69399: Ch 1 (`quantum-universes`) still has L1 4 / L2 10 / L3 22 / L4 48; Ch 2 has L1 3 / L2 17 / L3 67 / L4 20 (`voice-leak-audit.ts`). `frobenius-hopf-substrate.*` is not in `quantum-universes/`; `SemisimpleBlockData` occurs nowhere in `lean/QOU`. No branch dated 2026-11-18..20 or PR carrying the work was found. The work may sit in an unpushed container; if it is pushed, re-close.
+
+## 2026-11-20 — claimed by W14b (https://claude.ai/code/session_01VQDpPc68uEsyxoN3soj6Ws)
+Owner ruling 2026-11-20 ~15:10 Paris (#8526 comment 7041693067) approved W14 option 2. Stalled-claim check: the bean was `todo` with no backing branch; nothing to take over. Work on branch `claude/voice-leak-part1-drain-2026-11-20`, PR #8577. Scope excludes V0's Lean refactor and the `frobenius-hopf-substrate` move.
