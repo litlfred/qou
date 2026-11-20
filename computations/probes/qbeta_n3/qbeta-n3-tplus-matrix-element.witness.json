@@ -1,0 +1,167 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-20T19:01:23.797591+00:00",
+  "commitSha": "b562b18bdd0fa907609fd7d143c660b7ea442cdb",
+  "assertions": [
+    {
+      "name": "sigma1 commutes with Delta^2(E)",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "sigma2 commutes with Delta^2(E)",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "Fd == Eu^T (T- is the transpose of T+ in the weight basis)",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "Hecke generators symmetric on W-, W+",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "Eu * beta_Bor(W-) == beta_Bor(W+) * Eu",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "A: char poly of beta_Bor equal on W- and W+ (Hecke energy difference 0)",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "B: T-T+ eigenvalues on W- are {[2]^2 (x1), 1 (x2)}",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "P+ idempotent and q-eigen",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "C: left amplitude == -h q/[2]",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "C: right amplitude == -h q^-1/[2]",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "C: bar sends left to -right",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "bare sigma exchange amplitudes (du: h, ud: 0)",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "q->1: amplitude = -lam + O(lam^2) = -tanh(lam)e^lam (order h^1), rate order h^2",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "placement-averaged |C|^2 is bar-even",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "tanh(ln q0) cross-check: -C_left/q0 == tanh(ln q0)",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "qbeta-n3-tplus-matrix-element",
+  "scriptFile": "n3_tplus_matrix_element_probe.py",
+  "scriptHash": "483f0650d708",
+  "scriptCommitSha": "b562b18bdd0fa907609fd7d143c660b7ea442cdb",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "ae1028699afd20c5"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_n3/n3_tplus_matrix_element_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_n3/n3_tplus_matrix_element_probe.py"
+  },
+  "description": "N3 of bean qou-99qc: beta-decay amplitude M(q) = <p|T+|n> x (charged-current exchange of -h P_L on one quark-lepton crossing); pre-registered readings A-E. Lean twin QOU/QuarkState/TPlusChargedCurrentElement.lean.",
+  "parameters": {
+    "q0": "1.10997858275138080759166909561076887987449912187357873607281"
+  },
+  "data": {
+    "closed_forms": {
+      "C_left (quark left)": "-q*(q - 1)*(q + 1)/(q**2 + 1)",
+      "C_right (quark right)": "-(q - 1)*(q + 1)/(q*(q**2 + 1))",
+      "B isospin 1/2": "1",
+      "B isospin 3/2": "(q**2 + 1)**2/q**2",
+      "|M|^2 isospin_1/2|quark_left": "q**2*(q - 1)**2*(q + 1)**2/(q**2 + 1)**2",
+      "|M|^2 isospin_1/2|quark_right": "(q - 1)**2*(q + 1)**2/(q**2*(q**2 + 1)**2)",
+      "|M|^2 isospin_3/2|quark_left": "(q - 1)**2*(q + 1)**2",
+      "|M|^2 isospin_3/2|quark_right": "(q - 1)**2*(q + 1)**2/q**4",
+      "beta_Bor charpoly (W- == W+)": "(x - 1)*(q**12*x - 3*q**10*x + 3*q**8*x + q**6*x**2 - 4*q**6*x + q**6 + 3*q**4*x - 3*q**2*x + x)/q**6"
+    },
+    "values_at_q0": {
+      "C_left": "-0.115397491541549695599990632281029616178117661216550783375759",
+      "C_right": "-0.0936628072540896198308555808486453276816398340464737720059369",
+      "|M|^2 isospin_1/2|quark_left": "0.0133165810540820335413813899819113623965818190937990044849972",
+      "|M|^2 isospin_1/2|quark_right": "0.00877272146271674311040313273358784473022735062046965394272838",
+      "|M|^2 isospin_3/2|quark_left": "0.0538483414848180750075011557050012699214176636791556101540426",
+      "|M|^2 isospin_3/2|quark_right": "0.0354743082445142017468740902567352520063887564034767365313369"
+    },
+    "comparison_only": {
+      "D_n_MeV (hbar/tau_n)": "7.49330552026e-25",
+      "D_n/m_e": "1.46640330869e-24",
+      "Q_beta_CODATA/m_e": "1.53098161737",
+      "(D_n/m_e) / |M|^2[isospin_1/2|quark_left]": "1.101186e-22",
+      "(D_n/m_e) / |M|^2[isospin_1/2|quark_right]": "1.6715489e-22",
+      "(D_n/m_e) / |M|^2[isospin_3/2|quark_left]": "2.7232098e-23",
+      "(D_n/m_e) / |M|^2[isospin_3/2|quark_right]": "4.1337052e-23"
+    },
+    "reading_E": "Q_beta not produced: every H3 operator has equal spectrum on n and T+ n"
+  },
+  "caveats": [
+    "CODATA Q_beta, tau_n, hbar, m_e enter only the comparison block."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

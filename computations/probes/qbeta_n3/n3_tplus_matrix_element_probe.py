@@ -18,7 +18,6 @@ Readings (pre-registered ids):
 """
 from __future__ import annotations
 
-import json
 import os
 import sys
 
@@ -157,29 +156,28 @@ for k, v in comparison.items():
 
 ok = all(c for _, c in checks)
 print(f"{sum(c for _, c in checks)}/{len(checks)} checks pass")
-wit = {
-    "schema": "qou-probe-witness/v1",
-    "name": "qbeta-n3-tplus-matrix-element",
-    "bean": "qou-99qc",
-    "producer": "computations/probes/qbeta_n3/n3_tplus_matrix_element_probe.py",
-    "lean": "QOU/QuarkState/TPlusChargedCurrentElement.lean",
-    "q0_anchor": "proton",
-    "q0Value": mp.nstr(q0, 60),
-    "dps": 70,
-    "closed_forms": {
-        "C_left (quark left)": str(sp.factor(C_left)),
-        "C_right (quark right)": str(sp.factor(C_right)),
-        "B isospin 1/2": "1", "B isospin 3/2": str(sp.factor(B_32)),
-        **{f"|M|^2 {k}": str(v) for k, v in cells.items()},
-        "beta_Bor charpoly W- == W+": str(cpm),
-    },
-    "values_at_q0": {**{k: mp.nstr(v, 60) for k, v in amp.items()},
-                     **{f"|M|^2 {k}": mp.nstr(v, 60) for k, v in nums.items()}},
-    "comparison_only": comparison,
-    "reading_E": "Q_beta not produced: every H3 operator has equal spectrum on n and T+ n",
-    "checks": [{"name": n, "pass": c} for n, c in checks],
-}
-with open(os.path.join(ROOT, "computations", "probes", "qbeta_n3",
-                       "qbeta-n3-tplus-matrix-element.witness.json"), "w") as f:
-    json.dump(wit, f, indent=2, ensure_ascii=False)
+sys.path.insert(0, os.path.join(ROOT, "computations"))
+import _path_bridge  # noqa: E402,F401
+from witness_base import WitnessBuilder  # noqa: E402
+
+wb = WitnessBuilder("qbeta-n3-tplus-matrix-element", engine="sympy+mpmath")
+wb.set_description("N3 of bean qou-99qc: beta-decay amplitude M(q) = <p|T+|n> x "
+                   "(charged-current exchange of -h P_L on one quark-lepton crossing); "
+                   "pre-registered readings A-E. Lean twin "
+                   "QOU/QuarkState/TPlusChargedCurrentElement.lean.")
+for name, c in checks:
+    wb.add_assertion(name, "true" if c else "false", "true")
+wb.add_parameter("q0", mp.nstr(q0, 60))
+wb.add_data("closed_forms", {
+    "C_left (quark left)": str(sp.factor(C_left)),
+    "C_right (quark right)": str(sp.factor(C_right)),
+    "B isospin 1/2": "1", "B isospin 3/2": str(sp.factor(B_32)),
+    **{f"|M|^2 {k}": str(v) for k, v in cells.items()},
+    "beta_Bor charpoly (W- == W+)": str(cpm)})
+wb.add_data("values_at_q0", {**{k: mp.nstr(v, 60) for k, v in amp.items()},
+                             **{f"|M|^2 {k}": mp.nstr(v, 60) for k, v in nums.items()}})
+wb.add_data("comparison_only", comparison)
+wb.add_data("reading_E", "Q_beta not produced: every H3 operator has equal spectrum on n and T+ n")
+wb.add_caveat("CODATA Q_beta, tau_n, hbar, m_e enter only the comparison block.")
+print("witness:", wb.save({"q0Anchor": "proton", "q0Value": C.Q_50_DIGIT_STR}))
 sys.exit(0 if ok else 1)
