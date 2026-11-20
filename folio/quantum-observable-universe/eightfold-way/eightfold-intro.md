@@ -70,7 +70,7 @@ problems.
 Each statement below is marked with one of four tiers, used in the same
 sense as in the
 [Standard-Model appendix](#app:standard-model):
-*proved* (machine-checked Lean);
+*proved* (with a complete proof);
 *derived* (obtained from framework structure without fitted parameters);
 *standard* (a theorem of the ambient mathematics --- Coxeter theory,
 Schur--Weyl duality, $\mathrm{SU}(3)$ representation theory --- cited,

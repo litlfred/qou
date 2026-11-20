@@ -218,23 +218,20 @@ Each per-isotope record lists the knot operators used to build its canonical bra
 
 **Inter-nucleon interfaces** (single-strand crossing at generator $3k+2$):
 
-| Channel | Formula | Wire-format `ctype` |
-|---|---|---|
-| `pp` | $\sigma$ (positive crossing) | `sigma` |
-| `nn` | $\sigma + (-h)\cdot\mathbf{1}$ | `sigma_inv` (underscore, matches `canonical_braid_crossings.atom_canonical_crossings`) |
-| `pn` | $\sigma + \bigl(-h(1/2 - \delta/4)\bigr)\cdot\mathbf{1}$ (colour-tube-weighted average) | `averaged_weighted` |
+| Channel | Formula |
+|---|---|
+| p–p | $\sigma$ (positive crossing) |
+| n–n | $\sigma + (-h)\cdot\mathbf{1}$ |
+| p–n | $\sigma + \bigl(-h(1/2 - \delta/4)\bigr)\cdot\mathbf{1}$ (colour-tube-weighted average) |
 
 where $h = q_0 - q_0^{-1}$ and $\delta$ is the substrate flavour split of
 [Substrate-pure derivation of the $u$--$d$ flavor split](#prop:flavor-split-substrate).
 
-The $\delta = 0$ form $\sigma + (-h/2)\cdot\mathbf{1}$ (wire-format
-`averaged`) is **not** the `pn` interface. Both `ctype`s occur in
-`atom_canonical_crossings`, but at different places: `averaged` is the
-intra-nucleon quark crossing, and it never appears at $3k+2$. Verified against the producer for
-$\mathrm{D}$, ${}^{3}\mathrm{He}$ and ${}^{4}\mathrm{He}$ — every generator
-$3k+2$ returns `sigma` (p-p), `sigma_inv` (n-n) or `averaged_weighted` (p-n), and
-never `averaged`. The two forms differ by $h\delta/4 \approx 7.190 \times
-10^{-5}$ at the substrate anchor.
+The $\delta = 0$ form $\sigma + (-h/2)\cdot\mathbf{1}$ is **not** the p–n
+interface: it is the intra-nucleon quark crossing, and it never appears at a
+generator $3k+2$. For $\mathrm{D}$, ${}^{3}\mathrm{He}$ and ${}^{4}\mathrm{He}$
+every generator $3k+2$ carries the p–p, n–n or p–n interface above. The two
+forms differ by $h\delta/4 \approx 7.190 \times 10^{-5}$ at the substrate anchor.
 
 **Closure topology operators** (Markov closure $\widehat{\beta}$):
 
@@ -277,7 +274,7 @@ not a binding prediction.
 | ${}^6$Li | 6 | 3 | — | 31.9940 | — | — | — |
 | ${}^7$Li | 7 | 4 | — | 39.2452 | — | — | — |
 
-_Computed via [`canonical_mass_table_extended.py`](https://github.com/litlfred/qou/blob/main/computations/canonical_mass_table_extended.py) (method=`auto`). Witness: [`canonical-mass-table-extended.witness.json`](https://github.com/litlfred/qou/blob/main/computations/canonical-mass-table-extended.witness.json). Nucleon masses (m_p, m_n) via [`canonical_mass.nucleon_mass_mev()`](https://github.com/litlfred/qou/blob/main/computations/canonical_mass.py). Paper hard floor (CAL-2 propagation): ~780 ppb._
+_Computed by the extended canonical mass-table computation (method: auto); nucleon masses (m_p, m_n) from the canonical nucleon-mass routine. Paper hard floor (CAL-2 propagation): ~780 ppb._
 
 <!-- AUTO:canonical-tr-m-table END -->
 
@@ -386,7 +383,7 @@ _This table summarizes element stability: predicted neutron count $N_{\mathrm{pr
 
 ## Per-element coverage (AME 2020 cross-reference)
 
-_Auto-rendered from per-Z shards `canonical-isotope-witness-Z<NN>.witness.json` (emitted by [`canonical_isotope_witness.py`](https://github.com/litlfred/qou/blob/main/computations/canonical_isotope_witness.py)). Each row carries the framework value, the AME 2020 reference, and the residual. For free nucleons (p, n) the entry is the $m_e$-scaled rendering of the mass ratio conditional on `conj:borromean-baryon-mass-formula`. For D and up, the prediction is the binding energy; the AME 2020 reference is the total binding energy. $M_{\mathrm{atom}}$ is the composite atomic mass $N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$. The **CAL-3 Bound (ppb)** column represents the theoretical error floor propagated strictly from the empirical observation uncertainty of the neutron beta-decay $Q_\beta$ value (the CAL-3 anchor, $± 0.61$ eV). Because the theoretical neutron mass ratio $m_n/m_e$ is conditionally anchored on $Q_\beta$, each of the $N$ neutrons adds an unavoidable $± 0.61$ eV of experimental uncertainty to the rendered total atomic mass.
+_Rendered from the per-element isotope computations. Each row carries the framework value, the AME 2020 reference, and the residual. For free nucleons (p, n) the entry is the $m_e$-scaled rendering of the mass ratio conditional on the [Borromean baryon mass formula](#conj:borromean-baryon-mass-formula). For D and up, the prediction is the binding energy; the AME 2020 reference is the total binding energy. $M_{\mathrm{atom}}$ is the composite atomic mass $N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$. The **CAL-3 Bound (ppb)** column represents the theoretical error floor propagated strictly from the empirical observation uncertainty of the neutron beta-decay $Q_\beta$ value (the CAL-3 anchor, $± 0.61$ eV). Because the theoretical neutron mass ratio $m_n/m_e$ is conditionally anchored on $Q_\beta$, each of the $N$ neutrons adds an unavoidable $± 0.61$ eV of experimental uncertainty to the rendered total atomic mass.
 
 ### neutron (Z = 0)
 

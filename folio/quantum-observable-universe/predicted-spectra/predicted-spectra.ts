@@ -181,8 +181,6 @@ export default chapter({
       label: "sec:archimedean-hartree-crystal-mass-tower-deeper",
       blocks: [
         "archimedean-hartree-crystal-mass-tower-deeper-intro",
-        "bloch-group-quotient-construction",
-        "bloch-group-quotient-construction-table-data",
         "cl2-pentagon-and-faddeev-partial",
         "cl2-pentagon-and-faddeev-partial-novelty",
       ],

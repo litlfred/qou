@@ -45,26 +45,6 @@ The **gg-production collapse** isolates the cost of the projection directly. Dec
 
 This conjecture remains conditional on the $S_5 \leftrightarrow \mathrm{SO}(3)$ fiber-action conjecture. Once that is established, the weight matrix $W_{c_1 c_2}$ derives as a tensor in the SO(3)-fiber data over Bring, with no remaining degrees of freedom. The statement then becomes unconditional: it is a conjecture only for as long as that upstream conjecture is open.
 
-## Lean axiomatisation (sketch)
-
-```lean
--- Conditional on the S₅↔SO(3) fiber-action class:
-class InterNucleonChannelColorTube
-    (M : Type*) [BrCategory M] [ColorTube M] [S5SO3Fiber M] where
-  /-- Per-arc canonical Hecke generator for (color-pair, nucleon-pair). -/
-  hecke_of_color_pair :
-    NucleonColorPair → HeckeAlgebra M
-  /-- The flavor-only projection (current production rule) is the
-      categorical average of `hecke_of_color_pair` over the 9 color
-      pairs of the (nucleon₁, nucleon₂) flavor type. -/
-  flavor_projection_compatibility :
-    ∀ (C₁ C₂ : NucleonColorContent),
-      avg_over_color_pairs (hecke_of_color_pair (C₁, C₂))
-        = flavor_only_hecke (flavor_of C₁) (flavor_of C₂)
-```
-
-The class becomes inhabited by the $S_{5}$/SO(3) fiber data once the $S_5 \leftrightarrow \mathrm{SO}(3)$ fiber-action conjecture is established.
-
 ## Open questions
 
 1. **Closed form for $W_{c_1 c_2}$.** What are the exact rational weights from the SO(3)-fiber tensor over Bring?
