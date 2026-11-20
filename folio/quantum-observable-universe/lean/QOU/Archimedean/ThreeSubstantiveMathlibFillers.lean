@@ -4,6 +4,7 @@ import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
 import Mathlib.Tactic
+import Mathlib.Analysis.SpecialFunctions.Complex.Log
 import QOU.Archimedean.ClausenFunctionMathlibFiller
 -- import QOU.Archimedean.BlochWignerMathlibFiller
 import QOU.Archimedean.DilogarithmArchimedeanLimit
@@ -103,33 +104,37 @@ class HasBlochGroup
 
 /-! ## (2) Pentagon identity for `Cl_2` -/
 
-/-- The **5-term pentagon identity for Cl_2** (sine-form). For
-    five real arguments `α, β, γ, δ, ε` lying in the standard
-    fundamental domain `(0, 2π)` and satisfying the pentagon
-    closure relation, the alternating sum
+/-- **The pentagon-closure condition on five angles**, stated concretely.
 
-      Cl_2(α) - Cl_2(β) + Cl_2(γ) - Cl_2(δ) + Cl_2(ε)  =  0.
+    `c` is closed when the five points `e^{i c_k}` on the unit circle are the
+    five arguments of Suslin's five-term relation for some `x, y`:
+    `x, y, y/x, (1 − x⁻¹)/(1 − y⁻¹), (1 − x)/(1 − y)`.
 
-    This is the imaginary-part projection of the standard 5-term
-    identity for `Im(Li_2)`. Full proof requires Mathlib's Fourier
-    infrastructure (sine-series rearrangements). We axiomatise the
-    identity as a class hypothesis. -/
-class Cl_2_PentagonHolds where
-  /-- The pentagon-closure predicate on 5-tuples of angles: the
-      imaginary-part projection of the standard `Li_2` 5-term
-      relation. Its concrete defining equation is the open
-      Fourier-rearrangement input Mathlib lacks; the class carries
-      it abstractly as a hypothesis datum. -/
-  closure : (Fin 5 → ℝ) → Prop
-  /-- The 5-term sine pentagon for `Cl_2`: every `closure`-related
-      5-tuple `c` lying in the fundamental domain `(0, 2π)` makes
-      the alternating `Cl_2` sum vanish. This is the genuine
-      *vanishing* content (not a tautology), conditional on the
-      abstract closure datum above — the §3b-tax "shape of the
-      claim". -/
+    Until 2026-11-20 (bean `qou-eao2`) this predicate was a **field** of
+    `Cl_2_PentagonHolds`, so `closure := fun _ => False` inhabited the class
+    and it asserted nothing. It is now a definition. The set it cuts out is
+    nonempty: `x = i, y = −i` puts all five points on the circle. -/
+def cl2PentagonClosure (c : Fin 5 → ℝ) : Prop :=
+  ∃ x y : ℂ, x ≠ 0 ∧ x ≠ 1 ∧ y ≠ 0 ∧ y ≠ 1 ∧ x ≠ y ∧
+    Complex.exp (c 0 * Complex.I) = x ∧
+    Complex.exp (c 1 * Complex.I) = y ∧
+    Complex.exp (c 2 * Complex.I) = y / x ∧
+    Complex.exp (c 3 * Complex.I) = (1 - x⁻¹) / (1 - y⁻¹) ∧
+    Complex.exp (c 4 * Complex.I) = (1 - x) / (1 - y)
+
+/-- The **5-term pentagon identity for Cl_2** on the unit circle: for five angles
+    satisfying `cl2PentagonClosure`, the alternating `Cl_2` sum vanishes.
+
+    It is the restriction of Suslin's five-term relation for the Bloch–Wigner
+    function to the unit circle, where `D(e^{iθ}) = Cl₂(θ)`. It is **inhabited**
+    by `QOU.Archimedean.Cl2PentagonFromBlochWigner.instCl_2_PentagonHolds`, from
+    the proved five-term relation `FiveTermProof.fiveSum_eq_zero`. -/
+-- Ref: [zagier1986]
+class Cl_2_PentagonHolds : Prop where
+  /-- The 5-term sine pentagon for `Cl_2`, on `cl2PentagonClosure`. -/
   pentagon_holds_general :
     ∀ c : Fin 5 → ℝ,
-      closure c → (∀ i, 0 < c i ∧ c i < 2 * Real.pi) →
+      cl2PentagonClosure c → (∀ i, 0 < c i ∧ c i < 2 * Real.pi) →
       Cl_2 (c 0) - Cl_2 (c 1) + Cl_2 (c 2) - Cl_2 (c 3) + Cl_2 (c 4) = 0
 
 /-- **Conditional theorem (sorry-free).** Given the pentagon-holds
