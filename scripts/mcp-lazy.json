@@ -1,0 +1,42 @@
+{
+  "_comment": "Registry for scripts/mcp-lazy.py. Each MCP server in .mcp.json starts as a lazy stub that exposes one tool, `start`. The backend process below is launched only when an agent calls that tool. `summary` and `use_when` are shown to the agent in the tool description so it can decide whether the task needs the server; `instead` names a cheaper route that needs no MCP at all.",
+  "servers": {
+    "paper-assistant": {
+      "summary": "folio-assistant platform server: corpus_search / search_graph over the knowledge graph (folio/ + library/), document rendering, QA and workflow tools (~70 tools).",
+      "use_when": "you need several graph or platform tools interactively in one session. For a single corpus-grep step 0, the CLI is enough.",
+      "instead": "bun scripts/corpus-search.ts \"<topic>\" (same function, same roots, no MCP).",
+      "cost": "about 3-10 s; needs the FULL platform (scripts/setup-folio-assistant.sh, 1.7 GB). The light platform installed by the SessionStart hook cannot run it.",
+      "command": "bash",
+      "args": ["scripts/paper-assistant-mcp.sh"],
+      "start_timeout_s": 120
+    },
+    "lean-lsp": {
+      "summary": "lean-lsp-mcp: Lean diagnostics, goal states, hover, completions, LeanSearch / Loogle / Lean Finder, axiom check.",
+      "use_when": "you are iterating a Lean proof and want goal states or Mathlib search. For verifying a finished file, lean-direct is the gate.",
+      "instead": "lean -DautoImplicit=false -s 65536 <file> against the restored olean tree (AGENTS.md, 'VERIFY a single file with lean-direct').",
+      "cost": "about 1-2 s once uv has cached the package; the first run downloads it. The LSP itself needs restored oleans to answer quickly.",
+      "command": "uvx",
+      "args": ["lean-lsp-mcp"],
+      "start_timeout_s": 180
+    },
+    "paper-search-mcp": {
+      "summary": "paper-search-mcp: search arXiv, PubMed, bioRxiv, Semantic Scholar and others; download PDFs.",
+      "use_when": "you need to find or fetch an external paper that is not in library/.",
+      "instead": "check library/INDEX.md and library/*/sections first (corpus-grep path 5).",
+      "cost": "about 5-30 s on first run (uv resolves the package).",
+      "command": "uvx",
+      "args": ["--from", "paper-search-mcp", "--with", "mcp<2", "python", "-m", "paper_search_mcp.server"],
+      "start_timeout_s": 180
+    },
+    "openalex-paper-search": {
+      "summary": "alex-mcp: OpenAlex author and work search (citations, affiliations, ORCID).",
+      "use_when": "you need bibliographic metadata from OpenAlex (author disambiguation, citation counts).",
+      "instead": "the paper-search-mcp server, or the CSL-JSON in folio/references/ for works already cited.",
+      "cost": "about 5-30 s on first run (uv builds the package from git).",
+      "requires_env": ["OPENALEX_MAILTO"],
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/drAbreu/alex-mcp.git@4.1.0", "alex-mcp"],
+      "start_timeout_s": 240
+    }
+  }
+}
