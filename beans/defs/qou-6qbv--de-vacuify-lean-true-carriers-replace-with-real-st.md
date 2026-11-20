@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: high
 created_at: 2026-07-11T18:40:54Z
-updated_at: 2026-11-20T15:00:00Z
+updated_at: 2026-11-20T15:40:00Z
 parent: qou-rtxm
 pr: 8189
 ---
@@ -67,3 +67,8 @@ Took ~10 from a fresh audit run on main 917b69399 (22 non-exempt candidates; 7 s
 - Demoted to conjecture (prop:/thm: -> conj:): terms-2-6-higher-operations, spectral-sequence-h3-explicit and their full provable uses[] cone (9 more: six-term-mass-formula-complete, frobenius-antipode-unifies-chirality-and-tower, alpha-k-derivation-procedure, explicit-alpha-k-h3, explicit-alpha-k-h4, atom-knot-mass-derivation, wedderburn-bratteli-recursion, joint-tower-sdp-confinement, baryon-product-from-alt). 6 proof blocks -> remark proof sketches. Refs rewritten in folio/ only; computations/ and docs/ still cite the old labels (~45 live files), left to avoid scriptHash drift.
 - Lean: real conjecture carriers (Terms26HigherOperations, SpectralSequenceH3Explicit, AlgebraicQuantumVolumeSpecialization in convention D) with no instances. Proved: Term 2/6 uniqueness under the conjecture and a divergent-trace refutation; E1 ranks 1,2,2,1 on S3; convention-D relation z(q+q^-1)=q^2; uniform Jones + Alexander routes force J proportional to Delta.
 - Not proved (still open): the Term 2 Wedderburn-limit and Term 6 residue identifications themselves; the explicit d1/d2 formulas; the Jones-route constant.
+
+## 2026-11-20 W8b (PR #8576)
+- Dispatched to apply the W8 rulings (a)/(b); implemented and verified, then found #8568 had already merged them (wider "full cascade" scope, including spectral_sequence_h3_explicit, which the dispatcher's relay of the ruling said to leave). Dropped as redundant; reported on #8526.
+- Finding: #8568's `--review-ledger` run stripped 374 agent-note fields (evidence, reviewer, disposition, stale_prev_verdict, ...) from 75 needs-agent ledger entries. Restored verbatim from 67d54e99f in #8576 (ready-to-merge). The tool path itself still strips; not changed.
+- Small gaps in the merged carriers, not acted on: term6_residue_sum sums residue(l+2) without the 1/(q0 - zeta_l) denominator the .md states; a new `markovZD` was defined instead of reusing MarkovBondRule.markovZ (qou-961o overload concern).
