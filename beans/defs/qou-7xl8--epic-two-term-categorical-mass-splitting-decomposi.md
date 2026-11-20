@@ -9,7 +9,7 @@ tags:
     - 1ppq
     - cottingham
 created_at: 2026-11-18T19:52:23Z
-updated_at: 2026-11-20T18:00:00Z
+updated_at: 2026-11-20T17:30:00Z
 ---
 
 Master epic for deriving, formalizing in Lean 4 (over real QOU/Mathlib types, 0 sorry, 0 axiom, adversarially checked), and auditing the downstream compute/1ppQ consequences of the two-term categorical mass and isospin-splitting decomposition:
@@ -31,3 +31,5 @@ Master epic for deriving, formalizing in Lean 4 (over real QOU/Mathlib types, 0 
 - Naive photon-exchange double sum D is not braid-covariant (shifts by −(Q0Q1)² under σ1σ1⁻¹); its completion S²/2 = 0 on V³.
 - No degree≤2 (order-α) charge weight couples to μ̄₁₂₃ (`quad_alternating_eq_zero`). The even degree-4 c₃ μ̄² term remains the only braid-dependent survivor; c₃ still underived.
 - Joint pin (scope (a), conditional on α_em form B): α_em pins q0 +0.053 ppb from the proton identity, the muon identity +11.614 ppb. A proton-only term reaching m_μ sends α⁻¹ to +79.00 ppb. So no proton-side term (derived or not) satisfies m_μ and α_em together; the evidence points at the muon carrier (qou-6gf9).
+
+**2026-11-20T17:30Z — OWNER RULING (Carl, 16:44): the L2 scorecard scores OPTION 2, the covariant all-pairs insertion Q₁₂+Q₂₃+Q₁₃ with the derived weighting Tr(K^{⊗3}·)/[2]_q³ (PR #8591).** Its connected part is ≡ 0 on V³ (Lean `NucleonWeightSpaceQTrace.deltaT_allPairs_connected_eq_zero`, sorry-free), so every scored two-term row equals its one-term row. Options 1 (adjacent, connected, −m_e·t), 3 and 4 stay as unscored labelled rows. Implemented in #8591 (commits 764f905a1c, e64a4240dc, 5ec37345d6 and later): `insertion=None` + derived = all-pairs is the canonical default in two_term_qtrace_weighting, canonical_mass, derived_masses, qbeta_utils, qou_substrate.q_two_term_borromean_at (pin = one-term proton pin to 50 digits), m_p substrate identity, free-neutron-decay, isotope compute, dashboard, scorecard (scored_form two_term_covariant_all_pairs_qtrace). Scorecard moved main(plain) → adjacent-derived → ruled: m_μ +8.058 → +128.0 → **+211.2 ppb (970.2×, = one-term)**; Q_β 1.672e8 → 1.669e8 → 1.668e8 ppb; m_n 1.392e5 → 1.390e5 → 1.389e5; Δ_pn 1.011e8 → 1.010e8 → 1.009e8; headline 1/6 unchanged. Content blocks neutron-proton-mass-splitting and isospin-mass-split-em-localisation now state the ruled form with a dated note that +0.2201 / −0.3317 keV / 8.06 ppb (0.37σ) were the 1/3-normalised plain adjacent weighting; the probe does not close the μ–p tension. derived_masses default pin moved muon → proton (qou-aj91; Q_β +30.37 ppb rel.). The ruling settles the insertion and weighting of the two-term QED probe only; it derives no non-zero Q_β/Δ_pn contribution, so the open question of this bean (what ε is, and the u/d derivation) is untouched. Bean stays open (rule 13a).
