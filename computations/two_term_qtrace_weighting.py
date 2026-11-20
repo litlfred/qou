@@ -50,7 +50,7 @@ _HERE = Path(__file__).resolve().parent
 if str(_HERE) not in sys.path:
     sys.path.insert(0, str(_HERE))
 
-LEAN_MODULE = "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm"
+LEAN_MODULE = "QOU.BraidsAndKnots.NucleonWeightSpaceQTrace"
 
 #: The one canonical weighting. Menu names are accepted only as labelled historical comparisons.
 DERIVED = "derived"
@@ -332,8 +332,8 @@ def main() -> int:
         "script": "computations/two_term_qtrace_weighting.py",
         "lean_module": LEAN_MODULE,
         "lean_theorems": [
-            "deltaT_adjacent_raw_eq", "deltaT_adjacent_connected_eq", "deltaT_allPairs_raw_eq",
-            "knkp_eq_qdim_div_three_mul_deltaT_connected"],
+            "qtrace_crossing_eq_zD", "deltaT_adjacent_raw_eq", "deltaT_adjacent_connected_eq", "deltaT_allPairs_raw_eq",
+            "knkp_eq_qdim_div_three_mul_deltaT_connected", "deltaT_allPairs_connected_eq_zero"],
         "bean": "qou-99qc",
         "q0Anchor": "proton",
         "q0Value": fmt(q, 60),
