@@ -46,7 +46,8 @@ identification of two descriptions, not a theorem proved here.
 * That the Breit–Wheeler "perpendicular" condition (`σ₀` vs `σ₁`, distinct coordinate
   patches) is Hermitian orthogonality. Item 4 is conditional on that reading.
 * Any map from the Hecke photon coefficients `(φ₀, φ₁, φ₀₁)` of
-  `γ = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁` to a cone vector `p`. The corpus has none, so "u is
+  `γ = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹` (`def:photon`, last term the chiral vertex by
+  owner ruling 2026-11-18, bean `qou-99qc`) to a cone vector `p`. The corpus has none, so "u is
   inherited through γγ" is stated here on the cone side only.
 
 No `sorry`, no axiom, no `native_decide`, no class.
@@ -228,9 +229,10 @@ is `(φ₀, φ₁) ↦ [φ₁ : λ φ₀]` with `λ = c + d i ≠ 0` **not fixed
   `φ₀ = φ₁ = 1` is linear (Hopf image orthogonal to `j`, `polDict_one_linear`); with
   `λ = i` it is circular (`polDict_i_circular`). So "real `φ` = linear polarisation" is
   a choice of `λ`, not a consequence of the table.
-* The degree-2 Hopf dressing `φ₀₁ σ₀σ₁ = φ₀₁ L₊` is not a polarisation line. No point
-  of `ℙ¹` corresponds to it, so any such dictionary covers only the degree-1 part of the
-  photon. -/
+* The vertex term `φ₀₁ σ₀σ₁⁻¹ = φ₀₁ (L₊ − h σ₀)` is not a polarisation line: its
+  `L₊ = σ₀σ₁` part is word degree 2 and no point of `ℙ¹` corresponds to it, so any such
+  dictionary covers only the degree-1 part of the photon. (Before the 2026-11-18 ruling
+  the last term was `φ₀₁ σ₀σ₁ = φ₀₁ L₊`; the conclusion is unchanged.) -/
 
 /-- The line `[v₁ : 0]`, the chart centre of `σ₁`, maps to `+|v₁|² i`. -/
 theorem hopf_pol_v1_axis (a b : R) :
