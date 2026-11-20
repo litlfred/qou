@@ -14,7 +14,7 @@ $$
 
 ## Setup
 
-**The quotient atom model.** Given a neutral atom with $Z$ protons, $N$ neutrons, and $Z$ electrons, we quotient the nuclear core $\mathcal{N}(Z, N)$ to a single formal variable. The resulting element lives in $H_{Z+1}(q)$ with crossing types:
+**The quotient atom model.** Given a neutral atom with $Z$ protons, $N$ neutrons, and $Z$ electrons, quotient the nuclear core $\mathcal{N}(Z, N)$ to a single formal variable. The resulting element lives in $H_{Z+1}(q)$ with crossing types:
 
 See [Table 1](#tbl:shell-closure-nf-term-count-table1-data).
 
@@ -31,7 +31,7 @@ These are Chebyshev $U$-type polynomials in $h = q - q^{-1}$ with the Hecke eige
 
 **Proved (algebraic engine).** The reduction $(\sigma^{-1})^Z = c_Z\sigma + d_Z$ with these closed forms, and the sign-alternation $c_Z<0$ (even $Z$) / $c_Z>0$ (odd $Z$) with $|c_Z|$ strictly increasing for $q>1$, is established rigorously by diagonalising $\sigma$ in the two-dimensional $H_2(q)$ (eigenvalues $q,-q^{-1}$, so $(\sigma^{-1})^Z$ has eigenvalues $q^{-Z},(-1)^Zq^Z$). This is confirmed numerically as an exact $q$-independent identity to $10^{-40}$. The conjectural content is how its sign-alternation propagates through the full Gröbner–Shirshov reduction of the quotient atom in $H_{Z+1}(q)$ to the three $\gamma$-regimes above.
 
-**The NF.** We build the atom by sequential Hopf-linking. We start with $\mathcal{N}$ and add $e_1, e_2, \ldots, e_Z$ one at a time, reducing via Gröbner–Shirshov at each step.
+**The NF.** The atom is built by sequential Hopf-linking. Start with $\mathcal{N}$ and add $e_1, e_2, \ldots, e_Z$ one at a time, reducing via Gröbner–Shirshov at each step.
 
 ## Computational evidence
 
