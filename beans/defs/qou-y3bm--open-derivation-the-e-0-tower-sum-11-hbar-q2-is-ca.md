@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-12T19:04:21Z
-updated_at: 2026-11-20T16:07:16Z
+updated_at: 2026-11-20T18:51:00Z
 ---
 
 **What is wrong.** `E₀`, the Q_β energy scale, had **two live forms** in
@@ -165,3 +165,5 @@ W13 (2026-11-20, owner chose option (a) "define + derive E0^(n)"). Measured befo
 Next honest step for (a): derive E0^(0) itself (from the counit / Markov trace / archimedean functor) before any level-n definition. Stays todo.
 
 W13 (PR #8608): E0^(0) now has a structural reading, proved: E0/m_e = sum over one-generator words containing a reduction (outside GS normal forms {1,sigma}) of q^-length = c_q - q^-1. No parameter; a reading, not a categorical derivation. Negatives (scope a, proved): two-generator series diverges at q0; level grading by leading-ideal powers gives 1/(1-q^-2) ~5.31, not the tower 1/(1-hbar^2) ~1.0099 (equal only at q=2). Next: find a level grading on the reduction words with ratio hbar_q^2 = (1-q^-1)^2, or show none exists among natural gradings. Stays todo.
+
+W13 (PR #8648): tower total IS a positive word count, E0^tower/m_e = sum_k (1-2^-k) q^-k, and 1/(1-hbar^2) = q^2 chi_q (chi_q = 1/(2q-1), the q-Lyapunov exponent). But the n=1 jet level t^2 - t^3 has a negative coefficient: jet levels are not positive word subsets. Open next: derive the exact q-independent 1/2 (two equally weighted channels per letter?) from the Hecke structure, or show the level reading needs signs. Stays todo.
