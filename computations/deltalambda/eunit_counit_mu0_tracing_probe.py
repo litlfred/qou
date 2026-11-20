@@ -75,11 +75,13 @@ set_compute_dps()
 # comparison or (E2) the ideal CAL-1/2/3 mathematical layer. This is neither
 # -- it is a sole-anchor probe that happened to be muon-named.
 from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402  (AME registry)
+from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
 
 Q0_STR = _Q0_RESOLVED
 M_E_STR = "0.51099895"
 E_UNIT_STR = "0.995940"          # 5g-form external unit (reeb §2f)
-B_AME_2H = "2.224566"
+B_AME_2H = _ame_nstr(AME_B_DEUTERON_MEV_VALIDATION, 30)
 
 
 def qint(q, n):

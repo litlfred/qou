@@ -47,6 +47,8 @@ from codata_constants import (
     M_P_MEV_VALIDATION as _M_P_MEV,
     M_N_MEV_VALIDATION as _M_N_MEV,
 )
+from codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
+from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
 
 HBAR_Q = (q0 - 1.0) / q0
 HBAR_Q_SQ = HBAR_Q * HBAR_Q
@@ -132,9 +134,9 @@ if __name__ == "__main__":
 
     ATOMS = [
         ("D",    1, 1, "2.22452"),
-        ("T",    1, 2, "8.481821"),
-        ("3He",  2, 1, "7.71804"),
-        ("4He",  2, 2, "28.295674"),
+        ("T",    1, 2, _ame_nstr(AME_B_TRITIUM_MEV_VALIDATION, 30)),
+        ("3He",  2, 1, _ame_nstr(AME_B_HE3_MEV_VALIDATION, 30)),
+        ("4He",  2, 2, _ame_nstr(AME_B_HE4_MEV_VALIDATION, 30)),
         ("6Li",  3, 3, "32.0"),
         ("12C",  6, 6, "92.161728"),
     ]

@@ -80,6 +80,8 @@ from hecke_core_symbolic import (          # the canonical symbolic core
     h as _H_SYM,                           # q − q⁻¹  (symbolic)
 )
 from q_parameter import Q as _Q0           # canonical substrate q₀
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
+from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
 try:
     from experimental_constants import M_E_MEV as _ME   # CAL-1 electron mass
 except Exception:                           # pragma: no cover
@@ -380,8 +382,8 @@ def self_test() -> None:
 # ── CLI dashboard ─────────────────────────────────────────────────────
 
 _LADDER = [
-    ("2H", 1, 1, "2.224566"), ("3H", 1, 2, "8.481798"),
-    ("3He", 2, 1, "7.718043"), ("4He", 2, 2, "28.295673"),
+    ("2H", 1, 1, _ame_nstr(AME_B_DEUTERON_MEV_VALIDATION, 30)), ("3H", 1, 2, _ame_nstr(AME_B_TRITIUM_MEV_VALIDATION, 30)),
+    ("3He", 2, 1, _ame_nstr(AME_B_HE3_MEV_VALIDATION, 30)), ("4He", 2, 2, _ame_nstr(AME_B_HE4_MEV_VALIDATION, 30)),
     ("6Li", 3, 3, "31.99463"), ("7Li", 3, 4, "39.24454"),
     ("9Be", 4, 5, "58.16498"), ("12C", 6, 6, "92.16175"),
     ("16O", 8, 8, "127.6193"), ("40Ca", 20, 20, "342.0521"),

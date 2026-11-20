@@ -88,6 +88,7 @@ from codata_constants import (
     AME_B_DEUTERON_MEV_VALIDATION,
     AME_B_HE4_MEV_VALIDATION,
 )
+from codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 set_compute_dps()
 COMP = str(_COMP)
@@ -105,8 +106,8 @@ B_DIM = {  # |B_dim| MeV, single-trace undershoot (#3542 sign, q-hook dim)
 }
 B_AME = {  # AME2020 connected binding MeV
     "2H": AME_B_DEUTERON_MEV_VALIDATION,
-    "3H": mp.mpf("8.481821"),
-    "3He": mp.mpf("7.718058"),
+    "3H": AME_B_TRITIUM_MEV_VALIDATION,
+    "3He": AME_B_HE3_MEV_VALIDATION,
     "4He": AME_B_HE4_MEV_VALIDATION,
 }
 

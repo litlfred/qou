@@ -103,6 +103,8 @@ if str(HERE) not in sys.path:
 import markov.markov_weights_symbolic as M  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
+from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
 
 mp.dps = 40
 
@@ -121,8 +123,8 @@ STRANDS_PER_NUCLEON = 3
 SEMF_VOLUME_EXPONENT = 1
 
 # CODATA binding energies, as carried by binding-K-direct.witness.json.
-EMPIRICAL_B = [("D", 2, "2.22456637"), ("T", 3, "8.48179663"),
-               ("3He", 3, "7.71799"), ("4He", 4, "28.29561")]
+EMPIRICAL_B = [("D", 2, _ame_nstr(AME_B_DEUTERON_MEV_VALIDATION, 30)), ("T", 3, _ame_nstr(AME_B_TRITIUM_MEV_VALIDATION, 30)),
+               ("3He", 3, "7.71799"), ("4He", 4, _ame_nstr(AME_B_HE4_MEV_VALIDATION, 30))]
 
 
 def rebuild_normaliser(n: int) -> sp.Expr:

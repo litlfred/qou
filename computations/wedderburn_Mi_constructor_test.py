@@ -92,6 +92,7 @@ from alpha_blend_tower import (  # noqa: E402
     Phi_1, Phi_2, Phi_3, wedderburn_mass_MeV,
 )
 from experimental_constants import M_P_MEV, M_N_MEV, M_E_MEV  # noqa: E402
+from codata_constants import M_D_ATOMIC_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 H = Q0 - QI  # h = q - q^-1, the Hecke parameter of Table 1
 
@@ -183,7 +184,7 @@ def main() -> int:
 
     # Target: the correction must equal -(binding energy of the D atom).
     # AME2020 deuterium ATOMIC mass, MeV (m_p + m_n + m_e - B_total).
-    D_ATOMIC_MEV = mp.mpf("1876.12392")          # AME2020 / CODATA
+    D_ATOMIC_MEV = M_D_ATOMIC_MEV_VALIDATION          # AME2020 / CODATA
     base = mp.mpf(str(M_P_MEV)) + mp.mpf(str(M_N_MEV)) + mp.mpf(str(M_E_MEV))
     target_corr = D_ATOMIC_MEV - base
     print(f"\nbase  = m_p + m_n + m_e = {mp.nstr(base, 12)} MeV")

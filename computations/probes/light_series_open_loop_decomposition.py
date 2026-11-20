@@ -58,14 +58,15 @@ from codata_constants import (
     AME_B_HE4_MEV_VALIDATION,
     AME_B_TRITIUM_MEV_VALIDATION,
 )
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 set_compute_dps()
 
 # (name, Z, N, B_AME MeV)
 ISOTOPES = [
-    ("2H", 1, 1, mp.mpf("2.2245662")),
+    ("2H", 1, 1, AME_B_DEUTERON_MEV_VALIDATION),
     ("3H", 1, 2, AME_B_TRITIUM_MEV_VALIDATION),
-    ("3He", 2, 1, mp.mpf("7.7180213")),
+    ("3He", 2, 1, AME_B_HE3_MEV_VALIDATION),
     ("4He", 2, 2, AME_B_HE4_MEV_VALIDATION),
 ]
 SIGN = {"pp": mp.mpf(1), "nn": mp.mpf(-1), "pn": mp.mpf(1)}

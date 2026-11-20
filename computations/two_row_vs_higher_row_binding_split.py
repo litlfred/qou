@@ -53,6 +53,8 @@ from pathlib import Path
 # ruling (bean qou-4383).
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: E402, F401
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
+from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
 
 getcontext().prec = 60
 
@@ -62,10 +64,10 @@ HERE = Path(__file__).resolve().parent
 # decimal strings — validation targets only, never fitted to.
 M_E_MEV = Decimal("0.51099895069")
 AME_B = {
-    "deuteron":  Decimal("2.224566"),
-    "tritium":   Decimal("8.481821"),
-    "helium-3":  Decimal("7.718043"),
-    "helium-4":  Decimal("28.295673"),
+    "deuteron":  Decimal(_ame_nstr(AME_B_DEUTERON_MEV_VALIDATION, 30)),
+    "tritium":   Decimal(_ame_nstr(AME_B_TRITIUM_MEV_VALIDATION, 30)),
+    "helium-3":  Decimal(_ame_nstr(AME_B_HE3_MEV_VALIDATION, 30)),
+    "helium-4":  Decimal(_ame_nstr(AME_B_HE4_MEV_VALIDATION, 30)),
 }
 WITNESS = {
     "deuteron":  "chi-deuteron-h6-at-q0-50dps.witness.json",
