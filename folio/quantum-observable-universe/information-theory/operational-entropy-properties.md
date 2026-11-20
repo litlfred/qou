@@ -1,13 +1,13 @@
 The operational entropy $\eta_q = (2q-1)/q^3$ ([operational entropy](#def:operational-entropy)) connects to the Hausdorff dimension, exhibits a forced self-consistency, and organizes the physical regimes.
 
 **Derivation from the Manning--McCluskey formula.**
-The Manning--McCluskey formula $d_H = \eta_q / \chi_q$ relates the Hausdorff dimension of the Julia set to the operational entropy, where $\chi_q$ is the Lyapunov exponent. In the $q$-deformed Reeb dynamics, we replace the classical Lyapunov exponent $\chi = \ln 2$ (valid at $c = 0$, where the Julia set is the unit circle) with the $q$-deformed exponent:
+The Manning--McCluskey formula $d_H = \eta_q / \chi_q$ relates the Hausdorff dimension of the Julia set to the operational entropy, where $\chi_q$ is the Lyapunov exponent. In the $q$-deformed Reeb dynamics, one replaces the classical Lyapunov exponent $\chi = \ln 2$ (valid at $c = 0$, where the Julia set is the unit circle) with the $q$-deformed exponent:
 
 $$
   \chi_q =  \frac{1}{2q - 1}.
 $$
 
-The substitution $\ln 2 \to 1/(2q-1)$ reflects that the framework operates in $q$-deformed information units, not classical nats. The degree-$2$ map $f_q$ has an effective multiplier of $1/(2q-1)$ in the $q$-connection frame. At $q = 1$, we recover $\chi_1 = 1$, meaning one nat per operation, which matches the unit-circle dynamics.
+The substitution $\ln 2 \to 1/(2q-1)$ reflects that the framework operates in $q$-deformed information units, not classical nats. The degree-$2$ map $f_q$ has an effective multiplier of $1/(2q-1)$ in the $q$-connection frame. At $q = 1$, one recovers $\chi_1 = 1$, meaning one nat per operation, which matches the unit-circle dynamics.
 
 The $q$-deformed Hausdorff dimension of the Julia set is:
 
@@ -27,7 +27,7 @@ The formula $d_{H,q} = (2q-1)^2/q^3$ is exact within the $q$-deformed framework.
 | **At $q = q_0$** | $d_H \approx 1.047$ (transfer operator) | $d_{H,q} \approx 1.088$ (exact) |
 | **Field dependence** | $\mathbb{C}$ only | Any field $k$ with $q \in k^\times$ |
 
-The classical $d_H$ depends on the transcendental quantity $\ln 2$ and requires the analytic structure of $\mathbb{C}$. The $q$-deformed $d_{H,q}$ is a rational function of $q$. It applies over any field, including $\mathbb{F}_p$ or $\mathbb{Q}_p$. The two dimensions agree at $q = 1$ and at $q = \varphi^2$, but diverge elsewhere. The $3.9\%$ difference at $q = q_0$ is structural: classical conformal dynamics uses $\ln 2$ for the topological entropy, whereas the $q$-deformed dynamics uses $\eta_q$. We propose that $d_{H,q}$, rather than $d_H$, governs the physics.
+The classical $d_H$ depends on the transcendental quantity $\ln 2$ and requires the analytic structure of $\mathbb{C}$. The $q$-deformed $d_{H,q}$ is a rational function of $q$. It applies over any field, including $\mathbb{F}_p$ or $\mathbb{Q}_p$. The two dimensions agree at $q = 1$ and at $q = \varphi^2$, but diverge elsewhere. The $3.9\%$ difference at $q = q_0$ is structural: classical conformal dynamics uses $\ln 2$ for the topological entropy, whereas the $q$-deformed dynamics uses $\eta_q$. One proposes that $d_{H,q}$, rather than $d_H$, governs the physics.
 
 Gravitational self-consistency forces this formula, without fitting ([operational entropy is forced by self-consistency](#rem:operational-entropy-self-consistency)).
 
@@ -45,7 +45,7 @@ where $n_R(q) = 1/\hbar_q$ is the iteration count per Planck circuit ([Planck ti
 | Regime | $q$ | $\eta_q$ | $d_{H,q}$ | Interpretation |
 |--------|-----|----------|-----------|----------------|
 | Classical limit | $q \to 1$ | $\to 1$ | $\to 1$ | One nat per step; Julia set = unit circle |
-| Our universe | $q_0$ | $0.892$ | $1.088$ | Moderate: each of ${\sim}10$ steps generates $0.89$ $q$-bits |
+| The observed universe | $q_0$ | $0.892$ | $1.088$ | Moderate: each of ${\sim}10$ steps generates $0.89$ $q$-bits |
 | Deep quantum | $\varphi^2$ | $0.327$ | $1.000$ | $d_{H,q}$ returns to $1$ at the golden threshold |
 | Deep-quantum | $q \to \infty$ | $\to 0$ | $\to 0$ | Zero information per step; Julia set collapses |
 
