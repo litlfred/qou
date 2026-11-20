@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-11-20T09:00:00Z
-updated_at: 2026-11-20T15:30:00Z
+updated_at: 2026-11-20T16:10:00Z
 parent: qou-uhx0
 ---
 
@@ -27,3 +27,6 @@ Open, and what would close it:
 - **Block-ordered nuclear Hecke-only reduction**: `QOU/TransferMatrices/GSNormalForm.lean` proves the block step and the irreducibility of chain monomials; its own "Honest scope" lists three missing pieces (no H_A(q) construction, no confluence, no global block-locality induction). Open.
 - **Content defect found**: `nuclear-interactions/nuclear-groebner-reduction.md` states that G = {Hecke, Yang–Baxter, far-comm} IS the GS basis of H_A(q) with unique normal form. That is false for A ≥ 4 by the sorry-free refutation above; the correct G is the Bokut–Shiao completion. Raised as `[W12 ask]` on #8526 (content edit to a proposition statement).
 - alpha_crit = q_0 and GPMT radical: still no artifact; unscoped.
+
+## Same pattern in other beans (measured 2026-11-20)
+Beans set to completed by the local commits e223ed1 / 4fcd2cb / 89bb5e0 on `cat/cat-harness/beans` (2026-11-19, `litlfred@fenugreek.home`) whose named Lean/probe/witness files are absent from main and every branch and PR: qou-2och, qou-7ypv, qou-bgq9, qou-iw1d, qou-l4t2, qou-ozdk, qou-qssg, qou-qvpl (work existed on PR #8149, closed unmerged), qou-txc1, qou-y7ek, qou-ys29 (also #8149), qou-7vhp (partial: `roundtrip-blind-packets.ts` absent), qou-rgj8 (one file). qou-2och and qou-lm62 reopened on owner instruction; the rest left as they are pending the owner.
