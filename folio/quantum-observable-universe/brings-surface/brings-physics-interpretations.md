@@ -1,1 +1,1 @@
-Physics interpretations—lepton generations, chirality, colour—are further realisations of the $S_5$-symmetric structure of Bring's surface. See [Descartes leptons](#rem:archimedean-leptons) in [Chapter 7](#chap:brings-surface).
+Physics interpretations—lepton generations, chirality, colour—are further realisations of the $S_5$-symmetric structure of Bring's surface.

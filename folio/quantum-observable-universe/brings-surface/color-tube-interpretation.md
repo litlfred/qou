@@ -7,4 +7,4 @@ The coordinates $r, g, b$ label the three color degrees of freedom. These corres
 For a fixed $z \in \mathbb{P}^1(\mathbb{C})$, the shifted quadric and cubic constrain the color vector $c = (c_r, c_g, c_b)$ to lie on a curve inside the three-dimensional color space $\mathbb{A}^3$. As $z$ varies over the spacetime base, this curve sweeps out a tube. This space constitutes the total space of the color fibration over $\mathbb{P}^1(\mathbb{C})$.
 
 **Space-like coordinate.**
-The shift $\sigma = w_1 - z$ is distinguished. It measures the deviation of the $C_5$-fundamental resolvent $w_1$ from the spacetime base. It anchors the $U(1)$ longitudinal backbone ([spectral dynamics](#rem:spectral-dynamics)) in the shifted frame.
+The shift $\sigma = w_1 - z$ is distinguished. It measures the deviation of the $C_5$-fundamental resolvent $w_1$ from the spacetime base.
