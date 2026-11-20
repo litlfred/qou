@@ -1,14 +1,14 @@
 ---
 # qou-tztx
 title: 'W14 step-1 residue: 79 raw-label link texts the script skipped'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - voice-audit
     - fourth-wall-lean
 created_at: 2026-11-20T17:30:00Z
-updated_at: 2026-11-20T17:30:00Z
+updated_at: 2026-11-20T18:55:00Z
 parent: qou-d4kh
 ---
 
@@ -19,3 +19,6 @@ How (house style, set by PRs #8577, #8584, #8588): restate every "the Lean sibli
 Counts (W14b stack; re-measure on W14 #8566/#8569 once merged, which already cover part of this) are failing hits of `voice-leak-audit.ts` measured 2026-11-20 on branch `claude/voice-leak-wave-mass-theory-2026-11-20` (main 423c7a0a7 + step-1 link-text fix + mass-theory waves A/B); re-measure before starting.
 
 Created by W14b (https://claude.ai/code/session_01VQDpPc68uEsyxoN3soj6Ws).
+
+## 2026-11-20 — completed by W14b (https://claude.ai/code/session_01VQDpPc68uEsyxoN3soj6Ws)
+PR #8640 merged (8313caeb3): the last 42 raw-label link texts on main got hand-written short titles (19 labels). Paper-wide L2 block-id 42 -> 0. Mechanical task, no open conjecture.
