@@ -32,17 +32,33 @@ TODO lists forms on manifolds as "not defined yet". This file builds the first t
   the chartwise exterior derivatives are related by the same coordinate-change pullback, i.e.
   `d` computed chart by chart is chart-independent.
 
+* `ManifoldForm.extDeriv ω` (`ManifoldForm I M F k → ManifoldForm I M F (k+1)`): at `x`, `d` of
+  the chart-`x` representation at `extChartAt I x x`, transported to `TangentSpace I x` by the
+  chart derivative.
+* `ManifoldForm.IsSmoothForm ω s`: every chart representation is `C^s` on its chart target.
+* **`ManifoldForm.inChart_extDeriv`** (boundaryless, `C^r`, `minSmoothness 𝕜 2 ≤ r`): at any point
+  of any chart target where `ω.inChart x₀` is differentiable,
+  `(ω.extDeriv).inChart x₀ y = extDeriv (ω.inChart x₀) y`; `inChart_extDeriv_eqOn` is the
+  on-the-whole-target version for `C^s` forms, `1 ≤ s`.
+* **`ManifoldForm.extDeriv_extDeriv`** (`d ∘ d = 0` on `M`): for a `C^s` form with
+  `minSmoothness 𝕜 2 ≤ s` on a boundaryless `C^r` manifold with `minSmoothness 𝕜 2 ≤ r`.
+* `IsSmoothForm.extDeriv`: `d` maps `C^s` forms to `C^m` forms when `m + 1 ≤ s`, `1 ≤ s`.
+* `AddCommGroup` / `Module 𝕜` on `ManifoldForm`; `extDeriv_smul` (unconditional),
+  `extDeriv_add_apply` (pointwise, differentiable charts), `extDeriv_add` (`C^s`, `1 ≤ s`).
+* `ManifoldForm.extDeriv_modelSpace`: on `M = E` with model `𝓘(𝕜, E)`, `ManifoldForm.extDeriv`
+  is Mathlib's `extDeriv`.
+
 ## What is NOT built
 
 * No vector bundle with fibre `TangentSpace I x [⋀^Fin k]→L[𝕜] F`, hence no notion of a
-  smooth (`ContMDiff`) section and no bundled `C^r` forms on `M`.
-* No exterior derivative as an operation `ManifoldForm I M F k → ManifoldForm I M F (k+1)`:
-  the results above are the compatibility needed to define it chartwise, but the gluing
-  (choosing `chartAt` and transporting `extDeriv (ω.inChart x)` back to `TangentSpace I x`)
-  is not carried out, nor is `d ∘ d = 0` on `M`.
+  smooth (`ContMDiff`) section and no bundled `C^r` forms on `M`; smoothness is the chartwise
+  predicate `IsSmoothForm` instead.
+* `extDeriv_add` needs differentiability of both chart representations; there is no general
+  additivity for arbitrary (non-differentiable) pointwise forms, as for Mathlib's `extDeriv`.
 * Manifolds with boundary/corners are excluded (`I.Boundaryless`): `pullback` uses `fderiv`,
   not `fderivWithin` on `range I`.
-* No wedge product, no integration, no Stokes.
+* No pullback of manifold forms along smooth maps `M → N`, no wedge product, no integration,
+  no Stokes.
 -/
 
 open Filter ContinuousAlternatingMap Set
@@ -295,7 +311,216 @@ theorem extDeriv_inChart_eq_pullback {r : WithTop ℕ∞} [IsManifold I r M]
   filter_upwards [hsrc.mem_nhds hy] with y' hy'
   exact inChart_eq_pullback ω x₀ x₁ hy'
 
+
+/-! ### The exterior derivative on `M` -/
+
+/-- The exterior derivative of a manifold form, defined at `x` by computing `d` of the local
+representation in the extended chart at `x` itself, at the point `extChartAt I x x`, and
+transporting the result back to `TangentSpace I x` along the chart derivative. By
+`extDeriv_inChart_eq_pullback` this does not depend on the chart used (see `inChart_extDeriv`). -/
+noncomputable def extDeriv (ω : ManifoldForm I M F k) : ManifoldForm I M F (k + 1) :=
+  fun x ↦ (_root_.extDeriv (ω.inChart x) (extChartAt I x x)).compContinuousLinearMap
+    (mfderiv I 𝓘(𝕜, E) (extChartAt I x) x)
+
+omit [I.Boundaryless] in
+theorem extDeriv_apply (ω : ManifoldForm I M F k) (x : M) (v : Fin (k + 1) → TangentSpace I x) :
+    ω.extDeriv x v = _root_.extDeriv (ω.inChart x) (extChartAt I x x)
+      (fun i ↦ mfderiv I 𝓘(𝕜, E) (extChartAt I x) x (v i)) := rfl
+
+/-- A manifold form is of class `C^s` if each of its chart representations is `C^s` on the
+target of the chart. -/
+def IsSmoothForm (ω : ManifoldForm I M F k) (s : WithTop ℕ∞) : Prop :=
+  ∀ x₀ : M, ContDiffOn 𝕜 s (ω.inChart x₀) (extChartAt I x₀).target
+
+omit [I.Boundaryless] in
+theorem mfderivWithin_range_eq [I.Boundaryless] {N : Type*} [TopologicalSpace N]
+    [ChartedSpace H N] (g : E → N) (y : E) :
+    mfderivWithin 𝓘(𝕜, E) I g (range I) y = mfderiv 𝓘(𝕜, E) I g y := by
+  rw [ModelWithCorners.Boundaryless.range_eq_univ, mfderivWithin_univ]
+
+/-- The chart derivatives compose to the identity: with `p = (extChartAt I x₀).symm y` and
+`τ = extChartAt I x₀ ∘ (extChartAt I p).symm` the coordinate change,
+`Dτ (φ_p p) ∘ Dφ_p (p) ∘ D(φ_{x₀}⁻¹)(y) = id`. -/
+theorem fderiv_coordChange_comp_eq_id [IsManifold I 1 M] (x₀ : M) {y : E}
+    (hy : y ∈ (extChartAt I x₀).target) :
+    (fderiv 𝕜 (extChartAt I x₀ ∘ (extChartAt I ((extChartAt I x₀).symm y)).symm)
+        (extChartAt I ((extChartAt I x₀).symm y) ((extChartAt I x₀).symm y))).comp
+      ((mfderiv I 𝓘(𝕜, E) (extChartAt I ((extChartAt I x₀).symm y))
+          ((extChartAt I x₀).symm y)).comp
+        (mfderiv 𝓘(𝕜, E) I (extChartAt I x₀).symm y)) = ContinuousLinearMap.id 𝕜 E := by
+  set p := (extChartAt I x₀).symm y with hp
+  have hpsrc : p ∈ (extChartAt I x₀).source := (extChartAt I x₀).map_target hy
+  have hp' : (extChartAt I p).symm (extChartAt I p p) = p := extChartAt_to_inv p
+  have hg : MDifferentiableAt I 𝓘(𝕜, E) (extChartAt I x₀)
+      ((extChartAt I p).symm (extChartAt I p p)) := by
+    rw [hp']
+    exact mdifferentiableAt_extChartAt (by rwa [← extChartAt_source (I := I)])
+  have hf : MDifferentiableAt 𝓘(𝕜, E) I (extChartAt I p).symm (extChartAt I p p) := by
+    have h := mdifferentiableWithinAt_extChartAt_symm (mem_extChartAt_target (I := I) p)
+    rwa [ModelWithCorners.Boundaryless.range_eq_univ, mdifferentiableWithinAt_univ] at h
+  have hτ : fderiv 𝕜 (extChartAt I x₀ ∘ (extChartAt I p).symm) (extChartAt I p p) =
+      (mfderiv I 𝓘(𝕜, E) (extChartAt I x₀) p).comp
+        (mfderiv 𝓘(𝕜, E) I (extChartAt I p).symm (extChartAt I p p)) := by
+    rw [← mfderiv_eq_fderiv, mfderiv_comp _ hg hf, hp']
+  have hBC := mfderivWithin_extChartAt_symm_comp_mfderiv_extChartAt' (I := I) (x := p)
+    (mem_extChartAt_source (I := I) p)
+  have hAD := mfderiv_extChartAt_comp_mfderivWithin_extChartAt_symm (I := I) hy
+  rw [mfderivWithin_range_eq] at hBC hAD
+  rw [hτ]
+  ext v
+  have h1 : mfderiv 𝓘(𝕜, E) I (extChartAt I p).symm (extChartAt I p p)
+      (mfderiv I 𝓘(𝕜, E) (extChartAt I p) p (mfderiv 𝓘(𝕜, E) I (extChartAt I x₀).symm y v)) =
+      mfderiv 𝓘(𝕜, E) I (extChartAt I x₀).symm y v :=
+    DFunLike.congr_fun hBC (mfderiv 𝓘(𝕜, E) I (extChartAt I x₀).symm y v)
+  have h2 : mfderiv I 𝓘(𝕜, E) (extChartAt I x₀) p
+      (mfderiv 𝓘(𝕜, E) I (extChartAt I x₀).symm y v) = v :=
+    DFunLike.congr_fun hAD v
+  change mfderiv I 𝓘(𝕜, E) (extChartAt I x₀) p (mfderiv 𝓘(𝕜, E) I (extChartAt I p).symm
+    (extChartAt I p p) (mfderiv I 𝓘(𝕜, E) (extChartAt I p) p
+      (mfderiv 𝓘(𝕜, E) I (extChartAt I x₀).symm y v))) = v
+  rw [h1, h2]
+
+/-- **The exterior derivative in a chart.** At every point `y` of the target of the chart at
+`x₀` where the chart representation of `ω` is differentiable, the chart representation of
+`ω.extDeriv` is the normed-space exterior derivative of the chart representation of `ω`. -/
+theorem inChart_extDeriv {r : WithTop ℕ∞} [IsManifold I r M] (hr : minSmoothness 𝕜 2 ≤ r)
+    (ω : ManifoldForm I M F k) (x₀ : M) {y : E} (hy : y ∈ (extChartAt I x₀).target)
+    (hω : DifferentiableAt 𝕜 (ω.inChart x₀) y) :
+    ω.extDeriv.inChart x₀ y = _root_.extDeriv (ω.inChart x₀) y := by
+  have : IsManifold I 1 M := IsManifold.of_le (n := r)
+    (((by norm_num : (1 : WithTop ℕ∞) ≤ 2)).trans (le_minSmoothness.trans hr))
+  have hD := fderiv_coordChange_comp_eq_id (I := I) x₀ hy
+  set p := (extChartAt I x₀).symm y with hp
+  have hpsrc : p ∈ (extChartAt I x₀).source := (extChartAt I x₀).map_target hy
+  have hyp : extChartAt I x₀ p = y := (extChartAt I x₀).right_inv hy
+  have hp' : (extChartAt I p).symm (extChartAt I p p) = p := extChartAt_to_inv p
+  have hy' : extChartAt I p p ∈ ((extChartAt I p).symm ≫ extChartAt I x₀).source := by
+    simp only [PartialEquiv.trans_source, PartialEquiv.symm_source, mem_inter_iff, mem_preimage]
+    exact ⟨mem_extChartAt_target p, by rw [hp']; exact hpsrc⟩
+  have hτ : (extChartAt I x₀ ∘ (extChartAt I p).symm) (extChartAt I p p) = y := by
+    simp only [Function.comp_apply, hp', hyp]
+  have key := extDeriv_inChart_eq_pullback hr ω x₀ p hy' (by rw [hτ]; exact hω)
+  ext w
+  change _root_.extDeriv (ω.inChart p) (extChartAt I p p)
+    (fun i ↦ mfderiv I 𝓘(𝕜, E) (extChartAt I p) p
+      (mfderiv 𝓘(𝕜, E) I (extChartAt I x₀).symm y (w i))) = _
+  rw [key, pullback_apply, hτ]
+  congr 1
+  funext i
+  exact DFunLike.congr_fun hD (w i)
+
+/-- For a `C^s` form (`1 ≤ s`), the chart representation of `ω.extDeriv` agrees with the
+normed-space exterior derivative of the chart representation on the whole chart target. -/
+theorem inChart_extDeriv_eqOn {r s : WithTop ℕ∞} [IsManifold I r M]
+    (hr : minSmoothness 𝕜 2 ≤ r) {ω : ManifoldForm I M F k} (hω : ω.IsSmoothForm s)
+    (hs : 1 ≤ s) (x₀ : M) :
+    EqOn (ω.extDeriv.inChart x₀) (_root_.extDeriv (ω.inChart x₀)) (extChartAt I x₀).target :=
+  fun _ hy ↦ inChart_extDeriv hr ω x₀ hy
+    (((hω x₀).differentiableOn hs).differentiableAt
+      ((isOpen_extChartAt_target x₀).mem_nhds hy))
+
+/-- **`d ∘ d = 0` on a manifold.** On a boundaryless `C^r` manifold (`minSmoothness 𝕜 2 ≤ r`),
+for every form of class `C^s` with `minSmoothness 𝕜 2 ≤ s`, `d (d ω) = 0` at every point. -/
+theorem extDeriv_extDeriv_apply {r s : WithTop ℕ∞} [IsManifold I r M]
+    (hr : minSmoothness 𝕜 2 ≤ r) {ω : ManifoldForm I M F k} (hω : ω.IsSmoothForm s)
+    (hs : minSmoothness 𝕜 2 ≤ s) (x : M) : ω.extDeriv.extDeriv x = 0 := by
+  have hs1 : (1 : WithTop ℕ∞) ≤ s :=
+    ((by norm_num : (1 : WithTop ℕ∞) ≤ 2)).trans (le_minSmoothness.trans hs)
+  have hmem : extChartAt I x x ∈ (extChartAt I x).target := mem_extChartAt_target x
+  have hev : ω.extDeriv.inChart x =ᶠ[𝓝 (extChartAt I x x)] _root_.extDeriv (ω.inChart x) :=
+    Filter.eventuallyEq_of_mem ((isOpen_extChartAt_target x).mem_nhds hmem)
+      (inChart_extDeriv_eqOn hr hω hs1 x)
+  have hcd : ContDiffAt 𝕜 s (ω.inChart x) (extChartAt I x x) :=
+    (hω x).contDiffAt ((isOpen_extChartAt_target x).mem_nhds hmem)
+  ext v
+  rw [extDeriv_apply, hev.extDeriv_eq, _root_.extDeriv_extDeriv_apply hcd hs]
+  rfl
+
+
+/-- The exterior derivative of a `C^s` form is a `C^m` form whenever `m + 1 ≤ s` (and `1 ≤ s`,
+needed to identify `d` with its chart representation). -/
+theorem IsSmoothForm.extDeriv {r s m : WithTop ℕ∞} [IsManifold I r M]
+    (hr : minSmoothness 𝕜 2 ≤ r) {ω : ManifoldForm I M F k} (hω : ω.IsSmoothForm s)
+    (hs : 1 ≤ s) (hm : m + 1 ≤ s) : ω.extDeriv.IsSmoothForm m := by
+  intro x₀
+  have h : ContDiffOn 𝕜 m (_root_.extDeriv (ω.inChart x₀)) (extChartAt I x₀).target := by
+    have hf := (hω x₀).fderiv_of_isOpen (isOpen_extChartAt_target x₀) hm
+    exact ((alternatizeUncurryFinCLM 𝕜 E F (n := k)).contDiff.comp_contDiffOn hf).congr
+      fun y _ ↦ by simp [_root_.extDeriv, alternatizeUncurryFinCLM_apply]
+  exact h.congr (inChart_extDeriv_eqOn hr hω hs x₀)
+
+/-! ### Linearity -/
+
+omit [I.Boundaryless] in
+noncomputable instance : AddCommGroup (ManifoldForm I M F k) :=
+  inferInstanceAs (AddCommGroup (∀ x : M, TangentSpace I x [⋀^Fin k]→L[𝕜] F))
+
+omit [I.Boundaryless] in
+noncomputable instance : Module 𝕜 (ManifoldForm I M F k) :=
+  inferInstanceAs (Module 𝕜 (∀ x : M, TangentSpace I x [⋀^Fin k]→L[𝕜] F))
+
+omit [I.Boundaryless] in
+theorem inChart_add (ω₁ ω₂ : ManifoldForm I M F k) (x₀ : M) :
+    (ω₁ + ω₂).inChart x₀ = ω₁.inChart x₀ + ω₂.inChart x₀ := by
+  funext y; ext w; rfl
+
+omit [I.Boundaryless] in
+theorem inChart_smul (c : 𝕜) (ω : ManifoldForm I M F k) (x₀ : M) :
+    (c • ω).inChart x₀ = c • ω.inChart x₀ := by
+  funext y; ext w; rfl
+
+omit [I.Boundaryless] in
+/-- `ManifoldForm.extDeriv` is additive at `x` whenever both chart representations at `x` are
+differentiable at `extChartAt I x x`. -/
+theorem extDeriv_add_apply {ω₁ ω₂ : ManifoldForm I M F k} {x : M}
+    (h₁ : DifferentiableAt 𝕜 (ω₁.inChart x) (extChartAt I x x))
+    (h₂ : DifferentiableAt 𝕜 (ω₂.inChart x) (extChartAt I x x)) :
+    (ω₁ + ω₂).extDeriv x = ω₁.extDeriv x + ω₂.extDeriv x := by
+  ext v
+  rw [extDeriv_apply, inChart_add, _root_.extDeriv_add h₁ h₂]
+  rfl
+
+omit [I.Boundaryless] in
+theorem extDeriv_smul (c : 𝕜) (ω : ManifoldForm I M F k) :
+    (c • ω).extDeriv = c • ω.extDeriv := by
+  funext x
+  ext v
+  rw [extDeriv_apply, inChart_smul, _root_.extDeriv_smul]
+  rfl
+
+/-- Additivity of `d` on `C^s` forms, `1 ≤ s`. -/
+theorem extDeriv_add {s : WithTop ℕ∞} {ω₁ ω₂ : ManifoldForm I M F k}
+    (h₁ : ω₁.IsSmoothForm s) (h₂ : ω₂.IsSmoothForm s) (hs : 1 ≤ s) :
+    (ω₁ + ω₂).extDeriv = ω₁.extDeriv + ω₂.extDeriv := by
+  funext x
+  have hmem := (isOpen_extChartAt_target (I := I) x).mem_nhds (mem_extChartAt_target x)
+  exact extDeriv_add_apply (((h₁ x).differentiableOn hs).differentiableAt hmem)
+    (((h₂ x).differentiableOn hs).differentiableAt hmem)
+
+
+/-- **`d ∘ d = 0` on a manifold**, as an equality of manifold forms. -/
+theorem extDeriv_extDeriv {r s : WithTop ℕ∞} [IsManifold I r M]
+    (hr : minSmoothness 𝕜 2 ≤ r) {ω : ManifoldForm I M F k} (hω : ω.IsSmoothForm s)
+    (hs : minSmoothness 𝕜 2 ≤ s) : ω.extDeriv.extDeriv = 0 :=
+  funext (extDeriv_extDeriv_apply hr hω hs)
+
 end ManifoldForm
+
+/-- On the model space `E` itself (with the trivial model `𝓘(𝕜, E)`), the exterior derivative of
+manifold forms is Mathlib's normed-space exterior derivative. -/
+theorem ManifoldForm.extDeriv_modelSpace {k : ℕ} (ω : ManifoldForm 𝓘(𝕜, E) E F k) (x : E) :
+    ω.extDeriv x = _root_.extDeriv (ω : E → E [⋀^Fin k]→L[𝕜] F) x := by
+  have hc : ∀ y : E, ω.inChart y = (ω : E → E [⋀^Fin k]→L[𝕜] F) := by
+    intro y
+    funext z
+    ext w
+    simp [ManifoldForm.inChart, mfderiv_id]
+    rfl
+  ext v
+  rw [ManifoldForm.extDeriv_apply, hc]
+  simp [mfderiv_id]
+  rfl
+
 
 end Manifold
 
