@@ -13,7 +13,7 @@ $$
 
 ## Separating $C$ from the CPT composite
 
-[CPT-saturation as Type-B fold-orbit closure: deriving $\rho_F \in \{m_e, 2m_e\}$ from crystal structure](#conj:cpt-orbit-closure-density) describes the **composite** CPT action. The framework historically collapses C, P, T into the single bar-involution [Bar-involution and its $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projections](#def:bar-involution) on Hecke generators ($q \mapsto q^{-1}$ together with $\sigma_i \mapsto \sigma_i^{-1}$). That conflation suppresses the **distinct categorical sources** of the three discrete symmetries:
+The framework historically collapses C, P, T into the single bar-involution [Bar-involution and its $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projections](#def:bar-involution) on Hecke generators ($q \mapsto q^{-1}$ together with $\sigma_i \mapsto \sigma_i^{-1}$). That conflation suppresses the **distinct categorical sources** of the three discrete symmetries:
 
 | Symmetry | Categorical source | Acts on |
 |----------|--------------------|---------|
@@ -31,7 +31,7 @@ The proposition relies on the color-sheet flavor structure established in [Inter
 2. **C is an involution.** Each color sheet flips back to its original flavor under two applications.
 3. **C commutes with bar-involution on the algebraic side.** This forces $\mathrm{CP} \cdot \mathrm{T}$ and $\mathrm{C} \cdot \mathrm{PT}$ to reduce to the bar-involution identity classified in [Bar-involution and its $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projections](../braids-and-knots/bar-involution.md) §Bar-symmetric.
 
-When all three hold, $C$ constitutes the well-defined Z/2 categorical symmetry on the color-sheet flavor data. The CPT composite of [CPT-saturation as Type-B fold-orbit closure: deriving $\rho_F \in \{m_e, 2m_e\}$ from crystal structure](#conj:cpt-orbit-closure-density) factors as $\mathrm{CPT} = C \cdot P \cdot T$ in the natural order, as three commuting Z/2 actions on the color-tube structure.
+When all three hold, $C$ constitutes the well-defined Z/2 categorical symmetry on the color-sheet flavor data. The CPT composite factors as $\mathrm{CPT} = C \cdot P \cdot T$ in the natural order, as three commuting Z/2 actions on the color-tube structure.
 
 ## Structural position
 
@@ -45,9 +45,7 @@ The conjecture asserts a map $C$ on color-sheet flavors with $C^2 = \mathrm{id}$
 
 ## Consumers / downstream
 
-- [CPT-saturation as Type-B fold-orbit closure: deriving $\rho_F \in \{m_e, 2m_e\}$ from crystal structure](#conj:cpt-orbit-closure-density) becomes a corollary of $\mathrm{CPT} = C \cdot P \cdot T$ once the charge-conjugation, parity and time-reversal components close jointly—the content of [CPT closure: charge conjugation, parity and time reversal jointly preserve the Markov trace](#conj:cpt-d6-d7-d8-closure).
 - The matter/antimatter sheet structure on Bring's quintic surface ([Color tube fibers](color-tube-fibers.md)) acquires a natural C-action that descends to the SO(3) fiber.
-- Type-B folding for chirality and CPT ([Type-B Cartan folding realises CPT via symmetric-crystal $\mathbb{Z}/2$ fixed points](#conj:type-b-folding-cpt)) is the symmetric-crystal analogue of this conjecture. Folding the $\mathfrak{sl}_n$ Cartan datum to Type B realises C as a symmetric-crystal structure.
 
 ## Numerical cross-check and open content
 
@@ -58,5 +56,4 @@ The statement is conjectural only for as long as [Inter-nucleon Hecke channel as
 ## Cross-references
 
 - Upstream class: [Inter-nucleon Hecke channel assignment from Bring color-tube weighting](#conj:inter-nucleon-channel-color-tube)
-- [CPT-saturation as Type-B fold-orbit closure: deriving $\rho_F \in \{m_e, 2m_e\}$ from crystal structure](#conj:cpt-orbit-closure-density)—the CPT composite
 - [Bar-involution and its $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projections](../braids-and-knots/bar-involution.md)—the bar-involution = CPT composite identification at the algebraic level

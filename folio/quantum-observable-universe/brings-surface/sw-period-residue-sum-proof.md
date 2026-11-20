@@ -31,11 +31,4 @@ claim, and its contrapositive — a nonzero period forces a nonzero total
 residue — is what forces $E$ to be a *proper* subset. The companion statement
 [The Seiberg–Witten period is an algebraic residue sum](#prop:sw-period-residue-sum) carries the
 residue-sum shape as an explicit hypothesis; it does not derive it.
-
-A second, independent route reaches the same vanishing under the classical-jet
-rule: [The classical-jet prolongation of $\lambda_{\mathrm{SW}}$ is exact for $n \ge 1$](#prop:sw-classical-jet-exactness) shows
-$\lambda_{\mathrm{SW}}^{(n)} = d\bigl(X^{(n-1)}\bigr)$ is exact, so each residue
-vanishes on its own. That argument is stronger where it applies and is scoped to
-the classical-jet reading; the one here assumes only that the *total* vanishes,
-and is a property of the ambient surface rather than of the jet rule.
 $\qquad\blacksquare$
