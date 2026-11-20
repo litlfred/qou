@@ -610,3 +610,19 @@ A MERGE-CANDIDATE is clean against `main`, has no static vacuity/sorry/axiom/col
 | #8510 | `feat/qou-` | dirty | 14/0 | not-run | CLOSE-VACUOUS | standalone file, 10/14 theorems are generic Int identities, unfoldings of one-line Int arithmetic defs, or rfl on local literals |
 | #8511 | `feat/round` | clean | 122/0 | pass | MERGE-CANDIDATE |  |
 | #8512 | `cat/round` | dirty | 11/2 | pass | NEEDS-REWORK | conflicts with main (aggregator/bean files only); standalone proxy: no Mathlib/QOU import, cannot reference the corpus objects it names |
+
+## Merge round 1 (owner instruction 2026-11-20: merge in groups, compatible with the current corpus)
+
+The 45 MERGE-CANDIDATEs were ported onto current `main` and checked again against it. The checks:
+- `lean-direct-cone.sh` on every changed module, then `lean -DautoImplicit=false` with `#print axioms` on every changed file and on every direct dependent on main of a modified module;
+- `scripts/precision-gates.sh` with and without the change (red-set comparison);
+- `sync-qou-mass-vendor.py --check`;
+- a static corpus-currency grep (convention C, muon pin, Λ/Cl₂, purged symbols, absolute mass, stale slope).
+
+| outcome | PRs |
+|---|---|
+| **Merged** via #8642 (group 1: #8145 #8151 #8165 #8180 #8206) and #8643 (group 2: #8504 #8511 #8146 #8178 #8248), rebase-merge, replay verified; originals closed | 10 |
+| Lean verified on current main, but the PR's probe/witness files do not follow corpus convention: witnesses written under a new `test/results/witnesses/` tree that does not exist on main, or probes writing witnesses by raw `json.dump` with no `WitnessBuilder` (provenance missing) — **owner decision** | 26: #8187 #8243 #8244 #8259 #8263 #8267 #8271 #8304 #8311 #8316 #8318 #8322 #8342 #8354 #8358 #8361 #8379 #8389 #8400 #8405 #8454 #8461 #8468 #8482 #8494 #8496 |
+| Conflict with files `main` changed since triage | 3: #8189 #8218 #8225 |
+| Add a red precision gate (collapsed witness / float64 padding) | 4: #8152 #8170 #8186 #8226 |
+| Cannot be verified in an 8 GB container (an import, `YoungDiagramKernel`, is OOM-killed at 5.8 GB; `lean` itself killed) | 2: #8153 #8274 |
