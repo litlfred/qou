@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.18",
-  "computedAt": "2026-11-20T15:36:21.684285+00:00",
-  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
+  "computedAt": "2026-11-20T18:46:50.531176+00:00",
+  "commitSha": "6012303af05e4a538887e42e3d6ff0147a7f2e5a",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "hadron-knot-table",
   "scriptFile": "hadron_knot_table.py",
-  "scriptHash": "a2f8d06fc27a",
-  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "scriptHash": "7ec1fce08daf",
+  "scriptCommitSha": "8a51be2e1185d397db5b6dafc674326efda41dce",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -23,6 +23,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "cvxpy": "absent",
     "pyhecke_native_build": "930c010e26215e56"
   },
@@ -44,6 +45,7 @@
       "L₋",
       "e⁻"
     ],
+    "vhat_weights": "pre-convention-D mixture (q-Plancherel W_sym/W_std/W_alt), kept by owner ruling 2026-11-20 until the Phi_q pole (qou-2tuv) is resolved; convention-D z*a+b gives m_p/m_e = inf (PR #8590)",
     "z_markov": 0.6126880506382724,
     "z_squared": 0.3753866473949262,
     "n_atoms_expected": 19,
