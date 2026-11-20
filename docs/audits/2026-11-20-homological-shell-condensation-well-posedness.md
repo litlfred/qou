@@ -52,3 +52,34 @@ What would make it attemptable:
    statement is true and empty.
 3. Rebuild the Lean carrier on that construction, so the page entries are
    computed rather than supplied.
+
+## 6. Formalize-first derivation (owner: "Formalize first and try to derive")
+
+Lean, sorry-free, `QOU/ShellCondensation/SelectorPrune.lean` (lean-direct exit 0;
+axioms `propext`, `Quot.sound`, plus `Classical.choice` for the first):
+
+- `offDiag_vanish_iff_pure`: for a first-quadrant limit page with entries of
+  dimension `E p q` abutting to `H k = Σ_{p+q=k} E p q`, the conjectured
+  vanishing `E p q = 0` for `q > 0` holds **iff** every `H k` sits entirely in
+  filtration degree `k`. So the conjecture is a **purity** statement: the
+  grading must make cohomology pure. It is not the statement "`H^{≥1} = 0`".
+- `not_upward_closed`, `not_downward_closed`: no predicate on `n` that is
+  preserved by `n ↦ n+1`, or by `n+1 ↦ n`, agrees with the magic set on
+  `0..126`. The witnesses are `2, 3` and `8, 3`.
+
+What this derives, for each candidate reading:
+
+| Reading | Selector it offers | Verdict |
+|---|---|---|
+| Hecke `H_n` at generic or real `q`, Hochschild | none: true at every `n` | `cor:hecke-length-limit-page-vanishing` |
+| Hecke `H_n` at a root of unity of order `e` | semisimplicity, which by Dipper–James fails exactly for `n ≥ e` | upward closed, so excluded by `not_upward_closed` (scope (b) for semisimplicity as the selector) |
+| BB on a smooth projective variety with isolated fixed points | purity | holds for every such variety (cell decomposition), so no selection |
+| Hochschild of `H_n` with a chosen coefficient module | depends on the module | **open** |
+| Bring-surface `S_5 × τ̂` period sub-lattices (`magic-numbers-bring`) | already indexed by the magic ranks | **open**, and the only reading where the corpus links the magic numbers to anything |
+
+So the derivation narrows the target. A working reading needs a **purity**
+criterion whose truth set in `n` is **neither upward nor downward closed**.
+Every selector built from semisimplicity, separability or generic vanishing is
+monotone or constant, and is excluded. The two open rows are where a derivation
+could still succeed; neither has a definition in the corpus that would let the
+spectral sequence be written down.

@@ -22,6 +22,11 @@ export default conjecture({
     {
       kind: "note",
       date: "2026-11-20",
+      body: "Formalize-first derivation (`QOU.ShellCondensation.SelectorPrune`, sorry-free). (i) `offDiag_vanish_iff_pure`: the statement is equivalent to purity of the induced filtration on cohomology, every $H^k$ sitting in filtration degree $k$; it is not the vanishing of $H^{\\geq 1}$. (ii) `not_upward_closed` / `not_downward_closed`: no predicate on $n$ that is preserved by $n \\mapsto n+1$, or by its reverse, matches the magic set on $0..126$. Semisimplicity of $H_n$ at a root of unity is upward closed in $n$, so it cannot be the selector. Open readings: Hochschild with a chosen coefficient module, and the Bring-surface lattices of `conj:magic-numbers-bring`. Bean `qou-6qbv`.",
+    },
+    {
+      kind: "note",
+      date: "2026-11-20",
       body: "Under the Hecke reading (algebra $H_n(R, q)$ with $n$ the nucleon count, Coxeter-length filtration, Hochschild cohomology) the vanishing is proved for every $n$: `cor:hecke-length-limit-page-vanishing`. That reading does not single out the magic numbers, so this conjecture stays open until a reading is named under which some non-magic $n$ fails (owner, option 1; bean `qou-6qbv`; `docs/audits/2026-11-20-homological-shell-condensation-well-posedness.md`).",
     },
     {
