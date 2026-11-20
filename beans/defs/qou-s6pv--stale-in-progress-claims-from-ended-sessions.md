@@ -20,3 +20,5 @@ qou-lpep 26, qou-qs0e 19, qou-vo9t 9). Per-bean list: `docs/coordination/2026-11
 
 Not done: flipping them to `todo` is a bulk status change, which the 2026-09-07 ask-first rule reserves to the owner.
 Default if nobody acts: statuses stay as they are. The beans' content is not affected either way.
+
+2026-11-20 (W6 coordinator child): same finding as decision **D1** in PR #8527 (`docs/coordination/2026-11-20-session-review.md`, 590 claims untouched since before 2026-11-13). This bean tracks that decision. Cross-check: `2026-11-20-session-review-crosscheck.md` @ b40cb08019.
