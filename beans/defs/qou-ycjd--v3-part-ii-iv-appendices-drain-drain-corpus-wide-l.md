@@ -80,3 +80,6 @@ W14's earlier notes say "1, 2, 3, 5 (not 4)". Wrong: W14's AskUserQuestion omitt
 
 ## 2026-11-20 (late) — W14 final state
 Merged on main: #8577/#8584/#8585 (W14b: Part I, link text, ratchet), #8610 (W14: option 3 across all chapters, Formalisation-notes appendix 1b, 3a, 4a, 2a/3a/1b exemptions), #8607 (W14b: option 4 first person; L3 ~1,100 -> 7 quotations). Open: #8621 (W14: L1/L2 that four blocks gained after the ratchet baseline; Bengali 'five' fix). Remaining after #8621: 4 L4 Ch 2 forward links on main (sym2-adjoint-traceless-spin-two, g-action-on-substrate x3, higgs-vacuum-residual-graviton) carrying their blocks' dependencies — owner decision; introduction/authors-note.md kept on purpose. W14 duplicated option 4 briefly (not pushed).
+
+
+2026-11-20T18:20Z (W14): #8598's conflict merge reintroduced one L1 ("machine-checked", nuclear-groebner-reduction-proof). Drained in #8633 (ready-to-merge). Ratchet on main after it: 4 NEW, all Ch 2 L4 forward links (sym2-adjoint-traceless-spin-two, g-action-on-substrate x2 entries, higgs-vacuum-residual-graviton). Owner decision framed in session chat.
