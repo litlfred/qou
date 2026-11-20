@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/tbl-alpha-em-categorical-trace-ratio-table-data",
@@ -12,7 +13,7 @@
   ],
   "label": "tbl:alpha-em-categorical-trace-ratio-table-data",
   "kind": "table",
-  "title": "Numerical verification of $\\alpha_{EM} = h^{2} / [q \\cdot \\delta_q(T_{2,9}) \\cdot \\delta_q(T_{3,5})]$ at $q_0 \\approx 1.1099786$",
+  "title": "Numerical verification of $\\alpha_{EM} = h^{2} / [q \\cdot \\delta^{\\mathrm{top}}_q(T_{2,9}) \\cdot \\delta^{\\mathrm{top}}_q(T_{3,5})]$ at $q_0 \\approx 1.1099786$",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-alpha-em-categorical-trace-ratio"
   ],

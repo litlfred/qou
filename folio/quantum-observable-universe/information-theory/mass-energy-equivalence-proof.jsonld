@@ -2,19 +2,26 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prf-mass-energy-equivalence",
+  "@id": "papers/quantum-observable-universe/blocks/rem-mass-energy-not-crossing-energy",
   "@type": [
-    "folio-assistant-core:Proof",
+    "folio-assistant-core:Remark",
     "doco:Section"
   ],
-  "label": "prf:mass-energy-equivalence",
-  "kind": "proof",
-  "title": "Proof of mass energy equivalence",
+  "label": "rem:mass-energy-not-crossing-energy",
+  "kind": "remark",
+  "title": "Energy is not crossing energy",
   "uses": [
-    "papers/quantum-observable-universe/blocks/thm-mass-energy-equivalence"
+    "papers/quantum-observable-universe/blocks/def-mass-energy",
+    "papers/quantum-observable-universe/blocks/def-crossing-energy",
+    "papers/quantum-observable-universe/blocks/def-mass-identity"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-mass-energy",
+  "cites": [
+    "references/reshetikhin1991"
   ],
   "text": "mass-energy-equivalence-proof.md",
   "provenance": "authored"

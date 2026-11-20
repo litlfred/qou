@@ -2,17 +2,18 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-trace-locality-meets-gs-non-locality",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:trace-locality-meets-gs-non-locality",
   "kind": "proposition",
-  "title": "Reconciliation: Markov locality of single generators vs. Gröbner-Shirshov non-locality of composite braids",
+  "title": "Markov locality of single Hecke crossings",
   "uses": [
     "papers/quantum-observable-universe/blocks/thm-jones-markov-trace",
     "papers/quantum-observable-universe/blocks/rem-non-commutative-probability-dictionary"
@@ -20,15 +21,10 @@
   "proofs": [
     "papers/quantum-observable-universe/blocks/prf-trace-locality-meets-gs-non-locality"
   ],
-  "cites": [
-    "references/wenzl1988"
-  ],
   "tags": [
     "locality",
     "markov-property",
     "grobner-shirshov",
-    "product-factorization",
-    "vertex-volume",
     "issue-649",
     "established"
   ],

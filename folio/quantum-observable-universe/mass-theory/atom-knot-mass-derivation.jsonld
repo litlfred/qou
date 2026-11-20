@@ -2,19 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-atom-knot-mass-derivation",
+  "@id": "papers/quantum-observable-universe/blocks/conj-atom-knot-mass-derivation",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
   "label": "conj:atom-knot-mass-derivation",
-  "kind": "proposition",
+  "kind": "conjecture",
   "title": "End-to-end derivation of atomic binding energies $B = \\nu_{\\mathrm{SDP}} \\cdot m_e \\cdot \\mathrm{Vol}_{\\mathrm{hyp}}(\\widehat{T_w})$ from the categorical action",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-alpha-k-derivation-procedure",
+    "papers/quantum-observable-universe/blocks/conj-alpha-k-derivation-procedure",
     "papers/quantum-observable-universe/blocks/prop-recursive-atom-knot-atlas"
   ],
   "tags": [
