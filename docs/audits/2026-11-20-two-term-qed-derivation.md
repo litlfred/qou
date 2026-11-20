@@ -8,7 +8,7 @@ Today the two-term QED correction is primary on the L2 scorecard only because th
 
 **Update (same day, owner: *"Keep trying to derive and lean prove"*).** §7 derives `c₃` and the degree-0 coefficients `k₁, k₂` along the route the owner named: colour the three strands by `U(1)` charges and expand the coloured invariant. In that class all three are **exactly 0**, at every order, for proton and neutron. So the derivation produces no two-term correction; the scorecard is the one-term scorecard (§7.3).
 
-Lean: [`QEDHigherOrderCovariance.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/QEDHigherOrderCovariance.lean), 27 theorems. Probe: [`two_term_qed_derivation_joint_pin_probe.py`](../../computations/probes/two_term_qed_derivation_joint_pin_probe.py), witness `two-term-qed-derivation-joint-pin.witness.json` (5/5 assertions pass).
+Lean: [`QEDHigherOrderCovariance.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/QEDHigherOrderCovariance.lean), 28 theorems. Probe: [`two_term_qed_derivation_joint_pin_probe.py`](../../computations/probes/two_term_qed_derivation_joint_pin_probe.py), witness `two-term-qed-derivation-joint-pin.witness.json` (5/5 assertions pass).
 
 This builds on PR #8552 (`NucleonQEDCovariance`, the commutant of the crossing action) and PR #8557 (`CrossingCovariantQED`, the first-order local insertion). Neither is on `main`, so this file imports only `NucleonWeightSpaceTwoTerm` and `BorromeanPairwiseLinking` and redefines the small amount of shared vocabulary it needs.
 
@@ -114,6 +114,14 @@ So the coloured value is a constant function of `(Q₀, Q₁, Q₂)`. Every char
 | `σ₁³` (two strands merge; self-writhe 3) | 4/3 | 4/3 | −2/3 | 4/3 |
 
 (The `σ₁³` row is a mechanism check only. Its merged component carries two different charges in the neutron labelling, so it is not a physical neutron.)
+
+### 7.1a The canonical photon form (Lean §P)
+
+Owner ruling 2026-11-18, re-confirmed 2026-11-20: the canonical photon is `γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹`, and `β_Bor = γ(0,0,qh)·γ(0,0,−q⁻¹h)`. Writing `X = σ₀σ₁⁻¹`, the product is `1 + h²X − h²X²`.
+
+`photon_product_eq_borWord` proves that on the proton weight space this equals the word `V³ = X³`. So §7.1 is a statement about `β_Bor` in the ruled form. Nothing in §1–§7 uses the superseded `σ₀σ₁` photon, so no result depends on it. Negative control: flipping the sign of the second coefficient breaks the identity (Lean refutes the `(0,0)` entry at `q = 2`).
+
+**The colouring acts on the braid, not on the terms of the expansion.** The terms `X` and `X²` are 3-cycle words. Each closes to a single component, which cannot carry the three different charges of `uud`. So colouring the photon expansion term by term is not defined for the nucleon. The only consistent colouring is the one on the pure braid `V³`, and that is the one §U computes.
 
 ### 7.2 The reason (Lean §K)
 

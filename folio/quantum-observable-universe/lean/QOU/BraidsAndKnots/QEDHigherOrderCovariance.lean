@@ -62,6 +62,11 @@ which is forced to be a scalar and reduces to the coloured writhe `Σ Q_aQ_b·2l
   reach the Kontsevich integral only through struts (linking numbers, framings), never through
   the `μ̄` trees. The full factorisation of the Kontsevich integral is cited, not formalised.
 
+* **§P — the canonical photon form.** With the owner-ruled photon
+  `γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹`, `γ(0,0,qh)·γ(0,0,−q⁻¹h) = V³` on the proton weight space
+  (`photon_product_eq_borWord`). So §U is about `β_Bor` in that form. The colouring acts on the pure
+  braid, not on the terms of the expansion.
+
 ## Scope (AGENTS.md (a)/(b))
 
 §E is a structural exclusion **within the class** of local insertions valued in the crossing's own
@@ -485,5 +490,28 @@ theorem tripod_noncentral_nonzero :
     Matrix.trace (!![1, 0; 0, -1] * (!![0, 1; 0, 0] * !![0, 0; 1, 0]
       - !![0, 0; 1, 0] * !![0, 1; 0, 0]) : Matrix (Fin 2) (Fin 2) ℚ) ≠ 0 := by
   simp [Matrix.trace, Fin.sum_univ_two]
+
+/-! ## §P. The canonical photon form of `β_Bor` is the pure braid `V³` on the weight space
+
+Owner ruling 2026-11-18 (re-confirmed 2026-11-20): the canonical photon is
+`γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹` and `β_Bor = γ(0,0,qh)·γ(0,0,−q⁻¹h)`. On the proton
+weight space this product equals the word `V³ = (σ₀σ₁⁻¹)³` that §U colours, so §U is a statement
+about `β_Bor` in that form. The colouring is applied to the braid, not term by term: the words
+`σ₀σ₁⁻¹` and `(σ₀σ₁⁻¹)²` in the expansion close to one component, which cannot carry the three
+different charges of `uud`.
+-/
+
+/-- `X = σ₀σ₁⁻¹` on the proton weight space. -/
+def photonX (q : R) : Matrix (Fin 3) (Fin 3) R := A₁ q * A₂Inv q
+
+/-- **`γ(0,0,qh)·γ(0,0,−q⁻¹h) = V³`** on the proton weight space. -/
+theorem photon_product_eq_borWord (q : R) (hq : q ≠ 0) :
+    (1 + (q * (q - q⁻¹)) • photonX q) * (1 + (-(q⁻¹ * (q - q⁻¹))) • photonX q)
+      = wordL q borWord := by
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [photonX, wordL, gen, borWord, A₁, A₂Inv, Matrix.mul_apply, Fin.sum_univ_three,
+      Matrix.one_apply] <;>
+    field_simp <;> ring
 
 end QOU.BraidsAndKnots.QEDHigherOrderCovariance
