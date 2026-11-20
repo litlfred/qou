@@ -8,7 +8,7 @@ The identity composes two named identities:
      \alpha_{EM}^{-1} \;=\; q \cdot [9]_q \cdot [10]_q.
    $$
 
-   We derive this from the antisymmetric eigenvalue $-q^{-1}$ of the $R$-matrix and the $q$-deformed crossing numbers of the force-carrier generators $T_{2,9}$ and $T_{3,5}$. By [$(T_{2,9}, T_{3,5})$ is the unique pair of genus-$4$ torus knots](#prop:force-carrier-bring-uniqueness), this basis consists exactly of the genus-$4$ saturating torus-knot set on $\Sigma_4$.
+   This is derived from the antisymmetric eigenvalue $-q^{-1}$ of the $R$-matrix and the $q$-deformed crossing numbers of the force-carrier generators $T_{2,9}$ and $T_{3,5}$. By [$(T_{2,9}, T_{3,5})$ is the unique pair of genus-$4$ torus knots](#prop:force-carrier-bring-uniqueness), this basis consists exactly of the genus-$4$ saturating torus-knot set on $\Sigma_4$.
 
 2. [Pole order at $q=0$ of the torus-knot character: $\alpha_{\mathrm{shift}}(T_{p,k}) = k(p-1)$ on $V_{(1^p)}$](#prop:alpha-shift-torus-knot) establishes the closed-form identity:
 
@@ -17,7 +17,7 @@ The identity composes two named identities:
      \qquad (\gcd(p, k) = 1)
    $$
 
-   on the all-anti-symmetric channel $V_{(1^p)}$. We specialise at $(p, k) \in \{(2, 9), (3, 5)\}$:
+   on the all-anti-symmetric channel $V_{(1^p)}$. Specialise at $(p, k) \in \{(2, 9), (3, 5)\}$:
 
    $$
      \alpha_{\mathrm{shift}}(T_{2,9}) \;=\; 9 \cdot 1 \;=\; 9,

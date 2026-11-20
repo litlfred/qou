@@ -1,6 +1,6 @@
 ## The Cosmological Melt
 
-The rigid algebraic bounds of the Hecke representations govern the stability of matter. We investigate the topological hierarchy determining when physical structures dissolve as a function of the substrate parameter $q$. This hierarchical decay constitutes the cosmological melt.
+The rigid algebraic bounds of the Hecke representations govern the stability of matter. This section investigates the topological hierarchy determining when physical structures dissolve as a function of the substrate parameter $q$. This hierarchical decay constitutes the cosmological melt.
 
 Covalent molecules define the lowest threshold of stability. The $H_2$ molecular bond has $k=7$ crossings across the atomic boundary. This forces a trace evaluation through the Wedderburn channels. The mixed-symmetry standard channel collapses completely at $q \approx 1.045$. Concurrently, the bond loses energetic stability against unbonded atomic components at $q \approx 1.17$. These thresholds mark the algebraic dissolution of molecular coherence.
 

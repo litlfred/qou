@@ -2,7 +2,7 @@
 > the structurally-wrong leading-order ansatz; the operator-valued form supersedes
 > it ([`mass-endomorphism-tower`](../mass-theory/mass-endomorphism-tower.md)). The canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$ graded expansion [`prop:rho-k-graded-expansion`](../mass-endomorphism/rho-k-graded-expansion.md).
 
-The molecular-binding framework uses the Hartree energy $E_h = m_e c_q^{2}\,\alpha_{EM}^{2}$ as a conversion scale. We determine whether the $\alpha_{EM}^{2}$ factor arises from QOU/Hecke structure rather than as an empirical input. The result is a **clean conditional theorem**.
+The molecular-binding framework uses the Hartree energy $E_h = m_e c_q^{2}\,\alpha_{EM}^{2}$ as a conversion scale. The question is whether the $\alpha_{EM}^{2}$ factor arises from QOU/Hecke structure rather than as an empirical input. The result is a **clean conditional theorem**.
 
 **Conjecture (corrected headline form).** *For a covalent diatomic with definite-parity ground state, the bound-state contribution on the EM Wedderburn channel $(2,2)$ of the molecular Markov trace carries the fine-structure scale exactly:*
 
@@ -80,7 +80,7 @@ A genuinely categorical derivation of the $\alpha_{EM}^{2}$ scaling requires thr
 
 ## Non-claims
 
-- We do not claim a proof of $E_h \propto \alpha_{EM}^{2}$ from QOU principles. It claims only that this scaling is the expected leading behaviour. It identifies the open structural step. - We do not introduce $\pi$, transcendentals, or PSLQ-fitted constants. The coefficient $c_2$ is conjecturally in $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$. - We do not override the existing usage of $E_{\mathrm{Hartree}} = m_e c^{2}\,\alpha_{EM}^{2}$ as a numerical scale.
+- No proof of $E_h \propto \alpha_{EM}^{2}$ from QOU principles is claimed. It claims only that this scaling is the expected leading behaviour. It identifies the open structural step. - No $\pi$, transcendentals, or PSLQ-fitted constants are introduced. The coefficient $c_2$ is conjecturally in $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$. - The existing usage of $E_{\mathrm{Hartree}} = m_e c^{2}\,\alpha_{EM}^{2}$ as a numerical scale is not overridden.
 
 ## Honest reporting
 
