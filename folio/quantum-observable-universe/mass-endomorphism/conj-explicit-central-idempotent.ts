@@ -23,6 +23,19 @@ export default conjecture({
   ],
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-11-20",
+      body:
+        "**Cross-check 4 is false at n = 2 for the bar involution, and the boxed formula here is not well defined.** " +
+        "(a) `QOU.BraidKnot.ExplicitCentralIdempotentHecke.bar_fixes_eTriv`, sorry-free: any tau-semilinear ring " +
+        "endomorphism of H_2(q) with sigma -> sigma^-1 and q -> q^-1 fixes e_(2), and e_(2) != e_(1,1), although " +
+        "(2)' = (1,1). `hash_swaps_eTriv`: the linear involution sigma -> -sigma^-1 is the one that pairs lambda with " +
+        "lambda'. This block never defines the star, so which involution is meant is an owner call. (b) This block's " +
+        "product runs over the boxes of lambda; boxes on one diagonal share a content, so a factor can have a zero " +
+        "denominator (lambda = (2,2)). The prop block's formula, a product over all contents |d| <= n with d != c(T(k)), " +
+        "is well defined, and it is the one proved in `ExplicitCentralIdempotentGeneral`. Bean qou-2150.",
+    },
+    {
       kind: "status",
       date: "2026-11-20",
       body:
