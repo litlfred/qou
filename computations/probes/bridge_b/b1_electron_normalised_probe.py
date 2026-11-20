@@ -18,7 +18,8 @@ def T(W, wt=None):
             tot += kk * W[k, k]
     return sp.factor(sp.simplify(tot / (q + 1/q)**3))
 def at(e): return mpf(str(sp.N(e.subs(q, qs), 50)))
-me = mpf('0.51099895069'); cod = mpf('1.29333205'); mpme = mpf('1836.15267343')
+from qou_substrate.constants import MASS_RATIO_P_E_STR  # CODATA m_p/m_e, not a typed copy
+me = mpf('0.51099895069'); cod = mpf('1.29333205'); mpme = mpf(MASS_RATIO_P_E_STR)
 hh = q - 1/q
 borr = (4 + hh**2 - 3*hh**4 - hh**6) / (hh**2 + 4)
 print('check T(1) =', T(sp.eye(8)), ';  T(sigma1) =', T(s1), '(z_D =', sp.factor(q**3/(q**2+1)), ')')
