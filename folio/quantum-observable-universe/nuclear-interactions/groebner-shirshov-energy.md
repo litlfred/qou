@@ -9,7 +9,7 @@ $$
 
 where $\xi$ is the normal form and $\ell(w)$ is the word length. Then:
 
-1. **Only Hecke reductions change energy.** The Yang--Baxter relation and far commutativity preserve coefficients and lengths. The Hecke relation is the unique energy-changing generator.
+1. **Only Hecke reductions change energy.** The Yang--Baxter relation, far commutativity and the other Bokut--Shiao rules preserve coefficients and lengths. The Hecke relation is the unique energy-changing generator.
 2. **Energy is path-independent.** Along any reduction path $\xi_0 \to \xi_1 \to \cdots \to \xi_m$ the step changes sum to $E(\xi_m) - E(\xi_0)$. By confluence every path ends at the same normal form, so the total change depends only on $\xi_0$.
 3. **Energy change of one Hecke step.** Let $h = q - q^{-1}$. Applied to an isolated monomial $c\,w$ with $w = u\,\sigma_i\sigma_i\,v$ of length $\ell$, the replacement of $\sigma_i^2$ by $h\,\sigma_i + 1$ changes the energy by
 

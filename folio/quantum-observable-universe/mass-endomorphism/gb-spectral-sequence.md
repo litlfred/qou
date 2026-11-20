@@ -1,5 +1,5 @@
 **Definition (filtered differential algebra).**
-*The Hecke algebra $H_n(R, q)$ with the confinement filtration $J^\bullet(q)$ ([confinement level](#def:confinement-level)) carries a natural differential $d$ induced by three Gröbner–Shirshov rewriting rules — the Hecke relation, far commutativity, and Yang–Baxter ([Hecke normal form](#def:hecke-normal-form)):*
+*The Hecke algebra $H_n(R, q)$ with the confinement filtration $J^\bullet(q)$ ([confinement level](#def:confinement-level)) carries a natural differential $d$ induced by three rewriting rules — the Hecke relation, far commutativity, and Yang–Baxter. These are the defining relations; for $n \geq 4$ they are not a Gröbner–Shirshov basis, whose completion adds the Bokut–Shiao family ([Hecke normal form](#def:hecke-normal-form)):*
 
 ```tex
 \[
