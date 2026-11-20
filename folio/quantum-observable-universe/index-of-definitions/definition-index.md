@@ -1144,7 +1144,7 @@
 | [conj:joint-galois-braid-action](#conj:joint-galois-braid-action) | Joint motivic-Galois $\times$ braid-group action on the bi-filtration $\mathcal{H}_q^{(n, K)}$ | Ch 12 | `qou:QOU.BraidKnot.JointGaloisBraidAction` |
 | [conj:jsj-decomposition-linearity](#conj:jsj-decomposition-linearity) | JSJ additivity of nucleon braids | Ch 8 | `qou:QOU.BraidsKnots.LinearJSJVolume.JSJ_volume_additivity` |
 | [conj:kashaev-density-equals-sdp-multiplicity](#conj:kashaev-density-equals-sdp-multiplicity) | Kashaev density prefactor equals joint-tower SDP Wedderburn multiplicity ($\rho_F = \nu_{\mathrm{SDP}}$) | Ch 12 | `qou:QOU.Kashaev.KashaevDensityEqualsSdpMultiplicity` |
-| [conj:kashaev-volume-conjecture](#conj:kashaev-volume-conjecture) | Kashaev volume conjecture (axiomatised as Lean class) | Ch 12 | `qou:QOU.Kashaev.VolumeConjecture` |
+| [conj:kashaev-volume-conjecture](#conj:kashaev-volume-conjecture) | Kashaev volume conjecture | Ch 12 | `qou:QOU.Kashaev.VolumeConjecture` |
 | [conj:kashaev-surreal](#conj:kashaev-surreal) | Kashaev volume conjecture as a surreal standard-part identity | Ch 25 | `qou:QOU.AppendixSurreals.KashaevSurreal` |
 | [conj:klein-bring-icosahedral-bridge](#conj:klein-bring-icosahedral-bridge) | Klein icosahedral–quintic bridge: the $(2,3,5)$ force symmetries assemble the Bring ED into the icosahedral $\mathbb{P}^1$ with quotient $S^2(2,3,5)$ | Ch 6 | `qou:QOU.KleinBringBridge.KleinBringIcosahedralBridge` |
 | [conj:knot-factor-frobenius-pairing](#conj:knot-factor-frobenius-pairing) | Knot factor as Frobenius self-pairing ratio | Ch 12 | `qou:QOU.BraidKnot.KnotFactorFrobeniusPairing` |
