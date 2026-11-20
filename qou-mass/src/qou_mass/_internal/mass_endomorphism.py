@@ -130,6 +130,16 @@ def qdim(part, n):
         den *= qint(h)
     return num / den if abs(den) > 1e-30 else 0
 
+# OWNER RULING 2026-11-20 (PR #8590): this V-hat deliberately keeps the
+# pre-convention-D W_sym/W_std/W_alt (q-Plancherel) mixture. The 11-18 ruling
+# moved pyhecke.atom to the convention-D Markov trace z*a+b, but here that puts
+# the proton V-hat (1.2824) past the Phi_q pole at q0 and m_p/m_e = inf
+# (qou-2tuv). Kept, labelled, until the pole is resolved. No number moves.
+VHAT_WEIGHTS_LABEL = (
+    "pre-convention-D mixture (q-Plancherel W_sym/W_std/W_alt), kept by owner "
+    "ruling 2026-11-20 until the Phi_q pole (qou-2tuv) is resolved; "
+    "convention-D z*a+b gives m_p/m_e = inf (PR #8590)"
+)
 # Wedderburn weights at baryon level n=3
 nf3 = qfact(3)
 w_sym = qdim((3,), 3) ** 2 / nf3
@@ -513,6 +523,7 @@ if __name__ == "__main__":
         "Cross-term weight z² = tr_M(σ₀σ₁) derived from Hecke algebra."
     )
     w.add_parameter("q0", fmt(q0_mp))
+    w.add_parameter("vhat_weights", VHAT_WEIGHTS_LABEL)
     w.add_parameter("w_sym", fmt(w_sym_mp))
     w.add_parameter("w_std", fmt(w_std_mp))
     w.add_parameter("w_alt", fmt(w_alt_mp))
