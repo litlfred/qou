@@ -769,4 +769,120 @@ theorem label_forced_given_group_assignment [EWGroupAssignment] :
 
 end SignedCrossing
 
+
+/-! ## Spin-2 no-go for the `Bool`-sector encoding, and its `ℕ`-graded extension
+
+`spinDouble` factors through the two-valued sector `isSinglet : EWCarrier → Bool`
+(singlet `↦ 0`, doublet `↦ 2`). It is therefore a `ℤ/2`-valued label in disguise,
+and that is enough for the electroweak carriers, which have spin `0` or `1`.
+
+It is *not* enough for the spin-`2` summand `V₂ = Sym²(V₁) ⊖ V₀` of the gauge
+`SU(2)` (`QOU.Eightfold.Sym2AdjointSpinTwo.adjoint_sym2_traceless_is_spin_two`).
+This section records, precisely, that the existing encoding cannot represent
+spin `2`, and gives the minimal extension that can while restricting to the
+existing encoding on the electroweak carriers.
+
+* `spinDouble_ne_four` — no carrier has doubled spin `4`;
+* `bool_sector_not_injective_on_spins` — *any* two-valued sector map, whatever
+  its values, identifies two of the spins `0, 1, 2`; so the obstruction is the
+  `ℤ/2` target, not the particular choice `0 ↦ 0, 1 ↦ 2`;
+* `barSectorOfSpin_spinOne_eq_spinTwo` — the existing inverse `barSectorOfSpin`
+  sends spin `1` and spin `2` to the same sector;
+* `GradedSpin` — doubled spin as an unrestricted natural number (the
+  non-negative part of `ℤ`; the same `twice_j` convention as `QOU.SpinLabels`),
+  with `GradedSpin.ofSector` / `GradedSpin.toSector` the embedding of the old
+  encoding and its retraction.
+
+Nothing in this section says that any electroweak carrier, or any object at all,
+*has* spin `2`. -/
+
+section SpinTwoNoGo
+
+/-- The `Bool`-sector encoding that `spinDouble` factors through:
+singlet (`true`) `↦ 0`, doublet (`false`) `↦ 2`. -/
+def sectorSpinDouble (b : Bool) : ℕ := if b then 0 else 2
+
+/-- `spinDouble` is `sectorSpinDouble` after the sector map (definitionally). -/
+theorem spinDouble_eq_sectorSpinDouble (c : EWCarrier) :
+    spinDouble (R := R) c =
+      sectorSpinDouble (EWSectorSelection.isSinglet (R := R) c) := rfl
+
+/-- The encoding takes only the values `0` and `2`. -/
+theorem sectorSpinDouble_mem (b : Bool) :
+    sectorSpinDouble b = 0 ∨ sectorSpinDouble b = 2 := by
+  cases b <;> decide
+
+/-- The encoding never takes the value `4` (doubled spin of `V₂`). -/
+theorem sectorSpinDouble_ne_four (b : Bool) : sectorSpinDouble b ≠ 4 := by
+  cases b <;> decide
+
+/-- **No-go (spin 2 is not representable).** For every sector selection, no
+electroweak carrier has `spinDouble = 4`, i.e. spin `2`. -/
+theorem spinDouble_ne_four (c : EWCarrier) : spinDouble (R := R) c ≠ 4 := by
+  rw [spinDouble_eq_sectorSpinDouble]
+  exact sectorSpinDouble_ne_four _
+
+/-- **No-go, independent of the encoding's values.** A map from doubled spin to
+a two-valued sector cannot separate the three spins `0, 1, 2` (doubled: `0, 2,
+4`): two of them always share a sector (pigeonhole). -/
+theorem bool_sector_not_injective_on_spins (f : ℕ → Bool) :
+    f 0 = f 2 ∨ f 0 = f 4 ∨ f 2 = f 4 := by
+  cases h0 : f 0 <;> cases h2 : f 2 <;> cases h4 : f 4 <;> decide
+
+/-- The existing inverse `barSectorOfSpin` sends spin `1` and spin `2` to the
+same (doublet) sector: it inverts `spinDouble` on `{0, 2}` only. -/
+theorem barSectorOfSpin_spinOne_eq_spinTwo :
+    barSectorOfSpin 2 = barSectorOfSpin 4 := by decide
+
+/-- **`ℕ`-graded spin label**: doubled spin `2s` with no restriction to
+`{0, 2}`. Same `twice_j` convention as `QOU.SpinLabels`; the spin-`2` label of
+`QOU.Eightfold.Sym2AdjointSpinTwo.spinTwo` is `twoS = 4`. -/
+structure GradedSpin where
+  /-- Twice the spin. -/
+  twoS : ℕ
+deriving DecidableEq
+
+/-- Embedding of the old two-valued encoding into the graded label. -/
+def GradedSpin.ofSector (b : Bool) : GradedSpin := ⟨sectorSpinDouble b⟩
+
+/-- Projection of a graded label back to the `Bool` sector, via the existing
+`barSectorOfSpin` (`true` iff spin `0`). -/
+def GradedSpin.toSector (s : GradedSpin) : Bool := barSectorOfSpin s.twoS
+
+/-- The spin-`2` graded label. -/
+def GradedSpin.spinTwo : GradedSpin := ⟨4⟩
+
+/-- **Compatibility 1.** On the electroweak carriers the graded label reproduces
+`spinDouble` exactly. -/
+theorem GradedSpin.ofSector_twoS (c : EWCarrier) :
+    (GradedSpin.ofSector (EWSectorSelection.isSinglet (R := R) c)).twoS =
+      spinDouble (R := R) c := rfl
+
+/-- **Compatibility 2.** `toSector` is a retraction of `ofSector`: no sector
+information is lost by passing to the graded label. -/
+theorem GradedSpin.toSector_ofSector (b : Bool) :
+    (GradedSpin.ofSector b).toSector = b := by
+  cases b <;> decide
+
+/-- **Compatibility 3.** Projecting the graded label of a carrier recovers its
+sector; this is `barSectorOfSpin_inverts`, read through `GradedSpin`. -/
+theorem GradedSpin.toSector_spinDouble (c : EWCarrier) :
+    (GradedSpin.mk (spinDouble (R := R) c)).toSector =
+      EWSectorSelection.isSinglet (R := R) c :=
+  barSectorOfSpin_inverts (R := R) c
+
+/-- **The extension is proper.** The spin-`2` label is not in the image of the
+old encoding. -/
+theorem GradedSpin.spinTwo_not_ofSector (b : Bool) :
+    GradedSpin.ofSector b ≠ GradedSpin.spinTwo := by
+  cases b <;> decide
+
+/-- Projecting spin `2` back to the `Bool` sector lands on the doublet, the
+same sector as spin `1`; the projection forgets exactly what the extension adds. -/
+theorem GradedSpin.spinTwo_toSector :
+    GradedSpin.spinTwo.toSector = (GradedSpin.ofSector false).toSector := by
+  decide
+
+end SpinTwoNoGo
+
 end QOU.ParticleInteractions
