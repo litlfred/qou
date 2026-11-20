@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-11-16T18:00:11.980771+00:00",
-  "commitSha": "f0b028e2c9cf8cadf344d6dd4a48b0cfe339ecdb",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-20T19:01:37.593807+00:00",
+  "commitSha": "8adcae81749d566b89cbbc55f9a0d04dab29742c",
   "assertions": [
     {
       "name": "extremal_blocks_exhaust_partitions_iff_n_le_3",
@@ -23,22 +23,22 @@
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "|2*beta_3 + beta_2 + 6| = 1.06911e-50"
+      "source": "|2*beta_3 + beta_2 + 6| = 0.0"
     },
     {
       "name": "deuterium_n3_all_8_constructor_readings_miss_target_by_gt_50_pct",
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "spec-selected residual=208.494%, grid range=[54.2468%, 2652.57%]"
+      "source": "spec-selected residual=208.495%, grid range=[54.2475%, 2652.59%]"
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 17,
   "computation": "wedderburn-mi-constructor-test",
   "scriptFile": "wedderburn_Mi_constructor_test.py",
-  "scriptHash": "5d6af5c52109",
-  "scriptCommitSha": "f0b028e2c9cf8cadf344d6dd4a48b0cfe339ecdb",
+  "scriptHash": "9f01bd3ebc4e",
+  "scriptCommitSha": "0c8b89fcac8020c56af64b9859b7873fc7d84952",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,14 +46,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "cvxpy": "absent",
-    "pyhecke_native_build": "a9f23cb94545f585"
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [
@@ -71,9 +71,9 @@
       "Phi_2": "0.0",
       "Phi_3": "-0.417362881278078049263625119892",
       "predicted_corr_MeV": "-6.86271790448621127918705705852",
-      "target_corr_MeV": "-2.22459017069",
-      "residual_MeV": "-4.63812773379621127918705705852",
-      "relative_error_pct": "208.493582094611"
+      "target_corr_MeV": "-2.22457981703466602032",
+      "residual_MeV": "-4.63813808745154525886705705852",
+      "relative_error_pct": "208.495017887653"
     },
     "partition_domain_table": {
       "1": {
