@@ -1,7 +1,7 @@
 ---
 # qou-x4nh
 title: 'V2 [Part I Foundations Drain]: Fix All L1-L4 Lean, Voice & Anachronism Leaks in Ch 1 (quantum-universes) & Ch 2 (quantum-observable-universes)'
-status: in-progress
+status: todo
 type: task
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - fourth-wall-lean
     - part-1-foundations
 created_at: 2026-11-19T08:35:24Z
-updated_at: 2026-11-20T15:40:00Z
+updated_at: 2026-11-20T17:45:00Z
 parent: qou-d4kh
 ---
 
@@ -52,3 +52,6 @@ Measured on main 917b69399: Ch 1 (`quantum-universes`) still has L1 4 / L2 10 / 
 
 ## 2026-11-20 — claimed by W14b (https://claude.ai/code/session_01VQDpPc68uEsyxoN3soj6Ws)
 Owner ruling 2026-11-20 ~15:10 Paris (#8526 comment 7041693067) approved W14 option 2. Stalled-claim check: the bean was `todo` with no backing branch; nothing to take over. Work on branch `claude/voice-leak-part1-drain-2026-11-20`, PR #8577. Scope excludes V0's Lean refactor and the `frobenius-hopf-substrate` move.
+
+## 2026-11-20 — W14b result: DUPLICATE, withdrawn (https://claude.ai/code/session_01VQDpPc68uEsyxoN3soj6Ws)
+W14b's PR #8577 duplicated W14's #8563 (opened earlier, live owner answer). #8577 is withdrawn to draft. Its one distinct contribution: Ch 1 L4 48 -> 10 and Ch 2 L4 21 -> 0 (premature q and forward links resolved; cyclotomic ring moved to new Ch 2 remark rem:q-generic-ground-ring). Owner choice on porting it after #8563: #8526 comment 7042945374. The 10 Ch 1 dim_q hits: ask #8526 comment 7042582001 (default: leave for V0 qou-ig2d). The W14b in-progress claim above is released; W14 (#8563) owns this bean.

@@ -9,7 +9,7 @@ tags:
     - fourth-wall-lean
     - exposition
 created_at: 2026-11-19T08:34:29Z
-updated_at: 2026-11-19T08:34:29Z
+updated_at: 2026-11-20T17:45:00Z
 parent: qou-lpep
 ---
 
@@ -82,3 +82,6 @@ Owner audit of Chapter 1 (`folio/quantum-observable-universe/quantum-universes/`
 | 35 | `index-of-definitions` | 1 | 14 | 3 | 0 | 0 | **17** |
 | 36 | `notation` | 13 | 15 | 77 | 57 | 0 | **149** |
 | — | **TOTAL** | **3,668** | **678** | **2,540** | **1,224** | **86** | **4,528** |
+
+## 2026-11-20 — W14b duplicate (https://claude.ai/code/session_01VQDpPc68uEsyxoN3soj6Ws)
+A scheduled sibling (W14b) redid options 2/1/5/3 as PRs #8577/#8584/#8585/#8588 without first seeing W14's #8563/#8566/#8567/#8569. All four W14b PRs are withdrawn to draft. Distinct W14b output: Part I L4 fixes and rem:q-generic-ground-ring (#8577); mass-theory '## Lean' restatements (12 sections #8569 leaves) and mass-theory L3 (#8588). Owner comparison and choice: #8526 comment 7042945374, which also flags that the two records of the ruling disagree on option 4. Child beans for the remaining waves: qou-t5iz, qou-a1k9, qou-rfp0, qou-e7ku, qou-qdf6, qou-tztx (counts from the W14b stack; re-measure on W14's). Content inconsistency found: qou-w14g.
