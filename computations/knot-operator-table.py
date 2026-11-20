@@ -254,9 +254,12 @@ if __name__ == "__main__":
             if len(pairs_with_demand) > 8:
                 print(f"      ... and {len(pairs_with_demand) - 8} more")
 
-    # ── Key table: γ·T·γ (photon-photon) for all operators ───
+    # ── Key table: σ₀·T·σ₀ for all operators ───
+    # Scope note (2026-11-20): this table is the single-crossing σ₀ TERM on both sides, not a
+    # photon pair. Under def:photon (fourth term σ₀σ₁⁻¹, owner ruling bean qou-99qc) the photon-pair
+    # table is probes/photon_chiral/photon_chiral_ports_probe.py §A (exact, eigenvalue-pair weights).
     print(f"\n\n{'=' * 72}")
-    print("  KEY TABLE: γ·T·γ (photon-photon pair production)")
+    print("  KEY TABLE: σ₀·T·σ₀ (single-crossing term; four-term photon: probes/photon_chiral §A)")
     print("=" * 72)
 
     hdr = f"  {'Operator':10s}"
@@ -267,7 +270,7 @@ if __name__ == "__main__":
     print("  " + "-" * (len(hdr) - 2))
 
     for op_name, op_word in KNOT_OPERATORS.items():
-        # Compute σ₀ · T · σ₀ (single-crossing photon channel)
+        # Compute σ₀ · T · σ₀ (single-crossing term; not a photon under def:photon)
         vec = apply_operator(1, op_word, 1)
         net = nf_net(vec)
         has_e = "YES" if abs(vec[5]) > 1e-10 else "no"
