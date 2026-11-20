@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-04T01:39:43Z
-updated_at: 2026-11-17T10:33:06Z
+updated_at: 2026-11-20T16:19:39Z
 parent: qou-c8p8
 ---
 
@@ -24,3 +24,8 @@ Blocks: EllipticDivisorDegree (1 — argument principle), HadamardFactorization 
 - **80-dps Probe & 2-Commit Witness:** `computations/probes/alternating_three_form_primary_factor_upper_half_plane_catalan_clausen_symmetry_probe.py` + `computations/probes/alternating-three-form-primary-factor-upper-half-plane-catalan-clausen-symmetry.witness.json` (`scriptHash = 0ee532c9f9a2`, `scriptCommitSha = 0caff4971a8a2c0d7aec04c9a5a8e20f7218d2b3`, `allPassed = True`).
 - **Adversarial Cross-Review (Round 61):** Verified `litlfred/qou#8285` (`250465c60a6cea44d9f569e88cc79ee2c8d8051b`, `0` advisories on all 5 added theorems, valid witness `39a564805d3e`) and `litlfred/qou#8299` (`7794a07bbdcd4212b670d7ed777098efe60dc9a4`, `0` advisories, valid witness `001b12183bba`).
 - **Status:** Kept at `in-progress` pending Merge Manager verification and merge.
+
+
+## 2026-11-20 — W10
+
+Argument-principle half DONE: annulus argument principle with ℤ orders (`QOU/Mathlib/ArgumentPrincipleAnnulus.lean`) and Liouville third theorem proved (PR #8604). Hadamard factorization (`HasHadamardFactorization`) remains open — multi-session.

@@ -1,14 +1,14 @@
 ---
 # qou-z4jb
 title: 'Argument principle for parallelogram: close HasArgumentPrinciple'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - lean
     - reorg-2026-10-04
 created_at: 2026-08-24T06:36:07Z
-updated_at: 2026-11-20T14:43:42Z
+updated_at: 2026-11-20T16:19:39Z
 parent: qou-c8p8
 blocked_by:
     - qou-f6bb
@@ -32,3 +32,8 @@ W10 finding 2026-11-20: `HasArgumentPrinciple` (EllipticDivisorDegree.lean:217) 
 ## 2026-11-20 — interim restatement (PR #8579)
 
 Owner ruling: option 3 (prove via annulus pull-back) is the plan; option 2 now. HasArgumentPrinciple deleted; elliptic_divisor_degree_zero is a cited sorry. This bean stays open until the theorem is proved.
+
+
+## 2026-11-20 — PROVED (W10, PR #8604)
+
+Liouville third theorem `QOU.Mathlib.EllipticDivisorDegree.elliptic_divisor_degree_zero` is proved sorry-free in `QOU/Mathlib/LiouvilleThird.lean` (annulus route: exp pull-back, ℤ-order annulus argument principle, winding identity, lattice-reduction bijection). Axioms [propext, Classical.choice, Quot.sound]; library sweep 6 ok / 0 RED. Known mathematics (not a conjecture). Nonconstancy hypothesis dropped as unused.
