@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-20T16:00:15.154793+00:00",
-  "commitSha": "e91fbecea025081a656f69f751df1678ec0da598",
+  "computedAt": "2026-11-20T18:40:57.029915+00:00",
+  "commitSha": "bae50290fb2e6752fd2bf7c2a70cef7e47f4a5a9",
   "assertions": [
     {
       "name": "borromean_v3_connected_diff_matches_closed_form",
@@ -84,11 +84,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 4,
   "computation": "two-term-qed-isotope-and-nucleon-compute",
   "scriptFile": "two_term_qed_isotope_and_nucleon_compute.py",
-  "scriptHash": "0e1611b801ae",
-  "scriptCommitSha": "f7cdac9eecf2d18a32ce3f3154d9283e339b52e8",
+  "scriptHash": "02d2186e21ab",
+  "scriptCommitSha": "0d41dab7aedaed282ee1fee806846ac149b9104a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -212,23 +212,23 @@
       "Delta_m_QED_conn_Kp3_MeV": "-0.0003558998334735001321029749",
       "Delta_m_QED_conn_q_MeV": "-0.0003681755054950952090688729",
       "substrate_identity_neutron_mass": {
-        "m_n_1term_MeV": "939.565893067824",
+        "m_n_1term_MeV": "939.565893091597",
         "m_n_exp_CODATA_MeV": "939.565421940000",
-        "m_n_1term_err_ppb": "501.43163",
-        "m_n_2term_derived_MeV": "939.565765843523",
-        "m_n_2term_derived_err_ppb": "366.02403",
-        "m_n_2term_plain_MeV": "939.565561371779",
-        "m_n_2term_plain_err_ppb": "148.40029",
-        "m_n_2term_plain_residual_reduction_pct": "70.4047",
-        "m_n_2term_KnKp_err_ppb": "134.41040",
-        "m_n_2term_Kp3_err_ppb": "122.63967",
-        "m_n_2term_q_err_ppb": "109.57440"
+        "m_n_1term_err_ppb": "501.45694",
+        "m_n_2term_derived_MeV": "939.565765867296",
+        "m_n_2term_derived_err_ppb": "366.04933",
+        "m_n_2term_plain_MeV": "939.565561395552",
+        "m_n_2term_plain_err_ppb": "148.42559",
+        "m_n_2term_plain_residual_reduction_pct": "70.4011",
+        "m_n_2term_KnKp_err_ppb": "134.43571",
+        "m_n_2term_Kp3_err_ppb": "122.66497",
+        "m_n_2term_q_err_ppb": "109.59970"
       },
       "ruled_zD_qbeta_and_path_c_impact": {
         "qbeta_ruled_1term_MeV": "0.651856310060338",
         "qbeta_ruled_2term_MeV": "0.651856310060338",
-        "qbeta_ruled_1term_err_ppb": "166779404.1",
-        "qbeta_ruled_2term_err_ppb": "166779404.1",
+        "qbeta_ruled_1term_err_ppb": "166779563.1",
+        "qbeta_ruled_2term_err_ppb": "166779563.1",
         "m_n_path_c_1term_MeV": "939.434944688075",
         "m_n_path_c_2term_MeV": "939.434944688075",
         "m_n_path_c_1term_err_ppb": "138869.7890",
@@ -239,8 +239,8 @@
         "Delta_pn_path_c_2term_err_ppb": "100884535.3",
         "Q_N2_convD_1term_MeV": "0.782804713582602",
         "Q_N2_convD_2term_MeV": "0.782804713582602",
-        "Q_N2_convD_1term_err_ppm": "602.43315",
-        "Q_N2_convD_2term_err_ppm": "602.43315"
+        "Q_N2_convD_1term_err_ppm": "602.24219",
+        "Q_N2_convD_2term_err_ppm": "602.24219"
       },
       "uspin_coleman_glashow_baryon_octet_qed": {
         "lean_theorem": "QOU.Eightfold.USpinColemanGlashowLambdaSigma.coleman_glashow_borromean_qed_mev",
@@ -297,7 +297,7 @@
           "B_AME_MeV": "2.22456620000",
           "sigma_AME_MeV": "4.0000000e-7",
           "B_sym_chain_MeV": "2.83282491993",
-          "B_can_borromean_MeV": "2.06307694982",
+          "B_can_borromean_MeV": "2.08353136572",
           "BextGPMT_uniform_dimless": "0.0",
           "BextGPMT_H4_dimless": "0.0",
           "E0_times_BextGPMT_uniform_MeV": "0.0",
@@ -308,8 +308,8 @@
           "E_EM_hecke_E0_alpha_qfact3_MeV": "0.0",
           "E_EM_markov_E0_alpha_over_zD_MeV": "0.0",
           "E_QED_intra_nucleon_V3_sum_MeV": "0.000331696044605",
-          "B_can_minus_EC_CAL3_MeV": "2.06307694982",
-          "B_can_minus_EC_CAL3_err_MeV": "-0.161489250184"
+          "B_can_minus_EC_CAL3_MeV": "2.08353136572",
+          "B_can_minus_EC_CAL3_err_MeV": "-0.141034834283"
         },
         {
           "isotope": "3H",
@@ -320,7 +320,7 @@
           "B_AME_MeV": "8.48179620000",
           "sigma_AME_MeV": "9.0000000e-7",
           "B_sym_chain_MeV": "6.13973133041",
-          "B_can_borromean_MeV": "4.74196642493",
+          "B_can_borromean_MeV": "4.78898074179",
           "BextGPMT_uniform_dimless": "0.163383228056257",
           "BextGPMT_H4_dimless": "0.163383228056257",
           "E0_times_BextGPMT_uniform_MeV": "0.683919147718",
@@ -331,8 +331,8 @@
           "E_EM_hecke_E0_alpha_qfact3_MeV": "0.0",
           "E_EM_markov_E0_alpha_over_zD_MeV": "0.0",
           "E_QED_intra_nucleon_V3_sum_MeV": "0.000443314795406",
-          "B_can_minus_EC_CAL3_MeV": "4.74196642493",
-          "B_can_minus_EC_CAL3_err_MeV": "-3.73982977507"
+          "B_can_minus_EC_CAL3_MeV": "4.78898074179",
+          "B_can_minus_EC_CAL3_err_MeV": "-3.69281545821"
         },
         {
           "isotope": "3He",
@@ -343,7 +343,7 @@
           "B_AME_MeV": "7.71804132000",
           "sigma_AME_MeV": "4.5000000e-7",
           "B_sym_chain_MeV": "5.37441113698",
-          "B_can_borromean_MeV": "3.94272358064",
+          "B_can_borromean_MeV": "3.98181378903",
           "BextGPMT_uniform_dimless": "0.163383228056257",
           "BextGPMT_H4_dimless": "0.163383228056257",
           "E0_times_BextGPMT_uniform_MeV": "0.683919147718",
@@ -354,8 +354,8 @@
           "E_EM_hecke_E0_alpha_qfact3_MeV": "0.188816510111",
           "E_EM_markov_E0_alpha_over_zD_MeV": "0.0498566876916",
           "E_QED_intra_nucleon_V3_sum_MeV": "0.000551773338409",
-          "B_can_minus_EC_CAL3_MeV": "3.09530174134",
-          "B_can_minus_EC_CAL3_err_MeV": "-4.62273957866"
+          "B_can_minus_EC_CAL3_MeV": "3.13439194974",
+          "B_can_minus_EC_CAL3_err_MeV": "-4.58364937026"
         },
         {
           "isotope": "4He",
@@ -366,7 +366,7 @@
           "B_AME_MeV": "28.2956624000",
           "sigma_AME_MeV": "8.0000000e-7",
           "B_sym_chain_MeV": "8.68131754746",
-          "B_can_borromean_MeV": "6.47545955276",
+          "B_can_borromean_MeV": "6.53966062042",
           "BextGPMT_uniform_dimless": "0.980299368337544",
           "BextGPMT_H4_dimless": "1.22276309604624",
           "E0_times_BextGPMT_uniform_MeV": "4.10351488631",
@@ -377,24 +377,24 @@
           "E_EM_hecke_E0_alpha_qfact3_MeV": "0.188816510111",
           "E_EM_markov_E0_alpha_over_zD_MeV": "0.0498566876916",
           "E_QED_intra_nucleon_V3_sum_MeV": "0.000663392089210",
-          "B_can_minus_EC_CAL3_MeV": "5.70552571526",
-          "B_can_minus_EC_CAL3_err_MeV": "-22.5901366847"
+          "B_can_minus_EC_CAL3_MeV": "5.76972678292",
+          "B_can_minus_EC_CAL3_err_MeV": "-22.5259356171"
         }
       ]
     },
     "upstream_witness_hashes": [
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
-        "sha256": "c896a40dc008c9efff240954a425ff2efe43cb34e839d210ff4a93a6c57684db",
-        "size_bytes": 12078,
-        "commitSha": "e91fbecea025081a656f69f751df1678ec0da598",
-        "scriptCommitSha": "2ceff396f35f5d3184fd8aa883672347bb49ab05",
-        "computedAt": "2026-11-20T16:00:10.951584+00:00"
+        "sha256": "bfae1099d20e5898827c52d5f5eb21b4c54b1aaa8c0318b7f82c06224ecf1e01",
+        "size_bytes": 12082,
+        "commitSha": "bae50290fb2e6752fd2bf7c2a70cef7e47f4a5a9",
+        "scriptCommitSha": "0d41dab7aedaed282ee1fee806846ac149b9104a",
+        "computedAt": "2026-11-20T18:40:56.117807+00:00"
       },
       {
         "path": "codata-2022-validation-masses.witness.json",
-        "sha256": "f34a799ef9f673449532d859dee6c4f026f6e769284a918e69dceb1a1ef2bf2f",
-        "size_bytes": 4821,
+        "sha256": "7b7f7c217bd9e874b1ae3b04e5b57e045788df3af00735f2183e50da08b771a2",
+        "size_bytes": 4824,
         "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533",
         "scriptCommitSha": null,
         "computedAt": "2026-05-10T07:21:00+00:00"
