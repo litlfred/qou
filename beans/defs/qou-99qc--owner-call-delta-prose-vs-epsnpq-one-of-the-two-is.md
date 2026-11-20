@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-20T18:40:00Z
+updated_at: 2026-11-20T19:15:00Z
 parent: qou-10v9
 ---
 
@@ -4142,3 +4142,12 @@ No label ruling: labels A and B stay side by side, and the round-trip theorem is
 **2026-11-20T18:40Z — OWNER RULING (Carl, 18:27): #8586's T³ weight-split Q_β (|ε|·E₀ = 0.3254 MeV, −58.40 % vs CODATA) is the SCORED Q_β cell.** Applied by the merge queue on PR #8586. PR #8591 (derived weighting, covariant all-pairs two-term rows) keeps both on rebase: the Q_β cell from #8586, the two-term rows covariant (connected part 0 on V³, so two-term = one-term; m_μ +211.2 ppb / 970.2×). Options 1, 3, 4 remain unscored labelled rows. The ruling selects the scored cell only; it does not close this bean (rule 13a: the T³ split's derivation and F_required 2.404 stay open).
 
 **2026-11-20 ~18:00Z (W5):** owner "Go" → dashboard Q_β row now scores option B as CONDITIONAL on C1–C3 (PR #8626, after #8564 → #8586 → #8617): Q_β 0.3254 MeV (−58.4  %, completing the line above), m_n / Δ_pn inherit with a note; nuc11_interleaved kept as the superseded element. Calibrated: closed form vs explicit weight-space traces, gap 1e-72.
+
+## 2026-11-20 ~19:15Z — ε-L1V result: the photon vertex V = σ₀σ₁⁻¹ does NOT break u↔d (PR #8616, draft)
+
+Pre-registered (bc02ecd75c), prediction confirmed. Same functionals as ε-L1: F1 multiplicity-trace ε_tr, F2 z_D trace split over W_p/W_n.
+- Arm V (V, V⁻¹, V⁴ both orders, VV⁻¹, V·σ₀, ε-L1 applied order): F1 ratio ε_pn/ε_np = 1 exactly; F2 D = tr_Wn − tr_Wp = 0. Same as L± in ε-L1.
+- Arm γ (γ(0,0,qh), γ(0,0,−h/q), γ₊γ₋ = V³, γ₋γ₊): all symmetric.
+- Arm φ (symbolic φ₀,φ₁,ψ₀,ψ₁; single γ(φ₀,φ₁,φ₀₁)): first-order u↔d coefficients 0; asymmetry vanishes identically.
+- Proof scope (b): F2 in Lean, `QOU.BraidsAndKnots.HeckeWeightSpaceSymmetry` (generic CommRing, q·qi = 1, sorry-free): `trace_ρn_eq_trace_ρp` (Δ = σ₀σ₁σ₀ conjugates W_p's rep into W_n's for every free-algebra element), `photon_symmetric`, `vertex_symmetric`, `trace_vertex` (tr_W V = −h²), `flavour_split` ((qi·tr_Wn − q·tr_Wp) = −h·tr_Wp for every element). F1 by exact basis check on the six standard words of H₃(q) (not in Lean).
+- Implication for the scored Q_β cell (#8586, 18:27 ruling): ε_flavour(V³) = (q²−1)P(q)/(q⁴(q²+1)³) is exactly −h·tr_W(V³)/[2]³. Every bit of its n/p asymmetry is the K^{⊗3} weighting h; the γγ element enters only through a u↔d-symmetric trace. So the photon's weights φ₀, φ₁ cannot produce an n−p split when both nucleons carry the same element. Under these functionals a γγ derivation of Q_β can put the n/p difference only in (i) the trace's K-weighting (conjecture C1), or (ii) different elements for n and p (C2), never in the photon channel.
