@@ -8,4 +8,4 @@ $$
   \bigl\lVert \mathrm{tr}_{\mathrm{trans}}(\varrho, p_i) \bigr\rVert .
 $$
 
-Equality holds when $\mathrm{tr}_{\mathrm{desc}}(\varrho)$ and every $\mathrm{tr}_{\mathrm{trans}}(\varrho, p_i)$ are nonnegative real multiples of one vector. When the trace values lie in a strictly convex real normed space, equality implies that $\mathrm{tr}_{\mathrm{desc}}(\varrho)$ and $\sum_i \mathrm{tr}_{\mathrm{trans}}(\varrho, p_i)$ lie on a common ray. Whether equality holds for the actual traces is the [topological decomposition of mass](#conj:topological-mass), which is open.
+Equality is the [topological decomposition of mass](#conj:topological-mass), which is open.
