@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-12T20:47:33Z
-updated_at: 2026-11-20T16:10:00Z
+updated_at: 2026-11-20T17:40:00Z
 parent: qou-9nnz
 ---
 
@@ -302,3 +302,63 @@ fact; (2) A/B a real sample of the 322 with the control arm; (3) sweep the
 fixable set EXCLUDING the 206, in reviewable batches, each with its witnesses
 refreshed in the same commit. The 206 keep their pin; any one of them being an
 accident is a per-file judgement, never a sweep.
+
+## 2026-11-20 -- option 3 SWEPT (588 files) and PARTIALLY refreshed (97 of ~588)
+
+Owner: "Fix any identified issues" / "Go". PR #8560, commits `e925b93b8fb`
+(source), `9381528d263` (witnesses).
+
+**Applied.** `mpf(Q_50_DIGIT_STR)` -> `Q_MP` in **588** consumers; the **207
+deliberate** pins left alone (159 emit an artifact whose own name says
+`50dps`); 1 refused (`borromean_convention_by_evaluation.py`, no ImportFrom to
+extend). Three gates, all green on 588/588, any failure reverting the batch:
+all parse; zero carry `<alias>.Q_MP`; zero retain a residual call -- checked
+through `code_only()`.
+
+**Mover rate 10/20 = 50 %** (A/B, control arm in the SAME environment).
+Refresh so far: **97 witnesses rewritten, 61 payload-changed (63 %)**, 36
+provenance-only.
+
+### THE REFRESH IS PARTIAL AND THIS IS THE DEBT
+
+~440 producers now carry `Q_MP` in source while their committed witness still
+holds the 50-digit value -- genuine `scriptHash` staleness, created
+deliberately by this sweep. The run's last checkpoint is 100/589
+(ok=82 fail=7 timeout=11) and it was stopped partway into the next 50. The tail
+is long-compute: producers past ~100 hit the 45 s budget steadily, which
+AGENTS.md says to claim as a bean rather than force. **Next agent: resume the
+refresh from ~producer 150 of
+`q50_digit_cap_classify.py --emit <dir>`'s fixable.txt ordering.**
+
+### A PATCHER BUG THAT ACTIVELY CORRUPTED FILES, caught by the control arm
+
+The call prefix is a MODULE ALIAS and must be CONSUMED. A pattern allowing only
+`mpmath.` or bare matches the `mpf(...)` SUFFIX of `mp.mpf(...)` and rewrites it
+to `mp.Q_MP` -- `AttributeError: module 'mpmath' has no attribute 'Q_MP'` at
+import. Measured distribution of the 871 sites: **`mp.` 661, bare 197,
+`mpmath.` 10, `_mp.` 3** -- so it broke **76 %**. It surfaced as 14 of 20 A/B
+candidates failing their PATCHED arm while their CONTROL arm passed. Without
+the control arm this would have been read as the corpus being fragile.
+
+### Four measurement figures of mine, all withdrawn
+
+1. option 3 costs "two files plus consumers" -> **486 producers**;
+2. "6 of 6 MOVED" -> environment contamination (the tell: one of the six is
+   **prose-only** and never calls the pattern);
+3. "the patcher fails on parenthesised multi-line imports" -> **invented, not
+   observed**; 588 of 589 imports are SINGLE-line and the real cause is a
+   trailing `# noqa: E402` defeating a `$` anchor, hitting 535 of 589 (91 %);
+4. exposure family C keyed on `*_MP` -> that is the FULL-precision path
+   (`Q_MP = q_at(70)`) and the regex cannot match `Q_50_DIGIT_STR` anyway.
+
+### Environment, checked rather than waved past
+
+The refresh records mpmath 1.4.1 / python 3.11.18. That is a CONVERGENCE, not a
+deviation: `tools/qou-substrate/pyproject.toml` declares `mpmath>=1.3,<1.5` and
+the committed corpus already records **1.4.1 on 1505 witnesses against 976 at
+1.3.0**. Payload figures mask the environment block, and the 50 % rate is
+attributable to the q change because both A/B arms ran under 1.4.1.
+
+A bare container runs none of these producers: `sympy`/`numpy`/`scipy` absent,
+mpmath 1.3.0 too old, `pyhecke_native` not on PyPI (`maturin build --release`
+in `tools/pyhecke-native/` works; **171** capped producers need it).
