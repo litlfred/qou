@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-20T14:51:01.819976+00:00",
-  "commitSha": "d70a51ff517811a3eeb9cbc51565e3cf0adab128",
+  "computedAt": "2026-11-20T18:18:14.940110+00:00",
+  "commitSha": "198ffa81724048641fe2d97dc62828f7d23c7894",
   "assertions": [
     {
       "name": "P0.proton_pin",
@@ -198,11 +198,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17831,
+  "durationMs": 15537,
   "computation": "qbeta-flavour-weight-split",
   "scriptFile": "qbeta_flavour_weight_split_probe.py",
   "scriptHash": "0992545a3ee1",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4981d909f190e1032f14d1a8c28a84affc0b1601",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -247,24 +247,24 @@
         "eps_flavour": "-0.07698053460136417243226269581244475136371",
         "Q_beta_MeV": "0.3254339287346917072909656439",
         "selected": true,
-        "vs_codata_pct": "-58.40214357",
-        "F_required": "2.40397002562629"
+        "vs_codata_pct": "-58.4021515",
+        "F_required": "2.40397048442909"
       },
       {
         "element": "V^6",
         "eps_flavour": "-0.07653295537628949536375149547078943833526",
         "Q_beta_MeV": "0.323541795010363170345597075608",
         "selected": false,
-        "vs_codata_pct": "-58.64400128",
-        "F_required": "2.41802889785829"
+        "vs_codata_pct": "-58.64400917",
+        "F_required": "2.41802935934426"
       },
       {
         "element": "V^9",
         "eps_flavour": "-0.07578988201743612670043422915905553554544",
         "Q_beta_MeV": "0.32040046475379919659193566604",
         "selected": false,
-        "vs_codata_pct": "-59.04553472",
-        "F_required": "2.44173618974354"
+        "vs_codata_pct": "-59.04554254",
+        "F_required": "2.4417366557541"
       }
     ],
     "arm_gamma": "derived weights (0,0,qh),(0,0,-h/q) give V^3 for p and n: Q_beta = 0",
