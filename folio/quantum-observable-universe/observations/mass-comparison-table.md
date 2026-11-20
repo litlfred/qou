@@ -1,4 +1,4 @@
-This table evaluates the topological knot formulas ([knot formula table](#rem:knot-formula-table)) at the substrate parameter $q_0$. We derive $q_0$ from the muon--electron mass ratio ([Skein mass relation](#rem:skein-mass-relation)). We compare the results against CODATA 2022 recommended values and PDG 2024 averages. All masses are in MeV/$c^2$.
+This table evaluates the topological knot formulas ([knot formula table](#rem:knot-formula-table)) at the substrate parameter $q_0$. $q_0$ is derived from the muon--electron mass ratio ([Skein mass relation](#rem:skein-mass-relation)). The results are compared against CODATA 2022 recommended values and PDG 2024 averages. All masses are in MeV/$c^2$.
 
 **Input parameters** (one free parameter):
 
@@ -48,7 +48,7 @@ See [Table 3](#tbl:mass-comparison-table-table3-data).
 
 † **LO output is constituent sum only.** The full prediction (beyond the constituent sum) is not yet available.
 
-**Notes.** The muon--electron mass ratio fixes the substrate parameter $q$. Hadronic masses follow from the pair Skein formula ([terminal resolution](#prop:terminal-resolution)). Nuclear binding follows from the Hopf-junction Skein change $\Delta E = \Delta\mathcal{S}$. We evaluate the multi-body Skein polynomials up to ${}^4\mathrm{He}$. Polynomials beyond $A = 4$ are computable in principle ([embeddability closure](#thm:embeddability-closure)) but remain unevaluated.
+**Notes.** The muon--electron mass ratio fixes the substrate parameter $q$. Hadronic masses follow from the pair Skein formula ([terminal resolution](#prop:terminal-resolution)). Nuclear binding follows from the Hopf-junction Skein change $\Delta E = \Delta\mathcal{S}$. Evaluate the multi-body Skein polynomials up to ${}^4\mathrm{He}$. Polynomials beyond $A = 4$ are computable in principle ([embeddability closure](#thm:embeddability-closure)) but remain unevaluated.
 
 **Sources and scope.** The proton and neutron entries use CODATA 2022 values directly. The nuclear entries use AME2020 binding energies. These entries recombine observed constants. The parameter $q$ predicts mass ratios ($m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$), Q-values ($\Delta\mathrm{net} \times E_0$), and half-life ratios via $\log_q(ft)$ spectroscopy. The single external scaling ruler is $m_e = {{ qou.library.codata-2022.electron-mass-energy-equivalent-in-mev | precision: 6 }}\;\text{MeV}$ MeV (CODATA 2022 input). This ruler converts dimensionless $q$-ratios to physical MeV. 
 

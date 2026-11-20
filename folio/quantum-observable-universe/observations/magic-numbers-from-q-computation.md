@@ -9,7 +9,7 @@ The Hoefsmit seminormal matrix for partition $\lambda$ at generator $g$ has bloc
 
 This structure yields $O(d)$ matrix--vector cost per crossing instead of $O(d^3)$ for dense multiplication. This enables a $15\,000\times$ speedup at $k = 9$ (from $557\,$s to $14\,$s) and makes $k = 10$ ($42$ partitions, $\dim \leq 768$) feasible in $48\,$s.
 
-We compute the nuclear character at each $Z$ by multiplying crossing matrices through the full atomic braid $\mathcal{N}(Z, Z)$. This includes intra-nucleon $\mathcal{B}_3 \times \text{quarks}$, inter-nucleon pp/nn/pn crossings, and electron pe crossings using both generators.
+Compute the nuclear character at each $Z$ by multiplying crossing matrices through the full atomic braid $\mathcal{N}(Z, Z)$. This includes intra-nucleon $\mathcal{B}_3 \times \text{quarks}$, inter-nucleon pp/nn/pn crossings, and electron pe crossings using both generators.
 
 ## Interpretation
 

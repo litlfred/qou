@@ -69,7 +69,7 @@ Strangelets require hadrons (confinement) and accessible strange quarks. This li
 | Deconfined | $q < q_{\mathrm{gold}} \approx 0.382$ | **No** | No hadrons; elliptic fiber degenerate, $S_5$ broken, quarks free |
 | Sub-classical | $q_{\mathrm{gold}} < q < 1$ | **No** | Hadrons exist, but $\lvert J_{\mathfrak{s}}\rvert/\lvert J_{\mathfrak{d}}\rvert$ diverges as $q \to q_{\mathrm{gold}}$ |
 | Classical limit | $q = 1$ | **Trivial** | All Jones polynomials evaluate to $1$; no mass differences |
-| Physical | $q > 1$ (ours: $q_0$) | **Yes, at high density** | Jones polynomial cost finite; Fermi energy overcomes it at $\rho \gtrsim 2\rho_0$ |
+| Physical | $q > 1$ (observed: $q_0$) | **Yes, at high density** | Jones polynomial cost finite; Fermi energy overcomes it at $\rho \gtrsim 2\rho_0$ |
 
 Strangelets are a high-density phenomenon at the physical substrate parameter.
 

@@ -1,4 +1,4 @@
-*Proof.* We assemble four standard components.
+*Proof.* Four standard components are assembled.
 
 **Tower of inclusions.** The Hecke algebra $H_n(R, q)$ has presentation by braid generators $\sigma_1, \ldots, \sigma_{n-1}$ modulo the braid relations and the quadratic relation $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$. The inclusion $H_n(q) \hookrightarrow H_{n+1}(q)$ adjoins $\sigma_n$. This inclusion is unital, $R$-linear, and commutes with the $*$-structure $\sigma_i^* = \sigma_i$. (This is the $*$-structure for which positivity below holds. It is not the bar involution $\sigma_i \mapsto \sigma_i^{-1}$, $q \mapsto q^{-1}$, which does not preserve the convention-D parameter $z$.) The sequence $\{H_n(q)\}_{n \geq 1}$ forms a filtered inductive system of unital $*$-algebras over $R$, with colimit $H_\infty(q) = \bigcup_n H_n(q)$ [`jones1985`].
 

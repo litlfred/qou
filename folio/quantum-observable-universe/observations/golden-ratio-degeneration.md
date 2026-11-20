@@ -41,7 +41,7 @@ The golden ratio threshold divides the $(q, \chi)$ parameter space into three re
 | Classical band | $1/\varphi^2 < q < 1$ | smooth | intact but sub-classical | symmetric nuclei ($n = p$) |
 | Physical | $q > 1$ | smooth, $\Delta < 0$ | one real component | full nuclear chart |
 
-Our universe sits at $q = q_0$, well above the golden threshold. The distance from the degeneration,
+The observed universe sits at $q = q_0$, well above the golden threshold. The distance from the degeneration,
 
 $$
   q_0 - q_{\mathrm{gold}}
