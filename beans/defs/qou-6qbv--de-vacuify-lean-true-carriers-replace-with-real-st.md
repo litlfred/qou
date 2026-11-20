@@ -93,3 +93,7 @@ Took ~10 from a fresh audit run on main 917b69399 (22 non-exempt candidates; 7 s
 - conj:curvature-rank-gb-stratification (demoted; proof -> rem:...-proof-sketch). prop:spectral-sequence-collapse uses repointed to prop:gb-spectral-sequence, retitled (no E1 collapse).
 - E2-collapse group: none needed a differential; now cite the split length filtration. mba-step07's claimed d2=0 witness certificate never existed.
 - STILL OPEN (owner): prose E2-collapse claims in atom-knot-mass-derivation-proof, homological-shell-condensation(+interpretation), jet-tower-uniform-delta-max; four proofs linking the conj with existing gap notes (confinement-categorical, unified-curvature-rank-mass-formula, phi-q-categorical-truncation, plancherel-term-7-formulation).
+
+## 2026-11-20 — remaining E2-collapse prose (PR #8656, merged 2d317625f8)
+- atom-knot proof sketch: E2 claims removed (finiteness from Wedderburn). jet-tower-uniform-delta-max: E2 route closed. homological-shell-condensation: own BB sequence, caveat for wrong citation.
+- STILL OPEN (owner): prop:homological-shell-condensation is typed proposition but states a conjecture.
