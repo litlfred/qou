@@ -578,7 +578,10 @@ _alpha_fnd = (_z_fnd - 1) * _h_fnd / 2
 _b_fnd = _mp.sqrt(1 - _q2_fnd / ((_q2_fnd + 1) ** 2))
 _qn1_fnd = _qa_fnd * _mp.cos(_alpha_fnd - _b_fnd * (_hbar_fnd ** 2) / 2)
 _qn2_fnd = _qn1_fnd * (1 - (_b_fnd ** 2) * (_hbar_fnd ** 4))
-_qn2_two_term_fnd = _qn2_fnd + _dm_qed_conn_fnd
+import two_term_qtrace_weighting as _ttq_fnd  # noqa: E402
+_dm_qed_conn_derived_fnd = _ttq_fnd.delta_m_qed_conn_mev(q0_mp, _me_fnd, "derived")
+_qn2_two_term_plain_fnd = _qn2_fnd + _dm_qed_conn_fnd
+_qn2_two_term_fnd = _qn2_fnd + _dm_qed_conn_derived_fnd
 _err_qn2_ppm = (_qn2_fnd - _qb_codata_fnd) / _qb_codata_fnd * _mp.mpf(10) ** 6
 _err_qn2_two_term_ppm = (_qn2_two_term_fnd - _qb_codata_fnd) / _qb_codata_fnd * _mp.mpf(10) ** 6
 _err_red_pct = (1 - abs(_err_qn2_two_term_ppm) / abs(_err_qn2_ppm)) * _mp.mpf(100)
@@ -588,6 +591,9 @@ witness["two_term_borromean_qed_dressing"] = {
     "tr_conn_p_V3": str(_tr_conn_p_fnd),
     "tr_conn_n_V3": str(_tr_conn_n_fnd),
     "Delta_tr_conn_V3": str(_tr_conn_diff_fnd),
+    "weighting_canonical": "derived Tr(K^{⊗3}·)/[2]_q³ (qou-99qc); Q_N2_two_term uses it; Delta_m_QED_conn_MeV (plain), _KnKp, _Kp3, _q are historical",
+    "Delta_m_QED_conn_derived_MeV": str(_dm_qed_conn_derived_fnd),
+    "Q_N2_two_term_plain_MeV": str(_qn2_two_term_plain_fnd),
     "Delta_m_QED_conn_MeV": str(_dm_qed_conn_fnd),
     "Delta_m_QED_conn_KnKp_MeV": str(_dm_qed_conn_knkp_fnd),
     "Delta_m_QED_conn_Kp3_MeV": str(_dm_qed_conn_kp3_fnd),
