@@ -56,7 +56,7 @@ PSD-feasibility is necessary but not sufficient. It holds for every even-twist $
 
 **Scope of the closure.**
 
-If true, the identification supplies the categorical structure for the weak-scale crossing count $N_v = v / m_p$ in the Fermi-constant decomposition $G_F = 1/(\sqrt{2}\,v^2)$. The following hold, with the numerical values verified at 50 dps:
+If true, the identification supplies the categorical structure for the weak scale in proton units, $N_v = v / m_p$ (the crossing count is $3v/m_e$), in the Fermi-constant decomposition $G_F = 1/(\sqrt{2}\,v^2)$. The following hold, with the numerical values verified at 50 dps:
 
 1. **Electroweak Bring Seifert–Hodge Zero-Mode ($1/\pi$) and 1-Loop Schwinger Fixed Point ($-29.37\;\mathrm{ppb}$ on $v$):**
    The Seifert genera of $\{W^\pm = T(2,4),\, Z^0 = T(2,6),\, H = T(2,8)\}$ are $(g_W, g_Z, g_H) = (1, 2, 3)$, whose sum $G_{\mathrm{EW}} = 1 + 2 + 3 = 6$ equals the absolute Euler characteristic $-\chi(\Sigma_4) = 2g - 2 = 6$ of Bring's genus-$4$ surface. Dividing the total Seifert first-Betti count $2(g_W + g_Z + g_H) = 12$ by the Bring Gauss–Bonnet area $\mathrm{Area}(\Sigma_4) = 4\pi(g - 1) = 12\pi$ yields the parameter-free zero-mode shift
