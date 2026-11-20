@@ -1,0 +1,3272 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:weak-spectral-completeness",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.md"
+  },
+  "source_hashes": {
+    "md": "3b01c3e6e555",
+    "ts": "67125017ab67"
+  },
+  "criteria": {
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "8de0ce0e6beb",
+          "ts": "0e29422fe829",
+          "lean": "934809b38156"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "voice-title-scholarly": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9566207ee882",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "8de0ce0e6beb",
+          "ts": "0e29422fe829",
+          "lean": "934809b38156"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "voice-status-section": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5b0082576ba9",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "0e29422fe829",
+          "md": "75b6ebe08bf4",
+          "lean": "934809b38156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "0e29422fe829",
+          "md": "75b6ebe08bf4",
+          "lean": "934809b38156"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "0e29422fe829",
+          "md": "75b6ebe08bf4",
+          "lean": "934809b38156"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "0e29422fe829",
+          "md": "75b6ebe08bf4",
+          "lean": "934809b38156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "0e29422fe829",
+          "md": "75b6ebe08bf4",
+          "lean": "934809b38156"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "0e29422fe829",
+          "md": "75b6ebe08bf4",
+          "lean": "934809b38156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "0e29422fe829",
+          "md": "75b6ebe08bf4",
+          "lean": "934809b38156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "canonical-no-numerology": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "52b4ba95f5c3",
+          "script_commit_sha": "unknown",
+          "def_hash": "bfbb93c220cc"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "canonical-witness-pinned": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "canonical-script-not-deprecated": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e81239fd83a2",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "canonical-dilogarithm-context": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "canonical-no-hardcoded-observable": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "canonical-cal4-acknowledged": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "da489d748555",
+          "script_commit_sha": "unknown",
+          "def_hash": "b5e2fdf9d66a"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "canonical-ck-tiered-not-binary": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "852b0645c90b",
+          "script_commit_sha": "unknown",
+          "def_hash": "c8836d721722"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "13ec1960e3ad",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "compute-lp-dual-present": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6c278b93ad12",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67",
+          "graph": "c701c2d87029"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9555791a2758",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "detangler-section-band": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67",
+          "graph": "c701c2d87029"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "detangler-no-xchapter-fwd": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67",
+          "graph": "c701c2d87029"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "not implemented: stub checker"
+      }
+    ],
+    "detangler-archimedean-wall": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67",
+          "graph": "c701c2d87029"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c17b282a7de7",
+          "script_commit_sha": "unknown",
+          "def_hash": "19a5005a8bb6"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67",
+          "graph": "c701c2d87029"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c94bd6f761f1",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "metrics": {
+          "fwd_emitted": 1,
+          "fwd_received": 0,
+          "tanglement_score": 1,
+          "out_degree": 5,
+          "in_degree": 2,
+          "cone_size": 161,
+          "depth": 30,
+          "pagerank": 0.000135,
+          "edge_span_max": 553,
+          "edge_span_mean": 522,
+          "worst_target": "emits fwd-ref to quantum-observable-universe/predicted-spectra: prop:bar-t-duality-substrate"
+        }
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67",
+          "graph": "c701c2d87029"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "858efa00043a",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67",
+          "graph": "c701c2d87029"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "detangler-no-dependency-cycle": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67",
+          "graph": "c701c2d87029"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "aa75d0ebd53e",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "bib-cited-ref-has-url": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "bib-cited-ref-metadata-ok": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "bib-cited-ref-has-screenshot": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "proof-no-trivial-skeleton": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d83daee37fd8",
+          "script_commit_sha": "unknown",
+          "deps_hash": "21d9ff417741",
+          "def_hash": "83422bec2bb4"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "proof-no-bare-sorries": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2d2fc456ab53",
+          "script_commit_sha": "unknown",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e8d0b02f4cef",
+          "script_commit_sha": "unknown",
+          "deps_hash": "16d8c7a8984e",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "8de0ce0e6beb",
+          "ts": "0e29422fe829",
+          "lean": "934809b38156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:52:12.000Z",
+        "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "8de0ce0e6beb",
+          "ts": "0e29422fe829",
+          "lean": "934809b38156"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.960Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "mass-theory hosts thm:em-spectral-completeness, thm:hoefsmit-ew-cell-content and prop:weak-symmetric-normalization, its direct context; no sibling restates it."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:55.038Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "md:87-89 'six idempotents e_X^pm are pairwise orthogonal as elements of H_2(q)'; e_W^+ = e_Z^+ (one sym idempotent).",
+        "notes": "Score 0.2. The H_2(q) formal statement cannot hold (six orthogonal nonzero idempotents in a 2-dim algebra); the n=6 End_R(V^{x6}) form is plausible but its Lean class omits exhaustion. Restate the formal statement in End_R(V^{x6})."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8de0ce0e6beb",
+          "ts": "0e29422fe829",
+          "lean": "934809b38156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-false-claim.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:52:12.000Z",
+        "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:55.072Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "critical",
+        "evidence": "md:87-89 'the six idempotents e_X^pm are pairwise orthogonal as elements of H_2(q)'",
+        "notes": "False: e_W^+, e_Z^+, e_{T(2,8)}^+ are all the one sym idempotent of H_2(q) (likewise the alt ones), so e_W^+ e_Z^+ = e^+ != 0; distinct eigenvalues of sigma_1^{2k} across k do not separate the blocks. authorNotes already concedes six rank-1 projectors cannot fit a 2-dim algebra. Replace 'Statement (formal)' and Step 2 by the End_R(V^{x6}) form with the eight pure-pattern projectors of (sigma_1, sigma_3, sigma_5)."
+      },
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8de0ce0e6beb",
+          "ts": "0e29422fe829",
+          "lean": "934809b38156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The claims are non-vacuous as they make concrete numerical or algebraic conjectures.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:52:12.000Z",
+        "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:52:13.432Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "mass-theory/weak-spectral-completeness.lean:50-59 'completenessIndex : R ... weak_spectral_completeness_holds : completenessIndex = 1'",
+        "notes": "lean.ref resolves to this sibling class first; any instance with completenessIndex := 1 satisfies it, and nothing ties the index to projectors. The library QOU.Conjectures.WeakSpectralCompleteness is better but still admits projector = 0 (its own comment, Conjectures/WeakSpectralCompleteness.lean:97-100). Point lean.ref at the library class, delete the sibling (no-shadowing rule), and add an exhaustion field (sum of projectors = the EW central idempotent, each nonzero)."
+      },
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8de0ce0e6beb",
+          "ts": "0e29422fe829",
+          "lean": "934809b38156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-circular.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:52:12.000Z",
+        "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:52:13.460Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "A conjecture class carrying its conjectured content is the §3b pattern; no derivation here assumes its own conclusion."
+      },
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8de0ce0e6beb",
+          "ts": "0e29422fe829",
+          "lean": "934809b38156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-overclaim.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:52:12.000Z",
+        "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:52:13.485Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "md:158-160 'G_F ... becomes derivable from (q_0, m_e) alone, closing every beta-decay half-life prediction'",
+        "notes": "N_v is to be 'pinned by constrained PSLQ' (md:156), i.e. selected against data, so G_F would be fitted, not derived from (q_0, m_e). Reword: 'would reduce G_F to the single open quantity N_v'; drop 'every ... simultaneously'."
+      },
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8de0ce0e6beb",
+          "ts": "0e29422fe829",
+          "lean": "934809b38156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-hidden-dof.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:52:12.000Z",
+        "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:52:13.512Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "md:135-140 'N_v =? F([2]_q, ..., tr_pure) for some R-rational function F'",
+        "notes": "F ranges over an unbounded function space chosen by PSLQ against the target: selection against the target under the no-fitting directive. State F from a derivation, or record that no F is derived and PSLQ hits are not evidence."
+      },
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8de0ce0e6beb",
+          "ts": "0e29422fe829",
+          "lean": "934809b38156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-non-sequitur.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:52:12.000Z",
+        "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:52:13.539Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "md:143-145 'since N_v is a q-independent constant when evaluated at q_0'",
+        "notes": "A value at one point q_0 does not force F to be invariant under q -> 1/q at all generic q. Delete the clause or supply the lemma that N_v is a substrate-level (q-generic) quantity."
+      },
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8de0ce0e6beb",
+          "ts": "0e29422fe829",
+          "lean": "934809b38156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The Lean file uses the class-conjecture pattern with sorry, matching the conjectural nature of the markdown.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:52:12.000Z",
+        "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:52:13.594Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "md:62-65 'the direct sum ... exhausts the Wedderburn-block content'; Lean (mass-theory/weak-spectral-completeness.lean) encodes only a real index equal to 1.",
+        "notes": "Neither Lean class encodes exhaustion; the referenced sibling encodes no projectors at all. Fix as in da-vacuous."
+      },
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8de0ce0e6beb",
+          "ts": "0e29422fe829",
+          "lean": "934809b38156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-citation-misuse.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:52:12.000Z",
+        "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:52:13.622Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "md:47 '(prop:even-twist-torus-link-psd-feasibility)' names no existing block; also md:117.",
+        "notes": "Replace with the existing label carrying the (q^{2k}, q^{-2k}) eigenvalue fact, or cite thm:em-spectral-completeness. Lean sibling mass-theory/weak-spectral-completeness.lean:58 'Ref: braids-and-knots/weak-spectral-completeness' gives the wrong chapter."
+      },
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8de0ce0e6beb",
+          "ts": "0e29422fe829",
+          "lean": "934809b38156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-definitional-ambiguity.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:52:12.000Z",
+        "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:52:13.650Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "md:18 'Eight pairwise-orthogonal ... projectors' vs md:60 'the six projectors live in H_2(q)'",
+        "notes": "Two incompatible hosts (End_R(V^{x6}) vs H_2(q)) and counts (8 vs 6). Also the order of sym/alt patterns behind (4,2,1,3,3,1,2,4) is unstated; tr_pure matches only for sigma_5 slowest. Title says 'Plancherel completeness' while md:126 calls Plancherel legacy. Pick End_R(V^{x6}), state the pattern order, retitle."
+      },
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8de0ce0e6beb",
+          "ts": "0e29422fe829",
+          "lean": "934809b38156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-empirical-fragility.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:52:12.000Z",
+        "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:52:13.677Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "md:124-125 'differs from tr_pure by a factor of ~22 at q_0'",
+        "notes": "Unsourced number at q_0, with no witness or q_0 pin named. Cite the producer/witness or drop the figure."
+      },
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8de0ce0e6beb",
+          "ts": "0e29422fe829",
+          "lean": "934809b38156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-physical-implausibility.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:52:12.000Z",
+        "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:52:13.705Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "md:158 'G_F = 1/(sqrt(2) N_v^2 E_x^2 mu_0^2)'",
+        "notes": "E_x and mu_0 are undefined in the block, so the units of G_F (energy^-2) cannot be checked. Define both or link their blocks."
+      },
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8de0ce0e6beb",
+          "ts": "0e29422fe829",
+          "lean": "934809b38156"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.lean:1 — folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.lean:64:10: error: failed to synthesize",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:52:12.000Z",
+        "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:52:13.737Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "md:147 'PSLQ test' and md:125 '~22' have no computation field or witness.",
+        "notes": "Add the computation/witness, or mark both as unmeasured."
+      },
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8de0ce0e6beb",
+          "ts": "0e29422fe829",
+          "lean": "934809b38156"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
+        "severity": "minor",
+        "verdict": "survivable-objection",
+        "referee_argument": "The conjectured algebraic or physical relations are unproven and remain as sorry stubs in the Lean file.",
+        "evidence": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:52:12.000Z",
+        "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:52:13.763Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "critical",
+        "evidence": "md:87-89 claims six pairwise-orthogonal idempotents in the 2-dim H_2(q).",
+        "notes": "Verdict: major revision. Strongest objection: the formal statement is false as written, and the referenced Lean carrier is vacuous. Also md:162 archimedean banner says 'What follows' with nothing following; move it before md:128 or delete."
+      },
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "bcf8bb3e001c",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:13:32.950Z",
+        "reviewed_sha": "5f209b510c5b50294fd755d263c17c75d49be3ed",
+        "evidence": "Conjecture block: statement-to-Lean equivalence is not applicable; the Lean carrier is a conjecture class, not a proof."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "warn",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:52:26.529Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "md:3-9 one italic sentence stacks ring, genericity, sector, End_R(V^{x6}) and Hoefsmit assignment before any purpose.",
+        "notes": "Score H1=0 H2=1 H3=1 H4=0 H5=0 H6=1 H7=1 H8=1 = 5/16. Statement given twice in different hosts; md:162 banner dangles; symbols E_x, mu_0, h undefined. Needs a full exposition pass after the mathematical fix."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:52:12.000Z",
+        "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:52:26.575Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "md:26-34 tr_pure display repeated verbatim at md:102-110; 'q generic (not a root of unity)' at md:3-4 and md:41-42.",
+        "notes": "k>=3: (1) tr_pure display exact-dup (math: keep one, re-reference the other, do not delete math), (2) genericity exact-dup, (3) conjecture stated in header and in 'Statement (formal)' (differs: 8 vs 6 projectors) - merge into one statement in End_R(V^{x6}), (4) 'without Plancherel' md:36 vs md:120-126 (differs). Consider splitting the N_v consequence into its own remark."
+      }
+    ],
+    "voice-probe-narrative": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "cite-named-theorem": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "voice-agent-speak": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed. \"strictly smaller than the brute-force monomial basis of the impasse audit\" -> \"... used previously\"; the heading \"### Downstream consequence — closes NV-1\" -> \"### Downstream consequence — the weak-scale crossing count\"; \"### Audit-flag impact\" -> \"### Consequences\", and \"**NV-1**: hard flag closed via constrained PSLQ on the extended basis\" -> \"**the weak-scale crossing count $N_v$**: pinned by constrained PSLQ on the extended basis\". The conditional \"If this conjecture closes\" framing, the $G_F$ consequence and the superseded-Plancherel-basis note are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "uses-editorial-hygiene": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63814f2a6677",
+          "script_commit_sha": "unknown",
+          "deps_hash": "34af1d8a2365",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "metrics": {
+          "uses_count": 5,
+          "broken_edges": 0,
+          "redundant_edges": 3
+        }
+      }
+    ],
+    "uses-formal-coverage": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "82fd1e2e6831",
+          "script_commit_sha": "unknown",
+          "deps_hash": "794eb6c16a59",
+          "def_hash": "ce2b8102b97f"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "lean-ref-owns-decl": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "metrics": {
+          "decl_claimants": 1
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.742Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (167 lines: conjecture statement, formal statement, 3-step proof sketch, downstream consequence, PSLQ note, consequences). Step-3 header \"Cell-content trace, not Plancherel weight\" and the \"without invoking Plancherel weights\" emphasis are the section's substantive supersession claim, not manufactured contrast. The terminal \"Archimedean specialisation\" paragraph is the corpus template and is not scored. Em-dash density is high but every dash is a genuine parenthetical or appositive."
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:52:26.614Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "md:36-37 'derivable directly from cell-content multiplicities, **without invoking Plancherel weights**.'",
+        "notes": "State the positive claim; the Plancherel contrast belongs in Step 3 only. md:124 'is **not** bar-self-dual' is a mathematical claim and passes."
+      },
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.546Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "severity": "major",
+        "evidence": "1 negation-contrast construction(s): \", not Plancherel weight.\" — state the positive claim directly"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.742Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (167 lines: conjecture statement, formal statement, 3-step proof sketch, downstream consequence, PSLQ note, consequences). Step-3 header \"Cell-content trace, not Plancherel weight\" and the \"without invoking Plancherel weights\" emphasis are the section's substantive supersession claim, not manufactured contrast. The terminal \"Archimedean specialisation\" paragraph is the corpus template and is not scored. Em-dash density is high but every dash is a genuine parenthetical or appositive."
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:52:26.644Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "No setup-then-reframe constructions in md:1-162."
+      },
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.546Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.742Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (167 lines: conjecture statement, formal statement, 3-step proof sketch, downstream consequence, PSLQ note, consequences). Step-3 header \"Cell-content trace, not Plancherel weight\" and the \"without invoking Plancherel weights\" emphasis are the section's substantive supersession claim, not manufactured contrast. The terminal \"Archimedean specialisation\" paragraph is the corpus template and is not scored. Em-dash density is high but every dash is a genuine parenthetical or appositive."
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:52:26.676Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Two stylistic spaced dashes (md:36, md:113) in 162 lines; Step headers use dashes as labels. Low density.",
+        "notes": "md:36 '*— derivable ...' could become a sentence."
+      },
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.546Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "severity": "minor",
+        "evidence": "13 stylistic spaced dashes in 719 words (1.81/100w) — restructure into sentences"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.742Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (167 lines: conjecture statement, formal statement, 3-step proof sketch, downstream consequence, PSLQ note, consequences). Step-3 header \"Cell-content trace, not Plancherel weight\" and the \"without invoking Plancherel weights\" emphasis are the section's substantive supersession claim, not manufactured contrast. The terminal \"Archimedean specialisation\" paragraph is the corpus template and is not scored. Em-dash density is high but every dash is a genuine parenthetical or appositive."
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:52:26.703Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Enumerations (three carriers, three steps) are substantive."
+      },
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.546Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 719 words)"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.742Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (167 lines: conjecture statement, formal statement, 3-step proof sketch, downstream consequence, PSLQ note, consequences). Step-3 header \"Cell-content trace, not Plancherel weight\" and the \"without invoking Plancherel weights\" emphasis are the section's substantive supersession claim, not manufactured contrast. The terminal \"Archimedean specialisation\" paragraph is the corpus template and is not scored. Em-dash density is high but every dash is a genuine parenthetical or appositive."
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:52:26.731Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Block ends on the archimedean boilerplate md:162, not an aphorism (that banner dangles; recorded under da-referee-verdict)."
+      },
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.546Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.742Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (167 lines: conjecture statement, formal statement, 3-step proof sketch, downstream consequence, PSLQ note, consequences). Step-3 header \"Cell-content trace, not Plancherel weight\" and the \"without invoking Plancherel weights\" emphasis are the section's substantive supersession claim, not manufactured contrast. The terminal \"Archimedean specialisation\" paragraph is the corpus template and is not scored. Em-dash density is high but every dash is a genuine parenthetical or appositive."
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:52:26.764Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "md:4 'note q = 1 IS excluded' is a plain 'note'; no announced emphasis.",
+        "notes": "Drop the shouted 'IS'."
+      },
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.546Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.742Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (167 lines: conjecture statement, formal statement, 3-step proof sketch, downstream consequence, PSLQ note, consequences). Step-3 header \"Cell-content trace, not Plancherel weight\" and the \"without invoking Plancherel weights\" emphasis are the section's substantive supersession claim, not manufactured contrast. The terminal \"Archimedean specialisation\" paragraph is the corpus template and is not scored. Em-dash density is high but every dash is a genuine parenthetical or appositive."
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:52:26.797Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Block-final sentence is the archimedean banner, not a restatement of the result."
+      },
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.546Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.742Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (167 lines: conjecture statement, formal statement, 3-step proof sketch, downstream consequence, PSLQ note, consequences). Step-3 header \"Cell-content trace, not Plancherel weight\" and the \"without invoking Plancherel weights\" emphasis are the section's substantive supersession claim, not manufactured contrast. The terminal \"Archimedean specialisation\" paragraph is the corpus template and is not scored. Em-dash density is high but every dash is a genuine parenthetical or appositive."
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:52:26.827Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "No personal register in md:1-162."
+      },
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.546Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.742Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (167 lines: conjecture statement, formal statement, 3-step proof sketch, downstream consequence, PSLQ note, consequences). Step-3 header \"Cell-content trace, not Plancherel weight\" and the \"without invoking Plancherel weights\" emphasis are the section's substantive supersession claim, not manufactured contrast. The terminal \"Archimedean specialisation\" paragraph is the corpus template and is not scored. Em-dash density is high but every dash is a genuine parenthetical or appositive."
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:52:26.867Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "md:159-160 'closing every beta-decay half-life prediction simultaneously'",
+        "notes": "Remove 'every ... simultaneously'; also md:141 'a strong structural constraint' -> 'a constraint'."
+      },
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.546Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.742Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (167 lines: conjecture statement, formal statement, 3-step proof sketch, downstream consequence, PSLQ note, consequences). Step-3 header \"Cell-content trace, not Plancherel weight\" and the \"without invoking Plancherel weights\" emphasis are the section's substantive supersession claim, not manufactured contrast. The terminal \"Archimedean specialisation\" paragraph is the corpus template and is not scored. Em-dash density is high but every dash is a genuine parenthetical or appositive."
+      },
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:52:26.900Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "md:7-9 'categorically complete idempotent decomposition in End_R(V^{x6}) via the disjoint-strand-pair Hoefsmit assignment'",
+        "notes": "Break into clauses: 'the six-strand Hecke action splits into orthogonal idempotents, one triple of strand pairs per carrier'. Also 'bar-self-dual cell-content trace' (md:24)."
+      },
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.546Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c3dab60e46d6",
+          "script_commit_sha": "unknown",
+          "def_hash": "10db4d17cd96"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "proof-no-placeholder-stub": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "de28cc8fe753",
+          "script_commit_sha": "unknown",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "acronym-in-glossary": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "2 acronym(s) are candidates for the glossary: EW, EM. Run glossary:acronyms for the folio-wide list with expansions."
+      }
+    ],
+    "foreshadows-point-forward": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67",
+          "graph": "c701c2d87029"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "dak-companion-present": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
+      }
+    ],
+    "dak-bpmn-has-process": [
+      {
+        "field_hash": {
+          "md": "9f10dfc811d9",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "cab82e0a152f2028bd087e1653955ac1d8077308",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
+      }
+    ],
+    "dak-dmn-has-decision-table": [
+      {
+        "field_hash": {
+          "md": "9f10dfc811d9",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "cab82e0a152f2028bd087e1653955ac1d8077308",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
+      }
+    ],
+    "dak-fsh-declares-kind": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
+      }
+    ],
+    "dak-label-prefix-matches-kind": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
+      }
+    ],
+    "id-unique": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "id-stable": [
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760"
+      }
+    ],
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.616Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.651Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "respects_archimedean_wall": [
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.685Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "code_is_commented": [
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.716Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "variables_typed": [
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.745Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "has_references_to_paper": [
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.776Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "connected_to_ci_pipeline": [
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.804Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "deprecated": [
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.836Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "uses_library_framework_appropriately": [
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.879Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "assertions_are_falsifiable": [
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.919Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "uses-editorial-completeness": [
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:55.003Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "md:17 links thm:hoefsmit-ew-cell-content; uses[] lists only thm:em-spectral-completeness.",
+        "notes": "Add thm:hoefsmit-ew-cell-content, prop:torus-embeddable-complete (md:58), prop:bar-t-duality-substrate (md:114), prop:weak-symmetric-normalization (md:123), conj:g-action-on-substrate (md:54). md:47/md:117 cite prop:even-twist-torus-link-psd-feasibility, which has no block: replace with the real label or remove."
+      }
+    ],
+    "da-arity-conflation": [
+      {
+        "field_hash": {
+          "md": "f2118988aad4",
+          "ts": "c84c5c56a4d4",
+          "lean": "02d92073f48c",
+          "lean_statement": "14d1890217d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:52:13.566Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "No universal-closure or cross-instance conflation found; claims are per fixed q-generic algebra."
+      },
+      {
+        "field_hash": {
+          "md": "3b01c3e6e555",
+          "ts": "67125017ab67"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "f3b46460ca3d90f334ede032f98e5764a3f1e760",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
+}

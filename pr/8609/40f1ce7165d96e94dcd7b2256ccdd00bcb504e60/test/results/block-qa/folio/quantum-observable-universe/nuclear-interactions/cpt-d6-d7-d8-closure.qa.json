@@ -1,0 +1,2356 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:cpt-d6-d7-d8-closure",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/cpt-d6-d7-d8-closure.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/cpt-d6-d7-d8-closure.md",
+    "lean": "folio/quantum-observable-universe/nuclear-interactions/cpt-d6-d7-d8-closure.lean"
+  },
+  "source_hashes": {
+    "md": "51d93f136ca3",
+    "ts": "4c9bffd647d6",
+    "lean": "70a62ef5492d",
+    "lean_statement": "baaede26b8a2"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The tracker ids are out of the published title, now \"CPT closure: charge conjugation, parity and time reversal jointly preserve the Markov trace\", and the class hypothesis quoted in the body is `[CPTClosure]`; the three components are named as $C$, $P$, $T$ in the statement.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "bbc03dd9670f",
+          "script_commit_sha": "74f4043375ab7a1a2eb97432f1d9abc84828e5f3"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "74f4043375ab7a1a2eb97432f1d9abc84828e5f3"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "74f4043375ab7a1a2eb97432f1d9abc84828e5f3"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "74f4043375ab7a1a2eb97432f1d9abc84828e5f3"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "74f4043375ab7a1a2eb97432f1d9abc84828e5f3"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5a542b9ddb77",
+          "script_commit_sha": "74f4043375ab7a1a2eb97432f1d9abc84828e5f3"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "8124b533fec7",
+          "ts": "c5cc8e3d4151",
+          "lean": "a92ff39633a2"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "7e311e463351",
+          "script_commit_sha": "74f4043375ab7a1a2eb97432f1d9abc84828e5f3"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/nuclear-interactions/cpt-d6-d7-d8-closure.lean:115: right realisations and are individually trace-preserving."
+      }
+    ],
+    "voice-title-scholarly": [
+      {
+        "field_hash": {
+          "md": "81aa80c75463",
+          "ts": "4c9bffd647d6",
+          "lean": "b71d3d944478",
+          "lean_statement": "953b67daaec8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "dbe50250022f",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "8124b533fec7",
+          "ts": "c5cc8e3d4151",
+          "lean": "a92ff39633a2"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "74f4043375ab7a1a2eb97432f1d9abc84828e5f3"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "9fda9d8431d9",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "voice-status-section": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "9fda9d8431d9",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "cf3d4ea0ab0a",
+          "script_commit_sha": "74f4043375ab7a1a2eb97432f1d9abc84828e5f3"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "37b3fa59a3bc",
+          "script_commit_sha": "74f4043375ab7a1a2eb97432f1d9abc84828e5f3"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "4c9bffd647d6",
+          "md": "81aa80c75463",
+          "lean": "b71d3d944478"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "notes": "{\"regimes\":[\"generic-R\",\"symbolic\"],\"chapter\":\"nuclear-interactions\",\"expected\":null}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "4c9bffd647d6",
+          "md": "81aa80c75463",
+          "lean": "b71d3d944478"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "4c9bffd647d6",
+          "md": "81aa80c75463",
+          "lean": "b71d3d944478"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "4c9bffd647d6",
+          "md": "81aa80c75463",
+          "lean": "b71d3d944478"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "4c9bffd647d6",
+          "md": "81aa80c75463",
+          "lean": "b71d3d944478"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "4c9bffd647d6",
+          "md": "81aa80c75463",
+          "lean": "b71d3d944478"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "4c9bffd647d6",
+          "md": "81aa80c75463",
+          "lean": "b71d3d944478"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c58bf6bca27b",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "canonical-no-numerology": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "49e4352f8aa9",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "canonical-witness-pinned": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "3050ae1775d6",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "canonical-script-not-deprecated": [
+      {
+        "field_hash": {
+          "md": "81aa80c75463",
+          "ts": "4c9bffd647d6",
+          "lean": "b71d3d944478",
+          "lean_statement": "953b67daaec8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "89bcd82bd3ff",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "canonical-dilogarithm-context": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "a065b3633f0f",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "canonical-no-hardcoded-observable": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "96a346415fd2",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "canonical-cal4-acknowledged": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2ca3d3131a21",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "canonical-ck-tiered-not-binary": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "5fb9d70acf54",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "81aa80c75463",
+          "ts": "4c9bffd647d6",
+          "lean": "b71d3d944478",
+          "lean_statement": "953b67daaec8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "47384e4fd1b4",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "compute-lp-dual-present": [
+      {
+        "field_hash": {
+          "md": "81aa80c75463",
+          "ts": "4c9bffd647d6",
+          "lean": "b71d3d944478",
+          "lean_statement": "953b67daaec8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "772b3e8dc930",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "ba9b409866e5",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2",
+          "graph": "02eeb5fc9774"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "316cc94d5aa5",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:24:54.942Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "detangler-section-band": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2",
+          "graph": "02eeb5fc9774"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "696ee4c80040",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "detangler-no-xchapter-fwd": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2",
+          "graph": "02eeb5fc9774"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "b01f61430d2a",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "detangler-archimedean-wall": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2",
+          "graph": "02eeb5fc9774"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "3edb7220507a",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "ba9b409866e5",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2",
+          "graph": "02eeb5fc9774"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "7b9de841a5d5",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:24:54.942Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 1,
+          "tanglement_score": 0,
+          "out_degree": 2,
+          "in_degree": 4,
+          "cone_size": 27,
+          "depth": 15,
+          "pagerank": 0.000172,
+          "edge_span_max": 45,
+          "edge_span_mean": 45,
+          "worst_target": ""
+        }
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "ba9b409866e5",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2",
+          "graph": "02eeb5fc9774"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "53f3fcf3f37b",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:24:54.942Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2",
+          "graph": "02eeb5fc9774"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "280aea9a61d8",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "detangler-no-dependency-cycle": [
+      {
+        "field_hash": {
+          "md": "ba9b409866e5",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2",
+          "graph": "02eeb5fc9774"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "8dda7ee9ac99",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:24:54.942Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "bib-cited-ref-has-url": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "a730f195e37d",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72",
+          "deps_hash": "1dc9d96a4428"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "bib-cited-ref-metadata-ok": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "b7cc0ee7d062",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72",
+          "deps_hash": "1dc9d96a4428"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "bib-cited-ref-has-screenshot": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "d3202b194d13",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72",
+          "deps_hash": "1dc9d96a4428"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "proof-no-trivial-skeleton": [
+      {
+        "field_hash": {
+          "md": "ba9b409866e5",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "78239d5e66a5",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72",
+          "deps_hash": "21d9ff417741"
+        },
+        "reviewed_at": "2026-08-31T11:24:54.942Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "proof-no-bare-sorries": [
+      {
+        "field_hash": {
+          "md": "ba9b409866e5",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "5f54e3f82f73",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:24:54.942Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "badf9b8e012f",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72",
+          "deps_hash": "16d8c7a8984e"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2a99e29dadda",
+          "ts": "c5cc8e3d4151",
+          "lean": "a92ff39633a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "2a99e29dadda",
+          "ts": "c5cc8e3d4151",
+          "lean": "a92ff39633a2"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "lean": "1bb13957ce1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
+          "version": "v1",
+          "script_hash": "397e2491603f",
+          "script_commit_sha": "010231d905101857ff9f9b277f96791cf7b461bb"
+        },
+        "reviewed_at": "2026-06-23T11:59:48.389Z",
+        "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2a99e29dadda",
+          "ts": "c5cc8e3d4151",
+          "lean": "a92ff39633a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'CPT closure: D6 + D7 + D8 jointly imply $C \\\\cdot P \\\\cdot T$ preserves the Markov trace': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/cpt-d6-d7-d8-closure.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2a99e29dadda",
+          "ts": "c5cc8e3d4151",
+          "lean": "a92ff39633a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claims in 'CPT closure: D6 + D7 + D8 jointly imply $C \\\\cdot P \\\\cdot T$ preserves the Markov trace' are non-vacuous as they make concrete conjectures about 'consistently: there exist actions $C$, $P$, $T$ on closed-braid representatives of $H_n(q)$ such that 1. $C$ is the c...'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2a99e29dadda",
+          "ts": "c5cc8e3d4151",
+          "lean": "a92ff39633a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'CPT closure: D6 + D7 + D8 jointly imply $C \\\\cdot P \\\\cdot T$ preserves the Markov trace'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/cpt-d6-d7-d8-closure.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2a99e29dadda",
+          "ts": "c5cc8e3d4151",
+          "lean": "a92ff39633a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No overclaims: the scope of 'CPT closure: D6 + D7 + D8 jointly imply $C \\\\cdot P \\\\cdot T$ preserves the Markov trace' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2a99e29dadda",
+          "ts": "c5cc8e3d4151",
+          "lean": "a92ff39633a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'CPT closure: D6 + D7 + D8 jointly imply $C \\\\cdot P \\\\cdot T$ preserves the Markov trace'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/cpt-d6-d7-d8-closure.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2a99e29dadda",
+          "ts": "c5cc8e3d4151",
+          "lean": "a92ff39633a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'CPT closure: D6 + D7 + D8 jointly imply $C \\\\cdot P \\\\cdot T$ preserves the Markov trace' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/cpt-d6-d7-d8-closure.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2a99e29dadda",
+          "ts": "c5cc8e3d4151",
+          "lean": "a92ff39633a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Lean and narrative statements for 'CPT closure: D6 + D7 + D8 jointly imply $C \\\\cdot P \\\\cdot T$ preserves the Markov trace' are structurally aligned.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2a99e29dadda",
+          "ts": "c5cc8e3d4151",
+          "lean": "a92ff39633a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Citations to wigner1937, jones1987, kassel1995 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/cpt-d6-d7-d8-closure.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2a99e29dadda",
+          "ts": "c5cc8e3d4151",
+          "lean": "a92ff39633a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'CPT closure: D6 + D7 + D8 jointly imply $C \\\\cdot P \\\\cdot T$ preserves the Markov trace' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/cpt-d6-d7-d8-closure.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2a99e29dadda",
+          "ts": "c5cc8e3d4151",
+          "lean": "a92ff39633a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'CPT closure: D6 + D7 + D8 jointly imply $C \\\\cdot P \\\\cdot T$ preserves the Markov trace' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/cpt-d6-d7-d8-closure.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2a99e29dadda",
+          "ts": "c5cc8e3d4151",
+          "lean": "a92ff39633a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'CPT closure: D6 + D7 + D8 jointly imply $C \\\\cdot P \\\\cdot T$ preserves the Markov trace' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/cpt-d6-d7-d8-closure.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2a99e29dadda",
+          "ts": "c5cc8e3d4151",
+          "lean": "a92ff39633a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'CPT closure: D6 + D7 + D8 jointly imply $C \\\\cdot P \\\\cdot T$ preserves the Markov trace' are reproducible.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/cpt-d6-d7-d8-closure.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2a99e29dadda",
+          "ts": "c5cc8e3d4151",
+          "lean": "a92ff39633a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in conjecture 'CPT closure: D6 + D7 + D8 jointly imply $C \\\\cdot P \\\\cdot T$ preserves the Markov trace' are consistent."
+      }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "9b284af269a5",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72",
+          "deps_hash": "1dc9d96a4428"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq24"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ba9b409866e5",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qou-z9ws-vacuity-drain",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-31T11:27:44.369Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe",
+        "severity": "minor",
+        "evidence": "This is a conjecture block, so the Lean is not expected to prove the md claim -- but it previously claimed a stronger epistemic status than it had. The module docstring said the conjecture was 'axiomatised as a Lean class with no instance'. That was FALSE: CPTClosure carried ClosedBraid, markovTrace and cptComposite as FIELDS, so ClosedBraid := Unit, markovTrace := fun _ => 0, cptComposite := id inhabits it and a [CPTClosure R] binder assumed nothing. The class is now parameterised over (B, tr, cpt) and genuinely has no instance. Still open and unproved: each of the three component conjectures -- that the colour-sheet flavour swap, the braid-diagram mirror and Markov-trace word reversal individually preserve tr_M.",
+        "notes": "Also: cpt_closure was a def returning inst.cpt_trace_preserved, the conjecture field handed back (AGENTS.md 3b-cond item 5). It is now a named Prop over caller-supplied data, asserting nothing -- AGENTS.md 1a disposition 3. AND one implication became DERIVED: cptClosure_of_components proves that if C, P and T each preserve tr_M then so does C o P o T, which is exactly the md's claim that the three components 'collectively constitute the conjecture'. The md sentence describing the class arity was updated to match. NOTE ON SIDECAR STALENESS: this block measured needs-agent 30 BEFORE the md edit (checked by stashing the change and re-sweeping), so its agent criteria were already carrying no live verdict; the edit did not create that debt. Bean qou-z9ws."
+      },
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qou-z9ws-vacuity-drain",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-31T11:32:11.892Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe",
+        "severity": "minor",
+        "evidence": "This is a conjecture block, so the Lean is not expected to prove the md claim -- but it previously claimed a stronger epistemic status than it had. The module docstring said the conjecture was 'axiomatised as a Lean class with no instance'. That was FALSE: CPTClosure carried ClosedBraid, markovTrace and cptComposite as FIELDS, so ClosedBraid := Unit, markovTrace := fun _ => 0, cptComposite := id inhabits it and a [CPTClosure R] binder assumed nothing. The class is now parameterised over (B, tr, cpt) and genuinely has no instance. Still open and unproved: each of the three component conjectures -- that the colour-sheet flavour swap, the braid-diagram mirror and Markov-trace word reversal individually preserve tr_M.",
+        "notes": "SUPERSEDES an earlier entry of mine on this criterion, which is now inert by field_hash but stated one thing wrongly. It said the md edit 'did not create that debt' about sidecar staleness. Measured: the block was at needs-agent 30 before the edit and 40 after, so 30 was pre-existing and TEN are mine -- the whole trap-* family, which I have since re-adjudicated with evidence. Everything else in that entry stands. Substance: cpt_closure was a def returning inst.cpt_trace_preserved, the conjecture field handed back (AGENTS.md 3b-cond item 5). It is now a named Prop over caller-supplied data, asserting nothing (1a disposition 3). One implication became DERIVED: cptClosure_of_components proves that if C, P and T each preserve tr_M then so does C o P o T, which is exactly the md's claim that the three components 'collectively constitute the conjecture'. Bean qou-z9ws."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "voice-probe-narrative": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "9fda9d8431d9",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "cite-named-theorem": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "9fda9d8431d9",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "voice-agent-speak": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "9fda9d8431d9",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:54.000Z",
+        "reviewed_sha": "6ffefb7e9acebbcc6e701d8945f106e53cff0e48",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "uses-editorial-hygiene": [
+      {
+        "field_hash": {
+          "md": "ba9b409866e5",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "1d50b09b0497",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "a86dfebb515f"
+        },
+        "reviewed_at": "2026-08-31T11:24:54.942Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe",
+        "metrics": {
+          "uses_count": 2,
+          "broken_edges": 0,
+          "redundant_edges": 0
+        }
+      }
+    ],
+    "uses-formal-coverage": [
+      {
+        "field_hash": {
+          "md": "ba9b409866e5",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "b7b208d4a0c4",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "3b16849c7b53"
+        },
+        "reviewed_at": "2026-08-31T11:24:54.942Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe",
+        "metrics": {
+          "formal_only_count": 0,
+          "editorial_only_count": 2
+        }
+      }
+    ],
+    "lean-ref-owns-decl": [
+      {
+        "field_hash": {
+          "md": "ba9b409866e5",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "b1c323c3439c",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "a86dfebb515f"
+        },
+        "reviewed_at": "2026-08-31T11:24:54.942Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe",
+        "metrics": {
+          "decl_claimants": 1
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "81aa80c75463",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.497Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "1b527d68c417",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:27.155Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the C/P/T three-item list, and the closing paragraph. The three-item list is substantive (it names the three symmetries the conjecture is about). 'The three components are not logically independent' is a load-bearing claim (it is why this is one conjecture rather than three), so it falls in the substantive-contrast false-positive class.",
+        "notes": "Kept: the denial of independence IS the block's structural claim."
+      },
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qou-z9ws-vacuity-drain",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-31T11:31:36.225Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe",
+        "notes": "Re-adjudicated after a two-sentence prose edit that corrected the class arity from [CPTClosure R] to [CPTClosure R B tr cpt] and recorded that the composite follows from the three components. Only these ten trap-* criteria were staled by the edit (measured: this block was at needs-agent 30 before it and 40 after, and the diff is exactly this family). Read against the new text: the enumerations are of real objects (C, P, T; B, tr, cpt), not rhetorical triples; the single em-dash pair predates the edit and sets off the coefficient ring; there is no closing aphorism, no meta-commentary on the encoding (that reasoning lives in the .lean docstring, not the prose), no performed warmth and no superlative. An earlier draft of this edit did carry three em-dashes in one sentence, a closing aphorism, and a sentence of encoding meta-commentary; it was rewritten before recording rather than adjudicated as-is."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "81aa80c75463",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.497Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1b527d68c417",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:27.211Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the C/P/T three-item list, and the closing paragraph. The three-item list is substantive (it names the three symmetries the conjecture is about). 'The three components are not logically independent' is a load-bearing claim (it is why this is one conjecture rather than three), so it falls in the substantive-contrast false-positive class.",
+        "notes": "No setup-then-reframe."
+      },
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qou-z9ws-vacuity-drain",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-31T11:31:36.329Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe",
+        "notes": "Re-adjudicated after a two-sentence prose edit that corrected the class arity from [CPTClosure R] to [CPTClosure R B tr cpt] and recorded that the composite follows from the three components. Only these ten trap-* criteria were staled by the edit (measured: this block was at needs-agent 30 before it and 40 after, and the diff is exactly this family). Read against the new text: the enumerations are of real objects (C, P, T; B, tr, cpt), not rhetorical triples; the single em-dash pair predates the edit and sets off the coefficient ring; there is no closing aphorism, no meta-commentary on the encoding (that reasoning lives in the .lean docstring, not the prose), no performed warmth and no superlative. An earlier draft of this edit did carry three em-dashes in one sentence, a closing aphorism, and a sentence of encoding meta-commentary; it was rewritten before recording rather than adjudicated as-is."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "81aa80c75463",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.497Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 139 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1b527d68c417",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:27.288Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full read of the conjecture statement, the C/P/T three-item list, and the closing paragraph. The three-item list is substantive (it names the three symmetries the conjecture is about). 'The three components are not logically independent' is a load-bearing claim (it is why this is one conjecture rather than three), so it falls in the substantive-contrast false-positive class. Two unspaced em-dashes in the closing paragraph. The second ('coefficient ring of the trace--canonically Z[q,q^-1]') is a true appositive and was kept. The first substituted for a colon or full stop.",
+        "notes": "FIX APPLIED: 'The three components are not logically independent---they collectively constitute the conjecture.' -> 'The three components are not logically independent; they collectively constitute the conjecture.'"
+      },
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qou-z9ws-vacuity-drain",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-31T11:31:36.381Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe",
+        "notes": "Re-adjudicated after a two-sentence prose edit that corrected the class arity from [CPTClosure R] to [CPTClosure R B tr cpt] and recorded that the composite follows from the three components. Only these ten trap-* criteria were staled by the edit (measured: this block was at needs-agent 30 before it and 40 after, and the diff is exactly this family). Read against the new text: the enumerations are of real objects (C, P, T; B, tr, cpt), not rhetorical triples; the single em-dash pair predates the edit and sets off the coefficient ring; there is no closing aphorism, no meta-commentary on the encoding (that reasoning lives in the .lean docstring, not the prose), no performed warmth and no superlative. An earlier draft of this edit did carry three em-dashes in one sentence, a closing aphorism, and a sentence of encoding meta-commentary; it was rewritten before recording rather than adjudicated as-is."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "81aa80c75463",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.497Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 139 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1b527d68c417",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:27.347Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the C/P/T three-item list, and the closing paragraph. The three-item list is substantive (it names the three symmetries the conjecture is about). 'The three components are not logically independent' is a load-bearing claim (it is why this is one conjecture rather than three), so it falls in the substantive-contrast false-positive class.",
+        "notes": "C/P/T is a substantive enumeration."
+      },
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qou-z9ws-vacuity-drain",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-31T11:31:36.425Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe",
+        "notes": "Re-adjudicated after a two-sentence prose edit that corrected the class arity from [CPTClosure R] to [CPTClosure R B tr cpt] and recorded that the composite follows from the three components. Only these ten trap-* criteria were staled by the edit (measured: this block was at needs-agent 30 before it and 40 after, and the diff is exactly this family). Read against the new text: the enumerations are of real objects (C, P, T; B, tr, cpt), not rhetorical triples; the single em-dash pair predates the edit and sets off the coefficient ring; there is no closing aphorism, no meta-commentary on the encoding (that reasoning lives in the .lean docstring, not the prose), no performed warmth and no superlative. An earlier draft of this edit did carry three em-dashes in one sentence, a closing aphorism, and a sentence of encoding meta-commentary; it was rewritten before recording rather than adjudicated as-is."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "81aa80c75463",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.497Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1b527d68c417",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:27.385Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the C/P/T three-item list, and the closing paragraph. The three-item list is substantive (it names the three symmetries the conjecture is about). 'The three components are not logically independent' is a load-bearing claim (it is why this is one conjecture rather than three), so it falls in the substantive-contrast false-positive class.",
+        "notes": "Block ends on a technical statement of the class hypothesis and its coefficient ring, not a quotable line."
+      },
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qou-z9ws-vacuity-drain",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-31T11:31:36.496Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe",
+        "notes": "Re-adjudicated after a two-sentence prose edit that corrected the class arity from [CPTClosure R] to [CPTClosure R B tr cpt] and recorded that the composite follows from the three components. Only these ten trap-* criteria were staled by the edit (measured: this block was at needs-agent 30 before it and 40 after, and the diff is exactly this family). Read against the new text: the enumerations are of real objects (C, P, T; B, tr, cpt), not rhetorical triples; the single em-dash pair predates the edit and sets off the coefficient ring; there is no closing aphorism, no meta-commentary on the encoding (that reasoning lives in the .lean docstring, not the prose), no performed warmth and no superlative. An earlier draft of this edit did carry three em-dashes in one sentence, a closing aphorism, and a sentence of encoding meta-commentary; it was rewritten before recording rather than adjudicated as-is."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "81aa80c75463",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.497Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1b527d68c417",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:27.426Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the C/P/T three-item list, and the closing paragraph. The three-item list is substantive (it names the three symmetries the conjecture is about). 'The three components are not logically independent' is a load-bearing claim (it is why this is one conjecture rather than three), so it falls in the substantive-contrast false-positive class.",
+        "notes": "No narrated emphasis."
+      },
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qou-z9ws-vacuity-drain",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-31T11:31:36.557Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe",
+        "notes": "Re-adjudicated after a two-sentence prose edit that corrected the class arity from [CPTClosure R] to [CPTClosure R B tr cpt] and recorded that the composite follows from the three components. Only these ten trap-* criteria were staled by the edit (measured: this block was at needs-agent 30 before it and 40 after, and the diff is exactly this family). Read against the new text: the enumerations are of real objects (C, P, T; B, tr, cpt), not rhetorical triples; the single em-dash pair predates the edit and sets off the coefficient ring; there is no closing aphorism, no meta-commentary on the encoding (that reasoning lives in the .lean docstring, not the prose), no performed warmth and no superlative. An earlier draft of this edit did carry three em-dashes in one sentence, a closing aphorism, and a sentence of encoding meta-commentary; it was rewritten before recording rather than adjudicated as-is."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "81aa80c75463",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.497Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1b527d68c417",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:27.489Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the C/P/T three-item list, and the closing paragraph. The three-item list is substantive (it names the three symmetries the conjecture is about). 'The three components are not logically independent' is a load-bearing claim (it is why this is one conjecture rather than three), so it falls in the substantive-contrast false-positive class.",
+        "notes": "'The joint statement is that they compose to the CPT theorem at the Markov-trace level' adds the joint reading rather than restating the list."
+      },
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qou-z9ws-vacuity-drain",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-31T11:31:36.613Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe",
+        "notes": "Re-adjudicated after a two-sentence prose edit that corrected the class arity from [CPTClosure R] to [CPTClosure R B tr cpt] and recorded that the composite follows from the three components. Only these ten trap-* criteria were staled by the edit (measured: this block was at needs-agent 30 before it and 40 after, and the diff is exactly this family). Read against the new text: the enumerations are of real objects (C, P, T; B, tr, cpt), not rhetorical triples; the single em-dash pair predates the edit and sets off the coefficient ring; there is no closing aphorism, no meta-commentary on the encoding (that reasoning lives in the .lean docstring, not the prose), no performed warmth and no superlative. An earlier draft of this edit did carry three em-dashes in one sentence, a closing aphorism, and a sentence of encoding meta-commentary; it was rewritten before recording rather than adjudicated as-is."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "81aa80c75463",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.497Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1b527d68c417",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:27.529Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the C/P/T three-item list, and the closing paragraph. The three-item list is substantive (it names the three symmetries the conjecture is about). 'The three components are not logically independent' is a load-bearing claim (it is why this is one conjecture rather than three), so it falls in the substantive-contrast false-positive class.",
+        "notes": "Institutional register."
+      },
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qou-z9ws-vacuity-drain",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-31T11:31:36.673Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe",
+        "notes": "Re-adjudicated after a two-sentence prose edit that corrected the class arity from [CPTClosure R] to [CPTClosure R B tr cpt] and recorded that the composite follows from the three components. Only these ten trap-* criteria were staled by the edit (measured: this block was at needs-agent 30 before it and 40 after, and the diff is exactly this family). Read against the new text: the enumerations are of real objects (C, P, T; B, tr, cpt), not rhetorical triples; the single em-dash pair predates the edit and sets off the coefficient ring; there is no closing aphorism, no meta-commentary on the encoding (that reasoning lives in the .lean docstring, not the prose), no performed warmth and no superlative. An earlier draft of this edit did carry three em-dashes in one sentence, a closing aphorism, and a sentence of encoding meta-commentary; it was rewritten before recording rather than adjudicated as-is."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "81aa80c75463",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.497Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1b527d68c417",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:27.601Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the C/P/T three-item list, and the closing paragraph. The three-item list is substantive (it names the three symmetries the conjecture is about). 'The three components are not logically independent' is a load-bearing claim (it is why this is one conjecture rather than three), so it falls in the substantive-contrast false-positive class.",
+        "notes": "No inflation."
+      },
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qou-z9ws-vacuity-drain",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-31T11:31:36.757Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe",
+        "notes": "Re-adjudicated after a two-sentence prose edit that corrected the class arity from [CPTClosure R] to [CPTClosure R B tr cpt] and recorded that the composite follows from the three components. Only these ten trap-* criteria were staled by the edit (measured: this block was at needs-agent 30 before it and 40 after, and the diff is exactly this family). Read against the new text: the enumerations are of real objects (C, P, T; B, tr, cpt), not rhetorical triples; the single em-dash pair predates the edit and sets off the coefficient ring; there is no closing aphorism, no meta-commentary on the encoding (that reasoning lives in the .lean docstring, not the prose), no performed warmth and no superlative. An earlier draft of this edit did carry three em-dashes in one sentence, a closing aphorism, and a sentence of encoding meta-commentary; it was rewritten before recording rather than adjudicated as-is."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "81aa80c75463",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.497Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1b527d68c417",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:27.689Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the C/P/T three-item list, and the closing paragraph. The three-item list is substantive (it names the three symmetries the conjecture is about). 'The three components are not logically independent' is a load-bearing claim (it is why this is one conjecture rather than three), so it falls in the substantive-contrast false-positive class.",
+        "notes": "Speakable throughout."
+      },
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qou-z9ws-vacuity-drain",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-31T11:31:36.817Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe",
+        "notes": "Re-adjudicated after a two-sentence prose edit that corrected the class arity from [CPTClosure R] to [CPTClosure R B tr cpt] and recorded that the composite follows from the three components. Only these ten trap-* criteria were staled by the edit (measured: this block was at needs-agent 30 before it and 40 after, and the diff is exactly this family). Read against the new text: the enumerations are of real objects (C, P, T; B, tr, cpt), not rhetorical triples; the single em-dash pair predates the edit and sets off the coefficient ring; there is no closing aphorism, no meta-commentary on the encoding (that reasoning lives in the .lean docstring, not the prose), no performed warmth and no superlative. An earlier draft of this edit did carry three em-dashes in one sentence, a closing aphorism, and a sentence of encoding meta-commentary; it was rewritten before recording rather than adjudicated as-is."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "ba9b409866e5",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "9fda9d8431d9",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:24:54.942Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "foreshadows-point-forward": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2",
+          "graph": "02eeb5fc9774"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "782f89f534a5",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe"
+      }
+    ],
+    "dak-companion-present": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "9fda9d8431d9",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is paper"
+      }
+    ],
+    "dak-bpmn-has-process": [
+      {
+        "field_hash": {
+          "md": "ba9b409866e5",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "9fda9d8431d9",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:24:54.942Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is paper"
+      }
+    ],
+    "dak-dmn-has-decision-table": [
+      {
+        "field_hash": {
+          "md": "ba9b409866e5",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "9fda9d8431d9",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:24:54.942Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is paper"
+      }
+    ],
+    "dak-fsh-declares-kind": [
+      {
+        "field_hash": {
+          "md": "ba9b409866e5",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "9fda9d8431d9",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:24:54.942Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is paper"
+      }
+    ],
+    "dak-label-prefix-matches-kind": [
+      {
+        "field_hash": {
+          "md": "51d93f136ca3",
+          "ts": "4c9bffd647d6",
+          "lean": "70a62ef5492d",
+          "lean_statement": "baaede26b8a2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "9fda9d8431d9",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-31T11:32:12.305Z",
+        "reviewed_sha": "2570f7c4a58149fa29a9bb7e02abd97daba6b9fe",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is paper"
+      }
+    ]
+  },
+  "updated_at": "2026-08-31T11:32:12.305Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
+}
