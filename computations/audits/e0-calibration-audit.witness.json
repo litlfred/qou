@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-11-20T16:19:34.683564+00:00",
+  "computedAt": "2026-11-20T17:25:58.253823+00:00",
   "reference_blocks": [
     "def:three-calibration-discipline",
     "rem:calibration-inputs"
@@ -16,10 +16,10 @@
     "m_e_err_MeV": "0.00000000016"
   },
   "Q_beta_n": {
-    "value_MeV": "0.78233341",
+    "value_MeV": "0.78233355931",
     "abs_err_MeV": "0.0000005608030185368120858720421369609206157480484465280138060762687939472488",
-    "rel_err": "0.0000007168337838682002419812828100501557459345222729628967348796580142822339",
-    "rel_err_ppb": "716.8337838682002419812828100501557459345222729628967348796580142822339"
+    "rel_err": "0.0000007168336470589697089598600833936154717556065497680839940143265103150299",
+    "rel_err_ppb": "716.8336470589697089598600833936154717556065497680839940143265103150299"
   },
   "precision_floor": "Every E_0-dependent quantity inherits a relative uncertainty floor of 7.17e-7 (~717.0 ppb). 1 ppb is NOT physically achievable on these quantities without a tighter Q_β(n) measurement.",
   "findings_by_pattern": {
@@ -81,5 +81,5 @@
     "proton_mass_anchor": []
   },
   "inconsistencies": [],
-  "achievable_precision_floor_ppb": "716.8337838682002419812828100501557459345222729628967348796580142822339"
+  "achievable_precision_floor_ppb": "716.8336470589697089598600833936154717556065497680839940143265103150299"
 }

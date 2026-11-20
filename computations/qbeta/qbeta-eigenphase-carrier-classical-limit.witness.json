@@ -95,13 +95,13 @@
     "answer": "M(1) unipotent; tr M stationary there; t^2 coefficient -1/4. A braid-word carrier must degenerate to the identity permutation. The filter is convention-blind through t^2. Delta_L, the only D0-satisfying operator in the corpus, fails at order zero. Scale-invariantly the condition is that the operator be PARABOLIC at q = 1, whose locus is 2*Sum(pairwise transposition differences)^2 = 3(c3-c4)^2 with the CENTRE of C[S_3] as its distinguished stratum. Measured strength: 3 equations on 18 parameters — a DISQUALIFIER, not a target.",
     "scope": "Scope-(a). Does not derive alpha, does not construct a carrier, does not adjudicate a convention."
   },
-  "gitCommit": "405f11ca0d80f01302cc5e62af156114e8cc74cd",
+  "gitCommit": "585d753f1d883ae7b3a9b70fc3c447985ded526c",
   "durationMs": 0,
   "scriptFile": "qbeta_eigenphase_carrier_classical_limit_probe.py",
   "scriptHash": "1e8053455c2d",
-  "scriptCommitSha": "46d534455d1773a9ad007852dcd3c2d45e7967de",
-  "commitSha": "405f11ca0d80f01302cc5e62af156114e8cc74cd",
-  "computedAt": "2026-11-20T16:19:18.198051+00:00",
+  "scriptCommitSha": "1bc2558e4627e77333cf92b0e9db6e0abf7e26a9",
+  "commitSha": "585d753f1d883ae7b3a9b70fc3c447985ded526c",
+  "computedAt": "2026-11-20T17:25:40.298038+00:00",
   "q0Anchor": "proton",
   "q0Value": "1.10997858275138080759166909561",
   "q0AnchorReason": "experimental pin (Physical-Observations layer): q0 read at the proton m_p/m_e pin"

@@ -17,7 +17,7 @@
     {
       "name": "decay_channel_is_excluded_by_five_orders_of_sigma",
       "passed": true,
-      "detail": "553497.0 sigma \u2014 the decay anomaly is real and is not a leverage artefact"
+      "detail": "888508.0 sigma \u2014 the decay anomaly is real and is not a leverage artefact"
     },
     {
       "name": "mu_p_tension_and_mass_cap_gap_are_one_measurement",
@@ -26,26 +26,26 @@
     },
     {
       "name": "c2_equals_minus_one_is_a_low_sigma_C_frame_statement",
-      "passed": true,
-      "detail": "implied c_2 at z_C = -1.01720238 +- 0.01075, i.e. 1.601 sigma from -1: agreement, not a 1.76 % miss \u2014 and empirical, not proved"
+      "passed": false,
+      "detail": "implied c_2 at z_C = -1.0145717 +- 0.006695, i.e. 2.176 sigma from -1: agreement, not a 1.76 % miss \u2014 and empirical, not proved"
     },
     {
       "name": "c2_equals_minus_one_is_excluded_under_D",
       "passed": true,
-      "detail": "implied c_2 at z_D = -9.298441, 772.583 sigma from -1 \u2014 THERE IS NO D-FRAME ANCHOR at c_2 = -1"
+      "detail": "implied c_2 at z_D = -9.29581191, 1239.79 sigma from -1 \u2014 THERE IS NO D-FRAME ANCHOR at c_2 = -1"
     },
     {
       "name": "ladder_anchor_is_a_measurement_of_z_and_selects_C",
-      "passed": true,
-      "detail": "z from implied-c_2 = -1 is 0.49910964 +- 0.000132: 1.601 sigma from z_C, 862.989 sigma from the derived cap"
+      "passed": false,
+      "detail": "z from implied-c_2 = -1 is 0.499141856 +- 8.2e-5: 2.177 sigma from z_C, 1384.83 sigma from the derived cap"
     },
     {
       "name": "two_decay_side_functionals_disagree_beyond_the_K_wall",
       "passed": true,
-      "detail": "trace reduction z = 0.998500317 vs ladder z = 0.49910964; reconciling needs K off by 2.2656276x, 20.06x outside the 6.31 % parameter-free wall"
+      "detail": "trace reduction z = 0.998500317 vs ladder z = 0.499141856; reconciling needs K off by 2.2654426x, 20.05x outside the 6.31 % parameter-free wall"
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "parameters": {
     "pin": "muon (convention-free: m_mu/m_e = Vol(4_1)/hbar_q^2)",
     "dps": 60,
@@ -56,8 +56,8 @@
       "m_p_over_m_e": "1836.152673426(0.000000032)",
       "m_e_MeV": "0.51099895069",
       "m_e_MeV_err": "1.6e-10",
-      "Q_beta_MeV": "0.78233341",
-      "Q_beta_MeV_err": "6.1e-7"
+      "Q_beta_MeV": "0.78233355931",
+      "Q_beta_MeV_err": "3.8e-7"
     }
   },
   "data": {
@@ -65,22 +65,22 @@
       "z_cap_derived": "0.61268805063827241522",
       "z_mass_measured_m_p": "0.61281265083612175327",
       "z_decay_measured_Q_beta": "0.99850031743243172474",
-      "z_ladder_anchor_c2_eq_minus1": "0.49910964046185733101",
-      "z_ladder_anchor_other_branch": "1.582371496320289531",
+      "z_ladder_anchor_c2_eq_minus1": "0.49914185551412900904",
+      "z_ladder_anchor_other_branch": "1.582339281268017853",
       "z_C_excised_convention": "0.49932033403256001689"
     },
     "implied_c2": {
-      "at_z_C": "-1.01720237967",
-      "at_z_D": "-9.29844100417"
+      "at_z_C": "-1.0145717024",
+      "at_z_D": "-9.29581190739"
     },
     "budget_1sigma": {
       "CAL-2  m_mu/m_e": {
         "mass - cap": "1.3123006e-5",
         "decay - cap": "1.4510915e-10",
-        "ladder anchor - z_C": "5.4357031e-7",
-        "ladder anchor - cap": "5.4213324e-7",
-        "c_2(z_C) + 1": "4.4389551e-5",
-        "c_2(z_D) + 1": "4.4436808e-5",
+        "ladder anchor - z_C": "5.4360192e-7",
+        "ladder anchor - cap": "5.4216486e-7",
+        "c_2(z_C) + 1": "4.4389443e-5",
+        "c_2(z_D) + 1": "4.4436699e-5",
         "mu-p tension in q": "1.3578966e-9"
       },
       "CAL-2' m_p/m_e": {
@@ -95,47 +95,47 @@
       "CAL-1  m_e": {
         "mass - cap": "0.0",
         "decay - cap": "2.7991295e-10",
-        "ladder anchor - z_C": "5.2850475e-8",
-        "ladder anchor - cap": "5.2850475e-8",
-        "c_2(z_C) + 1": "4.3158916e-6",
-        "c_2(z_D) + 1": "4.3132986e-6",
+        "ladder anchor - z_C": "5.2853625e-8",
+        "ladder anchor - cap": "5.2853625e-8",
+        "c_2(z_C) + 1": "4.3158924e-6",
+        "c_2(z_D) + 1": "4.3132995e-6",
         "mu-p tension in q": "0.0"
       },
       "Q_beta": {
         "mass - cap": "0.0",
-        "decay - cap": "6.9704526e-7",
-        "ladder anchor - z_C": "0.00013160939",
-        "ladder anchor - cap": "0.00013160939",
-        "c_2(z_C) + 1": "0.010747526",
-        "c_2(z_D) + 1": "0.010741069",
+        "decay - cap": "4.3422483e-7",
+        "ladder anchor - z_C": "8.199105e-5",
+        "ladder anchor - cap": "8.199105e-5",
+        "c_2(z_C) + 1": "0.0066951802",
+        "c_2(z_D) + 1": "0.0066911578",
         "mu-p tension in q": "0.0"
       }
     },
     "budget_total": {
       "mass - cap": "1.3123009e-5",
-      "decay - cap": "6.9704533e-7",
-      "ladder anchor - z_C": "0.00013161053",
-      "ladder anchor - cap": "0.00013161052",
-      "c_2(z_C) + 1": "0.010747619",
-      "c_2(z_D) + 1": "0.010741162",
+      "decay - cap": "4.3422495e-7",
+      "ladder anchor - z_C": "8.1992869e-5",
+      "ladder anchor - cap": "8.199286e-5",
+      "c_2(z_C) + 1": "0.0066953288",
+      "c_2(z_D) + 1": "0.0066913068",
       "mu-p tension in q": "1.3578966e-9"
     },
     "gap_values": {
       "mass - cap": "0.000124600197849",
       "decay - cap": "0.385812266794",
-      "ladder anchor - z_C": "-0.000210693570703",
-      "ladder anchor - cap": "-0.113578410176",
-      "c_2(z_C) + 1": "-0.0172023796669",
-      "c_2(z_D) + 1": "-8.29844100417",
+      "ladder anchor - z_C": "-0.000178478518431",
+      "ladder anchor - cap": "-0.113546195124",
+      "c_2(z_C) + 1": "-0.0145717024013",
+      "c_2(z_D) + 1": "-8.29581190739",
       "mu-p tension in q": "1.28913582391e-8"
     },
     "significance_sigma": {
       "mass - cap": "9.4947884",
-      "decay - cap": "553496.67",
-      "ladder anchor - z_C": "1.6008869",
-      "ladder anchor - cap": "862.98883",
-      "c_2(z_C) + 1": "1.6005759",
-      "c_2(z_D) + 1": "772.58318",
+      "decay - cap": "888507.83",
+      "ladder anchor - z_C": "2.1767566",
+      "ladder anchor - cap": "1384.8303",
+      "c_2(z_C) + 1": "2.1763983",
+      "c_2(z_D) + 1": "1239.7895",
       "mu-p tension in q": "9.4936231"
     },
     "one_measurement_three_coordinates": {
@@ -144,7 +144,7 @@
       "relative_spread": "0.000122742",
       "c3_swing_sigma_measured_elsewhere": "9.49363"
     },
-    "K_ratio_between_decay_functionals": "2.26562759358",
+    "K_ratio_between_decay_functionals": "2.26544263375",
     "sens_mass_dlog_trM_dlog_z": "0.0"
   },
   "context": {
@@ -153,13 +153,13 @@
     "corrects": "the standing reading that mass 'essentially confirms' the cap and so localises the anomaly to decay: mass-vs-cap is 9.49 sigma. Both channels disagree with the derived cap; decay disagrees 5.8e4 times harder.",
     "scope": "Scope-(a). Nothing derived, proposed, wired or readmitted; no convention adjudicated; no c_k value changed. A z landing near an inadmissible point is TENSION, not permission -- one_not_root stands, as does the derived two-row cap."
   },
-  "gitCommit": "405f11ca0d80f01302cc5e62af156114e8cc74cd",
+  "gitCommit": "585d753f1d883ae7b3a9b70fc3c447985ded526c",
   "durationMs": 0,
   "scriptFile": "qbeta_d_frame_z_determinations_experimental_budget_probe.py",
   "scriptHash": "d9eb4117d7aa",
-  "scriptCommitSha": "46d534455d1773a9ad007852dcd3c2d45e7967de",
-  "commitSha": "405f11ca0d80f01302cc5e62af156114e8cc74cd",
-  "computedAt": "2026-11-20T16:19:10.306086+00:00",
+  "scriptCommitSha": "1bc2558e4627e77333cf92b0e9db6e0abf7e26a9",
+  "commitSha": "585d753f1d883ae7b3a9b70fc3c447985ded526c",
+  "computedAt": "2026-11-20T17:25:31.156741+00:00",
   "q0Anchor": "muon",
   "q0Value": "1.10997859564273904668179512938"
 }

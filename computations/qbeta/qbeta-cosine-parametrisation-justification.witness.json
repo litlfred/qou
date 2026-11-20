@@ -7,27 +7,27 @@
     {
       "name": "phase_does_real_work_zero_parameters",
       "passed": true,
-      "detail": "cos(theta) at z_C explains 95.599 % of the deviation with no free parameter (81.756 % without the -u/2 offset) \u2014 the phase is not the problem"
+      "detail": "cos(theta) at z_C explains 95.61 % of the deviation with no free parameter (81.766 % without the -u/2 offset) \u2014 the phase is not the problem"
     },
     {
       "name": "cosine_signature_is_below_experimental_resolution",
       "passed": true,
-      "detail": "|cos - (1 - theta^2/2)| = 4.27412e-7 = 0.5491 sigma (C), 0.2145 sigma (D) \u2014 the data cannot tell a cosine from a parabola here"
+      "detail": "|cos - (1 - theta^2/2)| = 4.27412e-7 = 0.8814 sigma (C), 0.3444 sigma (D) \u2014 the data cannot tell a cosine from a parabola here"
     },
     {
       "name": "ck_residual_dominates_the_cosine_signature",
       "passed": true,
-      "detail": "residual/signature = 172.718x (C), 4039.36x (D). The c_k tower is correcting a quadratic, and would be the same tower for any function agreeing to second order"
+      "detail": "residual/signature = 172.272x (C), 4038.22x (D). The c_k tower is correcting a quadratic, and would be the same tower for any function agreeing to second order"
     },
     {
       "name": "residual_itself_is_highly_significant",
       "passed": true,
-      "detail": "94.8363 sigma \u2014 so the thing the ladder exists to explain IS real; what is unsupported is explaining it with a cosine rather than with anything else quadratic"
+      "detail": "151.844 sigma \u2014 so the thing the ladder exists to explain IS real; what is unsupported is explaining it with a cosine rather than with anything else quadratic"
     },
     {
       "name": "convention_D_is_worse_on_both_counts",
       "passed": true,
-      "detail": "D explains 59.762 % against C's 95.599 %, and its residual/signature ratio is 4039.4x against 172.72x"
+      "detail": "D explains 59.768 % against C's 95.61 %, and its residual/signature ratio is 4038.2x against 172.27x"
     },
     {
       "name": "cosine_is_two_to_one_where_the_exact_form_is_injective",
@@ -57,22 +57,22 @@
     "h": "0.2090602987956393",
     "u": "0.008517234550156142",
     "Q_A_MeV": "0.7836458273746212",
-    "measured_ratio": "0.9983252416732466",
-    "deviation_from_QA": "0.00167475832675",
-    "one_sigma_on_ratio": "7.784129359e-7",
+    "measured_ratio": "0.9983254322057484",
+    "deviation_from_QA": "0.00167456779425",
+    "one_sigma_on_ratio": "4.849130381e-7",
     "by_convention": {
       "C": {
         "z": "0.499320334184",
         "theta": "-0.0565947375433",
         "cos": "0.998398945253",
         "quad": "0.998398517841",
-        "explains_pct": "95.5991513127",
-        "explains_no_offset_pct": "81.7564029865",
+        "explains_pct": "95.6100285943",
+        "explains_no_offset_pct": "81.7657052387",
         "signature": "4.27411882396e-7",
-        "signature_sigma": "0.549081165908",
-        "residual": "7.38217725373e-5",
-        "residual_sigma": "94.8362612357",
-        "ratio": "172.718110043",
+        "signature_sigma": "0.88141965426",
+        "residual": "7.36309344933e-5",
+        "residual_sigma": "151.843585771",
+        "ratio": "172.271613228",
         "affine": "0.44087490441"
       },
       "D": {
@@ -80,19 +80,19 @@
         "theta": "-0.0447443946157",
         "cos": "0.998999136574",
         "quad": "0.998998969575",
-        "explains_pct": "59.761662898",
-        "explains_no_offset_pct": "48.928680217",
+        "explains_pct": "59.7684625863",
+        "explains_no_offset_pct": "48.9342473274",
         "signature": "1.66999173455e-7",
-        "signature_sigma": "0.214538024428",
-        "residual": "0.000674570053658",
-        "residual_sigma": "866.596664259",
-        "ratio": "4039.36163097",
+        "signature_sigma": "0.344389942795",
+        "residual": "0.000674379330268",
+        "residual_sigma": "1390.7222064",
+        "ratio": "4038.21956909",
         "affine": "0.567476266685"
       }
     },
     "mirror_z_same_cos": "1.582160794459309",
     "affine_at_z_C": "0.44087490441",
-    "corpus_ladder_product_at_z_C": "0.999926178227",
+    "corpus_ladder_product_at_z_C": "0.999926369066",
     "step16_printed_affine_over_cos": "0.441581901209"
   },
   "context": {
@@ -101,13 +101,13 @@
     "corrects": "Step 16 of this bean (commit a949c94115): 'the two decay functionals are one functional in two coordinates' is OVERSTATED. The identity prod = affine(z)/cos(theta(z)) needs both sides at the SAME z; the corpus's ladder fixes z = z_conv and the trace route frees z. At z_C the affine correction is 0.4409, 55.8 % from the data, while the ladder's product is 0.999926. Two allocations of one residual, with different free parameters. What survives: the E_0*(-eps) = Q_A bridge, agreement at z = 1, the protium findings, and F_REQUIRED_TRM = (Q_beta/Q_A)/affine(z_D).",
     "scope": "Scope-(a). Does not show the cosine is wrong, propose a replacement, derive alpha, or wire anything. Branch 3 of the eigenphase trichotomy (KZ / Kohno-Drinfeld holonomy) is untouched and would justify the cosine independently of anything measured here."
   },
-  "gitCommit": "405f11ca0d80f01302cc5e62af156114e8cc74cd",
+  "gitCommit": "585d753f1d883ae7b3a9b70fc3c447985ded526c",
   "durationMs": 0,
   "scriptFile": "qbeta_cosine_parametrisation_justification_probe.py",
   "scriptHash": "11cefcb1d233",
-  "scriptCommitSha": "46d534455d1773a9ad007852dcd3c2d45e7967de",
-  "commitSha": "405f11ca0d80f01302cc5e62af156114e8cc74cd",
-  "computedAt": "2026-11-20T16:19:09.507370+00:00",
+  "scriptCommitSha": "1bc2558e4627e77333cf92b0e9db6e0abf7e26a9",
+  "commitSha": "585d753f1d883ae7b3a9b70fc3c447985ded526c",
+  "computedAt": "2026-11-20T17:25:30.415818+00:00",
   "engineVersion": "mpmath 1.3.0",
   "q0Anchor": "proton",
   "q0Value": "1.10997858275138080759166909561"

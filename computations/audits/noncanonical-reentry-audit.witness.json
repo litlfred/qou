@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-20T16:21:38.817470+00:00",
-  "commitSha": "405f11ca0d80f01302cc5e62af156114e8cc74cd",
+  "computedAt": "2026-11-20T17:26:09.392397+00:00",
+  "commitSha": "585d753f1d883ae7b3a9b70fc3c447985ded526c",
   "assertions": [
     {
       "name": "no_purged_form_reentered_production",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "noncanonical-reentry-audit",
   "scriptFile": "noncanonical_reentry_audit.py",
   "scriptHash": "879b11a51747",
-  "scriptCommitSha": "46d534455d1773a9ad007852dcd3c2d45e7967de",
+  "scriptCommitSha": "1bc2558e4627e77333cf92b0e9db6e0abf7e26a9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,15 +43,14 @@
   },
   "invocation": {
     "argv": [
-      "computations/audits/noncanonical_reentry_audit.py",
-      "--strict"
+      "computations/audits/noncanonical_reentry_audit.py"
     ],
-    "reproduce": "python3 -u computations/audits/noncanonical_reentry_audit.py --strict"
+    "reproduce": "python3 -u computations/audits/noncanonical_reentry_audit.py"
   },
   "description": "NEGATIVE-finding guard. AST-scans production compute (computations/, excluding _deprecated/, probes/, data/) and fails if any script imports, defines, or uses a PURGED non-canonical form. Registry: lambda_scale_yekutieli_extended (Yekutieli −G·h² correction, falsified PR #985/#1027), lambda_scale_family_a (lambda-scale alias, removed PR #1089), the lambda_scale_* symbol prefix (owner directive 'no lambda-scale ANYWHERE in production'), and the purged module lambda_yekutieli_extended_borromean. Uses AST so historical mentions in comments/docstrings are not false-positives. Detection covers direct imports, module-as-symbol imports (from pkg import <banned-module>), def, bare-name use, and attribute access (mod.<banned>); strict mode also fails on unparseable production scripts so there is no blind spot. Keeps the documented purges durable against silent sibling-branch re-entry.",
   "contentBlock": "def:three-calibration-discipline",
   "data": {
-    "production_scripts_scanned": 3310,
+    "production_scripts_scanned": 3312,
     "banned_symbols": [
       {
         "symbol": "lambda_scale_yekutieli_extended",

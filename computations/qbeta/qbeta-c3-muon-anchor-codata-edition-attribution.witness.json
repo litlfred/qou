@@ -16,51 +16,51 @@
     },
     {
       "name": "proton_arm_reproduces_corpus_under_codata_2022",
-      "passed": true,
-      "detail": "|c_3(p) - corpus| = 2.88483e-9 -- m_p/m_e barely moved between editions, so only the muon arm broke"
+      "passed": false,
+      "detail": "|c_3(p) - corpus| = 0.308888 -- m_p/m_e barely moved between editions, so only the muon arm broke"
     },
     {
       "name": "disagreement_is_the_codata_2018_to_2022_edition_shift",
-      "passed": true,
-      "detail": "edition shift / disagreement = 0.9999853535 -- 99.9985 % of the 3.4e-4 gap is 206.7682830 -> 206.7682827"
+      "passed": false,
+      "detail": "edition shift / disagreement = 0.001099261575 -- 99.9985 % of the 3.4e-4 gap is 206.7682830 -> 206.7682827"
     },
     {
       "name": "residual_after_edition_is_the_corpus_literals_own_rounding",
-      "passed": true,
-      "detail": "residual -4.97874e-9; c_3(2018) rounds to the corpus literal at the 9 sig figs it quotes -- nothing is left unexplained"
+      "passed": false,
+      "detail": "residual -0.308888; c_3(2018) rounds to the corpus literal at the 9 sig figs it quotes -- nothing is left unexplained"
     },
     {
       "name": "attribution_is_the_17_digit_ancestor_not_the_frozen_pin",
-      "passed": true,
-      "detail": "frozen pin misses by 1.21119e-5; the corpus c_3 is the CODATA-2018 ancestor q, not Q_MUON_50_DIGIT_STR"
+      "passed": false,
+      "detail": "frozen pin misses by 0.3089; the corpus c_3 is the CODATA-2018 ancestor q, not Q_MUON_50_DIGIT_STR"
     },
     {
       "name": "one_over_u_cubed_amplifies_the_anchor_drift_by_2e6",
       "passed": true,
-      "detail": "1/u^3 = 1618467.2, amplification 2.10933e+6 -- 'below the 11.5 ppb mu-p tension' does not imply below the resolution of what divides by u^3"
+      "detail": "1/u^3 = 1618467.2, amplification 2.49012e+6 -- 'below the 11.5 ppb mu-p tension' does not imply below the resolution of what divides by u^3"
     },
     {
       "name": "cal_experimental_budget_swamps_the_disagreement",
-      "passed": true,
-      "detail": "c_3(muon) = -2.0198603 +- 1.262 (Q_beta-dominated); disagreement is 0.0002694 sigma; 0.204 sig figs supported vs 9 quoted"
+      "passed": false,
+      "detail": "c_3(muon) = -1.7109728 +- 0.7861 (Q_beta-dominated); disagreement is 0.3933 sigma; 0.338 sig figs supported vs 9 quoted"
     },
     {
       "name": "cross_anchor_swing_survives_common_mode_cancellation",
       "passed": true,
-      "detail": "swing = -0.049482265 +- 0.005212 = 9.494 sigma; Q_beta cancels to 7.625e-7 -- the refutation's mechanism is experimentally supported, the absolute c_3 digits are not"
+      "detail": "swing = -0.049482079 +- 0.005212 = 9.494 sigma; Q_beta cancels to 4.75e-7 -- the refutation's mechanism is experimentally supported, the absolute c_3 digits are not"
     },
     {
       "name": "kc21_scale_agreement_degrades_at_the_live_anchor",
-      "passed": true,
-      "detail": "Phi_b deficit vs |S_leak(muon)|: 3.01 % at CODATA-2018 -> 6.63 % at CODATA-2022. The deficit is anchor-blind, so KC21's quoted ~2.9 % is a superseded number rather than a property of the saddle"
+      "passed": false,
+      "detail": "Phi_b deficit vs |S_leak(muon)|: 3.29e+3 % at CODATA-2018 -> 3.29e+3 % at CODATA-2022. The deficit is anchor-blind, so KC21's quoted ~2.9 % is a superseded number rather than a property of the saddle"
     },
     {
       "name": "audit_quoted_S_muon_is_outside_its_own_rounding_window_now",
       "passed": true,
-      "detail": "quoted 886.8 is 3.17x outside its 4-s.f. window at the live pin; it reads 886.6 there -- a second CODATA-2018-era literal surfaced by the same edition step"
+      "detail": "quoted 886.8 is 2.71e+3x outside its 4-s.f. window at the live pin; it reads 751.1 there -- a second CODATA-2018-era literal surfaced by the same edition step"
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "parameters": {
     "markov_convention": "C",
     "ladder_frame": "u",
@@ -77,8 +77,8 @@
     "cal_inputs": {
       "CAL-1_m_e_MeV": "0.51099895069",
       "CAL-1_m_e_MeV_err": "1.6e-10",
-      "Q_beta_MeV": "0.78233341",
-      "Q_beta_MeV_err": "6.1e-7"
+      "Q_beta_MeV": "0.78233355931",
+      "Q_beta_MeV_err": "3.8e-7"
     }
   },
   "data": {
@@ -89,78 +89,78 @@
     },
     "q_proton_codata_2022": "1.10997858275138080759166909561",
     "c3_muon": {
-      "codata_2022": "-2.01986031187401",
-      "codata_2018": "-2.02020023502126",
-      "frozen_pin": "-2.02018812814144",
+      "codata_2022": "-1.71097277973195",
+      "codata_2018": "-1.71131270159706",
+      "frozen_pin": "-1.71130059476291",
       "corpus_literal": "-2.02020024"
     },
-    "c3_proton_codata_2022": "-2.06934257711517",
+    "c3_proton_codata_2022": "-1.76045485833244",
     "attribution": {
-      "disagreement": "-0.000339928126",
-      "edition_shift": "-0.0003399231472",
-      "residual": "-4.978744829e-9",
-      "explained_fraction": "0.999985353537",
-      "frozen_pin_miss": "1.211185856e-5"
+      "disagreement": "-0.3092274603",
+      "edition_shift": "-0.0003399218651",
+      "residual": "-0.3088875384",
+      "explained_fraction": "0.00109926157531",
+      "frozen_pin_miss": "0.3088996452"
     },
     "amplification": {
       "u": "0.00851723635242482",
       "one_over_u_cubed": "1618467.20188",
       "rel_move_q": "7.9783945e-11",
-      "rel_move_c3": "0.00016829042",
-      "factor": "2109326.9"
+      "rel_move_c3": "0.0001986717",
+      "factor": "2490121.2"
     },
     "experimental_budget_1sigma": {
       "CAL-2  m_mu/m_e": {
         "c3_proton": "0.0",
-        "c3_muon": "0.0052121549",
-        "swing": "0.0052121549"
+        "c3_muon": "0.0052121352",
+        "swing": "0.0052121352"
       },
       "CAL-2' m_p/m_e": {
-        "c3_proton": "3.5363074e-6",
+        "c3_proton": "3.536294e-6",
         "c3_muon": "0.0",
-        "swing": "3.5363074e-6"
+        "swing": "3.536294e-6"
       },
       "CAL-1  m_e": {
-        "c3_proton": "0.00050676148",
-        "c3_muon": "0.00050676118",
-        "swing": "3.0620286e-10"
+        "c3_proton": "0.00050676158",
+        "c3_muon": "0.00050676127",
+        "swing": "3.0620292e-10"
       },
       "Q_beta": {
-        "c3_proton": "1.2619484",
-        "c3_muon": "1.2619476",
-        "swing": "7.6251296e-7"
+        "c3_proton": "0.78613176",
+        "c3_muon": "0.78613129",
+        "swing": "4.7500808e-7"
       }
     },
     "experimental_budget_total": {
-      "c3_proton": "1.2619485",
-      "c3_muon": "1.2619585",
-      "swing": "0.0052121562"
+      "c3_proton": "0.78613192",
+      "c3_muon": "0.78614873",
+      "swing": "0.0052121365"
     },
     "supported_significant_figures": {
-      "c3_proton": "0.2148",
-      "c3_muon": "0.2043",
+      "c3_proton": "0.3501",
+      "c3_muon": "0.3377",
       "swing": "0.9774",
       "registry_quotes": 9
     },
     "downstream_regrade": {
       "codata_2018": {
-        "S_leak_muon": "0.009682977798",
-        "kc21_agreement_pct": "3.010402107",
-        "S_kappa_muon": "886.790573",
-        "swing_pct": "2.432548083"
+        "S_leak_muon": "0.3185705112",
+        "kc21_agreement_pct": "3289.047992",
+        "S_kappa_muon": "751.2007695",
+        "swing_pct": "2.871605913"
       },
       "codata_2022": {
-        "S_leak_muon": "0.01002290095",
-        "kc21_agreement_pct": "6.626605801",
-        "S_kappa_muon": "886.6413577",
-        "swing_pct": "2.4497865"
+        "S_leak_muon": "0.3189104331",
+        "kc21_agreement_pct": "3292.664182",
+        "S_kappa_muon": "751.0515551",
+        "swing_pct": "2.89204359"
       },
       "phib_deficit": "0.0094",
       "audit_quoted_S_muon": "886.8",
-      "audit_quoted_S_muon_windows_outside": "3.17285"
+      "audit_quoted_S_muon_windows_outside": "2714.97"
     },
     "swing_sigma": "9.4936268",
-    "disagreement_in_sigma": "0.00026936554",
+    "disagreement_in_sigma": "0.39334473",
     "vol_4_1": "2.02988321281930725"
   },
   "context": {
@@ -169,13 +169,13 @@
     "opens": "(i) the registry's 9-figure c_3 literals exceed what the CAL inputs support by ~8 figures; (ii) the corpus muon c_3 is on a superseded CODATA edition, as are the 336 files carrying the 17-digit ancestor q in this channel. Both are re-pin work sequenced behind PR #5500 and qou-1c4y; NOT done here.",
     "scope": "Scope-(a), convention C only -- the frame the corpus values were extracted in. No convention adjudicated, no c_k value changed, no constant re-pinned."
   },
-  "gitCommit": "405f11ca0d80f01302cc5e62af156114e8cc74cd",
+  "gitCommit": "585d753f1d883ae7b3a9b70fc3c447985ded526c",
   "durationMs": 0,
   "scriptFile": "qbeta_c3_muon_anchor_codata_edition_attribution_probe.py",
   "scriptHash": "1919d9f1a470",
-  "scriptCommitSha": "46d534455d1773a9ad007852dcd3c2d45e7967de",
-  "commitSha": "405f11ca0d80f01302cc5e62af156114e8cc74cd",
-  "computedAt": "2026-11-20T16:19:09.307548+00:00",
+  "scriptCommitSha": "1bc2558e4627e77333cf92b0e9db6e0abf7e26a9",
+  "commitSha": "585d753f1d883ae7b3a9b70fc3c447985ded526c",
+  "computedAt": "2026-11-20T17:25:30.230876+00:00",
   "engineVersion": "mpmath 1.3.0",
   "q0Anchor": "ambiguous",
   "q0Value": "1.10997859564273904668179512938",
