@@ -4,6 +4,94 @@ Date 2026-11-20. Owner instruction (Carl, ~20:50): *"Investigate & propose."* Fo
 (the lepton-strand premise). **Nothing in `folio/` is changed by this document.** It records the
 measurement and puts the choice to the owner.
 
+## RULING (owner, 2026-11-20 ~21:05): option B
+
+The owner chose **option B**: apply A, and reword every trefoil-quark site to match `def:up-quark`
+(a quark is an unknot strand, i.e. a component of the pure braid `B₃`). This is an explicit yes for the
+sweep. For blocks whose *argument* rests on trefoil quarks, the instruction was to reword the
+identification, add a dated `authorNote` recording what the argument assumed and what stays valid,
+and list them as follow-up. It was also to **report before changing** anything where a producer,
+witness or Lean proof depends on the trefoil-quark reading.
+
+### What was applied (PR #8677)
+
+| commit | sites |
+|---|---|
+| `e5fb6b8695` | `def:electron-knot` (`.md`, `.ts` gains `rem:knot-particle-dictionary`, `.lean` docstring); `TorusKnot.lean:74` docstring |
+| `a2ae2d5f27` | tables: knot-particle generation, building-block knots 1, tm-notation 3, linking-relations 1 and 2 |
+| `e00cfd52b8` | `tm-knot-pairs`, `transfer-matrix-operator-properties`, `categorical-transfer-matrix-properties` (+ notes) |
+| `a47c11124b` | `strangelet-intro`, `strangelet-witten-stability` (+ notes) |
+| `974cae4443` | `torus-knot-prime-powers`, `jet-planck-particle-spectrum` (+ notes) |
+| `8adb3646dd` | `linking-relations-table` (note only) |
+| `1e4e6be1c9` | `computations/sdp_gamma_gamma_to_qqbar.py` comments (lines 15, 124) |
+| `f5c1b5ea21` | `knot-formula-table` (+ table 2), `unmapped-torus-knots` (+ notes) |
+| `ccbf74fce2` | `categorical-proton.lean` docstring |
+
+### Correction of this document's own §1b and §2 (measured after the ruling)
+
+**§1b undercounted.** It listed 14 trefoil-quark sites. The sweep found five more that my grep missed,
+because they write `𝔲 = T_{2,3}` or `κ(u) = 3` without "up quark" near "trefoil":
+`knot-formula-table` (+ its table 2), `unmapped-torus-knots`, `categorical-proton.lean` (docstring),
+`braids-and-knots/knot-notation-convention`, and `knots-particles-confinement/lepton-meson-torus-knot-dictionary`.
+
+**§2 was wrong where it mattered.** It said *"No producer depends on it"* and that no sorry-free Lean
+decides a quark's knot type. Both were measured on a grep for "up quark" and "trefoil" near each other.
+What that grep did not see is a **meson / weak-isospin cluster** that defines each quark as the torus
+braid `T(2,n) = σ₁^{±n}`, with signed writhe `κ(u,c,t) = +(3,5,7)` and `κ(d,s,b) = −(3,5,7)`, and proves
+results about that assignment:
+
+- Lean (sorry-free, all decide the quark index by fiat):
+  - `QOU/ParticleInteractions/WeakIsospinT3Grading.lean` (`signedWrithe`, `T3 = sign κ / 2`);
+  - `QOU/ParticleInteractions/MesonOperatorSelectionT3.lean` (meson content `{−κ(q̄), +κ(q)}`, injectivity results);
+  - `QOU/ParticleInteractions/MesonFluxTubeReduction.lean` (`windingContent`, `D_kaon_same_winding`);
+  - `QOU/BraidKnot/MesonFusionIndexSelection.lean` (`quarkTorusIndex`, `scanPair_four_not_dictionary_index`);
+  - `knots-particles-confinement/lepton-meson-torus-knot-dictionary.lean` (π = 3+3, K = 3+5 crossings).
+- Compute: `computations/meson/meson_braid_length_cap_probe.py` → `meson/meson-braid-length-cap.witness.json`
+  (`WINDINGS = {up: 3, charm: 5, top: 7}`), and `weak-isospin-t3-grading.witness.json`.
+- Content: `knot-notation-convention` (the weak-isospin reading `T₃ = ½ sgn κ`) and
+  `prop:lepton-meson-torus-knot-dictionary`; indexed from `appendix-standard-model/sm-results-index`.
+
+**None of these were changed**, per the report-before-changing instruction. They are the decision
+below. The `m_K/m_π` L2 row's credited Lean (`meson_qCG_3x4`, `meson_EM_closed_form`) does **not**
+read the quark index: `MesonFusionIndexSelection.lean` states that the identity holds for every pair
+`(m, m+d)`. Only its negative `scanPair_four_not_dictionary_index` (4 is not a quark index) uses the
+dictionary, and that negative would lose its premise.
+
+The same wrong §2 sentence was repeated in the first PR #8677 body and in the 2026-11-20T21:30Z note
+on bean `qou-99qc`. Both are corrected in this round.
+
+### Still open for the owner: the meson T(2,n) cluster
+
+- **What it means.** Under the ruling, a quark is an unknot strand carrying one crossing letter. The
+  meson cluster instead gives each quark a writhe of ±3/±5/±7, its partner's crossing count. The
+  weak-isospin grading only needs the **sign** of κ, and that survives as the crossing orientation
+  (σ vs σ⁻¹). The **magnitude** `|κ| = n`, the generation winding, has no carrier on an unknot strand
+  except through the lepton partner.
+- **Options.**
+  - (i) Re-read `|κ|` as "the crossing count of the quark's lepton partner": relabel docstrings and
+    prose, keep every theorem. Cheap; it makes the generation index a descent label, which the
+    dictionary already uses.
+  - (ii) Rebuild the cluster on single crossing letters. The `D`/kaon separation results would then
+    need a new source of generation information.
+  - (iii) Leave it unchanged (the default). The paper then carries two quark models: B₃ strands for
+    baryons and the ruling, T(2,n) braids for mesons.
+- **Recommendation (judgement).** (i). Every proved statement there uses κ only through its sign
+  and its magnitude as a label, so relabelling loses nothing that was proved.
+
+### Not done in this round
+
+- **qa-sweep.** It cannot load in this container: the light platform lacks `fast-xml-parser`.
+  Sidecars of the touched blocks are stale.
+- **Precision gates.** `scripts/precision-gates.sh --changed` was killed at its 400 s timeout. The
+  only computations change is comment-only. The audit witnesses the killed run rewrote were restored.
+- **Witness drift.** `sdp-gamma-gamma-to-qqbar.witness.json` will show `scriptHash` drift from the
+  comment-only edit, and it was deliberately not re-run.
+- **Adjacent finding, left alone.** `sdp_gamma_gamma_to_qqbar.py:14` calls `σ₀σ₁` the "L₊ (Hopf
+  link intermediate)". Its B₃ closure has one component, and the photon ruling retires the σ₀σ₁
+  fourth term.
+
+---
+
 ## 0. The decision
 
 Which knot type does the paper give the up quark, and therefore what may `def:electron-knot` say
