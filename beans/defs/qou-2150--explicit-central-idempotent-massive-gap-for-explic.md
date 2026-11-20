@@ -1,13 +1,13 @@
 ---
 # qou-2150
 title: 'explicit-central-idempotent: Massive gap for explicit_central_idempotent_via_murphy'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-12T10:22:30Z
-updated_at: 2026-11-20T09:30:00Z
+updated_at: 2026-11-20T16:00:00Z
 parent: qou-d8c7
 ---
 
@@ -28,3 +28,7 @@ State on `main` 2026-10-10: `class ExplicitCentralIdempotentConjecture` (`QOU/Br
 ## 2026-11-20 — W1 survey (session_01VQDpPcT9hCf4RF1bQwk66r, epic PR #8534)
 
 Claim released. Rule 13a: open conjecture, stays open. Finding: the carrier cannot express a proof. `centralIdempotent` is an `opaque` element of a commutative ring `R`, and `proj` is valued in `R`, so the class's idempotency and orthogonality fields are statements about scalars, not Hecke elements. Next honest step, as a recommendation (judgement): re-state over the real Hecke algebra `QOU.SchurWeyl.Hecke R q qi N`, which exists on main (see `presEquivHecke`, `QOU/IwahoriHecke/JonesWordsIndependent.lean`), with Jucys–Murphy elements, and prove n=2 first. Open batch PR #8300 (W4's queue) also names this bean; not reviewed here.
+
+## 2026-11-20 — owner ruling D2: re-state on the real Hecke algebra; n = 2 proved (PR #8587, commit d4db59e2b1)
+
+Owner chose 'Re-state on Hecke' (live, structured choice). New module `QOU.BraidKnot.ExplicitCentralIdempotentHecke` adds `lagrangeProj`, built from the Murphy elements `qJM` in `QOU.SchurWeyl.Hecke`, and `MurphyLagrangeComplete`. `murphyLagrangeComplete_two` is proved sorry-free: in H_2(q) the projectors for (2) and (1,1) are idempotent, orthogonal and sum to 1, for q·qi = 1 and q² ≠ qi². NEXT: state the general conjecture with the family = q-content vectors of all SYT of size n+1. That needs a choice among the corpus SYT types (`QOU.SchurWeyl` TableauCells `cellOf` is the natural one, since it is what `QJucysMurphyEigen` uses) plus a Fintype. Then re-point the conj block's lean.ref and retire the scalar carrier. Stays open (rule 13a). Claimed by this session.

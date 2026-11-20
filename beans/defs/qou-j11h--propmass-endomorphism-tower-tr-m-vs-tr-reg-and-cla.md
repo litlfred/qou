@@ -4,7 +4,7 @@ title: 'prop:mass-endomorphism-tower: tr_M vs tr_reg, and classical vs q weights
 status: completed
 type: task
 created_at: 2026-11-17T23:08:24Z
-updated_at: 2026-11-20T09:30:00Z
+updated_at: 2026-11-20T16:00:00Z
 parent: qou-d8c7
 ---
 
@@ -19,3 +19,7 @@ Answered on PR #8534 (commit ed979e1440). The producer `computations/habiro/habi
 ## 2026-11-20 — merged
 
 PR #8534 rebase-merged as `18e2fdd441` (owner: "Auto prepare merge"); all 3 commits replayed. The open residue named above (`li2q_nonpos_on_neg` on all of [0, ∞)) is decision D1 on #8526.
+
+## 2026-11-20 — owner ruling D1 applied (PR #8587, commit 400ea3263a)
+
+Owner chose 'Restrict domain' (live, structured choice). `MassPositivityHyp` now takes a bound ρ and assumes `Li₂^q(−x) ≤ 0` only on `[0, ρ)`. Both theorems take `ArgumentsBelow`: every single and pair norm is below ρ. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The radius and the sign on [0, ρ) remain hypotheses.
