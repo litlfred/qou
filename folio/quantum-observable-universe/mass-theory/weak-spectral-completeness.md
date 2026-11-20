@@ -26,10 +26,10 @@ vectors). The substrate-level structural quantity is the
 $$
   \mathrm{tr}_{\rm pure}\bigl(\sigma_1^4 \sigma_3^6 \sigma_5^8\bigr)
   \;=\;
-  4\bigl(q^{18} + q^{-18}\bigr)
-  + 2\bigl(q^{10} + q^{-10}\bigr)
-  + \bigl(q^{6} + q^{-6}\bigr)
-  + 3\bigl(q^{2} + q^{-2}\bigr)
+  4\bigl(q^{18} + q^{-18}\bigr) +
+  2\bigl(q^{10} + q^{-10}\bigr) +
+  \bigl(q^{6} + q^{-6}\bigr) +
+  3\bigl(q^{2} + q^{-2}\bigr)
   \;\in\; R
 $$
 
@@ -102,10 +102,10 @@ multiplicities $(4, 2, 1, 3, 3, 1, 2, 4)$:
 $$
   \mathrm{tr}_{\rm pure}\bigl(\sigma_1^4 \sigma_3^6 \sigma_5^8\bigr)
   \;=\;
-  4\bigl(q^{18} + q^{-18}\bigr)
-  + 2\bigl(q^{10} + q^{-10}\bigr)
-  + \bigl(q^{6} + q^{-6}\bigr)
-  + 3\bigl(q^{2} + q^{-2}\bigr)
+  4\bigl(q^{18} + q^{-18}\bigr) +
+  2\bigl(q^{10} + q^{-10}\bigr) +
+  \bigl(q^{6} + q^{-6}\bigr) +
+  3\bigl(q^{2} + q^{-2}\bigr)
   \;\in\; R.
 $$
 
