@@ -112,3 +112,37 @@ to the p/n difference. The owner's position (u and d carry *separate representat
 anywhere, and it is exactly what the proved obstruction in 7.2 asks for: a u/d asymmetry that is not a mirror. That is the
 research target: assign u and d to distinct H_n(q) representations (or idempotents) whose γγ production differs, then
 re-run Q_β through energy conservation (§5, route 2).
+
+## 8. Correction to §7.2 — the corpus does carry u and d as separate lines, via the γγ vertex on four strands
+
+§7.2 read only the definition blocks. The `QOU/QuarkState/` Lean cluster (beans `qou-wkcd`, `qou-a1hh`, `qou-hlx7`; 2026-11-15/16)
+goes further, and it is what the owner is pointing at:
+
+* `FlavourDoubletFourStrands.lean`: in the (3,1) representation of H₄(q) the left line of σ₁ is a **doublet**. Two flavour labels
+  sit side by side (owner choice 2026-11-15, "both"): **A** u/d = the σ₃ eigenlines; **B** u/d = the J₄ eigenlines,
+  J₄ = σ₃σ₂σ₁²σ₂σ₃ (strand 4 looping once around strands 1–3). Each comes with an sl₂ pair whose Cartan coupling is
+  cS = 2(q⁴+1)/(q²+1)² (A) and cJ = 2(q²+1)²(q⁴+1)/(q⁴+q²+1)² (B).
+* **The γγ vertex carries the flavour flip**: `L_u(σ₁σ₂⁻¹)L_d = q·eS` (A), and for B only the γγ vertex that reaches strand 4
+  does it: `Ja(σ₂σ₃⁻¹)Jb = q·eJ` (`three_strand_word_no_mix`: no three-strand word mixes the J₄ flavour).
+* Scoping on record: J₄ is the three-strand isospin multiplicity (3/2 vs 1/2), **not** T³, so it is not literally n ↔ p.
+
+`QBetaChiralityReduction.lean` (sorry-free) reduces the choice of ε on Δ_S to **one number**: for every block-weighted trace,
+τ(Δ_S) = −(h[2]/2)·y₃ with y₃ = τ(J), the trace's chirality expectation. So Q_β = (h[2]/2)·y₃·E₀.
+
+**Measured (proton pin, 50 dps), y₃ needed for CODATA: 0.889126 (order-zero E₀), 0.880397 (tower E₀).**
+
+| y₃ from | y₃ | Q_β order-zero E₀ | Q_β tower E₀ |
+|---|---|---|---|
+| augmentation / left-line support (`normalised_eq_augmentation`) | 1 | +12.47 % | +13.59 % |
+| Markov at z_D, = cS/2 exactly (label A) | 0.505404 | −43.16 % | −42.59 % |
+| **cJ/2, the J₄ coupling (label B, the strand-4 γγ flavour)** | **0.892057** | **+0.33 %** | **+1.32 %** |
+
+The identity cS/2 = τ_{z_D}(J) is exact, so "label A ↔ Markov z_D" is an existing correspondence. **cJ/2 is its label-B analogue,
+and it lands within 0.33 %.**
+
+🛑 **This is a LEAD, not a result, and it must not be wired.** Under §NO FITTING it is selection against the target until a
+derivation exists: three candidates were evaluated here and the one near CODATA is reported. Three trials is a small
+look-elsewhere factor, but it is not zero. The +0.33 % also uses the order-zero E₀; with the canonical tower-summed E₀ it is
++1.32 %. What would turn it into a derivation: a proof that the decay channel's trace has chirality expectation τ(J) = cJ/2,
+i.e. a trace on the γγ-produced four-strand sector whose (3)-block weight is cJ/2. In q-integers, cJ/2 = [2]²·[2]_{q²}/[3]².
+Bean `qou-99qc`.
