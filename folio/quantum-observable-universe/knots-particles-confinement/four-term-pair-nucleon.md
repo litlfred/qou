@@ -1,4 +1,4 @@
-We derive the proton and neutron from three independent $\gamma\gamma$ pair productions using the full 4-term photon color content.
+One derives the proton and neutron from three independent $\gamma\gamma$ pair productions using the full 4-term photon color content.
 
 ## The 4-term photon
 
@@ -18,7 +18,7 @@ Three independent $\gamma\gamma$ collisions produce three quark--antiquark pairs
 
 ## Confinement: $\mathcal{B}_3$ selected by minimum action
 
-We select three quarks from the pairs and confine them via the Borromean braid $\mathcal{B}_3$. This is the unique minimum-action confinement operator.
+One selects three quarks from the pairs and confines them via the Borromean braid $\mathcal{B}_3$. This is the unique minimum-action confinement operator.
 
 The derivation chain is:
 
