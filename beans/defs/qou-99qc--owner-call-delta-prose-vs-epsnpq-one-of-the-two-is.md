@@ -4043,3 +4043,23 @@ RESULT 2026-11-19 05:15Z (rule pre-registered 05:10Z, exact sympy, /tmp scratch 
   87 % of the value is the q=1 classical charge sum; the q-dependence moves it 12 %.
   Same rule on the bare V³ gives tq(W_n)/tq(W_p) = q⁻² exactly (−18.8 % at q₀), the strong-side 150× problem, unchanged.
   Remaining gap is the ENERGY UNIT of the charge term, not the trace: no trace choice can supply ×15–25; adding α_EM makes it 137× smaller.
+
+
+## 2026-11-15 — gluon segment by the γγ rule (PR #7876, child bean qou-ggls)
+
+**What the γγ rule gives.** On three strands the rule gives the unit V = σ0σ1⁻¹, which is the corpus gluonUnit. It does not fix how many units the gluon segment carries. The output is therefore the family {V^k}.
+
+**What was enumerated.** CORE·TAIL·V^k for k = 0..3, pre-registered, with the census quark tail held fixed.
+- g_odd = 0 for every k, so the qou-z08b obstruction belongs to σ0².
+- Whole-word reading 3 admits **k = 1 only**, for both nucleons: χ_(2,1) = +0.2170 (p) and +0.4294 (n).
+- Q_β at z_D for that element is 0.229517 MeV (−70.66 %). This is reported only and played no part in any choice.
+
+Nothing is selected or re-scored.
+
+**Owner decisions still open:**
+1. Does the γγ rule or the H2-parity rule (σ0², owner 2026-08-30) govern the gluon segment?
+2. Does the survivor replace nuc11_interleaved?
+
+This bean stays open (rule 13a).
+
+(Ported to the bean mount 2026-11-20 by W3 from PR #7876, whose bean-file edits cannot merge now that beans are branch-mounted.)
