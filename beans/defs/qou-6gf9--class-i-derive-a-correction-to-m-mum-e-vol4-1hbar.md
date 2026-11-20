@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T09:31:00Z
-updated_at: 2026-11-20T18:00:00Z
+updated_at: 2026-11-20T14:28:57Z
 parent: qou-2002
 ---
 
@@ -333,3 +333,10 @@ Was in-progress with no bean update since 2026-09-04 and no main commit naming i
 - Naive photon-exchange double sum D is not braid-covariant (shifts by −(Q0Q1)² under σ1σ1⁻¹); its completion S²/2 = 0 on V³.
 - No degree≤2 (order-α) charge weight couples to μ̄₁₂₃ (`quad_alternating_eq_zero`). The even degree-4 c₃ μ̄² term remains the only braid-dependent survivor; c₃ still underived.
 - Joint pin (scope (a), conditional on α_em form B): α_em pins q0 +0.053 ppb from the proton identity, the muon identity +11.614 ppb. A proton-only term reaching m_μ sends α⁻¹ to +79.00 ppb. So no proton-side term (derived or not) satisfies m_μ and α_em together; the evidence points at the muon carrier (qou-6gf9).
+
+**2026-11-20T14:28:57Z — OWNER: open this front (Lean-first); CAL-2 unchanged for now.** New evidence from PRs #8562 /
+#8565: α_em form B and the one-term m_p identity agree on q₀ to 0.053 ppb (2.4σ); the two-term proton
+re-pin puts α 495σ off; covariant QED insertions give zero proton self-energy on V³ through Vassiliev
+degree 3 (#8552, #8557, #8565). So the μ–p residual points at the muon carrier Vol(4₁)/ℏ_q². Needed size
+(diagnostic only, not a target to tune to): δ_μ = −211.2058 ppb (−9.09e-5·α/π, −3.97e-3·α²). Owner
+reverted #8554 to the one-term default pin (two-term kept as a named comparison).

@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-28T16:32:49Z
-updated_at: 2026-11-20T16:00:00Z
+updated_at: 2026-11-20T14:28:57Z
 parent: qou-3l2l
 ---
 
@@ -410,3 +410,9 @@ another. The gram_kappa_numerical_value sorry was a false statement and is
 replaced by a sorry-free refutation; kappa = 1.7216 is det G_cl/det G_q and
 never used gramKappa (bean qou-wkgp). Status unchanged: the CS-tower conjecture
 class still has no instance.
+
+**2026-11-20T14:28:57Z — OWNER RULING (Carl, session 01VQDpPd): keep BOTH α_em forms, labelled; no pick by residual.**
+Form B (q[9][10] + 8/(12π) + αH(1−h²α); scorecard α_em⁻¹ row, −0.365 ppb) and the CS tower
+(meson_em_sinh_closed_form.alpha_em_inv_derived; m_K/m_π and c_em, −467.6 ppb) are structurally
+different functions of q (PR #8562), so no truncation choice reconciles them. Each consumer keeps its
+own, labelled, until one is derived. Bean stays open.
