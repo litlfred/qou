@@ -3,15 +3,39 @@
   End_R(V^⊗6).
 
   Companion: hoefsmit-ew-cell-content.md
-  Path: folio/quantum-observable-universe/braids-and-knots/
+  Path: folio/quantum-observable-universe/mass-theory/
 
-  States the structural proposal:
+  The block assigns the three EW carriers to the three far-commuting
+  generators of H_6(q):
     W ↔ σ_1^4 (strands 1-2)
     Z ↔ σ_3^6 (strands 3-4)
-    H ↔ σ_5^8 (strands 5-6)
-  inside H_6(q).  At n = 6 the three generators commute pairwise
-  (far-commutativity) and the eight (sym, alt)^3 patterns give
-  pairwise-orthogonal projectors.
+    H ↔ σ_5^8 (strands 5-6).
+
+  What this file PROVES (sorry-free, over a generic commutative ring R
+  with q invertible and [2]_q = q + q⁻¹ invertible, §7c):
+
+  * the carrier strand pairs {1,2}, {3,4}, {5,6} are pairwise disjoint
+    and the carrier indices 1, 3, 5 pairwise far-commute
+    (`carrier_strand_pairs_disjoint`, `WZH_indices_far_commute`);
+  * in any commutative R-algebra containing three Hecke generators
+    (the commutative subalgebra H_2(q)^{⊗3} the far-commuting σ_1, σ_3,
+    σ_5 generate), the eight pure-pattern projectors
+    E(a,b,c) = e^a(σ_1) e^b(σ_3) e^c(σ_5) are idempotent, pairwise
+    orthogonal, and sum to 1 (`patternsPairwiseOrthogonal_of_hecke`);
+  * the six "physical" patterns (all but (sym,sym,sym) and
+    (alt,alt,alt)) sum to 1 − E(sss) − E(aaa)
+    (`ewPhysicalProjectors_decompose_of_hecke`).
+
+  What it does NOT prove: that these six patterns ARE the W±, Z±, H±
+  carriers. The labels W/Z/H on the patterns are a naming of
+  constructions (owner ruling 2026-08-07, "named terms are model
+  terms"); whether the naming is the physical electroweak sector is not
+  a Lean claim and is left to `conj:categorical-higgs-mechanism`.
+  Previously this was a field `EWIdempotentsIdentified : Prop := True`,
+  which asserted nothing (QA re-adjudication 2026-11-20); it is removed.
+
+  The idempotent algebra is imported from
+  `QOU.Conjectures.WeakSpectralCompleteness` (`joint_*` lemmas).
 
   Refs:
     [hoefsmit1974] Hoefsmit, "Representations of Hecke Algebras
@@ -22,8 +46,11 @@
 -/
 
 import Mathlib.Algebra.Algebra.Basic
+import QOU.Conjectures.WeakSpectralCompleteness
 
 namespace QOU.BraidsAndKnots
+
+open QOU.Conjectures
 
 /-- Eigenvalue class of a Hecke generator on a Hoefsmit
     seminormal-basis vector: sym (eigenvalue +q), alt
@@ -45,9 +72,11 @@ inductive PurePattern where
   | asa  -- (alt, sym, alt): W- + H-, multiplicity 1
   | saa  -- (sym, alt, alt): Z- + H-, multiplicity 2
   | aaa  -- (alt, alt, alt): fully broken, multiplicity 4
+  deriving DecidableEq
 
-/-- Tableau-multiplicity per pure pattern (from witness enumeration
-    `hoefsmit-ew-cell-content.witness.json`). -/
+/-- Tableau-multiplicity per pure pattern, RECORDED from the witness
+    enumeration `hoefsmit-ew-cell-content.witness.json` (not derived
+    here; the generating function is open, see the block's notes). -/
 def purePatternMultiplicity : PurePattern → ℕ
   | .sss => 4
   | .ass => 2
@@ -58,7 +87,7 @@ def purePatternMultiplicity : PurePattern → ℕ
   | .saa => 2
   | .aaa => 4
 
-/-- Total pure-eigenspace dimension: sum of multiplicities. -/
+/-- The recorded multiplicities sum to the 20 pure tableaux. -/
 theorem totalPureMultiplicity :
     purePatternMultiplicity .sss
     + purePatternMultiplicity .ass
@@ -79,123 +108,148 @@ def isEWPhysical : PurePattern → Bool
   | .aaa => false  -- fully broken
   | _ => true
 
-/--
-  Predicate: `q : R` is generic — NOT a root of unity in `R`.
-  (Same shape as `IsRootOfUnity` in
-  weak-symmetric-normalization.lean.)
--/
-def IsRootOfUnityH {R : Type*} [Monoid R] (q : R) : Prop :=
-  ∃ n : ℕ, n > 0 ∧ q ^ n = 1
+/-- Coordinates of a pure pattern on the three carriers
+    `(σ₁, σ₃, σ₅)`; `true` = sym (`+q`), `false` = alt (`-q⁻¹`). -/
+def PurePattern.toTriple : PurePattern → Bool × Bool × Bool
+  | .sss => (true, true, true)
+  | .ass => (false, true, true)
+  | .sas => (true, false, true)
+  | .ssa => (true, true, false)
+  | .aas => (false, false, true)
+  | .asa => (false, true, false)
+  | .saa => (true, false, false)
+  | .aaa => (false, false, false)
+
+/-- The eight pure patterns are exactly the eight sym/alt triples. -/
+theorem PurePattern.toTriple_injective : Function.Injective PurePattern.toTriple := by
+  intro a b h
+  cases a <;> cases b <;> first | rfl | (simp [PurePattern.toTriple] at h)
+
+theorem PurePattern.toTriple_surjective : Function.Surjective PurePattern.toTriple := by
+  rintro ⟨a, b, c⟩
+  cases a <;> cases b <;> cases c <;>
+    first
+    | exact ⟨.sss, rfl⟩ | exact ⟨.ass, rfl⟩ | exact ⟨.sas, rfl⟩
+    | exact ⟨.ssa, rfl⟩ | exact ⟨.aas, rfl⟩ | exact ⟨.asa, rfl⟩
+    | exact ⟨.saa, rfl⟩ | exact ⟨.aaa, rfl⟩
+
+/-! ### Disjoint strand pairs -/
 
 /--
-  Far-commutativity predicate at the index level (predecessor of
-  Mathlib `BraidGroup` plumbing): two braid-generator indices `i`
-  and `j` *far-commute* in `B_n` iff `i + 2 ≤ j ∨ j + 2 ≤ i`
-  (avoiding the truncating-subtraction ambiguity of writing
-  `|i - j| ≥ 2` over `ℕ`). This is the combinatorial content of
-  the `T_i T_j = T_j T_i` braid relation for non-adjacent indices,
-  lifted to a `Prop` we can check by `decide`.
+  Far-commutativity at the index level: braid-generator indices `i`
+  and `j` far-commute in `B_n` iff `i + 2 ≤ j ∨ j + 2 ≤ i`, which is
+  the hypothesis of the braid relation `σ_i σ_j = σ_j σ_i`.
 -/
 -- Ref: [kassel1995] §VII (braid-group presentation)
 def FarCommutes (i j : ℕ) : Prop := i + 2 ≤ j ∨ j + 2 ≤ i
 
+/-- The strand pair on which generator `σ_i` acts. -/
+def strandPair (i : ℕ) : Finset ℕ := {i, i + 1}
+
+/-- Far-commuting generators act on disjoint strand pairs. -/
+theorem strandPair_disjoint_of_farCommutes {i j : ℕ} (h : FarCommutes i j) :
+    Disjoint (strandPair i) (strandPair j) := by
+  unfold strandPair
+  rw [Finset.disjoint_left]
+  intro x hx hy
+  simp only [Finset.mem_insert, Finset.mem_singleton] at hx hy
+  unfold FarCommutes at h
+  omega
+
 /-- The W/Z/H carrier triple `(1, 3, 5)` in `B_6` is pairwise
-    far-commuting (`i + 2 ≤ j ∨ j + 2 ≤ i` for every pair).
-    Decidable. -/
+    far-commuting. -/
 theorem WZH_indices_far_commute :
     FarCommutes 1 3 ∧ FarCommutes 3 5 ∧ FarCommutes 1 5 := by
   refine ⟨?_, ?_, ?_⟩ <;> unfold FarCommutes <;> decide
 
-/--
-  Predicate: the disjoint-strand-pair Hoefsmit identification
-  W ↔ σ_1^4, Z ↔ σ_3^6, H ↔ σ_5^8 in B_6 is the categorical
-  assignment of EW carriers to Hoefsmit projectors.
+/-- The carrier strand pairs `{1,2}`, `{3,4}`, `{5,6}` are pairwise
+    disjoint and all lie in `{1,…,6}`, so `n = 6` strands suffice. -/
+theorem carrier_strand_pairs_disjoint :
+    Disjoint (strandPair 1) (strandPair 3) ∧
+    Disjoint (strandPair 3) (strandPair 5) ∧
+    Disjoint (strandPair 1) (strandPair 5) ∧
+    strandPair 1 ∪ strandPair 3 ∪ strandPair 5 = Finset.Icc 1 6 := by
+  obtain ⟨h13, h35, h15⟩ := WZH_indices_far_commute
+  refine ⟨strandPair_disjoint_of_farCommutes h13,
+    strandPair_disjoint_of_farCommutes h35,
+    strandPair_disjoint_of_farCommutes h15, ?_⟩
+  decide
 
-  Structural content (this revision): the three carrier indices
-  `(1, 3, 5)` are pairwise far-commuting in `B_6`, so the three
-  Hecke generators `T_1, T_3, T_5` pairwise commute by the braid
-  relation `T_i T_j = T_j T_i` for `|i - j| ≥ 2`. This is the
-  exact prerequisite for treating the `(σ_1, σ_3, σ_5)` triple as
-  a tensor of independent rank-1 projector slots — the disjoint-
-  strand-pair structure that the EW carrier assignment relies on.
-  Full categorical-physics content (the W ↔ σ_1^4, Z ↔ σ_3^6,
-  H ↔ σ_5^8 carrier identification per se) remains downstream of
-  `conj:categorical-higgs-mechanism`.
--/
-def DisjointStrandPairAssignmentB6 {R : Type*} [CommRing R] (_q : R) : Prop :=
-  FarCommutes 1 3 ∧ FarCommutes 3 5 ∧ FarCommutes 1 5
+/-! ### The eight pure-pattern projectors -/
 
-/-- **Sorry-free discharge:** the structural prerequisite for the
-    disjoint-strand-pair assignment — pairwise far-commutativity
-    of the carrier indices `(1, 3, 5)` — holds unconditionally in
-    `B_6`. -/
-theorem DisjointStrandPairAssignmentB6_holds
-    {R : Type*} [CommRing R] (q : R) :
-    DisjointStrandPairAssignmentB6 q := WZH_indices_far_commute
+section Projectors
 
-/--
-  Predicate: the eight pure (sym/alt)^3 patterns of
-  (σ_1, σ_3, σ_5) on V^⊗6 are pairwise orthogonal as Hoefsmit
-  idempotents.  Follows mechanically from far-commutativity
-  + Hoefsmit eigenvalue formulas at generic q (verified in
-  the witness `hoefsmit-ew-cell-content.witness.json`).
+variable {R : Type*} [CommRing R] {A : Type*} [CommRing A] [Algebra R A]
 
-  Structural content (this revision): the orthogonality reduces
-  to two ingredients — (i) pairwise far-commutativity of the
-  carrier indices (decidably checked, see `WZH_indices_far_commute`)
-  and (ii) distinct symmetric / alternating eigenvalues of each
-  generator (`+q` vs `-q⁻¹`) at generic q. The first ingredient
-  is captured here as a hypothesis on the predicate; the second
-  is captured via `q_generic` (i.e. `¬ IsRootOfUnityH q`) at the
-  class-instance level. The pure-pattern eigenvalue calculation
-  itself is recorded in `purePatternMultiplicity` (decided by
-  `decide` in `totalPureMultiplicity`).
--/
-def PatternsPairwiseOrthogonal {R : Type*} [CommRing R] (_q : R) : Prop :=
-  FarCommutes 1 3 ∧ FarCommutes 3 5 ∧ FarCommutes 1 5
+/-- The projector of a pure pattern: `E(a,b,c) = e^a(s₁) e^b(s₃) e^c(s₅)`. -/
+def patternProjector (h : HeckeScalars R) (s₁ s₃ s₅ : A) (p : PurePattern) : A :=
+  joint h s₁ s₃ s₅ p.toTriple
 
-/-- **Sorry-free discharge of `PatternsPairwiseOrthogonal`.** The
-    far-commutativity prerequisite for pairwise orthogonality of
-    the 8 pure-pattern projectors holds by `WZH_indices_far_commute`;
-    the distinct-eigenvalue ingredient lives at the class-instance
-    level via `q_generic`. -/
-theorem PatternsPairwiseOrthogonal_holds
-    {R : Type*} [CommRing R] (q : R) :
-    PatternsPairwiseOrthogonal q := WZH_indices_far_commute
+/-- The eight pure-pattern projectors are idempotent, pairwise orthogonal,
+    and sum to `1`. -/
+def PatternsPairwiseOrthogonal (h : HeckeScalars R) (s₁ s₃ s₅ : A) : Prop :=
+  (∀ p, patternProjector h s₁ s₃ s₅ p * patternProjector h s₁ s₃ s₅ p =
+      patternProjector h s₁ s₃ s₅ p) ∧
+  (∀ p p', p ≠ p' →
+      patternProjector h s₁ s₃ s₅ p * patternProjector h s₁ s₃ s₅ p' = 0) ∧
+  (patternProjector h s₁ s₃ s₅ .sss + patternProjector h s₁ s₃ s₅ .ass
+    + patternProjector h s₁ s₃ s₅ .sas + patternProjector h s₁ s₃ s₅ .ssa
+    + patternProjector h s₁ s₃ s₅ .aas + patternProjector h s₁ s₃ s₅ .asa
+    + patternProjector h s₁ s₃ s₅ .saa + patternProjector h s₁ s₃ s₅ .aaa = 1)
 
-/--
-  Predicate: the six "physical" pure patterns (single-flip +
-  double-flip; excluding (sym,sym,sym) and (alt,alt,alt)) carry
-  the W±, Z±, H± idempotents.  Open: depends on
-  `conj:categorical-higgs-mechanism` for the structural
-  pattern-to-boson mapping.
--/
-def EWIdempotentsIdentified {R : Type*} [CommRing R] (_q : R) : Prop :=
-  True
+theorem eight_sum_eq_joint_sum (h : HeckeScalars R) (s₁ s₃ s₅ : A) :
+    patternProjector h s₁ s₃ s₅ .sss + patternProjector h s₁ s₃ s₅ .ass
+      + patternProjector h s₁ s₃ s₅ .sas + patternProjector h s₁ s₃ s₅ .ssa
+      + patternProjector h s₁ s₃ s₅ .aas + patternProjector h s₁ s₃ s₅ .asa
+      + patternProjector h s₁ s₃ s₅ .saa + patternProjector h s₁ s₃ s₅ .aaa
+      = ∑ p : Bool × Bool × Bool, joint h s₁ s₃ s₅ p := by
+  simp only [Fintype.sum_prod_type, Fintype.sum_bool, patternProjector,
+    PurePattern.toTriple]
+  ring
 
-/-- A `HoefsmitEWCellContent R q` instance asserts:
-    - q is generic in R (not a root of unity)
-    - the disjoint-strand-pair identification W ↔ σ_1^4,
-      Z ↔ σ_3^6, H ↔ σ_5^8 in B_6 is the categorical
-      assignment of EW carriers to Hoefsmit projectors
-    - the eight pure patterns are pairwise orthogonal in
-      End_R(V^⊗6) at generic q
-    - the six "physical" patterns carry the W±, Z±, H±
-      idempotents, with non-uniform cell-content multiplicities
-      (2, 1, 3, 3, 1, 2). -/
-class HoefsmitEWCellContent
-    (R : Type*) [CommRing R] (q : R)
-    where
-  /-- Generic-q hypothesis (not a root of unity in R). -/
-  q_generic : ¬ IsRootOfUnityH q
-  /-- Disjoint-strand-pair identification in B_6. -/
-  disjointStrandPairAssignment : DisjointStrandPairAssignmentB6 q
-  /-- Pairwise orthogonality of the eight pure-pattern projectors
-      at generic q (follows from σ_1, σ_3, σ_5 pairwise
-      commuting in B_6 plus distinct eigenvalues). -/
-  patternsPairwiseOrthogonal : PatternsPairwiseOrthogonal q
-  /-- Six EW projectors recover W±, Z±, H± via the single-flip
-      and double-flip pure patterns. -/
-  ewIdempotentsIdentified : EWIdempotentsIdentified q
+/-- **Pairwise orthogonality, proved.** For three Hecke generators in a
+    commutative `R`-algebra (the subalgebra generated by the far-commuting
+    `σ₁, σ₃, σ₅`), the eight pure-pattern projectors form a complete
+    family of orthogonal idempotents. -/
+theorem patternsPairwiseOrthogonal_of_hecke (h : HeckeScalars R) {s₁ s₃ s₅ : A}
+    (h₁ : IsHeckeGen h s₁) (h₃ : IsHeckeGen h s₃) (h₅ : IsHeckeGen h s₅) :
+    PatternsPairwiseOrthogonal h s₁ s₃ s₅ := by
+  refine ⟨fun p => joint_idempotent h h₁ h₃ h₅ _, fun p p' hne => ?_, ?_⟩
+  · exact joint_orthogonal h h₁ h₃ h₅
+      (fun e => hne (PurePattern.toTriple_injective e))
+  · rw [eight_sum_eq_joint_sum]; exact joint_sum_eq_one h s₁ s₃ s₅
+
+/-- The six "physical" pattern projectors (all but `sss`, `aaa`) sum to
+    `1 − E(sss) − E(aaa)`. The naming of these six as W±, Z±, H± is a
+    labelling of constructions, not part of this statement. -/
+def EWPhysicalProjectorsDecompose (h : HeckeScalars R) (s₁ s₃ s₅ : A) : Prop :=
+  patternProjector h s₁ s₃ s₅ .ass + patternProjector h s₁ s₃ s₅ .sas
+    + patternProjector h s₁ s₃ s₅ .ssa + patternProjector h s₁ s₃ s₅ .aas
+    + patternProjector h s₁ s₃ s₅ .asa + patternProjector h s₁ s₃ s₅ .saa
+    = 1 - patternProjector h s₁ s₃ s₅ .sss - patternProjector h s₁ s₃ s₅ .aaa
+
+theorem ewPhysicalProjectors_decompose_of_hecke (h : HeckeScalars R)
+    {s₁ s₃ s₅ : A} (h₁ : IsHeckeGen h s₁) (h₃ : IsHeckeGen h s₃)
+    (h₅ : IsHeckeGen h s₅) :
+    EWPhysicalProjectorsDecompose h s₁ s₃ s₅ := by
+  have hsum := (patternsPairwiseOrthogonal_of_hecke h h₁ h₃ h₅).2.2
+  unfold EWPhysicalProjectorsDecompose
+  linear_combination hsum
+
+/-- **Hoefsmit EW cell content (`n = 6`), proved part.** Disjoint carrier
+    strand pairs in `B_6`, a complete orthogonal family of eight
+    pure-pattern idempotents, and the six-pattern decomposition. -/
+theorem hoefsmit_ew_cell_content (h : HeckeScalars R) {s₁ s₃ s₅ : A}
+    (h₁ : IsHeckeGen h s₁) (h₃ : IsHeckeGen h s₃) (h₅ : IsHeckeGen h s₅) :
+    (Disjoint (strandPair 1) (strandPair 3) ∧
+      Disjoint (strandPair 3) (strandPair 5) ∧
+      Disjoint (strandPair 1) (strandPair 5)) ∧
+    PatternsPairwiseOrthogonal h s₁ s₃ s₅ ∧
+    EWPhysicalProjectorsDecompose h s₁ s₃ s₅ := by
+  obtain ⟨a, b, c, -⟩ := carrier_strand_pairs_disjoint
+  exact ⟨⟨a, b, c⟩, patternsPairwiseOrthogonal_of_hecke h h₁ h₃ h₅,
+    ewPhysicalProjectors_decompose_of_hecke h h₁ h₃ h₅⟩
+
+end Projectors
 
 end QOU.BraidsAndKnots
