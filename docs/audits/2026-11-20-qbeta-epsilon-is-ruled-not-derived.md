@@ -198,3 +198,29 @@ striking, but the label is provably not the n/p distinction, so adopting it woul
 `down-quark`, `up-quark`, `down-quark-properties`, `hydrogen-knot-structure`, `electron-knot`), and **36** `.md` blocks use
 "typed crossing". Rewriting them needs the label decision above: under C, u and d are T³ weights (`OverStrandWeight`);
 under B they are J₄ lines. Not edited until the owner picks.
+
+## 10. Owner choice "3 2" (2026-11-20): keep A and B side by side; research label C — first result
+
+**Recorded:** no label ruling. Labels A and B stay side by side; the round-trip theorem is on `main` (#8615). ε remains the
+2026-09-08 ruling.
+
+**Label C, measured.** Probe `computations/qbeta/qbeta_label_c_quantum_trace_probe.py` (5/5 exact checks over ℚ(q)). With
+u = e₁ (T³ = +½), H₃ acting on (ℂ²)^⊗3 through the Jimbo Ř and K = diag(q, q⁻¹), the quantum trace Tr(K^⊗3 ·) restricted
+to each natural subspace gives:
+
+| restriction | τ(J) | Q_β (order-zero E₀) |
+|---|---|---|
+| whole (ℂ²)^⊗3 | (q⁴+1)/(q²+1)² = convention-D y₃ | −43.16 % |
+| T³ = +½ or −½ weight space (p or n charge sector) | 1/3 for every q | −62.51 % |
+| isospin-½ = H₃ (2,1) block (the nucleon's own sector) | **0** | **Q_β = 0** |
+| isospin-3/2 = H₃ (3) block | 1 | +12.47 % |
+
+**Structural reading (provable, and the useful part).** τ(Δ_S) = −(h[2]/2)(y₃ − y₁₁₁) and χ₍₂,₁₎(Δ_S) = 0
+(`QBetaChiralityReduction.chi21_deltaS`). So **Q_β sees only the weight a functional puts on the isospin-3/2 block; the
+nucleon's own isospin-½ block contributes exactly zero.** The CODATA value needs y₃ ≈ 0.889 (order-zero E₀): roughly 89 %
+of the weight on the (3) block. Label B's round trip lands at 0.892 *because* its Ja line is the (3) sector. No label-C
+restriction of the quantum trace reaches it; the values are z_D, 1/3, 0 and 1.
+
+**What that leaves for label C.** A derivation must explain why the decay functional weights the isospin-3/2 channel by
+≈ [2]²·[2]_{q²}/[3]² (or an E₀-dependent equivalent), e.g. an E/F round trip through an intermediate isospin-3/2 state.
+That is the next research target, and it is the same object label B points at, now with its physical meaning named.
