@@ -193,6 +193,12 @@ structure StrongDualityPair (sdp : SDPPrimal n R ι) where
 --      Note: Boyd doesn't number theorems; "Theorem 5.5" was a
 --      misattribution — the result is stated in §5.2.3 and proved
 --      in §5.3.2.
+-- NOTE (2026-11-20): primal strict feasibility ALONE does not give a pair.
+--      `QOU.Mathlib.SDPStrongDuality.not_forall_hasStrongDuality` proves a
+--      1×1 counterexample (cost −1, no constraints: strictly feasible,
+--      unbounded below). For `R = ℝ` the class is proved under the extra
+--      hypotheses symmetric data, linearly independent constraints and dual
+--      Slater: `QOU.Mathlib.SDPStrongDuality.hasStrongDuality_of_slater`.
 class HasStrongDuality (sdp : SDPPrimal n R ι)
     (_h : sdp.IsStrictlyFeasible) : Prop where
   /-- A strong-duality pair exists. -/
