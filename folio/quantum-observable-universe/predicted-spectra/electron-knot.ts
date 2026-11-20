@@ -7,5 +7,5 @@ export default definition({
   lean: { ref: "qou:QOU.Archimedean.Electron",
     validation: "not_checked",
   },
-  uses: ["def:up-quark"],
+  uses: ["def:up-quark", "rem:knot-particle-dictionary"],
 });

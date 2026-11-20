@@ -7,8 +7,8 @@ import Mathlib.Data.Int.Basic
 # QOU.Archimedean.Electron — Trefoil T_{2,3} (lepton sector)
 
 The electron is the trefoil knot T_{2,3} in the lepton sector.
-It is the same knot type as the up quark, but not localized in a
-color tube — it orbits the nucleus via Hopf linking.
+It is the lepton partner of the up quark, which is an unknot localized
+in a color tube; the electron instead orbits the nucleus via Hopf linking.
 
 LaTeX label: `def:electron-knot`
 
