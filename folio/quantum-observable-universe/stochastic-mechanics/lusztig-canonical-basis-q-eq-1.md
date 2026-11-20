@@ -1,4 +1,4 @@
-**Conjecture (Lusztig canonical basis closure, conditional on [`conj:kazhdan-lusztig-classical-limit`](#conj:kazhdan-lusztig-classical-limit)).**
+**Conjecture (Lusztig canonical basis closure, conditional on [Kazhdan–Lusztig classical limit](#conj:kazhdan-lusztig-classical-limit)).**
 
 *At the classical limit $q = 1$, the Kashiwara crystal of $H_n(q)$ ([Crystal-limit isospin degeneracy](#prop:crystal-isospin-degeneracy), at $q \to 0$) **decategorifies** to the Lusztig canonical basis of the group algebra $\mathbb{Z}[S_n]$. The Kazhdan–Lusztig basis polynomials $\{P_{y, w}(q)\}$ are the structure constants of this decategorification. At $q = 1$, they reduce to integer multiplicities of canonical-basis elements.*
 

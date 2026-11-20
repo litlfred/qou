@@ -242,7 +242,7 @@ canonical choice is **$\mathrm{Im}(q_0) = 0$** (real q). This is:
 ## Cross-references
 
 - [The pre-Archimedean substrate is polymorphic in its base ring](q-zero-complex-extension.md) — substrate polymorphism
-- [`prop:lusztig-vs-hermitian-bar`](lusztig-vs-hermitian-bar.md) — involution split for complex q
+- [Lusztig bar vs Hermitian-$\ast$](lusztig-vs-hermitian-bar.md) — involution split for complex q
 - [Im(q) is not the EM / P_skew channel — distinct mechanisms](rem-im-q-vs-p-skew.md) — the distinction from P_skew
 - [Categorical mass as Markov trace](../mass-endomorphism/categorical-mass-markov.md) — modulus projection
 

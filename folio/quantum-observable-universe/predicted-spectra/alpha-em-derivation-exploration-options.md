@@ -1,6 +1,6 @@
 **Remark (exploration options to close the $1/\alpha_{EM}$ derivation).**
 
-The existing infrastructure maps to the open $2/(3\pi)$ derivation. The numerical match $1/\alpha_{EM} \approx q\cdot[9]_q\cdot[10]_q + 2/(3\pi)$ ([`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)) holds exactly via the algebraic identity $2/(3\pi) = 2g/(4\pi(g{-}1))$ at $g = 4$. A full derivation remains open. The existing infrastructure supports four potential paths forward.
+The existing infrastructure maps to the open $2/(3\pi)$ derivation. The numerical match $1/\alpha_{EM} \approx q\cdot[9]_q\cdot[10]_q + 2/(3\pi)$ ([additive Bring zero-mode form of $1/\alpha_{EM}$](#prop:em-coupling-bring-zero-mode)) holds exactly via the algebraic identity $2/(3\pi) = 2g/(4\pi(g{-}1))$ at $g = 4$. A full derivation remains open. The existing infrastructure supports four potential paths forward.
 
 ## Existing infrastructure
 
@@ -83,7 +83,7 @@ The constant emerges from the universal $k \to \infty$ asymptotics.
 Option B utilises existing infrastructure and clarifies the relationship between the mass and coupling formulas.
 
 A practical execution follows:
-1. Implement Option B in $H_3$ ([`conj:spectral-sequence-h3-explicit`](#conj:spectral-sequence-h3-explicit)).
+1. Implement Option B in $H_3$ ([explicit $d_1, d_2$ on $H_3(q)$](#conj:spectral-sequence-h3-explicit)).
 2. Define the depth-$\ell$ coupling functional.
 3. Compute the value at $q_0$ for each $\ell$ to isolate $2/(3\pi)$.
 4. Generalise to higher $H_n$ and verify consistency.

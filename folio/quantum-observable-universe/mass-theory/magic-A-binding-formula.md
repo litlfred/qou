@@ -1,4 +1,4 @@
-**Theorem (conditional on [`conj:magic-numbers-bring`](../observations/magic-numbers-bring.md),
+**Theorem (conditional on [magic numbers as Bring period sub-lattice ranks](../observations/magic-numbers-bring.md),
 [Catalan's $G$ as the universal-residue prefactor of the unified mass formula](../observations/gravity-spectral-prefactor.md),
 and [Conjecture (diagrammatic double-magic): LR-fusion rigidity at $Z, N \in \mathfrak{M}$](../observations/diagrammatic-double-magic-lr-fusion.md)).**
 *For a light nucleus $^A_Z\mathfrak{X}$ that is doubly magic

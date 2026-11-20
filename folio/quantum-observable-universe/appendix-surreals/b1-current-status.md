@@ -12,7 +12,7 @@ Its open content reduces to:
      \mathrm{Cl}_3\!\left(\tfrac{2\pi}{5}\right) - \mathrm{Cl}_3\!\left(\tfrac{4\pi}{5}\right) \approx 0.95572314353826862\ldots
    $$
    This has no known closed form modulo $\zeta(3) + (2\pi i)^3 \mathbb{Q}$. It generates the antisymmetric component of the 2-dim regulator image.
-3. **Goncharov motivic conjecture at $\mathbb{Q}(\zeta_5)$**. What a discharge would require is set out in [`conj:qou-infra-discharges-goncharov-zeta5`](#conj:qou-infra-discharges-goncharov-zeta5).
+3. **Goncharov motivic conjecture at $\mathbb{Q}(\zeta_5)$**. What a discharge would require is set out in [Goncharov's depth-3 conjecture at $\mathbb{Q}(\zeta_5)$](#conj:qou-infra-discharges-goncharov-zeta5).
 4. **Beilinson's conjecture at depth $\ge$ 4** (external).
 5. **Geometric realisation of $\mathrm{Cl}_3(2\pi/5)$**. Three candidates are listed; SnapPy CS computation on Bring torus knots is the smallest concrete test.
 

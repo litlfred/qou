@@ -16,7 +16,7 @@
 | **chiral hyperbolic rows** ($5_2, 6_2, 6_3$) | **conditional theorem** — the per-knot VC leg is discharged; what remains open is the depth-3 Chern–Simons partner | [ohtsuki2016-52], [ohtsuki-yokota-6crossings]; depth-3 open |
 | **chiral hyperbolic rows** (beyond $6_3$) | **conditional theorem** modulo per-knot VC | open knot-by-knot |
 | **Cl_3(2π/5) − Cl_3(4π/5) closed form** | **open** — single real number $\approx$ 0.955 | reflection + multiplication formulas exhausted |
-| **Strong sharpness, depth 3 over $\mathbb{Q}(\zeta_5)$** | **conditional** on Goncharov $\zeta_5$ sub-case | [`conj:qou-infra-discharges-goncharov-zeta5`](#conj:qou-infra-discharges-goncharov-zeta5) (either route) |
+| **Strong sharpness, depth 3 over $\mathbb{Q}(\zeta_5)$** | **conditional** on Goncharov $\zeta_5$ sub-case | [Goncharov's depth-3 conjecture at $\mathbb{Q}(\zeta_5)$](#conj:qou-infra-discharges-goncharov-zeta5) (either route) |
 | **Strong sharpness, depth $\ge$ 3 over arbitrary $F$** | **conjectural** | Beilinson + Goncharov (external) |
 | **Strong sharpness, depth $\ge$ 4** | **conjectural** | Beilinson + Goncharov (external) |
 | **Geometric realisation of Cl_3(2π/5)** | **open**, 3 candidates | [Geometric realisation of $\mathrm{Cl}_3(2\pi/5)$ as a Bring-natural depth-3 invariant](#conj:cl3-zeta5-geometric-realization) |

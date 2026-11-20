@@ -26,7 +26,7 @@ transcendental constant in a QOU observable is the
 $\tau_{\text{arch}}$-image of substrate pentagon data via $D$ (or
 its multivariate generalisations), and is therefore not an external
 import. The additive Bring zero-mode candidate
-[`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)
+[additive Bring zero-mode form of $1/\alpha_{EM}$](#prop:em-coupling-bring-zero-mode)
 illustrates the second point: the $2/(3\pi) = 2g/(4\pi(g-1))$
 correction at $g = 4$ is the archimedean shadow of pentagon
 data on Bring's surface, not a $\pi$-import outside $R$.
@@ -49,7 +49,7 @@ To satisfy the Descartes condition $\chi = -6$, the physical state space restric
 ## Corollaries
 
 **(a) Resolves the pre-archimedean concern in
-[`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode).**
+[additive Bring zero-mode form of $1/\alpha_{EM}$](#prop:em-coupling-bring-zero-mode).**
 The $\pi$ in the additive correction $2/(3\pi) = 2g/(4\pi(g-1))$
 at $g=4$ is the unique archimedean shadow of pentagon-coherent
 substrate data on Bring's surface. The substrate's pentagon
@@ -64,7 +64,7 @@ form for a QOU observable that includes a transcendental constant
 not derivable from $D$ (or its multivariate generalisations
 $D_n$) is excluded. This is a falsifiability constraint: the
 multiplicative gluon-octet form (a PSLQ-empirical candidate, which
-[`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode) replaces)
+[additive Bring zero-mode form of $1/\alpha_{EM}$](#prop:em-coupling-bring-zero-mode) replaces)
 required arbitrary integer ratios $45 \cdot [3]_q \cdot
 (1+\delta_{CS}+8q\delta_{CS}^2)$ that would have to come from a
 non-pentagon source, is ruled out *structurally* in addition to

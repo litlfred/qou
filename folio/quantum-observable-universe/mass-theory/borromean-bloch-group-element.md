@@ -175,4 +175,4 @@ also closes the loop:
 - The archimedean dilog limit:
   [$(1{-}q)\,\log\Phi_n(x; q) \to \mathrm{Li}_2(x)$ under $\tau_{\mathrm{arch}}$](#conj:dilogarithm-archimedean-limit)
 - The Kashaev volume conjecture (upstream):
-  [`conj:kashaev-volume-conjecture`](kashaev-volume-conjecture.md)
+  [Kashaev volume conjecture](kashaev-volume-conjecture.md)

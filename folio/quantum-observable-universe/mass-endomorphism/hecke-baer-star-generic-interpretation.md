@@ -1,6 +1,6 @@
 ### Co-location with the Volume Conjecture
 
-The Kashaev–Murakami–Murakami volume conjecture ([`conj:kashaev-volume-conjecture`](#conj:kashaev-volume-conjecture)) sets $q = e^{2\pi i / N}$ for $N \to \infty$. Here $q$ runs over primitive $N$-th roots of unity. As $N$ grows past $n$, $q$ enters the failure locus $\mathrm{NonBaer}(H_n(q))$:
+The Kashaev–Murakami–Murakami volume conjecture ([Kashaev volume conjecture](#conj:kashaev-volume-conjecture)) sets $q = e^{2\pi i / N}$ for $N \to \infty$. Here $q$ runs over primitive $N$-th roots of unity. As $N$ grows past $n$, $q$ enters the failure locus $\mathrm{NonBaer}(H_n(q))$:
 
 - For $N = 2k$ with $k \leq n$: $q = \zeta_{2k}$ sits in the failure locus. Baer-* fails, Wedderburn fails, and the asymptotic-$N$ regime activates.
 - For $N \gg n$: $q = \zeta_N$ may fall outside the failure locus for $H_n(q)$ at fixed $n$. However, as $N \to \infty$, the relevant Hecke order $n$ grows with the colored-Jones level, eventually entering the failure locus.

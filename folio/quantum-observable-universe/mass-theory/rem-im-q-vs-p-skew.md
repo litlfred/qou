@@ -81,7 +81,7 @@ Quantitative consequences differ between the two mechanisms:
 
 ## Cross-references
 
-- [`prop:lusztig-vs-hermitian-bar`](lusztig-vs-hermitian-bar.md) — bar vs Hermitian * involutions; this remark interprets/refines its complex-q discussion
+- [Lusztig bar vs Hermitian-$\ast$](lusztig-vs-hermitian-bar.md) — bar vs Hermitian * involutions; this remark interprets/refines its complex-q discussion
 - [The pre-Archimedean substrate is polymorphic in its base ring](q-zero-complex-extension.md) — substrate polymorphism (admits complex q)
 - [Categorical mass as Markov trace](../mass-endomorphism/categorical-mass-markov.md) — modulus projection definition
 - [Bar-involution and its $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projections](../braids-and-knots/bar-involution.md) — bar projection definition
