@@ -75,9 +75,9 @@ One thing, and it is **not** the criterion above:
 
 * **The Diamond Lemma.** `heckeCompleted_normalForm_unique` and
   `heckeCompleted_threading_cost_unique` (§4bx) route through
-  `normal_form_unique`, which rides on the axioms `reduction_well_founded`
-  (`Basic.lean`) and `local_confluence` (`CompositionLemma.lean`, Bergman 1978
-  §3 Thm 1.2). So *unique normal forms at every `n`* holds **given the Diamond
+  `normal_form_unique`, which rides on the axiom `local_confluence`
+  (`CompositionLemma.lean`, Bergman 1978 §3 Thm 1.2) and the theorem
+  `reduction_well_founded` (`Basic.lean`; an axiom until 2026-11-20). So *unique normal forms at every `n`* holds **given the Diamond
   Lemma**; the GS-basis criterion itself does not depend on either axiom.
 
 Beans qou-auq3, qou-nk5h.
@@ -18762,16 +18762,18 @@ statements hold outright.
 
 **They are not sorry-free in the same sense the criterion is, and the difference
 is worth stating.** `heckeCompleted_isGrobnerShirshovBasis` depends on
-`[propext, Classical.choice, Quot.sound]` alone. The two below inherit two more
-through `normal_form_unique`, both pre-existing library axioms of the Diamond
-Lemma machinery and neither introduced here:
+`[propext, Classical.choice, Quot.sound]` alone. The two below inherit one more
+through `normal_form_unique`, a pre-existing library axiom of the Diamond Lemma
+machinery not introduced here (a second, `reduction_well_founded`, was proved
+on 2026-11-20 and no longer counts):
 
 * `UGB.GrobnerShirshov.local_confluence` — Bergman 1978 §3 Thm 1.2, the step
   from "all S-polynomials resolve" to local confluence, axiomatised because the
   three-case argument needs `AlgElement` subtraction;
-* `UGB.GrobnerShirshov.reduction_well_founded` — Bergman 1978 §2 Thm 1.1,
-  termination, axiomatised because it needs a multiset support representation
-  and Dershowitz–Manna.
+* ~~`UGB.GrobnerShirshov.reduction_well_founded`~~ — Bergman 1978 §2 Thm 1.1,
+  termination. **Proved 2026-11-20** (`Basic.lean`, Dershowitz–Manna on the
+  live support, bean qou-2q7r); listed so the history of this paragraph stays
+  readable.
 
 So what this section establishes is: *given* the Diamond Lemma, the completed
 Hecke system has unique normal forms at every `n`. The GS-basis half of that is
