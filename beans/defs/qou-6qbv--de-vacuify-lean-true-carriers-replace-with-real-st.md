@@ -88,3 +88,8 @@ Took ~10 from a fresh audit run on main 917b69399 (22 non-exempt candidates; 7 s
 - Owner chose option "rewrite on the length filtration". New statement + proof: length filtration multiplicative, Hochschild differential preserves it, E1 = weight-graded HH of nil-Coxeter algebra, E_inf = gr HH*(H_n,H_n). n=3: d2, d4 rank 1, E5 = E_inf, no E2 collapse.
 - Dropped: tr_M as 0-cochain of C(H_n,H_n); six-term mass pairing.
 - STILL OPEN (owner): four consumers now carry caveats, not demoted — mba-step07, mba-step08, prf:bond-order-eq-jet-degree (need E2 collapse), prf:curvature-rank-gb-stratification (needs E0 = J/J). Lean carrier GBSpectralSequence remains abstract (does not formalise the new statement).
+
+## 2026-11-20 — downstream of the rewrite (PR #8654, merged b3e24c8acb)
+- conj:curvature-rank-gb-stratification (demoted; proof -> rem:...-proof-sketch). prop:spectral-sequence-collapse uses repointed to prop:gb-spectral-sequence, retitled (no E1 collapse).
+- E2-collapse group: none needed a differential; now cite the split length filtration. mba-step07's claimed d2=0 witness certificate never existed.
+- STILL OPEN (owner): prose E2-collapse claims in atom-knot-mass-derivation-proof, homological-shell-condensation(+interpretation), jet-tower-uniform-delta-max; four proofs linking the conj with existing gap notes (confinement-categorical, unified-curvature-rank-mass-formula, phi-q-categorical-truncation, plancherel-term-7-formulation).
