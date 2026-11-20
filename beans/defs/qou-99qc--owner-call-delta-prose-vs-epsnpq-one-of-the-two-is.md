@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-20T18:50:00Z
+updated_at: 2026-11-20T18:20:00Z
 parent: qou-10v9
 ---
 
@@ -4183,7 +4183,7 @@ Pre-registered at 3e41aab22b. Lean `QOU/QuarkState/DecayGammaGammaFourStrand.lea
 - Closed form for every reading (order-zero E₀): Q_β/m_e = (q+1)(q²+1)/(2q³)·y₃. y₃ = y_D → −43.2 %; (q²h³)²y_D (γγ base, label A) → 5.6e-5 MeV (−99.99 %); cJ/2 (label B, pair-independent) → +0.33 % (selection against target, as before).
 - Remaining choices (none selected): flavour label; round trip vs amplitude and return path; scale E₀ vs S; Δ_S prefactor h[2]/2; φ₀, φ₁. Bean stays open (rule 13a).
 
-## 2026-11-20T18:50Z — owner rulings D1 = A, D2 = Q_β applied; PR #8586 merged (b47929e610)
+## 2026-11-20T18:20Z — owner rulings D1 = A, D2 = Q_β applied; PR #8586 merged (b47929e610)
 
 - **D1 = A (owner, 18:25).** Scored Q_β on the L2 scorecard = |ε_flavour(V³)|·E₀^tower = **0.325433929 MeV (−58.402 %)**: ε = T³ weight split of the z_D trace Tr(K^{⊗3}·)/[2]³ on W_n − W_p (global [2]³), element V³ = (σ₀σ₁⁻¹)³ (γγ + reading 3, #8564), proton q₀. `per_observable_100x_status.py::_qbeta_ruled_base` evaluates it from q₀, calibrated against `probes/qbeta_flavour_weight_split`. nuc11_interleaved (0.6519) and Δ_S (0.4491) kept as unscored history cells; `element_conflict_open` resolved.
 - **Rows moved** (scored = two-term primary, one-term + Δm_QED −0.3317 keV): Q_β 0.65152 → 0.32510 MeV (1.672e8 → 5.844e8 ppb); m_n 939.43461 → 939.10819 (1.392e5 → 4.866e5 ppb); Δ_pn 1.16252 → 0.83610 MeV (1.011e8 → 3.535e8 ppb). HEADLINE 1/6 unchanged.
