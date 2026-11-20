@@ -74,3 +74,6 @@ Prediction (stated before running): ratio = q⁻⁴ for every word (0.659 at q�
 
 ## RESULT 7 (2026-11-15 20:40Z) — prediction held
 W_corpus = q⁻¹J and W_mirror = qJ confirmed as 4×4 matrices. The Ř coefficient b is the same for σ and σ⁻¹ letters: 2/(q²+1) for the corpus vertex, 2q²/(q²+1) for the mirror. Ratio |A_c|²/|A_m|² = q⁻⁴ exactly for V³, s1s2⁻¹, s1⁴ and (s1s2)⁵ (0.6588 at q₀). Under reading B there is no word-dependent chirality signal; the corpus/mirror difference is only the overall scale q². The V³ tension of RESULTS 5–6 belongs to reading A (emission = W − letter). Which reading is right is still open, so this bean stays open.
+
+## 2026-11-20T22:30Z — the flavour-changing vertex found (PR #8638, bean qou-99qc N1 entry)
+Under strand tracking (P·Ř) the crossing is R₀ + h·E⊗F (σ) / R₀' − h·F⊗E (σ⁻¹). The flavour-changing W term is the h term, which RESULT 1 could not see because it read the Ř transposition. Lepton strand (same doublet assumption as PRE-REG 3) passing the nucleon: n ν → p e⁻ = (q²−1)·Δ²(E), chiral, |M|² = (q²−1)² on isospin ½ (∝ h² at q→1). μ₀ / G_F still underived (no MeV scale emerges); f(Q) computed with Q from label C. Lean `ChargedCurrentW.lean`. Bean stays open.
