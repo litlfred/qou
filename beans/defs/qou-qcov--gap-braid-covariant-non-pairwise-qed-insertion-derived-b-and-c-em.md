@@ -6,7 +6,7 @@ type: task
 priority: high
 created_at: 2026-11-20T08:45:45Z
 updated_at: 2026-11-20T08:45:45Z
-parent: qou-9pl8
+parent: qou-7xl8
 ---
 
 **Open (scope a).** Follows PR #8552 (QOU.BraidsAndKnots.NucleonQEDCovariance, 70 theorems, sorry-free).
