@@ -3,6 +3,9 @@
  "bean": "qou-g0jn",
  "arithmetic": "exact (sympy over Q(q)); q0 used only for display",
  "q0_anchor": "proton (display only)",
+ "q0Anchor": "proton",
+ "q0AnchorReason": "algebra is exact over Q(q); the only numeric column (ratio_sq_at_q0) substitutes Q0, a 16-digit rational of the proton pin",
+ "q0Value": "1.109978582751381",
  "checks": {
   "W_corpus_eq_qinv_J": true,
   "W_mirror_eq_q_J": true

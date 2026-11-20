@@ -262,4 +262,7 @@ if __name__ == "__main__":
     with open(__file__.replace("quantum_g2_colour_stabilizer_probe.py",
                                "quantum-g2-colour-stabilizer-probe.witness.json"), "w") as fh:
         json.dump({"producer": "computations/eightfold/quantum_g2_colour_stabilizer_probe.py",
-                   "bean": "qou-cb3r", "arithmetic": "fractions.Fraction (exact)", "result": res}, fh, indent=1)
+                   "bean": "qou-cb3r", "arithmetic": "fractions.Fraction (exact)",
+                   "q0Anchor": "independent",
+                   "q0AnchorReason": "exact fractions.Fraction at the rational sample points q in {1, 2, 3, 5/2}; the substrate q0 is never read",
+                   "result": res}, fh, indent=1)
