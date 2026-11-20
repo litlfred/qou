@@ -83,3 +83,66 @@ Every selector built from semisimplicity, separability or generic vanishing is
 monotone or constant, and is excluded. The two open rows are where a derivation
 could still succeed; neither has a definition in the corpus that would let the
 spectral sequence be written down.
+
+## 7. The two open readings, tested (owner chose both)
+
+Both are **scope (b)** for the objects tested. Neither reading can select the
+magic numbers.
+
+**Bring-surface lattices.** `computations/probes/bring_s5_sublattice_rank_probe.py`
+(integers and `Fraction` only) builds Bring's curve as the S₅-cover of P¹ with
+signature (2,4,5), checks genus 4 by Riemann–Hurwitz, and gets the character of
+`H_1` from Lefschetz fixed-point counts: `(8,−4,0,2,2,0,−2)` on the classes
+`1,(12),(12)(34),(123),(123)(45),(1234),(12345)`. Inner products give
+`H_1(Bring, Q) = 2·(std ⊗ sgn)`, a single 4-dimensional isotypic type (checked
+again by hand: ⟨χ,std⊗sgn⟩ = 2, ⟨χ,std⟩ = 0, ⟨χ,χ⟩ = 4). So **every S₅-stable
+sublattice of `H_1^{⊕k}` has rank divisible by 4**: 2, 50, 82 and 126 are not
+ranks, and 4 is a rank that is not magic. Lean
+`QOU/ShellCondensation/BringLatticeRanks.lean`: `finrank_dvd_of_isotypic`,
+`four_dvd_finrank_of_isotypic`, `bring_H1_character`, `chiH1_eq_two_stdSgn`,
+`magic_four_dvd_iff`, `four_dvd_ne_saturated`. Not mechanised: the construction
+of `H_1(Bring)` and its S₅ action (the character is an input checked by the
+probe), and the step from lattice rank to the dimension of the rational span.
+Not covered: lattices stable only under a subgroup of S₅.
+
+The corpus never constructs the τ̂ action on `H_1`, and τ̂ is an idempotent, so
+"S₅ × ⟨τ̂⟩" is not a group. A τ̂ commuting with S₅ only shrinks the family of
+stable sublattices, so divisibility by 4 still holds.
+
+**Corpus error found on the way.** `mass-theory/substrate-cohomology-calibration-story.md:3`
+says `H^1 = 2 × standard`. The character above gives `2 × (standard ⊗ sign)`.
+Not edited here.
+
+**Coefficient modules.** `computations/probes/hochschild_coefficient_purity_probe.py`
+(mod 1000003 and 999983, at q = 2 and 3, all four runs agree). `H_n` is
+separable at real `q > 1`, so `HH^k(H_n, M) = 0` for `k ≥ 1` and **every**
+bimodule `M` (Weibel Thm 9.2.11; not formalised, since Mathlib has no
+Hochschild cohomology). The limit page then lives in degree 0, where it is the
+graded `M^A`.
+
+- The literal statement (`p ≥ 0, q > 0`) is true for every `n` and every `M`.
+- Read as purity of `M^A`, it fails for every `n ≥ 2` when `M = H_n` or
+  `H_n^*`: the weight-0 slice is 1-dimensional while `dim M^A = p(n) ≥ 2`. It
+  holds for every `n` for the 1-dimensional bimodules.
+
+Each bimodule tested gives a predicate on `n` that is constant for `n ≥ 2`.
+`not_upward_closed` excludes all of them. Lean
+`QOU/ShellCondensation/CoefficientPurity.lean`:
+`offDiag_vanish_of_higher_vanish`, `finrank_add_le_of_pure`.
+
+## 8. Where this leaves the conjecture
+
+Every reading tested selects nothing, so the conjecture is **open with no
+known reading under which it has content**:
+
+- generic Hecke algebra;
+- Hecke algebra at a root of unity;
+- Białynicki-Birula purity on a smooth projective variety;
+- seven natural coefficient bimodules;
+- S₅-stable Bring lattices.
+
+For any future reading, the binding constraints are three:
+
+- purity, not mere vanishing;
+- a truth set in `n` that is neither upward nor downward closed;
+- for lattice readings, a rank invariant compatible with 2, 50, 82 and 126.
