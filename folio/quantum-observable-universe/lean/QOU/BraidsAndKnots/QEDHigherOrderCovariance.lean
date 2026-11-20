@@ -1,5 +1,6 @@
 import QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm
 import QOU.BraidsAndKnots.BorromeanPairwiseLinking
+import Mathlib.Algebra.Lie.Basic
 
 /-!
 # Two-term QED beyond first order: every derived covariant term vanishes on `V³` through degree 3
@@ -46,17 +47,36 @@ which is forced to be a scalar and reduces to the coloured writhe `Σ Q_aQ_b·2l
   scalar insertion it rescales the whole `F_Bor` term — so a proton value of it is not separable
   from `q₀` by the proton mass alone. **`k₁`, `k₂` are not derived here.**
 
+* **§U — the `U(1)`-coloured invariant.** Colouring the strands by charges `Q_a` with a central
+  `U(1)` rescales each letter by `t^{Q_aQ_b e}` and adds a framing factor `θ^{Q_c² w_c}` per closure
+  component. `V³` is a pure braid (`finalPos_borromean`) whose components all have self-writhe `0`
+  (`selfW_borromean`), so the coloured trace equals the uncoloured trace for every `t`, `θ` and
+  every charge assignment (`u1Trace_borromean`, `u1Trace_borromean_charge_independent`). The
+  coefficient of every charge monomial — `Q₀Q₁Q₂·μ̄²` (`c₃`) and `ΣQ²`, `ΣQ_aQ_b` (`k₁`, `k₂`) — is
+  therefore `0` in this class. Controls: Hopf factor `t^{2Q₀Q₁}` (`u1_hopf_factor`); `σ₁³` merges
+  two strands with self-writhe `3` (`finalPos_sigmaCube`, `selfW_sigmaCube`).
+* **§K — the Lie-algebra reason.** For an invariant form, a trivalent vertex with a central leg
+  has weight `0` (`tripod_central_leg_zero`), and one with all legs along a single direction has
+  weight `0` for any Lie algebra (`tripod_single_direction_zero`); a non-central `𝔰𝔩₂` vertex does
+  not vanish (`tripod_noncentral_nonzero`). So with `𝔲(1)` a central direct summand the charges
+  reach the Kontsevich integral only through struts (linking numbers, framings), never through
+  the `μ̄` trees. The full factorisation of the Kontsevich integral is cited, not formalised.
+
 ## Scope (AGENTS.md (a)/(b))
 
 §E is a structural exclusion **within the class** of local insertions valued in the crossing's own
 algebra `span{1, σ}` (the braid relation is the invariant). §M is exact for that class. §D is a
 statement about the specific double sum written, not about every bilinear non-local functional.
-§C is structural for polynomial charge weights of degree `≤ 2`. None of this excludes the
-degree-4 even term `c₃·Q₁Q₂Q₃·μ̄²` (bean `qou-qc3d`), nor non-local insertions outside §D.
+§C is structural for polynomial charge weights of degree `≤ 2`. §U is exact, and gives `c₃ = 0` and
+`k₁ = k₂ = 0`, **within the class of a central `U(1)` colouring** (charge-diagonal R-matrix plus
+ribbon twist). It does not exclude a `c₃` from a non-central (non-abelian, e.g. electroweak-mixed)
+photon coupling (bean `qou-qc3d`), nor non-local insertions outside §D.
 
 -- Ref: [kassel1995] (Hecke representation of `B₃`; braid relations);
 -- [milnor1957] (`μ̄` invariants; antisymmetry under odd relabelling);
--- [evansberger1992] (hierarchy of linking integrals: second level is `μ̄` when pairwise `lk = 0`).
+-- [evansberger1992] (hierarchy of linking integrals: second level is `μ̄` when pairwise `lk = 0`);
+-- [habegger-masbaum2000] (Milnor invariants are the tree part of the Kontsevich integral);
+-- [barnatan1995] (weight systems from Lie algebras; trivalent vertex ↦ structure constant).
 -/
 
 namespace QOU.BraidsAndKnots.QEDHigherOrderCovariance
@@ -357,5 +377,113 @@ QCD-term multiplier, not a separate electromagnetic scale. -/
 theorem scalar_insertion_shift (a M T fac qcube me : R) :
     (2 * M * (T * (1 + a)) * fac / qcube - 12 * me) - (2 * M * T * fac / qcube - 12 * me)
       = a * (2 * M * T * fac / qcube) := by ring
+
+/-! ## §U. The U(1)-coloured invariant: no charge dependence on `V³`, to all orders
+
+A `U(1)` colouring assigns each strand an integer (in units of `e/3`) charge `Q a`. Because the
+`U(1)` generator is central, its R-matrix on `V_{Q_a} ⊗ V_{Q_b}` is the scalar `t^{Q_a Q_b}` times
+the uncoloured braiding, so each letter is rescaled by `t^{Q_a Q_b e}` — exactly the class of §M.
+The closure adds a framing (ribbon-twist) factor `θ^{Q_a² w_a}` per component, `w_a` the
+self-writhe of that component. We define both, show that `V³` is a pure braid (each strand closes
+on itself), that every component has self-writhe `0`, and conclude that the full coloured trace is
+the uncoloured trace for every `t`, `θ` and every charge assignment. Hence **every charge monomial
+— the cubic `Q₀Q₁Q₂` multiplying `μ̄²` (bean `qou-qc3d`) and the self-energy `ΣQ_a²` (bean
+`qou-bn8e`) alike — has coefficient `0`** in this class.
+-/
+
+/-- The labelling after reading the whole word (the underlying permutation of the braid). -/
+def finalPos : List Letter → List ℕ → List ℕ
+  | [], pos => pos
+  | (i, _) :: w, pos => finalPos w (swapAt pos i)
+
+/-- `V³` is a pure braid: each strand closes on itself, so its components are the labels. -/
+theorem finalPos_borromean : finalPos borWord [0, 1, 2] = [0, 1, 2] := by decide
+
+/-- Control: `σ₁³` is not pure; strands `0`, `1` close into one component. -/
+theorem finalPos_sigmaCube : finalPos [(0, 1), (0, 1), (0, 1)] [0, 1, 2] = [1, 0, 2] := by decide
+
+/-- Self-writhe of component `a`: signed crossings whose two strands both lie in `a`. -/
+def selfW (comp : ℕ → ℕ) (a : ℕ) : List Letter → List ℕ → ℤ
+  | [], _ => 0
+  | (i, e) :: w, pos =>
+      (if comp (pairAt pos i).1 = a ∧ comp (pairAt pos i).2 = a then e else 0)
+        + selfW comp a w (swapAt pos i)
+
+/-- On `V³` (components = labels) each of the three components has self-writhe `0`. -/
+theorem selfW_borromean :
+    selfW id 0 borWord [0, 1, 2] = 0 ∧ selfW id 1 borWord [0, 1, 2] = 0 ∧
+      selfW id 2 borWord [0, 1, 2] = 0 := by
+  decide
+
+/-- Control: in `σ₁³` the merged component `0` (strands `0`, `1`) has self-writhe `3`. -/
+theorem selfW_sigmaCube :
+    selfW (fun x => if x = 1 then 0 else x) 0 [(0, 1), (0, 1), (0, 1)] [0, 1, 2] = 3 := by
+  decide
+
+/-- The `U(1)` pair weight `t^{Q_a Q_b}`. -/
+def u1Weight (t : R) (Q : ℕ → ℤ) : ℕ → ℕ → R := fun a b => t ^ (Q a * Q b)
+
+/-- The framing factor `Π_a θ^{Q_a² w_a}` over the three components. -/
+def u1Twist (θ : R) (Q : ℕ → ℤ) (comp : ℕ → ℕ) (w : List Letter) (pos : List ℕ) : R :=
+  θ ^ (Q 0 ^ 2 * selfW comp 0 w pos) * θ ^ (Q 1 ^ 2 * selfW comp 1 w pos)
+    * θ ^ (Q 2 ^ 2 * selfW comp 2 w pos)
+
+/-- The `U(1)`-coloured trace: framing factor times the trace of the rescaled word. -/
+def u1Trace (q t θ : R) (Q : ℕ → ℤ) (comp : ℕ → ℕ) (w : List Letter) (pos : List ℕ) : R :=
+  u1Twist θ Q comp w pos * trace (defWordU q (u1Weight t Q) w pos)
+
+/-- **All orders, all charges:** the `U(1)`-coloured trace of `V³` is the uncoloured trace. -/
+theorem u1Trace_borromean (q t θ : R) (ht : t ≠ 0) (Q : ℕ → ℤ) :
+    u1Trace q t θ Q id borWord [0, 1, 2] = trace (wordL q borWord) := by
+  have hu : ∀ a b, u1Weight t Q a b = u1Weight t Q b a := by
+    intro a b; simp [u1Weight, mul_comm]
+  have hne : ∀ a b, u1Weight t Q a b ≠ 0 := fun a b => zpow_ne_zero _ ht
+  rw [u1Trace, trace_defWordU_borromean q _ hu (hne 0 1) (hne 0 2) (hne 1 2)]
+  simp [u1Twist, selfW_borromean.1, selfW_borromean.2.1, selfW_borromean.2.2]
+
+/-- Corollary: the coloured value does not depend on the charges at all. -/
+theorem u1Trace_borromean_charge_independent (q t θ : R) (ht : t ≠ 0) (Q Q' : ℕ → ℤ) :
+    u1Trace q t θ Q id borWord [0, 1, 2] = u1Trace q t θ Q' id borWord [0, 1, 2] := by
+  rw [u1Trace_borromean q t θ ht Q, u1Trace_borromean q t θ ht Q']
+
+/-- Control: on the Hopf word the coloured factor is `t^{2 Q₀ Q₁}`, which does see the charges. -/
+theorem u1_hopf_factor (t : R) (Q : ℕ → ℤ) :
+    facU (u1Weight t Q) hopfWord [0, 1, 2] = (t ^ (Q 0 * Q 1)) ^ 2 := by
+  rw [facU_hopf _ (by intro a b; simp [u1Weight, mul_comm])]
+  rfl
+
+/-! ## §K. Why: a central `U(1)` leg kills every trivalent vertex
+
+In the Kontsevich-integral picture the coloured invariant is a weight system evaluated on
+`log Z`, whose diagrams are struts (chords, weighted by linking numbers) and connected trivalent
+graphs (the `μ̄` tree `Y` and beyond). A trivalent vertex is weighted by `B(x, ⁅y, z⁆)` for an
+invariant form `B`. If one leg carries a central element `e` — the `U(1)` direction of
+`𝔲(1) ⊕ 𝔤` — the weight is `0`; and a vertex with all three legs along one direction vanishes
+for every Lie algebra, central or not. So charge dependence enters only through struts, i.e.
+through linking numbers and framings, which are `0` on `V³` (§U). This is the algebraic reason; the
+full factorisation of the Kontsevich integral is cited, not formalised here.
+-/
+
+/-- A central leg kills the trivalent weight, given an invariant bilinear form. -/
+theorem tripod_central_leg_zero {K L : Type*} [CommRing K] [LieRing L] [LieAlgebra K L]
+    (B : L →ₗ[K] L →ₗ[K] K) (hinv : ∀ x y z : L, B x ⁅y, z⁆ = B ⁅x, y⁆ z)
+    (e : L) (he : ∀ y : L, ⁅e, y⁆ = 0) (y z : L) :
+    B e ⁅y, z⁆ = 0 ∧ B y ⁅e, z⁆ = 0 ∧ B y ⁅z, e⁆ = 0 := by
+  refine ⟨?_, ?_, ?_⟩
+  · rw [hinv, he]; simp
+  · rw [he]; simp
+  · rw [← lie_skew, he]; simp
+
+/-- A trivalent vertex with all three legs along one direction has weight `0`, for any `B`. -/
+theorem tripod_single_direction_zero {K L : Type*} [CommRing K] [LieRing L] [LieAlgebra K L]
+    (B : L →ₗ[K] L →ₗ[K] K) (e : L) : B e ⁅e, e⁆ = 0 := by
+  simp
+
+/-- Negative control: a non-central leg need not vanish. In `𝔰𝔩`-type brackets realised on
+`2 × 2` matrices with the trace form, `tr(X ⁅Y, Z⁆) ≠ 0` for `X = E₁₁ − E₂₂`, `Y = E₁₂`, `Z = E₂₁`. -/
+theorem tripod_noncentral_nonzero :
+    Matrix.trace (!![1, 0; 0, -1] * (!![0, 1; 0, 0] * !![0, 0; 1, 0]
+      - !![0, 0; 1, 0] * !![0, 1; 0, 0]) : Matrix (Fin 2) (Fin 2) ℚ) ≠ 0 := by
+  simp [Matrix.trace, Fin.sum_univ_two]
 
 end QOU.BraidsAndKnots.QEDHigherOrderCovariance
