@@ -15,7 +15,11 @@
   "kind": "conjecture",
   "title": "Plancherel completeness for the EW/Higgs $\\{T(2,4), T(2,6), T(2,8)\\}$ idempotent decomposition",
   "uses": [
-    "papers/quantum-observable-universe/blocks/thm-em-spectral-completeness"
+    "papers/quantum-observable-universe/blocks/thm-em-spectral-completeness",
+    "papers/quantum-observable-universe/blocks/thm-hoefsmit-ew-cell-content",
+    "papers/quantum-observable-universe/blocks/conj-g-action-on-substrate",
+    "papers/quantum-observable-universe/blocks/prop-torus-embeddable-complete",
+    "papers/quantum-observable-universe/blocks/prop-bar-t-duality-substrate"
   ],
   "tags": [
     "tier:S",
@@ -27,8 +31,7 @@
     "nv-1",
     "open-problem"
   ],
-  "leanRef": "qou:QOU.BraidKnot.WeakSpectralCompleteness",
+  "leanRef": "qou:QOU.Conjectures.WeakSpectralCompleteness",
   "text": "weak-spectral-completeness.md",
-  "leanSource": "weak-spectral-completeness.lean",
   "provenance": "authored"
 }

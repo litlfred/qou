@@ -13,14 +13,12 @@
   ],
   "label": "thm:ew-triplet-charge-spin-from-involution",
   "kind": "theorem",
-  "title": "Charge and spin of the electroweak triplet are forced by the spin-involution sector selection",
+  "title": "Sector label and charge of the electroweak triplet computed through the spin involution",
   "uses": [
     "papers/quantum-observable-universe/blocks/def-spin-involution",
     "papers/quantum-observable-universe/blocks/thm-hoefsmit-ew-cell-content",
     "papers/quantum-observable-universe/blocks/prop-self-dual-higgs-real-volume",
-    "papers/quantum-observable-universe/blocks/prop-vdw-pskew-isolation",
-    "papers/quantum-observable-universe/blocks/def-coulomb-charge",
-    "papers/quantum-observable-universe/blocks/rem-chirality-trefoil-electron-positron"
+    "papers/quantum-observable-universe/blocks/prop-vdw-pskew-isolation"
   ],
   "tags": [
     "electroweak",
