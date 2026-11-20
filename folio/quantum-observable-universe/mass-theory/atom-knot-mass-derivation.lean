@@ -167,22 +167,23 @@ theorem categorical_mass_invariant_finite (T_w : Type*) :
     CategoricalMassInvariantFinite T_w :=
   fun h _ => h
 
-/-- Mass identity (Archimedean realization).
+/-- Mass identity (Archimedean realization), sign part.
 
-    Concrete predicate: `B_pred ≥ 0` AND `|B_pred − B_AME| ≤ B_AME/4`
-    — the predicted binding energy is non-negative and within 25 %
-    of the AME 2020 reference value.  Witnessed for every AME-
-    validated derivation in `mass-table-ppb.witness.json` (10 light
-    atoms ²H–⁴⁰Ca; max relative error ≈ 19.5 % at ⁴⁰Ca).
+    Concrete predicate: `B_pred ≥ 0`, the predicted binding energy is
+    non-negative.
 
-    Genuine content (`B_pred = m_e · M(𝔥)|_{q = q_0}` with a
-    categorical Archimedean realisation functor) awaits Mathlib
-    formalisation of the realisation functor; the 25 %-tolerance
-    bound is the empirical version that catches predictions which
-    are wildly off without forcing PPB precision. -/
+    2026-11-20 (owner, bean `qou-w8cg`): this predicate also required
+    `|B_pred − B_AME| ≤ B_AME/4`. The largest recorded miss is 19.5 % (⁴⁰Ca),
+    so the 25 % bound was sized to the data — a fit under the no-fitting rule.
+    It is dropped. The AME comparison is kept as recorded data
+    (`ameRelativeResidual`), with no bound asserted. -/
 def MassIdentity (cert : MassDerivationCertificate) : Prop :=
-  cert.B_pred_MeV ≥ 0 ∧
-    |cert.B_pred_MeV - cert.B_AME_MeV| ≤ cert.B_AME_MeV / 4
+  cert.B_pred_MeV ≥ 0
+
+/-- The recorded relative residual `|B_pred − B_AME| / B_AME` against AME 2020.
+    Data for comparison; no theorem bounds it. -/
+noncomputable def ameRelativeResidual (cert : MassDerivationCertificate) : ℝ :=
+  |cert.B_pred_MeV - cert.B_AME_MeV| / cert.B_AME_MeV
 
 -- **Substrate axiom (S2).** Yekutieli + collapse + Archimedean
 -- realization ⇒ the mass identity `B(𝔥) := m_e · M(𝔥)|_{q=q_0}`
@@ -224,40 +225,53 @@ universe u
     by `PUnit`, and `MassIdentity cert` does not mention `T_w` at all. So the
     old field entailed the unconditional claim.
 
-    The class now carries a predicate `IsPipelineDerived` marking the
-    certificates the categorical chain actually emits, and the mass identity's
-    **two conjuncts separately**. Neither field is the conclusion; the theorem
-    composes them. -/
+    The class carries a predicate `IsPipelineDerived` marking the
+    certificates the categorical chain actually emits, and the realisation
+    `B = m_e · M(𝔥)` with `m_e ≥ 0` and `M(𝔥) ≥ 0`. Non-negativity of `B` is
+    derived from these, not stored.
+
+    2026-11-20 (owner, bean `qou-w8cg`): the field `residual_bound`
+    (`|B_pred − B_AME| ≤ B_AME/4`) is removed as a fitted tolerance. Without it
+    a lone `pred_nonneg` field would be the conclusion verbatim, so the class
+    now states the realisation the docstring above names instead. -/
 class AtomKnotMassDerivationConjecture where
   /-- The certificates the derivation pipeline emits, as opposed to arbitrary
       tuples of numbers of the same type. Left abstract: which certificates
       those are is the content of the pipeline, not of this class. -/
   IsPipelineDerived : MassDerivationCertificate → Prop
-  /-- **H1.** The pipeline does not predict a negative binding energy. -/
-  pred_nonneg : ∀ cert, IsPipelineDerived cert → cert.B_pred_MeV ≥ 0
-  /-- **H2.** Its residual against AME 2020 is within a quarter of the
-      reference value. -/
-  residual_bound : ∀ cert, IsPipelineDerived cert →
-    |cert.B_pred_MeV - cert.B_AME_MeV| ≤ cert.B_AME_MeV / 4
+  /-- The categorical mass invariant `M(𝔥)|_{q = q₀}` of a certificate. -/
+  massInvariant : MassDerivationCertificate → ℝ
+  /-- The electron mass scale `m_e` (MeV), CAL-1. -/
+  electronMass : ℝ
+  /-- **H1.** `m_e ≥ 0`. -/
+  electronMass_nonneg : 0 ≤ electronMass
+  /-- **H2.** Archimedean realisation: `B = m_e · M(𝔥)` on pipeline output. -/
+  realisation : ∀ cert, IsPipelineDerived cert →
+    cert.B_pred_MeV = electronMass * massInvariant cert
+  /-- **H3.** The categorical mass invariant is non-negative on pipeline output. -/
+  massInvariant_nonneg : ∀ cert, IsPipelineDerived cert → 0 ≤ massInvariant cert
 
 /-- **Substrate theorem (S2).** Conditional on
     `AtomKnotMassDerivationConjecture`, a **pipeline-derived** certificate
     satisfies the mass identity.
 
-    Derived by composing H1 and H2 rather than projecting a field. The
-    `IsPipelineDerived` hypothesis is not bookkeeping: without it the claim is
-    false, which `not_unrestrictedS2` proves. The two original hypotheses are
-    retained so the statement still matches the `.md`, and are shown free by
-    `gbSpectralSequenceCollapseAtE2_holds` and
-    `yekutieli_of_inhabited`. -/
+    Derived from H1–H3 (`B = m_e · M` with both factors non-negative) rather
+    than projecting a field. The `IsPipelineDerived` hypothesis is not
+    bookkeeping: without it the claim is false, which `not_unrestrictedS2`
+    proves. The two original hypotheses are retained so the statement still
+    matches the `.md`, and are shown free by
+    `gbSpectralSequenceCollapseAtE2_holds` and `yekutieli_of_inhabited`. -/
 theorem atom_knot_mass_derivation [h : AtomKnotMassDerivationConjecture]
     (cert : MassDerivationCertificate) (hcert : h.IsPipelineDerived cert)
     (T_w : Type u) :
     YekutieliFiniteSliceMultiplicativeTrace T_w →
     GbSpectralSequenceCollapseAtE2 →
-    MassIdentity cert :=
+    MassIdentity cert := by
   -- Ref: [leitner2026] conj:atom-knot-mass-derivation
-  fun _ _ => ⟨h.pred_nonneg cert hcert, h.residual_bound cert hcert⟩
+  intro _ _
+  show cert.B_pred_MeV ≥ 0
+  rw [h.realisation cert hcert]
+  exact mul_nonneg h.electronMass_nonneg (h.massInvariant_nonneg cert hcert)
 
 /-- The GB-collapse hypothesis is discharged by `rfl`: `gbSpectralCollapsePage`
     is *defined* to be `2`, so `GbSpectralSequenceCollapseAtE2` is `2 = 2`.
@@ -278,7 +292,8 @@ theorem yekutieli_of_inhabited (T_w : Type*) [Inhabited T_w] :
     recorded `B_pred_MeV` value and prove `MassIdentity` directly
     (no recourse to the substrate axiom).  `MassIdentity` reduces
     to `B_pred_MeV ≥ 0` which is `Decidable` for any concrete
-    real-literal cert — we close each by `norm_num`.  These are
+    real-literal cert — we close each by `norm_num`. (Until 2026-11-20 these
+    also proved the 25 % AME bound; that bound is removed as fitted.)  These are
     `theorem`s, not `axiom`-instances.
 
     Ref: `computations/mass-table-ppb.witness.json`. -/
@@ -305,110 +320,80 @@ def deuterium_cert : MassDerivationCertificate :=
   witnessCert "2H" 1 2 2.2488207948647343 2.22456612 10903104
 
 theorem mass_identity_deuterium : MassIdentity deuterium_cert := by
-  refine ⟨?_, ?_⟩
-  · show (2.2488207948647343 : ℝ) ≥ 0
-    norm_num
-  · show |(2.2488207948647343 : ℝ) - 2.22456612| ≤ 2.22456612 / 4
-    rw [abs_sub_le_iff]; constructor <;> norm_num
+  show (2.2488207948647343 : ℝ) ≥ 0
+  norm_num
 
 /-- Tritium witness certificate (³H, B_pred ≈ 8.4686 MeV). -/
 def tritium_cert : MassDerivationCertificate :=
   witnessCert "3H" 1 3 8.46859838653302 8.4817984 (-1556275)
 
 theorem mass_identity_tritium : MassIdentity tritium_cert := by
-  refine ⟨?_, ?_⟩
-  · show (8.46859838653302 : ℝ) ≥ 0
-    norm_num
-  · show |(8.46859838653302 : ℝ) - 8.4817984| ≤ 8.4817984 / 4
-    rw [abs_sub_le_iff]; constructor <;> norm_num
+  show (8.46859838653302 : ℝ) ≥ 0
+  norm_num
 
 /-- Helium-3 witness certificate (³He, B_pred ≈ 7.4889 MeV). -/
 def helium3_cert : MassDerivationCertificate :=
   witnessCert "3He" 2 3 7.48891930977096 7.7180375 (-29686069)
 
 theorem mass_identity_helium3 : MassIdentity helium3_cert := by
-  refine ⟨?_, ?_⟩
-  · show (7.48891930977096 : ℝ) ≥ 0
-    norm_num
-  · show |(7.48891930977096 : ℝ) - 7.7180375| ≤ 7.7180375 / 4
-    rw [abs_sub_le_iff]; constructor <;> norm_num
+  show (7.48891930977096 : ℝ) ≥ 0
+  norm_num
 
 /-- Helium-4 witness certificate (⁴He, B_pred ≈ 29.956 MeV). -/
 def helium4_cert : MassDerivationCertificate :=
   witnessCert "4He" 2 4 29.95567723908384 28.2956912 58665683
 
 theorem mass_identity_helium4 : MassIdentity helium4_cert := by
-  refine ⟨?_, ?_⟩
-  · show (29.95567723908384 : ℝ) ≥ 0
-    norm_num
-  · show |(29.95567723908384 : ℝ) - 28.2956912| ≤ 28.2956912 / 4
-    rw [abs_sub_le_iff]; constructor <;> norm_num
+  show (29.95567723908384 : ℝ) ≥ 0
+  norm_num
 
 /-- Beryllium-8 witness certificate (⁸Be, B_pred ≈ 62.338 MeV). -/
 def beryllium8_cert : MassDerivationCertificate :=
   witnessCert "8Be" 4 8 62.338343981930535 56.49951 103343091
 
 theorem mass_identity_beryllium8 : MassIdentity beryllium8_cert := by
-  refine ⟨?_, ?_⟩
-  · show (62.338343981930535 : ℝ) ≥ 0
-    norm_num
-  · show |(62.338343981930535 : ℝ) - 56.49951| ≤ 56.49951 / 4
-    rw [abs_sub_le_iff]; constructor <;> norm_num
+  show (62.338343981930535 : ℝ) ≥ 0
+  norm_num
 
 /-- Carbon-12 witness certificate (¹²C, B_pred ≈ 97.148 MeV). -/
 def carbon12_cert : MassDerivationCertificate :=
   witnessCert "12C" 6 12 97.1480002285401 92.16175 54103250
 
 theorem mass_identity_carbon12 : MassIdentity carbon12_cert := by
-  refine ⟨?_, ?_⟩
-  · show (97.1480002285401 : ℝ) ≥ 0
-    norm_num
-  · show |(97.1480002285401 : ℝ) - 92.16175| ≤ 92.16175 / 4
-    rw [abs_sub_le_iff]; constructor <;> norm_num
+  show (97.1480002285401 : ℝ) ≥ 0
+  norm_num
 
 /-- Oxygen-16 witness certificate (¹⁶O, B_pred ≈ 134.385 MeV). -/
 def oxygen16_cert : MassDerivationCertificate :=
   witnessCert "16O" 8 16 134.38464597891252 127.61929 53012017
 
 theorem mass_identity_oxygen16 : MassIdentity oxygen16_cert := by
-  refine ⟨?_, ?_⟩
-  · show (134.38464597891252 : ℝ) ≥ 0
-    norm_num
-  · show |(134.38464597891252 : ℝ) - 127.61929| ≤ 127.61929 / 4
-    rw [abs_sub_le_iff]; constructor <;> norm_num
+  show (134.38464597891252 : ℝ) ≥ 0
+  norm_num
 
 /-- Neon-20 witness certificate (²⁰Ne, B_pred ≈ 174.048 MeV). -/
 def neon20_cert : MassDerivationCertificate :=
   witnessCert "20Ne" 10 20 174.0482812330478 160.64486 83435108
 
 theorem mass_identity_neon20 : MassIdentity neon20_cert := by
-  refine ⟨?_, ?_⟩
-  · show (174.0482812330478 : ℝ) ≥ 0
-    norm_num
-  · show |(174.0482812330478 : ℝ) - 160.64486| ≤ 160.64486 / 4
-    rw [abs_sub_le_iff]; constructor <;> norm_num
+  show (174.0482812330478 : ℝ) ≥ 0
+  norm_num
 
 /-- Magnesium-24 witness certificate (²⁴Mg, B_pred ≈ 216.139 MeV). -/
 def magnesium24_cert : MassDerivationCertificate :=
   witnessCert "24Mg" 12 24 216.1389059909459 198.2569 90196134
 
 theorem mass_identity_magnesium24 : MassIdentity magnesium24_cert := by
-  refine ⟨?_, ?_⟩
-  · show (216.1389059909459 : ℝ) ≥ 0
-    norm_num
-  · show |(216.1389059909459 : ℝ) - 198.2569| ≤ 198.2569 / 4
-    rw [abs_sub_le_iff]; constructor <;> norm_num
+  show (216.1389059909459 : ℝ) ≥ 0
+  norm_num
 
 /-- Calcium-40 witness certificate (⁴⁰Ca, B_pred ≈ 408.771 MeV). -/
 def calcium40_cert : MassDerivationCertificate :=
   witnessCert "40Ca" 20 40 408.771300060167 342.05212 195055596
 
 theorem mass_identity_calcium40 : MassIdentity calcium40_cert := by
-  refine ⟨?_, ?_⟩
-  · show (408.771300060167 : ℝ) ≥ 0
-    norm_num
-  · show |(408.771300060167 : ℝ) - 342.05212| ≤ 342.05212 / 4
-    rw [abs_sub_le_iff]; constructor <;> norm_num
+  show (408.771300060167 : ℝ) ≥ 0
+  norm_num
 
 /-! ## Upstream-substrate-bridge cross-reference (item #5)
 
@@ -479,7 +464,7 @@ def refutingCert : MassDerivationCertificate :=
 theorem not_unrestrictedS2 : ¬ UnrestrictedS2 := by
   intro h
   have hm := unrestrictedS2_entails_all h refutingCert
-  have hneg : (-1 : ℝ) ≥ 0 := hm.1
+  have hneg : (-1 : ℝ) ≥ 0 := hm
   linarith
 
 /-- All 10 witness-validated atoms satisfy `MassIdentity`,
