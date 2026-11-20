@@ -224,3 +224,34 @@ restriction of the quantum trace reaches it; the values are z_D, 1/3, 0 and 1.
 **What that leaves for label C.** A derivation must explain why the decay functional weights the isospin-3/2 channel by
 ≈ [2]²·[2]_{q²}/[3]² (or an E₀-dependent equivalent), e.g. an E/F round trip through an intermediate isospin-3/2 state.
 That is the next research target, and it is the same object label B points at, now with its physical meaning named.
+
+## 11. Option 2, first attempt: the single-quark E/F round trip (scope-(a) negative)
+
+β decay changes **one** quark d → u, so the label-C transition is a single-site raising operator E_k on (ℂ²)^⊗3. The
+coproduct Δ(E) = Σ E_k (K on the right) commutes with H₃ (checked) and therefore cannot leave the nucleon's isospin-½
+sector. A single-site E_k can, so it is the natural route "through isospin 3/2".
+
+Probe `computations/qbeta/qbeta_label_c_single_quark_flip_probe.py`, exact over ℚ(q): A = Σ_k E_k P_n F_k, with P_n the
+nucleon (2,1) block at T³ = −½, and τ_A(J) = Tr(K^⊗3 A J)/Tr(K^⊗3 A).
+
+* τ_A(J) = q⁴ / (2(q⁴+q²+1)) = 0.20239 at the proton pin, identical for the bare and the coproduct-dressed site operators.
+* The (3)-block (isospin-3/2) fraction of A is 0.169 (bare) / 0.168 (dressed), i.e. ≈ 1/6, the classical branching.
+* Q_β = 0.17808 MeV, **−77.2 %**.
+
+**Scope (a):** this construction, alone, misses by −77 %. It does not exclude the isospin-3/2 channel; it measures that a
+single-quark flip from the nucleon sends only ≈ 1/6 of its weight there, while CODATA needs ≈ 0.889 on that block.
+
+**Status of the whole arc (one table).** All values are y₃ = τ(J), and Q_β uses the order-zero E₀:
+
+| construction | y₃ | Q_β | status |
+|---|---|---|---|
+| ruled ε: Markov trace at z_D (= label-A round trip, = whole-space quantum trace) | 0.5054 | −43.2 % | ruled 2026-09-08; now explained by two proved identities |
+| augmentation / isospin-3/2 block alone | 1 | +12.5 % | admissible |
+| label-B round trip through the strand-4 γγ vertex (J₄ lines) | 0.8921 | **+0.33 %** | proved identity; label is isospin multiplicity, not n↔p; not adopted |
+| label C: one T³ charge sector | 1/3 | −62.5 % | measured |
+| label C: nucleon isospin-½ block | 0 | 0 | proved (χ₍₂,₁₎(Δ_S) = 0) |
+| label C: single-quark E/F round trip | 0.2024 | −77.2 % | measured, this section |
+| needed for CODATA | 0.8891 | 0 | — |
+
+The only construction near the measurement is the strand-4 (J₄) round trip. Its weight sits on the isospin-3/2 block,
+which Q_β alone sees. Every label-C construction tried so far weights that block at ≤ 1/3.
