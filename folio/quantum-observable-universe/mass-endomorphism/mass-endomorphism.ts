@@ -85,6 +85,7 @@ export default chapter({
             "homological-shell-condensation",
             "homological-shell-condensation-motivation",
             "homological-shell-condensation-interpretation",
+            "hecke-length-limit-page-vanishing",
             "qou-motivic-galois-instance",
             "qou-motivic-galois-instance-verification",
             "qou-motivic-galois-instance-per-cell",
