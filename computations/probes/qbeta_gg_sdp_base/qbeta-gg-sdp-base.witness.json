@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-20T14:17:31.745700+00:00",
-  "commitSha": "fa294457f89ee724c73a3c13413856031fb07d46",
+  "computedAt": "2026-11-20T18:09:26.575453+00:00",
+  "commitSha": "a8d448c2fb16f5b8b5c881fbbc170d8eca054c08",
   "assertions": [
     {
       "name": "P0.tau1",
@@ -110,11 +110,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4079,
+  "durationMs": 5734,
   "computation": "qbeta-gg-sdp-base",
   "scriptFile": "qbeta_gg_sdp_base_probe.py",
   "scriptHash": "f074f4fcc847",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "a8d448c2fb16f5b8b5c881fbbc170d8eca054c08",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -2560,21 +2560,21 @@
         "n": "V^6",
         "eps_delta": "-0.00430514864128111242915449168691",
         "Q_beta_MeV": "0.018199944224524838689",
-        "vs_codata_pct": "-97.673633"
+        "vs_codata_pct": "-97.673634"
       },
       {
         "p": "V^3",
         "n": "V^9",
         "eps_delta": "-0.0114525788212811413466465630422",
         "Q_beta_MeV": "0.048415586345995566776",
-        "vs_codata_pct": "-93.811387"
+        "vs_codata_pct": "-93.811388"
       },
       {
         "p": "V^6",
         "n": "V^3",
         "eps_delta": "0.00430514864128111242915449168691",
         "Q_beta_MeV": "0.018199944224524838689",
-        "vs_codata_pct": "-97.673633"
+        "vs_codata_pct": "-97.673634"
       },
       {
         "p": "V^6",
@@ -2588,21 +2588,21 @@
         "n": "V^9",
         "eps_delta": "-0.00714743018000002891749207135526",
         "Q_beta_MeV": "0.030215642121470728087",
-        "vs_codata_pct": "-96.137754"
+        "vs_codata_pct": "-96.137755"
       },
       {
         "p": "V^9",
         "n": "V^3",
         "eps_delta": "0.0114525788212811413466465630422",
         "Q_beta_MeV": "0.048415586345995566776",
-        "vs_codata_pct": "-93.811387"
+        "vs_codata_pct": "-93.811388"
       },
       {
         "p": "V^9",
         "n": "V^6",
         "eps_delta": "0.00714743018000002891749207135526",
         "Q_beta_MeV": "0.030215642121470728087",
-        "vs_codata_pct": "-96.137754"
+        "vs_codata_pct": "-96.137755"
       },
       {
         "p": "V^9",
