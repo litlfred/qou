@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-12T07:13:33.771154+00:00",
-  "commitSha": "396baaeb4ead9a206031e86665f989d503ab0cc3",
+  "computedAt": "2026-11-20T14:14:42.245947+00:00",
+  "commitSha": "4bc0098fd4bf97fbdd60959e7d26a22f150107f5",
   "assertions": [
     {
       "name": "registry value is route-independent (does not inherit the stale proton)",
@@ -41,11 +41,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "qbeta-cal2-proxy-dataset-delta",
   "scriptFile": "qbeta_cal2_proxy_dataset_delta_probe.py",
-  "scriptHash": "5e3d9deede74",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "40fcc179e163",
+  "scriptCommitSha": "b1ae74c238130718f48ee2decb9e097122202332",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -53,14 +53,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [
@@ -124,9 +125,14 @@
     "QN2_derived_tier_MeV": "0.782334410277840137760143636388",
     "QN2_residual_vs_ame_ppb": "1278.58254211303610775920717688493177173470744682505157911613",
     "QN2_residual_vs_registry_ppb": "1087.73020163158999234076510503781635312310891701796603400981",
-    "L2_target_ppb": "7.79718713534169530098426960955176387008705150403842435506297",
+    "L2_target_fixed_sigma_ppb": "7.79718713534169530098426960955176387008705150403842435506297",
+    "L2_miss_vs_ame_fixed_sigma": "163.979973793075433383014427801452762393205785610989303416284",
+    "L2_miss_vs_registry_fixed_sigma": "139.502898000398256136036827316925089588945237516732967496920",
+    "L2_target_ame_ppb": "7.79718713534169530098426960955176387008705150403842435506297",
+    "L2_target_registry_ppb": "4.85726319007906545510778262179208100330548822458430815174792",
     "L2_miss_vs_ame": "163.979973793075433383014427801452762393205785610989303416284",
-    "L2_miss_vs_registry": "139.502898000398256136036827316925089588945237516732967496920"
+    "L2_miss_vs_registry": "223.938905318796233661655019034404605025550117864964611189655",
+    "L2_direction_note": "The two normalisations DISAGREE IN SIGN. Under a fixed (AME) sigma the miss improves; under each determination's own sigma -- which is what per_observable_100x_status.py reports and is authoritative -- it gets WORSE, because the registry is the more precise determination and its own 100x target tightens ~1.6x, faster than the residual improves. Measured on the dashboard: Q_beta miss 164.0x -> 223.9x. Neither number is a reason to choose a dataset."
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

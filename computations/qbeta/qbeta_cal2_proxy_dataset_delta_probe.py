@@ -37,8 +37,12 @@ WHAT IT MEASURES
      downstream move is a measured table rather than a propagated estimate.
      `c_3` is amplified by `1/u^3` with `u = b*hbar_q^2 ~ 0.00852`, so a 191 ppb
      input move is a percent-level output move.
-  4. The L2 dashboard `Q_beta` row under each: residual in ppb against the
-     per-observable 100x target.
+  4. The L2 dashboard `Q_beta` row under each, under BOTH normalisations --
+     a fixed (AME) sigma, which isolates the residual, and each
+     determination's own sigma, which is what `per_observable_100x_status.py`
+     reports and is authoritative. They DISAGREE IN SIGN; see the note in
+     section 4 of the body. Reporting only the first is how this probe got
+     the direction backwards on its first run.
 
 CONVENTION SCOPE (load-bearing)
 -------------------------------
@@ -60,7 +64,7 @@ PRECISION
 mpmath end to end at the corpus compute precision; `float()` appears only
 inside f-strings for display (AGENTS.md "PROBES ARE NOT EXEMPT").
 
--- Ref: [manuscript] beans qou-0e2p, qou-cds1, qou-99qc; PRs #7164, #7118;
+-- Ref: [leitner2026] beans qou-0e2p, qou-cds1, qou-99qc; PRs #7164, #7118;
    docs/audits/2026-08-09-codata-registry-vintage-straddle.md
 """
 from __future__ import annotations
@@ -244,23 +248,58 @@ def main() -> int:
                    L_ame["Q_N2"] == L_reg["Q_N2"]))
     err_a = (QN2 - ame) / ame * mpf(10) ** 9
     err_r = (QN2 - reg) / reg * mpf(10) ** 9
-    target_ppb = ame_err / ame * mpf(10) ** 9 / 100  # 100x the experimental sigma
+
+    # TWO different targets, and conflating them inverts the conclusion.
+    #
+    # (i) FIXED-sigma: hold the 100x target at the AME sigma for both. This
+    #     isolates the effect of the RESIDUAL alone, and it is NOT what the
+    #     dashboard reports.
+    # (ii) EACH-sigma: each determination is scored against 1/100 of ITS OWN
+    #     experimental sigma. This is what `per_observable_100x_status.py`
+    #     computes and is the authoritative L2 metric.
+    #
+    # They disagree in DIRECTION, because the registry value is the more
+    # precise determination (sigma 3.8e-7 vs AME's 6.1e-7), so switching to
+    # it tightens its own target by ~1.6x -- faster than the residual
+    # improves. Under (i) the miss looks better; under (ii), the real one, it
+    # gets WORSE. Reporting only (i) is how this probe first got it backwards.
+    target_fixed = ame_err / ame * mpf(10) ** 9 / 100
+    target_ame = ame_err / ame * mpf(10) ** 9 / 100
+    target_reg = reg_err / reg * mpf(10) ** 9 / 100
 
     print("  L2 dashboard, derived-tier (N=2) Q_beta prediction vs each target")
     print("    Q_N2                = %s MeV  (anchor-independent)" % mp.nstr(QN2, 14))
     print("    residual vs AME      = %+12.2f ppb" % float(err_a))
     print("    residual vs registry = %+12.2f ppb" % float(err_r))
-    print("    change               = %+12.2f ppb  (%s)"
+    print("    residual change      = %+12.2f ppb  (%s)"
           % (float(err_r - err_a),
              "further" if abs(err_r) > abs(err_a) else "closer"))
-    print("    100x target (from AME sigma) = %0.4f ppb" % float(target_ppb))
-    print("    miss factor vs AME      = %8.1fx" % float(abs(err_a) / target_ppb))
-    print("    miss factor vs registry = %8.1fx" % float(abs(err_r) / target_ppb))
+    print()
+    print("    (i) FIXED-sigma target %0.4f ppb -- isolates the residual"
+          % float(target_fixed))
+    print("        only, and is NOT the dashboard metric:")
+    print("          miss vs AME      = %8.1fx" % float(abs(err_a) / target_fixed))
+    print("          miss vs registry = %8.1fx" % float(abs(err_r) / target_fixed))
+    print()
+    print("    (ii) EACH-sigma -- what per_observable_100x_status.py reports,")
+    print("         and the authoritative L2 metric:")
+    print("          AME      target %0.4f ppb -> miss %8.1fx"
+          % (float(target_ame), float(abs(err_a) / target_ame)))
+    print("          registry target %0.4f ppb -> miss %8.1fx"
+          % (float(target_reg), float(abs(err_r) / target_reg)))
+    print("          => the registry is the MORE PRECISE determination, so its")
+    print("             own 100x target tightens faster than the residual")
+    print("             improves, and the Q_beta miss gets WORSE.")
     print()
     print("    NOTE: whichever direction this moves is an OUTCOME, not a reason.")
-    print("    Ranking the two datasets by this residual would be a fit")
-    print("    (AGENTS.md: accuracy is a diagnostic, never a tie-breaker).")
+    print("    Ranking the two datasets by either number would be a fit")
+    print("    (AGENTS.md: accuracy is a diagnostic, never a tie-breaker). The")
+    print("    point of reporting both is that the sign is not even stable")
+    print("    across two defensible normalisations -- which is precisely why")
+    print("    it must not be the basis of the decision.")
     print()
+    # keep the old name pointing at the fixed-sigma convention it always meant
+    target_ppb = target_fixed
 
     # ---- witness --------------------------------------------------------
     wb.set_description(
@@ -292,9 +331,25 @@ def main() -> int:
     wb.add_data("QN2_derived_tier_MeV", mp.nstr(QN2, 30))
     wb.add_data("QN2_residual_vs_ame_ppb", fmt(err_a))
     wb.add_data("QN2_residual_vs_registry_ppb", fmt(err_r))
-    wb.add_data("L2_target_ppb", fmt(target_ppb))
-    wb.add_data("L2_miss_vs_ame", fmt(abs(err_a) / target_ppb))
-    wb.add_data("L2_miss_vs_registry", fmt(abs(err_r) / target_ppb))
+    # (i) fixed-sigma -- isolates the residual; NOT the dashboard metric
+    wb.add_data("L2_target_fixed_sigma_ppb", fmt(target_fixed))
+    wb.add_data("L2_miss_vs_ame_fixed_sigma", fmt(abs(err_a) / target_fixed))
+    wb.add_data("L2_miss_vs_registry_fixed_sigma", fmt(abs(err_r) / target_fixed))
+    # (ii) each-sigma -- the authoritative L2 metric
+    wb.add_data("L2_target_ame_ppb", fmt(target_ame))
+    wb.add_data("L2_target_registry_ppb", fmt(target_reg))
+    wb.add_data("L2_miss_vs_ame", fmt(abs(err_a) / target_ame))
+    wb.add_data("L2_miss_vs_registry", fmt(abs(err_r) / target_reg))
+    wb.add_data(
+        "L2_direction_note",
+        "The two normalisations DISAGREE IN SIGN. Under a fixed (AME) sigma "
+        "the miss improves; under each determination's own sigma -- which is "
+        "what per_observable_100x_status.py reports and is authoritative -- "
+        "it gets WORSE, because the registry is the more precise "
+        "determination and its own 100x target tightens ~1.6x, faster than "
+        "the residual improves. Measured on the dashboard: Q_beta miss "
+        "164.0x -> 223.9x. Neither number is a reason to choose a dataset.",
+    )
 
     ok = True
     print("  checks")
