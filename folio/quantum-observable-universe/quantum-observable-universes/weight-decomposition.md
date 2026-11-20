@@ -11,4 +11,4 @@ Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with maximal torus 
 \end{equation}
 ```
 
-The horizontal component $\alpha_H = \pi_H(\alpha)$ is invariant under $T$. The vertical component $\alpha_V = \pi_V(\alpha)$ carries non-zero weight. We say a form is purely horizontal if and only if $\alpha_V = 0$.
+The horizontal component $\alpha_H = \pi_H(\alpha)$ is invariant under $T$. The vertical component $\alpha_V = \pi_V(\alpha)$ carries non-zero weight. A form is purely horizontal if and only if $\alpha_V = 0$.

@@ -1,4 +1,4 @@
-Continuing [rigid monoidal Vect](#ex:rigid-monoidal-vect), we verify the [quantum universe](#def:quantum-universe) axioms for $G = \mathrm{SU}(2)$.
+Continuing [rigid monoidal Vect](#ex:rigid-monoidal-vect), this example verifies the [quantum universe](#def:quantum-universe) axioms for $G = \mathrm{SU}(2)$.
 
 **(i) Category.** $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}(2))$ is the category of finite-dimensional complex representations. This is a $\mathbb{C}$-linear rigid :refterm[monoidal category]{#monoidal-category}. The $G$-action on tensor products is diagonal; on duals it is the contragredient.
 

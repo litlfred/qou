@@ -14,7 +14,7 @@ base ring $R$ explicit:
 | Projective line                                               | $\mathbb{P}^1(R)$              | $\mathbb{CP}^1 \cong S^2$ |
 | Multiplicative group                                          | $\mathbb{G}_m(R) = R^{\times}$ | $\mathbb{C}^{\times}$     |
 
-When the base ring is clear from context, we may write
+When the base ring is clear from context, one may write
 $\mathrm{SU}_2$ for $\mathrm{SU}_2(R)$ and $\mathbb{P}^1$
 for $\mathbb{P}^1(R)$.  The category-theoretic definitions
 ([quantum universe](#def:quantum-universe),

@@ -1,4 +1,4 @@
-We make the Frobenius pairing concrete on [SU(2)](#ex:quantum-universe-su2).
+The Frobenius pairing is made concrete on [SU(2)](#ex:quantum-universe-su2).
 
 Set $A = \mathcal{O}(\mathrm{SU}(2))$ with pointwise multiplication $\mu(f \otimes g) = fg$ and Haar integral $\int_A f = \int_{\mathrm{SU}(2)} f(x)\,d\mu_{\mathrm{Haar}}(x)$. The Frobenius pairing is the $L^2$ inner product:
 
@@ -16,7 +16,7 @@ $$
 
 The isomorphism $A \xrightarrow{\sim} A^{\vee}$ sends each basis element to its dual functional scaled by $1/(2j+1)$.
 
-**Concrete calculation on $\mathbb{C}^2$.** The matrix generators of $\mathcal{O}(\mathrm{SU}(2))$ are $\alpha, \beta, \bar{\alpha}, \bar{\beta}$ with $|\alpha|^2 + |\beta|^2 = 1$. The spin-$\tfrac{1}{2}$ coefficients are $D^{1/2}_{mn} \in \{\alpha, \beta, -\bar{\beta}, \bar{\alpha}\}$. We compute:
+**Concrete calculation on $\mathbb{C}^2$.** The matrix generators of $\mathcal{O}(\mathrm{SU}(2))$ are $\alpha, \beta, \bar{\alpha}, \bar{\beta}$ with $|\alpha|^2 + |\beta|^2 = 1$. The spin-$\tfrac{1}{2}$ coefficients are $D^{1/2}_{mn} \in \{\alpha, \beta, -\bar{\beta}, \bar{\alpha}\}$. Then:
 
 $$
   \langle \alpha, \alpha \rangle_A = \tfrac{1}{2}, \qquad \langle \alpha, \beta \rangle_A = 0.

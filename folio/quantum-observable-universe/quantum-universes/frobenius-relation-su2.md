@@ -1,4 +1,4 @@
-We verify the [Frobenius relation](#prop:frobenius-relation) for $A = \mathcal{O}(\mathrm{SU}(2))$.
+This example verifies the [Frobenius relation](#prop:frobenius-relation) for $A = \mathcal{O}(\mathrm{SU}(2))$.
 
 **Setup.** $A$ carries pointwise multiplication $\mu(f \otimes g) = f \cdot g$. The comultiplication $\Delta_\mu$ dual to $\mu$ under the Haar [Frobenius pairing](#def:frobenius-pairing) $\langle f, g \rangle = \int_{\mathrm{SU}(2)} f g$ is the *diagonal* comultiplication, characterised by
 

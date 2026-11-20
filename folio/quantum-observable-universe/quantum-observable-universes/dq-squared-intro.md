@@ -1,1 +1,1 @@
-We assess the behavior of the deformed differential $d_q$ under iteration. The composition $d_q^2$ does not vanish in general; the obstruction is concentrated on non-Reeb-invariant forms. The $q$-connection forms the structural object whose curvature absorbs this obstruction.
+This section assesses the behavior of the deformed differential $d_q$ under iteration. The composition $d_q^2$ does not vanish in general; the obstruction is concentrated on non-Reeb-invariant forms. The $q$-connection forms the structural object whose curvature absorbs this obstruction.

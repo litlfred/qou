@@ -1,4 +1,4 @@
-We instantiate the [categorical connection](#def:categorical-connection) concretely on [SU(2)](#ex:quantum-universe-su2).
+This example instantiates the [categorical connection](#def:categorical-connection) concretely on [SU(2)](#ex:quantum-universe-su2).
 
 **Classical setup.** A connection on a Lie group $G$ is a $\mathfrak{g}$-valued 1-form on $G$. The canonical choice is the **Maurer--Cartan form** $\varTheta = g^{-1}  dg$, a left-invariant $\mathfrak{su}(2)$-valued 1-form.
 

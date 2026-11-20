@@ -9,7 +9,7 @@ of $\tau$ imply $f^{\dagger} \circ f = 0 \Rightarrow f = 0$, so this
 is a positive-definite dagger structure
 ([positive definite dagger](#prop:positive-definite-dagger)).
 
-We now show that every tensor automorphism $g \in G$ preserves this
+It remains to show that every tensor automorphism $g \in G$ preserves this
 dagger, forcing unitarity on $\tau(V)$. By naturality, $g$ commutes
 with every morphism in $\mathbf{C}$; in particular with the antipode
 $S$ and the Frobenius form $\int_A$:

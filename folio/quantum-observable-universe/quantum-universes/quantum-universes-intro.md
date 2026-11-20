@@ -16,7 +16,7 @@ this definition.  They are imposed in Chapter 2, on the quantum
 observable universe, where they carry the antiparticles; the
 constructions later in this chapter that do use duals — the
 involutive structure, the categorical Hodge star, the internal
-Poisson object — say so in their own hypotheses.  We begin with
+Poisson object — say so in their own hypotheses.  The chapter begins with
 categorical preliminaries
 ([§ Rigid monoidal categories](#sec:rigid-monoidal)), state the
 core axioms ([§ The Quantum Universe](#sec:quantum-universe)),

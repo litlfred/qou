@@ -1,6 +1,6 @@
 Are the four axioms of a quantum universe independent?
 
-**Temporal braiding.** Over a characteristic-zero field, Deligne's theorem shows every symmetric :refterm[monoidal category]{#monoidal-category} admits a fibre functor. We require only a braiding, and only over a commutative ring, so the fibre functor is not supplied for us. The braiding axiom is independent of the fibre functor.
+**Temporal braiding.** Over a characteristic-zero field, Deligne's theorem shows every symmetric :refterm[monoidal category]{#monoidal-category} admits a fibre functor. Only a braiding is required, and only over a commutative ring, so no fibre functor is supplied. The braiding axiom is independent of the fibre functor.
 
 **Frobenius--Hopf.** A general Hopf algebra need not carry a non-degenerate Frobenius form. The Frobenius condition $A \cong A^{\vee}$ is strictly stronger than the Hopf axioms.
 

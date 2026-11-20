@@ -1,4 +1,4 @@
-The Frobenius pairing and the fibre-adjoint involution together equip every hom-space $\mathrm{Hom}_{\mathbf{C}}(X, Y)$ with a canonical sesquilinear form. We define the adjoint trace on endomorphisms of $V$ by
+The Frobenius pairing and the fibre-adjoint involution together equip every hom-space $\mathrm{Hom}_{\mathbf{C}}(X, Y)$ with a canonical sesquilinear form. The adjoint trace on endomorphisms of $V$ is
 
 $$
   \mathrm{tr}_{\mathrm{Ad}}(f)

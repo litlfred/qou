@@ -1,4 +1,4 @@
-We verify [positive-definiteness](#prop:positive-definite-dagger) in $\mathbf{Rep}(\mathrm{SU}(2))$.
+This example verifies [positive-definiteness](#prop:positive-definite-dagger) in $\mathbf{Rep}(\mathrm{SU}(2))$.
 
 **The dagger involution.** On $\mathbf{Rep}(\mathrm{SU}(2))$, the dagger sends $f \colon V \to W$ to its conjugate transpose $f^\dagger = \bar{f}^{T} \colon W \to V$.
 

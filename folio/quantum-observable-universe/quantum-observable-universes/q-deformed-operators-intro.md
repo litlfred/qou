@@ -1,1 +1,1 @@
-The categorical $q$-deformed operators specialise to a concrete CR manifold $M$. We record the formulas in classical differential-geometric language. Each operator inherits the uniform interpolation pattern $q^{-1}(\text{classical}) + (1 - q^{-1})(\text{Reeb correction})$.
+The categorical $q$-deformed operators specialise to a concrete CR manifold $M$. The formulas are recorded in classical differential-geometric language. Each operator inherits the uniform interpolation pattern $q^{-1}(\text{classical}) + (1 - q^{-1})(\text{Reeb correction})$.

@@ -1,4 +1,4 @@
-The proof strategy is constructive. We explicitly define the operator $D_q = q^{-1} \nabla + (1-q^{-1}) \iota_\xi \nabla$ and verify that it satisfies the defining properties of the categorical Dirac operator.
+The proof strategy is constructive. Define the operator $D_q = q^{-1} \nabla + (1-q^{-1}) \iota_\xi \nabla$ and observe that it satisfies the defining properties of the categorical Dirac operator.
 
 $\nabla \colon A \to \Omega^1(A)$ is part of the categorical
 connection data.  $\iota_\xi \colon \Omega^1(A) \to A$ is the

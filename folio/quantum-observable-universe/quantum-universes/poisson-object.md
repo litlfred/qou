@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ be a [quantum universe](#def:quantum-universe) with [Frobenius pairing](#def:frobenius-pairing) $\int_A \circ \mu \colon A \otimes A \to \mathbf{1}$ and [higher forms](#def:higher-forms) $\Omega^k(A)$. We equip the quantum universe with an internal Poisson structure. 
+Let $(\mathbf{C}, A, \tau)$ be a [quantum universe](#def:quantum-universe) with [Frobenius pairing](#def:frobenius-pairing) $\int_A \circ \mu \colon A \otimes A \to \mathbf{1}$ and [higher forms](#def:higher-forms) $\Omega^k(A)$. The quantum universe is equipped with an internal Poisson structure. 
 
 An **internal Poisson object** on $A$ is a morphism
 
