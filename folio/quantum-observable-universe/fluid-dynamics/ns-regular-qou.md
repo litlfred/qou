@@ -14,7 +14,7 @@ $$
 
 whose degree is the Euler characteristic $\deg e(\xi) = \mathrm{tr}(\kappa_0) = \chi(A)$ ([Descartes theorem](#thm:ns-singularity-descartes), item 1).
 
-We categorise $(\mathbf{C}, A, \tau)$ as:
+Then $(\mathbf{C}, A, \tau)$ is classified as:
 
 - **NS-regular** if $\mathrm{NS}(A) = 0$ (equivalently $\chi(A) = 0$);
 - **NS-singular** if $\mathrm{NS}(A) \neq 0$ (equivalently $\chi(A) \neq 0$).
