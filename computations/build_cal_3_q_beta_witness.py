@@ -50,7 +50,7 @@ That route never touches the stored proton — which matters, because
 `docs/audits/2026-08-09-codata-registry-vintage-straddle.md` found the
 vendored proton to be the stale member of a mixed-vintage snapshot.  The
 alternative route `M_N_MEV_CODATA_DIRECT − M_P_MEV − M_E_MEV` gives the
-identical number (they agree to 7.4e-17) and is asserted below as a
+identical number (they agree to ~1e-49 at 50 dps) and is asserted below as a
 cross-check, so the choice of route is verified rather than assumed.
 
 🛑 WHAT THIS COSTS — the consistency check becomes CIRCULAR
@@ -61,18 +61,25 @@ derived from CAL-1 + CAL-2; this check verifies it agrees ... within
 combined CODATA σ".  Under AME-2020 that was a genuine — if weak —
 independent comparison of two datasets: residual **1.4931e-7 MeV
 (190.85 ppb, 0.22 σ)**.  Under the registry route the two sides are the
-same quantity, so the residual collapses to **7.4e-17** and the check is
+same quantity, so the residual collapses to **~1e-49** and the check is
 **0 by construction**.
 
 That is a real loss of an independent cross-check, it is a cost of this
 change, and PR #7164 §5 did not name it.  It is not a reason to prefer
 either option by itself — the check was only ever 0.22 σ, i.e. it had
 almost no power to detect anything — but a reader must not mistake the
-new 7.4e-17 for evidence of improved accuracy.  It is a tautology.  If
+new ~1e-49 for evidence of improved accuracy.  It is a tautology.  If
 the registry route is adopted, that check should be re-pointed at
 something genuinely independent (the AME value, now carried alongside as
 `Q_beta_n_MeV_ame2020`) or retired, rather than left reporting 1e-17 and
 reading as a strong pass.
+
+PRECISION NOTE (2026-11-20).  PR #7205 recorded the two routes as
+agreeing "to 7.4e-17".  That figure was binary53 rounding: the
+module-level subtractions in `codata_2022_source` and the check in
+`codata_constants` ran at the import-time default of 15 dps across a
+cancellation from ~939.57 MeV to ~0.78 MeV.  Both now subtract inside
+`workdps(50)`, and the routes agree to ~1e-49.
 
 MEASURED DOWNSTREAM MOVE (re-measured 2026-11-20 on main, proton pin)
 ----------------------------------------------------------------------
@@ -107,6 +114,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
+from mpmath import mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_2022_source import (  # noqa: E402
     M_E_MEV,
@@ -123,7 +131,8 @@ def main() -> int:
     # neutron-proton mass-difference energy equivalent, minus m_e.
     # mpf end to end -- these come out of `_load_mpf`, so no float64
     # enters here (AGENTS.md NO-FLOAT64).
-    q_beta = M_N_MINUS_P_MEV - M_E_MEV
+    with mp.workdps(50):
+        q_beta = +(M_N_MINUS_P_MEV - M_E_MEV)
     q_beta_err = M_N_MINUS_P_MEV_ERR
 
     # Cross-check the other registry route (m_n_direct - m_p - m_e).
@@ -143,7 +152,8 @@ def main() -> int:
 
     # Separation from the AME-2020 determination, recorded so a reader can
     # see the size of the dataset choice without re-deriving it.
-    ame_gap_ppb = (q_beta - Q_BETA_MEV_AME) / Q_BETA_MEV_AME * 10 ** 9
+    with mp.workdps(50):
+        ame_gap_ppb = (q_beta - Q_BETA_MEV_AME) / Q_BETA_MEV_AME * 10 ** 9
 
     # engine must be a witness-schema enum value; the CODATA-2022
     # provenance is recorded as a parameter below.
@@ -197,7 +207,7 @@ def main() -> int:
         "1.29333251(38) MeV, minus m_e = 0.51099895069 MeV. Sourced from "
         "codata_2022_source.M_N_MINUS_P_MEV − M_E_MEV, and cross-checked "
         "against M_N_MEV_CODATA_DIRECT − M_P_MEV − M_E_MEV (agree to "
-        "7.4e-17). Was codata_2022_source.Q_BETA_MEV_AME (AME-2020 "
+        "~1e-49 at 50 dps). Was codata_2022_source.Q_BETA_MEV_AME (AME-2020 "
         "direct, 0.78233341(61)) until 2026-11-20.",
     )
     w.add_parameter(
@@ -216,7 +226,7 @@ def main() -> int:
     # can see the dataset choice in the witness itself.
     w.add_data("Q_beta_n_MeV_ame2020", str(Q_BETA_MEV_AME))
     w.add_data("Q_beta_n_MeV_ame2020_err", str(Q_BETA_MEV_AME_ERR))
-    w.add_data("codata2022_minus_ame2020_ppb", str(ame_gap_ppb))
+    w.add_data("codata2022_minus_ame2020_ppb", mp.nstr(ame_gap_ppb, 30))
     w.add_data("dataset", "CODATA 2022")
     w.add_data(
         "consistency_check_is_now_circular",
@@ -224,7 +234,7 @@ def main() -> int:
         "AME-2020 that residual was 1.4931e-7 MeV (190.85 ppb, 0.22 "
         "sigma) -- a genuine cross-dataset comparison. Under this "
         "CODATA-2022 route the two sides are the same quantity, so it is "
-        "7.4e-17, i.e. ZERO BY CONSTRUCTION. Do not read that as improved "
+        "~1e-49, i.e. ZERO BY CONSTRUCTION. Do not read that as improved "
         "accuracy; the check has lost its (already slight) independence "
         "and should be re-pointed at Q_beta_n_MeV_ame2020 or retired.",
     )

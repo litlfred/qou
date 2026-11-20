@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-20T14:15:24.844713+00:00",
-  "commitSha": "4bc0098fd4bf97fbdd60959e7d26a22f150107f5",
+  "computedAt": "2026-11-20T14:24:30.765149+00:00",
+  "commitSha": "a887b738d50de18b183f19bda31380997368a24c",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
   "scriptHash": "6a9638f12aba",
@@ -380,11 +380,11 @@
       },
       {
         "path": "cal-3-q-beta.witness.json",
-        "sha256": "6cfea594d7e1f6bbcd957c888e7081cc14cc895f4caa9a00f6f07acd04a37023",
-        "size_bytes": 4675,
-        "commitSha": "4bc0098fd4bf97fbdd60959e7d26a22f150107f5",
-        "scriptCommitSha": "f6ee5224525b1a6ffa314b20e487a7c28d7f3a10",
-        "computedAt": "2026-11-20T14:15:24.544090+00:00"
+        "sha256": "a7419ed934e77a44dca4fec4f61ed077388e52bfab17752476c4ed2bceeba8e7",
+        "size_bytes": 4683,
+        "commitSha": "a887b738d50de18b183f19bda31380997368a24c",
+        "scriptCommitSha": "a887b738d50de18b183f19bda31380997368a24c",
+        "computedAt": "2026-11-20T14:24:30.256985+00:00"
       },
       {
         "path": "meson-kaon-pion-derivation.witness.json",
