@@ -1,22 +1,22 @@
 # Sibling contract (coordinator = parent session, merge manager)
 
-Repo: litlfred/qou. Each workstream is its own Claude Code session; clone per the add_repo instructions (shallow, generous timeout).
-`bun folio-assistant/cat-harness-tools/scripts/branch-store.ts push --id beans`; on `conflict`, re-read and retry).
+Repo: litlfred/qou. Children of the coordinator share one clone at /home/claude/qou (main) via git worktrees; separate sessions clone their own.
+`cd /home/claude/qou && bun folio-assistant/cat-harness-tools/scripts/branch-store.ts push --id beans`; on `conflict`, re-read and retry).
 `beans` CLI is not installed — edit bean .md files directly (append notes; never rewrite others' text). Check-before-create: grep the exact title first.
 
 ## Workspace
-- Branch off origin/main as `claude/<theme>-2026-11-20`, or fetch an existing PR branch with `git fetch --depth=50 origin <branch>` and continue it.
-
+- NEVER clone. Make your own worktree: `git -C /home/claude/qou worktree add /home/claude/wt/<you> -b claude/<theme>-2026-11-20 origin/main`
+  (or `git -C /home/claude/qou fetch --depth=50 origin <branch>` then worktree on it to continue an existing PR branch).
 - Git proxy allows only 2 concurrent fetch/push ops for this repo: on HTTP 429 sleep 5-20s and retry (max 3). Push with
   `git -c push.negotiate=true push -u origin <branch>`.
 - GitHub: REST only via `gh api` (GraphQL is 403-blocked). PR create: `gh api repos/litlfred/qou/pulls -f title=.. -f head=.. -f base=main -f body=..`.
 - PR bodies end with:
   🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-  <your own session URL>
+  https://claude.ai/code/session_01VQDpPdnjTBLBcPi6D5gj61
   Commits end with:
   Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
-  Claude-Session: <your own session URL>
+  Claude-Session: https://claude.ai/code/session_01VQDpPdnjTBLBcPi6D5gj61
 
 ## Hard rules (from AGENTS.md — read the relevant .claude/skills/local/*.md before acting)
 - NEVER merge. The coordinator is merge manager and gets explicit owner permission. You may push branches and open/update PRs.
@@ -37,7 +37,33 @@ Repo: litlfred/qou. Each workstream is its own Claude Code session; clone per th
 5. Cross-workstream conflicts (files another sibling is likely touching).
 Keep the report factual, numbers with commands. Do not stop at the first item: work your queue until done or blocked.
 
-## Channel to the coordinator (separate-session mode)
-Post your report (format above) as a comment on PR #8526 (`gh api repos/litlfred/qou/issues/8526/comments -f body=...`)
-at each milestone: whenever a PR becomes READY-FOR-MERGE, whenever you need an owner decision, and at the end.
-Start the comment with `[W<n> report]`. The coordinator is subscribed to #8526 and is the only one who merges.
+## Merge requests (cat-harness merge-manager-watcher / merge-request.bpmn)
+The coordinator is the announced merge manager (comment on PR #8526). When a PR is ready:
+1. `POST /repos/litlfred/qou/pulls/<n>/ccr/ready_for_review` (alone; re-read after), add label `ready-to-merge`.
+2. Comment `ready: <full head sha>` on the PR with the six lines: PR URL + head SHA; session URL; 1–3 sentences on the change; preview / no preview + reason; what to look for; verification actually run (lean-library-sweep / lean-content-sweep / lean-direct -DautoImplicit=false, precision-gates, render-QA).
+3. SendMessage to "main" with the same six lines. Never merge yourself.
+
+## Predecessors (separate sessions, being stopped by the owner)
+Sessions W1–W6 ran 08:30–~08:40 as separate sessions. Before starting: read every comment on PR #8526 (handoffs + any [Wn report]),
+and list open PRs / remote branches matching your workstream (`gh api 'repos/litlfred/qou/pulls?state=open&per_page=100' --jq '.[]|select(.created_at>"2026-11-20")|"\(.number) \(.head.ref) \(.title)"'`).
+Continue from any branch/PR they pushed (fetch with explicit refspec `git fetch origin B:refs/remotes/origin/B`); never force-push over it.
+If a predecessor session is still pushing to the same branch (new commit < 10 min old), SendMessage "main" before touching it.
+
+## Progress (dispatch-agent contract)
+Your label is your workstream id (w1..w6). At each meaningful step emit a plain-text block:
+### ⟦PROGRESS⟧ <label> · step N
+DID: <evidence: paths, exit codes, shas, counts>
+DOING: <live command + last log lines>
+NEXT: <one action>
+BLOCKERS: <none | precise>
+Finish with ### ⟦DONE⟧ <label> plus the report above. The shared clone's .git/shallow.lock is contended: retry fetches with sleep.
+
+## Shared Lean cache (ready 2026-11-20 ~08:55, by w1)
+source /home/claude/qou/scripts/lean-direct-env.sh ; lean -DautoImplicit=false -s 65536 <file.lean>
+Cache head a792c46d01b, 6492 oleans in /home/claude/qou/.lake + folio/*/lean/.lake. READ-ONLY.
+- Never `lake build`; never write into /home/claude/qou/**/.lake.
+- QOU modules edited since the seed are absent/stale in the cache — rebuild only your cone in a private hardlink mirror
+  (scripts/lean-library-sweep.py --shadow /tmp/<label>-shadow, scripts/lean-shadow-verify.sh), pass only changed files,
+  and `rm -rf` the shadow when done. Disk ~11 GB free shared by six children: check df first; tell main before anything > 1 GB.
+- Missing Mathlib modules (HopfAlgebra.Basic, FiberBundle.Basic, UpperHalfPlane.Basic, GroupCohomology.LowDegree cone):
+  scripts/lean-restore-gap-oleans.sh — ask main first so only one child runs it.
