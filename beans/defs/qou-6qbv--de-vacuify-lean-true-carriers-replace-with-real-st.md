@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: high
 created_at: 2026-07-11T18:40:54Z
-updated_at: 2026-11-20T09:10:00Z
+updated_at: 2026-11-20T15:00:00Z
 parent: qou-rtxm
 pr: 8189
 ---
@@ -61,3 +61,9 @@ Took ~10 from a fresh audit run on main 917b69399 (22 non-exempt candidates; 7 s
 - Cited sorry: `fiber_adjoint_involution_exists`, `QuantumObservableUniverse.exists_instance` (were self-assuming projections).
 - Ledger: all 325 keys and the probe baseline still named `content/` paths after #7485, so --check-ledger saw no verdicts and seeding was silently empty. Re-keyed; 7 verdicts recorded. Un-reviewed 96 -> 75.
 - Left for the owner (W8 ask on #8526): terms_2_6_higher_operations, spectral_sequence_h3_explicit, algebraic_quantum_volume_specialization. GAP: LevelSufficiency (see qou-z3k1), toffoli (qou-3j5m).
+
+## W8 round 2 (2026-11-20, PR #8568) — owner: demote, full cascade, then work on them
+
+- Demoted to conjecture (prop:/thm: -> conj:): terms-2-6-higher-operations, spectral-sequence-h3-explicit and their full provable uses[] cone (9 more: six-term-mass-formula-complete, frobenius-antipode-unifies-chirality-and-tower, alpha-k-derivation-procedure, explicit-alpha-k-h3, explicit-alpha-k-h4, atom-knot-mass-derivation, wedderburn-bratteli-recursion, joint-tower-sdp-confinement, baryon-product-from-alt). 6 proof blocks -> remark proof sketches. Refs rewritten in folio/ only; computations/ and docs/ still cite the old labels (~45 live files), left to avoid scriptHash drift.
+- Lean: real conjecture carriers (Terms26HigherOperations, SpectralSequenceH3Explicit, AlgebraicQuantumVolumeSpecialization in convention D) with no instances. Proved: Term 2/6 uniqueness under the conjecture and a divergent-trace refutation; E1 ranks 1,2,2,1 on S3; convention-D relation z(q+q^-1)=q^2; uniform Jones + Alexander routes force J proportional to Delta.
+- Not proved (still open): the Term 2 Wedderburn-limit and Term 6 residue identifications themselves; the explicit d1/d2 formulas; the Jones-route constant.
