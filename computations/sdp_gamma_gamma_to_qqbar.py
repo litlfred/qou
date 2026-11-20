@@ -40,6 +40,13 @@ concept, then H_3 qq̄ with one inner Borromean.
 
 NO Vol_hyp.  NO census.  Pure mpmath at 50 dps.
 
+Scope note (2026-11-20). Owner ruling (bean qou-99qc, 2026-11-18, confirmed 2026-11-20):
+def:photon is gamma(phi) = 1 + phi0 s0 + phi1 s1 + phi01 s0 s1^-1. A single crossing is a TERM of a
+photon, not a photon. The four-term recomputation of this file's photon claim is
+probes/photon_chiral/photon_chiral_ports_probe.py, section E (results.md there).
+The chiral vertex needs s1, so a four-term photon lives in H_3, not in this H_2 scaffold; the
+H_2 numbers here are unchanged and remain an H_2 statement about the s0 term.
+
 Output: sdp-gamma-gamma-to-qqbar.witness.json
 """
 from __future__ import annotations
