@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-11-20T09:00:00Z
-updated_at: 2026-11-20T17:26:58Z
+updated_at: 2026-11-20T18:46:07Z
 parent: qou-uhx0
 ---
 
@@ -48,3 +48,8 @@ Still open:
 - the tm-gs-normal-form content-block edit, which waits until #8598 merges;
 - alpha_crit = q_0 (qou-a7cr, owner scope);
 - the GPMT radical.
+
+## 2026-11-20 18:50: the two unformalised claims (W12, PR #8641)
+- **Every reduction path is Hecke-only: proved.** `chainXi_every_reduction_heckeOnly` (`HeckeChainEveryPath.lean`): any reduction sequence of Ξ in the completed system is a Hecke-only sequence.
+- **The C(A−1,2) step count is false as a bound on rewriting steps.** `chainXi_L3_needs_two_steps`: at A = 3 with every crossing σ+1, no single step reaches normal form, while C(2,2) = 1. The count is true for block multiplications (`heckeStepBound`).
+- Open: whether to reword statement 1 of `prop:tm-gs-normal-form`. That is an owner decision, asked on #8526. The authorNote records the caveat.
