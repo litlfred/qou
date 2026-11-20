@@ -24,4 +24,3 @@ place $v = \infty$ simultaneously. Without it the sum $\sum_v \ordw_v(f_v)$ does
 not even typecheck. This shared $\Gamma$ is the genuine additional structure the
 adelic lift exposes
 (a linearly ordered abelian group).
-

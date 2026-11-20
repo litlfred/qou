@@ -19,5 +19,8 @@ export default proposition({
     "prop:coxeter-strong-exchange",
     "prop:coxeter-parabolic-transversal",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): , and which it settles\nunconditionally\n([simple-injectivity](#prop:coxeter-geometric-representation))" },
+  ],
   cites: ["kassel1995", "jones1987"],
 });

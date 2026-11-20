@@ -37,5 +37,6 @@ export default remark({
       kind: "status",
       body: "**Superseded 2026-11-20 (bean `qou-ltwg`, owner options 2 + 3).** The library file `QOU/BraidKnot/MarkovAxiomsPrimitive.lean` used to define `class MarkovTraceAxioms` with two scalar fields pinned to `1` and `markovZax u`, plus theorems of the form `∃ τ', τ' = τ·z^k := ⟨_, rfl⟩`. The class mentioned no trace and could be inhabited in one line. The theorems were tautologies, so the claimed discharge of `MarkovDisjointStabilisation` was empty.\n\nThe class and the tautologies are removed. M1–M4 are now the fields of the genuine `QOU.MathlibExt.OcneanuTrace.MarkovTrace` (a trace on a tower of algebras). Iterated stabilisation is `tr_mul_genWord`, disjoint-block multiplicativity on a braided tower is `BraidedBlockShiftTrace.tr_blockProd`, and ascending-word chain factorisation is `tr_chainWord`. All three are proved for every genuine trace. A genuine instance of that structure at `q ≠ 1` on the full Hecke tower is still missing (epic `qou-dxbw` M4).",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([Jones–Markov trace](#thm:jones-markov-trace))" },
   ],
 });
