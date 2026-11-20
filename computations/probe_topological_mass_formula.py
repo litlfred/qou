@@ -92,7 +92,7 @@ def main() -> int:
     w = WitnessBuilder("probe-topological-mass-formula", engine="mpmath")
     w.set_description(
         "Symbolic + 50-dps numerical cross-check of the topological mass "
-        "formula combine Vol + Vol*(1/hbar^2 - 1) = Vol/hbar^2 (prop:"
+        "formula combine Vol + Vol*(1/hbar^2 - 1) = Vol/hbar^2 (conj:"
         "topological-mass-formula, Lean ArchimedeanMassFormula) and the "
         "algebraic-side mass_alg = phi1/hbar_sq (prop:topological-mass-"
         "formula-algebraic, Lean AlgebraicMassFormula). hbar_q = 1-1/q0."
