@@ -326,7 +326,9 @@ def run_symbolic_charge_operator_checks() -> dict:
     assert sp.simplify(Bor_p - Bor_p_nf) == sp.zeros(3, 3)
     assert sp.simplify(Bor_n - Bor_n_nf) == sp.zeros(3, 3)
 
-    # (g) Section 9 of NucleonWeightSpaceTwoTerm.lean (`qou-99qc` switched 4-term photon):
+    # (g) Section 9 of NucleonWeightSpaceTwoTerm.lean (`qou-99qc` switched 4-term photon;
+    #     since the owner ruling of 2026-11-18, confirmed 2026-11-20, this IS def:photon,
+    #     gamma = 1 + phi0 s0 + phi1 s1 + phi01 s0 s1^-1, here with phi0 = phi1 = 0):
     # `borromeanV3A_eq_switched_photon_product`: V^3 = (I_3 + q*h*V) * (I_3 - q^-1*h*V)
     sw_plus_p = sp.eye(3) + q * h * Vp
     sw_minus_p = sp.eye(3) - (1 / q) * h * Vp

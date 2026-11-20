@@ -4,6 +4,13 @@ Pre-registered in bean qou-99qc (2026-11-16 07:30Z) before computing.
 Same traced setup as ε-TR1 (multiplicity_trace_epsilon_probe.Mmat), words built from
 V = σ1σ2^-1, L+ = σ1σ2 (writhe +2, breit-wheeler-vertex), L- = σ1^-1σ2^-1.
 Reports ε_tr for n->p and p->n and their ratio, exact over Q(q); q0 display only.
+
+Scope note (2026-11-20). "Photon twist channel L±" read L+ = σ1σ2 as the photon's fourth term
+(γ = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁). By owner ruling (bean qou-99qc, 2026-11-18, confirmed 2026-11-20)
+def:photon's fourth term is the chiral vertex σ₀σ₁⁻¹ = V (writhe 0), so L± are two-photon-product
+letters, not the photon's twist term. The words and every ε_tr below are fixed braid words and are
+unchanged (re-run 2026-11-20, witness byte-identical); only the "photon twist channel" label is
+superseded. Under the ruling the photon's own fourth-term channel is V, already the nucleon letter.
 """
 from __future__ import annotations
 
