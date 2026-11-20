@@ -26,6 +26,19 @@ export default conjecture({
       kind: "status",
       date: "2026-11-20",
       body:
+        "**Cross-checks 1 and 2, and centrality, are now PROVED for every n (bean qou-2150).** " +
+        "`QOU.BraidKnot.ExplicitCentralIdempotentGeneral.explicit_central_idempotent_cross_checks`: at generic q (q != 0, " +
+        "not a root of unity, characteristic 0) the Murphy-Lagrange elements e_lambda in the real Hecke algebra are " +
+        "central, idempotent, pairwise orthogonal and sum to 1. `mulProj_eq_proj` shows that the boxed formula in the " +
+        "multiplicative J_k equals the corpus' additive-JM projector, and `heckeWedderburn_symm_single` (JMProjector) maps " +
+        "that projector to the matrix unit E_TT. Sorry-free; axioms propext, Classical.choice, Quot.sound. Still OPEN: " +
+        "cross-checks 3 and 4 (self-adjointness and bar-pairing under the bar involution). Primitivity is not stated in " +
+        "Lean. `lean.ref` still names the old scalar carrier; re-pointing it waits on the owner.",
+    },
+    {
+      kind: "status",
+      date: "2026-11-20",
+      body:
         "**Re-statement on the real Hecke algebra started (owner ruling D2, 2026-11-20; bean qou-2150).** " +
         "The current carrier `ExplicitCentralIdempotentConjecture` states the conjecture about an opaque scalar in a " +
         "commutative ring, so no proof can be written against it. New module " +
