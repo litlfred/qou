@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-12T20:47:33Z
-updated_at: 2026-11-20T17:40:00Z
+updated_at: 2026-11-20T16:14:45Z
 parent: qou-9nnz
 ---
 
@@ -362,3 +362,26 @@ attributable to the q change because both A/B arms ran under 1.4.1.
 A bare container runs none of these producers: `sympy`/`numpy`/`scipy` absent,
 mpmath 1.3.0 too old, `pyhecke_native` not on PyPI (`maturin build --release`
 in `tools/pyhecke-native/` works; **171** capped producers need it).
+
+## 2026-11-20 — the two ratchet regressions were NOT the sweep; both producers fixed
+
+Both raw-float64 REGRESSED entries after the 70-digit q sweep are closed. Both gates green (ratchet exit 0, 0 NEW / 0 REGRESSED, drained 78 files / +7,548 fields; padding exit 0). Commits `568693ba12c` (producers) and `da44c4efb5a` (221 witnesses).
+
+**The ratchet counts only NONZERO raw floats.** In both files the float64 was always present and merely masked by the fields being exactly 0.0, so neither 'regression' was introduced by the sweep. A 3 -> 6 on this gate can mean 'three zeros became nonzero', not 'three new float64 paths'.
+
+### probe_d_dressing_is_proton_net
+Five serializations used `float()` beside neighbours using `mp.nstr`; now `_precision.fmt`, and the assertions pass strings per `add_assertion`'s own docstring contract (qou-t0rf). Raw floats 7 -> 0.
+
+TRAP, and I got this wrong first: the `binding_candidate_subpercent` failure is **not** the q fix. Control arm (pre-patch source, same container) fails identically. The cause is import-cone drift over 4.5 months — `Delta_tr` moved **4.047x** (0.59517 -> 0.14705) through `tr_m_atom_via_transfer` (the module AGENTS.md already names as THE drift culprit), carrying `B_cand` with the identical ratio while `h`, `net_p`, `net_n`, `abs_delta_net` are unchanged to the last digit. Comparing every recorded quantity by ratio is what isolated it: the two that moved share one factor, and the six that did not bound the cause.
+
+### habiro_q_difference_fourier — a provably-wrong pole classification
+`sp.simplify(den.subs(u, zeta)) == 0` is a heuristic zero-test that leans on mpmath, so its verdict flipped with 1.3.0 -> 1.4.1. It had the pole structure **backwards**: pole at d=4, none at d=8. `den_p = 4u^18(u^4+1)^2` gives `u^4 = +1` at zeta_4 (value 4, no pole) and `u^4 = -1` at zeta_8 (value 0, genuine pole). Replaced with **exact cyclotomic divisibility over Q** — zeta_d is a root of a rational polynomial iff the d-th cyclotomic polynomial divides it, by polynomial remainder. Deterministic, no floats, agrees with the hand factorisation. The refreshed witness is CORRECT; the committed one was WRONG.
+
+Also `complex(sp.N(expr, 30))` computed at 30 digits then cast to float64, discarding everything past ~16: d=5 now carries 61 significant digits. Raw floats 24 -> 0. Two hardcoded narrative facts had gone stale — the quoted `|tr_M(p)|=0.6614`/`|dtr_M|=1.5612` (live 0.25 / 0.4330) and a pole asserted at zeta_4 from 'D(u)=4u^19(u^2+1)', which is **not** the live denominator; both now derived from the computation.
+
+### 8 near-match assertions do not reproduce — and the sweep is NOT the cause
+Across the 221: 72 moved only below 1e-9 (the intended gain), 12 only in near-zero residuals, 38 material, **8 flipped pass -> fail**. All eight are tightness claims (`sub_ppm`, `residual_under_10ppm`, `S_near_1_plus_hsq`, `ratio_near_qfact5`, `gap_is_sub_ppm`, `deuteron_dressed_subpercent`), six under `habiro/` — the shape of a near-match holding only at 50 digits. Control armed all eight: **7/7 testable fail identically without the patch** (nastokes will not run pre-patch here; inconclusive). **No anti-fit conclusion drawn.** What stands: eight committed sub-ppm claims do not reproduce, for reasons predating this branch — container move (mpmath 1.4.1, python 3.11.18) and/or cone drift, not separated per-witness.
+
+METHOD NOTE (cost me two false claims this session): 'payload-changed' is a useless metric for a precision sweep — 93% of 221 changed, almost all at digit 51. And a relative diff on a residual whose baseline is ~1e-50 reads as 1e+8. Mask timing fields, exclude near-zero baselines, and count **assertion flips**; that is the signal.
+
+**Open decision handed to the owner:** the content block `mass-theory/deuteron-binding-dressing-proton-net.md` asserts +0.12% of AME2020 twice and declares this producer's witness as its source; that witness now reads -75.25%. Not touched — a claim change is not a precision fix.
