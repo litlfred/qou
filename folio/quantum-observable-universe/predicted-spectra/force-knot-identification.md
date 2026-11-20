@@ -78,7 +78,7 @@ $$
   [2]_q\,W_L = [2]_q\,\sigma_i - \bigl(q\,\sigma_i - q^{-1}\sigma_i^{-1}\bigr).
 $$
 
-Both identities hold for every $q$ with $q \neq 0$ and $q + q^{-1} \neq 0$. Which eigenline is singled out is fixed by which crossing carries the weight $q$: the mirror weighting $q^{-1}\sigma_i - q\,\sigma_i^{-1}$ gives $(q - q^{-1})\,[2]_q\,P_-$ instead. Under the definition of the left line as the eigenline on which $\sigma_i$ acts with eigenvalue of modulus greater than $1$, the choice is no longer a separate convention: weighting the positive crossing by that eigenvalue gives a multiple of the left projector ([the weak vertex insertion](#prop:weak-vertex-left-projector)). This one-sidedness holds at a single crossing. The convention-D trace of $T_{3,5}$ itself is not supported on the left line.
+Both identities hold for every $q$ with $q \neq 0$ and $q + q^{-1} \neq 0$. Which eigenline is singled out is fixed by which crossing carries the weight $q$: the mirror weighting $q^{-1}\sigma_i - q\,\sigma_i^{-1}$ gives $(q - q^{-1})\,[2]_q\,P_-$ instead. This one-sidedness holds at a single crossing. The convention-D trace of $T_{3,5}$ itself is not supported on the left line.
 
 The following is a model statement without derivation. The weak force maximizes this asymmetry because $T_{3,5}$ has the highest crossing count ($10$) among generators, and the $q$-vs-$q^{-1}$ imbalance accumulates over these crossings. No computation here relates the crossing count to the size of the asymmetry.
 
