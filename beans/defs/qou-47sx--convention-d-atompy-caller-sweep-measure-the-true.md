@@ -8,7 +8,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T12:34:42Z
-updated_at: 2026-11-16T20:28:40Z
+updated_at: 2026-11-20T16:15:58Z
 parent: qou-9nnz
 ---
 
@@ -295,3 +295,9 @@ Method: 31 direct consumers that have witnesses, each run on main and on the bra
 
 ## 2026-11-20 — PR #8590: the W2 crash list was an mpmath-version defect
 The five `mpf __format__` crashes are mpmath 1.3 vs 1.4 (`mpf.__format__` arrived in 1.4; qou-substrate and qou-mass declare `mpmath>=1.3,<1.5`). Fixed in #8590: mass_formula_6term (Q0 -> Q_MP, FROB_N3 and the Sigma_(3A) table built after set_compute_dps(); the table had been cut to 53 bits), entanglement_orders, alpha_blend_tower, adjacent_vs_full_probe, mass_table_comprehensive (its witness serialiser _fmt6 now Decimal-quantizes the full nstr). Witnesses: mass-formula-6term, entanglement-orders and adjacent-vs-full-probe refreshed. three-term-wedderburn and mass-table-comprehensive were NOT, because a regen here downgrades the recorded mpmath 1.4.1 -> 1.3.0; re-run them in a 1.4 environment. paper-six-term-isotope-sweep still needs an owner decision (Phi_q pole under D, qou-2tuv).
+
+## 2026-11-20 — #8590 follow-up: 1.4 re-runs done; entanglement_orders calibrates on the target
+
+- **Correction to the commit messages bd65f2785c and 5ec0b686e9** (not rewritten): they say the producers "crash on main" and that the committed witness "predates the crash and is stale". Both are wrong. The crash is `mpf.__format__`, which mpmath 1.3 lacks and 1.4 has, while the packages declare `mpmath>=1.3,<1.5`. On a 1.4.1 environment, where these witnesses were written, nothing crashes. The witnesses were stale for ordinary upstream reasons (the #8521 D volumes and earlier drift), and the crash only stopped this container from noticing. The entry above states the cause correctly.
+- **1.4 re-runs:** three-term-wedderburn (alpha_blend_tower) refreshed under mpmath 1.4.1 in a scratch venv (commit 529cd21520). The five E₀ witnesses that 68cf6abfe6 had written under 1.3.0 were re-run under 1.4.1. Their payloads are byte-identical, so the version does not move them. mass-table-comprehensive: see the PR body.
+- **Target calibration, flagged and not changed:** `entanglement_orders.py:143-145` sets `E_0 = m_p_CODATA / proton_total_cat`, which calibrates the MeV scale on the proton mass it then "predicts". So its proton row is a round-trip, and every other row is a ratio to the proton dressed in MeV. Under §NO FITTING this counts as a fit, and only CAL-1/2/3 may calibrate. Changing it is an owner call. It also carries `total` and `calib` as float64 (`'total': float(total)`). Not touched.

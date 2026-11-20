@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-20T16:15:58Z
 parent: qou-v2om
 ---
 
@@ -1704,3 +1704,11 @@ Measured on #8521 (`brane_tower_isospin_diagnosis.py`): with V_hat_i = z*a_i+b_i
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8215, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-08-22: "beans(qou-2tuv): 4He closes the pattern — max|V_hat| is A-invariant, and the failed guess is dead code"). The work may be partly or fully done. Read the bean before you close it.
+
+## 2026-11-20 — OWNER RULING (Decision 1 on PR #8590): keep the pre-D V̂ mixture, labelled, until this pole is resolved
+
+Carl, 2026-11-20 ~16:50. The mass-tower V̂ producers keep the retired q-Plancherel mixture W_sym/W_std/W_alt (≈ 0.165 / 0.669 / 0.165) rather than switching to the convention-D Markov trace `z·a+b`. Reason, measured on #8590 at the proton q₀: under D the proton V̂ is **1.2824 > q₀ = 1.1100**, past the Φ_q pole, so the tower gives **m_p/m_e = ∞** (m_e cat 32455.5, m_p cat +∞), against 9310.3 with the mixture. Switching first would replace a wrong number with ∞.
+
+Done in #8590 (commit a06009c1e8), no numbers moved: every site carries a code comment and a module constant `VHAT_WEIGHTS_LABEL` ("pre-convention-D mixture (q-Plancherel), kept by owner ruling 2026-11-20 until the Φ_q pole (qou-2tuv) is resolved; convention D gives m_p/m_e = ∞"); the producers that write a witness record it as parameter `vhat_weights`. Sites: mass_endomorphism, canonical_tower, substrate/hecke_core (no witness), habiro/habiro_exact_mass_endomorphism, terms_2_3_atom_per_gen_mpfr_50dps, hadron_knot_table, wedderburn_pair_volumes, confined_knot_binding. canonical_tower's V̂ is a JM-weighted sym/alt blend rather than the W mixture its docstring names; its label says so.
+
+**What this bean now gates:** the switch of those eight producers to D. When the Φ_q pole is resolved here, the labelled sites are the list to migrate. Until then two V̂s share one name, and the label is the only thing separating them.
