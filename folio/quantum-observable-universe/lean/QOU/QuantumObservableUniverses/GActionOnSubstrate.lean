@@ -61,7 +61,10 @@ $\mathcal{N}_{\rm sym}(q)$ — is computable in closed form.*
   /-- `⟨Φ⟩ ≠ 0` (the non-zero vortex morphism asserted by Axiom (G-3)). -/
   higgsVev_ne_zero : higgsVev ≠ 0
   /-- **(G-4) Higgs idempotent.** The categorical q-dimension of the image
-      `e_H · A`, the 1-dimensional residual-scalar direction. -/
+      `e_H · A`, the 1-dimensional residual-scalar direction.  Left as a
+      free positive real here; under a unit-normalised cyclic trace its
+      value is `1`, not `[2]_q` (`VacuumPairing.tr_proj_eq_one`; owner
+      ruling 2026-11-20). -/
   qDimHiggsIdempotent : ℝ
   /-- The Higgs-idempotent q-dimension is positive. -/
   qDimHiggsIdempotent_pos : 0 < qDimHiggsIdempotent

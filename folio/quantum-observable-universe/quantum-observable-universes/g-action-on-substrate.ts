@@ -32,7 +32,12 @@ export default conjecture({
   authorNotes: [
     {
       kind: "status",
-      body: "**Open at the closure level.** The four axioms above are a\n**concrete framework extension** that takes the QOU substrate\nfrom \"$\\mathbf{Rep}(\\mathrm{SU}_q(2))$-equivariant\" to\n\"$G \\times \\mathbf{Rep}(\\mathrm{SU}_q(2))$-equivariant\", entailing\nthe closed form $\\mathcal{N}_{\\rm sym}(q) = [2]_q \\cdot [4]_q^2 \\cdot\n[6]_q$ that matches CODATA-derived target to 1.81%. Each factor is\n**categorically derived**, not fitted.\n\nThe remaining 1.81% is a SINGLE missing categorical input (one of\nthe three sources above); identifying it would close the audit\nflag NV-1 entirely.\n\n**To promote to `proposition`:**\n1. Resolve the 1.81% residual via one of the three open routes\n2. Provide the unique-existence argument for the four axioms\n3. Author the Lean formalization",
+      body: "**Open at the closure level.** The four axioms above are a\n**concrete framework extension** that takes the QOU substrate\nfrom \"$\\mathbf{Rep}(\\mathrm{SU}_q(2))$-equivariant\" to\n\"$G \\times \\mathbf{Rep}(\\mathrm{SU}_q(2))$-equivariant\". With\n$\\mathrm{tr}_F(e_H) = 1$ (see the 2026-11-20 note below) they give\n$\\mathcal{N}_{\\rm sym}(q) = [4]_q^2 \\cdot [6]_q \\approx 107.89$ at $q_0$,\n49.4% below the CODATA-derived target 213.11. No factor has been\nre-tuned to recover a match.\n\n**To promote to `proposition`:**\n1. Account for the gap to the target (the former 1.81% agreement\n   rested on a $[2]_q$ factor that (G-4) does not supply)\n2. Provide the unique-existence argument for the four axioms\n3. Author the Lean formalization",
+    },
+    {
+      kind: "refined-framing",
+      date: "2026-11-20",
+      body: "**Owner ruling (2026-11-20): (G-4) corrected to $\\mathrm{tr}_F(e_H) = 1$.** (G-4) previously assigned $e_H$ the trace $[2]_q$, which (G-2) gives to all of $A^{(H)}$. A rank-one idempotent $e_H = \\varrho_\\Phi\\varrho_\\Phi^*/t$ factors through $\\mathbf{1}$, so for a unit-normalised cyclic trace $\\mathrm{tr}\\,e_H = \\mathrm{tr}\\,\\mathrm{id}_{\\mathbf{1}} = 1$ (Lean `QOU.QuantumObservableUniverses.VacuumPairing.tr_proj_eq_one`). Consequence: the closed form loses its $[2]_q$ factor, $\\mathcal{N}_{\\rm sym}(q_0) = [4]_q^2[6]_q \\approx 107.89$ against the target 213.11 (was $\\approx 216.96$, within 1.81%). The target, computed by `computations/n_sym_numerical_anchor.py`, is unchanged; that producer does not evaluate this closed form, so no witness moves.",
     },
   ],
 });
