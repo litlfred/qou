@@ -8,5 +8,5 @@ As $q$ varies from $1$ to $\infty$:
 | Classical | $q = 1$ | $128$ | No crossing asymmetry; $E_1$ is smooth |
 | Sub-golden | $q < 1/\varphi^2$ | undefined | $\mathcal{E}_q$ singular; no stable color fibers |
 | Golden threshold | $q = 1/\varphi^2$ | $\to \infty$ | Cusp; color degeneration |
-| Physical | the substrate $q$ | $129.9$ | Our universe; $\mathcal{E}_q$ smooth with $\Delta < 0$ |
+| Physical | the substrate $q$ | $129.9$ | The observed universe; $\mathcal{E}_q$ smooth with $\Delta < 0$ |
 | Deep quantum | $q \to \infty$ | $\to 0$ | $j \to 0$; curve approaches CM curve |

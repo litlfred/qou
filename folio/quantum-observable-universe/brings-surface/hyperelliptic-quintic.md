@@ -6,7 +6,7 @@ $$
   \text{in } \mathbb{A}^2(\mathbb{C}).
 $$
 
-We view $\mathcal{X}_5$ as a double cover of $\mathbb{P}^1$ via the projection $(x, y) \mapsto x$. Writing $\zeta_5 = e^{2\pi i/5}$ for a primitive fifth root of unity, the ramification locus of this double cover consists of the six branch points
+View $\mathcal{X}_5$ as a double cover of $\mathbb{P}^1$ via the projection $(x, y) \mapsto x$. Writing $\zeta_5 = e^{2\pi i/5}$ for a primitive fifth root of unity, the ramification locus of this double cover consists of the six branch points
 
 $$
   \{x_0, x_1, x_2, x_3, x_4, \infty\}  =
@@ -21,4 +21,4 @@ $$
 
 Thus $\mathcal{X}_5$ is a **hyperelliptic** Riemann surface of genus $2$ in the Bolza family \cite{bolza1887}. Its hyperelliptic involution is $\iota \colon (x, y) \mapsto (x, -y)$.
 
-**Relation to Bring's surface.** The coordinate $x$ on $\mathcal{X}_5$ is a $\mathbb{Z}_5$-equivariant observable. We identify it with the first Lagrange resolvent $w_1$ of [prop:lagrange-resolvent-transform](#prop:lagrange-resolvent-transform), restricted to the cyclic subgroup $\mathbb{Z}_5 \subset S_5$ of [Bring's surface](#def:brings-surface). Under this identification, the five branch points $\zeta_5^k$ are the cyclic images of a single $\mathbb{Z}_5$-orbit.
+**Relation to Bring's surface.** The coordinate $x$ on $\mathcal{X}_5$ is a $\mathbb{Z}_5$-equivariant observable. It is identified with the first Lagrange resolvent $w_1$ of [prop:lagrange-resolvent-transform](#prop:lagrange-resolvent-transform), restricted to the cyclic subgroup $\mathbb{Z}_5 \subset S_5$ of [Bring's surface](#def:brings-surface). Under this identification, the five branch points $\zeta_5^k$ are the cyclic images of a single $\mathbb{Z}_5$-orbit.

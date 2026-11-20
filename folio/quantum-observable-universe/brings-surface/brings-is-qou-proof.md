@@ -11,8 +11,8 @@ faithful, and monoidal.  The Woronowicz left-covariant $3D$ differential
 calculus \cite{woronowicz1987-twisted-su2}
 $\Omega^1(A) = \ker(\varepsilon) / \ker(\varepsilon)^2$ is a
 $3$-dimensional $A$-bimodule in $\mathbf{C}$, providing the differential
-calculus axiom; we use the left-covariant (not bi-covariant) $3D$
-calculus of \cite{woronowicz1987-twisted-su2} throughout.
+calculus axiom; the left-covariant (not bi-covariant) $3D$
+calculus of \cite{woronowicz1987-twisted-su2} is used throughout.
 
 *Item (2).*
 The adjoint representation $\mathrm{Ad}(A)$ decomposes under
