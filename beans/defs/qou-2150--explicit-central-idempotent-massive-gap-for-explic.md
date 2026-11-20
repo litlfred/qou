@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-12T10:22:30Z
-updated_at: 2026-11-20T17:30:00Z
+updated_at: 2026-11-20T18:30:00Z
 parent: qou-d8c7
 ---
 
@@ -54,4 +54,28 @@ Owner: "Work at the conjecture for all n".
 - re-pointing the two blocks' `lean.ref` and retiring the scalar carrier (owner).
 
 Stays open (rule 13a).
+
+## 2026-11-20: the involution, chosen by the owner (option C, live card), and its downstream reach
+
+**Owner chose C:** ⋆ = bar (σ ↦ σ⁻¹, q ↦ q⁻¹) for the physical statement, plus # (σ ↦ −σ⁻¹) stated separately as the λ ↔ λ′ pairing.
+
+**Measured** (probe `computations/probes/central_idempotent_involution_probe.py`, commits 964e2857b1 and 429e1a2a1a; exact arithmetic, n = 2–4 at two values of q):
+- bar fixes every e_λ;
+- Stokes reversal (bar composed with word reversal) fixes every e_λ;
+- # sends e_λ to e_λ′;
+- h − z_D(q) = z_D(−1/q), so # maps tr_D at q to tr_D at −1/q;
+- the convention-D two-row weights are bar-invariant (n ≤ 5).
+
+**Downstream:**
+- The production `y_lambda_wenzl_bridge` weights agree at q₀ and 1/q₀ to about 1e-51 (measured at 50 dps, not committed). The bar-symmetrisation `(y(q₀) + y(1/q₀))/2` in `computations/bar_pairing_binding_observable.py` therefore changes nothing.
+- No number in any mass or binding producer depends on ⋆. The e_λ are the same elements whichever involution is chosen.
+- `two-filtration-bridge` makes depth-lift components antisymmetric on chiral pairs λ ↔ λ′. That needs #, not bar; under C it should cite #.
+
+**Next (option C, in Lean):**
+- bar fixes every e_λ, for all n;
+- #(e_λ) = e_λ′, for all n.
+
+Route for both: use `seminormalRep_qJMInv` with a general diagonal-Lagrange image lemma (`f(d) = q^(−2d)` for bar). The # case also needs a transpose bijection SYT(λ) ≃ SYT(λ′) with negated contents; the corpus SYT type has no transpose.
+
+Not yet started in Lean.
 
