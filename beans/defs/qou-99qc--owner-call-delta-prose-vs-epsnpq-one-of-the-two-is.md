@@ -4078,3 +4078,16 @@ PR #8564: under γγ words + reading 3 (whole word, every tower level) p and n s
 
 ## 2026-11-20T14:50:40Z — OWNER RULING (not a working assumption): photon last term is σ₀σ₁⁻¹
 Owner (Carl, 2026-11-20 15:47–15:48): "Use γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹ … That was already decided. Why did it get changed back to the wrong form? … Who overrode my decision". The 2026-11-18 19:05Z entry above recorded this as "a working assumption, not a ruling to edit def:photon" — that classification was the recording agent's, and it is why the merged def:photon (8fe7dbecf4, authored 11-17 before the decision; moved to the library e3c658a58b 11-20 07:44; merged in #8367 11-20 08:34) still carries σ₀σ₁. It is now a ruling: def:photon is being corrected (branch claude/photon-chiral-vertex-2026-11-20). All running agents told to use σ₀σ₁⁻¹.
+
+## 2026-11-20 — W2: where the "good" Q_beta came from (measured at the proton pin, 50 dps, CODATA 0.78233341 MeV)
+| construction | Q_beta (MeV) | error |
+|---|---|---|
+| Form A closed form (z = 1 base) | 0.7836458 | +1677.6 ppm |
+| + Kashiwara N1, convention C | 0.7823912 | +73.8 ppm |
+| + Kashiwara N2, convention C | 0.7823344 | **+1.28 ppm** (the remembered "good" number) |
+| + Kashiwara N1, convention D | 0.7828615 | +675.0 ppm |
+| + Kashiwara N2, convention D | 0.7828047 | +602.4 ppm |
+| D N2 + connected Borromean QED (plain) | 0.7824730 | +178.4 ppm (recorded as a selection, not a prediction) |
+| scorecard primary (z_D Markov trace, nuc11_interleaved, two-term) | 0.6515246 | -16.7 % |
+
+The +1.28 ppm needs BOTH a z = 1 base (retired 2026-09-08: not a convention-D Markov trace, fails to annihilate the (1^3) block) AND a convention-C phase (excised 2026-08-15). It also needs N = 2 truncation, a near-match rung. Keeping the base and moving only the phase to D gives +602 ppm. Every admissible D base is below CODATA (F_required > 1), so no cosine ladder can close it (qou-cds1).
