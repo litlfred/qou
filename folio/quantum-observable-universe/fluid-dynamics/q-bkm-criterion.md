@@ -1,5 +1,3 @@
 Let $v$ be the solution of the q-NS system with $q > 1$ on $[0, T)$ and let $\omega_q = d_q v$ be the $q$-vorticity. Then $v$ extends smoothly beyond $T$ if and only if $\int_0^T \lVert \omega_q(t) \rVert_{L^\infty}dt < \infty$.
 
 Since well-posedness solutions are global for $q > 1$, the integral is always finite when $q > 1$. The criterion becomes non-trivial only in the $q \to 1$ limit.
-
-**Shared substrate.** Boundedness of $\int_0^T \lVert \omega_q \rVert_{L^\infty}\,dt$ is the *regularity* leg of the shared length-filtration trichotomy on the Skein substrate $\mathcal{S}(q)$ ([one length filtration, three problems](#rem:skein-filtration-trichotomy)): $q$-Navier--Stokes asks the crossing-number filtration $\ell$ (the vortex-knot complexity) to stay **bounded** — no finite-time blow-up — the same $\ell$ that $q$-Collatz asks to **descend** and $\mathrm{P}$ vs $\mathrm{NP}$ asks to be **polynomially** reachable. All three are one shared object, the Skein observation system, in which regularity follows from non-increase of the length filtration — the abstract shadow of this criterion.
