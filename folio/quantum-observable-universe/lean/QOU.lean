@@ -1777,6 +1777,7 @@ import QOU.MassTheory.H4GPMTModifiedDimensionCumulants
 import QOU.Eightfold.USpinColemanGlashowLambdaSigma
 import QOU.StandardModel.OctonionColourTripletSplitting
 import QOU.StandardModel.ElectroweakBringSchwingerBridge
+import QOU.StandardModel.ElectroweakVevFixedPointDecomposition
 import QOU.Archimedean.BringSchwingerNormalizationDerivation
 import QOU.QBeta.CoshHolonomyAndGPMTBaseBridge
 import QOU.ShellCondensation.SelectorPrune
