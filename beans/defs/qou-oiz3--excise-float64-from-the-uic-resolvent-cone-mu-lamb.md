@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-12T20:47:33Z
-updated_at: 2026-11-20T09:55:00Z
+updated_at: 2026-11-20T14:30:00Z
 parent: qou-9nnz
 ---
 
@@ -173,3 +173,88 @@ on the #7439 branch -- and its one surviving open item is exactly the line-60
 channel above. Minting a second bean for it would duplicate this one. The
 `_DPS_DEFAULT` half of `qou-5eg1` is landed and closed; the
 `mpf(Q_50_DIGIT_STR)` half lives here.
+
+## 2026-11-20 -- owner selected ALL FOUR options; option 1 (identification) is DONE
+
+Put to the owner as four options; the answer was all four. Sequencing finding
+recorded first because two of them interact: **option 3 (close the input
+ceiling) must land before option 4 (refresh)**, since closing the ceiling moves
+the values a refresh would write, so refreshing first means refreshing twice.
+Option 2 (binding shape) touches none of the same files and runs in parallel.
+
+### Option 1 result (READ-ONLY; no producer run, no witness written)
+
+[`computations/audits/exposed_witness_identification.py`](../computations/audits/exposed_witness_identification.py),
+write-up `docs/audits/2026-11-20-exposed-witness-identification.md`.
+
+| surface | producers | witnesses >50 digits | coarse (no-op) |
+|---|---:|---:|---:|
+| A  wedderburn trio / q_dimension | 77 | -- | -- |
+| B  q_int( | 142 | -- | -- |
+| **A u B -- the LANDED fixes (option 4)** | **182** | **88** | 33 |
+| C  mpf(Q_50_DIGIT_STR) -- the ceiling (option 3) | 811 | **461** | 134 |
+
+A u B and C are disjoint by construction; without the exclusion C is 498, so
+they overlap on 37. 3625 tracked witnesses, 4773 scanned .py.
+
+**Option 4 is 88 witnesses, not 243.** The 243 was a whole-repo count by a
+different predicate two months ago, before either fix landed. 33 further
+exposed witnesses are too coarse for the fix to show, so refreshing those is a
+no-op diff.
+
+**434 witnesses (12 %) record no producer at all**, plus 8 recording an
+untracked one. No triage of this shape reaches them; `scriptFile` would have to
+be backfilled at the producer first. Neither cleared nor implicated.
+
+### I quoted option 3's cost to the owner WRONGLY, and it is corrected here
+
+Option 3 was put to the owner as "`constants.py` + `wedderburn.py` plus the
+consumers that serialize at 60". Measured: **809 producers call
+`mpf(Q_50_DIGIT_STR)`**, and **486** of them back a witness fine enough for the
+cap to show. That is ~6x option 4 and is not a two-file change. Re-put to the
+owner with the real figure rather than started.
+
+### Two things I had wrong about the ceiling itself
+
+- **The `*_MP` family is NOT truncated at 50.** `Q_MP = q_at(_DPS_DEFAULT)` with
+  `_DPS_DEFAULT = 70` since `14a9e822427`, and the other ten derive from it
+  inside `workdps(70)`. Referencing an `_MP` constant is the full-precision
+  path. This bean's own line-60 item should be read as naming the
+  `mpf(Q_50_DIGIT_STR)` channel specifically, not the `_MP` family.
+- **`pyhecke.wedderburn._DPS_FLOOR = 50` is a FLOOR, not a cap.** `_wdps()`
+  returns `max(mp.mp.dps, 50)`, so it raises precision when ambient is low and
+  never lowers it -- which is exactly why the ambient sweep is flat at
+  1.158e-51 across dps 15/50/70/100. No change to it is needed and it is not
+  part of the ceiling.
+
+So the ceiling is ONE channel: `mpf(Q_50_DIGIT_STR)`. `Q_50_DIGIT_STR` itself
+must NOT be changed -- its name is its specification and 1216 files import it;
+the fix is to move value-consumers onto `Q_MP`, which is already 70 digits.
+
+### Two blind spots in my own audit, found by running it
+
+Both in the detector, both fixed before commit, both recorded because the
+audit's numbers would otherwise read as corpus facts.
+
+1. **Family C measured the wrong thing** -- it keyed on `\b[A-Z][A-Z0-9_]*_MP\b`
+   (not a ceiling, see above) and that regex cannot match `Q_50_DIGIT_STR`,
+   which does not end in `_MP`. The one real channel was invisible to it:
+   401 -> 811 producers, 264 -> 461 witnesses on the fix.
+2. **The auditor counted itself** -- it names every family-A function in its own
+   `A_FUNCS` tuple, so the derived calibration read 96 against 95 and the run
+   refused to print. Excluded by path now.
+
+A first version over-matched **6x** (1519 candidates) because its one-hop rule
+flagged any producer importing `q_parameter`, which DEFINES `q_int` -- exposure
+to the module rather than to the fix, 2463 of 4773 producers. Direct calls only.
+
+The calibration is a **derived identity**, not a band: the audit's "124 files"
+is whole-repo (132 = 23 fsh-guts/deprecated + 10 docs/audits prose + 99 live
+code), this scan excludes the qou-mass mirror (3) and tools/sage-examples (1),
+so it must read exactly 95 -- asserted, exit 2 on a miss. Per taxonomy row 45,
+an audit that self-certifies its calibration cannot find its own blind spot;
+both of the above were caught by that assertion or by use.
+
+Bounded scope gap, stated because it is checkable: a second computations tree
+exists at `folio/quantum-observable-universe/computations/`, measured at **2**
+.py files and **2** witnesses. A gap, not a tree.
