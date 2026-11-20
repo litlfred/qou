@@ -1,4 +1,4 @@
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Ring.Defs
 import Mathlib.GroupTheory.Perm.Sign
 import Mathlib.Tactic.Ring
 
@@ -76,7 +76,7 @@ lemma signCharacter_one : signCharacter (1 : Equiv.Perm (Fin 3)) = 1 := by
 -- Ref: [fulton-harris1991] §2 (Frobenius character formula, sign-isotype projection)
 -- Ref: [macdonald1995] §I.2 (Vandermonde discriminant identity)
 -- Ref: [leitner2026] https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/predicted-spectra/baryon-product-from-alt.md
-theorem baryonProductFromAlt (a b c : ℝ) :
+theorem baryonProductFromAlt {R : Type*} [CommRing R] (a b c : R) :
     (b * c ^ 2 - c * b ^ 2) - a * (c ^ 2 - b ^ 2) + a ^ 2 * (c - b)
       = (b - a) * (c - a) * (c - b) := by
   ring
