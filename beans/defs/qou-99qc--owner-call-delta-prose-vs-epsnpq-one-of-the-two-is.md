@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-20T23:40:00Z
+updated_at: 2026-11-20T19:48:01Z
 parent: qou-10v9
 ---
 
@@ -4278,3 +4278,13 @@ Owner ask (~20:15): derive the rate as a function of q, nothing chosen. #8638 gi
 - γγ e⁻ = σ₀σ₁σ₀ closes to ≥2 components, T(2,3) to 1. These are different objects.
 - With #8661: L ⇒ the K-weighted Q_β = 0. Without L, the 0.3254 cell stands, but #8638/#8636 lose their derived labels.
 - OPEN, owner: adopt L or reject it (framed in the #8673 body). Bean stays open.
+
+## 2026-11-20 — option 1 attempted: is E₀ on the chain? (owner "Try"; PR #8662, audit §14)
+
+Scope-(a) negative.
+- E₀ = m_e c_q² ℏ_q exactly: the chain's 𝔈 = 𝔪 c_q² times an extra "per tick" ℏ_q that no step of the chain supplies. CODATA needs 1.7592 ℏ_q instead.
+- At single wrap, Δt/t_p = −0.341, against a physical 0.00138 (248× smaller). So any scale shared between the nucleon and Δ overshoots:
+  - 320 MeV (linear);
+  - 531 MeV (Frobenius norm ⟨x,x⟩);
+  - 100 MeV (mass channel).
+- Q_β needs a scale decoupled from the nucleon mass. Which m_e·ℚ(q₀) element that is, and why, is open.
