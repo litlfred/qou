@@ -87,6 +87,9 @@
           side condition of PI-2 holds only EVENTUALLY, which is exactly what
           `Summable.of_norm_bounded_eventually_nat` accepts.
     PI-4  order/genus lemmas (`p ≤ ρ`, exponent of convergence ≤ order).
+          Exponent of convergence ≤ order is PROVED (2026-11-20) in
+          `QOU.Mathlib.ExponentOfConvergence.summable_divisor_mul_rpow_neg`, via Jensen
+          (`QOU.Mathlib.JensenZeroCounting`). The genus bound `p ≤ ρ` is not yet stated.
     PI-5  Jensen ⇒ zero-counting ⇒ the factorization (deepest; needs Nevanlinna).
 
   -- Ref: [leitner2026] standard complex analysis: Ahlfors, *Complex Analysis*,
