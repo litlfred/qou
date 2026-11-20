@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-11-20T17:10:51.984628+00:00",
-  "commitSha": "e8eeb61cfe53ac71edead1724a26c3bf1cae6a91",
+  "computedAt": "2026-11-20T18:43:37.934072+00:00",
+  "commitSha": "8a51be2e1185d397db5b6dafc674326efda41dce",
   "assertions": [
     {
       "name": "h_shell_binding_equals_rydberg",
@@ -40,11 +40,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 27,
+  "durationMs": 18,
   "computation": "atom-electron-mass",
   "scriptFile": "atom_electron_mass.py",
-  "scriptHash": "8b3d0f117835",
-  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "scriptHash": "1348e275e89b",
+  "scriptCommitSha": "8a51be2e1185d397db5b6dafc674326efda41dce",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -58,6 +58,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "cvxpy": "absent",
     "pyhecke_native_build": "930c010e26215e56"
   },
