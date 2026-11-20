@@ -12,7 +12,10 @@ import Mathlib.Tactic
 namespace QOU.Archimedean
 
 /-- A colored photon is the identity element plus color dressing
-    in the Hecke algebra: γ_φ = 𝟙 + φ·σ₀ + φ·σ₁. -/
+    in the Hecke algebra: γ_φ = 𝟙 + φ·σ₀ + φ·σ₁. This is the three-term
+    specialisation `φ₀ = φ₁ = φ`, `φ₀₁ = 0` of `def:photon`
+    (`QOU.Photon.photon`, `1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹`); only the scalar
+    weight `φ` is recorded here, so no Hecke element is formed. -/
 -- Ref: [leitner2026] Chapter 6, §3b
 structure ColoredPhoton (q : ℝ) where
   colorWeight : ℝ
