@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-17T18:13:07.281288+00:00",
-  "commitSha": "6b60c370e204dff1dfbe395971f216938b2c91ab",
+  "computedAt": "2026-11-20T15:22:36.672354+00:00",
+  "commitSha": "c8466b77154313d1a76f4c2472e343e2d363f0d9",
   "assertions": [
     {
       "name": "ran_alphabet_a",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 13,
   "computation": "gg-twist-reading3-stage1b",
   "scriptFile": "gg_twist_reading3_stage1b_probe.py",
-  "scriptHash": "fe00aa5daa17",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "9608d1745d42",
+  "scriptCommitSha": "0218c9ba9ad273ba5984b06c405cefcf6d2da644",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,7 +37,10 @@
     "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "cvxpy": "absent"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "ae1028699afd20c5"
   },
   "invocation": {
     "argv": [
@@ -47,7 +50,7 @@
   },
   "q0Anchor": "proton",
   "q0AnchorReason": "via h2_one_rule (cf.Q, proton pin)",
-  "description": "PROBE stage 1b (beans qou-a1hh, qou-99qc): stage 1 re-run with L- = s1 s0 (order, not inverse) and the four-term photon letter e- = s0 s1 s0. Pre-registered. Nothing selected.",
+  "description": "PROBE stage 1b (beans qou-a1hh, qou-99qc): stage 1 re-run with L- = s1 s0 (order, not inverse) and the gamma-gamma product letter e- = s0 s1 s0 (called 'the four-term photon letter' when run; scoped 2026-11-20: def:photon's fourth term is s0 s1^-1 by owner ruling, alphabets unaffected). Pre-registered. Nothing selected.",
   "results": {
     "a": {
       "words": 5460,
