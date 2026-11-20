@@ -1,0 +1,1720 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prf:q-beta-q-eq-one-shadow-gate",
+  "kind": "proof",
+  "paths": {
+    "ts": "folio/quantum-observable-universe/mass-theory/q-beta-q-eq-one-shadow-gate-proof.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/q-beta-q-eq-one-shadow-gate-proof.md"
+  },
+  "source_hashes": {
+    "md": "e1a296d09495",
+    "ts": "689434b24dce"
+  },
+  "criteria": {
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "9b284af269a5",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
+          "deps_hash": "c6456bf489a8"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:28.975Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:17:51.000Z",
+        "reviewed_sha": "4700577e03372a99d588a4302e8cd6db927504e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:28.975Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:17:51.000Z",
+        "reviewed_sha": "4700577e03372a99d588a4302e8cd6db927504e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:28.975Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:17:51.000Z",
+        "reviewed_sha": "4700577e03372a99d588a4302e8cd6db927504e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:28.975Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:17:51.000Z",
+        "reviewed_sha": "4700577e03372a99d588a4302e8cd6db927504e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:28.975Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:17:51.000Z",
+        "reviewed_sha": "4700577e03372a99d588a4302e8cd6db927504e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:28.975Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:17:51.000Z",
+        "reviewed_sha": "4700577e03372a99d588a4302e8cd6db927504e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:28.975Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:17:51.000Z",
+        "reviewed_sha": "4700577e03372a99d588a4302e8cd6db927504e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:28.975Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:17:51.000Z",
+        "reviewed_sha": "4700577e03372a99d588a4302e8cd6db927504e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:28.975Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:17:51.000Z",
+        "reviewed_sha": "4700577e03372a99d588a4302e8cd6db927504e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:28.975Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:17:51.000Z",
+        "reviewed_sha": "4700577e03372a99d588a4302e8cd6db927504e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:28.975Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:17:51.000Z",
+        "reviewed_sha": "4700577e03372a99d588a4302e8cd6db927504e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:28.975Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:17:51.000Z",
+        "reviewed_sha": "4700577e03372a99d588a4302e8cd6db927504e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:28.975Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:17:51.000Z",
+        "reviewed_sha": "4700577e03372a99d588a4302e8cd6db927504e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:28.975Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:17:51.000Z",
+        "reviewed_sha": "4700577e03372a99d588a4302e8cd6db927504e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "warn",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:17:51.000Z",
+        "reviewed_sha": "4700577e03372a99d588a4302e8cd6db927504e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "bbc03dd9670f",
+          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "voice-probe-narrative": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c43b7731faf9",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T11:33:08.299Z",
+        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      }
+    ],
+    "cite-named-theorem": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c43b7731faf9",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T11:33:08.299Z",
+        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      }
+    ],
+    "voice-agent-speak": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c43b7731faf9",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T11:33:08.299Z",
+        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5a542b9ddb77",
+          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/mass-theory/q-beta-q-eq-one-shadow-gate-proof.md:27: $\\lim_{q \\to 1} c_2(q) = -1$ holds trivially, as the limit of a"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d57f31bc95cf",
+          "script_commit_sha": "3157bb0064d2a3a253ef3ae7bea19b5bbe12e591"
+        },
+        "reviewed_at": "2026-07-13T00:59:15.685Z",
+        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-title-scholarly": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "dbe50250022f",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d57f31bc95cf",
+          "script_commit_sha": "3157bb0064d2a3a253ef3ae7bea19b5bbe12e591"
+        },
+        "reviewed_at": "2026-07-13T00:59:15.685Z",
+        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c43b7731faf9",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T11:33:08.299Z",
+        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      }
+    ],
+    "voice-status-section": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c43b7731faf9",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T11:33:08.299Z",
+        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "cf3d4ea0ab0a",
+          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "689434b24dce",
+          "md": "e1a296d09495"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "689434b24dce",
+          "md": "e1a296d09495"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "689434b24dce",
+          "md": "e1a296d09495"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "689434b24dce",
+          "md": "e1a296d09495"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "689434b24dce",
+          "md": "e1a296d09495"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "689434b24dce",
+          "md": "e1a296d09495"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "689434b24dce",
+          "md": "e1a296d09495"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "proof-no-trivial-skeleton": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "78239d5e66a5",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
+          "deps_hash": "21d9ff417741"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c58bf6bca27b",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "canonical-witness-pinned": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "3050ae1775d6",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "canonical-script-not-deprecated": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "89bcd82bd3ff",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "canonical-dilogarithm-context": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "a065b3633f0f",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "canonical-no-hardcoded-observable": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "96a346415fd2",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "47384e4fd1b4",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "compute-lp-dual-present": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "772b3e8dc930",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f6f0b2cd1afb",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "detangler-section-band": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "696ee4c80040",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "detangler-no-xchapter-fwd": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "b01f61430d2a",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "detangler-archimedean-wall": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "3edb7220507a",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "ac7512959351",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 1,
+          "in_degree": 0,
+          "cone_size": 134,
+          "depth": 48,
+          "pagerank": 7.4e-05,
+          "edge_span_max": 1,
+          "edge_span_mean": 1,
+          "worst_target": ""
+        }
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "aacb0bf5d4b9",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "280aea9a61d8",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "detangler-no-dependency-cycle": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "39dfc0abf653",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "bib-cited-ref-has-url": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "a730f195e37d",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
+          "deps_hash": "c6456bf489a8"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "bib-cited-ref-metadata-ok": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "b7cc0ee7d062",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
+          "deps_hash": "c6456bf489a8"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "bib-cited-ref-has-screenshot": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "d3202b194d13",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
+          "deps_hash": "c6456bf489a8"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "uses-editorial-hygiene": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "1d50b09b0497",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "c7f602946422"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "metrics": {
+          "uses_count": 1,
+          "broken_edges": 0,
+          "redundant_edges": 0
+        }
+      }
+    ],
+    "uses-formal-coverage": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "b7b208d4a0c4",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "f9b547e15cfd"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "lean-ref-owns-decl": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "b1c323c3439c",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "c7f602946422"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.318Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:03.868Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proof block, read in full (three steps). All ten categories clean. 'We establish the two anchor values, then the rejection' is an ordinary roadmap sentence; the negation in Step 3 ('agreement is exact or it is not') is the substantive tolerance claim. Two spaced em-dashes, both appositive. RIGOR PASS, and Step 2 is correct in full: with J_unknot = 1 and the skein J_{L+} - J_{L-} = (q - q^{-1})J_{L0}, the right-hand side vanishes at q = 1, so J(1) is crossing-change invariant; crossing changes unknot any diagram; the split-union loop value -(q^{1/2}+q^{-1/2}) is -2 at q = 1; hence J_L(1) = (-2)^{n-1}, giving -2 for the 2-component Hopf link. The stated consistency check is also right: the positive Hopf link has J = -q^{1/2} - q^{5/2}, which is -2 at q = 1. SS7a compliance is exact -- the skein is written in the mandated form, the generator is sigma_i, and the invariant is J_K(q) rather than V_K(t).",
+        "notes": "THREE NOTES, none an arithmetic error. (1) STEP 1 PRESENTS A RE-READING AS A DERIVATION. It writes '1 + c_2 u^2 = 1 - b(q)^2 hbar_q^4 = 1 - u^2, valid over any commutative ring. Hence c_2(q) = -1 identically in q -- a Taylor-exact constant.' Since u is DEFINED as b*hbar_q^2, the middle equality is a substitution and the conclusion is the ansatz read back; AGENTS.md's 2026-08-16 ruling says exactly this ('the Lean re-reads the N=2 factor rather than deriving it') and asks that the word 'structural' be used. (2) STEP 1 ALSO DROPS THE SERIES NAME. It says 'a Taylor-exact constant' flatly, where the parent proposition correctly qualifies 'Taylor-exact for the explicit-factor product' and records that the normalised series gives -9/8. The ruling's instruction is to say WHICH SERIES, never to delete the word, so the proof under-specifies where its own statement does not. (3) CONVENTION NOTE, resolved rather than flagged: Step 2's loop value -(q^{1/2}+q^{-1/2}) is the reciprocal of the excised convention-C Markov parameter z_C = 0.49932033, so the trace-to-Jones chain the ladder uses is C-frame. But the QUANTITY Step 2 establishes, J_Hopf(1) = -2, is a knot invariant and is convention-independent, so this step does not inherit the qou-cds1 scope. I checked rather than guessed."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.318Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:03.914Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proof block, read in full (three steps). All ten categories clean. 'We establish the two anchor values, then the rejection' is an ordinary roadmap sentence; the negation in Step 3 ('agreement is exact or it is not') is the substantive tolerance claim. Two spaced em-dashes, both appositive. RIGOR PASS, and Step 2 is correct in full: with J_unknot = 1 and the skein J_{L+} - J_{L-} = (q - q^{-1})J_{L0}, the right-hand side vanishes at q = 1, so J(1) is crossing-change invariant; crossing changes unknot any diagram; the split-union loop value -(q^{1/2}+q^{-1/2}) is -2 at q = 1; hence J_L(1) = (-2)^{n-1}, giving -2 for the 2-component Hopf link. The stated consistency check is also right: the positive Hopf link has J = -q^{1/2} - q^{5/2}, which is -2 at q = 1. SS7a compliance is exact -- the skein is written in the mandated form, the generator is sigma_i, and the invariant is J_K(q) rather than V_K(t).",
+        "notes": "THREE NOTES, none an arithmetic error. (1) STEP 1 PRESENTS A RE-READING AS A DERIVATION. It writes '1 + c_2 u^2 = 1 - b(q)^2 hbar_q^4 = 1 - u^2, valid over any commutative ring. Hence c_2(q) = -1 identically in q -- a Taylor-exact constant.' Since u is DEFINED as b*hbar_q^2, the middle equality is a substitution and the conclusion is the ansatz read back; AGENTS.md's 2026-08-16 ruling says exactly this ('the Lean re-reads the N=2 factor rather than deriving it') and asks that the word 'structural' be used. (2) STEP 1 ALSO DROPS THE SERIES NAME. It says 'a Taylor-exact constant' flatly, where the parent proposition correctly qualifies 'Taylor-exact for the explicit-factor product' and records that the normalised series gives -9/8. The ruling's instruction is to say WHICH SERIES, never to delete the word, so the proof under-specifies where its own statement does not. (3) CONVENTION NOTE, resolved rather than flagged: Step 2's loop value -(q^{1/2}+q^{-1/2}) is the reciprocal of the excised convention-C Markov parameter z_C = 0.49932033, so the trace-to-Jones chain the ladder uses is C-frame. But the QUANTITY Step 2 establishes, J_Hopf(1) = -2, is a knot invariant and is convention-independent, so this step does not inherit the qou-cds1 scope. I checked rather than guessed."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.318Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "severity": "minor",
+        "evidence": "6 stylistic spaced dashes in 419 words (1.43/100w) \u2014 restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:03.960Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proof block, read in full (three steps). All ten categories clean. 'We establish the two anchor values, then the rejection' is an ordinary roadmap sentence; the negation in Step 3 ('agreement is exact or it is not') is the substantive tolerance claim. Two spaced em-dashes, both appositive. RIGOR PASS, and Step 2 is correct in full: with J_unknot = 1 and the skein J_{L+} - J_{L-} = (q - q^{-1})J_{L0}, the right-hand side vanishes at q = 1, so J(1) is crossing-change invariant; crossing changes unknot any diagram; the split-union loop value -(q^{1/2}+q^{-1/2}) is -2 at q = 1; hence J_L(1) = (-2)^{n-1}, giving -2 for the 2-component Hopf link. The stated consistency check is also right: the positive Hopf link has J = -q^{1/2} - q^{5/2}, which is -2 at q = 1. SS7a compliance is exact -- the skein is written in the mandated form, the generator is sigma_i, and the invariant is J_K(q) rather than V_K(t).",
+        "notes": "THREE NOTES, none an arithmetic error. (1) STEP 1 PRESENTS A RE-READING AS A DERIVATION. It writes '1 + c_2 u^2 = 1 - b(q)^2 hbar_q^4 = 1 - u^2, valid over any commutative ring. Hence c_2(q) = -1 identically in q -- a Taylor-exact constant.' Since u is DEFINED as b*hbar_q^2, the middle equality is a substitution and the conclusion is the ansatz read back; AGENTS.md's 2026-08-16 ruling says exactly this ('the Lean re-reads the N=2 factor rather than deriving it') and asks that the word 'structural' be used. (2) STEP 1 ALSO DROPS THE SERIES NAME. It says 'a Taylor-exact constant' flatly, where the parent proposition correctly qualifies 'Taylor-exact for the explicit-factor product' and records that the normalised series gives -9/8. The ruling's instruction is to say WHICH SERIES, never to delete the word, so the proof under-specifies where its own statement does not. (3) CONVENTION NOTE, resolved rather than flagged: Step 2's loop value -(q^{1/2}+q^{-1/2}) is the reciprocal of the excised convention-C Markov parameter z_C = 0.49932033, so the trace-to-Jones chain the ladder uses is C-frame. But the QUANTITY Step 2 establishes, J_Hopf(1) = -2, is a knot invariant and is convention-independent, so this step does not inherit the qou-cds1 scope. I checked rather than guessed."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.318Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (1 in 419 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:04.003Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proof block, read in full (three steps). All ten categories clean. 'We establish the two anchor values, then the rejection' is an ordinary roadmap sentence; the negation in Step 3 ('agreement is exact or it is not') is the substantive tolerance claim. Two spaced em-dashes, both appositive. RIGOR PASS, and Step 2 is correct in full: with J_unknot = 1 and the skein J_{L+} - J_{L-} = (q - q^{-1})J_{L0}, the right-hand side vanishes at q = 1, so J(1) is crossing-change invariant; crossing changes unknot any diagram; the split-union loop value -(q^{1/2}+q^{-1/2}) is -2 at q = 1; hence J_L(1) = (-2)^{n-1}, giving -2 for the 2-component Hopf link. The stated consistency check is also right: the positive Hopf link has J = -q^{1/2} - q^{5/2}, which is -2 at q = 1. SS7a compliance is exact -- the skein is written in the mandated form, the generator is sigma_i, and the invariant is J_K(q) rather than V_K(t).",
+        "notes": "THREE NOTES, none an arithmetic error. (1) STEP 1 PRESENTS A RE-READING AS A DERIVATION. It writes '1 + c_2 u^2 = 1 - b(q)^2 hbar_q^4 = 1 - u^2, valid over any commutative ring. Hence c_2(q) = -1 identically in q -- a Taylor-exact constant.' Since u is DEFINED as b*hbar_q^2, the middle equality is a substitution and the conclusion is the ansatz read back; AGENTS.md's 2026-08-16 ruling says exactly this ('the Lean re-reads the N=2 factor rather than deriving it') and asks that the word 'structural' be used. (2) STEP 1 ALSO DROPS THE SERIES NAME. It says 'a Taylor-exact constant' flatly, where the parent proposition correctly qualifies 'Taylor-exact for the explicit-factor product' and records that the normalised series gives -9/8. The ruling's instruction is to say WHICH SERIES, never to delete the word, so the proof under-specifies where its own statement does not. (3) CONVENTION NOTE, resolved rather than flagged: Step 2's loop value -(q^{1/2}+q^{-1/2}) is the reciprocal of the excised convention-C Markov parameter z_C = 0.49932033, so the trace-to-Jones chain the ladder uses is C-frame. But the QUANTITY Step 2 establishes, J_Hopf(1) = -2, is a knot invariant and is convention-independent, so this step does not inherit the qou-cds1 scope. I checked rather than guessed."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.318Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:04.045Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proof block, read in full (three steps). All ten categories clean. 'We establish the two anchor values, then the rejection' is an ordinary roadmap sentence; the negation in Step 3 ('agreement is exact or it is not') is the substantive tolerance claim. Two spaced em-dashes, both appositive. RIGOR PASS, and Step 2 is correct in full: with J_unknot = 1 and the skein J_{L+} - J_{L-} = (q - q^{-1})J_{L0}, the right-hand side vanishes at q = 1, so J(1) is crossing-change invariant; crossing changes unknot any diagram; the split-union loop value -(q^{1/2}+q^{-1/2}) is -2 at q = 1; hence J_L(1) = (-2)^{n-1}, giving -2 for the 2-component Hopf link. The stated consistency check is also right: the positive Hopf link has J = -q^{1/2} - q^{5/2}, which is -2 at q = 1. SS7a compliance is exact -- the skein is written in the mandated form, the generator is sigma_i, and the invariant is J_K(q) rather than V_K(t).",
+        "notes": "THREE NOTES, none an arithmetic error. (1) STEP 1 PRESENTS A RE-READING AS A DERIVATION. It writes '1 + c_2 u^2 = 1 - b(q)^2 hbar_q^4 = 1 - u^2, valid over any commutative ring. Hence c_2(q) = -1 identically in q -- a Taylor-exact constant.' Since u is DEFINED as b*hbar_q^2, the middle equality is a substitution and the conclusion is the ansatz read back; AGENTS.md's 2026-08-16 ruling says exactly this ('the Lean re-reads the N=2 factor rather than deriving it') and asks that the word 'structural' be used. (2) STEP 1 ALSO DROPS THE SERIES NAME. It says 'a Taylor-exact constant' flatly, where the parent proposition correctly qualifies 'Taylor-exact for the explicit-factor product' and records that the normalised series gives -9/8. The ruling's instruction is to say WHICH SERIES, never to delete the word, so the proof under-specifies where its own statement does not. (3) CONVENTION NOTE, resolved rather than flagged: Step 2's loop value -(q^{1/2}+q^{-1/2}) is the reciprocal of the excised convention-C Markov parameter z_C = 0.49932033, so the trace-to-Jones chain the ladder uses is C-frame. But the QUANTITY Step 2 establishes, J_Hopf(1) = -2, is a knot invariant and is convention-independent, so this step does not inherit the qou-cds1 scope. I checked rather than guessed."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.318Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:04.118Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proof block, read in full (three steps). All ten categories clean. 'We establish the two anchor values, then the rejection' is an ordinary roadmap sentence; the negation in Step 3 ('agreement is exact or it is not') is the substantive tolerance claim. Two spaced em-dashes, both appositive. RIGOR PASS, and Step 2 is correct in full: with J_unknot = 1 and the skein J_{L+} - J_{L-} = (q - q^{-1})J_{L0}, the right-hand side vanishes at q = 1, so J(1) is crossing-change invariant; crossing changes unknot any diagram; the split-union loop value -(q^{1/2}+q^{-1/2}) is -2 at q = 1; hence J_L(1) = (-2)^{n-1}, giving -2 for the 2-component Hopf link. The stated consistency check is also right: the positive Hopf link has J = -q^{1/2} - q^{5/2}, which is -2 at q = 1. SS7a compliance is exact -- the skein is written in the mandated form, the generator is sigma_i, and the invariant is J_K(q) rather than V_K(t).",
+        "notes": "THREE NOTES, none an arithmetic error. (1) STEP 1 PRESENTS A RE-READING AS A DERIVATION. It writes '1 + c_2 u^2 = 1 - b(q)^2 hbar_q^4 = 1 - u^2, valid over any commutative ring. Hence c_2(q) = -1 identically in q -- a Taylor-exact constant.' Since u is DEFINED as b*hbar_q^2, the middle equality is a substitution and the conclusion is the ansatz read back; AGENTS.md's 2026-08-16 ruling says exactly this ('the Lean re-reads the N=2 factor rather than deriving it') and asks that the word 'structural' be used. (2) STEP 1 ALSO DROPS THE SERIES NAME. It says 'a Taylor-exact constant' flatly, where the parent proposition correctly qualifies 'Taylor-exact for the explicit-factor product' and records that the normalised series gives -9/8. The ruling's instruction is to say WHICH SERIES, never to delete the word, so the proof under-specifies where its own statement does not. (3) CONVENTION NOTE, resolved rather than flagged: Step 2's loop value -(q^{1/2}+q^{-1/2}) is the reciprocal of the excised convention-C Markov parameter z_C = 0.49932033, so the trace-to-Jones chain the ladder uses is C-frame. But the QUANTITY Step 2 establishes, J_Hopf(1) = -2, is a knot invariant and is convention-independent, so this step does not inherit the qou-cds1 scope. I checked rather than guessed."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.318Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:04.161Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proof block, read in full (three steps). All ten categories clean. 'We establish the two anchor values, then the rejection' is an ordinary roadmap sentence; the negation in Step 3 ('agreement is exact or it is not') is the substantive tolerance claim. Two spaced em-dashes, both appositive. RIGOR PASS, and Step 2 is correct in full: with J_unknot = 1 and the skein J_{L+} - J_{L-} = (q - q^{-1})J_{L0}, the right-hand side vanishes at q = 1, so J(1) is crossing-change invariant; crossing changes unknot any diagram; the split-union loop value -(q^{1/2}+q^{-1/2}) is -2 at q = 1; hence J_L(1) = (-2)^{n-1}, giving -2 for the 2-component Hopf link. The stated consistency check is also right: the positive Hopf link has J = -q^{1/2} - q^{5/2}, which is -2 at q = 1. SS7a compliance is exact -- the skein is written in the mandated form, the generator is sigma_i, and the invariant is J_K(q) rather than V_K(t).",
+        "notes": "THREE NOTES, none an arithmetic error. (1) STEP 1 PRESENTS A RE-READING AS A DERIVATION. It writes '1 + c_2 u^2 = 1 - b(q)^2 hbar_q^4 = 1 - u^2, valid over any commutative ring. Hence c_2(q) = -1 identically in q -- a Taylor-exact constant.' Since u is DEFINED as b*hbar_q^2, the middle equality is a substitution and the conclusion is the ansatz read back; AGENTS.md's 2026-08-16 ruling says exactly this ('the Lean re-reads the N=2 factor rather than deriving it') and asks that the word 'structural' be used. (2) STEP 1 ALSO DROPS THE SERIES NAME. It says 'a Taylor-exact constant' flatly, where the parent proposition correctly qualifies 'Taylor-exact for the explicit-factor product' and records that the normalised series gives -9/8. The ruling's instruction is to say WHICH SERIES, never to delete the word, so the proof under-specifies where its own statement does not. (3) CONVENTION NOTE, resolved rather than flagged: Step 2's loop value -(q^{1/2}+q^{-1/2}) is the reciprocal of the excised convention-C Markov parameter z_C = 0.49932033, so the trace-to-Jones chain the ladder uses is C-frame. But the QUANTITY Step 2 establishes, J_Hopf(1) = -2, is a knot invariant and is convention-independent, so this step does not inherit the qou-cds1 scope. I checked rather than guessed."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.318Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:04.209Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proof block, read in full (three steps). All ten categories clean. 'We establish the two anchor values, then the rejection' is an ordinary roadmap sentence; the negation in Step 3 ('agreement is exact or it is not') is the substantive tolerance claim. Two spaced em-dashes, both appositive. RIGOR PASS, and Step 2 is correct in full: with J_unknot = 1 and the skein J_{L+} - J_{L-} = (q - q^{-1})J_{L0}, the right-hand side vanishes at q = 1, so J(1) is crossing-change invariant; crossing changes unknot any diagram; the split-union loop value -(q^{1/2}+q^{-1/2}) is -2 at q = 1; hence J_L(1) = (-2)^{n-1}, giving -2 for the 2-component Hopf link. The stated consistency check is also right: the positive Hopf link has J = -q^{1/2} - q^{5/2}, which is -2 at q = 1. SS7a compliance is exact -- the skein is written in the mandated form, the generator is sigma_i, and the invariant is J_K(q) rather than V_K(t).",
+        "notes": "THREE NOTES, none an arithmetic error. (1) STEP 1 PRESENTS A RE-READING AS A DERIVATION. It writes '1 + c_2 u^2 = 1 - b(q)^2 hbar_q^4 = 1 - u^2, valid over any commutative ring. Hence c_2(q) = -1 identically in q -- a Taylor-exact constant.' Since u is DEFINED as b*hbar_q^2, the middle equality is a substitution and the conclusion is the ansatz read back; AGENTS.md's 2026-08-16 ruling says exactly this ('the Lean re-reads the N=2 factor rather than deriving it') and asks that the word 'structural' be used. (2) STEP 1 ALSO DROPS THE SERIES NAME. It says 'a Taylor-exact constant' flatly, where the parent proposition correctly qualifies 'Taylor-exact for the explicit-factor product' and records that the normalised series gives -9/8. The ruling's instruction is to say WHICH SERIES, never to delete the word, so the proof under-specifies where its own statement does not. (3) CONVENTION NOTE, resolved rather than flagged: Step 2's loop value -(q^{1/2}+q^{-1/2}) is the reciprocal of the excised convention-C Markov parameter z_C = 0.49932033, so the trace-to-Jones chain the ladder uses is C-frame. But the QUANTITY Step 2 establishes, J_Hopf(1) = -2, is a knot invariant and is convention-independent, so this step does not inherit the qou-cds1 scope. I checked rather than guessed."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.318Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:04.248Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proof block, read in full (three steps). All ten categories clean. 'We establish the two anchor values, then the rejection' is an ordinary roadmap sentence; the negation in Step 3 ('agreement is exact or it is not') is the substantive tolerance claim. Two spaced em-dashes, both appositive. RIGOR PASS, and Step 2 is correct in full: with J_unknot = 1 and the skein J_{L+} - J_{L-} = (q - q^{-1})J_{L0}, the right-hand side vanishes at q = 1, so J(1) is crossing-change invariant; crossing changes unknot any diagram; the split-union loop value -(q^{1/2}+q^{-1/2}) is -2 at q = 1; hence J_L(1) = (-2)^{n-1}, giving -2 for the 2-component Hopf link. The stated consistency check is also right: the positive Hopf link has J = -q^{1/2} - q^{5/2}, which is -2 at q = 1. SS7a compliance is exact -- the skein is written in the mandated form, the generator is sigma_i, and the invariant is J_K(q) rather than V_K(t).",
+        "notes": "THREE NOTES, none an arithmetic error. (1) STEP 1 PRESENTS A RE-READING AS A DERIVATION. It writes '1 + c_2 u^2 = 1 - b(q)^2 hbar_q^4 = 1 - u^2, valid over any commutative ring. Hence c_2(q) = -1 identically in q -- a Taylor-exact constant.' Since u is DEFINED as b*hbar_q^2, the middle equality is a substitution and the conclusion is the ansatz read back; AGENTS.md's 2026-08-16 ruling says exactly this ('the Lean re-reads the N=2 factor rather than deriving it') and asks that the word 'structural' be used. (2) STEP 1 ALSO DROPS THE SERIES NAME. It says 'a Taylor-exact constant' flatly, where the parent proposition correctly qualifies 'Taylor-exact for the explicit-factor product' and records that the normalised series gives -9/8. The ruling's instruction is to say WHICH SERIES, never to delete the word, so the proof under-specifies where its own statement does not. (3) CONVENTION NOTE, resolved rather than flagged: Step 2's loop value -(q^{1/2}+q^{-1/2}) is the reciprocal of the excised convention-C Markov parameter z_C = 0.49932033, so the trace-to-Jones chain the ladder uses is C-frame. But the QUANTITY Step 2 establishes, J_Hopf(1) = -2, is a knot invariant and is convention-independent, so this step does not inherit the qou-cds1 scope. I checked rather than guessed."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.318Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:04.290Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proof block, read in full (three steps). All ten categories clean. 'We establish the two anchor values, then the rejection' is an ordinary roadmap sentence; the negation in Step 3 ('agreement is exact or it is not') is the substantive tolerance claim. Two spaced em-dashes, both appositive. RIGOR PASS, and Step 2 is correct in full: with J_unknot = 1 and the skein J_{L+} - J_{L-} = (q - q^{-1})J_{L0}, the right-hand side vanishes at q = 1, so J(1) is crossing-change invariant; crossing changes unknot any diagram; the split-union loop value -(q^{1/2}+q^{-1/2}) is -2 at q = 1; hence J_L(1) = (-2)^{n-1}, giving -2 for the 2-component Hopf link. The stated consistency check is also right: the positive Hopf link has J = -q^{1/2} - q^{5/2}, which is -2 at q = 1. SS7a compliance is exact -- the skein is written in the mandated form, the generator is sigma_i, and the invariant is J_K(q) rather than V_K(t).",
+        "notes": "THREE NOTES, none an arithmetic error. (1) STEP 1 PRESENTS A RE-READING AS A DERIVATION. It writes '1 + c_2 u^2 = 1 - b(q)^2 hbar_q^4 = 1 - u^2, valid over any commutative ring. Hence c_2(q) = -1 identically in q -- a Taylor-exact constant.' Since u is DEFINED as b*hbar_q^2, the middle equality is a substitution and the conclusion is the ansatz read back; AGENTS.md's 2026-08-16 ruling says exactly this ('the Lean re-reads the N=2 factor rather than deriving it') and asks that the word 'structural' be used. (2) STEP 1 ALSO DROPS THE SERIES NAME. It says 'a Taylor-exact constant' flatly, where the parent proposition correctly qualifies 'Taylor-exact for the explicit-factor product' and records that the normalised series gives -9/8. The ruling's instruction is to say WHICH SERIES, never to delete the word, so the proof under-specifies where its own statement does not. (3) CONVENTION NOTE, resolved rather than flagged: Step 2's loop value -(q^{1/2}+q^{-1/2}) is the reciprocal of the excised convention-C Markov parameter z_C = 0.49932033, so the trace-to-Jones chain the ladder uses is C-frame. But the QUANTITY Step 2 establishes, J_Hopf(1) = -2, is a knot invariant and is convention-independent, so this step does not inherit the qou-cds1 scope. I checked rather than guessed."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-08-22T02:40:04.290Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
+}
