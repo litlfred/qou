@@ -1177,6 +1177,7 @@ import QOU.Mathlib.EllipticDivisorDegree
 import QOU.Mathlib.EllipticAnnulusDescent
 import QOU.Mathlib.ArgumentPrincipleAnnulus
 import QOU.Mathlib.EllipticAnnulusWinding
+import QOU.Mathlib.LiouvilleThird
 import QOU.Mathlib.HadamardFactorization
 -- Argument-principle scaffold (epic qou-lbth / bean qou-bmyx, brick PI-3):
 -- (1/2πi)∮ f'/f = #zeros − #poles stated open (residue-of-logDeriv = order is the
