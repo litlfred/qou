@@ -28,4 +28,4 @@ $$
   \bigr)
 $$
 
-The observed resonance energy is $\approx 1.56 \;\mathrm{eV}$ (:val[benzene_resonance_kcal]{precision=2, witness=computations/molecular-experimental-refs.witness.json} kcal/mol).
+The observed resonance energy is $\approx 1.56 \;\mathrm{eV}$ ({{ qou.computations.molecular-experimental-refs.data.benzene_resonance_kcal | precision: 2 }} kcal/mol).
