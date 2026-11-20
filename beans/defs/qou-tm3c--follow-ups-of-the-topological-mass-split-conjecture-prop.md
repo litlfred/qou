@@ -1,11 +1,11 @@
 ---
 # qou-tm3c
 title: 'Follow-ups of the topological-mass split: provable blocks now depending on conj:topological-mass, stale labels in Lean/compute/generated files'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-11-20T09:10:00Z
-updated_at: 2026-11-20T09:10:00Z
+updated_at: 2026-11-20T15:20:00Z
 parent: qou-ncxf
 ---
 
@@ -28,3 +28,10 @@ These are outside the content-block edit. W11 promised to edit no existing `.lea
 ## 3. Generated artifacts
 - The `.jsonld` files of the 11 touched blocks were regenerated with `gen-block-jsonld` at the pinned platform 82b3899. Unrelated drift was reverted: a full run rewrote 3602 files, and the platform's namespace change from `folio-assistant-core:` to `folio-assistant-sci:` now shows on these 11 files only.
 - `build-foreshadows` crashes at the pin (build-foreshadows.ts:163). `foreshadows.json` was hand-patched: 5 label strings changed from thm: to conj:. Re-run it once the platform tool works.
+
+## 2026-11-20 W11b (PR #8575, branch claude/topological-mass-dependents-2026-11-20)
+Claimed by W11b. The stalled-claim check passed: the bean was `todo` with no backing branch. Owner ruling 1(a) is PR #8526 comment 7041693067.
+- **Item 1 done in #8575.** `cor:quantum-dilogarithm` was retargeted to `prop:topological-mass-upper-bound`, because its proof evaluates one transient term and never sums the terms. `prop:hecke-mass-trace` became `conj:hecke-mass-trace`, and `prop:topological-mass-formula` became `conj:topological-mass-formula`. `prf:hecke-mass-trace` became the remark `rem:hecke-mass-trace-sketch`. In the library file `QOU/Braiding/hecke_mass_trace.lean`, the self-projecting `def hecke_mass_trace` was removed. The trace split is now derived (`trace_split_of_phi_split`, sorry-free).
+- §3b audit: violators went 257 → 250, with 0 new. Four more blocks cleared through the corollary: quantum-dilog-convergence, topological-decomposition-mass, recursive-atom-knot-atlas and rigid-monoidal-structural-gap-invariance.
+- **Open: the five remaining dependents.** They are volume-tower-decomposition, cs-evaluation-faithfulness, local-substrate-q, terminal-resolution and tower-binding-energy. The framed ask is [W11b ask] on #8526, comment 7042623275. The recommendation is to cut the edges their text does not use. Not acted on.
+- Item 2 partly done: the `thm:` mention in `lean/QOU/ArchimedeanMassFormula.lean` is fixed. The `topological-mass.ts` authorNote now says "Demoted from thm:".
