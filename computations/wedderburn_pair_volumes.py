@@ -58,6 +58,13 @@ from pyhecke.gram import (  # noqa: E402
 from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
 
 
+
+VHAT_WEIGHTS_LABEL = (
+    "pre-convention-D mixture (q-Plancherel W_sym/W_std/W_alt), kept by owner "
+    "ruling 2026-11-20 until the Phi_q pole (qou-2tuv) is resolved; "
+    "convention-D z*a+b gives m_p/m_e = inf (PR #8590)"
+)
+
 def atom_per_generator_full_matrices(
     Z: int, N: int, *, include_inter: bool = True,
     crossings_per_pair: int = 1,
@@ -180,6 +187,11 @@ def wedderburn_pair_volumes(
         m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
     )
 
+    # OWNER RULING 2026-11-20 (PR #8590): this V-hat deliberately keeps the
+    # pre-convention-D W_sym/W_std/W_alt (q-Plancherel) mixture. The 11-18 ruling
+    # moved pyhecke.atom to the convention-D Markov trace z*a+b, but here that puts
+    # the proton V-hat (1.2824) past the Phi_q pole at q0 and m_p/m_e = inf
+    # (qou-2tuv). Kept, labelled, until the pole is resolved. No number moves.
     # H_3 Wedderburn weights (match hecke_core convention)
     z_mark = q0**3 / (q0**2 + 1)
     qdim_sym = 1.0
@@ -250,6 +262,7 @@ if __name__ == "__main__":
         "input matrix entries for the active set."
     )
     w.set_content_block("prop:knot-operator-lp-selection")
+    w.add_parameter("vhat_weights", VHAT_WEIGHTS_LABEL)
     w.add_parameter("Z", 1)
     w.add_parameter("N", 1)
     w.add_parameter("n_pairs", n)
