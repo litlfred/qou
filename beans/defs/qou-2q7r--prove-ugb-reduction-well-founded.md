@@ -1,11 +1,11 @@
 ---
 # qou-2q7r
 title: 'Prove UGB reduction_well_founded (Bergman termination), discharging a Diamond-Lemma axiom'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-11-20T15:00:00Z
-updated_at: 2026-11-20T15:00:00Z
+updated_at: 2026-11-20T15:30:00Z
 parent: qou-uhx0
 ---
 
@@ -16,3 +16,6 @@ W12 (session_01VQDpPfS7H7LVPj21tEhkK3), branch `claude/gs-reduction-well-founded
 Done on the branch: `DMLt`, `wellFounded_DMLt`, `liveSupport`, `singleStep_dmLt`, `reduction_well_founded` now a theorem. Signature unchanged, so `normal_form_exists`, `confluence`, `normal_form_unique` and every Hecke consumer lose one axiom with no code change.
 
 Remaining Diamond-Lemma axiom: `local_confluence` (CompositionLemma.lean:83). Not attempted here.
+
+## Resolution (W12, 2026-11-20) — PR #8582 @ b2d2b5f624e (ready-to-merge)
+`reduction_well_founded` is a theorem; `#print axioms normal_form_exists` = propext, Classical.choice, Quot.sound; `normal_form_unique` adds only `local_confluence`. 29/29 downstream UGB modules recompiled lean-direct exit 0; `lean-direct-cone.sh QOU.PhotonThreading -B` ok=17.
