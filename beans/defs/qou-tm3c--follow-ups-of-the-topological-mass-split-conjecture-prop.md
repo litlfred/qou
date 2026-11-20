@@ -72,3 +72,9 @@ Not a closure of anything here. Proved (sorry-free, `QOU/Torsion/TopologicalMass
     - its `.md` (a pair-product modifier of the Bethe–Weizsäcker energy) and its `.lean` (knot type by `A`, a theorem that only unfolds a definition) state different things;
     - modifying the semi-empirical formula is fit-adjacent under the NO-FITTING rule.
   - **Remaining direct conjecture edges, read:** most are real dependencies stated in each block's `.ts` comments, for example "conditional on conj:crystal-graph-realization" and "reframing of conj:e-hartree". So the remaining 79 are mostly genuine. Clearing them means a per-conjecture owner decision: demote the dependent, or use a §3b-cond class.
+
+## 2026-11-20T20:00Z — residual 78 analysed; #8663
+- Entry-edge classification of all 56 conj entry edges behind the 78 §3b violators on main b3e24c8acb. Verdicts: 36 UNUSED, 6 X-IS-Y, 5 USED-OPEN, 1 USED-PROVABLE (residue-at-root), 8 via remarks.
+- #8663 (labelled ready): cuts 13 unused edges (33 violators cleared, 0 new) and proves the seminormal q=0 pole-order fact that prop:crystal-r-matrix-sub-lemma attributes to the crystal hypothesis (QOU/BraidKnot/SeminormalDiagonalPoleOrder.lean, sorry-free). The lemma is not wired yet: the orientation of rho needs an owner call.
+- Remaining ~45 after #8647 + #8663. Most sit on blocks whose own claim is unproved or whose Lean does not prove the .md (group A). Cutting their edges would launder, so they are held. Framed ask with five decisions posted on #8526 (comment 7048682948).
+- Still open, not closing: this bean tracks open conjectures.
