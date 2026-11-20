@@ -9,7 +9,7 @@ tags:
     - fourth-wall-lean
     - exposition
 created_at: 2026-11-19T08:34:29Z
-updated_at: 2026-11-20T17:45:00Z
+updated_at: 2026-11-20T16:40:00Z
 parent: qou-lpep
 ---
 
@@ -85,3 +85,6 @@ Owner audit of Chapter 1 (`folio/quantum-observable-universe/quantum-universes/`
 
 ## 2026-11-20 — W14b duplicate (https://claude.ai/code/session_01VQDpPc68uEsyxoN3soj6Ws)
 A scheduled sibling (W14b) redid options 2/1/5/3 as PRs #8577/#8584/#8585/#8588 without first seeing W14's #8563/#8566/#8567/#8569. All four W14b PRs are withdrawn to draft. Distinct W14b output: Part I L4 fixes and rem:q-generic-ground-ring (#8577); mass-theory '## Lean' restatements (12 sections #8569 leaves) and mass-theory L3 (#8588). Owner comparison and choice: #8526 comment 7042945374, which also flags that the two records of the ruling disagree on option 4. Child beans for the remaining waves: qou-t5iz, qou-a1k9, qou-rfp0, qou-e7ku, qou-qdf6, qou-tztx (counts from the W14b stack; re-measure on W14's). Content inconsistency found: qou-w14g.
+
+## 2026-11-20 16:40 — option 4 approved; W14b drained L3 (https://claude.ai/code/session_01VQDpPc68uEsyxoN3soj6Ws)
+Owner in the W14b session ~16:00 UTC: "4 y approved". PR #8607 (stacked on #8569): L3 1107 -> 7 outside Ch 1-2 (7 = verbatim Einstein/Heisenberg/Wigner quotations, kept); Ch 1-2 L3 already 0 on main via #8577. Merged earlier today from W14b: #8577, #8584, #8585. #8588 closed as superseded. L3 counts in child beans qou-a1k9/rfp0/e7ku/qdf6 are now covered by #8607; their L1/L2 remain (W14 #8569 owns option 3).
