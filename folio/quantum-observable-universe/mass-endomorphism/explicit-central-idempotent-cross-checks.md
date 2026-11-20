@@ -1,4 +1,4 @@
-**Theorem.** *Let $H_n(q)$ be the Iwahori–Hecke algebra over a field $K$ of characteristic $0$ at generic $q$ ($q \neq 0$, not a root of unity), and let*
+**Theorem.** *Let $H_n(q)$ be the Iwahori–Hecke algebra over a field $K$ of any characteristic at generic $q$ ($q \neq 0$, not a root of unity), and let*
 
 $$
   e_\lambda \;=\; \sum_{T \in \mathrm{SYT}(\lambda)} \; \prod_{k=1}^{n} \; \prod_{\substack{|d| \le n-1 \\ d \neq c_T(k)}} \frac{J_k - q^{2d}}{q^{2 c_T(k)} - q^{2d}}
@@ -24,6 +24,8 @@ All four cross-checks are proved on the Iwahori–Hecke algebra $H_n(q)$, for ev
 - Cross-checks 1 and 2, and centrality. The Wedderburn isomorphism sends each Lagrange projector to a diagonal matrix unit, and the formula above, written in the multiplicative $J_k$, coincides with that projector.
 - Cross-check 3. Every map with the bar properties fixes every $e_\lambda$. No bar map is constructed; that needs a field automorphism with $q \mapsto q^{-1}$.
 - Cross-check 4. The sign twist is constructed from the universal property and sends $e_\lambda$ to $e_{\lambda'}$.
+
+**Ground field.** No hypothesis on the characteristic is needed. The Wedderburn isomorphism is built by sending each block's matrix units to Lagrange polynomials in the Murphy elements, which needs only that distinct tableaux have distinct content vectors and that $q^{2m} \neq 1$ for $0 < m \le 2n$. In particular the theorem holds over $K = \operatorname{Frac} R[q, q^{-1}]$ for any integral domain $R$, which covers $\mathbb{Q}(q)$ and $\mathbb{F}_p(q)$. Over $R[q, q^{-1}]$ itself $e_\lambda$ is not defined, because the denominators $q^{2m} - 1$ are not units.
 
 **Which involution pairs $\lambda$ with $\lambda'$.** The bar involution does not: it fixes every $e_\lambda$, so an earlier form of cross-check 4, $\overline{e_\lambda} = e_{\lambda'}$, is false already at $n = 2$. The bar involution is the symmetry of the convention-D Markov trace and of non-abelian Stokes path reversal. The sign twist is not a symmetry of that trace: it relates the trace at $q$ to the trace at $-q^{-1}$.
 

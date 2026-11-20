@@ -44,7 +44,7 @@ export default theorem({
         "(sigma -> sigma^-1, q -> q^-1) fixes every e_lambda (`IsBar.fixes_centralIdem`). Cross-check 4 now reads: the " +
         "sign twist (sigma -> -sigma^-1) sends e_lambda to e_lambda' (`hashMap_centralIdem`, a constructed map). The " +
         "statement now takes the inner product over all contents |d| <= n-1, the well-defined form of the prop block; " +
-        "it had read 'over the boxes of lambda'. Ground field: characteristic 0, generic q. The block kind is still " +
+        "it had read 'over the boxes of lambda'. Ground field: any characteristic, generic q (char-0 hypothesis removed 2026-11-20). The block kind is still " +
         "`conjecture`, and `lean.ref` still names the old scalar carrier; promotion is an owner call.",
     },
     {
@@ -66,7 +66,7 @@ export default theorem({
       body:
         "**Cross-checks 1 and 2, and centrality, are now PROVED for every n (bean qou-2150).** " +
         "`QOU.BraidKnot.ExplicitCentralIdempotentGeneral.explicit_central_idempotent_cross_checks`: at generic q (q != 0, " +
-        "not a root of unity, characteristic 0) the Murphy-Lagrange elements e_lambda in the real Hecke algebra are " +
+        "not a root of unity, any characteristic) the Murphy-Lagrange elements e_lambda in the real Hecke algebra are " +
         "central, idempotent, pairwise orthogonal and sum to 1. `mulProj_eq_proj` shows that the boxed formula in the " +
         "multiplicative J_k equals the corpus' additive-JM projector, and `heckeWedderburn_symm_single` (JMProjector) maps " +
         "that projector to the matrix unit E_TT. Sorry-free; axioms propext, Classical.choice, Quot.sound. Still OPEN: " +
