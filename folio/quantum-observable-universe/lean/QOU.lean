@@ -693,7 +693,6 @@ import QOU.BraidKnot.CentralC2Transport
 import QOU.BraidKnot.SpechtCentralC2Scalar
 import QOU.BraidKnot.SnIsotypicSpechtSplitInstance
 import QOU.BraidKnot.WedderburnUnconditional
-import QOU.BraidKnot.ExplicitCentralIdempotent
 import QOU.BraidKnot.ExplicitCentralIdempotentHecke
 import QOU.SchurWeyl.HeckeWedderburnAnyChar
 import QOU.BraidKnot.ExplicitCentralIdempotentGeneral

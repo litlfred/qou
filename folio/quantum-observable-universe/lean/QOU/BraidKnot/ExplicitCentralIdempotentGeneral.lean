@@ -8,9 +8,10 @@ import QOU.SchurWeyl.HeckeWedderburnAnyChar
     e_λ = Σ_{T ∈ SYT(λ)} ∏_{k} ∏_{c ≠ c(T(k))} (J_k − c)/(c(T(k)) − c)
 
 is the central primitive idempotent of the `λ`-block of `H_n(q)`, with four cross-checks:
-sum to identity, orthogonality, self-adjointness, bar-pairing. Its Lean carrier
-(`ExplicitCentralIdempotentConjecture`) states this about an opaque scalar, so it cannot be proved
-as written. This module re-states it on the real Iwahori–Hecke algebra `QOU.SchurWeyl.Hecke` and
+sum to identity, orthogonality, self-adjointness, bar-pairing. Its former Lean carrier
+(`ExplicitCentralIdempotentConjecture`, retired 2026-11-20) stated this about an opaque scalar, so
+it could not be proved as written. This module re-states it on the real Iwahori–Hecke algebra
+`QOU.SchurWeyl.Hecke` and
 **proves cross-checks 1 and 2, and centrality, for every `n`**, at generic `q`.
 
 ## How, and what it rests on
@@ -18,7 +19,7 @@ as written. This module re-states it on the real Iwahori–Hecke algebra `QOU.Sc
 Nothing new is assumed. The corpus already proves (`QOU.SchurWeyl.JMProjector`):
 
 * `AnyChar.heckeWedderburnF q : H_{n+1}(q) ≃ₐ ∏_λ M_{f^λ}(K)`, from faithfulness and surjectivity of the
-  seminormal representations (`HeckeProductInjective`, `HeckeProductSurjective`);
+  seminormal representations (`AnyChar.heckeProductF_injective`, `AnyChar.heckeProductF_surjective`);
 * `AnyChar.heckeWedderburnF_symm_single`: the Lagrange product in the **additive** Jucys–Murphy elements
   `Y_k` maps to the matrix unit `E^λ_{TT}`.
 

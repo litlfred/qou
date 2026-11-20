@@ -42,8 +42,10 @@ export default proposition({
       body:
         "The idempotency this block proves conditionally is now proved unconditionally, at generic q, on the real Hecke " +
         "algebra: `QOU.BraidKnot.ExplicitCentralIdempotentGeneral.centralIdem_idem`, together with centrality, " +
-        "orthogonality and sum-to-1 (`explicit_central_idempotent_cross_checks`). Sorry-free. The block's `lean.ref` still " +
-        "names the conditional theorem over the old scalar carrier; switching it is left to the owner (bean qou-2150).",
+        "orthogonality and sum-to-1 (`explicit_central_idempotent_cross_checks`). Sorry-free, in any characteristic. The " +
+        "block's `lean.ref` names `centralIdem_idem`. The conditional theorem over the scalar carrier " +
+        "`ExplicitCentralIdempotentConjecture`, and the carrier itself, were retired 2026-11-20 (owner); the relocated " +
+        "note above that calls this block conditional is historical.",
     },
     {
       kind: "note",
