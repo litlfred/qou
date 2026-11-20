@@ -109,6 +109,21 @@
   triangulation genuinely has a zero-volume manifold.  That is the `realisable` field's
   degenerate model one level down.
 
+  ═══ 2026-11-20 (bean `qou-dx7g`): THAT DEGENERATE MODEL WAS STILL ADMITTED ═══
+
+  The axiom-field triage found `vol := fun _ => 0`, `Realises T _ := T.volume = 0`,
+  realised by the empty triangulation, satisfying all four fields.  Two fields now
+  constrain the triangulation side of `Realises`: `realises_nonempty` (no empty
+  triangulation realises anything) and `realises_glued` (a realising triangulation
+  solves the edge and angle gluing equations for a complete `n`-tetrahedron,
+  `n`-edge pattern).  The degenerate model no longer satisfies the class, and
+  `vol_pos_of_realises'` (in `ManifoldVolumePositive`) drops the `0 < n` hypothesis.
+  **Residual:** `M` is still an arbitrary type, so which manifold a gluing solution
+  triangulates is not modelled (no 3-manifold topology in Mathlib).  A constant
+  `vol` on any `M`, realised by one genuine gluing solution, still satisfies the
+  class; that is a statement about a real hyperbolic triangulation, not about a
+  named knot complement.
+
   -- Ref: [thurston1978] Ch. 4 (hyperbolisation; the gluing-equation solution)
   -- Ref: [neumann-zagier1985] §2 (the volume of a triangulation, and its invariance)
 -/
@@ -189,6 +204,32 @@ class HyperbolicVolumeBridge (M : Type*) where
   That model was CONSTRUCTED and typechecked before this field was added; with the field
   it no longer elaborates.  A carrier must assert something (AGENTS.md §3b-tax). -/
   realisable : ∃ (n : ℕ) (T : IdealTriangulation n) (m : M), Realises T m
+  /-- **A realising triangulation is nonempty** (bean `qou-dx7g`).  The triage of
+  2026-11-20 found that `realisable` alone still admits a degenerate model:
+  `vol := fun _ => 0` with `Realises T _ := T.volume = 0`, realised by the empty
+  triangulation `IdealTriangulation 0` (empty sum).  A cusped hyperbolic 3-manifold
+  has no ideal triangulation by zero tetrahedra, so this is part of what "`T`
+  realises `m`" means, not an extra assumption about the geometry. -/
+  realises_nonempty :
+    ∀ {n : ℕ} (T : IdealTriangulation n) (m : M), Realises T m → 0 < n
+  /-- **A realising triangulation solves Thurston's gluing equations** (bean
+  `qou-dx7g`).  For an ideal triangulation of a cusped 3-manifold by `n`
+  tetrahedra there are exactly `n` edge classes (Euler characteristic), each of the
+  three opposite edge-pairs of each tetrahedron meets the edge classes exactly twice
+  in total, and the shapes satisfy both the edge equations (product form) and the
+  angle (Casson–Rivin) equations.  This is the data Thurston's hyperbolisation
+  produces [thurston1978, Ch. 4], [neumann-zagier1985, §2]; without it `Realises`
+  could hold of shapes that glue to nothing.
+
+  **What it still does not pin.**  `M` is an arbitrary type, so nothing here says
+  *which* manifold a solution of the gluing equations triangulates: that is
+  topology, which Mathlib does not model.  The field constrains the triangulation
+  side of `Realises`, not the manifold side. -/
+  realises_glued :
+    ∀ {n : ℕ} (T : IdealTriangulation n) (m : M), Realises T m →
+      ∃ G : GluingData n n,
+        (∀ (i : Fin n) (j : Fin 3), (∑ k, G.exp k i j) = 2) ∧
+        SatisfiesEdgeEquations T G ∧ SatisfiesAngleEquations T G
 
 namespace HyperbolicVolumeBridge
 
