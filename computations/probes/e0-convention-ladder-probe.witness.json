@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.18",
-  "computedAt": "2026-11-20T15:41:28.796409+00:00",
-  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
+  "computedAt": "2026-11-20T19:08:54.185803+00:00",
+  "commitSha": "e08ddb48ba3b1e7ee94bafdd365730c793cecc0b",
   "assertions": [
     {
       "name": "registry_stated_102x_error_is_one_over_hbar_q_squared",
@@ -29,11 +29,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "e0-convention-ladder-probe",
   "scriptFile": "e0_convention_ladder_probe.py",
-  "scriptHash": "03fd4832ff3f",
-  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "scriptHash": "688ee86ac725",
+  "scriptCommitSha": "8a51be2e1185d397db5b6dafc674326efda41dce",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -47,6 +47,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "cvxpy": "absent",
     "pyhecke_native_build": "930c010e26215e56"
   },
