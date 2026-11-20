@@ -439,4 +439,70 @@ theorem chained_oddPreimage_forces_deriv_eq_two {R : Type*} [CommRing R]
   rw [h1, hu2] at hu
   exact hu.symm
 
+/-! ## Skein filtration block-descent halting theorem (`qou-i5so`)
+
+Formalizes the abstract block-descent principle on the Skein filtration degree
+`ell : S → ℕ`: if `ell` strictly decreases across every `blockLen`-step block on
+non-terminal states, then:
+1. No non-terminal state can be fixed by a `blockLen`-step block
+   (`no_nonterminal_block_fixed_of_descent`).
+2. Every initial state `x` reaches a terminal state within `ell x` blocks
+   (`reaches_terminal_within_blocks`), i.e. within `blockLen * ell x` elementary
+   steps (`reaches_terminal_step_bound`). -/
+
+/-- A dynamical system on `S` equipped with a `ℕ`-valued Skein filtration measure
+    `ell` that strictly decreases along `blockLen`-step blocks outside a terminal
+    set `IsTerminal`. -/
+structure SkeinFiltrationDescent (S : Type*) where
+  step : S → S
+  IsTerminal : S → Prop
+  ell : S → ℕ
+  blockLen : ℕ
+  blockLen_pos : 0 < blockLen
+  block_descent : ∀ x : S, ¬ IsTerminal x → ell (step^[blockLen] x) < ell x
+
+/-- No non-terminal state can be periodic of period `blockLen` under block descent. -/
+theorem no_nonterminal_block_fixed_of_descent {S : Type*}
+    (sys : SkeinFiltrationDescent S) (x : S)
+    (hfix : sys.step^[sys.blockLen] x = x) : sys.IsTerminal x := by
+  by_contra hnt
+  have hlt := sys.block_descent x hnt
+  rw [hfix] at hlt
+  exact Nat.lt_irrefl (sys.ell x) hlt
+
+/-- By induction on the filtration bound `B`, every state `x` with `sys.ell x ≤ B`
+    reaches `IsTerminal` within at most `B` applications of `sys.step^[sys.blockLen]`. -/
+theorem reaches_terminal_within_blocks {S : Type*}
+    (sys : SkeinFiltrationDescent S) :
+    ∀ B : ℕ, ∀ x : S, sys.ell x ≤ B →
+      ∃ j : ℕ, j ≤ B ∧ sys.IsTerminal ((sys.step^[sys.blockLen])^[j] x) := by
+  intro B
+  induction B with
+  | zero =>
+    intro x hx
+    refine ⟨0, le_rfl, ?_⟩
+    by_contra hnt
+    have hlt := sys.block_descent x hnt
+    omega
+  | succ n ih =>
+    intro x hx
+    by_cases hterm : sys.IsTerminal x
+    · exact ⟨0, Nat.zero_le (n + 1), hterm⟩
+    · have hlt := sys.block_descent x hterm
+      have hle : sys.ell (sys.step^[sys.blockLen] x) ≤ n := by omega
+      obtain ⟨j, hj, htj⟩ := ih (sys.step^[sys.blockLen] x) hle
+      refine ⟨j + 1, by omega, ?_⟩
+      rw [Function.iterate_succ_apply]
+      exact htj
+
+/-- Every initial state `x` reaches a terminal state in at most
+    `sys.blockLen * sys.ell x` elementary steps. -/
+theorem reaches_terminal_step_bound {S : Type*}
+    (sys : SkeinFiltrationDescent S) (x : S) :
+    ∃ k : ℕ, k ≤ sys.blockLen * sys.ell x ∧ sys.IsTerminal (sys.step^[k] x) := by
+  obtain ⟨j, hj, htj⟩ := reaches_terminal_within_blocks sys (sys.ell x) x le_rfl
+  refine ⟨sys.blockLen * j, Nat.mul_le_mul_left sys.blockLen hj, ?_⟩
+  rw [Function.iterate_mul]
+  exact htj
+
 end QOU.AppendixSurreals.CollatzBlockDescent
