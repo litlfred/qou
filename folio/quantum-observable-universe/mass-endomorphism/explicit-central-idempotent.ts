@@ -5,17 +5,15 @@ export default proposition({
   title:
     "Explicit central primitive idempotents $e_\\lambda$ via Murphy elements",
   lean: {
-    ref: "qou:QOU.BraidKnot.ExplicitCentralIdempotent.explicit_central_idempotent_via_murphy",
+    ref: "qou:QOU.BraidKnot.ExplicitCentralIdempotentGeneral.centralIdem_idem",
     validation: "not_checked",
   },
   uses: [
     "prop:jucys-murphy-central-elements-qou",
     "prop:hecke-baer-star-generic",
-    // AGENTS.md §3b-cond item 4: the conditional dependency is now
-    // auditable from the manifest. The Lean theorem carries this as
-    // [ExplicitCentralIdempotentConjecture q] (item 2); this edge is
-    // what lets conjectural-propagation-audit.ts see the cone at all.
-    "conj:explicit-central-idempotent",
+    // Was conj:explicit-central-idempotent (conditional). Promoted to a
+    // theorem 2026-11-20 (owner ruling); this block is now unconditional.
+    "thm:explicit-central-idempotent-cross-checks",
     // conj:bring-figure-eight-depth-2-witness removed from uses[]
     // (2026-06-01 detangler Bucket-A): referenced only as numerical
     // corroboration ("verified numerically in (…)"), not a dependency

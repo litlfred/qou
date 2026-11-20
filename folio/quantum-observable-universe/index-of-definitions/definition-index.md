@@ -276,6 +276,7 @@
 
 | Label | Title | Chapter | Lean |
 |-------|-------|---------|------|
+| [thm:explicit-central-idempotent-cross-checks](#thm:explicit-central-idempotent-cross-checks) | The Murphy–Lagrange elements $e_\lambda$ are the central primitive idempotents of $H_n(q)$: sum to one, orthogonality, bar-invariance, conjugate pairing | Ch 7 | `qou:QOU.BraidKnot.ExplicitCentralIdempotentGeneral.explicit_central_idempotent_cross_checks` |
 | [thm:q-bkm](#thm:q-bkm) | $q$-deformed Beale--Kato--Majda criterion | Ch 18 | `qou:QOU.FluidDynamics.q_bkm_criterion` |
 | [thm:flat-tetrahedron-zero-volume](#thm:flat-tetrahedron-zero-volume) | A flat ideal tetrahedron has zero volume: $D(x) = 0$ for every real $x$ | Ch 12 | `qou:QOU.Knot.FlatTet.BlochWigner_lob_ofReal` |
 | [thm:averaging-resonance-rule](#thm:averaging-resonance-rule) | Averaging-resonant rung selection: $k_{\mathrm{res}}(n_{\mathrm{total}}) = \lfloor n_{\mathrm{total}}/2 \rfloor + \mathbb{1}_{\mathrm{wrap}}$ | Ch 12 | `qou:QOU.BraidKnot.AveragingResonanceRule` |
@@ -569,7 +570,7 @@
 | [conj:explicit-alpha-k-h4](#conj:explicit-alpha-k-h4) | Explicit $\alpha_3$ at $H_4(R, q)$ via Wedderburn-orthogonal class-function $r_3$ | Ch 12 | `qou:QOU.BraidsAndKnots.explicit_alpha_k_h4` |
 | [prop:qbeta-canonical-markov-weights-explicit-instance](#prop:qbeta-canonical-markov-weights-explicit-instance) | Explicit $\sqrt q$-bearing instance of $\mathbf{CanonicalMarkovWeightsH3}$ (class is inhabitable) | Ch 7 | `qou:QOU.BraidKnot.CanonicalMarkovWeightsH3.explicitInstance` |
 | [conj:spectral-sequence-h3-explicit](#conj:spectral-sequence-h3-explicit) | Explicit $d_1, d_2$ on $H_3(q)$ over $\mathbb{R}[q, q^{-1}]$ | Ch 12 | `qou:QOU.BraidKnot.spectral_sequence_h3_explicit` |
-| [prop:explicit-central-idempotent](#prop:explicit-central-idempotent) | Explicit central primitive idempotents $e_\lambda$ via Murphy elements | Ch 7 | `qou:QOU.BraidKnot.ExplicitCentralIdempotent.explicit_central_idempotent_via_murphy` |
+| [prop:explicit-central-idempotent](#prop:explicit-central-idempotent) | Explicit central primitive idempotents $e_\lambda$ via Murphy elements | Ch 7 | `qou:QOU.BraidKnot.ExplicitCentralIdempotentGeneral.centralIdem_idem` |
 | [conj:explicit-alpha-k-h3](#conj:explicit-alpha-k-h3) | Explicit α_k at H_3(R, q): structural prefactors closed form | Ch 12 | `qou:QOU.BraidsAndKnots.explicit_alpha_k_h3` |
 | [prop:braiding-eigenvalue-extraction](#prop:braiding-eigenvalue-extraction) | Extraction of $q$ from the braiding eigenvalues | Ch 2 | `qou:QOU.braiding_eigenvalue_extraction` |
 | [prop:cs-evaluation-faithfulness](#prop:cs-evaluation-faithfulness) | Faithfulness of the Chern--Simons evaluation on the brane tower | Ch 14 | `qou:QOU.Archimedean.CSEvaluationFaithful` |
@@ -1205,7 +1206,6 @@
 | [conj:q-birch-swinnerton-dyer](#conj:q-birch-swinnerton-dyer) | The $q$-deformed Birch and Swinnerton-Dyer conjecture | Ch 25 | `qou:QOU.AppendixSurreals.QBirchSwinnertonDyer` |
 | [conj:c1-ggm-bar-parity-faces](#conj:c1-ggm-bar-parity-faces) | The binding q-lift module and the resurgent Stokes carrier are bar-parity conjugate faces | Ch 12 | `qou:QOU.Mass.DoorVParityNoIdentity.doorV_parity_no_identity` |
 | [conj:b1-hyperbolic-rows-theorem](#conj:b1-hyperbolic-rows-theorem) | The depth correspondence conditionally reduces to the Volume Conjecture at Borromean rings, the Whitehead link, and twist knots | Ch 25 | `qou:QOU.AppendixSurreals.B1HyperbolicRowsTheorem.b1_hyperbolic_rows` |
-| [conj:explicit-central-idempotent](#conj:explicit-central-idempotent) | The four Murphy–Lagrange cross-checks for $e_\lambda$ follow from Lagrange interpolation in commuting variables | Ch 7 | `qou:QOU.BraidKnot.ExplicitCentralIdempotent.ExplicitCentralIdempotentConjecture` |
 | [conj:cyclotomic-boundary-at-keystone](#conj:cyclotomic-boundary-at-keystone) | The Habiro-tail cyclotomic boundary sits at the quintic order: $D(n)$ is cyclotomic $\iff n \leq 5$ | Ch 12 | — |
 | [conj:hecke-monodromy-step-two](#conj:hecke-monodromy-step-two) | The Hecke quadratic is the q-deformed branch-point monodromy of the colour cubic (Step 2 of the canonical chain as a conjecture) | Ch 12 | `qou:QOU.Mass.HeckeMonodromy` |
 | [conj:higgs-t28](#conj:higgs-t28) | The Higgs boson as $T(2,8)$: the link spanning three exceptional divisors | Ch 15 | `qou:QOU.HiggsT28.HiggsAsT28` |

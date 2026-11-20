@@ -1,4 +1,4 @@
-**Conjecture.** *Let $H_n(q)$ be the Iwahori–Hecke algebra over a field $K$ of characteristic $0$ at generic $q$ ($q \neq 0$, not a root of unity), and let*
+**Theorem.** *Let $H_n(q)$ be the Iwahori–Hecke algebra over a field $K$ of characteristic $0$ at generic $q$ ($q \neq 0$, not a root of unity), and let*
 
 $$
   e_\lambda \;=\; \sum_{T \in \mathrm{SYT}(\lambda)} \; \prod_{k=1}^{n} \; \prod_{\substack{|d| \le n-1 \\ d \neq c_T(k)}} \frac{J_k - q^{2d}}{q^{2 c_T(k)} - q^{2d}}
@@ -11,12 +11,11 @@ $$
 3. *bar-invariance — $\overline{e_\lambda} = e_\lambda$ for every $\lambda$, self-conjugate or not;*
 4. *conjugate pairing — $\#(e_\lambda) = e_{\lambda'}$ for every $\lambda$, so $\#$ fixes $e_\lambda$ exactly when $\lambda = \lambda'$*
 
-*all follow from Lagrange interpolation in the commuting variables $J_1, \ldots, J_n$.*
+*all hold. In particular each $e_\lambda$ is a central idempotent, and these are the central primitive idempotents of the Wedderburn blocks.*
 
-## Why this is stated separately
+## Proof
 
-The cross-checks are what makes $e_\lambda$ *the* central primitive idempotent rather than merely an element of $Z(H_n(q))$, and they are the sole unproved input to
-[Explicit central primitive idempotents $e_\lambda$ via Murphy elements](#prop:explicit-central-idempotent). That proposition is proved *conditionally* on them, with the cross-checks carried as an explicit hypothesis. Stating the conjecture as its own block records the dependency explicitly.
+The Wedderburn isomorphism $H_n(q) \cong \prod_\lambda M_{f^\lambda}(K)$ sends each Murphy–Lagrange projector to a diagonal matrix unit $E^\lambda_{TT}$, because $J_k$ acts on the seminormal basis vector $v_S$ by $q^{2 c_S(k)}$ and the content vector determines the tableau. Hence $e_\lambda$ maps to the identity of the $\lambda$-block, which gives cross-checks 1 and 2 and centrality. The bar involution sends $J_k$ to $J_k^{-1}$ and $q$ to $q^{-1}$, so it sends each projector to the Lagrange projector in $J_k^{-1}$ with eigenvalues $q^{-2d}$, which picks out the same tableau (cross-check 3). The sign twist also sends $J_k$ to $J_k^{-1}$, but keeps the eigenvalues $q^{2d}$, so it picks out the tableau with negated contents, the transpose (cross-check 4).
 
 ## Status
 
