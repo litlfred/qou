@@ -106,3 +106,5 @@ Took ~10 from a fresh audit run on main 917b69399 (22 non-exempt candidates; 7 s
 ## 2026-11-20 — cor:hecke-length-limit-page-vanishing (PR #8675): Hecke reading proved for all n. Conjecture stays OPEN pending owner-named reading (option 1).
 
 ## 2026-11-20 — formalize-first derivation (PR #8679, SelectorPrune.lean): conjecture == purity; no monotone-in-n selector matches the magic set; root-of-unity semisimplicity excluded. OPEN: coefficient-module reading, Bring-lattice reading.
+
+## 2026-11-20 — both open readings tested (PR #8685): Bring S5 lattices ranks divisible by 4 (H1 = 2 std⊗sgn); coefficient bimodules give n-independent purity. Conjecture OPEN with no reading that has content. Corpus error: substrate-cohomology-calibration-story.md:3 says 2×std, should be 2×(std⊗sgn) — not edited, awaiting owner.
