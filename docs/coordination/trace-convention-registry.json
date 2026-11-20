@@ -196,7 +196,7 @@
       "id": "mass",
       "description": "absolute nucleon / atom mass via the muon-anchored Hecke energy",
       "definitional_convention": "D",
-      "definitional_source": "OWNER RULING 2026-08-09: convention C excised. The forcing is docs/audits/2026-08-08-mass-fibre-dimension-forces-convention-d.md \u2014 lem:feynman-eigenbasis-decomposition already writes the row cap ell(lambda) <= 2 into the mass channel's own decomposition (V = the fundamental of SU_q(2), summand count floor(n/2)+1), so y_(1^3) = 0 is a restatement of what the mass chapter uses, not an added premise. Feeding that into QOU.BraidsAndKnots.MarkovTraceTLUniqueness.markovWeights_eq_jones_of_threeRow_eq_zero (sorry-free) yields D uniquely. Superseded: prop:categorical-mass-markov + rem:markov-axioms-primitive, which SELECTED C \u2014 rem:markov-axioms-primitive says so in its own words, 'a stipulation of this definition, not a consequence of it'.",
+      "definitional_source": "OWNER RULING 2026-08-09: convention C excised. The forcing is docs/audits/2026-08-08-mass-fibre-dimension-forces-convention-d.md \u2014 lem:feynman-eigenbasis-decomposition already writes the row cap ell(lambda) <= 2 into the mass channel's own decomposition (V = the fundamental of SU_q(2), summand count floor(n/2)+1), so y_(1^3) = 0 is a restatement of what the mass chapter uses, not an added premise (and QOU.BraidsAndKnots.FibreDimensionForcesTL.twoDimFibre_pins_h3_weights derives both z*(q+q^-1) = q^2 and y_(1^3) = 0 directly from dim_q V = [2]_q). Feeding y_(1^3) = 0 together with faithfulness on TL_3 (hfaith : y_(2,1) != 0, ruling out the degenerate trivial character y = (1,0,0) at z = q) into QOU.BraidsAndKnots.MarkovTraceTLUniqueness.markovWeights_eq_jones_of_threeRow_eq_zero (sorry-free) yields D uniquely among faithful TL_3 traces. Superseded: prop:categorical-mass-markov + rem:markov-axioms-primitive, which SELECTED C \u2014 rem:markov-axioms-primitive says so in its own words, 'a stipulation of this definition, not a consequence of it'.",
       "production_convention": "D",
       "production_source": "computations/m_p_substrate_identity_50dps.py::trM_borromean -> F_Bor -> m-p-substrate-identity-50dps.witness.json -> computations/canonical_mass.py",
       "status": "agreed",
@@ -359,7 +359,7 @@
       "about_channel": "mass",
       "layer": "definition",
       "names_convention": "D",
-      "note": "this block IS the definitional pin. Moved C -> D by owner ruling 2026-08-09. It no longer STIPULATES the loop value: the fibre being 2-dimensional (lem:feynman-eigenbasis-decomposition, row cap ell(lambda) <= 2) forces y_(1^3) = 0, and markovWeights_eq_jones_of_threeRow_eq_zero then forces z = q^3/(q^2+1) uniquely. Previously the note read 'a stipulation of this definition, not a consequence of it'."
+      "note": "this block IS the definitional pin. Moved C -> D by owner ruling 2026-08-09. It no longer STIPULATES the loop value: the fibre being 2-dimensional (lem:feynman-eigenbasis-decomposition, row cap ell(lambda) <= 2) forces z = q^3/(q^2+1) and y_(1^3) = 0 via QOU.BraidsAndKnots.FibreDimensionForcesTL.twoDimFibre_pins_h3_weights, and for any faithful TL_3 trace (hfaith : y_(2,1) != 0) markovWeights_eq_jones_of_threeRow_eq_zero forces z = q^3/(q^2+1) uniquely from y_(1^3) = 0. Previously the note read 'a stipulation of this definition, not a consequence of it'."
     }
   ],
   "production_files": [
