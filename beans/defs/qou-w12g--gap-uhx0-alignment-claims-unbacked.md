@@ -30,3 +30,6 @@ Open, and what would close it:
 
 ## Same pattern in other beans (measured 2026-11-20)
 Beans set to completed by the local commits e223ed1 / 4fcd2cb / 89bb5e0 on `cat/cat-harness/beans` (2026-11-19, `litlfred@fenugreek.home`) whose named Lean/probe/witness files are absent from main and every branch and PR: qou-2och, qou-7ypv, qou-bgq9, qou-iw1d, qou-l4t2, qou-ozdk, qou-qssg, qou-qvpl (work existed on PR #8149, closed unmerged), qou-txc1, qou-y7ek, qou-ys29 (also #8149), qou-7vhp (partial: `roundtrip-blind-packets.ts` absent), qou-rgj8 (one file). qou-2och and qou-lm62 reopened on owner instruction; the rest left as they are pending the owner.
+
+## 2026-11-20 16:40 — owner approved reopening (W12)
+All 12 reopened to `todo`: qou-7ypv, qou-bgq9, qou-iw1d, qou-l4t2, qou-ozdk, qou-qssg, qou-qvpl, qou-txc1, qou-y7ek, qou-ys29, qou-7vhp, qou-rgj8 (with qou-2och and qou-lm62 earlier). PR #8149 assessed on qou-qvpl / qou-ys29: closed correctly, nothing worth porting.

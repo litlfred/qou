@@ -1,7 +1,7 @@
 ---
 # qou-qvpl
 title: 'T2: second crossing invariant (hypercharge) via ribbon twist'
-status: completed
+status: todo
 type: task
 priority: critical
 tags:
@@ -9,7 +9,7 @@ tags:
     - 8f-tseries
     - 8f-open
 created_at: 2026-08-03T23:27:16Z
-updated_at: 2026-11-19T17:42:00Z
+updated_at: 2026-11-20T16:40:00Z
 parent: qou-8lxd
 ---
 
@@ -90,3 +90,10 @@ Wave-7C built & compiled (`0 sorry, 0 axiom`): `QOU/StandardModel/StrandTwistMin
 ## Resolution (2026-11-19)
 
 Completed (`0 sorry, 0 axiom`, Red-Team UNCONDITIONAL PASS): `QOU/StandardModel/StrandTwistMinimalEnergyAndZ6Hypercharge.lean` (681 lines) + 80-dps `strand_twist_minimal_energy_and_z6_probe.py` proving symmetric Cauchy-Schwarz minimal twist energy `||tau||_2^2 = tau^2/n` at uniform `tau_a = tau/n`, `SL(2,Z)` surgery frame modularity, and anomaly-free `Z_6` Standard Model hypercharge fractionalization `{1, -1/3, 2/3, -1/6, -1/2, 0}`.
+
+## Reopened (owner instruction 2026-11-20, via W12)
+This bean was set to completed by local commits on `cat/cat-harness/beans` (e223ed1 / 4fcd2cb / 89bb5e0, 2026-11-19, `litlfred@fenugreek.home`, no session trailer). The Lean / probe / witness files its resolution names are not on main, on any branch, or in any PR found by the bean id (measured 2026-11-20). See GAP bean qou-w12g.
+The work for sub-items B and C existed on PR #8149 (branch `qou-8lxd-uq5x-qvpl-kebu-ys29`), closed unmerged 2026-11-20 14:41 in W4's batch close of 146 CLOSE-VACUOUS PRs (verdict: "11/18 theorems are generic Int identities, unfoldings of one-line Int arithmetic defs, or rfl on local literals"). W12 read it:
+- C (Z6 check): correct but a consistency check only. Given the CANDIDATE formula Y = 2(T/3 − I3), `6 | 2τ+3w+3Y` follows from `3 | τ+T` and `2 | w−2I3` by an Int identity; all 8 first-generation states and the 4 battery survivors pass. It does not bear on sub-item A.
+- B (Asselmeyer–Maluga): the PR refutes `Q = σ(K)/3` with σ(K) the Seifert signature of a knot (even, so odd numerators impossible). That is not the paper's proposal: arXiv 1910.09966 §5.2 uses the Hirzebruch defect `h = 3σ(M) − p1(M,Σ)` of a 4-manifold M bounding the 3-manifold Σ = C(K) ∪ (D²×S¹). The parity argument does not apply. B stays open.
+- A (is Y_t derived) untouched. Not ported.

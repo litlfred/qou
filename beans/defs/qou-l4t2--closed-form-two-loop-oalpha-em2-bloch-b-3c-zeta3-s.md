@@ -1,11 +1,11 @@
 ---
 # qou-l4t2
 title: Closed-Form Two-Loop O(alpha_EM^2) Bloch-B_3(C) / zeta(3) Schwinger Coefficient c_2 in 1/alpha_EM
-status: completed
+status: todo
 type: task
 priority: high
 created_at: 2026-11-19T06:43:03Z
-updated_at: 2026-11-19T17:42:00Z
+updated_at: 2026-11-20T16:40:00Z
 parent: qou-3l2l
 ---
 
@@ -47,3 +47,6 @@ Wave-6A proved Dyson resummation Form-B uniqueness (`+0.433 ppt` tail) and `q_0 
 ## Resolution (2026-11-19)
 
 Completed (`0 sorry, 0 axiom`, Red-Team UNCONDITIONAL PASS): `QOU/StandardModel/PhotonDysonHabiroAndTwoLoopStructure.lean` (768 lines) + 80-dps `alpha_em_dyson_uniqueness_and_twoloop_delta2_probe.py` proving Dyson-Schwinger geometric series uniqueness (`Delta alpha^{-1} = -Pi(0)`), cyclotomic Habiro `Phi_1 Phi_2 Phi_3 = q^4 + q^3 - q - 1`, and 2-loop Schwinger/zeta(3) diagnostic.
+
+## Reopened (owner instruction 2026-11-20, via W12)
+This bean was set to completed by local commits on `cat/cat-harness/beans` (e223ed1 / 4fcd2cb / 89bb5e0, 2026-11-19, `litlfred@fenugreek.home`, no session trailer). The Lean / probe / witness files its resolution names are not on main, on any branch, or in any PR found by the bean id (measured 2026-11-20). See GAP bean qou-w12g.

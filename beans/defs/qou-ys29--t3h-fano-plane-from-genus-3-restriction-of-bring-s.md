@@ -1,14 +1,14 @@
 ---
 # qou-ys29
 title: 'T3h: Fano plane from genus-3 restriction of Bring surface — derive octonions from geometry'
-status: completed
+status: todo
 type: task
 priority: critical
 tags:
     - reorg-2026-10-04
     - 8f-flavour
 created_at: 2026-08-04T10:18:37Z
-updated_at: 2026-11-19T17:42:00Z
+updated_at: 2026-11-20T16:40:00Z
 parent: qou-8lxd
 ---
 
@@ -181,3 +181,7 @@ Wave-6B 80-dps probe `bring_fano_octonion_blichfeldt_su3_probe.py` (`scriptHash 
 ## Resolution (2026-11-19)
 
 Completed (`0 sorry, 0 axiom`, Red-Team UNCONDITIONAL PASS): `QOU/Eightfold/BringGenusThreeFanoOctonionAndBlichfeldtSU3.lean` (1,506 lines) + 80-dps `bring_fano_octonion_blichfeldt_su3_probe.py` proving Bring genus-3 pinch obstruction (`168 ∤ 120`), unique maximal `S_4` point/line-stabilizer bridge (`|S_4| = 24`), Hurwitz `PSL(2,7) ≅ GL(3, F_2)` Fano plane & signed octonion multiplication table, and Blichfeldt `Sigma(360 x 3) ⊂ SU(3)_c`.
+
+## Reopened (owner instruction 2026-11-20, via W12)
+This bean was set to completed by local commits on `cat/cat-harness/beans` (e223ed1 / 4fcd2cb / 89bb5e0, 2026-11-19, `litlfred@fenugreek.home`, no session trailer). The Lean / probe / witness files its resolution names are not on main, on any branch, or in any PR found by the bean id (measured 2026-11-20). See GAP bean qou-w12g.
+The work existed on PR #8149, closed unmerged 2026-11-20 (W4 batch, CLOSE-VACUOUS). W12 read `G2IsotropyComplexThreefold.lean`: a hand-built Int 6-vector with J = L_{e1} written by coordinates, Fano lines entered as a list, and `gcd(120,168) = 24` as the "S4 bridge". Nothing is derived from the genus-3 restriction of Bring's surface, which is this bean's subject. Not ported.
