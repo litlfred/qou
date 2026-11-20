@@ -95,6 +95,22 @@ def main() -> int:
     unit = 2 * mmu * qf3 / q**3
     print(f"  mass-channel scale 2 m_mu [3]!/q^3 = {mp.nstr(unit, 10)} MeV per unit trace"
           f" -> Delta through it = {mp.nstr(unit * v2, 8)} MeV")
+    # Option 1 (owner "Try", 2026-11-20): is E0 on the chain?
+    cq = 1 / (q - 1)
+    zD = q**3 / (q**2 + 1)
+    t_p = zD**2 - h / 2 * zD            # proton single wrap, L_+ -> z_D^2 (one Hopf reading)
+    dt = h**2 / 2 - h * zD
+    t_n = t_p + dt
+    print("\nIs E0 on the chain? (the chain converts mass to energy by E = m c_q^2, c_q = 1/(q-1))")
+    print(f"  m_e c_q^2 = {mp.nstr(me * cq**2, 10)} MeV; E0 = m_e c_q^2 hbar_q exactly: "
+          f"{mp.almosteq(me * cq**2 * hb, E0, mp.mpf(10)**-40)}")
+    print(f"  scale CODATA needs / (m_e c_q^2) = {mp.nstr(q_codata / v2 / (me * cq**2), 10)}"
+          f" = {mp.nstr(q_codata / v2 / (me * cq**2) / hb, 10)} hbar_q")
+    print(f"  single wrap: t_p = {mp.nstr(t_p, 10)}, t_n = {mp.nstr(t_n, 10)}, Delta t / t_p = {mp.nstr(dt / t_p, 8)}")
+    m_p = mp.mpf("938.27208943")  # CODATA 2022, comparison only
+    print(f"  physical (Q_beta + m_e)/m_p = {mp.nstr((q_codata + me) / m_p, 8)}")
+    print(f"  one scale for nucleon and Delta: linear Q+m_e = {mp.nstr(m_p * abs(dt) / t_p, 8)} MeV,"
+          f" quadratic (Frobenius norm <x,x>) = {mp.nstr(m_p * abs(t_n**2 / t_p**2 - 1), 8)} MeV")
     return 0 if ok else 1
 
 
