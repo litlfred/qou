@@ -41,7 +41,7 @@ $$
   \quad \forall i.
 $$
 
-By non-degeneracy (**convention D**: read on the quotient $H_n/\mathrm{rad}\,\mathrm{tr}_M \cong \mathrm{TL}_n$, where the induced pairing is non-degenerate; on $H_n$ itself $\det G = 0$ exactly, the $(1^3)$ block being the radical — [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean)), $K^\vee$ exists and is unique. In the basis, $K^\vee = \sum_i c_i (G^{-1})_{ij} b_j$, where $G_{ij} = \langle b_i, b_j \rangle_F = \mathrm{tr}_M(b_i \cdot b_j)$ is the $6 \times 6$ Gram matrix of $H_3(q)$.
+By non-degeneracy (**convention D**: read on the quotient $H_n/\mathrm{rad}\,\mathrm{tr}_M \cong \mathrm{TL}_n$, where the induced pairing is non-degenerate; on $H_n$ itself $\det G = 0$ exactly, the $(1^3)$ block being the radical), $K^\vee$ exists and is unique. In the basis, $K^\vee = \sum_i c_i (G^{-1})_{ij} b_j$, where $G_{ij} = \langle b_i, b_j \rangle_F = \mathrm{tr}_M(b_i \cdot b_j)$ is the $6 \times 6$ Gram matrix of $H_3(q)$.
 
 The demand vector of $K$ is the negative part:
 

@@ -28,6 +28,6 @@ $2N$ crossings, so rescaling to $c\,\sigma_i$ multiplies the monodromy by
 $c^{2N}$. The condition $c^{2N} q^2 = 1$ with $c > 0$ forces $c = q^{-1/N}$.
 $\square$
 
-The arithmetic of items 1--4 is machine-checked. The value $q^2$ of the monodromy
+The value $q^2$ of the monodromy
 is computed on explicit Jimbo matrices for $N = 2, 3$ and from contents for all
 $N$.

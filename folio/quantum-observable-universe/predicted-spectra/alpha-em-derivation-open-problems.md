@@ -12,7 +12,7 @@ This agrees with the CODATA-2022 value $137.035999177(21)$ to within $-0.155\%$.
 | Form | Statement | Residual at $q_0$ | Status |
 |------|-----------|-------------------|--------|
 | Bare | $q[9]_q[10]_q$ | $-1.55\times 10^{-3}$ | Derived |
-| Form A (CS) | $\cdot\bigl(1+\delta_{CS}/(1-\delta_{CS}\kappa)\bigr)$ with $\kappa=1.722$ | $-4.68\times 10^{-7}$ | Conj.; $\kappa$ unproved (Lean `sorry`); $\kappa \approx 1.9153$ needed for exact match |
+| Form A (CS) | $\cdot\bigl(1+\delta_{CS}/(1-\delta_{CS}\kappa)\bigr)$ with $\kappa=1.722$ | $-4.68\times 10^{-7}$ | Conj.; $\kappa$ unproved; $\kappa \approx 1.9153$ needed for exact match |
 | Form B (gluon-octet) | $45[3]_q\,(1+\hbar_q^4[5]_q+8q(\hbar_q^4[5]_q)^2)$ | $+2.6\times 10^{-9}$ | Conj.; only $45$ rigorously derived; disagrees with Form A at $q\ne q_0$ |
 
 *Superseded figures, recorded so the change is legible.* This table previously
@@ -26,19 +26,18 @@ $\kappa \approx 1.888$ is exact closure at the muon pin under the order-$2$
 truncation ($1.8880423$). They were stale, not wrong. The rows above are the **proton pin** (the standing default) with
 the tower resummed in closed form, matching
 [the Chern-Simons block](#rem:em-coupling-chern-simons), which already carried
-the resummation and the re-pin. Reproduce every entry with
-[`alpha_em_form_comparison_probe.py`](../../../computations/alpha/alpha_em_form_comparison_probe.py).
+the resummation and the re-pin.
 
 ## Why both prior attempts fail
 
-**Form A's $\kappa$ is incorrect.** The Witten-1988 Gram-determinant identification gives $\kappa \approx 1.722$. Matching CODATA at the proton-pinned $q_0$, with the tower resummed, requires $\kappa \approx 1.9153$. The discrepancy is $11.2\%$ and cannot be quadrature error: resummation is worth $11.06$ ppb against a $468$ ppb gap, about one part in forty. The Lean formalisation carried this as `sorry` from the start.
+**Form A's $\kappa$ is incorrect.** The Witten-1988 Gram-determinant identification gives $\kappa \approx 1.722$. Matching CODATA at the proton-pinned $q_0$, with the tower resummed, requires $\kappa \approx 1.9153$. The discrepancy is $11.2\%$ and cannot be quadrature error: resummation is worth $11.06$ ppb against a $468$ ppb gap, about one part in forty. The identification $\kappa \approx 1.722$ was never proved.
 
 **Form B is hidden numerology.** Of its four factors:
 
 - $45 = \dim \Lambda^2 V_{\text{nat}}^{10}$ is rigorous. It is the hook-length count of $V_{(9,1)} \oplus V_{(8,1,1)}$.
 - $[3]_q$ does not equal the $q$-dimension of any natural irrep of $H_3(q)$ or $U_q(\mathfrak{sl}_3)$. The singlet-idempotent gluon-octet identification is asserted, not computed.
 - $\hbar_q^4 \cdot [5]_q$ is claimed to be the leading non-trivial term of the Plancherel-character expansion at $n=10$. The calculation was not performed. The ambient $H_n$ is unspecified.
-- $8q$ is identified two ways (Lean: $\dim \mathfrak{su}(3)$; text: two-step crossing-pattern enumeration). Neither calculation was performed. Exact truncation requires an order-$3$ coefficient of $\approx -52$, which is not a clean $q$-rational.
+- $8q$ is identified two ways (as $\dim \mathfrak{su}(3)$, and as a two-step crossing-pattern enumeration). Neither calculation was performed. Exact truncation requires an order-$3$ coefficient of $\approx -52$, which is not a clean $q$-rational.
 
 Form A and Form B agree only at $q = q_0$. They give different values for $1/\alpha$ at every other $q$. Form B is a single-point fit.
 
@@ -58,8 +57,6 @@ The closest single-term near-match is
 $$ F - 1 \;\approx\; \frac{\hbar_q^2}{\pi \cdot [2]_q} $$
 
 at $7.4 \times 10^{-4}$ relative residual. This structure relates to $\mathrm{Vol}(S^3_q) = \pi^2[2]_q$ geometry, but it is not exact. A direct closed-form correction in any natural $q$-arithmetic basis at low degree is impossible.
-
-See `alpha-em-correction-derivation-attempts.witness.json` for the full attempt log.
 
 ## Insufficiency of block-diagonal Gram deformations
 

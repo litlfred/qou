@@ -28,6 +28,7 @@ export default proposition({
   // dimension arithmetic only.
   lean: { ref: "qou:QOU.Eightfold.MesonOctet.meson_octet_at_three" },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The idempotent algebra is formalised for any $k$-linear category:\n\nThe Lean does not\nprove that the octet is irreducible, and it does not construct" },
     {
       kind: "refined-framing",
       date: "2026-11-15",

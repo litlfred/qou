@@ -21,4 +21,7 @@ export default remark({
     "def:coulomb-charge",
     "conj:sm-hypercharge-invariant",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): is multiset counting. Proved in\n`QOU/StandardModel/TwistBatteryVacuity.lean`:\n\nIn\n   `strand_twist_y_battery.py` it is a function of the\n\nonly consistent with them. See\n`strand-twist-y-battery.witness.json`." },
+  ],
 });

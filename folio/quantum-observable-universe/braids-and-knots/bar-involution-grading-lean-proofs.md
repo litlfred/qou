@@ -1,19 +1,18 @@
-This remark is the $\mathbb{Z}/2\mathbb{Z}$ bar-grading Lean $\leftrightarrow$
-paper bridge for the [bar-involution](#def:bar-involution): the bar-grading
-subring/module structure and the Lean theorems with their
-narrative proofs.
+This remark records the $\mathbb{Z}/2\mathbb{Z}$ bar-grading induced by the
+[bar-involution](#def:bar-involution): the bar-grading subring/module structure,
+with proofs.
 
-## Proofs (Lean $\leftrightarrow$ paper bridge)
+## Proofs
 
-Every Lean theorem in [`bar-involution.lean`](bar-involution.lean) has both a narrative proof here and a `sorry`-free formal proof. Theorems split into three sections by structural prerequisite.
+The results split into three sections by structural prerequisite.
 
-### Bar-grading over `CommRing R`
+### Bar-grading over a commutative ring $R$
 
 **Proposition.** $x = P_{\mathrm{avg}}(x) + P_{\mathrm{skew}}(x)$.
 *Proof.* $\frac{x + \overline x}{2} + \frac{x - \overline x}{2} = \frac{2x}{2} = x$. $\square$
 
 **Proposition.** $0$ and $1$ are bar-symmetric.
-*Proof.* Direct from `BarInvolution.bar_zero` and `bar_one`. $\square$
+*Proof.* Direct from $\overline 0 = 0$ and $\overline 1 = 1$. $\square$
 
 **Proposition.** Sum of bar-symmetric is bar-symmetric.
 *Proof.* $\overline{x+y} = \overline x + \overline y = x + y$. $\square$
@@ -37,10 +36,10 @@ Every Lean theorem in [`bar-involution.lean`](bar-involution.lean) has both a na
 *Proof.* For sym: $\overline{-x} = -\overline x = -x$. For anti-sym: $\overline{-x} = -\overline x = -(-x) = x = -(-x)$. $\square$
 
 **Theorem.** $x$ bar-anti-sym $\Rightarrow$ $x^{2n}$ bar-symmetric.
-*Proof.* Induction on $n$. Base ($n=0$): $x^0 = 1$ bar-symmetric. Step: $x^{2(k+1)} = x^{2k} \cdot (x \cdot x)$; $x^{2k}$ bar-sym by IH, $x \cdot x$ bar-sym by `of_mul_antisym`; product bar-sym by `IsBarSymmetric.mul`. $\square$
+*Proof.* Induction on $n$. Base ($n=0$): $x^0 = 1$ bar-symmetric. Step: $x^{2(k+1)} = x^{2k} \cdot (x \cdot x)$; $x^{2k}$ bar-sym by IH, $x \cdot x$ bar-sym by the anti $\times$ anti theorem above; product bar-sym by closure under products. $\square$
 
 **Theorem.** $x$ bar-anti-sym $\Rightarrow$ $x^{2n+1}$ bar-anti-symmetric.
-*Proof.* $x^{2n+1} = x^{2n} \cdot x$; $x^{2n}$ bar-sym (above), $x$ bar-anti-sym (hypothesis); product bar-anti-sym by `of_sym_mul`. $\square$
+*Proof.* $x^{2n+1} = x^{2n} \cdot x$; $x^{2n}$ bar-sym (above), $x$ bar-anti-sym (hypothesis); product bar-anti-sym by the sym $\times$ anti theorem above. $\square$
 
 ### Bar on integer scalars
 
@@ -51,18 +50,18 @@ Every Lean theorem in [`bar-involution.lean`](bar-involution.lean) has both a na
 *Proof.* Induction on $n$. Base: $\overline 0 = 0$. Step: $\overline{k+1} = \overline k + \overline 1 = k + 1$. $\square$
 
 **Proposition.** Every natural-number scalar is bar-symmetric.
-*Proof.* Restatement of `bar_natCast n` in the `IsBarSymmetric` predicate. $\square$
+*Proof.* Restatement of $\overline n = n$ (above) as bar-symmetry. $\square$
 
-### Projection theorems (require `Field R`)
+### Projection theorems (require $R$ to be a field)
 
 **Proposition.** $\overline{x^{-1}} = (\overline x)^{-1}$ over a field.
 *Proof.* If $x = 0$: both sides are $0$ (from $\overline 0 = 0$ + $0^{-1} = 0$ convention). If $x \neq 0$: $\overline x \neq 0$ (bar is injective by involutivity), and $\overline x \cdot \overline{x^{-1}} = \overline{x \cdot x^{-1}} = \overline 1 = 1$, hence $\overline{x^{-1}} = (\overline x)^{-1}$. $\square$
 
 **Proposition.** $\overline{1/2} = 1/2$ over a field.
-*Proof.* $\overline{1/2} = \overline{1 \cdot 2^{-1}} = \overline 1 \cdot (\overline 2)^{-1} = 1 \cdot 2^{-1} = 1/2$ via `bar_inv` and `bar_two`. $\square$
+*Proof.* $\overline{1/2} = \overline{1 \cdot 2^{-1}} = \overline 1 \cdot (\overline 2)^{-1} = 1 \cdot 2^{-1} = 1/2$, using $\overline{x^{-1}} = (\overline x)^{-1}$ and $\overline 2 = 2$. $\square$
 
 **Proposition.** Every integer scalar is bar-symmetric.
-*Proof.* For $n = \mathrm{ofNat}\, k$: use `bar_natCast`. For $n = \mathrm{negSucc}\, k = -(k+1)$: $\overline{-(k+1)} = -\overline{k+1} = -(k+1)$ via `bar_neg` + `bar_natCast`. $\square$
+*Proof.* For $n = \mathrm{ofNat}\, k$: use $\overline k = k$. For $n = \mathrm{negSucc}\, k = -(k+1)$: $\overline{-(k+1)} = -\overline{k+1} = -(k+1)$, since bar commutes with negation and fixes natural-number scalars. $\square$
 
 **Proposition.** If $x$ is bar-symmetric, $P_{\mathrm{avg}}(x) = x$.
 *Proof.* $P_{\mathrm{avg}}(x) = (x + \overline x)/2 = (x + x)/2 = x$. $\square$
@@ -77,21 +76,19 @@ Every Lean theorem in [`bar-involution.lean`](bar-involution.lean) has both a na
 *Proof.* $P_{\mathrm{skew}}(x) = (x - \overline x)/2 = (x - x)/2 = 0$. $\square$
 
 **Theorem.** For bar-anti-sym $x$: $P_{\mathrm{avg}}(x^{2n}) = x^{2n}$.
-*Proof.* $x^{2n}$ is bar-symmetric by `pow_two_mul`; apply `of_sym`. $\square$
+*Proof.* $x^{2n}$ is bar-symmetric (above); apply the bar-symmetric case of $P_{\mathrm{avg}}$. $\square$
 
 **Theorem.** For bar-anti-sym $x$: $P_{\mathrm{avg}}(x^{2n+1}) = 0$.
-*Proof.* $x^{2n+1}$ is bar-anti-sym by `pow_two_mul_add_one`; apply `of_antisym`. **This is "the framework projects away odd-power components" at the formal level.** $\square$
+*Proof.* $x^{2n+1}$ is bar-anti-sym (above); apply the bar-anti-symmetric case of $P_{\mathrm{avg}}$. **This is "the framework projects away odd-power components" at the formal level.** $\square$
 
 **Theorem.** $P_{\mathrm{avg}}(x)$ is bar-symmetric for every $x$.
-*Proof.* $\overline{P_{\mathrm{avg}}(x)} = \overline{(x + \overline x)/2} = \overline{x + \overline x} \cdot \overline{1/2} = (\overline x + x) \cdot (1/2) = P_{\mathrm{avg}}(x)$ via `bar_half`. $\square$
+*Proof.* $\overline{P_{\mathrm{avg}}(x)} = \overline{(x + \overline x)/2} = \overline{x + \overline x} \cdot \overline{1/2} = (\overline x + x) \cdot (1/2) = P_{\mathrm{avg}}(x)$, using $\overline{1/2} = 1/2$. $\square$
 
 **Theorem.** $P_{\mathrm{avg}}^2 = P_{\mathrm{avg}}$.
-*Proof.* $P_{\mathrm{avg}}(x)$ is bar-symmetric by the previous theorem; applying $P_{\mathrm{avg}}$ to a bar-symmetric input gives the input back by `of_sym`. $\square$
+*Proof.* $P_{\mathrm{avg}}(x)$ is bar-symmetric by the previous theorem; applying $P_{\mathrm{avg}}$ to a bar-symmetric input gives the input back (bar-symmetric case above). $\square$
 
 **Theorem.** $P_{\mathrm{skew}}(x)$ is bar-anti-symmetric.
 *Proof.* $\overline{P_{\mathrm{skew}}(x)} = \overline{(x - \overline x)/2} = (\overline x - x) \cdot (1/2) = -P_{\mathrm{skew}}(x)$. $\square$
 
 **Theorem.** $P_{\mathrm{skew}}^2 = P_{\mathrm{skew}}$.
-*Proof.* Analogous to $P_{\mathrm{avg}}$ idempotency via `barSkewProjection_of_antisym`. $\square$
-
-All 33 theorems / definitions in [`bar-involution.lean`](bar-involution.lean) have narrative proofs here and `sorry`-free Lean proofs.
+*Proof.* Analogous to $P_{\mathrm{avg}}$ idempotency, using $P_{\mathrm{skew}}(x) = x$ for bar-anti-symmetric $x$. $\square$

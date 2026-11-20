@@ -60,8 +60,7 @@ The battery has been run over all $10{,}000$ helon-style assignments (3
 strands per fermion, per-strand twist in $\{-1, 0, +1\}$), of which $4$
 survive. That ratio must not be read as a $2500\!:\!1$ filter: the battery
 collapses to a single linear equation per flavour, and the surviving count
-is multiset counting. Proved in
-`QOU/StandardModel/TwistBatteryVacuity.lean`:
+is multiset counting. The following are proved:
 
 1. **The spectrum battery is exactly $T = 3Q$.** Both the candidate
    $Y_t = 2(Q_{\mathrm{twist}} - I_3)$ and the target $Y = 2(Q - I_3)$ carry
@@ -75,8 +74,8 @@ is multiset counting. Proved in
    implemented it also states one condition twice --- its second clause
    $2(T_{\mathfrak{p}}/3 - 1/2) = 1$ clears to $T_{\mathfrak{p}} = 3$, which
    is its own first clause.
-3. **The $\mathbb{Z}_6$ condition is not a filter.** In
-   `strand_twist_y_battery.py` it is a function of the
+3. **The $\mathbb{Z}_6$ condition is not a filter.** As
+   implemented it is a function of the
    Standard-Model table alone and never sees the candidate assignment; it
    runs as an input assertion and cannot exclude any multiset.
 
@@ -91,8 +90,7 @@ choosing $t$ with $\sum_i t_i = 3Q$, which is always possible.
 
 The open content is unchanged and is the whole question: whether the twist
 multisets are *forced* by the framework's braid words rather than
-only consistent with them. See
-`strand-twist-y-battery.witness.json`.
+only consistent with them.
 
 **A derived-twist repair, tested and refuted (scope-(a)).**
 The defect above is that $t$ is a free label. The natural repair is to

@@ -45,8 +45,7 @@ Every other eightfold relation this chapter examines --- [Gell-Mann--Okubo](#rem
 [the decuplet equal-spacing rule](#rem:decuplet-equal-spacing) and
 [Coleman--Glashow](#rem:u-spin-coleman-glashow) --- turns out to be an identity
 of its first-order ansatz, true for all parameter values and therefore evidence
-for no mechanism.  This one is different, and the difference is machine-checked
-in `QOU/Eightfold/OctetWeightDegeneracy.lean`:
+for no mechanism.  This one is different, and the difference is proved:
 
 - The decuplet's ten weights are pairwise distinct
 ; the octet's eight are not

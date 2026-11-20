@@ -8,7 +8,7 @@ $$
   \cdot
   \bigl(1 + \log(1 + \hbar_q)\bigr).
 $$
-The strong fusion $[3]_q \cdot [4]_q$ is framework-derived and Lean-proved; it supplies $\approx 99.98\%$ of the ratio, and the electromagnetic term is a $\approx 203$ ppm correction.
+The strong fusion $[3]_q \cdot [4]_q$ is framework-derived and proved; it supplies $\approx 99.98\%$ of the ratio, and the electromagnetic term is a $\approx 203$ ppm correction.
 
 **The electromagnetic factor is the full series, not the second-order truncation.** Reading the rational expression $\tfrac{3q^2-1}{2q^2}$ of this proposition directly as the physical electromagnetic correction would replace the full logarithmic factor $1 + \log(1+\hbar_q)$ by its quadratic Taylor polynomial $1 + \hbar_q - \hbar_q^2/2$. Where a convergent power series is truncated is an external choice; writing the truncated sum in rational closed form conceals that choice rather than deriving it.
 

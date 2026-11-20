@@ -76,7 +76,7 @@ We proceed by induction on $A$. Adding strand $A$ creates cross-terms $\sigma_i 
 
 The identity term $\mathbf{1}$ survives because $d \neq 0$ for nn and pn crossings. The condition $N \geq Z - 1$ ensures at least one nn or pn crossing exists at every generator. $\square$
 
-We verify this computationally for all $A \leq 8$ (reducing 14,256 terms to 8 for ${}^8\mathrm{Be}$). We formally prove this in Lean.
+This is verified computationally for all $A \leq 8$ (reducing 14,256 terms to 8 for ${}^8\mathrm{Be}$).
 
 **Valley of stability boundary.**
 The optimality fails for $N < Z - 1$ (proton-heavy nuclei). When all crossings are pp type ($d = 0$), the identity term vanishes. Multiplying by $(c \cdot \sigma_k + 0)$ does not preserve the identity. Without $\mathbf{1}$ in the support, I$_{9}$ chain-stripping lacks a root.

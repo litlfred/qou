@@ -1,4 +1,4 @@
-*Lean sibling: `QOU.Archimedean.PhotonIRZeroMode`. The topological geometric core is unconditional. The heat-kernel zero-mode is a standard result. The $\tau_{\mathrm{arch}}$ uniqueness is the upstream conditional input.*
+*The topological geometric core is unconditional. The heat-kernel zero-mode is a standard result. The $\tau_{\mathrm{arch}}$ uniqueness is the upstream conditional input.*
 
 **Proposition (photon infrared zero-mode on Bring's surface).** *Let $M_g$ be a closed orientable genus-$g$ hyperbolic surface of constant curvature $-1$. The photon infrared zero-mode contribution to $1/\alpha_{EM}$ at zero external momentum is the harmonic $1$-form sector $H^1(M_g)$ normalized by the surface area:*
 
