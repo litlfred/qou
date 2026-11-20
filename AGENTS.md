@@ -1790,6 +1790,9 @@ corpus — run the **corpus-grep checklist**:
    function the MCP tool calls, over the same roots. It runs on the light
    platform that the SessionStart hook installs.
 
+   The MCP server does not start by itself: call `mcp__paper-assistant__start`
+   first, then RefreshMcpTools (see §"MCP servers start on demand").
+
    The MCP route reported "paper-assistant: Connection closed" in every
    session from at least 2026-10-12 to 2026-11-20 (bean `qou-q261`). Two causes:
    - `.mcp.json` named `folio-assistant/cat-harness/src/index.ts`, which the
@@ -5586,7 +5589,35 @@ $$
 `` ```tex `` blocks is not escaped (it's a column separator in matrices
 and alignments). Only `&` in prose text causes LaTeX errors.
 
-## Lean MCP server (lean-lsp-mcp)
+## MCP servers start on demand (owner directive, 2026-11-20)
+
+Owner, verbatim: *"MCP should only start up if an agent needs the tools. The
+agent should look at the process and what it needs and then make a decision."*
+
+Every server in `.mcp.json` runs through
+[`scripts/mcp-lazy.py`](scripts/mcp-lazy.py). At session start it connects in
+under 0.1 s and exposes **one** tool, `start`; the real server is not running.
+Its description says what the server provides, when it is worth starting, what
+it costs, and the cheaper route that needs no MCP. The commands and those texts
+live in [`scripts/mcp-lazy.json`](scripts/mcp-lazy.json).
+
+**Decide before you start one.** Look at the task. If it needs the tools, call
+`mcp__<server>__start` (pass a one-line `reason`), then call `RefreshMcpTools`
+to load the real tools. If a cheaper route covers it, use that instead:
+
+| server | provides | cheaper route without MCP |
+|---|---|---|
+| `paper-assistant` | `corpus_search` and the platform tools (~74) | `bun scripts/corpus-search.ts "<topic>"` |
+| `lean-lsp` | goal states, diagnostics, Mathlib search | `lean -DautoImplicit=false -s 65536 <file>` (lean-direct) |
+| `paper-search-mcp` | external paper search and PDF download | `library/INDEX.md` and `library/*/sections` |
+| `openalex-paper-search` | OpenAlex author and work metadata | `folio/references/` for cited works |
+
+Why. Measured 2026-11-20 on a fresh container: all four eager servers hit the
+30 s connect timeout at session start. Run by hand, two of them could never
+start: `paper-search-mcp` was unpinned and broke on mcp 2.x (now pinned
+`mcp<2`), and `alex-mcp` needs `OPENALEX_MAILTO`, which is not set here. A
+failed `start` now returns the backend's stderr tail as the tool result.
+
 
 The [lean-lsp-mcp](https://github.com/oOo0oOo/lean-lsp-mcp) server is
 configured via `.mcp.json`. It provides Claude Code with:
