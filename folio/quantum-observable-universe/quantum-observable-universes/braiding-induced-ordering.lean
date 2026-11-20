@@ -1,4 +1,3 @@
-import Mathlib.Data.Real.Basic
 import Mathlib.Order.WellFounded
 import Mathlib.Data.List.Lex
 import Mathlib.Data.Fin.Basic
@@ -7,12 +6,19 @@ import Mathlib.Logic.Relation
 
 
 /-!
-# QOU.braiding_induced_ordering — The braiding induces a well-ordering
+# QOU.braiding_induced_ordering — degree-lex ordering on braid words
 
-The non-symmetric braiding c_{V,V} on C determines a canonical
-admissible well-ordering ≺_c on the monomial basis B of the
-Hecke algebra H_n(q). This is a proposition derived from the
-categorical structure, not an axiom.
+Fix a total order on the letters `σ₁, …, σ_{n-1}` (here: the natural order
+on `Fin n`, applied to an alphabet of any finite size). The degree-lexicographic
+order `DegLex` on all words of the free monoid on those letters is
+well-founded (`degLex_wellOrdered`) and compatible with concatenation
+(`degLex_admissible`). The lean.ref of `prop:braiding-induced-ordering` is
+`braiding_induced_ordering_holds`.
+
+No braiding hypothesis enters: well-foundedness holds for any braiding, and the
+non-symmetry `c_{V,V}^2 ≠ id` is not used on words. The braiding only fixes
+which letters are read as positive crossings. The order on the letters is a
+choice, so the order is not canonical.
 
 LaTeX label: `prop:braiding-induced-ordering`
 
@@ -213,9 +219,20 @@ theorem word_no_closedChainAt (n : ℕ) (w : List (Fin n)) :
       obtain ⟨i, rfl⟩ := hab
       exact degLex_append_singleton a i) h)
 
-/-- Top-level alias matching the manifest declaration. -/
+/-- The statement of `prop:braiding-induced-ordering`: for every finite
+    alphabet `Fin n`, `DegLex` on words is well-founded. -/
 -- Ref: [leitner2026] §2/braiding-induced-ordering
 def braiding_induced_ordering : Prop :=
   ∀ n : ℕ, WellFounded (DegLex (α := Fin n))
+
+/-- **`prop:braiding-induced-ordering`, proved.** `DegLex` on the free monoid
+    on any finite alphabet is well-founded and compatible with concatenation.
+    No braiding hypothesis is used. -/
+-- Ref: [leitner2026] §2/braiding-induced-ordering
+theorem braiding_induced_ordering_holds :
+    braiding_induced_ordering ∧
+      ∀ (n : ℕ) (u v w w' : List (Fin n)),
+        DegLex w w' → DegLex (u ++ w ++ v) (u ++ w' ++ v) :=
+  ⟨degLex_wellOrdered, fun _ u v w w' h => degLex_admissible u v w w' h⟩
 
 end QOU

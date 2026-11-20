@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:braiding-induced-ordering",
   title:
-    "Canonical admissible ordering on the Hecke basis induced by braiding",
+    "Degree-lexicographic well-ordering on braid words",
   tags: [
     "braiding",
     "well-ordering",
@@ -13,8 +13,13 @@ export default proposition({
     "temporal",
     "groebner",
   ],
-  lean: { ref: "qou:QOU.braiding_induced_ordering",
+  lean: { ref: "qou:QOU.braiding_induced_ordering_holds",
     validation: "not_checked",
   },
-  uses: ["prop:braid-action-tensor"],
+  uses: [
+    "prop:braid-action-tensor",
+    "def:braid-group",
+    "rem:hecke-algebra-from-braiding",
+    "unital-groebner-bases:def:admissible-system",
+  ],
 });

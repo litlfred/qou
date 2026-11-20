@@ -1,7 +1,7 @@
-*Proof that $\prec_c$ is a well-ordering on $B$.*
-Let $S \subseteq B$ be non-empty.
+*Proof that $\prec_c$ is well-founded on $W_n$.*
+Let $S \subseteq W_n$ be non-empty.
 
-(a) **Degree is bounded below.**  Every $w \in B$ has
+(a) **Degree is bounded below.**  Every $w \in W_n$ has
 $\ell(w) \geq 0$.  Let $d = \min\{\ell(w) : w \in S\}$.
 The set $S_d = \{w \in S : \ell(w) = d\}$ is non-empty.
 
@@ -16,16 +16,22 @@ if $\ell(w) > d$ then $w_0 \prec_c w$ (shorter words
 first); if $\ell(w) = d$ then $w_0 \leq_{\mathrm{lex}} w$
 by construction.  $\square$
 
-*Admissibility.*  The ordering $\prec_c$ is **admissible**
-in the sense of
-([admissible system](#unital-groebner-bases:def:admissible-system)):
-left and right multiplication by basis elements preserves
-the ordering ($w \prec_c w'$ implies
-$u \cdot w \cdot v \prec_c u \cdot w' \cdot v$ whenever
-both products are non-zero), because degree-lex is compatible
-with any associative multiplication whose defining relations
-(Hecke, Yang–Baxter) have leading terms of bounded degree —
-the Hecke relation is quadratic.
+*Compatibility with concatenation.*  Let $w \prec_c w'$ and
+$u, v \in W_n$.  If $\ell(w) < \ell(w')$ then
+$\ell(u\,w\,v) < \ell(u\,w'\,v)$, since length is additive.
+If $\ell(w) = \ell(w')$ and $w <_{\mathrm{lex}} w'$, a common
+prefix $u$ leaves the first differing letter unchanged, and so
+does a common suffix $v$, because $w$ and $w'$ have equal length
+and their first difference occurs before $v$ begins.  Hence
+$u\,w\,v \prec_c u\,w'\,v$.  This is the admissibility
+condition of an
+([admissible system](#unital-groebner-bases:def:admissible-system))
+on the free monoid; it uses only concatenation, not the Hecke or
+Yang--Baxter relations.  $\square$
+
+The Lean declaration `QOU.braiding_induced_ordering_holds` proves both
+parts: well-foundedness (`degLex_wellOrdered`) and compatibility with
+concatenation (`degLex_admissible`).  No braiding hypothesis is used.
 
 **Two faces of the arrow of time.**  The braiding $c_{V,V}$
 and the Reeb vector field $\xi$
