@@ -7,7 +7,13 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.confined_knot_binding",
     validation: "not_checked",
   },
-  uses: ["conj:nuclear-knot-classification"],
+  // conj:nuclear-knot-classification dropped from uses[] 2026-11-20 (bean
+  // qou-tm3c, owner rule "cut edges the text does not use"). Neither the
+  // statement nor prf:confined-knot-binding cites it: the cancellation
+  // chi_sym + chi_alt = 0 and the standard-channel volume z - h_A/2 follow
+  // from the H_3 characters and the transfer matrix. The edge put 47 provable
+  // blocks downstream of that conjecture, 20 of them through it alone.
+  uses: [],
   tags: [
     "binding-mechanism",
     "character-ratio",
