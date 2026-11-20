@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-12T19:04:21Z
-updated_at: 2026-11-20T14:50:15Z
+updated_at: 2026-11-20T15:54:00Z
 ---
 
 **What is wrong.** `E₀`, the Q_β energy scale, had **two live forms** in
@@ -150,3 +150,8 @@ REOPENED (rule 13a: the open premise is unclosed). Tower E0 is canonical BY RULI
 
 
 W13 progress (PR #8580): the prose argument "Delta_q z^k = -[k]_q^2 z^k, no length occurs" is now a sorry-free theorem (TowerFibreLaplacian.lean, generic Field). lambda_1 = 1 reduces to ONE placement premise (P): the E0 tower residual is the iterate of the FIBRE operator, not its archimedean image [k]_q^2 hbar_q/L_q^2. Still open: (P); that E0s residual is this iterate at all (second Delta^(n) definition, free - atom binding); the uniform bound (structure field per_level_bound). Stays todo.
+
+W13 (2026-11-20, after #8580 merged): the premise is TWO steps, not one.
+1. Ratio: lambda_1 = 1. #8580 proves the fibre operator has [1]_q^2 = 1; open is placement (P), fibre iterate vs archimedean image.
+2. Amplitude (newly isolated): qbeta_e0.tower_summed = Sum_{k>=0} hbar_q^{2k} * E0^(0), i.e. every level contributes E0^(0) itself (k=0 included, weight 1). prop:jet-tower-convergence instead writes m = m^(0) + Sum_{n>=1} hbar_q^{2n} Delta^(n) with Delta^(n) = m^(n)(free) - m^(n)(atom), a BINDING DIFFERENCE. E0 is a single energy scale, not a free-minus-atom difference, so "Delta^(n) for E0" has no definition in the corpus. tower_summed needs Delta^(n) * (mode amplitude) = E0^(0) for every n; that is a definition of E0^(n), not a lemma, and nothing in the corpus supplies it.
+So y3bm cannot be closed by proof until E0^(n) is DEFINED. Options for the owner: (a) define E0^(n) as the level-n jet prolongation of the order-zero formula m_e/(q(q-1)) and derive its level dependence; (b) keep tower_summed canonical by ruling, scoped as such (current state); (c) revert to order-zero. Stays todo.
