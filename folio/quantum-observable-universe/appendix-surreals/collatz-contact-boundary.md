@@ -6,7 +6,7 @@ $$
 $$
 
 **Proof.**
-Since $1 < v^*(q) < 2$ (we have $[2]_q < [3]_q < [2]_q^2$), the orbit converges whenever each tripling is followed by at least two halvings on average, i.e., $\langle v_{[2]} \rangle(P) \geq 2$.
+Since $1 < v^*(q) < 2$ (as $[2]_q < [3]_q < [2]_q^2$), the orbit converges whenever each tripling is followed by at least two halvings on average, i.e., $\langle v_{[2]} \rangle(P) \geq 2$.
 
 Two halvings multiply by $[2]_q^{-2}$; one tripling multiplies by $[3]_q / [2]_q$. The net factor per cycle is
 

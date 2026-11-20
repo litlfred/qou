@@ -5,7 +5,7 @@ real-closed field containing every ordered-field extension of
 $\mathbb{R}$, including the hyperreals $^{*}\mathbb{R}$, the ordinals
 $\mathrm{Ord}$, and all Hahn series $\mathbb{R}((t^{G}))$ \cite{conway1976,ehrlich2012}.
 
-**Nothing in this appendix alters this paper.** We develop and prove the Quantum Observable Universe over $\mathbb{R}$. This appendix offers an *ambient* field into which the archimedean content embeds and from which we recover it via standard-part. Our claims are either **remarks** interpreting existing blocks, **conjectures** pending further development, or **definitions** of new auxiliary structures.
+**Nothing in this appendix alters this paper.** The Quantum Observable Universe is developed and proved over $\mathbb{R}$. This appendix offers an *ambient* field into which the archimedean content embeds and from which it is recovered via standard-part. The claims here are either **remarks** interpreting existing blocks, **conjectures** pending further development, or **definitions** of new auxiliary structures.
 
 ## Motivation for the surreal lift
 
@@ -47,7 +47,7 @@ Four distinct uses motivate the lift:
 ## Lossiness of the lift
 
 A first-pass survey suggests that replacing $\mathbb{R}$ with
-$\mathbf{No}$ must cost us Lebesgue measure, Hilbert-space
+$\mathbf{No}$ must give up Lebesgue measure, Hilbert-space
 completions, and hyperbolic geometry. But
 an honest survey of the QOU development shows most of these
 are *never actually used* in a load-bearing way (see
@@ -75,8 +75,8 @@ comparison. This paper's mass-formula pipeline — Hoefsmit $\to$ Markov trace $
 
 This appendix does **not**:
 
-- claim a physical interpretation of non-archimedean values (we
-  work purely mathematically);
+- claim a physical interpretation of non-archimedean values (the
+  work is purely mathematical);
 - replace any main-text proof (this paper's results stand on their own over $\mathbb{R}$);
 - solve the Kashaev volume conjecture (though it offers a
   reformulation that separates the algebraic from the

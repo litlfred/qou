@@ -1,9 +1,9 @@
 **Conjecture ($q$-Collatz, within a QOU).**
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with substrate parameter $q \in \mathbb{G}_m^{\mathrm{nt}}(k)$ ([torsion avoidance](#rem:substrate-gm-torsion)), and let $\mathcal{S}(q) \cong \mathbb{Z}[q^{\pm 1}]$ be the Skein module of its Reeb bundle $\mathcal{R}_p = (S^3 \to S^2, \xi_q)$ ([Reeb bundle](#def:reeb-bundle)). This is a statement about the $q$-deformed Skein dynamics *of the QOU* — not a claim about the classical Collatz problem, which it recovers only in the archimedean limit $q \to 1$, and only when the substrate admits a well-defined standard part.
 
-We use the combinatorial $q$-integer $[n]_q = (q^n - 1)/(q - 1)$, giving $[2]_q = q + 1$ and $[3]_q = q^2 + q + 1$. The Iwahori--Hecke algebra convention $[n]_q = (q^n - q^{-n})/(q - q^{-1})$ differs by a factor of $q^{(n-1)/2}$. The combinatorial convention ensures the Skein divisibility identity $[3]_q = q[2]_q + 1$ and the contraction gap $[2]_q^2 - [3]_q = q$.
+Use the combinatorial $q$-integer $[n]_q = (q^n - 1)/(q - 1)$, giving $[2]_q = q + 1$ and $[3]_q = q^2 + q + 1$. The Iwahori--Hecke algebra convention $[n]_q = (q^n - q^{-n})/(q - q^{-1})$ differs by a factor of $q^{(n-1)/2}$. The combinatorial convention ensures the Skein divisibility identity $[3]_q = q[2]_q + 1$ and the contraction gap $[2]_q^2 - [3]_q = q$.
 
-An element $P \in \mathbb{Z}[q^{\pm 1}]$ is $q$-even if $[2]_q \mid P$ and $q$-odd if $[2]_q \mid (P + 1)$. At $q = 1$, we recover integer parity ($[2]_1 = 2$).
+An element $P \in \mathbb{Z}[q^{\pm 1}]$ is $q$-even if $[2]_q \mid P$ and $q$-odd if $[2]_q \mid (P + 1)$. At $q = 1$, this recovers integer parity ($[2]_1 = 2$).
 
 Unlike the integers — where every element is even or odd — a Laurent polynomial need be neither: $P$ is $q$-even iff $P(-1) = 0$ and $q$-odd iff $P(-1) = -1$ (evaluating modulo $[2]_q$, i.e. at $q = -1$), so $\mathcal{C}_q$ is a **partial** map, undefined when $P(-1) \notin \{0, -1\}$. Moreover this domain is not forward-invariant: almost every positive element leaves it within a few steps. Accordingly the positive cone below is the **domain-stable** cone — the elements whose entire forward orbit remains $q$-even-or-$q$-odd — a feature with no classical analog.
 
