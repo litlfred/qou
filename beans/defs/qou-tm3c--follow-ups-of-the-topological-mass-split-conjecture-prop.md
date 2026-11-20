@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-11-20T09:10:00Z
-updated_at: 2026-11-20T16:40:00Z
+updated_at: 2026-11-20T17:40:00Z
 parent: qou-ncxf
 ---
 
@@ -44,3 +44,16 @@ Not a closure of anything here. Proved (sorry-free, `QOU/Torsion/TopologicalMass
   - §3b audit: `origin/main` 247 → branch 237, 0 new. No sole-mass dependents remain.
   - **Still open:** the CAL-2 block itself reaches `conj:wigner-axiom` plus 3 others, through `prop:substrate-consistency-window` and `prop:calibration-cohomology-alignment`. Pre-existing and not framed yet.
   - Also still open: the leftover `thm:topological-mass` mentions from item 2.
+- **2026-11-20, CAL split (PR #8611, stacked on #8575).** The owner asked why CAL-2 depended on conjectures, and then chose to split the definition from the claim and to fix the sl2 cycle.
+  - **Findings.** The block `def:three-calibration-discipline` mixed a definition with a universal claim: every mass factors as m_e^a m_π^c Q(q₀). Its Lean headline theorem just returned the class field holding that claim. `prop:three-calibration-inputs` restated the same claim, and its Lean `∃ f, obs = f …` held for every `obs`. `prop:calibration-cohomology-alignment` had a Lean self-projection plus `2+1=3 := rfl`. The links to conjectures came from two defects: 10–14-hop chains through remarks (reaching `conj:wigner-axiom`), and a `uses[]` cycle between the sl2 recurrence and the conserved-quantity block (reaching `conj:binding-manybody`).
+  - **Done.**
+    - The definition is now pure: `QOU.Observations.CalibrationTriple` proves q₀ is the unique root, sorry-free.
+    - `conj:three-calibration-inputs` has the class `ThreeCalibrationFactorisation`.
+    - `conj:calibration-cohomology-alignment` lost its Lean sibling.
+    - The sl2 back-edge is cut.
+    - 20 compute producers were retargeted to the definition and re-run.
+    - §3b audit: 237 → 234, with 0 new. `local-substrate-q` and `terminal-resolution` are now clear.
+  - **Left.**
+    - `qbeta_level_k_binding_operator_probe` crashes on main: `TypeError: mpf from list` at line 396, plausibly the mpmath version.
+    - Docstring-only `prop:three-calibration-inputs` mentions remain in `binding_canonical`, `isotope_record_schema` and `rho_k_full_via_wenzl_lr`. They were left so the scriptHash and import cone don't drift.
+    - `prop:sl2-prolongation-recurrence` and `prop:electron-period-base` still reach `conj:wigner-axiom` through remark chains. That path was not examined.
