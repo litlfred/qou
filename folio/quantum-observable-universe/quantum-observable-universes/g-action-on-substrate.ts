@@ -24,14 +24,16 @@ export default conjecture({
     "n-sym",
     "open-problem",
   ],
-  // The witness below provides the q_0 numerical anchor cited via
-  // :val[q_0] in the body — it does NOT verify this conjecture
-  // (which is tagged `open-problem`). Status reflects the
-  // conjecture's open status, not the witness script's correctness.
+  // The witness below computes the N_sym(q_0) ≈ 213.11 target the body
+  // compares against (back-solved from CODATA G_F, so a fit, not a
+  // derivation). It does NOT verify this conjecture (tagged
+  // `open-problem`); status reflects the conjecture's open status.
+  // Previously pointed at q_pinning_50_digit.py, which never computes
+  // N_sym; the body carries no :val[q_0] reference (checked 2026-11-20).
   computation: {
     engine: "mpmath",
-    script: "computations/q_pinning_50_digit.py",
-    witness: "computations/q-pinning-50-digit.witness.json",
+    script: "computations/n_sym_numerical_anchor.py",
+    witness: "computations/n-sym-numerical-anchor.witness.json",
     status: "not_run",
   },
   authorNotes: [

@@ -22,11 +22,13 @@ export default proposition({
     "nv-1",
     "categorical-normalization",
   ],
-  // computation removed: incomplete schema (had witness without engine/script/status).
+  // Evaluates the stated polynomial (q^4+q^6+q^8)/3 at the proton q_0 and
+  // checks its factorisation exactly. Previously pointed at
+  // q_pinning_50_digit.py, which never computes N_sym (QA 2026-11-20).
   computation: {
     engine: "mpmath",
-    script: "computations/q_pinning_50_digit.py",
-    witness: "computations/q-pinning-50-digit.witness.json",
+    script: "computations/weak_symmetric_normalization_value.py",
+    witness: "computations/weak-symmetric-normalization-value.witness.json",
     status: "verified",
   },
   authorNotes: [
