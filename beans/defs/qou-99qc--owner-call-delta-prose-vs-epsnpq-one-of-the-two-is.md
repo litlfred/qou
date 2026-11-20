@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-18T21:21:30Z
+updated_at: 2026-11-20T08:45:45Z
 parent: qou-10v9
 ---
 
@@ -4063,3 +4063,10 @@ Nothing is selected or re-scored.
 This bean stays open (rule 13a).
 
 (Ported to the bean mount 2026-11-20 by W3 from PR #7876, whose bean-file edits cannot merge now that beans are branch-mounted.)
+
+**2026-11-20 (session 01VQDpPd):** measured two ruled-base Q_β elements live on main at once —
+content blocks (mass-comparison-table.md:33, neutron-qvalue-symbolic.md:53) score Δ_S, tower E0,
+0.4491 MeV (−42.6 %); the L2 scorecard scores nuc11_interleaved, 0.6519 MeV (−16.68 %), which
+fails reading-3 SDP on (2,1). Recorded in the scorecard witness as content_blocks_element /
+element_conflict_open (PR #8549). Not resolved — still the owner's call. γγ+SDP base search
+(qou-ales / qou-vd7j) running on claude/qbeta-gg-sdp-base-2026-11-20.
