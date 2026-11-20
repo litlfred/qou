@@ -1197,6 +1197,9 @@ const ORDER: Array<FileSlot | Reference> = [
   // ── Gödel 1931: incompleteness theorems ──────────────────────
   { id: "goedel1931" },
 
+  // ── Gödel 1949: rotating cosmological solution ──────────────
+  { id: "goedel1949" },
+
   // ── Turing 1936: computable numbers ────────────────────────
   { id: "turing1936" },
 

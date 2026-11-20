@@ -191,6 +191,15 @@ theorem degLex_not_totalChronology (n : ℕ) :
     ¬ ∀ w w' : List (Fin n), Relation.TransGen (DegLex (α := Fin n)) w w' :=
   fun h => degLex_no_closedChain n [] (h [] [])
 
+/-- **One tick is a `≺_c`-step.** Applying one more crossing to a word
+    (appending a letter) moves strictly up in `DegLex`. So the
+    crossing-application order on words is contained in `≺_c`, and every chain
+    of ticks is a chain of `≺_c`-steps. -/
+-- Ref: [leitner2026] §2/no-goedel-closed-chains
+theorem degLex_append_singleton {n : ℕ} (w : List (Fin n)) (i : Fin n) :
+    DegLex w (w ++ [i]) :=
+  Or.inl (by simp)
+
 /-- Top-level alias matching the manifest declaration. -/
 -- Ref: [leitner2026] §2/braiding-induced-ordering
 def braiding_induced_ordering : Prop :=
