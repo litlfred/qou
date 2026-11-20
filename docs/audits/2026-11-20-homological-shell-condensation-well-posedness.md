@@ -33,7 +33,7 @@ constrains nothing.
 |---|---|---|---|---|
 | R1 | `H_n(q)`, `n` = nucleon count | Coxeter length (`prop:gb-spectral-sequence`) | Hochschild | `HH^k = 0` for `k > 0` whenever `H_n(q)` is semisimple (Hochschild 1945), which holds at the real `q₀` for every `n`. So `E_∞^{p,q} = 0` for `p ≥ 0, q > 0` at **every** `n`. Checked exactly at `n = 3`: `E_∞` lies in total degree 0 at filtration degrees `0, −2, −3`. |
 | R2 | any commutative `A_n` | any | sheaf cohomology on `Spec A_n` | Affine, so `H^q = 0` for `q > 0` at **every** `n` (Serre vanishing). |
-| R3 | `End(A_{n+1})` with `τ̂` | two-step split `im τ̂ ⊕ ker τ̂` | Hochschild | Needs G1 first: `End(A_{n+1})` is a full matrix algebra once `A_{n+1}` is a finite free module, hence separable, and `HH^{>0} = 0` at **every** level. |
+| R3 | `End(A_{n+1})` with `τ̂` | two-step split `im τ̂ ⊕ ker τ̂` | Hochschild | Needs G1 first. When `C` is semisimple, `End_C(A_{n+1})` is a finite product of matrix algebras, hence separable, so `HH^{>0} = 0` at **every** level. |
 
 ## 5. Conclusion
 
