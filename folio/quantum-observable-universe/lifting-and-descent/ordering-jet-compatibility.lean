@@ -141,37 +141,71 @@ structure JetExtension where
   /-- Number of new Ω¹ directions per prolongation (= 3 for SU(2)). -/
   numNewDirs : ℕ := 3
 
-/-- **The former `ordering_extends` axiom was `P → P`.**
+/-- Lexicographic order on `ℕ`-words is preserved by any strictly monotone
+    relabelling of the letters. -/
+theorem lex_map_strictMono {φ : ℕ → ℕ} (hφ : StrictMono φ) :
+    ∀ {a b : List ℕ}, List.Lex (· < ·) a b → List.Lex (· < ·) (a.map φ) (b.map φ)
+  | _, _, List.Lex.nil => List.Lex.nil
+  | _, _, List.Lex.cons h => List.Lex.cons (lex_map_strictMono hφ h)
+  | _, _, List.Lex.rel h => List.Lex.rel (hφ h)
 
-    It stood as an `axiom` for
+/-- **Ordering extends through the jet embedding.**
 
-        (k : ℕ) (a b : MonomialBasis) (hab : degLex a b) : degLex a b
+    The jet prolongation `ℓ_n : B_n → B_{n+1}` relabels each level-`n`
+    generator index by a map `φ : ℕ → ℕ` on the alphabet; the new `Ω¹`
+    directions are inserted without reordering the old generators, which is
+    exactly the hypothesis that `φ` is strictly monotone. Under that
+    hypothesis `a ≺_n b` implies `ℓ_n(a) ≺_{n+1} ℓ_n(b)`, with
+    `ℓ_n(w) = w.map φ`.
 
-    -- the conclusion is the hypothesis, so `exact hab` closes it and the
-    axiom asserted nothing.  `k` did not appear in the statement at all.
+    The hypothesis is load-bearing: a non-injective relabelling collapses
+    `[0] ≺ [1]` to `[0] = [0]`, so the statement fails without it.
 
-    The docstring described a different claim: *"if `a ≺_n b` in `B_n`,
-    then `ℓ_n(a) ≺_{n+1} ℓ_n(b)` in `B_{n+1}`"*.  The jet embedding
-    `ℓ_n` occurs nowhere in the type, and neither does the level index,
-    so nothing about prolongation was ever stated.
-
-    Stating it needs `ℓ_n` as a map `MonomialBasis → MonomialBasis` and
-    a hypothesis relating `degLex` across it; that is a real claim and
-    is left open rather than replaced by a guess.  The identity below is
-    kept only so the name resolves and the vacuity is on the record. -/
+    History (bean qou-6qbv): until 2026-11-20 this declaration was
+    `(hab : degLex a b) : degLex a b := hab`, a `P → P` in which neither the
+    embedding nor the level index appeared. -/
 -- Ref: [leitner2026] §3/ordering-jet-compatibility
 -- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
-theorem ordering_extends (_k : ℕ) (a b : MonomialBasis)
-    (hab : degLex a b) :
-    degLex a b := hab
+theorem ordering_extends {φ : ℕ → ℕ} (hφ : StrictMono φ) {a b : MonomialBasis}
+    (hab : degLex a b) : degLex (a.map φ) (b.map φ) := by
+  rcases hab with h | ⟨hlen, hlt⟩
+  · left; simpa using h
+  · right
+    refine ⟨by simpa using hlen, ?_⟩
+    exact (List.lt_iff_lex_lt _ _).mpr
+      (lex_map_strictMono hφ ((List.lt_iff_lex_lt a b).mp hlt))
+
+/-- Equal-length lexicographic order is preserved by appending a common
+    suffix (the difference lies inside the equal-length prefix). -/
+theorem lex_append_right {d : List ℕ} : ∀ {a b : List ℕ}, a.length = b.length →
+    List.Lex (· < ·) a b → List.Lex (· < ·) (a ++ d) (b ++ d)
+  | _, _, _, List.Lex.nil => by simp_all
+  | _ :: _, _ :: _, h, List.Lex.cons hl =>
+      List.Lex.cons (lex_append_right (by simpa using h) hl)
+  | _, _, _, List.Lex.rel h => List.Lex.rel h
+
+/-- Lexicographic order is preserved by prepending a common prefix. -/
+theorem lex_append_left (c : List ℕ) {a b : List ℕ} (h : List.Lex (· < ·) a b) :
+    List.Lex (· < ·) (c ++ a) (c ++ b) := by
+  induction c with
+  | nil => simpa
+  | cons x xs ih => exact List.Lex.cons ih
 
 /-- Left and right compatibility with multiplication at each level:
-    a ≺ b implies c·a·d ≺ c·b·d (when products are nonzero). -/
+    a ≺ b implies c·a·d ≺ c·b·d. Proved (was an `axiom` until 2026-11-20,
+    bean qou-6qbv): a length difference survives concatenation, and an
+    equal-length lex difference lives inside the middle factor. -/
 -- Ref: [leitner2026] §3/ordering-jet-compatibility
 -- Ref: [leitner2026] unital-groebner-bases/admissible-system
-axiom ordering_compatible (a b c d : MonomialBasis)
+theorem ordering_compatible (a b c d : MonomialBasis)
     (hab : degLex a b) :
-    degLex (c ++ a ++ d) (c ++ b ++ d)
+    degLex (c ++ a ++ d) (c ++ b ++ d) := by
+  rcases hab with h | ⟨hlen, hlt⟩
+  · left; simp only [List.length_append]; omega
+  · right
+    refine ⟨by simp [hlen], (List.lt_iff_lex_lt _ _).mpr ?_⟩
+    simpa [List.append_assoc] using
+      lex_append_left c (lex_append_right (d := d) hlen ((List.lt_iff_lex_lt a b).mp hlt))
 
 /-- Well-foundedness at each level n: no infinite descending chains
     in B_n.  Immediate from `degLex_wellFounded`. -/
@@ -187,9 +221,13 @@ theorem wellfounded_at_level (n : ℕ) (hn : 0 < n) :
     level A_n. -/
 -- Ref: [leitner2026] §3/ordering-jet-compatibility
 -- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
-axiom direct_limit_terminates (n : ℕ) (w : MonomialBasis)
-    (hw : ∀ g ∈ w, g < n) :
-    ∃ (w' : MonomialBasis), ¬ degLex w' w  -- reduction terminates to a normal form
+theorem direct_limit_terminates (n : ℕ) (w : MonomialBasis)
+    (_hw : ∀ g ∈ w, g < n) :
+    Acc (fun (u v : MonomialBasis) => degLex u v ∧ ∀ g ∈ u, g < n) w :=
+  -- Was `axiom … : ∃ w', ¬ degLex w' w`, which `w' := w` satisfies for every
+  -- word (degLex is irreflexive) and so asserted nothing. Termination is
+  -- accessibility: no infinite descending reduction chain starts at `w`.
+  (Subrelation.wf (fun ⟨h, _⟩ => h) degLex_wf_unrestricted).apply w
 
 /-- **Consequence for time**: the braiding-induced ordering ≺_c on
     A₀ propagates through the entire jet tower. Forward time
