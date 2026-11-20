@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-11-20T08:45:45Z
-updated_at: 2026-11-20T08:45:45Z
+updated_at: 2026-11-20T09:05:12Z
 parent: qou-7xl8
 ---
 
@@ -28,3 +28,11 @@ labelled crossing insertion; Milnor μ̄(123)·Q1Q2Q3 for the Borromean, all pai
 and c_em derived, not tuned. Front: branch claude/qed-crossing-covariant-mubar-2026-11-20.
 NOTE: owner ruled 2026-11-20 that two-term is PRIMARY in the scorecard (PR #8549) and in the q0
 pin (PR #8554) regardless; this bean tracks the derivation, which those rulings do not supply.
+
+**2026-11-20T09:05:12Z — strand-labelled candidate closed in the negative within its class (PR #8557, scope b).**
+QOU.BraidsAndKnots.CrossingCovariantQED (sorry-free): first-order crossing-local insertions with
+strand-label-dependent coefficients are braid-covariant only as the charge-weighted coloured writhe
+Σ Q_sQ_t·2lk_st; all pairwise lk vanish on V³ ⇒ M_p^QED = Δm_QED = 0 at every q (Hopf control 8/9).
+Central insertions also vanish on V³. Fixed-position insertion not covariant (defect ∝ (q−q⁻¹)(q²+1)).
+μ̄ survives only as the even term c₃·Q₁Q₂Q₃·μ̄² (n−p split (2/9)c₃) — c₃ underived (bean qou-qc3d).
+Scope (a) only for non-local / second-order operators. Bean stays open.
