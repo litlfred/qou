@@ -301,9 +301,13 @@ This is what `cal-3-q-beta.witness.json` carries.  Stored at the
 """
 Q_BETA_MEV_AME_ERR = _load_mpf("0.00000061")
 
-Q_BETA_MEV_DERIVED_FROM_CODATA_DIRECT = (
-    M_N_MEV_CODATA_DIRECT - M_P_MEV - M_E_MEV
-)
+# Subtract at ≥50 dps (exemption 1, 2026-11-20): at import time mp.dps is
+# the default 15, so this difference across a cancellation came out as a
+# binary53 value (0.78233355930999992633… instead of 0.78233355931).
+with _mp.workdps(max(50, _mp.mp.dps)):
+    Q_BETA_MEV_DERIVED_FROM_CODATA_DIRECT = +(
+        M_N_MEV_CODATA_DIRECT - M_P_MEV - M_E_MEV
+    )
 """Q_β computed from CODATA-2022 direct m_n.
 
 Equals 939.56542194 − 938.27208943 − 0.51099895069 = 0.78233355931 MeV — the
@@ -320,9 +324,13 @@ call (bean qou-0e2p, `qbeta_bar_odd_qq_coefficient_leg_probe.py`).
 code below never carried them.)
 """
 
-Q_BETA_MEV_DERIVED_FROM_AME = (
-    M_N_MEV_AME_DERIVED - M_P_MEV - M_E_MEV
-)
+# Subtract at ≥50 dps (exemption 1, 2026-11-20): at import time mp.dps is
+# the default 15, so this difference across a cancellation came out as a
+# binary53 value (0.78233355930999992633… instead of 0.78233355931).
+with _mp.workdps(max(50, _mp.mp.dps)):
+    Q_BETA_MEV_DERIVED_FROM_AME = +(
+        M_N_MEV_AME_DERIVED - M_P_MEV - M_E_MEV
+    )
 """Q_β computed from AME-derived m_n.
 
 Equals 939.56542179 − 938.27208943 − 0.51099895069 = 0.78233340931 MeV.
