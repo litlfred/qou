@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-11-20T17:00:00Z
-updated_at: 2026-11-20T17:00:00Z
+updated_at: 2026-11-20T17:30:00Z
 parent: qou-uhx0
 ---
 
@@ -27,3 +27,8 @@ Why it is not a short proof:
 4. Conclude unique NF ⇒ `local_confluence` as a theorem with the same signature.
 
 Estimate: several sessions, ~1–2k Lean lines. Not started in code.
+
+## 2026-11-20 17:30 — the axiom as stated is FALSE (W12, PR #8612)
+`local_confluence` demands a structurally equal common reduct, but steps fix their target only up to CoeffEq (free `support` superset). Counterexample (axiom-free, `LocalConfluenceSupportRefutation.lean`): monic one-letter rule `K` over ℤ, `K → 0` with support ∅ and with support {K}; both normal, unequal. `example : False` compiles from the axiom. `normal_form_unique` (structural `=`) is false for the same reason. Repair: Diamond Lemma up to CoeffEq, then restate consumers.
+
+Also: k must be commutative for the proof: the S-polynomial is `lc₂·rel₁C − lc₁·A·rel₂`; it is a unit multiple of the monic composition only if lc₁lc₂ = lc₂lc₁.
