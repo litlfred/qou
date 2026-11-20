@@ -39,6 +39,7 @@ import _path_bridge  # noqa: F401, E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import fmt  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.witness import q0_comparison  # noqa: E402
 from qou_substrate import codata as C  # noqa: E402
 
 mp.mp.dps = 70
@@ -248,7 +249,10 @@ def main() -> int:
                      computed=("1" if data_c["proton_hopf_control"]["t_exponent"] != "0"
                                and data_c["proton_sigma1_cubed_control"]["theta_exponent"] != "0" else "0"),
                      expected="1", tolerance="0.5", source="negative controls (Hopf, sigma1^3)")
-    wb.save()
+    wb.save(q0_comparison(
+        muon=q_mu, proton=q_p,
+        reason="the subject is where each closed form pins q0: the probe solves the proton, "
+               "muon and alpha_em form-B identities itself and reports every pin under its own key"))
     return 0
 
 
