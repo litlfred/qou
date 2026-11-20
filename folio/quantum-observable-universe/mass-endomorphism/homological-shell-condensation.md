@@ -30,7 +30,7 @@ purely from the diagonal
 
 ## Statement
 
-**Proposition (Conjecture — homological shell condensation).**
+**Conjecture (homological shell condensation).**
 *For every $n \in \mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$, the
 Białynicki-Birula spectral sequence on $A_n$ collapses entirely above
 the $E_2$ line:*

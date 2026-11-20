@@ -22,13 +22,9 @@ the categorical action's holonomy on the braid $\beta$ underlying
 $T_w$ factors as the finite product
 $\rho(\beta) = \prod_{j} \rho(\sigma_{i_j})$. The non-abelian Stokes
 identity at adjacent slices reduces to braid + Hecke quadratic
-relations, which are the only $E_2$-differentials of the GB
-spectral sequence ([prop:gb-spectral-sequence](#prop:gb-spectral-sequence)).
-The spectral sequence collapses at $E_2$ for semisimple $H_n(q)$ at
-generic $q$ ([prop:spectral-sequence-collapse](#prop:spectral-sequence-collapse))
-because no relations beyond braid + Hecke exist; $E_\infty$
-identifications recover Wedderburn
-([prop:e-infinity-page-identifications](#prop:e-infinity-page-identifications)).
+relations. The argument below needs only the Wedderburn decomposition
+of the finite-dimensional semisimple algebra $H_n(q)$, not a spectral
+sequence.
 
 Wedderburn for the semisimple algebra $H_n(q)$ over the splitting
 field $\mathbb{Q}(q^{1/2})$ gives
@@ -47,8 +43,8 @@ and $\chi_\lambda$ is the $q$-Murnaghan–Nakayama character.
 **The categorical mass invariant.** Setting
 $M(\mathfrak{H}) := \nu_{\mathrm{SDP}} \cdot \mathrm{tr}_M(T_w) = \nu_{\mathrm{SDP}} \cdot \sum_\lambda y_\lambda(q) \chi_\lambda(T_w)$
 gives an element of $\mathbb{Q}(q)$. Every quantity is finite-sum and
-exact; the spectral-sequence collapse at $E_2$ guarantees no higher
-analytic content (asymptotic at roots of unity, volume conjecture,
+exact, because the trace is a finite sum over the Wedderburn
+blocks, so no higher analytic content (asymptotic at roots of unity, volume conjecture,
 Reeb-density integral on the cover, etc.) is needed. $\nu_{\mathrm{SDP}} \in \mathbb{Z}_{>0}$
 is read off as the multiplicity of $T_w$'s SDP solution in the
 Wedderburn decomposition (renamed from $\rho$ to

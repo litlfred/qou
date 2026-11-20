@@ -33,4 +33,4 @@ The second difference $\delta^2 \Phi(Z)$ is computed for $Z = 1\ldots 30$ at $K 
 
 ## Cross-link: homological route past the $K = 12$ barrier
 
-The Hoefsmit-seminormal pipeline above terminates at $K = 10$. The [homological shell-condensation conjecture](#prop:homological-shell-condensation) provides a $K$-independent algebraic-geometry route. The magic ladder $\{2, 8, 20, 28, 50, 82, 126\}$ is read off the collapse of a Białynicki–Birula spectral sequence at $E_2$, with no matrix evaluation required.
+The Hoefsmit-seminormal pipeline above terminates at $K = 10$. The [homological shell-condensation conjecture](#conj:homological-shell-condensation) provides a $K$-independent algebraic-geometry route. The magic ladder $\{2, 8, 20, 28, 50, 82, 126\}$ is read off the collapse of a Białynicki–Birula spectral sequence at $E_2$, with no matrix evaluation required.
