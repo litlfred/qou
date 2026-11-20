@@ -25,5 +25,6 @@ These are outside the content-block edit. W11 promised to edit no existing `.lea
 - Audit witnesses in `computations/audits/*.witness.json` record the old label; they are historical.
 - `lean/QOU/Torsion/mass_decomposition_categorical.lean`: the self-assuming projection no longer has a content-block consumer. Delete or de-vacuify it (W8 scope).
 
-## 3. Generated artifacts were hand-patched
-`gen-block-jsonld` and `build-foreshadows` failed in the lite platform (missing `fast-xml-parser`). `topological-mass.jsonld` (label, kind, @id, uses; proofs and leanRef dropped) and `foreshadows.json` (label strings) were patched by hand. Re-run both generators with `--check` under the full platform. `topological-mass-upper-bound.jsonld` has not been generated yet.
+## 3. Generated artifacts
+- The `.jsonld` files of the 11 touched blocks were regenerated with `gen-block-jsonld` at the pinned platform 82b3899. Unrelated drift was reverted: a full run rewrote 3602 files, and the platform's namespace change from `folio-assistant-core:` to `folio-assistant-sci:` now shows on these 11 files only.
+- `build-foreshadows` crashes at the pin (build-foreshadows.ts:163). `foreshadows.json` was hand-patched: 5 label strings changed from thm: to conj:. Re-run it once the platform tool works.
