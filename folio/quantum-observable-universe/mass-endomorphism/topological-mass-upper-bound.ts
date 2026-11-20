@@ -18,7 +18,7 @@ export default proposition({
     {
       kind: "note",
       date: "2026-11-20",
-      body: "Scope of the Lean. `QOU.Torsion.mass_upper_bound_localised` formalises only the norm step: given the trace value split as descended part plus a finite sum of transient parts, the norm is at most the sum of the norms. It holds over any seminormed additive commutative group and is sorry-free (lean-direct exit 0; axioms propext, Classical.choice, Quot.sound). The split itself is not formalised here. It is supplied by [lem:topological-mass-cat-eigenspace](#lem:topological-mass-cat-eigenspace) and [lem:topological-mass-cat-transient](#lem:topological-mass-cat-transient).",
+      body: "Scope of the Lean. `QOU.Torsion.mass_upper_bound_localised` formalises only the norm step: given the trace value split as descended part plus a finite sum of transient parts, the norm is at most the sum of the norms. It holds over any seminormed additive commutative group and is sorry-free (lean-direct exit 0; axioms propext, Classical.choice, Quot.sound). The same file proves the equality characterisation: `mass_eq_of_common_ray` (sufficient, finite sum), `mass_eq_iff_sameRay` (two terms, strictly convex), `sameRay_of_mass_eq` (necessary, finite sum, strictly convex). All are sorry-free, with axioms propext, Classical.choice and Quot.sound. The split itself is not formalised here. It is supplied by [lem:topological-mass-cat-eigenspace](#lem:topological-mass-cat-eigenspace) and [lem:topological-mass-cat-transient](#lem:topological-mass-cat-transient).",
     },
   ],
 });
