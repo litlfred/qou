@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-20T20:30:00Z
+updated_at: 2026-11-20T21:10:00Z
 parent: qou-10v9
 ---
 
@@ -4175,3 +4175,10 @@ Photon γ(φ)=1+φ₀σ₀+φ₁σ₁+φ₀₁σ₀σ₁⁻¹. Lean `QOU/QuarkSt
 - Bar image of a photon is a photon iff φ₀+φ₁=0; bar-closed pair + factorisation ⇒ Borromean pair (`borromean_of_barClosed`, needs h≠0, h²+2≠0). Then e⁻ channel = φ₀₁ψ₀−φ₀ψ₀₁.
 - Flip (Δ-conjugation) closure forces φ₀₁=0; three-term photons never factor β_Bor (scope b, certificate h²(h²+2)=0). Neutral in trivial+sign blocks forces φ₀₁=0, φ₀+φ₁=0 (same no-go).
 OWNER DECISION: is "bar image of a photon is a photon" an admissible premise? Yes ⇒ φ₀=φ₁=0 derived. No ⇒ φ₀,φ₁ underived (8-point set; picking by residual would be a fit). Default if no answer: nothing changes; φ₀,φ₁ stay recorded as underived. Bean stays open (rule 13a).
+
+## 2026-11-20T21:10Z — R4 (energy conservation) and R1 (four-strand γγ process), PR #8623 (draft)
+Pre-registered at 3e41aab22b. Lean `QOU/QuarkState/DecayGammaGammaFourStrand.lean` (generic Field, 26 theorems, sorry-free, axioms std only); probe `computations/probes/qbeta_derivation_r4_r1/` 20/20 at 70 dps, proton q₀. Nothing wired.
+- R4, mass channel (S = 2m_μ[3]!/q³ = 945.764 MeV/unit trace; full z_D trace of V³ returns the pinned m_p). With equal plain traces on T³ = ±½ for every X ∈ H₃ (#8616), the only readings give: sectors/[2]³ → τ_n = q⁻²τ_p, Q_β = −73.32 MeV (`qbeta_sector_neg`: Q_β < 0 for all q > 1); sectors/own dim or full trace + u↔d → Q_β = −m_e. Scope (b) on three strands. Label A/B lines: rel. diff +0.00591 / −0.01704 (diagnostic only; need 1.378e-3).
+- R1: d→u flip functional on H₃ NF words (1,σ₀,σ₁,L₋,L₊,e⁻) = (0,0,1,q,q,q²) (`flip_pair`). At the derived weights the pair is V³, e⁻ coordinate 0, V³ flips at order h³ (q²h³·eS); round trip (q²h³)²y_D. Label B: Ja·γ(φ) = t(φ)Ja, so Ja·Γ·V₄·Jb = t(φ)t(ψ)q·eJ and t = 1: label B's cJ/2 is independent of the γγ pair.
+- Closed form for every reading (order-zero E₀): Q_β/m_e = (q+1)(q²+1)/(2q³)·y₃. y₃ = y_D → −43.2 %; (q²h³)²y_D (γγ base, label A) → 5.6e-5 MeV (−99.99 %); cJ/2 (label B, pair-independent) → +0.33 % (selection against target, as before).
+- Remaining choices (none selected): flavour label; round trip vs amplitude and return path; scale E₀ vs S; Δ_S prefactor h[2]/2; φ₀, φ₁. Bean stays open (rule 13a).
