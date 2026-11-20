@@ -89,7 +89,15 @@
     PI-4  order/genus lemmas (`p ≤ ρ`, exponent of convergence ≤ order).
           Exponent of convergence ≤ order is PROVED (2026-11-20) in
           `QOU.Mathlib.ExponentOfConvergence.summable_divisor_mul_rpow_neg`, via Jensen
-          (`QOU.Mathlib.JensenZeroCounting`). The genus bound `p ≤ ρ` is not yet stated.
+          (`QOU.Mathlib.JensenZeroCounting`); genus corollary `summable_divisor_floor_genus`.
+    PI-5  progress (2026-11-20). PROVED: the canonical product is entire and of order
+          ≤ σ when ∑‖aₙ‖^{-σ} < ∞ (`QOU.Mathlib.CanonicalProductGrowth`); a zero-free
+          entire function of order ≤ ρ is exp of a polynomial of degree ≤ ρ
+          (`QOU.Mathlib.HadamardZeroFree.exists_polynomial_of_zeroFree`). STILL OPEN:
+          enumerating the zeros (divisor → sequence with multiplicity), showing f/P is
+          entire and zero-free, and the lower bound on |P| off small discs that gives
+          f/P order ≤ ρ (minimum-modulus estimate). So `HasHadamardFactorization`
+          below is still an unproved class.
     PI-5  Jensen ⇒ zero-counting ⇒ the factorization (deepest; needs Nevanlinna).
 
   -- Ref: [leitner2026] standard complex analysis: Ahlfors, *Complex Analysis*,
