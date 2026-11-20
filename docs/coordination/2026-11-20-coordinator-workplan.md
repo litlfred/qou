@@ -41,3 +41,20 @@ axioms` evidence, corpus-grep before "open"/"refuted".
 5. Batch PRs in W4's MERGE-CANDIDATE order, oldest-mergeable first, in groups.
 
 This file is updated as sibling reports arrive.
+
+## Roster (updated 2026-11-20 09:00 Paris)
+
+| id | form | scope |
+|---|---|---|
+| w1–w6 | children of the coordinator session (owner choice 08:33) | as in the Workstreams table |
+| W1–W6 | separate scheduled sessions (08:30), **superseded** by the children; owner asked to stop them. Their ready requests stand and are honoured. | |
+| w15 | child — platform & bean hygiene (owner D1, propose-only on bean status) | qou-w6tr, qou-y48h, qou-5vkl, qou-n4r9 |
+| w16 | child — open conjectures outside the mass chain (owner D2) | b9cj, qou-r9ih, qou-frzo, qou-n4nr, qou-m6dn, qou-qs0e |
+| W7–W14 | separate sessions from the "beans dispatcher" (08:50) | dxbw, 6qbv, qhcr, c8p8, ncxf, uhx0, v6so, d4kh |
+
+## Owner decisions recorded
+- 08:45 — duplicate `prop:borromean-two-photon-factorisation`: keep #8502's, drop #8367's, one shared `QOU.Photon.photon` library definition; merge order #8367 → #8502 → #8517.
+- 08:58 — D1 hygiene workstream (propose-only), D2 conjecture workstream, merge #8526 + #8527.
+
+## Merge protocol
+cat-harness `merge-manager-watcher` / `merge-request.bpmn`: ready PR → `ccr/ready_for_review`, label `ready-to-merge`, `ready: <full sha>` comment with the six lines, plus `[Wn ready]` here. The coordinator runs prepare-merge and merges only with the owner's explicit OK, rebase method, never deleting branches.
