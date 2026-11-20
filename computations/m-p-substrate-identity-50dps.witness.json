@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-18T21:28:32.729499+00:00",
-  "commitSha": "2dbd0b5cde411a3d35c971f05af3cd21549e56a4",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-20T07:43:41.568552+00:00",
+  "commitSha": "bf8dbcbd4a72c4020f9192b91b13cf72de8e916e",
   "assertions": [
     {
       "name": "m_p_matches_codata_within_1ppm",
@@ -38,15 +38,15 @@
       "passed": true,
       "tolerance": "1.0",
       "unit": "sigma",
-      "source": "Zero-parameter connected 4th-order Borromean proton QED self-energy M_p^QED,conn = m_e·|tr_bar_conn(p, V³)| (+0.220077 keV, QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjp_borromeanV3) brings the μ–p mass-prediction residual from 9.5σ (211.2 ppb) inside 1σ (+8.06 ppb = +0.36σ)."
+      "source": "RECORD OF A SELECTED COMBINATION, not a zero-parameter prediction (bean qou-99qc, 2026-11-19): connected 4th-order Borromean proton QED term M_p^QED,conn = m_e·|tr_bar_conn(p, V³)| (+0.220077 keV, QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjp_borromeanV3), with the m_e scale and the adjacent-pair restriction both chosen. Checks that the recorded combination reproduces +8.06 ppb = +0.36σ; it is not evidence that the μ–p tension (9.5σ on the ratio) is closed."
     }
   ],
   "allPassed": false,
-  "durationMs": 3,
+  "durationMs": 7,
   "computation": "m-p-substrate-identity-50dps",
   "scriptFile": "m_p_substrate_identity_50dps.py",
-  "scriptHash": "21b7ff17cefe",
-  "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
+  "scriptHash": "75c9f2204eb7",
+  "scriptCommitSha": "bf8dbcbd4a72c4020f9192b91b13cf72de8e916e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,14 +54,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.13.18",
+    "numpy": "2.5.5",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "cvxpy": "absent",
-    "pyhecke_native_build": "a9f23cb94545f585"
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [
@@ -165,7 +166,7 @@
         "trace_QAdj_connected_diff_borromeanV3": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdj_connected_diff_borromeanV3",
         "trace_e21_QAdj_diff_borromeanV3": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_e21_QAdj_diff_borromeanV3"
       },
-      "note": "Tier A non-breaking diagnostic block (bean qou-7ph7): evaluates the connected 4th-order Borromean V³ = (σ₁σ₂⁻¹)³ quark charge traces proved sorry-free in QOU/BraidsAndKnots/NucleonWeightSpaceTwoTerm.lean. M_p^QED,conn = m_e·|tr_bar_conn(p, V³)| = +0.220077 keV closes 96.2% of the 211 ppb μ–p tension (to +8.06 ppb = +0.36σ), and Δm_QED^conn = -m_e·Δtr_bar_conn(V³) = -0.331696 keV reduces the Convention-D Q_β residual from +602 ppm to +178 ppm (+148 ppb on m_n)."
+      "note": "Tier A non-breaking diagnostic block (bean qou-7ph7): evaluates the connected 4th-order Borromean V³ = (σ₁σ₂⁻¹)³ quark charge traces proved sorry-free in QOU/BraidsAndKnots/NucleonWeightSpaceTwoTerm.lean. With the m_e scale, M_p^QED,conn = m_e·|tr_bar_conn(p, V³)| = +0.220077 keV and Δm_QED^conn = -m_e·Δtr_bar_conn(V³) = -0.331696 keV. NOT DERIVED PREDICTIONS (bean qou-99qc, 2026-11-19): the word dependence comes only from dropping quark pair 1-3 (summed over all pairs the insertion is word-independent, trace_QPair_diff_word), and the scale/weighting were chosen against the μ–p and Q_β targets. Records of selected combinations; they do not close either residual."
     },
     "upstream_witness_hashes": [
       {
