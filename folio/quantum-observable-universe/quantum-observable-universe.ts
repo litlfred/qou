@@ -136,6 +136,7 @@ export default paper({
     chapterRef({ dir: "appendix-qvalues" }),
     chapterRef({ dir: "appendix-surreals" }),                  // Surreal-number lift (categorical lobe) + Millennium-problem surreal bounds
     chapterRef({ dir: "appendix-surreals-archimedean" }),      // Surreal-number lift (archimedean lobe) — substrate-q_0-pinned content split out per q-usage audit
+    chapterRef({ dir: "appendix-formalisation-notes" }),       // Formalisation notes: Lean/Mathlib infrastructure blocks moved out of the chapters (owner ruling 2026-11-20, qou-d4kh)
     chapterRef({ dir: "index-of-definitions" }),
     chapterRef({ dir: "notation" }),                          // Symbol register — moved out of the front matter to its own appendix (too long for the front). Forward refs ignored by the detangler (preview chapter).
 

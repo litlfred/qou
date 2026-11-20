@@ -1,19 +1,20 @@
 {
   "$schema": "block-qa/v1",
-  "kind": "table",
+  "label": "rem:upstream-mathlib-additions-detail",
+  "kind": "remark",
   "paths": {
-    "ts": "folio/quantum-observable-universe/predicted-spectra/clausen-function-mathlib-filler-table2-data.ts",
-    "md": "folio/quantum-observable-universe/predicted-spectra/clausen-function-mathlib-filler-table2-data.md"
+    "ts": "folio/quantum-observable-universe/appendix-formalisation-notes/upstream-mathlib-additions-detail.ts",
+    "md": "folio/quantum-observable-universe/appendix-formalisation-notes/upstream-mathlib-additions-detail.md"
   },
   "criteria": {
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
-        "reviewed_at": "2026-08-08T08:22:01Z",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The AGENTS.md section id is gone: \"The \u00a73b-cond chain provides unconditional functional identities\" now reads \"The conditional-class chain provides unconditional functional identities.\"",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }
@@ -21,8 +22,8 @@
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -39,8 +40,8 @@
     "voice-probe-narrative": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -57,8 +58,8 @@
     "cite-named-theorem": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -75,8 +76,8 @@
     "voice-agent-speak": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -93,8 +94,8 @@
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -111,8 +112,8 @@
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -129,8 +130,8 @@
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -147,8 +148,8 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -165,8 +166,8 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -183,8 +184,8 @@
     "voice-scholarly-default": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -201,8 +202,8 @@
     "voice-title-scholarly": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -219,8 +220,8 @@
     "voice-ai-slop": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -237,8 +238,8 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -255,8 +256,8 @@
     "voice-status-section": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -273,8 +274,8 @@
     "framework-canonical": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -291,8 +292,8 @@
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -310,8 +311,8 @@
     "proof-no-trivial-skeleton": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -330,8 +331,8 @@
     "canonical-calibration-count": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -345,11 +346,29 @@
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
+    "canonical-no-numerology": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "3871b924cf65",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
     "canonical-witness-pinned": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -366,8 +385,8 @@
     "canonical-script-not-deprecated": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -384,8 +403,8 @@
     "canonical-dilogarithm-context": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -402,8 +421,8 @@
     "canonical-no-hardcoded-observable": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -417,11 +436,47 @@
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
+    "canonical-ck-tiered-not-binary": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "5fb9d70acf54",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "canonical-no-negative-result-in-paper": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "5c2b3e6cb87e",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
     "compute-witness-exists": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -438,8 +493,8 @@
     "compute-lp-dual-present": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -456,8 +511,8 @@
     "detangler-no-forward-ref": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -474,8 +529,8 @@
     "detangler-section-band": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -492,8 +547,8 @@
     "detangler-no-xchapter-fwd": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -510,8 +565,8 @@
     "detangler-archimedean-wall": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -529,8 +584,8 @@
     "detangler-block-tanglement": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -548,8 +603,8 @@
           "tanglement_score": 0,
           "out_degree": 1,
           "in_degree": 0,
-          "cone_size": 133,
-          "depth": 32,
+          "cone_size": 302,
+          "depth": 55,
           "pagerank": 7.4e-05,
           "edge_span_max": 1,
           "edge_span_mean": 1,
@@ -560,8 +615,8 @@
     "detangler-graph-energy": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -583,8 +638,8 @@
     "detangler-topic-coherence": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -601,8 +656,8 @@
     "detangler-no-dependency-cycle": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -619,8 +674,8 @@
     "uses-editorial-hygiene": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -643,8 +698,8 @@
     "uses-formal-coverage": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -663,8 +718,8 @@
     "lean-ref-owns-decl": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -682,8 +737,8 @@
     "bib-cite-resolves": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -702,8 +757,8 @@
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -722,8 +777,8 @@
     "bib-cited-ref-metadata-ok": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -742,8 +797,8 @@
     "bib-cited-ref-has-screenshot": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -762,8 +817,8 @@
     "q-usage-regime-detected": [
       {
         "field_hash": {
-          "ts": "e78f8b447861",
-          "md": "b8064f2a2a00"
+          "ts": "eed1b43fd3a0",
+          "md": "4a8f0f1133f5"
         },
         "result": "pass",
         "reviewer": {
@@ -779,8 +834,8 @@
     "q-usage-fixed-q0-leak": [
       {
         "field_hash": {
-          "ts": "e78f8b447861",
-          "md": "b8064f2a2a00"
+          "ts": "eed1b43fd3a0",
+          "md": "4a8f0f1133f5"
         },
         "result": "n/a",
         "reviewer": {
@@ -795,8 +850,8 @@
     "q-usage-archimedean-in-categorical-chapter": [
       {
         "field_hash": {
-          "ts": "e78f8b447861",
-          "md": "b8064f2a2a00"
+          "ts": "eed1b43fd3a0",
+          "md": "4a8f0f1133f5"
         },
         "result": "n/a",
         "reviewer": {
@@ -811,8 +866,8 @@
     "q-usage-positivity-implicit": [
       {
         "field_hash": {
-          "ts": "e78f8b447861",
-          "md": "b8064f2a2a00"
+          "ts": "eed1b43fd3a0",
+          "md": "4a8f0f1133f5"
         },
         "result": "n/a",
         "reviewer": {
@@ -827,8 +882,8 @@
     "q-usage-modulus-vs-real-mismatch": [
       {
         "field_hash": {
-          "ts": "e78f8b447861",
-          "md": "b8064f2a2a00"
+          "ts": "eed1b43fd3a0",
+          "md": "4a8f0f1133f5"
         },
         "result": "n/a",
         "reviewer": {
@@ -843,8 +898,8 @@
     "q-usage-root-of-unity-undeclared": [
       {
         "field_hash": {
-          "ts": "e78f8b447861",
-          "md": "b8064f2a2a00"
+          "ts": "eed1b43fd3a0",
+          "md": "4a8f0f1133f5"
         },
         "result": "pass",
         "reviewer": {
@@ -859,8 +914,8 @@
     "q-usage-narrative-chapter-mismatch": [
       {
         "field_hash": {
-          "ts": "e78f8b447861",
-          "md": "b8064f2a2a00"
+          "ts": "eed1b43fd3a0",
+          "md": "4a8f0f1133f5"
         },
         "result": "pass",
         "reviewer": {
@@ -872,11 +927,353 @@
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.471Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.508Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 168 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.546Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 168 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.586Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.623Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.661Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.697Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "major",
+        "evidence": "The '## Target translation' section exists only to restate the three advances just listed, and closes on 'This translates a prior axiomatic gap into specific, named Lean targets ready for upstreaming.' - which is also an overclaim, since the sibling Table 2 lists the absolute convergence of complexLiTwo as open and Table 1 records its convergence as merely 'implicit'.",
+        "notes": "proposed: delete the section, or reduce it to the one fact not already stated - which named declarations are unconditional - and drop 'ready for upstreaming'."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.732Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.768Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.803Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
     "wall-base-ring-minimal": [
       {
         "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -890,193 +1287,12 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
-    ],
-    "trap-negation-contrast": [
-      {
-        "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:i00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-22T03:35:36.994Z",
-        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
-        "evidence": "Read in full: 4-row missing-piece/used-by/work-needed table. Judged all ten; no construction present.",
-        "notes": "Table-only block. One gloss em-dash in a cell ('substantial - quotient of free abelian group on F^x x F^x by 5-term pentagon'); a single column gloss is not load-bearing dash density. Number-field content checked: the Bloch group over F as a quotient by the five-term relation is stated correctly."
-      }
-    ],
-    "trap-rhetorical-pivot": [
-      {
-        "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:i00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-22T03:35:37.037Z",
-        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
-        "evidence": "Read in full: 4-row missing-piece/used-by/work-needed table. Judged all ten; no construction present.",
-        "notes": "Table-only block. One gloss em-dash in a cell ('substantial - quotient of free abelian group on F^x x F^x by 5-term pentagon'); a single column gloss is not load-bearing dash density. Number-field content checked: the Bloch group over F as a quotient by the five-term relation is stated correctly."
-      }
-    ],
-    "trap-em-dash": [
-      {
-        "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:i00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-22T03:35:37.077Z",
-        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
-        "evidence": "Read in full: 4-row missing-piece/used-by/work-needed table. Judged all ten; no construction present.",
-        "notes": "Table-only block. One gloss em-dash in a cell ('substantial - quotient of free abelian group on F^x x F^x by 5-term pentagon'); a single column gloss is not load-bearing dash density. Number-field content checked: the Bloch group over F as a quotient by the five-term relation is stated correctly."
-      }
-    ],
-    "trap-triples": [
-      {
-        "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:i00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-22T03:35:37.119Z",
-        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
-        "evidence": "Read in full: 4-row missing-piece/used-by/work-needed table. Judged all ten; no construction present.",
-        "notes": "Table-only block. One gloss em-dash in a cell ('substantial - quotient of free abelian group on F^x x F^x by 5-term pentagon'); a single column gloss is not load-bearing dash density. Number-field content checked: the Bloch group over F as a quotient by the five-term relation is stated correctly."
-      }
-    ],
-    "trap-closing-aphorism": [
-      {
-        "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:i00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-22T03:35:37.200Z",
-        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
-        "evidence": "Read in full: 4-row missing-piece/used-by/work-needed table. Judged all ten; no construction present.",
-        "notes": "Table-only block. One gloss em-dash in a cell ('substantial - quotient of free abelian group on F^x x F^x by 5-term pentagon'); a single column gloss is not load-bearing dash density. Number-field content checked: the Bloch group over F as a quotient by the five-term relation is stated correctly."
-      }
-    ],
-    "trap-meta-commentary": [
-      {
-        "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:i00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-22T03:35:37.243Z",
-        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
-        "evidence": "Read in full: 4-row missing-piece/used-by/work-needed table. Judged all ten; no construction present.",
-        "notes": "Table-only block. One gloss em-dash in a cell ('substantial - quotient of free abelian group on F^x x F^x by 5-term pentagon'); a single column gloss is not load-bearing dash density. Number-field content checked: the Bloch group over F as a quotient by the five-term relation is stated correctly."
-      }
-    ],
-    "trap-thesis-restatement": [
-      {
-        "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:i00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-22T03:35:37.349Z",
-        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
-        "evidence": "Read in full: 4-row missing-piece/used-by/work-needed table. Judged all ten; no construction present.",
-        "notes": "Table-only block. One gloss em-dash in a cell ('substantial - quotient of free abelian group on F^x x F^x by 5-term pentagon'); a single column gloss is not load-bearing dash density. Number-field content checked: the Bloch group over F as a quotient by the five-term relation is stated correctly."
-      }
-    ],
-    "trap-performed-warmth": [
-      {
-        "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:i00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-22T03:35:37.453Z",
-        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
-        "evidence": "Read in full: 4-row missing-piece/used-by/work-needed table. Judged all ten; no construction present.",
-        "notes": "Table-only block. One gloss em-dash in a cell ('substantial - quotient of free abelian group on F^x x F^x by 5-term pentagon'); a single column gloss is not load-bearing dash density. Number-field content checked: the Bloch group over F as a quotient by the five-term relation is stated correctly."
-      }
-    ],
-    "trap-superlative": [
-      {
-        "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:i00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-22T03:35:37.495Z",
-        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
-        "evidence": "Read in full: 4-row missing-piece/used-by/work-needed table. Judged all ten; no construction present.",
-        "notes": "Table-only block. One gloss em-dash in a cell ('substantial - quotient of free abelian group on F^x x F^x by 5-term pentagon'); a single column gloss is not load-bearing dash density. Number-field content checked: the Bloch group over F as a quotient by the five-term relation is stated correctly."
-      }
-    ],
-    "trap-nonspeakable": [
-      {
-        "field_hash": {
-          "md": "b8064f2a2a00",
-          "ts": "e78f8b447861"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:i00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-22T03:35:37.554Z",
-        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
-        "evidence": "Read in full: 4-row missing-piece/used-by/work-needed table. Judged all ten; no construction present.",
-        "notes": "Table-only block. One gloss em-dash in a cell ('substantial - quotient of free abelian group on F^x x F^x by 5-term pentagon'); a single column gloss is not load-bearing dash density. Number-field content checked: the Bloch group over F as a quotient by the five-term relation is stated correctly."
-      }
     ]
   },
-  "label": "tbl:clausen-function-mathlib-filler-table2-data",
   "source_hashes": {
-    "md": "b8064f2a2a00",
-    "ts": "e78f8b447861"
+    "md": "4a8f0f1133f5",
+    "ts": "eed1b43fd3a0"
   },
-  "updated_at": "2026-08-22T03:35:37.554Z",
+  "updated_at": "2026-08-22T06:33:41.803Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
