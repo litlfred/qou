@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-20T20:00:00Z
+updated_at: 2026-11-20T19:24:08Z
 parent: qou-10v9
 ---
 
@@ -4228,3 +4228,15 @@ Pre-registered at 5ab8166249. Lean `QOU/QuarkState/ChargedCurrentW.lean` (generi
 - **Rate family** 𝔇 = G²|M|²m_e⁵f(W₀)/(2π³), F = 1. G does NOT emerge (dimensionless construction) — gap. Q_β from the same construction: label C (T⁺ round trip, posited order-zero E₀) 0.588715 MeV → f = 0.5382, d ln f/d ln Q = 3.87 (Sargent Q⁵ only for W₀ ≫ 1). d ln 𝔇/d ln q along label C = 16.20. Owner-scored 0.325434 → f = 0.05679.
 - Comparison only: implied Λ = G^{-1/2} = 68.27 GeV (label C) / 38.91 GeV (scored), against the Fermi scale 292.8 GeV. With imported G_F, 𝔇/𝔇_n = 2.96e-3 / 3.12e-4 (𝔇_n = 7.493e-25 MeV). The standard Fermi+GT factor 1+3λ² ≈ 5.8 is absent (no spin sector).
 - Not derived / remaining choices: lepton-as-doublet-strand; which passage (hq or −h/q) is physical; G scale; GT part; the γγ e⁻ = σ₀σ₁σ₀ coordinate is NOT where the electron sits here (photon weights φ do not enter). Bean stays open (rule 13a).
+
+## 2026-11-20 — fundamentals walk (PR #8662, audit §13)
+
+- The chain Frobenius pairing → mass identity (ordered holonomy) → `feynman-categorical-trace` DERIVES ε = z_D, given C = Rep(SU_q(2)). Q_β is −43.16 % (order-zero E₀) / −42.59 % (tower E₀).
+- Closed form for SU_q(N), with a = q^N: |ε_N(Δ_S)| = (h²/2)·coth(N ln q). Proved sorry-free in `QuantumTraceFamilyCoth.lean`.
+  - N = 1 is the augmentation, +12.47 %.
+  - N = 2 is z_D.
+  - N = ∞ is the standard trace, −88.3 %.
+  - No integer N lands. The diagnostic real N* = 1.126 is not adopted.
+- The framed mass gives σ and σ⁻¹ the same value, 1/[2], so Δ vanishes under the braid-class mass definition. Q_β here is a writhe effect; this is a tension in the definitions.
+- The scale is not on the chain. On z_D, CODATA needs 1.7592 × E₀. The mass-channel scale sends Δ to 100.5 MeV.
+- So the gap points at the scale, not the functional. Still open.
