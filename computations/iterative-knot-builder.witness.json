@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:38:20.466150+00:00",
-  "commitSha": "2a422c9bb6d9c75960e6e712f4fb42adcbfe2020",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-20T08:05:18.567033+00:00",
+  "commitSha": "b500d8e9a850d6bcd3fa6bcf557875e6d82c969e",
   "assertions": [
     {
       "name": "every_scheduled_atom_completed",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 32,
+  "durationMs": 10,
   "computation": "iterative-knot-builder",
   "scriptFile": "iterative_knot_builder.py",
-  "scriptHash": "42ee8a5a9e5b",
-  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
+  "scriptHash": "f2ee91f12b9e",
+  "scriptCommitSha": "7751e780958e2c961f1f525e77fd4d65f0bb2d95",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,12 +25,21 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.5",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "1909bbe0316e1236"
+  },
+  "invocation": {
+    "argv": [
+      "computations/iterative_knot_builder.py"
+    ],
+    "reproduce": "python3 -u computations/iterative_knot_builder.py"
   },
   "description": "Per-atom 3A braid words with the per-generator log-volume sum Sum_i log|V_hat_i|. Classification threshold HA = q0 - 1/q0 at the experimental PROTON pin. NOTE: no braid reduction is performed — `reduced_crossings` equals `initial_crossings` by construction and `reduced_knot_name` is a constant placeholder.",
   "data": {
@@ -43,8 +52,8 @@
         "initial_crossings": 11,
         "reduced_crossings": 11,
         "reduction_performed": false,
-        "sum_log_abs_V_hat": "0.0226378048088112741641047991573",
-        "volume": "0.0226378048088112741641047991573",
+        "sum_log_abs_V_hat": "0.136067903858376943450669995709",
+        "volume": "0.136067903858376943450669995709",
         "reduced_knot_name": "q-clt-proxy"
       },
       {
@@ -55,8 +64,8 @@
         "initial_crossings": 23,
         "reduced_crossings": 23,
         "reduction_performed": false,
-        "sum_log_abs_V_hat": "-1.17547762256504211823363450546",
-        "volume": "-1.17547762256504211823363450546",
+        "sum_log_abs_V_hat": "-0.553085728402716197909580329803",
+        "volume": "-0.553085728402716197909580329803",
         "reduced_knot_name": "q-clt-proxy"
       },
       {
@@ -67,8 +76,8 @@
         "initial_crossings": 35,
         "reduced_crossings": 35,
         "reduction_performed": false,
-        "sum_log_abs_V_hat": "-1.96358425330320353900659857838",
-        "volume": "-1.96358425330320353900659857838",
+        "sum_log_abs_V_hat": "-0.906917208799474112557754382847",
+        "volume": "-0.906917208799474112557754382847",
         "reduced_knot_name": "q-clt-proxy"
       },
       {
@@ -79,8 +88,8 @@
         "initial_crossings": 47,
         "reduced_crossings": 47,
         "reduction_performed": false,
-        "sum_log_abs_V_hat": "-3.52906650019778437498266837805",
-        "volume": "-3.52906650019778437498266837805",
+        "sum_log_abs_V_hat": "-1.82651151420743678615726628076",
+        "volume": "-1.82651151420743678615726628076",
         "reduced_knot_name": "q-clt-proxy"
       },
       {
@@ -91,8 +100,8 @@
         "initial_crossings": 59,
         "reduced_crossings": 59,
         "reduction_performed": false,
-        "sum_log_abs_V_hat": "-4.31717313093594579575563245097",
-        "volume": "-4.31717313093594579575563245097",
+        "sum_log_abs_V_hat": "-2.1803429946041947008054403338",
+        "volume": "-2.1803429946041947008054403338",
         "reduced_knot_name": "q-clt-proxy"
       },
       {
@@ -103,8 +112,8 @@
         "initial_crossings": 71,
         "reduced_crossings": 71,
         "reduction_performed": false,
-        "sum_log_abs_V_hat": "-5.88265537783052663173170225063",
-        "volume": "-5.88265537783052663173170225063",
+        "sum_log_abs_V_hat": "-3.09993730001215737440495223172",
+        "volume": "-3.09993730001215737440495223172",
         "reduced_knot_name": "q-clt-proxy"
       },
       {
@@ -115,8 +124,8 @@
         "initial_crossings": 83,
         "reduced_crossings": 83,
         "reduction_performed": false,
-        "sum_log_abs_V_hat": "-6.67076200856868805250466632356",
-        "volume": "-6.67076200856868805250466632356",
+        "sum_log_abs_V_hat": "-3.45376878040891528905312628476",
+        "volume": "-3.45376878040891528905312628476",
         "reduced_knot_name": "q-clt-proxy"
       },
       {
@@ -127,8 +136,8 @@
         "initial_crossings": 95,
         "reduced_crossings": 95,
         "reduction_performed": false,
-        "sum_log_abs_V_hat": "-8.23624425546326888848073612322",
-        "volume": "-8.23624425546326888848073612322",
+        "sum_log_abs_V_hat": "-4.37336308581687796265263818268",
+        "volume": "-4.37336308581687796265263818268",
         "reduced_knot_name": "q-clt-proxy"
       },
       {
@@ -139,8 +148,8 @@
         "initial_crossings": 107,
         "reduced_crossings": 107,
         "reduction_performed": false,
-        "sum_log_abs_V_hat": "-9.02435088620143030925370019615",
-        "volume": "-9.02435088620143030925370019615",
+        "sum_log_abs_V_hat": "-4.72719456621363587730081223572",
+        "volume": "-4.72719456621363587730081223572",
         "reduced_knot_name": "q-clt-proxy"
       },
       {
@@ -151,8 +160,8 @@
         "initial_crossings": 119,
         "reduced_crossings": 119,
         "reduction_performed": false,
-        "sum_log_abs_V_hat": "-10.5898331330960111452297699958",
-        "volume": "-10.5898331330960111452297699958",
+        "sum_log_abs_V_hat": "-5.64678887162159855090032413363",
+        "volume": "-5.64678887162159855090032413363",
         "reduced_knot_name": "q-clt-proxy"
       },
       {
@@ -163,8 +172,8 @@
         "initial_crossings": 131,
         "reduced_crossings": 131,
         "reduction_performed": false,
-        "sum_log_abs_V_hat": "-11.3779397638341725660027340687",
-        "volume": "-11.3779397638341725660027340687",
+        "sum_log_abs_V_hat": "-6.00062035201835646554849818668",
+        "volume": "-6.00062035201835646554849818668",
         "reduced_knot_name": "q-clt-proxy"
       },
       {
@@ -175,8 +184,8 @@
         "initial_crossings": 143,
         "reduced_crossings": 143,
         "reduction_performed": false,
-        "sum_log_abs_V_hat": "-12.9434220107287534019788038684",
-        "volume": "-12.9434220107287534019788038684",
+        "sum_log_abs_V_hat": "-6.92021465742631913914801008459",
+        "volume": "-6.92021465742631913914801008459",
         "reduced_knot_name": "q-clt-proxy"
       }
     ],
