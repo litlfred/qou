@@ -1,4 +1,4 @@
-We verify commutativity by tracing both paths around the diagram.
+Commutativity is verified by tracing both paths around the diagram.
 
 **Top-right path** (variational $\to$ coupling). This path turns a jet into a substrate parameter $q$ and its Hamiltonian $\hat{H}_q$. Applying the Euler--Lagrange operator $\mathrm{EL}[\mathfrak{S}_q]$ to a jet $j^1_p \sigma$ yields the variational equation $\mathrm{Ric}_{g_\varTheta} = T^{(q)}$ ([GR substrate geometry](#rem:gr-substrate-geometry)). Solving for $L_\varTheta$ determines the Webster metric. This in turn fixes the substrate field via the coupling $q(p) = 1 + \lvert\langle L_\varTheta, F_A^+\rangle\rvert$. This determines $\hbar_q = 1 - q^{-1}$, the $q$-Reeb field $\xi_q$, and the $q$-Hamiltonian $\hat{H}_q = -\tfrac{1}{2}\hbar_q\Delta_q + V_q$ appearing in the transport equation.
 
