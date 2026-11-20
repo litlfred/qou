@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-12T10:22:30Z
-updated_at: 2026-11-20T18:30:00Z
+updated_at: 2026-11-20T19:30:00Z
 parent: qou-d8c7
 ---
 
@@ -78,4 +78,19 @@ Stays open (rule 13a).
 Route for both: use `seminormalRep_qJMInv` with a general diagonal-Lagrange image lemma (`f(d) = q^(−2d)` for bar). The # case also needs a transpose bijection SYT(λ) ≃ SYT(λ′) with negated contents; the corpus SYT type has no transpose.
 
 Not yet started in Lean.
+
+## 2026-11-20: option C done in Lean, all n (PR #8587, head c260e33303)
+
+- **Cross-check 3:** `IsBar.fixes_centralIdem`. Any bar map fixes every e_λ.
+- **Cross-check 4:** `hashMap_centralIdem`. The constructed sign twist sends e_λ to e_λ′. This needed the SYT transpose (`sytTranspose`, `tr_bijective`).
+- **Conj block restated:** both involutions defined; the formula runs over all contents |d| ≤ n−1; characteristic 0.
+- **Verification:** 112-module forced cone rebuild on the rebased head, ok=112. No sorryAx.
+
+All four cross-checks are now proved. The mathematical subject of this bean is closed.
+
+Left open, both owner calls:
+- promote the conj block from `conjecture` and re-point both blocks' `lean.ref`;
+- retire the scalar carrier `ExplicitCentralIdempotentConjecture`.
+
+Status stays in-progress until the owner rules on those.
 
