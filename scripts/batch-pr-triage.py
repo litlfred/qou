@@ -71,7 +71,13 @@ BATCH_PATTERNS = [
     r"^cat/round", r"^claude/round\d+-devacuify", r"^claude/qou-rtxm-",
     r"^claude/r46-", r"^claude/qou-9634-", r"^claude/qou-3l2l-",
     r"^fix/qou-rtxm-", r"^fix/qou-wxhi-",
+    # added 2026-11-20 (w4): the same generator's hygiene/fix rounds and the
+    # multi-bean feat/<topic>-<id>-<id>-... branches. Human-thread claude/* PRs
+    # are W5's (legacy-claude-pr-triage) and stay excluded.
+    r"^claude/round\d+-", r"^feat/", r"^fix/qou-",
 ]
+# W6 (2026-11-20): 51 batch PR bodies cite this id; it is not a real session.
+BOGUS_SESSION = "01E667391F74184786BF4B9D"
 BEAN_RE = re.compile(r"\bqou-([0-9a-z]{4})\b")
 
 
@@ -220,11 +226,49 @@ TRIV_BODY = re.compile(
     re.S)
 
 
-def scan_lean(text: str) -> dict:
+def norm_decl(body: str) -> str:
+    """Whitespace-normalised declaration text with trailing section/namespace
+    plumbing (`end X`, `omit ... in`, `variable ...`, `open ...`) removed, so
+    appending a declaration does not mark its predecessor as changed."""
+    lines = body.rstrip().splitlines()
+    while lines and re.match(r"\s*(end\b|omit\b|variable\b|open\b|section\b|namespace\b|include\b|set_option\b|attribute\b|$)", lines[-1]):
+        lines.pop()
+    return " ".join(" ".join(lines).split())
+
+
+def split_top(text: str, sep: str):
+    """Split at the first `sep` at bracket depth 0 (so `(k := k)` named
+    arguments and `(i : T)` binders are skipped). Returns (before, after)."""
+    depth, i, n = 0, 0, len(text)
+    while i < n:
+        c = text[i]
+        if c in "([{⟨":
+            depth += 1
+        elif c in ")]}⟩":
+            depth = max(0, depth - 1)
+        elif depth == 0 and text.startswith(sep, i) and not (sep == ":" and text.startswith(":=", i)):
+            return text[:i], text[i + len(sep):]
+        i += 1
+    return text, ""
+
+
+VACUOUS_FLAGS = {"true-conclusion", "tautology", "rfl-only-on-local-def", "sub-zero-restatement", "one-lemma-restatement"}
+
+
+def scan_lean(text: str, base_text: str | None = None) -> dict:
+    """Scan one .lean file. With `base_text` (the origin/main version), only
+    declarations that are NEW or whose text CHANGED are counted -- a modified
+    file must not be charged for the pre-existing declarations it carries."""
     code = strip_comments(text)
+    base_decls = {}
+    if base_text is not None:
+        for _k, _n, _b in split_decls(strip_comments(base_text)):
+            base_decls[(_k, _n)] = norm_decl(_b)
     imports = re.findall(r"^import\s+(\S+)", code, re.M)
     r = collections.Counter()
     r["imports_qou_or_mathlib"] = int(any(i.startswith(("QOU", "Mathlib", "UGB")) for i in imports))
+    r["imports_qou"] = int(any(i.startswith(("QOU", "UGB")) for i in imports))
+    r["imports_mathlib"] = int(any(i.startswith("Mathlib") for i in imports))
     r["sorry"] = len(re.findall(r"\bsorry\b", code))
     r["native_decide"] = len(re.findall(r"\bnative_decide\b", code))
     decls, flags = [], []
@@ -233,9 +277,11 @@ def scan_lean(text: str) -> dict:
         if kind in ("def", "abbrev"):
             local_defs.add(name.split(".")[-1])
     for kind, name, body in split_decls(code):
+        if base_text is not None and base_decls.get((kind, name)) == norm_decl(body):
+            continue  # unchanged pre-existing declaration
         r[f"n_{kind}"] += 1
-        sig, _, proof = body.partition(":=")
-        stmt = sig.split(":", 1)[1] if ":" in sig else ""
+        sig, proof = split_top(body, ":=")
+        _, stmt = split_top(sig, ":")
         fl = []
         if kind == "axiom":
             fl.append("axiom")
@@ -250,6 +296,22 @@ def scan_lean(text: str) -> dict:
             if TRIV_BODY.search(":=" + proof.rstrip()) and len(proof.strip().splitlines()) <= 3:
                 used = {w for w in re.findall(r"[A-Za-z_][\w']*", stmt)} & local_defs
                 fl.append("rfl-only-on-local-def" if used else "one-tactic")
+            # `a - b = 0` re-stated from an existing `a = b` (AGENTS.md / vacuity
+            # skill pattern 7, `sub-zero-tautology`): content-free, and with
+            # truncated Nat subtraction strictly WEAKER than the lemma it cites.
+            if re.search(r"\s-\s.*=\s*0\s*$", stmt.replace("\n", " ").strip()) and \
+                    re.search(r"\bsub_self\b|\bsub_eq_zero|\bNat\.sub_self\b|\bomega\b", proof):
+                fl.append("sub-zero-restatement")
+            pl = [l for l in proof.strip().splitlines() if l.strip() and not re.match(r"\s*(end\b|omit\b|namespace\b|section\b|open\b|variable\b)", l)]
+            if len(pl) <= 2:
+                fl.append("short-proof")
+            st1 = " ".join(stmt.split())
+            m2 = re.fullmatch(r"(.+?)\s*(?:≤|≥|↔|=)\s*(.+?)", st1)
+            if m2 and m2.group(1).strip() == m2.group(2).strip():
+                fl.append("tautology")
+            if len(pl) <= 2 and re.search(r"\b(neg_add_cancel|add_neg_cancel|sub_self|le_refl|le_rfl|sub_eq_zero\.mpr|"
+                                          r"sub_pos\.mpr|sub_nonneg\.mpr|add_zero|zero_add|mul_one|one_mul)\b", proof):
+                fl.append("one-lemma-restatement")
             if re.search(r"\bsorry\b", proof):
                 fl.append("sorry")
         decls.append({"kind": kind, "name": name, "flags": fl})
@@ -279,9 +341,9 @@ def scan_pr(p: dict) -> dict:
             out["scan_error"] = str(e)[:200]
             continue
         if fn.endswith(".lean"):
-            s = scan_lean(txt)
             main_txt = subprocess.run(["git", "-C", GITDIR, "show", f"origin/main:{fn}"],
                                       capture_output=True, text=True)
+            s = scan_lean(txt, main_txt.stdout if main_txt.returncode == 0 else None)
             s["identical_on_main"] = main_txt.returncode == 0 and main_txt.stdout == txt
             s["exists_on_main"] = main_txt.returncode == 0
             out["lean_files"][fn] = s
@@ -339,7 +401,7 @@ def classify(args):
                 continue
             for d in s["decls"]:
                 if d["kind"] in ("theorem", "lemma", "def", "structure", "class", "abbrev") and d["name"]:
-                    decl2[d["name"]].add(n)
+                    decl2[(fn, d["name"])].add(n)
     bean2 = collections.defaultdict(set)
     for p in prs:
         p["beans"] = sorted(set("qou-" + b for b in BEAN_RE.findall(p["title"] + " " + p["head"]))
@@ -353,47 +415,77 @@ def classify(args):
         s = scan_res.get(str(n), {})
         lf = s.get("lean_files", {})
         tot = collections.Counter()
-        flagged_decls, provable = 0, 0
+        flagged_decls, provable, short_decls = 0, 0, 0
+        wrapper_files, brick_files, qou_files = [], [], []
         for fn, x in lf.items():
-            if x.get("identical_on_main"):
+            if x.get("identical_on_main") or fn.endswith("/QOU.lean"):
                 continue
-            for k, v in x["counts"].items():
+            c = x["counts"]
+            for k, v in c.items():
                 tot[k] += v
-            tot["import_free_files"] += 0 if x["counts"].get("imports_qou_or_mathlib") else 1
+            if not c.get("imports_qou_or_mathlib"):
+                # pattern 7 of lean-proof-vacuity-audit: import-free Int/Bool proxy
+                wrapper_files.append(fn)
+                continue
+            if not x.get("exists_on_main") and not c.get("imports_qou") and "/MathlibExt/" not in fn:
+                # a NEW module importing only Mathlib: every statement is about
+                # locally-defined polynomials named after QOU objects
+                brick_files.append(fn)
+            else:
+                qou_files.append(fn)
             for d in x["decls"]:
                 if d["kind"] in ("theorem", "lemma"):
                     provable += 1
-                    if set(d["flags"]) & {"true-conclusion", "tautology", "rfl-only-on-local-def"}:
+                    if set(d["flags"]) & VACUOUS_FLAGS:
                         flagged_decls += 1
-        new_lean = [fn for fn, x in lf.items() if not x.get("identical_on_main")]
+                    if "short-proof" in d["flags"] or "one-tactic" in d["flags"]:
+                        short_decls += 1
+        tot["import_free_files"] = len(wrapper_files)
+        new_lean = [fn for fn, x in lf.items() if not x.get("identical_on_main") and not fn.endswith("/QOU.lean")]
         same_lean = [fn for fn, x in lf.items() if x.get("identical_on_main")]
         bstat = {b: beans.get(b, {"status": "missing", "pr": None}) for b in p["beans"]}
         done_elsewhere = [b for b, v in bstat.items()
-                          if v["status"] in ("completed", "scrapped") and v.get("pr") not in (n,)]
-        # collisions with other OPEN batch PRs
+                          if v["status"] in ("completed", "scrapped") and v.get("pr") not in (n, None)]
+        # collisions with other OPEN batch PRs: same (non-ledger) file touched
         file_coll = sorted({m for f in p["files"] if f["filename"] in file2
                             for m in file2[f["filename"]] if m != n})
         decl_coll = sorted({m for fn, x in lf.items() if not x.get("identical_on_main")
-                            for d in x["decls"] if d["name"] in decl2
-                            for m in decl2[d["name"]] if m != n})
+                            for d in x["decls"] if (fn, d["name"]) in decl2
+                            for m in decl2[(fn, d["name"])] if m != n})
         bean_coll = sorted({m for b in p["beans"] for m in bean2[b] if m != n})
         newer_dupe = [m for m in set(decl_coll) | set(bean_coll) if m > n]
         dps = s.get("dps", [])
         lean = lean_res.get(str(n), {"status": "not-run", "reason": "no lean toolchain/oleans in this container"})
+        dirty = p["mergeable"] is False or p["mergeable_state"] == "dirty"
+        compute_files = [f["filename"] for f in p["files"] if f["filename"].endswith(".py")]
 
         reasons, verdict = [], None
-        nlean = len(new_lean)
         vac_ratio = flagged_decls / provable if provable else 0.0
-        if p["files"] and nlean == 0 and same_lean:
+        substantive = provable - flagged_decls
+        if p["files"] and not new_lean and same_lean and not compute_files:
             verdict = "CLOSE-SUPERSEDED"; reasons.append("all Lean files already byte-identical on main")
-        elif p["beans"] and len(done_elsewhere) == len(p["beans"]) and done_elsewhere:
+        elif p["beans"] and done_elsewhere and len(done_elsewhere) == len(p["beans"]):
             verdict = "CLOSE-SUPERSEDED"; reasons.append("every cited bean completed/scrapped via another PR: " + ",".join(done_elsewhere))
+        elif new_lean and len(wrapper_files) + len(brick_files) == len(new_lean):
+            verdict = "CLOSE-VACUOUS"
+            if wrapper_files:
+                reasons.append(f"{len(wrapper_files)} import-free Int/Bool proxy module(s) (vacuity skill pattern 7, CRITICAL)")
+            if brick_files:
+                reasons.append(f"{len(brick_files)} new Mathlib-only module(s) proving algebra about locally-defined "
+                               "polynomials under QOU names; no QOU object in any statement (AGENTS.md Strict Lean "
+                               "Discipline 5/8; judgement)")
         elif provable and (tot["true-conclusion"] + tot["tautology"]) and vac_ratio >= 0.5:
-            verdict = "CLOSE-VACUOUS"; reasons.append(f"{flagged_decls}/{provable} theorems True/tautology/rfl-on-local-def")
+            verdict = "CLOSE-VACUOUS"; reasons.append(f"{flagged_decls}/{provable} theorems True/tautology/restatement")
+        elif provable and short_decls / provable >= 0.8 and vac_ratio >= 0.4:
+            verdict = "CLOSE-VACUOUS"; reasons.append(
+                f"{short_decls}/{provable} new theorems are <=2-line corollaries and {flagged_decls}/{provable} are "
+                "restatements (`a - b = 0`, `a + -a = 0`, `x <= x`, rfl on same-file defs) of lemmas already on main")
         elif provable and vac_ratio >= 0.8:
-            verdict = "CLOSE-VACUOUS"; reasons.append(f"{flagged_decls}/{provable} theorems rfl-only on locally-defined defs")
+            verdict = "CLOSE-VACUOUS"; reasons.append(
+                f"{flagged_decls}/{provable} new theorems are `a - b = 0` restatements of existing lemmas or "
+                "rfl/norm_num on same-file defs")
         if verdict is None:
-            if p["mergeable"] is False or p["mergeable_state"] == "dirty":
+            if dirty:
                 reasons.append("conflicts with main")
             if tot["sorry"]:
                 reasons.append(f"{tot['sorry']} real sorry")
@@ -403,34 +495,44 @@ def classify(args):
                 reasons.append(f"{tot['native_decide']} native_decide")
             if tot["true-conclusion"] or tot["true-field"] or tot["tautology"]:
                 reasons.append(f"vacuity flags True/field/taut={tot['true-conclusion']}/{tot['true-field']}/{tot['tautology']}")
-            if provable and vac_ratio >= 0.5:
-                reasons.append(f"{flagged_decls}/{provable} rfl-only-on-local-def")
-            if tot["import_free_files"]:
-                reasons.append(f"{tot['import_free_files']} import-free .lean")
+            if wrapper_files:
+                reasons.append(f"{len(wrapper_files)} import-free Int/Bool proxy module(s) alongside real Lean: drop them")
+            if brick_files:
+                reasons.append(f"{len(brick_files)} Mathlib-only borrowed-name module(s): drop them")
+            if flagged_decls:
+                reasons.append(f"{flagged_decls}/{provable} restatement/rfl-on-local-def theorems: drop them")
+            if provable and short_decls == provable and not flagged_decls >= provable:
+                reasons.append(f"all {provable} new theorems are <=2-line corollaries of existing lemmas: confirm each cited bean is really closed")
             if dps and min(dps) < 80 and re.search(r"80[- ]dps", p["body"]):
                 reasons.append(f"claims 80-dps, min dps found {min(dps)}")
             if done_elsewhere:
                 reasons.append("partly superseded beans: " + ",".join(done_elsewhere))
             if decl_coll:
-                reasons.append("decl collision with " + ",".join(f"#{m}" for m in decl_coll[:6]))
+                reasons.append("same decl in same file also in " + ",".join(f"#{m}" for m in decl_coll[:6]))
             if s.get("scan_error"):
                 reasons.append("scan: " + s["scan_error"][:60])
-            if not lf and not p["files"]:
+            if not p["files"]:
                 reasons.append("empty PR")
             if lean.get("status") == "fail":
                 reasons.append("lean-direct FAIL")
-            verdict = "NEEDS-REWORK" if reasons else "MERGE-CANDIDATE"
+            # small hygiene: restatements are a rework item only when they are
+            # the bulk; a 1-of-20 restatement is noted, not blocking
+            blocking = [r for r in reasons if not (r.endswith("drop them") and r.startswith(f"{flagged_decls}/")
+                                                    and vac_ratio < 0.3)]
+            verdict = "NEEDS-REWORK" if blocking else "MERGE-CANDIDATE"
         rows.append({
             "number": n, "head": p["head"], "family": p["family"], "created_at": p["created_at"],
             "title": p["title"][:160], "beans": p["beans"], "bean_status": bstat,
             "mergeable": p["mergeable"], "mergeable_state": p["mergeable_state"],
             "changed_files": p["changed_files"], "additions": p["additions"], "deletions": p["deletions"],
             "lean_files_new_or_changed": new_lean, "lean_files_identical_on_main": same_lean,
-            "provable_decls": provable, "vacuity_flagged_decls": flagged_decls,
+            "provable_decls": provable, "vacuity_flagged_decls": flagged_decls, "short_proof_decls": short_decls,
             "counts": dict(tot), "dps": sorted(set(dps)),
             "file_collisions": file_coll, "decl_collisions": decl_coll, "bean_collisions": bean_coll,
             "newer_duplicate_prs": sorted(newer_dupe),
             "lean": lean, "verdict": verdict, "reasons": reasons,
+            "session_ids": sorted(set(re.findall(r"session_([0-9A-Za-z]{20,})", p["body"]))),
+            "bogus_session_id": BOGUS_SESSION in p["body"],
         })
     return rows
 
@@ -469,7 +571,9 @@ def report(args):
     rc = collections.Counter()
     for r in rows:
         for x in r["reasons"]:
-            rc[re.sub(r"[\d#,]+.*$", "", x).strip() or x[:30]] += 1
+            k = re.sub(r"^[\d/ ]+", "", x)
+            k = re.split(r"[:#(]|\d", k)[0].strip(" ;,")
+            rc[k or x[:40]] += 1
     L.append("\n## Reason frequency (NEEDS-REWORK / CLOSE-*)\n")
     L.append("| reason | PRs |\n|---|---:|")
     for k, v in rc.most_common(25):
