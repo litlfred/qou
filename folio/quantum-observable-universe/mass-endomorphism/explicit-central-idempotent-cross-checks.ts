@@ -123,5 +123,6 @@ export default theorem({
         "pairwise orthogonal, summing to e_lambda) and the theorem DERIVES " +
         "idempotency from them.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The form above, over all contents $|d| \\le n - 1$, is the one in [Explicit central primitive idempotents $e_\\lambda$ via Murphy elements](#prop:explicit-central-idempotent)." },
   ],
 });

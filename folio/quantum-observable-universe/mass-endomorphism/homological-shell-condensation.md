@@ -25,8 +25,7 @@ $$
 The strict-positive part $E_\infty^{p, >0}(n)$ measures the
 non-trivial cohomology supported above the $E_2$-collapse line.
 Operationally, it measures the obstruction to reading the :refterm[descent]{#descent}-graded trace
-purely from the diagonal
-([prop:graded-trace-residue-split](#prop:graded-trace-residue-split)).
+purely from the diagonal.
 
 ## Statement
 
