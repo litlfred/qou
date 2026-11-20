@@ -1,0 +1,749 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-20T20:11:47.941029+00:00",
+  "commitSha": "c59f09c7fbff4408b105af31b6c7086c19c5b5e1",
+  "assertions": [
+    {
+      "name": "tr(beta_Bor) = BorromeanMarkovTrace closed form",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "NF(beta_Bor) = #8634 [1-h^4,-h^3-h^5,h^3,{h^2+h^4,-h^2},0]",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "e- coordinate of gamma(phi)gamma(psi) = phi01 psi0 + phi1 psi01 (pairNFChiral_eq)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "tr(e-_BW = s0 s1 s0) = z(hz+1): closes to a 2-component link, permutation (0 2)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "K-weighted Jimbo trace / [2]^N = Ocneanu trace at z_D (fixes the K normalisation)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "GS normal form is the element: rho(word) == rho(NF) on 2 vectors x 10 words",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "PR1/PR2: cross term of W0_split vanishes (connected sum)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "PR1/PR2: cross term of W1_one_bridge vanishes (connected sum)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "PR1/PR2: cross term of W1sq_clasp vanishes (connected sum)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "PR1/PR2: cross term of W2_two_same vanishes (connected sum)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "PR1/PR2: cross term of W2b_two_opposite vanishes (connected sum)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "PR1: cross term of W5 (shared strand) vanishes",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "cross term of W3_loop_around_2 is non-zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "cross term of W4_loop_around_3 is non-zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "cross term of W4b_two_pair_strands_loop is non-zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "cross term of W6_passage_and_return is non-zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "cross term of W7_passage_after_pair is non-zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "W3_loop_around_2: cross term = kappa(q) * tr(pair) (pair joins at ONE strand, so it still factorises)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "W4_loop_around_3: cross term = kappa(q) * tr(pair) (pair joins at ONE strand, so it still factorises)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "W6_passage_and_return: cross term = kappa(q) * tr(pair) (pair joins at ONE strand, so it still factorises)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "W7_passage_after_pair: cross term = kappa(q) * tr(pair) (pair joins at ONE strand, so it still factorises)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "W4b (two pair strands wrap the nucleon strand): cross term NOT proportional to tr(pair)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "PR4: E(e-) >> m_e for both electron words",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "P4 null: factorised W0 has zero K-weighted sector difference",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "PR5: an entangled word separates n(x)nu from p(x)e- (K-weighted)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 112761,
+  "computation": "beta-gs-reduction-n-gammagamma",
+  "scriptFile": "beta_gs_reduction_probe.py",
+  "scriptHash": "8a9b9bd5b7e9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "ae1028699afd20c5"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/beta_gs_reduction_n_gammagamma/beta_gs_reduction_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/beta_gs_reduction_n_gammagamma/beta_gs_reduction_probe.py"
+  },
+  "description": "qou-99qc P1/P4: beta decay as one GS reduction in H_6(q): nucleon beta_Bor (x) photon pair with bridge letters; Markov cross term; strand-colour sector traces. Pre-registered at c59f09c7fb. Not wired to any scorecard.",
+  "parameters": {
+    "q0": "1.10997858275138080759166909561076887987449912187357873607281",
+    "dps": 70,
+    "trace": "Ocneanu, convention D, z = q^3/(q^2+1)"
+  },
+  "data": {
+    "results": {
+      "validation": {},
+      "P1": {
+        "W0_split": {
+          "normal_form_terms": 30,
+          "terms_outside_S3xS3": 0,
+          "cross_term_zero": true,
+          "eminus_channel_block_equals_beta_times_eminus_coord": true
+        },
+        "W1_one_bridge": {
+          "normal_form_terms": 30,
+          "terms_outside_S3xS3": 30,
+          "cross_term_zero": true,
+          "eminus_channel_block_equals_beta_times_eminus_coord": false
+        },
+        "W1sq_clasp": {
+          "normal_form_terms": 60,
+          "terms_outside_S3xS3": 30,
+          "cross_term_zero": true,
+          "eminus_channel_block_equals_beta_times_eminus_coord": true
+        },
+        "W2_two_same": {
+          "normal_form_terms": 40,
+          "terms_outside_S3xS3": 30,
+          "cross_term_zero": true,
+          "eminus_channel_block_equals_beta_times_eminus_coord": false
+        },
+        "W2b_two_opposite": {
+          "normal_form_terms": 50,
+          "terms_outside_S3xS3": 40,
+          "cross_term_zero": true,
+          "eminus_channel_block_equals_beta_times_eminus_coord": false
+        },
+        "W3_loop_around_2": {
+          "normal_form_terms": 84,
+          "terms_outside_S3xS3": 54,
+          "cross_term_zero": false,
+          "eminus_channel_block_equals_beta_times_eminus_coord": true,
+          "cross_term_as_functional_on_pair_NF": {
+            "1": "(q - 1)**5*(q + 1)**5*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(q**2*(q**2 + 1)**4)",
+            "s0": "q*(q - 1)**5*(q + 1)**5*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**5",
+            "s1": "q*(q - 1)**5*(q + 1)**5*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**5",
+            "s0s1": "q**4*(q - 1)**5*(q + 1)**5*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**6",
+            "s1s0": "q**4*(q - 1)**5*(q + 1)**5*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**6",
+            "s0s1s0(e-_BW)": "q*(q - 1)**5*(q + 1)**5*(q**4 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**6"
+          },
+          "lowest_order_in_(q-1)": 5,
+          "cross_term_at_q0": {
+            "bare (phi=psi=0, Gamma=1)": "0.000207760812881105776356686734604769952356747887623439432715907",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.000207462086871046848453109452174812763845553547093121724731814"
+          },
+          "cross_term_equals_kappa_times_tr_pair": true,
+          "kappa_exact (cross term at Gamma=1)": "(q - 1)**5*(q + 1)**5*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(q**2*(q**2 + 1)**4)"
+        },
+        "W4_loop_around_3": {
+          "normal_form_terms": 114,
+          "terms_outside_S3xS3": 84,
+          "cross_term_zero": false,
+          "eminus_channel_block_equals_beta_times_eminus_coord": true,
+          "cross_term_as_functional_on_pair_NF": {
+            "1": "(q - 1)**6*(q + 1)**6*(q**4 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2/(q**4*(q**2 + 1)**5)",
+            "s0": "(q - 1)**6*(q + 1)**6*(q**4 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2/(q*(q**2 + 1)**6)",
+            "s1": "(q - 1)**6*(q + 1)**6*(q**4 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2/(q*(q**2 + 1)**6)",
+            "s0s1": "q**2*(q - 1)**6*(q + 1)**6*(q**4 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2/(q**2 + 1)**7",
+            "s1s0": "q**2*(q - 1)**6*(q + 1)**6*(q**4 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2/(q**2 + 1)**7",
+            "s0s1s0(e-_BW)": "(q - 1)**6*(q + 1)**6*(q**4 + 1)**2*(q**2 - q + 1)**2*(q**2 + q + 1)**2/(q*(q**2 + 1)**7)"
+          },
+          "lowest_order_in_(q-1)": 6,
+          "cross_term_at_q0": {
+            "bare (phi=psi=0, Gamma=1)": "0.0000657427906941926215058715812380549406016750521736284687414478",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.0000656482633322619857505397445438938046434595888076355718302733"
+          },
+          "cross_term_equals_kappa_times_tr_pair": true,
+          "kappa_exact (cross term at Gamma=1)": "(q - 1)**6*(q + 1)**6*(q**4 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2/(q**4*(q**2 + 1)**5)"
+        },
+        "W4b_two_pair_strands_loop": {
+          "normal_form_terms": 60,
+          "terms_outside_S3xS3": 30,
+          "cross_term_zero": false,
+          "eminus_channel_block_equals_beta_times_eminus_coord": false,
+          "cross_term_as_functional_on_pair_NF": {
+            "1": "0",
+            "s0": "-(q - 1)*(q + 1)*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**5*(q**2 + 1)**5)",
+            "s1": "0",
+            "s0s1": "-(q - 1)*(q + 1)*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**2*(q**2 + 1)**6)",
+            "s1s0": "-(q - 1)*(q + 1)*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**2*(q**2 + 1)**6)",
+            "s0s1s0(e-_BW)": "-(q - 1)**2*(q + 1)**2*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**3*(q**2 + 1)**6)"
+          },
+          "lowest_order_in_(q-1)": 1,
+          "cross_term_at_q0": {
+            "bare (phi=psi=0, Gamma=1)": "0.0",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "-0.00148300236103636651010523603856188721492803009794277891917841"
+          },
+          "cross_term_equals_kappa_times_tr_pair": false,
+          "kappa_exact (cross term at Gamma=1)": "0"
+        },
+        "W6_passage_and_return": {
+          "normal_form_terms": 94,
+          "terms_outside_S3xS3": 84,
+          "cross_term_zero": false,
+          "eminus_channel_block_equals_beta_times_eminus_coord": false,
+          "cross_term_as_functional_on_pair_NF": {
+            "1": "(q - 1)**6*(q + 1)**6*(q**4 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2/(q**4*(q**2 + 1)**5)",
+            "s0": "(q - 1)**6*(q + 1)**6*(q**4 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2/(q*(q**2 + 1)**6)",
+            "s1": "(q - 1)**6*(q + 1)**6*(q**4 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2/(q*(q**2 + 1)**6)",
+            "s0s1": "q**2*(q - 1)**6*(q + 1)**6*(q**4 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2/(q**2 + 1)**7",
+            "s1s0": "q**2*(q - 1)**6*(q + 1)**6*(q**4 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2/(q**2 + 1)**7",
+            "s0s1s0(e-_BW)": "(q - 1)**6*(q + 1)**6*(q**4 + 1)**2*(q**2 - q + 1)**2*(q**2 + q + 1)**2/(q*(q**2 + 1)**7)"
+          },
+          "lowest_order_in_(q-1)": 6,
+          "cross_term_at_q0": {
+            "bare (phi=psi=0, Gamma=1)": "0.0000657427906941926215058715812380549406016750521736284687414478",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.0000656482633322619857505397445438938046434595888076355718302733"
+          },
+          "cross_term_equals_kappa_times_tr_pair": true,
+          "kappa_exact (cross term at Gamma=1)": "(q - 1)**6*(q + 1)**6*(q**4 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2/(q**4*(q**2 + 1)**5)"
+        },
+        "W7_passage_after_pair": {
+          "normal_form_terms": 30,
+          "terms_outside_S3xS3": 30,
+          "cross_term_zero": false,
+          "eminus_channel_block_equals_beta_times_eminus_coord": false,
+          "cross_term_as_functional_on_pair_NF": {
+            "1": "q*(q - 1)**2*(q + 1)**2*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - 2*q**2 - 1)/(q**2 + 1)**5",
+            "s0": "q**4*(q - 1)**2*(q + 1)**2*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - 2*q**2 - 1)/(q**2 + 1)**6",
+            "s1": "q**4*(q - 1)**2*(q + 1)**2*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - 2*q**2 - 1)/(q**2 + 1)**6",
+            "s0s1": "q**7*(q - 1)**2*(q + 1)**2*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - 2*q**2 - 1)/(q**2 + 1)**7",
+            "s1s0": "q**7*(q - 1)**2*(q + 1)**2*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - 2*q**2 - 1)/(q**2 + 1)**7",
+            "s0s1s0(e-_BW)": "q**4*(q - 1)**2*(q + 1)**2*(q**4 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - 2*q**2 - 1)/(q**2 + 1)**7"
+          },
+          "lowest_order_in_(q-1)": 2,
+          "cross_term_at_q0": {
+            "bare (phi=psi=0, Gamma=1)": "-0.0198253662771805967854246047330522692737720111856050054760966",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "-0.0197968606485983283112477724827475868569243627610387782578875"
+          },
+          "cross_term_equals_kappa_times_tr_pair": true,
+          "kappa_exact (cross term at Gamma=1)": "q*(q - 1)**2*(q + 1)**2*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - 2*q**2 - 1)/(q**2 + 1)**5"
+        },
+        "W5_shared_strand_H5": {
+          "normal_form_terms": 30,
+          "cross_term_zero": true
+        }
+      },
+      "P4": {
+        "W0_split": {
+          "K_dimnorm_sector_difference_zero": true,
+          "plain_dimnorm_sector_difference_zero": false,
+          "plain_Q4_MeV": {
+            "bare (phi=psi=0, Gamma=1)": "0.0",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "36.6673725985604160922781671300632850121380665048435946405857"
+          },
+          "plain_Delta_hat_at_q0": {
+            "bare (phi=psi=0, Gamma=1)": "0.0",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.000773721324872635029028541681514650736286286879297181543783949"
+          }
+        },
+        "W1_one_bridge": {
+          "K_dimnorm_sector_difference_zero": false,
+          "K_Q4_MeV": {
+            "bare (phi=psi=0, Gamma=1)": "6733.37887306568937374414473703272853200805129250388950187265",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "6723.69737742138291993836738157042611162561773929304345920021"
+          },
+          "K_Delta_hat_at_q0": {
+            "bare (phi=psi=0, Gamma=1)": "0.142081596071116744505203813900329807150461286637261016032782",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.141877306014158708536969091739823012612223418447870638294773"
+          },
+          "K_Delta_hat_bare_exact": "(q - 1)*(q + 1)*(q**2 + 1)**2*(q**10 - 3*q**8 + 6*q**6 - 4*q**4 + 3*q**2 - 1)/(12*q**9)",
+          "plain_dimnorm_sector_difference_zero": false,
+          "plain_Q4_MeV": {
+            "bare (phi=psi=0, Gamma=1)": "6660.60146393203072996085763292456316901901556845985838428822",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "6666.92485336469313530958277699097546279823007265891817072302"
+          },
+          "plain_Delta_hat_at_q0": {
+            "bare (phi=psi=0, Gamma=1)": "0.140545913816700104933246762570194294215485422535797961490274",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.140679344190975606212337011453771684662849950114127162831804"
+          }
+        },
+        "W1sq_clasp": {
+          "K_dimnorm_sector_difference_zero": false,
+          "K_Q4_MeV": {
+            "bare (phi=psi=0, Gamma=1)": "1407.68219910735815115289210683547466075155785363232347142741",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "1405.65818273517076335015035248898507279991467771751069805806"
+          },
+          "K_Delta_hat_at_q0": {
+            "bare (phi=psi=0, Gamma=1)": "0.0297036209279889996323931073905506192531862804203721733252658",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.0296609119876403744583118175227958134584976949293524821438351"
+          },
+          "plain_dimnorm_sector_difference_zero": false,
+          "plain_Q4_MeV": {
+            "bare (phi=psi=0, Gamma=1)": "1392.46733220830298527134747952087518181842647061642825483213",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "1430.45667449105699199863308239867436352884031341605302205181"
+          },
+          "plain_Delta_hat_at_q0": {
+            "bare (phi=psi=0, Gamma=1)": "0.0293825707370254959696978200787515398149969731521972704299883",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.0301841870558125812818785917912111114702467230424361939930063"
+          }
+        },
+        "W2_two_same": {
+          "K_dimnorm_sector_difference_zero": false,
+          "K_Q4_MeV": {
+            "bare (phi=psi=0, Gamma=1)": "1407.68219910735815115289210683547466075155785363232347142741",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "1405.65818273517076335015035248898507279991467771751069805806"
+          },
+          "K_Delta_hat_at_q0": {
+            "bare (phi=psi=0, Gamma=1)": "0.0297036209279889996323931073905506192531862804203721733252658",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.0296609119876403744583118175227958134584976949293524821438351"
+          },
+          "plain_dimnorm_sector_difference_zero": false,
+          "plain_Q4_MeV": {
+            "bare (phi=psi=0, Gamma=1)": "1392.46733220830298527134747952087518181842647061642825483213",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "1381.33708562615366088299732884832592984970252121258926872248"
+          },
+          "plain_Delta_hat_at_q0": {
+            "bare (phi=psi=0, Gamma=1)": "0.0293825707370254959696978200787515398149969731521972704299883",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.0291477104642161539076470485529620850258076150111731912806117"
+          }
+        },
+        "W2b_two_opposite": {
+          "K_dimnorm_sector_difference_zero": true,
+          "plain_dimnorm_sector_difference_zero": false,
+          "plain_Q4_MeV": {
+            "bare (phi=psi=0, Gamma=1)": "0.0",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "-12.4522162663429150233575864202851486669997256986201586887511"
+          },
+          "plain_Delta_hat_at_q0": {
+            "bare (phi=psi=0, Gamma=1)": "0.0",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "-0.000262755266723792345203001556734375708152821151965821168610718"
+          }
+        },
+        "W3_loop_around_2": {
+          "K_dimnorm_sector_difference_zero": false,
+          "K_Q4_MeV": {
+            "bare (phi=psi=0, Gamma=1)": "3127.55330768747682055773215125946391854522285847754474992188",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "3123.05639843930816340496887390537467753270709752697492231170"
+          },
+          "K_Delta_hat_at_q0": {
+            "bare (phi=psi=0, Gamma=1)": "0.0659947663915453685643825538853322308061303636881163066116939",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.0658998767298448282821523044941807134021319844589774002364426"
+          },
+          "plain_dimnorm_sector_difference_zero": false,
+          "plain_Q4_MeV": {
+            "bare (phi=psi=0, Gamma=1)": "3093.74929473175459563190907020800363563962049630092019873306",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "3132.76694000784714688800068250996965721312521829385136321044"
+          },
+          "plain_Delta_hat_at_q0": {
+            "bare (phi=psi=0, Gamma=1)": "0.0652814650602375459746985905487523864292754156049676771993500",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.0661047796873023187806629829947693610153179294627910906500341"
+          }
+        },
+        "W4_loop_around_3": {
+          "K_dimnorm_sector_difference_zero": false,
+          "K_Q4_MeV": {
+            "bare (phi=psi=0, Gamma=1)": "5192.19802226286657455928742889510206505206152851060979111532",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "5184.73249217989538859896301778048452390846960377897422333541"
+          },
+          "K_Delta_hat_at_q0": {
+            "bare (phi=psi=0, Gamma=1)": "0.109561008822978026497540180541861492570460900226865132857179",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.109403478042414279268691559501600633677151707838212534263899"
+          },
+          "plain_dimnorm_sector_difference_zero": false,
+          "plain_Q4_MeV": {
+            "bare (phi=psi=0, Gamma=1)": "5136.07839393172641047019863351990766328677886530342039240821",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "5175.77979524064517552328414358674268167169108367326470985290"
+          },
+          "plain_Delta_hat_at_q0": {
+            "bare (phi=psi=0, Gamma=1)": "0.108376823807620957652681744412770646501547021512020242954577",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.109214566428461011902567497488684426185018697925305940906840"
+          }
+        },
+        "W4b_two_pair_strands_loop": {
+          "K_dimnorm_sector_difference_zero": false,
+          "K_Q4_MeV": {
+            "bare (phi=psi=0, Gamma=1)": "180.308244995793215119355153980512777084186678378595379264707",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "173.442256767345267693718401048007877612105373083176659944991"
+          },
+          "K_Delta_hat_at_q0": {
+            "bare (phi=psi=0, Gamma=1)": "0.00380469950031494690766920129914742261405033641571150851026053",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.00365981970304026492489201170201575342275044678545941257687650"
+          },
+          "plain_dimnorm_sector_difference_zero": false,
+          "plain_Q4_MeV": {
+            "bare (phi=psi=0, Gamma=1)": "-600.154885249692971585478024639626442212367532196596852873137",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "-521.683273248951813428906678642399862764112273983734198599840"
+          },
+          "plain_Delta_hat_at_q0": {
+            "bare (phi=psi=0, Gamma=1)": "-0.0126639189021797396560769575796676797841331309548317291286922",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "-0.0110080827923274474221919728008336135228792361896734370307857"
+          }
+        },
+        "W6_passage_and_return": {
+          "K_dimnorm_sector_difference_zero": false,
+          "K_Q4_MeV": {
+            "bare (phi=psi=0, Gamma=1)": "5192.19802226286657455928742889510206505206152851060979111532",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "5184.73249217989538859896301778048452390846960377897422333541"
+          },
+          "K_Delta_hat_at_q0": {
+            "bare (phi=psi=0, Gamma=1)": "0.109561008822978026497540180541861492570460900226865132857179",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.109403478042414279268691559501600633677151707838212534263899"
+          },
+          "plain_dimnorm_sector_difference_zero": false,
+          "plain_Q4_MeV": {
+            "bare (phi=psi=0, Gamma=1)": "5136.07839393172641047019863351990766328677886530342039240821",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "5114.07545362747209841496407157849200862352441732710974882721"
+          },
+          "plain_Delta_hat_at_q0": {
+            "bare (phi=psi=0, Gamma=1)": "0.108376823807620957652681744412770646501547021512020242954577",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.107912537906646162307819022354807557784114456714403268450792"
+          }
+        },
+        "W7_passage_after_pair": {
+          "K_dimnorm_sector_difference_zero": false,
+          "K_Q4_MeV": {
+            "bare (phi=psi=0, Gamma=1)": "3933.55905624909174404157305087537505381783247725497153867232",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "3927.90324278788384685190722901444864601640444425722085166854"
+          },
+          "K_Delta_hat_at_q0": {
+            "bare (phi=psi=0, Gamma=1)": "0.0830023617395833816436559951704524408305309523143544192640889",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.0828830179422421436405031826652561229744554274077160164350187"
+          },
+          "K_Delta_hat_bare_exact": "-(q - 1)*(q + 1)*(q**2 + 1)**2*(q**2 - q - 1)*(q**2 + q - 1)/(12*q**3)",
+          "plain_dimnorm_sector_difference_zero": false,
+          "plain_Q4_MeV": {
+            "bare (phi=psi=0, Gamma=1)": "3891.04336803597498667990300993962307846297398640928181883737",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "3886.30167026566580526509556594247142645591547382224176787092"
+          },
+          "plain_Delta_hat_at_q0": {
+            "bare (phi=psi=0, Gamma=1)": "0.0821052346131795645273777667803086235332320597013028181689208",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.0820051796482068826062705621365872705223129683581753447289673"
+          }
+        },
+        "W7_amplitude_spectators_uu": {
+          "uddnu -> e-uud": {
+            "bare (phi=psi=0, Gamma=1)": "0.261090398058826064313102795749825115763539675980533914240523",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.262834861223286109831978109559849340736469609765374397924373"
+          },
+          "uddnu -> e-udu": {
+            "bare (phi=psi=0, Gamma=1)": "0.231146531977557669353948430868426655663057525530882838747594",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.231146531977557669353948430868426655663057525530882838747594"
+          },
+          "uddnu -> e-duu": {
+            "bare (phi=psi=0, Gamma=1)": "0.0117495752040855681905045272336066929062177282339421589106441",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.0117495752040855681905045272336066929062177282339421589106441"
+          },
+          "dudnu -> e-uud": {
+            "bare (phi=psi=0, Gamma=1)": "0.179754560195627558021835359056273722815751833180566868930540",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.180955581800544399178803152896523071659996186775679653736323"
+          },
+          "dudnu -> e-udu": {
+            "bare (phi=psi=0, Gamma=1)": "-0.00692424463754686881189882795780998096279203087325727855163553",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "-0.00692424463754686881189882795780998096279203087325727855163553"
+          },
+          "dudnu -> e-duu": {
+            "bare (phi=psi=0, Gamma=1)": "0.229698947324698017707872457386951595217687578027157442380889",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.229698947324698017707872457386951595217687578027157442380889"
+          },
+          "ddunu -> e-uud": {
+            "bare (phi=psi=0, Gamma=1)": "0.0",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.0"
+          },
+          "ddunu -> e-udu": {
+            "bare (phi=psi=0, Gamma=1)": "0.269077209924959834776210605018010244743558253263199215615919",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.269077209924959834776210605018010244743558253263199215615919"
+          },
+          "ddunu -> e-duu": {
+            "bare (phi=psi=0, Gamma=1)": "0.218197531810672883063678822554904686227592720917236541777455",
+            "Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "0.218197531810672883063678822554904686227592720917236541777455"
+          }
+        }
+      },
+      "energies": {
+        "self": {
+          "E3(beta_Bor) = m_mu F_Bor": "472.202038417802123681970000000000000000000000000000000000000",
+          "E3(e-_BW)": "326.840162572247929437080590966982141759130983601105766357780",
+          "E2(e-_K = s^3, trefoil)": "146.328892301706312939035979589470730663045254852537426298027",
+          "E1(nubar)": "95.1895824417071397120048246263418717586190419256499851838400",
+          "m_e (CAL-1)": "0.510998950690000000000000000000000000000000000000000000000000",
+          "S6 = m_mu [6]!/q^6": "47390.9292917528936220450019971629811008793663193123990853402"
+        },
+        "Q_rows": {
+          "W0_split | bare (phi=psi=0, Gamma=1)": {
+            "tr_initial": "0.998562163836787265951213135146650202094025880059411079206022",
+            "cross_term": "0.0",
+            "S6_times_cross_term_MeV": "0.0",
+            "Q_principal_MeV (e-_K)": "7168.14339808430249291810157816203724604211717306277035124339",
+            "Q_A1_MeV (e-_BW)": "14614.8635498279096457588384353610731271257404148439795244654"
+          },
+          "W0_split | Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": {
+            "tr_initial": "0.997126395046406774218412209870206997502483245859641991530516",
+            "cross_term": "0.0",
+            "S6_times_cross_term_MeV": "0.0",
+            "Q_principal_MeV (e-_K)": "7100.10098086007502705811412336486176473465850278880055362815",
+            "Q_A1_MeV (e-_BW)": "14546.8211326036821798988509805638976458182817445700097268502"
+          },
+          "W1_one_bridge | bare (phi=psi=0, Gamma=1)": {
+            "tr_initial": "0.611807092129888236922677041703160715952989370525463133141659",
+            "cross_term": "0.0",
+            "S6_times_cross_term_MeV": "0.0",
+            "Q_principal_MeV (e-_K)": "-11160.5388584041694954314905304530417990611815146634850594022",
+            "Q_A1_MeV (e-_BW)": "-3713.81870666056234259075367325400591797755827288227588618010"
+          },
+          "W1_one_bridge | Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": {
+            "tr_initial": "0.610927413767913858722695995253574757409973271382884382707423",
+            "cross_term": "0.0",
+            "S6_times_cross_term_MeV": "0.0",
+            "Q_principal_MeV (e-_K)": "-11202.2276334559822600886656642428880338221806180384518104508",
+            "Q_A1_MeV (e-_BW)": "-3755.50748171237510724792880704385215273855737625724263722871"
+          },
+          "W1sq_clasp | bare (phi=psi=0, Gamma=1)": {
+            "tr_initial": "1.12646673732275293142692353710462837965630733330095857235821",
+            "cross_term": "0.0",
+            "S6_times_cross_term_MeV": "0.0",
+            "Q_principal_MeV (e-_K)": "13229.6599962495132639392229326465647043845477699883164863944",
+            "Q_A1_MeV (e-_BW)": "20676.3801479931204167799597898456005854681710117695256596165"
+          },
+          "W1sq_clasp | Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": {
+            "tr_initial": "1.12484706271117401762954924825347026349231909204660833735158",
+            "cross_term": "0.0",
+            "S6_times_cross_term_MeV": "0.0",
+            "Q_principal_MeV (e-_K)": "13152.9021112565296276164277280999146685781600274106274213526",
+            "Q_A1_MeV (e-_BW)": "20599.6222630001367804571645852989505496617832691918365945747"
+          },
+          "W2_two_same | bare (phi=psi=0, Gamma=1)": {
+            "tr_initial": "1.12646673732275293142692353710462837965630733330095857235821",
+            "cross_term": "0.0",
+            "S6_times_cross_term_MeV": "0.0",
+            "Q_principal_MeV (e-_K)": "13229.6599962495132639392229326465647043845477699883164863944",
+            "Q_A1_MeV (e-_BW)": "20676.3801479931204167799597898456005854681710117695256596165"
+          },
+          "W2_two_same | Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": {
+            "tr_initial": "1.12484706271117401762954924825347026349231909204660833735158",
+            "cross_term": "0.0",
+            "S6_times_cross_term_MeV": "0.0",
+            "Q_principal_MeV (e-_K)": "13152.9021112565296276164277280999146685781600274106274213526",
+            "Q_A1_MeV (e-_BW)": "20599.6222630001367804571645852989505496617832691918365945747"
+          },
+          "W2b_two_opposite | bare (phi=psi=0, Gamma=1)": {
+            "tr_initial": "0.998562163836787265951213135146650202094025880059411079206022",
+            "cross_term": "0.0",
+            "S6_times_cross_term_MeV": "0.0",
+            "Q_principal_MeV (e-_K)": "7168.14339808430249291810157816203724604211717306277035124339",
+            "Q_A1_MeV (e-_BW)": "14614.8635498279096457588384353610731271257404148439795244654"
+          },
+          "W2b_two_opposite | Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": {
+            "tr_initial": "0.997126395046406774218412209870206997502483245859641991530516",
+            "cross_term": "0.0",
+            "S6_times_cross_term_MeV": "0.0",
+            "Q_principal_MeV (e-_K)": "7100.10098086007502705811412336486176473465850278880055362815",
+            "Q_A1_MeV (e-_BW)": "14546.8211326036821798988509805638976458182817445700097268502"
+          },
+          "W3_loop_around_2 | bare (phi=psi=0, Gamma=1)": {
+            "tr_initial": "1.27096220780589911856969616136410842274734178204810621387435",
+            "cross_term": "0.000207760812881105776356686734604769952356747887623439432715907",
+            "S6_times_cross_term_MeV": "9.84597799284558762814047026953049765250325687431087205237530",
+            "Q_principal_MeV (e-_K)": "20077.4346208948615441797662981642527392543450433750987596808",
+            "Q_A1_MeV (e-_BW)": "27524.1547726384686970205031553632886203379682851563079329028"
+          },
+          "W3_loop_around_2 | Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": {
+            "tr_initial": "1.26913477238143909899596518577834553663099679290613253943500",
+            "cross_term": "0.000207462086871046848453109452174812763845553547093121724731814",
+            "S6_times_cross_term_MeV": "9.83182108962527751221106009400864152414916018543640501327930",
+            "Q_principal_MeV (e-_K)": "19990.8307579090323202288306233480722057954540439230988225866",
+            "Q_A1_MeV (e-_BW)": "27437.5509096526394730695674805471080868790772857043079958086"
+          },
+          "W4_loop_around_3 | bare (phi=psi=0, Gamma=1)": {
+            "tr_initial": "1.43358953097677804101590371274931180918665634911435642592222",
+            "cross_term": "0.0000657427906941926215058715812380549406016750521736284687414478",
+            "S6_times_cross_term_MeV": "3.11561194523099265792778318183056119416502446350400102575146",
+            "Q_principal_MeV (e-_K)": "27784.4945941930315425358672281506169370985486387733167981812",
+            "Q_A1_MeV (e-_BW)": "35231.2147459366386953766040853496528181821718805545259714033"
+          },
+          "W4_loop_around_3 | Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": {
+            "tr_initial": "1.43152826410593644753008359653027621326923372393142776373331",
+            "cross_term": "0.0000656482633322619857505397445438938046434595888076355718302733",
+            "S6_times_cross_term_MeV": "3.11113220570560196455226941762974368851043821131386181622946",
+            "Q_principal_MeV (e-_K)": "27686.8092416655448413072105946352342695019740527023188483559",
+            "Q_A1_MeV (e-_BW)": "35133.5293934091519941479474518342701505855972944835280215779"
+          },
+          "W4b_two_pair_strands_loop | bare (phi=psi=0, Gamma=1)": {
+            "tr_initial": "1.27075444699301801279333947462950365279498503416048277444163",
+            "cross_term": "0.0",
+            "S6_times_cross_term_MeV": "0.0",
+            "Q_principal_MeV (e-_K)": "20067.5886429020159565516258278947222416018417865007878876284",
+            "Q_A1_MeV (e-_BW)": "27514.3087946456231093923626850937581226854650282819970608505"
+          },
+          "W4b_two_pair_strands_loop | Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": {
+            "tr_initial": "1.26744430793353168563740684028760883665222320926109663879109",
+            "cross_term": "-0.00148300236103636651010523603856188721492803009794277891917841",
+            "S6_times_cross_term_MeV": "-70.2808600313770417790596377959080299323960477453966110149508",
+            "Q_principal_MeV (e-_K)": "19910.7180767880300009375599254581555343389088359922658065583",
+            "Q_A1_MeV (e-_BW)": "27357.4382285316371537782967826571914154225320777734749797804"
+          },
+          "W6_passage_and_return | bare (phi=psi=0, Gamma=1)": {
+            "tr_initial": "1.43358953097677804101590371274931180918665634911435642592222",
+            "cross_term": "0.0000657427906941926215058715812380549406016750521736284687414478",
+            "S6_times_cross_term_MeV": "3.11561194523099265792778318183056119416502446350400102575146",
+            "Q_principal_MeV (e-_K)": "27784.4945941930315425358672281506169370985486387733167981812",
+            "Q_A1_MeV (e-_BW)": "35231.2147459366386953766040853496528181821718805545259714033"
+          },
+          "W6_passage_and_return | Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": {
+            "tr_initial": "1.43152826410593644753008359653027621326923372393142776373331",
+            "cross_term": "0.0000656482633322619857505397445438938046434595888076355718302733",
+            "S6_times_cross_term_MeV": "3.11113220570560196455226941762974368851043821131386181622946",
+            "Q_principal_MeV (e-_K)": "27686.8092416655448413072105946352342695019740527023188483559",
+            "Q_A1_MeV (e-_BW)": "35133.5293934091519941479474518342701505855972944835280215779"
+          },
+          "W7_passage_after_pair | bare (phi=psi=0, Gamma=1)": {
+            "tr_initial": "0.209838836775173000250870106026195576542499944106168948537661",
+            "cross_term": "-0.0198253662771805967854246047330522692737720111856050054760966",
+            "S6_times_cross_term_MeV": "-939.542531424967960920034678854564653631994814721569842131224",
+            "Q_principal_MeV (e-_K)": "-30210.1880254487507357065450159269872452150233219370493129583",
+            "Q_A1_MeV (e-_BW)": "-22763.4678737051435828658081587279513641314000801558401397362"
+          },
+          "W7_passage_after_pair | Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": {
+            "tr_initial": "0.209537122907211162345188288291765607021471390865256644850061",
+            "cross_term": "-0.0197968606485983283112477724827475868569243627610387782578875",
+            "S6_times_cross_term_MeV": "-938.191623196408705377989988603291039068682921336443628810901",
+            "Q_principal_MeV (e-_K)": "-30224.4865260316714646279865629489234757948884115852741697217",
+            "Q_A1_MeV (e-_BW)": "-22777.7663742880643117872497057498875947112651698040649964996"
+          }
+        },
+        "Q_A2_additive | bare (phi=psi=0, Gamma=1)": "231.363490464896284694446622322795136893432906445802322954883",
+        "Q_A2_additive | Borromean (0,0,qh)(0,0,-h/q): Gamma=beta_Bor, e- channel 0": "230.683563674388671030929195784187397578335703221812588518133"
+      },
+      "comparison": {
+        "Q_beta_codata_MeV": "0.782333409310000000000000000000000000000000000000000000000000"
+      }
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
