@@ -1,6 +1,7 @@
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Algebra.Order.BigOperators.Group.Finset
 import Mathlib.Data.Fintype.Card
+import Mathlib.Data.Fintype.Prod
 import Mathlib.Tactic.Linarith
 
 /-!
@@ -8,8 +9,8 @@ import Mathlib.Tactic.Linarith
 
 The mass of a vortex with braid representative `β ∈ Bₙ` decomposes into
 a descended term (base-level regular-representation trace) and transient
-`Li₂^q` corrections, one per generator and one per adjacent generator
-pair.
+`Li₂^q` corrections, one per generator and one per pair of distinct
+generators.
 
 **Two-tier split.** Per the audit
 [`docs/audits/2026-05-03-pre-archimedean-proof-audit.md`](../../../docs/audits/2026-05-03-pre-archimedean-proof-audit.md)
@@ -61,12 +62,16 @@ variable {R : Type u} [Field R]
     convention-C form `√q/(q+1)`. -/
 noncomputable def markovZD (q : R) : R := q ^ 3 / (q ^ 2 + 1)
 
-/-- Frobenius norm of an adjacent generator pair's product.  Hides the
-    `Fin` casts (`i.val < n` and `i.val + 1 < n`, from `i : Fin (n-1)`)
-    so downstream proofs stay clean. -/
-noncomputable def adjPairNorm (frobeniusNorm : R → R) (n : ℕ) (V : Fin n → R)
-    (i : Fin (n - 1)) : R :=
-  frobeniusNorm (V ⟨i.val, by omega⟩ * V ⟨i.val + 1, by omega⟩)
+/-- The pair blow-up sum: `Σ_{i<j} Li₂^q(−‖V i · V j‖_F)` over **all**
+    unordered pairs of distinct generators, as in the `.md` boxed formula
+    (`0 ≤ i < j ≤ n−2`) and in the producer
+    (`computations/habiro/habiro_exact_mass_endomorphism.py`, the loop
+    `for i … for j in range(i + 1, n)`).  Until 2026-11-20 this file summed
+    only the adjacent pairs `(i, i+1)`; the two agree for at most two
+    generators and differ from three on (bean `qou-j11h`). -/
+noncomputable def pairSum (frobeniusNorm li2q : R → R) (n : ℕ) (V : Fin n → R) : R :=
+  ∑ p ∈ (Finset.univ.filter (fun p : Fin n × Fin n => p.1 < p.2)),
+    li2q (- frobeniusNorm (V p.1 * V p.2))
 
 /-- The pre-Arch mass formula, valued in the ground field `R`.
 
@@ -77,12 +82,19 @@ noncomputable def adjPairNorm (frobeniusNorm : R → R) (n : ℕ) (V : Fin n →
     formula (convention D):
 
       𝔪 = ‖∏ V i‖_F − Σᵢ Li₂^q(−‖V i‖_F)
-            − z² · Σ_{adj} Li₂^q(−‖V i · V j‖_F),   z = q³/(q²+1). -/
+            − z² · Σ_{i<j} Li₂^q(−‖V i · V j‖_F),   z = q³/(q²+1).
+
+    `V` is indexed by the generators (`Fin n` here is the `n − 1` of the
+    `.md`, which counts strands).  The file is trace- and weight-agnostic:
+    `V i` is data, so nothing here decides whether the descended term is the
+    Markov trace or the regular-representation trace, or which Wedderburn
+    weights build `V i`.  The producer uses the regular-representation
+    reading with self-normalised `dim_q(λ)²/[3]_q!` weights. -/
 noncomputable def massPoly (frobeniusNorm li2q : R → R) (q : R) (n : ℕ)
     (V : Fin n → R) : R :=
   frobeniusNorm (∏ i, V i)
     - (∑ i, li2q (- frobeniusNorm (V i)))
-    - (markovZD q) ^ 2 * (∑ i : Fin (n - 1), li2q (- adjPairNorm frobeniusNorm n V i))
+    - (markovZD q) ^ 2 * pairSum frobeniusNorm li2q n V
 
 end Pre
 
@@ -120,14 +132,13 @@ theorem mass_endomorphism_nonneg (frobeniusNorm li2q : R → R)
     apply Finset.sum_nonpos
     intro i _
     exact h.li2q_nonpos_on_neg _ (h.norm_nonneg _)
-  have hD : (∑ i : Fin (n - 1), li2q (- Pre.adjPairNorm frobeniusNorm n V i)) ≤ 0 := by
+  have hD : Pre.pairSum frobeniusNorm li2q n V ≤ 0 := by
+    unfold Pre.pairSum
     apply Finset.sum_nonpos
-    intro i _
-    unfold Pre.adjPairNorm
+    intro p _
     exact h.li2q_nonpos_on_neg _ (h.norm_nonneg _)
   have hz : 0 ≤ (Pre.markovZD q) ^ 2 := sq_nonneg _
-  have hzD : (Pre.markovZD q) ^ 2 *
-      (∑ i : Fin (n - 1), li2q (- Pre.adjPairNorm frobeniusNorm n V i)) ≤ 0 :=
+  have hzD : (Pre.markovZD q) ^ 2 * Pre.pairSum frobeniusNorm li2q n V ≤ 0 :=
     mul_nonpos_of_nonneg_of_nonpos hz hD
   linarith
 
@@ -146,14 +157,13 @@ theorem mass_endomorphism_positive (frobeniusNorm li2q : R → R)
     apply Finset.sum_nonpos
     intro i _
     exact h.li2q_nonpos_on_neg _ (h.norm_nonneg _)
-  have hD : (∑ i : Fin (n - 1), li2q (- Pre.adjPairNorm frobeniusNorm n V i)) ≤ 0 := by
+  have hD : Pre.pairSum frobeniusNorm li2q n V ≤ 0 := by
+    unfold Pre.pairSum
     apply Finset.sum_nonpos
-    intro i _
-    unfold Pre.adjPairNorm
+    intro p _
     exact h.li2q_nonpos_on_neg _ (h.norm_nonneg _)
   have hz : 0 ≤ (Pre.markovZD q) ^ 2 := sq_nonneg _
-  have hzD : (Pre.markovZD q) ^ 2 *
-      (∑ i : Fin (n - 1), li2q (- Pre.adjPairNorm frobeniusNorm n V i)) ≤ 0 :=
+  have hzD : (Pre.markovZD q) ^ 2 * Pre.pairSum frobeniusNorm li2q n V ≤ 0 :=
     mul_nonpos_of_nonneg_of_nonpos hz hD
   linarith
 

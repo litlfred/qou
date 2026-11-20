@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ define the Descartes universe spanning $\chi(A) = -6$ (Bring's surface of genus 4). Let $\Sigma$ designate the precise collision locus governing an anti-parallel vortex pair marked by linking number $\mathrm{lk} = 1$.
+Let $(\mathbf{C}, A, \tau)$ define the Descartes universe spanning $\chi_{\mathrm{eu}}(M_0) = -6$ (Bring's surface of genus 4). Let $\Sigma$ designate the precise collision locus governing an anti-parallel vortex pair marked by linking number $\mathrm{lk} = 1$.
 
 The [NS obstruction](#prop:ns-obstruction-tower) at level $n$, strictly restricted to $\Sigma$, evaluates as $\kappa_n|_\Sigma = \mathrm{lk} \cdot e(\xi)|_\Sigma + \delta_n|_\Sigma$. Computing both terms gives
 
@@ -13,7 +13,7 @@ so $\mathrm{Obs}_\partial(A) = 0$: the Descartes universe operates uniformly as 
 
 **(a) The Euler class term.**
 
-The explicit Euler class $e(\xi) \in H^2(\Sigma_4, \mathbb{Z})$ driving the Reeb bundle enforces $\mathrm{tr}(e(\xi)) = \chi(A) = -6$. Because $H^2(\Sigma_4, \mathbb{Z}) \cong \mathbb{Z}$ (Bring's surface exists as a closed orientable surface), $e(\xi)$ resolves strictly as the integer $-6$.
+The explicit Euler class $e(\xi) \in H^2(\Sigma_4, \mathbb{Z})$ driving the Reeb bundle enforces $\mathrm{tr}(e(\xi)) = \chi_{\mathrm{eu}}(M_0) = -6$. Because $H^2(\Sigma_4, \mathbb{Z}) \cong \mathbb{Z}$ (Bring's surface exists as a closed orientable surface), $e(\xi)$ resolves strictly as the integer $-6$.
 
 Restricting the class onto $\Sigma$ (a one-dimensional line segment, thus inherently contractible) mathematically zeros out $e(\xi)|_\Sigma = 0$ inside $H^2(\Sigma, \mathbb{Z})$.
 
@@ -37,7 +37,7 @@ At a generic point, $\deg_p(\xi) = 0$ (the Reeb vector field avoids vanishing). 
 
 **(b) The jet correction term.**
 
-The formal jet correction $\delta_n$ at level $n$ inside the brane tower isolates the $n$-th iterated jet prolongation. Due to [Euler characteristic stability](#prop:euler-char-stability), $\chi(E_n) = \chi(A) = -6$ holds uniformly across all $n$. The topological baseline therefore ignores the level completely.
+The formal jet correction $\delta_n$ at level $n$ inside the brane tower isolates the $n$-th iterated jet prolongation. Due to [Euler characteristic stability](#prop:euler-char-stability), $\chi(E_n) = \chi_{\mathrm{eu}}(M_0) = -6$ holds uniformly across all $n$. The topological baseline therefore ignores the level completely.
 
 The specific analytic correction $\delta_n|_\Sigma$ feeds directly off the $(n+1)$-jet of the associated velocity field impinging on $\Sigma$. The anti-parallel pair enforces the Biot--Savart structure $v \sim \Gamma/(2\pi d)$ approaching the collision. The resulting jets strictly diverge as $d \to 0$:
 
@@ -64,11 +64,11 @@ Consequently:
 - If the Reeb field fundamentally **lacks a zero** at $p$ ($\deg_p(\xi) = 0$): the topological component cleanly vanishes, but the analytic component $\delta_n|_\Sigma \neq 0$ stubbornly persists. The surviving obstruction becomes **purely analytic** while the contact structure avoids degeneracy. This explicitly describes the **NS-singular** (blowup) condition.
 - If the Reeb field **possesses a zero** at $p$ ($\deg_p(\xi) \neq 0$): both isolated terms avoid zero. Because they occupy strictly complementary subgroups, they possess no mechanism to mathematically cancel. The aggregate obstruction remains nonzero. This similarly enforces the **NS-singular** condition.
 
-*Scope.* Parts (c) and (d) are not established. They invoke item 3 of [QU-to-QOU](#thm:qu-to-qou) in its earlier, jet-tower form, which is retracted. Three further points apply on Bring's surface. First, the block defining $\delta_n$ places it in the image of $H^2(\mathcal{S}, \mathcal{O}_{\mathcal{S}})$, which is zero on a curve, so $\delta_n = 0$ as a class; the divergence of $|j^n v|$ in (b) is a pointwise magnitude, not a cohomology class, and its rate assumes the collapse $d \sim (T^* - t)^{1/2}$. Second, the local class at $p$ is the index $\mathrm{ind}_p(s)$ of a chosen section $s$ of $\xi$, with $\sum_p \mathrm{ind}_p(s) = \chi(A) = -6$ (Poincaré--Hopf), not $-6 \cdot \deg_p(\xi)$. Topology forces $s$ to vanish somewhere but not on $\Sigma$: a finite zero set can be isotoped off $\Sigma$. Third, (a) already records $e(\xi)|_\Sigma = 0$. Whether the Reeb field of the model vanishes on $\Sigma$ is open.
+*Scope.* Parts (c) and (d) are not established. They invoke item 3 of [QU-to-QOU](#thm:qu-to-qou) in its earlier, jet-tower form, which is retracted. Three further points apply on Bring's surface. First, the block defining $\delta_n$ places it in the image of $H^2(\mathcal{S}, \mathcal{O}_{\mathcal{S}})$, which is zero on a curve, so $\delta_n = 0$ as a class; the divergence of $|j^n v|$ in (b) is a pointwise magnitude, not a cohomology class, and its rate assumes the collapse $d \sim (T^* - t)^{1/2}$. Second, the local class at $p$ is the index $\mathrm{ind}_p(s)$ of a chosen section $s$ of $\xi$, with $\sum_p \mathrm{ind}_p(s) = \chi_{\mathrm{eu}}(M_0) = -6$ (Poincaré--Hopf), not $-6 \cdot \deg_p(\xi)$. Topology forces $s$ to vanish somewhere but not on $\Sigma$: a finite zero set can be isotoped off $\Sigma$. Third, (a) already records $e(\xi)|_\Sigma = 0$. Whether the Reeb field of the model vanishes on $\Sigma$ is open.
 
 **(d) Result.**
 
-Mapped over the Descartes universe with $\chi(A) = -6$:
+Mapped over the Descartes universe with $\chi_{\mathrm{eu}}(M_0) = -6$:
 
 $$
   \kappa_n\big|_\Sigma  \neq  0

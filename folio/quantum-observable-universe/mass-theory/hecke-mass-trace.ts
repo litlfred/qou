@@ -19,7 +19,7 @@ export default proposition({
     // through def:hecke-mass-element, which now declares it directly.
     "def:hecke-mass-element",
     // The decomposition the proposition descends to H_n(R, q).
-    "thm:topological-mass",
+    "conj:topological-mass",
   ],
   // Production wiring of the proved mass = Markov-trace bridge: the canonical
   // mass table computes |tr_M(Φ_mass(β))| per atom via the canonical Markov

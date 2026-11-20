@@ -3,6 +3,16 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   authorNotes: [
     {
+      kind: "status",
+      date: "2026-11-20",
+      body:
+        "Matrix-block step proved for a positive star: `baerStarRing_matrix_rclike` shows M_n(k) with the conjugate " +
+        "transpose is Baer-* for every RCLike field k (R or C), using the orthogonal projection onto the complement of the " +
+        "column span. Sorry-free; axioms propext, Classical.choice, Quot.sound. The proposition itself is still open: it " +
+        "also needs a *-isomorphism from H_n(q) onto a sum of matrix blocks that carries the bar involution to the " +
+        "conjugate transpose, which is not formalised. Beans qou-n2un, qou-jgp2.",
+    },
+    {
       kind: "caveat",
       date: "2026-11-15",
       body:

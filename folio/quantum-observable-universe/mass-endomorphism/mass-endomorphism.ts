@@ -55,6 +55,7 @@ export default chapter({
           title: "Topological mass",
           label: "sec:mass-endomorphism-topological-mass",
           blocks: [
+            "topological-mass-upper-bound",
             "topological-mass",
             "topological-mass-conjecture",
             "topological-mass-conjecture-proof",

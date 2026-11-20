@@ -1,0 +1,5 @@
+Take time order to be the order of crossing applications, so one tick is one application of a crossing, as in the proof of ([braiding-induced ordering](#prop:braiding-induced-ordering)). This is a modelling choice. Everything that follows from it is ([crossing-application chains](#lem:crossing-application-chains)).
+
+Gödel's rotating solution \cite{goedel1949} is homogeneous, and a closed timelike curve passes through every event. Since Gödel's spacetime is connected, this is equivalent to saying that the chronological future $I^{+}(p)$ is all of spacetime for every $p$. Under the tick definition, nothing of this kind occurs on words, for any braiding. It also does not occur on any state monoid that carries a writhe-type degree, such as $B_n$ itself. It does occur when a crossing has finite order, for example for a symmetric braiding, where every state lies on a closed chain of length two.
+
+So under the tick definition, no model of this kind has a closed chain. This is not a statement about general relativity: Gödel's metric remains an exact solution of the Einstein equations.

@@ -3,6 +3,7 @@ import Mathlib.Order.WellFounded
 import Mathlib.Data.List.Lex
 import Mathlib.Data.Fin.Basic
 import Mathlib.Tactic.Ring
+import Mathlib.Logic.Relation
 
 
 /-!
@@ -167,6 +168,50 @@ theorem degLex_admissible {n : ℕ} (u v w w' : List (Fin n))
   · right
     exact ⟨by simp [List.length_append]; omega,
            degLex_admissible_lex u v w w' h_lex h_eq⟩
+
+/-- **No closed `≺_c`-chains.** No word returns to itself through a finite
+    chain of strict `DegLex` steps. This is the fact used by
+    `rem:no-goedel-closed-chains`: it follows from well-foundedness alone.
+    The general statement is `QOU.Chronology.not_closedChainAt_of_wellFounded`
+    in the library; it is repeated here so this file stays self-contained. -/
+-- Ref: [leitner2026] §2/no-goedel-closed-chains
+theorem degLex_no_closedChain (n : ℕ) (w : List (Fin n)) :
+    ¬ Relation.TransGen (DegLex (α := Fin n)) w w := by
+  have h' : WellFounded (Relation.TransGen (DegLex (α := Fin n))) :=
+    (degLex_wellOrdered n).transGen
+  exact h'.induction (C := fun x => ¬ Relation.TransGen DegLex x x) w
+    (fun x ih hx => ih x hx hx)
+
+/-- **No total chronology for `≺_c`.** It is false that every word reaches
+    every word (itself included) by a finite `DegLex` chain. This is the
+    order-theoretic form of excluding a Gödel-type universe, where
+    `I⁺(p) = M` for every event `p`. -/
+-- Ref: [leitner2026] §2/no-goedel-closed-chains
+theorem degLex_not_totalChronology (n : ℕ) :
+    ¬ ∀ w w' : List (Fin n), Relation.TransGen (DegLex (α := Fin n)) w w' :=
+  fun h => degLex_no_closedChain n [] (h [] [])
+
+/-- **One tick is a `≺_c`-step.** Applying one more crossing to a word
+    (appending a letter) moves strictly up in `DegLex`. So the
+    crossing-application order on words is contained in `≺_c`, and every chain
+    of ticks is a chain of `≺_c`-steps. -/
+-- Ref: [leitner2026] §2/no-goedel-closed-chains
+theorem degLex_append_singleton {n : ℕ} (w : List (Fin n)) (i : Fin n) :
+    DegLex w (w ++ [i]) :=
+  Or.inl (by simp)
+
+/-- One tick on words: append one generator. -/
+def WordTick {n : ℕ} (w w' : List (Fin n)) : Prop := ∃ i, w' = w ++ [i]
+
+/-- **No word lies on a closed chain of ticks**, for any braiding: every tick
+    is a `DegLex` step, and `DegLex` has no closed chains. -/
+-- Ref: [leitner2026] §2/no-goedel-closed-chains
+theorem word_no_closedChainAt (n : ℕ) (w : List (Fin n)) :
+    ¬ Relation.TransGen (WordTick (n := n)) w w := fun h =>
+  degLex_no_closedChain n w
+    (Relation.TransGen.mono (fun a b hab => by
+      obtain ⟨i, rfl⟩ := hab
+      exact degLex_append_singleton a i) h)
 
 /-- Top-level alias matching the manifest declaration. -/
 -- Ref: [leitner2026] §2/braiding-induced-ordering
