@@ -540,19 +540,27 @@ theorem qRepulsionKernel_unbounded_near_pole (q : ℝ) (hq : q > 1) (B : ℝ) :
 structure NonSelfIntersection (M : Type*) where
   /-- The categorical Möbius energy data. -/
   cme : CategoricalMobiusEnergy M
-  /-- Ambient separation between the strand points at parameters `s` and `t`.
-
-      `KnotEmbedding` carries only `arcLengthDist` — an *intrinsic* distance
-      along the curve — so the ambient separation that the `1/r²` kernel is a
-      function of does not exist anywhere upstream.  It is carried here
-      because the barrier cannot be stated without it. -/
-  separation : ℝ → ℝ → ℝ
-  /-- **Energy barrier.**  If some pair of strand points came within the
-      exclusion radius `ℏ_q`, the categorical energy would exceed every
+  /-- **Energy barrier.**  If two *non-adjacent* strand points — at least the
+      exclusion radius `ℏ_q` apart along the curve — came within `ℏ_q` of each
+      other in the ambient space, the categorical energy would exceed every
       bound.  Stated as an implication, so an inhabitant is a configuration
-      that keeps every pair *outside* `ℏ_q` — which is the physical content
+      whose non-adjacent strands all stay *outside* `ℏ_q` — the physical content
       ("the filament cannot pass through itself"), recovered as
       `separation_ge_exclusionRadius` below.
+
+      **The separation is the knot's own chord distance** (bean `qou-dx7g`,
+      2026-11-20).  This structure used to carry a free field
+      `separation : ℝ → ℝ → ℝ`, so `separation := fun _ _ => hbarQ q` made the
+      antecedent false and the "exclusion" returned what was chosen.  The
+      separation is now `cme.knot.ambientDist`, the chord distance
+      `KnotEmbedding` has carried since 2026-08-30.
+
+      **The non-adjacency antecedent is forced, not a weakening.**
+      `KnotEmbedding.chord_le_arc` gives `ambientDist ≤ arcLengthDist`, so every
+      pair less than `ℏ_q` apart along the curve is also less than `ℏ_q` apart in
+      space.  Without the antecedent such neighbouring pairs would trigger the
+      barrier and the structure would be uninhabitable for any embedding with
+      short arcs, which is the docstring's "non-adjacent strands" made explicit.
 
       **This field asserted the consequent unconditionally until
       2026-08-30**, as `∀ E₀ : ℝ, ∃ ε : ℝ, ε > 0 ∧ (∀ _s _t : ℝ, cme.energy
@@ -565,8 +573,14 @@ structure NonSelfIntersection (M : Type*) where
       vacuous.  The docstring's own quantifier order (`∀ ε, ∃ E₀`) was the
       reverse of the code's, and the proximity antecedent it describes was
       never written as a hypothesis at all. -/
-  energyBarrier : ∀ s t : ℝ, separation s t < hbarQ cme.q →
-    ∀ E₀ : ℝ, cme.energy > E₀
+  energyBarrier : ∀ s t : ℝ, hbarQ cme.q ≤ cme.knot.arcLengthDist s t →
+    cme.knot.ambientDist s t < hbarQ cme.q → ∀ E₀ : ℝ, cme.energy > E₀
+
+/-- The ambient separation between the strand points at parameters `s` and `t`:
+    the knot's chord distance `|γ(s) − γ(t)|`.  A definition, not a field. -/
+def NonSelfIntersection.separation {M : Type*} (nsi : NonSelfIntersection M) :
+    ℝ → ℝ → ℝ :=
+  nsi.cme.knot.ambientDist
 
 /-- The exclusion radius: `ℏ_q = 1 − q⁻¹`, derived from the categorical
     Möbius energy data. Not a free parameter — it is always `hbarQ cme.q`. -/
@@ -589,14 +603,16 @@ theorem exclusionRadius_pos {M : Type*} (nsi : NonSelfIntersection M) :
   hbarQ_pos nsi.cme.q nsi.cme.q_gt_one
 
 /-- **The exclusion, derived rather than assumed.**  No two strand points of
-    an inhabitant come within the exclusion radius: if one pair did, the
-    barrier field would make the energy exceed itself. -/
+    an inhabitant that are non-adjacent (at least `ℏ_q` apart along the curve)
+    come within the exclusion radius in space: if one pair did, the barrier
+    field would make the energy exceed itself. -/
 theorem separation_ge_exclusionRadius {M : Type*}
-    (nsi : NonSelfIntersection M) (s t : ℝ) :
+    (nsi : NonSelfIntersection M) (s t : ℝ)
+    (hnadj : hbarQ nsi.cme.q ≤ nsi.cme.knot.arcLengthDist s t) :
     hbarQ nsi.cme.q ≤ nsi.separation s t := by
   by_contra h
   push_neg at h
-  exact absurd (nsi.energyBarrier s t h nsi.cme.energy) (lt_irrefl _)
+  exact absurd (nsi.energyBarrier s t hnadj h nsi.cme.energy) (lt_irrefl _)
 
 /-- The exclusion radius vanishes in the classical limit `q → 1`. -/
 theorem hbarQ_classical_limit : hbarQ 1 = 0 := by
