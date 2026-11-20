@@ -753,16 +753,22 @@ try:
         finally:
             _mp.mp.dps = prev
 
-    def q_two_term_borromean_at(dps: int = _DPS_DEFAULT, k_weighted: bool = False):
-        """Parallel two-term connected Borromean proton pin (Tier A diagnostic helper).
+    def q_two_term_borromean_at(dps: int = _DPS_DEFAULT, weighting: str = "derived"):
+        """Parallel two-term connected Borromean proton pin (COMPARISON only; one-term is default).
 
         Solves:
-            2·(Vol(4₁)/ℏ_q²)·F_Bor(q) − 12 + w(q)·|tr_bar_conn(p, V³)| = m_p/m_e
-        where w(q) = q if `k_weighted=True` (K_p^⊗3 determinant weight) else 1,
-        via 14 Newton iterations at `dps + 25` guard digits starting from `q_at(dps + 25)`.
+            2·(Vol(4₁)/ℏ_q²)·F_Bor(q) − 12 + |t_conn(W_p)| = m_p/m_e
+        with the DERIVED quantum-trace weighting (bean qou-99qc, Lean
+        `NucleonWeightSpaceQTrace.qtrace_crossing_eq_zD`):
+            |t_conn(W_p)| = q·|tr((Q₁₂+Q₂₃)_p V_p³)|/[2]_q³ = 3q⁴/(q²+1)³ · |tr_bar_conn(p, V³)|.
+        `weighting='plain'` (|tr_bar_conn|, 1/3 normalisation) and `'Kp'` (q·|tr_bar_conn|) are
+        historical comparisons only. 14 Newton iterations at `dps + 25` guard digits from
+        `q_at(dps + 25)`.
 
         Does NOT modify `q_at()` or `Q_50_DIGIT_STR`.
         """
+        if weighting not in ("derived", "plain", "Kp"):
+            raise ValueError(f"unknown weighting {weighting!r} (use 'derived', 'plain', 'Kp')")
         prev = _mp.mp.dps
         try:
             work_dps = max(prev, dps + 25)
@@ -778,7 +784,12 @@ try:
                 qcd_term = 2 * vol / hbar_sq * (trM * qf3 / (qq ** 3)) - 12
                 q2 = qq ** 2
                 tr_conn_p_abs = 2 * ((q2 - 1) ** 4) * (q2 ** 2 + q2 + 1) / (27 * (q2 ** 3))
-                w = qq if k_weighted else _mp.mpf(1)
+                if weighting == "derived":
+                    w = 3 * q2 ** 2 / (q2 + 1) ** 3
+                elif weighting == "Kp":
+                    w = qq
+                else:
+                    w = _mp.mpf(1)
                 return qcd_term + w * tr_conn_p_abs - mp_me
 
             q = q_at(work_dps)
@@ -860,7 +871,7 @@ except ImportError:
     def tr_conn_borromean_diff_at(q=None, dps: int = _DPS_DEFAULT):
         raise RuntimeError("tr_conn_borromean_diff_at requires mpmath; install it with `pip install mpmath`")
 
-    def q_two_term_borromean_at(dps: int = _DPS_DEFAULT, k_weighted: bool = False):
+    def q_two_term_borromean_at(dps: int = _DPS_DEFAULT, weighting: str = "derived"):
         raise RuntimeError("q_two_term_borromean_at requires mpmath; install it with `pip install mpmath`")
 
 # ── Experimental observable anchors (CODATA 2022) ─────────────
