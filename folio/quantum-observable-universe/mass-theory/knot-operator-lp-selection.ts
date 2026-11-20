@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:knot-operator-lp-selection",
   title:
-    "Knot operators are selected per confinement by the Frobenius Gram-inverse LP/SDP dual basis",
+    "Knot operators are selected per confinement by the LP/SDP dual basis of the Frobenius Gram pseudo-inverse",
   lean: {
     ref: "qou:QOU.BraidsAndKnots.knot_operator_lp_selection",
     validation: "not_checked",
@@ -33,7 +33,7 @@ export default proposition({
     {
       kind: "status",
       date: "2026-11-20",
-      body: "**Lean restated to match this block (QA re-adjudication 2026-11-20).** The previous Lean `Optimal` maximised the objective and used the supply matrix without $G^{-1}$, and its class `KnotOperatorLPSelection` had no instance: at $n_T = 0$ strong duality forces the zero selection to be optimal, and complementary slackness then asks its empty support to be a singleton. That is now proved (`KnotOperatorLPSelectionLegacy.isEmpty`), so the old theorem was vacuous. The new Lean states the minimisation LP with constraint $G^{-1}Sx \\ge n_T$ and proves, sorry-free over any ordered commutative ring: weak duality, that a primal/dual pair with equal objectives is optimal on both sides, and complementary slackness ($y_i\\cdot\\text{slack}_i = 0$, $x_o\\cdot\\text{reduced cost}_o = 0$), bundled as `knot_operator_lp_selection`. Strong duality (existence of such a pair) is NOT proved; the theorem takes the equal-objective certificate as a hypothesis. Caveat: `⁻¹` is Mathlib's matrix inverse, which is $0$ when $\\det G$ is not a unit, and under convention D the Frobenius Gram matrix on $H_3(q)$ has a radical (see `prop:knot-operator-selection`); the theorems hold for any $G$ but are uninformative there. Producer `wedderburn_pair_volumes.py` made mpmath end to end the same day.",
+      body: "**Gram pseudo-inverse (owner ruling 2026-11-20, option A of `docs/audits/2026-11-20-qa-fails-proposals.md` P2).** The constraint is $G^{+}Sx \\ge n_T$, with $G^{+}$ the Moore–Penrose pseudo-inverse of the Frobenius Gram matrix, i.e. the inverse on $H_n(q)/\\mathrm{rad}$; this is the matrix the code uses (`pyhecke.gram.G_PINV`, `gram_quotient_inverse`), since under convention D the Gram matrix on $H_3(q)$ has a radical and `gram_inverse()` raises. The Lean carries $G^{+}$ as a field of the LP data with the four Penrose conditions (`IsMoorePenrose`) and sets $M = G^{+}S$; it proves `gramPinv_eq_inv_of_isUnit_det` ($G^{+} = G^{-1}$ when $\\det G$ is a unit), and, sorry-free over any ordered commutative ring: weak duality, that a primal/dual pair with equal objectives is optimal on both sides, and complementary slackness, bundled as `knot_operator_lp_selection`. Strong duality (existence of such a pair) is NOT proved; the theorem takes the equal-objective certificate as a hypothesis. The earlier Lean (maximisation, no Gram factor) carried a class with no instance, proved empty as `KnotOperatorLPSelectionLegacy.isEmpty`. No compute number moves; whether `wedderburn_pair_volumes.py` passes $G$ or $G^{+}$ to its solver has not been checked against this statement.",
     },
     {
       kind: "status",
