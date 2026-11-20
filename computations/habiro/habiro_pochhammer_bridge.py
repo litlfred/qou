@@ -74,7 +74,13 @@ def main():
     coeffs_raw = proton['habiro_coefficients']
 
     def eval_a_m(expr_str, u_val):
-        ns = {"check_q": u_val, "__builtins__": {}}
+        # Bind BOTH spellings. The upstream witness emits its a_m
+        # polynomials in "u" (e.g. "-16*u - 16"), which is what this
+        # function's own docstring says it evaluates at — while the
+        # namespace bound only "check_q", so every eval raised
+        # NameError. Keeping check_q too: a witness written in the
+        # older spelling still evaluates.
+        ns = {"check_q": u_val, "u": u_val, "__builtins__": {}}
         return mp.mpf(eval(expr_str, ns))
 
     # Convention A: (q;q)_m = Π_{k=1}^{m} (1 - q^k) [the 136.07 convention]

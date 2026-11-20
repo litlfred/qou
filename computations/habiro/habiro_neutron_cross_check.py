@@ -56,7 +56,13 @@ def q_integer(k, q):
 
 def eval_a_m(expr_str, u_val):
     """Evaluate a Habiro coefficient polynomial at u = u_val (u = \check{q} = q^{1/2}, spinor rate; "u" name per Habiro lit)."""
-    ns = {"check_q": u_val, "__builtins__": {}}
+    # Bind BOTH spellings. The upstream witness emits its a_m
+    # polynomials in "u" (e.g. "-16*u - 16"), which is what this
+    # function's own docstring says it evaluates at — while the
+    # namespace bound only "check_q", so every eval raised
+    # NameError. Keeping check_q too: a witness written in the
+    # older spelling still evaluates.
+    ns = {"check_q": u_val, "u": u_val, "__builtins__": {}}
     return mp.mpf(eval(expr_str, ns))
 
 
