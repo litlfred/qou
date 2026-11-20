@@ -69,6 +69,7 @@ from canonical_braid_crossings import (  # noqa: E402
 )
 from per_irrep_pole_proton_h3 import negative_q_pole_order  # noqa: E402
 from q_parameter import Q as Q0_FLOAT  # noqa: E402  authoritative q_0
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 
@@ -552,15 +553,21 @@ def run_atom(Z: int, N: int, *, workers: int | None = None) -> int:
     # because the per-block matrices are not currently materialised
     # in the Path A pipeline at H_n for n > 3).  Q0_FLOAT is imported
     # at module top from q_parameter (per Gemini review PR #607).
+    # Evaluated at the 50-digit proton pin in exact/50-digit arithmetic and
+    # serialized as a decimal STRING rounded to FINGERPRINT_PRECISION places.
+    # It was float(chi.subs(q, Q0_FLOAT)) — a float64 pin and a float64 value
+    # (12 raw-float64 fields per witness).
+    q0_exact = sp.Float(Q_50_DIGIT_STR, 60)
     chi_fp_pairs = []
     for lam in sorted(chi_q, key=lambda L: (-len(L), tuple(-x for x in L))):
         try:
-            val = float(chi_q[lam].subs(q_var, Q0_FLOAT))
-            chi_fp_pairs.append((list(lam), round(val, FINGERPRINT_PRECISION)))
+            val = sp.N(chi_q[lam].subs(q_var, q0_exact), 50)
+            chi_fp_pairs.append(
+                (list(lam), f"{sp.Float(val, 50).round(FINGERPRINT_PRECISION):.{FINGERPRINT_PRECISION}f}"))
         except (TypeError, ValueError):
             chi_fp_pairs.append((list(lam), None))
     builder.add_data("atom_chi_fingerprint", {
-        "q0": float(Q0_FLOAT),
+        "q0": Q_50_DIGIT_STR,
         "precision": FINGERPRINT_PRECISION,
         "n_partitions": len(chi_fp_pairs),
         "fingerprint": chi_fp_pairs,
