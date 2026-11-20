@@ -99,3 +99,6 @@ Took ~10 from a fresh audit run on main 917b69399 (22 non-exempt candidates; 7 s
 - STILL OPEN (owner): prop:homological-shell-condensation is typed proposition but states a conjecture.
 
 ## 2026-11-20 — conj:homological-shell-condensation (PR #8658, merged a139605781). No provable consumers, no cascade. The gb-spectral-sequence downstream thread is closed.
+
+## 2026-11-20 — shell condensation well-posedness (PR #8674, audit doc)
+- 5 definitional gaps; Lean carrier satisfiable by PUnit; every precise reading (R1 Hecke+length+Hochschild, R2 affine sheaf, R3 End+tau-hat) gives vanishing for ALL n. Conjecture stays open; waiting on owner to pick the algebra/grading/cohomology.
