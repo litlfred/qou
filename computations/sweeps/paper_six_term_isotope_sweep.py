@@ -376,31 +376,51 @@ def term1_descended(vols):
     return p
 
 
+def _phi_q_or_divergent(arg):
+    """Φ_q(arg), or ``mp.inf`` when ``arg`` is at or past the pole.
+
+    Φ_q(x) = ∏_{k≥1} (1 − q^{-k} x)^{-1} has its first pole at x = q₀. Under
+    the convention-D volumes (owner ruling 2026-11-18) the proton and neutron
+    generator volumes are 1.2824 and 1.1337, past it (bean qou-2tuv).
+    """
+    phi = Phi_q(arg)
+    if mp.isinf(phi) or mp.isnan(phi):
+        return mp.inf
+    return mp.mpf(phi)
+
+
 def term2_single_gen_tower(vols):
-    """Term 2: Σ_i Φ_q(|V̂_i|)."""
+    """Term 2: Σ_i Φ_q(|V̂_i|).
+
+    Returns ``mp.inf`` if any generator volume is at or past the Φ_q pole.
+    It used to skip such generators silently (and, through a swallowed
+    TypeError, every generator); a divergence is now reported as what it is
+    (owner, 2026-11-20).
+    """
     total = mp.mpf(0)
     for v in vols:
-        try:
-            phi = Phi_q(v)
-            if not mp.isinf(phi) and not mp.isnan(phi):
-                total += phi
-        except Exception:
-            pass
+        # |V̂_i| per the docstring. The old body passed the raw volume, which
+        # is a dict ({"full", "sym", ...}); Phi_q raised TypeError on it and the
+        # blanket `except: pass` swallowed that, so this term was 0 for EVERY
+        # isotope in every convention, not only past the pole.
+        phi = _phi_q_or_divergent(abs_mpf(v))
+        if mp.isinf(phi):
+            return mp.inf
+        total += phi
     return total
 
 
 def term3_pair_gen_tower(vols):
-    """Term 3: z² Σ_{i<j} Φ_q(|V̂_i V̂_j|)."""
+    """Term 3: z² Σ_{i<j} Φ_q(|V̂_i V̂_j|). ``mp.inf`` on any divergent pair
+    (previously skipped silently, as in Term 2)."""
     total = mp.mpf(0)
     n = len(vols)
     for (i, j) in combinations(range(n), 2):
         arg = abs_mpf(vols[i]) * abs_mpf(vols[j])
-        try:
-            phi = Phi_q(arg)
-            if not mp.isinf(phi) and not mp.isnan(phi):
-                total += Z_MARK ** 2 * phi
-        except Exception:
-            pass
+        phi = _phi_q_or_divergent(arg)
+        if mp.isinf(phi):
+            return mp.inf
+        total += Z_MARK ** 2 * phi
     return total
 
 
