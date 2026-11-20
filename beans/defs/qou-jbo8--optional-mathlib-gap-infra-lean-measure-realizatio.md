@@ -1,13 +1,13 @@
 ---
 # qou-jbo8
 title: 'Optional Mathlib-gap infra: Lean measure-realization of G_k via gaussianReal mgf — NOT cheap (cost estimate corrected 2026-08-01)'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T15:13:34Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-20T18:52:58Z
 parent: qou-c8p8
 ---
 
@@ -54,3 +54,7 @@ Stone–Weierstrass) — same optional status, likewise not on any critical path
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8320, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-20 — DONE (PR #8651)
+
+`QOU/Archimedean/SWGaussianLogNormalMoments.lean`, sorry-free. **Correction:** `mgf_gaussianReal` IS in pinned Mathlib f897ebc; the 2026-08-01 probe failed because the restored olean cache lacks `Mathlib.Probability.Distributions.Gaussian.Real` (41-module cone, built from source with `scripts/lean-build-mathlib-gap-cone.py` in 165 s). It was a wrapper, not a Mathlib PR.
