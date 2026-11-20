@@ -21,4 +21,3 @@
 | **Strong sharpness, depth $\ge$ 4** | **conjectural** | Beilinson + Goncharov (external) |
 | **Geometric realisation of Cl_3(2π/5)** | **open**, 3 candidates | [Geometric realisation of $\mathrm{Cl}_3(2\pi/5)$ as a Bring-natural depth-3 invariant](#conj:cl3-zeta5-geometric-realization) |
 | **Bridge map at $n \geq 5$ partitions** | **open** | extends the bar-class argument |
-| **Lean substantive proofs** | **partial** (sorry pending Mathlib's IwahoriHecke API) | scaffolding in `qou:` namespace |

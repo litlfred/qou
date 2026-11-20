@@ -74,7 +74,7 @@ $q^{n+1}$ transient factor of which those limits are taken.
 
 ## Status
 
-The identity is proved in Lean at every order $n$, over a
+The identity is proved at every order $n$, over a
 generic field with no archimedean construct (the statement is pre-wall).
 It was first established computationally as an exact integer-Laurent
 equality for $n \leq 32$ and numerically to $10^{-497}$ for $n \leq 64$;

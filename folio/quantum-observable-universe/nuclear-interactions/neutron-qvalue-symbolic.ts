@@ -9,6 +9,7 @@ export default proposition({
     "rem:energy-scale-planck",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): (Lean `commutant_trace_eq` in `QOU/BraidsAndKnots/NucleonIsospinExclusions.lean`)." },
     {
       kind: "caveat",
       date: "2026-05-24",

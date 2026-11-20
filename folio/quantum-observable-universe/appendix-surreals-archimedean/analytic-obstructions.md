@@ -45,7 +45,7 @@ never integrates.
 ## 2. Hilbert-space completion: stylistic, not load-bearing
 
 Only one place in this paper writes down a Hilbert-
-space completion: `knot-eigenbasis-complete-proof.md` (part 3 of
+space completion: [Proof of Completeness of the knot-type eigenbasis](#prf:knot-eigenbasis-complete) (part 3 of
 the proof). The passage reads:
 
 > The direct limit $\varinjlim V^{\otimes n}$ is a pre-Hilbert

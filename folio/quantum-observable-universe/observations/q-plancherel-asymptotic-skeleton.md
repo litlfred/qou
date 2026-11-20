@@ -27,7 +27,7 @@ $$
 
 ## Which weight this is, and why it changed
 
-**Identification of $\mathbb{M}_{n,q}$ with the Molien fake-degree measure.** Note that the Plancherel measure $\mathbb{M}_{n,q}$ governing clause 2 is distinct from the squared-quantum-dimension weight $w_\lambda^{(n)}(q) = \dim_q^2(\lambda)/[n]_q!$; rather, $\mathbb{M}_{n,q}$ coincides with the Molien fake-degree weight of `QOU.MathlibExt.MolienFakeDegreeGeneralN.molienSum`, which satisfies
+**Identification of $\mathbb{M}_{n,q}$ with the Molien fake-degree measure.** Note that the Plancherel measure $\mathbb{M}_{n,q}$ governing clause 2 is distinct from the squared-quantum-dimension weight $w_\lambda^{(n)}(q) = \dim_q^2(\lambda)/[n]_q!$; rather, $\mathbb{M}_{n,q}$ coincides with the Molien fake-degree weight, which satisfies
 
 $$
   \frac{f^\lambda \, q^{-\kappa_\lambda} \, \dim_q(\lambda)}{[n]_q!}
@@ -36,11 +36,11 @@ $$
   \kappa_\lambda \;=\; \sum_{\square \in \lambda} c(\square),
 $$
 
-verified in exact rational arithmetic for every partition of $n = 1,\dots,9$ ([`probes/molien_feray_meliot_bridge_probe.py`](../../../computations/probes/molien_feray_meliot_bridge_probe.py)). So this proposition is not being restated over a *new* object; it is being restated over one the corpus has had all along, with the substitution $Q = q^2$ making the identification.
+verified in exact rational arithmetic for every partition of $n = 1,\dots,9$. So this proposition is not being restated over a *new* object; it is being restated over one the corpus has had all along, with the substitution $Q = q^2$ making the identification.
 
 **The exponent $\kappa_\lambda$ is forced, not chosen.** Substituting $Q = q^2$ into the display above leaves $q^{2n(\lambda) - \sum_\square h(\square) + n}$, which collapses to $q^{-\kappa_\lambda}$ by two identities — $\sum_\square h(\square) = n(\lambda) + n(\lambda') + n$ and $\kappa_\lambda = n(\lambda') - n(\lambda)$ — each verified independently over all partitions of $n \leq 10$ in the same probe. Without them the identity would be an agreement at $96$ sample points; with them it is a derivation.
 
-This also explains a coincidence the corpus carried without comment: `molienSum_eq_qFactorial` (Lean) says $\sum_\lambda f^\lambda q^{-\kappa_\lambda}\dim_q(\lambda) = [n]_q!$, and $\mathbb{M}_{n,q}$ is a probability measure by construction. Those are the same theorem.
+This also explains a coincidence the corpus carried without comment: the proved identity $\sum_\lambda f^\lambda q^{-\kappa_\lambda}\dim_q(\lambda) = [n]_q!$ holds for every $n$, and $\mathbb{M}_{n,q}$ is a probability measure by construction. Those are the same theorem.
 
 ## The substrate sits at $q > 1$, and that costs an orientation, not the theorem
 

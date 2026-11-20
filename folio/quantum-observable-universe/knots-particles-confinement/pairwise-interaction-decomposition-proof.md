@@ -13,7 +13,7 @@ proposition should be read.
 
 | part | epistemic tier | rests on |
 |---|---|---|
-| 1. composite reduction | the hexagon axiom, solved for $c_{X \otimes Y, Z}$ | axiom of `BraidedCategory` |
+| 1. composite reduction | the hexagon axiom, solved for $c_{X \otimes Y, Z}$ | axiom of a braided category |
 | 2. route independence | theorem | hexagon + naturality of the braiding |
 | 3. crossing count | theorem, proved here | the locality of an elementary crossing |
 

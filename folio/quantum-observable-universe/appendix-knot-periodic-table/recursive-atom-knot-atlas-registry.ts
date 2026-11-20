@@ -157,6 +157,7 @@ export default remark({
     "appendix",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Provenance formerly in the prose. AME-inversion source: the producer states it outright — *\"that IS a form of AME-driven fitting (we picked the knot whose volume is closest to $B_\\mathrm{AME}/\\rho$)\"* ([`mass_table_ppb.py` L18–21](../../../computations/mass_table_ppb.py)) (quoted in the manual-historical tier row and in the deuteron provenance row). Adjudication: [`2026-08-21-deuteron-knot-assignment-adjudication.md`](../../../docs/audits/2026-08-21-deuteron-knot-assignment-adjudication.md) (verdict **UNDETERMINED** — all three candidates $6_2$ / trefoil / Hopf inadmissible). Wenzl bridge: [`y_lambda_wenzl_bridge_extended.py`](../../../computations/y_lambda_wenzl_bridge_extended.py). Per-isotope records follow the [`IsotopeRecord`](https://github.com/litlfred/qou/blob/main/computations/isotope_record_schema.py) schema with an explicit knot-operator catalogue. The Layer-1 pipeline is implemented in [`canonical_mass_table_extended.py`](https://github.com/litlfred/qou/blob/main/computations/canonical_mass_table_extended.py)." },
     {
       kind: "deprecated",
       date: "2026-09-05",

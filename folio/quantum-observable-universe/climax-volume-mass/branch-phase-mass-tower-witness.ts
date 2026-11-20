@@ -31,6 +31,7 @@ export default remark({
     status: "verified",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The symbolic pipeline ([`per_irrep_pole_atom.py`](../../../computations/per_irrep_pole_atom.py)) verifies" },
     {
       kind: "note",
       body: "The rejected Wedderburn pair-generator extension was recorded in\n`fsh-guts/deprecated/computations/rho-k-pair-gen-v2-wedderburn.witness.json`;\nthat witness is deprecated. The rejection itself (it worsens the fit\nto ~4.7% MAE) stays in the prose.",

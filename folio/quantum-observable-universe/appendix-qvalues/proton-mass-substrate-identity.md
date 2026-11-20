@@ -12,7 +12,7 @@ $$
 $$
 
 *to a residual of $0.24\,\mathrm{ppm}$ at $q = q_0$ (50-dps MPFR
-verified, [`m_p_substrate_identity_50dps.py`](../../../computations/m_p_substrate_identity_50dps.py)).*
+verified).*
 
 *Equivalently, factoring $12 = \dim V_{(2,1)} \cdot |S_3| = 2 \cdot 6$:*
 

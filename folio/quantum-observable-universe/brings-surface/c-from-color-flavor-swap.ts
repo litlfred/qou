@@ -2,6 +2,7 @@ import { conjecture } from "../../schema/builders";
 
 export default conjecture({
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Numerical cross-check sources ([`verify_c_color_swap.py`](../../../computations/verify_c_color_swap.py), [`verify-c-color-swap.witness.json`](../../../computations/verify-c-color-swap.witness.json)). and the $S_5 \\leftrightarrow \\mathrm{SO}(3)$ fiber-action class `conj:s5-so3-fiber-action` remain uninhabited; supplying both makes it unconditional. Consumers: the CPT composite, already formalised." },
     {
       kind: "note",
       date: "2026-08-08",

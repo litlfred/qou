@@ -111,8 +111,8 @@ parameter manifold:
 
 ## Cross-references
 
-- The complex-$q$ lift: blocks `prop:q-zero-complex-extension` +
-  `prop:lusztig-vs-hermitian-bar`
+- The complex-$q$ lift: [the base-ring polymorphism of the substrate at complex $q$](#prop:q-zero-complex-extension) and
+  [the Lusztig bar versus the Hermitian-$\ast$ involution](#prop:lusztig-vs-hermitian-bar)
 - Volume Conjecture: [Kashaev volume conjecture](#conj:kashaev-volume-conjecture)
 - The Bloch-group route: [Borromean rings represent a non-trivial element of $K_3(\mathbb{C})$ / Bloch group with regulator $r_2 = 8G$](../mass-theory/borromean-bloch-group-element.md)
 

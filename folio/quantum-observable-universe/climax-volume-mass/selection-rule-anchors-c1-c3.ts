@@ -18,6 +18,8 @@ export default proposition({
   },
   uses: [],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): This proposition formalizes both identities directly from the hook-length formula: [`QOU.Mass.selection_rule_c1_real`](../lean/QOU/Mass/QHookDimension.lean) and `QOU.Mass.selection_rule_c3_real` evaluate the sums over `dimQ` of the partitions of $2$ and $4$, where `dimQ` maps each partition shape through its conjugate and hook lengths to $[n]_q!$ divided by the hook $q$-integer product, and the hook multiset of each shape is discharged by `decide`." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): ## Lean proof structure | We provide two purely algebraic identities at the symbolic level, each closed by `field_simp; ring`: | They close by `ring` after `field_simp` clears the $q^{-1}$ denominators." },
     {
       kind: "refined-framing",
       date: "2026-08-29",

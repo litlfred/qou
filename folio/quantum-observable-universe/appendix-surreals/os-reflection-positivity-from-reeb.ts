@@ -35,4 +35,7 @@ export default conjecture({
     "reeb",
     "open-problem",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): 3. **Mathlib infrastructure.** A complete proof requires a Frobenius structure on the categorical $C^*$-completion and the Wightman reconstruction theorem—neither in Mathlib today. The conjecture is packaged as the typeclass `QOU.AppendixSurreals.OSReflectionPositivity`, with one field stating the positivity inequality. Granting the class instance, the surreal bound completes OS reconstruction." },
+  ],
 });

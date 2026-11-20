@@ -13,7 +13,7 @@ $$
 
 ## Separating $C$ from the CPT composite
 
-[CPT-saturation as Type-B fold-orbit closure](#conj:cpt-orbit-closure-density) formalises the **composite** CPT action. The framework historically collapses C, P, T into the single bar-involution [Bar-involution and its $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projections: the canonical $q \leftrightarrow q^{-1}$, $\sigma \leftrightarrow \sigma^{-1}$ involution on the Hecke algebra, splitting every $H_n(q)$-quantity into a bar-symmetric (even/cosh/cos/$\mathrm{Li}_2^q$-like) part the framework retains and a bar-anti-symmetric (odd/sinh/sin/$\Phi_q$-like) part the framework projects away](#def:bar-involution) on Hecke generators ($q \mapsto q^{-1}$ together with $\sigma_i \mapsto \sigma_i^{-1}$). That conflation suppresses the **distinct categorical sources** of the three discrete symmetries:
+[CPT-saturation as Type-B fold-orbit closure](#conj:cpt-orbit-closure-density) captures the **composite** CPT action. The framework historically collapses C, P, T into the single bar-involution [Bar-involution and its $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projections: the canonical $q \leftrightarrow q^{-1}$, $\sigma \leftrightarrow \sigma^{-1}$ involution on the Hecke algebra, splitting every $H_n(q)$-quantity into a bar-symmetric (even/cosh/cos/$\mathrm{Li}_2^q$-like) part the framework retains and a bar-anti-symmetric (odd/sinh/sin/$\Phi_q$-like) part the framework projects away](#def:bar-involution) on Hecke generators ($q \mapsto q^{-1}$ together with $\sigma_i \mapsto \sigma_i^{-1}$). That conflation suppresses the **distinct categorical sources** of the three discrete symmetries:
 
 | Symmetry | Categorical source | Acts on |
 |----------|--------------------|---------|
@@ -29,7 +29,7 @@ The proposition relies on the color-sheet flavor structure established in [Inter
 
 1. **C is well-defined.** The flavor-content map $(F_1, F_2) \mapsto (\bar F_1, \bar F_2)$ commutes with the color-tube weight tensor $W_{c_1 c_2}(F_1, F_2)$—i.e. $W_{c_1 c_2}(\bar F_1, \bar F_2) = W_{c_1 c_2}(F_1, F_2)$ (the weights are flavor-conjugation invariant).
 2. **C is an involution.** Each color sheet flips back to its original flavor under two applications.
-3. **C commutes with bar-involution on the algebraic side.** This forces $\mathrm{CP} \cdot \mathrm{T}$ and $\mathrm{C} \cdot \mathrm{PT}$ to reduce to the bar-involution identity classified in [`bar-involution.md`](../braids-and-knots/bar-involution.md) §Bar-symmetric.
+3. **C commutes with bar-involution on the algebraic side.** This forces $\mathrm{CP} \cdot \mathrm{T}$ and $\mathrm{C} \cdot \mathrm{PT}$ to reduce to the bar-involution identity classified in [Bar-involution and its $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projections](../braids-and-knots/bar-involution.md) §Bar-symmetric.
 
 When all three hold, $C$ constitutes the well-defined Z/2 categorical symmetry on the color-sheet flavor data. The CPT composite of [CPT-saturation as Type-B fold-orbit closure](#conj:cpt-orbit-closure-density) factors as $\mathrm{CPT} = C \cdot P \cdot T$ in the natural order, as three commuting Z/2 actions on the color-tube structure.
 
@@ -67,16 +67,16 @@ The class becomes inhabited by the color-tube data once [Inter-nucleon Hecke cha
 
 - [CPT-saturation as Type-B fold-orbit closure](#conj:cpt-orbit-closure-density) becomes a corollary of $\mathrm{CPT} = C \cdot P \cdot T$ once the charge-conjugation, parity and time-reversal components close jointly—the content of [CPT closure: charge conjugation](#conj:cpt-d6-d7-d8-closure).
 - The matter/antimatter sheet structure on Bring's quintic surface ([Color tube fibers](color-tube-fibers.md)) acquires a natural C-action that descends to the SO(3) fiber.
-- Type-B folding for chirality and CPT (`conj:type-b-folding-cpt`) is the symmetric-crystal analogue of this conjecture. Folding the $\mathfrak{sl}_n$ Cartan datum to Type B realises C as a symmetric-crystal structure.
+- Type-B folding for chirality and CPT ([Type-B Cartan folding realises CPT via symmetric-crystal $\mathbb{Z}/2$ fixed points](#conj:type-b-folding-cpt)) is the symmetric-crystal analogue of this conjecture. Folding the $\mathfrak{sl}_n$ Cartan datum to Type B realises C as a symmetric-crystal structure.
 
 ## Numerical cross-check and open content
 
-At the 50-digit substrate $q_0$, the flavor-conjugation involution leaves the color-tube weighted inter-nucleon Hecke generator invariant for all sixteen nucleon pairs drawn from $\{p, n, \bar p, \bar n\}$, in two two-dimensional Hecke representations (the diagonal eigenvalue model and a non-diagonal conjugate of it), with the $\epsilon$ and $W$ tables invariant cell by cell ([`verify_c_color_swap.py`](../../../computations/verify_c_color_swap.py), [`verify-c-color-swap.witness.json`](../../../computations/verify-c-color-swap.witness.json)). The check runs the uniform projection $W = 1/9$—the only realisation of $W$ available while its closed form remains open—so it corroborates the derivation rather than testing the conjectural Bring-derived $W$. No parameter is fitted.
+At the 50-digit substrate $q_0$, the flavor-conjugation involution leaves the color-tube weighted inter-nucleon Hecke generator invariant for all sixteen nucleon pairs drawn from $\{p, n, \bar p, \bar n\}$, in two two-dimensional Hecke representations (the diagonal eigenvalue model and a non-diagonal conjugate of it), with the $\epsilon$ and $W$ tables invariant cell by cell. The check runs the uniform projection $W = 1/9$—the only realisation of $W$ available while its closed form remains open—so it corroborates the derivation rather than testing the conjectural Bring-derived $W$. No parameter is fitted.
 
-The statement is conjectural only for as long as [Inter-nucleon Hecke channel assignment from Bring color-tube weighting](#conj:inter-nucleon-channel-color-tube) and the $S_5 \leftrightarrow \mathrm{SO}(3)$ fiber-action class `conj:s5-so3-fiber-action` remain uninhabited; supplying both makes it unconditional.
+The statement is conjectural only for as long as [Inter-nucleon Hecke channel assignment from Bring color-tube weighting](#conj:inter-nucleon-channel-color-tube) and the $S_5 \leftrightarrow \mathrm{SO}(3)$ fiber-action conjecture remain open; establishing both makes it unconditional.
 
 ## Cross-references
 
 - Upstream class: [Inter-nucleon Hecke channel assignment from Bring color-tube weighting](#conj:inter-nucleon-channel-color-tube)
-- [CPT-saturation as Type-B fold-orbit closure](#conj:cpt-orbit-closure-density)—the CPT composite, already formalised
-- [`bar-involution.md`](../braids-and-knots/bar-involution.md)—the bar-involution = CPT composite identification at the algebraic level
+- [CPT-saturation as Type-B fold-orbit closure](#conj:cpt-orbit-closure-density)—the CPT composite
+- [Bar-involution and its $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projections](../braids-and-knots/bar-involution.md)—the bar-involution = CPT composite identification at the algebraic level

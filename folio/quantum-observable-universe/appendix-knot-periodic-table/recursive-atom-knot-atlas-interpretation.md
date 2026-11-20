@@ -7,7 +7,7 @@ is auto-rendered by
 
 **Sources of truth** (in order):
 
-1. [`confined-particle.md`](#def:confined-particle) — GB-NF particle registry (canonical $T_w$).
+1. [Confined particle](#def:confined-particle) — GB-NF particle registry (canonical $T_w$).
 2. [`mass-table-ppb.witness.json`](../../../computations/mass-table-ppb.witness.json) — D..${}^{40}$Ca (manual-historical, recursive, magic-A).
 3. [`methodology-deprecation.witness.json`](../../../computations/methodology-deprecation.witness.json) — per-particle methodology record.
 4. [`hp_volume.py`](../../../computations/hp_volume.py) — $\geq 50$-digit symbolic-$q$ Markov-closure $\to$ $\mathrm{Vol}_{\mathrm{hyp}}$.
