@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-08T07:40:02Z
-updated_at: 2026-11-15T17:10:00Z
+updated_at: 2026-11-20T15:40:00Z
 parent: qou-v2om
 ---
 
@@ -281,3 +281,7 @@ The owner ruled that the γγ selection rule also covers the nuclear bond letter
 - **PR**: [`litlfred/qou#8279`](https://github.com/litlfred/qou/pull/8279) (branch `feat/round67-diproton-coordination-markov-cut-parity-43c1`, Commit 1 `cfebb01621939a34b7b6881f7cb1f8c1de011515`, Commit 2 / Head `6ad7f37ff2f830c6b6b24c3e111bd408c518e8e6`).
 - **Lean 4 Artifact**: `folio/quantum-observable-universe/lean/QOU/Mass/DiprotonResponseClosedForm.lean (`classical_values_at_one`)` (0 sorry, 0 findings across all 6 static vacuity audits).
 - **80-dps Witness**: `computations/probes/diproton_coordination_markov_cut_parity_probe.py` (`scriptHash: 54f10b23e4d2`) + `test/results/witnesses/diproton-coordination-markov-cut-parity.witness.json` (`allPassed: true`).
+
+
+## 2026-11-20 — PR #8564 (branch claude/qbeta-gg-sdp-base-2026-11-20): γγ + every-level reading 3 per nucleus, and the Q_β it gives on the ruled base
+Pre-registered (b3a70fdf25). Lean QOU/QBeta/GammaGammaSdpQBetaBase.lean (8 declarations, lean -DautoImplicit=false -s 65536 exit 0, no sorryAx, negative controls fail as expected): TowerFrobeniusFeasible / TowerSelected (reading 3 on the whole word at every tower level, generic ring); frobeniusSelected_ten_unique (the selection over V^k, k <= 10, is V^3 only); qbeta_delta_vanishes_of_frobeniusSelected (|eps W_n - eps W_p| * E0 = 0 for every eps); negative control feasible_pair_delta_ne_zero (V^3 and V^6 both feasible, separated by length). Probe computations/probes/qbeta_gg_sdp_base/ (13/13, 60 dps, proton pin, no AME): p and n survivors both {V^3, V^6, V^9}; 2H = pp = nn as words, 81/225 pass at H_6 and H_3 (bond P^3 or P^6 at all four placements); Q_beta on z_D with tower E0 = 0 for the cost-minimal p = n = V^3, and 0.01820 / 0.03022 / 0.04842 MeV for unequal survivor pairs (reported, not ranked; picking p != n by Q_beta would be a fit). Scope (a); agrees with the 2026-11-15 route-3 synthesis on qou-99qc. Bean stays open (rule 13a): a flavour ingredient is still missing.

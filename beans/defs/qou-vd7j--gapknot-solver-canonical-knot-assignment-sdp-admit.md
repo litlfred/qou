@@ -8,7 +8,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-02T13:56:51Z
-updated_at: 2026-10-04T15:19:34Z
+updated_at: 2026-11-20T15:40:00Z
 parent: qou-v2om
 ---
 
@@ -91,3 +91,7 @@ computations/probes/frobenius_admissibility_net_row_probe.py (proton pin, 60 dps
 ## Progress Update (PR #8344)
 - Formalized in Lean 4.24.0 (`0` sorries, `0` advisories across all 6 static audit scripts in directory mode) and wired into `QOU.lean`.
 - Verified at `mp.dps = 50` with 2-commit witness stamp (`291dd36ab34a42866efb444b586e05f0b621971e` -> `38f4a86a95df28f43dea57e331b0e3b812f7f526`) in PR #8344.
+
+
+## 2026-11-20 — PR #8564: the over-determination fix, in Lean
+The 2026-08-02 net-row diagnosis was convention C. Under D (net_row_probe, on main: rank 5, 1'v = 0.0902) Lean now states both halves: net_row_satisfiable (once G x0 = nf, the net row is met along the radical) and demand_infeasible_of_radical (G x = nf fails iff <v, nf> != 0). chi_(1^3)(V^k) = 1 for k = 0..10, so gammaGamma_demand_infeasible_of_pairing_eq_altChar (pairing = altChar carried as a hypothesis, measured) shows the G x = nf test admits NO gamma-gamma word, ever. That is a property of the test. The owner-ruled admissibility is reading 3; run per nucleus on #8564. Bean stays in-progress: items 1-3 of the R5 gap (finitude, SDP search bounds, K(H) identification) are not touched.
