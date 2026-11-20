@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-20T18:20:00Z
+updated_at: 2026-11-20T20:00:00Z
 parent: qou-10v9
 ---
 
@@ -4196,3 +4196,11 @@ Answers the OWNER DECISION of the PR #8634 entry above. Verbatim intent (relayed
 - `eChannel_barClosed` (determinant form of the e⁻ channel) is therefore not the e⁻ channel of the corpus photon.
 - Owner direction in the same message: pursue N1 — derive the W as a CHARGED element and the β-decay electron channel, so Q_β (re-aimed 19:33: the decay AMPLITUDE M(q) and RATE 𝔇_n(q)) is derived from γγ / gauge-boson production, not chosen. Branch `claude/qbeta-n1-charged-w-element-2026-11-20`.
 - Per owner rulings-are-conjectures preference: the rejection is recorded as a ruling about admissible premises, not as a derived statement. Bean stays open (rule 13a).
+
+## 2026-11-20 ~20:00Z — N3: Q_β / 𝔇_n as a T⁺ matrix element (PR #8639, draft; not merged)
+Lean `QOU/QuarkState/TPlusChargedCurrentElement.lean`, sorry-free; probe `computations/probes/qbeta_n3/` 15/15. Pre-registration committed before any number.
+- FORCED: normalised |⟨p|T⁺|n⟩|² equals the T⁻T⁺ eigenvalue: 1 on isospin ½, [2]² on isospin 3/2 (`tplus_norm_sq` + `Fd_eq_transpose`). It does not depend on any invariant normalisation.
+- FORCED NEGATIVE (scope b; invariant: T⁺ intertwines σ₁ and σ₂): every H₃ operator, β_Bor = V³ included, has the same spectrum on n and on T⁺n (`hecke_energy_transport`). So the bimodule produces no Q_β and no energy scale. G_F does not emerge.
+- Leptonic factor: the charge-exchange amplitude of the weak insertion −h·P_L on one quark–lepton crossing is −h·q/[2] when the quark strand is on the left and −h·q⁻¹/[2] when it is on the right (`exchange_quark_left/right`). This is −tanh(λ)e^{±λ} with λ = ln q. It is O(h) as q→1 and vanishes iff h = 0. Bar maps the left amplitude to minus the right one.
+- |M|² at proton q₀: 0.01332 / 0.00877 (isospin ½, quark left / right); 0.05385 / 0.03547 (isospin 3/2). Comparison only: 𝔇_n/m_e = 1.466e-24.
+- Open choices: (1) quark-strand placement; (2) isospin ½ vs 3/2 (Δ_S lives on 3/2); (3) current–current factorisation; (4) every energy or rate scale. Bean stays open (13a).
