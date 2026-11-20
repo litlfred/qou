@@ -5,8 +5,8 @@ $[k]_q = (q^k - q^{-k})/(q - q^{-1})$ vanishes for $k \geq 1$. (The
 older $\mathbb{Q}(q^{1/2})$ hypothesis was an artefact of convention
 C, whose $z = 1/(q^{1/2}+q^{-1/2})$ needs the square root; convention
 D's $z = q^{3}/(q^{2}+1)$ does not, and nothing below leaves
-$\mathbb{Q}(q)$.) We
-write $z$ for the Markov parameter of the framework normalisation
+$\mathbb{Q}(q)$.) Write
+$z$ for the Markov parameter of the framework normalisation
 $\mathrm{tr}_M(\sigma_i) = z$ — deliberately left **undetermined**
 here, since Step 3b derives it rather than stipulating it — and a
 *Markov trace* means a compatible family of linear functionals
@@ -117,8 +117,8 @@ $\mathrm{TL}_n(q) = H_n(q)/I_n$ is non-degenerate.
 
 **Step 3: uniqueness.**
 Let $\tau$ be any Markov trace on the tower satisfying M1–M3 with
-the same parameter $z$. We show $\tau = \mathrm{tr}_M$ at every
-level, by induction on $n$.
+the same parameter $z$. Induction on $n$ shows $\tau = \mathrm{tr}_M$ at every
+level.
 
 *Base case.* $H_1(R, q) = R$, and M1 forces
 $\tau(c) = c = \mathrm{tr}_M(c)$ for all $c \in R$.

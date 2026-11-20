@@ -1,5 +1,5 @@
 *Proof.*
-We verify each $S$-eigenvalue in turn.
+Each $S$-eigenvalue is checked in turn.
 
 **Coefficients.** The action $q \mapsto q^{-1}$ extends to the
 underlying field of fractions and acts on each coefficient:

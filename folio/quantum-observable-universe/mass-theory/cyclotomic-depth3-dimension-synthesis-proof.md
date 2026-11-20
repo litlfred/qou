@@ -28,7 +28,7 @@ $$
 
 Wait — the formula applies at $\zeta_n$ with $n = K/\gcd(j, K)$.
 For prime $K$ and $1 \leq j \leq K - 1$, $\gcd(j, K) = 1$, so
-$\zeta_K^j$ is itself a primitive $K$th root. We apply Theorem A
+$\zeta_K^j$ is itself a primitive $K$th root. Apply Theorem A
 at $n = K$:
 
 $$

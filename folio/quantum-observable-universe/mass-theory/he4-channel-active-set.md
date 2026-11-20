@@ -16,7 +16,7 @@ This measures the binding that the magic-shell coupling must explain beyond the 
 
 ## LP formulation
 
-We apply the [Knot operator selection as linear program with LP duality](#prop:operator-selection-lp) canonical form. The vector $t \in \mathbb{R}^3$ holds the residuals. The matrix $G = I_3$ because the channels are orthogonal at leading order. Sub-braid corrections are sub-percent. The binding target is:
+Apply the [Knot operator selection as linear program with LP duality](#prop:operator-selection-lp) canonical form. The vector $t \in \mathbb{R}^3$ holds the residuals. The matrix $G = I_3$ because the channels are orthogonal at leading order. Sub-braid corrections are sub-percent. The binding target is:
 $$
   n_\mathrm{target} \;=\; \Delta_\mathrm{coupling}(2, 2)
   \;=\; \Delta_\mathrm{cat}({}^4\mathrm{He}) - 2\,\Delta_\mathrm{cat}({}^3\mathrm{He})
@@ -25,7 +25,7 @@ $$
 
 ## Solution
 
-The LP solves uniquely with a duality gap of $0$. We have $\mathrm{primal\_obj} = \mathrm{dual\_obj} = 268.949$. The primal weights $x^\star$ and dual shadow prices $y^\star$ are:
+The LP solves uniquely with a duality gap of $0$. Then $\mathrm{primal\_obj} = \mathrm{dual\_obj} = 268.949$. The primal weights $x^\star$ and dual shadow prices $y^\star$ are:
 
 | channel $i$ | $x^\star_i$ | $y^\star_i$ | status |
 |---|---:|---:|---|
@@ -33,7 +33,7 @@ The LP solves uniquely with a duality gap of $0$. We have $\mathrm{primal\_obj} 
 | $\mathrm{T} \oplus p$             | $13.197$   | $0$              | primal-saturating |
 | ${}^3\mathrm{He} \oplus n$        | $0$        | $0.796$          | active |
 
-We have $y_0^\star = 20.380$. The **active set** contains the constraints with a positive dual variable:
+The shadow price is $y_0^\star = 20.380$. The **active set** contains the constraints with a positive dual variable:
 $$
   \mathcal{A}({}^4\mathrm{He}) \;=\; \{\,\mathrm{D} \oplus \mathrm{D},\; {}^3\mathrm{He} \oplus n\,\}.
 $$
@@ -44,7 +44,7 @@ $$
 For the $^4\mathrm{He}$ operator-selection LP:
 1. **Unique primal optimum:** The system selects the $\mathrm{T} \oplus p$ channel with $x^\star_{\mathrm{T} \oplus p} > 0$ and $x^\star_i = 0$ for all $i \neq \mathrm{T} \oplus p$.
 2. **Active set:** The dual-tight constraints are $\mathcal{A}({}^4\mathrm{He}) = \{\,\mathrm{D} \oplus \mathrm{D},\; {}^3\mathrm{He} \oplus n\,\}$.
-3. **Dual ordering:** We have $y^\star_{\mathrm{D} \oplus \mathrm{D}} > y^\star_{{}^3\mathrm{He} \oplus n} > y^\star_{\mathrm{T} \oplus p} = 0$.
+3. **Dual ordering:** $y^\star_{\mathrm{D} \oplus \mathrm{D}} > y^\star_{{}^3\mathrm{He} \oplus n} > y^\star_{\mathrm{T} \oplus p} = 0$.
 
 ## Interpretation
 
