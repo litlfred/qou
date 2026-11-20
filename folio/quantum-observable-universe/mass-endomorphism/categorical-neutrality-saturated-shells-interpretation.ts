@@ -16,7 +16,7 @@ export default remark({
     "prop:categorical-neutrality-saturated-shells",
     "prop:hoefsmit-seminormal-form",
     "rem:phi-n-global-section",
-    "prop:atom-knot-mass-derivation",
+    "conj:atom-knot-mass-derivation",
   ],
   cites: ["geckpfeiffer2000", "mathas1999"],
   authorNotes: [

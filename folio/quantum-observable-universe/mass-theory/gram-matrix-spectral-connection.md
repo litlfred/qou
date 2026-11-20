@@ -154,5 +154,5 @@ spectral-sequence differentials $d_r$ are encoded in the
 *So the Gram matrix is the **single algebraic object** whose
 block structure generates the entire spectral sequence and its
 mass-term identification.  Computing $G$ explicitly for $H_3(R, q)$
-([spectral-sequence H3 explicit](#prop:spectral-sequence-h3-explicit))
+([spectral-sequence H3 explicit](#conj:spectral-sequence-h3-explicit))
 is equivalent to computing all pages $E_r^{p, *}$.*

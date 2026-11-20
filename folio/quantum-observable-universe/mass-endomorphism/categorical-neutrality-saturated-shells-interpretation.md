@@ -12,7 +12,7 @@ The conjecture reformulates this homologically. Instead of verifying $\Phi_n$ wi
 
 ## Global topological neutrality
 
-Earlier models ([atom-knot-mass-derivation](#prop:atom-knot-mass-derivation)) treated $\Phi_n$ as a local object. They required "screening" or "local trivialisation" to explain shell closure. This refactor abandons the locality assumption. We identify $\Phi_n$ as the global section of the mass functor over $\mathbf{C}$ ([rem:phi-n-global-section](#rem:phi-n-global-section)). A non-trivial full-twist action propagates unbounded ribbon flux through the brane tower. Finite observable mass demands global topological neutrality at saturation.
+Earlier models ([atom-knot-mass-derivation](#conj:atom-knot-mass-derivation)) treated $\Phi_n$ as a local object. They required "screening" or "local trivialisation" to explain shell closure. This refactor abandons the locality assumption. We identify $\Phi_n$ as the global section of the mass functor over $\mathbf{C}$ ([rem:phi-n-global-section](#rem:phi-n-global-section)). A non-trivial full-twist action propagates unbounded ribbon flux through the brane tower. Finite observable mass demands global topological neutrality at saturation.
 
 ## Operator-level support
 

@@ -1,4 +1,4 @@
-*Proof.*
+*Proof sketch.*
 By Schur–Weyl duality at level $n = 3$ in three dimensions ([Schur–Weyl mass decomposition](#prop:schur-weyl-mass-decomposition)), the $\mathrm{S}_3$-module
 
 $$

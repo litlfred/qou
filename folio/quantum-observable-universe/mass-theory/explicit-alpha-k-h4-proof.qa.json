@@ -1,6 +1,6 @@
 {
   "$schema": "block-qa/v1",
-  "label": "prf:explicit-alpha-k-h4",
+  "label": "rem:explicit-alpha-k-h4-proof-sketch",
   "kind": "proof",
   "paths": {
     "ts": "folio/quantum-observable-universe/mass-theory/explicit-alpha-k-h4-proof.ts",
@@ -1388,7 +1388,7 @@
         },
         "reviewed_at": "2026-08-21T15:49:22.947Z",
         "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
-        "evidence": "Full read of prf:explicit-alpha-k-h4 (orthogonality criterion, class-function basis, 4x5 linear system, numerical solve, Markov pairing on r_3). No construction of this category present."
+        "evidence": "Full read of rem:explicit-alpha-k-h4-proof-sketch (orthogonality criterion, class-function basis, 4x5 linear system, numerical solve, Markov pairing on r_3). No construction of this category present."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1422,7 +1422,7 @@
         },
         "reviewed_at": "2026-08-21T15:49:22.993Z",
         "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
-        "evidence": "Full read of prf:explicit-alpha-k-h4 (orthogonality criterion, class-function basis, 4x5 linear system, numerical solve, Markov pairing on r_3). No construction of this category present."
+        "evidence": "Full read of rem:explicit-alpha-k-h4-proof-sketch (orthogonality criterion, class-function basis, 4x5 linear system, numerical solve, Markov pairing on r_3). No construction of this category present."
       }
     ],
     "trap-em-dash": [
@@ -1490,7 +1490,7 @@
         },
         "reviewed_at": "2026-08-21T15:49:23.028Z",
         "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
-        "evidence": "Full read of prf:explicit-alpha-k-h4 (orthogonality criterion, class-function basis, 4x5 linear system, numerical solve, Markov pairing on r_3). No construction of this category present."
+        "evidence": "Full read of rem:explicit-alpha-k-h4-proof-sketch (orthogonality criterion, class-function basis, 4x5 linear system, numerical solve, Markov pairing on r_3). No construction of this category present."
       }
     ],
     "trap-closing-aphorism": [
@@ -1524,7 +1524,7 @@
         },
         "reviewed_at": "2026-08-21T15:49:23.062Z",
         "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
-        "evidence": "Full read of prf:explicit-alpha-k-h4 (orthogonality criterion, class-function basis, 4x5 linear system, numerical solve, Markov pairing on r_3). No construction of this category present."
+        "evidence": "Full read of rem:explicit-alpha-k-h4-proof-sketch (orthogonality criterion, class-function basis, 4x5 linear system, numerical solve, Markov pairing on r_3). No construction of this category present."
       }
     ],
     "trap-meta-commentary": [
@@ -1558,7 +1558,7 @@
         },
         "reviewed_at": "2026-08-21T15:49:23.095Z",
         "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
-        "evidence": "Full read of prf:explicit-alpha-k-h4 (orthogonality criterion, class-function basis, 4x5 linear system, numerical solve, Markov pairing on r_3). No construction of this category present."
+        "evidence": "Full read of rem:explicit-alpha-k-h4-proof-sketch (orthogonality criterion, class-function basis, 4x5 linear system, numerical solve, Markov pairing on r_3). No construction of this category present."
       }
     ],
     "trap-thesis-restatement": [
@@ -1592,7 +1592,7 @@
         },
         "reviewed_at": "2026-08-21T15:49:23.128Z",
         "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
-        "evidence": "Full read of prf:explicit-alpha-k-h4 (orthogonality criterion, class-function basis, 4x5 linear system, numerical solve, Markov pairing on r_3). No construction of this category present."
+        "evidence": "Full read of rem:explicit-alpha-k-h4-proof-sketch (orthogonality criterion, class-function basis, 4x5 linear system, numerical solve, Markov pairing on r_3). No construction of this category present."
       }
     ],
     "trap-performed-warmth": [
@@ -1626,7 +1626,7 @@
         },
         "reviewed_at": "2026-08-21T15:49:23.163Z",
         "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
-        "evidence": "Full read of prf:explicit-alpha-k-h4 (orthogonality criterion, class-function basis, 4x5 linear system, numerical solve, Markov pairing on r_3). No construction of this category present."
+        "evidence": "Full read of rem:explicit-alpha-k-h4-proof-sketch (orthogonality criterion, class-function basis, 4x5 linear system, numerical solve, Markov pairing on r_3). No construction of this category present."
       }
     ],
     "trap-superlative": [
@@ -1695,7 +1695,7 @@
         "reviewed_at": "2026-08-21T15:49:23.265Z",
         "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
         "evidence": "Proof prose is short and punctuated; the run-in bold heads keep each step separable aloud.",
-        "notes": "RIGOR (reported, not fixed - all math-adjacent). (1) CONVENTION-C LEAK IN THE HEADLINE NUMBER, established symbolically. Taking the block's own c = (-0.3056, +1.4541, -0.6127, -1.5593, +1.0000) and tr_M(T_{w_C}) = (1, z, z^2, z^2, z^3), the quoted tr_M(r_3) ~ +0.003463 reproduces ONLY under convention C: with the exact (1^4) row of the statement table, sympy gives tr_M(r_3) = 0 IDENTICALLY IN q under convention D (z = q^3/(q^2+1)), and a half-power-bearing rational function under convention C (z = sqrt(q)/(q+1)) whose value is 0.003462520932 at the proton pin and 0.003462520432 at the muon pin - i.e. the quoted +0.003463 to every quoted digit. So under the canonical convention D (owner ruling 2026-08-15 R1) this alpha_3 is exactly zero, not 3.5e-3; the conclusion 'Both sides agree ... confirming the construction' is confirming a convention-C construction. This is the same leak recorded on prf:explicit-alpha-k-h3 and should be fixed with it. (2) CROSS-CHECK PASSED: the quoted c-vector IS the (1^4) row of the statement table evaluated at q0 - exact row (-0.305559, +1.454070, -0.612688, -1.559280, +1) vs quoted (-0.3056, +1.4541, -0.6127, -1.5593, +1.0000), agreeing to every quoted digit. Note c_{(12)(34)} = -q^3/(q^2+1) = -z_D exactly. (3) CYCLE-TYPE ERROR: 'the 6 length-3 reduced words collapse to just 2 conjugacy classes (3-cycle + 4-cycle)'. The count 6 is right (Poincare polynomial of S_4 is 1,3,5,6,5,3,1) and '2 classes' is right, but the classes are TRANSPOSITION + 4-CYCLE, not 3-cycle + 4-cycle: the six length-3 elements are 1432 = (24), 3214 = (13) and four 4-cycles (4123, 2341, 3142, 2413). 3-cycles have Coxeter length 2 (s_1 s_2 = (123)), so they cannot appear at length 3. Proposed: '(transposition + 4-cycle)'. (4) TOKEN-SUBSTITUTION SWEEP DAMAGE, four sites: the bold head '**canonical evaluation at $q_0$.**' begins lowercase, showing 'Numerical' was replaced by 'canonical'; 'verifies to ~10^{-17} canonical precision'; 'Both sides agree to canonical precision'; and '(see the formal derivation)', which is the placeholder standing in for a script name - the reader is pointed at nothing. (5) NO-FLOAT64: '~10^{-17} canonical precision' and 'agree to canonical precision' report agreement at the float64 floor; state the dps or say 'to the limit of the arithmetic used'. (6) VERIFIED CORRECT: H_4 has 5 conjugacy classes (partitions of 4); a 4x5 full-row-rank system has a 1-dimensional kernel; tr_M values (1, z, z^2, z^2, z^3) are the right Markov reductions for e, (12), (12)(34), (123), (1234)."
+        "notes": "RIGOR (reported, not fixed - all math-adjacent). (1) CONVENTION-C LEAK IN THE HEADLINE NUMBER, established symbolically. Taking the block's own c = (-0.3056, +1.4541, -0.6127, -1.5593, +1.0000) and tr_M(T_{w_C}) = (1, z, z^2, z^2, z^3), the quoted tr_M(r_3) ~ +0.003463 reproduces ONLY under convention C: with the exact (1^4) row of the statement table, sympy gives tr_M(r_3) = 0 IDENTICALLY IN q under convention D (z = q^3/(q^2+1)), and a half-power-bearing rational function under convention C (z = sqrt(q)/(q+1)) whose value is 0.003462520932 at the proton pin and 0.003462520432 at the muon pin - i.e. the quoted +0.003463 to every quoted digit. So under the canonical convention D (owner ruling 2026-08-15 R1) this alpha_3 is exactly zero, not 3.5e-3; the conclusion 'Both sides agree ... confirming the construction' is confirming a convention-C construction. This is the same leak recorded on rem:explicit-alpha-k-h3-proof-sketch and should be fixed with it. (2) CROSS-CHECK PASSED: the quoted c-vector IS the (1^4) row of the statement table evaluated at q0 - exact row (-0.305559, +1.454070, -0.612688, -1.559280, +1) vs quoted (-0.3056, +1.4541, -0.6127, -1.5593, +1.0000), agreeing to every quoted digit. Note c_{(12)(34)} = -q^3/(q^2+1) = -z_D exactly. (3) CYCLE-TYPE ERROR: 'the 6 length-3 reduced words collapse to just 2 conjugacy classes (3-cycle + 4-cycle)'. The count 6 is right (Poincare polynomial of S_4 is 1,3,5,6,5,3,1) and '2 classes' is right, but the classes are TRANSPOSITION + 4-CYCLE, not 3-cycle + 4-cycle: the six length-3 elements are 1432 = (24), 3214 = (13) and four 4-cycles (4123, 2341, 3142, 2413). 3-cycles have Coxeter length 2 (s_1 s_2 = (123)), so they cannot appear at length 3. Proposed: '(transposition + 4-cycle)'. (4) TOKEN-SUBSTITUTION SWEEP DAMAGE, four sites: the bold head '**canonical evaluation at $q_0$.**' begins lowercase, showing 'Numerical' was replaced by 'canonical'; 'verifies to ~10^{-17} canonical precision'; 'Both sides agree to canonical precision'; and '(see the formal derivation)', which is the placeholder standing in for a script name - the reader is pointed at nothing. (5) NO-FLOAT64: '~10^{-17} canonical precision' and 'agree to canonical precision' report agreement at the float64 floor; state the dps or say 'to the limit of the arithmetic used'. (6) VERIFIED CORRECT: H_4 has 5 conjugacy classes (partitions of 4); a 4x5 full-row-rank system has a 1-dimensional kernel; tr_M values (1, z, z^2, z^2, z^3) are the right Markov reductions for e, (12), (12)(34), (123), (1234)."
       }
     ],
     "wall-base-ring-minimal": [

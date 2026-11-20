@@ -43,7 +43,7 @@ arithmetic at q-rational precision.
 ## References
 
 - [thm:wedderburn-mass-formula]
-- [prop:atom-knot-mass-derivation]
+- [conj:atom-knot-mass-derivation]
 - Hoefsmit (1974), *Representations of Hecke algebras of finite groups*.
 - Mathas (1999), *Iwahori–Hecke Algebras and Schur Algebras*, §3.31.
 - Murphy (1981), *A new construction of Young's seminormal representation*.
@@ -210,7 +210,7 @@ asserting a vacuous `True`.  The open state is honestly represented by
 the absence of a proof — there is no self-assuming projection and no
 `: True := trivial`.
 
-- Ref: [leitner2026] prop:atom-knot-mass-derivation §"Word sensitivity"
+- Ref: [leitner2026] conj:atom-knot-mass-derivation §"Word sensitivity"
 - Ref: [hoefsmit1974] https://search.proquest.com/docview/302700007 (PhD thesis)
 - Ref: [mathas1999] https://doi.org/10.1090/ulect/015 §3.31 -/
 def HoefsmitDistinguishesWordSensitivity

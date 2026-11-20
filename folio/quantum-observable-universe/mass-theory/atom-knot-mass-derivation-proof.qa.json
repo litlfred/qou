@@ -1,6 +1,6 @@
 {
   "$schema": "block-qa/v1",
-  "label": "prf:atom-knot-mass-derivation",
+  "label": "rem:atom-knot-mass-derivation-proof-sketch",
   "kind": "proof",
   "paths": {
     "ts": "folio/quantum-observable-universe/mass-theory/atom-knot-mass-derivation-proof.ts",
@@ -50,7 +50,7 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.430Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prf:atom-knot-mass-derivation' → expected 'prf:atom_knot_mass_derivation'; Lean declares: CategoricalLeg, categorical_leg_to_markov_trace, ArchimedeanRealization, archimedean_realization_to_mev, post_archimedean_naming_borrowed.... Structural match via content."
+        "notes": "Label 'rem:atom-knot-mass-derivation-proof-sketch' → expected 'prf:atom_knot_mass_derivation'; Lean declares: CategoricalLeg, categorical_leg_to_markov_trace, ArchimedeanRealization, archimedean_realization_to_mev, post_archimedean_naming_borrowed.... Structural match via content."
       }
     ],
     "fit-section-chapter": [

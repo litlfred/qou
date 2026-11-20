@@ -101,7 +101,7 @@ const REPO_ROOT = resolve(import.meta.dir, "..", "..");
  * on a Lean-reading criterion could never be fresh — `entryIsFresh` sees an
  * expected hash absent and a current hash present, returns false, and the
  * criterion re-queues for an agent forever. That is how a `proof-statement-
- * integrity` adjudication recorded on `thm:six-term-mass-formula-complete`
+ * integrity` adjudication recorded on `conj:six-term-mass-formula-complete`
  * left `needs-agent` at 1 immediately after being written.
  *
  * Resolution is DELEGATED, not reimplemented. `resolveCanonicalLean` is the

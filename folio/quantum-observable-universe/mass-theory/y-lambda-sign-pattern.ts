@@ -4,10 +4,10 @@ export default remark({
   label: "rem:y-lambda-sign-pattern",
   title:
     "Jones–Markov block weights $y_\\lambda$ are not individually non-negative for $n \\geq 4$",
-  interprets: "prop:alpha-k-derivation-procedure",
+  interprets: "conj:alpha-k-derivation-procedure",
   uses: [
-    "prop:alpha-k-derivation-procedure",
-    "prop:explicit-alpha-k-h3",
+    "conj:alpha-k-derivation-procedure",
+    "conj:explicit-alpha-k-h3",
   ],
   tags: [
     "jones-markov",
