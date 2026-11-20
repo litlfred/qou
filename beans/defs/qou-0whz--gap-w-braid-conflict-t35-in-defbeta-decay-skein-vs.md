@@ -20,3 +20,7 @@ Scope (a): excludes a braid as the W *process*, not as amplitude/form factor. St
 
 
 2026-11-15: C4 + Lean (PR #7971, 828605716e). Over/under rule: a crossing is a pure transposition iff its over strand carries the K = q vector (both R conventions, both signs). With corpus conventions (lower strand over in σ_i; def:down-quark), u = K = q weight, T³ = +½. Lean QOU/QuarkState/OverStrandWeight.lean, sorry-free. Bean stays open: the W process (E/F + lepton creation) is not settled.
+
+## 2026-11-20 — W2 cross-workstream briefing (owner: "make sure they know")
+Full briefing: PR #8526 comment 7047864732 and docs/coordination/2026-11-20-w2-qbeta-ud-briefing.md. Record: docs/audits/2026-11-20-qbeta-epsilon-is-ruled-not-derived.md sections 1-11.
+Key points: Q_beta = (h[2]/2)*y3*E0 and sees only the isospin-3/2 block. The ruled epsilon (z_D, -43%) = label-A round trip = whole-space quantum trace. Label B (J4, strand-4 gamma-gamma) gives +0.33% and is NOT adopted (it labels isospin multiplicity, not n<->p). Label C gives 1/3, 0 and 0.202, none close. The owner made no label ruling ("3 2"). u/d are separate lines of the (3,1) rep of H4, not orientation-only (def:up/down-quark are stale). Convention-D volumes lie past the Phi_q pole. The six-term -2.43e15 was a truncated divergent series (fixed). The +0.17% / ~1 ppm Q_beta values and the April BW run are superseded or circular.

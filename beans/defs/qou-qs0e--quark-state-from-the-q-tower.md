@@ -23,3 +23,7 @@ Corpus facts this starts from (corpus-grep 2026-11-15, origin/main 0b88920e35):
 Hypothesis (agent judgement, not a finding): quark state := degree >= 1 part of NF(gamma(phi) gamma(psi)) in H_3(q), projected to the (2,1) channel; observable depth = tower depth (order 0 = gamma gamma core, so quark labels are invisible -> confinement; t^1 = flavour; higher = masses / mixing).
 
 Children: qou-qs1d (definition, Lean), qou-qs2u (u = polarization), qou-qs3l (library citations), qou-qs4c (factor relations + colour channel), qou-qs5m (SM / eightfold-way corpus map).
+
+## 2026-11-20 — W2 cross-workstream briefing (owner: "make sure they know")
+Full briefing: PR #8526 comment 7047864732 and docs/coordination/2026-11-20-w2-qbeta-ud-briefing.md. Record: docs/audits/2026-11-20-qbeta-epsilon-is-ruled-not-derived.md sections 1-11.
+Key points: Q_beta = (h[2]/2)*y3*E0 and sees only the isospin-3/2 block. The ruled epsilon (z_D, -43%) = label-A round trip = whole-space quantum trace. Label B (J4, strand-4 gamma-gamma) gives +0.33% and is NOT adopted (it labels isospin multiplicity, not n<->p). Label C gives 1/3, 0 and 0.202, none close. The owner made no label ruling ("3 2"). u/d are separate lines of the (3,1) rep of H4, not orientation-only (def:up/down-quark are stale). Convention-D volumes lie past the Phi_q pole. The six-term -2.43e15 was a truncated divergent series (fixed). The +0.17% / ~1 ppm Q_beta values and the April BW run are superseded or circular.
