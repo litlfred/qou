@@ -1612,6 +1612,7 @@ import QOU.Mathlib.KazhdanLusztigBasis
 import QOU.Mathlib.ConcentratedColumnCollapse
 import QOU.Mathlib.StandardYoungCountInstance
 import QOU.Mathlib.LieValuedForms
+import QOU.Mathlib.SDPStrongDuality
 
 -- The p-n interface bar structure, in three files.  `ClosedFormInterfaceFactors`
 -- carries the convention-D factors f_pp = z, f_nn = z - h, f_pn and their q-bar
