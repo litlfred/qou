@@ -48,7 +48,7 @@ open UGB.GrobnerShirshov
 
 universe u v
 
-variable {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+variable {G : Type u} {k : Type v} [CommRing k] [DecidableEq G]
 
 /-- **PBW corollary — canonical-form core.**
 
@@ -59,7 +59,12 @@ variable {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
 
     The conclusion is a **concrete conjunction over `AlgElement`** — a
     `ReducesToNF` existential plus a `∀`-uniqueness clause — the
-    substantive content the former `holds : Prop` lacked. -/
+    substantive content the former `holds : Prop` lacked.
+
+    **Restated 2026-11-20 (bean `qou-lc7q`):** over a commutative ring, with
+    uniqueness up to `CoeffEq`. The structural form (`nf₁ = nf₂`) is false: a
+    normal form is determined only up to its free `support` field
+    (`LocalConfluenceSupportRefutation`). -/
 -- Ref: [leitner2026] unital-groebner-bases/unital-groebner-bases-chapter/pbw-corollary.ts
 theorem pbw_corollary
     (ord : AdmissibleOrder G)
@@ -70,7 +75,8 @@ theorem pbw_corollary
     ∀ f : AlgElement G k,
       (∃ nf : AlgElement G k, ReducesToNF ord sys f nf) ∧
       (∀ nf₁ nf₂ : AlgElement G k,
-        ReducesToNF ord sys f nf₁ → ReducesToNF ord sys f nf₂ → nf₁ = nf₂) := by
+        ReducesToNF ord sys f nf₁ → ReducesToNF ord sys f nf₂ →
+          AlgElement.CoeffEq nf₁ nf₂) := by
   intro f
   refine ⟨?_, ?_⟩
   · -- Existence of the PBW normal form — now a theorem, not the false axiom it

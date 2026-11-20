@@ -1064,7 +1064,9 @@ by every non-trivial context, so an argument of the form "the S-polynomial
 reduces to zero, hence the overlap is resolved" would be reading `0 = 0` off
 a term that was never there. The hypothesis is threaded through the results
 that need it — `local_confluence` and its consequences in
-`CompositionLemma.lean` — and discharged where the algebra is concrete. -/
+`CompositionLemma.lean` — and discharged where the algebra is concrete. (Since
+2026-11-20 those are theorems proved in `DiamondLemma.lean` without using it;
+the parameter is kept for callers.) -/
 
 /-- **No quasi-zeros**, in the chapter's wording, for an abstract ring. -/
 def NoQuasiZeros (A : Type*) [Ring A] : Prop :=
