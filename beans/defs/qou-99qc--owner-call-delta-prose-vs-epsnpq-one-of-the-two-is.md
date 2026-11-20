@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-20T23:30:00Z
+updated_at: 2026-11-20T23:55:00Z
 parent: qou-10v9
 ---
 
@@ -4260,3 +4260,12 @@ Owner asked (~20:15): derive Q_β as an energy, consistent with the q-rate, with
 - Lepton strand under the #8586 functional: |ε_ℓ|E₀ = m_e(q+1)/(q(q²+1)) = 0.4395 MeV, which is not m_e. The additive (ε_q − ε_ℓ)E₀ = 0.114 MeV needs m_n < m_p and m_e < m_ν.
 - E₀: E₀·g = m_e only for g = q(q−1), the K-gap between q² and q, which no doublet carries. Still posited (qou-mkm8).
 Lean `QOU/QuarkState/CartanEnergyTransport.lean` (generic Field, sorry-free). Probe `computations/probes/qbeta_uq_energy/` 14/14. Audit `docs/audits/2026-11-20-qbeta-energy-outside-hn.md`. Bean stays open (13a).
+
+## 2026-11-20 — Gamow–Teller / spin sector of the β rate (PR #8670, branch claude/beta-rate-gamow-teller-spin-2026-11-20)
+
+Owner ask (~20:15): derive the rate as a function of q, nothing chosen. #8638 gives a Fermi-only |M|² = (q²−1)²; this entry covers the factor 1+3λ². Pre-registered at 43739c0575.
+- Corpus: no object carries Lorentz spin. The one U_q(sl₂) doublet is used as isospin in #8638 and is called "spin" in spin-labels / q-angular-momentum. QuarkStrandConsequences Result 1 allows at most one q-braided factor. AxialCoupling.lean (5/3·tr ratio) and gt_matrix_pslq_probe ([5]_q/[4]_q) select against the target 1.2754, so they are not used.
+- (A) Factorised iso⊗spin, spin braided by the swap: λ ≡ 0 for every q, including q → 1. Lean: `crossing_commutes_spin`, `swap_commutes_sym`. Scope (a): crossings of this form give no axial current.
+- (W) Unfactorised U_q(gl₄), u labels ranked first: quark-level block h·P_spin = (h/2)(1+σ⃗·σ⃗), so λ_q = 1 exactly. Lean: `beta_block_isoMajor`, `swap_fierz`, `beta_block_zero_of_lt`. The other 20 orderings give no block in σ (4) or a partial, rotation-violating one (16).
+- (W) nucleon level, CONDITIONAL on the C-SU6 nucleon choice: |λ| → 5/3 at q → 1. At q₀ the u↑u↓d↑d↓ ordering gives λ_⊥ = 1.66744, λ_z = 1.66295 and R = 9.328; anisotropic, with a (σ_N×σ_ℓ)_z term at O((q−1)²). The u↑/u↓ order changes λ (not pre-registered). Against PDG (comparison only): +30.6 % in λ_eff, +58.6 % in R.
+- Choices still open, each with no derivation: (1) where spin lives, (A) or (W); (2) the gl₄ label ordering; (3) the N/Δ separation inside the q-symmetric 20; (4) the lepton premise inherited from #8638. Bean stays open.
