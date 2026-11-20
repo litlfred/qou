@@ -3669,6 +3669,22 @@ function main() {
             file_sha: c.file_sha,
           };
           stale++;
+        } else if (prev) {
+          // Already `needs-agent`: refresh the location fields only. Earlier
+          // agents' notes on the entry (`evidence`, `reviewer`, `disposition`,
+          // `stale_prev_verdict`, `reviewed_at`, `source`, `agent_note`) are
+          // adjudication history and must survive the run. Re-seeding a bare
+          // record here stripped 374 such fields from 75 entries in #8568
+          // (restored in #8576; owner-approved fix, #8526 [W8b ask]).
+          led.entries[c.key] = {
+            ...prev,
+            category: c.category,
+            pattern: c.pattern,
+            line: c.line,
+            verdict: "needs-agent",
+            file_sha: c.file_sha,
+          };
+          kept++;
         } else {
           led.entries[c.key] = {
             category: c.category,
