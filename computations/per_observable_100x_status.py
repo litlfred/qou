@@ -1502,7 +1502,11 @@ def main() -> dict:
     ))
 
     # ── Two-Term Borromean V³ QED Diagnostics (m_mu, Q_beta, m_n, Delta_pn) ──
-    # Attach parameter-free connected 4th-order Borromean V³ QED diagnostics
+    # Attach connected 4th-order Borromean V³ QED diagnostics. NOT parameter-free:
+    # pair 1-3 is left out and the m_e scale is chosen (issue #8524,
+    # probes/two_term_qed_pair_choice). Since the owner ruling of 2026-11-20 the
+    # two-term value is the PRIMARY score (see the ruling block below), scoped
+    # as a selection.
     # (`QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm`) at 50 dps without altering
     # any primary ruled z_D scores (respecting owner ruling 2026-09-12).
     from canonical_mass import (

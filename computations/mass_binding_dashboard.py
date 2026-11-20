@@ -1300,6 +1300,7 @@ def main(argv=None) -> int:
     mn_2term_err_ppb = (mn_2term - mn_) / mn_ * 1e9
 
     print("\n### Table 9 — Two-Term QED & GPMT Modified-Dimension Diagnostics (A=1..4)")
+    print("  The A=1 QED figures are selections, not derived (pair 1-3 left out, m_e scale chosen; issue #8524).")
     print("  Lean modules: `NucleonWeightSpaceTwoTerm`, `USpinColemanGlashowLambdaSigma`, "
           "`GPMTThreeRowCumulantBridge`, `H4GPMTModifiedDimensionCumulants`, `ThreeRowSpringerSYTDerivation`.")
     print(f"  A=1 Borromean V³ QED: M_p^QED,conn = +{mp_qed_bor*1e3:.4f} keV | "
