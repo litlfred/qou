@@ -1,0 +1,33 @@
+Let $\mathbf{C}$ be a $K$-linear category over a field $K$, let $U, X$ be objects, and let
+
+$$
+  \varrho \colon U \to X, \qquad \varrho^{*} \colon X \to U, \qquad
+  \varrho^{*} \circ \varrho \;=\; t \cdot \mathrm{id}_U, \quad t \in K^{\times}
+$$
+
+be a point / copoint pair with invertible pairing. When $\mathbf{C}$ is monoidal and $U = \mathbf{1}$, this is the vacuum datum $(\varrho_\Phi, \varrho_\Phi^{*})$ of Constraints (G-3)–(G-4) of [the $G$-action conjecture](#conj:g-action-on-substrate), with $t = \mathrm{tr}_F(\varrho_\Phi^{*}\varrho_\Phi)$. Define
+
+$$
+  e \;:=\; t^{-1}\, \varrho \circ \varrho^{*} \colon X \to X,
+  \qquad
+  r \;:=\; \mathrm{id}_X - e .
+$$
+
+**(a) Vacuum idempotent and residual.**
+
+1. $e \circ e = e$, $\;e \circ \varrho = \varrho$, $\;\varrho^{*} \circ e = \varrho^{*}$.
+2. $r \circ r = r$, $\;e \circ r = r \circ e = 0$, $\;e + r = \mathrm{id}_X$.
+3. $r \circ \varrho = 0$ and $\varrho^{*} \circ r = 0$: the residual annihilates the vacuum.
+
+**(b) Symmetric / antisymmetric split of the two-vacuum residual.** Let $\sigma \colon Y \to Y$ satisfy $\sigma \circ \sigma = \mathrm{id}_Y$ and let $c \in K$ with $c + c = 1$ (so $\operatorname{char} K \neq 2$ and $c = \tfrac12$). Put $P_{+} = c\,(\mathrm{id}_Y + \sigma)$ and $P_{-} = c\,(\mathrm{id}_Y - \sigma)$. Then $P_\pm$ are idempotent, $P_{+} + P_{-} = \mathrm{id}_Y$, $P_{-} \circ P_{+} = 0$, $\sigma \circ P_{+} = P_{+}$, $\sigma \circ P_{-} = -P_{-}$, and $P_\pm$ commute with every endomorphism that commutes with $\sigma$.
+
+Now let $\mathbf{C}$ be symmetric monoidal and monoidal-preadditive, $Y = X \otimes X$, $\sigma = \beta_{X,X}$, and let $R := \mathrm{id}_{X \otimes X} - e \otimes e$ be the residual of the two-vacuum idempotent. Then:
+
+4. $e \otimes e$ and $R$ are idempotent, and both commute with $P_{\pm}$ (naturality of $\beta$).
+5. $R = P_{+} \circ R + P_{-} \circ R$, where $P_{\pm} \circ R$ are idempotents and $(P_{-} \circ R) \circ (P_{+} \circ R) = 0$.
+6. $R = r \otimes e + e \otimes r + r \otimes r$.
+7. $P_{+} \circ (r \otimes r)$ is an idempotent: the symmetric square of the residual.
+
+No rigidity, trace or pivotal structure is used. In a rigid category $\varrho^{*}$ would come from $\varrho$ through a self-duality of $X$; the statements above need only the scalar identity $\varrho^{*} \circ \varrho = t \cdot \mathrm{id}_U$.
+
+*Proof.* Each item is a short computation. For example, $e \circ e = t^{-2}\,\varrho\,(\varrho^{*}\varrho)\,\varrho^{*} = t^{-2} t\,\varrho\varrho^{*} = e$. For $P_{+}$: $(\mathrm{id} + \sigma)^2 = 2(\mathrm{id} + \sigma)$, so $P_{+}^2 = c^2 \cdot 2(\mathrm{id} + \sigma) = c(c+c)(\mathrm{id} + \sigma) = P_{+}$. Item 5 is the general fact that commuting idempotents compose to an idempotent. Item 6 follows from $\mathrm{id}_{X\otimes X} = (e + r) \otimes (e + r)$ and bilinearity of $\otimes$. All items are checked in Lean, without `sorry`.
