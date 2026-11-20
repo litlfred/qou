@@ -44,7 +44,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 
 def main() -> int:
@@ -152,7 +152,7 @@ def main() -> int:
     print()
 
     # ─── q_0 evaluation ────────────────────────────────────────
-    q_val = mpf(Q_50_DIGIT_STR)
+    q_val = Q_MP
     h_val = q_val - 1/q_val
     h_val_sym = sp.Rational(0)
 

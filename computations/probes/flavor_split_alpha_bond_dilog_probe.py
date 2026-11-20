@@ -42,7 +42,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from _li_2_q_util import flavor_split_leading, li_2_q  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import M_P_MEV_VALIDATION
 
@@ -102,7 +102,7 @@ def analyze(q, label):
 
 
 def main() -> int:
-    rp = analyze(mpf(Q_50_DIGIT_STR), "proton_q0")
+    rp = analyze(Q_MP, "proton_q0")
     rm = analyze(_muon_q0(), "muon_q0")
     print("Bond-dilog derivation of α — RULED OUT")
     print("=" * 56)

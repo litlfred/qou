@@ -74,14 +74,14 @@ sys.path.insert(0, str(_ROOT / "computations" / "substrate"))
 sys.path.insert(0, str(_ROOT / "computations"))
 sys.path.insert(0, str(_ROOT / "tools" / "qou-substrate" / "python"))
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
 # The corpus precision entry point rather than a bare `mp.dps` assignment --
 # idempotent, and what `never_raises_dps_audit.py` looks for.
 set_compute_dps()
 
-Q = mp.mpf(Q_50_DIGIT_STR)
+Q = Q_MP
 
 # CODATA-2022, as quoted by the block itself.  Read, not derived.
 CODATA_ALPHA_INV = mp.mpf("137.035999177")

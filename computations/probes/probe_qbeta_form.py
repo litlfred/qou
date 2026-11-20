@@ -1,7 +1,7 @@
 from mpmath import mp
 import sys
 sys.path.append('.')
-from computations.q_parameter import Q_50_DIGIT_STR
+from computations.q_parameter import Q_50_DIGIT_STR, Q_MP
 from computations.codata_constants import Q_BETA_MEV
 from computations.experimental_constants import M_E_MEV
 # Path bridge: keeps flat-namespace imports working from this cluster
@@ -15,7 +15,7 @@ from canonical_trm_reference import tr_m_nucleon  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
-q0 = mp.mpf(Q_50_DIGIT_STR)
+q0 = Q_MP
 m_e = mp.mpf(M_E_MEV)
 Q_beta_codata = mp.mpf(str(Q_BETA_MEV))
 

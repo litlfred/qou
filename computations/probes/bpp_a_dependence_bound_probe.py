@@ -112,7 +112,7 @@ from mpmath import mp, mpf  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from closed_form_tau_M import markov_z  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 set_compute_dps()
 
@@ -146,7 +146,7 @@ def main() -> int:
     print("  qou-gcmn: bounding B_pp's A-dependence")
     print("=" * 78)
 
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     z = markov_z(q)
     from qou_substrate.constants import M_E_MEV as _ME
     alpha = mpf(str(_ME)) / (q * (q - 1))

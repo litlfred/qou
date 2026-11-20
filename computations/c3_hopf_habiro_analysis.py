@@ -40,12 +40,12 @@ from witness_base import WitnessBuilder, record_upstream
 # attached at construction. Owned by this module — see
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 
 
 def main():
     set_compute_dps()
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = q - 1/q
     hbar = 1 - 1/q
 

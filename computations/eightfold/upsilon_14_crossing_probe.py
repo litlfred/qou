@@ -64,7 +64,7 @@ set_compute_dps()
 
 from mpmath import mp, mpf  # noqa: E402
 
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402  (PROTON pin)
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402  (PROTON pin)
 from qou_substrate.precision import fmt  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_PI_PM_MEV_VALIDATION,
@@ -103,7 +103,7 @@ def ratio(q: mpf, n: int, seif: Fraction) -> mpf:
 
 
 def main() -> int:
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     m_pi = mpf(M_PI_PM_MEV_VALIDATION)
     target = M_UPSILON_1S / m_pi
     target_err = M_UPSILON_1S_ERR / m_pi

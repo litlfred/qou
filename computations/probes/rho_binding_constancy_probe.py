@@ -23,7 +23,7 @@ sys.path.insert(0, os.path.join(HERE, "..", "substrate"))
 import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()  # raise dps BEFORE Q0 and the constants below are built
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 from wedderburn_jones_markov import global_wedderburn_sum_q_hecke_seminormal  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
@@ -34,7 +34,7 @@ from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 # so the 2026-08-30 owner ruling puts it on the proton default (11.54 ppb).
 # The old comment said the scale cancels in the ratio; that is an argument
 # about the RATIO, not a licence to feed a float64 into the Wedderburn sum.
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 
 # AME2020 binding energies (MeV).
 B_OBS = {

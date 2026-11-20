@@ -110,12 +110,12 @@ sys.path.insert(0, str(_ROOT / "computations" / "substrate"))
 
 mp.mp.dps = 65
 
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from schur_principal_mpmath import (  # noqa: E402
     y_lambda_at_q0_mpmath, partitions_of, _f_lambda, hooks_and_contents,
 )
 
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 NMAX = 9
 
 q = sp.symbols("q", positive=True)

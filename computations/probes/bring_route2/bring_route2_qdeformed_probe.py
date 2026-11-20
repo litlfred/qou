@@ -15,7 +15,7 @@ import sympy as sp
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "tools/qou-substrate/python"))
 from bring_route2_probe import CANDIDATES, CONJUGATE_PAIRS, sl2z  # noqa: E402
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.mp.dps = 60
 TOL = mp.mpf("1e-40")
@@ -52,7 +52,7 @@ def classify(Mv):
 
 
 def main():
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     checks = {}
     # check 2: full twist is t^3 I
     tw = burau([0, 1] * 3)

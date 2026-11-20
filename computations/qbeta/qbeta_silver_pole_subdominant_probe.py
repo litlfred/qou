@@ -69,7 +69,7 @@ for _p_qp in (_Path_qp(__file__).resolve().parent,
               _Path_qp(__file__).resolve().parent.parent / 'substrate'):
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 q = sp.Symbol("q", positive=True)
 SILVER = 1 + sp.sqrt(2)  # silver ratio, root of q²−2q−1
@@ -107,7 +107,7 @@ def main() -> int:
     pole_genuine = (qA_at_silver == 0) and (not silver_divides_delta)
 
     # --- numeric roots (mpmath, NO FLOAT) ---
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     qs = 1 + mp.sqrt(2)
 
     def hbar(x): return (x - 1) / x

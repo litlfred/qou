@@ -59,7 +59,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401, E402
 from witness_base import WitnessBuilder, q0_comparison  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP, q_muon_at  # noqa: E402
 from qou_substrate import codata as _codata  # noqa: E402
 
 set_compute_dps()
@@ -90,7 +90,7 @@ SIGMA_PPB = mp.mpf(_ALPHA_INV.uncertainty_str) / CODATA_ALPHA_INV * mp.mpf(10) *
 # leg is a DELIBERATE comparison (the mu-p substrate tension), stamped as such.
 ANCHORS = {
     "muon": q_muon_at(50),               # ideal CAL-2 pin: live CODATA-2022 muon derivation
-    "proton": mp.mpf(Q_50_DIGIT_STR),   # experimental default (proton, 50-digit string)
+    "proton": Q_MP,   # experimental default (proton, 50-digit string)
 }
 
 

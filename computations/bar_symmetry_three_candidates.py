@@ -77,13 +77,13 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.mp.dps = 80
 
 
 def main() -> int:
-    Q0 = mp.mpf(Q_50_DIGIT_STR)
+    Q0 = Q_MP
     Q0_inv = 1 / Q0
 
     def family_a(q):

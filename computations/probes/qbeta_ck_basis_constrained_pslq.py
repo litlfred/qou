@@ -68,7 +68,7 @@ for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
               _Path_qp(__file__).resolve().parent.parent / 'substrate'):
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
-from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP, q_muon_at  # noqa: E402
 
 mp.mp.dps = 60  # ≥ 50 dps discipline
 
@@ -81,7 +81,7 @@ mp.mp.dps = 60  # ≥ 50 dps discipline
 # `Q0_PROTON` was the 50-digit proton string re-typed by hand. Two pins are
 # read on purpose here (the manifest files this stem `ambiguous`).
 Q0_CANONICAL = mp.mpf(mp.nstr(q_muon_at(50), 50, strip_zeros=False))
-Q0_PROTON = mp.mpf(Q_50_DIGIT_STR)
+Q0_PROTON = Q_MP
 M_E_MEV = mp.mpf("0.51099895069")
 # Q_β reference used by the cache extraction (qbeta-ck-cache Q_codata)
 Q_BETA_CODATA_MEV = mp.mpf("0.78233341")

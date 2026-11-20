@@ -63,7 +63,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent))
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402
 from qbeta_utils import c3_target_at, substrate_ladder_quantities  # noqa: E402
 
@@ -166,7 +166,7 @@ def main() -> int:
     print("\n" + "=" * 74)
     print("(B) DIRECT comparison κ_n ↔ c_k")
     print("=" * 74)
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     me = mp.mpf(str(M_E_MEV))
     Qc = mp.mpf(str(Q_BETA_MEV))
     sub = substrate_ladder_quantities(q)

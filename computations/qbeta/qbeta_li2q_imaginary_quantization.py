@@ -76,7 +76,7 @@ set_compute_dps(70)
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 # Reuse PR #1657's exact continuation + log-Lambert kernel (do not
 # reimplement — coordinate, don't duplicate).
 from convergence_safe_vhat_tower import (  # noqa: E402
@@ -105,7 +105,7 @@ def main() -> int:
     )
     builder.set_content_block("prop:mass-endomorphism-tower")
 
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     qi = 1 / q
     print("=" * 78)
     print(" Li_2^q IMAGINARY QUANTIZATION — resolving the PR #1657 reality gate")

@@ -168,8 +168,8 @@ def main():
     # raw-float64 ratchet flags reading it (correctly -- this probe carries q0
     # through an exact-rational substitution, so a 17-digit anchor would cap
     # the whole computation at float64 width regardless of mp.dps).
-    from qou_substrate.constants import Q_50_DIGIT_STR
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP
+    q0 = Q_MP
 
     G = gram_matrix_mp(q=q0)
     G = [[mp.mpf(str(x)) for x in row] for row in G]

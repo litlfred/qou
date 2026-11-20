@@ -110,7 +110,7 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 mp.dps = 40
@@ -122,7 +122,7 @@ SEMF_A_V = mp.mpf("15.8")           # MeV, semi-empirical mass formula
 
 
 def main() -> int:
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     Q_NUM = q  # local alias used in the scale-qualified assertion source below
     w = WitnessBuilder("markov-normalisation-convention-span-probe")
     w.set_description(

@@ -56,7 +56,7 @@ from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 LEAN_DECLS = (
@@ -80,7 +80,7 @@ def defect_closed_form(q):
 
 
 def main() -> int:
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
 
     print("=" * 80)
     print("guard: the Lean closed form for the Markov-repeat defect")

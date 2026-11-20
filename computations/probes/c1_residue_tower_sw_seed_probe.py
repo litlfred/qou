@@ -49,7 +49,7 @@ import sympy as sp
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.mp.dps = 80
 K = 22   # Puiseux order kept
@@ -191,7 +191,7 @@ def main() -> int:
     print("=" * 78)
     print("(2)-(3) C1 defect d_n = [n+2]_q r_{n+2} - r_{n+1} - r_n on the residue tower")
     print("=" * 78)
-    qs = [("11/10", mp.mpf(11) / 10), ("3/2", mp.mpf(3) / 2), ("2", mp.mpf(2)), ("q0 (proton)", mp.mpf(Q_50_DIGIT_STR))]
+    qs = [("11/10", mp.mpf(11) / 10), ("3/2", mp.mpf(3) / 2), ("2", mp.mpf(2)), ("q0 (proton)", Q_MP)]
     worst_any_pass = False
     for conv, qi in (("balanced", qint_bal), ("geometric", qint_geo)):
         for sign in (1, -1):

@@ -85,7 +85,7 @@ import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules mo
 # Ref: [manuscript] prop:type-b-folded-crystal-combinatorics
 
 import json
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 import sys
 from pathlib import Path
 
@@ -311,7 +311,7 @@ def avg_content_for_braid(name: str, n: int, word: list[tuple[int, int]],
 
 def main() -> None:
     set_compute_dps()  # f64 chi values limit downstream precision to ~16 dps
-    q_0 = mpf(Q_50_DIGIT_STR)
+    q_0 = Q_MP
 
     cases = [
         # figure-8 4_1: (σ_1 σ_2^{-1})^2 in B_3 — writhe 0, amphichiral.

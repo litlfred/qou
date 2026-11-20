@@ -48,7 +48,7 @@ import mpmath as mp  # noqa: E402
 DPS = 50
 mp.mp.dps = DPS + 10
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_E_MEV,
     AME_B_DEUTERON_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION,
@@ -66,7 +66,7 @@ ATOMS = (
 
 
 def main() -> int:
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     m_e = mp.mpf(str(M_E_MEV))
     h = q - 1 / q
     E0 = m_e / (q * (q - 1))

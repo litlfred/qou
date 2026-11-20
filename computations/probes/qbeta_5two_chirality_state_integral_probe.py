@@ -56,7 +56,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "qbeta"))
 import _path_bridge as _bridge  # noqa: E402, F401
-from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP, q_muon_at  # noqa: E402
 from qou_substrate.witness import q0_comparison  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
@@ -72,7 +72,7 @@ set_compute_dps()
 # against yesterday's muon, which is the failure it exists to measure.
 # Exception E1 of the 2026-08-30 ruling: both pins are read here on purpose.
 Q0 = {"muon": q_muon_at(50),
-      "proton": mp.mpf(Q_50_DIGIT_STR)}
+      "proton": Q_MP}
 
 
 QUAD_DPS = 30  # see z_state_integral

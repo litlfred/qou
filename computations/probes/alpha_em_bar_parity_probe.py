@@ -44,9 +44,9 @@ from mpmath import mp, mpf  # noqa: E402
 
 mp.dps = 60
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
-Q0 = mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 QI = 1 / Q0
 
 

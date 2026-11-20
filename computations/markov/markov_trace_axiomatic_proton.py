@@ -61,7 +61,7 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
 
 from _precision import fmt, set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from qou_substrate.constants import MASS_RATIO_P_E  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -145,7 +145,7 @@ def main() -> int:
     print(f"\n  Block word s_1^{K1} s_2^{K2}:")
     print(f"    denominator = {den_factored}")
 
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     f_block = sp.lambdify(q, tr_block, modules="mpmath")
     tr_block_at_q0 = f_block(q0)
     print(f"    tr_M(q_0)   = {mp.nstr(tr_block_at_q0, 15)}")

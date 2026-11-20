@@ -22,7 +22,7 @@ import mpmath as mp
 import sympy as sp
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools/qou-substrate/python"))
-from qou_substrate.constants import Q_50_DIGIT_STR  # proton pin (owner directive 2026-08-07)
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # proton pin (owner directive 2026-08-07)
 
 mp.mp.dps = 70
 q = sp.symbols("q", positive=True)
@@ -87,7 +87,7 @@ check("T(3,5) trace matches corpus W(q) = q^2(q^12+q^8-1)/(q^2+1)^2",
       sp.simplify(tr(5) - q**2 * (q**12 + q**8 - 1) / (q**2 + 1) ** 2) == 0)
 
 # --- numbers at q0 -------------------------------------------------------------------
-q0 = mp.mpf(Q_50_DIGIT_STR)
+q0 = Q_MP
 y3n = mp.mpf(sp.N(Y3.subs(q, sp.Rational(Q_50_DIGIT_STR)), 70))
 y21n = mp.mpf(sp.N(Y21.subs(q, sp.Rational(Q_50_DIGIT_STR)), 70))
 print("q0 =", mp.nstr(q0, 20), " y3 =", mp.nstr(y3n, 15), " y21 =", mp.nstr(y21n, 15))

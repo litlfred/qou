@@ -20,7 +20,7 @@ import mpmath as mp  # noqa: E402
 
 from _precision import fmt, set_compute_dps  # noqa: E402
 from hoefsmit_mpmath import BlockCacheMP, seminormal_matrices_mp  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from pyhecke.wedderburn import partitions_of  # noqa: E402
 from y_lambda_su_n import y_lambda_su_n  # noqa: E402
 from gamma_gamma_h3_psd_selector_probe import nucleon_block, vertex_pow, word_image, trace  # noqa: E402
@@ -32,7 +32,7 @@ set_compute_dps(DPS)
 def main() -> int:
     t0 = time.time()
     mp.mp.dps = DPS
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = q - 1 / q
     cache = BlockCacheMP(q, h)
     parts = [tuple(p) for p in partitions_of(3)]

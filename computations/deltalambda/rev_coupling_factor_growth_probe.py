@@ -60,10 +60,10 @@ if _COMPUTATIONS not in sys.path:
 
 from mpmath import mp  # noqa: E402
 
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.dps = 40
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 T = Q0 ** 2
 
 _NEPS = 8000

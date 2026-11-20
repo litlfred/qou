@@ -140,7 +140,7 @@ import sympy as sp  # noqa: E402
 
 from _li_2_q_util import flavor_split_leading  # noqa: E402
 from codata_constants import M_E_MEV as _ME  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -163,7 +163,7 @@ def ame():
 def main() -> int:
     assertions = []
     print("t7qv — framed vs writhe-normalised, and the pn writhe sign")
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     h = q0 - 1 / q0
     z = q0 ** 3 / (q0 ** 2 + 1)
     me = _ME if isinstance(_ME, mp.mpf) else mp.mpf(str(_ME))

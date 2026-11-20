@@ -39,7 +39,7 @@ for p in (str(HERE), str(HERE / "substrate")):
         sys.path.insert(0, p)
 
 import mpmath as mp  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_E_MEV, AME_B_DEUTERON_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION,
@@ -53,7 +53,7 @@ except ImportError:
     _HAVE_WB = False
 
 set_compute_dps()
-q = mp.mpf(Q_50_DIGIT_STR)
+q = Q_MP
 M_E = mp.mpf(str(M_E_MEV))
 
 NUCLEI = {"D": (1, 2, mp.mpf(str(AME_B_DEUTERON_MEV_VALIDATION))),

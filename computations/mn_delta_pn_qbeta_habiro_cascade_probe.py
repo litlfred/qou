@@ -61,7 +61,7 @@ from codata_constants import (  # noqa: E402 — canonical CODATA registry
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 # `c3_habiro` was called at line ~131 and never defined or imported -- the
 # producer died with NameError before computing anything, and had been doing
@@ -127,7 +127,7 @@ def main() -> int:
     set_compute_dps()
     wb = WitnessBuilder("mn-delta-pn-qbeta-habiro-cascade-probe", engine="mpmath")
 
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     me = mpf(M_E)
     m_p = mpf(M_P_CODATA)
     q_codata = mpf(Q_BETA_CODATA)

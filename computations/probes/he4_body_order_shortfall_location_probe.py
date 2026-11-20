@@ -77,7 +77,7 @@ from mpmath import fabs, log, mp, mpf  # noqa: E402
 from _li_2_q_util import flavor_split_leading  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from closed_form_tau_M import hecke_h, markov_z  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import (
     AME_B_DEUTERON_MEV_VALIDATION,
     AME_B_HE3_MEV_VALIDATION,
@@ -200,7 +200,7 @@ def ursell_cumulants(B):
 
 
 def measure(convention, pn_typing):
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     z = z_of(q, convention)
     h = hecke_h(q)
     delta = flavor_split_leading(q)
@@ -269,7 +269,7 @@ def measure(convention, pn_typing):
 
 
 def main() -> int:
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     print(f"q0 = {mp.nstr(q, 20)}   (proton pin)")
     print(f"z_C = {mp.nstr(z_of(q, 'C'), 12)}    z_D = {mp.nstr(z_of(q, 'D'), 12)}"
           f"    h = {mp.nstr(hecke_h(q), 12)}\n")

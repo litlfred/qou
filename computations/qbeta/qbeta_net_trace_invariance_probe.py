@@ -127,7 +127,7 @@ import sympy as sp  # noqa: E402
 
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from qou_substrate.constants import Q_NEUTRON_MEV, M_E_MEV  # noqa: E402
 
 set_compute_dps(50)
@@ -389,7 +389,7 @@ def main() -> int:
           "supported on the two rows convention D forces)")
 
     # -- 5. numbers -----------------------------------------------------------
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
 
     def ev(e):
         return sp.lambdify(q, e, "mpmath")(q0)

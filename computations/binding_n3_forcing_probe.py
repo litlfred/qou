@@ -38,14 +38,14 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 sys.path.insert(0, str(HERE / "substrate"))
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402 — PROTON pin (owner 2026-08-07)
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402 — PROTON pin (owner 2026-08-07)
 from experimental_constants import M_E_MEV  # noqa: E402 — CAL-1 registry
 from _li_2_q_util import flavor_split_leading  # noqa: E402
 from coulomb_energy import (  # noqa: E402
     R0_FM, HBAR_C_MEV_FM, alpha_em_hbar_c_mev_fm,
 )
 
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 ALPHA_HC = mp.mpf(str(alpha_em_hbar_c_mev_fm()))
 # Equivalent uniform-sphere radius from the measured ³He rms charge radius
 # 1.9661 fm: R = sqrt(5/3)·r_rms, back-solved to an r₀ (coulomb_energy.py header).

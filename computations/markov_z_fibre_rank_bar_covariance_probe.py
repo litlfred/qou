@@ -52,7 +52,7 @@ _REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(_REPO / "tools" / "qou-substrate" / "python"))
 
 from qou_substrate import WitnessBuilder  # noqa: E402
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 DPS = 50
 
@@ -144,7 +144,7 @@ def main() -> int:
     )
 
     # ---- Numerics at the experimental pin: invert z -> N for C and D. -------
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
 
     def z_of_rank(n_val):
         n_val = mp.mpf(n_val)

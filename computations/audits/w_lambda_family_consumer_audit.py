@@ -390,12 +390,12 @@ def main() -> int:
     try:
         from mpmath import mp  # noqa: PLC0415
         from _precision import set_compute_dps, fmt  # noqa: PLC0415
-        from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: PLC0415
+        from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: PLC0415
         _sys.path.insert(0, str(ROOT / "probes"))
         import molien_feray_meliot_bridge_probe as MB  # noqa: PLC0415
         import plancherel_deformation_uniqueness_probe as PU  # noqa: PLC0415
         set_compute_dps()
-        q0 = mp.mpf(Q_50_DIGIT_STR)
+        q0 = Q_MP
         for nn in (3, 6, 9):
             lams = MB.partitions(nn)
             rs = [MB.molien_weight(q0, lam)

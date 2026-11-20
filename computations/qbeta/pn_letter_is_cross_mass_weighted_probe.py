@@ -154,8 +154,8 @@ def main() -> int:
     ok &= d_sym == 0
     print(f"   b(direct) - b(production) + h*delta/2 = {d_sym}   "
           f"{'OK' if d_sym == 0 else 'MISMATCH'}")
-    from qou_substrate.constants import Q_50_DIGIT_STR          # noqa: PLC0415
-    q0 = mpf(Q_50_DIGIT_STR)
+    from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP          # noqa: PLC0415
+    q0 = Q_MP
     sub = {_q: sp.Float(str(q0), 50)}
     b_prod = mpf(str(sp.N(bond(T_PROD).subs(sub), 45)))
     b_flip = mpf(str(sp.N(bond(T_FLIP).subs(sub), 45)))

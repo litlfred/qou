@@ -292,10 +292,10 @@ for name, ak, want in (("a2", A2, 2), ("a1", A1, 3), ("a0", A0, 4)):
 print("T8  the substrate modulus")
 
 import mpmath as mp                                                    # noqa: E402
-from qou_substrate.constants import Q_50_DIGIT_STR                     # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP                     # noqa: E402
 
 mp.mp.dps = 60
-q0 = mp.mpf(Q_50_DIGIT_STR)
+q0 = Q_MP
 check("T8.1  q_0 > 1 (proton pin, 60 dps)", q0 > 1, f"q_0 = {mp.nstr(q0, 25)}")
 powers_ne_one = all(q0**k != 1 for k in range(1, 13))
 check("T8.2  q_0^k != 1 for 1 <= k <= 12, so no monomial gauge scalar is trivial",

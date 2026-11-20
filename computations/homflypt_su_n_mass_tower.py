@@ -64,7 +64,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from homflypt_engine import homflypt_at_su_n, homflypt_su_n_family
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 from witness_base import WitnessBuilder
 from _precision import set_compute_dps  # noqa: E402
 
@@ -73,7 +73,7 @@ def main():
     t_start = time.monotonic()
     set_compute_dps()
 
-    Q0 = mp.mpf(Q_50_DIGIT_STR)
+    Q0 = Q_MP
     print(f"HOMFLYPT SU(N) mass-tower evaluation at q₀ = {mp.nstr(Q0, 12)}")
     print("=" * 70)
 

@@ -71,12 +71,12 @@ import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from hecke_characters import partitions_of, chi_lambda_braid_mpf  # noqa: E402
 import mass_at_3A_proper as M  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 DPS = 60
 set_compute_dps(DPS)
 
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 H0 = Q0 - 1 / Q0
 ZD = Q0 ** 3 / (Q0 ** 2 + 1)          # convention D
 TIE_TOL = mp.mpf("1e-50")             # see the H_3 probe for why nothing is `==`

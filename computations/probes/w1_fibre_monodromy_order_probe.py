@@ -226,10 +226,10 @@ banner("S8  the substrate q0 is not a root of unity at all")
 try:
     from mpmath import mp  # type: ignore
 
-    from qou_substrate.constants import Q_50_DIGIT_STR  # type: ignore
+    from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # type: ignore
 
     mp.dps = 60
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     print(f"  q0 (proton pin, 25 sf) = {mp.nstr(q0, 25)}")
     # A root of unity has modulus exactly 1; q0 is real and > 1.
     check("q0 > 1, so |q0| != 1: q0 is not a root of unity", q0 > 1,

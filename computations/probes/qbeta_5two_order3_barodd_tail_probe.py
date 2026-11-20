@@ -54,7 +54,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
@@ -88,7 +88,7 @@ def _head_sha():
 # superseded 2026-08-22 by the CODATA-2022 lepton-ratio derivation. There is
 # no comparison leg here, so the 2026-08-30 owner ruling puts this producer
 # on the PROTON default; the pin moves 11.54 ppb.
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 S_MUON = mp.mpf("0.00968298")
 S_PROTON = mp.mpf("-0.03945936")
 PHI_ODD_STRIP = mp.mpf("-0.004145")

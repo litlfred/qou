@@ -45,7 +45,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 sys.path.insert(0, str(HERE / "substrate"))
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402 — PROTON pin (owner 2026-08-07)
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402 — PROTON pin (owner 2026-08-07)
 from experimental_constants import M_E_MEV  # noqa: E402 — CAL-1 registry
 from _li_2_q_util import flavor_split_leading  # noqa: E402
 from coulomb_energy import R0_FM, alpha_em_hbar_c_mev_fm  # noqa: E402
@@ -54,7 +54,7 @@ from codata_constants import (
     AME_B_HE4_MEV_VALIDATION,
 )
 
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 M_E = mp.mpf(str(M_E_MEV))
 ALPHA_HC = mp.mpf(str(alpha_em_hbar_c_mev_fm()))
 

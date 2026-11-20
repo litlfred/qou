@@ -67,11 +67,11 @@ import mpmath as mp  # noqa: E402
 
 from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.mp.dps = 60
 
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 QI = mp.mpf(1) / Q0
 
 # q values with genuinely 60-dps mantissas (a float64-valued mpf is rejected

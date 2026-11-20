@@ -55,7 +55,7 @@ import sympy as sp
 
 from hecke_characters import partitions_of, dim_q, qfac
 from mass_at_3A_proper import _cached_seminormal, atom_braid_word_3A, Q0_PROTON
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 from _precision import fmt, set_compute_dps
 from witness_base import WitnessBuilder
 
@@ -80,7 +80,7 @@ set_compute_dps()
 # `Q_50_DIGIT_STR` is ANCHOR-ADAPTIVE in the same way `Q` is -- `q_parameter`
 # rebinds it from the anchor witness under `QOU_Q0_ANCHOR=ideal` -- so this
 # swap fixes the precision without pinning the producer to proton.
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 HA_VAL = Q0 - 1 / Q0
 
 

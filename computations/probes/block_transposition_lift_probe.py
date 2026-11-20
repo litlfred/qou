@@ -207,7 +207,7 @@ import mpmath as mp  # noqa: E402
 
 from hecke_characters import build_seminormal_matrices_mp  # noqa: E402
 from partition_utils import conjugate_partition  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
 mp.mp.dps = 60
@@ -256,7 +256,7 @@ def roots(A, n):
 
 
 def main() -> int:
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     lq = mp.log(q)
 
     print("=" * 78)

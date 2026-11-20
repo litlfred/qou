@@ -38,7 +38,7 @@ import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules mo
 # Ref: [mayer1949] DOI 10.1103/PhysRev.75.1969
 
 import sys
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 from pathlib import Path
 
 import mpmath
@@ -108,7 +108,7 @@ def dim_q_of_partition(
 
 def main() -> None:
     mp.dps = 60
-    q_0 = mpf(Q_50_DIGIT_STR)  # high-precision substrate parameter
+    q_0 = Q_MP  # high-precision substrate parameter
 
     A_values = [2, 3, 4, 5, 6]
     height = 6

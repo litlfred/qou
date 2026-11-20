@@ -36,10 +36,10 @@ mpmath.mp.dps = 200
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).parent))
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 from experimental_constants import M_E_MEV, G_F_MEV
 
-q = mpmath.mpf(Q_50_DIGIT_STR)
+q = Q_MP
 
 
 def q_int(n):

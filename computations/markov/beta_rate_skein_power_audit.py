@@ -116,7 +116,7 @@ for _p in ("computations", "computations/markov", "computations/hecke",
 
 import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 q = sp.symbols("q", positive=True)
 
@@ -131,7 +131,7 @@ J = (q ** -2) ** 4 + (q ** -2) ** 6 - (q ** -2) ** 10      # V_{T(3,5)}(q^-2)
 
 def main() -> int:
     mp.mp.dps = 60
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     f = lambda e: sp.lambdify(q, e, "mpmath")(q0)         # noqa: E731
     n = lambda x, d=50: mp.nstr(x, d, strip_zeros=False)  # noqa: E731
 

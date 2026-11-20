@@ -27,7 +27,7 @@ sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import (  # noqa: E402 — canonical PDG registry
     M_PI_PM_MEV_VALIDATION,
     M_K_PM_MEV_VALIDATION,
@@ -94,7 +94,7 @@ def full_markov_trace(word, q_val):
 def main():
     set_compute_dps()
     set_compute_dps()
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
 
     m_pi = mp.mpf(str(M_PI_PM_MEV_VALIDATION))  # MeV, PDG (codata_constants)
 

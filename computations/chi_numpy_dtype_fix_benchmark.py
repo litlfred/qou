@@ -47,7 +47,7 @@ import mpmath as mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import fmt  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from canonical_braid_crossings import (  # noqa: E402
     atom_canonical_crossings, d_for_ctype,
 )
@@ -86,7 +86,7 @@ def chi_numpy_prefix(shape, crossings, q_value):
 
 def main() -> int:
     set_compute_dps()
-    q_mp = mp.mpf(Q_50_DIGIT_STR)
+    q_mp = Q_MP
     q_f64 = float(q_mp)
     crossings = atom_canonical_crossings(ATOM[0], ATOM[1])
 

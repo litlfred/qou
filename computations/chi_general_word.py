@@ -73,7 +73,7 @@ import mpmath as mp  # noqa: E402
 from chi_monotone_transfer import chi_all_lambda  # noqa: E402
 from reduced_block_kernel import chi_all_lambda_reduced_block  # noqa: E402
 from chi_window_transfer import chi_all_lambda_window  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from qou_substrate.precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
@@ -161,7 +161,7 @@ def chi_all_lambda_general(word, n: int, *, dps: int = 50, q=None):
         raise ValueError(
             "general-word kernel is numeric only; a symbolic q needs the "
             "monotone transfer, which requires a monotone word")
-    qv = mp.mpf(Q_50_DIGIT_STR) if q is None else mp.mpf(str(q))
+    qv = Q_MP if q is None else mp.mpf(str(q))
     q_str = Q_50_DIGIT_STR if q is None else mp.nstr(qv, dps)
     h = qv - 1 / qv
 

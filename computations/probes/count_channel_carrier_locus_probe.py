@@ -57,7 +57,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from mpmath import mp, mpf  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 try:  # P30 provenance stamp; optional so a bare container still runs
     from qou_substrate.witness import WitnessBuilder as _WitnessBuilder
@@ -80,7 +80,7 @@ def mult(np_, nn_):
 
 
 def main():
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = q - 1 / q
 
     b2 = AME["D"]

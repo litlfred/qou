@@ -40,7 +40,7 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 # attached at construction. Owned by this module — see
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 
 def qpochhammer(u, m):
@@ -69,7 +69,7 @@ PROTON_HABIRO = [
 def main():
     set_compute_dps()
 
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     u = sqrt(q)  # spinor rate \check{q} = q^{1/2} (Habiro lit: u)
     h = q - 1 / q
     hbar = 1 - 1 / q

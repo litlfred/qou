@@ -17,13 +17,13 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 
 def main():
     set_compute_dps()
     set_compute_dps()
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = q - 1/q
     hbar = (q-1)/q
     from codata_constants import M_E_MEV as m_e, M_MU_MEV_VALIDATION as m_mu  # registry (no literals)

@@ -93,13 +93,13 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.precision import set_compute_dps  # noqa: E402
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 set_compute_dps()
 
 S_MUON = mp.mpf("0.00968298")
 S_PROTON = mp.mpf("-0.03945936")
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 
 
 def main() -> int:

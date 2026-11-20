@@ -75,7 +75,7 @@ import sympy as sp  # noqa: E402
 
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from y_lambda_su_n import y_lambda_su_n  # noqa: E402
 
 # The H_3(q) regular representation, verified in the step-8 probe (25/25).
@@ -221,7 +221,7 @@ def main() -> int:
           "(re-confirms the sibling prune's premise independently)")
 
     # cross-check the D weights against the corpus producer
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
 
     def ev(e):
         return sp.lambdify(q, e, "mpmath")(q0)

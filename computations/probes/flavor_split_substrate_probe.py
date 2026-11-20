@@ -61,7 +61,7 @@ sys.path.insert(0, str(HERE.parent))
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_P_MEV_VALIDATION,
     M_N_MEV_VALIDATION,
@@ -90,7 +90,7 @@ def main() -> None:
     set_compute_dps()
     wb = WitnessBuilder("flavor-split-substrate-probe", engine="mpmath")
 
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     qi = 1 / q
 
     # ── Canonical leading substrate form via the shared utility ─────────

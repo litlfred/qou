@@ -58,7 +58,7 @@ from _precision import fmt, set_compute_dps  # noqa: E402
 from hoefsmit_symbolic import Q  # noqa: E402
 from hecke_character_symbolic import q_character_on_braid_word  # noqa: E402
 from markov_weights_symbolic import solve_y_lambda  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from gamma_gamma_isospin_channel_probe import nucleon  # noqa: E402
 
 DPS = 60
@@ -117,7 +117,7 @@ def _job(args):
 
 def main() -> int:
     t0 = time.time()
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     from qou_substrate.constants import M_E_MEV  # noqa: PLC0415
     me = mp.mpf(str(M_E_MEV))
     z = q ** 3 / (q ** 2 + 1)

@@ -71,7 +71,7 @@ sys.path.insert(0, str(_HERE.parent / 'substrate'))
 import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()  # raise dps BEFORE Q0 and the constants below are built
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 _spec = importlib.util.spec_from_file_location(
     "qbeta_g3_5two_stokes_sandwich",
@@ -86,7 +86,7 @@ ORD = 18
 # self-certified muon pin A, superseded 2026-08-22 — and the four derived
 # constants below were a float64 chain built on it. No comparison leg here,
 # so the 2026-08-30 owner ruling puts it on the proton default (11.54 ppb).
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 HBAR_Q = mp.mpf(1) - mp.mpf(1) / Q0   # ℏ_q = 1 − q₀⁻¹  (cheat sheet)
 HBAR_Q2 = HBAR_Q * HBAR_Q
 Q0_MINUS_1 = Q0 - mp.mpf(1)

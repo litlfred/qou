@@ -141,8 +141,8 @@ def main() -> int:
     # Proton pin read BY NAME (owner directive 2026-08-07; bean qou-4bef 2026-09-03). This line
     # carried the RETIRED muon literal while the witness was auto-stamped `proton` — a mislabel
     # no anchor detector could see, because the literal never reached the witness.
-    from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
-    q0 = mpf(Q_50_DIGIT_STR)
+    from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
+    q0 = Q_MP
     swapped = -1 / q0
     check("eigswap_real_q0_is_real_negative",
           swapped < 0 and abs(swapped.imag if hasattr(swapped, "imag") else 0) < mpf(10) ** -40,

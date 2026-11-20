@@ -28,7 +28,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 import mass_at_3A_proper as m3  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from hoefsmit_mpmath import (  # noqa: E402
     BlockCacheMP,
     chi_lambda_of_word_mp,
@@ -58,7 +58,7 @@ def main() -> int:
     # correctly (same q both sides), but at the wrong q, and the character it
     # printed would disagree with the probe's at ~1e-16 for a reason having
     # nothing to do with either routine.
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     cache = BlockCacheMP(q)
 
     print(f"dps={mp.mp.dps}  word={len(word)} factors")

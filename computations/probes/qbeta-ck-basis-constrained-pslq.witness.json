@@ -1,10 +1,10 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-10-10T12:50:38.114046+00:00",
+  "computedAt": "2026-11-20T14:59:59.933282+00:00",
   "computation": "qbeta-ck-basis-constrained-pslq",
   "scriptFile": "qbeta_ck_basis_constrained_pslq.py",
-  "commitSha": "1247b17f515528e90c50a31c4efa09a4f411f616",
+  "commitSha": "87426d8d7be4e0559bc38b6c963efd8f8e95f93c",
   "description": "PROBE 4 (2026-07-11 avenues audit \u00a73.D): basis-constrained PSLQ for the empirical Q_\u03b2 ladder coefficients c_3/c_4 against the arithmetic-dictated basis {1, \u221a3, \u03c0\u00b2, Vol(4\u2081), \u03b6(3)} (4\u2081 trace field \u211a(\u221a\u22123)). Two-stage formalize-first: STAGE 1 is a mandatory entropy audit of the ACTUAL effective precision of the empirical coefficients, traced through the extraction chain c_3 = (Q_CODATA/Q_N2 \u2212 1)/u\u00b3, which amplifies the relative Q_\u03b2 error by 1/u\u00b3 \u2248 1.6e6 (c_4: 1/u\u2074 \u2248 1.9e8). STAGE 2 (PSLQ) runs only if the effective digits exceed the PSLQ entropy bound D > n\u00b7log10(2H) + margin (PR #1805 discipline). No c_k value proposed; nothing wired.",
   "precisionMetadata": {
     "compute_dps": 60
@@ -135,8 +135,8 @@
   "allPassed": false,
   "markov_convention": "D",
   "markov_convention_reason": "z = q**3/(q**2 + 1) at the binding above; convention D, canonical per owner ruling R1 (2026-08-15). NOT a proposed c_3: qou-cds1 records -974.38 as a sensitivity measurement and says explicitly 'do not wire it anywhere'. The failing assertion extraction_chain_reproduces_cache_c3 is the frame disagreement with the C-framed qbeta-ck-cache.witness.json, not a chain defect.",
-  "scriptHash": "0bc5aa564e82",
-  "scriptCommitSha": "6ff3254a0f7d56d7961ba93607680644b8d7b07b",
+  "scriptHash": "9f6c085af57b",
+  "scriptCommitSha": "806d5146227ea7160a8a1a42fe023c7e1c49cd43",
   "durationMs": 0,
   "q0Anchor": "ambiguous",
   "q0AnchorReason": "reads BOTH pins on purpose: c3_reproduced_canonical is at the muon canonical pin (data.q0_canonical) while the proton readout and cross-anchor slope (data.q0_proton, data.anchor_slope_dc3_dq) are at the proton pin. The witness carries both signatures, so the pin is undetermined and the manifest files this stem ambiguous; the values actually used are in data.q0_canonical / data.q0_proton. NOT q0-independent (bean qou-v6wz)."

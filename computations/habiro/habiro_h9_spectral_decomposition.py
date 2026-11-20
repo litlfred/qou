@@ -49,7 +49,7 @@ from _precision import set_compute_dps  # noqa: E402
 from partition_utils import hook_lengths, conjugate_partition  # noqa: E402
 
 try:
-    from q_parameter import Q_50_DIGIT_STR, vol_4_1_at  # noqa: E402
+    from q_parameter import Q_50_DIGIT_STR, Q_MP, vol_4_1_at  # noqa: E402
 except ImportError:
     from qou_substrate.constants import Q_50_DIGIT_STR, vol_4_1_at  # noqa: E402
 
@@ -105,7 +105,7 @@ def main():
     _t0 = time.perf_counter()
     set_compute_dps()
     set_compute_dps()
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = q - 1/q
     hbar_q = (q - 1) / q
     hbar_sq = hbar_q**2

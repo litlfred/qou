@@ -16,11 +16,11 @@ for p in ("tools/pyhecke/python", "tools/qou-substrate/python", "computations/su
 import mpmath as mp
 from _precision import set_compute_dps
 from hoefsmit_mpmath import BlockCacheMP, seminormal_matrices_mp
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 from gamma_gamma_h3_psd_selector_probe import vertex_pow, word_image, trace
 
 set_compute_dps(60); mp.mp.dps = 60
-q = mp.mpf(Q_50_DIGIT_STR); h = q - 1 / q
+q = Q_MP; h = q - 1 / q
 cache = BlockCacheMP(q, h)
 sig, dim, _ = seminormal_matrices_mp((2, 1), cache=cache)
 

@@ -296,8 +296,8 @@ def main() -> int:
     print(" Consumer-side χ^λ(q_0) wire-in — three-path benchmark")
     print("=" * 78)
 
-    from q_parameter import Q_50_DIGIT_STR
-    q_mpf = mpmath.mpf(Q_50_DIGIT_STR)
+    from q_parameter import Q_50_DIGIT_STR, Q_MP
+    q_mpf = Q_MP
     sqrt_q = mpmath.sqrt(q_mpf)
     print(f"  q_0 = {mpmath.nstr(q_mpf, 30)}")
 

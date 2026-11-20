@@ -57,13 +57,13 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 # attached at construction. Owned by this module — see
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 
 def main():
     set_compute_dps()
 
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     hbar = 1 - 1 / q
 
     w = record_upstream(HERE / "q-beta-operator-valued-N3.witness.json", _UPSTREAM_RECORDS)

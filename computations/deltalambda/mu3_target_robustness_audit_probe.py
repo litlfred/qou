@@ -36,7 +36,7 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP, q_muon_at  # noqa: E402
 
 set_compute_dps()
 
@@ -57,7 +57,7 @@ set_compute_dps()
 #   5.007 ppb -- 43% of the 11.537 ppb it claimed in the comment beside it. A
 #   truncated literal named for an anchor is not that anchor.
 Q0_MUON = q_muon_at(70)
-Q0_PROTON = mp.mpf(Q_50_DIGIT_STR)
+Q0_PROTON = Q_MP
 
 # ── AME2020 connected binding energies (MeV), from the #3943 committed witness ──
 B_AME = {

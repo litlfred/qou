@@ -37,12 +37,12 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from experimental_constants import M_E_MEV, M_P_MEV  # noqa: E402
 from hoefsmit_symbolic import Q, chi_lambda_symbolic  # noqa: E402
 
 mp.mp.dps = 80
-Q_NUM = mp.mpf(Q_50_DIGIT_STR)
+Q_NUM = Q_MP
 H_NUM = Q_NUM - 1/Q_NUM
 HBAR_Q_NUM = (Q_NUM - 1) / Q_NUM
 G_NUM = mp.catalan

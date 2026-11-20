@@ -65,7 +65,7 @@ sys.path.insert(0, str(COMP))
 
 from closed_form_tau_M import markov_z, hecke_h  # noqa: E402
 from _li_2_q_util import flavor_split_leading  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from codata_constants import (
@@ -160,7 +160,7 @@ def measure(q):
 
 
 def main() -> int:
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     res = measure(q)
     print("Interface-operator PAIRWISE-ASSEMBLY ceiling")
     print("=" * 72)

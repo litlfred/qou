@@ -300,9 +300,9 @@ def main() -> int:
     from mpmath import mp, mpf, cos as mpcos, sqrt as mpsqrt
 
     mp.dps = 60
-    from qou_substrate.constants import Q_50_DIGIT_STR  # proton pin (owner default)
+    from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # proton pin (owner default)
 
-    q0 = mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     s0 = mpsqrt(q0)
     hq0 = q0 - 1 / q0
     zC0 = s0 / (q0 + 1)

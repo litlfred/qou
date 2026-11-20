@@ -89,7 +89,7 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
         sys.path.insert(0, _p)
 
 from substrate.witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP, q_muon_at  # noqa: E402
 from qou_substrate.witness import q0_comparison  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 from codata_constants import (  # noqa: E402
@@ -332,7 +332,7 @@ def forward_layer(q_str) -> dict:
 
 def main() -> int:
     sym = symbolic_layer()
-    q_env = mp.mpf(Q_50_DIGIT_STR)
+    q_env = Q_MP
     mat = matrix_layer(q_env)
     fwd_env = forward_layer(Q_50_DIGIT_STR)
     fwd_muon = forward_layer(Q0_MUON_STR)
@@ -394,7 +394,7 @@ def main() -> int:
     # leg against its canonical pin instead of tautologically re-reading it.
     out = wb.save(q0_comparison(
         muon=mp.mpf(Q0_MUON_STR),
-        proton=mp.mpf(Q_50_DIGIT_STR),
+        proton=Q_MP,
         reason='measures the inter-crossing Magnus order-2 term at BOTH the environment (proton) pin and the muon pin, and reports g2_gap_shift_between_pins; both pins are read on purpose and each is reported under its own key',
     ))
 

@@ -87,7 +87,7 @@ import json  # noqa: E402
 import mpmath as mp  # noqa: E402
 
 from _li_2_q_util import flavor_split_leading  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.mp.dps = 50
 
@@ -101,7 +101,7 @@ def fmt(x, n=8):
 
 def main() -> int:
     from codata_constants import M_E_MEV as _me
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     h = q0 - 1 / q0
     z = q0**3 / (q0**2 + 1)
     me = _me if isinstance(_me, mp.mpf) else mp.mpf(str(_me))

@@ -65,7 +65,7 @@ for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
               _Path_qp(__file__).resolve().parent.parent / 'substrate'):
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
-from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP, q_muon_at  # noqa: E402
 from qou_substrate.witness import apply_q0_comparison  # noqa: E402
 import sympy as sp
 
@@ -78,7 +78,7 @@ mp.mp.dps = 60
 # mu-vs-p comparison whose muon leg is a retired literal compares live proton
 # against yesterday's muon, which is the failure it exists to measure.
 # Exception E1 of the 2026-08-30 ruling: both pins are read here on purpose.
-Q0_PROTON = mp.mpf(Q_50_DIGIT_STR)
+Q0_PROTON = Q_MP
 Q0_MUON = q_muon_at(50)
 
 # Exact Ohtsuki κ-ladder (4₁ saddle-fluctuation invariants) — transseries probe

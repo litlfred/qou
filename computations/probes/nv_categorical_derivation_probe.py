@@ -50,7 +50,7 @@ import mpmath
 mpmath.mp.dps = 100
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 from experimental_constants import M_E_MEV, G_F_MEV
 
 G_F = mpmath.mpf(str(G_F_MEV))
@@ -58,7 +58,7 @@ m_e = mpmath.mpf(str(M_E_MEV))
 v_weak = 1 / mpmath.sqrt(mpmath.sqrt(2) * G_F)
 N_v_TARGET = 3 * v_weak / m_e  # = 1,445,519.45...
 
-q = mpmath.mpf(Q_50_DIGIT_STR)
+q = Q_MP
 
 
 def qint(n):

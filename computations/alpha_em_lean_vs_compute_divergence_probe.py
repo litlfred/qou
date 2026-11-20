@@ -42,7 +42,7 @@ mp.dps = 60
 # `mpf_import_time_dps_audit` and correctly so. (The divergences below are
 # 470 ppb and a factor of 5, far above float64 resolution either way, so this
 # is discipline rather than a correction to the result.)
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from knot_volumes import vol_at  # noqa: E402 — canonical volume registry
 
 CODATA_ALPHA_EM_INV = mp.mpf("137.035999177")
@@ -96,7 +96,7 @@ def ppb(x, ref):
 
 
 def main():
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     print(f"q0 (proton pin) = {mp.nstr(q, 20)}\n")
 
     print("-" * 68)
@@ -325,7 +325,7 @@ def cross_sector_objection():
 
 if __name__ == "__main__":
     main()
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     same_function_check(q)
     kappa_windows(q)
     borromean_catalan_identity()

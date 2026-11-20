@@ -50,7 +50,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 # Precision must be raised BEFORE the module-scope constants below: at
 # import time mp.dps is still mpmath's default 15 (~binary64), and a
@@ -206,7 +206,7 @@ def find_root_k(q: mpf, ansatz_fn, target: mpf,
 def main():
     _t0 = time.perf_counter()
     set_compute_dps()
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
 
     print("=" * 76)
     print("  Direction 2 Step 1 (extended) — fractional k_ud + alt-ansatz scan")

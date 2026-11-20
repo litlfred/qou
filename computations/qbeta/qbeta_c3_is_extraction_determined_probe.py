@@ -81,7 +81,7 @@ import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from qou_substrate.constants import Q_NEUTRON_MEV, M_E_MEV  # noqa: E402
 from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 
@@ -143,7 +143,7 @@ def main() -> int:
         A.append((name, bool(passed)))
         print(f"  [{'PASS' if passed else 'FAIL'}] {name}\n      {note}")
 
-    q_pr = mp.mpf(Q_50_DIGIT_STR)
+    q_pr = Q_MP
     q_mu = mp.mpf(str(json.loads(MUON_WITNESS.read_text())
                       ["derived_50_digit"]["q"]))
     zC = lambda x: mp.sqrt(x) / (x + 1)          # noqa: E731

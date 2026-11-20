@@ -33,7 +33,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from _li_2_q_util import flavor_split_leading  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import M_P_MEV_VALIDATION
 
@@ -52,7 +52,7 @@ def qb_from_split(split):
 
 
 def main() -> int:
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     lead = flavor_split_leading(q)
     forms = {
         "flavor_split_leading": lead,

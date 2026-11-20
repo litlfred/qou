@@ -88,7 +88,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR, Q_MUON_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP, Q_MUON_50_DIGIT_STR  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_E_MEV, M_N_MEV_VALIDATION, M_P_MEV_VALIDATION,
 )
@@ -121,7 +121,7 @@ def main() -> int:
         print(f"  [{'PASS' if ok else 'FAIL'}] {name}")
         print(f"         {detail}")
 
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     m_e = mp.mpf(str(M_E_MEV))
     E0 = m_e / (q * (q - 1))
     conv_B = (mp.mpf(str(M_N_MEV_VALIDATION)) - mp.mpf(str(M_P_MEV_VALIDATION))

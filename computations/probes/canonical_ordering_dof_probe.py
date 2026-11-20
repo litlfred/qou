@@ -69,7 +69,7 @@ import _path_bridge  # noqa: F401, E402
 import mpmath as mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402  EXPERIMENTAL PROTON ANCHOR
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402  EXPERIMENTAL PROTON ANCHOR
 import closed_form_tau_M as CF  # noqa: E402
 from closed_form_tau_M import markov_z, hecke_h, closed_form_ratio  # noqa: E402
 from _li_2_q_util import flavor_split_leading  # noqa: E402
@@ -79,7 +79,7 @@ from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
 
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 HERE = Path(__file__).resolve().parent
 COMPUTE = HERE.parent
 

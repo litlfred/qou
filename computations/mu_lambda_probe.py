@@ -27,7 +27,7 @@ from pathlib import Path
 
 import mpmath as mp
 
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 from y_lambda_wenzl_bridge import partitions_of
 
 HERE = Path(__file__).resolve().parent
@@ -106,7 +106,7 @@ def main():
     dps = 50
     mp.mp.dps = dps
 
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     h = hbar_q(q0)
 
     print(f"μ_λ(q₀) probe — content-Casimir eigenvalue computation")

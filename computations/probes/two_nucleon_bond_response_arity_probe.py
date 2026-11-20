@@ -83,7 +83,7 @@ import sympy as sp  # noqa: E402
 from _precision import fmt, set_compute_dps  # noqa: E402
 from hoefsmit_symbolic import Q, chi_lambda_symbolic  # noqa: E402
 from markov_weights_symbolic import solve_y_lambda, tr_M_canonical  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 DPS = 60
 set_compute_dps(DPS)
@@ -137,7 +137,7 @@ def vanishing_order(poly: sp.Expr) -> tuple[int, list]:
 
 def main() -> int:
     t0 = time.time()
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h2 = (q - 1 / q) ** 2
     qv = sp.Rational(Q_50_DIGIT_STR)
     h2_sym = sp.cancel((Q - 1 / Q) ** 2)

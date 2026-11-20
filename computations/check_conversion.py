@@ -3,7 +3,7 @@ from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parent))
 import _path_bridge as _bridge  # noqa: F401
 from mpmath import mp, mpf
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 
 mp.dps = 50
 # Was a bare float64 literal 1.109978033355325x — a value that is NEITHER pin,
@@ -11,7 +11,7 @@ mp.dps = 50
 # substrate tension. It was also float64 in a computations/ script, which
 # AGENTS.md forbids outright. Both are fixed by reading the declared pin.
 
-q0 = mpf(Q_50_DIGIT_STR)
+q0 = Q_MP
 h = q0 - 1/q0
 dim_q = q0 + 1/q0
 hbar_q = (q0 - 1)/q0

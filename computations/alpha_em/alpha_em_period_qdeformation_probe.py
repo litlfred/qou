@@ -137,8 +137,8 @@ def main():
           f"r(q₁₅) = 15 at q₁₅ = {mp.nstr(q15, 25)} (30-dps root of the exact symbolic ratio)")
 
     # V4: pre-stated distinguished-candidate test (the dictionary-free check)
-    from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402 — proton default, by name
-    Q0_PROTON = mp.mpf(Q_50_DIGIT_STR)
+    from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402 — proton default, by name
+    Q0_PROTON = Q_MP
     phi = (1 + mp.sqrt(5)) / 2
     cands = {
         "1/q0": 1 / Q0_PROTON,   # proton pin by name (was the RETIRED muon literal; bean qou-4bef)

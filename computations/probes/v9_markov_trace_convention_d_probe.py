@@ -50,7 +50,7 @@ from functools import lru_cache
 import mpmath as mp
 
 from witness_base import WitnessBuilder  # noqa: E402
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.mp.dps = 70
 
@@ -155,7 +155,7 @@ NUCLEI = [("4H", 1, 3), ("5He", 2, 3), ("5Li", 3, 2), ("8Be", 4, 4),
 
 
 def main() -> int:
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     t0 = mp.sqrt(q0)
     z_d = q0 ** 3 / (q0 ** 2 + 1)
     z_c = 1 / (t0 + 1 / t0)

@@ -63,7 +63,7 @@ sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 
 def seifert_euler_number(p: int, n: int) -> mpf:
@@ -81,7 +81,7 @@ def main():
 
     wb = WitnessBuilder("meson-kaon-pion-derivation", engine="mpmath")
 
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = q - 1 / q
 
     # === Hecke character on (2,1) representation ===

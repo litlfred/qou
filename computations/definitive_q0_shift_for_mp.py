@@ -22,7 +22,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 
@@ -30,7 +30,7 @@ from experimental_constants import M_E_MEV  # noqa: E402
 def main():
     set_compute_dps()
     set_compute_dps()
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     m_e = mp.mpf(M_E_MEV)
     m_p = mp.mpf(M_P_MEV_VALIDATION)
     vol41 = mp.mpf("2.0298832128193072500424051085490405718833786150606")

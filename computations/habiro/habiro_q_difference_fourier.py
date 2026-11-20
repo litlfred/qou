@@ -88,7 +88,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps(70)
 
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 # Substrate ladder variable u = b·ℏ² at canonical q₀ (for numeric checks).
 import mpmath as mp  # noqa: E402
@@ -163,7 +163,7 @@ def main() -> int:
     # line 23: "u = q^{1/2} and clearing denominators gives p(u) ∈ ℤ[u]".
     # The two u's are distinct objects; this probe works in the Habiro
     # u = √q, where the root-of-unity truncation is the genuine WRT cut.
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     u0 = mp.sqrt(q0)
     trM_p_num = complex(sp.N(trM_p.subs(u, sp.Float(str(u0), 60)), 40))
     trM_n_num = complex(sp.N(trM_n.subs(u, sp.Float(str(u0), 60)), 40))

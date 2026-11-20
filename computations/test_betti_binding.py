@@ -24,11 +24,11 @@ for _p_qp in (_Path_qp(__file__).resolve().parent,
               _Path_qp(__file__).resolve().parent.parent / 'computations' / 'substrate'):
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 def main():
     set_compute_dps()
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     # Was the bare float64 literal `0.510998950` -- both truncated (the table
     # carries 0.51099895069) and float, in a script that sets dps = 50 and
     # uses mpf for everything else. Read it instead.

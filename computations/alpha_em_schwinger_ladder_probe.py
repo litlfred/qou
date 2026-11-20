@@ -59,7 +59,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401, E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from qou_substrate import codata as _codata  # noqa: E402
 
 set_compute_dps()
@@ -89,7 +89,7 @@ SIGMA_PPB = mp.mpf(_ALPHA_INV.uncertainty_str) / CODATA * mp.mpf(10) ** 9
 CODATA_2018 = mp.mpf("137.035999084")
 # Proton pin read BY NAME from the substrate (owner authorisation 2026-09-03, bean
 # qou-4bef); until then a 19-figure truncation of the 50-digit string was hardcoded.
-Q_PROTON = mp.mpf(Q_50_DIGIT_STR)
+Q_PROTON = Q_MP
 KAPPA1_OHTSUKI = 11 * mp.sqrt(3) * mp.pi / 108
 
 

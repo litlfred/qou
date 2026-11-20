@@ -39,7 +39,7 @@ for p in (str(HERE), str(HERE / "probes"), str(HERE / "substrate")):
 from mpmath import mp, mpf, log, fabs  # noqa: E402
 from closed_form_tau_M import markov_z, hecke_h  # noqa: E402
 from _li_2_q_util import flavor_split_leading  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 # reuse #3548's exact connected-cluster machinery
 from su4_connected_1111_magnitude_probe import (  # noqa: E402
@@ -93,7 +93,7 @@ AME = {"D": mpf("2.224566"), "4He": mpf("28.295673"), "6Li": mpf("31.994564")}
 
 def main() -> int:
     import math
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     z, h = markov_z(q), hecke_h(q)
     fpn = z - h * (mpf(1) / 2 - flavor_split_leading(q) / 4)
     print(f"  q0={mp.nstr(q,10)}  f_pp=z={mp.nstr(z,6)}  f_nn=z-h={mp.nstr(z-h,6)}  "

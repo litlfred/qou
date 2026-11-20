@@ -50,7 +50,7 @@ sys.path.insert(0, str(HERE.parent))
 
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from hecke_characters import standard_young_tableaux, build_seminormal_matrices  # noqa: E402
 from partition_utils import hook_lengths_with_cells  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
@@ -153,7 +153,7 @@ def main():
     print("=" * 70)
     print()
 
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     h0 = q0 - 1 / q0
 
     # q sample points: spread around q₀ for good conditioning

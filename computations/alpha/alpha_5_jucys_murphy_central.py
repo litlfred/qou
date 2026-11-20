@@ -57,7 +57,7 @@ from itertools import combinations
 import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from partition_utils import hook_lengths  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
@@ -256,7 +256,7 @@ def q_sweep_atom_independence():
 
     Returns: list of dicts, one per q value.
     """
-    q_0 = mp.mpf(Q_50_DIGIT_STR)
+    q_0 = Q_MP
     phi = (mp.mpf(1) + mp.sqrt(5)) / 2  # golden ratio ≈ 1.618
     q_values = [
         ("q_0 - 0.01", q_0 - mp.mpf("0.01")),
@@ -317,7 +317,7 @@ def _ser_deep(obj):
 
 
 def main() -> int:
-    q_0 = mp.mpf(Q_50_DIGIT_STR)
+    q_0 = Q_MP
 
     print("α_5 derivation via Jucys–Murphy central elements")
     print(f"  q_0 ≈ {float(q_0):.10f}")

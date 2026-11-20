@@ -116,7 +116,7 @@ import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
 
 from _precision import fmt, set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 from qbeta_net_trace_invariance_probe import (  # noqa: E402
@@ -270,7 +270,7 @@ def main() -> int:
           "(qou-06wh proves the cap's admissible set is exactly {q, z_D})")
 
     # ---- numerics (reported, not load-bearing) ------------------------------
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
 
     def ev(e):
         return sp.lambdify(q, e, "mpmath")(q0)

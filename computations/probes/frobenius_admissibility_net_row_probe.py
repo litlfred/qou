@@ -81,7 +81,7 @@ import mpmath as mp  # noqa: E402
 from _precision import fmt, set_compute_dps  # noqa: E402
 from pyhecke import gram  # noqa: E402
 from pyhecke.constants import pn_interface_offset  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 DPS = 60
 set_compute_dps(DPS)
@@ -178,7 +178,7 @@ def main() -> int:
                          "2026-08-07); refusing a muon override")
     electrons = "--atoms" in sys.argv     # default: bare nuclei
     mp.mp.dps = DPS
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = q - 1 / q
     assert abs(h - gram.h_mp(DPS)) < mp.mpf("1e-55")
     d_pn = pn_interface_offset(q)

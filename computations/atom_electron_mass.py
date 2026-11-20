@@ -63,7 +63,7 @@ from codata_constants import (  # noqa: E402
     M_N_MEV_VALIDATION,
     U_MEV as _U_MEV_REGISTRY,
 )
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
 
 # CS-corrected α_EM at mp precision (float64 excised 2026-08-30, bean qou-ozvb)
@@ -72,7 +72,7 @@ from pyhecke.constants import alpha_em_inv_mp, e_hartree_ev_mp  # noqa: E402
 ME = +M_E_MEV                      # CAL-1 (already mpf in the registry)
 MP_MEV = +M_P_MEV_VALIDATION       # CLASS-A validation anchor
 MN_MEV = +M_N_MEV_VALIDATION       # CLASS-A validation anchor
-Q0 = mpf(Q_50_DIGIT_STR)           # proton pin (q_parameter resolves anchor)
+Q0 = Q_MP           # proton pin (q_parameter resolves anchor)
 E0 = ME / (Q0 * (Q0 - 1))          # α = E₀, mp
 ALPHA = E0
 U_MEV = +_U_MEV_REGISTRY if not isinstance(_U_MEV_REGISTRY, float) else mpf(str(_U_MEV_REGISTRY))

@@ -37,7 +37,7 @@ from chi_free_via_lr import chi_free_lr  # noqa: E402
 # the LR route enumerates O(3^A) tuples.
 from chi_free_via_frobenius import chi_free_frobenius  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
-from q_parameter import Q as Q0, Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q as Q0, Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 
 COMPUTE_DPS = 70
@@ -67,7 +67,7 @@ def main() -> int:
     start = time.monotonic()
     mp.mp.dps = COMPUTE_DPS
     ame = json.loads(AME_WITNESS.read_text())["data"]
-    q0 = mp.mpf(Q_50_DIGIT_STR)  # high-precision q0 (Q is the f64 shim)
+    q0 = Q_MP  # high-precision q0 (Q is the f64 shim)
     m_e = mp.mpf(str(M_E_MEV))
     e0 = m_e / (q0 * (q0 - 1))
 

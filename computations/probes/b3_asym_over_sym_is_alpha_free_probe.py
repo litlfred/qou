@@ -170,7 +170,7 @@ from codata_constants import (  # noqa: E402
     AME_B_HE3_MEV_VALIDATION,
     AME_B_TRITIUM_MEV_VALIDATION,
 )
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 # AME2020 isospin split of the A=3 three-body cumulant -- DERIVED here, not
 # transcribed.  `b3(X) = B(X) - 3*B(2H)`; the mirror split is `(3H +- 3He)/2`.
@@ -217,7 +217,7 @@ def b3_parts(f_pp, f_pn, f_nn, alpha):
 
 def main() -> int:
     set_compute_dps()
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = hecke_h(q)
     z = markov_z(q)
     d = flavor_split_leading(q)

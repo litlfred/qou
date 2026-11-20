@@ -75,7 +75,7 @@ for _p in ("computations", "computations/markov", "computations/hecke",
 import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
 import hecke_symbolic as hs  # noqa: E402
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 q = hs.q
 W = q ** 2 * (q ** 12 + q ** 8 - 1) / (q ** 2 + 1) ** 2      # qou-egvf closed form
@@ -98,7 +98,7 @@ TABLE4_PUBLISHED = {"3H": "12.28", "14C": "5896", "60Co": "5.308", "90Sr": "28.9
 
 def main() -> int:
     mp.mp.dps = 60
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     f_factor = sp.lambdify(q, FACTOR, "mpmath")
     f_W = sp.lambdify(q, W, "mpmath")
     f_s2 = sp.lambdify(q, S_SQ, "mpmath")

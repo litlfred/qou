@@ -37,11 +37,11 @@ sys.path.insert(0, str(Path(__file__).parent))
 # Use the 50-digit string form of q_0 (not the float64 Q) so mp.mpf
 # below carries the full 50 decimal digits — passing the f64 Q would
 # cap precision at ~15 digits (Gemini PR #533 review, r3178376577).
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 
 DIM_A0 = 6  # |S_3| = 6
 

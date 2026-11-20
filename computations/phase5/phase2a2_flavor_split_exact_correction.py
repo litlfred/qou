@@ -48,7 +48,7 @@ sys.path.insert(0, str(HERE.parent))
 
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import M_N_MEV_VALIDATION, M_MU_MEV_VALIDATION  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 
@@ -81,7 +81,7 @@ def main():
     t0 = time.time()
     set_compute_dps()
 
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     m_n = mp.mpf(M_N_MEV_VALIDATION)
 
     print("=" * 70)

@@ -88,7 +88,7 @@ import mpmath as mp  # noqa: E402
 
 from closed_form_tau_M import compute_tau_M_nucleon_H3  # noqa: E402
 from _li_2_q_util import flavor_split_leading  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.mp.dps = 50
 
@@ -96,7 +96,7 @@ mp.mp.dps = 50
 def constants():
     from codata_constants import M_E_MEV as me
     from experimental_constants import Q_NEUTRON_MEV as qb
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     h = q0 - 1 / q0
     me = me if isinstance(me, mp.mpf) else mp.mpf(str(me))
     qb = mp.mpf(str(qb))

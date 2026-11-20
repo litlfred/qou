@@ -29,7 +29,7 @@ set_compute_dps()
 
 from witness_base import WitnessBuilder
 from experimental_constants import ALPHA_EM_INV
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 
 def main() -> int:
     t0 = time.monotonic()
@@ -48,7 +48,7 @@ def main() -> int:
     )
     builder.set_content_block("prop:yekutieli-non-abelian-stokes")
 
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     alpha_em = 1 / mp.mpf(str(ALPHA_EM_INV))
     G_catalan = mp.catalan
 

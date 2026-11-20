@@ -66,13 +66,13 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 100
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402 — canonical q_0 source
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402 — canonical q_0 source
 from experimental_constants import (  # noqa: E402 — CODATA single source
     M_E_MEV, M_P_MEV, Q_NEUTRON_MEV,
 )
 
 # Substrate
-Q = mp.mpf(Q_50_DIGIT_STR)
+Q = Q_MP
 H = Q - mp.mpf(1) / Q
 HBAR_Q = (Q - mp.mpf(1)) / Q
 G = mp.catalan

@@ -109,14 +109,14 @@ import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 import hoefsmit_mpmath as hf  # noqa: E402
 from pyhecke.wedderburn import partitions_of  # noqa: E402
 
 set_compute_dps(60)
 mp.mp.dps = 40
 
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 H0 = Q0 - 1 / Q0
 EPS = mp.mpf("1e-25")
 

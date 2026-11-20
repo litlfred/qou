@@ -33,7 +33,7 @@ sys.path.insert(0, str(HERE))
 
 from _precision import fmt, set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 
 def hoefsmit_matrices(q):
@@ -86,7 +86,7 @@ def vol_figure_eight():
 def main():
     set_compute_dps()
 
-    q0 = mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     vol_41 = vol_figure_eight()
 
     # === Compute at q₀ ===

@@ -54,7 +54,7 @@ set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
 from experimental_constants import ALPHA_EM_INV  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 
 def q_bracket(n: int, q):
@@ -78,7 +78,7 @@ def main() -> int:
     )
     builder.set_content_block("prop:em-coupling-bring-zero-mode")
 
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = q - 1 / q
     h2 = h * h
     bra2 = q_bracket(2, q)

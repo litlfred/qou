@@ -112,7 +112,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 mp.dps = 40
@@ -125,7 +125,7 @@ ISOTOPES = [(1, 1), (1, 2), (2, 2), (3, 3), (6, 6), (8, 8), (20, 20), (26, 30)]
 
 
 def main() -> int:
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = q - 1 / q
     w = WitnessBuilder("extensive-counter-family-probe")
     w.set_description(

@@ -56,7 +56,7 @@ from mpmath import mp, mpf  # noqa: E402
 from _li_2_q_util import flavor_split_leading  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from closed_form_tau_M import hecke_h, markov_z  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import (
     AME_B_DEUTERON_MEV_VALIDATION,
     AME_B_HE3_MEV_VALIDATION,
@@ -105,7 +105,7 @@ def bond_product(order, edges, z, h, fpn):
 
 
 def measure(convention, pn_typing):
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     z = z_of(q, convention)
     h = hecke_h(q)
     delta = flavor_split_leading(q)
@@ -152,7 +152,7 @@ def cross_check_0829(convention, pn_typing):
     """Reproduce the 2026-08-29 b3 in MeV, to show the W-unit reduction above is
     the same object that probe measured. Model: B(K) = B_AME(D)*W(K)/W(D) over
     the COMPLETE graph, then the Ursell inversion b3 = Bbar(3) - 3*b2."""
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     z = z_of(q, convention)
     h = hecke_h(q)
     delta = flavor_split_leading(q)

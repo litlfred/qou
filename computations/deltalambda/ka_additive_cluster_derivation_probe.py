@@ -70,7 +70,7 @@ set_compute_dps()
 
 from chi_at_q0_via_hoefsmit_mpfr import build_chi_cache_at_q0  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -174,7 +174,7 @@ def connected_cumulants(tr):
 
 
 def main() -> int:
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     qinv = 1 / q0
     print(f"dps={mp.mp.dps}  q0={float(q0):.10f}  q0^-1={float(qinv):.10f}\n")
 

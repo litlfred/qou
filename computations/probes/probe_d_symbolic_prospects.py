@@ -81,7 +81,7 @@ import sympy as sp  # noqa: E402
 DPS = 50
 mp.mp.dps = DPS + 10
 
-from q_parameter import Q_50_DIGIT_STR, CATALAN_G  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP, CATALAN_G  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_E_MEV, AME_B_DEUTERON_MEV_VALIDATION,
 )
@@ -244,7 +244,7 @@ def p3_per_lambda_underdetermination(q: mp.mpf) -> dict:
 
 
 def main() -> int:
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     print("=" * 72)
     print("D-RESTRICTED SYMBOLIC PROSPECTS (P1–P4) — exploratory, tiered")
     print("=" * 72)

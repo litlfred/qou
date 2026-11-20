@@ -102,14 +102,14 @@ import mpmath as mp  # noqa: E402
 from schur_principal_mpmath import (  # noqa: E402
     partitions_of, _f_lambda, schur_principal_mpmath, _wenzl_constants,
 )
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 warnings.filterwarnings("ignore")
 set_compute_dps(50)
 
-Q0 = mp.mpf(Q_50_DIGIT_STR)          # EXPERIMENTAL PROTON ANCHOR
+Q0 = Q_MP          # EXPERIMENTAL PROTON ANCHOR
 N_MIN, N_MAX = 3, 12
 OUTDIR = Path(os.environ.get("QOU_OUTDIR", str(Path(__file__).resolve().parent)))
 

@@ -49,7 +49,7 @@ from mpmath import mp, mpf, sqrt  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 C3_TARGET = "-2.06934257711516783787971951725"
 
@@ -92,7 +92,7 @@ def main() -> int:
     set_compute_dps()
     wb = WitnessBuilder("qbeta-composite4-wenzl-qpochhammer-first-probe", engine="mpmath")
 
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     target = mpf(C3_TARGET)
     qinv = 1 / q
     base = -(q ** 2 + q ** -2)

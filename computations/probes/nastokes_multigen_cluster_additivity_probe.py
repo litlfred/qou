@@ -133,9 +133,9 @@ from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
 
-from qou_substrate.constants import Q_50_DIGIT_STR          # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP          # noqa: E402
 
-Q0 = mp.mpf(Q_50_DIGIT_STR)          # EXPERIMENTAL PROTON ANCHOR
+Q0 = Q_MP          # EXPERIMENTAL PROTON ANCHOR
 Q_DIAG = mp.mpf("1.25")              # off-anchor diagnostic ray (q-dependence only)
 
 TOL_ZERO = 1e-8                      # operator-zero threshold (values here are O(1e3))

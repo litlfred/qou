@@ -107,12 +107,12 @@ from mpmath import mp, mpf, nstr  # noqa: E402
 
 mp.dps = 50
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import M_E_MEV as _M_E_MEV_REGISTRY  # noqa: E402
 
 # Substrate q0, proton pin (AGENTS.md owner directive 2026-08-07: proton is the default).
 # Read BY NAME (reference-literal ratchet): the 17-digit literal truncated the pin.
-Q0 = mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 
 # CAL-1 electron scale, CODATA 2022, MeV -- read from the registry. The literal
 # 0.51099895000 was the CODATA-2018 value (1.35 ppb off; reference-literal ratchet).

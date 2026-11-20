@@ -305,10 +305,10 @@ def main() -> int:
 
     # ── numerical cross-check at q_0, mpmath only ──────────────────────
     try:
-        from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+        from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
     except ImportError:
         from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     print(f"\n-- cross-check at q_0 = {mp.nstr(q0, 20)} (proton pin, 60 dps) --")
     worst = mp.mpf(0)
     for i, e in enumerate(phi):

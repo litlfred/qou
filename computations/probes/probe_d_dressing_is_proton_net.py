@@ -57,7 +57,7 @@ from _precision import set_compute_dps, COMPUTE_DPS  # noqa: E402
 set_compute_dps()
 DPS = COMPUTE_DPS
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_E_MEV, AME_B_DEUTERON_MEV_VALIDATION,
 )
@@ -130,7 +130,7 @@ def numerical_chain(q: mp.mpf) -> dict:
 
 
 def main() -> int:
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     print("=" * 74)
     print("D BINDING DRESSING (1−h/2) = PROTON NF NET COEFFICIENT net(p)")
     print("=" * 74)

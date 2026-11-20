@@ -82,7 +82,7 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
         sys.path.insert(0, _p)
 
 from substrate.witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP, q_muon_at  # noqa: E402
 from qou_substrate.witness import q0_comparison  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
@@ -312,7 +312,7 @@ def main() -> int:
     # leg against its canonical pin instead of tautologically re-reading it.
     out = wb.save(q0_comparison(
         muon=mp.mpf(Q0_MUON_STR),
-        proton=mp.mpf(Q_50_DIGIT_STR),
+        proton=Q_MP,
         reason='measures the order-2 g2 coefficient at BOTH the environment (proton) pin and the muon pin, and reports the shift between them as pin_robustness; both pins are read on purpose and each is reported under its own key',
     ))
 

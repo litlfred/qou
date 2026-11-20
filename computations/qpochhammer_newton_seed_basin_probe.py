@@ -83,11 +83,11 @@ ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "substrate"))
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.mp.dps = 50
 
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 TOL = mp.mpf("1e-40")
 MAX_IT = 200
 

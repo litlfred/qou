@@ -26,7 +26,7 @@ for _p_qp in (_Path_qp(__file__).resolve().parent,
               _Path_qp(__file__).resolve().parent.parent / 'computations' / 'substrate'):
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 def rsk(w: tuple[int, ...]) -> tuple[list[list[int]], list[list[int]]]:
     """Robinson-Schensted-Knuth correspondence.
@@ -75,7 +75,7 @@ def syt_depth(T_dict: dict[int, tuple[int, int]]) -> int:
 
 def main():
     set_compute_dps()
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     qi = mpf(1) / q
 
     print("=== PROBE 4 KL BATCH ===")

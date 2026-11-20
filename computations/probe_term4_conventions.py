@@ -60,10 +60,10 @@ from _precision import set_compute_dps  # noqa: E402 — before any mpmath value
 set_compute_dps(60)
 
 from mpmath import mp  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 
 # A = 1..8. A ≤ 7 is what the consumers index (n = 3A ≤ 21); A = 8 is computed
 # so the "decays monotonically toward 2" claim is checked one rung past the

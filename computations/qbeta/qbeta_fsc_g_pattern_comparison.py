@@ -99,8 +99,8 @@ def main() -> None:
     # anchor witness remains a genuine provenance upstream of this result even
     # though it is no longer the value's source. Dropping it would lose the
     # provenance edge; that edge is why the two uses are deliberately split.
-    from q_parameter import Q_50_DIGIT_STR  # noqa: E402 — anchor-aware
-    q = mpf(Q_50_DIGIT_STR)
+    from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402 — anchor-aware
+    q = Q_MP
     m_e = mpf(str(M_E_MEV))
     Q_beta = mpf(str(Q_BETA_MEV))
     target = Q_beta / m_e

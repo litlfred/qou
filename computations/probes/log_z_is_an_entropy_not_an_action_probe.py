@@ -145,7 +145,7 @@ if str(HERE) not in sys.path:
 
 import b_over_a_evaluator as BOA  # noqa: E402
 import markov.markov_weights_symbolic as M  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 mp.dps = 40
@@ -174,7 +174,7 @@ def normaliser_poly(n: int) -> sp.Expr:
 
 
 def main() -> int:
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     hbar_q = (q - 1) / q
     w = WitnessBuilder("log-z-is-an-entropy-not-an-action-probe")
     w.set_description(

@@ -99,7 +99,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 import tr_m_atom_via_transfer as TR  # noqa: E402
 
@@ -155,7 +155,7 @@ def richardson_trace_limits(Z: int, N: int) -> tuple[mp.mpf, mp.mpf]:
 
 
 def main() -> int:
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     w = WitnessBuilder("classical-floor-derivation-probe")
     w.set_description(
         "Derives the classical floor of tr_M(W_free) - tr_M(W_atom) instead of "

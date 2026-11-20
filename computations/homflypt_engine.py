@@ -949,8 +949,8 @@ def _self_test():
     # Note: Python fallback of chi_lambda_braid only supports q = q0
     # (the substrate parameter). Use q0 for the 3-strand tests.
     print()
-    from q_parameter import Q_50_DIGIT_STR
-    q0_test = mp.mpf(Q_50_DIGIT_STR)
+    from q_parameter import Q_50_DIGIT_STR, Q_MP
+    q0_test = Q_MP
     print(f"3-strand numerical HOMFLYPT via Ocneanu trace + hecke_characters (q=q0):")
     try:
         # Figure-eight at SU(2)

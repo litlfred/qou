@@ -81,7 +81,7 @@ import _path_bridge  # noqa: E402, F401
 import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import M_E_MEV, _ame_binding_mev  # noqa: E402
 # S1: the validated exact Milnor/Magnus machinery (import, do not re-derive)
 from binding_mn_milnor_linking import mu, BORROMEAN  # noqa: E402
@@ -101,7 +101,7 @@ except ImportError:
     _HAVE_WB = False
 
 set_compute_dps()
-q0 = mp.mpf(Q_50_DIGIT_STR)
+q0 = Q_MP
 E0 = mp.mpf(str(M_E_MEV)) / (q0 * (q0 - 1))      # 𝔈₀ ≈ 4.186 MeV
 
 

@@ -34,7 +34,7 @@ sys.path.insert(0, str(HERE))
 import _path_bridge as _bridge  # noqa: E402, F401
 import mpmath as mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
@@ -48,7 +48,7 @@ set_compute_dps()
 # `qou_substrate.constants`, so the witness resolves its anchor stamp.
 # The NAME Q0_MUON is kept so its call sites stay legible; it now holds the
 # proton pin, which is what this producer computes at.
-Q0_MUON = mp.mpf(Q_50_DIGIT_STR)
+Q0_MUON = Q_MP
 
 # c₃ empirical values (cited; convention spread is itself part of the story).
 C3_Q1_SHADOW = mp.mpf("-2")           # q=1 canonical shadow J_Hopf(1) = -2 (KC10/KC20)

@@ -36,7 +36,7 @@ for _p in ("computations/substrate", "computations", "tools/pyhecke/python",
     sys.path.insert(0, os.path.join(ROOT, _p))
 
 import mpmath as mp  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_2022_source import M_E_MEV, Q_BETA_MEV_AME  # noqa: E402
 
 mp.mp.dps = 60
@@ -161,7 +161,7 @@ check("tau_Delta_S_eq_minus_h_b2_over_2_times_tauJ",
 
 # ---- numbers at the proton pin
 Q0 = sp.Rational(Q_50_DIGIT_STR)
-mq = mp.mpf(Q_50_DIGIT_STR)
+mq = Q_MP
 me = mp.mpf(str(M_E_MEV))
 QB = mp.mpf(str(Q_BETA_MEV_AME))
 E0 = {"order_zero": me / (mq * (mq - 1))}

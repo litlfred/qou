@@ -90,7 +90,7 @@ import _path_bridge  # noqa: E402, F401
 import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import (  # noqa: E402
     _ame_binding_mev,
     M_E_MEV,
@@ -109,7 +109,7 @@ except ImportError:  # pragma: no cover
     _HAVE_WB = False
 
 set_compute_dps()
-q0 = mp.mpf(Q_50_DIGIT_STR)
+q0 = Q_MP
 
 # CODATA masses for the length-scale selection table (printout / selection only)
 M_MU_MEV = mp.mpf("105.6583755")

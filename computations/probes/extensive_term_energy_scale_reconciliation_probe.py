@@ -108,7 +108,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 from b_over_a_evaluator import E_0_MEV  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 mp.dps = 40
@@ -123,7 +123,7 @@ ROAST_MEV_PER_STRAND = mp.mpf("2.91")
 
 
 def main() -> int:
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     w = WitnessBuilder("extensive-term-energy-scale-reconciliation-probe")
     w.set_description(
         "The ~7x uniform shortfall three of my probes reported for the extensive term is "

@@ -133,9 +133,9 @@ def main():
     print("=" * 70)
     import mpmath as mp
     set_compute_dps()
-    from q_parameter import Q_50_DIGIT_STR
+    from q_parameter import Q_50_DIGIT_STR, Q_MP
     from codata_constants import M_E_MEV as m_e, M_MU_MEV_VALIDATION as m_mu  # registry (no literals)
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     h0 = q0 - 1/q0
 
     print(f"\n  h₀ = {mp.nstr(h0, 15)}")

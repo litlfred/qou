@@ -61,7 +61,7 @@ import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from y_lambda_su_n import y_lambda_su_n  # noqa: E402
 
 set_compute_dps(50)
@@ -87,7 +87,7 @@ def main() -> int:
             notes.append({"assertion": name, "note": note})
         print(f"  [{'PASS' if passed else 'FAIL'}] {name} {note}")
 
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     all_exact, total_over = True, 0
     for n in range(2, 10):
         d = y_lambda_su_n(n, q0, N_ROWS)

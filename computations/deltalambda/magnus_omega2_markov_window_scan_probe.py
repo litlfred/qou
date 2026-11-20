@@ -68,9 +68,9 @@ _COMPUTATIONS = os.path.dirname(_HERE)
 if _COMPUTATIONS not in sys.path:
     sys.path.insert(0, _COMPUTATIONS)
 
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
-Q = mpf(Q_50_DIGIT_STR)
+Q = Q_MP
 H = Q - 1 / Q
 ZD = Q ** 3 / (Q ** 2 + 1)
 GRID = 4000

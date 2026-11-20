@@ -164,7 +164,7 @@ from hecke_characters import (  # noqa: E402
     build_seminormal_matrices,
     build_seminormal_matrices_mp,
 )
-from qou_substrate.constants import Q_50_DIGIT_STR, Q as Q_F64, Q_ERR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP, Q as Q_F64, Q_ERR  # noqa: E402
 from pyhecke.constants import pn_interface_offset  # noqa: E402
 
 BITS = 200  # ~60 decimal digits
@@ -410,7 +410,7 @@ def main() -> int:
     print("\n" + "=" * 68)
     print("§2  FAITHFULNESS: this engine vs `build_seminormal_matrices_mp`")
     print("=" * 68)
-    qmp = mp.mpf(Q_50_DIGIT_STR)
+    qmp = Q_MP
     worst_mp_all = 0.0
     for shape in [(3, 1), (4, 2), (5, 3)]:
         rows_all, dim = sigmas(shape)

@@ -89,13 +89,13 @@ def _energy_scales():
     # Read the 50-DIGIT q0 string, not `q_parameter.Q`, which is a Python float
     # (measured: 1.1099785827513808, 17 digits) -- `mp.mpf(str(Q))` would
     # preserve float64 faithfully and create no precision that is not there.
-    from q_parameter import Q_50_DIGIT_STR
+    from q_parameter import Q_50_DIGIT_STR, Q_MP
     from experimental_constants import Q_NEUTRON_MEV as Qb
     try:
         from codata_constants import M_E_MEV as me
     except Exception:
         me = "0.51099895"  # noqa: P31 — except-fallback; primary path imports codata_constants.M_E_MEV
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     me = me if isinstance(me, mp.mpf) else mp.mpf(str(me))
     Qb = Qb if isinstance(Qb, mp.mpf) else mp.mpf(str(Qb))
     return me, Qb, me / (q0 * (q0 - 1))

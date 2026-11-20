@@ -74,7 +74,7 @@ for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
               _Path_qp(__file__).resolve().parent.parent / 'substrate'):
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import (
     AME_B_DEUTERON_MEV_VALIDATION,
     AME_B_HE3_MEV_VALIDATION,
@@ -83,7 +83,7 @@ from codata_constants import (
 )
 
 # ---- derived substrate constants (0-fit) -----------------------------------
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 M_E = mp.mpf("0.51099895069")
 E0 = M_E / (Q0 * (Q0 - 1))
 Z_MK = C.markov_z(Q0)

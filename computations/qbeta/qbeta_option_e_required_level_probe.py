@@ -110,7 +110,7 @@ for _p in ("computations/substrate", "computations", "tools/pyhecke/python",
 import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 set_compute_dps(60)
 mp.mp.dps = 60
@@ -137,7 +137,7 @@ from codata_2022_source import (  # noqa: E402
     M_E_MEV, Q_BETA_MEV_AME, Q_BETA_MEV_AME_ERR,
 )
 
-MP_Q0 = mp.mpf(Q_50_DIGIT_STR)
+MP_Q0 = Q_MP
 MP_ME = mp.mpf(str(M_E_MEV))
 MP_QB = mp.mpf(str(Q_BETA_MEV_AME))
 MP_QB_ERR = mp.mpf(str(Q_BETA_MEV_AME_ERR))

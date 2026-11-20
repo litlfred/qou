@@ -172,8 +172,8 @@ def main() -> int:
 
     print()
     print("6. NUMERICAL, AT THE PROTON-PINNED q0  (mpmath, dps=60)")
-    from qou_substrate.constants import Q_50_DIGIT_STR          # noqa: PLC0415
-    q0 = mpf(Q_50_DIGIT_STR)
+    from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP          # noqa: PLC0415
+    q0 = Q_MP
     sub = {_q: sp.Float(str(q0), 50)}
     for lbl, expr in (
         ("h = q - 1/q", H),

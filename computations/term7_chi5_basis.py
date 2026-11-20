@@ -32,7 +32,7 @@ import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules mo
 # Ref: [manuscript] term7_height6_partition_enum.py (basis)
 
 import json
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 import sys
 from pathlib import Path
 
@@ -106,7 +106,7 @@ def dim_q(lam: tuple[int, ...], n: int, q_val: mpf, n_fac_q: mpf) -> mpf:
 
 def main() -> None:
     mp.dps = 60
-    q_0 = mpf(Q_50_DIGIT_STR)
+    q_0 = Q_MP
     A_values = [2, 3, 4, 5, 6]
     height = 6
 

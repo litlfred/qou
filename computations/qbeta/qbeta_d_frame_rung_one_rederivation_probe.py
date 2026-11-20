@@ -118,7 +118,7 @@ import sympy as sp  # noqa: E402
 
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from qou_substrate.constants import Q_NEUTRON_MEV, M_E_MEV  # noqa: E402
 
 set_compute_dps()
@@ -252,7 +252,7 @@ def main() -> int:
           "the ladder's b and the Hoefsmit coupling are the same object")
 
     # ------------------------------------------------- numeric, at both pins
-    qP = mp.mpf(Q_50_DIGIT_STR)
+    qP = Q_MP
     qM = mp.mpf(str(json.loads(MUON_WITNESS.read_text())["derived_50_digit"]["q"]))
 
     def hi_rungs(qv):

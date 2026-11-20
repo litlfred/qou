@@ -35,14 +35,14 @@ sys.path.insert(0, str(HERE.parent))
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import AME_B_HE3_MEV_VALIDATION, M_E_MEV  # noqa: E402
 
 
 def main():
     set_compute_dps()
 
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = q - 1 / q
 
     E_0 = M_E_MEV / (q * (q - 1))

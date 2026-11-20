@@ -21,7 +21,7 @@ from _precision import set_compute_dps
 set_compute_dps()
 
 from witness_base import WitnessBuilder
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 from partition_utils import hook_lengths_with_cells
 
 def n_lambda(shape: tuple[int, ...]) -> int:
@@ -58,7 +58,7 @@ def main() -> int:
         "using a Kashiwara-crystal projection."
     )
     
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     
     # H_3 Kashiwara crystal weights
     h3_parts = partitions_of_n(3)

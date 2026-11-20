@@ -50,7 +50,7 @@ sys.path.insert(0, str(HERE.parent))
 
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_symbolic  # noqa: E402
 from hecke_characters import partitions_of  # noqa: E402
 from partition_utils import hook_lengths_with_cells  # noqa: E402
@@ -154,7 +154,7 @@ def main():
 
     if diff != 0:
         set_compute_dps()
-        q0 = mp.mpf(Q_50_DIGIT_STR)
+        q0 = Q_MP
         num = float(sum_yz.subs(q, float(q0)).evalf())
         z_num = float(z_target.subs(q, float(q0)).evalf())
         print(f"    Numerical: sum = {num:.15e}, z = {z_num:.15e}, diff = {abs(num-z_num):.3e}")

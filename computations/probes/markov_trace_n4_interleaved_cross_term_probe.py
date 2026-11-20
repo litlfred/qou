@@ -57,7 +57,7 @@ import sympy as sp
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 import _path_bridge  # noqa: E402, F401  (puts every cluster subdir on sys.path)
 try:  # proton pin at 50 digits (owner directive 2026-08-07: proton is the default)
-    from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+    from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 except Exception:  # pragma: no cover — bare container without the package path
     Q_50_DIGIT_STR = None
 
@@ -142,7 +142,7 @@ def main() -> int:
 
     # ---- sign and magnitude at the proton anchor (exact mp, 50 dps) ----
     if Q_50_DIGIT_STR is not None:
-        q0 = mp.mpf(Q_50_DIGIT_STR)
+        q0 = Q_MP
         zz = q0 ** 3 / (q0 ** 2 + 1)
         hh = q0 - 1 / q0
         ratio = (zz ** 2 + hh * zz + hh ** 2 * zz ** 2) / ((hh * zz + 1) ** 2)

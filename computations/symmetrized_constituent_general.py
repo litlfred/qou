@@ -73,7 +73,7 @@ from hecke_symbolic import SymbolicHeckeDivision, q as q_sym  # noqa: E402
 # screen in `qou-840k`, which flagged it as upstream-capped: it never was, since
 # the float reached no arithmetic.  That screen over-flags, and this file is the
 # first measured instance.
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps, fmt  # noqa: E402
 
@@ -163,7 +163,7 @@ def main() -> int:
     # Print the pin the run actually uses (the 50-digit string), not the float
     # alias — they agree only to ~17 digits and the display was the one place a
     # reader could have caught the parameter bug below.
-    print(f"   q₀ = {mp.mpf(Q_50_DIGIT_STR):.10f}   power-sum order kmax = {kmax}")
+    print(f"   q₀ = {Q_MP:.10f}   power-sum order kmax = {kmax}")
     print("=" * 92)
     print(f" proton  power sums p_k = tr_M(B_p^k):  "
           + "  ".join(f"p{k}={float(pp[k]):.4f}" for k in range(1, min(kmax, 4) + 1)))

@@ -43,7 +43,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from hoefsmit_numpy import hoefsmit_matrices_numpy  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
@@ -51,7 +51,7 @@ set_compute_dps()
 
 
 def main() -> int:
-    q0 = float(mp.mpf(Q_50_DIGIT_STR))
+    q0 = float(Q_MP)
     h = q0 - 1.0 / q0
     G_catalan = float(mp.catalan)
 
@@ -80,7 +80,7 @@ def main() -> int:
     from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric
     y_weights = {}
     for shape in partitions_3:
-        y = float(y_lambda_wenzl_bridge_numeric(list(shape), mp.mpf(Q_50_DIGIT_STR)))
+        y = float(y_lambda_wenzl_bridge_numeric(list(shape), Q_MP))
         y_weights[shape] = y
         print(f"  y_{shape} = {y:.10f}")
 

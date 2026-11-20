@@ -75,7 +75,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder, q0_comparison  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP, q_muon_at  # noqa: E402
 
 set_compute_dps()
 # Both anchors read BY NAME (bean qou-9ugp, 2026-09-03). `Q_MUON` was the
@@ -85,7 +85,7 @@ set_compute_dps()
 # re-typed by hand. A hardcoded pin cannot be checked against the name it is
 # bound to, so both are derived now rather than transcribed.
 Q_MUON = mp.mpf(mp.nstr(q_muon_at(50), 50, strip_zeros=False))
-Q_PROTON = mp.mpf(Q_50_DIGIT_STR)
+Q_PROTON = Q_MP
 Q_STAR = mp.mpf("1.10997859303152")
 VOL_5_2 = mp.mpf("2.8281220883307832")
 

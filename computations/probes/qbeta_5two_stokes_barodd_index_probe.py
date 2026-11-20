@@ -71,7 +71,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder, q0_comparison  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP, q_muon_at  # noqa: E402
 
 mp.mp.dps = 60
 # q₀ anchors read BY NAME (bean qou-9ugp, 2026-09-03). The muon leg was the
@@ -80,7 +80,7 @@ mp.mp.dps = 60
 # (+0.0769 ppb); the proton leg was the 50-digit string re-typed by hand. A
 # hardcoded pin cannot be checked against the name it is bound to.
 Q0 = {"muon": mp.mpf(mp.nstr(q_muon_at(50), 50, strip_zeros=False)),
-      "proton": mp.mpf(Q_50_DIGIT_STR)}
+      "proton": Q_MP}
 
 qs = sp.symbols("q")
 ORD = 6            # series gates to O(q^6)

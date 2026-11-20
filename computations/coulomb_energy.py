@@ -167,9 +167,9 @@ UNIFORM_SPHERE_FACTOR = mp.mpf(3) / 5
 
 def alpha_em_hbar_c_mev_fm() -> "mp.mpf":
     """α_EM·ℏc in MeV·fm, with α_EM DERIVED from q₀ (not CODATA)."""
-    from q_parameter import Q_50_DIGIT_STR
+    from q_parameter import Q_50_DIGIT_STR, Q_MP
     from meson_em_sinh_closed_form import _alpha_em_inv_derived
-    return HBAR_C_MEV_FM / _alpha_em_inv_derived(mp.mpf(Q_50_DIGIT_STR))
+    return HBAR_C_MEV_FM / _alpha_em_inv_derived(Q_MP)
 
 
 def nuclear_radius_fm(A: int) -> "mp.mpf":

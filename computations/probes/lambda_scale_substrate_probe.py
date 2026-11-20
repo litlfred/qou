@@ -68,8 +68,8 @@ Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 # the corrected disposition remains true. Only the `q0AnchorReason` prose in the
 # witness needed updating, because it described the mechanism, not the layer.
 record_upstream(Q_PIN, _UPSTREAM_RECORDS)
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402 -- anchor-aware
-Q = mp.mpf(Q_50_DIGIT_STR)
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402 -- anchor-aware
+Q = Q_MP
 H = Q - mp.mpf(1) / Q
 HBAR_Q = (Q - mp.mpf(1)) / Q
 G = mp.catalan

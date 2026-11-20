@@ -32,7 +32,7 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE / "substrate"))
 sys.path.insert(0, str(HERE))
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 import codata_constants as _cc  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
@@ -44,7 +44,7 @@ except ImportError:
     _HAVE_WB = False
 
 set_compute_dps()
-q = mp.mpf(Q_50_DIGIT_STR)
+q = Q_MP
 M_E = M_E_MEV                       # already an mp.mpf at high precision (codata_constants)
 
 

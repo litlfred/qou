@@ -67,7 +67,7 @@ import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 _SRC = os.path.join(ROOT, "computations", "qbeta",
                     "qbeta_counit_silver_ratio_adjudication_probe.py")
@@ -233,7 +233,7 @@ def main() -> int:
     )
 
     print("\n=== Delta candidate census, proton pin ===")
-    print(f"  q_0 = {mp.nstr(mp.mpf(Q_50_DIGIT_STR), 20)}")
+    print(f"  q_0 = {mp.nstr(Q_MP, 20)}")
     print(f"  h_0 = {mp.nstr(at_q0(h), 20)}\n")
 
     short_net = h**2 / 2 - h

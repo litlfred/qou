@@ -89,7 +89,7 @@ for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
               _Path_qp(__file__).resolve().parent.parent / 'substrate'):
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 set_compute_dps()
 HERE = Path(__file__).resolve().parent
@@ -97,7 +97,7 @@ COMP = HERE.parent
 sys.path.insert(0, str(COMP))
 
 # ── derived substrate + interface factors (0 params) ──────────────────────────
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 M_E = mp.mpf("0.51099895069")
 E0 = M_E / (Q0 * (Q0 - 1))                       # interface energy scale
 

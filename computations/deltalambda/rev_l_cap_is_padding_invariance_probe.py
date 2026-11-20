@@ -70,12 +70,12 @@ if _COMPUTATIONS not in sys.path:
 
 from mpmath import mp  # noqa: E402
 
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 from hmin_closed_form_and_rev_sublinearity_probe import H_min_closed  # noqa: E402
 
 mp.dps = 50
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 LNQ = mp.log(Q0)
 T = Q0 ** 2
 
@@ -393,7 +393,7 @@ def _worst_residual_at(dps: int) -> mp.mpf:
     old = mp.dps
     try:
         mp.dps = dps
-        q = mp.mpf(Q_50_DIGIT_STR)
+        q = Q_MP
         t = q ** 2
         nn = 300                                    # max beta here is 7 + 19 = 26; 300 is ample
         e = [mp.mpf(0)] + [-mp.log(1 - t ** (-m)) for m in range(1, nn)]

@@ -73,11 +73,11 @@ from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 
 
 # ── Atom data ────────────────────────────────────────────────

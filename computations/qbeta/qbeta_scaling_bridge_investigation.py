@@ -60,7 +60,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 
 
@@ -87,7 +87,7 @@ def main() -> int:
     )
     builder.set_content_block("prop:q-beta-categorical-precision-ladder")
 
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     m_e = mp.mpf(M_E_MEV)
     Q_codata = mp.mpf("0.78233341")
 

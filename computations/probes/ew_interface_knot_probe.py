@@ -51,9 +51,9 @@ import mpmath
 mpmath.mp.dps = 50
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 
-q = mpmath.mpf(Q_50_DIGIT_STR)
+q = Q_MP
 
 
 # ── Standard tableaux enumeration (re-used from

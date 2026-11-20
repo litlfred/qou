@@ -34,7 +34,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 from canonical_trm_reference import tr_m_proton  # noqa: E402
 
 try:
-    from q_parameter import Q_50_DIGIT_STR, vol_4_1_at  # noqa: E402
+    from q_parameter import Q_50_DIGIT_STR, Q_MP, vol_4_1_at  # noqa: E402
 except ImportError:
     from qou_substrate.constants import Q_50_DIGIT_STR, vol_4_1_at  # noqa: E402
 
@@ -53,7 +53,7 @@ def q_integer(k, q):
 def main():
     _t0 = time.perf_counter()
     set_compute_dps()
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     hbar_q = (q - 1) / q
     eps = hbar_q**2
     n = 9

@@ -378,8 +378,8 @@ if __name__ == "__main__":
         from rho_k_h3a_refinement import chi_numeric
         from canonical_braid_crossings import atom_canonical_crossings
         from q_parameter import Q_50_DIGIT_STR
-        q_f64 = float(mp.mpf(Q_50_DIGIT_STR))
-        q_mp = mp.mpf(Q_50_DIGIT_STR)
+        q_f64 = float(Q_MP)
+        q_mp = Q_MP
         crossings = atom_canonical_crossings(2, 2)  # ⁴He
         # [6, 6] dim 132 — large
         print("Benchmarking ⁴He, λ=[6,6] (dim=132)…")
@@ -390,5 +390,5 @@ if __name__ == "__main__":
         chi_mp = chi_numeric((6, 6), crossings, q_mp)
         print(f"  mpmath: {time.time() - t:.3f}s  chi = {float(chi_mp):.6e}")
         sys.exit(0)
-    from q_parameter import Q_50_DIGIT_STR
+    from q_parameter import Q_50_DIGIT_STR, Q_MP
     sys.exit(_validate_against_mpmath(Q_50_DIGIT_STR))

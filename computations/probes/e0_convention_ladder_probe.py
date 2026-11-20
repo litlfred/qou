@@ -122,7 +122,7 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 mp.dps = 40
@@ -141,7 +141,7 @@ REGISTRY_C_APPROX_MEV = mp.mpf("200")        # "~ 200 MeV", flagged discipline v
 
 
 def main() -> int:
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     hbar_q = (q - 1) / q
     conv_a = M_E_MEV / (q * (q - 1))
     w = WitnessBuilder("e0-convention-ladder-probe")

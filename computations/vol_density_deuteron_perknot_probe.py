@@ -32,9 +32,9 @@ if str(HERE) not in sys.path:
 
 from _li_2_q_util import per_knot_density_per_block  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
-q0 = mp.mpf(Q_50_DIGIT_STR)
+q0 = Q_MP
 VOL_B3 = 8 * mp.catalan                      # Vol(𝓑₃) = 8·G (Adams 1985), the uniform value
 # Vol(6₂), §9.3 deuteron link. The literal here was
 #   4.40083298054544839393  -- annotated "SnapPy census" and NOT from it:

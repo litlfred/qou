@@ -20,7 +20,7 @@ sys.path.insert(0, str(HERE))
 
 from chi_monotone_transfer import _addable, _add, _alpha_beta, word_to_mpfr, chi_all_lambda
 from mass_at_3A_proper import atom_braid_word_3A
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 import time
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps  # noqa: E402
@@ -136,7 +136,7 @@ def chi_all_lambda_reduced_block(word, n: int, *, dps: int = 50, q=None):
         # Not the shape this kernel composes. Delegate rather than return zeros.
         return chi_all_lambda(word, n, dps=dps, q=q)
     if q is None:
-        q = mp.mpf(Q_50_DIGIT_STR)
+        q = Q_MP
     qi = 1 / q
     gens = word_to_mpfr(word, q)
     

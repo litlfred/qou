@@ -101,10 +101,10 @@ def label(names, exps, frac):
 def main() -> int:
     ok = True
 
-    from qou_substrate.constants import Q_50_DIGIT_STR            # noqa: PLC0415
+    from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP            # noqa: PLC0415
     from qou_substrate.codata import codata                       # noqa: PLC0415
 
-    q0 = mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     _np = codata("neutron-proton mass ratio")
     r = mpf(_np.value_str)
     target = 2 * (r - 1) / (r + 1)

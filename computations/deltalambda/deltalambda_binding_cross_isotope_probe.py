@@ -62,7 +62,7 @@ for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
               _Path_qp(__file__).resolve().parent.parent / 'substrate'):
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _ROOT = os.path.abspath(os.path.join(_HERE, "..", ".."))
@@ -104,14 +104,14 @@ def main():
         from qou_substrate.constants import q_at
         q0 = mp.mpf(str(q_at(40)))
     except Exception:                                # noqa: BLE001 (substrate optional in sandbox)
-        q0 = mp.mpf(Q_50_DIGIT_STR)
+        q0 = Q_MP
     # `q_at` is anchor-resolved per producer; this stem is not in `ideal_muon`,
     # so q0 is the proton pin. Assert it rather than assume it — a later manifest
     # move would otherwise silently change every dim_q below (owner directive
     # 2026-08-07: production compute defaults to the experimental/proton anchor).
     # Compare against `Q_50_DIGIT_STR`, not `qou_substrate.constants.Q`: the
     # latter is a Python `float` (17 digits), so it cannot witness a 40-dps pin.
-    assert mp.almosteq(q0, mp.mpf(Q_50_DIGIT_STR), rel_eps=mp.mpf("1e-30")), (
+    assert mp.almosteq(q0, Q_MP, rel_eps=mp.mpf("1e-30")), (
         f"expected the proton pin, got q0={mp.nstr(q0, 25)}")
 
     def qint(k):

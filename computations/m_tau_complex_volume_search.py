@@ -72,7 +72,7 @@ import mpmath as mp
 from _precision import json_safe_float  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from q_parameter import Q_50_DIGIT_STR, MASS_RATIO_MU_E_STR  # type: ignore
+from q_parameter import Q_50_DIGIT_STR, Q_MP, MASS_RATIO_MU_E_STR  # type: ignore
 
 from _precision import set_compute_dps, fmt  # type: ignore
 set_compute_dps(50)
@@ -90,7 +90,7 @@ set_compute_dps()
 TARGET_TAU_OVER_E = mp.mpf("3477.23")            # PDG 2024 m_tau/m_e (4 sig figs)
 SIGMA_EXP_TAU = mp.mpf("5e-5")                   # ~ rel. exp. precision of m_tau/m_e
 
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 HBAR_Q = (Q0 - 1) / Q0
 HBAR_Q_SQ = HBAR_Q ** 2
 

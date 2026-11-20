@@ -63,7 +63,7 @@ import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from tr_m_wenzl_bridge_mpfr import tr_M_via_wenzl_bridge_mpfr  # noqa: E402
 from hecke_core import (  # noqa: E402
     _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
@@ -92,7 +92,7 @@ def nucleon_word(g0, g1):
 
 def main() -> int:
     set_compute_dps()
-    q = mp.mpf(Q_50_DIGIT_STR); h = q - 1 / q
+    q = Q_MP; h = q - 1 / q
     z = q**3 / (q**2 + 1); lnq = mp.log(q)
     tau_p = mp.mpf(tr_M_via_wenzl_bridge_mpfr(
         nucleon_word(_PROTON_G0, _PROTON_G1), 3, Q_50_DIGIT_STR, dps=50))

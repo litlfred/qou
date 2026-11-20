@@ -70,7 +70,7 @@ import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from hoefsmit_mpmath import BlockCacheMP, seminormal_matrices_mp  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from y_lambda_su_n import y_lambda_su_n  # noqa: E402
 
 DPS = 60
@@ -150,7 +150,7 @@ def main() -> int:
         if not ok:
             failures.append(name)
 
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = q - 1 / q
     print("=" * 78)
     print("H_3 confinement-SDP selection on the BAND gamma-gamma vertex set")

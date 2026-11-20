@@ -59,7 +59,7 @@ from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_P_MEV_VALIDATION, M_N_MEV_VALIDATION, M_E_MEV,
     M_D_MEV_VALIDATION, M_T_MEV_VALIDATION, M_HE4_MEV_VALIDATION,
@@ -474,7 +474,7 @@ def main() -> int:
     # dps is captured authoritatively in precisionMetadata.compute_dps;
     # not duplicated here (see Copilot review #1756, witness-line 23/40).
 
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
 
     # Compute nucleon masses once
     nucleon = borromean_mass_prediction(q, 1, 0)

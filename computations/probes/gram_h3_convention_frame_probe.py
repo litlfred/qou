@@ -100,7 +100,7 @@ for _p in (str(COMP), str(COMP / "substrate")):
         sys.path.insert(0, _p)
 
 from _precision import fmt, set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 #: Gröbner–Shirshov normal-form basis of H_3(q), as `pyhecke.gram.NF_BASIS`.
@@ -225,7 +225,7 @@ def main() -> int:
           for i in range(6) for j in range(i, 6)}
 
     # ── CHECK 2 / 3: numeric comparison at the substrate anchor ─────────────
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     ref = json.loads((COMP / "gram-matrix-dual.witness.json").read_text())["gram_matrix"]
     worst_d_vs_ref, cell_ref = mp.mpf(0), None
     worst_cd, cell_cd = mp.mpf(0), None

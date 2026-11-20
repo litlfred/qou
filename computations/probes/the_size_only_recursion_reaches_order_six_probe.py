@@ -175,8 +175,8 @@ def main() -> int:
     try:
         from codata_constants import M_E_MEV as _ME  # noqa: E402
         ME = _ME if isinstance(_ME, mp.mpf) else mp.mpf(str(_ME))
-        from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
-        q = mp.mpf(Q_50_DIGIT_STR)
+        from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
+        q = Q_MP
         alpha = ME / (q * (q - 1))
     except Exception:  # pragma: no cover
         alpha = None

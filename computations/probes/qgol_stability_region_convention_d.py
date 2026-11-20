@@ -51,7 +51,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 import mpmath as mp  # noqa: E402
 
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 60
@@ -70,7 +70,7 @@ def phi_D(q):
 
 
 def main() -> int:
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
 
     # The three convention-C thresholds the q-GoL proof cites, plus q_0 and a
     # spread of sample points either side of q = 1.

@@ -40,7 +40,7 @@ sys.path.insert(0, str(HERE.parent))
 
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from hecke_characters import (  # noqa: E402
     standard_young_tableaux,
     build_seminormal_matrices,
@@ -163,7 +163,7 @@ def main():
     print("  Phase 3: deuteron + tritium per-partition h-expansion")
     print("=" * 70)
 
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     offsets = [0, 0.005, -0.005, 0.012, -0.012, 0.025, -0.025]
     q_points = [q0 + mp.mpf(str(off)) for off in offsets]
     h_points = [qi - 1/qi for qi in q_points]

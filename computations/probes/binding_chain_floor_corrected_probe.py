@@ -130,7 +130,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 import tr_m_atom_via_transfer as TR  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import (
     AME_B_DEUTERON_MEV_VALIDATION,
@@ -163,7 +163,7 @@ def delta_tr(Z: int, N: int, q) -> mp.mpf:
 
 
 def main() -> int:
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     w = WitnessBuilder("binding-chain-floor-corrected-probe")
     w.set_description(
         "Re-runs derive_binding_chain_cooperative's pairwise chain against the "

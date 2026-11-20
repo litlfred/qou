@@ -46,12 +46,12 @@ from _precision import set_compute_dps  # noqa: E402
 from _li_2_q_util import flavor_split_leading  # noqa: E402
 from hecke_characters import standard_young_tableaux  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 set_compute_dps()
 mp.mp.dps = max(mp.mp.dps, 60)
 
-Q = mp.mpf(Q_50_DIGIT_STR)
+Q = Q_MP
 H = Q - 1 / Q
 SQRT_B_AME = mp.mpf("1.491498")      # √B_AME(²H), the §C bar
 MAX_B = mp.mpf("1.018275")           # §C's convex ceiling over the 32 branches

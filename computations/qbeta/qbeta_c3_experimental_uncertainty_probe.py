@@ -64,7 +64,7 @@ import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from qou_substrate.constants import M_E_MEV, M_N_MEV  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_P_MEV_VALIDATION, M_N_MEV_VALIDATION,
@@ -90,7 +90,7 @@ def main() -> int:
         A.append((name, bool(passed)))
         print(f"  [{'PASS' if passed else 'FAIL'}] {name}\n      {note}")
 
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = q - 1 / q
     hb = (q - 1) / q
     b = mp.sqrt(q**4 + q**2 + 1) / (q**2 + 1)

@@ -78,7 +78,7 @@ import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import (  # noqa: E402
     _ame_binding_mev,
     M_PI_PM_MEV_VALIDATION,
@@ -92,7 +92,7 @@ except ImportError:
     _HAVE_WB = False
 
 set_compute_dps()
-q0 = mp.mpf(Q_50_DIGIT_STR)
+q0 = Q_MP
 
 # The same 8 T_z mirror pairs as mirror_split_continuum_em_probe.py.
 PAIRS = [("3H/3He", 1, 2, 3), ("7Li/7Be", 3, 4, 7), ("11B/11C", 5, 6, 11),

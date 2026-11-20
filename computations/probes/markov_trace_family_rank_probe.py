@@ -209,7 +209,7 @@ import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
 
 from partition_utils import hook_lengths  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.mp.dps = 120
 ZERO = mp.mpf(10) ** -60          # a qdim below this is structurally zero
@@ -262,7 +262,7 @@ def W(s):
 
 
 def main() -> int:
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
 
     def qint(m):
         return (q ** m - q ** (-m)) / (q - q ** (-1))

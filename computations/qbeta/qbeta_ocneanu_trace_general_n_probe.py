@@ -91,7 +91,7 @@ import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 _SRC = os.path.join(ROOT, "computations", "qbeta",
                     "qbeta_gamma_gamma_submonoid_h4_probe.py")
@@ -113,7 +113,7 @@ set_compute_dps(60)
 ZERO, ONE = sp.Integer(0), sp.Integer(1)
 z = sp.Symbol("z")
 
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 H0 = Q0 - 1 / Q0
 ZD = Q0 ** 3 / (Q0 ** 2 + 1)
 

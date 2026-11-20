@@ -84,7 +84,7 @@ import _path_bridge  # noqa: E402, F401
 from witness_base import WitnessBuilder  # noqa: E402
 
 try:  # proton pin at 50 digits (owner directive 2026-08-07: proton is the default)
-    from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+    from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 except Exception:  # pragma: no cover — bare container without the package path
     Q_50_DIGIT_STR = None
 
@@ -247,7 +247,7 @@ def main() -> int:
     # --- anchor evaluation (proton pin, 50 dps, exact expression) -------------
     anchor = {}
     if Q_50_DIGIT_STR is not None:
-        q0 = mp.mpf(Q_50_DIGIT_STR)
+        q0 = Q_MP
         fD = sp.lambdify(q, D, modules="mpmath")
         fS = sp.lambdify(q, S, modules="mpmath")
         fI = sp.lambdify(q, I, modules="mpmath")

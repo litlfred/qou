@@ -52,7 +52,7 @@ from hecke_characters import chi_lambda_braid_mpf, partitions_of, dim_q
 from q_parameter import Q as Q0_FLOAT
 from q_mpmath import set_q
 from _precision import set_compute_dps, fmt  # noqa: E402
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 # `set_q` used to be called HERE, at import time, with the float64 `Q0_FLOAT`.
 # Two defects in one line: the value carried 16 digits, and `set_q` builds its
@@ -74,7 +74,7 @@ def q0_mp() -> mp.mpf:
     is mpmath's default 15 — a constant here would be a 15-digit number no
     matter how many digits the string carries.
     """
-    return mp.mpf(Q_50_DIGIT_STR)
+    return Q_MP
 
 
 # Candidate knots (braid words on minimal strand count)

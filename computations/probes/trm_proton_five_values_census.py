@@ -96,7 +96,7 @@ for _p in (_ROOT / "computations", _ROOT / "computations" / "substrate"):
         sys.path.insert(0, str(_p))
 
 from mpmath import mp, mpf, nstr                       # noqa: E402
-from q_parameter import Q_50_DIGIT_STR                 # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP                 # noqa: E402
 import pyhecke_native as ph                            # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric as Y   # noqa: E402
 from witness_base import WitnessBuilder                # noqa: E402
@@ -124,7 +124,7 @@ def trM(q):
 
 
 def main() -> int:
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     w = WitnessBuilder("trm-proton-five-values-census", engine="python")
 
     canonical = trM(q)

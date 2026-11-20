@@ -118,7 +118,7 @@ from mpmath import mp, mpf  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 set_compute_dps()
 
@@ -289,7 +289,7 @@ def main() -> int:
     print("\n=== CALIBRATION against qbeta-delta-element-fork-pricing.witness.json ===")
     wpath = _ROOT / "computations/qbeta/qbeta-delta-element-fork-pricing.witness.json"
     W = json.loads(wpath.read_text())["data"]
-    Q0 = mpf(Q_50_DIGIT_STR)
+    Q0 = Q_MP
     f = sp.lambdify(q, sp.Abs(sp.simplify(N_L.subs(z, sp.Integer(1)) * E0)), "mpmath")
     mine = M_E_MEV * f(Q0)
     theirs = mpf(W["Qbeta_long_net"])

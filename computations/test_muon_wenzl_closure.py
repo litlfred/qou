@@ -6,12 +6,12 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 from witness_base import WitnessBuilder
 
 def main():
     mp.mp.dps = 100
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     m_e = mp.mpf('0.51099895069')
     m_mu_codata = mp.mpf(M_MU_MEV_VALIDATION)
     vol_4_1 = 2 * mp.clsin(2, mp.pi/3)

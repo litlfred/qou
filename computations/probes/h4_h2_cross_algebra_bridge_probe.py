@@ -61,7 +61,7 @@ from pathlib import Path
 import sympy as sp
 from mpmath import mp, mpf, log as mplog, cosh as mpcosh
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 set_compute_dps()
 
@@ -203,7 +203,7 @@ def main():
     print("=" * 80)
     print()
     # Recompute residual from item 5 probe
-    q_0 = mpf(Q_50_DIGIT_STR)
+    q_0 = Q_MP
     # Was mpf("1.10970000000") -- a coarse pre-calibration literal, 251,000 ppb
     # (0.025 %) from BOTH live pins, i.e. ~22,000x the ~11.5 ppb mu-p substrate
     # tension. It was labelled "Substrate numerical value" and fed straight into

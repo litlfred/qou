@@ -47,7 +47,7 @@ sys.path.insert(0, str(HERE.parent))
 
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 h = Symbol("h")
 
@@ -89,7 +89,7 @@ def main():
         M_E_MEV as m_e, M_MU_MEV_VALIDATION as m_mu,
         M_P_MEV_VALIDATION as m_p_codata, M_N_MEV_VALIDATION as m_n_codata,
     )
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     h0 = q0 - 1/q0
 
     # ── 1. Flavor-split X ──────────────────────────────────────

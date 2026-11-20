@@ -81,7 +81,7 @@ for _p in (str(_HERE),
         sys.path.insert(0, _p)
 import _path_bridge  # noqa: F401
 from _precision import fmt, set_compute_dps
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 from witness_base import WitnessBuilder
 
 
@@ -89,7 +89,7 @@ from witness_base import WitnessBuilder
 def main() -> None:
     set_compute_dps()
     w = WitnessBuilder("h2s-chiral-residue-bar-antisymmetric", engine="python+mpmath")
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     hh = q - 1 / q                                # bar-ANTI-symmetric: h(1/q) = -h(q)
     z = q ** 3 / (q ** 2 + 1)                     # convention D — and NOT bar-even
     z_c = mp.sqrt(q) / (q + 1)                    # convention C, for the comparison only

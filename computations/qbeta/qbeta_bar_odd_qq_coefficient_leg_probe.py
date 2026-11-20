@@ -89,7 +89,7 @@ from codata_2022_source import (  # noqa: E402
 )
 from qou_substrate import codata as _codata  # noqa: E402
 from qou_substrate.constants import Q_NEUTRON_MEV  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 set_compute_dps()
 
@@ -296,7 +296,7 @@ def main() -> int:
           f"{mp.nstr(shift_ppb, 6)} ppb, {mp.nstr((q_reg-Q_ame)/sigma_comb, 3)} σ — consistent, DIFFERENT dataset")
 
     # what adopting it would do to c_3 through the 1/u³ ladder-extraction divisor
-    q0m = mpf(Q_50_DIGIT_STR)
+    q0m = Q_MP
     hm = q0m - 1 / q0m
     hbar = (q0m - 1) / q0m
     bm = mp.sqrt((hm**2 + 3) / (hm**2 + 4))

@@ -47,7 +47,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 set_compute_dps()
 
 from codata_constants import M_E_MEV  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from qbeta_e0 import canonical as e0_tower, order_zero as e0_order_zero  # noqa: E402
 import derived_masses  # noqa: E402
 from canonical_mass import proton_neutron_mass_mev  # noqa: E402
@@ -74,7 +74,7 @@ def main() -> int:
     q_beta_prod = mp.mpf(derived_masses.q_beta_kashiwara_n2_mev())
     q_a = mp.mpf(derived_masses.q_beta_predicted_mev())
     q_muon = mp.mpf(derived_masses._q_0())
-    q_prot = mp.mpf(Q_50_DIGIT_STR)
+    q_prot = Q_MP
 
     census = json.loads(CENSUS.read_text())["data"]["per_candidate"]
     rows = []

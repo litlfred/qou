@@ -24,10 +24,10 @@ import sympy as sp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from witness_base import WitnessBuilder
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 
 mp.mp.dps = 80
-Q_NUM = mp.mpf(Q_50_DIGIT_STR)
+Q_NUM = Q_MP
 H_NUM = Q_NUM - 1/Q_NUM
 G_NUM = mp.catalan
 

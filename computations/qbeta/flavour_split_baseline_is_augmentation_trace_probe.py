@@ -116,8 +116,8 @@ def _n(expr, q0, digits=45):
 def main() -> int:
     ok = True
 
-    from qou_substrate.constants import Q_50_DIGIT_STR      # noqa: PLC0415
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP      # noqa: PLC0415
+    q0 = Q_MP
     tgt = _n(TARGET_DELTA, q0)
 
     print("1. THE BLOCK'S TWO HALVES ARE DIFFERENT OBJECTS  (k = 3 narrative vs k = 2 formula)")

@@ -79,7 +79,7 @@ import sympy as sp  # noqa: E402
 
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 set_compute_dps()
 
@@ -250,7 +250,7 @@ def main() -> int:
           "W = Omega_(2,1) / c_(2,1) -- so the 1/c_(2,1) in mu is NOT an "
           "identification: it is the Schur element in tau's own decomposition")
 
-    qv = mp.mpf(Q_50_DIGIT_STR)
+    qv = Q_MP
     print(f"\n  chain, at the proton pin:")
     print(f"    net(x) = tau(x * Omega),  Omega = sum_w T_w = all-ones")
     print(f"    tau    = sum_lambda chi^lambda / c_lambda")

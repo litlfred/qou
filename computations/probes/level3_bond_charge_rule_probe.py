@@ -77,7 +77,7 @@ from mpmath import mp, mpf  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from closed_form_tau_M import hecke_h, interface_factor  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 set_compute_dps()
 
@@ -102,7 +102,7 @@ def loglog_slope(As, vals):
 
 
 def main() -> int:
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = hecke_h(q)
     c = h / 2                       # the per-crossing correction of the proposition
 

@@ -74,7 +74,7 @@ import time
 import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps, fmt  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 
 set_compute_dps()
@@ -105,7 +105,7 @@ def bond_L_mpf(q0):
 
 def main() -> int:
     t0 = time.monotonic()
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     from experimental_constants import M_E_MEV
     m_e = mp.mpf(str(M_E_MEV))
     alpha = m_e / (q0 * (q0 - 1))
