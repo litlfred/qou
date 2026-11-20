@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-20T19:45:00Z
+updated_at: 2026-11-20T21:00:00Z
 parent: qou-10v9
 ---
 
@@ -4155,3 +4155,14 @@ Pre-registered (bc02ecd75c), prediction confirmed. Same functionals as ε-L1: F1
 ## 2026-11-20T19:45Z — pair-nucleon data table restated with the ruled photon (PR #8629)
 
 Owner 18:22: "pair-nucleon table: restate it with the new photon." `tbl:four-term-pair-nucleon-table1-data` had no producer or recorded weights. New producer `computations/four_term_pair_nucleon_table.py` (exact ℚ(q), proton q₀, 70 dps, 7/7): the OLD form γ_old(0.0487, 0.0487, 0.02)² reproduces all six recorded entries at 3 dp; the ruled photon at the same weights gives 1 1.005→1.004, σ₀ 0.099→0.090 (0.0988698→0.0904259), others unchanged at 3 dp (moves ≤ 4e-4), via γ(φ₀,φ₁,φ₀₁) = γ_old(φ₀ − hφ₀₁, φ₁, φ₀₁). Weights labelled in block + witness: 0.0487 = fit to 2m_e (Breit–Wheeler), 0.02 unsourced; the record pins only a ∈ [0.0486, 0.0490], b = 0.020 on a 1e-4 × 1e-3 grid. Worked illustration, not a prediction. Second column: eigenvalue pair γ₊γ₋ = V³ (no e⁻ term). Nucleon nets 0.999/0.811 photon-independent by construction (confinement universality), not recomputed — no producer for them is on record. Not merged.
+
+## 2026-11-20T21:00Z — R2/R5/R3: n↔p as T⁺ on the U_q side (label C); T(3,5) claims checked (PR #8632, draft)
+
+Owner 18:30 ("Q_β must be DERIVED, not chosen"), routes R2/R5/R3. Pre-registered (`computations/probes/qbeta_r253/PREREGISTRATION.md`, not blind: a symbolic ℚ(q) run came first and is disclosed). Lean `QOU/QuarkState/IsospinRaisingRoundTrip.lean` + `T35WeakVertexTrace.lean`, generic Field, sorry-free, axioms propext/choice/Quot.sound.
+- **Charge exclusion of A/B (scope b):** Jimbo Ř commutes with Δ(K), Δ(E), Δ(F) (`Rc_comm_*`), so every Hecke word, the γγ vertex included, preserves charge. Labels A and B are Hecke-internal, so they cannot be n↔p (ΔQ = 1).
+- **Label C:** T⁺ = Δ²(E): W₋ → W₊ intertwines H₃ (`Eu_sm1/2`). ε_C(X) = tr_W₋(T⁻T⁺X)/tr_W₋(T⁻T⁺) gives **y₃ = (q²+1)²/(q⁴+4q²+1) = [2]²/([2]²+2)** (`epsC_J1`, same from p). Q_β = 0.588715 MeV (−24.75 %, order-zero E₀) / 0.594552 MeV (−24.00 %, tower E₀). Comparison only, not wired.
+- **`isospinHalf_deltaS`:** the isospin-½ part of the round trip does not see Δ_S, so Δ_S lives entirely in (3) = isospin 3/2. On pure isospin-½ nucleons Q_β(Δ_S) = 0. The label-C value comes only from the isospin-3/2 content of the weight space, which makes the typed-crossing Δ_S suspect as the object to difference.
+- **`qtrace_J1`:** the full quantum trace (all strands closed by pair creation/annihilation) is exactly convention-D y₃, so label A's z_D is the γγ/cup-cap closure. Label C is that closure restricted to the neutron charge sector with a T⁺ round trip.
+- Remaining choices: the state set (full weight space vs isospin ½ → 0); normalisation ε(1) = 1; E₀ (posited); the Δ_S definition.
+- **R3:** these hold: 10 letters, knot closure, σ₁³ left-divides (σ₁σ₂)⁵ (6 cofactors). These do not hold as stated: the split is not unique (40 placements) and is not produced by GS reduction; no R2 move exists in a positive word; the quadratic-step count is order-dependent (25/30); tr_zD((σ₁σ₂)⁵) = q²(q¹²+q⁸−1)/(q²+1)² ∉ ℤ[q^{±1/2}] (`zD_T35`); B_n W ≠ c·B_p. The block's Q formula is not defined under convention D. A dated authorNote was added to `beta-decay-skein-properties.ts`.
+Bean stays open.
