@@ -108,7 +108,7 @@ same $\mathfrak{V}$.
   $\mathfrak{V}$ is only conjecturally such a volume.
 - **Fibre-level caveat (STRICT).** At the **archimedean / observable**
   level $\mathrm{Im}(q_0)=0$
-  (`lusztig_q_0_imaginary_part_zero`): binding and $\mathfrak{Q}_\beta$ both measure
+: binding and $\mathfrak{Q}_\beta$ both measure
   real numbers. The complex structure is therefore
   **fibre-level** (pre-$\tau$). $\mathfrak{V}(q)$ provides a complex object in
   the fibre, and $\mathfrak{E}_{\mathrm{bind}}$, $\mathfrak{Q}_\beta$ provide its Re/Im
@@ -122,14 +122,14 @@ same $\mathfrak{V}$.
 
 The complex-volume model $V_0(z) = \cosh z + i\sinh z$ satisfies the **$\zeta_4$-partner relation**: $V_0(z + i\pi/2) = -\cosh z + i\sinh z$, exactly negating the bar-even (binding) channel while keeping the bar-odd ($Q_\beta$) channel. The full $\zeta_4$-orbit decomposes the model into exactly the two **faithful** eigencomponents (trivial and sign isotypes vanish).
 
-**Constraint on the open assembly:** Any candidate physical assembly $\mathfrak{V}$ must be **$\zeta_4$-faithful** (supported entirely on the $\pm i$ characters of $\mathbb{Z}_4$). A candidate with a nonzero orbit sum or sign isotype is falsified (`QOU.Mass.ComplexVolumeZeta4Partner.SingleFrakVAssembly`). This structural consequence forces $\zeta_4^2 = -1$ on the assembly, providing non-degenerate conditional content for the conjecture class.
+**Constraint on the open assembly:** Any candidate physical assembly $\mathfrak{V}$ must be **$\zeta_4$-faithful** (supported entirely on the $\pm i$ characters of $\mathbb{Z}_4$). A candidate with a nonzero orbit sum or sign isotype is falsified. This structural consequence forces $\zeta_4^2 = -1$ on the assembly, providing non-degenerate conditional content for the conjecture class.
 
 
 ## The open Stage-C $\sigma_3$-lift obligation
 
 The holomorphic tie hypothesis demands that a **single** Askey-Wilson three-term recurrence carries both the binding (bar-even) and $Q_\beta$ (bar-odd) ladders. This implies the Casoratian $W_k$ of the two ladders maintains a constant sign pattern forced by the recurrence parameters.
 
-**Constraint on the lift:** The categorical $\sigma_3$-lift $\Lambda \in H_4(q)$ of the decay operator must supply genuine $c_4$ rungs that satisfy this sign constraint (`QOU.QBeta.StageC.StageCSigma3Lift`). Any valid lift that leads to a sign-incompatible Casoratian $W_3 \le 0$ (given $W_2 > 0$) refutes the one-recurrence identification, serving as a parameter-free kill-test on candidate objects.
+**Constraint on the lift:** The categorical $\sigma_3$-lift $\Lambda \in H_4(q)$ of the decay operator must supply genuine $c_4$ rungs that satisfy this sign constraint. Any valid lift that leads to a sign-incompatible Casoratian $W_3 \le 0$ (given $W_2 > 0$) refutes the one-recurrence identification, serving as a parameter-free kill-test on candidate objects.
 
 ## The S channel through $\Phi_b$ (conditional wiring)
 
@@ -159,7 +159,7 @@ structural statement, not an established prediction. This makes precise that $\P
 through this channel: remove the `SDeformedVolumeChannel` hypothesis and
 no binding statement about $\Phi_b$ survives. On the open map $u(q_0)$
 itself, the Neumann–Zagier leading-form family laws are proved
-(`QOU.QBeta.UDeformFamilyPruning`) over the corrected harmonic form
+ over the corrected harmonic form
 $\mathrm{Im}\,\mathfrak{V}(u) = (\sqrt{3}/4)(\mathrm{Re}^2 u - \mathrm{Im}^2 u)$
 (cusp modulus $\tau = -i\sqrt{3}$, so the leading coefficient
 $a_2 = i\sqrt{3}/4$ is purely imaginary): all three candidate families —
@@ -218,12 +218,12 @@ generic setting (commutative ring $R$ with bar involution $\sigma$, never
 $\mathbb{R}$ or $\mathbb{C}$; division-free via $\sigma q \cdot q = 1$):
 
 - **even channel** (compact / binding / continuous $q$-Hermite):
-  $H_{n+2} = 2x\,H_{n+1} - (1 - q^{n+1})\,H_n$ (`evenStep`);
+  $H_{n+2} = 2x\,H_{n+1} - (1 - q^{n+1})\,H_n$;
 - **odd channel** (non-compact / $\mathfrak{Q}_\beta$ / $q^{-1}$-Hermite),
   multiplied through by $q^{n+1}$:
-  $q^{n+1}\,h_{n+2} = 2x\,q^{n+1}\,h_{n+1} + (q^{n+1} - 1)\,h_n$ (`oddStep`).
+  $q^{n+1}\,h_{n+2} = 2x\,q^{n+1}\,h_{n+1} + (q^{n+1} - 1)\,h_n$.
 
-The **channel rotation** is proved (`rotation_step`). With a
+The **channel rotation** is proved. With a
 formal rotation element $\iota \in R$, $\iota^2 = -1$ (the fibre-level
 stand-in for $i$; `Complex.I` is only the archimedean instance downstream
 of $\tau$), a sequence satisfies the odd step at $(q, x)$ **iff** its
@@ -259,13 +259,13 @@ $$
 Q R = q\,(R Q), \qquad L Q = q\,(Q L), \qquad L R - R L = (1 - q)\,Q,
 $$
 
-proved coordinatewise over generic $R$ (`chQR_rel`, `chLQ_rel`, `chLR_comm`),
+proved coordinatewise over generic $R$,
 with `chM_eigencolumn_iff` identifying the eigencolumns of $L + R$ with the
 $q$-Hermite three-term rows; the odd channel satisfies the same relations at
 $\sigma q$ by instantiation. Second, the **Casoratian mechanism** of the
 $W$-sign test: two solutions of one three-term step transport their Casoratian
-by $W' = -B\,W$ (`casoratian_step`), and along a bar-even constant-multiplier
-ladder the channel Casoratian is *invariant* (`channel_casoratian_const`) — so
+by $W' = -B\,W$, and along a bar-even constant-multiplier
+ladder the channel Casoratian is *invariant* — so
 a measured drift of the physical channel Casoratian reads directly as the
 $k$-dependence of the Askey–Wilson coefficient $B_k$. With $c_3^{\text{even}}$
 now measured exactly (witness `qbeta-c3even-exact-sseries`), the decisive

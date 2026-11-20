@@ -39,7 +39,7 @@ Borel ray is distinct, so the Davison–Meinhardt plethystic log is trivial and
 $\dim \mathrm{BPS}_d = |\Omega_d|$ with no superpotential and no motivic
 $q$-correction — the spectrum would be *abelian*, which is why $A_\omega$ and the
 whole Stokes tower are integers rather than Poincaré polynomials
-(`QOU.QBeta.AomegaM2BPSCohomology`).
+.
 This does **not** build the closed-sector quiver-with-potential $(Q,W)$ (Milestone
 M1, still unwritten), does not compute a cohomology from a category, and does not
 derive $A_\omega$: the count is *imported* (conditional on the bridge above), and
@@ -48,13 +48,3 @@ multiplicity. The Hecke-to-BPS bridge (M3) that would *derive* rather than *impo
 the count stays open; this proposition fixes only the structural target. The onward identification of $A_\omega$ with the
 bar-odd decay leak $S$ has no literature support and is not derivable; it is not
 carried here.
-
-## Lean structure
-
-`QOU.QBeta.FiveTwoDTSpectrumSplit` (core integers, no archimedean structure)
-carries the certified matrices `Splus0`/`Sminus0`, the split
-`dt_spectrum_two_element`, and the M0 capstone: `barSwap` with
-`barSwap_involutive`; the eigenspace laws `barEvenPair_fixed`,
-`barOddPair_negated`; the faithful reconstruction `barGrading_faithful`; the
-chirality witness `dtPair52_chiral` and grading `dtPair52_grading` $=(7,1)$; and
-`symmetric_scalar_blind_to_chirality`.

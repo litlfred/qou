@@ -44,7 +44,7 @@ $3.1\times10^{-59}$, $^4$He ($n=12$) $4.0\times10^{-59}$; the Jones
 polynomial of the closure equals $\prod_i V(T(2,e_i))$ exactly on both
 classical branches for $A \le 4$. The three constants $-\log(z+d)$ reproduce
 the binding arc's bond constants -- measured there in $H_6$ -- to all sixty
-digits (`the_canonical_mass_trace_factorises_over_the_chain_probe.py`).
+digits.
 
 ## What it means for the binding gap
 
@@ -140,14 +140,14 @@ connected-sum input — $\mathrm{tr}_M(W_{\text{atom}}) = F \prod_i (z + d_i)$ a
 $\mathrm{tr}_M(W_{\text{free}}) = F$ — the ratio is
 $\prod_i (z+d_i)$ for **any** intra factor $F \neq 0$, so two orderings with
 factors $F_1, F_2$ give the same ratio with *no hypothesis relating them*
-(`chainRatio_eq_of_intra`), and hence the same $L$
-(`L_chain_indep_of_intra`, `L_chain_eq_sum_of_intra`). The invariance is
+, and hence the same $L$
+. The invariance is
 cancellation, not coincidence. The difference route instead satisfies
-$F_1(1-P) = (F_1/F_2)\,F_2(1-P)$ (`chainDiff_scales`) and genuinely differs
-whenever $F_1 \neq F_2$ and $P \neq 1$ (`chainDiff_ne`). And the two
+$F_1(1-P) = (F_1/F_2)\,F_2(1-P)$ and genuinely differs
+whenever $F_1 \neq F_2$ and $P \neq 1$. And the two
 confinement words are different objects: at $q = 1$, where both are elementary,
 the per-generator product is $1/4$ and the Borromean closed form is $1$
-(`grouped_ne_borromean`), so the $82\,\%$ gap at $q_0$ is not a deformation
+, so the $82\,\%$ gap at $q_0$ is not a deformation
 artefact. Not formalised, as ever, is the connected-sum multiplicativity itself.
 Measured in
 `the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py`; which
@@ -158,7 +158,7 @@ word is $\beta_{\mathrm{Bor}}$ is measured in
 
 `QOU.Mass.ChainTraceFactor` proves the factor algebra: the
 affine law $\mathrm{tr}_2(\sigma + d) = z + d$ from the level-2 Wenzl weights
-(`twoStrandTrace_eq`); the mirror factor $z - h = 1/(q(q^2+1))$ and
+; the mirror factor $z - h = 1/(q(q^2+1))$ and
 $\mathrm{tr}_2(\sigma)\,\mathrm{tr}_2(\sigma^{-1}) = 1/[2]_q^2$, hence
 $L_{pp} + L_{nn} = 2\log(q + q^{-1})$; positivity of all three factors for
 $q \ge 1$; and that $-\log$ of a product of positive factors is the sum of the

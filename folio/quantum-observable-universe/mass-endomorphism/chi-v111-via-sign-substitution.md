@@ -36,14 +36,3 @@ formally. This is the **conjugate-partition symmetry**: $(3)$ and
 $(1,1,1)$ are transpose partitions, and the sign-rep $\leftrightarrow$
 trivial-rep duality manifests as the $q \leftrightarrow -q^{-1}$
 substitution on the generator level.
-
-## Lean theorems
-
-| theorem | content |
-|---|---|
-| `chi_V111_difference_eq_factored` | V_(1,1,1) char-diff = $-(q^2+1)^2(q^2-1)/(4q^5)$ |
-| `chi_V111_eq_chi_V3_div_q4` | conjugate-symmetry identity |
-| `chi_V111_difference_at_one` | vanishes at $q = 1$ (isospin invariance) |
-| `chi_V111_difference_at_two` | numerical: $-75/128$ at $q = 2$ |
-
-All are closed by `field_simp + ring` or `norm_num`.

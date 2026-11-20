@@ -1,6 +1,6 @@
 ## Proof
 
-*Proof (Lean: `tau_M_asymptotic_rep_theory`).* The factorisation defines $F_\lambda$; the substance lies in the parity and the proved rungs.
+*Proof.* The factorisation defines $F_\lambda$; the substance lies in the parity and the proved rungs.
 
 **Parity (even in $\hbar_q$).** The cosine envelope and every rung factor depend on $\hbar_q$ only through $\hbar_q^2$, since $u_\lambda = b_\lambda\hbar_q^2$. So $F_\lambda$, in the factorised form, is even in $\hbar_q$ by construction. The bar involution does not supply this: it sends $\hbar_q = (q-1)/q$ to $1 - q = -q\,\hbar_q$. The bar-parity alternation $\overline{c_k} = (-1)^k c_k$ is a separate statement, the `esymm_bar_parity` of [$c_k$ precision-ladder recursion induced by the fibre-level Habiro $q$-difference equation — depth-$d$ linear recursion on $c_k$ from the $q$-shift kernel $R(q,\xi)$ acting on $F(\xi)$](#prop:q-beta-c-k-recursion-from-habiro-q-difference). $\square$
 

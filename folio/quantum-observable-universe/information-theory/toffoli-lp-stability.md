@@ -61,7 +61,7 @@ No claim of LP-instability is made, and none is available: the condition as stat
 
 **Every sign and zero claim above is Lean-proved.** Nothing in this arc rests on evaluation at a single anchor:
 
-| claim | theorem (`QOU.Information.*`) |
+| claim | theorem |
 |---|---|
 | $P_{7,7} > 0$ on $q > 0$, no positive root | `toffoliDiagonal_pos` |
 | $P_{6,6} > 0$ on $q > 0$ | `toffoliP66_pos` |

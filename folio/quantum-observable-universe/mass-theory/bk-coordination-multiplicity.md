@@ -45,7 +45,7 @@ closer than $a_D^{(4)}$, so the near-match does not single that period out. The
 Wigner-$\mathrm{SU}(4)$ closed-shell structure cannot supply the factor either: the
 "at most four rows" restriction is satisfied by every partition of every $n \le 4$, so
 it leaves every Schur–Weyl sum below $n = 5$ unchanged and takes the same value at
-$A = 3$ and $A = 4$ (`QOU.Mass.WignerSU4RowBoundInactive`).
+$A = 3$ and $A = 4$.
 
 The deuteron sits on the Seifert-fibred Hopf link, where $\mathrm{Vol} = 0$ and any
 volume product vanishes. The **crossing structure survives** there — the Hopf link has

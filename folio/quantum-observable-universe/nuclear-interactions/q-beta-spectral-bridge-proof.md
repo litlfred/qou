@@ -66,7 +66,3 @@ We verified this proposition numerically at 50 decimal places via [`q_beta_spect
 See [Table](#tbl:q-beta-spectral-bridge-table-data).
 
 The residual lies within the $O(h^2)$ Taylor bound. The MeV-level discrepancy between $\mathfrak{Q}_\beta^{\mathrm{A}}$ and $\mathfrak{Q}_\beta^{\mathrm{B}}$ constitutes the next-order correction $(z-1)h/2 \approx -0.040$ at $z = q^3/(q^2+1)$ (the $-0.052$ quoted here until 2026-10-10 was the convention-C value). Both forms agree with the CODATA value of $0.7823$ MeV within $7\%$. Form A is the single-wrap symbolic closed form ([prop:neutron-qvalue-symbolic](#prop:neutron-qvalue-symbolic)); under the owner ruling of 2026-09-08 it is a historical cross-check, not the canonical base, which is the Markov trace at $z = q^3/(q^2+1)$.
-
-## Lean formalization
-
-The companion Lean repository records the bridge identities (`polynomial_bridge_identity`, `leading_order_ratio_identity`, `bridge_first_order_remainder`). We defer the `Real.log` steps via `sorry` (`-- Ref: [leitner2026]`).

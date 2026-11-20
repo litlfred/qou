@@ -49,4 +49,4 @@ $\sigma \colon \mathbb{P}(V) \hookrightarrow \mathrm{Ad}(A)$ of
 [fibre adjoint involution](#prop:fiber-adjoint-involution).  $\square$
 
 *Item (6): Lifting criterion.*
-This is proved in Lean as `QOU.CentralExtension.PresheafCentralExtension.exists_lift_iff`, for a central extension of presheaves of groups that is exact and central on every section group, and a cocycle with a local lift on overlaps. The obstruction is a 2-cocycle (`obstruction_cocycle`). Its class does not depend on the local lift (`obstruction_lift_change`), and it is compatible with refinement of the cover (`obstruction_pull`).
+This is proved in Lean as `QOU.CentralExtension.PresheafCentralExtension.exists_lift_iff`, for a central extension of presheaves of groups that is exact and central on every section group, and a cocycle with a local lift on overlaps. The obstruction is a 2-cocycle. Its class does not depend on the local lift, and it is compatible with refinement of the cover.

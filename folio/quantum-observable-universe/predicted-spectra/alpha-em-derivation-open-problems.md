@@ -31,7 +31,7 @@ the resummation and the re-pin. Reproduce every entry with
 
 ## Why both prior attempts fail
 
-**Form A's $\kappa$ is incorrect.** The Witten-1988 Gram-determinant identification gives $\kappa \approx 1.722$. Matching CODATA at the proton-pinned $q_0$, with the tower resummed, requires $\kappa \approx 1.9153$. The discrepancy is $11.2\%$ and cannot be quadrature error: resummation is worth $11.06$ ppb against a $468$ ppb gap, about one part in forty. The Lean formalisation (`em-coupling-chern-simons.lean`) carried this as `sorry` from the start.
+**Form A's $\kappa$ is incorrect.** The Witten-1988 Gram-determinant identification gives $\kappa \approx 1.722$. Matching CODATA at the proton-pinned $q_0$, with the tower resummed, requires $\kappa \approx 1.9153$. The discrepancy is $11.2\%$ and cannot be quadrature error: resummation is worth $11.06$ ppb against a $468$ ppb gap, about one part in forty. The Lean formalisation carried this as `sorry` from the start.
 
 **Form B is hidden numerology.** Of its four factors:
 

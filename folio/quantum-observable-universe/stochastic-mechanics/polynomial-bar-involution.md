@@ -36,4 +36,4 @@ Every Lean theorem below has both a narrative proof here and a fully formalised 
 
 ### Core bar-involution axioms
 
-**Proposition (Lean: `barPoly_X`).** $\overline X = -X$.
+**Proposition.** $\overline X = -X$.

@@ -52,7 +52,7 @@ series — the normalised series' coefficient is $\tilde c_2 = -9/8$.*
 
 *Canonical compute for the tiered $c_k$ cache is the script
 [`computations/qbeta/qbeta_ck_cache.py`](../../../computations/qbeta/qbeta_ck_cache.py),
-which records each $c_k$ row (`data.rows`) with its `tier` (`"derived"` vs
+which records each $c_k$ row with its `tier` (`"derived"` vs
 `"cal-anchored"`), `label`, structural candidates, and cumulative truncation
 prediction `Q_pred_after_this_rung_MeV` alongside `data.Q_beta_tiers` in the
 witness JSON. Note that the cached $c_k$ ladder artifact is a retained

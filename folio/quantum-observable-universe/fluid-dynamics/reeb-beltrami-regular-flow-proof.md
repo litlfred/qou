@@ -13,6 +13,6 @@ For item 3 write $u(t) = a(t)\,V$. Then $\mathrm{div}\,u = 0$ and $\nabla_u u = 
 - `L3.nab_VV`, `L3.curl_V`, `L3.curl_curl_V`, `L3.ric_V`, `L3.ric_X`, `L3.rough_V` and `L3.weitzenbock_V`;
 - `L3.deformation_V`, the identity $(\Delta_H - 2\,\mathrm{Ric})\,V = 0$.
 
-The same file proves the flat analogue end to end with Mathlib derivatives: a Beltrami eigenfield yields an exact Navier--Stokes solution (`beltrami_eigen_ns`), and the ABC field gives the solution $e^{-\nu t} u_{\mathrm{ABC}}$ on the three-torus (`abc_ns_exact`).
+The same file proves the flat analogue end to end with Mathlib derivatives: a Beltrami eigenfield yields an exact Navier--Stokes solution, and the ABC field gives the solution $e^{-\nu t} u_{\mathrm{ABC}}$ on the three-torus.
 
 Two standard steps are not formalised: the descent of left-invariant data from $\mathrm{PSL}_2(\mathbb{R})$ to $\Gamma\backslash\mathrm{PSL}_2(\mathbb{R})$, and the identification of the manifold operators $\nabla$, $\mathrm{Ric}$, $\nabla^*\nabla$ and $\Delta_H$ on left-invariant fields with the Lie-algebra formulas above. The reduction of the equations to the scalar equation for $a(t)$ in item 3 is carried out by hand.

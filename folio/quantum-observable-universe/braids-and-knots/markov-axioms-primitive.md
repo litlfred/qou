@@ -26,7 +26,7 @@ selection is forced by the dimension of the mass fibre:
   shows the faithful normalised Markov trace is **unique** and equals
   $z = q^3/(q^2+1)$ — **convention D**. The competing root $z = q$ is real but
   degenerate ($y_{(2,1)} = 0$, not faithful on $\mathrm{TL}_3$), which is why the
-  faithfulness hypothesis is load-bearing (`markovWeights_degenerate_root`).
+  faithfulness hypothesis is load-bearing.
 
 So the loop value is a **consequence** of the fibre being two-dimensional, not a
 stipulation.

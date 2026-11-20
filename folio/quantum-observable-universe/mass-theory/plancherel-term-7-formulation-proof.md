@@ -77,7 +77,7 @@ nuclear binding $B_\mathrm{nucl}$ from
 > curvature rank of **words**. That identification is not stated in the cited
 > proposition, and the three readings of $J^\bullet$ present in the corpus are
 > each excluded: the ideal-power reading is provably $\bot$ above degree $0$
-> (`QOU.BraidKnot.WordFiltration.map_pow_eq_bot`); the Coxeter-length reading
+>; the Coxeter-length reading
 > fails a dimension count at $n \leq 3$; and the rewrite-depth reading is
 > identically zero once `def:hecke-normal-form` fixes $T_w$ as the unique
 > normal-form basis indexed by $S_n$.

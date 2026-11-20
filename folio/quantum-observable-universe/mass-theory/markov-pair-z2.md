@@ -115,7 +115,7 @@ Proved in
 (`unknot_two_strand`, `unknot_three_strand`, `hopf_link`,
 `two_component_unlink`) and `kauffman_loop`. Every hypothesis is
 `IsConventionD` plus $q \neq 0$, and $q^2+1 \neq 0$ is *derived* rather than
-assumed (`q_sq_add_one_ne_zero`) — in a general field it can vanish, so assuming
+assumed — in a general field it can vanish, so assuming
 it would have been a hidden hypothesis.
 
 The four closure rows are retained as sanity checks — they confirm the invariant

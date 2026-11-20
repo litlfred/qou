@@ -189,10 +189,10 @@ consequences are derived unconditionally from the class:
 The physical regime of the bar-odd face is the **fibre branch**: real
 $b$, where the modular parameter $q_b = e^{i\pi b^2}$ satisfies
 $\lvert q_b \rvert = 1$ and equals the pure phase $e^{i \ln q_0 / 2}$ at
-the substrate map (Lean: `norm_fibreQParam`, `fibreQParam_fibreB`). On
+the substrate map. On
 this branch the modular-double product diverges and the construction is
 the real single integral `phiB`
-(`QOU.MathlibExt.FaddeevPhiBRealIntegral`), whose structural laws —
+, whose structural laws —
 self-duality $\Phi_{b^{-1}} = \Phi_b$, unitarity
 $\lvert \Phi_b \rvert = 1$, the inversion relation, and
 $\sigma$-unitarity $\Phi_b \cdot \overline{\Phi_b} = 1$ — hold for the
@@ -206,8 +206,8 @@ theorem: the near-$0$ piece (`integrableOn_kernel_Ioc_zero_one` — the
 $-2z/t^2$ subtraction cancels the pole, via the two-sided cubic $\sinh$
 estimates and a global $\lvert \sin y - y \rvert \le 2\lvert y \rvert^3$
 bound), the exponential-domination tail on $[1, \infty)$
-(`integrableOn_kernel_Ioi_one`), and hence integrability on all of
-$(0, \infty)$ (`integrableOn_kernel_Ioi_zero`) are all hypothesis-free —
+, and hence integrability on all of
+$(0, \infty)$ are all hypothesis-free —
 the two standard majorant facts ($e^{-bt}$ and $t^{-2}$ integrable on
 $[1, \infty)$) are discharged from Mathlib, not carried. The
 **definition-to-contour identity** — that the real-integral `phiB`

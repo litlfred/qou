@@ -45,7 +45,7 @@ $$
 *canonical structural verification: the integration value matches
 $-\mathrm{Li}_2^q(-V)$ to all displayed digits at $q_0 \approx 1.110$
 for $V \in \{0.1, 0.3, 0.5, 0.7, 0.85, 0.95, 0.989\}$
-(`kashaev-integration-identity.witness.json`).*
+.*
 
 *The integral is not the compact quantum dilogarithm
 $\Phi_q(V) = \prod_{k\geq 1}(1 - q^{-k}V)^{-1}$, whose logarithm uses

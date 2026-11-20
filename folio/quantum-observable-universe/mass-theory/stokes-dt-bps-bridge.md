@@ -77,7 +77,7 @@ Since $5 \neq 3$, the **open**-HOMFLY Gukov--Stošić bridge does *not* reproduc
 the $4_1$ Stokes integer $3$ of GGM eq. (60) and does *not* license
 $A_\omega = 3$. Only the **closed**-sector bridge stated above relates to that
 integer; its $q \to 0$ anchor $S^+(0)_{01} = 3$ is machine-checked
-unconditionally (`QOU.QBeta.StokesQZeroDTCount`).
+unconditionally.
 
 We therefore adopt the **closed**-sector bridge, and A_ω=3 is made
 conditional on it downstream

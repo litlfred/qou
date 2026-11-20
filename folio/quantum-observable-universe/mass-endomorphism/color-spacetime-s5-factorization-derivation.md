@@ -7,7 +7,3 @@ The substrate symmetry $S_5$ acts on all five coordinates. Its block-diagonal su
 ## Discreteness
 
 Part (3) enforces rigidity on the continuous sector. The connected group $\mathbb{R}$ is divisible, so any homomorphism to a finite group $G$ vanishes. For each $x$, $f(x) = f\big(|G| \cdot \tfrac{x}{|G|}\big) = |G| \cdot f(\tfrac{x}{|G|}) = 0$, because $|G| \cdot g = 0$ for every $g \in G$. A continuous winding parameter cannot carry a finite-group (e.g. $\mu_5$) character. Physically, this dictates that the continuous trace phase does not constitute the discrete color charge ([Mass is the modulus](#rem:mass-modulus-em-phase-color-grading)).
-
-## Lean formalism
-
-These claims are formalized without `sorry` in [`QOU.MassEndomorphism`](color-spacetime-s5-factorization.lean) via `spacetime_color_card`, `colorSpacetimeEmbed_injective`, `color_fixes_spacetime`, `spacetime_fixes_color`, and `winding_hom_to_finite_trivial`. The construction is generic. The embedding and divisibility arguments rely strictly on combinatorial data, requiring no archimedean input.

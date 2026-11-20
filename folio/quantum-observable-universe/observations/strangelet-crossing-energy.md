@@ -7,7 +7,7 @@ $$
   =  +\tfrac{2}{3} - \tfrac{1}{3} - \tfrac{1}{3}
   =  0.
 $$
-*The strangelet is electromagnetically neutral for all $q > 0$. The vanishing depends only on the crossing orientation partition within the Borromean structure, evaluated on the canonical $n = 3$ word.* It is an invariant of that canonical presentation, not a topological invariant of the closure: $Q$ is writhe-derived, and the writhe shifts by $\pm 1$ under stabilisation (`QOU/StandardModel/WritheMarkovInvariance.lean`, `writhe_stabilize`). Fixing the minimal level is what makes the statement well-posed, and the Borromean word is already at its braid index.
+*The strangelet is electromagnetically neutral for all $q > 0$. The vanishing depends only on the crossing orientation partition within the Borromean structure, evaluated on the canonical $n = 3$ word.* It is an invariant of that canonical presentation, not a topological invariant of the closure: $Q$ is writhe-derived, and the writhe shifts by $\pm 1$ under stabilisation. Fixing the minimal level is what makes the statement well-posed, and the Borromean word is already at its braid index.
 
 *2. Purely antisymmetric crossing energy.*
 *With $Q = 0$ the symmetric channel vanishes and the [crossing energy](#def:crossing-energy) reduces to:*
