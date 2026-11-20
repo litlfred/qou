@@ -5,7 +5,7 @@ $$
   \varrho^{*} \circ \varrho \;=\; t \cdot \mathrm{id}_U, \quad t \in K^{\times}
 $$
 
-be a point / copoint pair with invertible pairing. When $\mathbf{C}$ is monoidal and $U = \mathbf{1}$, this is the vacuum datum $(\varrho_\Phi, \varrho_\Phi^{*})$ of Constraints (G-3)–(G-4) of [the $G$-action conjecture](#conj:g-action-on-substrate), with $t = \mathrm{tr}_F(\varrho_\Phi^{*}\varrho_\Phi)$. Define
+be a point / copoint pair with invertible pairing. When $\mathbf{C}$ is monoidal and $U = \mathbf{1}$, this is the vacuum datum $(\varrho_\Phi, \varrho_\Phi^{*})$ of Constraints (G-3)–(G-4) of [the $G$-action conjecture](#conj:g-action-on-substrate), where $t$ is the endomorphism $\varrho_\Phi^{*} \circ \varrho_\Phi$ of $\mathbf{1}$ read as a scalar; it equals the normalisation $\mathrm{tr}_F(\varrho_\Phi^{*}\varrho_\Phi)$ of (G-3) when the trace satisfies $\mathrm{tr}_F(\mathrm{id}_{\mathbf{1}}) = 1$. Define
 
 $$
   e \;:=\; t^{-1}\, \varrho \circ \varrho^{*} \colon X \to X,
@@ -28,6 +28,10 @@ Now let $\mathbf{C}$ be symmetric monoidal and monoidal-preadditive, $Y = X \oti
 6. $R = r \otimes e + e \otimes r + r \otimes r$.
 7. $P_{+} \circ (r \otimes r)$ is an idempotent: the symmetric square of the residual.
 
-No rigidity, trace or pivotal structure is used. In a rigid category $\varrho^{*}$ would come from $\varrho$ through a self-duality of $X$; the statements above need only the scalar identity $\varrho^{*} \circ \varrho = t \cdot \mathrm{id}_U$.
+**(c) Traces.** Let $\mathrm{tr}$ assign to each endomorphism a scalar in $K$, additively, $K$-homogeneously and cyclically: $\mathrm{tr}(g \circ f) = \mathrm{tr}(f \circ g)$ for $f \colon Y \to Z$, $g \colon Z \to Y$. Then
 
-*Proof.* Each item is a short computation. For example, $e \circ e = t^{-2}\,\varrho\,(\varrho^{*}\varrho)\,\varrho^{*} = t^{-2} t\,\varrho\varrho^{*} = e$. For $P_{+}$: $(\mathrm{id} + \sigma)^2 = 2(\mathrm{id} + \sigma)$, so $P_{+}^2 = c^2 \cdot 2(\mathrm{id} + \sigma) = c(c+c)(\mathrm{id} + \sigma) = P_{+}$. Item 5 is the general fact that commuting idempotents compose to an idempotent. Item 6 follows from $\mathrm{id}_{X\otimes X} = (e + r) \otimes (e + r)$ and bilinearity of $\otimes$. All items are checked in Lean, without `sorry`.
+8. $\mathrm{tr}(e) = \mathrm{tr}(\mathrm{id}_U)$ and $\mathrm{tr}(r) = \mathrm{tr}(\mathrm{id}_X) - \mathrm{tr}(\mathrm{id}_U)$. In particular, for $U = \mathbf{1}$ and $\mathrm{tr}(\mathrm{id}_{\mathbf{1}}) = 1$, $\mathrm{tr}(e) = 1$, whatever $X$ is.
+
+Items 1–7 use no rigidity, trace or pivotal structure. Item 8 takes the trace as a hypothesis with the three stated properties; it does not construct the pivotal trace of a particular category. In a rigid category $\varrho^{*}$ would come from $\varrho$ through a self-duality of $X$; the statements above need only the scalar identity $\varrho^{*} \circ \varrho = t \cdot \mathrm{id}_U$.
+
+*Proof.* Each item is a short computation. For example, $e \circ e = t^{-2}\,\varrho\,(\varrho^{*}\varrho)\,\varrho^{*} = t^{-2} t\,\varrho\varrho^{*} = e$. For $P_{+}$: $(\mathrm{id} + \sigma)^2 = 2(\mathrm{id} + \sigma)$, so $P_{+}^2 = c^2 \cdot 2(\mathrm{id} + \sigma) = c(c+c)(\mathrm{id} + \sigma) = P_{+}$. Item 5 is the general fact that commuting idempotents compose to an idempotent. Item 8: $\mathrm{tr}(e) = t^{-1}\,\mathrm{tr}(\varrho \circ \varrho^{*}) = t^{-1}\,\mathrm{tr}(\varrho^{*} \circ \varrho) = t^{-1}\,\mathrm{tr}(t\,\mathrm{id}_U) = \mathrm{tr}(\mathrm{id}_U)$. Item 6 follows from $\mathrm{id}_{X\otimes X} = (e + r) \otimes (e + r)$ and bilinearity of $\otimes$. All items are checked in Lean, without `sorry`.

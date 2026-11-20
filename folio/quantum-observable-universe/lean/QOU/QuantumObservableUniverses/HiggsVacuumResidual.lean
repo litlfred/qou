@@ -37,11 +37,17 @@ statement, in an arbitrary `K`-linear category (`K` a field):
   (`tensorResid_eq`), and the purely residual summand carries its own
   symmetric idempotent `(r ⊗ r) ≫ P₊` (`residSq_symPart_idem`).
 
+* **(a′)** For any additive, `K`-homogeneous, cyclic `K`-valued trace `tr`
+  on endomorphisms (`CyclicTrace`), `tr e = tr (𝟙 U)` and
+  `tr r = tr (𝟙 X) - tr (𝟙 U)` (`tr_proj`, `tr_resid`). For the Higgs datum
+  with `tr (𝟙 (𝟙_ C)) = 1`, `tr e_H = 1` (`VacuumPairing.tr_proj_eq_one`).
+
 No rigidity is used: the idempotent algebra needs only the scalar pairing
 `ϱ ≫ ϱ* = t • 𝟙`. In a rigid category `ϱ*` would be obtained from `ϱ` by a
-self-duality of `X`; that construction is not formalised here. No trace,
-pivotal structure, or representation-theoretic identification (spin) is
-claimed. Everything is a theorem about the stated hypotheses; the reading of
+self-duality of `X`; that construction is not formalised here. The trace in
+(a′) is a hypothesis (a `CyclicTrace` structure), not a construction of the
+pivotal trace of `Rep(SU_q(2))`. No representation-theoretic identification
+(spin) is claimed. Everything is a theorem about the stated hypotheses; the reading of
 `(r ⊗ r) ≫ P₊` as a graviton channel is interpretation and lives only in the
 remark `rem:higgs-vacuum-residual-graviton`.
 
@@ -65,7 +71,9 @@ variable (K : Type*) [Field K] {C : Type u} [Category.{v} C] [Preadditive C] [Li
 /-- A **point / copoint pair through `U`** with invertible pairing: morphisms
 `pt : U ⟶ X` and `copt : X ⟶ U` with `pt ≫ copt = scalar • 𝟙 U`,
 `scalar ≠ 0`. For `U = 𝟙_ C` this is the vacuum datum `(ϱ_Φ, ϱ_Φ^*)` of
-Constraints (G-3)/(G-4), with `scalar` the pairing `tr_F(ϱ_Φ^* ϱ_Φ)`. -/
+Constraints (G-3)/(G-4); `scalar` is the endomorphism `ϱ_Φ^* ϱ_Φ` of the unit
+read as a scalar, which agrees with (G-3)'s `tr_F(ϱ_Φ^* ϱ_Φ)` when the trace
+normalises the unit (`tr_F (𝟙 𝟙) = 1`). -/
 structure PointCopoint (U X : C) where
   /-- The point `ϱ : U ⟶ X`. -/
   pt : U ⟶ X
@@ -149,6 +157,77 @@ theorem resid_comp_copt : P.resid ≫ P.copt = 0 := by
 end PointCopoint
 
 end PointCopointSection
+
+/-! ## (a′) Trace of the vacuum idempotent
+
+Any additive, `K`-homogeneous, cyclic `K`-valued trace on endomorphisms — the
+properties the categorical trace of a pivotal `K`-linear category has — sends
+the normalised idempotent of a point / copoint pair through `U` to the trace of
+`𝟙 U`. For the Higgs datum (`U = 𝟙_ C`) the trace of `e_H` is therefore the
+dimension of the unit, whatever the dimension of `X`. -/
+
+section TraceSection
+
+variable (K : Type*) [Field K] (C : Type u) [Category.{v} C] [Preadditive C] [Linear K C]
+
+/-- An additive, `K`-homogeneous, cyclic `K`-valued trace on endomorphisms.
+Cyclicity is required across objects: `tr (f ≫ g) = tr (g ≫ f)` for
+`f : Y ⟶ Z`, `g : Z ⟶ Y`. -/
+structure CyclicTrace where
+  /-- The trace of an endomorphism. -/
+  tr : ∀ {Y : C}, (Y ⟶ Y) → K
+  /-- Additivity. -/
+  tr_add : ∀ {Y : C} (f g : Y ⟶ Y), tr (f + g) = tr f + tr g
+  /-- `K`-homogeneity. -/
+  tr_smul : ∀ {Y : C} (a : K) (f : Y ⟶ Y), tr (a • f) = a * tr f
+  /-- Cyclicity. -/
+  tr_comp_comm : ∀ {Y Z : C} (f : Y ⟶ Z) (g : Z ⟶ Y), tr (f ≫ g) = tr (g ≫ f)
+
+variable {K C}
+
+namespace CyclicTrace
+
+variable (T : CyclicTrace K C)
+
+theorem tr_sub {Y : C} (f g : Y ⟶ Y) : T.tr (f - g) = T.tr f - T.tr g := by
+  have h := T.tr_add (f - g) g
+  rw [sub_add_cancel] at h
+  rw [h, add_sub_cancel_right]
+
+end CyclicTrace
+
+namespace PointCopoint
+
+variable {U X : C} (P : PointCopoint K U X) (T : CyclicTrace K C)
+
+/-- **Trace of the vacuum idempotent.** `tr e = tr (𝟙 U)`. -/
+theorem tr_proj : T.tr P.proj = T.tr (𝟙 U) := by
+  unfold proj
+  rw [T.tr_smul, T.tr_comp_comm, P.pt_comp_copt, T.tr_smul, ← mul_assoc,
+    inv_mul_cancel₀ P.scalar_ne_zero, one_mul]
+
+/-- **Trace of the residual.** `tr r = tr (𝟙 X) - tr (𝟙 U)`. -/
+theorem tr_resid : T.tr P.resid = T.tr (𝟙 X) - T.tr (𝟙 U) := by
+  unfold resid
+  rw [T.tr_sub, P.tr_proj]
+
+end PointCopoint
+
+/-- **Higgs case.** For a vacuum pairing through the monoidal unit, if the
+trace normalises the unit (`tr (𝟙 (𝟙_ C)) = 1`), then `tr e_H = 1`, and any
+value `d` asserted for `tr e_H` must equal `1`. -/
+theorem VacuumPairing.tr_proj_eq_one [MonoidalCategory C] {X : C}
+    (P : VacuumPairing K X) (T : CyclicTrace K C) (h1 : T.tr (𝟙 (𝟙_ C)) = 1) :
+    T.tr P.proj = 1 := by
+  rw [P.tr_proj T, h1]
+
+/-- Under the same normalisation, `tr e_H = d` forces `d = 1`. -/
+theorem VacuumPairing.eq_one_of_tr_proj_eq [MonoidalCategory C] {X : C}
+    (P : VacuumPairing K X) (T : CyclicTrace K C) (h1 : T.tr (𝟙 (𝟙_ C)) = 1) {d : K}
+    (hd : T.tr P.proj = d) : d = 1 := by
+  rw [← hd, VacuumPairing.tr_proj_eq_one P T h1]
+
+end TraceSection
 
 /-! ## (b) Involutions: symmetric / antisymmetric idempotents -/
 
