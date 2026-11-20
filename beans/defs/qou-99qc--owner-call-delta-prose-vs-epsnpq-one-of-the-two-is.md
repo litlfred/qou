@@ -4135,3 +4135,6 @@ Owner chose **B** (γγ + reading-3 base V³ with the T³ weight split of the z_
 - C1 `DecayFunctionalIsWeightTrace` (was rulings 09-08 + 11-20), C2 `NucleonElementsAreGammaGammaBase` (V³ for both), C3 `DecayEnergyScale` (posited E₀).
 - `qbeta_eq_of_conjectures`: Q_β = |(q²−1)P(q)/(q⁴(q²+1)³)|·E₀; `qbeta_pos_of_conjectures`: Q_β > 0 on 1 < q ≤ 23/20.
 Open: derive C1 (weak-vertex amplitude → weight-trace difference), C2 (transport #8564's selection to the weight-space rep; derive per-nucleon photon weights φ₀, φ₁ — only the eigenvalue pair is derived, and it gives V³ for both), C3 (E₀ from the mass channel; scale mismatch 945.76 vs ~4.2 MeV). Dashboard re-score not done: proposed as a row labelled conditional on C1–C3, after #8572. Bean stays todo (rule 13a).
+
+## 2026-11-20 — owner choice "3 2" (W2)
+No label ruling: labels A and B stay side by side, and the round-trip theorem is merged (#8615). Label C research, first result (PR #8618, exact probe): quantum-trace restrictions give tau(J) = z_D (whole space), 1/3 (a T3 charge sector), 0 (the nucleon isospin-1/2 block) or 1 (the isospin-3/2 block). Q_beta reads only the weight on the isospin-3/2 block (chi_21(Delta_S) = 0). CODATA needs ~0.889. Next: derive why the decay functional weights the isospin-3/2 channel that way. Bean stays open (rule 13a).
