@@ -19,6 +19,17 @@ insertion X on the 3-dim weight spaces of `NucleonWeightSpaceTwoTerm.lean`,
 This CLOSES the #8518 weighting menu {plain, KnKp, Kp3, q}. The normalisation is the quantum
 dimension [2]_q³ of V^{⊗3} (= 8 at q = 1), not the 1/3 = 1/dim W of the menu entries.
 
+The photon (owner ruling 2026-11-20, chiral four-term vertex)
+-------------------------------------------------------------
+Every quantity here is a trace against the Borromean nucleon V³ = (σ₀σ₁⁻¹)³ (0-based strands;
+`borromeanV3A` = (A₁A₂⁻¹)³ in the Lean, 1-based σ₁σ₂⁻¹), which is a product of two RULED photons
+
+    γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁·σ₀σ₁⁻¹,    V³ = γ(0, 0, q·h) · γ(0, 0, −q⁻¹·h),  h = q − q⁻¹
+
+(`NucleonWeightSpaceTwoTerm.borromeanV3A_eq_switched_photon_product` / `…V3B…`, sorry-free;
+`switchedPhotonA` is exactly this form). The superseded σ₀σ₁ last term enters nowhere. The charge
+insertion Q₁₂+Q₂₃ (or Q₁₂+Q₂₃+Q₁₃) is a diagonal operator, not a photon.
+
 Relation to the old menu (exact in q, `symbolic_map()` below)
 ------------------------------------------------------------
 On the CONNECTED adjacent insertion (static (−2/9)·1 removed from W_n, the object every menu
