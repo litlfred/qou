@@ -32,12 +32,12 @@ At the classical boundary $p_1^{k_1} = p_2^{k_2} + 1$, the $q$-gap polynomial ma
 
 Collatz $(2^2, 3^1)$ is the unique critical case where the $q$-gap is a monomial. The identity $[2]_q^2 - [3]_q = q$ produces a gap with a single term $q$, positive for all $q > 0$. Every other critical case produces a gap polynomial with negative terms that dominate for large $q$.
 
-Proved results (in Lean):
-- $[3]_q = q[2]_q + 1$ (`skein_divisibility`)
-- $[2]_q^2 - [3]_q = q$ (`qInt_gap`)
-- $[3]_q < [2]_q^2$ for $q > 0$ (`qInt3_lt_qInt2_sq`)
-- $\sqrt{[3]_q/[2]_q^2} < 1$ (`geometric_mean_contraction`)
-- $(3, 4)$ gap positive for $q > 0$ (`qInt_gap_3_4`)
-- $(3, 8)$ gap fails for $q > 2$ (`qInt_gap_3_8_fails`)
+Proved results:
+- $[3]_q = q[2]_q + 1$
+- $[2]_q^2 - [3]_q = q$
+- $[3]_q < [2]_q^2$ for $q > 0$
+- $\sqrt{[3]_q/[2]_q^2} < 1$
+- $(3, 4)$ gap positive for $q > 0$
+- $(3, 8)$ gap fails for $q > 2$
 
 The orbit structure provides the two halvings. The $[2]_q$-adic valuation of $\mathcal{C}_q(P)$ must average to at least $2$ ([contact boundary](#prop:collatz-contact-boundary)). At $q = 1$, this average is exactly $2$. The conjecture asserts this holds for all $q > 1$.

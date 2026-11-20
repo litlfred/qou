@@ -55,8 +55,8 @@ $\mathcal{N}_{\rm sym}(q)$ — is computable in closed form.*
   /-- The EW-symmetric q-dimension is positive. -/
   qDimEWSymmetric_pos : 0 < qDimEWSymmetric
   /-- **(G-3) Higgs vacuum vortex morphism.** The Higgs vacuum value
-      `⟨Φ⟩ ∈ A` — the unique *non-zero* vortex morphism of the
-      mass-identity form. -/
+      `⟨Φ⟩ ∈ A` — a *non-zero* vortex morphism of the mass-identity form,
+      unique only up to a non-zero scalar (a phase, once the norm is fixed). -/
   higgsVev : ℝ
   /-- `⟨Φ⟩ ≠ 0` (the non-zero vortex morphism asserted by Axiom (G-3)). -/
   higgsVev_ne_zero : higgsVev ≠ 0
@@ -74,15 +74,22 @@ namespace GActionOnSubstrate
 
 variable [GActionOnSubstrate]
 
-/-- **Symmetric-channel Frobenius trace** `N_sym(q) = tr_F(e_sym^EW · e_H)`,
-    computed in closed form from Axioms (G-1)–(G-4): composing the two
-    idempotent traces in the Frobenius pairing yields the product of their
-    q-dimensions (see `g-action-on-substrate.md` for the precise per-host
-    expansion).  Defined as a derived quantity to avoid the redundant
-    field + equality that would inflate the instance burden. -/
+/-- **Reading-(a) product** `qDimEWSymmetric * qDimHiggsIdempotent`.
+
+    This is a *definition*, and it proves nothing about `tr_F(e_sym^EW · e_H)`.
+    It encodes only the tensor-product reading (a) of
+    `g-action-on-substrate.md`: the two idempotents act on different tensor
+    factors and the trace is multiplicative on `e_sym^EW ⊗ e_H`.  Neither
+    premise is stated by Axiom (G-1), which makes the hosts *direct summands*
+    of `A`; under that reading `dim_q` is additive over the summands, and
+    idempotents supported on orthogonal summands compose to `0`.  Which
+    composition rule is meant is an open identification (QA, 2026-11-20).
+
+    The name `N_sym` is kept for continuity; it is not derived from `tr_F`,
+    and no `CyclicTrace` appears in this class. -/
 noncomputable def N_sym : ℝ := qDimEWSymmetric * qDimHiggsIdempotent
 
-/-- The closed form, now `rfl` from the definition. -/
+/-- Unfolding of the definition (`rfl`); not a statement about `tr_F`. -/
 theorem N_sym_closed_form :
     (N_sym : ℝ) = qDimEWSymmetric * qDimHiggsIdempotent := rfl
 
@@ -92,7 +99,8 @@ end GActionOnSubstrate
 
 The conjecture is the *existence* of a `GActionOnSubstrate` instance:
 that the substrate admits the unique `G`-equivariant structure of
-Axioms (G-1)–(G-4), from which `N_sym(q)` follows in closed form.  Per
+Axioms (G-1)–(G-4), from which a closed form for `N_sym(q)` is intended to follow (the
+composition rule across hosts is open; see the `N_sym` docstring).  Per
 `AGENTS.md §3b-cond` we provide **no global instance** (which would
 require a `sorry`); downstream theorems take `[GActionOnSubstrate]` as
 an explicit hypothesis.  This removes the naked `sorry` while keeping the

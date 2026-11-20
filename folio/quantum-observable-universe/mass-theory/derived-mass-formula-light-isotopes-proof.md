@@ -22,8 +22,6 @@ canonical evaluation at $q_0 = 1.1099785955541805\ldots$ (50 dps; the CODATA-201
 the formal derivation.
 $\square$
 
-**Witness:** `derived-only-formula.witness.json`.
-
 **Scope.** The formula is derived from Hecke partition theory and the
 paper's atomic-mass framework; no continuous parameters are fitted, and
 no choices were made by selecting from a menu of variants. The atomic

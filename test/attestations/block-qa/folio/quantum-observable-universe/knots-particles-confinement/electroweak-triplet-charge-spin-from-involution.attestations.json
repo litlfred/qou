@@ -1,0 +1,1290 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution",
+    "path": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Both leaks are gone: \"the corpus spin involution\" is now \"the spin involution\", and \"collapsing the former C3 (charge) and C4 (spin)\" is now \"so charge and spin are proved consequences rather than separate postulates\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq18"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "b360725dc26f",
+          "ts": "816034935aac",
+          "lean": "89c323a45829"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "b360725dc26f",
+          "ts": "816034935aac",
+          "lean": "89c323a45829"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:37:32.000Z",
+        "reviewed_sha": "ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:52.135Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Sits in knots-particles-confinement beside def:spin-involution, whose sector grading it uses; no sibling restates it."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:37:32.000Z",
+        "reviewed_sha": "ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:21.645Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Given the postulate as stated in md:2, each conclusion in md:4-10 holds; no counterexample."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:37:32.000Z",
+        "reviewed_sha": "ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:21.687Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "md:2 postulates 'T_3(W^pm) = pm 1, T_3(Z) = T_3(H) = 0'; md:9 concludes the same.",
+        "notes": "Charge half is P |- P; spin half is a definition (spin := 0 on singlets, 1 on doublets). Same fix as proof-no-self-assuming-projection; or reframe the block as a definition/remark recording the table."
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:37:32.000Z",
+        "reviewed_sha": "ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:21.729Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "critical",
+        "evidence": "md:2 'together with the isospin label map T_3(W^pm) = pm 1' is the md:9 conclusion.",
+        "notes": "The T3 values are assumed then concluded. Remove the label map from the hypotheses and derive it, or state only the spin half (and say spin is defined from the sector)."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:37:32.000Z",
+        "reviewed_sha": "ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:21.775Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "md:12 'both follow from the one physics selection postulate through the spin involution'",
+        "notes": "Charge is postulated, not derived; spin is defined from the sector label; the Lean theorem never uses sigma. Retitle ('The electroweak spin/T3 table under the sector-selection postulate') and replace md:12 by 'Spin is a function of the sector; T_3 is part of the postulate.'"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:37:32.000Z",
+        "reviewed_sha": "ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:21.808Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "All free choices (sector map, T3 labels) are named in md:2; authorNotes record the free W-slot label."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:37:32.000Z",
+        "reviewed_sha": "ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:21.848Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "md:12 '...through the spin involution'; ew_charge_spin_forced uses no sigma/swap2 lemma.",
+        "notes": "The Task 3 bar-parity lemmas (Lean 69-175) are never invoked by the theorem. Either use them or delete the 'through the spin involution' clause."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:37:32.000Z",
+        "reviewed_sha": "ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:21.917Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "md:12 claims derivation 'through the spin involution'; Lean electroweak-triplet-charge-spin-from-involution.lean:265-279 only projects EWSectorSelection fields.",
+        "notes": "The md asserts a derivation; the Lean proves a restatement of the hypothesis. Align as in da-overclaim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:37:32.000Z",
+        "reviewed_sha": "ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:21.948Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "No cites[]; Lean References cite corpus blocks and [leitner2026] only; none misattributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:37:32.000Z",
+        "reviewed_sha": "ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:21.980Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "md:5 'spin(H) = 0'; Lean spinDouble := if isSinglet then 0 else 2, a sector label, not a rotation-group spin.",
+        "notes": "Define spin(-) in md:2 as 'the label 0 on A_+, 1 on A_-'. Also define bar-even/bar-odd or link def:spin-involution at first use."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:37:32.000Z",
+        "reviewed_sha": "ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:22.011Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "No numerical value or comparison to measurement in the block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:37:32.000Z",
+        "reviewed_sha": "ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:22.043Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "md:2 'the spin-doublet sector A_- ... W^pm, Z the doublets'; md:6 spin = 1. Spin 1 is a triplet.",
+        "notes": "Physics stated as fact: a spin doublet is spin 1/2. Also T_3(H) = 0 conflicts with the SM, where the neutral Higgs component has T_3 = -1/2. Rename A_- 'spin-odd sector' (def:spin-involution md:9 carries the same term) and mark T_3(H)=0 as a model assignment, not the SM value."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:37:32.000Z",
+        "reviewed_sha": "ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:22.077Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "No computation or witness backs the block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:37:32.000Z",
+        "reviewed_sha": "ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:22.113Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "md:12 'Charge and spin are not independent open conjectures' rests on a theorem that returns its own hypothesis fields.",
+        "notes": "Verdict: reject as a theorem. Strongest objection: the conclusion is the postulate (T3 fields) plus a definition (spin from sector). Demote to a remark/definition recording the table, or replace the class by hypotheses from which T3 is genuinely derived."
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "warn",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:22.145Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "md:2 one 90-word italic sentence carries ring, postulate, sectors, sigma, bar-parity and the T3 map.",
+        "notes": "Score H1=1 H2=1 H3=0 H4=1 H5=1 H6=1 H7=1 H8=1 = 7/16. Fixes: state purpose first; split md:2 into hypotheses list; define A_pm, bar-even at use; add a one-line proof; drop md:12."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:37:32.000Z",
+        "reviewed_sha": "ad3779a9eb2c6ce6c268ce7b2ca996f7cb6aed05",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:22.177Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "T_3 values stated in md:2 and again in md:9 (exact-dup of content).",
+        "notes": "k=1 exact-dup, but the duplicate is the theorem's conclusion; resolve by fixing da-circular, not by deleting either display."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:08.124Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "'Charge and spin are not independent open conjectures: both follow from the one selection postulate' — epistemic-status contrast.",
+        "notes": "pass-with-note: load-bearing epistemic classification (postulate vs consequence)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:08.166Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no setup-then-reframe pivot."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:08.224Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; em-dash use absent or true parenthetical/range only, low density."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:08.270Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no reflex three-item lists; enumerations are substantive."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:08.314Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; final line is factual/technical, not quotable closer."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:08.353Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no narrated emphasis (no 'we emphasize'/'note the framing')."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:08.391Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Final italic sentence said the same thing twice within one sentence; redundant tail removed.",
+        "notes": "fixed: '...through the spin involution, so charge and spin are proved consequences rather than separate postulates.' -> '...through the spin involution.'"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:08.425Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; institutional register throughout, no personal warmth."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:08.459Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no unqualified maximum-strength claims."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:08.497Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; prose parses aloud; no stalling noun chains."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "79498069b73e",
+          "lean_statement": "43989ae4e58d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:01.528Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "Class `EWSectorSelection` carries the T₃ values as fields, and `ew_charge_spin_forced` returns them; spin is *defined* from the sector. So the conclusion is a field or a definition, not derived. The statement says charge \"follows\" from the postulate, but T₃ *is* the postulate. Proof: \"neutrality is forced by bar-parity\" is contradicted by its own Z case (bar-odd yet neutral). §3 uses the measured spins of H and B as \"independent physical inputs\" (empirical content in a proof)"
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:52.293Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "md:2 'assigned to the spin-singlet sector A_+ (sigma-fixed, bar-even)'; Lean EWSectorSelection.isSinglet is a bare Bool with no sigma.",
+        "notes": "Conclusions match (spinDouble 0/2 = spin 0/1; t3Double labels). Hypothesis gap: Lean never ties isSinglet to a sigma-eigenspace and R/[Invertible 2] are phantom. Either add a field linking isSinglet to swap2-parity of the carrier, or reword md:2 to 'a Boolean sector label, read as the sigma-sector'."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:02.224Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "EWSectorSelection is consistent: an instance with the stated isSinglet/t3Double values exists; no False or 0 = 1 hypothesis."
+      }
+    ],
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:51.499Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:51.620Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "respects_archimedean_wall": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:51.731Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "code_is_commented": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:51.785Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "variables_typed": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:51.827Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "has_references_to_paper": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:51.880Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "connected_to_ci_pipeline": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:51.940Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "deprecated": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:51.976Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "uses_library_framework_appropriately": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:52.029Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "assertions_are_falsifiable": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:52.064Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:52.098Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "md:12 'Charge and spin are not independent open conjectures: both follow from the one physics selection postulate'",
+        "notes": "Status/significance sentence inside the italic statement. A companion remark exists (rem:ew-triplet-charge-spin-slot-assignment); move md:12 there or to authorNotes, and drop the physics glosses '(scalar, neutral)', '(vector)', '(charged)' from the displays."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:52.173Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Statement over a field R with 1/2 in R; Bool/Nat/Int labels only; no archimedean construct or numeric q."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:52.208Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "No md proof; Lean ew_charge_spin_forced uses simp/decide/field projections, no Real lemmas (the unused Mathlib.Data.Real.Basic import is not used by the theorem)."
+      }
+    ],
+    "uses-editorial-completeness": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:52.246Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "md:1-12 never mentions def:coulomb-charge, rem:chirality-trefoil-electron-positron, prop:vdw-pskew-isolation or thm:hoefsmit-ew-cell-content, all in uses[].",
+        "notes": "Those four support the authorNotes Task 1/1-prime analyses, not this statement. Keep def:spin-involution and prop:self-dual-higgs-real-volume (H singlet); move the others to the slot-assignment remark's uses[] or justify each in the .md."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:52.339Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "No proof in the .md; Lean docstring line 180 'Spin follows by definition; neutrality by bar-parity' is the only plan.",
+        "notes": "Score 0.5 (plan recoverable but implicit). Add a one-line md proof: spin is defined from the sector label, T3 is part of the postulate."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:52.378Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "ew_charge_spin_forced is sorry-free (grep: no sorry/axiom/native_decide in the file); score 1.0.",
+        "notes": "Score 1.0. Not re-compiled in this session."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:52.440Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "ew_charge_spin_forced := anonymous constructor of class fields and simp unfoldings; adds no argument beyond the postulate.",
+        "notes": "Score 0.2. Not a duplicate of a sibling, but the proof content is definitional relabelling."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:01.783Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "ew_charge_spin_forced signature matches the only committed version (9915906cf); no sorry/axiom/native_decide in electroweak-triplet-charge-spin-from-involution.lean. lean_verify not run here."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:01.994Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "critical",
+        "evidence": "electroweak-triplet-charge-spin-from-involution.lean:268-275 conclusion conjuncts 't3Double ... Wp = 1' returned as EWSectorSelection.wPlus_t3, a class field.",
+        "notes": "Four of ten conjuncts are verbatim fields (wPlus_t3, wMinus_t3, z_t3, higgs_t3); higgs_neutral is the field higgs_singlet; the four spin conjuncts unfold a def of the field isSinglet. Fix: either demote to a remark/definition ('the postulate, restated as a spin/T3 table') or restate the class with hypotheses not equal to the conclusion (e.g. sigma-parity of each carrier's eigenvalue pair, with T3 derived)."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:02.087Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Conclusion is a conjunction of non-tautological equalities in the class data, not True or x = x; vacuity is recorded under self-assuming-projection."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:02.289Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "electroweak-triplet-charge-spin-from-involution.lean:200 'class EWSectorSelection (R : Type*) [Field R] [Invertible (2 : R)]' has no field mentioning R.",
+        "notes": "R, [Field R], [Invertible 2] are phantom: the theorem holds for any type. Either drop R from the class and the md ('a field with 1/2 in R'), or add the field that uses it (the swap2 sector projections of Task 3)."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:02.358Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "decide closes only finite Bool/Nat facts (false != true, 2 != 4, pigeonhole on Bool); no structural goal is masked."
+      }
+    ],
+    "da-arity-conflation": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "fcd6c07bf3f6",
+          "lean_statement": "e4b64ae038a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:21.884Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "No family/universal-closure or cross-instance identification; one class, one instance-generic conclusion."
+      }
+    ]
+  }
+}

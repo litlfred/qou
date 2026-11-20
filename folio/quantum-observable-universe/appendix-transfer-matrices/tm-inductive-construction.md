@@ -1,4 +1,4 @@
-Given a nucleus with $A$ nucleons and transfer matrix chains $\{M_i\}_{i=0}^{A-2}$, we describe how adding one nucleon produces the $A+1$ nucleus. This inductive step is the engine behind every Skein polynomial computation. 
+Given a nucleus with $A$ nucleons and transfer matrix chains $\{M_i\}_{i=0}^{A-2}$, this describes how adding one nucleon produces the $A+1$ nucleus. This inductive step is the engine behind every Skein polynomial computation. 
 
 ## The inductive step: $A \to A+1$
 

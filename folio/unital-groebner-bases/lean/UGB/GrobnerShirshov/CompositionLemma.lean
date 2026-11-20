@@ -1,4 +1,4 @@
-import UGB.GrobnerShirshov.Basic
+import UGB.GrobnerShirshov.DiamondLemma
 
 /-!
 # Gröbner–Shirshov Composition Lemma (Diamond Lemma)
@@ -36,7 +36,7 @@ variable {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
 /-! ## §1  Termination
 
 `reduction_well_founded` and `normal_form_exists` **moved to `Basic.lean` §6**
-(bean qou-lzoo). The axiom is stated purely in `Basic`'s vocabulary, and
+(bean qou-lzoo). The termination result (an axiom until 2026-11-20, now a theorem) is stated purely in `Basic`'s vocabulary, and
 `normal_form_exists` — now a theorem carrying `∀ r ∈ sys.rules, IsUnit (r.lc ord)`
 — needs it in order for `reduce` to be defined there rather than from the false
 axiom it replaced. Both remain in the `UGB.GrobnerShirshov` namespace, so uses
@@ -57,41 +57,40 @@ theorem normal_form_exists_of_unit_lc
     ∃ nf, ReducesToNF ord sys f nf :=
   normal_form_exists ord sys hlc f
 
-/-! ## §2  Local Confluence from S-Polynomial Resolution -/
+/-! ## §2  Local Confluence from S-Polynomial Resolution
 
-/-- **Local confluence**: if all S-polynomials reduce to zero (i.e., the
-    system is a GS basis), then whenever `f → g₁` and `f → g₂` by
-    single-step reductions, there exists `h` with `g₁ →* h` and `g₂ →* h`.
+**`local_confluence` was an axiom, and it was false as stated** (bean
+`qou-lc7q`). It promised a *structurally equal* common reduct, but a step fixes
+its target only up to `CoeffEq` (`support` is a free superset), and
+`LocalConfluenceSupportRefutation.local_confluence_structural_false` exhibits
+two normal reducts of one element that differ only in `support`. With every
+hypothesis satisfiable, the axiom proved `False`.
 
-    Axiomatised because the three-case proof (disjoint / overlap / inclusion)
-    requires `AlgElement` subtraction to form the S-polynomial `g₁ - g₂`,
-    which is not available at the abstract level.  The argument is:
-    - **Disjoint sites**: both reductions commute; apply each to the other's result.
-    - **Overlap**: `g₁ - g₂` is an overlap S-polynomial, which reduces to zero
-      by `hgs.overlap_resolves`.
-    - **Inclusion**: `g₁ - g₂` is an inclusion S-polynomial, which reduces to zero
-      by `hgs.inclusion_resolves`.
+It is now a **theorem**, up to `CoeffEq`, over a commutative ring, from
+`Diamond.reductionUnique` (Bergman 1978, Theorem 1.2, proved in
+`DiamondLemma.lean`). `hnqz` is kept in the signature for its callers and is not
+used. -/
 
-    Reference: Bergman 1978, §3, proof of Theorem 1.2 (the Diamond Lemma).
-
-    **`hlc` added 2026-11-15.** Without unit leading coefficients the
-    statement is false: `LocalConfluenceRefutation.local_confluence_false`
-    gives a one-rule GS basis over `ℤ` (relation `2K + 1`) and an element
-    `2·K E₊ K` whose two reducts `−E₊K` and `−K E₊` are both stuck. Bergman's
-    theorem is for monic (unit-lc) rules, which is what `hlc` records. -/
--- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 §3 Thm 1.2 (local confluence from S-polynomial resolution)
-axiom local_confluence
+/-- **Local confluence, up to `CoeffEq`.** Two single steps from `f` lead to
+    multi-step reducts that agree coefficientwise. -/
+theorem local_confluence {k : Type v} [CommRing k]
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
     (hgs : IsGrobnerShirshovBasis G k ord sys)
-    (hnqz : NoQuasiZerosFree G k)
+    (_hnqz : NoQuasiZerosFree G k)
     (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord))
     (f g₁ g₂ : AlgElement G k)
     (h₁ : SingleStepReduction ord sys f g₁)
     (h₂ : SingleStepReduction ord sys f g₂) :
-    ∃ (h : AlgElement G k),
-      MultiStepReduction ord sys g₁ h ∧
-      MultiStepReduction ord sys g₂ h
+    ∃ (h₁' h₂' : AlgElement G k),
+      MultiStepReduction ord sys g₁ h₁' ∧
+      MultiStepReduction ord sys g₂ h₂' ∧ AlgElement.CoeffEq h₁' h₂' := by
+  obtain ⟨n₁, hn₁⟩ := normal_form_exists ord sys hlc g₁
+  obtain ⟨n₂, hn₂⟩ := normal_form_exists ord sys hlc g₂
+  exact ⟨n₁, n₂, hn₁.reduces, hn₂.reduces,
+    Diamond.reductionUnique ord sys hgs hlc f n₁ n₂
+      ⟨MultiStepReduction.head h₁ hn₁.reduces, hn₁.is_normal⟩
+      ⟨MultiStepReduction.head h₂ hn₂.reduces, hn₂.is_normal⟩⟩
 
 /-! ## §3  Confluence (Newman's Lemma) -/
 
@@ -143,65 +142,56 @@ theorem newman
     obtain ⟨e, hg₂e, hde⟩ := ih b hxb g₂ d hbg₂ (hbc.trans hcd)
     exact ⟨e, hg₁d.trans hde, hg₂e⟩
 
-/-- **Confluence**: any two multi-step reducts of the same element have a common
-    reduct.
+/-- **Confluence, up to `CoeffEq`**: any two multi-step reducts of the same
+    element have multi-step reducts that agree coefficientwise.
 
-    Was an axiom. It is not one: it is `newman` applied to `local_confluence`
-    (§2, still an axiom) and `reduction_well_founded` (a theorem since
-    2026-11-20, `Basic.lean`), and those two are the only inputs it ever
-    needed. The previous docstring's reason for
-    axiomatising — that an explicit derivation-height measure on
-    `MultiStepReduction` was missing — is not in fact what the argument induct
-    on; it inducts on the accessibility of the *source*, which §1 already
-    supplies. `MultiStepReduction.cases_head` is the one piece that was missing,
-    and it is three lines. -/
-theorem confluence
+    Restated 2026-11-20 (bean `qou-lc7q`). It used to promise a structurally
+    equal common reduct, via `newman` from the false structural
+    `local_confluence`; that form is false for the same reason. It now follows
+    directly from `Diamond.reductionUnique`: normal forms of `g₁` and `g₂` are
+    normal forms of `f`. `newman` above is kept: it is correct, and it is the
+    abstract rewriting fact. -/
+theorem confluence {k : Type v} [CommRing k]
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
     (hgs : IsGrobnerShirshovBasis G k ord sys)
-    (hnqz : NoQuasiZerosFree G k)
+    (_hnqz : NoQuasiZerosFree G k)
     (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord))
     (f g₁ g₂ : AlgElement G k)
     (h₁ : MultiStepReduction ord sys f g₁)
     (h₂ : MultiStepReduction ord sys f g₂) :
-    ∃ (h : AlgElement G k),
-      MultiStepReduction ord sys g₁ h ∧
-      MultiStepReduction ord sys g₂ h :=
-  newman ord sys (fun _ _ _ s₁ s₂ => local_confluence ord sys hgs hnqz hlc _ _ _ s₁ s₂)
-    f (reduction_well_founded ord sys f) g₁ g₂ h₁ h₂
+    ∃ (h₁' h₂' : AlgElement G k),
+      MultiStepReduction ord sys g₁ h₁' ∧
+      MultiStepReduction ord sys g₂ h₂' ∧ AlgElement.CoeffEq h₁' h₂' := by
+  obtain ⟨n₁, hn₁⟩ := normal_form_exists ord sys hlc g₁
+  obtain ⟨n₂, hn₂⟩ := normal_form_exists ord sys hlc g₂
+  exact ⟨n₁, n₂, hn₁.reduces, hn₂.reduces,
+    Diamond.reductionUnique ord sys hgs hlc f n₁ n₂
+      ⟨h₁.trans hn₁.reduces, hn₁.is_normal⟩ ⟨h₂.trans hn₂.reduces, hn₂.is_normal⟩⟩
 
 /-! ## §4  Uniqueness of Normal Forms -/
 
-/-- **Uniqueness of normal forms**: if `f →* nf₁` and `f →* nf₂`
-    where both `nf₁` and `nf₂` are in normal form, then `nf₁ = nf₂`.
+/-- **Uniqueness of normal forms, up to `CoeffEq`**: if `f →* nf₁` and
+    `f →* nf₂` with both normal, then `nf₁` and `nf₂` agree coefficientwise.
 
-    Proof: by confluence, `nf₁` and `nf₂` have a common reduct `h`.
-    Since both are in normal form (no reduction applies), `h = nf₁`
-    and `h = nf₂`, hence `nf₁ = nf₂`.
+    Restated 2026-11-20 (bean `qou-lc7q`). It concluded `nf₁ = nf₂`, which is
+    false: a normal form is fixed only up to its `support` field
+    (`LocalConfluenceSupportRefutation`). `CoeffEq` is equality of the elements
+    of the free algebra, which is what the mathematics says.
 
-    Was an axiom. Its own docstring gave the two-line proof and then listed as
-    the reason for axiomatising exactly the two things that are available:
-    confluence (§3, now a theorem) and irreducibility of normal forms
-    (`MultiStepReduction.eq_of_isNormalForm`, proved in `Basic.lean` since the
-    reduction relation was repaired).
-
-    Justified by Bergman 1978, Theorem 1.2. -/
--- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 Thm 1.2 (uniqueness of normal forms from confluence)
+    Justified by Bergman 1978, Theorem 1.2, proved in `DiamondLemma.lean`. -/
 theorem normal_form_unique
-    {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    {G : Type u} {k : Type v} [CommRing k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
     (hgs : IsGrobnerShirshovBasis G k ord sys)
-    (hnqz : NoQuasiZerosFree G k)
+    (_hnqz : NoQuasiZerosFree G k)
     (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord))
     (f nf₁ nf₂ : AlgElement G k)
     (hred₁ : ReducesToNF ord sys f nf₁)
     (hred₂ : ReducesToNF ord sys f nf₂)
-    : nf₁ = nf₂ := by
-  obtain ⟨h, hh₁, hh₂⟩ :=
-    confluence ord sys hgs hnqz hlc f nf₁ nf₂ hred₁.reduces hred₂.reduces
-  exact (MultiStepReduction.eq_of_isNormalForm hred₁.is_normal hh₁).symm.trans
-    (MultiStepReduction.eq_of_isNormalForm hred₂.is_normal hh₂)
+    : AlgElement.CoeffEq nf₁ nf₂ :=
+  Diamond.reductionUnique ord sys hgs hlc f nf₁ nf₂ hred₁ hred₂
 
 /-! ## §5  The Composition Lemma (Main Theorem) -/
 
@@ -209,23 +199,21 @@ theorem normal_form_unique
 
     The reduction map is **idempotent**: `reduce (reduce f) = reduce f`.
 
-    This encodes the forward direction of the diamond lemma: a GS basis
-    (all S-polynomials reduce to zero) implies that normal-form monomials
-    form a `k`-basis of the quotient `k⟨G⟩ / (Σ)`.
+    Proof: `reduce f` is in normal form (by `reduce_is_normal`), and a normal
+    form admits no step, so the only reduct of `reduce f` is itself
+    (`MultiStepReduction.eq_of_isNormalForm`).
 
-    Proof: `reduce f` is in normal form (by `reduce_is_normal`), so it
-    reduces to itself in zero steps.  By `normal_form_unique`, the
-    chosen normal form of `reduce f` must equal `reduce f`.
-
-    Carries `hlc` (unit leading coefficients) since `reduce` does — see
-    `Basic.lean` §6. Both hypotheses are load-bearing and for different reasons:
-    `hlc` is what makes `reduce` defined at all, `hgs` is what makes its value
-    canonical. -/
+    **Corrected 2026-11-20 (bean `qou-lc7q`).** This used to route through
+    `normal_form_unique` and said `hgs` makes the value canonical. Idempotency
+    needs no uniqueness theorem and no GS hypothesis: `_hgs` and `_hnqz` are
+    unused and kept only for callers. What the GS hypothesis buys is
+    `normal_form_unique` (normal forms agree up to `CoeffEq`), which is the
+    basis statement, not this one. `hlc` is still what makes `reduce` defined. -/
 theorem composition_lemma
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
-    (hgs : IsGrobnerShirshovBasis G k ord sys)
-    (hnqz : NoQuasiZerosFree G k)
+    (_hgs : IsGrobnerShirshovBasis G k ord sys)
+    (_hnqz : NoQuasiZerosFree G k)
     (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord)) :
     ∀ (f : AlgElement G k),
       reduce ord sys hlc (reduce ord sys hlc f) = reduce ord sys hlc f := by
@@ -242,8 +230,8 @@ theorem composition_lemma
   -- nf' is a normal form of nf (via reduce)
   have h_nf'_red : ReducesToNF ord sys nf nf' :=
     ⟨reduce_reduces ord sys hlc nf, h_nf'_normal⟩
-  -- By uniqueness: nf' = nf
-  exact normal_form_unique ord sys hgs hnqz hlc nf nf' nf h_nf'_red h_nf_self
+  -- `nf` is normal, so its only reduct is itself (no uniqueness theorem needed)
+  exact MultiStepReduction.eq_of_isNormalForm h_nf_normal h_nf'_red.reduces
 
 /-! ## §6  Retraction Property (Bridge to FormalGroups.lean) -/
 

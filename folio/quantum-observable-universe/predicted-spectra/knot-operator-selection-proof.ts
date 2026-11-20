@@ -5,6 +5,7 @@ export default proof({
   title: "Proof of knot operator selection",
   uses: ["prop:knot-operator-selection"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): — [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean) (cited for: on $H_n$ itself $\\det G = 0$ exactly, the $(1^3)$ block being the radical)" },
     {
       kind: "note",
       date: "2026-09-15",

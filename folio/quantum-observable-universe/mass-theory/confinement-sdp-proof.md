@@ -11,7 +11,7 @@ the optimum is standard convex duality.
    attains its minimum $\Phi^\star \succeq 0$.
 
 2. **Slater $\Rightarrow$ strong duality.** Under the strict-feasibility
-   hypothesis (`ctx.slaterStrictFeasible`: a $\Phi_0 \succ 0$ strictly
+   hypothesis (a $\Phi_0 \succ 0$ strictly
    satisfying every per-block and $2\times2$ pair constraint, available
    at generic $q$ where $|q + q^{-1}| > 0$), the conic-duality theorem
    gives strong duality — the dual SDP is solvable, $\mathrm{primal} =
@@ -26,7 +26,6 @@ the optimum is standard convex duality.
    SDP collapses block-by-block to the
    [confinement LP](#prop:confinement-lp), with equal primal/dual values.
 
-The Lean sibling encodes the data as `ConfinementSDPData` and states
-`confinement_sdp` conditional on `slaterStrictFeasible`; the conic-duality
-step is deferred there via `sorry` (`-- Ref: [leitner2026]`), pending a
-Mathlib SDP strong-duality API. $\square$
+The result is conditional on the strict-feasibility (Slater) hypothesis,
+and the conic-duality step is cited from the standard theory rather than
+proved here. $\square$

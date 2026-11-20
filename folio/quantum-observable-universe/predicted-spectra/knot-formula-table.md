@@ -1,4 +1,4 @@
-We introduce a compact notation to express the knot content of composite particles. 
+Introduce a compact notation to express the knot content of composite particles. 
 
 **Compact notation.**
 

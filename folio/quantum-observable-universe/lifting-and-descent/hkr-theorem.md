@@ -1,4 +1,4 @@
-Let $R$ be a commutative algebra over a field $k$ of characteristic zero, and suppose $R$ is smooth (for the reader who prefers geometry: $R$ is the coordinate ring of a smooth affine variety, or the algebra of functions on a smooth manifold). The Hochschild–Kostant–Rosenberg theorem \cite{hkr-1962} identifies the Hochschild homology of $R$ with its differential forms and the Hochschild cohomology with its polyvector fields:
+Let $R$ be a commutative algebra over a field $k$ of characteristic zero, and suppose $R$ is smooth (for a reader who prefers geometry: $R$ is the coordinate ring of a smooth affine variety, or the algebra of functions on a smooth manifold). The Hochschild–Kostant–Rosenberg theorem \cite{hkr-1962} identifies the Hochschild homology of $R$ with its differential forms and the Hochschild cohomology with its polyvector fields:
 
 $$
   HH_n(R) \;\cong\; \Omega^{n}_{R/k}, \qquad HH^{n}(R) \;\cong\; \Lambda^{n} \operatorname{Der}_k(R),

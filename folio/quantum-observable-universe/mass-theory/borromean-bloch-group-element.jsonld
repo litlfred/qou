@@ -2,12 +2,13 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/conj-borromean-bloch-group-element",
   "@type": [
-    "folio-assistant-core:Conjecture",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
   "label": "conj:borromean-bloch-group-element",
@@ -16,10 +17,11 @@
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-vol-through-tau",
     "papers/quantum-observable-universe/blocks/rem-vol-as-motivic-period",
-    "papers/quantum-observable-universe/blocks/prop-binding-scale-catalan",
+    "papers/quantum-observable-universe/blocks/conj-binding-scale-catalan",
     "papers/quantum-observable-universe/blocks/conj-dilogarithm-archimedean-limit"
   ],
   "cites": [
+    "references/arxiv-2304.12545v1",
     "references/bloch2000",
     "references/neumann-zagier1985",
     "references/suslin1991",

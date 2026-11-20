@@ -3,7 +3,7 @@ All quantitative regime claims in this chapter and Chapter 9 unify into a single
 | Regime | $q$ | $\hbar_q$ | $c_q$ | $\eta_q$ | $d_H(q)$ | $G_q$ | Description |
 |---|---|---|---|---|---|---|---|
 | Classical limit | $q \to 1^+$ | $\to 0$ | $\to \infty$ | $\to 1$ | $\to 1$ | $\to G_{\mathrm{Newton}}$ | Spatial coupling instantaneous; classical PDEs recovered; Julia set $=$ unit circle |
-| Our universe | $q_0 \approx 1.110$ | $\approx 0.0991$ | $\approx 9.093$ | $\approx 0.892$ | $\approx 1.088$ | numerical (Planck-normalised) | Moderate quantum: $\sim 9$ fibres correlated per Reeb advance; ${\sim}0.89$ q-bits per Planck step |
+| The observed universe | $q_0 \approx 1.110$ | $\approx 0.0991$ | $\approx 9.093$ | $\approx 0.892$ | $\approx 1.088$ | numerical (Planck-normalised) | Moderate quantum: $\sim 9$ fibres correlated per Reeb advance; ${\sim}0.89$ q-bits per Planck step |
 | Golden crossover | $q = q_{\mathrm{gold}} = 1/\varphi^{2}$ | $-\varphi$ | $-\varphi$ | (sign flip) | (degenerate node) | (degenerate) | Reeb-weight sign flip; Descartes elliptic curve degenerates to nodal $\mathbb{P}^{1}$ |
 | Deep quantum / Big Bang | $q \to \infty$ | $\to 1$ | $\to 0$ | $\to 0$ | $\to 0$ | $\to 0$ | No spatial propagation; fibres isolated; Julia set collapses; zero information per step |
 

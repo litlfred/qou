@@ -7,6 +7,7 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidsAndKnots.hoefsmit_b_sq_eq_q3_over_q2sq" },
   uses: ["prop:frobenius-lepton-meson-bridge"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The Lean sibling states the identity in terms of $[2]_q$ alone and needs only $[2]_q \\neq 0$." },
     {
       kind: "refined-framing",
       date: "2026-08-09",

@@ -21,7 +21,7 @@ At the torsion points ([root-of-unity truncation](#prop:root-of-unity-truncation
 At the boundary of $\mathbb{P}^1$:
 
 * $q = 0$: The operator $d_q = q^{-1} d + (1 - q^{-1}) \pi_V d$ has a pole. The elliptic curve $\mathcal{E}_q$ degenerates (the Weierstrass coefficients $p(q), r(q)$ diverge). The $L$-function has an essential singularity.
-* $q = \infty$: We have $d_q \to \pi_V \circ d$ (pure Reeb direction). The $j$-invariant $j(\mathcal{E}_q) \to 0$: the curve approaches a CM curve with complex multiplication. The $L$-function acquires Hecke $L$-function structure (Deuring's theorem).
+* $q = \infty$: Then $d_q \to \pi_V \circ d$ (pure Reeb direction). The $j$-invariant $j(\mathcal{E}_q) \to 0$: the curve approaches a CM curve with complex multiplication. The $L$-function acquires Hecke $L$-function structure (Deuring's theorem).
 
 The Kummer exact sequence ([Kummer specialisation](#prop:ns-kummer-specialisation))
 

@@ -57,4 +57,7 @@ export default definition({
     "two-row",
     "projection",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): including the magic-shell coupling of `conj:magic-shell-stabilization`" },
+  ],
 });

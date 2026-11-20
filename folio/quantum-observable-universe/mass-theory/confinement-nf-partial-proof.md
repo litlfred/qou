@@ -12,9 +12,8 @@ The three claims $T_1, T_2, T_3$ decompose and are discharged as follows.
 1. *(Wedderburn maximizer in active set, $T_1$.)*
    $\lambda^\star := \arg\max_{\lambda \vdash n} \mathrm{ord}_{q=0}^{(-)} \chi^\lambda(T_\beta) \in A$.
    **Fully proved** by LP complementary slackness applied to the
-   tight primal constraint at the maximizer (Schrijver §7.4) — Lean
-   side now consumes the `HasFiniteLPDuality` class instance rather
-   than carrying a free-standing `sorry`.
+   tight primal constraint at the maximizer (Schrijver §7.4), with finite LP duality taken as the cited
+   classical input.
 
 2. *(Shift decomposition, $T_2$.)*
    $\mathrm{shift}_{\mathrm{NF}}(\beta) = \alpha_{\mathrm{shift}}(I) + \Delta_{\mathrm{struct}}(\beta_1, \beta_2; A) + \Delta_{\mathrm{resid}}$,
@@ -42,7 +41,7 @@ The three claims $T_1, T_2, T_3$ decompose and are discharged as follows.
 ### Theorem $T_3$ (strong duality)
 
 The QOU operator-selection LP per [Knot operator selection as linear program with LP duality](#prop:operator-selection-lp)
-is a finite-dim convex program over partitions of $n$. We verify:
+is a finite-dim convex program over partitions of $n$. Check:
 
 - **Bounded.** Variables $t_\lambda \ge 0$ for $\lambda \vdash n$,
   bounded above by the normalisation constraint

@@ -1,4 +1,4 @@
-*The lepton and meson mass towers are both indexed by torus knots $T(2, n)$ for odd $n = 3, 5, 7, \ldots$. We establish the following correspondence:*
+*The lepton and meson mass towers are both indexed by torus knots $T(2, n)$ for odd $n = 3, 5, 7, \ldots$. One establishes the following correspondence:*
 
 | Generation | $n$ | Lepton ($H_2$) | Quark flavor ($H_3$) | Meson ($q\bar{q}$), total crossings |
 |---|---|---|---|---|

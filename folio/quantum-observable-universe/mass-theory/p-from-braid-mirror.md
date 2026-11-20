@@ -74,21 +74,9 @@ as bar-anti-symmetric, consistent: bar reverses writhe via the
 composite $P \cdot C \cdot T$, of which P is the writhe-acting
 factor.
 
-## Lean axiomatisation (sketch)
+## The hypothesis in summary
 
-```lean
-class PFromBraidMirror (M : Type*) [BrCategory M] [Hecke M] where
-  /-- The braid-mirror involution on braid-group elements. -/
-  p_action : Braid n → Braid n
-  /-- P^2 = id. -/
-  p_involution : ∀ β, p_action (p_action β) = β
-  /-- P flips the sign of every Hecke generator. -/
-  p_on_generator : ∀ i, p_action (Hecke.sigma i) = Hecke.sigma_inv i
-  /-- P fixes q (no bar-action). -/
-  p_preserves_q : ∀ q, p_q_action q = q
-  /-- Bar-involution factorisation: bar = P · C · T. -/
-  bar_eq_p_c_t : bar_involution = p_action ∘ c_action ∘ t_action
-```
+The conjecture asserts an involution $P$ on braid-group elements ($P^2 = \mathrm{id}$) sending each Hecke generator $\sigma_i$ to $\sigma_i^{-1}$, fixing $q$, and such that the bar-involution factors as $P \circ C \circ T$.
 
 ## Consumers / downstream
 
@@ -108,8 +96,8 @@ class PFromBraidMirror (M : Type*) [BrCategory M] [Hecke M] where
    $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$ is invariant under P
    because $(\sigma_i^{-1} - q)(\sigma_i^{-1} + q^{-1}) = 0$ also
    holds (multiply the original by $\sigma_i^{-2}$).
-2. Closing the conjecture needs an instance of the class above, and a
-   derivation of bar $= P \cdot C \cdot T$ as an identity rather than an axiom.
+2. Closing the conjecture needs the existence of such a map $P$, and a
+   derivation of bar $= P \cdot C \cdot T$ as an identity rather than an assumption.
 
 ## Cross-references
 
@@ -118,4 +106,4 @@ class PFromBraidMirror (M : Type*) [BrCategory M] [Hecke M] where
   [Charge conjugation $C$ as the color-sheet flavor-swap $u \leftrightarrow \bar u$, $d \leftrightarrow \bar d$](../brings-surface/c-from-color-flavor-swap.md),
   [Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)](../nuclear-interactions/t-from-trace-cyclicity.md)
 - Composite CPT: [CPT-saturation as Type-B fold-orbit closure: deriving $\rho_F \in \{m_e, 2m_e\}$ from crystal structure](#conj:cpt-orbit-closure-density)
-- Bar-involution: [`bar-involution.md`](../braids-and-knots/bar-involution.md) Tables 1-4
+- Bar-involution: [Bar-involution and its $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projections](../braids-and-knots/bar-involution.md) Tables 1-4

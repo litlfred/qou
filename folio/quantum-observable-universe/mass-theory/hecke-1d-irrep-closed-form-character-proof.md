@@ -5,8 +5,8 @@ generator-image scalar $\rho_\lambda(\sigma_i) = \lambda_\sigma$,
 which by the Iwahori-Hecke relation
 $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$ must satisfy
 $\lambda_\sigma \in \{+q,\, -q^{-1}\}$.  The two choices give the
-trivial and sign 1-d irreps respectively (per
-`prop:hecke-branching-trace-decomposition`).
+trivial and sign 1-d irreps respectively (per the
+[Hecke branching trace decomposition](#prop:hecke-branching-trace-decomposition)).
 
 For a typed braid $\beta = c_1 c_2 \cdots c_L$ with crossings
 $c_\ell \in \{\sigma_i,\, \sigma_i^{-1},\, \sigma_i - h/2\}$, the
@@ -58,8 +58,7 @@ combinatorics. $\blacksquare$
 ## Verification
 
 Bit-exact at 50 dps for all atoms in $\{p, n, D, T, {}^{3}\mathrm{He}\}$
-($n \in \{3, 5, 8\}$):
-[`q-beta-1d-irrep-universal-closed-form.witness.json`](../../computations/q-beta-1d-irrep-universal-closed-form.witness.json).
+($n \in \{3, 5, 8\}$).
 
 ## Role in the τ_M decomposition
 
@@ -80,7 +79,7 @@ where the **1-d backbone**
 ($y_{(n)} \chi^{(n)} + y_{(1^n)} \chi^{(1^n)}$) is fully closed-form
 substrate-derivable for any $n$ via the formulas above, and the
 $\dim \geq 2$ middle terms require the Hoefsmit seminormal matrix
-characters (per `prop:hecke-branching-trace-decomposition`)
+characters (per the [Hecke branching trace decomposition](#prop:hecke-branching-trace-decomposition))
 plus, for $\dim = 2$ irreps, the cos-resummation from
 [$\mathfrak{Q}_\beta$ cos-resummation in convention D](#prop:q-beta-cos-resummation).
 

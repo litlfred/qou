@@ -2,7 +2,7 @@
 
 **Scope of the dual-lift argument.** Step 1 below contains an open gap: in the dual matrix inequality $u_0 I + \sum_\lambda u_\lambda \pi_\lambda - T \preceq 0$ with $u_\lambda \ge 0$, increasing a newly introduced multiplier $u_\lambda$ adds a positive semidefinite term and tightens the inequality rather than relaxing it. The least restrictive choice on a new block is $u_\lambda = 0$, for which the dual lift is feasible only when $u_0 I \preceq T_{\mathrm{new}}$ on that block—a domination bound not established here. Consequently, claim 1 of the proposition (and the monotonicity clause of claim 2 that rests on it) remains conditional on that block-domination bound, while step 3 compares the shell gap against the Archimedean quantity $\alpha \cdot m_e \cdot c_q^2$ across the evaluation wall.
 
-We establish three claims.
+One establishes three claims.
 
 **1. SDP-relaxation monotonicity.**
 At each step $Z - 1 \to Z$, the dressing morphism $\mathrm{dress}_{S_Z}$ induces a cabling embedding $\iota: H_{A + Z - 1}(q) \hookrightarrow H_{A + Z}(q)$. Three structural changes follow in the [confinement SDP](#prop:confinement-sdp):

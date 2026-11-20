@@ -1,4 +1,4 @@
-*For any partition $\lambda \,\vdash\, n$, we determine $y_\lambda(q)$ mechanically as a rational function in $q$.*
+*For any partition $\lambda \,\vdash\, n$, $y_\lambda(q)$ is determined mechanically as a rational function in $q$.*
 
 1. *Extract cell contents $c(i, j) = j - i$ and hook lengths $h(i, j)$. Define $n(\lambda) = \sum_i (i-1)\lambda_i$.*
 2. *Fix the universal substitution at the Wenzl level $r = 2$, with $Q = q^2$:*

@@ -4,4 +4,4 @@ $$
   \kappa \;:=\; \frac{\det G^{\mathrm{cl}}_{\mathrm{CS}}}{\det G^{q}_{\mathrm{CS}}}.
 $$
 
-A change of basis $B$ with $\det B \neq 0$ sends each Gram matrix $G$ to $B^{\top} G B$ and multiplies each determinant by $(\det B)^2$, so $\kappa$ does not depend on the basis chosen (`QOU.Archimedean.gramDetRatio_indep_of_basis`).
+A change of basis $B$ with $\det B \neq 0$ sends each Gram matrix $G$ to $B^{\top} G B$ and multiplies each determinant by $(\det B)^2$, so $\kappa$ does not depend on the basis chosen.

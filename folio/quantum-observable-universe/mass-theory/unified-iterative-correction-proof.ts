@@ -5,6 +5,7 @@ export default proof({
   title: "Proof of unified iterative correction",
   uses: ["prop:unified-iterative-correction"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The obstruction is one of shape.  The formalised Wedderburn embedding\n`QOU.HeckeAlgebra.Wedderburn.blockDiagonal` is a concrete construction\n(axiom footprint `propext`, `Classical.choice`, `Quot.sound`), but it has\ntype\n\nthe RSK identity $\\sum_\\lambda (f^\\lambda)^2 = n!$, carried as the named\nhypothesis `RSKDimIdentity` and discharged by nothing here.\n\n— itself now a theorem (`trace_does_not_separate`,\n`exists_indistinguishable_by_every_traceFunctional`): whenever a block\n\nthat at $(2,1)$ needs $f^{(2,1)} = 2$; that value is now formalised\n(`SeminormalDimSmall.seminormalDim_p21`, via the Frame–Robinson–Thrall\nhook-length formula), so `trace_does_not_separate_p21` holds\nunconditionally.\n\nrather than merely permitted: `three_blockEntry_independent_p21`\nexhibits three linearly independent\n\n**Witness:** `mass-qvalue-by-level.witness.json` — every isotope" },
     {
       kind: "note",
       date: "2026-08-25",

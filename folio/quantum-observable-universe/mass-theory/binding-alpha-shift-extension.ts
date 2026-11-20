@@ -9,6 +9,7 @@ export default proposition({
   tags: ["normalization", "no-fitting", "uniqueness", "binding", "alpha-shift"],
   lean: { ref: "qou:QOU.BraidKnot.binding_unique_via_alpha_shift" },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): *formula (`prop:alpha-shift-torus-knot`).*\n\nrationale, the Lean structure, and the remaining open math" },
     {
       kind: "deprecated",
       date: "2026-09-05",

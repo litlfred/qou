@@ -14,6 +14,7 @@ export default remark({
   cites: ["bghl-2017", "caldararu-willerton-2010", "trinh-2021", "nest-tsygan-1995"],
   tags: ["markov-trace", "categorical-trace", "quantum-dimension", "hochschild-homology", "chern-character", "wedderburn"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): that this Markov trace is convention D ... is proved in Lean at $n = 3$" },
     {
       kind: "status",
       date: "2026-09-15",

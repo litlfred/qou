@@ -29,6 +29,15 @@ filtration is by Coxeter length on the standard basis `{T_w : w ∈ S₃}` of
 `H₃(q)`, and `ℓ(w)` is the inversion count of `w`; the ranks are the numbers
 of permutations of three letters with `0, 1, 2, 3` inversions. This is the one
 numerical claim in the block that does not depend on the open differentials.
+
+**Caveat (2026-11-20, bean `qou-6qbv`).** These are the ranks of `gr H₃(q)` under the
+length filtration, which is what the block describes. They are **not** the `E₁` page of
+the Hochschild spectral sequence that `prop:gb-spectral-sequence`'s proof actually
+builds: that sequence lives on `Hom(H₃^{⊗k}, H₃)` and abuts to `HH*(H₃)`, which at
+generic `q` is the centre `Z(H₃)`, of dimension 3 (one per partition of 3), not 6.
+The block's statement (`E_∞ ⇒ gr H_n`) and its proof (`E_∞ ≅ gr HH*`) name different
+abutments, and the confinement filtration `J^•` is defined as increasing while the
+proof uses it as decreasing. See `QOU.BraidKnot.GBRewriteDifferential`.
 -/
 
 namespace QOU.BraidKnot

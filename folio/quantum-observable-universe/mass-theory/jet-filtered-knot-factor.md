@@ -33,4 +33,3 @@ it contributes nothing.
 
 Nothing here retracts the conjecture. It says what a reformulation must supply:
 a rule fixing the word, not just its crossing content.
-`the_nuclear_jet_level_is_the_retired_all_pairs_object_probe.py`.

@@ -8,5 +8,9 @@ Uniqueness of the normal form relies on the confluence half of the Gröbner--Shi
 
 3. **Termination.** Length-lexicographic order well-orders the monomials. Each reduction step removes its leading monomial and introduces only smaller ones, so every reduction sequence terminates. Combined with confluence, this establishes both existence and uniqueness.
 
+<<<<<<< HEAD
 The Lean formalisation of the three steps lives in the unital-Gröbner-bases development. The failure of the three defining families at $A = 4$ is machine-checked (`NotAGSBasis.hecke_not_gs_basis_four`), and the completed system is proved to be a Gröbner--Shirshov basis for every $A$ (`heckeCompleted_isGrobnerShirshovBasis`, for real $q > 0$, $q \neq 1$). Termination is proved (`reduction_well_founded`). The local-confluence half of the Diamond Lemma is still taken as an axiom (`local_confluence`, citing \cite{bergman1978}). The block's own Lean sibling states only the existence of a reduced form (`nuclear_groebner_reduction`).
+=======
+A complete confluence certificate is not supplied here; it is deferred \cite{leitner2026} and reduces to the admissible-system machinery of the unital-Gröbner-bases paper ([admissible system](#unital-groebner-bases:def:admissible-system)).
+>>>>>>> origin/main
 $\square$

@@ -1,6 +1,6 @@
 ## Methodology generalisation
 
-The proof transcribes verbatim to any closed braid $K \in B_n$ whose word factors as $\sigma_{i_1}^{k_1} \sigma_{i_2}^{k_2} \cdots$ with disjoint or commuting generator clusters. Each generator power $\sigma_i^{k}$ reduces via the recurrence $(a_k, b_k)$. We then read the resulting linear combination off the $H_n(q)$ basis. For non-disjoint clusters (e.g., neutron $\sigma_1^6 \sigma_2^4 \sigma_1^{-1}$ with mixed signatures), the same recurrence applies after using $\sigma_i^{-1} = \sigma_i - h$ from the Hecke quadratic.
+The proof transcribes verbatim to any closed braid $K \in B_n$ whose word factors as $\sigma_{i_1}^{k_1} \sigma_{i_2}^{k_2} \cdots$ with disjoint or commuting generator clusters. Each generator power $\sigma_i^{k}$ reduces via the recurrence $(a_k, b_k)$. One then reads the resulting linear combination off the $H_n(q)$ basis. For non-disjoint clusters (e.g., neutron $\sigma_1^6 \sigma_2^4 \sigma_1^{-1}$ with mixed signatures), the same recurrence applies after using $\sigma_i^{-1} = \sigma_i - h$ from the Hecke quadratic.
 
 ## Categorical interpretation
 

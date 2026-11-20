@@ -21,8 +21,8 @@ $$
 
 Computed via `exact algebraic structures.polylog` at `mp.dps = 50` (formalism
 the canonical formalism,
-witness
-[`gb-depth-period-bring-fig8.witness.json`](https://github.com/litlfred/qou/blob/main/computations/gb-depth-period-bring-fig8.witness.json)):
+computation record
+[GB-depth period on Bring for the figure-eight](https://github.com/litlfred/qou/blob/main/computations/gb-depth-period-bring-fig8.witness.json)):
 
 $$
   2\,\mathrm{Cl}_2(\pi/3)

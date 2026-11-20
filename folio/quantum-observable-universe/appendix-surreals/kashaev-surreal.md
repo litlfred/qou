@@ -1,6 +1,6 @@
 The [Kashaev volume conjecture](#conj:kashaev-volume-conjecture)
-\cite{kashaev1997} (open in full generality; provenance and the Lean
-axiomatisation live in that block) states:
+\cite{kashaev1997} (open in full generality; provenance is recorded in that
+block) states:
 
 $$
   \mathrm{Vol}(S^3 \setminus K)
@@ -108,7 +108,7 @@ $\mathrm{Vol}$-identity.
 is exactly computable for any specific knot (it is a rational
 function evaluated at named surreals). If a *general* formula
 exists for $\mathrm{st}(\log |J_K(\zeta_\omega, \omega)|/\omega)$
-in terms of knot data, we have a path to a proof of Kashaev.
+in terms of knot data, there is a path to a proof of Kashaev.
 
 **Might not help:** the standard-part identity is *itself* an
 analytic statement (it asserts an asymptotic relationship
@@ -214,8 +214,7 @@ $$
 $$
 
 with both $3^{-1/4}$ and the power $3/2$ derived
-([1-loop prefactor provenance](#prop:one-loop-prefactor-provenance),
-Lean `c_pow_four_eq_third`). Taking logarithms term by term gives the two
+([1-loop prefactor provenance](#prop:one-loop-prefactor-provenance)). Taking logarithms term by term gives the two
 leading terms of the remainder:
 
 $$
@@ -232,7 +231,7 @@ that — the residual after subtracting the two terms falls by a factor
 $0.4928, 0.4966, 0.4983, 0.4992, 0.4996$ on successive doublings, against
 $1/2$ for a clean $1/N$ relative tail. That rate is measured here, not
 derived; the proposition cited above states the leading asymptotic and
-records the step from its two machine-checked analytic inputs to the saddle
+records the step from its two proved analytic inputs to the saddle
 hypotheses as still assumed.
 
 At $N = \omega$ the leading monomial of $\delta$ is therefore
@@ -340,8 +339,8 @@ geometry.
  directly, take $\mathrm{st}$, and verify equality with the
  known volume.
 
-5. Use `QOU.AppendixSurreals.gonshorIn` and
- `omegaSurreal` to express the surreal evaluations.
+5. Express the surreal evaluations through Gonshor's sign-sequence
+ map and the surreal $\omega$.
 
 **General case (open)**:
 
@@ -351,18 +350,12 @@ geometry.
  (rational-in-$\omega$ evaluations of $J_K$) from the geometric
  content (the volume identity).
 
-**Required infrastructure**:
-- Coloured Jones polynomial in Lean (does not exist in mathlib).
-- Berarducci–Mantova exponential/logarithm on $\mathbf{No}$
- (partial in mathlib).
-- Hyperbolic-volume formalisation (does not exist in mathlib).
-
 **Falsification path**: identical to the classical Kashaev
 conjecture; if the limit form fails for some knot, the
 surreal form fails as well (and conversely).
 
 **Provability assessment**: the *equivalence* of the two
-formulations is provable in Lean (transfer principle). The
+formulations is provable (transfer principle). The
 underlying conjecture is a long-standing open problem; the
 reformulation does not by itself solve it but reorganises the
 problem productively.

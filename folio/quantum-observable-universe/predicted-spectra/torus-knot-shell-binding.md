@@ -12,7 +12,7 @@ $$
   \{2,\, 8,\, 20,\, 28,\, 50,\, 82,\, 126\}
 $$
 
-as cumulative same-type shell occupancies (see [Table 3](#tbl:torus-knot-shell-binding-table3-data)). Closing the full sequence as a from-$q$ derivation — in particular reconciling the $r\times s$ shell capacities with the Table-3 occupancies — is the **key open problem** (`rem:shell-construction-rules`, `conj:magic-numbers-bring`), not established here. The Hecke energy gap at a shell boundary scales as $|\lambda_+(T_{2,n_s})/\lambda_-(T_{2,n_s})| = q^{2 n_s}$; for the first shell closure (He-4 $\to$ Li-5),
+as cumulative same-type shell occupancies (see [Table 3](#tbl:torus-knot-shell-binding-table3-data)). Closing the full sequence as a from-$q$ derivation — in particular reconciling the $r\times s$ shell capacities with the Table-3 occupancies — is the **key open problem** ([Construction rules for nuclear shells from the torus knot hierarchy](#rem:shell-construction-rules); [Magic numbers $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$ as ranks of $S_5$-stable Bring period sub-lattices](#conj:magic-numbers-bring)), not established here. The Hecke energy gap at a shell boundary scales as $|\lambda_+(T_{2,n_s})/\lambda_-(T_{2,n_s})| = q^{2 n_s}$; for the first shell closure (He-4 $\to$ Li-5),
 
 $$
   \frac{\Delta E_5}{\Delta E_4} \approx \frac{1.409}{0.095} = 14.8 .

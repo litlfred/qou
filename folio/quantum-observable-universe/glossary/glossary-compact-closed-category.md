@@ -1,5 +1,1 @@
 **:defterm[Compact closed category]{#compact-closed-category}.** A symmetric monoidal category that is also rigid. Since the braiding identifies $X \otimes Y \cong Y \otimes X$, left duals and right duals coincide.
-
-**Mathlib reference.**
-`CategoryTheory.CompactClosedCategory` (class).
-Import: `Mathlib.CategoryTheory.Closed.Monoidal`.

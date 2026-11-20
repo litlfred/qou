@@ -1,4 +1,4 @@
-While surreal numbers lack a Hilbert-space completion and canonical Lebesgue measure, a substantial fragment of differential and formal integral calculus lifts to $\mathbf{No}$ up to an infinitesimal correction. We record what works and how classical analysis is recovered via the standard-part map.
+While surreal numbers lack a Hilbert-space completion and canonical Lebesgue measure, a substantial fragment of differential and formal integral calculus lifts to $\mathbf{No}$ up to an infinitesimal correction. This section records what works and how classical analysis is recovered via the standard-part map.
 
 **1. Differential calculus: Jackson derivative as the native $d/dx$**
 Fix an infinitesimal $\varepsilon \in \mathbf{No}$ with $\varepsilon > 0$ and set $q = 1 + \varepsilon$. The Jackson $q$-derivative
@@ -18,7 +18,7 @@ The classical-limit functor, which breaks as an honest limit under surreal repla
 **2. Formal integration: antiderivative exists, measure does not**
 Berarducci--Mantova show that $\mathbf{No}$ admits a right inverse to $D$. For every $f \in \mathbf{No}$ there exists an antiderivative $F$ with $D(F) = f$. This gives an honest indefinite integral $\int f \, dx \in \mathbf{No}$ for every surreal function, up to a constant of integration.
 
-A definite integral $\int_a^b f \, dx$ agreeing with Lebesgue on $\mathbb{R}$-valued inputs does not exist. We use $d_q$ as the native derivative and reserve $\int$ for either the categorical Frobenius integral or the standard-part of Riemann sums computed on $\mathbf{No}$-valued partitions.
+A definite integral $\int_a^b f \, dx$ agreeing with Lebesgue on $\mathbb{R}$-valued inputs does not exist. Use $d_q$ as the native derivative and reserve $\int$ for either the categorical Frobenius integral or the standard-part of Riemann sums computed on $\mathbf{No}$-valued partitions.
 
 **3. Limits become evaluations**
 Every classical sequential limit $L = \lim_{n \to \infty} a_n$ translates to $L = \mathrm{st}(a_\omega)$, where $\omega \in \mathbf{No}$ is the first infinite ordinal and $a_\omega$ is the surreal obtained by transfer of the formula defining $a_n$. Limits become named values rather than formal processes. $\lim_{q \to 1}$ becomes evaluation at $q = 1 + \varepsilon$, and the classical result is the standard-part. Double limits and iterated sup/inf over uncountable index sets require care.

@@ -26,6 +26,7 @@ export default proposition({
     "euler-characteristic",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The parameter-genericity statement is [`ObstructionGenericity`](../lean/QOU/Information/ObstructionGenericity.lean). The claim that the shared class transfers nothing between the Millennium legs is ([`ObstructionVerdictCap`](../lean/QOU/Information/ObstructionVerdictCap.lean))." },
     {
       kind: "status",
       date: "2026-11-17",

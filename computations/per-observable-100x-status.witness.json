@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-20T14:18:42.881854+00:00",
-  "commitSha": "f35d59159f04529065d19bd0e1a9d598977691c1",
+  "computedAt": "2026-11-20T17:30:28.964884+00:00",
+  "commitSha": "435480d66e7c13c09d817e7e296c9f41393d2405",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 6,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "16dca40d3b34",
-  "scriptCommitSha": "f35d59159f04529065d19bd0e1a9d598977691c1",
+  "scriptHash": "51e9543fb96c",
+  "scriptCommitSha": "a97ce8a6b6321832670f7d1fc2bda47e04a0069b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,7 +34,7 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "cvxpy": "absent",
-    "pyhecke_native_build": "832ce4e14a00d523"
+    "pyhecke_native_build": "ae1028699afd20c5"
   },
   "invocation": {
     "argv": [
@@ -81,7 +81,7 @@
         "note": null,
         "beats_1x_experimental": true,
         "beats_100x_experimental": false,
-        "source_witness": "PINNED proton-anchored prediction (m_e·Vol(4_1)/ℏ_q² at the m_p/m_e re-pinned q₀, 2026-05-28); decoupled from the muon-flipped Borromean muon_check per bean tnjb / AGENTS.md §q₀-anchor STRICT rule 1",
+        "source_witness": "DERIVED proton-anchored prediction m_e·Vol(4_1)/ℏ_q² at the package default one-term proton pin (m_p/m_e re-pin 2026-05-28); never read from the muon-flipped Borromean muon_check per bean tnjb / AGENTS.md §q₀-anchor STRICT rule 1",
         "sigma_source": "COMPARISON TARGET (codata_MeV), NOT the prediction: m_e × (m_μ/m_e)_CODATA = 0.5109989506900000000000000000000000000000000000000005654434719000544678 × 206.7682827000000000000000000000000000000000000000000223638476790838774 (ratio-derived; independently-quoted 105.6583755(23) MeV). The PREDICTION (pred_MeV) is the INDEPENDENT categorical value m_μ = m_e·Vol(4_1)/ℏ_q² from the Borromean witness — post the 2026-05-29 q₀ re-pin it is a genuine 9.5σ PREDICTION, NOT ratio-derived. The ~210 ppb pred-vs-codata gap (963.6× the 100× target) is the real μ-p tension; m_μ does NOT meet L2. Do not read 'ratio-derived' as 'm_μ trivially meets' (the error PR #1556 made).",
         "compute_truncation_ppb": "9.464e-54",
         "compute_output_dps": 60,
@@ -90,10 +90,11 @@
           "M_p_QED_conn_plain_MeV": "0.000220077293803983",
           "M_p_QED_conn_plain_keV": "0.220077293804",
           "M_p_QED_conn_Kp_MeV": "0.000244281082672304",
-          "q0_two_term_plain": "1.109978595150878501566165",
+          "q0_two_term_plain": "1.109978595150885999087565",
           "m_mu_pred_two_term_plain_MeV": "105.658376347",
           "m_mu_err_two_term_plain_ppb": "8.058",
-          "note": "Diagnostic only — primary m_mu score remains pinned to the 1-term proton anchor (+209.8 ppb). Because d(m_p^QCD/m_e)/dq > 0 while d(m_mu/m_e)/dq < 0 at q0, subtracting a repulsive M_p^QED > 0 from m_p^exp lowers m_p^QCD(q_new) and decreases q_new by -2.23e-7, shifting m_mu(q_new) toward CODATA."
+          "dq_two_term_minus_one_term_ppb": "11.1709409390",
+          "note": "Diagnostic only — the primary m_mu score stays at the one-term proton pin (owner ruling 2026-11-20: 'Revert to 1-term default'; at the two-term pin alpha_em^-1 form B is at 495 sigma, PRs #8562/#8565). The two-term comparison pin is the exact root of m_p^QCD + M_p^QED = m_p^exp and sits +11.1709 ppb ABOVE the one-term pin (M_p^QED > 0 lowers the required m_p^QCD, and d(m_p^QCD/m_e)/dq < 0 here). The two-term term is selection-scoped (plain weighting, m_e scale; covariant all-pairs projection gives b = 0)."
         },
         "one_term": {
           "pred_MeV": "105.658397811",
@@ -109,12 +110,12 @@
         "obs": "Q_beta",
         "role": "derived (CAL-1+CAL-2)",
         "pred_MeV": "0.651524614015",
-        "codata_MeV": "0.782333410000",
-        "sigma_exp_MeV": "6.10000e-7",
+        "codata_MeV": "0.782333559310",
+        "sigma_exp_MeV": "3.80000e-7",
         "err_ppb": "1.672e+8",
-        "sigma_exp_ppb": "779.7",
-        "target_100x_ppb": "7.797",
-        "miss_factor": "2.144e+7",
+        "sigma_exp_ppb": "485.7",
+        "target_100x_ppb": "4.857",
+        "miss_factor": "3.442e+7",
         "roundtrip_residual_ppb": null,
         "is_anchor_roundtrip": false,
         "note": null,
@@ -138,7 +139,7 @@
         "one_term": {
           "pred_MeV": "0.651856310060",
           "err_ppb": "1.668e+8",
-          "miss_factor": "2.139e+7",
+          "miss_factor": "3.434e+7",
           "beats_1x_experimental": false,
           "beats_100x_experimental": false
         },
@@ -352,8 +353,8 @@
       "E0_tower_series_is_open": "qou-y3bm -- canonical by the 2026-09-03 full-tower ruling, series not derived",
       "Q_beta_MeV_at_order_zero_E0": "0.645456915123079459561875817038373536781011944029498589105163",
       "E0_choice_moves_row_pct": "0.991452",
-      "err_pct": "-16.6779404115775219468913178358678362139608631593957108486967",
-      "err_pct_at_order_zero_E0": "-17.4959286063112836300988581021519281937592382729124305173458",
+      "err_pct": "-16.6779563137672837153512235184192390293198806558473583891470",
+      "err_pct_at_order_zero_E0": "-17.4959443523862834760136761800325718944247773343677717270040",
       "recorded_err_pct_in_probe_witness": "-17.495929",
       "calibration_compares": "err_pct_at_order_zero_E0 vs the recorded cell -- the cell was computed at order-zero E_0, so calibrating the published (tower-E_0) value against it would conflate the trace with the E_0 choice and fail by ~0.56 points",
       "calibrated_against_probe_witness": true,
@@ -418,11 +419,11 @@
       },
       {
         "path": "cal-3-q-beta.witness.json",
-        "sha256": "30b2e42b3cf4b32de981e78f131aded9c1f946499ef91d3a52cd3e359b0a8cf7",
-        "size_bytes": 2720,
-        "commitSha": "9455db71d5fc8f322e8f199ad62dead1427cca4b",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-03T01:10:37.092327+00:00"
+        "sha256": "36f8dcfc1411f259e4c732a513a3cfa73f9123826d8e9cfedfb6469044df5cf0",
+        "size_bytes": 4698,
+        "commitSha": "a887b738d50de18b183f19bda31380997368a24c",
+        "scriptCommitSha": "a887b738d50de18b183f19bda31380997368a24c",
+        "computedAt": "2026-11-20T14:24:41.681299+00:00"
       },
       {
         "path": "meson-kaon-pion-derivation.witness.json",

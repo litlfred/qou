@@ -1,4 +1,4 @@
-We derive the proton and neutron from three independent $\gamma\gamma$ pair productions using the full 4-term photon color content.
+One derives the proton and neutron from three independent $\gamma\gamma$ pair productions using the full 4-term photon color content.
 
 ## The 4-term photon
 
@@ -7,10 +7,10 @@ Each photon carries the full color content:
 $$
   \gamma_k
   =
-  \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1
+  \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1^{-1}
 $$
 
-where $\varphi_{01}\sigma_0\sigma_1 = \varphi_{01}L_+$ is the Hopf link dressing. When $\varphi_{01} \neq 0$, the trefoil channel opens directly in the $\gamma\gamma$ product.
+where $\varphi_{01}\sigma_0\sigma_1^{-1} = \varphi_{01}(L_+ - h\sigma_0)$ is the chiral pair-production vertex ([photon](#def:photon)). When $\varphi_{01} \neq 0$, the trefoil channel opens directly in the $\gamma\gamma$ product.
 
 ## Three pair productions
 
@@ -18,7 +18,7 @@ Three independent $\gamma\gamma$ collisions produce three quark--antiquark pairs
 
 ## Confinement: $\mathcal{B}_3$ selected by minimum action
 
-We select three quarks from the pairs and confine them via the Borromean braid $\mathcal{B}_3$. This is the unique minimum-action confinement operator.
+One selects three quarks from the pairs and confines them via the Borromean braid $\mathcal{B}_3$. This is the unique minimum-action confinement operator.
 
 The derivation chain is:
 

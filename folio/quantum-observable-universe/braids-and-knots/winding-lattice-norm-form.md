@@ -24,4 +24,4 @@ Second, the level set $(2m+\ell)^2 - 3\ell^2 = 1$ is Pell's equation, whose solu
 
 The contrast in items 1 and 2 is what distinguishes the two orders. The silver recursion $(a,b) \mapsto (2a+3b,\, a+2b)$ *preserves* $a^2 - 3b^2$; the golden recursion $(a,b) \mapsto (b,\, a+b)$ *negates* $a^2 + ab - b^2$. A single `ring` identity each. Hence a sign alternating with a winding exponent is structurally unavailable on the cusp-torus order and available on the golden order carried by Bring's surface.
 
-All statements are formalized in `QOU.QBeta.WindingLatticeNormForm` — the ring identity over a generic `CommRing` (no ordering, no $\mathbb{R}$, $s$ entering only through $s^2 = 3$), the two norm recursions over $\mathbb{Z}$, and the induction giving $N(\varphi^n) = (-1)^n$.
+The ring identity holds over a generic commutative ring (no ordering, no $\mathbb{R}$, $s$ entering only through $s^2 = 3$), the two norm recursions hold over $\mathbb{Z}$, and induction gives $N(\varphi^n) = (-1)^n$.

@@ -1,4 +1,4 @@
-The Frobenius eigenvalues must satisfy $|\alpha_i| = q^{1/2}$. We establish the geometric origin of this constraint.
+The Frobenius eigenvalues must satisfy $|\alpha_i| = q^{1/2}$. The geometric origin of this constraint is as follows.
 
 **Concrete example: $\mathrm{SU}(2)$.** In the archimedean
 realisation $\mathbf{C} = \mathbf{Rep}(\mathrm{SU}(2))$, the

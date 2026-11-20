@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-mass-energy-electron-check",
@@ -12,11 +13,14 @@
   ],
   "label": "rem:mass-energy-electron-check",
   "kind": "remark",
-  "title": "Electron consistency check for $E = \\mathfrak{m} c_q^2$",
+  "title": "Electron: crossing energy does not determine energy",
   "uses": [
-    "papers/quantum-observable-universe/blocks/thm-mass-energy-equivalence"
+    "papers/quantum-observable-universe/blocks/def-mass-energy",
+    "papers/quantum-observable-universe/blocks/def-crossing-energy",
+    "papers/quantum-observable-universe/blocks/def-mass-identity",
+    "papers/quantum-observable-universe/blocks/rem-mass-energy-not-crossing-energy"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/thm-mass-energy-equivalence",
+  "interprets": "papers/quantum-observable-universe/blocks/def-mass-energy",
   "tags": [
     "mass-energy",
     "electron",

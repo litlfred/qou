@@ -43,7 +43,7 @@ $u \approx -1.4844$.)
 $x + 1/x$ real in $[-2,2]$, which contains $(-2,-1)$.
 
 So the whole argument is polynomial algebra plus one application of the IVT, and
-the two evaluations are `norm_num`.
+the two evaluations are exact rational arithmetic.
 
 ## The conclusion survives; only the argument dies
 

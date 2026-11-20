@@ -7,7 +7,7 @@ The singular Biot–Savart strain diverges because $d \to 0$. Once $V_1 \gtrsim 
 Substituting $\alpha_{\mathrm{hyp}}$ into the stretching equation gives a constant right-hand side. $V_1$ grows linearly with time and remains finite through to the formal collision time $T^\ast$. The exponential runaway is replaced by controlled linear growth. The strain saturates because the same coordinate driving the stretching also sets the length scale.
 
 **Compression — proportionality ansatz.**
-Substituting the saturated strain into the compression equation bounds the compressive sink. The $V_2$ relaxation rate is comparable to the $V_1$ growth rate, preventing quasi-steady equilibrium. We use the proportionality ansatz $V_2(t) = \lambda V_1(t)$. The ODE forces
+Substituting the saturated strain into the compression equation bounds the compressive sink. The $V_2$ relaxation rate is comparable to the $V_1$ growth rate, preventing quasi-steady equilibrium. Take the proportionality ansatz $V_2(t) = \lambda V_1(t)$. The ODE forces
 
 $$
   \boxed{\;\;

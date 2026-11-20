@@ -20,7 +20,7 @@ $$
 \end{aligned}
 $$
 
-We extract the leading-order $\varepsilon^1 = 2\hbar_q\big|_{q=1}$ coefficients by setting $q = 1$ in the cyclotomic factor:
+One extracts the leading-order $\varepsilon^1 = 2\hbar_q\big|_{q=1}$ coefficients by setting $q = 1$ in the cyclotomic factor:
 
 - $V_{(3)}$: $-\tfrac{1}{4}(2)^2 \cdot 2 = -2 = J_{\text{Hopf}}(q{=}1)$.
 - $V_{(2,1)}$: $-\tfrac{1}{4}(2) \cdot 2 = -1 = J_{\text{Hopf}}(q{=}1)/2$.

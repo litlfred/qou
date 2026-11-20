@@ -6,7 +6,7 @@ import { remark } from "../../schema/builders";
  * choice that one tick is one crossing application.
  */
 export default remark({
-  interprets: "prop:braiding-induced-ordering",
+  interprets: "lem:crossing-application-chains",
   label: "rem:no-goedel-closed-chains",
   title: "No closed causal chains under the tick definition: the Gödel universe",
   lean: {

@@ -6,10 +6,10 @@ There is no split/non-split dichotomy to state this criterion in. At a substrate
 What is left is a correlation with the Young diagram of the valence shell, stated without a mechanism. The liquid phase is stable when the outermost electron shell is closed or nearly closed — in terms of partitions, when the diagram $\lambda_{\mathrm{outer}}$ labelling the valence electrons satisfies $\lambda_1 - \lambda_2 \leq 1$, so that the valence shell inhabits the symmetric or near-symmetric sector of the Schur--Weyl decomposition. Sublimation is instead associated with a half-filled valence shell ($\lambda_1 \approx \lambda_2 + n/2$), where the mixed Hecke channel achieves maximal dimension. That dimension statement is a fact about $S_\lambda$; the step from it to a thermodynamic instability is not supplied here.
 
 **Crossing parity.**
-To estimate sublimation behavior, we examine the composite crossing parity. The composite crossing number identically satisfies $n_K(\mathcal{A}) \equiv Z \pmod{2}$, stemming from the crossing budget $A^2 + 7A + 5Z$ and the invariant parity $A(A+1) \equiv 0 \pmod{2}$. This parity detects the mod-2 shadow of the Young diagram structure. It acts as a necessary but not sufficient condition for sublimation, as it fails to distinguish closed shells from half-filled ones.
+To estimate sublimation behavior, one examines the composite crossing parity. The composite crossing number identically satisfies $n_K(\mathcal{A}) \equiv Z \pmod{2}$, stemming from the crossing budget $A^2 + 7A + 5Z$ and the invariant parity $A(A+1) \equiv 0 \pmod{2}$. This parity detects the mod-2 shadow of the Young diagram structure. It acts as a necessary but not sufficient condition for sublimation, as it fails to distinguish closed shells from half-filled ones.
 
 **Full criterion.**
-Let $\ell_v$ denote the number of valence electrons beyond the last closed shell. Let $\ell_{\max}$ dictate the capacity of the valence shell ($\ell_{\max} = 2n^2$ for principal quantum number $n$). We systematically classify the macroscopic phase:
+Let $\ell_v$ denote the number of valence electrons beyond the last closed shell. Let $\ell_{\max}$ dictate the capacity of the valence shell ($\ell_{\max} = 2n^2$ for principal quantum number $n$). One systematically classifies the macroscopic phase:
 
 1. **Closed shell** ($\ell_v = 0$ or $\ell_v = \ell_{\max}$): The liquid phase is stable.
 2. **Near-closed shell** ($\ell_v = 1$ or $\ell_v = \ell_{\max} - 1$): The liquid phase is stable.

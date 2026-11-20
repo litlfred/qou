@@ -1,4 +1,4 @@
-Let $R$ be a commutative ring in which $2$ is invertible, and let $q \in R^\times$. Writing the substrate Planck quantum $\hbar_q = (q - 1)/q$, we have:
+Let $R$ be a commutative ring in which $2$ is invertible, and let $q \in R^\times$. Writing the substrate Planck quantum $\hbar_q = (q - 1)/q$,
 $$
   1 + \hbar_q - \hbar_q^2/2
   \;=\;

@@ -1,14 +1,14 @@
-We decompose a photon into identity and color components. The photon color content model  writes a photon as:
+One decomposes a photon into identity and color components. The photon color content model  writes a photon as:
 
 $$
   \gamma
   = 
   \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1
-  + \varphi_{01}\sigma_0\sigma_1,
+  + \varphi_{01}\sigma_0\sigma_1^{-1},
   \qquad \varphi_0, \varphi_1, \varphi_{01} \in R.
 $$
 
-Here $\mathbf{1}$ is the degree-$0$ photon identity, $\sigma_0, \sigma_1$ are the Hecke generators, and $\sigma_0\sigma_1$ is the Hopf link dressing . Each generator maps to a polarization mode on the exceptional divisor $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$. The generator $\sigma_0$ provides horizontal polarization; $\sigma_1$ provides vertical.
+Here $\mathbf{1}$ is the degree-$0$ photon identity, $\sigma_0, \sigma_1$ are the Hecke generators, and $\sigma_0\sigma_1^{-1} = \sigma_0\sigma_1 - h\sigma_0$ is the chiral pair-production vertex ([photon](#def:photon)). Each generator maps to a polarization mode on the exceptional divisor $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$. The generator $\sigma_0$ provides horizontal polarization; $\sigma_1$ provides vertical.
 
 ## Decomposition by jet degree
 
@@ -19,7 +19,7 @@ The four summands distribute across jet degrees.
 | $\mathbf{1}$ | $0$ | Photon identity (fibre value) | **No** |
 | $\varphi_0\sigma_0$ | $1$ | Horizontal polarization (linear transport) | **Yes** |
 | $\varphi_1\sigma_1$ | $1$ | Vertical polarization (linear transport) | **Yes** |
-| $\varphi_{01}\sigma_0\sigma_1$ | $2$ | Hopf link dressing (quadratic transport) | **Yes** |
+| $\varphi_{01}\sigma_0\sigma_1^{-1}$ | $2$ | Chiral vertex (quadratic transport; leading part $\sigma_0\sigma_1$, with $-h\sigma_0$ in degree $1$) | **Yes** |
 
 At a jet horizon $\mathcal{H}$ , the degree-$0$ ideal $\mathfrak{h}$ annihilates $A_0$, removing the photon identity $\mathbf{1}$. Because the higher-degree quotients $A_1/A_0$ and $A_2/A_1$ are unconstrained, the color content $(\varphi_0, \varphi_1, \varphi_{01})$ survives the horizon.
 

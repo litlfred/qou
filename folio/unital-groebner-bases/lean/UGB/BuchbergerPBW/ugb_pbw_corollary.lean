@@ -90,7 +90,7 @@ theorem ugb_pbw_corollary (qs : QSerreRelations k) :
        (∀ nf₁ nf₂ : AlgElement SU2Gen k,
           ReducesToNF degLexOrder (qSerreRewritingSystem k qs) f nf₁ →
           ReducesToNF degLexOrder (qSerreRewritingSystem k qs) f nf₂ →
-          nf₁ = nf₂)) := by
+          AlgElement.CoeffEq nf₁ nf₂)) := by
   · intro f
     refine ⟨?_, ?_⟩
     · -- Existence of the normal form: proved, and its unit-leading-coefficient

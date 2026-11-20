@@ -8,7 +8,7 @@ $$
   \end{cases}
 $$
 
-*We verify the predicted bridge map for all partitions $\lambda \vdash n$ with $n \leq 4$ by combining the explicit Markov-trace calculation on each Wedderburn cell with known Vol/CS values from classical knot theory.*
+*The predicted bridge map is verified for all partitions $\lambda \vdash n$ with $n \leq 4$ by combining the explicit Markov-trace calculation on each Wedderburn cell with known Vol/CS values from classical knot theory.*
 
 *Status (2026-11-16): this is a comparison, not a proof.* No map from cells to
 knots is defined, so the knot attached to each cell below is chosen, not

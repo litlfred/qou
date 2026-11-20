@@ -34,7 +34,7 @@ Here $R_{\int}$ denotes the **Frobenius–Ricci endomorphism**, $F_\nabla$ denot
 $$
   E_\times = q + q^{-1} = [2]_q.
 $$
-Specific knots map to particle identities: the unknot $0_1$ acts as the neutrino, the trefoil $3_1$ acts as the electron, and higher torus knots act as the muon and tau. The photon is a four-term Hecke element $\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1$. Two-photon products generate the massive spectrum. The figure-eight knot volume enters the muon-to-electron mass ratio through
+Specific knots map to particle identities: the unknot $0_1$ acts as the neutrino, the trefoil $3_1$ acts as the electron, and higher torus knots act as the muon and tau. The photon is a four-term Hecke element $\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1^{-1}$. Two-photon products generate the massive spectrum. The figure-eight knot volume enters the muon-to-electron mass ratio through
 $$
   \frac{m_\mu}{m_e} = \frac{\mathrm{Vol}(4_1)}{\hbar_q^{2}}, \qquad \hbar_q = 1 - q^{-1}.
 $$
@@ -52,7 +52,7 @@ The relation is used in reverse: it is inverted for $q_0$, so it is the CAL-2 ca
 $$
   \frac{\mathfrak{m}(K)}{m_e} = \frac{\mathrm{Vol}(K)\,\rho(K)}{\hbar_q^{2}}.
 $$
-The electron mass fixes the unit, so the formula is evaluated through dimensionless mass ratios and binding energies rather than absolute masses in MeV. The volume factor $\mathrm{Vol}(K)/\hbar_q^{2}$ is the [topological mass formula](#prop:topological-mass-formula) for hyperbolic knots, acting as a finite-dimensional regularised path integral.
+The electron mass fixes the unit, so the formula is evaluated through dimensionless mass ratios and binding energies rather than absolute masses in MeV. The volume factor $\mathrm{Vol}(K)/\hbar_q^{2}$ is the [topological mass formula](#conj:topological-mass-formula) for hyperbolic knots, acting as a finite-dimensional regularised path integral.
 
 [*Mass Analysis*](#chap:mass-theory) unites the geometric and Archimedean faces into a single computational pipeline. Every elementary-particle, gauge-boson, hadron, and nuclear mass ratio derives from three calibration inputs over $\mathbb{Q}(q)$ without empirical curve-fitting.
 

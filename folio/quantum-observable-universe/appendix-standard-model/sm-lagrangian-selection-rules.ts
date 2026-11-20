@@ -10,4 +10,7 @@ export default remark({
     "def:coulomb-charge",
     "rem:self-dual-2group",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): `QOU/StandardModel/WritheMarkovInvariance.lean` proves `writhe_conj` (conjugation preserves the writhe) alongside `writhe_stabilize` (the vertical stabilisation move shifts the writhe by ±1)." },
+  ],
 });

@@ -1,5 +1,1 @@
 **:defterm[Distinguished triangle]{#distinguished-triangle}.** In an additive category $\mathbf{T}$ with a shift functor $X \mapsto X[1]$, a *triangle* is a diagram $X \to Y \to Z \to X[1]$. A *pretriangulated* structure on $\mathbf{T}$ singles out a class of *distinguished* triangles, closed under isomorphism and rotation, containing $X \xrightarrow{\mathrm{id}} X \to 0 \to X[1]$, such that every morphism $X \to Y$ extends to a distinguished triangle, and satisfying the octahedral axiom; the distinguished triangles play the role that short exact sequences play in an abelian category, and a functor to an abelian category is *homological* when it sends them to long exact sequences.
-
-**Mathlib reference.**
-`CategoryTheory.Pretriangulated.Triangle` (structure) and `CategoryTheory.Pretriangulated` (class, field `distinguishedTriangles`).
-Import: `Mathlib.CategoryTheory.Triangulated.Pretriangulated`.

@@ -1,4 +1,4 @@
-The Feynman--Stueckelberg interpretation frames the [positron](#def:positron-knot) as a backward-traveling electron. In QOU, time reversal corresponds to chirality reversal. We replace every $T_{2,3}$ with $T_{2,3}^{\sigma}$. This demands infinite energy in the observable sector.
+The Feynman--Stueckelberg interpretation frames the [positron](#def:positron-knot) as a backward-traveling electron. In QOU, time reversal corresponds to chirality reversal. Replace every $T_{2,3}$ with $T_{2,3}^{\sigma}$. This demands infinite energy in the observable sector.
 
 **Elementary fermions (electron).**
 The electron is the left trefoil $T_{2,3}$. No continuous deformation links $T_{2,3}$ to $T_{2,3}^{\sigma}$ ([trefoil vortex chirality flip](#rem:trefoil-vortex-chirality-flip)). The Jones polynomial distinguishes their connected components. In the observable sector ($q \in \mathbb{R}$, $q \geq 1$), crossing this topological barrier requires infinite energy:

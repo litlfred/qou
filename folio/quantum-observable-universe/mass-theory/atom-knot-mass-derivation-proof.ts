@@ -16,4 +16,7 @@ export default remark({
     "murakami-murakami2001",
     "thurston1978",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): by the canonical formalism\nand locked in [`gb-filtration-jet-order.witness.json`](../../../computations/gb-filtration-jet-order.witness.json))." },
+  ],
 });

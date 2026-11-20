@@ -27,5 +27,3 @@ The near-zero volume at generator $k$ encodes nuclear saturation.
 ## Improving: the pion channel
 
 Including the hook channel supplies missing shell structure.
-
-**Witness**: `feynman-qou-comparison.witness.json`.

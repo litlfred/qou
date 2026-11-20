@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-antiquark-channel-ledger",
@@ -16,7 +17,7 @@
   "uses": [
     "papers/quantum-observable-universe/blocks/def-derived-atom",
     "papers/quantum-observable-universe/blocks/def-categorical-meson",
-    "papers/quantum-observable-universe/blocks/prop-atom-knot-mass-derivation",
+    "papers/quantum-observable-universe/blocks/conj-atom-knot-mass-derivation",
     "papers/quantum-observable-universe/blocks/rem-pion-mass-hyperbolic-threshold"
   ],
   "interprets": "papers/quantum-observable-universe/blocks/def-derived-atom",

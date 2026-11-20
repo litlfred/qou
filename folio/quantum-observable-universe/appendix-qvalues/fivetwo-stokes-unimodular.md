@@ -41,7 +41,7 @@ $W_{-1}(0)$ carries denominators of $6$ from the $c$-slot subtraction, so it
 is a matrix over $\mathbb{Q}$ and its determinant is $-2$. An earlier framing
 assumed a fitted integer $+2$; the honest statement is the rational one.
 
-## Why these are Lean-provable
+## Why these are finite checks
 
 Every assertion above is a finite decidable identity about a concrete matrix
 with rational entries. There is no analysis, no limit and no convergence
@@ -51,4 +51,4 @@ from the derived sandwich compute rather than from a fit.
 That is also the limit of what is claimed. These are statements about the
 leading coefficient matrices; the corresponding all-orders statements
 ($\det S^{\pm}(q) = 1$ as an identity of $q$-series, and Stokes integrality)
-are checked numerically in the sandwich compute and are not formalised here.
+are checked numerically in the sandwich compute and are not proved here.

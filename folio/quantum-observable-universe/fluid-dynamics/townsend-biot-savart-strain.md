@@ -1,7 +1,7 @@
-We compute the asymptotic behaviour of the core aspect ratio at the vortex-collision time $T^\ast$. First, we use the singular Biot–Savart strain valid when cores are well separated. Next, we use the hyperbolic saturation that takes over when cores overlap.
+This computes the asymptotic behaviour of the core aspect ratio at the vortex-collision time $T^\ast$. First, the singular Biot–Savart strain is used, valid when cores are well separated. Next, the hyperbolic saturation is used that takes over when cores overlap.
 
 **Setup.**
-Two anti-parallel vortex filaments with circulation $\Gamma$ approach head-on at collision time $T^\ast$. We model the cross-section of each viscous core by the Townsend covariance matrix: $V_1(t)$ is the squared core radius in the stretching direction, and $V_2(t)$ is the squared core radius in the compression direction. The external strain rate induced by one filament on the other is $\alpha(t) = 1/(2(T^\ast - t))$. The leading behaviour is convention-independent. The strain rate is independent of $\Gamma$.
+Two anti-parallel vortex filaments with circulation $\Gamma$ approach head-on at collision time $T^\ast$. The cross-section of each viscous core is modelled by the Townsend covariance matrix: $V_1(t)$ is the squared core radius in the stretching direction, and $V_2(t)$ is the squared core radius in the compression direction. The external strain rate induced by one filament on the other is $\alpha(t) = 1/(2(T^\ast - t))$. The leading behaviour is convention-independent. The strain rate is independent of $\Gamma$.
 
 **Townsend evolution.**
 Under axisymmetric viscous strain, the squared core radii satisfy

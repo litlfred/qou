@@ -12,13 +12,12 @@ $\Omega^-$ could be read off from the three lighter states.  The particle was
 found in 1964 within $0.6\%$ of the extrapolated value.
 
 **The rule carries no information about the breaking mechanism.**  This is a
-theorem, machine-checked in
-`QOU/Eightfold/DecupletEqualSpacing.lean`: the three spacings are all equal for
+theorem: the three spacings are all equal for
 *every* choice of the first-order octet-breaking parameters $a, b, c$, over any
 commutative ring.  Their common value is $-4b - 6c$, and the second difference
-vanishes identically (`second_difference_vanishes`).  Two arbitrarily different
+vanishes identically.  Two arbitrarily different
 breaking patterns therefore give the same answer
-(`equal_spacing_cannot_discriminate`).
+.
 
 ## Why the rule collapses
 
@@ -44,7 +43,7 @@ $$
   I(I+1) - \tfrac{Y^2}{4} = \tfrac{3Y + 4}{2},
 $$
 
-so $\mathfrak{m}$ is affine in $Y$ (`casimir_collapses_of_isospin_affine`).
+so $\mathfrak{m}$ is affine in $Y$.
 Consecutive decuplet states step by $\Delta Y = -1$, hence the mass steps are
 equal.  The $\Omega$ is not an independent output at all: identically in
 $a, b, c$,
@@ -54,13 +53,13 @@ $$
 $$
 
 which means the extrapolation reads off a value the ansatz has already fixed
-(`omega_eq_two_xi_minus_sigma`).
+.
 
 **The collapse is special to the decuplet, not generic.**  On the baryon octet
 the isospin is not even a *function* of the hypercharge --- $\Sigma$ and
 $\Lambda$ share $Y = 0$ with $I = 1$ and $I = 0$ --- so no such substitution
 exists and the argument has nothing to act on
-(`octet_casimir_not_function_of_hypercharge`, derived from the octet weight
+(this is derived from the octet weight
 data rather than asserted).  Without that contrast the result above could be
 misread as a fact about every $\mathrm{SU}(3)_{\mathrm{f}}$ multiplet.
 

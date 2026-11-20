@@ -41,61 +41,54 @@ algebra; under convention D it has been computing in Temperley--Lieb throughout.
 ## What is measured and what is proved
 
 The dimension count above **was** a measurement rather than a theorem of this
-paper; as of the Lean recorded below it is a theorem, at every $n$. The
+paper; it is now a theorem, at every $n$ (below). The
 measurement came first and is kept, because it is what the theorem was checked
 against. The
 weights were evaluated for every partition of $n = 2,\dots,7$ at $50$ decimal places,
 with worst residual $1.34 \times 10^{-51}$ against the closed form
 $y_{(n-k,k)} = [n-2k+1]_q/[2]_q^{\,n}$. That run is now recorded, and
-strengthened, in `tl-two-row-weight-family.witness.json`: rather than a residual
+strengthened, in the two-row weight-family computation: rather than a residual
 at one $q$, the normalisation is checked as an **exact identity in $q$**,
 
 $$
   \sum_{k} f^{(n-k,k)}\,[n-2k+1]_q \;=\; [2]_q^{\,n},
 $$
 
-which `sympy` simplifies to exactly $0$ for $n = 2,\dots,10$ — so the closed
+which simplifies symbolically to exactly $0$ for $n = 2,\dots,10$ — so the closed
 form is a normalised weight family for *every* $q$ at once, which no
 finite-precision evaluation can establish. The Specht dimensions are cross-checked
 by two independent routes (ballot and hook-length), and the table above is
 reproduced rather than cited.
 
-**What is now proved in Lean, at general $n$.** Four statements,
+**What is now proved, at general $n$.** Four statements,
 none of which is the isomorphism:
 
 - $\sum_\lambda \dim_\lambda\, y_\lambda = 1$ --- the normalisation
-  $\mathrm{tr}(1) = 1$ ([`levelSum_eq_one`](../lean/QOU/QBeta/TwoRowNormalisation.lean));
+  $\mathrm{tr}(1) = 1$;
 - $\sum_k m_k(n)\,[n{+}1{-}2k]_q = [2]_q^{\,n}$ --- the same identity with the
-  denominator cleared, i.e. the $q$-dimension count of $V^{\otimes n}$
-  ([`qdim_normalisation_general`](../lean/QOU/QBeta/QDimNormalisation.lean));
-- $\sum \dim^2 = C_n$ over the two-**row** shapes
-  ([`dimHLF_two_row_sq_sum`](../lean/QOU/Mathlib/TwoRowDimCatalan.lean)) and,
-  separately, over the two-**column** shapes
-  ([`dimHLF_two_col_sq_sum`](../lean/QOU/MassTheory/TwoRowTwoColumnCollision.lean));
-- $\dim \lambda = \dim \lambda'$ **for this family**
-  ([`dimHLF_two_col_eq_two_row`](../lean/QOU/MassTheory/TwoRowTwoColumnCollision.lean)),
+  denominator cleared, i.e. the $q$-dimension count of $V^{\otimes n}$;
+- $\sum \dim^2 = C_n$ over the two-**row** shapes and,
+  separately, over the two-**column** shapes;
+- $\dim \lambda = \dim \lambda'$ **for this family**,
   which the next section had been asserting without backing.
 
-**What is still not proved: the isomorphism itself.** No formalised statement of
-$H_n(q)/\mathrm{rad} \cong TL_n(q)$ exists, and nothing above supplies one --- a
+**What is still not proved: the isomorphism itself.** No proof of
+$H_n(q)/\mathrm{rad} \cong TL_n(q)$ is given, and nothing above supplies one --- a
 count of blocks and a count of dimensions are not an isomorphism of algebras. The
 identification remains what this section calls it: something the counts support,
 deliberately not a proposition. What *is* available is the trace-theoretic half:
-the trace radical is a two-sided ideal
-([`traceRadical_two_sided`](../lean/QOU/QBeta/TemperleyLiebTower.lean)), which is
+the trace radical is a two-sided ideal, which is
 what licenses passing to the quotient as an algebra at all, and convention D is
-the standard normalised Temperley--Lieb trace at loop parameter $\delta = [2]_q$
-([`loop_reciprocal`](../lean/QOU/QBeta/TemperleyLiebTower.lean)).
+the standard normalised Temperley--Lieb trace at loop parameter $\delta = [2]_q$.
 
-## A convention collision to know about before wiring the Lean
+## A convention collision: rows versus columns
 
-[`QOU.MathlibExt.WenzlSchurElement`](../lean/QOU/MathlibExt/WenzlSchurElement.lean)
-proves the Temperley--Lieb stratification in the **conjugate** convention: at
+The Temperley--Lieb stratification via Wenzl's Schur elements is naturally stated
+in the **conjugate** convention: at
 $X = Q^{-N}$ the surviving blocks are those with $\lambda_1 \le N$, i.e. at most
 $N$ **columns**. This section, and convention D, state the survivors as at most
-two **rows**. Both are correct in their own convention, and that file's own
-docstring warns: *"anyone wiring `schurElement_tl_eq_zero_iff` to that block must
-transpose."*
+two **rows**. Both are correct in their own convention, and transporting a
+result from one to the other requires transposition.
 
 The trap is that the two conventions label **different sets of partitions** while
 carrying **equal dimension sums**. At
@@ -103,17 +96,15 @@ $n = 3$ the row-set is $\{(3),(2,1)\}$ and the column-set is
 $\{(2,1),(1^3)\}$ — disjoint but for $(2,1)$, both summing to $5$; at $n = 6$ the
 two sets share *nothing at all* and both still total $C_6 = 132$. So the
 Catalan counts agree under either reading, and a check that looks only at
-dimensions cannot tell the two apart. Measured at $n = 3,4,5$ in
-`tl-two-row-weight-family.witness.json`.
+dimensions cannot tell the two apart. Checked numerically at $n = 3,4,5$.
 
-Both halves of that trap are now theorems, at every $n$, in
-[`QOU.MassTheory.TwoRowTwoColumn`](../lean/QOU/MassTheory/TwoRowTwoColumnCollision.lean):
-transposition is an explicit bijection between the two families
-(`transposeEquiv`), so they are equinumerous; the families are nevertheless
-different sets (`atMostTwoRows_iff_atMostTwoCols_false`, witnessed by the single
-row $(3)$); and their squared-dimension totals agree
-(`dimHLF_two_col_sq_sum`). The equality $\dim \lambda = \dim \lambda'$ used
-above is proved there for this family (`dimHLF_two_col_eq_two_row`) rather than
+Both halves of that trap are theorems, at every $n$:
+transposition is an explicit bijection between the two families,
+so they are equinumerous; the families are nevertheless
+different sets (witnessed by the single
+row $(3)$); and their squared-dimension totals agree.
+The equality $\dim \lambda = \dim \lambda'$ used
+above is proved for this family rather than
 assumed --- it had been asserted here as though standard, and while it *is*
 standard for general partitions, nothing in this corpus had it.
 

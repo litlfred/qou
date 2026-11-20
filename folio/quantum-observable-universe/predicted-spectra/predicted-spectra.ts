@@ -168,20 +168,12 @@ export default chapter({
       ],
     }),
     section({
-      title: "Archimedean Hartree, crystal basis, and Mathlib bridge",
+      title: "Archimedean Hartree and crystal basis",
       label: "sec:archimedean-hartree-crystal",
       blocks: [
         "intro-archimedean-hartree-crystal",
         "bring-hyperbolic-knot-bloch-decomposition",
         "type-b-folded-crystal-combinatorics",
-        "type-b-folded-crystal-combinatorics-table-data",
-        "clausen-function-mathlib-filler",
-        "clausen-function-mathlib-filler-table2-data",
-        "clausen-function-mathlib-filler-table1-data",
-        "bloch-wigner-mathlib-filler",
-        "bloch-wigner-mathlib-filler-table3-data",
-        "bloch-wigner-mathlib-filler-table2-data",
-        "bloch-wigner-mathlib-filler-table1-data",
       ],
     }),
     section({
@@ -189,17 +181,8 @@ export default chapter({
       label: "sec:archimedean-hartree-crystal-mass-tower-deeper",
       blocks: [
         "archimedean-hartree-crystal-mass-tower-deeper-intro",
-        "three-substantive-mathlib-fillers",
-        "bloch-group-quotient-construction",
-        "bloch-group-quotient-construction-table-data",
         "cl2-pentagon-and-faddeev-partial",
-        "cl2-pentagon-and-faddeev-partial-formalization-status",
         "cl2-pentagon-and-faddeev-partial-novelty",
-        "cl2-pentagon-and-faddeev-partial-table3-data",
-        "cl2-pentagon-and-faddeev-partial-table2-data",
-        "cl2-pentagon-and-faddeev-partial-table1-data",
-        "upstream-mathlib-additions",
-        "upstream-mathlib-additions-detail",
       ],
     }),
     section({
@@ -207,8 +190,6 @@ export default chapter({
       label: "sec:archimedean-hartree-crystal-alpha-em-categorical",
       blocks: [
         "archimedean-hartree-crystal-alpha-em-categorical-intro",
-        "upstream-mathlib-additions-table2-data",
-        "upstream-mathlib-additions-table1-data",
         "alpha-em-categorical-trace-ratio",
         "alpha-em-categorical-trace-ratio-table-data",
         "alpha-em-categorical-trace-ratio-interpretation",

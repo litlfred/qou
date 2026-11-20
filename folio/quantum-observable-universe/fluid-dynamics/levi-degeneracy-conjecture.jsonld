@@ -2,31 +2,35 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/conj-levi-degeneracy",
   "@type": [
-    "folio-assistant-core:Conjecture",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
   "label": "conj:levi-degeneracy",
   "kind": "conjecture",
-  "title": "Levi degeneracy conjecture: contact non-degeneracy at vortex collision determines NS regularity",
+  "title": "Levi degeneracy conjecture: a vanishing Levi scalar $\\xi\\cdot\\mathrm{curl}\\,\\xi$ on the high-vorticity set prevents blow-up",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-core-levi-form",
-    "papers/quantum-observable-universe/blocks/prop-root-of-unity-truncation"
+    "papers/quantum-observable-universe/blocks/prop-core-levi-form"
+  ],
+  "cites": [
+    "references/constantin1993",
+    "references/beiraodaveiga2002"
   ],
   "tags": [
     "tier:famous",
     "conjecture",
     "levi-form",
     "contact-degeneracy",
+    "vorticity-direction",
     "millennium-problem",
-    "root-of-unity",
     "navier-stokes"
   ],
-  "leanRef": "qou:QOU.FluidDynamics.LeviDegeneracy",
+  "leanRef": "qou:QOU.FluidDynamics.LeviDegeneracyQ1.LeviDegeneracy",
   "text": "levi-degeneracy-conjecture.md",
   "leanSource": "levi-degeneracy-conjecture.lean",
   "provenance": "authored"
