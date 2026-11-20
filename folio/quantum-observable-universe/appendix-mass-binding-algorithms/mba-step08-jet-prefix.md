@@ -30,8 +30,10 @@ at $q = q_0$ via the GS filtration of Step 7.*
 
 1. *[Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)](#prop:jet-prefix-gb-filtration)
    gives the length $\leftrightarrow$ jet-order correspondence used in step 3.*
-2. *[Length-filtration spectral sequence of the Hochschild complex of $H_n(R, q)$](#prop:gb-spectral-sequence) ($E_2$
-   collapse, Step 7) ensures the truncation does not mix orders.*
+2. *The standard basis splits the length filtration
+   ([Length-filtration spectral sequence of the Hochschild complex of $H_n(R, q)$](#prop:gb-spectral-sequence),
+   part 1; Step 7), so each element has a unique decomposition by
+   length grade and step 3 assigns each grade to one jet order.*
 
 ### Complexity
 

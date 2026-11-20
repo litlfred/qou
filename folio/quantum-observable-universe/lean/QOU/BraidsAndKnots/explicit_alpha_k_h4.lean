@@ -20,7 +20,9 @@ class was inhabited by `Unit` and zero (bean `qou-z9ws`).
    resolution checks the **sibling first** — so the block already resolves to
    [`mass-theory/explicit-alpha-k-h4.lean`](../../mass-theory/explicit-alpha-k-h4.lean),
    never to this file.
-2. That sibling carries the real formalisation: `r_3_h4_coefficient`, `alpha_3_H4`, `R3OrthogonalToLowerDepthsH4`, `r_3_orthogonal_to_lower_depths`, `Alpha3H4MarkovPairing`, `alpha_3_H4_markov_pairing`.
+2. That sibling carries the formalisation (rewritten 2026-11-20, bean `qou-w8cg`): the exact
+   `H₄` table `charTableH4` / `repNumH4` / `kappaNumH4`, the dual-basis theorem
+   `explicit_alpha_k_h4`, and `markov_pairing_rep`. The float literals once listed here are gone.
 3. **Nothing imports this module** and nothing else in `content/` names the
    class (measured 2026-08-31 across every `.lean` in the tree).
 

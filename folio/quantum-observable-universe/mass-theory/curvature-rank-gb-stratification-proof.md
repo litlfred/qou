@@ -1,4 +1,4 @@
-*Proof.*
+*Proof sketch. This argument does not establish the statement: the reading of $J^\bullet$ in Step 2 is zero above degree $0$, and the spectral sequence of Step 4 is not filtered by $J^\bullet$.*
 
 **Step 1: $F$ generates the GB rewrite ideal.**
 *The two-sided ideal $I \subset \mathbb{C}\langle \sigma_1, \ldots, \sigma_{n-1}\rangle$
@@ -52,7 +52,7 @@ $E_0^{\ell, *} = J^\ell / J^{\ell+1}$ as the associated graded.
 By Step 3, this is exactly the curvature-rank-$\ell$ stratum.
 The differentials $d_r$ propagate elements between adjacent
 strata, and $E_\infty^{\ell, *}$ is the stable cohomology at depth
-$\ell$, depending only on the curvature-rank-$\ell$ residues.* $\square$
+$\ell$, depending only on the curvature-rank-$\ell$ residues.*
 
 **Corollary (six-term mass formula = curvature-rank decomposition).**
 *By [unified knot mass](#thm:knot-mass-formula-unified) the
