@@ -1,4 +1,4 @@
-We conjecture that the knot-state groupoid carries a **hypercharge invariant**: functions $I_3, Y$ on states, constant on gauge orbits, satisfying the Gell-Mann–Nishijima relation
+The conjecture is that the knot-state groupoid carries a **hypercharge invariant**: functions $I_3, Y$ on states, constant on gauge orbits, satisfying the Gell-Mann–Nishijima relation
 
 $$
   Q \;=\; I_3 + \tfrac{1}{2}\,Y
