@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-20T16:13:44.743296+00:00",
-  "commitSha": "4a121127e76f8e04a03c941f92d80787356bf07d",
+  "computedAt": "2026-11-20T18:34:16.507162+00:00",
+  "commitSha": "1f1c4b2bab68c58a1eac2b61fe04aa10266135c2",
   "assertions": [
     {
       "name": "deuteron_sign_correct",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 159,
+  "durationMs": 47,
   "computation": "shell-binding-transfer-matrix",
   "scriptFile": "shell_binding_transfer_matrix.py",
-  "scriptHash": "8b3cd8e66adf",
-  "scriptCommitSha": "68cf6abfe6a35ebe3fdc40a84c2740ee1f30740e",
+  "scriptHash": "fd995c83cb94",
+  "scriptCommitSha": "d23a26722131262e5a00e4f8ab7922e3d44a7d93",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,7 +29,7 @@
     "numpy": "2.5.3",
     "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "cvxpy": "absent",
@@ -82,7 +82,7 @@
         "Z": 3,
         "N": 3,
         "B_pred_MeV": 22.8517,
-        "B_AME_MeV": 31.994,
+        "B_AME_MeV": 31.9939872,
         "err_pct": -28.58
       },
       {
@@ -90,7 +90,7 @@
         "Z": 3,
         "N": 4,
         "B_pred_MeV": 18.9599,
-        "B_AME_MeV": 39.245,
+        "B_AME_MeV": 39.2450807,
         "err_pct": -51.69
       },
       {
