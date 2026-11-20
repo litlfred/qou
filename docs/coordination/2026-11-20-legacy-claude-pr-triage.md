@@ -133,3 +133,27 @@ The owner ruled on 2026-11-18 (per #8519's body) that the paper PDF publishes on
 AGENTS.md §"Build output (gh-pages)" still says the rendered site is deprecated (2026-09-27) and
 tells agents not to restore a push trigger. #8519 should carry the AGENTS.md update; otherwise the
 next agent reading AGENTS.md will undo it.
+
+## Ports opened (2026-11-20, all verified, all labelled `ready-to-merge`)
+
+| port PR | of | verification |
+|---|---|---|
+| #8544 | #8110 | -B cone 3 modules; 22 decls, no sorryAx; probe runs |
+| #8550 | #8096 | -B cone 25 modules; 27 decls (library + content block), no sorryAx; probe 0 failures; compute edit docstring-only (AST-identical) |
+| #8556 | #8111 | -B cone; 41 decls, no sorryAx; 5 probes re-run, output identical; q0 literal → 50-digit pin |
+| #8559 | #7136 | -B cone 142 modules; 6 files, 46 decls, no sorryAx |
+| #8561 | #7913 | -B cone 64 modules; 19 files, 374 decls, no sorryAx; sympy check ALL OK |
+
+Axiom audit method: each file is re-compiled with an appended command that walks every constant the
+module itself adds (`env.constants.map₂`) and runs `collectAxioms`, so no declaration is skipped by
+a hand-written name list.
+
+## Epic qou-ncxf (RT-1/2/3 blind round-trip audits) — state at 2026-11-20
+
+- Pass 1 merged as #8528: 10 of 435 eligible blocks audited, 8 of 10 show a statement / narrative /
+  Lean mismatch; ten finding beans opened (`qou-27ys` in-progress; `ni0g`, `1iit`, `n3xv`, `tdhw`,
+  `zxuy`, `xxa9`, `5d0x`, `k9tf`, `pwo1` todo). No Lean or content edited.
+- RT-1 `qou-zqno`, RT-2 `qou-wnm3`, RT-3 `qou-da6d`: in-progress, ~2 % of the population covered.
+- RT-0 `qou-7vhp` is `completed` but names a harness (`folio/pipeline/roundtrip-blind-packets.ts`,
+  tests, nine agent definitions) that is not on main; #8528 replaced it with
+  `scripts/roundtrip-blind-sample.py`. Note appended to the bean; status left to the epic owner.
