@@ -1,10 +1,6 @@
-**Proposition (conditional on [The four Murphy–Lagrange cross-checks for $e_\lambda$ follow from Lagrange interpolation in commuting variables](#conj:explicit-central-idempotent)).**
-The statement below is proved *conditionally* on the
-Lagrange-interpolation cross-checks, which are **open**. The four cross-checks
-(sum-to-identity, orthogonality, self-adjointness, bar-pairing) are the
-conjectural input; everything downstream of them is proved.
+**Proposition.** The idempotency below is proved unconditionally, for every $n$, at generic $q$ ([The Murphy–Lagrange elements $e_\lambda$ are the central primitive idempotents of $H_n(q)$](#thm:explicit-central-idempotent-cross-checks)).
 
-*Let $H_n(q)$ be the Iwahori–Hecke algebra over $R$ at generic $q$. The Jucys–Murphy elements $\{J_1, \ldots, J_n\} \subset H_n(q)$ ([Elementary symmetric polynomials in Jucys–Murphy elements are central in $H_n(q)$ with closed-form spectrum on each Wedderburn block](#prop:jucys-murphy-central-elements-qou)) commute pairwise and act diagonally on the Hoefsmit seminormal basis. For any standard Young tableau $T$ of shape $\lambda \vdash n$, one has $J_k \cdot v_T = c_T(k; q) \cdot v_T$, where*
+*Let $H_n(q)$ be the Iwahori–Hecke algebra over a field $K$ at generic $q$ ($q \neq 0$, not a root of unity). The Jucys–Murphy elements $\{J_1, \ldots, J_n\} \subset H_n(q)$ ([Elementary symmetric polynomials in Jucys–Murphy elements are central in $H_n(q)$ with closed-form spectrum on each Wedderburn block](#prop:jucys-murphy-central-elements-qou)) commute pairwise and act diagonally on the Hoefsmit seminormal basis. For any standard Young tableau $T$ of shape $\lambda \vdash n$, one has $J_k \cdot v_T = c_T(k; q) \cdot v_T$, where*
 
 $$
   c_T(k; q) \;=\; q^{\,2(j(k) - i(k))}
@@ -29,15 +25,15 @@ $$
 
 1. **Sum-to-identity.** $\sum_{\lambda \vdash n} e_\lambda = 1 \in H_n(q)$, confirming the completeness of the partition decomposition.
 2. **Orthogonality.** $e_\lambda e_\mu = \delta_{\lambda \mu} e_\lambda$ via Lagrange interpolation in commuting variables.
-3. **Self-adjointness.** For a self-conjugate partition $\lambda = \lambda'$, every box $\square \in \lambda$ has a transposed partner $\square'$ with $c(\square'; q) = c(\square; q^{-1}) = *(c(\square; q))$. The product remains bar-fixed term-by-term: $*(e_\lambda) = e_\lambda$.
-4. **Bar-pairing.** For a chiral partition $\lambda \neq \lambda'$, one has $*(e_\lambda) = e_{\lambda'}$. The sum $e_\lambda + e_{\lambda'}$ remains bar-fixed.
+3. **Bar-invariance.** The bar involution ($\sigma_i \mapsto \sigma_i^{-1}$, $q \mapsto q^{-1}$) fixes every $e_\lambda$, self-conjugate or not.
+4. **Conjugate pairing.** The sign twist ($\sigma_i \mapsto -\sigma_i^{-1}$) sends $e_\lambda$ to $e_{\lambda'}$. The bar involution does not pair $\lambda$ with $\lambda'$.
 
 ## Small $n$ examples
 
-| $n$ | $\lambda$ | bar-class | $e_\lambda$ structure |
+| $n$ | $\lambda$ | conjugation class | $e_\lambda$ structure |
 |---|---|---|---|
-| $2$ | $(2)$ | self-conjugate | $\frac{L_2 - (-q^{-2})}{q^2 - (-q^{-2})} = \frac{q^{-1}\sigma_1 + 1}{q + q^{-1}}$ |
-| $2$ | $(1,1)$ | self-conjugate | $\frac{L_2 - q^2}{(-q^{-2}) - q^2} = \frac{q\sigma_1^{-1} - 1}{-q - q^{-1}}$ |
+| $2$ | $(2)$ | chiral pair w/ $(1,1)$ | $\frac{L_2 - q^{-2}}{q^2 - q^{-2}} = \frac{\sigma_1 + q^{-1}}{q + q^{-1}}$ |
+| $2$ | $(1,1)$ | chiral pair w/ $(2)$ | $\frac{L_2 - q^{2}}{q^{-2} - q^2} = \frac{q - \sigma_1}{q + q^{-1}}$ |
 | $3$ | $(3)$ | chiral pair w/ $(1,1,1)$ | $q$-deformed symmetriser |
 | $3$ | $(2,1)$ | self-conjugate | standard 2D representation idempotent |
 | $4$ | $(2,2)$ | self-conjugate | bar-fixed; witnesses $\mathrm{Vol}(4_1)$ via depth-2 pairing with $\mathrm{Li}_2^q(\zeta_6)$ |

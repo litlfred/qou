@@ -231,7 +231,7 @@ export default chapter({
         "hecke-baer-star-generic-corollary",
         "hecke-baer-star-generic-proof",
         "hecke-baer-star-generic-interpretation",
-        "conj-explicit-central-idempotent",
+        "explicit-central-idempotent-cross-checks",
         "explicit-central-idempotent",
         "chirality-period-pairing",
         "bring-embeddable-knots",
