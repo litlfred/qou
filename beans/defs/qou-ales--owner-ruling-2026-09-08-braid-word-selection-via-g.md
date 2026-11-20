@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-08T07:40:02Z
-updated_at: 2026-11-20T15:40:00Z
+updated_at: 2026-11-20T14:40:21Z
 parent: qou-v2om
 ---
 
@@ -285,3 +285,6 @@ The owner ruled that the γγ selection rule also covers the nuclear bond letter
 
 ## 2026-11-20 — PR #8564 (branch claude/qbeta-gg-sdp-base-2026-11-20): γγ + every-level reading 3 per nucleus, and the Q_β it gives on the ruled base
 Pre-registered (b3a70fdf25). Lean QOU/QBeta/GammaGammaSdpQBetaBase.lean (8 declarations, lean -DautoImplicit=false -s 65536 exit 0, no sorryAx, negative controls fail as expected): TowerFrobeniusFeasible / TowerSelected (reading 3 on the whole word at every tower level, generic ring); frobeniusSelected_ten_unique (the selection over V^k, k <= 10, is V^3 only); qbeta_delta_vanishes_of_frobeniusSelected (|eps W_n - eps W_p| * E0 = 0 for every eps); negative control feasible_pair_delta_ne_zero (V^3 and V^6 both feasible, separated by length). Probe computations/probes/qbeta_gg_sdp_base/ (13/13, 60 dps, proton pin, no AME): p and n survivors both {V^3, V^6, V^9}; 2H = pp = nn as words, 81/225 pass at H_6 and H_3 (bond P^3 or P^6 at all four placements); Q_beta on z_D with tower E0 = 0 for the cost-minimal p = n = V^3, and 0.01820 / 0.03022 / 0.04842 MeV for unequal survivor pairs (reported, not ranked; picking p != n by Q_beta would be a fit). Scope (a); agrees with the 2026-11-15 route-3 synthesis on qou-99qc. Bean stays open (rule 13a): a flavour ingredient is still missing.
+
+**2026-11-20T14:40:21Z — OWNER RULING (Carl, session 01VQDpPd): record Q_β = 0 as the γγ base's scope-(a) prediction; derive flavour on the U_q / weight side.**
+PR #8564: under γγ words + reading 3 (whole word, every tower level) p and n share the survivor set {V³,V⁶,V⁹}; minimal cost p = n = V³ ⇒ Q_β = 0 on the ruled z_D base (Lean qbeta_delta_vanishes_of_frobeniusSelected, frobeniusSelected_ten_unique). Scope (a): the grammar carries no flavour index; the ruling is not excluded. Assigning different survivors to p and n by Q_β is a fit (not adopted). Next: T³-graded split of the trace on V³ (follow-up task opened). Scorecard unchanged. Bean stays open.

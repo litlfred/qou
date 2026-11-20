@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-20T08:45:45Z
+updated_at: 2026-11-20T14:40:21Z
 parent: qou-10v9
 ---
 
@@ -4070,3 +4070,6 @@ content blocks (mass-comparison-table.md:33, neutron-qvalue-symbolic.md:53) scor
 fails reading-3 SDP on (2,1). Recorded in the scorecard witness as content_blocks_element /
 element_conflict_open (PR #8549). Not resolved — still the owner's call. γγ+SDP base search
 (qou-ales / qou-vd7j) running on claude/qbeta-gg-sdp-base-2026-11-20.
+
+**2026-11-20T14:40:21Z — OWNER RULING (Carl, session 01VQDpPd): record Q_β = 0 as the γγ base's scope-(a) prediction; derive flavour on the U_q / weight side.**
+PR #8564: under γγ words + reading 3 (whole word, every tower level) p and n share the survivor set {V³,V⁶,V⁹}; minimal cost p = n = V³ ⇒ Q_β = 0 on the ruled z_D base (Lean qbeta_delta_vanishes_of_frobeniusSelected, frobeniusSelected_ten_unique). Scope (a): the grammar carries no flavour index; the ruling is not excluded. Assigning different survivors to p and n by Q_β is a fit (not adopted). Next: T³-graded split of the trace on V³ (follow-up task opened). Scorecard unchanged. Bean stays open.
