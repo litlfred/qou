@@ -10,7 +10,7 @@ quark strand `i` (or strands `i` and `j`), closes it with the convention-D
 Markov conditional expectation `E₄ : H₄(q) → H₃(q)`, and weights the resulting
 traces `D_ij = tr_D(B · E₄(L_ij))` by quark charges.
 
-## What is proved here (unconditional, generic field)
+## What is proved here (unconditional, generic characteristic-zero field)
 
 * `chargeForm_symCore` — on a strand-symmetric matrix (`D_ii = a`, `D_ij = b`)
   the charge form is `b·Q_tot² + (a − b)·ΣQᵢ²` (the "Thomson + subtraction"
@@ -56,7 +56,7 @@ ruled photon `γ = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹`.
 
 namespace QOU.MassTheory.PhotonClaspChargeForm
 
-variable {R : Type*} [Field R]
+variable {R : Type*} [Field R] [CharZero R]
 
 /-- The charge-weighted quadratic form `Σ_{i,j} Qᵢ Qⱼ D_ij` of a symmetric
 3×3 matrix with diagonal `a₀ a₁ a₂` and off-diagonal `b₀₁ b₀₂ b₁₂`. -/
@@ -64,6 +64,7 @@ def chargeForm (Q0 Q1 Q2 a0 a1 a2 b01 b02 b12 : R) : R :=
   Q0 ^ 2 * a0 + Q1 ^ 2 * a1 + Q2 ^ 2 * a2
     + 2 * (Q0 * Q1 * b01 + Q0 * Q2 * b02 + Q1 * Q2 * b12)
 
+omit [CharZero R] in
 /-- **Thomson + subtraction split.** On a strand-symmetric matrix the charge form
 is `b·Q_tot² + (a − b)·ΣQᵢ²`. -/
 theorem chargeForm_symCore (Q0 Q1 Q2 a b : R) :
@@ -96,13 +97,14 @@ noncomputable def zD (q : R) : R := q ^ 3 / (q ^ 2 + 1)
 /-- The single-strand clasp scalar `E₄(σ₃²) = 1 + (q − q⁻¹)·z_D`. -/
 noncomputable def merScalar (q : R) : R := 1 + (q - q⁻¹) * zD q
 
-theorem merScalar_eq (q : R) (hq : q ≠ 0) (h2 : q ^ 2 + 1 ≠ 0) :
+omit [CharZero R] in
+theorem merScalar_eq (q : R) (h2 : q ^ 2 + 1 ≠ 0) :
     merScalar q = (q ^ 4 + 1) / (q ^ 2 + 1) := by
   unfold merScalar zD
   field_simp
   ring
 
-theorem merScalar_one [CharZero R] : merScalar (1 : R) = 1 := by
+theorem merScalar_one : merScalar (1 : R) = 1 := by
   unfold merScalar zD; norm_num
 
 /-- **Factorised clasps.** Diagonal `m·t`, like-flavour pair `m²·t + c`. -/
@@ -131,7 +133,7 @@ theorem pMinusN_at_classical_point (b02 b12 : R) :
 noncomputable def trBor (q : R) : R :=
   1 - (q ^ 2 - 1) ^ 4 * (q ^ 4 + q ^ 2 + 1) / (q ^ 4 * (q ^ 2 + 1) ^ 2)
 
-theorem trBor_one [CharZero R] : trBor (1 : R) = 1 := by unfold trBor; norm_num
+theorem trBor_one : trBor (1 : R) = 1 := by unfold trBor; norm_num
 
 /-- Probe-measured numerator scale of the connected pair term (not derived
 here): the symmetrised connected pair terms are `−connK q / q⁸` for the pairs
