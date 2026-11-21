@@ -22,7 +22,8 @@ This file proves what that formula determines, and nothing more:
    `m_n − m_p = [2]_q · (μ_d − μ_u) / (q^{1/2} + q^{-1/2})`.
 2. `det_eq` — the 2×2 map `(μ_u, μ_d) ↦ (m_p, m_n)` has determinant
    `3·[2]_q²` (before the common factor `(q^{1/2}+q^{-1/2})⁻²`).
-3. `up_eq`, `down_eq`, `injective` — when `[2]_q ≠ 0` the map is invertible,
+3. `up_eq`, `down_eq`, `injective`, `surjective` — when `s ≠ 0`,
+   `s + s⁻¹ ≠ 0`, `[2]_q ≠ 0` and `3 ≠ 0` the map is a bijection,
    with explicit inverse. So every pair `(m_p, m_n)` is reproduced by exactly
    one pair of dressed quark masses: reproducing measured nucleon masses this
    way is a change of variables and carries no predictive content.
@@ -138,15 +139,55 @@ theorem injective (s u d u' d' : K) (hs : s ≠ 0) (hD : s + s⁻¹ ≠ 0)
   · rw [up_eq s u d hs hD h2 h3, up_eq s u' d' hs hD h2 h3, hp, hn]
   · rw [down_eq s u d hs hD h2 h3, down_eq s u' d' hs hD h2 h3, hp, hn]
 
+/-- **The nucleon map is surjective.** Every pair `(P, N)` is `(m_p, m_n)` for
+the dressed-quark pair given by the inverse formulas. -/
+theorem surjective (s P N : K) (hs : s ≠ 0) (hD : s + s⁻¹ ≠ 0)
+    (h2 : s ^ 2 + (s ^ 2)⁻¹ ≠ 0) (h3 : (3 : K) ≠ 0) :
+    ∃ u d : K, protonMass s u d = P ∧ neutronMass s u d = N := by
+  have hq : s ^ 2 ≠ 0 := pow_ne_zero 2 hs
+  have hden : 3 * (s ^ 2 + (s ^ 2)⁻¹) ^ 2 ≠ 0 := mul_ne_zero h3 (pow_ne_zero 2 h2)
+  have hdet := det_eq (s ^ 2) hq
+  set Δ := 3 * (s ^ 2 + (s ^ 2)⁻¹) ^ 2 with hΔ
+  refine ⟨(s + s⁻¹) * ((s ^ 2 + 3 * (s ^ 2)⁻¹) * P - 2 * (s ^ 2)⁻¹ * N) / Δ,
+    (s + s⁻¹) * ((3 * s ^ 2 + (s ^ 2)⁻¹) * N - 2 * s ^ 2 * P) / Δ, ?_, ?_⟩
+  · have h : protonMass s
+        ((s + s⁻¹) * ((s ^ 2 + 3 * (s ^ 2)⁻¹) * P - 2 * (s ^ 2)⁻¹ * N) / Δ)
+        ((s + s⁻¹) * ((3 * s ^ 2 + (s ^ 2)⁻¹) * N - 2 * s ^ 2 * P) / Δ)
+        = P * (((3 * s ^ 2 + (s ^ 2)⁻¹) * (s ^ 2 + 3 * (s ^ 2)⁻¹)
+            - 2 * (s ^ 2)⁻¹ * (2 * s ^ 2)) / Δ) := by
+      have hl : protonMass s ((s + s⁻¹) * ((s ^ 2 + 3 * (s ^ 2)⁻¹) * P - 2 * (s ^ 2)⁻¹ * N) / Δ)
+          ((s + s⁻¹) * ((3 * s ^ 2 + (s ^ 2)⁻¹) * N - 2 * s ^ 2 * P) / Δ)
+          = (s + s⁻¹) * (P * (((3 * s ^ 2 + (s ^ 2)⁻¹) * (s ^ 2 + 3 * (s ^ 2)⁻¹)
+            - 2 * (s ^ 2)⁻¹ * (2 * s ^ 2)) / Δ)) / (s + s⁻¹) := by
+        unfold protonMass pairSkein
+        ring
+      rw [hl, mul_div_cancel_left₀ _ hD]
+    rw [h, hdet, div_self hden, mul_one]
+  · have h : neutronMass s
+        ((s + s⁻¹) * ((s ^ 2 + 3 * (s ^ 2)⁻¹) * P - 2 * (s ^ 2)⁻¹ * N) / Δ)
+        ((s + s⁻¹) * ((3 * s ^ 2 + (s ^ 2)⁻¹) * N - 2 * s ^ 2 * P) / Δ)
+        = N * (((3 * s ^ 2 + (s ^ 2)⁻¹) * (s ^ 2 + 3 * (s ^ 2)⁻¹)
+            - 2 * (s ^ 2)⁻¹ * (2 * s ^ 2)) / Δ) := by
+      have hl : neutronMass s ((s + s⁻¹) * ((s ^ 2 + 3 * (s ^ 2)⁻¹) * P - 2 * (s ^ 2)⁻¹ * N) / Δ)
+          ((s + s⁻¹) * ((3 * s ^ 2 + (s ^ 2)⁻¹) * N - 2 * s ^ 2 * P) / Δ)
+          = (s + s⁻¹) * (N * (((3 * s ^ 2 + (s ^ 2)⁻¹) * (s ^ 2 + 3 * (s ^ 2)⁻¹)
+            - 2 * (s ^ 2)⁻¹ * (2 * s ^ 2)) / Δ)) / (s + s⁻¹) := by
+        unfold neutronMass pairSkein
+        ring
+      rw [hl, mul_div_cancel_left₀ _ hD]
+    rw [h, hdet, div_self hden, mul_one]
+
 /-- **Statement of `prop:terminal-resolution`.** The splitting identity holds,
-and the nucleon map is injective. -/
+and the nucleon map is a bijection (injective and surjective). -/
 theorem terminal_resolution (s : K) (hs : s ≠ 0) (hD : s + s⁻¹ ≠ 0)
     (h2 : s ^ 2 + (s ^ 2)⁻¹ ≠ 0) (h3 : (3 : K) ≠ 0) :
     (∀ u d : K, neutronMass s u d - protonMass s u d
         = (s ^ 2 + (s ^ 2)⁻¹) * (d - u) / (s + s⁻¹)) ∧
     (∀ u d u' d' : K, protonMass s u d = protonMass s u' d' →
-        neutronMass s u d = neutronMass s u' d' → u = u' ∧ d = d') :=
+        neutronMass s u d = neutronMass s u' d' → u = u' ∧ d = d') ∧
+    (∀ P N : K, ∃ u d : K, protonMass s u d = P ∧ neutronMass s u d = N) :=
   ⟨neutron_sub_proton s, fun u d u' d' hp hn =>
-    injective s u d u' d' hs hD h2 h3 hp hn⟩
+    injective s u d u' d' hs hD h2 h3 hp hn,
+   fun P N => surjective s P N hs hD h2 h3⟩
 
 end QOU.MassTheory.PairSkeinNucleon
