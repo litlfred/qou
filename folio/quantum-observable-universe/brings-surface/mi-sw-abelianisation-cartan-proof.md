@@ -16,10 +16,10 @@ $$
   A^- \otimes E_-,
 $$
 
-where $H, E_\pm$ are the standard generators of $\mathfrak{su}(2)$.
+where $H, E_\pm$ are the standard generators of $\mathfrak{sl}_2(\mathbb{C}) = \mathfrak{su}(2) \otimes_{\mathbb{R}} \mathbb{C}$ (the decomposition uses the complexified form).
 The Cartan component $A^0$ is a $\mathrm{U}(1)$-valued $1$-form on
 $\mathcal{S}_c$.  Since $\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C})$ the spectral curve
 ([color bundles](#rem:color-bundles)) restricts to a single sheet, and the
 Higgs-field eigenvalue is the color coordinate $X$.  The abelian
 component therefore satisfies $A^0 = X\, dz = \lambda_{\mathrm{SW}}$,
-recovering the Seiberg--Witten differential.  $\square$
+recovering the Seiberg--Witten differential in the trivialising gauge; $A^0$ is gauge-dependent, so the identity is a statement in that gauge.  $\square$
