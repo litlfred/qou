@@ -71,7 +71,7 @@ def main() -> None:
 
     # 2. qou-9f4h: ProtonBorromeanAssembly.lean — 2 * mMu * fBor - protonMass = 12 * mE.
     m_mu = mp.mpf("105.6583755")
-    m_e = mp.mpf(M_E_MEV)  # CAL-1 from the registry (was 0.51099895000, truncated)
+    m_e = mp.mpf(M_E_MEV)  # CAL-1 from the registry (replaced a typed, truncated copy)
     f_bor = mp.mpf("4.4692623718")
     multiplicity = mp.mpf("2")
     binding_count = mp.mpf("6")

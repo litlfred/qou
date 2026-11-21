@@ -3300,7 +3300,7 @@ def binding_from_frobenius_pairing(Z, N, k_cap=None, *, canonical: bool = False)
     return E_0_CALIBRATION_MEV * (abs(free_tr) - abs(atom_tr))
 
 
-def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None):
+def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None, *, as_mpf=False):
     """Compute SDP-derived cross-channel energy contribution (MeV).
 
     Runs the SDP with atom observables over all active conjugate pairs
@@ -3314,13 +3314,22 @@ def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None):
     as the diagonal coupling.
 
     Returns total contribution (MeV) and per-pair breakdown.
+
+    `as_mpf=True` accumulates in mpf. The self-conjugate h/2 terms are then
+    exact algebra at the working precision (`_H_MP`, mpf `M_E_MEV`, mpf
+    Wedderburn weight). The cross-block couplings `c_ij` are the output of a
+    float64 conic solver (cvxpy / Clarabel), so their digits past the solver
+    tolerance carry no information; they are carried as `mpf(str(c))`, which
+    adds no error but cannot add precision either. Callers that serialise the
+    total must report that part separately (see `binding_energy(parts=...)`).
     """
+    zero = _mp.mpf(0) if as_mpf else 0.0
     if k_cap is None:
         k_cap = K_PARTITION_MAX
     try:
         from sdp_cross_channel import sdp_with_atom_observables
     except ImportError:
-        return 0.0, []
+        return zero, []
 
     active = [e for e in _PARTITION_TABLE
               if e.get('k', 0) <= k_cap
@@ -3350,17 +3359,19 @@ def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None):
         pair_couplings.append((i, j, h_val))
 
     if not active:
-        return 0.0, []
+        return zero, []
 
     sol = sdp_with_atom_observables(Z, N, active, pair_couplings)
     if sol.get('status') not in ('optimal', 'optimal_inaccurate'):
-        return 0.0, []
+        return zero, []
 
     # Sum |c_ij| across pairs, scale by m_e
-    total_mev = 0.0
+    total_mev = zero
     per_pair = []
     for cb in sol['cross_blocks']:
         c = cb['c_ij']
+        if as_mpf:
+            c = _mp.mpf(str(c))  # float64 solver output; see docstring
         contribution = M_E_MEV * abs(c)
         total_mev += contribution
         per_pair.append({
@@ -3368,21 +3379,24 @@ def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None):
             'lambda_j': cb['lambda_j'],
             'c_ij': c,
             'contribution_MeV': contribution,
+            'solver_limited': True,
         })
 
-    # Self-conjugate h/2 contribution (Wigner-2)
+    # Self-conjugate h/2 contribution (Wigner-2): exact algebra, so under
+    # as_mpf it uses the mpf h rather than the float64 solver input h_val.
+    h_term = _H_MP if as_mpf else h_val
     for i in self_conj_indices:
         e = active[i]
         mu = e['q_laplacian_eigenvalue']
         # Self-conj partition: effective coupling at Wigner-2 scale
         #   h/2 · w_λ · m_e (matches DELTA_W2 formula)
         w_lam = e['wedderburn_weight']
-        contribution = M_E_MEV * w_lam * h_val / 2.0
+        contribution = M_E_MEV * w_lam * h_term / 2
         total_mev += contribution
         per_pair.append({
             'lambda_i': list(e['partition']),
             'lambda_j': list(e['partition']),
-            'c_ij': h_val / 2.0,
+            'c_ij': h_term / 2,
             'self_conjugate': True,
             'contribution_MeV': contribution,
         })
@@ -3390,7 +3404,7 @@ def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None):
     return total_mev, per_pair
 
 
-def binding_energy(Z, N, *, sdp=True, frobenius=True, as_mpf=False):
+def binding_energy(Z, N, *, sdp=True, frobenius=True, as_mpf=False, parts=None):
     """Binding energy (MeV) via the categorical path.
 
     `as_mpf=True` returns the accumulated value as `mpf` instead of casting it
@@ -3408,11 +3422,21 @@ def binding_energy(Z, N, *, sdp=True, frobenius=True, as_mpf=False):
     if A <= 1:
         return _mp.mpf(0) if as_mpf else 0.0
     B = unified_iterative_correction(Z, N, as_mpf=as_mpf)
+    if parts is not None:
+        parts['lp_shadow_MeV'] = B
     if sdp:
-        sdp_contrib, _ = sdp_cross_channel_contribution(Z, N)
+        sdp_contrib, per_pair = sdp_cross_channel_contribution(Z, N, as_mpf=as_mpf)
         B += sdp_contrib
+        if parts is not None:
+            parts['sdp_MeV'] = sdp_contrib
+            parts['sdp_solver_limited_MeV'] = sum(
+                (p['contribution_MeV'] for p in per_pair if p.get('solver_limited')),
+                _mp.mpf(0) if as_mpf else 0.0)
     if frobenius:
-        B += binding_from_frobenius_pairing(Z, N)
+        fp = binding_from_frobenius_pairing(Z, N)
+        B += fp
+        if parts is not None:
+            parts['frobenius_MeV'] = fp
     # Public contract is a float, and has always been. The Rust kernel makes the
     # accumulator carry mpf internally, and an mpf reaching a witness raises
     # `TypeError: Object of type mpf is not JSON serializable` at
