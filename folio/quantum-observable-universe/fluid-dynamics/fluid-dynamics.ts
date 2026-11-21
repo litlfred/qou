@@ -127,6 +127,9 @@ export default chapter({
         "ns-obstruction",
         "ns-obstruction-spectral-gap",
         "ns-classical-formulation",
+        "blowup-regularity-as-lifting",
+        "blowup-local-cohomology-origin",
+        "blowup-topological-selection",
       ],
     }),
 
@@ -151,8 +154,6 @@ export default chapter({
         "reeb-beltrami-regular-flow",
         "reeb-beltrami-regular-flow-proof",
         "reeb-beltrami-regular-flow-scope",
-        "root-of-unity-truncation",
-        "root-of-unity-truncation-interpretation",
         // ── Observable MTC / anyons (Track B) ──────────────────────
         "observable-mtc",
         "observable-mtc-braiding",
@@ -185,6 +186,8 @@ export default chapter({
         "q-bkm-criterion-interpretation",
         "vorticity-lower-bound",
         "vorticity-lower-bound-argument",
+        "root-of-unity-truncation",
+        "root-of-unity-truncation-interpretation",
         "townsend-biot-savart-strain",
         "hyperbolic-overlap-saturation",
         "crow-approach-amplification",

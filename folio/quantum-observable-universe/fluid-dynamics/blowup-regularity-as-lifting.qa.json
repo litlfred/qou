@@ -3,8 +3,8 @@
   "label": "rem:blowup-regularity-as-lifting",
   "kind": "remark",
   "paths": {
-    "ts": "folio/quantum-observable-universe/lifting-and-descent/blowup-regularity-as-lifting.ts",
-    "md": "folio/quantum-observable-universe/lifting-and-descent/blowup-regularity-as-lifting.md"
+    "ts": "folio/quantum-observable-universe/fluid-dynamics/blowup-regularity-as-lifting.ts",
+    "md": "folio/quantum-observable-universe/fluid-dynamics/blowup-regularity-as-lifting.md"
   },
   "source_hashes": {
     "md": "d4880efe4e6e",
@@ -824,7 +824,7 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
-        "notes": "{\"regimes\":[\"real-gt-1\",\"real-positive\"],\"chapter\":\"lifting-and-descent\",\"expected\":[\"generic-R\",\"na\",\"symbolic\"]}"
+        "notes": "{\"regimes\":[\"real-gt-1\",\"real-positive\"],\"chapter\":\"fluid-dynamics\",\"expected\":[\"generic-R\",\"na\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
@@ -922,7 +922,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/lifting-and-descent/blowup-regularity-as-lifting.md:1 \u2014 detected regime [real-gt-1, real-positive] is disjoint from chapter 'lifting-and-descent' expected [generic-R, na, symbolic]"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/blowup-regularity-as-lifting.md:1 \u2014 detected regime [real-gt-1, real-positive] is disjoint from chapter 'lifting-and-descent' expected [generic-R, na, symbolic]"
       }
     ],
     "proof-no-trivial-skeleton": [
