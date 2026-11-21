@@ -72,9 +72,7 @@ $q_0$), so they are not yet Taylor-exact derivations. A near-match that
 beats the experimental target is a genuine result *and* not a
 derivation. The permanent
 upgrade is to identify the $\mathfrak{Q}_\beta$ **Habiro element** whose Taylor
-coefficients *are* the $c_k$ — the same machinery that made the $\alpha_{EM}$
-next-order factor $[2]_q(1-h^2\alpha)$ binomial-exact
-([additive Bring zero-mode form of $1/\alpha_{EM}$](#prop:em-coupling-bring-zero-mode)).
+coefficients *are* the $c_k$.
 
 ## canonical precision ladder
 

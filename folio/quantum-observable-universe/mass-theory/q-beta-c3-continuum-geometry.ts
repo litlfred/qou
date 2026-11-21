@@ -38,6 +38,7 @@ export default remark({
     validation: "leanok",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): [Borel–Padé extrapolation](#def:ecalle-borel-resummation)" },
     {
       kind: "note",
       date: "2026-08-15",

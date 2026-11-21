@@ -68,8 +68,7 @@ statements are consistent — which is the difficulty, because it leaves the
 two-body ordering with nothing to rescue it.
 
 The ordering result above constrains $L$, which is a free-energy difference;
-whether $B = \alpha L$ is a binding energy at all is the separate open claim in
-[the free-energy reading](#rem:bond-log-ratio-is-a-free-energy).
+whether $B = \alpha L$ is a binding energy at all is the separate open claim.
 
 ## What would have to change
 

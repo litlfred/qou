@@ -36,6 +36,10 @@ export default conjecture({
     "keystone",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated by the reading-order drain (qou-d4kh, owner ruling: every chapter strict), from text main added concurrently: $Z(H_n(q))$ (max hook of partition) is a **separate** filtration from the" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): — attributed here to\n  [Curvature-rank stratification of the GB spectral sequence](#prop:curvature-rank-gb-stratification),\n  though **that proposition stratifies by the curvature rank of *words* and\n  mentions no partition**; the max-hook statistic is\n  a definition, and the step joining them is\n  unestablished\n  —" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): See the\nexplicit canonical witness in\n[Bring figure-8 volume as depth-2 grouplike value (50-digit numerical witness)](#conj:bring-figure-eight-depth-2-witness)." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): This makes the *algebraic core survives*\nmechanism ([algebraic core survives](#rem:algebraic-core-survives))\ninto a quantitative statement: it survives **at the depth at which it\nlives**." },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): the max-hook statistic is `QOU.BraidKnot.gbDepth`, a definition" },
     {
       kind: "caveat",

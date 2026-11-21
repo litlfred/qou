@@ -21,11 +21,6 @@ the optimum is standard convex duality.
    $y_\lambda^\star \ge 0$ are exactly the per-block Frobenius-positivity
    duals of the LP/SDP witness contract.
 
-3. **The scalar LP is the diagonal restriction.** When every Wedderburn
-   block decouples (no off-diagonal pair constraint binds), the matrix
-   SDP collapses block-by-block to the
-   [confinement LP](#prop:confinement-lp), with equal primal/dual values.
-
 The result is conditional on the strict-feasibility (Slater) hypothesis,
 and the conic-duality step is cited from the standard theory rather than
 proved here. $\square$
