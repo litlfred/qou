@@ -87,12 +87,17 @@ structure BlockData (G : Type u) [DecidableEq G] (k : Type v) [CommRing k]
   π : G → G → MA G k
   /-- A letter exists. -/
   inhabited : Nonempty G
+  /-- The weight of each letter (the filtration degree). -/
+  wt : G → ℕ
   /-- The product of two letters of a block is a combination of the unit and
-      letters of that block. -/
+      letters of that block, of weight at most the sum of the weights. -/
   μ_short : ∀ a b, blk a = blk b → ∀ p ∈ (μ a b).support,
-    FreeMonoid.toList p = [] ∨ ∃ d, FreeMonoid.toList p = [d] ∧ blk d = blk a
-  /-- The order is degree-compatible: shorter words are smaller. -/
-  len_lt : ∀ x y : List G, x.length < y.length → ord.lt x y
+    FreeMonoid.toList p = [] ∨
+      ∃ d, FreeMonoid.toList p = [d] ∧ blk d = blk a ∧ wt d ≤ wt a + wt b
+  /-- The order refines the weight filtration: a shorter word of no larger total
+      weight is smaller. -/
+  lt_of_wt : ∀ x y : List G, (x.map wt).sum ≤ (y.map wt).sum → x.length < y.length →
+    ord.lt x y
   /-- Across blocks the swapped word is smaller (`x ≪ x'` for `blk x < blk x'`). -/
   swap_lt : ∀ a b, blk b < blk a → ord.lt [b, a] [a, b]
   /-- **Strong filtration**: every monomial of `π(a, b)` is below `a b`. -/
@@ -131,10 +136,9 @@ theorem R_lt (p : G × G) (hp : D.blk p.2 ≤ D.blk p.1) (w : FreeMonoid G)
       rw [this, FreeMonoid.toList_ofList]; exact D.swap_lt _ _ h
     · exact D.π_lt _ _ h w h1
   · rw [D.R_same h.symm] at hw
-    apply D.len_lt
-    rcases D.μ_short _ _ h.symm w hw with h0 | ⟨d, hd, -⟩
-    · simp [h0]
-    · simp [hd]
+    rcases D.μ_short _ _ h.symm w hw with h0 | ⟨d, hd, -, hwd⟩
+    · rw [h0]; exact D.lt_of_wt _ _ (by simp) (by simp)
+    · rw [hd]; exact D.lt_of_wt _ _ (by simpa using hwd) (by simp)
 
 /-- The quadratic data of a block splay: every pair `(a, b)` with `blk b ≤ blk a`
     carries a rule. -/
@@ -156,26 +160,29 @@ theorem jm {v : Monomial G} {a b : G} (h : D.blk b ≤ D.blk a) (x y : Monomial 
     JM ord D.quad.sys v (ofW x * (ofW [a, b] - D.R a b) * ofW y) :=
   D.quad.jm_rule ⟨(a, b), h⟩ x y hlt
 
-/-- A rule on a word of length two lies in `JM v` for any `v` of length three. -/
-theorem jm2 {v : Monomial G} (hv : v.length = 3) {a b : G} (h : D.blk b ≤ D.blk a) :
+/-- A rule on a word of length two lies in `JM v` for any `v` of length three and
+    no smaller weight. -/
+theorem jm2 {v : Monomial G} (hv : v.length = 3) {a b : G} (h : D.blk b ≤ D.blk a)
+    (hw : D.wt a + D.wt b ≤ (v.map D.wt).sum) :
     JM ord D.quad.sys v (ofW [a, b] - D.R a b) := by
-  have := D.jm (v := v) h [] [] (D.len_lt _ _ (by simp [hv]))
+  have := D.jm (v := v) h [] [] (D.lt_of_wt _ _ (by simpa using hw) (by simp [hv]))
   simpa [ofW_nil] using this
 
 /-! ## Moving a letter past an element of a block -/
 
-/-- `F` is a combination of the unit and letters of the block `B`. -/
-def Short (B : ι) (F : MA G k) : Prop :=
-  ∀ p ∈ F.support, FreeMonoid.toList p = [] ∨ ∃ d, FreeMonoid.toList p = [d] ∧ D.blk d = B
+/-- `F` is a combination of the unit and letters of the block `B` of weight at most `n`. -/
+def Short (B : ι) (n : ℕ) (F : MA G k) : Prop :=
+  ∀ p ∈ F.support, FreeMonoid.toList p = [] ∨
+    ∃ d, FreeMonoid.toList p = [d] ∧ D.blk d = B ∧ D.wt d ≤ n
 
-theorem jm_termSum {v : Monomial G} {B : ι} {F : MA G k} (hF : D.Short B F)
+theorem jm_termSum {v : Monomial G} {B : ι} {n : ℕ} {F : MA G k} (hF : D.Short B n F)
     (Φ : List G → MA G k) (h0 : JM ord D.quad.sys v (Φ []))
-    (h1 : ∀ d, D.blk d = B → JM ord D.quad.sys v (Φ [d])) :
+    (h1 : ∀ d, D.blk d = B → D.wt d ≤ n → JM ord D.quad.sys v (Φ [d])) :
     JM ord D.quad.sys v (termSum F Φ) := by
   refine JM.sum _ _ (fun p hp => JM.smul _ ?_)
-  rcases hF p hp with h | ⟨d, hd, hb⟩
+  rcases hF p hp with h | ⟨d, hd, hb, hw⟩
   · rw [h]; exact h0
-  · rw [hd]; exact h1 d hb
+  · rw [hd]; exact h1 d hb hw
 
 /-- Left multiplication within a block: `a F ≡ M_a(F)`. -/
 noncomputable def leftMul (a : G) (F : MA G k) : MA G k :=
@@ -193,27 +200,29 @@ noncomputable def commR (c : G) (F : MA G k) : MA G k :=
 noncomputable def commL (a : G) (F : MA G k) : MA G k :=
   termSum F (onShort 0 (fun d => D.π a d))
 
-theorem leftMul_jm {v : Monomial G} (hv : v.length = 3) {a : G} {F : MA G k}
-    (hF : D.Short (D.blk a) F) : JM ord D.quad.sys v (ofW [a] * F - D.leftMul a F) := by
+theorem leftMul_jm {v : Monomial G} (hv : v.length = 3) {a : G} {n : ℕ} {F : MA G k}
+    (hF : D.Short (D.blk a) n F) (hn : D.wt a + n ≤ (v.map D.wt).sum) :
+    JM ord D.quad.sys v (ofW [a] * F - D.leftMul a F) := by
   rw [leftMul, ← termSum_left, termSum_sub]
-  refine D.jm_termSum hF _ (by simpa [onShort] using JM.zero) (fun d hd => ?_)
-  have := D.jm2 hv (a := a) (b := d) hd.le
+  refine D.jm_termSum hF _ (by simpa [onShort] using JM.zero) (fun d hd hw => ?_)
+  have := D.jm2 hv (a := a) (b := d) hd.le (by omega)
   simpa [onShort, D.R_same hd.symm] using this
 
-theorem rightMul_jm {v : Monomial G} (hv : v.length = 3) {c : G} {F : MA G k}
-    (hF : D.Short (D.blk c) F) : JM ord D.quad.sys v (F * ofW [c] - D.rightMul c F) := by
+theorem rightMul_jm {v : Monomial G} (hv : v.length = 3) {c : G} {n : ℕ} {F : MA G k}
+    (hF : D.Short (D.blk c) n F) (hn : n + D.wt c ≤ (v.map D.wt).sum) :
+    JM ord D.quad.sys v (F * ofW [c] - D.rightMul c F) := by
   rw [rightMul, ← termSum_right, termSum_sub]
-  refine D.jm_termSum hF _ (by simpa [onShort] using JM.zero) (fun d hd => ?_)
-  have := D.jm2 hv (a := d) (b := c) hd.ge
+  refine D.jm_termSum hF _ (by simpa [onShort] using JM.zero) (fun d hd hw => ?_)
+  have := D.jm2 hv (a := d) (b := c) hd.ge (by omega)
   simpa [onShort, D.R_same hd] using this
 
 theorem commR_jm {v : Monomial G} (hv : v.length = 3) {c : G} {B : ι} (hB : D.blk c < B)
-    {F : MA G k} (hF : D.Short B F) :
+    {n : ℕ} {F : MA G k} (hF : D.Short B n F) (hn : n + D.wt c ≤ (v.map D.wt).sum) :
     JM ord D.quad.sys v (F * ofW [c] - ofW [c] * F - D.commR c F) := by
   rw [commR, ← termSum_left, ← termSum_right, termSum_sub, termSum_sub]
-  refine D.jm_termSum hF _ (by simpa [onShort] using JM.zero) (fun d hd => ?_)
+  refine D.jm_termSum hF _ (by simpa [onShort] using JM.zero) (fun d hd hw => ?_)
   have hlt : D.blk c < D.blk d := hd ▸ hB
-  have := D.jm2 hv (a := d) (b := c) hlt.le
+  have := D.jm2 hv (a := d) (b := c) hlt.le (by omega)
   rw [D.R_cross hlt] at this
   have e : ofW ([d] ++ [c]) - ofW ([c] ++ [d]) - onShort 0 (fun d => D.π d c) [d] =
       ofW [d, c] - (ofW [c, d] + D.π d c) := by simp [onShort]; abel
@@ -221,19 +230,20 @@ theorem commR_jm {v : Monomial G} (hv : v.length = 3) {c : G} {B : ι} (hB : D.b
   rw [e]; exact this
 
 theorem commL_jm {v : Monomial G} (hv : v.length = 3) {a : G} {B : ι} (hB : B < D.blk a)
-    {F : MA G k} (hF : D.Short B F) :
+    {n : ℕ} {F : MA G k} (hF : D.Short B n F) (hn : D.wt a + n ≤ (v.map D.wt).sum) :
     JM ord D.quad.sys v (ofW [a] * F - F * ofW [a] - D.commL a F) := by
   rw [commL, ← termSum_left, ← termSum_right, termSum_sub, termSum_sub]
-  refine D.jm_termSum hF _ (by simpa [onShort] using JM.zero) (fun d hd => ?_)
+  refine D.jm_termSum hF _ (by simpa [onShort] using JM.zero) (fun d hd hw => ?_)
   have hlt : D.blk d < D.blk a := hd ▸ hB
-  have := D.jm2 hv (a := a) (b := d) hlt.le
+  have := D.jm2 hv (a := a) (b := d) hlt.le (by omega)
   rw [D.R_cross hlt] at this
   have e : ofW ([a] ++ [d]) - ofW ([d] ++ [a]) - onShort 0 (fun d => D.π a d) [d] =
       ofW [a, d] - (ofW [d, a] + D.π a d) := by simp [onShort]; abel
   simp only at e ⊢
   rw [e]; exact this
 
-theorem short_μ {a b : G} (h : D.blk a = D.blk b) : D.Short (D.blk a) (D.μ a b) :=
+theorem short_μ {a b : G} (h : D.blk a = D.blk b) :
+    D.Short (D.blk a) (D.wt a + D.wt b) (D.μ a b) :=
   D.μ_short a b h
 
 /-! ## The four ambiguity shapes -/
@@ -269,9 +279,9 @@ theorem overlap_same (a b c : G) (hab : D.blk a = D.blk b) (hbc : D.blk b = D.bl
     JM ord D.quad.sys [a, b, c]
       (D.quad.overlapElt a b c - (D.leftMul a (D.μ b c) - D.rightMul c (D.μ a b))) := by
   have h1 := D.leftMul_jm (v := [a, b, c]) rfl (a := a) (F := D.μ b c)
-    (by rw [hab]; exact D.short_μ hbc)
+    (by rw [hab]; exact D.short_μ hbc) (by simp)
   have h2 := D.rightMul_jm (v := [a, b, c]) rfl (c := c) (F := D.μ a b)
-    (by rw [← hbc, ← hab]; exact D.short_μ hab)
+    (by rw [← hbc, ← hab]; exact D.short_μ hab) (by simp; omega)
   have e : D.quad.overlapElt a b c - (D.leftMul a (D.μ b c) - D.rightMul c (D.μ a b)) =
       (ofW [a] * D.μ b c - D.leftMul a (D.μ b c)) - (D.μ a b * ofW [c] - D.rightMul c (D.μ a b)) := by
     simp only [QuadData.overlapElt, quad, D.R_same hbc, D.R_same hab]; abel
@@ -287,6 +297,7 @@ theorem overlap_right (a b c : G) (hab : D.blk a = D.blk b) (hcb : D.blk c < D.b
     (ord.lt_trans (by simpa using compat (ord := ord) [] [b] (D.swap_lt _ _ hca))
       (by simpa using compat (ord := ord) [a] [] (D.swap_lt _ _ hcb)))
   have g3 := D.commR_jm (v := [a, b, c]) rfl (c := c) (B := D.blk a) hca (D.short_μ hab)
+    (by simp; omega)
   rw [D.R_cross hca] at g1
   rw [D.R_same hab] at g2
   simp only [ofW_nil, one_mul, mul_one] at g1 g2
@@ -308,6 +319,7 @@ theorem overlap_left (a b c : G) (hba : D.blk b < D.blk a) (hbc : D.blk b = D.bl
   have g2 := D.jm (v := [a, b, c]) hbc.ge [] [a]
     (ord.lt_trans (by simpa using compat (ord := ord) [b] [] (D.swap_lt _ _ hca)) h1)
   have g3 := D.commL_jm (v := [a, b, c]) rfl (a := a) (B := D.blk b) hba (D.short_μ hbc)
+    (by simp)
   rw [D.R_cross hca] at g1
   rw [D.R_same hbc] at g2
   simp only [ofW_nil, one_mul, mul_one] at g1 g2

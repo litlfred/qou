@@ -15,6 +15,7 @@ import UGB.GrobnerShirshov.SplayPBW
 import UGB.GrobnerShirshov.LiePBW
 import UGB.GrobnerShirshov.QuadraticPBW
 import UGB.GrobnerShirshov.BlockSplayPBW
+import UGB.GrobnerShirshov.FilteredSplayPBW
 
 /-!
 # Gröbner–Shirshov Bases — Module Root
