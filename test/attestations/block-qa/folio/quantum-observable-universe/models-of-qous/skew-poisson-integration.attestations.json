@@ -1,0 +1,1345 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/models-of-qous/skew-poisson-integration",
+    "path": "folio/quantum-observable-universe/models-of-qous/skew-poisson-integration"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "9fb37454c72b",
+          "ts": "f938bff0d03a",
+          "lean": "645004a8382c"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "752a7b90f6a6",
+          "ts": "a34987fbdcf5",
+          "lean": "dea0a5463627",
+          "lean_statement": "ee9adc72899c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Re-review after #8888 commit 5e50a2e4 (C17): the three claim fields of SkewPoissonIntegrationContext deleted; library skew_poisson_integration now sorry with -- Ref: [fred2005] (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. Declarative scholarly register."
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "9fb37454c72b",
+          "ts": "f938bff0d03a",
+          "lean": "645004a8382c"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "752a7b90f6a6",
+          "ts": "a34987fbdcf5",
+          "lean": "dea0a5463627",
+          "lean_statement": "ee9adc72899c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Re-review after #8888 commit 5e50a2e4 (C17): the three claim fields of SkewPoissonIntegrationContext deleted; library skew_poisson_integration now sorry with -- Ref: [fred2005] (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. No filler, hype or stock AI phrasing."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "9fb37454c72b",
+          "ts": "f938bff0d03a",
+          "lean": "645004a8382c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.406038Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.406038Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "752a7b90f6a6",
+          "ts": "a34987fbdcf5",
+          "lean": "dea0a5463627",
+          "lean_statement": "ee9adc72899c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Re-review after #8888 commit 5e50a2e4 (C17): the three claim fields of SkewPoissonIntegrationContext deleted; library skew_poisson_integration now sorry with -- Ref: [fred2005] (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. The statement carries the claim; no interpretive asides."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "9fb37454c72b",
+          "ts": "f938bff0d03a",
+          "lean": "645004a8382c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.406038Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.406038Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "9fb37454c72b",
+          "ts": "f938bff0d03a",
+          "lean": "645004a8382c"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "752a7b90f6a6",
+          "ts": "a34987fbdcf5",
+          "lean": "dea0a5463627",
+          "lean_statement": "ee9adc72899c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Re-review after #8888 commit 5e50a2e4 (C17): the three claim fields of SkewPoissonIntegrationContext deleted; library skew_poisson_integration now sorry with -- Ref: [fred2005] (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. Placement unchanged and fits the section."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "9fb37454c72b",
+          "ts": "f938bff0d03a",
+          "lean": "645004a8382c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.406038Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.406038Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "752a7b90f6a6",
+          "ts": "a34987fbdcf5",
+          "lean": "dea0a5463627",
+          "lean_statement": "ee9adc72899c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Re-review after #8888 commit 5e50a2e4 (C17): the three claim fields of SkewPoissonIntegrationContext deleted; library skew_poisson_integration now sorry with -- Ref: [fred2005] (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. Wall side of the statement unchanged by this edit."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "9fb37454c72b",
+          "ts": "f938bff0d03a",
+          "lean": "645004a8382c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.406038Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.406038Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "752a7b90f6a6",
+          "ts": "a34987fbdcf5",
+          "lean": "dea0a5463627",
+          "lean_statement": "ee9adc72899c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Re-review after #8888 commit 5e50a2e4 (C17): the three claim fields of SkewPoissonIntegrationContext deleted; library skew_poisson_integration now sorry with -- Ref: [fred2005] (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. Wall side of the proof unchanged by this edit."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "a24e1ab70bba",
+          "ts": "f938bff0d03a",
+          "lean": "dea0a5463627"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:06.914Z",
+        "reviewed_sha": "5d7f0ff2443bce339f18629dcc1e386fd754720f",
+        "severity": "major",
+        "evidence": "Lean: `ctx.claim_i/ii/iii` projected from a context class (self-assuming). Statement item 2 asks the Hopf comultiplication of Dist(G) to satisfy the *Frobenius* relation (Id⊗m)(Δ⊗Id) = Δ∘m. That fails for any Hopf algebra with a nonzero primitive x: put a = 1, b = x; LHS = 1⊗x, RHS = Δx = x⊗1 + 1⊗x. \"Strong multiplicativity\" (Δ an algebra map) is a different identity. Proof: one-paragraph citation of \"the Main Theorem of Fresse\" with no bibliographic key, and it numbers three items (1)(2)(3) against a statement with two; item (3)'s \"p-adic filtration\" text uses an undefined macro `\\pp`",
+        "notes": "Hand review 2026-11-15 (statement vs Lean); issue #8020. "
+      },
+      {
+        "field_hash": {
+          "md": "752a7b90f6a6",
+          "ts": "f938bff0d03a",
+          "lean": "dea0a5463627",
+          "lean_statement": "ee9adc72899c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:58:01.763Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: voice only. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Lean: `ctx.claim_i/ii/iii` projected from a context class (self-assuming). Statement item 2 asks the Hopf comultiplication of Dist(G) to satisfy the *Frobenius* relation (Id⊗m)(Δ⊗Id) = Δ∘m. That fails for any Hopf algebra with a nonzero primitive x: put a = 1, b = x; LHS = 1⊗x, RHS = Δx = x⊗1 + 1⊗x. \"Strong multiplicativity\" (Δ an algebra map) is a different identity. Proof: one-paragraph citation of \"the Main Theorem of Fresse\" with no bibliographic key, and it numbers three items (1)(2)(3) against a statement with two; item (3)'s \"p-adic filtration\" text uses an undefined macro `\\pp`"
+      },
+      {
+        "field_hash": {
+          "md": "752a7b90f6a6",
+          "ts": "a34987fbdcf5",
+          "lean": "dea0a5463627",
+          "lean_statement": "ee9adc72899c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Re-review after #8888 commit 5e50a2e4 (C17): the three claim fields of SkewPoissonIntegrationContext deleted; library skew_poisson_integration now sorry with -- Ref: [fred2005] (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. Self-assuming projection removed. The library context is opaque types and maps with no formal-group, Dist or deformation structure, so the sorry cannot be discharged as stated (the docstring and authorNote say so). .md item 2 still calls the bialgebra compatibility \"the Frobenius relation (Id(x)m)(Delta(x)Id) = Delta m\", which fails for any Hopf algebra with a nonzero primitive (a = 1, b = x); the new authorNote flags this but the .md is unchanged. The content-block sibling skew-poisson-integration.lean holds unrelated arithmetic lemmas, not this claim.",
+        "severity": "major"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9fb37454c72b",
+          "ts": "f938bff0d03a",
+          "lean": "645004a8382c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.406038Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.406038Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The claim in 'Integration of skewed-Poisson structures' is unverified due to Lean compilation failures in sibling file.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9fb37454c72b",
+          "ts": "f938bff0d03a",
+          "lean": "645004a8382c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.406038Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.406038Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The block 'Integration of skewed-Poisson structures' presents substantial mathematical content: Let $H/\\mathbb{F}_\\pp$ be a smooth commutative formal group and $\\pi_<$ a skewed...",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9fb37454c72b",
+          "ts": "f938bff0d03a",
+          "lean": "645004a8382c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.406038Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.406038Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Integration of skewed-Poisson structures'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/models-of-qous/skew-poisson-integration.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9fb37454c72b",
+          "ts": "f938bff0d03a",
+          "lean": "645004a8382c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.406038Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.406038Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The prose presents 'Integration of skewed-Poisson structures' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor",
+        "evidence": "The prose presents 'Integration of skewed-Poisson structures' as verified, but the sibling Lean file fails to compile."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9fb37454c72b",
+          "ts": "f938bff0d03a",
+          "lean": "645004a8382c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.406038Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.406038Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Integration of skewed-Poisson structures'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/models-of-qous/skew-poisson-integration.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9fb37454c72b",
+          "ts": "f938bff0d03a",
+          "lean": "645004a8382c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.406038Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.406038Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9fb37454c72b",
+          "ts": "f938bff0d03a",
+          "lean": "645004a8382c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.406038Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.406038Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling folio/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor",
+        "evidence": "The Lean sibling folio/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean fails compilation, causing divergence from the narrative."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9fb37454c72b",
+          "ts": "f938bff0d03a",
+          "lean": "645004a8382c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.406038Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.406038Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No citations are present in 'Integration of skewed-Poisson structures', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/models-of-qous/skew-poisson-integration.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9fb37454c72b",
+          "ts": "f938bff0d03a",
+          "lean": "645004a8382c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.406038Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.406038Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'Integration of skewed-Poisson structures' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/models-of-qous/skew-poisson-integration.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9fb37454c72b",
+          "ts": "f938bff0d03a",
+          "lean": "645004a8382c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.406038Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.406038Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The algebraic and logical relations in 'Integration of skewed-Poisson structures' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/models-of-qous/skew-poisson-integration.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9fb37454c72b",
+          "ts": "f938bff0d03a",
+          "lean": "645004a8382c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.406038Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.406038Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Integration of skewed-Poisson structures' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/models-of-qous/skew-poisson-integration.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9fb37454c72b",
+          "ts": "f938bff0d03a",
+          "lean": "645004a8382c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.406038Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.406038Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling folio/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean:1 — folio/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean:38:12: error(lean.unknownIdentifier): Unknown constant `Nat.Prime`"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9fb37454c72b",
+          "ts": "f938bff0d03a",
+          "lean": "645004a8382c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.406038Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.406038Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean fails compilation: folio/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean:38:12: error(lean.unknownIdentifier): Unknown constant `Nat.Prime`",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean contains compilation errors: folio/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean:38:12: error(lean.unknownIdentifier): Unknown constant `Nat.Prime`, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean fails compilation: folio/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean:38:12: error(lean.unknownIdentifier): Unknown constant `Nat.Prime`"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Simplified back-references, standardized formatting, economy of words.",
+        "reviewed_at": "2026-07-07T14:26:55.406038Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.406038Z"
+        },
+        "field_hash": {
+          "md": "9fb37454c72b",
+          "ts": "f938bff0d03a",
+          "lean": "645004a8382c"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "752a7b90f6a6",
+          "ts": "a34987fbdcf5",
+          "lean": "dea0a5463627",
+          "lean_statement": "ee9adc72899c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Re-review after #8888 commit 5e50a2e4 (C17): the three claim fields of SkewPoissonIntegrationContext deleted; library skew_poisson_integration now sorry with -- Ref: [fred2005] (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. Flow of the block unchanged in structure; the edit adds scope text in place."
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "a24e1ab70bba",
+          "ts": "f938bff0d03a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:11.632Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proposition, ~0.9kB). The Frobenius relation (Id x m)(Delta x Id) = Delta m is correctly stated, and the two numbered items are the two halves of the integration claim. All ten categories clean. Its proof block's defects are recorded there."
+      },
+      {
+        "field_hash": {
+          "md": "752a7b90f6a6",
+          "ts": "a34987fbdcf5",
+          "lean": "dea0a5463627",
+          "lean_statement": "ee9adc72899c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Re-review after #8888 commit 5e50a2e4 (C17): the three claim fields of SkewPoissonIntegrationContext deleted; library skew_poisson_integration now sorry with -- Ref: [fred2005] (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. No instance of this pattern."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "a24e1ab70bba",
+          "ts": "f938bff0d03a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:11.669Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proposition, ~0.9kB). The Frobenius relation (Id x m)(Delta x Id) = Delta m is correctly stated, and the two numbered items are the two halves of the integration claim. All ten categories clean. Its proof block's defects are recorded there."
+      },
+      {
+        "field_hash": {
+          "md": "752a7b90f6a6",
+          "ts": "a34987fbdcf5",
+          "lean": "dea0a5463627",
+          "lean_statement": "ee9adc72899c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Re-review after #8888 commit 5e50a2e4 (C17): the three claim fields of SkewPoissonIntegrationContext deleted; library skew_poisson_integration now sorry with -- Ref: [fred2005] (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. No instance of this pattern."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "a24e1ab70bba",
+          "ts": "f938bff0d03a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:11.706Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proposition, ~0.9kB). The Frobenius relation (Id x m)(Delta x Id) = Delta m is correctly stated, and the two numbered items are the two halves of the integration claim. All ten categories clean. Its proof block's defects are recorded there."
+      },
+      {
+        "field_hash": {
+          "md": "752a7b90f6a6",
+          "ts": "a34987fbdcf5",
+          "lean": "dea0a5463627",
+          "lean_statement": "ee9adc72899c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Re-review after #8888 commit 5e50a2e4 (C17): the three claim fields of SkewPoissonIntegrationContext deleted; library skew_poisson_integration now sorry with -- Ref: [fred2005] (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. No instance of this pattern."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "a24e1ab70bba",
+          "ts": "f938bff0d03a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:11.743Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proposition, ~0.9kB). The Frobenius relation (Id x m)(Delta x Id) = Delta m is correctly stated, and the two numbered items are the two halves of the integration claim. All ten categories clean. Its proof block's defects are recorded there."
+      },
+      {
+        "field_hash": {
+          "md": "752a7b90f6a6",
+          "ts": "a34987fbdcf5",
+          "lean": "dea0a5463627",
+          "lean_statement": "ee9adc72899c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Re-review after #8888 commit 5e50a2e4 (C17): the three claim fields of SkewPoissonIntegrationContext deleted; library skew_poisson_integration now sorry with -- Ref: [fred2005] (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. No instance of this pattern."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "a24e1ab70bba",
+          "ts": "f938bff0d03a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:11.781Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proposition, ~0.9kB). The Frobenius relation (Id x m)(Delta x Id) = Delta m is correctly stated, and the two numbered items are the two halves of the integration claim. All ten categories clean. Its proof block's defects are recorded there."
+      },
+      {
+        "field_hash": {
+          "md": "752a7b90f6a6",
+          "ts": "a34987fbdcf5",
+          "lean": "dea0a5463627",
+          "lean_statement": "ee9adc72899c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Re-review after #8888 commit 5e50a2e4 (C17): the three claim fields of SkewPoissonIntegrationContext deleted; library skew_poisson_integration now sorry with -- Ref: [fred2005] (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. No instance of this pattern."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "a24e1ab70bba",
+          "ts": "f938bff0d03a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:11.819Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proposition, ~0.9kB). The Frobenius relation (Id x m)(Delta x Id) = Delta m is correctly stated, and the two numbered items are the two halves of the integration claim. All ten categories clean. Its proof block's defects are recorded there."
+      },
+      {
+        "field_hash": {
+          "md": "752a7b90f6a6",
+          "ts": "a34987fbdcf5",
+          "lean": "dea0a5463627",
+          "lean_statement": "ee9adc72899c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Re-review after #8888 commit 5e50a2e4 (C17): the three claim fields of SkewPoissonIntegrationContext deleted; library skew_poisson_integration now sorry with -- Ref: [fred2005] (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. No instance of this pattern."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "a24e1ab70bba",
+          "ts": "f938bff0d03a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:11.856Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proposition, ~0.9kB). The Frobenius relation (Id x m)(Delta x Id) = Delta m is correctly stated, and the two numbered items are the two halves of the integration claim. All ten categories clean. Its proof block's defects are recorded there."
+      },
+      {
+        "field_hash": {
+          "md": "752a7b90f6a6",
+          "ts": "a34987fbdcf5",
+          "lean": "dea0a5463627",
+          "lean_statement": "ee9adc72899c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Re-review after #8888 commit 5e50a2e4 (C17): the three claim fields of SkewPoissonIntegrationContext deleted; library skew_poisson_integration now sorry with -- Ref: [fred2005] (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. No instance of this pattern."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "a24e1ab70bba",
+          "ts": "f938bff0d03a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:11.893Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proposition, ~0.9kB). The Frobenius relation (Id x m)(Delta x Id) = Delta m is correctly stated, and the two numbered items are the two halves of the integration claim. All ten categories clean. Its proof block's defects are recorded there."
+      },
+      {
+        "field_hash": {
+          "md": "752a7b90f6a6",
+          "ts": "a34987fbdcf5",
+          "lean": "dea0a5463627",
+          "lean_statement": "ee9adc72899c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Re-review after #8888 commit 5e50a2e4 (C17): the three claim fields of SkewPoissonIntegrationContext deleted; library skew_poisson_integration now sorry with -- Ref: [fred2005] (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. No instance of this pattern."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "a24e1ab70bba",
+          "ts": "f938bff0d03a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:11.931Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proposition, ~0.9kB). The Frobenius relation (Id x m)(Delta x Id) = Delta m is correctly stated, and the two numbered items are the two halves of the integration claim. All ten categories clean. Its proof block's defects are recorded there."
+      },
+      {
+        "field_hash": {
+          "md": "752a7b90f6a6",
+          "ts": "a34987fbdcf5",
+          "lean": "dea0a5463627",
+          "lean_statement": "ee9adc72899c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Re-review after #8888 commit 5e50a2e4 (C17): the three claim fields of SkewPoissonIntegrationContext deleted; library skew_poisson_integration now sorry with -- Ref: [fred2005] (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. No instance of this pattern."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "a24e1ab70bba",
+          "ts": "f938bff0d03a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:11.971Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proposition, ~0.9kB). The Frobenius relation (Id x m)(Delta x Id) = Delta m is correctly stated, and the two numbered items are the two halves of the integration claim. All ten categories clean. Its proof block's defects are recorded there."
+      },
+      {
+        "field_hash": {
+          "md": "752a7b90f6a6",
+          "ts": "a34987fbdcf5",
+          "lean": "dea0a5463627",
+          "lean_statement": "ee9adc72899c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Re-review after #8888 commit 5e50a2e4 (C17): the three claim fields of SkewPoissonIntegrationContext deleted; library skew_poisson_integration now sorry with -- Ref: [fred2005] (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. No instance of this pattern."
+      }
+    ]
+  }
+}
