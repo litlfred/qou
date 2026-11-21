@@ -43,7 +43,5 @@ export default conjecture({
     "kazhdan-lusztig",
     "bar-involution",
     "modified-trace",
-    "working-conjecture",
-    "open-problem",
   ],
 });
