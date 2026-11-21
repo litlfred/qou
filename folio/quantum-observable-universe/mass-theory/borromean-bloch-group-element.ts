@@ -21,6 +21,7 @@ export default conjecture({
     "suslin1991",
     "zagier1986",
     "kashaev1997",
+    "kegel2024",
   ],
   tags: [
     "bloch-group",
