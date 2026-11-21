@@ -495,7 +495,7 @@
 | [prop:skein-crossing-asymmetry](#prop:skein-crossing-asymmetry) | Crossing asymmetry and per-crossing Coulomb correction | Ch 10 |
 | [prop:crossing-energy-decomposition](#prop:crossing-energy-decomposition) | Crossing energy decomposes into strong and Coulomb channels | Ch 15 |
 | [prop:strangelet-crossing-energy](#prop:strangelet-crossing-energy) | Crossing energy of strange quark matter is purely strong | Ch 15 |
-| [prop:crystal-r-matrix-sub-lemma](#prop:crystal-r-matrix-sub-lemma) | Crystal R-matrix Sub-lemma 2.1 (operator-valued) | Ch 11 |
+| [prop:crystal-r-matrix-sub-lemma](#prop:crystal-r-matrix-sub-lemma) | Crystal R-matrix Sub-lemma 2.1: pole order of the seminormal diagonal entry | Ch 11 |
 | [prop:crystal-basis-resolves-mass-tower-open-problems](#prop:crystal-basis-resolves-mass-tower-open-problems) | Crystal-basis correspondence (Brundan-Kleshchev + Type-B folding) reduces three mass-tower open problems to crystal-graph combinatorics | Ch 11 |
 | [prop:crystal-isospin-degeneracy](#prop:crystal-isospin-degeneracy) | Crystal-limit isospin degeneracy: $S_{\mathrm{crystal}}$ is invariant under $\sigma_i \leftrightarrow \sigma_i^{-1}$ | Ch 11 |
 | [prop:cusp-shape-bar-parity](#prop:cusp-shape-bar-parity) | Cusp-shape bar-parity: the figure-eight modulus splits as $\mathfrak{V} = \mathrm{Vol} + i\,\mathrm{CS}$ | Ch 5 |
