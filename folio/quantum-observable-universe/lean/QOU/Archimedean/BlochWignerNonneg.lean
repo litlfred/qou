@@ -69,6 +69,6 @@ The general nonnegativity that `ManifoldVolumeBridge` declined to assume as a cl
 field.  Note this is the **non-strict** statement — see the module header for why
 strictness does not follow from the same argument. -/
 theorem blochWigner_lob_nonneg {z : ℂ} (hz : 0 < z.im) : 0 ≤ BlochWigner_lob z :=
-  volume_nonneg ⟨z, hz⟩
+  volume_nonneg (.ofIm z hz)
 
 end QOU.Archimedean.BlochWignerNonneg
