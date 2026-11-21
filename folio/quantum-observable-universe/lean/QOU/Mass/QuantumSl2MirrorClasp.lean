@@ -360,4 +360,111 @@ theorem mirrorTerm_eq_vdvTerm (hq2 : s ^ 2 - (s ^ 2)⁻¹ ≠ 0) (m j c : ℕ) (
 
 end MirrorEntry
 
+/-! ### The mirror clasp is scalar on each summand -/
+
+section MirrorEigen
+
+variable (s : 𝕜) (hs : s ≠ 0) (m : ℕ)
+
+/-- **The mirror clasp** `(cap ⊗ 1 ⊗ 1)(1 ⊗ M⁻¹ ⊗ 1)(1 ⊗ 1 ⊗ cup)` on `V_{m+1} ⊗ V_{m+1}`,
+with `M⁻¹` written as `D P M(s⁻¹) P D⁻¹`. -/
+def claspBar : Matrix (Fin (m + 1) × Fin (m + 1)) (Fin (m + 1) × Fin (m + 1)) 𝕜 :=
+  claspWith (s ^ 2) m (monoBar s hs m)
+
+theorem monoBar_grade (x y : Fin (m + 1) × Fin (m + 1)) (h : (x.1 : ℕ) + x.2 ≠ y.1 + y.2) :
+    monoBar s hs m x y = 0 := by
+  unfold monoBar conjM
+  rw [mono_grade s⁻¹ (inv_ne_zero hs) m m x.swap y.swap
+    (by simp only [Prod.fst_swap, Prod.snd_swap]; omega), mul_zero]
+
+variable (hq2 : s ^ 2 - (s ^ 2)⁻¹ ≠ 0) (hint : ∀ i, 0 < i → i ≤ 2 * m → qint (s ^ 2) i ≠ 0)
+
+include hq2 hint in
+/-- The mirror clasp is the clasp with `M⁻¹` in the middle. -/
+theorem claspBar_eq : claspBar s hs m = claspWith (s ^ 2) m (mono s hs m m)⁻¹ := by
+  rw [monoBar_eq_inv s hs m hq2 hint]; rfl
+
+include hq2 hint in
+/-- **The mirror clasp acts on `w_j` by `claspSc` at `s⁻¹`**, van der Veen's `C(m−j, t⁻¹)`
+before the framing factor. -/
+theorem claspBar_hwVec (j : ℕ) (hj : j ≤ m) :
+    claspBar s hs m *ᵥ hwVec (s ^ 2) m m j = claspSc s⁻¹ m j • hwVec (s ^ 2) m m j := by
+  have hq : s ^ 2 ≠ 0 := pow_ne_zero 2 hs
+  have hm : ∀ i, 0 < i → i ≤ m → qint (s ^ 2) i ≠ 0 := fun i h1 h2 => hint i h1 (by omega)
+  have hint' : ∀ p < j, qint (s ^ 2) (m - p) ≠ 0 := fun p hp => hm _ (by omega) (by omega)
+  have hE : deltaE (s ^ 2) m m *ᵥ (claspBar s hs m *ᵥ hwVec (s ^ 2) m m j) = 0 := by
+    rw [mulVec_mulVec, claspBar, ← claspWith_deltaE hq hm (monoBar_deltaK s hs m hq2 hint)
+      (monoBar_deltaE s hs m hq2 hint), ← mulVec_mulVec]
+    rw [show deltaE (s ^ 2) m m *ᵥ hwVec (s ^ 2) m m j = 0 from
+      hwVec_E (s ^ 2) hq m m j hj hj hint', mulVec_zero]
+  have hsupp : ∀ x : Fin (m + 1) × Fin (m + 1), (x.1 : ℕ) + x.2 ≠ j →
+      (claspBar s hs m *ᵥ hwVec (s ^ 2) m m j) x = 0 := by
+    intro x hx
+    simp only [mulVec, dotProduct]
+    refine Finset.sum_eq_zero fun y _ => ?_
+    by_cases hy : (y.1 : ℕ) + y.2 = j
+    · rw [claspBar, claspWith_grade (monoBar_grade s hs m) x y (by omega), zero_mul]
+    · simp [hwVec, hy]
+  have hu := hw_unique (s ^ 2) hq m m j hj hint' _ hsupp hE
+  rw [hu]
+  congr 1
+  rw [show (claspBar s hs m *ᵥ hwVec (s ^ 2) m m j) (⟨0, by omega⟩, ⟨j, by omega⟩)
+      = ∑ c : Fin (m + 1), ∑ d : Fin (m + 1),
+          claspWith (s ^ 2) m (monoBar s hs m) (⟨0, by omega⟩, ⟨j, by omega⟩) (c, d)
+            * hwVec (s ^ 2) m m j (c, d) by
+    simp only [claspBar, mulVec, dotProduct, Fintype.sum_prod_type]]
+  simp only [claspWith_hw_row0 j hj]
+  rw [Finset.sum_congr rfl (g := fun c : Fin (m + 1) =>
+      if (c : ℕ) ≤ j then vdvTerm s⁻¹ (j - c) c (m - j) else 0) (fun c _ => by
+    dsimp only
+    split_ifs with hc
+    · exact mirrorTerm_eq_vdvTerm s hs hq2 m j c hc hj hm
+    · rfl)]
+  rw [Fin.sum_univ_eq_sum_range (fun c => if c ≤ j then vdvTerm s⁻¹ (j - c) c (m - j) else 0),
+    Finset.sum_ite, Finset.sum_const_zero, add_zero,
+    show (Finset.range (m + 1)).filter (· ≤ j) = Finset.range (j + 1) by
+      ext c; simp only [Finset.mem_filter, Finset.mem_range]; omega]
+  unfold claspSc
+  rw [← Finset.sum_range_reflect]
+  exact Finset.sum_congr rfl fun c hc => by
+    have := Finset.mem_range.mp hc
+    rw [show j + 1 - 1 - c = j - c by omega, show j - (j - c) = c by omega]
+
+include hq2 hint in
+/-- **The mirror clasp is scalar on each string**, with van der Veen's `C(n, t⁻¹)`. -/
+theorem claspBar_strVec (x : StrIdx m) :
+    claspBar s hs m *ᵥ strVec (s ^ 2) m x = claspSc s⁻¹ m x.1 • strVec (s ^ 2) m x := by
+  have hq : s ^ 2 ≠ 0 := pow_ne_zero 2 hs
+  have hm : ∀ i, 0 < i → i ≤ m → qint (s ^ 2) i ≠ 0 := fun i h1 h2 => hint i h1 (by omega)
+  have hc : Commute (claspBar s hs m) (deltaF (s ^ 2) m m ^ (x.2 : ℕ)) :=
+    Commute.pow_right (claspWith_deltaF hq hm (monoBar_deltaKm s hs m hq2 hint)
+      (monoBar_deltaF s hs m hq2 hint)) _
+  rw [strVec, mulVec_mulVec, hc.eq, ← mulVec_mulVec,
+    claspBar_hwVec s hs m hq2 hint x.1 (by omega), mulVec_smul]
+
+include hs in
+/-- **Zheng's sum for twists, belts, clasps and mirror clasps.** On `V_{m+1} ⊗ V_{m+1}`,
+`tr_q(T^a B^b X^c X̄^d) = Σ_j T_j^a B_j^b C_j(s)^c C_j(s⁻¹)^d [2(m−j)+1]`; this is the sum of
+van der Veen's Lemma 1 before the framing factor and the normalisation `1/[N]`. -/
+theorem trace_twist_belt_clasp_mirror (hq2 : s ^ 2 - (s ^ 2)⁻¹ ≠ 0) (m : ℕ)
+    (hint : ∀ i, 0 < i → i ≤ 2 * m + 1 → qint (s ^ 2) i ≠ 0) (a b c d : ℕ) :
+    trace (deltaK (s ^ 2) m m * (twist0 s hs m ^ a * beltW s hs m ^ b * clasp s hs m ^ c
+        * claspBar s hs m ^ d))
+      = ∑ j : Fin (m + 1), twistSc s m j ^ a * beltSc s m j ^ b * claspSc s m j ^ c
+          * claspSc s⁻¹ m j ^ d * qint (s ^ 2) (2 * (m - j) + 1) := by
+  have hq : s ^ 2 ≠ 0 := pow_ne_zero 2 hs
+  have hint' : ∀ i, 0 < i → i ≤ 2 * m → qint (s ^ 2) i ≠ 0 := fun i h1 h2 => hint i h1 (by omega)
+  refine trace_deltaK_mul (s ^ 2) hq m hq2 hint' _
+    (fun j => twistSc s m j ^ a * beltSc s m j ^ b * claspSc s m j ^ c * claspSc s⁻¹ m j ^ d)
+    fun x => ?_
+  rw [← mulVec_mulVec, mulVec_pow_of_eigen m _ _ _ (claspBar_strVec s hs m hq2 hint' x) d,
+    mulVec_smul, ← mulVec_mulVec, mulVec_pow_of_eigen m _ _ _ (clasp_strVec s hs hq2 m hint' x) c,
+    mulVec_smul, ← mulVec_mulVec, mulVec_pow_of_eigen m _ _ _ (beltW_strVec s hs hq2 m hint x) b,
+    mulVec_smul, mulVec_pow_of_eigen m _ _ _ (twist0_strVec s hs hq2 m hint' x) a, smul_smul,
+    smul_smul, smul_smul]
+  congr 1
+  ring
+
+end MirrorEigen
+
 end QOU.Mass.QuantumSl2
