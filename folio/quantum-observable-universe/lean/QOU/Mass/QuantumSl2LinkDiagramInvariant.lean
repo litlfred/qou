@@ -173,6 +173,25 @@ theorem rModel_X_turn (b : Bool) (uin uout oin oout : Fin (d + 1)) :
     · rw [rModel_X_true, QOU.Mass.QuantumSl2.Markov.rCheck_grade s hs d _ _ (by simpa [add_comm] using h)]
       ring
 
+/-- **Turn slide.** Any number `t` of turns can be moved from the incoming edges of a crossing
+onto its outgoing edges: where the tensor is nonzero, weight conservation gives
+`K(uin) K(oin) = K(uout) K(oout)`, hence the same for every power. -/
+theorem rModel_slide (b : Bool) (t : ℤ) (uin uout oin oout : Fin (d + 1)) :
+    (((rModel s hs d).K uin ^ t * (rModel s hs d).K oin ^ t : 𝕜ˣ) : 𝕜) *
+        (rModel s hs d).X b uin uout oin oout =
+      (rModel s hs d).X b uin uout oin oout *
+        (((rModel s hs d).K uout ^ t * (rModel s hs d).K oout ^ t : 𝕜ˣ) : 𝕜) := by
+  by_cases hX : (rModel s hs d).X b uin uout oin oout = 0
+  · simp [hX]
+  have hK : (rModel s hs d).K uin * (rModel s hs d).K oin =
+      (rModel s hs d).K uout * (rModel s hs d).K oout := by
+    have h := rModel_X_turn s hs d b uin uout oin oout
+    rw [mul_comm _ ((rModel s hs d).X b _ _ _ _)] at h
+    have h' := mul_left_cancel₀ hX h
+    ext
+    simpa [rModel] using h'
+  rw [← mul_zpow, ← mul_zpow, hK, mul_comm]
+
 /-! ### Crossing symmetry in coordinates -/
 
 section Crossing
@@ -327,6 +346,7 @@ theorem rModel_invariant : (rModel s hs d).Invariant (thetaU s hs d) where
   r2par := rModel_r2par s hs d
   r2anti := rModel_r2anti s hs d hq2 hint
   r3 := rModel_r3 s hs d hq2 hint
+  slide := rModel_slide s hs d
 
 /-! ### The Whitehead link as a link-level statement -/
 

@@ -34,6 +34,9 @@ The moves:
 * `r2par` / `r2anti`: two joins become a bigon, with the strands parallel or antiparallel; the
   antiparallel bigon carries the turn `bigonTurn` on its over strand on both sides;
 * `r3`: the braid-like positive triangle move, read off `σ₁σ₂σ₁ = σ₂σ₁σ₂`.
+* `slide`: move `t` turns from both incoming edges of a crossing onto both outgoing edges. In the
+  plane this is an isotopy that rotates a crossing neighbourhood through full turns; it is needed
+  to cycle the strands of a braid closure (conjugation).
 
 `ReidemeisterEquiv` is the equivalence relation they generate on bundled codes.
 
@@ -202,6 +205,13 @@ inductive Move : Bundled.{u} → Bundled.{u} → Prop
       (hbd : ∀ x ∈ ({a₀, a₂, b₀, b₂, c₀, c₂} : Set E), x ≠ a₁ ∧ x ≠ b₁ ∧ x ≠ c₁) :
       Move ⟨E, R + Code.ofXs (triL a₀ a₁ a₂ b₀ b₁ b₂ c₀ c₁ c₂)⟩
         ⟨E, R + Code.ofXs (triR a₀ a₁ a₂ b₀ b₁ b₂ c₀ c₁ c₂)⟩
+  /-- **Turn slide**: a full turn of the neighbourhood of a crossing, a planar isotopy. It moves `t`
+  turns from both incoming edges onto both outgoing edges. -/
+  | slide {E : Type u} [Fintype E] [DecidableEq E] (R : Code E) (uin uout oin oout e f : E)
+      (s : Bool) (t : ℤ) (he : ¬ R.Occurs e) (hf : ¬ R.Occurs f) (hef : e ≠ f)
+      (hbd : ∀ x ∈ ({uin, uout, oin, oout} : Set E), x ≠ e ∧ x ≠ f) :
+      Move ⟨E, R + (Code.ofXs {⟨e, uout, f, oout, s⟩} + Code.ofJs {(uin, e, t), (oin, f, t)})⟩
+        ⟨E, R + (Code.ofXs {⟨uin, e, oin, f, s⟩} + Code.ofJs {(e, uout, t), (f, oout, t)})⟩
 
 /-- Reidemeister equivalence of bundled codes. -/
 def ReidemeisterEquiv : Bundled.{u} → Bundled.{u} → Prop := Relation.EqvGen Move

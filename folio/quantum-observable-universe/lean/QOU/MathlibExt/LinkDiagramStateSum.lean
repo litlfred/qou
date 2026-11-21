@@ -463,6 +463,70 @@ theorem value_r2par (R₀ : Code E) (a b c d e₁ f₁ : E) (s : Bool)
     rw [hX]
     by_cases hab : L₀ a = L₀ b <;> by_cases hcd : L₀ c = L₀ d <;> simp [hab, hcd]
 
+/-- **Turn slide.** If the crossing tensor of sign `s` conserves turn weight in the sense of `hX`,
+moving `t` turns from both incoming edges of a crossing onto both outgoing edges leaves the value
+unchanged. -/
+theorem value_slide (R₀ : Code E) (uin uout oin oout e f : E) (s : Bool) (t : ℤ)
+    (he : ¬ R₀.Occurs e) (hf : ¬ R₀.Occurs f) (hef : e ≠ f)
+    (hbd : ∀ x ∈ ({uin, uout, oin, oout} : Set E), x ≠ e ∧ x ≠ f)
+    (hX : ∀ a b c d : ι, ((M.K a ^ t * M.K c ^ t : Rˣ) : R) * M.X s a b c d =
+      M.X s a b c d * ((M.K b ^ t * M.K d ^ t : Rˣ) : R)) :
+    value M (R₀ + (Code.ofXs {⟨e, uout, f, oout, s⟩} + Code.ofJs {(uin, e, t), (oin, f, t)})) =
+      value M (R₀ + (Code.ofXs {⟨uin, e, oin, f, s⟩} + Code.ofJs {(e, uout, t), (f, oout, t)})) := by
+  classical
+  obtain ⟨h1e, h1f⟩ := hbd uin (by simp)
+  obtain ⟨h2e, h2f⟩ := hbd uout (by simp)
+  obtain ⟨h3e, h3f⟩ := hbd oin (by simp)
+  obtain ⟨h4e, h4f⟩ := hbd oout (by simp)
+  have hocL : ∀ x, (Code.ofXs {⟨e, uout, f, oout, s⟩} + Code.ofJs {(uin, e, t), (oin, f, t)}).Occurs x
+      ↔ e = x ∨ uout = x ∨ f = x ∨ oout = x ∨ uin = x ∨ oin = x := by
+    intro x
+    rw [occurs_add, occurs_ofJs_pair]
+    simp only [Code.Occurs, Code.ofXs, Crossing.Mentions, Multiset.mem_singleton, exists_eq_left]
+    simp
+    tauto
+  have hocR : ∀ x, (Code.ofXs {⟨uin, e, oin, f, s⟩} + Code.ofJs {(e, uout, t), (f, oout, t)}).Occurs x
+      ↔ e = x ∨ uout = x ∨ f = x ∨ oout = x ∨ uin = x ∨ oin = x := by
+    intro x
+    rw [occurs_add, occurs_ofJs_pair]
+    simp only [Code.Occurs, Code.ofXs, Crossing.Mentions, Multiset.mem_singleton, exists_eq_left]
+    simp
+    tauto
+  refine value_local M R₀ _ _ {e, f} ?_ ?_ ?_
+  · intro x hx
+    simp only [Finset.mem_insert, Finset.mem_singleton] at hx
+    rcases hx with rfl | rfl <;> assumption
+  · intro x _
+    rw [hocL, hocR]
+  · intro v
+    have hTL : ∀ x ∈ ({e, f} : Finset E), (Code.ofXs {⟨e, uout, f, oout, s⟩} +
+        Code.ofJs {(uin, e, t), (oin, f, t)}).Occurs x := by
+      intro x hx
+      simp only [Finset.mem_insert, Finset.mem_singleton] at hx
+      rw [hocL]; tauto
+    have hTR : ∀ x ∈ ({e, f} : Finset E), (Code.ofXs {⟨uin, e, oin, f, s⟩} +
+        Code.ofJs {(e, uout, t), (f, oout, t)}).Occurs x := by
+      intro x hx
+      simp only [Finset.mem_insert, Finset.mem_singleton] at hx
+      rw [hocR]; tauto
+    simp only [loc_of_occurs M _ _ hTL, loc_of_occurs M _ _ hTR]
+    rw [sum_glue_pair e f hef M.base v (fun L => xw M _ L * jw M _ L),
+      sum_glue_pair e f hef M.base v (fun L => xw M _ L * jw M _ L)]
+    set L₀ := glue {e, f} (fun _ => M.base) v
+    have hx : ∀ i j x, x ≠ e → x ≠ f → Function.update (Function.update L₀ e i) f j x = L₀ x :=
+      fun i j x h1 h2 => by simp [h1, h2]
+    have hie : ∀ i j, Function.update (Function.update L₀ e i) f j e = i :=
+      fun i j => by simp [hef]
+    simp only [xw, jw, Code.ofXs, Code.ofJs, Code.add_xs, Code.add_js, Multiset.insert_eq_cons,
+      Multiset.map_cons, Multiset.map_singleton, Multiset.prod_cons, Multiset.prod_singleton,
+      add_zero, zero_add, hx _ _ uin h1e h1f, hx _ _ uout h2e h2f, hx _ _ oin h3e h3f,
+      hx _ _ oout h4e h4f, hie, Function.update_self]
+    simp only [mul_ite, ite_mul, mul_zero, zero_mul, Finset.sum_ite_eq, Finset.sum_ite_eq',
+      Finset.mem_univ, if_true]
+    have := hX (L₀ uin) (L₀ uout) (L₀ oin) (L₀ oout)
+    rw [Units.val_mul, Units.val_mul] at this
+    rw [mul_comm]; exact this
+
 /-- **Second Reidemeister move, antiparallel strands.** If the crossing tensors of signs `s` and
 `!s`, with one full turn of weight `K ^ bigonTurn s` on the internal over edge, satisfy `hX`, the
 value is unchanged by `r2anti`. -/
@@ -949,6 +1013,8 @@ structure Model.Invariant (M : Model R ι) (θ : Rˣ) : Prop where
   r3 : ∀ a₀ a₂ b₀ b₂ c₀ c₂ : ι,
     ∑ i, ∑ j, ∑ k, M.X true b₀ j a₀ i * M.X true c₀ k i a₂ * M.X true k c₂ j b₂ =
     ∑ i, ∑ j, ∑ k, M.X true c₀ k b₀ j * M.X true k c₂ a₀ i * M.X true j b₂ i a₂
+  slide : ∀ (s : Bool) (t : ℤ) (a b c d : ι), ((M.K a ^ t * M.K c ^ t : Rˣ) : R) * M.X s a b c d =
+    M.X s a b c d * ((M.K b ^ t * M.K d ^ t : Rˣ) : R)
 
 /-- **The writhe-normalised value** of a bundled code. -/
 noncomputable def normValue (M : Model R ι) (θ : Rˣ) (D : Bundled.{u}) : R :=
@@ -992,6 +1058,11 @@ theorem normValue_eq_of_move (hM : M.Invariant θ) {D D' : Bundled.{u}} (h : Mov
     rw [value_r3 M R₀ a₀ a₁ a₂ b₀ b₁ b₂ c₀ c₁ c₂ hint hab hac hbc hbd hM.r3, writhe_add,
       writhe_add]
     rfl
+  | slide R₀ uin uout oin oout e f s t he hf hef hbd =>
+    simp only [normValue]
+    rw [value_slide M R₀ uin uout oin oout e f s t he hf hef hbd (hM.slide s t), writhe_add,
+      writhe_add, writhe_add, writhe_add]
+    rfl
 
 /-- **Invariance.** For a model satisfying the local identities, the writhe-normalised value is an
 invariant of Reidemeister equivalence. -/
@@ -1028,6 +1099,7 @@ theorem idModel_invariant (R : Type*) [CommRing R] (b : ι) : (idModel R b).Inva
     simp only [idModel, ite_and, mul_ite, mul_one, mul_zero]
     simp [Finset.sum_ite_eq, eq_comm]
     split_ifs <;> simp_all
+  slide s t a b c d := by simp [idModel]
 
 end Invariance
 
