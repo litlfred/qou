@@ -1314,8 +1314,16 @@ def main(argv=None) -> int:
     print(f"  GPMT ≥3-row modified dimensions at q₀: d_mod(1,1,1) = {gpmt_c['dMod111']:.6f}, "
           f"d_mod(2,1,1) = {gpmt_c['dMod211']:.6f}, d_mod(1,1,1,1) = +{gpmt_c['dMod1111']:.6f} | "
           f"μ₃^GPMT = +{gpmt_c['mu3GPMT']:.6f} (>0), μ₄^GPMT,H4 = {gpmt_c['mu4GPMT_H4']:.6f} (<0).")
-    print("| iso | A | Z | N | Q_pair | B_ext^GPMT(H4) | E₀·B_ext(H4) (MeV) | E_C(CAL-3) (MeV) | Δm_QED^V3 (keV) | two-term note |")
-    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|---|")
+    # MANY-BODY DIAGNOSTIC (2026-11-21, issue #8960, owner choice "all 4").
+    # B_sym is a chain over A−1 pairwise interfaces and carries no ≥3-body
+    # term. The GPMT ≥3-row cumulant E₀·B_ext is the only Lean-backed
+    # many-body quantity on main, so it is shown BESIDE B_sym as
+    # `B_sym+GPMT (diag)`. It is NOT a production column: no block licenses
+    # adding it to B, and B_sym itself is POSITED. AME/B is comparison only.
+    print("  Diagnostic column `B_sym+GPMT`: B_sym + E₀·B_ext(H4), the pairwise chain plus the "
+          "≥3-row GPMT cumulant. Not production; not licensed as an energy (issue #8960).")
+    print("| iso | A | Z | N | Q_pair | B_ext^GPMT(H4) | E₀·B_ext(H4) (MeV) | B_sym+GPMT (diag, MeV) | AME/(B_sym+GPMT) | E_C(CAL-3) (MeV) | Δm_QED^V3 (keV) | two-term note |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|---|")
     for r in rows:
         if r["A"] > 4:
             continue
@@ -1340,8 +1348,11 @@ def main(argv=None) -> int:
             qed_v3_kev = (2 * (2 * mp_qed_bor + dm_qed_bor)) * 1e3
             note = f"H₄ cumulant μ₄^H4 = {gpmt_c['mu4GPMT_H4']:.4f} < 0 (4-body saturation)"
         e0_bext = E0 * bext_h4
+        b_diag = (r["B_sym"] + e0_bext) if r.get("B_sym") is not None else None
+        err_diag = (r["B_AME"] / b_diag) if (b_diag and r.get("B_AME")) else None
         print(f"| {r['name']} | {A_r} | {Z_r} | {N_r} | {q_pair} "
               f"| {_fmt(bext_h4,8,4)} | {_fmt(e0_bext,8,4)} "
+              f"| {_fmt(b_diag,8,4)} | {_fmt(err_diag,8,2) if err_diag is not None else '—'} "
               f"| {_fmt(r.get('E_C'),8,4)} | {_fmt(qed_v3_kev,8,4)} | {note} |")
 
     _print_provenance()
