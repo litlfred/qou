@@ -101,3 +101,6 @@ STILL OPEN (192, each needs the block's later result; the ratchet on #8637 stays
 
 
 2026-11-21T04:35Z (W14): owner "Fix issues": #8702 L4 29->17 (banners, inline restatements, reorder, table cells, retarget). 17 left need judgement: 4x dim_q Ch1 (audit flags notation defined in place), 3 citation defects (target lacks the claimed fact: mi-sw-abelianisation, hecke-baer-star-generic-proof, knot-operator-energy-exists), 3 links to remarks/conjectures, 2 mass-endomorphism-conjecture, gluon-ledger mutual loop, 2 conditional remarks, retracted-argument record, zeta(2) table row. Reread: markov-trace-frobenius-selection inline theorem hypothesis vs degenerate form.
+
+
+2026-11-21T07:00Z (W14): owner "merge what is ready": #8702 merged (merge commit 21d4adeda2; not rebaseable), #8637 auto-merged with it; all six drains and #8633 merged earlier. On main: L4 18 (17 recorded + gs-residue-at-root-existence <-> residue-at-root mutual link new from main), L1-L3 0 after #8756 (ratchet --shrink + one Lean sentence moved), #8756 labelled ready-to-merge.
