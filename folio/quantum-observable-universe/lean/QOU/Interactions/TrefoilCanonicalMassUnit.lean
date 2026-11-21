@@ -141,6 +141,11 @@ def m_e_cat_unit : ℝ := 1
 
 /-- **Primary conjecture: the trefoil is the canonical mass unit for the electron.**
 
+    **Backup model (owner ruling 2026-11-21).**  The ruled electron is `σ₀σ₁σ₀ ∈ B₃`
+    (closure: the Hopf link), stated with the two-term trace in
+    `QOU.Interactions.HopfElectronTwoTermMass.HopfElectronTwoTermMassConj`.  This trefoil class
+    is kept as the backup the ruling asks for.
+
     Stated for **given** data — a Hecke element `T` of the `n = 2` sector and a
     multiplicity `ρ`, both *parameters*, so an instance must be supplied against
     a specific element rather than manufactured alongside one.  The single field
