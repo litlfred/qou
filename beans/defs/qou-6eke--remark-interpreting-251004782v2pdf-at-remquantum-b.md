@@ -1,14 +1,14 @@
 ---
 # qou-6eke
 title: Remark interpreting 2510.04782v2.pdf at rem:quantum-bloch-group-framework-connection
-status: in-progress
+status: completed
 pr: 8305
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:36:33Z
-updated_at: 2026-11-21T13:00:00Z
+updated_at: 2026-11-21T13:10:00Z
 parent: qou-aqfj
 ---
 
@@ -43,3 +43,7 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8305, closed o
 ## 2026-11-21T13:00:00Z expo-remarks drain (session_01Qmmkt7Gng13BtVDyQLMYQT)
 
 Remark written: commit 1fe50032d on branch claude/expo-remarks-2026-11-21, draft PR #8832 (issue #8803). Exposition only: no new claim, no new number. Superseded-premise check (owner 2026-11-21 list: L-plus/minus in the photon, virtual photons, pre-Nov-15 gamma-gamma interface letters, T(2,n_s), convention C, single-term trace, trefoil as primary electron, 'c_2=-1 PROVED', chi_(2,1)=2-h^4, fitted alpha/CODATA in proofs, project memory): none found in the edited text. Status kept in-progress until #8832 merges; close as completed then.
+
+## 2026-11-21T13:10:00Z closed
+
+PR #8832 merged 2026-11-21T13:07Z; remark is on main.
