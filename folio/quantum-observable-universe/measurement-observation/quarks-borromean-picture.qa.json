@@ -2744,7 +2744,23 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [],
+    "milnor-amalgamated-flow": [
+      {
+        "field_hash": {
+          "md": "47eed0c77b8f",
+          "ts": "d258594a36f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Reads in order: identification, proton/neutron bullets, flavour origin, volume, predictive scope."
+      }
+    ],
     "expo-milnor-clarity": [
       {
         "result": "pass",
@@ -3138,6 +3154,22 @@
         "reviewed_at": "2026-11-21T16:57:04.000Z",
         "reviewed_sha": "4eeb377d54fa519b6fb38d549a47b08bd48561ae",
         "evidence": "Full re-read after the QA round. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "47eed0c77b8f",
+          "ts": "d258594a36f2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Minor: three contrast-by-negation clauses in four short paragraphs ('rather than individual knot types', 'not from distinct knot types', 'it does not predict them'); the first duplicates the second.",
+        "severity": "minor"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -3461,6 +3493,21 @@
         "reviewed_at": "2026-11-21T16:57:04.000Z",
         "reviewed_sha": "4eeb377d54fa519b6fb38d549a47b08bd48561ae",
         "evidence": "Full re-read after the QA round. Resolved: the 'reassigned' / 'original dictionary' / 'revised picture' narration is replaced by direct statements."
+      },
+      {
+        "field_hash": {
+          "md": "47eed0c77b8f",
+          "ts": "d258594a36f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Prior minor resolved: 'The original dictionary assigned ... The revised picture ...' narration removed."
       }
     ],
     "trap-thesis-restatement": [
@@ -3525,6 +3572,22 @@
         "reviewed_at": "2026-11-21T16:57:04.000Z",
         "reviewed_sha": "4eeb377d54fa519b6fb38d549a47b08bd48561ae",
         "evidence": "Full re-read after the QA round. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "47eed0c77b8f",
+          "ts": "d258594a36f2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Minor (introduced by this PR's rewrite): sentence 1 'Quarks are Borromean-linked unknots rather than individual knot types' is restated by sentence 2 'The quarks are unknots (neutrinos) Borromean-linked ...'. Merge into one sentence.",
+        "severity": "minor"
       }
     ],
     "trap-performed-warmth": [
@@ -3657,6 +3720,21 @@
         "reviewed_at": "2026-11-21T16:57:04.000Z",
         "reviewed_sha": "4eeb377d54fa519b6fb38d549a47b08bd48561ae",
         "evidence": "Full re-read after the QA round. Resolved: both 'almost entirely from the Borromean linking volume' claims and the ~99% QCD comparison are removed; the volume is stated as a fact about the complement."
+      },
+      {
+        "field_hash": {
+          "md": "47eed0c77b8f",
+          "ts": "d258594a36f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Prior minor resolved: 'almost entirely from the Borromean linking volume' (twice) is gone; the volume is now stated as a fact, Vol = 7.328... (correct, 7.32772)."
       }
     ],
     "trap-nonspeakable": [
@@ -4058,6 +4136,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T16:57:04.000Z",
+  "updated_at": "2026-11-21T17:30:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

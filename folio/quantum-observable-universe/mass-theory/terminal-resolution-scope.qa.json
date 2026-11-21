@@ -951,6 +951,21 @@
         },
         "reviewed_tree": "4293e2561bd349ba0c5d722722634f9af5fae0a1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "885f044d0cfe",
+          "ts": "7deec5368698"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Each sentence checked: part (ii) bijectivity implies any (m_p,m_n) is fitted; prf:flavor-split-substrate (flavor-split-substrate-proof.md line 43) does call Step 2 'a phenomenological ansatz ... selection against the target'; 1/(q^{1/2}+q^{-1/2}) = sqrt(q)/(q+1) = z_C. Correct."
       }
     ],
     "da-vacuous": [
@@ -968,6 +983,21 @@
         },
         "reviewed_tree": "4293e2561bd349ba0c5d722722634f9af5fae0a1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "885f044d0cfe",
+          "ts": "7deec5368698"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Carries the scope content moved out of the proposition; no new mathematical claim."
       }
     ],
     "da-circular": [
@@ -985,6 +1015,21 @@
         },
         "reviewed_tree": "4293e2561bd349ba0c5d722722634f9af5fae0a1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "885f044d0cfe",
+          "ts": "7deec5368698"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. No circular use; interprets prop:terminal-resolution and cites only it and prop:flavor-split-substrate."
       }
     ],
     "da-overclaim": [
@@ -1017,6 +1062,21 @@
         "reviewed_at": "2026-11-21T16:57:04.000Z",
         "reviewed_sha": "4eeb377d54fa519b6fb38d549a47b08bd48561ae",
         "evidence": "Full read of the new remark (moved from the proposition). Each claim traced: bijection (prop part ii), flavor-split Step 2 is an ansatz (prf:flavor-split-substrate states it), convention C (lem:pair-skein-mass-formula states it)."
+      },
+      {
+        "field_hash": {
+          "md": "885f044d0cfe",
+          "ts": "7deec5368698"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Advisory: 'the only such input on record' is defensible since prop:flavor-dressed-mass-from-substrate-split is downstream of the same ansatz; no overclaim."
       }
     ],
     "da-hidden-dof": [
@@ -1034,6 +1094,21 @@
         },
         "reviewed_tree": "4293e2561bd349ba0c5d722722634f9af5fae0a1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "885f044d0cfe",
+          "ts": "7deec5368698"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Makes the free dressed-mass DOF explicit rather than hiding it."
       }
     ],
     "da-non-sequitur": [
@@ -1051,6 +1126,21 @@
         },
         "reviewed_tree": "4293e2561bd349ba0c5d722722634f9af5fae0a1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "885f044d0cfe",
+          "ts": "7deec5368698"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Conclusions follow from part (ii) and the cited proof's own wording."
       }
     ],
     "da-arity-conflation": [
@@ -1068,6 +1158,21 @@
         },
         "reviewed_tree": "4293e2561bd349ba0c5d722722634f9af5fae0a1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "885f044d0cfe",
+          "ts": "7deec5368698"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. No pointwise/universal or instance conflation."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1102,6 +1207,21 @@
         },
         "reviewed_tree": "4293e2561bd349ba0c5d722722634f9af5fae0a1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "885f044d0cfe",
+          "ts": "7deec5368698"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. prop:flavor-split-substrate cited for what its proof says; both links are in uses[] (prior uses[] minor resolved here)."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1119,6 +1239,21 @@
         },
         "reviewed_tree": "4293e2561bd349ba0c5d722722634f9af5fae0a1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "885f044d0cfe",
+          "ts": "7deec5368698"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Uses the proposition's notation; z = q^3/(q^2+1) named as the canonical weight."
       }
     ],
     "da-empirical-fragility": [
@@ -1136,6 +1271,21 @@
         },
         "reviewed_tree": "4293e2561bd349ba0c5d722722634f9af5fae0a1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "885f044d0cfe",
+          "ts": "7deec5368698"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. No numbers."
       }
     ],
     "da-physical-implausibility": [
@@ -1153,6 +1303,21 @@
         },
         "reviewed_tree": "4293e2561bd349ba0c5d722722634f9af5fae0a1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "885f044d0cfe",
+          "ts": "7deec5368698"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. States that absolute MeV masses are not predictions (CAL-1 fixes the scale), consistent with the 2026-08-11 absolute-mass ruling."
       }
     ],
     "da-reproducibility": [
@@ -1170,6 +1335,21 @@
         },
         "reviewed_tree": "4293e2561bd349ba0c5d722722634f9af5fae0a1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "885f044d0cfe",
+          "ts": "7deec5368698"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Claims are checkable against prop:terminal-resolution and flavor-split-substrate-proof.md."
       }
     ],
     "da-referee-verdict": [
@@ -1187,6 +1367,21 @@
         },
         "reviewed_tree": "4293e2561bd349ba0c5d722722634f9af5fae0a1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "885f044d0cfe",
+          "ts": "7deec5368698"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Accept; a correctly placed interpretive remark with `interprets: prop:terminal-resolution` and no new claims (prior voice-statement-no-interpretation minor resolved)."
       }
     ],
     "dak-companion-present": [
@@ -1482,7 +1677,41 @@
         "reviewed_sha": "4eeb377d54fa519b6fb38d549a47b08bd48561ae",
         "evidence": "Full read of the new remark. No instance."
       }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "885f044d0cfe",
+          "ts": "7deec5368698"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Two short paragraphs, scope then convention."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "field_hash": {
+          "md": "885f044d0cfe",
+          "ts": "7deec5368698"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Brief."
+      }
     ]
   },
-  "updated_at": "2026-11-21T16:57:04.000Z"
+  "updated_at": "2026-11-21T17:30:00.000Z"
 }
