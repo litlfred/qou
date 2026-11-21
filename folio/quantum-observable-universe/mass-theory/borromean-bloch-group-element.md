@@ -21,7 +21,7 @@ $$
 $$
 
 which IS the Bloch-Wigner / Rogers Pentagon identity for the
-dilogarithm.  Bloch–Suslin showed $B(\mathbb{C}) \otimes \mathbb{Q}
+dilogarithm \cite[\S1.1.4, \S2.3.1]{kirillov1995}.  Bloch–Suslin showed $B(\mathbb{C}) \otimes \mathbb{Q}
 \cong K_3^{\text{ind}}(\mathbb{C}) \otimes \mathbb{Q}$. The extended Bloch group $\widehat{B}(\mathbb{C})$ of Neumann, which refines $B(\mathbb{C})$ so that the complexified volume (volume plus $i$ times the Chern--Simons invariant, valued in $\mathbb{C}/4\pi^2\mathbb{Z}$) of a hyperbolic $3$-manifold is defined on it, is surveyed in \cite[\S3]{arxiv-2304.12545v1}.
 
 The **Beilinson regulator** $r_2: B(\mathbb{C}) \to \mathbb{R}$ is
@@ -143,6 +143,8 @@ also closes the loop:
   (per [the bar involution](../braids-and-knots/bar-involution.md), Table 2 — Rogers
   q-dilog is bar-symmetric, Faddeev's $\Phi_q$ alone is bar-anti-
   symmetric).
+
+**A topological fact about the Borromean rings (literature).** The Borromean rings are a universal link: every closed orientable $3$-manifold arises as a cover of $\mathbf{S}^3$ branched along them, a result of Hilden, Lozano and Montesinos recorded in the section on covers and branched covers of \cite{kegel2024}, where it is used to bound the degrees of such covers by topological volume. Universality is a statement about branched covers of $\mathbf{S}^3$ along $\mathcal{B}_3$; it says nothing about the class $[\mathcal{B}_3]$ in $K_3(\mathbb{C})$ or about the regulator value above, and no step of this conjecture uses it.
 
 ## What remains open
 

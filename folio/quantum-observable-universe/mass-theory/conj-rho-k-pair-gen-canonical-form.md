@@ -65,7 +65,7 @@ The open requirement is the functional form $f_2$. The naive logarithmic form $\
 ## Dependencies
 
 - [Canonical operator-level lepton-mass-tower formula](../mass-theory/lepton-mass-tower-canonical.md): The lepton-sector variant. It depends on the graded-expansion formalism but evaluates at $Z = N = 0$, nullifying the atomic LO piece. It requires its own dimensional factor $\xi_\ell(q)$.
-- [Mass endomorphism conjecture](mass-endomorphism-conjecture.md): The unifying closed-form mass element $\Phi_{\text{mass}}(W) \in H_{3A}(q)$. The present conjecture restricts this to the pair level.
+- [Mass endomorphism conjecture](../mass-endomorphism/mass-endomorphism-conjecture.md): The unifying closed-form mass element $\Phi_{\text{mass}}(W) \in H_{3A}(q)$. The present conjecture restricts this to the pair level.
 
 ## Resolution path
 

@@ -1,42 +1,22 @@
 **Proof.**
 
-*Forward direction.* In a one-dimensional representation $V_\lambda$ with eigenvalue $\alpha$ (either $q$ or $-q^{-1}$), the generator $\sigma_i^{-1}$ has eigenvalue $\alpha^{-1}$. This follows from $\sigma^2 = h\sigma + 1$, which gives $\sigma^{-1} = \sigma - h$. Thus, the eigenvalue of $\sigma^{-1}$ is $\alpha - h$. For $\alpha = q$, one has $q - h = q^{-1}$; for $\alpha = -q^{-1}$, one has $-q^{-1} - h = -q$.
+*One-dimensional characters.* A one-dimensional character sends every $\sigma_i$ to the same eigenvalue $\epsilon$, either $q$ or $-q^{-1}$. Then $\sigma_i^{-1} \mapsto \epsilon^{-1}$, and $\epsilon^{-1}(q) = \epsilon(q^{-1})$ in both cases, since $q^{-1} = q^{-1}$ and $(-q^{-1})^{-1} = -q = -(q^{-1})^{-1}$. So $\chi(C\beta)(q) = \chi(\beta)(q^{-1})$ for every word.
 
-Under the bar involution $q \mapsto q^{-1}$, the eigenvalue $q$ maps to $q^{-1}$ and $-q^{-1}$ maps to $-q$. These exactly match the action of $C$:
-
+*The representation $(2,1)$ of $H_3(q)$.* Take
 $$
-  C\colon q \mapsto q^{-1},\quad -q^{-1} \mapsto -q
-  \qquad = \qquad
-  \mathrm{bar}\colon q \mapsto q^{-1},\quad -q^{-1} \mapsto -q.
+  \sigma_0 \mapsto \begin{pmatrix} -q^{-1} & q \\ 0 & q \end{pmatrix},\qquad
+  \sigma_1 \mapsto \begin{pmatrix} q & 0 \\ q^{-1} & -q^{-1} \end{pmatrix},
 $$
+which is $q$ times the reduced Burau matrices at $t = q^{-2}$. Write $\rho_q$ for this representation. The matrix $P = \mathrm{diag}(1, q^2)$ satisfies
+$$
+  P\,\rho_q(\sigma_i^{-1}) = \rho_{q^{-1}}(\sigma_i)\,P
+  \quad\text{and}\quad
+  P\,\rho_q(\sigma_i) = \rho_{q^{-1}}(\sigma_i^{-1})\,P
+$$
+for $i = 0, 1$. By induction on the length of a word, $P\,\rho_q(C\beta)\,P^{-1} = \rho_{q^{-1}}(\beta)$ for every braid word $\beta$, and taking traces gives the identity. $\square$
 
-Thus, $\chi^\lambda(C(\beta)) = \chi^\lambda(\mathrm{bar}(\beta))$ for all one-dimensional $\lambda$.
+The Lean sibling proves the $(2,1)$ case for every braid word over any field with $q \ne 0$.
 
-*Reverse direction.* In $H_3(q)$, the standard representation $(2,1)$ has dimension 2. The Hoefsmit seminormal matrix for $\sigma_1$ contains a $2 \times 2$ block with the off-diagonal entry $b = \sqrt{a_\rho \cdot a_{-\rho} + 1}$, which is irrational in $q$. Under $C$, one maps $\sigma_1 \mapsto \sigma_1 - h \cdot I$. This shifts the diagonal by $-h$ but leaves $b$ unchanged. Conversely, the bar involution $q \mapsto q^{-1}$ modifies both diagonal and off-diagonal entries, since $b$ depends on $q$ through $a_\rho = h/(1-q^{-2\rho})$. These operations yield different matrices and consequently different traces.
+**Remark (extension to every $n$; not formalised).** The same identity holds for every irreducible character of $H_n(q)$. Let $K = \mathbb{Q}(q)$ and let $\iota$ be the ring involution of $H_n(q)$ that sends $q \mapsto q^{-1}$ and $\sigma_i \mapsto \sigma_i^{-1}$. It is well defined because inverting every letter preserves the braid relations, and the quadratic relation $\sigma_i^2 = h\sigma_i + 1$ becomes $\sigma_i^{-2} = -h\,\sigma_i^{-1} + 1$, which is the same relation multiplied by $\sigma_i^{-2}$. For an irreducible representation $\rho$ with character $\chi^\lambda$, set $\rho'(x) = \overline{\rho(\iota(x))}$, where the outer bar applies $q \mapsto q^{-1}$ to each entry. The two semilinear twists cancel, so $\rho'$ is a $K$-linear irreducible representation with character $\overline{\chi^\lambda(\iota(x))}$. At $q = 1$ both twists are the identity, so $\rho'$ and $\rho$ specialise to the same irreducible character of $S_n$, and by Tits deformation $\rho' \cong \rho$. Evaluating on a braid word and barring both sides gives $\chi^\lambda(C\beta)(q) = \chi^\lambda(\beta)(q^{-1})$. This argument is not in Lean, so the proposition is stated only for $H_3(q)$.
 
-Explicitly evaluated at $q_0$: $\chi^{(2,1)}(\pi^+, q_0) = -(h^2+1) \approx -1.044$, $\chi^{(2,1)}(\pi^-, q_0) \approx +1.892$ (charge conjugate), and $\chi^{(2,1)}(\pi^+, q_0^{-1}) = -(h^2+1) \approx -1.044$ (bar). Since $+1.892 \ne -1.044$, $C \ne \mathrm{bar}$ on the $(2,1)$ representation. $\square$
-
-## Uniqueness of $H_2$
-
-The Artin--Wedderburn decomposition requires $n! = \sum_\lambda (\dim V_\lambda)^2$. For $n = 2$, the only decomposition of $2$ into positive-integer squares is $1^2 + 1^2$. The algebra accommodates no multi-dimensional irreducible representations.
-
-For $n \ge 3$, one has $n! \ge 6 > 1^2 + 1^2 = 2$. Multi-dimensional irreducible representations are strictly required. The standard representation $(n-1, 1)$ has dimension $n - 1 \ge 2$, and Artin--Wedderburn strictly requires its square $(n-1)^2$ in the sum.
-
-The number of one-dimensional irreducible representations remains exactly two (trivial and sign) for all $n \ge 2$, because $S_n$ admits exactly two homomorphisms to $\mathbb{Z}/2\mathbb{Z}$. The hook-length formula yields $\dim V_\lambda = 1$ only for $\lambda = (n)$ or $\lambda = (1^n)$.
-
-**Corollary.** $H_2$ is the unique Hecke level where $C = \mathrm{bar}$.
-The lepton sector is algebraically distinguished as the only level where matter--antimatter conjugation coincides with CPT. For all higher levels ($H_3, H_4, \ldots$), the Artin--Wedderburn theorem forces $C \ne \mathrm{bar}$.
-
-| $H_n$ | Irrep dimensions | $C$ vs bar | Physical sector |
-|--------|-----------------|------------|-----------------|
-| $H_2$ | $1, 1$ | $C = \mathrm{bar}$ | — |
-| $H_3$ | $1, 2, 1$ | $C \ne \mathrm{bar}$ | mesons + baryons |
-| $H_4$ | $1, 3, 2, 3, 1$ | $C \ne \mathrm{bar}$ | nuclear binding |
-
-The standard representation $(n-1, 1)$ establishes the locus where $C$ and bar diverge. At $H_2$, $\dim V_{(1,1)} = 1$, averting divergence. At $H_3$, $\dim V_{(2,1)} = 2$, forcing $C \ne \mathrm{bar}$.
-
-This clarifies three structural features:
-
-1. **Leptonic simplicity:** $C = \mathrm{bar}$ establishes matter--antimatter symmetry as identical to CPT, requiring no independent chiral structure.
-2. **Mesonic CAL-3 necessity:** $C \ne \mathrm{bar}$ demands a structure (the bar-odd normal-form component) inaccessible from the bar-symmetric lepton sector. This bar-odd component carries the chiral scale.
-3. **Standard representation universality:** The active set for both baryons and mesons (via SDP shadow prices) is $(2,1)$, precisely where $C$ and bar split. The mass-carrying partition inherently breaks the $C = \mathrm{bar}$ equivalence.
+**Consequence for the earlier reading.** An earlier version of this block claimed $C \ne \mathrm{bar}$ on $(2,1)$, quoting $\chi^{(2,1)}$ of the meson word at $q_0$ as $+1.892$ after charge conjugation. The exact value is $-(q^4 - q^2 + 1)/q^2$ for the word, its charge conjugate and its bar alike. $C = \mathrm{bar}$ therefore does not single out $H_2(q)$, and it does not separate a lepton level from a meson level.

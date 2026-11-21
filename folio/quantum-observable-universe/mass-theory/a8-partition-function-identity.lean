@@ -73,7 +73,7 @@ axiom for another, and is banned by AGENTS.md besides.
 -- Ref: [andrews1976] G. E. Andrews, "The Theory of Partitions",
 --      Encyclopedia of Mathematics and its Applications 2,
 --      Addison-Wesley 1976.
--- Ref: [habiro2000] https://doi.org/10.2140/gt.2000.4.227
+-- Ref: [habiro2000] RIMS Kōkyūroku 1172 (2000), 34–43 (unrefereed; no DOI)
 -- Ref: [leitner2026] docs/audits/2026-06-01-qbeta-habiro-a8-partition-function-match.md
 -/
 

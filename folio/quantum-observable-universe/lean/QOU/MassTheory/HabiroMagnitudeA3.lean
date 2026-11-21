@@ -58,7 +58,7 @@ forced value.
 
 Nothing is fit; nothing is wired. "No seventh fit-based ansatz" + PROBE-4 KL-prune stand.
 
--- Ref: [habiro2002] K. Habiro, On the colored Jones polynomials of some simple links,
+-- Ref: [habiro2000] K. Habiro, On the colored Jones polynomials of some simple links,
 --   Surikaisekikenkyusho Kokyuroku 1172 (2000) 34–43; [habiro2004] A unified Witten–Reshetikhin–
 --   Turaev invariant for integral homology spheres, Invent. Math. 171 (2008) 1–81.
 -- Ref: [leitner2026] deltalambda GAP-A-3 ROUTE 4 audit 2026-08-01; habiro_a3_probe.py.

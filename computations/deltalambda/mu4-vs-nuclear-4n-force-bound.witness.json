@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-05T17:59:19.752835+00:00",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "computedAt": "2026-11-21T12:03:02.628428+00:00",
+  "commitSha": "2ae54ab401071cea1ddab17b6fc54465011fa29d",
   "assertions": [
     {
       "name": "mu4_decomposition_reproduces_witness",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "mu4-vs-nuclear-4n-force-bound",
   "scriptFile": "mu4_vs_nuclear_4n_force_bound_probe.py",
-  "scriptHash": "3464285c909c",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "scriptHash": "8385d21613cb",
+  "scriptCommitSha": "2ae54ab401071cea1ddab17b6fc54465011fa29d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,14 +36,11 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent"
   },
   "invocation": {
     "argv": [
@@ -70,9 +67,9 @@
       "g4_MeV": 18.62095383372,
       "s4_as_fraction_of_B4He": 0.29720986713779846,
       "references": [
-        "Jurgenson, Navratil, Furnstahl, PRL 103, 082501 (2009), arXiv:0905.1873",
+        "[jurgenson2009srg] Jurgenson, Navratil, Furnstahl, PRL 103, 082501 (2009), arXiv:0905.1873",
         "Platter, Hammer, Meissner, arXiv:nucl-th/0409040",
-        "Epelbaum, Modern Theory of Nuclear Forces, arXiv:0811.1338",
+        "[epelbaum2008] Epelbaum, Modern Theory of Nuclear Forces, arXiv:0811.1338",
         "Tjon, PRC 20, 340 (1979) — paywalled/pre-arXiv, NOT needed: superseded for this argument by nucl-th/0409040 which states and explains the correlation"
       ],
       "verdict": "mu4 = -4.591 is not a physical four-body quantity (34x the N3LO 4N estimate, 36% of B(4He)); its size is the C(A,k) simplex basis and the rho_grad over-subtraction, so matching it is not equivalent to reproducing 4-body physics — scope-(a) on the TARGET, not on the operator"
