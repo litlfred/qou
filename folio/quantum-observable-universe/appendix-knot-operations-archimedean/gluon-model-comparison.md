@@ -28,9 +28,9 @@ where $\mathrm{cx} = \mathrm{cx}(q_0,q_1) \cdot \mathrm{cx}(q_0,q_2) \cdot \math
 
 **CODATA reference:** $Q = m_{\mathfrak{n}} - m_{\mathfrak{p}} - m_e = -0.78233$ MeV.
 
-Model A matches CODATA exactly (residual $< 10^{-6}$ MeV). The other models overshoot $|\Delta|$, giving $|Q| > 0.87$ MeV.
+The column $\Delta \times E_0$ uses $E_0 = 4.155$ MeV for every model, which is the value implied by Model A: $E_0 = Q/\Delta_A$ is fitted to the CODATA $Q$. Model A therefore reproduces CODATA by construction, and its row is not a test. $E_0$ is a fitted scale, not one of the calibrations CAL-1/2/3. With $E_0$ fixed this way the other models overshoot $|\Delta|$, giving $|Q| > 0.87$ MeV, so the table ranks the models only relative to Model A.
 
-Quarks interact as single-crossing unknots, not as full three-crossing words (Definition 4.27.1): replacing each crossing with the electron word ($\sigma_0\sigma_1\sigma_0$ for $\mathfrak{u}$, $\sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$ for $\mathfrak{d}$) triples $|\Delta \times E_0|$ to $-2.51$ MeV, away from CODATA.
+Quarks interact as single-crossing unknots, not as full three-crossing words (Definition 4.27.1): replacing each crossing with the electron word ($\sigma_0\sigma_1\sigma_0$ for $\mathfrak{u}$, $\sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$ for $\mathfrak{d}$) triples $|\Delta \times E_0|$ to $-2.51$ MeV at the same fitted $E_0$.
 
 **Interpretation.**
 The Borromean braid $B_3$ has NF:
@@ -40,11 +40,11 @@ $$
         + 0.046L_+ - 0.044L_-
 $$
 
-The $L_+$ and $L_-$ terms constitute the Hopf link $\mathcal{L}_H$. The $\oplus$ operation in $B = \mathcal{B}_3 \oplus \mathcal{L}_H$ is intrinsic to the Borromean braid algebra, not an additional factor. Explicitly adding Hopf links (Models B–E) double-counts the gluon contribution. The braid $B_3 = (\sigma_0\sigma_1^{-1})^3$ completely encodes confinement ($\mathcal{B}_3$) and gluon binding ($\mathcal{L}_H$). 
+The $L_+$ and $L_-$ terms constitute the Hopf link $\mathcal{L}_H$. The $\oplus$ operation in $B = \mathcal{B}_3 \oplus \mathcal{L}_H$ is intrinsic to the Borromean braid algebra, not an additional factor. Explicitly adding Hopf links (Models B–E) double-counts the gluon contribution. In Model A the braid $B_3 = (\sigma_0\sigma_1^{-1})^3$ carries both confinement ($\mathcal{B}_3$) and gluon binding ($\mathcal{L}_H$).
 
-The near-cancellation $+0.046 - 0.044 = +0.002$ reflects baryon color neutrality. The $\mathbf{1}$ term ($\approx +0.998$) places $B_3$ perturbatively close to the identity.
+The model reads a zero signed gluon sum as baryon color neutrality; here the sum is $+0.046 - 0.044 = +0.002$, so the condition holds only approximately. The $\mathbf{1}$ term ($\approx +0.998$) places $B_3$ perturbatively close to the identity.
 
-The Model A proton and neutron NF are confirmed:
+The Model A proton and neutron NF are:
 
 $$
   \mathfrak{p} = B_3 \cdot \sigma(\mathfrak{u},\mathfrak{u})
@@ -64,4 +64,4 @@ $$
     - 0.010L_+ + 0.009L_- - 0.044e^-
 $$
 
-The proton has net $\approx +0.999$; the neutron has net $\approx +0.811$. The difference $\Delta \approx -0.188$ calibrates the quark-level energy scale $E_0 = Q/\Delta \approx 4.155$ MeV.
+The proton has net $\approx +0.999$; the neutron has net $\approx +0.811$. Fitting the difference $\Delta \approx -0.188$ to the CODATA $Q$ gives the quark-level energy scale $E_0 = Q/\Delta \approx 4.155$ MeV. This is a fit.
