@@ -605,6 +605,43 @@ def q_beta_predicted_mev() -> mp.mpf:
     return M_E_MEV * abs(q0 ** 2 - 2 * q0 - 1) * (q0 + 1) / (2 * q0 ** 3)
 
 
+def eps_flavour_v3(q=None) -> mp.mpf:
+    """ε_flavour(V³): the T³ weight split of the z_D trace on V³ = (σ₀σ₁⁻¹)³.
+
+        ε_flavour(V³) = (q² − 1)·P(q) / (q⁴ (q² + 1)³),
+        P(q) = q¹² − 3q¹⁰ + 3q⁸ − 5q⁶ + 3q⁴ − 3q² + 1.
+
+    Closed form proved in Lean (``QOU.QBeta.FlavourWeightSplit.epsFlavour_V3_eq``;
+    exactly bar-odd, negative on 1 < q ≤ 23/20). Same expression as the
+    scorecard's ``per_observable_100x_status`` Q_β row.
+    """
+    with mp.workdps(max(50, mp.mp.dps)):
+        q0 = _q_0() if q is None else _resolve_q(q)
+        P = (q0 ** 12 - 3 * q0 ** 10 + 3 * q0 ** 8 - 5 * q0 ** 6
+             + 3 * q0 ** 4 - 3 * q0 ** 2 + 1)
+        return (q0 ** 2 - 1) * P / (q0 ** 4 * (q0 ** 2 + 1) ** 3)
+
+
+def q_beta_scored_mev(q=None, m_e=None) -> mp.mpf:
+    """The SCORED Q_β (owner ruling D1 = A, 2026-11-20): |ε_flavour(V³)|·E₀.
+
+    E₀ is the canonical tower-summed scale (``qbeta/qbeta_e0.canonical``,
+    canonical by the 2026-09-03 full-tower ruling; its series is open, bean
+    ``qou-y3bm``). At the proton q₀ this is 0.325433929 MeV (−58.4 % vs
+    CODATA), CONDITIONAL on conjectures C1–C3 (``QOU.QBeta.DecayConjectures``),
+    none proved. D2 (owner 2026-11-20): this number is Q_β, so
+    m_n = m_p + Q_β + m_e.
+
+    Not chosen by residual: it is further from CODATA than the retired
+    ``q_beta_kashiwara_n2_mev`` and replaces it because it is the ruled cell
+    (owner decision 2026-11-21, issue #8769).
+    """
+    with mp.workdps(max(50, mp.mp.dps)):
+        q0 = _q_0() if q is None else _resolve_q(q)
+        me = M_E_MEV if m_e is None else m_e
+        return abs(eps_flavour_v3(q0)) * _qbeta_e0.canonical(q=q0, m_e=me)
+
+
 class RetiredMixedBaseWarning(UserWarning):
     """Raised when a value built on the retired z = 1 Q_β base is used."""
 
