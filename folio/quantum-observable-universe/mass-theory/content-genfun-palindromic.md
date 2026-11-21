@@ -23,7 +23,7 @@ $$
 
 *where $I(n)$ is the number of involutions of $S_n$.*
 
-By [`prop:binding-period-involution-statistic`](#prop:binding-period-involution-statistic),
+By [balanced dimension sum as an involution generating function](#prop:binding-period-involution-statistic),
 $C_n(q)$ is the content-only face of the binding statistic — the object obtained by
 retaining the RSK shape and discarding the descent (major-index) data. The bar-even
 $O((q-1)^2)$ deviation is exactly the q-rigidity measured for the level-1/2 alien datum

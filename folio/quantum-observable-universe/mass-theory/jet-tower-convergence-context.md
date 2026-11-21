@@ -3,7 +3,7 @@
 The hypothesis $|\Delta^{(n)}(\varrho)| \leq \Delta_{\max}(\varrho)$
 — uniform boundedness of per-level binding across the brane tower —
 is the named conjecture
-[`conj:jet-tower-uniform-delta-max`](#conj:jet-tower-uniform-delta-max).
+[uniform per-level binding bound](#conj:jet-tower-uniform-delta-max).
 This proposition therefore
 **reduces the convergence question to a single boundedness
 statement**: once $\Delta^{(n)}$ is shown to be bounded (uniformly
@@ -20,7 +20,7 @@ uniform bound holds numerically for D, T, ${}^{3}$He across $n = 1, \dots, 7$ �
 with $\Delta^{(n)}$ being bounded (in fact roughly constant).
 Promoting that observation to a theorem closes the open
 subconjecture
-[`conj:jet-tower-uniform-delta-max`](#conj:jet-tower-uniform-delta-max).
+[uniform per-level binding bound](#conj:jet-tower-uniform-delta-max).
 
 ## Engineering consequence
 

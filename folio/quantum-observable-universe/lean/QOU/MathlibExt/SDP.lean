@@ -198,7 +198,14 @@ class HasStrongDuality (sdp : SDPPrimal n R ι)
   /-- A strong-duality pair exists. -/
   pair : Nonempty (StrongDualityPair sdp)
 
-/-- **Strong duality** (per-instance form). -/
+/-- **Strong duality** (per-instance form).
+
+    **Assumed, not derived here** — the body projects `HasStrongDuality.pair`
+    verbatim, so existence of a strong-duality pair is carried by the
+    context-class axiom (§3b-conditional, derivation pending) rather than
+    proved from `sdp.IsStrictlyFeasible` below. Boyd–Vandenberghe is cited for
+    the external convex-optimisation theorem motivating the class, not for a
+    proof performed in this file. -/
 -- Ref: [boyd-vandenberghe-2004] §5.2.3 + §5.3
 --      (Slater's condition implies strong duality for convex problems;
 --      Boyd doesn't number theorems — "Theorem 5.5" was a misattribution.)

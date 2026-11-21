@@ -7,4 +7,4 @@
 5. *(Upward closure.) If $\lambda,B\ge0$, $0\le z\le1$, $n\le m$ and $\lambda Bz^n<t$, then $\neg\mathrm{Scr}_\lambda(t,Bz^m)$. If moreover $K$ is Archimedean, $0\le z<1$ and $t>0$, there is $n$ with $\neg\mathrm{Scr}_\lambda(t,Bz^m)$ for all $m\ge n$.*
 6. *(The additive band is one-sided.) If $\lambda\ge1$, $t\ge0$ and $x\ge0$, then $\mathrm{Add}_\lambda(t,x)\iff x\le(\lambda+1)t$; in particular $\mathrm{Add}_\lambda(t,0)$ holds. For $x\ge0$, $\mathrm{Scr}_\lambda(t,x)$ implies $\mathrm{Add}_\lambda(t,x)$. For signed $x$ the test $|x-t|>\lambda t$ does not imply $\neg\mathrm{Scr}_\lambda(t,x)$: take $t=1$, $\lambda=10$, $x=-19/2$.*
 
-These are the mathematical facts under the screening rule [`rem:q-beta-direction-sanity-gate`](#rem:q-beta-direction-sanity-gate). The rule fixes $\lambda=10$ and a target built from a measured value; neither is part of this statement.
+These are the mathematical facts under the screening rule [$\mathfrak{Q}_\beta$ order-of-magnitude gate](#rem:q-beta-direction-sanity-gate). The rule fixes $\lambda=10$ and a target built from a measured value; neither is part of this statement.

@@ -5,17 +5,15 @@ export default proposition({
   title:
     "Explicit central primitive idempotents $e_\\lambda$ via Murphy elements",
   lean: {
-    ref: "qou:QOU.BraidKnot.ExplicitCentralIdempotent.explicit_central_idempotent_via_murphy",
+    ref: "qou:QOU.BraidKnot.ExplicitCentralIdempotentGeneral.centralIdem_idem",
     validation: "not_checked",
   },
   uses: [
     "prop:jucys-murphy-central-elements-qou",
     "prop:hecke-baer-star-generic",
-    // AGENTS.md §3b-cond item 4: the conditional dependency is now
-    // auditable from the manifest. The Lean theorem carries this as
-    // [ExplicitCentralIdempotentConjecture q] (item 2); this edge is
-    // what lets conjectural-propagation-audit.ts see the cone at all.
-    "conj:explicit-central-idempotent",
+    // Was conj:explicit-central-idempotent (conditional). Promoted to a
+    // theorem 2026-11-20 (owner ruling); this block is now unconditional.
+    "thm:explicit-central-idempotent-cross-checks",
     // conj:bring-figure-eight-depth-2-witness removed from uses[]
     // (2026-06-01 detangler Bucket-A): referenced only as numerical
     // corroboration ("verified numerically in (…)"), not a dependency
@@ -44,8 +42,10 @@ export default proposition({
       body:
         "The idempotency this block proves conditionally is now proved unconditionally, at generic q, on the real Hecke " +
         "algebra: `QOU.BraidKnot.ExplicitCentralIdempotentGeneral.centralIdem_idem`, together with centrality, " +
-        "orthogonality and sum-to-1 (`explicit_central_idempotent_cross_checks`). Sorry-free. The block's `lean.ref` still " +
-        "names the conditional theorem over the old scalar carrier; switching it is left to the owner (bean qou-2150).",
+        "orthogonality and sum-to-1 (`explicit_central_idempotent_cross_checks`). Sorry-free, in any characteristic. The " +
+        "block's `lean.ref` names `centralIdem_idem`. The conditional theorem over the scalar carrier " +
+        "`ExplicitCentralIdempotentConjecture`, and the carrier itself, were retired 2026-11-20 (owner); the relocated " +
+        "note above that calls this block conditional is historical.",
     },
     {
       kind: "note",

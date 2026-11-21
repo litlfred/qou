@@ -17,7 +17,7 @@ import sympy as sp
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from w_braid_reconcile_probe import q  # noqa: E402
 from word_dressing_chirality_probe import I2, PL, PR, S, U, D, idx, kr, on_quarks  # noqa: E402
-from word_level_epsilon_probe import ME, Q0, QB_CODATA, apply, deltaS_op, word_ops  # noqa: E402,F401
+from word_level_epsilon_probe import Q0_STR, ME, Q0, QB_CODATA, apply, deltaS_op, word_ops  # noqa: E402,F401
 
 import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
 E0 = _qbeta_e0.order_zero_scaled(1, q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
@@ -73,7 +73,10 @@ def main():
                     print(wn, cn, dn, xn, r.get("eps_at_q0"), r.get("Q_vs_codata_pct_display"), flush=True)
     res = {"producer": "computations/probes/twist_involution_epsilon_probe.py", "bean": "qou-99qc",
            "preregistration": "ε-TW1", "arithmetic": "exact (sympy over Q(q)); q0 only for display",
-           "q0_anchor": "proton (display only)", "rows": rows}
+           "q0_anchor": "proton (display only)",
+           "q0Anchor": "proton", "q0Value": Q0_STR,
+           "q0AnchorReason": "all published results are exact over Q(q); q0 enters only the display-only *_q0 fields, evaluated at word_level_epsilon_probe.Q0 = the proton pin truncated to 16 significant digits",
+           "rows": rows}
     pathlib.Path(__file__).with_name("twist-involution-epsilon.witness.json").write_text(
         json.dumps(res, indent=1, ensure_ascii=False) + "\n")
 

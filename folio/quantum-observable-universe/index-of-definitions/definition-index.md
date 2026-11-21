@@ -276,6 +276,7 @@
 
 | Label | Title | Chapter | Lean |
 |-------|-------|---------|------|
+| [thm:explicit-central-idempotent-cross-checks](#thm:explicit-central-idempotent-cross-checks) | The Murphy–Lagrange elements $e_\lambda$ are the central primitive idempotents of $H_n(q)$: sum to one, orthogonality, bar-invariance, conjugate pairing | Ch 7 | `qou:QOU.BraidKnot.ExplicitCentralIdempotentGeneral.explicit_central_idempotent_cross_checks` |
 | [thm:q-bkm](#thm:q-bkm) | $q$-deformed Beale--Kato--Majda criterion | Ch 18 | `qou:QOU.FluidDynamics.q_bkm_criterion` |
 | [thm:flat-tetrahedron-zero-volume](#thm:flat-tetrahedron-zero-volume) | A flat ideal tetrahedron has zero volume: $D(x) = 0$ for every real $x$ | Ch 12 | `qou:QOU.Knot.FlatTet.BlochWigner_lob_ofReal` |
 | [thm:averaging-resonance-rule](#thm:averaging-resonance-rule) | Averaging-resonant rung selection: $k_{\mathrm{res}}(n_{\mathrm{total}}) = \lfloor n_{\mathrm{total}}/2 \rfloor + \mathbb{1}_{\mathrm{wrap}}$ | Ch 12 | `qou:QOU.BraidKnot.AveragingResonanceRule` |
@@ -500,7 +501,7 @@
 | [prop:crystal-r-matrix-sub-lemma](#prop:crystal-r-matrix-sub-lemma) | Crystal R-matrix Sub-lemma 2.1 (operator-valued) | Ch 12 | `qou:QOU.BraidKnot.CrystalRMatrixSubLemma` |
 | [prop:crystal-basis-resolves-mass-tower-open-problems](#prop:crystal-basis-resolves-mass-tower-open-problems) | Crystal-basis correspondence (Brundan-Kleshchev + Type-B folding) reduces three mass-tower open problems to crystal-graph combinatorics | Ch 12 | `qou:QOU.Archimedean.crystal_basis_reduction` |
 | [prop:crystal-isospin-degeneracy](#prop:crystal-isospin-degeneracy) | Crystal-limit isospin degeneracy: $S_{\mathrm{crystal}}$ is invariant under $\sigma_i \leftrightarrow \sigma_i^{-1}$ | Ch 12 | `qou:QOU.BraidKnot.crystal_isospin_degeneracy` |
-| [prop:curvature-rank-gb-stratification](#prop:curvature-rank-gb-stratification) | Curvature-rank stratification of the GB spectral sequence | Ch 12 | `qou:QOU.WedderburnMass.curvature_rank_gb_stratification` |
+| [conj:curvature-rank-gb-stratification](#conj:curvature-rank-gb-stratification) | Curvature-rank stratification of the GB filtration | Ch 12 | `qou:QOU.WedderburnMass.CurvatureRankGbStratificationContext` |
 | [prop:cusp-shape-bar-parity](#prop:cusp-shape-bar-parity) | Cusp-shape bar-parity: the figure-eight modulus splits as $\mathfrak{V} = \mathrm{Vol} + i\,\mathrm{CS}$ | Ch 5 | `qou:QOU.Knot.CuspShapeBarParity.cusp_barParity_split` |
 | [prop:cyclotomic-l-value-decomposition](#prop:cyclotomic-l-value-decomposition) | Cyclotomic depth-$n$ generators decompose into Dirichlet $L$-values: $\beta(3) = \pi^3/32$ as a corollary | Ch 22 | `qou:QOU.BraidKnot.CyclotomicLValueDecomposition.beta_3_from_jonquiere` |
 | [prop:cyclotomic-depth3-dimension-synthesis](#prop:cyclotomic-depth3-dimension-synthesis) | Cyclotomic depth-3 dimension synthesis: $(K - 3)/2$ at every prime $K \geq 5$ | Ch 12 | `qou:QOU.BraidKnot.CyclotomicDepth3DimensionSynthesis.dimension_synthesis_upper_bound` |
@@ -569,7 +570,7 @@
 | [conj:explicit-alpha-k-h4](#conj:explicit-alpha-k-h4) | Explicit $\alpha_3$ at $H_4(R, q)$ via Wedderburn-orthogonal class-function $r_3$ | Ch 12 | `qou:QOU.BraidsAndKnots.explicit_alpha_k_h4` |
 | [prop:qbeta-canonical-markov-weights-explicit-instance](#prop:qbeta-canonical-markov-weights-explicit-instance) | Explicit $\sqrt q$-bearing instance of $\mathbf{CanonicalMarkovWeightsH3}$ (class is inhabitable) | Ch 7 | `qou:QOU.BraidKnot.CanonicalMarkovWeightsH3.explicitInstance` |
 | [conj:spectral-sequence-h3-explicit](#conj:spectral-sequence-h3-explicit) | Explicit $d_1, d_2$ on $H_3(q)$ over $\mathbb{R}[q, q^{-1}]$ | Ch 12 | `qou:QOU.BraidKnot.spectral_sequence_h3_explicit` |
-| [prop:explicit-central-idempotent](#prop:explicit-central-idempotent) | Explicit central primitive idempotents $e_\lambda$ via Murphy elements | Ch 7 | `qou:QOU.BraidKnot.ExplicitCentralIdempotent.explicit_central_idempotent_via_murphy` |
+| [prop:explicit-central-idempotent](#prop:explicit-central-idempotent) | Explicit central primitive idempotents $e_\lambda$ via Murphy elements | Ch 7 | `qou:QOU.BraidKnot.ExplicitCentralIdempotentGeneral.centralIdem_idem` |
 | [conj:explicit-alpha-k-h3](#conj:explicit-alpha-k-h3) | Explicit α_k at H_3(R, q): structural prefactors closed form | Ch 12 | `qou:QOU.BraidsAndKnots.explicit_alpha_k_h3` |
 | [prop:braiding-eigenvalue-extraction](#prop:braiding-eigenvalue-extraction) | Extraction of $q$ from the braiding eigenvalues | Ch 2 | `qou:QOU.braiding_eigenvalue_extraction` |
 | [prop:cs-evaluation-faithfulness](#prop:cs-evaluation-faithfulness) | Faithfulness of the Chern--Simons evaluation on the brane tower | Ch 14 | `qou:QOU.Archimedean.CSEvaluationFaithful` |
@@ -592,8 +593,8 @@
 | [prop:frobenius-self-duality-forces-lp-dual-extraction](#prop:frobenius-self-duality-forces-lp-dual-extraction) | Frobenius self-duality of $(H_n(R,q),\tau)$ forces $\tau$-extraction to produce LP-dual variables | Ch 12 | `qou:QOU.BraidKnot.FrobeniusSelfDualityForcesLPDualExtraction` |
 | [prop:emergence-to-quantum-flat](#prop:emergence-to-quantum-flat) | From Tannakian emergence to 2-group quantum flatness | Ch 2 | `qou:QOU.emergence_to_quantum_flat` |
 | [prop:deuteron-fusion-frame](#prop:deuteron-fusion-frame) | Fusion frame of the deuteron law: the $5$ is forced by $[2]_v^2 = [3]_v + 1$ and $g$ is the marginal-stability rate | Ch 12 | `qou:QOU.MassTheory.DeuteronFusion.fusion_identity` |
-| [prop:spectral-sequence-collapse](#prop:spectral-sequence-collapse) | GB spectral sequence collapses at E_1 (semisimple cohomology vanishing) | Ch 12 | `qou:QOU.WedderburnMass.centralIdempotent_idem` |
-| [prop:gb-spectral-sequence](#prop:gb-spectral-sequence) | GB-filtration spectral sequence and $E_\infty$ convergence of the 6-term mass | Ch 7 | `qou:QOU.BraidKnot.gb_spectral_sequence` |
+| [prop:spectral-sequence-collapse](#prop:spectral-sequence-collapse) | Limit page of the GB spectral sequence for semisimple $H_n(R, q)$ | Ch 12 | `qou:QOU.WedderburnMass.centralIdempotent_idem` |
+| [prop:gb-spectral-sequence](#prop:gb-spectral-sequence) | Length-filtration spectral sequence of the Hochschild complex of $H_n(R, q)$ | Ch 7 | `qou:QOU.BraidKnot.gb_spectral_sequence` |
 | [prop:jonquiere-cyclotomic-tate-rationality](#prop:jonquiere-cyclotomic-tate-rationality) | General Jonquière Tate-rationality: wrong-parity part of $\mathrm{Li}_n(\zeta_K)$ has closed form $-(2\pi i)^n / n! \cdot B_n(1/K)$ at every depth | Ch 12 | `qou:QOU.BraidKnot.JonquiereCyclotomicTateRationality.jonquiere_tate_rationality` |
 | [prop:cyclotomic-orbit-sum-all-depths](#prop:cyclotomic-orbit-sum-all-depths) | General orbit-sum at every depth: $\sum_k \mathrm{Cl}_n(2\pi k/N) = (N^{1-n} - 1)\zeta(n)$ for $n$ odd, $0$ for $n$ even | Ch 12 | `qou:QOU.BraidKnot.CyclotomicOrbitSumAllDepths.orbit_sum_all_depths` |
 | [prop:cyclotomic-cl3-orbit-sum-general](#prop:cyclotomic-cl3-orbit-sum-general) | General orbit-sum identity: $\sum_k \mathrm{Cl}_3(2\pi k/N) = -(N^2-1)/N^2 \cdot \zeta(3)$ at every $N \geq 2$ | Ch 12 | `qou:QOU.BraidKnot.CyclotomicCl3OrbitSum.orbit_sum_general` |
@@ -747,7 +748,7 @@
 | [prop:q-rogers-pentagon-archimedean](#prop:q-rogers-pentagon-archimedean) | Post-τ pentagon = pre-τ pentagon + q-log² Rogers correction | Ch 12 | `qou:QOU.BraidKnot.QRogersAnalyticContinuation` |
 | [prop:habiro-precision-ladder-equivalence](#prop:habiro-precision-ladder-equivalence) | Precision-ladder coefficients are Habiro integer evaluations | Ch 12 | `qou:QOU.BraidKnot.habiro_integral` |
 | [conj:chain-ring-comparison](#conj:chain-ring-comparison) | Predicted vs. observed $\mathrm{C}_6$ ring-closure barrier | Ch 17 | `qou:QOU.Organic.benzene_weights` |
-| [prop:homological-shell-condensation](#prop:homological-shell-condensation) | Proposition (homological shell condensation): BB-stratified $E_\infty^{p,>0}(n) = 0$ at magic $n$ | Ch 7 | `qou:QOU.ShellCondensation.HomologicalConjecture` |
+| [conj:homological-shell-condensation](#conj:homological-shell-condensation) | Homological shell condensation: BB-stratified $E_\infty^{p,>0}(n) = 0$ at magic $n$ | Ch 7 | `qou:QOU.ShellCondensation.HomologicalConjecture` |
 | [conj:partition-sum-proton-residual](#conj:partition-sum-proton-residual) | Proton tower residual compared with $m_e\sum_{\lambda\vdash3}1/\dim_q\lambda = m_e(2 + 1/[2]_q)$ | Ch 12 | `qou:QOU.BraidKnot.proton_tower_residual_frobenius` |
 | [prop:mass-endomorphism-tower](#prop:mass-endomorphism-tower) | Proton--electron mass endomorphism tower (convention D, $\mathrm{Li}_2^q$): the mass formula is positive under a genuine norm and bounded dilogarithm | Ch 12 | `qou:QOU.MassEndomorphism.mass_endomorphism_positive` |
 | [prop:cl3-zeta5-pslq-independence](#prop:cl3-zeta5-pslq-independence) | PSLQ certifies Cl$_3$(2$\pi$/5) $-$ Cl$_3$(4$\pi$/5) is independent of standard depth-3 periods up to coefficient norm 10$^8$ | Ch 12 | `qou:QOU.BraidKnot.Cl3Zeta5PslqIndependence.pslq_independence` |
@@ -1144,7 +1145,7 @@
 | [conj:joint-galois-braid-action](#conj:joint-galois-braid-action) | Joint motivic-Galois $\times$ braid-group action on the bi-filtration $\mathcal{H}_q^{(n, K)}$ | Ch 12 | `qou:QOU.BraidKnot.JointGaloisBraidAction` |
 | [conj:jsj-decomposition-linearity](#conj:jsj-decomposition-linearity) | JSJ additivity of nucleon braids | Ch 8 | `qou:QOU.BraidsKnots.LinearJSJVolume.JSJ_volume_additivity` |
 | [conj:kashaev-density-equals-sdp-multiplicity](#conj:kashaev-density-equals-sdp-multiplicity) | Kashaev density prefactor equals joint-tower SDP Wedderburn multiplicity ($\rho_F = \nu_{\mathrm{SDP}}$) | Ch 12 | `qou:QOU.Kashaev.KashaevDensityEqualsSdpMultiplicity` |
-| [conj:kashaev-volume-conjecture](#conj:kashaev-volume-conjecture) | Kashaev volume conjecture (axiomatised as Lean class) | Ch 12 | `qou:QOU.Kashaev.VolumeConjecture` |
+| [conj:kashaev-volume-conjecture](#conj:kashaev-volume-conjecture) | Kashaev volume conjecture | Ch 12 | `qou:QOU.Kashaev.VolumeConjecture` |
 | [conj:kashaev-surreal](#conj:kashaev-surreal) | Kashaev volume conjecture as a surreal standard-part identity | Ch 25 | `qou:QOU.AppendixSurreals.KashaevSurreal` |
 | [conj:klein-bring-icosahedral-bridge](#conj:klein-bring-icosahedral-bridge) | Klein icosahedral–quintic bridge: the $(2,3,5)$ force symmetries assemble the Bring ED into the icosahedral $\mathbb{P}^1$ with quotient $S^2(2,3,5)$ | Ch 6 | `qou:QOU.KleinBringBridge.KleinBringIcosahedralBridge` |
 | [conj:knot-factor-frobenius-pairing](#conj:knot-factor-frobenius-pairing) | Knot factor as Frobenius self-pairing ratio | Ch 12 | `qou:QOU.BraidKnot.KnotFactorFrobeniusPairing` |
@@ -1205,7 +1206,6 @@
 | [conj:q-birch-swinnerton-dyer](#conj:q-birch-swinnerton-dyer) | The $q$-deformed Birch and Swinnerton-Dyer conjecture | Ch 25 | `qou:QOU.AppendixSurreals.QBirchSwinnertonDyer` |
 | [conj:c1-ggm-bar-parity-faces](#conj:c1-ggm-bar-parity-faces) | The binding q-lift module and the resurgent Stokes carrier are bar-parity conjugate faces | Ch 12 | `qou:QOU.Mass.DoorVParityNoIdentity.doorV_parity_no_identity` |
 | [conj:b1-hyperbolic-rows-theorem](#conj:b1-hyperbolic-rows-theorem) | The depth correspondence conditionally reduces to the Volume Conjecture at Borromean rings, the Whitehead link, and twist knots | Ch 25 | `qou:QOU.AppendixSurreals.B1HyperbolicRowsTheorem.b1_hyperbolic_rows` |
-| [conj:explicit-central-idempotent](#conj:explicit-central-idempotent) | The four Murphy–Lagrange cross-checks for $e_\lambda$ follow from Lagrange interpolation in commuting variables | Ch 7 | `qou:QOU.BraidKnot.ExplicitCentralIdempotent.ExplicitCentralIdempotentConjecture` |
 | [conj:cyclotomic-boundary-at-keystone](#conj:cyclotomic-boundary-at-keystone) | The Habiro-tail cyclotomic boundary sits at the quintic order: $D(n)$ is cyclotomic $\iff n \leq 5$ | Ch 12 | — |
 | [conj:hecke-monodromy-step-two](#conj:hecke-monodromy-step-two) | The Hecke quadratic is the q-deformed branch-point monodromy of the colour cubic (Step 2 of the canonical chain as a conjecture) | Ch 12 | `qou:QOU.Mass.HeckeMonodromy` |
 | [conj:higgs-t28](#conj:higgs-t28) | The Higgs boson as $T(2,8)$: the link spanning three exceptional divisors | Ch 15 | `qou:QOU.HiggsT28.HiggsAsT28` |

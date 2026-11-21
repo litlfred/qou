@@ -198,3 +198,73 @@ striking, but the label is provably not the n/p distinction, so adopting it woul
 `down-quark`, `up-quark`, `down-quark-properties`, `hydrogen-knot-structure`, `electron-knot`), and **36** `.md` blocks use
 "typed crossing". Rewriting them needs the label decision above: under C, u and d are T³ weights (`OverStrandWeight`);
 under B they are J₄ lines. Not edited until the owner picks.
+
+## 10. Owner choice "3 2" (2026-11-20): keep A and B side by side; research label C — first result
+
+**Recorded:** no label ruling. Labels A and B stay side by side; the round-trip theorem is on `main` (#8615). ε remains the
+2026-09-08 ruling.
+
+**Label C, measured.** Probe `computations/qbeta/qbeta_label_c_quantum_trace_probe.py` (5/5 exact checks over ℚ(q)). With
+u = e₁ (T³ = +½), H₃ acting on (ℂ²)^⊗3 through the Jimbo Ř and K = diag(q, q⁻¹), the quantum trace Tr(K^⊗3 ·) restricted
+to each natural subspace gives:
+
+| restriction | τ(J) | Q_β (order-zero E₀) |
+|---|---|---|
+| whole (ℂ²)^⊗3 | (q⁴+1)/(q²+1)² = convention-D y₃ | −43.16 % |
+| T³ = +½ or −½ weight space (p or n charge sector) | 1/3 for every q | −62.51 % |
+| isospin-½ = H₃ (2,1) block (the nucleon's own sector) | **0** | **Q_β = 0** |
+| isospin-3/2 = H₃ (3) block | 1 | +12.47 % |
+
+**Structural reading (provable, and the useful part).** τ(Δ_S) = −(h[2]/2)(y₃ − y₁₁₁) and χ₍₂,₁₎(Δ_S) = 0
+(`QBetaChiralityReduction.chi21_deltaS`). So **Q_β sees only the weight a functional puts on the isospin-3/2 block; the
+nucleon's own isospin-½ block contributes exactly zero.** The CODATA value needs y₃ ≈ 0.889 (order-zero E₀): roughly 89 %
+of the weight on the (3) block. Label B's round trip lands at 0.892 *because* its Ja line is the (3) sector. No label-C
+restriction of the quantum trace reaches it; the values are z_D, 1/3, 0 and 1.
+
+**What that leaves for label C.** A derivation must explain why the decay functional weights the isospin-3/2 channel by
+≈ [2]²·[2]_{q²}/[3]² (or an E₀-dependent equivalent), e.g. an E/F round trip through an intermediate isospin-3/2 state.
+That is the next research target, and it is the same object label B points at, now with its physical meaning named.
+
+## 11. Option 2, first attempt: the single-quark E/F round trip (scope-(a) negative)
+
+β decay changes **one** quark d → u, so the label-C transition is a single-site raising operator E_k on (ℂ²)^⊗3. The
+coproduct Δ(E) = Σ E_k (K on the right) commutes with H₃ (checked) and therefore cannot leave the nucleon's isospin-½
+sector. A single-site E_k can, so it is the natural route "through isospin 3/2".
+
+Probe `computations/qbeta/qbeta_label_c_single_quark_flip_probe.py`, exact over ℚ(q): A = Σ_k E_k P_n F_k, with P_n the
+nucleon (2,1) block at T³ = −½, and τ_A(J) = Tr(K^⊗3 A J)/Tr(K^⊗3 A).
+
+* τ_A(J) = q⁴ / (2(q⁴+q²+1)) = 0.20239 at the proton pin, identical for the bare and the coproduct-dressed site operators.
+* The (3)-block (isospin-3/2) fraction of A is 0.169 (bare) / 0.168 (dressed), i.e. ≈ 1/6, the classical branching.
+* Q_β = 0.17808 MeV, **−77.2 %**.
+
+**Scope (a):** this construction, alone, misses by −77 %. It does not exclude the isospin-3/2 channel; it measures that a
+single-quark flip from the nucleon sends only ≈ 1/6 of its weight there, while CODATA needs ≈ 0.889 on that block.
+
+**Status of the whole arc (one table).** All values are y₃ = τ(J), and Q_β uses the order-zero E₀:
+
+| construction | y₃ | Q_β | status |
+|---|---|---|---|
+| ruled ε: Markov trace at z_D (= label-A round trip, = whole-space quantum trace) | 0.5054 | −43.2 % | ruled 2026-09-08; now explained by two proved identities |
+| augmentation / isospin-3/2 block alone | 1 | +12.5 % | admissible |
+| label-B round trip through the strand-4 γγ vertex (J₄ lines) | 0.8921 | **+0.33 %** | proved identity; label is isospin multiplicity, not n↔p; not adopted |
+| label C: one T³ charge sector | 1/3 | −62.5 % | measured |
+| label C: nucleon isospin-½ block | 0 | 0 | proved (χ₍₂,₁₎(Δ_S) = 0) |
+| label C: single-quark E/F round trip | 0.2024 | −77.2 % | measured, this section |
+| needed for CODATA | 0.8891 | 0 | — |
+
+The only construction near the measurement is the strand-4 (J₄) round trip. Its weight sits on the isospin-3/2 block,
+which Q_β alone sees. Every label-C construction tried so far weights that block at ≤ 1/3.
+
+## 12. Cross-reference: the sibling label-C work (PR #8632, open at time of writing)
+
+A parallel workstream reached the same label-C picture independently, and goes further on one point:
+
+* `QOU/QuarkState/IsospinRaisingRoundTrip.lean` (`Rc_comm_K`) **proves** every Hecke element preserves charge, so labels A and
+  B, being flips inside the Hecke algebra, **cannot be n ↔ p (scope b)**. §9's "label B is isospin multiplicity, not n↔p" is
+  therefore a theorem, not a scoping remark.
+* Its coproduct round trip ε_C(X) = tr_{W₋}(T⁻T⁺X)/tr_{W₋}(T⁻T⁺) gives y₃ = [2]²/([2]²+2) = 0.6691, i.e. Q_β −24.75 %
+  (order-zero E₀). It agrees with §§10–11 on z_D (whole space), 1/3 (weight space) and 0 (isospin ½); the single-quark flip of
+  §11 (−77 %) is the complementary construction.
+* Briefing to all workstreams: `docs/coordination/2026-11-20-w2-qbeta-ud-briefing.md`; posted on #8526 and on the open
+  qou-99qc / photon PRs.

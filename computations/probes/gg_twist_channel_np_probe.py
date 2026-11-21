@@ -4,6 +4,13 @@ Pre-registered in bean qou-99qc (2026-11-16 07:30Z) before computing.
 Same traced setup as ε-TR1 (multiplicity_trace_epsilon_probe.Mmat), words built from
 V = σ1σ2^-1, L+ = σ1σ2 (writhe +2, breit-wheeler-vertex), L- = σ1^-1σ2^-1.
 Reports ε_tr for n->p and p->n and their ratio, exact over Q(q); q0 display only.
+
+Scope note (2026-11-20). "Photon twist channel L±" read L+ = σ1σ2 as the photon's fourth term
+(γ = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁). By owner ruling (bean qou-99qc, 2026-11-18, confirmed 2026-11-20)
+def:photon's fourth term is the chiral vertex σ₀σ₁⁻¹ = V (writhe 0), so L± are two-photon-product
+letters, not the photon's twist term. The words and every ε_tr below are fixed braid words and are
+unchanged (re-run 2026-11-20, witness byte-identical); only the "photon twist channel" label is
+superseded. Under the ruling the photon's own fourth-term channel is V, already the nucleon letter.
 """
 from __future__ import annotations
 
@@ -16,7 +23,7 @@ import sympy as sp
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from w_braid_reconcile_probe import q  # noqa: E402
 from word_dressing_chirality_probe import PR, U, D, kr  # noqa: E402
-from word_level_epsilon_probe import Q0, deltaS_op, word_ops  # noqa: E402
+from word_level_epsilon_probe import Q0_STR, Q0, deltaS_op, word_ops  # noqa: E402
 from neutron_vector_epsilon_probe import coprod3, vec3, vec3_2  # noqa: E402
 from multiplicity_trace_epsilon_probe import Mmat  # noqa: E402
 
@@ -62,7 +69,10 @@ def main():
         print(json.dumps(r, ensure_ascii=False), flush=True)
     res = {"producer": "computations/probes/gg_twist_channel_np_probe.py", "bean": "qou-99qc",
            "preregistration": "ε-L1", "arithmetic": "exact (sympy over Q(q)); q0 only for display",
-           "q0_anchor": "proton (display only)", "rows": rows}
+           "q0_anchor": "proton (display only)",
+           "q0Anchor": "proton", "q0Value": Q0_STR,
+           "q0AnchorReason": "all published results are exact over Q(q); q0 enters only the display-only *_q0 fields, evaluated at word_level_epsilon_probe.Q0 = the proton pin truncated to 16 significant digits",
+           "rows": rows}
     pathlib.Path(__file__).with_name("gg-twist-channel-np.witness.json").write_text(
         json.dumps(res, indent=1, ensure_ascii=False) + "\n")
 

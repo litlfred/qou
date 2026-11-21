@@ -22,6 +22,8 @@ from word_dressing_chirality_probe import I2, S, Sinv, U, D, idx, kr, on_quarks,
 
 Q2 = q + 1 / q
 Q0 = sp.Rational(1109978582751381, 10**15)  # proton pin, display only
+Q0_STR = "1.109978582751381"  # decimal text of Q0, recorded as the witness q0Value
+assert sp.Rational(Q0_STR) == Q0
 ME = sp.Rational("0.51099895069")
 QB_CODATA = sp.Rational("0.78233")
 
@@ -79,7 +81,9 @@ def main():
     res = {"producer": "computations/probes/word_level_epsilon_probe.py", "bean": "qou-99qc",
            "arithmetic": "exact (sympy over Q(q)); q0 and m_e only for display",
            "q0_anchor": "proton (display only)",
-           "checks": {"DeltaS_eq_minus_qh2over4_W1_plus_W2": bool(ident)},
+           "q0Anchor": "proton", "q0Value": Q0_STR,
+           "q0AnchorReason": "all published results are exact over Q(q); q0 enters only the display-only *_q0 fields, evaluated at word_level_epsilon_probe.Q0 = the proton pin truncated to 16 significant digits",
+                      "checks": {"DeltaS_eq_minus_qh2over4_W1_plus_W2": bool(ident)},
            "rows": rows}
     print(json.dumps(res, indent=1, ensure_ascii=False))
     pathlib.Path(__file__).with_name("word-level-epsilon.witness.json").write_text(

@@ -114,7 +114,7 @@ period theory:
 
 - *Cellular vs iterated-integral depth.* The cellular GB-depth on
   $Z(H_n(q))$ — attributed here to
-  [Curvature-rank stratification of the GB spectral sequence](#prop:curvature-rank-gb-stratification),
+  [Curvature-rank stratification of the GB spectral sequence](#conj:curvature-rank-gb-stratification),
   though **that proposition stratifies by the curvature rank of *words* and
   mentions no partition**; the max-hook statistic is
   a definition, and the step joining them is

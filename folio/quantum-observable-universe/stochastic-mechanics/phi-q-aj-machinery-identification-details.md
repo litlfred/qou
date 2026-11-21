@@ -14,7 +14,7 @@ The dilogarithm regulators that appear in the substrate-evaluation chain are exa
 - $\Phi_q$: saddle-point regime of $\hat{A}_K \cdot J_N = 0$ at $q = e^{2\pi i / N}$ (root-of-unity asymptotic).
 - $\mathrm{Li}_2^q$: saddle-point regime of $\hat{A}_K \cdot J_N = 0$ at $q \in (0, 1)$ (real asymptotic, via Stokes).
 
-The two regimes are related by the modular S-transform $q \leftrightarrow \tilde{q} = e^{2\pi i / \tau}$ ([`conj:modular-s-transform-q-q-tilde`](../q-geometric-langlands/modular-s-transform-q-q-tilde.md)).
+The two regimes are related by the modular S-transform $q \leftrightarrow \tilde{q} = e^{2\pi i / \tau}$ ([modular $S$-transform $q \leftrightarrow \tilde q$](../q-geometric-langlands/modular-s-transform-q-q-tilde.md)).
 
 ## Significance
 

@@ -4,7 +4,7 @@ By [spectral sequence collapse](#prop:spectral-sequence-collapse),
 $\mathrm{HH}^k(H_n(R, q)) = 0$ for $k \geq 1$ at generic $q$, so only
 $\mathrm{HH}^0 = Z(H_n(R, q)) = \bigoplus_\lambda R \cdot e_\lambda$
 survives the GB-filtration spectral sequence.
-[Curvature-rank stratification](#prop:curvature-rank-gb-stratification)
+[Curvature-rank stratification](#conj:curvature-rank-gb-stratification)
 stratifies $H_n(R, q)$ by the curvature rank of **words**; that
 $e_\lambda$ carries a GB-depth $\mathrm{depth}(\lambda)$ indexed by the
 *partition* is a further identification, not stated there and assumed

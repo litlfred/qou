@@ -69,6 +69,8 @@ def main():
                      "abs_ratio_sq_corpus_over_mirror": str(ratio)})
     res = {"producer": "computations/probes/closed_trace_chirality_probe.py", "bean": "qou-g0jn",
            "arithmetic": "exact (sympy over Q(q)); no floats", "q0_anchor": "none (symbolic in q)",
+           "q0Anchor": "independent",
+           "q0AnchorReason": "exact sympy arithmetic over Q(q) with q a free symbol; no substrate q0 is read or substituted",
            "rows": rows}
     print(json.dumps(res, indent=1, ensure_ascii=False))
     pathlib.Path(__file__).with_name("closed-trace-chirality.witness.json").write_text(

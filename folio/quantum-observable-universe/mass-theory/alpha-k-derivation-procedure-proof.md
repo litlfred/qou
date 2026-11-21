@@ -62,7 +62,12 @@ are tabulated by the formal derivation.  Each table records:*
 
 - *partition $\lambda \vdash n$ and curvature-rank
   $\mathrm{depth}(\lambda)$;*
-- *Jones–Markov weight $y_\lambda$ (numeric at $q_0 = 1.109978595642739\ldots$ (muon pin, 16 dps));*
+- *Jones–Markov weight $y_\lambda$: under convention D it vanishes on
+  every shape with three or more rows and equals
+  $[a-b+1]_q/[2]_q^{a+b}$ on the two-row shape $(a, b)$, exactly and for
+  generic $q$ ([Wedderburn–Bratteli recursion](#conj:wedderburn-bratteli-recursion));
+  the witness `y-lambda-jones-markov-witness.json` evaluates it at
+  $60$ digits at the proton pin $q_0 \approx 1.1099785827513808$;*
 - *linear-system condition number and residual.*
 
 *Output sums consistent with Plancherel-completeness

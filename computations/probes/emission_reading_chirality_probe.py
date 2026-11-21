@@ -61,7 +61,11 @@ def main():
                      "ratio_is_q_minus4": bool(ratio is not None and sp.simplify(ratio - q**-4) == 0)})
     res = {"producer": "computations/probes/emission_reading_chirality_probe.py", "bean": "qou-g0jn",
            "arithmetic": "exact (sympy over Q(q)); q0 used only for display",
-           "q0_anchor": "proton (display only)", "checks": checks,
+           "q0_anchor": "proton (display only)",
+           "q0Anchor": "proton",
+           "q0AnchorReason": "algebra is exact over Q(q); the only numeric column (ratio_sq_at_q0) substitutes Q0, a 16-digit rational of the proton pin",
+           "q0Value": "1.109978582751381",
+           "checks": checks,
            "coefficients": {f"{'mirror' if m else 'corpus'}_{'s' if s > 0 else 's^-1'}": [str(c) for c in v]
                             for (m, s), v in coeff.items()},
            "rows": rows}

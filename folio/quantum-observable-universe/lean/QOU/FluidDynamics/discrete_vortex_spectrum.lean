@@ -1,83 +1,126 @@
-import Mathlib.Tactic
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Ring
 
 /-!
-# QOU.FluidDynamics.discrete_vortex_spectrum
+# QOU.FluidDynamics.discrete_vortex_spectrum — discrete vortex mode spectrum
 
-**Canonical declaration** for content block
-[`prop:discrete-vortex-spectrum`](../../../quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.md): *Discrete vortex mode spectrum*.
+The `q`-Laplacian on a stable vortex filament has a discrete spectrum
+`λ_k = [k]_q² · ℏ_q / L_q²`, the intensity energy levels are
+`E_j = ℏ_q/(2 I_q) · [j]_q [j+1]_q`, and ladder transitions have energy
+`ΔE = E_{j'} − E_j`.
 
-The `lean.ref` URI `qou:QOU.FluidDynamics.discrete_vortex_spectrum`
-resolves to this declaration in the `qou` Lake package.  The claim is
-formalised below (§3b-conditional, fully proved): the four sub-claims are
-discharged from the context class's `impl_*` fields.
+LaTeX label: `prop:discrete-vortex-spectrum`
+
+## What the load-bearing claim is
+
+The md states four claims: (1) the discrete eigenvalue spectrum
+`λ_k = [k]_q² · ℏ_q / L_q²`, (2) the intensity energy levels
+`E_j = ℏ_q/(2 I_q) · [j]_q [j+1]_q`, (3) ladder transitions with the
+selection rule `|j − j'| = 1` and transition energy `ΔE = E_{j'} − E_j`,
+and (4) the classical limit `q → 1`: `[k]_q → k` (Kelvin-wave spectrum)
+and `[j]_q[j+1]_q → j(j+1)` (rigid-rotor).
+
+Below all four claims are bundled as fields of an abstract
+`DiscreteVortexSpectrumContext` (without any decoy `vortex_spectrum_discrete`
+implication wrapper), `discrete_vortex_spectrum` bundles their conjunction,
+and `discrete_vortex_transition_energy`, `discrete_vortex_ladder_rule`, and
+`discrete_vortex_classical_energy` are genuinely proved from the context
+fields. Synchronised with the chapter sibling
+`fluid-dynamics/discrete-vortex-spectrum.lean` (bean `qou-klr1`).
+
+## References
+- [leitner2026] §Fluid dynamics / Discrete vortex spectrum,
+  prop:discrete-vortex-spectrum
 -/
 
 namespace QOU.FluidDynamics
 
-
-/-- Abstract context for the `discrete_vortex_spectrum` claim —
-    manuscript-themed typed fields below; sub-claims encode (i)
-    discrete `q`-Laplacian eigenvalues, (ii) spin-labelled intensity
-    levels, (iii) ladder-mode transitions, and (iv) the classical
-    Kelvin-wave limit. -/
+/-- Spectral data of a stable vortex filament: the `q`-integer function,
+    the physical scales (`ℏ_q`, filament length `L_q`, moment of inertia
+    `I_q`), and the load-bearing spectral formulae the md asserts. -/
 class DiscreteVortexSpectrumContext where
-  /-- The substrate parameter `q : ℝ`. -/
+  /-- The substrate parameter `q : ℝ` (`q > 1` in the spectral regime;
+      the classical limit is `q = 1`). -/
   q : ℝ
-  /-- The substrate vortex filament length `L : ℝ`. -/
-  L : ℝ
-  /-- The substrate q-Planck constant `ℏ_q`. -/
-  hbar_q : ℝ
-  /-- The q-deformed filament length `L_q`. -/
-  L_q : ℝ
-  /-- The q-integer `[k]_q = (q^k − q^{−k})/(q − q^{−1})`. -/
-  q_int : ℕ → ℝ
-  /-- The discrete spectrum `λ_k^{(q)} : ℕ → ℝ`. -/
-  «λ» : ℕ → ℝ
-  /-- The q-deformed moment of inertia `I_q`. -/
-  I_q : ℝ
-  /-- The vortex energy at intensity level `j` (indexed by `2j ∈ ℕ`
-      so that `j_n = n/2`). -/
-  E_level : ℕ → ℝ
-  /-- Transition energy `ΔE_{n,n'}` between levels `n` and `n'`. -/
-  ΔE_trans : ℕ → ℕ → ℝ
-  /-- Proposition: the vortex spectrum is discrete. -/
-  vortex_spectrum_discrete : Prop
-  /-- Hypothesis that the spectrum is discrete. -/
-  spectrum_active : vortex_spectrum_discrete
-  /-- (i) discrete eigenvalues -/
-  impl_discrete_eigenvalues : vortex_spectrum_discrete → ∀ k : ℕ, 1 ≤ k →
-    «λ» k = (q_int k) ^ 2 * hbar_q / L_q ^ 2
-  /-- (ii) spin-labelled intensity levels -/
-  impl_spin_levels : vortex_spectrum_discrete → ∀ n : ℕ,
-    E_level n = (hbar_q / (2 * I_q)) * (q_int n) * (q_int (n + 1))
-  /-- (iii) ladder transitions -/
-  impl_ladder_transitions : vortex_spectrum_discrete → ∀ n n' : ℕ,
-    (n + 1 = n' ∨ n' + 1 = n) → ΔE_trans n n' = E_level n' - E_level n
-  /-- (iv) classical limit -/
-  impl_classical_kelvin_limit : vortex_spectrum_discrete → (q = 1 → ∀ k : ℕ, q_int k = (k : ℝ))
+  /-- The `q`-integer `[k]_q = (qᵏ − q⁻ᵏ)/(q − q⁻¹)`. -/
+  qInt : ℕ → ℝ
+  /-- Quantum of action `ℏ_q > 0`. -/
+  hbar : ℝ
+  hbar_pos : 0 < hbar
+  /-- `q`-deformed filament length `L_q > 0`. -/
+  Lq : ℝ
+  Lq_pos : 0 < Lq
+  /-- `q`-deformed moment of inertia `I_q > 0`. -/
+  Iq : ℝ
+  Iq_pos : 0 < Iq
+  /-- The eigenvalues of the `q`-Laplacian on the filament. -/
+  lam : ℕ → ℝ
+  /-- The intensity-level energies, indexed by the spin label `j`
+      (here `n` plays the role of `j`). -/
+  energy : ℕ → ℝ
+  /-- The transition energy `ΔE_{j→j'}` between intensity levels. -/
+  deltaE : ℕ → ℕ → ℝ
+  /-- **(1) Eigenvalue spectrum.** `λ_k = [k]_q² · ℏ_q / L_q²`. -/
+  spectrum : ∀ k, lam k = (qInt k) ^ 2 * hbar / Lq ^ 2
+  /-- **(2) Energy levels.** `E_j = ℏ_q/(2 I_q) · [j]_q [j+1]_q`, with the
+      level energy reading `qInt n * qInt (n+1)`. -/
+  energy_level : ∀ n, energy n = hbar / (2 * Iq) * (qInt n * qInt (n + 1))
+  /-- **(3) Ladder transitions, selection rule `|j − j'| = 1`.** For levels
+      one rung apart (`n+1 = m` or `m+1 = n`) the transition energy is the
+      level-energy difference `E_{j'} − E_j`. -/
+  ladder_transition : ∀ n m, (n + 1 = m ∨ m + 1 = n) →
+    deltaE n m = energy m - energy n
+  /-- **(4) Classical limit.** At `q = 1` the `q`-integer collapses to the
+      ordinary integer, `[k]_q → k`, recovering the Kelvin-wave / rigid-rotor
+      spectrum (`[j]_q[j+1]_q → j(j+1)`). -/
+  classical_limit : q = 1 → ∀ k, qInt k = (k : ℝ)
 
-/-- **Content statement** (from manuscript):
+/-- **Discrete vortex mode spectrum** ([`prop:discrete-vortex-spectrum`]).
 
-Let $\varrho$ be a stable vortex filament of length $L$ in the
-brane fluid with [substrate parameter](#def:substrate-parameter)
-$q > 1$, and let $\Delta_q$ be the $q$-Laplacian acting on
-sections of the normal bundle $N_\varrho$.  Then:
-
-    The Lean encoding below states the claim over the context class and
-    discharges it from the class's structural fields (§3b-conditional;
-    fully proved). -/
--- Ref: [leitner2026] quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts
+    **Assumed, not derived here:** the four spectral hypotheses (`spectrum`,
+    `energy_level`, `ladder_transition`, `classical_limit`) are carried as
+    fields of `[DiscreteVortexSpectrumContext]`; this theorem bundles their
+    conjunction as the `lean.ref` target while `discrete_vortex_transition_energy`,
+    `discrete_vortex_ladder_rule`, and `discrete_vortex_classical_energy`
+    derive non-trivial consequences below. -/
+-- Ref: [leitner2026] prop:discrete-vortex-spectrum
 theorem discrete_vortex_spectrum [ctx : DiscreteVortexSpectrumContext] :
-    (∀ k : ℕ, 1 ≤ k →
-      ctx.«λ» k = (ctx.q_int k) ^ 2 * ctx.hbar_q / ctx.L_q ^ 2) ∧
-    (∀ n : ℕ, ctx.E_level n =
-      (ctx.hbar_q / (2 * ctx.I_q)) * (ctx.q_int n) * (ctx.q_int (n + 1))) ∧
-    (∀ n n' : ℕ, (n + 1 = n' ∨ n' + 1 = n) →
-      ctx.ΔE_trans n n' = ctx.E_level n' - ctx.E_level n) ∧
-    (ctx.q = 1 → ∀ k : ℕ, ctx.q_int k = (k : ℝ)) :=
-  ⟨ctx.impl_discrete_eigenvalues ctx.spectrum_active,
-   ctx.impl_spin_levels ctx.spectrum_active,
-   ctx.impl_ladder_transitions ctx.spectrum_active,
-   ctx.impl_classical_kelvin_limit ctx.spectrum_active⟩
+    (∀ k, ctx.lam k = (ctx.qInt k) ^ 2 * ctx.hbar / ctx.Lq ^ 2) ∧
+    (∀ n, ctx.energy n = ctx.hbar / (2 * ctx.Iq) * (ctx.qInt n * ctx.qInt (n + 1))) ∧
+    (∀ n m, (n + 1 = m ∨ m + 1 = n) → ctx.deltaE n m = ctx.energy m - ctx.energy n) ∧
+    (ctx.q = 1 → ∀ k, ctx.qInt k = (k : ℝ)) := by
+  exact ⟨ctx.spectrum, ctx.energy_level, ctx.ladder_transition, ctx.classical_limit⟩
+
+/-- **Transition energy** `ΔE_{j→j'} = E_{j'} − E_j`, the energy released
+    or absorbed in a ladder transition (md formula (3)), obtained by
+    differencing the level energies and factoring `ℏ_q / (2 I_q)`. -/
+-- Ref: [leitner2026] prop:discrete-vortex-spectrum
+theorem discrete_vortex_transition_energy
+    [ctx : DiscreteVortexSpectrumContext] (n m : ℕ) :
+    ctx.energy m - ctx.energy n
+      = ctx.hbar / (2 * ctx.Iq)
+          * (ctx.qInt m * ctx.qInt (m + 1) - ctx.qInt n * ctx.qInt (n + 1)) := by
+  rw [ctx.energy_level m, ctx.energy_level n]; ring
+
+/-- **Ladder selection rule** (md item (3)): for adjacent intensity levels
+    (`|j − j'| = 1`, i.e. `n+1 = m` or `m+1 = n`) the transition energy is the
+    level-energy difference, with the closed form below. -/
+-- Ref: [leitner2026] prop:discrete-vortex-spectrum
+theorem discrete_vortex_ladder_rule
+    [ctx : DiscreteVortexSpectrumContext] (n m : ℕ)
+    (h : n + 1 = m ∨ m + 1 = n) :
+    ctx.deltaE n m
+      = ctx.hbar / (2 * ctx.Iq)
+          * (ctx.qInt m * ctx.qInt (m + 1) - ctx.qInt n * ctx.qInt (n + 1)) := by
+  rw [ctx.ladder_transition n m h, discrete_vortex_transition_energy]
+
+/-- **Classical rigid-rotor energy limit** (md item (4)): at `q = 1`,
+    combining `energy_level` with `classical_limit` yields the rigid-rotor
+    casimir `E_n = ℏ_q/(2 I_q) · n(n+1)`. -/
+-- Ref: [leitner2026] prop:discrete-vortex-spectrum
+theorem discrete_vortex_classical_energy
+    [ctx : DiscreteVortexSpectrumContext] (hq : ctx.q = 1) (n : ℕ) :
+    ctx.energy n = ctx.hbar / (2 * ctx.Iq) * ((n : ℝ) * ((n + 1 : ℕ) : ℝ)) := by
+  rw [ctx.energy_level n, ctx.classical_limit hq n, ctx.classical_limit hq (n + 1)]
 
 end QOU.FluidDynamics

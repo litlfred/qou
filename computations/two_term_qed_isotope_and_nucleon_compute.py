@@ -77,6 +77,23 @@ from canonical_mass import (  # noqa: E402
 )
 
 
+def _scorecard_qbeta_ruled_base() -> dict:
+    """The scored Q_β cell, from the L2 scorecard's own implementation.
+
+    `per_observable_100x_status` calls `set_compute_dps()` at import, which would
+    silently lower this producer's 80-dps working precision. The import is done
+    lazily and the caller's dps is restored, and the cell is then evaluated at that
+    dps, so this producer's precision is unchanged.
+    """
+    saved = mp.mp.dps
+    try:
+        import per_observable_100x_status as _p100x  # noqa: E402
+    finally:
+        mp.mp.dps = saved
+    with mp.workdps(saved):
+        return _p100x._qbeta_ruled_base()
+
+
 def vol_4_1_80dps() -> mp.mpf:
     """Hyperbolic volume of the figure-eight knot complement Vol(4₁) = 2 Im Li₂(e^{iπ/3})."""
     with mp.workdps(90):
@@ -193,6 +210,9 @@ def compute_all() -> dict:
         tr_conn_Bor_p = -2 * ((q2 - 1) ** 4) * (q2 ** 2 + q2 + 1) / (27 * (q2 ** 3))
         mp_qed_bor_plain = m_e * abs(tr_conn_Bor_p)
         mp_qed_bor_Kp = q0 * m_e * abs(tr_conn_Bor_p)
+        # DERIVED weighting Tr(K^{⊗3}·)/[2]_q³ (bean qou-99qc); plain / Kp kept as comparisons.
+        from two_term_qtrace_weighting import m_p_qed_conn_mev, delta_m_qed_conn_mev
+        mp_qed_bor_derived = m_p_qed_conn_mev(q0, m_e, "derived", "adjacent")
 
         # Re-solve q_proton under two-term proton mass m_p^exp = m_p^QCD(q) + M_p^QED:
         #   m_p^QCD(q_new)/m_e = m_p^exp/m_e - M_p^QED/m_e
@@ -230,6 +250,8 @@ def compute_all() -> dict:
             "delta_mp_qmuon_minus_qproton_ppb": fmt(delta_mp_qmu_minus_qp_ppb, 10),
             "tr_conn_Bor_p_at_q0": fmt(tr_conn_Bor_p, 30),
             "candidates": {
+                "borromean_V3_covariant_all_pairs_SCORED": _eval_mup_shift(m_p_qed_conn_mev(q0, m_e)),
+                "borromean_V3_qtrace_derived_weighting_adjacent": _eval_mup_shift(mp_qed_bor_derived),
                 "derived_borromean_V3_plain": _eval_mup_shift(mp_qed_bor_plain),
                 "derived_borromean_V3_Kp_weighted": _eval_mup_shift(mp_qed_bor_Kp),
                 "derived_single_crossing_hecke_trace": _eval_mup_shift(mp_qed_hecke_1crossing),
@@ -263,10 +285,14 @@ def compute_all() -> dict:
         dm_qed_KnKp = -m_e * delta_tr_conn_KnKp
         dm_qed_Kp3 = -m_e * delta_tr_conn_Kp3
         dm_qed_q = -m_e * delta_tr_conn_q
+        dm_qed_derived = delta_m_qed_conn_mev(q0, m_e, "derived", "adjacent")  # option 1, labelled
+        dm_qed_scored = delta_m_qed_conn_mev(q0, m_e)  # ruled covariant all-pairs: 0 on V³
 
         # Verify canonical_mass.py helpers match 80-dps direct computation to 50 digits
-        cm_mp_qed = proton_qed_self_energy_borromean_mev(k_weighted=False)
-        cm_dm_qed = np_qed_splitting_borromean_conn_mev(weighting="plain")
+        cm_mp_qed = proton_qed_self_energy_borromean_mev(weighting="plain", insertion="adjacent")
+        cm_dm_qed = np_qed_splitting_borromean_conn_mev(weighting="plain", insertion="adjacent")
+        cm_dm_qed_derived = np_qed_splitting_borromean_conn_mev(insertion="adjacent")
+        cm_dm_qed_scored = np_qed_splitting_borromean_conn_mev()  # ruled covariant all-pairs: 0
 
         # 2a. Impact on substrate-identity canonical neutron mass (Convention-D 2-strand skein):
         m_p_can = mp.mpf(str(nucleon_mass_mev("p")))
@@ -275,6 +301,8 @@ def compute_all() -> dict:
         m_n_can_2term_KnKp = m_n_can_1term + dm_qed_KnKp
         m_n_can_2term_Kp3 = m_n_can_1term + dm_qed_Kp3
         m_n_can_2term_q = m_n_can_1term + dm_qed_q
+        m_n_can_2term_derived = m_n_can_1term + dm_qed_derived
+        mn_2term_derived_err_ppb = (m_n_can_2term_derived - m_n_exp) / m_n_exp * mp.mpf("1e9")
 
         mn_1term_err_ppb = (m_n_can_1term - m_n_exp) / m_n_exp * mp.mpf("1e9")
         mn_2term_plain_err_ppb = (m_n_can_2term_plain - m_n_exp) / m_n_exp * mp.mpf("1e9")
@@ -283,23 +311,58 @@ def compute_all() -> dict:
         mn_2term_q_err_ppb = (m_n_can_2term_q - m_n_exp) / m_n_exp * mp.mpf("1e9")
         mn_plain_improvement_pct = (1 - abs(mn_2term_plain_err_ppb) / abs(mn_1term_err_ppb)) * 100
 
-        # 2b. Impact on ruled Convention-D Q_β base (`nuc11_interleaved` at z_D) and Path-C m_n, Δ_pn:
+        # 2b. Impact on the SCORED Convention-D Q_β cell and Path-C m_n, Δ_pn.
+        # OWNER 2026-11-20 ("Yes, switch it"; D1 = A, PR #8586): the scored cell is the
+        # T³ weight split of the z_D trace on the γγ base V³ = (σ₀σ₁⁻¹)³,
+        #     Q_β = |ε_flavour(V³)|·E₀^tower,
+        #     ε_flavour = (q²−1)P(q)/(q⁴(q²+1)³), P = q¹²−3q¹⁰+3q⁸−5q⁶+3q⁴−3q²+1.
+        # The value is taken from the L2 scorecard's own implementation
+        # (`per_observable_100x_status._qbeta_ruled_base`), not re-typed here, so the
+        # two witnesses cannot drift apart. The scorecard labels it CONDITIONAL on
+        # conjectures C1–C3 (`QOU.QBeta.DecayConjectures`, #8595); so does this one.
+        # The previous element `nuc11_interleaved` stays below as an unscored history cell.
+        _ruled = _scorecard_qbeta_ruled_base()
+        if not _ruled["calibrated_against_probe_witness"]:
+            raise RuntimeError(
+                "scorecard _qbeta_ruled_base is not calibrated against the flavour-split "
+                "probe witness; refusing to publish an uncalibrated Q_beta cell"
+            )
+        eps_flavour_V3 = mp.mpf(_ruled["eps_flavour_V3"])
+        qbeta_ruled_1term = mp.mpf(_ruled["Q_beta_MeV"])
+        # Cross-check: the scorecard's E0 (qbeta_e0.canonical) and this producer's
+        # E0_tower are the same tower-summed scale; the two products must agree.
+        _qbeta_check = abs(eps_flavour_V3) * E0_tower
+        qbeta_ruled_E0_crosscheck_gap = abs(_qbeta_check - qbeta_ruled_1term)
+        if qbeta_ruled_E0_crosscheck_gap > mp.mpf(10) ** -40:
+            raise RuntimeError(
+                f"|eps_flavour(V^3)|*E0_tower disagrees with the scorecard cell by "
+                f"{mp.nstr(qbeta_ruled_E0_crosscheck_gap, 5)} MeV"
+            )
+        # Unscored history: the element scored 2026-09-12 .. 2026-11-20.
         _census = json.loads(
             (COMPUTE_DIR / "qbeta" / "qbeta-option-e-required-level.witness.json").read_text()
         )
         tr_nuc11_D = mp.mpf(str(_census["data"]["per_candidate"]["nuc11_interleaved"]["tr_conv_D"]))
-        qbeta_ruled_1term = abs(tr_nuc11_D) * E0_tower
-        qbeta_ruled_2term = qbeta_ruled_1term + dm_qed_plain
+        qbeta_nuc11_1term = abs(tr_nuc11_D) * E0_tower
+        qbeta_nuc11_2term = qbeta_nuc11_1term + dm_qed_scored
+        qbeta_nuc11_1term_err_ppb = abs(qbeta_nuc11_1term - q_beta_exp) / q_beta_exp * mp.mpf("1e9")
+        mn_path_c_nuc11_1term = m_p_can + qbeta_nuc11_1term + m_e
+        dpn_path_c_nuc11_1term = qbeta_nuc11_1term + m_e
+        mn_path_c_nuc11_1term_err_ppb = abs(mn_path_c_nuc11_1term - m_n_exp) / m_n_exp * mp.mpf("1e9")
+        dpn_path_c_nuc11_1term_err_ppb = (
+            abs(dpn_path_c_nuc11_1term - dm_np_exp_from_masses) / dm_np_exp_from_masses * mp.mpf("1e9")
+        )
+        qbeta_ruled_2term = qbeta_ruled_1term + dm_qed_scored
         qbeta_ruled_1term_err_ppb = abs(qbeta_ruled_1term - q_beta_exp) / q_beta_exp * mp.mpf("1e9")
         qbeta_ruled_2term_err_ppb = abs(qbeta_ruled_2term - q_beta_exp) / q_beta_exp * mp.mpf("1e9")
 
         mn_path_c_1term = m_p_can + qbeta_ruled_1term + m_e
-        mn_path_c_2term = mn_path_c_1term + dm_qed_plain
+        mn_path_c_2term = mn_path_c_1term + dm_qed_scored
         mn_path_c_1term_err_ppb = abs(mn_path_c_1term - m_n_exp) / m_n_exp * mp.mpf("1e9")
         mn_path_c_2term_err_ppb = abs(mn_path_c_2term - m_n_exp) / m_n_exp * mp.mpf("1e9")
 
         dpn_path_c_1term = qbeta_ruled_1term + m_e
-        dpn_path_c_2term = dpn_path_c_1term + dm_qed_plain
+        dpn_path_c_2term = dpn_path_c_1term + dm_qed_scored
         dpn_path_c_1term_err_ppb = abs(dpn_path_c_1term - dm_np_exp_from_masses) / dm_np_exp_from_masses * mp.mpf("1e9")
         dpn_path_c_2term_err_ppb = abs(dpn_path_c_2term - dm_np_exp_from_masses) / dm_np_exp_from_masses * mp.mpf("1e9")
 
@@ -310,7 +373,7 @@ def compute_all() -> dict:
         u_kash = b_kash * (hbar_q0 ** 2)
         Q_N1_D = Q_A * mp.cos(alpha_phase - u_kash / 2)
         Q_N2_D = Q_N1_D * (1 - u_kash ** 2)
-        Q_N2_D_2term = Q_N2_D + dm_qed_plain
+        Q_N2_D_2term = Q_N2_D + dm_qed_scored
         Q_N2_D_1term_err_ppm = (Q_N2_D - q_beta_exp) / q_beta_exp * mp.mpf("1e6")
         Q_N2_D_2term_err_ppm = (Q_N2_D_2term - q_beta_exp) / q_beta_exp * mp.mpf("1e6")
 
@@ -333,6 +396,11 @@ def compute_all() -> dict:
             "tr_conn_Bor_p": fmt(tr_conn_Bor_p, 30),
             "tr_conn_Bor_n": fmt(tr_conn_Bor_n, 30),
             "delta_tr_conn_n_minus_p": fmt(delta_tr_conn_plain, 30),
+            "weighting_canonical": "derived Tr(K^{⊗3}·)/[2]_q³ (qou-99qc); plain/KnKp/Kp3/q are historical",
+            "scored_insertion": "OWNER RULING 2026-11-20 16:44: covariant all-pairs; connected part 0 on V³, so the *_2term rows below equal the 1term rows; the *_derived_* rows are the adjacent insertion (option 1), labelled",
+            "Delta_m_QED_scored_MeV": fmt(dm_qed_scored, 25),
+            "Delta_m_QED_conn_derived_MeV": fmt(dm_qed_derived, 25),
+            "Delta_m_QED_conn_derived_keV": fmt(dm_qed_derived * mp.mpf(1000), 15),
             "Delta_m_QED_conn_plain_MeV": fmt(dm_qed_plain, 25),
             "Delta_m_QED_conn_plain_keV": fmt(dm_qed_plain * mp.mpf(1000), 15),
             "Delta_m_QED_conn_KnKp_MeV": fmt(dm_qed_KnKp, 25),
@@ -342,6 +410,8 @@ def compute_all() -> dict:
                 "m_n_1term_MeV": fmt(m_n_can_1term, 15),
                 "m_n_exp_CODATA_MeV": fmt(m_n_exp, 15),
                 "m_n_1term_err_ppb": fmt(mn_1term_err_ppb, 8),
+                "m_n_2term_derived_MeV": fmt(m_n_can_2term_derived, 15),
+                "m_n_2term_derived_err_ppb": fmt(mn_2term_derived_err_ppb, 8),
                 "m_n_2term_plain_MeV": fmt(m_n_can_2term_plain, 15),
                 "m_n_2term_plain_err_ppb": fmt(mn_2term_plain_err_ppb, 8),
                 "m_n_2term_plain_residual_reduction_pct": fmt(mn_plain_improvement_pct, 6),
@@ -350,6 +420,26 @@ def compute_all() -> dict:
                 "m_n_2term_q_err_ppb": fmt(mn_2term_q_err_ppb, 8),
             },
             "ruled_zD_qbeta_and_path_c_impact": {
+                "qbeta_ruled_cell": (
+                    "V^3 = (sigma_0 sigma_1^-1)^3, T^3 weight split of the z_D trace: "
+                    "Q_beta = |eps_flavour(V^3)|*E0_tower (owner D1 = A, PR #8586; "
+                    "switched here 2026-11-20). CONDITIONAL on conjectures C1-C3 "
+                    "(QOU.QBeta.DecayConjectures), NOT a derived prediction."
+                ),
+                "qbeta_ruled_source": "per_observable_100x_status._qbeta_ruled_base (shared implementation)",
+                "eps_flavour_V3": fmt(eps_flavour_V3, 30),
+                "E0_tower_MeV": fmt(E0_tower, 30),
+                "qbeta_ruled_E0_crosscheck_gap_MeV": fmt(qbeta_ruled_E0_crosscheck_gap, 5),
+                "unscored_history_nuc11_interleaved": {
+                    "status": "unscored history (scored 2026-09-12 .. 2026-11-20; superseded by owner D1 = A)",
+                    "qbeta_1term_MeV": fmt(qbeta_nuc11_1term, 15),
+                    "qbeta_2term_MeV": fmt(qbeta_nuc11_2term, 15),
+                    "qbeta_1term_err_ppb": fmt(qbeta_nuc11_1term_err_ppb, 10),
+                    "m_n_path_c_1term_MeV": fmt(mn_path_c_nuc11_1term, 15),
+                    "m_n_path_c_1term_err_ppb": fmt(mn_path_c_nuc11_1term_err_ppb, 10),
+                    "Delta_pn_path_c_1term_MeV": fmt(dpn_path_c_nuc11_1term, 15),
+                    "Delta_pn_path_c_1term_err_ppb": fmt(dpn_path_c_nuc11_1term_err_ppb, 10),
+                },
                 "qbeta_ruled_1term_MeV": fmt(qbeta_ruled_1term, 15),
                 "qbeta_ruled_2term_MeV": fmt(qbeta_ruled_2term, 15),
                 "qbeta_ruled_1term_err_ppb": fmt(qbeta_ruled_1term_err_ppb, 10),
@@ -574,6 +664,8 @@ def compute_all() -> dict:
                 "dm_qed_plain": dm_qed_plain,
                 "cm_mp_qed": mp.mpf(str(cm_mp_qed)),
                 "cm_dm_qed": mp.mpf(str(cm_dm_qed)),
+                "cm_dm_qed_derived": mp.mpf(str(cm_dm_qed_derived)),
+                "dm_qed_derived": dm_qed_derived,
                 "m_n_can_1term": m_n_can_1term,
                 "m_n_can_2term_plain": m_n_can_2term_plain,
                 "mn_1term_err_ppb": mn_1term_err_ppb,
@@ -710,6 +802,16 @@ def main() -> int:
         expected=raw["dm_qed_plain"],
         tolerance=mp.mpf("1e-45"),
         source="canonical_mass.np_qed_splitting_borromean_conn_mev vs 80-dps direct formula",
+    )
+    w.add_assertion(
+        "canonical_mass_helper_np_qed_derived_matches_library",
+        computed=raw["cm_dm_qed_derived"],
+        expected=raw["dm_qed_derived"],
+        tolerance=mp.mpf("1e-28"),
+        source=(
+            "canonical_mass.np_qed_splitting_borromean_conn_mev() (derived default; read from the "
+            "m-p-substrate witness at 25 digits) vs two_term_qtrace_weighting.delta_m_qed_conn_mev"
+        ),
     )
     w.add_assertion(
         "two_term_neutron_mass_reduces_codata_residual",

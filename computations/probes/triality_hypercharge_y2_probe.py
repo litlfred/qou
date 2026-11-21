@@ -34,6 +34,8 @@ sols = [F(k, 36) for k in range(-144, 145) if ok(F(k, 36))]
 closed = [Y for Y in sols if not ((Y - F(1, 3)) % 2 == 0 or (Y + F(1, 3)) % 2 == 0)]
 out = {
     "probe": "triality_hypercharge_y2_probe", "bean": "qou-99qc", "id": "ε-Y2",
+    "q0Anchor": "independent",
+    "q0AnchorReason": "no q at all: exact Fraction arithmetic over rational hypercharges and integer strand counts",
     "scan": "Y = k/36, |Y| <= 4, strand lists up to length 6",
     "solutions": [str(y) for y in sols],
     "all_of_form_pm1/3_plus_2Z": len(closed) == 0,

@@ -6,6 +6,7 @@ import QOU.AlgebraicSubstrate.TwistSignTorsor
 import QOU.BringsSurface.CoveringDegreeRamification
 import QOU.RiemannSurface.GermStabiliserCyclic
 import QOU.RiemannSurface.CombinatorialMapQuotient
+import QOU.RiemannSurface.CombinatorialMapEuler
 import QOU.BringsSurface.GenusFourFromGermStabilisers
 import QOU.Eightfold.AmbientInvolutionDoesNotDecideType
 import QOU.Eightfold.CommutativeImageDegeneration
@@ -453,6 +454,7 @@ import QOU.Mass.WStdSuperExponential
 import QOU.Mathlib.YoungLatticeExchange
 import QOU.Mathlib.YoungLatticeCornerCount
 import QOU.Mass.LinearChainBondCount
+import QOU.Mass.WedderburnMassFormulaCoefficients
 import QOU.Mass.KappaWritheAsymptote
 import QOU.Mass.LinearChainBondFactorization
 import QOU.Mass.MilnorSignRepObstruction
@@ -691,11 +693,12 @@ import QOU.BraidKnot.CentralC2Transport
 import QOU.BraidKnot.SpechtCentralC2Scalar
 import QOU.BraidKnot.SnIsotypicSpechtSplitInstance
 import QOU.BraidKnot.WedderburnUnconditional
-import QOU.BraidKnot.ExplicitCentralIdempotent
 import QOU.BraidKnot.ExplicitCentralIdempotentHecke
+import QOU.SchurWeyl.HeckeWedderburnAnyChar
 import QOU.BraidKnot.ExplicitCentralIdempotentGeneral
 import QOU.BraidKnot.CentralIdempotentInvolution
 import QOU.BraidKnot.CentralIdempotentSignTwist
+import QOU.BraidKnot.CentralIdempotentLaurent
 import QOU.BraidKnot.ContentSqSumBridge
 import QOU.BraidKnot.PlancherelSnDataGeneral
 import QOU.BraidKnot.KeystoneDefectGeneral
@@ -1762,6 +1765,7 @@ import QOU.Mass.BridgeADeligneKZ
 import QOU.QBeta.BorromeanThreeCuspNZHessian
 import QOU.QBeta.McPhailSnyderBridgeExclusion
 import QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm
+import QOU.BraidsAndKnots.NucleonWeightSpaceQTrace
 import QOU.BraidsAndKnots.NucleonIdempotentModifiedTrace
 import QOU.QuantumObservableUniverses.CategoricalLagrangianTwoTermBridge
 import QOU.MassTheory.GPMTThreeRowCumulantBridge
@@ -1772,3 +1776,6 @@ import QOU.StandardModel.OctonionColourTripletSplitting
 import QOU.StandardModel.ElectroweakBringSchwingerBridge
 import QOU.Archimedean.BringSchwingerNormalizationDerivation
 import QOU.QBeta.CoshHolonomyAndGPMTBaseBridge
+import QOU.ShellCondensation.SelectorPrune
+import QOU.ShellCondensation.BringLatticeRanks
+import QOU.ShellCondensation.CoefficientPurity

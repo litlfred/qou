@@ -118,4 +118,31 @@ theorem jonesHopfStd_one : jonesHopfStd 1 = -2 := by
 theorem jonesHopf_provenance : jonesHopfStd 1 = classicalJonesAtOne 2 := by
   rw [jonesHopfStd_one, jonesHopf_atOne]
 
+/-- **3-component Borromean / link evaluation at `q = 1` (`qou-itdn`):**
+For `c = 3` components, `classicalJonesAtOne 3 = (-2)² = 4`. -/
+theorem borromean_atOne : classicalJonesAtOne 3 = 4 := by
+  rw [classicalJonesAtOne_eq]
+  norm_num
+
+/-- **Component-step recurrence at `q = 1` (`qou-itdn`):**
+For every `c ≥ 1`, adding one link component multiplies `classicalJonesAtOne` by `-2`. -/
+theorem classicalJonesAtOne_step (c : ℕ) (hc : 1 ≤ c) :
+    classicalJonesAtOne (c + 1) = -2 * classicalJonesAtOne c := by
+  rw [classicalJonesAtOne_eq, classicalJonesAtOne_eq]
+  have hsub : c + 1 - 1 = (c - 1) + 1 := by omega
+  rw [hsub, pow_succ']
+
+/-- **Selectivity of the `q = 1` classical Jones evaluation by component count (`qou-itdn`):**
+1-component knots (`1`), 2-component Hopf links (`-2`), and 3-component Borromean links (`4`)
+take pairwise distinct values at `q = 1`. -/
+theorem classicalJonesAtOne_selectivity :
+    classicalJonesAtOne 1 = 1 ∧
+    classicalJonesAtOne 2 = -2 ∧
+    classicalJonesAtOne 3 = 4 ∧
+    classicalJonesAtOne 2 ≠ classicalJonesAtOne 1 ∧
+    classicalJonesAtOne 3 ≠ classicalJonesAtOne 1 ∧
+    classicalJonesAtOne 3 ≠ classicalJonesAtOne 2 := by
+  rw [unknot_atOne, jonesHopf_atOne, borromean_atOne]
+  refine ⟨rfl, rfl, rfl, by norm_num, by norm_num, by norm_num⟩
+
 end QOU.BraidKnot.JHopfQOneProvenance

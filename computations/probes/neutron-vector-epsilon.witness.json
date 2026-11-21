@@ -7,6 +7,9 @@
  ],
  "arithmetic": "exact (sympy over Q(q)); q0 only for display",
  "q0_anchor": "proton (display only)",
+ "q0Anchor": "proton",
+ "q0Value": "1.109978582751381",
+ "q0AnchorReason": "all published results are exact over Q(q); q0 enters only the display-only *_q0 fields, evaluated at word_level_epsilon_probe.Q0 = the proton pin truncated to 16 significant digits",
  "checks": {
   "nA_in_kerF": true,
   "nB_in_kerF": true,

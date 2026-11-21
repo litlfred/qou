@@ -144,4 +144,27 @@ theorem moebius_proportional_of_three_agree (a b c d a' b' c' d' x y z : K)
       (by linear_combination hx) (by linear_combination hy) (by linear_combination hz)
   exact ⟨by linear_combination hA, by linear_combination hB, by linear_combination hC⟩
 
+/-- **Uniqueness of quadratic interpolation at three distinct points.**
+Two quadratics `A₁·w² + B₁·w + C₁` and `A₂·w² + B₂·w + C₂` that agree at three
+pairwise-distinct points `x, y, z` have identical coefficients. -/
+theorem quadratic_eq_of_three_agree (A₁ B₁ C₁ A₂ B₂ C₂ x y z : K)
+    (hxy : x ≠ y) (hxz : x ≠ z) (hyz : y ≠ z)
+    (hx : A₁ * x ^ 2 + B₁ * x + C₁ = A₂ * x ^ 2 + B₂ * x + C₂)
+    (hy : A₁ * y ^ 2 + B₁ * y + C₁ = A₂ * y ^ 2 + B₂ * y + C₂)
+    (hz : A₁ * z ^ 2 + B₁ * z + C₁ = A₂ * z ^ 2 + B₂ * z + C₂) :
+    A₁ = A₂ ∧ B₁ = B₂ ∧ C₁ = C₂ := by
+  obtain ⟨hA, hB, hC⟩ :=
+    quadratic_zero_of_three_roots (A₁ - A₂) (B₁ - B₂) (C₁ - C₂) x y z hxy hxz hyz
+      (by linear_combination hx) (by linear_combination hy) (by linear_combination hz)
+  exact ⟨by linear_combination hA, by linear_combination hB, by linear_combination hC⟩
+
+/-- **Trace-zero Möbius involution identity (cleared coordinates).**
+Any Möbius matrix `(a, b; c, -a)` of trace zero satisfies the Cayley–Hamilton
+involution identity `(a·(a·w + b) + b·(c·w - a)) = (a² + b·c)·w` and
+`(c·(a·w + b) - a·(c·w - a)) = a² + b·c`, so its square acts as the identity
+at every point `w` in cleared coordinates. -/
+theorem moebius_trace_zero_involution_cleared (a b c w : K) :
+    (a * (a * w + b) + b * (c * w - a)) = w * (c * (a * w + b) - a * (c * w - a)) := by
+  ring
+
 end QOU.Mass.MoebiusThreePointRigidity

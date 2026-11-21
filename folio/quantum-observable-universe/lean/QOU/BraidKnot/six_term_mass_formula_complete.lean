@@ -3,7 +3,7 @@ import Mathlib.Tactic
 /-!
 # QOU.BraidKnot.six_term_mass_formula_complete — six-term unified mass formula
 
-**Proposition** ([`prop:six-term-mass-formula-complete`](../../../mass-theory/six-term-mass-formula-complete.md)).
+**Conjecture** ([`conj:six-term-mass-formula-complete`](../../../mass-theory/six-term-mass-formula-complete.md)).
 
 The `.md` states that the categorical mass of a vortex `ϱ` is the sum of six
 **named, concrete** terms:
@@ -101,7 +101,7 @@ theorem not_sixTermSplit_of_independent :
     ¬ sixTermSplit (1 : ℕ) 0 0 0 0 0 0 := by
   simp [sixTermSplit]
 
-/-- **Six-term unified mass formula** ([`prop:six-term-mass-formula-complete`]).
+/-- **Six-term unified mass formula** ([`conj:six-term-mass-formula-complete`]).
 
 The claim of the block, as a proposition over caller-supplied data — **named,
 not asserted**.

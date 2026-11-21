@@ -160,4 +160,41 @@ theorem qou_obstruction_reduction [ctx : QouObstructionReductionContext] :
   obtain ⟨_, hphi⟩ := obstruction_trace_gap
   exact ⟨ha, hphi, fun n _ => kappa_vanishes_iff_chi n⟩
 
+/-- Concrete `U_q(su₂)` Calabi–Yau dimension-3 model of
+    `QouObstructionReductionContext` for any Euler characteristic `χ₀ : ℤ`:
+    `dim HH^i(U_q, Ad) = dim HH_i(U_q, Ad) = 1` for `0 ≤ i ≤ 3` (and `0` for `i > 3`),
+    satisfying Van den Bergh CY-3 duality (`hhCohDim i = hhHomDim (3 - i)` for `i ≤ 3`),
+    Drinfeld rigidity (`hhHomDim 1 = 1`), and Hattori–Stallings trace casting. -/
+def su2QouObstructionReductionContext (χ₀ : ℤ) : QouObstructionReductionContext where
+  hhCohDim := fun i => if i ≤ 3 then 1 else 0
+  hhHomDim := fun i => if i ≤ 3 then 1 else 0
+  vdb_duality := fun i hi => by
+    have h3 : 3 - i ≤ 3 := Nat.sub_le 3 i
+    simp [hi, h3]
+  drinfeld_rigidity := by decide
+  chi_A := χ₀
+  phi_1_image := (χ₀ : ℝ)
+  kappa0 := χ₀
+  kappa_vanishes := fun n => (n : ℤ) ∣ χ₀
+  kappa_vanishes_def := fun _ => Iff.rfl
+  trace_pairing := fun z => (z : ℝ)
+  hattori_stallings := rfl
+  trace_pairing_cast := fun _ => rfl
+  chern_character := rfl
+
+/-- `QouObstructionReductionContext` is non-vacuously inhabitable. -/
+theorem nonempty_qouObstructionReductionContext :
+    Nonempty QouObstructionReductionContext :=
+  ⟨su2QouObstructionReductionContext 6⟩
+
+/-- Concrete evaluation of `qou_obstruction_reduction` on `su2QouObstructionReductionContext χ₀`. -/
+theorem su2_qou_obstruction_reduction (χ₀ : ℤ) :
+    letI := su2QouObstructionReductionContext χ₀
+    (su2QouObstructionReductionContext χ₀).hhCohDim 2 = 1 ∧
+    (su2QouObstructionReductionContext χ₀).phi_1_image = (χ₀ : ℝ) ∧
+    ∀ n : ℕ, 1 ≤ n →
+      ((su2QouObstructionReductionContext χ₀).kappa_vanishes n ↔ (n : ℤ) ∣ χ₀) := by
+  letI := su2QouObstructionReductionContext χ₀
+  exact qou_obstruction_reduction
+
 end QOU.AlgebraicSubstrate

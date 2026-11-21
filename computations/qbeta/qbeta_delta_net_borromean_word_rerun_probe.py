@@ -47,7 +47,13 @@ set_compute_dps(60)
 Q0 = sp.Rational(Q_50_DIGIT_STR)
 TGT = [mp.mpf(x) for x in ("-0.0096", "-0.0481", "0.0461",
                            "-0.2206", "0.0189", "1.0109")]
-T49 = mp.mpf("0.0445860283330804029291040528152801211016800484547")
+import json as _json  # noqa: E402
+# Read the target from the witness that defines it, not a typed copy
+# (witness_value_copy_audit): qbeta_delta_net_four_values_probe's
+# gamma_gamma_target_consensus_exact_decimal.
+T49 = mp.mpf(_json.loads((_pl.Path(__file__).resolve().parent
+                          / "qbeta-delta-net-four-values.witness.json").read_text())
+             ["data"]["gamma_gamma_target_consensus_exact_decimal"])
 
 
 def num(e):

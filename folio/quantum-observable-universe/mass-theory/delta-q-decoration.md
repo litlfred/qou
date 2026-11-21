@@ -9,4 +9,4 @@ $$
   R^{|\,\mathrm{Par}(n)\,|}.
 $$
 
-The decoration lands in the $q$-dimension layer $R^{|\mathrm{Par}(n)|}$ ([`def:q-dimension-layer`](#def:q-dimension-layer)), the per-irrep coordinate structure that the Markov trace normally collapses.
+The decoration lands in the $q$-dimension layer $R^{|\mathrm{Par}(n)|}$ ([$q$-dimension layer](#def:q-dimension-layer)), the per-irrep coordinate structure that the Markov trace normally collapses.
