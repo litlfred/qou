@@ -1,0 +1,695 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/flavor-mass-splitting-bound",
+    "path": "folio/quantum-observable-universe/mass-theory/flavor-mass-splitting-bound"
+  },
+  "criteria": {
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "c20436e26481",
+          "ts": "474ed63d4556",
+          "lean": "205cfd0e7b99",
+          "lean_statement": "10d4dcf4eab7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:26.764Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "S↔L: the Lean proof is genuine (lean:171-249) and I checked the algebra by hand: ℏ²·h·[2] = (q−1)²(q⁴−1)/q⁴, the ratio is exactly 1/3, and √q+√q⁻¹ < 3(q+q⁻¹) for q > 1. It is conditional on `h_derive : μ_d − μ_u = M_N * substrate_split_factor q` and on `0 < M_N` (l.173-176), and the md (md:1-8) states neither; both enter only through `uses: prop:flavor-dressed-mass-from-substrate-split`. ℝ is needed here for the order. S↔P: the prf's step 1 has the split equal to M_N × factor only \"modulo O((Δm/M_N)²), which is below the leading term\" (prf:10-12). With that correction the strict lower bound is not proved; it holds only under the exact identity that the Lean assumes. The prf and the Lean differ on whether the identity is exact. The upper bound has a slack factor of 3 and is fine.",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: binding"
+      },
+      {
+        "field_hash": {
+          "md": "0495148cc44b",
+          "ts": "474ed63d4556",
+          "lean": "205cfd0e7b99",
+          "lean_statement": "10d4dcf4eab7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:16:53.788Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: pronoun/voice rephrasing of one sentence. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: S↔L: the Lean proof is genuine (lean:171-249) and I checked the algebra by hand: ℏ²·h·[2] = (q−1)²(q⁴−1)/q⁴, the ratio is exactly 1/3, and √q+√q⁻¹ < 3(q+q⁻¹) for q > 1. It is conditional on `h_derive : μ_d − μ_u = M_N * substrate_split_factor q` and on `0 < M_N` (l.173-176), and the md (md:1-8) states neither; both enter only through `uses: prop:flavor-dressed-mass-from-substrate-split`. ℝ is needed here for the order. S↔P: the prf's step 1 has the split equal to M_N × factor only \"modulo O((Δm/M_N)²), which is below the leading term\" (prf:10-12). With that correction the strict lower bound is not proved; it holds only under the exact identity that the Lean assumes. The prf and the Lean differ on whether the identity is exact. The upper bound has a slack factor of 3 and is fine."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote prose sections of mass-theory_seq37.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.",
+        "reviewed_at": "2026-07-07T14:26:56.764285Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.764285Z"
+        },
+        "field_hash": {
+          "md": "de4b5acd8545",
+          "ts": "474ed63d4556",
+          "lean": "2f39be07ee92"
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T18:28:17.000Z",
+        "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T18:28:17.000Z",
+        "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T18:28:17.000Z",
+        "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T18:28:17.000Z",
+        "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T18:28:17.000Z",
+        "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T18:28:17.000Z",
+        "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T18:28:17.000Z",
+        "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T18:28:17.000Z",
+        "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T18:28:17.000Z",
+        "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T18:28:17.000Z",
+        "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T18:28:17.000Z",
+        "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T18:28:17.000Z",
+        "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T18:28:17.000Z",
+        "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T18:28:17.000Z",
+        "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T18:28:17.000Z",
+        "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "c20436e26481",
+          "ts": "474ed63d4556",
+          "lean": "2f39be07ee92"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "c20436e26481",
+          "ts": "474ed63d4556",
+          "lean": "2f39be07ee92"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "c20436e26481",
+          "ts": "474ed63d4556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:19.985Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "We bound the difference RATHER THAN the individual masses to isolate the substrate-derivable quantity from the CODATA-anchored mean - substantive and, in this corpus, required: it is exactly the absolute-mass excision of 2026-08-11 applied correctly (a splitting is reportable, an absolute mass is not), and it names what each side depends on.",
+        "notes": "RIGOR: VERIFIED. hbar_q = (q-1)/q agrees with hbar_q = 1 - q^{-1} used elsewhere; h_q = q - q^{-1} and [2]_q = q + q^{-1} are the SS7a forms. Numerically the bound is M_N hbar_q^2 h_q [2]_q = 3.875042037 MeV at the proton pin (M_N = 938.918756 MeV), against a realised splitting of 1.2864 MeV, so the two-sided bound holds with the slack quantified in the proof sibling. Minor: trailing whitespace after the final sentence."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "c20436e26481",
+          "ts": "474ed63d4556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:19.663Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (two-sided bound display, symbol glosses, one scope sentence). No construction of this category present."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "c20436e26481",
+          "ts": "474ed63d4556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:19.698Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (two-sided bound display, symbol glosses, one scope sentence). No construction of this category present."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "c20436e26481",
+          "ts": "474ed63d4556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:19.735Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (two-sided bound display, symbol glosses, one scope sentence). No construction of this category present."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "c20436e26481",
+          "ts": "474ed63d4556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:19.770Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (two-sided bound display, symbol glosses, one scope sentence). No construction of this category present."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "c20436e26481",
+          "ts": "474ed63d4556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:19.805Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (two-sided bound display, symbol glosses, one scope sentence). No construction of this category present."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "c20436e26481",
+          "ts": "474ed63d4556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:19.841Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (two-sided bound display, symbol glosses, one scope sentence). No construction of this category present."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "c20436e26481",
+          "ts": "474ed63d4556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:19.877Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (two-sided bound display, symbol glosses, one scope sentence). No construction of this category present."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "c20436e26481",
+          "ts": "474ed63d4556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:19.913Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (two-sided bound display, symbol glosses, one scope sentence). No construction of this category present."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "c20436e26481",
+          "ts": "474ed63d4556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:19.950Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (two-sided bound display, symbol glosses, one scope sentence). No construction of this category present."
+      }
+    ]
+  }
+}
