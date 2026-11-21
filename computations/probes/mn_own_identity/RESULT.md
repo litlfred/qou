@@ -95,5 +95,19 @@ Proton pin agrees within 0.25 ppm on every row.
   multiplies (`tr_D(σ₀σ₁σ₀) = 0.691`), while masses add. Scope (a), a consistency failure of the
   composite reading, not a value of m_n.
 
-No Lean was added for this part: L-A is the existing `trace_borromeanV3A` / `trace_borromeanV3B`
-equality on each sector, and L-B and L-C are scope-(a) numbers.
+**Lean (formalize-first, owner rule 2026-11-21):**
+`folio/quantum-observable-universe/lean/QOU/MassTheory/NeutronFourStrand.lean`, generic `[Field R]`,
+`lean -DautoImplicit=false -s 65536` exit 0, `#print axioms` on all ten theorems: `propext,
+Classical.choice, Quot.sound`. It puts `σ₁, σ₂, σ₃` on the six-dimensional `T³ = 0` block
+(`N ⊕ P`), checks the Hecke relation for `σ₃` and the braid relations `σ₁σ₃ = σ₃σ₁`,
+`σ₂σ₃σ₂ = σ₃σ₂σ₃`, and proves L-A (`trN_V3_eq_trP_V3`), L-B (`trN_w = 1`, `trP_w = 1 − h²`,
+`LB_factor`: under L-B the neutron factor is `1/(1 − h²)` exactly).
+
+**Small derivable terms, kept (owner rule 2026-11-21: do not drop a derivable correction because
+a larger gap dominates).** The only derivable correction inside these arms is the two-term trace.
+It is computed, not dropped: the covariant all-pairs pair charge is the same scalar on every basis
+state of a sector (`−1/3` on `N`, `−1` on `P`), so its connected part is exactly 0 for **every**
+element, including the selected word (`twoTerm_connected_zero`; probe agrees). The raw (unconnected)
+two-term parts differ (`tr_P` side `1 − h²` times `−1`, `N` side `−1/3`), but the raw part is not
+the ruled two-term trace. Not derivable here, so not included: a lepton-sector constant in place of
+the `−12`, and the coupling `c_em` (it multiplies 0 in any case).
