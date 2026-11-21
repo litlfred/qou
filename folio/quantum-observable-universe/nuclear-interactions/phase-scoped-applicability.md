@@ -7,7 +7,7 @@ $$
 
 *where $\Omega_\alpha(P)$ is a fixed connected component of the confinement locus $\Omega(P)$ — a single confinement phase.*
 
-**Phase-scoped theorems (these hold only within a single $\Omega_\alpha$):**
+**Conjecturally phase-scoped results (conjectured to hold only within a single $\Omega_\alpha$):**
 
 - *Level sufficiency — preservation of Markov trace under unfolding.*
 - *Shell-closure stability — monotonicity of $\sigma_F$ along the dressing chain and local maxima at noble-gas $Z$.*

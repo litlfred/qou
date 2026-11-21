@@ -11,4 +11,4 @@ $$
 
 *The remaining structure of the phases (the boundary stratification, analyticity of the Frobenius stability index, scope and phase transitions) is stated separately as [conj:confinement-phase-boundaries](#conj:confinement-phase-boundaries).*
 
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: the locus is a subset of $\mathbb{R}$, and openness and connectedness are statements about the real topology.
+**Archimedean specialisation.** Both parts sit on the archimedean side of the substrate wall: the locus is a subset of $\mathbb{R}$, and openness and connectedness are statements about the real topology.
