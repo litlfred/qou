@@ -39,8 +39,8 @@ in QCD:*
 
 | Clause | Algebra | QCD analogue |
 |---|---|---|
-| (1) | Non-central elements die at $E_\infty$ | Free quarks not observed |
-| (2) | $\int_A$ factors through $Z(A)$ | All observables are gauge-invariant |
+| (1) | $\pi_Z$ sends every element into the centre $Z(A)$ | Free quarks not observed |
+| (2) | every trace $\tau$ factors through $\pi_Z$ | All observables are gauge-invariant |
 | (3) | Observables = sum of Wedderburn residues | Hadrons = sum of color-singlet projections |
 
 *The curvature 2-cocycle $F$ encoding the Hecke + Yang–Baxter
@@ -55,7 +55,7 @@ extracting an isolated quark.*
 
 *The strata $J^k / J^{k+1}$ index "confinement layers": deeper $k$ =
 more commutator load = harder to extract.  At $k = 0$ (the centre)
-elements are completely free; at $k \geq 1$ extraction requires
+elements carry no commutator load; at $k \geq 1$ extraction requires
 energy proportional to $F$.  The chirality channel $D_q^2 = 0$
 (q-Dirac cell scanner witness) supplies the persistent
 gauge-invariant background analogous to the gluon condensate, with
@@ -67,7 +67,7 @@ $\mathrm{Vol}(B_3) = 8 G$ matching $\dim \mathfrak{su}(3) = 8$.*
 ([unified mass formula](#prop:unified-curvature-rank-mass-formula))
 $\mathfrak{m}_{q,\mathcal{K}} = \sum_k \alpha_k \cdot
 \mathfrak{m}^{(k)}_{q,\mathcal{K}}(1)$
-is — read through this proposition — literally a sum over confinement
+is, read through this proposition, a sum over confinement
 layers.  Term $k$ of the formula is the contribution of the
 curvature-rank-$k$ confinement stratum.  The rank-3 chirality residue
 ($\mathrm{Vol}(6_1) \cdot |(q;q)_3|$) and the rank-$\geq 4$ universal
