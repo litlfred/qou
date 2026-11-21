@@ -12,8 +12,7 @@ with a `V_{m+1}` belt. Written with the crossings of `V^{⊗3}`, that monodromy 
 * `R_{W,V} = R₁₃ R₂₃` is the first hexagon `(Δ ⊗ 1) R` (`hexagon_13_23`);
 * `R_{V,W} = R₁₃ R₁₂` is the second hexagon `(1 ⊗ Δ) R` (`hexagon_13_12`, proved here).
 
-So `beltW` is the hook `X(Ř²)` of `QuantumSl2LoopLemma`. This file proves the second hexagon;
-the identification with `beltW` follows.
+So `beltW` is the hook `X(Ř²)` of `QuantumSl2LoopLemma` (`hookOp_mono_eq_beltW`).
 
 This is a step of the Whitehead link trace (issue #7912).
 
@@ -150,5 +149,105 @@ theorem hexagon_13_12 (hint : ∀ k, 0 < k → k ≤ 2 * m → qint (s ^ 2) k �
   rw [qexp_mul s hs hq2 hYX m hXn hYn hint]
 
 end Hexagon2
+
+/-! ### The belt is the hook of `Ř²` -/
+
+section BeltBraid
+
+variable (s : 𝕜) (hs : s ≠ 0) (m : ℕ) (hq2 : s ^ 2 - (s ^ 2)⁻¹ ≠ 0)
+
+local notation "𝔼" => irrepE (s ^ 2) m
+local notation "𝔽" => irrepF (s ^ 2) m
+local notation "𝕂m" => irrepKm (s ^ 2) m
+local notation "𝟙" => (1 : Matrix (Fin (m + 1)) (Fin (m + 1)) 𝕜)
+
+/-- The reindexing `((c, a), b) ↦ (c, (a, b))` of `V^{⊗3}`. -/
+abbrev assocE (m : ℕ) : Tri m ≃ Fin (m + 1) × (Fin (m + 1) × Fin (m + 1)) :=
+  Equiv.prodAssoc _ _ _
+
+include hq2 in
+/-- `R_{W,V} = R₁₃ R₂₃` on `W ⊗ V = (V ⊗ V) ⊗ V`. -/
+theorem rL_tens_eq (hint : ∀ k, 0 < k → k ≤ 2 * m → qint (s ^ 2) k ≠ 0) :
+    rL s hs (tens (s ^ 2) (pow_ne_zero 2 hs) m) (tensWt m) m
+      = leg13 (rMat s hs m m) * leg23 (rMat s hs m m) := by
+  rw [hexagon_13_23 s hs hq2 m hint, rL,
+    ← Rep.rSum_trunc s _ _ m (2 * m) (by omega) fun n hn => ?_]
+  · rfl
+  · rw [show (irrep (pow_ne_zero 2 hs) m).F ^ n = 0 from
+      pow_eq_zero_of_le (by omega) (irrepF_pow_nil _ m), kronecker_zero]
+
+include hq2 in
+/-- `R_{V,W} = R₁₃ R₁₂` on `V ⊗ W = V ⊗ (V ⊗ V)`, read through `((c, a), b) ↦ (c, (a, b))`. -/
+theorem rR_tens_eq (hint : ∀ k, 0 < k → k ≤ 2 * m → qint (s ^ 2) k ≠ 0) :
+    rR s hs m (tens (s ^ 2) (pow_ne_zero 2 hs) m) (tensWt m)
+      = reindex (assocE m) (assocE m) (leg13 (rMat s hs m m) * leg12 (rMat s hs m m)) := by
+  rw [hexagon_13_12 s hs m hq2 hint, ← reindexAlgEquiv_apply 𝕜 𝕜, map_mul, map_sum, rR]
+  congr 1
+  · ext ⟨c, a, b⟩ ⟨c', a', b'⟩
+    simp only [thetaR, theta1W, reindexAlgEquiv_apply, reindex_apply, submatrix_apply,
+      diagonal_apply, tensWt, Equiv.prodAssoc_symm_apply, Prod.mk.injEq, and_assoc]
+  · rw [← Rep.rSum_trunc s _ _ m (2 * m) (by omega) fun n hn => ?_]
+    · unfold Rep.rSum
+      refine Finset.sum_congr rfl fun n _ => ?_
+      rw [map_smul, map_pow, map_add, reindexAlgEquiv_apply, reindexAlgEquiv_apply,
+        kronecker_assoc, kronecker_assoc,
+        add_comm (𝔼 ⊗ₖ (𝕂m ⊗ₖ 𝔽)), ← kronecker_add, kron_pow]
+      rfl
+    · rw [show (irrep (pow_ne_zero 2 hs) m).E ^ n = 0 from
+        pow_eq_zero_of_le (by omega) (irrepE_pow_nil _ m), zero_kronecker]
+
+include hq2 in
+/-- **The monodromy of `W` with a `V` belt** is the braid `Ř₂ (Ř²)₁ Ř₂` on `V^{⊗3}`. -/
+theorem monoG_tens_eq (hint : ∀ k, 0 < k → k ≤ 2 * m → qint (s ^ 2) k ≠ 0) :
+    monoG s hs (tens (s ^ 2) (pow_ne_zero 2 hs) m) (tensWt m) m
+      = leg23 (rCheckMat s hs m m) * leg12 (mono s hs m m) * leg23 (rCheckMat s hs m m) := by
+  have hA : leg23 (rCheckMat s hs m m) * leg12 (rCheckMat s hs m m)
+      = (leg13 (rMat s hs m m) * leg12 (rMat s hs m m)).submatrix (swap12 _ ∘ swap23 _) id := by
+    rw [leg23_rCheckMat, leg12_rCheckMat, sub_mul_sub _ _ _ _ (fun _ => rfl)]; rfl
+  have hB : leg12 (rCheckMat s hs m m) * leg23 (rCheckMat s hs m m)
+      = (leg13 (rMat s hs m m) * leg23 (rMat s hs m m)).submatrix (swap23 _ ∘ swap12 _) id := by
+    rw [leg12_rCheckMat, leg23_rCheckMat, sub_mul_sub _ _ _ _ (fun _ => rfl)]; rfl
+  rw [mono, leg12_mul]
+  simp only [← Matrix.mul_assoc]
+  rw [Matrix.mul_assoc (leg23 (rCheckMat s hs m m) * leg12 (rCheckMat s hs m m)), hA, hB, monoG,
+    rR_tens_eq s hs m hq2 hint, rL_tens_eq s hs m hq2 hint]
+  ext x y
+  simp only [mul_apply, submatrix_apply, reindex_apply, id]
+  exact Fintype.sum_equiv (assocE m).symm _ _ fun z => rfl
+
+omit [Field 𝕜] in
+theorem sum_ite_const_zero {α : Type*} [Fintype α] {M : Type*} [AddCommMonoid M] (p : Prop)
+    [Decidable p] (f : α → M) : ∑ i, (if p then f i else 0) = if p then ∑ i, f i else 0 := by
+  split_ifs <;> simp
+
+/-- The hook is the `K`-weighted partial trace over the third factor of `R₂₃ Y₁₂ R₂₃`. -/
+theorem hookOp_eq_ptr (q : 𝕜) (R Y : Matrix (Fin (m + 1) × Fin (m + 1)) (Fin (m + 1) × Fin (m + 1)) 𝕜)
+    (y x : Fin (m + 1) × Fin (m + 1)) :
+    hookOp q m R Y y x = ∑ r : Fin (m + 1), q ^ wt m r * (leg23 R * leg12 Y * leg23 R) (y, r) (x, r) := by
+  simp only [hookOp, mul_apply, leg23_apply, leg12_apply, Fintype.sum_prod_type, one_apply, mul_ite,
+    ite_mul, mul_one, mul_zero, zero_mul, Finset.sum_mul, Finset.mul_sum, sum_ite_const_zero,
+    Finset.sum_ite_eq, Finset.sum_ite_eq', Finset.mem_univ, if_true]
+  refine Finset.sum_congr rfl fun r _ => ?_
+  calc _ = ∑ w : Fin (m + 1), ∑ u : Fin (m + 1), ∑ v : Fin (m + 1),
+        q ^ wt m r * R (y.2, r) (u, w) * Y (y.1, u) (x.1, v) * R (v, w) (x.2, r) := Finset.sum_comm
+    _ = ∑ w : Fin (m + 1), ∑ v : Fin (m + 1), ∑ u : Fin (m + 1),
+        q ^ wt m r * R (y.2, r) (u, w) * Y (y.1, u) (x.1, v) * R (v, w) (x.2, r) :=
+      Finset.sum_congr rfl fun _ _ => Finset.sum_comm
+    _ = _ := by
+      rw [Finset.sum_comm]
+      refine Finset.sum_congr rfl fun _ _ => Finset.sum_congr rfl fun _ _ =>
+        Finset.sum_congr rfl fun _ _ => ?_
+      ring
+
+include hq2 in
+/-- **The belt is the hook of `Ř²`:** `X(Ř²) = beltW`. -/
+theorem hookOp_mono_eq_beltW (hint : ∀ k, 0 < k → k ≤ 2 * m → qint (s ^ 2) k ≠ 0) :
+    hookOp (s ^ 2) m (rCheckMat s hs m m) (mono s hs m m) = beltW s hs m := by
+  ext y x
+  rw [hookOp_eq_ptr, beltW, beltG, monoG_tens_eq s hs m hq2 hint]
+  refine Finset.sum_congr rfl fun r _ => ?_
+  rw [zpow_mul]; norm_cast
+
+end BeltBraid
 
 end QOU.Mass.QuantumSl2
