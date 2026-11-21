@@ -1,14 +1,14 @@
 ---
 # qou-o4k6
 title: Cross-check ki52.pdf at qou:QOU.QBeta.Stokes3LargeOrderAmplitude
-status: todo
+status: completed
 pr: 8380
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:36Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T14:53:46Z
 parent: qou-8hur
 ---
 
@@ -38,3 +38,12 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8380, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21T14:53:46Z cross-check result
+
+Probe computations/probes/ohtsuki_5_2_asymptotic_crosscheck_probe.py (branch claude/expo-cite-xcheck-wave2-2026-11-21, head 856abed7f07). ALL PASS.
+- A 2 pi Re varsigma vs SnapPy Vol(5_2): rel 5.6e-11.
+- B 2 pi Im varsigma vs SnapPy CS mod pi^2: 4.1e-10.
+- C kappa_1 extrapolated from <5_2>_N (Takata formula, N = 64..120, Neville in 1/N): |diff| 2.4e-6. Takata's value is used directly (no conjugation), so the chiralities agree.
+- D Ohtsuki's N = 200 table entry reproduced to 4.5e-7 (limited by his 10-digit varsigma, omega).
+Premise finding: the named target QOU.QBeta.Stokes3LargeOrderAmplitude is about 4_1 only and carries no 5_2 object to compare.
