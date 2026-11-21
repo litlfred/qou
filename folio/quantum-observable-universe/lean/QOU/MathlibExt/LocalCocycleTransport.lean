@@ -2,6 +2,7 @@ import Mathlib.Topology.FiberBundle.Basic
 import Mathlib.Topology.Covering
 import Mathlib.Topology.Homotopy.Lifting
 import Mathlib.Tactic.Group
+import Mathlib.AlgebraicTopology.FundamentalGroupoid.Basic
 
 /-!
 # Transport of a local cocycle along continuous paths
@@ -226,6 +227,59 @@ theorem transportQ_mk {x y : X} (γ : Path x y) : C.transportQ ⟦γ⟧ = C.tran
 
 theorem transport_refl (x : X) : C.transport (Path.refl x) = 1 := by
   rw [C.transport_of_subset _ fun _ => C.mem_U x, C.P_self]
+
+theorem transport_symm {x y : X} (γ : Path x y) : C.transport γ.symm = (C.transport γ)⁻¹ := by
+  have h := C.transport_eq_of_homotopic ⟨Path.Homotopy.reflTransSymm γ⟩
+  rw [transport_refl, transport_trans] at h
+  exact eq_inv_of_mul_eq_one_right h.symm
+
+/-! ### Gauge between two cocycles with conjugate monodromy
+
+Given two local cocycles `C₁, C₂` and `c : G` with `T₁(λ)⁻¹ · c · T₂(λ) = c` for every loop `λ`
+at `x₀`, the element `T₁(γ)⁻¹ · c · T₂(γ)` depends only on the endpoint `y` of a path `γ` from
+`x₀`.  This is the single-valued gauge between the two local systems. -/
+
+section Gauge
+
+variable (C₁ C₂ : LocalCocycle X G) (x₀ : X) (c : G)
+
+/-- The gauge computed along a path from the base point. -/
+noncomputable def gaugeAlong {y : X} (γ : Path x₀ y) : G :=
+  (C₁.transport γ)⁻¹ * c * C₂.transport γ
+
+/-- The monodromies of `C₁` and `C₂` at `x₀` are conjugate by `c`. -/
+def ConjMonodromy : Prop :=
+  ∀ l : Path x₀ x₀, (C₁.transport l)⁻¹ * c * C₂.transport l = c
+
+variable {C₁ C₂ x₀ c}
+
+theorem gaugeAlong_eq (h : ConjMonodromy C₁ C₂ x₀ c) {y : X} (γ γ' : Path x₀ y) :
+    gaugeAlong C₁ C₂ x₀ c γ = gaugeAlong C₁ C₂ x₀ c γ' := by
+  have hl := h (γ.trans γ'.symm)
+  rw [C₁.transport_trans, C₂.transport_trans, C₁.transport_symm, C₂.transport_symm] at hl
+  unfold gaugeAlong
+  nth_rewrite 2 [← hl]
+  group
+
+variable (C₁ C₂ x₀ c) in
+/-- The single-valued gauge on a path-connected space. -/
+noncomputable def gauge [PathConnectedSpace X] (y : X) : G :=
+  gaugeAlong C₁ C₂ x₀ c (PathConnectedSpace.somePath x₀ y)
+
+theorem gauge_eq_along [PathConnectedSpace X] (h : ConjMonodromy C₁ C₂ x₀ c) {y : X}
+    (γ : Path x₀ y) : gauge C₁ C₂ x₀ c y = gaugeAlong C₁ C₂ x₀ c γ :=
+  gaugeAlong_eq h _ _
+
+/-- **Local formula for the gauge.**  If a path from `y` to `z` stays in both cocycle
+neighbourhoods of `y`, then `g z = P₁(y,z)⁻¹ · g y · P₂(y,z)`. -/
+theorem gauge_local [PathConnectedSpace X] (h : ConjMonodromy C₁ C₂ x₀ c) {y z : X}
+    (δ : Path y z) (h₁ : ∀ t, δ t ∈ C₁.U y) (h₂ : ∀ t, δ t ∈ C₂.U y) :
+    gauge C₁ C₂ x₀ c z = (C₁.P y z)⁻¹ * gauge C₁ C₂ x₀ c y * C₂.P y z := by
+  rw [gauge_eq_along h ((PathConnectedSpace.somePath x₀ y).trans δ), gaugeAlong, C₁.transport_trans, C₂.transport_trans,
+    C₁.transport_of_subset δ h₁, C₂.transport_of_subset δ h₂, gauge, gaugeAlong]
+  group
+
+end Gauge
 
 end LocalCocycle
 
