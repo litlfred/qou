@@ -549,9 +549,10 @@ theorem hasDerivAt_trXMinus_idempotent_coord {q : 𝕜} (h0 : q ≠ 0) (h1 : q ^
 `q³`, the `q`-power of the trivial Schur element `c_triv = q³·[3]_q!`. So in the
 standard coordinate `z`, both linear blocks satisfy
 "derivative of the block's trace at its zero = ± (Schur element)/[3]_q!"
-(`linear_blocks_derivative_rule`). This is a check of the rule on a second block,
-not a derivation of it: in a non-integral coordinate such as `τ(P₋)` the same
-rule fails for both. -/
+(`linear_blocks_derivative_rule`). **This is not an independent check.** Both
+linear Ocneanu weights have slope `±1/[3]_q!` at their zeros, so the derivative
+of `tr_z(x)` is always (square constant of `x`)/`[3]_q!`, whatever scaling of `x`
+is chosen (`QOU.MassTheory.ProtonQ3Slopes`). -/
 theorem hasDerivAt_trXPlus_zero {q : 𝕜} (h0 : q ≠ 0) (h1 : q ^ 3 + q ≠ 0) :
     HasDerivAt (fun z => (q * z + 1) * (q ^ 3 * z + q * z + 1))
       (q ^ 3) (-1 / (q ^ 3 + q)) := by
@@ -577,7 +578,9 @@ theorem trXPlus_eq_fun {q : 𝕜} (h0 : q ≠ 0) :
 /-- **Both linear Schur elements from one rule.** With `d₊ = q³` the derivative
 of `tr_z(x₊)` at its zero and `d₋ = −q⁻³` that of `tr_z(x₋)` at `z_D`
 (`hasDerivAt_trXPlus_zero`, `hasDerivAt_trXMinus_zD`):
-`d₊·[3]_q! = c_triv` and `−d₋·[3]_q! = c_sign`. -/
+`d₊·[3]_q! = c_triv` and `−d₋·[3]_q! = c_sign`. This restates
+`c = [3]_q!·(c/[3]_q!)`: it follows from the Ocneanu slope and does not select
+the power of `q` (see `QOU.MassTheory.ProtonQ3Slopes`). -/
 theorem linear_blocks_derivative_rule {q : 𝕜} (h0 : q ≠ 0) :
     q ^ 3 * qFactThreeBalanced q = schurTriv q ∧
       -(-(q ^ 3)⁻¹) * qFactThreeBalanced q = schurSign q := by
