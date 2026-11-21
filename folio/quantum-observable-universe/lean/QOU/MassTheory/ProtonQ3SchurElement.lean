@@ -2,6 +2,7 @@
 Copyright (c) 2026 QOU contributors. All rights reserved.
 -/
 import QOU.MassTheory.PoincareCenteringOfQ3
+import Mathlib.Analysis.Calculus.Deriv.Mul
 
 /-!
 # The proton's `/q³`: it is the Schur element of the sign character of `H₃`
@@ -83,6 +84,16 @@ sign character.
 * **Quantum dimension.** The relevant quantum dimensions are `[2]_q` (strand),
   `[3]_q` (reflection Schur element), and the generic degrees
   `1, q⁶, q³[2]_q`. None is `q⁻³·[3]_q!` except through `c_sign` itself.
+
+## The tension, and one candidate that resolves it (end of file)
+
+Convention D gives the sign block weight `y_{(1³)} = 0`, yet the normaliser is
+that block's Schur element. Frame-independently, the code's rule is "the Schur
+element of the linear block the trace kills" (`trXMinus_zD`,
+`trXPlus_zD_relabel`, `schurSign_relabel`). And `−∂_z tr_z(x₋)` at `z_D` is
+exactly `q⁻³` (`hasDerivAt_trXMinus_zD`), the derivative-type modified trace of
+the killed block. That is a candidate derivation of the `q⁻³` alone, conditional
+on `z` being the right coordinate.
 
 ## Verdict
 
@@ -388,5 +399,118 @@ theorem length_not_invariant :
   decide
 
 end Word
+
+
+/-! ### The tension: convention D kills the block whose Schur element is used
+
+The Ocneanu trace `tr_z` on `H₃` is fixed by `tr(1) = 1`, `tr(T_s) = z`,
+`tr(T_{s₁s₂}) = z²` and `tr(T_{w₀}) = z·tr(T_s²) = z(1 + h z)`, `h = q − q⁻¹`.
+On the unnormalised antisymmetriser `x₋ = Σ (−q)^{−ℓ(w)} T_w` and symmetriser
+`x₊ = Σ q^{ℓ(w)} T_w` it gives quadratics in `z`:
+
+    tr_z(x₋) = (z − q)(z(q² + 1) − q³) / q⁴,
+    tr_z(x₊) = (qz + 1)(q³z + qz + 1).
+
+* `trXMinus_zD`: `tr_{z_D}(x₋) = 0`, which is `y_{(1³)} = 0`.
+* `trXPlus_zD_relabel`: at the relabelled point `z_D(−q⁻¹) = −1/(q³ + q)` the
+  trivial block dies instead. Relabelling `q ↦ −q⁻¹` swaps `c_triv ↔ c_sign`
+  (`P(−q) = P(q)`). So the code's rule is frame-independent: **the normaliser is
+  the Schur element of the linear block the convention-D trace kills.**
+* `hasDerivAt_trXMinus_zD`: **`∂_z tr_z(x₋)` at `z_D` is exactly `−q⁻³`.** When
+  a family of traces vanishes on a block at one parameter value, the derivative
+  in the parameter is the standard candidate for a modified trace on that block
+  (Geer–Patureau-Mirand). So `q⁻³ = −∂_z tr_z(x₋)|_{z_D}`. Caveat, stated: this
+  uses `z` as the coordinate. `z` is the axioms' own Markov parameter and the
+  shift `w = z − h` leaves `∂_z` unchanged, but another coordinate (Wenzl's `r`,
+  or `a = q^{2r}`) multiplies the derivative by `dz/d(coord)`. -/
+
+section Tension
+
+variable {K : Type*} [Field K]
+
+/-- `tr_z(x₋)` from the six basis traces. -/
+def trXMinus (q z : K) : K :=
+  1 + 2 * (-q)⁻¹ * z + 2 * ((-q)⁻¹) ^ 2 * z ^ 2 + ((-q)⁻¹) ^ 3 * (z * (1 + (q - q⁻¹) * z))
+
+/-- `tr_z(x₊)` from the six basis traces. -/
+def trXPlus (q z : K) : K :=
+  1 + 2 * q * z + 2 * q ^ 2 * z ^ 2 + q ^ 3 * (z * (1 + (q - q⁻¹) * z))
+
+theorem trXMinus_factor (q z : K) (hq : q ≠ 0) :
+    trXMinus q z = (z - q) * (z * (q ^ 2 + 1) - q ^ 3) / q ^ 4 := by
+  unfold trXMinus
+  rw [inv_neg]
+  field_simp
+  ring
+
+theorem trXPlus_factor (q z : K) (hq : q ≠ 0) :
+    trXPlus q z = (q * z + 1) * (q ^ 3 * z + q * z + 1) := by
+  unfold trXPlus
+  field_simp
+  ring
+
+end Tension
+
+section TensionOrdered
+
+variable {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
+
+/-- **Convention D kills the sign block**: `tr_{z_D}(x₋) = 0`. -/
+theorem trXMinus_zD {q : K} (hq : 0 < q) : trXMinus q (zD q) = 0 := by
+  have h1 : q ^ 2 + 1 ≠ 0 := by positivity
+  rw [trXMinus_factor q _ hq.ne']
+  unfold zD
+  field_simp
+  ring
+
+/-- **The relabelled convention D kills the trivial block**:
+`tr_{z'}(x₊) = 0` at `z' = z_D(−q⁻¹) = −1/(q³ + q)`. -/
+theorem trXPlus_zD_relabel {q : K} (hq : 0 < q) :
+    trXPlus q (-1 / (q ^ 3 + q)) = 0 := by
+  have h1 : q ^ 3 + q ≠ 0 := by positivity
+  rw [trXPlus_factor q _ hq.ne']
+  field_simp
+  ring
+
+omit [LinearOrder K] [IsStrictOrderedRing K] in
+/-- The relabelling `q ↦ −q⁻¹` swaps the two linear Schur elements. -/
+theorem schurSign_relabel (q : K) :
+    schurSign (-q⁻¹) = schurTriv q := by
+  unfold schurSign schurTriv poincareS3
+  rw [inv_neg, inv_inv]
+  ring
+
+/-- `z_D` relabels to `−1/(q³ + q)`. -/
+theorem zD_relabel {q : K} (hq : 0 < q) : zD (-q⁻¹) = -1 / (q ^ 3 + q) := by
+  have h0 : q ≠ 0 := hq.ne'
+  have h1 : q ^ 2 + 1 ≠ 0 := by positivity
+  have h2 : q ^ 3 + q ≠ 0 := by positivity
+  unfold zD
+  field_simp
+  ring
+
+end TensionOrdered
+
+/-- **The modified dimension of the killed antisymmetriser is `−q⁻³`.**
+`z ↦ tr_z(x₋)` has derivative `−q⁻³` at `z = z_D`, so
+`q⁻³ = −∂_z tr_z(x₋)|_{z_D}`. -/
+theorem hasDerivAt_trXMinus_zD {q : ℝ} (hq : 0 < q) :
+    HasDerivAt (fun z => (z - q) * (z * (q ^ 2 + 1) - q ^ 3) / q ^ 4)
+      (-(q ^ 3)⁻¹) (zD q) := by
+  have h1 : q ^ 2 + 1 ≠ 0 := by positivity
+  have h0 : q ≠ 0 := hq.ne'
+  have hd := (((hasDerivAt_id (zD q)).sub_const q).mul
+    (((hasDerivAt_id (zD q)).mul_const (q ^ 2 + 1)).sub_const (q ^ 3))).div_const (q ^ 4)
+  convert hd using 1
+  simp only [id, one_mul]
+  unfold zD
+  field_simp
+  ring
+
+/-- The same statement on the named trace, via `trXMinus_factor`. -/
+theorem trXMinus_eq_fun {q : ℝ} (hq : 0 < q) :
+    (fun z => trXMinus q z) = (fun z => (z - q) * (z * (q ^ 2 + 1) - q ^ 3) / q ^ 4) := by
+  funext z
+  exact trXMinus_factor q z hq.ne'
 
 end QOU.MassTheory.ProtonQ3Schur
