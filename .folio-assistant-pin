@@ -276,4 +276,30 @@
 # not exist at this sha. build.yml is dispatch-only and its last run (2026-06-30)
 # failed, so nothing runs it today, but it is qou's only paper-render entry point.
 #
-82b389982a73701b77f723d34d42c77acf41b5b4
+# BUMPED 2026-11-21 to ba3914bec (folio-assistant#3189 merged), beans 3t8p / qou-i2ed,
+# owner card "Bump the pin now". The index now pins cat-harness-tools 8efc4054
+# (#2484) and folio-assistant-sci a65a8cd9 (#211), which retire the stub checkers
+# proof-build-green and proof-no-axiom-growth (owner ruling 2026-11-21).
+#
+# Same corpus (qou origin/main 7e8e47310, the agent's SPARSE checkout: computations/,
+# library/ and simulators/ are absent, so most lines are missing-file noise that is
+# identical at both pins), `run-validate folio/quantum-observable-universe`:
+#
+#     82b389982  ->  "120 issue(s)" (113 errors)
+#     ba3914bec  ->  "168 issue(s)" (115 errors), and the difference is:
+#        +46 warnings `defterm-forward-ref` (cat-harness-tools "validate-defterm:
+#           warn on forward references to a defined term", qou-ommr): a new check on
+#           existing prose, warn-only;
+#        +2 errors `Unresolved uses`: groebner-shirshov-energy names
+#           unital-groebner-bases:thm:main-theorem and nucleon-ordering-factorization
+#           names unital-groebner-bases:prop:jet-stratified-reduction. Neither label
+#           exists in folio/unital-groebner-bases (the blocks are thm:ugb-main /
+#           thm:unital-groebner-decomposition and def:jet-stratified-reduction).
+#           These were broken before; the new platform now resolves cross-paper refs.
+#        val-resolves lines are reworded ("... or a subdirectory named by the address");
+#           the same references fail at both pins.
+#
+# KNOWN BREAK carried forward: .github/workflows/publish.yml is still absent at this
+# sha, so build.yml's `uses:` below names a file that does not exist (see 82b389982).
+#
+ba3914beca12f29a1f12d0fc2278b813d6b63241
