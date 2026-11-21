@@ -5,6 +5,8 @@ import Mathlib.LinearAlgebra.Prod
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.LinearCombination
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Positivity
 
 /-!
 # The mass of `σᵏ` on two strands, and when it is positive
@@ -65,7 +67,10 @@ theorem mass_sigma_zpow (q : K) (hq : q ≠ 0) (hq2 : q ^ 2 + 1 ≠ 0) (t : K ×
 variable [LinearOrder K] [IsStrictOrderedRing K]
 
 theorem q3_pos (q : K) : 0 < q3 q := by
-  unfold q3; positivity
+  unfold q3
+  have h1 := sq_nonneg q
+  have h2 := sq_nonneg q⁻¹
+  linarith
 
 /-- **The `n = 2` positivity rule.** -/
 theorem mass_pos_iff (q : K) (hq : 0 < q) (k : ℤ) :
