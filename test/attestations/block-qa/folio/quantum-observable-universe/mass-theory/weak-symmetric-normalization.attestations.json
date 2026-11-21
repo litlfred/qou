@@ -417,6 +417,23 @@
         "reviewed_at": "2026-11-20T17:43:43.963Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "Legacy EW normalisation formula in mass-theory next to its successor blocks; kept as a referenced special case."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:39.403Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "EW symmetric-channel normalisation beside prop:weak-spectral-completeness in mass-theory."
       }
     ],
     "da-false-claim": [
@@ -450,6 +467,24 @@
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "severity": "major",
         "evidence": "folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md:15 calls prop:weak-spectral-completeness an 'open premise' that the EW content is exhausted by H_2(q)^{⊗3}; that block is now a proposition whose exhaustion is a proved theorem for A_EW (QOU.Conjectures.carrierAlgebra_le_adjoin, derived instance carrierAlgebra_weakSpectralCompleteness). folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.lean header still says the class has 'no instance'."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:39.766Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md:15 'rests on two open premises: prop:weak-spectral-completeness, that the electroweak content is exhausted by the commutative subalgebra ...': prop:weak-spectral-completeness is now a proposition and its exhaustion item is proved (QOU.Conjectures.carrierAlgebra_le_adjoin, instance carrierAlgebra_weakSpectralCompleteness). Calling it an open premise contradicts the promotion. The same stale claim is in folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.lean header ('class QOU.Conjectures.WeakSpectralCompleteness, no instance') and in the witness scope string of computations/weak_symmetric_normalization_value.py:66-69."
       }
     ],
     "da-vacuous": [
@@ -483,6 +518,23 @@
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "severity": "major",
         "evidence": "The only proved content is a factoring identity; the reading as a Plancherel weight is explicitly not derived (:15)."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:39.797Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Lean defines the polynomial and proves its two forms; the premise bundle WeakSymmetricNormalization is content-bearing and not used to prove anything."
       }
     ],
     "da-circular": [
@@ -515,6 +567,23 @@
         "reviewed_at": "2026-11-20T17:43:44.497Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "Not circular."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:39.823Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "No circular step."
       }
     ],
     "da-overclaim": [
@@ -548,6 +617,24 @@
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "severity": "major",
         "evidence": "folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md:1 opens 'N_sym evaluates the Plancherel-weighted character product across the electroweak symmetric channel' as fact; :15 then says that reading is not derived. The italic statement claims more than the block supports."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:39.851Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md:1 'The symmetric-channel normalization N_sym(q) evaluates the Plancherel-weighted character product across the electroweak symmetric channel' states the physical reading as the definition, while :15 says that reading 'is not derived'. The proposition proves only the polynomial identity; the opening sentence claims more."
       }
     ],
     "da-hidden-dof": [
@@ -581,6 +668,24 @@
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "severity": "major",
         "evidence": "The uniform weight 1/3 over q^4,q^6,q^8 has no derivation (:11 'uniformizes across ... blocks'); disclosed as superseded at :13."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:39.880Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md:11 'The non-degenerate trace uniformizes across the 1-dimensional sym/alt blocks' — the uniform 1/[2]_q weight and the factor 1/3 are choices whose source (Plancherel weights on which blocks) is not shown."
       }
     ],
     "da-non-sequitur": [
@@ -614,6 +719,24 @@
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "severity": "major",
         "evidence": "folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md:11 'The non-degenerate trace uniformizes across the 1-dimensional sym/alt blocks. The resulting expression is a closed-form rational' — no step connects the trace to the formula."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:39.908Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md:11-12: from 'the trace uniformizes across 1-dim blocks' to the specific (q^4+q^6+q^8)/3 no derivation is given."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -646,6 +769,24 @@
         "reviewed_at": "2026-11-20T17:43:44.658Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "Lean def and identity are exactly the displayed polynomial (modulo the 1/3 hypothesis noted above)."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:39.968Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": ".md and Lean agree on the polynomial and both forms (lean-content-sweep 2026-11-21 exit 0). Both carry the stale 'conj:weak-spectral-completeness ... no instance' premise (see da-false-claim); the Lean docstring writes q^4·[3]_{q^2}/3 (asymmetric [3]) while the .ts authorNote writes q^6·[3]_{q^2}/3, which equals neither form."
       }
     ],
     "da-citation-misuse": [
@@ -679,6 +820,23 @@
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.lean weak_symmetric_normalization_eq carries '-- Ref: [kassel1995]' on an `rfl` unfold of a corpus-defined polynomial; Kassel does not contain N_sym."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:39.991Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Lean cites [kassel1995] §VI for the Wedderburn decomposition; no misuse."
       }
     ],
     "da-definitional-ambiguity": [
@@ -711,6 +869,24 @@
         "reviewed_at": "2026-11-20T17:43:44.727Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "The clash with the g-action N_sym is called out explicitly (:17)."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:40.016Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "major",
+        "evidence": "The block is a proposition whose subject N_sym is defined as a Plancherel-weighted product at :1, yet :13 says the cell-content trace supersedes it and :17 records that the same symbol names a different quantity in conj:g-action-on-substrate. Three meanings of N_sym in the corpus; this block's own meaning is the polynomial only."
       }
     ],
     "da-empirical-fragility": [
@@ -743,6 +919,23 @@
         "reviewed_at": "2026-11-20T17:43:44.756Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "No measurement comparison in the block."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:40.041Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "No comparison with measurement in the block (the G_F anchor 213.11 is explicitly excluded)."
       }
     ],
     "da-physical-implausibility": [
@@ -775,6 +968,23 @@
         "reviewed_at": "2026-11-20T17:43:44.785Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "No physical value asserted."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:40.065Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "No physical value asserted."
       }
     ],
     "da-reproducibility": [
@@ -808,6 +1018,23 @@
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "severity": "major",
         "evidence": "computation points at computations/q_pinning_50_digit.py with status 'verified', but that script pins q0 and never computes N_sym; its witness scriptHash 58f994b46a01 ≠ current sha256 prefix e6f6426e55c7."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:40.088Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Computation pointer now points at computations/weak_symmetric_normalization_value.py, which computes exactly the stated polynomial; witness fresh (scriptHash matches) and reproduced independently."
       }
     ],
     "da-referee-verdict": [
@@ -841,6 +1068,24 @@
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "severity": "major",
         "evidence": "Strongest objection: a proposition whose proved content is (q^4+q^6+q^8)/3 = q^4(1+q^2+q^4)/3, framed as a Plancherel weight it does not derive, with a computation link that does not compute it; better as a remark recording the legacy formula."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:40.114Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "major",
+        "evidence": "Strongest objection: a 'proposition' whose proved content is a one-line polynomial identity, framed in its first sentence as an electroweak normalisation it also says is superseded and not derived, and which calls a now-proved proposition an open premise. Minor revision: restate as a definition/remark or scope the first sentence; fix :15."
       }
     ],
     "expo-milnor-clarity": [
@@ -988,6 +1233,23 @@
         "reviewed_at": "2026-11-20T17:43:44.929Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "Read folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md in full; no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:40.137Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "'That reading is not derived from these premises' is a substantive scoping."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1022,6 +1284,24 @@
         "reviewed_at": "2026-11-20T17:43:44.959Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "Read folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md in full; no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:40.158Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md:13 'However, the direct cell-content trace now supersedes this Plancherel-weighted formulation.' pivots against the block's own statement."
       }
     ],
     "trap-em-dash": [
@@ -1056,6 +1336,23 @@
         "reviewed_at": "2026-11-20T17:43:44.996Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "Read folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md in full; no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:40.182Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "No em-dash in the body."
       }
     ],
     "trap-triples": [
@@ -1090,6 +1387,23 @@
         "reviewed_at": "2026-11-20T17:43:45.026Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "Read folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md in full; no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:40.207Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "The three candidate values at :17 are data."
       }
     ],
     "trap-closing-aphorism": [
@@ -1124,6 +1438,23 @@
         "reviewed_at": "2026-11-20T17:43:45.059Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "Read folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md in full; no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:40.230Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Ends on a disambiguation sentence."
       }
     ],
     "trap-meta-commentary": [
@@ -1158,6 +1489,24 @@
         "reviewed_at": "2026-11-20T17:43:45.090Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "Read folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md in full; no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:40.253Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md:13-14 'now supersedes ... The structural input is isolated to ...' narrates the document's history."
       }
     ],
     "trap-thesis-restatement": [
@@ -1192,6 +1541,23 @@
         "reviewed_at": "2026-11-20T17:43:45.121Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "Read folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md in full; no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:40.278Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "None found."
       }
     ],
     "trap-performed-warmth": [
@@ -1226,6 +1592,23 @@
         "reviewed_at": "2026-11-20T17:43:45.149Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "Read folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md in full; no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:40.304Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "None found."
       }
     ],
     "trap-superlative": [
@@ -1262,6 +1645,23 @@
         "reviewed_at": "2026-11-20T17:43:45.177Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "Read folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md in full; no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:40.330Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "None found."
       }
     ],
     "trap-nonspeakable": [
@@ -1296,6 +1696,23 @@
         "reviewed_at": "2026-11-20T17:43:45.210Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "Read folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md in full; no instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:40.357Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Symbols speakable."
       }
     ],
     "does_not_default_to_float": [
@@ -1315,6 +1732,23 @@
         "reviewed_at": "2026-11-20T17:43:32.204Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "computations/q_pinning_50_digit.py: all float(...) casts (:285-287, :323-325, :357, :391-407) feed print/f-string text fields only; q0 and its derivation are carried as mpf (50 dps). The 1e-15 literal at :286 is a display divisor."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:39.458Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "computations/weak_symmetric_normalization_value.py: no float anywhere (grep 2026-11-21); q0 = mp.mpf(q_at(70)) at 70 dps, sympy for the exact factorisation."
       }
     ],
     "compute_no_mpf_to_float_cast": [
@@ -1334,6 +1768,23 @@
         "reviewed_at": "2026-11-20T17:43:32.233Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "computations/q_pinning_50_digit.py: no float(mp.*)/np.float64 on a value that re-enters computation; float(Q_ERR/Q) at :285 is display only."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:39.489Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "computations/weak_symmetric_normalization_value.py: values serialised with _precision.fmt; no float() cast."
       }
     ],
     "respects_archimedean_wall": [
@@ -1353,6 +1804,23 @@
         "reviewed_at": "2026-11-20T17:43:32.262Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "computations/q_pinning_50_digit.py: no math.*/numpy calls; mpmath throughout."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:39.518Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "computations/weak_symmetric_normalization_value.py: the exact identity is checked symbolically (generic), the evaluation at the proton q0 is mpmath (archimedean) and labelled as such."
       }
     ],
     "code_is_commented": [
@@ -1372,6 +1840,23 @@
         "reviewed_at": "2026-11-20T17:43:32.292Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "computations/q_pinning_50_digit.py:2-60 module docstring; dense inline comments."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:39.545Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "computations/weak_symmetric_normalization_value.py:1-17 module docstring stating what is and is not computed (not the G_F back-solve)."
       }
     ],
     "variables_typed": [
@@ -1391,6 +1876,23 @@
         "reviewed_at": "2026-11-20T17:43:32.325Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "computations/q_pinning_50_digit.py:134-200 def signatures annotated (q_int(n: int), plancherel_weight(partition: tuple), bloch_wigner(z: mpc), ...)."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:39.587Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "computations/weak_symmetric_normalization_value.py:34,42,46 def signatures annotated (-> bool, q: mp.mpf -> mp.mpf, -> int)."
       }
     ],
     "has_references_to_paper": [
@@ -1411,6 +1913,23 @@
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "severity": "minor",
         "evidence": "computations/q_pinning_50_digit.py: no '# Ref: [key]' comment line anywhere in the script."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:39.613Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "computations/weak_symmetric_normalization_value.py:16 '# Ref: folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md' (corpus pointer, no bibliography key, acceptable for a corpus-internal evaluation)."
       }
     ],
     "connected_to_ci_pipeline": [
@@ -1431,6 +1950,24 @@
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "severity": "minor",
         "evidence": "computations/q_pinning_50_digit.py: basename absent from .github/workflows/*.yml and no sibling script imports it (grep 'import q_pinning_50_digit|from q_pinning_50_digit' over computations/ is empty); other scripts only mention its witness path."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:39.640Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": "computations/weak_symmetric_normalization_value.py is not named in .github/workflows (dispatch-only repo-wide) and no other script imports it; reachable only via the block's computation pointer."
       }
     ],
     "deprecated": [
@@ -1450,6 +1987,23 @@
         "reviewed_at": "2026-11-20T17:43:32.425Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "Not under _deprecated/, no DEPRECATED marker."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:39.661Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "No _deprecated path or DEPRECATED marker."
       }
     ],
     "uses_library_framework_appropriately": [
@@ -1469,6 +2023,23 @@
         "reviewed_at": "2026-11-20T17:43:32.453Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "computations/q_pinning_50_digit.py:413-414 stamps provenance via WitnessBuilder.stamp_staleness_metadata; no hardcoded pi/e."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:39.694Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "computations/weak_symmetric_normalization_value.py: WitnessBuilder for the witness, q_parameter.q_at for the proton pin, _precision for dps and fmt; bootstrap inserts its own dir before importing _path_bridge."
       }
     ],
     "assertions_are_falsifiable": [
@@ -1488,6 +2059,23 @@
         "reviewed_at": "2026-11-20T17:43:32.489Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "computations/q_pinning_50_digit.py makes no add_assertion(...) calls."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:39.731Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "computations/weak_symmetric_normalization_value.py:72-77 two assertions (sympy factorisation identity, |val - factored| < 1e-60) each computed independently of expected=1. Witness re-checked 2026-11-21: n_sym_at_q0 1.897444448400510568875768375 matches an independent mpmath evaluation; scriptHash fce9d84ac5fd equals sha256 of the script."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1565,6 +2153,23 @@
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "severity": "major",
         "evidence": "uses[] contains conj:gram-determinant-plancherel-ratio, which folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md never mentions; conj:g-action-on-substrate is linked (:17) but not listed."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:39.431Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "uses[] lists conj:gram-determinant-plancherel-ratio, prop:weak-spectral-completeness and conj:electroweak-higgs-torus-link-triplet; the .md also links conj:g-action-on-substrate only to disambiguate the symbol, which is not a logical dependency."
       }
     ],
     "da-arity-conflation": [
@@ -1584,6 +2189,23 @@
         "reviewed_at": "2026-11-20T17:43:44.627Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "No family/instance conflation."
+      },
+      {
+        "field_hash": {
+          "md": "3dabb23cd415",
+          "ts": "17923f0d6500",
+          "lean": "e50107f79f14",
+          "lean_statement": "b67794190ea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:39.938Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "No family/instance conflation."
       }
     ]
   }

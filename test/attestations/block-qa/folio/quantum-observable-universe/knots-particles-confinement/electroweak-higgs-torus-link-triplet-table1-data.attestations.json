@@ -1,0 +1,536 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet-table1-data",
+    "path": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet-table1-data"
+  },
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "cc051e034b8c",
+          "ts": "74342ca4b095"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.769Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Data table with no running prose; the ten constructions are judged absent by inspection of every cell. Cell text is column-label and role-annotation register throughout. 7 rows (pipeline step -> EM analog -> EW analog); \"open:\" cells are honest status, not trap register."
+      },
+      {
+        "field_hash": {
+          "md": "4d9ba7dc00fe",
+          "ts": "74342ca4b095"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:19.831Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "None found."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "cc051e034b8c",
+          "ts": "74342ca4b095"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.769Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Data table with no running prose; the ten constructions are judged absent by inspection of every cell. Cell text is column-label and role-annotation register throughout. 7 rows (pipeline step -> EM analog -> EW analog); \"open:\" cells are honest status, not trap register."
+      },
+      {
+        "field_hash": {
+          "md": "4d9ba7dc00fe",
+          "ts": "74342ca4b095"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:19.853Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "None found."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "cc051e034b8c",
+          "ts": "74342ca4b095"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.769Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Data table with no running prose; the ten constructions are judged absent by inspection of every cell. Cell text is column-label and role-annotation register throughout. 7 rows (pipeline step -> EM analog -> EW analog); \"open:\" cells are honest status, not trap register."
+      },
+      {
+        "field_hash": {
+          "md": "4d9ba7dc00fe",
+          "ts": "74342ca4b095"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:19.880Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "No em-dash (Seifert–Hodge uses an en dash)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "cc051e034b8c",
+          "ts": "74342ca4b095"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.769Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Data table with no running prose; the ten constructions are judged absent by inspection of every cell. Cell text is column-label and role-annotation register throughout. 7 rows (pipeline step -> EM analog -> EW analog); \"open:\" cells are honest status, not trap register."
+      },
+      {
+        "field_hash": {
+          "md": "4d9ba7dc00fe",
+          "ts": "74342ca4b095"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:19.908Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "None found."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "cc051e034b8c",
+          "ts": "74342ca4b095"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.769Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Data table with no running prose; the ten constructions are judged absent by inspection of every cell. Cell text is column-label and role-annotation register throughout. 7 rows (pipeline step -> EM analog -> EW analog); \"open:\" cells are honest status, not trap register."
+      },
+      {
+        "field_hash": {
+          "md": "4d9ba7dc00fe",
+          "ts": "74342ca4b095"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:19.937Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Table only."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "cc051e034b8c",
+          "ts": "74342ca4b095"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.769Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Data table with no running prose; the ten constructions are judged absent by inspection of every cell. Cell text is column-label and role-annotation register throughout. 7 rows (pipeline step -> EM analog -> EW analog); \"open:\" cells are honest status, not trap register."
+      },
+      {
+        "field_hash": {
+          "md": "4d9ba7dc00fe",
+          "ts": "74342ca4b095"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:19.960Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "None found."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "cc051e034b8c",
+          "ts": "74342ca4b095"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.769Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Data table with no running prose; the ten constructions are judged absent by inspection of every cell. Cell text is column-label and role-annotation register throughout. 7 rows (pipeline step -> EM analog -> EW analog); \"open:\" cells are honest status, not trap register."
+      },
+      {
+        "field_hash": {
+          "md": "4d9ba7dc00fe",
+          "ts": "74342ca4b095"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:19.989Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "None found."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "cc051e034b8c",
+          "ts": "74342ca4b095"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.769Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Data table with no running prose; the ten constructions are judged absent by inspection of every cell. Cell text is column-label and role-annotation register throughout. 7 rows (pipeline step -> EM analog -> EW analog); \"open:\" cells are honest status, not trap register."
+      },
+      {
+        "field_hash": {
+          "md": "4d9ba7dc00fe",
+          "ts": "74342ca4b095"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.026Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "None found."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "cc051e034b8c",
+          "ts": "74342ca4b095"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.769Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Data table with no running prose; the ten constructions are judged absent by inspection of every cell. Cell text is column-label and role-annotation register throughout. 7 rows (pipeline step -> EM analog -> EW analog); \"open:\" cells are honest status, not trap register."
+      },
+      {
+        "field_hash": {
+          "md": "4d9ba7dc00fe",
+          "ts": "74342ca4b095"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.052Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "None found."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "cc051e034b8c",
+          "ts": "74342ca4b095"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.769Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Data table with no running prose; the ten constructions are judged absent by inspection of every cell. Cell text is column-label and role-annotation register throughout. 7 rows (pipeline step -> EM analog -> EW analog); \"open:\" cells are honest status, not trap register."
+      },
+      {
+        "field_hash": {
+          "md": "4d9ba7dc00fe",
+          "ts": "74342ca4b095"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.079Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Table cells are formulas and labels; the spectral-completeness EW cell now reads 'exhaustion proved; the W, Z, H naming is open', consistent with prop:weak-spectral-completeness. Zero modes 2/(3π) and 1/π and the EW fixed-point sign agree with the parent block's item 1 (checked 2026-11-21)."
+      }
+    ],
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "md": "4d9ba7dc00fe",
+          "ts": "74342ca4b095"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:19.514Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "md": "4d9ba7dc00fe",
+          "ts": "74342ca4b095"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:19.547Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "respects_archimedean_wall": [
+      {
+        "field_hash": {
+          "md": "4d9ba7dc00fe",
+          "ts": "74342ca4b095"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:19.579Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "code_is_commented": [
+      {
+        "field_hash": {
+          "md": "4d9ba7dc00fe",
+          "ts": "74342ca4b095"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:19.603Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "variables_typed": [
+      {
+        "field_hash": {
+          "md": "4d9ba7dc00fe",
+          "ts": "74342ca4b095"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:19.631Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "has_references_to_paper": [
+      {
+        "field_hash": {
+          "md": "4d9ba7dc00fe",
+          "ts": "74342ca4b095"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:19.659Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "connected_to_ci_pipeline": [
+      {
+        "field_hash": {
+          "md": "4d9ba7dc00fe",
+          "ts": "74342ca4b095"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:19.684Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "deprecated": [
+      {
+        "field_hash": {
+          "md": "4d9ba7dc00fe",
+          "ts": "74342ca4b095"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:19.707Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "uses_library_framework_appropriately": [
+      {
+        "field_hash": {
+          "md": "4d9ba7dc00fe",
+          "ts": "74342ca4b095"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:19.734Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "assertions_are_falsifiable": [
+      {
+        "field_hash": {
+          "md": "4d9ba7dc00fe",
+          "ts": "74342ca4b095"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:19.760Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4d9ba7dc00fe",
+          "ts": "74342ca4b095"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:19.784Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "EM-vs-EW parallel-pipeline table extracted from conj:electroweak-higgs-torus-link-triplet, in the same chapter."
+      }
+    ],
+    "uses-editorial-completeness": [
+      {
+        "field_hash": {
+          "md": "4d9ba7dc00fe",
+          "ts": "74342ca4b095"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:19.805Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet-table1-data.md links thm:em-spectral-completeness and prop:weak-spectral-completeness, which are not in uses[] (only the parent conjecture is)."
+      }
+    ]
+  }
+}
