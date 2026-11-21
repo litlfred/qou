@@ -288,7 +288,7 @@ Seeded from steady class 0. Converged at `K = 3, 4, 6, 8`, with `S = 0.471206, 0
 Refinement:
 - To L2N4 (K = 6): converges to a **different** orbit with `S = 1.072030` and `|A| = 665.3`.
   At `K = 9` it re-converges with `S = 1.072063`, `|A| = 665.49`, `|A_{m≥1}| = 162.51`, residual
-  3.9e-9 (float64 only; D was not re-converged in mpmath, because the L2N4 periodic system costs
+  3.9e-9 (float64 only; a 30-dps mpmath attempt is in §9.4 and did not finish, because the L2N4 periodic system costs
   too much there). D is therefore reported as float64 continuation data, not as a verified candidate.
 - That orbit continued to L2N5: Newton fails; the residual stalls at 18.6 with `S ≈ 0.881`.
 - That orbit continued to L3N4: Newton stalls at a residual of 6.8e-2 with `S ≈ 1.039`, which is
@@ -415,7 +415,21 @@ Only this one parity sector was searched at `L ≥ 4`; the even sector was not.
 
 ### 9.4 Orbit D re-converged in mpmath
 
-MP_D_RESULT
+Attempted at 30 dps, but not completed. The probe was run with `LERAY_DPS=30 LERAY_CASES="2,4"`, using the L2N4 K=6 seed from
+`leray_dss_galerkin_seeds.json`.
+- Both steady L2N4 seeds re-converged, to residuals `7.0e-20` and `6.8e-21`.
+- Periodic Newton on D (`n = 64`, 833 real unknowns):
+  - it=0: `|F| = 1.529e-7`, `S = 1.07202994758407`.
+  - it=1: `|F| = 9.185e-9`, `S = 1.07202994752457`.
+- One iteration took about 43 min, because the normal-equation solve runs in pure mpmath.
+- The residual fell only by a factor of about 17, which is linear, not quadratic, convergence.
+  The likely cause is the Tikhonov shift (`10^{-dps/2}`) in the rank-deficient least-squares
+  step. Reaching the 1e-20 stopping tolerance at that rate would take an estimated 6+ hours.
+- I stopped the run, so **no -24 witness is committed**.
+- Reading: the period moved by `6e-11` while the residual dropped. That is consistent with D
+  being a genuine orbit of the truncated L2N4 K=6 system, as B and C were.
+- **D is not certified.** It also already fails to persist to L2N5 and L3N4 (§6), so certifying
+  it would not change the verdict.
 
 ### 9.5 Mechanism shared by the failures
 
@@ -453,3 +467,11 @@ for `L ≥ 4`), and a basis with the correct log-phase tail, I found **no nonzer
 solution that persists under refinement**. The failures share the two mechanisms above. This is
 still scope (a); the literature check in §1 leaves non-steady DSS with a nonzero `|y|⁻¹` tail
 open.
+
+### 9.7 Precision gates (phase 2)
+
+`scripts/precision-gates.sh --changed` on this branch shows the same five red gates as in
+§8: q0-anchor flip, q0-anchor refill, reference-literal, witness-value copy and q0-value drift.
+The full script on `origin/main` at `b17e0551c53` shows the **same five red gates**. They come
+from main, not from this branch, which touches no `q₀` witness. The seven tree-measuring
+witnesses the script rewrote were reverted and are not committed.
