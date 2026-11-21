@@ -218,3 +218,13 @@ the snake identity. `Δ_μ := (μ ⊗ id) ∘ (id ⊗ γ)`, and the theorem stat
 associativity. That `Δ_μ` is the transpose of `μ` under the pairing is cited
 (Kock 2004, §2.3), not formalised. This replaces the open note above on the
 frobenius compute checks, which pass sorry-free Lean.
+
+**C13 (positive-definite-dagger), full proof (owner: "Prove all three fully").**
+`QOU.frobenius_dagger_positive_definite` now works over an `R`-algebra with
+Frobenius form `ε` and an involutive unital anti-homomorphism `S`
+(`FrobeniusAntipodeData`). Over an ordered field, assuming `h(f, g) = ε(S(f) g)`
+is positive definite, it proves: the adjoint formula `h(x a, b) = h(a, S(x) b)`,
+uniqueness of that adjoint, `S` fixing the scalars, and `f† ∘ f > 0` for
+`f ≠ 0`. lean-direct exit 0, axioms `propext, Classical.choice, Quot.sound`.
+The scalar `ℂ²` check is gone. A root-namespace duplicate of the old scalar
+theorem survives in `lean/QOU/scratch_matrix.lean` (not imported by `QOU.lean`).
