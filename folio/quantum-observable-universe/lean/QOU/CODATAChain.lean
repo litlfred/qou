@@ -107,8 +107,8 @@ instantiate the mass formula for the muon–electron ratio. -/
     `Vol(4₁)` (the figure-eight knot — the muon ansatz), the
     mass ratio `m_μ / m_e` equals `Vol(4₁) / ℏ_q²`.
 
-    The denominator `m_e` is the mass of the electron (unknot,
-    with mass set to 1 in the ratio). -/
+    The denominator `m_e` is the electron mass, the unit of the
+    ratio (set to 1). -/
 theorem mass_ratio_from_ansatz {M : Type*}
     (amf : ArchimedeanMassFormula M)
     (h_vol : amf.knotVolume = vol_figure_eight) :
@@ -177,7 +177,10 @@ The theorems in this file depend on:
 
 ### Ansatz (data, not axiom)
 - `KnotRegistry.figureEightEntry` — muon = figure-eight (4₁)
-- `KnotRegistry.trefoilEntry` — electron = trefoil (3₁)
+- Electron: σ₀σ₁σ₀ ∈ B₃ with Hopf-link closure (owner ruling, see
+  `docs/coordination/owner-rulings.md`); the trefoil entry
+  `KnotRegistry.trefoilEntry` is the kept backup. No theorem in this file
+  uses either: `m_e` enters only as the unit of the ratio.
 - `KnotRegistry.borromeanRingsEntry` — nucleon = Borromean (6₂³)
 
 ### Removed (owner decision, PR #8917)

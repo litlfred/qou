@@ -9,7 +9,7 @@ export default proposition({
   title:
     "$\\mathfrak{Q}_\\beta$ cos-resummation in convention D: $\\mathfrak{Q}_\\beta^{\\cos} = \\mathfrak{Q}_\\beta^{\\mathrm{base}} \\cdot \\cos((z_D-1)h/2)$ (conditional on the transfer-matrix eigenphase identification)",
   uses: [
-    "prop:q-beta-spectral-bridge",
+    "conj:q-beta-spectral-bridge",
     // NOTE: the Φ_q/AJ hub (prop:phi-q-aj-machinery-identification) is
     // linked narratively in the .md only — a uses[] edge would pull the
     // hub's conj:quantum-langlands-dual cone into this proposition's
