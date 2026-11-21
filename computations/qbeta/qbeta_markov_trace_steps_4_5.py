@@ -215,11 +215,13 @@ def main() -> int:
     print("=" * 78)
     # Load q_0 + the existing per-anchor c_k witness via record_upstream
     # so upstream_witness_hashes are recorded (bean qou-5k8x).
-    q_pin_doc = record_upstream(
-        _pb.witness_path("q-pinning-50-digit.witness.json", here),
-        _upstream_records,
-    )
-    q_0_str = q_pin_doc["derived_50_digit"]["q"]
+    # q_0 is the PROTON pin (owner directive 2026-08-07; this witness is
+    # stamped q0Anchor="proton"). It previously read
+    # q-pinning-50-digit.witness.json, which is the MUON anchor-defining
+    # witness, so the stamp and the value disagreed (Q0_FLIP). q_0 enters
+    # only the print and the q0Value stamp; no data field depends on it.
+    from qou_substrate.constants import Q_50_DIGIT_STR as _Q_PROTON_50
+    q_0_str = _Q_PROTON_50
     q_0 = sp.Float(q_0_str, 50)
     print(f"  q_0 = {sp.N(q_0, 12)} (50-dps)")
 

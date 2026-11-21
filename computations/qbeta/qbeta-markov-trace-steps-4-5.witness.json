@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-11-21T05:53:52.258649+00:00",
-  "commitSha": "22e36a5bfe630f895f7fd55db6fdcd60b85b0680",
+  "computedAt": "2026-11-21T16:49:38.883851+00:00",
+  "commitSha": "a4bdf12e089d23bcd74342a6e3a9174da029fced",
   "assertions": [
     {
       "name": "column-identity-symbolic",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 25,
   "computation": "qbeta-markov-trace-steps-4-5",
   "scriptFile": "qbeta_markov_trace_steps_4_5.py",
-  "scriptHash": "2fa823a948ef",
-  "scriptCommitSha": "5e4296d8f35c74cf01ea58c1fe4858903f894a72",
+  "scriptHash": "0acd589401c3",
+  "scriptCommitSha": "7bdbcf17241b75ee8a6d568a8599fab4f3979730",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +30,11 @@
     "numpy": "2.5.3",
     "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "cvxpy": "absent",
-    "pyhecke_native_build": "832ce4e14a00d523"
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -69,14 +70,6 @@
     },
     "upstream_witness_hashes": [
       {
-        "path": "q-pinning-50-digit.witness.json",
-        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
-        "size_bytes": 6238,
-        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
-        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
-        "computedAt": "2026-08-28T20:47:21.480123+00:00"
-      },
-      {
         "path": "qbeta-decay-sdp-knot-operator.witness.json",
         "sha256": "9f128f5a8b2249bf49d907b05e34e313844a3c5a3f82459ec28f41d6be5023db",
         "size_bytes": 2759,
@@ -87,5 +80,5 @@
     ]
   },
   "q0Anchor": "proton",
-  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
