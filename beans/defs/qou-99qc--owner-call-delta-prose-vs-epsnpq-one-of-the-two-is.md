@@ -8867,3 +8867,10 @@ Owner: *"Keep these as options and explore the implications of each. Can we rule
 
 - **Adopted (option 1):** the matter⊗Higgs right line of the Jimbo crossing (s = q·ud − du; `RightHandedSingletChannel.lean`) is the right-handed singlet. lepton⊗Φ̃ = e_R (Q −1, Y −2), quark⊗Φ̃ = d_R, quark⊗Φ = u_R, lepton⊗Φ = ν_R. Right-handed fields are two-strand composites, not new strands.
 - **Still open, not ruled:** strand order (matter-left vs Higgs-left, which swaps the weights q²/(q²+1) and 1/(q²+1)) and the four Yukawa strengths. Split = (y_d²−y_e²)/(q²+1) + (y_ν²−y_u²)q²/(q²+1) (matter-left); no Q_β number until these are derived.
+
+## 2026-11-21 owner answers (07:xx CET)
+
+- **Photon colour weights (#8705): no new rule.** n and p keep one nucleon element; colour weights are not assigned to flavour.
+- **e_R next step:** derive the strand order (matter-left vs Higgs-left) and the Yukawa strengths from the corpus — agent dispatched (branch claude/eR-strand-order-yukawa-derivation-2026-11-21).
+- **Two-term with a lepton strand (#8707): not picked from the two readings.** Owner: "The two term came out from looking at the Lagrangian and tracking through non-abelian Stokes. Do the same for the lepton." Agent dispatched to derive the lepton two-term the same way (branch claude/lepton-two-term-from-lagrangian-stokes-2026-11-21).
+- **Pair-creation word (#8696): leaning b (require chirality) and d (rule mirror vertices first), NOT ruled.** Owner asks for more context first: what is derived, what is aligned with physics, downstream implications. Analysis agent dispatched.
