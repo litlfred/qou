@@ -3,8 +3,8 @@
   "label": "rem:einstein-nonsymmetric-metric-comparison",
   "kind": "remark",
   "paths": {
-    "ts": "folio/quantum-observable-universe/gravity-spacetime/einstein-nonsymmetric-metric-comparison.ts",
-    "md": "folio/quantum-observable-universe/gravity-spacetime/einstein-nonsymmetric-metric-comparison.md"
+    "ts": "folio/quantum-observable-universe/observations/einstein-nonsymmetric-metric-comparison.ts",
+    "md": "folio/quantum-observable-universe/observations/einstein-nonsymmetric-metric-comparison.md"
   },
   "source_hashes": {
     "md": "02bf01bd1680",
@@ -190,7 +190,7 @@
         "reviewed_at": "2026-08-09T13:00:41.322Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "folio/quantum-observable-universe/gravity-spacetime/einstein-nonsymmetric-metric-comparison.md:29: so the mirror operation $\\sigma$, which exchanges $p$ and $m$, negates the symmetric total and fixes the antisymmetric total. The $\\cosh$ channel binds independently of charge; the sign-blind $\\sinh$ "
+        "evidence": "folio/quantum-observable-universe/observations/einstein-nonsymmetric-metric-comparison.md:29: so the mirror operation $\\sigma$, which exchanges $p$ and $m$, negates the symmetric total and fixes the antisymmetric total. The $\\cosh$ channel binds independently of charge; the sign-blind $\\sinh$ "
       }
     ],
     "voice-title-scholarly": [
@@ -316,7 +316,7 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
-        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"gravity-spacetime\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"observations\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
@@ -718,7 +718,7 @@
           "worst_target": "emits fwd-ref to quantum-observable-universe/observations: prop:crossing-energy-decomposition"
         },
         "severity": "major",
-        "evidence": "folio/quantum-observable-universe/gravity-spacetime/einstein-nonsymmetric-metric-comparison.ts:0: emits fwd-ref to quantum-observable-universe/observations: prop:crossing-energy-decomposition | folio/quantum-observable-universe/gravity-spacetime/einstein-nonsymmetric-metric-comparison.ts:0: emits fwd-ref to quantum-observable-universe/observations: rem:crossing-energy-interpretation | folio/quantum-observable-universe/gravity-spacetime/einstein-nonsymmetric-metric-comparison.ts:0: emits fwd-ref to quantum-observable-universe/predicted-spectra: prop:em-coupling-projection | folio/quantum-observable-universe/gravity-spacetime/einstein-nonsymmetric-metric-comparison.ts:0: emits fwd-ref to quantum-observable-universe/fluid-dynamics: rem:madelung-acoustic-metric | folio/quantum-observable-universe/gravity-spacetime/einstein-nonsymmetric-metric-comparison.ts:0: emits fwd-ref to quantum-observable-universe/fluid-dynamics: rem:q-metric-contact-deformation"
+        "evidence": "folio/quantum-observable-universe/observations/einstein-nonsymmetric-metric-comparison.ts:0: emits fwd-ref to quantum-observable-universe/observations: prop:crossing-energy-decomposition | folio/quantum-observable-universe/observations/einstein-nonsymmetric-metric-comparison.ts:0: emits fwd-ref to quantum-observable-universe/observations: rem:crossing-energy-interpretation | folio/quantum-observable-universe/observations/einstein-nonsymmetric-metric-comparison.ts:0: emits fwd-ref to quantum-observable-universe/predicted-spectra: prop:em-coupling-projection | folio/quantum-observable-universe/observations/einstein-nonsymmetric-metric-comparison.ts:0: emits fwd-ref to quantum-observable-universe/fluid-dynamics: rem:madelung-acoustic-metric | folio/quantum-observable-universe/observations/einstein-nonsymmetric-metric-comparison.ts:0: emits fwd-ref to quantum-observable-universe/fluid-dynamics: rem:q-metric-contact-deformation"
       }
     ],
     "detangler-graph-energy": [

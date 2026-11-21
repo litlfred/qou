@@ -413,6 +413,7 @@ export default chapter({
         "trefoil-vortex-chirality-flip",
         "crossing-energy-pair-cancellation",
         "crossing-energy-interpretation",
+        "einstein-nonsymmetric-metric-comparison",
         "time-reversal-energy-barrier",
         "virtual-particles-exceptional-divisor",
         "virtual-subword",
