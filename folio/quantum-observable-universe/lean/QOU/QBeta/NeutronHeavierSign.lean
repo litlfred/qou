@@ -221,6 +221,53 @@ end Abstract
 
 /-! ## Instances on the ruled element `V³` and on every positive word -/
 
+
+/-! ## Coloured strands (two-colour Yokonuma–Hecke `Y₂,₃`), owner choice 2026-11-21
+
+Flavour as a strand colour: `u ↦ t = +1`, `d ↦ t = −1`. The colour flip `φ : t ↦ −t, g ↦ g` is an
+algebra automorphism, and the Juyumaya trace at `x = 0` is `φ`-invariant. Both facts are checked
+exactly and exhaustively over `ℚ(q, z, x)` by `np_yokonuma_flip_probe.py` (all 48 × 48 basis
+products, all 48 basis traces; pre-registered in `np_yokonuma_flip_preregistration.md`). They enter
+below as hypotheses, not as Lean facts. Given them, the neutron sector trace equals the proton one
+for every flip-fixed element, so no reading of trace → mass orders the two. -/
+
+section Coloured
+
+variable {S A : Type*} [CommRing S] [Ring A] [Algebra S A]
+
+/-- A flip-invariant trace gives the flipped colour sector the same value on every flip-fixed
+element: `τ(φ(π)·W) = τ(π·W)`. -/
+theorem flip_sector_eq (φ : A ≃ₐ[S] A) (τ : A →ₗ[S] S) (hτ : ∀ a, τ (φ a) = τ a)
+    (π W : A) (hW : φ W = W) : τ (φ π * W) = τ (π * W) := by
+  conv_lhs => rw [← hW, ← map_mul]
+  exact hτ _
+
+/-- Hence no reading `m` of trace → mass, monotone or not, makes the neutron heavier (or lighter)
+under coloured strands at the admissible trace. -/
+theorem coloured_no_order {T : Type*} [Preorder T] (φ : A ≃ₐ[S] A) (τ : A →ₗ[S] S)
+    (hτ : ∀ a, τ (φ a) = τ a) (πp W : A) (hW : φ W = W) (m : S → T) :
+    m (τ (φ πp * W)) = m (τ (πp * W)) := by
+  rw [flip_sector_eq φ τ hτ πp W hW]
+
+end Coloured
+
+section ColouredX
+
+variable {R : Type*} [CommRing R]
+
+/-- The probe's symbolic `n − p` (for every listed word except the half twist, where it is `0`):
+`x(x−1)(x+1)/4`. It is odd in `x`, so the sign of `n − p` is the sign choice of `x`. -/
+theorem colouredDiff_odd (x : R) :
+    (-x) * (-x - 1) * (-x + 1) = -(x * (x - 1) * (x + 1)) := by ring
+
+/-- It vanishes at all three E-system values `x ∈ {1, 0, −1}`; so no admissible `x` orders `n`
+and `p`. -/
+theorem colouredDiff_eSystem (x : R) (hx : x = 1 ∨ x = 0 ∨ x = -1) :
+    x * (x - 1) * (x + 1) = 0 := by
+  rcases hx with rfl | rfl | rfl <;> ring
+
+end ColouredX
+
 section Ruled
 
 /-- The ruled sector values on `V³` are the abstract ones with the common trace `tr(V³)`. -/
@@ -284,6 +331,9 @@ theorem word_increasing_reading_neutron_lighter {q : ℝ} (hq1 : 1 < q) (w : Lis
 #print axioms bar_side_reverses
 #print axioms spectator_preserves
 #print axioms kinematic_reading_sign_blind
+#print axioms flip_sector_eq
+#print axioms coloured_no_order
+#print axioms colouredDiff_eSystem
 
 end Ruled
 

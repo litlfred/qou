@@ -87,3 +87,44 @@ m_n − m_p = 2m_μF_Bor(q⁻² − 1) < 0. That is R2 with f linear.
   NucleonWeightSpaceTwoTerm, OverStrandWeight, PR #8734 (MirrorTraceBar, open). Not run:
   corpus_search step 0, the library tiers and the beans mount. So the verdict is about the
   readings listed here, found in those paths.
+
+## Coloured strands (owner choice 2026-11-21: "Coloured / Yokonuma strands")
+
+Question from the owner: the strands carried no flavour of their own. Above, flavour lives only in
+the choice of weight space and the K weight, and the braid acts identically on W_p and W_n. This
+section puts flavour on the strands as a colour, in the two-colour Yokonuma–Hecke algebra Y₂,₃.
+
+Prior work: np-splitting audit §12 (2026-11-15) already did this for the half and full twist and
+found n − p = 0 at x = 0, where x = 0 is forced (x = ±1 kills a colour sector).
+`np_yokonuma_coloured_probe.py` re-run 2026-11-21, reproduces.
+
+New, pre-registered (`np_yokonuma_flip_preregistration.md`, commit 711b82f418), probe
+`np_yokonuma_flip_probe.py`, exact over Q(q, z, x, φ's), output in `.out.txt`:
+
+- **Y1.** The colour flip φ: t ↦ −t, g ↦ g is an algebra automorphism: 0 failures in 2304 basis
+  products.
+- **Y2.** The Juyumaya trace is φ-invariant at x = 0 (0/48 failures), and tr(φb)(x) = tr(b)(−x)
+  (0/48).
+- **Y3.** At x = 0, n = p for the ruled V³ = (g₁g₂⁻¹)³, both ruled photon factors, their product,
+  the generic photon with symbolic φ's, the half twist and the full twist, in all three
+  flip-paired placements (21/21). So under coloured strands **no reading of trace → mass orders n and
+  p at all**: the neutron is neither heavier nor lighter.
+- **Y4.** For symbolic x, tr_n(x) = tr_p(−x) (21/21). n − p = x(x−1)(x+1)/4 for every word except
+  the half twist (0). It is word-independent (it is the difference of the bare projector traces),
+  odd in x, and zero at all three E-system values. A sign would need a chosen sign of x off the
+  E-system; that would be a fit.
+- **Unexpected.** In Y₂,₃ the ruled photon factorisation V³ = γ(0,0,qh)·γ(0,0,−q⁻¹h) does
+  **not** hold as an element (the probe prints `product == V3 : False`). The reason is that
+  g⁻¹ = g − h·e in Yokonuma, against g⁻¹ = g − h in Hecke. The trace values agree here. The identity
+  `borromeanV3A_eq_switched_photon_product` is a one-colour (Hecke) fact and does not lift to
+  coloured strands unchanged.
+
+Lean (`NeutronHeavierSign.lean`, section Coloured): `flip_sector_eq` (a φ-invariant trace gives the
+flipped sector the same value on every φ-fixed element), `coloured_no_order`, `colouredDiff_odd`
+and `colouredDiff_eSystem`. Y1 and Y2 enter as hypotheses checked by the probe, not as Lean facts.
+Formalising Y₂,₃ itself in Lean is not done.
+
+Verdict, scope (a): coloured strands put flavour on the strands, and the u ↔ d flip is then an
+exact symmetry of the algebra and of the forced trace. The neutron-heavier question has no sign to
+settle there. A mass ordering needs a u/d asymmetry that is not in Y₂,₃ with x = 0. Candidates are
+the knot assignment u = T(2,3), d = mirror (§14), or a charge term. Either would be an added input.
