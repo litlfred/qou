@@ -3,7 +3,7 @@ import QOU.SchurWeyl.OcneanuMarkovTraceEveryZ
 import QOU.SchurWeyl.OcneanuTraceFaithful
 
 /-!
-# Among Markov traces, descent to the surviving blocks forces `z_D`
+# Among Markov traces, descent to the surviving blocks of `H_3(q)` forces `z_D`
 
 `CoCasimirTau0NotDescend` shows that the symmetrising trace `τ₀` does not pass to the
 convention-D surviving blocks, while every Markov trace at `z_D = q³/(q²+1)` does. This file
@@ -18,6 +18,11 @@ arbitrary parameter `z`. On `H_3(q)` suppose that
 
 Then `z = q³/(q²+1)` (`markov_descends_forces_zD`). The converse holds as well, so this is an
 iff (`markov_descends_iff_zD`).
+
+**Scope: the hypotheses are stated on `H_3(q)` only.** That is enough to pin `z`, and a Markov
+trace family is determined by `z` (`markovTrace_unique`), so the conclusion is about the whole
+family. The iff is not stated for general `H_{n+1}(q)`: that descent at level `n + 1` implies
+descent at level `3` needs a branching argument this file does not give.
 
 Proof sketch. Every Markov trace at `z` is the `ocneanuWeight q z`-weighted seminormal trace
 (`eq_ocneanuWtrace_of_markov`), so `T(e_{λ,i}) = w_λ(z)`. The column block `(1³)` is
@@ -36,8 +41,8 @@ comes from the Markov tower condition (`tr_incl`, `tr_markov`), not from descent
 
 ## What this gives for Term 4
 
-Together with `quantumDim_primIdem_twoRow`: among Markov traces on the Hecke tower, exactly one
-passes to the surviving blocks and is nondegenerate there. Its per-simple weight on a two-row
+Together with `quantumDim_primIdem_twoRow`: among Markov trace families on the Hecke tower,
+exactly one passes to the surviving blocks of `H_3(q)` and is nondegenerate there. Its per-simple weight on a two-row
 block `(m, k)` is the `sl₂` dimension `[m − k + 1]_q`. The hook `dim_q` is the weight of `τ₀`,
 which is not a trace of the surviving-block algebra. Whether Term 4 must be built from a Markov
 trace of the surviving-block algebra is the modelling ruling on issue #8109; this file does not
@@ -93,7 +98,7 @@ theorem cells_eq_column_of_three {μ : YoungDiagram} (hcard : μ.cells.card = 3)
   exact (Finset.eq_of_subset_of_card_le hsub (by rw [hcard]; decide)).symm
 
 include hq0 hq2 in
-/-- **Descent plus nondegeneracy forces `z_D`.** A Markov trace family at parameter `z` that
+/-- **Descent plus nondegeneracy on `H_3(q)` forces `z_D`.** A Markov trace family at parameter `z` that
 vanishes on `H_3(q)` off the surviving blocks, and is nonzero on a primitive idempotent of
 every surviving block of `H_3(q)`, has `z = q³/(q²+1)`. -/
 theorem markov_descends_forces_zD {z : K} (T : HeckeCoset.MarkovTraceFamily K q q⁻¹ z)
@@ -146,7 +151,7 @@ theorem markov_descends_forces_zD {z : K} (T : HeckeCoset.MarkovTraceFamily K q 
       linear_combination -h''
 
 include hq0 hq2 in
-/-- **The iff.** A Markov trace family at parameter `z` passes to the surviving blocks of
+/-- **The iff, on `H_3(q)`.** A Markov trace family at parameter `z` passes to the surviving blocks of
 `H_3(q)` and is nondegenerate there exactly when `z = q³/(q²+1)`. -/
 theorem markov_descends_iff_zD {z : K} (T : HeckeCoset.MarkovTraceFamily K q q⁻¹ z) :
     ((∀ x : Hecke K q q⁻¹ 2, OffSurviving q hq0 hq2 2 x → T.tr 2 x = 0)

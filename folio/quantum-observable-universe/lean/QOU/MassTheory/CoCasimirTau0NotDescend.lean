@@ -23,10 +23,13 @@ kernel. This file compares the two traces of `CoCasimirDimQTraces`:
 
 So `τ₀` is not a trace of the surviving-block algebra for any `n + 1 ≥ 3`. The hook-formula
 `dim_q`, which is `τ₀`'s per-simple weight up to `q^{−κ}`
-(`qFact_mul_symTrace_primIdem_eq_dimQ`), is therefore not the quantum dimension of any block
-with respect to a trace that lives on the surviving blocks. The convention-D Markov trace is such
-a trace, and its per-simple weight on a two-row block `(m, k)` is the `sl₂` dimension
-`[m − k + 1]_q` (`quantumDim_primIdem_twoRow`).
+(`qFact_mul_symTrace_primIdem_eq_dimQ`), therefore does not come from `τ₀` restricted to the
+surviving blocks. It is not excluded for every trace there: the surviving-block algebra is a
+product of matrix algebras, so its traces carry one free scalar per block, and some non-Markov
+trace of it has the hook weights. What is excluded is a Markov trace: among those, only the one at
+`z_D` passes to the surviving blocks (`CoCasimirMarkovDescentForcesZD`), and its per-simple weight
+on a two-row block `(m, k)` is the `sl₂` dimension `[m − k + 1]_q`
+(`quantumDim_primIdem_twoRow`).
 
 ## What is proved and what is not
 
