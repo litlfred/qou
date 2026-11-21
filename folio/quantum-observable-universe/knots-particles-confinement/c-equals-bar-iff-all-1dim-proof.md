@@ -1,18 +1,22 @@
 **Proof.**
 
-Let $K = \mathbb{Q}(q)$ and let $\iota$ be the ring involution of $H_n(q)$ over $K$ that sends $q \mapsto q^{-1}$ and $\sigma_i \mapsto \sigma_i^{-1}$. It is well defined because it preserves the defining relations: the braid relations are preserved by inverting every letter and reversing nothing, and the quadratic relation $\sigma_i^2 = h\sigma_i + 1$ becomes $\sigma_i^{-2} = -h\,\sigma_i^{-1} + 1$, which is the same relation multiplied by $\sigma_i^{-2}$. On a braid word $\beta$ the involution acts as $C$, since a braid word has coefficient $1$.
+*One-dimensional characters.* A one-dimensional character sends every $\sigma_i$ to the same eigenvalue $\epsilon$, either $q$ or $-q^{-1}$. Then $\sigma_i^{-1} \mapsto \epsilon^{-1}$, and $\epsilon^{-1}(q) = \epsilon(q^{-1})$ in both cases, since $q^{-1} = q^{-1}$ and $(-q^{-1})^{-1} = -q = -(q^{-1})^{-1}$. So $\chi(C\beta)(q) = \chi(\beta)(q^{-1})$ for every word.
 
-Let $\rho$ be an irreducible representation of $H_n(q)$ over $K$ with character $\chi^\lambda$. Define $\rho'(x) = \overline{\rho(\iota(x))}$, where the outer bar applies $q \mapsto q^{-1}$ to each matrix entry. The two semilinear twists cancel, so $\rho'$ is a $K$-linear representation; it is irreducible because $\iota$ is bijective. Its character is
-$$
-  \chi'(x) = \overline{\chi^\lambda(\iota(x))}.
-$$
-Characters of $H_n(q)$ take values in $\mathbb{Z}[q, q^{-1}]$, and specialising $q \mapsto 1$ sends each irreducible character of $H_n(q)$ to the corresponding irreducible character of $S_n$, which distinguishes them (Tits deformation). At $q = 1$ the outer bar is the identity and $\iota(\sigma_i) = \sigma_i^{-1} = \sigma_i$, so $\chi'$ specialises to the same character of $S_n$ as $\chi^\lambda$. Hence $\rho' \cong \rho$ and $\chi' = \chi^\lambda$. Applying this to a braid word $\beta$ and then barring both sides gives $\chi^\lambda(C(\beta))(q) = \chi^\lambda(\beta)(q^{-1})$. $\square$
-
-**Explicit case $n = 3$, $\lambda = (2,1)$.** In the representation
+*The representation $(2,1)$ of $H_3(q)$.* Take
 $$
   \sigma_0 \mapsto \begin{pmatrix} -q^{-1} & q \\ 0 & q \end{pmatrix},\qquad
-  \sigma_1 \mapsto \begin{pmatrix} q & 0 \\ q^{-1} & -q^{-1} \end{pmatrix}
+  \sigma_1 \mapsto \begin{pmatrix} q & 0 \\ q^{-1} & -q^{-1} \end{pmatrix},
 $$
-($q$ times the reduced Burau matrices at $t = q^{-2}$), the matrix $P = \mathrm{diag}(1, q^2)$ satisfies $P\,\sigma_i^{-1}(q) = \sigma_i(q^{-1})\,P$ for both generators. So $P\,\rho_q(C\beta)\,P^{-1} = \rho_{q^{-1}}(\beta)$ for every word, and the traces agree. The Lean sibling proves this case for every braid word over any field.
+which is $q$ times the reduced Burau matrices at $t = q^{-2}$. Write $\rho_q$ for this representation. The matrix $P = \mathrm{diag}(1, q^2)$ satisfies
+$$
+  P\,\rho_q(\sigma_i^{-1}) = \rho_{q^{-1}}(\sigma_i)\,P
+  \quad\text{and}\quad
+  P\,\rho_q(\sigma_i) = \rho_{q^{-1}}(\sigma_i^{-1})\,P
+$$
+for $i = 0, 1$. By induction on the length of a word, $P\,\rho_q(C\beta)\,P^{-1} = \rho_{q^{-1}}(\beta)$ for every braid word $\beta$, and taking traces gives the identity. $\square$
+
+The Lean sibling proves the $(2,1)$ case for every braid word over any field with $q \ne 0$.
+
+**Remark (extension to every $n$; not formalised).** The same identity holds for every irreducible character of $H_n(q)$. Let $K = \mathbb{Q}(q)$ and let $\iota$ be the ring involution of $H_n(q)$ that sends $q \mapsto q^{-1}$ and $\sigma_i \mapsto \sigma_i^{-1}$. It is well defined because inverting every letter preserves the braid relations, and the quadratic relation $\sigma_i^2 = h\sigma_i + 1$ becomes $\sigma_i^{-2} = -h\,\sigma_i^{-1} + 1$, which is the same relation multiplied by $\sigma_i^{-2}$. For an irreducible representation $\rho$ with character $\chi^\lambda$, set $\rho'(x) = \overline{\rho(\iota(x))}$, where the outer bar applies $q \mapsto q^{-1}$ to each entry. The two semilinear twists cancel, so $\rho'$ is a $K$-linear irreducible representation with character $\overline{\chi^\lambda(\iota(x))}$. At $q = 1$ both twists are the identity, so $\rho'$ and $\rho$ specialise to the same irreducible character of $S_n$, and by Tits deformation $\rho' \cong \rho$. Evaluating on a braid word and barring both sides gives $\chi^\lambda(C\beta)(q) = \chi^\lambda(\beta)(q^{-1})$. This argument is not in Lean, so the proposition is stated only for $H_3(q)$.
 
 **Consequence for the earlier reading.** An earlier version of this block claimed $C \ne \mathrm{bar}$ on $(2,1)$, quoting $\chi^{(2,1)}$ of the meson word at $q_0$ as $+1.892$ after charge conjugation. The exact value is $-(q^4 - q^2 + 1)/q^2$ for the word, its charge conjugate and its bar alike. $C = \mathrm{bar}$ therefore does not single out $H_2(q)$, and it does not separate a lepton level from a meson level.
