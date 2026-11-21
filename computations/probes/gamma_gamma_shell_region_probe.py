@@ -27,7 +27,8 @@ from flint import arb, ctx  # noqa: E402
 import gamma_gamma_shell_probe as G  # noqa: E402
 
 ctx.prec = 256
-OUT = Path(__file__).with_name("gamma-gamma-shell-region.result.json")
+MODE = sys.argv[2] if len(sys.argv) > 2 else "neighbour"
+OUT = Path(__file__).with_name("gamma-gamma-shell-region.result.json" if MODE == "neighbour" else f"gamma-gamma-shell-region-{MODE}.result.json")
 T0 = time.time()
 _REPS = {}
 
@@ -52,7 +53,7 @@ def point(args):
     for sh, g in reps_for(k).items():
         if not g:
             continue
-        vals[str(sh)] = G.trace(G.atom_matrix(g, k, ph, q)) / g[0].nrows()
+        vals[str(sh)] = G.trace(G.atom_matrix(g, k, ph, q, MODE)) / g[0].nrows()
     m = min(vals.values(), key=lambda v: v.mid())
     # certified sign of the minimum: binds iff every normalised character >= 0
     signs = [G.sign(v) for v in vals.values()]
@@ -88,7 +89,7 @@ def main():
                          "best_rel_margin": best["rel_margin"], "best_phi": best["phi"], "points": res})
             log(f"k={k}: binds {nb}/{len(res)} (undecided {nu}); bare margin {bare['margin'][:10]}; "
                 f"bare rel {bare['rel_margin'][:9]}; best rel margin {best['rel_margin'][:9]} at {[p[:5] for p in best['phi']]}")
-            OUT.write_text(json.dumps({"model": "docs/audits/2026-11-21-magic-shells-gamma-gamma-model.md",
+            OUT.write_text(json.dumps({"mode": MODE, "model": "docs/audits/2026-11-21-magic-shells-gamma-gamma-model.md",
                                        "margin": "min over <=2-row lambda of chi_lambda(W)/dim lambda",
                                        "q0": G.Q0_STR, "rows": rows}, indent=1))
     log(f"wrote {OUT}")

@@ -98,12 +98,31 @@ def capture_letters(k):
     return up + [(0, True), (0, True)] + down
 
 
-def apply_op(H, x, k, phi):
+def pair_letters(j, k):
+    """A_{jk} = σ_{k-1} .. σ_{j+1} σ_j^2 σ_{j+1}^{-1} .. σ_{k-1}^{-1}: strand k encircles strand j."""
+    up = [(i, False) for i in range(k - 1, j, -1)]
+    down = [(i, True) for i in range(j + 1, k)]
+    return up + [(j, False), (j, False)] + down
+
+
+def interaction_letters(k, mode):
+    """neighbour: one crossing σ_{k-1}; allpairs: A_{jk} for every earlier electron j = 1..k-1."""
+    if mode == "neighbour":
+        return [(k - 1, False)]
+    if mode == "allpairs":
+        out = []
+        for j in range(1, k):
+            out += pair_letters(j, k)
+        return out
+    raise ValueError(mode)
+
+
+def apply_op(H, x, k, phi, mode="neighbour"):
     """x · K_k · I_k · E_k  (only K_1 for k = 1)."""
     x = H.word(x, capture_letters(k))
     if k == 1:
         return x
-    x = H.mul_gen(x, k - 1)  # interaction
+    x = H.word(x, interaction_letters(k, mode))  # interaction
     i = k - 2
     t0 = H.mul_gen(x, i)
     t1 = H.mul_gen(x, i + 1)
@@ -117,7 +136,7 @@ def complexity(x):
     return {"terms": len(x), "max_len": max((perm_len(w) for w in x), default=0)}
 
 
-def part_a(kmax, runs):
+def part_a(kmax, runs, mode="neighbour"):
     rows = []
     for k in range(1, kmax + 1):
         n = k + 1
@@ -127,10 +146,10 @@ def part_a(kmax, runs):
             H = HeckeFP(n, q, P)
             W = H.one()
             for j in range(1, k + 1):
-                W = apply_op(H, W, j, phi)
+                W = apply_op(H, W, j, phi, mode)
             Hw = H.reductions
             H.reductions = 0
-            O = apply_op(H, H.one(), k, phi)
+            O = apply_op(H, H.one(), k, phi, mode)
             per_run.append({"W": complexity(W), "O": complexity(O),
                             "reductions_W": Hw, "reductions_O": H.reductions})
         if any(r["W"] != per_run[0]["W"] or r["O"] != per_run[0]["O"] for r in per_run):
@@ -218,7 +237,7 @@ def check_rep(gens, q):
     return worst
 
 
-def atom_matrix(gens, k, phi, q):
+def atom_matrix(gens, k, phi, q, mode="neighbour"):
     d = gens[0].nrows()
     h = q - 1 / q
     I = arb_mat(d, d)
@@ -230,7 +249,8 @@ def atom_matrix(gens, k, phi, q):
         for (i, isinv) in capture_letters(j):
             W = W * (inv[i] if isinv else gens[i])
         if j >= 2:
-            W = W * gens[j - 1]
+            for (i, isinv) in interaction_letters(j, mode):
+                W = W * (inv[i] if isinv else gens[i])
             i = j - 2
             W = W * (I + gens[i] * phi[0] + gens[i + 1] * phi[1] + gens[i] * inv[i + 1] * phi[2])
     return W
