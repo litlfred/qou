@@ -159,3 +159,31 @@ while every consumer of α (pyhecke, the meson EM term, Coulomb) uses the
 ≈ 467 ppb in α⁻¹. No verdict changes today, but the α row's −0.37 ppb describes
 a different object from the α the rest of the dashboard consumes. Resolving it
 (rescore the row, or switch the consumers) waits on `qou-aemx`.
+
+**Resolved by two labelled arms (owner card choice, 2026-11-21).** The α_em row
+of `per-observable-100x-status.witness.json` now carries `arms` with each form
+scored the same way: `cs_tower` 467.6 ppb (3.052e5× miss), `additive_A_c0`
+0.9937 ppb (648.4×), `additive_B_c1` 0.3652 ppb (238.3×). It also records
+`consumer_arm: cs_tower` and `canonical_form: OPEN (qou-aemx)`. The headline
+`pred_MeV` stays the B arm only for existing readers, and every arm misses the
+100× target, so the scoreable count (1 / 6) does not depend on the headline.
+No other number in the witness moved.
+
+## 8. Proved after the review (owner picked items 1, 2, 3)
+
+All lean-direct exit 0, no warnings, axioms `propext, Classical.choice, Quot.sound`.
+
+1. **`[10]_q` from the actual `H₃(q)` representations** —
+   `QOU/AlphaEM/T35TenLinchpinFromH3.lean`. Explicit 2-dimensional representation
+   checked against the Hecke and braid relations; the characters of `(σ₁σ₂)⁵` are
+   `q¹⁰`, `−1` and `q⁻¹⁰` (`hook_trace_T35`: the hook value is `−1` for every `q`).
+   `t35_weights_unique`: a weighted sum equals `q¹⁰ − q⁻¹⁰ = (q − q⁻¹)[10]_q` for all
+   nonzero rational `q` iff the weights are `(1, 0, −1)`. Convention-D weights (zero
+   on `(1,1,1)`) cannot produce it. Still open: why the photon carries `(1, 0, −1)`.
+   PR #8177 proves the weight equivalence only for abstract integer characters.
+2. **`κ(1) = 1`** (`kappa_one`): the `q`-Gram matrix of `meson_em_sinh_closed_form`
+   reduces to the classical one at `q = 1`, and `det G_cl = π⁴·45375/72900 ≠ 0`.
+3. **Forms A and B define a unique small coupling**
+   (`isFormB_existsUnique_small`): for `T > 0`, `q > 0` and `2·c·h² ≤ T + 2/(3π)`,
+   exactly one `α ∈ (0, 1/(T + 2/(3π))]`; any other positive root has `c·h²·α > 1`
+   (`formB_large_root`).
