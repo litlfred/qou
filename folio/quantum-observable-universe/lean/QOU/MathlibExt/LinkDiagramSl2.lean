@@ -88,12 +88,19 @@ theorem sl2Model_r3 (a₀ a₂ b₀ b₂ c₀ c₂ : Bool) :
   cases a₀ <;> cases a₂ <;> cases b₀ <;> cases b₂ <;> cases c₀ <;> cases c₂ <;>
     simp [sl2Model, sl2R] <;> field_simp <;> ring
 
+theorem sl2Model_slide (s : Bool) (t : ℤ) (a b c d : Bool) :
+    (((sl2Model q hq).K a ^ t * (sl2Model q hq).K c ^ t : 𝕜ˣ) : 𝕜) * (sl2Model q hq).X s a b c d =
+      (sl2Model q hq).X s a b c d * (((sl2Model q hq).K b ^ t * (sl2Model q hq).K d ^ t : 𝕜ˣ) : 𝕜) := by
+  cases s <;> cases a <;> cases b <;> cases c <;> cases d <;>
+    simp [sl2Model, sl2R, sl2Rinv] <;> ring
+
 /-- **The quantum `sl₂` model satisfies the local identities**, with framing factor `q²`. -/
 theorem sl2Model_invariant : (sl2Model q hq).Invariant (Units.mk0 q hq ^ 2) where
   r1 := sl2Model_r1 q hq
   r2par := sl2Model_r2par q hq
   r2anti := sl2Model_r2anti q hq
   r3 := sl2Model_r3 q hq
+  slide := sl2Model_slide q hq
 
 /-- **A circle with one full turn has value `q + q⁻¹`**, the quantum dimension of `V`. Without the
 turn the same circle has value `2`; this is why codes carry turn numbers. -/
