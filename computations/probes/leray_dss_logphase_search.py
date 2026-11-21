@@ -350,6 +350,57 @@ def flatF(R, A, n, K, pj):
 
 def norm(v): return sum((x * x for x in v), arb(0)).sqrt()
 
+def jacobian(sy, x, theta, pj, sd, F, G, hstep):
+    """Real Jacobian of flatF wrt (Re A, Im A, w); d/dw by one-sided FD with basis rebuild."""
+    n, K = sy.n, sy.K
+    A, om = unpack(x, n, K)
+    D = len(x)
+    Jm = arb_mat(D, D)
+    # A-derivatives (complex-linear structure)
+    def rowoff(m, part):
+        if m == 0: return 0 if part == 're' else None
+        return n + (m - 1) * n if part == 're' else n + n * K + (m - 1) * n
+    def coloff(p, part):
+        if p == 0: return 0 if part == 're' else None
+        return n + (p - 1) * n if part == 're' else n + n * K + (p - 1) * n
+    # collect complex blocks C[m][p] multiplying dA_p (and conj blocks for p<0)
+    blocks = {}
+    for m in range(K + 1):
+        blocks[(m, m)] = blocks.get((m, m), acb_mat(n, n)) + sd['L'][m]
+    for (m1, m2), Gm in G.items():
+        m = m1 + m2
+        blocks[(m, m1)] = blocks.get((m, m1), acb_mat(n, n)) + Gm
+    for (m, p), Bk in blocks.items():
+        for i in range(n):
+            for j in range(n):
+                z = Bk[i, j]
+                if p >= 0:
+                    # dA_p = dx + i dy ; contributes z dx + i z dy
+                    cr, ci = coloff(p, 're'), coloff(p, 'im')
+                    rr, ri = rowoff(m, 're'), rowoff(m, 'im')
+                    Jm[rr + i, cr + j] += z.real
+                    if ri is not None: Jm[ri + i, cr + j] += z.imag
+                    if ci is not None:
+                        Jm[rr + i, ci + j] += -z.imag
+                        if ri is not None: Jm[ri + i, ci + j] += z.real
+                else:
+                    q = -p  # dA_{-q} = dx - i dy
+                    cr, ci = coloff(q, 're'), coloff(q, 'im')
+                    rr, ri = rowoff(m, 're'), rowoff(m, 'im')
+                    Jm[rr + i, cr + j] += z.real
+                    if ri is not None: Jm[ri + i, cr + j] += z.imag
+                    Jm[rr + i, ci + j] += z.imag
+                    if ri is not None: Jm[ri + i, ci + j] += -z.real
+    # phase row
+    Jm[D - 1, n + n * K + pj] = arb(1)
+    # omega column by FD
+    sd2 = sy.build(om + hstep, theta, rate_override=4 * K * om * theta)
+    R2, _ = residual(sd2, A, n, K)
+    F2 = flatF(R2, A, n, K, pj)
+    for i in range(D):
+        Jm[i, D - 1] = mid((F2[i] - F[i]) / hstep)
+    return Jm
+
 def newton(sy, x0, theta, pj, maxit=25, tol_digits=None, log=LOG, fixed_basis_om=None):
     """Full Newton in (A_0, A_m, w); basis depends on w (rebuilt each step), d/dw by one-sided FD."""
     n, K = sy.n, sy.K
@@ -365,51 +416,7 @@ def newton(sy, x0, theta, pj, maxit=25, tol_digits=None, log=LOG, fixed_basis_om
         log(f"    it={it} |F|={nf.str(4, radius=False)} |A|={xn.str(6, radius=False)} S={(2*arb.pi()/om).str(16, radius=False)} nodes={sd['nodes']}")
         if nf < tol * (1 + xn): return x, nf, hist, True
         if not (nf < arb(10) ** 12) or om <= 0: return x, nf, hist, False
-        D = len(x)
-        Jm = arb_mat(D, D)
-        # A-derivatives (complex-linear structure)
-        def rowoff(m, part):
-            if m == 0: return 0 if part == 're' else None
-            return n + (m - 1) * n if part == 're' else n + n * K + (m - 1) * n
-        def coloff(p, part):
-            if p == 0: return 0 if part == 're' else None
-            return n + (p - 1) * n if part == 're' else n + n * K + (p - 1) * n
-        # collect complex blocks C[m][p] multiplying dA_p (and conj blocks for p<0)
-        blocks = {}
-        for m in range(K + 1):
-            blocks[(m, m)] = blocks.get((m, m), acb_mat(n, n)) + sd['L'][m]
-        for (m1, m2), Gm in G.items():
-            m = m1 + m2
-            blocks[(m, m1)] = blocks.get((m, m1), acb_mat(n, n)) + Gm
-        for (m, p), Bk in blocks.items():
-            for i in range(n):
-                for j in range(n):
-                    z = Bk[i, j]
-                    if p >= 0:
-                        # dA_p = dx + i dy ; contributes z dx + i z dy
-                        cr, ci = coloff(p, 're'), coloff(p, 'im')
-                        rr, ri = rowoff(m, 're'), rowoff(m, 'im')
-                        Jm[rr + i, cr + j] += z.real
-                        if ri is not None: Jm[ri + i, cr + j] += z.imag
-                        if ci is not None:
-                            Jm[rr + i, ci + j] += -z.imag
-                            if ri is not None: Jm[ri + i, ci + j] += z.real
-                    else:
-                        q = -p  # dA_{-q} = dx - i dy
-                        cr, ci = coloff(q, 're'), coloff(q, 'im')
-                        rr, ri = rowoff(m, 're'), rowoff(m, 'im')
-                        Jm[rr + i, cr + j] += z.real
-                        if ri is not None: Jm[ri + i, cr + j] += z.imag
-                        Jm[rr + i, ci + j] += z.imag
-                        if ri is not None: Jm[ri + i, ci + j] += -z.real
-        # phase row
-        Jm[D - 1, n + n * K + pj] = arb(1)
-        # omega column by FD
-        sd2 = sy.build(om + hstep, theta, rate_override=4 * K * om * theta)
-        R2, _ = residual(sd2, A, n, K)
-        F2 = flatF(R2, A, n, K, pj)
-        for i in range(D):
-            Jm[i, D - 1] = mid((F2[i] - F[i]) / hstep)
+        Jm = jacobian(sy, x, theta, pj, sd, F, G, hstep); D = len(x)
         Jt = Jm.transpose(); N_ = Jt * Jm
         shift = mid(sum((abs(N_[i, i]) for i in range(D)), arb(0)) / D) * arb(10) ** (-(DPS - 15))
         for i in range(D): N_[i, i] += shift
@@ -525,6 +532,80 @@ def homotopy(sy, x0, pj, dtheta=arb(1) / 10, dmin=arb(1) / 80, log=LOG):
                 path.append(rec); return x, path, 'newton_fails_at_theta_' + s40(tt, 6)
     return x, path, 'reached_theta_1'
 
+def corrector_arclength(sy, y_pred, t, W, pj, maxit=8, log=LOG):
+    """Newton on [F(x, theta); t.(y - y_pred)] with y = (x, W*theta) (pseudo-arclength corrector)."""
+    n, K = sy.n, sy.K
+    tol = arb(10) ** (-(DPS - 20)); hstep = arb(10) ** (-(DPS // 2))
+    y = [mid(v) for v in y_pred]; D = len(y) - 1
+    for it in range(maxit + 1):
+        x, th = y[:D], y[D] / W
+        if not (th > -1) or not (th < 2): return y, None, False
+        A, om = unpack(x, n, K)
+        if om <= 0: return y, None, False
+        sd = sy.build(om, th); R, G = residual(sd, A, n, K)
+        F = flatF(R, A, n, K, pj)
+        cons = sum((t[i] * (y[i] - y_pred[i]) for i in range(D + 1)), arb(0))
+        nf = mid(norm(F)); xn = mid(norm(x[:-1]))
+        if nf < tol * (1 + xn) and abs(cons) < tol * (1 + xn): return y, nf, True
+        if it == maxit or not (nf < arb(10) ** 12): return y, nf, False
+        Jx = jacobian(sy, x, th, pj, sd, F, G, hstep)
+        rate = 4 * K * om * th if th > 0 else None
+        sd2 = sy.build(om, th + hstep, rate_override=rate if rate is not None else arb(0))
+        R2, _ = residual(sd2, A, n, K); F2 = flatF(R2, A, n, K, pj)
+        M = arb_mat(D + 1, D + 1)
+        for i in range(D):
+            for j in range(D): M[i, j] = Jx[i, j]
+            M[i, D] = mid((F2[i] - F[i]) / hstep) / W
+        for j in range(D + 1): M[D, j] = t[j]
+        rhs = arb_mat(D + 1, 1, F + [cons])
+        Mt = M.transpose(); N_ = Mt * M
+        shift = mid(sum((abs(N_[i, i]) for i in range(D + 1)), arb(0)) / (D + 1)) * arb(10) ** (-(DPS - 15))
+        for i in range(D + 1): N_[i, i] += shift
+        dy = N_.solve(Mt * rhs, algorithm="approx")
+        y = [mid(y[i] - dy[i, 0]) for i in range(D + 1)]
+    return y, nf, False
+
+def arclength_homotopy(sy, x0, pj, th1=arb(1) / 80, maxsteps=200, log=LOG):
+    """Secant pseudo-arclength continuation in theta from a theta = 0 orbit. Passes folds in theta.
+    y = (x, W theta), W = |x0|; stops at theta = 1, theta < 0 (branch returns), collapse, or ds underflow."""
+    x, nf, h, ok = newton(sy, x0, arb(0), pj, maxit=10, log=log)
+    path = [summary(x, sy, nf, ok, arb(0))]
+    if not ok or path[-1]['cls'] != 'periodic': return x, path, 'no_theta0_orbit'
+    W = mid(norm(x[:-1]))
+    x1, nf1, _, ok1 = newton(sy, x, th1, pj, maxit=10, log=log)
+    if not ok1: return x, path, 'first_natural_step_fails'
+    path.append(summary(x1, sy, nf1, ok1, th1))
+    y0 = x + [arb(0)]; y1 = x1 + [W * th1]
+    ds = mid(norm([y1[i] - y0[i] for i in range(len(y0))])); dsmin = ds / 64; dsmax = ds * 8
+    dth_sign = 1; folds = []
+    for step in range(maxsteps):
+        sec = [y1[i] - y0[i] for i in range(len(y0))]; L_ = mid(norm(sec)); t = [v / L_ for v in sec]
+        yp = [mid(y1[i] + ds * t[i]) for i in range(len(y1))]
+        y, nf, ok = corrector_arclength(sy, yp, t, W, pj, log=log)
+        if not ok:
+            ds = ds / 2
+            log(f"   arc step {step}: corrector fails, ds -> {ds.str(4, radius=False)}")
+            if ds < dsmin:
+                th_last = y1[-1] / W
+                return y1[:-1], path, 'arclength_stalls_at_theta_' + s40(th_last, 6)
+            continue
+        D = len(y) - 1; th = y[D] / W
+        rec = summary(y[:D], sy, nf, True, th)
+        sgn = 1 if th > y1[D] / W else -1
+        if sgn != dth_sign:
+            folds.append(s40(y1[D] / W, 10)); rec['fold_before'] = True; dth_sign = sgn
+        path.append(rec)
+        log(f"   arc step {step}: theta={s40(th,8)} S={rec['period_S'][:18]} |A|={mid(norm(y[:D-1])).str(8, radius=False)} res={rec['residual']} folds={len(folds)}")
+        if rec['cls'] != 'periodic': return y[:D], path, 'collapsed_to_' + rec['cls']
+        if th < 0: return y[:D], path, f'branch_returns_to_theta_0_after_{len(folds)}_folds'
+        if th >= 1:
+            xf, nff, _, okf = newton(sy, y[:D], arb(1), pj, maxit=10, log=log)
+            path.append(summary(xf, sy, nff, okf, arb(1)))
+            return xf, path, ('reached_theta_1' if okf else 'theta1_newton_fails')
+        y0, y1 = y1, y
+        ds = min(ds * arb(3) / 2, dsmax)
+    return y1[:-1], path, f'maxsteps_at_theta_{s40(y1[-1]/W, 6)}_folds_{len(folds)}'
+
 def refine_chain(sy, x, pj, log=LOG):
     """K -> K+1, then N -> N+1, then L -> L+1 (same axi flag), theta = 1."""
     out = []
@@ -593,7 +674,10 @@ def main():
         cs = [c for c in s['cases'] if c['L'] == L and c['N'] == N][0]['periodic_seeds'][0]
         sy = System(L, N, K)
         x0, pj = seed_from_phase1(sy, cs)
-        x, path, verdict = homotopy(sy, x0, pj)
+        if os.environ.get('LERAY_ARC'):
+            x, path, verdict = arclength_homotopy(sy, x0, pj)
+        else:
+            x, path, verdict = homotopy(sy, x0, pj)
         out.update(L=L, N=N, K=K, seed=cs['source'], path=path, verdict=verdict)
         LOG("VERDICT", verdict); save()
         if verdict == 'reached_theta_1':
