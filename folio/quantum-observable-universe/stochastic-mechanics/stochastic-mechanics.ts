@@ -118,7 +118,7 @@ export default chapter({
         "adelic-tate-squeeze",
         "adelic-tate-bsd-reduction",
         "adelic-tate-motivic-dual",
-        "outro-braids-and-knots",
+        "outro-substrate-arithmetic",
       ],
     }),
     section({
