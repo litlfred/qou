@@ -45,7 +45,7 @@ This is the minimal substrate-atom combination satisfying three conditions:
 - (b) holds: the right-hand side is $4(q-1)^3 + O((q-1)^4)$.
 - (a) does not hold as stated. Writing $f(q) = h_q^2\,\hbar_q/\sqrt{q}$, one finds $f(q^{-1}) = -q^2 f(q)$, so $f$ is antisymmetric under $q \mapsto q^{-1}$ only up to the factor $q^2$ (checked symbolically).
 
-Everything downstream of (2) therefore inherits a fitted input. The derivation that would replace it is open.
+Everything downstream of (2) therefore inherits a fitted input, and no derivation is on record. Within the objects the corpus derives it is excluded. With additive strands and a nucleon mass ratio that is a nonzero power of $q$, which covers the pivot ratio $q^{\pm 2}$ forced on the whole $U_q(\mathfrak{sl}_2)$ commutant, the per-quark split is $c\,(t^m-1)/(t^m+1)$ with $t = \sqrt{q}$. It vanishes only to first order at $q = 1$, while the right-hand side of (2) vanishes to third order (Lean: `QOU.FlavorDressing.PivotSplitOrder.ansatz_ne_pivotSplit`; the failure of (a) is `ansatz_bar`). A derivation of (2) would need an object that breaks $U_q(\mathfrak{sl}_2)$ symmetry; see [the 2026-11-21 audit](../../../docs/audits/2026-11-21-per-quark-flavor-split-not-derived.md).
 
 *Step 3 (Algebraic identity tying the equivalent forms).*
 
