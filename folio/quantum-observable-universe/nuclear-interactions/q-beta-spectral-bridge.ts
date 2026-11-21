@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:q-beta-spectral-bridge",
+export default conjecture({
+  label: "conj:q-beta-spectral-bridge",
   lean: {
     ref: "qou:QOU.Interactions.q_beta_spectral_bridge",
     validation: "not_checked",
@@ -29,6 +29,14 @@ export default proposition({
     "prediction",
   ],
   authorNotes: [
+    {
+      kind: "status",
+      date: "2026-11-21",
+      body:
+        "**Demoted from prop: to conj: (owner card, 2026-11-21, \"Demote both\").** " +
+        "The Lean `q_beta_spectral_conditional` returns `Q_beta_A = Q_beta_B` from a class field, and Form A is the retired z = 1 cell. " +
+        "The proof block is now the sketch rem:q-beta-spectral-bridge-sketch. Issue #8911, PR #8912.",
+    },
     {
       kind: "refined-framing",
       date: "2026-09-05",

@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:four-term-pair-nucleon",
+export default conjecture({
+  label: "conj:four-term-pair-nucleon",
   lean: { ref: "qou:QOU.ParticleInteractions.four_term_pair_nucleon", validation: "not_checked" },
   title: "Nucleon derivation from 4-term photon pair production",
   tags: [
@@ -19,6 +19,14 @@ export default proposition({
     "prop:confinement-operator-selection",
   ],
   authorNotes: [
+    {
+      kind: "status",
+      date: "2026-11-21",
+      body:
+        "**Demoted from prop: to conj: (owner card, 2026-11-21, \"Demote both\").** " +
+        "The Lean theorem `four_term_pair_nucleon` returns the two nets from fields of `FourTermPairNucleonContext`; nothing in Lean computes them. " +
+        "A proof needs the Gröbner–Shirshov reduction and the Markov trace in Lean, which are not there. Issue #8911, PR #8912.",
+    },
     {
       kind: "note",
       date: "2026-08-08",

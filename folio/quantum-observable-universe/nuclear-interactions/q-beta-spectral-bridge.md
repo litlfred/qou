@@ -1,4 +1,4 @@
-**Proposition (conditional on Borromean quark conjecture — $\mathfrak{Q}_\beta$ spectral bridge).**
+**Conjecture (conditional on Borromean quark conjecture — $\mathfrak{Q}_\beta$ spectral bridge).**
 
 *Let $\mathcal{B}_n$ be the canonical free-neutron braid word with single wrap $A = 1$. Let $q = q_0$ be the substrate parameter and $h := q - q^{-1}$. Define the Markov–Jones parameter as:*
 $$

@@ -14,8 +14,16 @@ export default proposition({
   lean: { ref: "qou:QOU.Interactions.confinementUniversality",
     validation: "not_checked",
   },
-  uses: ["prop:four-term-pair-nucleon"],
+  uses: ["def:quark-antiquark-production", "def:photon"],
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-21",
+      body:
+        "**Edge re-pointed.** This block used `prop:four-term-pair-nucleon`, now the conjecture conj:four-term-pair-nucleon (owner card 2026-11-21). " +
+        "The statement here is true by construction: it needs only the definition of the γγ → qq̄ → 𝓑₃ chain and the photon, not that chain's net values, " +
+        "and its Lean (`confinementUniversality`) imports Mathlib only. So it now uses the two definitions and stays a proposition.",
+    },
     {
       kind: "refined-framing",
       date: "2026-11-15",
