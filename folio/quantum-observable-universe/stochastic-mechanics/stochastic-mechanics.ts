@@ -112,7 +112,6 @@ export default chapter({
         "two-filtration-bridge-small-cases-table-data",
         "classical-riemann-zeta",
         "classical-riemann-hypothesis",
-        "adelic-critical-line-persistence",
         "macroscopic-stability-equivalence",
         "adelic-reeb-restricted-product",
         "adelic-reeb-restricted-product-proof",
