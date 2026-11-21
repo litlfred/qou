@@ -350,7 +350,7 @@ def flatF(R, A, n, K, pj):
 
 def norm(v): return sum((x * x for x in v), arb(0)).sqrt()
 
-def jacobian(sy, x, theta, pj, sd, F, G, hstep):
+def jacobian(sy, x, theta, pj, sd, F, G, hstep, omega_col=None):
     """Real Jacobian of flatF wrt (Re A, Im A, w); d/dw by one-sided FD with basis rebuild."""
     n, K = sy.n, sy.K
     A, om = unpack(x, n, K)
@@ -393,6 +393,9 @@ def jacobian(sy, x, theta, pj, sd, F, G, hstep):
                     if ri is not None: Jm[ri + i, ci + j] += -z.real
     # phase row
     Jm[D - 1, n + n * K + pj] = arb(1)
+    if omega_col is not None:
+        for i in range(D): Jm[i, D - 1] = omega_col[i]
+        return Jm
     # omega column by FD
     sd2 = sy.build(om + hstep, theta, rate_override=4 * K * om * theta)
     R2, _ = residual(sd2, A, n, K)
@@ -608,6 +611,128 @@ def arclength_homotopy(sy, x0, pj, th1=arb(1) / 80, maxsteps=200, log=LOG):
         ds = min(ds * arb(3) / 2, dsmax)
     return y1[:-1], path, f'maxsteps_at_theta_{s40(y1[-1]/W, 6)}_folds_{len(folds)}'
 
+def theta_omega_columns(sy, x, th, pj, sd, F, hstep):
+    """dF/dtheta by one FD build (same node set); dF/domega from it analytically.
+    The basis depends on (theta, omega) only through u = theta*omega, and L_m carries i*omega*m*M_m
+    explicitly, so dF/domega = (theta/omega) dF/dtheta + flat(i m M_m A_m)."""
+    n, K = sy.n, sy.K
+    A, om = unpack(x, n, K)
+    rate = 4 * K * om * th if th > 0 else arb(0)
+    sd2 = sy.build(om, th + hstep, rate_override=rate)
+    R2, _ = residual(sd2, A, n, K); F2 = flatF(R2, A, n, K, pj)
+    Fth = [mid((F2[i] - F[i]) / hstep) for i in range(len(F))]
+    ex = {0: acb_mat(n, 1)}
+    for m in range(1, K + 1): ex[m] = (sd['M'][m] * A[m]) * acb(0, m)
+    E = flatF(ex, A, n, K, pj); E[-1] = arb(0)
+    Fom = [mid(th / om * Fth[i] + E[i]) for i in range(len(F))]
+    return Fth, Fom
+
+def corrector_chord(sy, y_pred, t, W, pj, maxit=14, log=LOG):
+    """Pseudo-arclength corrector, chord Newton: the bordered Jacobian is refreshed only when the
+    residual drops by less than a factor 4 per iteration. Returns (y, nf, ok, its)."""
+    n, K = sy.n, sy.K
+    tol = arb(10) ** (-(DPS - 20)); hstep = arb(10) ** (-(DPS // 2))
+    y = [mid(v) for v in y_pred]; D = len(y) - 1
+    Mfac = None; prev = None; nf = None
+    for it in range(maxit + 1):
+        x, th = y[:D], y[D] / W
+        if not (th > -1) or not (th < 2): return y, nf, False, it
+        A, om = unpack(x, n, K)
+        if not (om > 0): return y, nf, False, it
+        sd = sy.build(om, th); R, G = residual(sd, A, n, K)
+        F = flatF(R, A, n, K, pj)
+        cons = sum((t[i] * (y[i] - y_pred[i]) for i in range(D + 1)), arb(0))
+        nf = mid(norm(F + [cons])); xn = mid(norm(x[:-1]))
+        if nf < tol * (1 + xn): return y, nf, True, it
+        if it == maxit or not (nf < arb(10) ** 12): return y, nf, False, it
+        if prev is not None and not (nf < prev): return y, nf, False, it
+        if Mfac is None or (prev is not None and nf > prev / 4):
+            Fth, Fom = theta_omega_columns(sy, x, th, pj, sd, F, hstep)
+            Jx = jacobian(sy, x, th, pj, sd, F, G, hstep, omega_col=Fom)
+            Mb = arb_mat(D + 1, D + 1)
+            for i in range(D):
+                for j in range(D): Mb[i, j] = Jx[i, j]
+                Mb[i, D] = Fth[i] / W
+            for j in range(D + 1): Mb[D, j] = t[j]
+            Mt = Mb.transpose(); N_ = Mt * Mb
+            shift = mid(sum((abs(N_[i, i]) for i in range(D + 1)), arb(0)) / (D + 1)) * arb(10) ** (-(DPS - 15))
+            for i in range(D + 1): N_[i, i] += shift
+            Mfac = (Mt, N_)
+        prev = nf
+        Mt, N_ = Mfac
+        dy = N_.solve(Mt * arb_mat(D + 1, 1, F + [cons]), algorithm="approx")
+        y = [mid(y[i] - dy[i, 0]) for i in range(D + 1)]
+    return y, nf, False, maxit
+
+def _vec(v): return [s40(a, DPS) for a in v]
+def _unvec(v): return [arb(a) for a in v]
+
+def arclength_run(sy, x0, pj, checkpoint, state=None, th1=arb(1) / 80, log=LOG,
+                  tmax=1e9, amp_escape=arb(10) ** 4, S_lo=arb(10) ** -3, S_hi=arb(10) ** 3):
+    """Checkpointed secant pseudo-arclength continuation in theta.  checkpoint(state) is called after
+    every accepted point (state is JSON-ready).  Stops at the first of: theta >= 1 (then Newton at
+    theta = 1 exactly), theta < 0 (returns to theta = 0), closure on the start point, escape
+    (|A| > amp_escape*|A_0| or S outside [S_lo, S_hi]), collapse to steady/trivial, step underflow,
+    or the time budget."""
+    t_end = time.time() + tmax
+    if state is None:
+        x, nf, h, ok = newton(sy, x0, arb(0), pj, maxit=10, log=log)
+        rec = summary(x, sy, nf, ok, arb(0)); rec['amp'] = s40(norm(x[:-1]), 20)
+        if not ok or rec['cls'] != 'periodic':
+            return x, dict(path=[rec], verdict='no_theta0_orbit')
+        W = mid(norm(x[:-1]))
+        x1, nf1, _, ok1 = newton(sy, x, th1, pj, maxit=10, log=log)
+        r1 = summary(x1, sy, nf1, ok1, th1); r1['amp'] = s40(norm(x1[:-1]), 20)
+        if not ok1: return x, dict(path=[rec, r1], verdict='first_natural_step_fails')
+        y0 = x + [arb(0)]; y1 = x1 + [W * th1]
+        ds = mid(norm([y1[i] - y0[i] for i in range(len(y0))]))
+        state = dict(path=[rec, r1], W=s40(W, DPS), y_start=_vec(y0), y0=_vec(y0), y1=_vec(y1),
+                     ds=s40(ds, 30), ds_init=s40(ds, 30), dth_sign=1, folds=[], steps=0, verdict='running')
+        checkpoint(state)
+    W = arb(state['W']); y0 = _unvec(state['y0']); y1 = _unvec(state['y1']); ys = _unvec(state['y_start'])
+    ds = arb(state['ds']); ds0 = arb(state['ds_init']); dsmin = ds0 / 64; dsmax = ds0 * 32
+    A0 = mid(norm(ys[:-2]))
+    def finish(v, xv):
+        state['verdict'] = v; state['y1'] = _vec(y1); state['ds'] = s40(ds, 30); checkpoint(state); return xv, state
+    while True:
+        if time.time() > t_end: return finish(f"time_budget_at_theta_{s40(y1[-1] / W, 8)}", y1[:-1])
+        sec = [y1[i] - y0[i] for i in range(len(y0))]; L_ = mid(norm(sec)); t = [v / L_ for v in sec]
+        yp = [mid(y1[i] + ds * t[i]) for i in range(len(y1))]
+        t0 = time.time()
+        y, nf, ok, its = corrector_chord(sy, yp, t, W, pj, log=log)
+        state['steps'] += 1
+        if not ok:
+            ds = ds / 2
+            log(f"   step {state['steps']}: corrector fails after {its} its ({time.time()-t0:.0f}s), ds -> {ds.str(4, radius=False)}")
+            if ds < dsmin: return finish(f"step_underflow_at_theta_{s40(y1[-1] / W, 8)}", y1[:-1])
+            continue
+        D = len(y) - 1; th = y[D] / W
+        rec = summary(y[:D], sy, nf, True, th); rec['amp'] = s40(norm(y[:D - 1]), 20); rec['corrector_its'] = its
+        sgn = 1 if th > y1[D] / W else -1
+        if sgn != state['dth_sign']:
+            state['folds'].append(s40(y1[D] / W, 12)); rec['fold_before'] = True; state['dth_sign'] = sgn
+        state['path'].append(rec)
+        amp = mid(norm(y[:D - 1])); om = y[D - 1]
+        log(f"   step {state['steps']}: theta={s40(th, 10)} S={rec['period_S'][:20] if rec['period_S'] else None} "
+            f"|A|={amp.str(10, radius=False)} res={rec['residual']} its={its} folds={len(state['folds'])} ({time.time()-t0:.0f}s)")
+        y0, y1 = y1, y
+        state['y0'] = _vec(y0); state['y1'] = _vec(y1)
+        g = arb(2) if its <= 3 else (arb(13) / 10 if its <= 6 else arb(7) / 10)
+        ds = min(ds * g, dsmax); state['ds'] = s40(ds, 30)
+        checkpoint(state)
+        if rec['cls'] != 'periodic': return finish('collapsed_to_' + rec['cls'], y[:D])
+        if not (om > 0) or (2 * arb.pi() / om) > S_hi: return finish('escape_S_to_infinity_or_omega_to_0', y[:D])
+        if (2 * arb.pi() / om) < S_lo: return finish('escape_S_to_0', y[:D])
+        if amp > amp_escape * A0: return finish('escape_amplitude', y[:D])
+        if th < 0: return finish(f"returns_to_theta_0_after_{len(state['folds'])}_folds", y[:D])
+        if state['steps'] > 3 and mid(norm([y[i] - ys[i] for i in range(D + 1)])) < ds0 / 4:
+            return finish('closes_on_start_point', y[:D])
+        if th >= 1:
+            xf, nff, _, okf = newton(sy, y[:D], arb(1), pj, maxit=12, log=log)
+            rf = summary(xf, sy, nff, okf, arb(1)); rf['amp'] = s40(norm(xf[:-1]), 20)
+            state['path'].append(rf); state['x_theta1'] = _vec(xf)
+            return finish('reached_theta_1' if okf else 'theta1_newton_fails', xf)
+
 def refine_chain(sy, x, pj, log=LOG):
     """K -> K+1, then N -> N+1, then L -> L+1 (same axi flag), theta = 1."""
     out = []
@@ -685,6 +810,33 @@ def main():
         if verdict == 'reached_theta_1':
             ref, persisted = refine_chain(sy, x, pj); out['refinement'] = ref; out['persisted_count'] = persisted
             if persisted >= 2: LOG("!!! PERSISTS ACROSS TWO REFINEMENTS — STOP AND REPORT")
+            save()
+    elif mode in ('arcB', 'arcC'):
+        # Phase 4: checkpointed pseudo-arclength continuation; the witness is rewritten after every
+        # accepted point, so a manual stop leaves a probe-written file. LERAY_RESUME=1 continues from it.
+        L, N = (2, 2) if mode == 'arcB' else (2, 3)
+        K = int(os.environ.get('LERAY_K', '4'))
+        s = json.load(open(os.path.join(HERE, 'leray_dss_galerkin_seeds.json')))
+        cs = [c for c in s['cases'] if c['L'] == L and c['N'] == N][0]['periodic_seeds'][0]
+        sy = System(L, N, K)
+        x0, pj = seed_from_phase1(sy, cs)
+        state = None
+        if os.environ.get('LERAY_RESUME') and os.path.exists(outf):
+            prev = json.load(open(outf))
+            if prev.get('state', {}).get('verdict', '').startswith(('running', 'time_budget')):
+                state = prev['state']; state['verdict'] = 'running'
+                state.setdefault('resumed_at_steps', []).append(state['steps'])
+                LOG(f"RESUME from step {state['steps']}")
+        out.update(L=L, N=N, K=K, seed=cs['source'], phase_condition_index=pj,
+                   method='secant pseudo-arclength in (x, W*theta), chord-Newton corrector; '
+                          'dF/dtheta by FD (h=1e-%d), dF/domega = (theta/omega) dF/dtheta + i m M_m A_m' % (DPS // 2))
+        def ckpt(st):
+            out['state'] = st; out['verdict'] = st['verdict']; out['n_points'] = len(st['path']); save()
+        x, st = arclength_run(sy, x0, pj, ckpt, state=state, tmax=float(os.environ.get('LERAY_TMAX', '1e9')))
+        LOG("VERDICT", st['verdict'])
+        if st['verdict'] == 'reached_theta_1':
+            ref, persisted = refine_chain(sy, x, pj); out['refinement'] = ref; out['persisted_count'] = persisted
+            if persisted >= 1: LOG("!!! THETA=1 CANDIDATE PERSISTS UNDER REFINEMENT — STOP AND REPORT")
             save()
     elif mode == 'random':
         rng = random.Random(int(os.environ.get('LERAY_SEED', '20261121')))
