@@ -273,6 +273,10 @@ The ambient Jimbo module (C²)^{⊗n} is used with ι realised as J = (spin flip
 
 H18's test was re-run on the three-state Hecke module (C³)^{⊗n} with the gl₃ Jimbo Ř. The spin-1 sl₂ R-matrix has three eigenvalues and is not a Hecke representation, so this gl₃ module stands in for it. The N = 2 control reproduces H18 exactly. At n = 4..7 every orbit's weight is forced to its ambient length: 1 for the fixed root, 2 for swapped pairs, and 3 for the middle orbit s_m s_{m+1} s_m at n = 5 and 7, whose twisted power sums are now non-zero. The weight-3 wall carries Lusztig's sign −v⁻³. The swapped pairs still carry +v⁻² against Lusztig's −v⁻², the same open normalisation question as H18. Necessary-condition check, not a proof. Details: `computations/probes/bridge_b/h19_result.md`.
 
+### 10p. Why the swapped pairs carry +v⁻² (H20, 2026-11-21)
+
+On every swapped-pair orbit of (C^N)^{⊗n} (N = 2, 3; n = 4..7), the twisted power sums are exactly c₊ v^{2k} + c₋ v^{−2k}, and the mixed joint eigenspaces contribute 0. Reason: J swaps the commuting generators T_i and T_{n−i}, so it moves every joint eigenspace with unequal eigenvalues, and only the squares v² and (−v⁻¹)² = +v⁻² survive. So the +v⁻² of §10n and §10o is forced for any module in which J swaps two commuting generators, and a J-twisted trace of the ambient pair product cannot give Lusztig's −v⁻². Whether another twist does is not tested. Details: `computations/probes/bridge_b/h20_result.md`.
+
 ## 11. What remains open
 
 - A symmetry-breaking object (a vacuum or boundary choice in the Higgs role) that distinguishes u from d inside the
