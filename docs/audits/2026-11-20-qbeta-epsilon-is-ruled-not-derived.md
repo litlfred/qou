@@ -397,3 +397,109 @@ nucleon mass and the difference from the same trace overshoots:
 `E₀` with CAL-1 and CAL-2 alone makes it fit-free in form. It does not make it a step of the
 chain. The open question is now which element of `m_e·ℚ(q₀)` the decay channel's scale is,
 and why. That is a gap, not a closure. Probe: same file, last block.
+
+## 15. At what order can an n/p splitting appear? (owner "keep exploring", 2026-11-21)
+
+§14 found that every n/p construction on record is first order in `h` relative to the
+nucleon. That covers the typed-crossing `Δ_S` (`|Δt|/t_p = 0.341`) and the four-strand state
+difference of PR #8636 (first order in `q − 1`). The physical ratio
+`(Q_β + m_e)/m_p = 1.378e-3` is 248× smaller. This section asks where a first-order term
+comes from and what would remove it. It is a structural reading with order counting. It is
+not a derivation, and it selects no knot.
+
+**(a) The first-order term is a writhe change.** Replacing a `uu` crossing `σ` by a `dd`
+crossing `σ⁻¹` lowers the writhe by 2. §13(c) showed the framing-corrected trace cannot see
+that change. The γγ vertex `σ₀σ₁⁻¹` has writhe 0, and so does every γγ word, including the
+Borromean base `V³`. For words of equal strand count and equal writhe, the raw Markov trace
+is the framing-corrected one times a common factor (`def:mass-identity`, braid classes).
+So a difference between two γγ words is a difference of **link invariants**.
+
+**(b) Link-invariant differences start at second order.** For knots, the Jones polynomial
+in `x = t − 1` is `1 + 0·x + c₂x² + …`: `V(1) = 1` and `V′(1) = 0` [jones1987]. The
+coefficient of `x^k` is a Vassiliev invariant of order ≤ k [birmanlin1993], and it is an
+integer. Two knots read with one shared scale therefore differ first at the order `k ≥ 2`
+where their coefficients first differ. Checked in the probe for 0₁, 3₁, 4₁, 5₁, 5₂
+(`c₂ = −3a₂`).
+
+**(c) Order counting at the proton pin, `x = q₀² − 1 = 0.23205`.** If the leading term were
+`d_k x^k`, the physical ratio would need:
+
+| order `k` | `x^k` | needed `|d_k|` |
+|---|---|---|
+| 2 | 0.05385 | 0.0256 |
+| 3 | 0.01250 | 0.110 |
+| 4 | 0.002900 | 0.475 |
+| 5 | 0.000673 | 2.05 |
+
+The `d_k` are integers, so orders 2 and 3 cannot carry the splitting as a leading term. The
+first order that could is 4 or 5. Caveat: this is heuristic. Jones coefficients grow by about
+2–4× per order while `x = 0.23`, so the tail is not small. A claim about a specific pair has to
+evaluate the full polynomial, not its leading term.
+
+**What this gives.** A test that can be stated before any candidate is chosen. A single-scale
+route, with no separate `E₀`, is consistent with CODATA only if the n and p links have equal
+Jones coefficients through `x³` (or equal finite-type data through order 3) and differ from
+order 4 on. Every construction on record fails this:
+- typed crossings change the writhe (order 1);
+- #8636's state-weighted split is a projected trace, not a link invariant (order 1);
+- at `q₀` the γγ selection gives the same word for n and p (difference 0).
+
+The test is a requirement on a future γγ-derived n/p pair, not a lead on any specific pair.
+Probe: `computations/qbeta/qbeta_framed_splitting_order_probe.py` (8/8 checks).
+
+## 16. Correction to §15, and the owner's "1 2" (2026-11-21)
+
+**Correction.** §15(b) and PR #8714's title say that a difference between writhe-0 γγ words
+"starts at second order". That holds for **knots** only. For links the first-order term is the
+linking number. Measured exactly: every braid word on 3 strands up to length 7 and on 4 strands
+up to length 6, as a dual number at `q = 1 + e` (probe below, 3/3 checks plus a one-crossing
+sanity check). The `z_D` trace of an `n`-strand word whose closure has `c` components, writhe
+`w` and total linking number `lk` is
+
+$$
+  \mathrm{tr}_{z_D}(w) = 2^{-(n-c)}\Bigl(1 + (2w - 3\,\mathrm{lk})\,e + O(e^2)\Bigr),
+  \qquad e = q - 1 .
+$$
+
+So two words on the same number of strands differ:
+- at **order 0** if their component counts differ;
+- at **order 1** by `2^{-(n-c)}(2Δw − 3Δlk)` otherwise.
+
+Example: σ₁σ₃⁻¹ and σ₁σ₃σ₂⁻² on 4 strands both have writhe 0 and 2 components, but `lk` is 0
+and −1. Their first-order coefficients are 0 and 3/4.
+
+The §15 test, "equal Jones coefficients through `x³`", is unaffected. It already requires
+equal component count and equal `lk`. What was wrong is the claim that writhe 0 alone buys the
+second order. What else repeated it:
+- PR #8714's title and body;
+- bean `qou-99qc`'s 2026-11-21 entry, corrected there;
+- nothing in content blocks or code.
+
+The general formula above is **measured, not proved**.
+
+**Option 2 (Lean).** `QOU/QBeta/CrossingChangeTrace.lean`, sorry-free over a generic
+commutative ring and algebra; axioms `propext`, `Quot.sound`.
+- `inv_of_quadratic`: if `g² = h·g + 1` then `g⁻¹ = g − h`.
+- `crossing_change`: for every linear `tr`,
+  `tr(a g b) − tr(a g⁻¹ b) = h·tr(a b)`. One crossing change costs `h` times the smoothed
+  trace, which is the algebraic kernel of the counting.
+
+The closed first-order formula is not formalised. It needs braid words, closure components and
+a constructed Ocneanu trace on the Hecke tower, and the corpus has none of these in Lean
+(`MathlibExt/OcneanuTrace.lean` axiomatises the trace and constructs it on no Hecke tower).
+
+**Option 1 (γγ beyond four strands).**
+- **Scope (b), by construction.** The ruled selection (γγ words plus reading 3,
+  `χ_λ(w) ≥ 0` on blocks with `y_λ > 0`) takes no nucleon argument. It returns the same word
+  for n and p on every number of strands. Distinct n and p links need a rule that sees the
+  nucleon. That is an added premise, not something more strands supply.
+- **The one labelled rule on record** (PR #8636: state-weighted positivity S-w, with strand 4
+  a lepton) gives the same word for n and p at `q₀`.
+  - The selections split only above `q* = 1.1510`: n gets σ₁σ₃⁻¹ (2 components), p gets
+    `V₁³` or `V₂³` (4 components).
+  - So the pair fails the §15 test at **order 0**: the leading traces are `1/4` and `1`.
+- **Not run.** S-w on 5 or 6 strands. It needs a choice of how the lepton pair attaches
+  (which strands, which orientation), and no ruling fixes that. Running every attachment and
+  keeping the one that passes would be selection against the target.
+
+Probe: `computations/qbeta/qbeta_splitting_first_order_linking_probe.py`.

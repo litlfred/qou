@@ -137,6 +137,14 @@ export function classifyCode(span: string): string | null {
 }
 
 // ── L3 ──────────────────────────────────────────────────────────────
+// A quotation is the quoted author's voice, not the paper's: "we" inside
+// "..." or “...” is not a person leak (measured 2026-11-21: all 7 L3 hits
+// left on main were Einstein, Heisenberg and Wigner quotations).
+const QUOTE_RE = /"[^"\n]*"|“[^”\n]*”/g;
+export function stripQuotes(l: string): string {
+  return l.replace(QUOTE_RE, " ");
+}
+
 const L3_RE = /\b(?:[Ww]e|[Oo]ur|[Oo]urs|[Oo]urselves|us|[Ll]et's|[Ll]et\s+us|[Yy]ou|[Yy]our|[Yy]ours|[Yy]ourself|the\s+reader)\b/g;
 
 // ── L4a ─────────────────────────────────────────────────────────────
@@ -166,7 +174,7 @@ export function scanText(src: string, opts: { premature?: boolean; prematureAdvi
       const sub = classifyCode(m[1]!);
       if (sub) hits.push({ cls: "L2", criterion: "leak-lean-ident", sub, line, text: m[0] });
     }
-    for (const m of prose.matchAll(L3_RE))
+    for (const m of stripQuotes(prose).matchAll(L3_RE))
       hits.push({ cls: "L3", criterion: "leak-person", sub: m[0].toLowerCase().replace(/\s+/g, " "), line, text: m[0] });
     if (opts.premature)
       for (const { sub, re } of Q_TOKEN_RES) {
@@ -222,6 +230,15 @@ export async function audit(paperDir: string, classes: Set<LeakClass>): Promise<
   const order = await readingOrder(paperDir);
   const labelIdx = new Map<string, number>();
   for (const b of order) if (b.label && !labelIdx.has(b.label)) labelIdx.set(b.label, b.idx);
+  // An index row reproduces another block's title. A title from a
+  // CODE_BY_DESIGN chapter is checked (and exempt) at its source, so the
+  // copy in a reference table inherits that exemption; the paper's own
+  // reference-table prose is still checked.
+  const codeLabels = new Set(order.filter((b) => b.label && CODE_BY_DESIGN.has(b.chapter)).map((b) => b.label!));
+  const rowFromCodeChapter = (l: string) => {
+    const m = /^\s*\|\s*\[[^\]]*\]\(#([^)\s]+)\)/.exec(l);
+    return !!m && codeLabels.has(m[1]!);
+  };
   const qIntro = order.find((b) => b.section === Q_INTRO_SECTION)?.idx ?? Infinity;
   const reports: FileReport[] = [];
   let scanned = 0;
@@ -235,7 +252,8 @@ export async function audit(paperDir: string, classes: Set<LeakClass>): Promise<
     let hits = scanText(src, { premature, prematureAdvisory: b.chapter !== Q_STRICT_CHAPTER })
       .filter((h) => classes.has(h.cls))
       .filter((h) => !(CODE_BY_DESIGN.has(b.chapter) && (h.cls === "L1" || h.cls === "L2")))
-      .filter((h) => !(REFERENCE_TABLES.has(b.chapter) && h.cls === "L2" && /^\s*\|/.test(srcLines[h.line - 1] ?? "")));
+      .filter((h) => !(REFERENCE_TABLES.has(b.chapter) && h.cls === "L2" && /^\s*\|/.test(srcLines[h.line - 1] ?? "")))
+      .filter((h) => !(REFERENCE_TABLES.has(b.chapter) && (h.cls === "L1" || h.cls === "L2") && rowFromCodeChapter(srcLines[h.line - 1] ?? "")));
     if (classes.has("L4"))
       unfence(src).forEach((raw, i) => {
         for (const m of raw.matchAll(LINK_RE)) {

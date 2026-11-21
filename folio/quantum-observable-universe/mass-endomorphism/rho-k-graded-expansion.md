@@ -20,7 +20,7 @@ $$
   }
 $$
 
-where $\alpha = m_e \cdot 8G$ ([binding scale](#conj:binding-scale-catalan)) and $z = q^{3}/(q^{2}+1)$ forms the Markov parameter (**convention D**). Its comparison with measured masses is recorded in [the accuracy remark](#rem:rho-k-graded-expansion-accuracy).
+where $\alpha = m_e \cdot 8G$ and $z = q^{3}/(q^{2}+1)$ forms the Markov parameter (**convention D**). Its comparison with measured masses is recorded in [the accuracy remark](#rem:rho-k-graded-expansion-accuracy).
 
 ## Proof
 
@@ -47,17 +47,17 @@ Numerical computation verifies the [Wenzl 1988] branching identity $\chi^\lambda
 
 ### Single-generator piece (fitted)
 
-Per [atomic braid mass](#thm:wedderburn-mass-formula), the per-generator log-volume sum reads:
+The per-generator log-volume sum reads:
 
 $$
   \tfrac{\alpha}{2} \sum_i \ln\bigl(\hat V_i^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}}}\bigr)
 $$
 
-The overline denotes the Hecke bar-involution $q \leftrightarrow q^{-1}$. At real $q_0$ and real $\hat V_i$, this reduces to the archimedean form $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$. Using $\alpha = m_e \cdot 8G \approx 3.7445$ MeV (the Borromean binding scale, [Catalan binding](#conj:binding-scale-catalan)), this captures the leading binding correction. The mean error is $0.18\%$, with a $0.35\%$ maximum across $Z = 1..20$.
+The overline denotes the Hecke bar-involution $q \leftrightarrow q^{-1}$. At real $q_0$ and real $\hat V_i$, this reduces to the archimedean form $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$. Using $\alpha = m_e \cdot 8G \approx 3.7445$ MeV (the Borromean binding scale), this captures the leading binding correction. The mean error is $0.18\%$, with a $0.35\%$ maximum across $Z = 1..20$.
 
 ### Pair-generator piece (open)
 
-The pair-generator term provides the log-volume analogue of $T_3 = -z^2 \sum_{i<j} \mathrm{Li}_2^q(-|\hat V_i \hat V_j|)$ from the [unified knot mass formula](#thm:knot-mass-formula-unified):
+The pair-generator term provides the log-volume analogue of $T_3 = -z^2 \sum_{i<j} \mathrm{Li}_2^q(-|\hat V_i \hat V_j|)$:
 
 $$
   \alpha \cdot z^2 \cdot \sum_{i<j} \ln\bigl|\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}}\bigr|_{\mathrm{Wedderburn}}.
@@ -72,7 +72,7 @@ $$
   + w_{\mathrm{alt}}\, \lambda_i^{\mathrm{alt}} \lambda_j^{\mathrm{alt}}
 $$
 
-Here, $M_i$ provides the per-generator $2 \times 2$ standard-representation transfer matrix, and $w_\bullet$ are the Wedderburn-Markov weights from [Wedderburn mass](#thm:wedderburn-mass-formula). The standard-channel pair coupling uses the Markov-traced $2 \times 2$ matrix product $M_i M_j$ to capture braid non-commutativity, avoiding the naive product $V_i^{\mathrm{std}} \cdot V_j^{\mathrm{std}}$.
+Here, $M_i$ provides the per-generator $2 \times 2$ standard-representation transfer matrix, and $w_\bullet$ are the Wedderburn-Markov weights. The standard-channel pair coupling uses the Markov-traced $2 \times 2$ matrix product $M_i M_j$ to capture braid non-commutativity, avoiding the naive product $V_i^{\mathrm{std}} \cdot V_j^{\mathrm{std}}$.
 
 See [Table 1](#tbl:rho-k-graded-expansion-table1-data).
 

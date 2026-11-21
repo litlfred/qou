@@ -17,7 +17,16 @@
   `t` the cost of each operator (a datum of the statement, read as its
   crossing energy), and `n_T = demandVector (NF T)` the demand vector of the
   target, `n_T(i) = max 0 (−c_i)` for `NF(T) = Σ c_i b_i`. The operator
-  family and its braid words are likewise data. The dual is
+  family and its braid words are likewise data of the theorems below.
+
+  Owner ruling 2026-11-21: the instance used in the paper is `n = 3`, the
+  family `T_{1,0}, T_{2,3}, T_{2,5}, T_{2,7}, T_{2,9}, T_{3,4}, T_{3,5}` with
+  standard torus braids `1, σ₀³, σ₀⁵, σ₀⁷, σ₀⁹, (σ₀σ₁)⁴, (σ₀σ₁)⁵` in `H_3(q)`,
+  and cost `t` = crossing energy (`def:crossing-energy`: `q` per positive,
+  `−q⁻¹` per negative crossing). Computed in
+  `computations/knot_operator_lp_selection.py`; nothing here depends on it.
+
+  The dual is
 
       max  Σ_i n_T(i) y(i)   s.t.   y ≥ 0,   (G⁺ S)ᵀ y ≤ t.
 

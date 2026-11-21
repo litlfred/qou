@@ -1,12 +1,12 @@
 ### Proof
 
-By the canonical Wedderburn decomposition for $H_n(q)$ at generic $q$ ([Canonical q-deformed Wedderburn-block weight $\tilde w_\lambda$ and named scalings (BW, LP for all $\lambda$)](#prop:wedderburn-weight-canonical), [Hoefsmit seminormal matrices as $R$-matrix evaluations in $H_n(q)$](#prop:hoefsmit-seminormal-form)):
+By the canonical Wedderburn decomposition for $H_n(q)$ at generic $q$:
 
 $$
   H_n(q) \;\cong\; \bigoplus_{\lambda \vdash n} M_{d_\lambda}(R),
 $$
 
-where $d_\lambda$ is the dimension of the $\lambda$-isotypic component (Hoefsmit seminormal form [Hoefsmit seminormal matrices as $R$-matrix evaluations in $H_n(q)$](#prop:hoefsmit-seminormal-form)). Let $e_\lambda \in Z(H_n(q))$ be the central primitive idempotent projecting onto the block $M_{d_\lambda}(R)$.
+where $d_\lambda$ is the dimension of the $\lambda$-isotypic component. Let $e_\lambda \in Z(H_n(q))$ be the central primitive idempotent projecting onto the block $M_{d_\lambda}(R)$.
 
 **Step 1 (idempotents are bar-stable).** The bar involution preserves the Wedderburn block decomposition. The eigenvalues $q$ and $-q^{-1}$ of $\sigma_i$ are swapped by $* \colon q \mapsto q^{-1}$. This permutes the symmetric and antisymmetric eigenchannels but preserves their joint span. Hence $*(e_\lambda) = e_{\lambda'}$ where $\lambda'$ is the conjugate partition. For self-conjugate $\lambda = \lambda'$ (e.g. $(2,2)$ for $n = 4$), $e_\lambda$ is itself bar-fixed. For chiral pairs $(\lambda, \lambda')$, the sum $e_\lambda + e_{\lambda'}$ is bar-fixed.
 

@@ -93,3 +93,36 @@ Part A is exact: computed modulo 1000003 and 999983, at `q = 7` and `q = 5`, wit
 - None of this singles out `Z = 2` or `Z = 10` beyond the block-appearance effect above.
 
 **Binding test 2 (SDP value) is not computed.** It needs the per-element definition asked for in §4.
+
+## 7. Binding region in φ-space and the positivity margin (owner A1, B1; 2026-11-21)
+
+`computations/probes/gamma_gamma_shell_region_probe.py` computes the margin
+`m(W) = min over λ ⊢ k+1 with at most two rows of χ_λ(W) / dim λ`.
+
+- It is positive exactly when the atom binds.
+- Its relative form divides by the largest `|χ_λ / dim λ|`.
+- φ grid: 7³ points for `k ≤ 8`, 5³ for `k = 9, 10`.
+- Arithmetic: certified arb at the proton `q₀`.
+
+The column "binds on {−1,0,1}³" uses the 27 points shared by both grids, so it is comparable across all `k`.
+
+| Z = k | binds / grid | binds on {−1,0,1}³ | best relative margin | bare relative margin |
+|---|---|---|---|---|
+| 1 | 343/343 | 27 | 0.659 | 0.659 |
+| 2 | 172/343 | 11 | 0.998 | 0.454 |
+| 3 | 167/343 | 13 | 0.889 | −0.860 |
+| 4 | 97/343 | 8 | 0.936 | −0.438 |
+| 5 | 114/343 | 10 | 0.763 | −0.310 |
+| 6 | 83/343 | 8 | 0.748 | −0.254 |
+| 7 | 108/343 | 11 | 0.614 | −0.228 |
+| 8 | 85/343 | 8 | 0.557 | −0.216 |
+| 9 | 42/125 | 11 | 0.490 | −0.215 |
+| 10 | 33/125 | 8 | 0.430 | −0.206 |
+
+What the table shows, read as a scope-(a) result for this model only:
+
+- **The binding region never vanishes and never reopens.** It alternates with parity: odd `Z` gives 10–13 of the 27 shared points and even `Z` gives 8. This is the same even/odd pairing signal as the April 2026 normal-form work, and it carries no `Z = 2` or `Z = 10` feature.
+- **The best relative margin declines smoothly from `Z = 4`.** Nothing marks `Z = 10`.
+- **The bare margin rises monotonically toward 0.**
+
+The negative constrains this capture rule only: one Hopf capture, one neighbour crossing and one photon per electron. It does not exclude other capture rules (§3).

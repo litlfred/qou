@@ -7,7 +7,7 @@ Average the integrated Coulomb enhancement over the electron energy spectrum. Th
 
 See [Table: Skein-Coulomb enhancement factors](#tbl:skein-coulomb-enhancement-table1-data).
 
-These enhancements change decay rates by factors of 1.4 to 5. The leading-order predictions ([verification](#ex:hadron-half-life-verification)) inherently include $F_q$ through the nucleus-specific matrix element. The $\sim 10$--$17\%$ residual in the verification table stems entirely from discrete nuclear structure effects. Shell closures, pairing, and deformation modify the Gamow--Teller strength $\sigma_{\mathrm{GT}}$ at the individual-nucleus level.
+These enhancements change decay rates by factors of 1.4 to 5. Shell closures, pairing, and deformation modify the Gamow--Teller strength $\sigma_{\mathrm{GT}}$ at the individual-nucleus level.
 
 **Transition classes.**
 The nuclear matrix element $|\mathcal{M}_q|^2$ varies by six orders of magnitude across the verification set. Measured $\log ft$ values (NNDC/ENSDF) classify the transitions.

@@ -1,6 +1,6 @@
 **Conjecture (computational-time identification of the Schwinger variable).**
 
-Let $s$ denote the Schwinger proper-time variable of the $\zeta$-regularized one-loop photon determinant on the Bring Jacobian, whose loop expansion weighs proper time by the scale-invariant measure $\varsigma\,\frac{ds}{s}$ with unit $\varsigma$ ([Schwinger proper-time measure and its unit $\varsigma$](#def:schwinger-measure-unit); the shape is the unique scale-invariant density, the unit is what remains open). Let $N(n)$ denote the binding normalizer forced by the normalization bridge — the unique strip $N(n) = (n-1)!$ making the binding generating function the carrier of the proved depth-2 confluent kernel (the normalization leg of [The q-difference kernel R is the jet-prolongation symbol, carried by the binding q-lift module](#conj:qdifference-kernel-prolongation-symbol)).
+Let $s$ denote the Schwinger proper-time variable of the $\zeta$-regularized one-loop photon determinant on the Bring Jacobian, whose loop expansion weighs proper time by the scale-invariant measure $\varsigma\,\frac{ds}{s}$ with unit $\varsigma$. Let $N(n)$ denote the binding normalizer forced by the normalization bridge — the unique strip $N(n) = (n-1)!$ making the binding generating function the carrier of the proved depth-2 confluent kernel (the normalization leg of [The q-difference kernel R is the jet-prolongation symbol, carried by the binding q-lift module](#conj:qdifference-kernel-prolongation-symbol)).
 
 The framework premises are named:
 

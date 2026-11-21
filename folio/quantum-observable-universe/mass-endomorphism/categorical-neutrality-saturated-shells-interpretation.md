@@ -6,13 +6,13 @@ For $n \notin \mathfrak{M}$, the constraint fails. Non-self-conjugate partitions
 
 ## Homological reformulation
 
-The Hoefsmit seminormal form ([prop:hoefsmit-seminormal-form](#prop:hoefsmit-seminormal-form)) supplies explicit matrices for $\sigma_i$ on each $V_\lambda$. Direct multiplication recovers the full-twist eigenvalue $q^{c(\lambda)}$. Numerical verification at $k = 3, \dots, 10$ confirms the shell pattern at small magic values $n = 2, 8, 20$. At $k \geq 12$, combinatorial growth in $|\{\lambda \vdash n\}|$ blocks matrix evaluation.
+The Hoefsmit seminormal form supplies explicit matrices for $\sigma_i$ on each $V_\lambda$. Direct multiplication recovers the full-twist eigenvalue $q^{c(\lambda)}$. Numerical verification at $k = 3, \dots, 10$ confirms the shell pattern at small magic values $n = 2, 8, 20$. At $k \geq 12$, combinatorial growth in $|\{\lambda \vdash n\}|$ blocks matrix evaluation.
 
 The conjecture reformulates this homologically. Instead of verifying $\Phi_n$ with matrices, one verifies the self-conjugate-support condition via content-sum arithmetic. This approach accesses saturation at $n \in \{50, 82, 126\}$ without matrix multiplication.
 
 ## Global topological neutrality
 
-Earlier models ([atom-knot-mass-derivation](#conj:atom-knot-mass-derivation)) treated $\Phi_n$ as a local object. They required "screening" or "local trivialisation" to explain shell closure. This refactor abandons the locality assumption. It identifies $\Phi_n$ as the global section of the mass functor over $\mathbf{C}$ ([rem:phi-n-global-section](#rem:phi-n-global-section)). A non-trivial full-twist action propagates unbounded ribbon flux through the brane tower. Finite observable mass demands global topological neutrality at saturation.
+The refactor identifies $\Phi_n$ as the global section of the mass functor over $\mathbf{C}$ ([rem:phi-n-global-section](#rem:phi-n-global-section)). A non-trivial full-twist action propagates unbounded ribbon flux through the brane tower. Finite observable mass demands global topological neutrality at saturation.
 
 ## Operator-level support
 
@@ -30,4 +30,4 @@ The character sum vanishes identically at certain atomic-braid cycle types. The 
 
 Numerical witnesses at $k = 3, \dots, 10$ support the saturation condition. The conjecture extends this to all $n \in \mathfrak{M}$, including the high-mass region $\{50, 82, 126\}$.
 
-The downstream cone includes [Some functional of the Wedderburn-weighted Hoefsmit character data at $q_0$ carries nuclear shell structure](#conj:magic-numbers-from-q) and the shell-closure portion of the BW formula ([Three-invariant atomic mass formula](#thm:wedderburn-mass-formula)). Proving these requires either a derivation of this conjecture or its retention as a class-axiomatised input.
+

@@ -22,7 +22,7 @@ The magic numbers are the cumulative sums of shell occupancies. Each shell close
 
 See [Table 3](#tbl:torus-knot-shell-binding-table3-data).
 
-This construction is **proposed** to reproduce the experimental magic numbers $\{2, 8, 20, 28, 50, 82, 126\}$; a closed from-$q$ derivation of the full sequence — reconciling the Table-2 $r\times s$ capacities with the Table-3 occupancies — remains the **key open problem** ([Construction rules for nuclear shells from the torus knot hierarchy](#rem:shell-construction-rules); [Magic numbers $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$ as ranks of $S_5$-stable Bring period sub-lattices](#conj:magic-numbers-bring)) and is not established by the induction above.
+This construction is **proposed** to reproduce the experimental magic numbers $\{2, 8, 20, 28, 50, 82, 126\}$; a closed from-$q$ derivation of the full sequence — reconciling the Table-2 $r\times s$ capacities with the Table-3 occupancies — remains the **key open problem** and is not established by the induction above.
 
 **(v) Energy gap at shell boundaries.**
 The Hecke energy $\Delta E$ jumps by a factor $\sim |\lambda_+(T_{2,n_s})/\lambda_-(T_{2,n_s})|$ at each shell boundary. For the first shell closure (He-4 $\to$ Li-5):

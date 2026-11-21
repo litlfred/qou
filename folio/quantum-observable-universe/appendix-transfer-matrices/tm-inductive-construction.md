@@ -46,7 +46,7 @@ The crossing product stratifies into jet orders. Jet order $r$ is the $(r+1)$-bo
 
 ## Gröbner--Shirshov normal form
 
-The inductive construction produces a canonical normal form at every step. By Rules 1 and 2 the crossings at a fixed generator are contiguous in the braid word and the blocks are ordered by increasing generator index, so the nucleus element is a block-ordered product of linear factors $c\,\sigma_i + d \in H_A(q)$. Given the reduced nucleus element $\bar{\mathcal{N}}(A)$, Hopf-linking the next nucleon and applying the Gröbner--Shirshov division algorithm requires only Hecke reductions — zero Yang--Baxter and zero far-commutativity steps — and the resulting chain state, with coefficients produced by the transfer-matrix recurrence, is the exact normal form. This is the content of [the Hecke-only reduction proposition](#prop:tm-gs-normal-form), proved by induction on $A$.
+The inductive construction produces a canonical normal form at every step. By Rules 1 and 2 the crossings at a fixed generator are contiguous in the braid word and the blocks are ordered by increasing generator index, so the nucleus element is a block-ordered product of linear factors $c\,\sigma_i + d \in H_A(q)$. 
 
 ## Shell closure signatures
 
