@@ -945,3 +945,7 @@ the next run.
 - Caches now complete and on today's word: D 11/11, T 30/30, 3He 30/30, 4He 77/77.
 - Consumer moves: nucleus-operator-selection-sdp |tr_M| D 0.57517 -> 0.15197, T 0.22931 -> 0.02914, 3He 0.40377 -> 0.0586, 4He 0.16097 -> 0.01124; markov-identity deuteron peel 1.14576 -> 0.62933; per-irrep Path A rule: D 46/40 fail, T 66/61 fail, 3He 58/58 pass, 4He 78/79 fail.
 - Still open here: the numeric `-at-q0-50dps` caches (separate producer, separate probe) are not touched by this PR.
+
+## 2026-11-21 (later) — CORRECTION to my own line above: the numeric `-at-q0-50dps` caches are NOT stale
+
+I wrote "the numeric `-at-q0-50dps` caches ... are not touched by this PR" as an open item, implying they were still on the old word. Measured: all 19 averaged-crossing numeric caches (proton, muon, free, binding; p/n/D/pp/nn/T/3He/4He) agree with a fresh mpf path sum on today's word at their own recorded q to <= 2.5e-48 relative (their 50-dps floor). The six sign-only matrix-m caches re-run byte-identical in chi and tr_M. Only chi-helium-4-h12-at-q0-50dps-matrix-m changed (q0Anchor stamp + convention-D y=0 on three-row partitions; tr_M unchanged), PR on branch claude/chi-at-q0-numeric-cache-rebuild-2026-11-21. Nothing in this repo still serves old-word chi that I can find.
