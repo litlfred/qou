@@ -144,7 +144,7 @@ def _gate_measurement(Z, N, k_exact=4):
         for lam, rec in row.get("partitions", {}).items():
             cumul[lam] = cumul.get(lam, mp.mpf(0)) + _as_mpf(rec["delta_MeV"])
 
-    gated = _as_mpf(last["gated_total_MeV"])
+    gated = _as_mpf(last["gated_total_DISPROVED_SELECTION_MeV"])
     raw = _as_mpf(last["raw_total_MeV"])
     n_keep = int(last["n_tight_final"])
     n_blocks = int(last["n_active_exact"])
@@ -356,6 +356,9 @@ def main() -> int:
         ok &= bool(moved)
 
     w.save(extra={
+        "q0Anchor": "proton",
+        "q0Value": mp.nstr(_Q, 50),
+        "q0AnchorReason": "q = q_parameter.q_at(), the proton pin, used for every evaluation here",
         "q0_proton_pin": mp.nstr(_Q, 50),
         "z_D_convention_D": mp.nstr(_Z_D, 50),
         "compute_dps": mp.dps,
