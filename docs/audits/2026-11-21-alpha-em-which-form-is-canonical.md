@@ -135,3 +135,27 @@ shares gap 2.
 | `qou-15sj` | `[10]_q` linchpin, shared by all forms; PR #8177's Lean is not on main. |
 | `qou-gbsa` | CS tower `G_q`. |
 | `qou-q0pl` | The carried measurements. |
+
+## 7. What the choice moves in compute (measured 2026-11-21, 60 dps)
+
+Owner question: *"What is impact on compute for each? Mass Q_beta?"*
+
+| quantity | reads α_em? | form used today | shift if switched to B (or A) |
+|---|---|---|---|
+| m_p, m_n (`canonical_mass.py`) | no | — | 0 |
+| Q_β, Δ_pn, m_μ rows of `per_observable_100x_status.py` | no | — | 0 |
+| m_K/m_π (`per_observable_100x_status.py`, EM term ≈ 2.0e-4 of m_K²/m_π²) | yes | CS tower (`meson_em_sinh_closed_form.alpha_em_inv_derived`) | −0.0475 ppb (B), −0.0476 ppb (A); target 263.6 ppb |
+| Coulomb energies (`coulomb_energy.alpha_em_hbar_c_mev_fm`) | yes, ∝ α | CS tower | −468 ppb relative on E_C |
+| Rydberg check (`atom_electron_mass.py`) | yes, ∝ α² | CS tower (`pyhecke.constants.alpha_em_inv_mp`) | residual ≈ 935 ppb → ≈ 0.7 ppb |
+
+The m_K/m_π shifts were computed this session. The A and B α values used as
+inputs are the carried one-term-pin residuals (+0.994 / −0.365 ppb vs CODATA),
+not re-measured.
+
+**Form straddle in the dashboard.** The α_em row scores **Form B**
+(`alpha-em-schwinger-ladder.witness.json :: ladder_proton.form_B_alpha_inv`),
+while every consumer of α (pyhecke, the meson EM term, Coulomb) uses the
+**CS tower**, which `pyhecke/constants.py` labels "physical". The two differ by
+≈ 467 ppb in α⁻¹. No verdict changes today, but the α row's −0.37 ppb describes
+a different object from the α the rest of the dashboard consumes. Resolving it
+(rescore the row, or switch the consumers) waits on `qou-aemx`.
