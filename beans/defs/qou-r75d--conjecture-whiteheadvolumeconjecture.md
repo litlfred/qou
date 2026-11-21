@@ -37,3 +37,12 @@ Stage 4 on branch claude/whitehead-jones-assembly-2026-11-21 (sorry-free, lean-d
 - QuantumSl2TwistClaspTrace.lean: tr(Δ(K)·T^a X^c) = Σ_j [2n+1] t^{a n(n+1)} C(n)^c (b = d = 0).
 Still open: belt on V⊗V (b ≥ 1 is needed for every Whitehead chain), mirror clasp, framing, 1/[N].
 The volume conjecture itself stays OPEN; do not close this bean.
+
+## 2026-11-21 — RT invariant: 1/[N] gap closed (draft #8943, stacked on #8941)
+
+`QOU/Knot/WhiteheadBraidVolumeConjecture.lean` (sorry-free, lean-direct exit 0, standard axioms):
+for every braid Markov-equivalent to σ₁⁻²σ₂σ₁⁻¹σ₂, [N]⁻¹·J_N(p)(σ) → whiteheadLinkKashaev N as
+σ → e^{πi/(2N)} (punctured), and (2π/N) log‖·‖ of that limit → Vol(W). Remaining: Markov's
+theorem (#8902), so the statement covers the Markov class, not yet every braid presentation of
+the link. Polynomiality of the normalised invariant not proved (value at the root = the limit).
+Bean stays open.
