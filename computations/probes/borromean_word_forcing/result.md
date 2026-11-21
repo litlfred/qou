@@ -40,6 +40,20 @@ closure can be Brunnian.**
   more characters, including (σ₀σ₁⁻¹)⁶ = β_Bor². So "Brunnian" alone does not fix
   the word; minimality does.
 
+### Extension to length 14 (pre-registered Addendum 2, owner choice "extend")
+
+`borromean_fibre_len14.py`, 3.59 M prefix nodes, 80 s, log `len14.log`,
+witness `borromean-fibre-len14.result.json`. Both predictions held.
+
+| length | words with χ = χ(β_Bor) | conjugate to β_Bor found (\|c\| ≤ 6) | tr_M = −tr_M(β_Bor) | distinct Brunnian characters |
+|---|---|---|---|---|
+| 12 | 2240 | 2240 | 0 | 4 |
+| 14 | 15812 | 15812 | 0 | 9 |
+
+So to length 14, **the F_Bor value picks out exactly β_Bor's conjugacy class** among
+writhe-0 three-strand words, while the number of other Brunnian traces keeps
+growing (1, 1, 2, 4, 9 at lengths 6, 8, 10, 12, 14).
+
 ## 3. What this does and does not settle
 
 * β_Bor is **singled out** by: three strands + pure + zero pairwise linking +
@@ -51,8 +65,8 @@ closure can be Brunnian.**
   of H₃, conditional on the vertex σᵢσᵢ₊₁⁻¹, reading 3 (Frobenius positivity, owner's
   provisional choice) and 1 < q ≤ 23/20. This file's route uses none of those.
 * **Freedom left by the mass identity:** F_Bor depends on the word only through
-  (writhe, χ₍₂,₁₎). To length 10 that fibre is exactly β_Bor's conjugacy class;
-  beyond length 10 it is not tested. Words with other characters (the length-10
+  (writhe, χ₍₂,₁₎). To length 14 that fibre is exactly β_Bor's conjugacy class;
+  beyond length 14 it is not tested. Words with other characters (the length-10
   Brunnian braids, β_Bor²) give different F values, so the identity's agreement
   is specific to β_Bor among the Brunnian candidates.
 * Not addressed: why three strands (the baryon number), and the colour-singlet
