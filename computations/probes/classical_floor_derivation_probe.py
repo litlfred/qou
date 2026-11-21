@@ -9,7 +9,10 @@ floor by Richardson extrapolation, reading off
 
     c₀(A) = 2^{−A} − 2^{1−2A}
 
-from `A = 2,3,4` and confirming it at `A = 5` to 9e-9. That is a fitted form
+from `A = 2,3,4` and confirming it at `A = 5` to 2.4e-10 (that figure read 9e-9
+until 2026-11-21: the probe's own witness was written 2026-09-05 and its import cone
+has since moved, tightening the confirmation 39x -- the closed form is unchanged).
+That is a fitted form
 checked against a prediction — good, but still numerics, and it stops where the
 trace computation stops (`A = 5`; `H_18` and beyond are out of reach).
 
