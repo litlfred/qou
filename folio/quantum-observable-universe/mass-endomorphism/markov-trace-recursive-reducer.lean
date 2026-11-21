@@ -39,6 +39,9 @@ We formalise:
     share one strand. The split form, with an unused slot between them,
     additionally needs shift invariance of the trace, which is not
     formalised.
+  • Uniqueness `markovTrace_unique`: the axioms of `IsMarkovTrace` fix the
+    trace on every positive word, so the reducer's output, which uses only
+    those axioms, is the trace.
 
 Ref: [jones1987] Hecke algebra representations of braid groups,
 Annals of Math. 126, 335-388.
@@ -771,6 +774,85 @@ theorem markovTrace_disjointProduct {mT : ℕ → List ℤ → R}
     have := HeckeRel.reduce h (m + 1) F hF β.length h0 β hβ le_rfl
     simp only [F] at this
     exact sub_eq_zero.mp this
+
+/-- **Uniqueness: the axioms determine the trace.** Two functions satisfying
+    `IsMarkovTrace` with the same parameters `z` and `h` agree on every
+    positive word of every level. So any procedure that evaluates a word using
+    only these axioms, as the reducer does, returns the one value they force.
+    Induction on the level; inside a level the difference of the two traces
+    satisfies the Hecke-tower relations and vanishes on words using the top
+    generator at most once (stability, or cyclicity and stripping), so it
+    vanishes by `HeckeRel.reduce`. -/
+theorem markovTrace_unique {mT₁ mT₂ : ℕ → List ℤ → R}
+    {e₁ e₂ : List ℤ → ℕ → List ℤ} {z h : R}
+    (h₁ : IsMarkovTrace mT₁ e₁ z h) (h₂ : IsMarkovTrace mT₂ e₂ z h) :
+    ∀ (n : ℕ) (w : List ℤ), Supp n w → mT₁ n w = mT₂ n w := by
+  intro n
+  induction n with
+  | zero =>
+    intro w hw
+    have hwnil : w = [] := by
+      cases w with
+      | nil => rfl
+      | cons c w => have := hw c (by simp); push_cast at this; omega
+    subst hwnil
+    rw [h₁.normalised, h₂.normalised]
+  | succ n ih =>
+    intro w hw
+    let F : List ℤ → R := fun γ => mT₁ (n + 1) γ - mT₂ (n + 1) γ
+    have hF : HeckeRel (n + 1) h F := by
+      refine ⟨?_, ?_, ?_⟩
+      · intro u v i hs
+        simp only [F, h₁.hecke (n + 1) u v i hs, h₂.hecke (n + 1) u v i hs]; ring
+      · intro u v i hs
+        simp only [F, h₁.braid (n + 1) u v i hs, h₂.braid (n + 1) u v i hs]
+      · intro u v i j hij hs
+        simp only [F, h₁.far_comm (n + 1) u v i j hij hs,
+          h₂.far_comm (n + 1) u v i j hij hs]
+    have hcn : ((n + 1 : ℕ) : ℤ) - 1 = (n : ℤ) := by push_cast; ring
+    have low : ∀ (l : List ℤ), Supp (n + 1) l → (n : ℤ) ∉ l → Supp n l := by
+      intro l hl hm d hd
+      have := hl d hd
+      have hne : d ≠ (n : ℤ) := fun e => hm (e ▸ hd)
+      push_cast at this; omega
+    have h0 : ∀ γ, Supp (n + 1) γ → γ.length ≤ w.length →
+        γ.count (((n + 1 : ℕ) : ℤ) - 1) ≤ 1 → F γ = 0 := by
+      intro γ hγ _ hγc
+      rw [hcn] at hγc
+      rcases Nat.le_one_iff_eq_zero_or_eq_one.mp hγc with hγc | hγc
+      · have hγn : Supp n γ := low γ hγ (fun hm => by
+          have : 0 < γ.count (n : ℤ) := List.count_pos_iff.mpr hm
+          omega)
+        simp only [F, h₁.stable n γ hγn, h₂.stable n γ hγn, ih γ hγn, sub_self]
+      · obtain ⟨a, b, rfl, ha⟩ := exists_split_first (n : ℤ) γ
+          (List.count_pos_iff.mp (by omega))
+        have hγ' := hγ
+        simp only [supp_append_iff, supp_cons_iff] at hγ'
+        obtain ⟨hA, -, hB⟩ := hγ'
+        have hb : (n : ℤ) ∉ b := by
+          intro hm
+          have e1 : 0 < b.count (n : ℤ) := List.count_pos_iff.mpr hm
+          have e2 : a.count (n : ℤ) = 0 := List.count_eq_zero_of_not_mem ha
+          simp only [List.count_append, List.count_cons, beq_self_eq_true,
+            if_true] at hγc
+          omega
+        have hAn := low a hA ha
+        have hBn := low b hB hb
+        have htop : Supp (n + 1) (a ++ [(n : ℤ)]) :=
+          supp_append_iff.mpr ⟨hAn.mono (Nat.le_succ _),
+            supp_cons_iff.mpr ⟨⟨by omega, by push_cast; omega⟩, supp_nil⟩⟩
+        have hBs : Supp (n + 1) b := hBn.mono (Nat.le_succ _)
+        have hba : Supp n (b ++ a) := supp_append_iff.mpr ⟨hBn, hAn⟩
+        have c₁ := h₁.cyclic (n + 1) (a ++ [(n : ℤ)]) b htop hBs
+        have c₂ := h₂.cyclic (n + 1) (a ++ [(n : ℤ)]) b htop hBs
+        have s₁ := h₁.strip n (b ++ a) hba
+        have s₂ := h₂.strip n (b ++ a) hba
+        simp only [Int.ofNat_eq_coe, List.append_assoc, List.singleton_append,
+          List.cons_append, List.nil_append] at c₁ c₂ s₁ s₂
+        simp only [F, List.append_assoc, List.singleton_append, List.cons_append,
+          List.nil_append]
+        rw [c₁, c₂, s₁, s₂, ih (b ++ a) hba, sub_self]
+    exact sub_eq_zero.mp (HeckeRel.reduce h (n + 1) F hF w.length h0 w hw le_rfl)
 
 end DisjointProduct
 
