@@ -7,7 +7,7 @@
     "md": "folio/quantum-observable-universe/braids-and-knots/reducible-reps.md"
   },
   "source_hashes": {
-    "md": "d1c438cce6f6",
+    "md": "242654ca3223",
     "ts": "4ae98fcb957e"
   },
   "criteria": {
@@ -21,6 +21,21 @@
           "id": "local/branch-jargon-sweep",
           "agent_skill": "local/one-voice-audit"
         }
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "voice-status-leak": [
@@ -39,6 +54,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-emoji-content": [
@@ -57,6 +89,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-first-person-work": [
@@ -75,6 +124,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-time-stamped-notes": [
@@ -93,6 +159,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-unicode-crash": [
@@ -111,6 +194,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-editorializing": [
@@ -129,6 +229,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-scholarly-default": [
@@ -162,6 +279,38 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "voice-title-scholarly": [
@@ -180,6 +329,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9566207ee882",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-ai-slop": [
@@ -213,6 +379,38 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "voice-author-notes-pollution": [
@@ -231,6 +429,23 @@
         },
         "reviewed_at": "2026-08-09T11:32:14.438Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-status-section": [
@@ -249,6 +464,23 @@
         },
         "reviewed_at": "2026-08-09T11:32:14.438Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5b0082576ba9",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "framework-canonical": [
@@ -267,6 +499,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "wall-side-correct": [
@@ -285,6 +534,24 @@
         },
         "reviewed_at": "2026-08-09T22:20:05.350Z",
         "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -384,7 +651,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/braids-and-knots/reducible-reps.md:3 \u2014 root-of-unity construction used without explicit regime declaration \u2014 The PBW filtration on $\\mathcal{U}_q(\\mathfrak{su}(2))$ equips the associated graded algebra $\\mathrm{gr}\\mathcal{U}_q$ with a commutative product. A Groebner--Shirshov basis for the $q$-deformed relations exhibits $\\mathcal{U}_q$ as a flat deformation of $\\mathrm{gr}\\mathcal{U}_q$. The leading monomials of the $q$-Serre relations provide non-overlapping obstructions whose resolution yields a normal-form basis coinciding with the Lusztig divided-power basis. In positive characteristic, this construction produces the distribution algebra $\\mathrm{Dist}(G)$ of the lifted formal group $G$ as a deformation of the commutative $\\mathrm{Dist}(H)$. The strong multiplicativity condition guarantees that the Frobenius relation is preserved at every filtration degree."
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/reducible-reps.md:3 — root-of-unity construction used without explicit regime declaration — The PBW filtration on $\\mathcal{U}_q(\\mathfrak{su}(2))$ equips the associated graded algebra $\\mathrm{gr}\\mathcal{U}_q$ with a commutative product. A Groebner--Shirshov basis for the $q$-deformed relations exhibits $\\mathcal{U}_q$ as a flat deformation of $\\mathrm{gr}\\mathcal{U}_q$. The leading monomials of the $q$-Serre relations provide non-overlapping obstructions whose resolution yields a normal-form basis coinciding with the Lusztig divided-power basis. In positive characteristic, this construction produces the distribution algebra $\\mathrm{Dist}(G)$ of the lifted formal group $G$ as a deformation of the commutative $\\mathrm{Dist}(H)$. The strong multiplicativity condition guarantees that the Frobenius relation is preserved at every filtration degree."
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
@@ -402,7 +669,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/braids-and-knots/reducible-reps.md:1 \u2014 detected regime [root-of-unity] is disjoint from chapter 'braids-and-knots' expected [generic-R, mod-gt-1, mod-lt-1, na, real-positive, symbolic]"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/reducible-reps.md:1 — detected regime [root-of-unity] is disjoint from chapter 'braids-and-knots' expected [generic-R, mod-gt-1, mod-lt-1, na, real-positive, symbolic]"
       }
     ],
     "canonical-calibration-count": [
@@ -421,6 +688,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-no-numerology": [
@@ -439,6 +723,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "52b4ba95f5c3",
+          "script_commit_sha": "unknown",
+          "def_hash": "bfbb93c220cc"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-witness-pinned": [
@@ -457,6 +758,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -475,6 +793,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e81239fd83a2",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-dilogarithm-context": [
@@ -493,6 +828,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -511,6 +863,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -529,6 +898,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "852b0645c90b",
+          "script_commit_sha": "unknown",
+          "def_hash": "c8836d721722"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-no-negative-result-in-paper": [
@@ -547,6 +933,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ee603ee4f369",
+          "script_commit_sha": "unknown",
+          "def_hash": "791b80875ca1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "compute-witness-exists": [
@@ -565,6 +968,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "13ec1960e3ad",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "compute-lp-dual-present": [
@@ -583,6 +1003,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6c278b93ad12",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "detangler-no-forward-ref": [
@@ -766,6 +1203,25 @@
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -785,6 +1241,25 @@
         },
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -806,6 +1281,25 @@
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -826,6 +1320,25 @@
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -845,6 +1358,25 @@
         },
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d83daee37fd8",
+          "script_commit_sha": "unknown",
+          "deps_hash": "21d9ff417741",
+          "def_hash": "83422bec2bb4"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -873,6 +1405,21 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "da-false-claim": [
@@ -888,6 +1435,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "da-vacuous": [
@@ -903,6 +1480,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "da-circular": [
@@ -918,6 +1525,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "da-overclaim": [
@@ -933,6 +1570,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "da-hidden-dof": [
@@ -948,6 +1615,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "da-non-sequitur": [
@@ -963,6 +1660,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -978,6 +1705,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "da-citation-misuse": [
@@ -993,6 +1750,37 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "severity": "minor",
+        "evidence": "Re-read at c8da524af60. 'a free product of one-dimensional distribution algebras': Thm 3.7 does not require one-dimensional H_i. 'has a PBW basis by a Groebner basis argument' omits the strongly filtered hypothesis of Thm 1.9. The new sentence cites no source (no \\cite; the .ts carries no leitner2006)."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1008,6 +1796,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "da-empirical-fragility": [
@@ -1023,6 +1841,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "da-physical-implausibility": [
@@ -1038,6 +1886,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "da-reproducibility": [
@@ -1053,6 +1931,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "da-referee-verdict": [
@@ -1068,6 +1976,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "milnor-amalgamated-flow": [],
@@ -1084,6 +2022,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "milnor-brevity": [
@@ -1099,6 +2052,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "voice-probe-narrative": [
@@ -1117,6 +2085,23 @@
         },
         "reviewed_at": "2026-08-09T11:32:14.438Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "cite-named-theorem": [
@@ -1135,6 +2120,23 @@
         },
         "reviewed_at": "2026-08-09T11:32:14.438Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-agent-speak": [
@@ -1153,6 +2155,23 @@
         },
         "reviewed_at": "2026-08-09T11:32:14.438Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "uses-editorial-hygiene": [
@@ -1172,6 +2191,29 @@
         },
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "metrics": {
+          "uses_count": 1,
+          "broken_edges": 0,
+          "redundant_edges": 0
+        }
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63814f2a6677",
+          "script_commit_sha": "unknown",
+          "deps_hash": "34af1d8a2365",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "metrics": {
           "uses_count": 1,
           "broken_edges": 0,
@@ -1197,6 +2239,25 @@
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "82fd1e2e6831",
+          "script_commit_sha": "unknown",
+          "deps_hash": "794eb6c16a59",
+          "def_hash": "ce2b8102b97f"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "lean-ref-owns-decl": [
@@ -1216,6 +2277,24 @@
         },
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "trap-negation-contrast": [
@@ -1250,6 +2329,21 @@
         "reviewed_at": "2026-08-15T21:02:20.832Z",
         "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
         "evidence": "Read in full; no assert-by-denial construction present."
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1284,6 +2378,21 @@
         "reviewed_at": "2026-08-15T21:02:20.874Z",
         "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
         "evidence": "Read in full; no setup-then-reframe pivot."
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "trap-em-dash": [
@@ -1318,6 +2427,21 @@
         "reviewed_at": "2026-08-15T21:02:20.915Z",
         "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
         "evidence": "Read in full; em-dashes absent or parenthetical/range only, low density."
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "trap-triples": [
@@ -1352,6 +2476,21 @@
         "reviewed_at": "2026-08-15T21:02:20.955Z",
         "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
         "evidence": "Read in full; no reflex three-item list."
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "trap-closing-aphorism": [
@@ -1386,6 +2525,21 @@
         "reviewed_at": "2026-08-15T21:02:20.995Z",
         "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
         "evidence": "Read in full; no quotable-flourish closer."
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "trap-meta-commentary": [
@@ -1420,6 +2574,21 @@
         "reviewed_at": "2026-08-15T21:02:21.035Z",
         "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
         "evidence": "Read in full; no narration of the block's own emphasis."
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "trap-thesis-restatement": [
@@ -1454,6 +2623,21 @@
         "reviewed_at": "2026-08-15T21:02:21.078Z",
         "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
         "evidence": "Read in full; no block-final restatement of established content."
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "trap-performed-warmth": [
@@ -1488,6 +2672,21 @@
         "reviewed_at": "2026-08-15T21:02:21.120Z",
         "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
         "evidence": "Read in full; no personal register in institutional prose."
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "trap-superlative": [
@@ -1522,6 +2721,21 @@
         "reviewed_at": "2026-08-15T21:02:21.161Z",
         "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
         "evidence": "Read in full; no unqualified maximum-strength claim."
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "trap-nonspeakable": [
@@ -1556,6 +2770,21 @@
         "reviewed_at": "2026-08-15T21:02:21.204Z",
         "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
         "evidence": "Read in full; prose parses aloud cleanly."
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Only the positive-characteristic sentence changed: the 'lifted formal group' / 'Frobenius relation preserved' claim is replaced by a description of the integration theorem over a field of char p. No instance of this criterion."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1575,9 +2804,207 @@
         "reviewed_at": "2026-08-15T21:15:41.696Z",
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c3dab60e46d6",
+          "script_commit_sha": "unknown",
+          "def_hash": "10db4d17cd96"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      }
+    ],
+    "acronym-in-glossary": [
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "2 acronym(s) are candidates for the glossary: PSL, PBW. Run glossary:acronyms for the folio-wide list with expansions."
+      }
+    ],
+    "da-arity-conflation": [
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "dak-companion-present": [
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
+      }
+    ],
+    "dak-bpmn-has-process": [
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
+      }
+    ],
+    "dak-dmn-has-decision-table": [
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
+      }
+    ],
+    "dak-fsh-declares-kind": [
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
+      }
+    ],
+    "dak-label-prefix-matches-kind": [
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
+      }
+    ],
+    "id-unique": [
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      }
+    ],
+    "id-stable": [
+      {
+        "field_hash": {
+          "md": "242654ca3223",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "unchanged since origin/main"
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-21T20:30:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

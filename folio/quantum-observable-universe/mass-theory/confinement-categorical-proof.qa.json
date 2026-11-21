@@ -7,7 +7,7 @@
     "md": "folio/quantum-observable-universe/mass-theory/confinement-categorical-proof.md"
   },
   "source_hashes": {
-    "md": "d6facf8d0fa8",
+    "md": "0204592ace8c",
     "ts": "1db8a17ea4ed"
   },
   "criteria": {
@@ -116,6 +116,36 @@
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "fit-section-chapter": [
@@ -193,6 +223,21 @@
         "reviewed_at": "2026-11-21T19:45:00.000Z",
         "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
         "evidence": "Re-read at 4a43629ab36 (f8f7d9976ad..4a43629ab36). Edits: the 'Confinement reading' table rows (1)-(2) restated to the proved clauses (pi_Z lands in Z(A); every trace tau factors through pi_Z); 'completely free' -> 'carry no commutator load'; 'is — read through this proposition — literally' -> 'is, read through this proposition,'; .ts uses drops the transitively redundant prop:spectral-sequence-collapse (still reachable; the prose link stays). No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "da-false-claim": [
@@ -285,6 +330,36 @@
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "da-vacuous": [
@@ -377,6 +452,36 @@
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "da-circular": [
@@ -469,6 +574,36 @@
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "da-overclaim": [
@@ -561,6 +696,36 @@
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "da-hidden-dof": [
@@ -653,6 +818,36 @@
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "da-non-sequitur": [
@@ -811,6 +1006,36 @@
         "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
         "severity": "minor",
         "evidence": "Re-read at 4a43629ab36. Partly resolved: table rows (1) and (2) now state what the proof proves (pi_Z sends every element into Z(A); every trace tau factors through pi_Z), so the 'die at E_infty' and int_A items are gone. Remaining minor, in the interpretive italic paragraphs only: (a) 'Curvature-rank as confinement layer' still asserts Vol(B_3) = 8G 'matching' dim su(3) = 8, a numerical coincidence presented as structure; (b) the same paragraph says 'at k >= 1 extraction requires energy proportional to F' with no supporting result; (c) table row (3) 'Observables = sum of Wedderburn residues' is the second half of statement clause 2 (tau(x) = sum_lambda mu_lambda tr(rho_lambda x)/f^lambda), while clause 3 is 'central x is fixed by pi_Z', so the row label does not match the clause numbering. The numbered proof itself is sound and matches the Lean."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60. Resolved from warn/minor. (a) Vol(B_3) = 8G vs dim su(3) = 8 removed; (b) 'energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; (c) table row (3) now reads 'pi_Z fixes every central x', which is statement clause 3. The remaining italic text ('deeper k = more commutator load = harder to extract', gluon-condensate analogy) is labelled as an analogy to QCD and makes no derived claim."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -903,6 +1128,36 @@
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "da-citation-misuse": [
@@ -995,6 +1250,36 @@
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1087,6 +1372,36 @@
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "da-empirical-fragility": [
@@ -1179,6 +1494,36 @@
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "da-physical-implausibility": [
@@ -1271,6 +1616,36 @@
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "da-reproducibility": [
@@ -1363,6 +1738,36 @@
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "bib-cite-resolves": [
@@ -1440,6 +1845,25 @@
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "voice-status-leak": [
@@ -1509,6 +1933,23 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-probe-narrative": [
@@ -1578,6 +2019,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "cite-named-theorem": [
@@ -1647,6 +2105,23 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-agent-speak": [
@@ -1716,6 +2191,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-emoji-content": [
@@ -1785,6 +2277,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-first-person-work": [
@@ -1854,6 +2363,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-time-stamped-notes": [
@@ -1923,6 +2449,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-unicode-crash": [
@@ -1992,6 +2535,23 @@
           "def_hash": "63a6e57fead9"
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-editorializing": [
@@ -2061,6 +2621,23 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-scholarly-default": [
@@ -2177,6 +2754,38 @@
           "def_hash": "90af5388e1e9"
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "voice-title-scholarly": [
@@ -2362,6 +2971,38 @@
           "def_hash": "440226b73b33"
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "voice-author-notes-pollution": [
@@ -2431,6 +3072,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-status-section": [
@@ -2500,6 +3158,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5b0082576ba9",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "framework-canonical": [
@@ -2569,6 +3244,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "wall-side-correct": [
@@ -2641,6 +3333,24 @@
           "def_hash": "2ff53167ead5"
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -2882,6 +3592,23 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-witness-pinned": [
@@ -2951,6 +3678,23 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -3089,6 +3833,23 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -3158,6 +3919,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "compute-witness-exists": [
@@ -4028,6 +4806,25 @@
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-metadata-ok": [
@@ -4104,6 +4901,25 @@
           "def_hash": "e08cc9c741f6"
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -4182,6 +4998,25 @@
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "voice-branch-jargon": [
@@ -4239,6 +5074,21 @@
         "reviewed_at": "2026-11-21T19:45:00.000Z",
         "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
         "evidence": "Re-read at 4a43629ab36 (f8f7d9976ad..4a43629ab36). Edits: the 'Confinement reading' table rows (1)-(2) restated to the proved clauses (pi_Z lands in Z(A); every trace tau factors through pi_Z); 'completely free' -> 'carry no commutator load'; 'is — read through this proposition — literally' -> 'is, read through this proposition,'; .ts uses drops the transitively redundant prop:spectral-sequence-collapse (still reachable; the prose link stays). No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "uses-editorial-hygiene": [
@@ -4500,6 +5350,24 @@
           "def_hash": "d292915cbf8a"
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "trap-negation-contrast": [
@@ -4581,6 +5449,21 @@
         "reviewed_at": "2026-11-21T19:45:00.000Z",
         "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
         "evidence": "Re-read at 4a43629ab36 (f8f7d9976ad..4a43629ab36). Edits: the 'Confinement reading' table rows (1)-(2) restated to the proved clauses (pi_Z lands in Z(A); every trace tau factors through pi_Z); 'completely free' -> 'carry no commutator load'; 'is — read through this proposition — literally' -> 'is, read through this proposition,'; .ts uses drops the transitively redundant prop:spectral-sequence-collapse (still reachable; the prose link stays). No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -4660,6 +5543,21 @@
         "reviewed_at": "2026-11-21T19:45:00.000Z",
         "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
         "evidence": "Re-read at 4a43629ab36 (f8f7d9976ad..4a43629ab36). Edits: the 'Confinement reading' table rows (1)-(2) restated to the proved clauses (pi_Z lands in Z(A); every trace tau factors through pi_Z); 'completely free' -> 'carry no commutator load'; 'is — read through this proposition — literally' -> 'is, read through this proposition,'; .ts uses drops the transitively redundant prop:spectral-sequence-collapse (still reachable; the prose link stays). No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "trap-em-dash": [
@@ -4739,6 +5637,21 @@
         "reviewed_at": "2026-11-21T19:45:00.000Z",
         "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
         "evidence": "Re-read at 4a43629ab36. The one em-dash pair ('is — read through this proposition — literally') is gone; only the en-dash in 'Yang–Baxter' remains, which is a name. Pass."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "trap-triples": [
@@ -4818,6 +5731,21 @@
         "reviewed_at": "2026-11-21T19:45:00.000Z",
         "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
         "evidence": "Re-read at 4a43629ab36 (f8f7d9976ad..4a43629ab36). Edits: the 'Confinement reading' table rows (1)-(2) restated to the proved clauses (pi_Z lands in Z(A); every trace tau factors through pi_Z); 'completely free' -> 'carry no commutator load'; 'is — read through this proposition — literally' -> 'is, read through this proposition,'; .ts uses drops the transitively redundant prop:spectral-sequence-collapse (still reachable; the prose link stays). No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "trap-closing-aphorism": [
@@ -4897,6 +5825,21 @@
         "reviewed_at": "2026-11-21T19:45:00.000Z",
         "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
         "evidence": "Re-read at 4a43629ab36 (f8f7d9976ad..4a43629ab36). Edits: the 'Confinement reading' table rows (1)-(2) restated to the proved clauses (pi_Z lands in Z(A); every trace tau factors through pi_Z); 'completely free' -> 'carry no commutator load'; 'is — read through this proposition — literally' -> 'is, read through this proposition,'; .ts uses drops the transitively redundant prop:spectral-sequence-collapse (still reachable; the prose link stays). No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "trap-meta-commentary": [
@@ -4976,6 +5919,21 @@
         "reviewed_at": "2026-11-21T19:45:00.000Z",
         "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
         "evidence": "Re-read at 4a43629ab36 (f8f7d9976ad..4a43629ab36). Edits: the 'Confinement reading' table rows (1)-(2) restated to the proved clauses (pi_Z lands in Z(A); every trace tau factors through pi_Z); 'completely free' -> 'carry no commutator load'; 'is — read through this proposition — literally' -> 'is, read through this proposition,'; .ts uses drops the transitively redundant prop:spectral-sequence-collapse (still reachable; the prose link stays). No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "trap-thesis-restatement": [
@@ -5055,6 +6013,21 @@
         "reviewed_at": "2026-11-21T19:45:00.000Z",
         "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
         "evidence": "Re-read at 4a43629ab36 (f8f7d9976ad..4a43629ab36). Edits: the 'Confinement reading' table rows (1)-(2) restated to the proved clauses (pi_Z lands in Z(A); every trace tau factors through pi_Z); 'completely free' -> 'carry no commutator load'; 'is — read through this proposition — literally' -> 'is, read through this proposition,'; .ts uses drops the transitively redundant prop:spectral-sequence-collapse (still reachable; the prose link stays). No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "trap-performed-warmth": [
@@ -5134,6 +6107,21 @@
         "reviewed_at": "2026-11-21T19:45:00.000Z",
         "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
         "evidence": "Re-read at 4a43629ab36 (f8f7d9976ad..4a43629ab36). Edits: the 'Confinement reading' table rows (1)-(2) restated to the proved clauses (pi_Z lands in Z(A); every trace tau factors through pi_Z); 'completely free' -> 'carry no commutator load'; 'is — read through this proposition — literally' -> 'is, read through this proposition,'; .ts uses drops the transitively redundant prop:spectral-sequence-collapse (still reachable; the prose link stays). No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "trap-superlative": [
@@ -5218,6 +6206,21 @@
         "reviewed_at": "2026-11-21T19:45:00.000Z",
         "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
         "evidence": "Re-read at 4a43629ab36. Resolved from fail/minor: 'literally' removed ('is, read through this proposition, a sum over confinement layers') and 'completely free' replaced by 'carry no commutator load'. No superlative left; 'follows exactly this route' is a precision claim about the Lean, which is accurate."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "trap-nonspeakable": [
@@ -5297,6 +6300,21 @@
         "reviewed_at": "2026-11-21T19:45:00.000Z",
         "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
         "evidence": "Re-read at 4a43629ab36 (f8f7d9976ad..4a43629ab36). Edits: the 'Confinement reading' table rows (1)-(2) restated to the proved clauses (pi_Z lands in Z(A); every trace tau factors through pi_Z); 'completely free' -> 'carry no commutator load'; 'is — read through this proposition — literally' -> 'is, read through this proposition,'; .ts uses drops the transitively redundant prop:spectral-sequence-collapse (still reachable; the prose link stays). No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "wall-base-ring-minimal": [
@@ -5405,6 +6423,23 @@
           "def_hash": "440226b73b33"
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "acronym-in-glossary": [
@@ -5460,6 +6495,24 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b",
+        "notes": "3 acronym(s) are candidates for the glossary: HH, QCD, GB. Run glossary:acronyms for the folio-wide list with expansions."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "notes": "3 acronym(s) are candidates for the glossary: HH, QCD, GB. Run glossary:acronyms for the folio-wide list with expansions."
       }
     ],
@@ -5564,6 +6617,21 @@
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "dak-companion-present": [
@@ -5610,6 +6678,21 @@
           "version": "v1"
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
       }
     ],
@@ -5769,6 +6852,21 @@
         },
         "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b",
         "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
       }
     ],
     "id-unique": [
@@ -5878,6 +6976,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T19:45:00.000Z",
+  "updated_at": "2026-11-21T20:30:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

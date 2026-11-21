@@ -7,7 +7,7 @@
     "md": "folio/quantum-observable-universe/models-of-qous/skew-poisson-integration-proof.md"
   },
   "source_hashes": {
-    "md": "872d63c09b22",
+    "md": "ba15d2f2262a",
     "ts": "eb2cb1604ed2"
   },
   "criteria": {
@@ -21,6 +21,21 @@
           "id": "local/branch-jargon-sweep",
           "agent_skill": "local/one-voice-audit"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Proof block rewritten: items 1-3 cited to Thm 1.9, Prop 1.13, Thm 3.7 of arXiv:math/0602138; states that only the defining relation of U is formalised. The Fresse / Z_p-lift / p-adic-filtration text is gone. No instance of this criterion."
       }
     ],
     "voice-status-leak": [
@@ -39,6 +54,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-emoji-content": [
@@ -57,6 +89,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-first-person-work": [
@@ -75,6 +124,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-time-stamped-notes": [
@@ -93,6 +159,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-unicode-crash": [
@@ -111,6 +194,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-editorializing": [
@@ -129,6 +229,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-scholarly-default": [
@@ -162,6 +279,38 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Proof block rewritten: items 1-3 cited to Thm 1.9, Prop 1.13, Thm 3.7 of arXiv:math/0602138; states that only the defining relation of U is formalised. The Fresse / Z_p-lift / p-adic-filtration text is gone. No instance of this criterion."
       }
     ],
     "voice-title-scholarly": [
@@ -180,6 +329,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9566207ee882",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-ai-slop": [
@@ -213,6 +379,38 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Proof block rewritten: items 1-3 cited to Thm 1.9, Prop 1.13, Thm 3.7 of arXiv:math/0602138; states that only the defining relation of U is formalised. The Fresse / Z_p-lift / p-adic-filtration text is gone. No instance of this criterion."
       }
     ],
     "voice-author-notes-pollution": [
@@ -231,6 +429,23 @@
         },
         "reviewed_at": "2026-08-09T11:33:20.895Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-status-section": [
@@ -249,6 +464,23 @@
         },
         "reviewed_at": "2026-08-09T11:33:20.895Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5b0082576ba9",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "framework-canonical": [
@@ -267,6 +499,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "wall-side-correct": [
@@ -285,6 +534,24 @@
         },
         "reviewed_at": "2026-08-09T22:20:05.350Z",
         "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -417,6 +684,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-witness-pinned": [
@@ -435,6 +719,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -453,6 +754,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e81239fd83a2",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-dilogarithm-context": [
@@ -471,6 +789,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -489,6 +824,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "compute-witness-exists": [
@@ -507,6 +859,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "13ec1960e3ad",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "compute-lp-dual-present": [
@@ -525,6 +894,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6c278b93ad12",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "detangler-no-forward-ref": [
@@ -624,7 +1010,7 @@
           "in_degree": 0,
           "cone_size": 2,
           "depth": 2,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -708,6 +1094,25 @@
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -727,6 +1132,25 @@
         },
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -748,6 +1172,25 @@
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -768,6 +1211,25 @@
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -787,6 +1249,25 @@
         },
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d83daee37fd8",
+          "script_commit_sha": "unknown",
+          "deps_hash": "21d9ff417741",
+          "def_hash": "83422bec2bb4"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -822,6 +1303,21 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Proof block rewritten: items 1-3 cited to Thm 1.9, Prop 1.13, Thm 3.7 of arXiv:math/0602138; states that only the defining relation of U is formalised. The Fresse / Z_p-lift / p-adic-filtration text is gone. No instance of this criterion."
       }
     ],
     "da-false-claim": [
@@ -841,6 +1337,37 @@
         "notes": "No false claims identified in 'Proof of Integration of skewed-Poisson structures': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/models-of-qous/skew-poisson-integration-proof.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "severity": "minor",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Proof block rewritten: items 1-3 cited to Thm 1.9, Prop 1.13, Thm 3.7 of arXiv:math/0602138; states that only the defining relation of U is formalised. The Fresse / Z_p-lift / p-adic-filtration text is gone. No instance of this criterion."
       }
     ],
     "da-vacuous": [
@@ -859,6 +1386,37 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Proof of Integration of skewed-Poisson structures' presents substantial mathematical content: This is the Main Theorem of Fresse.  Item (1) is the existence statement; item (...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "severity": "minor",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Proof block rewritten: items 1-3 cited to Thm 1.9, Prop 1.13, Thm 3.7 of arXiv:math/0602138; states that only the defining relation of U is formalised. The Fresse / Z_p-lift / p-adic-filtration text is gone. No instance of this criterion."
       }
     ],
     "da-circular": [
@@ -878,6 +1436,37 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Proof of Integration of skewed-Poisson structures'.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/models-of-qous/skew-poisson-integration-proof.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "severity": "minor",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Proof block rewritten: items 1-3 cited to Thm 1.9, Prop 1.13, Thm 3.7 of arXiv:math/0602138; states that only the defining relation of U is formalised. The Fresse / Z_p-lift / p-adic-filtration text is gone. No instance of this criterion."
       }
     ],
     "da-overclaim": [
@@ -896,6 +1485,37 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Proof of Integration of skewed-Poisson structures' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "severity": "minor",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Proof block rewritten: items 1-3 cited to Thm 1.9, Prop 1.13, Thm 3.7 of arXiv:math/0602138; states that only the defining relation of U is formalised. The Fresse / Z_p-lift / p-adic-filtration text is gone. No instance of this criterion."
       }
     ],
     "da-hidden-dof": [
@@ -915,6 +1535,37 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Proof of Integration of skewed-Poisson structures'.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/models-of-qous/skew-poisson-integration-proof.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "severity": "minor",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Proof block rewritten: items 1-3 cited to Thm 1.9, Prop 1.13, Thm 3.7 of arXiv:math/0602138; states that only the defining relation of U is formalised. The Fresse / Z_p-lift / p-adic-filtration text is gone. No instance of this criterion."
       }
     ],
     "da-non-sequitur": [
@@ -951,6 +1602,36 @@
         "severity": "critical",
         "evidence": "Lean: `ctx.claim_i/ii/iii` projected from a context class (self-assuming). Statement item 2 asks the Hopf comultiplication of Dist(G) to satisfy the *Frobenius* relation (Id⊗m)(Δ⊗Id) = Δ∘m. That fails for any Hopf algebra with a nonzero primitive x: put a = 1, b = x; LHS = 1⊗x, RHS = Δx = x⊗1 + 1⊗x. \"Strong multiplicativity\" (Δ an algebra map) is a different identity. Proof: one-paragraph citation of \"the Main Theorem of Fresse\" with no bibliographic key, and it numbers three items (1)(2)(3) against a statement with two; item (3)'s \"p-adic filtration\" text uses an undefined macro `\\pp`",
         "notes": "Hand review 2026-11-15 (statement vs narrative proof); issue #8020. "
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60. Resolved from fail/critical: the Fresse / Z_p / p-adic-filtration argument is gone. The block now cites the three results and says only the defining relation is formalised."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -969,6 +1650,37 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "severity": "minor",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Proof block rewritten: items 1-3 cited to Thm 1.9, Prop 1.13, Thm 3.7 of arXiv:math/0602138; states that only the defining relation of U is formalised. The Fresse / Z_p-lift / p-adic-filtration text is gone. No instance of this criterion."
       }
     ],
     "da-citation-misuse": [
@@ -988,6 +1700,37 @@
         "notes": "No citations are present in 'Proof of Integration of skewed-Poisson structures', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/models-of-qous/skew-poisson-integration-proof.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "severity": "minor",
+        "evidence": "Re-read at c8da524af60. Two misattributions: (a) Thm 1.9 is proved by its own Groebner basis argument in §1 (generators f_(i,j) of Lemma 1.5/1.7 and g_(a,b)); Prop 2.4 (the eta^p - F(eta) presentation of Dist(G)) is in §2 and is not its proof. (b) Thm 3.7's proof uses §1 (bialgebra) and Rmk 3.2; Lemma 3.5 and Prop 3.6 are the converse direction (G -> pi) and are not used in it. Checked against library sec-000 lines 291-340 and sec-002 lines 134-300."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1007,6 +1750,37 @@
         "notes": "Key terms and symbols in 'Proof of Integration of skewed-Poisson structures' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/models-of-qous/skew-poisson-integration-proof.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "severity": "minor",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Proof block rewritten: items 1-3 cited to Thm 1.9, Prop 1.13, Thm 3.7 of arXiv:math/0602138; states that only the defining relation of U is formalised. The Fresse / Z_p-lift / p-adic-filtration text is gone. No instance of this criterion."
       }
     ],
     "da-empirical-fragility": [
@@ -1026,6 +1800,37 @@
         "notes": "The algebraic and logical relations in 'Proof of Integration of skewed-Poisson structures' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/models-of-qous/skew-poisson-integration-proof.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "severity": "minor",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Proof block rewritten: items 1-3 cited to Thm 1.9, Prop 1.13, Thm 3.7 of arXiv:math/0602138; states that only the defining relation of U is formalised. The Fresse / Z_p-lift / p-adic-filtration text is gone. No instance of this criterion."
       }
     ],
     "da-physical-implausibility": [
@@ -1045,6 +1850,37 @@
         "notes": "The physical concepts described in 'Proof of Integration of skewed-Poisson structures' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/models-of-qous/skew-poisson-integration-proof.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "severity": "minor",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Proof block rewritten: items 1-3 cited to Thm 1.9, Prop 1.13, Thm 3.7 of arXiv:math/0602138; states that only the defining relation of U is formalised. The Fresse / Z_p-lift / p-adic-filtration text is gone. No instance of this criterion."
       }
     ],
     "da-reproducibility": [
@@ -1064,6 +1900,37 @@
         "notes": "The derivation steps and formal definitions in 'Proof of Integration of skewed-Poisson structures' are reproducible.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/models-of-qous/skew-poisson-integration-proof.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "severity": "minor",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Proof block rewritten: items 1-3 cited to Thm 1.9, Prop 1.13, Thm 3.7 of arXiv:math/0602138; states that only the defining relation of U is formalised. The Fresse / Z_p-lift / p-adic-filtration text is gone. No instance of this criterion."
       }
     ],
     "da-referee-verdict": [
@@ -1084,6 +1951,37 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Proof of Integration of skewed-Poisson structures' are consistent.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "severity": "minor",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Proof block rewritten: items 1-3 cited to Thm 1.9, Prop 1.13, Thm 3.7 of arXiv:math/0602138; states that only the defining relation of U is formalised. The Fresse / Z_p-lift / p-adic-filtration text is gone. No instance of this criterion."
       }
     ],
     "voice-probe-narrative": [
@@ -1102,6 +2000,23 @@
         },
         "reviewed_at": "2026-08-09T11:33:20.895Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "cite-named-theorem": [
@@ -1120,6 +2035,23 @@
         },
         "reviewed_at": "2026-08-09T11:33:20.895Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-agent-speak": [
@@ -1138,6 +2070,23 @@
         },
         "reviewed_at": "2026-08-09T11:33:20.895Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "uses-editorial-hygiene": [
@@ -1157,6 +2106,29 @@
         },
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "metrics": {
+          "uses_count": 1,
+          "broken_edges": 0,
+          "redundant_edges": 0
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63814f2a6677",
+          "script_commit_sha": "unknown",
+          "deps_hash": "34af1d8a2365",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "metrics": {
           "uses_count": 1,
           "broken_edges": 0,
@@ -1182,6 +2154,25 @@
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "82fd1e2e6831",
+          "script_commit_sha": "unknown",
+          "deps_hash": "794eb6c16a59",
+          "def_hash": "ce2b8102b97f"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "lean-ref-owns-decl": [
@@ -1201,6 +2192,24 @@
         },
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "trap-negation-contrast": [
@@ -1235,6 +2244,21 @@
         "reviewed_at": "2026-08-22T06:26:12.793Z",
         "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
         "evidence": "Full read (proof, 7 lines, ~0.3kB). Checked $\\pp$ against the preamble before flagging it: main.tex line 237 defines \\newcommand{\\pp}{p} for p-adic content and it is used this way in eight other blocks, so '$\\pp$-adic filtration' is correct usage and NOT sweep damage. No rhetorical construction in any of the ten categories - all clean. Three substantive defects (an item (3) that does not exist in the proposition, a stripped accent, and an uncitable attribution) are reported as anomalies."
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Proof block rewritten: items 1-3 cited to Thm 1.9, Prop 1.13, Thm 3.7 of arXiv:math/0602138; states that only the defining relation of U is formalised. The Fresse / Z_p-lift / p-adic-filtration text is gone. No instance of this criterion."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1269,6 +2293,21 @@
         "reviewed_at": "2026-08-22T06:26:12.833Z",
         "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
         "evidence": "Full read (proof, 7 lines, ~0.3kB). Checked $\\pp$ against the preamble before flagging it: main.tex line 237 defines \\newcommand{\\pp}{p} for p-adic content and it is used this way in eight other blocks, so '$\\pp$-adic filtration' is correct usage and NOT sweep damage. No rhetorical construction in any of the ten categories - all clean. Three substantive defects (an item (3) that does not exist in the proposition, a stripped accent, and an uncitable attribution) are reported as anomalies."
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Proof block rewritten: items 1-3 cited to Thm 1.9, Prop 1.13, Thm 3.7 of arXiv:math/0602138; states that only the defining relation of U is formalised. The Fresse / Z_p-lift / p-adic-filtration text is gone. No instance of this criterion."
       }
     ],
     "trap-em-dash": [
@@ -1303,6 +2342,21 @@
         "reviewed_at": "2026-08-22T06:26:12.871Z",
         "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
         "evidence": "Full read (proof, 7 lines, ~0.3kB). Checked $\\pp$ against the preamble before flagging it: main.tex line 237 defines \\newcommand{\\pp}{p} for p-adic content and it is used this way in eight other blocks, so '$\\pp$-adic filtration' is correct usage and NOT sweep damage. No rhetorical construction in any of the ten categories - all clean. Three substantive defects (an item (3) that does not exist in the proposition, a stripped accent, and an uncitable attribution) are reported as anomalies."
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Proof block rewritten: items 1-3 cited to Thm 1.9, Prop 1.13, Thm 3.7 of arXiv:math/0602138; states that only the defining relation of U is formalised. The Fresse / Z_p-lift / p-adic-filtration text is gone. No instance of this criterion."
       }
     ],
     "trap-triples": [
@@ -1337,6 +2391,21 @@
         "reviewed_at": "2026-08-22T06:26:12.908Z",
         "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
         "evidence": "Full read (proof, 7 lines, ~0.3kB). Checked $\\pp$ against the preamble before flagging it: main.tex line 237 defines \\newcommand{\\pp}{p} for p-adic content and it is used this way in eight other blocks, so '$\\pp$-adic filtration' is correct usage and NOT sweep damage. No rhetorical construction in any of the ten categories - all clean. Three substantive defects (an item (3) that does not exist in the proposition, a stripped accent, and an uncitable attribution) are reported as anomalies."
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Proof block rewritten: items 1-3 cited to Thm 1.9, Prop 1.13, Thm 3.7 of arXiv:math/0602138; states that only the defining relation of U is formalised. The Fresse / Z_p-lift / p-adic-filtration text is gone. No instance of this criterion."
       }
     ],
     "trap-closing-aphorism": [
@@ -1371,6 +2440,21 @@
         "reviewed_at": "2026-08-22T06:26:12.943Z",
         "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
         "evidence": "Full read (proof, 7 lines, ~0.3kB). Checked $\\pp$ against the preamble before flagging it: main.tex line 237 defines \\newcommand{\\pp}{p} for p-adic content and it is used this way in eight other blocks, so '$\\pp$-adic filtration' is correct usage and NOT sweep damage. No rhetorical construction in any of the ten categories - all clean. Three substantive defects (an item (3) that does not exist in the proposition, a stripped accent, and an uncitable attribution) are reported as anomalies."
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Proof block rewritten: items 1-3 cited to Thm 1.9, Prop 1.13, Thm 3.7 of arXiv:math/0602138; states that only the defining relation of U is formalised. The Fresse / Z_p-lift / p-adic-filtration text is gone. No instance of this criterion."
       }
     ],
     "trap-meta-commentary": [
@@ -1405,6 +2489,21 @@
         "reviewed_at": "2026-08-22T06:26:12.981Z",
         "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
         "evidence": "Full read (proof, 7 lines, ~0.3kB). Checked $\\pp$ against the preamble before flagging it: main.tex line 237 defines \\newcommand{\\pp}{p} for p-adic content and it is used this way in eight other blocks, so '$\\pp$-adic filtration' is correct usage and NOT sweep damage. No rhetorical construction in any of the ten categories - all clean. Three substantive defects (an item (3) that does not exist in the proposition, a stripped accent, and an uncitable attribution) are reported as anomalies."
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Proof block rewritten: items 1-3 cited to Thm 1.9, Prop 1.13, Thm 3.7 of arXiv:math/0602138; states that only the defining relation of U is formalised. The Fresse / Z_p-lift / p-adic-filtration text is gone. No instance of this criterion."
       }
     ],
     "trap-thesis-restatement": [
@@ -1439,6 +2538,21 @@
         "reviewed_at": "2026-08-22T06:26:13.018Z",
         "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
         "evidence": "Full read (proof, 7 lines, ~0.3kB). Checked $\\pp$ against the preamble before flagging it: main.tex line 237 defines \\newcommand{\\pp}{p} for p-adic content and it is used this way in eight other blocks, so '$\\pp$-adic filtration' is correct usage and NOT sweep damage. No rhetorical construction in any of the ten categories - all clean. Three substantive defects (an item (3) that does not exist in the proposition, a stripped accent, and an uncitable attribution) are reported as anomalies."
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Proof block rewritten: items 1-3 cited to Thm 1.9, Prop 1.13, Thm 3.7 of arXiv:math/0602138; states that only the defining relation of U is formalised. The Fresse / Z_p-lift / p-adic-filtration text is gone. No instance of this criterion."
       }
     ],
     "trap-performed-warmth": [
@@ -1473,6 +2587,21 @@
         "reviewed_at": "2026-08-22T06:26:13.054Z",
         "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
         "evidence": "Full read (proof, 7 lines, ~0.3kB). Checked $\\pp$ against the preamble before flagging it: main.tex line 237 defines \\newcommand{\\pp}{p} for p-adic content and it is used this way in eight other blocks, so '$\\pp$-adic filtration' is correct usage and NOT sweep damage. No rhetorical construction in any of the ten categories - all clean. Three substantive defects (an item (3) that does not exist in the proposition, a stripped accent, and an uncitable attribution) are reported as anomalies."
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Proof block rewritten: items 1-3 cited to Thm 1.9, Prop 1.13, Thm 3.7 of arXiv:math/0602138; states that only the defining relation of U is formalised. The Fresse / Z_p-lift / p-adic-filtration text is gone. No instance of this criterion."
       }
     ],
     "trap-superlative": [
@@ -1507,6 +2636,21 @@
         "reviewed_at": "2026-08-22T06:26:13.089Z",
         "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
         "evidence": "Full read (proof, 7 lines, ~0.3kB). Checked $\\pp$ against the preamble before flagging it: main.tex line 237 defines \\newcommand{\\pp}{p} for p-adic content and it is used this way in eight other blocks, so '$\\pp$-adic filtration' is correct usage and NOT sweep damage. No rhetorical construction in any of the ten categories - all clean. Three substantive defects (an item (3) that does not exist in the proposition, a stripped accent, and an uncitable attribution) are reported as anomalies."
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Proof block rewritten: items 1-3 cited to Thm 1.9, Prop 1.13, Thm 3.7 of arXiv:math/0602138; states that only the defining relation of U is formalised. The Fresse / Z_p-lift / p-adic-filtration text is gone. No instance of this criterion."
       }
     ],
     "trap-nonspeakable": [
@@ -1541,6 +2685,21 @@
         "reviewed_at": "2026-08-22T06:26:13.127Z",
         "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
         "evidence": "Full read (proof, 7 lines, ~0.3kB). Checked $\\pp$ against the preamble before flagging it: main.tex line 237 defines \\newcommand{\\pp}{p} for p-adic content and it is used this way in eight other blocks, so '$\\pp$-adic filtration' is correct usage and NOT sweep damage. No rhetorical construction in any of the ten categories - all clean. Three substantive defects (an item (3) that does not exist in the proposition, a stripped accent, and an uncitable attribution) are reported as anomalies."
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Proof block rewritten: items 1-3 cited to Thm 1.9, Prop 1.13, Thm 3.7 of arXiv:math/0602138; states that only the defining relation of U is formalised. The Fresse / Z_p-lift / p-adic-filtration text is gone. No instance of this criterion."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1560,9 +2719,206 @@
         "reviewed_at": "2026-08-15T21:15:41.696Z",
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c3dab60e46d6",
+          "script_commit_sha": "unknown",
+          "def_hash": "10db4d17cd96"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      }
+    ],
+    "acronym-in-glossary": [
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      }
+    ],
+    "da-arity-conflation": [
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "dak-companion-present": [
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      }
+    ],
+    "dak-bpmn-has-process": [
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      }
+    ],
+    "dak-dmn-has-decision-table": [
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      }
+    ],
+    "dak-fsh-declares-kind": [
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      }
+    ],
+    "dak-label-prefix-matches-kind": [
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      }
+    ],
+    "id-unique": [
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      }
+    ],
+    "id-stable": [
+      {
+        "field_hash": {
+          "md": "ba15d2f2262a",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "unchanged since origin/main"
       }
     ]
   },
-  "updated_at": "2026-11-15T21:55:06.940Z",
+  "updated_at": "2026-11-21T20:30:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
