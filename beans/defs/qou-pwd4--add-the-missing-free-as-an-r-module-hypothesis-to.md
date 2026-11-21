@@ -59,3 +59,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8467, closed o
 Live on main: both cor:pbw and cor:ugb-pbw (buchberger-and-pbw/ugb-pbw-corollary.md) still lack 'free as an R-module'; both Lean 'Manuscript statement' docstrings too. bokutchen2015pbw is registered. Corpus-derived fix proposed, owner-gated.
 
 Report: docs/audits/2026-11-21-paper-structure-bean-drain.md on branch claude/paper-structure-drain-2026-11-21.
+
+Ruling check (owner-rulings.md on main 2ae54ab401, 2026-11-21): no superseded premise (photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ = 2 − h⁴, fitted values in proofs) is used by this bean's finding.

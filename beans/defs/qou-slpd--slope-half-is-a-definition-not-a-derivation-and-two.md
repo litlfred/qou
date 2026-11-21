@@ -294,3 +294,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8457, closed o
 On main: natDegree_c1MultPoly, l1CoeffAt_eq_zero_iff, c1InfCoeff_order_two, newtonSlopes_c1_ne_ggm, and the sympy level probe. NOT on main: slopeOneCoeff_order_one / slopeTwoCoeff_order_half, and theta_eq_half_gs_bridge's docstring (QGevreyOrder.lean ~l.571) still cites 'the RSZ slope=order theorem'. Docstring fix is corpus-derived; proposed.
 
 Report: docs/audits/2026-11-21-paper-structure-bean-drain.md on branch claude/paper-structure-drain-2026-11-21.
+
+Ruling check (owner-rulings.md on main 2ae54ab401, 2026-11-21): no superseded premise (photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ = 2 − h⁴, fitted values in proofs) is used by this bean's finding.

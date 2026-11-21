@@ -22,3 +22,5 @@ WHY IT MATTERS RATHER THAN BEING A TYPO: bowtie_K carries the eightfold's isospi
 Label removed from 2 .ts files (Phase 7) but the grid row still names a non-existent 'EW interface-knot definition'; H₆ vs H_{3A} scope question unanswered.
 
 Report: docs/audits/2026-11-21-paper-structure-bean-drain.md on branch claude/paper-structure-drain-2026-11-21.
+
+Ruling check (owner-rulings.md on main 2ae54ab401, 2026-11-21): no superseded premise (photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ = 2 − h⁴, fitted values in proofs) is used by this bean's finding.

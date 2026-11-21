@@ -21,3 +21,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8472, closed o
 CHECKED: θ_A² = ln²q₀ − (κ(A)/κ(3))(ln²q₀ − θ₃²) is real-valued arithmetic, so ratio_im_zero_of_shared_law does not apply. At θ₃ = 0, all_real ⟺ κ(A) ≤ κ(3) and all_boost_dominated ⟺ κ(A)/κ(3) > 0: a monotonicity and a sign check, weaker than the assertion source strings say.
 
 Report: docs/audits/2026-11-21-paper-structure-bean-drain.md on branch claude/paper-structure-drain-2026-11-21.
+
+Ruling check (owner-rulings.md on main 2ae54ab401, 2026-11-21): no superseded premise (photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ = 2 − h⁴, fitted values in proofs) is used by this bean's finding.

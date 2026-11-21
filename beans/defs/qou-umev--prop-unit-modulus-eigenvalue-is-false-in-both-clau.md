@@ -114,3 +114,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8462, closed o
 Mostly fixed on main (conditional statement, σ₁² counterexample, 120° row, duality withdrawn). One wrong sentence left in unit-modulus-eigenvalue-proof.md: 'χ(β_Bor) = 2 − h⁴' — the block's own formula equals 2 − 3h⁴ − h⁶ (sympy, this session; 1.99419 vs 1.99809 at q₀), and 'holds specifically for Borromean' fails at q = 2 (same block). Fix proposed, owner-gated.
 
 Report: docs/audits/2026-11-21-paper-structure-bean-drain.md on branch claude/paper-structure-drain-2026-11-21.
+
+Ruling check: the bean's own corrected value 2 − 3h⁴ − h⁶ is the current one; the leftover '2 − h⁴' sentence on main is exactly the superseded χ value, so the proposed fix removes it. No other superseded premise.

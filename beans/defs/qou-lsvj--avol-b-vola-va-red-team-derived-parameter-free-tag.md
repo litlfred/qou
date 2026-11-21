@@ -34,3 +34,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8452, closed o
 B_vol legend row now DEPRECATED on main. Same defect one row up: B_gate legend still says 'Parameter-free … no fit' / 'parameter-free nuclear SATURATION scale' though the file's 2026-08-08 banner deprecates B_gate too. Corpus-derived fix proposed.
 
 Report: docs/audits/2026-11-21-paper-structure-bean-drain.md on branch claude/paper-structure-drain-2026-11-21.
+
+Ruling check: the dashboard is EXPLORATORY and B_gate/B_vol are deprecated; whether its trace is the two-term Lagrangian trace was not checked and does not affect the legend finding.

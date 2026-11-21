@@ -133,3 +133,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8452, closed o
 Verified on main 2026-11-21: rem-qstar-decay-sector-q0.md:9 and epistemic-status-of-calibrations.md both now say q* is NOT an independent third determination and is conditional on c₃^even = −Vol(4₁). Closing.
 
 Report: docs/audits/2026-11-21-paper-structure-bean-drain.md on branch claude/paper-structure-drain-2026-11-21.
+
+Ruling check: the closed block quotes q*'s position in convention C and convention D side by side (rem-qstar l.16–24), so it does not rest on C alone. The circularity finding is about the extraction from measured Q_β; under the 2026-11-20 ruling Q_β is derived from γγ pair production, which removes the measured-Q_β input rather than reviving the third-determination claim. Closure stands.

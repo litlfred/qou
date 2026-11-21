@@ -93,3 +93,5 @@ checking first.
 Caption fixed (PR #5008). Still open: p/n rows reproduce an input (μ̄ ≈ M_N/3 in dressed-quark-numerology-at-q0), only m_n − m_p is predicted; formula column vs proof route unreconciled; deuteron/binding rows underived. Options on the owner card.
 
 Report: docs/audits/2026-11-21-paper-structure-bean-drain.md on branch claude/paper-structure-drain-2026-11-21.
+
+Ruling check: the finding (p/n rows reproduce the M_N input) is about the table's honesty, not about which trace or knot is used; the formula column's Hopf-link wording predates the electron ruling and is a separate label question, not relied on here.
