@@ -1,26 +1,26 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-21T04:37:58.464849+00:00",
-  "commitSha": "2f9ef58d2792aa97b41d03bd00bd30c583911694",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-21T07:56:45.443604+00:00",
+  "commitSha": "845e2f8200142fec69a10571d6695218dce8525e",
   "assertions": [
     {
       "name": "m_p_matches_codata_within_1ppm",
       "computed": "0.000002851787521128885851270994254155494197045191587521683853869159611414295",
-      "expected": 0.0,
+      "expected": "0.0",
       "passed": true,
-      "tolerance": 1.0,
+      "tolerance": "1.0",
       "unit": "ppm",
       "source": "m_p substrate identity should match CODATA m_p within 1 ppm — observed 0.24 ppm, well within tolerance."
     },
     {
       "name": "m_n_matches_codata_within_10ppb",
-      "computed": "501.4569351393812824617363059782341515404278357807621566341538281253553",
-      "expected": 0.0,
+      "computed": "486288.2589992101947627729618449772467275564208716363755650358878854401",
+      "expected": "0.0",
       "passed": false,
-      "tolerance": 10.0,
+      "tolerance": "10.0",
       "unit": "ppb",
-      "source": "m_n via the parameter-free Kashiwara b² Q_β (n→p+e+ν̄) should match CODATA m_n within 10 ppb. Under convention D it does not: +501 ppb (the ~1 ppb once recorded was convention C, excised). TIER: near-match; exact Q_β gated on the s5bb Habiro keystone."
+      "source": "m_n via the scored D1 = A Q_β (n→p+e+ν̄) against CODATA m_n at 10 ppb. It FAILS: −486 ppm, because the scored Q_β is −58.4 % (conditional on C1–C3). Kept failing on purpose: the tolerance is the target, not a bound sized to the miss. Before 2026-11-21 it also failed (+501 ppb) on the retired mixed base."
     },
     {
       "name": "borromean_v3_e3_plus_e21_equals_full_trace",
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "m-p-substrate-identity-50dps",
   "scriptFile": "m_p_substrate_identity_50dps.py",
-  "scriptHash": "bb91ceae5015",
-  "scriptCommitSha": "056a00fc678a0c1d03d33d77c14f59479044eb86",
+  "scriptHash": "6f13b1f96b54",
+  "scriptCommitSha": "845e2f8200142fec69a10571d6695218dce8525e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -58,8 +58,9 @@
     "numpy": "2.5.3",
     "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "cvxpy": "absent",
     "pyhecke_native_build": "8094096a28948d48"
   },
@@ -69,7 +70,7 @@
     ],
     "reproduce": "python3 -u computations/m_p_substrate_identity_50dps.py"
   },
-  "description": "Production substrate-categorical prediction of m_p and m_n from (m_e, m_μ, q_0) using Lean-proved closed forms for |tr_M(β_Bor)| and [3]_q!. The neutron uses the 3-input chain m_n = m_p + Q_β + m_e with Q_β the parameter-free Kashiwara b² truncation (near-match, +501 ppb on m_n under convention D); the Hecke-skein flavor-split is a secondary ratio. CAL-3 (Q_β) is NOT used as input — Q_β becomes a DERIVED quantity. Substrate identity: m_p = 2·m_μ·|tr_M|·[3]_q!/q^3 - 12·m_e where the '12' is the Ocneanu cancellation reciprocal.",
+  "description": "Production substrate-categorical prediction of m_p and m_n from (m_e, m_μ, q_0) using Lean-proved closed forms for |tr_M(β_Bor)| and [3]_q!. The neutron uses the 3-input chain m_n = m_p + Q_β + m_e with Q_β the scored owner-ruled D1 = A cell |ε_flavour(V³)|·E₀ (−486 ppm on m_n, conditional on conjectures C1–C3; switched from the retired z = 1 mixed base on 2026-11-21, issue #8769); the Hecke-skein flavor-split is a secondary ratio. CAL-3 (Q_β) is NOT used as input — Q_β becomes a DERIVED quantity. Substrate identity: m_p = 2·m_μ·|tr_M|·[3]_q!/q^3 - 12·m_e where the '12' is the Ocneanu cancellation reciprocal.",
   "contentBlock": "conj:proton-mass-substrate-identity",
   "auditOnly": "docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md",
   "parameters": {
@@ -88,20 +89,24 @@
     },
     "predictions": {
       "m_p_MeV": "938.27208942732424736394",
-      "m_n_MeV": "939.5658930915968489719874",
-      "M_N_MeV": "938.9189912594605481679637",
-      "Q_beta_MeV": "0.7828047135826016080473667",
-      "Delta_m_pn_MeV": "1.293803664272601608047367"
+      "m_n_MeV": "939.108522306748939071231",
+      "M_N_MeV": "938.6903058670365932175855",
+      "Q_beta_MeV": "0.3254339287346917072909656",
+      "Delta_m_pn_MeV": "0.8364328794246917072909656"
     },
     "predictions_pathC": {
-      "m_n_MeV": "939.5658930915968489719874",
-      "m_n_residual_ppm": "0.501456935139",
-      "Delta_m_pn_MeV": "1.293803664272601608047367",
-      "Delta_m_pn_ppb": "364294.77258064755",
-      "Q_beta_N3_MeV": "0.7828047135826016080473667",
-      "derivation": "m_n = m_p + Q_β(Kashiwara b², parameter-free) + m_e"
+      "m_n_MeV": "939.108522306748939071231",
+      "m_n_residual_ppm": "-486.288258999",
+      "Delta_m_pn_MeV": "0.8364328794246917072909656",
+      "Delta_m_pn_ppb": "-353273135.13158983",
+      "Q_beta_N3_MeV": "0.3254339287346917072909656",
+      "derivation": "m_n = m_p + Q_β(scored D1 = A, |eps_flavour(V^3)|*E0, C1-C3 conditional) + m_e"
     },
     "neutron_diagnostics": {
+      "m_n_retired_mixed_base_MeV": "939.5658930915968489719874",
+      "Q_beta_retired_mixed_base_MeV": "0.7828047135826016080473667",
+      "m_n_retired_mixed_base_residual_ppb": "501.456935139",
+      "retired_mixed_base_note": "q_beta_kashiwara_n2_mev: z = 1 Form A with a convention-D phase, retired 2026-11-16. Was the production m_n until 2026-11-21 (issue #8769). Not a convention-D prediction.",
       "m_n_flavor_split_MeV": "939.5637689694339592714955",
       "m_n_flavor_split_residual_ppm": "-1.75929267664",
       "Delta_m_pn_flavor_split_MeV": "1.291679542109711907555503",
@@ -113,11 +118,11 @@
       "m_p_codata_MeV": "938.27208943",
       "m_p_residual_ppm": "-2.85178752113e-6",
       "m_n_codata_MeV": "939.56542194",
-      "m_n_residual_ppm": "0.501456935139",
+      "m_n_residual_ppm": "-486.288258999",
       "M_N_codata_MeV": "938.918755685",
-      "M_N_residual_ppm": "0.250899728141",
+      "M_N_residual_ppm": "-243.311592808",
       "Q_beta_codata_MeV": "0.78233355931",
-      "Q_beta_residual_ppm": "602.242185567"
+      "Q_beta_residual_ppm": "-584021.515041"
     },
     "lean_uniqueness_ref": {
       "proton": "qou:QOU.BraidKnot.PeriodicTableUniqueness.h_uniqueness_closed",
@@ -142,7 +147,7 @@
       "scored_insertion": "covariant all-pairs (owner 2026-11-20 16:44): connected part 0 on V³; *_derived_* = adjacent (option 1), labelled",
       "M_p_QED_conn_scored_MeV": "0.0",
       "Delta_m_QED_conn_scored_MeV": "0.0",
-      "Q_beta_two_term_derived_adjacent_MeV": "0.7826774892816377059126632",
+      "Q_beta_two_term_derived_adjacent_MeV": "0.3253067044337278051562621",
       "q_two_term_borromean_scored": "1.1099785827513808075916690956107688798744991218736",
       "M_p_QED_conn_derived_MeV": "0.0000901242572668167005355174",
       "Delta_m_QED_conn_derived_MeV": "-0.0001272243009639021347035417",
@@ -150,16 +155,16 @@
       "M_p_QED_conn_Kp_MeV": "0.0002442810826723042242804662",
       "Delta_m_QED_conn_MeV": "-0.0003316960446051788476748025",
       "Delta_m_QED_conn_KnKp_MeV": "-0.000344840456101401187346409",
-      "Q_beta_two_term_plain_MeV": "0.7824730175379964291996919",
-      "Q_beta_two_term_MeV": "0.7828047135826016080473667",
-      "Q_beta_two_term_residual_ppm": "602.242185567",
-      "m_n_two_term_MeV": "939.5658930915968489719874",
-      "m_n_two_term_derived_adjacent_MeV": "939.5657658672958850698527",
+      "Q_beta_two_term_plain_MeV": "0.3251022326900865284432908",
+      "Q_beta_two_term_MeV": "0.3254339287346917072909656",
+      "Q_beta_two_term_residual_ppm": "-584021.515041",
+      "m_n_two_term_MeV": "939.108522306748939071231",
+      "m_n_two_term_derived_adjacent_MeV": "939.1083950824479751690963",
       "q_two_term_borromean_derived": "1.1099785878291231819349164390040016027877615118272",
       "dq_two_term_derived_vs_muon_ppb": "-7.0394293146",
       "mup_tension_two_term_derived_ppb": "128.01454681",
       "mup_tension_two_term_derived_sigma": "5.75420608795",
-      "m_n_two_term_residual_ppb": "501.456935139",
+      "m_n_two_term_residual_ppb": "-486288.258999",
       "q_two_term_borromean_plain": "1.1099785951508859990875652035986826212141034805412",
       "q_two_term_borromean_k_weighted": "1.1099785965145670927758217612084780842969279530571",
       "dq_two_term_plain_vs_muon_ppb": "-0.443119398451",

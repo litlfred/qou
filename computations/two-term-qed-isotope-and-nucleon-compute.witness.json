@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-20T19:32:44.645511+00:00",
-  "commitSha": "2aeebd4da5b56ee610402634a6434a1a171fec4d",
+  "computedAt": "2026-11-21T08:02:37.286799+00:00",
+  "commitSha": "845e2f8200142fec69a10571d6695218dce8525e",
   "assertions": [
     {
       "name": "borromean_v3_connected_diff_matches_closed_form",
@@ -38,9 +38,9 @@
     },
     {
       "name": "two_term_neutron_mass_reduces_codata_residual",
-      "computed": true,
+      "computed": false,
       "expected": true,
-      "passed": true,
+      "passed": false,
       "source": "QOU.QuantumObservableUniverses.CategoricalLagrangianTwoTermBridge.neutron_twoTerm_mass_lt_oneTerm_mass"
     },
     {
@@ -83,12 +83,12 @@
       "source": "QOU.MassTheory.GPMTThreeRowCumulantBridge.BextGPMT_values_and_pos + H4GPMTModifiedDimensionCumulants.mu4GPMT_H4_lt_zero"
     }
   ],
-  "allPassed": true,
-  "durationMs": 15,
+  "allPassed": false,
+  "durationMs": 5,
   "computation": "two-term-qed-isotope-and-nucleon-compute",
   "scriptFile": "two_term_qed_isotope_and_nucleon_compute.py",
   "scriptHash": "940e75034bcc",
-  "scriptCommitSha": "056a00fc678a0c1d03d33d77c14f59479044eb86",
+  "scriptCommitSha": "845e2f8200142fec69a10571d6695218dce8525e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -100,11 +100,11 @@
     "numpy": "2.5.3",
     "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "cvxpy": "absent",
-    "pyhecke_native_build": "ae1028699afd20c5"
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -212,17 +212,17 @@
       "Delta_m_QED_conn_Kp3_MeV": "-0.0003558998334735001321029749",
       "Delta_m_QED_conn_q_MeV": "-0.0003681755054950952090688729",
       "substrate_identity_neutron_mass": {
-        "m_n_1term_MeV": "939.565893091597",
+        "m_n_1term_MeV": "939.108522306749",
         "m_n_exp_CODATA_MeV": "939.565421940000",
-        "m_n_1term_err_ppb": "501.45694",
-        "m_n_2term_derived_MeV": "939.565765867296",
-        "m_n_2term_derived_err_ppb": "366.04933",
-        "m_n_2term_plain_MeV": "939.565561395552",
-        "m_n_2term_plain_err_ppb": "148.42559",
-        "m_n_2term_plain_residual_reduction_pct": "70.4011",
-        "m_n_2term_KnKp_err_ppb": "134.43571",
-        "m_n_2term_Kp3_err_ppb": "122.66497",
-        "m_n_2term_q_err_ppb": "109.59970"
+        "m_n_1term_err_ppb": "-486288.26",
+        "m_n_2term_derived_MeV": "939.108395082448",
+        "m_n_2term_derived_err_ppb": "-486423.67",
+        "m_n_2term_plain_MeV": "939.108190610704",
+        "m_n_2term_plain_err_ppb": "-486641.29",
+        "m_n_2term_plain_residual_reduction_pct": "-0.0725971",
+        "m_n_2term_KnKp_err_ppb": "-486655.28",
+        "m_n_2term_Kp3_err_ppb": "-486667.05",
+        "m_n_2term_q_err_ppb": "-486680.12"
       },
       "ruled_zD_qbeta_and_path_c_impact": {
         "qbeta_ruled_cell": "V^3 = (sigma_0 sigma_1^-1)^3, T^3 weight split of the z_D trace: Q_beta = |eps_flavour(V^3)|*E0_tower (owner D1 = A, PR #8586; switched here 2026-11-20). CONDITIONAL on conjectures C1-C3 (QOU.QBeta.DecayConjectures), NOT a derived prediction.",
@@ -400,11 +400,11 @@
     "upstream_witness_hashes": [
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
-        "sha256": "5f4ef497a9efed547416fdfb12567ff02e35b10b1eb0c0e02a63a2c697a39f81",
-        "size_bytes": 12083,
-        "commitSha": "764f905a1cafb87fc71a00bd896a2adf4ae306fb",
-        "scriptCommitSha": "764f905a1cafb87fc71a00bd896a2adf4ae306fb",
-        "computedAt": "2026-11-20T16:01:41.475202+00:00"
+        "sha256": "47edec9fca110b8adef03e4b3540b1fa3fb3b64c4aa3ea6a2dab041e86868596",
+        "size_bytes": 12675,
+        "commitSha": "845e2f8200142fec69a10571d6695218dce8525e",
+        "scriptCommitSha": "845e2f8200142fec69a10571d6695218dce8525e",
+        "computedAt": "2026-11-21T07:56:45.443604+00:00"
       },
       {
         "path": "codata-2022-validation-masses.witness.json",
