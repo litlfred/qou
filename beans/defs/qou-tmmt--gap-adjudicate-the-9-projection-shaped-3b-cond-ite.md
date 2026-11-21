@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T14:12:30Z
-updated_at: 2026-11-21T12:20:00Z
+updated_at: 2026-11-21T20:19:36Z
 parent: qou-5p7n
 ---
 
@@ -352,3 +352,7 @@ Owner chose "port #6681" in the project thread "Settle open-problem leftovers". 
 ## 2026-11-21 honesty-audits (bean-drain wave 1, session_01Qmmkt97DGEiUfDvuBj8sVr; issue #8813, PR #8819)
 - Verified: PR #6681 (all 8 item-5 adjudications) is merged (closed 2026-11-15T12:56Z). Spot check on main 2ae54ab40: `gb-residue-spectral-sum.lean` `spectral_sum_finite` is the non-vacuous form (`∃ N, ∀ l ≥ N, residueAtLevel l = 0`, proved from `levelBound`), no `Or.inr` in a proof. Remaining per the 2026-11-15 entry: `sigma-shell-from-beta-chain-derivation`, tied to the σ_shell-under-convention-D question (convention D is current, so that question is on the live basis). Recommend completing this bean once that block is decided (judgement).
 - Superseded-premise check (owner 2026-11-21, against docs/coordination/owner-rulings.md on main 2ae54ab40): one mention: `TrefoilElectronMassConj` (line 232, quoting qou-7yj0's population). Superseded as the primary electron by the 2026-11-21 ruling; treat as the backup route only.
+
+
+## 2026-11-21: DisjointProductLaw proved (PR #8958)
+markovTrace_disjointProduct proves DisjointProductLaw from the restricted IsMarkovTrace axioms via HeckeRel.reduce (Ocneanu's reduction). Sorry-free. The clusters share one strand; the split case needs shift invariance (not formalised). Still open in this bean: the item-5 projection QOU.BraidKnot.markovTraceRecursiveReducer (library) remains the block's lean.ref.
