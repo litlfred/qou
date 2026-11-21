@@ -426,3 +426,30 @@ Expected outcome: no derived vertex energy is produced here. The result is the s
 must supply under each placement (B: 0.41980 MeV at the proton q₀, which equals the m_n − m_p gap by
 construction; C: all of Q_β = 0.78233 MeV), printed after the Lean. Any corpus quantity that lands near
 either figure will be reported as a near-match only, not adopted.
+
+## Addendum 17 (2026-11-21): a vertex energy from the Young-channel split (owner "1")
+
+**Contamination disclosure.** The candidate below and its value at q₀ (about 0.0905 MeV) were
+computed in chat before this addendum was written. The claims are stated now anyway, and the
+verdict is checked against them, not tuned after.
+
+**Candidate.** The quark strand and the lepton strand that meet at the vertex form a pair in H₂(q).
+Split that pair with the Hecke idempotents P_sym = (σ + q⁻¹)/[2], P_anti = (q − σ)/[2]. In the weight
+basis, with the Jimbo Ř (ud ↦ du, du ↦ ud + h·du, h = q − q⁻¹), each basis state has diagonal
+channel entries:
+- ud: (q⁻¹/[2], q/[2]);
+- du: (q/[2], q⁻¹/[2]).
+
+Give each channel its Gibbs weight |eigenvalue| (q for sym, q⁻¹ for anti). The state weights are then
+W(du) = (q² + q⁻²)/[2] and W(ud) = 2/[2]. The vertex takes the pair from du to ud, so the candidate
+vertex energy is ΔE = E₀·ln(W(du)/W(ud)) = E₀·ln((q² + q⁻²)/2).
+
+**Claims, to be Lean-proved over a generic field / ℝ before any number is printed:**
+1. The diagonal entries above, and that each state's two entries sum to 1.
+2. W(du) and W(ud) as stated.
+3. Swapping the tensor order (lepton⊗quark instead of quark⊗lepton) swaps W(du) and W(ud), so the
+   sign of ΔE is a convention (the R2 swap), not derived.
+4. 0 < ΔE < 2E₀ ln q (the cell) for every q > 1.
+
+**Expected verdict.** A scope-(a) negative: the split exists, but its size cannot reach 0.41980 MeV
+(placement B) or 0.78233 MeV (placement C), and its sign is a convention.
