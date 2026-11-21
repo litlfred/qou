@@ -102,6 +102,21 @@ from a corpus artifact).
   m(K)/m_e = Vol·ρ/ℏ_q² diverges, since ℏ_q = 1 − q⁻¹ → 0. Scope (a): the
   sum, not each knot's ρ, was measured. The sentence has no support in the
   corpus; it is the blocker the bean names.
+  - *Convention check (re-derived here, exact).* The limit 3/4 does not
+    depend on convention C vs D: both Markov parameters tend to 1/2 at
+    q = 1 (z_D = q³/(q²+1), z_C = 1/(q^{1/2}+q^{−1/2})), and the q = 1
+    Ocneanu trace on S₃ with z = 1/2 (values 1, 1/2, 1/4 on the identity,
+    transpositions and 3-cycles) has weights y₍₃₎ = 1/2, y₍₂,₁₎ = 1/4,
+    y₍₁₃₎ = 0, so Σ y_λ = 3/4 and Σ y_λ dim λ = 1.
+  - *Superseded basis to flag.* ρ here is the one-term trace (the
+    convention-D quantum trace). The owner's 2026-11-21 ruling puts the
+    two-term Lagrangian trace on the scoreboard. Its second term
+    (c_em·t₂, `docs/audits/2026-11-21-beta-routes-two-term-rerun.md`) has
+    not been evaluated as q → 1, so the bean's "barrier, not door"
+    conclusion is established for the one-term trace only. The proposed
+    edit in §6 item 4 does not depend on it: "vanishing masses" would need
+    the trace to vanish at order (q − 1)², and nothing in the corpus shows
+    that for either trace.
 - `qou-fi93`: every counting object built from q-integers is bar-even
   ([n]_q is invariant under q ↦ q⁻¹), so the bar-odd colour-curve
   asymmetry cannot reach a number density through them. That is a
@@ -178,6 +193,22 @@ What has a mathematical core that does not depend on (1)–(3):
   stated embedding, and g_A⁽⁰⁾ = 5/3 on Sym³ of the 4-dim spin-flavour
   space (representation theory). Whether Bring's surface *produces* the
   embedding is the QOU content, and that step is the unstated one.
+
+## 4a. Superseded-premise check (owner instruction 2026-11-21)
+
+Each of the 23 beans was grepped and read for the premises the owner has
+replaced: L± in the photon, virtual photons, pre-2026-11-15 γγ interface
+letters, T(2,n_s), convention C, the one-term trace, the trefoil as
+primary electron, "c₂ = −1 proved", χ₍₂,₁₎ = 2 − h⁴, fitted α or CODATA
+inside proofs, and project memory as a ruling source.
+
+| bean | superseded premise found | effect |
+|---|---|---|
+| `qou-v1jg` | one-term trace | conclusion holds for the one-term trace only; see §2d |
+| QFT children (7) | virtual quanta; CODATA/PDG pins as targets | see §4; not to be worked on that basis |
+| `qou-b2bb` | names "C-equivariance of γγ production", extracted 2026-10-04, before the current photon | any work must use γ = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹ |
+| `qou-fi93` | none; its L₊ − L₋ = (q − q⁻¹)L₀ is the skein relation on crossings, not the photon, and its z = q³/(q²+1) is z_D | none |
+| the other 13 | none found | none |
 
 ## 5. Corpus-grep record
 
