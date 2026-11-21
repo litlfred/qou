@@ -3,8 +3,9 @@
 title: 'GAP: nabla_q in the Briggs-Klein chart: multiplicative integral over E_i equals int ln_q(1+t)/t dt'
 status: todo
 type: task
+priority: normal
 created_at: 2026-11-21T19:47:08Z
-updated_at: 2026-11-21T19:47:08Z
+updated_at: 2026-11-21T19:56:15Z
 ---
 
 Open input of conj:topological-mass-dilogarithm (folio/quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.md; Lean QOU/LiftingDescent/tm_dilogarithm_evaluation.lean, class TmDivisorChartInputs.chart_eval).
@@ -17,3 +18,13 @@ State (2026-11-21, PR #8932):
 - Checked open PRs #8804, #8143, #8171, #8201, #8774, #8904: none has a connection on E_i.
 
 Next honest step: choose coordinates on E_i ~ P^1 in the Briggs-Klein chart, compute nabla_q's connection 1-form there, and check whether its radial transport has the ln_q series (coefficients 1/[n]_q). If it does not, record the negative and the conjecture's integrand needs a different source.
+
+
+## 2026-11-21 check (thread N2 Lean foundations): cannot be run from the corpus, scope (a)
+
+- The conjecture's integrand is (nabla_A q, L wedge F+), the mass-identity pair, not nabla_q. nabla_q (categorical-q-connection) is abstract; its only theorem is the q=1 case. No component form of either connection on E_i exists in the corpus (main, checked 2026-11-21).
+- The corpus's other evaluation of the same MI over the exceptional divisor is prop:mi-sw-abelianisation: |MI| = |a_D^(n)| = |contour integral of lambda_SW^(n)|, via lem:mi-sw-abelianisation-cartan (A^0 = X dz = lambda_SW). Its Lean is a self-assuming projection (status note qou-slpd/qou-kyst). So the two conjectures together would imply |a_D| = -Li2^q(-z_i); nothing derives that.
+- The only ln_q(1+r) in the Brings chart setting is def:quaternionic-spectral-resolvents, where it is put in by definition with r = -ln|q| (not the chart radius r = |w_1|^2).
+- Choosing a radial 1-form ln_q(1+t)/t dt so the transport matches would be selection against the target. Not done.
+- What would unblock it: an explicit Higgs eigenvalue X(z) on S_c (the spectral curve restricted to the divisor), then compute the period and compare with -Li2^q(-z_i).
+Bean stays open (open conjecture).
