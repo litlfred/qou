@@ -29,6 +29,18 @@ convention-C parameter $z = 4993/10000$ (the rounded $\sqrt{q}/(q+1)$) and gave
 $1.302$ MeV, about $0.64\%$ above the measured value. That figure is not the
 model's value, and a closer residual is not evidence for a convention.
 
+**A second model value.** The corpus has a second, independent route to the
+splitting. The T³ weight split of the $z_D$ trace on the $\gamma\gamma$
+nucleon gives $Q_\beta = \lvert t_{\mathfrak n} - t_{\mathfrak p}\rvert \cdot E_0
+\approx 0.3254$ MeV, where $E_0 = m_e/(q(q-1))$ (tower-summed) is the corpus's
+derived hadronic scale. The decay kinematics
+$m_{\mathfrak n} - m_{\mathfrak p} = Q_\beta + m_e$ then give
+$\Delta m \approx 0.8364$ MeV, about $35.3\%$ below the measured value. That
+route uses $E_0$ in place of $(\mathrm{H}_\alpha)$. It fixes the size, not the
+sign: on its own it does not make the neutron the heavier nucleon. The two
+values come from different constructions, and neither is selected by its
+residual.
+
 That is a claim about this construction, and not an exclusion: nothing here
 shows a quark-ordering volume cannot carry the splitting.
 
