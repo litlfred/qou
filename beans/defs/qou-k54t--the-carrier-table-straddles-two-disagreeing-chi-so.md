@@ -572,3 +572,7 @@ binding-a3plus-full-theta-assembly and binding-a3plus-joint-ji-combiner re-run o
 ## 2026-11-21 owner card + #8722
 
 #8697 merged with a scope note: the A≥3 numbers are on atom_braid_word_3A (Borromean intra order, 2026-09-05) whose bond letters the 2026-11-15 γγ ruling supersedes; the old ³He 4.9 % was the grouped word. Comparison arm on the #7741 candidate (nucleon V³, bond V³, two site arms) in #8722: μ₀ |rel_err| 90.8/95.5/95.7/97.0 % (D/T/³He/⁴He) vs production 19.6/82.1/78.5/93.3 %; arms agree to 1e-4; adopts nothing. Real redo waits on #7876.
+
+## 2026-11-21 γγ closure volumes (PR #8749)
+
+Pre-registered SnapPy + Regina run on 20 γγ closures (nucleon V³/V⁶, free and bonded, arms L/R, A ≤ 4). N3 = L6a4 (7.32772475…, = 8G to 5e-51); N6 = L12a1882 (21.6315987). No atom closure is hyperbolic for A ≥ 2: free = split, bonded = composite (V³: Borromean # P₄ per bond, P₄ = Borromean with one component doubled, JSJ L6a4 + pants×S¹). v₃‖M‖ = A·Vol(B) for V³ (bond adds 0) vs production VOL_K (1, 8₁₁, 1, 2)·Vol(B). Arms identical. Which invariant replaces Vol(K_bind) is an open owner decision; adopts nothing.
