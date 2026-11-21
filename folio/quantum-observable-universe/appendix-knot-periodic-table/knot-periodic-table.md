@@ -5,12 +5,11 @@ The knot formula for an atom with $Z$ protons and $N$ neutrons is
 
 $$
   Z\mathfrak{p}  \oplus  N\mathfrak{n}
-   \oplus  Z \cdot T_{2,3}
+   \oplus  Z \cdot e^-
 $$
 
 where $\mathfrak{p} = [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p \oplus \mathcal{L}_H$ is the
-proton (color-linked quark triple), $\mathfrak{n} = [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p \oplus \mathcal{L}_H$ is the neutron, $T_{2,3}$ is the trefoil
-(electron), and $\oplus$ denotes Hopf linking.
+proton (color-linked quark triple), $\mathfrak{n} = [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p \oplus \mathcal{L}_H$ is the neutron, $e^-$ is the electron, the closure of the word $\sigma_0\sigma_1\sigma_0 \in B_3$ (the Hopf link; the trefoil $T_{2,3}$ is the backup reading), and $\oplus$ denotes Hopf linking.
 Here $Z$ is the atomic number (proton count) and $N$ is the
 neutron count, with $A = Z + N$ the mass number.
 Throughout, fraktur letters name particles ($\mathfrak{p}$ the
@@ -128,13 +127,14 @@ $m_e \approx 0.51100$ MeV.
 | $s$ | $q_0^{1/2} - q_0^{-1/2}$ | $\approx 0.10439$ |
 | $[2]_{q_0}$ | $q_0 + q_0^{-1}$ | $\approx 2.01090$ |
 
-**Knot-particle identification.** Each constituent knot is
+**Knot-particle identification.** The torus-family constituents are
 classified by the fermion--boson decomposition
-([fermions are knots, bosons are links](#prop:fermion-boson-knot-link)):
-proton and neutron quarks are Borromean-linked trefoils
-([Borromean baryon](#def:borromean-baryon)), electrons are trefoil
-fermions ($T_{2,3}$), and nuclear binding comes from Hopf link
-crossings.  The full building-block catalogue with Jones polynomials
+([fermions are knots, bosons are links](#prop:fermion-boson-knot-link)).
+Proton and neutron quarks are Borromean-linked trefoils
+([Borromean baryon](#def:borromean-baryon)), and nuclear binding comes from Hopf link
+crossings. The electron is the word $\sigma_0\sigma_1\sigma_0$, whose closure is the Hopf
+link; that decomposition covers the $T(2,n)$ family only, so it does not decide the
+electron's statistics, which remain open. The trefoil $T_{2,3}$ is the backup electron reading.  The full building-block catalogue with Jones polynomials
 and volumes is in
 ([building-block knots](#rem:building-block-knots)).
 

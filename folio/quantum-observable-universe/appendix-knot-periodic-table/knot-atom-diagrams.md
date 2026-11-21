@@ -3,7 +3,7 @@ Closed sub-links govern shell closure, determining both chemical reactivity and 
 **Visual conventions.**
 
 - **Solid trefoil** (filled): left trefoil $T_{2,3}$ (proton).
-- **Outline trefoil** (unfilled): right trefoil $T_{2,3}^{\sigma}$ (electron).
+- **Outline trefoil** (unfilled): electron. The electron is the word $\sigma_0\sigma_1\sigma_0$, whose closure is the Hopf link; the figure draws its backup reading, the right trefoil $T_{2,3}^{\sigma}$.
 - **Circle**: unknot $K_{0_1}$ (neutron).
 - **Dashed circle**: mirror unknot $T_{1,0}^{\sigma}$ (antineutrino, see [antineutrino knot](#def:antineutrino-knot)).
 - **Interlocked circles**: Hopf link $\mathcal{L}_H$ (the $\oplus$ binding operation).
@@ -15,16 +15,16 @@ Closed sub-links govern shell closure, determining both chemical reactivity and 
 
 | $Z$ | Atom | $N$ | Structure | $k_\alpha$ | Shells |
 |----:|------|----:|-----------|---:|--------|
-| 1 | H | 0 | $[\mathfrak{p}] \oplus T_{2,3}$ | 0 | $1s^1$ |
+| 1 | H | 0 | $[\mathfrak{p}] \oplus e$ | 0 | $1s^1$ |
 | 2 | He | 2 | $[\alpha] \oplus [T_{2,3} \oplus T_{2,3}]^*$ | 1 | $1s^2$ ${}^*$ |
-| 3 | Li | 4 | $[3\mathfrak{p}4\mathfrak{n}] \oplus [T \oplus T]^* \oplus T$ | 1 | $1s^2 + 2s^1$ |
-| 4 | Be | 5 | $[4\mathfrak{p}5\mathfrak{n}] \oplus [T \oplus T]^* \oplus [T \oplus T]^*$ | 2 | $1s^2 + 2s^2$ |
+| 3 | Li | 4 | $[3\mathfrak{p}4\mathfrak{n}] \oplus [e \oplus e]^* \oplus e$ | 1 | $1s^2 + 2s^1$ |
+| 4 | Be | 5 | $[4\mathfrak{p}5\mathfrak{n}] \oplus [T \oplus T]^* \oplus [e \oplus e]^*$ | 2 | $1s^2 + 2s^2$ |
 
-$T = T_{2,3}$ (trefoil). Brackets $[\cdots]^*$ denote a closed sub-Hopf link.
+$e$ is the electron, the closure of $\sigma_0\sigma_1\sigma_0$ (the Hopf link; backup reading the trefoil $T_{2,3}$). Brackets $[\cdots]^*$ denote a closed sub-Hopf link.
 
 **Observations.**
 
-1. **Hydrogen** ($Z = 1$): A single proton $\mathfrak{p}$ links to a single electron $T_{2,3}$. There are no sub-links; the shell is open.
+1. **Hydrogen** ($Z = 1$): A single proton $\mathfrak{p}$ links to a single electron $e$. There are no sub-links; the shell is open.
 2. **Helium** ($Z = 2$): The $\alpha$ particle links to two electrons forming a closed Hopf pair. Both nuclear and electronic sub-links are closed. Helium is doubly stable.
 3. **Lithium** ($Z = 3$): The $1s^2$ sub-link is closed, but the third electron links at a higher level. The $2s$ shell is open, leaving one valence electron.
 4. **Beryllium** ($Z = 4$): Two closed electron pairs ($1s^2$ and $2s^2$) are Hopf-linked. The $2s$ shell is closed, but the $2p$ sub-shell has not started.

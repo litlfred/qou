@@ -16,11 +16,13 @@ export default conjecture({
   ],
   cites: [
     "arxiv-2304.12545v1",
+    "kirillov1995",
     "bloch2000",
     "neumann-zagier1985",
     "suslin1991",
     "zagier1986",
     "kashaev1997",
+    "kegel2024",
   ],
   tags: [
     "bloch-group",

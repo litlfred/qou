@@ -22,12 +22,12 @@ $$
 
 where $a_C = (q - q^{-1}) \cdot \lambda_C$ and $a_A$ is the Pauli coefficient ([beta-stability](#prop:beta-stability)).
 
-A **stable atom** appends $Z$ electrons:
+A **stable atom** appends $Z$ electrons $e^-$ ([electron](#def:electron-knot)):
 
 $$
   \mathcal{A}(Z, N)
   = 
-  \mathcal{N}(Z, N)  \oplus  Z \cdot T_{2,3}.
+  \mathcal{N}(Z, N)  \oplus  Z \cdot e^-,
 $$
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. This block invokes real- and complex-analytic constructs, including real-valued physical observables, real-analytic bounds, transcendental constants, and numerical evaluation at the substrate parameter $q_0$. Any generic categorical or $q$-deformation identities drawn upon remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

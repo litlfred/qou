@@ -51,8 +51,9 @@ ordered-field arithmetic). The prune therefore applies to any real q in that int
 q₀ included.
 
 -- Ref: [riera-rodriguez-1992] The period matrix of Bring's curve, Pacific J. Math.
---       154 (1992) — Thm 1: the stabilizer acts on H₁(Bring, ℤ) by integer
---       symplectic matrices (entries 0, ±1).
+--       154 (1992) — §2 (pp. 179–183): canonical homology basis from the
+--       20-gon and the integral symplectic matrices by which the automorphisms
+--       act on H₁(Bring, ℤ).
 -- Ref: [braden-northover-2012] Bring's Curve: its Period Matrix and the Vector of
 --       Riemann Constants, SIGMA 8 (2012) 065 — §5.2 explicit integer homology
 --       action of the automorphisms.
