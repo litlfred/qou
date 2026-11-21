@@ -12,6 +12,8 @@ $$
 
 *with kernel coefficients $\{a_j\}$ extracted from $R(q_0, \xi)$ via the $(u;u)_m \to u^k$ Habiro change-of-basis.*
 
+The existence of such a recursion is a hypothesis on $F$. For the colored Jones function of a knot, a nonzero linear $q$-difference recursion, with coefficients polynomial in $q^{\pm 1}$ and $q^n$, always exists (it is $q$-holonomic, \cite[Thm.~1]{garoufalidis-le-2005}); that $F$ is of this kind is not established here, and that theorem gives no bound on the depth $d$.
+
 The operator content is $T_\beta = S \cdot \mathbf{1}$, with $S$ pinned by the SDP constraint. The selector direction is $S$-independent and $q$-rational. The scalar $S = \mathfrak{Q}_\beta/E_0$ is not the ladder normalization. Together, these define $F(q) = \mathfrak{Q}_\beta(q)/[Q_A(q) \cdot \cos(\alpha_{\mathrm{eff}}(q))]$ as a single fibre-level Habiro object. Its $q$-difference structure generates the $c_k$.
 
 The sequence $c_2, \ldots, c_8$ collapses to the structural seed $c_2 = -1$ and a kernel $R(q_0, \xi)$ of bounded degree $d$. The recursion generates $c_3, \ldots, c_8$ automatically.
