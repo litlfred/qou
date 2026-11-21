@@ -335,4 +335,101 @@ theorem hexagon_23_13 (hint : ∀ k, 0 < k → k ≤ 2 * m → qint (s ^ 2) k �
 
 end HexagonMain
 
+/-! ### Yang–Baxter and the braid relation -/
+
+section YangBaxter
+
+variable (s : 𝕜) (hs : s ≠ 0) (hq2 : s ^ 2 - (s ^ 2)⁻¹ ≠ 0) (m : ℕ)
+
+local notation "𝔼" => irrepE (s ^ 2) m
+local notation "𝔽" => irrepF (s ^ 2) m
+local notation "𝕂" => irrepKp (s ^ 2) m
+local notation "𝟙" => (1 : Matrix (Fin (m + 1)) (Fin (m + 1)) 𝕜)
+
+/-- `R` preserves `p + r`: its entries vanish unless the total weight is conserved. -/
+theorem rMat_apply_eq_zero (x y : Fin (m + 1) × Fin (m + 1))
+    (h : (x.1 : ℕ) + x.2 ≠ y.1 + y.2) : rMat s hs m m x y = 0 := by
+  unfold rMat
+  rw [rSum_irrep s hs m, cartanTheta, diagonal_mul]
+  simp only [sum_apply, smul_apply, kroneckerMap_apply, smul_eq_mul]
+  rw [Finset.sum_eq_zero, mul_zero]
+  intro n _
+  by_cases h1 : (x.1 : ℕ) + n = y.1
+  · rw [irrepF_pow_apply _ m n x.2 y.2 (by omega), mul_zero, mul_zero]
+  · rw [irrepE_pow_apply _ m n x.1 y.1 h1, zero_mul, mul_zero]
+
+/-- `R₁₂` commutes with `Θ₁₃ Θ₂₃`. -/
+theorem leg12_rMat_comm_theta :
+    leg12 (rMat s hs m m) * theta123 s m = theta123 s m * leg12 (rMat s hs m m) := by
+  ext x y
+  simp only [theta123, mul_diagonal, diagonal_mul, leg12_apply]
+  by_cases hw : (x.1.1 : ℕ) + x.1.2 = y.1.1 + y.1.2
+  · by_cases ht : x.2 = y.2
+    · have hw' : wt m x.1.1 + wt m x.1.2 = wt m y.1.1 + wt m y.1.2 := by
+        have := congrArg (fun k : ℕ => (k : ℤ)) hw
+        push_cast at this
+        unfold wt; omega
+      rw [hw', ht]; ring
+    · simp [ht]
+  · rw [rMat_apply_eq_zero s hs m _ _ hw]; ring
+
+include hq2 in
+/-- `R Δ(E)ⁿ = Δ^{op}(E)ⁿ R`. -/
+theorem rMat_deltaE_pow (hint : ∀ k < rOrder m m, qint (s ^ 2) (k + 1) ≠ 0) (n : ℕ) :
+    rMat s hs m m * (𝔼 ⊗ₖ 𝕂 + 𝟙 ⊗ₖ 𝔼) ^ n = (𝕂 ⊗ₖ 𝔼 + 𝔼 ⊗ₖ 𝟙) ^ n * rMat s hs m m :=
+  SemiconjBy.pow_right (rMat_E s hs hq2 m m hint) n
+
+include hq2 in
+/-- **The quantum Yang–Baxter equation** `R₁₂ R₁₃ R₂₃ = R₂₃ R₁₃ R₁₂` on `V_{m+1}^{⊗3}`, for
+every `m`, assuming `[k]_q ≠ 0` for `1 ≤ k ≤ 2m`. -/
+theorem yangBaxter (hint : ∀ k, 0 < k → k ≤ 2 * m → qint (s ^ 2) k ≠ 0) :
+    leg12 (rMat s hs m m) * leg13 (rMat s hs m m) * leg23 (rMat s hs m m)
+      = leg23 (rMat s hs m m) * leg13 (rMat s hs m m) * leg12 (rMat s hs m m) := by
+  have hint' : ∀ k < rOrder m m, qint (s ^ 2) (k + 1) ≠ 0 := fun k hk =>
+    hint (k + 1) (Nat.succ_pos k) (by unfold rOrder at hk; omega)
+  rw [Matrix.mul_assoc, hexagon_13_23 s hs hq2 m hint, hexagon_23_13 s hs hq2 m hint,
+    ← Matrix.mul_assoc, leg12_rMat_comm_theta, Matrix.mul_assoc, Matrix.mul_assoc]
+  congr 1
+  rw [Finset.mul_sum, Finset.sum_mul]
+  refine Finset.sum_congr rfl fun n _ => ?_
+  rw [mul_smul_comm, smul_mul_assoc]
+  congr 1
+  unfold leg12
+  rw [← mul_kronecker_mul, ← mul_kronecker_mul, rMat_deltaE_pow s hs hq2 m hint' n, one_mul,
+    mul_one]
+
+/-- `Ř ⊗ 1` in terms of `R ⊗ 1`. -/
+theorem leg12_rCheckMat :
+    leg12 (rCheckMat s hs m m) = (leg12 (rMat s hs m m)).submatrix (swap12 _) id := rfl
+
+/-- `1 ⊗ Ř` in terms of `R₂₃`. -/
+theorem leg23_rCheckMat :
+    leg23 (rCheckMat s hs m m) = (leg23 (rMat s hs m m)).submatrix (swap23 _) id := rfl
+
+include hq2 in
+/-- **The braid relation** `Ř₁ Ř₂ Ř₁ = Ř₂ Ř₁ Ř₂` on `V_{m+1}^{⊗3}`, with `Ř₁ = Ř ⊗ 1` and
+`Ř₂ = 1 ⊗ Ř` (`Ř = rCheckMat`), for every `m`, assuming `[k]_q ≠ 0` for `1 ≤ k ≤ 2m`. -/
+theorem rCheck_braid (hint : ∀ k, 0 < k → k ≤ 2 * m → qint (s ^ 2) k ≠ 0) :
+    leg12 (rCheckMat s hs m m) * leg23 (rCheckMat s hs m m) * leg12 (rCheckMat s hs m m)
+      = leg23 (rCheckMat s hs m m) * leg12 (rCheckMat s hs m m) * leg23 (rCheckMat s hs m m) := by
+  have h1 : (leg13 (rMat s hs m m) * leg23 (rMat s hs m m)).submatrix (swap12 _) (swap12 _)
+      = leg23 (rMat s hs m m) * leg13 (rMat s hs m m) := by
+    rw [← submatrix_mul_equiv (leg13 (rMat s hs m m)) (leg23 (rMat s hs m m)) (swap12 _)
+      (swap12 _) (swap12 _)]
+    rfl
+  have h2 : (leg13 (rMat s hs m m) * leg12 (rMat s hs m m)).submatrix (swap23 _) (swap23 _)
+      = leg12 (rMat s hs m m) * leg13 (rMat s hs m m) := by
+    rw [← submatrix_mul_equiv (leg13 (rMat s hs m m)) (leg12 (rMat s hs m m)) (swap23 _)
+      (swap23 _) (swap23 _)]
+    rfl
+  rw [leg12_rCheckMat, leg23_rCheckMat,
+    triple_sub (leg12 (rMat s hs m m)) (leg23 (rMat s hs m m)) (leg12 (rMat s hs m m))
+      (swap12 _) (swap23 _) (swap12 _) (fun _ => rfl) (fun _ => rfl),
+    triple_sub (leg23 (rMat s hs m m)) (leg12 (rMat s hs m m)) (leg23 (rMat s hs m m))
+      (swap23 _) (swap12 _) (swap23 _) (fun _ => rfl) (fun _ => rfl),
+    leg12_conj23, leg23_conj12, h1, h2, yangBaxter s hs hq2 m hint]
+  rfl
+
+end YangBaxter
+
 end QOU.Mass.QuantumSl2
