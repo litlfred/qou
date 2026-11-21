@@ -15,9 +15,7 @@ evaluated at a primitive root of unity, equivalently a Kummer level
 in the Habiro / cyclotomic completion
 ([algebraic quantum volume](#def:algebraic-quantum-volume)).
 The archimedean place $\infty$ — the $\mathbb{R}$ component — is
-the laboratory continuum, accessible only through the
-[classical limit functor](#def:classical-limit-functor) and the
-[archimedean realization functor](#def:archimedean-realization-functor).
+the laboratory continuum.
 
 The motivation for replacing $\mathbb{R}$ by $\mathbb{A}$, and the
 Tate-integral form of the global substrate observables, are developed

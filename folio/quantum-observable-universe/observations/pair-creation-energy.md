@@ -101,7 +101,7 @@ $$
    Flipping all 3 crossings of $T_{2,3}$ to produce $T_{2,3}^{\sigma}$
    while keeping the same knot would require a topological transition
    through the unknot, but the trefoil is
-   [topologically stable](#rem:trefoil-vortex-chirality-flip).  In the
+   topologically stable.  In the
    observable sector ($q$ real, $\theta = 0$), no finite energy can
    accomplish this: the trefoil and its mirror are in different
    connected components of knot space.

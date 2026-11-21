@@ -201,8 +201,7 @@ $$
 $$
 
 This expression is **bar-self-dual** under
-$\iota \colon q \mapsto q^{-1}$ — the substrate-level
-[bar T-duality](#prop:bar-t-duality-substrate) at the trace level.
+$\iota \colon q \mapsto q^{-1}$.
 The duality is automatic from the disjoint-strand-pair
 construction: the two eigenvalues $q^{2k}, q^{-2k}$ of each
 $\sigma_i^{2k}$ are exchanged by $\iota$, and the multiplicities of a

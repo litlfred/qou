@@ -1,4 +1,4 @@
-The [Descartes Reeb-bundle theorem](#thm:ns-singularity-descartes) and the in-QOU obstruction reduction deduce the internal categorical singularity $\mathrm{NS}(A) = e(\xi) \neq 0 \in H^2(\mathcal{S}, \mathbb{Z})$ from the QOU observability axiom $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ (which the framework model correspondence associates with Navier--Stokes blowup). This mandates the question: does this axiom stand independently, or does it merely smuggle in the NS conclusion?
+Does the QOU observability axiom $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ stand independently, or does it merely smuggle in a Navier--Stokes blowup conclusion?
 
 **The axiom carries five structural motivations independent of Navier--Stokes.** A sixth, contact non-integrability, is withdrawn (item 2).
 

@@ -44,5 +44,6 @@ export default definition({
         "audit `docs/audits/2026-10-12-ns-v3-tao-barrier.md`).",
       see: "../../../../docs/audits/2026-10-12-ns-v3-tao-barrier.md",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([Descartes theorem](#thm:ns-singularity-descartes), item 3)" },
   ],
 });

@@ -44,6 +44,7 @@ export default remark({
         "$\\mathrm{NS}(A) = e(\\xi) \\neq 0 \\in H^2(\\mathcal{S}, \\mathbb{Z})$ (`QOU.FluidDynamics.qou_internal_ns_singular`), " +
         "while connecting that internal categorical class to classical 3D PDE blowup is scoped as the framework model correspondence (`def:ns-regular-qou`).",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The [Descartes Reeb-bundle theorem](#thm:ns-singularity-descartes) and the in-QOU obstruction reduction deduce the internal categorical singularity $\\mathrm{NS}(A) = e(\\xi) \\neq 0 \\in H^2(\\mathcal{S}, \\mathbb{Z})$ from the QOU observability axiom $\\mathrm{Hom}(\\mathbf{1}, \\mathrm{Ad}(A)) = 0$ (which the framework model correspondence associates with Navier--Stokes blowup). This mandates the question: does this axiom stand independently, or does it merely smuggle in the NS conclusion?" },
   ],
   tags: [
     "observability",

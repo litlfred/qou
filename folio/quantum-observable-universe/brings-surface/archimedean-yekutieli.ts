@@ -30,5 +30,6 @@ export default example({
       body:
         "Re-scoped 2026-11-15 (owner decision, PR #7747, bean qou-lx8f): the previous text read: \"The non-vanishing obstruction classes $\\kappa_n$ obstruct smooth lifting at every level, creating\"",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ; by [Kummer specialisation](#prop:ns-kummer-specialisation) this is the integer that controls the Kummer obstructions when the base circle bundle is the unit tangent bundle" },
   ],
 });

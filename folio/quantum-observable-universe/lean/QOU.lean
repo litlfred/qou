@@ -667,6 +667,8 @@ import QOU.BraidKnot
 -- that is pre-existing and now visible in the package build rather than
 -- hidden outside it.
 import QOU.BraidKnot.MesonFusionIndexSelection
+import QOU.BraidKnot.ElectronWordCandidates
+import QOU.BraidKnot.LongestWordNotTwoPhoton
 import QOU.BraidKnot.SpechtBaseChange
 import QOU.BraidKnot.SpechtIrreducible
 import QOU.BraidKnot.GBRewriteDifferential
@@ -1812,3 +1814,5 @@ import QOU.Machinery.SpectralSequenceBasicInstances
 import QOU.Machinery.StrongAJFigureEightInstances
 import QOU.MathlibExt.RSZIsoformalInterfaceInstances
 import QOU.MathlibExt.WenzlSchurElementInstances
+import QOU.QBeta.BringRiemannHurwitzRozanskyOhtsukiLoopTripleLinkingHopfSeifertBorelPolesTransseriesPartialConvergenceBridge
+import QOU.QBeta.RationalStateIntegralCuspTorsionBringHomologyGoldenDilogCostinTransseriesBridge

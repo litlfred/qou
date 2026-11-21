@@ -21,6 +21,11 @@ export default conjecture({
         "(GB filtration level, jet order, bar-symmetry status) is retained in " +
         "the block as the `## Structural position` section.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): [CPT-saturation as Type-B fold-orbit closure: deriving $\\rho_F \\in \\{m_e, 2m_e\\}$ from crystal structure](#conj:cpt-orbit-closure-density) describes the **composite** CPT action." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): of [CPT-saturation as Type-B fold-orbit closure: deriving $\\rho_F \\in \\{m_e, 2m_e\\}$ from crystal structure](#conj:cpt-orbit-closure-density)" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): - [CPT-saturation as Type-B fold-orbit closure: deriving $\\rho_F \\in \\{m_e, 2m_e\\}$ from crystal structure](#conj:cpt-orbit-closure-density) becomes a corollary of $\\mathrm{CPT} = C \\cdot P \\cdot T$ once the charge-conjugation, parity and time-reversal components close jointly—the content of [CPT closure: charge conjugation, parity and time reversal jointly preserve the Markov trace](#conj:cpt-d6-d7-d8-closure)." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): - Type-B folding for chirality and CPT ([Type-B Cartan folding realises CPT via symmetric-crystal $\\mathbb{Z}/2$ fixed points](#conj:type-b-folding-cpt)) is the symmetric-crystal analogue of this conjecture. Folding the $\\mathfrak{sl}_n$ Cartan datum to Type B realises C as a symmetric-crystal structure." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): - [CPT-saturation as Type-B fold-orbit closure: deriving $\\rho_F \\in \\{m_e, 2m_e\\}$ from crystal structure](#conj:cpt-orbit-closure-density)—the CPT composite" },
   ],
   label: "conj:c-from-color-flavor-swap",
   title:

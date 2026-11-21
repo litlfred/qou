@@ -7,8 +7,6 @@
 | electromagnetic | Coulomb energy, Hartree scale | provably **no pure channel** (mixed at coupling and observable level) | $E_h = \alpha_{EM}^2\, m_e c^2$ | $\alpha_{EM}^{-1} = q_0\,[9]_q\,[10]_q$ dressed by the Chern–Simons tower |
 | weak | $\mathfrak{Q}_\beta$, bar-skew channel $P_{\mathrm{skew}}^{\beta}$ | odd (sinh channel) | CAL-2 ($P_{\mathrm{skew}}^{\beta}$, proxy $m_\mu/m_e$) | bar-odd channel of the complex volume |
 
-*Processes* are not sectors: a [fusion process](#def:fusion-process) is a strand-balanced rearrangement inside the strong sector, while β-decay moves proton number on the subject side and is thereby routed to the weak sector. The bar-even and bar-odd channels are intertwined by the bar involution itself — the rotation between the two channel recurrences of [the binding–$Q_\beta$ complex volume conjecture](#conj:binding-qbeta-complex-volume) — so the taxonomy's parity column is a statement about where each sector's observable lives, not a wall between algebras.
-
 The taxonomy is a total assignment, and it is proved that weak is the unique bar-odd-assigned sector, that strong is the unique bar-even one, and that the electromagnetic sector is exactly the one carrying no pure-parity assignment — which is itself a theorem, not an omission, as follows.
 
 At the *coupling* level the electromagnetic cell is now derived. The quantum integer $[n]_q$ is bar-even — invariant under $q \mapsto q^{-1}$ — so in the bare coupling $C(q) = q\,[9]_q[10]_q$ only the exponential prefactor moves under the bar involution, giving the exact decomposition

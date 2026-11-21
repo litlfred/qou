@@ -54,8 +54,7 @@ $$
   z \cdot (\Delta M_i)_{11} + (\Delta M_i)_{21}
 $$
 
-The $Q$-value
-([transition energy](#def:Q-value-transition)) in **eigenfunction-basis
+The $Q$-value in **eigenfunction-basis
 (log-ratio) form**:
 
 $$
@@ -75,19 +74,6 @@ parameter (Hecke–Skein normalization), and the $1/z$ factor is
 **not a calibration knob** — it is the normalization required to
 map the eigenfunction observable $\ln V_{\mathrm{pp}}/V_{\mathrm{nn}}$
 onto MeV.
-
-Form B is **not a separate observable** from the NF-counit form
-$\mathfrak{Q}_\beta^{\mathrm{A}} = |\Delta(\mathrm{net})| \cdot E_0$ of
-[prop:neutron-qvalue-symbolic](#prop:neutron-qvalue-symbolic);
-the two are basis-change equivalent at leading order, with the
-explicit bridge identity given in
-[prop:q-beta-spectral-bridge](#prop:q-beta-spectral-bridge):
-
-$$
-  \mathfrak{Q}_\beta^{\mathrm{A}}
-  \;=\;
-  \mathfrak{Q}_\beta^{\mathrm{B}} \cdot \bigl(1 + \tfrac{(z - 1)\,h}{2} + O(h^2)\bigr).
-$$
 
 Form B is the natural basis for $N \geq 1$ brane-tower truncation
 analysis (where it composes additively across generators); Form A

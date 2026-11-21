@@ -11,6 +11,8 @@ export default proposition({
   cites: ["kazhdan-lusztig1979", "mathas1999", "dipper-james1986", "macdonald1995"],
   tags: ["two-filtration", "gb-depth", "a-function", "kazhdan-lusztig", "centre", "goldman-involution"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): , and the values $2$ and $3$ of that conjecture need an additional non-vanishing that item 4 does not give" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): is the provable part of [Two-filtration bridge map in full generality](#conj:two-filtration-bridge-general). It" },
     {
       kind: "status",
       date: "2026-11-16",

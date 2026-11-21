@@ -1,6 +1,4 @@
-[Two-filtration bridge map verified at small partitions ($n \leq 4$)](#prop:two-filtration-bridge-small-cases)
-verified the bridge map $d_{\mathrm{II}}$ at all partitions of $n \leq 4$.
-*This conjecture proposes the extension to **all** partitions of any $n$.
+*This conjecture extends the bridge map $d_{\mathrm{II}}$ to **all** partitions of any $n$.
 It is conditional: it rests on
 [Two-filtration bridge: iterated-integral depth $\leftrightarrow$ partition-cellular GB-depth via $e_\lambda$](#conj:two-filtration-bridge), which defines
 $d_{\mathrm{II}}$, and on an unproved matching of the transposing involution
@@ -52,22 +50,11 @@ cell-to-knot assignment there is chosen, not derived), so it does not
 - For each chiral pair, its depth-3 row is conditional on the CS
  computation per knot.
 
-**Comparison, not a consequence.**
-[General orbit-sum identity: $\sum_k \mathrm{Cl}_3(2\pi k/N) = -(N^2-1)/N^2 \cdot \zeta(3)$ at every $N \geq 2$](#prop:cyclotomic-cl3-orbit-sum-general)
-and
-[Trilogarithm imaginary part at $\zeta_n$: closed form $(n - 1)(n - 2)\pi^3 / (3 n^3)$ for every root of unity](#prop:cyclotomic-trilog-imaginary-closed-form)
-count the depth-3 content over $\mathbb{Q}(\zeta_N)$ for prime $N$ as
-$\lfloor (N - 1)/2 \rfloor - 1$ new real numbers. That these pair with
-chiral-pair cells of some $H_n(q)$ would need the realisation $\Phi$ above;
-it does not follow from this conjecture as stated.
-
 ### Cross-references
 
 - Proved core: [Cell-depth filtration of $Z(H_n(q))$](#prop:cellular-depth-filtration)
 - Bridge conjecture: [Two-filtration bridge: iterated-integral depth $\leftrightarrow$ partition-cellular GB-depth via $e_\lambda$](#conj:two-filtration-bridge)
-- Small-cases verification: [Two-filtration bridge map verified at small partitions ($n \leq 4$)](#prop:two-filtration-bridge-small-cases)
 - Chirality structure: [Chirality structure on Goncharov period classes via the bar involution](#rem:chirality-period-pairing)
-- Joint action discharge: [Joint motivic-Galois $\times$ braid action commutes on every bi-filtration cell — discharged](#prop:joint-galois-braid-discharged)
 - Hecke-Baer-* and bar action on $e_\lambda$:
  [Iwahori--Hecke algebra $H_n(q)$ is a Baer-*-ring at generic $q$](#prop:hecke-baer-star-generic),
  [Explicit central primitive idempotents $e_\lambda$ via Murphy elements](#prop:explicit-central-idempotent)

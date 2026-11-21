@@ -27,4 +27,4 @@ $$
 
 Two inputs are cited rather than proved here: that $C_{\mathrm{Frob}}$ acts on block $\lambda$ by the scalar $c_\lambda d_\lambda$ in item 1, of which only the implied trace identity is established, and the associativity of the six-dimensional matrix model of $H_3$ used to compute in it.
 
-So the identity $\sum_\lambda 1/\dim_q\lambda=2+1/[2]_q$ used in [proton tower residual vs $m_e\sum_\lambda 1/\dim_q\lambda$](#conj:partition-sum-proton-residual) is a formal sum (item 4), and it is not the Markov trace of the Frobenius Casimir (item 3).
+So the identity $\sum_\lambda 1/\dim_q\lambda=2+1/[2]_q$ is a formal sum (item 4), and it is not the Markov trace of the Frobenius Casimir (item 3).

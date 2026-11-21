@@ -12,7 +12,7 @@ $$
 
 **The branch locus is also bar-symmetric, which excludes the natural contour.** $\Delta$'s coefficient list $[16,24,35,50,35,24,16]$ is palindromic, so $z^6\Delta(1/z) = \Delta(z)$ and the locus is invariant under the Hecke bar-involution $z \mapsto 1/z$. Reducing by $w = z + 1/z$ gives $16w^3 + 24w^2 - 13w + 2$, whose discriminant $-80000 < 0$ leaves one real root, located in $(-2,-1)$ by $C(-2) = -4 < 0 < 23 = C(-1)$; and a real $w$ with $|w| < 2$ gives $|z| = 1$ exactly. So the six branch points split $2+4$: two bar-**fixed** points lying *on* the unit circle, and one bar-orbit of four with reciprocal moduli. **The unit circle is therefore not an admissible contour** — it passes through two branch points, and it is the candidate the $\oint_{\mathcal{S}_c}$ notation above suggests.
 
-So the open problem is *upstream* of $E$: which prolongation. The $q$-difference prolongation is untouched by this, as it is by [The classical-jet prolongation of $\lambda_{\mathrm{SW}}$ is exact for $n \ge 1$](#prop:sw-classical-jet-exactness).
+So the open problem is *upstream* of $E$: which prolongation. The $q$-difference prolongation is untouched by this.
 
 Subject to that, once $E$ is fixed the prolonged Seiberg--Witten period $a_D^{(n)} = \oint_{\gamma}\lambda_{\mathrm{SW}}^{(n)}$ functions as an **algebraic residue sum**: it is evaluated by collecting the local residues at the poles in $E$, with no contour integration beyond identifying which poles $\gamma$ encloses.
 
