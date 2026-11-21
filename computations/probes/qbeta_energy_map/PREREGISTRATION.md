@@ -107,3 +107,40 @@ the cell is E(n⊗L) − E(p⊗L) = E(n) − E(p): a nucleon energy difference t
 rest energy. Test: state that in Lean as the spectator corollary, and compare the cell with
 m_n − m_p using the existing all-q bound (cell < 2m_e). The D2 ruling (cell = Q_β) was made for the
 linear cell; if the derivation points elsewhere, that goes to the owner, not changed here.
+
+## Addendum 4 (owner: β-decay as a GB reduction, "unreduced vs reduced"), written before any code
+
+Owner, 2026-11-21: *"beta decay is just a GB calculation, maybe difference of unreduced braid vs
+reduced braid?"*; card "Neither yet: wait for GB reduction"; *"Reevaluate lepton placement."*
+Placement card pending; this addendum works the recommended option C (active lepton strand,
+premise L) and reports B beside it. If the owner picks otherwise, this is re-scoped, not re-run
+silently.
+
+**Object.** H₄(q), convention D. Nucleon core β_Bor = (σ₀σ₁⁻¹)³ on strands 0–2 (same element for
+n and p, #8636). Process word W = X·β_Bor with X = V₁³ = (σ₁σ₂⁻¹)³, the unique minimal word of
+G ∧ CC ∧ R3 in `2026-11-21-beta-pair-creation-word-proposal.md` (a proposal, **not ruled**; stated
+as an input). Reused code: `computations/probes/beta_pair_creation_word/hecke_exact.py`.
+
+**Precedent for the measure.** `E0ReductionWordCount.lean`: E₀/m_e = Hilbert(free words) −
+Hilbert(normal forms) at t = q⁻¹, i.e. the q⁻¹-weighted count of words that need a reduction
+(one generator only).
+
+**Measures, all fixed now, all reported, none selected:**
+- **M1, reduction count.** The number of rewriting steps (σᵢ² → hσᵢ + 1, σᵢ⁻¹ → σᵢ − h, and the
+  braid moves needed to reach the GS normal-form order) taken to bring the unreduced word W to
+  NF(W), for a fixed leftmost-first strategy. Rewriting counts depend on the strategy, so the
+  strategy is stated and a second (rightmost-first) is run to show how large that dependence is.
+- **M2, q⁻¹-weighted defect.** Σ over the expansion of W of q^{−len} for words not in normal form,
+  the H₄ analogue of the E₀ precedent, as an exact function of q. Whether it converges or is
+  finite here is part of the result (the E₀ file shows the infinite two-generator series diverges
+  at q₀; W is a finite word, so its expansion is finite).
+- **M3, CC block in the Gibbs reading.** The n⊗ν → p⊗e⁻ entry of ρ(W) on the T³-conserving
+  sector, and kT·ln of its modulus ratio to the diagonal n⊗ν → n⊗ν entry, with kT = E₀
+  (route T, derived).
+
+**Checks fixed now:** T³ weight of n⊗ν and p⊗e⁻ both 0 (§13 C); M1 equals the length change
+bookkeeping; NF(W) reproduces the 17-term normal form recorded in the pair-creation witness.
+
+**Comparison, last and outside any proof:** each M in MeV (M1, M2 times E₀; M3 as is) against Q_β
+and m_n − m_p. Nothing is selected by it. Contamination: I know the cell 2E₀·ln q and the B bound
+0.3625 MeV; neither is a row here.
