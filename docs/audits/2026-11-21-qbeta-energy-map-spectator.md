@@ -369,3 +369,42 @@ E(ν̄) open).
 (A, forward cheaper than reverse) and the right order of magnitude (0.1–0.65 MeV). Its value
 depends on the β-decay word, which is not ruled. Deriving A, or selecting the word by a principle
 that does not read Q_β, is the open step.
+
+## 16. Reversing the GB ordering (prereg Addendum 7; owner "1 2" and "reverse the GB ordering")
+
+Probe `qbeta_gb_ordering_reversal_probe.py`, 6/6 (the marking never changes the amplitudes at
+t = 1). Witness `qbeta-gb-ordering-reversal.witness.json`. A·E₀ in MeV:
+
+| X | standard | R1 (σ⁻¹ leading) | R2 (d < u) | R1+R2 |
+|---|---|---|---|---|
+| V₁³ | −0.648 | −0.069 | +0.648 | +0.069 |
+| V₀V₁V₀V₁ | −0.099 | +0.147 | +0.099 | −0.147 |
+| V₁V₀V₁V₀ | −0.265 | −0.318 | +0.265 | +0.318 |
+
+Preregistered tests:
+- **R2 is the p ↔ n swap, exactly.** A ↦ −A for every word, as an identity in ℚ(q). Reversing the
+  colour order turns n⊗ν → p⊗e⁻ into the reverse transition and nothing else. So yes, the ordering
+  reversal "goes between p and n", but it only flips the sign. It does not change any magnitude.
+- **R1 changes A**, for every word, in size and in one case in sign (V₀V₁V₀V₁). So A is **not an
+  invariant of the algebra element**. It depends on which normal form the reductions are counted
+  in.
+- **Word-independence (criterion i): fails under all four orderings.** No ordering makes A the
+  same for the three admissible words. Criterion (ii), a shared closed form, also fails: the exact
+  A are distinct rational functions of degree ~30 (witness), vanishing at q = 1 to orders 1, 2, 2.
+
+**What is fixed by the corpus, and what is not.** The corpus's GS basis is the standard one:
+leading term σᵢ² → hσᵢ + 1 (`hecke_exact.py`, `E0ReductionWordCount.lean`) and the Jimbo colour
+order u < d (`jimbo.py`, `ChargedCurrentW`). So the standard column is the corpus-fixed ordering,
+R2 is a relabelling of n and p, and R1 is a different convention the corpus does not use. The word
+is not fixed. The pair-creation proposal's own minimality principle (fewest crossings among
+G ∧ CC ∧ R3, set before any Q_β reading) picks V₁³, but that proposal is not ruled.
+
+**Owner item 2 (closed form).** The exact A are in the witnesses. They are high-degree rational
+functions with no visible structure. A Lean statement of them would be a verified polynomial
+identity, not a derivation, and given the R1 dependence it would certify an ordering artifact.
+Not formalized, and the reason is stated here.
+
+**Status, scope (a).** The ordering reversal is a clean p ↔ n symmetry (sign only). It does not make
+the asymmetry word-independent or ordering-independent. The GB-reduction reading of Q_β, as
+measured by A, therefore rests on two inputs the corpus does not derive: the β-decay word, and the
+choice of normal form for counting (σ leading is the corpus convention, but a convention).
