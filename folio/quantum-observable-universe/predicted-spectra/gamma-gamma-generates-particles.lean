@@ -128,7 +128,7 @@ theorem gamma_gamma_span_top (h : R) :
     have h1 := S.sub_mem (S.sub_mem (S.sub_mem (mem 0 0 1 1 0 0)
       (S.smul_mem (1 - h) E0)) (S.smul_mem (1 - h - h ^ 2) E1)) E4
     rw [pairNFChiral_eq] at h1
-    convert h1 using 1; funext i; fin_cases i <;> simp <;> ring
+    convert h1 using 1; funext i; fin_cases i <;> simp
   rw [eq_top_iff]
   intro v _
   have hv : v = v 0 • (![1, 0, 0, 0, 0, 0] : Fin 6 → R) + v 1 • ![0, 1, 0, 0, 0, 0]
