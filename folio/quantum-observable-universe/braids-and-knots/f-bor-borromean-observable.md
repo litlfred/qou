@@ -1,13 +1,20 @@
-The **Borromean categorical observable** $F_{\mathrm{Bor}}(q) := |\mathrm{tr}_M(\beta_{\mathrm{Bor}}, q)| \cdot [3]_q! / q^3$ is the natural Wedderburn-content-shifted combination:
+The **Borromean categorical observable** is
 $$
   F_{\mathrm{Bor}}(q) \;:=\;
     \frac{\bigl|\mathrm{tr}_M(\beta_{\mathrm{Bor}}, q)\bigr| \cdot [3]_q!}{q^3}.
 $$
-Using the q-Schur Markov-weight identification $y_{(3)}(q) := q^3 / [3]_q!$, this becomes:
+The normaliser $[3]_q!/q^3 = 1 + 2q^{-2} + 2q^{-4} + q^{-6}$ is the Schur element $c_{\mathrm{sign}}$ of the sign character of $H_3(q)$, with $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$. The Schur elements $c_\chi$ are the constants in the decomposition $\tau = \sum_\chi \chi / c_\chi$ of the symmetrising trace $\tau(T_w) = \delta_{w,1}$. They are
 $$
-  F_{\mathrm{Bor}}(q) \;=\; \frac{|\mathrm{tr}_M(\beta_{\mathrm{Bor}}, q)|}{y_{(3)}(q)}.
+  c_{\mathrm{triv}} = q^3\,[3]_q!, \qquad c_{\mathrm{sign}} = [3]_q!/q^3, \qquad c_{\mathrm{refl}} = [3]_q .
 $$
-This expresses $F_{\mathrm{Bor}}$ as the Markov trace of the Borromean braid normalised by the content-shifted Markov weight of the trivial partition $(3)$. 
+So $F_{\mathrm{Bor}}(q) = |\mathrm{tr}_M(\beta_{\mathrm{Bor}}, q)| \cdot c_{\mathrm{sign}}(q)$. The same constant appears in $x_-^2 = c_{\mathrm{sign}}\,x_-$ for the unnormalised $q$-antisymmetriser $x_- = \sum_{w \in S_3} (-q)^{-\ell(w)}\,T_w$.
+
+**Status of the normaliser: asserted, not derived.** Every normaliser $q^k [3]_q!$ equals $|S_3| = 6$ at $q = 1$, so the classical limit does not fix $k$. For $q > 1$, $q^k [3]_q!$ is the Schur element of a linear character only for $k = 3$ (trivial) or $k = -3$ (sign), and it is invariant under $q \mapsto q^{-1}$ only for $k = 0$. The observable uses $k = -3$. Nothing in the Markov axioms selects it:
+
+- The convention-D normalisation of a writhe-zero three-strand closure is $[2]_q^2$, since $z_D \cdot \mathrm{tr}_M(\sigma^{-1}) = [2]_q^{-2}$.
+- The word $V^3 = (\sigma_0 \sigma_1^{-1})^3$ has writhe zero and is a pure braid, so every framing correction is $1$.
+
+Convention D also gives the sign block weight $y_{(1^3)} = 0$, while this normaliser is that block's Schur element. That tension is open. The earlier reading of $q^3/[3]_q!$ as the Markov weight $y_{(3)}$ of the trivial partition does not hold under convention D, where $y_{(3)} = (q^4+1)/(q^2+1)^2$. In the variable $q^{-1}$ the trivial and sign characters swap, which is the only sense in which that reading survives.
 
 Every coefficient of $F_{\mathrm{Bor}}$ in the variable $h = q - q^{-1}$ is an exact rational number:
 $$
