@@ -397,10 +397,26 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "minor",
         "evidence": "(S↔P column of prop:pairwise-interaction-decomposition row) Lean is genuine: hexagon (`braiding_tensor_left_hom`), `yang_baxter`, and an original proof of the C(n,2) inversion bound. All three match. In the proof, part 2's sketch \"apply part 1 to c_{X,Y⊗Z}\" misstates the derivation: part 1 is for c_{X⊗Y,Z}, and YBE comes from naturality of c_{–,Z} in c_{X,Y} plus part 1 twice"
+      },
+      {
+        "field_hash": {
+          "md": "fc7382a44528",
+          "ts": "37ce212c26d6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:43:54.323Z",
+        "reviewed_sha": "845e2f8200142fec69a10571d6695218dce8525e",
+        "severity": "minor",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: 'Status' was renamed 'Logical dependencies' and the '## Lean structure' section was cut; part 2 still says 'apply part 1 to c_{X,Y(x)Z}', which is the misstatement the warn names. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: (S↔P column of prop:pairwise-interaction-decomposition row) Lean is genuine: hexagon (`braiding_tensor_left_hom`), `yang_baxter`, and an original proof of the C(n,2) inversion bound. All three match. In the proof, part 2's sketch \"apply part 1 to c_{X,Y⊗Z}\" misstates the derivation: part 1 is for c_{X⊗Y,Z}, and YBE comes from naturality of c_{–,Z} in c_{X,Y} plus part 1 twice"
       }
     ]
   },
-  "updated_at": "2026-11-15T21:56:04.786Z",
+  "updated_at": "2026-11-21T07:43:54.323Z",
   "paths": {
     "ts": "folio/quantum-observable-universe/knots-particles-confinement/pairwise-interaction-decomposition-proof.ts",
     "md": "folio/quantum-observable-universe/knots-particles-confinement/pairwise-interaction-decomposition-proof.md"

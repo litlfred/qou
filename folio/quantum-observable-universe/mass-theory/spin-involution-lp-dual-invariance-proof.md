@@ -46,18 +46,24 @@ n_{\mathrm{target}}(\beta)$ transforms under $x \mapsto
 $$
   \tau(\beta^* \beta \cdot \sigma(x))
   = \tau\bigl(\sigma(\sigma(\beta^*\beta) \cdot x)\bigr)
-  = \tau(\sigma(\beta)^* \sigma(\beta) \cdot x),
+  = \tau\bigl(\sigma(\beta^*\beta) \cdot x\bigr)
+  = \tau\bigl(\sigma(\beta)\,\sigma(\beta)^* \cdot x\bigr),
 $$
 
-using $\sigma(\beta^*\beta) = \sigma(\beta)^* \sigma(\beta)$
-(anti-multiplicativity preserves the involutive form $a^*a$
-when $\sigma$ is a $*$-involution; for the Hecke / Markov case
-this is the bar involution). Hence $\sigma$ is a bijection
-between the feasible sets of $\mathrm{LP}(\beta)$ and
-$\mathrm{LP}(\sigma(\beta))$, preserving the objective.
+where the first equality uses anti-multiplicativity and $\sigma^2 = \mathrm{id}$,
+the second uses $\tau \circ \sigma = \tau$, and the third uses
+$\sigma(\beta^*\beta) = \sigma(\beta)\,\sigma(\beta^*) = \sigma(\beta)\,\sigma(\beta)^*$
+(anti-multiplicativity, and $\sigma$ commuting with $*$). Put
+$\beta' = \sigma(\beta)^*$; then $\beta'^*\beta' = \sigma(\beta)\,\sigma(\beta)^*$,
+so the transformed constraint is the net constraint of $\mathrm{LP}(\beta')$.
+By the hypothesis $n_{\mathrm{target}}(\beta') = n_{\mathrm{target}}(\beta)$,
+$\sigma$ is a bijection between the feasible sets of $\mathrm{LP}(\beta)$ and
+$\mathrm{LP}(\beta')$, preserving the objective. In general
+$\sigma(\beta)\,\sigma(\beta)^* \neq \sigma(\beta)^*\sigma(\beta)$, so this does not
+relate $\mathrm{LP}(\beta)$ to $\mathrm{LP}(\sigma(\beta))$.
 
 **Step 5 — LP-duality.**
-By Steps 2–4, $\mathrm{LP}(\beta)$ and $\mathrm{LP}(\sigma(\beta))$
+By Steps 2–4, $\mathrm{LP}(\beta)$ and $\mathrm{LP}(\sigma(\beta)^*)$
 have feasible sets in $\sigma$-bijection and the same
 $\sigma$-invariant cost; their primal optima coincide. By
 strong duality (which holds for Frobenius algebras structurally
@@ -65,7 +71,7 @@ strong duality (which holds for Frobenius algebras structurally
 the dual optima coincide. In particular,
 
 $$
-  y_0^*\bigl(\sigma(\beta)\bigr) = y_0^*(\beta). \qquad\square
+  y_0^*\bigl(\sigma(\beta)^*\bigr) = y_0^*(\beta). \qquad\square
 $$
 
 **Corollary (QOU instance — isospin invariance; NOT established).**

@@ -18,8 +18,24 @@
         "severity": "minor",
         "evidence": "Computations sit in sorry-free Lean (`BeltramiSteadyEuler`). Warn: the proof states honestly that descent to Γ\\PSL₂(ℝ) and the operator identifications are not formalised",
         "notes": "Hand review 2026-11-15 (statement vs narrative proof); issue #8020. "
+      },
+      {
+        "field_hash": {
+          "md": "c470d18ad2a8",
+          "ts": "084b7d963a2d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:55:06.361Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "minor",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: the list of Lean declaration names was replaced by a plain description of the same checked computations. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Computations sit in sorry-free Lean (`BeltramiSteadyEuler`). Warn: the proof states honestly that descent to Γ\\PSL₂(ℝ) and the operator identifications are not formalised"
       }
     ]
   },
-  "updated_at": "2026-11-15T21:55:10.764Z"
+  "updated_at": "2026-11-21T07:55:06.361Z"
 }

@@ -47,7 +47,7 @@ import { proposition } from "../../schema/builders";
  *
  *   is invariant under σ:
  *
- *     y_0*(σ(β)) = y_0*(β).
+ *     y_0*(σ(β)*) = y_0*(β),   given n_target(σ(β)*) = n_target(β).
  *
  *   In particular, β and σ(β) (and any pair Markov-conjugate
  *   to σ(β)) produce the same shadow price.
@@ -71,7 +71,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:spin-involution-lp-dual-invariance",
   title:
-    "Spin involutions on Frobenius algebras leave the LP-dual shadow price invariant: $\\sigma(c) = c \\Rightarrow y_0^*(\\sigma(\\beta)) = y_0^*(\\beta)$",
+    "Spin involutions on Frobenius algebras leave the LP-dual shadow price invariant: $\\sigma(c) = c \\Rightarrow y_0^*(\\sigma(\\beta)^*) = y_0^*(\\beta)$",
   lean: {
     ref: "qou:QOU.BraidKnot.SpinInvolutionLPDualInvariance",
     validation: "not_checked",
@@ -89,6 +89,11 @@ export default proposition({
     "generic-framework",
   ],
   authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-11-21",
+      body: "Conclusion corrected on owner ruling: the LP is related to the LP for $\\sigma(\\beta)^*$, not $\\sigma(\\beta)$, because anti-multiplicativity gives $\\sigma(\\beta^*\\beta) = \\sigma(\\beta)\\sigma(\\beta)^*$. The hypotheses that $\\sigma$ commutes with $*$ and that $n_{\\mathrm{target}}$ agrees on $\\beta$ and $\\sigma(\\beta)^*$ are now stated. The Lean sibling proves Steps 1 and 3 only.",
+    },
     {
       kind: "caveat",
       date: "2026-11-16",

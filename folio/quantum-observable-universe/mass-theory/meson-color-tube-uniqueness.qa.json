@@ -1289,6 +1289,23 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "S↔L: ref is sibling-only. The conclusion is the class field `factors : ∀ q : R, mK2_over_mpi2 q = qChar q m * qChar q n` (lean:85), instantiated at m=3, n=4 (lean:129) and returned by `exact hF.factors q` (lean:134). This is a self-assuming carrier: the factorisation the md asserts (md:1-4) is the hypothesis. The second class `MesonForceCarrierPair` just restates `alphaShift 2 3 = 3 ∧ alphaShift 2 4 = 4` (lean:105), arithmetic facts with no bearing on why T(2,3), T(2,4) are selected. \"Factors uniquely\" (md:1) is unproved. `meson_ratio_subsingleton` (lean:139-148) only shows that two functions satisfying the same equation agree; it gives no uniqueness of the index pair. `qChar` is arbitrary (lean:72), so [n]_q is never tied to the q-integer. Empirical provenance in ts:17 (\"established empirically in #1396 to 203 ppm\") and lean:4-7 (\"closed the GMOR squared-ratio fusion … to 203 ppm at q₀\"): the identity is a data fit taken as an axiom. No proof block.",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
+      },
+      {
+        "field_hash": {
+          "md": "58fbbcb6d802",
+          "ts": "fc2628e1c52d",
+          "lean": "97671d31c3ad",
+          "lean_statement": "11a3b5f5403f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:16:38.795Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: the 'indices are forced' sentence and the Lean-structure bullet list moved to authorNotes; the md now says in prose that the factorisation is taken as a hypothesis, which states the earlier self-assuming finding rather than fixing it; 'factors uniquely' is still unproved and the Lean is unchanged. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: S↔L: ref is sibling-only. The conclusion is the class field `factors : ∀ q : R, mK2_over_mpi2 q = qChar q m * qChar q n` (lean:85), instantiated at m=3, n=4 (lean:129) and returned by `exact hF.factors q` (lean:134). This is a self-assuming carrier: the factorisation the md asserts (md:1-4) is the hypothesis. The second class `MesonForceCarrierPair` just restates `alphaShift 2 3 = 3 ∧ alphaShift 2 4 = 4` (lean:105), arithmetic facts with no bearing on why T(2,3), T(2,4) are selected. \"Factors uniquely\" (md:1) is unproved. `meson_ratio_subsingleton` (lean:139-148) only shows that two functions satisfying the same equation agree; it gives no uniqueness of the index pair. `qChar` is arbitrary (lean:72), so [n]_q is never tied to the q-integer. Empirical provenance in ts:17 (\"established empirically in #1396 to 203 ppm\") and lean:4-7 (\"closed the GMOR squared-ratio fusion … to 203 ppm at q₀\"): the identity is a data fit taken as an axiom. No proof block."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2800,6 +2817,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:27.486Z",
+  "updated_at": "2026-11-21T08:16:38.795Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

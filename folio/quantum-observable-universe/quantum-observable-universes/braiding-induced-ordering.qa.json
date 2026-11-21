@@ -97,6 +97,23 @@
         "severity": "major",
         "evidence": "The ref is a `def … : Prop` that is never asserted. The proof shows that deg-lex is a well-order, which is fine, but it never uses c, so \"canonical\" and \"supplied by the braiding\" are unproved. The \"arrow of time\" and CPT claims are physical and untouched.",
         "notes": "Hand review 2026-11-15 (statement vs Lean); issue #8020. "
+      },
+      {
+        "field_hash": {
+          "md": "28b34e652329",
+          "ts": "f954005b69bd",
+          "lean": "58d36b823784",
+          "lean_statement": "e76216b9f04f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:07:44.799Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[full review 2026-11-21; statement rescoped and Lean rewritten] The statement is now: degree-lex on the free monoid W_n is well-founded and compatible with concatenation. The braiding only fixes which letters are positive crossings, the letter order is a choice, so the order is not canonical, and c^2 != id is not used on words. lean.ref QOU.braiding_induced_ordering_holds proves exactly this: WellFounded (DegLex) for every Fin n alphabet (degLex_wellOrdered, via a base-n encoding, replacing an earlier false appeal to well-foundedness of List.Lex) and DegLex w w' -> DegLex (u++w++v) (u++w'++v). No braiding hypothesis appears, which matches the md. Small difference: the Lean alphabet is Fin n, not n-1 letters, but the claim holds for every finite alphabet."
       }
     ],
     "proof-statement-integrity": [
@@ -2339,6 +2356,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:55:13.644Z",
+  "updated_at": "2026-11-21T08:07:44.799Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

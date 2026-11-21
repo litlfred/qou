@@ -1263,6 +1263,24 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "minor",
         "evidence": "Lean is a faithful generic identity `(w.map (fun _ => q)).prod = q ^ w.length` over any CommMonoid, plus `q^3 = q^2·q`. It does not encode that σᵢ ↦ q is a representation of H_N (quadratic relation), nor the modelling identification \"lone pair = σ₀σ₁σ₀\". Lean docstring carries data comparison (CH₄/NH₃/H₂O angles \"within 0.22°\", `symmetric-block-domain-weight.lean:15-17`); not in a proof, but it sits in a Lean docstring"
+      },
+      {
+        "field_hash": {
+          "md": "6e6a43308799",
+          "ts": "52747af35f08",
+          "lean": "526e201109e2",
+          "lean_statement": "0600d1b312c0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:56:38.751Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "minor",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: voice, and Lean names removed. The lone pair is written e- = sigma0 sigma1 sigma0, which agrees with the 2026-11-21 electron ruling. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Lean is a faithful generic identity `(w.map (fun _ => q)).prod = q ^ w.length` over any CommMonoid, plus `q^3 = q^2·q`. It does not encode that σᵢ ↦ q is a representation of H_N (quadratic relation), nor the modelling identification \"lone pair = σ₀σ₁σ₀\". Lean docstring carries data comparison (CH₄/NH₃/H₂O angles \"within 0.22°\", `symmetric-block-domain-weight.lean:15-17`); not in a proof, but it sits in a Lean docstring"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2491,6 +2509,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:56:02.408Z",
+  "updated_at": "2026-11-21T07:56:38.751Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
