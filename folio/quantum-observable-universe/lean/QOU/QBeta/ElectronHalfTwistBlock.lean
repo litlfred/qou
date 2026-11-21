@@ -97,4 +97,33 @@ theorem markov_halfTwist_zD (q : R) (hq : q ≠ 0) (hq2 : q ^ 2 + 1 ≠ 0) :
   field_simp
   ring
 
+/-! ### The lepton factor under the ruled quantum trace (D1)
+
+D1 (owner, 2026-11-20): ε_X = Tr(K^{⊗n} X)/[2]ⁿ restricted to a weight sector, with
+`K = diag(q, q⁻¹)`. For a disjoint product (nucleon ⊗ electron) the trace on a product
+sector factors, so each electron weight sector `b` (b = number of `d`-type strands among the
+three electron strands, `K^{⊗3} = q^{3−2b}` there) contributes the factor
+`q^{3−2b} · tr_{L_b}(Δ) / [2]³`. -/
+
+/-- Every electron weight sector carries trace `q³`: it is one copy of the `V_(3)` line
+(where Δ = q³) plus, for `b = 1, 2`, one copy of the traceless `V_(2,1)` block. -/
+theorem sector_trace_halfTwist {h : R} (B : HeckeBlock2 h) (q : R) (copies : ℕ) :
+    q ^ 3 + (copies : R) * (halfTwist B).trace = q ^ 3 := by
+  rw [trace_halfTwist B]
+  ring
+
+/-- Summing the four electron sectors gives the Markov value of Δ at convention D:
+`Σ_b q^{3−2b} q³ / [2]³ = q³ (q⁴+1)/(q²+1)²`. So the full quantum trace of the electron is
+the convention-D Markov value, and a single sector `b` gives `q^{6−2b}/[2]³`. -/
+theorem sector_sum_eq_markov_zD (q : R) (hq : q ≠ 0) (hq2 : q ^ 2 + 1 ≠ 0) :
+    (q ^ 3 + q + q⁻¹ + q⁻¹ ^ 3) * q ^ 3 / (q + q⁻¹) ^ 3
+      = q ^ 3 * (q ^ 4 + 1) / (q ^ 2 + 1) ^ 2 := by
+  have h2 : q + q⁻¹ ≠ 0 := by
+    intro h0
+    apply hq2
+    have : q * (q + q⁻¹) = q ^ 2 + 1 := by field_simp
+    rw [← this, h0, mul_zero]
+  field_simp
+  ring
+
 end QOU.QBeta.ElectronHalfTwistBlock
