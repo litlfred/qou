@@ -716,3 +716,42 @@ graded by weight alone is already counted above. That is the derivation still op
 **Correction to §24.** `trace_plus_eq_minus` there is a special case of the corpus theorem
 `QOU.BraidsAndKnots.NucleonWeightSpaceTraces.trace_word_eq` (equal weight-space traces for every
 word), which §1 already cites. §24 should have cited it instead of presenting the equality as new.
+
+## 28. A vertex energy from the Young-channel split (prereg Addendum 17; owner "1")
+
+**Result: a scope-(a) negative.** The Young-channel split of the quark–lepton pair gives a real,
+derived energy difference, but it is about one ninth of the cell, under a quarter of what
+placement B needs, and its sign is a convention.
+
+**Setup.** On the weight-zero space of V⊗V, basis (ud, du), the Jimbo Ř acts as `!![0,1;1,h]`,
+h = q − q⁻¹. Each basis state is split by the Hecke idempotents P_sym = (Ř + q⁻¹)/[2] and
+P_anti = (q − Ř)/[2], and each channel is weighted by |eigenvalue| (q, q⁻¹).
+
+**Proved** (`QOU/QBeta/YoungChannelVertex.lean`, lean-direct exit 0, no warnings, 12/12
+declarations on the standard axioms only, no sorry):
+- `rCheck_hecke`: Ř² = hŘ + 1. `pSym_add_pAnti`: P_sym + P_anti = 1.
+- `diag_ud`, `diag_du`: diagonals (q⁻¹/[2], q/[2]) on ud and (q/[2], q⁻¹/[2]) on du.
+- `weight_ud`: W(ud) = 2/[2]. `weight_du`: W(du) = (q² + q⁻²)/[2]. W(du) is the §19 factor.
+- `vertexEnergy_swap`: swapping the tensor order negates the energy. **The sign is a convention**
+  (the R2 swap), not derived.
+- `vertex_lt_cell` (q > 1, E₀ > 0): 0 < ΔE = E₀·ln((q² + q⁻²)/2) < 2E₀ ln q, and
+  ΔE ≤ E₀(q − q⁻¹)²/2.
+
+**Numbers at the proton q₀** (mpmath, 40 dps; printed after the Lean, as preregistered):
+
+| quantity | MeV |
+|---|---|
+| E₀ | 4.185981 |
+| ΔE (Young split) | 0.090491 |
+| bound E₀(q − q⁻¹)²/2 | 0.091477 |
+| cell 2E₀ ln q | 0.873537 |
+| needed, placement B | 0.41979 (4.64 × ΔE) |
+| needed, placement C | 0.78233 (8.65 × ΔE) |
+
+ΔE/cell = 0.1036.
+
+**Verdict.** Every claim of Addendum 17 holds as stated, so the expected verdict stands. This
+construction, alone, does not supply the vertex energy. Its order is O(h²) while the cell is O(h),
+so no rescaling within this family closes the gap without a free factor, which would be a fit.
+What it does not exclude: a vertex term built from more than the one strand pair (for instance all
+three quark strands together with the lepton, in H₄), which is not tested here.
