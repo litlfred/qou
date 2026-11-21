@@ -188,7 +188,9 @@ noncomputable def muon_mass_topological : ℝ :=
 CODATA constant (or, for the deuteron, the mass-deficit identity with the
 experimental binding energy). The lemmas that compared these values with
 CODATA held by construction and were removed (owner decision, PR #8897),
-together with their bundle `terminal_resolution_hadronic_mass`. The content
+together with their bundle `terminal_resolution_hadronic_mass`, the splitting
+`proton_neutron_mass_difference` and `row3_deuteron_value` (follow-up PR).
+The content
 block `prop:terminal-resolution` now states the pair Skein nucleon identities,
 proved in `QOU.MassTheory.PairSkeinNucleon` (content sibling
 `mass-theory/terminal-resolution.lean`). Under that map any `(m_p, m_n)` is
@@ -239,16 +241,6 @@ noncomputable def neutron_quarks : QuarkFlavorFactor where
     Ref: Manuscript Table "Terminal Resolution of Hadronic Mass", Row 2. -/
 noncomputable def neutron_topological : ℝ := neutron_quarks.value
 
-/-- The proton-neutron mass difference is 1.29333251 MeV, arising from
-    the u ↔ d flavor exchange in the Skein functional.
-    NIST CODATA 2022 value: 1.293 332 51(56) MeV. -/
-theorem proton_neutron_mass_difference :
-    neutron_topological - proton_topological = 1.29333251 := by
-  unfold neutron_topological proton_topological
-  unfold neutron_quarks proton_quarks
-  unfold neutron_mass_MeV proton_mass_MeV
-  norm_num
-
 /-! ### Row 3: Deuteron (m_D) — 𝓜(L₆) − Binding -/
 
 /-- **Row 3 — Deuteron**: The deuteron mass is the sum of proton and
@@ -276,13 +268,6 @@ theorem row3_deuteron_formula :
   unfold deuteron_topological proton_topological neutron_topological
   unfold proton_quarks neutron_quarks
   rfl
-
-theorem row3_deuteron_value :
-    deuteron_topological = 1875.61351137 := by  -- noqa: P31 - COMPUTED topological value, not CODATA (302 ppb off, deliberately)
-  unfold deuteron_topological proton_topological neutron_topological
-  unfold proton_quarks neutron_quarks
-  unfold proton_mass_MeV neutron_mass_MeV binding_energy_QOU
-  norm_num
 
 /-! ### Row 4: Binding Energy — Δ Skein Polynomial -/
 
@@ -580,7 +565,6 @@ noncomputable def borromean_mass_ratio : ℝ :=
 
 ### Cross-checks proved:
 - `mass_sum_rule`: m_D + ΔE = m_p + m_n  ✓
-- `proton_neutron_mass_difference`: m_n − m_p = 1.29333251 MeV  ✓
 - `pair_skein_mass_splitting`: m_n − m_p = S_dd − S_uu  ✓
 - `dressed_quark_mass_difference`: μ_d − μ_u = 1.29 MeV  ✓
 - `nucleon_mass_ratio_approx`: m_n/m_p ≈ 1.0013784  ✓
