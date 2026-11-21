@@ -419,6 +419,20 @@ theorem minusBranch_classical (a : K) (h2 : (2 : K) ≠ 0)
   have : (2 : K) * a = 0 := by linear_combination -h
   exact (mul_eq_zero.mp this).resolve_left h2
 
+/-- **Orientation caveat (PR #8904, audit §20).** `protonMassD` and
+`neutronMassD` put `u` before `d` in every mixed pair, so they are not
+invariant under relabelling the three strands. The symmetrised pair mass
+`(𝒮_ab + 𝒮_ba)/2 = (q − z)(q² + q⁻²)(μ_a + μ_b)/2` gives the same splitting
+coefficient, so part (i) does not depend on that choice. -/
+theorem neutron_sub_proton_symmetrised (q z u d : K) (h2 : (2 : K) ≠ 0) :
+    let S : K → K → K := fun a b => (pairSkeinD q z a b + pairSkeinD q z b a) / 2
+    (2 * S u d + S d d) - (S u u + 2 * S u d)
+      = (q - z) * (q ^ 2 + (q ^ 2)⁻¹) * (d - u) := by
+  intro S
+  simp only [S, pairSkeinD]
+  field_simp
+  ring
+
 /-- **Statement of `prop:terminal-resolution` in convention D.** Over a field
 with `3 ≠ 0`, for `q ≠ 0` with `q² + q⁻² ≠ 0` and `z·(q² + 1) = q³`:
 the splitting identity holds, and the nucleon map is a bijection. The
