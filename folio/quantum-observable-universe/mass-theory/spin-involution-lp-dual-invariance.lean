@@ -190,7 +190,8 @@ theorem net_constraint_transform {F : FrobeniusSelfDualityForcesLPDualExtraction
     rw [S.anti_multiplicative, S.star_compatible]
   calc F.τ (S.star b * b * S.sigma x)
       = F.τ (S.sigma (S.sigma (S.star b * b)) * S.sigma x) := by rw [S.involutive]
-    _ = F.τ (S.sigma (x * S.sigma (S.star b * b))) := by rw [S.anti_multiplicative]
+    _ = F.τ (S.sigma (x * S.sigma (S.star b * b))) := by
+        rw [S.anti_multiplicative x (S.sigma (S.star b * b))]
     _ = F.τ (x * S.sigma (S.star b * b)) := S.trace_invariant _
     _ = F.τ (S.sigma (S.star b * b) * x) := F.tau_cyclic _ _
     _ = F.τ (S.star (S.star (S.sigma b)) * S.star (S.sigma b) * x) := by

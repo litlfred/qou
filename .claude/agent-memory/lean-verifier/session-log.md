@@ -420,3 +420,15 @@ lean-direct of two Mathlib-only files: 3.7 s / 1.6 s; autoImplicit control re-co
 - BASELINE: toolchain already at ~/.elan/toolchains/leanprover--lean4---v4.24.0 (no ~/.elan/bin); release.lean-lang.org 403, GitHub zip 200 (730 MB, 24 s) — not needed.
 - BASELINE: streamed restore of cat/folio-assistant-sci/lake-cache/qou-v4-24-0 @ a792c46d01b: fetch 1m36s, root .lake 3758 / per-paper 2703 oleans; disk 16G -> 8.8G free.
 - STABLE: cone rebuild into a `cp -al` shadow of the per-paper lib dir (7 modules, HeckeAlgebra 64 s, rest ≤6 s), LEAN_PATH = shadow + root .lake/packages/*; works with no union mirror.
+
+## 2026-11-21 — fresh container with NO `~/.elan` at all (BASELINE + TRAP)
+
+- BASELINE: toolchain from `cat/folio-assistant-sci/lake-cache/toolchain-v4-24-0`, fetched into a
+  throwaway repo and streamed into `/tmp/lean-tc-stage`: fetch 37 s. Olean seed `a792c46d01b`
+  streamed with `--transform 's,^content/,folio/,'`: fetch 1m32s, disk 15G→22G used. Re-measure.
+- `scripts/lean-direct-env.sh` needs `$HOME/.elan/toolchains/leanprover--lean4---v4.24.0`; a symlink
+  to the staged dir is enough (no elan binary needed).
+- TRAP (again): the seed's trace for `QOU/BraidKnot/FrobeniusSelfDualityForcesLPDualExtraction`
+  held source hash `11653228326155494116`, current source `15718497695842365695` — stale. A
+  dependent content block compiled against it would be certified against old source. Rebuilt it
+  lean-direct into a scratch shadow prepended to `LEAN_PATH` (2.9 s; its imports are Mathlib-only).
