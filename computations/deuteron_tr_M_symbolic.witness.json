@@ -16,63 +16,63 @@
   "r_coord_note": "r = q^(1/2), the Wenzl Markov-parameter convention",
   "pole_order_at_q0_in_r": 36,
   "leading_coefficient_in_r": "1/16",
-  "value_at_q0": 0.2990150171846401,
+  "value_at_q0": "0.299015017184640076702160426771",
   "per_partition": {
     "(1, 1, 1, 1, 1, 1)": {
       "f_lambda": 1,
-      "chi_at_q0": 0.6732568963702136,
-      "compute_seconds": 0.035,
+      "chi_at_q0": "0.673256896370213551453563700939",
+      "compute_seconds": 0.05,
       "derived_from_conjugate": false,
       "source": "computed"
     },
     "(6,)": {
       "f_lambda": 1,
-      "chi_at_q0": 1.5513064682004776,
-      "compute_seconds": 0.003,
+      "chi_at_q0": "1.55130646820047757334000417156",
+      "compute_seconds": 0.004,
       "derived_from_conjugate": true,
       "conjugate_source": "(1, 1, 1, 1, 1, 1)",
       "source": "derived q\u2192q\u207b\u00b9"
     },
     "(2, 1, 1, 1, 1)": {
       "f_lambda": 5,
-      "chi_at_q0": 1.2037696005761163,
-      "compute_seconds": 3.55,
+      "chi_at_q0": "1.20376960057611619902091919085",
+      "compute_seconds": 4.153,
       "derived_from_conjugate": false,
       "source": "computed"
     },
     "(5, 1)": {
       "f_lambda": 5,
-      "chi_at_q0": 0.7222231954766334,
-      "compute_seconds": 0.008,
+      "chi_at_q0": "0.722223195476633432513478936779",
+      "compute_seconds": 0.01,
       "derived_from_conjugate": true,
       "conjugate_source": "(2, 1, 1, 1, 1)",
       "source": "derived q\u2192q\u207b\u00b9"
     },
     "(2, 2, 2)": {
       "f_lambda": 5,
-      "chi_at_q0": 0.7776253679191266,
-      "compute_seconds": 3.557,
+      "chi_at_q0": "0.777625367919126600230106589658",
+      "compute_seconds": 3.623,
       "derived_from_conjugate": false,
       "source": "computed"
     },
     "(3, 3)": {
       "f_lambda": 5,
-      "chi_at_q0": 1.6556749397493906,
-      "compute_seconds": 0.015,
+      "chi_at_q0": "1.65567493974939062211654706028",
+      "compute_seconds": 0.018,
       "derived_from_conjugate": true,
       "conjugate_source": "(2, 2, 2)",
       "source": "derived q\u2192q\u207b\u00b9"
     },
     "(2, 2, 1, 1)": {
       "f_lambda": 9,
-      "chi_at_q0": 1.3081380721250293,
-      "compute_seconds": 12.857,
+      "chi_at_q0": "1.30813807212502924779746207957",
+      "compute_seconds": 14.239,
       "derived_from_conjugate": false,
       "source": "computed"
     },
     "(4, 2)": {
       "f_lambda": 9,
-      "chi_at_q0": 0.8265916670255464,
+      "chi_at_q0": "0.826591667025546481290021825498",
       "compute_seconds": 0.021,
       "derived_from_conjugate": true,
       "conjugate_source": "(2, 2, 1, 1)",
@@ -80,40 +80,40 @@
     },
     "(3, 1, 1, 1)": {
       "f_lambda": 10,
-      "chi_at_q0": -1.4537303547896065,
-      "compute_seconds": 24.455,
+      "chi_at_q0": "-1.45373035478960665739290008362",
+      "compute_seconds": 27.812,
       "derived_from_conjugate": false,
       "source": "computed"
     },
     "(4, 1, 1)": {
       "f_lambda": 10,
-      "chi_at_q0": -2.8133263317193533,
-      "compute_seconds": 0.02,
+      "chi_at_q0": "-2.81332633171935344578678080830",
+      "compute_seconds": 0.019,
       "derived_from_conjugate": true,
       "conjugate_source": "(3, 1, 1, 1)",
       "source": "derived q\u2192q\u207b\u00b9"
     },
     "(3, 2, 1)": {
       "f_lambda": 16,
-      "chi_at_q0": -0.0898336254201154,
-      "compute_seconds": 54.583,
+      "chi_at_q0": "-0.0898336254201153957060839674299",
+      "compute_seconds": 61.314,
       "derived_from_conjugate": false,
       "source": "computed"
     }
   },
-  "total_compute_seconds": 0.15,
-  "generated_at": "2026-11-20T19:54:52.578167+00:00",
+  "total_compute_seconds": 0.13,
+  "generated_at": "2026-11-21T02:47:21.603072+00:00",
   "lean_uniqueness_ref": {
     "deuteron": "qou:QOU.BraidKnot.deuteron_uniqueness_closed",
     "framework_doc": "folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
     "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
   },
   "scriptFile": "deuteron_tr_M_symbolic.py",
-  "scriptHash": "b77437ded96c",
+  "scriptHash": "b3fe1a47508b",
   "scriptCommitSha": "9be0b99e7af8d5a8387f0e3fa784054a3b765e05",
-  "commitSha": "928351a9f34d7ebe2dde64b891c5a7e8857259ad",
+  "commitSha": "5a13eb512d7b8e6c2e672c799ea79327fe2e85ef",
   "engine": "sympy",
-  "computedAt": "2026-11-20T19:54:52.585047+00:00",
+  "computedAt": "2026-11-21T02:47:21.616990+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
   "q0Anchor": "proton",
