@@ -384,6 +384,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is 'the candidate for' binding-energy differences and the binding magnitude is stated open; 'binding energy' dropped from the categorically-derived list; 'a fit, not a prediction' -> 'a fit'; display math reflowed). No instance found."
       }
     ],
     "da-vacuous": [
@@ -412,6 +427,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is 'the candidate for' binding-energy differences and the binding magnitude is stated open; 'binding energy' dropped from the categorically-derived list; 'a fit, not a prediction' -> 'a fit'; display math reflowed). No instance found."
       }
     ],
     "da-circular": [
@@ -440,6 +470,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is 'the candidate for' binding-energy differences and the binding magnitude is stated open; 'binding energy' dropped from the categorically-derived list; 'a fit, not a prediction' -> 'a fit'; display math reflowed). No instance found."
       }
     ],
     "da-overclaim": [
@@ -504,6 +549,21 @@
         "reviewed_at": "2026-11-21T15:53:43.000Z",
         "reviewed_sha": "e286d40a6ca9d857bbc15ada632b05d6c9494e52",
         "evidence": "Resolved for this block: Φ_q is 'the candidate for' binding-energy differences, the binding magnitude is stated open, and binding energy is dropped from the 'categorically derived' list. Cross-block: observations/terminal-resolution-proof.md still says hadronic masses are 'determined without free parameters'; not changed here (a proof block whose conclusion is an absolute-mass claim)."
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is 'the candidate for' binding-energy differences and the binding magnitude is stated open; 'binding energy' dropped from the categorically-derived list; 'a fit, not a prediction' -> 'a fit'; display math reflowed). Phi_q is now 'the candidate for' binding-energy differences and 'the binding magnitude remains open' (consistent with qou-brng); binding energy is dropped from the 'categorically derived' list. Resolves the previous minor finding. Cross-block: observations/terminal-resolution-proof.md still says 'the hadronic masses are determined without free parameters', which this block contradicts; outside this PR."
       }
     ],
     "da-hidden-dof": [
@@ -532,6 +592,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is 'the candidate for' binding-energy differences and the binding magnitude is stated open; 'binding energy' dropped from the categorically-derived list; 'a fit, not a prediction' -> 'a fit'; display math reflowed). No instance found."
       }
     ],
     "da-non-sequitur": [
@@ -560,6 +635,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is 'the candidate for' binding-energy differences and the binding magnitude is stated open; 'binding energy' dropped from the categorically-derived list; 'a fit, not a prediction' -> 'a fit'; display math reflowed). No instance found."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -588,6 +678,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is 'the candidate for' binding-energy differences and the binding magnitude is stated open; 'binding energy' dropped from the categorically-derived list; 'a fit, not a prediction' -> 'a fit'; display math reflowed). No instance found."
       }
     ],
     "da-citation-misuse": [
@@ -616,6 +721,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is 'the candidate for' binding-energy differences and the binding magnitude is stated open; 'binding energy' dropped from the categorically-derived list; 'a fit, not a prediction' -> 'a fit'; display math reflowed). No instance found."
       }
     ],
     "da-definitional-ambiguity": [
@@ -644,6 +764,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is 'the candidate for' binding-energy differences and the binding magnitude is stated open; 'binding energy' dropped from the categorically-derived list; 'a fit, not a prediction' -> 'a fit'; display math reflowed). Line 130 writes 'Phi_q = sum log|V_i|' while line 76 defines Phi_q(z) = prod_k (1 - q^{-k} z)^{-1}; one symbol names two different objects. Pre-existing wording in a sentence this PR edited.",
+        "severity": "minor"
       }
     ],
     "da-empirical-fragility": [
@@ -672,6 +808,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is 'the candidate for' binding-energy differences and the binding magnitude is stated open; 'binding energy' dropped from the categorically-derived list; 'a fit, not a prediction' -> 'a fit'; display math reflowed). No instance found."
       }
     ],
     "da-physical-implausibility": [
@@ -700,6 +851,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is 'the candidate for' binding-energy differences and the binding magnitude is stated open; 'binding energy' dropped from the categorically-derived list; 'a fit, not a prediction' -> 'a fit'; display math reflowed). No instance found."
       }
     ],
     "da-reproducibility": [
@@ -728,6 +894,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is 'the candidate for' binding-energy differences and the binding magnitude is stated open; 'binding energy' dropped from the categorically-derived list; 'a fit, not a prediction' -> 'a fit'; display math reflowed). No instance found."
       }
     ],
     "da-referee-verdict": [
@@ -756,6 +937,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is 'the candidate for' binding-energy differences and the binding magnitude is stated open; 'binding energy' dropped from the categorically-derived list; 'a fit, not a prediction' -> 'a fit'; display math reflowed). No instance found."
       }
     ],
     "expo-milnor-clarity": [
@@ -3600,6 +3796,26 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "4f7f5d0c431b9bcf798093fc752943963b88c4c2"
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092",
+          "lean": "42c7d546262a",
+          "lean_statement": "742d2f1255d3",
+          "graph": "b9500bf32f74"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "3643427c9cd999c06bc779979b058a456b06ced0"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -3663,6 +3879,27 @@
         },
         "reviewed_tree": "4f7f5d0c431b9bcf798093fc752943963b88c4c2",
         "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092",
+          "lean": "42c7d546262a",
+          "lean_statement": "742d2f1255d3",
+          "graph": "b9500bf32f74"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "3643427c9cd999c06bc779979b058a456b06ced0",
+        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-archimedean-wall": [
@@ -3725,6 +3962,27 @@
           "def_hash": "19a5005a8bb6"
         },
         "reviewed_tree": "4f7f5d0c431b9bcf798093fc752943963b88c4c2",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092",
+          "lean": "42c7d546262a",
+          "lean_statement": "742d2f1255d3",
+          "graph": "b9500bf32f74"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c17b282a7de7",
+          "script_commit_sha": "unknown",
+          "def_hash": "19a5005a8bb6"
+        },
+        "reviewed_tree": "3643427c9cd999c06bc779979b058a456b06ced0",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -3963,6 +4221,26 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "4f7f5d0c431b9bcf798093fc752943963b88c4c2"
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092",
+          "lean": "42c7d546262a",
+          "lean_statement": "742d2f1255d3",
+          "graph": "b9500bf32f74"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "3643427c9cd999c06bc779979b058a456b06ced0"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -4616,6 +4894,21 @@
         "reviewed_at": "2026-11-21T15:53:43.000Z",
         "reviewed_sha": "e286d40a6ca9d857bbc15ada632b05d6c9494e52",
         "evidence": "Resolved: 'a fit, not a prediction' -> 'a fit'."
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is 'the candidate for' binding-energy differences and the binding magnitude is stated open; 'binding energy' dropped from the categorically-derived list; 'a fit, not a prediction' -> 'a fit'; display math reflowed). 'so the MeV value is a fit' no longer repeats the preceding negation; 'does not predict the proton mass in MeV' states the claim directly."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -4651,6 +4944,21 @@
         "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
         "evidence": "No setup-then-reframe; the block is organised as labelled sections and worked cases.",
         "notes": "No change."
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is 'the candidate for' binding-energy differences and the binding magnitude is stated open; 'binding energy' dropped from the categorically-derived list; 'a fit, not a prediction' -> 'a fit'; display math reflowed). No instance of this construction in the block."
       }
     ],
     "trap-em-dash": [
@@ -4687,6 +4995,22 @@
         "severity": "minor",
         "evidence": "Nine em-dashes in one block, eight of them UNSPACED and all in the identical noun-then-appositive shape: \"explicitly-expressing its NF decomposition\", \"in H_n(R,q)-a finite-rank Hecke element\", \"the Jones polynomial J(K;q)-a Laurent polynomial\", \"in [0.85, 1.0]-at the boundary\", \"z-Habiro completion-analogous to\", \"a brane tower effect-the accumulated quantum dilogarithm\", \"growing with N-a categorically defined object\", \"the same decomposition-using weights that produce Vol(K)\". The repetition of one construction eight times is the density tell the category is for; individually each is defensible.",
         "notes": "STRUCTURAL (eight sites spread across the block; a partial fix leaves the punctuation inconsistent), not edited. Proposed: convert the appositives to commas or relative clauses (\"the Jones polynomial J(K;q), a Laurent polynomial in q^{1/2}\") and keep at most the two that are genuinely parenthetical."
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is 'the candidate for' binding-energy differences and the binding magnitude is stated open; 'binding energy' dropped from the categorically-derived list; 'a fit, not a prediction' -> 'a fit'; display math reflowed). Seven unspaced em dashes remain (lines 1, 20, 56, 99, 118, 138 and one more), all in the same noun-then-appositive shape. Pre-existing on main; this PR neither adds nor removes any.",
+        "severity": "minor"
       }
     ],
     "trap-triples": [
@@ -4723,6 +5047,21 @@
         "severity": "minor",
         "evidence": "\"*Two partial mitigations are documented, though neither universally closes the gap:*\" is followed by a numbered list of THREE items - (1) the z-Habiro completion, (2) the magic-shell structural term, (3) the Markov-trace audit on 3-He. The announced count does not match the list. Item 3 is also not a mitigation but a verification task (\"Verify ",
         "notes": "tr_M| ... to confirm the structural gap is real\"), which is what makes it read as an appended third.|STRUCTURAL (deciding whether item 3 is a mitigation or a check is a content judgement), not edited. Proposed: either restore \"Two\" by moving item 3 out as a separate verification note, or change \"Two\" to \"Three\" and drop \"though neither\" (which also assumes two)."
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is 'the candidate for' binding-energy differences and the binding magnitude is stated open; 'binding energy' dropped from the categorically-derived list; 'a fit, not a prediction' -> 'a fit'; display math reflowed). The 'Two partial mitigations' list now has two items, so the count mismatch recorded by agent:h00 is gone (fixed before this PR). No rhythmic list of three."
       }
     ],
     "trap-closing-aphorism": [
@@ -4758,6 +5097,21 @@
         "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
         "evidence": "The block ends on a three-item consequence list under \"If the conjecture holds\", which is content. The section-final \"The mass is almost entirely a brane tower effect-the accumulated quantum dilogarithm across exceptional divisors\" is the closest thing to a flourish, but it names a mechanism.",
         "notes": "No change."
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is 'the candidate for' binding-energy differences and the binding magnitude is stated open; 'binding energy' dropped from the categorically-derived list; 'a fit, not a prediction' -> 'a fit'; display math reflowed). No instance of this construction in the block."
       }
     ],
     "trap-meta-commentary": [
@@ -4793,6 +5147,21 @@
         "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
         "evidence": "\"The scope of this conjecture is as follows\" is a structural announcement in a section whose job is scoping; no narration of emphasis.",
         "notes": "No change."
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is 'the candidate for' binding-energy differences and the binding magnitude is stated open; 'binding energy' dropped from the categorically-derived list; 'a fit, not a prediction' -> 'a fit'; display math reflowed). No instance of this construction in the block."
       }
     ],
     "trap-thesis-restatement": [
@@ -4829,6 +5198,22 @@
         "severity": "major",
         "evidence": "\"The scope of a failure is therefore exactly this: the tower formula remains correct as an infinite series, and the closed form is a convenience.\" This is a block-final restatement of the paragraph immediately above it, which already said \"If this conjecture fails ..., the algebraic mass formula remains valid as the infinite series\" and, one bullet earlier, \"It serves symbolic computation but is not required for the structural derivations in this paper\". The sentence adds nothing and the \"therefore\" points at no new inference.",
         "notes": "FIX IS SAFE BUT NOT APPLIED - the sentence sits between two math-bearing paragraphs and its removal is a judgement about how much scoping repetition the author wants, which the batch rules put on the structural side. Proposed: delete the sentence outright; the two preceding statements carry it."
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is 'the candidate for' binding-energy differences and the binding magnitude is stated open; 'binding energy' dropped from the categorically-derived list; 'a fit, not a prediction' -> 'a fit'; display math reflowed). Line 24, 'The scope of a failure is therefore exactly this: the tower formula remains correct as an infinite series, and the closed form is a convenience.', restates line 22 and the bullet before it. Pre-existing on main and untouched by this PR; severity kept as previously recorded (agent:h00).",
+        "severity": "major"
       }
     ],
     "trap-performed-warmth": [
@@ -4864,6 +5249,21 @@
         "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
         "evidence": "No personal register.",
         "notes": "No change."
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is 'the candidate for' binding-energy differences and the binding magnitude is stated open; 'binding energy' dropped from the categorically-derived list; 'a fit, not a prediction' -> 'a fit'; display math reflowed). No instance of this construction in the block."
       }
     ],
     "trap-superlative": [
@@ -4933,6 +5333,21 @@
         "reviewed_at": "2026-11-21T15:45:24.000Z",
         "reviewed_sha": "11f43db9cf7606bbebbff5c1a86d171ecec9065c",
         "evidence": "Re-read of the edited paragraph (158ac1a4a): the absolute 938.272 MeV is now stated as a fit (μ_u fitted to CODATA m_p), not a framework value, per the absolute-mass excision ruling."
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is 'the candidate for' binding-energy differences and the binding magnitude is stated open; 'binding energy' dropped from the categorically-derived list; 'a fit, not a prediction' -> 'a fit'; display math reflowed). No instance of this construction in the block."
       }
     ],
     "trap-nonspeakable": [
@@ -4969,6 +5384,21 @@
         "severity": "minor",
         "evidence": "\"the accumulated quantum dilogarithm across exceptional divisors\" and \"cyclotomic-denominator structure\" are dense but parse aloud.",
         "notes": "Separate symbol-collision note for the coordinating session, not a trap: Phi_q carries two incompatible meanings in this one block - defined as the infinite product Phi_q(z) = prod_k (1 - q^{-k} z)^{-1} in the \"Encoding requirements\" section, then used as \"The quantum dilogarithm Phi_q = sum log|hat V_i|\" in the single-level table paragraph. A sum of logs and an infinite product of that form are different objects; one of the two needs renaming."
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:57:36.000Z",
+        "reviewed_sha": "2e0a771e5497037b13f7ef357afde027f3733a75",
+        "evidence": "Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is 'the candidate for' binding-energy differences and the binding magnitude is stated open; 'binding energy' dropped from the categorically-derived list; 'a fit, not a prediction' -> 'a fit'; display math reflowed). No instance of this construction in the block."
       }
     ],
     "wall-base-ring-minimal": [
@@ -5165,6 +5595,26 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "4f7f5d0c431b9bcf798093fc752943963b88c4c2"
+      },
+      {
+        "field_hash": {
+          "md": "cf0834c2d66e",
+          "ts": "1c0ba0fe3092",
+          "lean": "42c7d546262a",
+          "lean_statement": "742d2f1255d3",
+          "graph": "b9500bf32f74"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "3643427c9cd999c06bc779979b058a456b06ced0"
       }
     ],
     "dak-companion-present": [
@@ -5627,6 +6077,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T15:53:43.000Z",
+  "updated_at": "2026-11-21T15:57:36.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
