@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-03T04:11:52Z
-updated_at: 2026-10-04T15:12:10Z
+updated_at: 2026-11-21T13:00:00Z
 parent: qou-5p7n
 ---
 
@@ -44,3 +44,6 @@ Net: 0 defects found by shape, 3 found by reading. The repo's own tool (content/
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-03 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-21 honesty-audits (bean-drain wave 1, session_01Qmmkt97DGEiUfDvuBj8sVr; issue #8813, branch claude/honesty-audits-2026-11-21)
+- Verified on main 2ae54ab40: none of the three headers (`BorelZagierQouVolumes.lean`, `SingleVolumeIrrationality.lean`, `GActionOnSubstrate.lean`) still contains 'carries a placeholder field' or 'structural placeholder' (grep count 0 each). The defect this bean records is fixed on main. Recommend completed (judgement); left in-progress for the owner of qou-5p7n because the DiophantineBirthday ledger correction was not re-checked.

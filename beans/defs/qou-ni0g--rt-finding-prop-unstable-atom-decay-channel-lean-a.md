@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: high
 created_at: 2026-11-20T08:40:00Z
-updated_at: 2026-11-20T08:40:00Z
+updated_at: 2026-11-21T13:00:00Z
 parent: qou-ncxf
 ---
 
@@ -16,3 +16,8 @@ qou-ncxf pass-1 (docs/audits/2026-11-20-roundtrip-blind-audit-pass1.md, block B0
 - The narrative proof (`folio/quantum-observable-universe/knots-particles-confinement/unstable-atom-decay-channel-proof.md`) has two problems. Under the existential form, x = 0 is always feasible, so "unstable" is vacuous; the proof's own scope note concedes this. And it asserts "the LP relaxation is the convex hull of integer solutions", which is false in general.
 
 Needs: a non-vacuous instability definition, plus Lean that derives uniqueness rather than assuming it. Overlaps W8 (de-vacuify) / W10 (class-field debt). Do not close until the statement is re-derived or demoted.
+
+## 2026-11-21 honesty-audits (bean-drain wave 1, session_01Qmmkt97DGEiUfDvuBj8sVr; issue #8813, branch claude/honesty-audits-2026-11-21)
+- Re-checked against main 2ae54ab40: the finding still holds as recorded (B02 `prop:unstable-atom-decay-channel`. Note the block now lives at `mass-theory/unstable-atom-decay-channel.{md,ts,lean}` (this bean's `knots-particles-confinement/` path is stale).).
+- Disclosed, not fixed: a dated `caveat` authorNote on the block's `.ts` (commit 24c44167e) says exactly what the Lean proves and what it does not. Kind, prose, `uses[]` and Lean untouched.
+- The kind change / restatement / demotion is an owner decision (ask-first rule); framed in the coordinator report. Stays open until the claim is re-derived or restated.

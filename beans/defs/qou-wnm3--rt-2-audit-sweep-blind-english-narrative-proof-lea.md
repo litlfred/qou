@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: critical
 created_at: 2026-11-19T16:50:59Z
-updated_at: 2026-11-20T08:50:00Z
+updated_at: 2026-11-21T13:00:00Z
 parent: qou-ncxf
 ---
 
@@ -20,3 +20,8 @@ Stalled-claim takeover: last touch 2026-11-19T17:42Z (>3 h); no backing branch o
 - Calibration: the blind legs independently reproduced qou-vkm6 (B07).
 - New beans: qou-27ys, qou-ni0g, qou-1iit, qou-n3xv, qou-tdhw, qou-zxuy, qou-xxa9, qou-5d0x, qou-k9tf, qou-pwo1.
 - Remaining: 425 blocks. The adjudicator is not yet a separate agent. The sampler misses dotted decl names. Stays in-progress.
+
+## 2026-11-21 honesty-audits (bean-drain wave 1, session_01Qmmkt97DGEiUfDvuBj8sVr; issue #8813, branch claude/honesty-audits-2026-11-21)
+- Sampler improvements (commit 24c44167e): dotted written decl names now resolve (pass 1's parser miss on `QuantumObservableUniverse.exists_instance`); `--offset K` so pass 2 continues after pass 1's 15 candidates; `--ref-audit` (see qou-5d0x: 148 of 717 refs name no theorem).
+- The 8 pass-1 findings were re-checked on main 2ae54ab40 (all hold) and disclosed as caveat authorNotes.
+- Pass 2 (next 20 by hash, `--offset 15`, blind legs + separate adjudicator) NOT run; offered to the owner on a card. 425 blocks remain. Stays in-progress.

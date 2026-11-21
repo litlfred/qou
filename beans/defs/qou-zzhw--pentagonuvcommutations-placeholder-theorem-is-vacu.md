@@ -8,7 +8,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T21:40:00Z
-updated_at: 2026-11-16T21:22:30Z
+updated_at: 2026-11-21T13:00:00Z
 parent: qou-5p7n
 ---
 
@@ -71,3 +71,7 @@ belongs to the author, not to a build-drain pass.
 - [x] Proved Step 1 (`hatV_pair_commutes_of_farCommuting`), Step 3 (`hatV_braid_quadratic_swap`), Step 4 (`PentagonInterLevelDescent`, `pentagon_uv_commutation_on_transient`, `pentagon_uv_commutation_inter_level`), and concrete `2 × 2` Weyl-pair model (`weylU_mul_weylV_eq_q_smul`, `weylU_mul_weylV_ne_comm`).
 - [x] Verified 80-dps `mpmath` witness `round51-devacuify-6qbv.witness.json` (`allPassed: true`, `0` float64 values) and `0` findings across all 6 vacuity audits.
 - [ ] Awaiting Merge Manager merge of PR #8206.
+
+## 2026-11-21 honesty-audits (bean-drain wave 1, session_01Qmmkt97DGEiUfDvuBj8sVr; issue #8813, branch claude/honesty-audits-2026-11-21)
+- Verified on main 2ae54ab40: the `∨ True` placeholder is gone from `QOU/QuantumBloch/PentagonUvCommutation.lean` (only the module docstring quotes it). PR #8206 itself was closed unmerged; the replacement is on main.
+- **New finding on the replacement (disclosure, not changed):** `pentagon_uv_commutation_inter_level` concludes `u * v = q • (v * u)` from the structure field `residual_in_descended` (τ̂ R_q = R_q) plus the hypothesis `hker` (τ̂ R_q = 0). Together these say R_q = 0, which is the conclusion restated, so the headline theorem derives nothing beyond its inputs (§3b-cond item 5 shape, carried by a hypothesis rather than a class field). `pentagon_uv_commutation_on_transient` is the same: it holds because the residual is assumed to lie in the image of τ̂. Steps 1 and 3 (`hatV_pair_commutes_of_farCommuting`, `hatV_braid_quadratic_swap`) and the 2×2 Weyl model are genuine. Not touched: changing what the theorem asserts is a claim change.

@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-11-20T08:40:00Z
-updated_at: 2026-11-20T08:40:00Z
+updated_at: 2026-11-21T13:00:00Z
 parent: qou-ncxf
 ---
 
@@ -18,3 +18,8 @@ qou-ncxf pass-1 (docs/audits/2026-11-20-roundtrip-blind-audit-pass1.md, block B0
   - that S(f) makes sense on a morphism;
   - that dim τ(V) = 2.
 - So the Lean statement is strictly weaker than the `.md` claim. Either formalise the categorical step, or rescope the `.md` to "given a positive Hermitian τ-pairing preserved by g, g is unitary".
+
+## 2026-11-21 honesty-audits (bean-drain wave 1, session_01Qmmkt97DGEiUfDvuBj8sVr; issue #8813, branch claude/honesty-audits-2026-11-21)
+- Re-checked against main 2ae54ab40: the finding still holds as recorded (B03 `lem:su2-emergence-dagger-unitarity`.).
+- Disclosed, not fixed: a dated `caveat` authorNote on the block's `.ts` (commit 24c44167e) says exactly what the Lean proves and what it does not. Kind, prose, `uses[]` and Lean untouched.
+- The kind change / restatement / demotion is an owner decision (ask-first rule); framed in the coordinator report. Stays open until the claim is re-derived or restated.

@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: critical
 created_at: 2026-11-19T16:50:58Z
-updated_at: 2026-11-20T16:40:00Z
+updated_at: 2026-11-21T13:00:00Z
 parent: qou-ncxf
 ---
 
@@ -22,3 +22,6 @@ The resolution above says `folio/pipeline/roundtrip-blind-packets.ts`, its test 
 ## Reopened (owner instruction 2026-11-20, via W12)
 This bean was set to completed by local commits on `cat/cat-harness/beans` (e223ed1 / 4fcd2cb / 89bb5e0, 2026-11-19, `litlfred@fenugreek.home`, no session trailer). The Lean / probe / witness files its resolution names are not on main, on any branch, or in any PR found by the bean id (measured 2026-11-20). See GAP bean qou-w12g.
 W5 (2026-11-20) notes PR #8528 (merged) replaced the missing `roundtrip-blind-packets.ts` with `scripts/roundtrip-blind-sample.py`. If that script meets this bean's intent, the owner of qou-ncxf can close it as superseded by #8528.
+
+## 2026-11-21 honesty-audits (bean-drain wave 1, session_01Qmmkt97DGEiUfDvuBj8sVr; issue #8813, branch claude/honesty-audits-2026-11-21)
+- Still absent on main 2ae54ab40: no `folio/pipeline/roundtrip-blind-packets.ts`. `scripts/roundtrip-blind-sample.py` (PR #8528) is the working substitute and gained dotted-name lookup, `--offset` and `--ref-audit` (commit 24c44167e). It does not write verdicts into `.qa.json`, which this bean also asks for. Recommendation for the qou-ncxf owner (judgement): close as superseded once a decision is made on the `.qa.json` wiring; not closed here.
