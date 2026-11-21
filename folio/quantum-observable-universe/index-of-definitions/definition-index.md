@@ -954,7 +954,7 @@
 | [lem:qou-exists-axiom-2](#lem:qou-exists-axiom-2) | Axiom 2 — observability via Peter--Weyl decomposition | Ch 2 |
 | [lem:qou-exists-axiom-3](#lem:qou-exists-axiom-3) | Axiom 3 — vanishing categorical Chern classes for the adjoint bundle | Ch 2 |
 | [lem:qou-exists-axiom-4](#lem:qou-exists-axiom-4) | Axiom 4 — categorical volume constraint via the quantum determinant | Ch 2 |
-| [lem:bond-order-eq-jet-degree](#lem:bond-order-eq-jet-degree) | Body order equals jet degree: the n-nucleon cluster sits at jet vertical degree n | Ch 11 |
+| [conj:bond-order-eq-jet-degree](#conj:bond-order-eq-jet-degree) | Body order equals jet degree: the n-nucleon cluster sits at jet vertical degree n | Ch 11 |
 | [lem:degree-one-braid-trivial-volume](#lem:degree-one-braid-trivial-volume) | Braid words of a degree-one element have non-hyperbolic closures | Ch 11 |
 | [lem:mi-sw-abelianisation-cartan](#lem:mi-sw-abelianisation-cartan) | Cartan reduction recovers the SW differential | Ch 6 |
 | [lem:jet-prolongation-categorical-jet](#lem:jet-prolongation-categorical-jet) | Categorical jet object $J^1(A)$ inherits the Frobenius--Hopf structure | Ch 4 |

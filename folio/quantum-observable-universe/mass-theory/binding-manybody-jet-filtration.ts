@@ -9,7 +9,7 @@ export default conjecture({
     validation: "validated",
   },
   uses: [
-    "lem:bond-order-eq-jet-degree",
+    "conj:bond-order-eq-jet-degree",
     "prop:sw-period-residue-sum",
     "prop:mi-sw-abelianisation",
     "prop:magic-A-binding-formula",

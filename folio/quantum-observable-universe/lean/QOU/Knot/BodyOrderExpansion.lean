@@ -85,7 +85,7 @@ theorem prod_bonds_bot_coeff (s : Finset ι) (d : ι → R) :
 
 /-! ## Discharging the assumed field of `QOU.Mass.BodyOrderJetGrading`
 
-The content block `lem:bond-order-eq-jet-degree` carries a structure
+The content block `conj:bond-order-eq-jet-degree` carries a structure
 `QOU.Mass.BodyOrderJetGrading` whose theorem `bodyorder_eq_jet_total` sums a
 **hypothesis field**, `body_eq_graded : ∀ n, bodyTerm n = gradedTerm n`. The
 interesting claim -- that the `n`-body term IS the degree-`n` graded component

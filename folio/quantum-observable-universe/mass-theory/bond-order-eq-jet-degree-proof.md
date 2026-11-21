@@ -17,6 +17,6 @@ length), so the filtration is exhaustive.
 *Conclusion.* Summing the graded components reconstructs the binding, and by
 Steps 1--2 the degree-$n$ component equals the $n$-body term:
 $\sum_n(\text{$n$-body term})=\sum_n\mathrm{gr}_n$. In
-[Body order equals jet degree](#lem:bond-order-eq-jet-degree) the
+[Body order equals jet degree](#conj:bond-order-eq-jet-degree) the
 graded match (Steps 1--2) and exhaustiveness are the hypotheses, and
 the body-order = jet-graded sum identity follows from them. $\qquad\blacksquare$
