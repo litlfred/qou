@@ -52,6 +52,18 @@ the tail `(1+ρ)^{−iθmω}` inside the radial factor.
 - **Refinement.** No candidate existed to refine, so nothing persisted across refinements.
 - **Scope.** All of this is scope (a).
 
+**Phase 4 (§11).** Owner-approved continuation of B and C toward `θ = 1`, using pseudo-arclength
+continuation with an adaptive step, Arb at 60 dps, and witnesses checkpointed by the probe after
+every accepted point.
+- **B** (50 points) passes `θ ≈ 0.060`. It then turns and oscillates in the window
+  `0.048 ≤ θ ≤ 0.060`, either turning twice at nearby points or retracing its own path; the run
+  does not decide which.
+- **C** (16 points) folds at `θ ≈ 0.032`, possibly jumps branch near `θ ≈ 0.004`, and rises to
+  `θ ≈ 0.059`.
+- Both stopped on the 3 h budget. Neither reached `θ = 1`, returned to `θ = 0`, escaped, or
+  collapsed to a steady solution, so nothing was refined.
+- **Scope.** All of this is scope (a).
+
 ## 1. Literature: which classes are already excluded
 
 The library holds no source on self-similar Navier–Stokes. `grep -ai` over `library/INDEX.md`,
@@ -668,3 +680,98 @@ number of starts, and it is why N4, L3N3 and full-space random starts were **not
 
 All five were confirmed red on `origin/main` at `b17e0551c53`. None of the gate output names a file
 from this branch. The seven tree-measuring witnesses the script rewrote were reverted.
+
+## 11. Phase 4: pseudo-arclength continuation of B and C toward θ = 1 (arbitrary precision)
+
+Approved by the owner ("Go"). Same probe ([`leray_dss_logphase_search.py`](../../computations/probes/leray_dss_logphase_search.py)),
+modes `arcB` (L2N2, K = 4) and `arcC` (L2N3, K = 4). Arb at 60 dps. Budget: 3 h of compute.
+
+### 11.1 Method
+
+- **Continuation.** Secant pseudo-arclength in `y = (x, W·θ)`, with `W = |x(θ = 0)|`. Adaptive step:
+  grow ×2 if the corrector needs ≤ 5 iterations, ×1.5 if ≤ 7, ×1 if ≤ 9, otherwise ×0.7. Halve on
+  failure. Bounds `ds₀/64 ≤ ds ≤ 32·ds₀`.
+- **Corrector.** Full Newton until `|F| < 1e-15(1+|A|)`, then a frozen Jacobian while each iteration
+  gains at least 6 digits. At most 10 iterations. Every accepted point has residual 1e-38 to 1e-45.
+- **Analytic ω column.** The basis depends on `(θ, ω)` only through `θω`, so
+  `∂F/∂ω = (θ/ω)·∂F/∂θ + flat(i·m·M_m·A_m)`. This agrees with the finite-difference column to
+  2.3e-26 at `θ = 0.05` and 4.3e-25 at `θ = 0.7`, which is the `O(h)` error of the `h = 1e-30`
+  difference. One θ difference per Jacobian therefore gives both columns.
+- **Stopping rules.** The run stops at the first of these:
+  - (a) reaching `θ = 1` (then Newton at `θ = 1` and the refinement chain `K+1`, `N+1`, `L+1`);
+  - (b) turning back to `θ = 0`, or closing on the start point;
+  - (c) `|A| > 1e4`, `S < 1e-3` or `S > 1e3`;
+  - (d) collapse to a steady solution;
+  - the time budget.
+- **Witnesses are written by the probe.** It checkpoints `leray-dss-logphase-arc{B,C}.witness.json`
+  after every accepted point, and `LERAY_RESUME=1` restarts from the checkpoint. Nothing was
+  transcribed from logs.
+
+### 11.2 Results
+
+Neither run reached any outcome (a)–(d). Both stopped on the time budget.
+
+| orbit | accepted points | stop | θ at stop | S at stop | \|A\| at stop | folds in θ (approx.) |
+|---|---|---|---|---|---|---|
+| B (L2N2K4) | 50 | time budget | 0.051523 | 2.15919 | 48.46 | 0.0448, 0.0203, 0.0601, 0.0480, (0.0503), 0.0483 |
+| C (L2N3K4) | 16 | time budget | 0.059359 | 0.85512 | 229.75 | 0.0322, 0.0038 |
+
+**B.**
+- B was re-run from `θ = 0`, because the phase-3 point at `θ ≈ 0.0501` had never been saved as a
+  state. The new run reproduces phase 3: folds at `θ ≈ 0.0448` and `θ ≈ 0.0203` (`|A|` up to 226),
+  and back to `θ = 0.0501` at step 30 (`S = 1.24362`, `|A| = 92.4`).
+- Beyond that point it is new. It reaches `θ ≈ 0.0601` (`S = 1.63`, `|A| = 61`), folds, and runs
+  back down to `θ ≈ 0.048` with `S` rising to 2.29.
+- Steps 42–44 are a **continuation reversal, not a fold**. They retrace steps 37–41. For example,
+  step 43 (`θ = 0.05032`, `S = 2.2063`, `|A| = 47.507`) matches `S = 2.2054`, `|A| = 47.514`
+  interpolated between steps 38 and 39. The fold recorded at 0.0503 is that artefact.
+  Reversal detection was added, and the run resumed backwards from step 44.
+- After the resume, B turns again at `θ ≈ 0.04835` (`S ≈ 2.2778`). Steps 51–53 then rise in `θ`
+  with `S` falling, to `θ = 0.0515`, `S = 2.159`. This lies close to the sheet B came down on
+  (step 44: `θ = 0.0543`, `S = 2.038`).
+- So within `0.048 ≤ θ ≤ 0.060`, B either turns twice at nearby points or retraces its own path.
+  At step 51 the two sheets differ by about 7e-4 in `S` at matched `θ`. **This run does not decide
+  which.**
+
+**C.**
+- C folds at `θ ≈ 0.0322` and runs back to `θ = 0.0038` (step 10, `S = 1.3562`, `|A| = 215.8`).
+- Step 11 then lands at `θ = 0.0163` (`S = 1.227`). That step was taken before reversal detection
+  existed, so a jump to a neighbouring branch is **not excluded**.
+- From there `θ` rises steadily: `S` falls from 1.08 to 0.855 and `|A|` holds at about 230, up to
+  `θ = 0.0594` at the stop.
+- At about 7.5 min per step, reaching `θ = 1` at the current step lengths would take far longer
+  than the budget.
+
+**Refinement.** Outcome (a) never occurred, so there was no `θ = 1` candidate and the refinement
+chain did not run.
+
+### 11.3 Bugs found and fixed during phase 4
+
+1. **The first chord corrector converged only linearly.** It refreshed the Jacobian only when the
+   residual fell by less than a factor of 4. It failed in 14 iterations on B's first step. It was
+   replaced by full Newton to 1e-15 followed by a frozen Jacobian (`a2afc68ac5e`).
+2. **The step-growth rule shrank steps that should have grown.** It shrank when the corrector
+   needed more than 6 iterations, and 60-digit correctors typically need 7. Fixed, and both runs
+   resumed from their checkpoints (`1aa7860000b`).
+3. **No reversal check.** The secant could flip direction without the run noticing (B, steps
+   42–44). The probe now stops with `continuation_reversed_at_theta_…` when the new secant has a
+   negative dot product with the previous tangent. `LERAY_REVERSE=1` resumes in the opposite
+   direction at `ds_init/4` (`d1d061bb180`).
+
+The misattribution in the `25d4d89` commit message is recorded in §10.4. History was not
+rewritten.
+
+### 11.4 What this does and does not show
+
+All of it is scope (a): this continuation, of these two truncations, within a 3 h budget.
+- In arbitrary precision, both orbits continue as genuine solutions of their truncated systems
+  (residual ≤ 1e-38) up to `θ ≈ 0.05–0.06`. Neither escapes, and neither collapses to `ω = 0`.
+- The path from `θ ≈ 0.06` to `θ = 1` was not traced. Nothing here says whether either branch
+  reaches `θ = 1`.
+- Nothing identifies `S` with any `q`-quantity. No content block was edited.
+
+### 11.5 Precision gates (phase 4)
+
+`scripts/precision-gates.sh --changed` on `f8d2ddac0d5` shows the same five red gates as §10.7,
+all pre-existing on `origin/main` at `b17e0551c53`. None of the gate output names a file from this
+branch. The seven tree-measuring witnesses the script rewrote were reverted.
