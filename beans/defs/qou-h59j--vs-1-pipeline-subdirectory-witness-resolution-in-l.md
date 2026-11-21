@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-11-19T07:06:02Z
-updated_at: 2026-11-20T08:30:00Z
+updated_at: 2026-11-21T06:50:00Z
 parent: qou-v6so
 ---
 
@@ -36,3 +36,8 @@ Grounded in `computations/audits/paper-status-variable-substitution-and-stalenes
 ## 2026-11-20 W13 (#8526, PR #8539)
 
 Deliverables 1+2 are PLATFORM code (cat-harness-tools); patch written + tested (32 pass) and committed as docs/audits/2026-11-20-vs1-liquid-subdir-and-markdown-val.platform.diff — needs landing in the platform repo, then a pin bump. Benzene :val migrated to Liquid (fixed a doubled 'kcal/mol kcal/mol' in the PDF); 1 :val .md remains (confinement table, keys not Liquid-legal). Deliverable 3 (registry): no reader for rho_q/c_q/eta_q/chi_q/d_H; owner ask on #8526. Stays todo.
+
+## 2026-11-21 platform PR opened (session_01VQDpPcnLs1rPy7pJe86d5t)
+
+Deliverables 1+2: the W13 diff is applied as litlfred/cat-harness-tools#2479 (head 8d6f863). It applies cleanly to cat-harness-tools main. Tests ran on the qou-pinned tree with the patch applied: 32/32 on the three touched suites, and pipeline/ 668 pass / 2 fail. The same 2 corpus-index failures occur without the patch. The PR waits for the merge manager.
+Pin-bump chain: qou's .folio-assistant-pin and build.yml `uses:` name a folio-assistant sha, not a cat-harness-tools sha. So after #2479 merges, folio-assistant's index.lock.json must re-pin cat-harness-tools past it. Only then can qou bump to that folio-assistant sha. Known break: build.yml `uses:` names publish.yml, which folio-assistant deleted in 0c5468ac46. Deliverable 3 still waits on the owner ask on #8526.
