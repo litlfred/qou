@@ -476,3 +476,28 @@ relation `Δ(ab) = Δ(a)(1⊗b)`. With `antipode_anti_mul` this gives
 `Δ(cd) = (c ⊗ 1)Δ(d)`: the mirror relation. Not formalised; the braided (non-symmetric) case is
 not checked. `counit_snake_left_of_mirror` (sorry-free) then gives the left snake identity for
 `λ = ε`, `coev = η ≫ Δ`. So in the symmetric case `λ = ε` satisfies both snake identities.
+
+## 16. Mirror relation in Lean; second ratio class (2026-11-21, owner: "1 2")
+
+**Mirror relation, now proved** (`MirrorFrobeniusFromAntipode.lean`, sorry-free, axioms `propext`,
+`Quot.sound`). `mirror_of_antipode`: for an algebra `A` over a commutative ring with the flip
+braiding on `A ⊗ A`, the stated relation `Δ(ab) = Δ(a)(1⊗b)` plus `S` anti-multiplicative,
+`Δ ∘ S = flip ∘ (S⊗S) ∘ Δ` and `S ∘ S = id` give `Δ(ab) = (a⊗1)Δ(b)`. With
+`counit_snake_left_of_mirror` and `counit_snake_right`, **`λ = ε` with `coev = η ≫ Δ` satisfies both
+snake identities in the symmetric case.** Scope: element level, flip braiding; the braided
+non-symmetric case is still unchecked, and the bridge from `FrobeniusHopfData` morphisms in
+`ModuleCat` to these element statements is not written.
+
+**Second ratio class** (pre-registered and committed at `9ced266afbb` before the run;
+`mn_pairing_ratio_class2_probe.py`). Pass criterion `12` identically in `q`:
+
+| variant | proton | neutron | at `q = 1` |
+|---|---|---|---|
+| P1 pure weight states (each basis vector) | six different functions of `q` | | `2` each |
+| P2 unnormalised sector traces `tr_sec(K X_N)/tr(K X_e)` | `−P(q)/(q⁵(q²+1)(q⁴+1))` | `−P(q)/(q⁷(q²+1)(q⁴+1))` | `3/4` |
+| P3 Hecke symmetriser `X_N Σ_w T_w` | equal for p and n | | `4` |
+
+(`P(q) = q¹² − 3q¹⁰ + 3q⁸ − 5q⁶ + 3q⁴ − 3q² + 1`.) **Scope-(a) negative**: no variant gives `12`.
+Observation: in P2 the neutron is exactly `q⁻²` times the proton, which matches the Markov result
+(§9) and is the only variant with the right split. Its value at `q = 1` is `3/4`, a factor `16`
+short of `12`. Not pursued, since adjusting toward `12` would be selection.
