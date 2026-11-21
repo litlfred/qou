@@ -183,3 +183,29 @@ the content sibling `quantum-observable-universes/qou-exists-axiom-2.lean`
 proved only that a fibre functor exists (`⟨Q.fibreFunctor⟩`), and `lean.ref`
 resolved to it, which hid the library `sorry`. Sibling deleted (no consumers);
 stale `leanSource` dropped from the `.jsonld`.
+
+**QA follow-up 2 (2026-11-21).** The `lean.ref` resolver picks a sibling
+`.lean` by path alone, so two more siblings shadowed library `sorry`s:
+
+- `mass-theory/confinement-categorical.lean` (decls `confinement_survives_only_centre`,
+  `not_int_factors_through_centre_unconstrained`, `int_factors_through_centre_of_invariant`)
+  moved unchanged to `lean/QOU/WedderburnMass/ConfinementCentreProjection.lean`
+  (lean-direct exit 0; axioms `propext, Classical.choice, Quot.sound`).
+- `models-of-qous/skew-poisson-integration.lean` deleted: no consumers, only
+  the Bool-flag structures noted above and lemmas of the form `d * d = d ^ 2`.
+
+C06 now has a real proof. `exists_axiom_2_observability` states, over a
+field with `2 ≠ 0`, that the adjoint module of `𝔰𝔩₂` has trivial invariant
+submodule (`maxTrivSubmodule = ⊥`, i.e. `Hom(𝟙, V₁) = 0`); sorry-free, axioms
+`propext, Classical.choice, Quot.sound`. The generic-`q` step for
+`U_q(𝔰𝔩₂)` is cited. `2 ≠ 0` is needed: in characteristic 2 the identity is
+traceless and central.
+
+Still open on C09 (frobenius-relation): `compute-prop-has-probe` and
+`compute-prop-has-consumer` fail because the checker passes sorry-free Lean
+outright, and otherwise asks for a probe or for the I1 audit witness at
+`folio-assistant/computations/i1-no-probe-audit.witness.json`, which the
+light platform does not carry (the qou copy predates the `content/` →
+`folio/` rename). An algebraic identity has no numerical prediction; the
+honest fix is a sorry-free proof, which needs the pairing/copairing axioms
+the context class lacks.
