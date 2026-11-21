@@ -11,10 +11,10 @@ Beta decay is mediated by the torus knot T_{3,5} with 10 crossings.
 The T_{3,5} braid (σ₁σ₂)⁵ is inserted at the converting quark, and
 its 10 crossings partition into:
   - 3 crossings → electron word σ₀σ₁σ₀ (closure: Hopf link)
-  - 0 crossings → antineutrino unknot K_{0_1}
+  - 0 crossings → antineutrino mirror unknot K_{0_1}^σ
   - 7 crossings → nuclear re-reduction (R2 moves)
 
-β⁻: N̄(p,n) · β_{T_{3,5}} → N̄(p+1, n-1) ⊔ e⁻ ⊔ K_{0_1}
+β⁻: N̄(p,n) · β_{T_{3,5}} → N̄(p+1, n-1) ⊔ e⁻ ⊔ K_{0_1}^σ
 β⁺: N̄(p,n) · β̄_{T_{3,5}} → N̄(p-1, n+1) ⊔ e⁺ = σ₀⁻¹σ₁⁻¹σ₀⁻¹ ⊔ K_{0_1}
 
 The Z/2 symmetry q ↔ q⁻¹ exchanges β⁻ ↔ β⁺.
@@ -95,10 +95,10 @@ def NuclearLink.A (l : NuclearLink) : ℕ := l.p + l.n
 /-- A beta-minus decay: T_{3,5} insertion at the converting d-quark.
     The 10-crossing T_{3,5} braid (σ₁σ₂)⁵ partitions into:
     - 3 crossings → electron word σ₀σ₁σ₀ (closure: Hopf link)
-    - 0 crossings → antineutrino unknot K_{0_1}
+    - 0 crossings → antineutrino mirror unknot K_{0_1}^σ
     - 7 crossings → nuclear re-reduction (R2 moves)
 
-    Produces: daughter nucleus + electron e⁻ = σ₀σ₁σ₀ + antineutrino K_{0_1}. -/
+    Produces: daughter nucleus + electron e⁻ = σ₀σ₁σ₀ + antineutrino K_{0_1}^σ. -/
 -- Ref: [leitner2026] §6/beta-decay-skein, §6/force-knot-identification
 structure BetaMinusDecay where
   /-- The parent nucleus. -/

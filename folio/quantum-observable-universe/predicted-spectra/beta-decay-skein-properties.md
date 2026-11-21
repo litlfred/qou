@@ -35,7 +35,7 @@ The $T_{3,5}$ braid insertion introduces $10$ crossings into the nuclear braid w
 | Crossings | Destination | Structure |
 |:---------:|-------------|-----------|
 | $3$ | Electron $e^- = \sigma_0\sigma_1\sigma_0$ (closure: Hopf link) | $3$ positive crossings, a braid factor of the vertex |
-| $0$ | Antineutrino $K_{0_1}$ (unknot) | Trivial topology |
+| $0$ | Antineutrino $K_{0_1}^{\sigma}$ (mirror unknot) | Trivial topology |
 | $7$ | Nuclear re-reduction | R2 moves absorbed into daughter normal form |
 
 The $7$ re-reduction crossings change the R2 step count between parent and daughter normal forms. This dominates the $Q$-value. The single-crossing approximation misses $6$ of these $7$ crossings.

@@ -15,7 +15,7 @@ $$
   \sqcup
   e^-
   \sqcup
-  K_{0_1}.
+  K_{0_1}^{\sigma}.
 $$
 
 A $\beta^+$ transition is the mirror operation. It inserts the conjugate $T_{3,5}^{\sigma}$ braid with $q \leftrightarrow q^{-1}$:
