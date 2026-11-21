@@ -193,6 +193,7 @@ export default chapter({
             "two-filtration-bridge-general-table-data",
             "two-filtration-bridge-general-proof",
             "adelic-substrate-integration",
+            "motivic-substrate-canonicity",
             "q-clt-jsj-mass-scaling",
           ],
         }),

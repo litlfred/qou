@@ -98,7 +98,6 @@ export default chapter({
         "kummer-filtration-obstruction",
         "kummer-tower",
         "motivic-substrate",
-        "motivic-substrate-canonicity",
         "hochschild-kummer-connection",
         "hkr-theorem",
         "s1-action-and-loop-space",
