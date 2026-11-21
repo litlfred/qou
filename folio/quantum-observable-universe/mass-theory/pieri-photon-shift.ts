@@ -1,6 +1,9 @@
 import { proposition } from "../../schema/builders";
 
 export default proposition({
+  authorNotes: [
+    { kind: "caveat", date: "2026-11-21", body: "Lean now states the containment with an honest `sorry`. The class field `support_subset`, which held the conclusion, is deleted (round-trip audit pass 2, C04). The narrative proof also misses the $a = n$ case and the third induced component, and mixes tower levels; see the audit doc." },
+  ],
   label: "prop:pieri-photon-shift",
   title:
     "Multiplication by a degree-one Hecke element is a non-commutative Fourier shift (Pieri rule)",
