@@ -497,3 +497,81 @@ theorem weightedOrderWF_swap_lt {a b : G} (h : rank b < rank a) :
 end WeightedOrderWF
 
 end UGB.GrobnerShirshov.BlockSplay
+
+/-! ## Normal monomials of a quadratic system
+
+A monomial is in normal form exactly when no two adjacent letters form a pair that
+carries a rule. For a block splay (rules on every pair `a b` with `blk b ≤ blk a`)
+this says: the blocks increase strictly along the word. -/
+
+namespace UGB.GrobnerShirshov.Quadratic
+
+open UGB.GrobnerShirshov UGB.GrobnerShirshov.Diamond
+
+variable {G : Type*} [DecidableEq G] {k : Type*} [CommRing k] {ord : AdmissibleOrder G}
+  [Nontrivial k] (d : QuadData G k ord)
+
+theorem infix_pair_cons_cons {a b x y : G} {t : List G} :
+    [a, b] <:+: x :: y :: t ↔ (a = x ∧ b = y) ∨ [a, b] <:+: y :: t := by
+  rw [List.infix_cons_iff]
+  constructor
+  · rintro (h | h)
+    · left
+      obtain ⟨u, hu⟩ := h
+      simp only [List.cons_append, List.nil_append, List.cons.injEq] at hu
+      exact ⟨hu.1, hu.2.1⟩
+    · exact Or.inr h
+  · rintro (⟨rfl, rfl⟩ | h)
+    · exact Or.inl ⟨t, rfl⟩
+    · exact Or.inr h
+
+theorem not_pair_infix_iff_chain (P : G → G → Prop) : ∀ m : List G,
+    (∀ a b, P a b → ¬ [a, b] <:+: m) ↔ m.IsChain fun a b => ¬ P a b
+  | [] => by
+    simp only [List.isChain_nil, iff_true]
+    intro a b _ h
+    exact absurd h.length_le (by simp)
+  | [x] => by
+    simp only [List.isChain_singleton, iff_true]
+    intro a b _ h
+    exact absurd h.length_le (by simp)
+  | x :: y :: t => by
+    rw [List.isChain_cons_cons, ← not_pair_infix_iff_chain P (y :: t)]
+    constructor
+    · intro h
+      exact ⟨fun hp => h x y hp (infix_pair_cons_cons.2 (Or.inl ⟨rfl, rfl⟩)),
+        fun a b hp hi => h a b hp (infix_pair_cons_cons.2 (Or.inr hi))⟩
+    · rintro ⟨h1, h2⟩ a b hp hi
+      rcases infix_pair_cons_cons.1 hi with ⟨rfl, rfl⟩ | hi
+      · exact h1 hp
+      · exact h2 a b hp hi
+
+/-- **Normal monomials of a quadratic system**: no adjacent pair carries a rule. -/
+theorem normalFormMonomial_iff_isChain (m : Monomial G) :
+    NormalFormMonomial ord d.sys m ↔ m.IsChain fun a b => (a, b) ∉ d.pairs := by
+  rw [← not_pair_infix_iff_chain (fun a b => (a, b) ∈ d.pairs)]
+  constructor
+  · intro h a b hp
+    have := h _ (d.rule_mem ⟨(a, b), hp⟩)
+    rwa [d.rule_lm] at this
+  · rintro h r ⟨p, rfl⟩
+    rw [d.rule_lm]
+    exact h _ _ p.2
+
+end UGB.GrobnerShirshov.Quadratic
+
+namespace UGB.GrobnerShirshov.BlockSplay
+
+open UGB.GrobnerShirshov UGB.GrobnerShirshov.Diamond
+
+variable {G : Type*} [DecidableEq G] {k : Type*} [CommRing k] [Nontrivial k]
+  {ord : AdmissibleOrder G} {ι : Type*} [LinearOrder ι]
+
+/-- **Normal monomials of a block splay**: the blocks increase strictly along the
+    word, so each block contributes at most one letter. -/
+theorem BlockData.normalFormMonomial_iff_isChain (D : BlockData G k ord ι) (m : Monomial G) :
+    NormalFormMonomial ord D.quad.sys m ↔ m.IsChain fun a b => D.blk a < D.blk b := by
+  rw [Quadratic.normalFormMonomial_iff_isChain]
+  simp only [BlockData.quad, Set.mem_setOf_eq, not_le]
+
+end UGB.GrobnerShirshov.BlockSplay
