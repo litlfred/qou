@@ -701,3 +701,40 @@ No comparison with a hyperbolic volume, Chern–Simons invariant or measured num
 - `trace_Vp3_sub_three`: `tr(Vp³) − 3 = −(q² − 1)⁴(q⁴ + q² + 1)/q⁶` (agrees with §21's probe,
   which used the 8-dimensional tensor representation: an independent convention check).
 - `two_add_c1_eq`: `2 + c₁ = h⁴[3]_q`; `c1_sub_two_eq`: the golden-ratio boundary.
+
+## §23 Assembly of n − p under the holonomy connection, and where 12 could live
+
+Probe: `mn_holonomy_assembly.py` (symbolic in `q`; the pin is used only to print the
+size of each term, never compared to data). Uses §19–§22: `μ_n = q⁻²μ_p`,
+`μ = h²√[3]_q e^{i(π+θ)/2}`, `2Re μ = −h⁴[3]_q`, Reeb term `−(1−q⁻¹)[2]_q/2` per isospin unit.
+
+**Rank-one (complex):** `n − p = (q⁻² − 1)μ − (1 − q⁻¹)[2]_q/2`.
+**Block (real, both eigenvalues):** `n − p = (q⁻² − 1)(−h⁴[3]_q) − 3(1 − q⁻¹)[2]_q/2`
+`= (q−1)(2q¹³+2q¹²−6q¹¹−6q¹⁰+6q⁹+3q⁸−4q⁷−7q⁶+6q⁵+6q⁴−6q³−6q²+2q+2)/(2q⁸)`.
+
+Sizes at the pin (dimensionless; no physical comparison is made):
+
+| term | rank-one | block |
+|---|---|---|
+| own-sector (holonomy) | 0.000547540 − 0.014351118 i | 0.00109508 |
+| isospin (Reeb / Cartan) | −0.0996215668 | −0.298864700 |
+| total | −0.0990740 − 0.0143511 i | −0.2977696195 |
+
+Orders as `q → 1`: `μ ~ h²`, own-sector part `~ h³`, isospin part `~ h`. The holonomy
+connection contributes, but at the pin the isospin term is about 270 times larger.
+
+**Where 12 could live (structural, not a fit).** In the proton identity the 12 multiplies
+`m_e` and does not depend on `q`. Under this connection `|μ| = h²√[3]_q`, which is 0 at
+`q = 1`. So 12 cannot be `κμ` with `κ` independent of `q`. It has to be a multiplicity or a
+normalisation (a count of states or of letters), or come from a different term of ℒ. I
+did not search products of counts that equal 12, because picking one would be selection
+against the target.
+
+**What the Cartan weights give.**
+- The exact p/n split `μ_n = q⁻²μ_p` (proved in Lean, `HolonomyConnectionSplit.lean`).
+- Reeb = `T³ = ±½`, so the isospin term is `−(1−q⁻¹)[2]_q/2` per unit (rank-one) or 3× that (block).
+- The K-traces on the weight spaces are `3q` and `3q⁻¹`: counts of 3, not 12.
+
+They fix the q-dependence of the split. They do not produce 12 unless a further choice is
+made, and that choice is not in the corpus. Status: 12 was not found in the searched class.
+This does not show it is impossible.
