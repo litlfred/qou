@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T15:01:00.181845+00:00",
-  "commitSha": "ef7c2d823cb06587390dc971ae44e66c40eb2906",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-21T02:50:46.049515+00:00",
+  "commitSha": "28488bb4f7c533dea5ff310ea41d0cc4c50c6bd8",
   "assertions": [
     {
       "name": "identity__direct_matches_closed",
@@ -58,7 +58,7 @@
       "expected": 1.0,
       "passed": true,
       "tolerance": 0.0,
-      "source": "direct iterative composition over 3 sub-interval(s) vs closed-form prediction from prop:six-canonical-knot-operators; mpmath max-abs-diff (50 dps) = 1.81114e-71 < tol 1.0e-45"
+      "source": "direct iterative composition over 3 sub-interval(s) vs closed-form prediction from prop:six-canonical-knot-operators; mpmath max-abs-diff (50 dps) = 3.62227e-71 < tol 1.0e-45"
     },
     {
       "name": "garside_sigma1_sigma2_sigma1__center_of_mass_preserved",
@@ -66,7 +66,7 @@
       "expected": 1.0,
       "passed": true,
       "tolerance": 0.0,
-      "source": "Sum of Δψ^(r) + Δψ^(g) + Δψ^(b) should be 0 for the explicit closed-form trajectories (all six S_3 operators) by the table in prop:six-canonical-knot-operators; mpmath sum (50 dps) = 0.0"
+      "source": "Sum of Δψ^(r) + Δψ^(g) + Δψ^(b) should be 0 for the explicit closed-form trajectories (all six S_3 operators) by the table in prop:six-canonical-knot-operators; mpmath sum (50 dps) = -1.81114e-71"
     },
     {
       "name": "three_cycle_plus_sigma1_sigma2__direct_matches_closed",
@@ -113,8 +113,8 @@
   "durationMs": 4,
   "computation": "reeb-flow-garside-closed-form-verification",
   "scriptFile": "reeb_flow_garside_closed_form_verification.py",
-  "scriptHash": "03a14bec2210",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "b5970a89bf61",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -122,12 +122,21 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/reeb_flow_garside_closed_form_verification.py"
+    ],
+    "reproduce": "python3 -u computations/reeb_flow_garside_closed_form_verification.py"
   },
   "description": "Compute verification of the Reeb-flow / Garside closed-form trajectory on color sectors (r, g, b) for the six canonical knot operators in prop:six-canonical-knot-operators. Cross-validates the closed-form trajectory at q_0 (50 dps) against direct iterative composition over the piecewise-affine sub-intervals. Closes cheat-sheet §5 Migration Backlog #5.",
   "contentBlock": "prop:six-canonical-knot-operators",
@@ -244,9 +253,9 @@
         "delta_g": "-1.16236685373791611122676877905",
         "delta_b": "-1.16236685373791611122676877905"
       },
-      "max_abs_diff": "1.81114e-71",
+      "max_abs_diff": "3.62227e-71",
       "matches_within_tol": true,
-      "centre_of_mass_sum": "0.0",
+      "centre_of_mass_sum": "-1.81114e-71",
       "centre_of_mass_preserved": true
     },
     "three_cycle_plus_sigma1_sigma2": {

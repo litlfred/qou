@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-09T22:40:21.822807+00:00",
-  "commitSha": "91d03c79c26ec860af7dea28c1aaebba175d161e",
+  "computedAt": "2026-11-21T02:50:44.620968+00:00",
+  "commitSha": "28488bb4f7c533dea5ff310ea41d0cc4c50c6bd8",
   "assertions": [
     {
       "name": "family_alpha_literal_wenzl_markov_trace_at_least_one_passes_10_ppm",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 4,
   "computation": "qbeta-wenzl-habiro-chain-alpha",
   "scriptFile": "qbeta_wenzl_habiro_chain_alpha.py",
-  "scriptHash": "db473bf9b57a",
-  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "scriptHash": "522311372bed",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,13 +25,21 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_wenzl_habiro_chain_alpha.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_wenzl_habiro_chain_alpha.py"
   },
   "data": {
     "targets": {

@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T11:36:32.349404+00:00",
-  "commitSha": "d2e6d7fbc450c46335a8aa285b6382c50381a4fc",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-21T02:50:20.388347+00:00",
+  "commitSha": "28488bb4f7c533dea5ff310ea41d0cc4c50c6bd8",
   "assertions": [
     {
       "name": "im_li2q_is_z_independent_above_q0",
@@ -14,7 +14,7 @@
     },
     {
       "name": "im_equals_pi_residue",
-      "computed": "0.000000006226747840562555678041520168824005312235021108430924157215291085397952",
+      "computed": "0.000000006226747840562555678041520168824005312235021108431533050788112706129089",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-06",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 128405,
+  "durationMs": 100798,
   "computation": "qbeta-li2q-imaginary-quantization",
   "scriptFile": "qbeta_li2q_imaginary_quantization.py",
-  "scriptHash": "6a184ec0b9eb",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "03d7fc5b00fe",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +34,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
