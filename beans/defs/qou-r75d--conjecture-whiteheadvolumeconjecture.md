@@ -55,3 +55,9 @@ Bean stays open.
 - The volume limit is restated as a limit of evaluations of `P_N`.
 
 Next: the combinatorial Markov theorem (Vogel + Traczyk), coordinated with the PL thread. The conjecture stays open in general, so the bean is not closed.
+
+## 2026-11-21: route 2 (diagram invariant), status
+
+Draft PR #8962. `normValue_eq` is sorry-free: for any model satisfying `Model.Invariant` (R1 up to θ, R2 parallel and antiparallel, R3), the writhe-normalised value is a Reidemeister invariant of diagram codes.
+
+Finding (measured with sympy): the sl₂ R-matrix is not such a model while codes carry no rotation data. A free circle evaluates to |ι| = 2, not [2], and the kink partial trace is diag(q, 2q − q⁻¹). With K = diag(q, q⁻¹) turn weights the four kinks give q^{±2}, and the antiparallel bigon holds with a K^{±1} turn on its over edge plus the compensating boundary turn. Fix proposed: integer turn markers. Owner decision pending (options: turn markers / Markov's theorem / stop). Conjecture remains open.
