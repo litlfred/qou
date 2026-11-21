@@ -8,7 +8,7 @@ Twelve $\gamma\gamma$ pair productions generate four nucleons. Each is confined 
 ## Nucleus NF ($\alpha$ particle)
 
 $$
-  \mathrm{NF}(\mathcal{N}(2,2)) = +0.041\gamma - 0.133\sigma_0 + 0.169\sigma_1 - 0.071 L_+ - 0.297 L_- + 1.040 e^-.
+  \mathrm{NF}(\mathcal{N}(2,2)) = +0.041\,\mathbf{1} - 0.133\sigma_0 + 0.169\sigma_1 - 0.071 L_+ - 0.297 L_- + 1.040 e^-.
 $$
 
 $$
@@ -22,7 +22,7 @@ The chain of inter-nucleon crossings among the four nucleons puts a large coeffi
 Attach two electron words $\sigma_0\sigma_1\sigma_0$ (each closing to the Hopf link), as in the hydrogen example:
 
 $$
-  \mathrm{NF}(\mathcal{A}(2,2)) = +0.236\gamma - 0.061\sigma_0 + 0.176\sigma_1 + 0.384 L_+ - 0.037 L_- + 1.190 e^-.
+  \mathrm{NF}(\mathcal{A}(2,2)) = +0.236\,\mathbf{1} - 0.061\sigma_0 + 0.176\sigma_1 + 0.384 L_+ - 0.037 L_- + 1.190 e^-.
 $$
 
 $$

@@ -19,7 +19,7 @@ $$
 ## Hydrogen NF
 
 $$
-  \mathrm{NF}(\mathcal{A}(1,0)) = +0.090\gamma + 1.018\sigma_0 - 0.024\sigma_1 + 0.213 L_+ + 0.112 L_- + 0.080 e^-.
+  \mathrm{NF}(\mathcal{A}(1,0)) = +0.090\,\mathbf{1} + 1.018\sigma_0 - 0.024\sigma_1 + 0.213 L_+ + 0.112 L_- + 0.080 e^-.
 $$
 
 $$
