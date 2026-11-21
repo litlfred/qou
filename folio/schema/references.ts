@@ -2258,6 +2258,8 @@ const ORDER: Array<FileSlot | Reference> = [
 
   { id: "reshetikhin-turaev1990" },
 
+  { id: "turaev1988" },
+
   { id: "faddeev-kashaev-volkov2000" },
 
   { id: "andersen-mistegard2020" },
