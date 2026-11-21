@@ -8830,3 +8830,20 @@ Owner 2026-11-21 chose both arms. Photon γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + 
 **Corpus.** No assignment of colour weights to flavour found: def:photon, quark-antiquark-production ("independent color weights"), pn-averaging-uniqueness ("choosing that weight is open"), bring_color_weighted (interface factor z − h(1/2 − δ/4), not φ). Searched those surfaces + grep of content/ for "colour weight"; corpus_search not run. So an n/p split through colour weights would be a new assignment needing an owner ruling; within the R-pt and R-maj rules none separates n and p in any trace.
 
 Lean: QOU/QuarkState/NucleonPhotonColourWeights.lean (sorry-free, lean-direct exit 0, axioms propext/choice/Quot.sound). Ring-coloured trace (sibling branch claude/borromean-ring-coloured-trace-np-2026-11-21) was not on the remote when this ran; not included.
+
+### 2026-11-21 — β routes re-run under the covariant two-term trace (PR #8707)
+
+The finished one-term routes were re-run under the scored two-term object, with the all-pairs charge insertion generalised to N strands. Those routes are P1/P4 (#8681), P2 (#8680), P3 (#8682), L (#8693) and N2 (#8636).
+- **Assumptions.** The lepton strands carry ν 0 / e⁻ −1 (the "C-lep" assumption). The photon-pair strands are run both as lepton strands and as neutral strands.
+- **Lean.** `QOU.QBeta.BetaRoutesTwoTerm` has 19 theorems, all sorry-free, over a generic CommRing or Field.
+
+**Main finding: once a lepton strand is present, "braid-covariant" has two readings.**
+- **H_N commutant (as pre-registered).** The connected term is non-zero: h/3 for one quark–lepton crossing (`trace_conn_crossing`). It is non-zero even on split words, because the projection is a polynomial in the full twist. That breaks two things the routes relied on: P1's split multiplicativity, and P2's family-A nucleon-blindness. Under this reading n⊗ν and p⊗e⁻ separate on P4's W0 (D = 0.00869, order (q−1)²).
+- **Colour-block commutant.** The connected term is identically 0 on every word (`pairSum_union`). Two-term then equals one-term on every route.
+
+Other results:
+- P3 is unchanged: its space is one-dimensional.
+- N2's selection is unchanged for |c_em| < 3.55.
+- No route gives Q_β without choosing c_em (scope a).
+
+**Owner decision (framed in the audit §4).** Which covariance group defines two-term with lepton strands. My recommendation is colour-block. Audit: docs/audits/2026-11-21-beta-routes-two-term-rerun.md.
