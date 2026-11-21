@@ -7,6 +7,7 @@ import UGB.GrobnerShirshov.QSerreGS
 import UGB.GrobnerShirshov.Quotient
 import UGB.GrobnerShirshov.NormalFormBasisProof
 import UGB.GrobnerShirshov.QSerrePBW
+import UGB.GrobnerShirshov.QSerreStandard
 import UGB.GrobnerShirshov.Flatness
 import UGB.GrobnerShirshov.StrongMultiplicativity
 import UGB.GrobnerShirshov.JetOrder
@@ -25,13 +26,14 @@ provides the algebraic engine behind the QOU lifting mechanism.
 |------|----------|
 | `Basic` | Monomial orders, rewriting systems, S-polynomials |
 | `CompositionLemma` | Diamond lemma / confluence proof |
-| `NormalForms` | PBW-type bases for `U_q(su(2))` and `Dist(G)` |
+| `NormalForms` | PBW-type bases for `U_q(sl₂)` and `Dist(G)` |
 | `NormalFormExistsRefutation` | proof that the `normal_form_exists` axiom is **false** |
 | `QSerreCriticalPairs` | reduces `qSerre_is_gs_basis` to its 8 genuine critical pairs |
 | `QSerreGS` | resolves all 8 and proves `qSerre_is_gs_basis` (formerly an axiom) |
 | `Quotient` | the quotient algebra `k⟨G⟩ / (Σ)` and `NormalFormBasis` |
 | `NormalFormBasisProof` | proof that a GS basis with unit leading coefficients gives `NormalFormBasis` (commutative `k`) |
-| `QSerrePBW` | PBW basis of `U_q(su(2))`: normal words are `E_-^c E_+^a K^n`, `(c,a,n) ∈ ℕ×ℕ×ℤ`, and are a `k`-basis (`qSerre_pbw_basis`) |
+| `QSerrePBW` | PBW basis of `U_q(sl₂)`: normal words are `E_-^c E_+^a K^n`, `(c,a,n) ∈ ℕ×ℕ×ℤ`, and are a `k`-basis (`qSerre_pbw_basis`) |
+| `QSerreStandard` | The q-Serre rules and the standard presentation of `U_q(sl₂)` (`KK⁻¹=1=K⁻¹K`, `KEK⁻¹=q²E`, `KFK⁻¹=q⁻²F`, `[E,F]=(K−K⁻¹)/(q−q⁻¹)`) generate the same two-sided ideal (`uq_ideal_eq`); PBW basis `F^c E^a K^n` there (`uq_pbw_basis`) |
 | `Flatness` | Flat deformation from GS confluence |
 | `StrongMultiplicativity` | tensor-product presentation (Bokut–Chen); see `leitner2006` Def. 1.11 for strong multiplicativity |
 | `SplayPBW` | twisted splay rewriting system `ab → c·ba + π(a,b)`; its compositions are trivial iff the Jacobi condition holds; sorted words then form a basis |

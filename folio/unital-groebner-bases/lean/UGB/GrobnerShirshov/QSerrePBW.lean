@@ -6,7 +6,7 @@ import Mathlib.Data.List.Infix
 set_option linter.unusedSectionVars false
 
 /-!
-# The PBW basis of `U_q(su(2))`
+# The PBW basis of `U_q(sl₂)`
 
 `qSerre_is_gs_basis` (`QSerreGS.lean`) says the seven q-Serre rules form a
 Gröbner–Shirshov basis, and every rule is monic (`qSerre_rules_monic`). The
@@ -30,7 +30,7 @@ where `K^n` means `Kᵢ^(-n)` for `n < 0` (`pbwWord`). The map
 (`pbwEquiv`), so
 
 **Theorem (`qSerre_pbw_basis`).** The elements `F^c E^a K^n`,
-`(c, a, n) ∈ ℕ × ℕ × ℤ`, form a `k`-basis of `U_q(su(2))`.
+`(c, a, n) ∈ ℕ × ℕ × ℤ`, form a `k`-basis of `U_q(sl₂)`.
 
 Note the order: `F` first, then `E`, then the Cartan part. This is forced by
 the rank order `E_- < E_+ < K⁻¹ < K` the rules are oriented by; the older
@@ -231,7 +231,7 @@ theorem qSerre_normalFormBasis [DecidableEq k] :
   NFBasis.normalFormBasis_of_isGrobnerShirshovBasis
     (qSerre_is_gs_basis k qs) (qSerre_rules_monic k qs)
 
-/-- **PBW theorem for `U_q(su(2))`.** The classes of `F^c E^a K^n`,
+/-- **PBW theorem for `U_q(sl₂)`.** The classes of `F^c E^a K^n`,
 `(c, a, n) ∈ ℕ × ℕ × ℤ`, form a `k`-basis of the q-Serre quotient algebra. -/
 theorem qSerre_pbw_basis [DecidableEq k] :
     ∃ B : Module.Basis (ℕ × ℕ × ℤ) k (QuotAlg (qSerreRewritingSystem k qs)),
