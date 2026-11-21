@@ -8,7 +8,7 @@ tags:
     - needs-owner
     - convention-d
 created_at: 2026-11-15T18:54:18Z
-updated_at: 2026-11-15T21:05:43Z
+updated_at: 2026-11-21T16:41:14Z
 parent: qou-avtq
 ---
 
@@ -71,3 +71,5 @@ A grep of folio/ content and Lean for an isospin orientation convention (e₁ = 
 
 
 2026-11-15: PR #7966 merged (rebase, b2b349f3607) on owner's tap. Landed: audit §1–§22, H_alpha wording in the block, ScaleHypothesis class, Lean NucleonWeightSpaceSecondOrder. Bean STAYS OPEN: H_alpha (the n-p MeV scale) is an open conjecture; the bridge-B thread is working on the 1/hbar_q^2 hierarchy.
+
+2026-11-21: PR #8886 merged (3a865b37). The n–p block now shows both model values side by side: 1.0541 MeV (−18.5 %, conditional on H_α) and Q_β + m_e = 0.8364 MeV (−35.3 %, ruled Q_β). Neither is selected by residual; sign of the ordering open. H_α derivation still open; bean stays open.
