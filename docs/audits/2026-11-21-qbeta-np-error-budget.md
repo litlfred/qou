@@ -260,3 +260,32 @@ pre-registered as addendum 2 before `both_rules.py` ran. Lean: `QOU/QBeta/OneSid
 - *One-sided placement.* Overruled for now; it would need a ruling.
 - *The reading.* Either reading still needs a ruling.
 - *The tower factor (bean `qou-y3bm`).* It moves the result by 1 %.
+
+## 12. Deriving the reading of E₀·F (owner: "not yet, derive the reading")
+
+**Question.** For the one-sided nucleon-rule F = ε_n − ε_p·f, is E₀·F the Q_β or the m_n − m_p?
+Each reading is tested against the energy map it has to use. No comparison value decides
+anything. Pre-registered in `computations/probes/qbeta_interaction_q1/PREREGISTRATION.md`,
+Addendum 3. Probe: `reading_probe.py`, 8/8; witness `qbeta-one-sided-reading.witness.json`.
+Lean: `QOU/QBeta/OneSidedReading.lean`, lean-direct exit 0, no `sorry`.
+
+**Linear map E(X) = E₀·ε(X), multiplicative traces.** This is the map the scored cell already uses.
+- Identity (Lean `fOneSided_eq_flavour_add`, any field): F = ε_flavour + ε_p·(1 − f).
+- *Q_β reading.* E(n) − E(p e⁻ ν̄) = E₀·F > 0, but the map then gives the lepton pair
+  E(p e⁻ ν̄) − E(p) = E₀·ε_p·(f − 1), which is **negative** (Lean `leptonPair_neg`: ε_p > 0 and
+  f < 1). Numbers: −1.611 MeV (tower E₀), −1.595 MeV (order-zero E₀). Kinematics needs it to be
+  m_e + E_ν̄ > 0. **The reading contradicts its own map.**
+- *m_n − m_p reading.* The same map on the two nucleons gives E(n) − E(p) = E₀·ε_flavour < 0,
+  while E₀·F > 0 (Lean `fOneSided_ne_flavour`). Numbers: −0.3254 vs +1.2851 MeV. **The reading
+  contradicts the map applied to the nucleons.**
+
+**Logarithmic map E(X) = ±E₀·ln ε(X).** For sign +1 the lepton pair is −11.37 MeV and Q is
++10.49 MeV; for sign −1 both flip. Under neither sign are both positive, and the pair magnitude
+(11.4 MeV) is not m_e (0.511 MeV).
+
+**Result, scope (a).** Under a linear or logarithmic energy map with multiplicative traces,
+**neither reading is derived**: each is inconsistent with the map it would use. So the closeness
+of E₀·F = 1.28513 MeV to CODATA m_n − m_p (−0.63 %, §11) has no derivation behind it, and must not
+be quoted as evidence. This does not exclude an energy map that is neither linear nor logarithmic;
+none is on record. What a one-sided placement would need is a map under which the lepton factor
+carries a positive rest energy. That is the open item, not the choice between the two readings.
