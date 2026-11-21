@@ -28,4 +28,5 @@ carrier), then try to prove and derive it.
 | 2026-11-20 | **No phone / push notifications.** Leave push off when creating scheduled tasks or sessions. |
 | 2026-11-20 | **Propagate every owner correction or ruling** to all sibling agents/sessions and to this ledger (and `AGENTS.md` where it is a standing rule), so none repeat the mistake. |
 | 2026-11-20 | **Rulings are conjectures until derived**: formalize first (Lean conjecture), then attempt proof and derivation. |
+| 2026-11-21 | **Resource-limited work goes to a bean for Antigravity.** Work that fails here because of time or resource limits (e.g. Lean modules too heavy to build in this environment) is recorded as a bean for Antigravity, not dropped. |
 | 2026-11-21 | **No project memory.** Rulings and instructions live in the repo (this file), never in chat-app memory. |
