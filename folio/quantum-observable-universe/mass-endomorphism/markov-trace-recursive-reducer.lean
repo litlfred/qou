@@ -29,6 +29,9 @@ The algorithm:
 
 We formalise:
 
+  • A computable evaluator `trWord` (section `Evaluator`), structurally
+    recursive and so terminating by Lean's own check; that it satisfies the
+    `IsMarkovTrace` axioms is not proved.
   • A terminating *shape* only (`markovTraceRecursiveReducer_terminates`):
     it is met by a constant tracer, so it says nothing about the actual
     reducer. Termination of the algorithm is proved in the `.md` sibling,
@@ -855,5 +858,64 @@ theorem markovTrace_unique {mT₁ mT₂ : ℕ → List ℤ → R}
     exact sub_eq_zero.mp (HeckeRel.reduce h (n + 1) F hF w.length h0 w hw le_rfl)
 
 end DisjointProduct
+
+/-! ## A computable evaluator
+
+`trWord z h n w` computes the trace of a positive word `w` on `σ_0, …, σ_{n-1}`
+in `H_{n+1}(q)`, by the reducer's own algorithm: expand `w` in the standard
+basis `T_x` (`x ∈ S_{n+1}`, one-line notation), then peel each `T_x` with the
+Markov property. Writing `b` for the position of the top value, `x = x' · s_b ⋯ s_{m-1}`
+with `x'` fixing the top point and lengths adding, so
+`T_x = T_{x'} T_{s_{m-1}} T_c` with `c = s_{m-2} ⋯ s_b`, and
+`tr(T_x) = z · tr(T_{x'} T_c)` one level down.
+
+Every definition here is structurally recursive, so Lean's own termination
+check is the termination proof: the evaluator is a total function. What is
+NOT proved is that `trWord` satisfies the axioms of `IsMarkovTrace`; that is
+the existence half (Ocneanu). By `markovTrace_unique`, if it does, it is the
+trace. The `example`s below are kernel-checked computations, not proofs of the
+axioms: the Hecke quadratic, a braid relation, the product law, and agreement
+with the length-power trace `(-1)^{|w|}` at `q = -1`. -/
+
+section Evaluator
+
+/-- Swap the entries at positions `i` and `i+1` (right multiplication by `s_i`). -/
+def swapAt (w : List ℕ) (i : ℕ) : List ℕ :=
+  (w.set i (w.getD (i + 1) 0)).set (i + 1) (w.getD i 0)
+
+/-- Right multiplication of a formal sum of basis elements `T_w` by `T_{s_i}`. -/
+def mulGen {R : Type*} [Mul R] (h : R) (e : List (R × List ℕ)) (i : ℕ) :
+    List (R × List ℕ) :=
+  e.flatMap fun p =>
+    if p.2.getD i 0 < p.2.getD (i + 1) 0 then [(p.1, swapAt p.2 i)]
+    else [(p.1 * h, p.2), (p.1, swapAt p.2 i)]
+
+def mulGens {R : Type*} [Mul R] (h : R) (e : List (R × List ℕ)) (l : List ℕ) :
+    List (R × List ℕ) := l.foldl (mulGen h) e
+
+/-- Trace of a basis element `T_w`, `w` a permutation of `{0,…,m-1}` in one-line
+    notation. Peels the top letter: `T_w = T_{w'} T_{s_{m-2}} T_c`. -/
+def trBasis {R : Type*} [CommRing R] (z h : R) : ℕ → List ℕ → R
+  | 0, _ => 1
+  | m + 1, w =>
+    if w.getD m 0 = m then trBasis z h m (w.take m)
+    else
+      let b := w.idxOf m
+      let w' := (List.range' b (m - b)).foldl swapAt w
+      let c := (List.range' b (m - 1 - b)).reverse
+      z * ((mulGens h [(1, w'.take m)] c).map fun p => p.1 * trBasis z h m p.2).sum
+
+/-- The evaluator: trace of a positive word on `σ_0,…,σ_{n-1}` in `H_{n+1}`. -/
+def trWord {R : Type*} [CommRing R] (z h : R) (n : ℕ) (w : List ℤ) : R :=
+  ((mulGens h [(1, List.range (n + 1))] (w.map Int.toNat)).map
+    fun p => p.1 * trBasis z h (n + 1) p.2).sum
+
+
+example : trWord (5 : ℤ) 3 1 [0, 0] = 3 * 5 + 1 := by decide
+example : trWord (5 : ℤ) 3 2 [0, 1, 0] = trWord (5 : ℤ) 3 2 [1, 0, 1] := by decide
+example : trWord (-1 : ℤ) 0 3 [0, 2, 1, 1, 0] = (-1) ^ 5 := by decide
+example : trWord (5 : ℤ) 3 3 [0, 0, 2, 2] = trWord (5 : ℤ) 3 1 [0, 0] * trWord (5 : ℤ) 3 1 [0, 0] := by decide
+
+end Evaluator
 
 end QOU.BraidKnot
