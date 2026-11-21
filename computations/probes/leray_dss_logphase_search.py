@@ -577,8 +577,10 @@ def arclength_homotopy(sy, x0, pj, th1=arb(1) / 80, maxsteps=200, log=LOG):
     path.append(summary(x1, sy, nf1, ok1, th1))
     y0 = x + [arb(0)]; y1 = x1 + [W * th1]
     ds = mid(norm([y1[i] - y0[i] for i in range(len(y0))])); dsmin = ds / 64; dsmax = ds * 8
-    dth_sign = 1; folds = []
+    dth_sign = 1; folds = []; t_end = time.time() + float(os.environ.get('LERAY_TMAX', '1e9'))
     for step in range(maxsteps):
+        if time.time() > t_end:
+            return y1[:-1], path, f'time_budget_at_theta_{s40(y1[-1]/W, 6)}_folds_{len(folds)}'
         sec = [y1[i] - y0[i] for i in range(len(y0))]; L_ = mid(norm(sec)); t = [v / L_ for v in sec]
         yp = [mid(y1[i] + ds * t[i]) for i in range(len(y1))]
         y, nf, ok = corrector_arclength(sy, yp, t, W, pj, log=log)
