@@ -29,11 +29,16 @@ The algorithm:
 
 We formalise:
 
-  • Termination via well-founded recursion on `(n, ℓ(w))`.
-  • The disjoint-product property
-    `tr_M(α ⊗ β) = tr_M(α) · tr_M(β)`
-    for `α, β` on disjoint commuting strand-clusters separated by
-    an unused generator slot.
+  • A terminating *shape* only (`markovTraceRecursiveReducer_terminates`):
+    it is met by a constant tracer, so it says nothing about the actual
+    reducer. Termination of the algorithm is proved in the `.md` sibling,
+    not here.
+  • The disjoint-product law `markovTrace_disjointProduct`, proved from
+    the axioms of `IsMarkovTrace`: `tr(α · β↑) = tr(α) · tr(β)` with `α` on
+    `σ_0, …, σ_k` and `β↑` on `σ_{k+1}, …` (0-indexed). The two clusters
+    share one strand. The split form, with an unused slot between them,
+    additionally needs shift invariance of the trace, which is not
+    formalised.
 
 Ref: [jones1987] Hecke algebra representations of braid groups,
 Annals of Math. 126, 335-388.
@@ -113,34 +118,17 @@ theorem markovTraceRecursiveReducer_terminates {R : Type*} [Inhabited R] :
 
 /-! ## Disjoint-product property of the Markov trace
 
-    *Statement (concrete):* for any commutative ring `R` carrying
-    an opaque `markovTrace : (n : ℕ) → List ℤ → R` and a "shift
-    embedding" `embedRight : List ℤ → ℕ → List ℤ` that re-indexes
-    a word's generators by adding a fixed offset to land on a
-    disjoint set of strands, the Markov trace satisfies
-
-      markovTrace n (α ++ embedRight β (k+1))
-        = markovTrace k α * markovTrace (n - k - 1) β
-
-    whenever `α` uses only generators in `Fin (k - 1)`,
-    `β` uses only generators in `Fin (n - k - 2)`, and
-    `k + 2 ≤ n` (so the slot `σ_{k+1}` separates the two clusters
-    and is unused).
-
-    Proof sketch (delegated to references): cyclicity moves `β`'s
-    generators to the right; the Markov axiom strips `σ_{n-2}`,
-    `σ_{n-3}`, …, `σ_{k+2}` in turn, each contributing a factor
-    `z` that exactly matches the standalone `markovTrace β`
-    computed in its own algebra `H_{n-k-1}`.
+    The statement is `DisjointProductLaw` below, and the proof is
+    `markovTrace_disjointProduct` at the end of the file. The argument is
+    Ocneanu's reduction (`HeckeRel.reduce`), not iterated stripping:
+    stripping alone handles only words in which each generator occurs once
+    (`markovTrace_disjointProduct_ascendingRun`). For general words the
+    proof inducts on the number of generators of `β` and uses the Hecke,
+    braid and far-commutation relations to bring every word down to one
+    that uses the top generator at most once.
 
     Ref: [kassel1995] Theorem III.3.3 (Markov-trace stability under
-    embedding); [wenzl1988] §3 (block decomposition).
-
-    The Lean elaboration requires (1) a `Hecke n q` algebra type;
-    (2) a `MarkovTrace` typeclass; (3) the explicit embedding of
-    `H_k ⊗ H_{n-k-1}` into `H_n` via the strand-shift map.  Full
-    proof structure mirrors the cyclic-peeling argument; see the
-    `.md` sibling. -/
+    embedding); [jones1987] §5 (Ocneanu trace). -/
 
 /-- `w` is a **positive word on the first `n` generators**: every letter is an
     index `c` with `0 ≤ c < n`.  `mT n` is only constrained on such words; the

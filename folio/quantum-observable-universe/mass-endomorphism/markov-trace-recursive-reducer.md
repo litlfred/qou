@@ -6,11 +6,15 @@
 - *cyclicity $\mathrm{tr}_M(\alpha\beta) = \mathrm{tr}_M(\beta\alpha)$;*
 - *and the braid relations.*
 
-*The algorithm is correct, terminates in $O(\ell(\beta) \cdot n!)$ basis-element evaluations, and verifies the **disjoint-product property**:*
+*The trace it computes has the **disjoint-product property**. Number the generators from $1$. Let $\alpha$ be a word in $\sigma_1, \ldots, \sigma_{k+1}$ and $\beta$ a word in $\sigma_1, \ldots, \sigma_m$, and write $\beta^{\uparrow}$ for $\beta$ with every generator index raised by $k+1$, so that $\beta^{\uparrow}$ uses $\sigma_{k+2}, \ldots, \sigma_{k+m+1}$. Then*
 $$
-  \mathrm{tr}_M(\alpha \otimes \beta) \;=\; \mathrm{tr}_M(\alpha) \cdot \mathrm{tr}_M(\beta)
+  \mathrm{tr}_M(\alpha \beta^{\uparrow}) \;=\; \mathrm{tr}_M(\alpha) \cdot \mathrm{tr}_M(\beta).
 $$
-*for $\alpha \in H_k(q) \hookrightarrow H_n(q)$ on strands $\{1, \ldots, k\}$ and $\beta \in H_{n-k-1}(q) \hookrightarrow H_n(q)$ on strands $\{k+2, \ldots, n\}$ (separated by the unused generator $\sigma_{k+1}$).*
+*The two clusters share the strand $k+2$.*
+
+*If, in addition, $\mathrm{tr}_M$ is invariant under a uniform shift of generator indices, the split form also holds: $\mathrm{tr}_M(\alpha \otimes \beta) = \mathrm{tr}_M(\alpha) \cdot \mathrm{tr}_M(\beta)$ for $\alpha \in H_k(q)$ on strands $\{1, \ldots, k\}$ and $\beta \in H_{n-k-1}(q)$ on strands $\{k+2, \ldots, n\}$, separated by the unused generator $\sigma_{k+1}$.*
+
+The shared-strand law is formalised in Lean (`markovTrace_disjointProduct`). Termination and correctness of the algorithm are proved below in prose and are not formalised. Shift invariance is not proved here, so the split form is stated only under that hypothesis.
 
 The algorithm and its correctness are **parametric in $z$**: no step below
 evaluates the Markov parameter, so the statement holds for whatever value the
@@ -56,7 +60,7 @@ def tr_M(perm, n):
 (i) truncates the ambient algebra ($n \to \text{max\_gen} + 2$ where $\text{max\_gen} + 2 < n$), strictly decreasing the integer $n$; or
 (ii) peels one $\sigma_{n-2}$ from the word and recurses on basis elements $w'$ with $\ell(w') \leq \ell(\text{rotated}) = \ell(w) - 1$, strictly decreasing the Coxeter length.
 
-The lex order on $(n, \ell(w))$ has no infinite descending chain, so termination is guaranteed. $\square$
+The lex order on $(n, \ell(w))$ has no infinite descending chain, so termination is guaranteed. Each basis expansion involves at most $n!$ basis elements; no bound on the total number of evaluations is proved here. $\square$
 
 **Correctness.** Each step is an exact equality in $\mathbb{Q}(q)$:
 - Step 1 is exact (Hecke-quadratic expansion).
@@ -67,7 +71,7 @@ By induction on $(n, \ell)$, the output equals $\mathrm{tr}_M(\beta)$ in $\mathb
 
 ## Disjoint-product property
 
-Write $\beta^{\uparrow}$ for $\beta$ with every generator index raised by $k+1$, so that $\alpha$ uses $\sigma_1, \ldots, \sigma_k$ and $\beta^{\uparrow}$ uses $\sigma_{k+1}, \ldots$. Then
+Write $\beta^{\uparrow}$ for $\beta$ with every generator index raised by $k+1$, so that $\alpha$ uses $\sigma_1, \ldots, \sigma_{k+1}$ and $\beta^{\uparrow}$ uses $\sigma_{k+2}, \ldots$. Then
 $$
   \mathrm{tr}_M(\alpha \beta^{\uparrow}) \;=\; \mathrm{tr}_M(\alpha) \cdot \mathrm{tr}_M(\beta).
 $$
@@ -77,7 +81,9 @@ The proof is by induction on the number $m$ of generators of $\beta$, with Ocnea
 - If $\beta = a\,\sigma_{m}\,b$ uses it once, cyclicity moves $b^{\uparrow}$ to the front, the Markov axiom strips the top letter with a factor $z$, and cyclicity restores $\alpha (ab)^{\uparrow}$. The same steps on the right side give $z\,\mathrm{tr}_M(ab)$, and the induction hypothesis closes the case.
 - If $\beta$ uses $\sigma_m$ twice or more, take two consecutive occurrences $\sigma_m x \sigma_m$. If $x$ avoids $\sigma_{m-1}$, far commutation brings the two letters together and the quadratic relation shortens the word. If $x$ uses $\sigma_{m-1}$ once, one braid move removes a $\sigma_m$. Otherwise $x$ is first reduced one level down by the same argument.
 
-Every function on words that satisfies the three relations and vanishes on words using the top generator at most once therefore vanishes, so $F = 0$. Both clusters share one strand, so the closures form a connected sum. The statement's split case, with $\sigma_{k+1}$ unused, is the subcase where $\beta$ avoids $\sigma_1$. It additionally needs $\mathrm{tr}_M$ to be invariant under a uniform index shift, which is not formalised here.
+Every function on words that satisfies the three relations and vanishes on words using the top generator at most once therefore vanishes, so $F = 0$. Both clusters share the strand $k+2$, so the closures form a connected sum.
+
+For the split form, let $\alpha \in H_k$ use $\sigma_1, \ldots, \sigma_{k-1}$ and let $\beta_0$ be $\beta$ written on $\sigma_1, \ldots, \sigma_{n-k-2}$. Apply the shared-strand law with $k-1$ in place of $k$ to $\alpha$ and to $\beta'$, the word $\beta_0$ with every index raised by $1$; then $\beta'^{\uparrow}$ is $\beta$ on strands $\{k+2, \ldots, n\}$, and the law gives $\mathrm{tr}_M(\alpha \otimes \beta) = \mathrm{tr}_M(\alpha)\,\mathrm{tr}_M(\beta')$. Shift invariance gives $\mathrm{tr}_M(\beta') = \mathrm{tr}_M(\beta_0)$. That hypothesis is not proved here.
 
 ## Which axioms the disjoint product actually needs
 
