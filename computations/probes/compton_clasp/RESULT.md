@@ -2,8 +2,9 @@
 
 Date: 2026-11-21. Probe: `compton_clasp_probe.py` (exact in ℚ(q), sympy; output
 `compton_clasp_probe.out.json`). Lean: `QOU/MassTheory/PhotonClaspChargeForm.lean`
-(not compiled in this session: the Lean toolchain download is blocked by the
-session proxy).
+(lean-direct `-DautoImplicit=false -s 65536` exit 0 against the restored
+`lake-cache` oleans, no warnings; `#print axioms` shows only `propext`,
+`Classical.choice`, `Quot.sound`, no `sorryAx`).
 
 ## Setup
 
