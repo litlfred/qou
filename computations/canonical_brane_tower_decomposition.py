@@ -136,19 +136,19 @@ def vol_q_S_decomposition_verify(Z: int, N: int) -> dict:
     """
     from mass_at_3A_proper import atom_braid_word_3A
     from canonical_brane_tower import vol_q_S
-    from q_parameter import Q as Q_0
+    from q_parameter import Q_MP
 
-    q_val = float(Q_0)
-    word_atom = atom_braid_word_3A(Z, N, include_inter=True)
-    word_free = atom_braid_word_3A(Z, N, include_inter=False)
+    q_val = Q_MP   # was float(Q), which capped every Vol at ~1e-16
+    word_atom = atom_braid_word_3A(Z, N, include_inter=True, q=Q_MP)
+    word_free = atom_braid_word_3A(Z, N, include_inter=False, q=Q_MP)
     n_strands = 3 * (Z + N)
     n_gens = n_strands - 1
     interface = set(interface_gens_for_atom(Z, N))
 
     per_gen = []
     for i in range(n_gens):
-        v_atom = float(vol_q_S(word_atom, {i}, n_gens, q_val))
-        v_free = float(vol_q_S(word_free, {i}, n_gens, q_val))
+        v_atom = vol_q_S(word_atom, {i}, n_gens, q_val)
+        v_free = vol_q_S(word_free, {i}, n_gens, q_val)
         per_gen.append({
             "gen": i,
             "is_interface": i in interface,
@@ -170,11 +170,11 @@ if __name__ == "__main__":
     r = vol_q_S_decomposition_verify(1, 1)
     print(f"  interface gens: {r['interface_gens']}")
     print()
-    print(f"  {'gen':>3} {'interface?':>11} {'Vol(atom)':>12} {'Vol(free)':>12} {'Δ':>+12}")
+    print(f"  {'gen':>3} {'interface?':>11} {'Vol(atom)':>14} {'Vol(free)':>14} {'Δ':>14}")
     for g in r["per_gen"]:
         mark = "✓" if g["is_interface"] else " "
-        print(f"  {g['gen']:>3} {mark:>11} {g['vol_atom']:>+12.6f} "
-              f"{g['vol_free']:>+12.6f} {g['delta']:>+12.6e}")
+        print(f"  {g['gen']:>3} {mark:>11} {mp.nstr(g['vol_atom'], 12):>14} "
+              f"{mp.nstr(g['vol_free'], 12):>14} {mp.nstr(g['delta'], 6):>14}")
     print()
-    print(f"  Δ total T_2/z = {r['delta_total']:+.6e}")
+    print(f"  Δ total T_2/z = {mp.nstr(r['delta_total'], 12)}")
     print(f"  (should equal Σ over interface gens only)")

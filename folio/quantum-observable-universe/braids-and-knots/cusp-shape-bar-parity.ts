@@ -5,6 +5,7 @@ export default proposition({
   title:
     "Cusp-shape bar-parity: the figure-eight modulus splits as $\\mathfrak{V} = \\mathrm{Vol} + i\\,\\mathrm{CS}$",
   lean: { ref: "qou:QOU.Knot.CuspShapeBarParity.cusp_barParity_split" },
+  cites: ["dang-purcell", "dubois2007"],
   tags: [
     "figure-eight",
     "cusp-shape",

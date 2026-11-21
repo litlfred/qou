@@ -13,7 +13,7 @@ Embeddability requires $p^k - 1 \leq 4$, which implies $p^k \leq 5$.
 
 | $k$ | Knot | Genus $= 2^k - 1$ | Crossings | Embeddable? | Assignment |
 |-----|------|--------------------|-----------|-------------|------------|
-| $1$ | $T_{3,2} = T_{2,3}$ (trefoil $3_1$) | $1$ | $3$ | Yes | Electron $e^-$ (lepton partner of $\mathfrak{u}$) |
+| $1$ | $T_{3,2} = T_{2,3}$ (trefoil $3_1$) | $1$ | $3$ | Yes | Backup electron $e^-$ (the ruled electron $\sigma_0\sigma_1\sigma_0$ closes to the Hopf link) |
 | $2$ | $T_{3,4}$ ($8_{19}$) | $3$ | $8$ | Yes | Hopf${}^2$ color binding |
 | $3$ | $T_{3,8}$ | $7$ | $21$ | **No** | Excluded |
 | $4$ | $T_{3,16}$ | $15$ | $45$ | **No** | Excluded |
@@ -32,7 +32,7 @@ The trefoil is the unique generator at the intersection of the $m = 2$ (leptonic
 
 | Family | Generators from trefoil seed |
 |--------|----------------------------|
-| $m = 2$: $T_{2,3} \to T_{2,5} \to T_{2,7} \to T_{2,9}$ | $e^-, \mu, \tau,$ **strong force** |
+| $m = 2$: $T_{2,3} \to T_{2,5} \to T_{2,7} \to T_{2,9}$ | backup $e^-$; $\mu, \tau$ (words not ruled); **strong force** |
 | $m = 3$: $T_{3,2}, T_{3,4}, T_{3,5}$ | $u,$ **color binding,** **weak force** |
 
 The trefoil is the root node of both generation chains.
@@ -62,7 +62,7 @@ The $p = 2$ tower contributes the trefoil (matter) and $T_{3,4}$ (Hopf${}^2$ col
 
 The power tower $T_{3,2^k}$ establishes a physical pattern:
 
-- $k = 1$: $T_{3,2}$ = trefoil. Lightest matter (the electron, lepton partner of the up quark).
+- $k = 1$: $T_{3,2}$ = trefoil. Lightest matter in the backup model (the backup electron).
 - $k = 2$: $T_{3,4}$. Hopf${}^2$ color binding ($H^{0,1}$ force carrier).
 - $k = 3$: Excluded. Bring's surface forbids a third level.
 

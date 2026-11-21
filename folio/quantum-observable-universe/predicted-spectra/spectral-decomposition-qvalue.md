@@ -24,7 +24,7 @@ $$
 
 *Under the canonical Convention-D parameter $z_D = q^3/(q^2+1)$, each transfer matrix $\hat{V}_j$ and hence $P(q)$ has coefficients in $\mathbb{Q}(q)$ (unlike the Convention-C parameter $z_C = (q^{1/2} + q^{-1/2})^{-1} \approx 0.4993203342$, which introduces $\mathbb{Q}(q^{1/2})$); the numerical evaluations of $\mathcal{Q}_{\mathrm{bare}}$ are tabulated in the [interpretation](#rem:spectral-decomposition-qvalue-interpretation).*
 
-**(ii)** *$\log_q(x) = \ln x / \ln q$ is the $q$-natural logarithm. It counts exceptional divisor levels along the color tube fiber of $\Sigma_g$. The constant $\hbar_q = (q - 1)/q$ is the quantum Planck constant. This is the action per divisor step. The factor $m_e/3$ is the mass per crossing of the trefoil $\mathcal{K}_e = \mathcal{K}_{\tau(2,3)}$. The electron has $3$ crossings. The product $\hbar_q \cdot m_e / 3$ replaces the intermediate notation $\mathfrak{E}_{\mathrm{int}} \cdot \mu_0$. These cancel algebraically.*
+**(ii)** *$\log_q(x) = \ln x / \ln q$ is the $q$-natural logarithm. It counts exceptional divisor levels along the color tube fiber of $\Sigma_g$. The constant $\hbar_q = (q - 1)/q$ is the quantum Planck constant. This is the action per divisor step. The factor $m_e/3$ is the mass per crossing of the electron word $\sigma_0\sigma_1\sigma_0$ ([electron](#def:electron-knot)), which has $3$ letters. (The backup trefoil electron $\mathcal{K}_{\tau(2,3)}$ also has $3$ crossings, so the factor is the same in both readings.) The product $\hbar_q \cdot m_e / 3$ replaces the intermediate notation $\mathfrak{E}_{\mathrm{int}} \cdot \mu_0$. These cancel algebraically.*
 
 **(iii)** *$F(\tau(r,s), N)$ is the knot operator of $\tau(r,s)$ acting on the converting neutron's shell:*
 
