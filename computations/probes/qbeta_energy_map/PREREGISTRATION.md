@@ -319,3 +319,25 @@ Expected from the formula, to be proved: w = (2q², q² + q⁻², 2q⁻²)/[2]_q
 the symmetry a trace must have. That locates the inconsistency of §19 in the pair-Skein sum as written
 (scope a). It does not refute the D crossing trace of #8923, which may need a symmetrised sum over the
 braid's crossings rather than the three fixed ordered pairs.
+
+## Addendum 12 (owner "Both": derive |c|, and the nucleon mass as a sum over the braid's actual crossings), before code
+
+**Correction first.** #8923 writes m_p = 𝒮(u,u) + 2𝒮(u,d) and m_n = 2𝒮(u,d) + 𝒮(d,d), so each pair
+is oriented by flavour (u first), not by position. Addendum 11's T1/T2 failures are failures of the
+position-ordered reading (1,2),(1,3),(2,3). They are not failures of #8923's formula, which is
+relabelling-invariant by construction. Its open point is a different one: why u always takes the q²
+weight.
+
+**(2) Crossings of β_Bor = (σ₀σ₁⁻¹)³.** Tracking strands, read before any code: each pair of strands
+meets exactly twice, once at a σ crossing and once at a σ⁻¹ crossing, with left and right swapped.
+The pairs are (0,1) and (1,0), (1,2) and (2,1), (2,0) and (0,2). For any linear crossing rule
+𝒮₊(a,b) = αμ_a + βμ_b and 𝒮₋(a,b) = γμ_a + δμ_b, to be proved:
+  Σ_crossings = (α + β + γ + δ)(μ₀ + μ₁ + μ₂).
+So the braid's own crossings give a plain sum, symmetric in the strands, whatever α, β, γ, δ are.
+Then m_n − m_p = W(μ_d − μ_u) with W = α + β + γ + δ.
+
+**(1) The scale |c|.** The corpus defines E₀ as "the energy of one Hecke reduction step σ² → hσ + 1".
+To be proved: the step leaves the value of σ² unchanged in both eigen-channels (q² = hq + 1 and
+q⁻² = −hq⁻¹ + 1), so it changes no trace value ε. Hence no map Φ(ε) can be calibrated by it, and the
+sentence cannot fix c. Expected outcome: |c| stays open between L (energy per unit ln ε) and S (energy
+per factor q). Comparison values are already recorded in §5. No row is chosen.
