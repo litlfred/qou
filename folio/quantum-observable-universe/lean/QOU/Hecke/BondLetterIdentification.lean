@@ -223,7 +223,7 @@ theorem bond_factors_of_skein_letters {g : ℕ} (h : R)
 /-! ## What the production weight `t = 1/2 − δ/4` equals, and why that is not
 yet a derivation
 
-`observations/flavor-split-substrate` defines the substrate flavour split as
+`mass-theory/flavor-split-substrate` defines the substrate flavour split as
 
     δ = (m_n − m_p) / M_N,      M_N = (m_p + m_n)/2
 

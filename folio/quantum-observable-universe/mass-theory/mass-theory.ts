@@ -128,6 +128,13 @@ export default chapter({
             "skein-mass-from-linking",
             "skein-mass-from-linking-proof",
             "skein-generation-hadron-reading",
+            "nucleon-borromean-topology",
+            "nucleon-borromean-topology-proof",
+            "pair-skein-mass-formula",
+            "pair-skein-mass-formula-proof",
+            "flavor-split-substrate",
+            "flavor-split-substrate-proof",
+            "flavor-split-substrate-interpretation",
           ],
         }),
         section({

@@ -3,8 +3,8 @@
   "label": "prop:flavor-split-substrate",
   "kind": "proposition",
   "paths": {
-    "ts": "folio/quantum-observable-universe/observations/flavor-split-substrate.ts",
-    "md": "folio/quantum-observable-universe/observations/flavor-split-substrate.md",
+    "ts": "folio/quantum-observable-universe/mass-theory/flavor-split-substrate.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/flavor-split-substrate.md",
     "lean": "folio/quantum-observable-universe/lean/QOU/HadronicMass.lean"
   },
   "source_hashes": {
@@ -352,7 +352,7 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
-        "notes": "{\"regimes\":[\"fixed-q0\",\"real-gt-1\",\"real-positive\",\"symbolic\"],\"chapter\":\"observations\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+        "notes": "{\"regimes\":[\"fixed-q0\",\"real-gt-1\",\"real-positive\",\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [

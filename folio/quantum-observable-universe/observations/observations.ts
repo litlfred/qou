@@ -142,13 +142,6 @@ export default chapter({
       label: "sec:mass-predictions-derivations",
       blocks: [
         "mass-predictions-derivations-intro",
-        "nucleon-borromean-topology",
-        "nucleon-borromean-topology-proof",
-        "pair-skein-mass-formula",
-        "pair-skein-mass-formula-proof",
-        "flavor-split-substrate",
-        "flavor-split-substrate-proof",
-        "flavor-split-substrate-interpretation",
         "dressed-quark-numerology-at-q0",
         // Phase 7 orphan reconnection (2026-05-25):
         "m-tau-knot-prediction",

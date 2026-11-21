@@ -83,7 +83,7 @@ noncomputable def substrate_split_factor (q : ℝ) : ℝ :=
     The repair is the §3b-cond hypothesis class below, with **no instance**:
     the relation holds for a *particular* `(F, M_N, q)` — the nucleon-mass
     scale belonging to that dressing — not for arbitrary triples. -/
--- Ref: [leitner2026] observations/pair-skein-mass-formula
+-- Ref: [leitner2026] mass-theory/pair-skein-mass-formula
 --      braids-and-knots/flavor-dressed-mass-from-substrate-split § "Derivation"
 class DressedMassSubstrateSplit
     (F : FlavorDressingFunctor) (M_N q : ℝ) : Prop where

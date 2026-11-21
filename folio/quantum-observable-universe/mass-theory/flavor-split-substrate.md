@@ -16,7 +16,7 @@ $$
 
 *At $q = q_0 \approx 1.10998$, this matches the CODATA value to within $-0.10\%$.*
 
-This form depends only on $q_0$ and $M_N$. A companion proposition ([Substrate-pure derivation of the dressed-quark mass splitting](../mass-theory/flavor-dressed-mass-from-substrate-split.md)) recovers the dressed-mass difference $\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}} \approx 1.288\,\text{MeV}$ as a derived consequence.
+This form depends only on $q_0$ and $M_N$.
 
 The factored form admits a categorical reading:
 
