@@ -26,6 +26,7 @@ export default chapter({
         "qou-axioms-physical-reading",
         "braiding-induced-ordering",
         "braiding-induced-ordering-proof",
+        "braiding-induced-ordering-interpretation",
         "crossing-application-chains",
         "no-goedel-closed-chains-remark",
         "frobenius-integration",

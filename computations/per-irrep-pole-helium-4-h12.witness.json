@@ -1,0 +1,1856 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-11-21T03:38:56.382528+00:00",
+  "commitSha": "697e3f4d08f7ba47ecdf024641088e27967d10cc",
+  "assertions": [
+    {
+      "name": "helium-4_full_tr_M_u_pole_eq_shift_NF",
+      "computed": 78,
+      "expected": 79,
+      "passed": false
+    },
+    {
+      "name": "helium-4_per_term_max_unique",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 974,
+  "computation": "per-irrep-pole-helium-4-h12",
+  "scriptFile": "per_irrep_pole_atom.py",
+  "scriptHash": "0e7b8f60d9a2",
+  "scriptCommitSha": "928351a9f34d7ebe2dde64b891c5a7e8857259ad",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "8094096a28948d48"
+  },
+  "invocation": {
+    "argv": [
+      "computations/per_irrep_pole_atom.py",
+      "helium-4"
+    ],
+    "reproduce": "python3 -u computations/per_irrep_pole_atom.py helium-4"
+  },
+  "description": "Path A: per-term symbolic u-pole-order analysis of the helium-4's tr_M = Σ_λ y_λ(q) · χ^λ_q(β_{2,2}) at q = u² (per the D(u) convention).  Loads cached symbolic y_λ from y-lambda-wenzl-bridge-symbolic-witness.json and cached chi_λ from chi-helium-4-h12.witness.json (auto-emit on first run, multiprocessing).  Per-term ord_{u=0}(y_λ · χ^λ) avoids the sp.together bottleneck.  Verifies shift_NF(β_helium-4) = 79 = 18·2 + 21·2 + 1, matching prop:per-nucleon-shift-additive-linearity.",
+  "auditOnly": "docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md",
+  "data": {
+    "per_term_u_pole_orders": [
+      {
+        "partition": [
+          8,
+          4
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 78
+      },
+      {
+        "partition": [
+          7,
+          5
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 74
+      },
+      {
+        "partition": [
+          6,
+          6
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 70
+      },
+      {
+        "partition": [
+          9,
+          3
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 62
+      },
+      {
+        "partition": [
+          10,
+          2
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 46
+      },
+      {
+        "partition": [
+          11,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 30
+      },
+      {
+        "partition": [
+          12
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 10
+      },
+      {
+        "partition": [
+          10,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          9,
+          2,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          9,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          8,
+          3,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          8,
+          2,
+          2
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          8,
+          2,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          8,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          7,
+          4,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          7,
+          3,
+          2
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          7,
+          3,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          7,
+          2,
+          2,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          7,
+          2,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          7,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          6,
+          5,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          6,
+          4,
+          2
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          6,
+          4,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          6,
+          3,
+          3
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          6,
+          3,
+          2,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          6,
+          3,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          6,
+          2,
+          2,
+          2
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          6,
+          2,
+          2,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          6,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          6,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          5,
+          5,
+          2
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          5,
+          5,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          5,
+          4,
+          3
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          5,
+          4,
+          2,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          5,
+          4,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          5,
+          3,
+          3,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          5,
+          3,
+          2,
+          2
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          5,
+          3,
+          2,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          5,
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          5,
+          2,
+          2,
+          2,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          5,
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          5,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          5,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          4,
+          4,
+          4
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          4,
+          4,
+          3,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          4,
+          4,
+          2,
+          2
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          4,
+          4,
+          2,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          4,
+          4,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          4,
+          3,
+          3,
+          2
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          4,
+          3,
+          3,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          4,
+          3,
+          2,
+          2,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          4,
+          3,
+          2,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          4,
+          3,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          4,
+          2,
+          2,
+          2,
+          2
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          4,
+          2,
+          2,
+          2,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          4,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          4,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          4,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          3,
+          3,
+          3,
+          3
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          3,
+          3,
+          3,
+          2,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          3,
+          3,
+          2,
+          2,
+          2
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          3,
+          3,
+          2,
+          2,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          3,
+          3,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          3,
+          2,
+          2,
+          2,
+          2,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          3,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          3,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          3,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          3,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          2,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      }
+    ],
+    "max_term_lambda": {
+      "partition": [
+        8,
+        4
+      ],
+      "ord_u_eq_0": 78,
+      "unique_max": true,
+      "next_highest": 74
+    },
+    "full_tr_M_u_pole_inferred": {
+      "value": 78,
+      "rigorous": true,
+      "expected": 79,
+      "Z": 2,
+      "N": 2,
+      "formula": "shift_NF(β_helium-4) = 18·2 + 21·2 + 1 = 79"
+    },
+    "per_generator_crossings": {
+      "atom": "helium-4",
+      "Z": 2,
+      "N": 2,
+      "n_strands": 12,
+      "total_crossings": 47,
+      "by_generator": [
+        {
+          "gen_idx": 0,
+          "sigma": 6,
+          "sigma_inv": 0,
+          "averaged": 1,
+          "averaged_weighted": 0,
+          "total": 7
+        },
+        {
+          "gen_idx": 1,
+          "sigma": 0,
+          "sigma_inv": 3,
+          "averaged": 1,
+          "averaged_weighted": 0,
+          "total": 4
+        },
+        {
+          "gen_idx": 2,
+          "sigma": 1,
+          "sigma_inv": 0,
+          "averaged": 0,
+          "averaged_weighted": 0,
+          "total": 1
+        },
+        {
+          "gen_idx": 3,
+          "sigma": 6,
+          "sigma_inv": 0,
+          "averaged": 1,
+          "averaged_weighted": 0,
+          "total": 7
+        },
+        {
+          "gen_idx": 4,
+          "sigma": 0,
+          "sigma_inv": 3,
+          "averaged": 1,
+          "averaged_weighted": 0,
+          "total": 4
+        },
+        {
+          "gen_idx": 5,
+          "sigma": 0,
+          "sigma_inv": 0,
+          "averaged": 0,
+          "averaged_weighted": 1,
+          "total": 1
+        },
+        {
+          "gen_idx": 6,
+          "sigma": 5,
+          "sigma_inv": 0,
+          "averaged": 2,
+          "averaged_weighted": 0,
+          "total": 7
+        },
+        {
+          "gen_idx": 7,
+          "sigma": 0,
+          "sigma_inv": 4,
+          "averaged": 0,
+          "averaged_weighted": 0,
+          "total": 4
+        },
+        {
+          "gen_idx": 8,
+          "sigma": 0,
+          "sigma_inv": 1,
+          "averaged": 0,
+          "averaged_weighted": 0,
+          "total": 1
+        },
+        {
+          "gen_idx": 9,
+          "sigma": 5,
+          "sigma_inv": 0,
+          "averaged": 2,
+          "averaged_weighted": 0,
+          "total": 7
+        },
+        {
+          "gen_idx": 10,
+          "sigma": 0,
+          "sigma_inv": 4,
+          "averaged": 0,
+          "averaged_weighted": 0,
+          "total": 4
+        }
+      ],
+      "klr_canonical_class_by_generator": [
+        {
+          "gen_idx": 0,
+          "net_signed_power": 6,
+          "averaged_count": 1,
+          "averaged_blind_count": 1,
+          "averaged_weighted_count": 0,
+          "cemetery_class_signed_power_projection": "σ_0^6",
+          "is_pure_power_in_cemetery": false
+        },
+        {
+          "gen_idx": 1,
+          "net_signed_power": -3,
+          "averaged_count": 1,
+          "averaged_blind_count": 1,
+          "averaged_weighted_count": 0,
+          "cemetery_class_signed_power_projection": "σ_1^-3",
+          "is_pure_power_in_cemetery": false
+        },
+        {
+          "gen_idx": 2,
+          "net_signed_power": 1,
+          "averaged_count": 0,
+          "averaged_blind_count": 0,
+          "averaged_weighted_count": 0,
+          "cemetery_class_signed_power_projection": "σ_2^1",
+          "is_pure_power_in_cemetery": true
+        },
+        {
+          "gen_idx": 3,
+          "net_signed_power": 6,
+          "averaged_count": 1,
+          "averaged_blind_count": 1,
+          "averaged_weighted_count": 0,
+          "cemetery_class_signed_power_projection": "σ_3^6",
+          "is_pure_power_in_cemetery": false
+        },
+        {
+          "gen_idx": 4,
+          "net_signed_power": -3,
+          "averaged_count": 1,
+          "averaged_blind_count": 1,
+          "averaged_weighted_count": 0,
+          "cemetery_class_signed_power_projection": "σ_4^-3",
+          "is_pure_power_in_cemetery": false
+        },
+        {
+          "gen_idx": 5,
+          "net_signed_power": 0,
+          "averaged_count": 1,
+          "averaged_blind_count": 0,
+          "averaged_weighted_count": 1,
+          "cemetery_class_signed_power_projection": "identity",
+          "is_pure_power_in_cemetery": false
+        },
+        {
+          "gen_idx": 6,
+          "net_signed_power": 5,
+          "averaged_count": 2,
+          "averaged_blind_count": 2,
+          "averaged_weighted_count": 0,
+          "cemetery_class_signed_power_projection": "σ_6^5",
+          "is_pure_power_in_cemetery": false
+        },
+        {
+          "gen_idx": 7,
+          "net_signed_power": -4,
+          "averaged_count": 0,
+          "averaged_blind_count": 0,
+          "averaged_weighted_count": 0,
+          "cemetery_class_signed_power_projection": "σ_7^-4",
+          "is_pure_power_in_cemetery": true
+        },
+        {
+          "gen_idx": 8,
+          "net_signed_power": -1,
+          "averaged_count": 0,
+          "averaged_blind_count": 0,
+          "averaged_weighted_count": 0,
+          "cemetery_class_signed_power_projection": "σ_8^-1",
+          "is_pure_power_in_cemetery": true
+        },
+        {
+          "gen_idx": 9,
+          "net_signed_power": 5,
+          "averaged_count": 2,
+          "averaged_blind_count": 2,
+          "averaged_weighted_count": 0,
+          "cemetery_class_signed_power_projection": "σ_9^5",
+          "is_pure_power_in_cemetery": false
+        },
+        {
+          "gen_idx": 10,
+          "net_signed_power": -4,
+          "averaged_count": 0,
+          "averaged_blind_count": 0,
+          "averaged_weighted_count": 0,
+          "cemetery_class_signed_power_projection": "σ_10^-4",
+          "is_pure_power_in_cemetery": true
+        }
+      ],
+      "note": "Canonical crossings from atom_canonical_crossings(Z, N), aggregated per generator index.  Provides structural baseline for GAP-C-1 (q-integer counting per generator) in derivation-audit-report.md.  KLR-canonical-class enrichment per AGENTS.md §7b (and PR #608 KLR cemetery infra): each per-generator sub-word σ_g^k (pure power) is a cemetery class trivially; the full atom's canonical class is the per-partition χ-fingerprint at q_0 (emitted as `atom_chi_fingerprint` below)."
+    },
+    "atom_chi_fingerprint": {
+      "q0": "1.1099785827513808075916690956107688798744991218736",
+      "precision": 8,
+      "n_partitions": 77,
+      "fingerprint": [
+        [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "-0.45571190"
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "-0.20345973"
+        ],
+        [
+          [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "0.78044138"
+        ],
+        [
+          [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "-0.07833409"
+        ],
+        [
+          [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "-2.40863199"
+        ],
+        [
+          [
+            3,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "1.83289160"
+        ],
+        [
+          [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "-2.39146165"
+        ],
+        [
+          [
+            5,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "-1.40910346"
+        ],
+        [
+          [
+            4,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "0.13866090"
+        ],
+        [
+          [
+            3,
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "1.21448732"
+        ],
+        [
+          [
+            3,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "0.19209396"
+        ],
+        [
+          [
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "0.01493501"
+        ],
+        [
+          [
+            6,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "3.76233286"
+        ],
+        [
+          [
+            5,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "-0.37332819"
+        ],
+        [
+          [
+            4,
+            3,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "0.40073041"
+        ],
+        [
+          [
+            4,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "-0.26844397"
+        ],
+        [
+          [
+            3,
+            3,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "-2.90150215"
+        ],
+        [
+          [
+            3,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "2.08546827"
+        ],
+        [
+          [
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "-0.24137958"
+        ],
+        [
+          [
+            7,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "-3.67302103"
+        ],
+        [
+          [
+            6,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "1.23310617"
+        ],
+        [
+          [
+            5,
+            3,
+            1,
+            1,
+            1,
+            1
+          ],
+          "-0.07136650"
+        ],
+        [
+          [
+            5,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "-3.68796096"
+        ],
+        [
+          [
+            4,
+            4,
+            1,
+            1,
+            1,
+            1
+          ],
+          "-4.71933350"
+        ],
+        [
+          [
+            4,
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "6.81340706"
+        ],
+        [
+          [
+            4,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "-2.04996832"
+        ],
+        [
+          [
+            3,
+            3,
+            3,
+            1,
+            1,
+            1
+          ],
+          "-4.59274263"
+        ],
+        [
+          [
+            3,
+            3,
+            2,
+            2,
+            1,
+            1
+          ],
+          "-0.02045667"
+        ],
+        [
+          [
+            3,
+            2,
+            2,
+            2,
+            2,
+            1
+          ],
+          "0.43987845"
+        ],
+        [
+          [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "-2.51931374"
+        ],
+        [
+          [
+            8,
+            1,
+            1,
+            1,
+            1
+          ],
+          "-2.70706521"
+        ],
+        [
+          [
+            7,
+            2,
+            1,
+            1,
+            1
+          ],
+          "0.62907747"
+        ],
+        [
+          [
+            6,
+            3,
+            1,
+            1,
+            1
+          ],
+          "3.00630243"
+        ],
+        [
+          [
+            6,
+            2,
+            2,
+            1,
+            1
+          ],
+          "0.31933223"
+        ],
+        [
+          [
+            5,
+            4,
+            1,
+            1,
+            1
+          ],
+          "-4.05450340"
+        ],
+        [
+          [
+            5,
+            3,
+            2,
+            1,
+            1
+          ],
+          "1.25312606"
+        ],
+        [
+          [
+            5,
+            2,
+            2,
+            2,
+            1
+          ],
+          "0.34120721"
+        ],
+        [
+          [
+            4,
+            4,
+            2,
+            1,
+            1
+          ],
+          "-0.16743218"
+        ],
+        [
+          [
+            4,
+            3,
+            3,
+            1,
+            1
+          ],
+          "-0.12723069"
+        ],
+        [
+          [
+            4,
+            3,
+            2,
+            2,
+            1
+          ],
+          "-2.79612788"
+        ],
+        [
+          [
+            4,
+            2,
+            2,
+            2,
+            2
+          ],
+          "0.49217435"
+        ],
+        [
+          [
+            3,
+            3,
+            3,
+            2,
+            1
+          ],
+          "0.20612310"
+        ],
+        [
+          [
+            3,
+            3,
+            2,
+            2,
+            2
+          ],
+          "2.81528096"
+        ],
+        [
+          [
+            9,
+            1,
+            1,
+            1
+          ],
+          "5.52221554"
+        ],
+        [
+          [
+            8,
+            2,
+            1,
+            1
+          ],
+          "-0.41479901"
+        ],
+        [
+          [
+            7,
+            3,
+            1,
+            1
+          ],
+          "0.49264539"
+        ],
+        [
+          [
+            7,
+            2,
+            2,
+            1
+          ],
+          "-0.79744232"
+        ],
+        [
+          [
+            6,
+            4,
+            1,
+            1
+          ],
+          "2.97263143"
+        ],
+        [
+          [
+            6,
+            3,
+            2,
+            1
+          ],
+          "-7.33406862"
+        ],
+        [
+          [
+            6,
+            2,
+            2,
+            2
+          ],
+          "4.89458716"
+        ],
+        [
+          [
+            5,
+            5,
+            1,
+            1
+          ],
+          "-0.44374914"
+        ],
+        [
+          [
+            5,
+            4,
+            2,
+            1
+          ],
+          "3.93062435"
+        ],
+        [
+          [
+            5,
+            3,
+            3,
+            1
+          ],
+          "0.18849276"
+        ],
+        [
+          [
+            5,
+            3,
+            2,
+            2
+          ],
+          "0.12580521"
+        ],
+        [
+          [
+            4,
+            4,
+            3,
+            1
+          ],
+          "0.31274619"
+        ],
+        [
+          [
+            4,
+            4,
+            2,
+            2
+          ],
+          "-0.36876421"
+        ],
+        [
+          [
+            4,
+            3,
+            3,
+            2
+          ],
+          "-0.22264619"
+        ],
+        [
+          [
+            3,
+            3,
+            3,
+            3
+          ],
+          "2.44161287"
+        ],
+        [
+          [
+            10,
+            1,
+            1
+          ],
+          "-1.52828999"
+        ],
+        [
+          [
+            9,
+            2,
+            1
+          ],
+          "-2.49862959"
+        ],
+        [
+          [
+            8,
+            3,
+            1
+          ],
+          "-0.01544626"
+        ],
+        [
+          [
+            8,
+            2,
+            2
+          ],
+          "-0.68009717"
+        ],
+        [
+          [
+            7,
+            4,
+            1
+          ],
+          "-2.73882058"
+        ],
+        [
+          [
+            7,
+            3,
+            2
+          ],
+          "4.48780392"
+        ],
+        [
+          [
+            6,
+            5,
+            1
+          ],
+          "0.48144307"
+        ],
+        [
+          [
+            6,
+            4,
+            2
+          ],
+          "-0.02583886"
+        ],
+        [
+          [
+            6,
+            3,
+            3
+          ],
+          "1.46796872"
+        ],
+        [
+          [
+            5,
+            5,
+            2
+          ],
+          "-4.00393776"
+        ],
+        [
+          [
+            5,
+            4,
+            3
+          ],
+          "0.66468477"
+        ],
+        [
+          [
+            4,
+            4,
+            4
+          ],
+          "-4.65236767"
+        ],
+        [
+          [
+            11,
+            1
+          ],
+          "-1.48208054"
+        ],
+        [
+          [
+            10,
+            2
+          ],
+          "0.54334127"
+        ],
+        [
+          [
+            9,
+            3
+          ],
+          "4.14962480"
+        ],
+        [
+          [
+            8,
+            4
+          ],
+          "-2.97948188"
+        ],
+        [
+          [
+            7,
+            5
+          ],
+          "0.42498249"
+        ],
+        [
+          [
+            6,
+            6
+          ],
+          "4.25063259"
+        ],
+        [
+          [
+            12
+          ],
+          "2.41983673"
+        ]
+      ],
+      "note": "Per-partition χ^λ(β_atom; q_0) tuple — heuristic comparison hash for braid/Markov-equivalence at q_0.  It is a NECESSARY but NOT SUFFICIENT condition for canonical-basis (KL) equivalence: identical fingerprints are evidence of equivalence, but two distinct canonical-basis classes can collide at the rounded-trace level (no iff guarantee).  Trace-only form because per-block matrices are not currently materialised at H_n>3 in Path A — full equivalence requires the per-block matrix entries (cf. r5_full_canonical_knot_solver.chi_fingerprint at H_3). Per Copilot review #r3213426336."
+    },
+    "lean_uniqueness_ref": {
+      "nucleus": "per-nucleus (H_6 deuteron / per-atom)",
+      "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+      "framework_doc": "folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
