@@ -28,6 +28,31 @@ seven need neither library in their import cone, which makes them look safe to m
 they are not: their blocks record both because both are installed under 3.11. Stripping a
 key ranks worse than downgrading one.
 
+🛑 SCOPE: THIS COMPARES ONE CONTAINER'S BEFORE AND AFTER. DO NOT RUN IT ACROSS A MERGE.
+
+The question it answers is "did re-running this producer HERE record less than the file it
+replaces?" Run over a merge instead, it compares two different branches' containers and
+reports the other branch's environment as a regression -- which is not a defect, just a
+difference.
+
+Measured 2026-11-21. Over a 194-commit merge of `main`, it flagged 10 witnesses with
+`mpmath 1.4.1 -> 1.3.0` and `dropped clarabel`. The direction gives it away: this container
+has mpmath 1.4.1 and main's has 1.3.0, so the "after" value is MAIN'S RECORD arriving
+through the merge, not a degradation by any local run. Splitting the population confirmed
+it -- of the 10, **zero** were written by a local re-run; all 10 came from the merge, while
+all 36 locally re-run witnesses in the same session were clean.
+
+So: run it on a DIRTY TREE after re-running producers (its default, `git status` based),
+and when auditing a range, restrict the population to the witnesses your own non-merge
+commits wrote. The two containers in a cross-branch comparison are allowed to differ.
+
+Worth knowing about those two containers, because it explains the whole class: main's
+agents run python 3.13.18 with cvxpy 1.9.3 and NO pyhecke_native; a default container here
+runs 3.11.18 with pyhecke_native and cvxpy ABSENT. Neither dominates, and cvxpy's absence
+CHANGES NUMBERS (AGENTS.md: the deuteron binding is -15.8142 MeV without it and +0.5381
+MeV with it, a sign flip from the import alone). So a witness main produced cannot be
+refreshed provenance-cleanly here until this container has cvxpy.
+
 RANKING follows `witness.py`'s own sentinel: `absent` orders below every real version, so
 an installed -> absent transition on `cvxpy` reads as a downgrade rather than as equality.
 
