@@ -4,6 +4,6 @@ The Garside flow swaps the red and blue tubes across three sub-intervals. It cro
 
 The Borromean braid traces a link whose complement is the Gieseking–Meyerhoff manifold. Its hyperbolic volume is $V_{\mathrm{hyp}} = 8\,G$, derived from two regular ideal octahedra.
 
-The figure-eight knot $4_1$ sits between the trefoil and the Borromean link. It carries the minimal hyperbolic volume $2 v_3 \approx 2.0299$ \cite{hodgson2012}. Its Reeb-flow trajectory $\sigma_1\sigma_2^{-1}\sigma_1\sigma_2^{-1}$ crosses between Heegaard tori twice.
+The figure-eight knot $4_1$ sits between the trefoil and the Borromean link. Its complement has hyperbolic volume $2 v_3 \approx 2.0299$, the least volume of any orientable cusped hyperbolic 3-manifold (a minimum it shares with its sister manifold) \cite{hodgson2012}, and the unique minimum among hyperbolic link complements in $S^3$ \cite{kegel2024}. Its Reeb-flow trajectory $\sigma_1\sigma_2^{-1}\sigma_1\sigma_2^{-1}$ crosses between Heegaard tori twice.
 
 Only hyperbolic pieces contribute to the JSJ-graded mass factorization. Torus trajectories remain geometrically invisible because they never enter the bulk hyperbolic regime. The trajectory pattern determines the JSJ verdict.

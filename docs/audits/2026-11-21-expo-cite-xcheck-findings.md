@@ -70,3 +70,18 @@ Measured without a probe:
 - **qou-pd8e.** `hh1_h5_cocenter_action.py` makes no Geck–Rouquier or "dim Z = 7" claim; it computes dim HH₀ directly over ℤ[ζ]. The bean is misaddressed.
 - **qou-jncu.** A re-upload request (arXiv:0901.1612, 1207.1793) with no computation; recorded, still open.
 - **qou-xugx.** Blocked: Gasper–Rahman is not in `library/`, so the section locator cannot be checked here.
+
+## 5. Resolution (2026-11-21, owner asked to resolve the findings)
+
+| finding | resolution |
+|---|---|
+| F1 | **Fixed.** The sentence now says 2v₃ is the least volume of any orientable cusped hyperbolic 3-manifold (shared with the sister manifold) `\cite{hodgson2012}`, and the unique minimum among hyperbolic link complements in S³ `\cite{kegel2024}` (Ex. vol_t(S³) = 2v₀, figure-eight the unique minimiser). |
+| F2 | **Fixed.** `FigureEightComplexVolume.lean` (docstring) and the 2026-07-26 audit now state the limit as H(u) = (u + 2πi)·lim log J_N(4₁; e^{(u+2πi)/N})/N for u near 0, with V(4₁;u) = Im H − π Re u − ¼ Im(u v(u)) − (π/2)·length(γ) ([murakami2006] §2). Comment-only Lean change. |
+| F3 | Open. The four NZ-torsion cross-checks need the twisted vs untwisted normalisation pinned first: 2109.00379 §5.1 gives the twisted invariant ±t(t−1)(t²−5t+1), whose (t−1)-quotient at t = 1 is −3, while the producer follows DG's untwisted ±½·det (|τ(4₁)| = √3/2). Listed for the owner. |
+| F4 | Waiting on the owner (decision card). |
+| F5 | No change. The current text is correct for a positive-definite form; a Squier contrast would be new exposition. |
+| F6 | **Fixed.** `self-dual-higgs-real-volume.md` now cites `\cite{witten2011}` (§5.3: "the figure-eight knot is amphichiral in the strong sense…") for 4₁'s amphichirality; `.ts` `cites` updated. Neumann–Reid Prop. 3.4 stays uncited here. |
+| F7 | No change needed. The remark already cites the right sources. |
+| F8 | **Fixed** in bean `qou-7q3s` (value struck through and replaced by 6Λ(π/3) = 2Cl₂(π/3) ≈ 2.0299). |
+| F9 | **Fixed (label only).** `lepton_t2n_torus_tower.py` docstring carries a superseded-premise note. Its witness was not refreshed: a re-run reproduces every value to ~1e-58 but also picks up the CODATA 2018→2022 muon input and environment changes unrelated to this edit, so it is left for its owner. |
+| F10 | Done earlier. |

@@ -12,9 +12,13 @@
   fabricated — `u(q₀)` and `S_eq` stay OPEN (anti-laundering).
 
   THE LITERATURE OBJECT (Gukov 2003; H. Murakami; Ohtsuki 2016; Murakami–Yokota).
-  The generalized/parametrized volume conjecture for 4₁ is a THEOREM:
-        J_N(4₁; e^{(2πi+u)/N}) → 𝔙(u) = Vol(u) + i·CS(u),
-  the complex volume of the u-deformed knot (u = log meridian holonomy). Near the
+  The parametrized volume conjecture for 4₁ is a THEOREM (Murakami–Yokota) for u
+  in a neighbourhood of 0 (r near 1): the limit
+        H(4₁; u) := (u + 2πi) · lim_{N→∞} log J_N(4₁; e^{(u+2πi)/N}) / N
+  exists and determines the volume of the u-deformed structure
+  (u = log meridian holonomy), V(4₁;u) = Im H − π·Re u − ¼·Im(u·v(u)) − (π/2)·length(γ)
+  ([murakami2006] §2); it is this limit, not J_N itself, that converges, and it is
+  read here as the complex volume 𝔙(u) = Vol(u) + i·CS(u). Near the
   complete structure it is the Neumann–Zagier series. The leading term is fixed by
   the figure-eight CUSP MODULUS, the leading longitude coefficient
         τ = ± i·√3   (PURELY IMAGINARY, ℚ(√−3); v(u) = τ·u + O(u³)),
