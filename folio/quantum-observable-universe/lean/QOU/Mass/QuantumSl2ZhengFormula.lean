@@ -19,8 +19,9 @@ of the clasp belong to one component, which for Whitehead chains means `c + d = 
 
 **Sign.** The cup and cap of `V_N` carry `(−1)^{N−1}`, so the clasp scalar is `(−1)^{N−1}` times
 the printed `C(n,t)`, and `zhengJ` is `(−1)^{(N−1)(c+d)}` times the printed right-hand side.
-At `N = 2` the trace side gives the Jones polynomial normalised so that a two-component link
-has `V(1) = −2`, the standard value. The sign does not affect `|J_N|`.
+This is a normalisation convention: the cup and cap give `V_N` quantum dimension `(−1)^{N−1}[N]`
+(Kauffman-bracket normalisation), while the printed formula uses `[N]`, as the braid-closure
+quantum trace does. The sign does not affect `|J_N|`.
 
 `zhengJ_eq_trace` shows that the right-hand side, as a function of `(a, b, c, d)`, is the
 normalised quantum trace `[N]⁻¹ tr_q(T^a B^b (φ X)^c (φ̄ X̄)^d)` on `V_N ⊗ V_N` of the
