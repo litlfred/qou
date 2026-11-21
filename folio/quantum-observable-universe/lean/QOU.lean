@@ -47,6 +47,9 @@ import QOU.MathlibExt.QuadraticIrrationalBadlyApproximable
 import QOU.MathlibExt.MarkovTrace
 import QOU.MathlibExt.HeckeToTemperleyLieb
 import QOU.MathlibExt.TraceRadicalNondegenerate
+import QOU.MathlibExt.LocalCocycleTransport
+import QOU.MathlibExt.LocalCocycleGenerated
+import QOU.MathlibExt.PathLebesgue
 import QOU.MathlibExt.TemperleyLiebSpanning
 import QOU.MathlibExt.TemperleyLiebWedderburn
 import QOU.MathlibExt.TemperleyLiebNormalForm
@@ -350,6 +353,7 @@ import QOU.MassTheory.BondFactorClassicalFloor
 import QOU.MassTheory.TwoRowTwoColumnCollision
 import QOU.MassTheory.TraceConventionGate
 import QOU.MassTheory.NeutronProtonEMSign
+import QOU.MassTheory.PhotonClaspChargeForm
 import QOU.MassTheory.BarParityExclusion
 import QOU.MassTheory.SU4SupermultipletGate
 import QOU.MassTheory.BodyOrderCumulant
@@ -671,6 +675,8 @@ import QOU.BraidKnot
 -- hidden outside it.
 import QOU.BraidKnot.MesonFusionIndexSelection
 import QOU.BraidKnot.ElectronWordCandidates
+import QOU.BraidKnot.WeakVertexElectronFactor
+import QOU.QBeta.WeakVertexTwoTerm
 import QOU.BraidKnot.ElectronPositronWrithe
 import QOU.BraidKnot.ElectronLevelWord
 import QOU.BraidKnot.LongestWordNotTwoPhoton
@@ -1205,6 +1211,7 @@ import QOU.Mathlib.HadamardFactorization
 import QOU.Mathlib.JensenZeroCounting
 import QOU.Mathlib.ExponentOfConvergence
 import QOU.Mathlib.HadamardZeroFree
+import QOU.Mathlib.C1GevreyLinearCoeff
 import QOU.Mathlib.CanonicalProductGrowth
 import QOU.Mathlib.HadamardQuotient
 import QOU.Mathlib.HadamardMinimumModulus
@@ -1792,11 +1799,22 @@ import QOU.KZ.Drinfeld.HeckeStrands
 import QOU.Mass.LagrangianKZInputs
 import QOU.Mass.BridgeADeligneGauge
 import QOU.Mass.BridgeADeligneKZ
+import QOU.Mass.KZHolonomy.FlatCocycle
+import QOU.Mass.KZHolonomy.FlatGauge
+import QOU.Mass.KZHolonomy.ODETransport
+import QOU.Mass.KZHolonomy.SmoothGauge
+import QOU.Mass.KZHolonomy.ConfConnected
+import QOU.Mass.KZHolonomy.BraidGauge
+import QOU.Mass.KZHolonomy.ConfRegions
+import QOU.Mass.KZHolonomy.ConfGeneric
+import QOU.Mass.KZHolonomy.ArtinGeneration
 import QOU.QBeta.BorromeanThreeCuspNZHessian
 import QOU.QBeta.McPhailSnyderBridgeExclusion
 import QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm
 import QOU.BraidsAndKnots.NucleonWeightSpaceQTrace
 import QOU.BraidsAndKnots.NucleonIdempotentModifiedTrace
+import QOU.BraidsAndKnots.StrangeStrandOctet
+import QOU.BraidsAndKnots.IsospinMurphyOctet
 import QOU.QuantumObservableUniverses.CategoricalLagrangianTwoTermBridge
 import QOU.MassTheory.GPMTThreeRowCumulantBridge
 import QOU.MassTheory.ThreeRowSpringerSYTDerivation
