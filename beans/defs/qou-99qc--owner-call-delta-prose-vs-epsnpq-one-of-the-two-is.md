@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-21T02:46:36Z
+updated_at: 2026-11-21T12:00:00Z
 parent: qou-10v9
 ---
 
@@ -4381,3 +4381,10 @@ Owner-selected route L. E_κ = κ·log|tr| (conv-D Markov trace, no [N]!/q^N fac
 - On the P2 Markov traces, both Q > 0 and E(e⁻) > 0 need κ < 0 (`markov_log_signs`; hypotheses checked exactly). The corpus sign (+E₀) makes β⁻ endothermic: split Q = −0.4889 MeV. At κ = −E₀ it is +0.4889 (−37.5 %), but that is sign selection, not derivation. κ needed = −13.107 m_e.
 - P1 wrapping words: C_log = 1.63e-4 (W3), 4.59e-5 (W4/W6), −0.0903 (W7); all R → 1 at q → 1. Family D: the sign of Q follows the chosen twist sign.
 Audit `docs/audits/2026-11-21-qbeta-route-l-additive-logtrace-energy.md`. Still open; not closing.
+
+## 2026-11-21 — task W: which word creates the β⁻ lepton pair (PR #8696, draft)
+Pre-reg `ee04d3c394`. Lean `QOU/QBeta/PairCreationWordGammaGamma.lean` (sorry-free, lean-direct exit 0). Probe 8/8, witness proton q₀ 70 dps, exact ℚ(q). Setting: H₄, β_Bor on strands 0–2, one lepton strand [premise L].
+- Writhe excludes from γγ (scope b): passage σ₀σ₁σ₂, trefoil σ₀³, T(3,5), single σ₂.
+- CC + minimality forces σ₂ alone (nucleon-blind, cross term 0). G∧CC forces V₁ (fails R3). G∧CC∧R3 + crossing-count minimality forces **V₁³ = (σ₁σ₂⁻¹)³** uniquely (V-only grammar; 8 ties with mirror V̄). V₁³: CC O(h²), NOT chiral, cross term order 6, lepton closes to unknot.
+- Passage (chiral, (q²−1)T⁺) fails R3 (χ_(3,1) = −1.218); T(3,5) fails (χ_(2,2) = −1.133).
+- Proposal `docs/audits/2026-11-21-beta-pair-creation-word-proposal.md`: options A (V₁³), B (passage, amend qou-ales), C (σ₂), D (rule mirror vertices first). Default: nothing ruled, pair stays ⊔. Recommendation (judgement): D then A. Still open; not closing.
