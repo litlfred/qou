@@ -45,6 +45,11 @@ reduce to at `τ₀`.
 --       −121945/32, j(5τ₀) = −25/2, τ₀ ≈ −0.5 + 0.186676i.
 -- Ref: [braden-northover-2012] SIGMA 8 (2012) 065 — corrected j(τ₀)/j(5τ₀)
 --       labelling (RR92 swaps the two equations).
+--       Its §4.2 prints τ₀ ≈ −0.5 + 0.185576i; that value does not satisfy
+--       its own conditions (1728·J(τ) ≈ −4039.6, 1728·J(5τ) ≈ −9.76 there),
+--       while the BDH-2022 value −0.5 + 0.186676i gives ≈ −3810.874 and
+--       ≈ −12.4988 against −121945/32 = −3810.78125 and −25/2 (mpmath,
+--       30 dps, 6-d.p. input). The 0.186676 above is the one to use.
 -/
 
 namespace QOU.Archimedean.BringHauptmodulGate
