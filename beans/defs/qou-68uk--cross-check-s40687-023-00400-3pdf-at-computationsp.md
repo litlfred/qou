@@ -1,14 +1,14 @@
 ---
 # qou-68uk
 title: Cross-check s40687-023-00400-3.pdf at computations/probes/borromean_nz_adjoint_torsion.py
-status: todo
+status: completed
 pr: 8305
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:37:02Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T14:38:56Z
 parent: qou-8hur
 ---
 
@@ -39,3 +39,10 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8305, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+
+## 2026-11-21T14:38:56Z cross-check result
+
+Probe `computations/probes/one_loop_torsion_crosscheck_probe.py` (branch claude/expo-cite-xcheck-wave2-2026-11-21, commit 95bd2c24cdc), pre-registered, mpmath 70 dps, ALL PASS. Source s40687-023-00400-3 is the published version of arXiv 2109.00379 (same work, should carry duplicate_of). Cross-check reduces to epkn; passes. Also Dubois 2007 T_lambda = tau0(-2(s+s^-1)+1) at s=1 gives |T_lambda| = 3, agreeing.
+
+F3 resolution (the "three disagreeing |tau(4_1)|"): sqrt(3)/2 is tau_mu, 3 is tau_lambda (torsion_nu_sdp_probe labels it T_mu, which is a mislabel), sqrt(3) is the known factor-2 bug. No disagreement once the curve is named.
