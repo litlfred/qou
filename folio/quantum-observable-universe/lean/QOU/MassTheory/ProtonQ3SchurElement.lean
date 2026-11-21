@@ -22,24 +22,25 @@ theorems. No measured value enters any statement; `q` is a variable throughout.
 ## 1. What `[3]_q!/q³` is: the Schur element of the sign character
 
 Take `H₃(q)` with `(T − q)(T + q⁻¹) = 0` (the corpus's relation) and its
-canonical symmetrising trace `τ(T_w) = δ_{w,1}`. It splits over the three
+canonical symmetrising trace `τ(σ_w) = δ_{w,1}`, where `σ_w` is the positive
+braid lift of `w ∈ S₃` (§7a: the Hecke generator is written `σ`). It splits over the three
 irreducible characters, `τ = Σ_χ χ / c_χ`, and the `c_χ` are the **Schur
-elements**. With the character values on `1, T_s, T_{s₁s₂}`
+elements**. With the character values on `1, σ₁, σ₁σ₂`
 
-| χ        | `1` | `T_s`      | `T_{s₁s₂}` |
+| χ        | `1` | `σ₁`      | `σ₁σ₂` |
 |----------|-----|------------|------------|
 | trivial  | 1   | `q`        | `q²`       |
 | sign     | 1   | `−q⁻¹`     | `q⁻²`      |
 | reflection | 2 | `q − q⁻¹`  | `−1`       |
 
-the three conditions `τ(1) = 1, τ(T_s) = 0, τ(T_{s₁s₂}) = 0` have exactly one
+the three conditions `τ(1) = 1, τ(σ₁) = 0, τ(σ₁σ₂) = 0` have exactly one
 solution (`schur_inverse_unique`, no hypothesis beyond `q ≠ 0`):
 
     c_triv = P(q) = q³·[3]_q!,   c_sign = P(q⁻¹) = [3]_q!/q³,   c_refl = [3]_q.
 
 So **the factor in `F_Bor` is `c_sign`** (`fBor_normaliser_eq_schurSign`). It is
 also the constant in `x₋² = c_sign · x₋` for the unnormalised antisymmetriser
-`x₋ = Σ_w (−q)^{−ℓ(w)} T_w`; the corpus's `H3.blockAlt3` is `x₋ / P(q⁻¹)`.
+`x₋ = Σ_w (−q)^{−ℓ(w)} σ_w`; the corpus's `H3.blockAlt3` is `x₋ / P(q⁻¹)`.
 
 ## 2. Which normalisations are admissible
 
@@ -124,8 +125,8 @@ def schurSign (q : K) : K := poincareS3 q⁻¹
 /-- Schur element of the 2-dimensional reflection character, the balanced `[3]_q`. -/
 def schurRefl (q : K) : K := q ^ 2 + 1 + q⁻¹ ^ 2
 
-/-- `τ = a·χ_triv + b·χ_sign + c·χ_refl` satisfies `τ(1) = 1`, `τ(T_s) = 0` and
-`τ(T_{s₁s₂}) = 0`. Here `a, b, c` are the inverse Schur elements. -/
+/-- `τ = a·χ_triv + b·χ_sign + c·χ_refl` satisfies `τ(1) = 1`, `τ(σ₁) = 0` and
+`τ(σ₁σ₂) = 0`. Here `a, b, c` are the inverse Schur elements. -/
 structure IsSchurInverse (q a b c : K) : Prop where
   at_one : a + b + 2 * c = 1
   at_s : q * a - q⁻¹ * b + (q - q⁻¹) * c = 0
@@ -403,10 +404,10 @@ end Word
 
 /-! ### The tension: convention D kills the block whose Schur element is used
 
-The Ocneanu trace `tr_z` on `H₃` is fixed by `tr(1) = 1`, `tr(T_s) = z`,
-`tr(T_{s₁s₂}) = z²` and `tr(T_{w₀}) = z·tr(T_s²) = z(1 + h z)`, `h = q − q⁻¹`.
-On the unnormalised antisymmetriser `x₋ = Σ (−q)^{−ℓ(w)} T_w` and symmetriser
-`x₊ = Σ q^{ℓ(w)} T_w` it gives quadratics in `z`:
+The Ocneanu trace `tr_z` on `H₃` is fixed by `tr(1) = 1`, `tr(σ₁) = z`,
+`tr(σ₁σ₂) = z²` and `tr(σ₁σ₂σ₁) = z·tr(σ₁²) = z(1 + h z)`, `h = q − q⁻¹`.
+On the unnormalised antisymmetriser `x₋ = Σ (−q)^{−ℓ(w)} σ_w` and symmetriser
+`x₊ = Σ q^{ℓ(w)} σ_w` it gives quadratics in `z`:
 
     tr_z(x₋) = (z − q)(z(q² + 1) − q³) / q⁴,
     tr_z(x₊) = (qz + 1)(q³z + qz + 1).
@@ -416,10 +417,11 @@ On the unnormalised antisymmetriser `x₋ = Σ (−q)^{−ℓ(w)} T_w` and symme
   trivial block dies instead. Relabelling `q ↦ −q⁻¹` swaps `c_triv ↔ c_sign`
   (`P(−q) = P(q)`). So the code's rule is frame-independent: **the normaliser is
   the Schur element of the linear block the convention-D trace kills.**
-* `hasDerivAt_trXMinus_zD`: **`∂_z tr_z(x₋)` at `z_D` is exactly `−q⁻³`.** When
-  a family of traces vanishes on a block at one parameter value, the derivative
-  in the parameter is the standard candidate for a modified trace on that block
-  (Geer–Patureau-Mirand). So `q⁻³ = −∂_z tr_z(x₋)|_{z_D}`. Caveat, stated: this
+* `hasDerivAt_trXMinus_zD`: **`∂_z tr_z(x₋)` at `z_D` is exactly `−q⁻³`.** Only
+  the derivative is proved. When a family of traces vanishes on a block at one
+  parameter value, the derivative in the parameter is a standard *candidate* for
+  a modified trace on that block (Geer–Patureau-Mirand); that reading is not
+  proved here. Caveat, stated: this
   uses `z` as the coordinate. `z` is the axioms' own Markov parameter and the
   shift `w = z − h` leaves `∂_z` unchanged, but another coordinate (Wenzl's `r`,
   or `a = q^{2r}`) multiplies the derivative by `dz/d(coord)`. -/
@@ -491,48 +493,57 @@ theorem zD_relabel {q : K} (hq : 0 < q) : zD (-q⁻¹) = -1 / (q ^ 3 + q) := by
 
 end TensionOrdered
 
-/-- **The modified dimension of the killed antisymmetriser is `−q⁻³`.**
-`z ↦ tr_z(x₋)` has derivative `−q⁻³` at `z = z_D`, so
-`q⁻³ = −∂_z tr_z(x₋)|_{z_D}`. -/
-theorem hasDerivAt_trXMinus_zD {q : ℝ} (hq : 0 < q) :
+section Derivative
+
+/-! The derivative statements are stated over any nontrivially normed field `𝕜`
+(§7c: no archimedean structure is used; only the field operations and
+`HasDerivAt`). The convention-D point is written out as `q³/(q² + 1)`. -/
+
+variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
+
+/-- **`∂_z tr_z(x₋)` at `z_D` is `−q⁻³`.** Only the derivative is proved here.
+Reading `−∂_z tr_z(x₋)|_{z_D}` as a modified (Geer–Patureau-Mirand) dimension of
+the killed block is an interpretation, not a theorem, and the value depends on
+using `z` as the coordinate (`hasDerivAt_trXMinus_idempotent_coord`). -/
+theorem hasDerivAt_trXMinus_zD {q : 𝕜} (h0 : q ≠ 0) (h1 : q ^ 2 + 1 ≠ 0) :
     HasDerivAt (fun z => (z - q) * (z * (q ^ 2 + 1) - q ^ 3) / q ^ 4)
-      (-(q ^ 3)⁻¹) (zD q) := by
-  have h1 : q ^ 2 + 1 ≠ 0 := by positivity
-  have h0 : q ≠ 0 := hq.ne'
-  have hd := (((hasDerivAt_id (zD q)).sub_const q).mul
-    (((hasDerivAt_id (zD q)).mul_const (q ^ 2 + 1)).sub_const (q ^ 3))).div_const (q ^ 4)
+      (-(q ^ 3)⁻¹) (q ^ 3 / (q ^ 2 + 1)) := by
+  have hd := (((hasDerivAt_id (q ^ 3 / (q ^ 2 + 1))).sub_const q).mul
+    (((hasDerivAt_id (q ^ 3 / (q ^ 2 + 1))).mul_const (q ^ 2 + 1)).sub_const (q ^ 3))).div_const
+      (q ^ 4)
   convert hd using 1
   simp only [id, one_mul]
-  unfold zD
   field_simp
   ring
 
-/-- The same statement on the named trace, via `trXMinus_factor`. -/
-theorem trXMinus_eq_fun {q : ℝ} (hq : 0 < q) :
+/-- The same function as the named trace, via `trXMinus_factor`. -/
+theorem trXMinus_eq_fun {q : 𝕜} (h0 : q ≠ 0) :
     (fun z => trXMinus q z) = (fun z => (z - q) * (z * (q ^ 2 + 1) - q ^ 3) / q ^ 4) := by
   funext z
-  exact trXMinus_factor q z hq.ne'
+  exact trXMinus_factor q z h0
 
 /-- **The coordinate is not forced.** In the idempotent coordinate
 `t = τ(P₋) = (q − z)/[2]_q`, so `z = q − [2]_q t`, the same trace has derivative
 `(q + q⁻¹)·q⁻³` at the convention-D point, so `−∂_t tr(x₋) = −[2]_q q⁻³`, not
 `q⁻³`. (Symbolically, Wenzl's `a = q^{2r}` gives
-`−1/(q⁴(q² − 1)(q² + 1)²)`, not a power of `q`.) Only the standard-basis
-coordinates `z = tr(T_s)` and `w = tr(T_s⁻¹)` give exactly `q⁻³`. -/
-theorem hasDerivAt_trXMinus_idempotent_coord {q : ℝ} (hq : 0 < q) :
+`−1/(q⁴(q² − 1)(q² + 1)²)`, not a power of `q`; that case is a sympy
+computation in `computations/probes/proton_q3_normaliser/` and is not formalised
+here.) Only the standard-basis coordinates `z = tr(σ)` and `w = tr(σ⁻¹)` give
+exactly `q⁻³`. -/
+theorem hasDerivAt_trXMinus_idempotent_coord {q : 𝕜} (h0 : q ≠ 0) (h1 : q ^ 2 + 1 ≠ 0) :
     HasDerivAt (fun t => (q - (q + q⁻¹) * t - q) *
         ((q - (q + q⁻¹) * t) * (q ^ 2 + 1) - q ^ 3) / q ^ 4)
-      ((q + q⁻¹) * (q ^ 3)⁻¹) ((q - zD q) / (q + q⁻¹)) := by
-  have h1 : q ^ 2 + 1 ≠ 0 := by positivity
-  have h0 : q ≠ 0 := hq.ne'
-  have h2 : q + q⁻¹ ≠ 0 := by positivity
-  have hz : HasDerivAt (fun t : ℝ => q - (q + q⁻¹) * t) (-(q + q⁻¹))
-      ((q - zD q) / (q + q⁻¹)) := by
-    simpa using ((hasDerivAt_id ((q - zD q) / (q + q⁻¹))).const_mul (q + q⁻¹)).const_sub q
-  have hd := ((hz.sub_const q).mul ((hz.mul_const (q ^ 2 + 1)).sub_const (q ^ 3))).div_const (q ^ 4)
+      ((q + q⁻¹) * (q ^ 3)⁻¹) ((q - q ^ 3 / (q ^ 2 + 1)) / (q + q⁻¹)) := by
+  have hz : HasDerivAt (fun t : 𝕜 => q - (q + q⁻¹) * t) (-(q + q⁻¹))
+      ((q - q ^ 3 / (q ^ 2 + 1)) / (q + q⁻¹)) := by
+    simpa using
+      ((hasDerivAt_id ((q - q ^ 3 / (q ^ 2 + 1)) / (q + q⁻¹))).const_mul (q + q⁻¹)).const_sub q
+  have hd := ((hz.sub_const q).mul ((hz.mul_const (q ^ 2 + 1)).sub_const (q ^ 3))).div_const
+    (q ^ 4)
   convert hd using 1
-  unfold zD
   field_simp
   ring
+
+end Derivative
 
 end QOU.MassTheory.ProtonQ3Schur
