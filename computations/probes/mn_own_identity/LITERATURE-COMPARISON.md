@@ -501,3 +501,43 @@ non-symmetric case is still unchecked, and the bridge from `FrobeniusHopfData` m
 Observation: in P2 the neutron is exactly `q⁻²` times the proton, which matches the Markov result
 (§9) and is the only variant with the right split. Its value at `q = 1` is `3/4`, a factor `16`
 short of `12`. Not pursued, since adjusting toward `12` would be selection.
+
+## 17. λ = ε is forced, and it does not fix the scale (2026-11-21)
+
+Pre-registered in `PREREGISTRATION-counit-pairing.md` (commit 2a1e36cc3c9, before the run).
+
+**Correction of my own earlier claim.** In §16 I wrote that λ = ε is "the first route where
+λ's scale is actually fixed". That is wrong. What was shown there was that λ = ε is *consistent*
+with both snakes. Neither that nor anything below fixes the scale.
+
+**Lean, sorry-free** (`QOU/MassTheory/CounitIsFrobeniusForm.lean`,
+`counit_eq_frobeniusForm_of_coev`, `lean -DautoImplicit=false -s 65536` exit 0, axioms
+`propext, Classical.choice, Quot.sound`). In every `FrobeniusHopfData`, `coevaluation = η ≫ Δ`
+forces `ε = λ`. It uses the left snake, the right counit law, the right unit law and coherence.
+It does not use the braiding, so it settles the braided case asked about in §16. It also does not
+need the mirror relation, so `mirror_of_antipode` (§16) is no longer on this route's critical path.
+
+**Scale, exact (probe part A, H₂(q), generic Frobenius form λ(1) = a, λ(σ) = b).** The counit
+solved from the counit law is exactly (a, b), for every (a, b) with Gram determinant
+(a + bq)(aq − b)/q ≠ 0. So ε = λ holds on the whole family and no normalisation is forced:
+`(λ, coev) ↦ (sλ, s⁻¹coev)` moves `(Δ, ε) ↦ (s⁻¹Δ, sε)` and keeps both `coev = η ≫ Δ` and `ε = λ`.
+The matter constant `ψ*·𝒟ψ = λ(S(ψ)·𝒟ψ)` therefore still scales by s, as in §13.
+
+**Ratio, exact (probe part B, H₃(q) regular representation).** Frobenius form: the canonical
+symmetrising trace τ(T_w) = δ_{w,e}. S(T_w) = T_{w⁻¹}. P(X) = τ(S(X)X), which is scale-free as a
+ratio.
+- P(X_e) = 1 for X_e = σ₀σ₁σ₀ (a basis element, so this is exact for every q).
+- P(X_N) = (q⁴ − q² + 1)(q¹⁶ − 5q¹⁴ + 11q¹² − 16q¹⁰ + 19q⁸ − 16q⁶ + 11q⁴ − 5q² + 1)/q¹⁰ for
+  X_N = (σ₀σ₁⁻¹)³.
+- Ratio 1 at q = 1, 1.000348711784543 at the CODATA-2022 muon pin (mpmath, 30 digits).
+Not 12: scope-(a) negative for this class. Checks passed: Hecke relation, braid relation,
+τ symmetric on the basis.
+
+**Structural context, not new here.** `FrobeniusHopfModelDichotomy.lean` (corpus, sorry-free)
+already proves that in any monoidal-preadditive category whose scalars form a field, every
+`FrobeniusHopfData` has A a zero object or a retract of the unit. So the full structure has no
+non-trivial linear model, and any matter-pairing computation must be done in a Frobenius algebra
+(as above) that does not satisfy all the antipode axioms. Part B's S preserves τ and reverses
+products, but H₃(q) with its Frobenius coproduct is not a `FrobeniusHopfData`.
+
+**Status of the 12.** Not found in the searched classes, now including λ = ε pairings in H₃(q).
