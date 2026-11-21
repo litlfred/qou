@@ -140,3 +140,10 @@ under hol ↦ hol⁻¹ give Δ = 0. The corpus reason for hol − 1 is `Holonomy
 identity consumes hol linearly, and hol − 1 is its Temperley–Lieb part. The reason against is that
 a classical connection is a Lie-algebra 1-form, i.e. log hol. The corpus defines ∇ : A → A ⊗ Ω¹ as
 given, so neither is forced. Also not derived: a map from the dimensionless Δ or μ to MeV.
+
+**At q = 1 (added 2026-11-21, LITERATURE-COMPARISON §29; Lean `NucleonDiracVanishesAtOne`).**
+V³(1) = 1, so the nucleon 𝒟 is 0 at q = 1 and every trace with a 𝒟 factor vanishes there for
+n and p; the electron's does not (tr 𝒟_e(1)² = 4). So no ℒ term with ∇ = F(hol), F(1) = 0 and
+q-independent insertions gives an n − p that survives at q = 1 (scope b, invariant V³(1) = 1).
+The corpus quark-charge term (−⅓·tr V³ on n, 0 on p) does survive at q = 1, but it has degree 0
+in 𝒟 and is outside ℒ as written.

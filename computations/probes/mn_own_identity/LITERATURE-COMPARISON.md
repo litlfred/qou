@@ -865,3 +865,41 @@ is hol − 1 for V³, and X_e − q³·1 for the electron σ₀σ₁σ₀). Prob
 and the magnitude misses by about 10⁴. That rules out the linear map with this calibration
 (scope (a)). It does not rule out a nonlinear map, a calibration through a different ruled
 quantity, or a 𝒟² term outside the F(hol) class.
+
+## §29 Can an ℒ term give an n − p that survives at q = 1? (structural, Lean)
+
+Lean: `folio/quantum-observable-universe/lean/QOU/MassTheory/NucleonDiracVanishesAtOne.lean`,
+generic `[Field R]`, `lean -DautoImplicit=false -s 65536` exit 0, `#print axioms`: `propext,
+Classical.choice, Quot.sound`. No number is compared in this section.
+
+**Proved.**
+- `Vp_one`, `Vn_one`: at q = 1, σ₀σ₁⁻¹ is a 3-cycle on each weight block, so `Vp_one_cube`,
+  `Vn_one_cube`: V³(1) = 1. V³ is a pure braid, so this is forced.
+- `Dblock_one_eq_zero_p/n`: with ∇ = hol − 1 and 1 − q⁻¹ = 0, the nucleon 𝒟 is 0 at q = 1,
+  for every value t of the ξ-insertion.
+- `trace_mul_Dblock_one`: tr(M·𝒟·N) = 0 at q = 1 for any M, N. So every trace with at least one
+  𝒟 factor vanishes there: 𝒟², 𝒟ⁿ, and ψ*⊗𝒟ψ with any q-independent charge or state insertion.
+- `halfTwistA_one`, `trace_electron_D_sq_one(_ne_zero)`: σ₀σ₁σ₀ at q = 1 is the transposition of
+  strands 0 and 2, so 𝒟_e(1) = halfTwistA(1) − 1 ≠ 0 and tr(𝒟_e(1)²) = 4 on the proton block.
+
+**Answer to "find a 𝒟² term whose n − p survives at q = 1".** None exists in this class: any
+term built from 𝒟 (with ∇ = F(hol), F(1) = 0, and q-independent insertions) is 0 for both
+nucleons at q = 1, so its n − p is O(q − 1). This is a structural exclusion (scope b) for that
+class, by the invariant V³(1) = 1. It does not reach:
+1. a term of degree 0 in 𝒟 (no ∇ factor), which is outside ℒ = 𝒟² + ψ*⊗𝒟ψ;
+2. a connection with F(1) ≠ 0 (not a connection in the corpus sense, since ∇ on a flat strand
+   should vanish);
+3. an insertion that diverges as q → 1, such as a 1/(q − 1) factor. E₀ = m_e/(q(q − 1)) is one,
+   but it is a definition (§28), and using it here would be choosing a scale.
+
+**Where the corpus n − p at q = 1 actually lives.** The corpus "matter" quark-charge insertion
+acts on hol (V³), not on 𝒟. It is QPair = 0 on the proton block and −⅓·1 on the neutron block
+(`NucleonWeightSpaceTwoTerm`), so its static part is −⅓·tr V³ on n and 0 on p. At q = 1 this is
+−⅓·3 = −1 on n, 0 on p, so its n − p survives. That term has degree 0 in 𝒟 (item 1). It is not
+in ℒ as written. Whether ℒ should carry such a term, and with what map to energy, is not derived
+here; I have not attached a number to it.
+
+**Item (2) of the request (the structural reason, in Lean).** It is the pair
+`trace_mul_Dblock_one` (nucleon side vanishes at q = 1) and `trace_electron_D_sq_one_ne_zero`
+(electron side does not). Together they are the reason §28's electron-calibrated linear map
+gives E_n − E_p = O(hᵏ)·m_e.
