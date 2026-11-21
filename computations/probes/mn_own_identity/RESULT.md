@@ -67,3 +67,33 @@ prediction held (N0 −1377 ppm, N1 ≈ 760 MeV / −19 %, N2 tens of percent).
    to avoid.
 3. Reading the identity as an isospin-multiplet (nucleon-average) observable. That is a
    relabelling, not a derivation; at the muon pin, as M_N = (m_p+m_n)/2 it would be −689 ppm.
+
+## Four-strand lepton test (added 2026-11-21)
+
+Pre-registration: [`PREREGISTRATION-four-strand.md`](PREREGISTRATION-four-strand.md) (commit
+`ab73baa376a`, before any number). Probe [`mn_four_strand_probe.py`](mn_four_strand_probe.py),
+output [`mn_four_strand_probe.out.json`](mn_four_strand_probe.out.json): 12/12 exact checks pass
+(Ř reproduces the three-strand matrices, Hecke and braid relations, `tr_M(V³)` closed form,
+#8636's amplitude norm `(q⁴+1)/q²`, `tr_D(σ₀σ₁σ₀) = q³(q⁴+1)/(q²+1)²`, split-union factorisation).
+
+| arm | what it is | m_n or composite (muon pin, MeV) | vs CODATA | prediction held? |
+|---|---|---|---|---|
+| L-A | spectator lepton strand, `V³⊗1` on `N = n⊗ν`, `P = p⊗e` | 938.271861 | −1376.8 ppm | yes (equal, exact) |
+| L-B | #8636 selected word `σ₁σ₃⁻¹` (and `σ₃⁻¹σ₁`), `F^(n) = F_Bor·tr_N(w)/tr_P(w)` | **981.43** | **+4.46 %**, neutron heavier | partly: separates, but 4.5 % not "tens of %" |
+| L-C | electron word `σ₀σ₁σ₀` split-unioned with `V³` | m(p⊗e⁻) = 646.61 | −31.12 % vs m_p + m_e | yes |
+
+Proton pin agrees within 0.25 ppm on every row.
+
+- **L-A is structural (scope b).** Both sectors have `K^{⊗4} = 1`, `V³⊗1` restricts to `W_n` and
+  `W_p`, and `tr_{W_n}(V³) = tr_{W_p}(V³)`. The two-term connected part is 0 on both sectors with
+  SM charges (`ν 0, e −1`); the raw parts differ, but they are not the two-term trace.
+- **L-B** is the only arm that separates n and p. Exactly, `tr_N(w) = 1` and
+  `tr_P(w) = (3q² − q⁴ − 1)/q²`, so the ratio is `q²/(3q² − q⁴ − 1) = 1.0457`, first order in
+  `q − 1`. The neutron comes out heavier, but by 43 MeV instead of 1.29 MeV. Scope (a): this reading,
+  with these choices (C-lep, the selected word, the trace ratio as the neutron's factor), misses.
+- **L-C** shows that the identity cannot be read on a split composite: the convention-D trace
+  multiplies (`tr_D(σ₀σ₁σ₀) = 0.691`), while masses add. Scope (a), a consistency failure of the
+  composite reading, not a value of m_n.
+
+No Lean was added for this part: L-A is the existing `trace_borromeanV3A` / `trace_borromeanV3B`
+equality on each sector, and L-B and L-C are scope-(a) numbers.
