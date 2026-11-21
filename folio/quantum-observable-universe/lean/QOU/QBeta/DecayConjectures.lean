@@ -35,7 +35,9 @@ Each is a **primary conjecture** (§3b-tax): a content-bearing `Prop` class with
   weights free. (Corrected 2026-11-21: this note previously said nucleon-dependent `φ₀, φ₁` were
   the missing input; that was wrong.) The symmetry breakers are the Cartan `K`-weighting (the
   first term of the two-term Lagrangian trace, `CategoricalLagrangianTwoTermBridge`) and the
-  quark-charge insertion `Q_iQ_j` (its matter term). This file's `ε` carries only the first.
+  quark-charge insertion `Q_iQ_j` (its matter term). This file's `ε` carries the first. Under
+  the owner-ruled covariant all-pairs insertion the matter term's connected part is `0` on `V³`
+  (`deltaT_allPairs_connected_eq_zero`), so the two-term score equals the first term alone.
 * `DecayEnergyScale`: derive `E₀` from the mass channel by energy conservation. The audit
   (§3) records that the mass channel's scale per unit trace is `945.76 MeV`, not `E₀ ≈ 4.2 MeV`,
   so the decay `Δ` is not yet the difference of the mass-channel objects.
