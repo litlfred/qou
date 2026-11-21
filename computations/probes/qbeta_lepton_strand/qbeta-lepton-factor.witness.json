@@ -1,0 +1,207 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-21T13:37:16.348118+00:00",
+  "commitSha": "1ce94ffaba7ed23d05edf80d17580314f1d3144f",
+  "assertions": [
+    {
+      "name": "F1_every_electron_sector_has_trace_q_cubed",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "tr_(L_b)(Delta) for b = 0..3: [q**3, q**3, q**3, q**3]. The V_(2,1) copies are traceless (Lean trace_halfTwist), so each sector carries only the V_(3) line q^3."
+    },
+    {
+      "name": "F2_sector_sum_is_the_convention_D_markov_value",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "sum_b q^(3-2b) tr_(L_b)(Delta)/[2]^3 = q**3*(q**4 + 1)/(q**2 + 1)**2 = z_D(h z_D + 1) (Lean sector_sum_eq_markov_zD) = 0.691166478358445 at q0."
+    },
+    {
+      "name": "F3_eps_n_is_eps_p_over_q_squared",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "eps_p(V^3) = -(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/(q**2*(q**2 + 1)**3); eps_n = eps_p / q^2 exactly. At q0 eps_p = 0.408718179341128, eps_n = 0.331737644739763: the scored difference is a 19 % cancellation, so a factor on one side only moves Q_beta a lot."
+    },
+    {
+      "name": "F4_candidates_span_the_target_so_none_is_selected",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "the 10 candidates run from 0.208184 to 1.55538 MeV and bracket the measured value, so picking one by its Q_beta would be selection against the target. Which side the electron sits on, and which sector (premise L, #8673), are not derived here. None is selected."
+    },
+    {
+      "name": "F5_one_sided_factor_survives_q_to_1",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "at q -> 1: eps_n - eps_p -> 0 (the scored cell is O(h)); eps_p -> 3/8; f(1) = {'Markov': 1/2, 'b=0': 1/8, 'b=1': 1/8, 'b=2': 1/8, 'b=3': 1/8}; so eps_p(1)(1 - f(1)) = {'Markov': 3/16, 'b=0': 21/64, 'b=1': 21/64, 'b=2': 21/64, 'b=3': 21/64}, all nonzero. A one-sided lepton factor changes the q -> 1 order of the cell from O(h) to O(1). A factor shared by both sides (f on n and p) cannot: it multiplies an O(h) quantity."
+    },
+    {
+      "name": "F6_lepton_factor_O_h_corrections",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "exact series in h to O(h^3): {'Markov': '7*hh**3/16 + 11*hh**2/16 + 3*hh/4 + 1/2', 'b=0': '13*hh**3/32 + 33*hh**2/64 + 3*hh/8 + 1/8', 'b=1': 'hh**3/16 + 13*hh**2/64 + hh/4 + 1/8', 'b=2': '-hh**3/32 + hh**2/64 + hh/8 + 1/8', 'b=3': '1/8 - 3*hh**2/64'}. Ratio f(q0)/f(1) (the size of the O(h) tail at the proton pin): {'Markov': '1.3823329567168890523', 'b=0': '1.8399591842728116277', 'b=1': '1.493409779794785216', 'b=2': '1.2121316545769774313', 'b=3': '0.98383120822298193423'}. The b=3 sector has no O(h) term. These are kept regardless of size (owner 2026-11-21); which one applies waits on the q = 1 coefficient of the interaction (#8868)."
+    },
+    {
+      "name": "F7_conservation_allowed_row_O_h",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "b=2 with nu-bar q^-1 and b=3 with nu-bar q^+1 both give f = q/[2]^4, f(1) = 1/16 (matches #8868). Exact series in h: -hh**3/64 - 3*hh**2/128 + hh/32 + 1/16. f(q0)/f(1) = 1.08611395069519. Conditional on the owner's normalisation ruling; not selected."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "qbeta-lepton-factor",
+  "scriptFile": "qbeta_lepton_factor_probe.py",
+  "scriptHash": "135511b5f14b",
+  "scriptCommitSha": "1ce94ffaba7ed23d05edf80d17580314f1d3144f",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_lepton_strand/qbeta_lepton_factor_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_lepton_strand/qbeta_lepton_factor_probe.py"
+  },
+  "description": "Disjoint electron Delta = s0 s1 s0 under the ruled D1 quantum-trace functional: per-sector factor, full-trace factor, and the candidate table. Nothing selected or scored.",
+  "beans": [
+    "qou-cds1",
+    "qou-pdix",
+    "qou-99qc"
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "lean": "QOU/QBeta/ElectronHalfTwistBlock.lean",
+  "eps_p_V3": "-(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/(q**2*(q**2 + 1)**3)",
+  "eps_n_V3": "-(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/(q**4*(q**2 + 1)**3)",
+  "candidates_not_selected": [
+    {
+      "factor": "Markov (all sectors)",
+      "f": "0.69116647835844452615",
+      "side": "p (final state)",
+      "Q_beta_MeV": "0.20818385554520754662",
+      "vs_codata_pct": "-73.389369"
+    },
+    {
+      "factor": "Markov (all sectors)",
+      "f": "0.69116647835844452615",
+      "side": "n (initial state)",
+      "Q_beta_MeV": "0.75854680674180912803",
+      "vs_codata_pct": "-3.0404688"
+    },
+    {
+      "factor": "sector b=0",
+      "f": "0.22999489803410145346",
+      "side": "p (final state)",
+      "Q_beta_MeV": "1.0050188479303822176",
+      "vs_codata_pct": "28.464263"
+    },
+    {
+      "factor": "sector b=0",
+      "f": "0.22999489803410145346",
+      "side": "n (initial state)",
+      "Q_beta_MeV": "1.4053009199212463831",
+      "vs_codata_pct": "79.629414"
+    },
+    {
+      "factor": "sector b=1",
+      "f": "0.186676222474348152",
+      "side": "p (final state)",
+      "Q_beta_MeV": "1.0798669911865546759",
+      "vs_codata_pct": "38.031558"
+    },
+    {
+      "factor": "sector b=1",
+      "f": "0.186676222474348152",
+      "side": "n (initial state)",
+      "Q_beta_MeV": "1.4660516964024248541",
+      "vs_codata_pct": "87.394745"
+    },
+    {
+      "factor": "sector b=2",
+      "f": "0.15151645682212217891",
+      "side": "p (final state)",
+      "Q_beta_MeV": "1.1406177676677331468",
+      "vs_codata_pct": "45.796888"
+    },
+    {
+      "factor": "sector b=2",
+      "f": "0.15151645682212217891",
+      "side": "n (initial state)",
+      "Q_beta_MeV": "1.5153602922140083564",
+      "vs_codata_pct": "93.697505"
+    },
+    {
+      "factor": "sector b=3",
+      "f": "0.12297890102787274178",
+      "side": "p (final state)",
+      "Q_beta_MeV": "1.1899263634793166491",
+      "vs_codata_pct": "52.099648"
+    },
+    {
+      "factor": "sector b=3",
+      "f": "0.12297890102787274178",
+      "side": "n (initial state)",
+      "Q_beta_MeV": "1.555381799126983799",
+      "vs_codata_pct": "98.813163"
+    }
+  ],
+  "q_to_1": {
+    "base": "0",
+    "eps_p": "3/8",
+    "f": {
+      "Markov": "1/2",
+      "b=0": "1/8",
+      "b=1": "1/8",
+      "b=2": "1/8",
+      "b=3": "1/8"
+    },
+    "one_sided_p": {
+      "Markov": "3/16",
+      "b=0": "21/64",
+      "b=1": "21/64",
+      "b=2": "21/64",
+      "b=3": "21/64"
+    }
+  },
+  "h_series": {
+    "Markov": "7*hh**3/16 + 11*hh**2/16 + 3*hh/4 + 1/2",
+    "b=0": "13*hh**3/32 + 33*hh**2/64 + 3*hh/8 + 1/8",
+    "b=1": "hh**3/16 + 13*hh**2/64 + hh/4 + 1/8",
+    "b=2": "-hh**3/32 + hh**2/64 + hh/8 + 1/8",
+    "b=3": "1/8 - 3*hh**2/64",
+    "conservation q/[2]^4": "-hh**3/64 - 3*hh**2/128 + hh/32 + 1/16"
+  },
+  "ratio_f_q0_over_f_1": {
+    "Markov": "1.3823329567168890523",
+    "b=0": "1.8399591842728116277",
+    "b=1": "1.493409779794785216",
+    "b=2": "1.2121316545769774313",
+    "b=3": "0.98383120822298193423",
+    "conservation q/[2]^4": "1.0861139506951883803"
+  },
+  "scope": "(a): disjoint electron only; linked words are in qbeta-lepton-strand."
+}
