@@ -22,7 +22,8 @@ appearing in the QOU manuscript:
 ## Key results
 
 - `qSerre_is_gs_basis`: the `q`-Serre relations form a GS basis
-  under the deg-lex order on `{E_+, K, K⁻¹, E_-}`.
+  under the deg-lex order on `{E_+, K, K⁻¹, E_-}`. Proved in `QSerreGS.lean`
+  (it was an axiom in this file until 2026-11-21).
 - `pbw_monomials_are_normal_forms`: PBW monomials are exactly the
   normal-form monomials under the `q`-Serre rewriting system.
 - `dist_algebra_gs_basis` (removed 2026-11-15, it was false as stated; see §5).
@@ -572,7 +573,8 @@ theorem qSerre_rules_monic (k : Type v) [Field k] (qs : QSerreRelations k) :
   · rw [h6]; exact isUnit_one
   · rw [h7]; exact isUnit_one
 
-/-- **Theorem** (Bokut–Malcolmson 1996):
+/-! ### The Gröbner–Shirshov property (Bokut–Malcolmson 1996)
+
     The `q`-Serre relations form a Gröbner–Shirshov basis for
     `U_q(su(2))` under the deg-lex order.
 
@@ -603,22 +605,17 @@ theorem qSerre_rules_monic (k : Type v) [Field k] (qs : QSerreRelations k) :
     * adding the two missing rules (6 and 7, the `K⁻¹` commutation rules) gives
       **8** ambiguities, and **all 8 resolve**.
 
-    So this axiom is now stated of the **completed seven-rule system**, where the
-    critical-pair check passes. That check is a symbolic computation, not a Lean
-    proof: the axiom records a verified-but-not-formalised claim, which is a
-    materially better position than the unverified one it was in, and materially
-    worse than a theorem. Formalising the eight resolutions is the way to remove
-    it.
+    The statement `qSerre_is_gs_basis` is about the **completed seven-rule
+    system**. It was an axiom here, recording that symbolic check. It is now a
+    theorem, proved in `QSerreGS.lean` (which imports this file): each of the
+    eight resolutions is written out and machine-checked through the composition
+    lemma `Diamond.isGrobnerShirshovBasis_iff_compositionsTrivial`.
 
     History worth keeping: this is the third claim in this file to be examined by
     making it checkable, and the second to be found false — see
     `pbw_monomials_are_not_all_normal_forms` for the other.
 
     Reference: Bokut & Malcolmson, Israel J. Math. 96 (1996). -/
--- Ref: [bokut2005] https://doi.org/10.1142/S0218196705002347 (q-Serre relations form a GS basis for U_q(su(2)))
-axiom qSerre_is_gs_basis (k : Type v) [Field k]
-    (qs : QSerreRelations k) :
-    IsGrobnerShirshovBasis SU2Gen k degLexOrder (qSerreRewritingSystem k qs)
 
 /-! ## §4  PBW Basis -/
 

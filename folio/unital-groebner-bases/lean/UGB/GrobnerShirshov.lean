@@ -3,6 +3,7 @@ import UGB.GrobnerShirshov.CompositionLemma
 import UGB.GrobnerShirshov.NormalForms
 import UGB.GrobnerShirshov.NormalFormExistsRefutation
 import UGB.GrobnerShirshov.QSerreCriticalPairs
+import UGB.GrobnerShirshov.QSerreGS
 import UGB.GrobnerShirshov.Quotient
 import UGB.GrobnerShirshov.NormalFormBasisProof
 import UGB.GrobnerShirshov.Flatness
@@ -26,6 +27,7 @@ provides the algebraic engine behind the QOU lifting mechanism.
 | `NormalForms` | PBW-type bases for `U_q(su(2))` and `Dist(G)` |
 | `NormalFormExistsRefutation` | proof that the `normal_form_exists` axiom is **false** |
 | `QSerreCriticalPairs` | reduces `qSerre_is_gs_basis` to its 8 genuine critical pairs |
+| `QSerreGS` | resolves all 8 and proves `qSerre_is_gs_basis` (formerly an axiom) |
 | `Quotient` | the quotient algebra `k⟨G⟩ / (Σ)` and `NormalFormBasis` |
 | `NormalFormBasisProof` | proof that a GS basis with unit leading coefficients gives `NormalFormBasis` (commutative `k`) |
 | `Flatness` | Flat deformation from GS confluence |
