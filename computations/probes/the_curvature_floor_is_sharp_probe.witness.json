@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T16:05:13.519364+00:00",
-  "commitSha": "9583505abfc6d91079ff1581d9720bd8f6c822da",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T06:58:25.478444+00:00",
+  "commitSha": "be785d12a05f741584946638a82d40d9c54d24a7",
   "assertions": [
     {
       "name": "2H sigma: braid on 2A+1 = 5 strands found",
@@ -132,11 +132,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 12,
   "computation": "the_curvature_floor_is_sharp_probe",
   "scriptFile": "the_curvature_floor_is_sharp_probe.py",
-  "scriptHash": "b95a7effee92",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0df1a99698d5",
+  "scriptCommitSha": "e81e6204c34f35c49818a444ba147161b6444687",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -144,11 +144,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -182,5 +186,7 @@
   "caveats": [
     "Depends on spherogram (snappy) for the isotopy search. Vogel's algorithm is a theorem, so the returned braid's closure is the input link; the Jones/component cross-check guards against implementation error, not against the mathematics.",
     "Per classical branch of the 2A+1 averaged letters, as everything geometric about this closure must be. Nothing about binding or the twist."
-  ]
+  ],
+  "q0Anchor": "independent",
+  "q0AnchorReason": "braid words, Reidemeister/Vogel isotopy and exact integer Kauffman brackets; no q is evaluated, q0 is never read"
 }
