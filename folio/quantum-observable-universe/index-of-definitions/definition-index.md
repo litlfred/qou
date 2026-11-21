@@ -1345,7 +1345,7 @@
 | [ex:terminal-resolution-cz](#ex:terminal-resolution-cz) | Terminal resolution in $\mathbb{C}[z]$ | Ch 15 |
 | [ex:nitrogen-14-threading](#ex:nitrogen-14-threading) | The ${}^{14}\mathrm{N}$ maximal braid shortcut vs ${}^{14}\mathrm{C}$ broken alternation | Ch 15 |
 | [ex:confinement-category-atomic-chain](#ex:confinement-category-atomic-chain) | The atomic chain in $\mathbf{Conf}$ | Ch 7 |
-| [ex:electron-knot-concrete](#ex:electron-knot-concrete) | The electron as the trefoil knot on $\Sigma_4$ | Ch 14 |
+| [ex:electron-knot-concrete](#ex:electron-knot-concrete) | The electron as the Hopf link on $\Sigma_4$ | Ch 14 |
 | [ex:frobenius-pairing-su2](#ex:frobenius-pairing-su2) | The Frobenius pairing on $\mathcal{O}(\mathrm{SU}(2))$ | Ch 1 |
 | [ex:frobenius-relation-su2](#ex:frobenius-relation-su2) | The Frobenius relation in $\mathrm{SU}(2)$ | Ch 1 |
 | [ex:hadron-proton](#ex:hadron-proton) | The proton as a Borromean hadron | Ch 7 |
