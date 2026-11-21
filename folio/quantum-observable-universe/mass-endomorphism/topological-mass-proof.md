@@ -37,8 +37,8 @@ the upper bound of [prop:topological-mass-upper-bound](#prop:topological-mass-up
 [eq:topological-mass-decomp](#eq:topological-mass-decomp).  Equality, and hence the conjectured decomposition itself, would need equality
 in both inequalities above. Both are open: neither is forced by the disc
 splitting and support hypotheses.  If each
-exceptional-divisor summand equals the quantum dilogarithm
-$\Phi_q(z_i)$, as the
+exceptional-divisor summand equals the symmetric $q$-dilogarithm
+$-\mathrm{Li}_2^q(-z_i)$, as the
 [quantum dilogarithm evaluation](#conj:topological-mass-dilogarithm) conjectures,
 then the bound reads
-$\mathfrak{m}(\varrho) \le \lVert \mathrm{Hol}_{\nabla_A}(\varrho_0; \mathfrak{G}) \rVert + \sum_{i=1}^{N} \Phi_q(z_i)$.  $\square$
+$\mathfrak{m}(\varrho) \le \lVert \mathrm{Hol}_{\nabla_A}(\varrho_0; \mathfrak{G}) \rVert + \sum_{i=1}^{N} \bigl(-\mathrm{Li}_2^q(-z_i)\bigr)$.  $\square$
