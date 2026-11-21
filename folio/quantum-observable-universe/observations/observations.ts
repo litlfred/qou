@@ -96,6 +96,7 @@ export default chapter({
       blocks: [
         "mass-predictions-intro",
         "neutron-prediction-comparison",
+        "elliptic-stability-locus",
         "neutron-prediction-comparison-interpretation",
         "neutron-prediction-comparison-table-data",
         "stability-cubic-plot",

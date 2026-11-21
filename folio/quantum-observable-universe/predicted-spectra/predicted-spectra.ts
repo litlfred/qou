@@ -294,7 +294,6 @@ export default chapter({
         "reidemeister-14c-decay-example",
         "topology-geometry-boundary",
         "topology-geometry-boundary-table-data",
-        "elliptic-stability-locus",
         "shell-closure-normal-form",
         "shell-closure-normal-form-table4-data",
         "shell-closure-normal-form-proof",
