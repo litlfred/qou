@@ -52,7 +52,7 @@ namespace QOU.BraidKnot
 
 /-- **Per-block binding-fraction correction.**
 
-    For an atom `K` with braid word `β_K ∈ B_{3A}` and irrep
+    For an atom `K` with nuclear-core Hecke word `β_K ∈ H_{3A}(q)` and irrep
     label `λ ⊢ 3A`, the per-block binding-fraction correction
     `Δ_λ(K)` measures the deviation of the λ-block mass
     contribution from the constituent-only piece

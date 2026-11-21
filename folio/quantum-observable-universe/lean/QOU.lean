@@ -47,6 +47,9 @@ import QOU.MathlibExt.QuadraticIrrationalBadlyApproximable
 import QOU.MathlibExt.MarkovTrace
 import QOU.MathlibExt.HeckeToTemperleyLieb
 import QOU.MathlibExt.TraceRadicalNondegenerate
+import QOU.MathlibExt.LocalCocycleTransport
+import QOU.MathlibExt.LocalCocycleGenerated
+import QOU.MathlibExt.PathLebesgue
 import QOU.MathlibExt.TemperleyLiebSpanning
 import QOU.MathlibExt.TemperleyLiebWedderburn
 import QOU.MathlibExt.TemperleyLiebNormalForm
@@ -863,6 +866,8 @@ import QOU.FluidDynamics.q_bkm_criterion
 import QOU.FluidDynamics.TwoVortexChannelAlgebra
 import QOU.FluidDynamics.LambCalculus
 import QOU.FluidDynamics.LambCalculusArchimedean
+import QOU.FluidDynamics.DSSObstructions
+import QOU.FluidDynamics.IntegerSpin
 import QOU.QBeta.BarOddLadderShape
 -- Anchor-followups cluster (beans qou-o3ta / qou-4g4a): the interface scalar,
 -- the Markov-Gram signature, and the Temperley-Lieb tower. Added to the root
@@ -1796,6 +1801,15 @@ import QOU.KZ.Drinfeld.HeckeStrands
 import QOU.Mass.LagrangianKZInputs
 import QOU.Mass.BridgeADeligneGauge
 import QOU.Mass.BridgeADeligneKZ
+import QOU.Mass.KZHolonomy.FlatCocycle
+import QOU.Mass.KZHolonomy.FlatGauge
+import QOU.Mass.KZHolonomy.ODETransport
+import QOU.Mass.KZHolonomy.SmoothGauge
+import QOU.Mass.KZHolonomy.ConfConnected
+import QOU.Mass.KZHolonomy.BraidGauge
+import QOU.Mass.KZHolonomy.ConfRegions
+import QOU.Mass.KZHolonomy.ConfGeneric
+import QOU.Mass.KZHolonomy.ArtinGeneration
 import QOU.QBeta.BorromeanThreeCuspNZHessian
 import QOU.QBeta.McPhailSnyderBridgeExclusion
 import QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm

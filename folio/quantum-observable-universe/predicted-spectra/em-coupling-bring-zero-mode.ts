@@ -7,7 +7,7 @@ export default proposition({
   uses: [
     "prop:exterior-square-borromean",
   ],
-  cites: ["jones1987", "kassel1995", "suslin1991", "bloch2000"],
+  cites: ["jones1987", "kassel1995", "suslin1991", "bloch2000", "riera-rodriguez-1992"],
   computation: {
     engine: "mpmath",
     script: "computations/q_pinning_50_digit.py",
