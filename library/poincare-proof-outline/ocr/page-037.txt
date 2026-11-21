@@ -1,0 +1,79 @@
+also have ... = (B * cnj B) x (A? + ?discr)
+using complez-of-real-Re[of A] <is-real Ay «?discr > 0»
+by (simp add: power2-eq-square field-simps)
+
+finally
+
+have z1 * cnj z1 = (B * cnj B)?
+using comples-of-real-Re[of (emod B)? — (Re A)?| complez-of-real-Re[of A] <is-real A»
+using complez-mult-cnj-cmod|of B]
+by (simp add: power2-eq-square)
+
+moreover
+
+have 22 * cnj 22 = (B * cnj B)?
+using assms
+by simp
+
+ultimately
+
+show ?thesis
+by simp
+
+qed
+
+lemma calc-ideal-point2-sq:
+assumes (21, 22) = calc-ideal-point2-cvec A B is-real A (cmod B)* > (cmod A)?
+shows 21 * cnj zl + 22 * cnj 22 = 2 * (B * cnj B)?
+proof—
+let ?discr = Re ((cmod B)? — (Re A)?)
+have ?discr > 0
+using assms
+by (simp add: cmod-power2)
+have z1 * cnj zl = (B * cnj B) * (—A + ixsqrt(?discr))*(—A — ixsqrt( ?discr))
+using assms eq-cnj-iff-real[of A]
+by simp
+also have ... = (B * cnj B) x (A? + ?discr)
+using complez-of-real-Re[of A] <is-real Ay «?discr > 0»
+by (simp add: power2-eq-square field-simps)
+finally
+have z1 * cnj z1 = (B * cnj B)?
+using complez-of-real-Re[of (cmod B)? — (Re A)*] complez-of-real-Re[of A] <is-real Ay
+using complez-mult-cnj-cmod|of B]
+by (simp add: power2-eq-square)
+moreover
+have 22 * cnj 22 = (B * cnj B)?
+using assms
+by simp
+ultimately
+show ?thesis
+by simp
+qed
+
+lemma calc-ideal-point1-miz:
+assumes (21, 22) = calc-ideal-point1-cvec A B is-real A (cmod B)* > (emod A)?
+shows B * cnj z1 * 22 + cnj B* z1 * cnj 22 = — 2 * A * (B * cnj B)?
+proof—
+have Bxcnj z1 + cnj Bxzl = —2*xA*xBxcnj B
+using assms eq-cnj-iff-real[of A]
+by (simp, simp add: field-simps)
+moreover
+have cnj z2 = 22
+using assms
+by simp
+hence Bxcnj z1*z2 + cnj Bxz1*cnj 22 = (Bxcnj 21 + cnj Bxz1)*z2
+by (simp add: field-simps)
+
+ultimately
+
+have Bxcnj z1*z2 + cnj Bxzl*cnj 22 = —2*Ax(Bx cnj B)xz2
+by simp
+
+also have ... = —2*Ax(B * cnj B)?
+
+using assms
+
+using complez-mult-cnj-cmod|of B]
+
+by (simp add: power2-eq-square)
+finally

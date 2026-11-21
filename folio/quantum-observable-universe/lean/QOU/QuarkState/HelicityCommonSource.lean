@@ -495,29 +495,29 @@ noncomputable def photonSwap (a0 a1 a2 : R[X]) : Fin 6 → R[X] :=
     + a2 • mulNF (X : R[X]) ((X : R[X]) • e0 - s0) ((X : R[X]) • e0 - s1)
 
 theorem pair_id_swap_coord0 (a0 a1 a2 b0 b1 b2 : R) :
-    mulNF (X : R[X]) (photon X (C a0) (C a1) (C a2)) (photonSwap (C b0) (C b1) (C b2)) 0 =
+    mulNF (X : R[X]) (photonStraight X (C a0) (C a1) (C a2)) (photonSwap (C b0) (C b1) (C b2)) 0 =
       C (1 - a0 * b0 - a1 * b1) + C (b0 + b1 - (a0 + a1) * b2) * X + C b2 * X ^ 2 := by
-  simp [photon, photonSwap, mulNF, mulσ₀, mulσ₁, e0, s0, s1]
+  simp [photonStraight, photonSwap, mulNF, mulσ₀, mulσ₁, e0, s0, s1]
   ring
 
 /-- σ-photon against swap-photon: net flavour `(ψ₀ + ψ₁) − (φ₀ + φ₁)ψ₀₁`
 (compare 6a's `pairBar_netFlavour`: `−(ψ₀ + ψ₁) − (φ₀ + φ₁)ψ₀₁`). -/
 theorem pair_id_swap_netFlavour (a0 a1 a2 b0 b1 b2 : R) :
-    netFlavour (mulNF (X : R[X]) (photon X (C a0) (C a1) (C a2))
+    netFlavour (mulNF (X : R[X]) (photonStraight X (C a0) (C a1) (C a2))
       (photonSwap (C b0) (C b1) (C b2))) = b0 + b1 - (a0 + a1) * b2 := by
   simp only [netFlavour, hPart, pair_id_swap_coord0, Polynomial.coeff_add, Polynomial.coeff_C,
     Polynomial.coeff_C_mul, Polynomial.coeff_X_pow, Polynomial.coeff_X]
   simp
 
 theorem pair_swap_id_coord0 (a0 a1 a2 b0 b1 b2 : R) :
-    mulNF (X : R[X]) (photonSwap (C a0) (C a1) (C a2)) (photon X (C b0) (C b1) (C b2)) 0 =
+    mulNF (X : R[X]) (photonSwap (C a0) (C a1) (C a2)) (photonStraight X (C b0) (C b1) (C b2)) 0 =
       C (1 - a0 * b0 - a1 * b1) + C (a0 + a1 - a2 * (b0 + b1)) * X + C a2 * X ^ 2 := by
-  simp [photon, photonSwap, mulNF, mulσ₀, mulσ₁, e0, s0, s1]
+  simp [photonStraight, photonSwap, mulNF, mulσ₀, mulσ₁, e0, s0, s1]
   ring
 
 theorem pair_swap_id_netFlavour (a0 a1 a2 b0 b1 b2 : R) :
     netFlavour (mulNF (X : R[X]) (photonSwap (C a0) (C a1) (C a2))
-      (photon X (C b0) (C b1) (C b2))) = a0 + a1 - a2 * (b0 + b1) := by
+      (photonStraight X (C b0) (C b1) (C b2))) = a0 + a1 - a2 * (b0 + b1) := by
   simp only [netFlavour, hPart, pair_swap_id_coord0, Polynomial.coeff_add, Polynomial.coeff_C,
     Polynomial.coeff_C_mul, Polynomial.coeff_X_pow, Polynomial.coeff_X]
   simp

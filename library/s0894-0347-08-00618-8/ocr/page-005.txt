@@ -1,0 +1,60 @@
+NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS 525,
+
+then p(F) = f Fdu. However, in what follows the X;’s always stand for (proba-
+bilistic) random variables, and we will use other variables (such as x, y, z,w) when
+working with arbitrary functions/polynomials.
+
+Let P,, be the set of all multi-affine polynomials in n variables f(z1,...,2n) with
+non-negative coefficients such that f(1) = 1, where 1 = (1,...,1) € R” denotes the
+“all ones vector”. There is a 1-1 correspondence between B,, and P,,: if uw € Brn we
+may form its generating polynomial, namely
+
+Iu 2) = [ Bans) = > wW(S)25, z= (z1,--.,2n), 2% =[«,
+
+SC{[n] eS
+
+and if
+
+(1) f(2= > agz> € Ph
+
+SCin]
+
+we define a measure jf on 2!) by setting y»(S) = as, S C [n]. It is clear that
+gv © Pr, bp © Bns Iny = f, and pg, =v for any v € Bn, f € Pn. For convenience,
+we will sometimes use the symbol 0; for 0/0z; 1 < i < n, and the multi-index
+notation 0° = [],<50:, S  [n].
+
+The NLC property for measures in f,, translates into the corresponding property
+~ again called the negative lattice condition and denoted by NLC ~ for polynomials
+in Py: a polynomial f € P,, satisfies NLC if and only if its corresponding measure
+Lt € Pn does. This amounts to saying that
+
+(NLC) O° f(0,...,0) 07 F(0,...,0) > O5YF F(0,...,0) 097 F(0,... 0),
+
+which in notation becomes agar > asurasnr for all S,T C [nl].
+The so-called “closure” operations discussed in e.g. II.A] may also be refor-
+mulated in terms of generating polynomials:
+
+(i) Products. If 1 € Bn, has generating polynomial g,,,(z1,..-,2n,) € Pn;
+
+and 2 € Py, has generating polynomial g,,.(z1,...;Znz) € Pnz, then the
+product ji x jl is the measure pf € Pin, +n2] With generating polynomial
+g.(21, Se Gur (Z1,.++5 2n1) Gps (Zni +1 sees Zn4+n2) € Pri+ng:
+
+(ii) Projections. Given S$ C [n] and pp € PB, the projection of p onto 2° is the
+measure pu’ € Pj}s; with generating polynomial
+
+Iul@1y--->n)| 2.1, te(nj\s © Pst:
+
+Note that in order for this definition to make sense we should also relabel
+the variables using indices in [|$|]. However, we allow ourselves this abuse
+of notation here and in what follows.
+
+(iii) Conditioning. Let  € Bn with generating polynomial g,,(21,..-,2n) € Pn
+and fix some 7 € [n]. The measure obtained from jy by conditioning the
+i-th random variable X; to be 0 is the measure on 2I"/\{ with generating
+polynomial
+
+€ Pn-1;
+
+Qu (215+ + 2n) 24=0, 2j=1, 54%

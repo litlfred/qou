@@ -9,8 +9,9 @@ source_pdf: 0812.2426v1.pdf
 source_sha256: df1eb953bc2c6c63
 toc_source: inferred
 text_source: latex
-latex_prose_ratio: 0.988
-latex_coverage_ratio: 0.901
+latex_prose_ratio: 0.902
+latex_coverage_ratio: 0.961
+doc_brief: "CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV INVARIANTS — A theorem of M¨uger asserts that the center Z(C) of a spherical k-linear category C is a modular category if k is an algebraically closed ﬁeld"
 ---
 []{#sect-construct label="sect-construct"} Let $\mathcal{B}$ be a ribbon autonomous category ($\mathcal{B}$ is not necessarily linear). Assume that $\mathcal{B}$ admits a coend: $$C=\int^{Y \in \mathcal{B}} \leftidx{^\vee}{\!Y}{} \otimes Y,$$ with universal coaction $\delta_Y \colon Y \to Y \otimes C$ (see Section [\[sect-coend-cat\]](#sect-coend-cat){reference-type="ref" reference="sect-coend-cat"}). In particular, using the general theory of coends, we have the following universal property: for any natural transformation $\xi=\{\xi_{Y_1,\dots,Y_n} \colon Y_1 \otimes \cdots \otimes Y_n \to Y_1 \otimes \cdots \otimes Y_n \otimes M\}_{Y_1,\dots,Y_n
 \in \mathrm{Ob}(\mathcal{B})}$, where $M$ is an object of $\mathcal{B}$, there exists a unique morphism $r\colon C^{\otimes n} \to M$ such that: $$\psfrag{X}[Bl][Bl]{\scalebox{.8}{$Y_1$}}

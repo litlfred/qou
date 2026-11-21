@@ -1,0 +1,3312 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1712.03058v3",
+  "pages": [
+    {
+      "page": 6,
+      "rotation": 0,
+      "drawings": 118,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1.1. Our data, y∗"
+      ],
+      "labels": [
+        {
+          "text": "CHAPTER 1. ITERATED FILTERING METHODS FOR POMP",
+          "bbox": [
+            102.88,
+            97.54,
+            448.62,
+            109.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFSL1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            485.58,
+            97.54,
+            491.43,
+            109.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 1.1: A partially observed Markov process where Yn, n = 1, . . . , N,",
+          "bbox": [
+            102.88,
+            298.49,
+            491.43,
+            311.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMMIB10",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "denotes the observations at time tn, which depend on the state of the trans-",
+          "bbox": [
+            102.88,
+            312.94,
+            491.49,
+            325.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "mission process Xn := X(tn; θ) at that time.",
+          "bbox": [
+            102.88,
+            327.38,
+            334.52,
+            341.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMMIB10",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 1.1. Our data, y∗",
+          "bbox": [
+            102.88,
+            360.93,
+            227.79,
+            374.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMIB10",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "1:N = (y∗",
+          "bbox": [
+            223.12,
+            360.93,
+            269.8,
+            377.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMMIB10",
+            "CMR12",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "1, . . . , y∗",
+          "bbox": [
+            265.13,
+            360.93,
+            308.26,
+            376.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMIB10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "N), are then modeled as a realization",
+          "bbox": [
+            303.58,
+            362.25,
+            491.49,
+            376.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "of this observation process. Depending on how many aspects of the disease",
+          "bbox": [
+            102.88,
+            376.71,
+            491.55,
+            388.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "dynamics we observe, y∗",
+          "bbox": [
+            102.88,
+            389.82,
+            231.72,
+            403.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMIB10",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "1:N can be either a univariate or multivariate time",
+          "bbox": [
+            227.05,
+            391.16,
+            491.52,
+            406.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "series. Assuming that the observable random variable Yn is independent of",
+          "bbox": [
+            102.88,
+            405.59,
+            491.45,
+            419.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMMIB10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "all other variables given the state of the transmission process Xn, the joint",
+          "bbox": [
+            102.88,
+            420.04,
+            491.45,
+            432.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMMIB10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "density of the states and the observations is deﬁned as the product of the",
+          "bbox": [
+            102.88,
+            434.5,
+            491.55,
+            446.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "one-step transmission density, fXn|Xn−1(xn|xn−1; θ), the observation density,",
+          "bbox": [
+            102.88,
+            448.77,
+            491.47,
+            462.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMMIB10",
+            "CMMIB8",
+            "CMR12",
+            "CMR6",
+            "CMR8",
+            "CMSY10",
+            "CMSY6",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "fYn|Xn(yn|xn; θ), and the initial density fX0(x0; θ) as",
+          "bbox": [
+            102.88,
+            463.22,
+            377.41,
+            476.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMMIB10",
+            "CMMIB8",
+            "CMR12",
+            "CMR6",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "fX0:N,Y1:N(x0:N, y1:N; θ) =fX0(x0; θ)",
+          "bbox": [
+            118.63,
+            489.78,
+            302.08,
+            503.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMMIB10",
+            "CMMIB8",
+            "CMR12",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "N",
+          "bbox": [
+            268.44,
+            507.85,
+            275.16,
+            515.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Y",
+          "bbox": [
+            264.59,
+            516.92,
+            279.86,
+            528.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "×",
+          "bbox": [
+            252.29,
+            519.53,
+            261.59,
+            531.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "fXn|Xn−1(xn|xn−1; θ)fYn|Xn(yn|xn; θ).",
+          "bbox": [
+            282.2,
+            519.53,
+            475.68,
+            533.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMMIB10",
+            "CMMIB8",
+            "CMR12",
+            "CMR6",
+            "CMR8",
+            "CMSY10",
+            "CMSY6",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "n=1",
+          "bbox": [
+            264.24,
+            536.54,
+            280.2,
+            544.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Hence, the likelihood of the parameter vector can be written as the marginal",
+          "bbox": [
+            102.88,
+            555.82,
+            491.57,
+            567.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "density for a sequence of observations Y1:N evaluated at the data y∗",
+          "bbox": [
+            102.88,
+            568.93,
+            451.31,
+            584.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMMIB10",
+            "CMR8",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "1:N as",
+          "bbox": [
+            446.63,
+            570.27,
+            475.66,
+            585.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            276.83,
+            606.25,
+            283.48,
+            618.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "L(θ) = fY1:N(y∗",
+          "bbox": [
+            153.09,
+            612.0,
+            234.21,
+            627.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMIB10",
+            "CMMIB8",
+            "CMR12",
+            "CMR6",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "fX0:N,Y1:N(x0:N, y∗",
+          "bbox": [
+            290.78,
+            612.0,
+            382.48,
+            627.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMMIB10",
+            "CMMIB8",
+            "CMR12",
+            "CMR6",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "1:N; θ) =",
+          "bbox": [
+            229.53,
+            613.92,
+            273.52,
+            627.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMMIB10",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "1:N; θ)dx0:N.",
+          "bbox": [
+            377.81,
+            613.92,
+            441.23,
+            627.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMMIB10",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(2)",
+          "bbox": [
+            476.47,
+            613.94,
+            491.44,
+            625.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The dimension of the integral in (2) depends on the number of compartments",
+          "bbox": [
+            102.88,
+            646.15,
+            491.56,
+            658.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of the Markov process and the number of observations, so this integral is",
+          "bbox": [
+            102.88,
+            660.6,
+            491.56,
+            672.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "usually high-dimensional and, except for the simplest situations, cannot be",
+          "bbox": [
+            102.88,
+            675.04,
+            491.56,
+            687.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "solved analytically. The method we will present in the following sections uses",
+          "bbox": [
+            102.88,
+            689.49,
+            491.54,
+            701.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the property that it is fairly easy to draw samples from the density fXn|Xn−1",
+          "bbox": [
+            102.88,
+            703.92,
+            490.43,
+            717.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMIB8",
+            "CMR6",
+            "CMSY6",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 14,
+      "rotation": 0,
+      "drawings": 73,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1.2: Weekly number of newly reported cases over time, for a simulated set from the POMP model with an underlying Markovian SIR transmission model as deﬁned in Equations (13) and (15)."
+      ],
+      "labels": [
+        {
+          "text": "CHAPTER 1. ITERATED FILTERING METHODS FOR POMP",
+          "bbox": [
+            102.88,
+            97.54,
+            448.62,
+            109.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFSL1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "13",
+          "bbox": [
+            479.72,
+            97.54,
+            491.44,
+            109.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "This distribution then corresponds to fYn|Xn which is easy to evaluate. One",
+          "bbox": [
+            102.88,
+            129.28,
+            491.47,
+            144.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBSY8",
+            "CMMI12",
+            "CMMIB6",
+            "CMMIB8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "interpretation of this choice of observation noise is to account for uncertainty",
+          "bbox": [
+            102.88,
+            143.74,
+            491.58,
+            155.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "in classiﬁcation of cases, including false positives.",
+          "bbox": [
+            102.88,
+            158.19,
+            355.35,
+            170.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1.5.3",
+          "bbox": [
+            102.88,
+            190.52,
+            135.34,
+            204.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX1440"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Inference",
+          "bbox": [
+            151.12,
+            190.52,
+            214.21,
+            204.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX1440"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "In the following we perform inference for the two epidemiological parameters",
+          "bbox": [
+            102.88,
+            214.55,
+            491.55,
+            226.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "β and γ on a set of simulated data from the model where we apply the iter-",
+          "bbox": [
+            102.88,
+            228.99,
+            491.54,
+            240.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ated ﬁltering algorithm presented in Section 1.4.",
+          "bbox": [
+            102.88,
+            243.45,
+            351.1,
+            255.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Data We consider a closed population with N = 10 000 individuals of whom",
+          "bbox": [
+            102.88,
+            272.17,
+            491.47,
+            284.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10",
+            "SFBX1200",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "one is initially infectious and the rest are susceptible. A realization from the",
+          "bbox": [
+            102.88,
+            286.78,
+            491.55,
+            298.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "model presented above with β = 1 and γ = 0.5 for N = 50 weeks where",
+          "bbox": [
+            102.88,
+            301.21,
+            491.43,
+            313.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "tn = n for n = 1, . . . , N was simulated. Figure 1.2 shows the number of",
+          "bbox": [
+            102.88,
+            315.66,
+            491.51,
+            329.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "weekly reported cases where it is assumed that all cases are reported.",
+          "bbox": [
+            102.88,
+            330.12,
+            458.77,
+            342.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1000",
+          "bbox": [
+            166.03,
+            355.92,
+            184.57,
+            364.26
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.34
+          ]
+        },
+        {
+          "text": "Weekly new reported cases",
+          "bbox": [
+            156.11,
+            357.78,
+            166.53,
+            485.77
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.42
+          ]
+        },
+        {
+          "text": "750",
+          "bbox": [
+            170.67,
+            386.42,
+            184.58,
+            394.76
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.34
+          ]
+        },
+        {
+          "text": "500",
+          "bbox": [
+            170.67,
+            416.91,
+            184.58,
+            425.25
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.34
+          ]
+        },
+        {
+          "text": "250",
+          "bbox": [
+            170.67,
+            447.41,
+            184.58,
+            455.74
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.34
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            179.94,
+            477.9,
+            184.58,
+            486.24
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.34
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            192.33,
+            487.99,
+            196.96,
+            496.33
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.34
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            235.9,
+            487.99,
+            245.17,
+            496.33
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.34
+          ]
+        },
+        {
+          "text": "20",
+          "bbox": [
+            281.78,
+            487.99,
+            291.05,
+            496.33
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.34
+          ]
+        },
+        {
+          "text": "30",
+          "bbox": [
+            327.67,
+            487.99,
+            336.94,
+            496.33
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.34
+          ]
+        },
+        {
+          "text": "40",
+          "bbox": [
+            373.56,
+            487.99,
+            382.83,
+            496.33
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.34
+          ]
+        },
+        {
+          "text": "50",
+          "bbox": [
+            419.44,
+            487.99,
+            428.71,
+            496.33
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.34
+          ]
+        },
+        {
+          "text": "Time (weeks)",
+          "bbox": [
+            280.4,
+            495.13,
+            342.93,
+            505.55
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.42
+          ]
+        },
+        {
+          "text": "Figure 1.2: Weekly number of newly reported cases over time, for a simulated",
+          "bbox": [
+            102.88,
+            533.05,
+            491.56,
+            545.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "set from the POMP model with an underlying Markovian SIR transmission",
+          "bbox": [
+            102.88,
+            547.5,
+            491.54,
+            559.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "model as deﬁned in Equations (13) and (15).",
+          "bbox": [
+            102.88,
+            561.94,
+            332.78,
+            573.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Implementation details We use the iterated ﬁltering algorithm as imple-",
+          "bbox": [
+            102.88,
+            591.56,
+            491.51,
+            603.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX1200",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "mented in the function mif2 in the R package pomp to infer the epidemic",
+          "bbox": [
+            102.88,
+            606.01,
+            491.45,
+            618.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200",
+            "SFTT1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "parameters β and γ assuming the initial values and total population size",
+          "bbox": [
+            102.88,
+            620.44,
+            491.54,
+            632.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "were known. We run the algorithm for M = 100 iterations and J = 500",
+          "bbox": [
+            102.88,
+            634.88,
+            491.44,
+            646.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "particles. As starting values for the ﬁtting algorithm we use 10 parameter",
+          "bbox": [
+            102.88,
+            649.35,
+            491.58,
+            661.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "constellations drawn uniformly from a hypercube which contains biologically",
+          "bbox": [
+            102.88,
+            663.79,
+            491.58,
+            675.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "meaningful parameter values for β and γ. With this procedure we address",
+          "bbox": [
+            102.88,
+            678.22,
+            491.47,
+            690.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the potential problem of local maxima in the optimization. In general, if",
+          "bbox": [
+            102.88,
+            692.68,
+            491.57,
+            704.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "all searches converge to the same MLE for starting values drawn at random",
+          "bbox": [
+            102.88,
+            707.13,
+            491.57,
+            719.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 16,
+      "rotation": 0,
+      "drawings": 305,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1.3: Diagnostic plot of the iterated ﬁltering algorithm for 100 it- erations for simulated incidence data. Shown is the evolution of the log- likelihood (loglik), the number of ﬁltering failures in each mif2 iteration (nfail) and parameter estimates for parameters β and γ per iteration for 10 trajectories with random starting values drawn from a hypercube.",
+        "Figure 1.4: The smoothed proﬁle likelihoods (solid curves) for both param- eters of interest where the solid vertical lines show the true values and the dashed vertical lines contain the corresponding MCAP 95% conﬁdence in- terval. The quadratic approximation in a neighborhood of the maximum is shown as the dashed curves."
+      ],
+      "labels": [
+        {
+          "text": "CHAPTER 1. ITERATED FILTERING METHODS FOR POMP",
+          "bbox": [
+            102.88,
+            97.54,
+            448.62,
+            109.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFSL1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "15",
+          "bbox": [
+            479.72,
+            97.54,
+            491.44,
+            109.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "loglik",
+          "bbox": [
+            225.37,
+            129.22,
+            248.16,
+            139.22
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "nfail",
+          "bbox": [
+            385.82,
+            130.29,
+            404.17,
+            140.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "-250",
+          "bbox": [
+            144.66,
+            146.17,
+            164.68,
+            156.18
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "15",
+          "bbox": [
+            311.79,
+            149.5,
+            322.91,
+            159.5
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "-500",
+          "bbox": [
+            144.66,
+            163.63,
+            164.68,
+            173.63
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            311.79,
+            166.11,
+            322.91,
+            176.11
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "-750",
+          "bbox": [
+            144.66,
+            181.08,
+            164.68,
+            191.08
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            317.35,
+            182.71,
+            322.91,
+            192.72
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "-1000",
+          "bbox": [
+            139.09,
+            198.53,
+            164.68,
+            208.54
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            317.35,
+            199.32,
+            322.91,
+            209.33
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "γ",
+          "bbox": [
+            392.94,
+            207.7,
+            397.06,
+            217.71
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "β",
+          "bbox": [
+            234.02,
+            208.87,
+            239.51,
+            218.87
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "1.6",
+          "bbox": [
+            150.77,
+            222.45,
+            164.68,
+            232.46
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "0.7",
+          "bbox": [
+            309.01,
+            222.61,
+            322.91,
+            232.61
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "0.6",
+          "bbox": [
+            309.01,
+            234.99,
+            322.91,
+            244.99
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "1.2",
+          "bbox": [
+            150.77,
+            240.98,
+            164.68,
+            250.99
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "0.5",
+          "bbox": [
+            309.01,
+            247.37,
+            322.91,
+            257.37
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "0.8",
+          "bbox": [
+            150.77,
+            259.52,
+            164.68,
+            269.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "0.4",
+          "bbox": [
+            309.01,
+            259.75,
+            322.91,
+            269.75
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "0.3",
+          "bbox": [
+            309.01,
+            272.13,
+            322.91,
+            282.13
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "0.4",
+          "bbox": [
+            150.77,
+            278.05,
+            164.68,
+            288.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            168.4,
+            287.0,
+            173.96,
+            297.0
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "25",
+          "bbox": [
+            198.08,
+            287.0,
+            209.21,
+            297.0
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "50",
+          "bbox": [
+            230.55,
+            287.0,
+            241.67,
+            297.0
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "75",
+          "bbox": [
+            263.01,
+            287.0,
+            274.14,
+            297.0
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "100",
+          "bbox": [
+            292.7,
+            287.0,
+            309.39,
+            297.0
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            326.63,
+            287.0,
+            332.2,
+            297.0
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "25",
+          "bbox": [
+            356.32,
+            287.0,
+            367.44,
+            297.0
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "50",
+          "bbox": [
+            388.78,
+            287.0,
+            399.91,
+            297.0
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "75",
+          "bbox": [
+            421.25,
+            287.0,
+            432.37,
+            297.0
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "100",
+          "bbox": [
+            450.93,
+            287.0,
+            467.62,
+            297.0
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "MIF2 Iteration",
+          "bbox": [
+            277.31,
+            295.57,
+            354.46,
+            308.08
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            12.51
+          ]
+        },
+        {
+          "text": "Figure 1.3: Diagnostic plot of the iterated ﬁltering algorithm for 100 it-",
+          "bbox": [
+            102.88,
+            334.78,
+            491.61,
+            346.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "erations for simulated incidence data.",
+          "bbox": [
+            102.88,
+            349.23,
+            300.74,
+            361.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Shown is the evolution of the log-",
+          "bbox": [
+            310.34,
+            349.23,
+            491.56,
+            361.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "likelihood (loglik), the number of ﬁltering failures in each mif2 iteration",
+          "bbox": [
+            102.88,
+            363.68,
+            491.45,
+            376.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200",
+            "SFTT1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(nfail) and parameter estimates for parameters β and γ per iteration for 10",
+          "bbox": [
+            102.88,
+            378.11,
+            491.48,
+            390.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "trajectories with random starting values drawn from a hypercube.",
+          "bbox": [
+            102.88,
+            392.57,
+            441.3,
+            404.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "-154",
+          "bbox": [
+            147.89,
+            440.74,
+            163.18,
+            448.38
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.64
+          ]
+        },
+        {
+          "text": "-154",
+          "bbox": [
+            307.69,
+            440.83,
+            322.98,
+            448.47
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.64
+          ]
+        },
+        {
+          "text": "Loglikelihood",
+          "bbox": [
+            139.54,
+            466.52,
+            149.1,
+            522.27
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.55
+          ]
+        },
+        {
+          "text": "Loglikelihood",
+          "bbox": [
+            299.35,
+            467.58,
+            308.9,
+            523.33
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.55
+          ]
+        },
+        {
+          "text": "-156",
+          "bbox": [
+            147.89,
+            474.43,
+            163.18,
+            482.07
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.64
+          ]
+        },
+        {
+          "text": "-156",
+          "bbox": [
+            307.69,
+            475.17,
+            322.98,
+            482.81
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.64
+          ]
+        },
+        {
+          "text": "-158",
+          "bbox": [
+            147.89,
+            508.13,
+            163.18,
+            515.77
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.64
+          ]
+        },
+        {
+          "text": "-158",
+          "bbox": [
+            307.69,
+            509.51,
+            322.98,
+            517.15
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.64
+          ]
+        },
+        {
+          "text": "-160",
+          "bbox": [
+            147.89,
+            541.83,
+            163.18,
+            549.47
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.64
+          ]
+        },
+        {
+          "text": "-160",
+          "bbox": [
+            307.69,
+            543.85,
+            322.98,
+            551.49
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.64
+          ]
+        },
+        {
+          "text": "0.90",
+          "bbox": [
+            162.31,
+            550.25,
+            177.18,
+            557.89
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.64
+          ]
+        },
+        {
+          "text": "0.95",
+          "bbox": [
+            186.07,
+            550.25,
+            200.94,
+            557.89
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.64
+          ]
+        },
+        {
+          "text": "1.00",
+          "bbox": [
+            209.83,
+            550.25,
+            224.7,
+            557.89
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.64
+          ]
+        },
+        {
+          "text": "1.05",
+          "bbox": [
+            233.59,
+            550.25,
+            248.46,
+            557.89
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.64
+          ]
+        },
+        {
+          "text": "1.10",
+          "bbox": [
+            257.35,
+            550.25,
+            272.22,
+            557.89
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.64
+          ]
+        },
+        {
+          "text": "1.15",
+          "bbox": [
+            281.11,
+            550.25,
+            295.98,
+            557.89
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.64
+          ]
+        },
+        {
+          "text": "0.40",
+          "bbox": [
+            322.12,
+            552.37,
+            336.99,
+            560.01
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.64
+          ]
+        },
+        {
+          "text": "0.45",
+          "bbox": [
+            351.82,
+            552.37,
+            366.69,
+            560.01
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.64
+          ]
+        },
+        {
+          "text": "0.50",
+          "bbox": [
+            381.52,
+            552.37,
+            396.39,
+            560.01
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.64
+          ]
+        },
+        {
+          "text": "0.55",
+          "bbox": [
+            411.22,
+            552.37,
+            426.09,
+            560.01
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.64
+          ]
+        },
+        {
+          "text": "0.60",
+          "bbox": [
+            440.92,
+            552.37,
+            455.8,
+            560.01
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.64
+          ]
+        },
+        {
+          "text": "γ",
+          "bbox": [
+            387.0,
+            556.01,
+            390.92,
+            565.57
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            9.55
+          ]
+        },
+        {
+          "text": "β",
+          "bbox": [
+            226.54,
+            556.02,
+            231.78,
+            565.57
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            9.55
+          ]
+        },
+        {
+          "text": "(a) Proﬁle log-likelihood for β",
+          "bbox": [
+            151.69,
+            573.14,
+            282.29,
+            583.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(b) Proﬁle log-likelihood for γ",
+          "bbox": [
+            311.45,
+            573.14,
+            442.12,
+            583.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 1.4: The smoothed proﬁle likelihoods (solid curves) for both param-",
+          "bbox": [
+            102.88,
+            598.99,
+            491.57,
+            610.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "eters of interest where the solid vertical lines show the true values and the",
+          "bbox": [
+            102.88,
+            613.43,
+            491.54,
+            625.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "dashed vertical lines contain the corresponding MCAP 95% conﬁdence in-",
+          "bbox": [
+            102.88,
+            627.88,
+            491.55,
+            639.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "terval. The quadratic approximation in a neighborhood of the maximum is",
+          "bbox": [
+            102.88,
+            642.33,
+            491.6,
+            654.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "shown as the dashed curves.",
+          "bbox": [
+            102.88,
+            656.77,
+            247.2,
+            668.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 23,
+      "rotation": 0,
+      "drawings": 44,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 1.5: The 95% prediction interval (light shading) for 1000 realizations of the model for rotavirus evaluated at the maximum likelihood estimate for the simulated case report data (solid back line) and the median (solid white line). Furthermore, the 95 % prediction interval of these 1000 realizations for only the transmission model is shown (darker shading)."
+      ],
+      "labels": [
+        {
+          "text": "CHAPTER 1. ITERATED FILTERING METHODS FOR POMP",
+          "bbox": [
+            102.88,
+            97.54,
+            448.62,
+            109.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFSL1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "22",
+          "bbox": [
+            479.72,
+            97.54,
+            491.44,
+            109.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The number of recorded cases Yn within this time period was modeled as",
+          "bbox": [
+            102.88,
+            129.28,
+            477.84,
+            143.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            297.21,
+            153.33,
+            306.01,
+            165.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            351.28,
+            153.33,
+            360.08,
+            165.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "H(tn), 1",
+          "bbox": [
+            306.01,
+            153.5,
+            349.0,
+            174.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Yn ∼NegBin",
+          "bbox": [
+            228.99,
+            161.44,
+            295.23,
+            175.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            362.07,
+            161.59,
+            365.32,
+            173.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ψ",
+          "bbox": [
+            342.05,
+            169.79,
+            349.66,
+            181.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "compare Equation (17). In this example we inferred the susceptibility pa-",
+          "bbox": [
+            102.88,
+            194.58,
+            491.55,
+            206.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "rameter β, the seasonal forcing parameters ρ and φ and the overdispersion",
+          "bbox": [
+            102.88,
+            209.01,
+            491.47,
+            220.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "parameters σ and ψ, hence θ = (β, ρ, φ, σ, ψ)′. A diagnostic plot similar",
+          "bbox": [
+            102.88,
+            222.13,
+            491.49,
+            235.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMIB10",
+            "CMR12",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "to the one in Figure 1.3 (available online) shows that the iterated ﬁltering",
+          "bbox": [
+            102.88,
+            237.92,
+            491.58,
+            249.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "algorithm performs well as the parameter estimates converge towards the",
+          "bbox": [
+            102.88,
+            252.37,
+            491.56,
+            264.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "parameters used for simulation. Figure 1.5 shows the model evaluated at the",
+          "bbox": [
+            102.88,
+            266.81,
+            491.57,
+            278.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "MLE obtained from the iterated ﬁltering. Further implementational details",
+          "bbox": [
+            102.88,
+            281.26,
+            491.57,
+            293.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "for this example are available at Stocks (2017).",
+          "bbox": [
+            102.88,
+            295.7,
+            344.02,
+            307.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The aim of the analysis in Stocks et al. (2018) was to compare the impact of",
+          "bbox": [
+            102.88,
+            310.15,
+            491.58,
+            322.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "diﬀerent kinds of variabilities in the transmission as well as the observation",
+          "bbox": [
+            102.88,
+            324.59,
+            491.56,
+            336.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "model. The paper concluded that a model which accounts for overdispersion",
+          "bbox": [
+            102.88,
+            339.04,
+            491.56,
+            351.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "in both model components (dark and light shading in Figure 1.5) is best",
+          "bbox": [
+            102.88,
+            353.49,
+            491.58,
+            365.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "suited to explain the analyzed data. The strength of using iterated ﬁltering",
+          "bbox": [
+            102.88,
+            367.93,
+            491.57,
+            379.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "in this context was that the method allowed for eﬃcient maximum likeli-",
+          "bbox": [
+            102.88,
+            382.38,
+            491.55,
+            394.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "hood estimation for a POMP where the underlying transmission model was",
+          "bbox": [
+            102.88,
+            396.82,
+            491.55,
+            408.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "stochastic. Hence, it facilitated model comparison with respect to diﬀerent",
+          "bbox": [
+            102.88,
+            411.27,
+            491.55,
+            423.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "choices of variability in both model components.",
+          "bbox": [
+            102.88,
+            425.72,
+            351.16,
+            437.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Weekly new cases",
+          "bbox": [
+            134.96,
+            468.77,
+            146.94,
+            568.0
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            11.98
+          ]
+        },
+        {
+          "text": "75000",
+          "bbox": [
+            145.66,
+            479.52,
+            172.31,
+            489.11
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.59
+          ]
+        },
+        {
+          "text": "50000",
+          "bbox": [
+            145.66,
+            511.27,
+            172.31,
+            520.85
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.59
+          ]
+        },
+        {
+          "text": "25000",
+          "bbox": [
+            145.66,
+            543.01,
+            172.31,
+            552.6
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.59
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            166.99,
+            574.75,
+            172.32,
+            584.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.59
+          ]
+        },
+        {
+          "text": "2001",
+          "bbox": [
+            176.55,
+            584.94,
+            197.87,
+            594.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.59
+          ]
+        },
+        {
+          "text": "2002",
+          "bbox": [
+            209.01,
+            584.94,
+            230.34,
+            594.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.59
+          ]
+        },
+        {
+          "text": "2003",
+          "bbox": [
+            241.48,
+            584.94,
+            262.8,
+            594.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.59
+          ]
+        },
+        {
+          "text": "2004",
+          "bbox": [
+            273.94,
+            584.94,
+            295.27,
+            594.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.59
+          ]
+        },
+        {
+          "text": "2005",
+          "bbox": [
+            306.41,
+            584.94,
+            327.73,
+            594.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.59
+          ]
+        },
+        {
+          "text": "2006",
+          "bbox": [
+            338.87,
+            584.94,
+            360.2,
+            594.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.59
+          ]
+        },
+        {
+          "text": "2007",
+          "bbox": [
+            371.35,
+            584.94,
+            392.67,
+            594.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.59
+          ]
+        },
+        {
+          "text": "2008",
+          "bbox": [
+            403.81,
+            584.94,
+            425.13,
+            594.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.59
+          ]
+        },
+        {
+          "text": "2009",
+          "bbox": [
+            436.28,
+            584.94,
+            457.6,
+            594.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.59
+          ]
+        },
+        {
+          "text": "Time (weeks)",
+          "bbox": [
+            280.21,
+            593.12,
+            352.11,
+            605.1
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            11.98
+          ]
+        },
+        {
+          "text": "Figure 1.5: The 95% prediction interval (light shading) for 1000 realizations",
+          "bbox": [
+            102.88,
+            632.58,
+            491.61,
+            644.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of the model for rotavirus evaluated at the maximum likelihood estimate for",
+          "bbox": [
+            102.88,
+            647.03,
+            491.58,
+            658.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the simulated case report data (solid back line) and the median (solid white",
+          "bbox": [
+            102.88,
+            661.47,
+            491.57,
+            673.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "line). Furthermore, the 95 % prediction interval of these 1000 realizations",
+          "bbox": [
+            102.88,
+            675.92,
+            491.58,
+            687.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "for only the transmission model is shown (darker shading).",
+          "bbox": [
+            102.88,
+            690.36,
+            404.43,
+            702.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    }
+  ]
+}

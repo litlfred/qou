@@ -1,0 +1,170 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T04:07:01.235222+00:00",
+  "commitSha": "0aa71564635248bdaaa889c07cf69ecec6269dcb",
+  "assertions": [
+    {
+      "name": "A: uniform split = (2w - 4s)/3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "PairwiseChargeEnergyBeta.uniform_split_SM"
+    },
+    {
+      "name": "A: pair sums n⊗ν = -1/3, p⊗e⁻ = -1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "arith"
+    },
+    {
+      "name": "B: split = w_L - w_N/3 - s_q/3 - s_l",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "PairwiseChargeEnergyBeta.twoWeight_split_SM"
+    },
+    {
+      "name": "B: nucleon-only n - p = -w_N/3 - s_q/3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "PairwiseChargeEnergyBeta.nucleon_em_split_SM"
+    },
+    {
+      "name": "C1 covariant raw = -2P/(3q^2(q^2+1)^4)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "PairwiseChargeEnergyBeta.covariant_raw_split"
+    },
+    {
+      "name": "C2 covariant connected = 0",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "PairwiseChargeEnergyBeta.covariant_connected_split"
+    },
+    {
+      "name": "C3 adjacent raw closed form",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "PairwiseChargeEnergyBeta.adjacent_raw_split"
+    },
+    {
+      "name": "allPairs4 scalars",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "PairwiseChargeEnergyBeta.allPairs4_nNu/_pE"
+    },
+    {
+      "name": "nucleon all-pairs raw = P/(3q^4(q^2+1)^3)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "NucleonWeightSpaceQTrace.deltaT_allPairs_raw_eq"
+    },
+    {
+      "name": "q=1 values: C1 = 1/8, nucleon raw = -1/8",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "arith"
+    },
+    {
+      "name": "trV3(q0) > 0 (so the static pair term has a definite sign)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "trace_borromeanV3A"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 22,
+  "computation": "qbeta-pairwise-em-split",
+  "scriptFile": "qbeta_pairwise_em_split_probe.py",
+  "scriptHash": "d161a7bebaff",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "ae1028699afd20c5"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_pairwise_em_split/qbeta_pairwise_em_split_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_pairwise_em_split/qbeta_pairwise_em_split_probe.py"
+  },
+  "q0Anchor": "proton",
+  "q0AnchorReason": "qou_substrate.constants.q_at (proton pin), owner directive 2026-08-07",
+  "q0": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+  "m_e_MeV": "0.51099895069",
+  "dps": 70,
+  "lean_module": "QOU.QuarkState.PairwiseChargeEnergyBeta",
+  "armA_uniform_split": "(2w - 4s)/3 ; zero iff w = 2s",
+  "armB_two_weight_split": "w_L - w_N/3 - s_q/3 - s_l ; nucleon-only -w_N/3 - s_q/3",
+  "armC": {
+    "C1_covariant_raw_beta": {
+      "exact": "-2*(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/(3*q**2*(q**2 + 1)**4)",
+      "t_at_q0": "0.1220754403503192182850022024116710200250333041958941124155641812319161",
+      "plus_me_t_MeV": "0.06238042192403280655017718679670287864227",
+      "minus_me_t_MeV": "-0.06238042192403280655017718679670287864227"
+    },
+    "C2_covariant_connected_beta": {
+      "exact": "0",
+      "t_at_q0": "0.0",
+      "plus_me_t_MeV": "0.0",
+      "minus_me_t_MeV": "0.0"
+    },
+    "C3_adjacent_raw_beta": {
+      "exact": "(3*q**10 - 10*q**8 + 13*q**6 - 8*q**4 + 4*q**2 - 1)/(3*(q**2 + 1)**4)",
+      "t_at_q0": "0.02111066045061241219852881733347214981367791274816930220049917463024269",
+      "plus_me_t_MeV": "0.01078752533863582520133798161913095236913",
+      "minus_me_t_MeV": "-0.01078752533863582520133798161913095236913"
+    },
+    "C4_adjacent_connected_beta": {
+      "exact": "(q - 1)**3*(q + 1)**3*(10*q**6 - 3*q**4 + 3*q**2 - 1)/(9*q**2*(q**2 + 1)**4)",
+      "t_at_q0": "0.000764753725559209151028450264860313142839028715520283464571811091590014",
+      "plus_me_t_MeV": "0.0003907883512970241096417838196804725954156",
+      "minus_me_t_MeV": "-0.0003907883512970241096417838196804725954156"
+    },
+    "N_nucleon_allpairs_raw_n_minus_p": {
+      "exact": "(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/(3*q**4*(q**2 + 1)**3)",
+      "t_at_q0": "-0.1105792149132544814562687307455828395399652485498706528056734683313292",
+      "plus_me_t_MeV": "-0.05650586278879703939709338453365097235739",
+      "minus_me_t_MeV": "0.05650586278879703939709338453365097235739"
+    }
+  },
+  "P_at_q0": "-5.599720399155302612433107369383976704087142394545759767731342235197564",
+  "trV3_at_q0": "2.994185812979964086728199368018716700089139582511814834682828948496677",
+  "comparison_only": {
+    "m_n_minus_m_p_CODATA_MeV": "1.29333251",
+    "Q_beta_CODATA_MeV": "0.78233",
+    "nucleon_raw_plus_sign_MeV": "-0.0565058627887970393970933845337",
+    "beta_covariant_raw_plus_sign_MeV": "0.0623804219240328065501771867967"
+  },
+  "premises": [
+    "E1 spectator lepton strand (not in corpus)",
+    "E2 [2]_q^4 normalisation (n=4 extension)",
+    "overall sign of m_e·t not fixed by corpus (pre-registered +, compute -)",
+    "coupling w not derived (NeutronProtonEMSign)"
+  ],
+  "n_checks": 11,
+  "n_fail": 0
+}

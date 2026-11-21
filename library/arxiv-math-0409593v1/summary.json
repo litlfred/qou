@@ -2,22 +2,27 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0409593v1",
  "source_sha256": "ad965f5c80838824",
- "brief": "CATEGORIFICATION OF THE BRAID GROUPS RAPHAËL ROUQUIER 1. Introduction Actions of braid groups on triangulated categories are quite widesp read. They arise for instance in representation theory, for co",
- "extended": "**CATEGORIFICATION OF THE BRAID GROUPS RAPHAËL ROUQUIER 1. Introduction Actions of braid groups on triangulated categories are quite widesp read. They arise for instance in representation theory, for constructible sheaves on flag varieties and for coherent**\n\n22 pp, 17 sections.\n\n**Outline.** 1 Introduction; 2 Self-equivalences; 2.1 A general construction; 2.2 Applications; 3 The 2-braid group; 3.1 Coxeter group action; 3.2 Braid group action; 4 Principal block of a semi-simple complex Lie; 4.1 Review of category O; 4.2 Link with bimodules; 5 Flag varieties; 5.1 Classical results; 5.2 Genuine braid group action; 5.3 Link with bimodules; 6 Appendix : associativity of kernel transform; 6.1 Classical isomorphisms; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.3: If T is faithful, then ˜T : A\n- Theorem 3.5: The family (Gv, mv,v′, m1) deﬁnes an action of BW on K b(A-modgr).\n- Theorem 3.7: The category BW is a strict rigid monoidal category. Its “decategoriﬁcatio n ” is\n- Theorem 4.1: The image of the composite morphism Z\n- Theorem 4.2: The functor Hom(P (w0 · λ), −) : Oλ-proj → C Wλ\n- Theorem 4.4: The functors Fs induce an action of BW on Db(O0).",
+ "brief": "Categorification of sl_2 and braid groups — 20 sections: Front matter; Introduction; Self-equivalences",
+ "extended": "**Categorification of sl_2 and braid groups**\n\n*RAPHAËL ROUQUIER*\n\n22 pp, 20 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Self-equivalences; 2.1 A general construction; 2.2 Applications; 3 The 2-braid group; 3.1 Coxeter group action; 3.2 Braid group action; 3.3 Rigidification; 4 Principal block of a semi-simple complex Lie; 4.1 Review of category O; 4.2 Link with bimodules; 5 Flag varieties; 5.1 Classical results; 5.3 Link with bimodules; 5.2 Genuine braid group action; 6.1 Classical isomorphisms; 6 Appendix : associativity of kernel transform",
  "tokens": {
-  "brief": 50,
-  "extended": 296
+  "brief": 25,
+  "extended": 140
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-1"
+   "pages": "1-2"
   },
   {
    "id": "sec-001-2-self-equivalences",
    "title": "Self-equivalences",
-   "pages": "1-2"
+   "pages": "2-2"
   },
   {
    "id": "sec-002-21-a-general-construction",
@@ -42,55 +47,65 @@
   {
    "id": "sec-006-32-braid-group-action",
    "title": "Braid group action",
-   "pages": "6-11"
+   "pages": "6-10"
   },
   {
-   "id": "sec-007-4-principal-block-of-a-semi-simple-complex-lie-a",
+   "id": "sec-007-33-rigidification",
+   "title": "Rigidification",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-008-4-principal-block-of-a-semi-simple-complex-lie-a",
    "title": "Principal block of a semi-simple complex Lie algebra",
    "pages": "11-11"
   },
   {
-   "id": "sec-008-41-review-of-category-o",
+   "id": "sec-009-41-review-of-category-o",
    "title": "Review of category O",
    "pages": "11-12"
   },
   {
-   "id": "sec-009-42-link-with-bimodules",
+   "id": "sec-010-42-link-with-bimodules",
    "title": "Link with bimodules",
    "pages": "12-13"
   },
   {
-   "id": "sec-010-5-flag-varieties",
+   "id": "sec-011-5-flag-varieties",
    "title": "Flag varieties",
    "pages": "13-13"
   },
   {
-   "id": "sec-011-51-classical-results",
+   "id": "sec-012-51-classical-results",
    "title": "Classical results",
    "pages": "13-14"
   },
   {
-   "id": "sec-012-52-genuine-braid-group-action",
-   "title": "Genuine braid group action",
+   "id": "sec-013-53-link-with-bimodules",
+   "title": "Link with bimodules",
    "pages": "14-14"
   },
   {
-   "id": "sec-013-53-link-with-bimodules",
-   "title": "Link with bimodules",
+   "id": "sec-014-52-genuine-braid-group-action",
+   "title": "Genuine braid group action",
    "pages": "14-15"
-  },
-  {
-   "id": "sec-014-6-appendix-associativity-of-kernel-transforms",
-   "title": "Appendix : associativity of kernel transforms",
-   "pages": "15-15"
   },
   {
    "id": "sec-015-61-classical-isomorphisms",
    "title": "Classical isomorphisms",
-   "pages": "15-21"
+   "pages": "15-15"
   },
   {
-   "id": "sec-016-references",
+   "id": "sec-016-6-appendix-associativity-of-kernel-transforms",
+   "title": "Appendix : associativity of kernel transforms",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-017-62-kernel-transforms",
+   "title": "Kernel transforms",
+   "pages": "16-21"
+  },
+  {
+   "id": "sec-018-references",
    "title": "References",
    "pages": "21-22"
   }
@@ -98,8 +113,7 @@
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

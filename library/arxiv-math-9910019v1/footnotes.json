@@ -1,0 +1,1187 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-math-9910019v1",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "5",
+   "text": "1 3 2 4",
+   "marks": [
+    {
+     "page": 1,
+     "context": "\u0000 1234"
+    }
+   ],
+   "block": "library/arxiv-math-9910019v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p001-2",
+   "page": 1,
+   "mark": "†",
+   "text": "AT&TResearch,NewJersey,rains@research.att.com",
+   "marks": [
+    {
+     "page": 1,
+     "context": "EricM.Rains"
+    }
+   ],
+   "block": "library/arxiv-math-9910019v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "3",
+   "text": "(−x)3/2−",
+   "marks": [
+    {
+     "page": 5,
+     "context": "3z"
+    },
+    {
+     "page": 5,
+     "context": "3z"
+    },
+    {
+     "page": 5,
+     "context": "3w"
+    },
+    {
+     "page": 5,
+     "context": "3w"
+    },
+    {
+     "page": 6,
+     "context": "3w"
+    },
+    {
+     "page": 6,
+     "context": "e−cx"
+    },
+    {
+     "page": 6,
+     "context": "e−cx"
+    },
+    {
+     "page": 6,
+     "context": "3w"
+    },
+    {
+     "page": 6,
+     "context": "3w"
+    },
+    {
+     "page": 6,
+     "context": "3w3+xw)σ"
+    },
+    {
+     "page": 6,
+     "context": "3(−x)"
+    },
+    {
+     "page": 6,
+     "context": "2w2(−x)1/2)σ"
+    }
+   ],
+   "block": "library/arxiv-math-9910019v1/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p010-2",
+   "page": 10,
+   "mark": "2",
+   "text": "βl P",
+   "marks": [
+    {
+     "page": 9,
+     "context": "∼Pl(n"
+    },
+    {
+     "page": 9,
+     "context": "eorthogonalpolynomialsontheunitcirclewithrespecttotheweighte"
+    },
+    {
+     "page": 9,
+     "context": "weighte"
+    },
+    {
+     "page": 9,
+     "context": "˜Sn= {π∈S"
+    },
+    {
+     "page": 10,
+     "context": "= F1(x)"
+    },
+    {
+     "page": 10,
+     "context": "2"
+    },
+    {
+     "page": 10,
+     "context": "wherethelimitingdistributionwasF2(x)andF2(x)"
+    },
+    {
+     "page": 10,
+     "context": "ivalently partitions, of size n.Given a partition λ = (λ1, λ"
+    },
+    {
+     "page": 10,
+     "context": "ll"
+    }
+   ],
+   "block": "library/arxiv-math-9910019v1/blocks/prose-sec-004"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "j",
+   "text": "x2",
+   "block": "library/arxiv-math-9910019v1/blocks/prose-sec-004"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "Supposethatweareselectingnpoints,p"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "Supposethatweareselectingnpoints,p1, p"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "Supposethatweareselectingnpoints,p1, p2, · · ·, p"
+  },
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "atesnory-coordinates.Anup/rightpathofπisacollectionofpointsp"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "tesnory-coordinates.Anup/rightpathofπisacollectionofpointspi"
+  },
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "ory-coordinates.Anup/rightpathofπisacollectionofpointspi1, p"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "ry-coordinates.Anup/rightpathofπisacollectionofpointspi1, pi"
+  },
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "tes.Anup/rightpathofπisacollectionofpointspi1, pi2, · · ·, p"
+  },
+  {
+   "page": 1,
+   "mark": "k",
+   "context": "es.Anup/rightpathofπisacollectionofpointspi1, pi2, · · ·, pi"
+  },
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "x(p"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "x(pi"
+  },
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "x(pi1)<x(p"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "x(pi1)<x(pi"
+  },
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "x(pi1)<x(pi2)<· · ·<x(p"
+  },
+  {
+   "page": 1,
+   "mark": "k",
+   "context": "x(pi1)<x(pi2)<· · ·<x(pi"
+  },
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "x(pi1)<x(pi2)<· · ·<x(pik)andy(p"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "x(pi1)<x(pi2)<· · ·<x(pik)andy(pi"
+  },
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "x(pi1)<x(pi2)<· · ·<x(pik)andy(pi1)<y(p"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "x(pi1)<x(pi2)<· · ·<x(pik)andy(pi1)<y(pi"
+  },
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "x(pi1)<x(pi2)<· · ·<x(pik)andy(pi1)<y(pi2)<· · ·<y(p"
+  },
+  {
+   "page": 1,
+   "mark": "k",
+   "context": "x(pi1)<x(pi2)<· · ·<x(pik)andy(pi1)<y(pi2)<· · ·<y(pi"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "\u0000 1"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "\u0000 12"
+  },
+  {
+   "page": 1,
+   "mark": "4",
+   "context": "\u0000 123"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "somenumericalconstantc"
+  },
+  {
+   "page": 2,
+   "mark": "t",
+   "context": "Letδ= {(t, t) : 0 ≤t ≤1},thediagonalline,andδ"
+  },
+  {
+   "page": 2,
+   "mark": "t",
+   "context": ":selectnpointsinR \\ δ"
+  },
+  {
+   "page": 2,
+   "mark": "t",
+   "context": ":selectnpointsinR \\ δtandmpointsinδ"
+  },
+  {
+   "page": 2,
+   "mark": "t",
+   "context": " \\ δtandmpointsinδtatrandom,andaddtheirreﬂectionimagesaboutδ"
+  },
+  {
+   "page": 2,
+   "mark": "t",
+   "context": ":selectnpointsinR \\ δ,m+pointsinδandm−pointsinδ"
+  },
+  {
+   "page": 2,
+   "mark": "t",
+   "context": "imagesaboutbothδandδ"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "DeﬁnethemapιonS"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "Sn= S"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "Sn,m= {π∈S"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "Sn,m= {π∈S2"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "Sn,m= {π∈S"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "Sn,m= {π∈S2"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "n= {π∈S"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "n= {π∈S2"
+  },
+  {
+   "page": 2,
+   "mark": "4",
+   "context": "Sn,m+,m−= {π∈S"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "Sn,m+,m−= {π∈S4"
+  },
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "Sn,m+,m−= {π∈S4n+2"
+  },
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "Sn,m+,m−= {π∈S4n+2m++2"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "Remark2.Wemay identify S"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "Remark2.Wemay identify S2"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "Ontheotherhand,thevariancebehavesasymptoticallylikec0N"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "nGUE"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "HereGUE"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "forGOE"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "inthetransition.TheﬂuctuationisGUEwhenα < 1,GOE"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "uxx= 2u"
+  },
+  {
+   "page": 4,
+   "mark": "x",
+   "context": "\u0012e−(4/3)"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "\u0012e−(4/3)x"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "x"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 4,
+   "mark": "x",
+   "context": "RecallthatAi(x) ∼e−(2/3)"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "RecallthatAi(x) ∼e−(2/3)x"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "πx"
+  },
+  {
+   "page": 4,
+   "mark": "x",
+   "context": "Z"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(u(s))"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "sothatv′(x) = (u(x))"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(s −x)(u(s))"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(s −x)(u(s))"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "F(x)"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "e−cx"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "e−cx"
+  },
+  {
+   "page": 5,
+   "mark": "x",
+   "context": "Henceinparticular,lim"
+  },
+  {
+   "page": 5,
+   "mark": "x",
+   "context": "Henceinparticular,limx→+∞Fβ(x)=1andlim"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "fromχGSEtoχGOEandfromχGUEtoχGOE"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "−e−2"
+  },
+  {
+   "page": 5,
+   "mark": "z",
+   "context": "3"
+  },
+  {
+   "page": 5,
+   "mark": "z",
+   "context": "3"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "e2"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "m(z; x) = I +m"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "z"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "2i(m"
+  },
+  {
+   "page": 5,
+   "mark": "12",
+   "context": "2i(m1(x))"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "2i(m1(x))12= −2i(m"
+  },
+  {
+   "page": 5,
+   "mark": "21",
+   "context": "2i(m1(x))12= −2i(m1(x))"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "2i(m"
+  },
+  {
+   "page": 5,
+   "mark": "22",
+   "context": "2i(m1(x))"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "2i(m1(x))22= −2i(m"
+  },
+  {
+   "page": 5,
+   "mark": "11",
+   "context": "2i(m1(x))22= −2i(m1(x))"
+  },
+  {
+   "page": 5,
+   "mark": "22",
+   "context": "m"
+  },
+  {
+   "page": 5,
+   "mark": "12",
+   "context": "m22(−iw; x) −m"
+  },
+  {
+   "page": 5,
+   "mark": "22",
+   "context": "m"
+  },
+  {
+   "page": 5,
+   "mark": "12",
+   "context": "m22(−iw; x) + m"
+  },
+  {
+   "page": 5,
+   "mark": "w",
+   "context": "3"
+  },
+  {
+   "page": 5,
+   "mark": "21",
+   "context": "−m"
+  },
+  {
+   "page": 5,
+   "mark": "11",
+   "context": "−m21(−iw; x) + m"
+  },
+  {
+   "page": 5,
+   "mark": "21",
+   "context": "m"
+  },
+  {
+   "page": 5,
+   "mark": "11",
+   "context": "m21(−iw; x) + m"
+  },
+  {
+   "page": 5,
+   "mark": "22",
+   "context": "m"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "m22(−iw; x)F"
+  },
+  {
+   "page": 5,
+   "mark": "w",
+   "context": "3"
+  },
+  {
+   "page": 5,
+   "mark": "21",
+   "context": "3w3−2xwm"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "3w3−2xwm21(−iw; x)F"
+  },
+  {
+   "page": 6,
+   "mark": "12",
+   "context": "nce at z= 0, the jump condition of the RHP (2.15) implies (m"
+  },
+  {
+   "page": 6,
+   "mark": "11",
+   "context": " jump condition of the RHP (2.15) implies (m12)+(0; x) = −(m"
+  },
+  {
+   "page": 6,
+   "mark": "22",
+   "context": "and(m"
+  },
+  {
+   "page": 6,
+   "mark": "21",
+   "context": "and(m22)+(0; x) = −(m"
+  },
+  {
+   "page": 6,
+   "mark": "w",
+   "context": "x→+∞F(x;"
+  },
+  {
+   "page": 6,
+   "mark": "w",
+   "context": "x→−∞F(x;"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "andF1(x)"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "\u0000 0"
+  },
+  {
+   "page": 6,
+   "mark": "w",
+   "context": "3"
+  },
+  {
+   "page": 6,
+   "mark": "w",
+   "context": "3"
+  },
+  {
+   "page": 6,
+   "mark": "w",
+   "context": "3"
+  },
+  {
+   "page": 6,
+   "mark": "w",
+   "context": "2"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "2w"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "2w2(−x)"
+  },
+  {
+   "page": 7,
+   "mark": "w",
+   "context": "w→∞F(x;"
+  },
+  {
+   "page": 7,
+   "mark": "w",
+   "context": "w→−∞F(x;"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "F1(x)"
+  },
+  {
+   "page": 7,
+   "mark": "w",
+   "context": "w→∞F(x;"
+  },
+  {
+   "page": 7,
+   "mark": "w",
+   "context": "w→−∞F(x;"
+  },
+  {
+   "page": 7,
+   "mark": "z",
+   "context": "lim"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "χn=L"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "N"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "N"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "N"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "2"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "22/3N"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "2"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "22/3N"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "GUEﬂuctuationinthelimit,whilerandomsignedpermutationshaveGUE"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "χ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "= F2(x)"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "= F1(x)"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "2n −2w(2n)"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "n −2wn"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "(1/α −1/α"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "(1/α −1/α3)N"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "(1/α −1/α"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "(1/α −1/α3)N"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "x2dF"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "N"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "t2"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Pl(t) = e−t"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "L"
+  },
+  {
+   "page": 9,
+   "mark": "l",
+   "context": "∼P"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "L"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "orthogonalpolynomialsontheunitcirclewithrespecttotheweighte2"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "z"
+  },
+  {
+   "page": 9,
+   "mark": "e",
+   "context": "zk"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "zk e"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "z"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "weighte2"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "˜S"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "˜Sn= {π∈S"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "˜S"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "˜Sn= {π∈S2"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "anddenote by˜L"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "anddenote by˜Ln(π) and˜L"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Ln (π) thelengthof thelongest increasing subsequence of π∈˜S"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "of thelongest increasing subsequence of π∈˜Snandthat of π∈˜S"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Noting˜S"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "\u0000˜L"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "2k −2w(2k)"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "\u0012 ˜L"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "n"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "\u0012 ˜L"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "22/3n"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Let Y"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": " equivalently partitions, of size n.Given a partition λ = (λ"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "λ ∈Y"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "µ⊢n"
+  },
+  {
+   "page": 10,
+   "mark": "l",
+   "context": "l"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "ll2/2l"
+  },
+  {
+   "page": 11,
+   "mark": "d",
+   "context": "µ⊢n"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "µ⊢nd"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "µ=|S"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "over,underRS,thelengthofthelongestincreasingsubsequenceofπ∈S"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "measureM"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "nissimplythepushforwardoftheuniformprobabilitymeasureonS"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "nissimplythepushforwardoftheuniformprobabilitymeasureonSntoY"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "takenundertheprobabilityM"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "diagram under the probability M"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "EachmodelisdeﬁnedonM,asubsetofZ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "(i).LetM = Z"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "(ii).LetM = Z"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "(iii).LetM = Z"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "(v).LetM = Z"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "ρ(q) =q"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "q)"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "ρ(q)N"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "= F2(x)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "22/3ρ(q)(2N)"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "ρ(q)N"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "ρ(q)N"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "ρ(q)N"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "ρ(q)N"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "ρ(q)N"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "22/3ρ(q)(2N)"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "ρ(q)(2N)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "22/3ρ(q)(2N)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "22/3ρ(q)(2N)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "q cos θ)Ndθ/(2π)insteadofe"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "q cos θ)Ndθ/(2π)insteadofe2"
+  }
+ ]
+}

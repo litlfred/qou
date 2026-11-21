@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.974
 latex_coverage_ratio: 0.965
+doc_brief: "arXiv:math/0203003v2 [math.QA] 24 Apr 2002 — 8 sections: Front matter; Introduction; Representations of Quantum Dynamic"
 ---
 Let $\mathfrak{g}$ be a finite dimensional simple Lie algebra, and $\widehat{\mathfrak{g}}$ the corresponding affine Lie algebra. Let $q\in {\mathbb C}^*,|q|\ne 1$, and let $U_q(\widehat{\mathfrak{g}})$ be the associated quantum affine algebra (we will use the definition given in [@EFK98]). Let $\text{\bf Rep}_{\text{f}}(U_q(\widehat{\mathfrak{g}}))$ be the category of finite dimensional (type 1) representations of $U_q(\widehat{\mathfrak{g}})$. For any $V \in \text{\bf Rep}_{\text{f}}(U_q(\widehat{\mathfrak{g}}))$ and $z\in \text{$\mathbb{C}$}^*$ we can consider the shifted representation $V(z)$ where all the Chevalley generators act as before except for $e_0$ and $f_0$ which now act by $ze_0$ and $z^{-1}f_0$ respectively.
 

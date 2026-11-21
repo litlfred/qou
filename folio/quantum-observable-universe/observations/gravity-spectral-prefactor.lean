@@ -14,7 +14,7 @@ complement — two regular ideal octahedra of volume `4G` each.
 
 This file previously named the quantity `newtonG` and its header read
 "Newton's gravitational constant `G`".  That was a glyph collision with
-`prop:binding-scale-catalan`, which asserts the *same* formula
+`conj:binding-scale-catalan`, which asserts the *same* formula
 `α = m_e · 8G` with `G` Catalan's.  The two readings differ numerically —
 `m_e · 8 · G_Catalan = 3.744459659941610 MeV` against
 `m_e · 8 · 1 = 4.087991605520000 MeV` for `G_Planck = 1` — and the corpus's
@@ -38,7 +38,7 @@ LaTeX label: `prop:gravity-spectral-prefactor`
 
 ## References
 
-- [manuscript] §6/gravity-spectral-prefactor
+- [leitner2026] §6/gravity-spectral-prefactor
 -/
 
 namespace QOU.Observations
@@ -65,7 +65,7 @@ noncomputable def tailSpectralRatio (U : UniversalResidue) : ℝ :=
     `α = m_e · 8 · G_q` for the ratio `G_q` defined above.  This is the
     unfolding of `tailSpectralRatio`; it says the extraction inverts
     cleanly for a positive ruler, and does not derive `α`. -/
--- Ref: [manuscript] §6/gravity-spectral-prefactor
+-- Ref: [leitner2026] §6/gravity-spectral-prefactor
 theorem gravity_spectral_prefactor (U : UniversalResidue) :
     U.α = U.m_e * 8 * tailSpectralRatio U := by
   unfold tailSpectralRatio
@@ -73,9 +73,9 @@ theorem gravity_spectral_prefactor (U : UniversalResidue) :
 
 /-- The ratio recovers whatever constant the prefactor was built from: if
     `α = m_e · 8 · c` then `G_q = c`.  With `c` Catalan's constant this is
-    the link to `prop:binding-scale-catalan`, and it is what makes the
+    the link to `conj:binding-scale-catalan`, and it is what makes the
     coefficient `8` a statement about `Vol(𝓑₃)` rather than a free choice. -/
--- Ref: [manuscript] §6/gravity-spectral-prefactor
+-- Ref: [leitner2026] §6/gravity-spectral-prefactor
 theorem tailSpectralRatio_eq_of_borromean (U : UniversalResidue) (c : ℝ)
     (h : U.α = U.m_e * 8 * c) : tailSpectralRatio U = c := by
   unfold tailSpectralRatio

@@ -36,6 +36,11 @@ export default proposition({
   ],
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-11-16",
+      body: "c_2 = -1 re-reads the N=2 factor 1 - b^2 hbar^4; N2_factor is a bare def with no derivation. The 5.6 ppm figure is on the retired z=1 base (convention C). On the ruled z_D base Q_base = 0.4447 MeV (-43.2%) and F_required = 1.759 exceeds the N=2 cap 1 - u^2 for every real phase (LadderFactorBound, EigenphaseQuantization; audit 2026-09-13 \u00a75.1). Mass-pipeline flag; no number changes.",
+    },
+    {
       kind: "status",
       body: "**Theorem (this proposition).** Sorry-free Lean proof\n([`q-beta-c-2-eq-neg-one-structural.lean`](q-beta-c-2-eq-neg-one-structural.lean))\n— one-line `ring` identity in `CommRing R`.\n\n**Compute (sympy).** Verified in\n[`qbeta_symbolic_chain_alpha_b.py`](https://github.com/litlfred/qou/blob/main/computations/qbeta/qbeta_symbolic_chain_alpha_b.py)\nwitness `qbeta-symbolic-chain-alpha-b.witness.json`, assertion\n`N2_factor_equals_one_minus_u_squared` (passing, tolerance $10^{-20}$).",
     },

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0006051v1
-doc_title: "arXiv:math/0006051v1 [math.NT] 7 Jun 2000"
+doc_title: "Finite and p-adic polylogarithms"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.973
+doc_brief: "Finite and p-adic polylogarithms — 4 sections: Front matter; Introduction; The proof"
 ---
 []{#sec:intro label="sec:intro"} The finite logarithm was introduced by Kontsevich (under the name "The $1\frac{1}{2}$ logarithm") in [@Kon99]. The finite logarithm is the case $n=1$ of the $n$-th polylogarithm $\operatorname{li}_n\in \mathbb{Z}/p[z]$ defined by $\operatorname{li}_n(z)= \sum_{k=1}^{p-1} z^k/k^n$. In loc. cit. Kontsevich proved that the finite logarithm satisfies a 4-term functional equation, known as the fundamental equation of information theory. The same functional equation is satisfied by the so called infinitesimal dilogarithm $-(x\log|x|+(1-x)\log|1-x|)$. Cathelineau [@Cat96] defined general infinitesimal polylogarithms and found that they satisfy interesting functional equations. It was the idea of Elbaz-Vincent and Gangl [@Elb-Gan99] that these functional equations should be satisfied by finite polylogarithms (The name "finite polylogarithm" is due to them). Inspired by their work, Kontsevich raised the idea that the finite polylogarithm could be a reduction of an infinitesimal version of the $p$-adic polylogarithm, as defined by Coleman [@Col82]. If such a connection is established, it makes sense to hope that functional equations of the infinitesimal $p$-adic polylogarithm can be established in a similar way to its complex counterpart and that these then imply by reduction the functional equations of the finite polylogs. A conjectural formula for the precise $p$-adic polylog whose "derivative", in the sense to be explained below, reduces to the finite polylog was formulated by Kontsevich and proved by him for small $n$. The purpose of this short note is to prove such a connection between $p$-adic polylogarithms and finite polylogarithms.
 

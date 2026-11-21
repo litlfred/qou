@@ -1,0 +1,49 @@
+468 BAO (X.) & BONAHON (F.)
+
+no vertex). Let PP "°) denote PY "el with this new cell decomposition of its
+boundary. The set V of vertices of PP "od ig the same as that of Py)", however
+the set of edges of PPro is now EUE’, where E is the set of ‘old’ edges of Py)"
+and E’ is the set of ‘new’ edges introduced to subdivide its faces into triangles.
+
+Let x € (RP*)" be a point which is close to the vertex set @(P) € (RP3)Y
+of a polyhedron P € Pp. For a (triangle) face f of PPrei, with vertices v1, v2
+and v3, the corresponding coordinates xy, , y,, Tv, € RP* of x are the vertices
+of a triangle ty in RP*, uniquely determined if we require that ty is close to
+the triangle bounded by the corresponding vertices in a face of P (beware that
+three non-collinear points are the vertices of 4 distinct triangles in RP*). As f
+ranges over all faces of PPrei, the union of the ty forms the boundary of a
+polyhedron P, in RP?. This polyhedron P, is a perturbation of PP'), In
+contrast to PP?°i, P, is not necessarily convex and some of its vertices may
+be inside Hi’. However, for a sufficiently close to ®(P), the polyhedron P,, is
+embedded and each of its edges meets HI.
+
+Ife € EU E’ is an edge of PProi consider the corresponding edge of P,,
+and let ©.(x) € ] — 7,7[C R be the external dihedral angle of the hyperbolic
+polyhedron P, MH? along this edge. Considering all such edges e € EU E’,
+this defines a map ©: U > R®U*" on a neighborhood U of 6(P) in (RP*)Y.
+We now use © to characterize the intersection of U with the image of the
+embedding © : Pp > (RP?)
+
+LEMMA 9. — For every P € Pr, there is a neighborhood U of ®(P >) in (RP3)V
+such that, for the function 0:U > REE’ defined above, UN ®(Pr) consists
+of those x €U with the following properties:
+
+(i) 0.(x) = 0 for every ‘new’ edge e € E’;
+(ii) for every vertex v € V, 2", Oe, (a) > 2m where e1, ..., €n € E are the
+edges of Pye that contain the vertex v.
+
+Proof. — Choose U small enough that 0.(x) > 0 for every ‘old’ edge e € E
+and every « € U. If x € U satisfies Conditions (i) and (ii), this property of
+old edges and Condition (i) guarantee that P, is convex and, if we erase those
+edges where OP, is flat, has the same combinatorics as Pred, By Lemma 7,
+Condition (ii) implies that all the vertices of P, lie outside of H*. Since all the
+edges of P, already meet H°, this shows that P,,H is a hyperideal polyhedron,
+whose image in (RP*)” is equal to x.
+
+Conversely, Conditions (i) and (ii) are clearly necessary for « € U to be
+in ®(Pr), by definition of © and by Proposition 5 oO
+
+The key technical step in the proof of the Rigidity Theorem 2 is the following
+infinitesimal rigidity result, whose proof will occupy the next section.
+
+TOME 130 ~ 2002 — N° 3

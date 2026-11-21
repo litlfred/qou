@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/1-s20-s009731651830061x-main/sections/sec-front-matter",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Front matter",
+  "pageStart": 1,
+  "pageEnd": 1,
+  "contains": [
+    "library/1-s20-s009731651830061x-main/blocks/prose-sec-front-matter",
+    "library/1-s20-s009731651830061x-main/blocks/figure-img-p001-1",
+    "library/1-s20-s009731651830061x-main/blocks/figure-img-p001-2"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s20-s009731651830061x-main/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s20-s009731651830061x-main/manifest.jsonld",
+  "provenance": "ingested"
+}

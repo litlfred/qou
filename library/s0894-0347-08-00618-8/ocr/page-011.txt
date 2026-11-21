@@ -1,0 +1,59 @@
+NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS 531
+
+Definition 2.13. Let ys be a probability measure on 2”, where E is a countably
+infinite set satisfying
+(A) for alla € E the set {T € 2": 2 €T} is measurable.
+
+Let P be a property defined for measures on power-sets of finite sets. We say that
+jt has property P provided that the projection of j: to all finite subsets of E has
+property P. (Note that condition (A) is necessary for projections on finite sets to
+be well-defined.)
+
+2.5. Towards a theory of negative dependence: Problems and solutions.
+A series of problems and conjectures was proposed by several authors as natural
+steps toward building as general a theory of negative dependence as possible. In
+§III]| Pemantle pointed out that although they are desirable, the many nega-
+tive dependence properties listed in §2.]]might not be mutually satisfiable, and he
+suggested a problem that may be formulated as follows.
+
+Problem 2.1. Find a natural and useful class of “negatively dependent measures” .
+
+Note that there may well exist several such classes, if indeed any, depending on
+the applications that one has in mind. We show that the class of strongly Rayleigh
+measures introduced in 2.2] enjoys all the negative dependence properties defined
+in {2.TJas well as other properties, which provides an answer to Problem [2.1]
+
+The problem of describing natural negative dependence properties that are pre-
+served by symmetric exclusion evolutions has attracted some attention in the theory
+of interacting particle systems and Markov process see Problem [2
+in 98.5] and the discussion therein. In particular, the following conjecture was im-
+plicitly made in [65] p. 1374] and p. 551].
+
+Conjecture 2.2. If the initial configuration of a symmetric exclusion process is
+non-random/deterministic, then the distribution at time t is NA for all t > 0.
+
+In {5] we prove a stronger form of this conjecture using the results on strongly
+Rayleigh measures obtained in {4]
+
+There are several conjectures, first published in but apparently of obscure
+folklore origin (cf. [72]), stating that various negative dependent properties give rise
+to ULC rank sequences. The strongest form of these is contained in the first part
+of Conjecture 4 in Pemantle’s paper [65] (see also Conjecture 3.9]) and reads
+as follows.
+
+Conjecture 2.3. If 1 € By is NA, then it is ULC.
+
+Inspired by Conjecture [2.3] and motivated by Mason’s long-standing conjecture
+in enumerative graph/matroid theory , Wagner made the following conjecture
+in Conjecture 3.4] and baptized it “The Big Conjecture” since — if true — it
+would prove the validity of Mason’s conjecture for a large class of matroids.
+
+Conjecture 2.4. Any Rayleigh measure ju € B, is ULC.
+
+Since we now know that the Rayleigh and h-NLC+ properties are equivalent
+(Proposition 2.2), Conjecture 2-4] is actually already contained in the second part
+of Conjecture 4 in Pemantle’s paper [65]. The weakest form of the latter conjecture
+is the one stated below.
+
+Conjecture 2.5. [fw € Bn is CNA+, then it is ULC.
+

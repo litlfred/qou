@@ -1,1 +1,1 @@
-Let C1 and C2 be tensor equivalent C
+Let C1 and C2 be tensor equivalent C ∗ -tensor categories endowed with an integral weak dimension function (e.g. they are finite semisimple tensor categories). Then C1 and C2 are also unitarily tensor equivalent.

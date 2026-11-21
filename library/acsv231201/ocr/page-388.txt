@@ -1,0 +1,39 @@
+370 Cone point asymptotics
+
+resented by the matrix
+
+Thus
++ lino, 2
+AY(r st) = rs rt st 5(r +5 +?)
+
+and the zero set of A* is a circular cone OL tangent to the three bounding
+planes of the positive orthant at the diagonals {x = y,z = 0}, {x = z,y = O}, and
+{y = z, x = 0} bounding a solid cone L. It follows from Theorem 11.42 that a,
+decays exponentially as 7 — oo in any closed cone disjoint from L. 4
+
+Example 11.43 derives the “easy” direction for asymptotics, which follows
+directly from Theorem 11.42 and the computation of the dual cone. Neverthe-
+less, this computation and its counterpart for orientation probabilities (where
+the denominator has an extra factor of 1 — z) are the main results in the pa-
+per that introduced cube groves [PS05]. The analysis here is simpler because
+the hyperbolicity results above reduce geometric questions in complex codi-
+mension | to corresponding analyses in real codimension 1, where one can
+use connectivity and natural orientations. The machinery of algebraic duals
+and Theorem 11.42 combine to make it almost automatic to show exponential
+decay outside a set of directions whose boundary is the algebraic dual.
+
+The “hard” direction for asymptotics is showing that there is no exponential
+decay when r is in the interior of L. This is harder to do because we typi-
+cally need to evaluate the integral near the points of local(#) to show that
+asymptotics are indeed not decaying exponentially. In this case we can apply
+Theorem 11.40 and Proposition 11.38 directly to obtain the following result
+for cube grove creation rates.
+
+Corollary 11.44. The creation rates {a,.s,} defined by the power series expan-
+sion of F (x,y,z) in (11.43) satisfy
+
+1 1 -1/2
+Ars ~ —|rstrtt+ st- (7 +8? +P)
+ce 2
+
+as (r, 5,1) > 00 within a closed subcone in the interior of L. oO

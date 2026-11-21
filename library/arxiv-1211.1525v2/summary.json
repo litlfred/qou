@@ -3,10 +3,10 @@
  "doc_id": "arxiv-1211.1525v2",
  "source_sha256": "51ff1c8f90c025a4",
  "brief": "PARTIAL TRANSPOSE OF RANDOM QUANTUM STATES: EXACT FORMULAS AND MEANDERS — We investigate the asymptotic behavior of the empirical eigenvalues distribution of the partial transpose of a random quantum",
- "extended": "**PARTIAL TRANSPOSE OF RANDOM QUANTUM STATES: EXACT FORMULAS AND MEANDERS**\n\n*MOTOHISA FUKUDA AND PIOTR ŚNIADY*\n\n31 pp, 19 sections.\n\n**Abstract.** We investigate the asymptotic behavior of the empirical eigenvalues distribution of the partial transpose of a random quantum state. The limiting distribution was previously investigated via Wishart random matrices indirectly (by approximating the matrix of trace 1 by the Wishart matrix of random trace) and shown to be the semicircular distribution or the free difference of two free Poisson distributions, de- pending on how dimensions of the concerned spaces grow. Our use of Wishart matrices gives exact combinatorial formulas for the moments of the partial transpose of the random state. We ﬁnd three natural asymp- totic regimes in terms of geodesics on the permutation groups. Two of them correspond to the above two cases; the third one turns out to be a new matrix model for the meander polynomials.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.1 Free probability, noncrossing partitions a; 2.2 Meanders; 2.3 Our model; 2.4 Moments of; 3 The case when dimensions of environment and ; 3.1 Limiting eigenvalues; 3.2 Behavior of extreme eigenvalues; 4 The case when the environment space is fixed; 4.1 Our model; 4.2 Random pure states; 4.3 Meander polynomials with our model; 5 The case when one of the system parts is fix; 6 Concluding remark; Appendix B. Measure concentration; Acknowledgments\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3.1: shows that the limiting empirical distribution has the com-\n- Theorem 3.2: Let assumptions of Theorem 3.1 hold true with an additional\n- Theorem 3.4: In the regime of Theorem 3.2, we have the following large\n- Theorem 3.4: We remark that Theorem 8.2 in [Aub12] gives large deviation results\n- Theorem 4.1: Let l = 1. Then the empirical eigenvalues distribution (4.1)\n- Theorem 5.1: The empirical distribution of mlρΓ con-",
+ "extended": "**PARTIAL TRANSPOSE OF RANDOM QUANTUM STATES: EXACT FORMULAS AND MEANDERS**\n\n*MOTOHISA FUKUDA AND PIOTR ŚNIADY*\n\n31 pp, 20 sections.\n\n**Abstract.** We investigate the asymptotic behavior of the empirical eigenvalues distribution of the partial transpose of a random quantum state. The limiting distribution was previously investigated via Wishart random matrices indirectly (by approximating the matrix of trace 1 by the Wishart matrix of random trace) and shown to be the semicircular distribution or the free difference of two free Poisson distributions, de- pending on how dimensions of the concerned spaces grow. Our use of Wishart matrices gives exact combinatorial formulas for the moments of the partial transpose of the random state. We ﬁnd three natural asymp- totic regimes in terms of geodesics on the permutation groups. Two of them correspond to the above two cases; the third one turns out to be a new matrix model for the meander polynomials.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.1 Free probability, noncrossing partitions a; 2.2 Meanders; 2.3 Our model; 2.4 Moments of; 3 The case when dimensions of environment and ; 3.1 Limiting eigenvalues; 3.2 Behavior of extreme eigenvalues; 4 The case when the environment space is fixed; 4.1 Our model; 4.2 Random pure states; 4.3 Meander polynomials with our model; 5 The case when one of the system parts is fix; 6 Concluding remark; Appendix A. Lemmas for Section ??; Appendix B. Measure concentration",
  "tokens": {
   "brief": 49,
-  "extended": 488
+  "extended": 371
  },
  "sections": [
   {
@@ -87,20 +87,25 @@
   {
    "id": "sec-014-6-concluding-remark",
    "title": "Concluding remark",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-015-appendix-a-lemmas-for-section",
+   "title": "Appendix A. Lemmas for Section ??",
    "pages": "23-29"
   },
   {
-   "id": "sec-015-appendix-b-measure-concentration",
+   "id": "sec-016-appendix-b-measure-concentration",
    "title": "Appendix B. Measure concentration",
    "pages": "29-29"
   },
   {
-   "id": "sec-016-acknowledgments",
+   "id": "sec-017-acknowledgments",
    "title": "Acknowledgments",
    "pages": "29-30"
   },
   {
-   "id": "sec-017-references",
+   "id": "sec-018-references",
    "title": "References",
    "pages": "30-31"
   }
@@ -109,8 +114,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

@@ -1,0 +1,48 @@
+Cellular algebras and diagram algebras 147
+
+The stated relations are easily seen to hold by 2.5. The fact that all
+relations are consequences of these depends on the connection between
+the Hecke algebra description of TLB,(q,Q) (§4 below) and the dia-
+grammatic description here. The proof may be found in [42, Satz (4.5)
+p. 77].
+
+We now specify the various elements of a cellular structure (see
+above) for TLB,(q,Q). Take T = {t € Z| |t| < n, t = n (mod 2)},
+partially ordered as follows: t < s if |t| < |s| or |t| = |s| and t < s.
+
+To define the sets M(t), first take t € T,t > 0. Then M(t) is
+the set of monic diagrams D : t — n with no marked through strings,
+where “monic” means that there are ¢t through strings, as in [GL2],
+where it is shown that this is equivalent to D being a monic morphism
+in the category-theoretic sense. In general, let M(t) = M(|t|). Then
+C: M(t) x M(t) > TLB,(q, Q) is defined as follows. Let S,T € M(t).
+For t > 0, define Cs, 7 = SoT™*, where * denotes reflection in a horizontal
+axis. For t < 0, define Cl,» = Soc, oT*, where co = co(t) : t > t is the
+generator shown below 2.5. This is the diagram SoT™, with the leftmost
+through string marked. The cellular axioms above, in particular 2.1 are
+easily checked.
+
+The cell modules W;(n) are now defined in complete analogy with
+the W,,,(n) of [GL2]. For any t € T, W;(n) has basis M(t). If t >
+0, TLB,(q,Q) acts via composition in the category TB; explicitly, if
+De M(t) andw € TLB,(q,Q), then w.D = wD (composition in TB) if
+woDe M(t), and w.D = 0 otherwise.
+
+For t < 0, one may think of W;(n) as having basis the set {Do
+co(t) | D € M(|t|)} of monic diagrams : t > n in TB with the leftmost
+through string marked. Then the action of TLB,(q,Q) is essentially
+multiplication in TB, as in the case t > 0. Thus if t < 0, then w.(Do
+co(t)) = 0 if wo D is not monic, while w.(D o cp) = wDeo (composition
+in TB) if wo D is monic.
+
+It is easily seen (cf. [42]) that the dimension (i.e. rank over R) of
+
+For each integer i with 1 < i < n—1, the diagrams {co,c1,..., ci-1}
+generate an algebra isomorphic to TLB;(g, Q), and we shall require infor-
+mation concerning the restriction of the cell modules W;,(n) to the sub-
+algebras TLB;(q, Q). Let us first consider the restriction of W:(n) from
+TLB,(q,Q) to TLBn-1(q,Q) when t € T,t > 0. Now TLB,-1(9, Q)
+is spanned by those diagrams in TLB,(q,Q) with a string joining the
+rightmost dots in the top and bottom rows. The basis elements of W;(n)
+divide naturally into those which have a through string to the right-
+most top dot, and those which do not. The former evidently span a

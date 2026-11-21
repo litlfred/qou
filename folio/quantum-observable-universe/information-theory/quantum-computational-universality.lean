@@ -35,10 +35,10 @@ corresponding part, not missing proof.
 
 - `[freedman2003]` Freedman, Kitaev, Larsen, Wang — Topological
   quantum computation.
-- `[manuscript]` `conj:quantum-computational-universality`
-- `[manuscript]` `def:descent-involution`
-- `[manuscript]` `prop:descent-eigenspaces`
-- `[manuscript]` `prop:skein-polynomial-transfer-matrix`
+- `[leitner2026]` `conj:quantum-computational-universality`
+- `[leitner2026]` `def:descent-involution`
+- `[leitner2026]` `prop:descent-eigenspaces`
+- `[leitner2026]` `prop:skein-polynomial-transfer-matrix`
 -/
 
 namespace QOU.QuantumComputationalUniversality

@@ -1,1 +1,1 @@
-(a) The functionB1 ˆf (0)(ξ,q ) has simple poles at ξ∈qZ with residue
+We have −det(U(t, λ, q)) = det(V (t, q)) = q−1t−2 . (240)

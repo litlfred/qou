@@ -1,14 +1,9 @@
-> **Superseded by the Habiro-ring identification.**
-> The per-rung c_k coefficients below are the Taylor expansion of the
-> EXACT, FINITE Habiro sum `Σ_{m=0}^{M} a_m(u) · (u;u)_m` with
-> `a_m ∈ ℤ[u]` and `M = 8` (proton/neutron). The precision ladder was
-> useful when the closed form was unknown; now that the Habiro
-> identification is established, the exact evaluation is used
-> (no rung-by-rung truncation). See
-> [`prop:habiro-precision-ladder-equivalence`](../../braids-and-knots/habiro-precision-ladder-equivalence.md).
->
-> The content below is retained for HISTORICAL reference and for the
-> derivation narrative (it shows how the pattern was discovered).
+The per-rung coefficients $c_k$ below are the Taylor coefficients of the
+finite Habiro sum $\sum_{m=0}^{M} a_m(u)\,(u;u)_m$ with $a_m \in \mathbb{Z}[u]$
+and $M = 8$ for the proton and neutron
+([Habiro–ladder equivalence](habiro-precision-ladder-equivalence.md)).
+The exact evaluation uses that sum directly, with no rung-by-rung truncation;
+the ladder records how the per-rung structure arises.
 
 ## Per-rung categorical sources
 
@@ -67,9 +62,9 @@ $$
 
 **Coefficient tier (read with the truncation order).** The $c_k$ carry a
 provenance tier: $c_2 = -1$ is **structural** — the exact $u^2$ coefficient
-of the explicit-factor product $\prod_{k\ge2}(1 + c_k u^k)$, hence trivially
-q$_0$-independent. It is not **proved**: the Lean re-reads the $N{=}2$ factor
-rather than deriving it. And it is Taylor-exact *for that series* — the
+of the explicit-factor product $\prod_{k\ge2}(1 + c_k u^k)$, and therefore
+$q_0$-independent by definition. It is not **proved**: the $N{=}2$ factor is re-read in the ansatz form
+rather than derived. And it is Taylor-exact *for that series* — the
 normalised series (cosine factor inside) has $\tilde c_2 = c_2 - 1/8 = -9/8$; $c_k$ for $k \geq 3$ are at present **structural
 near-matches** — their empirical value swings with the $q_0$ anchor
 (e.g. $c_3$: $-2.010$ at the muon-pin $q_0$, $-2.069$ at the $m_p$-pin
@@ -77,9 +72,7 @@ $q_0$), so they are not yet Taylor-exact derivations. A near-match that
 beats the experimental target is a genuine result *and* not a
 derivation. The permanent
 upgrade is to identify the $\mathfrak{Q}_\beta$ **Habiro element** whose Taylor
-coefficients *are* the $c_k$ — the same machinery that made the $\alpha_{EM}$
-next-order factor $[2]_q(1-h^2\alpha)$ binomial-exact
-([`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)).
+coefficients *are* the $c_k$.
 
 ## canonical precision ladder
 
@@ -93,7 +86,7 @@ truncation-order section above). N=3 lands at 13.15 ppb, above that target.
 The **signed** column is strictly decreasing at both documented pins: with
 the live $c_5 = -(b^2 + 1/2)$ every rung factor $1 + c_k u^k$ has $c_k < 0$
 and is therefore below 1. **That is not what the non-monotonicity claim is
-about, and an earlier draft of this paragraph got it backwards.** The claim
+about.** The claim
 concerns the residual *magnitude* — whether the approximation gets worse —
 and on magnitude the signature **survives, and survives only under the live
 coefficient**. At the proton pin:
@@ -104,11 +97,10 @@ coefficient**. At the proton pin:
 | 5 | **6.2260 ppb** (increases) | 5.5551 ppb (decreases) |
 
 So the $N{=}4 \to N{=}5$ non-monotonicity is produced by the **live**
-$c_5 = -(b^2+1/2)$ and is *absent* under the superseded $+12.87$ — the
-reverse of what the earlier draft asserted, which read the signed column
-where $-6.1698 \to -6.2260$ is decreasing. The ladder does carry a
-numerical signature of its own inexactness, now on the correct coefficient
-for the first time.
+$c_5 = -(b^2+1/2)$ and is *absent* under the superseded $+12.87$. Reading the
+signed column, where $-6.1698 \to -6.2260$ is decreasing, gives the reverse
+conclusion. The ladder therefore carries a numerical signature of its own
+inexactness on the live coefficient.
 
 **Caveat:** the crossing is only $0.91\,\%$, computed with $c_3$ at the
 recorded proton extraction and at the proton pin alone, so it is not robust
@@ -169,12 +161,11 @@ canonical basis or a Khovanov–Rozansky spectral sequence.
 
 ## Provenance of the tables
 
-Tables 2 and 3 above are computed by
-[`qbeta_precision_ladder_n5.py`](../../../computations/qbeta/qbeta_precision_ladder_n5.py)
+Tables 2 and 3 above are computed
 at the muon-pin (CAL-2) $q_0$, in convention C, with $c_4 = c_3 b^4$ and
 $c_5 = -(b^2 + 1/2)$. That producer is the first in the corpus to evaluate the
-boxed five-rung product itself: the block's previously declared producer,
-`probe_q_beta_operator_valued_N3.py`, stops at $N=3$, carries no $c_5$, and is
+boxed five-rung product itself: the block's previously declared producer
+stops at $N=3$, carries no $c_5$, and is
 not the generator of these tables at all — its own witness records
 $\varepsilon_{N=1} = 674.83$ ppm against the $+73.80$ ppm of the $N=1$ row,
 because its first rung is $\cos(\alpha_{N=1})$ rather than the boxed
@@ -183,7 +174,7 @@ $\cos(\alpha - b\hbar_q^2/2)$.
 **As previously published, for the record.** The $\varepsilon_Q$ column read
 $+1677.5$, $+73.79$, $+1.24$ ppm, then $+6.02$, $-0.57$ ppb and, at $N=5$,
 $\sim 0$ ppb in table 2 and $+0.04$ ppb in table 3; the headline residual was
-quoted as $-0.0066$ ppm. Three defects are corrected above.
+quoted as $-0.0066$ ppm.
 
 *The sign.* The published headline was negative. It cannot be: $\mathfrak{Q}_\beta^A$
 sits 1677 ppm above CODATA and every live rung factor is below 1, so the ladder

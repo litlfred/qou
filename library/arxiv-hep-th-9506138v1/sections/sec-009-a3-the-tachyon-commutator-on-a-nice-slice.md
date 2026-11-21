@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9506138v1
-doc_title: "arXiv:hep-th/9506138v1 21 Jun 1995"
+doc_title: "Black Hole Complementarity vs. Locality"
 section_id: sec-009-a3-the-tachyon-commutator-on-a-nice-slice
 section_title: "The Tachyon Commutator on a Nice Slice"
 section_number: A.3
@@ -8,6 +8,7 @@ pages: 22-22
 source_pdf: 9506138v1.pdf
 source_sha256: bb85afba0530402c
 toc_source: inferred
+doc_brief: "Black Hole Complementarity vs. Locality — 18 sections: Front matter; Introduction; The Nice-Slice Argument"
 ---
 In equation (A.15), we considered the overlap of the state [T(x1), T(x2)]|0⟩with a
 single tachyon state. We would now like to consider the behavior of this matrix element

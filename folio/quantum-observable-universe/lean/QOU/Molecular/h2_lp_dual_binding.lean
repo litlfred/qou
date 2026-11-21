@@ -80,7 +80,7 @@ class H2GroundStateSelection (ctx : H2LpDualBindingContext) : Prop where
     The molecular volume equals the sum of the three log-magnitudes,
     from the defining equation `Phi1_H2_def` (genuine algebra, not a
     projection). -/
--- Ref: [manuscript] quantum-observable-universe/molecular-construction/h2-lp-dual-binding.md
+-- Ref: [leitner2026] quantum-observable-universe/molecular-construction/h2-lp-dual-binding.md
 theorem h2_molecular_volume_decomposition [ctx : H2LpDualBindingContext] :
     ctx.Phi1_H2 = Real.log |ctx.V_hat_H2 0| + Real.log |ctx.V_hat_H2 1| +
                   Real.log |ctx.V_hat_H2 2| := by
@@ -96,7 +96,7 @@ theorem h2_molecular_volume_decomposition [ctx : H2LpDualBindingContext] :
     yielding `Φ₁^{H₂} ≤ Φ₁^sep`.  A new numeric inequality obtained by
     *using* the hypothesis at one point, not restating it. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, ground-state shadow price)
--- Ref: [manuscript] quantum-observable-universe/molecular-construction/h2-lp-dual-binding.md
+-- Ref: [leitner2026] quantum-observable-universe/molecular-construction/h2-lp-dual-binding.md
 theorem h2_binding_nonneg (ctx : H2LpDualBindingContext)
     [hc : H2GroundStateSelection ctx] :
     0 ≤ ctx.Phi1_sep - ctx.Phi1_H2 := by
@@ -113,7 +113,7 @@ theorem h2_binding_nonneg (ctx : H2LpDualBindingContext)
     *using* the §3b-cond ground-state hypothesis at the separated
     ordering).  Neither conjunct projects a conclusion field. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, ground-state selection)
--- Ref: [manuscript] quantum-observable-universe/molecular-construction/h2-lp-dual-binding.md
+-- Ref: [leitner2026] quantum-observable-universe/molecular-construction/h2-lp-dual-binding.md
 theorem h2_lp_dual_binding (ctx : H2LpDualBindingContext)
     [hc : H2GroundStateSelection ctx] :
     (ctx.Phi1_H2 = Real.log |ctx.V_hat_H2 0| + Real.log |ctx.V_hat_H2 1| +

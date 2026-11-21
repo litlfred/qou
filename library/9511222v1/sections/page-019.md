@@ -1,0 +1,70 @@
+---
+doc_id: 9511222v1
+doc_title: "Murnaghan–Nakayama rules for characters of Iwahori–Hecke algebras of classical type"
+section_id: page-019
+section_title: "Page 19"
+pages: 19-19
+pdf_page: 19
+source_pdf: 9511222v1.pdf
+source_sha256: 2870b5b709d1f358
+text_source: ocr
+granularity: page
+doc_brief: "Murnaghan–Nakayama rules for characters of Iwahori–Hecke algebras of classical type — 26 sections: Page 1; Page 2; Page 3"
+---
+CHARACTERS OF IWARORLHROBRE ALGER DRAS OF G(r, p,m) dd
+
+4. THE POSET THEOREM
+
+Curtis Greene [Gre] uses the theory of partially ordered sets (posets) and Mobius
+functions to prove a rational function identity ([Gre], Theorem 3.3) which can
+be used to derive the Murnaghan-Nakayama rule for symmetric group charac-
+ters. In [HR], we modify Greene’s theorem so that it can be applied to computing
+Murnaghan-Nakayama rules for the irreducible characters of the Iwahori-Hecke al-
+gebras of type A,-1,B,, and D,. In this section, we extend the poset theorem of
+[HR] so that it can be applied to computing Murnaghan-Nakayama rules (Theorem
+2.17) for the irreducible characters of the cyclotomic Iwahori-Hecke algebras of type
+B.
+
+A poset is planar in the (strong) sense if its Hasse diagram may be order-
+embedded in R x R without edge crossings even when extra bottom and top el-
+ements are added (see [Gre] for details). A linear extension of a poset P is a poset
+EL with the same underlying set as P and such that the relations in Z form an
+extension of the relations in P to a total order. We will denote by £(P) the set of
+all linear extensions L of P.
+
+The Mébius function of a poset P is the function p : P x P — Z defined
+inductively for elements a,6 € P by
+
+1 ifa=b,
+ula, b) =p (a, b) = —Ma<e<plt(4, 2) ifa< b, (4.1)
+0 fag.
+
+(See [Sta] for more details on Mobius functions).
+
+Throughout this section, P will denote a planar poset with unique minimal
+element u, and P = P — {u} will be the poset obtained by removing the minimal
+element u from P. We let SC be the set of minimal elements of P, and we call
+these elements sharp corners. Two sharp corners s; and s9 of SC are “adjacent” if
+they are not separated by another sharp corner as the boundary of P is traversed.
+Tf sj and sg are adjacent elements of SC and the least common multiple s; V s9
+exists, then we call sy V sy a dull corner of P. We let DC denote the set of all dull
+corners of P. Finally, we let cc denote the number of connected components of P,
+and note that ec = |SC| — |DC|.
+
+Let {ta,a € P}, be a set of commutative variables indexed by the elements of
+P. For cach 0 < k <r—1 and each pair a <b in P, define a weight, wt) (a,b), by
+1
+
+l-—agr,
+wt (a,b) = et for all a,b € P, and
+q-4 (4.2)
+wt (u,a) =a," for alla € P.
+Then for any planar poset P with unique minimal element u, define
+MOP) = TT wt (a, bynr, (4.3)
+abe?
+
+where j1p(a, 6) is the Mébius function for the poset P.
+In [HR], Theorem 5.3, it is proved that
+
+S> AME) = AMP g— aye, (4.4)
+LEL(P)

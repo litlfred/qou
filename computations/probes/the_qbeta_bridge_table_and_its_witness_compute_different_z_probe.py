@@ -246,7 +246,8 @@ def main() -> int:
         wb.add_caveat(
             "Neither the producer, the proposition, nor the table's values are changed "
             "here — only the block's false provenance sentence.")
-        print(f"\nWitness: {wb.save()}")
+        print(f"\nWitness: {wb.save(extra={"q0Anchor": "ambiguous", "q0AnchorReason": (
+            "comparison by design: tests the block's published values at the block's own quoted pin 1.109978595557335 (retired frozen muon pin A) against the witness's declared proton pin 1.10997858275138...")})}")
     except Exception as e:  # pragma: no cover
         print(f"\n(witness emit skipped: {e})")
 

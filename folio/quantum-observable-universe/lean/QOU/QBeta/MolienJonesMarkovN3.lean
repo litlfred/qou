@@ -51,7 +51,7 @@ Base ring (§7c): a generic `CommRing K` — a polynomial identity, no ordering,
 no archimedean structure, no division.
 
 -- Ref: [webster-williamson-2014-markov] arXiv:0911.4494, The geometry of Markov traces
--- Ref: [manuscript] docs/audits/2026-08-21-webster-williamson-molien-lead-for-equivariant-index.md
+-- Ref: [leitner2026] docs/audits/2026-08-21-webster-williamson-molien-lead-for-equivariant-index.md
 -/
 
 namespace QOU.QBeta.MolienJonesMarkovN3

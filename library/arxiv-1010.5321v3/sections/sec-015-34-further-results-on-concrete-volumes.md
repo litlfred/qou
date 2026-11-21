@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1010.5321v3
-doc_title: "Formulas on hyperbolic volume"
+doc_title: "Formulas on hyperbolic volume ∗"
 section_id: sec-015-34-further-results-on-concrete-volumes
 section_title: "Further results on concrete volumes"
 section_number: 3.4
 pages: 14-16
 source_pdf: 1010.5321v3.pdf
 source_sha256: c6bb20926b1f291f
-doc_brief: "Formulas on hyperbolic volume — This paper collects some important formulas on hyperbolic volume."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.544
+latex_coverage_ratio: 0.517
+doc_brief: "Formulas on hyperbolic volume ∗ — This paper collects some important formulas on hyperbolic volume."
 ---
 Here we mention some important results from the last few decades, which are calculate hyperbolic volumes. To investigate it we can see immediately that our formula on orthosceme has very simple building up. In this section the great latin letters mean the measures of the dihedral angles at the edges denoted by the corresponding small ones.
 

@@ -62,7 +62,7 @@ out the three finite computations settles the three problems.
   only as the *names* of the computations, carried as opaque propositions.
 
 ## References
-- [manuscript] prop:crystal-basis-resolves-mass-tower-open-problems
+- [leitner2026] prop:crystal-basis-resolves-mass-tower-open-problems
 - [brundankleshchev2009], [lecouvey2007], [kashiwara1991], [khovanovlauda2009]
 -/
 
@@ -74,7 +74,7 @@ settles the problem.
 A reduction is an implication in this direction and not the other; stating it
 the other way round would say that the problem being open bounds the
 computation, which is not what a reduction claims. -/
--- Ref: [manuscript] prop:crystal-basis-resolves-mass-tower-open-problems
+-- Ref: [leitner2026] prop:crystal-basis-resolves-mass-tower-open-problems
 def ReducesTo (problem computation : Prop) : Prop := computation → problem
 
 /-- The crystal-basis correspondence, as a class over the four problems and
@@ -91,7 +91,7 @@ problem is visible in the type and its absence from the fields is legible:
 the class makes no claim about it. -/
 -- Ref: [brundankleshchev2009] Brundan–Kleshchev, graded decomposition numbers
 -- Ref: [lecouvey2007] Lecouvey, crystal bases and combinatorics
--- Ref: [manuscript] prop:crystal-basis-resolves-mass-tower-open-problems
+-- Ref: [leitner2026] prop:crystal-basis-resolves-mass-tower-open-problems
 class CrystalBasisCorrespondence
     (chirality term7 zHabiro blochGroup : Prop)
     (chiralityCount term7DepthSix zHabiroKLLimit : Prop) : Prop where
@@ -118,7 +118,7 @@ reduction claim is *for*, and it is the part the previous encoding — a bare
 
 The fourth problem does not appear in the conclusion, because nothing here
 reduces it. -/
--- Ref: [manuscript] prop:crystal-basis-resolves-mass-tower-open-problems
+-- Ref: [leitner2026] prop:crystal-basis-resolves-mass-tower-open-problems
 theorem crystal_basis_reduction
     {chirality term7 zHabiro blochGroup : Prop}
     {chiralityCount term7DepthSix zHabiroKLLimit : Prop}

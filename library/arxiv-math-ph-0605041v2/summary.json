@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-ph-0605041v2",
  "source_sha256": "12cccb408b6810f1",
- "brief": "Cluster expansion for abstract polymer models. New bounds from an old approach — polymer models. New bounds from an old approach Roberto Fern´ andez1 and Aldo Procacci 1,2 1Labo.",
- "extended": "**Cluster expansion for abstract polymer models. New bounds from an old approach**\n\n*Roberto Fernández1 and Aldo Procacci 1,2*\n\n16 pp, 3 sections.\n\n**Abstract.** polymer models. New bounds from an old approach Roberto Fern´ andez1 and Aldo Procacci 1,2 1Labo. de Maths Raphael SALEM, UMR 6085 CNRS-Univ. de Rouen, A venue de l’Universit´ e, BP.12, 76801 Saint Etienne du Rouvray, France 2 Dep. Matem´ atica-ICEx, Universidade Federal de Minas Gera is, CP 702, Belo Horizonte MG 30.161-970, Brazil email: 1Roberto.Fernandez@univ-rouen.fr; 2aldo@mat.ufmg.br We revisit the classical approach to cluster expansions, based on t ree graphs, and estab- lish a new convergence condition that improves those by Koteck´ y-Preiss and Dobrushin, as we show in some examples. The two ingredients of our approach ar e: (i) a careful consideration of the Penrose identity for truncated functions, a nd (ii) the use of iterated transformations to bound tree-graph expansions.\n\n**Outline.** Front matter; Acknowledgements; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: Let ρ ∈ [0, ∞)P . If there exists a µ ∈ [0, ∞)P such that\n- Theorem 4: Let ρ ∈ [0, ∞)P be ﬁxed and let Tρ be a map of the form (3.12)/(3.7). Assume there\n- Proposition 3: Suppose 0 ≤ λ ≤ 1 and let us denote\n- Proposition 7: Let G = (P, E) be a polymer system and assume there exist functions cn : P n+1 →\n- Proposition 8: For some ﬁxed ρ ∈ [0, ∞)P let Tρ be a map of the form (3.12)/(4.8) and assume\n- Corollary 2: Let ρ ∈ [0, ∞)P . If there exists a µ ∈ [0, ∞)P such that",
+ "brief": "Cluster expansion for abstract polymer models. New bounds from an old approach — polymer models. New bounds from an old approach Roberto Fern´andez1 and Aldo Procacci1,2 1Labo.",
+ "extended": "**Cluster expansion for abstract polymer models. New bounds from an old approach**\n\n*Roberto Fernández1 and Aldo Procacci1,2*\n\n16 pp, 3 sections.\n\n**Abstract.** polymer models. New bounds from an old approach Roberto Fern´andez1 and Aldo Procacci1,2 1Labo. de Maths Raphael SALEM, UMR 6085 CNRS-Univ. de Rouen, Avenue de l’Universit´e, BP.12, 76801 Saint Etienne du Rouvray, France 2 Dep. Matem´atica-ICEx, Universidade Federal de Minas Gerais, CP 702, Belo Horizonte MG 30.161-970, Brazil email: 1Roberto.Fernandez@univ-rouen.fr; 2aldo@mat.ufmg.br We revisit the classical approach to cluster expansions, based on tree graphs, and estab- lish a new convergence condition that improves those by Koteck´y-Preiss and Dobrushin, as we show in some examples. The two ingredients of our approach are: (i) a careful consideration of the Penrose identity for truncated functions, and (ii) the use of iterated transformations to bound tree-graph expansions.\n\n**Outline.** Front matter; Acknowledgements; References",
  "tokens": {
   "brief": 44,
-  "extended": 388
+  "extended": 251
  },
  "sections": [
   {
@@ -29,8 +29,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

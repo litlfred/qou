@@ -1,6 +1,6 @@
 {
   "$schema": "block-qa/v1",
-  "label": "prf:wedderburn-bratteli-recursion",
+  "label": "rem:wedderburn-bratteli-recursion-proof-sketch",
   "kind": "proof",
   "paths": {
     "ts": "folio/quantum-observable-universe/mass-theory/wedderburn-bratteli-recursion-proof.ts",
@@ -237,6 +237,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "afddaa32065a",
+          "ts": "bccf8374c8f9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:36.384Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "wedderburn-bratteli-recursion-proof.md:44 'toward z/q ≈ 0.4498' (convention C; D gives 12321/22321 at q=111/100); proof.md:85 y_(2) with q^{7/2}; proof.md:3-23 F not determined; proof.md:50 numerical verification",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: other"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1141,7 +1157,7 @@
           "in_degree": 0,
           "cone_size": 233,
           "depth": 54,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1427,7 +1443,7 @@
         "reviewed_at": "2026-08-15T10:31:00.892Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
-        "evidence": "5 stylistic spaced dashes in 387 words (1.29/100w) \u2014 restructure into sentences"
+        "evidence": "5 stylistic spaced dashes in 387 words (1.29/100w) — restructure into sentences"
       },
       {
         "field_hash": {
@@ -1705,6 +1721,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T06:38:29.746Z",
+  "updated_at": "2026-11-15T21:57:36.384Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

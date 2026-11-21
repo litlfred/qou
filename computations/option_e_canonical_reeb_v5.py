@@ -39,6 +39,7 @@ from codata_constants import (
     AME_B_DEUTERON_MEV_VALIDATION,
     AME_B_TRITIUM_MEV_VALIDATION,
 )
+from codata_constants import AME_B_HE3_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 
 # Cheat-sheet derived μ₀ = m_e / (3(q-q⁻¹)/2)
@@ -67,7 +68,7 @@ MU_0 = M_E_MEV / (mpf(3) * H_Q / mpf(2))  # ≈ 1.63 MeV
 AME_MeV = {
     "D":     AME_B_DEUTERON_MEV_VALIDATION,
     "T":     AME_B_TRITIUM_MEV_VALIDATION,
-    "3He":   mpf("7.71806"),
+    "3He":   AME_B_HE3_MEV_VALIDATION,
 }
 
 

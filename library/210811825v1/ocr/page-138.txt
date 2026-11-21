@@ -1,0 +1,47 @@
+12 13
+
+Side associations:
+1-6, 3-8, 5-10, 7-12,
+9-14, 11-16, 13-2,15-4
+
+Figure D.2: Fundamental polygon for the Fermat quartic
+
+and information about its representation theory. The code below indicates that the full
+
+automorphism group is isomorphic to (((Z4 x Z4) ™ Z3) Zo) x Zz.
+
+gap> g:—FreeGroup (3);
+
+<free group on the generators [ fl, f2, £3 |>
+
+gap> f:=g/[g.178,g.273,g.372,(g.1*g.2)°2,(g.172*g.272)°3,(g.174*g.272) 73,
+g.lxg.3*g.1*g.3,g.2*g.3*g.2*g.3];
+
+<fp group on the generators [| fl, f2, £3 ]>
+
+gap> Order(f);
+
+192
+
+gap> StructureDescription(f);
+
+" (((C4x04) : C3) :C2): C2"
+
+gap> RequirePackage("repsn" );
+
+Repsn for Constructing Representations of Finite Groups
+Version 3.0.2
+
+Written by
+Vahid Dabbaghian
+
+true
+gap> Display (CharacterTable(f));
+CT1
+
+la 2a 2b 3a 4a 2c 2d 8a 4b 8b 4c 4d 6a 2e
+2P la la la 3a 2c la la 4d 2c 4a 2c 2c 3a la
+3P la 2a 2b la 4a 2c 2d 8a 4b 8b 4c 4d 2d 2e
+5P la 2a 2b 3a 4a 2c 2d 8a 4b 8b 4c 4d 6a 2e
+
+128

@@ -1,0 +1,1 @@
+An additive category has ﬁnite products. Deﬁnition 2.2.6. Let M be an additive category, and let N be a full subcategory of M. We say that N is a full additive subcategory of M if N contains the zero object, and is closed under ﬁnite direct sums. Exercise 2.2.7. In the situation of Deﬁnition 2.2.6, show that the category N is itself additive.

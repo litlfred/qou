@@ -31,6 +31,7 @@ Ref: conj:magic-shell-coupling-kappa
 Bean: qou-o16k
 """
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import sys
 from pathlib import Path as _P
 _SUB = _P(__file__).resolve().parent / "substrate"
@@ -81,7 +82,8 @@ def bracket(q: float, n: int) -> float:
 
 def kappa_with_normaliser(q: float, m_e: float, norm: float) -> float:
     h = q - 1 / q
-    e0 = m_e / (q * (q - 1))
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    e0 = _qbeta_e0.order_zero_scaled(m_e, q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
     return -e0 * mp.log(1 / h) / norm
 
 
@@ -101,7 +103,7 @@ ANCHORS = [
 
 
 def main() -> None:
-    quantum = (M_E_MEV / (Q0 * (Q0 - 1))) * mp.log(1 / (Q0 - 1 / Q0))
+    quantum = (_qbeta_e0.order_zero_scaled(M_E_MEV, Q0)) * mp.log(1 / (Q0 - 1 / Q0))
 
     results = []
     for label, magic, a, status in ANCHORS:

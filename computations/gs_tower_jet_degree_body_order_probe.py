@@ -12,7 +12,7 @@ the pairwise level; this one asks what the rest of the tower is indexed BY.
 ## The claim under test, and where it lives
 
 `content/.../mass-theory/bond-order-eq-jet-degree-proof.md` (label
-`lem:bond-order-eq-jet-degree`) states, as Step 1 of its proof, that the GS /
+`conj:bond-order-eq-jet-degree`) states, as Step 1 of its proof, that the GS /
 jet-prefix filtration "places the n-nucleon cluster sub-word at jet vertical
 degree n", and concludes
 
@@ -208,7 +208,7 @@ def main() -> int:
     # Gate 3 — the constructive reading. C(A,2) is the complete-graph bond count.
     print("THE READING THAT SURVIVES — bonds, not bodies")
     print("-" * 78)
-    print("  The block's own LaTeX label is `lem:bond-order-eq-jet-degree`; its")
+    print("  The block's own LaTeX label is `conj:bond-order-eq-jet-degree`; its")
     print("  Lean declaration is `bodyorder_eq_jet_total`.  The two disagree, and")
     print("  the arithmetic above agrees with the LABEL: C(A,2) is exactly the")
     print("  number of BONDS in the complete graph on A nucleons, so under")

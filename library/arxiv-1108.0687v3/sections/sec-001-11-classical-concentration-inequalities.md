@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1108.0687v3
-doc_title: "Concentration of Lipschitz functionals of determinantal a nd other strong Rayleigh measures"
+doc_title: "Concentration of Lipschitz functionals of determinantal and other strong Rayleigh measures"
 section_id: sec-001-11-classical-concentration-inequalities
 section_title: "Classical concentration inequalities"
 section_number: 1.1
 pages: 2-3
 source_pdf: 1108.0687v3.pdf
 source_sha256: 66ba88e13a429a0a
-doc_brief: "Concentration of Lipschitz functionals of determinantal a nd other strong Rayleigh measures — Let {X1,...,X n} be a collection of binary valued random variables and let f : {0, 1}n → R be a Lipschitz"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.959
-latex_coverage_ratio: 0.986
+latex_coverage_ratio: 0.959
+doc_brief: "Concentration of Lipschitz functionals of determinantal and other strong Rayleigh measures — Let {X1, . . ."
 ---
 Let $\{ X_n : n \geq 1 \}$ be independent Bernoulli random variables with respective means $\{ p_n \}$. Let $S_n := \sum_{k=1}^n X_k$ denote the partial sums, $\mu_n := {\mathbb E}S_n = \sum_{k=1}^n p_k$ denote the means and $V_n := \sum_{k=1}^n p_k (1-p_k)$ denote the variance of $S_n$. The simple and well known one-sided tail estimate for $S_n$ is the classical Gaussian bound $$\label{eq:chernoff}
 {\mathbb P}(S_n - \mu_n \geq a) \leq

@@ -1,0 +1,1718 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1508.01627v4",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p019-1",
+   "page": 19,
+   "mark": "2",
+   "text": "nover ﬁnite ﬁelds. Comm. Algebra 12 (1984), 517–615. [2] T. Asai, The unipotent class functions on the symplectic groups and the odd orthogonal groups over ﬁnite ﬁelds. Comm. Algebra 12 (1984), 617–645. [3] T. Asai, The unipotent class functions of non-split ﬁnite special orthogonal groups. Comm. Algebra 13 (1985), 845–924. [4] R. Carter, Finite Groups of Lie Type: Conjugacy Classes and Complex Characters. Wiley, Chichester, 1985. [5] F. Digne, J. Michel, Representations of Finite Groups of Lie Type. London Math. Soc. Student Texts 21. Cambridge University Press, Cambridge, 1991.",
+   "marks": [
+    {
+     "page": 18,
+     "context": "2)ℓ= 5,G = L5(q)with5||(q −1)andχisunipotentofdegreeχ(1) = q"
+    },
+    {
+     "page": 18,
+     "context": ")ℓ= 5,G = U5(q)with5||(q + 1)andχisunipotentofdegreeχ(1) = q"
+    },
+    {
+     "page": 18,
+     "context": "typeF4,E6,"
+    },
+    {
+     "page": 18,
+     "context": "χvanishonsomeℓ-singularelementunlesseitherχisunipotentorℓ|(q"
+    },
+    {
+     "page": 18,
+     "context": "charactersforSL3(pf),SU3(pf)and"
+    },
+    {
+     "page": 18,
+     "context": "charactersforSL3(pf),SU3(pf)and2G3(3"
+    },
+    {
+     "page": 19,
+     "context": "rem7.1.LetGbeaﬁnitesimplegroupofclassicalLietypeBn, Cn, Dnor"
+    }
+   ],
+   "block": "library/arxiv-1508.01627v4/blocks/prose-sec-017"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "(1)G = L5(q)with5||(q −1)andχisunipotentofdegreeχ(1) = q"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "(2)G = U5(q)with5||(q + 1)andχisunipotentofdegreeχ(1) = q"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": ".LetGbeaﬁnitequasi-simplegroupofclassicalLietypeBn, Cn, Dnor"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "eorem3.LetGbeaﬁnitesimplegroupofclassicalLietypeBn, Cn, Dnor"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "FqweconsiderthenaturalrepresentationofG=Sp2n(K)onV=K"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "FqweconsiderthenaturalrepresentationofG=Sp2n(K)onV=K2"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "G = SO2n+1(K) on V= K"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "G = SO2n+1(K) on V= K2"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "1),respectivelydiag(t"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "1),respectivelydiag(t1, . . . , t"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "1),respectivelydiag(t1, . . . , tn,"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "i},"
+  },
+  {
+   "page": 2,
+   "mark": "w",
+   "context": "ofW.Anelementt∈Tisconjugatetoanelementt′∈GFif"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "(qλ"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "(qµ"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "andTFcontainscyclicsubgroupsofordersqλ"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "andTFcontainscyclicsubgroupsofordersqλi−1andqµ"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "moduloℓ,thatisthesmallestd ≥1withℓ| (q"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "deﬁnitions,ℓ|(q"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "deﬁnitions,ℓ|(qk−1)ifandonlyifd |k,andforevendwehaveℓ|(q"
+  },
+  {
+   "page": 3,
+   "mark": "t",
+   "context": "G(t)of"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(TypeCnonly)α(t) = t"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "ifor"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "˜G(t)=Tifandonlyifforall"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "˜G(t)=Tifandonlyifforall1≤i<j≤nwehave"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "˜G(t)=Tifandonlyifforall1≤i<j≤nwehavet"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "˜G(t)=Tifandonlyifforall1≤i<j≤nwehaveti̸=t"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "˜G(t)=Tifandonlyifforall1≤i<j≤nwehaveti̸=tjand"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "˜G(t)=Tifandonlyifforall1≤i<j≤nwehaveti̸=tjandt"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "j,andintypeB"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "m(q).Forodd"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "m(q).Foroddqthekernelis"
+  },
+  {
+   "page": 4,
+   "mark": "w",
+   "context": "lements in tori of type (λ, µ) we construct a t ∈T such that"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "˜G(t) = T.In cases B"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "˜G(t) = T.In cases Bnand D"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "˜G(t) = T.In cases Bnand Dnand odd"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "˜G(t) = T.In cases Bnand Dnand odd qthis"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "i, . . . , a"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "For1≤i≤rletai∈Fqλibeoforderqλ"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "For1≤i≤rletai∈Fqλibeoforderqλi−1anduseai, a"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "a"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "j, . . . , b"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "For1 ≤j≤sletb"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "For1 ≤j≤sletbj∈Fq"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "For1 ≤j≤sletbj∈Fq2µjbeoforder qµ"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "For1 ≤j≤sletbj∈Fq2µjbeoforder qµj+ 1anduseb"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "For1 ≤j≤sletbj∈Fq2µjbeoforder qµj+ 1andusebj, b"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "b"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "2(qλ"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "2(qλi−1)and"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "2(qλi−1)andb"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "2(qλi−1)andbjisoforder"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "2(qµ"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "order"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "(d)Wenextdiscusswhentfailstoberegular.Letλi, µj>0withqλ"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "d)Wenextdiscusswhentfailstoberegular.Letλi, µj>0withqλi−1=qµ"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "andtheassumptionisequivalenttoqµ"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "andtheassumptionisequivalenttoqµj(qλ"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "andtheassumptionisequivalenttoqµj(qλi−µ"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "(e)Letk∈Z,0 < k< λiandassume(qλ"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "(e)Letk∈Z,0 < k< λiandassume(qλi−1) | (q"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "(e)Letk∈Z,0 < k< λiandassume(qλi−1) | (qk∓1).Thenqλ"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "(e)Letk∈Z,0 < k< λiandassume(qλi−1) | (qk∓1).Thenqλi−1 ≤q"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "onlyifq"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "onlyifqk(qλ"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "2(qλ"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "2(qλi−1) | (q"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "2(qλi−1) | (qk ∓1)implies"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "2(qλi−1) | (qk ∓1)impliesq= 3,"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "2(qλi−1) | (qk ∓1)impliesq= 3,k = 1andλ"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "foroddqthecondition"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": ".A similar argument as above shows that for all qwe have (qµ"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "ar argument as above shows that for all qwe have (qµj+1) ∤(q"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "2(qµ"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "2(qµj+ 1) ∤(q"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "andforoddqwealsohave"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "i, . . . , a"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "(a) we need to show that for 1 ≤i ≤rany of theentries (ai, a"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "j, . . . , b"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": ").Sincethemapx 7→x"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "orinversetoeachother,andsimilarlyforthe(bj, b"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "entriesoftandtheirinversesitsuﬃcestoshowthatfor0<k<λiwehavea"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "ntriesoftandtheirinversesitsuﬃcestoshowthatfor0<k<λiwehaveaq"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "a"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "aq"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "= 1),andsimilarlyforthebj.Nowa"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "= 1),andsimilarlyforthebj.Nowaq"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "=1implies(qλ"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "=1implies(qλi−1) |(q"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "=1implies(qλi−1) |(qk∓1)or"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "2(qλ"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "2(qλi−1) |(q"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "Similarly,step(e)showsthatwealwayshaveb"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "Similarly,step(e)showsthatwealwayshavebq"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "FortypeCnwealsohavetoshowthata"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "i̸= 1(1 ≤i ≤r)and"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "i̸= 1(1 ≤i ≤r)andb"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i= 1,i.e.,(qλ"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i= 1,i.e.,(qλi−1) | 2,impliesλ"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "i= 1,i.e.,(qλi−1) | 2,impliesλi= 1and"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "i= 1,i.e.,(qλi−1) | 2,impliesλi= 1andq∈{2,"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "qµ"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "qλ"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "qλi−1=1impliesq=2andλi=1,while"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "2(qλ"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "2(qλi−1)=1implies"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "2(qλi−1)=1impliesq=3andλ"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "2(qλi−1)=1impliesq=3andλi=1forodd"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "alwaysqµ"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "wechoose b1= 1.Thentheentry forµ2= 1hasorder q + 1forevenqor"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "1,"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "L(s)is"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "L(s)is"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "\u0012λ"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "Attachedtothehookhisthesignǫh:=(−1)"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "Attachedtothecohookcisthesignǫc:= (−1)"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "d| = q"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "d| = q"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "d| = q"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "d| = q"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "FbeaSteinbergmorphismofG(weexcludethe"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "2n(q)forany"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "2n(q)forany"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "2n(q)foranyqand"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "2n(q)foranyqandn≥4.Let"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "2n(q)foranyqandn≥4.Let2̸=ℓ̸ |qbe"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "correspondingﬁnitesubgroupsareoftype"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "2n(q)forany"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "2n(q)foranyqand"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "2n(q)foranyqandn≥4.Let"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "2n(q)foranyqandn≥4.Let2̸=ℓ̸ |qbe"
+  },
+  {
+   "page": 11,
+   "mark": "d",
+   "context": "2n(q),"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "2n(q),disodd,"
+  },
+  {
+   "page": 11,
+   "mark": "d",
+   "context": "2n(q),disodd,n = 2"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "2n(q),disodd,n = 2d + rwith"
+  },
+  {
+   "page": 11,
+   "mark": "d",
+   "context": "2n(q),"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "2n(q),d = 2"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "2n(q),d = 2eiseven,"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "2n(q),d = 2eiseven,n = 2"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "2n(q),d = 2eiseven,n = 2e + rwith"
+  },
+  {
+   "page": 11,
+   "mark": "d",
+   "context": "2n(q),"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "2n(q),disodd,"
+  },
+  {
+   "page": 11,
+   "mark": "d",
+   "context": "2n(q),disodd,n = 2"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "2n(q),disodd,n = 2d + rwith"
+  },
+  {
+   "page": 11,
+   "mark": "d",
+   "context": "2n(q),"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "2n(q),d = 2"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "2n(q),d = 2eiseven,"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "2n(q),d = 2eiseven,n = 2"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "2n(q),d = 2eiseven,n = 2e + rwith"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "\u00000"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "\u000001"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "\u00000"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "\u00000"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "\u000001"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "\u00000"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "\u00001"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "\u00001"
+  },
+  {
+   "page": 11,
+   "mark": "d",
+   "context": "8(2),"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "8(2),d = 2,"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "\u00001"
+  },
+  {
+   "page": 11,
+   "mark": "d",
+   "context": "8(2),"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "8(2),d=2,"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "(e) Thecases of type Dnand"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "(g)Type"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "ivides|G|atleasttwiceitissuﬃcienttoshowthatχ(1)̸≡±1(modΦd(q)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(modΦd(x)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "\u0000d"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "\u0000d2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "quantumbinomialcoeﬃcientevaluatedatq"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "χ(1) =(q"
+  },
+  {
+   "page": 14,
+   "mark": "6",
+   "context": "χ(1) =(q2 −1) · · · (q"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "χ(1) =(q2 −1) · · · (q6"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "χ(1) =(q2 −1) · · · (q6d−2 −1)(q"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "χ(1) =(q2 −1) · · · (q6d−2 −1)(q2"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "χ(1) =(q2 −1) · · · (q6d−2 −1)(q2d −q"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "χ(1) =(q2 −1) · · · (q6d−2 −1)(q2d −qd)(q"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "χ(1) =(q2 −1) · · · (q6d−2 −1)(q2d −qd)(q2"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "χ(1) =(q2 −1) · · · (q6d−2 −1)(q2d −qd)(q2d + 1)(q"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "q2"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "q2 q"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "q2 qd(q"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "q2 qd(q2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2(q"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "2(q2−1) · · · (q"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "2(q2−1) · · · (q4"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2(q2−1) · · · (q4d−1)(q"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2(q2−1) · · · (q4d−1)(q2−1) · · · (q"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "2(q2−1) · · · (q4d−1)(q2−1) · · · (q2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "Substitutingx=q"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "heBabbagecongruencewegetacongruenceovertheintegersmoduloΦd(q"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "BabbagecongruencewegetacongruenceovertheintegersmoduloΦd(q2)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "SinceΦd(x"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "SinceΦd(x2) = Φd(x)Φd(−x)wealsogetacongruencemoduloΦd(q)"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2q"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "2q2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2q2d(d−1)+d(q"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "2q2d(d−1)+d(q2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(modΦd(q)"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "ℓ).SinceΦ"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "ℓ).SinceΦd(q) | (q"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "Itsuﬃcestoshowthat2χ(1)̸ ≡±2(modΦd(q)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "q2"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "q2d(d−1)+d· 2q"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "q2d(d−1)+d· 2qd= 2(q"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "q2d(d−1)+d· 2qd= 2(q2"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "q2d(d−1)+d· 2qd= 2(q2d)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "q2d(d−1)+d· 2qd= 2(q2d)d≡2(q"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "q2d(d−1)+d· 2qd= 2(q2d)d≡2(q2"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "q2d(d−1)+d· 2qd= 2(q2d)d≡2(q2d−(q"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "q2d(d−1)+d· 2qd= 2(q2d)d≡2(q2d−(qd−1)"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "q2d(d−1)+d· 2qd= 2(q2d)d≡2(q2d−(qd−1)2)"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "q2d(d−1)+d· 2qd= 2(q2d)d≡2(q2d−(qd−1)2)d= 2(2(q"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "q2d(d−1)+d· 2qd= 2(q2d)d≡2(q2d−(qd−1)2)d= 2(2(qd−1) + 1)"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "2(2d(q"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(modΦd(q)"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "Sinceℓ̸=2,d <ℓandℓ|(q"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "powerofℓdividing2χ(1) −2is(q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "\u0000d"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "\u0000d2"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "(q"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "(q2"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "(q2d+ q)(q"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "q3"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "q3d−1+ 3q"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "q3d−1+ 3qd+ q −1 + (q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "q3d−1+ 3qd+ q −1 + (qd−1)"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "(q"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "(q3"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "q3"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "q3d−1+ 3q"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "q3d−1+ 3qd+ q −1 + (q"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "q3d−1+ 3qd+ q −1 + (qd+ 2)(q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "q3d−1+ 3qd+ q −1 + (qd+ 2)(qd−1)"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "WearguethatbothdegreesareequalmoduloΦd(q)"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "because (q"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "because (q3"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "1) is not divisiblebyℓ(sinced ≥3 istheorder of qmoduloℓand(q"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": ") is not divisiblebyℓ(sinced ≥3 istheorder of qmoduloℓand(q3"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "1)(q"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "1)(q3"
+  },
+  {
+   "page": 15,
+   "mark": "6",
+   "context": "1)(q3d−1−1)(q −1) = (q"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "1)(q3d−1−1)(q −1) = (q6"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "1)(q3d−1−1)(q −1) = (q6d−2−1)(q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "\u0000d"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "\u0000d2"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "2(q"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "2(q2"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "2(q2d−q"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "=2"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "=2q"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "=2qd + 2(q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "=2qd + 2(qd −1)"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "q2"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "2q"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "2qd+ (q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "2qd+ (qd−1)"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "andq"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "andq2"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "\u00002"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "(q"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "(q2"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "(q2e+ q"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "(q2e+ qe+ 1)q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "EvaluatingBabbage’scongruenceatq"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "EvaluatingBabbage’scongruenceatq2yieldsacongruencemoduloΦe(q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "aluatingBabbage’scongruenceatq2yieldsacongruencemoduloΦe(q2)"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "haveΦe(x"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "haveΦe(x2) =Φe(x)Φe(−x)andΦe(−x)=Φd(x),andforevenewehaveΦe(x"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "getcongruencesmoduloΦd(q)"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "getcongruencesmoduloΦd(q)2.UsingnowΦd(q)|(q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "thatψ(1) ≡−q"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "thatψ(1) ≡−q2"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "thatψ(1) ≡−q2e"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "thatψ(1) ≡−q2e2(modΦd(q)"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "(a)Ifdisodd,n=2d + rwith0≤r≤d −2,and(λ, µ)=((d + r, r+ 1, 1"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "ven,n = 2e + rwith0 ≤r ≤e −1,and(λ, µ) = ((r), (e + r + 1, 1"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "theHecke algebra of Snlabelledbyλ = (d + r, r + 1, 1"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "algebraofSnlabelledbythesecondpartµ = (e + 1, 1"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "(a)Ifdisodd,n=2d + rwith0≤r≤d −2,and(λ, µ)=((d + r, r+ 1, 1"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "(b)Ifd=2e>2iseven,n=2e + rwith0≤r≤e −1,and(λ, µ)=((e + r, 1"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "Ifdisodd,n = 2d + rwith1 ≤r≤d −1,and(λ, µ) = (d + r −1, r, 1"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "χλ,µofHn−1(q, q"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "ven,n =2e + rwith1 ≤r≤e −1,and(λ, µ) =((r −1), (e + r + 1, 1"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "thenthecharacterχλ,µofHn−1(q, q"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "S2e,unlessthishookiseither(2e)or(1"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "S2e,unlessthishookiseither(2e)or(12"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "\u00000"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "bythepairofpartitions((d + r, r + 1, 1"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "\u0000d"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "\u0000d2"
+  },
+  {
+   "page": 17,
+   "mark": "e",
+   "context": "r, 1"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": ".HereρS(1)=q(q"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": ".HereρS(1)=q(q2+ 1)/2≡2q + 1(mod(q + 1)"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "\u00000"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "bothincongruent±1(mod3"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "bothincongruent±1(mod33).Finallyincase(9),ℓ|(q"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "9,itsAlvis–Curtisdualhasdegree30464,bothincongruentto±1(mod5"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "\u00000"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "eprojectivemodulo5.ItsAlvis–Curtisdualhasdegree13056 ≡6(mod5"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": ") labelled by the pair of partitions (λ, µ) = ((d+r, r +1, 1"
+  },
+  {
+   "page": 17,
+   "mark": "e",
+   "context": "eprincipalseriesandislabelledbythepairofpartitions((e + r, 1"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "2n(q) the characters of the principal series Hecke algebra H"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "e characters of the principal series Hecke algebra Hn−1(q, q"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "r)=(2, 1)ofProposition5.3(d)wehaven=2e + r=5andρS(1) + 1≡4(q"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Proposition5.3(d)wehaven=2e + r=5andρS(1) + 1≡4(q2+ 1)(mod(q"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "sition5.3(d)wehaven=2e + r=5andρS(1) + 1≡4(q2+ 1)(mod(q2+ 1)"
+  },
+  {
+   "page": 18,
+   "mark": "f",
+   "context": "Remark6.2.(a)Letpbeaprimeandf≥1.ThenG=SL2(p"
+  },
+  {
+   "page": 18,
+   "mark": "f",
+   "context": "charactersforSL3(p"
+  },
+  {
+   "page": 18,
+   "mark": "f",
+   "context": "charactersforSL3(pf),SU3(p"
+  },
+  {
+   "page": 18,
+   "mark": "f",
+   "context": "charactersforSL3(pf),SU3(pf)and2G3(32"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "11of"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "11> 2unlessG = L"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "ItremainstoconsiderthegroupsoftypeA1,A2,"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "ItremainstoconsiderthegroupsoftypeA1,A2,2A2,"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "ItremainstoconsiderthegroupsoftypeA1,A2,2A2,3D4,"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "ItremainstoconsiderthegroupsoftypeA1,A2,2A2,3D4,2B2,"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "ItremainstoconsiderthegroupsoftypeA1,A2,2A2,3D4,2B2,2G2and"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "soG=L3(q),whichhasafamilyofcharactersofdegreeq"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "degree(2"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "degree(2f−1)q,whereq= p"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "11>2unless"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "11>2unlessf=1,thatis,unless"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "Thm.5.3]the1-PIMofG = L3(q),q= p"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "Thm.5.3]the1-PIMofG = L3(q),q= pf,hasdegree(12"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "Thm.5.3]the1-PIMofG = L3(q),q= pf,hasdegree(12f−6"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "Thm.5.3]the1-PIMofG = L3(q),q= pf,hasdegree(12f−6f+ 1)q"
+  }
+ ]
+}

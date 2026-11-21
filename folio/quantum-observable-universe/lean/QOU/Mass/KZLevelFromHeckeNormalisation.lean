@@ -40,7 +40,7 @@ rescaling. The exponential bookkeeping (`e^{iπħ/4}`, `e^{−3iπħ/4}`) lives 
 `computations/probes/kz_pullback_monodromy_exact_probe.py`, which evaluates it at the proton pin.
 
 -- Ref: [kohno1987] Kohno, Ann. Inst. Fourier 37 (1987).
--- Ref: [manuscript] computations/qbeta/qbeta_fibre_unit_circle_opens_route5_probe.py §1.
+-- Ref: [leitner2026] computations/qbeta/qbeta_fibre_unit_circle_opens_route5_probe.py §1.
 -/
 
 namespace QOU.Mass.KZLevelFromHeckeNormalisation

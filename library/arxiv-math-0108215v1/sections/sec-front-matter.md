@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0108215v1.pdf
 source_sha256: 191784d2ccb3415a
 toc_source: inferred
+doc_brief: "arXiv:math/0108215v1 [math.GT] 30 Aug 2001 — The M¨obius energy of a knot is an energy functional for smooth curves based on an idea of self-repelling."
 ---
 arXiv:math/0108215v1  [math.GT]  30 Aug 2001
 M¨obius Energy of Thick Knots
@@ -28,4 +29,3 @@ intuitively expect the energy to be low. In this paper, we give explicit bounds 
 energy in terms of the ropelength of the knot, i.e. the ratio of the length of a thickest
 tube to its radius.
 Key words: M¨obius energy, knot energy, ropelength, thickness, physical knots
-1

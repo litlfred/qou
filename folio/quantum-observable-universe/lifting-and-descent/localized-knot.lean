@@ -12,7 +12,7 @@ fundamental unit of matter in the QOU framework.
 
 ## References
 
-- [manuscript] §3 Lifting of Quantum Torsion
+- [leitner2026] §3 Lifting of Quantum Torsion
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -43,7 +43,7 @@ structure LocalizedKnot where
   -- θ is in valid range:
   -- theta_range : 0 ≤ theta ∧ theta ≤ Real.pi  -- (archimedean; not meaningful over R_q)
   -- φ is in valid range:
-  -- Ref: [manuscript] §3, Definition: Localized knot
+  -- Ref: [leitner2026] §3, Definition: Localized knot
   -- phi_range : 0 ≤ phi ∧ phi < 2 * Real.pi  -- (archimedean; not meaningful over R_q)
 
 /-! ## Base point and crossing number -/
@@ -121,12 +121,12 @@ classification in the QOU framework. -/
     (half-integer spin); the division and ordering below are the
     archimedean half-integer arithmetic, kept over `ℚ` rather than the
     Laurent ground ring `R_q`, which has no division. -/
--- Ref: [manuscript] §3, Proposition: Intrinsic angular momentum
+-- Ref: [leitner2026] §3, Proposition: Intrinsic angular momentum
 def LocalizedKnot.intrinsicAngularMomentum (k : LocalizedKnot) : ℚ :=
   (k.crossingNumber : ℚ) / 2
 
 /-- The trefoil (3 crossings) has spin 3/2 — a fermion (baryon constituent). -/
--- Ref: [manuscript] §3, Example: Trefoil spin
+-- Ref: [leitner2026] §3, Example: Trefoil spin
 theorem trefoil_spin_three_halves (k : LocalizedKnot)
     (hk : k.knot = KnotTheory.trefoil) :
     k.intrinsicAngularMomentum = 3 / 2 := by
@@ -135,7 +135,7 @@ theorem trefoil_spin_three_halves (k : LocalizedKnot)
   simp [KnotTheory.BraidWord.crossingCount, KnotTheory.trefoil]
 
 /-- The unknot (0 crossings) has spin 0 — a scalar. -/
--- Ref: [manuscript] §3, Example: Unknot spin
+-- Ref: [leitner2026] §3, Example: Unknot spin
 theorem unknot_spin_zero (k : LocalizedKnot)
     (hk : k.knot = KnotTheory.unknot) :
     k.intrinsicAngularMomentum = 0 := by
@@ -144,7 +144,7 @@ theorem unknot_spin_zero (k : LocalizedKnot)
   simp [KnotTheory.BraidWord.crossingCount, KnotTheory.unknot]
 
 /-- Angular momentum is non-negative. -/
--- Ref: [manuscript] §3
+-- Ref: [leitner2026] §3
 theorem LocalizedKnot.angularMomentum_nonneg (k : LocalizedKnot) :
     0 ≤ k.intrinsicAngularMomentum := by
   unfold intrinsicAngularMomentum

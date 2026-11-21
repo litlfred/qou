@@ -1,1 +1,1 @@
-Cob(3) S2 has a presentation withG 2 generators under commutative
+Cob(3)S2 has a presentation with G2 generators under commutative Frobenius relations and legs relations. These relations are necessary. The G1 presentation is given by the usual commutative Frobenius relations only. We prove in theorem 4.3.2 that

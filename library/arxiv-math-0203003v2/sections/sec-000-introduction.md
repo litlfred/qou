@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.974
 latex_coverage_ratio: 0.991
+doc_brief: "arXiv:math/0203003v2 [math.QA] 24 Apr 2002 — 8 sections: Front matter; Introduction; Representations of Quantum Dynamic"
 ---
 One of the most exciting developments in representation theory in the recent years was the discovery of the Kazhdan-Lusztig functor [@KaLu93a; @KaLu93b; @KaLu94a; @KaLu94b], which is a tensor functor from the fusion category of representations of an affine Lie algebra to the category of representations of the corresponding quantum group, and is often an equivalence of categories. Informally speaking, this functor may be obtained by considering the monodromy of the Knizhnik-Zamolodchikov equations, or, equivalently, by considering exchange relations between intertwining (vertex) operators for the affine Lie algebra.
 

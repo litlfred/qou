@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1006.1099v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1006.1099v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1006.1099v3",
+  "title": "FLOER COHOMOLOGY AND PENCILS OF QUADRICS",
   "contains": [
+    "library/arxiv-1006.1099v3/sections/sec-front-matter",
     "library/arxiv-1006.1099v3/sections/sec-000",
     "library/arxiv-1006.1099v3/sections/sec-001",
     "library/arxiv-1006.1099v3/sections/sec-002",
@@ -42,10 +43,15 @@
     "library/arxiv-1006.1099v3/sections/sec-028",
     "library/arxiv-1006.1099v3/sections/sec-029",
     "library/arxiv-1006.1099v3/sections/sec-030",
-    "library/arxiv-1006.1099v3/sections/sec-031"
+    "library/arxiv-1006.1099v3/sections/sec-031",
+    "library/arxiv-1006.1099v3/sections/sec-032",
+    "library/arxiv-1006.1099v3/sections/sec-033",
+    "library/arxiv-1006.1099v3/sections/sec-034",
+    "library/arxiv-1006.1099v3/sections/sec-035",
+    "library/arxiv-1006.1099v3/sections/sec-036"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -55,7 +61,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1006.1099v3",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1006.1099v3.pdf",
     "source_sha256": "76c1c4173cdee9d815286487ea60a59bec6b901dc67941a4df9483f3e66d3808",
     "pages": 70,

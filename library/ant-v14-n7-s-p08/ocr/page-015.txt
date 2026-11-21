@@ -1,0 +1,48 @@
+Burgess bounds for short character sums evaluated at forms 1925
+
+4. The stratification of complete character sums
+
+In this section we recall the stratification of complete character sums proved in [Xu 2018] and show how
+to deduce a slightly stronger formulation that we believe will be of independent interest, as well as being
+useful in this paper. In our presentation, we will replace the dimension r in the original work by the
+dimension 2r in each instance, but the content of this section would apply in an analogous way for any
+dimension r (odd or even).
+
+4A. The stratification obtained by Xu. We first recall the statement of [Xu 2018, Theorem 1.1 and
+Corollary 1.8] in our setting of dimension 2r. For each fixed n, r > 1, we define a set of parameters 0;
+for 1 < j <n, as follows:
+
+0 if j=0,
+g, — JIL -D/@—DJ ifp=1....n 2, (41)
+J r-1 if j=n-1,
+
+nr if j=n.
+
+Note that this differs superficially from the definition of 6; in [Xu 2018, p. 2]: we are working with
+dimension 2r in place of r and the floor function results in slightly different formulas. (Precisely, from
+Xu’s work we may take
+
+61 = LQr —1)/2n—2)] =lL@—D/m— 0] (4-2)
+and then we set 0; = j, for 1 < j <n—1. In particular for j =n—1,
+O,-1 = LQr—1)/2] =r—-1.
+In fact, Xu’s original theorem allows a slightly larger value of 0; > 61; it is later apparent in (7-13) that
+
+this slightly larger choice, leading to a slightly stronger version of Theorem A, would not significantly
+improve our current application.)
+
+Theorem A [Xu 2018, Theorem 1.1]. Let integers n,r, A, D > 1 be fixed. There exist integers C =
+C(n,r, D) > 1 and C'=C'(n,r, A, D) = 1 and a finite set S = S(n,r, A, D) of primes such that the
+following holds.
+
+Let x denote a finite field with algebraic closure denoted by k. For each | <i < 2r, let x; :«* — C*
+be a multiplicative character (extended to x by setting x;(0) = 0) and assume that d; := ord(x;)|A > 0.
+
+Let F; € (x1, ..., Xn) be a d;-th power-free rational function of degree at most D and assume that
+Tr, = {m Ek": F(x) = F(x +m)} (4-3)
+
+is finite for each | <i < 2r. Then upon defining
+
+2r
+Se, x)= SY [TY xi iim tx), (4-4)
+
+mek" j=]

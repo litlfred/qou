@@ -1,0 +1,237 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1506.06747v3",
+ "source_sha256": "c44709743db78865",
+ "brief": "Cottingham formula and nucleon polarizabilities — The diﬀerence between the electromagnetic self-energies of proton and neutron can be calculated with the Cottingham formula, which expresses the",
+ "extended": "**Cottingham formula and nucleon polarizabilities**\n\n*J. Gasser1, M. Hoferichter1,2,3,4, H. Leutwyler1, A. Rusetsky5*\n\n30 pp, 43 sections.\n\n**Abstract.** The diﬀerence between the electromagnetic self-energies of proton and neutron can be calculated with the Cottingham formula, which expresses the self- energies as an integral over the electroproduction cross sections – provided the nucleon matrix elements of the current commutator do not contain a ﬁxed pole. We show that, under the same proviso, the subtraction function occurring in the dispersive representation of the virtual Compton forward scattering amplitude is determined by the cross sections. The representation in particular leads to a parameter-free sum rule for the nu- cleon polarizabilities. We evaluate the sum rule for the diﬀerence between the electric polarizabilities of proton and neutron by means of the available parameteriza- tions of the data and compare the result with experi- ment.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Cottingham formula, dispersion relations; 1.2 Reggeons and fixed poles; 1.3 Recent work; 1.4 Structure of the present paper; 2 Determination of the subtraction function; 3 Elastic and inelastic contributions; 3.1 Elastic part; 3.2 Inelastic part; 3.3 Subtraction function in terms of cross sec; 3.4 Chiral expansion; 4 Nucleon polarizabilities; 4.1 Low-energy theorems; 4.2 Sum rules for the polarizabilities; 5 Numerical analysis; 5.1 Experimental information; 5.2 Evaluation of T and 2 for the proton\n\n**Extracted claims (proposals, not verified).**\n- Proposition: 1 1.1 Cottingham formula, dispersion relations . . .\n- Proposition: 16 6.1 Cottingham formula . . . . . . . . . . . . . . . .\n- Proposition: 4 the Cottingham formula has recently been reexam- ined [30–36], but the central issue in this context – the possible occurrence of ﬁxed poles – is not addressed in these papers,\n- Proposition: The main prob- lem with the framework set up in [31] is that a direct experimental determination for S1(q2) is not available.\n- Proposition: The overall normalization, S1(0), can in princi- ple be determined from the diﬀerence between the mag- netic polarizabilities of proton and neutron, albeit the experimental value\n- Proposition: We discuss the renormalization of the Cottingham formula, in particular the role of the sub- traction function in the evaluation of the self-energy a",
+ "tokens": {
+  "brief": 48,
+  "extended": 600
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-11-cottingham-formula-dispersion-relations",
+   "title": "Cottingham formula, dispersion relations",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-002-12-reggeons-and-fixed-poles",
+   "title": "Reggeons and fixed poles",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-003-13-recent-work",
+   "title": "Recent work",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-004-14-structure-of-the-present-paper",
+   "title": "Structure of the present paper",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-005-2-determination-of-the-subtraction-function",
+   "title": "Determination of the subtraction function",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-006-3-elastic-and-inelastic-contributions",
+   "title": "Elastic and inelastic contributions",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-007-31-elastic-part",
+   "title": "Elastic part",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-008-32-inelastic-part",
+   "title": "Inelastic part",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-009-33-subtraction-function-in-terms-of-cross-sectio",
+   "title": "Subtraction function in terms of cross sections",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-010-34-chiral-expansion",
+   "title": "Chiral expansion",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-011-4-nucleon-polarizabilities",
+   "title": "Nucleon polarizabilities",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-012-41-low-energy-theorems",
+   "title": "Low-energy theorems",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-013-42-sum-rules-for-the-polarizabilities",
+   "title": "Sum rules for the polarizabilities",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-014-5-numerical-analysis",
+   "title": "Numerical analysis",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-015-51-experimental-information",
+   "title": "Experimental information",
+   "pages": "8-11"
+  },
+  {
+   "id": "sec-016-52-evaluation-of-t-and-2-for-the-proton",
+   "title": "Evaluation of T and 2 for the proton",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-017-53-t-and-2-proton-neutron-difference",
+   "title": "T and 2: proton-neutron difference",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-018-54-pomeron-exchange",
+   "title": "Pomeron exchange",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-019-55-evaluation-of-1l-for-proton-neutron-differenc",
+   "title": "Evaluation of 1L for proton-neutron difference",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-020-56-prediction-for-the-polarizabilities-of-the-ne",
+   "title": "Prediction for the polarizabilities of the neutron",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-021-57-result-for-the-subtraction-function",
+   "title": "Result for the subtraction function",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-022-58-comparison-with-previous-work",
+   "title": "Comparison with previous work",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-023-6-self-energy",
+   "title": "Self-energy",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-024-61-cottingham-formula",
+   "title": "Cottingham formula",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-025-62-elastic-part-of-the-self-energy",
+   "title": "Elastic part of the self-energy",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-026-63-inelastic-part-of-the-self-energy",
+   "title": "Inelastic part of the self-energy",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-027-64-numerical-evaluation",
+   "title": "Numerical evaluation",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-028-7-summary-and-conclusion",
+   "title": "Summary and conclusion",
+   "pages": "18-20"
+  },
+  {
+   "id": "sec-029-a-notation",
+   "title": "A Notation",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-030-b-compton-scattering",
+   "title": "B Compton scattering",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-031-b1-lorentz-invariance",
+   "title": "B.1 Lorentz invariance",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-032-b2-crossing-symmetry-parity-and-time-reversal",
+   "title": "B.2 Crossing symmetry, parity, and time reversal",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-033-b3-low-energy-expansion",
+   "title": "B.3 Low-energy expansion",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-034-b4-spin-average",
+   "title": "B.4 Spin average",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-035-b5-born-terms",
+   "title": "B.5 Born terms",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-036-b6-leading-low-energy-constants",
+   "title": "B.6 Leading low-energy constants",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-037-b7-real-compton-scattering",
+   "title": "B.7 Real Compton scattering",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-038-b8-low-energy-theorems-for-t1q2-and-t2q2",
+   "title": "B.8 Low-energy theorems for T1(,q2) and T2(,q2)",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-039-c-causality",
+   "title": "C Causality",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-040-d-a-new-causal-representation",
+   "title": "D A new causal representation",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-041-e-errata-in-the-literature",
+   "title": "E Errata in the literature",
+   "pages": "28-30"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

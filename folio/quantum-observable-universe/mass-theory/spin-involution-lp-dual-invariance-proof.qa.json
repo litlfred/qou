@@ -237,6 +237,38 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f99ffb734497",
+          "ts": "5aba3af4decd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:27.999Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "S↔L: the ref `QOU.BraidKnot.SpinInvolutionLPDualInvariance` is a structure in the library file (lean/QOU/BraidKnot/SpinInvolutionLPDualInvariance.lean:25). It is not an assertion, and it differs from the sibling, which builds on `FrobeniusSelfDualityForcesLPDualExtraction`. Neither file states the md's conclusion y_0*(σ(β)) = y_0*(β) (md:13). The library proves only `sigma_isometry` and `cost_invariant` (library:52, 58). The sibling's \"main theorem\" `spin_invariance_of_y0` concludes only `∀ x, F.τ (c * S.sigma x) = F.τ (c * x)` (sibling lean:186-195), i.e. Step 3, and says \"Full y_0* equality is conditional on Mathlib LP-duality infrastructure\" (lean:190-191). The library pairing is ℝ-valued (`def pairing (a b : A) : ℝ`, library:48). S↔P: Step 4 is false as written. With σ anti-multiplicative and ⋆-compatible, σ(β*β) = σ(β)σ(β*) = σ(β)σ(β)*, not σ(β)*σ(β) as claimed (prf:49-52). So x ↦ σ(x) sends LP(β)'s net constraint to τ(σ(β)σ(β)*·x), and the image of LP(σ(β))'s constraint is τ(ββ*·x), not τ(β*β·x). The two agree only when x is central or A is commutative, and the feasible sets are not shown to be in bijection. The statement also omits the hypothesis n_target(σ(β)) = n_target(β) (md:6), which Step 5 needs. The ts writes the net constraint as τ(1·x) (ts:45), contradicting md:6. The corollary's facts are asserted without proof: the \"Hopf antipode on H_n(R,q)\" is not a standard Hopf structure; \"S(J_k) = q^{2(1−k)} J_k\" (prf:89) is asserted. It also carries empirical confirmations: \"verifies y_0*(T) = y_0*(³He) to machine precision (= 570.6762 at q_0\" (prf:100-104), and in the sibling \"AME data confirms this symmetry … ~0.03 MeV\" (lean:275-277).",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: other"
+      },
+      {
+        "field_hash": {
+          "md": "e447a47dff84",
+          "ts": "5aba3af4decd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:13:24.525Z",
+        "reviewed_sha": "5f209b510c5b50294fd755d263c17c75d49be3ed",
+        "severity": "minor",
+        "evidence": "Step 4 asserts sigma(beta^* beta) = sigma(beta)^* sigma(beta). For an anti-multiplicative sigma this gives sigma(beta) sigma(beta)^*, which equals the stated form only up to order; the feasible-set bijection needs either commutation or the constraint written with sigma(beta) sigma(beta)^*."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1141,7 +1173,7 @@
           "in_degree": 0,
           "cone_size": 4,
           "depth": 3,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1428,7 +1460,7 @@
         "reviewed_at": "2026-08-15T10:31:00.320Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
-        "evidence": "11 stylistic spaced dashes in 644 words (1.71/100w) \u2014 restructure into sentences"
+        "evidence": "11 stylistic spaced dashes in 644 words (1.71/100w) — restructure into sentences"
       },
       {
         "field_hash": {
@@ -1672,7 +1704,7 @@
         "reviewed_at": "2026-08-15T10:31:00.320Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
-        "evidence": "3 sentence(s) over 60 words \u2014 written for the eye, not the ear; split"
+        "evidence": "3 sentence(s) over 60 words — written for the eye, not the ear; split"
       },
       {
         "field_hash": {
@@ -1730,6 +1762,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T02:16:41.704Z",
+  "updated_at": "2026-11-16T07:13:24.525Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

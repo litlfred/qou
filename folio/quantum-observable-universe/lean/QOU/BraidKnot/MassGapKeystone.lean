@@ -90,7 +90,7 @@ open QOU.Torsion
     Positivity (`massGapBound_pos`), vanishing at the classical point
     (`massGapBound_at_one`), and monotonicity (`massGapBound_mono`)
     live upstream in `QOU.Torsion.MassGap`. -/
--- Ref: [manuscript] q1-mass-gap-probe.witness.json exact_identities
+-- Ref: [leitner2026] q1-mass-gap-probe.witness.json exact_identities
 theorem massGapBound_div_hbarSq {q : ℝ} (h0 : q ≠ 0) (h1 : q ≠ 1) :
     massGapBound q / ((q - 1) / q) ^ 2 = q * (q - 1) * (q + 1) / 2 := by
   have hq1 : q - 1 ≠ 0 := sub_ne_zero.mpr h1
@@ -107,7 +107,7 @@ theorem massGapBound_div_hbarSq {q : ℝ} (h0 : q ≠ 0) (h1 : q ≠ 1) :
     The factor `(2+ε)/(2(1+ε))` tends to `1` as `ε → 0`, so this is
     the exact form of the workplan target `Δ_q = ε³(1 + O(ε))`; the
     quantitative pinch is `massGapBound_one_add_eps_bounds` below. -/
--- Ref: [manuscript] docs/workplans/2026-06-11-mass-gap-three-step-program.md §2
+-- Ref: [leitner2026] docs/workplans/2026-06-11-mass-gap-three-step-program.md §2
 theorem massGapBound_one_add_eps (ε : ℝ) (hm : (1 : ℝ) + ε ≠ 0) :
     massGapBound (1 + ε) = ε ^ 3 * (2 + ε) / (2 * (1 + ε)) := by
   unfold massGapBound minCrossingEnergy
@@ -123,7 +123,7 @@ theorem massGapBound_one_add_eps (ε : ℝ) (hm : (1 : ℝ) + ε ≠ 0) :
     `Δ_q/ℏ_q² = ε + 3⁄2·ε² + O(ε³)` with the `O(ε³)` term pinned to
     exactly `ε³/2`.  The physical-units gap dies *linearly* in `ε`;
     its standard part at the classical point is `0`. -/
--- Ref: [manuscript] docs/workplans/2026-06-11-mass-gap-three-step-program.md §2
+-- Ref: [leitner2026] docs/workplans/2026-06-11-mass-gap-three-step-program.md §2
 theorem massGapBound_one_add_eps_div_hbarSq (ε : ℝ) (h0 : ε ≠ 0)
     (hm : (1 : ℝ) + ε ≠ 0) :
     massGapBound (1 + ε) / ((1 + ε - 1) / (1 + ε)) ^ 2
@@ -142,7 +142,7 @@ theorem massGapBound_one_add_eps_div_hbarSq (ε : ℝ) (h0 : ε ≠ 0)
     This is the quantitative content of `Δ_q = ε³(1 + O(ε))` and makes
     the standard-part-zero claim of the workplan immediate: the gap is
     squeezed between two infinitesimals of order exactly 3. -/
--- Ref: [manuscript] docs/workplans/2026-06-11-mass-gap-three-step-program.md §2
+-- Ref: [leitner2026] docs/workplans/2026-06-11-mass-gap-three-step-program.md §2
 theorem massGapBound_one_add_eps_bounds {ε : ℝ} (h0 : 0 < ε) :
     ε ^ 3 / 2 ≤ massGapBound (1 + ε) ∧ massGapBound (1 + ε) ≤ ε ^ 3 := by
   have hm : (1 : ℝ) + ε ≠ 0 := ne_of_gt (by linarith)
@@ -184,7 +184,7 @@ def towerSpectrum (tms : ℕ → CategoricalTransferMatrix) : ℕ → Set ℝ :=
     discipline; `substrateGap_of_uniform_gapValue` and
     `substrateGap_of_crossingFiltration` below provide the two
     instantiation routes. -/
--- Ref: [manuscript] docs/workplans/2026-06-11-mass-gap-three-step-program.md §4
+-- Ref: [leitner2026] docs/workplans/2026-06-11-mass-gap-three-step-program.md §4
 class SubstrateGap (q : ℝ) (spectrum : ℕ → Set ℝ) : Prop where
   one_lt : 1 < q
   gap_uniform : ∀ n : ℕ, ∀ E ∈ spectrum n, E ≠ 0 → massGapBound q ≤ E
@@ -200,7 +200,7 @@ class SubstrateGap (q : ℝ) (spectrum : ℕ → Set ℝ) : Prop where
     (`vacuum_eigenvalue`) and eigenvalues are monotone
     (`eigenvalues_mono`), so every non-vacuum eigenvalue dominates
     `gapValue = eigenvalues 1`. -/
--- Ref: [manuscript] docs/workplans/2026-06-11-mass-gap-three-step-program.md §1 S1b
+-- Ref: [leitner2026] docs/workplans/2026-06-11-mass-gap-three-step-program.md §1 S1b
 theorem substrateGap_of_uniform_gapValue
     {q : ℝ} (hq : 1 < q) (tms : ℕ → CategoricalTransferMatrix)
     (huniform : ∀ n, massGapBound q ≤ (tms n).gapValue) :
@@ -225,7 +225,7 @@ theorem substrateGap_of_uniform_gapValue
     crossings contribute additively ≥ `minCrossingEnergy q`.
     Establishing this for the concrete brane tower is the
     research-grade content of S1c; here it is the named interface. -/
--- Ref: [manuscript] docs/workplans/2026-06-11-mass-gap-three-step-program.md §1 S1c(iii)
+-- Ref: [leitner2026] docs/workplans/2026-06-11-mass-gap-three-step-program.md §1 S1c(iii)
 class CrossingFiltration (q : ℝ) (tms : ℕ → CategoricalTransferMatrix) : Prop where
   per_crossing : ∀ n k, (tms n).eigenvalues k ≠ 0 →
     minCrossingEnergy q ≤ (tms n).eigenvalues k
@@ -240,7 +240,7 @@ class CrossingFiltration (q : ℝ) (tms : ℕ → CategoricalTransferMatrix) : P
     This reduces S1c to establishing `CrossingFiltration` for the
     concrete tower — a single named hypothesis replacing the informal
     "min-energy-per-crossing" argument. -/
--- Ref: [manuscript] docs/workplans/2026-06-11-mass-gap-three-step-program.md §1 S1c(iii)
+-- Ref: [leitner2026] docs/workplans/2026-06-11-mass-gap-three-step-program.md §1 S1c(iii)
 theorem substrateGap_of_crossingFiltration
     {q : ℝ} (hq : 1 < q) (hq2 : q ≤ 2)
     (tms : ℕ → CategoricalTransferMatrix) [cf : CrossingFiltration q tms] :

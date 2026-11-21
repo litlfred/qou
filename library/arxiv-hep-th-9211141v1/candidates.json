@@ -1,0 +1,63 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-hep-th-9211141v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "bd9fbd329884c26e9327a403455c9cc5fbd8cb3f2916830d55e6f06d645e2ee6",
+  "file": "9211141v1.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:hep-th/9211141v1 1 Dec 1992",
+  "authors": "Level-Spacing Distributions and the Airy Kernel",
+  "arxiv": {
+   "id": "hep-th/9211141",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "1 Dec 1992"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "The analogue of our constant $\\tau_0$ in the expansion was found to be equal to $2^{1/12} e^{3\\zeta^\\prime(-1)}$ ($\\zeta(s)$ is the Riemann zeta function).",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-003-14-asymptotics-and-the-commuting-differential-op.md (p. 6-8)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-003-14-asymptotics-and-the-commuting-differential-op.md",
+   "section_title": "Asymptotics and the Commuting Differential Operator",
+   "pages": "6-8",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-003-14-asymptotics-and-the-commuting-differential-op.md (p. 6-8)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-003-01",
+   "block_iri": "library/arxiv-hep-th-9211141v1/blocks/prop-sec-003-01",
+   "claim_id": "arxiv-hep-th-9211141v1#prop-sec-003-01"
+  }
+ ]
+}

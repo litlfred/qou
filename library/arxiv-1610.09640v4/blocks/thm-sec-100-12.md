@@ -1,0 +1,1 @@
+Let A and B be ﬂat central K-rings, and assume A is commutative with connected spectrum. Let T be a tilting B-A-bimodule com- plex. Then there is an isomorphism T ∼= P[n] in D(B ⊗Aop), for some invertible B-A-bimodule P and some integer n. See Remark 14.5.32 regarding the history of this theorem.

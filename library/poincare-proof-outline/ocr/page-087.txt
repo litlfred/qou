@@ -1,0 +1,69 @@
+unfolding poincare-between-def
+by auto
+
+hence Re w’ 4 0
+using w’ complex.expand[of w' 0]
+by auto
+
+have Re w' > 0
+using 1 poincare-between-z-axis-u0v[of x w'| «Re x > 0» <is-real x» «x A 0» cw! £ Ov w'
+using mult-pos-neg
+by force
+
+moreover
+
+assume — poincare-between 0, (of-complex x) w
+hence Re w’ < Rez
+using poincare-between-z-axis-Ouvlof Re x Re w'|
+using w’ x (-1 < Rew’ ‘Rew’ < 1) ‘Rew’ F O>
+by auto
+
+ultimately
+show poincare-between 0}, w (of-complex x)
+using poincare-between-z-axis-Ouvlof Re w' Re x]
+using w’ x (-1 < Rew’ ‘Rew’ < 1) ‘Rew’ # 0»
+by auto
+qed
+next
+show u € unit-disc v € unit-disc u A v
+by fact+
+next
+fix Muv
+assume 1: unit-disc-fiz M u € unit-disc v € unit-disc u # v
+let ?Mu = moebius-pt Mu and ?Mv = moebius-pt M v
+assume 2: ?P ?Mu ?Mv
+show ?P uv
+proof safe
+fix w
+assume w € unit-disc poincare-collinear {u, v, w} 7 poincare-between u v w > poincare-between v uw
+thus poincare-between u wv
+using 1{ 2[rule-format, of moebius-pt M w]
+by simp
+qed
+qed
+thus ?thesis
+using assms
+by simp
+qed
+
+lemma poincare-collinear3-iff :
+assumes u € unit-disc v € unit-disc w € unit-disc
+shows poincare-collinear {u, v, w} <—> poincare-between uv w V poincare-between v uw V poincare-between v wu
+using assms
+by (metis poincare-collinear3-between insert-commute poincare-between-poincare-collinear poincare-between-rev)
+
+7.2 Some properties of betweenness
+
+lemma poincare-between-transitivity:
+assumes a € unit-disc and z € unit-disc and b € unit-disc and y € unit-disc and
+poincare-between a x b and poincare-between a b y
+shows poincare-between x b y
+proof (cases a = b)
+case True
+thus ?thesis
+using assms
+using poincare-between-sandwich by blast
+next
+case False
+
+87

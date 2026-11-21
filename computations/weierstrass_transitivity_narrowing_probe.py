@@ -71,7 +71,7 @@ Sources for the classical inputs, all held in `library/`:
     "additionally"; the K_3 dichotomy (long simple orbit vs short double orbit
     of length 12); Theorem 2, completing Laing & Singerman Thm 15.
   * Braden & Disney-Hogg, "Bring's curve: old and new", Prop. 3.3 --
-    `library/s40879-023-00706-0/sections/sec-006-31-weierstrass-points.md`
+    `library/s40879-023-00706-0/sections/sec-008-31-weierstrass-points.md`
     (registered `[braden-disney-hogg-2022]`): Bring has 60 Weierstrass points,
     Aut = S_5 transitive, each preserved by one transposition only.
   * Hurwitz: total Weierstrass weight g^3 - g; maximum weight g(g-1)/2 attained

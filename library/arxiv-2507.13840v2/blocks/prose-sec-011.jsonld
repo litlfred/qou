@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2507.13840v2/blocks/prose-sec-011",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Matrix product states algorithm for the PT negativity and the CCNR negativity",
-  "pageStart": 41,
-  "pageEnd": 42,
-  "text": "../sections/sec-011-matrix-product-states-algorithm-for-the-pt-negat.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2507.13840v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2507.13840v2",
+  "title": "Entanglement phase diagram",
+  "pageStart": 12,
+  "pageEnd": 12,
+  "text": "../sections/sec-011-9-entanglement-phase-diagram.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2507.13840v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2507.13840v2/manifest.jsonld",
   "provenance": "ingested"
 }

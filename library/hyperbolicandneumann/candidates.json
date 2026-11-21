@@ -3,6 +3,7 @@
  "doc_id": "hyperbolicandneumann",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "3d66fe4c64bdc62b68748987311a0a57ea3f68cb257ba9c9e7b57866287bb7b1",
   "file": "HyperbolicAndNeumann.pdf"
@@ -15,9 +16,45 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "This consequence was observed in [35] and was also generalized there to the value of \u03b6F(2) for HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP, AND THE WORK OF WALTER NEUMANN 13 arbitrary number \ufb01elds F, with [F : Q] = r1+2r2 for any value of r2 \u22651.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-005-6-connections-to-number-theory.md (p. 12-17)",
+   "external_refs": [
+    "[35]"
+   ],
+   "quantitative_values": [],
+   "section_file": "sections/sec-005-6-connections-to-number-theory.md",
+   "section_title": "Connections to number theory",
+   "pages": "12-17",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-005-6-connections-to-number-theory.md (p. 12-17)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-005-01",
+   "block_iri": "library/hyperbolicandneumann/blocks/prop-sec-005-01",
+   "claim_id": "hyperbolicandneumann#prop-sec-005-01"
+  }
+ ]
 }

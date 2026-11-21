@@ -2,50 +2,425 @@
  "_schema": "library-summary/v1",
  "doc_id": "phys-rep09",
  "source_sha256": "cd345d3df9358efc",
- "brief": "The Magnus expansion and some of its applications — 8 sections: Introduction; Introduction; Stochastic differential equations",
- "extended": "**The Magnus expansion and some of its applications**\n\n88 pp, 8 sections.\n\n**Outline.** Introduction; Introduction; Stochastic differential equations; Electromagnetism; Optics; Conclusions; Acknowledgments; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: LetA(t)beaknownfunctionof t(ingeneral,inanassociativering),andletY (t)beanunknown\n- Theorem 4: ThesolutionofthedifferentialequationY ′=A(t)YwithinitialconditionY (0)=Y0canbewrittenasY (t)=\n- Theorem 5: TheequationA (t)=dexpΩ(Ω′)canbesolvedby Ω′=dexp−1\n- Theorem 6: Thefunction ϕ(ε)=logY(t;ε)isananalyticfunctionof εinthesetB π,with\n- Theorem 9: LetusconsiderthedifferentialequationY ′=A(t)YdefinedinaHilbertspace HwithY (0)=I,andletA (t)bea\n- Theorem 9: providessufficientconditionsfortheconvergenceoftheMagnusseriesbasedonanestimatebythenorm",
+ "brief": "The Magnus expansion and some of its applications — Article history: Accepted 13 November 2008 Available online 25 November 2008 editor: D.L.",
+ "extended": "**The Magnus expansion and some of its applications**\n\n*The Magnus expansion and some of its applications*\n\n88 pp, 83 sections.\n\n**Abstract.** Article history: Accepted 13 November 2008 Available online 25 November 2008 editor: D.L. Mills Approximate resolution of linear systems of differential equations with varying coefficients is a recurrent problem, shared by a number of scientific and engineering areas, ranging from Quantum Mechanics to Control Theory. When formulated in operator or matrix form, the Magnus expansion furnishes an elegant setting to build up approximate exponential PACS: 03.65 02.30.Hq 02.60.Cb 02.20.Rt representations of the solution of the system. It provides a power series expansion for the corresponding exponent and is sometimes referred to as Time-Dependent Exponential Perturbation Theory. Every Magnus approximant corresponds in Perturbation Theory to a partial re-summation of infinite terms with the important additional property of preserving, at any order, certain symmetries of the exact solution.\n\n**Outline.** Front matter; The Magnus expansion and some of its applicati; Introduction; Motivation, overview and history; Mathematical preliminaries and notations; The Magnus expansion (ME); A proof of Magnus' Theorem; Formulae for the first terms in Magnus expansi; Magnus expansion generator; Magnus expansion and time-dependent perturbati; Graph theoretical analysis of Magnus expansion; Time-symmetry of the expansion; Convergence of the Magnus expansion; On the existence of Ω (t); Convergence of the Magnus series; An improved radius of convergence; Further discussion; Magnus expansion and the BCH formula",
  "tokens": {
-  "brief": 31,
-  "extended": 205
+  "brief": 35,
+  "extended": 413
  },
  "sections": [
   {
-   "id": "sec-000-introduction",
-   "title": "Introduction",
-   "pages": "3-48"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-the-magnus-expansion-and-some-of-its-application",
+   "title": "The Magnus expansion and some of its applications",
+   "pages": "1-3"
   },
   {
    "id": "sec-001-introduction",
    "title": "Introduction",
-   "pages": "48-79"
+   "pages": "3-3"
   },
   {
-   "id": "sec-002-stochastic-differential-equations",
+   "id": "sec-002-motivation-overview-and-history",
+   "title": "Motivation, overview and history",
+   "pages": "3-6"
+  },
+  {
+   "id": "sec-003-mathematical-preliminaries-and-notations",
+   "title": "Mathematical preliminaries and notations",
+   "pages": "6-9"
+  },
+  {
+   "id": "sec-004-the-magnus-expansion-me",
+   "title": "The Magnus expansion (ME)",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-005-a-proof-of-magnus-theorem",
+   "title": "A proof of Magnus' Theorem",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-006-formulae-for-the-first-terms-in-magnus-expansion",
+   "title": "Formulae for the first terms in Magnus expansion",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-007-magnus-expansion-generator",
+   "title": "Magnus expansion generator",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-008-magnus-expansion-and-time-dependent-perturbation",
+   "title": "Magnus expansion and time-dependent perturbation theory",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-009-graph-theoretical-analysis-of-magnus-expansion",
+   "title": "Graph theoretical analysis of Magnus expansion",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-010-time-symmetry-of-the-expansion",
+   "title": "Time-symmetry of the expansion",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-011-convergence-of-the-magnus-expansion",
+   "title": "Convergence of the Magnus expansion",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-012-on-the-existence-of-ω-t",
+   "title": "On the existence of Ω (t)",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-013-convergence-of-the-magnus-series",
+   "title": "Convergence of the Magnus series",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-014-an-improved-radius-of-convergence",
+   "title": "An improved radius of convergence",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-015-further-discussion",
+   "title": "Further discussion",
+   "pages": "19-21"
+  },
+  {
+   "id": "sec-016-magnus-expansion-and-the-bch-formula",
+   "title": "Magnus expansion and the BCH formula",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-017-preliminary-linear-transformations",
+   "title": "Preliminary linear transformations",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-018-exponential-product-representations",
+   "title": "Exponential product representations",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-019-fer-method",
+   "title": "Fer method",
+   "pages": "23-25"
+  },
+  {
+   "id": "sec-020-wilcox-method",
+   "title": "Wilcox method",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-021-wei--norman-factorization",
+   "title": "Wei--Norman factorization",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-022-the-continuous-bch-formula",
+   "title": "The continuous BCH formula",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-023-generalizations-of-the-magnus-expansion",
+   "title": "Generalizations of the Magnus expansion",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-024-voslamber-iterative-method",
+   "title": "Voslamber iterative method",
+   "pages": "27-29"
+  },
+  {
+   "id": "sec-025-floquet--magnus-expansion",
+   "title": "Floquet--Magnus expansion",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-026-magnus-expansions-for-nonlinear-matrix-equations",
+   "title": "Magnus expansions for nonlinear matrix equations",
+   "pages": "30-32"
+  },
+  {
+   "id": "sec-027-treatment-of-general-nonlinear-equations",
+   "title": "Treatment of general nonlinear equations",
+   "pages": "32-35"
+  },
+  {
+   "id": "sec-028-treatment-of-hamiltonian-systems",
+   "title": "Treatment of Hamiltonian systems",
+   "pages": "35-36"
+  },
+  {
+   "id": "sec-029-magnus-expansion-and-the-chen--fliess-series",
+   "title": "Magnus expansion and the Chen--Fliess series",
+   "pages": "36-38"
+  },
+  {
+   "id": "sec-030-illustrative-examples",
+   "title": "Illustrative examples",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-031-me-in-the-interaction-picture",
+   "title": "ME in the Interaction Picture",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-032-linearly-forced-harmonic-oscillator",
+   "title": "Linearly forced harmonic oscillator",
+   "pages": "38-39"
+  },
+  {
+   "id": "sec-033-two-level-quantum-systems",
+   "title": "Two-level quantum systems",
+   "pages": "39-43"
+  },
+  {
+   "id": "sec-034-me-in-the-adiabatic-picture",
+   "title": "ME in the Adiabatic Picture",
+   "pages": "43-44"
+  },
+  {
+   "id": "sec-035-linearly-forced-harmonic-oscillator",
+   "title": "Linearly forced harmonic oscillator",
+   "pages": "44-44"
+  },
+  {
+   "id": "sec-036-rosen--zener-model",
+   "title": "Rosen--Zener model",
+   "pages": "44-45"
+  },
+  {
+   "id": "sec-037-fer-and-wilcox-infinite-product-expansions",
+   "title": "Fer and Wilcox infinite-product expansions",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-038-linearly-forced-harmonic-oscillator",
+   "title": "Linearly forced harmonic oscillator",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-039-two-level-quantum-system-rectangular-step",
+   "title": "Two-level quantum system: Rectangular step",
+   "pages": "45-46"
+  },
+  {
+   "id": "sec-040-voslamber-iterative-method",
+   "title": "Voslamber iterative method",
+   "pages": "46-47"
+  },
+  {
+   "id": "sec-041-linear-periodic-systems-floquet--magnus-formalis",
+   "title": "Linear periodic systems: Floquet--Magnus formalism",
+   "pages": "47-48"
+  },
+  {
+   "id": "sec-042-numerical-integration-methods-based-on-the-magnu",
+   "title": "Numerical integration methods based on the Magnus expansion",
+   "pages": "48-48"
+  },
+  {
+   "id": "sec-043-introduction",
+   "title": "Introduction",
+   "pages": "48-50"
+  },
+  {
+   "id": "sec-044-runge--kutta-methods",
+   "title": "Runge--Kutta methods",
+   "pages": "50-52"
+  },
+  {
+   "id": "sec-045-preservation-of-qualitative-properties",
+   "title": "Preservation of qualitative properties",
+   "pages": "52-53"
+  },
+  {
+   "id": "sec-046-magnus-integrators-for-linear-systems",
+   "title": "Magnus integrators for linear systems",
+   "pages": "53-56"
+  },
+  {
+   "id": "sec-047-from-magnus-to-fer-and-cayley-methods",
+   "title": "From Magnus to Fer and Cayley methods",
+   "pages": "56-56"
+  },
+  {
+   "id": "sec-048-fer-based-methods",
+   "title": "Fer based methods",
+   "pages": "56-57"
+  },
+  {
+   "id": "sec-049-cayley-transform-methods",
+   "title": "Cayley-transform methods",
+   "pages": "57-58"
+  },
+  {
+   "id": "sec-050-numerical-illustration-the-rosen--zener-model-re",
+   "title": "Numerical illustration: The Rosen--Zener model revisited",
+   "pages": "58-60"
+  },
+  {
+   "id": "sec-051-computing-the-exponential-of-a-matrix",
+   "title": "Computing the exponential of a matrix",
+   "pages": "60-61"
+  },
+  {
+   "id": "sec-052-scaling-and-squaring-with-padé-approximation",
+   "title": "Scaling and squaring with Padé approximation",
+   "pages": "61-62"
+  },
+  {
+   "id": "sec-053-chebyshev-approximation",
+   "title": "Chebyshev approximation",
+   "pages": "62-63"
+  },
+  {
+   "id": "sec-054-krylov-space-methods",
+   "title": "Krylov space methods",
+   "pages": "63-63"
+  },
+  {
+   "id": "sec-055-splitting-methods",
+   "title": "Splitting methods",
+   "pages": "63-64"
+  },
+  {
+   "id": "sec-056-additional-numerical-examples",
+   "title": "Additional numerical examples",
+   "pages": "64-66"
+  },
+  {
+   "id": "sec-057-modified-magnus-integrators",
+   "title": "Modified Magnus integrators",
+   "pages": "66-66"
+  },
+  {
+   "id": "sec-058-variations-on-the-basic-algorithm",
+   "title": "Variations on the basic algorithm",
+   "pages": "66-67"
+  },
+  {
+   "id": "sec-059-commutator-free-magnus-integrators",
+   "title": "Commutator-free Magnus integrators",
+   "pages": "67-70"
+  },
+  {
+   "id": "sec-060-magnus-integrators-for-nonlinear-differential-eq",
+   "title": "Magnus integrators for nonlinear differential equations",
+   "pages": "70-70"
+  },
+  {
+   "id": "sec-061-nonlinear-matrix-equations-in-lie-groups",
+   "title": "Nonlinear matrix equations in Lie groups",
+   "pages": "70-70"
+  },
+  {
+   "id": "sec-062-the-general-nonlinear-problem",
+   "title": "The general nonlinear problem",
+   "pages": "70-71"
+  },
+  {
+   "id": "sec-063-some-applications-of-the-numerical-integrators-b",
+   "title": "Some applications of the numerical integrators based on ME",
+   "pages": "71-72"
+  },
+  {
+   "id": "sec-064-case-study-numerical-treatment-of-the-schrödinge",
+   "title": "Case study: Numerical treatment of the Schrödinger equation",
+   "pages": "72-72"
+  },
+  {
+   "id": "sec-065-time-dependent-schrödinger-equation",
+   "title": "Time-dependent Schrödinger equation",
+   "pages": "72-75"
+  },
+  {
+   "id": "sec-066-time-independent-schrödinger-equation",
+   "title": "Time-independent Schrödinger equation",
+   "pages": "75-75"
+  },
+  {
+   "id": "sec-067-sturm--liouville-problems",
+   "title": "Sturm--Liouville problems",
+   "pages": "75-76"
+  },
+  {
+   "id": "sec-068-the-differential-riccati-equation",
+   "title": "The differential Riccati equation",
+   "pages": "76-78"
+  },
+  {
+   "id": "sec-069-stochastic-differential-equations",
    "title": "Stochastic differential equations",
-   "pages": "79-82"
+   "pages": "78-80"
   },
   {
-   "id": "sec-003-electromagnetism",
+   "id": "sec-070-physical-applications",
+   "title": "Physical applications",
+   "pages": "80-80"
+  },
+  {
+   "id": "sec-071-nuclear-atomic-and-molecular-physics",
+   "title": "Nuclear, atomic and molecular physics",
+   "pages": "80-80"
+  },
+  {
+   "id": "sec-072-nuclear-magnetic-resonance-average-hamiltonian-t",
+   "title": "Nuclear magnetic resonance: Average Hamiltonian theory",
+   "pages": "80-81"
+  },
+  {
+   "id": "sec-073-quantum-field-theory-and-high-energy-physics",
+   "title": "Quantum field theory and high energy physics",
+   "pages": "81-82"
+  },
+  {
+   "id": "sec-074-electromagnetism",
    "title": "Electromagnetism",
    "pages": "82-82"
   },
   {
-   "id": "sec-004-optics",
+   "id": "sec-075-optics",
    "title": "Optics",
-   "pages": "82-84"
+   "pages": "82-83"
   },
   {
-   "id": "sec-005-conclusions",
+   "id": "sec-076-general-relativity",
+   "title": "General Relativity",
+   "pages": "83-83"
+  },
+  {
+   "id": "sec-077-search-of-periodic-orbits",
+   "title": "Search of periodic orbits",
+   "pages": "83-83"
+  },
+  {
+   "id": "sec-078-geometric-control-of-mechanical-systems",
+   "title": "Geometric control of mechanical systems",
+   "pages": "83-84"
+  },
+  {
+   "id": "sec-079-conclusions",
    "title": "Conclusions",
    "pages": "84-84"
   },
   {
-   "id": "sec-006-acknowledgments",
+   "id": "sec-080-acknowledgments",
    "title": "Acknowledgments",
    "pages": "84-85"
   },
   {
-   "id": "sec-007-references",
+   "id": "sec-081-references",
    "title": "References",
    "pages": "85-88"
   }
@@ -53,8 +428,8 @@
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "abstract",
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

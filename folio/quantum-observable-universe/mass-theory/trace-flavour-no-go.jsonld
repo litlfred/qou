@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-trace-flavour-no-go",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:trace-flavour-no-go",
+  "kind": "proposition",
+  "title": "A cyclic trace on $H_3(q)$ cannot separate a nucleon word from its flip–reversal",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-photon",
+    "papers/quantum-observable-universe/blocks/prop-borromean-two-photon-factorisation",
+    "papers/quantum-observable-universe/blocks/def-typed-crossing-operator"
+  ],
+  "cites": [
+    "references/iwahori1964",
+    "references/kassel2008"
+  ],
+  "tags": [
+    "borromean",
+    "hecke-algebra",
+    "nucleon-element",
+    "markov-trace",
+    "flavour"
+  ],
+  "leanRef": "qou:QOU.Mass.PhotonTraceLemmas.trace_flip_reverse",
+  "text": "trace-flavour-no-go.md",
+  "provenance": "authored"
+}

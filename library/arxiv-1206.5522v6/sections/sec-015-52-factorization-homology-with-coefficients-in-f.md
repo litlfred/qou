@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.968
 latex_coverage_ratio: 0.977
+doc_brief: "FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS — Factorization homology theories of topological manifolds, after Beilinson, Drinfeld and Lurie, are homology-type theories for topological n-manifolds"
 ---
 We next turn to the factorization homology of free $n$-disk algebras, a topic studied in more detail in §2 of [@aft2].
 

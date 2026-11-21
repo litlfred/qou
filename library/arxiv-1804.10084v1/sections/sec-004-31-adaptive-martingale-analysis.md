@@ -7,10 +7,11 @@ section_number: 3.1
 pages: 4-8
 source_pdf: 1804.10084v1.pdf
 source_sha256: 716da9708f06d930
-doc_brief: "Concentration of Lipschitz Functions of Negatively Dependent Variables — We explore the question whether Lipschitz functions of random var iables under various forms of negative correlation satisfy"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.987
 latex_coverage_ratio: 0.996
+doc_brief: "Concentration of Lipschitz Functions of Negatively Dependent Variables — We explore the question whether Lipschitz functions of random variables under various forms of negative correlation satisfy"
 ---
 As we show in Appendix [\[app:error\]](#app:error){reference-type="ref" reference="app:error"}, it is not possible to replicate the martingale analysis of McDiarmid's inequality under negative regression, if we work with a fixed ordering of variables $X_1,\ldots,X_n$. The problem is that a particular variable $X_1$ might have a large influence on the distribution of the remaining variables, and hence affect significantly the conditional expectation of $f$ once the value of $X_1$ is revealed.
 

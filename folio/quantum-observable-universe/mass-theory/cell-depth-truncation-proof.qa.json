@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "45258fead9a0",
+          "ts": "0122fddc676f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T00:43:11.000Z",
+        "reviewed_sha": "0eba507a077106abc6597936dd5f1cfb3cff653b",
+        "evidence": "Items 1-3 follow from sum E_k = 1 and the support definition; item 4 from the index character being a unit; item 5 from u = 1 forcing q^{-(K'+1)} z = 0."
+      }
+    ]
+  },
+  "updated_at": "2026-11-17T00:43:11.000Z"
+}

@@ -1,0 +1,49 @@
+34 Don Zagier
+
+the potential |x|? [39], and in the study of the symmetry properties of the
+Apéry-Beukers-type integrals leading to the best currently known irrational-
+ity measures for x? [34]. However, we will not discuss these connections here,
+restricting ourselves only to the aspects directly related to the dilogarithm.
+
+A. Functional equations of the dilogarithm. By a “functional equation
+of the dilogarithm” we mean any collection of integers n; and rational or al-
+gebraic functions «;(t) of one or several variables such that )> n;Lig(2; oO is
+a finite combination of products of two logarithms, or such that }*n;D(a«;(t))
+(resp. }> n; L(x;(t)) if all the x;(t) are real) is constant (resp. locally constant).
+A number of examples were given in Section 2 of Chapter I, with only the
+statement “All of the functional equations of Lig are easily proved by differ-
+entiation” by way of proof. That is a true, but somewhat ad hoc, statement,
+since it does not give an algebraic way to recognize or characterize functional
+equations of the dilogarithm. It is, however, easy to give such a criterion ({45},
+Prop. 1 of §7): it is necessary and sufficient that S>nj(a;(t)) A (1 — ai(t)) be
+independent of t, ie., that the element € = )>n,[x;(t)] of the group ring of
+the function field in which the x; lie be in the kernel of the boundary map
+0 : [a] + (x) A (1 — 2) used to define the Bloch group (cf. §4 of Chapter I or
+§4 below). For convenience, we ignore 2-torsion.
+
+Let us check this criterion for each of the functional equations given in
+§2 of Chapter I. For the one-variable functional equations corresponding to
+€ = [x] + [1 — a] or € = [2] + [1/2] the statement 0(€) = 0 is trivial. For the
+five-term equation we can either verify directly that the 5-term expression
+
+=) 4 ay) 4 [274] (17)
+
+View) = + b+ = i
+
+is annihilated by 0 or else use the more symmetric description of the five-term
+relation as € = >, (nod 5) [vi] with 1 — 2; = x;_12;41 and then calculate
+
+AQ) = Soi) A (earn) = D(a) A wi-1) — (ti41) A(ai)) = 0.
+
+Similarly, the six-term relation of Kummer and Newman corresponds to
+€é= 257 [ri] - SC titi /21] ;
+i i
+
+where {2;}j¢z/3z is a cyclically numbered triple of numbers with >> a! =1,
+and here we find
+
+Og) = D2 (i) A 2) = (=a4-10541/2;) A (1 — @%~-1)(1 — vi41)))
+
+= S22) — aja ja/ej41) — (—ajyi2j/2j-1)) \ (1 ay) =
+
+j

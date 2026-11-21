@@ -1,0 +1,1 @@
+The positivity condition 0 < ˙a, ˙b, ˙c < 1, where (˙a, ˙b, ˙c) are the real projections of the angle parameters, ensures absolute convergence and good analytic behavior of the integrand in the state-integral model.

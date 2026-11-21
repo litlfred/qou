@@ -5,31 +5,36 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/amc-2730",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/amc-2730/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "amc-2730",
+  "title": "Braid representatives minimizing the number of simple walks *",
   "contains": [
+    "library/amc-2730/sections/sec-front-matter",
     "library/amc-2730/sections/sec-000",
     "library/amc-2730/sections/sec-001",
     "library/amc-2730/sections/sec-002",
     "library/amc-2730/sections/sec-003",
     "library/amc-2730/sections/sec-004",
-    "library/amc-2730/sections/sec-005"
+    "library/amc-2730/sections/sec-005",
+    "library/amc-2730/sections/sec-006",
+    "library/amc-2730/sections/sec-007"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "amc-2730",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "amc_2730.pdf",
     "source_sha256": "65730074a2925c6e1fb36513581887d8699744e16bedf5f4c111695d3cdd0d23",
     "pages": 27,
     "arxiv": null,
     "doi": "10.26493/1855-3974.2730.6ac",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,0 +1,1 @@
+Let M be an .%zq(d,n)—module and suppose that all of the compo- sition factors of M belong to the same block and that M <> Yu a, Wf for some integers a,, jt € At(d,n). Then WE and M lie in the same block whenever a, #0.

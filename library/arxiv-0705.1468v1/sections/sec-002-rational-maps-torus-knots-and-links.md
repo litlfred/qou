@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0705.1468v1
-doc_title: "Knots in the Skyrme-Faddeev model Paul Sutcliffe"
+doc_title: "Knots in the Skyrme-Faddeev model"
 section_id: sec-002-rational-maps-torus-knots-and-links
 section_title: "Rational maps, torus knots and links"
 section_number: null
 pages: 7-11
 source_pdf: 0705.1468v1.pdf
 source_sha256: 4ff578cb3657e4a4
-doc_brief: "Knots in the Skyrme-Faddeev model Paul Sutcliffe — The Skyrme-Faddeev model is a modiﬁed sigma model in three-d imensional space, which has string-like topological solitons classiﬁed by th e"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.997
-latex_coverage_ratio: 0.976
+latex_prose_ratio: 0.984
+latex_coverage_ratio: 1.0
+doc_brief: "Knots in the Skyrme-Faddeev model — The Skyrme-Faddeev model is a modiﬁed sigma model in three-dimensional space, which has string-like topological solitons classiﬁed by the integer-valued Hopf"
 ---
 Torus knots are classified by a pair $(a,b)$ of coprime positive integers with $a>b.$ A knot is a torus knot if it lies on the surface of a torus, in which case the integers $a$ and $b$ count the number of times that the knot winds around the two cycles of the torus. The simplest example is the trefoil knot, which is the $(3,2)$-torus knot and has three crossings. In the standard knot catalogue notation it is $3_1,$ where the number refers to the crossing number of the knot and the subscript labels its position in the knot catalogue. Other torus knots which will be of interest in this paper include the $(5,2)$-torus knot, also known as Solomon's seal knot, which has five crossings (knot $5_1$ in the catalogue), and the $(4,3)$-torus knot which has crossing number eight (knot $8_{19}$ in the catalogue). In general the $(a,b)$-torus knot has crossing number $C=a(b-1).$
 

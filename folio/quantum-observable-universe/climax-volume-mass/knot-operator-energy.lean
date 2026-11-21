@@ -33,7 +33,7 @@ universe u
     projection AGENTS.md §3b-cond item 5 forbids. Here uniqueness is a
     consequence of functionality, not an assumption. -/
 -- Ref: [schrijver1986theory] Schrijver, "Theory of Linear and Integer Programming," Wiley 1986
--- Ref: [manuscript] prop:mass-coefficient-shadow-price
+-- Ref: [leitner2026] prop:mass-coefficient-shadow-price
 structure KnotOperatorEnergy {R : Type u} [CommRing R]
     (dualValue : List ℕ → R → R) (partition : List ℕ) (q : R) where
   /-- Shadow price `y_λ(q) ∈ R` (algebraic, base-ring-independent). -/

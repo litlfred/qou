@@ -1,0 +1,52 @@
+390 Combinatorial applications
+The radius of convergence of ¢, namely 1, is now less than the radius of
+convergence of v, which is infinity. Taking derivatives shows that
+
+— dxf 14 2xt3xt-- txt!
+x l-xd Lt xt xt gee pel
+
+>
+
+1
+HV; x) = ix
+
+so that yz increases from | to (d+ 1)/2 as x increases from 0 to 1. The Gaussian
+asymptotics of (12.7) still hold, but only when 2 = n/k remains in a compact
+sub-interval of (1, 41), and the computations to compute terms in this asymp-
+totic expansion are analogous to those for Example 12.5 above.
+
+Proposition 6.41 implies that there is a strictly minimal point in the positive
+quadrant controlling asymptotics in any direction. When 2 > (d + 1)/2 this
+turns out to be the non-smooth point (1, 1/d), and Corollary 10.14 from Chap-
+ter 10 implies that ay, ~ d* in this case. Note that this is trivial when 2 > d
+because any prefix of the infinite string S with length at least dk will allow all
+possible k-subsequences to occur, meaning a,x = d* in this regime. 4
+
+12.3 Lagrange inversion
+
+On many families of recursively defined combinatorial classes, such as tree
+enumeration problems, the combinatorial constructions discussed in Chapter 2
+yield generating functions satisfying functional equations of the form f(z) =
+zv(f(z)) for some function v that is analytic at the origin and does not vanish
+there. Although this equation can be solved exactly for f in some simple cases,
+the method of Lagrange inversion gives an invaluable tool for computing the
+coefficients of f, and their asymptotic behavior, directly from this functional
+equation.
+
+Proposition 12.7 (Lagrange inversion formula). If f(z) = zv(f(z)) with v an-
+alytic and v(O) # 0 then
+
+1
+I" = = [y"'] voy". (12.9)
+
+Proof Change variables to y = f(z) so that the implicit equation for f implies
+z= y/v(y) and dz = dy[1/v(y) — yv’(y)/v()?]. The Cauchy integral representa-
+tion
+
+1
+"f= 5 f olf dz
+
+over a circle sufficiently close to the origin becomes the integral
+
+1 vy)" vo",
+wl (2)-(2) vole

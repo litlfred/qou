@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0606435v2/sections/sec-039",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Fibered Dean knots (Hirasawa-Murasugi)",
+  "pageStart": 61,
+  "pageEnd": 63,
+  "contains": [
+    "library/arxiv-math-0606435v2/blocks/prose-sec-039",
+    "library/arxiv-math-0606435v2/blocks/figure-img-p062-1",
+    "library/arxiv-math-0606435v2/blocks/figure-img-p062-2",
+    "library/arxiv-math-0606435v2/blocks/figure-img-p062-3",
+    "library/arxiv-math-0606435v2/blocks/figure-img-p062-4",
+    "library/arxiv-math-0606435v2/blocks/figure-img-p062-5",
+    "library/arxiv-math-0606435v2/blocks/figure-img-p062-6"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0606435v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0606435v2/manifest.jsonld",
+  "provenance": "ingested"
+}

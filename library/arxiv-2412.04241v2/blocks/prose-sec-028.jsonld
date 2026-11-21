@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2412.04241v2/blocks/prose-sec-028",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Alternative approach: Habiro rings via congruences",
-  "pageStart": 58,
-  "pageEnd": 59,
-  "text": "../sections/sec-028-5-alternative-approach-habiro-rings-via-congruen.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2412.04241v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2412.04241v2",
+  "title": "A note on modularity",
+  "pageStart": 57,
+  "pageEnd": 58,
+  "text": "../sections/sec-028-47-a-note-on-modularity.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2412.04241v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2412.04241v2/manifest.jsonld",
   "provenance": "ingested"
 }

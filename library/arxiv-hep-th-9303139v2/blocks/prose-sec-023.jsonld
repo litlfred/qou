@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-023",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Basic determinant formula for the free-fermion correlator",
-  "pageStart": 2,
-  "pageEnd": 2,
-  "text": "../sections/sec-023-44-basic-determinant-formula-for-the-free-fermio.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9303139v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9303139v2",
+  "title": "Toda-lattice $\\tau$-function and linear reductions of Toda hierarchy",
+  "pageStart": 87,
+  "pageEnd": 92,
+  "text": "../sections/sec-023-45-toda-lattice-tau-function-and-linear-reductio.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9303139v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9303139v2/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1112.5179v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1112.5179v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1112.5179v1",
+  "title": "3-Manifolds and 3d Indices",
   "contains": [
+    "library/arxiv-1112.5179v1/sections/sec-front-matter",
     "library/arxiv-1112.5179v1/sections/sec-000",
     "library/arxiv-1112.5179v1/sections/sec-001",
     "library/arxiv-1112.5179v1/sections/sec-002",
@@ -33,10 +34,18 @@
     "library/arxiv-1112.5179v1/sections/sec-019",
     "library/arxiv-1112.5179v1/sections/sec-020",
     "library/arxiv-1112.5179v1/sections/sec-021",
-    "library/arxiv-1112.5179v1/sections/sec-022"
+    "library/arxiv-1112.5179v1/sections/sec-022",
+    "library/arxiv-1112.5179v1/sections/sec-023",
+    "library/arxiv-1112.5179v1/sections/sec-024",
+    "library/arxiv-1112.5179v1/sections/sec-025",
+    "library/arxiv-1112.5179v1/sections/sec-026",
+    "library/arxiv-1112.5179v1/sections/sec-027",
+    "library/arxiv-1112.5179v1/sections/sec-028",
+    "library/arxiv-1112.5179v1/sections/sec-029",
+    "library/arxiv-1112.5179v1/sections/sec-030"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -46,7 +55,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1112.5179v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1112.5179v1.pdf",
     "source_sha256": "b58af08336c409942719db3c4e209817a0e76451983f7b84e9fbc1da15f0a4f8",
     "pages": 79,

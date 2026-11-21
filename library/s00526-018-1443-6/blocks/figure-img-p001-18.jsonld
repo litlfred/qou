@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/s00526-018-1443-6/blocks/figure-img-p001-18",
+  "@type": [
+    "folio-assistant-core:Figure",
+    "doco:Figure"
+  ],
+  "kind": "figure",
+  "file": "../images/img-p001-18.png",
+  "pageStart": 1,
+  "pageEnd": 1,
+  "narrative": {
+    "text": null,
+    "state": "not-authored"
+  },
+  "derivedFrom": "library/s00526-018-1443-6/sections/sec-front-matter",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00526-018-1443-6/manifest.jsonld",
+  "provenance": "ingested"
+}

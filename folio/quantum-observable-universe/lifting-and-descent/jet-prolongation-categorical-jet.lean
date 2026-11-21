@@ -25,7 +25,7 @@ LaTeX label: `lem:jet-prolongation-categorical-jet`
   jet schemes underpinning the categorical jet construction
 - [kock2004] Kock, *Frobenius Algebras and 2D TQFTs* (background on
   the Frobenius-Hopf data structure inherited at the jet level)
-- [manuscript] §3 Lifting and Descent, §"Categorical jet object"
+- [leitner2026] §3 Lifting and Descent, §"Categorical jet object"
 -/
 
 namespace QOU.LiftingDescent
@@ -46,7 +46,7 @@ open CategoryTheory
     formalisation of those structure maps awaits a richer encoding
     of `Ω¹(A)` and the Kähler-differential bimodule. -/
 -- Ref: [fred2005], [kock2004]
--- Ref: [manuscript] §3 Lifting and Descent, "Categorical jet object"
+-- Ref: [leitner2026] §3 Lifting and Descent, "Categorical jet object"
 def jp_categorical_jet
     {C : Type*} [Category C] [MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fhd : QOU.FrobeniusHopfData C) :

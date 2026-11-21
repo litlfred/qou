@@ -99,7 +99,7 @@ satisfy:
 
 All three are **derived** from the explicit entries — the lone input is
 the substrate parameter `q : ℝ`. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/beta-decay-transfer-matrix.ts
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/beta-decay-transfer-matrix.ts
 theorem beta_decay_transfer_matrix (q : ℝ) :
     ((T_pp q).trace = q - q⁻¹ ∧ (T_nn q).trace = -(q - q⁻¹) ∧
       (T_mix q).trace = 0) ∧

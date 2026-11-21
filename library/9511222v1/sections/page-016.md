@@ -1,0 +1,79 @@
+---
+doc_id: 9511222v1
+doc_title: "Murnaghan–Nakayama rules for characters of Iwahori–Hecke algebras of classical type"
+section_id: page-016
+section_title: "Page 16"
+pages: 16-16
+pdf_page: 16
+source_pdf: 9511222v1.pdf
+source_sha256: 2870b5b709d1f358
+text_source: ocr
+granularity: page
+doc_brief: "Murnaghan–Nakayama rules for characters of Iwahori–Hecke algebras of classical type — 26 sections: Page 1; Page 2; Page 3"
+---
+16 1. HALVERSON AND AL MANE
+
+(a) If j — 1 is not divisible by 7, then
+
+-1
+
+q q
+Tey De TT
+
+Fy(L) = (Tj )w; bywj4ib =
+
+(b) If j —1 is divisible by y but j -14 ¢; for any 1 <i<m,
+1
+
+_ (7. ee oe ee
+Fj(L) = (Tj aoj 41 bro; 440 ~ 1— wie ct(L((kK=1))) °
+ct(L(k))
+
+(c) Ifj —1 = 6-1 = 0-17 for some 0 <i <m, then
+Fy(L) = (tiie p= etortet(L(Cina +1)",
+
+wiih wigr
+
+Proof. (a) If j—1 is not divisible by 7 then wj41L(j—1) = L(j—1) and wj4i Lj) =
+L(ky). Thus
+
+et(wy4i Lj —1)) = et(L(j —1)) = eG -Mct(L(ky)), and
+
+ct(wj41L(7)) = et(L(ky)).
+
+It follows that
+1
+
+_ q-4a
+Fj(L) = (Tj)w; tw yit =O + 1 es LGD)
+~~ et(wj 41 LG)
+-1
+_ Al q—4
+=4 0 + [ISD
+q q!
+
+rr ee
+(b) If (k -—1)y = jg —landj—-1 F & then wj4i Lj —1) = L((k — 1)y) and
+wi L(j) = L(ky), and
+ct(wjys Ej = 1)) = et(E((k=1)9)) and et(eoje1L(3)) = et( LR).
+
+Thus 1
+q- 0°
+
+E\(L) = (Tj )wjqrbwjqit = SueeSTEACCEO IT)
+cu LR)
+_ q-q' _ q-q'
+= phir tLk=D)) ex Lk)"
+esi 70 103) TOE)
+
+(ce) fj -1=4-1= 0;-17 then wily) =L(G1+7)= L((Gi-1 +1)7) and
+et(wj41L(j)) = et(L((i-1 + 1)9))-
+Thus,
+FL) = (3.06 gstomygit = L(G +1)"
+= whit et (L(G1 +1)" = wit et( E(E, + 1)y*. oO
+
+Note that the product of the factors of type (a) in the previous lemma satisfy
+
+c= TT D=-T] (- + +) ; (3.31)
+
+AG-1) =

@@ -3,13 +3,14 @@
  "doc_id": "arxiv-2211.08164v2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "aff9ff3ef5ac28be3bd457a9e79832ec60e7a69b95c070e09043659fc75d6ce6",
   "file": "2211.08164v2.pdf"
  },
  "provenance": {
-  "title": "INFINITELY MANY RIEMANN SURF ACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS",
-  "authors": "SEBASTI \u00b4AN REYES-CAROCCA AND PIETRO SPEZIALI",
+  "title": "INFINITELY MANY RIEMANN SURFACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS",
+  "authors": "SEBASTI\u00c1N REYES-CAROCCA AND PIETRO SPEZIALI",
   "arxiv": {
    "id": "2211.08164",
    "version": "2",
@@ -20,79 +21,80 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 5,
+  "candidates": 2,
   "by_kind": {
-   "theorem": 3,
-   "remark": 1,
-   "corollary": 1
+   "theorem": 1,
+   "remark": 1
   },
-  "formalization_candidates": 4
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 2
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1,
+   "explanatory": 1
+  },
+  "by_evidence_location": {
+   "elsewhere": 2
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
  },
  "candidates": [
   {
    "kind": "theorem",
    "source_kind": "theorem",
-   "number": null,
-   "name": null,
-   "statement": "There are in\ufb01nitely many pairwise non-isomorphic, non-hyp erelliptic com-",
-   "section_file": "sections/sec-000-1-introduction-and-statement-of-the-result.md",
-   "section_title": "Introduction and statement of the result",
-   "pages": "1-2",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1",
-   "name": null,
-   "statement": "A non-hyperelliptic compact Riemann surface X of genus three has",
-   "section_file": "sections/sec-002-3-proof-of-the-main-theorem.md",
-   "section_title": "Proof of the main theorem",
-   "pages": "3-6",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
    "number": "2",
    "name": null,
-   "statement": "There is a transitive action on the Weierstrass points on a co mpact",
+   "statement": "There is a transitive action on the Weierstrass points on a compact Riemann surface X of genus g > 2 and the Weierstrass points are simple if and only if one of the following statements holds. (1) g = 4 and X is isomorphic to Bring\u2019s curve. (2) g = 3 and X \u2208K3 is isomorphic Ct for some t di\ufb00erent from 0 and 3. RIEMANN SURFACES WITH TRANSITIVE ACTION ON WEIERSTRASS POINTS The theorem above answers a question posed by Laing and Singerman and com- pletes [24, Theorem 15]. For the sake of completeness, we recall that the Weierstrass points of Bring\u2019s curve were found by Edge in [9]; see also [2, Section 3.1].",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [24, Theorem 15], [9], [2, Section 3.1] in sections/sec-003-4-simple-weierstrass-points.md",
+   "external_refs": [
+    "[24, Theorem 15]",
+    "[9]",
+    "[2, Section 3.1]"
+   ],
+   "proof_excerpt": null,
    "section_file": "sections/sec-003-4-simple-weierstrass-points.md",
    "section_title": "Simple Weierstrass points",
    "pages": "6-7",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_note": "Deductive math claim (evidence: elsewhere, Cites external source [24, Theorem 15], [9], [2, Section 3.1] in sections/sec-003-4-simple-weierstrass-points.md). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-003-01",
+   "block_iri": "library/arxiv-2211.08164v2/blocks/thm-sec-003-01",
+   "claim_id": "arxiv-2211.08164v2#theorem:2",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   },
   {
    "kind": "remark",
    "source_kind": "remark",
    "number": "4.1",
    "name": null,
-   "statement": "The Weierstrass points of Fermat\u2019s quartic were obtained by Hasse in",
+   "statement": "The Weierstrass points of Fermat\u2019s quartic were obtained by Hasse in [13]. Besides, the Weierstrass points of C3 can be easily computed, since they are the \ufb01xed points of the involutions conjugate to [x : y : z] 7\u2192[\u2212x : y : z]. Explicitly, the Weierstrass points of C3 are [0 : 1 : \u03b6], [1 : \u03b6 : 0], [\u03b6 : 0 : 1] where \u03b6 = \u00b1 q \u22123\u00b1 \u221a . As simple Weierstrass points are precisely ordinary \ufb02exes, the Weierstrass points of Ct for t\u0338 = 0, \u22121, \u00b12, 3, t0 are the points of Ct at which the Hessian determinant vanishes.",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [13] in sections/sec-003-4-simple-weierstrass-points.md",
+   "external_refs": [
+    "[13]"
+   ],
+   "proof_excerpt": null,
    "section_file": "sections/sec-003-4-simple-weierstrass-points.md",
    "section_title": "Simple Weierstrass points",
    "pages": "6-7",
    "formalization_candidate": false,
    "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "corollary",
-   "source_kind": "corollary",
-   "number": null,
-   "name": null,
-   "statement": "For every prime number p /greaterorequalslant5, there are in\ufb01nitely many pairwise non-",
-   "section_file": "sections/sec-008-the-case-of-positive-characteristic.md",
-   "section_title": "The case of positive characteristic",
-   "pages": "8-8",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "route_to": null,
+   "block_id": "rem-sec-003-02",
+   "block_iri": "library/arxiv-2211.08164v2/blocks/rem-sec-003-02",
+   "claim_id": "arxiv-2211.08164v2#remark:4.1"
   }
  ]
 }

@@ -1,0 +1,79 @@
+---
+doc_id: 52036
+doc_title: "Torus Knots Extremizing the Möbius Energy"
+section_id: page-004
+section_title: "Page 4"
+pages: 4-4
+pdf_page: 4
+source_pdf: 52036.pdf
+source_sha256: ab02866e1f7191b7
+text_source: ocr
+granularity: page
+doc_brief: "Torus Knots Extremizing the Möbius Energy — 9 sections: Page 1; Page 2; Page 3"
+---
+4
+
+Experimental Mathematics, Vol. 2 (1993), No. 1
+
+Computing the Mébius Energy of Torus Knots by Residue Calculus
+Rob Kusner and Gil Stengle
+
+To compute the Mobius energy E(r) of the orbital torus knot T’p,4(r) of (3.2), we first rescale so the knot has
+the parametrization (r e’?”,e’7”), and then use the definition of E:
+
+Qn pytr rp? + @2
+pi+q 1
+£0) = [ay [ dz| =; San - p> 5
+0 dyn \ rem — eu? + [elem — claw (@—y)
+
+jon [ as( —— ete
+= r2|etps — 1]? + Jetas — 1)? 32)?
+
+where we have made the substitution s = x — y. In each of the cases (p,q) = (1,0), (0,1) or (1,1), the orbit
+T,,,q(7) is a round circle, and we have, as already observed in [Freedman et al.],
+
+a /2
+E(S') = 2" [ ds tt =2n f do 4-4 aon a4,
+= jes —1)? 8? 0 sin?g 0? us
+
+with o = 38. Subtracting the first of these equalities from the second equality above for E(r), we get
+
+B(r) ~ B(S") = 2n f ds( a oe __} ).
+
+_ r2|eiPs — 1]? + |etas — 1]? jets — 1)?
+
+Using the identity |e’* — 1? = —e~**(e’* — 1)?, valid for z real, we see that the integrand can be extended to
+a meromorphic differential on C depending only on e’’; the substitution z = e’*, ds = —iz—! dz then expresses
+E(r) as a contour integral along the unit circle, to which we can apply Cauchy’s residue formula:
+
+7
+~(r2p? + q?) -1
+E(r) =4+ 20 [. as ( e=ieqem = 1)? +e-198(ei8 12 e-8(e#* — 1)2
+i(r’p? +9) i
+=442 d -
+aa | 2 (ae —1)?4 21-4(24-1)?— (2-1)?
+
+22 1 2
+_ 2 —(r*p? +)
+=4+447 x Res r2zl-P(gP — 1)? 4 21-429 — 1) :
+
+The last equality depends on the fact that the order-two singularity at z = 1 of the first term in the integral is
+precisely cancelled by the second term. One can also check that the set of poles is invariant under conjugation
+and inversion in S!. Moreover, the residues occur in conjugate pairs and have positive real part, so that each
+pole inside the unit disk contributes to E.
+
+A similar calculation shows that the energy cross-term corresponding to two (p,q)-torus knots, with “polar
+coordinates” (r,t) and (r,t’) in the notation of Section 3, is
+
+—(r?p? +4”)
+p2zl—Pe— Init (zp — e2mit)2 4 y1—ae—2mit! (zq — E2nit!)2" (*)
+
+4? Res
+
+Thus, the total energy of the torus link T'yp,4q(r), for p and q relatively prime (see Section 4 for notation), is
+
+2 =(r°p? +7)
+E(r) = (4 + 40 > x Res yi pe 2mm (gp — e2riim)2 4 yl—ae—2riin (74 — aang):
+§=0 |z/<1
+
+where m and n are fixed integers such that det (7 *) = stil,

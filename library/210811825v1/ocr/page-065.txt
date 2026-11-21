@@ -1,0 +1,57 @@
+This ispeaalent to the formula
+2 arccosh (1 + v3)
+
+from [41], given in the introduction.
+
+3.2 Length spectrum of the Hplza surface
+
+An expression for the lengths of primitive geodesics of the Bolza surface in terms of
+algebraic numbers has been given in [2]. We have seen the form of the generators in the
+
+introduction; an equivalent form is given by
+
+n= ( cosh (2) exp (i ()) sinh )) _ k=0,...,3,
+exp (
+
+i (*)) sinh (20) cosh (20)
+
+where
+
+cosh (3) = cot (<) =14+Vv2
+
+describes the length of the first geodesic. In fact, the periodic orbit matrices for all
+
+geodesics in the spectrum take a similar form:
+_fa 6
+g Be at}?
+
+a=at+V2b
+
+where
+
+and
+
+B=V1+v2(c+V2d), a,b, 6, d € Zlil
+
+The lengths of the corresponding geodesics are determined by
+
+O
+
+We learn from [2] that n runs through all the natural numbers, apart from n = 48 and
+
+|R(a)| =m+V2n, m,nEeN.
+
+n = 72, where there are no orbits. m is the odd natural number that minimizes
+|m/n — VI.
+
+Once we have obtained a sequence of (m,n) pairs from the above rule, we have a handy
+
+way to compute the lengths of primitive geodesics in closed form, in particular
+
+cosh (#5) =m+vV2n, m,ne€N.
+
+Having an exact formula for the length spectrum will be helpful later in the chapter,
+
+when we create bounds on eigenvalue multiplicity using Selberg’s trace formula.
+
+55

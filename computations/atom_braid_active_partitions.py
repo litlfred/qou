@@ -73,7 +73,8 @@ _D_PN_WEIGHTED = _pn_weighted_d()
 # tags above are the same 60-dps arithmetic; measured agreement is ~1e-60, so
 # 1e-40 separates "same template" from "different template" (the nearest two,
 # -h/2 and the colour-weighted pn shift, are 7.2e-5 apart).
-_TAG_TOL = mp.mpf("1e-40")
+with mp.workdps(60):
+    _TAG_TOL = mp.mpf("1e-40")
 
 
 def all_partitions(n: int):

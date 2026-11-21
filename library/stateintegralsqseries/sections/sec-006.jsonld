@@ -9,13 +9,14 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Proof of Theorem 1.1",
-  "pageStart": 10,
-  "pageEnd": 10,
+  "title": "A residue computation",
+  "pageStart": 6,
+  "pageEnd": 8,
   "contains": [
-    "library/stateintegralsqseries/blocks/prose-sec-006"
+    "library/stateintegralsqseries/blocks/prose-sec-006",
+    "library/stateintegralsqseries/blocks/lem-sec-006-01"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/stateintegralsqseries",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/stateintegralsqseries",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/stateintegralsqseries/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/stateintegralsqseries/manifest.jsonld",
   "provenance": "ingested"
 }

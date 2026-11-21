@@ -1,0 +1,45 @@
+4 R. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392
+
+Remark 5. Let f be the multi-linear extension of we. Since f is harmonic and since
+
+V7 log f = vt - ve we see that in order for f to be log-concave, the Hessian of
+f can have at most one positive eigenvalue, due to which the family of log-concave
+functions, or in other words functions satisfying condition (4) with @ = 0, is rather
+restricted. Semi-log-concave measures are a much richer family, as demonstrated below.
+
+1.1. A lower bound on the entropy
+
+Our second result addresses the question of finding conditions under which the entropy
+of the measure v is close to that of the corresponding product measure, having the same
+marginals as v. This result is inspired by a corresponding bound due to Anari, Oveis-
+Gharan and Vinzant [3, Theorem 5.2], see the discussion below.
+
+Given a measure v on C,,, we define the entropy of v by
+
+H(v) = fo oy (y),
+
+the entropy of v. Moreover, for all i let 7;(v) be the marginal of v onto the i-th coordinate,
+and define
+
+H(v) = S H(ni(v)).
+
+i€[n]
+
+A well-known fact is that H(v) < H(v). We show that under a log-concavity-type con-
+dition, this inequality can be reversed. For a square matrix A, define diag(A) to be the
+diagonal matrix whose diagonal entries coincide with those of A.
+
+Theorem 6. Let v be a probability measure on C,. Suppose that, for some B > 1, v
+satisfies the condition
+
+V?L[v\(x) X Bdiag (V?L[y](x)), Va € R”. (5)
+Then one has
+Hv) < BH).
+
+Remark 7. Condition (5) is stronger than condition (2). Indeed, it is not hard to check
+that diag (V?L[v](x)) < In (see formula (8) below).
+
+1.2. An application: concentration of negatively dependent random variables
+
+For a sequence of Bernoulli variables Xj, ..., Xn, there are several notions of negative-
+dependence between those variables (see e.g., [4,17,16,5]), some of which are known or

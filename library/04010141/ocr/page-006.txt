@@ -1,0 +1,45 @@
+146 J.J. Graham and G.I. Lehrer
+
+Dz. This is consistent with morphisms being composed from right to left.
+The endomorphisms of n € T form an algebra Homy(n,n) = TLn(q).
+Marked diagrams may be similarly concatenated according to rules we
+shall now state; this produces a new category, TB, the Temperley-Lieb
+category of type B. The composition rules are as follows.
+
+A marked diagram is proper if it has no loops and each arc has at
+most one mark. The following rules reduce the concatenation of any two
+diagrams to an R linear combination of proper diagrams:
+
+2.5. (i) If u is a diagram and L is a loop with no marks, w UL =
+Ogu.
+
+(ii) If, in (i), L has one mark, wil L = kp, where «= fol + 2.
+
+(iii) If some arc of 4 has more than one mark and ' is the diagram
+obtained by removing a mark from the arc concerned, then p = 6gp’.
+
+Now consider the following marked diagrams from n to n.
+
+1 2 n-1ln a i+]
+| | A |
+i ' ' '
+— lan
+1 2 n-1ln a itl
+co:nwn Ginon, l<i<n-1
+
+The next result describes TLB,,(q, Q) algebraically.
+
+Proposition 2.6 (cf. [18, 5.8]). (i) The Temperley-Lieb algebra
+TLB,(q,Q) is generated as R-algebra by {co,c1,.-.,Cn—1} subject to
+the relations
+
+& = 6Q¢0
+co} = b,c; forl<i<n-1
+(2.7) CiCi41G = forl<i<n—2
+GG1¢G = CG for2<i<n-1
+ac; = oc if|i—j|>1,0<ijcgn-1
+C1 Coc, = KC},
+where k = $+2 and 6, = —(r+ x7) forz € R*.
+
+(ii) The elements ci,...,cn—1 generate a subalgebra of TLBn(q, Q)
+isomorphic to the usual Temperley-Lieb algebra TL, (q) of type An-1.

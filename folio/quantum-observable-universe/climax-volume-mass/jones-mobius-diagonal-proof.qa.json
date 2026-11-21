@@ -652,7 +652,7 @@
           "in_degree": 0,
           "cone_size": 60,
           "depth": 22,
-          "pagerank": 7.6e-05,
+          "pagerank": 0.000076,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -984,6 +984,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "153ebb03de8b",
+          "ts": "85376d175daa"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:00:11.472Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "[sidecar review 2026-11-15, issue #8030] C(ϱ) = tr_M = J_K is asserted (\"by the Jones–Markov identity\"), not derived: nothing connects a diagonal residue of an embedding-dependent integral to a Markov trace. J_K is an isotopy invariant and T_reg − E_cat is embedding-dependent, so the claim needs that difference shown constant on isotopy classes. The surreal reading equates an infinite (ord_ω = +1) quantity with the finite J_K(q)."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1358,7 +1374,7 @@
         "reviewed_at": "2026-08-15T10:31:00.126Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
-        "evidence": "1 negation-contrast construction(s): \", not a claim about the limit.\" \u2014 state the positive claim directly"
+        "evidence": "1 negation-contrast construction(s): \", not a claim about the limit.\" — state the positive claim directly"
       },
       {
         "field_hash": {
@@ -1702,6 +1718,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-23T15:47:43.944Z",
+  "updated_at": "2026-11-15T22:00:11.472Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

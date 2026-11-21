@@ -1,0 +1,1 @@
+Fix h1 > 0. Then there exist constants βht jc (d, h1) > 0 and ε > 0 such that, for (β, h) with β ≤βht jc (d) and |h| ≤h1, we have the following inequality: X X: x1∈Xand e(X)≥R |ϕ(X)| (tanh β)e(X)| tanh βh|b(X) ≤εR.

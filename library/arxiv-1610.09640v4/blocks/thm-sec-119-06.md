@@ -1,0 +1,1 @@
+Let A be a noetherian ring, and let R be a NC dualizing complex over A. (1) The two ring homomorphisms chmD R,A, chmD R,Aop : Cent(A) →EndD(Aen)(R) are bijective. (2) If R is a rigid NC dualizing complex, then chmD R,A = chmD R,Aop.

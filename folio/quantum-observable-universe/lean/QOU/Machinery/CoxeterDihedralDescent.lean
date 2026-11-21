@@ -44,7 +44,7 @@ with no trigonometry.
 
 -- Ref: [bjornerbrenti2005] Combinatorics of Coxeter Groups, §3.3
 -- Ref: [humphreys1990] Reflection Groups and Coxeter Groups, §5.
--- Ref: [manuscript] beans qou-06h7, qou-1u90
+-- Ref: [leitner2026] beans qou-06h7, qou-1u90
 -/
 
 namespace QOU.Machinery.CoxeterDihedralDescent

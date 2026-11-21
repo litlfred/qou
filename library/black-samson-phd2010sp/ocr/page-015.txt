@@ -1,0 +1,38 @@
+sequence of planar isotopies and the following three local moves:
+
+(R 1) . od oo
+
+Z
+(R Il) C va as
+<
+
+N x
+(R ID) a — [
+» ) ‘ ay
+
+There are many equivalent ways to define braids (see, e.g. [7] or [25, chapter 1]). A
+
+XOU 0
+
+11.1.2. Braids
+
+geometric braid with d strands is a smooth embedding of of d disjoint arcs in R? x [0,1] such
+that the endpoints of each strand have coordinates (i,0,0) and (7(z),0,1) for some permutation
+nw € Sy; and the height function (projecting onto the third coordinate) has no critical points. By a
+geometric braid isotopy, we mean an isotopy of the ambient Euclidean space keeping the endpoints
+of the strands fixed. When we speak of a braid, we mean an isotopy class of geometric braids. Let
+Bg denote collection of braids on d strands.
+
+By analogy with link diagrams, we consider geometric braid diagrams consisting of im-
+mersed arcs in the strip R x [0,1] connecting points (i,0) to (m(i),1) for i = 1,...,d satisfying
+the conditions that projection onto the second coordinate has no critical points and that self-
+intersections are transverse. Each transverse double point in a geometric braid diagram is called a
+crossing and carries with it the data of which strand passes over and which strand passes under.
+There is an appropriate notion of isotopy of geometric braid diagrams that allows one to speak
+simply of braid diagrams, meaning isotopy classes.
+
+Braids naturally carry the structure of a group whose operation is given by placing dia-
+grams on top of one another. We now define the braid group abstractly, following Artin [3]. Fix
+d> 1, Let Xg = {o1,...,o4-1} be the set of braid generators, and let L$ denote the set. of words
+
+in the symbols Dg U Dy. Then, Bq is the braid group on d strands, that is, the quotient of the

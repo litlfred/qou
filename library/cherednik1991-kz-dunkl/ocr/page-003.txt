@@ -1,46 +1,56 @@
 Affine Hecke algebras 413
-Independently, analogous isomorphisms were obtained in [Ch 2] for
-W -- Cn+ 1 as a result of some direct calculation of the monodromy matrices for the
-generalized Knizhnik-Zamolodchikov equation on JP'. It was mentioned there
-that the final formula (an expression of generators of f in terms of these of p') can
+
+Independently, analogous isomorphisms were obtained in [Ch2] for
+W = &,4, asa result of some direct calculation of the monodromy matrices for the
+generalized Knizhnik-Zamolodchikov equation on #’. It was mentioned there
+that the final formula (an expression of generators of # in terms of these of #7’) can
 be considered independently of its monodromy interpretation and can be directly
 extended to arbitrary Weyl groups W.
+
 Summarizing, we have the following approaches: guess and check formulas for
-π: compl → fcompl without any preliminary theory, use the intertwiners (as was
+Ht: Heomp: > H comp: Without any preliminary theory, use the intertwiners (as was
 explained above) or calculate some monodromy representation. A fourth possibil-
-ity is to use the Lusztig-Lascoux-Schitzenberger operators (see Sect. 2).
+ity is to use the Lusztig-Lascoux-Schiitzenberger operators (see Sect. 2).
+
 Another part of this paper (Sect. 3) is connected with the following construction.
-It was demonstrated in [Ch 1, Ch 2 that one can define some kind of Knizhnik-
+It was demonstrated in [Ch 1, Ch2] that one can define some kind of Knizhnik-
 Zamolodchikov equations for arbitrary classical W-invariant r-matrices. The latter
 are certain quasi-classical limits of the quantum W-invariant R-matrices from
-[Ch 5] (see also [Ch 1]). These two notions for W = n+1 are equivalent respect-
+[Ch 5] (see also [Ch 1]). These two notions for W = G,, are equivalent respect-
 ively to the ordinary concepts of r-matrices and R-matrices from the Soliton theory
-(Faddeev, Sklyanin et al.). Some r-matrices of type Dn were introduced by Sklyanin
+(Faddeev, Sklyanin et al.). Some r-matrices of type D,, were introduced by Sklyanin
 for certain integrable equations with boundary conditions.
-We consider our version of the Lusztig-Lascoux-Schitzenberger operators as
+
+We consider our version of the Lusztig-Lascoux-Schiitzenberger operators as
 a certain quantum R-matrix (with a new type of dependence on the spectral
 parameter). The quasi-classical limit of these operators of the first kind (connected
-with ') gives the family of Dunkl operators [Du, He2]. The operators of the
-second kind (for ) produce some family of “trigonometric" operators, which are
-close to Heckman's ones [He1j but do not coincide with them.
+with #') gives the family of Dunkl operators [Du, He2]. The operators of the
+second kind (for #) produce some family of “trigonometric” operators, which are
+close to Heckman’s ones [He1] but do not coincide with them.
+
 We note that the origins of all these operators are in the Bernstein-Gelfand-
 Gelfand and Demazure difference operations [BGG, De]. The Laplacians defined
-for the Dunkl and Heckman operators are conjugate to the Schrodinger “rational
-and trigonometric" operators from the quantum theory of the Calogero-Moser and
+for the Dunkl and Heckman operators are conjugate to the Schrédinger “rational
+and trigonometric” operators from the quantum theory of the Calogero-Moser and
 Olshanetsky-Perelomov integrable systems (see e.g. [HO]). Our trigonometric
-Macdonald's q-analogues of the Jacobi polynomials. The corresponding property
-of Heckman's operators (to be self-adjoint with respect to some form) holds good
+operators have the above property as well. Another application is connected with
+Macdonald’s qg-analogues of the Jacobi polynomials. The corresponding property
+of Heckman’s operators (to be self-adjoint with respect to some form) holds good
 for our operators as well.
+
 The main point of this paper is a common definition for both the Knizhnik-
-Zamolodchikov and the Dunkl operators (together with their trigonometric ana-
-logues) on the basis of the general form of the Lusztig-Lascoux-Schitzenberger
+Zamolodchikov and the Dunk] operators (together with their trigonometric ana-
+logues) on the basis of the general form of the Lusztig-Lascoux-Schiitzenberger
 operators. It gives birth to many interesting algebraic and analytical questions in
 the theory of Hecke algebras. Moreover, this construction should be connected
 with some (maybe new) quantum groups. The corresponding quasi-classical limits
 are expected to yield a new kind of t-functions.
+
 1 Affine Hecke algebras and the intertwiners
+
 Most of the following facts are known. Nevertheless we prefer to give the proofs,
 because they are short and either new or useful for Sect. 2. The main references are
-[Ma, Ka, Ro, KL, Lu1, Lu2, Ch3].
-Let Z - {α)  Rn be a root system of type An, Bn, . . : , G2, and let S. be the
-orthogonal reflections in the hyperplanes (α, u) =- O with respect to the canonical
+[Ma, Ka, Ro, KL, Lul, Lu2, Ch3].
+
+Let © = {a} c R" be a root system of type A,, Bn, ..-, G2, and let s, be the
+orthogonal reflections in the hyperplanes (a, u) = 0 with respect to the canonical

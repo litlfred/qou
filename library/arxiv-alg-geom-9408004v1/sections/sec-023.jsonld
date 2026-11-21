@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-alg-geom-9408004v1/sections/sec-023",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Front matter (page 24)",
+  "pageStart": 24,
+  "pageEnd": 24,
+  "contains": [
+    "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-023"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-alg-geom-9408004v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-alg-geom-9408004v1/manifest.jsonld",
+  "provenance": "ingested"
+}

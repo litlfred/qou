@@ -7,10 +7,11 @@
   "bytes": 974336,
   "pages": 70,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,30 @@
    "stamp_date": "13 Oct 2011"
   },
   "doi": null,
-  "title": "FLOER COHOMOLOGY AND PENCILS OF QUADRICS IV AN SMITH",
-  "authors_raw": null,
+  "title": "FLOER COHOMOLOGY AND PENCILS OF QUADRICS",
+  "authors_raw": "IVAN SMITH",
   "title_lines": [
-   "FLOER COHOMOLOGY AND PENCILS OF QUADRICS",
-   "IV AN SMITH"
+   "FLOER COHOMOLOGY AND PENCILS OF QUADRICS"
   ],
-  "abstract": "There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces. W e investigate symplectic aspects of this relationship, with a view to applications in low-dimen sional topology.",
+  "abstract": "There is a classical relationship in algebraic geometry between a hyperelliptic curve and an associated pencil of quadric hypersurfaces. We investigate symplectic aspects of this relationship, with a view to applications in low-dimensional topology.",
   "docinfo": {
    "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20241126173709-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20241126173709-05'00'"
+  },
+  "title_raw": "FLOER COHOMOLOGY AND PENCILS OF QUADRICS",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "FLOER COHOMOLOGY AND PENCILS OF QUADRICS",
+   "outline": "1. Introduction",
+   "text": "FLOER COHOMOLOGY AND PENCILS OF QUADRICS",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "FLOER COHOMOLOGY AND PENCILS OF QUADRICS IV AN SMITH"
  },
  "toc": [
   {
@@ -41,299 +52,1182 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Two contexts",
    "page": 2,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "The theorem",
    "page": 2,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Entropy",
    "page": 3,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Representation varieties",
    "page": 3,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Instanton Floer homology",
    "page": 4,
    "source": "outline",
-   "number": "1.5"
+   "number": "1.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Witten's conjecture",
    "page": 5,
    "source": "outline",
-   "number": "1.6"
+   "number": "1.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Homological Mirror Symmetry",
    "page": 6,
    "source": "outline",
-   "number": "1.7"
+   "number": "1.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Another birational motivation",
    "page": 7,
    "source": "outline",
-   "number": "1.8"
+   "number": "1.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Outline of proof",
    "page": 7,
    "source": "outline",
-   "number": "1.9"
+   "number": "1.9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "The representation variety",
    "page": 9,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Topology",
    "page": 9,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Monodromy and degenerations",
    "page": 10,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Fibred 3-manifolds",
    "page": 12,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Faithfulness",
    "page": 13,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "A fixed point theorem",
    "page": 15,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 1,
    "title": "The Fukaya category",
    "page": 17,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Floer and quantum cohomology",
    "page": 17,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Higher order products",
    "page": 19,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "Twisting and generation",
    "page": 21,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "Functors from quilts",
    "page": 23,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "Grading and deformations",
    "page": 26,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "Formality",
    "page": 26,
    "source": "outline",
-   "number": "3.6"
+   "number": "3.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "The Fukaya category of a curve",
    "page": 29,
    "source": "outline",
-   "number": "3.7"
+   "number": "3.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 1,
    "title": "From the base locus to the relative quadric",
    "page": 30,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 2,
    "title": "The Fukaya category of a quadric",
    "page": 30,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 2,
    "title": "Hyperelliptic curves and quadrics",
    "page": 33,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 2,
    "title": "Idempotents for functors",
    "page": 36,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 2,
    "title": "An illustrative example",
    "page": 37,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "37"
   },
   {
    "level": 2,
    "title": "Idempotents and blow-ups",
    "page": 41,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
   },
   {
    "level": 2,
    "title": "Spinning",
    "page": 49,
    "source": "outline",
-   "number": "4.6"
+   "number": "4.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "49"
   },
   {
    "level": 1,
    "title": "From the curve to the relative quadric",
    "page": 52,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "52"
   },
   {
    "level": 2,
    "title": "Matching Spheres",
    "page": 52,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "52"
   },
   {
    "level": 2,
    "title": "Thimbles",
    "page": 54,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "54"
   },
   {
    "level": 2,
    "title": "Exterior Algebra",
    "page": 56,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "56"
   },
   {
    "level": 2,
    "title": "The cubic term",
    "page": 59,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "59"
   },
   {
    "level": 2,
    "title": "Finite determinacy",
    "page": 62,
    "source": "outline",
-   "number": "5.5"
+   "number": "5.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "62"
   },
   {
    "level": 1,
    "title": "References",
    "page": 67,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "67"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Lagrangian spheres from the g = 2 pentagram and its g = 3 cousin; on the left one radial path and one basic path are also dotted",
+   "page": 29,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "29"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Dehn twists for the genus 2 pencil on K3",
+   "page": 35,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "35"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "A Lagrangian torus in O(−1) All the holomorphic disks with boundaries on the ﬁbres of the moment map can be computed explicitly, cf. [19, 7]; in this case the torus bounds 3 families of Maslov index 2 disks, all having the same area, so T is in fact monotone. The three dotted lines emanating from th",
+   "page": 38,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "38"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The symplectic cut of a Lagrangian tube in Blp∐q(C2) (the dotted balls are collapsed in performing the blow-up)",
+   "page": 40,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "40"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "The moment polytope for F1 and associated divisors",
+   "page": 46,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "46"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Possible holomorphic triangles",
+   "page": 57,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "57"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Lagrange surgery at a vertex",
+   "page": 58,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "58"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "70",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1485,
+   "n_words": 239,
+   "label_start": "1",
+   "label_end": "2"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
-   "page_end": 1,
+   "page_start": 2,
+   "page_end": 2,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-001-11-two-contexts",
    "number": "1.1",
    "title": "Two contexts",
    "level": 2,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1219,
+   "n_words": 200,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-002-12-the-theorem",
    "number": "1.2",
    "title": "The theorem",
    "level": 2,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 3,
-   "n_chars": 5293,
-   "n_words": 893
+   "n_chars": 2779,
+   "n_words": 451,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-003-13-entropy",
@@ -342,8 +1236,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 1201,
-   "n_words": 194
+   "n_chars": 1195,
+   "n_words": 188,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
    "id": "sec-004-14-representation-varieties",
@@ -352,8 +1248,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 3648,
-   "n_words": 636
+   "n_chars": 3610,
+   "n_words": 598,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-005-15-instanton-floer-homology",
@@ -362,8 +1260,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 5456,
-   "n_words": 922
+   "n_chars": 5439,
+   "n_words": 905,
+   "label_start": "4",
+   "label_end": "6"
   },
   {
    "id": "sec-006-17-homological-mirror-symmetry",
@@ -372,8 +1272,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 4442,
-   "n_words": 765
+   "n_chars": 4425,
+   "n_words": 747,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
    "id": "sec-007-18-another-birational-motivation",
@@ -382,8 +1284,10 @@
    "level": 2,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 1543,
-   "n_words": 277
+   "n_chars": 1538,
+   "n_words": 272,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
    "id": "sec-008-19-outline-of-proof",
@@ -392,8 +1296,10 @@
    "level": 2,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 4944,
-   "n_words": 762
+   "n_chars": 4913,
+   "n_words": 731,
+   "label_start": "7",
+   "label_end": "9"
   },
   {
    "id": "sec-009-2-the-representation-variety",
@@ -401,237 +1307,373 @@
    "title": "The representation variety",
    "level": 1,
    "page_start": 9,
-   "page_end": 10,
-   "n_chars": 5658,
-   "n_words": 1017
+   "page_end": 9,
+   "n_chars": 29,
+   "n_words": 4,
+   "label_start": "9",
+   "label_end": "9"
   },
   {
-   "id": "sec-010-22-monodromy-and-degenerations",
+   "id": "sec-010-21-topology",
+   "number": "2.1",
+   "title": "Topology",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 5517,
+   "n_words": 955,
+   "label_start": "9",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-011-22-monodromy-and-degenerations",
    "number": "2.2",
    "title": "Monodromy and degenerations",
    "level": 2,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 4996,
-   "n_words": 901
+   "n_chars": 4992,
+   "n_words": 897,
+   "label_start": "10",
+   "label_end": "12"
   },
   {
-   "id": "sec-011-23-fibred-3-manifolds",
+   "id": "sec-012-23-fibred-3-manifolds",
    "number": "2.3",
    "title": "Fibred 3-manifolds",
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 4053,
-   "n_words": 685
+   "n_chars": 2992,
+   "n_words": 511,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
-   "id": "sec-012-24-faithfulness",
+   "id": "sec-013-24-faithfulness",
    "number": "2.4",
    "title": "Faithfulness",
    "level": 2,
    "page_start": 13,
-   "page_end": 16,
-   "n_chars": 12359,
-   "n_words": 2215
+   "page_end": 15,
+   "n_chars": 6590,
+   "n_words": 1123,
+   "label_start": "13",
+   "label_end": "15"
   },
   {
-   "id": "sec-013-3-the-fukaya-category",
+   "id": "sec-014-25-a-fixed-point-theorem",
+   "number": "2.5",
+   "title": "A fixed point theorem",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 7985,
+   "n_words": 1395,
+   "label_start": "15",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-015-3-the-fukaya-category",
    "number": "3",
    "title": "The Fukaya category",
    "level": 1,
-   "page_start": 16,
+   "page_start": 17,
    "page_end": 17,
-   "n_chars": 1459,
-   "n_words": 266
+   "n_chars": 257,
+   "n_words": 50,
+   "label_start": "17",
+   "label_end": "17"
   },
   {
-   "id": "sec-014-31-floer-and-quantum-cohomology",
+   "id": "sec-016-31-floer-and-quantum-cohomology",
    "number": "3.1",
    "title": "Floer and quantum cohomology",
    "level": 2,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 7414,
-   "n_words": 1323
+   "n_chars": 7364,
+   "n_words": 1273,
+   "label_start": "17",
+   "label_end": "19"
   },
   {
-   "id": "sec-015-32-higher-order-products",
+   "id": "sec-017-32-higher-order-products",
    "number": "3.2",
    "title": "Higher order products",
    "level": 2,
    "page_start": 19,
    "page_end": 21,
-   "n_chars": 6061,
-   "n_words": 1004
+   "n_chars": 6049,
+   "n_words": 992,
+   "label_start": "19",
+   "label_end": "21"
   },
   {
-   "id": "sec-016-33-twisting-and-generation",
+   "id": "sec-018-33-twisting-and-generation",
    "number": "3.3",
    "title": "Twisting and generation",
    "level": 2,
    "page_start": 21,
-   "page_end": 26,
-   "n_chars": 15756,
-   "n_words": 2738
+   "page_end": 23,
+   "n_chars": 7106,
+   "n_words": 1232,
+   "label_start": "21",
+   "label_end": "23"
   },
   {
-   "id": "sec-017-35-grading-and-deformations",
+   "id": "sec-019-34-functors-from-quilts",
+   "number": "3.4",
+   "title": "Functors from quilts",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 26,
+   "n_chars": 8539,
+   "n_words": 1475,
+   "label_start": "23",
+   "label_end": "26"
+  },
+  {
+   "id": "sec-020-35-grading-and-deformations",
    "number": "3.5",
    "title": "Grading and deformations",
    "level": 2,
    "page_start": 26,
    "page_end": 26,
-   "n_chars": 3134,
-   "n_words": 560
+   "n_chars": 2778,
+   "n_words": 511,
+   "label_start": "26",
+   "label_end": "26"
   },
   {
-   "id": "sec-018-36-formality",
+   "id": "sec-021-36-formality",
    "number": "3.6",
    "title": "Formality",
    "level": 2,
    "page_start": 26,
-   "page_end": 30,
-   "n_chars": 12192,
-   "n_words": 2181
+   "page_end": 29,
+   "n_chars": 7415,
+   "n_words": 1294,
+   "label_start": "26",
+   "label_end": "29"
   },
   {
-   "id": "sec-019-4-from-the-base-locus-to-the-relative-quadric",
+   "id": "sec-022-37-the-fukaya-category-of-a-curve",
+   "number": "3.7",
+   "title": "The Fukaya category of a curve",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 5083,
+   "n_words": 918,
+   "label_start": "29",
+   "label_end": "30"
+  },
+  {
+   "id": "sec-023-4-from-the-base-locus-to-the-relative-quadric",
    "number": "4",
    "title": "From the base locus to the relative quadric",
    "level": 1,
    "page_start": 30,
-   "page_end": 33,
-   "n_chars": 9168,
-   "n_words": 1642
+   "page_end": 30,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "30",
+   "label_end": "30"
   },
   {
-   "id": "sec-020-42-hyperelliptic-curves-and-quadrics",
+   "id": "sec-024-41-the-fukaya-category-of-a-quadric",
+   "number": "4.1",
+   "title": "The Fukaya category of a quadric",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 33,
+   "n_chars": 9078,
+   "n_words": 1629,
+   "label_start": "30",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-025-42-hyperelliptic-curves-and-quadrics",
    "number": "4.2",
    "title": "Hyperelliptic curves and quadrics",
    "level": 2,
    "page_start": 33,
    "page_end": 36,
-   "n_chars": 8942,
-   "n_words": 1619
+   "n_chars": 8950,
+   "n_words": 1625,
+   "label_start": "33",
+   "label_end": "36"
   },
   {
-   "id": "sec-021-43-idempotents-for-functors",
+   "id": "sec-026-43-idempotents-for-functors",
    "number": "4.3",
    "title": "Idempotents for functors",
    "level": 2,
    "page_start": 36,
    "page_end": 37,
-   "n_chars": 3298,
-   "n_words": 609
+   "n_chars": 3295,
+   "n_words": 606,
+   "label_start": "36",
+   "label_end": "37"
   },
   {
-   "id": "sec-022-44-an-illustrative-example",
+   "id": "sec-027-44-an-illustrative-example",
    "number": "4.4",
    "title": "An illustrative example",
    "level": 2,
    "page_start": 37,
    "page_end": 41,
-   "n_chars": 12136,
-   "n_words": 2199
+   "n_chars": 12090,
+   "n_words": 2151,
+   "label_start": "37",
+   "label_end": "41"
   },
   {
-   "id": "sec-023-45-idempotents-and-blow-ups",
+   "id": "sec-028-45-idempotents-and-blow-ups",
    "number": "4.5",
    "title": "Idempotents and blow-ups",
    "level": 2,
    "page_start": 41,
    "page_end": 49,
-   "n_chars": 26409,
-   "n_words": 4907
+   "n_chars": 26381,
+   "n_words": 4879,
+   "label_start": "41",
+   "label_end": "49"
   },
   {
-   "id": "sec-024-46-spinning",
+   "id": "sec-029-46-spinning",
    "number": "4.6",
    "title": "Spinning",
    "level": 2,
    "page_start": 49,
    "page_end": 52,
-   "n_chars": 11795,
-   "n_words": 2168
+   "n_chars": 11718,
+   "n_words": 2091,
+   "label_start": "49",
+   "label_end": "52"
   },
   {
-   "id": "sec-025-5-from-the-curve-to-the-relative-quadric",
+   "id": "sec-030-5-from-the-curve-to-the-relative-quadric",
    "number": "5",
    "title": "From the curve to the relative quadric",
    "level": 1,
    "page_start": 52,
    "page_end": 52,
-   "n_chars": 181,
-   "n_words": 37
+   "n_chars": 182,
+   "n_words": 38,
+   "label_start": "52",
+   "label_end": "52"
   },
   {
-   "id": "sec-026-51-matching-spheres",
+   "id": "sec-031-51-matching-spheres",
    "number": "5.1",
    "title": "Matching Spheres",
    "level": 2,
    "page_start": 52,
    "page_end": 54,
-   "n_chars": 6629,
-   "n_words": 1166
+   "n_chars": 6616,
+   "n_words": 1151,
+   "label_start": "52",
+   "label_end": "54"
   },
   {
-   "id": "sec-027-52-thimbles",
+   "id": "sec-032-52-thimbles",
    "number": "5.2",
    "title": "Thimbles",
    "level": 2,
    "page_start": 54,
    "page_end": 56,
-   "n_chars": 7966,
-   "n_words": 1318
+   "n_chars": 7937,
+   "n_words": 1289,
+   "label_start": "54",
+   "label_end": "56"
   },
   {
-   "id": "sec-028-53-exterior-algebra",
+   "id": "sec-033-53-exterior-algebra",
    "number": "5.3",
    "title": "Exterior Algebra",
    "level": 2,
    "page_start": 56,
    "page_end": 59,
-   "n_chars": 9641,
-   "n_words": 1651
+   "n_chars": 9512,
+   "n_words": 1601,
+   "label_start": "56",
+   "label_end": "59"
   },
   {
-   "id": "sec-029-54-the-cubic-term",
+   "id": "sec-034-54-the-cubic-term",
    "number": "5.4",
    "title": "The cubic term",
    "level": 2,
    "page_start": 59,
    "page_end": 62,
-   "n_chars": 9069,
-   "n_words": 1585
+   "n_chars": 9103,
+   "n_words": 1619,
+   "label_start": "59",
+   "label_end": "62"
   },
   {
-   "id": "sec-030-55-finite-determinacy",
+   "id": "sec-035-55-finite-determinacy",
    "number": "5.5",
    "title": "Finite determinacy",
    "level": 2,
    "page_start": 62,
    "page_end": 67,
-   "n_chars": 17485,
-   "n_words": 3144
+   "n_chars": 17486,
+   "n_words": 3145,
+   "label_start": "62",
+   "label_end": "67"
   },
   {
-   "id": "sec-031-references",
+   "id": "sec-036-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 67,
    "page_end": 70,
-   "n_chars": 12478,
-   "n_words": 1833
+   "n_chars": 12427,
+   "n_words": 1782,
+   "label_start": "67",
+   "label_end": "70"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 38,
-  "sections": 32,
-  "chars_total": 234806,
+  "toc_inferred_entries": 0,
+  "figure_entries": 7,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 7,
+    "items": [
+     "The theorem",
+     "Entropy",
+     "Topology",
+     "A ﬁxed point theorem",
+     "Formality",
+     "Spinning",
+     "Thimbles"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 38,
+  "chars_total": 234074,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "QuadricFukaya-Final.tex",
@@ -644,22 +1686,29 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-001-11-two-contexts",
      "title": "Two contexts",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.918,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-12-the-theorem",
      "title": "The theorem",
-     "prose_ratio": 0.974,
-     "coverage_ratio": 0.618,
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -675,7 +1724,7 @@
      "id": "sec-004-14-representation-varieties",
      "title": "Representation varieties",
      "prose_ratio": 0.948,
-     "coverage_ratio": 0.987,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -691,7 +1740,7 @@
      "id": "sec-006-17-homological-mirror-symmetry",
      "title": "Homological Mirror Symmetry",
      "prose_ratio": 0.969,
-     "coverage_ratio": 0.984,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -699,7 +1748,7 @@
      "id": "sec-007-18-another-birational-motivation",
      "title": "Another birational motivation",
      "prose_ratio": 0.963,
-     "coverage_ratio": 0.99,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -707,130 +1756,153 @@
      "id": "sec-008-19-outline-of-proof",
      "title": "Outline of proof",
      "prose_ratio": 0.954,
-     "coverage_ratio": 0.991,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-009-2-the-representation-variety",
      "title": "The representation variety",
-     "prose_ratio": 0.511,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.01,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-010-22-monodromy-and-degenerations",
+     "id": "sec-010-21-topology",
+     "title": "Topology",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-22-monodromy-and-degenerations",
      "title": "Monodromy and degenerations",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-011-23-fibred-3-manifolds",
+     "id": "sec-012-23-fibred-3-manifolds",
      "title": "Fibred 3-manifolds",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-012-24-faithfulness",
+     "id": "sec-013-24-faithfulness",
      "title": "Faithfulness",
-     "prose_ratio": 0.554,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.399,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-013-3-the-fukaya-category",
+     "id": "sec-014-25-a-fixed-point-theorem",
+     "title": "A fixed point theorem",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-3-the-fukaya-category",
      "title": "The Fukaya category",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-014-31-floer-and-quantum-cohomology",
+     "id": "sec-016-31-floer-and-quantum-cohomology",
      "title": "Floer and quantum cohomology",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-015-32-higher-order-products",
+     "id": "sec-017-32-higher-order-products",
      "title": "Higher order products",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-016-33-twisting-and-generation",
+     "id": "sec-018-33-twisting-and-generation",
      "title": "Twisting and generation",
-     "prose_ratio": 0.612,
-     "coverage_ratio": 0.969,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.375,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-017-35-grading-and-deformations",
+     "id": "sec-019-34-functors-from-quilts",
+     "title": "Functors from quilts",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-35-grading-and-deformations",
      "title": "Grading and deformations",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-018-36-formality",
+     "id": "sec-021-36-formality",
      "title": "Formality",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-019-4-from-the-base-locus-to-the-relative-quadric",
-     "title": "From the base locus to the relative quadric",
-     "prose_ratio": 0.574,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-022-37-the-fukaya-category-of-a-curve",
+     "title": "The Fukaya category of a curve",
+     "result": "no matching \\section"
     },
     {
-     "id": "sec-020-42-hyperelliptic-curves-and-quadrics",
+     "id": "sec-023-4-from-the-base-locus-to-the-relative-quadric",
+     "title": "From the base locus to the relative quadric",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-024-41-the-fukaya-category-of-a-quadric",
+     "title": "The Fukaya category of a quadric",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-42-hyperelliptic-curves-and-quadrics",
      "title": "Hyperelliptic curves and quadrics",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-021-43-idempotents-for-functors",
+     "id": "sec-026-43-idempotents-for-functors",
      "title": "Idempotents for functors",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-022-44-an-illustrative-example",
+     "id": "sec-027-44-an-illustrative-example",
      "title": "An illustrative example",
      "prose_ratio": 0.342,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-023-45-idempotents-and-blow-ups",
+     "id": "sec-028-45-idempotents-and-blow-ups",
      "title": "Idempotents and blow-ups",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-024-46-spinning",
+     "id": "sec-029-46-spinning",
      "title": "Spinning",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-025-5-from-the-curve-to-the-relative-quadric",
+     "id": "sec-030-5-from-the-curve-to-the-relative-quadric",
      "title": "From the curve to the relative quadric",
      "prose_ratio": 0.017,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-026-51-matching-spheres",
+     "id": "sec-031-51-matching-spheres",
      "title": "Matching Spheres",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-027-52-thimbles",
+     "id": "sec-032-52-thimbles",
      "title": "Thimbles",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-028-53-exterior-algebra",
+     "id": "sec-033-53-exterior-algebra",
      "title": "Exterior Algebra",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-029-54-the-cubic-term",
+     "id": "sec-034-54-the-cubic-term",
      "title": "The cubic term",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-030-55-finite-determinacy",
+     "id": "sec-035-55-finite-determinacy",
      "title": "Finite determinacy",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-031-references",
+     "id": "sec-036-references",
      "title": "References",
      "result": "no matching \\section"
     }

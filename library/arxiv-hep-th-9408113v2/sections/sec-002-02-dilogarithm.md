@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408113v2
-doc_title: "arXiv:hep-th/9408113v2 25 Aug 1994"
+doc_title: "Dilogarithm identities"
 section_id: sec-002-02-dilogarithm
 section_title: "Dilogarithm."
 section_number: 0.2
@@ -8,11 +8,12 @@ pages: 3-10
 source_pdf: 9408113v2.pdf
 source_sha256: dadd96e1155e820f
 toc_source: inferred
+doc_brief: "Dilogarithm identities — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
 ---
+0.2. Dilogarithm.
 The main subject of this paper is the dilogarithm identities. More exactly, we are study
 the relations of the following type
 N
-X
 i=1
 L(xi) = cπ2
 6 ,

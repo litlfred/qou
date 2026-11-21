@@ -1,0 +1,1 @@
+Assume A is nonpositive. For every M ∈C(A, M) there is a distinguished triangle smt≤i(M) e−→M p−→smt≥i+1(M) θ−→T(smt≤i(M)) in D(A, M). Also, Hj(e) : Hj(smt≤i(M)) →Hj(M) is an isomorphism in M for all j ≤i, and Hj(p) : Hj(M) →Hj(smt≥i+1(M)) is an isomorphism in M for all j ≥i + 1. Derived Categories | Amnon Yekutieli |

@@ -4,7 +4,7 @@ $$
   \alpha \;=\; m_e \cdot 8\,G,
 $$
 
-*where $G = \sum_{k \geq 0} (-1)^k/(2k+1)^2 \approx 0.9159655942$ is Catalan's constant, so that $8G = \mathrm{Vol}(\mathcal{B}_3) \approx 7.3277$ is the hyperbolic volume of the Borromean complement — two regular ideal octahedra of volume $4G$ each. The coefficient $8$ is therefore fixed by the octahedral decomposition, not chosen. This is the same prefactor as [binding scale from Catalan's constant](#prop:binding-scale-catalan).*
+*where $G = \sum_{k \geq 0} (-1)^k/(2k+1)^2 \approx 0.9159655942$ is Catalan's constant, so that $8G = \mathrm{Vol}(\mathcal{B}_3) \approx 7.3277$ is the hyperbolic volume of the Borromean complement — two regular ideal octahedra of volume $4G$ each. The coefficient $8$ is therefore fixed by the octahedral decomposition, not chosen. This is the same prefactor as [binding scale from Catalan's constant](#conj:binding-scale-catalan).*
 
 *The associated dimensionless spectral ratio at substrate parameter $q$ is:*
 

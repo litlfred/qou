@@ -7,10 +7,11 @@
   "bytes": 197974,
   "pages": 14,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,18 +21,28 @@
    "stamp_date": "14 May 2008"
   },
   "doi": null,
-  "title": "A note on closed 3-braids \u2217",
-  "authors_raw": "Joan S. Birman \u2020 and William W. Menasco \u2021",
+  "title": "A note on closed 3-braids ∗",
+  "authors_raw": "Joan S. Birman† and William W. Menasco‡",
   "title_lines": [
-   "A note on closed 3-braids \u2217"
+   "A note on closed 3-braids ∗"
   ],
-  "abstract": "This is a review article about knots and links of braid index 3. Its goal is to gather together, in one place, some of the tools that are special to knots and links of b raid index 3, in a form that could be useful for those who have a need to calculate, and ne ed to know precisely all the exceptional cases. Knots and links which are closed 3-braids are a very special c lass. Like 2-bridge knots and links, they are simple enough to admit a complete classi\ufb01cation. At the s ame time they are rich enough to serve as a source of examples on which, with luck, a researcher may b e able to test various conjectures. As an example, non-invertibility is a property of knots whic h is fairly subtle, yet we know (see Theorem 2 below) precisely which links of braid index 3 are an d are not invertible. Therefore 3-braids could be very useful for testing potential invaria nts that might detect non-invertibility. The purpose of this note is to gather together, in one place, s ome of the tools that are special to knots and links of braid index 3, in a form that could be usef ul for those who have a need to calculate, and need to know precisely all the exceptional ca ses. It includes the work in an earlier preprint [4] which was restricted to 3-braid representativ es of transversal knots. The preprint [4] was written when [26] was in preparation, and the authors of [ 26] asked us about low crossing examples to test their then-new invariants of transversal k nots. 1 Three basic theorems In this section we present the basic lemmas and theorems abou t links that are closed three-braids. Initially, we will use the classical presentation for the br aid group B3: < \u03c3 1, \u03c32; \u03c31\u03c32\u03c31 = \u03c32\u03c31\u03c32 > (1) \u2217 this article is an expanded version of the preprint \u201cA note on transversal knots which are closed 3-braids\u201d, arXiv math/0703669. \u2020 partially supported by the US National Science Foundation G rant DMS 0405586. \u2021 partially supported by the US National Science Foundation G rant DMS 0306062 1",
+  "abstract": "This is a review article about knots and links of braid index 3. Its goal is to gather together, in one place, some of the tools that are special to knots and links of braid index 3, in a form that could be useful for those who have a need to calculate, and need to know precisely all the exceptional cases. Knots and links which are closed 3-braids are a very special class. Like 2-bridge knots and links, they are simple enough to admit a complete classiﬁcation. At the same time they are rich enough to serve as a source of examples on which, with luck, a researcher may be able to test various conjectures. As an example, non-invertibility is a property of knots which is fairly subtle, yet we know (see Theorem 2 below) precisely which links of braid index 3 are and are not invertible. Therefore 3-braids could be very useful for testing potential invariants that might detect non-invertibility. The purpose of this note is to gather together, in one place, some of the tools that are special to knots and links of braid index 3, in a form that could be useful for those who have a need to calculate, and need to know precisely all the exceptional cases. It includes the work in an earlier preprint [4] which was restricted to 3-braid representatives of transversal knots. The preprint [4] was written when [26] was in preparation, and the authors of [26] asked us about low crossing examples to test their then-new invariants of transversal knots. Three basic theorems In this section we present the basic lemmas and theorems about links that are closed three-braids. Initially, we will use the classical presentation for the braid group B3: < σ1, σ2; σ1σ2σ1 = σ2σ1σ2 > (1) ∗this article is an expanded version of the preprint “A note on transversal knots which are closed 3-braids”, arXiv math/0703669. †partially supported by the US National Science Foundation Grant DMS 0405586. ‡partially supported by the US National Science Foundation Grant DMS 0306062 1",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20180602005149-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20180602005149-04'00'"
+  },
+  "title_raw": "A note on closed 3-braids ∗",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "A note on closed 3-braids ∗",
+   "outline": "Three basic theorems",
+   "text": "A note on closed 3-braids ∗",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -40,53 +51,230 @@
    "title": "Three basic theorems",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Solving the conjugacy problem in B3",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "The band presentation",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "The word problem:",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "The conjugacy problem for 3-braids",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Using Theorems 1,2, and 3",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "Some open questions and a survey of known results about links of braid index 3",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Positive and Negative 3-braid ﬂypes Theorem 1. The classiﬁcation theorem [5]: Let L be a link type which is represented by the closure of a 3-braid L. Then one of the following holds:",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1627,
+   "n_words": 288,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-three-basic-theorems",
    "number": null,
@@ -94,8 +282,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 5104,
-   "n_words": 945
+   "n_chars": 5076,
+   "n_words": 931,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-001-solving-the-conjugacy-problem-in-b3",
@@ -104,8 +294,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 1892,
-   "n_words": 358
+   "n_chars": 1913,
+   "n_words": 350,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-002-the-band-presentation",
@@ -114,8 +306,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 1014,
-   "n_words": 199
+   "n_chars": 1012,
+   "n_words": 197,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
    "id": "sec-003-the-word-problem",
@@ -124,8 +318,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 1465,
-   "n_words": 289
+   "n_chars": 1480,
+   "n_words": 290,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-004-the-conjugacy-problem-for-3-braids",
@@ -134,8 +330,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 6392,
-   "n_words": 1334
+   "n_chars": 6346,
+   "n_words": 1259,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
    "id": "sec-005-using-theorems-12-and-3",
@@ -144,8 +342,10 @@
    "level": 1,
    "page_start": 6,
    "page_end": 9,
-   "n_chars": 6884,
-   "n_words": 1378
+   "n_chars": 6842,
+   "n_words": 1318,
+   "label_start": "6",
+   "label_end": "9"
   },
   {
    "id": "sec-006-some-open-questions-and-a-survey-of-known-result",
@@ -154,16 +354,26 @@
    "level": 1,
    "page_start": 9,
    "page_end": 14,
-   "n_chars": 13499,
-   "n_words": 2326
+   "n_chars": 13446,
+   "n_words": 2233,
+   "label_start": "9",
+   "label_end": "14"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 7,
-  "sections": 7,
-  "chars_total": 36250,
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 37742,
+  "furniture_lines_stripped": 14,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "3-braids-v07.tex",
@@ -176,10 +386,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-three-basic-theorems",
      "title": "Three basic theorems",
-     "prose_ratio": 0.994,
-     "coverage_ratio": 0.969,
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.931,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -187,7 +402,7 @@
      "id": "sec-001-solving-the-conjugacy-problem-in-b3",
      "title": "Solving the conjugacy problem in B3",
      "prose_ratio": 0.86,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -211,14 +426,14 @@
      "id": "sec-004-the-conjugacy-problem-for-3-braids",
      "title": "The conjugacy problem for 3-braids",
      "prose_ratio": 0.99,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-using-theorems-12-and-3",
      "title": "Using Theorems 1,2, and 3",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.98,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
@@ -227,7 +442,7 @@
      "id": "sec-006-some-open-questions-and-a-survey-of-known-result",
      "title": "Some open questions and a survey of known results about links of braid index 3",
      "prose_ratio": 0.998,
-     "coverage_ratio": 0.998,
+     "coverage_ratio": 0.791,
      "result": "overlaid",
      "converter": "pandoc"
     }

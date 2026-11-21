@@ -13,9 +13,20 @@
   "pageStart": 36,
   "pageEnd": 50,
   "contains": [
-    "library/ant-v14-n7-s-p05/blocks/prose-sec-008"
+    "library/ant-v14-n7-s-p05/blocks/prose-sec-008",
+    "library/ant-v14-n7-s-p05/blocks/thm-sec-008-01",
+    "library/ant-v14-n7-s-p05/blocks/thm-sec-008-02",
+    "library/ant-v14-n7-s-p05/blocks/thm-sec-008-03",
+    "library/ant-v14-n7-s-p05/blocks/thm-sec-008-04",
+    "library/ant-v14-n7-s-p05/blocks/thm-sec-008-05",
+    "library/ant-v14-n7-s-p05/blocks/thm-sec-008-06",
+    "library/ant-v14-n7-s-p05/blocks/cor-sec-008-07",
+    "library/ant-v14-n7-s-p05/blocks/cor-sec-008-08",
+    "library/ant-v14-n7-s-p05/blocks/rem-sec-008-09",
+    "library/ant-v14-n7-s-p05/blocks/rem-sec-008-10",
+    "library/ant-v14-n7-s-p05/blocks/rem-sec-008-11"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p05",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p05",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p05/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p05/manifest.jsonld",
   "provenance": "ingested"
 }

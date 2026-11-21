@@ -8,7 +8,7 @@
   "pages": 14,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:25Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -18,23 +18,22 @@
   "title": "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions",
   "authors_raw": "Felipe A. Tobar and Danilo P. Mandic, Fellow, IEEE",
   "title_lines": [
-   "IEEE TRANSACTIONS ON INFORMATION THEORY, VOL. 60, NO. 9, SEPTEMBER 2014",
    "Quaternion Reproducing Kernel Hilbert Spaces:",
    "Existence and Uniqueness Conditions"
   ],
-  "abstract": "The existence and uniqueness conditions of quater- nion reproducing kernel Hilbert spaces (QRKHS) are established in order to provide a mathematical foundation for the develop- ment of quaternion-valued kernel learning algorithms. This is achieved through a rigorous account of left quaternion Hilbert spaces, which makes it possible to generalise standard RKHS to quaternion RKHS. Quaternion versions of the Riesz repre- sentation and Moore\u2013Aronszajn theorems are next introduced, thus underpinning kernel estimation algorithms operating on quaternion-valued feature spaces. The difference between the proposed quaternion kernel concept and the existing real and vector approaches is also established in terms of both theoretical advantages and computational complexity. The enhanced estima- tion ability of the so-introduced quaternion-valued kernels over their real- and vector-valued counterparts is validated through kernel ridge regression applications. Simulations on real world 3D inertial body sensor data and nonlinear channel equalisation using novel quaternion cubic and Gaussian kernels support the approach. Index Terms\u2014Quaternion RKHS, support vector regression, quaternion kernel ridge regression, high-dimensional kernels, vector kernels, multikernel. I. INTRODUCTION S INCE their",
+  "abstract": "The existence and uniqueness conditions of quater- nion reproducing kernel Hilbert spaces (QRKHS) are established in order to provide a mathematical foundation for the develop- ment of quaternion-valued kernel learning algorithms. This is achieved through a rigorous account of left quaternion Hilbert spaces, which makes it possible to generalise standard RKHS to quaternion RKHS. Quaternion versions of the Riesz repre- sentation and Moore–Aronszajn theorems are next introduced, thus underpinning kernel estimation algorithms operating on quaternion-valued feature spaces. The difference between the proposed quaternion kernel concept and the existing real and vector approaches is also established in terms of both theoretical advantages and computational complexity. The enhanced estima- tion ability of the so-introduced quaternion-valued kernels over their real- and vector-valued counterparts is validated through kernel ridge regression applications. Simulations on real world 3D inertial body sensor data and nonlinear channel equalisation using novel quaternion cubic and Gaussian kernels support the approach. Index Terms—Quaternion RKHS, support vector regression, quaternion kernel ridge regression, high-dimensional kernels, vector kernels, multikernel. I. INTRODUCTION S INCE their",
   "docinfo": {
    "Title": "untitled",
    "Producer": "Acrobat Distiller 7.0 (Windows)",
    "CreationDate": "D:20140808152734+05'30'"
   },
-  "title_raw": "IEEE TRANSACTIONS ON INFORMATION THEORY, VOL. 60, NO. 9, SEPTEMBER 2014 Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions",
+  "title_raw": "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions",
   "title_source": "heading",
   "title_verified": true,
   "title_evidence": {
    "metadata": "untitled",
    "heading": "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions",
-   "text": "IEEE TRANSACTIONS ON INFORMATION THEORY, VOL. 60, NO. 9, SEPTEMBER 2014 Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions",
+   "text": "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions",
    "corroborated_by": [
     "text"
    ],
@@ -453,7 +452,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "Body sensor signal tracking: Angle features (sin \u03b8, cos \u03b8) and KRR estimates",
+   "title": "Body sensor signal tracking: Angle features (sin θ, cos θ) and KRR estimates",
    "page": 10,
    "confidence": 0.9,
    "evidence": [
@@ -665,8 +664,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1487,
-   "n_words": 195,
+   "n_chars": 1410,
+   "n_words": 183,
    "label_start": "5736",
    "label_end": "5736"
   },
@@ -677,8 +676,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1,
-   "n_words": 1,
+   "n_chars": 0,
+   "n_words": 0,
    "label_start": "5736",
    "label_end": "5736"
   },
@@ -689,25 +688,13 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 4573,
-   "n_words": 639,
+   "n_chars": 5303,
+   "n_words": 743,
    "label_start": "5736",
    "label_end": "5737"
   },
   {
-   "id": "sec-002-iii-quaternion-reproducing-kernel",
-   "number": "III",
-   "title": "QUATERNION REPRODUCING KERNEL",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 729,
-   "n_words": 104,
-   "label_start": "5737",
-   "label_end": "5737"
-  },
-  {
-   "id": "sec-003-ii-quaternion-vector-spaces",
+   "id": "sec-002-ii-quaternion-vector-spaces",
    "number": "II",
    "title": "QUATERNION VECTOR SPACES",
    "level": 1,
@@ -719,7 +706,7 @@
    "label_end": "5737"
   },
   {
-   "id": "sec-004-a-the-quaternion-division-ring",
+   "id": "sec-003-a-the-quaternion-division-ring",
    "number": "A",
    "title": "The Quaternion Division Ring",
    "level": 2,
@@ -731,15 +718,27 @@
    "label_end": "5737"
   },
   {
-   "id": "sec-005-b-quaternion-valued-hilbert-spaces",
+   "id": "sec-004-b-quaternion-valued-hilbert-spaces",
    "number": "B",
    "title": "Quaternion-Valued Hilbert Spaces",
    "level": 2,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 2913,
-   "n_words": 521,
+   "n_chars": 2290,
+   "n_words": 425,
    "label_start": "5737",
+   "label_end": "5738"
+  },
+  {
+   "id": "sec-005-iii-quaternion-reproducing-kernel",
+   "number": "III",
+   "title": "QUATERNION REPRODUCING KERNEL",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 510,
+   "n_words": 80,
+   "label_start": "5738",
    "label_end": "5738"
   },
   {
@@ -749,8 +748,8 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 3966,
-   "n_words": 763,
+   "n_chars": 3898,
+   "n_words": 754,
    "label_start": "5738",
    "label_end": "5739"
   },
@@ -773,8 +772,8 @@
    "level": 1,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 400,
-   "n_words": 54,
+   "n_chars": 323,
+   "n_words": 42,
    "label_start": "5739",
    "label_end": "5740"
   },
@@ -809,8 +808,8 @@
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 2442,
-   "n_words": 522,
+   "n_chars": 2374,
+   "n_words": 513,
    "label_start": "5740",
    "label_end": "5741"
   },
@@ -820,22 +819,22 @@
    "title": "Connections Between High-Dimensional Kernels",
    "level": 2,
    "page_start": 6,
-   "page_end": 6,
-   "n_chars": 645,
-   "n_words": 99,
+   "page_end": 7,
+   "n_chars": 3063,
+   "n_words": 549,
    "label_start": "5741",
-   "label_end": "5741"
+   "label_end": "5742"
   },
   {
    "id": "sec-013-e-computational-complexity",
    "number": "E",
    "title": "Computational Complexity",
    "level": 2,
-   "page_start": 6,
+   "page_start": 7,
    "page_end": 7,
-   "n_chars": 3460,
-   "n_words": 600,
-   "label_start": "5741",
+   "n_chars": 996,
+   "n_words": 143,
+   "label_start": "5742",
    "label_end": "5742"
   },
   {
@@ -857,8 +856,8 @@
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 2810,
-   "n_words": 544,
+   "n_chars": 2742,
+   "n_words": 535,
    "label_start": "5742",
    "label_end": "5743"
   },
@@ -881,8 +880,8 @@
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 2067,
-   "n_words": 400,
+   "n_chars": 1990,
+   "n_words": 388,
    "label_start": "5743",
    "label_end": "5744"
   },
@@ -917,8 +916,8 @@
    "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 4624,
-   "n_words": 749,
+   "n_chars": 4556,
+   "n_words": 740,
    "label_start": "5744",
    "label_end": "5745"
   },
@@ -929,8 +928,8 @@
    "level": 2,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 5225,
-   "n_words": 811,
+   "n_chars": 5080,
+   "n_words": 790,
    "label_start": "5745",
    "label_end": "5747"
   },
@@ -953,8 +952,8 @@
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 1804,
-   "n_words": 342,
+   "n_chars": 1727,
+   "n_words": 330,
    "label_start": "5747",
    "label_end": "5748"
   },
@@ -965,8 +964,8 @@
    "level": 2,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 11514,
-   "n_words": 1820,
+   "n_chars": 11446,
+   "n_words": 1811,
    "label_start": "5748",
    "label_end": "5749"
   }
@@ -1001,6 +1000,7 @@
    ]
   },
   "sections": 26,
-  "chars_total": 68841
+  "chars_total": 67889,
+  "furniture_lines_stripped": 28
  }
 }

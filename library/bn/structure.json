@@ -8,7 +8,7 @@
   "pages": 64,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,7 +20,7 @@
   "title_lines": [
    "Braid groups and Hodge theory"
   ],
-  "abstract": "This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cover- ings of P1, highlighting their connections with ergodic theory, complex re\ufb02ection groups, moduli spaces of 1-forms and open problems in sur- face topology.",
+  "abstract": "This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cover- ings of P1, highlighting their connections with ergodic theory, complex reﬂection groups, moduli spaces of 1-forms and open problems in sur- face topology.",
   "docinfo": {
    "Title": "bn.dvi",
    "Producer": "GPL Ghostscript 9.19",
@@ -41,19 +41,6 @@
   }
  },
  "toc": [
-  {
-   "level": 1,
-   "title": "April,",
-   "page": null,
-   "source": "inferred",
-   "number": "25",
-   "confidence": 0.55,
-   "evidence": [
-    "contents",
-    "number"
-   ],
-   "page_label": null
-  },
   {
    "level": 1,
    "title": "Introduction",
@@ -116,7 +103,7 @@
   },
   {
    "level": 1,
-   "title": "Complex re\ufb02ection groups",
+   "title": "Complex reﬂection groups",
    "page": 22,
    "source": "inferred",
    "number": "5",
@@ -176,7 +163,7 @@
   },
   {
    "level": 1,
-   "title": "De\ufb01nite integrals",
+   "title": "Deﬁnite integrals",
    "page": 40,
    "source": "inferred",
    "number": "9",
@@ -236,7 +223,7 @@
   },
   {
    "level": 1,
-   "title": "Polygons and Teichm\u00a8uller curves",
+   "title": "Polygons and Teichm¨uller curves",
    "page": 55,
    "source": "inferred",
    "number": "13",
@@ -282,7 +269,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "Line con\ufb01guration associated to 5 points on a conic",
+   "title": "Line conﬁguration associated to 5 points on a conic",
    "page": 7,
    "confidence": 0.9,
    "evidence": [
@@ -347,7 +334,7 @@
   {
    "kind": "figure",
    "number": "8",
-   "title": "The braid groups of n points in C and C\u2217correspond to the Coxeter",
+   "title": "The braid groups of n points in C and C∗correspond to the Coxeter",
    "page": 23,
    "confidence": 0.9,
    "evidence": [
@@ -360,7 +347,7 @@
   {
    "kind": "table",
    "number": "9",
-   "title": "For q = \u03b6\u2212k",
+   "title": "For q = ζ−k",
    "page": 33,
    "confidence": 0.7,
    "evidence": [
@@ -382,7 +369,7 @@
   {
    "kind": "figure",
    "number": "12",
-   "title": "The cycle D is modi\ufb01ed by a loop around p\u2032",
+   "title": "The cycle D is modiﬁed by a loop around p′",
    "page": 41,
    "confidence": 0.8,
    "evidence": [
@@ -394,7 +381,7 @@
   {
    "kind": "table",
    "number": "11",
-   "title": "Algebraic de\ufb01nite integrals",
+   "title": "Algebraic deﬁnite integrals",
    "page": 41,
    "confidence": 0.7,
    "evidence": [
@@ -405,7 +392,7 @@
   {
    "kind": "figure",
    "number": "13",
-   "title": "The sphere with the \ufb02at metric |dx|/|xn \u22121|1/2, n = 3, 5, 7",
+   "title": "The sphere with the ﬂat metric |dx|/|xn −1|1/2, n = 3, 5, 7",
    "page": 56,
    "confidence": 0.8,
    "evidence": [
@@ -417,7 +404,7 @@
   {
    "kind": "figure",
    "number": "14",
-   "title": "Immersed disks for 1 \u2264g \u22648. Thus Q can be visualized as the double of the immersed disk D = f(H) across its boundary. The disk D is a square for g = 1, an L-shaped region for g = 2, and an immersed right-angled polygon for g \u22653 (see Figure 14.)",
+   "title": "Immersed disks for 1 ≤g ≤8. Thus Q can be visualized as the double of the immersed disk D = f(H) across its boundary. The disk D is a square for g = 1, an L-shaped region for g = 2, and an immersed right-angled polygon for g ≥3 (see Figure 14.)",
    "page": 57,
    "confidence": 0.8,
    "evidence": [
@@ -922,177 +909,165 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 48,
-   "n_words": 8,
+   "page_end": 2,
+   "n_chars": 1339,
+   "n_words": 407,
    "label_start": null,
-   "label_end": null
+   "label_end": "1"
   },
   {
-   "id": "sec-000-25-april",
-   "number": "25",
-   "title": "April,",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 311,
-   "n_words": 49,
-   "label_start": null,
-   "label_end": null
-  },
-  {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 9,
-   "n_chars": 14645,
-   "n_words": 2843,
-   "label_start": null,
+   "n_chars": 13746,
+   "n_words": 2523,
+   "label_start": "1",
    "label_end": "8"
   },
   {
-   "id": "sec-002-2-topological-preliminaries",
+   "id": "sec-001-2-topological-preliminaries",
    "number": "2",
    "title": "Topological preliminaries",
    "level": 1,
    "page_start": 9,
    "page_end": 14,
-   "n_chars": 7457,
-   "n_words": 1455,
+   "n_chars": 7481,
+   "n_words": 1456,
    "label_start": "8",
    "label_end": "13"
   },
   {
-   "id": "sec-003-3-from-hodge-theory-to-topology",
+   "id": "sec-002-3-from-hodge-theory-to-topology",
    "number": "3",
    "title": "From Hodge theory to topology",
    "level": 1,
    "page_start": 14,
    "page_end": 18,
-   "n_chars": 5727,
-   "n_words": 1140,
+   "n_chars": 5755,
+   "n_words": 1144,
    "label_start": "13",
    "label_end": "17"
   },
   {
-   "id": "sec-004-4-action-of-the-braid-group",
+   "id": "sec-003-4-action-of-the-braid-group",
    "number": "4",
    "title": "Action of the braid group",
    "level": 1,
    "page_start": 18,
    "page_end": 22,
-   "n_chars": 6771,
-   "n_words": 1496,
+   "n_chars": 6795,
+   "n_words": 1500,
    "label_start": "17",
    "label_end": "21"
   },
   {
-   "id": "sec-005-5-complex-re\ufb02ection-groups",
+   "id": "sec-004-5-complex-reﬂection-groups",
    "number": "5",
-   "title": "Complex re\ufb02ection groups",
+   "title": "Complex reﬂection groups",
    "level": 1,
    "page_start": 22,
    "page_end": 27,
-   "n_chars": 7123,
-   "n_words": 1395,
+   "n_chars": 7146,
+   "n_words": 1397,
    "label_start": "21",
    "label_end": "26"
   },
   {
-   "id": "sec-006-6-the-period-map",
+   "id": "sec-005-6-the-period-map",
    "number": "6",
    "title": "The period map",
    "level": 1,
    "page_start": 27,
    "page_end": 32,
-   "n_chars": 8340,
-   "n_words": 1628,
+   "n_chars": 8353,
+   "n_words": 1630,
    "label_start": "26",
    "label_end": "31"
   },
   {
-   "id": "sec-007-7-arithmetic-groups",
+   "id": "sec-006-7-arithmetic-groups",
    "number": "7",
    "title": "Arithmetic groups",
    "level": 1,
    "page_start": 32,
    "page_end": 36,
-   "n_chars": 6196,
-   "n_words": 1258,
+   "n_chars": 6212,
+   "n_words": 1259,
    "label_start": "31",
    "label_end": "35"
   },
   {
-   "id": "sec-008-8-factors-of-the-jacobian",
+   "id": "sec-007-8-factors-of-the-jacobian",
    "number": "8",
    "title": "Factors of the Jacobian",
    "level": 1,
    "page_start": 36,
    "page_end": 40,
-   "n_chars": 8299,
-   "n_words": 1709,
+   "n_chars": 8321,
+   "n_words": 1712,
    "label_start": "35",
    "label_end": "39"
   },
   {
-   "id": "sec-009-9-de\ufb01nite-integrals",
+   "id": "sec-008-9-deﬁnite-integrals",
    "number": "9",
-   "title": "De\ufb01nite integrals",
+   "title": "Deﬁnite integrals",
    "level": 1,
    "page_start": 40,
    "page_end": 45,
-   "n_chars": 7554,
-   "n_words": 1562,
+   "n_chars": 7569,
+   "n_words": 1563,
    "label_start": "39",
    "label_end": "44"
   },
   {
-   "id": "sec-010-10-complex-hyperbolic-geometry",
+   "id": "sec-009-10-complex-hyperbolic-geometry",
    "number": "10",
    "title": "Complex hyperbolic geometry",
    "level": 1,
    "page_start": 45,
    "page_end": 50,
-   "n_chars": 8803,
-   "n_words": 1668,
+   "n_chars": 8828,
+   "n_words": 1670,
    "label_start": "44",
    "label_end": "49"
   },
   {
-   "id": "sec-011-11-lifting-homological-symmetries",
+   "id": "sec-010-11-lifting-homological-symmetries",
    "number": "11",
    "title": "Lifting homological symmetries",
    "level": 1,
    "page_start": 50,
    "page_end": 52,
-   "n_chars": 3384,
-   "n_words": 677,
+   "n_chars": 3412,
+   "n_words": 679,
    "label_start": "49",
    "label_end": "51"
   },
   {
-   "id": "sec-012-12-the-hyperelliptic-case",
+   "id": "sec-011-12-the-hyperelliptic-case",
    "number": "12",
    "title": "The hyperelliptic case",
    "level": 1,
    "page_start": 52,
    "page_end": 55,
-   "n_chars": 6189,
-   "n_words": 1200,
+   "n_chars": 6209,
+   "n_words": 1202,
    "label_start": "51",
    "label_end": "54"
   },
   {
-   "id": "sec-013-13-polygons-and-teichmuller-curves",
+   "id": "sec-012-13-polygons-and-teichmuller-curves",
    "number": "13",
-   "title": "Polygons and Teichm\u00a8uller curves",
+   "title": "Polygons and Teichm¨uller curves",
    "level": 1,
    "page_start": 55,
    "page_end": 64,
-   "n_chars": 14381,
-   "n_words": 2351,
+   "n_chars": 14414,
+   "n_words": 2355,
    "label_start": "54",
    "label_end": null
   }
@@ -1100,7 +1075,7 @@
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 14,
+  "toc_entries": 13,
   "toc_inferred_entries": 14,
   "toc_inferred_mean_confidence": 0.921,
   "toc_inferred_empty_share": 0.0,
@@ -1141,7 +1116,16 @@
     "items": []
    }
   },
-  "sections": 15,
-  "chars_total": 105228
+  "sections": 14,
+  "chars_total": 105580,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "April,",
+    "page": null,
+    "action": "dropped",
+    "why": "ends with a comma"
+   }
+  ]
  }
 }

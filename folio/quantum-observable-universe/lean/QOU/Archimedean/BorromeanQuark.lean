@@ -15,7 +15,7 @@ Vol(S³ \ B_3) = 7.32772...
 
 ## References
 
-- [manuscript] Ch. 6, §3
+- [leitner2026] Ch. 6, §3
 - [thurston1978] Geometry and topology of three-manifolds
 
 **Ground ring**: `ℝ` (archimedean realisation).
@@ -39,20 +39,20 @@ structure BorromeanBaryon where
 
 /-- The proton: two up (+1) and one down (-1), net charge +1.
     Color assignment: one quark per color tube (bijective). -/
--- Ref: [manuscript] Ch. 6, §3
+-- Ref: [leitner2026] Ch. 6, §3
 def proton_partition : BorromeanBaryon where
   color := ![0, 1, 2]
   orientation := ![1, 1, -1]
-  -- Ref: [manuscript] Ch. 6, §3
+  -- Ref: [leitner2026] Ch. 6, §3
   charge_sum := by decide
 
 /-- The neutron: one up (+1) and two down (-1), net charge 0.
     Color assignment: one quark per color tube (bijective). -/
--- Ref: [manuscript] Ch. 6, §3
+-- Ref: [leitner2026] Ch. 6, §3
 def neutron_partition : BorromeanBaryon where
   color := ![0, 1, 2]
   orientation := ![1, -1, -1]
-  -- Ref: [manuscript] Ch. 6, §3
+  -- Ref: [leitner2026] Ch. 6, §3
   charge_sum := by decide
 
 /-- Hyperbolic volume of the Borromean complement. -/
@@ -60,7 +60,7 @@ def neutron_partition : BorromeanBaryon where
 def borromean_volume : ℝ := 7.32772
 
 /-- The baryon mass from the topological mass formula. -/
--- Ref: [manuscript] Ch. 6, §3
+-- Ref: [leitner2026] Ch. 6, §3
 def baryon_mass (q : ℝ) (_hq : q > 1) : ℝ :=
   borromean_volume / (1 - 1/q)^2
 

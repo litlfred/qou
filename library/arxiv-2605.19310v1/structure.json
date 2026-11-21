@@ -8,7 +8,7 @@
   "pages": 10,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -22,11 +22,11 @@
   },
   "doi": null,
   "title": "A Fourier-Free Density-Increment Proof of Roth's Theorem",
-  "authors_raw": "ROTH\u2019S THEOREM",
+  "authors_raw": "ROTH’S THEOREM",
   "title_lines": [
    "A FOURIER-FREE DENSITY-INCREMENT PROOF OF"
   ],
-  "abstract": "We give an elementary, Fourier-free proof of Roth\u2019s theorem. The proof follows Roth\u2019s original density-increment strategy, but replaces the usual Fourier-analytic step with a direct combinatorial argument involving averages over sub-progressions.",
+  "abstract": "We give an elementary, Fourier-free proof of Roth’s theorem. The proof follows Roth’s original density-increment strategy, but replaces the usual Fourier-analytic step with a direct combinatorial argument involving averages over sub-progressions.",
   "docinfo": {
    "Title": "A Fourier-Free Density-Increment Proof of Roth's Theorem",
    "Author": "Mark Lewko",
@@ -38,7 +38,7 @@
   "title_verified": true,
   "title_evidence": {
    "metadata": "A Fourier-Free Density-Increment Proof of Roth's Theorem",
-   "heading": "A FOURIER-FREE DENSITY-INCREMENT PROOF OF ROTH\u2019S THEOREM 1. Introduction In 1953, Roth proved that every subset of the integers of positive upper density contains a nontrivial three-term arithmetic progression. This can be stated in the following finite form. Theorem 1 (Roth [ 8 ]) . For every \u03b1 > 0",
+   "heading": "A FOURIER-FREE DENSITY-INCREMENT PROOF OF ROTH’S THEOREM 1. Introduction In 1953, Roth proved that every subset of the integers of positive upper density contains a nontrivial three-term arithmetic progression. This can be stated in the following finite form. Theorem 1 (Roth [ 8 ]) . For every α > 0",
    "text": "A FOURIER-FREE DENSITY-INCREMENT PROOF OF",
    "corroborated_by": [
     "text",
@@ -272,8 +272,8 @@
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 1147,
-   "n_words": 256,
+   "n_chars": 1145,
+   "n_words": 255,
    "label_start": null,
    "label_end": null
   },
@@ -284,8 +284,8 @@
    "level": 1,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 2463,
-   "n_words": 504,
+   "n_chars": 2501,
+   "n_words": 510,
    "label_start": null,
    "label_end": null
   },
@@ -307,14 +307,26 @@
    "title": "Finding a genuine integer progression",
    "level": 1,
    "page_start": 6,
-   "page_end": 9,
-   "n_chars": 5177,
-   "n_words": 978,
+   "page_end": 8,
+   "n_chars": 2931,
+   "n_words": 568,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-006-8-further-remarks",
+   "id": "sec-006-7-proof-of-roths-theorem-and-the-quantitative-bo",
+   "number": "7",
+   "title": "Proof of Roth's theorem and the quantitative bound",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2191,
+   "n_words": 401,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-8-further-remarks",
    "number": "8",
    "title": "Further remarks",
    "level": 1,
@@ -340,13 +352,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 8,
-  "chars_total": 16581,
+  "sections": 9,
+  "chars_total": 16562,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main_3.tex",
    "tex_sections": 8,
-   "overlaid": 7,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -386,7 +399,7 @@
      "id": "sec-003-4-no-progressions-imply-large-energy",
      "title": "No progressions imply large energy",
      "prose_ratio": 0.974,
-     "coverage_ratio": 0.974,
+     "coverage_ratio": 0.961,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -401,13 +414,21 @@
     {
      "id": "sec-005-6-finding-a-genuine-integer-progression",
      "title": "Finding a genuine integer progression",
-     "prose_ratio": 0.989,
-     "coverage_ratio": 0.984,
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.948,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-8-further-remarks",
+     "id": "sec-006-7-proof-of-roths-theorem-and-the-quantitative-bo",
+     "title": "Proof of Roth's theorem and the quantitative bound",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-8-further-remarks",
      "title": "Further remarks",
      "prose_ratio": 0.985,
      "coverage_ratio": 0.573,

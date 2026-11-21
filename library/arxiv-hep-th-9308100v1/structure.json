@@ -8,7 +8,7 @@
   "pages": 22,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,13 +20,13 @@
    "stamp_date": "20 Aug 1993"
   },
   "doi": null,
-  "title": "arXiv:hep-th/9308100v1 20 Aug 1993",
+  "title": "Gedanken Experiments Involving Black Holes",
   "authors_raw": "Leonard Susskind",
   "title_lines": [
    "August 1993",
    "Gedanken Experiments Involving Black Holes"
   ],
-  "abstract": "Analysis of several gedanken experiments indicates that black hole complementarity cannot be ruled out on the basis of known physical principles. Experiments designed by outside observers to disprove the existence of a quantum-mechanical stretched horizon require knowledge of Planck-scale e\ufb00ects for their analysis. Observers who fall through the event horizon after sampling the Hawking radiation cannot discover duplicate information inside the black hole before hitting the singularity. Experiments by outside observers to detect baryon number violation will yield signi\ufb01cant e\ufb00ects well outside the stretched horizon. PACS categories: 04.60.+n, 12.25.+e, 97.60.Lf \u22c6susskind@dormouse.stanford.edu \u2020 larus@dormouse.stanford.edu 1",
+  "abstract": "Analysis of several gedanken experiments indicates that black hole complementarity cannot be ruled out on the basis of known physical principles. Experiments designed by outside observers to disprove the existence of a quantum-mechanical stretched horizon require knowledge of Planck-scale eﬀects for their analysis. Observers who fall through the event horizon after sampling the Hawking radiation cannot discover duplicate information inside the black hole before hitting the singularity. Experiments by outside observers to detect baryon number violation will yield signiﬁcant eﬀects well outside the stretched horizon. PACS categories: 04.60.+n, 12.25.+e, 97.60.Lf ⋆susskind@dormouse.stanford.edu † larus@dormouse.stanford.edu 1",
   "docinfo": {
    "Title": "arXiv:hep-th/9308100v1  20 Aug 1993",
    "Producer": "GPL Ghostscript 10.01.2",
@@ -44,7 +44,8 @@
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:hep-th/9308100v1 20 Aug 1993"
  },
  "toc": [
   {
@@ -180,7 +181,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "Rindler space as a wedge of Minkowski space: surfaces of constant Rindler time are straight lines through the origin while surfaces of \ufb01xed Rindler position are hyperbolas. There is a future (past) event horizon at z\u2212t=0 (z+t=0)",
+   "title": "Rindler space as a wedge of Minkowski space: surfaces of constant Rindler time are straight lines through the origin while surfaces of ﬁxed Rindler position are hyperbolas. There is a future (past) event horizon at z−t=0 (z+t=0)",
    "page": 5,
    "confidence": 0.9,
    "evidence": [
@@ -536,22 +537,22 @@
    "title": "Experiments Performed Inside Black Holes",
    "level": 1,
    "page_start": 13,
-   "page_end": 16,
-   "n_chars": 5411,
-   "n_words": 941,
+   "page_end": 17,
+   "n_chars": 7734,
+   "n_words": 1361,
    "label_start": "13",
-   "label_end": "16"
+   "label_end": "17"
   },
   {
    "id": "sec-005-5-information-retention-time",
    "number": "5",
    "title": "Information Retention Time",
    "level": 1,
-   "page_start": 16,
+   "page_start": 17,
    "page_end": 19,
-   "n_chars": 5154,
-   "n_words": 933,
-   "label_start": "16",
+   "n_chars": 2888,
+   "n_words": 524,
+   "label_start": "17",
    "label_end": "19"
   },
   {
@@ -606,6 +607,7 @@
    "items": []
   },
   "sections": 10,
-  "chars_total": 41589
+  "chars_total": 41646,
+  "furniture_lines_stripped": 0
  }
 }

@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1712.04212v4",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "521911fc8724f3c292c3005d2e2404f6297bda393563c94da0ca1569be05cb6e",
+  "file": "1712.04212v4.pdf"
+ },
+ "provenance": {
+  "title": "1. Introduction",
+  "authors": "YOHEI SAKURAI",
+  "arxiv": {
+   "id": "1712.04212",
+   "version": "4",
+   "primary_class": "math.MG",
+   "stamp_date": "16 Aug 2018"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

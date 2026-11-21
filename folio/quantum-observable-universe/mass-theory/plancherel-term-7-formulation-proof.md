@@ -2,7 +2,7 @@
 
 Each $\{\lambda : \mathrm{depth}(\lambda) = k\}$ is finite, so each
 $\Phi_k$ is a finite $R$-valued sum.  By
-[curvature-rank stratification](#prop:curvature-rank-gb-stratification),
+[curvature-rank stratification](#conj:curvature-rank-gb-stratification),
 the central idempotent $e_\lambda$ has GB-filtration depth
 $\mathrm{depth}(\lambda)$ — **assumed, not established; see the gap note
 below** — so binning
@@ -48,11 +48,10 @@ sequence's collapse at $E_1$
 with $\mathrm{HH}^0 = Z(H_n(R, q))$ paired against the logarithmic
 Frobenius integral.*
 
-**Naming note.** *Earlier drafts (and the legacy formalism
-the formal derivation) referred to $w_\lambda(q) =
-\dim_q^2/[n]_q!$ as the "q-Plancherel weight" and claimed
-$\sum_\lambda w_\lambda(q) = 1$ via a "q-Plancherel identity"
-$\sum_\lambda \dim_q^2 V_\lambda = [n]_q!$. That identity does not
+**Naming note.** *The weight $w_\lambda(q) =
+\dim_q^2/[n]_q!$ is not a "q-Plancherel weight", and
+$\sum_\lambda w_\lambda(q) \neq 1$: the "q-Plancherel identity"
+$\sum_\lambda \dim_q^2 V_\lambda = [n]_q!$ does not
 hold in $H_n(R, q)$ at generic $q$ — the Hecke algebra is a flat
 deformation with $\dim_{\mathbb{Q}(q)} H_n = n!$ and Wedderburn–Artin
 gives the classical Plancherel identity
@@ -71,18 +70,17 @@ characters at $q_0$ and summing with the q-deformed Wedderburn weights
 $w_\lambda(q)$.  Compares $\alpha \cdot
 \mathfrak{m}^{\geq 4}_{q,\mathcal{K}}$ to the Coulomb-corrected
 nuclear binding $B_\mathrm{nucl}$ from
-`coulomb-subtracted-binding.witness.json`.
+the Coulomb-subtracted binding computation.
 
-> **Gap (2026-08-16).** The step above reads a grading of the **centre** by
+> **Open step (centre grading versus word filtration).** The step above reads a grading of the **centre** by
 > *partition* depth off a proposition that stratifies $H_n(R,q)$ by the
 > curvature rank of **words**. That identification is not stated in the cited
 > proposition, and the three readings of $J^\bullet$ present in the corpus are
 > each excluded: the ideal-power reading is provably $\bot$ above degree $0$
-> (`QOU.BraidKnot.WordFiltration.map_pow_eq_bot`); the Coxeter-length reading
+>; the Coxeter-length reading
 > fails a dimension count at $n \leq 3$; and the rewrite-depth reading is
-> identically zero once `def:hecke-normal-form` fixes $T_w$ as the unique
-> normal-form basis indexed by $S_n$. Analysis:
-> [`docs/audits/2026-08-16-three-gb-filtrations-one-name.md`](../../../docs/audits/2026-08-16-three-gb-filtrations-one-name.md).
+> identically zero once the [Hecke normal form](#def:hecke-normal-form) fixes $T_w$ as the unique
+> normal-form basis indexed by $S_n$.
 > **Not claimed:** that this block's conclusion is false — only that the step
 > it rests on is unestablished, and that the obvious ways to establish it do
 > not work.

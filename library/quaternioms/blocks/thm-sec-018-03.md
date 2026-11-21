@@ -1,1 +1,1 @@
-Within a ﬁxed associative sector
+Any n-quaternionic qubit circuit of depth D compiles to a complex circuit on O(n) qubits with depth poly(D) via ι : H֒ →M2(C); conversely, complex circuits embed into quaternionic circuits with polynomial overhead. Proof sketch: Appendix A. Signiﬁcance: Computation over H captures the same complexity class as the standard model. This equivalence immediately transfers standard complexity-theoretic guarantees and fault-tolerance to H.

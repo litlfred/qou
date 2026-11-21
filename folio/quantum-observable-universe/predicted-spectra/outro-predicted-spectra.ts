@@ -1,3 +1,3 @@
 import { prose } from "../../schema/builders";
 
-export default prose({ title: "Chapter close — Predicted spectra" });
+export default prose({ label: "prose:outro-predicted-spectra", title: "Chapter close — Predicted spectra" });

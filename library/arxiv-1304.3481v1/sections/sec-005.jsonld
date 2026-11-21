@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1304.3481v1/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "HOMFLY homology from A-model and B-model",
+  "pageStart": 55,
+  "pageEnd": 61,
+  "contains": [
+    "library/arxiv-1304.3481v1/blocks/prose-sec-005"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1304.3481v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1304.3481v1/manifest.jsonld",
+  "provenance": "ingested"
+}

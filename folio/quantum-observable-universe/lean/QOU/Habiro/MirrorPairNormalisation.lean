@@ -17,7 +17,7 @@ point coincidence that makes `Φ₁ = q − 1` divide a *correctly* formed diffe
 Everything is over a generic `CommRing` (§7c): no ordering, no `ℝ`, no
 archimedean input is needed for any of it.
 
-Ref: [manuscript] bean qou-0ndb; docs/audits/2026-06-01-qbeta-habiro-phi8-mirror-multiplicity-scaling.md
+Ref: [leitner2026] bean qou-0ndb; docs/audits/2026-06-01-qbeta-habiro-phi8-mirror-multiplicity-scaling.md
 -/
 import Mathlib.Algebra.Group.Basic
 import Mathlib.Algebra.GroupWithZero.Basic

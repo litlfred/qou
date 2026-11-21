@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0210230v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The Minimal Left-Right Symmetric Model and Radiative Corrections to the Muon Decay",
+  "contains": [
+    "library/arxiv-hep-ph-0210230v2/sections/page-001",
+    "library/arxiv-hep-ph-0210230v2/sections/page-002",
+    "library/arxiv-hep-ph-0210230v2/sections/page-003",
+    "library/arxiv-hep-ph-0210230v2/sections/page-004",
+    "library/arxiv-hep-ph-0210230v2/sections/page-005"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-hep-ph-0210230v2",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "The Minimal Left-Right Symmetric Model and Radiative Corrections to the Muon Decay",
+      "basis": "Printed title on page 1; the extracted title was the arXiv stamp",
+      "extracted_title": "arXiv:hep-ph/0210230v2 3 Jan 2003",
+      "corrected_on": "2026-11-15",
+      "extracted": "The Minimal Left-Right Symmetric Model and Radiative Corrections to the Muon Decay"
+    },
+    "source_file": "0210230v2.pdf",
+    "source_sha256": "22ef0025652cf016e253a7e22b2f924ab2bba5a582471177aa4975c47fcfb91d",
+    "pages": 5,
+    "arxiv": {
+      "id": "hep-ph/0210230",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "3 Jan 2003"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

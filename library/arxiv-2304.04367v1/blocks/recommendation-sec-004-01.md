@@ -1,1 +1,0 @@
-In the c.m. frame, the polarization basis of γ(2) must ﬁrst be transformed to that of γ(1), which involves modifying the Stokes parameters of γ(2) as follows: ξ(2) 1 →−ξ(2) 1 , ξ(2) 2 → −ξ(2) 2 , ξ(2) 3 →ξ(2) 3 .

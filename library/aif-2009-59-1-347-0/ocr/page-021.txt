@@ -1,0 +1,49 @@
+366 Lucia DI VIZIO & Changgui ZHANG
+
+Resuming, the function ¢(q,€) is a linear combination, with coefficients
+that are continuous functions of qg, of a canonical basis of solutions at oo:
+we have proved that both the canonical solutions and the coefficients of the
+linear combination admit a uniform limit in a bounded sector containing d,
+centered at oo and of arbitrary radius R > 0. Combined with Lemma 2.12,
+this means that ¢(q,) converges uniformly to ¢(1,) in a neighborhood
+of the direction d, which allows to conclude the proof.
+
+Appendix A. Jackson’s integral
+
+DEFINITION A.1. — We set
+= [' Hoae=a-a2D sa
+n>0
+
+whenever the right hand side converges.
+
+Remark A.2. —
+1. Notice that if F(x) is well-defined then d,F(x) = f(x).
+2. If f(x) is continuous on the closed disk D(0,r*), then F(x) is well defined
+for any x € D(0,r*). In fact there exists M > 0 such that |f(q"x)q"| <
+M|\q\", which guarantees the convergence of the infinite sum.
+
+PROPOSITION A.3. —
+1. If f(a) is an analytic function over the disk D(0,r~), then F(a) is also
+analytic over D(0,r~).
+2. If F(x) is analytic over the disk D(0,r~) and if G(x) is another analytic
+function over D(0,r~) such that dgG(«) = f(x), then
+
+[ f(t)dgt = Ge) — G(0).
+Proof. —
+
+1. It follows from the fact that F(x) is a uniformly convergent series of
+analytic function over D(0,r — e*), for any r > ¢ > 0.
+2. It follows immediately from the remark that the subfield of constants
+of the ring of analytic function over D(0,r~) with respect to the operator
+f(x) f(q2) is C. In fact this implies that F(x) — G(x) € C.
+
+Oo
+
+DEFINITION A.4. — Let us fix a a orbit qa C C and suppose that for
+any x € qa the integral F(x) = So f t)dgt is well-defined. Then we set
+
+[,s09 sm f f(t)
+
+equa
+
+ANNALES DE L’INSTITUT FOURIER

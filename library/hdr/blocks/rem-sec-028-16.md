@@ -1,0 +1,1 @@
+The invariants {Θd}d∈N∗and Θ are topologically equivalent to the Homﬂypt polynomial on knots. Since there is at least one pair of knots distinguished by the Homﬂypt polynomial but not by the Kauﬀman polynomial, the invariants {Θd}d∈N∗and Θ are not topologically equivalent to the Kauﬀman polynomial.

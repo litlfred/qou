@@ -6,10 +6,12 @@
   "sha256": "21798500c98ed25ac187cd3bf4f48e1023bb88df048edf57d5a967e2236b9e0e",
   "bytes": 749933,
   "pages": 37,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,18 +23,28 @@
   "doi": null,
   "title": "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics",
   "authors_raw": "T. Asslmeyer-Maluga (German Aerospace Center, Berlin)",
-  "abstract": "In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds. Here, we will use Thurston\u2019s geometrization theorem to get a simple picture: fermions as hyperbolic knot comple- ments (a complement C(K) = S3\\ (K\u00d7 D2) of a knot K carrying a hyperbolic geometry) and bosons as torus bundles. In particular, hyper- bolic 3-manifolds have a close connection to number theory (Bloch group, algebraic K-theory, quaternionic trace \ufb01elds), which will be used in the description of fermions. Here, we choose the description of 3-manifolds by branched covers. Every 3-manifold can be described by a 3-fold branched cover of S3 branched along a knot. In case of knot complements, one will obtain a 3-fold branched cover of the 3-disk D3 branched along a 3-braid or 3-braids describing fermions. The whole approach will un- cover new symmetries as induced by quantum and discrete groups. Using the Drinfeld\u2013Turaev quantization, we will also construct a quantization so that quantum states correspond to knots. Particle properties like the electric charge must be expressed by topology, and we will obtain the right spectrum of possible values. Finally, we will get a connection to recent models of Furey, Stoica and Gresnigt using octonionic and quaternionic algebras with relations to 3-braids (Bilson\u2013Thompson model).",
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20191023003046Z",
-   "Creator": "LaTeX with hyperref package",
-   "Producer": "pdfTeX-1.40.17",
-   "Title": ""
-  },
   "title_lines": [
    "Braids, 3-manifolds, elementary particles: number",
    "theory and symmetry in particle physics"
-  ]
+  ],
+  "abstract": "In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds. Here, we will use Thurston’s geometrization theorem to get a simple picture: fermions as hyperbolic knot comple- ments (a complement C(K) = S3 \\ (K × D2) of a knot K carrying a hyperbolic geometry) and bosons as torus bundles. In particular, hyper- bolic 3-manifolds have a close connection to number theory (Bloch group, algebraic K-theory, quaternionic trace ﬁelds), which will be used in the description of fermions. Here, we choose the description of 3-manifolds by branched covers. Every 3-manifold can be described by a 3-fold branched cover of S3 branched along a knot. In case of knot complements, one will obtain a 3-fold branched cover of the 3-disk D3 branched along a 3-braid or 3-braids describing fermions. The whole approach will un- cover new symmetries as induced by quantum and discrete groups. Using the Drinfeld–Turaev quantization, we will also construct a quantization so that quantum states correspond to knots. Particle properties like the electric charge must be expressed by topology, and we will obtain the right spectrum of possible values. Finally, we will get a connection to recent models of Furey, Stoica and Gresnigt using octonionic and quaternionic algebras with relations to 3-braids (Bilson–Thompson model).",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.17",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20191023003046Z"
+  },
+  "title_raw": "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics",
+   "outline": "1 Introduction",
+   "text": "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -40,340 +52,901 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Preliminaries: Branched Coverings of 3- and 4-Manifolds",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "As Warmup: Branched Coverings of 2-Manifolds",
    "page": 5,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Branched Coverings of 3-Manifolds",
    "page": 5,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Branched Covering of 4-Manifolds",
    "page": 6,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Branched Coverings of Knot Complements",
    "page": 7,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Reconstructing a Spacetime: The K3 Surface and Particle Physics",
    "page": 8,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "From K3 Surfaces to Octonions, 3-Braids and Particles",
    "page": 13,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "K3 Surfaces and Octonions",
    "page": 13,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "From Immersed Surfaces in K3 Surfaces to Fermions and Knot Complements",
    "page": 15,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Fermions as Knot Complements",
    "page": 16,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Torus Bundle as Gauge Fields",
    "page": 18,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Fermions, Bosons and 3-Braids",
    "page": 22,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Electric Charge and Quasimodularity",
    "page": 23,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Electric Charge as Dehn Twist of the Boundary",
    "page": 23,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Electric Charge as a Frame of the Knot Complement",
    "page": 24,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The Charge Spectrum",
    "page": 26,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Vanishing of the Magnetic Charge and Quasimodularity",
    "page": 26,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "Drinfeld\u2013Turaev Quantization and Quantum States",
+   "title": "Drinfeld–Turaev Quantization and Quantum States",
    "page": 27,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Fermions and Number Theory",
    "page": 29,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The K3 Surface and the Number of Generations",
    "page": 29,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Conclusions and Outlook",
    "page": 31,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "2-fold covering of torus, α is the equator and the four-point branching set",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Branching set changes, Left: Move 1, Right: Move 2 (so-called Montesino moves)",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Boundary of the branching set change—Left: Move 1 leading to the Trefoil knot, Right: Move 2 leading to the Hopf link",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "3-fold covering torus",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Covering of the handle body",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Left: branching set of knot complement (6-plat), Right: 3-Braid as 6-Braid",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Branching sets—Left: 6-Plat for the knot cpomplement, Center: a 3-Braid as 6-Braid as example, Right: 6-Braid for the link complement",
+   "page": 22,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Dehn twist represented by a braid",
+   "page": 25,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Crossings L∞, Lo, Loo",
+   "page": 28,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2997,
+   "n_words": 617,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
-   "page_end": 5,
-   "n_chars": 10318,
-   "n_words": 1829
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 7283,
+   "n_words": 1191,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-21-as-warmup-branched-coverings-of-2-manifolds",
+   "id": "sec-001-2-preliminaries-branched-coverings-of-3--and-4-m",
+   "number": "2",
+   "title": "Preliminaries: Branched Coverings of 3- and 4-Manifolds",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1560,
+   "n_words": 279,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-21-as-warmup-branched-coverings-of-2-manifolds",
    "number": "2.1",
    "title": "As Warmup: Branched Coverings of 2-Manifolds",
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 472,
-   "n_words": 88
+   "n_chars": 518,
+   "n_words": 95,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-22-branched-coverings-of-3-manifolds",
+   "id": "sec-003-22-branched-coverings-of-3-manifolds",
    "number": "2.2",
    "title": "Branched Coverings of 3-Manifolds",
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 1469,
-   "n_words": 259
+   "n_chars": 1522,
+   "n_words": 282,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-23-branched-covering-of-4-manifolds",
+   "id": "sec-004-23-branched-covering-of-4-manifolds",
    "number": "2.3",
    "title": "Branched Covering of 4-Manifolds",
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 2966,
-   "n_words": 513
+   "n_chars": 3037,
+   "n_words": 555,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-24-branched-coverings-of-knot-complements",
+   "id": "sec-005-24-branched-coverings-of-knot-complements",
    "number": "2.4",
    "title": "Branched Coverings of Knot Complements",
    "level": 2,
    "page_start": 7,
-   "page_end": 13,
-   "n_chars": 14108,
-   "n_words": 2475
+   "page_end": 8,
+   "n_chars": 1811,
+   "n_words": 333,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-41-k3-surfaces-and-octonions",
+   "id": "sec-006-3-reconstructing-a-spacetime-the-k3-surface-and",
+   "number": "3",
+   "title": "Reconstructing a Spacetime: The K3 Surface and Particle Physics",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 13,
+   "n_chars": 11902,
+   "n_words": 2137,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-4-from-k3-surfaces-to-octonions-3-braids-and-par",
+   "number": "4",
+   "title": "From K3 Surfaces to Octonions, 3-Braids and Particles",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 414,
+   "n_words": 65,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-41-k3-surfaces-and-octonions",
    "number": "4.1",
    "title": "K3 Surfaces and Octonions",
    "level": 2,
    "page_start": 13,
    "page_end": 15,
-   "n_chars": 3153,
-   "n_words": 600
+   "n_chars": 3216,
+   "n_words": 641,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-42-from-immersed-surfaces-in-k3-surfaces-to-ferm",
+   "id": "sec-009-42-from-immersed-surfaces-in-k3-surfaces-to-ferm",
    "number": "4.2",
    "title": "From Immersed Surfaces in K3 Surfaces to Fermions and Knot Complements",
    "level": 2,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 3448,
-   "n_words": 612
+   "n_chars": 3517,
+   "n_words": 639,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-43-fermions-as-knot-complements",
+   "id": "sec-010-43-fermions-as-knot-complements",
    "number": "4.3",
    "title": "Fermions as Knot Complements",
    "level": 2,
    "page_start": 16,
    "page_end": 18,
-   "n_chars": 4589,
-   "n_words": 815
+   "n_chars": 4637,
+   "n_words": 838,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-44-torus-bundle-as-gauge-fields",
+   "id": "sec-011-44-torus-bundle-as-gauge-fields",
    "number": "4.4",
    "title": "Torus Bundle as Gauge Fields",
    "level": 2,
    "page_start": 18,
    "page_end": 22,
-   "n_chars": 9637,
-   "n_words": 1661
+   "n_chars": 9679,
+   "n_words": 1679,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-45-fermions-bosons-and-3-braids",
+   "id": "sec-012-45-fermions-bosons-and-3-braids",
    "number": "4.5",
    "title": "Fermions, Bosons and 3-Braids",
    "level": 2,
    "page_start": 22,
    "page_end": 23,
-   "n_chars": 2142,
-   "n_words": 370
+   "n_chars": 2180,
+   "n_words": 382,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-010-5-electric-charge-and-quasimodularity",
+   "id": "sec-013-5-electric-charge-and-quasimodularity",
    "number": "5",
    "title": "Electric Charge and Quasimodularity",
    "level": 1,
    "page_start": 23,
    "page_end": 23,
-   "n_chars": 378,
-   "n_words": 60
+   "n_chars": 414,
+   "n_words": 64,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-011-51-electric-charge-as-dehn-twist-of-the-boundary",
+   "id": "sec-014-51-electric-charge-as-dehn-twist-of-the-boundary",
    "number": "5.1",
    "title": "Electric Charge as Dehn Twist of the Boundary",
    "level": 2,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 3261,
-   "n_words": 610
+   "n_chars": 3325,
+   "n_words": 636,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-012-52-electric-charge-as-a-frame-of-the-knot-comple",
+   "id": "sec-015-52-electric-charge-as-a-frame-of-the-knot-comple",
    "number": "5.2",
    "title": "Electric Charge as a Frame of the Knot Complement",
    "level": 2,
    "page_start": 24,
    "page_end": 26,
-   "n_chars": 3560,
-   "n_words": 616
+   "n_chars": 3628,
+   "n_words": 643,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-013-53-the-charge-spectrum",
+   "id": "sec-016-53-the-charge-spectrum",
    "number": "5.3",
    "title": "The Charge Spectrum",
    "level": 2,
    "page_start": 26,
    "page_end": 26,
-   "n_chars": 1084,
-   "n_words": 194
+   "n_chars": 1112,
+   "n_words": 205,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-014-54-vanishing-of-the-magnetic-charge-and-quasimod",
+   "id": "sec-017-54-vanishing-of-the-magnetic-charge-and-quasimod",
    "number": "5.4",
    "title": "Vanishing of the Magnetic Charge and Quasimodularity",
    "level": 2,
    "page_start": 26,
-   "page_end": 29,
-   "n_chars": 5563,
-   "n_words": 952
+   "page_end": 27,
+   "n_chars": 1546,
+   "n_words": 263,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-015-7-fermions-and-number-theory",
+   "id": "sec-018-6-drinfeldturaev-quantization-and-quantum-states",
+   "number": "6",
+   "title": "Drinfeld–Turaev Quantization and Quantum States",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 29,
+   "n_chars": 4061,
+   "n_words": 727,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-019-7-fermions-and-number-theory",
    "number": "7",
    "title": "Fermions and Number Theory",
    "level": 1,
    "page_start": 29,
-   "page_end": 31,
-   "n_chars": 5955,
-   "n_words": 1049
+   "page_end": 29,
+   "n_chars": 2411,
+   "n_words": 419,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-016-9-conclusions-and-outlook",
+   "id": "sec-020-8-the-k3-surface-and-the-number-of-generations",
+   "number": "8",
+   "title": "The K3 Surface and the Number of Generations",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 3567,
+   "n_words": 664,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-021-9-conclusions-and-outlook",
    "number": "9",
    "title": "Conclusions and Outlook",
    "level": 1,
    "page_start": 31,
    "page_end": 37,
-   "n_chars": 14144,
-   "n_words": 2073
+   "n_chars": 14149,
+   "n_words": 2057,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 22,
-  "sections": 17,
-  "chars_total": 86247,
+  "toc_inferred_entries": 0,
+  "figure_entries": 9,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 23,
+  "chars_total": 88486,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "symmetry-569844-submit-arxiv_TAM.tex",
    "tex_sections": 23,
-   "overlaid": 11,
+   "overlaid": 13,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -381,76 +954,98 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.886,
+     "prose_ratio": 0.974,
      "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-21-as-warmup-branched-coverings-of-2-manifolds",
+     "id": "sec-001-2-preliminaries-branched-coverings-of-3--and-4-m",
+     "title": "Preliminaries: Branched Coverings of 3- and 4-Manifolds",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-21-as-warmup-branched-coverings-of-2-manifolds",
      "title": "As Warmup: Branched Coverings of 2-Manifolds",
      "prose_ratio": 0.946,
+     "coverage_ratio": 0.919,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-22-branched-coverings-of-3-manifolds",
+     "title": "Branched Coverings of 3-Manifolds",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.831,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-23-branched-covering-of-4-manifolds",
+     "title": "Branched Covering of 4-Manifolds",
+     "prose_ratio": 0.899,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-24-branched-coverings-of-knot-complements",
+     "title": "Branched Coverings of Knot Complements",
+     "prose_ratio": 0.209,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-3-reconstructing-a-spacetime-the-k3-surface-and",
+     "title": "Reconstructing a Spacetime: The K3 Surface and Particle Physics",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-4-from-k3-surfaces-to-octonions-3-braids-and-par",
+     "title": "From K3 Surfaces to Octonions, 3-Braids and Particles",
+     "prose_ratio": 0.194,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-41-k3-surfaces-and-octonions",
+     "title": "K3 Surfaces and Octonions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-42-from-immersed-surfaces-in-k3-surfaces-to-ferm",
+     "title": "From Immersed Surfaces in K3 Surfaces to Fermions and Knot Complements",
+     "prose_ratio": 0.981,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-22-branched-coverings-of-3-manifolds",
-     "title": "Branched Coverings of 3-Manifolds",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.852,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-003-23-branched-covering-of-4-manifolds",
-     "title": "Branched Covering of 4-Manifolds",
-     "prose_ratio": 0.899,
-     "coverage_ratio": 0.985,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-004-24-branched-coverings-of-knot-complements",
-     "title": "Branched Coverings of Knot Complements",
-     "prose_ratio": 0.845,
-     "coverage_ratio": 0.983,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-005-41-k3-surfaces-and-octonions",
-     "title": "K3 Surfaces and Octonions",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-006-42-from-immersed-surfaces-in-k3-surfaces-to-ferm",
-     "title": "From Immersed Surfaces in K3 Surfaces to Fermions and Knot Complements",
-     "prose_ratio": 0.981,
-     "coverage_ratio": 0.988,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-007-43-fermions-as-knot-complements",
+     "id": "sec-010-43-fermions-as-knot-complements",
      "title": "Fermions as Knot Complements",
      "prose_ratio": 0.98,
-     "coverage_ratio": 0.99,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-44-torus-bundle-as-gauge-fields",
+     "id": "sec-011-44-torus-bundle-as-gauge-fields",
      "title": "Torus Bundle as Gauge Fields",
      "prose_ratio": 0.981,
-     "coverage_ratio": 0.955,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-45-fermions-bosons-and-3-braids",
+     "id": "sec-012-45-fermions-bosons-and-3-braids",
      "title": "Fermions, Bosons and 3-Braids",
      "prose_ratio": 0.768,
      "coverage_ratio": 1.0,
@@ -458,49 +1053,64 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-5-electric-charge-and-quasimodularity",
+     "id": "sec-013-5-electric-charge-and-quasimodularity",
      "title": "Electric Charge and Quasimodularity",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-011-51-electric-charge-as-dehn-twist-of-the-boundary",
+     "id": "sec-014-51-electric-charge-as-dehn-twist-of-the-boundary",
      "title": "Electric Charge as Dehn Twist of the Boundary",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.979,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-52-electric-charge-as-a-frame-of-the-knot-comple",
+     "id": "sec-015-52-electric-charge-as-a-frame-of-the-knot-comple",
      "title": "Electric Charge as a Frame of the Knot Complement",
      "prose_ratio": 0.968,
-     "coverage_ratio": 0.994,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-53-the-charge-spectrum",
+     "id": "sec-016-53-the-charge-spectrum",
      "title": "The Charge Spectrum",
      "prose_ratio": 0.272,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-014-54-vanishing-of-the-magnetic-charge-and-quasimod",
+     "id": "sec-017-54-vanishing-of-the-magnetic-charge-and-quasimod",
      "title": "Vanishing of the Magnetic Charge and Quasimodularity",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-015-7-fermions-and-number-theory",
-     "title": "Fermions and Number Theory",
-     "prose_ratio": 0.504,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-018-6-drinfeldturaev-quantization-and-quantum-states",
+     "title": "Drinfeld–Turaev Quantization and Quantum States",
+     "result": "no matching \\section"
     },
     {
-     "id": "sec-016-9-conclusions-and-outlook",
+     "id": "sec-019-7-fermions-and-number-theory",
+     "title": "Fermions and Number Theory",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-8-the-k3-surface-and-the-number-of-generations",
+     "title": "The K3 Surface and the Number of Generations",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-9-conclusions-and-outlook",
      "title": "Conclusions and Outlook",
      "prose_ratio": 0.989,
-     "coverage_ratio": 0.344,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.343,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

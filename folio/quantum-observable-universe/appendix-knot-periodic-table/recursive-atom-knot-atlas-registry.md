@@ -1,6 +1,6 @@
-This registry records the full derivation of [`prop:recursive-atom-knot-atlas`](#prop:recursive-atom-knot-atlas): the methodology classification, notation legend, braid-closure gallery, the per-level atlas, and the per-element AME 2020 cross-reference. It carries no logical content beyond the proposition it supports.
+This registry records the full derivation of [Recursive atom-knot atlas at $q_0$ — particles to atoms via Markov-NF braids and hyperbolic-knot closures](#prop:recursive-atom-knot-atlas): the methodology classification, notation legend, braid-closure gallery, the per-level atlas, and the per-element AME 2020 cross-reference. It carries no logical content beyond the proposition it supports.
 
-This atlas identifies the specific knot or link for each confined braid at the substrate value $q_0$, verifying whether its invariant reproduces the measured mass or binding energy. A single $q_0$-indexed registry enables recursive construction of composite entries from nucleon and $\alpha$-cluster constituents, ensuring uniform comparison against the AME 2020 reference. Where a free-nucleon entry lists an absolute mass in MeV, that figure is the dimensionless ratio $\mathfrak{m}/m_e$ rendered against the $m_e$ scale (CAL-1, set by fiat), not an independent absolute-mass prediction; the framework's predictive content is the ratio, the binding energy, and the mass splitting. We detail the precise identification mechanics below; a layered extension then applies this machinery to every isotope.
+This atlas identifies the specific knot or link for each confined braid at the substrate value $q_0$, verifying whether its invariant reproduces the measured mass or binding energy. A single $q_0$-indexed registry enables recursive construction of composite entries from nucleon and $\alpha$-cluster constituents, ensuring uniform comparison against the AME 2020 reference. Where a free-nucleon entry lists an absolute mass in MeV, that figure is the dimensionless ratio $\mathfrak{m}/m_e$ rendered against the $m_e$ scale (CAL-1, set by fiat), not an independent absolute-mass prediction; the framework's predictive content is the ratio, the binding energy, and the mass splitting. The precise identification mechanics are detailed below; a layered extension then applies this machinery to every isotope.
 
 ## Methodology classification (STRICT)
 
@@ -8,15 +8,15 @@ Every entry carries a **methodology tag** recording its derivation method.
 
 | Tag | Definition | Examples |
 |---|---|---|
-| `principled-derivation` | Knot is the closure of an explicit $\sigma$-braid word in $H_{n_0}(q_0)$ from [`def:confined-particle`](#def:confined-particle); $\mathrm{Vol}_{\mathrm{hyp}}$ computed at $\geq 50$ decimal digits via `hp_volume_of_link_closure(braid_word, digits=50)`. | electron $\sigma_1^3$ $\to$ $3_1$, proton/neutron $(\sigma_1 \sigma_2^{-1})^3$ $\to$ $\mathcal{B}_3$. |
+| `principled-derivation` | Knot is the closure of an explicit $\sigma$-braid word in $H_{n_0}(q_0)$ from [Confined particle](#def:confined-particle); $\mathrm{Vol}_{\mathrm{hyp}}$ computed at $\geq 50$ decimal digits via `hp_volume_of_link_closure(braid_word, digits=50)`. | electron $\sigma_1^3$ $\to$ $3_1$, proton/neutron $(\sigma_1 \sigma_2^{-1})^3$ $\to$ $\mathcal{B}_3$. |
 | `principled-gb-nf` | Trivial-NF entries: a single strand (unknot $0_1$) or the pure identity $\mathbf{1}$. | neutrino ($0_1$), quark; the bare photon (identity $\mathbf{1}$, not the unknot). |
-| `manual-historical-volume-match` | Knot was identified in earlier work via volume-match against AME; the GB-NF derivation in $H_{n_0}(q_0)$ has not been computed. **⚠ This tier is AME-inverted**: the producer states it outright — *"that IS a form of AME-driven fitting (we picked the knot whose volume is closest to $B_\mathrm{AME}/\rho$)"* ([`mass_table_ppb.py` L18–21](../../../computations/mass_table_ppb.py)) — so binding figures quoted from these volumes are **circular, not predictions**. | ${}^2$H = $6_2$, ${}^{3}$H = $8_{11}$, ${}^{3}$He = $L_{6a4}$. |
+| `manual-historical-volume-match` | Knot was identified in earlier work via volume-match against AME; the GB-NF derivation in $H_{n_0}(q_0)$ has not been computed. **⚠ This tier is AME-inverted**: the knot was chosen as the one whose volume is closest to $B_\mathrm{AME}/\rho$, which is a form of AME-driven fitting — so binding figures quoted from these volumes are **circular, not predictions**. | ${}^2$H = $6_2$, ${}^{3}$H = $8_{11}$, ${}^{3}$He = $L_{6a4}$. |
 | `magic-A-formula` | Algebraic shell-closure formula $A \cdot 8G$ for double-magic light nuclei; no single hyperbolic knot. | ${}^{4}$He. |
 | `recursive-on-⁴He` | Built from $n \cdot {}^{4}\mathrm{He} + n_{\alpha\alpha} \cdot c_{\alpha\alpha}$ recursion; principled given ${}^{4}$He. | ${}^{8}$Be–${}^{40}$Ca. |
 
-The principled pipeline computes $\mathrm{Vol}_{\mathrm{hyp}}$ from the $\sigma$-braid word at $\geq 50$ decimal digits via SnapPy's `Link(braid_closure=...).exterior.high_precision` and `mpmath.workdps(50)`. The Wenzl bridge ([`y_lambda_wenzl_bridge_extended.py`](../../../computations/y_lambda_wenzl_bridge_extended.py)) supplies symbolic-in-$q$ Markov-trace coefficients $y_\lambda$.
+The principled pipeline computes $\mathrm{Vol}_{\mathrm{hyp}}$ from the $\sigma$-braid word at $\geq 50$ decimal digits via SnapPy's `Link(braid_closure=...).exterior.high_precision` and `mpmath.workdps(50)`. The Wenzl bridge supplies symbolic-in-$q$ Markov-trace coefficients $y_\lambda$.
 
-For atoms $A \geq 5$, the combinatorics of $\mathcal{H}_{3A}$ explode and `SnapPea` limits fail. We sidestep this by computing the exact symbolic trace restricted to active block-partitions (`closed_form_tau_M`). We show this exact trace $B_{sym} = -\alpha \ln |\mathrm{tr}_M|$ alongside the rigorous Q-CLT finite-sum approximation $B_{qCLT} = -\alpha \sum \ln |\hat{V}_i|$.
+For atoms $A \geq 5$, the combinatorics of $\mathcal{H}_{3A}$ explode and SnapPea limits fail. This is sidestepped by computing the exact symbolic trace restricted to active block-partitions. This exact trace $B_{sym} = -\alpha \ln |\mathrm{tr}_M|$ is shown alongside the rigorous Q-CLT finite-sum approximation $B_{qCLT} = -\alpha \sum \ln |\hat{V}_i|$.
 
 ## Notation legend (auto-included)
 
@@ -134,7 +134,7 @@ This inventory lists hyperbolic-knot identifications and their methodology tags.
 |--:|---|
 | Braid (NF) | $T_w = (\mathfrak{p}\text{-braid}) \oplus (\mathfrak{n}\text{-braid}) \oplus L_H$ in $H_6(q_0)$. Closure recorded as $\widehat{T_w} = K_{6_2}$ (hyperbolic, $\mathrm{Vol} = 4.4008$) — **asserted, not computed**; see Provenance. |
 | Prediction | $B_\mathrm{pred} = 1 \cdot m_e \cdot \mathrm{Vol}(K_{6_2}) = 2.249$ MeV vs $B_\mathrm{AME} = 2.225$, **err = +1.09%** — **not a prediction**; the knot was selected by matching this quantity (see Provenance). |
-| **Provenance ⚠** | **$6_2$ is AME-inverted and the deuteron assignment is UNDETERMINED.** (i) The producer states the inversion outright — *"that IS a form of AME-driven fitting (we picked the knot whose volume is closest to $B_\mathrm{AME}/\rho$)"* ([`mass_table_ppb.py` L18–21](../../../computations/mass_table_ppb.py)) — so the $+1.09\%$ agreement is circular and inadmissible as a derivation. (ii) The closure claim is not a computation: the canonical mass word is **not a braid word** (five of its letters are averaged crossings, $\mathbb{C}$-linear combinations in $H_6(q)$), and every live construction of it closes to a **3-component link**, whereas $6_2$ is a knot — an arity mismatch fixed by the underlying permutation, so no crossing convention resolves it. Adjudication: [`2026-08-21-deuteron-knot-assignment-adjudication.md`](../../../docs/audits/2026-08-21-deuteron-knot-assignment-adjudication.md) (verdict **UNDETERMINED** — all three candidates $6_2$ / trefoil / Hopf inadmissible). **This row flags the entry; it does not retarget it** — no alternative assignment is established either. |
+| **Provenance ⚠** | **$6_2$ is AME-inverted and the deuteron assignment is UNDETERMINED.** (i) The knot was chosen as the one whose volume is closest to $B_\mathrm{AME}/\rho$, which is a form of AME-driven fitting — so the $+1.09\%$ agreement is circular and inadmissible as a derivation. (ii) The closure claim is not a computation: the canonical mass word is **not a braid word** (five of its letters are averaged crossings, $\mathbb{C}$-linear combinations in $H_6(q)$), and every live construction of it closes to a **3-component link**, whereas $6_2$ is a knot — an arity mismatch fixed by the underlying permutation, so no crossing convention resolves it. Verdict: **UNDETERMINED** — all three candidates $6_2$ / trefoil / Hopf are inadmissible. **This row flags the entry; it does not retarget it** — no alternative assignment is established either. |
 
 **Tritium ${}^{3}$H = T = $[\mathfrak{p}, \mathfrak{n}, \mathfrak{n}]_{L_H \oplus T_{2, 3}}$**
 
@@ -202,7 +202,7 @@ A layered framework extends the atlas to all isotopes under a single registry:
 | **Layer 4** | Heavy nuclei ($A > 40$) | Brane-tower asymptotic + LP-active-set ansatz |
 | **Layer 5** | Theoretical / hypothetical isotopes | Same Layer-1/3 machinery; flagged `prediction-only` |
 
-Per-isotope records follow the [`IsotopeRecord`](https://github.com/litlfred/qou/blob/main/computations/isotope_record_schema.py) schema with an explicit knot-operator catalogue. The Layer-1 pipeline is implemented in [`canonical_mass_table_extended.py`](https://github.com/litlfred/qou/blob/main/computations/canonical_mass_table_extended.py).
+Each per-isotope record carries an explicit knot-operator catalogue.
 
 ### Knot-operator catalogue — per-step primitives
 
@@ -218,24 +218,20 @@ Each per-isotope record lists the knot operators used to build its canonical bra
 
 **Inter-nucleon interfaces** (single-strand crossing at generator $3k+2$):
 
-| Channel | Formula | Wire-format `ctype` |
-|---|---|---|
-| `pp` | $\sigma$ (positive crossing) | `sigma` |
-| `nn` | $\sigma + (-h)\cdot\mathbf{1}$ | `sigma_inv` (underscore, matches `canonical_braid_crossings.atom_canonical_crossings`) |
-| `pn` | $\sigma + \bigl(-h(1/2 - \delta/4)\bigr)\cdot\mathbf{1}$ (colour-tube-weighted average) | `averaged_weighted` |
+| Channel | Formula |
+|---|---|
+| p–p | $\sigma$ (positive crossing) |
+| n–n | $\sigma + (-h)\cdot\mathbf{1}$ |
+| p–n | $\sigma + \bigl(-h(1/2 - \delta/4)\bigr)\cdot\mathbf{1}$ (colour-tube-weighted average) |
 
 where $h = q_0 - q_0^{-1}$ and $\delta$ is the substrate flavour split of
-[`prop:flavor-split-substrate`](#prop:flavor-split-substrate).
+[Substrate-pure derivation of the $u$--$d$ flavor split](#prop:flavor-split-substrate).
 
-The `pn` row previously read $\sigma + (-h/2)\cdot\mathbf{1}$ with wire-format
-`averaged`. That is the $\delta = 0$ form, and it is **not** what
-`atom_canonical_crossings` emits at generator $3k+2$. Both `ctype`s are real and
-the producer emits both, but at different places: `averaged` is the intra-nucleon
-quark crossing, and it never appears at $3k+2$. Verified against the producer for
-$\mathrm{D}$, ${}^{3}\mathrm{He}$ and ${}^{4}\mathrm{He}$ — every generator
-$3k+2$ returns `sigma` (p-p), `sigma_inv` (n-n) or `averaged_weighted` (p-n), and
-never `averaged`. The two forms differ by $h\delta/4 \approx 7.190 \times
-10^{-5}$ at the substrate anchor.
+The $\delta = 0$ form $\sigma + (-h/2)\cdot\mathbf{1}$ is **not** the p–n
+interface: it is the intra-nucleon quark crossing, and it never appears at a
+generator $3k+2$. For $\mathrm{D}$, ${}^{3}\mathrm{He}$ and ${}^{4}\mathrm{He}$
+every generator $3k+2$ carries the p–p, n–n or p–n interface above. The two
+forms differ by $h\delta/4 \approx 7.190 \times 10^{-5}$ at the substrate anchor.
 
 **Closure topology operators** (Markov closure $\widehat{\beta}$):
 
@@ -254,30 +250,31 @@ never `averaged`. The two forms differ by $h\delta/4 \approx 7.190 \times
 | $c_{\alpha\alpha}$ | $\alpha$–$\alpha$ pair-energy correction (${}^{8}$Be, ${}^{12}$C, $\ldots$, ${}^{40}$Ca) |
 | $\alpha$–N attachment | Layer 3: $^4$He cluster + valence nucleon (for non-magic $A$) |
 
-For an atom with mass number $A$, we build the canonical braid word in $B_{3A}$ sequentially per nucleon. At each $k \in \{0, \dots, A-1\}$, we apply the intra block at base $3k$ and $3k+1$. For $k < A-1$, we then apply the inter-nucleon interface at $3k+2$ between nucleon $k$ and $k+1$. The [`build_knot_operator_catalogue(Z, N)`](https://github.com/litlfred/qou/blob/main/computations/isotope_record_schema.py) function enumerates this sequence.
+For an atom with mass number $A$, build the canonical braid word in $B_{3A}$ sequentially per nucleon. At each $k \in \{0, \dots, A-1\}$, apply the intra block at base $3k$ and $3k+1$. For $k < A-1$, then apply the inter-nucleon interface at $3k+2$ between nucleon $k$ and $k+1$. The [`build_knot_operator_catalogue(Z, N)`](https://github.com/litlfred/qou/blob/main/computations/isotope_record_schema.py) function enumerates this sequence.
 
 ### Layer-1 canonical $|\mathrm{tr}_M(q_0)|$ table
 
-> **The binding column is census-assigned, not derived (2026-09-05).** Each
-> atom's knot is selected so its volume reproduces $B_\mathrm{AME}/m_e$, and the
-> $^4$He row is $4\times$ the $^3$He row using the same $8G$. The `± 0.0000 %`
-> is the AME *experimental* uncertainty, not an error bar on the prediction.
-> Retired as a live binding route; see
-> `docs/audits/2026-09-05-binding-route-consolidation-no-knot-selection.md`.
+**The binding column is census-assigned, not derived.** Each atom's knot is
+selected so its volume reproduces $B_\mathrm{AME}/m_e$, and the $^4$He row is
+$4\times$ the $^3$He row using the same $8G$. The `± 0.0000 %` is the AME
+*experimental* uncertainty, not an error bar on a prediction. This column is
+not a binding prediction.
 
 <!-- AUTO:canonical-tr-m-table BEGIN -->
 
 | Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding $B_{\text{AME}}$ (MeV) | Binding Error | $M_{\text{atom}}$ (MeV) | $M_{\text{atom}}$ Error |
 |---|---|---|---|---|---|---|---|
-| D | 2 | 1 | 2.2488 | 2.2246 | +1.09 ± 0.0000 % | — | — |
-| T | 3 | 2 | 8.4686 | 8.4818 | -0.16 ± 0.0000 % | — | — |
-| ${}^3$He | 3 | 1 | 7.4889 | 7.7180 | -2.97 ± 0.0000 % | — | — |
-| ${}^4$He | 4 | 2 | 29.9557 | 28.2957 | +5.87 ± 0.0000 % | — | — |
+| $\mathfrak{p}$ | 1 | 0 | — | — | — | 938.2721 | -0.00 $\pm$ 0.01 ppb |
+| $\mathfrak{n}$ | 1 | 1 | — | — | — | 939.5659 | +501.43 $\pm$ 0.47 ppb |
+| D | 2 | 1 | 2.2488 | 2.2246 | +1.09 $\pm$ 0.0000 % | — | — |
+| T | 3 | 2 | 8.4686 | 8.4818 | -0.16 $\pm$ 0.0000 % | — | — |
+| ${}^3$He | 3 | 1 | 7.4889 | 7.7180 | -2.97 $\pm$ 0.0000 % | — | — |
+| ${}^4$He | 4 | 2 | 29.9557 | 28.2957 | +5.87 $\pm$ 0.0000 % | — | — |
 | ${}^5$Li | 5 | 2 | — | 26.3280 | — | — | — |
 | ${}^6$Li | 6 | 3 | — | 31.9940 | — | — | — |
 | ${}^7$Li | 7 | 4 | — | 39.2452 | — | — | — |
 
-_Computed via [`canonical_mass_table_extended.py`](https://github.com/litlfred/qou/blob/main/computations/canonical_mass_table_extended.py) (method=`branching`). Witness: [`canonical-mass-table-extended.witness.json`](https://github.com/litlfred/qou/blob/main/computations/canonical-mass-table-extended.witness.json). Nucleon masses (m_p, m_n) via [`m-p-borromean-verification-50dps.witness.json`](https://github.com/litlfred/qou/blob/main/computations/m-p-borromean-verification-50dps.witness.json). Paper hard floor (CAL-2 propagation): ~780 ppb._
+_Computed by the extended canonical mass-table computation (method: auto); nucleon masses (m_p, m_n) from the canonical nucleon-mass routine. Paper hard floor (CAL-2 propagation): ~780 ppb._
 
 <!-- AUTO:canonical-tr-m-table END -->
 
@@ -386,7 +383,7 @@ _This table summarizes element stability: predicted neutron count $N_{\mathrm{pr
 
 ## Per-element coverage (AME 2020 cross-reference)
 
-_Auto-rendered from per-Z shards `canonical-isotope-witness-Z<NN>.witness.json` (emitted by [`canonical_isotope_witness.py`](https://github.com/litlfred/qou/blob/main/computations/canonical_isotope_witness.py)). Each row carries the framework value, the AME 2020 reference, and the residual. For free nucleons (p, n) the entry is the $m_e$-scaled rendering of the mass ratio conditional on `conj:borromean-baryon-mass-formula`. For D and up, the prediction is the binding energy; the AME 2020 reference is the total binding energy. $M_{\mathrm{atom}}$ is the composite atomic mass $N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$. The **CAL-3 Bound (ppb)** column represents the theoretical error floor propagated strictly from the empirical observation uncertainty of the neutron beta-decay $Q_\beta$ value (the CAL-3 anchor, $± 0.61$ eV). Because the theoretical neutron mass ratio $m_n/m_e$ is conditionally anchored on $Q_\beta$, each of the $N$ neutrons adds an unavoidable $± 0.61$ eV of experimental uncertainty to the rendered total atomic mass.
+_Rendered from the per-element isotope computations. Each row carries the framework value, the AME 2020 reference, and the residual. For free nucleons (p, n) the entry is the $m_e$-scaled rendering of the mass ratio conditional on the [Borromean baryon mass formula](#conj:borromean-baryon-mass-formula). For D and up, the prediction is the binding energy; the AME 2020 reference is the total binding energy. $M_{\mathrm{atom}}$ is the composite atomic mass $N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$. The **CAL-3 Bound (ppb)** column represents the theoretical error floor propagated strictly from the empirical observation uncertainty of the neutron beta-decay $Q_\beta$ value (the CAL-3 anchor, $± 0.61$ eV). Because the theoretical neutron mass ratio $m_n/m_e$ is conditionally anchored on $Q_\beta$, each of the $N$ neutrons adds an unavoidable $± 0.61$ eV of experimental uncertainty to the rendered total atomic mass.
 
 ### neutron (Z = 0)
 

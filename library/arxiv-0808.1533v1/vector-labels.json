@@ -1,0 +1,2023 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-0808.1533v1",
+  "pages": [
+    {
+      "page": 7,
+      "rotation": 0,
+      "drawings": 45,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: The model of LBorr parametrized by {L1 = pr(x(s)), L2 = pr(y(t)), L3 = pr(z(u))}. Arc A1 is a part of the unit circle on xy-plane, A2 is a part of circle of radius 1 + ǫ."
+      ],
+      "labels": [
+        {
+          "text": "L1",
+          "bbox": [
+            179.52,
+            121.71,
+            191.67,
+            134.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "A2",
+          "bbox": [
+            413.64,
+            161.55,
+            426.63,
+            174.31
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "L2",
+          "bbox": [
+            134.64,
+            171.51,
+            146.79,
+            184.27
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "A1",
+          "bbox": [
+            338.88,
+            181.47,
+            351.87,
+            194.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "L3",
+          "bbox": [
+            159.6,
+            236.31,
+            171.75,
+            249.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 1: The model of LBorr parametrized by {L1 = pr(x(s)), L2 = pr(y(t)), L3 = pr(z(u))}.",
+          "bbox": [
+            72.0,
+            265.44,
+            540.12,
+            279.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSS12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Arc A1 is a part of the unit circle on xy-plane, A2 is a part of circle of radius 1 + ǫ.",
+          "bbox": [
+            72.0,
+            280.11,
+            499.8,
+            293.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(i) The z-axis stays invariant under the S1-action.",
+          "bbox": [
+            82.32,
+            321.86,
+            341.88,
+            335.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(ii) A2 slides, under the S1-action, on the rǫ-torus, A1 simply rotates around the z-axis in",
+          "bbox": [
+            78.36,
+            346.1,
+            540.01,
+            361.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "the (x, y)-plane.",
+          "bbox": [
+            101.28,
+            361.95,
+            183.12,
+            373.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(iii) We can disregard the longitudinal rotation (i.e. pretend that the observer sits on the",
+          "bbox": [
+            74.28,
+            386.31,
+            540.04,
+            398.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "unit circle) the motion of arcs: Ls",
+          "bbox": [
+            101.28,
+            399.38,
+            271.87,
+            412.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "3, As",
+          "bbox": [
+            267.96,
+            399.38,
+            292.15,
+            414.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2 together with the connecting segments is simply",
+          "bbox": [
+            288.24,
+            400.71,
+            539.81,
+            415.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "a full rotation around the unit circle on the (x, y)-plane (which can be thought of as",
+          "bbox": [
+            101.28,
+            415.23,
+            540.06,
+            427.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the “axis of rotation”). Stages of this motion are pictured on the lower part of Figure",
+          "bbox": [
+            101.28,
+            429.63,
+            540.04,
+            441.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2.",
+          "bbox": [
+            101.28,
+            444.03,
+            110.4,
+            456.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "We seek to visualize the projection of lS,N = lS ∪lN on the su-face and st-face of the",
+          "bbox": [
+            89.52,
+            468.27,
+            540.04,
+            482.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "domain T = S1 × S1 × S1 of FLBor parameterized by (s, t, u) ∈T, (it is convenient to think",
+          "bbox": [
+            72.0,
+            478.35,
+            539.93,
+            495.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "about T as a cube in (s, t, u)-coordinates, see Figure 3).",
+          "bbox": [
+            72.0,
+            494.4,
+            357.6,
+            509.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "MSBM10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "For example when s = 0, (x(0) = 1), a point (0, t0, u0) belongs to lN, if and only if",
+          "bbox": [
+            89.52,
+            511.32,
+            539.98,
+            524.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSS12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "the vector v0 = pr(y(t0)) −pr(z(u0)) “points North”, i.e. in the direction of N = (0, 0, 1),",
+          "bbox": [
+            72.0,
+            525.72,
+            540.12,
+            539.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSS12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "analogous condition holds for S = (0, 0, −1), and lS. Thus in order to determine a diagram",
+          "bbox": [
+            72.0,
+            540.51,
+            540.02,
+            553.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "of lS,N, we must keep track of the “head” and “tail” of the vector vs = Ls",
+          "bbox": [
+            72.0,
+            553.58,
+            459.92,
+            568.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSS12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2(t) −Ls",
+          "bbox": [
+            456.0,
+            553.58,
+            501.44,
+            568.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "3(u), for",
+          "bbox": [
+            497.52,
+            554.91,
+            539.98,
+            568.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "various values of s and record values of t and u for which vs points “North” and “South”",
+          "bbox": [
+            72.0,
+            569.16,
+            539.97,
+            583.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSS12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(Figure 2). We have the following condition",
+          "bbox": [
+            72.0,
+            583.83,
+            296.41,
+            595.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "vs ∥S or N.",
+          "bbox": [
+            369.0,
+            609.72,
+            430.68,
+            623.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSS12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(s, t, u) ∈lS,N",
+          "bbox": [
+            181.32,
+            609.99,
+            249.6,
+            622.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "if and only if,",
+          "bbox": [
+            274.32,
+            609.99,
+            343.56,
+            621.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(7)",
+          "bbox": [
+            525.0,
+            609.99,
+            539.99,
+            621.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "An alternative way to view this condition is the following: for a given value of s the coor-",
+          "bbox": [
+            72.0,
+            636.15,
+            540.06,
+            648.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "dinates u and t of points in lS,N can be identiﬁed with points on Ls",
+          "bbox": [
+            72.0,
+            649.22,
+            429.43,
+            664.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2 and Ls",
+          "bbox": [
+            425.52,
+            649.22,
+            470.48,
+            665.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "3, which come",
+          "bbox": [
+            466.56,
+            650.55,
+            539.92,
+            664.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "from the intersection points in π(Ls",
+          "bbox": [
+            72.0,
+            663.62,
+            254.83,
+            676.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "3 ∪Ls",
+          "bbox": [
+            250.92,
+            663.62,
+            280.63,
+            679.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2), under the projection π(x, y, z) = (x, y), onto the",
+          "bbox": [
+            276.72,
+            664.95,
+            540.04,
+            678.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(x, y)-plane (see the bottom part of Figure 2). These intersection points are simply crossings",
+          "bbox": [
+            72.0,
+            679.47,
+            539.82,
+            691.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "in the diagram of the link {Ls",
+          "bbox": [
+            72.0,
+            692.54,
+            231.31,
+            705.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2, Ls",
+          "bbox": [
+            227.4,
+            692.54,
+            249.31,
+            707.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "3} on the (x, y)-plane. Points N and S can be assumed",
+          "bbox": [
+            245.4,
+            693.87,
+            539.77,
+            707.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "7",
+          "bbox": [
+            303.12,
+            723.75,
+            308.97,
+            735.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "rotation": 0,
+      "drawings": 406,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2: Four positions corresponding to angles: s = 0, π"
+      ],
+      "labels": [
+        {
+          "text": "s = 0",
+          "bbox": [
+            101.88,
+            122.79,
+            128.97,
+            134.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "s = π",
+          "bbox": [
+            101.88,
+            210.74,
+            129.18,
+            224.4
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            124.8,
+            219.5,
+            129.03,
+            227.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "s = π",
+          "bbox": [
+            101.88,
+            312.03,
+            129.76,
+            324.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "s = 3π",
+          "bbox": [
+            101.88,
+            409.94,
+            133.38,
+            423.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            126.96,
+            418.82,
+            131.19,
+            426.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Figure 2: Four positions corresponding to angles: s = 0, π",
+          "bbox": [
+            72.0,
+            693.38,
+            363.66,
+            707.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2, π, 3π",
+          "bbox": [
+            359.28,
+            693.38,
+            392.94,
+            710.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2 , small arrows next to N and",
+          "bbox": [
+            386.52,
+            695.07,
+            540.01,
+            711.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "S indicate a motion as s ր. Several phases of the rotation by s are pictured on the bottom",
+          "bbox": [
+            72.0,
+            709.59,
+            540.02,
+            721.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "9",
+          "bbox": [
+            303.12,
+            723.75,
+            308.96,
+            735.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "four drawings.",
+          "bbox": [
+            72.0,
+            723.99,
+            144.72,
+            735.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 10,
+      "rotation": 0,
+      "drawings": 186,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3: Projection of lS,N on the su-face and st-face of T. The strands lS and lN are oppositely oriented since lS,N is null homologous in T."
+      ],
+      "labels": [
+        {
+          "text": "s",
+          "bbox": [
+            101.88,
+            272.19,
+            107.39,
+            284.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "s",
+          "bbox": [
+            298.2,
+            272.19,
+            303.71,
+            284.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "π",
+          "bbox": [
+            103.08,
+            390.02,
+            107.94,
+            397.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "π",
+          "bbox": [
+            299.4,
+            390.02,
+            304.26,
+            397.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            103.56,
+            398.9,
+            107.79,
+            406.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            299.88,
+            398.9,
+            304.11,
+            406.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "u",
+          "bbox": [
+            271.2,
+            441.51,
+            277.86,
+            453.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "t",
+          "bbox": [
+            470.52,
+            441.51,
+            474.74,
+            453.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(A)",
+          "bbox": [
+            186.6,
+            446.55,
+            204.46,
+            458.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(B)",
+          "bbox": [
+            383.88,
+            446.55,
+            401.26,
+            458.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "s",
+          "bbox": [
+            101.88,
+            481.35,
+            107.39,
+            493.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "s",
+          "bbox": [
+            298.2,
+            481.35,
+            303.71,
+            493.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "u",
+          "bbox": [
+            271.2,
+            650.79,
+            277.86,
+            662.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "t",
+          "bbox": [
+            470.52,
+            650.79,
+            474.74,
+            662.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(C)",
+          "bbox": [
+            186.6,
+            652.71,
+            204.1,
+            664.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(D)",
+          "bbox": [
+            383.88,
+            652.71,
+            401.98,
+            664.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 3: Projection of lS,N on the su-face and st-face of T. The strands lS and lN are",
+          "bbox": [
+            72.0,
+            682.33,
+            540.04,
+            698.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "oppositely oriented since lS,N is null homologous in T.",
+          "bbox": [
+            72.0,
+            696.84,
+            348.24,
+            713.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            300.12,
+            723.75,
+            311.85,
+            735.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 11,
+      "rotation": 0,
+      "drawings": 14,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4: left: ¯µ123 = ±1 and right: ¯µ123 = ±n."
+      ],
+      "labels": [
+        {
+          "text": "lN. Observe that strands in lS and lN are oppositely oriented, which follows from the fact",
+          "bbox": [
+            72.0,
+            93.87,
+            539.98,
+            107.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "that they are null-homologous in H1(T), there are an obvious annuli bounding lS and lN on",
+          "bbox": [
+            72.0,
+            105.49,
+            540.01,
+            122.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Diagram (C). Clearly, the linking number of lS and lN is equal to ±2, since the intersection",
+          "bbox": [
+            72.0,
+            122.79,
+            539.77,
+            136.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "number of e.g. lS with the obvious annulus on Diagram (C) is ±2. This proves (6).",
+          "bbox": [
+            72.0,
+            137.19,
+            498.84,
+            150.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "on",
+          "bbox": [
+            395.64,
+            286.59,
+            407.66,
+            332.62
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMEX10",
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 4: left: ¯µ123 = ±1 and right: ¯µ123 = ±n.",
+          "bbox": [
+            184.8,
+            332.91,
+            427.08,
+            346.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Corollary 2.3. If L = {L1, L2, L3} is a 3-component link with vanishing pairwise linking",
+          "bbox": [
+            72.0,
+            363.67,
+            540.1,
+            376.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMTI12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "numbers then",
+          "bbox": [
+            72.0,
+            378.39,
+            140.26,
+            390.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "H (FL) = ±2 ¯µ123",
+          "bbox": [
+            260.4,
+            397.48,
+            351.03,
+            412.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "rsfs10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Proof. Clearly, if L and L′ are link-homotopic then FL and FL′ are homotopic maps. By the",
+          "bbox": [
+            72.0,
+            417.51,
+            540.04,
+            435.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY6",
+            "CMSY8",
+            "CMTI12"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Milnor classiﬁcation of 3-component links up to link homotopy (see [23]), every 3-component",
+          "bbox": [
+            72.0,
+            436.23,
+            539.98,
+            448.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "link L with zero pairwise linking numbers and ¯µ123 = ±n is represented by the right diagram",
+          "bbox": [
+            72.0,
+            450.75,
+            540.02,
+            464.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "on Figure 4. Consequently, up to homotopy, the associated map FL can be obtained from",
+          "bbox": [
+            72.0,
+            465.15,
+            540.02,
+            478.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "FLBorr by covering one of the S1 factors in T, n-times.",
+          "bbox": [
+            72.0,
+            475.23,
+            346.56,
+            494.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Lemma 2.4 ([11]). We have the following isomorphisms",
+          "bbox": [
+            72.0,
+            499.75,
+            364.18,
+            512.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "π2(Conf(R3, 3)) ∼= Z ⊕Z ⊕Z,",
+          "bbox": [
+            166.8,
+            518.43,
+            315.0,
+            534.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMTI12",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.96,
+            11.96
+          ]
+        },
+        {
+          "text": "π2(Conf(S3, 3)) ∼= Z,",
+          "bbox": [
+            340.92,
+            518.43,
+            445.2,
+            534.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMTI12",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.96,
+            11.96
+          ]
+        },
+        {
+          "text": "and the induced homomorphism i∗: π2(Conf(R3, 3)) 7→π2(Conf(S3, 3)), from i : R3 7→",
+          "bbox": [
+            72.0,
+            539.07,
+            539.96,
+            556.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "CMTI12",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.96,
+            11.96
+          ]
+        },
+        {
+          "text": "R3 ∪{∞} ∼= S2, maps the generators Aij, 1 ≤i ≤j ≤3, to ± α, where α is the single",
+          "bbox": [
+            72.0,
+            553.47,
+            540.1,
+            570.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMTI12",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.96,
+            11.96
+          ]
+        },
+        {
+          "text": "generator of π2(Conf(S3, 3)).",
+          "bbox": [
+            72.0,
+            570.98,
+            219.23,
+            585.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMTI12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Proof. The Hurewicz Theorem tells us that H2(Conf(R3, 3)) ∼= π2(Conf(R3, 3)).",
+          "bbox": [
+            72.0,
+            589.47,
+            493.56,
+            605.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMTI12",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.96,
+            11.96
+          ]
+        },
+        {
+          "text": "The 2-",
+          "bbox": [
+            504.36,
+            592.83,
+            540.06,
+            604.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "skeleton of Conf(R3, 3) has a homotopy type of S2∨S2 ∨S2 and H2(Conf(R3, 3)) is generated",
+          "bbox": [
+            72.0,
+            602.91,
+            539.89,
+            619.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.96,
+            11.96
+          ]
+        },
+        {
+          "text": "by Aij : S2 7→Conf(R3, 3), 1 ≤i < j ≤3 representing each 2-sphere in the 2-skeleton (c.f.",
+          "bbox": [
+            72.0,
+            617.31,
+            540.0,
+            635.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.96,
+            11.96
+          ]
+        },
+        {
+          "text": "[12]). The group of permutations S3 acts on Conf(R3, 3) by permuting coordinates. As a",
+          "bbox": [
+            72.0,
+            633.37,
+            539.97,
+            649.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.96,
+            11.96
+          ]
+        },
+        {
+          "text": "consequence of this we obtain the action on generators of H2(Conf(R3, 3)) by permutation.",
+          "bbox": [
+            72.0,
+            648.74,
+            539.88,
+            663.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.96,
+            11.96
+          ]
+        },
+        {
+          "text": "We have seen that Conf(S3, 3) has the homotopy type of S3 × S2 thus π2(Conf(S3, 3)) = Z,",
+          "bbox": [
+            72.0,
+            660.63,
+            540.0,
+            677.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.96,
+            11.96
+          ]
+        },
+        {
+          "text": "and let us denote the generator by α. Now, i∗Aij = k α, k ∈Z, notice that i∗A23 = α since",
+          "bbox": [
+            72.0,
+            677.66,
+            539.92,
+            693.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.96,
+            11.96
+          ]
+        },
+        {
+          "text": "i ◦A23 = idS2, using the action by permutations we obtain i∗Aij = α.",
+          "bbox": [
+            72.0,
+            692.54,
+            426.6,
+            707.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "11",
+          "bbox": [
+            300.12,
+            723.75,
+            311.85,
+            735.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    }
+  ]
+}

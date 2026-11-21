@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2104.14491v1
-doc_title: "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗ A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Mo"
+doc_title: "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Mos"
 section_id: sec-009-33-false-adjoint-khovanov-polynomials
 section_title: "False adjoint Khovanov polynomials"
 section_number: 3.3
 pages: 7-8
 source_pdf: 2104.14491v1.pdf
 source_sha256: 1aea658f17283df1
-doc_brief: "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗ A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.964
-latex_coverage_ratio: 0.982
+latex_coverage_ratio: 0.964
+doc_brief: "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia"
 ---
 We call the invariant $\mathfrak{K}^{\mathcal{K}}$ an **asymptotic adjoint Khovanov**/**AAK** polynomial. It is *almost* the adjoint/symmetric Khovanov polynomial. Namely, the polynomial $$\begin{aligned}
 \widehat{\mathtt{Kh}}^{\mathcal{K}}_k(q,t)=

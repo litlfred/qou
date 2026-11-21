@@ -147,6 +147,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4544a9cd06c2",
+          "ts": "22a440a21c76"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:27.512Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "critical",
+        "evidence": "CRITICAL: S↔P: the displayed dual is not the dual of this primal. x is free (md:5), so stationarity gives the equality y_0 + Σ_i G_ji y_i + s_j = t_j. The md writes \"y_0 + Σ G_ji y_i − s_j ≤ t_j\" (md:69) and the effective dual \"y_0 + Σ G_ji y_i ≤ t_j\" (md:86), which is the dual of the x ≥ 0 program. Exact counterexample (sympy, H_3, convention D, q = 11/10, n_target = 1; a weak-duality violation). t = (1, 1331/2210, 1331/2210, 1771561/4884100, 1771561/4884100, 32797171/48841000). The radical vector v = (−q³, q², q², −q, −q, 1) gives the primal-feasible x = (1331, −1210, −1210, 1100, 1100, −1000)/111: Σx = 1, Gx = 0, x ≥ −M for M ≥ 1210/111, objective 0. Meanwhile y = 0, s = 0, y_0 = 1771561/4884100 is feasible for both displayed duals with value > 0. Dual > primal, so the \"strong duality\" display (md:95-98) and \"the dual certificate (y_0*, y*) certifies optimality\" (md:26) are false as written. The prf proves strong duality only abstractly (prf:7-9) and never derives the dual. The prf also contradicts the statement's degeneracy section: \"the Borromean link B_3 as the unique LP vertex\" (prf:41-42) against md:49-56 \"The set of minimisers is not a point\". The active set {σ_0, L_-} (prf:37) is read off the non-optimal NF(B_3).",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: other"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -932,7 +949,7 @@
           "in_degree": 0,
           "cone_size": 4,
           "depth": 4,
-          "pagerank": 7.6e-05,
+          "pagerank": 0.000076,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1232,7 +1249,7 @@
         },
         "reviewed_at": "2026-08-21T21:45:53.650Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "evidence": "Two em-dashes, both paired parentheticals ('non-degenerate \u2014 for q != 0, 1 \u2014 on the quotient'). NOTE a separate typographic point, not a trap: the active-set sentence uses a raw ASCII double hyphen ('active demand channels -- the channels that ...') where the rest of the block uses a true dash."
+        "evidence": "Two em-dashes, both paired parentheticals ('non-degenerate — for q != 0, 1 — on the quotient'). NOTE a separate typographic point, not a trap: the active-set sentence uses a raw ASCII double hyphen ('active demand channels -- the channels that ...') where the rest of the block uses a true dash."
       }
     ],
     "trap-triples": [
@@ -1368,7 +1385,7 @@
         },
         "reviewed_at": "2026-08-21T21:45:53.958Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "evidence": "Final section relates the LP to the spectral decomposition \u2014 new content."
+        "evidence": "Final section relates the LP to the spectral decomposition — new content."
       }
     ],
     "trap-performed-warmth": [
@@ -1471,7 +1488,7 @@
         "reviewed_at": "2026-08-21T21:45:54.139Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "Reads aloud; tables carry the dense material.",
-        "notes": "RIGOR. VERIFIED CORRECT (all recomputed): d = n! = 2, 6, 24, 120 for n = 2..5; rank G = C_n = 2, 5, 14, 42 (Catalan); corank 0, 1, 10, 78 with the stated sum-of-squares decompositions exact \u2014 10 = 3^2 + 1^2 is dim[2,1,1]^2 + dim[1^4]^2, and 78 = 6^2+5^2+4^2+1^2 is dim[3,1,1]^2 + dim[2,2,1]^2 + dim[2,1,1,1]^2 + dim[1^5]^2, i.e. exactly the l(lambda) >= 3 partitions the note says convention D kills; dim TL_n = C_n confirms the quotient claim. The tabled optimum sums to 0.998 - 0.010 + 0.009 + 0.046 - 0.044 + 0 = 0.999, consistent with the net constraint at n_target approx 1.000. INTERNAL CONTRADICTION (reported, not fixed): the n = 3 paragraph says 'the Borromean link B_3 as the unique LP vertex', and the sibling rem:operator-selection-lp-interpretation opens 'selects the Borromean link B_3 as the unique optimizer over the 6-element NF basis of H_3(q)' \u2014 but the correction blockquote FOUR LINES BELOW, in this same file, states that on H_n the LP 'has a corank G-dimensional space of optima differing by radical directions the trace cannot see', and it tabulates corank = 1 at n = 3. Uniqueness therefore holds only on the quotient H_3/rad tr_M = TL_3, not on the 6-element NF basis both sentences name. Proposed: qualify both 'unique' claims with 'on the quotient', or state the one-parameter radical family explicitly."
+        "notes": "RIGOR. VERIFIED CORRECT (all recomputed): d = n! = 2, 6, 24, 120 for n = 2..5; rank G = C_n = 2, 5, 14, 42 (Catalan); corank 0, 1, 10, 78 with the stated sum-of-squares decompositions exact — 10 = 3^2 + 1^2 is dim[2,1,1]^2 + dim[1^4]^2, and 78 = 6^2+5^2+4^2+1^2 is dim[3,1,1]^2 + dim[2,2,1]^2 + dim[2,1,1,1]^2 + dim[1^5]^2, i.e. exactly the l(lambda) >= 3 partitions the note says convention D kills; dim TL_n = C_n confirms the quotient claim. The tabled optimum sums to 0.998 - 0.010 + 0.009 + 0.046 - 0.044 + 0 = 0.999, consistent with the net constraint at n_target approx 1.000. INTERNAL CONTRADICTION (reported, not fixed): the n = 3 paragraph says 'the Borromean link B_3 as the unique LP vertex', and the sibling rem:operator-selection-lp-interpretation opens 'selects the Borromean link B_3 as the unique optimizer over the 6-element NF basis of H_3(q)' — but the correction blockquote FOUR LINES BELOW, in this same file, states that on H_n the LP 'has a corank G-dimensional space of optima differing by radical directions the trace cannot see', and it tabulates corank = 1 at n = 3. Uniqueness therefore holds only on the quotient H_3/rad tr_M = TL_3, not on the 6-element NF basis both sentences name. Proposed: qualify both 'unique' claims with 'on the quotient', or state the one-parameter radical family explicitly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1494,6 +1511,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-24T23:45:52.015Z",
+  "updated_at": "2026-11-15T21:57:27.512Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

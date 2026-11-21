@@ -1,0 +1,60 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0408078v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "A basis for the full Homfly skein of the annulus",
+  "contains": [
+    "library/arxiv-math-0408078v2/sections/sec-front-matter",
+    "library/arxiv-math-0408078v2/sections/sec-000",
+    "library/arxiv-math-0408078v2/sections/sec-001",
+    "library/arxiv-math-0408078v2/sections/sec-002",
+    "library/arxiv-math-0408078v2/sections/sec-003",
+    "library/arxiv-math-0408078v2/sections/sec-004",
+    "library/arxiv-math-0408078v2/sections/sec-005",
+    "library/arxiv-math-0408078v2/sections/sec-006",
+    "library/arxiv-math-0408078v2/sections/sec-007",
+    "library/arxiv-math-0408078v2/sections/sec-008",
+    "library/arxiv-math-0408078v2/sections/sec-009",
+    "library/arxiv-math-0408078v2/sections/sec-010",
+    "library/arxiv-math-0408078v2/sections/sec-011",
+    "library/arxiv-math-0408078v2/sections/sec-012",
+    "library/arxiv-math-0408078v2/sections/sec-013",
+    "library/arxiv-math-0408078v2/sections/sec-014",
+    "library/arxiv-math-0408078v2/sections/sec-015"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-math-0408078v2",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "A basis for the full Homfly skein of the annulus",
+      "basis": "Printed title on page 1 (R. J. Hadji and H. R. Morton); the extracted title used the fl ligature and included the first section heading",
+      "extracted_title": "A basis for the full Homﬂy skein of the annulus Introduction",
+      "corrected_on": "2026-11-18",
+      "extracted": "A basis for the full Homfly skein of the annulus"
+    },
+    "source_file": "0408078v2.pdf",
+    "source_sha256": "b632eb5e9b7a17536782162bf41857730899bd6386b22588bc8c7da0117ab740",
+    "pages": 27,
+    "arxiv": {
+      "id": "math/0408078",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "3 Apr 2009"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

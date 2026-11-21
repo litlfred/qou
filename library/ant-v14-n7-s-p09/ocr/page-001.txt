@@ -1,0 +1,44 @@
+ALGEBRA AND NUMBER THEORY 14:7 (2020)
+https://doi.org/10.2140/ant.2020.14.1953
+
+Galois action on the principal block
+and cyclic Sylow subgroups
+
+Noelia Rizo, A. A. Schaeffer Fry and Carolina Vallejo
+
+We characterize finite groups G having a cyclic Sylow p-subgroup in terms of the action of a specific
+Galois automorphism on the principal p-block of G, for p = 2, 3. We show that the analog statement for
+blocks with arbitrary defect group would follow from the blockwise McKay—Navarro conjecture.
+
+Introduction
+
+One of the most prevalent questions in the representation theory of finite groups is to determine what
+relationships hold between the set Irr(G) of irreducible complex characters of a finite group G and its
+local structure, such as the structure of a Sylow p-subgroup P of G. There is, of course, the more
+sophisticated question of relating the set Irr(B) of irreducible characters belonging to a given Brauer
+p-block B of G with the structure of a defect group D of B.
+
+G. Navarro and P. H. Tiep [2019] conjecture that for a prime p, one can determine the exponent of the
+abelianization of P in terms of the action of certain Galois automorphisms on Irr(G). To be more precise,
+for a fixed prime p and an integer e > 1, let o, € Gal(Q**/Q) = G be such that o, fixes p’-roots of unity
+and sends any root of unity of order a power of p to its (p°+1)-st power. In [Navarro and Tiep 2019] it is
+proven that the exponent of P/P’ is less than or equal to p® whenever all of the irreducible characters of
+p’-degree of G are o,-fixed, and the converse is reduced to a question on finite simple groups. (Thanks to
+Malle [2019] we know that the converse holds for p = 2.)
+
+In the present work, we show that one can determine whether P is cyclic (for small primes) by just
+counting the number of certain o)-invariant elements of Irr(Bo), where Bo is the principal p-block of G.
+This is the main result of our paper.
+
+This material is based upon work supported by the National Security Agency under Grant No. H98230-19-1-0119, The Lyda
+Hill Foundation, The McGovern Foundation, and Microsoft Research, while the authors were in residence at the Mathematical
+Sciences Research Institute in Berkeley, California, during the summer of 2019. Rizo and Vallejo acknowledge support by
+Ministerio de Ciencia e Innovacién PID2019-103854GB-100 and FEDER funds. Vallejo further acknowledges support from the
+Ministerio de Ciencia e Innovacion, through the “Severo Ochoa Programme for Centres of Excellence in R&D” (SEV-2015-0554)
+and from the Spanish National Research Council, through the “Ayuda extraordinaria a Centros de Excelencia Severo Ochoa”
+(20205CEX001). Schaeffer Fry acknowledges support from the National Science Foundation under Grant No. DMS-1801156.
+MSC2010: primary 20C15; secondary 20C20, 20C33.
+
+Keywords: principal p-block, Galois action on characters, cyclic Sylow p-subgroups, Alperin-McKay—Navarro Conjecture.
+
+1953

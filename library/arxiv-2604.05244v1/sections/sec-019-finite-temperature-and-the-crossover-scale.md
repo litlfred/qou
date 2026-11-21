@@ -10,7 +10,8 @@ source_sha256: a5097e763dd89d06
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.971
-latex_coverage_ratio: 0.971
+latex_coverage_ratio: 0.962
+doc_brief: "Edge universality in Floquet sideband spectra — We show that, for non-interacting fermions under a monochromatic phase drive (Tien– Gordon regime), the outgoing sideband occupations at a sharp Fermi"
 ---
 []{#sec:finite-T label="sec:finite-T"} At finite electron temperature $T_{\rm el}$, the Fermi step is smoothed over $\Delta n_T\sim k_BT_{\rm el}/\hbar\Omega$ sidebands. The Airy edge occupies $\Delta n_{\rm edge}\sim\kappa_A\sim A^{1/3}$ sidebands. Define the crossover parameter $$\theta_A := \frac{k_BT_{\rm el}/\hbar\Omega}{\kappa_A} = \frac{k_BT_{\rm el}}{\hbar\Omega}\left(\frac{2}{A}\right)^{\!1/3}.
   \label{eq:theta-def}$$ Replacing the sharp Fermi step by the smooth occupation $\bar f(E_m)=[1+\exp((E_m-\mu)/k_BT_{\rm el})]^{-1}$ in the kernel sum gives the finite-temperature kernel $$K_{A,T}(\nu,\lambda) = \sum_{r\in\mathbb Z} J_{\nu+r}(A)\,J_{\lambda+r}(A)\;\frac{1}{1+e^{-(r+\eta)\hbar\Omega/k_BT_{\rm el}}},

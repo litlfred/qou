@@ -9,8 +9,9 @@ source_pdf: 2604.05244v1.pdf
 source_sha256: a5097e763dd89d06
 toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.923
-latex_coverage_ratio: 0.96
+latex_prose_ratio: 0.962
+latex_coverage_ratio: 0.862
+doc_brief: "Edge universality in Floquet sideband spectra — We show that, for non-interacting fermions under a monochromatic phase drive (Tien– Gordon regime), the outgoing sideband occupations at a sharp Fermi"
 ---
 []{#sec:measurement label="sec:measurement"}
 

@@ -1,0 +1,48 @@
+154 Appendix A — Reductive super groups
+
+It turns out that the above examples essentially exhaust all reductive
+algebraic super groups over A. Indeed, by theorem 6 of loc. cit. an algebraic
+super group G over A is reductive iff there are a classical reductive group H
+and integers N € No, nj,r; € N such that G is isomorphic to a semidirect
+product
+
+N
+= (TI Spo, (21;, 1) )") xH
+i=l
+with respect to a homomorphism 7(H) + me, Gn; where each symmetric
+group Gp, acts on (Spo, (2r;,1))"" by permutation of the factors.
+
+COROLLARY A.2. For a reductive algebraic super group G over A, the
+underlying classical group G is reductive as well; furthermore, the super
+center Z(G) is a subgroup of finite index in the classical center Z(G).
+
+Proof. By the above it suffices to show this in case G = Spo, (27, 1) for
+some r € N. But then G = Sp,(2r), and Z(G) = Uy is finite. Oo
+
+PROPOSITION A.3. Let h: Gj — Go be a homomorphism of reductive
+super groups over A which induces an epimorphism
+
+f: Gi + Go
+
+on the underlying classical groups. If the super center Z(Go) contains a
+classical torus To, then also Z(G ) contains a classical torus T, such that
+the epimorphism f restricts to an isogeny p: T, — To.
+
+Proof. The category of tori (or diagonalizable groups) over A, up to
+isogeny, is equivalent to the category of finite vector spaces over Q via the
+cocharacter functor T ++ X(T) = Hom(Gm,T) ®z Q. If 7 is a finite group
+acting on T, then we have
+
+X((17)°) = (X(T))*
+for the invariants of the action on the torus resp. on its cocharacters.
+
+For reductive super groups G we have Z(G)° = Z(G)” by corollary A.2.
+On Z(G°) the group G acts by conjugation, and this action factors over the
+finite group 2 = 10(G). By definition we have Z(G)° c Z(G"), and this is
+a subgroup of finite index: This follows by an application of the cocharacter
+functor since X(Z(G)°) = X(Z(G°))*.
+
+For the proof of the proposition it suffices to show that 7p is contained
+in the image of Z(G,)°. By assumption h induces an epimorphism of the
+underlying classical groups, hence an epimorphism f : (G1)° + (Go)° of
+their connected components. By the theory of connected reductive classical

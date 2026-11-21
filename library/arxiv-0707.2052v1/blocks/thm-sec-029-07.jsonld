@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-0707.2052v1/blocks/thm-sec-029-07",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 35,
+  "pageEnd": 38,
+  "text": "thm-sec-029-07.md",
+  "derivedFrom": "library/arxiv-0707.2052v1/sections/sec-029",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0707.2052v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "27",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-029-reflexively-polite-kernels.md (p. 35-38)",
+    "claim_id": "arxiv-0707.2052v1#theorem:27",
+    "lean_status": "unformalized"
+  }
+}

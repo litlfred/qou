@@ -35,9 +35,7 @@ formal-existence claims (explicit-witness, `rfl`); Theorems 6-9
 extend to cross-observable and classical-limit identities;
 Theorems 10-13 formalize the general T(2,n) framing-ladder family.
 The DEEP categorical derivations (Wenzl-Hoefsmit Markov-trace
-operator, cinquefoil framing) remain conjectural and are captured
-as opaque marker fields in `UniversalHabiroStructure` (no class
-instance constructed).
+operator, cinquefoil framing) remain conjectural (open; bean `qou-n2un`).
 
 ## Cross-refs
 
@@ -118,8 +116,7 @@ noncomputable def qbetaC3Closure (q : ℝ) : ℝ :=
 Five theorems gating the `near-match` → `derived` promotion.
 Theorems 1-3 establish the structural identities by ring algebra.
 Theorems 4-5 establish the formal-existence claims via explicit
-witnesses; the DEEP categorical derivations are captured as opaque
-marker fields in `UniversalHabiroStructure` below (no instance). -/
+witnesses; the DEEP categorical derivations remain open (bean `qou-n2un`). -/
 
 /-- **Theorem 1 (proved).** The m_μ V9 rung factors through the
 universal Habiro building block `T_{25}(q) = [3]_q / 25`:
@@ -173,9 +170,7 @@ realising these jet indices is trivial.
 The DEEP CATEGORICAL CLAIM — that this family IS the Markov-trace
 expansion of a specific Wenzl-Hoefsmit operator (rather than a mere
 indexing function) — is conjectural and absent from the present Lean
-infrastructure. It is captured by the `markov_trace_origin` field of
-`UniversalHabiroStructure` below (whose instance remains the open
-work). -/
+infrastructure. It is open (bean `qou-n2un`). -/
 theorem hbar_q_jet_orders_family_exists (q : ℝ) :
     ∃ (f : ℕ → ℝ → ℝ),
       f 6 q = hbarQ q ^ 6 ∧
@@ -198,8 +193,7 @@ The DEEP CATEGORICAL CLAIM — that this family IS the T(2,n) cinquefoil
 framing factor at the substrate level, with the n=5 selection matching
 the muon's torus-knot assignment from
 [`lepton_t2n_torus_tower.py`](../../../../../computations/lepton_t2n_torus_tower.py)
-— is conjectural. It is captured by the `cinquefoil_framing_t25_origin`
-field of `UniversalHabiroStructure` below. -/
+— is conjectural. It is open (bean `qou-n2un`). -/
 theorem habiroT25_framing_family_exists (q : ℝ) :
     ∃ (framing : ℕ → ℝ → ℝ),
       framing 5 q = habiroT25 q ∧
@@ -435,11 +429,10 @@ theorem qbetaC3Rung1_times_hbarQ_seven_eq_delta_V9 (q : ℝ) :
 The formal-existence claims (Theorems 4 + 5) are proved above; the
 DEEP categorical claims (that those existence witnesses ARE the
 Markov-trace operator and cinquefoil framing respectively) remain
-conjectural. This class captures the deep claims as opaque marker
-fields (no constructive content yet) so downstream theorems can carry
-them as hypotheses per AGENTS.md §3b-cond. -/
+conjectural. They were once carried as `: True` marker fields of a
+class; that class was removed 2026-11-15 because it asserted nothing. -/
 
-/-- Conditional class axiomatizing the two open categorical claims:
+/-! The two open categorical claims:
 
 - `markov_trace_origin` (Theorem 4 deep claim): the function family
   `fun n r => ℏ_r^n` is the Markov-trace expansion of a specific
@@ -447,23 +440,13 @@ them as hypotheses per AGENTS.md §3b-cond. -/
 - `cinquefoil_framing_t25_origin` (Theorem 5 deep claim): the framing
   family `fun n r => [3]_r / n²` is the T(2,n) cinquefoil framing
   factor at the substrate level. -/
-class UniversalHabiroStructure (q : ℝ) : Prop where
-  /-- The function `fun n r => ℏ_r^n` is the Markov-trace expansion of
-  a Wenzl-Hoefsmit operator (opaque marker for the open derivation).
+/-! **Removed 2026-11-15: the `UniversalHabiroStructure` class itself.**
+Both fields were `True` and, since the 2026-08-21 correction below, no
+theorem took it as a hypothesis. The two open claims it named stay open and
+are recorded in bean `qou-n2un`. -/
 
-  The Markov-trace *infrastructure* is not the gate: `QOU.Machinery.
-  MarkovTraceOnHecke` realizes the H₃(q) Markov trace concretely (`trM`)
-  with (M1) linearity, (M2) cyclicity (`trM_cyclic`) and (M3) reduction
-  (`trM_markov_σ₁`) all proved sorry-free, and names itself the bridge for
-  discharging this marker "once Step 4 names the residue-A element." The
-  open gate is that operator identification (Step 4) plus extending the
-  trace beyond H₃. -/
-  markov_trace_origin : True
-  /-- The function `fun n r => [3]_r / n²` is the substrate-level T(2,n)
-  cinquefoil framing factor (opaque marker for the open derivation). -/
-  cinquefoil_framing_t25_origin : True
-
-/-- **Theorem (conditional on [UniversalHabiroStructure]).**
+/-- **Theorem (formerly billed as conditional on the removed
+`UniversalHabiroStructure` class).**
 
 If the universal Habiro structure holds at `q`, then both the m_μ
 R9+V9 closure and the Q_β c_3 3-rung closure represent genuine

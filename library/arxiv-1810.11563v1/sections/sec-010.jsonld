@@ -9,13 +9,16 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Hamiltonian Evolution",
-  "pageStart": 30,
-  "pageEnd": 32,
+  "title": "Graph Theory Perspective",
+  "pageStart": 17,
+  "pageEnd": 21,
   "contains": [
-    "library/arxiv-1810.11563v1/blocks/prose-sec-010"
+    "library/arxiv-1810.11563v1/blocks/prose-sec-010",
+    "library/arxiv-1810.11563v1/blocks/figure-img-p018-1",
+    "library/arxiv-1810.11563v1/blocks/figure-img-p019-1",
+    "library/arxiv-1810.11563v1/blocks/figure-img-p021-1"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1810.11563v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1810.11563v1",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1810.11563v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1810.11563v1/manifest.jsonld",
   "provenance": "ingested"
 }

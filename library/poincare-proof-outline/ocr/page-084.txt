@@ -1,0 +1,91 @@
+assumes —1 < x and x < 1 andz# 0
+
+assumes —1 < y and y < 1 andy #4 0
+
+shows poincare-between 0p (of-complex (i * x)) (of-complex (i * y)) <>
+(c<O0ANy<ONyK<2z)V(ze>OANYyY>OALK y) (is ?lhs <> ?rhs)
+
+using assms
+
+using poincare-between-Ouv[of of-complex (i * x) of-complex (i * y)|
+
+using arg-pi2-ifflof i * cor x] arg-pi2-iff[of i « cor y]
+
+using arg-minus-pi2-iff [of i * cor x] arg-minus-pi2-iff [of i * cor y]
+
+apply (simp add: norm-mult)
+
+apply (smt (verit, best))
+
+done
+
+lemma poincare-between-x-avis-uvw:
+fixes zy z:: real
+assumes —/ < 2 and z < 1
+assumes —1 < yand y < 1 andy#a
+assumes —1 < zandz< 1andz42
+shows poincare-between (of-complex x) (of-complex y) (of-complex z) <>
+(y¥<tAz<tAz<yV(y>tAz>aAyK< 2) (is 2lhs <> ?rhs)
+proof (casest=0Vy=0V2z=0)
+case True
+thus ?thesis
+proof (cases t = 0)
+case True
+thus ?thesis
+using poincare-between-x-axis-Ouv assms
+by simp
+next
+case False
+show ?thesis
+proof (cases z = 0)
+case True
+thus ?thesis
+using poincare-between-x-axis-Ouv assms poincare-between-rev
+by (smt norm-of-real of-complez-zero of-real-0 poincare-between-nonstrict(2) unit-disc-iff-cmod-lt-1)
+next
+case False
+have y = 0
+using «t§ A Oo iz AO tm =OVy=O0Vz=0>
+by simp
+
+have poincare-between (of-complez x) On (of-complex z) = (is-real z A % * z < 0)
+using (x # 0» «z 4 0» poincare-between-x-axis-u0v
+by auto
+
+moreover
+
+have x ¥ z < 0 «> ?rhs
+using True «x # 0) (z # 0»
+by (smt zero-le-mult-iff)
+
+ultimately
+
+show ?thesis
+using <y = 0>
+by auto
+
+qed
+
+qed
+
+next
+
+case False
+
+thus ?thesis
+
+proof (cases z = y)
+case True
+thus ?thesis
+
+using assms
+
+unfolding poincare-between-def
+
+by auto
+
+next
+case False
+let ?x = of-complex x and ?y = of-complex y and ?z = of-complex z
+
+84

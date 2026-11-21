@@ -1,0 +1,1 @@
+Assume p > 3. We have a Zp-linear isomorphism Dp : K3(Kp; Zp) →p2OKp , (183) and K3(Kp; Zp) is generated as a Zp-module by {[ζ] | ζ ∈µ(Kp)}. For related work on p-adic regulators/dilogarithms, see Huber–Kings [30] and also Besser– de Jeu [7, Thm.1.6(2)].

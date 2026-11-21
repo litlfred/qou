@@ -1,0 +1,1 @@
+Let A be a ring, which we can think of as a one-object linear category A. In this context, Theorem 6.3.1 is one of the most important results in noncommutative ring theory. See the books [106], [130] or [148]. Here are somewhat concrete examples.

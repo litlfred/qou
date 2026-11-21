@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/ki6c/blocks/prose-sec-024",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Curvature of the boundary of a convex domain in a plane",
-  "pageStart": 59,
-  "pageEnd": 70,
-  "text": "../sections/sec-024-curvature-of-the-boundary-of-a-convex-domain-in.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ki6c",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ki6c",
+  "title": "Estimate of a solution of (58)",
+  "pageStart": 58,
+  "pageEnd": 59,
+  "text": "../sections/sec-024-estimate-of-a-solution-of-58.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki6c/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki6c/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,12 +1,5 @@
-Let $(\mathbf{C}, A, \tau)$ define the explicit Descartes quantum universe anchored by $\chi(A) = -6$ (mapping Bring's surface at genus 4).
+Let $(\mathbf{C}, A, \tau)$ be the Descartes quantum universe, with base Bring's surface $\mathcal{S}$ of genus $4$ and $\chi(\mathcal{S}) = \chi_{\mathrm{eu}}(M_0) = -6$. Let $\xi$ be its Reeb $\mathrm{U}(1)$-bundle, the unit tangent bundle of $\mathcal{S}$. Then:
 
-The structure $(\mathbf{C}, A, \tau)$ evaluates unconditionally as [NS-singular](#def:ns-obstruction):
-
-$$
-  \mathrm{NS}(A)
-  = 
-  e(\xi)\big|_\Sigma
-   \neq  0.
-$$
-
-The categorical evaluation $\mathrm{NS}(A) \neq 0$ above is unconditional. By the obstruction tower (`prop:ns-obstruction-tower`), a nonzero $\mathrm{NS}(A)$ is exactly the obstruction to lifting the $q$-Navier--Stokes solution through the brane tower at $q = 1$: *within this QOU*, the internal $q = 1$ flow is singular. Whether that QOU-internal singularity is realised as a finite-time singularity of the classical $\mathbb{R}^3$ Navier--Stokes equation is the open categorical-to-classical bridge — the Clay problem, governed by `conj:levi-degeneracy` and `conj:regularity-breakdown` — and is **not** asserted here; it does not constitute an unconditional resolution of the classical regularity problem.
+1. $e(\xi) = c_1(\xi) = -6 \in H^2(\mathcal{S}, \mathbb{Z}) \cong \mathbb{Z}$. In particular $\xi$ has no nowhere-vanishing section.
+2. For $n \geq 1$, $\xi$ has an $n$-th root if and only if $n \in \{1, 2, 3, 6\}$. For every other $n$ the obstruction $-6 \bmod n \in H^2(\mathcal{S}, \mu_n) \cong \mathbb{Z}/n$ is non-zero.
+3. For any one-dimensional locus $\Sigma \subset \mathcal{S}$, the restriction of each of these classes to $\Sigma$ is zero, since $H^2(\Sigma, \cdot) = 0$.

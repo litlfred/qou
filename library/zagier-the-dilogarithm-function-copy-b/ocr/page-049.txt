@@ -1,0 +1,48 @@
+The Dilogarithm Function 51
+
+with coefficients c;(A,B) € R. The first two coefficients are given by
+c1(A,B) = L(1)- L(Q), co(A,B) = BlogQ- 5 logA, (36)
+where Q is the unique positive solution of Q+ Q4 = 1, L(x) is the Rogers
+
+dilogarithm, and A = A+Q-— AQ, while c;(A,B) for j > 1 is a polynomial
+of degree 7 +1 in B with coefficients in Q(Q, A, A~'], e.g.
+
+o(4,B) = +12 p SU DOA,
+(1— Q)((. — Q?) A® — 3QA? + 3Q(1 + Q)A — 2Q?)
+7 MAS :
+
+Before proving the proposition, we say a little bit more about the coef-
+ficients cj. The polynomial c; = cj(A,B) belongs to A~*/Q[A, Q, BA]. Its
+leading term is aj;BI+!/(j + 1) where )>a;x! is the Taylor expansion of
+log Q(z), Qa) +e*Q(z)4 = 1, ex.
+
+Q0 = Q) QQ = Q)BQ = (1+ Q)A)
+
+_— 3 _ A
+a=-—aaa 8 tee, C= Ae Bete,
+
+We omit the other coefficients, giving only the constant term of c9:
+
+©(A,0) = 0 aKAa)) [-44(A + 1)(4 — 1)2Q2
+
++3A(A — 1)(A — 2)(2A + 1)Q? + 24?(54 — 4)Q — A®(2A — 1)].
+
+We will describe three different approaches for obtaining the asymptotics
+of log F4,p(e-*) as ¢ > 0. The first, based on a functional equation for
+F4,p, is short and elementary, but gives the coefficients c;(A,B) only up
+to a term depending on A. The second is also elementary—essentially based
+on the Euler-Maclaurin summation formula—and gives the entire asymptotic
+expansion, but requires more work. The third, which is the one used by Nahm
+and his collaborators, is based on Cauchy’s theorem together with formula (8)
+for the quantum dilogarithm, and also leads to a full expansion; this method
+also has a variant, using (7) rather than (8) for the quantum dilogarithm,
+which has apparently not been noticed before. It seemed worth presenting all
+three approaches, at least briefly, since the information they give is somewhat
+different and since each of them is applicable (at least in principle) to the
+general case of Nahm’s conjecture and to many other problems of this type.
+
+(a) For the first approach we set.
+
+Fa,p(e~*)
+
+Fao) 2 M80

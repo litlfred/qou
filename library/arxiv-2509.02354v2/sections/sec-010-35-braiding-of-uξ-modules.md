@@ -1,0 +1,68 @@
+---
+doc_id: arxiv-2509.02354v2
+doc_title: "The holonomy braiding for U_xi(sl2) in terms of geometric quantum dilogarithms"
+section_id: sec-010-35-braiding-of-uξ-modules
+section_title: "Braiding of Uξ-modules."
+section_number: 3.5
+pages: 9-11
+source_pdf: 2509.02354v2.pdf
+source_sha256: 14680221e597fe61
+toc_source: outline
+text_source: latex
+latex_prose_ratio: 0.951
+latex_coverage_ratio: 0.959
+doc_brief: "The holonomy braiding for U_xi(sl2) in terms of geometric quantum dilogarithms — We derive an explicit formula for the holonomy R-matrix of quantum sl2 at a root of unity."
+---
+The map $\mathcal{R}$ gives a braiding on the algebra $\mathcal{U}_{\xi}$, but we want to construct a braiding on $\mathcal{U}_{\xi}$-modules. Given $\mathcal{U}_\xi$-modules $(\pi_{i}, V_{i})$ with characters $\chi_{i}$ related as in [\[thm:braiding formulas\]](#thm:braiding formulas){reference-type="ref" reference="thm:braiding formulas"} a is a linear map $$R : V_{1} \otimes V_{2} \to V_{1'} \otimes V_{2'}$$ intertwining $\mathcal{R}$ in the sense that the diagram $$\label{eq:R-mat-U-module-diagram}
+  \begin{tikzcd}[row sep = large, column sep = large]
+    \mathcal{U}_\xi^{\otimes 2} \arrow[r, "\mathcal{R}"] \arrow[d, swap, "\pi_{1} \otimes \pi_{2}"] & \mathcal{U}_\xi^{\otimes 2}[Y^{-1}] \arrow[d, "\pi_{1}' \otimes \pi_{2}'"] \\
+    \mathop{\mathrm{End}}_\mathbb{C}(V_1 \otimes V_2) \arrow[r, "a \mapsto R a R^{-1}"] & \mathop{\mathrm{End}}_\mathbb{C}(V_1' \otimes V_2')
+  \end{tikzcd}$$ commutes. Concretely, this means that $$(\pi_{1'} \otimes \pi_{2'})( \mathcal{R}(u) ) R = R  (\pi_{1} \otimes \pi_{2})(u)$$ for every $u \in \mathcal{U}_{\xi} \otimes \mathcal{U}_{\xi}$. Here we emphasize that $R$ depends not only on $V_{1}$ and $V_{2}$ but also $V_{1'}$ and $V_{2'}$ as in general these will not be isomorphic to $V_{1}$ and $V_{2}$. This is in contrast to modules over a quasitriangular Hopf algebra, where the universal $R$-matrix canonically defines a braiding for any pair of modules. As such, a holonomy braiding is a choice of both a continuous family of modules $\rep{\hat{\chi}}$ for each character $\hat{\chi}$ and also of braiding maps $R$ between them satisfying a parametrized Yang-Baxter equation. In more geometric language we seek to construct a bundle of $\mathcal{U}_{\xi}$-modules over $\mathop{\mathrm{Spec}}\mathcal{Z}$ (an $N$-fold cover of $\mathop{\mathrm{Spec}}\mathcal{Z}_{0} = \slg^*$) and a family of braiding maps between them.
+
+Recall that if $V$ is a $\mathcal{W}_{\xi}$-module it becomes a $\mathcal{U}_{\xi}$-module via $$u \cdot x = \phi(u) \cdot x \text{ for } x \in V, u \in \mathcal{U}_{\xi}.$$ Under this correspondence a character $\hat \chi \in \Wcharhat$ with $$\begin{aligned}
+  \hat{\chi}(x^{N}) &= a
+                      &
+  \hat{\chi}(y^{N}) &= b
+                      &
+  \hat{\chi}(z) &= \omega^{\mu}
+\end{aligned}$$ corresponds to the $\mathcal{Z}$-character $$\begin{aligned}
+  \hat{\chi}(\phi(K^{N}))  &= a
+                             &
+  \hat{\chi}(\phi(E^{N}))  &= b(a - m)
+  \\
+  \hat{\chi}(\phi(F^{N})) &= (ab)^{-1}(a - m^{-1})
+                            &
+  \hat{\chi}(\phi(\Omega)) &= \omega^{\mu + 1/2} + \omega^{-(\mu + 1/2)}
+\end{aligned}$$ hence to the group element $$\left(
+      \begin{bmatrix}
+        a & b(a-m) \\
+        0 & 1
+      \end{bmatrix}
+      ,
+      \begin{bmatrix}
+        1 & 0 \\
+        b^{-1}(a - m^{-1}) & a
+      \end{bmatrix}
+  \right)
+      \in \slg^*$$ whose image in $\slg$ is $$\label{eq:defactorization image}
+  \psi(\chi) = 
+  \begin{bmatrix}
+    a & -b(a-m) \\
+    b^{-1}(a-m^{-1}) & m + m^{-1} -a
+  \end{bmatrix}
+  \in \slg$$ The map $\psi : \Wchar \to \slg$ defined in [\[eq:defactorization image\]](#eq:defactorization image){reference-type="ref" reference="eq:defactorization image"} is not surjective, but it is surjective up to gauge equivalence: for every $g \in \slg$ there is an $h$ so that $\psi(\chi) = h^{-1} g h$.
+
+Thus for every pair $(\hat \chi_{1}, \hat \chi_{2})$ of admissible $\mathcal{W}_{\xi}$-characters we seek to define modules $\rep{\hat \chi_{i}}$ and linear maps $R = R(\hat \chi_{1}, \hat \chi_{2})$ so that each diagram $$\label{eq:R-mat-module-diagram}
+  \begin{tikzcd}[row sep = large, column sep = large]
+    \mathcal{W}_\xi / I_{\hat \chi_{1}}
+    \otimes
+    \mathcal{W}_\xi / I_{\hat \chi_{2}}
+    \arrow[r, "\mathcal{R}^{\mathcal{W}}"] \arrow[d, swap, "\pi_{\hat \chi_1} \otimes \pi_{\hat \chi_2}"] &
+    \mathcal{W}_\xi / I_{\hat \chi_{1'}}
+    \otimes
+    \mathcal{W}_\xi / I_{\hat \chi_{2'}}
+    \arrow[d, "\pi_{\hat \chi_{1'}} \otimes \pi_{\hat \chi_{2'}}"] \\
+    \mathop{\mathrm{End}}(V(\hat \chi_{1}) \otimes V(\hat \chi_{2})) \arrow[r, "a \mapsto R a R^{-1}"] & \mathop{\mathrm{End}}(V(\hat \chi_{1'}) \otimes V(\hat \chi_{2'}))
+  \end{tikzcd}$$ commutes, where $\pi_{\hat \chi_i} : \mathcal{W}_\xi \to \mathop{\mathrm{End}}(V(\hat \chi_i))$ is the structure map of the representation $V(\hat \chi_i)$ and $I_{\hat \chi}$ is the ideal generated by the kernel of the central character. We can use $\phi$ to pull back the solution of ([\[eq:R-mat-module-diagram\]](#eq:R-mat-module-diagram){reference-type="ref" reference="eq:R-mat-module-diagram"}) to a solution of ([\[eq:R-mat-U-module-diagram\]](#eq:R-mat-U-module-diagram){reference-type="ref" reference="eq:R-mat-U-module-diagram"}), as the latter is the composition of the diagrams ([\[eq:automorphism-pullback\]](#eq:automorphism-pullback){reference-type="ref" reference="eq:automorphism-pullback"}) and ([\[eq:R-mat-module-diagram\]](#eq:R-mat-module-diagram){reference-type="ref" reference="eq:R-mat-module-diagram"}) after taking appropriate specializations.
+
+The modules $\rep{\hat \chi}$ form a nontrivial vector bundle over $\mathop{\mathrm{Spec}}\Wcharhat$; to describe the matrices $R$ we need to choose concrete $\mathcal{W}_{\xi}$-module structures on them, i.e. we must locally trivialize. The holonomy $R$-matrices will depend on this choice of trivialization, but we will show that it has a geometric interpretation that allows one to define an appropriate Yang-Baxter equation. We further explore the vector bundle perspective in [@McPhailSnyderVolume].

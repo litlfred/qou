@@ -32,10 +32,10 @@ are provided as concrete instances; the general conjecture remains
 open (categorical proof would use Schur-Weyl duality + KLR
 diagrammatics).
 
-Ref: [manuscript] conj:atom-braid-exterior-algebra
-Ref: [manuscript] computations/mass_at_3A_proper.py
-Ref: [manuscript] tools/hecke-engine/src/gb_nf_reducer.rs (BraidLetter)
-Ref: [manuscript] computations/joint-tower-sdp-rust.witness.json
+Ref: [leitner2026] conj:atom-braid-exterior-algebra
+Ref: [leitner2026] computations/mass_at_3A_proper.py
+Ref: [leitner2026] tools/hecke-engine/src/gb_nf_reducer.rs (BraidLetter)
+Ref: [leitner2026] computations/joint-tower-sdp-rust.witness.json
 -/
 
 namespace QOU.BraidKnot.AtomBraidExteriorAlgebra

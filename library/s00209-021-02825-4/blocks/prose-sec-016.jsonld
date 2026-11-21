@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/s00209-021-02825-4/blocks/prose-sec-016",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Evaluation symbols",
-  "pageStart": 19,
-  "pageEnd": 20,
-  "text": "../sections/sec-016-52-evaluation-symbols.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s00209-021-02825-4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s00209-021-02825-4",
+  "title": "Real stable polynomials",
+  "pageStart": 15,
+  "pageEnd": 16,
+  "text": "../sections/sec-016-43-real-stable-polynomials.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00209-021-02825-4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00209-021-02825-4/manifest.jsonld",
   "provenance": "ingested"
 }

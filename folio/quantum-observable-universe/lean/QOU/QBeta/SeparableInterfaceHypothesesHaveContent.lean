@@ -144,7 +144,7 @@ asymmetry as a real numeral) lives in the sibling
 `SeparableInterfaceHypothesesHaveContentReal.lean` and consumes these results at
 `R := ℝ`, per §7c's rule that the specialisation goes in its own file.
 
--- Ref: [manuscript] quantum-observable-universe/lean/QOU/QBeta/InterfaceScalar.lean
+-- Ref: [leitner2026] quantum-observable-universe/lean/QOU/QBeta/InterfaceScalar.lean
 -/
 
 namespace QOU.QBeta.SeparableInterfaceContent

@@ -6,7 +6,7 @@ $$
   \kappa \;\approx\; 1.722.
 $$
 
-This matches the 2-jet hand computation. It now derives from the Wedderburn block structure without arbitrary truncation.
+No committed producer reproduces this evaluation, and the product it evaluates is not yet well defined ([open conjecture](#conj:gram-determinant-plancherel-ratio)), so its agreement with the value computed from the [Gram determinants](#def:cs-gram-determinant-ratio) is unverified.
 
 **Structural comparison.**
 
@@ -15,9 +15,9 @@ This matches the 2-jet hand computation. It now derives from the Wedderburn bloc
 | Ratio of $2{\times}2$ Gram matrix determinants at $J^2$ jet | Plancherel-weighted character product over Wedderburn blocks |
 | 2-jet truncation chosen by hand | Full $\lambda \vdash n$ sum over the finitely many $\lambda \vdash n$ |
 | Tied to Bring-surface coordinate calculation | Categorical: depends only on $\chi_\lambda(\beta_\bullet)$ |
-| Result $1.722$ stated as numerical fact | Result $1.722$ determined by the $\lambda$-blocks of the genus-$4$ pair |
+| Result $1.722$ computed from the two determinants | Result would be determined by the $\lambda$-blocks of the genus-$4$ pair, if the conjecture holds |
 
-**Lean handle.**
+**Symbolic form.**
 
 The formula evaluates symbolically over $R$ to a $q$-rational expression for $\kappa$. It specializes numerically via $\iota \colon R \to \mathbb{R}$ at $q \mapsto q_0$. Character values $\chi_\lambda(T_{m,n})$ for torus knots are polynomial in $q^{\pm 1}$ \cite{jones1987}. The formula reduces to a finite product of Laurent monomials.
 

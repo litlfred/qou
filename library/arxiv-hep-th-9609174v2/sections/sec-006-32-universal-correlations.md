@@ -8,7 +8,9 @@ pages: 14-15
 source_pdf: 9609174v2.pdf
 source_sha256: 87885f4d03661f26
 toc_source: inferred
+doc_brief: "arXiv:hep-th/9609174v2 23 Sep 1996 — We prove the universality of correlation functions of chiral unitary and unitary ensembles of ran- dom matrices in the microscopic limit."
 ---
+Universal correlations
 The integration kernel associated with the eigenvalue problem of M is (for brevity we set N =
 odd = 2N + 1)
 KN(λ, µ)=(λ µ)α e−N
@@ -169,4 +171,3 @@ It enjoys the matching condition
 lim
 x→∞ρS(x) = ρ(0).
 (3.38)
-4

@@ -118,11 +118,13 @@ def molecular_binding_nf(Z_A, N_A, Z_B, N_B, n_inv_trefoils=1):
         bind_v = abs(math.log(abs(v_ub)) - math.log(abs(v_bd))) if abs(v_ub * v_bd) > 1e-300 else 0
         bind_a = abs(math.log(abs(a_ub)) - math.log(abs(a_bd))) if abs(a_ub * a_bd) > 1e-300 else 0
 
-        total_bind += W_SYM * bind_s + W_STD * bind_v + W_ALT * bind_a
+        # Convention D (owner, 2026-11-18): the Markov trace of a single-generator
+        # chain is the z*a+b channel alone, so only bind_v enters.
+        total_bind += bind_v
 
         # Track phi for diagnostics
-        V_ub = W_SYM * s_ub + W_STD * v_ub + W_ALT * a_ub
-        V_bd = W_SYM * s_bd + W_STD * v_bd + W_ALT * a_bd
+        V_ub = v_ub
+        V_bd = v_bd
         if abs(V_ub) > 1e-300:
             phi_ub += math.log(abs(V_ub))
         if abs(V_bd) > 1e-300:

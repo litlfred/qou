@@ -3,6 +3,7 @@
  "doc_id": "arxiv-2004.04939v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "59a06f9f7d97cad25436cbb5f2759e0a71002a5f4229e573a7a92386ece037f8",
   "file": "2004.04939v1.pdf"
@@ -20,131 +21,9 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 9,
-  "by_kind": {
-   "remark": 1,
-   "theorem": 7,
-   "conjecture": 1
-  },
-  "formalization_candidates": 7
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "2.1",
-   "name": null,
-   "statement": "We change t into t\u22121 in the presentation in [ 5].",
-   "section_file": "sections/sec-001-2-braid-group-action-on-the-quantum-grothendieck.md",
-   "section_title": "Braid group action on the quantum Grothendieck rings",
-   "pages": "3-5",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "2.2",
-   "name": "[5, Theorem 7.3]",
-   "statement": "Let Q be a Q-data. Then there is an isomorphism",
-   "section_file": "sections/sec-001-2-braid-group-action-on-the-quantum-grothendieck.md",
-   "section_title": "Braid group action on the quantum Grothendieck rings",
-   "pages": "3-5",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "2.3",
-   "name": null,
-   "statement": "The Braid group B(g0) acts on Kt(g0) by the following formulas:",
-   "section_file": "sections/sec-001-2-braid-group-action-on-the-quantum-grothendieck.md",
-   "section_title": "Braid group action on the quantum Grothendieck rings",
-   "pages": "3-5",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "2.4",
-   "name": null,
-   "statement": "Let i be a sink of a Q-data Q. Then the following diagrams commute:",
-   "section_file": "sections/sec-001-2-braid-group-action-on-the-quantum-grothendieck.md",
-   "section_title": "Braid group action on the quantum Grothendieck rings",
-   "pages": "3-5",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "3.1",
-   "name": null,
-   "statement": "For i \u2208 Z, there exists a monoidal functor Si : TN \u2192 T N satisfying",
-   "section_file": "sections/sec-002-3-the-category-tn-and-reflection-functors.md",
-   "section_title": "The category TN and reflection functors",
-   "pages": "5-8",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "3.3",
-   "name": null,
-   "statement": "For each 1 \u2264 i \u2264 N \u2212 1 the Z[t\u00b11/ 2]-algebra automorphism on K(TN )",
-   "section_file": "sections/sec-002-3-the-category-tn-and-reflection-functors.md",
-   "section_title": "The category TN and reflection functors",
-   "pages": "5-8",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "4.1",
-   "name": null,
-   "statement": "Let X be a simple object in TN . For i \u2208 Z, if",
-   "section_file": "sections/sec-003-4-reflections-by-root-modules.md",
-   "section_title": "Reflections by root modules",
-   "pages": "8-8",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "4.2",
-   "name": null,
-   "statement": "Let [L] belongs to the orbit of L(i) for some 1 \u2264 i \u2264 N \u2212 1 under the",
-   "section_file": "sections/sec-003-4-reflections-by-root-modules.md",
-   "section_title": "Reflections by root modules",
-   "pages": "8-8",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "conjecture",
-   "source_kind": "conjecture",
-   "number": null,
-   "name": null,
-   "statement": "For any root module L \u2208 C 0",
-   "section_file": "sections/sec-004-5-conjectures.md",
-   "section_title": "Conjectures",
-   "pages": "8-9",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  }
- ]
+ "candidates": []
 }

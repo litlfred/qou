@@ -47,7 +47,7 @@
   Archimedean (ℝ): `Real.pi`, ordering — §7c.
 
   -- Ref: [milnor1982] https://doi.org/10.1090/S0273-0979-1982-14958-8
-  -- Ref: [manuscript] beans qou-w3eg (H4-5 obtuse), qou-idvt
+  -- Ref: [leitner2026] beans qou-w3eg (H4-5 obtuse), qou-idvt
 -/
 import QOU.Archimedean.LobAnalytic
 import QOU.Archimedean.IdealTetrahedronVolumeConcave

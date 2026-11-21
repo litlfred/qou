@@ -101,6 +101,8 @@ import QOU.BraidKnot.HardWallProjection
 --- `diagonal_exchange` (H = sum over cells of (i+j-1), so an l-row shape pays T_{l-k-1} with no
 --- r), capped by `extra_rows_tradeoff`.
 import QOU.BraidKnot.RoundedWaterfillExchange
+import QOU.BraidKnot.RevBoundedExcessAssembly
+import QOU.BraidKnot.LNaturalOptimality
 -- The M_1 edge calculus (bean qou-t6hc): Fact A, giving the per-edge sign of
 -- P = Cov(Sum|c|, omega_3) >= 0 -- which is pure integer algebra, true of any two
 -- contents -- and the 1-Lipschitz diagonal lemma |D(c) - D(c+1)| <= 1, which is
@@ -310,6 +312,7 @@ import QOU.BraidKnot.SpechtBranchingMultiplicityOne
 -- non-integer, so no integral monodromy realizes it (scope-(b); uploaded-papers
 -- audit idea A3, 2026-07-18); the surviving object is an SL₂(ℝ) transfer family.
 import QOU.BraidKnot.TrBIntegerTracePrune
+import QOU.BraidKnot.HeckeReebHolonomyLaplacian
 
 /-!
 # BraidKnot — Module Index

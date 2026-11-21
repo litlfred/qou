@@ -74,7 +74,7 @@ evaluation, or anywhere else. -/
     semantics for downstream lemmas without depending on the full
     partition combinatorics machinery (which lives in
     `y-lambda-closed-form-wenzl-bridge.lean`). -/
--- Ref: [manuscript] mass-theory/y-lambda-closed-form-wenzl-bridge
+-- Ref: [leitner2026] mass-theory/y-lambda-closed-form-wenzl-bridge
 -- Converted `axiom` -> `opaque` 2026-09-04: this declares a SYMBOL, not a claim.
 -- `axiom f : T` and `opaque f : T := <witness>` are equally opaque, but only the
 -- first is a global axiom contaminating `#print axioms` downstream.  No
@@ -137,7 +137,7 @@ single geometric factor, giving the canonical hook-content form. -/
 
 /-- Per-partition Wenzl Schur element value, abstracted (full
     definition in `y-lambda-closed-form-wenzl-bridge.lean`). -/
--- Ref: [manuscript] mass-theory/y-lambda-closed-form-wenzl-bridge
+-- Ref: [leitner2026] mass-theory/y-lambda-closed-form-wenzl-bridge
 axiom wenzlSchurElementValue {R : Type*} [CommRing R] (Q X : R)
     (lamHookContent : R → R → R) : R
 

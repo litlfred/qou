@@ -7,11 +7,11 @@
   "bytes": 1781362,
   "pages": 18,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "text-layer",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -21,19 +21,30 @@
    "stamp_date": "17 Apr 2013"
   },
   "doi": null,
-  "title": "Toroidal domain walls as Hopfions",
-  "authors_raw": "Michikazu Kobayashi1, 2 and Muneto Nitta 3",
+  "title": "Toroidal domain walls as Hopﬁons Abstract",
+  "authors_raw": "Michikazu Kobayashi1, 2 and Muneto Nitta3",
   "title_lines": [
    "Toroidal domain walls as Hopfions"
   ],
-  "abstract": "We construct stable domain walls in a shape of a torus in the Faddeev-Skyrme model with a quadratic potential term admitting two discrete vacua. The phase modulus of the domain wall is twisted P and Q times along the toroidal and poloidal cycles of the torus, respectively, where Q represents the constituent lump charge. We \ufb01nd that these solutions carry the Hopf charge PQ and can be regarded as Hop\ufb01ons. The toroidal domain walls are characterized by the two topological charges ( P,Q ), unlike the conventional Hop\ufb01ons characterized by only the Hopf charge. We explicitly construct stable solutions of the toroidal domain walls with 1 \u2264P\u2264 3, and 1\u2264Q\u2264 3, yielding the Hopf charges 1, 2, 3, 4, 6, 9. 1 arXiv:1304.4737v1 [hep-th] 17 Apr 2013",
+  "abstract": "We construct stable domain walls in a shape of a torus in the Faddeev-Skyrme model with a quadratic potential term admitting two discrete vacua. The phase modulus of the domain wall is twisted P and Q times along the toroidal and poloidal cycles of the torus, respectively, where Q represents the constituent lump charge. We ﬁnd that these solutions carry the Hopf charge PQ and can be regarded as Hopﬁons. The toroidal domain walls are characterized by the two topological charges (P, Q), unlike the conventional Hopﬁons characterized by only the Hopf charge. We explicitly construct stable solutions of the toroidal domain walls with 1 ≤P ≤3, and 1 ≤Q ≤3, yielding the Hopf charges 1, 2, 3, 4, 6, 9. arXiv:1304.4737v1 [hep-th] 17 Apr 2013",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20220405023537Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.12",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20220405023537Z"
+  },
+  "title_raw": "Toroidal domain walls as Hopfions",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Toroidal domain walls as Hopﬁons Abstract",
+   "outline": "I Introduction",
+   "text": "Toroidal domain walls as Hopfions",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Toroidal domain walls as Hopfions"
  },
  "toc": [
   {
@@ -41,45 +52,308 @@
    "title": "I Introduction",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "II The model and solitons in 1+1 and 2+1 dimensions",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "III Toroidal domain walls in 3+1 dimensions",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "IV Discussion",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "Acknowledgements",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "References",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "A twisted domain wall ring as a baby Skyrmion with the lump charges of Q = 1 (left), Q = 2 (middle), and Q = 3 (right). (a): The texture n(x). Color of each arrow show the value of n3. (b): The total energy density E. (c): The topological lump charge density c ≡F12/(4π)",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The two cycles of the torus",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "A cut along the β cycle of the toroidal domain walls. The gray n3 = 0 surfaces represent domain wall tubes that separate the two vacua n = (0, 0, 1) denoted by ⊙outside the tube and n = (0, 0, −1) denoted by ⊗inside the tube. Along the tubes, there are sequences of lumps with the lump charges of (a)",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Toroidal domain walls with (P, Q) = (1, 1), (2, 1) and (3, 1) for the left, middle and right ﬁgures, respectively. (a): Isosurface plot of the n3 = 0 region. (b) The texture n(x) and (c) the",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Toroidal domain walls with (P, Q) = (1, 2), (2, 2) and (3, 2) for the left, middle and right",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Toroidal domain walls with (P, Q) = (1, 3), (2, 3) and (3, 3) for the left, middle and right",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -87,27 +361,75 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 14,
-   "n_chars": 20061,
-   "n_words": 3850
+   "page_end": 2,
+   "n_chars": 1200,
+   "n_words": 188,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
-   "id": "sec-000-acknowledgements",
+   "id": "sec-000-i-introduction",
+   "number": null,
+   "title": "I Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 4282,
+   "n_words": 748,
+   "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-001-ii-the-model-and-solitons-in-11-and-21-dimension",
+   "number": null,
+   "title": "II The model and solitons in 1+1 and 2+1 dimensions",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 3293,
+   "n_words": 697,
+   "label_start": "3",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-002-iii-toroidal-domain-walls-in-31-dimensions",
+   "number": null,
+   "title": "III Toroidal domain walls in 3+1 dimensions",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 14,
+   "n_chars": 11224,
+   "n_words": 2263,
+   "label_start": "6",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-003-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 1,
    "page_start": 14,
    "page_end": 18,
-   "n_chars": 8170,
-   "n_words": 1273
+   "n_chars": 8155,
+   "n_words": 1268,
+   "label_start": "14",
+   "label_end": "18"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 6,
-  "sections": 2,
-  "chars_total": 28231,
+  "toc_inferred_entries": 0,
+  "figure_entries": 6,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 28154,
+  "furniture_lines_stripped": 18,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "toroidal-wall20-prd3+arxiv1.tex",
@@ -125,10 +447,26 @@
      "result": "no matching \\section"
     },
     {
-     "id": "sec-000-acknowledgements",
+     "id": "sec-000-i-introduction",
+     "title": "I Introduction",
+     "prose_ratio": 0.466,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-ii-the-model-and-solitons-in-11-and-21-dimension",
+     "title": "II The model and solitons in 1+1 and 2+1 dimensions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-iii-toroidal-domain-walls-in-31-dimensions",
+     "title": "III Toroidal domain walls in 3+1 dimensions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 0.484,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     }
    ]
   }

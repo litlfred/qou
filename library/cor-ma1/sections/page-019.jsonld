@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/cor-ma1/sections/page-019",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 19",
+  "pageStart": 19,
+  "pageEnd": 19,
+  "contains": [
+    "library/cor-ma1/blocks/prose-page-019",
+    "library/cor-ma1/blocks/prop-page-019-01",
+    "library/cor-ma1/blocks/lem-page-019-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cor-ma1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cor-ma1/manifest.jsonld",
+  "provenance": "ingested"
+}

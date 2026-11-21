@@ -4,6 +4,7 @@ export default algorithm({
   label: "alg:per-isotope-binding",
   title: "Per-isotope binding $B(K) = m_e \\cdot \\sum_\\lambda y_\\lambda \\chi^\\lambda \\Delta_\\lambda$",
   uses: [
+    "prop:delta-lambda-dt-index-unification",
     "rem:term6-binding-density",
     "thm:knot-mass-formula-unified",
     "alg:markov-trace",
@@ -26,5 +27,12 @@ export default algorithm({
     "per-isotope",
     "canonical-chain",
     "open-gate",
+  ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-25",
+      body: "**Corrected 2026-08-25 (PR #5765).** This contract previously named\n`dashboard_and_sweep_results.md`, which **does not exist anywhere in the repo**\n(`find` → 0 hits) and disagreed with the `.ts` manifest. Two things a consumer should\nknow about the witness that *is* declared:\n\n- It carries **no provenance**: `computedAt`, `commitSha`, `witness.scriptHash`,\n  `witness.scriptFile` and `witness.scriptCommitSha` are **all `null`**, so no\n  staleness check can key on it and no producer can be resolved from it. It is marked\n  `auditOnly`.\n- Its numbers are **not** the live pipeline's. It records D +23 %, T +6 %, ³He +13 %,\n  ⁴He +3.6 % — i.e. *over*-binding — computed at the 242-ppb nucleon level that the\n  [2026-07-04 audit](../../../docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)\n  identified as a fitted-Habiro regression and removed. The live `mass_binding_dashboard`\n  *under*-binds: ²H −27.5 %, ³H +38 %, ³He +44 %, ⁴He +69 % (`err sym` 0.79 / 1.38 /\n  1.44 / 3.26). **Do not cite the witness figures as this step's current accuracy.**",
+    },
   ],
 });

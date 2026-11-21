@@ -4,13 +4,14 @@ doc_title: "Quantum Field Theory and the Volume Conjecture"
 section_id: sec-008-32-quantization
 section_title: "Quantization"
 section_number: 3.2
-pages: 16-18
+pages: 17-18
 source_pdf: 1003.4808v2.pdf
 source_sha256: 72301d4bee491f86
-doc_brief: "Quantum Field Theory and the Volume Conjecture — 14 sections: Preliminaries; The many dimensions of the volume ; Parametrized VC"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.93
-latex_coverage_ratio: 0.523
+latex_prose_ratio: 0.923
+latex_coverage_ratio: 1.0
+doc_brief: "Quantum Field Theory and the Volume Conjecture — 15 sections: Front matter; Preliminaries; The many dimensions of the volume"
 ---
 []{#sec:quant label="sec:quant"}
 

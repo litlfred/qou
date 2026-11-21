@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9802116v1/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "More about the quasi-algebras kFG",
+  "pageStart": 7,
+  "pageEnd": 15,
+  "contains": [
+    "library/arxiv-math-9802116v1/blocks/prose-sec-002",
+    "library/arxiv-math-9802116v1/blocks/prop-sec-002-01",
+    "library/arxiv-math-9802116v1/blocks/prop-sec-002-02",
+    "library/arxiv-math-9802116v1/blocks/lem-sec-002-03",
+    "library/arxiv-math-9802116v1/blocks/prop-sec-002-04",
+    "library/arxiv-math-9802116v1/blocks/prop-sec-002-05",
+    "library/arxiv-math-9802116v1/blocks/prop-sec-002-06",
+    "library/arxiv-math-9802116v1/blocks/cor-sec-002-07"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9802116v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9802116v1/manifest.jsonld",
+  "provenance": "ingested"
+}

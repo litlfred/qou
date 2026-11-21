@@ -5,17 +5,17 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0005296v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0005296v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-0005296v1",
+  "title": "An example concerning Ohtsuki’s invariant and the full SO(3) quautum invariant",
   "contains": [
     "library/arxiv-math-0005296v1/sections/sec-front-matter",
     "library/arxiv-math-0005296v1/sections/sec-000"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -25,7 +25,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0005296v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0005296v1.pdf",
     "source_sha256": "1714653ecfdf01bccb517050f0b4d41a1b56d2462c1d74cd86e2530ede75f004",
     "pages": 4,

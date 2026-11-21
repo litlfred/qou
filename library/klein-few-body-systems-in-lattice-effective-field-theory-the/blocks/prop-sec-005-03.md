@@ -1,0 +1,1 @@
+Although such a discretization also exists in lattice QCD, the situation in NLEFT is diﬀerent as the lattice spacing is linked to a cutoﬀ, which should not exceed the physical breakdown scale of the theory.

@@ -1,0 +1,58 @@
+ON q-SUMMATION AND CONFLUENCE 365
+
+applied to the companion matrix. Since the entries of C(q) converge to the
+entries of C(1) by assumption, to obtain the uniform convergence in a neigh-
+borhood of co it is enough to control the convergence of the so called log-car
+matrix, Let ¢ = 1/€. The uniform convergence of (1 — q)¢6"(q, ¢)/6(4, ¢
+over the infinite sector {|arg(¢)| < a —e} to log¢ is already proved in
+Lemma 1.6. We need an analogous result for 0(q, ¢)/0(q, cz) which is solu-
+cy(¢), c € C*. We give a proof of
+the needed estimate, although it is a classical result:
+
+tion of the q-difference equation y(q¢)
+
+LEMMA 2.13. — Let c(q) € C* be a function of q € (0,1) such that
+limg_1 8£ = y, € € (0,7) and consider the sector V. := {¢ € C* : |arg¢| <
+
+ing
+
+m—e}. Asq— 1, the following uniform estimate holds uniformly over V.:
+99,0) ny
+——— = 1+o(1—4q)).
+a,c) 6 CFO a)
+
+Proof. — Let us consider again the modular equation (1.10) :
+
+Ma, va) = \mea eB 00", V2"),
+
+where >
+
+v=e ing 108 fae
+We observe that (¢/,/q)* = —¢* and (c¢/,/q)* . Therefore we
+obtain:
+
+(456) _ ee dow 455) Oa" VTC)
+
+A(q,¢¢) 9(q", —VqFer¢*)
+As in the proof of Lemma 1.6, we observe that for any ¢ € Ve, ¢* € Ve;
+see (1.12) for more details. Moreover, when X and Y denote two complex
+numbers such that |X|, |Y| € (q*, 7 we have the estimate:
+
+He 2%) < (“lX|:a")oo(= AW )0 Aa" |XL)
+aq", ¥ Wie aE a(q*. -|¥ |)"
+
+An elementary calculation using (1.12) allows to conclude, since q* — 0*
+and c* > e277, Oo
+
+(6) The terminology comes from the juxtaposition of the terms “logarithm” and “charac-
+ter”, meaning the solution matrix of a constant coefficient differential (resp. q-difference)
+system is obtained by a combinatoric procedure from the logarithm (resp. g-logarithm)
+and a family of characters (resp. qg-characters). A solution in a regular singular point,
+whose exponents are non resonant, is given by the product of an analytic matrix, called
+uniform part, by the “log-car” matrix.
+
+We are choosing here as a q-logarithm the logarithmic derivative of the Jacobi 0
+function and as q-characters convenient quotient of the @ functions. For more details in
+the q-difference setting cf. [16].
+
+TOME 59 (2009), FASCICULB 1

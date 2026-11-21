@@ -2,24 +2,59 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2102.00255v1",
  "source_sha256": "b63df73a9d0e1534",
- "brief": "RIGIDITY, RESIDUES AND DUALITY: OVERVIEW AND RECENT PROGRESS AMNON YEKUTIELI A/b.sc/s.sc/t.sc/r.sc/a.sc/c.sc/t.sc.In this article we explain the theory ofrigid residue complexes in commutative — 1 sec",
- "extended": "**RIGIDITY, RESIDUES AND DUALITY: OVERVIEW AND RECENT PROGRESS AMNON YEKUTIELI A/b.sc/s.sc/t.sc/r.sc/a.sc/c.sc/t.sc.In this article we explain the theory ofrigid residue complexes in commutative**\n\n20 pp, 1 sections.\n\n**Outline.** 0 Introduction\n\n**Extracted claims (proposals, not verified).**\n- Theorem 5.11: for proper maps of DM stacks, and the Rigid Duality Theorem 5.13 for such\n- Theorem 1.2: The functor Sq𝐴𝕂 is a quadratic functor, namely for a mor-\n- Theorem 1.6: If„𝑀𝜌”is a rigid complex, such that 𝑀 has the derived\n- Theorem 1.7: Let𝑢 :𝐴!𝐵 be a ring homomorphism, and let 𝜃 :𝑁!𝑀\n- Theorem 1.9: In the situation of Denition 1.8, if 𝑁 2 D„𝐵”has the de-\n- Theorem 1.10: Let𝑣 :𝐴!𝐴0 be an essentially étale ring homomorphism,",
+ "brief": "RIGIDITY, RESIDUES AND DUALITY: OVERVIEW AND RECENT PROGRESS — In this article we explain the theory of rigid residue complexes in commutative algebra and algebraic geometry, summarizing the",
+ "extended": "**RIGIDITY, RESIDUES AND DUALITY: OVERVIEW AND RECENT PROGRESS**\n\n*AMNON YEKUTIELI*\n\n20 pp, 8 sections.\n\n**Abstract.** In this article we explain the theory of rigid residue complexes in commutative algebra and algebraic geometry, summarizing the background, recent results and antic- ipated future results. Unlike all previous approaches to Grothendieck Duality, the rigid approach concentrates on the construction of rigid residue complexes over rings, and their intricate yet robust properties. The geometrization, i.e. the passage to rigid residue complexes on schemes and Deligne-Mumford (DM) stacks, by gluing, is fairly easy. In the geometric part of the theory, the main results are the Rigid Residue Theorem and the Rigid Duality Theorem for proper maps between schemes, and for tame proper maps between DM stacks.\n\n**Outline.** Front matter; 0 Introduction; 1 The Squaring Operation and Rigid Complexes o; 2 Rigid Dualizing Complexes over Rings; 3 Rigid Residue Complexes over Rings; 4 Rigidity, Residues and Duality for Schemes; 5 Rigidity, Residues and Duality for DM Stacks; References",
  "tokens": {
-  "brief": 50,
-  "extended": 183
+  "brief": 47,
+  "extended": 274
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
    "id": "sec-000-0-introduction",
    "title": "Introduction",
-   "pages": "1-20"
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-1-the-squaring-operation-and-rigid-complexes-ove",
+   "title": "The Squaring Operation and Rigid Complexes over Rings",
+   "pages": "3-6"
+  },
+  {
+   "id": "sec-002-2-rigid-dualizing-complexes-over-rings",
+   "title": "Rigid Dualizing Complexes over Rings",
+   "pages": "6-9"
+  },
+  {
+   "id": "sec-003-3-rigid-residue-complexes-over-rings",
+   "title": "Rigid Residue Complexes over Rings",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-004-4-rigidity-residues-and-duality-for-schemes",
+   "title": "Rigidity, Residues and Duality for Schemes",
+   "pages": "11-14"
+  },
+  {
+   "id": "sec-005-5-rigidity-residues-and-duality-for-dm-stacks",
+   "title": "Rigidity, Residues and Duality for DM Stacks",
+   "pages": "14-19"
+  },
+  {
+   "id": "sec-006-references",
+   "title": "References",
+   "pages": "19-20"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "abstract",
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

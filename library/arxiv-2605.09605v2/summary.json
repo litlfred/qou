@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2605.09605v2",
  "source_sha256": "24496fb444a2b558",
- "brief": "Cocycle Actions on Hidden Quantum Markov Models: — We develop a symmetry action framework for hidden quantum Markov models (HQMMs) tailored to one-dimensional quantum spin systems and",
- "extended": "**Cocycle Actions on Hidden Quantum Markov Models:**\n\n*Symmetry Protection and Topological Order*\n\n17 pp, 4 sections.\n\n**Abstract.** We develop a symmetry action framework for hidden quantum Markov models (HQMMs) tailored to one-dimensional quantum spin systems and symmetry-protected topological (SPT) phases. In our setting, a symmetry groupGacts projectively on the hidden (virtual) degrees of freedom and linearly on the physical observation space, yielding a global HQMM state that is invariant under the combined action ofGfor both conventional and causal (input– output) structures. We show that such symmetry actions are naturally classified by a group- cohomology 2-cocycle [ω]∈H 2(G,U(1)), in direct analogy with the standard cohomological classification of one-dimensional bosonic SPT phases via projective edge representations. As an explicit example, we apply this construction to the Affleck–Kennedy–Lieb–Tasaki (AKLT) chain, where the hidden layer carries a nontrivial class [ω]∈H 2(SO(3),U(1)) encoding its SPT order.\n\n**Outline.** Introduction; Cocycle Actions and Symmetry Protection in HQM; Discussion and Outlook; Appedix: Hidden Quantum Markov Models",
+ "brief": "Cocycle Actions on Hidden Quantum Markov Models: Symmetry Protection and Topological Order — We develop a symmetry action framework for hidden quantum Markov models (HQMMs) tailored to",
+ "extended": "**Cocycle Actions on Hidden Quantum Markov Models: Symmetry Protection and Topological Order**\n\n*Abdessatar Souissi*\n\n17 pp, 6 sections.\n\n**Abstract.** We develop a symmetry action framework for hidden quantum Markov models (HQMMs) tailored to one-dimensional quantum spin systems and symmetry-protected topological (SPT) phases. In our setting, a symmetry group G acts projectively on the hidden (virtual) degrees of freedom and linearly on the physical observation space, yielding a global HQMM state that is invariant under the combined action of G for both conventional and causal (input– output) structures. We show that such symmetry actions are naturally classified by a group- cohomology 2-cocycle [ω] ∈H2(G, U(1)), in direct analogy with the standard cohomological classification of one-dimensional bosonic SPT phases via projective edge representations.\n\n**Outline.** Front matter; Introduction; Cocycle Actions and Symmetry Protection in HQM; Application to AKLT's Symmetry-Protected Topol; Discussion and Outlook; Appedix: Hidden Quantum Markov Models",
  "tokens": {
-  "brief": 45,
-  "extended": 292
+  "brief": 46,
+  "extended": 265
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
@@ -17,15 +22,20 @@
   {
    "id": "sec-001-cocycle-actions-and-symmetry-protection-in-hqmms",
    "title": "Cocycle Actions and Symmetry Protection in HQMMs",
-   "pages": "3-11"
+   "pages": "3-8"
   },
   {
-   "id": "sec-002-discussion-and-outlook",
+   "id": "sec-002-application-to-aklts-symmetry-protected-topologi",
+   "title": "Application to AKLT's Symmetry-Protected Topological Order",
+   "pages": "8-11"
+  },
+  {
+   "id": "sec-003-discussion-and-outlook",
    "title": "Discussion and Outlook",
    "pages": "11-12"
   },
   {
-   "id": "sec-003-appedix-hidden-quantum-markov-models",
+   "id": "sec-004-appedix-hidden-quantum-markov-models",
    "title": "Appedix: Hidden Quantum Markov Models",
    "pages": "12-17"
   }

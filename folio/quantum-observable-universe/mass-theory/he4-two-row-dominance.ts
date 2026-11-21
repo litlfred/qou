@@ -57,20 +57,18 @@ import { proposition } from "../../schema/builders";
  * Wedderburn block is always two-row.
  *
  * **Conditional on:** the empirical witness file
- * `he4-canonical-tr-m-block-fingerprint.witness.json`.  Per
- * AGENTS.md §3b-cond, the Lean proposition is axiomatised as a
- * class `HasHe4TwoRowDominance` whose axioms are the STRUCTURAL
- * bounds `4/5 <= ratio <= 1`.  Downstream propositions consume
- * the class as a `[HasHe4TwoRowDominance]` hypothesis and rely on
- * those bounds, not on the instance's documentary `ratio` field —
- * which still carries `866/1000` and is two generations stale
- * (the measured ratio has been exactly 1 since 2026-08-23).  The
- * companion `HasHe4DominantBlock` pins `[9, 3]`, which remains
- * the leading NON-TRIVIAL block after the 2026-09-06
- * regeneration; whether that class should mean "largest |c_λ|"
- * (now the trivial rep `[12]`) or "largest non-trivial block"
- * (still `[9, 3]`) is an open question for the author — see
- * authorNotes.  Neither figure is load-bearing for any proof.
+ * `he4-canonical-tr-m-block-fingerprint.witness.json` for the
+ * within-stratum per-block ranking (`HasHe4DominantBlock`), while
+ * the two-row stratum support (`ratio = 1`) holds unconditionally
+ * under convention D (`z_D = q^3/(q^2+1)`, Wenzl level `r = 2`) by
+ * `QOU.MassTheory.TwoRowCap.twoRow_share_eq_one_of_wenzl`
+ * (specialized in the Lean sibling as
+ * `he4_twoRow_share_eq_one_of_wenzl`; `bean qou-58w3`).  The class
+ * `HasHe4TwoRowDominance` carries `ratio := 1` (`ratio_eq_one :
+ * ratio = 1`) together with the implied `4/5 <= ratio <= 1` bounds,
+ * retiring the superseded convention-C `866/1000` numeral.  The
+ * companion `HasHe4DominantBlock` pins `[9, 3]` as the leading
+ * non-trivial block alongside `[12]` as the largest block overall.
  *
  * Used by:
  *   - rem:he4-magic-shell-fingerprint — physical interpretation
@@ -107,6 +105,8 @@ export default proposition({
     "verified-empirically",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([Canonical q-deformed Wedderburn-block weight $\\tilde w_\\lambda$ and named scalings (BW, LP for all $\\lambda$)](#prop:wedderburn-weight-canonical))" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Proposition (conditional on [`he4-canonical-tr-m-block-fingerprint.witness.json`](../../../computations/he4-canonical-tr-m-block-fingerprint.witness.json)).**" },
     {
       kind: "caveat",
       date: "2026-09-06",

@@ -10,7 +10,8 @@ source_sha256: d0631a9abd9b1da3
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.924
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.993
+doc_brief: "Analytic Dilogarithm Identities — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations"
 ---
 Higher logarithm functions are of fundamental importance in many areas of both physics and mathematics, and the dilogarithm function $\operatorname{Li}_{2}$ may be seen as the most basic and fundamental function of this form. Polylogarithms arise in deep areas of number theory and quantum theory, and the study of higher logarithm functions in its own right provides one of the core topics concerning special functions. Zagier [@Zagier2007] built on the pioneering work of Nahm et al. [@Nahm1995; @Nahm2007; @Nahm1994; @NahmRecknagelTerhoeven1993] in ways that relate the use of higher $K$-groups and higher Bloch groups to the behavior of the $\operatorname{Li}_{2}$-function, and the seminal nature of the monographs by Lewin on the dilogarithm and polylogarithm functions [@Lewin1958; @Lewin1981; @Lewin1991text] further motivates the techniques and $\operatorname{Li}_{2}$-identities introduced in this paper, in which we solve open problems given by both Bytsko [@Bytsko1999] and Campbell [@Campbell2025].
 

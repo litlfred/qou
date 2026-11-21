@@ -1,0 +1,50 @@
+82 Univariate asymptotics
+
+the unbounded region [n7!/2, co] requires us to be careful. In particular, we use
+the upper bound
+lexpl(=By + iO) |= Bul! cxp(Re | I= By tit 1~B, }
+exp(/(1 — Bn) [1 Bn + itl" Bn — it Bn
+
+< (+P)? exp(-(. + 0(1))n'”) ,
+
+where we can bound the power of n in the first line by (1+17)-"/? since 1-8, <
+1 and |x/(x + if) is increasing in x > 0. Integrating the factor (1 + 1?)-"/ as t
+ranges from n~!/? to infinity gives a term of size o(1), so
+
+Tr < exp (-a + o(1))n'/) = o(exp|-clog ny’))
+
+for any c > 0.
+Bound on M3 To bound M3; we pull out the factor of M, obtaining
+M; <M exp| Re{I(1 — By + it) — 1. — B,)} Jat.
+
+L¢|t\<n7"/2
+
+The real part of —(n + 1) log(1 — B, + it) is maximized at t = 0, whence
+
+. 1-B,+it 1-£,
+Re {/(1 — B, + it) -I0. - < Re, ——_ - >
+e{1(1 — Bn + it) — 1. - Bn)} ef By it Ba
+and
+M3; < M exp(Re{ SA - AI) dt
+Leltlen-!2 Bn - it Bn
+lisa)
+=M exp| ———
+L¢\|t|<n-"/2 Br + Bat?
+P
+<M ex0(-5] dt
+L<|t\<n-!/2 26;
+
+in
+
+because the £3 term is the greatest term in the denominator when rf < n@!/.
+
+The behavior B, ~ n@'/? and L = 2n-*/* logn proves the desired upper bound
+on M3 for any constant c < 2.
+
+Bound on M, Finally, for M4 we use the Taylor approximation
+
+1 P
+(1-8, + it)- 101 - Bn) + =Pr'(l -Bn)| < > sup |’ - Br + 5)I.
+2 6 Isicz
+Differentiating /’(z) = —(n+ 1)/z+1/(1 —2)* twice we find that I’”(z) ~ 6/(1-
+z)* near z = 1, and hence that the right-hand side is bounded by (k+0(1))Pn? =

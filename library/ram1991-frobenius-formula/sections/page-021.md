@@ -1,0 +1,56 @@
+---
+doc_id: ram1991-frobenius-formula
+doc_title: "A Frobenius formula for the characters of the Hecke algebras"
+section_id: page-021
+section_title: "Page 21"
+pages: 21-21
+pdf_page: 21
+source_pdf: ram1991-frobenius-formula.pdf
+source_sha256: 26b2fc85338d9150
+text_source: ocr
+granularity: page
+doc_brief: "A Frobenius formula for the characters of the Hecke algebras — 28 sections: Page 1; Page 2; Page 3"
+---
+A Frobenius formula for the characters of the Hecke algebras 481
+
+application of yu; — m; boxes in a vertical strip. In the same fashion the product
+Sa°(— IMO ™G”™ hn, Cn; —m; is a Sum of Schur functions obtained similarly except that
+each horizontal box contributes a weight of q and each vertical box contributes
+a weight of — 1 to the resulting Schur function. Observe that the result of an
+application of m; boxes in a horizontal strip and i; — m; boxes in a vertical strip to
+a shape « produces a shape f such that f/a is a strip of length y;.
+
+(6.5)
+
+Now, consider a strip of length 4; and assume that it arose from an application
+of a horizontal strip followed by an application of a vertical strip. The strip is
+a union of components each of which is a hook. Any box with a box to its right
+must have come from the horizontal application. Any box with a box under it must
+have come from the vertical application. In any component only the rightmost
+bottommost (end of the hook) box could have been placed by either the horizontal
+or the vertical application of boxes.
+
+Witt:
+
+Wee
+
+Not including the ? box, the number of boxes resulting from a vertical application is
+equal to the number of rows in the hook minus 1. Similarly, the number of boxes
+resulting from a horizontal application is the number of columns in the hook minus
+1. If we weight horizontal boxes by q and vertical boxes by — 1 then the weight of
+the hook over all applications (first horizontal boxes and then vertical boxes) which
+produce this hook is
+
+qt cols — re 1)# tows — lq _ 1).
+
+The q in the (q — 1) factor arises from the application in which the ? box is
+a horizontal box and the — 1 in the (q — 1) factor from the application in which the
+? box is a vertical box. The weight of the whole strip is the product of the above
+weight over all components in the strip.
+
+In a similar fashion we can view the factor
+
+(= erm g™ 1g — suse)
+
+in (6.4) as having arisen from an application of a strip of length y, to the empty
+partition @.

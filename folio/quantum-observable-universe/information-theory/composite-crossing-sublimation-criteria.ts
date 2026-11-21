@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:composite-crossing-parity",
+  interprets: "conj:composite-crossing-parity",
   label: "rem:composite-crossing-sublimation-criteria",
   title: "Sublimation, crossing parity, and the full phase criterion",
   tags: [

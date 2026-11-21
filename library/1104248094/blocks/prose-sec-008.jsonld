@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/1104248094/blocks/prose-sec-008",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "For the Lie bialgebra (g, g*) there is a unique Lie algebra structure on the vector",
-  "pageStart": 9,
-  "pageEnd": 13,
-  "text": "../sections/sec-008-3-for-the-lie-bialgebra-g-g-there-is-a-unique-li.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1104248094",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1104248094",
+  "title": "Quantum Formal Groups",
+  "pageStart": 26,
+  "pageEnd": 26,
+  "text": "../sections/sec-008-61-quantum-formal-groups.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1104248094/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1104248094/manifest.jsonld",
   "provenance": "ingested"
 }

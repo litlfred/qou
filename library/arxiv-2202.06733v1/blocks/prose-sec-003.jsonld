@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2202.06733v1/blocks/prose-sec-003",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "The characteristic polynomial and the Cayley-Hamilton theorem",
-  "pageStart": 3,
-  "pageEnd": 5,
-  "text": "../sections/sec-003-22-the-characteristic-polynomial-and-the-cayley.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2202.06733v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2202.06733v1",
+  "title": "Characteristic multivectors and SU(3)",
+  "pageStart": 2,
+  "pageEnd": 3,
+  "text": "../sections/sec-003-2-characteristic-multivectors-and-su3.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2202.06733v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2202.06733v1/manifest.jsonld",
   "provenance": "ingested"
 }

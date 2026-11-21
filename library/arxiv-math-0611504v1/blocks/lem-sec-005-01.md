@@ -1,0 +1,1 @@
+([4], section 2.4) The idealization TI is an I-triangulation of Z. The following fact will be important below (a version of it was implicitely used in [4]; see (3), Lemma 2.12 and §3.2 in that paper):

@@ -1,0 +1,67 @@
+then obtain y where y € unit-disc y € circline-set H ™ circline-set y-axis
+by auto
+hence moebius-pt ?R y € unit-disc \ moebius-pt ?R y € circline-set ?H' lM circline-set z-axis
+using rotation-pi-2-y-axis
+by (metis Int-iff circline-set-moebius-circline-E moebius-circline-comp-inv-left moebius-pt-comp-inv-left unit-disc-fix-discl
+unit-disc-fix-rotation)
+thus ?rhs
+using intersects-z-axis-iff|OF 1]
+using intersects-z-axis-intersects-y-axis|of H]
+by auto
+next
+assume intersects-y-axris H
+hence intersects-a-azis ?H'
+using intersects-z-axis-intersects-y-axis|of H]
+by simp
+then obtain z where «: x € unit-disc x € circline-set ?H’ 2 circline-set z-axis
+using intersects-z-axis-iff|OF 1]
+by auto
+let ?y = moebius-pt (—?R) x
+have ?y € unit-disc \ ?y € circline-set H ™ circline-set y-axis
+using * rotation-pi-2-y-axis| symmetric]
+by (metis Int-iff circline-set-moebius-circline-E moebius-pt-comp-inv-left moebius-rotation-uminus uminus-moebius-def
+unit-disc-fix-discI unit-disc-fix-rotation)
+thus ?hs
+by auto
+qed
+qed
+
+8.4 Intersection point of a Poincaré line with the x-axis in the unit disc
+
+definition calc-z-axis-intersection-cvec :: complex = complex = compler-vec where
+[simp]: calc-x-axis-intersection-cvec A B =
+(let diser = (Re B)? — (Re A)? in
+(—Re(B) + sgn (Re B) * sqrt(discr), A))
+
+definition calc-x-azis-intersection-cmat-cvec :: complex-mat = complex-vec where [simp]:
+calc-z-axis-intersection-cmat-cvec H =
+(let (A, B, C, D) = H in
+if A # 0 then
+calc-x-axis-intersection-cvec A B
+else
+(0, 1)
+)
+
+lift-definition calc-x-axis-intersection-clmat-hcoords :: circline-mat = complex-homo-coords is calc-z-axis-intersection-cmat-cvec
+by (auto split: if-split-asm)
+
+lift-definition calc-x-axis-intersection :: circline = complez-homo is calc-x-axis-intersection-clmat-hcoords
+proof transfer
+fix H1 H2
+assume *: hermitean H1 \ H1 # mat-zero hermitean H2 \ H2 # mat-zero
+obtain Ai B1 C1 D1 A2 B2 C2 D2 where hh: H1 = (A1, B1, C1, D1) H2 = (A2, B2, C2, D2)
+by (cases H1, cases H2, auto)
+assume circline-eq-cmat H1 H2
+then obtain k where k: k 4 0 H2 = cork *sm H1
+by auto
+
+have calc-2-axis-intersection-cvec Al B1 %» calc-a-axis-intersection-cvec A2 B2
+using hh k
+apply simp
+apply (rule-tac c=cor k in ex!)
+apply auto
+apply (simp add: sgn-mult power-mult-distrib)
+apply (subst right-diff-distrib| symmetric])
+apply (subst real-sqrt-mult)
+
+101

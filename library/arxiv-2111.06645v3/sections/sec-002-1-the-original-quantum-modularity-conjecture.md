@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2111.06645v3
-doc_title: ""
+doc_title: "Knots, Perturbative Series and Quantum Modularity"
 section_id: sec-002-1-the-original-quantum-modularity-conjecture
 section_title: "The original quantum modularity conjecture"
 section_number: 1
 pages: 9-11
 source_pdf: 2111.06645v3.pdf
 source_sha256: 2a4826bd1c2f0823
-doc_brief: "Knots, Perturbative Series and Quantum Modularity — We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.993
-latex_coverage_ratio: 0.956
+latex_prose_ratio: 0.974
+latex_coverage_ratio: 0.997
+doc_brief: "Knots, Perturbative Series and Quantum Modularity — We introduce an invariant of a hyperbolic knot which is a map α 7→Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns"
 ---
 []{#sec.QMCK label="sec.QMCK"}
 

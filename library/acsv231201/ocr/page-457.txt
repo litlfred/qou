@@ -1,0 +1,37 @@
+A.1 Manifolds 439
+
+Figure A.1 Covering the sphere with two charts.
+
+for projective spaces, the manifolds most relevant to us will be submanifolds
+of Euclidean space, and we present this more concrete case first.
+
+A.1.1 Embedded manifolds
+
+An embedded real d-manifold is a subset M C R" such that every point p « M
+has a neighborhood in R” whose intersection U with M is diffeomorphic to the
+open unit ball in R¢. Here, diffeomorphic means there is a map ¢: U > R¢
+such that the coordinates of ¢ are smooth (that is, members of the class C® of
+infinitely differentiable functions) and the rank of its Jacobian matrix at each
+point is d (which implies that ¢ has a smooth inverse). If (U, @) is a pair of such
+a set and diffeomorphism then we call U a chart and ¢ a chart map.
+
+Example A.1. The implicit function theorem implies that if Q is a smooth
+function and w is a zero of Q where the gradient of Q does not vanish, then the
+zero set of Q is locally diffeomorphically parametrized near w by any (d — 1)
+coordinates x;,,...,Xx,_, Such that the span of the gradients Vx;,,..., Vxx,_, at
+w does not contain (VQ)(w). For instance, if S4 = {a ¢ RU: Die G = lis
+the unit d-sphere in R“*! then taking Q(a) = yan 5 — 1 establishes that 54 =
+{a € R“! : Q(x) = 0} is a manifold. The unit d-sphere can be parametrized
+with as few as two charts, by projecting the points above and below certain za
+
+values; see Figure A.1. 4
+
+The definition of an embedded complex d-manifold is analogous to that of
+an embedded real manifold, except we require the stricter condition that the
+chart maps be holomorphic (or, equivalently, analytic) instead of smooth.
+
+Remark A.2. Because C4 can be identified with R*4 by writing z; = x; + iy;
+for real coordinates (x), ),...,Xg, Yq), Subsets of Cé can also be viewed as real
+manifolds. This identification is crucial to many of our arguments.
+
+The implicit function theorem directly implies the following result.

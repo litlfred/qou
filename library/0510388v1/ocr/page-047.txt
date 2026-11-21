@@ -1,0 +1,29 @@
+20. The first term on the LHS of the Key Lemma.
+The plan for the proof of the Key Lemma is simple. Applying an appropriate
+rotation of S*, we can assume that x is the point (1,0, 0,0) and that, after
+scaling, V(x) = X,; = (0,1,0,0). Ateach point y = (Yo, yi, ¥2, y3) of
+si - {—x} , we will expand both sides of the Key Lemma in terms of the ortho-
+normal basis E,, E, and E; for TS’ , and prove equality component-wise.
+We begin with the first term on the LHS of the equation, and note that
+
+PysV(x) X Vy = PyxV0x) X (Py Vb) = Pu VQ) X Vad):
+From section 14, we have that
+
+Vxa@ = (cosa x — y)/sina
+
+= ((yo, 0,0, 0) _ (yo. ¥1. 2, Y3)) /sin a
+
+= (-1/sin a) (yi Xi + y2 X2 + ys Xs).
+
+Hence
+Vx = O(a) Va = (—6'(@)/ sin a) (yi Xi + y2 Xp + yz Xs).
+Thus
+— V(x) XVx@ = (-Xi) X (— o'(@) /sin &) (yi Xi + yo Xo + ys Xs)
+= (o'(a) / sin a) (—y3 X2 + yo Xs).
+Hence
+
+Py. V(x) x Vyo Pyx (— V(x) x Vx )
+
+= (p'(@)/ sin a) (—y3 Bo + yo Es).
+
+47

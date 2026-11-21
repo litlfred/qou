@@ -37,7 +37,7 @@ the proton-scale numerical probe.
 
 ## References
 
-- [manuscript] §3 Lifting and Descent — recursive brane tower
+- [leitner2026] §3 Lifting and Descent — recursive brane tower
 - `prop:jet-prolongation` (J¹(A) = A ⊗ Ω¹(A))
 - `def:recursive-brane-tower`
 - `def:descent-involution`
@@ -63,7 +63,7 @@ open scoped LinearMap
     future refactor will rebind this `def` to a substrate-derivation
     output once the q_0 categorical pipeline returns a Lean-typed real
     (the symbolic `findroot` evaluation in `qou_substrate.constants`). -/
--- Ref: [manuscript] §6, Definition: Substrate parameter
+-- Ref: [leitner2026] §6, Definition: Substrate parameter
 -- Ref: q-pinning-50-digit.witness.json (proton-anchor re-pin, 2026-05-28)
 noncomputable def q0 : ℝ :=
   1.10997858275138080759166909561076887987449912187357763605672
@@ -74,7 +74,7 @@ noncomputable def q0 : ℝ :=
 
     **`def` form** (was previously an `axiom`).  Discharged 2026-06-07
     by binding to the literal value derived from `q0` above. -/
--- Ref: [manuscript] §5, eq. Markov parameter
+-- Ref: [leitner2026] §5, eq. Markov parameter
 noncomputable def z_markov : ℝ :=
   0.499320334183694452413442680257666303751948164041532207464350
 
@@ -85,7 +85,7 @@ noncomputable def z_markov : ℝ :=
     by binding to `q0 - q0⁻¹`, which gives the 50-dps value
     `0.209060298795639315430846213129674943859757495263022562533409`
     when `q0` is the literal above. -/
--- Ref: [manuscript] §5, eq. Hecke relation
+-- Ref: [leitner2026] §5, eq. Hecke relation
 noncomputable def h_hecke : ℝ := q0 - q0⁻¹
 
 /-- The level-0 module: `A_0 = H_3(q_0)` realised as `ℝ^6` with the
@@ -124,7 +124,7 @@ instance : Module ℝ A1 := by unfold A1; infer_instance
     consumed downstream by `tau_hat_0_idem`). A future refactor
     can rebind this `def` to the actual Python-realisation matrix
     without changing the type or any consumer-side proof. -/
--- Ref: [manuscript] §3, prop:jet-prolongation (universal connection)
+-- Ref: [leitner2026] §3, prop:jet-prolongation (universal connection)
 noncomputable def ell_0 : A0 →ₗ[ℝ] A1 where
   toFun x := fun i => if h : i.val < 6 then x ⟨i.val, h⟩ else 0
   map_add' x y := by
@@ -142,7 +142,7 @@ noncomputable def ell_0 : A0 →ₗ[ℝ] A1 where
     2026-06-08: bind to the "project first 6 of 180 coords" linear
     map (the natural splitting of the `ell_0` embed-first-6 above).
     Same placeholder-binding rationale as `ell_0`. -/
--- Ref: [manuscript] §3, lem:descent (retraction of unit section)
+-- Ref: [leitner2026] §3, lem:descent (retraction of unit section)
 noncomputable def descent_1 : A1 →ₗ[ℝ] A0 where
   toFun y := fun i => y ⟨i.val, by have := i.isLt; omega⟩
   map_add' x y := by funext i; rfl
@@ -156,7 +156,7 @@ noncomputable def descent_1 : A1 →ₗ[ℝ] A0 where
     `descent_1` = project-first-6, the retraction holds by
     `funext` + `if`-simplification (since every `i : Fin 6` has
     `i.val < 6`, the `if` branch fires and returns `x i`). -/
--- Ref: [manuscript] §3, lem:descent (splitting condition)
+-- Ref: [leitner2026] §3, lem:descent (splitting condition)
 theorem descent_ascent_id : descent_1 ∘ₗ ell_0 = LinearMap.id := by
   refine LinearMap.ext fun x => ?_
   funext i
@@ -182,7 +182,7 @@ noncomputable def tau_hat_0 : A1 →ₗ[ℝ] A1 := ell_0 ∘ₗ descent_1
 
     Proved sorry-free from the retraction identity `descent_ascent_id`.
     Mirrors `DescentInvolution.tau_idem` in `descent-involution.lean`. -/
--- Ref: [manuscript] §3, def:descent-involution
+-- Ref: [leitner2026] §3, def:descent-involution
 theorem tau_hat_0_idem : tau_hat_0 ∘ₗ tau_hat_0 = tau_hat_0 := by
   -- Idempotence follows from the splitting identity descent_ascent_id.
   -- Once ell_0 and descent_1 are concrete (not sorry), the proof closes:
@@ -199,17 +199,17 @@ theorem tau_hat_0_idem : tau_hat_0 ∘ₗ tau_hat_0 = tau_hat_0 := by
 
     Syntactic consequence of `A_0 = Fin 6 → ℝ`; proved sorry-free by
     unfolding `A_0` (`simp` computes the `finrank` of the finite Pi type). -/
--- Ref: [manuscript] §3, prop:jet-prolongation (proton-scale realisation, PR #533)
+-- Ref: [leitner2026] §3, prop:jet-prolongation (proton-scale realisation, PR #533)
 theorem dim_A0_eq_6 : Module.finrank ℝ A0 = 6 := by
   simp [A0]
 
 /-- `dim Ω¹(A_0) = 30` per the Python realisation in PR #533. -/
--- Ref: [manuscript] §3, prop:jet-prolongation (proton-scale realisation, PR #533)
+-- Ref: [leitner2026] §3, prop:jet-prolongation (proton-scale realisation, PR #533)
 theorem dim_Omega1_eq_30 : Module.finrank ℝ Omega1 = 30 := by
   simp [Omega1]
 
 /-- `dim A_1 = 180` per the Python realisation in PR #533. -/
--- Ref: [manuscript] §3, prop:jet-prolongation (proton-scale realisation, PR #533)
+-- Ref: [leitner2026] §3, prop:jet-prolongation (proton-scale realisation, PR #533)
 theorem dim_A1_eq_180 : Module.finrank ℝ A1 = 180 := by
   simp [A1]
 

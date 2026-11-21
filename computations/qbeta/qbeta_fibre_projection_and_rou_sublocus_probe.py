@@ -122,6 +122,7 @@ happened here and is why both routes are run).  `q_0` from `q_at`,
 """
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import json
 import pathlib as _pl
 import sys as _sys
@@ -158,7 +159,7 @@ def main() -> int:
     h = qs - 1 / qs
     dnet = sp.simplify(h * (h - 2) / 2)
     written = sp.Abs(qs ** 2 - 2 * qs - 1) * (qs + 1) / (2 * qs ** 3)
-    defn = sp.Abs(dnet) * 1 / (qs * (qs - 1))
+    defn = _qbeta_e0.order_zero_scaled(sp.Abs(dnet) * 1, qs)
     print("\n[1] #6875 used a form valid only on the real axis")
     print(f"    Delta(net) = h(h-2)/2 = {sp.factor(dnet)}")
     gaps = {}
@@ -181,7 +182,7 @@ def main() -> int:
 
     # ---- 2. the partial projection and its reality condition -------------
     qc = sp.exp(sp.I * phi)
-    im = sp.simplify(sp.expand_trig(sp.im(sp.expand_complex(1 / (qc * (qc - 1))))))
+    im = sp.simplify(sp.expand_trig(sp.im(sp.expand_complex(_qbeta_e0.order_zero_scaled(1, qc)))))
     num = sp.factor(sp.simplify(sp.expand_trig(sp.numer(sp.together(im)))))
     zeros = sp.solveset(sp.Eq(sp.simplify(im), 0), phi, sp.Interval(0, 2 * sp.pi))
     print("\n[2] the projection is PARTIAL -- |Delta(net)| is projected, E_0 is not")

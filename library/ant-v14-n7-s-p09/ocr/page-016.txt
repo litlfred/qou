@@ -1,0 +1,45 @@
+1968 Noelia Rizo, A. A. Schaeffer Fry and Carolina Vallejo
+
+Condition on n Partition xd)
+3|n (_,n-1) n-1
+3|n (di, 1,2 —2) (n— 1)(n — 2)/2
+3 || n, 3? | (n—2), or 3|| n—1) (3,n—3) n(n —1)(n—5)/6
+32 |n,3|| (n—2),or3||(m—1)  (13,n—3) (n—1)(n—2)(n — 3)/6
+3/(n—1) (2,n—2) n(n —3)/2
+32 | (n—1) (1, 2,n —3) n(n —2)(n —4)/3
+32 | (n—1) (13,2,n—5) n(n—2)(n—3)(n—4)(n — 6)/30
+3| (n—2) ("4 2, 2) n(n —3)/2
+3| (n—2) (1"-?, 2) n—-1
+
+Table 1. Some members of Irr3(Bo(G,,)) irreducible on 2,,,n > 10.
+
+the partition is not self-conjugate. Table | lists the partitions and character degrees for three characters in
+Irr3(G,,) that restrict irreducibly to 2l,, completing the proof. O
+
+3C1. Lie type in cross-characteristic for p =3. In this section, we prove Theorem 3.7 for groups of Lie
+type in nondefining characteristic. That is, we deal with the case S is of the form G/Z(G) for G a finite
+group of Lie type of simply connected type defined over a field F, with 3{q. (Given Proposition 3.8, this
+will complete the proof of parts (i) and (ii) of Theorem 3.7.)
+
+We will use ®,, to denote the m-th cyclotomic polynomial in the variable q. Note that using e.g.,
+[Malle 2007, Lemma 5.2], 3 divides ®,, if and only if m = 3'd for some i > 0, where d is the order of g
+modulo 3, and in this case 3 || ®,, unless m = d.
+
+Proposition 3.9. Let S be a simple group of Lie type defined over Fg with 3{q and assume S is not one of
+the groups PSL; (q) with n < 3. Then there exist three nontrivial characters x1, X2, X3 € Irrz(Bo(S))”!
+such that x, and x2 extend to Aut(S).
+
+Further, if S is not PSL4(q) nor PSp4(2") with a odd, then x1, x2, and x3 may be chosen to extend to
+Aut(S).
+
+Proof. We may assume that S is not isomorphic to one of the groups considered in Proposition 3.8.
+Keep the notation and considerations for G, G, T, and § from Section 3A. By the work of Lusztig
+[1988], the unipotent characters of G are trivial on Z(G) and restrict irreducibly to G. Further, when
+viewed as characters of S, they are extendible to Aut(S), by [Malle 2008, Theorems 2.4 and 2.5], aside
+from some specific exceptions. The only unipotent characters which take irrational values occur for
+exceptional groups and have values in Q(./—1, ¢3, és, /q), where ¢3 and és are third and fifth roots of
+unity, respectively, by [Geck 2003, Proposition 5.6 and Table 1]. In any case, the unipotent characters are
+o,-invariant, since ,/q is a sum of roots of unity of order relatively prime to 3.
+
+Let d be the order of g modulo 3. In particular, we have d = 1 or 2. If d = 1, unipotent characters of
+degree relatively prime to 3 are constituents of the Harish-Chandra induced character RSC) using [Malle

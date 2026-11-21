@@ -1,0 +1,54 @@
+280 Walter D. Neumann and Alan W. Reid
+
+matrix algebra M5(k(I')). However, in general A(I’) is more interesting, for instance
+A([) is a complete commensurability invariant for arithmetic and equals M2(k(I))
+in this case if and only if I. has cusps, as we discuss in the next section.
+
+Recall ([Vig]) that a quaternion algebra A over a number field k is determined up to
+isomorphism by the set S(A) of primes of k (finite or infinite) at which A is ramified;
+S(A) has a finite even number of elements and any finite even set of primes of k is the
+ramification set of some quaternion algebra over k.
+
+Little seems to be known about what the invariant A(T’) of I’ says about the geometry
+of H/T. If I is arithmetic then Clozel [Cl] has shown
+
+Theorem 3.1. If I’ is arithmetic and S(A(T)) contains no finite primes of k = k(T) (or,
+more generally, if for each finite v € S(A(I)), the local field k,, contains no quadratic
+extension of Q,, where p is the rational prime that v divides), then Y has a subgroup
+of finite index with infinite abelianization—in particular, H/T is almost sufficiently
+large. Oo
+
+On the other hand, using an observation of [KLS], the existence of finite ramification
+for A(I) also implies strong results about abelian quotients of finite index subgroups of
+T, as we now describe. We formulate the result in terms of QI, so let [ be a Kleinian
+group and denote Q(trl’) =k and QF = A.
+
+Theorem 3.2. Suppose A is ramified at the finite prime v and let p be the rational
+prime that v divides. Then T has a normal subgroup A with finite cyclic quotient (of
+order dividing p' — 1 for some t < 2[k:Q]) which is residually finite p, that is, the
+intersection of all normal subgroups of A of p-power index is trivial.
+
+Before we prove this theorem, we point out that being residually finite p is a strong
+property. Since finite p-groups are nilpotent, it implies that the lower central p-series of
+A intersects in the trivial group (this is the series of subgroups
+
+A= A%(p) > Al(p) D AX(p) D ...,
+
+where A‘(p)/A‘*1(p) is defined inductively to be the largest exponent p quotient of
+A‘(p)/[A, A‘(p)]). Moreover
+
+Proposition 3.3. Every non-abelian subgroup of a residually finite p group has a
+Z/p x Z/p quotient.
+
+Proof. The subgroup is residually finite p, so it has a non-abelian p-group quotient.
+But any non-abelian p-group G has a Z/p x Z/p quotient—if G/[G,G] were cyclic,
+then G/[G,[G,G]] would be a central extension of a cyclic group, hence abelian, so
+[G, G] = [G, [G, G]], which contradicts the fact that a finite p-group is nilpotent. oO
+
+Proof of Theorem 3.2. (Following [KLS], see also [Vig].) I is represented into A’,
+the group of elements of A of reduced norm 1, and hence into A. The discrete valuation
+on the local field k, extends to one on A,. Let 0, be the valuation ring (elements of
+non-negative valuation in A,,) and P,, its maximal ideal. Then A} is contained in the
+multiplicative group 0” of O, and this multiplicative group has a Hausdorff filtration
+
+OX D(+P,) D(1+P2) dD...

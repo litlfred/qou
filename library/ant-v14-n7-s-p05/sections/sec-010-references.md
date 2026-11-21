@@ -8,6 +8,7 @@ pages: 50-52
 source_pdf: ant-v14-n7-s-p05.pdf
 source_sha256: 1c8e94ff62a8d920
 toc_source: inferred
+doc_brief: "Motivic Gauss–Bonnet formulas — 12 sections: Front matter; Introduction; X+ ∈SH(k) is dualizable. In partic"
 ---
 [Abelson 1976] H. Abelson, “On the Euler characteristic of real varieties”, Michigan Math. J. 23:3 (1976), 267–271. MR Zbl
 [Ananyevskiy 2016a] A. Ananyevskiy, “On the push-forwards for motivic cohomology theories with invertible stable Hopf

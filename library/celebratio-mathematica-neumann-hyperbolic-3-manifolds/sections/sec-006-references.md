@@ -8,15 +8,13 @@ pages: 23-27
 source_pdf: Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds.pdf
 source_sha256: 9e541693c60cbd3f
 toc_source: inferred
+doc_brief: "Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — survey of gluing equations, volumes, the extended Bloch group, symplectic properties and quantization."
+duplicate_of: "arxiv-2304.12545v1"
 ---
 [e1] S. Bloch: “Applications of the dilogarithm function in algebraic 
 -theory and algeb‐
 raic geometry,” pp. 103–​114 in Proceedings of the International Symposium on Algebraic
 ⇧
-8/8/26, 4:27 AM
-Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/
-23/27
 Geometry (Kyoto, 1977). Edited by M. Nagata. Kinokuniya Book Store (Tokyo), 1978. MR
 578856 Zbl 0416.​18016
 [e2] T. Yoshida: “The -invariant of hyperbolic 3-manifolds,” Invent. Math. 81 : 3 (1985),
@@ -57,10 +55,6 @@ Simons class,” Geom. Topol. 11 (2007), pp. 1623–​1635. MR 2350461 Zbl 1201
 [e16] S. Garoufalidis: “Chern–Simons theory, analytic continuation and arithmetic,” Acta
 Math. Vietnam. 33 : 3 (2008), pp. 335–​362. MR 2501849 Zbl 1189.​57010
 ⇧
-8/8/26, 4:27 AM
-Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/
-24/27
 [e17] V. V. Fock and A. B. Goncharov: “The quantum dilogarithm and representations of
 quantum cluster varieties,” Invent. Math. 175 : 2 (2009), pp. 223–​286. MR 2470108 Zbl 1183.​
 14037
@@ -101,10 +95,6 @@ theory,” Commun. Number Theory Phys. 12 : 1 (2018), pp. 1–​52. MR 3798
 [e32] S. Garoufalidis and R. Kashaev: “A meromorphic extension of the 3D index,” Res.
 Math. Sci. 6 : 1 (2019). Art. id. 8. MR 3882990 Zbl 1434.​57020
 ⇧
-8/8/26, 4:27 AM
-Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/
-25/27
  1985
  1992
  1998
@@ -146,17 +136,9 @@ PEOPLE
 BIBTEX
     ABSTRACT
 BIBTEX
-8/8/26, 4:27 AM
-Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/
-26/27
 ⇧
 Celebratio Mathematica is an open-access publication of Mathematical Sciences Publishers.
 Design & Software © 2012–2026 MSP. All rights reserved.
 The Essay, Commentary, or Article above, unless otherwise specified, is licensed under a Creative Commons Attri‐
 bution 3.0 Unported License.
 Website powered by ProCelebratio 0.5 from MSP.
-8/8/26, 4:27 AM
-Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/
-27/27

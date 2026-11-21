@@ -1,0 +1,49 @@
+The Dilogarithm Function 43
+
+is any positive definite symmetric r x r matrix with rational entries, we can
+consider the system
+
+1-Q = [[ 9" (i=1,...,7) (25)
+j=l
+
+of r equations in r unknowns, which we can write in abbreviated notation as
+1-Q=Q4, Q = (Q,...,Q,). We suppose first that A has integral coeffi-
+cients, so that the equations in (25) are polynomial. Since there are as many
+equations as unknowns, we expect that the solutions form a 0-dimensional
+variety, i.e., there are only finitely many solutions and (hence) all lie in Q@ but
+in any case, the system certainly has solutions in CG. For any such a solution
+Q=(Q1,..-; Q,-) we can consider the element
+
+fg = (Qi) +--+ (Q] € ZF],
+where F is the number field Q(Qi,...,Q,). Then in A?(F'*) we find
+
+(Ee) = YQ) A= Qi) = YQ) A(T] OF”)
+i=l i=l j=l
+= Yada (Nai@)) = LY a a),
+i=l j=l i=l j=l
+
+and this is 0 since a;; is symmetric and (Q;) \(Q;) antisymmetric in i and j.
+Hence €4 belongs to the Bloch group of F. If A is not integral, then we
+have to be careful about the choice of determinations of the rational powers
+Q5" in (25). We require them to be consistent, i.e., we must have Q; = e“,
+1—Q; =e" for some vectors u, v € C” such that v = Au. This defines the
+minimal number field F in which the equations (25) make sense. For instance,
+ifA= (Ys aia)s we set (Qi, Q2) = (a, 0°) where a, 3 € Q are solutions of
+the system 1—a = a°8, 1—a8* = a8; then F = Q(a, 8), and g = [a]+[af*]
+is an element of B(F’). Nahm’s conjecture is then
+
+Conjecture. Let A be a positive definite symmetric r xr matrix with rational
+coefficients. Then the following are equivalent:
+
+i e element is a torsion element o ‘or every solution Q of (25).
+The el Q l f BCE) fe i Q of
+(ii) There exist BEQ" and CEQ such that f4,p,c(z) is a modular function.
+
+The main motivation for this conjecture comes from physics, and in fact one
+expects that all the modular functions f4,g,c which are obtained this way
+are characters of rational conformal field theories. (We will not discuss these
+aspects at all, referring the reader for this to Nahm’s paper.) A further ex-
+pectation, again predicted by the physics, is that if a matrix A satisfies the
+conditions of the conjecture, then the collection of modular functions occur-
+ring in statement (ii) span a vector space which is invariant under the action of
+

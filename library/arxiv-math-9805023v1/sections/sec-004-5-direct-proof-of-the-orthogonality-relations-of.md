@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9805023v1
-doc_title: "arXiv:math/9805023v1 [math.CA] 6 May 1998"
+doc_title: "q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations"
 section_id: sec-004-5-direct-proof-of-the-orthogonality-relations-of
 section_title: "Direct proof of the orthogonality relations of Theorem 4.1."
 section_number: 5
@@ -8,6 +8,7 @@ pages: 11-13
 source_pdf: 9805023v1.pdf
 source_sha256: ea8758b2a2bf9d85
 toc_source: inferred
+doc_brief: "q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations — The q-Laguerre polynomials correspond to an indetermined moment problem."
 ---
 In this section we present a direct analytic proof using summation and transformation
 formulas of the orthogonality relations of Theorem 4.1, but not of the completeness. The

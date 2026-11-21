@@ -8,7 +8,7 @@
   "pages": 21,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -27,7 +27,7 @@
    "Low-lying Eigenvalues of the QCD Dirac Operator",
    "at Finite Temperature"
   ],
-  "abstract": "We compute the low-lying spectrum of the staggered Dirac operator above and below the \ufb01nite temperature phase transition in both quenched QCD and in dynamical four \ufb02avor QCD. In both cases we \ufb01nd, in the high temperature phase, a density with close to square root behavior, \u03c1(\u03bb) \u223c (\u03bb \u2212\u03bb0)1/2. In the quenched simulations we \ufb01nd, in addition, a volume independent tail of small eigenvalues extending down to zero. In the dynamical simulations we also \ufb01nd a tail, decreasing with decreasing mass, at the small end of the spectrum. However, the tail falls o\ufb00quite quickly and does not seem to extend to zero at these couplings. We \ufb01nd that the distribution of the smallest Dirac operator eigenvalues provides an e\ufb03cient observable for an accurate determination of the location of the chiral phase transition, as \ufb01rst suggested by Jackson and Verbaarschot. NBI-HE-00-12 NORDITA-2000/30 HE hep-lat/0003021",
+  "abstract": "We compute the low-lying spectrum of the staggered Dirac operator above and below the ﬁnite temperature phase transition in both quenched QCD and in dynamical four ﬂavor QCD. In both cases we ﬁnd, in the high temperature phase, a density with close to square root behavior, ρ(λ) ∼ (λ −λ0)1/2. In the quenched simulations we ﬁnd, in addition, a volume independent tail of small eigenvalues extending down to zero. In the dynamical simulations we also ﬁnd a tail, decreasing with decreasing mass, at the small end of the spectrum. However, the tail falls oﬀquite quickly and does not seem to extend to zero at these couplings. We ﬁnd that the distribution of the smallest Dirac operator eigenvalues provides an eﬃcient observable for an accurate determination of the location of the chiral phase transition, as ﬁrst suggested by Jackson and Verbaarschot. NBI-HE-00-12 NORDITA-2000/30 HE hep-lat/0003021",
   "docinfo": {
    "Title": "arXiv:hep-lat/0003021v3  19 May 2000",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
@@ -132,7 +132,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "The measured distribution of the 50 lowest eigenvalues in quenched QCD at \ufb01nite tempera-",
+   "title": "The measured distribution of the 50 lowest eigenvalues in quenched QCD at ﬁnite tempera-",
    "page": 6,
    "confidence": 0.9,
    "evidence": [
@@ -158,7 +158,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "Distributions of the unfolded level spacings between the \ufb01rst few eigenvalues for \u03b2 = 5.75",
+   "title": "Distributions of the unfolded level spacings between the ﬁrst few eigenvalues for β = 5.75",
    "page": 8,
    "confidence": 0.9,
    "evidence": [
@@ -171,7 +171,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "The lowest eigenvalue, averaged over 5 con\ufb01gurations, on an 83 \u00d74 lattice with amq = 0.025 as a function of \u03b2. One sees a clear change in behavior around \u03b2 \u223c5.02, indicating the restoration of chiral symmetry around this temperature. Just this \ufb01rst Dirac operator eigenvalue can thus serve as an exce",
+   "title": "The lowest eigenvalue, averaged over 5 conﬁgurations, on an 83 ×4 lattice with amq = 0.025 as a function of β. One sees a clear change in behavior around β ∼5.02, indicating the restoration of chiral symmetry around this temperature. Just this ﬁrst Dirac operator eigenvalue can thus serve as an exce",
    "page": 9,
    "confidence": 0.9,
    "evidence": [
@@ -196,7 +196,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "Quenched spectrum of \u03b2 = 5.9 and a dynamical spectrum at \u03b2 = 5.4 with amq = 0.025,",
+   "title": "Quenched spectrum of β = 5.9 and a dynamical spectrum at β = 5.4 with amq = 0.025,",
    "page": 11,
    "confidence": 0.9,
    "evidence": [
@@ -209,7 +209,7 @@
   {
    "kind": "table",
    "number": "3",
-   "title": "The dependence of the \ufb01tted power on the \u03bb where the small-\u03bb tail is cut o\ufb00. The data are",
+   "title": "The dependence of the ﬁtted power on the λ where the small-λ tail is cut oﬀ. The data are",
    "page": 11,
    "confidence": 0.8,
    "evidence": [
@@ -221,7 +221,7 @@
   {
    "kind": "figure",
    "number": "6",
-   "title": "The density of the 50 smallest eigenvalues in the high temperature phase, \u03b2 = 5.2 and",
+   "title": "The density of the 50 smallest eigenvalues in the high temperature phase, β = 5.2 and",
    "page": 12,
    "confidence": 0.9,
    "evidence": [
@@ -234,7 +234,7 @@
   {
    "kind": "figure",
    "number": "7",
-   "title": "The density of the 50 smallest eigenvalues at \u03b2",
+   "title": "The density of the 50 smallest eigenvalues at β",
    "page": 13,
    "confidence": 0.9,
    "evidence": [
@@ -247,7 +247,7 @@
   {
    "kind": "figure",
    "number": "8",
-   "title": "Power \ufb01t to the spectral density for \u03b2 = 5.2 with amq = 0.025 on an 83 \u00d7 4 lattice with cut at 0.1 (see Table 3). Also included is the distribution of the \ufb01rst eigenvalue. The distribution of this smallest eigenvalue is very di\ufb00erent from that demanded by the Airy-function behavior (see below)",
+   "title": "Power ﬁt to the spectral density for β = 5.2 with amq = 0.025 on an 83 × 4 lattice with cut at 0.1 (see Table 3). Also included is the distribution of the ﬁrst eigenvalue. The distribution of this smallest eigenvalue is very diﬀerent from that demanded by the Airy-function behavior (see below)",
    "page": 14,
    "confidence": 0.9,
    "evidence": [
@@ -260,7 +260,7 @@
   {
    "kind": "figure",
    "number": "9",
-   "title": "Comparison of the spectral density for \u03b2 = 5.2, amq = 0.025 on a 83 \u00d7 4 lattice, with the Random Matrix Theory prediction for a soft edge, as in eq. (5)",
+   "title": "Comparison of the spectral density for β = 5.2, amq = 0.025 on a 83 × 4 lattice, with the Random Matrix Theory prediction for a soft edge, as in eq. (5)",
    "page": 15,
    "confidence": 0.9,
    "evidence": [
@@ -273,7 +273,7 @@
   {
    "kind": "figure",
    "number": "10",
-   "title": "Distributions of the unfolded level spacings between the \ufb01rst few eigenvalues in the dynamical case, compared to the Wigner surmise. As in the quenched case, we \ufb01nd a small disagreement for the \ufb01rst eigenvalues. But in contrast to the quenched case the agreement sets in after almost just the 2nd eig",
+   "title": "Distributions of the unfolded level spacings between the ﬁrst few eigenvalues in the dynamical case, compared to the Wigner surmise. As in the quenched case, we ﬁnd a small disagreement for the ﬁrst eigenvalues. But in contrast to the quenched case the agreement sets in after almost just the 2nd eig",
    "page": 15,
    "confidence": 0.9,
    "evidence": [
@@ -286,7 +286,7 @@
   {
    "kind": "figure",
    "number": "11",
-   "title": "Full spectra of 200 \u00d7 200 matrices at T = 0, 0.5, 0.75, 1.0, 1.2, 2.0. In this simple model a gap indeed develops around \u03bb = 0 at T = 1",
+   "title": "Full spectra of 200 × 200 matrices at T = 0, 0.5, 0.75, 1.0, 1.2, 2.0. In this simple model a gap indeed develops around λ = 0 at T = 1",
    "page": 17,
    "confidence": 0.9,
    "evidence": [
@@ -299,7 +299,7 @@
   {
    "kind": "figure",
    "number": "12",
-   "title": "A blowup of the graphs in Fig. 11. The microscopic spectrum changes smoothly from Bessel-type behavior to Airy-type behavior, going through an intermediate \u201ccritical\u201d distribution at",
+   "title": "A blowup of the graphs in Fig. 11. The microscopic spectrum changes smoothly from Bessel-type behavior to Airy-type behavior, going through an intermediate “critical” distribution at",
    "page": 18,
    "confidence": 0.9,
    "evidence": [
@@ -520,8 +520,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 1326,
-   "n_words": 202,
+   "n_chars": 1324,
+   "n_words": 201,
    "label_start": null,
    "label_end": "1"
   },
@@ -532,8 +532,8 @@
    "level": 1,
    "page_start": 2,
    "page_end": 4,
-   "n_chars": 10182,
-   "n_words": 1664,
+   "n_chars": 10178,
+   "n_words": 1662,
    "label_start": "1",
    "label_end": "3"
   },
@@ -544,8 +544,8 @@
    "level": 1,
    "page_start": 4,
    "page_end": 9,
-   "n_chars": 7972,
-   "n_words": 1450,
+   "n_chars": 7993,
+   "n_words": 1449,
    "label_start": "3",
    "label_end": "8"
   },
@@ -556,8 +556,8 @@
    "level": 1,
    "page_start": 9,
    "page_end": 14,
-   "n_chars": 6803,
-   "n_words": 1275,
+   "n_chars": 6843,
+   "n_words": 1278,
    "label_start": "8",
    "label_end": "13"
   },
@@ -568,8 +568,8 @@
    "level": 1,
    "page_start": 14,
    "page_end": 19,
-   "n_chars": 10399,
-   "n_words": 1902,
+   "n_chars": 10382,
+   "n_words": 1896,
    "label_start": "13",
    "label_end": "18"
   },
@@ -580,8 +580,8 @@
    "level": 1,
    "page_start": 19,
    "page_end": 21,
-   "n_chars": 6478,
-   "n_words": 1054,
+   "n_chars": 6481,
+   "n_words": 1052,
    "label_start": "18",
    "label_end": "20"
   }
@@ -601,7 +601,8 @@
    "items": []
   },
   "sections": 6,
-  "chars_total": 43160,
+  "chars_total": 43201,
+  "furniture_lines_stripped": 20,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "finiteTemp.tex",
@@ -654,7 +655,7 @@
      "id": "sec-004-5-conclusions",
      "title": "Conclusions",
      "prose_ratio": 0.988,
-     "coverage_ratio": 0.685,
+     "coverage_ratio": 0.682,
      "result": "overlaid",
      "converter": "latex"
     }

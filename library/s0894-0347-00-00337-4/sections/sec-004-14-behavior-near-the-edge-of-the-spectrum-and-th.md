@@ -8,6 +8,7 @@ pages: 6-7
 source_pdf: S0894-0347-00-00337-4.pdf
 source_sha256: 1c6848281fc2804c
 toc_source: outline
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY S 0894-0347(00)00337-4 — 22 sections: Front matter; Plancherel measures; Introduction"
 ---
 discrete sine kernel S(k, a) vanishes if a ≥2. Therefore, it follows from Theorem 3
 that the limit correlations lim ϱ(n, X(n)) vanish if ai ≥2 for some i. However, as

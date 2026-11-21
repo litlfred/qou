@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2207.07246v2/blocks/prose-sec-015",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Hamiltonian",
-  "pageStart": 29,
-  "pageEnd": 33,
-  "text": "../sections/sec-015-22-hamiltonian.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2207.07246v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2207.07246v2",
+  "title": "PATH INTEGRAL QUANTUM MONTE CARLO",
+  "pageStart": 24,
+  "pageEnd": 24,
+  "text": "../sections/sec-015-2-path-integral-quantum-monte-carlo.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2207.07246v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2207.07246v2/manifest.jsonld",
   "provenance": "ingested"
 }

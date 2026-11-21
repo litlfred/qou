@@ -1,0 +1,1 @@
+Let P be a general planar algebra presented on L by Φ. For each k let Sk be a set and α : Sk →Pk be a function. Put S = ` k Sk. Then there is a unique ﬁltered algebra homomorphism ΘS : P(S) →P with ker ΘS invariant under A(S), intertwining the A(∅) actions and such that ΘS( R ) = α(R) for R ∈S.

@@ -2,57 +2,103 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1202.0067v3",
  "source_sha256": "2ce621c8982ee764",
- "brief": "CHARACTER DEFLATIONS AND A GENERALIZATION OF THE MURNAGHAN–NAKAYAMA RULE ANTON EVSEEV, ROWENA PAGET AND MARK WILDON — 8 sections: Introduction; Deflation by averaging; Skew characters",
- "extended": "**CHARACTER DEFLATIONS AND A GENERALIZATION OF THE MURNAGHAN–NAKAYAMA RULE ANTON EVSEEV, ROWENA PAGET AND MARK WILDON**\n\n*CHARACTER DEFLATIONS AND A GENERALIZATION*\n\n33 pp, 8 sections.\n\n**Outline.** 1 Introduction; 2 Deflation by averaging; 3 Skew characters; 5 An application to Foulkes’ Conjecture; 1 Foulkes’ Conjecture asserts that if m ≤ n; 1 X (n − 1)! X; 6 Generalized deflations; 7 Symmetric functions",
+ "brief": "CHARACTER DEFLATIONS AND A GENERALIZATION OF THE MURNAGHAN–NAKAYAMA RULE — Given natural numbers m and n, we deﬁne a deﬂation map from the characters of the symmetric group Smn to the characters of",
+ "extended": "**CHARACTER DEFLATIONS AND A GENERALIZATION OF THE MURNAGHAN–NAKAYAMA RULE**\n\n*ANTON EVSEEV, ROWENA PAGET AND MARK WILDON*\n\n33 pp, 17 sections.\n\n**Abstract.** Given natural numbers m and n, we deﬁne a deﬂation map from the characters of the symmetric group Smn to the characters of Sn. This map is obtained by ﬁrst restricting a character of Smn to the wreath product Sm ≀Sn, and then taking the sum of the irreducible constituents of the restricted character on which the base group Sm × · · · × Sm acts trivially. We prove a combinatorial formula which gives the values of the images of the irreducible characters of Smn under this map. We also prove an analogous result for more general deﬂation maps in which the base group is not required to act trivially. These results generalize the Murnaghan–Nakayama rule and special cases of the Littlewood– Richardson rule. As a corollary we obtain a new combinatorial formula for the character multiplicities that are the subject of the long-standing Foulkes’ Conjecture.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Character deflations; 1.2 Some special cases; 1.3 Outline of the paper; 2 Deflation by averaging; 3 Skew characters; 3.1 Quotients of skew-partitions; 3.2 A model for induction from a Young subgrou; 3.3 Proof of Theorem 3.3; 3.4 Example; 4 Proof of Theorem 1.5; 5 An application to Foulkes' Conjecture; 6 Generalized deflations; 7 Symmetric functions; Acknowledgements; References",
  "tokens": {
-  "brief": 45,
-  "extended": 102
+  "brief": 49,
+  "extended": 361
  },
  "sections": [
   {
-   "id": "sec-000-introduction",
-   "title": "Introduction",
-   "pages": "1-7"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
   },
   {
-   "id": "sec-001-deflation-by-averaging",
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-11-character-deflations",
+   "title": "Character deflations",
+   "pages": "2-5"
+  },
+  {
+   "id": "sec-002-12-some-special-cases",
+   "title": "Some special cases",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-003-13-outline-of-the-paper",
+   "title": "Outline of the paper",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-004-2-deflation-by-averaging",
    "title": "Deflation by averaging",
    "pages": "7-9"
   },
   {
-   "id": "sec-002-skew-characters",
+   "id": "sec-005-3-skew-characters",
    "title": "Skew characters",
-   "pages": "9-18"
+   "pages": "9-9"
   },
   {
-   "id": "sec-003-an-application-to-foulkes-conjecture",
-   "title": "An application to Foulkes’ Conjecture",
-   "pages": "18-18"
+   "id": "sec-006-31-quotients-of-skew-partitions",
+   "title": "Quotients of skew-partitions",
+   "pages": "9-10"
   },
   {
-   "id": "sec-004-foulkes-conjecture-asserts-that-if-m-n",
-   "title": "Foulkes’ Conjecture asserts that if m ≤ n",
-   "pages": "18-19"
+   "id": "sec-007-32-a-model-for-induction-from-a-young-subgroup",
+   "title": "A model for induction from a Young subgroup",
+   "pages": "10-11"
   },
   {
-   "id": "sec-005-x-n-1-x",
-   "title": "X (n − 1)! X",
-   "pages": "19-22"
+   "id": "sec-008-33-proof-of-theorem-33",
+   "title": "Proof of Theorem 3.3",
+   "pages": "11-13"
   },
   {
-   "id": "sec-006-generalized-deflations",
+   "id": "sec-009-34-example",
+   "title": "Example",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-010-4-proof-of-theorem-15",
+   "title": "Proof of Theorem 1.5",
+   "pages": "14-18"
+  },
+  {
+   "id": "sec-011-5-an-application-to-foulkes-conjecture",
+   "title": "An application to Foulkes' Conjecture",
+   "pages": "18-22"
+  },
+  {
+   "id": "sec-012-6-generalized-deflations",
    "title": "Generalized deflations",
    "pages": "22-30"
   },
   {
-   "id": "sec-007-symmetric-functions",
+   "id": "sec-013-7-symmetric-functions",
    "title": "Symmetric functions",
-   "pages": "30-33"
+   "pages": "30-31"
+  },
+  {
+   "id": "sec-014-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-015-references",
+   "title": "References",
+   "pages": "31-33"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
+   "abstract",
    "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."

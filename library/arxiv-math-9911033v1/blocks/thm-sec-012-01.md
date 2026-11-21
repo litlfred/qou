@@ -1,1 +1,1 @@
-Let M be a Riemann surface of genus g ≥ 2 and constant
+Let M be a Riemann surface of genus g ≥ 2 and constant curvature (−1). Then there are absolute constants m0 > 0 and D >0 such that for any m > m0 and any x0 ∈ M , there is a section S ∈ H 0(M,K m M ) with ||S||L2 = 1 such that ||S||(x0) ≥ √m D(1 + 1√mδ2x0 e π δx0 ) .(4.34)

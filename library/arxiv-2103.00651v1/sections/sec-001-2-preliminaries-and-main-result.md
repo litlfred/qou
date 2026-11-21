@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2103.00651v1
-doc_title: "On Concentration Inequalities for Vector-Valued Lipschit z Functions Dimitrios Katselis katselis@illinois.edu"
+doc_title: "On Concentration Inequalities for Vector-Valued Lipschitz Functions"
 section_id: sec-001-2-preliminaries-and-main-result
 section_title: "Preliminaries and Main Result"
 section_number: 2
 pages: 2-3
 source_pdf: 2103.00651v1.pdf
 source_sha256: c5505d3e4891168e
-doc_brief: "On Concentration Inequalities for Vector-Valued Lipschit z Functions Dimitrios Katselis katselis@illinois.edu — We derive two upper bounds for the probability of deviation of a vect or-valued"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.984
+latex_prose_ratio: 0.98
+latex_coverage_ratio: 0.962
+doc_brief: "On Concentration Inequalities for Vector-Valued Lipschitz Functions — We derive two upper bounds for the probability of deviation of a vector-valued Lipschitz function of a collection of random"
 ---
 Let $(\mathbb{X},d_{\mathbb{X}})$ be a Polish space and $\rho$ be a (Borel) probability measure on $(\mathbb{X},d_{\mathbb{X}})$. The triplet $(\mathbb{X},d_{\mathbb{X}},\rho)$ defines a metric probability space in the sense of Gromov [@rs13], [@g07]. Given two metric spaces $(\mathbb{X}, d_{\mathbb{X}})$ and $(\mathbb{Y}, d_{\mathbb{Y}})$, let $f:\mathbb{X}\rightarrow \mathbb{Y}$ be a Lipschitz mapping with Lipschitz constant $\|f\|_{\rm Lip}$, i.e., $d_{\mathbb{Y}}(f(x),f(\tilde{x}))\leq \|f\|_{\rm Lip} d_{\mathbb{X}}(x,\tilde{x}),$ $\forall x,\tilde{x}\in \mathbb{X}$. In the following, the set of all such mappings will be denoted by ${\rm Lip}(\mathbb{X},\mathbb{Y},d_{\mathbb{X}},d_{\mathbb{Y}})$. Moreover, let $\mathbb{P}_{1}(\mathbb{X})$ denote the set of all probability measures $\rho$ on $\mathbb{X}$ such that $E_{\rho}[d_{\mathbb{X}}(X,x_0)]<\infty$ holds for an arbitrary (and therefore for all) $x_0\in \mathbb{X}$. The $L^1$ Wasserstein distance between $\rho,\tilde{\rho}\in \mathbb{P}_1(\mathbb{X})$ is defined as $$\label{eq:defin1}
 W_{1}(\rho,\tilde{\rho})=\inf_{X\sim \rho,\tilde{X}\sim \tilde{\rho}}E[d_{\mathbb{X}}(X,\tilde{X})]=\inf_{\gamma\in \Pi(\rho,\tilde{\rho})}\int_{\mathbb{X}\times \mathbb{X}}d_{\mathbb{X}}(x,\tilde{x})\gamma(dx,d\tilde{x}).$$ The infimum in the first part is taken over all jointly distributed pairs $(X,\tilde{X})$ on the product space $\mathbb{X}^2=\mathbb{X}\times \mathbb{X}$ with marginals $\rho,\tilde{\rho}$, respectively. In the last part, $\Pi(\rho,\tilde{\rho})$ denotes the set of all possible couplings of $\rho,\tilde{\rho}$. An optimal coupling $\gamma^{*}\in \Pi(\rho,\tilde{\rho})$ achieving the infimum exists [@rs13], [@v08]. Additionally, a different measure gauging the dissimilarity between two probability measures $\rho,\tilde{\rho}$ is the relative entropy or Kullback-Leibler divergence $D(\tilde{\rho}\| \rho)=E_{\tilde{\rho}}\left[\log \frac{d\tilde{\rho}}{d\rho}\right]=E_{\rho}\left[\frac{d\tilde{\rho}}{d\rho}\log \frac{d\tilde{\rho}}{d\rho}\right]$ for $\tilde{\rho}\ll \rho$ and $D(\tilde{\rho}\| \rho)=\infty$ otherwise, where $d\tilde{\rho}/d\rho$ is the Radon-Nikodym derivative of $\tilde{\rho}$ with respect to $\rho$ and $\tilde{\rho}\ll \rho$ denotes that $\tilde{\rho}$ is absolutely continuous with respect to $\rho$.

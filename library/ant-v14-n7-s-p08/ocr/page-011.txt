@@ -1,0 +1,41 @@
+Burgess bounds for short character sums evaluated at forms 1921
+Concretely, for X of codimension w, we use the fact that if
+1<|Mj| <|M2| <--- <|Mpr| <o0, (2-10)
+then by [Xu 2018, Lemma 1.7],
+Tx(M) < UM) -[ My)" Ma|1 [Mal (2-11)
+
+where U is the sum of the degrees of the irreducible components of X. In our setting, we will apply such
+bounds in Section 6 when using a Menshov—Rademacher technique to deduce a bound for a maximal
+moment from a nonmaximal moment. Here, in order to guarantee the ordering (2-10) we must permute
+variables in a delicate argument, and apply rearrangement inequalities in order to conclude. This is
+another novel aspect of our method.
+
+3. Preliminaries
+
+3A. Power-free conditions. We say that F € Z[x,..., Xn] is d-th power-free if each nonconstant irre-
+ducible factor of F over Z (or equivalently over Q, by Gauss’s lemma) appears with multiplicity strictly
+less than d. In general, given a field k, we say that F € k[x,,..., x,] is d-th power-free over k when
+F =cFyj' F;?--+ Fy’ with c © k*, all a; < d and all F; € k[x), ..., X,] are irreducible and pairwise non-
+associate. (We say G, G’ €k[x1,..., X,] are nonassociate if there is no c € k* such that G = cG’.) (Note
+that a constant may be regarded as a d-th power-free polynomial. In lemmas or theorems which assume a
+polynomial is d-th power-free, other hypotheses will rule out the case of the polynomial being a constant.)
+
+To be precise, we recall that the property of being d-th power-free may be specified equivalently over
+a field k or the separable closure of k:
+
+Lemma 3.1. Let k be a field and k* its separable algebraic closure, so k*’ = k if k is perfect, and in
+particular if k is finite. Then for any F € k[x,...,Xn], F is a perfect d-th power over k (up to a nonzero
+multiplicative constant) if and only if F is a perfect d-th power over k*. Similarly, F is d-th power-free
+over k if and only if F is d-th power-free over k*.
+
+Proof. We begin with the second claim. Certainly if F is d-th power-free over k* then it is over k. For the
+other direction, write F = cF/'' Fy’ --- Fj with c € k*, all a; < d and all F; € k[x,, ..., X,] irreducible
+and pairwise nonassociate. For each such F;, we recall from [Xu 2018, Lemma 3.15 (2)] that the fact
+that F; is irreducible over k implies that F; is square-free as a polynomial in k*[x1,..., X,]. Thus upon
+factoring F; over k* we have F; = Gj,1Gj,2 --- G,», in which each G;, ; is irreducible in k* and as j varies
+the G;,; are pairwise nonassociate. Thus the factorization of F over k* is
+
+(Gt G5 _ Gi», (G3 GE, — Gp.) _ (GUiGiy _ Gos,)-
+
+Next we recall from [Xu 2018, Lemma 3.15 (3)] that if F;, Fj, © k[x1, ..., X,] are nonassociate irreducible
+polynomials, then F; and F;, have no common factors in k*[x1,...,X,]. From this we conclude that

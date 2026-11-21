@@ -36,7 +36,7 @@ The structural counts are discharged here by computation
 (`pre_reduction_terms = 12! = 479001600`, `net_terms = 12`, the magic
 numbers `Z = N = 6`); the single conjectural input is the empirical
 Pauli factor, carried by `[Witness12CPauli]`. -/
--- Ref: [manuscript] quantum-observable-universe/appendix-nf-witnesses/witness-12c.ts
+-- Ref: [leitner2026] quantum-observable-universe/appendix-nf-witnesses/witness-12c.ts
 theorem witness_12C [pauli : Witness12CPauli] :
     (6 : ℕ) = 6 ∧ (6 : ℕ) = 6 ∧ Nat.factorial 12 = 479001600 ∧
     (12 : ℕ) = 12 ∧ |pauli.F_Pauli - 0.129| < 0.005 :=

@@ -7,10 +7,11 @@ section_number: null
 pages: 3-5
 source_pdf: 2311.14221v2.pdf
 source_sha256: 5aa4126bbb6df6eb
-doc_brief: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B → C is an exact"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
-latex_coverage_ratio: 0.946
+latex_coverage_ratio: 0.977
+doc_brief: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B →C is an exact"
 ---
 The point of view of this paper owes a lot to \cite{PS}. However, we shall work only with finite categories. Let $\ku$ be an arbitrary field, and let $\Bc, \vc$ be finite $\ku$-linear abelian categories. Assume both $\ca, \Bc$ are  rigid monoidal categories, and $F:\Bc\to \vc$ is a monoidal functor. If $F$ has a {\it section} $G:\vc\to \Bc$, that is $F\circ G\simeq \Id_\vc$ as monoidal functors, then it is possible to endow $\Bc$ with an action of $\vc$, such that $F$ is a monoidal $\vc$-module functor. This action behaves well together with the monoidal product of $\Bc$, in a sense that we call \textit{monoidal module category}.
  

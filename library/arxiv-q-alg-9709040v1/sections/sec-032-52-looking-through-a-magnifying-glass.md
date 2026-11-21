@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-032-52-looking-through-a-magnifying-glass
 section_title: "Looking through a magnifying glass"
 section_number: 5.2
@@ -8,6 +8,7 @@ pages: 19-22
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
 The deﬁnition of the compactiﬁcation given in the previous subsection is not descriptive. We are going
 to explain an intuitive idea underlying a direct construction of the compactiﬁcation Cn,m as a manifold with

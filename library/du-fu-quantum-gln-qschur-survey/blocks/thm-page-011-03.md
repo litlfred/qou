@@ -1,0 +1,1 @@
+Let M = {m(A) := e(A+)kσ(A)f(A−) | A ∈Ξ(n, r)} where σ(A) = (σ1(A), · · · , σn(A)) with σi(A) = ai,i + P 1⩽j<i(ai,j + aj,i). Then M is a spanning set and, hence, forms a Q(v)-basis for eU(n, r). (So we may identify eU(n, r) with U(n, r), and ζr with ˜ζr.) Moreover, M gives a Z-basis for the integral q-Schur algebra U(n, r).

@@ -1,0 +1,60 @@
+534 J. BORCEA, P. BRANDEN, AND T. M. LIGGETT
+
+of Definition [2.9) if and only if
+Of, . of Of
+
+5 x)=—(x) > x) f(x
+(5) FESR (8) > seg Ul)
+for all x € R" and 1 <i <j <n (see also Theorem [4.JJin {4] below). Therefore, a
+stable multi-affine polynomial with non-negative coefficients is Rayleigh/h-NLC+.
+As we will prove in {4 such polynomials are in fact CNA+.
+
+Clearly, by setting all variables equal in a stable polynomial one gets a uni-
+variate stable polynomial. Hence, if f(z1,...,2n) is stable, then so is its diagonal
+specialization (see Definition [2.8)
+
+A(f)(t) = > @ nth,
+
+k=0
+
+A univariate polynomial with real coefficients is stable if and only if it has all real
+zeros, so the familiar Newton inequalities (cf., e. imply that f satisfies
+the conclusion of Conjecture 2.4Jif f is stable with non-negative coefficients.
+
+Multivariate generalizations of Newton’s inequalities for homogeneous real stable
+polynomials with non-negative coefficients were obtained in [8] Theorem 3]. Corol-
+laries 2 and 3 of op. cit. show that the coefficients of (symmetric) such polynomials
+also satisfy unimodality properties in the sense of majorization/stochastic domina-
+tion [61]. In §4.3] we establish natural analogs of these results for truncations of
+(non-homogeneous) multi-affine stable polynomials with non-negative coefficients.
+
+The well-known Laguerre-Turan inequalities for univariate polynomials and tran-
+scendental entire functions in the Laguerre-Pélya cla: amount to saying that
+the sequence of Taylor coefficients of such a function is SLC (Definition 2.8). One
+can argue that both Newton’s inequalities and the Laguerre-Turan inequalities are
+natural manifestations of negative dependence properties encoded in the geometry
+of the zero sets of these functions. Indeed, as we will see in {@] the geometric
+features of real stability (Definition [2.9) are a key tool in our study of negative de-
+pendence properties for strongly Rayleigh measures and allow us to establish many
+such properties for this class of measures, including:
+
+e the strongest form of negative association (CNA+);
+closure under operations (i)—(vi) defined in
+closure under symmetric homogenization;
+stochastic domination properties for truncations;
+the ULC property for rank sequences.
+
+Rayleigh polynomials that are not stable do not seem to have a geometric de-
+scription by means of their zero sets similar to that of stable polynomials. This may
+explain why several negative dependence properties fail for arbitrary (non-strongly)
+Rayleigh polynomials/measures (see {7).
+
+We summarize below some of the closure properties of real stable polynomials
+(see [8] [9] for their proofs) that we need for later use.
+
+Proposition 3.1. Let H,,(R) be the set of all real stable polynomials in n variables.
+(1) f € H»(R) if and only if for any X € RY and wp € R” the univariate
+polynomial t+ f(At + 4) has all real zeros.
+(2) If f € H»(R) has degree dj in variable z;, j € [n], then
+© O;f © Hn(R) U {0} forl <j <n;
+© f (21, . ++, 2-1, AZ}, 2415 +++5%n) € Hn(R) for j € [n], a > 0;

@@ -8,6 +8,7 @@ pages: 1-4
 source_pdf: 1202.5547v1 (1).pdf
 source_sha256: 1268c0834b6c9206
 toc_source: inferred
+doc_brief: "Markov property and Khovanov-Rozansky homology: Coxeter Case — In [2] Khovanov gave a construction of Khovanov-Rozansky homology, new triple-graded link invariant, taking the Hochschild homology of"
 ---
 arXiv:1202.5547v1  [math.RT]  24 Feb 2012
 Markov property and Khovanov-Rozansky homology: Coxeter

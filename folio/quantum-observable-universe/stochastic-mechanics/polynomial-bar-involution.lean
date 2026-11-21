@@ -32,8 +32,8 @@ What's proved (all theorems below, no `sorry`):
   squared indeterminate — the analogue of "h² is bar-symmetric")
 -/
 
--- Ref: [manuscript] prop:bar-symmetric-three-layer-synthesis
--- Ref: [manuscript] def:bar-involution
+-- Ref: [leitner2026] prop:bar-symmetric-three-layer-synthesis
+-- Ref: [leitner2026] def:bar-involution
 -- Ref: [wenzl1988] doi:10.1007/BF01404457
 
 namespace QOU.BraidKnot.PolynomialBarInvolution
@@ -171,6 +171,49 @@ theorem barPoly_neg (p : R[X]) : barPoly (-p) = -(barPoly p) := by
   have : -p = 0 - p := by ring
   rw [this, barPoly_sub, barPoly_zero]
   ring
+
+/-! ## The bar-fixed subring
+
+The claim "the bar-symmetric subring is exactly `R[X²]`" needs a hypothesis.
+`R[X²] ⊆ Fix` holds over every commutative ring. The reverse inclusion needs
+`2` to be a non-zero-divisor in `R`: over `ZMod 2`, `-X = X`, so `X` is
+bar-fixed (`zmod2_X_bar_fixed`). Under that hypothesis, `p` is bar-fixed
+exactly when every odd coefficient vanishes (`barPoly_fixed_iff`). -/
+
+/-- Coefficients of `bar p`: `(bar p)ₙ = (-1)ⁿ pₙ`. -/
+theorem coeff_barPoly (p : R[X]) (n : ℕ) :
+    (barPoly p).coeff n = (-1) ^ n * p.coeff n := by
+  unfold barPoly
+  induction p using Polynomial.induction_on' with
+  | add p q hp hq => simp [add_comp, hp, hq, mul_add]
+  | monomial k a =>
+    rw [← C_mul_X_pow_eq_monomial, mul_comp, C_comp, X_pow_comp, neg_pow,
+      ← mul_assoc, show (-1 : R[X]) ^ k = C ((-1) ^ k) by simp, ← C_mul,
+      coeff_C_mul_X_pow, coeff_C_mul_X_pow]
+    split_ifs with h
+    · subst h; ring
+    · simp
+
+/-- **Bar-fixed iff odd coefficients vanish**, when `2` is a non-zero-divisor.
+    This is the precise form of "the bar-symmetric subring is `R[X²]`". -/
+theorem barPoly_fixed_iff (h2 : ∀ r : R, 2 * r = 0 → r = 0) (p : R[X]) :
+    barPoly p = p ↔ ∀ n, Odd n → p.coeff n = 0 := by
+  constructor
+  · intro hfix n hn
+    have := congrArg (fun f => f.coeff n) hfix
+    simp only [coeff_barPoly, hn.neg_one_pow] at this
+    exact h2 _ (by linear_combination -this)
+  · intro hodd
+    ext n
+    rw [coeff_barPoly]
+    rcases Nat.even_or_odd n with hn | hn
+    · rw [hn.neg_one_pow, one_mul]
+    · rw [hodd n hn, mul_zero]
+
+/-- The hypothesis on `2` cannot be dropped: over `ZMod 2`, `X` is bar-fixed
+    but its coefficient of `X¹` is `1`. -/
+theorem zmod2_X_bar_fixed : barPoly (X : (ZMod 2)[X]) = X := by
+  rw [barPoly_X]; ext n; simp only [coeff_neg]; exact ZModModule.neg_eq_self _
 
 end QOU.BraidKnot.PolynomialBarInvolution
 /-! ## Arbitrary-degree even-polynomial bar-symmetry

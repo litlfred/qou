@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/reshetikhin-turaev/blocks/prose-sec-007",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Quasitriangular and Ribbon Hopf Algebras",
-  "pageStart": 4,
-  "pageEnd": 4,
-  "text": "../sections/sec-007-3-quasitriangular-and-ribbon-hopf-algebras.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/reshetikhin-turaev",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/reshetikhin-turaev",
+  "title": "Applications and Generalizations of Theorem 5.1",
+  "pageStart": 17,
+  "pageEnd": 20,
+  "text": "../sections/sec-007-6-applications-and-generalizations-of-theorem-51.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/reshetikhin-turaev/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/reshetikhin-turaev/manifest.jsonld",
   "provenance": "ingested"
 }

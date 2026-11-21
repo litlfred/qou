@@ -29,7 +29,7 @@ leaving `hbdd` as the sole analytic residual.
 Verified `lean`-direct against the restored Meromorphic cone + the full Faddeev-uniqueness
 QOU dep cone (`FaddeevUniquenessBoundedCapstone`, `PhiBProd`). Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-07-25-faddeev-uniqueness-keystone-state.md
+-- Ref: [leitner2026] docs/audits/2026-07-25-faddeev-uniqueness-keystone-state.md
 -/
 
 open Complex

@@ -1,0 +1,55 @@
+410 Combinatorial applications
+
+basis for rational functions with simple poles on Vg,,...,Vg, is given by
+
+1 1 1 1
+{wows * Q2030s ’ Q204Qs’ oo} ,
+
+To reduce F to the sum of terms whose support is in BC(F) we use relations
+expressing Q; in terms of {Q; : j € C \ {i}}, where 7 is the greatest element in a
+circuit. A little scratch work uncovers these relations for the respective circuits
+(1,2, 4), (1, 3,5), and (2, 3,4, 5), giving
+
+Q4 = Qi + Q2 - O10 (12.18a)
+Qs = QO) + Q3— O03 (12.18b)
+Os = -y'!Q) + y!Q3 + xQ4. (12.18¢)
+The first relation (12.18a) divided by QQ yields
+! ! | . (12.19)
+
+@ 0,0;030;  0:0;030; 030305"
+
+We are finished manipulating the third term of (12.19), as its support {3, 4, 5}
+is in BC(F). The second term of (12.19), after an application of (12.18b), be-
+
+comes
+1 1 1
+
++ - .
+Q30;0; Qi0;0; O70;
+The first term of (12.19), after an application of (12.18c), yields
+-l/y I/y x
+2o2 7 22 2
+Q30;05 Q20;05 Q2030405
+
+and, using (12.18c) once again on the last of these three terms, replaces that
+term by
+
+—x/y x/y v
+
+3 3 t 3
+Q3040; Q20403 020305
+
+Putting this all together gives the decomposition
+
+1 1 1 1
+0:00; 32425 010202 2425
+-l/y + I/y
+
+0,030: * 0,020:
+=sly aly 2
+
++ 3 3 3”
+Q30405 20405 Q2030;
+
+and the techniques of Chapter 10 can now be applied to each term to determine
+asymptotic behavior. 4

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.974
 latex_coverage_ratio: 0.986
+doc_brief: "The Polyanalytic Ginibre Ensembles — For integers n, q = 1, 2, 3, . . ., let Poln,q denote the C-linear space of polynomials in z and ¯z, of degree ≤n −1 in z and of degree ≤q −1 in ¯z."
 ---
 We will write use standard notation, such as $\partial X$ and $\mathrm{int}(X)$ for the boundary and the interior of a subset $X$ of the complex plane ${\mathbb C}$. The complex conjugate of a complex number $z$ is usually written as $\bar z$. We write ${\mathbb R}$ for the real line, ${\mathbb D}:=\{z\in{\mathbb C}:|z|<1\}$ for the open unit disk, and ${\mathbb D}^e:=\{z\in{\mathbb C}:|z|>1\}$ for the open exterior (punctured) disk. The characteristic function of a set $E$ is written $1_E$. We write $${\mathrm d}A(z)=\pi^{-1}{\mathrm d}x {\mathrm d}y,\quad\text{where}\,\,\,
 z=x+{\mathrm i}y\in{\mathbb C},$$ for the normalized area measure in ${\mathbb C}$, and use the standard Wirtinger derivatives $$\partial_z:=\tfrac12(\partial_x-{\mathrm i}\partial_y),\,\,\,

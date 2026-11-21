@@ -8,6 +8,7 @@ pages: 25-25
 source_pdf: symmetry-04-00039-v3.pdf
 source_sha256: 1aa8a81916887f8e
 toc_source: inferred
+doc_brief: "Knots on a Torus: A Model of the Elementary Particles — Two knots; just two rudimentary knots, the unknot and the trefoil."
 ---
 As per the comment made above in connection with Equation (3-16), we can view second-order 
 fusion as Matrix M operating on basic fermion vector V, that is, in analogy with Equation (3-14), we 
@@ -77,4 +78,3 @@ whose elements are the matrices
  
 k
 k
-P

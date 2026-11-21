@@ -1,0 +1,48 @@
+1248 Francois Guéritaud and David Futer
+
+horizontal length of four triangles (see Figure 3), we notice a horizontal period of length
+only two. This corresponds to the “hyperelliptic” involution of the once-punctured
+fiber torus (rotation of 180° around the puncture, central in SL2(Z) and therefore
+well-defined on V,,). This will simplify many of our computations.
+
+Seventh remark The valence of a vertex s corresponding to a subword RL"R or LR"L
+of 2 (where n > 0) is 2n +4. This is because exactly n+ 2 Farey triangles are adjacent
+to the corresponding rational v,; each such Farey triangle defines a triangulated surface
+(with an edge of slope v,), and each such surface contributes exactly two segments
+issuing from s in A.
+
+5 Finding positive angles
+
+The tetrahedra A; and A;;; have two common triangular faces whose union forms
+a pleated punctured torus properly isotopic to T x {*} in T x R. Moreover, U
+receives a transverse “upward” orientation from the R-—factor. Suppose all tetrahedra
+Aj; are endowed with dihedral angles. Let e be an edge of U: if the sum of all dihedral
+angles at e below & is 7 + a, we call a the pleating angle of & at e.
+
+In this section we find positive dihedral angles for the ideal tetrahedra A;. More
+
+precisely, we describe the convex space II of positive angles x;, y;, z; for the A; such
+
+that:
+
+i— Foreachi in Z/mZ one has x; + y; + z;) = 7;
+
+(a) ii— The dihedral angles around any edge add up to 27;
+
+iii— For each iin Z/mZ, the three pleating angles of the pleated
+punctured torus between A; and Aj;+; add up to 0.
+
+Condition (1)-ii is necessary, though not sufficient, for a hyperbolic structure at the
+edges; Condition (1)-ili is necessary, though not sufficient, to make the loop around the
+puncture of T a parabolic isometry of Hl? (see Sublemma 6.4). This “cusp condition”
+(1)-iii restricts the space of angle structures, but will make it a little easier to describe.
+
+Recall the line D that runs from the repulsive fixed point g~ to the attractive fixed
+point gt of ¢ across the Farey triangulation. If the tetrahedron A;, corresponding
+to the Farey edge e;, realizes a diagonal exchange that erases an edge ¢’ and replaces
+it with ¢, we denote by z; the interior dihedral angle of A; at ¢ and ¢’ by the fourth
+remark following Figure 4. Observe that the slope of ¢€ (resp. ¢’) is the rational located
+opposite e; in the Farey diagram, on the side of gt (resp. q~). We define the half
+pleating angle w; by 7 — 2w; = zi.
+
+Geometry & Topology 10 (2006)

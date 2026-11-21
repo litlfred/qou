@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/aif-2000-50-4-1021-0",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2000-50-4-1021-0/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -47,10 +47,14 @@
     "library/aif-2000-50-4-1021-0/sections/sec-032",
     "library/aif-2000-50-4-1021-0/sections/sec-033",
     "library/aif-2000-50-4-1021-0/sections/sec-034",
-    "library/aif-2000-50-4-1021-0/sections/sec-035"
+    "library/aif-2000-50-4-1021-0/sections/sec-035",
+    "library/aif-2000-50-4-1021-0/sections/sec-036",
+    "library/aif-2000-50-4-1021-0/sections/sec-037",
+    "library/aif-2000-50-4-1021-0/sections/sec-038",
+    "library/aif-2000-50-4-1021-0/sections/sec-039"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "aif-2000-50-4-1021-0",
     "title_source": "pdf-info",

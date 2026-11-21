@@ -1,0 +1,50 @@
+12.7 Additional worked examples 409
+
+by multi-index n is
+F(z) = —_l » anz”
+= = nz”.
+2-T,d+z)
+
+In the main diagonal direction, the symmetry of F and the combinatorial ape-
+riodic nature of the problem combine with Lemma 6.41 to imply that there is
+a single, strictly minimal, contributing point (z,...,z) in the positive orthant,
+where z = 2!/4 — 1. Theorem 9.5 then yields
+
+QU-a*)/d
+
+Gn,.n ~ Ql’ — )Van=t
+
+recovering a result of [Gri+90]. 4
+
+glia _ pnt ,
+
+Example 12.28 (integer solutions to linear equations). Let A be ad xm matrix
+of nonnegative integers and, for r € N¢, let a, denote the number of nonnega-
+tive integer solutions to Ax = r. The generating function for the array {a;} is
+given by
+
+where e; is the jth elementary vector. This enumeration problem is discussed
+at length in [DS03] (see also [Sta97, Section 4.6]) which uses the running
+example
+
+oreo
+re oo
+ore
+Kor
+
+with generating function
+
+1 1
+0102030405 © (1—x(1—y) — 21 - ay) = x2)"
+
+The divisors of F are all binomials of the form 1 — z™, and their zero sets all
+intersect at (1, 1, 1). The logarithmic gradients of the divisors at (1, 1, 1) are the
+columns of A.
+
+Every triple of columns of A except for (1,2,4) and (1,3,5) forms a lin-
+early independent set. The circuits of the matroid defined by A are therefore
+these triples and the only quadruple (2, 3, 4,5) not containing either triple, so
+the broken circuits are (1,2), (1,3), and (2,3,4), and the bases containing no
+broken circuit are (1,4, 5), (2, 3,5), (2, 4, 5), and (3, 4, 5). By Theorem 10.33, a
+
+F(z) =

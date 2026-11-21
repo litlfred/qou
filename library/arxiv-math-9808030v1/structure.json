@@ -8,7 +8,7 @@
   "pages": 17,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,12 +21,12 @@
    "stamp_date": "6 Aug 1998"
   },
   "doi": null,
-  "title": "arXiv:math/9808030v1 [math.QA] 6 Aug 1998",
+  "title": "Planscherel Measure on Eq(2)",
   "authors_raw": "H. Ahmedov1 and I. H. Duru2,1",
   "title_lines": [
    "Planscherel Measure on Eq(2)"
   ],
-  "abstract": "Following the construction of the invariant integral and the scalar product for the quantum Euclidean group Eq(2), we obtained the full matrix elements of its unitary irreducible representations from SUq(2) by contraction and then derived the Planscherel measure. July 1998 1E\u2013mail : hagi@fge1.gursey.gov.tr and duru@fge1.gursey.gov.tr 1",
+  "abstract": "Following the construction of the invariant integral and the scalar product for the quantum Euclidean group Eq(2), we obtained the full matrix elements of its unitary irreducible representations from SUq(2) by contraction and then derived the Planscherel measure. July 1998 1E–mail : hagi@fge1.gursey.gov.tr and duru@fge1.gursey.gov.tr 1",
   "docinfo": {
    "Title": "arXiv:math/9808030v1  [math.QA]  6 Aug 1998",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
@@ -44,7 +44,8 @@
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:math/9808030v1 [math.QA] 6 Aug 1998"
  },
  "toc": [
   {
@@ -245,8 +246,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 612,
-   "n_words": 86,
+   "n_chars": 610,
+   "n_words": 85,
    "label_start": null,
    "label_end": null
   },
@@ -256,9 +257,57 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1211,
+   "n_words": 193,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-2-invariant-integral-on-e-q2",
+   "number": "2",
+   "title": "Invariant Integral on $E_q(2)$",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 4629,
+   "n_words": 907,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-3-scalar-product-on-e-q2",
+   "number": "3",
+   "title": "Scalar Product on $E_q(2)$",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 2226,
+   "n_words": 418,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-4-matrix-elements-of-the-irreducible-representat",
+   "number": "4",
+   "title": "Matrix Elements of the Irreducible Representations of $E_q(2)$ from $SU_q(2)$ by Contraction",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 2122,
+   "n_words": 383,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-5-planscherel-measure-on-e-q2",
+   "number": "5",
+   "title": "Planscherel Measure on $E_q(2)$",
+   "level": 1,
+   "page_start": 10,
    "page_end": 17,
-   "n_chars": 17639,
-   "n_words": 3308,
+   "n_chars": 7337,
+   "n_words": 1390,
    "label_start": null,
    "label_end": null
   }
@@ -277,13 +326,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 2,
-  "chars_total": 18251,
+  "sections": 6,
+  "chars_total": 18135,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 5,
-   "overlaid": 1,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -298,10 +348,42 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.881,
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-invariant-integral-on-e-q2",
+     "title": "Invariant Integral on $E_q(2)$",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-scalar-product-on-e-q2",
+     "title": "Scalar Product on $E_q(2)$",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "latex"
+    },
+    {
+     "id": "sec-003-4-matrix-elements-of-the-irreducible-representat",
+     "title": "Matrix Elements of the Irreducible Representations of $E_q(2)$ from $SU_q(2)$ by Contraction",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-5-planscherel-measure-on-e-q2",
+     "title": "Planscherel Measure on $E_q(2)$",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.746,
+     "result": "overlaid",
+     "converter": "pandoc"
     }
    ]
   }

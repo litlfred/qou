@@ -1,0 +1,1585 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "quaternioms",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "Johan Heriberto Rúa Muñoz"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "Johan Heriberto Rúa Muñoz1, Jorge Eduardo Mahecha Gómez"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "ing into standard complex qubit circuits via the map ι: H֒→M"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "multiplicative embedding ι: H֒→M"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "quantum system is modeled by a complex Hilbert space H∼=C"
+  },
+  {
+   "page": 5,
+   "mark": "†",
+   "context": "H(t) =H(t)"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "i¯h"
+  },
+  {
+   "page": 5,
+   "mark": "†",
+   "context": "pletely positive, trace-preserving (CPTP) maps Φ(ρ) =∑k EkρE"
+  },
+  {
+   "page": 5,
+   "mark": "†",
+   "context": "(Krausform)with∑k E"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "kE"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "kEk=I.MeasurementsaredescribedbyPOVMs{M"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "M"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "Mj≥0, ∑j M"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "Mj≥0, ∑j Mj= I; outcome j occurs with probability p"
+  },
+  {
+   "page": 5,
+   "mark": "†",
+   "context": "state ρj=KjρK"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "j/p"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "j/pjfor an instrument {K"
+  },
+  {
+   "page": 5,
+   "mark": "†",
+   "context": "j/pjfor an instrument {Kj}js.t. K"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "jK"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "jKj=M"
+  },
+  {
+   "page": 5,
+   "mark": "x",
+   "context": "matrices σ"
+  },
+  {
+   "page": 5,
+   "mark": "y",
+   "context": "matrices σx, σ"
+  },
+  {
+   "page": 5,
+   "mark": "z",
+   "context": "matrices σx, σy, σ"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "matrices σx, σy, σzand rotations R ˆ"
+  },
+  {
+   "page": 6,
+   "mark": "6",
+   "context": "Writing O = H ⊕He"
+  },
+  {
+   "page": 6,
+   "mark": "6",
+   "context": "so that we may freely identify x with the pair (a, b) ∈H ⊕He"
+  },
+  {
+   "page": 6,
+   "mark": "6",
+   "context": "Cayley–Dickson product for (a, b), (c, d) ∈H ⊕He"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "e image of quaternionic unitaries under the embedding ι:H֒→M"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "States(quaternionicqubits)havetheform|φ⟩=q"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "States(quaternionicqubits)havetheform|φ⟩=q1|0⟩+ q"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "States(quaternionicqubits)havetheform|φ⟩=q1|0⟩+ q2|1⟩withq"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "∥q"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "∥q1∥2+ ∥q"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "operatorsarerightH-linearmapsA:HH→HHwithanadjointA"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "⟨ψ, Aφ⟩=⟨A"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "⟨ψ, Aφ⟩=⟨A†ψ, φ⟩.Unitary dynamics U"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "(H"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "(H1 ⊗H"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "(H1 ⊗H2) ⊗H"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "(H1 ⊗H2) ⊗H3∼= H"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "(H1 ⊗H2) ⊗H3∼= H1 ⊗(H"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "(H1 ⊗H2) ⊗H3∼= H1 ⊗(H2 ⊗H"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "withinnerproductonsimpletensors⟨u"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "withinnerproductonsimpletensors⟨u1⊗u"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "withinnerproductonsimpletensors⟨u1⊗u2, v"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "withinnerproductonsimpletensors⟨u1⊗u2, v1⊗v"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "withinnerproductonsimpletensors⟨u1⊗u2, v1⊗v2⟩=⟨u"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "withinnerproductonsimpletensors⟨u1⊗u2, v1⊗v2⟩=⟨u1, v"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "withinnerproductonsimpletensors⟨u1⊗u2, v1⊗v2⟩=⟨u1, v1⟩⟨u"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "withinnerproductonsimpletensors⟨u1⊗u2, v1⊗v2⟩=⟨u1, v1⟩⟨u2, v"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Matrix embedding H֒→M"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "The multiplicative embedding ι:H →M"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "⟨A"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "R"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "0H(τ)"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Let{1, e"
+  },
+  {
+   "page": 7,
+   "mark": "7",
+   "context": "Let{1, e1, . . . , e"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Let{1, e1, . . . , e7}bethestandardoctonionbasiswithe"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "k=−1and"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "k=−1ande"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "k=−1andei"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "k=−1andeie"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "k=−1andeiej=±e"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "Theunitspheresofthenormeddivisionalgebras,S"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "Theunitspheresofthenormeddivisionalgebras,S0⊂R,S"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "Theunitspheresofthenormeddivisionalgebras,S0⊂R,S1⊂C,S"
+  },
+  {
+   "page": 8,
+   "mark": "7",
+   "context": "S"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "statespacesandcontrol:S"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "statespacesandcontrol:S3→S"
+  },
+  {
+   "page": 8,
+   "mark": "7",
+   "context": "statespacesandcontrol:S3→S2forqubits,andS"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "statespacesandcontrol:S3→S2forqubits,andS7→S"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "inaryquaternions,whileAut(O)∼=G"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "∥q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "∥q1∥2+ ∥q"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "q"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "|φ⟩=q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "|φ⟩=q1|0⟩+ q"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "⟨φ, ψ⟩=q"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "⟨φ, ψ⟩=q1p"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "⟨φ, ψ⟩=q1p1 + q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "⟨φ, ψ⟩=q1p1 + q2p"
+  },
+  {
+   "page": 9,
+   "mark": "†",
+   "context": "Right H-linear mapsA:H→H admit adjointsA"
+  },
+  {
+   "page": 9,
+   "mark": "†",
+   "context": "ight H-linear mapsA:H→H admit adjointsA†deﬁned by ⟨ψ, Aφ⟩=⟨A"
+  },
+  {
+   "page": 9,
+   "mark": "†",
+   "context": "Self-adjointobservablessatisfyA"
+  },
+  {
+   "page": 9,
+   "mark": "†",
+   "context": "U"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "ve/POVMmeasurementsaredeﬁnedasinthecomplexcase,witheffects{E"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "obeying 0 ≤E"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "obeying 0 ≤Ej≤I, ∑j E"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "obeying 0 ≤Ej≤I, ∑j Ej= I and probabilitiesp"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Given right H-modules (H"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Given right H-modules (H1, ⟨·, ·⟩1) and (H"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "⟨u"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "⟨u1⊗u"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "⟨u1⊗u2, v"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "⟨u1⊗u2, v1⊗v"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "⟨u1⊗u2, v1⊗v2⟩:= ⟨u"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "⟨u1⊗u2, v1⊗v2⟩:= ⟨u1, v"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "⟨u1⊗u2, v1⊗v2⟩:= ⟨u1, v1⟩1 ⟨u"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "⟨u1⊗u2, v1⊗v2⟩:= ⟨u1, v1⟩1 ⟨u2, v"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "(H"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(H1 ⊗H"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "(H1 ⊗H2) ⊗H"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "(H1 ⊗H2) ⊗H3∼=H"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(H1 ⊗H2) ⊗H3∼=H1 ⊗(H"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "(H1 ⊗H2) ⊗H3∼=H1 ⊗(H2 ⊗H"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "We employ the multiplicative embedding ι:H֒→M"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "nions to SU(2) and satisﬁes ι(q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "nions to SU(2) and satisﬁes ι(q1q"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "nions to SU(2) and satisﬁes ι(q1q2) =ι(q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "nions to SU(2) and satisﬁes ι(q1q2) =ι(q1)ι(q"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "GH= {R ˆ"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "where R ˆ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "where R ˆn(θ) = exp(−iθˆn ·⃗σ/2) andˆn ∈S"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "relation ⟨ψ, Aφ⟩= ⟨A"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "0H(τ)"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "Ω"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "Ω1 + Ω"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "Ω1 + Ω2 + Ω"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "Ω"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "0H(τ)"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "0H(τ) dτ,Ω"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "H−→H"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "H"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "a state in a 2-qubit complex Hilbert space H"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "(a"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "(a0 + a"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "(a0 + a1i + a"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "(a0 + a1i + a2j + a"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "(a0 + a1i + a2j + a3k)|0⟩+ (b"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "(a0 + a1i + a2j + a3k)|0⟩+ (b0 + b"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "(a0 + a1i + a2j + a3k)|0⟩+ (b0 + b1i + b"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "(a0 + a1i + a2j + a3k)|0⟩+ (b0 + b1i + b2j + b"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "|ψ⟩C=zA"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "|ψ⟩C=zA0|00⟩+ zB"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "|ψ⟩C=zA0|00⟩+ zB0|01⟩+ zA"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "|ψ⟩C=zA0|00⟩+ zB0|01⟩+ zA1|10⟩+ zB"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "Here, |00⟩represents the state |0⟩Q"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "Here, |00⟩represents the state |0⟩Q0|0⟩Q"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "on condition |qA|2+ |qB|2= 1 in H translates directly to |zA"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "tion |qA|2+ |qB|2= 1 in H translates directly to |zA0|2+ |zB"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "|zA"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "|zA1|2+ |zB"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": ",whereqmn=zmn"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": ",whereqmn=zmn0 + zmn"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "|ψ⟩H∈H"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "|Ψ⟩∈H"
+  },
+  {
+   "page": 13,
+   "mark": "†",
+   "context": "It is straightforward to check thatH"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "CHC=I"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "exp(α"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "exp(αke"
+  },
+  {
+   "page": 14,
+   "mark": "7",
+   "context": "exp(αkek) = exp(α"
+  },
+  {
+   "page": 14,
+   "mark": "7",
+   "context": "exp(αkek) = exp(α7e"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "exp(αkek) = exp(α7e7) · · · exp(α"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "exp(αkek) = exp(α7e7) · · · exp(α2e"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "exp(αkek) = exp(α7e7) · · · exp(α2e2) exp(α"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "exp(αkek) = exp(α7e7) · · · exp(α2e2) exp(α1e"
+  },
+  {
+   "page": 14,
+   "mark": "6",
+   "context": "= H ⊕He"
+  },
+  {
+   "page": 14,
+   "mark": "6",
+   "context": "Writing (a, b), (c, d) ∈H ⊕He"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "H∼= spanR{1, e"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "H∼= spanR{1, ei, e"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "H∼= spanR{1, ei, ej, e"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "by Aut(O)∼=G"
+  },
+  {
+   "page": 15,
+   "mark": "†",
+   "context": "U"
+  },
+  {
+   "page": 15,
+   "mark": "†",
+   "context": "zU"
+  },
+  {
+   "page": 15,
+   "mark": "†",
+   "context": "yU"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "U≈U"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "U≈U1U"
+  },
+  {
+   "page": 15,
+   "mark": "7",
+   "context": "U≈U1U2 · · · U"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "Theorem 1 (Canonical tensor structure over H).Let (H"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "(H"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(H1 ⊗H"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "(H1 ⊗H2) ⊗H"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "(H1 ⊗H2) ⊗H3∼=H"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(H1 ⊗H2) ⊗H3∼=H1 ⊗(H"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "(H1 ⊗H2) ⊗H3∼=H1 ⊗(H2 ⊗H"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "anonicallyandisometrically,withinnerproductonsimpletensors⟨u"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "icallyandisometrically,withinnerproductonsimpletensors⟨u1 ⊗u"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "llyandisometrically,withinnerproductonsimpletensors⟨u1 ⊗u2,v"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "ndisometrically,withinnerproductonsimpletensors⟨u1 ⊗u2,v1 ⊗v"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "⟨u"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "⟨u1, v"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "⟨u1, v1⟩1 ⟨u"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "⟨u1, v1⟩1 ⟨u2, v"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "on 1 (Quaternionic universality via SU(2) + entangler).Let G"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "G"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "gling two-quaternionic qubit gate (e.g., CNOT/CZ). Then G= G"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "g two-quaternionic qubit gate (e.g., CNOT/CZ). Then G= G1 ∪G"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "complex circuit on O(n) qubits with depth poly(D) via ι:H֒→M"
+  },
+  {
+   "page": 18,
+   "mark": "t",
+   "context": "R"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "0H(τ)"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "H∈O, the usual identity"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "tectability).Encoding into subspaces stabilized by Aut(O)∼=G"
+  },
+  {
+   "page": 19,
+   "mark": "x",
+   "context": "H ⊂O, the symmetric ASD cycle U"
+  },
+  {
+   "page": 19,
+   "mark": "y",
+   "context": "H ⊂O, the symmetric ASD cycle UxU"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "H ⊂O, the symmetric ASD cycle UxUyU"
+  },
+  {
+   "page": 19,
+   "mark": "†",
+   "context": "H ⊂O, the symmetric ASD cycle UxUyUz·free evol.∆t·U"
+  },
+  {
+   "page": 19,
+   "mark": "†",
+   "context": "zU"
+  },
+  {
+   "page": 19,
+   "mark": "†",
+   "context": "yU"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "U≈U"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "U≈U1U"
+  },
+  {
+   "page": 19,
+   "mark": "7",
+   "context": "U≈U1U2 · · · U"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "|ψ⟩=q"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "|ψ⟩=q1|0⟩+ q"
+  },
+  {
+   "page": 20,
+   "mark": "11",
+   "context": "|ψ⟩= (z"
+  },
+  {
+   "page": 20,
+   "mark": "12",
+   "context": "|ψ⟩= (z11 + z"
+  },
+  {
+   "page": 20,
+   "mark": "21",
+   "context": "|ψ⟩= (z11 + z12j)|0⟩+ (z"
+  },
+  {
+   "page": 20,
+   "mark": "22",
+   "context": "|ψ⟩= (z11 + z12j)|0⟩+ (z21 + z"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": " to a vector in the four-dimensional complex Hilbert space C"
+  },
+  {
+   "page": 20,
+   "mark": "11",
+   "context": "|ψ⟩7→|ψC⟩=z"
+  },
+  {
+   "page": 20,
+   "mark": "21",
+   "context": "|ψ⟩7→|ψC⟩=z11|00⟩+ z"
+  },
+  {
+   "page": 20,
+   "mark": "12",
+   "context": "|ψ⟩7→|ψC⟩=z11|00⟩+ z21|01⟩+ z"
+  },
+  {
+   "page": 20,
+   "mark": "22",
+   "context": "|ψ⟩7→|ψC⟩=z11|00⟩+ z21|01⟩+ z12|10⟩+ z"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "ith quaternionic entries. Using the same decomposition (q =z"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "uaternionic entries. Using the same decomposition (q =z1 + z"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "Appendix A.1.Explicit Embedding H֒→M"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "subalgebra of the 2 × 2 complex matrices M"
+  },
+  {
+   "page": 26,
+   "mark": "x",
+   "context": "with the identity matrixIand the Pauli matrices (σ"
+  },
+  {
+   "page": 26,
+   "mark": "y",
+   "context": "with the identity matrixIand the Pauli matrices (σx, σ"
+  },
+  {
+   "page": 26,
+   "mark": "z",
+   "context": "with the identity matrixIand the Pauli matrices (σx, σy, σ"
+  },
+  {
+   "page": 26,
+   "mark": "y",
+   "context": "= −iσ"
+  },
+  {
+   "page": 26,
+   "mark": "11",
+   "context": "|ψ⟩= (z"
+  },
+  {
+   "page": 26,
+   "mark": "12",
+   "context": "|ψ⟩= (z11 + z"
+  },
+  {
+   "page": 26,
+   "mark": "21",
+   "context": "|ψ⟩= (z11 + z12j)|0⟩+ (z"
+  },
+  {
+   "page": 26,
+   "mark": "22",
+   "context": "|ψ⟩= (z11 + z12j)|0⟩+ (z21 + z"
+  },
+  {
+   "page": 26,
+   "mark": "11",
+   "context": "|ψ⟩7→|ψC⟩=z"
+  },
+  {
+   "page": 26,
+   "mark": "21",
+   "context": "|ψ⟩7→|ψC⟩=z11|00⟩+ z"
+  },
+  {
+   "page": 26,
+   "mark": "12",
+   "context": "|ψ⟩7→|ψC⟩=z11|00⟩+ z21|01⟩+ z"
+  },
+  {
+   "page": 26,
+   "mark": "22",
+   "context": "|ψ⟩7→|ψC⟩=z11|00⟩+ z21|01⟩+ z12|10⟩+ z"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "Usingthesamedecomposition(q=z"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "Usingthesamedecomposition(q=z1 + z"
+  },
+  {
+   "page": 27,
+   "mark": "4",
+   "context": "quaternionicqubitonaBlochhypersphere(S"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "cher parameter space compared to the complex Bloch sphere (S"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "(polynomial O(m"
+  },
+  {
+   "page": 31,
+   "mark": "f",
+   "context": "ψ"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "overhead scales, in the general case, as O(m"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "octo-qubit state, |ψ⟩=o"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "octo-qubit state, |ψ⟩=o1|0⟩+ o"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "C"
+  },
+  {
+   "page": 31,
+   "mark": "m",
+   "context": "C2"
+  },
+  {
+   "page": 31,
+   "mark": "m",
+   "context": "C2m, which corresponds to a 2 · 2"
+  },
+  {
+   "page": 31,
+   "mark": "m",
+   "context": "C2m, which corresponds to a 2 · 2m=2"
+  },
+  {
+   "page": 31,
+   "mark": "m",
+   "context": "2"
+  },
+  {
+   "page": 31,
+   "mark": "m",
+   "context": "2m+1≥16=⇒2"
+  },
+  {
+   "page": 31,
+   "mark": "4",
+   "context": "2m+1≥16=⇒2m+1≥2"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "is a 3-qubit system, whose Hilbert space H=(C"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": " 3-qubit system, whose Hilbert space H=(C2)⊗3has dimension 2"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "dding, the eight basis vectors of the octonion algebra {1, e"
+  },
+  {
+   "page": 32,
+   "mark": "7",
+   "context": "ight basis vectors of the octonion algebra {1, e1, . . . , e"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "astandardn-qubitquantumcomputerhasastatespaceofdimension2"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "dim(Hsimulation) = 2"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "dim(Hsimulation) = 23"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "dim(Hsimulation) = 23n= (2"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "dim(Hsimulation) = 23n= (23)"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "dim(Hsimulation) = 23n= (23)n= 8"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "he dimensionality of the corresponding simulation space is 2"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "e dimensionality of the corresponding simulation space is 22"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "imensionality of the corresponding simulation space is 22n=4"
+  },
+  {
+   "page": 32,
+   "mark": "d",
+   "context": "0H(τ)"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "Ω"
+  },
+  {
+   "page": 32,
+   "mark": "d",
+   "context": "0H(τ)"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "Ω"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "Ω1 + Ω"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "Ω1 + Ω2 + Ω"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "Ω"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "(e"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(e1e"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "(e1e2)e"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "(e1e2)e4= (e"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "(e1e2)e4= (e3)e"
+  },
+  {
+   "page": 34,
+   "mark": "7",
+   "context": "(e1e2)e4= (e3)e4= −e"
+  },
+  {
+   "page": 34,
+   "mark": "7",
+   "context": "The physical outcomes, −e"
+  },
+  {
+   "page": 34,
+   "mark": "5",
+   "context": "The physical outcomes, −e7 and e"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "¯h"
+  },
+  {
+   "page": 36,
+   "mark": "k",
+   "context": "single imaginary unit,H∝e"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "theplane,representingatripleofunitslike{e"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "theplane,representingatripleofunitslike{e1, e"
+  },
+  {
+   "page": 36,
+   "mark": "4",
+   "context": "theplane,representingatripleofunitslike{e1, e2, e"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "|ψ⟩=o"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "|ψ⟩=o1|0⟩+ o"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "+ o2|1⟩, the generators of U and the octonionic amplitudes o"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": ", the generators of U and the octonionic amplitudes o1 and o"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "the subalgebra spanned by the basis {1, e"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "the subalgebra spanned by the basis {1, e1, e"
+  },
+  {
+   "page": 37,
+   "mark": "4",
+   "context": "the subalgebra spanned by the basis {1, e1, e2, e"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "as H"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "Forastate|ψ⟩=o"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "Forastate|ψ⟩=o1|0⟩+ o"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "o"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "o1, o"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "o1, o2∈H"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "units {e"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "units {e1, e"
+  },
+  {
+   "page": 37,
+   "mark": "4",
+   "context": "units {e1, e2, e"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "element u ∈Im(H"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "with c"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "1+ c"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "2+ c"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "|ψ⟩=o"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "|ψ⟩=o1|0⟩+ o"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "ψ′ = U|ψ⟩= U(o"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "ψ′ = U|ψ⟩= U(o1|0⟩+ o"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "ψ′ = U|ψ⟩= U(o1|0⟩+ o2|1⟩) = (Uo"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "ψ′ = U|ψ⟩= U(o1|0⟩+ o2|1⟩) = (Uo1)|0⟩+ (Uo"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "1= Uo"
+  },
+  {
+   "page": 37,
+   "mark": "o",
+   "context": "1= Uo1and"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "2= Uo"
+  },
+  {
+   "page": 37,
+   "mark": "o",
+   "context": "1and"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "2, are also guaranteed to be elements of H"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "Target transformations decompose as U≈U"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "Target transformations decompose as U≈U1U"
+  },
+  {
+   "page": 38,
+   "mark": "7",
+   "context": "Target transformations decompose as U≈U1U2 · · · U"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "rget transformations decompose as U≈U1U2 · · · U7with each U"
+  },
+  {
+   "page": 38,
+   "mark": "†",
+   "context": "Free evolution ∆t; apply reverse U"
+  },
+  {
+   "page": 38,
+   "mark": "†",
+   "context": "z, U"
+  },
+  {
+   "page": 38,
+   "mark": "†",
+   "context": "y, U"
+  }
+ ]
+}

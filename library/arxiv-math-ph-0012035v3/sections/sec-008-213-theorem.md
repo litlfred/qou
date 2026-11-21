@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-ph-0012035v3
-doc_title: "arXiv:math-ph/0012035v3 16 Jan 2002"
+doc_title: "Non-Abelian Stokes theorem in action"
 section_id: sec-008-213-theorem
 section_title: "Theorem"
 section_number: 2.1.3
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.976
 latex_coverage_ratio: 0.976
+doc_brief: "Non-Abelian Stokes theorem in action — In this short review main issues related to the non-Abelian Stokes theorem have been addressed."
 ---
 The non-Abelian Stokes theorem in its original operator form roughly claims that the holonomy round a closed curve $C=\partial S$ equals a surface-ordered exponent of the *twisted* curvature, namely $${\rm P}\exp\left(i\oint_C A \right)
         ={\cal P}\exp\left(i\int_S {\cal F}\right),

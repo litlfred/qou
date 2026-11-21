@@ -1,6 +1,6 @@
 ---
 doc_id: angled-survey
-doc_title: "Contemporary Mathematics From angled triangulations to hyperbolic structures"
+doc_title: "From angled triangulations to hyperbolic structures"
 section_id: sec-004-5-volume-maximization
 section_title: "Volume maximization"
 section_number: 5
@@ -8,6 +8,7 @@ pages: 16-19
 source_pdf: angled-survey.pdf
 source_sha256: 8b49e682a39848bc
 toc_source: inferred
+doc_brief: "From angled triangulations to hyperbolic structures — This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on a 3–manifold M with"
 ---
 In this section, we show how volume considerations give a way to turn an angle
 structure into a genuine hyperbolic metric on M. To compute the volume of an

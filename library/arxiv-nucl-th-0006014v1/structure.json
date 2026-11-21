@@ -8,7 +8,7 @@
   "pages": 69,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,12 +21,12 @@
    "stamp_date": "9 Jun 2000"
   },
   "doi": null,
-  "title": "arXiv:nucl-th/0006014v1 9 Jun 2000",
+  "title": "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)",
   "authors_raw": "Department of Physics, University of Idaho, Moscow, Idaho 83844, U. S. A",
   "title_lines": [
    "The high-precision, charge-dependent Bonn nucleon-nucleon",
    "potential (CD-Bonn)",
-   "R. Machleidt \u2217"
+   "R. Machleidt ∗"
   ],
   "abstract": null,
   "docinfo": {
@@ -35,18 +35,19 @@
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20241126160947-05'00'"
   },
-  "title_raw": "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn) R. Machleidt \u2217",
+  "title_raw": "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn) R. Machleidt ∗",
   "title_source": "metadata",
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:nucl-th/0006014v1 9 Jun 2000",
    "heading": "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)",
-   "text": "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn) R. Machleidt \u2217",
+   "text": "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn) R. Machleidt ∗",
    "corroborated_by": [
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:nucl-th/0006014v1 9 Jun 2000"
  },
  "toc": [
   {
@@ -314,7 +315,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "Di\ufb00erences \u03b4nn\u2212\u03b4pp due to the impact of nucleon mass splitting on kinematics (dotted",
+   "title": "Diﬀerences δnn−δpp due to the impact of nucleon mass splitting on kinematics (dotted",
    "page": 60,
    "confidence": 0.8,
    "evidence": [
@@ -326,7 +327,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "Di\ufb00erences \u03b4np \u2212\u03b4pp as produced by various CIB mechanisms. Shown are the contri-",
+   "title": "Diﬀerences δnp −δpp as produced by various CIB mechanisms. Shown are the contri-",
    "page": 61,
    "confidence": 0.8,
    "evidence": [
@@ -338,7 +339,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "The di\ufb00erence \u03b4np \u2212\u03b4pp due to the charge-dependence of the strong force (dashed",
+   "title": "The diﬀerence δnp −δpp due to the charge-dependence of the strong force (dashed",
    "page": 62,
    "confidence": 0.8,
    "evidence": [
@@ -350,7 +351,7 @@
   {
    "kind": "figure",
    "number": "6",
-   "title": "pp phase parameters in partial waves with J \u22644",
+   "title": "pp phase parameters in partial waves with J ≤4",
    "page": 63,
    "confidence": 0.8,
    "evidence": [
@@ -362,7 +363,7 @@
   {
    "kind": "figure",
    "number": "7",
-   "title": "np phase parameters in partial waves with J \u22644",
+   "title": "np phase parameters in partial waves with J ≤4",
    "page": 65,
    "confidence": 0.8,
    "evidence": [
@@ -1032,8 +1033,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 2361,
-   "n_words": 529,
+   "n_chars": 2357,
+   "n_words": 527,
    "label_start": "1",
    "label_end": "3"
   },
@@ -1043,22 +1044,22 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 3,
-   "page_end": 3,
-   "n_chars": 1378,
-   "n_words": 208,
+   "page_end": 4,
+   "n_chars": 4327,
+   "n_words": 668,
    "label_start": "3",
-   "label_end": "3"
+   "label_end": "4"
   },
   {
    "id": "sec-001-2-the-model",
    "number": "2",
    "title": "The model",
    "level": 1,
-   "page_start": 3,
+   "page_start": 4,
    "page_end": 7,
-   "n_chars": 12360,
-   "n_words": 2054,
-   "label_start": "3",
+   "n_chars": 9406,
+   "n_words": 1589,
+   "label_start": "4",
    "label_end": "7"
   },
   {
@@ -1067,22 +1068,22 @@
    "title": "Charge dependence",
    "level": 1,
    "page_start": 7,
-   "page_end": 7,
-   "n_chars": 359,
-   "n_words": 55,
+   "page_end": 8,
+   "n_chars": 2250,
+   "n_words": 393,
    "label_start": "7",
-   "label_end": "7"
+   "label_end": "8"
   },
   {
    "id": "sec-003-31-charge-symmetry-breaking",
    "number": "3.1",
    "title": "Charge symmetry breaking",
    "level": 2,
-   "page_start": 7,
+   "page_start": 8,
    "page_end": 9,
-   "n_chars": 6846,
-   "n_words": 1169,
-   "label_start": "7",
+   "n_chars": 5012,
+   "n_words": 840,
+   "label_start": "8",
    "label_end": "9"
   },
   {
@@ -1092,8 +1093,8 @@
    "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 3168,
-   "n_words": 582,
+   "n_chars": 3166,
+   "n_words": 581,
    "label_start": "9",
    "label_end": "10"
   },
@@ -1104,8 +1105,8 @@
    "level": 1,
    "page_start": 10,
    "page_end": 13,
-   "n_chars": 9076,
-   "n_words": 1583,
+   "n_chars": 9067,
+   "n_words": 1580,
    "label_start": "10",
    "label_end": "13"
   },
@@ -1116,8 +1117,8 @@
    "level": 1,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 2714,
-   "n_words": 448,
+   "n_chars": 2711,
+   "n_words": 447,
    "label_start": "13",
    "label_end": "14"
   },
@@ -1128,8 +1129,8 @@
    "level": 1,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 5380,
-   "n_words": 828,
+   "n_chars": 5377,
+   "n_words": 827,
    "label_start": "14",
    "label_end": "15"
   },
@@ -1152,8 +1153,8 @@
    "level": 2,
    "page_start": 15,
    "page_end": 18,
-   "n_chars": 5243,
-   "n_words": 1014,
+   "n_chars": 5234,
+   "n_words": 1011,
    "label_start": "15",
    "label_end": "18"
   },
@@ -1164,8 +1165,8 @@
    "level": 2,
    "page_start": 18,
    "page_end": 21,
-   "n_chars": 5287,
-   "n_words": 1083,
+   "n_chars": 5278,
+   "n_words": 1080,
    "label_start": "18",
    "label_end": "21"
   },
@@ -1175,14 +1176,26 @@
    "title": "Phase shifts",
    "level": 2,
    "page_start": 21,
-   "page_end": 25,
-   "n_chars": 7344,
-   "n_words": 1320,
+   "page_end": 24,
+   "n_chars": 5581,
+   "n_words": 1009,
    "label_start": "21",
+   "label_end": "24"
+  },
+  {
+   "id": "sec-012-a4-effective-range-expansion",
+   "number": "A.4",
+   "title": "Effective range expansion",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 1722,
+   "n_words": 303,
+   "label_start": "24",
    "label_end": "25"
   },
   {
-   "id": "sec-012-b-one-boson-exchange-potential",
+   "id": "sec-013-b-one-boson-exchange-potential",
    "number": "B",
    "title": "One-boson exchange potential",
    "level": 1,
@@ -1194,63 +1207,495 @@
    "label_end": "25"
   },
   {
-   "id": "sec-013-b1-obe-amplitudes",
+   "id": "sec-014-b1-obe-amplitudes",
    "number": "B.1",
    "title": "OBE amplitudes",
    "level": 2,
    "page_start": 25,
    "page_end": 26,
-   "n_chars": 2320,
-   "n_words": 447,
+   "n_chars": 2317,
+   "n_words": 446,
    "label_start": "25",
    "label_end": "26"
   },
   {
-   "id": "sec-014-b2-partial-wave-decomposition",
+   "id": "sec-015-b2-partial-wave-decomposition",
    "number": "B.2",
    "title": "Partial wave decomposition",
    "level": 2,
    "page_start": 26,
    "page_end": 28,
-   "n_chars": 2560,
-   "n_words": 584,
+   "n_chars": 2554,
+   "n_words": 582,
    "label_start": "26",
    "label_end": "28"
   },
   {
-   "id": "sec-015-b3-final-potential-expressions",
+   "id": "sec-016-b3-final-potential-expressions",
    "number": "B.3",
    "title": "Final potential expressions",
    "level": 2,
    "page_start": 28,
    "page_end": 32,
-   "n_chars": 5512,
-   "n_words": 1344,
+   "n_chars": 5500,
+   "n_words": 1340,
    "label_start": "28",
    "label_end": "32"
   },
   {
-   "id": "sec-016-c-potential-parameters",
+   "id": "sec-017-c-potential-parameters",
    "number": "C",
    "title": "Potential parameters",
    "level": 1,
    "page_start": 32,
    "page_end": 33,
-   "n_chars": 2524,
-   "n_words": 476,
+   "n_chars": 2521,
+   "n_words": 475,
    "label_start": "32",
    "label_end": "33"
   },
   {
-   "id": "sec-017-d-deuteron-calculations",
-   "number": "D",
-   "title": "Deuteron calculations",
-   "level": 1,
+   "id": "sec-018-deuteron-calculations-page-33",
+   "number": null,
+   "title": "Deuteron calculations (page 33)",
+   "level": 2,
    "page_start": 33,
-   "page_end": 69,
-   "n_chars": 43767,
-   "n_words": 8164,
+   "page_end": 33,
+   "n_chars": 1637,
+   "n_words": 328,
    "label_start": "33",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-019-deuteron-calculations-page-34",
+   "number": null,
+   "title": "Deuteron calculations (page 34)",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 1611,
+   "n_words": 333,
+   "label_start": "34",
+   "label_end": "34"
+  },
+  {
+   "id": "sec-020-deuteron-calculations-page-35",
+   "number": null,
+   "title": "Deuteron calculations (page 35)",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 1426,
+   "n_words": 292,
+   "label_start": "35",
+   "label_end": "35"
+  },
+  {
+   "id": "sec-021-deuteron-calculations-page-36",
+   "number": null,
+   "title": "Deuteron calculations (page 36)",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 708,
+   "n_words": 137,
+   "label_start": "36",
+   "label_end": "36"
+  },
+  {
+   "id": "sec-022-deuteron-calculations-page-37",
+   "number": null,
+   "title": "Deuteron calculations (page 37)",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 2968,
+   "n_words": 518,
+   "label_start": "37",
+   "label_end": "37"
+  },
+  {
+   "id": "sec-023-deuteron-calculations-page-38",
+   "number": null,
+   "title": "Deuteron calculations (page 38)",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 3132,
+   "n_words": 558,
+   "label_start": "38",
+   "label_end": "38"
+  },
+  {
+   "id": "sec-024-deuteron-calculations-page-39",
+   "number": null,
+   "title": "Deuteron calculations (page 39)",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 2975,
+   "n_words": 553,
+   "label_start": "39",
+   "label_end": "39"
+  },
+  {
+   "id": "sec-025-deuteron-calculations-page-40",
+   "number": null,
+   "title": "Deuteron calculations (page 40)",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 40,
+   "n_chars": 3165,
+   "n_words": 558,
+   "label_start": "40",
+   "label_end": "40"
+  },
+  {
+   "id": "sec-026-deuteron-calculations-page-41",
+   "number": null,
+   "title": "Deuteron calculations (page 41)",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 1200,
+   "n_words": 216,
+   "label_start": "41",
+   "label_end": "41"
+  },
+  {
+   "id": "sec-027-deuteron-calculations-page-42",
+   "number": null,
+   "title": "Deuteron calculations (page 42)",
+   "level": 2,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 743,
+   "n_words": 128,
+   "label_start": "42",
+   "label_end": "42"
+  },
+  {
+   "id": "sec-028-deuteron-calculations-page-43",
+   "number": null,
+   "title": "Deuteron calculations (page 43)",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 1151,
+   "n_words": 202,
+   "label_start": "43",
+   "label_end": "43"
+  },
+  {
+   "id": "sec-029-deuteron-calculations-page-44",
+   "number": null,
+   "title": "Deuteron calculations (page 44)",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 250,
+   "n_words": 46,
+   "label_start": "44",
+   "label_end": "44"
+  },
+  {
+   "id": "sec-030-deuteron-calculations-page-45",
+   "number": null,
+   "title": "Deuteron calculations (page 45)",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 1416,
+   "n_words": 242,
+   "label_start": "45",
+   "label_end": "45"
+  },
+  {
+   "id": "sec-031-deuteron-calculations-page-46",
+   "number": null,
+   "title": "Deuteron calculations (page 46)",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 46,
+   "n_chars": 1785,
+   "n_words": 302,
+   "label_start": "46",
+   "label_end": "46"
+  },
+  {
+   "id": "sec-032-deuteron-calculations-page-47",
+   "number": null,
+   "title": "Deuteron calculations (page 47)",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 47,
+   "n_chars": 776,
+   "n_words": 130,
+   "label_start": "47",
+   "label_end": "47"
+  },
+  {
+   "id": "sec-033-deuteron-calculations-page-48",
+   "number": null,
+   "title": "Deuteron calculations (page 48)",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 48,
+   "n_chars": 1475,
+   "n_words": 280,
+   "label_start": "48",
+   "label_end": "48"
+  },
+  {
+   "id": "sec-034-deuteron-calculations-page-49",
+   "number": null,
+   "title": "Deuteron calculations (page 49)",
+   "level": 2,
+   "page_start": 49,
+   "page_end": 49,
+   "n_chars": 1488,
+   "n_words": 286,
+   "label_start": "49",
+   "label_end": "49"
+  },
+  {
+   "id": "sec-035-deuteron-calculations-page-50",
+   "number": null,
+   "title": "Deuteron calculations (page 50)",
+   "level": 2,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 392,
+   "n_words": 78,
+   "label_start": "50",
+   "label_end": "50"
+  },
+  {
+   "id": "sec-036-deuteron-calculations-page-51",
+   "number": null,
+   "title": "Deuteron calculations (page 51)",
+   "level": 2,
+   "page_start": 51,
+   "page_end": 51,
+   "n_chars": 1613,
+   "n_words": 300,
+   "label_start": "51",
+   "label_end": "51"
+  },
+  {
+   "id": "sec-037-deuteron-calculations-page-52",
+   "number": null,
+   "title": "Deuteron calculations (page 52)",
+   "level": 2,
+   "page_start": 52,
+   "page_end": 52,
+   "n_chars": 1164,
+   "n_words": 235,
+   "label_start": "52",
+   "label_end": "52"
+  },
+  {
+   "id": "sec-038-deuteron-calculations-page-53",
+   "number": null,
+   "title": "Deuteron calculations (page 53)",
+   "level": 2,
+   "page_start": 53,
+   "page_end": 53,
+   "n_chars": 654,
+   "n_words": 109,
+   "label_start": "53",
+   "label_end": "53"
+  },
+  {
+   "id": "sec-039-deuteron-calculations-page-54",
+   "number": null,
+   "title": "Deuteron calculations (page 54)",
+   "level": 2,
+   "page_start": 54,
+   "page_end": 54,
+   "n_chars": 478,
+   "n_words": 67,
+   "label_start": "54",
+   "label_end": "54"
+  },
+  {
+   "id": "sec-040-deuteron-calculations-page-55",
+   "number": null,
+   "title": "Deuteron calculations (page 55)",
+   "level": 2,
+   "page_start": 55,
+   "page_end": 55,
+   "n_chars": 857,
+   "n_words": 172,
+   "label_start": "55",
+   "label_end": "55"
+  },
+  {
+   "id": "sec-041-deuteron-calculations-page-56",
+   "number": null,
+   "title": "Deuteron calculations (page 56)",
+   "level": 2,
+   "page_start": 56,
+   "page_end": 56,
+   "n_chars": 617,
+   "n_words": 115,
+   "label_start": "56",
+   "label_end": "56"
+  },
+  {
+   "id": "sec-042-deuteron-calculations-page-57",
+   "number": null,
+   "title": "Deuteron calculations (page 57)",
+   "level": 2,
+   "page_start": 57,
+   "page_end": 57,
+   "n_chars": 2974,
+   "n_words": 566,
+   "label_start": "57",
+   "label_end": "57"
+  },
+  {
+   "id": "sec-043-deuteron-calculations-page-58",
+   "number": null,
+   "title": "Deuteron calculations (page 58)",
+   "level": 2,
+   "page_start": 58,
+   "page_end": 58,
+   "n_chars": 479,
+   "n_words": 88,
+   "label_start": "58",
+   "label_end": "58"
+  },
+  {
+   "id": "sec-044-deuteron-calculations-page-59",
+   "number": null,
+   "title": "Deuteron calculations (page 59)",
+   "level": 2,
+   "page_start": 59,
+   "page_end": 59,
+   "n_chars": 739,
+   "n_words": 132,
+   "label_start": "59",
+   "label_end": "59"
+  },
+  {
+   "id": "sec-045-deuteron-calculations-page-60",
+   "number": null,
+   "title": "Deuteron calculations (page 60)",
+   "level": 2,
+   "page_start": 60,
+   "page_end": 60,
+   "n_chars": 902,
+   "n_words": 166,
+   "label_start": "60",
+   "label_end": "60"
+  },
+  {
+   "id": "sec-046-deuteron-calculations-page-61",
+   "number": null,
+   "title": "Deuteron calculations (page 61)",
+   "level": 2,
+   "page_start": 61,
+   "page_end": 61,
+   "n_chars": 724,
+   "n_words": 139,
+   "label_start": "61",
+   "label_end": "61"
+  },
+  {
+   "id": "sec-047-deuteron-calculations-page-62",
+   "number": null,
+   "title": "Deuteron calculations (page 62)",
+   "level": 2,
+   "page_start": 62,
+   "page_end": 62,
+   "n_chars": 790,
+   "n_words": 156,
+   "label_start": "62",
+   "label_end": "62"
+  },
+  {
+   "id": "sec-048-deuteron-calculations-page-63",
+   "number": null,
+   "title": "Deuteron calculations (page 63)",
+   "level": 2,
+   "page_start": 63,
+   "page_end": 63,
+   "n_chars": 700,
+   "n_words": 140,
+   "label_start": "63",
+   "label_end": "63"
+  },
+  {
+   "id": "sec-049-deuteron-calculations-page-64",
+   "number": null,
+   "title": "Deuteron calculations (page 64)",
+   "level": 2,
+   "page_start": 64,
+   "page_end": 64,
+   "n_chars": 439,
+   "n_words": 97,
+   "label_start": "64",
+   "label_end": "64"
+  },
+  {
+   "id": "sec-050-deuteron-calculations-page-65",
+   "number": null,
+   "title": "Deuteron calculations (page 65)",
+   "level": 2,
+   "page_start": 65,
+   "page_end": 65,
+   "n_chars": 707,
+   "n_words": 139,
+   "label_start": "65",
+   "label_end": "65"
+  },
+  {
+   "id": "sec-051-deuteron-calculations-page-66",
+   "number": null,
+   "title": "Deuteron calculations (page 66)",
+   "level": 2,
+   "page_start": 66,
+   "page_end": 66,
+   "n_chars": 423,
+   "n_words": 95,
+   "label_start": "66",
+   "label_end": "66"
+  },
+  {
+   "id": "sec-052-deuteron-calculations-page-67",
+   "number": null,
+   "title": "Deuteron calculations (page 67)",
+   "level": 2,
+   "page_start": 67,
+   "page_end": 67,
+   "n_chars": 412,
+   "n_words": 94,
+   "label_start": "67",
+   "label_end": "67"
+  },
+  {
+   "id": "sec-053-deuteron-calculations-page-68",
+   "number": null,
+   "title": "Deuteron calculations (page 68)",
+   "level": 2,
+   "page_start": 68,
+   "page_end": 68,
+   "n_chars": 287,
+   "n_words": 63,
+   "label_start": "68",
+   "label_end": "68"
+  },
+  {
+   "id": "sec-054-deuteron-calculations-page-69",
+   "number": null,
+   "title": "Deuteron calculations (page 69)",
+   "level": 2,
+   "page_start": 69,
+   "page_end": 69,
+   "n_chars": 577,
+   "n_words": 106,
+   "label_start": "69",
    "label_end": "69"
   }
  ],
@@ -1260,7 +1705,7 @@
   "toc_entries": 19,
   "toc_inferred_entries": 19,
   "toc_inferred_mean_confidence": 1.0,
-  "toc_inferred_empty_share": 0.111,
+  "toc_inferred_empty_share": 0.105,
   "toc_inferred_method": "latex",
   "figure_entries": 7,
   "figure_sequence_gaps": [
@@ -1287,13 +1732,24 @@
     "items": []
    }
   },
-  "sections": 19,
-  "chars_total": 118199,
+  "sections": 56,
+  "chars_total": 118214,
+  "furniture_lines_stripped": 69,
+  "oversized_split": [
+   {
+    "title": "Deuteron calculations",
+    "page_start": 33,
+    "page_end": 69,
+    "words": 8127,
+    "by": "pages",
+    "into": 37
+   }
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "bonn.tex",
    "tex_sections": 8,
-   "overlaid": 6,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1308,28 +1764,32 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.316,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.728,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-001-2-the-model",
      "title": "The model",
      "prose_ratio": 0.987,
-     "coverage_ratio": 0.682,
+     "coverage_ratio": 0.835,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-3-charge-dependence",
      "title": "Charge dependence",
-     "prose_ratio": 0.198,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-31-charge-symmetry-breaking",
      "title": "Charge symmetry breaking",
      "prose_ratio": 0.992,
-     "coverage_ratio": 0.849,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1386,33 +1846,218 @@
      "result": "no matching \\section"
     },
     {
-     "id": "sec-012-b-one-boson-exchange-potential",
+     "id": "sec-012-a4-effective-range-expansion",
+     "title": "Effective range expansion",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-b-one-boson-exchange-potential",
      "title": "One-boson exchange potential",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-013-b1-obe-amplitudes",
+     "id": "sec-014-b1-obe-amplitudes",
      "title": "OBE amplitudes",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-014-b2-partial-wave-decomposition",
+     "id": "sec-015-b2-partial-wave-decomposition",
      "title": "Partial wave decomposition",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-015-b3-final-potential-expressions",
+     "id": "sec-016-b3-final-potential-expressions",
      "title": "Final potential expressions",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-016-c-potential-parameters",
+     "id": "sec-017-c-potential-parameters",
      "title": "Potential parameters",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-017-d-deuteron-calculations",
-     "title": "Deuteron calculations",
+     "id": "sec-018-deuteron-calculations-page-33",
+     "title": "Deuteron calculations (page 33)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-deuteron-calculations-page-34",
+     "title": "Deuteron calculations (page 34)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-deuteron-calculations-page-35",
+     "title": "Deuteron calculations (page 35)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-deuteron-calculations-page-36",
+     "title": "Deuteron calculations (page 36)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-deuteron-calculations-page-37",
+     "title": "Deuteron calculations (page 37)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-deuteron-calculations-page-38",
+     "title": "Deuteron calculations (page 38)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-deuteron-calculations-page-39",
+     "title": "Deuteron calculations (page 39)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-deuteron-calculations-page-40",
+     "title": "Deuteron calculations (page 40)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-deuteron-calculations-page-41",
+     "title": "Deuteron calculations (page 41)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-deuteron-calculations-page-42",
+     "title": "Deuteron calculations (page 42)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-deuteron-calculations-page-43",
+     "title": "Deuteron calculations (page 43)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-deuteron-calculations-page-44",
+     "title": "Deuteron calculations (page 44)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-deuteron-calculations-page-45",
+     "title": "Deuteron calculations (page 45)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-deuteron-calculations-page-46",
+     "title": "Deuteron calculations (page 46)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-deuteron-calculations-page-47",
+     "title": "Deuteron calculations (page 47)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-deuteron-calculations-page-48",
+     "title": "Deuteron calculations (page 48)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-deuteron-calculations-page-49",
+     "title": "Deuteron calculations (page 49)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-035-deuteron-calculations-page-50",
+     "title": "Deuteron calculations (page 50)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-deuteron-calculations-page-51",
+     "title": "Deuteron calculations (page 51)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-037-deuteron-calculations-page-52",
+     "title": "Deuteron calculations (page 52)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-038-deuteron-calculations-page-53",
+     "title": "Deuteron calculations (page 53)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-039-deuteron-calculations-page-54",
+     "title": "Deuteron calculations (page 54)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-040-deuteron-calculations-page-55",
+     "title": "Deuteron calculations (page 55)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-041-deuteron-calculations-page-56",
+     "title": "Deuteron calculations (page 56)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-042-deuteron-calculations-page-57",
+     "title": "Deuteron calculations (page 57)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-043-deuteron-calculations-page-58",
+     "title": "Deuteron calculations (page 58)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-044-deuteron-calculations-page-59",
+     "title": "Deuteron calculations (page 59)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-045-deuteron-calculations-page-60",
+     "title": "Deuteron calculations (page 60)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-046-deuteron-calculations-page-61",
+     "title": "Deuteron calculations (page 61)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-047-deuteron-calculations-page-62",
+     "title": "Deuteron calculations (page 62)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-048-deuteron-calculations-page-63",
+     "title": "Deuteron calculations (page 63)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-049-deuteron-calculations-page-64",
+     "title": "Deuteron calculations (page 64)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-050-deuteron-calculations-page-65",
+     "title": "Deuteron calculations (page 65)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-051-deuteron-calculations-page-66",
+     "title": "Deuteron calculations (page 66)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-052-deuteron-calculations-page-67",
+     "title": "Deuteron calculations (page 67)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-053-deuteron-calculations-page-68",
+     "title": "Deuteron calculations (page 68)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-054-deuteron-calculations-page-69",
+     "title": "Deuteron calculations (page 69)",
      "result": "no matching \\section"
     }
    ]

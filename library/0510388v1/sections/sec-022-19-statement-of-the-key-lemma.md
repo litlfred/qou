@@ -1,6 +1,6 @@
 ---
 doc_id: 0510388v1
-doc_title: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck"
+doc_title: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space"
 section_id: sec-022-19-statement-of-the-key-lemma
 section_title: "Statement of the Key Lemma."
 section_number: 19
@@ -8,6 +8,7 @@ pages: 46-47
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
 toc_source: inferred
+doc_brief: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS"
 ---
 The following result plays a lead role in obtaining the formulas for the Biot-Savart 
 and Green's operators on  S3  in parallel transport format. 
@@ -52,7 +53,4 @@ integrates to the current flow  V  itself.
 Thus the Key Lemma, for this special choice of kernel function  ϕ ,  can be 
 viewed as a pointwise or infinitesimal version of Maxwell's equation 
  
-∇ × B  —  ∂E/∂t    =  V  . 
- 
- 
-47
+∇ × B  —  ∂E/∂t    =  V  .

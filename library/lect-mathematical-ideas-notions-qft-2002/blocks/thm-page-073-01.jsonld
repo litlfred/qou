@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-073-01",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 73,
+  "pageEnd": 73,
+  "text": "thm-page-073-01.md",
+  "derivedFrom": "library/lect-mathematical-ideas-notions-qft-2002/sections/page-073",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lect-mathematical-ideas-notions-qft-2002/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "10.3",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/page-073.md (p. 73-73)",
+    "claim_id": "lect-mathematical-ideas-notions-qft-2002#theorem:10.3",
+    "lean_status": "unformalized"
+  }
+}

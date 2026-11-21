@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1204.4824v2/blocks/prose-sec-049",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "B.5 Cocycles",
-  "pageStart": 80,
-  "pageEnd": 82,
-  "text": "../sections/sec-049-b5-cocycles.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1204.4824v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1204.4824v2",
+  "title": "Coordinate systems and a cluster conjecture",
+  "pageStart": 71,
+  "pageEnd": 72,
+  "text": "../sections/sec-049-108-coordinate-systems-and-a-cluster-conjecture.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1204.4824v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1204.4824v2/manifest.jsonld",
   "provenance": "ingested"
 }

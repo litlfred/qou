@@ -8,7 +8,7 @@
   "pages": 11,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,13 +21,13 @@
    "stamp_date": "2 Nov 2001"
   },
   "doi": null,
-  "title": "arXiv:math/0111022v1 [math.QA] 2 Nov 2001",
+  "title": "Some remarks on q-deformed multiple polylogarithms",
   "authors_raw": "Karl-Georg Schlesinger",
   "title_lines": [
    "Some remarks on q-deformed multiple",
    "polylogarithms"
   ],
-  "abstract": "We introduce general q-deformed multiple polylogarithms which even in the dilogarithm case di\ufb00er slightly from the deformation usu- ally discussed in the literature. The merit of the deformation as sug- gested, here, is that q-deformed multiple polylogarithms de\ufb01ne an algebra, then (as in the undeformed case). For the special case of q- deformed multiple \u03b6-values, we show that there exists even a noncom- mutative and noncocommutative Hopf algebra structure which is a de- formation of the commutative Hopf algebra structure which one has in the classical case. Finally, we discuss the possible correspondence be- tween q-deformed multiple polylogarithms and a noncommutative and noncocommutative self-dual Hopf algebra recently introduced by the author as a quantum analog of the Grothendieck-Teichm\u00a8uller group. 1 Motivation In [CL] a family of noncommutative deformations S4,\u03b8 of the four dimen- sional sphere has been introduced from the instanton algebra. Concretely, the algebra of functions on S4,\u03b8 is given by the generators t, \u03b1, \u03b1\u2217, \u03b2, \u03b2\u2217and relations \u03b1\u03b1\u2217 = \u03b1\u2217\u03b1, \u03b2\u03b2\u2217= \u03b2\u2217\u03b2 1",
+  "abstract": "We introduce general q-deformed multiple polylogarithms which even in the dilogarithm case diﬀer slightly from the deformation usu- ally discussed in the literature. The merit of the deformation as sug- gested, here, is that q-deformed multiple polylogarithms deﬁne an algebra, then (as in the undeformed case). For the special case of q- deformed multiple ζ-values, we show that there exists even a noncom- mutative and noncocommutative Hopf algebra structure which is a de- formation of the commutative Hopf algebra structure which one has in the classical case. Finally, we discuss the possible correspondence be- tween q-deformed multiple polylogarithms and a noncommutative and noncocommutative self-dual Hopf algebra recently introduced by the author as a quantum analog of the Grothendieck-Teichm¨uller group. 1 Motivation In [CL] a family of noncommutative deformations S4,θ of the four dimen- sional sphere has been introduced from the instanton algebra. Concretely, the algebra of functions on S4,θ is given by the generators t, α, α∗, β, β∗and relations αα∗ = α∗α, ββ∗= β∗β 1",
   "docinfo": {
    "Title": "arXiv:math/0111022v1  [math.QA]  2 Nov 2001",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
@@ -45,7 +45,8 @@
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:math/0111022v1 [math.QA] 2 Nov 2001"
  },
  "toc": [
   {
@@ -54,32 +55,6 @@
    "page": 1,
    "source": "inferred",
    "number": "1",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": null
-  },
-  {
-   "level": 1,
-   "title": "$q$-deformed multiple polylogarithms",
-   "page": 4,
-   "source": "inferred",
-   "number": "2",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": null
-  },
-  {
-   "level": 1,
-   "title": "$q$-deformed multiple polylogarithms with $q$-commuting variables",
-   "page": 6,
-   "source": "inferred",
-   "number": "3",
    "confidence": 1.0,
    "evidence": [
     "latex",
@@ -178,8 +153,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1066,
-   "n_words": 147,
+   "n_chars": 1064,
+   "n_words": 146,
    "label_start": null,
    "label_end": null
   },
@@ -190,8 +165,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 11,
-   "n_chars": 14885,
-   "n_words": 2543,
+   "n_chars": 14896,
+   "n_words": 2544,
    "label_start": null,
    "label_end": null
   }
@@ -199,7 +174,7 @@
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 3,
+  "toc_entries": 1,
   "toc_inferred_entries": 3,
   "toc_inferred_mean_confidence": 1.0,
   "toc_inferred_empty_share": 0.0,
@@ -211,7 +186,22 @@
    "items": []
   },
   "sections": 2,
-  "chars_total": 15951,
+  "chars_total": 15960,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "$q$-deformed multiple polylogarithms",
+    "page": 4,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$q$-deformed multiple polylogarithms with $q$-commuting variables",
+    "page": 6,
+    "action": "dropped",
+    "why": "opens in lower case"
+   }
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -232,7 +222,7 @@
      "id": "sec-000-1-motivation",
      "title": "Motivation",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.892,
+     "coverage_ratio": 0.89,
      "result": "overlaid",
      "converter": "pandoc"
     }

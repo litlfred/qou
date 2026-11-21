@@ -50,7 +50,7 @@ def ConfinementSDPData.slaterStrictFeasible (ctx : ConfinementSDPData) : Prop :=
 /-- **Confinement SDP primal–dual**.
     At any `(P, q)` with Slater-strict feasibility, strong duality holds
     between the primal matrix-Frobenius SDP and the dual matrix shadow prices. -/
--- Ref: [manuscript] prop:confinement-sdp
+-- Ref: [leitner2026] prop:confinement-sdp
 theorem confinement_sdp [ctx : ConfinementSDPData] (h : ctx.slaterStrictFeasible) :
     ctx.primalOpt = ctx.nTarget * ctx.y0Star := by
   exact ctx.strong_duality h

@@ -8,9 +8,19 @@
   "pages": 52,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:25Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 5,
+    "reason": "11 of 388 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 6,
+    "reason": "13 of 357 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
@@ -85,7 +95,7 @@
   },
   {
    "level": 2,
-   "title": "Calculation of \u27e852 \u27e9N toward its asymptotic expansion",
+   "title": "Calculation of ⟨52 ⟩N toward its asymptotic expansion",
    "page": 7,
    "source": "inferred",
    "number": "2.2",
@@ -243,7 +253,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "The domain {z \u2208C | Re az2 < 0} is shaded",
+   "title": "The domain {z ∈C | Re az2 < 0} is shaded",
    "page": 11,
    "confidence": 0.9,
    "evidence": [
@@ -256,7 +266,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "The domain {z \u2208C | Re \u03c8(z) < 0} is shaded",
+   "title": "The domain {z ∈C | Re ψ(z) < 0} is shaded",
    "page": 12,
    "confidence": 0.9,
    "evidence": [
@@ -269,7 +279,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "The domain {z \u2208C | Re az2 < 0} is shaded",
+   "title": "The domain {z ∈C | Re az2 < 0} is shaded",
    "page": 20,
    "confidence": 0.9,
    "evidence": [
@@ -282,7 +292,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "The domain {z \u2208C | Re \u03c8(z) < 0} is shaded",
+   "title": "The domain {z ∈C | Re ψ(z) < 0} is shaded",
    "page": 22,
    "confidence": 0.9,
    "evidence": [
@@ -295,7 +305,7 @@
   {
    "kind": "figure",
    "number": "6",
-   "title": "The graph of \u039b(t) for 0 \u2264t \u22641",
+   "title": "The graph of Λ(t) for 0 ≤t ≤1",
    "page": 48,
    "confidence": 0.9,
    "evidence": [
@@ -680,8 +690,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 474,
-   "n_words": 80,
+   "n_chars": 472,
+   "n_words": 79,
    "label_start": null,
    "label_end": null
   },
@@ -692,7 +702,7 @@
    "level": 1,
    "page_start": 1,
    "page_end": 5,
-   "n_chars": 9433,
+   "n_chars": 9445,
    "n_words": 1720,
    "label_start": null,
    "label_end": null
@@ -703,110 +713,122 @@
    "title": "Calculation of the Kashaev invariant of the 52 knot",
    "level": 1,
    "page_start": 5,
-   "page_end": 7,
-   "n_chars": 3606,
-   "n_words": 758,
+   "page_end": 5,
+   "n_chars": 249,
+   "n_words": 42,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-002-22-calculation-of-52-n-toward-its-asymptotic-exp",
+   "id": "sec-002-21-the-kashaev-invariant-of-the-52-knot",
+   "number": "2.1",
+   "title": "The Kashaev invariant of the 52 knot",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 3050,
+   "n_words": 567,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-22-calculation-of-52-n-toward-its-asymptotic-exp",
    "number": "2.2",
-   "title": "Calculation of \u27e852 \u27e9N toward its asymptotic expansion",
+   "title": "Calculation of ⟨52 ⟩N toward its asymptotic expansion",
    "level": 2,
    "page_start": 7,
    "page_end": 10,
-   "n_chars": 5023,
-   "n_words": 1174,
+   "n_chars": 5075,
+   "n_words": 1181,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-003-3-calculation-by-the-saddle-point-method",
+   "id": "sec-004-3-calculation-by-the-saddle-point-method",
    "number": "3",
    "title": "Calculation by the saddle point method",
    "level": 1,
    "page_start": 10,
    "page_end": 19,
-   "n_chars": 14110,
-   "n_words": 3106,
+   "n_chars": 14147,
+   "n_words": 3111,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-004-4-calculation-by-the-poisson-summation-formula",
+   "id": "sec-005-4-calculation-by-the-poisson-summation-formula",
    "number": "4",
    "title": "Calculation by the Poisson summation formula",
    "level": 1,
    "page_start": 19,
    "page_end": 28,
-   "n_chars": 11981,
-   "n_words": 2724,
+   "n_chars": 12024,
+   "n_words": 2729,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-005-5-proof-of-theorem-11",
+   "id": "sec-006-5-proof-of-theorem-11",
    "number": "5",
    "title": "Proof of Theorem 1.1",
    "level": 1,
    "page_start": 28,
    "page_end": 30,
-   "n_chars": 4501,
-   "n_words": 968,
+   "n_chars": 4518,
+   "n_words": 971,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-006-52-calculation-of-the-asymptotic-expansion",
+   "id": "sec-007-52-calculation-of-the-asymptotic-expansion",
    "number": "5.2",
    "title": "Calculation of the asymptotic expansion",
    "level": 2,
    "page_start": 30,
    "page_end": 36,
-   "n_chars": 8217,
-   "n_words": 2104,
+   "n_chars": 8253,
+   "n_words": 2108,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-007-53-verifying-the-assumption-of-the-saddle-point",
+   "id": "sec-008-53-verifying-the-assumption-of-the-saddle-point",
    "number": "5.3",
    "title": "Verifying the assumption of the saddle point method",
    "level": 2,
    "page_start": 36,
    "page_end": 39,
-   "n_chars": 5862,
-   "n_words": 1473,
+   "n_chars": 5910,
+   "n_words": 1480,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-008-54-verifying-the-assumption-of-the-poisson-summa",
+   "id": "sec-009-54-verifying-the-assumption-of-the-poisson-summa",
    "number": "5.4",
    "title": "Verifying the assumption of the Poisson summation formula",
    "level": 2,
    "page_start": 39,
    "page_end": 48,
-   "n_chars": 12869,
-   "n_words": 3046,
+   "n_chars": 12925,
+   "n_words": 3053,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-009-d-proof-of-lemma-21",
+   "id": "sec-010-d-proof-of-lemma-21",
    "number": "D",
    "title": "Proof of Lemma 2.1",
    "level": 1,
    "page_start": 48,
    "page_end": 49,
-   "n_chars": 1856,
-   "n_words": 429,
+   "n_chars": 1875,
+   "n_words": 433,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-010-references",
+   "id": "sec-011-references",
    "number": null,
    "title": "References",
    "level": 1,
@@ -832,9 +854,10 @@
    "count": 0,
    "items": []
   },
-  "sections": 12,
-  "chars_total": 85298
+  "sections": 13,
+  "chars_total": 85309,
+  "furniture_lines_stripped": 0
  },
  "duplicate_of": "104171-qt-83",
- "duplicate_note": "Same work as library/104171-qt-83/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted \u2014 existing citations may point here \u2014 but skipped by the ranking and the summary index so one work is not counted twice."
+ "duplicate_note": "Same work as library/104171-qt-83/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."
 }

@@ -2,27 +2,152 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-alg-geom-9408004v1",
  "source_sha256": "d3bc00265294aa02",
- "brief": "CUBICS, INTEGRABLE SYSTEMS, AND — 3 sections: Front matter; This number is conjectured, but no; References",
- "extended": "**CUBICS, INTEGRABLE SYSTEMS, AND**\n\n*CALABI-YAU THREEFOLDS*\n\n28 pp, 3 sections.\n\n**Outline.** Front matter; X This number is conjectured, but not known, t; References",
+ "brief": "Cubics, Integrable Systems, and Calabi-Yau Threefolds — 28 sections: Front matter (page 1); Front matter (page 2); Front matter (page 3)",
+ "extended": "**Cubics, Integrable Systems, and Calabi-Yau Threefolds**\n\n*CALABI-YAU THREEFOLDS*\n\n28 pp, 28 sections.\n\n**Outline.** Front matter (page 1); Front matter (page 2); Front matter (page 3); Front matter (page 4); Front matter (page 5); Front matter (page 6); Front matter (page 7); Front matter (page 8); Front matter (page 9); Front matter (page 10); Front matter (page 11); Front matter (page 12); Front matter (page 13); Front matter (page 14); Front matter (page 15); Front matter (page 16); Front matter (page 17); Front matter (page 18)",
  "tokens": {
-  "brief": 26,
-  "extended": 41
+  "brief": 34,
+  "extended": 134
  },
  "sections": [
   {
-   "id": "sec-front-matter",
-   "title": "Front matter",
-   "pages": "1-20"
+   "id": "sec-000-front-matter-page-1",
+   "title": "Front matter (page 1)",
+   "pages": "1-1"
   },
   {
-   "id": "sec-000-x-this-number-is-conjectured-but-not-known-to-be",
-   "title": "This number is conjectured, but not known, to be ﬁnite. The m ulti-",
-   "pages": "20-26"
+   "id": "sec-001-front-matter-page-2",
+   "title": "Front matter (page 2)",
+   "pages": "2-2"
   },
   {
-   "id": "sec-001-references",
-   "title": "References",
+   "id": "sec-002-front-matter-page-3",
+   "title": "Front matter (page 3)",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-003-front-matter-page-4",
+   "title": "Front matter (page 4)",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-004-front-matter-page-5",
+   "title": "Front matter (page 5)",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-005-front-matter-page-6",
+   "title": "Front matter (page 6)",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-006-front-matter-page-7",
+   "title": "Front matter (page 7)",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-007-front-matter-page-8",
+   "title": "Front matter (page 8)",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-008-front-matter-page-9",
+   "title": "Front matter (page 9)",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-009-front-matter-page-10",
+   "title": "Front matter (page 10)",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-010-front-matter-page-11",
+   "title": "Front matter (page 11)",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-011-front-matter-page-12",
+   "title": "Front matter (page 12)",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-012-front-matter-page-13",
+   "title": "Front matter (page 13)",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-013-front-matter-page-14",
+   "title": "Front matter (page 14)",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-014-front-matter-page-15",
+   "title": "Front matter (page 15)",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-015-front-matter-page-16",
+   "title": "Front matter (page 16)",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-016-front-matter-page-17",
+   "title": "Front matter (page 17)",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-017-front-matter-page-18",
+   "title": "Front matter (page 18)",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-018-front-matter-page-19",
+   "title": "Front matter (page 19)",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-019-front-matter-page-20",
+   "title": "Front matter (page 20)",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-020-front-matter-page-21",
+   "title": "Front matter (page 21)",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-021-front-matter-page-22",
+   "title": "Front matter (page 22)",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-022-front-matter-page-23",
+   "title": "Front matter (page 23)",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-023-front-matter-page-24",
+   "title": "Front matter (page 24)",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-024-front-matter-page-25",
+   "title": "Front matter (page 25)",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-025-front-matter-page-26",
+   "title": "Front matter (page 26)",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-026-references",
+   "title": "REFERENCES",
    "pages": "26-28"
+  },
+  {
+   "id": "sec-027-g-tian-smoothness-of-the-universal-deformation-s",
+   "title": "Tian: Smoothness of the universal deformation space of compact Calabi-Yau manifolds and its Petersson-Weil metric, in Math-",
+   "pages": "28-28"
   }
  ],
  "provenance": {

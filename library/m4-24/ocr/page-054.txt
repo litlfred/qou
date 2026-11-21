@@ -1,0 +1,45 @@
+426 T. Ohtsuki (Editor)
+
+The loop expansion characterizes the infinite sum of subsequences of log, , Z(K)
+in each loop-degrees; see (24), (26), and (28) in the cases of low loop-degrees.
+Since the image of the Kontsevich invariant is a countable set, there should be
+more restrictive properties.
+
+Problem 3.6 (J. Roberts) Give a good topological construction of the Kont-
+sevich integral.
+
+Remark (J. Roberts) The Kontsevich integral is, in my opinion, the deepest
+part of the existing theory of quantum invariants, and it has two (conjecturally)
+equivalent formulations, each with its mysteries.
+
+(a). In Kontsevich’s original formulation of his integral, the part relating to
+braids is reasonably well-understood: it can be described using configuration
+spaces of points in the plane, the Knizhnik-Zamolodchikov equation, 1-minimal
+models in rational homotopy theory, Chen’s iterated integrals and Magnus ex-
+pansions. The fact that this actually extends to a knot invariant does not seem
+to appear naturally in these pictures, however. Passing from braids to (Mor-
+sified) knots suggests thinking about configuration spaces of varying numbers
+of points in the plane, and allowing some kind of annihilation and creation of
+pairs. Is there some way to utilise such spaces? (A related question is Problem
+3.14.)
+
+(b). In the perturbative integral formulation, the diagrammatic power series is
+introduced as a formal device for keeping track of which linear combinations of
+the individual (non-invariant) coefficient integrals give give knot invariants. It
+isn’t really clear from this point of view why this series should turn out to have
+good properties such as multiplicativity, Kricker/Rozansky rationality, etc. Is
+there an “all-in-one” definition?
+
+3.4 The Kontsevich invariant in a finite field
+
+Problem 3.7 Construct the Kontsevich invariant (i.e. a universal Vassiliev
+invariant) with coefficients in a finite field.
+
+Remark If we could find a solution (R,®) of the pentagon and hexagon rela-
+tions with coefficients in a finite field, such a solution would give a combinatorial
+construction of the Kontsevich invariant with coefficients in that field. In this
+case we can not put R = exp f-{ / 2) unlike the case of Q coefficients, be-
+
+cause p~! of the order p of the field appears in the expansion of the exponential.
+
+Geometry & Topology Monographs, Volume 4 (2002)

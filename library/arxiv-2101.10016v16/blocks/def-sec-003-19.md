@@ -1,0 +1,1 @@
+Let C and C ′ be tensor ∗ -categories. A unitary tensor functor (F, F, G = F −1 ), is a tensor ∗-functor such that F is unitary. A unitary tensor equivalence is a tensor ∗ -equivalence which is unitary as a tensor ∗-functor and with a unitary quasi-inverse.

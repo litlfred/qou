@@ -1,0 +1,53 @@
+A.3 Integration of forms 453
+
+in R? defined by
+
+P
+AP = fornonde R? : x; > 0 for all i and x < i .
+i=l
+By convention, if p = 0 then A? is defined to be a single point. Associated with
+the standard simplices are p +2 ways of embedding A? as a face of A’*!. To be
+explicit, for each 1 < i < p+1 let x? : A? — A?*! be the embedding obtained
+by inserting a zero in the ith position,
+
+p
+KP (x1, 0. Xp) = (1... Xi-1, 0, Xin --- Xp)s
+
+and let x) : A? > A?*! embed into the diagonal face,
+
+P
+P =
+sion [I = Ysera.
+
+i=l
+
+We now fix an m-manifold M in R". For each 0 < p < m, a smooth p-
+simplex (or simply p-simplex) in M is defined to be a map a7 : A? — M
+which extends to a smooth map of a neighborhood of A” in R? into M. Define
+the space C?(M) of p-chains on M to be the space of finite formal linear
+combinations >) c;o; of p-simplices in M with coefficients c; € C. A chain
+> cio; is said to be supported on a set X C M whenever all a; in the sum map
+into X.
+
+Definition A.20 (boundary operator). For any 1 < p < m, the boundary op-
+erator on p-chains is the linear map 0 : C? — C?-! which takes a p-simplex
+ao : AP — Mand returns the (p — 1)-chain do : A?-! > M defined by
+
+p
+00 := MEV con, (A3.1)
+i=0
+
+Figure A.2 illustrates the boundary operator on a singular 2-simplex.
+A crucial property of the boundary operator is that it gives the zero map
+when applied twice.
+
+Proposition A.21. For any manifold M and 1 < p < d the map & = 0.
+Exercise A.10. Verify @ = 0 by proving that x?*" o Ki an ox) forall p > 0
+and i < j (where x? is identically zero if a or b are negative or a > p).
+
+For a domain A C R" with standard coordinates x),...,x,, we define the
+integral of a top level form w = f(ax)dx; A--- A dx, on A to be the usual
+Riemann—Lebesgue integral
+
+fiom f ferdn andi = [ faav,
+A A A

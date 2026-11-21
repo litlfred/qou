@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-nucleon-borromean-topology",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:nucleon-borromean-topology",
+  "kind": "lemma",
+  "title": "Nucleon Borromean topology and Hopf-link binding",
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-nucleon-borromean-topology"
+  ],
+  "tags": [
+    "nucleon",
+    "borromean",
+    "hopf-link",
+    "color-exchange"
+  ],
+  "leanRef": "qou:QOU.HadronicMass.nucleon_borromean_topology",
+  "text": "nucleon-borromean-topology.md",
+  "leanSource": "nucleon-borromean-topology.lean",
+  "provenance": "authored"
+}

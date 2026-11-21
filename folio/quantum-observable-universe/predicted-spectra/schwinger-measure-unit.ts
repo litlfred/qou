@@ -27,9 +27,12 @@ export default definition({
   uses: [
     "conj:schwinger-measure-computational-time",
     "prop:horizon-conformal-invariance",
-    "prop:boltzmann-constant",
+    "def:boltzmann-constant",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): , [Boltzmann constant in QOU natural units](#def:boltzmann-constant)" },
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): Scale invariance is inherited from the conformal invariance of the horizon boundary datum ([Conformal invariance at the jet horizon](#prop:horizon-conformal-invariance)): the loop's ultraviolet end has no preferred proper-time scale." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The archimedean Lean shell writes $c$ for the same scalar;" },
     {
       kind: "status",
       date: "2026-07-25",

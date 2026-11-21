@@ -1,0 +1,32 @@
+296 Multiple point asymptotics
+
+then it is locally diffeomorphic to the transverse linear case, and once again the
+topological normal data at a critical point is a k-torus.
+
+Example 10.4 (lemniscate). Let F = 1/Q(x,y), where Q(x, y) = 19 - 20x —
+20y+5x7 + 14.xy+5y?—2x?y—2xy? +x? is the polynomial whose real zeros are
+shown in Figure 10.6. The curve ‘V intersects itself at the point (x, y) = (1, 1),
+near which it is a union of two distinct segments of smooth curves intersecting
+only at (1, 1). 4
+
+x T a) 3
+
+Figure 10.6 A local self-intersection.
+
+Exercise 10.3. Make the change of coordinates Q(x,y) = Q(1 + u,1 + v)
+in Example 10.4 and write formulae v = f(u) for the two curves of V that
+intersect at the origin in wv-coordinates.
+
+Remark 10.5. If the transverse multiple point p lies in a complete intersec-
+tion then there is no tangential integral and, provided F(z) = P(z)/Q(z) with
+P(p) # 0, we will be able to compute the integral over the normal data explic-
+itly as a polynomial times an exponential term (see Theorem 10.12 below).
+
+Moving beyond transverse multiple points with non-linear divisors, the most
+general class of multiple points for which we have a general method of deter-
+mining asymptotics is that of arrangement points, where the lattice of intersec-
+tions of the divisors defining a stratum is the same as the lattice of intersections
+of the tangent planes to the divisors (this being a hyperplane arrangement). A
+central hyperplane arrangement is a hyperplane arrangement in which each
+hyperplane passes through the origin. Each central hyperplane arrangement
+A = W, U-+»UW,, possesses a natural structure as a matroid M(A), an

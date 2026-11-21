@@ -1,1 +1,0 @@
-Letρbeadecoratedrepresentationand D anopendiagram

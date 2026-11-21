@@ -3,94 +3,124 @@
  "doc_id": "arxiv-1910.09966v1",
  "source_sha256": "21798500c98ed25a",
  "brief": "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics — In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds.",
- "extended": "**Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics**\n\n*T. Asslmeyer-Maluga (German Aerospace Center, Berlin)*\n\n37 pp, 17 sections.\n\n**Abstract.** In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds. Here, we will use Thurston’s geometrization theorem to get a simple picture: fermions as hyperbolic knot comple- ments (a complement C(K) = S3\\ (K× D2) of a knot K carrying a hyperbolic geometry) and bosons as torus bundles. In particular, hyper- bolic 3-manifolds have a close connection to number theory (Bloch group, algebraic K-theory, quaternionic trace ﬁelds), which will be used in the description of fermions. Here, we choose the description of 3-manifolds by branched covers. Every 3-manifold can be described by a 3-fold branched cover of S3 branched along a knot. In case of knot complements, one will obtain a 3-fold branched cover of the 3-disk D3 branched along a 3-braid or 3-braids describing fermions.\n\n**Outline.** 1 Introduction; 2.1 As Warmup: Branched Coverings of 2-Manifol; 2.2 Branched Coverings of 3-Manifolds; 2.3 Branched Covering of 4-Manifolds; 2.4 Branched Coverings of Knot Complements; 4.1 K3 Surfaces and Octonions; 4.2 From Immersed Surfaces in K3 Surfaces to F; 4.3 Fermions as Knot Complements; 4.4 Torus Bundle as Gauge Fields; 4.5 Fermions, Bosons and 3-Braids; 5 Electric Charge and Quasimodularity; 5.1 Electric Charge as Dehn Twist of the Bound; 5.2 Electric Charge as a Frame of the Knot Com; 5.3 The Charge Spectrum; 5.4 Vanishing of the Magnetic Charge and Quasi; 7 Fermions and Number Theory; 9 Conclusions and Outlook",
+ "extended": "**Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics**\n\n*T. Asslmeyer-Maluga (German Aerospace Center, Berlin)*\n\n37 pp, 23 sections.\n\n**Abstract.** In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds. Here, we will use Thurston’s geometrization theorem to get a simple picture: fermions as hyperbolic knot comple- ments (a complement C(K) = S3 \\ (K × D2) of a knot K carrying a hyperbolic geometry) and bosons as torus bundles. In particular, hyper- bolic 3-manifolds have a close connection to number theory (Bloch group, algebraic K-theory, quaternionic trace ﬁelds), which will be used in the description of fermions. Here, we choose the description of 3-manifolds by branched covers. Every 3-manifold can be described by a 3-fold branched cover of S3 branched along a knot. In case of knot complements, one will obtain a 3-fold branched cover of the 3-disk D3 branched along a 3-braid or 3-braids describing fermions.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries: Branched Coverings of 3- and ; 2.1 As Warmup: Branched Coverings of 2-Manifol; 2.2 Branched Coverings of 3-Manifolds; 2.3 Branched Covering of 4-Manifolds; 2.4 Branched Coverings of Knot Complements; 3 Reconstructing a Spacetime: The K3 Surface a; 4 From K3 Surfaces to Octonions, 3-Braids and ; 4.1 K3 Surfaces and Octonions; 4.2 From Immersed Surfaces in K3 Surfaces to F; 4.3 Fermions as Knot Complements; 4.4 Torus Bundle as Gauge Fields; 4.5 Fermions, Bosons and 3-Braids; 5 Electric Charge and Quasimodularity; 5.1 Electric Charge as Dehn Twist of the Bound; 5.2 Electric Charge as a Frame of the Knot Com; 5.3 The Charge Spectrum",
  "tokens": {
   "brief": 48,
-  "extended": 412
+  "extended": 426
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "title": "Introduction",
-   "pages": "1-5"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
   },
   {
-   "id": "sec-001-21-as-warmup-branched-coverings-of-2-manifolds",
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-001-2-preliminaries-branched-coverings-of-3--and-4-m",
+   "title": "Preliminaries: Branched Coverings of 3- and 4-Manifolds",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-002-21-as-warmup-branched-coverings-of-2-manifolds",
    "title": "As Warmup: Branched Coverings of 2-Manifolds",
    "pages": "5-5"
   },
   {
-   "id": "sec-002-22-branched-coverings-of-3-manifolds",
+   "id": "sec-003-22-branched-coverings-of-3-manifolds",
    "title": "Branched Coverings of 3-Manifolds",
    "pages": "5-6"
   },
   {
-   "id": "sec-003-23-branched-covering-of-4-manifolds",
+   "id": "sec-004-23-branched-covering-of-4-manifolds",
    "title": "Branched Covering of 4-Manifolds",
    "pages": "6-7"
   },
   {
-   "id": "sec-004-24-branched-coverings-of-knot-complements",
+   "id": "sec-005-24-branched-coverings-of-knot-complements",
    "title": "Branched Coverings of Knot Complements",
-   "pages": "7-13"
+   "pages": "7-8"
   },
   {
-   "id": "sec-005-41-k3-surfaces-and-octonions",
+   "id": "sec-006-3-reconstructing-a-spacetime-the-k3-surface-and",
+   "title": "Reconstructing a Spacetime: The K3 Surface and Particle Physics",
+   "pages": "8-13"
+  },
+  {
+   "id": "sec-007-4-from-k3-surfaces-to-octonions-3-braids-and-par",
+   "title": "From K3 Surfaces to Octonions, 3-Braids and Particles",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-008-41-k3-surfaces-and-octonions",
    "title": "K3 Surfaces and Octonions",
    "pages": "13-15"
   },
   {
-   "id": "sec-006-42-from-immersed-surfaces-in-k3-surfaces-to-ferm",
+   "id": "sec-009-42-from-immersed-surfaces-in-k3-surfaces-to-ferm",
    "title": "From Immersed Surfaces in K3 Surfaces to Fermions and Knot Complements",
    "pages": "15-16"
   },
   {
-   "id": "sec-007-43-fermions-as-knot-complements",
+   "id": "sec-010-43-fermions-as-knot-complements",
    "title": "Fermions as Knot Complements",
    "pages": "16-18"
   },
   {
-   "id": "sec-008-44-torus-bundle-as-gauge-fields",
+   "id": "sec-011-44-torus-bundle-as-gauge-fields",
    "title": "Torus Bundle as Gauge Fields",
    "pages": "18-22"
   },
   {
-   "id": "sec-009-45-fermions-bosons-and-3-braids",
+   "id": "sec-012-45-fermions-bosons-and-3-braids",
    "title": "Fermions, Bosons and 3-Braids",
    "pages": "22-23"
   },
   {
-   "id": "sec-010-5-electric-charge-and-quasimodularity",
+   "id": "sec-013-5-electric-charge-and-quasimodularity",
    "title": "Electric Charge and Quasimodularity",
    "pages": "23-23"
   },
   {
-   "id": "sec-011-51-electric-charge-as-dehn-twist-of-the-boundary",
+   "id": "sec-014-51-electric-charge-as-dehn-twist-of-the-boundary",
    "title": "Electric Charge as Dehn Twist of the Boundary",
    "pages": "23-24"
   },
   {
-   "id": "sec-012-52-electric-charge-as-a-frame-of-the-knot-comple",
+   "id": "sec-015-52-electric-charge-as-a-frame-of-the-knot-comple",
    "title": "Electric Charge as a Frame of the Knot Complement",
    "pages": "24-26"
   },
   {
-   "id": "sec-013-53-the-charge-spectrum",
+   "id": "sec-016-53-the-charge-spectrum",
    "title": "The Charge Spectrum",
    "pages": "26-26"
   },
   {
-   "id": "sec-014-54-vanishing-of-the-magnetic-charge-and-quasimod",
+   "id": "sec-017-54-vanishing-of-the-magnetic-charge-and-quasimod",
    "title": "Vanishing of the Magnetic Charge and Quasimodularity",
-   "pages": "26-29"
+   "pages": "26-27"
   },
   {
-   "id": "sec-015-7-fermions-and-number-theory",
+   "id": "sec-018-6-drinfeldturaev-quantization-and-quantum-states",
+   "title": "Drinfeld–Turaev Quantization and Quantum States",
+   "pages": "27-29"
+  },
+  {
+   "id": "sec-019-7-fermions-and-number-theory",
    "title": "Fermions and Number Theory",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-020-8-the-k3-surface-and-the-number-of-generations",
+   "title": "The K3 Surface and the Number of Generations",
    "pages": "29-31"
   },
   {
-   "id": "sec-016-9-conclusions-and-outlook",
+   "id": "sec-021-9-conclusions-and-outlook",
    "title": "Conclusions and Outlook",
    "pages": "31-37"
   }

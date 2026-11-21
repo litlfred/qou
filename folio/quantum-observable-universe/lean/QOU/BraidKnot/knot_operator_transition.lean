@@ -16,7 +16,7 @@ mass number `A` has a definite knot type, following the hierarchy*
 explaining why `⁴He` has the strongest binding per nucleon among
 light nuclei.*
 
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-operator-transition.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/knot-operator-transition.md
 -/
 
 namespace QOU.BraidKnot
@@ -42,7 +42,7 @@ def nucleonAdditionKnot : ℕ → NucleonAdditionKnotType
 
     The 4th nucleon completes the trefoil topology, marking the
     binding-energy peak at `⁴He`. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-operator-transition.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/knot-operator-transition.md
 theorem knot_operator_transition_hierarchy :
     nucleonAdditionKnot 0 = .unknot ∧
     nucleonAdditionKnot 1 = .singleCrossing ∧
@@ -54,7 +54,7 @@ theorem knot_operator_transition_hierarchy :
 
     For every `A ≥ 3`, the nucleon-addition operator has trefoil
     knot type — the topology saturates at the 4th nucleon. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-operator-transition.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/knot-operator-transition.md
 theorem knot_operator_transition (A : ℕ) (h : 3 ≤ A) :
     nucleonAdditionKnot A = .trefoil := by
   -- Unfold the definition on the `A ≥ 3` branch.

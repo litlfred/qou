@@ -1,0 +1,47 @@
+1242 Francois Guéritaud and David Futer
+
+PSL;(R) with the group of isometries of H* via the isomorphism V defined by
+
+w (“ 4) DZ dee
+cd " bz+a
+(Under this slightly unusual convention, the slopes of the eigenvectors of M are the
+fixed points of Y(M), rather than their inverses as would normally be the case.) It is
+known that the group of orientation-preserving isometries of H* preserving F is thus
+identified with PSL2(Z).
+
+If D is the oriented hyperbolic line running from the repulsive fixed point of +y to the
+attractive one, then D crosses infinitely many Farey triangles (...t_1,f,f1,t,...) of
+F.. We can formally write down a bi-infinite word
+
+Q = ...LRRRLLR...
+
+where the k-th letter is R (resp. L) if D exits t, to the Right (resp. Left) of where it
+enters. We will also say that D makes a Right (resp. Left) at t,. The word 2 contains at
+least one R and one L, because the ends of D are distinct. The image of fo under y is a
+certain fm (m > 1), and Q is periodic of period m.
+
+Next, define the standard transvection matrices
+
+11 1 0
+r= (4 ') and L=({ i):
+
+These are parabolic transformations of H? whose respective fixed points are 0 and
+oo. Let M be any subword of 2 of length m: we see M as a product of standard
+transvection matrices, and therefore as an element of SL2(Z). By studying the actions
+of R and L on F, it is then easy to see that y and M are conjugates in PSL2(Z), and
+therefore in SL2(Z) since both have positive trace. This proves the existence statement
+for the (a;, b;).
+
+Uniqueness is checked as follows: on one hand, if y and y’ are conjugates, a certain
+element of PSL2(Z) (preserving F) takes the axis of y to the axis of y’, so they define
+the same word (2 up to translation. On the other hand, looking at the actions of R and
+L on H?, one sees that a product of standard transvection matrices (as in the statement
+of Proposition 2.1) will define the word 2 = R“L?! ... R™L«, concatenated infinitely
+many times with itself.
+
+In the language of Proposition 2.1, the sequence (a), 1, ..., 4, b,) can be shown to be
+(a positive power of) the period of the continued fraction expansion of the slope of the
+expanding eigenvector of y. The word 22 will be seen either as infinite periodic, or as
+finite cyclic, depending on the context.
+
+Geometry & Topology 10 (2006)

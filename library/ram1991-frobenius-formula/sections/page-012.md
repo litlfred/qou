@@ -1,0 +1,66 @@
+---
+doc_id: ram1991-frobenius-formula
+doc_title: "A Frobenius formula for the characters of the Hecke algebras"
+section_id: page-012
+section_title: "Page 12"
+pages: 12-12
+pdf_page: 12
+source_pdf: ram1991-frobenius-formula.pdf
+source_sha256: 26b2fc85338d9150
+text_source: ocr
+granularity: page
+doc_brief: "A Frobenius formula for the characters of the Hecke algebras — 28 sections: Page 1; Page 2; Page 3"
+---
+472 A. Ram
+
+For each r20 define the homogeneous symmetric function h,(X) to be the
+coefficient of t” in Q(Xt), ie.
+
+Q(Xt) = z, A(X)t" . (4.4)
+
+For a partition w= (141, H2,..., Hy) define
+h,(X) = hy, (X)hy,(X) . : hy, (X) :
+
+For any partition A = (A,, A2,...), the Schur function s,(X) in the alphabet X can
+be given by
+
+8,(X) = det(hy,-i+(X))isijsn>
+
+where n = ¢(A), and h,(X) = 0 for any r <0.
+Let X, Y be two alphabets. The addition formula for Schur functions is
+
+s(X + Y)= ¥ s,(X)say,(Y). (4.5)
+
+usd
+
+The duality formula for Schur functions is
+si(— X) = (— 1!4!s,(X) (4.6)
+
+where 2’ denotes the conjugate partition to 2.
+
+For a brief moment let S,,S,, 5, denote the irreducible representations of the
+symmetric group S, corresponding to the partitions A, uy, vt f respectively. Set
+Cayy to be the multiplicity of the representation S, in the Kronecker product of
+symmetric group representations S, ® S,. The numbers c,,, are symmetric with
+respect to all three partitions A, u,v. This given, the product formula for Schur
+functions is
+
+si(XY) = ¥. ciyS,(X)s\(Y) « (4.7)
+
+ay
+
+Let m,(X) be the monomial symmetric function in the alphabet X. For any
+alphabet X,
+h,(X) = ¥ s,(X)Ky,, and
+a
+
+5i(X) = Y) Kiym,(X) , (4.8)
+H
+
+where K,, is the Kostka number, the number of column strict fillings of the shape
+A with weight py.
+For alphabets X = x, +...+%, Y=y, +...+ y, and a variable t,
+
+qxyi- = TT tebe (49)
+
+isijsn | — Xi;

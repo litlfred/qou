@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/0310279v5/blocks/prop-sec-033-04",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 94,
+  "pageEnd": 101,
+  "text": "prop-sec-033-04.md",
+  "derivedFrom": "library/0310279v5/sections/sec-033",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0310279v5/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "5.6.2",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-033-56-pushing-across-regions-with-a-gexchange-folia.md (p. 94-101)",
+    "claim_id": "0310279v5#proposition:5.6.2",
+    "lean_status": "unformalized"
+  }
+}

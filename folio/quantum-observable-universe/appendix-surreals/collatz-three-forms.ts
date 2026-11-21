@@ -3,8 +3,8 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:collatz-three-forms",
   title: "Three faces of the $q$-Collatz conjecture",
-  interprets: "prop:collatz-contact-boundary",
-  uses: ["prop:collatz-contact-boundary"],
+  interprets: "conj:collatz-contact-boundary",
+  uses: ["conj:collatz-contact-boundary"],
   tags: [
     "collatz",
     "hecke-algebra",

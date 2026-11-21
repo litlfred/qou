@@ -31,9 +31,9 @@
 
   `Polynomial.eval_multiset_prod_X_sub_C_derivative` is exactly this step.
 
-  -- Ref: [manuscript] QOU/Knot/Clausen.lean          (what consumes the constant)
-  -- Ref: [manuscript] QOU/OneLoopPrefactorInvariance.lean
-  -- Ref: [manuscript] computations/probes/one_loop_c_sigma_tetrahedral_probe.py
+  -- Ref: [leitner2026] QOU/Knot/Clausen.lean          (what consumes the constant)
+  -- Ref: [leitner2026] QOU/OneLoopPrefactorInvariance.lean
+  -- Ref: [leitner2026] computations/probes/one_loop_c_sigma_tetrahedral_probe.py
 -/
 import Mathlib.RingTheory.RootsOfUnity.PrimitiveRoots
 import Mathlib.RingTheory.Polynomial.Cyclotomic.Basic

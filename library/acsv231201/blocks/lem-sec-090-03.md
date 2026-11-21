@@ -1,0 +1,1 @@
+27 (Morse Lemma). Let a < b be real numbers, suppose that the interval [a,b] contains no critical values of h, and assume that h-\({a, b]) is compact. Then the inclusion X<q — Xzp is a homotopy equivalence.

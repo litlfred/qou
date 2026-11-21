@@ -1,0 +1,23 @@
+Figure II.3: The stabilization Markov move.
+
+11.2, Representations of the Braid Group and the Iwahori-Hecke Algebra
+
+In this section, we introduce the Iwahori-Hecke algebras of type A, and discuss their
+central importance in knot theory. Initally, we wil! take the perspective that a link invariant
+satisfying a skein relation akin to I.1 is given, and use it to produce a particular quotient of the
+braid group algebra that the invariant factors through. Afterwards, we take the Hecke algebra as
+a starting point, and following Jones ([24]), show how to recover those link invariants (satisfying
+
+skein relations) from the characters of its representations.
+
+11.2.1. From Link Invariants to Algebras
+Fix a commutative ring F and consider a link invariant Q taking values in F. By composing
+
+with the closure map, for each d we get a linear function Ou : FB, — F, defined on braids by
+Qala) = Q(a).
+
+where FB, is the group algebra of the braid group. Such a map Qa is actually a trace on account
+
+of the first Markov move, so the linear subspace
+
+ker Qa = {a € FBa | Qa(a9) = 0 for all 8 € FBQ}.

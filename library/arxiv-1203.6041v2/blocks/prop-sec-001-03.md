@@ -1,0 +1,1 @@
+Other studies of ππ I = 2 scattering in lattice QCD ([23–25]) have largely limited themselves to the threshold behavior of the scat- tering amplitude in S-wave, as expressed by the scatter- ing length.

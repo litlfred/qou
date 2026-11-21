@@ -685,17 +685,60 @@ def test_valid_tokens_and_False_do_not_warn(capsys):
     assert capsys.readouterr().err == ""
 
 
-def test_bool_True_is_not_a_documented_anchor_and_warns(capsys):
-    """`q0_anchor=True` reads as "yes, it has an anchor" and is not a case.
+def test_bool_True_is_not_a_documented_anchor_and_warns():
+    """`q0_anchor=True` reads as "yes, it has an anchor" and is refused.
 
-    Only `False` is special-cased (`is False`), so `True` falls through to the
-    explicit branch and is stamped as the literal `True` — which the anchor
-    audit cannot map. This is not hypothetical: it reached `main` in
-    `markov_bond_rule_forces_pairwise_probe` (bean qou-eggf), beside a comment
-    that already said the correct answer was `proton`.
+    `False` means "declare this witness q0-independent (`q0Anchor: 'independent'`)";
+    `True` has no corresponding meaning and raises `ValueError` rather than
+    stamping the literal boolean `True` (which the anchor audit cannot map;
+    found in `markov_bond_rule_forces_pairwise_probe`, bean qou-eggf).
     """
+    import pytest
+
     payload = {"parameters": {"q0": _MUON}}
+    with pytest.raises(ValueError, match="q0_anchor=True has no meaning"):
+        w.WitnessBuilder.stamp_staleness_metadata(
+            payload, script_path=_UNLISTED, engine="python", q0_anchor=True)
+    assert "q0Anchor" not in payload
+
+
+def test_manifest_vocabulary_tokens_normalise_to_witness_tokens(tmp_path, capsys):
+    """`ideal_muon` / `physical_proton` (manifest vocabulary) normalise to
+    `muon` / `proton` (witness vocabulary) without warning (bean `qou-9du2`)."""
+    import json
+
+    p_proton = {"result": 1}
     w.WitnessBuilder.stamp_staleness_metadata(
-        payload, script_path=_UNLISTED, engine="python", q0_anchor=True)
-    assert payload["q0Anchor"] is True
-    assert "not one of" in capsys.readouterr().err
+        p_proton, script_path=_UNLISTED, engine="python",
+        q0_anchor="physical_proton",
+    )
+    assert p_proton["q0Anchor"] == "proton"
+    assert p_proton.get("q0Value")
+    assert capsys.readouterr().err == ""
+
+    p_muon = {" q0": 1, "q0Anchor": "ideal_muon"}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        p_muon, script_path=_UNLISTED, engine="python",
+    )
+    assert p_muon["q0Anchor"] == "muon"
+    assert p_muon.get("q0Value")
+    assert capsys.readouterr().err == ""
+
+    script = tmp_path / "m_vocab.py"
+    script.write_text("# test\n")
+    wb = w.WitnessBuilder.wrap_legacy(
+        "m-vocab-wrap", {"q0Anchor": "physical_proton", "result": 2},
+        script_path=script, output_dir=tmp_path,
+    )
+    out_wrap = json.loads(wb.save().read_text())
+    assert out_wrap["q0Anchor"] == "proton"
+    assert out_wrap.get("q0Value")
+    assert capsys.readouterr().err == ""
+
+    wb2 = w.WitnessBuilder(
+        "m-vocab-extra", engine="python", output_dir=tmp_path, _script_path=script,
+    )
+    out_extra = json.loads(wb2.save(extra={"q0Anchor": "ideal_muon"}).read_text())
+    assert out_extra["q0Anchor"] == "muon"
+    assert out_extra.get("q0Value")
+    assert capsys.readouterr().err == ""

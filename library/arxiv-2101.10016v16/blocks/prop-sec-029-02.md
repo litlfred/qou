@@ -1,0 +1,1 @@
+Let A be a discrete unitary coboundary wqh with a generating representation ρ. Then A has compatible ∗ -involution if and only if σ ⊗ ρ(R), σ ⊗ ρ(R −1 ) σ ⊗ ρ ⊗ ρ(I ⊗ R1 ⊗ ∆(R)), ρ ⊗ ρ ⊗ σ(R ⊗ I∆ ⊗ 1(R)) are positive for every irreducible representation σ.

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1905.02045v3
-doc_title: "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM"
+doc_title: "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM INVARIANTS OF HYPERBOLIC KNOTS"
 section_id: sec-005-22-first-reciprocity-formula-for-the-q-pochhamme
 section_title: "First reciprocity formula for the q-Pochhammer symbol"
 section_number: 2.2
 pages: 9-14
 source_pdf: 1905.02045v3.pdf
 source_sha256: 8e7eb17c7d1f4f4e
-doc_brief: "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM — We obtain an exact modularity relation for the q-Pochhammer symbol."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.918
-latex_coverage_ratio: 0.919
+latex_coverage_ratio: 0.948
+doc_brief: "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM INVARIANTS OF HYPERBOLIC KNOTS — We obtain an exact modularity relation for the q-Pochhammer symbol."
 ---
 []{#ss:1rf label="ss:1rf"}
 

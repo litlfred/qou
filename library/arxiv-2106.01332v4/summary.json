@@ -2,64 +2,88 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2106.01332v4",
  "source_sha256": "44c19a99624997bf",
- "brief": "Braided matter interactions in quantum gravity via 1-handle attachment — 9 sections: INTRODUCTION; (for C𝓁(6)) and B3 (for C𝓁(4)). In; THEORIES ON RIBBON GRAPHS",
- "extended": "**Braided matter interactions in quantum gravity via 1-handle attachment**\n\n*Niels Gresnigt, 1,∗ Antonino Marcianò,2, 3,† and Emanuele Zappala 4,‡*\n\n15 pp, 9 sections.\n\n**Outline.** I INTRODUCTION; 3 (for C𝓁(6)) and B3 (for C𝓁(4)). In such a co; III THEORIES ON RIBBON GRAPHS; IV LEPTONS AND QUARKS AS TOPOLOGICAL EXCIT A T; V RIBBON NETWORKS EMBEDDED INTO 3-MANIFOLDS; L Using the deﬁnition of braided network, a fr; VI ISOTOPY INV ARIANTS OF BRAIDED NETWORKS; VII POSSIBLE PRE-GEOMETRIC UNIFICA TION OF MA ; VIII DISCUSSION\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: LetC ={X0,Y,X 1} be a cobordism. Then C can be obtained as:\n- Theorem 2: LetN be a trivalent (oriented) braided network and let n≥ 1. Then, KLn(N ) is an isotopy invariant",
+ "brief": "Braided matter interactions in quantum gravity via 1 -handle attachment — 14 sections: Front matter; I Introduction; II A topological model of composit",
+ "extended": "**Braided matter interactions in quantum gravity via 1 -handle attachment**\n\n*Niels Gresnigt,1, ∗Antonino Marcianò,2, 3, † and Emanuele Zappala4, ‡*\n\n15 pp, 14 sections.\n\n**Outline.** Front matter; I Introduction; II A topological model of composite preons; III Theories on ribbon graphs; A The evolution algebra; IV Leptons and quarks as topological excitatio; A The trivalent scheme; V Ribbon networks embedded into 3-manifolds; A Surgery on 3-manifolds; B Braid dynamics via surgery; VI Isotopy invariants of braided networks; A Examples and Computations; VII Possible pre-geometric unification of matt; Acknowledgement",
  "tokens": {
-  "brief": 40,
-  "extended": 189
+  "brief": 37,
+  "extended": 155
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
    "id": "sec-000-i-introduction",
-   "title": "INTRODUCTION",
+   "title": "I Introduction",
    "pages": "1-3"
   },
   {
-   "id": "sec-001-3-for-c𝓁6-and-b3-for-c𝓁4-in-such-a-construction",
-   "title": "(for C𝓁(6)) and B3 (for C𝓁(4)). In such a construction, the",
+   "id": "sec-001-ii-a-topological-model-of-composite-preons",
+   "title": "II A topological model of composite preons",
    "pages": "3-4"
   },
   {
    "id": "sec-002-iii-theories-on-ribbon-graphs",
-   "title": "THEORIES ON RIBBON GRAPHS",
+   "title": "III Theories on ribbon graphs",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-003-a-the-evolution-algebra",
+   "title": "A The evolution algebra",
    "pages": "4-5"
   },
   {
-   "id": "sec-003-iv-leptons-and-quarks-as-topological-excit-a-tio",
-   "title": "LEPTONS AND QUARKS AS TOPOLOGICAL EXCIT A TIONS",
+   "id": "sec-004-iv-leptons-and-quarks-as-topological-excitations",
+   "title": "IV Leptons and quarks as topological excitations",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-005-a-the-trivalent-scheme",
+   "title": "A The trivalent scheme",
    "pages": "5-6"
   },
   {
-   "id": "sec-004-v-ribbon-networks-embedded-into-3-manifolds",
-   "title": "RIBBON NETWORKS EMBEDDED INTO 3-MANIFOLDS",
-   "pages": "6-7"
+   "id": "sec-006-v-ribbon-networks-embedded-into-3-manifolds",
+   "title": "V Ribbon networks embedded into 3-manifolds",
+   "pages": "6-8"
   },
   {
-   "id": "sec-005-l-using-the-deﬁnition-of-braided-network-a-frame",
-   "title": "Using the deﬁnition of braided network, a framed link L is",
-   "pages": "7-10"
+   "id": "sec-007-a-surgery-on-3-manifolds",
+   "title": "A Surgery on 3-manifolds",
+   "pages": "8-9"
   },
   {
-   "id": "sec-006-vi-isotopy-inv-ariants-of-braided-networks",
-   "title": "ISOTOPY INV ARIANTS OF BRAIDED NETWORKS",
-   "pages": "10-13"
+   "id": "sec-008-b-braid-dynamics-via-surgery",
+   "title": "B Braid dynamics via surgery",
+   "pages": "9-10"
   },
   {
-   "id": "sec-007-vii-possible-pre-geometric-unifica-tion-of-ma-tt",
-   "title": "POSSIBLE PRE-GEOMETRIC UNIFICA TION OF MA TTER AND GRA VITY",
-   "pages": "13-14"
+   "id": "sec-009-vi-isotopy-invariants-of-braided-networks",
+   "title": "VI Isotopy invariants of braided networks",
+   "pages": "10-11"
   },
   {
-   "id": "sec-008-viii-discussion",
-   "title": "DISCUSSION",
-   "pages": "14-15"
+   "id": "sec-010-a-examples-and-computations",
+   "title": "A Examples and Computations",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-011-vii-possible-pre-geometric-unification-of-matter",
+   "title": "VII Possible pre-geometric unification of matter and gravity",
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-012-acknowledgement",
+   "title": "Acknowledgement",
+   "pages": "15-15"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

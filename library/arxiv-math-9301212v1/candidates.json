@@ -1,0 +1,213 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-9301212v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "029787800ddf73e564ca6ad432065a5b807b660e394c5624d951be82153f8c45",
+  "file": "9301212v1.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:math/9301212v1 [math.GT] 1 Jan 1993",
+  "authors": "AMERICAN MATHEMATICAL SOCIETY",
+  "arxiv": {
+   "id": "math/9301212",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "1 Jan 1993"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "theorem": 5,
+   "corollary": 1
+  },
+  "formalization_candidates": 6,
+  "by_domain": {
+   "math": 6
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 6
+  },
+  "by_evidence_location": {
+   "in-paper": 6
+  },
+  "by_lean_status": {
+   "proved-here": 3,
+   "doc-cited-in-lean-unlinked-claim": 3
+  },
+  "needs_lean_proof": 3
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "A",
+   "name": null,
+   "statement": "Among all recti\ufb01able loops \u03b3: S1 \u2192R3, round circles have the least energy (E (round circle) = 4) and any \u03b3 of least energy parameterizes a round circle. 1991 Mathematics Subject Classi\ufb01cation. Primary 57M25, 49Q10; Secondary 53A04, 57N45, 58E30. Received by the editors April 14, 1992 The \ufb01rst author thanks the San Diego Supercomputer Center for use of their facilities. The second and fourth authors were supported in part by NSF grant DMS-8901412. The third author was supported in part by NSF grant DMS-9006954 c \u20dd1993 American Mathematical Society 0273-0979/93 $1.00 + $.25 per page",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/page-001.md (p. 1-1)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/page-001.md",
+   "section_title": "Page 1",
+   "pages": "1-1",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/page-001.md (p. 1-1)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-page-001-01",
+   "block_iri": "library/arxiv-math-9301212v1/blocks/thm-page-001-01",
+   "claim_id": "arxiv-math-9301212v1#theorem:A",
+   "lean_status": "proved-here",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/FHWExponentWindow.lean:neg_two_mem_bfhwWindow",
+    "folio/quantum-observable-universe/lean/QOU/MobiusRegulator.lean:integral_inv_sq_of_pos"
+   ],
+   "needs_lean_proof": false
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "B",
+   "name": null,
+   "statement": "If K is a smooth prime (not a connected sum) knot, then there exists a simple closed recti\ufb01able \u03b3K of knot type K with E(\u03b3K) \u2264E(\u03b3) for all recti\ufb01able loops \u03b3 which are topologically ambient isotopic to K.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/page-002.md (p. 2-2)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/page-002.md",
+   "section_title": "Page 2",
+   "pages": "2-2",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/page-002.md (p. 2-2)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-page-002-01",
+   "block_iri": "library/arxiv-math-9301212v1/blocks/thm-page-002-01",
+   "claim_id": "arxiv-math-9301212v1#theorem:B",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/FHWExponentWindow.lean:neg_two_mem_bfhwWindow",
+    "folio/quantum-observable-universe/lean/QOU/MobiusRegulator.lean:integral_inv_sq_of_pos"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "C",
+   "name": null,
+   "statement": "Any minimizer \u03b3K, as above, will enjoy some regularity. With an arc length parametrization, \u03b3K will be in C1,1. Several results of [FH] can be improved quantitatively.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/page-002.md (p. 2-2)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/page-002.md",
+   "section_title": "Page 2",
+   "pages": "2-2",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/page-002.md (p. 2-2)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-page-002-02",
+   "block_iri": "library/arxiv-math-9301212v1/blocks/thm-page-002-02",
+   "claim_id": "arxiv-math-9301212v1#theorem:C",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/FHWExponentWindow.lean:neg_two_mem_bfhwWindow",
+    "folio/quantum-observable-universe/lean/QOU/MobiusRegulator.lean:integral_inv_sq_of_pos"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "D",
+   "name": null,
+   "statement": "If \u03b3 is topologically tame, let c([\u03b3]) denote the (topological) crossing number of the knot type. We have 2\u03c0c([\u03b3]) + 4 \u2264E(\u03b3). (It was proved in [FH] that \ufb01nite energy implies tame.) Since an essential knot must have three or more crossings, we obtain the following",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/page-002.md (p. 2-2)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/page-002.md",
+   "section_title": "Page 2",
+   "pages": "2-2",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/page-002.md (p. 2-2)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-page-002-03",
+   "block_iri": "library/arxiv-math-9301212v1/blocks/thm-page-002-03",
+   "claim_id": "arxiv-math-9301212v1#theorem:D",
+   "lean_status": "proved-here",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/FHWExponentWindow.lean:neg_two_mem_bfhwWindow"
+   ],
+   "needs_lean_proof": false
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": null,
+   "name": null,
+   "statement": "Any recti\ufb01able loop with energy less than 6\u03c0 +4 \u224822.84954 is unknot- ted. Computer experiments of [A] as reported in [O3] and independently by the \ufb01rst author yield an essential knot (a trefoil) with energy \u224874. It may be estimated [S,T,W] that the number K(n) of distinct knots of at most n crossings satis\ufb01es 2n \u2264K(n) \u22642 \u00b7 24n. Hence the number of knot types with representatives below a given energy threshold can also be bounded by an exponential.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/page-002.md (p. 2-2)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/page-002.md",
+   "section_title": "Page 2",
+   "pages": "2-2",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/page-002.md (p. 2-2)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "cor-page-002-04",
+   "block_iri": "library/arxiv-math-9301212v1/blocks/cor-page-002-04",
+   "claim_id": "arxiv-math-9301212v1#cor-page-002-04",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/FHWExponentWindow.lean:neg_two_mem_bfhwWindow",
+    "folio/quantum-observable-universe/lean/QOU/MobiusRegulator.lean:integral_inv_sq_of_pos"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "E",
+   "name": null,
+   "statement": "The number Ke(M) of isomorphism classes of knots which have rep- resentatives of energy less than or equal to M is bounded by 2(24\u22124/2\u03c0)(241/2\u03c0)M \u2248 (0.264)(1.658)M. In particular, only \ufb01nitely many knot types occur below any \ufb01nite energy threshold.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/page-002.md (p. 2-2)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/page-002.md",
+   "section_title": "Page 2",
+   "pages": "2-2",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/page-002.md (p. 2-2)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-page-002-05",
+   "block_iri": "library/arxiv-math-9301212v1/blocks/thm-page-002-05",
+   "claim_id": "arxiv-math-9301212v1#theorem:E",
+   "lean_status": "proved-here",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/FHWExponentWindow.lean:neg_two_mem_bfhwWindow"
+   ],
+   "needs_lean_proof": false
+  }
+ ]
+}

@@ -1,1 +1,0 @@
-*For semisimple $A = H_n(R, q)$, Hochschild cohomology vanishes in positive degrees $\mathrm{HH}^k(A,\, A) = 0$. The GB filtration spectral sequence collapses at $E_1$, concentrating all contributions in the center $E_\infty^{0, *} = Z(A)$.*

@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2302.05903v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2302.05903v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-2302.05903v2",
+  "title": "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials",
   "contains": [
+    "library/arxiv-2302.05903v2/sections/sec-front-matter",
     "library/arxiv-2302.05903v2/sections/sec-000",
     "library/arxiv-2302.05903v2/sections/sec-001",
     "library/arxiv-2302.05903v2/sections/sec-002",
@@ -23,10 +24,11 @@
     "library/arxiv-2302.05903v2/sections/sec-009",
     "library/arxiv-2302.05903v2/sections/sec-010",
     "library/arxiv-2302.05903v2/sections/sec-011",
-    "library/arxiv-2302.05903v2/sections/sec-012"
+    "library/arxiv-2302.05903v2/sections/sec-012",
+    "library/arxiv-2302.05903v2/sections/sec-013"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -36,7 +38,9 @@
   },
   "meta": {
     "doc_id": "arxiv-2302.05903v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "2302.05903v2.pdf",
     "source_sha256": "9a17abd36cc8a317e86c463e7b641bb0a1cef799920ff374e62f9cb229c2ea1b",
     "pages": 15,

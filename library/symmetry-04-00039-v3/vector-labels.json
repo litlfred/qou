@@ -1,0 +1,6303 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "symmetry-04-00039-v3",
+  "pages": [
+    {
+      "page": 5,
+      "rotation": 0,
+      "drawings": 6,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 2. A Moebius strip (MS) and its boundary.",
+        "Figure 3. An MS as a concatenation of torus knots."
+      ],
+      "labels": [
+        {
+          "text": "Symmetry 2012, 4",
+          "bbox": [
+            49.68,
+            46.02,
+            139.02,
+            59.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "43",
+          "bbox": [
+            533.64,
+            46.07,
+            548.64,
+            59.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "Figure 2. A Moebius strip (MS) and its boundary.",
+          "bbox": [
+            176.94,
+            80.04,
+            421.29,
+            93.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "We should point out that it is not only the MS border that is knotlike; we can also view an MS as a",
+          "bbox": [
+            64.08,
+            252.72,
+            548.7,
+            266.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "concatenation of (2, n) torus knots and we can illustrate that notion by letting the toroidal core radius, r,",
+          "bbox": [
+            49.68,
+            269.76,
+            551.65,
+            283.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "vary from zero up to some maximum value as we implement Equations 1-1. Figure 3 shows the result",
+          "bbox": [
+            49.68,
+            286.74,
+            548.69,
+            300.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "for the trefoil (NHT = 3) using a discrete number of radii (In this case three).",
+          "bbox": [
+            49.68,
+            303.72,
+            424.35,
+            317.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "Figure 3. An MS as a concatenation of torus knots.",
+          "bbox": [
+            174.18,
+            332.76,
+            424.17,
+            346.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "Y",
+          "bbox": [
+            187.06,
+            424.76,
+            195.96,
+            430.08
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Arial-BoldMT"
+          ],
+          "sizes": [
+            7.98
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            297.54,
+            479.86,
+            302.86,
+            488.76
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Arial-BoldMT"
+          ],
+          "sizes": [
+            7.98
+          ]
+        },
+        {
+          "text": "Thus, concatenation is one way to “frame” a knot in order to create an MS. Another approach to",
+          "bbox": [
+            64.08,
+            510.3,
+            548.68,
+            523.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "framing is to exploit Alexander’s theorem [8], which says that every knot or link can be represented as",
+          "bbox": [
+            49.68,
+            527.28,
+            548.65,
+            540.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "a braid with closure. In our case we are concerned with the simplest braids involving only two strands",
+          "bbox": [
+            49.68,
+            544.26,
+            548.65,
+            557.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "as shown in Figure 4 and closure means that the top and bottom ends of each braid in the column on",
+          "bbox": [
+            49.68,
+            561.3,
+            548.63,
+            574.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "the left are looped around and brought together as indexed left to right with the result shown in the",
+          "bbox": [
+            49.68,
+            578.28,
+            548.69,
+            591.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "next two columns (the right hand column being the usual portrayal).",
+          "bbox": [
+            49.68,
+            595.26,
+            379.67,
+            608.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "The figure illustrates a number of relationships: the result for n = −1 is the folded over unknot (no",
+          "bbox": [
+            64.08,
+            612.3,
+            548.62,
+            625.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "twist) with one crossover while n = −3 gives the trefoil with three crossovers (The minus sign means a",
+          "bbox": [
+            49.68,
+            629.28,
+            548.69,
+            642.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "twist to the left), for n = 0 we get a pair of unlinked loops while for n = −2, the two loops are linked",
+          "bbox": [
+            49.68,
+            646.26,
+            548.65,
+            659.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "together at two crossovers. These results are examples of two general rules: odd and even values of n",
+          "bbox": [
+            49.68,
+            663.3,
+            548.65,
+            676.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "yield knots and links, respectively, and the number of crossings correlates with knot/link parameter n.",
+          "bbox": [
+            49.68,
+            680.28,
+            540.97,
+            693.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "rotation": 0,
+      "drawings": 1,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 6. The basic set of Flattened Moebius strips (FMS)."
+      ],
+      "labels": [
+        {
+          "text": "Symmetry 2012, 4",
+          "bbox": [
+            49.68,
+            46.02,
+            139.02,
+            59.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "46",
+          "bbox": [
+            533.64,
+            46.07,
+            548.64,
+            59.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "2. The Basic Particle Model",
+          "bbox": [
+            49.68,
+            80.21,
+            193.64,
+            93.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "2.1. Introduction",
+          "bbox": [
+            49.68,
+            109.08,
+            133.65,
+            122.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "To anticipate what we have to look forward to in what follows, here’s another quotation [3]: “The",
+          "bbox": [
+            64.08,
+            138.06,
+            548.65,
+            151.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "topologically iconic Moebius strip (MS) is a closed ribbon that incorporates a single half-twist but it",
+          "bbox": [
+            49.68,
+            155.04,
+            548.68,
+            168.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "can be generalized to any (integral) number of half-twists (NHT). Flattened Moebius strips (FMS) are",
+          "bbox": [
+            49.68,
+            172.02,
+            548.65,
+            185.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "generalized MS with a prescribed direction of traverse and an essentially two-dimensional",
+          "bbox": [
+            49.68,
+            189.06,
+            548.63,
+            202.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "configuration that can take the form of an elementary, triangular planform or the contiguous composite",
+          "bbox": [
+            49.68,
+            206.04,
+            548.68,
+            219.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "of such configurations. The composites result from an operation called fusion in which elementary",
+          "bbox": [
+            49.68,
+            223.02,
+            548.66,
+            236.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "configurations are combined to produce configurations with various values of twist. All values of twist",
+          "bbox": [
+            49.68,
+            240.06,
+            548.73,
+            253.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "can be realized in this manner but the process is degenerate; a multiplicity of configurations can exist",
+          "bbox": [
+            49.68,
+            257.04,
+            548.67,
+            270.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "with the same value of NHT”.",
+          "bbox": [
+            49.68,
+            274.02,
+            197.29,
+            287.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "Composites will be addressed in the next section; here we introduce the kernel of our particle model:",
+          "bbox": [
+            64.08,
+            291.06,
+            552.37,
+            304.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "representations of four basic spin 1/2 fermions, that is four of the solitonic MS discussed in the",
+          "bbox": [
+            49.68,
+            308.04,
+            548.64,
+            321.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "preceding section, each of which has, however, been flattened into a triangular planform so that it is an",
+          "bbox": [
+            49.68,
+            325.02,
+            548.71,
+            338.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "essentially 2 + 1 dimensional entity with time being measured normal to the planform; these four will",
+          "bbox": [
+            49.68,
+            342.06,
+            548.64,
+            355.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "henceforth be referred to as FMS3.",
+          "bbox": [
+            49.68,
+            357.15,
+            221.65,
+            372.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            7.98,
+            12.05
+          ]
+        },
+        {
+          "text": "The very influential physicist Professor John Wheeler, master of the theoretical sound bite, is",
+          "bbox": [
+            64.08,
+            376.02,
+            548.57,
+            389.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "reputed to have proclaimed something like “Matter tells spacetime how to curve and spacetime tells",
+          "bbox": [
+            49.68,
+            393.06,
+            548.65,
+            406.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "matter how to move”, a quotation commonly used to encapsulate the nature of General Relativity.",
+          "bbox": [
+            49.68,
+            410.04,
+            548.65,
+            423.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "However, from the point of view of this model that’s not quite right. As solitons in and of the fabric of",
+          "bbox": [
+            49.68,
+            427.02,
+            548.65,
+            440.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "spacetime our particles are not actually discrete “objects” that exist distinct from spacetime and they",
+          "bbox": [
+            49.68,
+            444.06,
+            548.67,
+            457.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "are certainly not amenable to realistic depiction as such. Nevertheless, in the interests of reasonable",
+          "bbox": [
+            49.68,
+            461.04,
+            548.64,
+            474.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "exposition they will be so depicted—that is to say, represented—as shown in Figure 6 and in what",
+          "bbox": [
+            49.68,
+            478.02,
+            548.67,
+            491.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "follows. Also the labels A, B, C, and D will be retained until such time as identification with basic",
+          "bbox": [
+            49.68,
+            495.06,
+            548.7,
+            508.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "particles of the standard model becomes relevant.",
+          "bbox": [
+            49.68,
+            512.04,
+            290.26,
+            525.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "Figure 6. The basic set of Flattened Moebius strips (FMS).",
+          "bbox": [
+            155.46,
+            541.02,
+            442.84,
+            554.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "3 More on flattening below.",
+          "bbox": [
+            49.68,
+            779.69,
+            162.34,
+            792.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            6.48,
+            10.02
+          ]
+        }
+      ]
+    },
+    {
+      "page": 18,
+      "rotation": 0,
+      "drawings": 20,
+      "rasterImagesOnPage": 2,
+      "captionCandidates": [
+        "Figure 19. Hopf Multiplication and comultiplication."
+      ],
+      "labels": [
+        {
+          "text": "Symmetry 2012, 4",
+          "bbox": [
+            49.68,
+            46.05,
+            139.02,
+            59.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.02
+          ]
+        },
+        {
+          "text": "56",
+          "bbox": [
+            533.64,
+            46.07,
+            548.64,
+            59.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "We note the fundamental dichotomy—connections are either horizontal or vertical—a situation",
+          "bbox": [
+            64.08,
+            80.07,
+            548.71,
+            93.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "reminiscent of the Kauffman Bracket [8] which calls for a short digression: first we define state",
+          "bbox": [
+            49.68,
+            97.05,
+            548.67,
+            110.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            461.94,
+            111.44,
+            471.7,
+            126.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            12.28
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            517.6,
+            111.48,
+            531.12,
+            126.46
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            12.24
+          ]
+        },
+        {
+          "text": "and",
+          "bbox": [
+            484.8,
+            112.84,
+            514.04,
+            126.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.28
+          ]
+        },
+        {
+          "text": "functions for the horizontal and vertical connections of a quirk-antiquirk pair,",
+          "bbox": [
+            49.68,
+            113.19,
+            454.75,
+            126.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            542.58,
+            113.19,
+            548.64,
+            126.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            471.25,
+            119.73,
+            478.68,
+            128.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            7.08
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            527.23,
+            119.73,
+            534.66,
+            128.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            7.08
+          ]
+        },
+        {
+          "text": "respectively, where the value of  is either d or u. Also, we define",
+          "bbox": [
+            49.68,
+            132.02,
+            386.28,
+            147.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02,
+            12.63
+          ]
+        },
+        {
+          "text": "†",
+          "bbox": [
+            434.58,
+            133.07,
+            438.12,
+            140.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            7.08
+          ]
+        },
+        {
+          "text": "A  and  A to be the disenabling",
+          "bbox": [
+            388.08,
+            133.9,
+            548.63,
+            147.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02,
+            12.28
+          ]
+        },
+        {
+          "text": "and enabling operators4, respectively. Then, the fusing of a junction between an originally free FMS",
+          "bbox": [
+            49.68,
+            149.55,
+            548.72,
+            164.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            7.98,
+            12.02
+          ]
+        },
+        {
+          "text": "and antiFMS pair can be expressed in terms of a state function as",
+          "bbox": [
+            49.68,
+            168.45,
+            365.31,
+            181.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            236.22,
+            188.78,
+            245.59,
+            203.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            12.28
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            259.86,
+            188.78,
+            266.6,
+            203.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            12.28
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            334.44,
+            188.78,
+            344.2,
+            203.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            12.28
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            281.68,
+            188.82,
+            295.2,
+            203.8
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            12.24
+          ]
+        },
+        {
+          "text": "†",
+          "bbox": [
+            323.46,
+            189.35,
+            327.0,
+            197.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            7.08
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            269.58,
+            190.18,
+            278.45,
+            203.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.28
+          ]
+        },
+        {
+          "text": "+ A",
+          "bbox": [
+            304.68,
+            190.18,
+            323.26,
+            203.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.28
+          ]
+        },
+        {
+          "text": "(3-1)",
+          "bbox": [
+            521.64,
+            193.17,
+            545.68,
+            206.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            244.99,
+            197.07,
+            252.42,
+            205.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            7.08
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            291.37,
+            197.07,
+            298.8,
+            205.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            7.08
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            343.75,
+            197.07,
+            351.18,
+            205.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            7.08
+          ]
+        },
+        {
+          "text": "to be ",
+          "bbox": [
+            233.82,
+            212.37,
+            269.46,
+            231.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02,
+            13.81
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            283.5,
+            212.37,
+            287.46,
+            231.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            13.81
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            211.2,
+            215.24,
+            220.57,
+            230.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            12.28
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            350.58,
+            215.24,
+            357.32,
+            230.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            12.28
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            408.48,
+            215.24,
+            415.22,
+            230.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            12.28
+          ]
+        },
+        {
+          "text": "z such that",
+          "bbox": [
+            270.48,
+            216.64,
+            335.77,
+            232.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            7.08,
+            12.02,
+            12.28
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            338.16,
+            216.64,
+            342.94,
+            230.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            12.28
+          ]
+        },
+        {
+          "text": "x",
+          "bbox": [
+            360.54,
+            216.64,
+            365.99,
+            230.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            12.28
+          ]
+        },
+        {
+          "text": "and",
+          "bbox": [
+            366.54,
+            216.64,
+            395.9,
+            230.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.28
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            395.82,
+            216.64,
+            400.6,
+            230.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            12.28
+          ]
+        },
+        {
+          "text": "y",
+          "bbox": [
+            418.98,
+            216.64,
+            424.43,
+            230.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            12.28
+          ]
+        },
+        {
+          "text": "Also, we define the value of",
+          "bbox": [
+            64.08,
+            216.99,
+            205.26,
+            230.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": ", respectively. Similarly,",
+          "bbox": [
+            426.78,
+            216.99,
+            548.67,
+            230.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            219.85,
+            223.53,
+            227.28,
+            232.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            7.08
+          ]
+        },
+        {
+          "text": "d",
+          "bbox": [
+            342.9,
+            224.45,
+            346.44,
+            232.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            7.08
+          ]
+        },
+        {
+          "text": "u",
+          "bbox": [
+            400.68,
+            224.45,
+            404.22,
+            232.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            7.08
+          ]
+        },
+        {
+          "text": "the operation of fission can be expressed in terms of a similar state function as",
+          "bbox": [
+            49.68,
+            238.29,
+            428.65,
+            251.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            236.65,
+            259.53,
+            247.78,
+            274.03
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            11.85
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            257.88,
+            259.53,
+            264.38,
+            274.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            11.85
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            282.6,
+            259.53,
+            292.02,
+            274.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            11.85
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            306.12,
+            259.53,
+            312.63,
+            274.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            11.85
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            332.65,
+            259.53,
+            345.74,
+            274.03
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            11.85
+          ]
+        },
+        {
+          "text": "†",
+          "bbox": [
+            324.42,
+            260.06,
+            327.84,
+            267.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            6.85
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            267.66,
+            260.88,
+            276.21,
+            274.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            11.85
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            315.3,
+            260.88,
+            323.85,
+            274.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            11.85
+          ]
+        },
+        {
+          "text": "(3-2)",
+          "bbox": [
+            521.64,
+            263.67,
+            545.68,
+            276.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            242.73,
+            267.56,
+            249.92,
+            275.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            6.85
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            291.99,
+            267.56,
+            299.18,
+            275.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            6.85
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            342.39,
+            267.56,
+            349.58,
+            275.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            6.85
+          ]
+        },
+        {
+          "text": "3.3. Hopf Algebra",
+          "bbox": [
+            49.68,
+            295.11,
+            139.39,
+            308.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "These functions turn out to find expression as coefficients in a tensor formalism [2] that describes",
+          "bbox": [
+            64.08,
+            324.03,
+            548.69,
+            337.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "the operations of fusion and fission, which implicate this model’s identity as a Hopf algebra [14].",
+          "bbox": [
+            49.68,
+            341.01,
+            548.67,
+            354.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "Appendix (C) discusses that connection in more detail but, briefly, we need to associate the process of",
+          "bbox": [
+            49.68,
+            358.05,
+            548.67,
+            371.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "fusion with the Hopf algebraic operation of multiplication and the process of fission with the operation",
+          "bbox": [
+            49.68,
+            375.03,
+            548.66,
+            388.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "of comultiplication. This gives us two essential components of a bialgebra, and with the inclusion of",
+          "bbox": [
+            49.68,
+            392.01,
+            548.62,
+            405.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "what’s known as an antipode, the essential elements of a Hopf algebra [14].",
+          "bbox": [
+            49.68,
+            409.05,
+            419.62,
+            422.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "For comparison, here is the Hopf algebra’s diagrammatical way to picture the two operations of",
+          "bbox": [
+            64.08,
+            426.03,
+            548.63,
+            439.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "multiplication and comultiplication: Diagrammatically, the two sets of operations—those in Figures 18",
+          "bbox": [
+            49.68,
+            443.01,
+            548.66,
+            456.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "and 19—really say the same thing: on the one hand two entities combine to make a third entity and on",
+          "bbox": [
+            49.68,
+            460.05,
+            548.67,
+            473.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "the other, one entity splits in two.",
+          "bbox": [
+            49.68,
+            477.03,
+            216.33,
+            490.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "Figure 19. Hopf Multiplication and comultiplication.",
+          "bbox": [
+            169.5,
+            506.01,
+            428.84,
+            519.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.02
+          ]
+        },
+        {
+          "text": "In the Hopf algebra these operations are representative of corresponding tensor operations on",
+          "bbox": [
+            64.08,
+            615.09,
+            548.65,
+            628.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "members of vector spaces [14]. From the point of view of our model (See section 3b, below), the",
+          "bbox": [
+            49.68,
+            632.07,
+            548.65,
+            645.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "inputs f and f represent fermions and antifermions, also members of vector spaces V and V*,",
+          "bbox": [
+            49.68,
+            648.81,
+            548.64,
+            662.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "respectively, and the Bs are bosons, members of a certain matrix, M. One requirement for relating our",
+          "bbox": [
+            49.68,
+            668.07,
+            548.66,
+            681.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "model to a Hopf algebra is therefore to model the fusion and fission operations in a tensor formalism.",
+          "bbox": [
+            49.68,
+            685.11,
+            548.65,
+            698.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "As carried out in [2] that task is summarized in Appendix C with the result that fusion and fission can,",
+          "bbox": [
+            49.68,
+            702.09,
+            548.68,
+            715.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "indeed, be recognized as manifestations of the Hopf algebra operations of multiplication and",
+          "bbox": [
+            49.68,
+            719.07,
+            548.68,
+            732.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "comultiplication, respectively.",
+          "bbox": [
+            49.68,
+            736.11,
+            201.33,
+            749.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "4 * Note the analogy to the annihilation and creation operators of quantum field theory",
+          "bbox": [
+            49.68,
+            779.69,
+            395.86,
+            792.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            6.48,
+            10.02
+          ]
+        }
+      ]
+    },
+    {
+      "page": 19,
+      "rotation": 0,
+      "drawings": 1,
+      "rasterImagesOnPage": 2,
+      "captionCandidates": [
+        "Figure 20. Two mutually conjugate pions."
+      ],
+      "labels": [
+        {
+          "text": "Symmetry 2012, 4",
+          "bbox": [
+            49.68,
+            46.05,
+            139.02,
+            59.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.02
+          ]
+        },
+        {
+          "text": "57",
+          "bbox": [
+            533.64,
+            46.07,
+            548.64,
+            59.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "The antipode is also discussed in the appendix; while its definition and translation from Hopf",
+          "bbox": [
+            64.08,
+            80.07,
+            548.7,
+            93.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "language into model language is somewhat involved, it turns out that the model version of the antipode",
+          "bbox": [
+            49.68,
+            97.05,
+            548.68,
+            110.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "involves the composites resulting from fusion in a straightforward manner. The conclusion is that our",
+          "bbox": [
+            49.68,
+            114.09,
+            548.68,
+            127.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "model qualifies as a Hopf algebra (or, equivalently as a quantum group).",
+          "bbox": [
+            49.68,
+            131.07,
+            404.1,
+            144.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "3.3. First-Order Fusion",
+          "bbox": [
+            49.68,
+            160.11,
+            166.69,
+            173.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "As to those compositional products, two examples of what we shall designate as first order fusion",
+          "bbox": [
+            64.08,
+            189.09,
+            548.64,
+            202.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "are shown in Figure 20 (in this case it turns out that these are mesons, or more explicitly, pions).",
+          "bbox": [
+            49.68,
+            206.07,
+            514.89,
+            219.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "Figure 20. Two mutually conjugate pions.",
+          "bbox": [
+            195.54,
+            235.05,
+            402.71,
+            248.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.02
+          ]
+        },
+        {
+          "text": "On the left we see fermion C fused with the conjugate of fermion B and we note that the continuity",
+          "bbox": [
+            64.08,
+            334.35,
+            548.66,
+            347.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "of traverse is automatically maintained; we see traverse circulating around the “figure eight-like”",
+          "bbox": [
+            49.68,
+            351.39,
+            548.7,
+            364.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "configuration that results in each case, counterclockwise around the fermion and clockwise around the",
+          "bbox": [
+            49.68,
+            368.37,
+            548.66,
+            381.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "antifermion. The composite particle on the right is the conjugate of the composite on the left. That is",
+          "bbox": [
+            49.68,
+            385.35,
+            548.65,
+            398.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "we have the usual algebraic relationship",
+          "bbox": [
+            49.68,
+            402.39,
+            248.07,
+            415.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "(CB*)* = BC*",
+          "bbox": [
+            258.72,
+            425.37,
+            332.52,
+            438.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "(3-3)",
+          "bbox": [
+            521.69,
+            425.37,
+            545.68,
+            438.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "and, geometrically, the pair also illustrate the Wheeler-Feynman notion with regard to motion either",
+          "bbox": [
+            49.68,
+            448.35,
+            548.69,
+            461.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "forward or backward in time.",
+          "bbox": [
+            49.68,
+            465.39,
+            195.92,
+            478.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "Since, as readily demonstrated, both algebraic twist and charge are preserved in fusion, the result is",
+          "bbox": [
+            64.08,
+            482.37,
+            548.64,
+            495.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldItal",
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.02
+          ]
+        },
+        {
+          "text": "a boson with even values of twist and spin. Looking ahead a bit, if we equate B and C with the neutron",
+          "bbox": [
+            49.68,
+            499.35,
+            548.64,
+            512.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "and the proton, respectively, the particle on the left, representing the composite CB*, is the way the",
+          "bbox": [
+            49.68,
+            516.39,
+            548.64,
+            529.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "pion is modeled herein, namely as a bound particle composed of a proton and an antineutron.",
+          "bbox": [
+            49.68,
+            531.15,
+            548.66,
+            546.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT",
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            7.08,
+            12.02,
+            12.24
+          ]
+        },
+        {
+          "text": "Similarly, the one on the right represents the as composed of a neutron and an antiproton.",
+          "bbox": [
+            49.68,
+            548.13,
+            548.62,
+            563.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            7.08,
+            12.02,
+            12.24
+          ]
+        },
+        {
+          "text": "Consequently, our model yields charge values of +e and −e, respectively, as it should, and twist values",
+          "bbox": [
+            49.68,
+            567.39,
+            548.67,
+            580.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "of 0 for both, also as it should if we associate twist with isospin as discussed in the previous discussion.",
+          "bbox": [
+            49.68,
+            584.37,
+            551.6,
+            597.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "The algebraic reason that each of the two pions has a vanishing twist is that the composite is the sum",
+          "bbox": [
+            49.68,
+            601.35,
+            548.57,
+            614.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "of two components with opposite twist in each case. The physical reason is that, although each",
+          "bbox": [
+            49.68,
+            618.39,
+            548.65,
+            631.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "composite can be formed by fusion (as per the above quotation) each can also be regarded as an",
+          "bbox": [
+            49.68,
+            635.37,
+            548.64,
+            648.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "untwisted closed band that has been subjected to an additional half twist.5",
+          "bbox": [
+            49.68,
+            650.43,
+            405.3,
+            665.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            7.98,
+            12.02
+          ]
+        },
+        {
+          "text": "The matter of creating bound particles and, in particular pions, is also interesting in a historical",
+          "bbox": [
+            64.08,
+            669.39,
+            548.63,
+            682.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "context: in 1949, Enrico Fermi and C. N. Yang wrote a paper entitled “Are mesons elementary",
+          "bbox": [
+            49.68,
+            686.37,
+            548.67,
+            699.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.02
+          ]
+        },
+        {
+          "text": "particles” [15]. The introduction to the paper contains the following statement: “We propose to discuss",
+          "bbox": [
+            49.68,
+            703.35,
+            548.65,
+            716.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "the hypothesis that the -meson may not be elementary, but may be a composite particle formed by",
+          "bbox": [
+            49.68,
+            717.92,
+            548.66,
+            733.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02,
+            12.63
+          ]
+        },
+        {
+          "text": "the association of a nucleon and an antinucleon. The first assumption will be, therefore, that both an",
+          "bbox": [
+            49.68,
+            737.37,
+            548.64,
+            750.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "5 which may have relevance to the subject of particulate genesis (but not in this paper).",
+          "bbox": [
+            49.68,
+            779.69,
+            399.26,
+            792.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            6.48,
+            10.02
+          ]
+        }
+      ]
+    },
+    {
+      "page": 25,
+      "rotation": 0,
+      "drawings": 4,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 24. Assembly of convolution products."
+      ],
+      "labels": [
+        {
+          "text": "Symmetry 2012, 4",
+          "bbox": [
+            49.68,
+            46.05,
+            139.02,
+            59.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.02
+          ]
+        },
+        {
+          "text": "63",
+          "bbox": [
+            533.64,
+            46.07,
+            548.64,
+            59.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "Figure 24. Assembly of convolution products.",
+          "bbox": [
+            185.82,
+            80.07,
+            412.29,
+            93.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.02
+          ]
+        },
+        {
+          "text": "Especially noteworthy is that, with the replacement of letters A and B by D and C, respectively, the",
+          "bbox": [
+            64.08,
+            190.47,
+            548.71,
+            203.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "figure exhibits bilateral mirror symmetry, essentially a perpetuation of the situation noted above in the",
+          "bbox": [
+            49.68,
+            207.45,
+            548.65,
+            220.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldItal",
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.02
+          ]
+        },
+        {
+          "text": "case of the basic fermions. Correspondingly, note that the sum, over the figure, of the individual values",
+          "bbox": [
+            49.68,
+            224.43,
+            548.62,
+            237.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldItal",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.02
+          ]
+        },
+        {
+          "text": "of twist is zero. Also, charge sums to zero in each twist assembly (each column). Finally, for future",
+          "bbox": [
+            49.68,
+            241.47,
+            548.69,
+            254.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "reference, we note that there is a total of 16 two-letter “words”—that is, bosons (including the two",
+          "bbox": [
+            49.68,
+            258.45,
+            548.61,
+            271.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "unrealizable ones) which may be trivially viewed as assembled into permutation groups, in this case 4",
+          "bbox": [
+            49.68,
+            275.43,
+            548.68,
+            288.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "singlets and 6 doublets, the latter occurring in charge conjugate pairs.",
+          "bbox": [
+            49.68,
+            292.47,
+            385.96,
+            305.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "4. Second Order Fusion",
+          "bbox": [
+            49.68,
+            321.59,
+            174.05,
+            334.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "As per the comment made above in connection with Equation (3-16), we can view second-order",
+          "bbox": [
+            64.08,
+            350.43,
+            548.64,
+            363.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "fusion as Matrix M operating on basic fermion vector V, that is, in analogy with Equation (3-14), we",
+          "bbox": [
+            49.68,
+            367.47,
+            548.62,
+            380.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "can write",
+          "bbox": [
+            49.68,
+            384.45,
+            96.94,
+            397.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.02
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            206.88,
+            403.77,
+            216.12,
+            418.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            235.74,
+            403.77,
+            247.62,
+            418.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            292.92,
+            403.77,
+            299.53,
+            418.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            362.28,
+            403.77,
+            368.89,
+            418.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            405.72,
+            403.77,
+            412.33,
+            418.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            377.82,
+            405.08,
+            396.84,
+            418.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT-Extra"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "M",
+          "bbox": [
+            185.76,
+            405.14,
+            195.78,
+            418.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "V",
+          "bbox": [
+            216.84,
+            405.14,
+            224.19,
+            418.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "P",
+          "bbox": [
+            250.5,
+            405.14,
+            257.85,
+            418.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "P",
+          "bbox": [
+            307.92,
+            405.14,
+            315.28,
+            418.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "P",
+          "bbox": [
+            420.73,
+            405.14,
+            428.08,
+            418.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "-",
+          "bbox": [
+            266.58,
+            408.92,
+            273.7,
+            422.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "-",
+          "bbox": [
+            323.97,
+            408.92,
+            331.09,
+            422.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "(4-1)",
+          "bbox": [
+            521.64,
+            409.46,
+            545.69,
+            422.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            436.02,
+            411.93,
+            439.84,
+            420.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            6.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            342.96,
+            412.65,
+            346.78,
+            421.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            6.96
+          ]
+        },
+        {
+          "text": "S",
+          "bbox": [
+            197.04,
+            412.72,
+            200.52,
+            420.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            6.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            200.94,
+            412.72,
+            204.42,
+            420.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            6.96
+          ]
+        },
+        {
+          "text": "S",
+          "bbox": [
+            223.86,
+            412.72,
+            227.34,
+            420.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            6.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            228.48,
+            412.72,
+            231.96,
+            420.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            6.96
+          ]
+        },
+        {
+          "text": "S",
+          "bbox": [
+            426.24,
+            412.72,
+            429.72,
+            420.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            6.96
+          ]
+        },
+        {
+          "text": "1  2",
+          "bbox": [
+            430.08,
+            412.72,
+            450.24,
+            420.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            6.96
+          ]
+        },
+        {
+          "text": "S",
+          "bbox": [
+            442.14,
+            412.72,
+            445.62,
+            420.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            6.96
+          ]
+        },
+        {
+          "text": "S",
+          "bbox": [
+            257.04,
+            413.44,
+            260.52,
+            421.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            6.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            260.94,
+            413.44,
+            266.22,
+            421.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            6.96
+          ]
+        },
+        {
+          "text": "S",
+          "bbox": [
+            273.66,
+            413.44,
+            277.14,
+            421.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            6.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            278.28,
+            413.44,
+            281.76,
+            421.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            6.96
+          ]
+        },
+        {
+          "text": "S",
+          "bbox": [
+            314.46,
+            413.44,
+            317.94,
+            421.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            6.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            318.36,
+            413.44,
+            323.64,
+            421.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            6.96
+          ]
+        },
+        {
+          "text": "S",
+          "bbox": [
+            331.08,
+            413.44,
+            334.56,
+            421.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            6.96
+          ]
+        },
+        {
+          "text": "2  1",
+          "bbox": [
+            335.7,
+            413.44,
+            352.68,
+            421.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            6.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            131.94,
+            430.88,
+            138.68,
+            445.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            12.28
+          ]
+        },
+        {
+          "text": "P",
+          "bbox": [
+            114.84,
+            432.28,
+            122.34,
+            445.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            12.28
+          ]
+        },
+        {
+          "text": "P",
+          "bbox": [
+            141.06,
+            432.28,
+            148.56,
+            445.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            12.28
+          ]
+        },
+        {
+          "text": "which equals",
+          "bbox": [
+            49.68,
+            432.56,
+            112.67,
+            445.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "for s1 = 1 (or 0) and s2 = 1/2. The result can be viewed as a 4-vector,",
+          "bbox": [
+            158.16,
+            432.56,
+            498.94,
+            445.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "1/2",
+          "bbox": [
+            119.46,
+            440.01,
+            128.89,
+            447.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            7.1
+          ]
+        },
+        {
+          "text": "3/2",
+          "bbox": [
+            146.22,
+            440.01,
+            155.95,
+            447.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            7.1
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            256.92,
+            456.13,
+            263.54,
+            470.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": ")T",
+          "bbox": [
+            336.78,
+            456.63,
+            344.61,
+            470.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            6.97,
+            12.03
+          ]
+        },
+        {
+          "text": "P",
+          "bbox": [
+            242.64,
+            457.5,
+            250.0,
+            470.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "P P",
+          "bbox": [
+            274.8,
+            457.5,
+            298.67,
+            470.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "P",
+          "bbox": [
+            309.13,
+            457.5,
+            316.49,
+            470.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "P",
+          "bbox": [
+            326.47,
+            457.5,
+            333.83,
+            470.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "( ,",
+          "bbox": [
+            266.52,
+            457.52,
+            291.31,
+            470.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            301.38,
+            457.52,
+            309.13,
+            470.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            318.78,
+            457.52,
+            326.47,
+            470.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "(4-2)",
+          "bbox": [
+            521.64,
+            459.8,
+            545.69,
+            473.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            279.48,
+            465.09,
+            282.96,
+            472.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            296.76,
+            465.09,
+            300.24,
+            472.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            314.34,
+            465.09,
+            317.82,
+            472.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            331.92,
+            465.09,
+            335.4,
+            472.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "whose elements are the matrices",
+          "bbox": [
+            49.68,
+            483.8,
+            211.0,
+            497.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            229.98,
+            503.18,
+            236.72,
+            518.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            12.28
+          ]
+        },
+        {
+          "text": "P",
+          "bbox": [
+            213.0,
+            504.58,
+            220.5,
+            518.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            12.28
+          ]
+        },
+        {
+          "text": "MV",
+          "bbox": [
+            242.46,
+            504.58,
+            259.8,
+            518.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            12.28
+          ]
+        },
+        {
+          "text": ", with k = A, B, C, or D",
+          "bbox": [
+            264.54,
+            504.84,
+            380.39,
+            518.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.03,
+            12.05
+          ]
+        },
+        {
+          "text": "(4-3)",
+          "bbox": [
+            521.64,
+            507.5,
+            545.69,
+            520.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "k",
+          "bbox": [
+            218.4,
+            512.31,
+            221.55,
+            520.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            7.1
+          ]
+        },
+        {
+          "text": "k",
+          "bbox": [
+            259.2,
+            512.31,
+            262.35,
+            520.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT"
+          ],
+          "sizes": [
+            7.1
+          ]
+        },
+        {
+          "text": "1P is a matrix whose elements are three letter words, formed by appending the letter A",
+          "bbox": [
+            129.72,
+            528.88,
+            548.68,
+            544.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            7.08,
+            12.03,
+            12.05,
+            12.28
+          ]
+        },
+        {
+          "text": "For example,",
+          "bbox": [
+            64.08,
+            529.22,
+            127.54,
+            542.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "to each of the elements of matrix M.",
+          "bbox": [
+            49.68,
+            549.48,
+            229.63,
+            562.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.03,
+            12.05
+          ]
+        },
+        {
+          "text": "kP .",
+          "bbox": [
+            531.84,
+            564.28,
+            548.65,
+            579.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            7.1,
+            12.03,
+            12.28
+          ]
+        },
+        {
+          "text": "Geometrically, we can picture the vector P as a vertical stack of four horizontal planes, the",
+          "bbox": [
+            64.08,
+            564.54,
+            529.81,
+            577.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.03,
+            12.05
+          ]
+        },
+        {
+          "text": "However, since we are preoccupied with the aggregation of elements in terms of twist, we note that the",
+          "bbox": [
+            49.68,
+            584.82,
+            548.68,
+            598.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.03,
+            12.05
+          ]
+        },
+        {
+          "text": "twist loci are a set of inclined planes [3] where, as indicated in Figure 25 the values of twist range",
+          "bbox": [
+            49.68,
+            601.8,
+            548.76,
+            615.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.03,
+            12.05
+          ]
+        },
+        {
+          "text": "antiymmetrically from −9 to +9, an inclination that is quite analogous to the inclined loci of Figure 22",
+          "bbox": [
+            49.68,
+            618.86,
+            548.67,
+            632.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "for the case of first order fusion and for the same reason; basically, the preservation of twist.",
+          "bbox": [
+            49.68,
+            635.84,
+            495.97,
+            649.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.03
+          ]
+        }
+      ]
+    },
+    {
+      "page": 31,
+      "rotation": 0,
+      "drawings": 3,
+      "rasterImagesOnPage": 2,
+      "captionCandidates": [
+        "Figure 31. Availability of 32 binary choices in first-order fusion.",
+        "Figure 32. Availability of 256 binary choices in second-order fusion."
+      ],
+      "labels": [
+        {
+          "text": "Symmetry 2012, 4",
+          "bbox": [
+            49.68,
+            46.02,
+            139.02,
+            59.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "69",
+          "bbox": [
+            533.64,
+            46.07,
+            548.64,
+            59.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "Figure 31. Availability of 32 binary choices in first-order fusion.",
+          "bbox": [
+            141.18,
+            80.09,
+            457.07,
+            93.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "Second order fusion can take place in two distinct configurations as suggested by the stick figure",
+          "bbox": [
+            64.08,
+            178.73,
+            548.66,
+            192.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "representations in Figure 32. There are four free quirks, one free antiquirk and two junctions in each",
+          "bbox": [
+            49.68,
+            195.71,
+            548.64,
+            208.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "configuration implying the availability of 2exp7 = 128 binary choices per diagram for a total of 256",
+          "bbox": [
+            49.68,
+            212.64,
+            548.7,
+            225.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "choices, four times the number of terms found on the basis of combination and permutation alone, as in",
+          "bbox": [
+            49.68,
+            229.68,
+            548.64,
+            243.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "the preceding.",
+          "bbox": [
+            49.68,
+            246.71,
+            123.7,
+            259.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "Figure 32. Availability of 256 binary choices in second-order fusion.",
+          "bbox": [
+            131.22,
+            275.69,
+            467.01,
+            288.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "To reconcile the discrepancy, the additional degeneracy due to the factors of composition and",
+          "bbox": [
+            64.08,
+            497.64,
+            548.65,
+            510.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "contingency mentioned above need to be taken into account and combined with the preceding results",
+          "bbox": [
+            49.68,
+            514.62,
+            548.62,
+            527.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "due to combination and permutation. To begin with, we discuss the number of distinct ways that letters",
+          "bbox": [
+            49.68,
+            531.71,
+            548.67,
+            544.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "and conjugate letters can combine to form junctions as a result of their composition in terms of quirks",
+          "bbox": [
+            49.68,
+            548.69,
+            548.64,
+            561.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "and antiquirks. In first order fusion this is relatively straightforward; invoking the basics of Section 2",
+          "bbox": [
+            49.68,
+            565.67,
+            548.65,
+            578.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "leads to the results summarized in Table 3-1 where the individual terms are listed in dictionary order.",
+          "bbox": [
+            49.68,
+            582.71,
+            548.64,
+            595.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "In this figure, dd* and uu* junctions are indicated by the letters x and y, respectively in parenthesis and",
+          "bbox": [
+            49.68,
+            599.69,
+            548.69,
+            612.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "the numerical coefficients indicate how many ways the two letters can fuse to form each type of junction.",
+          "bbox": [
+            49.68,
+            616.67,
+            540.42,
+            629.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "Table 3-1. Additional degeneracy due to detailed composition; first-order fusion.",
+          "bbox": [
+            102.54,
+            645.71,
+            495.76,
+            658.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "AA* (x)",
+          "bbox": [
+            197.46,
+            667.8,
+            236.55,
+            679.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "CA* (x)",
+          "bbox": [
+            353.2,
+            667.8,
+            391.72,
+            679.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "AB* (2x)",
+          "bbox": [
+            195.06,
+            682.8,
+            239.03,
+            694.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "CB* (2x + 2y)",
+          "bbox": [
+            339.72,
+            682.8,
+            405.16,
+            694.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "AC* (x)",
+          "bbox": [
+            197.76,
+            697.8,
+            236.26,
+            709.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "CC* (4y + x)",
+          "bbox": [
+            342.48,
+            697.8,
+            402.46,
+            709.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "AD* (0)",
+          "bbox": [
+            197.16,
+            712.8,
+            236.86,
+            724.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "CD* (2y)",
+          "bbox": [
+            350.46,
+            712.8,
+            394.42,
+            724.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "BA* (2x)",
+          "bbox": [
+            195.06,
+            727.8,
+            239.03,
+            739.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "DA* (0)",
+          "bbox": [
+            352.62,
+            727.8,
+            392.32,
+            739.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "BB* (4x + y)",
+          "bbox": [
+            187.02,
+            742.8,
+            246.99,
+            754.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "DB* (y)",
+          "bbox": [
+            353.2,
+            742.8,
+            391.72,
+            754.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "BC* (2x + 2y",
+          "bbox": [
+            186.12,
+            757.8,
+            247.9,
+            769.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "DC* (2y)",
+          "bbox": [
+            350.46,
+            757.8,
+            394.42,
+            769.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "BD* (y)",
+          "bbox": [
+            197.76,
+            772.8,
+            236.26,
+            784.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "DD* (y)",
+          "bbox": [
+            352.92,
+            772.8,
+            392.02,
+            784.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            10.98
+          ]
+        }
+      ]
+    },
+    {
+      "page": 38,
+      "rotation": 0,
+      "drawings": 1,
+      "rasterImagesOnPage": 2,
+      "captionCandidates": [
+        "Figure 38. First stage of neutron decay.",
+        "Figure 39. Second stage of neutron decay."
+      ],
+      "labels": [
+        {
+          "text": "Symmetry 2012, 4",
+          "bbox": [
+            49.68,
+            46.02,
+            139.02,
+            59.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "76",
+          "bbox": [
+            533.64,
+            46.07,
+            548.64,
+            59.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "Figure 38. First stage of neutron decay.",
+          "bbox": [
+            202.02,
+            80.09,
+            396.28,
+            93.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "On the basis of the quirk structure, C and C* translate unambiguously to p and p*, which conserves",
+          "bbox": [
+            64.08,
+            211.32,
+            548.66,
+            224.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "twist but not baryon number and charge. Thus, we need to increase baryon number in the diagram by",
+          "bbox": [
+            49.68,
+            228.36,
+            548.72,
+            241.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "one and cancel the lepton number and charge of the A. Furthermore, on the basis of mass, A should",
+          "bbox": [
+            49.68,
+            245.34,
+            548.64,
+            258.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            176.71,
+            258.84,
+            188.53,
+            273.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            11.88
+          ]
+        },
+        {
+          "text": "(which are too heavy) in which case we need to change the C* to",
+          "bbox": [
+            201.13,
+            258.84,
+            548.64,
+            273.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            11.88,
+            12.0
+          ]
+        },
+        {
+          "text": "translate to e rather than",
+          "bbox": [
+            49.68,
+            260.09,
+            175.6,
+            273.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "or",
+          "bbox": [
+            185.94,
+            260.19,
+            201.93,
+            273.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            11.88
+          ]
+        },
+        {
+          "text": "(for its lepton number).",
+          "bbox": [
+            183.34,
+            275.7,
+            315.17,
+            290.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.24
+          ]
+        },
+        {
+          "text": "something that translates to",
+          "bbox": [
+            49.68,
+            277.43,
+            184.37,
+            290.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "e",
+          "bbox": [
+            191.7,
+            284.87,
+            194.84,
+            292.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            7.08
+          ]
+        },
+        {
+          "text": "All this can be accomplished if we just change the indicated u* quirk into a d* quirk! In [1] this is",
+          "bbox": [
+            64.08,
+            297.66,
+            548.65,
+            311.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldItal",
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "referred to as the “beta switch” and can be rationalized in knot theoretic terms (see Appendix D)6.",
+          "bbox": [
+            49.68,
+            312.81,
+            548.64,
+            328.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            7.98,
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "Thus, we go from AC*C, an excited state of the neutron, to AB*C, an excited state of the electron as",
+          "bbox": [
+            49.68,
+            331.73,
+            548.68,
+            345.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "shown in Figure 39. In terms of twist, we go from NHT = −1 to NHT = −3 by changing the u* quirk",
+          "bbox": [
+            49.68,
+            348.71,
+            548.62,
+            361.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "with NHT = +1 to the d* quirk with NHT = −1. The meson operator is AB*, our model’s version of",
+          "bbox": [
+            49.68,
+            365.75,
+            548.64,
+            379.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "the W particle (see the boson matrix M, Equation (3-16)) which then splits into an electron (i.e., A)",
+          "bbox": [
+            49.68,
+            380.49,
+            548.64,
+            395.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT",
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            7.08,
+            12.0,
+            12.05,
+            12.28
+          ]
+        },
+        {
+          "text": "and its antineutrino (i.e., B*)",
+          "bbox": [
+            49.68,
+            399.66,
+            192.36,
+            413.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldItal",
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "Figure 39. Second stage of neutron decay.",
+          "bbox": [
+            195.36,
+            428.75,
+            405.91,
+            442.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "Muon decay is a similar process; we begin again with an excited state, this time in the NHT= −3",
+          "bbox": [
+            64.08,
+            605.51,
+            548.64,
+            618.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "column of Figure 29, specifically noting the terms AC*B and, equivalently, BC*A of the sextet. Using",
+          "bbox": [
+            49.68,
+            622.55,
+            548.66,
+            635.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "AC*B we see a diagram very similar to Figure 38 and it goes through an identical beta switch process.",
+          "bbox": [
+            49.68,
+            639.53,
+            544.91,
+            652.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "6 Note the analogy to the SM’s (enigmatic) switch of the neutron’s down quark to an up quark, by means of which the",
+          "bbox": [
+            49.68,
+            768.17,
+            524.56,
+            780.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            6.48,
+            10.02
+          ]
+        },
+        {
+          "text": "neutron is converted into a proton plus a W particle.",
+          "bbox": [
+            49.68,
+            781.03,
+            261.82,
+            792.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            10.02
+          ]
+        }
+      ]
+    },
+    {
+      "page": 44,
+      "rotation": 0,
+      "drawings": 6,
+      "rasterImagesOnPage": 2,
+      "captionCandidates": [
+        "Figure 48. Six-label scaffold; that’s all!",
+        "Figure 49. Sample “duad”."
+      ],
+      "labels": [
+        {
+          "text": "Symmetry 2012, 4",
+          "bbox": [
+            49.68,
+            46.02,
+            139.02,
+            59.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "82",
+          "bbox": [
+            533.64,
+            46.07,
+            548.64,
+            59.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "Figure 48. Six-label scaffold; that’s all!",
+          "bbox": [
+            201.66,
+            80.09,
+            396.6,
+            93.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "Furthermore, as noted in [1] “this is as far as we can go in label three space with the high degree of",
+          "bbox": [
+            64.08,
+            282.0,
+            548.69,
+            295.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "symmetry implied by the combinatorial requirements of a family structure”. The implication is that",
+          "bbox": [
+            49.68,
+            299.03,
+            548.65,
+            312.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "there can be three generations but no more on the particle family tree. Of course this is really a",
+          "bbox": [
+            49.68,
+            315.96,
+            548.67,
+            329.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldItal",
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "rationale not, in the ontological sense, an explanation for the existence of three generation.",
+          "bbox": [
+            49.68,
+            333.0,
+            490.95,
+            346.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "However, we assert, this scheme goes further than the Standard Model in that regard and, in a",
+          "bbox": [
+            64.08,
+            350.03,
+            548.71,
+            363.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "somewhat speculative vein, we can do better. To begin with, we can delve further into the munificent",
+          "bbox": [
+            49.68,
+            367.01,
+            548.7,
+            380.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "geometry of the icosahedron. Although not all of that is germane to this paper, it is pertinent to point",
+          "bbox": [
+            49.68,
+            384.05,
+            548.69,
+            397.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "out that vertices, edges and faces each come in antipodal pairs. Thus, looking directly down upon the",
+          "bbox": [
+            49.68,
+            400.98,
+            548.63,
+            414.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "vertex labeled D in Figure 48, one sees a pentagonal outline for the assembly of 5 faces formed by the",
+          "bbox": [
+            49.68,
+            418.01,
+            548.75,
+            431.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "connections between vertex D and each of the five surrounding vertices, labeled clockwise from the",
+          "bbox": [
+            49.68,
+            435.05,
+            548.74,
+            448.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "top as B, T, C, U and S. Also visible is the antipodal pentagonal outline formed by the connections",
+          "bbox": [
+            49.68,
+            452.03,
+            548.78,
+            465.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "between the antipodal vertex D* and each of the associated antipodal vertices, labeled clockwise from",
+          "bbox": [
+            49.68,
+            469.01,
+            548.68,
+            482.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "the bottom as B*, T*, C*, U*, and S*.",
+          "bbox": [
+            49.68,
+            486.05,
+            239.37,
+            499.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "Note that the two pentagonal outlines (and their included faces) are in relative rotation about the",
+          "bbox": [
+            64.08,
+            503.03,
+            548.75,
+            516.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "DD* axis by 36 degrees which is half the central angle of an edge as measured in the pentagonal plane.",
+          "bbox": [
+            49.68,
+            520.01,
+            548.72,
+            533.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "Antipodal edges can then be related in pairs to form rectangles whose shape is such that the length, h,",
+          "bbox": [
+            49.68,
+            537.0,
+            548.64,
+            550.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "of the long side and the length, , of the short (edge) side are (it can be readily shown) in the “Golden",
+          "bbox": [
+            49.68,
+            554.03,
+            548.66,
+            567.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT-Extra",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            11.91,
+            12.0
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            378.54,
+            566.04,
+            382.48,
+            592.2
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            15.9
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            413.82,
+            566.04,
+            417.76,
+            592.2
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            15.9
+          ]
+        },
+        {
+          "text": "ratio” ",
+          "bbox": [
+            49.68,
+            566.13,
+            85.39,
+            592.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            15.82
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            116.52,
+            566.13,
+            120.43,
+            592.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            15.82
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            389.46,
+            573.31,
+            396.01,
+            587.91
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            11.93
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            92.34,
+            573.42,
+            98.86,
+            587.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            11.88
+          ]
+        },
+        {
+          "text": "and diagonals UU* and DD* have lengths of",
+          "bbox": [
+            135.72,
+            574.55,
+            362.01,
+            587.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "times the edge length.",
+          "bbox": [
+            434.04,
+            574.55,
+            548.65,
+            587.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "5 1",
+          "bbox": [
+            371.58,
+            574.67,
+            388.11,
+            587.88
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            11.93
+          ]
+        },
+        {
+          "text": "5 / 2",
+          "bbox": [
+            406.44,
+            574.67,
+            430.83,
+            587.88
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            11.93
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            85.08,
+            574.77,
+            91.02,
+            587.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            11.88
+          ]
+        },
+        {
+          "text": "5 / 2",
+          "bbox": [
+            109.2,
+            574.77,
+            133.44,
+            587.93
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            11.88
+          ]
+        },
+        {
+          "text": "An example is the rectangle with edge UD connected to antipodal edge D*U* as in Figure 49.",
+          "bbox": [
+            49.68,
+            598.91,
+            507.1,
+            612.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "Figure 49. Sample “duad”.",
+          "bbox": [
+            232.14,
+            627.89,
+            366.06,
+            641.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "Following Baez [17] we shall henceforth refer to the rectangles as “Duads” and since there are",
+          "bbox": [
+            64.08,
+            760.02,
+            551.59,
+            773.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "30 edges, there are 15 such duads.",
+          "bbox": [
+            49.68,
+            777.05,
+            216.59,
+            790.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        }
+      ]
+    },
+    {
+      "page": 56,
+      "rotation": 0,
+      "drawings": 1,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 57, Our model of the pentaquark."
+      ],
+      "labels": [
+        {
+          "text": "Symmetry 2012, 4",
+          "bbox": [
+            49.68,
+            46.02,
+            139.02,
+            59.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "94",
+          "bbox": [
+            533.64,
+            46.07,
+            548.64,
+            59.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "In summary to this point, on the basis of the preliminary analysis carried out to date, the judgment",
+          "bbox": [
+            64.08,
+            80.04,
+            548.69,
+            93.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "that our model qualifies as a topological quantum field theory lacks only formalization and",
+          "bbox": [
+            49.68,
+            97.02,
+            548.74,
+            110.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "documentation. On the other hand, also lacking in such judgment is a certain desirable amount of",
+          "bbox": [
+            49.68,
+            114.06,
+            548.66,
+            127.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "perspective. We note that the subject of cobordism alone has been investigated in considerable depth",
+          "bbox": [
+            49.68,
+            131.04,
+            548.61,
+            144.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "as has been that of TQFT in dimensionalities other than 2 + 1. From a broad perspective, TQFT is",
+          "bbox": [
+            49.68,
+            148.02,
+            548.66,
+            161.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "really one aspect of a triumvirate of approaches to understanding the fundamental nature of nature,",
+          "bbox": [
+            49.68,
+            165.06,
+            548.69,
+            178.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "along with Quantum Field theory and Quantum Gravity. It would be instructive to embark upon a",
+          "bbox": [
+            49.68,
+            182.04,
+            548.66,
+            195.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "more comprehensive investigation of TQFT that brings out our model’s place in such a wider context.",
+          "bbox": [
+            49.68,
+            199.02,
+            542.6,
+            212.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "11.3. New Particles",
+          "bbox": [
+            49.68,
+            228.12,
+            147.37,
+            241.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "The difference between how bosons and higher spin fermions are portrayed in our model and in the",
+          "bbox": [
+            67.68,
+            257.04,
+            548.69,
+            270.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "SM was discussed in Section 9. It evokes some experimentation that as mentioned in [1] “points to the",
+          "bbox": [
+            49.68,
+            274.02,
+            548.61,
+            287.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "existence of heretofore unobserved particles”. The particles of interest are a four-quark meson",
+          "bbox": [
+            49.68,
+            291.06,
+            548.64,
+            304.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "(http://xxx.lanl.gov/abs/hep.lat/0001023) and a “pentaquark”, a five-quark baryon which decayed into",
+          "bbox": [
+            49.68,
+            308.04,
+            548.69,
+            321.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "a neutron and a K  meson (http://www.phy.ohiou.edu/~hicks/thplus/thplus3.html).",
+          "bbox": [
+            49.68,
+            323.45,
+            456.82,
+            338.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT",
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            6.93,
+            11.99,
+            12.05
+          ]
+        },
+        {
+          "text": "Regarding the meson we note that all bosons in our model consist of two quirks and two antiquirks.",
+          "bbox": [
+            67.68,
+            342.06,
+            548.65,
+            355.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "As to the pentaquark, the report  (http://www.phy.ohiou.edu/~hicks/thplus/thplus3.html) of the",
+          "bbox": [
+            49.68,
+            359.04,
+            548.7,
+            372.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "experimental result states that “The valence quark configuration of the exotic state contains two up",
+          "bbox": [
+            49.68,
+            376.02,
+            548.65,
+            389.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "quarks, two down quarks, and an anti strange quark”8 (See Figure 57 below) which was found to",
+          "bbox": [
+            49.68,
+            391.17,
+            548.67,
+            406.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            7.98,
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "decay into a neutron and a K  meson. As pointed out in [1] this sounds very much like our delta",
+          "bbox": [
+            49.68,
+            408.47,
+            548.65,
+            423.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT",
+            "TimesNewRomanPS-BoldItal",
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            6.93,
+            10.98,
+            11.99,
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "particle model (specifically a delta plus) if we also recall the transformation of a  into a K  by the",
+          "bbox": [
+            49.68,
+            424.83,
+            548.65,
+            440.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT",
+            "TimesNewRomanPS-BoldItal",
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            6.93,
+            7.08,
+            11.99,
+            12.0,
+            12.05,
+            12.24
+          ]
+        },
+        {
+          "text": "change of a d* antiquirk into an s* antiquirk as portrayed in Figure 54 of Section 8.",
+          "bbox": [
+            49.68,
+            444.06,
+            455.95,
+            457.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "Figure 57, Our model of the pentaquark.",
+          "bbox": [
+            199.38,
+            473.04,
+            399.0,
+            486.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPS-BoldMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.0,
+            12.05
+          ]
+        },
+        {
+          "text": "The experiments of reference were conducted in the early-and-mid years of the last decade at the",
+          "bbox": [
+            49.68,
+            678.36,
+            548.66,
+            691.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "Jefferson Lab in Newport News, Virginia. They involved high energy gamma rays impinging upon a",
+          "bbox": [
+            49.68,
+            695.34,
+            548.67,
+            708.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            12.05
+          ]
+        },
+        {
+          "text": "deuterium target. The pentaquirk decayed into a neutron and a K  which tallies with the figure. Also",
+          "bbox": [
+            49.68,
+            710.75,
+            548.67,
+            725.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT",
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            6.93,
+            11.99,
+            12.05
+          ]
+        },
+        {
+          "text": "found were a proton and a K ,which as in [1], suggests the delta minus-like particle shown below but",
+          "bbox": [
+            49.68,
+            727.79,
+            548.63,
+            742.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT",
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            6.93,
+            11.99,
+            12.05
+          ]
+        },
+        {
+          "text": "with a  that has similarly decayed into a K .",
+          "bbox": [
+            49.68,
+            744.15,
+            283.99,
+            759.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT",
+            "TimesNewRomanPS-ItalicMT",
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            6.93,
+            7.08,
+            11.99,
+            12.05,
+            12.24
+          ]
+        },
+        {
+          "text": "8 Emphasis added",
+          "bbox": [
+            49.68,
+            779.69,
+            123.2,
+            792.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesNewRomanPSMT"
+          ],
+          "sizes": [
+            6.48,
+            10.02
+          ]
+        }
+      ]
+    }
+  ]
+}

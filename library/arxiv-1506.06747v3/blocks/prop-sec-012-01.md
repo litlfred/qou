@@ -1,0 +1,1 @@
+The theorems amount to rather nontrivial statements, because the functions T1(ν, q2), T2(ν, q2) represent the virtual Compton scattering amplitude in the forward direction, while the experimental determination of the polarizabilities relies on real Compton scattering at nonzero scattering angle.

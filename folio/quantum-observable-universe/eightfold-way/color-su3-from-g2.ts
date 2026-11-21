@@ -45,4 +45,7 @@ export default proposition({
   //    type buys, not that this triple has it.
   cites: ["gunaydin-gursey1973"],
   lean: { ref: "qou:QOU.Eightfold.Sym2GateFSTrichotomy.gate_forces_complex_of_dim_three" },
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): and machine-verified in exact $\\mathbb{Z}[i]$ arithmetic\n(`s4_genus3_competitor_fermat.py`: element-order profile" },
+  ],
 });

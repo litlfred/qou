@@ -1,0 +1,66 @@
+4.2.6 Collinear points and h-lines
+
+lemma poincare-collinear3-poincare-line-general:
+assumes poincare-collinear {a, a1, a2} al # a2 al F inversion a2
+shows a € circline-set (poincare-line al a2)
+using assms
+using poincare-collinear-def unique-poincare-line-general
+by auto
+
+lemma poincare-line-poincare-collinear3-general:
+assumes a € circline-set (poincare-line al a2) al # a2
+shows poincare-collinear {a, a1, a2}
+using assms
+unfolding poincare-collinear-def
+by (rule-tac «=poincare-line a1 a2 in eal, simp)
+
+lemma poincare-collinear3-poincare-lines-equal-general:
+assumes poincare-collinear {a, al, a2} a 4 al a ¥ a2 a F inversion al a F inversion a2
+shows poincare-line a al = poincare-line a a2
+using assms
+using unique-poincare-line-generallof a a2 poincare-line a al]
+by (simp add: insert-commute poincare-collinear3-poincare-line-general)
+
+4.2.7 Points collinear with 0),
+
+lemma poincare-collinear-zero-iff:
+assumes of-complex y’ € unit-disc and of-complez z’ € unit-disc and
+y' #z' and y’ 4 0 and z' 4 0
+shows poincare-collinear {0;, of-complex y’, of-complex z"} +
+y'*cnj z' = cnj y'*z' (is ?lhs +> ?rhs)
+proof—
+have of-complex y' 4 of-complex z’
+using assms
+using of-complez-inj
+by blast
+show ?thesis
+proof
+assume ?/hs
+hence 0), € circline-set (poincare-line (of-complex y') (of-complex z'))
+using wnique-poincare-line|of of-complex y’ of-complex z’|
+using assms <of-complex y' 4 of-complex z'>
+unfolding poincare-collinear-def
+by auto
+moreover
+let ?mix = y’ * cnj z' — cnj y’ * 2’
+have is-real (i * ?mix)
+using eq-cnj-iff-reallof ?miz]
+by auto
+hence y! « enj z’ = cnj y’ * z' ++ Re (i * ?miz) = 0
+using complez.expand|of i * ?mizx 0]
+by (metis complex-i-not-zero eq-iff-diff-eq-0 mult-eq-0-iff zero-complex.simps(1) zero-complex.simps(2))
+ultimately
+show ?rhs
+using (y’ Az «y' 40> «z' A O>
+unfolding circline-set-def
+by simp (transfer, transfer, auto simp add: vec-cnj-def split: if-split-asm, metis Re-complez-of-real Re-mult-real
+Im-complex-of-real)
+next
+assume ?rhs
+thus ?hs
+using assms <of-complex y' 4 of-complex z'»
+unfolding poincare-collinear-def
+unfolding circline-set-def
+apply (rule-tac t=poincare-line (of-complex y’) (of-complex z’) in ez!)
+apply auto
+apply (transfer, transfer, simp add: vec-cnj-def)

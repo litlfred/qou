@@ -2,24 +2,148 @@
  "_schema": "library-summary/v1",
  "doc_id": "210811825v1",
  "source_sha256": "1c2a4b317d6239c5",
- "brief": "Properties of eigenvalues on Riemann surfaces with large symmetry groups — 1 sections: Introduction",
- "extended": "**Properties of eigenvalues on Riemann surfaces with large symmetry groups**\n\n*December 2, 2018*\n\n163 pp, 1 sections.\n\n**Outline.** Introduction\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.3: LetS be a compact Riemann surface without boundary,\n- Theorem 1.14: Let Ω be an open domain in a hyperbolic\n- Theorem 1.16: For Ω⊂S as above, we have\n- Theorem 1.20: LetS be a closed and connected Riemann sur-\n- Theorem 1.21: LetM be a smooth, connected, compact manifold, possibly\n- Theorem 1.22: LetM be as above. For the Neumann eigenvalue problem",
+ "brief": "Properties of Eigenvalues on Riemann Surfaces with Large Symmetry Groups — 26 sections: Front matter; Introduction; Background",
+ "extended": "**Properties of Eigenvalues on Riemann Surfaces with Large Symmetry Groups**\n\n*Joseph Cook*\n\n163 pp, 26 sections.\n\n**Outline.** Front matter; Introduction; Background; Spectral theory; Hyperbolic geometry; Harmonic analysis on H; Representation theory; Selberg's trace formula; Symmetry group of the Bolza surface; The Bolza Surface; Length spectrum of the Bolza surface; Upper bounds on eigenvalues of the Bolza surfa; First eigenspace of the Bolza surface; Second eigenspace of Bolza surface; The Klein Quartic; Systole of the Klein quartic; Fenchel-Nielsen parameters of the Klein quarti; Spectral theory of the Klein quartic",
  "tokens": {
-  "brief": 24,
-  "extended": 139
+  "brief": 31,
+  "extended": 157
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-11"
+  },
+  {
    "id": "sec-000-introduction",
    "title": "Introduction",
-   "pages": "9-163"
+   "pages": "11-35"
+  },
+  {
+   "id": "sec-001-background",
+   "title": "Background",
+   "pages": "35-35"
+  },
+  {
+   "id": "sec-002-spectral-theory",
+   "title": "Spectral theory",
+   "pages": "35-43"
+  },
+  {
+   "id": "sec-003-hyperbolic-geometry",
+   "title": "Hyperbolic geometry",
+   "pages": "43-47"
+  },
+  {
+   "id": "sec-004-harmonic-analysis-on-h",
+   "title": "Harmonic analysis on H",
+   "pages": "47-52"
+  },
+  {
+   "id": "sec-005-representation-theory",
+   "title": "Representation theory",
+   "pages": "52-53"
+  },
+  {
+   "id": "sec-006-selbergs-trace-formula",
+   "title": "Selberg's trace formula",
+   "pages": "53-60"
+  },
+  {
+   "id": "sec-007-symmetry-group-of-the-bolza-surface",
+   "title": "Symmetry group of the Bolza surface",
+   "pages": "60-61"
+  },
+  {
+   "id": "sec-008-the-bolza-surface",
+   "title": "The Bolza Surface",
+   "pages": "61-65"
+  },
+  {
+   "id": "sec-009-length-spectrum-of-the-bolza-surface",
+   "title": "Length spectrum of the Bolza surface",
+   "pages": "65-66"
+  },
+  {
+   "id": "sec-010-upper-bounds-on-eigenvalues-of-the-bolza-surface",
+   "title": "Upper bounds on eigenvalues of the Bolza surface",
+   "pages": "66-74"
+  },
+  {
+   "id": "sec-011-first-eigenspace-of-the-bolza-surface",
+   "title": "First eigenspace of the Bolza surface",
+   "pages": "74-95"
+  },
+  {
+   "id": "sec-012-second-eigenspace-of-bolza-surface",
+   "title": "Second eigenspace of Bolza surface",
+   "pages": "95-98"
+  },
+  {
+   "id": "sec-013-the-klein-quartic",
+   "title": "The Klein Quartic",
+   "pages": "98-98"
+  },
+  {
+   "id": "sec-014-systole-of-the-klein-quartic",
+   "title": "Systole of the Klein quartic",
+   "pages": "98-100"
+  },
+  {
+   "id": "sec-015-fenchel-nielsen-parameters-of-the-klein-quartic",
+   "title": "Fenchel-Nielsen parameters of the Klein quartic",
+   "pages": "100-103"
+  },
+  {
+   "id": "sec-016-spectral-theory-of-the-klein-quartic",
+   "title": "Spectral theory of the Klein quartic",
+   "pages": "103-108"
+  },
+  {
+   "id": "sec-017-concluding-remarks",
+   "title": "Concluding Remarks",
+   "pages": "108-111"
+  },
+  {
+   "id": "sec-018-gap-code-for-bolza-surface",
+   "title": "GAP Code for Bolza Surface",
+   "pages": "111-115"
+  },
+  {
+   "id": "sec-019-gap-code-for-klein-quartic",
+   "title": "GAP Code for Klein Quartic",
+   "pages": "115-118"
+  },
+  {
+   "id": "sec-020-freefem-code-for-genus-2",
+   "title": "FreeFEM++ Code for Genus 2",
+   "pages": "118-130"
+  },
+  {
+   "id": "sec-021-freefem-code-for-genus-3",
+   "title": "FreeFEM++ Code for Genus 3",
+   "pages": "130-144"
+  },
+  {
+   "id": "sec-022-freefem-code-for-genus-4",
+   "title": "FreeFEM++ Code for Genus 4",
+   "pages": "144-150"
+  },
+  {
+   "id": "sec-023-mathematica-code-for-bolza-surface",
+   "title": "Mathematica Code for Bolza Surface",
+   "pages": "150-153"
+  },
+  {
+   "id": "sec-024-alternative-approach-to-proving-conjecture-312",
+   "title": "Alternative approach to proving Conjecture 3.12",
+   "pages": "153-163"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

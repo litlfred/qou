@@ -9,13 +9,18 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Evaluation symbols",
-  "pageStart": 19,
-  "pageEnd": 20,
+  "title": "Real stable polynomials",
+  "pageStart": 15,
+  "pageEnd": 16,
   "contains": [
-    "library/s00209-021-02825-4/blocks/prose-sec-016"
+    "library/s00209-021-02825-4/blocks/prose-sec-016",
+    "library/s00209-021-02825-4/blocks/prop-sec-016-01",
+    "library/s00209-021-02825-4/blocks/lem-sec-016-02",
+    "library/s00209-021-02825-4/blocks/lem-sec-016-03",
+    "library/s00209-021-02825-4/blocks/lem-sec-016-04",
+    "library/s00209-021-02825-4/blocks/lem-sec-016-05"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s00209-021-02825-4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s00209-021-02825-4",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00209-021-02825-4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00209-021-02825-4/manifest.jsonld",
   "provenance": "ingested"
 }

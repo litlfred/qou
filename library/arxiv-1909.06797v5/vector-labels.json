@@ -1,0 +1,3896 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1909.06797v5",
+  "pages": [
+    {
+      "page": 3,
+      "rotation": 0,
+      "drawings": 79,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 1: Growth of Young diagrams."
+      ],
+      "labels": [
+        {
+          "text": "Figure 1: Growth of Young diagrams.",
+          "bbox": [
+            219.19,
+            348.93,
+            376.09,
+            359.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96,
+            10.91
+          ]
+        },
+        {
+          "text": "no box. For a restricted growth process, one can assign a probability to every transition. Denoting",
+          "bbox": [
+            64.51,
+            382.33,
+            530.76,
+            394.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "a particular Young diagram at level k by λk we associate a transition probability Ptransition(λk, λk+1)",
+          "bbox": [
+            64.51,
+            396.1,
+            530.76,
+            410.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "for a transition from λk to λk+1",
+          "bbox": [
+            64.51,
+            410.79,
+            208.97,
+            425.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "dim λk+1",
+          "bbox": [
+            328.67,
+            431.44,
+            369.33,
+            444.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            311.09,
+            431.97,
+            317.06,
+            443.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Ptransition(λk, λk+1) =",
+          "bbox": [
+            204.33,
+            439.29,
+            297.36,
+            452.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(1.1)",
+          "bbox": [
+            507.86,
+            440.06,
+            530.76,
+            452.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "k + 1",
+          "bbox": [
+            301.87,
+            447.73,
+            326.28,
+            460.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "dim λk",
+          "bbox": [
+            333.2,
+            447.73,
+            364.66,
+            460.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "if λk+1 is obtained from λk by adding one box, otherwise Ptransition(λk, λk+1) = 0. A growth process,",
+          "bbox": [
+            64.51,
+            468.17,
+            530.76,
+            482.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "following the above probability measure, is called Plancherel growth process (see [1, 2] for a",
+          "bbox": [
+            64.51,
+            483.3,
+            530.77,
+            495.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "comprehensive review). Note that the probability to get a diagram at level k + 1 from a diagram at",
+          "bbox": [
+            64.51,
+            497.31,
+            530.76,
+            509.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "level k does not depend on the history of transition from level k −1 to k. Thus, the growth process",
+          "bbox": [
+            64.51,
+            511.51,
+            530.76,
+            524.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "txsy"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "is Markovian. It was shown by Vershik and Kerov [3] and independently by Logan and Shepp",
+          "bbox": [
+            64.51,
+            526.73,
+            530.76,
+            538.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "[4] that Young diagrams following Plancherel growth process converge to a universal diagram in",
+          "bbox": [
+            64.51,
+            541.08,
+            530.76,
+            553.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the large k limit when the diagrams are normalised (scaled) appropriately such that the area of",
+          "bbox": [
+            64.51,
+            555.53,
+            530.77,
+            567.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the diagram is unity. The boundary of such normalised diagram becomes smooth under scaling.",
+          "bbox": [
+            64.51,
+            570.07,
+            530.76,
+            582.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "A universal Young diagram means the boundary curve takes a particular form, which is called",
+          "bbox": [
+            64.51,
+            584.51,
+            530.76,
+            596.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the limit shape. The limit shape follows the famous arcsin law [3, 5]. In the continuum (large",
+          "bbox": [
+            64.51,
+            598.87,
+            530.76,
+            610.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "k) limit Kerov introduced a diﬀerential model to capture the growth of Young diagrams [1, 5].",
+          "bbox": [
+            64.51,
+            612.87,
+            530.76,
+            625.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "He associated a ‘time’ parameter with the continuous diagrams to study the evolution of these",
+          "bbox": [
+            64.51,
+            627.76,
+            530.77,
+            639.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "diagrams. It turns out that Young diagrams equipped with Plancherel measure follow an evolution",
+          "bbox": [
+            64.51,
+            642.29,
+            530.76,
+            654.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "equation which is a ﬁrst order partial diﬀerential equation. The model was named as automodel",
+          "bbox": [
+            64.51,
+            656.21,
+            530.76,
+            668.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "[1, 5]. The class of diagrams following such a growth or evolution equation is called automodel",
+          "bbox": [
+            64.51,
+            671.1,
+            530.76,
+            683.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "class. The limit shape is a unique solution of the automodel equation in far future with ∅as initial",
+          "bbox": [
+            64.51,
+            684.86,
+            530.77,
+            697.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "txsy"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "condition in far past.",
+          "bbox": [
+            64.51,
+            700.08,
+            163.35,
+            712.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Random matrix models oﬀer an independent way to analyse the growth processes of Young dia-",
+          "bbox": [
+            64.51,
+            721.22,
+            530.77,
+            733.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "rtxr"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            294.65,
+            739.68,
+            300.63,
+            751.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 10,
+      "rotation": 0,
+      "drawings": 17,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2: Typical structure of a Young diagram in French notation."
+      ],
+      "labels": [
+        {
+          "text": "We use P(λk) to write the partition function for the growth process. The number fλk is equal to the",
+          "bbox": [
+            64.51,
+            113.25,
+            530.77,
+            129.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "dimension of the representation λk, i.e.",
+          "bbox": [
+            64.51,
+            127.94,
+            249.67,
+            141.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "fλk = dim λk.",
+          "bbox": [
+            268.22,
+            150.99,
+            328.85,
+            165.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(3.7)",
+          "bbox": [
+            507.86,
+            151.52,
+            530.76,
+            163.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "and thus we have,",
+          "bbox": [
+            64.51,
+            174.56,
+            149.75,
+            186.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "P(λk) = (dim λk)2",
+          "bbox": [
+            252.08,
+            185.59,
+            338.51,
+            207.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            340.21,
+            194.48,
+            343.2,
+            206.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "rtxmi"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(3.8)",
+          "bbox": [
+            507.86,
+            195.01,
+            530.76,
+            206.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "k!",
+          "bbox": [
+            311.99,
+            203.12,
+            321.49,
+            215.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "It was observed in [3, 4] that a Young lattice equipped with Plancherel measure terminates to a",
+          "bbox": [
+            64.51,
+            217.51,
+            530.76,
+            229.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "universal class of diagram in the limit k →∞when the diagrams are scaled properly.",
+          "bbox": [
+            64.51,
+            231.18,
+            470.99,
+            243.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "txsy"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "3.1. The Universal Diagram and Automodel",
+          "bbox": [
+            64.51,
+            256.83,
+            277.71,
+            268.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Although we are using the “English” notation for Young diagrams, but the limit shape of Young",
+          "bbox": [
+            64.51,
+            272.92,
+            530.76,
+            284.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "diagrams takes a simple form in rotated French notation. A typical shape of Young diagram in",
+          "bbox": [
+            64.51,
+            287.36,
+            530.76,
+            299.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "French notation is given in ﬁg. 2. The centres of boxes are marked with (X, Y) coordinates. The",
+          "bbox": [
+            64.51,
+            301.28,
+            530.76,
+            313.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "function X(Y) speciﬁes a particular shape of Young diagram in this notation. However, it is more",
+          "bbox": [
+            64.51,
+            316.16,
+            530.76,
+            328.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            220.11,
+            363.21,
+            227.78,
+            374.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            11.2
+          ]
+        },
+        {
+          "text": "Y",
+          "bbox": [
+            367.97,
+            482.35,
+            374.81,
+            493.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            11.2
+          ]
+        },
+        {
+          "text": "Figure 2: Typical structure of a Young diagram in French notation.",
+          "bbox": [
+            161.49,
+            502.59,
+            433.78,
+            513.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96,
+            10.91
+          ]
+        },
+        {
+          "text": "convenient to rotate this diagram anti-clock wise by π/4 and work in the redeﬁned coordinates",
+          "bbox": [
+            64.51,
+            528.86,
+            530.77,
+            541.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "rtxmi"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "u = 1",
+          "bbox": [
+            219.36,
+            552.83,
+            246.75,
+            572.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "v = 1",
+          "bbox": [
+            308.43,
+            552.83,
+            335.16,
+            572.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2(Y −X)",
+          "bbox": [
+            240.77,
+            560.15,
+            284.52,
+            581.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "txsy"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2(Y + X).",
+          "bbox": [
+            329.18,
+            560.4,
+            375.92,
+            581.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(3.9)",
+          "bbox": [
+            507.86,
+            560.93,
+            530.76,
+            572.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "A Young diagram in this notation4 is depicted in ﬁgure 3. Note that here the coordinate u is",
+          "bbox": [
+            64.51,
+            580.49,
+            530.76,
+            596.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "4There is another advantage to draw the Young diagrams in rotated French notation. A transition from λk to λk+1",
+          "bbox": [
+            78.46,
+            614.11,
+            530.27,
+            626.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "occurs when one keeps a box at any of the minima of rotated diagram. Putting a box at diﬀerent minima corresponds",
+          "bbox": [
+            64.51,
+            626.98,
+            530.76,
+            637.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "rtxr"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to diﬀerent diagrams at k + 1 level. Therefore the transition probabilities are denoted by µa where a is the position of",
+          "bbox": [
+            64.51,
+            638.94,
+            530.76,
+            650.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a=1(x −xa) and Q(x) = Qn−1",
+          "bbox": [
+            310.8,
+            648.99,
+            426.65,
+            667.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr",
+            "txex",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a minimum. To ﬁnd µa we deﬁne two polynomials P(x) = Qn",
+          "bbox": [
+            64.51,
+            649.38,
+            314.29,
+            667.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr",
+            "txex"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a=1(x −ya), where x1, · · · , xn",
+          "bbox": [
+            415.24,
+            650.69,
+            530.26,
+            663.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "are positions of consecutive minima and y1, · · · , yn−1 are consecutive maxima. The transition probability from λk to",
+          "bbox": [
+            64.51,
+            662.65,
+            530.76,
+            674.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "λk+1 by adding a box at ath minima is given by decomposing the quotient into partial fraction",
+          "bbox": [
+            64.51,
+            671.63,
+            434.64,
+            686.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            253.7,
+            692.26,
+            257.19,
+            699.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "µa",
+          "bbox": [
+            272.54,
+            695.05,
+            281.36,
+            706.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "= Q(x)",
+          "bbox": [
+            293.47,
+            695.42,
+            322.81,
+            712.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            248.85,
+            698.45,
+            262.03,
+            708.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txex"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "P(x) .",
+          "bbox": [
+            304.58,
+            701.8,
+            326.5,
+            719.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(3.10)",
+          "bbox": [
+            506.69,
+            702.24,
+            530.76,
+            712.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "x −xa",
+          "bbox": [
+            265.39,
+            708.43,
+            289.01,
+            719.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a=1",
+          "bbox": [
+            249.74,
+            715.59,
+            261.15,
+            722.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            291.66,
+            739.68,
+            303.62,
+            751.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 11,
+      "rotation": 0,
+      "drawings": 37,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 3: Typical structure of a 45◦anti-clockwise rotated Young diagram."
+      ],
+      "labels": [
+        {
+          "text": "Y",
+          "bbox": [
+            377.65,
+            140.62,
+            383.47,
+            150.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            9.52
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            216.71,
+            158.36,
+            223.23,
+            167.88
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            9.52
+          ]
+        },
+        {
+          "text": "Figure 3: Typical structure of a 45◦anti-clockwise rotated Young diagram.",
+          "bbox": [
+            145.68,
+            248.37,
+            449.59,
+            260.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi",
+            "NimbusRomNo9L-Regu",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96,
+            10.91
+          ]
+        },
+        {
+          "text": "diﬀerent than the Young diagram density deﬁned in (5.10). For a ﬁnite number of boxes the",
+          "bbox": [
+            64.51,
+            282.92,
+            530.76,
+            295.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "rtxr"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "function v(u) is rough and zig-zag i.e. v′(u) = ±1. As the number of boxes goes very large we",
+          "bbox": [
+            64.51,
+            296.06,
+            530.76,
+            309.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "deﬁne a rescaled function",
+          "bbox": [
+            64.51,
+            312.34,
+            187.02,
+            324.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            316.15,
+            314.03,
+            324.56,
+            325.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txsy"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ˆvk(u) = v(u",
+          "bbox": [
+            260.03,
+            324.76,
+            314.16,
+            345.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "k)",
+          "bbox": [
+            324.56,
+            324.76,
+            334.05,
+            336.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            310.51,
+            332.79,
+            318.91,
+            344.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txsy"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(3.11)",
+          "bbox": [
+            501.88,
+            332.95,
+            530.76,
+            344.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "k",
+          "bbox": [
+            318.91,
+            343.52,
+            324.22,
+            355.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "such that the area under the curve is ﬁnite and the boundary curve becomes smooth. It was ob-",
+          "bbox": [
+            64.51,
+            359.96,
+            530.76,
+            371.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "served by [3, 4] that when the growth process follows Plancherel transition probability (1.1) the",
+          "bbox": [
+            64.51,
+            374.4,
+            530.76,
+            386.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "asymptotic shape of rescaled Young diagrams converges uniformly to a unique curve given by",
+          "bbox": [
+            64.51,
+            388.85,
+            530.76,
+            400.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            326.97,
+            405.33,
+            335.37,
+            417.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txsy"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            255.07,
+            412.64,
+            261.67,
+            451.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txex"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "π(u sin−1 u",
+          "bbox": [
+            262.86,
+            413.92,
+            310.86,
+            431.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            262.96,
+            414.81,
+            266.94,
+            422.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "4 −u2)",
+          "bbox": [
+            335.37,
+            415.74,
+            368.71,
+            428.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "txsy"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "|u| ≤2",
+          "bbox": [
+            399.92,
+            415.74,
+            430.91,
+            428.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "txsy"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2 +",
+          "bbox": [
+            306.88,
+            415.98,
+            322.32,
+            432.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "rtxr"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "if",
+          "bbox": [
+            380.66,
+            416.51,
+            387.97,
+            428.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "k→∞ˆvk(u) ≡Ω(u) =",
+          "bbox": [
+            160.19,
+            424.01,
+            251.75,
+            443.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "lim",
+          "bbox": [
+            161.29,
+            424.78,
+            177.24,
+            436.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(3.12)",
+          "bbox": [
+            501.88,
+            424.78,
+            530.76,
+            436.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "|u|",
+          "bbox": [
+            261.67,
+            433.07,
+            272.43,
+            445.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal",
+            "txsy"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "|u| > 2.",
+          "bbox": [
+            399.92,
+            433.07,
+            433.89,
+            445.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "if",
+          "bbox": [
+            380.66,
+            433.84,
+            387.97,
+            445.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In the continuum limit Kerov introduced [5] charge of a diagram, denoted by σ(u) and is given by",
+          "bbox": [
+            64.51,
+            460.95,
+            530.77,
+            473.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(we are using the notation that ˆv(u) = ˆvk(u) in the large k limit)",
+          "bbox": [
+            64.51,
+            475.4,
+            364.14,
+            488.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "σ(u) = 1",
+          "bbox": [
+            236.41,
+            498.27,
+            279.89,
+            518.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2 (ˆv(u) −|u|) .",
+          "bbox": [
+            273.91,
+            505.59,
+            338.94,
+            526.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(3.13)",
+          "bbox": [
+            501.88,
+            506.36,
+            530.76,
+            518.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Therefore,",
+          "bbox": [
+            64.51,
+            534.46,
+            114.63,
+            546.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2 + ˆv′(u)",
+          "bbox": [
+            262.24,
+            554.83,
+            296.94,
+            574.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            262.24,
+            557.39,
+            266.23,
+            565.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "u < 0",
+          "bbox": [
+            335.99,
+            558.56,
+            362.19,
+            571.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "for",
+          "bbox": [
+            310.09,
+            559.09,
+            324.03,
+            571.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u001a",
+          "bbox": [
+            247.73,
+            562.54,
+            253.06,
+            574.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txex"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            287.25,
+            566.22,
+            291.23,
+            574.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "σ′(u) =",
+          "bbox": [
+            208.16,
+            566.41,
+            244.41,
+            580.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            364.2,
+            568.32,
+            367.18,
+            580.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "rtxmi"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(3.14)",
+          "bbox": [
+            501.88,
+            568.85,
+            530.76,
+            580.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2 + ˆv′(u)",
+          "bbox": [
+            263.06,
+            575.06,
+            297.76,
+            594.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            254.26,
+            577.02,
+            267.04,
+            589.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "txsy"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "u > 0",
+          "bbox": [
+            336.8,
+            578.19,
+            363.0,
+            590.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "for",
+          "bbox": [
+            310.91,
+            578.72,
+            324.85,
+            590.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            288.06,
+            585.86,
+            292.05,
+            593.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "One can deﬁne moments of a diagram",
+          "bbox": [
+            64.51,
+            602.75,
+            246.46,
+            614.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            276.83,
+            624.77,
+            284.48,
+            636.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txex"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "un−1dσ(u)",
+          "bbox": [
+            291.82,
+            630.91,
+            339.69,
+            645.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "pn = −n",
+          "bbox": [
+            236.55,
+            632.58,
+            274.84,
+            646.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(3.15)",
+          "bbox": [
+            501.88,
+            633.35,
+            530.76,
+            645.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "such that area of a diagram (area covered under the curve ˆv(h)) is given by A = (p2 −p2",
+          "bbox": [
+            64.51,
+            663.56,
+            488.96,
+            677.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "1)/2. It is",
+          "bbox": [
+            484.97,
+            664.36,
+            530.76,
+            679.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "rtxmi"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "convenient to consider a moment generating function",
+          "bbox": [
+            64.51,
+            679.33,
+            318.86,
+            691.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Z dσ(u)",
+          "bbox": [
+            311.97,
+            696.7,
+            356.51,
+            716.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txex"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "∞",
+          "bbox": [
+            255.18,
+            700.93,
+            261.98,
+            708.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txsy"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "pn",
+          "bbox": [
+            270.57,
+            704.87,
+            280.54,
+            717.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "n x−n =",
+          "bbox": [
+            272.37,
+            707.59,
+            308.65,
+            733.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            250.67,
+            708.5,
+            266.49,
+            720.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txex"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "S (x) =",
+          "bbox": [
+            214.66,
+            712.52,
+            247.35,
+            725.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "u −x .",
+          "bbox": [
+            329.91,
+            712.52,
+            360.69,
+            733.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(3.16)",
+          "bbox": [
+            501.88,
+            713.05,
+            530.76,
+            725.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "n=1",
+          "bbox": [
+            252.06,
+            729.13,
+            265.1,
+            737.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "11",
+          "bbox": [
+            291.66,
+            739.68,
+            303.62,
+            751.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 15,
+      "rotation": 0,
+      "drawings": 192,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4: A generic Young diagram in English notation. Here N is an arbitrary positive integer. The number of boxes in the ﬁrst column is less than or equal to N. In general, ∃a number 0 < M ≤N such that ni = 0 for i = M + 1, · · · , N."
+      ],
+      "labels": [
+        {
+          "text": "5. Large N analysis of partition function : an alternate proof of the limit shape theorem",
+          "bbox": [
+            64.51,
+            113.82,
+            501.69,
+            125.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi",
+            "NimbusRomNo9L-MediItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The large N analysis of partition function (4.1) was explicitly done in [7]. We brieﬂy review the",
+          "bbox": [
+            64.51,
+            137.16,
+            530.76,
+            149.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "procedure for the readers not familiar with matrix model techniques (for a more comprehensive",
+          "bbox": [
+            64.51,
+            151.69,
+            530.76,
+            163.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "treatment of matrix models, see [42–44]). To analyse the partition function (4.3) we denote a valid",
+          "bbox": [
+            64.51,
+            166.14,
+            530.76,
+            178.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Young diagram of symmetric group S k by a set of numbers {ni}N",
+          "bbox": [
+            64.51,
+            179.19,
+            371.32,
+            194.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "txsy"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "i=1 where ni denotes the number of",
+          "bbox": [
+            365.81,
+            180.49,
+            530.76,
+            196.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "boxes in ith row. N is an arbitrary positive integer greater than or equal to the height of the ﬁrst",
+          "bbox": [
+            64.51,
+            190.69,
+            530.76,
+            206.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 4: A generic Young diagram in English notation. Here N is an arbitrary positive integer. The number",
+          "bbox": [
+            64.51,
+            387.32,
+            530.77,
+            398.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of boxes in the ﬁrst column is less than or equal to N. In general, ∃a number 0 < M ≤N such that ni = 0",
+          "bbox": [
+            64.51,
+            400.3,
+            530.76,
+            413.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "for i = M + 1, · · · , N.",
+          "bbox": [
+            64.51,
+            413.85,
+            158.18,
+            425.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "column. See ﬁgure 4. The dimension of a representation λk of S k is given by [24]",
+          "bbox": [
+            64.51,
+            442.83,
+            453.5,
+            457.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "N",
+          "bbox": [
+            320.15,
+            467.82,
+            325.47,
+            475.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "k!",
+          "bbox": [
+            275.78,
+            471.31,
+            285.28,
+            483.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Y",
+          "bbox": [
+            314.85,
+            474.94,
+            331.05,
+            486.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txex"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(hi −hj)",
+          "bbox": [
+            331.05,
+            478.72,
+            370.51,
+            492.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "txsy"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "dimλk =",
+          "bbox": [
+            204.84,
+            478.97,
+            244.88,
+            492.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(5.1)",
+          "bbox": [
+            507.86,
+            479.49,
+            530.77,
+            491.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "h1!h2! · · · hN!",
+          "bbox": [
+            249.39,
+            486.92,
+            311.66,
+            500.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "txsy"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "i=1",
+          "bbox": [
+            318.72,
+            495.83,
+            327.18,
+            502.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "i< j",
+          "bbox": [
+            318.94,
+            502.12,
+            326.96,
+            508.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "where,",
+          "bbox": [
+            64.51,
+            520.96,
+            96.71,
+            532.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "hi = ni + N −i",
+          "bbox": [
+            252.79,
+            546.14,
+            322.56,
+            560.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(5.2)",
+          "bbox": [
+            507.86,
+            546.91,
+            530.76,
+            558.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "is the hook length of the ﬁrst box in ith row.",
+          "bbox": [
+            64.51,
+            568.52,
+            271.85,
+            584.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "We consider the large N limit of the partition function (4.3). In this limit the hook numbers hi ∼N",
+          "bbox": [
+            64.51,
+            593.76,
+            530.05,
+            607.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "txsy"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(5.2). Therefore we deﬁne the following continuous functions to describe Young diagrams at large",
+          "bbox": [
+            64.51,
+            608.98,
+            530.76,
+            620.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "N",
+          "bbox": [
+            64.81,
+            623.33,
+            72.79,
+            635.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "n(x) = ni",
+          "bbox": [
+            156.96,
+            644.1,
+            200.62,
+            664.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "h(x) = hi",
+          "bbox": [
+            219.4,
+            644.1,
+            263.07,
+            664.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "x = i",
+          "bbox": [
+            323.61,
+            644.1,
+            350.55,
+            664.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal",
+            "rtxr"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "x ∈[0, 1].",
+          "bbox": [
+            372.11,
+            651.52,
+            418.39,
+            664.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "N ,",
+          "bbox": [
+            192.58,
+            651.76,
+            205.45,
+            672.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "N ,",
+          "bbox": [
+            255.02,
+            651.76,
+            267.9,
+            672.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "N ,",
+          "bbox": [
+            344.69,
+            651.76,
+            357.57,
+            672.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "where",
+          "bbox": [
+            281.85,
+            652.29,
+            311.05,
+            664.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(5.3)",
+          "bbox": [
+            507.86,
+            652.29,
+            530.76,
+            664.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The function n(x) or h(x) captures the distribution of boxes in a large k Young diagram. The",
+          "bbox": [
+            64.51,
+            681.26,
+            530.76,
+            693.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "relation between n(x) and h(x) follows from equation (5.2) and is given by",
+          "bbox": [
+            64.51,
+            695.7,
+            419.93,
+            707.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "h(x) = n(x) + 1 −x.",
+          "bbox": [
+            250.26,
+            720.98,
+            345.01,
+            733.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(5.4)",
+          "bbox": [
+            507.86,
+            721.75,
+            530.76,
+            733.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "15",
+          "bbox": [
+            291.66,
+            739.68,
+            303.62,
+            751.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 18,
+      "rotation": 0,
+      "drawings": 3,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 5: A Young diagram in English notation for automodel class (0 < ξ < 1/2)."
+      ],
+      "labels": [
+        {
+          "text": "Figure 5: A Young diagram in English notation for automodel class (0 < ξ < 1/2).",
+          "bbox": [
+            116.44,
+            263.56,
+            478.83,
+            274.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi",
+            "NimbusRomNo9L-Regu",
+            "rtxmi"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "This terminal distribution is same as the universal curve or the limit shape obtained by [3, 4].",
+          "bbox": [
+            64.51,
+            298.82,
+            530.76,
+            310.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Hence we see that the limit shape Young diagram corresponds to GWW transition point in matrix",
+          "bbox": [
+            64.51,
+            313.26,
+            530.76,
+            325.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "model side.",
+          "bbox": [
+            64.51,
+            327.71,
+            119.64,
+            339.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "We calculate Plancherel measure (3.8) for this dominant diagram. Following [7], the Plancherel",
+          "bbox": [
+            64.51,
+            349.38,
+            530.76,
+            361.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "measure in large N limit is given by",
+          "bbox": [
+            64.51,
+            363.73,
+            235.85,
+            375.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Z q",
+          "bbox": [
+            141.07,
+            382.11,
+            158.05,
+            398.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal",
+            "txex"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Z q",
+          "bbox": [
+            192.66,
+            382.11,
+            209.64,
+            398.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal",
+            "txex"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Z q",
+          "bbox": [
+            317.95,
+            382.11,
+            334.93,
+            398.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal",
+            "txex"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            86.17,
+            387.33,
+            92.14,
+            399.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "u(h)h ln h dh + k′ + 1 + k′ ln k′.",
+          "bbox": [
+            337.42,
+            389.96,
+            485.17,
+            407.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "dh′u(h′) ln |h −h′| −2",
+          "bbox": [
+            212.13,
+            392.98,
+            315.95,
+            407.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "txsy"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "N2 ln Pλk =",
+          "bbox": [
+            82.71,
+            394.65,
+            137.75,
+            415.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "dhu(h) −",
+          "bbox": [
+            160.54,
+            394.65,
+            203.83,
+            407.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "txsy"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(5.20)",
+          "bbox": [
+            501.88,
+            395.42,
+            530.76,
+            407.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            148.72,
+            408.95,
+            152.71,
+            416.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            200.31,
+            408.95,
+            204.3,
+            416.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            325.6,
+            408.95,
+            329.58,
+            416.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Evaluating the right hand side for symmetric solutions (5.12) and (5.15) we get",
+          "bbox": [
+            64.51,
+            426.5,
+            442.75,
+            438.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Pλk = 1 + O (1/N) .",
+          "bbox": [
+            251.27,
+            451.46,
+            344.01,
+            466.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(5.21)",
+          "bbox": [
+            501.88,
+            452.23,
+            530.76,
+            464.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Thus we see that in the large k (or large N) limit the symmetric solution (5.12, 5.15) is the max-",
+          "bbox": [
+            64.51,
+            485.1,
+            530.76,
+            497.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "imum probable solution. Probability of having other diagrams is suppressed by powers of N.",
+          "bbox": [
+            64.51,
+            499.55,
+            530.76,
+            511.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "This gives an alternate proof of limit shape theorem of Vershik-Kerov and Logan-Shepp result",
+          "bbox": [
+            64.51,
+            513.99,
+            530.76,
+            526.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "[3, 4].",
+          "bbox": [
+            64.51,
+            528.53,
+            93.4,
+            540.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The partition function (4.3) admits another phase. The dominant diagrams in that phase are not",
+          "bbox": [
+            64.51,
+            550.2,
+            530.76,
+            562.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "self-transpose. See Appendix C for details. Growth of such diagrams are diﬀerent than that",
+          "bbox": [
+            64.51,
+            564.12,
+            530.77,
+            576.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "rtxr"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "studied in section 3.",
+          "bbox": [
+            64.51,
+            579.09,
+            160.15,
+            591.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "5.2. A connection with automodel",
+          "bbox": [
+            64.51,
+            605.12,
+            228.23,
+            617.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "To make a precise connection between automodel class and the above solution, we need to set up",
+          "bbox": [
+            64.51,
+            622.36,
+            530.76,
+            634.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "a dictionary between the variables deﬁned in (u, v) plane and (h, x) plane. The relation between",
+          "bbox": [
+            64.51,
+            636.27,
+            530.76,
+            648.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "French notation and English notation is Y = n and X = x. We use the following transformation",
+          "bbox": [
+            64.51,
+            650.72,
+            530.77,
+            663.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "between (n, x) and (u, v) so that u = v = 2 point is mapped to n = 1, x = 0",
+          "bbox": [
+            64.51,
+            665.17,
+            414.94,
+            677.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "u",
+          "bbox": [
+            263.65,
+            685.78,
+            269.63,
+            697.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2 = n −x",
+          "bbox": [
+            263.65,
+            693.19,
+            309.87,
+            714.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(5.22)",
+          "bbox": [
+            501.88,
+            707.23,
+            530.76,
+            719.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "v",
+          "bbox": [
+            263.99,
+            711.34,
+            269.29,
+            723.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2 = n + x.",
+          "bbox": [
+            263.65,
+            719.0,
+            312.89,
+            739.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "18",
+          "bbox": [
+            291.66,
+            739.68,
+            303.62,
+            751.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    }
+  ]
+}

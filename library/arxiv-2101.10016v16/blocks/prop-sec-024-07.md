@@ -1,0 +1,1 @@
+Let z and z ′ vary among the N-th roots of unity. Then for N + 1 < ℓ ≤ ∞ there are 2N braided symmetries, ε + z and ε − z ′ of Cq,N,ℓ uniquely determined by ε + z (X, X) = zε+(X, X), ε− z ′(X, X) = z ′ ε −(X, X). Furthermore, this is a complete list.

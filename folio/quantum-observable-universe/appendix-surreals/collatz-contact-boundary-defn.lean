@@ -1,4 +1,4 @@
--- Ref: [manuscript] def:collatz-contact-boundary, appendix-surreals.
+-- Ref: [leitner2026] def:collatz-contact-boundary, appendix-surreals.
 --
 -- Sibling stub for `def:collatz-contact-boundary`.
 --
@@ -13,7 +13,7 @@ namespace QOU.AlgebraicSubstrate
 
 /-- The Collatz contact boundary and orbit contact average. -/
 def CollatzContactBoundary   :=
-  -- Ref: [manuscript] def:collatz-contact-boundary
+  -- Ref: [leitner2026] def:collatz-contact-boundary
   trivial
 
 end QOU.AlgebraicSubstrate

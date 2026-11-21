@@ -1,0 +1,41 @@
+130 Chapter 5 — A family of surfaces
+
+the monodromy group of the restriction L|y, of the given local system L to
+the fibre U; = f—!(s). Up to isomorphism the group G(uw) of course only
+depends on the image point s = f(u).
+
+LEMMA 5.27. Let uo € U(C). Then there is a non-empty Zariski-open
+subset S' CS with the following property: For all points u € f—'(S'(C)),
+any identification Ly, = Ly of the stalks gives rise to an embedding of the
+monodromy groups such that the following diagram commutes.
+
+G(uo) oF > G(u)
+Aut¢ (Ly) ———— Autg (Ly)
+
+Proof. The inclusion U,, > U of the special fibre, followed by a path
+from uo to u to change the base points, induces on fundamental groups a
+pushforward homomorphism
+
+™ (Usy,4o) ——> ™(U,uo) ——> m(U,u).
+
+For any Zariski-open dense subset S’ C S with preimage U’ = f—!(S’) and
+all s € S’(C) this leads to a commutative diagram
+
+7 (Usy,40) —> ™(U,u) <— m(U',u) <— m(Us,u)
+
+G(uo) ‘ Gu Gu > G(u)
+fo | | |
+Autc (Lu) —> Autc (Lu) == Autc (Lu) == Autc(Ly)
+
+where Gy C Autc(L,,) denotes the image of 7) (U,u) under the monodromy
+representation. Note that Gy coincides with the image of 7 (U’,u) because
+the embedding of any Zariski-open dense subset induces an epimorphism
+on fundamental groups. The proof of the lemma would be finished if we
+could show that the embedding i in the above diagram is an isomorphism
+for a suitable choice of the Zariski-open dense subset S’ C S.
+
+This need not be the case in general. However, since the statement of
+the lemma only concerns the fibres of the family f : U —> S and not the
+total space, we can for the purpose of the proof replace the given family
+by its base change under any quasi-finite branched cover of a Zariski-open
+dense subset of S containing sg, accordingly replacing the local system L

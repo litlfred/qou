@@ -1,0 +1,3368 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-math-0305275v1",
+ "status": "determined",
+ "pages_unread": [
+  13
+ ],
+ "body_size": 12.0,
+ "footnotes": [],
+ "uncalled_notes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "1",
+   "text": "Authoraddress:StefanoFrancaviglia,DipartimentodiMatematicaApplicata“U. Dini”, via Bonanno 25b, I-56126 Pisa, e-mail: s.francaviglia@sns.it.",
+   "block": "library/arxiv-math-0305275v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p001-2",
+   "page": 1,
+   "mark": "2",
+   "text": "This work was partially written while the author was a PhD student at the Scuola Nor- male Superiore di Pisa, and was partially supported by the C.R.M. (Universit´at Autonoma de Barcelona).",
+   "block": "library/arxiv-math-0305275v1/blocks/prose-sec-front-matter"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "12",
+   "context": "StefanoFrancaviglia"
+  },
+  {
+   "page": 1,
+   "mark": "f",
+   "context": "bytakinganyρ-equivariantmapfromtheuniversalcover"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "WtoH"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "group into PSL(2, C) ≃Isom+(H"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "Wto H"
+  },
+  {
+   "page": 1,
+   "mark": "f",
+   "context": "ρ-equivariantmap from the universalcover"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "agivenrepresentationρ : π"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "agivenrepresentationρ : π1(M) →Isom+(H"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "foreachrepresentationρ:π"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "foreachrepresentationρ:π1(M)→Isom+(H"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "Theorem5.1Forallrepresentationsρ:π"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "Theorem5.1Forallrepresentationsρ:π1(M)→Isom+(H"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "|vol(ρ)| < v"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "M)||,wherev"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "droninH"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "manifoldofﬁnitevolume.LetΓ∼=π"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "suchthatM=H"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "tobeaunionoftori,soeachcuspishomeomorphictoT"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "Wedeﬁne"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "Mthe universalcoverof M,wecall"
+  },
+  {
+   "page": 3,
+   "mark": "f",
+   "context": "for eachcuspof M.Called"
+  },
+  {
+   "page": 3,
+   "mark": "f",
+   "context": "obtainedbyaddingto"
+  },
+  {
+   "page": 4,
+   "mark": "f",
+   "context": "WecallthepointsaddedtoM(or"
+  },
+  {
+   "page": 4,
+   "mark": "f",
+   "context": "M)idealpointsofM(or"
+  },
+  {
+   "page": 4,
+   "mark": "p",
+   "context": "eachidealpointpofM,weﬁxasmoothproductstructureT"
+  },
+  {
+   "page": 4,
+   "mark": "p",
+   "context": "fromT"
+  },
+  {
+   "page": 4,
+   "mark": "p",
+   "context": "fromTp × [0, ∞]bycollapsingT"
+  },
+  {
+   "page": 4,
+   "mark": "p",
+   "context": "fromTp × [0, ∞]bycollapsingTp × {∞}top,onaneighborhoodC"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "MthatprojectstotheidealpointpofM.WedenotebyN"
+  },
+  {
+   "page": 4,
+   "mark": "p",
+   "context": "MthatprojectstotheidealpointpofM.WedenotebyNe"
+  },
+  {
+   "page": 4,
+   "mark": "p",
+   "context": "TheconeNe"
+  },
+  {
+   "page": 4,
+   "mark": "p",
+   "context": "TheconeNepishomeomorphictoPe"
+  },
+  {
+   "page": 4,
+   "mark": "p",
+   "context": "TheconeNepishomeomorphictoPep × [0, ∞]wherePe"
+  },
+  {
+   "page": 4,
+   "mark": "p",
+   "context": "heconeNepishomeomorphictoPep × [0, ∞]wherePepcoversthetorusT"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "andP"
+  },
+  {
+   "page": 4,
+   "mark": "p",
+   "context": "andPe"
+  },
+  {
+   "page": 4,
+   "mark": "f",
+   "context": "Remark2.3Let"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "uptoconjugation.Called{ep"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "correspondencebetweenthestabilizersStab(ep"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "correspondencebetweenthestabilizersStab(epi)ofep"
+  },
+  {
+   "page": 4,
+   "mark": "f",
+   "context": "transformationsof"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "M→Mandtheconjugatesofπ"
+  },
+  {
+   "page": 4,
+   "mark": "p",
+   "context": "M→Mandtheconjugatesofπ1(T"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "M→Mandtheconjugatesofπ1(Tp)inπ"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "will often require that a map from a cusp to H"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "•f(C) ∩∂H"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "andletρ:π"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "andletρ:π1(M)→Isom+(H"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "M→H"
+  },
+  {
+   "page": 5,
+   "mark": "f",
+   "context": "mapforρisapiecewisesmoothmapDρ:"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "MviadecktransformationsandonH"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "w.r.t.theactionsofπ"
+  },
+  {
+   "page": 5,
+   "mark": "f",
+   "context": "w.r.t.theactionsofπ1(M)on"
+  },
+  {
+   "page": 5,
+   "mark": "c",
+   "context": "Dρ,from"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "3thatmapstheidealpointsto∂H"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "suchthatforeachcuspN"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "suchthatforeachcuspNp=P"
+  },
+  {
+   "page": 5,
+   "mark": "f",
+   "context": "suchthatforeachcuspNp=Pp×[0, ∞]of"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "P"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "Letγ̸= idbeanisometryofH"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "ofγ.ThenFix(γ) ∩∂H"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "Γ-invariant.Actually, for almost all Abelian Γ and for any γ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "variant.Actually, for almost all Abelian Γ and for any γ1, γ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "isisomorphictoZ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "isisomorphictoZ2 × Z"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "∂H"
+  },
+  {
+   "page": 5,
+   "mark": "c",
+   "context": "Let now p be an ideal point of"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "is dihedral or it has a ﬁxed point in ∂H"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "exist,ρ(Stab(p))musthaveaﬁxedpointin∂H"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "ideal points to ∂H"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "pointismappedtotheinteriorofH"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "Lemma2.7LetMbeacuspedmanifoldandletρ : π"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "Lemma2.7LetMbeacuspedmanifoldandletρ : π1(M) →Isom+(H"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "anidealpointof"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "ρ-imagehasatleastoneﬁxedpointq∈∂H"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "allα∈π"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "idealpoints.NowforeachidealpointpwedeﬁneDρonP"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "way.TheextensionispossiblebecauseH"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "Remark2.8Letpbeanidealpointof"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "ifold.AnidealtriangulationofMisatriangulationof"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "cusp N"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "cusp Np we require τ∩(T"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "cusp Np we require τ∩(Tp×{0}) to be a triangulation of T"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "Massubsetsof"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "Let∆⊂H"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "convexhullofitsvertices,thentheIsom+(H"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "terminedbytheIsom+(H"
+  },
+  {
+   "page": 7,
+   "mark": "4",
+   "context": "entationoftheverticesisdeﬁneduptotheactionofA"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "whoseverticesaredistinctandlieonahyperbolicplaneofH"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "acontinuousmapthatmapsthe0-skeletonof∆kto∂H"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "modelofH"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "LetMbeanideallytriangulatedmanifold,ρ:π"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "LetMbeanideallytriangulatedmanifold,ρ:π1(M)→Isom+(H"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "tetrahedronof τand"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "tetrahedronof τande∆be one of its lifts.Theverticesof"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "sotheirimagesunderDρliein∂H"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "for"
+  },
+  {
+   "page": 8,
+   "mark": "c",
+   "context": "piecewisesmooth,ρ-equivariantmapStr(Dρ) :"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "3.ForeachcuspNe"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "3.ForeachcuspNep=Pe"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "restrictedtoPe"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "tationρ:π"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "tationρ:π1(M)→Isom+(H"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "interiorofH"
+  },
+  {
+   "page": 8,
+   "mark": "f",
+   "context": "oursetting,becauseitcanmapsomepointof"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "Mto∂H"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "thearc-lengthastheconeparameteronthecuspsofMandconsiderH"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "structureofM;theidentitymapofH"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "mapprojectstoamapStr :"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "Proof.Itiseasytoseethat"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "H"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "ideal points lie on ∂H"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "toamapStr :"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "Strisonto.OnecaneasilyprovethatH"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "M; Z)∼=H"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "wecandeﬁnethedegreeofamapf:"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "M]isthegeneratorofH"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "is notonto and letx be a point in"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "amapfrom"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "Mto"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "M])=0∈H"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "becauseH"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "M])isaboundaryin"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "consequentlyitisaboundaryalsoin"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "tionρ : π"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "tionρ : π1(M) →Isom+(H"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "MtoH"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "do-developingmapforρ.LetωbethevolumeformofH"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "ρωprojectsto"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "MtoH"
+  },
+  {
+   "page": 10,
+   "mark": "f",
+   "context": "equivariantmapfrom"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "isnotinL"
+  },
+  {
+   "page": 10,
+   "mark": "s",
+   "context": "i"
+  },
+  {
+   "page": 10,
+   "mark": "v",
+   "context": "is.Let"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "is.Letv"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "is.Letvi=0ifStr(e∆i)is"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "tetrahedron,andletv"
+  },
+  {
+   "page": 10,
+   "mark": "v",
+   "context": "i"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "iv"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "Remark4.4Let∆1, . . . , ∆nbethetetrahedraofτ.Letz = (z"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "4.4Let∆1, . . . , ∆nbethetetrahedraofτ.Letz = (z1, . . . , z"
+  },
+  {
+   "page": 10,
+   "mark": "z",
+   "context": "],[NZ],[PP], [PW], [Th1]).Thenthere exists a developingmap D"
+  },
+  {
+   "page": 10,
+   "mark": "f",
+   "context": "[NZ],[PP], [PW], [Th1]).Thenthere exists a developingmap Dz:"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "H"
+  },
+  {
+   "page": 10,
+   "mark": "z",
+   "context": "mapisalreadystraightandwehaveStrvol(D"
+  },
+  {
+   "page": 10,
+   "mark": "z",
+   "context": "mapisalreadystraightandwehaveStrvol(Dz) = vol(D"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "mapisalreadystraightandwehaveStrvol(Dz) = vol(Dz)=Pv"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "LetC"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "LetCp=T"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "LetCp=Tp×[0, ∞]/∼beacuspofMandletNe"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "LetCp=Tp×[0, ∞]/∼beacuspofMandletNep=Pe"
+  },
+  {
+   "page": 10,
+   "mark": "f",
+   "context": "beoneofitsliftsin"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "M.Thenwecanidentifyπ"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "M.Thenwecanidentifyπ1(C"
+  },
+  {
+   "page": 10,
+   "mark": "e",
+   "context": "f:P"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "f:Pe"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "f:Pep× {0}→H"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "f:Pep× {0}→H3beaStab(ep)-equivariantmap,letξ∈∂H"
+  },
+  {
+   "page": 10,
+   "mark": "e",
+   "context": "pointofρ(Stab(ep))andletF:N"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "pointofρ(Stab(ep))andletF:Ne"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "Cp.Similarlywecanpull-backthemetric.WecallA"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "T"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "A"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "t≤A"
+  },
+  {
+   "page": 10,
+   "mark": "e",
+   "context": "r"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "|F∗ω| ≤A"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "Proof.Let(x, y)belocalcoordinatesonPe"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "C× R+ofH"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "det(TJF"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "det(TJFt · H· JF"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "F"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "FtistherestrictionofFtoPe"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "h"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "thehyperbolicmetric.Fromdirectcalculationsitfollowsthatdσ"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "Nownotethatthevolumeelement|F∗ω|atthepoint(x, y, t)∈C"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "boundedbytheareaelementofthetorusT"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "A"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "t"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "te−(s−t)ds = A"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "A"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "T"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "A"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "0"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "T"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "onthepointξ= F(p)butonlyontheareaofT"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "eachidealpointepof"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "restrictions of Dρ and Fρ to Pe"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "letK"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "letKtbeM\\ ∪p(T"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "Proof. For t ∈[0, ∞), let D"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "ρbe the map constructedas follows:D"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "D"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "ρbyconingD|P"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "ρbyconingD|Pp×{t}toFρ(p)alonggeodesicraysinsuch"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "arc-lengthistheparameters −t,wheres∈[t, ∞).Now,D"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "ρis"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "vol(D"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "SinceD"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "A"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "A"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "|vol(Dρ) −vol(D"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "0)"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "wherepvariesonthesetofidealpointsandA"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "T"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "Deﬁnition4.11Letf, gbetwomapsfromasetXrespectivelytoH"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "n.Fort ∈[0, ∞]theconvexcombinationΦ"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "\u001aγ"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "Proof.ConsiderH"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "astheconeparameterofthecusps.ClearlytheidentityofH"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "tetrahedronofmodulusz"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "tetrahedronofmoduluszi.Thenwehavevol(ρ) =Pv"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "Remark4.17EvenifPv"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "Remark4.17EvenifPvidependsonlyonρ,themoduliz"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "Proposition4.18Let gbe areﬂectionofH"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "Proposition4.19Supposethatρ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "Proposition4.19Supposethatρt:π"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "Proposition4.19Supposethatρt:π1(M)→Isom+(H"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "regularstraightidealtetrahedronofH"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Theorem5.1Foranyrepresentationρ : π"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "Theorem5.1Foranyrepresentationρ : π1(M) →Isom+(H"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "|vol(ρ)| ≤v"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Proof.Fortheproofweﬁxarepresentationρ:π"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "Proof.Fortheproofweﬁxarepresentationρ:π1(M)→Isom+(H"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "iλ"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "iλiσ"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "iλiσibe"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "simplicialvolumeofcisdeﬁnedas||c||=P|λ"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "M] ∈H"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "iλ"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "iλiσ"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "∆3 λ"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "ρω),whereωisthevolumeformofH"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "iλ"
+  },
+  {
+   "page": 16,
+   "mark": "v",
+   "context": "iλi"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "iλiv"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "|λ"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "|λi| · |v"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "|λi| · |vi| ≤v"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "ρωdeﬁnedonMextendsto"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "ρω]∈H"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "∆3 λ"
+  },
+  {
+   "page": 16,
+   "mark": "c",
+   "context": "Step2.Theidea is the following.Considera lift ecof c to"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "bethepush-forwardofectoH"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "ρω,"
+  },
+  {
+   "page": 16,
+   "mark": "c",
+   "context": "ρω, e"
+  },
+  {
+   "page": 16,
+   "mark": "c",
+   "context": "ρω, ec⟩= ⟨ω, (Dρ)∗e"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "λ"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "λiv"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "iλ"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "iλiσ"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "iλiσiinC"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "M),wealsocallcthechaininducedonC"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "M)with∂c∈C"
+  },
+  {
+   "page": 16,
+   "mark": "c",
+   "context": "points).Wecallecaliftofcto"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "iλ"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "iλi"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "iλieσ"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "iλieσi∈C"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "eσ"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "eσiisaliftofσ"
+  },
+  {
+   "page": 17,
+   "mark": "l",
+   "context": "j"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "jl"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "jljη"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "jljηj,thereexists"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "jljηj,thereexistsafamily{α"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "l"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "lj · α"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "lj · αj∗(η"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "lj · αj∗(ηj) ∈C"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "whereπ"
+  },
+  {
+   "page": 17,
+   "mark": "f",
+   "context": "whereπ1(M)actson"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "σ"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "σi= (Dρ)∗(eσ"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "iλ"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "σ"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "σi= (Dρ)∗(ec) ∈C"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "simplexηofσ,iftheinteriorofηtouches∂H"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "iλ"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "ibe a relative cycle in C"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "iλ"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "iλiσ"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "iλiσi(withthesameλ"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "iλiσi(withthesameλi’s)suchthat[c′]=[c]∈H"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "Proof.Forany chainβ∈C"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "σ"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "σi(x)∈∂H"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "thesimplexη=(σ"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "iλ"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "iλiσ"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "iλiσi"
+  },
+  {
+   "page": 17,
+   "mark": "c",
+   "context": "iλiσiastraighteningof"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "iλiσiastraighteningofcis"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "iλ"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "iλiStr(σ"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "γofH"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "•∀γ∈Isom(H"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "•∀γ∈Isom(H"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "γ∈Isom(H)"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "f) ≺(B"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "f)≺(B"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "H"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "∂H"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "iλ"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "iλiσ"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "iλiσibe"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "iλiσibeachaininC"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "M).Let{γ"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "ofisometriesandletAbethehyperbolicconvexhullinH"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "iλ"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "iλiσ"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "iλiσibe"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "iλiσibearelativecycleinC"
+  },
+  {
+   "page": 19,
+   "mark": "l",
+   "context": "j"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "jl"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "jljη"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "By Remark 5.2, there exists a ﬁnite set {α"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "By Remark 5.2, there exists a ﬁnite set {αj} ⊂π"
+  },
+  {
+   "page": 20,
+   "mark": "l",
+   "context": "j"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jl"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jlj·α"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jlj·αj∗η"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "Let A be as in Lemma 5.8, where we use {ρ(α"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "tries.SinceA hasﬁnite volume,thenthevolumeform ωofH"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "ofH"
+  },
+  {
+   "page": 20,
+   "mark": "e",
+   "context": "ρω,"
+  },
+  {
+   "page": 20,
+   "mark": "c",
+   "context": "ρω, e"
+  },
+  {
+   "page": 20,
+   "mark": "c",
+   "context": "ρω, ec⟩= ⟨ω, (Dρ)∗(e"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "iλ"
+  },
+  {
+   "page": 20,
+   "mark": "v",
+   "context": "iλi"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "iλiv"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "iλ"
+  },
+  {
+   "page": 20,
+   "mark": "v",
+   "context": "iλi"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "iλiv"
+  },
+  {
+   "page": 20,
+   "mark": "l",
+   "context": "j"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jl"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jlj(Dρ)∗η"
+  },
+  {
+   "page": 20,
+   "mark": "l",
+   "context": "j"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jl"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jlj⟨ω, H(Dρ)∗η"
+  },
+  {
+   "page": 20,
+   "mark": "l",
+   "context": "j"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jl"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jlj⟨ρ(α"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jlj⟨ρ(αj)∗ω, H(Dρ)∗η"
+  },
+  {
+   "page": 20,
+   "mark": "l",
+   "context": "j"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jl"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jlj⟨ω, ρ(α"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jlj⟨ω, ρ(αj)∗H(Dρ)∗η"
+  },
+  {
+   "page": 20,
+   "mark": "l",
+   "context": "j"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jl"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jlj⟨ω, Hρ(α"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jlj⟨ω, Hρ(αj)∗(Dρ)∗η"
+  },
+  {
+   "page": 20,
+   "mark": "l",
+   "context": "j"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jl"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jlj⟨ω, H(Dρ)∗α"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jlj⟨ω, H(Dρ)∗αj∗η"
+  },
+  {
+   "page": 20,
+   "mark": "l",
+   "context": "j"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jl"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jljα"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jljαj∗η"
+  },
+  {
+   "page": 20,
+   "mark": "l",
+   "context": "j"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jl"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jljα"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jljαj∗η"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "ρ : π"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "ρ : π1(M) →Isom+(H"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "Thenforallrepresentationsρ:π"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "Thenforallrepresentationsρ:π1(M)→Isom+(H"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "havevol(M) = v"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "manifoldofﬁnitevolume.LetΓ∼=π"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "suchthatM=H"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "invariantsetofatmosttwopointsin∂H"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "3,whoserestrictionto∂H"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "Proposition6.5Letf:∂H"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "Proposition6.5Letf:∂H3→∂H"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "M"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "M0beMminusthecuspsandletπ: H"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "Dρ:∂H"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "Dρ:∂H3→∂H"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "Dρ:∂H3→∂H3suchthatforalmostallx∈∂H"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "geodesicγ"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "geodesicγxendingatx,foranysequencet"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "geodesicγxendingatx,foranysequencetn→∞suchthatπ(γ"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "geodesicγxendingatx,foranysequencetn→∞suchthatπ(γx(t"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "geodesicγxendingatx,foranysequencetn→∞suchthatπ(γx(tn)) ∈M"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "n→∞Dρ(γ"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "n→∞Dρ(γx(t"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "LetµbetheHaarmeasureonIsom(H"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "LetµbetheHaarmeasureonIsom(H3)suchthatforeachx∈H"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "A ⊂H"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "µ{g∈Isom(H"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "S= {(y"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "S= {(y0, . . . , y"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "S= {(y0, . . . , y3) ∈(H"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "S= {(y0, . . . , y3) ∈(H3)"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "S= {(y0, . . . , y3) ∈(H3)4:vol(y"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "S= {(y0, . . . , y3) ∈(H3)4:vol(y0, . . . , y"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "S(Y ) = {X∈S:∃g∈Isom(H"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "ThenanaturalbijectionfY:Isom(H"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "Y(Isom±(H"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "SetS=Γ"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "SetS=Γ4/ΓwhereΓactsonΓ"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "σ=[(γ"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "σ=[(γ0, . . . , γ"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "σ=[(γ0, . . . , γ3)]∈Shasauniquerepresentativewithγ"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "σ∈S we tacitly assume that the representative of the form (γ"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "ly assume that the representative of the form (γ0, . . . , γ"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "FortherestofthesectionweﬁxafundamentalpolyhedronF⊂H"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "N = {(γ"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "N = {(γ0, . . . , γ"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "N = {(γ0, . . . , γ3, ξ"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "N = {(γ0, . . . , γ3, ξ0, . . . , ξ"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "N = {(γ0, . . . , γ3, ξ0, . . . , ξ3) :(γ"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "N = {(γ0, . . . , γ3, ξ0, . . . , ξ3) :(γ0, . . . , γ"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "N = {(γ0, . . . , γ3, ξ0, . . . , ξ3) :(γ0, . . . , γ3) ∈S,ξ"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "ForeachtetrahedronX=(x"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "ForeachtetrahedronX=(x0, . . . , x"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "η=(γ"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "η=(γ0, . . . , γ"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "η=(γ0, . . . , γ3, ξ"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "η=(γ0, . . . , γ3, ξ0, . . . , ξ"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "η=(γ0, . . . , γ3, ξ0, . . . , ξ3)∈Nsuchthatx"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "η=(γ0, . . . , γ3, ξ0, . . . , ξ3)∈Nsuchthatxi∈γ"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "η=(γ0, . . . , γ3, ξ0, . . . , ξ3)∈Nsuchthatxi∈γi(Fξ"
+  },
+  {
+   "page": 24,
+   "mark": "x",
+   "context": "Y(η) ∩S±(Y )} = µ{X∈S±(Y ) :"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "Y(η) ∩S±(Y )} = µ{X∈S±(Y ) :x"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "Y(η) ∩S±(Y )} = µ{X∈S±(Y ) :xi∈γ"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "Y(η) ∩S±(Y )} = µ{X∈S±(Y ) :xi∈γi(Fξ"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "Nevertheless,asthefollowinglemmashows,ithasboundedl"
+  },
+  {
+   "page": 25,
+   "mark": "s",
+   "context": "Y"
+  },
+  {
+   "page": 25,
+   "mark": "g",
+   "context": "Y(N) } = µ{g:"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "Y(N) } = µ{g:g(y"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "Proof.Firstnote that thel"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "Proof.Firstnote that thel1-norm of ∂ZYisboundedby4timesthe l"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "of an (n−1)-simplex having vertices in Fξ"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "of an (n−1)-simplex having vertices in Fξ0, γ"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "of an (n−1)-simplex having vertices in Fξ0, γ1(Fξ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "of an (n−1)-simplex having vertices in Fξ0, γ1(Fξ1), γ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "of an (n−1)-simplex having vertices in Fξ0, γ1(Fξ1), γ2(Fξ"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "-simplex having vertices in Fξ0, γ1(Fξ1), γ2(Fξ2) for some γ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "plex having vertices in Fξ0, γ1(Fξ1), γ2(Fξ2) for some γ1, γ"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "andξ"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "andξ0, ξ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "andξ0, ξ1, ξ"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "η= (γ"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "η= (γ0, γ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "η= (γ0, γ1, γ"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "η= (γ0, γ1, γ2, γ, ξ"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "η= (γ0, γ1, γ2, γ, ξ0, ξ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "η= (γ0, γ1, γ2, γ, ξ0, ξ1, ξ"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "Foranyideal,non-ﬂat,tetrahedronY=(y"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "Foranyideal,non-ﬂat,tetrahedronY=(y0, . . . , y"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "Foranyideal,non-ﬂat,tetrahedronY=(y0, . . . , y3)lett 7→y"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "ǫ(R, ε) = sup{v"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "Thisisbecausev"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "thevolume-formofH"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "Proof.LetM"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "Proof.AsP|aR(η)|<+∞,since|⟨ω, ∆η⟩|isboundedbyv"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "ρ|overstraightgeodesicsimplicesisboundedbycv"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "Asabove,letM"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "k= F ε ∩π−1(M"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "k= F ε ∩π−1(Mk)andN"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "k= F ε ∩π−1(Mk)andNk= {η∈N :ξ"
+  },
+  {
+   "page": 27,
+   "mark": "a",
+   "context": "η∈Nk"
+  },
+  {
+   "page": 27,
+   "mark": "a",
+   "context": "η∈NkaR(η)∆ηis"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "Proof.IfaR(η)̸=0andη∈N"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "havingﬁrstvertexinFξ"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "havingﬁrstvertexinFξ0withξ"
+  },
+  {
+   "page": 27,
+   "mark": "a",
+   "context": "kisﬁnite,sothereisonly"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "F ξ"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "F ξ0iscompact,anyX∈S(R)withﬁrstvertexinFξ"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "compactballBofH"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "thatthereexistsonlyaﬁnitenumberofη∈N"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "Lemma6.19ForanyR,ifkislargeenough,thenforanyη∈N"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "Proof.IfX=(x"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "Proof.IfX=(x0, . . . , x"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "Proof.IfX=(x0, . . . , x3)∈S(R)thenXliesintheballB(x"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "k≥mifx"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "k≥mifx0∈M"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "k≥mifx0∈MkthenthewholeballB(x"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "containingx"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "containingx0.Ifη∈N"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "x"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "x0∈π−1(M"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "x0∈π−1(Mk) ∩Fhence∆ηisε-closetoX.Thus∆η⊂B(x"
+  },
+  {
+   "page": 27,
+   "mark": "j",
+   "context": "andη∈N"
+  },
+  {
+   "page": 27,
+   "mark": "c",
+   "context": "correspondsanidealpointof"
+  },
+  {
+   "page": 27,
+   "mark": "b",
+   "context": "Let"
+  },
+  {
+   "page": 27,
+   "mark": "b",
+   "context": "Thechain"
+  },
+  {
+   "page": 28,
+   "mark": "b",
+   "context": "Weusenowthecycles"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "H"
+  },
+  {
+   "page": 28,
+   "mark": "b",
+   "context": "M).Thusforanyk∈Nwehave⟨ω,"
+  },
+  {
+   "page": 28,
+   "mark": "b",
+   "context": "ρω,"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "ρω,bZR,k⟩.AsinStep"
+  },
+  {
+   "page": 28,
+   "mark": "b",
+   "context": "ofTheorem5.1,wecanstraightentheﬁnitecycle"
+  },
+  {
+   "page": 28,
+   "mark": "b",
+   "context": "⟨ω,"
+  },
+  {
+   "page": 28,
+   "mark": "b",
+   "context": "ρω,"
+  },
+  {
+   "page": 28,
+   "mark": "b",
+   "context": "Foreachsimplexαof"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "ForeachsimplexαofbZR,kwehave|vol(α)|≤v"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "ForeachsimplexαofbZR,kwehave|vol(α)|≤v3,|Strvol(α)|≤v"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "ρω, α⟩|≤cv"
+  },
+  {
+   "page": 28,
+   "mark": "j",
+   "context": "Since∂ZR=0,ifυ∈∂ZR,kthenυ∈∂∆ηwithaR(η)̸=0andη∈N"
+  },
+  {
+   "page": 28,
+   "mark": "j",
+   "context": "R(N"
+  },
+  {
+   "page": 28,
+   "mark": "y",
+   "context": "j,"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "j,y"
+  },
+  {
+   "page": 28,
+   "mark": "b",
+   "context": "NowthatwehaveProposition6.20,forgetaboutthecycles"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "|aR(η)|(v"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "|aR(η)|(v"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "AR= {η∈N :v"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "AR= {η∈N :v3 −|wη| > R"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "R"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "R"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "|aR(η)|(v"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "|aR(η)|(v"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "n→∞Strvol(g(Y"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "n→∞Strvol(g(Yn)) = v"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "R(A"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "R"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "µ{g∈Isom(H"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "µ{g∈Isom(H3) : ∃n > R,w"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "µ{g∈Isom(H3) : ∃n > R,ws"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "µ{g∈Isom(H3) : ∃n > R,wsn(g(Y"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "µ{g∈Isom(H3) : ∃n > R,wsn(g(Yn))< v"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "µ{g∈Isom(H3) : ∃n > R,wsn(g(Yn))< v3 −n"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "FromLemma6.13itfollowsthatlim"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "FromLemma6.13itfollowsthatlimn→∞n"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "n→∞w"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "n→∞ws"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "n→∞wsn(g(Y"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "n→∞wsn(g(Yn))= v"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "n→∞Strvol(∆s"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "n→∞Strvol(∆sn(g(Y"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "n→∞Strvol(∆sn(g(Yn))) = v"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "n→∞Strvol(g(Y"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "n→∞Strvol(g(Yn)) = v"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "apointin∂H"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "n→∞Strvol(g(X"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "n→∞Strvol(g(Xn)) = v"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "ThenDρ(g(γ(n)))mustreachtheboundaryofH"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "cannotbelocallyLipschitzonthewholeH"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "withy"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "withyi∈U"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "orhyperbolicisometry.Thenγ"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "volume, but at least three of the vertices of γ"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "{(a, b, c) ∈S"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "∞× S"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "∞× S"
+  },
+  {
+   "page": 31,
+   "mark": "a",
+   "context": "∞:"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "whereS"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "∞=∂H"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "Proposition6.28Theset{Y∈S"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "∞× S"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "∞× S"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "{Y∈S"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "∞× S"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "∞× S"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "andx ∈∂H"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "suresetA ⊂S"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "{(a, b, c) ∈S"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "∞× S"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "∞× S"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "measuresetA"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "measuresetA0⊂S"
+  },
+  {
+   "page": 32,
+   "mark": "a",
+   "context": "∞suchthatforall"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "∞suchthatforalla"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "∞suchthatforalla0∈A"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "{(b, c) ∈S"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "∞× S"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "haspositivemeasureinS"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "∞× S"
+  },
+  {
+   "page": 32,
+   "mark": "a",
+   "context": "∞.AgainbyFubini’stheoremforall"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "∞.AgainbyFubini’stheoremforalla"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "∞.AgainbyFubini’stheoremforalla0∈A"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "thereexistsapositive-measuresetA"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "thereexistsapositive-measuresetA1∈S"
+  },
+  {
+   "page": 32,
+   "mark": "a",
+   "context": "∞suchthatforany"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "∞suchthatforanya"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "∞suchthatforanya1∈A"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "{c ∈S"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "Remark6.31Inthesequelweusethesymbol"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "e∀(a"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "e∀(a0, a"
+  },
+  {
+   "page": 32,
+   "mark": "c",
+   "context": "e∀(a0, a1, x) ∈A × A × A"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "Q(a"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "Q(a0, a"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "WeworknowinthehalfspacemodelC × R+ofH"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "WeworknowinthehalfspacemodelC × R+ofH3.SoS"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "3)/2.AgainbyFubini’stheorem"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "3)/2.AgainbyFubini’stheoreme∀a"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "3)/2.AgainbyFubini’stheoreme∀a0∈A,"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "3)/2.AgainbyFubini’stheoreme∀a0∈A,e∀(a"
+  },
+  {
+   "page": 32,
+   "mark": "c",
+   "context": "A × A"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "A × Ac,wehaveQ(a"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "A × Ac,wehaveQ(a0, a"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "a"
+  },
+  {
+   "page": 32,
+   "mark": "c",
+   "context": "Inotherwords,foralmostall(a, x)∈A × A"
+  },
+  {
+   "page": 33,
+   "mark": "x",
+   "context": "a, x ∈CwecallE"
+  },
+  {
+   "page": 33,
+   "mark": "c",
+   "context": "e∀(a, x) ∈A × A"
+  },
+  {
+   "page": 33,
+   "mark": "x",
+   "context": "e∀(a, x) ∈A × Ac,E"
+  },
+  {
+   "page": 33,
+   "mark": "e",
+   "context": "and in particular"
+  },
+  {
+   "page": 33,
+   "mark": "c",
+   "context": "and in particulare∀(a, x) ∈A×A"
+  },
+  {
+   "page": 33,
+   "mark": "c",
+   "context": "µ(A ∩B)=0.Thatis,almostallthepointsofBareinA"
+  },
+  {
+   "page": 33,
+   "mark": "e",
+   "context": "from(1)andFubini’stheoremitfollowsthat"
+  },
+  {
+   "page": 33,
+   "mark": "c",
+   "context": "from(1)andFubini’stheoremitfollowsthate∀x∈A"
+  },
+  {
+   "page": 33,
+   "mark": "e",
+   "context": "from(1)andFubini’stheoremitfollowsthate∀x∈Ac,"
+  },
+  {
+   "page": 33,
+   "mark": "x",
+   "context": "from(1)andFubini’stheoremitfollowsthate∀x∈Ac,e∀a∈A, E"
+  },
+  {
+   "page": 33,
+   "mark": "0",
+   "context": "Thereforethereexistsapointx"
+  },
+  {
+   "page": 33,
+   "mark": "0",
+   "context": "Thereforethereexistsapointx0∈BsuchthatasmallballB"
+  },
+  {
+   "page": 33,
+   "mark": "0",
+   "context": "Thereforethereexistsapointx0∈BsuchthatasmallballB0=B(x"
+  },
+  {
+   "page": 33,
+   "mark": "0",
+   "context": "Thereforethereexistsapointx0∈BsuchthatasmallballB0=B(x0, r"
+  },
+  {
+   "page": 33,
+   "mark": "x",
+   "context": "e∀a ∈A,E"
+  },
+  {
+   "page": 33,
+   "mark": "0",
+   "context": "e∀a ∈A,Ex"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "µ(A∩B"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "µ(A ∩B(x"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "almostallthepointsofthesetC= {2y −a :a ∈B"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "yiscloseenoughtox"
+  },
+  {
+   "page": 33,
+   "mark": "0",
+   "context": "yiscloseenoughtox2thenC ∩B"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "Itfollowsthatforallr"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "Itfollowsthatforallr2>0wehaveµ(A ∩B(x"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "Itfollowsthatforallr2>0wehaveµ(A ∩B(x2, r"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "pointsx"
+  },
+  {
+   "page": 33,
+   "mark": "0",
+   "context": "pointsxn→x"
+  },
+  {
+   "page": 33,
+   "mark": "0",
+   "context": "pointsxn→x0andradiir"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "pointsxn→x0andradiir0/2 > r"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "pointsxn→x0andradiir0/2 > rn> 0suchthatµ(A ∩B(x"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "pointsxn→x0andradiir0/2 > rn> 0suchthatµ(A ∩B(xn, r"
+  },
+  {
+   "page": 33,
+   "mark": "c",
+   "context": "e∀x ∈A"
+  },
+  {
+   "page": 33,
+   "mark": "x",
+   "context": "e∀x ∈Ac,E"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "x"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "xn→zsuchthat(4)(andhence(3))holdsforx"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Lemma6.34LetX⊂R"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "thenµ(R"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "Proof.LetωbethevolumeformofN.ForX=M, NletΓX∼=π"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "thesubgroupofPSL(2, C)suchthatX=H"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "mapinducedinhomologyandtherepresentationf∗: π"
+  },
+  {
+   "page": 34,
+   "mark": "e",
+   "context": "Firstassumethatthelift"
+  },
+  {
+   "page": 34,
+   "mark": "f",
+   "context": "Firstassumethattheliftef:"
+  },
+  {
+   "page": 34,
+   "mark": "e",
+   "context": "cusps.Thisimpliesthat"
+  },
+  {
+   "page": 35,
+   "mark": "f",
+   "context": "As"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "M∼=H"
+  },
+  {
+   "page": 35,
+   "mark": "f",
+   "context": "M∼=H3,weconsidertheisometryϕasanf∗-equivariantmapfrom"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "toH"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "toH3.Namely,foranyx ∈H"
+  },
+  {
+   "page": 35,
+   "mark": "e",
+   "context": "theconvexcombinationfrom"
+  },
+  {
+   "page": 35,
+   "mark": "e",
+   "context": "hasthe conepropertyon thecusps.Let"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "sthe conepropertyon thecusps.Letefbe aliftof f.For eachcuspN"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "P"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "Pp ×[0, ∞) let f"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "Pp ×[0, ∞) let fp=ef|P"
+  },
+  {
+   "page": 35,
+   "mark": "e",
+   "context": "Pp ×[0, ∞) let fp=ef|Pp×{0}.Since fis proper it follows that"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "[0, ∞) let fp=ef|Pp×{0}.Since fis proper it follows thatef(N"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "well-deﬁned.Let F"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "well-deﬁned.Let Fp: N"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "well-deﬁned.Let Fp: Np ×[0, ∞) →H"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "deﬁned.Let Fp: Np ×[0, ∞) →H3be the map obtained by coning f"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "ef(N"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "eachcuspN"
+  },
+  {
+   "page": 35,
+   "mark": "e",
+   "context": "eachcuspNp,themap"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "eachcuspNp,themapef|N"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "eachcuspNp,themapef|Npwiththe mapF"
+  },
+  {
+   "page": 35,
+   "mark": "e",
+   "context": "eachcuspNp,themapef|Npwiththe mapFp.Themap"
+  },
+  {
+   "page": 35,
+   "mark": "e",
+   "context": "the convexcombinationfrom"
+  },
+  {
+   "page": 35,
+   "mark": "e",
+   "context": "the convexcombinationfromefto"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "volume.LetΓ∼= π"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "volume.LetΓ∼= π1(M)bethesub-groupofPSL(2, C)suchthatM= H"
+  },
+  {
+   "page": 36,
+   "mark": "z",
+   "context": "Letρ(z)betheholonomyrelativetozandletD"
+  },
+  {
+   "page": 36,
+   "mark": "z",
+   "context": "thatisalsoapseudo-developingmapforρ(z).ThenD"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "tetrahedronofmodulusz"
+  }
+ ]
+}

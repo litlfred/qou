@@ -1,0 +1,60 @@
+548 J. BORCEA, P. BRANDEN, AND T. M. LIGGETT
+
+Note that an affirmative answer to Question Z.J] would give a characterization of
+the Loewner order on the cone of all positive semi-definite n x n matrices in terms
+of determinantal stable polynomials.
+
+Remark 4.3. Stochastic domination is closely related to the notion of majorization
+(or spectral order) for real vectors that was axiomatized by Hardy-Littlewood-Polya
+and Schur [61]. The latter also induces a partial order (though not the same as
+the proper position) on univariate real-rooted polynomials; see, e.g., [6].
+
+4.3.2. Truncations of strongly Rayleigh measures and polynomials. We will now
+discuss certain truncations of stable polynomials and strongly Rayleigh measures.
+Lemma 4.16. Suppose that f(z) = Daenn a(a)z® € RiZ1,..., Zn] is stable of total
+degree at most d and has non-negative coefficients. For 0 <k <d let
+E;.(z) = > a(a)z*.
+lo|=k
+If0<p<a<d, then
+
+" S(9)
+
+—p
+
+k=p k
+is a stable polynomial in the variables z1,...,2n,Y-
+Proof. Define a sequence of polynomials in R[z1,..., Zn, y| as follows:
+d
+Aly = Yoalajety l= Ex(ey**,
+k=0
+folzy) = O° fi/dy*™",
+filey) = ylate falar lse-s
+fa(z,y) = OP fa/Oy?,
+foley) = yt Pet 2h falezts. zn tye).
+
+By Theorem [4.5] f, is a stable polynomial, and by the closure properties of stable
+polynomials (Proposition [3.1) we also have that f2,..., fs are stable. The polyno-
+mial fs is a constant multiple of (12). Oo
+
+The above lemma gives the following generalization of Newton’s inequalities,
+which correspond to the special case when f(z) = (1+ 2)--+ (1+ Zn)-
+
+Corollary 4.17. Let f(z) and Ex(z), k = 0,...,d, be as in the statement of
+Lemma (4.16) Then
+
+° EZ(z Ex-1(z) Exsi(z)
+(13) zl?) > it ) sat ,
+() (ea) (ef)
+Proof. By Lemma [4.16] the polynomial
+Ex Ex, Exsilz
+
+k (2) 2 49 m2) k+1(2)
+
+(2) (i) (x)
+
+is stable. Hence, for any fixed z € R” the resulting (univariate) polynomial in y is
+real-rooted. The corollary follows upon taking the discriminant in (14). O
+
+2€R",1<k<d-1.
+
+(14) (zy)

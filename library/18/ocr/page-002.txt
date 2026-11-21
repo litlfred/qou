@@ -1,0 +1,47 @@
+52 DARYL COOPER AND IGOR RIVIN
+
+is an open set. Denote this set by CZ. Since the set of all three-dimensional
+Euclidean simplices is an open set in R® (as parametrized by edge-lengths,
+for example), it is clear that the property of conformality is rather special.
+
+In the sequel the simplex T and all of its geometric parameters will be
+viewed as functions of r = (r1,1T2,13,T4) € Ch. Let
+
+4
+S(r) = > Siri.
+i=l
+
+The next two results form the foundation of what follows.
+
+Lemma 1.1.
+
+4
+dS = > Sidri.
+i=l
+
+Proof. Let us rewrite the formula for S using the relations J,; = rj+1; and
+S;,= Vii a,; — 7. A short computation shows that
+
+4
+S= > LijQiy — mori,
+ij i=l
+and thus 4
+dS = > ayyjdliy + > lijdajy — 7 > drj.
+iAj ij i=l
+
+However, by the Euclidean case of the Schlafli differential formula, the
+second sum above vanishes, and since li; = rj +1j;, the claim of the lemma
+follows. O
+
+Note. The Schlafli differential formula (for a good exposition and proof,
+see (1]{Chapter 7, section 2.2.2]) states that as a simplex T (and thus any
+polyhedron) varies smoothly in one of the spaces of constant curvature H”,
+S” or E”, its volume also varies smoothly, and furthermore
+
+(1.1) Kd volT = So volF dar,
+
+MT ain Pen —2
+
+where K is the curvature of the space, and ap is the dihedral angle at the
+(n—2)-dimensional face F. Note that when K = 0, the formula simply says
+that the right-hand side vanishes.

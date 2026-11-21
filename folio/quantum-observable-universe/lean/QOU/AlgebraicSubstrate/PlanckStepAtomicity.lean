@@ -97,7 +97,7 @@ the concrete monoid `ℕ × ℕ` (no field needed).
 
 -- @conjecture: primary
 
--- Ref: [manuscript] information-theory, rem:discrete-planck-step
+-- Ref: [leitner2026] information-theory, rem:discrete-planck-step
 --      ("There is no sub-step resolution"); information-theory,
 --      def:information-theoretic-time; lifting-and-descent,
 --      prop:ordering-jet-compatibility;
@@ -131,7 +131,7 @@ restriction — FALSE for the rank-two step monoid `ℕ × ℕ`
 conjecture (a modeling choice), not a proof of it; an instance may only
 be created from a genuine derivation of the computation order's
 rank-one/ℕ-shape (open). -/
--- Ref: [manuscript] information-theory, rem:discrete-planck-step;
+-- Ref: [leitner2026] information-theory, rem:discrete-planck-step;
 --      docs/audits/2026-07-25-planck-step-atomicity-formalization.md
 class PlanckStepAtomicity (M : Type*) [AddCommMonoid M] : Prop where
   /-- There is one Planck step generating every computation segment,

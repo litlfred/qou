@@ -1,1 +1,1 @@
-Let G be a ﬁnite group, and let N ◁G.
+Let G be a ﬁnite group and let P be a Sylow p-subgroup of G. (a) If P is normal in G, then Irrp′(B0(G))σ1 = Irr(G/Op′(G)8(P)). (b) If P is cyclic, then 1 ≤|Irrp′(B0(G))σ1| ≤p. (c) If P is nontrivial and p ∈{2, 3}, then |Irrp′(B0(G))σ1|̸ = 0 is divisible by p. Galois action on the principal block and cyclic Sylow subgroups

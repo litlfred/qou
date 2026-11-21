@@ -1,0 +1,75 @@
+apply (subst **«)
+
+apply (simp add: power2-eq-square field-simps)
+
+apply (erule notE, rule-tac r=(cor k)? in eal)
+(
+
+apply (subst **)
+apply (simp add: power2-eq-square field-simps)
+apply (cases k > 0)
+apply (erule notE, rule-tac x=(cor k)? in ex!)
+apply (subst **)
+apply (simp add: power2-eq-square field-simps)
+apply (rule-tac r=(cor k)? in ez)
+
+(
+
+apply (subst **)
+apply (simp add: power2-eq-square field-simps)
+apply (cases k > 0)
+apply (rule-tac =(cor k)? in ez!)
+apply (subst **)
+apply (simp add: power2-eq-square field-simps)
+apply (erule notE, rule-tac r=(cor k)? in ezl)
+apply (subst **)
+apply (simp add: power2-eq-square field-simps)
+apply (rule-tac =(cor k)* in ex!)
+apply (cases k > 0)
+apply (erule notE, rule-tac r=(cor k)? in ezl)
+apply (subst **)
+apply (simp add: power2-eq-square field-simps)
+apply (subst «*)
+apply (simp add: power2-eq-square field-simps)
+done
+next
+case False
+hence — is-poincare-line-cmat H2
+using k * hermitean-mult-real[of H1 k] hh
+by (auto simp add: power2-eq-square norm-mult)
+have rel-set (~,) {(— 1, 1), (1, 1)} {(- 1, 1), (4, 1)}
+by (simp add: rel-set-def)
+thus ?thesis
+using <- is-poincare-line-cmat H1) ‘- is-poincare-line-cmat H2»
+using *
+by (auto simp add: Let-def)
+qed
+qed
+
+Correctness of the calculation
+
+We show that for every h-line its two calculated ideal points are different and are on the intersection of that
+line and the unit circle.
+
+Calculated ideal points are on the unit circle
+
+lemma calc-ideal-point-1-unit:
+assumes is-real A (cmod B)? > (cmod A)?
+assumes (21, 22) = calc-ideal-point1-cvec A B
+shows z1 * cnj z1 = 22 * cnj 22
+proof—
+let ?discr = Re ((cmod B)? — (Re A)?)
+have ?discr > 0
+using assms
+by (simp add: cmod-power2)
+have (Bx(—A — ixsqrt(?discr))) * cnj (Bx(—A — ixsgrt(?discr))) = (B * cnj B) * (A? + cor (abs ?discr))
+using <is-real Ay eq-cnj-iff-real|of A]
+by (simp add: field-simps power2-eq-square)
+also have ... = (B * cnj B) * (emod B)?
+using <?discr > 0»
+using assms
+using comples-of-real-Re[of (cmod B)? — (Re A)?| complez-of-real-Re[of A] <is-real A»
+by (simp add: power2-eq-square)
+also have ... = (cmod B)? * cnj ((cmod B)?)
+using complez-cnj-complez-of-real complez-mult-cnj-cmod
+

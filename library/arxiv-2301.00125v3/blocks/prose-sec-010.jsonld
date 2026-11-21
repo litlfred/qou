@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2301.00125v3/blocks/prose-sec-010",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "C Roots of a class of quadratic equations",
-  "pageStart": 22,
-  "pageEnd": 23,
-  "text": "../sections/sec-010-c-roots-of-a-class-of-quadratic-equations.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2301.00125v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2301.00125v3",
+  "title": "A Bonferroni inequalities and Bell polynomials",
+  "pageStart": 16,
+  "pageEnd": 20,
+  "text": "../sections/sec-010-a-bonferroni-inequalities-and-bell-polynomials.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2301.00125v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2301.00125v3/manifest.jsonld",
   "provenance": "ingested"
 }

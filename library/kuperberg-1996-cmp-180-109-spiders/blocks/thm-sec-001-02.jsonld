@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/thm-sec-001-02",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 13,
+  "pageEnd": 27,
+  "text": "thm-sec-001-02.md",
+  "derivedFrom": "library/kuperberg-1996-cmp-180-109-spiders/sections/sec-001",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kuperberg-1996-cmp-180-109-spiders/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "5.3",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-001-3-paaβa-βa.md (p. 13-27)",
+    "claim_id": "kuperberg-1996-cmp-180-109-spiders#theorem:5.3",
+    "lean_status": "unformalized"
+  }
+}

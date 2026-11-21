@@ -8,8 +8,8 @@ import Mathlib.Tactic.Ring
 Lepton Bring-surface representation: H_3 3-channel Wedderburn
 convention for V̂_ℓ (additive Wedderburn volume).
 
-Ref: [manuscript] prop:lepton-bring-surface-h3-3channel
-Ref: [manuscript] docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md
+Ref: [leitner2026] prop:lepton-bring-surface-h3-3channel
+Ref: [leitner2026] docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md
 
 Proves the closed-form algebraic identity:
   V̂_ℓ = W_SYM · q^(2m+1) + W_STD · (z · a_{2m+1} + b_{2m+1})

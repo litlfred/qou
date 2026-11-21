@@ -1,0 +1,68 @@
+by fact
+next
+show w € circline-set H
+by fact
+next
+fix ry
+assume zy: is-real x 0 < Rea Rex < 1 is-imagy 0 <ImyImy< 1
+show ?Q 0, (of-complex x) (of-complex y)
+proof safe
+fix n
+assume n € unit-disc of-compler x A n
+assume n € circline-set (poincare-line On (of-complex x)) of-complex x # On
+hence n € circline-set z-axis
+using poincare-line-0-real-is-z-axis[of of-complex x] xy
+by (auto simp add: circline-set-x-azis)
+then obtain n’ where n’: n = of-complezr n’
+using inf-or-of-complez|of n] «n € unit-disc»
+by auto
+hence is-real n’
+using <n € circline-set x-axis»
+using of-complez-inj
+unfolding circline-set-x-azxis
+by auto
+hence —1 < Ren’ Ren’ < 1
+using <n € unit-disc) n’
+by (auto simp add: cmod-eq-Re)
+
+have Ren’ #4 Rex
+using complez.expand|of n’ x] <is-real n'y <is-real x» <of-complez x # n> n'
+by auto
+
+have Re xz > 0
+using zy <of-complex x # On)
+by (cases Re x = 0, auto simp add: complex.expand)
+
+show P 0), (of-complex x) n (of-complex y)
+using azes[of x n'y] ty n' «Rex > 0» <is-real n'y «<-1 < Ren’ (Re n’ < 1) (Re n' # Re a>
+by simp
+qed
+next
+fix Muvw
+assume 1: unit-disc-fiz M u € unit-disc v € unit-disc w € unit-disc
+assume 2: ?Q (moebius-pt M u) (moebius-pt M v) (moebius-pt M w)
+show ?Quvuw
+proof safe
+fix n
+assume n € unit-disc v 4 nn € circline-set (poincare-line uv) v # u
+thus Puvnw
+using mocbius[of Mv nw u] 1 2[rule-format, of moebius-pt M n]
+by fastforce
+qed
+next
+fix uvw
+assume 1: u € unit-disc v € unit-disc w € unit-disc
+assume 2: ?Q (conjugate u) (conjugate v) (conjugate w)
+show ?Quvuw
+proof safe
+fix n
+assume n € unit-disc v 4 nn € circline-set (poincare-line uv) v # u
+thus Puvnw
+using conjugatelof vn w ul 1 2[rule-format, of conjugate n]
+using conjugate-inj
+by auto
+qed
+qed
+thus ?thesis
+
+118

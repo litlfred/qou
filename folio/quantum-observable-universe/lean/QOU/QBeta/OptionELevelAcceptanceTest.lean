@@ -63,7 +63,7 @@ Nothing here selects an element or proposes a value. Base ring is generic
 `CommRing` wherever the statement is algebraic; `ℝ` appears only in the
 intermediate-value argument, which needs the order and the topology.
 
--- Ref: [manuscript] `docs/audits/2026-09-05-qbeta-functional-decision-options.md` §3, Option E
+-- Ref: [leitner2026] `docs/audits/2026-09-05-qbeta-functional-decision-options.md` §3, Option E
 -/
 import Mathlib.Tactic
 import Mathlib.Topology.Order.IntermediateValue

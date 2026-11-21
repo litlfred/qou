@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2409.09372v4",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "b7eed67ec102ab3d4abc33b53e619c314300d978f73ad3f71059ee4181943cb2",
+  "file": "2409.09372v4.pdf"
+ },
+ "provenance": {
+  "title": "Markov traces on degenerate cyclotomic Hecke algebras",
+  "authors": "DEKE ZHAO",
+  "arxiv": {
+   "id": "2409.09372",
+   "version": "4",
+   "primary_class": "math.RT",
+   "stamp_date": "8 Jul 2026"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

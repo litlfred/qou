@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/asens-1986-4-19-1-57-0/sections/sec-034",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "= Z TfriL'^^^EN^^",
+  "pageStart": 49,
+  "pageEnd": 49,
+  "contains": [
+    "library/asens-1986-4-19-1-57-0/blocks/prose-sec-034"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/asens-1986-4-19-1-57-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/asens-1986-4-19-1-57-0/manifest.jsonld",
+  "provenance": "ingested"
+}

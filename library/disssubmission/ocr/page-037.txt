@@ -1,0 +1,54 @@
+2.2. Character twists and convolution 29
+
+of the diagram
+
+Q *
+aL LBL piL® pi
+os
+“ott — - 6* (LL) —— p3L@ piL
+
+where o : X x X — X xX is the morphism (x,y) +> (y,x) and S’ is the
+symmetry constraint of the ordinary tensor product. Since in any case our
+diagram commutes up to a scalar in A*, it suffices to check commutativity
+on the stalks at the origin (0,0). There everything boils down to the fact
+that (A @A)(u®@v) = (A @A)(v@uw) for all u,v € Lo.
+
+Next we claim that the isomorphisms y are also compatible with the
+associativity constraint of the symmetric monoidal category (D?(X,A),*).
+Indeed, by strictness [106, p. 11] the associativity constraints are the iden-
+tity morphisms, so it suffices to show that the diagram
+
+((AxB)*C)y ((A*B)y) #Cy ee (Ay * By) *Cy
+
+| | yv . |
+
+(Ax(BxC))y Ay * ((BxC)z) o> Ay (By *Cy)
+
+commutes for all A,B,C € D?(X, A). Writing
+((A*B)*C)y = Ra.R(a x id), (((A BB) BIC) @ (a x id)*a"L)
+
+and similarly for the other convolutions, the commutativity of the diagram
+becomes equivalent to the commutativity of the diagram on X x X x X
+
+xid. id
+(axidyatt 82 (ax id LBL =a LAL
+
+(LRL)B
+
+idkip
+(id x a)*LBL=L@a*L —°> L&(LBL)
+
+axa)"
+(id x a)*a*L (ava"g
+
+Again it suffices to check the commutativity on stalks at (0,0,0). The upper
+arrow becomes the composition
+
+(p@id)o@: Lo —+ Lo@alo — (Lo @Lo) @aLo.
+
+The inverse morphism maps (@-v@ B-v)@y-v to (a@B)y- v. By a similar
+computation for the lower row, the commutativity of the diagram hence
+boils down to the associativity law (@B)y = a(ByY) of the field A. Oo
+
+As a trivial by-product, the tensor functoriality provides a simple proof
+of the following result of [59].

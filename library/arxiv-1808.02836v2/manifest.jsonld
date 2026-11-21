@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1808.02836v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1808.02836v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1808.02836v2",
+  "title": "On minimal ideal triangulations of cusped hyperbolic 3–manifolds Introduction",
   "contains": [
+    "library/arxiv-1808.02836v2/sections/sec-front-matter",
     "library/arxiv-1808.02836v2/sections/sec-000",
     "library/arxiv-1808.02836v2/sections/sec-001",
     "library/arxiv-1808.02836v2/sections/sec-002",
@@ -32,10 +33,11 @@
     "library/arxiv-1808.02836v2/sections/sec-018",
     "library/arxiv-1808.02836v2/sections/sec-019",
     "library/arxiv-1808.02836v2/sections/sec-020",
-    "library/arxiv-1808.02836v2/sections/sec-021"
+    "library/arxiv-1808.02836v2/sections/sec-021",
+    "library/arxiv-1808.02836v2/sections/sec-022"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -45,7 +47,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1808.02836v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1808.02836v2.pdf",
     "source_sha256": "0224a296253122a22771fa08e967a250c611c8171bd89eb7fdf303bf48e35392",
     "pages": 34,
@@ -56,8 +60,8 @@
       "stamp_date": "6 Sep 2019"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

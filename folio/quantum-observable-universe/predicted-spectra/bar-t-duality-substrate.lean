@@ -20,9 +20,9 @@ LaTeX label: `prop:bar-t-duality-substrate`
 
 ## References
 
-- [manuscript] §6/bar-t-duality-substrate
-- [manuscript] §6/golden-skew-dual-node
-- [manuscript] §6/bar-self-dual-confinement-band
+- [leitner2026] §6/bar-t-duality-substrate
+- [leitner2026] §6/golden-skew-dual-node
+- [leitner2026] §6/bar-self-dual-confinement-band
 -/
 
 namespace QOU.Archimedean.BarTDualitySubstrate
@@ -31,25 +31,25 @@ namespace QOU.Archimedean.BarTDualitySubstrate
 noncomputable def bar (q : ℝ) : ℝ := q⁻¹
 
 /-- The bar involution is an involution on nonzero reals. -/
--- Ref: [manuscript] §6/bar-t-duality-substrate
+-- Ref: [leitner2026] §6/bar-t-duality-substrate
 theorem bar_involutive (q : ℝ) (_ : q ≠ 0) : bar (bar q) = q := by
   unfold bar
   exact inv_inv q
 
 /-- Bar fixes 1: bar 1 = 1. -/
--- Ref: [manuscript] §6/bar-t-duality-substrate
+-- Ref: [leitner2026] §6/bar-t-duality-substrate
 theorem bar_one : bar (1 : ℝ) = 1 := by
   unfold bar
   exact inv_one
 
 /-- Bar maps positives to positives. -/
--- Ref: [manuscript] §6/bar-t-duality-substrate
+-- Ref: [leitner2026] §6/bar-t-duality-substrate
 theorem bar_pos {q : ℝ} (hq : 0 < q) : 0 < bar q := by
   unfold bar
   exact inv_pos.mpr hq
 
 /-- The unique positive fixed point of bar is 1. -/
--- Ref: [manuscript] §6/bar-t-duality-substrate
+-- Ref: [leitner2026] §6/bar-t-duality-substrate
 theorem bar_fixed_point_pos {q : ℝ} (hq : 0 < q) :
     bar q = q ↔ q = 1 := by
   unfold bar
@@ -67,7 +67,7 @@ theorem bar_fixed_point_pos {q : ℝ} (hq : 0 < q) :
     exact inv_one
 
 /-- Bar is order-reversing on positives. -/
--- Ref: [manuscript] §6/bar-t-duality-substrate
+-- Ref: [leitner2026] §6/bar-t-duality-substrate
 theorem bar_lt_iff {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
     bar a < bar b ↔ b < a := by
   unfold bar
@@ -76,7 +76,7 @@ theorem bar_lt_iff {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
 /-- A discriminant function f : ℝ → ℝ has a "bar-paired zero locus":
     if f(a) = 0 then (f ∘ bar)(a⁻¹) = 0. This is the abstract content
     of the bar T-duality on discriminants. -/
--- Ref: [manuscript] §6/bar-t-duality-substrate
+-- Ref: [leitner2026] §6/bar-t-duality-substrate
 theorem bar_paired_zero_locus
     {f : ℝ → ℝ} {a : ℝ} (ha : 0 < a) (hf : f a = 0) :
     (f ∘ bar) (a⁻¹) = 0 := by
@@ -89,7 +89,7 @@ theorem bar_paired_zero_locus
     self-inverse, fixes 1, and is order-reversing on positives.
     Any zero of a "discriminant" function f at q = a is bar-paired
     to a zero of f ∘ bar at q = a⁻¹. -/
--- Ref: [manuscript] §6/bar-t-duality-substrate
+-- Ref: [leitner2026] §6/bar-t-duality-substrate
 theorem bar_t_duality_substrate :
     (∀ q : ℝ, q ≠ 0 → bar (bar q) = q) ∧
     bar 1 = 1 ∧

@@ -8,6 +8,7 @@ pages: 19-20
 source_pdf: symmetry-04-00039-v3.pdf
 source_sha256: 1aa8a81916887f8e
 toc_source: inferred
+doc_brief: "Knots on a Torus: A Model of the Elementary Particles — Two knots; just two rudimentary knots, the unknot and the trefoil."
 ---
 As to those compositional products, two examples of what we shall designate as first order fusion 
 are shown in Figure 20 (in this case it turns out that these are mesons, or more explicitly, pions). 

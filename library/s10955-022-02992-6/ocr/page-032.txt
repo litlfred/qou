@@ -1,0 +1,64 @@
+33 Page 32 of 47 S. Jansen, L. Kolesnikov
+
+proof of the following result, choosing the chopping map C and the selection rule s such
+that a tiny snippet that approximates a single point in the continuous space sufficiently well
+is selected. At the same time we choose an ansatz function a that can be interpreted as the
+continuous analogue of the ansatz function from the proof of Corollary 2.8.
+
+Theorem 4.4 In the setup of multi-type hard objects on R¢, assume that the activity z satisfies
+
+Fa > 0: SO [BlelPrevilee < e@lPal —1, (4.13)
+e=1
+
+where by |B,| we denote the (Lebesgue) volume of a ball of radius r > 0. Then the activity
+expansions Py(X1,..., Xn3 z) converge absolutely.
+
+Remark 4.3 Activity expansions for systems with infinitely many types of objects are not
+particularly well-studied in statistical mechanics. In the case of finitely many types, we
+expect our result to exceed Kotecky—Preiss but to be weaker then Fernandez—Procacci—as
+in the special case of a single type treated above (see Remark 4.2). The general case, for
+ry, — oo in particular, remains to be investigated.
+
+Proof Again, our strategy is to show that condition (i) from Theorem 2.6 is satisfied for an
+appropriate ansatz function a. By assumption, 7 is the radius of the smallest ball present in
+the system. Set a(D) := = aV,,(D) for De D,, where V,, is given by (4.11) and @ satisfies
+(4.13). Choose some chopping map C and let D € D, (the snippet-size ¢ > 0 is to be
+specified later in the proof). Just as in the proof of Theorem 4.2, independently of the choice
+of the snippet £; (i.e., independently of the selection rule s), we obtain the following upper
+bound for the left-hand side of the inequality from condition (i):
+
+OO Ok
+evo) al¥(DUE)-MIDY-WUED] YY T(E; D'S Vi, 10. Yee VARY). (4.14)
+1 Jxk
+
+The positive number C;(¢) converges towards 0 for ¢ \y 0 and is precisely the bound from
+(4.9) in the proof of Theorem 4.2 for Y given by a translate of B,, (0), i.e., by a sphere of
+minimal volume present in the system.
+
+The summand for k = 1 in (4.14) is equal to
+
+yz ceria lpm) =r) line, 4o,y,nb'=0)4(dY1).
+é>1
+
+Notice that the integrals in the last expression are equal to [V,,(D’U E1) — V,,(D’)] for every
+teN.
+The summand for any k > 2 in (4.14) is bounded from above by
+
+k
+k
+> |Bry, +r1|
+
+> Ze, ++ Zee i! [ Il Lpap=re,}
+xk ‘
+
+Ch ynslk isl
+
+k
+[ [tines 4a. vinva2) 1... re aisoiny* (AY), (4.15)
+
+i=l
+which—by arguments similar to the ones used for the bound Cj (¢)—is again bounded by
+aS [Bry +n
+Cre) , ze tye By | [Bry | (4.16)
+
+D Springer

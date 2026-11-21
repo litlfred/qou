@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1501.04614v1
-doc_title: "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL II"
+doc_title: "KNOT CABLING AND THE DEGREE OF THE COLORED JONES"
 section_id: sec-001-2-jones-slopes-of-cable-knots
 section_title: "Jones slopes of cable knots"
 section_number: 2
 pages: 3-7
 source_pdf: 1501.04614v1.pdf
 source_sha256: ebebcae0c1823217
-doc_brief: "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL II — We continue our study of the degree of the colored Jones polyn omial under knot cabling started in [8]."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.934
+latex_coverage_ratio: 0.985
+doc_brief: "KNOT CABLING AND THE DEGREE OF THE COLORED JONES — We continue our study of the degree of the colored Jones polynomial under knot cabling started in [8]."
 ---
 Let $K_{p,q}$ be the $(p,q)$-cable of a knot $K$, where $q > 1$. For $n>0$, let $\CS_n$ be the set of all $k$ such that 
  $$

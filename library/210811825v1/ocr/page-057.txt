@@ -1,0 +1,40 @@
+Two elements 7, r’ € T’ give the same conjugate of y if and only if r’r~! belongs to
+the centralizer of y. The upshot is that the fundamental domain of the centralizer of a
+hyperbolic element is be-aonerat bnuch simpler than that of the fundamental domain Fp
+(and therefore the integrals over such a domain are much simpler). Such a fundamental
+
+domain is shown in Figure 2.4.
+
+i
+
+Figure 2.4: Fundamental domain for the centralizer of a hyperbolic element
+For 7 € fy]
+
+TrKj, = > [Beare z)du
+T
+
+TEZ\0”
+
+= [ k(yz, z)dp.
+J2,\il
+
+This depends only on [y], that is, if y’ = g~'yg, g € SLo(R), then
+TrKy = / k(g-ygz, z)du = Try.
+~1Z(y)g\H
+
+Thé integral depends only on the distance d(z,7z), and can be explicitly computed
+(see [38, Sections 10.4 and 10.5]). The most common version of the trace formula is for
+compact Riemann surfaces, where there are only hyperbolic conjugacy classes (and the
+identity motion). There is an exact correspondence between hyperbolic conjugacy classes
+and the lengths of primitive geodesics (multiple loops are not included), so this is the
+
+most interesting version for seeing the relation between the energy and length spectra.
+
+Theorem 2.47 (Selberg’s trace formula, [74]) Let h(t) be as above, and let g(t) be
+
+its Fourier transform. Let S be a compact Riemann surface. Then
+
+Area(S ‘ I
+S~ h(t) _ at) | h(t) tanh(zt) Nae DD Fsinh( a, 7) vant mn ty
+
+AT

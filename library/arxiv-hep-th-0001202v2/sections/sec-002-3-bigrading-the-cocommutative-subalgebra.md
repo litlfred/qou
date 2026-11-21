@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-0001202v2
-doc_title: "arXiv:hep-th/0001202v2 29 Jan 2000"
+doc_title: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees"
 section_id: sec-002-3-bigrading-the-cocommutative-subalgebra
 section_title: "Bigrading the cocommutative subalgebra"
 section_number: 3
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.993
+doc_brief: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees — The renormalization of quantum ﬁeld theory twists the antipode of a non- cocommutative Hopf algebra"
 ---
 We first consider the cocommutative Hopf algebra ${\cal H}_{\rm ladder}$ of rooted trees all of whose nodes have fertility less than 2, i.e. the Hopf algebra with linear basis $l_n=B_+^n(e)$, $n\geq 0$. In this very simple case, the recursive definition ([\[D\]](#D){reference-type="ref" reference="D"}) linearizes on the left, giving $$\Delta(l_n)=\sum_{k=0}^n l_{n-k}\otimes l_k
 \label{Dl}$$ for the unique $n$-node tree $l_n\in{\cal H}_{\rm ladder}$. Thanks to our recent work in [@BK2] we have an explicit construction of the weight-$n$ 1-primitive $p_n\in{\cal H}_{\rm ladder}$. First we compute the antipodes. In the cocommutative case, these are simply $$S(l_n)=-\sum_{k=0}^{n-1}S(l_{n-k})l_k

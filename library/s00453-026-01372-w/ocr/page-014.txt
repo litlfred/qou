@@ -1,0 +1,49 @@
+21 Page 14 of 19 Algorithmica (2026) 88:21
+
+Plugging this into Equation 10, we obtain
+0< El f(X)] - Elg(Xi)] = Elf (X1)|X; = 0] Pr[X; = 0] - E[Xi],
+
+again by the law of total probability. Since E[X;] > 0 and Pr[X; = 0] > 0, this
+implies that
+E[f(X7)|X; = 0] = 0,
+
+which concludes the proof since E[ f (X7)|X; = 1] = 0. oO
+
+Claim A.3 There exists (non-binary) distributions over 2 random variables which sat-
+isfy 1-negative association but not weak negative regression. In other words, 1-negative
+association is strictly more general than weak negative regression for non-binary ran-
+dom variables.
+
+Proof Let’s first discuss the intuition for the construction of the counterexample. One
+can show via algebra that E[ f(X7)g(X;)] — Elf (X7)JE[g(X;)] can be expanded as
+the following expression:
+
+Dey PrLXi = x] PrlXi = yl] (ELS (XD |X; = x]-ELf (XD Xi = yl)(g@)-g()),
+
+where the summation is over the values that X; takes with non-zero probability.
+Now, suppose that for some values x < y we have that
+
+E[f(X1,..-, Xn)|Xi = x] — ELf(X1,..., Xn) |Xi = y] < 0,
+
+violating the weak negative regression property. This would imply that some of the
+summands are positive (since g(x) < g(y) by monotonicity). In the case of binary ran-
+dom variables, the summation would only consist of a single summand so 1-negative
+association would be violated. For general random variables, the summation consists
+of multiple terms so the summation may still be negative even when a single summand
+is positive. Consequently, the random variables may still satisfy 1-negative association.
+
+We now give the example. Consider the random variables (X;, X2) which are uni-
+formly distributed on their support set {(0, 3), (1, 1), (2, 2), (3, 0)}. By considering an
+identity function 1, : {0, 1,2, 3} — {0, 1, 2, 3}, we can show that that the distribution
+of (X1, X2) does not satisfy weak negative regression:
+
+Ef (X2)|X1 = WY = 1.0) = 1 <2 = 1,(2) = Ef (X2)|X1 = 2).
+However, for any pair of non-decreasing functions f, g : {0, 1, 2,3} > IR, we have
+
+EL f(X)IJELg(X2)] — ELf(X1)g(X2)]
+_—fM+fQ]+fEQ sH+sQ%+s3)  fMs+ fs
+~ 4 , 4 ~ 4 ,
+
+where we have again assumed without loss of generality that f(0) = g(0) = 0.
+
+aN Springer

@@ -34,7 +34,7 @@ already excludes ${}^{3}\mathrm{H}$, ${}^{4}\mathrm{He}$ and ${}^{7}\mathrm{Li}$
 against their measured values. Two separate reasons therefore point the same way.
 
 **Scope.** The uniqueness step — that Cauchy's equation admits no continuous
-solutions beyond $c \ln x$ — is classical and is not formalised here, so the
+solutions beyond $c \ln x$ — is classical and is not proved here, so the
 stronger reading, that the logarithmic form is *forced* rather than merely
 preferred among the two candidates, rests on it. What is proved is the
 comparison. Nothing here bears on the value of $\alpha$, which is fixed

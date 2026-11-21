@@ -6,7 +6,7 @@ ring / field; this file is the `ℝ` specialisation, because the corpus's
 log-assembly binding form `B = −α · log(tr_M(atom) / tr_M(free))` needs `Real.log`.
 Bean `qou-jfx8`, session `qou-0nrt`.
 
--- Ref: [manuscript] prop:frobenius-pairing; def:markov-axioms-primitive
+-- Ref: [leitner2026] prop:frobenius-pairing; def:markov-axioms-primitive
 -/
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Tactic.FieldSimp

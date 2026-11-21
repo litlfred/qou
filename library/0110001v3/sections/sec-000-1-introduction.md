@@ -1,6 +1,6 @@
 ---
 doc_id: 0110001v3
-doc_title: "A geometric interpretation of Milnor’s triple linking numbers Introduction"
+doc_title: "A geometric interpretation of Milnor's triple linking numbers"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
@@ -8,7 +8,9 @@ pages: 1-6
 source_pdf: 0110001v3.pdf
 source_sha256: f30f603ac1c555e0
 toc_source: inferred
+doc_brief: "A geometric interpretation of Milnor's triple linking numbers — Milnor’s triple linking numbers of a link in the 3-sphere are interpreted geometrically in terms of the pattern of intersections of the"
 ---
+Introduction
 Milnor’s higher order linking numbers (or mu-bar invariants) ¯µi of an oriented
 link L = L1 ∪· · · ∪Lℓin the 3-sphere are a measure of how deep the longitudes
 li of the components Li lie in the lower central series of the link group π =
@@ -205,4 +207,3 @@ surfaces F and show that mijk(F) ≡¯µijk and tijk(F) = 0 for those of type 1,
 while mijk(F) ≡0 for those of type 2. We will then describe a set of ﬁnger
 moves that can transform an arbitrary F into either reduced type, and that
 preserve mijk −tijk (mod δ). The theorem follows.
-3

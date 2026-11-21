@@ -8,6 +8,8 @@ pages: 1-4
 source_pdf: Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds.pdf
 source_sha256: 9e541693c60cbd3f
 toc_source: inferred
+doc_brief: "Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — survey of gluing equations, volumes, the extended Bloch group, symplectic properties and quantization."
+duplicate_of: "arxiv-2304.12545v1"
 ---
 The starting point of the paper [1] was Thurston’s amazing insight in the 1980’s
 that all 3-dimensional manifolds should be canonically divisible into pieces having
@@ -38,10 +40,6 @@ Hyperbolic 3-Manifolds
 Geometry of 3-manifolds
 Credits
 Cover
-8/8/26, 4:27 AM
-Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/
-1/27
 particular interest is the volume spectrum, the set of volumes of all complete hy‐
 perbolic 3-manifolds of finite volume (in which case they are either compact or
 the union of a compact part and a finite number of “cusps” diffeomorphic to the
@@ -104,10 +102,6 @@ the number
  of simplices, this gives us 
  polynomial equations among the 
 ⇧
-8/8/26, 4:27 AM
-Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/
-2/27
 complex numbers 
 . The obvious thought is that this leads to a 0-dimen‐
 sional moduli space and explains the rigidity, but this is wrong since rigidity only
@@ -151,10 +145,6 @@ is the orthogonal complement of 
 of the above-mentioned deformation space of (noncomplete) hyperbolic struc‐
 tures is at least  , and then a further argument using Mostow rigidity showed that
 ⇧
-8/8/26, 4:27 AM
-Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/
-3/27
 it is exactly  . This gives rise in the 1-cusp case to a polynomial 
 ,
 where 

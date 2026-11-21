@@ -9,15 +9,16 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Products and Coproducts",
-  "pageStart": 27,
-  "pageEnd": 28,
+  "title": "Epimorphisms and Monomorphisms",
+  "pageStart": 26,
+  "pageEnd": 27,
   "contains": [
     "library/arxiv-1610.09640v4/blocks/prose-sec-012",
-    "library/arxiv-1610.09640v4/blocks/example-sec-012-01",
-    "library/arxiv-1610.09640v4/blocks/example-sec-012-02"
+    "library/arxiv-1610.09640v4/blocks/ex-sec-012-01",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-012-02",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-012-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
   "provenance": "ingested"
 }

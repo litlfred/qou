@@ -66,7 +66,7 @@ class ParityRegimeSelectionContext where
 
 /-- **Parity regime selection** ([`thm:parity-regime-selection`]).
     Proved from the upstream class field constraints. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/parity-regime-selection.ts
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/parity-regime-selection.ts
 theorem parity_regime_selection [ctx : ParityRegimeSelectionContext] :
     ctx.sign_val = (-(1 : ℝ)) ^ (ctx.A - 1) ∧
     (Odd ctx.A → 3 ≤ ctx.A → ctx.Q_value = |ctx.S_Delta| * ctx.m_e) ∧

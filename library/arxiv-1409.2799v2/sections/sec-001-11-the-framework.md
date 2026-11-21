@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1409.2799v2
-doc_title: "DIAGRAM CATEGORIES FOR Uq-TILTING MODULES AT ROOTS OF UNITY"
+doc_title: "DIAGRAM CATEGORIES FOR Uq-TILTING MODULES"
 section_id: sec-001-11-the-framework
 section_title: "The framework"
 section_number: 1.1
 pages: 1-5
 source_pdf: 1409.2799v2.pdf
 source_sha256: 2f2067b7b583e731
-doc_brief: "DIAGRAM CATEGORIES FOR Uq-TILTING MODULES AT ROOTS OF UNITY — We give a diagrammatic presentation of the category of Uq(sl2)-tilting modules T for q being a root of unity and introduce a grading on"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
-latex_coverage_ratio: 0.933
+latex_coverage_ratio: 0.947
+doc_brief: "DIAGRAM CATEGORIES FOR Uq-TILTING MODULES — We give a diagrammatic presentation of the category of Uq(sl2)-tilting modules T for q being a root of unity and introduce a grading on T."
 ---
 \label{sub-intropart1}
 

@@ -1,0 +1,1 @@
+- We put 'k= -OT^/^T)"1 \ogq, -n^Im \ogq<n. The matrix T(q)2 has an expansion with respect to \ of the form J(q)2 = 1 4- 27c^:~^M(P®P)(0-2v.l} + ^(X2). Here p 15 the vector representation as in Sect. 1.2.

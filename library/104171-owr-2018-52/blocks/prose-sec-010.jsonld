@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/104171-owr-2018-52/blocks/prose-sec-010",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "The categoryRep(GL(m|n)). LetTm|n be the category of ﬁnite dimensional",
-  "pageStart": 30,
-  "pageEnd": 36,
-  "text": "../sections/sec-010-04-the-categoryrepglmn-lettmn-be-the-category-of.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/104171-owr-2018-52",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/104171-owr-2018-52",
+  "title": "Semisimpliﬁcation of representation categories",
+  "pageStart": 29,
+  "pageEnd": 33,
+  "text": "../sections/sec-010-semisimpliﬁcation-of-representation-categories.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-owr-2018-52/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-owr-2018-52/manifest.jsonld",
   "provenance": "ingested"
 }

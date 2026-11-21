@@ -94,7 +94,12 @@ from qou_substrate.witness import declared_tolerance as _tol  # noqa: E402
 # ----------------------------------------------------------------------------------
 # Bring genus-4 data (fixed topological facts; no fit).
 # ----------------------------------------------------------------------------------
-GENUS = 4                     # Bring's curve X(5) is genus 4
+GENUS = 4                     # Bring's curve has genus 4
+# (Bring's curve is NOT the modular curve X(5), which has genus 0. The library
+#  places it relative to X_0(5) -- its period-matrix parameter tau_0 is a
+#  distinguished point of X_0(5) -- and identifies one quotient with X_0(50):
+#  library/s40879-023-00706-0, sec-003 and sec-011 (Braden--Disney-Hogg).
+#  Only g = 4 enters any number below; the naming never did.)
 B1 = 2 * GENUS               # b₁ = dim H¹(Bring) = 2g = 8  (a Betti number)
 TARGET = 8                    # the count the measure needs, = b₁
 

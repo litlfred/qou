@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0904.1247v3/sections/sec-028",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Monodromic Hochschild calculations",
+  "pageStart": 41,
+  "pageEnd": 42,
+  "contains": [
+    "library/arxiv-0904.1247v3/blocks/prose-sec-028"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0904.1247v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0904.1247v3/manifest.jsonld",
+  "provenance": "ingested"
+}

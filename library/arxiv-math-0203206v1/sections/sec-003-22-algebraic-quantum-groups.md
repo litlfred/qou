@@ -10,7 +10,8 @@ source_sha256: 371611f719e6f53c
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.996
-latex_coverage_ratio: 0.992
+latex_coverage_ratio: 0.988
+doc_brief: "arXiv:math/0203206v1 [math.QA] 20 Mar 2002 — We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups which are related to the Tannaka-Krein"
 ---
 In this subsection we briefly outline those aspects of the theory of aqg that will be needed in the sequel. For the details and proofs, see the original references [@VD2; @VD].
 

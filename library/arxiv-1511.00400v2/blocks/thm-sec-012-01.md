@@ -1,1 +1,0 @@
-For libroid hyperbolic knots,

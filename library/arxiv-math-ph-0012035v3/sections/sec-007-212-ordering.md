@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-ph-0012035v3
-doc_title: "arXiv:math-ph/0012035v3 16 Jan 2002"
+doc_title: "Non-Abelian Stokes theorem in action"
 section_id: sec-007-212-ordering
 section_title: "Ordering"
 section_number: 2.1.2
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.976
+doc_brief: "Non-Abelian Stokes theorem in action — In this short review main issues related to the non-Abelian Stokes theorem have been addressed."
 ---
 There are a lot of different ordering operators in our formulas which have been collected in this section.
 

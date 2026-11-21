@@ -14,4 +14,4 @@ $$
   \qquad
   \mathrm{barOdd}(\omega) = 2\omega - 1,
 $$
-and $(2\omega - 1)^2 = 4\omega^2 - 4\omega + 1 = -3$ using $\omega^2 = \omega - 1$. It is formalized sorry-free as `cusp_barParity_split` over a generic `[Field R]` (no archimedean structure).
+and $(2\omega - 1)^2 = 4\omega^2 - 4\omega + 1 = -3$ using $\omega^2 = \omega - 1$. The computation uses only field operations over a generic field (no archimedean structure).

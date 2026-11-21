@@ -1,1 +1,0 @@
-Both suggest clearly that the eﬀective symmetry in 4D, below the string scale, should 16The case of Ref. [84] is somewhat of an exception in this regard because the single intermediate scale associated with the breaking of the G(2, 2, 4) symmetry to the SM is identiﬁed with the Peccei-Quinn symmetry breaking scale.

@@ -6,8 +6,9 @@
   "sha256": "c25ccba77da375adc5ecdc95a1f245148dc0071fc677c2c904c0d702dd4fbb84",
   "bytes": 62801,
   "pages": 7,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,250 +21,191 @@
   },
   "doi": null,
   "title": "Difference equation of the colored Jones polynomial for torus knot",
-  "authors_raw": null,
-  "abstract": "We prove that the N-colored Jones polynomial for the torus knot Ts, t satis\ufb01es the second order di\ufb00erence equation, which reduces to the \ufb01rst order di \ufb00erence equation for a case of T2, 2m+1. We show that the A-polynomial of the torus knot can be derived from the di \ufb00erence equation. Also constructed is a q-hypergeometric type expression of the colored Jones polynomial for T2, 2m+1. 1. I ntroduction The N-colored Jones polynomial JK(N) is one of the quantum invariants for knot K. It is associated with the N-dimensional irreducible represen- tation of sl(2), and is powerful to classify knots. Motivated by \u201cvolume conjecture\u201d [12, 18] saying that a hyperbolic volume of the k not comple- ment dominates an asymptotic behavior of the colored Jones p olynomial JK(N) at q = e2\u03c0i/ N, it receives much interests toward a geometrical and topological interpretation of the quantum invariants. Recently another intriguing structure of the colored Jones polynomial was put forward; it was shown that the N-colored Jones polynomial JK(N) can be written in a q-hypergeometric form, and that it satis\ufb01es a recursion relation with respect to N [6]. It was further demonstrated for trefoil and \ufb01gure-eight knot [5] that a recursion relation is related to the A-polynomial AK(L, M) (see also Ref. 4), which denotes an algebraic curve of eigen val- ues of the S L(2, C) representation of the boundary torus of knot K [3]. As the A-polynomial contains many geometrical information s such as the boundary slopes of the knot, this \u201cAJ conjecture\u201d may help our geometrical understanding of the colored Jones polynomial. In this article, we study torus knot Ts, t where s and t are relatively prime integers. We prove that theN-colored Jones polynomial JK(N) for the torus knots K = Ts, t satis\ufb01es the second order recursion relation (7) [Theorem 4], which reduces to the \ufb01rst order (9) only in a case of K = T2, 2m+1 [Theo- rem 6]. Furthermore we shall show that this di \ufb00erence operator gives the A-polynomial of",
-  "docinfo": {
-   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181024075656-04'00'",
-   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:math/0403224v1  [math.GT]  14 Mar 2004"
-  },
+  "authors_raw": "KAZUHIRO HIKAMI",
   "title_lines": [
    "DIFFERENCE EQUATION OF THE COLORED JONES",
-   "POLYNOMIAL FOR TORUS KNOT",
-   "KAZUHIRO HIKAMI"
+   "POLYNOMIAL FOR TORUS KNOT"
   ],
-  "title_prev": "DIFFERENCE EQUATION OF THE COLORED JONES POLYNOMIAL FOR TORUS KNOT KAZUHIRO HIKAMI"
+  "abstract": null,
+  "docinfo": {
+   "Title": "arXiv:math/0403224v1  [math.GT]  14 Mar 2004",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20181024075656-04'00'"
+  },
+  "title_raw": "DIFFERENCE EQUATION OF THE COLORED JONES POLYNOMIAL FOR TORUS KNOT",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:math/0403224v1 [math.GT] 14 Mar 2004",
+   "heading": "DIFFERENCE EQUATION OF THE COLORED JONES POLYNOMIAL FOR TORUS KNOT The N -colored Jones polynomial J K ( N ) is one of the quantum invariants for knot K . It is associated with the N -dimensional irreducible representation of sl (2), and is powerful to classify knots. Motivated by “volume conjecture",
+   "text": "DIFFERENCE EQUATION OF THE COLORED JONES POLYNOMIAL FOR TORUS KNOT",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "arXiv:math/0403224v1 [math.GT] 14 Mar 2004"
  },
- "toc": [
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "5 inferred entries, 80% of them starting on page(s) 1, 2 of 7 — a list found ON a page, not the document's structure",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (5 inferred entries, 80% of them starting on page(s) 1, 2 of 7 — a list found ON a page, not the document's structure): one section per page.",
+ "figures": [],
+ "pages": [
   {
-   "level": 1,
-   "title": "I ntroduction",
-   "page": 1,
-   "source": "inferred",
-   "number": "1"
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "KAZUHIRO HIKAMI",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "C olored Jones Polynomial",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "(s\u22121)(t\u22121)(1\u2212N)",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "KAZUHIRO HIKAMI",
-   "page": 4,
-   "source": "inferred",
-   "number": "4"
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "A-P olynomial",
-   "page": 4,
-   "source": "inferred",
-   "number": "3"
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "KAZUHIRO HIKAMI",
-   "page": 6,
-   "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "Acknowledgments",
-   "page": 6,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 6,
-   "source": "inferred",
-   "number": null
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   }
  ],
- "toc_source": "inferred",
  "sections": [
   {
-   "id": "sec-000-2-kazuhiro-hikami",
-   "number": "2",
-   "title": "KAZUHIRO HIKAMI",
+   "id": "page-001",
+   "number": null,
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 395,
-   "n_words": 67
+   "n_chars": 2332,
+   "n_words": 374,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-1-i-ntroduction",
-   "number": "1",
-   "title": "I ntroduction",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 2,
-   "n_chars": 1825,
-   "n_words": 305
-  },
-  {
-   "id": "sec-002-2-c-olored-jones-polynomial",
-   "number": "2",
-   "title": "C olored Jones Polynomial",
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
    "level": 1,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 699,
-   "n_words": 171
+   "n_chars": 1451,
+   "n_words": 276,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-2-s1t11n",
-   "number": "2",
-   "title": "(s\u22121)(t\u22121)(1\u2212N)",
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
    "level": 1,
-   "page_start": 2,
-   "page_end": 4,
-   "n_chars": 2894,
-   "n_words": 557
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 2128,
+   "n_words": 383,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-4-kazuhiro-hikami",
-   "number": "4",
-   "title": "KAZUHIRO HIKAMI",
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
    "level": 1,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 614,
-   "n_words": 118
+   "n_chars": 2045,
+   "n_words": 382,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-3-a-p-olynomial",
-   "number": "3",
-   "title": "A-P olynomial",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 6,
-   "n_chars": 2997,
-   "n_words": 622
-  },
-  {
-   "id": "sec-006-6-kazuhiro-hikami",
-   "number": "6",
-   "title": "KAZUHIRO HIKAMI",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 588,
-   "n_words": 139
-  },
-  {
-   "id": "sec-007-acknowledgments",
+   "id": "page-005",
    "number": null,
-   "title": "Acknowledgments",
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1531,
+   "n_words": 294,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
    "level": 1,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 306,
-   "n_words": 52
+   "n_chars": 2277,
+   "n_words": 380,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-references",
+   "id": "page-007",
    "number": null,
-   "title": "References",
+   "title": "Page 7",
    "level": 1,
-   "page_start": 6,
+   "page_start": 7,
    "page_end": 7,
-   "n_chars": 2918,
-   "n_words": 453
+   "n_chars": 1529,
+   "n_words": 217,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 9,
-  "sections": 9,
-  "chars_total": 13236,
-  "latex_overlay": {
-   "_schema": "latex-math-overlay/v1",
-   "main": "e-print",
-   "tex_sections": 5,
-   "overlaid": 2,
-   "thresholds": {
-    "title": 0.85,
-    "prose": 0.6,
-    "coverage": 0.5
-   },
-   "sections": [
-    {
-     "id": "sec-000-2-kazuhiro-hikami",
-     "title": "KAZUHIRO HIKAMI",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-001-1-i-ntroduction",
-     "title": "I ntroduction",
-     "prose_ratio": 0.989,
-     "coverage_ratio": 0.981,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-002-2-c-olored-jones-polynomial",
-     "title": "C olored Jones Polynomial",
-     "prose_ratio": 0.174,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-003-2-s1t11n",
-     "title": "(s\u22121)(t\u22121)(1\u2212N)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-004-4-kazuhiro-hikami",
-     "title": "KAZUHIRO HIKAMI",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-005-3-a-p-olynomial",
-     "title": "A-P olynomial",
-     "prose_ratio": 0.472,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-006-6-kazuhiro-hikami",
-     "title": "KAZUHIRO HIKAMI",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-007-acknowledgments",
-     "title": "Acknowledgments",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-008-references",
-     "title": "References",
-     "result": "no matching \\section"
-    }
-   ]
-  }
+  "toc_entries": 0,
+  "toc_inferred_entries": 5,
+  "toc_inferred_mean_confidence": 0.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "regex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 7,
+  "chars_total": 13293,
+  "furniture_lines_stripped": 1
  }
 }

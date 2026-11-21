@@ -18,4 +18,7 @@ export default remark({
     "cor:spectral-decomposition-qvalue",
     "rem:mass-comparison-table",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([derivation chain](#rem:qvalue-derivation-chain))" },
+  ],
 });

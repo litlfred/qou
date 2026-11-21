@@ -1,0 +1,3046 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-2411.04021v1",
+  "pages": [
+    {
+      "page": 3,
+      "rotation": 0,
+      "drawings": 64,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: Hook diagram of (7, 4, 3), with the hook of the cell c = (1, 2) colored gray."
+      ],
+      "labels": [
+        {
+          "text": "characters of Sn, the theorem allows us to extend the result to these groups. With",
+          "bbox": [
+            85.04,
+            103.6,
+            510.35,
+            116.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "EUFM10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "some computer help for the exceptional groups, all finite Coxeter groups can be",
+          "bbox": [
+            85.04,
+            118.1,
+            510.38,
+            130.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "covered. Moreover, Theorem 1.1 is essential in proving [9, Conjecture 1.3] for the",
+          "bbox": [
+            85.04,
+            132.55,
+            510.38,
+            144.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "general linear groups GLn(q) for an odd prime power q; this relies on first reducing",
+          "bbox": [
+            85.04,
+            146.98,
+            510.28,
+            159.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "to the unipotent characters and then using the formulas of the Gram determinants",
+          "bbox": [
+            85.04,
+            161.44,
+            510.39,
+            173.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of the Specht modules of Iwahori–Hecke algebras of type An found in [2], which will",
+          "bbox": [
+            85.04,
+            175.87,
+            510.27,
+            189.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "be discussed elsewhere.",
+          "bbox": [
+            85.04,
+            190.33,
+            203.31,
+            202.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            85.04,
+            226.15,
+            94.34,
+            243.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX1728"
+          ],
+          "sizes": [
+            17.22
+          ]
+        },
+        {
+          "text": "Preliminaries",
+          "bbox": [
+            112.91,
+            226.15,
+            220.52,
+            243.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX1728"
+          ],
+          "sizes": [
+            17.22
+          ]
+        },
+        {
+          "text": "We fix a positive integer n. A partition is a sequence λ = (a1, . . . , am) of non-negative",
+          "bbox": [
+            85.04,
+            256.53,
+            510.26,
+            269.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "SFRM1200",
+            "SFTI1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "integers such that a1 ≥a2 ≥· · · ≥am. We identify partitions that only differ by a",
+          "bbox": [
+            85.04,
+            270.82,
+            510.33,
+            284.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "string of zeros at the end. We say that λ is a partition of n if |λ| := a1+a2+· · ·+am =",
+          "bbox": [
+            85.04,
+            285.26,
+            510.24,
+            299.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "n. We denote by Pn the set of partitions of n and by P := S∞",
+          "bbox": [
+            85.04,
+            297.06,
+            418.0,
+            320.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY8",
+            "SFRM1200",
+            "rsfs10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "i=0 Pi the set of all",
+          "bbox": [
+            409.52,
+            299.64,
+            510.25,
+            315.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8",
+            "SFRM1200",
+            "rsfs10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "partitions. If µ = (c1, . . . , cl) is another partition of n, we write λ ⊴µ and say that λ",
+          "bbox": [
+            85.04,
+            311.7,
+            510.23,
+            327.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "MSAM10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "proceeds µ in the dominance (partial) order if and only if a1 +· · ·+ai ≤c1 +· · ·+ci",
+          "bbox": [
+            85.04,
+            328.6,
+            509.74,
+            342.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200",
+            "SFTI1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "for all i ≥1. We denote",
+          "bbox": [
+            85.04,
+            343.05,
+            207.39,
+            355.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "[λ] = {(i, j) | (i, j) ∈Z × Z, 1 ≤i ≤m, 1 ≤j ≤am}",
+          "bbox": [
+            165.78,
+            366.99,
+            429.49,
+            382.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "to be the Young diagram of λ, which we can depict as a set of cells with a1 cells in",
+          "bbox": [
+            85.04,
+            396.0,
+            510.23,
+            409.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8",
+            "SFRM1200",
+            "SFTI1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "the first row, a2 cells in the second row, and so on, see Figure 1. For a cell c ∈[λ],",
+          "bbox": [
+            85.04,
+            410.29,
+            510.24,
+            424.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "we denote the hook length hλ(c) to be the number of cells in the hook of c, i.e., the",
+          "bbox": [
+            85.04,
+            424.89,
+            510.25,
+            437.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "SFRM1200",
+            "SFTI1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "number of cells below and to the right of c, including itself. The hook diagram of λ",
+          "bbox": [
+            85.04,
+            439.34,
+            510.23,
+            451.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200",
+            "SFTI1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "is the Young diagram, where each cell is filled with its hook length.",
+          "bbox": [
+            85.04,
+            453.8,
+            430.26,
+            465.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "9",
+          "bbox": [
+            240.68,
+            482.29,
+            246.53,
+            494.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "8",
+          "bbox": [
+            258.7,
+            482.29,
+            264.56,
+            494.25
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "7",
+          "bbox": [
+            276.72,
+            482.29,
+            282.58,
+            494.25
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            294.75,
+            482.29,
+            300.6,
+            494.25
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            312.77,
+            482.29,
+            318.63,
+            494.25
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            330.79,
+            482.29,
+            336.65,
+            494.25
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            348.82,
+            482.29,
+            354.67,
+            494.25
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            240.68,
+            500.31,
+            246.54,
+            512.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            258.7,
+            500.31,
+            264.56,
+            512.27
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            276.72,
+            500.31,
+            282.58,
+            512.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            294.75,
+            500.31,
+            300.6,
+            512.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            240.68,
+            518.34,
+            246.54,
+            530.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            258.7,
+            518.34,
+            264.56,
+            530.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            276.72,
+            518.34,
+            282.58,
+            530.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 1: Hook diagram of (7, 4, 3), with the hook of the cell c = (1, 2) colored gray.",
+          "bbox": [
+            85.04,
+            544.52,
+            510.27,
+            556.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Note that the entries of the first column of a hook diagram uniquely determine",
+          "bbox": [
+            102.6,
+            573.59,
+            510.39,
+            585.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the underlying partition. Generalizing that observation, a sequence of β-numbers",
+          "bbox": [
+            85.04,
+            588.02,
+            510.24,
+            599.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200",
+            "SFTI1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "is a sequence β = (b1, . . . , bm) of non-negative integers such that all its entries",
+          "bbox": [
+            85.04,
+            602.47,
+            510.32,
+            615.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "are distinct. For each such sequence, there is a unique σ ∈Sm such that β =",
+          "bbox": [
+            85.04,
+            616.76,
+            510.24,
+            630.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10",
+            "EUFM10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(bσ(1), . . . , bσ(m)) is a strictly decreasing sequence, i.e., bσ(1) > bσ(2) > · · · > bσ(m).",
+          "bbox": [
+            85.04,
+            631.21,
+            510.24,
+            645.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "We define the partition",
+          "bbox": [
+            85.04,
+            645.82,
+            204.05,
+            657.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Part(β) := (bσ(1) −m + 1, bσ(2) −m + 2, . . . , bσ(m) −m + m)",
+          "bbox": [
+            145.13,
+            671.79,
+            450.15,
+            685.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            294.71,
+            710.91,
+            300.57,
+            722.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 7,
+      "rotation": 0,
+      "drawings": 61,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2: Hook diagrams of (2, 1(5)) and (3, 3, 1)."
+      ],
+      "labels": [
+        {
+          "text": "Example 2.12. Let λ = (2, 1(5)) and let µ = (3, 3, 1) be two partitions of 7. Clearly,",
+          "bbox": [
+            85.04,
+            102.42,
+            510.25,
+            115.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "SFBX1200",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "λ ⊴µ in the dominance order.",
+          "bbox": [
+            85.04,
+            115.47,
+            241.03,
+            130.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "MSAM10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "We choose βλ := (7, 5, 4, 3, 2, 1) and βµ = (8, 7, 4, 2, 1, 0) for the sequences of",
+          "bbox": [
+            102.6,
+            132.53,
+            510.26,
+            146.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "β-numbers for λ and µ, respectively. Comparing the two sequences, we see that",
+          "bbox": [
+            85.04,
+            146.98,
+            510.31,
+            158.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "there are two mismatches, so d(λ, µ) = d6(βλ, βµ) = 2. So µ is in fact a branch of λ;",
+          "bbox": [
+            85.04,
+            161.42,
+            510.24,
+            174.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "we calculate that h1",
+          "bbox": [
+            85.04,
+            174.65,
+            187.36,
+            187.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "λ(µ) = 5 and h2",
+          "bbox": [
+            183.13,
+            174.65,
+            263.94,
+            190.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "λ(µ) = 3.",
+          "bbox": [
+            259.71,
+            175.87,
+            306.15,
+            190.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "It is easily seen that µ is odd; indeed, D(µ) = (3) and f(3) = 1, so the oddness",
+          "bbox": [
+            102.6,
+            190.31,
+            510.26,
+            204.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "In particular, µ is an odd branch of λ.",
+          "bbox": [
+            213.78,
+            204.76,
+            421.87,
+            216.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "follows by Lemma 2.4.",
+          "bbox": [
+            85.04,
+            204.78,
+            204.16,
+            216.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "With the same",
+          "bbox": [
+            431.49,
+            204.78,
+            510.26,
+            216.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "reasoning we see that λ is even, since D(λ) = (2, 1) and (2, 1) is 2-core.",
+          "bbox": [
+            85.04,
+            219.21,
+            449.68,
+            231.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "We further observe that Podd",
+          "bbox": [
+            102.6,
+            232.43,
+            256.06,
+            245.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8",
+            "SFRM1200",
+            "rsfs10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "= {µ, (7), (5, 1, 1), (3, 1(4))} and thus arrive at",
+          "bbox": [
+            259.89,
+            232.43,
+            492.54,
+            245.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "λ",
+          "bbox": [
+            241.22,
+            239.88,
+            246.17,
+            247.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "det(χλ) = 5",
+          "bbox": [
+            189.98,
+            255.35,
+            250.91,
+            276.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "3 · 7",
+          "bbox": [
+            245.05,
+            255.35,
+            267.79,
+            283.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "5 · 7",
+          "bbox": [
+            261.93,
+            255.35,
+            284.67,
+            283.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "3 · 7",
+          "bbox": [
+            278.81,
+            255.35,
+            301.55,
+            283.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1 · (Q×)2 = 7 · (Q×)2.",
+          "bbox": [
+            295.69,
+            258.5,
+            405.3,
+            283.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "7",
+          "bbox": [
+            240.95,
+            306.52,
+            246.8,
+            318.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            258.97,
+            306.52,
+            264.83,
+            318.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            312.5,
+            306.52,
+            318.36,
+            318.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            330.52,
+            306.52,
+            336.38,
+            318.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            348.55,
+            306.52,
+            354.4,
+            318.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            240.95,
+            324.54,
+            246.8,
+            336.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            312.5,
+            324.54,
+            318.36,
+            336.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            330.52,
+            324.54,
+            336.38,
+            336.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            348.55,
+            324.54,
+            354.4,
+            336.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            240.95,
+            342.57,
+            246.8,
+            354.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            312.5,
+            342.57,
+            318.36,
+            354.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            240.95,
+            360.59,
+            246.8,
+            372.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            240.95,
+            378.61,
+            246.8,
+            390.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            240.95,
+            396.63,
+            246.8,
+            408.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 2: Hook diagrams of (2, 1(5)) and (3, 3, 1).",
+          "bbox": [
+            172.65,
+            422.94,
+            422.62,
+            436.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            85.04,
+            467.25,
+            94.34,
+            484.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX1728"
+          ],
+          "sizes": [
+            17.22
+          ]
+        },
+        {
+          "text": "Proof of Theorem 1.1",
+          "bbox": [
+            112.91,
+            467.25,
+            287.53,
+            484.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX1728"
+          ],
+          "sizes": [
+            17.22
+          ]
+        },
+        {
+          "text": "We fix a positive integer n and an even partition λ. Let r be the integer such that",
+          "bbox": [
+            85.04,
+            497.62,
+            510.28,
+            509.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2r ≤n < 2r+1. Our goal is to work towards a proof of Theorem 1.1. The following",
+          "bbox": [
+            85.04,
+            507.58,
+            510.38,
+            524.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "definition will be useful:",
+          "bbox": [
+            85.04,
+            526.53,
+            208.02,
+            538.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Definition 3.1. Let M ⊆Podd",
+          "bbox": [
+            85.04,
+            547.93,
+            250.67,
+            561.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8",
+            "CMSY10",
+            "SFBX1200",
+            "SFRM1200",
+            "rsfs10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "be any subset. We say that M is odd if there is a",
+          "bbox": [
+            255.17,
+            549.15,
+            510.26,
+            561.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "λ",
+          "bbox": [
+            235.83,
+            555.37,
+            240.78,
+            563.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "square-free odd integer d such that",
+          "bbox": [
+            85.04,
+            563.6,
+            263.89,
+            575.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "h1",
+          "bbox": [
+            242.94,
+            585.05,
+            253.91,
+            598.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "λ(µ)",
+          "bbox": [
+            249.68,
+            586.28,
+            271.26,
+            600.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "λ(µ) · (Q×)2 = d · (Q×)2.",
+          "bbox": [
+            249.68,
+            589.43,
+            375.25,
+            616.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Y",
+          "bbox": [
+            222.25,
+            591.6,
+            237.53,
+            603.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "h2",
+          "bbox": [
+            242.94,
+            601.56,
+            253.91,
+            614.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "µ∈M",
+          "bbox": [
+            220.03,
+            611.39,
+            238.9,
+            619.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Remark 3.2. Recall that det(λ) = m · 2a(2)",
+          "bbox": [
+            85.04,
+            631.16,
+            319.8,
+            647.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "CMSY10",
+            "SFBX1200",
+            "SFRM1200"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "for some odd integer m. Now, the",
+          "bbox": [
+            325.96,
+            635.07,
+            510.25,
+            647.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "λ",
+          "bbox": [
+            310.38,
+            638.24,
+            314.78,
+            644.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "being even is equivalent to 2a(2)",
+          "bbox": [
+            145.37,
+            648.21,
+            305.69,
+            664.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "SFRM1200"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "integer a(2)",
+          "bbox": [
+            85.04,
+            649.12,
+            140.83,
+            664.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "being a square. Together with Remark",
+          "bbox": [
+            310.72,
+            652.13,
+            510.3,
+            664.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "λ",
+          "bbox": [
+            296.28,
+            655.29,
+            300.68,
+            661.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "λ",
+          "bbox": [
+            130.01,
+            658.56,
+            134.95,
+            666.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2.11, we conclude that Theorem 1.1 holds true if it can be shown that Podd",
+          "bbox": [
+            85.04,
+            665.34,
+            472.05,
+            678.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8",
+            "SFRM1200",
+            "rsfs10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "is odd,",
+          "bbox": [
+            476.24,
+            666.57,
+            510.25,
+            678.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "λ",
+          "bbox": [
+            457.21,
+            672.78,
+            462.15,
+            680.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "for any even partition λ.",
+          "bbox": [
+            85.04,
+            681.0,
+            210.53,
+            692.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "7",
+          "bbox": [
+            294.71,
+            710.91,
+            300.57,
+            722.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "rotation": 0,
+      "drawings": 108,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3: Hook diagrams of (6, 3, 2) and (6, 4, 1)."
+      ],
+      "labels": [
+        {
+          "text": "Proof. Let βλ := (b1, b2, b3, . . . , bm) ∈B(λ). After reordering we can assume that",
+          "bbox": [
+            85.04,
+            103.42,
+            510.3,
+            117.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200",
+            "SFTI1200",
+            "rsfs10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "there are h1, h2, h3 ∈Z\\{0} such that",
+          "bbox": [
+            85.04,
+            115.47,
+            277.49,
+            131.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "MSBM10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "βD(µ) := (b1 −h1, b2 −h2, b3 −h3, . . . , bm) ∈B(D(µ)).",
+          "bbox": [
+            159.83,
+            143.46,
+            435.45,
+            157.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "rsfs10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "For any partition κ ∈(µ)∼, there has to be an index j such that βD(µ)+2rej ∈B(κ).",
+          "bbox": [
+            85.04,
+            168.05,
+            510.24,
+            182.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "SFRM1200",
+            "rsfs10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Since d(λ, κ) = 2, it follows that j ∈{1, 2, 3} and that hj = 2r, assume without loss",
+          "bbox": [
+            85.04,
+            182.5,
+            510.27,
+            197.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "of generality that j = 3. By Lemma 3.5 we know that 2r̸ ∈{|h1|, |h2|}, so there can",
+          "bbox": [
+            85.04,
+            193.67,
+            510.26,
+            211.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "only be one such index and κ = µ.",
+          "bbox": [
+            85.04,
+            212.61,
+            261.57,
+            224.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Since d(λ, D(µ)) = 3, the entry b3 −h3 = b3 −2r cannot appear in βλ. So",
+          "bbox": [
+            102.6,
+            222.73,
+            479.8,
+            240.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "βλ −2re3 = (b1, b2, b3 −2r, . . . , bm) ∈Bn−2r.",
+          "bbox": [
+            185.03,
+            250.83,
+            410.25,
+            266.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "rsfs10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "By Corollary 2.5 it follows that βλ −2re3 ∈B(D(λ)).",
+          "bbox": [
+            85.04,
+            277.02,
+            360.94,
+            291.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200",
+            "rsfs10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "The final statement is easy to see: For the calculation of hi",
+          "bbox": [
+            102.6,
+            291.47,
+            410.07,
+            304.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "λ(µ) for i = 1, 2, we",
+          "bbox": [
+            407.19,
+            292.69,
+            510.24,
+            306.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "compare the sequences",
+          "bbox": [
+            85.04,
+            307.15,
+            201.26,
+            319.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(b1, b2,b3, . . . , bm),",
+          "bbox": [
+            279.14,
+            332.73,
+            368.3,
+            345.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(b1 −h1, b2 −h2,b3, . . . , bm).",
+          "bbox": [
+            226.97,
+            350.01,
+            368.3,
+            363.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "For the calculation of hi",
+          "bbox": [
+            85.04,
+            374.53,
+            208.28,
+            387.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "D(λ)(D(µ)) for i = 1, 2, we compare the sequences",
+          "bbox": [
+            205.4,
+            375.76,
+            458.96,
+            390.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(b1, b2,b3 −2r, . . . , bm),",
+          "bbox": [
+            266.63,
+            401.74,
+            380.81,
+            417.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(b1 −h1, b2 −h2,b3 −2r, . . . , bm).",
+          "bbox": [
+            214.46,
+            419.17,
+            380.81,
+            434.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "So the numbers clearly coincide. This concludes the proof.",
+          "bbox": [
+            85.04,
+            446.6,
+            385.05,
+            458.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Example 3.7. Let λ = (6, 3, 2) and µ = (6, 4, 1) be an odd branch of λ. Then",
+          "bbox": [
+            85.04,
+            470.3,
+            510.24,
+            482.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFBX1200",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "d(λ, D(µ)) = 3 with D(λ) = (2, 1) and D(µ) = (3). Moreover, we calculate that",
+          "bbox": [
+            85.04,
+            484.75,
+            510.28,
+            496.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "h1",
+          "bbox": [
+            85.04,
+            497.97,
+            96.01,
+            511.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "λ(µ) = h1",
+          "bbox": [
+            91.78,
+            497.97,
+            140.08,
+            513.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "D(λ)(D(µ)) = 3 and h2",
+          "bbox": [
+            135.85,
+            497.97,
+            249.58,
+            513.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "λ(µ) = h2",
+          "bbox": [
+            245.35,
+            497.97,
+            293.65,
+            513.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "D(λ)(D(µ)) = 1.",
+          "bbox": [
+            289.42,
+            499.2,
+            368.77,
+            513.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "8",
+          "bbox": [
+            175.91,
+            539.73,
+            181.77,
+            551.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "7",
+          "bbox": [
+            193.94,
+            539.73,
+            199.8,
+            551.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            211.96,
+            539.73,
+            217.82,
+            551.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            229.98,
+            539.73,
+            235.84,
+            551.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            248.01,
+            539.73,
+            253.87,
+            551.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            266.03,
+            539.73,
+            271.89,
+            551.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "8",
+          "bbox": [
+            323.46,
+            539.73,
+            329.32,
+            551.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            341.48,
+            539.73,
+            347.34,
+            551.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            359.51,
+            539.73,
+            365.37,
+            551.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            377.53,
+            539.73,
+            383.39,
+            551.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            395.55,
+            539.73,
+            401.41,
+            551.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            413.58,
+            539.73,
+            419.44,
+            551.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            175.91,
+            557.75,
+            181.77,
+            569.71
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            193.94,
+            557.75,
+            199.8,
+            569.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            211.96,
+            557.75,
+            217.82,
+            569.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            323.46,
+            557.75,
+            329.32,
+            569.71
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            341.48,
+            557.75,
+            347.34,
+            569.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            359.51,
+            557.75,
+            365.37,
+            569.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            377.53,
+            557.75,
+            383.39,
+            569.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            175.91,
+            575.78,
+            181.77,
+            587.73
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            193.94,
+            575.78,
+            199.8,
+            587.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            323.46,
+            575.78,
+            329.32,
+            587.73
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 3: Hook diagrams of (6, 3, 2) and (6, 4, 1).",
+          "bbox": [
+            172.76,
+            601.96,
+            422.51,
+            613.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "We are left with the case that d(λ, D(µ)) = 2 for an odd branch µ of λ. This case",
+          "bbox": [
+            102.6,
+            628.4,
+            510.24,
+            640.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "requires some work, as we have to go over the possible ways the signs of 2r −hi",
+          "bbox": [
+            85.04,
+            638.35,
+            491.54,
+            654.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "λ(µ)",
+          "bbox": [
+            488.65,
+            642.84,
+            510.24,
+            657.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "for i = 1, 2 can distribute. First we gather some general statements.",
+          "bbox": [
+            85.04,
+            657.29,
+            433.1,
+            669.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Lemma 3.8. Let µ be an odd branch of λ with d(λ, D(µ)) = 2. The following hold:",
+          "bbox": [
+            85.04,
+            681.0,
+            510.26,
+            692.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFBX1200",
+            "SFTI1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "9",
+          "bbox": [
+            294.71,
+            710.91,
+            300.57,
+            722.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    }
+  ]
+}

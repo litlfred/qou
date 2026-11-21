@@ -53,7 +53,7 @@ q-shift/reflection content is rational).  Only the two order statements —
 strict convexity of the Newton polygon and the antitone factor — are
 archimedean and live over `ℝ`.
 
--- Ref: [manuscript] docs/audits/2026-08-01-awzero-asymptotics.md;
+-- Ref: [leitner2026] docs/audits/2026-08-01-awzero-asymptotics.md;
 --      docs/audits/2026-08-01-ksel2id-tropical-transport.md §3;
 --      docs/audits/2026-08-01-ksel2id-u1-promotion.md §4 gap 2;
 --      bean qou-k16h.

@@ -9,13 +9,21 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "The index of the 72 knot complement",
-  "pageStart": 49,
-  "pageEnd": 51,
+  "title": "Regular triangulations",
+  "pageStart": 34,
+  "pageEnd": 39,
   "contains": [
-    "library/topologicalinvariance3dindex/blocks/prose-sec-019"
+    "library/topologicalinvariance3dindex/blocks/prose-sec-019",
+    "library/topologicalinvariance3dindex/blocks/rem-sec-019-01",
+    "library/topologicalinvariance3dindex/blocks/rem-sec-019-02",
+    "library/topologicalinvariance3dindex/blocks/rem-sec-019-03",
+    "library/topologicalinvariance3dindex/blocks/lem-sec-019-04",
+    "library/topologicalinvariance3dindex/blocks/lem-sec-019-05",
+    "library/topologicalinvariance3dindex/blocks/rem-sec-019-06",
+    "library/topologicalinvariance3dindex/blocks/thm-sec-019-07",
+    "library/topologicalinvariance3dindex/blocks/rem-sec-019-08"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/topologicalinvariance3dindex",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/topologicalinvariance3dindex",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/topologicalinvariance3dindex/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/topologicalinvariance3dindex/manifest.jsonld",
   "provenance": "ingested"
 }

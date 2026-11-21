@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-071-835-results-in-rigid-tensor-categories
 section_title: "Results in rigid tensor categories"
 section_number: 8.3.5
@@ -8,6 +8,7 @@ pages: 44-44
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
 Many proofs from this paper can be transported to a more general context of rigid Q-linear tensor
 categories (i.e. abelian symmetric monoidal categories with the duality functor imitating the behavior of

@@ -1,6 +1,6 @@
 ---
 doc_id: 0510388v1
-doc_title: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck"
+doc_title: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space"
 section_id: sec-023-20-the-first-term-on-the-lhs-of-the-key-lemma
 section_title: "The first term on the LHS of the Key Lemma."
 section_number: 20
@@ -8,6 +8,7 @@ pages: 47-50
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
 toc_source: inferred
+doc_brief: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS"
 ---
 The plan for the proof of the Key Lemma is simple.  Applying an appropriate 
 rotation of  S3 ,  we can assume that  x  is the point  (1, 0, 0, 0)  and that, after 
@@ -43,7 +44,6 @@ Hence
                                      =  (ϕ'(α) / sin α) ( —y3 E2  +  y2 E3) . 
  
  
-48 
  
  
  
@@ -88,7 +88,6 @@ with  f (α)  =  ϕ'(α) / sin α .
  
  
  
-49 
  
  
  
@@ -107,8 +106,4 @@ We find that
  
         +  { (ϕ'/sin α) 2 y1y3/(1 + y0)     +      (ϕ"/sin2α  —  ϕ' cos α/sin3α) (—y1y3) } E3 . 
  
-This puts the first term on the LHS of the Key Lemma in the form we want it. 
- 
- 
- 
-50
+This puts the first term on the LHS of the Key Lemma in the form we want it.

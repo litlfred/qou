@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0410111v2.pdf
 source_sha256: 0ccaeeabd8de6b5f
 toc_source: inferred
+doc_brief: "Integer Polynomial Optimization in Fixed Dimension — 5 sections: Front matter; Introduction; Computational Complexity Bounds"
 ---
 arXiv:math/0410111v2  [math.OC]  31 May 2005
 Integer Polynomial Optimization in Fixed Dimension

@@ -7,10 +7,11 @@ section_number: 1
 pages: 1-1
 source_pdf: 1012.4090v1.pdf
 source_sha256: 02fe4a5eb36ff0ed
-doc_brief: "Generalized Skyrme Crystals — This letter deals with triply-periodic (crystalline) solutions in a family of Skyrme systems, namely where the ﬁeld takes values in the squashed 3-sphere."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.988
+latex_coverage_ratio: 0.946
+doc_brief: "Generalized Skyrme Crystals — This letter deals with triply-periodic (crystalline) solutions in a family of Skyrme systems, namely where the ﬁeld takes values in the squashed 3-sphere."
 ---
 In the basic SU(2) Skyrme model, the solution with the lowest energy-per-charge $E_N$ is the triply-periodic skyrme crystal [@MS04]. For a given value of the topological charge (winding number, or baryon number) $N$, there are in general many isolated $N$-skyrmion solutions, *i.e.* local minima of the energy; but the belief is that for $N\gg1$, the lowest-energy solution will resemble a chunk of the skyrme crystal.
 

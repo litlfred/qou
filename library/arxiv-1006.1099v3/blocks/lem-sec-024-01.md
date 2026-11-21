@@ -1,1 +1,1 @@
-LetSn∼=L⊂M be a Lagrangian sphere. Fix a Lagrangian disk ∆ n+1⊂H with
+A quadric hypersurface Q ⊂Pn+1contains a distinguished isotopy class of La- grangian sphere L, which is the unique sphere arising as the vanishing cycle of an algebraic degeneration. If n > 1, this sphere lies in the nilpotent summand F(Q; 0).

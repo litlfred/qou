@@ -66,9 +66,10 @@ export default chapter({
         "crossing-energy",
         "coulomb-charge",
         "up-quark",
-        "up-quark-properties",
         "down-quark",
+        "up-quark-properties",
         "down-quark-properties",
+        "photon",
         "quark-antiquark-production",
         "quark-antiquark-production-reduction",
         "four-term-pair-nucleon",
@@ -78,6 +79,7 @@ export default chapter({
         "confinement-universality",
         "confinement-universality-proof",
         "derived-atom",
+        "universal-ilp-algorithm",
         "nucleon-from-photons-summary",
         // `gluon-stabiliser-ledger` was here on landing (2026-08-24) and moved
         // to §12 the same day — see the note there. Placed by `interprets`,
@@ -92,6 +94,8 @@ export default chapter({
       blocks: [
         "hadron-algebra-intro",
         "hadron",
+        "categorical-proton",
+        "categorical-proton-properties",
         "hadron-exists",
         "hadron-exists-proof",
         "hadron-unique",
@@ -147,15 +151,14 @@ export default chapter({
         "borromean-baryon",
         "borromean-topological-confinement",
         "brunnian-property-of-borromean",
-        "delta-skein-substrate-identity",
         "figure-8-muon-mass-cross-check",
         "typed-crossing-operator",
         "nucleon-hecke-element",
         "nucleon-hecke-element-normal-form",
         "hadron-proton-example",
         "fermion-boson-knot-link",
-        "fermion-boson-knot-link-proof",
         "fermion-boson-knot-link-table-data",
+        "fermion-boson-knot-link-proof",
         "shell-transition-knot",
         "shell-transition-knot-table1-data",
         "shell-transition-knot-table2-data",
@@ -220,6 +223,10 @@ export default chapter({
         "electroweak-triplet-far-commuting-minimal-proof",
         "electroweak-triplet-far-commuting-minimal-scope",
         "electroweak-higgs-torus-link-triplet",
+        "hoefsmit-ew-cell-content",
+        "hoefsmit-ew-cell-content-context",
+        "hoefsmit-ew-cell-content-table1-data",
+        "hoefsmit-ew-cell-content-table2-data",
         "electroweak-triplet-charge-spin-from-involution",
         "electroweak-triplet-charge-spin-from-involution-proof",
         "electroweak-triplet-charge-spin-from-involution-slot",
@@ -229,6 +236,11 @@ export default chapter({
         "electroweak-higgs-torus-link-triplet-table1-data",
         "electroweak-higgs-torus-link-triplet-table2-data",
         "electroweak-higgs-torus-link-triplet-table3-data",
+        "higgs-vacuum-residual-idempotent",
+        "g-action-on-substrate",
+        "g-action-on-substrate-table1-data",
+        "g-action-on-substrate-table2-data",
+        "unmapped-torus-knots",
       ],
     }),
 
@@ -246,16 +258,6 @@ export default chapter({
         "dressed-particle",
         "dressed-particle-examples",
         "dressed-particle-properties",
-        "shell-closure-stability",
-        "shell-closure-stability-proof",
-        "shell-closure-stability-interprets",
-        "level-sufficiency",
-        "level-sufficiency-proof",
-        "level-sufficiency-interprets",
-        "confinement-phase-stratification",
-        "confinement-phase-stratification-proof",
-        "confinement-phase-stratification-interpretation",
-        "phase-scoped-applicability",
       ],
     }),
 
@@ -286,9 +288,6 @@ export default chapter({
         "stable-atom-decidable",
         "stable-atom-decidable-proof",
         "unstable-atom",
-        "unstable-atom-decay-phase",
-        "unstable-atom-decay-channel",
-        "unstable-atom-decay-channel-proof",
       ],
     }),
 
@@ -314,16 +313,16 @@ export default chapter({
       ],
     }),
 
-    // ── §12. Categorical proton, neutron, and meson ───────────────
+    // ── §12. Categorical neutron and meson (proton def + properties moved
+    // to sec:hadron-algebra after def:hadron, reading-order drain L4
+    // 2026-11-21: prf:hadron-exists uses the proton as its witness) ──
     // The definitional blocks from the former orphan-reconnect section.
     // Structural definitions of composite hadrons: their categorical
     // construction and Reidemeister-invariant properties.
     section({
-      title: "Categorical proton, neutron, and meson",
+      title: "Categorical neutron and meson",
       label: "sec:categorical-hadrons",
       blocks: [
-        "categorical-proton",
-        "categorical-proton-properties",
         // Moved here from §2 on 2026-08-24, the day it landed, on the
         // detangler's measurement rather than on topic. It was placed in §2
         // because it `interprets: def:derived-atom` and explains that
@@ -355,7 +354,6 @@ export default chapter({
         // the only one that does not split the `meson-scale-independence`
         // statement / calibration / proof triple.
         "pion-mass-hyperbolic-threshold",
-        "antiquark-channel-ledger",
       ],
     }),
   ],

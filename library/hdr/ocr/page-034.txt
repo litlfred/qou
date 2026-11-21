@@ -1,0 +1,72 @@
+(taking po = vo =0 for j > AM).
+The m-charged standard symbol of X is the family of numbers defined by
+
+Bey = (BO, BS? pees BS),
+
+It is a tableau of numbers arranged into | rows indexed by the set {0,1,...,1—1} such that the i-th row
+
+has length equal to he, + [m;]. In general, an m-charged symbol of X is a family of numbers obtained
+
+from the m-charged standard symbol of X by shifting all the rows by the same positive rational number.
+The m-charged content of X is the multiset
+
+Conte, = BO) U BS U...U BAY,
+Example 4.2 Let us take | = 2,n = 6, A = ((2,1), (3)) and m = (—1,2). Then
+
+3 1
+Bex=(} 321 0)
+
+We have Contec, = {7,3,3, 2,1, 1,0}.
+
+Let s € Z with s > hey. Let Bc\ be the m-charged symbol of A obtained from Bcy by shifting all
+the rows by s — hey. Let ky > ko > ++: > kt, with t = 1s + yh [m,], be the elements of the multiset
+Bc§ written in decreasing order (if s = hc,, these are simply the elements of Contc,). We set
+
+t
+
+Mm (A) := WC — ri.
+
+i=l
+
+Let r € Zyo, By Proposition 5.5.11], the following element of Q does not depend on the choice
+of the integer s:
+
+al™")(X) := 7 (mm (A) — Mma (O))- (4.3)
+
+We will see in the next section that a") corresponds to the a-function of an Ariki-Koike algebra.
+
+4.2 Schur elements and the a-function
+
+Let +: HA — R be the linear map defined by
+
+1 ifay =a, =---=a, =0 and w=1,
+
+a, yas an _
+1(X} XY... Xn" tw) ={ 0 otherwise,
+
+where w € G, and 0 < a», < 1-1 for all m = 1,2,...,n. The function 7 was introduced by Bremke
+and Malle who showed that 7 is a trace form and that 7 is essentially independent of the choice
+
+of basis of H@. It is not obvious from the definition above that 7 coincides with the form introduced by
+Bremke and Malle; however, this was proved by Malle and Mathas in [MalMat], where they also showed
+that 7 is a canonical symmetrising form on H4 whenever all Q,;’s are invertible in R. As we will see in
+Chapter [6] T is the Markov trace on H? with all parameters equal to 0.
+
+From now on, we assume that all g,Qo,...,Qj-1 are invertible in R. Let K be a field containing
+R such that KH4 is split semisimple. As mentioned in the beginning of this chapter, but also due to
+Tits’s deformation theorem, the simple modules of KH4 are parametrised by the /-partitions of n. For
+X € P(l,n), we denote by V> the corresponding simple module and by s,(q) the Schur element of V*
+with respect to 7. As we saw in 8»(q) belongs to the integral closure Rx of Rin K.
+
+For example, we can take g,Qo,...,Q)_1 to be indeterminates, R = Z\q*', at eng Fat and kK =
+
+,++;QE4] for all A € P(I,n).
+
+The Schur elements of #4 have been calculated independently by Geck, Iancu and Malle , and
+by Mathas . Their papers provide different combinatorial formulas for the calculation of s,(q),
+which are described in both cases as quotients of elements of kK. Even though it was theoretically known
+that these quotients belonged to Rx, there was no combinatorial formula to describe the terms remaining
+after the division. In [ChJa2], we managed to obtain a cancellation-free formula for the Schur elements
+of HA:
+
+31

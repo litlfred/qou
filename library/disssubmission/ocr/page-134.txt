@@ -1,0 +1,53 @@
+126 Chapter 5 — A family of surfaces
+
+says that the Abel-Jacobi morphism f, :C, —> W, restricts over the smooth
+locus to an isomorphism
+
+fn (Wn\S) —* Wa\S.
+Putting everything together and using the commutative diagram
+
+(fn fn) Wy x Wy ¢ (in,in) XxX
+
+hh 8n | a
+x
+
+for the closed embedding i, : W, > X, we therefore obtain by the definition
+of convolution an isomorphism
+
+dnx(Co,xc,lg))lu = (Sw, * Fw, )u-
+
+To control the convolution on the right hand side, we use the formalism of
+Brill-Noether sheaves. Recall that dw, =’65, and d_w, =?63n—2, where the
+second equality is due to the Riemann-Roch theorem. Hence we get from
+the Littlewood-Richardson rule that
+
+n
+ow, * o_w, = bn *PS3n_2 =tO Ba 6 3n—24in—i
+i=0
+
+Cr x Cr
+
+where T is a direct sum of degree shifts of dy. In fact tT = dy as one may see
+from the above isomorphism d,..(Cc, xc,[g])|u = (Ow, * 6—w,)|y and from
+the fact that d, is generically finite. Therefore our claim will follow for the
+cohomology sheaf
+
+Ly = 8 (?83n-2n)lu;
+
+provided that for all i > 0 the perverse sheaves ?63,,24;,n—; are supported
+on a proper closed subset of X. But this is indeed the case because by the
+Littlewood-Richardson rule the perverse sheaf
+n
+Ba 8 3n24i.n-i = PSn-1 +809 (n—1) = ow, * bw,
+
+i=l
+has the support d,—1(Cn—1 x Cy_1) C X of dimension 2(n — 1) < g. Oo
+
+Proof of part (b) in proposition 5.24. For this we again use Brill-Noether
+sheaves. The perverse sheaf 69 = dw, = 53 corresponds by definition to
+the third fundamental representation of the Tannaka group Si¢(C). One can
+check that the alternating square of this representation decomposes into two
+irreducible pieces of highest weight a’ for a = (4,2) and a = (6). Hence
+it follows that
+
+6 = 54.856 BT

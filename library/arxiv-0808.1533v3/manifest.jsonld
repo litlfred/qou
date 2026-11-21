@@ -5,19 +5,27 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0808.1533v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0808.1533v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-0808.1533v3",
+  "title": "On the third order helicity of magnetic fields on invariant domains in S³",
   "contains": [
+    "library/arxiv-0808.1533v3/sections/sec-front-matter",
     "library/arxiv-0808.1533v3/sections/sec-000",
     "library/arxiv-0808.1533v3/sections/sec-001",
     "library/arxiv-0808.1533v3/sections/sec-002",
-    "library/arxiv-0808.1533v3/sections/sec-003"
+    "library/arxiv-0808.1533v3/sections/sec-003",
+    "library/arxiv-0808.1533v3/sections/sec-004",
+    "library/arxiv-0808.1533v3/sections/sec-005",
+    "library/arxiv-0808.1533v3/sections/sec-006",
+    "library/arxiv-0808.1533v3/sections/sec-007",
+    "library/arxiv-0808.1533v3/sections/sec-008",
+    "library/arxiv-0808.1533v3/sections/sec-009",
+    "library/arxiv-0808.1533v3/sections/sec-010"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -27,7 +35,9 @@
   },
   "meta": {
     "doc_id": "arxiv-0808.1533v3",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0808.1533v3.pdf",
     "source_sha256": "3e003cc35a4e57116b238f20d412c351d3632eacc207a8291136b03a567ce9b4",
     "pages": 30,

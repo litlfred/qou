@@ -13,7 +13,7 @@ LaTeX: `\label{prop:q-exponential-exists}`
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/q-exponential-exists
+- [leitner2026] §2-quantum-observable-universes/q-exponential-exists
 - [kassel1995] Quantum Groups (Springer GTM 155), §IV.2
 -/
 
@@ -30,7 +30,7 @@ abbrev R_q := LaurentPolynomial ℤ
     (`QOU/QuantumObservableUniverses/q-exponential.lean`); inlined here
     so this proposition's sibling compiles standalone (the existence
     proof needs the structure in scope). -/
--- Ref: [manuscript] §2-quantum-observable-universes/q-exponential
+-- Ref: [leitner2026] §2-quantum-observable-universes/q-exponential
 structure QExponential (H : Type*) where
   /-- The grouplike element e_q ∈ H. -/
   e_q : H

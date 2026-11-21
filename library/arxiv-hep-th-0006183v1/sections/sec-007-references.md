@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-0006183v1
-doc_title: "arXiv:hep-th/0006183v1 23 Jun 2000"
+doc_title: "Fine-tuning and the Wilson renormalization group"
 section_id: sec-007-references
 section_title: "References"
 section_number: null
@@ -8,6 +8,7 @@ pages: 21-22
 source_pdf: 0006183v1.pdf
 source_sha256: 2c9c4d97ce4f71a3
 toc_source: inferred
+doc_brief: "Fine-tuning and the Wilson renormalization group — We use the Wilson renormalization group (RG) formulation to solve the ﬁne-tuning proce- dure needed in renormalization schemes breaking the gauge"
 ---
 [1] K.G. Wilson, Phys. Rev. B 4 (1971) 3174,3184; K.G. Wilson and J.G. Kogut, Phys.
 Rep. 12 (1974) 75.
@@ -27,7 +28,6 @@ Phys. B437 (1995) 163, Phys. Lett. 346B (1995) 87.
 B417 (1994) 181.
 [11] M. Bonini, M. D’Attanasio and G. Marchesini, Nucl. Phys. B409 (1993) 441.
 [12] T. Morris, Int. J. Mod. Phys. A9 (1994) 2411.
-20
 [13] C. Becchi, Lectures on the renormalization of gauge theories, in Relativity, groups and
 topology II (Les Houches 1983), Eds. B.S. DeWitt and R. Stora (Elsevier Science Pub.
 1984).
@@ -36,4 +36,3 @@ and the renormalization group equation for chiral non-Abelian gauge theories in 
 mensional renormalization with a non-anticommuting Γ5, hep-th/9905076.
 [15] T. Morris, A gauge invariant exact renormalization group. 1, hep-th/9910058; S. Hi-
 rano, Exact renormalization group and loop equation, hep-th/9910256.
-21

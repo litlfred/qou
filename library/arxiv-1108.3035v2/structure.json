@@ -8,10 +8,10 @@
   "pages": 27,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "math_source": "text-layer",
-  "mtime": null,
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,17 +21,29 @@
    "stamp_date": "2 Nov 2011"
   },
   "doi": null,
-  "title": "Random Matrix Theory for the Hermitian Wilson Dirac Operator and the chGUE \u2013 GUE Transition",
+  "title": "Random Matrix Theory for the Hermitian Wilson Dirac Operator and the chGUE – GUE Transition",
   "authors_raw": "Gernot Akemann1 and Taro Nagao2",
   "title_lines": [
    "Random Matrix Theory for the Hermitian Wilson Dirac Operator",
-   "and the chGUE \u2013 GUE Transition"
+   "and the chGUE – GUE Transition"
   ],
-  "abstract": "We introduce a random two-matrix model interpolating between a chiral Hermitian (2n + \u03bd) \u00d7 (2n+\u03bd) matrix and a second Hermitian matrix without symmetries. These are taken from the chiral Gaussian Unitary Ensemble (chGUE) and Gaussian Unitary Ensemble (GUE), respectively. In the microscopic large-n limit in the vicinity of the chGUE (which we denote by weakly non-chiral limit) this theory is in one to one correspondence to the partition function of Wilson chiral perturbation theory in the epsilon regime, such as the related two matrix-model previously introduced in [20, 21]. For a generic number of \ufb02avours and rectangular block matrices in the chGUE part we derive an eigenvalue representation for the partition function displaying a Pfa\ufb03an structure. In the quenched case with \u03bd = 0, 1 we derive all spectral correlations functions in our model for \ufb01nite-n, given in terms of skew-orthogonal polynomials. The latter are expressed as Gaussian integrals over standard Laguerre polynomials. In the weakly non-chiral microscopic limit this yields all corresponding quenched eigenvalue correlation functions of the Hermitian Wilson operator.",
+  "abstract": "We introduce a random two-matrix model interpolating between a chiral Hermitian (2n + ν) × (2n+ν) matrix and a second Hermitian matrix without symmetries. These are taken from the chiral Gaussian Unitary Ensemble (chGUE) and Gaussian Unitary Ensemble (GUE), respectively. In the microscopic large-n limit in the vicinity of the chGUE (which we denote by weakly non-chiral limit) this theory is in one to one correspondence to the partition function of Wilson chiral perturbation theory in the epsilon regime, such as the related two matrix-model previously introduced in [20, 21]. For a generic number of ﬂavours and rectangular block matrices in the chGUE part we derive an eigenvalue representation for the partition function displaying a Pfaﬃan structure. In the quenched case with ν = 0, 1 we derive all spectral correlations functions in our model for ﬁnite-n, given in terms of skew-orthogonal polynomials. The latter are expressed as Gaussian integrals over standard Laguerre polynomials. In the weakly non-chiral microscopic limit this yields all corresponding quenched eigenvalue correlation functions of the Hermitian Wilson operator.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref package",
    "CreationDate": "D:20220430092758-04'00'"
+  },
+  "title_raw": "Random Matrix Theory for the Hermitian Wilson Dirac Operator and the chGUE – GUE Transition",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Random Matrix Theory for the Hermitian Wilson Dirac Operator and the chGUE – GUE Transition",
+   "outline": "1 Introduction",
+   "text": "Random Matrix Theory for the Hermitian Wilson Dirac Operator and the chGUE – GUE Transition",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -40,102 +52,450 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "The Random Matrix Model",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "The eigenvalue picture",
    "page": 5,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "All density correlation functions for finite-N",
    "page": 9,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "The microscopic weakly non-chiral large-N limit",
    "page": 15,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 1,
    "title": "Conclusions",
    "page": 18,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 1,
    "title": "A Equivalence to the partition function of WchPT",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "A.1 Alternative representation of Nf=1 WchPT",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 1,
    "title": "B Consistency checks of the partition function and factorisation",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "B.1 The GUE limit a1 for =0",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "B.2 The chGUE limit a0 and factorisation",
    "page": 21,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 1,
    "title": "C Skew-orthogonal polynomials",
    "page": 22,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "C.1 Expectation value of a single characteristic polynomial",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "C.2 The odd polynomials R2j+1(x)",
    "page": 24,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Example for the ν = 0 quenched density at ﬁnite n = 4 at diﬀerent masses: m = 0.4 (top left plots) and m = 1 (top right plots): the top black curves correspond to the shifted chGUE density eq. (4.29) at a = 0 (which is clipped for m = 1) ending at a sharp cutoﬀfor m > 0, see eq. (4.30)",
+   "page": 13,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Example for the ν = 1 quenched density at ﬁnite n = 4 at diﬀerent masses: m = 0 (left plots) and m = 1 (right plots). Because for m = 0 the density is still symmetric we only plot the positive eigenvalues. The black curves correspond to the (shifted) chGUE density at a = 0. It can be nicely seen how",
+   "page": 14,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The microscopic density eq. (5.8) for ˆm = 1 (top left plots) and ˆm = 3 (top right plots) at various values of ˆa = 0.1 (middle blue curves) and ˆa = 0.25 (lower red curves). For comparison we also show the corresponding chGUE density (ˆa = 0) eq. (5.11) shifted as in eq. (4.30) (top black curves)",
+   "page": 16,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "16"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The microscopic density eq. (5.12) for ˆm = 0 (left plots) and ˆm = 3 (right plots) at various values of ˆa = 0.3 (red curves), ˆa = 0.1 (blue curves), and ˆa = 0 (black curves) for comparison. For the chGUE-GUE transition at ˆm = 0 the density is still symmetric and we only display ˆx > 0. For ˆm >",
+   "page": 17,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1495,
+   "n_words": 219,
+   "label_start": null,
+   "label_end": "2"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -143,8 +503,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 6870,
-   "n_words": 1132
+   "n_chars": 6879,
+   "n_words": 1131,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-001-2-the-random-matrix-model",
@@ -153,8 +515,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 5,
-   "n_chars": 5456,
-   "n_words": 1095
+   "n_chars": 5474,
+   "n_words": 1096,
+   "label_start": "3",
+   "label_end": "5"
   },
   {
    "id": "sec-002-3-the-eigenvalue-picture",
@@ -162,48 +526,175 @@
    "title": "The eigenvalue picture",
    "level": 1,
    "page_start": 5,
-   "page_end": 15,
-   "n_chars": 17418,
-   "n_words": 3738
+   "page_end": 9,
+   "n_chars": 6844,
+   "n_words": 1551,
+   "label_start": "5",
+   "label_end": "9"
   },
   {
-   "id": "sec-003-5-the-microscopic-weakly-non-chiral-large-n-limi",
+   "id": "sec-003-4-all-density-correlation-functions-for-finite-n",
+   "number": "4",
+   "title": "All density correlation functions for finite-N",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 15,
+   "n_chars": 10567,
+   "n_words": 2178,
+   "label_start": "9",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-004-5-the-microscopic-weakly-non-chiral-large-n-limi",
    "number": "5",
    "title": "The microscopic weakly non-chiral large-N limit",
    "level": 1,
    "page_start": 15,
    "page_end": 18,
-   "n_chars": 6232,
-   "n_words": 1319
+   "n_chars": 6269,
+   "n_words": 1321,
+   "label_start": "15",
+   "label_end": "18"
   },
   {
-   "id": "sec-004-6-conclusions",
+   "id": "sec-005-6-conclusions",
    "number": "6",
    "title": "Conclusions",
    "level": 1,
    "page_start": 18,
+   "page_end": 19,
+   "n_chars": 3749,
+   "n_words": 626,
+   "label_start": "18",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-006-a-equivalence-to-the-partition-function-of-wchpt",
+   "number": null,
+   "title": "A Equivalence to the partition function of WchPT",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 1947,
+   "n_words": 402,
+   "label_start": "19",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-007-a1-alternative-representation-of-nf1-wchpt",
+   "number": null,
+   "title": "A.1 Alternative representation of Nf=1 WchPT",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 1199,
+   "n_words": 251,
+   "label_start": "20",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-008-b-consistency-checks-of-the-partition-function-a",
+   "number": null,
+   "title": "B Consistency checks of the partition function and factorisation",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 353,
+   "n_words": 66,
+   "label_start": "20",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-009-b1-the-gue-limit-a1-for-0",
+   "number": null,
+   "title": "B.1 The GUE limit a1 for =0",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 767,
+   "n_words": 159,
+   "label_start": "20",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-010-b2-the-chgue-limit-a0-and-factorisation",
+   "number": null,
+   "title": "B.2 The chGUE limit a0 and factorisation",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 4094,
+   "n_words": 838,
+   "label_start": "21",
+   "label_end": "22"
+  },
+  {
+   "id": "sec-011-c-skew-orthogonal-polynomials",
+   "number": null,
+   "title": "C Skew-orthogonal polynomials",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 1888,
+   "n_words": 332,
+   "label_start": "22",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-012-c1-expectation-value-of-a-single-characteristic",
+   "number": null,
+   "title": "C.1 Expectation value of a single characteristic polynomial",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 2399,
+   "n_words": 481,
+   "label_start": "23",
+   "label_end": "24"
+  },
+  {
+   "id": "sec-013-c2-the-odd-polynomials-r2j1x",
+   "number": null,
+   "title": "C.2 The odd polynomials R2j+1(x)",
+   "level": 2,
+   "page_start": 24,
    "page_end": 27,
-   "n_chars": 25408,
-   "n_words": 4695
+   "n_chars": 8900,
+   "n_words": 1509,
+   "label_start": "24",
+   "label_end": "27"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 14,
-  "sections": 5,
-  "chars_total": 61384,
+  "toc_inferred_entries": 0,
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 15,
+  "chars_total": 62824,
+  "furniture_lines_stripped": 26,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "ANhepv2.tex",
    "tex_sections": 5,
-   "overlaid": 0,
+   "overlaid": 1,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
     "coverage": 0.5
    },
    "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
@@ -220,13 +711,63 @@
      "result": "no matching \\section"
     },
     {
-     "id": "sec-003-5-the-microscopic-weakly-non-chiral-large-n-limi",
+     "id": "sec-003-4-all-density-correlation-functions-for-finite-n",
+     "title": "All density correlation functions for finite-N",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-5-the-microscopic-weakly-non-chiral-large-n-limi",
      "title": "The microscopic weakly non-chiral large-N limit",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-004-6-conclusions",
+     "id": "sec-005-6-conclusions",
      "title": "Conclusions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-a-equivalence-to-the-partition-function-of-wchpt",
+     "title": "A Equivalence to the partition function of WchPT",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-a1-alternative-representation-of-nf1-wchpt",
+     "title": "A.1 Alternative representation of Nf=1 WchPT",
+     "prose_ratio": 0.528,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-b-consistency-checks-of-the-partition-function-a",
+     "title": "B Consistency checks of the partition function and factorisation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-b1-the-gue-limit-a1-for-0",
+     "title": "B.1 The GUE limit a1 for =0",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-b2-the-chgue-limit-a0-and-factorisation",
+     "title": "B.2 The chGUE limit a0 and factorisation",
+     "prose_ratio": 0.725,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-c-skew-orthogonal-polynomials",
+     "title": "C Skew-orthogonal polynomials",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-c1-expectation-value-of-a-single-characteristic",
+     "title": "C.1 Expectation value of a single characteristic polynomial",
+     "prose_ratio": 0.545,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-013-c2-the-odd-polynomials-r2j1x",
+     "title": "C.2 The odd polynomials R2j+1(x)",
      "result": "no matching \\section"
     }
    ]

@@ -8,9 +8,19 @@
   "pages": 38,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:26Z",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 21,
+    "reason": "14 of 161 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 22,
+    "reason": "11 of 294 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
@@ -54,7 +64,7 @@
   },
   {
    "level": 1,
-   "title": "Trace-\ufb01elds",
+   "title": "Trace-ﬁelds",
    "page": 4,
    "source": "inferred",
    "number": "2",
@@ -198,7 +208,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "C(p, s) for p = 6, s = \u22123",
+   "title": "C(p, s) for p = 6, s = −3",
    "page": 3,
    "confidence": 0.9,
    "evidence": [
@@ -582,20 +592,20 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 8793,
-   "n_words": 1514,
+   "n_chars": 8676,
+   "n_words": 1493,
    "label_start": null,
    "label_end": "276"
   },
   {
-   "id": "sec-001-2-trace-\ufb01elds",
+   "id": "sec-001-2-trace-ﬁelds",
    "number": "2",
-   "title": "Trace-\ufb01elds",
+   "title": "Trace-ﬁelds",
    "level": 1,
    "page_start": 4,
    "page_end": 7,
-   "n_chars": 8229,
-   "n_words": 1642,
+   "n_chars": 8112,
+   "n_words": 1624,
    "label_start": "276",
    "label_end": "279"
   },
@@ -606,8 +616,8 @@
    "level": 1,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 5664,
-   "n_words": 1009,
+   "n_chars": 5586,
+   "n_words": 996,
    "label_start": "279",
    "label_end": "281"
   },
@@ -618,8 +628,8 @@
    "level": 1,
    "page_start": 9,
    "page_end": 15,
-   "n_chars": 15166,
-   "n_words": 2926,
+   "n_chars": 14932,
+   "n_words": 2887,
    "label_start": "281",
    "label_end": "287"
   },
@@ -630,8 +640,8 @@
    "level": 1,
    "page_start": 15,
    "page_end": 19,
-   "n_chars": 7168,
-   "n_words": 1456,
+   "n_chars": 7012,
+   "n_words": 1430,
    "label_start": "287",
    "label_end": "291"
   },
@@ -642,8 +652,8 @@
    "level": 1,
    "page_start": 19,
    "page_end": 29,
-   "n_chars": 16947,
-   "n_words": 3509,
+   "n_chars": 16384,
+   "n_words": 3362,
    "label_start": "291",
    "label_end": "301"
   },
@@ -654,8 +664,8 @@
    "level": 1,
    "page_start": 29,
    "page_end": 30,
-   "n_chars": 3918,
-   "n_words": 795,
+   "n_chars": 3879,
+   "n_words": 787,
    "label_start": "301",
    "label_end": "302"
   },
@@ -666,8 +676,8 @@
    "level": 1,
    "page_start": 30,
    "page_end": 34,
-   "n_chars": 6001,
-   "n_words": 1285,
+   "n_chars": 5845,
+   "n_words": 1259,
    "label_start": "302",
    "label_end": "306"
   },
@@ -678,8 +688,8 @@
    "level": 1,
    "page_start": 34,
    "page_end": 35,
-   "n_chars": 3403,
-   "n_words": 579,
+   "n_chars": 3364,
+   "n_words": 574,
    "label_start": "306",
    "label_end": "307"
   },
@@ -690,8 +700,8 @@
    "level": 1,
    "page_start": 35,
    "page_end": 37,
-   "n_chars": 3127,
-   "n_words": 540,
+   "n_chars": 3049,
+   "n_words": 527,
    "label_start": "307",
    "label_end": "309"
   },
@@ -702,8 +712,8 @@
    "level": 2,
    "page_start": 37,
    "page_end": 38,
-   "n_chars": 4451,
-   "n_words": 630,
+   "n_chars": 4412,
+   "n_words": 622,
    "label_start": "309",
    "label_end": "310"
   }
@@ -725,6 +735,7 @@
    "items": []
   },
   "sections": 12,
-  "chars_total": 82936
+  "chars_total": 81320,
+  "furniture_lines_stripped": 70
  }
 }

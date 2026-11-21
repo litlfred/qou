@@ -1,0 +1,2995 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-1808.02836v2",
+  "figures": [
+    {
+      "id": "vfig-p005",
+      "file": "figures/vfig-p005.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 5
+      },
+      "page": 5,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": [
+        180.57,
+        368.06,
+        793.85,
+        712.03
+      ],
+      "assembly": {
+        "drawings": 63,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              180.57,
+              368.06,
+              793.85,
+              712.03
+            ],
+            "drawings": 54,
+            "pageEdge": true,
+            "rendered": true,
+            "labels": [
+              "along pairs of (unpaired) faces of the existing complex sharing an edge e. This operation is called a layering",
+              "on e, where the ﬁrst layering onto the M¨obius strip must always go on the interior edge of the M¨obius strip, see",
+              "Figure 1. Layered solid tori are close cousins of the monodromy ideal triangulations of once-punctured torus",
+              "bundles deﬁned in Section 5.1, since both types of triangulations are obtained from layering tetrahedra onto an",
+              "existing complex. See [18] for a comprehensive introduction into layered solid tori and, more generally, layered",
+              "triangulations. Here, we summarise material of [21, Section 2.3].",
+              "Figure 1: Layering tetrahedron ∆to triangulation T on edge e. Identiﬁcations of the triangles are indicated",
+              "By construction, the boundary of a layered solid torus containing at least one tetrahedron is always the standard",
+              "triangulation of a torus with one vertex, two triangles, and three edges. Layered solid tori are distinguished by",
+              "how often their meridional disc intersects their three boundary edges geometrically and we write LST(a,b,c)",
+              "for a layered solid torus with meridional disc intersecting the boundary edges a, b and c times respectively.",
+              "Assuming a ≤b ≤c it is straightforward to see that a + b = c and that a layered solid torus LST(a,b,c) can",
+              "be turned into a layered solid torus of type LST(a,b,b−a), LST(a,c,a+c) or LST(b,c,b+c) by layering an",
+              "additional tetrahedron on the edge with label c, b, or a respectively.",
+              "There exists only one layered solid torus with one tetrahedron, LST(1,2,3). Hence, by construction, every",
+              "layered solid torus with at least one tetrahedron contains this layered solid torus, termed its core tetrahedron."
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              180.57,
+              368.06,
+              793.85,
+              712.03
+            ],
+            "parent": null,
+            "labels": [
+              "along pairs of (unpaired) faces of the existing complex sharing an edge e. This operation is called a layering",
+              "on e, where the ﬁrst layering onto the M¨obius strip must always go on the interior edge of the M¨obius strip, see",
+              "Figure 1. Layered solid tori are close cousins of the monodromy ideal triangulations of once-punctured torus",
+              "bundles deﬁned in Section 5.1, since both types of triangulations are obtained from layering tetrahedra onto an",
+              "existing complex. See [18] for a comprehensive introduction into layered solid tori and, more generally, layered",
+              "triangulations. Here, we summarise material of [21, Section 2.3].",
+              "Figure 1: Layering tetrahedron ∆to triangulation T on edge e. Identiﬁcations of the triangles are indicated",
+              "By construction, the boundary of a layered solid torus containing at least one tetrahedron is always the standard",
+              "triangulation of a torus with one vertex, two triangles, and three edges. Layered solid tori are distinguished by",
+              "how often their meridional disc intersects their three boundary edges geometrically and we write LST(a,b,c)",
+              "for a layered solid torus with meridional disc intersecting the boundary edges a, b and c times respectively.",
+              "Assuming a ≤b ≤c it is straightforward to see that a + b = c and that a layered solid torus LST(a,b,c) can",
+              "be turned into a layered solid torus of type LST(a,b,b−a), LST(a,c,a+c) or LST(b,c,b+c) by layering an",
+              "additional tetrahedron on the edge with label c, b, or a respectively.",
+              "There exists only one layered solid torus with one tetrahedron, LST(1,2,3). Hence, by construction, every",
+              "layered solid torus with at least one tetrahedron contains this layered solid torus, termed its core tetrahedron."
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 31,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              110.61,
+              188.24,
+              120.14,
+              188.24
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              413.78,
+              201.79,
+              423.3,
+              201.79
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              529.06,
+              231.66,
+              538.58,
+              231.66
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              280.83,
+              245.21,
+              290.36,
+              245.21
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              355.29,
+              272.3,
+              364.82,
+              272.3
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              531.81,
+              275.44,
+              537.79,
+              275.44
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              532.06,
+              275.69,
+              532.06,
+              280.67
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              537.54,
+              275.69,
+              537.54,
+              280.67
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              531.81,
+              280.92,
+              537.79,
+              280.92
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 25
+      }
+    },
+    {
+      "id": "vfig-p007",
+      "file": null,
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 7
+      },
+      "page": 7,
+      "rotation": 0,
+      "captionLabels": [
+        "2"
+      ],
+      "region": null,
+      "assembly": {
+        "drawings": 47,
+        "background": 0,
+        "groups": [],
+        "boxes": [],
+        "unlabelledClosedShapes": 22,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              118.45,
+              251.21,
+              149.53,
+              305.04
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              87.88,
+              250.73,
+              118.98,
+              304.56
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              87.18,
+              304.91,
+              149.35,
+              304.91
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              101.72,
+              275.72,
+              105.3,
+              281.56
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              112.73,
+              304.75,
+              119.58,
+              304.91
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              176.15,
+              305.45,
+              238.96,
+              305.45
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              207.74,
+              251.2,
+              239.14,
+              305.58
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              176.85,
+              250.71,
+              208.27,
+              305.1
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              189.45,
+              277.34,
+              193.06,
+              283.25
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              203.35,
+              305.29,
+              210.27,
+              305.45
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              265.77,
+              305.45,
+              328.58,
+              305.45
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              297.36,
+              251.2,
+              328.77,
+              305.58
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              266.47,
+              250.71,
+              297.9,
+              305.1
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              279.08,
+              277.34,
+              282.69,
+              283.25
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              292.98,
+              305.29,
+              299.9,
+              305.45
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              355.39,
+              305.45,
+              418.2,
+              305.45
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              386.98,
+              251.2,
+              418.39,
+              305.58
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              356.1,
+              250.71,
+              387.52,
+              305.1
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              370.09,
+              274.57,
+              373.7,
+              280.47
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              381.21,
+              305.29,
+              388.13,
+              305.45
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              445.02,
+              305.45,
+              507.83,
+              305.45
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              476.61,
+              251.2,
+              508.01,
+              305.58
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              445.72,
+              250.71,
+              477.14,
+              305.1
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              474.98,
+              305.29,
+              481.9,
+              305.45
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              459.71,
+              275.96,
+              463.32,
+              281.86
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 0
+      },
+      "unrendered_reason": "no drawing component on this page contains a text line, so there is no labelled region to render -- the caption candidates are recorded and nothing is claimed about what the page draws"
+    },
+    {
+      "id": "vfig-p008",
+      "file": "figures/vfig-p008.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 8
+      },
+      "page": 8,
+      "rotation": 0,
+      "captionLabels": [
+        "3"
+      ],
+      "region": [
+        31.89,
+        151.63,
+        687.59,
+        522.52
+      ],
+      "assembly": {
+        "drawings": 162,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              31.89,
+              151.63,
+              687.59,
+              522.52
+            ],
+            "drawings": 162,
+            "pageEdge": true,
+            "rendered": true,
+            "labels": [
+              "(both on the left and on the right).",
+              "After collapsing the sections of the exchange annulus to the long edges of the hexagons, we obtain a connected,",
+              "orientable, bounded surface S decomposed into two hexagons, nine edges and six vertices – and thus of Euler",
+              "characteristic −1. As can be deduced from the vertex labels, the surface has three boundary components and",
+              "thus must be a 3–punctured sphere.",
+              "Figure 3: Left: Cross-section through the neighbourhood Nc(t) of an ideal 3–fold t near its boundary edge",
+              "e. The cross-section through the top and bottom hexagon of the right picture appear as green and purple",
+              "lines respectively. Their endpoints mark the cross-section through the long edges of the respective hexagons.",
+              "Labels coincide with the ones on the right. Right: Truncated boundary Nc(t) of regular neighbourhood of",
+              "the 3–fold face t (drawn in the centre in black). Its boundary surface is connected, of Euler characteristic",
+              "−1 with three boundary components (each containing two edges, as indicated by the edge labels) and thus a"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              31.89,
+              151.63,
+              687.59,
+              522.52
+            ],
+            "parent": null,
+            "labels": [
+              "(both on the left and on the right).",
+              "After collapsing the sections of the exchange annulus to the long edges of the hexagons, we obtain a connected,",
+              "orientable, bounded surface S decomposed into two hexagons, nine edges and six vertices – and thus of Euler",
+              "characteristic −1. As can be deduced from the vertex labels, the surface has three boundary components and",
+              "thus must be a 3–punctured sphere.",
+              "Figure 3: Left: Cross-section through the neighbourhood Nc(t) of an ideal 3–fold t near its boundary edge",
+              "e. The cross-section through the top and bottom hexagon of the right picture appear as green and purple",
+              "lines respectively. Their endpoints mark the cross-section through the long edges of the respective hexagons.",
+              "Labels coincide with the ones on the right. Right: Truncated boundary Nc(t) of regular neighbourhood of",
+              "the 3–fold face t (drawn in the centre in black). Its boundary surface is connected, of Euler characteristic",
+              "−1 with three boundary components (each containing two edges, as indicated by the edge labels) and thus a"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 110,
+        "connectors": [],
+        "between": [],
+        "outside": 20
+      }
+    },
+    {
+      "id": "vfig-p009",
+      "file": "figures/vfig-p009.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 9
+      },
+      "page": 9,
+      "rotation": 0,
+      "captionLabels": [
+        "4"
+      ],
+      "region": [
+        -47.27,
+        108.08,
+        631.69,
+        492.13
+      ],
+      "assembly": {
+        "drawings": 31,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              -47.27,
+              108.08,
+              631.69,
+              492.13
+            ],
+            "drawings": 27,
+            "pageEdge": true,
+            "rendered": true,
+            "labels": [
+              "Hence assume that the Θ–graph consists of three parallel arcs and is thus contained in a disc of T0. This time",
+              "two of the boundary curves of S bound discs in T0 and pasting them in and pushing them into the manifold",
+              "yields a properly embedded disc, and we conclude again that S must be boundary parallel.",
+              "In both cases, uniting S with the complement of N(t ∩T0) in T0 thus produces a torus",
+              "T0 \\N(t ∩T0)∪S",
+              "boundary parallel to T0 and disjoint from e (which is itself incident to T0). It follows that normalising this",
+              "boundary parallel torus cannot result in a surface normally isotopic to T0 and thus T cannot be boundary",
+              "efﬁcient. This is impossible since we assume that T is minimal and thus boundary efﬁcient by Theorem 4.",
+              "Figure 4: Two embeddings of the intersection of the 3–fold face t with torus boundary component T0. Left:",
+              "trivial embedding contained in a disc of T0; in this case the boundary parallel torus is made up of a once-",
+              "punctured torus and two discs that are subsurfaces of T0 and the 3–punctured sphere S . Right: two parallel",
+              "essential loops; in this case the boundary parallel torus is made of a disc and an annulus that are subsurfaces",
+              "of T0 and the 3–punctured sphere S .",
+              "Case 2: t is a dunce face. Refer to Figure 5. Let e be the edge of t. We use the notation and set-up as in",
+              "the previous case. The intersection of t with Nc(e) is again a tripod times an interval (see Figure 5 on the left",
+              "for a cross-section). However, now the transverse orientations do not all agree: two are in one direction and",
+              "the last is in the opposite direction. In particular, this implies that each of the hexagons has two of its long",
+              "edges connected by a quadrilateral on the exchange annulus, and exactly one long edge of the top hexagon is"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              -47.27,
+              108.08,
+              631.69,
+              492.13
+            ],
+            "parent": null,
+            "labels": [
+              "Hence assume that the Θ–graph consists of three parallel arcs and is thus contained in a disc of T0. This time",
+              "two of the boundary curves of S bound discs in T0 and pasting them in and pushing them into the manifold",
+              "yields a properly embedded disc, and we conclude again that S must be boundary parallel.",
+              "In both cases, uniting S with the complement of N(t ∩T0) in T0 thus produces a torus",
+              "T0 \\N(t ∩T0)∪S",
+              "boundary parallel to T0 and disjoint from e (which is itself incident to T0). It follows that normalising this",
+              "boundary parallel torus cannot result in a surface normally isotopic to T0 and thus T cannot be boundary",
+              "efﬁcient. This is impossible since we assume that T is minimal and thus boundary efﬁcient by Theorem 4.",
+              "Figure 4: Two embeddings of the intersection of the 3–fold face t with torus boundary component T0. Left:",
+              "trivial embedding contained in a disc of T0; in this case the boundary parallel torus is made up of a once-",
+              "punctured torus and two discs that are subsurfaces of T0 and the 3–punctured sphere S . Right: two parallel",
+              "essential loops; in this case the boundary parallel torus is made of a disc and an annulus that are subsurfaces",
+              "of T0 and the 3–punctured sphere S .",
+              "Case 2: t is a dunce face. Refer to Figure 5. Let e be the edge of t. We use the notation and set-up as in",
+              "the previous case. The intersection of t with Nc(e) is again a tripod times an interval (see Figure 5 on the left",
+              "for a cross-section). However, now the transverse orientations do not all agree: two are in one direction and",
+              "the last is in the opposite direction. In particular, this implies that each of the hexagons has two of its long",
+              "edges connected by a quadrilateral on the exchange annulus, and exactly one long edge of the top hexagon is"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 14,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              531.81,
+              668.16,
+              537.79,
+              668.16
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              532.06,
+              668.41,
+              532.06,
+              673.39
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              537.54,
+              668.41,
+              537.54,
+              673.39
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              531.81,
+              673.64,
+              537.79,
+              673.64
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 20
+      }
+    },
+    {
+      "id": "vfig-p010",
+      "file": "figures/vfig-p010.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 10
+      },
+      "page": 10,
+      "rotation": 0,
+      "captionLabels": [
+        "5"
+      ],
+      "region": [
+        32.01,
+        -17.33,
+        684.95,
+        345.5
+      ],
+      "assembly": {
+        "drawings": 167,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              32.01,
+              -17.33,
+              684.95,
+              345.5
+            ],
+            "drawings": 162,
+            "pageEdge": true,
+            "rendered": true,
+            "labels": [
+              "Figure 5: Left: Cross-section through the neighbourhood Nc(t) of an ideal dunce hat t near its boundary edge",
+              "e. Labels coincide with the ones on the right. Right: Truncated boundary Nc(t) of regular neighbourhood of",
+              "the dunce hat t (drawn in the centre in black). The boundary surface is connected, of Euler characteristic −1",
+              "with three boundary components (one containing four edges and two containing a single edge, as indicated by",
+              "the edge labels) and thus a 3–punctured sphere. The dotted lines with vertex labels represent the intersection"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              32.01,
+              -17.33,
+              684.95,
+              345.5
+            ],
+            "parent": null,
+            "labels": [
+              "Figure 5: Left: Cross-section through the neighbourhood Nc(t) of an ideal dunce hat t near its boundary edge",
+              "e. Labels coincide with the ones on the right. Right: Truncated boundary Nc(t) of regular neighbourhood of",
+              "the dunce hat t (drawn in the centre in black). The boundary surface is connected, of Euler characteristic −1",
+              "with three boundary components (one containing four edges and two containing a single edge, as indicated by",
+              "the edge labels) and thus a 3–punctured sphere. The dotted lines with vertex labels represent the intersection"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 110,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              531.81,
+              625.21,
+              537.79,
+              625.21
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              532.06,
+              625.46,
+              532.06,
+              630.44
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              537.54,
+              625.46,
+              537.54,
+              630.44
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              531.81,
+              630.68,
+              537.79,
+              630.68
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              56.69,
+              725.64,
+              249.45,
+              725.64
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 21
+      }
+    },
+    {
+      "id": "vfig-p011",
+      "file": "figures/vfig-p011.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 11
+      },
+      "page": 11,
+      "rotation": 0,
+      "captionLabels": [
+        "6",
+        "7"
+      ],
+      "region": [
+        -47.01,
+        -76.69,
+        630.24,
+        306.4
+      ],
+      "assembly": {
+        "drawings": 123,
+        "background": 1,
+        "groups": [
+          {
+            "bbox": [
+              -47.01,
+              -76.69,
+              630.24,
+              306.4
+            ],
+            "drawings": 44,
+            "pageEdge": true,
+            "rendered": true,
+            "labels": [
+              "Figure 6: Four embeddings of the intersection of the dunce hat t with torus boundary component T0. Top",
+              "left: two inessential loops, not nested. Bottom left: two inessential loops, nested. Top right: two parallel",
+              "essential loops. Bottom right: one essential loop and one inessential loop."
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              -47.01,
+              -76.69,
+              630.24,
+              306.4
+            ],
+            "parent": null,
+            "labels": [
+              "Figure 6: Four embeddings of the intersection of the dunce hat t with torus boundary component T0. Top",
+              "left: two inessential loops, not nested. Bottom left: two inessential loops, nested. Top right: two parallel",
+              "essential loops. Bottom right: one essential loop and one inessential loop."
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 68,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              168.4,
+              444.59,
+              228.99,
+              456.9
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              367.51,
+              442.1,
+              428.1,
+              456.9
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              197.01,
+              447.28,
+              201.83,
+              447.87
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              395.07,
+              445.52,
+              400.41,
+              446.18
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              196.84,
+              414.23,
+              228.99,
+              448.65
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              203.67,
+              448.65,
+              228.99,
+              502.13
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              168.4,
+              456.9,
+              203.67,
+              502.13
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              168.4,
+              414.23,
+              196.84,
+              456.9
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              267.95,
+              414.23,
+              300.1,
+              448.65
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              274.78,
+              448.65,
+              300.1,
+              502.13
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              239.51,
+              456.9,
+              274.78,
+              502.13
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              239.51,
+              414.23,
+              267.95,
+              456.9
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              395.96,
+              414.23,
+              428.1,
+              448.65
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              402.79,
+              448.65,
+              428.1,
+              502.13
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              367.51,
+              456.9,
+              402.79,
+              502.13
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              367.51,
+              414.23,
+              395.96,
+              456.9
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              196.84,
+              414.23,
+              203.67,
+              502.13
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              267.96,
+              414.23,
+              274.78,
+              502.13
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              395.98,
+              414.23,
+              402.81,
+              502.13
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              271.18,
+              455.54,
+              271.63,
+              461.45
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              399.65,
+              461.45,
+              400.02,
+              466.17
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              367.6,
+              448.68,
+              428.21,
+              462.99
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              239.55,
+              448.68,
+              300.16,
+              462.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              310.79,
+              456.76,
+              340.45,
+              456.76
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              224.94,
+              426.55,
+              239.84,
+              426.93
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              221.37,
+              480.79,
+              236.27,
+              481.17
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 20
+      }
+    },
+    {
+      "id": "vfig-p012",
+      "file": "figures/vfig-p012.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 12
+      },
+      "page": 12,
+      "rotation": 0,
+      "captionLabels": [
+        "8"
+      ],
+      "region": [
+        7.23,
+        349.37,
+        487.75,
+        622.01
+      ],
+      "assembly": {
+        "drawings": 99,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              7.23,
+              349.37,
+              487.75,
+              622.01
+            ],
+            "drawings": 99,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "construction, the endpoint near B is purple and the endpoint near C is green. Moreover, the endpoints",
+              "near A must either both be purple or both be green (note that A must be compressible). It follows that",
+              "one of the edges AB and AC has endpoints with equal colours. It thus follows that this edge must be",
+              "in the neighbourhood of the respective torus boundary components of Mc, see Figure 9. Again, we use",
+              "Theorem 4 to produce a contradiction to the fact that the triangulation is minimal.",
+              "It follows that Obstruction 1. cannot occur.",
+              "Figure 8: Obstruction 1 (1). Edge B′C′ identiﬁed with edge C′′B′′ forming a punctured RP2, or M¨obius",
+              "strip N (left). Obstruction 1 (2). Edge B′C′ identiﬁed with edge B′′C′′ forming an annulus A (right)."
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              7.23,
+              349.37,
+              487.75,
+              622.01
+            ],
+            "parent": null,
+            "labels": [
+              "construction, the endpoint near B is purple and the endpoint near C is green. Moreover, the endpoints",
+              "near A must either both be purple or both be green (note that A must be compressible). It follows that",
+              "one of the edges AB and AC has endpoints with equal colours. It thus follows that this edge must be",
+              "in the neighbourhood of the respective torus boundary components of Mc, see Figure 9. Again, we use",
+              "Theorem 4 to produce a contradiction to the fact that the triangulation is minimal.",
+              "It follows that Obstruction 1. cannot occur.",
+              "Figure 8: Obstruction 1 (1). Edge B′C′ identiﬁed with edge C′′B′′ forming a punctured RP2, or M¨obius",
+              "strip N (left). Obstruction 1 (2). Edge B′C′ identiﬁed with edge B′′C′′ forming an annulus A (right)."
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 62,
+        "connectors": [],
+        "between": [],
+        "outside": 29
+      }
+    },
+    {
+      "id": "vfig-p013",
+      "file": "figures/vfig-p013.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 13
+      },
+      "page": 13,
+      "rotation": 0,
+      "captionLabels": [
+        "9"
+      ],
+      "region": [
+        53.2,
+        -24.87,
+        697.81,
+        340.87
+      ],
+      "assembly": {
+        "drawings": 107,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              53.2,
+              -24.87,
+              697.81,
+              340.87
+            ],
+            "drawings": 103,
+            "pageEdge": true,
+            "rendered": true,
+            "labels": [
+              "Figure 9: Obstruction 1 (2). Both boundary components of A are inessential ∂Mc.",
+              "and hence preserves the homeomorphism type of the manifold M. This gives a new triangulation of M",
+              "with fewer tetrahedra which contradicts our assumption that the triangulation T is minimal."
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              53.2,
+              -24.87,
+              697.81,
+              340.87
+            ],
+            "parent": null,
+            "labels": [
+              "Figure 9: Obstruction 1 (2). Both boundary components of A are inessential ∂Mc.",
+              "and hence preserves the homeomorphism type of the manifold M. This gives a new triangulation of M",
+              "with fewer tetrahedra which contradicts our assumption that the triangulation T is minimal."
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 68,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              531.81,
+              444.3,
+              537.79,
+              444.3
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              532.06,
+              444.55,
+              532.06,
+              449.53
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              537.54,
+              444.55,
+              537.54,
+              449.53
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              531.81,
+              449.78,
+              537.79,
+              449.78
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 27
+      }
+    },
+    {
+      "id": "vfig-p014",
+      "file": "figures/vfig-p014.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 14
+      },
+      "page": 14,
+      "rotation": 0,
+      "captionLabels": [
+        "10",
+        "11"
+      ],
+      "region": [
+        -80.52,
+        -101.37,
+        538.78,
+        478.22
+      ],
+      "assembly": {
+        "drawings": 288,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              -80.52,
+              -101.37,
+              538.78,
+              478.22
+            ],
+            "drawings": 284,
+            "pageEdge": true,
+            "rendered": true,
+            "labels": [
+              "Figure 10: Left: Boundary of LST⋆. Centre: Boundary of LST⋆after disregarding the third boundary edge",
+              "with two boundary edges identiﬁed. Right: Octagon and two quadrilaterals making up the boundary ∂N of a",
+              "regular neighbourhood of LST⋆in Mc. Dotted edges are identiﬁed, solid edges denote the boundary of ∂N.",
+              "Up to symmetry, there are three ways two perform these gluings (notice that the red edges of the octagon can",
+              "be paired with the red edges of the two quadrilaterals arbitrarily, but the orientation of the gluings is ﬁxed).",
+              "All of them are shown in Figure 11. The ﬁrst set of gluings results in a once-punctured torus. This type of",
+              "identiﬁcation implies that the only identiﬁcations of e are the ones from inside LST⋆, a contradiction to the",
+              "assumption that a pair of boundary edges of LST⋆are identiﬁed in T . The second results in ∂N a once-",
+              "punctured Klein bottle, and the third results in ∂N a thrice-punctured sphere.",
+              "Figure 11: Three possible ways to obtain ∂N. Left: a once-punctured solid torus. Centre: a once-punctured",
+              "Klein bottle. Right: a thrice-punctured sphere."
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              -10.28,
+              137.86,
+              532.26,
+              478.22
+            ],
+            "parent": null,
+            "labels": [
+              "Figure 10: Left: Boundary of LST⋆. Centre: Boundary of LST⋆after disregarding the third boundary edge",
+              "with two boundary edges identiﬁed. Right: Octagon and two quadrilaterals making up the boundary ∂N of a",
+              "regular neighbourhood of LST⋆in Mc. Dotted edges are identiﬁed, solid edges denote the boundary of ∂N.",
+              "Up to symmetry, there are three ways two perform these gluings (notice that the red edges of the octagon can",
+              "be paired with the red edges of the two quadrilaterals arbitrarily, but the orientation of the gluings is ﬁxed).",
+              "All of them are shown in Figure 11. The ﬁrst set of gluings results in a once-punctured torus. This type of",
+              "identiﬁcation implies that the only identiﬁcations of e are the ones from inside LST⋆, a contradiction to the",
+              "assumption that a pair of boundary edges of LST⋆are identiﬁed in T . The second results in ∂N a once-",
+              "punctured Klein bottle, and the third results in ∂N a thrice-punctured sphere.",
+              "Figure 11: Three possible ways to obtain ∂N. Left: a once-punctured solid torus. Centre: a once-punctured",
+              "Klein bottle. Right: a thrice-punctured sphere."
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 50,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              502.42,
+              77.17,
+              537.29,
+              85.48
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              502.46,
+              132.36,
+              537.25,
+              140.37
+            ]
+          },
+          {
+            "from": null,
+            "to": "b0",
+            "bbox": [
+              58.35,
+              77.09,
+              58.35,
+              140.6
+            ]
+          },
+          {
+            "from": "b0",
+            "to": null,
+            "bbox": [
+              143.02,
+              77.09,
+              143.02,
+              140.6
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              58.35,
+              77.09,
+              143.02,
+              77.09
+            ]
+          },
+          {
+            "from": "b0",
+            "to": null,
+            "bbox": [
+              58.35,
+              77.09,
+              143.02,
+              140.6
+            ]
+          },
+          {
+            "from": null,
+            "to": "b0",
+            "bbox": [
+              227.7,
+              77.09,
+              227.7,
+              140.6
+            ]
+          },
+          {
+            "from": "b0",
+            "to": null,
+            "bbox": [
+              312.39,
+              77.09,
+              312.39,
+              140.6
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              227.7,
+              77.09,
+              312.39,
+              77.09
+            ]
+          },
+          {
+            "from": "b0",
+            "to": null,
+            "bbox": [
+              397.07,
+              77.09,
+              397.07,
+              140.6
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              397.07,
+              77.09,
+              481.76,
+              77.09
+            ]
+          },
+          {
+            "from": null,
+            "to": "b0",
+            "bbox": [
+              481.76,
+              77.09,
+              481.76,
+              140.6
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              401.29,
+              89.8,
+              401.29,
+              127.9
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              401.29,
+              81.33,
+              409.75,
+              89.8
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              409.75,
+              81.33,
+              469.04,
+              81.33
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              401.29,
+              127.9,
+              409.75,
+              136.37
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              409.75,
+              136.37,
+              469.04,
+              136.37
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              469.04,
+              127.9,
+              477.51,
+              136.37
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              477.51,
+              89.8,
+              477.51,
+              127.9
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              469.04,
+              81.33,
+              477.51,
+              89.8
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              502.42,
+              81.32,
+              502.46,
+              136.37
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              537.25,
+              81.28,
+              537.29,
+              136.3
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              519.86,
+              81.33,
+              519.86,
+              136.37
+            ]
+          },
+          {
+            "from": null,
+            "to": "b0",
+            "bbox": [
+              516.92,
+              85.43,
+              517.01,
+              140.32
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              524.07,
+              77.29,
+              524.07,
+              132.48
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              502.46,
+              136.37,
+              502.63,
+              136.94
+            ]
+          },
+          {
+            "from": null,
+            "to": "b0",
+            "bbox": [
+              502.63,
+              136.94,
+              503.29,
+              137.6
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              502.42,
+              81.32,
+              502.55,
+              81.87
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              502.55,
+              81.87,
+              502.92,
+              82.3
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              502.92,
+              82.3,
+              503.37,
+              82.69
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              503.37,
+              82.69,
+              504.28,
+              83.2
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              504.28,
+              83.2,
+              505.73,
+              83.76
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              505.73,
+              83.76,
+              507.05,
+              84.15
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              507.05,
+              84.15,
+              508.78,
+              84.54
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              508.78,
+              84.54,
+              511.72,
+              85.0
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              511.72,
+              85.0,
+              514.69,
+              85.3
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              514.69,
+              85.3,
+              517.01,
+              85.43
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              524.07,
+              77.29,
+              526.01,
+              77.44
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              526.01,
+              77.44,
+              527.75,
+              77.62
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              527.75,
+              77.62,
+              529.32,
+              77.84
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              529.32,
+              77.84,
+              530.76,
+              78.08
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              530.76,
+              78.08,
+              532.09,
+              78.36
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              532.09,
+              78.36,
+              534.11,
+              78.93
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              534.11,
+              78.93,
+              534.27,
+              78.98
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              534.27,
+              78.98,
+              535.18,
+              79.34
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              535.18,
+              79.34,
+              536.01,
+              79.77
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              536.01,
+              79.77,
+              536.51,
+              80.11
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              536.51,
+              80.11,
+              536.96,
+              80.51
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              536.96,
+              80.51,
+              537.17,
+              80.82
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              537.17,
+              80.82,
+              537.29,
+              81.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              524.07,
+              132.48,
+              525.97,
+              132.62
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              525.97,
+              132.62,
+              527.71,
+              132.8
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              527.71,
+              132.8,
+              529.52,
+              133.04
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              529.52,
+              133.04,
+              531.09,
+              133.31
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              531.09,
+              133.31,
+              532.5,
+              133.62
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              532.5,
+              133.62,
+              533.7,
+              133.95
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              533.7,
+              133.95,
+              534.48,
+              134.2
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              534.48,
+              134.2,
+              535.31,
+              134.52
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              535.31,
+              134.52,
+              535.93,
+              134.85
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              535.93,
+              134.85,
+              536.51,
+              135.21
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              536.51,
+              135.21,
+              536.92,
+              135.58
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              536.92,
+              135.58,
+              537.13,
+              135.92
+            ]
+          },
+          {
+            "from": "b0",
+            "to": null,
+            "bbox": [
+              58.35,
+              112.51,
+              58.35,
+              140.6
+            ]
+          },
+          {
+            "from": "b0",
+            "to": null,
+            "bbox": [
+              143.02,
+              110.4,
+              143.02,
+              140.6
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              58.35,
+              77.09,
+              94.9,
+              77.09
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              58.35,
+              77.09,
+              103.37,
+              77.09
+            ]
+          },
+          {
+            "from": "b0",
+            "to": null,
+            "bbox": [
+              58.35,
+              117.29,
+              89.42,
+              140.6
+            ]
+          },
+          {
+            "from": "b0",
+            "to": null,
+            "bbox": [
+              58.35,
+              112.62,
+              95.65,
+              140.6
+            ]
+          },
+          {
+            "from": "b0",
+            "to": null,
+            "bbox": [
+              58.35,
+              107.34,
+              102.7,
+              140.6
+            ]
+          },
+          {
+            "from": "b0",
+            "to": null,
+            "bbox": [
+              227.7,
+              111.67,
+              227.7,
+              140.6
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              227.7,
+              77.09,
+              264.26,
+              77.09
+            ]
+          },
+          {
+            "from": "b0",
+            "to": null,
+            "bbox": [
+              312.39,
+              112.94,
+              312.39,
+              140.6
+            ]
+          },
+          {
+            "from": "b0",
+            "to": null,
+            "bbox": [
+              397.07,
+              112.51,
+              397.07,
+              140.6
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              397.07,
+              77.09,
+              433.63,
+              77.09
+            ]
+          },
+          {
+            "from": "b0",
+            "to": null,
+            "bbox": [
+              481.76,
+              112.51,
+              481.76,
+              140.6
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              519.86,
+              112.93,
+              519.86,
+              136.37
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              531.81,
+              730.97,
+              537.79,
+              730.97
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              532.06,
+              731.22,
+              532.06,
+              736.21
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              537.54,
+              731.22,
+              537.54,
+              736.21
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              531.81,
+              736.45,
+              537.79,
+              736.45
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 17
+      }
+    },
+    {
+      "id": "vfig-p017",
+      "file": "figures/vfig-p017.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 17
+      },
+      "page": 17,
+      "rotation": 0,
+      "captionLabels": [
+        "12"
+      ],
+      "region": [
+        141.47,
+        386.75,
+        570.62,
+        631.0
+      ],
+      "assembly": {
+        "drawings": 56,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              141.47,
+              386.75,
+              570.62,
+              631.0
+            ],
+            "drawings": 50,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "Type ∆q: A pair of opposite edges are ϕ –even, all others are ϕ –odd.",
+              "Type ∆t: The three edges incident to a vertex are ϕ –odd, all others are ϕ –even.",
+              "Type ∆/0: All edges are ϕ –even.",
+              "Figure 12: Tetrahedra of type ∆q, ∆t and ∆/0. Grey and dashed edges are ϕ –even.",
+              "If ϕ is non-trivial, one obtains a unique normal surface, Sϕ = Sϕ(T ), with respect to T by introducing",
+              "a single vertex on each ϕ –odd edge. This surface is disjoint from the tetrahedra of type ∆/0; it meets each",
+              "tetrahedron of type ∆t in a single triangle meeting all ϕ –odd edges; and each tetrahedron of type ∆q in a single",
+              "quadrilateral dual to the ϕ –even edges. Moreover, Sϕ is Lefschetz dual to ϕ and is termed the canonical",
+              "(normal) surface dual to ϕ. Given 0̸ = c ∈H2(M;Z2) we also write Sc = SDM(c) and call Sc the canonical"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              141.47,
+              386.75,
+              570.62,
+              631.0
+            ],
+            "parent": null,
+            "labels": [
+              "Type ∆q: A pair of opposite edges are ϕ –even, all others are ϕ –odd.",
+              "Type ∆t: The three edges incident to a vertex are ϕ –odd, all others are ϕ –even.",
+              "Type ∆/0: All edges are ϕ –even.",
+              "Figure 12: Tetrahedra of type ∆q, ∆t and ∆/0. Grey and dashed edges are ϕ –even.",
+              "If ϕ is non-trivial, one obtains a unique normal surface, Sϕ = Sϕ(T ), with respect to T by introducing",
+              "a single vertex on each ϕ –odd edge. This surface is disjoint from the tetrahedra of type ∆/0; it meets each",
+              "tetrahedron of type ∆t in a single triangle meeting all ϕ –odd edges; and each tetrahedron of type ∆q in a single",
+              "quadrilateral dual to the ϕ –even edges. Moreover, Sϕ is Lefschetz dual to ϕ and is termed the canonical",
+              "(normal) surface dual to ϕ. Given 0̸ = c ∈H2(M;Z2) we also write Sc = SDM(c) and call Sc the canonical"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 24,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              73.01,
+              86.2,
+              82.54,
+              86.2
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              93.51,
+              86.2,
+              103.03,
+              86.2
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              531.81,
+              730.97,
+              537.79,
+              730.97
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              532.06,
+              731.22,
+              532.06,
+              736.21
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              537.54,
+              731.22,
+              537.54,
+              736.21
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              531.81,
+              736.45,
+              537.79,
+              736.45
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 33
+      }
+    },
+    {
+      "id": "vfig-p018",
+      "file": "figures/vfig-p018.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 18
+      },
+      "page": 18,
+      "rotation": 0,
+      "captionLabels": [
+        "13"
+      ],
+      "region": [
+        51.02,
+        400.8,
+        523.02,
+        670.27
+      ],
+      "assembly": {
+        "drawings": 144,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              51.02,
+              400.8,
+              523.02,
+              670.27
+            ],
+            "drawings": 144,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "For each type, one sub-type is shown in Figure 13; the dashed grey edges correspond to 0–even edges and",
+              "the normal discs in Sϕi have the same colour as the i–even edges. The remaining sub-types are obtained by",
+              "permuting the colours.",
+              "Figure 13: Tetrahedra of type ∆qtt, ∆qq, ∆tt, ∆/0 and ∆qqq. Dashed grey edges are 0–even.",
+              "3.3",
+              "Combinatorial bounds for triangulations",
+              "The set-up and notation of the previous subsection is continued. Let",
+              "nqtt(T ) = number of tetrahedra of type ∆qtt,",
+              "nqq(T ) = number of tetrahedra of type ∆qq,",
+              "ntt(T ) = number of tetrahedra of type ∆tt,"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              51.02,
+              400.8,
+              523.02,
+              670.27
+            ],
+            "parent": null,
+            "labels": [
+              "For each type, one sub-type is shown in Figure 13; the dashed grey edges correspond to 0–even edges and",
+              "the normal discs in Sϕi have the same colour as the i–even edges. The remaining sub-types are obtained by",
+              "permuting the colours.",
+              "Figure 13: Tetrahedra of type ∆qtt, ∆qq, ∆tt, ∆/0 and ∆qqq. Dashed grey edges are 0–even.",
+              "3.3",
+              "Combinatorial bounds for triangulations",
+              "The set-up and notation of the previous subsection is continued. Let",
+              "nqtt(T ) = number of tetrahedra of type ∆qtt,",
+              "nqq(T ) = number of tetrahedra of type ∆qq,",
+              "ntt(T ) = number of tetrahedra of type ∆tt,"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 15,
+        "connectors": [],
+        "between": [],
+        "outside": 27
+      }
+    },
+    {
+      "id": "vfig-p023",
+      "file": "figures/vfig-p023.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 23
+      },
+      "page": 23,
+      "rotation": 0,
+      "captionLabels": [
+        "14"
+      ],
+      "region": [
+        107.29,
+        471.91,
+        775.93,
+        853.63
+      ],
+      "assembly": {
+        "drawings": 92,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              107.29,
+              471.91,
+              775.93,
+              853.63
+            ],
+            "drawings": 92,
+            "pageEdge": true,
+            "rendered": true,
+            "labels": [
+              "It remains to consider the case (1,4). First suppose that ∆2 and ∆3 are the same tetrahedron. There are two",
+              "possibilities that are combinatorially equivalent. Taking all the face pairings into account, we conclude that",
+              "∆2 is a 1–tetrahedron LST⋆(1,2,3). But this meets ∆1, and hence LST1, in three edges, a contradiction. See",
+              "Figure 14 for an illustration of this case.",
+              "Figure 14: Identifying ∆2 and ∆3 in case (1,4) yields a one-tetrahedron layered solid torus meeting LST1",
+              "in three edges.",
+              "Hence suppose without loss of generality that ∆2 and ∆4 are the same tetrahedron. Analysing the two different",
+              "gluings that arise, we see that ∆2 is layered on one of the two H-odd boundary edges of ∆1. But this either",
+              "contradicts maximality of LST1 or it contradicts Lemma 10, see Figure 15.",
+              "23"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              107.29,
+              471.91,
+              775.93,
+              853.63
+            ],
+            "parent": null,
+            "labels": [
+              "It remains to consider the case (1,4). First suppose that ∆2 and ∆3 are the same tetrahedron. There are two",
+              "possibilities that are combinatorially equivalent. Taking all the face pairings into account, we conclude that",
+              "∆2 is a 1–tetrahedron LST⋆(1,2,3). But this meets ∆1, and hence LST1, in three edges, a contradiction. See",
+              "Figure 14 for an illustration of this case.",
+              "Figure 14: Identifying ∆2 and ∆3 in case (1,4) yields a one-tetrahedron layered solid torus meeting LST1",
+              "in three edges.",
+              "Hence suppose without loss of generality that ∆2 and ∆4 are the same tetrahedron. Analysing the two different",
+              "gluings that arise, we see that ∆2 is layered on one of the two H-odd boundary edges of ∆1. But this either",
+              "contradicts maximality of LST1 or it contradicts Lemma 10, see Figure 15.",
+              "23"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 59,
+        "connectors": [],
+        "between": [],
+        "outside": 25
+      }
+    },
+    {
+      "id": "vfig-p024",
+      "file": "figures/vfig-p024.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 24
+      },
+      "page": 24,
+      "rotation": 0,
+      "captionLabels": [
+        "15"
+      ],
+      "region": [
+        96.98,
+        8.14,
+        788.72,
+        403.05
+      ],
+      "assembly": {
+        "drawings": 94,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              96.98,
+              8.14,
+              788.72,
+              403.05
+            ],
+            "drawings": 94,
+            "pageEdge": true,
+            "rendered": true,
+            "labels": [
+              "Figure 15: Identifying ∆2 and ∆4 in case (1,4) yields a layering on the boundary of LST1 .",
+              "This completes the proof of the claim.",
+              "The case m = 2 and d = 4: Since f is H–even of degree four, we have to ﬁnd a contribution to the left hand",
+              "side of (4.1) of 2 to obtain a balance and > 2 to obtain a deﬁcit.",
+              "By Claim 3 and by the preliminary observations above, we can assume that all four tetrahedra surrounding f",
+              "are distinct and tetrahedra ∆1 and ∆3 are of both of type ∆qq. If the quadrilaterals in ∆1 and ∆3 are of distinct",
+              "colours, ∆2 and ∆4 must both be of type ∆qtt. Hence, they contribute 2 to the left hand side of (4.1). Moreover,",
+              "since these two tetrahedra then do not have any H–even edges other than f, they cannot contribute to any other",
+              "set of maximal layered solid tori united along an H–even edge, and their contribution to (4.1) is global. In",
+              "particular, there is at most a balance and not a gain. Now one of the surfaces, Si, links the edge f in an annulus.",
+              "We can perform a compression of this annulus, using a disc transverse to f. This is indeed a compression"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              96.98,
+              8.14,
+              788.72,
+              403.05
+            ],
+            "parent": null,
+            "labels": [
+              "Figure 15: Identifying ∆2 and ∆4 in case (1,4) yields a layering on the boundary of LST1 .",
+              "This completes the proof of the claim.",
+              "The case m = 2 and d = 4: Since f is H–even of degree four, we have to ﬁnd a contribution to the left hand",
+              "side of (4.1) of 2 to obtain a balance and > 2 to obtain a deﬁcit.",
+              "By Claim 3 and by the preliminary observations above, we can assume that all four tetrahedra surrounding f",
+              "are distinct and tetrahedra ∆1 and ∆3 are of both of type ∆qq. If the quadrilaterals in ∆1 and ∆3 are of distinct",
+              "colours, ∆2 and ∆4 must both be of type ∆qtt. Hence, they contribute 2 to the left hand side of (4.1). Moreover,",
+              "since these two tetrahedra then do not have any H–even edges other than f, they cannot contribute to any other",
+              "set of maximal layered solid tori united along an H–even edge, and their contribution to (4.1) is global. In",
+              "particular, there is at most a balance and not a gain. Now one of the surfaces, Si, links the edge f in an annulus.",
+              "We can perform a compression of this annulus, using a disc transverse to f. This is indeed a compression"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 57,
+        "connectors": [],
+        "between": [],
+        "outside": 23
+      }
+    },
+    {
+      "id": "vfig-p025",
+      "file": "figures/vfig-p025.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 25
+      },
+      "page": 25,
+      "rotation": 0,
+      "captionLabels": [
+        "16"
+      ],
+      "region": [
+        -82.3,
+        124.9,
+        605.7,
+        515.26
+      ],
+      "assembly": {
+        "drawings": 141,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              -82.3,
+              124.9,
+              605.7,
+              515.26
+            ],
+            "drawings": 139,
+            "pageEdge": true,
+            "rendered": true,
+            "labels": [
+              "Moreover, note that three of the quadrilaterals in the tubes linking edge f are contained in layered solid tori",
+              "LST j, 1 ≤j ≤3. Hence, each such quadrilateral has its vertices identiﬁed in diagonally opposed pairs. In",
+              "particular, the compressed surfaces still have the same number of connected components, and their compo-",
+              "nents still have non-positive Euler characteristic and Lemma 13 applies. Altogether, the possibility of such",
+              "compressions yields a contribution of 8 to the term 2D ≥4∑3",
+              "i=1 di of the left hand side of (4.1).",
+              "Figure 16: Compression along an H–even edge surrounded by tetrahedra of type ∆qq. The picture only",
+              "shows one of the two parallel surfaces.",
+              "We distribute this contribution onto f and the three remaining H–even edges of ∆2, ∆4 and ∆6 equally. Thus,",
+              "all of the four edges receive a sufﬁcient contribution to give a deﬁcit in (4.1), and are not visited again (except",
+              "that they may receive additional deﬁcit from other edges). In particular, any other compression discs we ﬁnd",
+              "do not intersect the tetrahedra in the star of f.",
+              "This completes the case of gaining edges of type (3,6) showing that they all contribute a deﬁcit."
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              -82.3,
+              124.9,
+              605.7,
+              515.26
+            ],
+            "parent": null,
+            "labels": [
+              "Moreover, note that three of the quadrilaterals in the tubes linking edge f are contained in layered solid tori",
+              "LST j, 1 ≤j ≤3. Hence, each such quadrilateral has its vertices identiﬁed in diagonally opposed pairs. In",
+              "particular, the compressed surfaces still have the same number of connected components, and their compo-",
+              "nents still have non-positive Euler characteristic and Lemma 13 applies. Altogether, the possibility of such",
+              "compressions yields a contribution of 8 to the term 2D ≥4∑3",
+              "i=1 di of the left hand side of (4.1).",
+              "Figure 16: Compression along an H–even edge surrounded by tetrahedra of type ∆qq. The picture only",
+              "shows one of the two parallel surfaces.",
+              "We distribute this contribution onto f and the three remaining H–even edges of ∆2, ∆4 and ∆6 equally. Thus,",
+              "all of the four edges receive a sufﬁcient contribution to give a deﬁcit in (4.1), and are not visited again (except",
+              "that they may receive additional deﬁcit from other edges). In particular, any other compression discs we ﬁnd",
+              "do not intersect the tetrahedra in the star of f.",
+              "This completes the case of gaining edges of type (3,6) showing that they all contribute a deﬁcit."
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 39,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              133.59,
+              636.14,
+              137.57,
+              636.14
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              148.47,
+              650.76,
+              152.45,
+              650.76
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 21
+      }
+    },
+    {
+      "id": "vfig-p026",
+      "file": "figures/vfig-p026.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 26
+      },
+      "page": 26,
+      "rotation": 0,
+      "captionLabels": [
+        "17"
+      ],
+      "region": [
+        -100.64,
+        104.59,
+        818.52,
+        629.66
+      ],
+      "assembly": {
+        "drawings": 279,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              -100.64,
+              104.59,
+              818.52,
+              629.66
+            ],
+            "drawings": 279,
+            "pageEdge": true,
+            "rendered": true,
+            "labels": [
+              "Hence, we can assume that both ∆4 and ∆5 are of type ∆tt, both with the same colouring. We obtain a",
+              "contribution of 2 to the left hand side of (4.1) which needs to be shared with the two other H–even edges,",
+              "g and h of the triangle shared by ∆4 and ∆5. However, for this contribution to be insufﬁcient globally, both",
+              "g and h must be surrounded by some internally unbalanced maximal layered solid tori, with the tetrahedra",
+              "surrounding g and h and distinct from ∆4 and ∆5 all being of type ∆qq and of matching colours. This implies",
+              "that one can perform two compressions of two of the surfaces Si, i ∈{1,2,3}, by cutting along the three times",
+              "two incomplete tubes around the edges f, g and h. This process replaces the two parallel triangles inside ∆4",
+              "and ∆5 by pairs of parallel normal triangles of all three other types. Again, quadrilaterals in the tubes linking",
+              "edges which are contained in a layered solid torus have their vertices identiﬁed in diagonally opposed pairs.",
+              "Hence this operation does not produce any new connected components. See Figure 17 for an illustration of this",
+              "process in the case of one surface (rather than two parallel ones).",
+              "Figure 17: Double compression along a triangle of H–even edges. Only one of the two parallel copies of",
+              "surfaces is drawn.",
+              "This double compression of two surfaces contributes a total of 16 to the left hand side of (4.1). We distribute",
+              "two to each of f, g and h, as well as to the at most three other H–even edges in the neighbourhoods of f, g",
+              "and h. The extra contribution of at least 4 is a surplus and not needed. We therefore again have a deﬁcit.",
+              "This completes the case of gaining edges of type (2,5) showing that they all contribute a deﬁcit.",
+              "The case m = 1 and d = 4: In this case, f does not contribute to the left hand side of (4.1) and we have to ﬁnd"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              -100.64,
+              104.59,
+              818.52,
+              629.66
+            ],
+            "parent": null,
+            "labels": [
+              "Hence, we can assume that both ∆4 and ∆5 are of type ∆tt, both with the same colouring. We obtain a",
+              "contribution of 2 to the left hand side of (4.1) which needs to be shared with the two other H–even edges,",
+              "g and h of the triangle shared by ∆4 and ∆5. However, for this contribution to be insufﬁcient globally, both",
+              "g and h must be surrounded by some internally unbalanced maximal layered solid tori, with the tetrahedra",
+              "surrounding g and h and distinct from ∆4 and ∆5 all being of type ∆qq and of matching colours. This implies",
+              "that one can perform two compressions of two of the surfaces Si, i ∈{1,2,3}, by cutting along the three times",
+              "two incomplete tubes around the edges f, g and h. This process replaces the two parallel triangles inside ∆4",
+              "and ∆5 by pairs of parallel normal triangles of all three other types. Again, quadrilaterals in the tubes linking",
+              "edges which are contained in a layered solid torus have their vertices identiﬁed in diagonally opposed pairs.",
+              "Hence this operation does not produce any new connected components. See Figure 17 for an illustration of this",
+              "process in the case of one surface (rather than two parallel ones).",
+              "Figure 17: Double compression along a triangle of H–even edges. Only one of the two parallel copies of",
+              "surfaces is drawn.",
+              "This double compression of two surfaces contributes a total of 16 to the left hand side of (4.1). We distribute",
+              "two to each of f, g and h, as well as to the at most three other H–even edges in the neighbourhoods of f, g",
+              "and h. The extra contribution of at least 4 is a surplus and not needed. We therefore again have a deﬁcit.",
+              "This completes the case of gaining edges of type (2,5) showing that they all contribute a deﬁcit.",
+              "The case m = 1 and d = 4: In this case, f does not contribute to the left hand side of (4.1) and we have to ﬁnd"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 72,
+        "connectors": [],
+        "between": [],
+        "outside": 11
+      }
+    },
+    {
+      "id": "vfig-p028",
+      "file": "figures/vfig-p028.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 28
+      },
+      "page": 28,
+      "rotation": 0,
+      "captionLabels": [
+        "18"
+      ],
+      "region": [
+        34.73,
+        17.18,
+        606.32,
+        337.77
+      ],
+      "assembly": {
+        "drawings": 29,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              34.73,
+              17.18,
+              606.32,
+              337.77
+            ],
+            "drawings": 29,
+            "pageEdge": true,
+            "rendered": true,
+            "labels": [
+              "We now show that if all tetrahedra are of type ∆qqq, then the total number of tetrahedra in T is even. For this",
+              "we use the fact that M is orientable and we assume that all tetrahedra are coherently oriented. In a tetrahedron",
+              "of type ∆qqq, every boundary triangle has one 1-even, one 2-even and one 3-even edge and the orientation on",
+              "the triangle induced by the orientation of the tetrahedron determines a cyclic order of the labels 1, 2, and 3. This",
+              "is the same cyclic order for all boundary triangles of the same oriented tetrahedron. Hence there are two types",
+              "of oriented tetrahedra of type ∆qqq. Tetrahedra meeting in a triangle must induce opposite cyclic orders on this",
+              "triangle, see Figure 18. Hence, they are of different orientation types. It follows that the number of tetrahedra",
+              "is even.",
+              "Figure 18: The two orientation types of a tetrahedron of type ∆qqq."
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              34.73,
+              17.18,
+              606.32,
+              337.77
+            ],
+            "parent": null,
+            "labels": [
+              "We now show that if all tetrahedra are of type ∆qqq, then the total number of tetrahedra in T is even. For this",
+              "we use the fact that M is orientable and we assume that all tetrahedra are coherently oriented. In a tetrahedron",
+              "of type ∆qqq, every boundary triangle has one 1-even, one 2-even and one 3-even edge and the orientation on",
+              "the triangle induced by the orientation of the tetrahedron determines a cyclic order of the labels 1, 2, and 3. This",
+              "is the same cyclic order for all boundary triangles of the same oriented tetrahedron. Hence there are two types",
+              "of oriented tetrahedra of type ∆qqq. Tetrahedra meeting in a triangle must induce opposite cyclic orders on this",
+              "triangle, see Figure 18. Hence, they are of different orientation types. It follows that the number of tetrahedra",
+              "is even.",
+              "Figure 18: The two orientation types of a tetrahedron of type ∆qqq."
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 0,
+        "connectors": [],
+        "between": [],
+        "outside": 35
+      }
+    },
+    {
+      "id": "vfig-p031",
+      "file": "figures/vfig-p031.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 31
+      },
+      "page": 31,
+      "rotation": 0,
+      "captionLabels": [
+        "19",
+        "20"
+      ],
+      "region": [
+        79.33,
+        55.46,
+        703.96,
+        904.55
+      ],
+      "assembly": {
+        "drawings": 249,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              84.08,
+              55.46,
+              624.19,
+              358.56
+            ],
+            "drawings": 187,
+            "pageEdge": true,
+            "rendered": true,
+            "labels": [
+              "Figure 19: Left: The normal arcs of α are in two normal triangles and one normal quadrilateral. Right: The",
+              "normal arcs of α are in three normal triangles and one normal quadrilateral."
+            ]
+          },
+          {
+            "bbox": [
+              79.33,
+              555.09,
+              703.96,
+              904.55
+            ],
+            "drawings": 62,
+            "pageEdge": true,
+            "rendered": true,
+            "labels": [
+              "Figure 20: Left: S∩T has two normal arc types per triangle of T. Right: S∩T is disjoint from one edge of",
+              "T.",
+              "Since S is taut, no component can be a torus or Klein bottle. Hence there must be at least one horizontal",
+              "31"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              84.08,
+              55.46,
+              624.19,
+              358.56
+            ],
+            "parent": null,
+            "labels": [
+              "Figure 19: Left: The normal arcs of α are in two normal triangles and one normal quadrilateral. Right: The",
+              "normal arcs of α are in three normal triangles and one normal quadrilateral."
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              79.33,
+              555.09,
+              703.96,
+              904.55
+            ],
+            "parent": null,
+            "labels": [
+              "Figure 20: Left: S∩T has two normal arc types per triangle of T. Right: S∩T is disjoint from one edge of",
+              "T.",
+              "Since S is taut, no component can be a torus or Klein bottle. Hence there must be at least one horizontal",
+              "31"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 161,
+        "connectors": [],
+        "between": [
+          "(1) The intersection of S with T is disjoint from one of the edges of T. In this case the other two edges must",
+          "intersect S exactly once. If we layer on the edge disjoint from S then there is a single horizontal quadri-",
+          "lateral in the tetrahedron, if we layer on one of the other edges, there is a single vertical quadrilateral.",
+          "See Figure 20 on the right.",
+          "(2) The surface S intersects T in two normal arc types per triangle. In this case all normal discs of S in ∆",
+          "must necessarily be vertical. To see this note that a horizontal normal quadrilateral can only have two",
+          "normal arcs of S ∩T in its boundary. Since by the assumption, at least one other normal disc must exist",
+          "in ∆, this must be a vertical normal triangle. Arguing as in case 1) and 2) above we can then follow that",
+          "all three normal arc types must be present per triangle, a contradiction. See Figure 20 on the left.",
+          "It is now easy to verify that the Euler characteristic of S is the negative of the number of horizontal quadrilateral",
+          "discs, using the circular Morse type function induced by the layering. For each horizontal quadrilateral disc",
+          "induces a simple saddle type singularity of Morse index one, whereas there are no critical points on vertical",
+          "triangles or quadrilaterals."
+        ],
+        "outside": 0
+      }
+    }
+  ]
+}

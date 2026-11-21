@@ -6,29 +6,47 @@
   "sha256": "35b8422990e24888d4256e5cd55d698694b029151ea53f0a15a2b489567c33fe",
   "bytes": 664260,
   "pages": 47,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 12,
+    "reason": "11 of 318 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
   "title": "On q-summation and confluence",
-  "authors_raw": "Lucia DIVIZIO & Changgui ZHANG",
+  "authors_raw": "L’INSTITUT FOURIER",
+  "title_lines": [
+   "ANNALES"
+  ],
   "abstract": null,
   "docinfo": {
-   "Author": "Lucia Di Vizio& Changgui Zhang",
    "Title": "On q-summation and confluence",
-   "Creator": "LaTeX with hyperref package",
+   "Author": "Lucia Di Vizio& Changgui Zhang",
    "Producer": "pdfeTeX-1.305",
+   "Creator": "LaTeX with hyperref package",
    "CreationDate": "D:20090224185456+01'00'"
   },
-  "title_lines": [
-   "ANNALESDEL’INSTITUTFOURIER",
-   "ANNALES",
-   "L’INSTITUT FOURIER"
-  ],
-  "title_prev": "ANNALESDEL’INSTITUTFOURIER ANNALES L’INSTITUT FOURIER"
+  "title_raw": "ANNALES",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "On q-summation and confluence",
+   "heading": "ANNALES L’INSTITUT FOURIER",
+   "outline": "Introduction",
+   "text": "ANNALES",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -36,193 +54,709 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Part 1. Convergent q-Borel and q-Laplace transform and confluence: the case q<1",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "352"
   },
   {
    "level": 2,
    "title": "Convergent q-Euler series",
    "page": 8,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "353"
   },
   {
    "level": 3,
    "title": "Integral representation",
    "page": 9,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "354"
   },
   {
    "level": 3,
    "title": "Confluence",
    "page": 10,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "355"
   },
   {
    "level": 2,
    "title": "Confluence of the convergent q-analogue of Borel-Laplace summation",
    "page": 14,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "359"
   },
   {
    "level": 3,
    "title": "Definition of the convergent q-Borel and q-Laplace transform",
    "page": 14,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "359"
   },
   {
    "level": 3,
    "title": "Main result",
    "page": 16,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "361"
   },
   {
    "level": 3,
    "title": "Applications",
    "page": 17,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "362"
   },
   {
    "level": 3,
    "title": "Proof of Theorem 2.6",
    "page": 19,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "364"
   },
   {
    "level": 2,
    "title": "Appendix A. Jackson's integral",
    "page": 21,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "366"
   },
   {
    "level": 2,
    "title": "Appendix B. Expansion of Eq(x) at",
    "page": 22,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "367"
   },
   {
    "level": 3,
    "title": "B.1. Degenerate cases of the Watson's formula",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "368"
   },
   {
    "level": 3,
    "title": "B.2. Proof of Proposition 1.5",
    "page": 28,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "373"
   },
   {
    "level": 1,
    "title": "Part 2. Summation of divergent q-series and confluence: the case q>1",
    "page": 28,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "373"
   },
   {
    "level": 2,
    "title": "The divergent q-Euler series",
    "page": 29,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "374"
   },
   {
    "level": 3,
    "title": "Definition of different sums of the q-Euler series",
    "page": 29,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "374"
   },
   {
    "level": 3,
    "title": "q-integral and continuous integral",
    "page": 31,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "376"
   },
   {
    "level": 3,
    "title": "Comparing sums along different spirals",
    "page": 34,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "379"
   },
   {
    "level": 3,
    "title": "Confluence",
    "page": 35,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "380"
   },
   {
    "level": 2,
    "title": "Generic q-Gevrey series",
    "page": 36,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "381"
   },
   {
    "level": 3,
    "title": "Two formal q-Borel transforms",
    "page": 36,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "381"
   },
   {
    "level": 3,
    "title": "Different kinds of q-exponential summation",
    "page": 38,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "383"
   },
   {
    "level": 3,
    "title": "The Tschakaloff series",
    "page": 41,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "386"
   },
   {
    "level": 3,
    "title": "The functional space H in the Borel plane",
    "page": 42,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "387"
   },
   {
    "level": 3,
    "title": "Proof of Theorem 4.14",
    "page": 45,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "390"
   },
   {
    "level": 2,
    "title": "Bibliography",
    "page": 46,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "391"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": "348",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "349",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "350",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "351",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "352",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "353",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "354",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "355",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "356",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "357",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "358",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "359",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "360",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "361",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "362",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "363",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "364",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "365",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "366",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "367",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "368",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "369",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "370",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "371",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "372",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "373",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "374",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "375",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "376",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "377",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "378",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "379",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "380",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "381",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "382",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "383",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "384",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "385",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "386",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "387",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "388",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "389",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "390",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "391",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "392",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2340,
+   "n_words": 373,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -230,8 +764,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 7,
-   "n_chars": 11189,
-   "n_words": 2094
+   "n_chars": 10787,
+   "n_words": 2042,
+   "label_start": null,
+   "label_end": "352"
   },
   {
    "id": "sec-001-part-1-convergent-q-borel-and-q-laplace-transfor",
@@ -240,8 +776,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 869,
-   "n_words": 150
+   "n_chars": 831,
+   "n_words": 150,
+   "label_start": "352",
+   "label_end": "353"
   },
   {
    "id": "sec-002-1-convergent-q-euler-series",
@@ -250,8 +788,10 @@
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 1798,
-   "n_words": 357
+   "n_chars": 1723,
+   "n_words": 371,
+   "label_start": "353",
+   "label_end": "354"
   },
   {
    "id": "sec-003-11-integral-representation",
@@ -260,8 +800,10 @@
    "level": 3,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 718,
-   "n_words": 143
+   "n_chars": 679,
+   "n_words": 136,
+   "label_start": "354",
+   "label_end": "355"
   },
   {
    "id": "sec-004-12-confluence",
@@ -269,146 +811,290 @@
    "title": "Confluence",
    "level": 3,
    "page_start": 10,
-   "page_end": 16,
-   "n_chars": 9246,
-   "n_words": 1840
+   "page_end": 14,
+   "n_chars": 5744,
+   "n_words": 1226,
+   "label_start": "355",
+   "label_end": "359"
   },
   {
-   "id": "sec-005-22-main-result",
+   "id": "sec-005-2-confluence-of-the-convergent-q-analogue-of-bor",
+   "number": "2",
+   "title": "Confluence of the convergent q-analogue of Borel-Laplace summation",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 178,
+   "n_words": 29,
+   "label_start": "359",
+   "label_end": "359"
+  },
+  {
+   "id": "sec-006-21-definition-of-the-convergent-q-borel-and-q-la",
+   "number": "2.1",
+   "title": "Definition of the convergent q-Borel and q-Laplace transform",
+   "level": 3,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 2692,
+   "n_words": 526,
+   "label_start": "359",
+   "label_end": "361"
+  },
+  {
+   "id": "sec-007-22-main-result",
    "number": "2.2",
    "title": "Main result",
    "level": 3,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 2573,
-   "n_words": 516
+   "n_chars": 2553,
+   "n_words": 515,
+   "label_start": "361",
+   "label_end": "362"
   },
   {
-   "id": "sec-006-23-applications",
+   "id": "sec-008-23-applications",
    "number": "2.3",
    "title": "Applications",
    "level": 3,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 2550,
-   "n_words": 444
+   "n_chars": 2443,
+   "n_words": 489,
+   "label_start": "362",
+   "label_end": "364"
   },
   {
-   "id": "sec-007-24-proof-of-theorem-26",
+   "id": "sec-009-24-proof-of-theorem-26",
    "number": "2.4",
    "title": "Proof of Theorem 2.6",
    "level": 3,
    "page_start": 19,
-   "page_end": 22,
-   "n_chars": 6589,
-   "n_words": 1286
+   "page_end": 21,
+   "n_chars": 4980,
+   "n_words": 936,
+   "label_start": "364",
+   "label_end": "366"
   },
   {
-   "id": "sec-008-appendix-b-expansion-of-eqx-at",
+   "id": "sec-010-appendix-a-jacksons-integral",
+   "number": null,
+   "title": "Appendix A. Jackson's integral",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 1465,
+   "n_words": 289,
+   "label_start": "366",
+   "label_end": "367"
+  },
+  {
+   "id": "sec-011-appendix-b-expansion-of-eqx-at",
    "number": null,
    "title": "Appendix B. Expansion of Eq(x) at",
    "level": 2,
    "page_start": 22,
-   "page_end": 28,
-   "n_chars": 7253,
-   "n_words": 1382
+   "page_end": 23,
+   "n_chars": 1490,
+   "n_words": 327,
+   "label_start": "367",
+   "label_end": "368"
   },
   {
-   "id": "sec-009-b2-proof-of-proposition-15",
+   "id": "sec-012-b1-degenerate-cases-of-the-watsons-formula",
+   "number": null,
+   "title": "B.1. Degenerate cases of the Watson's formula",
+   "level": 3,
+   "page_start": 23,
+   "page_end": 28,
+   "n_chars": 5664,
+   "n_words": 1170,
+   "label_start": "368",
+   "label_end": "373"
+  },
+  {
+   "id": "sec-013-b2-proof-of-proposition-15",
    "number": null,
    "title": "B.2. Proof of Proposition 1.5",
    "level": 3,
    "page_start": 28,
    "page_end": 28,
-   "n_chars": 394,
-   "n_words": 75
+   "n_chars": 388,
+   "n_words": 82,
+   "label_start": "373",
+   "label_end": "373"
   },
   {
-   "id": "sec-010-part-2-summation-of-divergent-q-series-and-confl",
+   "id": "sec-014-part-2-summation-of-divergent-q-series-and-confl",
    "number": null,
    "title": "Part 2. Summation of divergent q-series and confluence: the case q>1",
    "level": 1,
    "page_start": 28,
    "page_end": 29,
-   "n_chars": 866,
-   "n_words": 154
+   "n_chars": 805,
+   "n_words": 150,
+   "label_start": "373",
+   "label_end": "374"
   },
   {
-   "id": "sec-011-3-the-divergent-q-euler-series",
+   "id": "sec-015-3-the-divergent-q-euler-series",
    "number": "3",
    "title": "The divergent q-Euler series",
    "level": 2,
    "page_start": 29,
-   "page_end": 31,
-   "n_chars": 3877,
-   "n_words": 804
+   "page_end": 29,
+   "n_chars": 195,
+   "n_words": 36,
+   "label_start": "374",
+   "label_end": "374"
   },
   {
-   "id": "sec-012-32-q-integral-and-continuous-integral",
+   "id": "sec-016-31-definition-of-different-sums-of-the-q-euler-s",
+   "number": "3.1",
+   "title": "Definition of different sums of the q-Euler series",
+   "level": 3,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 3514,
+   "n_words": 741,
+   "label_start": "374",
+   "label_end": "376"
+  },
+  {
+   "id": "sec-017-32-q-integral-and-continuous-integral",
    "number": "3.2",
    "title": "q-integral and continuous integral",
    "level": 3,
    "page_start": 31,
    "page_end": 34,
-   "n_chars": 3566,
-   "n_words": 780
+   "n_chars": 3942,
+   "n_words": 800,
+   "label_start": "376",
+   "label_end": "379"
   },
   {
-   "id": "sec-013-34-confluence",
+   "id": "sec-018-33-comparing-sums-along-different-spirals",
+   "number": "3.3",
+   "title": "Comparing sums along different spirals",
+   "level": 3,
+   "page_start": 34,
+   "page_end": 35,
+   "n_chars": 2230,
+   "n_words": 449,
+   "label_start": "379",
+   "label_end": "380"
+  },
+  {
+   "id": "sec-019-34-confluence",
    "number": "3.4",
    "title": "Confluence",
    "level": 3,
-   "page_start": 34,
+   "page_start": 35,
    "page_end": 36,
-   "n_chars": 3584,
-   "n_words": 715
+   "n_chars": 853,
+   "n_words": 159,
+   "label_start": "380",
+   "label_end": "381"
   },
   {
-   "id": "sec-014-4-generic-q-gevrey-series",
+   "id": "sec-020-4-generic-q-gevrey-series",
    "number": "4",
    "title": "Generic q-Gevrey series",
    "level": 2,
    "page_start": 36,
-   "page_end": 42,
-   "n_chars": 10009,
-   "n_words": 1969
+   "page_end": 36,
+   "n_chars": 802,
+   "n_words": 132,
+   "label_start": "381",
+   "label_end": "381"
   },
   {
-   "id": "sec-015-44-the-functional-space-h-in-the-borel-plane",
+   "id": "sec-021-41-two-formal-q-borel-transforms",
+   "number": "4.1",
+   "title": "Two formal q-Borel transforms",
+   "level": 3,
+   "page_start": 36,
+   "page_end": 38,
+   "n_chars": 2756,
+   "n_words": 535,
+   "label_start": "381",
+   "label_end": "383"
+  },
+  {
+   "id": "sec-022-42-different-kinds-of-q-exponential-summation",
+   "number": "4.2",
+   "title": "Different kinds of q-exponential summation",
+   "level": 3,
+   "page_start": 38,
+   "page_end": 41,
+   "n_chars": 4446,
+   "n_words": 888,
+   "label_start": "383",
+   "label_end": "386"
+  },
+  {
+   "id": "sec-023-43-the-tschakaloff-series",
+   "number": "4.3",
+   "title": "The Tschakaloff series",
+   "level": 3,
+   "page_start": 41,
+   "page_end": 42,
+   "n_chars": 1619,
+   "n_words": 349,
+   "label_start": "386",
+   "label_end": "387"
+  },
+  {
+   "id": "sec-024-44-the-functional-space-h-in-the-borel-plane",
    "number": "4.4",
    "title": "The functional space H in the Borel plane",
    "level": 3,
    "page_start": 42,
    "page_end": 45,
-   "n_chars": 4736,
-   "n_words": 931
+   "n_chars": 4550,
+   "n_words": 973,
+   "label_start": "387",
+   "label_end": "390"
   },
   {
-   "id": "sec-016-45-proof-of-theorem-414",
+   "id": "sec-025-45-proof-of-theorem-414",
    "number": "4.5",
    "title": "Proof of Theorem 4.14",
    "level": 3,
    "page_start": 45,
    "page_end": 46,
-   "n_chars": 1966,
-   "n_words": 386
+   "n_chars": 1936,
+   "n_words": 356,
+   "label_start": "390",
+   "label_end": "391"
   },
   {
-   "id": "sec-017-bibliography",
+   "id": "sec-026-bibliography",
    "number": null,
    "title": "Bibliography",
    "level": 2,
    "page_start": 46,
    "page_end": 47,
-   "n_chars": 4455,
-   "n_words": 676
+   "n_chars": 4437,
+   "n_words": 658,
+   "label_start": "391",
+   "label_end": "392"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 27,
-  "sections": 18,
-  "chars_total": 76238
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 28,
+  "chars_total": 76042,
+  "furniture_lines_stripped": 0
  }
 }

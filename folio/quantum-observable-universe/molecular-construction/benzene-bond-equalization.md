@@ -9,4 +9,4 @@
 
 *The construction proves that bond equalization is not an axiom of molecular orbital theory but a theorem of the LP dual. The threading link's $D_6$ symmetry is the unique $\Phi_1$ minimum for 6 $\pi$ electrons on a 6-membered ring.*
 
-*We extend this to larger aromatics (naphthalene $C_{10}H_8$, anthracene $C_{14}H_{10}$) by the same construction. We build the $\sigma$ framework iteratively, then apply the LP dual to select the optimal $\pi$ configuration. The threading link $T(2, N)$ generalises accordingly to $N$-membered rings, with Alexander polynomial $\Delta_{T(2,N)}(q) = (q^{N/2} - q^{-N/2})/(q - q^{-1})$ for even $N$.*
+*This extends to larger aromatics (naphthalene $C_{10}H_8$, anthracene $C_{14}H_{10}$) by the same construction. Build the $\sigma$ framework iteratively, then apply the LP dual to select the optimal $\pi$ configuration. The threading link $T(2, N)$ generalises accordingly to $N$-membered rings, with Alexander polynomial $\Delta_{T(2,N)}(q) = (q^{N/2} - q^{-N/2})/(q - q^{-1})$ for even $N$.*

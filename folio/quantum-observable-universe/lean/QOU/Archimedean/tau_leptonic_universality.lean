@@ -25,7 +25,7 @@ The Lean encoding defines the phase-space factor `phaseSpace` as an
 explicit real-valued function of `x ∈ (0, 1)` and records the
 universality claim as an equality of branching-ratio quotients.
 
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/tau-leptonic-universality.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/tau-leptonic-universality.md
 -/
 
 namespace QOU.Archimedean
@@ -41,14 +41,14 @@ noncomputable def phaseSpace (x : ℝ) : ℝ :=
     at `x = 0`; the `12 x² · log x` term has limit 0 as `x → 0⁺`, and
     `Real.log 0 = 0` by Mathlib convention, so the formula evaluates
     to `1` at `x = 0`. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/tau-leptonic-universality.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/tau-leptonic-universality.md
 theorem phaseSpace_at_zero : phaseSpace 0 = 1 := by
   simp [phaseSpace, Real.log_zero]
 
 /-- Boundary value: `f(1) = 0` (degenerate daughter mass).
 
     `f(1) = 1 − 8 + 8 − 1 − 12·1·log 1 = 0 − 12·0 = 0`. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/tau-leptonic-universality.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/tau-leptonic-universality.md
 theorem phaseSpace_at_one : phaseSpace 1 = 0 := by
   simp [phaseSpace, Real.log_one]
 
@@ -110,7 +110,7 @@ class TauLeptonicContext where
     element universality
     `|M_e|² = |M_μ|² = |tr_Markov(T_{3,5})|²` is recorded in the
     `phaseSpace`-only RHS. -/
--- Ref: [manuscript] quantum-observable-universe/predicted-spectra/tau-leptonic-universality.md
+-- Ref: [leitner2026] quantum-observable-universe/predicted-spectra/tau-leptonic-universality.md
 theorem tau_leptonic_universality [ctx : TauLeptonicContext] :
     ctx.BR_e / ctx.BR_μ
       = phaseSpace ((ctx.m_e / ctx.m_τ) ^ 2)

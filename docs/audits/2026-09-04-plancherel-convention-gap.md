@@ -64,7 +64,7 @@ $\dim_q^2$ is therefore a misuse of $\dim_q$ where one $\dim_q$ and one
 $f^\lambda$ belong. The held literature says the same in the other convention:
 Féray–Méliot's $q$-Plancherel measure
 $M_{n,q}(\lambda) = D_\lambda(q)\dim(\lambda)/\{n!\}_q$ sums to 1 exactly at
-every $n$ ([`library/arxiv-1001.2180v2`](../../library/arxiv-1001.2180v2/sections/sec-006-13-tools.md)).
+every $n$ ([`library/arxiv-1001.2180v2`](../../library/arxiv-1001.2180v2/sections/sec-003-13-tools.md)).
 
 Measured at the proton $q_0$, `mp.dps = 60`:
 

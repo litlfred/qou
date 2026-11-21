@@ -1,0 +1,1 @@
+t’Hooft’s theorem may be interpreted in terms of the usual Feynman diagram expansion. Namely, it implies that for large N, the leading contribution to In(Zy(h/N)) comes from the terms in the Feynman diagram expansion corre- sponding to planar graphs (i.e. those that admit an embedding into the 2-sphere).

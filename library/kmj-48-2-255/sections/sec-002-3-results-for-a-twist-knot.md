@@ -8,6 +8,7 @@ pages: 19-26
 source_pdf: KMJ-48-2-255.pdf
 source_sha256: 720279042c6d762b
 toc_source: inferred
+doc_brief: "A Formula for the Colored Jones Polynomial of 2-Bridge Knots — We derive a formula for the colored Jones polynomial of 2-bridge knots."
 ---
 In this section, we will consider the twist knots S(4p1 + 1, 2p1 + 1) and S(4p1 −
 1, 2p1 −1).

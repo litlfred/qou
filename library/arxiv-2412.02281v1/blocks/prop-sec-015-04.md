@@ -1,0 +1,1 @@
+For 1 ≤i ≤n, 1 ≤j ≤n −1, the entry H(∞) ± (z; Enn, An−1)ij is given by H(∞) ± (z; Enn, An−1)ij =dij n X k=1 Qn−1 l=1,l̸=j Γ(δil + λ(n−1) l −λ(n−1) j + 1 −δij) Qn l=1,l̸=k Γ(λ(n) l −λ(n) k ) Qn l=1,l̸=k Γ(λ(n) l −λ(n−1) j + 1 −δij) Qn−1 l=1,l̸=j Γ(δil + λ(n−1) l −λ(n) k ) × n−1Fn−1

@@ -8,9 +8,19 @@
   "pages": 26,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 11,
+    "reason": "10 of 445 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 12,
+    "reason": "13 of 478 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": {
@@ -192,7 +202,7 @@
    "title": "Technicalities about density",
    "page": 20,
    "source": "inferred",
-   "number": "A",
+   "number": "Appendix A",
    "confidence": 0.75,
    "evidence": [
     "style",
@@ -206,7 +216,7 @@
    "title": "Other convex bodies",
    "page": 21,
    "source": "inferred",
-   "number": "B",
+   "number": "Appendix B",
    "confidence": 0.75,
    "evidence": [
     "style",
@@ -220,7 +230,7 @@
    "title": "Numerical data",
    "page": 22,
    "source": "inferred",
-   "number": "C",
+   "number": "Appendix C",
    "confidence": 0.75,
    "evidence": [
     "style",
@@ -236,7 +246,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "Plot of log2 \u03b4 + n(24 \u2212n)/96 vs. dimension n. 8 and 24 dimensions. (The solutions in dimensions 8 and 24 are obtained from the minimal nonzero vectors in the E8 and Leech lattices.) Because we know a priori that the answer must be an integer, any upper bound within less than 1 of the truth would su\ufb03",
+   "title": "Plot of log2 δ + n(24 −n)/96 vs. dimension n. 8 and 24 dimensions. (The solutions in dimensions 8 and 24 are obtained from the minimal nonzero vectors in the E8 and Leech lattices.) Because we know a priori that the answer must be an integer, any upper bound within less than 1 of the truth would suﬃ",
    "page": 4,
    "confidence": 0.9,
    "evidence": [
@@ -284,7 +294,7 @@
   {
    "kind": "table",
    "number": "4",
-   "title": "Values of 2\u03c0r2 and 2\u03c0z2",
+   "title": "Values of 2πr2 and 2πz2",
    "page": 24,
    "confidence": 0.8,
    "evidence": [
@@ -510,8 +520,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 2,
-   "n_words": 1,
+   "n_chars": 0,
+   "n_words": 0,
    "label_start": null,
    "label_end": null
   },
@@ -522,8 +532,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 7830,
-   "n_words": 1348,
+   "n_chars": 7843,
+   "n_words": 1349,
    "label_start": null,
    "label_end": null
   },
@@ -570,8 +580,8 @@
    "level": 1,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 4772,
-   "n_words": 885,
+   "n_chars": 4742,
+   "n_words": 876,
    "label_start": null,
    "label_end": null
   },
@@ -583,7 +593,7 @@
    "page_start": 12,
    "page_end": 15,
    "n_chars": 5683,
-   "n_words": 1079,
+   "n_words": 1080,
    "label_start": null,
    "label_end": null
   },
@@ -612,8 +622,8 @@
    "label_end": null
   },
   {
-   "id": "sec-010-a-technicalities-about-density",
-   "number": "A",
+   "id": "sec-010-appendix-a-technicalities-about-density",
+   "number": "Appendix A",
    "title": "Technicalities about density",
    "level": 1,
    "page_start": 20,
@@ -624,8 +634,8 @@
    "label_end": null
   },
   {
-   "id": "sec-011-b-other-convex-bodies",
-   "number": "B",
+   "id": "sec-011-appendix-b-other-convex-bodies",
+   "number": "Appendix B",
    "title": "Other convex bodies",
    "level": 1,
    "page_start": 21,
@@ -636,8 +646,8 @@
    "label_end": null
   },
   {
-   "id": "sec-012-c-numerical-data",
-   "number": "C",
+   "id": "sec-012-appendix-c-numerical-data",
+   "number": "Appendix C",
    "title": "Numerical data",
    "level": 1,
    "page_start": 22,
@@ -663,6 +673,7 @@
    "items": []
   },
   "sections": 14,
-  "chars_total": 52198
+  "chars_total": 52179,
+  "furniture_lines_stripped": 0
  }
 }

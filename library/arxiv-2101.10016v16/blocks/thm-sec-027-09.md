@@ -1,1 +1,1 @@
-Let A be a (discrete) Hermitian coboundary weak quasi-Hopf algebra.
+Let A be a (discrete) Hermitian coboundary weak quasi-Hopf algebra. Then A is Ω-involutive with Ω = ER = ERΘw. Furthermore the induced braided symmetry Σρ ⊗ σ(R) ∈ (ρ⊗σ, σ⊗ρ), and therefore coboundary symmetry Σρ ⊗ σ(R) ∈ (ρ⊗σ, σ⊗ρ) are unitary in Reph(A).

@@ -1,0 +1,32 @@
+{
+  "$schema": "folio-document-images/v1",
+  "doc_id": "celebratio-mathematica-neumann-hyperbolic-3-manifolds",
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "role": "chrome",
+      "basis": {
+        "method": "capture",
+        "producer": "Skia/PDF m150",
+        "creator": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+        "coverage": 0.000106,
+        "imagesOnPage": 1,
+        "page": 1
+      }
+    },
+    {
+      "id": "img-p027-1",
+      "file": "images/img-p027-1.png",
+      "role": "chrome",
+      "basis": {
+        "method": "capture",
+        "producer": "Skia/PDF m150",
+        "creator": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+        "coverage": 0.001269,
+        "imagesOnPage": 1,
+        "page": 27
+      }
+    }
+  ]
+}

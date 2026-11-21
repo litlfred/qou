@@ -6,25 +6,45 @@
   "sha256": "8d591fe7f1673c5225706070b0b17ade3e51bde21198a6bc1e297def580eb216",
   "bytes": 771366,
   "pages": 45,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 1,
+    "reason": "11 of 350 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.1016/j.jcta.2018.04.008",
   "title": "Constant term formulas for refined enumerations of Gog and Magog trapezoids",
   "authors_raw": "Fakultät für Mathematik, Universität Wien, Oskar-Morgenstern-Platz 1",
-  "abstract": null,
-  "docinfo": {},
-  "title_prev": "Series A www.elsevier.com/locate/jcta Constant term formulas for refined enumerations of Gog and Magog trapezoids Ilse Fischer 1",
   "title_lines": [
    "Series A",
    "www.elsevier.com/locate/jcta",
    "Constant term formulas for refined enumerations",
    "of Gog and Magog trapezoids",
    "Ilse Fischer 1"
-  ]
+  ],
+  "abstract": "Article history: xog and Magog trapezoids are certain arrays of positive Received 29 September 2017 integers that generalize alternating sign matrices (ASMs) and totally symmetric self-complementary plane partitions (TSSCPPs) respectively. Zeilberger used constant term for- mulas to prove that there is the same number of (n, k)-Gog Gog trapezoid trapezoids as there is of (n, k)-Magog trapezoids, thereby pro- Magog trapezoid viding so far the only proof for a weak version of a conjecture Constant term formula by Mills, Robbins and Rumsey from 1986. About 20 years ago, Krattenthaler generalized Gog and Magog trapezoids and for- mulated an extension of their conjecture, and, recently, Biane and Cheballah generalized Gog trapezoids further and formu- lated a related conjecture. In this paper, we derive constant term formulas for various refined enumerations of generalized 30g trapezoids including those considered by Krattenthaler and by Biane and Cheballah. For this purpose we employ a result on the enumeration of truncated monotone triangles which is in turn based in the author’s operator formula for the number of monotone triangles with prescribed bottom row. As a byproduct, we also generalize the operator formula for monotone triangles by including the inversion number and the complementary inversion number for ASMs. Constant term formulas as well as determinant formulas for the refined Magog trapezoid numbers that appear in Krattenthaler’s con- jecture are also deduced by using the classical approach based on non-intersecting lattice paths and the Lindstrém—Gessel Viennot theorem. Finally, we review and partly extend a few",
+  "docinfo": {},
+  "title_raw": "Series A www.elsevier.com/locate/jcta Constant term formulas for refined enumerations of Gog and Magog trapezoids oe Ilse Fischer !",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Journal of Combinatorial Theory, Series A Constant term formulas for reﬁned enumerations of Gog and Magog trapezoids",
+   "outline": "Constant term formulas for reﬁned enumerations of Gog and Magog trapezoids",
+   "text": "Series A www.elsevier.com/locate/jcta Constant term formulas for refined enumerations of Gog and Magog trapezoids oe Ilse Fischer !",
+   "corroborated_by": [
+    "outline"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Journal of Combinatorial Theory, Series A Constant term formulas for reﬁned enumerations of Gog and Magog trapezoids"
  },
  "toc": [
   {
@@ -32,207 +52,838 @@
    "title": "Constant term formulas for reﬁned enumerations of Gog and Magog trapezoids",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "560"
   },
   {
    "level": 2,
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "561"
   },
   {
    "level": 3,
    "title": "Gog trapezoids, Magog trapezoids and Krattenthaler's conjecture",
    "page": 3,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "562"
   },
   {
    "level": 4,
    "title": "Gog trapezoids",
    "page": 3,
    "source": "outline",
-   "number": "1.1.1"
+   "number": "1.1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "562"
   },
   {
    "level": 4,
    "title": "Magog trapezoids",
    "page": 4,
    "source": "outline",
-   "number": "1.1.2"
+   "number": "1.1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "563"
   },
   {
    "level": 2,
    "title": "Preliminaries: monotone triangles and truncated monotone triangles",
    "page": 5,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "564"
   },
   {
    "level": 3,
    "title": "Inversion numbers",
    "page": 5,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "564"
   },
   {
    "level": 3,
    "title": "Reﬁned enumeration with respect to the top entry",
    "page": 10,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "569"
   },
   {
    "level": 3,
    "title": "Truncated monotone triangles: (s,t)-trees",
    "page": 11,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "570"
   },
   {
    "level": 2,
    "title": "Application: constant term formula for the generating function of (m,n,k)-Gog trapezoids",
    "page": 14,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "573"
   },
   {
    "level": 3,
    "title": "Inversion numbers",
    "page": 15,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "574"
   },
   {
    "level": 3,
    "title": "Minima and maxima",
    "page": 16,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "575"
   },
   {
    "level": 3,
    "title": "Gog pentagons",
    "page": 18,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "577"
   },
   {
    "level": 3,
    "title": "Inversion numbers",
    "page": 19,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "578"
   },
   {
    "level": 3,
    "title": "Minima and maxima",
    "page": 19,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "578"
   },
   {
    "level": 2,
    "title": "Constant term formula for the number of (m,n,k)-Magog trapezoids with prescribed numbers of minima and maxima",
    "page": 20,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "579"
   },
   {
    "level": 3,
    "title": "First version",
    "page": 21,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "580"
   },
   {
    "level": 3,
    "title": "Second version",
    "page": 27,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "586"
   },
   {
    "level": 2,
    "title": "Connecting Gogs and Magogs",
    "page": 31,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "590"
   },
   {
    "level": 3,
    "title": "A variant of Theorem 16 and its application to (2.3) and to (2.6) when bi=i",
    "page": 34,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "593"
   },
   {
    "level": 3,
    "title": "The application of Theorem 17 to (2.8) when bi=i",
    "page": 38,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "597"
   },
   {
    "level": 2,
    "title": "Acknowledgment",
    "page": 41,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "600"
   },
   {
    "level": 2,
    "title": "Appendix A The case v=1-u",
    "page": 41,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "600"
   },
   {
    "level": 3,
    "title": "A.1 The cases (u,v)=(0,1) and (u,v)=(1,0)",
    "page": 41,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "600"
   },
   {
    "level": 3,
    "title": "A.2 The case (u,v)=(1/2,1/2)",
    "page": 41,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "600"
   },
   {
    "level": 3,
    "title": "A.3 The general case",
    "page": 42,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "601"
   },
   {
    "level": 4,
    "title": "A.3.1 Perfect matchings",
    "page": 42,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "601"
   },
   {
    "level": 4,
    "title": "A.3.2 Independence of u",
    "page": 44,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "603"
   },
   {
    "level": 2,
    "title": "References",
    "page": 44,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "603"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Shape of an (s, t)-tree",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "570"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Non-intersecting lattice paths",
+   "page": 22,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "581"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "An (2, 7, 5)-Magog trapezoids and its separating lattice paths",
+   "page": 27,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "586"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Non-intersecting lattice paths for the second version",
+   "page": 28,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "587"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "AR4,7 (left) and an example (right)",
+   "page": 42,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "601"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Urban renewal",
+   "page": 43,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "602"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "560",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "561",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "562",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "563",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "564",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "565",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "566",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "567",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "568",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "569",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "570",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "571",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "572",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "573",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "574",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "575",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "576",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "577",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "578",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "579",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "580",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "581",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "582",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "583",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "584",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "585",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "586",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "587",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "588",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "589",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "590",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "591",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "592",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "593",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "594",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "595",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "596",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "597",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "598",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "599",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "600",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "601",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "602",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "603",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "604",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 176,
+   "n_words": 21,
+   "label_start": "560",
+   "label_end": "560"
+  },
   {
    "id": "sec-000-constant-term-formulas-for-reﬁned-enumerations-o",
    "number": null,
@@ -240,8 +891,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2421,
-   "n_words": 367
+   "n_chars": 2389,
+   "n_words": 348,
+   "label_start": "560",
+   "label_end": "561"
   },
   {
    "id": "sec-001-1-introduction",
@@ -249,39 +902,47 @@
    "title": "Introduction",
    "level": 2,
    "page_start": 2,
-   "page_end": 2,
-   "n_chars": 1430,
-   "n_words": 241
+   "page_end": 3,
+   "n_chars": 3130,
+   "n_words": 517,
+   "label_start": "561",
+   "label_end": "562"
   },
   {
    "id": "sec-002-111-gog-trapezoids",
    "number": "1.1.1",
    "title": "Gog trapezoids",
    "level": 4,
-   "page_start": 2,
-   "page_end": 3,
-   "n_chars": 2625,
-   "n_words": 437
-  },
-  {
-   "id": "sec-003-112-magog-trapezoids",
-   "number": "1.1.2",
-   "title": "Magog trapezoids",
-   "level": 4,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 994,
+   "n_words": 161,
+   "label_start": "562",
+   "label_end": "562"
   },
   {
-   "id": "sec-004-11-gog-trapezoids-magog-trapezoids-and-krattenth",
+   "id": "sec-003-11-gog-trapezoids-magog-trapezoids-and-krattenth",
    "number": "1.1",
    "title": "Gog trapezoids, Magog trapezoids and Krattenthaler's conjecture",
    "level": 3,
    "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1576,
+   "n_words": 313,
+   "label_start": "562",
+   "label_end": "563"
+  },
+  {
+   "id": "sec-004-112-magog-trapezoids",
+   "number": "1.1.2",
+   "title": "Magog trapezoids",
+   "level": 4,
+   "page_start": 4,
    "page_end": 5,
-   "n_chars": 3445,
-   "n_words": 630
+   "n_chars": 1883,
+   "n_words": 364,
+   "label_start": "563",
+   "label_end": "564"
   },
   {
    "id": "sec-005-2-preliminaries-monotone-triangles-and-truncated",
@@ -291,7 +952,9 @@
    "page_start": 5,
    "page_end": 5,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "564",
+   "label_end": "564"
   },
   {
    "id": "sec-006-21-inversion-numbers",
@@ -300,8 +963,10 @@
    "level": 3,
    "page_start": 5,
    "page_end": 10,
-   "n_chars": 8676,
-   "n_words": 1676
+   "n_chars": 8728,
+   "n_words": 1755,
+   "label_start": "564",
+   "label_end": "569"
   },
   {
    "id": "sec-007-22-reﬁned-enumeration-with-respect-to-the-top-en",
@@ -309,146 +974,278 @@
    "title": "Reﬁned enumeration with respect to the top entry",
    "level": 3,
    "page_start": 10,
-   "page_end": 14,
-   "n_chars": 8707,
-   "n_words": 1692
+   "page_end": 11,
+   "n_chars": 1735,
+   "n_words": 376,
+   "label_start": "569",
+   "label_end": "570"
   },
   {
-   "id": "sec-008-3-application-constant-term-formula-for-the-gene",
+   "id": "sec-008-23-truncated-monotone-triangles-st-trees",
+   "number": "2.3",
+   "title": "Truncated monotone triangles: (s,t)-trees",
+   "level": 3,
+   "page_start": 11,
+   "page_end": 14,
+   "n_chars": 6791,
+   "n_words": 1339,
+   "label_start": "570",
+   "label_end": "573"
+  },
+  {
+   "id": "sec-009-3-application-constant-term-formula-for-the-gene",
    "number": "3",
    "title": "Application: constant term formula for the generating function of (m,n,k)-Gog trapezoids",
    "level": 2,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 1138,
-   "n_words": 231
+   "n_chars": 1142,
+   "n_words": 243,
+   "label_start": "573",
+   "label_end": "574"
   },
   {
-   "id": "sec-009-31-inversion-numbers",
+   "id": "sec-010-31-inversion-numbers",
    "number": "3.1",
    "title": "Inversion numbers",
    "level": 3,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 1013,
-   "n_words": 188
+   "n_chars": 1015,
+   "n_words": 195,
+   "label_start": "574",
+   "label_end": "575"
   },
   {
-   "id": "sec-010-32-minima-and-maxima",
+   "id": "sec-011-32-minima-and-maxima",
    "number": "3.2",
    "title": "Minima and maxima",
    "level": 3,
    "page_start": 16,
    "page_end": 18,
-   "n_chars": 3237,
-   "n_words": 658
+   "n_chars": 3273,
+   "n_words": 689,
+   "label_start": "575",
+   "label_end": "577"
   },
   {
-   "id": "sec-011-33-gog-pentagons",
+   "id": "sec-012-33-gog-pentagons",
    "number": "3.3",
    "title": "Gog pentagons",
    "level": 3,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 2162,
-   "n_words": 403
+   "n_chars": 2199,
+   "n_words": 429,
+   "label_start": "577",
+   "label_end": "578"
   },
   {
-   "id": "sec-012-34-inversion-numbers",
+   "id": "sec-013-34-inversion-numbers",
    "number": "3.4",
    "title": "Inversion numbers",
    "level": 3,
    "page_start": 19,
    "page_end": 19,
    "n_chars": 1067,
-   "n_words": 206
+   "n_words": 211,
+   "label_start": "578",
+   "label_end": "578"
   },
   {
-   "id": "sec-013-35-minima-and-maxima",
+   "id": "sec-014-35-minima-and-maxima",
    "number": "3.5",
    "title": "Minima and maxima",
    "level": 3,
    "page_start": 19,
-   "page_end": 21,
-   "n_chars": 3153,
-   "n_words": 571
+   "page_end": 20,
+   "n_chars": 2158,
+   "n_words": 420,
+   "label_start": "578",
+   "label_end": "579"
   },
   {
-   "id": "sec-014-41-first-version",
+   "id": "sec-015-4-constant-term-formula-for-the-number-of-mnk-ma",
+   "number": "4",
+   "title": "Constant term formula for the number of (m,n,k)-Magog trapezoids with prescribed numbers of minima and maxima",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 924,
+   "n_words": 149,
+   "label_start": "579",
+   "label_end": "580"
+  },
+  {
+   "id": "sec-016-41-first-version",
    "number": "4.1",
    "title": "First version",
    "level": 3,
    "page_start": 21,
    "page_end": 27,
-   "n_chars": 8918,
-   "n_words": 1916
+   "n_chars": 8933,
+   "n_words": 1947,
+   "label_start": "580",
+   "label_end": "586"
   },
   {
-   "id": "sec-015-42-second-version",
+   "id": "sec-017-42-second-version",
    "number": "4.2",
    "title": "Second version",
    "level": 3,
    "page_start": 27,
    "page_end": 31,
-   "n_chars": 6696,
-   "n_words": 1596
+   "n_chars": 6620,
+   "n_words": 1524,
+   "label_start": "586",
+   "label_end": "590"
   },
   {
-   "id": "sec-016-5-connecting-gogs-and-magogs",
+   "id": "sec-018-5-connecting-gogs-and-magogs",
    "number": "5",
    "title": "Connecting Gogs and Magogs",
    "level": 2,
    "page_start": 31,
    "page_end": 34,
-   "n_chars": 5721,
-   "n_words": 1101
+   "n_chars": 5712,
+   "n_words": 1097,
+   "label_start": "590",
+   "label_end": "593"
   },
   {
-   "id": "sec-017-51-a-variant-of-theorem-16-and-its-application-t",
+   "id": "sec-019-51-a-variant-of-theorem-16-and-its-application-t",
    "number": "5.1",
    "title": "A variant of Theorem 16 and its application to (2.3) and to (2.6) when bi=i",
    "level": 3,
    "page_start": 34,
    "page_end": 38,
-   "n_chars": 6527,
-   "n_words": 1361
+   "n_chars": 6540,
+   "n_words": 1384,
+   "label_start": "593",
+   "label_end": "597"
   },
   {
-   "id": "sec-018-52-the-application-of-theorem-17-to-28-when-bii",
+   "id": "sec-020-52-the-application-of-theorem-17-to-28-when-bii",
    "number": "5.2",
    "title": "The application of Theorem 17 to (2.8) when bi=i",
    "level": 3,
    "page_start": 38,
    "page_end": 41,
-   "n_chars": 3738,
-   "n_words": 795
+   "n_chars": 3710,
+   "n_words": 769,
+   "label_start": "597",
+   "label_end": "600"
   },
   {
-   "id": "sec-019-acknowledgment",
+   "id": "sec-021-acknowledgment",
    "number": null,
    "title": "Acknowledgment",
    "level": 2,
    "page_start": 41,
-   "page_end": 44,
-   "n_chars": 8646,
-   "n_words": 1558
+   "page_end": 41,
+   "n_chars": 110,
+   "n_words": 17,
+   "label_start": "600",
+   "label_end": "600"
   },
   {
-   "id": "sec-020-references",
+   "id": "sec-022-appendix-a-the-case-v1-u",
+   "number": null,
+   "title": "Appendix A The case v=1-u",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "600",
+   "label_end": "600"
+  },
+  {
+   "id": "sec-023-a1-the-cases-uv01-and-uv10",
+   "number": null,
+   "title": "A.1 The cases (u,v)=(0,1) and (u,v)=(1,0)",
+   "level": 3,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 904,
+   "n_words": 165,
+   "label_start": "600",
+   "label_end": "600"
+  },
+  {
+   "id": "sec-024-a2-the-case-uv1212",
+   "number": null,
+   "title": "A.2 The case (u,v)=(1/2,1/2)",
+   "level": 3,
+   "page_start": 41,
+   "page_end": 42,
+   "n_chars": 839,
+   "n_words": 166,
+   "label_start": "600",
+   "label_end": "601"
+  },
+  {
+   "id": "sec-025-a3-the-general-case",
+   "number": null,
+   "title": "A.3 The general case",
+   "level": 3,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 869,
+   "n_words": 151,
+   "label_start": "601",
+   "label_end": "601"
+  },
+  {
+   "id": "sec-026-a31-perfect-matchings",
+   "number": null,
+   "title": "A.3.1 Perfect matchings",
+   "level": 4,
+   "page_start": 42,
+   "page_end": 44,
+   "n_chars": 3978,
+   "n_words": 723,
+   "label_start": "601",
+   "label_end": "603"
+  },
+  {
+   "id": "sec-027-a32-independence-of-u",
+   "number": null,
+   "title": "A.3.2 Independence of u",
+   "level": 4,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 1766,
+   "n_words": 321,
+   "label_start": "603",
+   "label_end": "603"
+  },
+  {
+   "id": "sec-028-references",
    "number": null,
    "title": "References",
    "level": 2,
    "page_start": 44,
    "page_end": 45,
-   "n_chars": 5458,
-   "n_words": 809
+   "n_chars": 5444,
+   "n_words": 807,
+   "label_start": "603",
+   "label_end": "604"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 29,
-  "sections": 21,
-  "chars_total": 84778
+  "toc_inferred_entries": 0,
+  "figure_entries": 6,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 30,
+  "chars_total": 84605,
+  "furniture_lines_stripped": 0
  }
 }

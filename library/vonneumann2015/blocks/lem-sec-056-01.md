@@ -1,0 +1,1 @@
+A real Hilbert space K with inner product (, ) and a complex structure J can be made into a complex Hilbert space by deﬁning the action of C as (x + iy)ξ = xξ + yJξ and the inner product ⟨ξ, η⟩= (ξ, η) −i(Jξ, η)

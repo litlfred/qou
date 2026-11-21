@@ -1,0 +1,1 @@
+VL~{t) = VL(l/t). Thus, the trace invariant can be used to detect a lack of amphicheirality. It seems to be very good at this. A glance at Table 1 shows that it distin- guishes the trefoil knot from its mirror image and hence, via Theorem 6, it distinguishes the two granny knots and the square knot.

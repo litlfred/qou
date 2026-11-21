@@ -1,0 +1,1 @@
+Let m, n ∈N and let λ/µ be a skew-partition of mn. If λ/µ is n-decomposable, and each λ(i)/µ(i) is a horizontal strip, then there is a unique m-border-strip tableau of shape λ/µ and type (n); this tableau has sign εn(λ/µ). Otherwise there are no such tableaux.

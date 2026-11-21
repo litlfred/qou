@@ -1,0 +1,1 @@
+— The func- tion Eq(x) (resp. E[λ] q ) admits ˆEq(x) as q-Gevrey asymptotic expansion at x = 0 in the sector {arg x < 3π/2}. In particular they are solution of x2dqy + y = x. The following theorem is about the comparison between the four sum- mations of ˆEq we have just introduced:

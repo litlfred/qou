@@ -1,0 +1,63 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-hep-lat-0003021v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "b35dfd9ab88b71d8f0439c1ee11b9747906d758e0f6783f8b9325dd0616ee809",
+  "file": "0003021v3.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:hep-lat/0003021v3 19 May 2000",
+  "authors": "P.H. Damgaarda, U.M. Hellerb, R. Niclasena and K. Rummukainenc,d",
+  "arxiv": {
+   "id": "hep-lat/0003021",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "19 May 2000"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "In the quenched case we do not see the accumulation of small Dirac operator eigenvalues around $\\lambda=0$ that was observed with overlap fermions.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-004-5-conclusions.md (p. 19-21)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-004-5-conclusions.md",
+   "section_title": "Conclusions",
+   "pages": "19-21",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-004-5-conclusions.md (p. 19-21)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-004-01",
+   "block_iri": "library/arxiv-hep-lat-0003021v3/blocks/prop-sec-004-01",
+   "claim_id": "arxiv-hep-lat-0003021v3#prop-sec-004-01"
+  }
+ ]
+}

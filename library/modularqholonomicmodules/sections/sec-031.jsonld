@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/modularqholonomicmodules/sections/sec-031",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Acknowledgements",
+  "pageStart": 63,
+  "pageEnd": 63,
+  "contains": [
+    "library/modularqholonomicmodules/blocks/prose-sec-031"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modularqholonomicmodules/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modularqholonomicmodules/manifest.jsonld",
+  "provenance": "ingested"
+}

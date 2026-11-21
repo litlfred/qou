@@ -1,0 +1,98 @@
+---
+doc_id: 9511222v1
+doc_title: "Murnaghan–Nakayama rules for characters of Iwahori–Hecke algebras of classical type"
+section_id: page-026
+section_title: "Page 26"
+pages: 26-26
+pdf_page: 26
+source_pdf: 9511222v1.pdf
+source_sha256: 2870b5b709d1f358
+text_source: ocr
+granularity: page
+doc_brief: "Murnaghan–Nakayama rules for characters of Iwahori–Hecke algebras of classical type — 26 sections: Page 1; Page 2; Page 3"
+---
+[Ari]
+[AK]
+
+[BM]
+[GP]
+
+[Gre]
+[HR]
+[Hfs]
+[KW]
+
+[Mac]
+[Osi]
+
+[Ptet]
+[Pfe2]
+[Ram]
+[ST]
+
+[Sta]
+[Ste]
+
+[vdJ]
+
+[You]
+
+1. HALVERSON AND AL MANE
+
+REFERENCES
+
+S. Ariki, Representation theory of a Hecke algebra of G(r, p,n), J. of Algebra 177 (1995),
+164-185.
+
+S. Ariki and K. Koike, A Hecke algebra of (Z/rZ)Sn and construction of its irreducible
+representations, Adv. in Math. 106 (1994), 216-243.
+
+M. Broué and G. Malle, Zyklotomische Heckealgebren, Astérisque 212 (1993), 119-189.
+M. Geck and G. Pfeiffer, On the irreducible characters of Hecke algebras, Adv. in Math.
+102 (1993), 79-94.
+
+C. Greene, A rational function identity related to the Murnaghan- Nakayama formula for
+the characters of Sy, J. Alg. Comb. 1 (1992), 235-255.
+
+T. Halverson and A. Ram, Murnaghan-Nakayama rules for the characters of Iwahori-
+Hecke algebras of classical type, Trans. Amer. Math. Soc. (to appear).
+
+P. N. Hoefsmit, Representations of Hecke algebras of finite groups with BN-pairs of clas-
+sical type, Thesis, University of British Columbia, 1974.
+
+R.C. King and B.G. Wybourne, Representations and traces of Hecke algebras Hy(q) of
+type An—1, J. Math. Phys. 33 (1992), 4-14.
+
+I. G. Macdonald, Symmetric Functions and Hall Polynomials, Oxford Univ. Press, 1979.
+M. Osima, On the representations of the generalized symmetric group, Math. J. Okayama
+Univ. 4 (1954).
+
+G. Pfeiffer, Character values of Iwahori-Hecke algebras of type B, Progress in Math.,
+Birkhauser (to appear).
+
+G. Pfeiffer, Charakterwerte von Iwahori-Hecke-Algebren von klassischem Typ, Aachener
+Beitrage zur Mathemattk, vol. 14, Verlag der Augustinus-Buchhandlung, Aachen, 1995.
+A. Ram, A Frobenius formula for the characters of the Hecke algebras, Invent. Math. 106
+(1991), 461-488.
+
+G. C. Shephard and J. A. Todd, Finite unitary reflection groups, Canad. J. Math. 6
+(1954), 274-304.
+
+R. Stanley, Enumerative Combinatorics, vol. 1, Wadsworth & Brooks/Cole, 1986.
+
+J. Stembridge, On the eigenvalues of representations of reflection groups and wreath prod-
+ucts, Pacific J. Math. 140 (1989), 353-396.
+
+J. van der Jeugt, An algorithm for characters of Hecke algebras Hn(q) of type An-1, J.
+Phys. A 24 (1991), 3719-24.
+
+A. Young, Quantitative substitutional analysis I-IX, Proc. London Math. Soc. (1901-1952).
+
+DEPARTMENT OF MATHEMATICS, MACALESTER COLLEGE, ST. PauL, MN 55105
+E-mail address: halverson@macalstr.edu
+
+SCHOOL OF MATHEMATICS AND STATISTICS, UNIVERSITY OF SYDNEY, NSW 2006, Auvs-
+
+TRALIA
+
+E-mail address: ram_a@maths.su.oz.au

@@ -4,7 +4,7 @@ doc_title: "A Tutorial on Knots and Quantum Mechanics"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
-pages: 1-1
+pages: 1-2
 source_pdf: A_Tutorial_on_Knots_and_Quantum_Mechanics.pdf
 source_sha256: 18321b615ffc968b
 toc_source: outline
@@ -26,3 +26,78 @@ and basic quantum protocols. The primary aim is to build a less conventional dia
 about quantum mechanics, expanding the paradigm of “Quantum Picturalism”.
 Contents
 1
+Introduction
+2
+2
+Basics of knot theory
+4
+2.1
+Topological invariants from matrix traces
+. . . . . . . . . . . . . . . . . . . . . . . . . . .
+6
+2.2
+Skein relation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+7
+2.3
+Bracket and Jones polynomials . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+8
+2.4
+Matrix representation
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+11
+3
+Topological bits
+13
+3.1
+Topological Quantum Field Theory . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+13
+3.2
+Topological Quantum Mechanics
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+16
+3.3
+Chern-Simons theory . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+19
+3.4
+TQFT in the Semiclassical Limit . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+23
+4
+Quantum Entanglement
+24
+4.1
+Topological Tangling and Quantum Entanglement
+. . . . . . . . . . . . . . . . . . . . . .
+24
+4.2
+SLOCC Classification
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+26
+4.3
+Entropy of Entanglement
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+33
+4.4
+Inequalities for the Entanglement entropy . . . . . . . . . . . . . . . . . . . . . . . . . . .
+36
+5
+Quantum Algorithms
+38
+5.1
+Quantum Teleportation
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+38
+5.2
+Dense Coding . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+40
+1
+arXiv:2503.08846v1  [quant-ph]  11 Mar 2025
+6
+Outlook
+42
+6.1
+Multipartite Entanglement
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+43
+6.2
+Quantum Gravity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+44

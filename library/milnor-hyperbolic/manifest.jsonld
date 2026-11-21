@@ -5,24 +5,18 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/milnor-hyperbolic",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/milnor-hyperbolic/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "milnor-hyperbolic",
   "contains": [
+    "library/milnor-hyperbolic/sections/sec-front-matter",
     "library/milnor-hyperbolic/sections/sec-000",
-    "library/milnor-hyperbolic/sections/sec-001",
-    "library/milnor-hyperbolic/sections/sec-002",
-    "library/milnor-hyperbolic/sections/sec-003",
-    "library/milnor-hyperbolic/sections/sec-004",
-    "library/milnor-hyperbolic/sections/sec-005",
-    "library/milnor-hyperbolic/sections/sec-006",
-    "library/milnor-hyperbolic/sections/sec-007",
-    "library/milnor-hyperbolic/sections/sec-008"
+    "library/milnor-hyperbolic/sections/sec-001"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "milnor-hyperbolic",
     "title_source": "slug",

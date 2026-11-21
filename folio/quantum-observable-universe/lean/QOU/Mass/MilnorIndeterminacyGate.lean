@@ -33,7 +33,7 @@
   Everything is stated over ℤ / ℕ / `ZMod` — linking numbers ARE integers,
   so no gratuitous ℝ appears (AGENTS.md §7c); `decide`-free, sorry-free.
 
-  -- Ref: [manuscript] docs/audits/2026-07-13-alpha-activation-brunnian-derive-or-refute.md §I3
+  -- Ref: [leitner2026] docs/audits/2026-07-13-alpha-activation-brunnian-derive-or-refute.md §I3
   -- Ref: [milnor1954] https://doi.org/10.2307/1969685  (Milnor, "Link groups",
   --      Ann. of Math. 59 (1954): μ̄ is defined modulo the gcd of the
   --      lower-order linking invariants of the sub-links)

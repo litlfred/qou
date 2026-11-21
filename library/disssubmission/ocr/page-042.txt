@@ -1,0 +1,50 @@
+34 Chapter 2 — Proof of the vanishing theorem(s)
+
+Indeed, for m > n we even have Homp(P[m|,Q{n]) = 0 since under the
+faithful functor rat this Hom-group injects into
+
+Homppry a) (rat (P){m],rat(Q)[n]) = EXtyon(X,A) (rat(P),rat(Q))
+
+which vanishes for m > n (for the above identification as an Ext-group recall
+that D>(X,A) is the derived category of Perv(X,A)). On the other hand, in
+the case m <n we have Homp(Q[n], P[m]) = 0, and then the definition of
+the André-Kahn radical implies that
+
+Homp(P{m],Q[n]) = Np(P{m], Q[n])
+
+which is mapped to zero under the quotient functor g: D —> D. In both
+cases the claim (x) follows.
+
+Now by the perverse decomposition axiom (D3) every object K of D
+can be written as K = @,¢7K,[n| with certain K, in P. For such K the
+vanishing in (x) implies
+
+(x) Endp(K) = @ Endg(K,[n}) = QB Endg(K,).
+neZ neZ
+
+In particular, every idempotent endomorphism of K in the category D is a
+direct sum of idempotent endomorphisms of the summands K,,{n], and by
+lemma 2.6 it follows that D is pseudo-abelian. Hence to show that D is a
+semisimple abelian category, it will suffice by [1, A.2.10] to show that it is
+a semisimple A-linear category in the sense of section 2.1.1 in loc. cit. For
+this we use the following general result [2, th. 1].
+
+Let F be a field and A an F-linear rigid symmetric monoidal category
+with End,(1) = F. Suppose there exists an F-linear tensor functor ACU
+from A to an abelian F-linear rigid symmetric monoidal category V such
+that dim, (Homy (V; ,V2)) < ce for all Vi,V2 € V. Then the quotient of A by
+its André-Kahn radical Na is a semisimple F-linear category, and Na is the
+unique monoidal ideal of A with this property.
+
+In our case this applies for F = A, A = D and for the functor H*(X,—)
+from D to the abelian category V of super vector spaces over A. oO
+
+COROLLARY 2.8. The functors P + P and P > D are exact functors
+between semisimple abelian categories. The image of a simple object P € P
+inside P is either simple or isomorphic to zero, and if A is algebraically
+closed, then the latter case occurs if and only if x(P) = 0.
+
+Proof. By proposition 2.7, D is a semisimple abelian category, and it
+also follows from the proof of the proposition that P is a semisimple abelian
+subcategory of D. Since the considered functors are additive, they are exact
+by semisimplicity. If P is a simple object of P, then Endp(P) is a skew field,

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/sections/sec-061",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Internal Angle Shifts",
+  "pageStart": 55,
+  "pageEnd": 56,
+  "contains": [
+    "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-061"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/on-the-garoufalidis-kashaev-state-integral-invariant/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/on-the-garoufalidis-kashaev-state-integral-invariant/manifest.jsonld",
+  "provenance": "ingested"
+}

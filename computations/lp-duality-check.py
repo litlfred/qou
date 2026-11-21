@@ -5,8 +5,8 @@ LP duality verification for confinement + knot operator selection.
 Checks:
 1. B₃ satisfies LP primal feasibility (net constraint + Frobenius positivity)
 2. Strong duality holds (primal = dual objective)
-3. T_{2,3} (trefoil) unconditionally selects electron channel
-4. Corrected Markov trace: tr_M(e⁻) = z³ (not hz²+z)
+3. σ₀σ₁σ₀ (closure: Hopf link) unconditionally selects electron channel
+4. Markov trace: tr_M(e⁻) = tr_M(σ₀σ₁σ₀) = hz²+z (NOT z³; corrected 2026-11-15)
 5. Gram matrix eigenstructure and min|λ| selection
 
 Reuses: confinement-lp.witness.json, breit-wheeler-nucleon-nf.witness.json
@@ -41,12 +41,15 @@ print("=" * 70)
 # ── 1. Corrected Markov trace ───────────────────────────────────
 print("\n─── 1. Corrected Markov trace ───")
 z_val = q0**3 / (q0**2 + 1)
-tr_e_corrected = z_val ** 3
-tr_e_vertex_product = HA0 * z_val**2 + z_val  # WRONG (old)
+# Corrected 2026-11-15: cyclicity + Markov on sigma_1 + Hecke give
+# tr(s0 s1 s0) = tr(s0^2 s1) = z tr(s0^2) = z (h z + 1).  The old z^3
+# peeled sigma_0, which is not the maximal generator (invalid).
+tr_e_corrected = HA0 * z_val**2 + z_val
+tr_e_vertex_product = z_val ** 3  # WRONG (invalid Markov peel)
 
-print(f"  z = 1/(√q + 1/√q) = {float(z_val):.15f}")
-print(f"  tr_M(e⁻) = z³     = {float(tr_e_corrected):.15f}  ← CORRECT")
-print(f"  hz² + z            = {float(tr_e_vertex_product):.15f}  ← WRONG (vertex product)")
+print(f"  z = q³/(q²+1)      = {float(z_val):.15f}")
+print(f"  tr_M(e⁻) = hz²+z   = {float(tr_e_corrected):.15f}  ← CORRECT")
+print(f"  z³                 = {float(tr_e_vertex_product):.15f}  ← WRONG (invalid peel)")
 print(f"  Difference          = {float(abs(tr_e_corrected - tr_e_vertex_product)):.6e}")
 print(f"  Witness G[5,5]      = {G[5,5]:.15f}")
 
@@ -54,11 +57,11 @@ print(f"  Witness G[5,5]      = {G[5,5]:.15f}")
 # G[5,5] = tr_M(e⁻ · e⁻) — this is tr_M((σ₀σ₁σ₀)²)
 # The diagonal should be tr_M(b_i²), and t[5] = tr_M(e⁻)
 print(f"  Witness t[5]        = {t[5]:.15f}")
-print(f"  Note: witness uses t[5] = {t[5]:.6f}, z³ = {float(tr_e_corrected):.6f}")
+print(f"  Note: witness uses t[5] = {t[5]:.6f}, hz²+z = {float(tr_e_corrected):.6f}")
 if abs(t[5] - tr_e_corrected) > 0.01:
-    print(f"  ⚠ MISMATCH: witness t[5] ≠ z³. Witness may use old trace.")
+    print(f"  ⚠ MISMATCH: witness t[5] ≠ hz²+z. Witness may use the old z³.")
 else:
-    print(f"  ✓ Witness t[5] ≈ z³")
+    print(f"  ✓ Witness t[5] ≈ hz²+z")
 
 # ── 2. LP primal feasibility ────────────────────────────────────
 print("\n─── 2. LP primal feasibility of B₃ ───")
@@ -108,7 +111,7 @@ print("\n─── 5. T_{2,3} knot operator and electron channel ───")
 
 # Build T_{2,3} action on NF basis in H₃(q)
 # Basis: {𝟙, σ₀, σ₁, σ₀σ₁, σ₁σ₀, σ₀σ₁σ₀}
-# T_{2,3} = σ₀σ₁σ₀: acts by left multiplication + Hecke reduction
+# σ₀σ₁σ₀ (e⁻; closure Hopf link): acts by left multiplication + Hecke reduction
 h = HA0
 
 # The 6×6 matrix of T_{2,3} acting on the NF basis (left multiplication)
@@ -153,30 +156,26 @@ if knot_table_path.exists():
         print("  T_{2,3} results not found. Keys:", list(kt.get("results", {}).keys())[:5])
 else:
     print("  knot-operator-table.witness.json not found")
-    print("  T_{2,3} · 𝟙 = σ₀σ₁σ₀ = e⁻ ← always nonzero ✓")
+    print("  σ₀σ₁σ₀ · 𝟙 = σ₀σ₁σ₀ = e⁻ ← always nonzero ✓")
 
 # ── 6. Markov trace: corrected vs vertex product ─────────────────
 print("\n─── 6. Electron Markov trace verification ───")
-# Markov property: tr_M(xσ_n) = z·tr_M(x) for maximal generator
-# tr_M(σ₀σ₁σ₀): σ₀ is NOT maximal (σ₁ has higher index)
-# But σ₀σ₁σ₀ = σ₁σ₀σ₁ by YB, and σ₁ IS maximal
-# tr_M(σ₁σ₀σ₁) = z·tr_M(σ₀σ₁) [Markov on σ₁]
-#                = z·z·tr_M(σ₁)  [Markov on σ₀... wait, σ₀ is not maximal in σ₀σ₁]
-# Actually: tr_M(σ₀σ₁) = z·tr_M(σ₀) [Markov on σ₁, maximal]
-#         = z·z [Markov on σ₀ in tr_M(σ₀)]
-# So: tr_M(σ₀σ₁σ₀) = tr_M(σ₁σ₀σ₁) = z·z·z = z³
-tr_z3 = z**3
+# Markov property: tr_M(x σ_n) = z·tr_M(x) only for x in H_n.
+# tr_M(σ₀σ₁σ₀) = tr_M(σ₀²σ₁)   [cyclicity]
+#              = z·tr_M(σ₀²)    [Markov on σ₁; σ₀² ∈ H_2]
+#              = z·(h z + 1)    [Hecke σ₀² = hσ₀ + 1]
+tr_hz2z = HA0*z**2 + z
 print(f"  z = {z:.15f}")
-print(f"  z³ = {tr_z3:.15f}")
-print(f"  hz²+z = {HA0*z**2 + z:.15f}")
-print(f"  ✓ tr_M(e⁻) = z³ confirmed by Markov property chain")
+print(f"  hz²+z = {tr_hz2z:.15f}")
+print(f"  z³ = {z**3:.15f}  (invalid Markov peel)")
+print(f"  ✓ tr_M(e⁻) = hz²+z by cyclicity + Markov + Hecke")
 
 # ── 7. Error bounds on key quantities ────────────────────────────
 print("\n─── 7. Error bounds ───")
 # δz/dq via chain rule
 dz_dq = -z**2 * 0.5 * (q0**(-0.5) - q0**(-1.5))
 z_err = abs(dz_dq) * Q_ERR
-tr_e_err = 3 * z**2 * z_err  # d(z³)/dz = 3z²
+tr_e_err = abs(2 * HA0 * z + 1) * z_err  # d(hz²+z)/dz
 
 net_p = nuc_w.get("nucleon_nf", {}).get("proton_net", 0.999125)
 net_n = nuc_w.get("nucleon_nf", {}).get("neutron_net", 0.810835)
@@ -207,10 +206,10 @@ witness = {
     "q0": q0,
     "q0_err": Q_ERR,
     "corrected_markov_trace": {
-        "tr_M_electron_z3": tr_z3,
-        "tr_M_electron_old": HA0*z**2 + z,
-        "correct": "z^3",
-        "verification": "Markov property chain: tr_M(σ₀σ₁σ₀) = z·z·z = z³"
+        "tr_M_electron": tr_hz2z,
+        "tr_M_electron_invalid_z3": z**3,
+        "correct": "h*z^2 + z",
+        "verification": "cyclicity + Markov on sigma_1 + Hecke: tr_M(σ₀σ₁σ₀) = z(hz+1)"
     },
     "lp_feasibility": {
         "net_B3": float(net_b3),

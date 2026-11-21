@@ -1187,6 +1187,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9235c32e7147",
+          "ts": "85e75c9b1c9f",
+          "lean": "baac08e41259",
+          "lean_statement": "7954a0b3c724"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:28.494Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "binding-closure-conditional.lean:52 `body_is_series : total = ∑ n ∈ Finset.range maxOrder, bodyTerm n` and :54 `term_id` are both class fields; theorem :60-63 is a tautology over hypothesised values. .md:28-30 says '(C) … discharged outright', so C is an extra hypothesis; residue form (.md:18-19) unencoded",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2388,6 +2406,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-19T21:39:35.822Z",
+  "updated_at": "2026-11-15T21:57:28.494Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

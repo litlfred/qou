@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-math-0405249v5
-doc_title: "Twisted homology of quantum SL(2)"
+doc_title: "Twisted homology of quantum SL (2)"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
-pages: 1-3
+pages: 1-4
 source_pdf: 0405249v5.pdf
 source_sha256: bc699482e5cd7679
-doc_brief: "Twisted homology of quantum SL(2) — We calculate the twisted Hochschild and cyclic homology (in the sense of Kustermans, Murphy and Tuset) of the coordinate algebra o f the quan- tum SL(2) group"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.991
+latex_prose_ratio: 0.984
+latex_coverage_ratio: 0.975
+doc_brief: "Twisted homology of quantum SL (2) — We calculate the twisted Hochschild and cyclic homology (in the sense of Kustermans, Murphy and Tuset) of the coordinate algebra of the quan- tum SL(2) group"
 ---
 Cyclic homology and cohomology were independently discovered by Alain Connes [@connes0] and Boris Tsygan [@tsygan] in the early 1980's, and should be thought of as extensions of de Rham (co)homology to various categories of noncommutative algebras. Quantum groups also appeared in the same period, with the first example of a "compact quantum group" in the C\*-algebraic setting being Woronowicz's "quantum $SU(2)$" [@wo_suq2].
 

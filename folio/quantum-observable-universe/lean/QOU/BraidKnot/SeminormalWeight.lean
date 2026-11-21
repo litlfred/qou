@@ -20,7 +20,7 @@ archimedean structure (`Real.sqrt`, ordering) is used, so this is *not* `ℝ`-lo
 The `q₀`-evaluation lives downstream, past the substrate→archimedean wall.
 
 -- Ref: [sagan2001] The Symmetric Group, §3.3 (Young's seminormal form)
--- Ref: [manuscript] quantum-observable-universe/mass-theory/symbolic-character-table.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/symbolic-character-table.md
 -/
 import Mathlib.Tactic
 

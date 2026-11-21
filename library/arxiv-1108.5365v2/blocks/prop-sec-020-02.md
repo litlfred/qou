@@ -1,0 +1,1 @@
+The map ξ : A∗⊂ˆH −→H is given by: ξ : ˆf(s, t) 7→F(s, t) := Z R ˆf(s′, iQ −t)Gb(−it)e2πis′(s+t−iQ)ds′, (5.33) it naturally extends to an invertible map ξ : ˆH −→H with the inverse given by ξ−1 : F(s, t) 7→ˆf(s, t) := Z R F(s′, iQ −t) Gb(Q + it) e2πis(t−s′)ds′. (5.34)

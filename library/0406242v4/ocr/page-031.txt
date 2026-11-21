@@ -1,0 +1,43 @@
+Canonical triangulations 1269
+
+An alternating braid of this sort can be completed to a link diagram, as follows. Outside
+the outer pillowcase, we connect the bottom left strand to the top right, and the bottom
+right strand to the top left, adding an extra crossing. (Up to isotopy of S*, there is a
+unique way to do this while keeping an alternating projection. In Figure 13 (b), the
+extra crossing was arbitrarily placed at the bottom of the diagram.) Similarly, inside the
+inner pillowcase we connect the strands in a diagonal fashion, adding an extra crossing
+while preserving the alternating projection. This creates an alternating link K(Q), as in
+Figure 13 (b).
+
+K is called a two-bridge link because this diagram can be isotoped so that the pillowcases
+are horizontal, and the connecting strands form two bridges between the strands of
+the braid. It is well-known that, apart from the trivial link of one or two components,
+every two-bridge link can be constructed in this way. (See, for example, Murasugi [19,
+Theorems 9.3.1 and 9.3.2].)
+
+William Menasco’s theorem about hyperbolic alternating links [15] contains the follow-
+ing special case.
+
+Theorem A.1 The two-bridge link K(Q) is hyperbolic if and only if Q has two or
+more syllables.
+
+Just as with punctured torus bundles, we will give a direct proof of the “if” direction of
+this theorem by finding a geometric ideal triangulation of the link complement. The
+“only if” direction is immediate: a word with a single syllable produces a link with a
+single twist region, which must be a torus link.
+
+A.2 The ideal triangulation
+
+The word (2 describes a monodromy triangulation of the product region Sx/, in exactly
+the same fashion as for 4—punctured sphere bundles. In fact, because this product
+region is the complement of a braid in the part of S* bounded by the two pillowcases,
+we can locate the edges of the triangulation concretely in the projection diagram.
+
+Let c= an a; be the length of 2. Each letter 9; (1 < i < c), and thus each crossing
+in the alternating braid, corresponds to a 4—punctured sphere S; C S*\K, with the four
+strands of K seen in Figure 14 passing through the four punctures. The braid induces
+an ideal triangulation on each S;, whose edges come from arcs in the diagram that look
+vertical and horizontal immediately before and/or after the corresponding crossing. See
+Figure 15.
+
+Geometry & Topology 10 (2006)

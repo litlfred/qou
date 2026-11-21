@@ -33,7 +33,7 @@ case a `Field` (equivalently a `GroupWithZero`, whose `0⁻¹ = 0` convention
 makes `partialProduct` total) is for; a `Units`/`Invertible` restatement
 would make the pole locus uninhabited and so would destroy the content.
 
--- Ref: [manuscript] def:q-pochhammer-partial-product
+-- Ref: [leitner2026] def:q-pochhammer-partial-product
 -- Ref: [faddeev1994] Faddeev, "Current-like variables in massive and massless integrable models," Lectures 1994
 -/
 
@@ -47,7 +47,7 @@ variable {R : Type*} [CommRing R]
     partial product over the base ring. The roots of this polynomial in `x`
     are exactly `q^{-k}` for `k = 0, .., n-1`, and they are the
     addresses of the algebraic poles of the categorical state sum. -/
--- Ref: [manuscript] def:q-pochhammer-partial-product
+-- Ref: [leitner2026] def:q-pochhammer-partial-product
 def denomPoly (q x : R) : ℕ → R
   | 0 => 1
   | n + 1 => (1 - x * q ^ n) * denomPoly q x n
@@ -62,7 +62,7 @@ def denomPoly (q x : R) : ℕ → R
     `1 - x q^k = 0`, i.e. when `x = q^{-k}` (assuming `q^k ≠ 0`).
     These roots are the algebraic addresses of the geometric cusps
     that bound the active JSJ piece on the archimedean side. -/
--- Ref: [manuscript] def:q-pochhammer-partial-product §interpretation
+-- Ref: [leitner2026] def:q-pochhammer-partial-product §interpretation
 theorem denomPoly_eq_zero_of_factor_eq_zero (q x : R) (n : ℕ) (k : ℕ) (hk : k < n) :
     1 - x * q ^ k = 0 → denomPoly q x n = 0 := by
   intro hroot
@@ -84,7 +84,7 @@ theorem denomPoly_eq_zero_of_factor_eq_zero (q x : R) (n : ℕ) (k : ℕ) (hk : 
     `IsDomain` is used (a product of nonzero factors is nonzero). Over a
     ring with zero divisors the forward direction fails, so the hypothesis
     is not removable. -/
--- Ref: [manuscript] def:q-pochhammer-partial-product
+-- Ref: [leitner2026] def:q-pochhammer-partial-product
 theorem denomPoly_eq_zero_iff [IsDomain R] (q x : R) (n : ℕ) :
     denomPoly q x n = 0 ↔ ∃ k < n, 1 - x * q ^ k = 0 := by
   induction n with
@@ -108,7 +108,7 @@ theorem denomPoly_eq_zero_iff [IsDomain R] (q x : R) (n : ℕ) :
     separate complex-valued `GeometricShape` structure in
     `shared-denominator-cusp-holonomy.lean`; the present predicate is
     the purely algebraic shadow. -/
--- Ref: [manuscript] conj:shared-denominator-cusp-holonomy
+-- Ref: [leitner2026] conj:shared-denominator-cusp-holonomy
 def AlgebraicCuspComplete (q x : R) (n : ℕ) : Prop :=
   denomPoly q x n = 0
 
@@ -126,7 +126,7 @@ variable {R : Type*} [Field R]
     Defined via the recurrence `Φ_{n+1} = (1 - x q^n)^{-1} · Φ_n`.
     The recurrence is the inductive filtration step on the algebraic
     side of the QOU framework. -/
--- Ref: [manuscript] def:q-pochhammer-partial-product
+-- Ref: [leitner2026] def:q-pochhammer-partial-product
 noncomputable def partialProduct (q x : R) (n : ℕ) : R :=
   (denomPoly q x n)⁻¹
 
@@ -136,7 +136,7 @@ noncomputable def partialProduct (q x : R) (n : ℕ) : R :=
 
 /-- Recursive step of the partial product: adding one filtration
     level multiplies by exactly one new pole factor. -/
--- Ref: [manuscript] def:q-pochhammer-partial-product §recursive structure
+-- Ref: [leitner2026] def:q-pochhammer-partial-product §recursive structure
 theorem partialProduct_succ (q x : R) (n : ℕ)
     (hk : 1 - x * q ^ n ≠ 0) (hd : denomPoly q x n ≠ 0) :
     partialProduct q x (n + 1)
@@ -151,6 +151,6 @@ end Reciprocal
     identity (Faddeev's saddle-point analysis) lives in the
     `ArchimedeanLimit` typeclass of `dilogarithm-archimedean-limit.lean`,
     where it is packaged as a class hypothesis (AGENTS.md §3b).
-    -- Ref: [manuscript] conj:dilogarithm-archimedean-limit -/
+    -- Ref: [leitner2026] conj:dilogarithm-archimedean-limit -/
 
 end QOU.QPochhammer

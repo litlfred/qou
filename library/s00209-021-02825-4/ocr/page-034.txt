@@ -1,0 +1,55 @@
+1392 J. Leake
+
+If f has zeros at 0, then f(d,) may map some nonzero [b, c]-rooted polynomials to 0.
+Otherwise, f(0,) is invertible on C" [x].
+
+Acknowledgements We would like to thank Nick Ryder for many graduate school conversations on stable
+polynomials and linear stability preservers. We would also like to thank an anonymous referee for a thorough
+reading of this paper and many helpful comments.
+
+Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which
+permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give
+appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence,
+and indicate if changes were made. The images or other third party material in this article are included in the
+article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is
+not included in the article’s Creative Commons licence and your intended use is not permitted by statutory
+regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder.
+To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/.
+
+A Tensor product decomposition of SL2(C) representations
+
+In this appendix, we discuss in detail the decomposition of inner tensor products of SL2(C)
+and (SL2(C))” representations. The results given here are for the most part standard, and
+they are typically presented via the theory of Lie groups and algebras (e.g., in [6] and [10]).
+Here though, we discuss these results in terms of the polynomial spaces V(n) and V(A).
+
+That said, the first results we state demonstrate the importance of V(n) and V(A) in the
+representation theory of SL2(C). In fact, these representations are precisely the irreducible
+representations of SL2(C) and (SL2(C))”, respectively (see Lecture 11 of [6], and also
+Proposition 2.3.23 of [11]). We will not make full use of this fact but will need the following
+simpler results.
+
+Proposition A.1 For alln € No, we have that V (n) is an irreducible representation of SL2(C)
+of dimension n + 1.
+
+Proposition A.2 For alld. € Nj, we have that V(A) = V(A1)&-- -KV (am) is an irreducible
+representation of (SL2(C))" of dimension TI; Qi +1).
+
+In particular, outer tensor products of irreducible representations of SL2(C) are irreducible
+representations of (SL2(C))’”. On the other hand, inner tensor products are not irreducible
+and their decomposition leads to a natural definition of the apolarity form (see Sect. 3.2).
+We now set out to compute these decompositions, which are often given as exercises in the
+literature (see, e.g., Exercise 11.11 of [6]).
+
+A.1 Decomposition of V(n) @ V(m)
+
+Fix n,m € No. We now consider the representation of SL2(C) given by the inner tensor
+product, V (n)® V (m). The importance of the tensor product comes from the fact that it relates
+to consideration of SL2(C)-invariant bilinear forms like the apolarity form. In particular, the
+decomposition of the tensor product as a sum of irreducible representations (Proposition A.7)
+will show us exactly how the D map (see Proposition 3.1) can be used to define the apolarity
+form in the representation theoretic context (Definition 3.3).
+
+We begin with an important SL2(C)-invariant map.
+
+D Springer

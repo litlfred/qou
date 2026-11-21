@@ -1,6 +1,8 @@
 import QOU.Basic
 import QOU.QuantumObservableUniverse.CategoricalFoundations
 import Mathlib.CategoryTheory.Simple
+import Mathlib.CategoryTheory.Preadditive.Schur
+import Mathlib.CategoryTheory.Monoidal.Preadditive
 
 
 /-!
@@ -34,7 +36,7 @@ library.
 
 ## References
 
-- [manuscript] §1-quantum-universes/frobenius-pairing-unique
+- [leitner2026] §1-quantum-universes/frobenius-pairing-unique
 - [kock2004] Frobenius Algebras and 2D Topological Quantum Field
   Theories (Cambridge LMS 59), Ch 2
 -/
@@ -45,6 +47,47 @@ open CategoryTheory
 open MonoidalCategory
 
 universe u v
+
+/-- A Frobenius form is nonzero whenever its object is simple: if `λ = 0`
+    then `ev = μ ≫ λ = 0`, and the left snake identity makes `𝟙_A = 0`. -/
+theorem FrobeniusHopfData.frobeniusForm_ne_zero
+    {C : Type u} [Category.{v} C] [Preadditive C] [MonoidalCategory C]
+    [MonoidalPreadditive C] [CategoryTheory.BraidedCategory C]
+    (fh : FrobeniusHopfData C) [Simple fh.obj] :
+    fh.frobeniusForm ≠ 0 := by
+  intro h
+  apply id_nonzero fh.obj
+  rw [← fh.pairing_snake_left, h, Limits.comp_zero, MonoidalPreadditive.zero_whiskerRight]
+  simp
+
+/-- **Uniqueness of the Frobenius form up to an invertible scalar, proved
+    under Schur hypotheses.**
+
+    If `C` is preadditive with kernels and monoidal-preadditive, and both the
+    common object and the tensor unit are simple, then each Frobenius form
+    `A ⟶ 𝟙` is nonzero, hence an isomorphism by Schur's lemma, and
+    `c := (e ≫ λ₂)⁻¹ ≫ λ₁` is the required invertible scalar.
+
+    This is the axiom below with its missing hypotheses made explicit. The
+    axiom itself carries no linear structure and no simplicity of `𝟙`; whether
+    it holds without them is open (bean `qou-n2un`). -/
+-- Ref: [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
+theorem FrobeniusHopfData.frobeniusForm_unique_of_schur
+    {C : Type u} [Category.{v} C] [Preadditive C] [Limits.HasKernels C]
+    [MonoidalCategory C] [MonoidalPreadditive C] [CategoryTheory.BraidedCategory C]
+    [Simple (𝟙_ C)]
+    (fh₁ fh₂ : FrobeniusHopfData C)
+    (hobj : fh₁.obj = fh₂.obj)
+    (hsimple : Simple fh₁.obj) :
+    ∃ c : End (𝟙_ C), IsIso c ∧
+      fh₁.frobeniusForm = (eqToHom hobj ≫ fh₂.frobeniusForm) ≫ c := by
+  have hs₂ : Simple fh₂.obj := hobj ▸ hsimple
+  haveI := hsimple
+  haveI := hs₂
+  haveI h₁ : IsIso fh₁.frobeniusForm := isIso_of_hom_simple fh₁.frobeniusForm_ne_zero
+  haveI h₂ : IsIso fh₂.frobeniusForm := isIso_of_hom_simple fh₂.frobeniusForm_ne_zero
+  refine ⟨inv (eqToHom hobj ≫ fh₂.frobeniusForm) ≫ fh₁.frobeniusForm, inferInstance, ?_⟩
+  simp
 
 /-- **Frobenius form unique up to invertible scalar (conditional,
     named categorical input).**

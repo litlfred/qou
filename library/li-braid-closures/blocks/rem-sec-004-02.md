@@ -1,0 +1,1 @@
+One can show without much difficulty that {Tσ | σ ∈Sn} forms a basis for Hn(q), and hence it is clear that dim Hn(q) = n! regardless of the choice of q ∈C. Writing out each Tσ as a product of generators gi also expresses this basis in a “normal form” of Jones. We can now finally demonstrate how the Specht modules deform as q changes value [5].

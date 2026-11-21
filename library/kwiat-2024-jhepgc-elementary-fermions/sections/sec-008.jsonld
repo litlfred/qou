@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Interference",
+  "pageStart": 9,
+  "pageEnd": 10,
+  "contains": [
+    "library/kwiat-2024-jhepgc-elementary-fermions/blocks/prose-sec-008",
+    "library/kwiat-2024-jhepgc-elementary-fermions/blocks/figure-img-p010-1"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kwiat-2024-jhepgc-elementary-fermions/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kwiat-2024-jhepgc-elementary-fermions/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -8,6 +8,7 @@ pages: 25-25
 source_pdf: ant-v14-n7-s-p09.pdf
 source_sha256: c8fe963200a79d25
 toc_source: inferred
+doc_brief: "Galois action on the principal block and cyclic Sylow subgroups — 7 sections: Front matter; Introduction; Blocks with normal defect group"
 ---
 The authors would like to thank Gabriel Navarro for an inspiring conversation on Galois action and
 generating properties of Sylow subgroups during the Workshop on Representations of Finite Groups at

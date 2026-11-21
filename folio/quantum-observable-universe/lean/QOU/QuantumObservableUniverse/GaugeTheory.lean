@@ -221,7 +221,7 @@ instance hasCategoricalEOM_of_facts {C : Type u}
 /-- **Einstein equation** (per-instance form).
     Use this lemma — backed by `HasCategoricalEOM` — instead of the
     deprecated universal axiom. -/
--- Ref: [manuscript] §1-quantum-observable-universe
+-- Ref: [leitner2026] §1-quantum-observable-universe
 -- Ref: [wald1984] General Relativity — see folio/schema/references.ts
 theorem variational_einstein {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] [CategoryTheory.Preadditive C]
@@ -233,7 +233,7 @@ theorem variational_einstein {C : Type u} [CategoryTheory.Category.{v} C]
   HasCategoricalEOM.einstein
 
 /-- **Yang–Mills equation** (per-instance form). -/
--- Ref: [manuscript] §1-quantum-observable-universe
+-- Ref: [leitner2026] §1-quantum-observable-universe
 -- Ref: [bleecker1981] Gauge Theory and Variational Principles — see folio/schema/references.ts
 theorem variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] [CategoryTheory.Preadditive C]
@@ -245,7 +245,7 @@ theorem variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
   HasCategoricalEOM.yang_mills
 
 /-- **Transport equation** (per-instance form). -/
--- Ref: [manuscript] §1-quantum-observable-universe
+-- Ref: [leitner2026] §1-quantum-observable-universe
 -- Ref: [kobayashi1963] Kobayashi-Nomizu, Foundations of Differential Geometry, Vol. I (1963 Interscience; 1996 Wiley reprint = kobayashi1996), DOI 10.1002/9780470316559
 theorem variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] [CategoryTheory.Preadditive C]

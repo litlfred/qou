@@ -2,24 +2,27 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/def-electron-knot",
   "@type": [
-    "folio-assistant-core:Definition",
+    "folio-assistant-sci:Definition",
     "doco:Section"
   ],
   "label": "def:electron-knot",
   "kind": "definition",
   "title": "Electron",
   "uses": [
-    "papers/quantum-observable-universe/blocks/def-up-quark"
+    "papers/quantum-observable-universe/blocks/def-up-quark",
+    "papers/quantum-observable-universe/blocks/rem-knot-particle-dictionary"
   ],
   "tags": [
     "electron",
     "lepton",
-    "trefoil",
+    "hopf-link",
+    "braid-word",
     "fermion"
   ],
   "leanRef": "qou:QOU.Archimedean.Electron",

@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0903.0853v3/sections/sec-102",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Extensions of difference modules",
+  "pageStart": 151,
+  "pageEnd": 155,
+  "contains": [
+    "library/arxiv-0903.0853v3/blocks/prose-sec-102",
+    "library/arxiv-0903.0853v3/blocks/rem-sec-102-01",
+    "library/arxiv-0903.0853v3/blocks/thm-sec-102-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.0853v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.0853v3/manifest.jsonld",
+  "provenance": "ingested"
+}

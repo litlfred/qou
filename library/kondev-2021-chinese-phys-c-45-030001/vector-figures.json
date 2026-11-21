@@ -1,0 +1,1193 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "kondev-2021-chinese-phys-c-45-030001",
+  "figures": [
+    {
+      "id": "vfig-p003",
+      "file": null,
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 3
+      },
+      "page": 3,
+      "rotation": 0,
+      "captionLabels": [
+        "2"
+      ],
+      "region": null,
+      "assembly": {
+        "drawings": 1,
+        "background": 0,
+        "groups": [],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              43.65,
+              84.22,
+              548.22,
+              84.22
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 0
+      },
+      "unrendered_reason": "no drawing component on this page contains a text line, so there is no labelled region to render -- the caption candidates are recorded and nothing is claimed about what the page draws"
+    },
+    {
+      "id": "vfig-p004",
+      "file": "figures/vfig-p004.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 4
+      },
+      "page": 4,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": [
+        114.48,
+        122.48,
+        483.96,
+        696.46
+      ],
+      "assembly": {
+        "drawings": 7106,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              114.48,
+              122.48,
+              483.96,
+              696.46
+            ],
+            "drawings": 7105,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "u < 1",
+              "1 < u < 2",
+              "2 < u < 4",
+              "4 < u < 12",
+              "12 < u < 60",
+              "60 < u < 200",
+              "200 < u",
+              "Extrapolated Mass",
+              "N E U T R O N S",
+              "P",
+              "R",
+              "O",
+              "T",
+              "O",
+              "N",
+              "S",
+              "MASS UNCERTAINTY, keV"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              114.48,
+              122.93,
+              483.51,
+              695.56
+            ],
+            "parent": null,
+            "labels": [
+              "N E U T R O N S",
+              "P",
+              "R",
+              "O",
+              "T",
+              "O",
+              "N",
+              "S",
+              "MASS UNCERTAINTY, keV"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              325.57,
+              135.1,
+              476.41,
+              280.54
+            ],
+            "parent": "b0",
+            "labels": [
+              "u < 1",
+              "1 < u < 2",
+              "2 < u < 4",
+              "4 < u < 12",
+              "12 < u < 60",
+              "60 < u < 200",
+              "200 < u",
+              "Extrapolated Mass"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 3544,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              43.65,
+              84.22,
+              548.22,
+              84.22
+            ]
+          },
+          {
+            "from": "b0",
+            "to": null,
+            "bbox": [
+              140.88,
+              122.48,
+              458.01,
+              695.11
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              114.93,
+              122.48,
+              483.96,
+              663.3
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              453.78,
+              693.76,
+              456.47,
+              696.46
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 34
+      }
+    },
+    {
+      "id": "vfig-p005",
+      "file": "figures/vfig-p005.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 5
+      },
+      "page": 5,
+      "rotation": 0,
+      "captionLabels": [
+        "2"
+      ],
+      "region": [
+        114.03,
+        121.58,
+        483.51,
+        694.66
+      ],
+      "assembly": {
+        "drawings": 3545,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              114.03,
+              121.58,
+              483.51,
+              694.66
+            ],
+            "drawings": 3544,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "100 ns < T1/2 < 1 μs",
+              "1 μs < T1/2 < 100 μs",
+              "100 μs < T1/2 < 100 ms",
+              "100 ms < T1/2 < 10 s",
+              "10 s < T1/2 < 10 min",
+              "T1/2 > 10 min",
+              "N E U T R O N S",
+              "P",
+              "R",
+              "O",
+              "T",
+              "O",
+              "N",
+              "S",
+              "ISOMER HALF-LIFE, T1/2"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              117.58,
+              131.13,
+              483.51,
+              694.21
+            ],
+            "parent": null,
+            "labels": [
+              "N E U T R O N S",
+              "P",
+              "R",
+              "O",
+              "T",
+              "O",
+              "N",
+              "S",
+              "ISOMER HALF-LIFE, T1/2"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              338.14,
+              124.62,
+              451.27,
+              299.7
+            ],
+            "parent": null,
+            "labels": [
+              "100 ns < T1/2 < 1 μs",
+              "1 μs < T1/2 < 100 μs",
+              "100 μs < T1/2 < 100 ms",
+              "100 ms < T1/2 < 10 s",
+              "10 s < T1/2 < 10 min",
+              "T1/2 > 10 min"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 1765,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              43.65,
+              84.22,
+              548.22,
+              84.22
+            ]
+          },
+          {
+            "from": "b0",
+            "to": null,
+            "bbox": [
+              142.39,
+              121.58,
+              483.51,
+              694.21
+            ]
+          },
+          {
+            "from": "b0",
+            "to": null,
+            "bbox": [
+              114.48,
+              121.58,
+              483.51,
+              694.21
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 36
+      }
+    },
+    {
+      "id": "vfig-p007",
+      "file": "figures/vfig-p007.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 7
+      },
+      "page": 7,
+      "rotation": 0,
+      "captionLabels": [
+        "3"
+      ],
+      "region": [
+        125.17,
+        130.08,
+        479.8,
+        678.87
+      ],
+      "assembly": {
+        "drawings": 6950,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              125.17,
+              130.08,
+              479.8,
+              678.87
+            ],
+            "drawings": 6949,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "T1/2 > 1 Gy",
+              "1 y < T1/2 < 1 Gy",
+              "1 d < T1/2 < 1 y",
+              "1 h < T1/2 < 1 d",
+              "2 m < T1/2 < 1 h",
+              "3 s < T1/2 < 2 m",
+              "0.1 s < T1/2 < 3 s",
+              "T1/2 < 0.1 s",
+              "N E U T R O N S",
+              "P",
+              "R",
+              "O",
+              "T",
+              "O",
+              "N",
+              "S",
+              "GROUND STATE HALF-LIFE, T1/2"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              125.17,
+              130.5,
+              477.87,
+              677.8
+            ],
+            "parent": null,
+            "labels": [
+              "N E U T R O N S",
+              "P",
+              "R",
+              "O",
+              "T",
+              "O",
+              "N",
+              "S",
+              "GROUND STATE HALF-LIFE, T1/2"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              325.92,
+              153.72,
+              470.08,
+              286.72
+            ],
+            "parent": "b0",
+            "labels": [
+              "T1/2 > 1 Gy",
+              "1 y < T1/2 < 1 Gy",
+              "1 d < T1/2 < 1 y",
+              "1 h < T1/2 < 1 d",
+              "2 m < T1/2 < 1 h",
+              "3 s < T1/2 < 2 m",
+              "0.1 s < T1/2 < 3 s",
+              "T1/2 < 0.1 s"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 3466,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              43.65,
+              84.22,
+              548.22,
+              84.22
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              152.28,
+              130.08,
+              478.3,
+              677.37
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              125.6,
+              130.08,
+              478.3,
+              649.85
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              473.84,
+              675.87,
+              476.84,
+              678.87
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              470.87,
+              675.87,
+              473.88,
+              678.87
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              476.8,
+              675.87,
+              479.8,
+              678.87
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              467.91,
+              675.87,
+              470.91,
+              678.87
+            ]
+          },
+          {
+            "from": null,
+            "to": "b0",
+            "bbox": [
+              454.59,
+              674.31,
+              478.3,
+              674.31
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 34
+      }
+    },
+    {
+      "id": "vfig-p009",
+      "file": "figures/vfig-p009.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 9
+      },
+      "page": 9,
+      "rotation": 0,
+      "captionLabels": [
+        "4"
+      ],
+      "region": [
+        125.17,
+        130.08,
+        479.59,
+        678.65
+      ],
+      "assembly": {
+        "drawings": 1682,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              125.17,
+              130.08,
+              479.59,
+              678.65
+            ],
+            "drawings": 1681,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "J = 0 1/2 1 3/2",
+              "J = 2 5/2 3 7/2",
+              "J = 4 9/2 5 11/2",
+              "J = 6 7 8",
+              "N E U T R O N S",
+              "P",
+              "R",
+              "O",
+              "T",
+              "O",
+              "N",
+              "S",
+              "MEASURED SPIN, J"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              128.57,
+              139.2,
+              478.3,
+              677.37
+            ],
+            "parent": null,
+            "labels": [
+              "N E U T R O N S",
+              "P",
+              "R",
+              "O",
+              "T",
+              "O",
+              "N",
+              "S",
+              "MEASURED SPIN, J"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              375.41,
+              132.12,
+              447.49,
+              259.98
+            ],
+            "parent": null,
+            "labels": [
+              "J = 0 1/2 1 3/2",
+              "J = 2 5/2 3 7/2",
+              "J = 4 9/2 5 11/2",
+              "J = 6 7 8"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 832,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              43.65,
+              84.22,
+              548.22,
+              84.22
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              474.05,
+              676.08,
+              476.63,
+              678.65
+            ]
+          },
+          {
+            "from": "b0",
+            "to": null,
+            "bbox": [
+              152.28,
+              130.08,
+              478.3,
+              677.37
+            ]
+          },
+          {
+            "from": "b0",
+            "to": null,
+            "bbox": [
+              125.6,
+              130.08,
+              478.3,
+              677.37
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 35
+      }
+    },
+    {
+      "id": "vfig-p010",
+      "file": "figures/vfig-p010.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 10
+      },
+      "page": 10,
+      "rotation": 0,
+      "captionLabels": [
+        "5"
+      ],
+      "region": [
+        125.17,
+        130.08,
+        478.3,
+        677.8
+      ],
+      "assembly": {
+        "drawings": 498,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              125.17,
+              130.08,
+              478.3,
+              677.8
+            ],
+            "drawings": 497,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "J = 0 1/2 1 3/2",
+              "J = 2 5/2 3 7/2",
+              "J = 4 9/2 5 11/2",
+              "J = 6 and higher",
+              "N E U T R O N S",
+              "P",
+              "R",
+              "O",
+              "T",
+              "O",
+              "N",
+              "S",
+              "MEASURED SPIN, J"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              128.57,
+              139.2,
+              478.3,
+              674.33
+            ],
+            "parent": null,
+            "labels": [
+              "N E U T R O N S",
+              "P",
+              "R",
+              "O",
+              "T",
+              "O",
+              "N",
+              "S",
+              "MEASURED SPIN, J"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              394.29,
+              136.41,
+              466.37,
+              268.56
+            ],
+            "parent": null,
+            "labels": [
+              "J = 0 1/2 1 3/2",
+              "J = 2 5/2 3 7/2",
+              "J = 4 9/2 5 11/2",
+              "J = 6 and higher"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 240,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              43.65,
+              84.22,
+              548.22,
+              84.22
+            ]
+          },
+          {
+            "from": null,
+            "to": "b0",
+            "bbox": [
+              472.37,
+              650.0,
+              472.37,
+              677.37
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              152.28,
+              130.08,
+              478.3,
+              677.37
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              125.6,
+              130.08,
+              478.3,
+              677.37
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 35
+      }
+    },
+    {
+      "id": "vfig-p011",
+      "file": null,
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 11
+      },
+      "page": 11,
+      "rotation": 0,
+      "captionLabels": [
+        "6"
+      ],
+      "region": null,
+      "assembly": {
+        "drawings": 1,
+        "background": 0,
+        "groups": [],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              43.65,
+              84.22,
+              548.22,
+              84.22
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 0
+      },
+      "unrendered_reason": "no drawing component on this page contains a text line, so there is no labelled region to render -- the caption candidates are recorded and nothing is claimed about what the page draws"
+    },
+    {
+      "id": "vfig-p012",
+      "file": "figures/vfig-p012.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 12
+      },
+      "page": 12,
+      "rotation": 0,
+      "captionLabels": [
+        "6"
+      ],
+      "region": [
+        114.48,
+        122.48,
+        485.53,
+        696.68
+      ],
+      "assembly": {
+        "drawings": 7052,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              114.48,
+              122.48,
+              485.53,
+              696.68
+            ],
+            "drawings": 7051,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "SF",
+              "α",
+              "β-",
+              "β+ (ε + e+)",
+              "stable",
+              "n",
+              "p",
+              "N E U T R O N S",
+              "P",
+              "R",
+              "O",
+              "T",
+              "O",
+              "N",
+              "S",
+              "DECAY MODES"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              114.48,
+              122.93,
+              483.51,
+              695.56
+            ],
+            "parent": null,
+            "labels": [
+              "N E U T R O N S",
+              "P",
+              "R",
+              "O",
+              "T",
+              "O",
+              "N",
+              "S",
+              "DECAY MODES"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              312.55,
+              148.41,
+              444.54,
+              252.56
+            ],
+            "parent": "b0",
+            "labels": [
+              "SF",
+              "α",
+              "β-",
+              "β+ (ε + e+)",
+              "stable",
+              "n",
+              "p"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 3517,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              43.65,
+              84.22,
+              548.22,
+              84.22
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              142.84,
+              122.48,
+              483.96,
+              695.11
+            ]
+          },
+          {
+            "from": null,
+            "to": "b0",
+            "bbox": [
+              114.93,
+              137.96,
+              483.96,
+              664.16
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              479.29,
+              693.54,
+              482.43,
+              696.68
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              473.08,
+              693.54,
+              476.23,
+              696.68
+            ]
+          },
+          {
+            "from": null,
+            "to": "b0",
+            "bbox": [
+              459.15,
+              688.92,
+              483.96,
+              688.92
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 34
+      }
+    },
+    {
+      "id": "vfig-p015",
+      "file": "figures/vfig-p015.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 15
+      },
+      "page": 15,
+      "rotation": 0,
+      "captionLabels": [
+        "7"
+      ],
+      "region": [
+        131.65,
+        129.5,
+        432.14,
+        347.33
+      ],
+      "assembly": {
+        "drawings": 37,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              131.65,
+              129.5,
+              432.14,
+              330.33
+            ],
+            "drawings": 32,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "b",
+              "σ",
+              "a"
+            ]
+          },
+          {
+            "bbox": [
+              251.65,
+              332.33,
+              260.65,
+              347.33
+            ],
+            "drawings": 1,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "X"
+            ]
+          },
+          {
+            "bbox": [
+              277.4,
+              331.33,
+              289.9,
+              345.33
+            ],
+            "drawings": 1,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "m"
+            ]
+          },
+          {
+            "bbox": [
+              419.65,
+              331.58,
+              428.9,
+              346.58
+            ],
+            "drawings": 1,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "x"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              131.65,
+              129.5,
+              431.64,
+              329.5
+            ],
+            "parent": null,
+            "labels": [
+              "b",
+              "σ",
+              "a"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              251.65,
+              332.33,
+              260.65,
+              347.33
+            ],
+            "parent": null,
+            "labels": [
+              "X"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              277.4,
+              331.33,
+              289.9,
+              345.33
+            ],
+            "parent": null,
+            "labels": [
+              "m"
+            ]
+          },
+          {
+            "id": "b3",
+            "bbox": [
+              419.65,
+              331.58,
+              428.9,
+              346.58
+            ],
+            "parent": null,
+            "labels": [
+              "x"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              43.65,
+              84.22,
+              548.22,
+              84.22
+            ]
+          },
+          {
+            "from": null,
+            "to": "b0",
+            "bbox": [
+              257.15,
+              152.22,
+              257.15,
+              330.0
+            ]
+          },
+          {
+            "from": "b0",
+            "to": null,
+            "bbox": [
+              278.4,
+              214.83,
+              282.65,
+              330.33
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              312.95,
+              616.73,
+              539.72,
+              616.73
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 59
+      }
+    }
+  ]
+}

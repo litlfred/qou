@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-0804.0917v1/blocks/prose-sec-002",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Highest weight modules over sl2",
-  "pageStart": 7,
-  "pageEnd": 8,
-  "text": "../sections/sec-002-highest-weight-modules-over-sl2.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0804.0917v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0804.0917v1",
+  "title": "Composition-Diamond lemma for ``double-free\" modules",
+  "pageStart": 4,
+  "pageEnd": 7,
+  "text": "../sections/sec-002-composition-diamond-lemma-for-double-free-module.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0804.0917v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0804.0917v1/manifest.jsonld",
   "provenance": "ingested"
 }

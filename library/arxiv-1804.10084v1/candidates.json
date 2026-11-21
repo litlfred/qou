@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1804.10084v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "716da9708f06d930246e5eeb0c30b6d271005199ef58f10102799e07b8d14aa1",
+  "file": "1804.10084v1.pdf"
+ },
+ "provenance": {
+  "title": "Concentration of Lipschitz Functions of Negatively Dependent Variables",
+  "authors": "Kevin Garbe",
+  "arxiv": {
+   "id": "1804.10084",
+   "version": "1",
+   "primary_class": "math.PR",
+   "stamp_date": "21 Apr 2018"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

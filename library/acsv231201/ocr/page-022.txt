@@ -1,0 +1,50 @@
+4 Introduction
+
+forevermore) for certain counting functions whose evaluation requires listing
+all of the objects being counted! Such a ‘formula’ is completely worthless.”
+Less egregious are the formulae containing functions that are rare or compli-
+cated and whose properties are not immediately familiar to us. It is not clear
+how much good comes from this kind of formula.
+
+Another way of describing arrays of numbers is via recursions. The simplest
+examples are finite linear recurrences, such as the recurrence a;.5 = Gy—1,5 +
+a,.s-1 for the binomial coefficients a,.. = (**). A recursion for a, in terms of
+values {as : s < r} whose indices precede r in the coordinatewise partial order
+may be unwieldy, perhaps requiring evaluation of a complicated function of all
+ag with s < r, but if the recursion is of bounded complexity then it can give an
+efficient algorithm for computing a,.. Still, we will see that even in the case of
+simple recursions the estimation of a, may not be straightforward. Thus, while
+we look for recursions to help us understand number arrays, and for efficient
+methods of computation, they rarely provide definitive descriptions.
+
+A third way of understanding an array of numbers is via an estimate. For
+instance, Stirling’s formula, which approximates
+
+n
+
+for large n, yields an approximation
+(*) r+sV(rt+s\ [r+s
+x ( ) ( ) day
+r r 5 2ars
+for the binomial coefficients when r and s are large. If number-theoretic prop-
+erties of the binomial coefficients are required then we are better off sticking
+with a ratio of factorials; when their approximate size is paramount, the esti-
+mate (1.1) is better.
+A fourth way to understand an array of numbers is to encode it algebraically.
+The generating function (often abbreviated GF) of the array {a,} is the formal
+
+series F(Z) := ))peyu Ap Z". Here z is a d-dimensional vector of indeterminates
+(z1,..-,Zq) and we use the notation z” := zi . Fn In our running example of
+
+multinomial coefficients, we have the generating function
+
+rh Vin or I
+F(z) = eee =
+@) De 2 i es
+
+rent
+
+where the final expression can be viewed either as a multiplicative inverse
+in a formal power series ring, or as an analytic function over an appropriate
+domain of C. Stanley calls the generating function “the most useful but the
+most difficult to understand” method for describing a sequence or array.

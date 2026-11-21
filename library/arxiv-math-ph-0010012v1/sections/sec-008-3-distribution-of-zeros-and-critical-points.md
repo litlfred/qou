@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.986
+doc_brief: "arXiv:math-ph/0010012v1 10 Oct 2000 — We review some recent results on random polynomials and their generalizations in complex and symplectic geometry."
 ---
 We now state some results on the zeros and critical points of random generalized polynomials. Let $(s_1, \dots, s_k) \in H^0(M, L^N)^k$ or let $(s_1, \dots, s_k) \in {\mathcal H}_N^k$ in the real case. When $k = 1$ we omit the subscript. We will use the following notation.
 

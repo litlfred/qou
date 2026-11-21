@@ -41,7 +41,7 @@ Base ring: a generic `Field`, per §7c. Pure algebra — no ordering, no
 `b` is left an arbitrary field element: the identities hold whatever `b` is,
 so nothing here depends on `b = √((h²+3)/(h²+4))`.
 
--- Ref: [manuscript] bean `qou-cwin` T1; `computations/qbeta/qbeta_utils.py`
+-- Ref: [leitner2026] bean `qou-cwin` T1; `computations/qbeta/qbeta_utils.py`
 -- `substrate_ladder_quantities`; PR #5235 (T0/T0.5).
 -/
 import Mathlib.Algebra.Field.Basic

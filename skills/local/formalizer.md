@@ -48,6 +48,41 @@ When generating Lean theorems, ALWAYS edit the `.md` in the same
 diff to add the narrative proof. Don't split into separate
 commits — Lean and narrative must move together.
 
+## Anti-laundering & Honest Failure / Handoff Discipline (MANDATORY)
+
+1. **NO Fake Lean (`Int`/`Bool` Wrappers or `X - X = 0` Tautologies):**
+   - Every `.lean` module in `QOU` or a content block MUST import the actual
+     `QOU.*` and `Mathlib.*` modules defining the mathematical objects under study.
+   - **Never** drop `import` lines so a file compiles with raw `lean` without `.lake`.
+     If `.olean` imports fail, run `bash scripts/lean-cache-restore.sh` (which
+     supports both GNU `tar --transform` and macOS BSD `tar -s`) and verify via
+     `bash scripts/lean-verify.sh <file.lean>`.
+   - **Never** replace mathematical objects (categories, morphisms, matrices,
+     Hecke algebras, operators, differential forms, trace functionals) with
+     stand-alone `Int`, `Nat`, or `Bool` record fields (`structure FooDatum where trA : Int ...`),
+     and **never** write definitional-subtraction tautologies of the form
+     `f d - (<body of f d>) = 0 := by dsimp [f]; omega`. Both
+     `scripts/lean-borrowed-name-audit.py` (`no-import-wrapper`) and
+     `scripts/lean-definition-collapsed-audit.py` (`sub-zero-tautology`) flag
+     these as `CRITICAL`.
+2. **It Is OK for a Formalization Attempt to Fail — Document the Blocker for Handoff:**
+   - If you cannot close a proof over the real `QOU.*` / `Mathlib.*` types after
+     bounded attempts, **do not weaken or fake the statement**.
+   - Keep the true mathematical statement over the real imported types (or leave
+     an annotated `sorry` with `-- Ref: [<bibkey>] <Claim ID>` at the exact
+     stuck sub-goal).
+   - Record a structured **Handoff & Blocker Note** on the bean (and PR/commit
+     report) so the next agent or human can pick up immediately:
+     - **File & declaration** (over the real imported types),
+     - **Exact remaining Lean goal state** (copy-pasted from `lean_goal` or
+       `scripts/lean-verify.sh` output),
+     - **What lemmas were proved vs. where the proof stopped**,
+     - **Tactics / lemmas tried and why they failed** (e.g., missing Mathlib API,
+       non-commutativity, typeclass diamond),
+     - **Exact bridge lemma or mathematical input needed to close it**,
+     - Close the step via `Process_BeanClose` (`blocked` → `Close_RecordBlocker`,
+       returning the bean to `todo` with `--blocked-by`).
+
 ## Overview
 
 This skill translates the **logical skeleton** of the paper into Lean 4
@@ -195,7 +230,7 @@ lemma torsion_lifts_jet (A : FrobeniusHopfAlgebra) :
 **Rule**: Every `sorry` must have a `-- Ref:` annotation.  The `key`
 must match a citation key in `folio/schema/references.ts` exactly (case-sensitive).
 (`references.bib` is auto-generated from this file — never edit `.bib` directly.)  If no
-published reference exists, use `[manuscript]` and cite the chapter/section.
+published reference exists, use `[leitner2026]` and cite the chapter/section.
 This is enforced by the axiom report's Theoretical Gap Report (§8).
 
 **§3b-cond carve-out.** Class-body sorries are NOT missing proofs — they

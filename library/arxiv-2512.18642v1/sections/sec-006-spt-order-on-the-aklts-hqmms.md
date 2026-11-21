@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2512.18642v1
-doc_title: "A Hidden Quantum Markov model framework for"
+doc_title: "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain"
 section_id: sec-006-spt-order-on-the-aklts-hqmms
 section_title: "SPT order on the AKLT,s HQMMs"
 section_number: null
 pages: 15-16
 source_pdf: 2512.18642v1.pdf
 source_sha256: c4c7f8b0a719aa2d
-doc_brief: "A Hidden Quantum Markov model framework for — This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af- fleck–Kennedy–Lieb–Tasaki (AKLT) state—a cornerstone example of a"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.989
+latex_prose_ratio: 0.983
+latex_coverage_ratio: 0.977
+doc_brief: "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain — This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af"
 ---
 []{#Sect_SPT_HQMM label="Sect_SPT_HQMM"} The AKLT state's remarkable robustness stems from its symmetry-protected topological (SPT) order, which manifests elegantly within its Hidden Quantum Markov Model (HQMM) description. To understand this protection mechanism, clarify how symmetries operate in the HQMM framework.
 

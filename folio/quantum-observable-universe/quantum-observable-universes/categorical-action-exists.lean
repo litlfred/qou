@@ -20,7 +20,7 @@ LaTeX: `\label{prop:categorical-action-exists}`
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/categorical-action-exists
+- [leitner2026] §2-quantum-observable-universes/categorical-action-exists
 - [kelly1982] Basic Concepts of Enriched Category Theory
 - [stolz-teichner-2012]
 -/

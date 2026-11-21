@@ -7,10 +7,11 @@
   "bytes": 247380,
   "pages": 16,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,28 @@
    "stamp_date": "19 Mar 2007"
   },
   "doi": null,
-  "title": "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR MEINOLF GECK",
-  "authors_raw": null,
+  "title": "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR",
+  "authors_raw": "MEINOLF GECK",
   "title_lines": [
-   "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR",
-   "MEINOLF GECK"
+   "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR"
   ],
-  "abstract": "Let H be the one-parameter Hecke algebra associated to a \ufb01nite Weyl gr oup W , de\ufb01ned over a ground ring in which \u201cbad\u201d primes for W are invertible. Using deep properties of the Kazhdan\u2013Lusztig basis of H and Lusztig\u2019s a-function, we show that H has a natural cellular structure in the sense of Graham and Lehrer. Th us, we obtain a general theory of \u201cSpecht modules\u201d for Hecke algebras of \ufb01nite type. Pre viously, a general cellular structure was only known to exist in types An and Bn.",
+  "abstract": "Let H be the one-parameter Hecke algebra associated to a ﬁnite Weyl group W, deﬁned over a ground ring in which “bad” primes for W are invertible. Using deep properties of the Kazhdan–Lusztig basis of H and Lusztig’s a-function, we show that H has a natural cellular structure in the sense of Graham and Lehrer. Thus, we obtain a general theory of “Specht modules” for Hecke algebras of ﬁnite type. Previously, a general cellular structure was only known to exist in types An and Bn.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20210922170542-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20210922170542-04'00'"
+  },
+  "title_raw": "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR 1. Introduction The concept of “cellular algebras” was introduced by Graham and Lehrer [16]. It provides a systematic framework for studying the representation theory of non-semisimple algebras which are deformations of semisimple ones. The original deﬁniti",
+   "outline": "1. Introduction",
+   "text": "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR MEINOLF GECK"
  },
  "toc": [
   {
@@ -41,74 +50,264 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
-   "title": "Kazhdan\u2013Lusztig theory and the asymptotic ring",
+   "title": "Kazhdan–Lusztig theory and the asymptotic ring",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Irreducible representations of W and H",
    "page": 2,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "The integers a and f",
    "page": 3,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
-   "title": "The Kazhdan\u2013Lusztig basis of H",
+   "title": "The Kazhdan–Lusztig basis of H",
    "page": 4,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Lusztig's conjectures and the asymptotic ring J",
    "page": 4,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Representations of J",
    "page": 5,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "A cell datum for H",
    "page": 7,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Examples and applications to modular representations",
    "page": 11,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "References",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 594,
+   "n_words": 100,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -116,18 +315,22 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 3515,
-   "n_words": 574
+   "n_chars": 3491,
+   "n_words": 550,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-001-2-kazhdanlusztig-theory-and-the-asymptotic-ring",
    "number": "2",
-   "title": "Kazhdan\u2013Lusztig theory and the asymptotic ring",
+   "title": "Kazhdan–Lusztig theory and the asymptotic ring",
    "level": 1,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 779,
-   "n_words": 175
+   "n_chars": 736,
+   "n_words": 151,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-002-21-irreducible-representations-of-w-and-h",
@@ -136,71 +339,103 @@
    "level": 2,
    "page_start": 2,
    "page_end": 4,
-   "n_chars": 2322,
-   "n_words": 501
+   "n_chars": 2251,
+   "n_words": 451,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
    "id": "sec-003-23-the-kazhdanlusztig-basis-of-h",
    "number": "2.3",
-   "title": "The Kazhdan\u2013Lusztig basis of H",
+   "title": "The Kazhdan–Lusztig basis of H",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1255,
+   "n_words": 255,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-004-24-lusztigs-conjectures-and-the-asymptotic-ring",
+   "number": "2.4",
+   "title": "Lusztig's conjectures and the asymptotic ring J",
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 2791,
-   "n_words": 565
+   "n_chars": 1364,
+   "n_words": 247,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
-   "id": "sec-004-25-representations-of-j",
+   "id": "sec-005-25-representations-of-j",
    "number": "2.5",
    "title": "Representations of J",
    "level": 2,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 4428,
-   "n_words": 933
+   "n_chars": 4348,
+   "n_words": 853,
+   "label_start": "5",
+   "label_end": "7"
   },
   {
-   "id": "sec-005-3-a-cell-datum-for-h",
+   "id": "sec-006-3-a-cell-datum-for-h",
    "number": "3",
    "title": "A cell datum for H",
    "level": 1,
    "page_start": 7,
    "page_end": 11,
-   "n_chars": 7712,
-   "n_words": 1698
+   "n_chars": 7417,
+   "n_words": 1517,
+   "label_start": "7",
+   "label_end": "11"
   },
   {
-   "id": "sec-006-4-examples-and-applications-to-modular-represent",
+   "id": "sec-007-4-examples-and-applications-to-modular-represent",
    "number": "4",
    "title": "Examples and applications to modular representations",
    "level": 1,
    "page_start": 11,
    "page_end": 15,
-   "n_chars": 9400,
-   "n_words": 2050
+   "n_chars": 9131,
+   "n_words": 1857,
+   "label_start": "11",
+   "label_end": "15"
   },
   {
-   "id": "sec-007-references",
+   "id": "sec-008-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 5887,
-   "n_words": 986
+   "n_chars": 5809,
+   "n_words": 927,
+   "label_start": "15",
+   "label_end": "16"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 10,
-  "sections": 8,
-  "chars_total": 36834,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 10,
+  "chars_total": 36396,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 9,
-   "overlaid": 7,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -208,18 +443,23 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.986,
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-kazhdanlusztig-theory-and-the-asymptotic-ring",
-     "title": "Kazhdan\u2013Lusztig theory and the asymptotic ring",
+     "title": "Kazhdan–Lusztig theory and the asymptotic ring",
      "prose_ratio": 0.953,
-     "coverage_ratio": 0.953,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -227,44 +467,52 @@
      "id": "sec-002-21-irreducible-representations-of-w-and-h",
      "title": "Irreducible representations of W and H",
      "prose_ratio": 0.945,
-     "coverage_ratio": 0.939,
+     "coverage_ratio": 0.948,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-23-the-kazhdanlusztig-basis-of-h",
-     "title": "The Kazhdan\u2013Lusztig basis of H",
-     "prose_ratio": 0.95,
-     "coverage_ratio": 0.944,
+     "title": "The Kazhdan–Lusztig basis of H",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-25-representations-of-j",
+     "id": "sec-004-24-lusztigs-conjectures-and-the-asymptotic-ring",
+     "title": "Lusztig's conjectures and the asymptotic ring J",
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.935,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-25-representations-of-j",
      "title": "Representations of J",
      "prose_ratio": 0.955,
-     "coverage_ratio": 0.951,
+     "coverage_ratio": 0.95,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-3-a-cell-datum-for-h",
+     "id": "sec-006-3-a-cell-datum-for-h",
      "title": "A cell datum for H",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.978,
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-4-examples-and-applications-to-modular-represent",
+     "id": "sec-007-4-examples-and-applications-to-modular-represent",
      "title": "Examples and applications to modular representations",
-     "prose_ratio": 0.997,
-     "coverage_ratio": 0.978,
+     "prose_ratio": 0.782,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-references",
+     "id": "sec-008-references",
      "title": "References",
      "result": "no matching \\section"
     }

@@ -9,13 +9,16 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "JOHN MILNOR",
-  "pageStart": 1,
-  "pageEnd": 4,
+  "title": "U~>PSL2C which is uniquely determined, up to inner automorphism and complex conjugation.",
+  "pageStart": 6,
+  "pageEnd": 13,
   "contains": [
-    "library/milnor-hyperbolic/blocks/prose-sec-000"
+    "library/milnor-hyperbolic/blocks/prose-sec-000",
+    "library/milnor-hyperbolic/blocks/lem-sec-000-01",
+    "library/milnor-hyperbolic/blocks/lem-sec-000-02",
+    "library/milnor-hyperbolic/blocks/rem-sec-000-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/milnor-hyperbolic",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/milnor-hyperbolic",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/milnor-hyperbolic/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/milnor-hyperbolic/manifest.jsonld",
   "provenance": "ingested"
 }

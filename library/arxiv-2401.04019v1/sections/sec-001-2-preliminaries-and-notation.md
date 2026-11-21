@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2401.04019v1
-doc_title: "TRUNCA TED THET A SERIES RELA TED TO THE JACOBI TRIPLE PRODUCT IDENTITY"
+doc_title: "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY"
 section_id: sec-001-2-preliminaries-and-notation
 section_title: "Preliminaries and notation"
 section_number: 2
 pages: 5-6
 source_pdf: 2401.04019v1.pdf
 source_sha256: 1a29e52a81639640
-doc_brief: "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY — The work of Andrews and Merca on the truncated Euler’s pen- tagonal number theorem led to a resurgence in research on tru ncated"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.99
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.979
+latex_coverage_ratio: 0.959
+doc_brief: "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY — The work of Andrews and Merca on the truncated Euler’s pen- tagonal number theorem led to a resurgence in research on truncated"
 ---
 []{#notation label="notation"} In this section we discuss some background on partitions and set the notation used frequently in the article.
 

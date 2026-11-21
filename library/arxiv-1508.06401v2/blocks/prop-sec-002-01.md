@@ -1,0 +1,1 @@
+The region of no fusion is to the left, the region where all hydrogen is converted to helium stars is to the right. the n −p mass splitting in the ‘Dashen’ and MS schemes turns out to be somewhat larger (in absolute terms) than the numbers derived from the Cottingham formula [20].

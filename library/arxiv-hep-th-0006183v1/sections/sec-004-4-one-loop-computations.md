@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-0006183v1
-doc_title: "arXiv:hep-th/0006183v1 23 Jun 2000"
+doc_title: "Fine-tuning and the Wilson renormalization group"
 section_id: sec-004-4-one-loop-computations
 section_title: "One-loop computations"
 section_number: 4
@@ -8,6 +8,7 @@ pages: 5-15
 source_pdf: 0006183v1.pdf
 source_sha256: 2c9c4d97ce4f71a3
 toc_source: inferred
+doc_brief: "Fine-tuning and the Wilson renormalization group — We use the Wilson renormalization group (RG) formulation to solve the ﬁne-tuning proce- dure needed in renormalization schemes breaking the gauge"
 ---
 At one-loop and at Λ = Λ0, the ﬁne-tuning equation (6) reduces to
 SΠ(0) Π(1)(Λ0) = −ˆ∆(1)
@@ -99,7 +100,6 @@ g(σ3 −σ4) ,
 2δ10 = ig(σ5 −σ3) .
 (11)
 2For the sake of simplicity the loop order index will be sometimes understood.
-5
 The system of equations obtained by imposing δi to be equal to the coeﬃcient of the
 corresponding monomials in −ˆ∆Γ overdetermines the couplings σi (eleven equations and ﬁve
 unknown couplings) therefore it can be solved if one has only ﬁve independent equations.
@@ -194,7 +194,6 @@ in ˆ∆Γ.
 Ac-vertex
 There are three contributions 3 to the Aµ·c−vertex which are obtained inserting in (12) the
 ﬁrst term of (13) and setting (γi = wν , Φj = Aν), (γi = wν , Φj = c) and (γi = v , Φj = c).
-6
 Figure 1: Graphical contribution to the A-c-vertex of ˆ∆Γ. The curly and dashed line denotes the
 gluon and ghost ﬁeld respectively; the double lines represent the BRS source associated to the
 ﬁeld depicted by the top line. All momenta are incoming.
@@ -263,7 +262,6 @@ K′2
 ,
 (18)
 3This computation can be found in [7] and is repeated here for completeness.
-7
 where r = i/(16π2) (the factor i comes from the q-integration). The ﬁne-tuning equation
 (8) for the Ac-vertex becomes
 δ1 = −ˆδ1 ,
@@ -347,7 +345,6 @@ Aµ1(p1) · Aµ2(p2) ∧c(−p1 −p2) ˆ∆(AAc)
 with
 ˆ∆(AAc)
 Γ µ1µ2(p1, p2; Λ0)
-8
 Figure 2: Graphical contribution to the A-A-c-vertex of ˆ∆Γ.
 = −g2
 2
@@ -399,7 +396,6 @@ q
 6q4
 
 (24)
-9
 K0Λ0(p)
 e−p2/Λ2
 0
@@ -488,7 +484,6 @@ q
 (1 −K)
 6q4
 [31K3+K2(124K′q2−47)+K(16−111K′q2)+14K′q2] (27)
-10
 and
 ˆδ8 = 1
 2
@@ -576,7 +571,6 @@ q2(q + p2)2
 +(1 ↔2)
 
 .
-11
 Figure 3: Graphical contribution to the w-c-c-vertex of ˆ∆Γ.
 In the Λ0 →∞limit one obtains
 ˆ∆(wcc)
@@ -618,7 +612,4 @@ q
 q6
 [−q2gµν + qµqν + qρtρνµ(q, 0)] ,
 which vanishes.
-12
 Figure 4: Graphical contribution to the w-c-c-A-vertex of ˆ∆Γ.
-13
-5

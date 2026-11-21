@@ -1,0 +1,75 @@
+234 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+
+initialized at x(0) = p. Here x € R¢ represents all the possible states of the system, fj are (real) analytic vector fields and
+the function u = (uy, ..., Um) (the controls) is assumed to be integrable with respect to time and taking values in a compact
+subset U C R™. The vector field fy is called the drift vector field, whereas f;, i > 1, are referred to as the control vector fields.
+When fp = 0, the system (361) is called ‘without drift’, and its analysis is typically easier.
+
+For a given set of controls {u;}, Eq. (361) with initial value x(0) is nothing but a dynamical system, which can be analyzed
+and (approximately) solved by standard techniques. In control theory, however, one is interested typically in the inverse
+problem: given a target x(T), find controls {u;} that steer from x(0) to x(T) [90], perhaps by following a prescribed path. Just
+to illustrate these abstract considerations, a typical problem could be the determination of a set of controls that drive the
+actions of a robot during a task.
+
+The first step is to guarantee that there exists a solution. This is the problem of controllability. To characterize the
+controllability of linear systems of the form
+
+x(t) = A(t)x(t) + B(t)u(t) (362)
+
+is arelatively simple task thanks to an algebraic criterion known as the Kalman rank condition [239,240]. This issue, however,
+is much more involved for the nonlinear system (361) [90].
+
+The interest of ME in control theory, as has been already discussed in Section 3.5, stems from the approximate ansatz it
+provides connecting the states x(0) and x(T). Thus, the Magnus expansion can be used either to predict a state x(T) fora
+given control u or to find reasonable controls u which made reachable, the target x(T) from x(0). Of course, many sets of
+controls may exist and it raises questions concerning the cost of every scheme, and consequently the search for the optimal
+choice. For instance, the ME has been used in non-holonomic motion planning of systems without drift [241,242]. Among
+non-holonomic systems there are free-floating robots, mobile robots and underwater vehicles [242,243].
+
+In the particular case of linear quadratic optimal control problems (appearing in engineering problems as well as in differ-
+ential games) a given cost functional has to achieve a minimum. When this happens, Eq. (362) can be written as [244,194] is
+
+x’ = M(t, K(t))x, (363)
+
+where K(t) € R¢*4 has to solve a Riccati differential equation similar to (338) with final condition K(T) = Ky. In other
+words, the Riccati equation has to be integrated backward in time, and then to use it as an input in (363). As mentioned, the
+Riccati differential matrix equation has received much attention [191,194-196,244-246], but an efficient implementation
+to this problem requires further investigation, and methods from ME can play an important role.
+
+8. Conclusions
+
+In this report, we have thoroughly reviewed the abiding work on Magnus expansion carried out over more than fifty
+years, from very different perspectives.
+
+As a result of a real interdisciplinary activity, some aspects of the original formulation have been refined. This applies,
+for example, to the convergence properties of the expansion which have been much sharpened.
+
+In other features, much practical progress has been made. This is the case of the calculation of the terms of the series, both
+explicitly and recurrently. New techniques, like the ones borrowed from graph theory, have also profitably entered the play.
+
+Although originally formulated for linear systems of ordinary differential equations, the domain of usage of ME has
+enlarged to include other types of problems with differential equations: stochastic equations, nonlinear equations or Sturm-
+Liouville problems.
+
+In parallel with these developments in the mathematical structure of the ME, the realm of its applications has also
+widened over the years. It is worth stressing, in this respect, the versatility of the expansion to cope with new applications
+in old fields, like NMR for instance, and at the same time its capability to generate new contributions, like the generation of
+efficient numerical algorithms for geometric integrators.
+
+All these facts, historical and current, presented and discussed in this report, strongly support the idea that ME can bea
+very useful tool for physicists.
+
+Acknowledgments
+
+One of us (J.A.O) was introduced to the field of Magnus expansion by Prof. Silvio Klarsfeld (Orsay) to whom we also
+acknowledge his continuous interest in our work. Encouraging comments by Prof. A.J. Dragt (Maryland) in early stages of
+our involvement with ME are deeply acknowledged. During the last decade, we have benefited from enlightening discussions
+with, and useful comments by, Prof. Arieh Iserles. We would like to thank him for that, as much as for the kind hospitality
+extended to us during our visits to his group in DAMTP in Cambridge. We also thank Prof. Iserles for providing us with his
+Latex macros for the graphs in Section 2.5, and Dr. Ander Murua for reading various parts of the manuscript and providing
+useful feedback. Friendly collaboration with Dr. Per Christian Moan is also acknowledged.
+
+The work of SB and FC has been partially supported by Ministerio de Ciencia e Innovacién (Spain) under project
+MTM2007-61572 (co-financed by the ERDF of the European Union), that of JAO and JR by contracts MCyT/FEDER, Spain
+(Grant No. FIS2004-0912) and Generalitat Valenciana, Spain (Grant No. ACOMP07/03). SB also acknowledges the support of
+the UPV through the project 20070307.

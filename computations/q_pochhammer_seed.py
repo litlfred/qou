@@ -103,8 +103,8 @@ Corrected the same hour, by running the measurement it was added to make.)
 
 Removal record for `pl-jsj-mass-integration-equivalence` (owner ruling
 "a1", relayed 2026-10-10: the carrier stays REMOVED and citations point at the
-record). Deleted in f86ea9d7ac, 2026-05-18, "content(thimble): demote
-def:picard-lefschetz-thimble + delete redundant bridges" -- Phase C of the
+record). Deleted in f86ea9d7ac, 2026-05-18, "content(thimble): demote the
+`picard-lefschetz-thimble` definition + delete redundant bridges" (subject paraphrased; full label in docs/audits/2026-10-11-retired-label-records.md) -- Phase C of the
 thimble simplification, on the stated ground that "PL is no longer rigorously
 needed after Tier 1+2 (algebraic-residue swap on principal Galois orbit +
 Moebius-from-binomials derivation)". It was a REDUNDANT bridge, not a lost one.

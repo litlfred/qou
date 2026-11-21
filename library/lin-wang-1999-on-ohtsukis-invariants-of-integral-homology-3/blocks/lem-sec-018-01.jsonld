@@ -3,7 +3,7 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/lem-sec-018-01",
@@ -12,10 +12,20 @@
     "doco:Section"
   ],
   "kind": "lemma",
-  "pageStart": 16,
-  "pageEnd": 17,
+  "pageStart": 19,
+  "pageEnd": 24,
   "text": "lem-sec-018-01.md",
   "derivedFrom": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/sections/sec-018",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3",
-  "provenance": "ingested"
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "7'",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/sec-018-e-zrz-stabilizes-an-a-fixed-integer-for-all-suff.md (p. 19-24) citing [1]",
+    "claim_id": "lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3#lemma:7'",
+    "lean_status": "unformalized"
+  }
 }

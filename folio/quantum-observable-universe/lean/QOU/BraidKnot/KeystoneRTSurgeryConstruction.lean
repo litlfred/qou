@@ -35,7 +35,7 @@ them, it does not assume it. No fit; nothing wired; L2 unchanged (2/7).
 Base ring (§7c): generic `{R : Type*} [Field R]` — the surgery sum is algebra; the archimedean `q₀`
 evaluation of `d_q` lives downstream past the wall.
 
--- Ref: [manuscript] docs/coordination/s5-so3-keystone.md
+-- Ref: [leitner2026] docs/coordination/s5-so3-keystone.md
 -- Ref: [beasleywitten2005] https://doi.org/10.4310/jdg/1143593746
 -/
 import QOU.BraidKnot.BWVacuumRowIsHecke
@@ -68,7 +68,7 @@ framed colored-link invariant weighted by the S-matrix vacuum row `S_{0λ}`. Thi
 Turaev's surgery formula `τ(M) = Σ_λ S_{0λ} · F(L, λ)` (global framing normaliser dropped). The
 sum is over the modular category's simple objects; the **per-label weight is the vacuum row**.
 
--- Ref: [manuscript] Reshetikhin–Turaev surgery formula (Turaev 1994, ch. II). -/
+-- Ref: [leitner2026] Reshetikhin–Turaev surgery formula (Turaev 1994, ch. II). -/
 def partitionSum : R := ∑ lam ∈ M.labels, M.toVerlindeVacuumRow.S0 lam * M.colInv lam
 
 /-- **The RT per-label weight is the modular S-matrix vacuum row `d_λ/D`.** Rewriting the assembly

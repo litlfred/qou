@@ -47,11 +47,21 @@ from __future__ import annotations
 
 import ast
 import io
+import re
 import tokenize
 from typing import Iterable, Optional
 
-__all__ = ["code_only", "blank_declaration_prose", "blank_message_strings",
-           "code_only_ast"]
+__all__ = [
+    "code_only",
+    "code_and_numeric_strings_only",
+    "identifiers_only",
+    "blank_declaration_prose",
+    "blank_message_strings",
+    "code_only_ast",
+]
+
+_NUM_STR_RX = re.compile(r"^[+-]?(?:\d+\.\d*|\.\d+|\d+)(?:[eE][+-]?\d+)?$")
+_FSTRING_MIDDLE = getattr(tokenize, "FSTRING_MIDDLE", None)
 
 #: Calls whose string argument DOES the thing rather than describes it. A
 #: filename inside `open(...)`/`witness_path(...)` is a real read; the same
@@ -104,7 +114,7 @@ def code_only(src: str) -> str:
         for tok in tokenize.generate_tokens(io.StringIO(src).readline):
             is_comment = tok.type == tokenize.COMMENT
             is_docstr = (tok.type == tokenize.STRING
-                         and tok.string[:3] in ('"""', "'''"))
+                         and tok.string.lstrip("rRbBuUfF")[:3] in ('"""', "'''"))
             if not (is_comment or is_docstr):
                 continue
             beg, end = offset(*tok.start), offset(*tok.end)
@@ -113,6 +123,83 @@ def code_only(src: str) -> str:
                     out[i] = " "
     except (tokenize.TokenError, IndentationError, SyntaxError):
         return src
+    return "".join(out)
+
+
+def code_and_numeric_strings_only(src: str) -> str:
+    """`code_only(src)` with non-numeric prose strings blanked in place.
+
+    Preserves exact byte length, line count, and column offsets. Single- or
+    double-quoted string literals whose stripped interior is a pure numeric
+    constant (e.g. `mp.mpf("0.78233341")` or `Q_STR = "1.109978582751"`)
+    survive intact; English sentences and format-string prose (e.g.
+    `"this module does NOT use the β-decay Q-value 0.78233341 MeV as E_0"` or
+    `f"with e^2 = 1.43996 MeV.fm: {x}"`) are overwritten with spaces.
+    """
+    s = code_only(src)
+    out = list(s)
+    lines = s.splitlines(keepends=True)
+    starts = [0] * (len(lines) + 1)
+    for i, ln in enumerate(lines):
+        starts[i + 1] = starts[i] + len(ln)
+
+    def offset(row: int, col: int) -> int:
+        if row - 1 >= len(starts):
+            return len(out)
+        return min(starts[row - 1] + col, len(out))
+
+    try:
+        for tok in tokenize.generate_tokens(io.StringIO(s).readline):
+            if tok.type == tokenize.STRING:
+                inner = tok.string.lstrip("rRbBuUfF")
+                if len(inner) >= 2 and inner[0] in ('"', "'") and inner[-1] == inner[0]:
+                    if _NUM_STR_RX.match(inner[1:-1].strip()):
+                        continue
+            elif _FSTRING_MIDDLE is not None and tok.type == _FSTRING_MIDDLE:
+                if _NUM_STR_RX.match(tok.string.strip()):
+                    continue
+            else:
+                continue
+            beg, end = offset(*tok.start), offset(*tok.end)
+            for i in range(beg, end):
+                if out[i] != "\n":
+                    out[i] = " "
+    except (tokenize.TokenError, IndentationError, SyntaxError):
+        return s
+    return "".join(out)
+
+
+def identifiers_only(src: str) -> str:
+    """`src` with ALL comments and string literals blanked, offsets intact.
+
+    Use when scanning for Python identifiers (`M_P_MEV`, `Q_beta`, `Vol_hyp`)
+    that must never match inside a comment, docstring, or string literal.
+    """
+    out = list(src)
+    lines = src.splitlines(keepends=True)
+    starts = [0] * (len(lines) + 1)
+    for i, ln in enumerate(lines):
+        starts[i + 1] = starts[i] + len(ln)
+
+    def offset(row: int, col: int) -> int:
+        if row - 1 >= len(starts):
+            return len(out)
+        return min(starts[row - 1] + col, len(out))
+
+    try:
+        for tok in tokenize.generate_tokens(io.StringIO(src).readline):
+            is_str_or_comment = (
+                tok.type in (tokenize.COMMENT, tokenize.STRING)
+                or (_FSTRING_MIDDLE is not None and tok.type == _FSTRING_MIDDLE)
+            )
+            if not is_str_or_comment:
+                continue
+            beg, end = offset(*tok.start), offset(*tok.end)
+            for i in range(beg, end):
+                if out[i] != "\n":
+                    out[i] = " "
+    except (tokenize.TokenError, IndentationError, SyntaxError):
+        return code_only(src)
     return "".join(out)
 
 
@@ -287,6 +374,27 @@ def _selftest() -> int:
             fails.append("raise-guard message was not blanked")
         if "reading q-pinning" in got:
             fails.append("print message was not blanked")
+
+    prose_lit_src = (
+        'note = "this module does NOT use the β-decay Q-value 0.78233341 MeV as E_0"\n'
+        'val = mp.mpf("0.78233341")\n'
+        'msg = f"with e^2 = 1.43996 MeV.fm: {mp.mpf(\'137.0359991\')}"\n'
+    )
+    cn = code_and_numeric_strings_only(prose_lit_src)
+    if len(cn) != len(prose_lit_src) or cn.count("\n") != prose_lit_src.count("\n"):
+        fails.append("code_and_numeric_strings_only corrupted length or newlines")
+    cn_lines = cn.splitlines()
+    if "0.78233341" in cn_lines[0]:
+        fails.append("code_and_numeric_strings_only left prose denial literal matchable")
+    if "0.78233341" not in cn_lines[1]:
+        fails.append("code_and_numeric_strings_only blanked real mpf numeric string")
+    if "1.43996" in cn_lines[2] or "137.0359991" not in cn_lines[2]:
+        fails.append("code_and_numeric_strings_only f-string split failed")
+
+    id_only = identifiers_only('s = "Q_beta is not used"\nx = Q_beta\n')
+    id_lines = id_only.splitlines()
+    if "Q_beta" in id_lines[0] or "Q_beta" not in id_lines[1]:
+        fails.append("identifiers_only failed to separate string from identifier")
     for f in fails:
         print(f"  FAIL {f}")
     print("selftest:", "PASS" if not fails else f"{len(fails)} FAILURE(S)")

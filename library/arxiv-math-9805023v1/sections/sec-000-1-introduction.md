@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9805023v1
-doc_title: "arXiv:math/9805023v1 [math.CA] 6 May 1998"
+doc_title: "q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations"
 section_id: sec-000-1-introduction
 section_title: "Introduction."
 section_number: 1
@@ -8,6 +8,7 @@ pages: 1-3
 source_pdf: 9805023v1.pdf
 source_sha256: ea8758b2a2bf9d85
 toc_source: inferred
+doc_brief: "q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations — The q-Laguerre polynomials correspond to an indetermined moment problem."
 ---
 This paper answers two seemingly diﬀerent questions, which both originated from
 quantum groups. First, consider the system of Moak’s [21] q-Laguerre polynomials with

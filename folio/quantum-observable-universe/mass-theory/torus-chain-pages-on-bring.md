@@ -8,7 +8,7 @@ that fixes the genus of [Bring's surface](#def:brings-surface) is
 $\operatorname{rank} H_1(\mathrm{Seifert}(T_{2,s})) = (s-1)/2 \le g$ at the
 forced $g = 4$, the pages of $T(2,3)$, $T(2,5)$ and $T(2,7)$ all embed on
 Bring's surface, and $T(2,9)$ is the last of the family that does
-(`pages_embed_on_bring`, machine-checked).
+(proved).
 
 The complement of $T(2, 2g+1)$ is the unit tangent bundle of the
 $(2, 2g+1, \infty)$ triangle orbifold, $\mathrm{PSL}(2,\mathbb{R})/\Delta(2, 2g+1, \infty)$;
@@ -26,8 +26,7 @@ Two limits. The frame is the split real form $\mathfrak{sl}_2(\mathbb{R})$,
 whereas the Reeb triad modelled on the Bring cone link elsewhere in this
 manuscript is the compact form $\mathfrak{su}(2)$; a genus-$4$ unit tangent
 bundle has $\widetilde{\mathrm{SL}_2}$ geometry and admits no 3-Sasakian
-structure, so which real form is intended there is a question for that lemma
-(`docs/audits/2026-09-03-bring-cone-link-is-the-unit-tangent-bundle.md`).
+structure, so which real form is intended there is a question for that lemma.
 And none of this reaches the twist: the framing datum the binding gap needs is
 the torsion integral, which neither the pages nor the circle pencil carry by
 themselves.

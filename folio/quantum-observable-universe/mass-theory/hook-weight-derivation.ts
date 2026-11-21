@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:hook-weight-derivation",
+export default conjecture({
+  label: "conj:hook-weight-derivation",
   title:
     "Hook weight $\\beta_4 = -\\tfrac{1}{2} w_{[2,2]}(4)$ from baryon Wedderburn-Artin decomposition",
   lean: { ref: "qou:QOU.BaryonWeight.beta4_hook",
@@ -12,6 +12,7 @@ export default proposition({
     "conj:shell-transition-knot",
   ],
   authorNotes: [
+    { kind: "status", date: "2026-11-21", body: "Demoted from `conj:hook-weight-derivation` (owner, #8526, 2026-11-21; bean qou-tm3c). In the Lean, $\\beta_4 = -\\tfrac12 w_{[2,2]}(4)$ is the definition of $\\beta_4$. That this is the coefficient of $\\Phi_4$ in the four-channel mass formula is not derived. The weight $w_{[2,2]}(4) = ([4]_q/[2]_q)^2/[4]_q!$ is itself computable." },
     {
       kind: "note",
       date: "2026-08-08",

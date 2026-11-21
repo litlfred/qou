@@ -1,0 +1,47 @@
+The descendant colored Jones polynomials 2315
+
+When x = 1, these coincide (after a suitable Q[q*] linear combination) with
+the elements in the top row of an experimentally found matrix in [GZ]. The
+descendants satisfy the inhomogeneous linear q-difference equation
+
+(10) grit DJA) (x, g) +4 (1 _ (x 4+ at)q™) DIJAU (x, q)
++4 Gg? DID (a, ) =1
+
+for m € Z. Equation (10) takes the form BY’ DJ‘™") = 1 where
+(11) BE (Sin, Qins 4) = QmSin + (L = (@ + 27")Qmn) Sim + Qn Sin
+
+Note that after setting ¢q = 1 and x = 1 and Q,, = 1 and renaming S,,
+to be L, we have B4(L,1,1,1) = L? — L +1 has roots generating the two
+embeddings of the trace field Q(./—3) of the 4; knot.
+
+A more interesting example is the 52 knot, where the descendant col-
+ored Jones polynomials (or their evaluation at qg = 1) is a one-parameter
+q-holonomic module, whereas the two-dimensional state-sum formula for the
+Kashaev invariant leads to a two-parameter g-holonomic module considered
+in [GZ] in relation to the Refined Quantum Modularity Conjecture. The co-
+incidence of the spanning space of the two modules is no longer obvious, but
+appears to be true. Another feature of this knot is that the recursion for the
+descendant colored Jones polynomials has higher degree (precisely, two more)
+than the degree of the recursion of the colored Jones polynomials, and the
+degree of the A-polynomial of the knot. This excess degree and its relation
+to the character variety of SL2(C)-representations is a challenging question
+discussed further below.
+
+We first recall the Habiro polynomials of the 52. The latter is the twist
+knot Ky and its Habiro polynomials were given by Habiro [Hab02]; see also
+Masbaum [Mas03] for a detailed discussion. In fact, the Habiro polynomials
+of 52 are given explicitly by
+
+s=0 8
+
+k
+(2) HG) = telat yo gern (f}
+q
+
+where ($) (¢: Da/((4; 2)0(9; Go-a) is the g-binomial function. In [GS06], it
+
+=
+was shown that H, = H;?(q) satisfies the linear q-difference equation
+(18) Hoa) +a tq? +g) HE (9)
+
+— fh 7*(-1 4 q') HP (q) = 0

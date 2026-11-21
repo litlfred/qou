@@ -115,7 +115,7 @@ content is an ordering fact.
 
 Bean `qou-edt7` (negative half), `qou-brng` (the amplitude question it narrows).
 
--- Ref: [manuscript] folio/quantum-observable-universe/mass-theory/bk-coordination-multiplicity.md
+-- Ref: [leitner2026] folio/quantum-observable-universe/mass-theory/bk-coordination-multiplicity.md
 -/
 import Mathlib.Tactic
 set_option linter.unusedSectionVars false

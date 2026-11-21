@@ -1,0 +1,86 @@
+A.2 Vector fields and differential forms 445
+
+to R and return its partial derivatives evaluated at 2 = p. Then
+
+m
+
+0
+T, a ={5 Ck = veal
+° fi OX Ip
+
+and we can identify T,(R”) = R” by the mapping
+
+m a
+2 Ox
+
+k=1
+
+© ceR”.
+
+Pp
+
+4
+
+If f : M— M’ is a smooth map of manifolds then the differential of f at p
+is the map f. : TpM — Typ)M’ that takes the tangent vector X € TpM and
+returns the tangent vector f,X € Ty(p)M’ such that
+
+(f.X\Vg) = X(go f)€R_ forall smooth g: M’ > Rat f(p).
+
+Exercise A.6. Prove that f, is an isomorphism of vector spaces when f is a
+diffeomorphism.
+
+If (U, ¢) is a chart of M containing p then ¢ is a diffeomorphism from U to
+R”, so ¢, is an isomorphism from T,M to Typ)R” = R”. This proves that the
+dimension of the tangent space at any point of a manifold is the same as the
+dimension of the manifold.
+
+If x1,...,%m are the usual coordinates of R” then, as seen in Example A.8,
+
+a a
+
+the maps Flap om
+
+) form a natural basis for Ts:p)R”. Thus, the tan-
+
+sol
+
+form a basis for T, M. Because ¢ maps into R”, we can write 6 = (¢1,.--, $m)
+for smooth ¢, : U — R. To express the dependence of this basis on p and
+
+o, we write 0, = | andcall 2] ,..., om the standard basis for T,M
+p in
+
+55% |p IG, |,
+with respect to the chart (U, g). Explicitly, for any smooth function g € C7(M)
+we have go ¢7! : R™ — Rand
+
+0
+
+Ob:
+
+To ease notation we sometimes suppress the basepoint p when it is understood,
+
+H(D.
+gent vectors 0),...,0,, defined by
+
+an=0.'( 2
+
+Oxx
+
+- ER.
+
+0
+(g) = =—(g0¢
+aw=d(p)
+
+Oxy
+
+Pp
+
+writing the standard basis as 0/0¢,;, and also use the shorthand * (g) =
+P
+
+ag
+
+36; P)-

@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1409.1198v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "13ecb6c28bab674467cdc2252e9883921ddfc0f0ff225e5f5944a32c58288911",
+  "file": "1409.1198v1.pdf"
+ },
+ "provenance": {
+  "title": "TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR",
+  "authors": "ANNA BELIAKOVA, ZAUR GULIYEV, KAZUO HABIRO, AND AARON D. LAUDA",
+  "arxiv": {
+   "id": "1409.1198",
+   "version": "1",
+   "primary_class": "math.QA",
+   "stamp_date": "3 Sep 2014"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

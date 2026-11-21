@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0307092v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0307092v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "0307092v2",
+  "title": "Extended Bloch group and the Cheeger–Chern–Simons class",
   "contains": [
+    "library/0307092v2/sections/sec-front-matter",
     "library/0307092v2/sections/sec-000",
     "library/0307092v2/sections/sec-001",
     "library/0307092v2/sections/sec-002",
@@ -19,13 +20,25 @@
     "library/0307092v2/sections/sec-005",
     "library/0307092v2/sections/sec-006",
     "library/0307092v2/sections/sec-007",
-    "library/0307092v2/sections/sec-008"
+    "library/0307092v2/sections/sec-008",
+    "library/0307092v2/sections/sec-009",
+    "library/0307092v2/sections/sec-010",
+    "library/0307092v2/sections/sec-011",
+    "library/0307092v2/sections/sec-012",
+    "library/0307092v2/sections/sec-013",
+    "library/0307092v2/sections/sec-014",
+    "library/0307092v2/sections/sec-015",
+    "library/0307092v2/sections/sec-016",
+    "library/0307092v2/sections/sec-017",
+    "library/0307092v2/sections/sec-018"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "0307092v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0307092v2.pdf",
     "source_sha256": "de2f7ddec49b2ce6ccafd5a9a0be350972ffcf2014a6a3601a6d650df0018650",
     "pages": 62,

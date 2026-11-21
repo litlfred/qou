@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0807.2679v1
-doc_title: "A cabling formula for the colored Jones polynomial Roland van der Veen"
+doc_title: "A cabling formula for the colored Jones polynomial"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
 pages: 1-4
 source_pdf: 0807.2679v1.pdf
 source_sha256: 69ef10f8e70fc6f6
-doc_brief: "A cabling formula for the colored Jones polynomial Roland van der Veen — We prove an explicit cabling formula for the colored Jones po lynomial."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.973
+latex_prose_ratio: 0.95
+latex_coverage_ratio: 0.996
+doc_brief: "A cabling formula for the colored Jones polynomial — We prove an explicit cabling formula for the colored Jones polynomial."
 ---
 In this note we study how the unnormalized colored Jones polynomial or quantum $sl_2$ invariant of a link changes under the operation of cabling. We work with a banded link or ribbon link $L$ so that every component is an embedded annulus. Given a diagram $D$ of a banded link inside an annulus we can construct a satellite of $L$ by embedding $D$ into a component $L_i$ of $L$. The $(r,s)$-cabling operation is the special case where we take $D$ to be the closure of the $(r,s)$-torus braid $B_s^r = (\sigma_1\cdots \sigma_{s-1})^r$, where $r\in \mathbb{Z},s\in\mathbb{N}$. To turn $B^r_s$ into a banded tangle we use the blackboard framing and add a positive curl to every overpassing arc, see figure 1 below. The banded link obtained by $(r,s)$-cabling the component $L_i$ of a banded link $L$ will be denoted by $L_{i;s}^r$, we will also call it the $(i;r,s)$-cabling of $L$.
 

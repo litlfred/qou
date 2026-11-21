@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-front-matter",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Front matter",
+  "pageStart": 1,
+  "pageEnd": 1,
+  "contains": [
+    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/blocks/prose-sec-front-matter"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/manifest.jsonld",
+  "provenance": "ingested"
+}

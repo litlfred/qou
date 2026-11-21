@@ -1,0 +1,1652 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1003.4808v2",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p003-1",
+   "page": 3,
+   "mark": "1",
+   "text": "ThemostcommonnormalizationfortheunknotseeninthemathematicsliteratureisJ( ) = 1. For the connection with topological quantum ﬁeld theory, however, (1.3) is much more natural.",
+   "marks": [
+    {
+     "page": 3,
+     "context": "alongwiththenormalization"
+    }
+   ],
+   "block": "library/arxiv-1003.4808v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p003-2",
+   "page": 3,
+   "mark": "2",
+   "text": "Thisdisplacementmustbedoneinawaythatproduceszerolinkingnumberbetweenthevarious copies.",
+   "marks": [
+    {
+     "page": 3,
+     "context": "theknotorlink,slightlydisplacedawayfromoneanother"
+    }
+   ],
+   "block": "library/arxiv-1003.4808v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p004-1",
+   "page": 4,
+   "mark": "3",
+   "text": "Recall that a “G-connection” on a principal G-bundle E→Mcan be written locally as a g-valued one-form A. The bundle E is typically taken to be trivial in the present context, E = G × M. A gauge transformation (a change of coordinates on E) induced by an element g ∈Γ(E) acts locally on the connection as A 7→g−1Ag + g−1dg.",
+   "marks": [
+    {
+     "page": 3,
+     "context": "onespolynomialaboveisobtainedby“coloring”theknot(orlink)KinS"
+    },
+    {
+     "page": 4,
+     "context": "J4(K; q) = J(K"
+    },
+    {
+     "page": 4,
+     "context": "knotcomplementsinS"
+    },
+    {
+     "page": 4,
+     "context": "posethatMallowsaspinstructure(asallknot/linkcomplementsinS"
+    },
+    {
+     "page": 4,
+     "context": "considerﬂatSL(2, C)connectionsonMinplaceofhyperbolicmetrics."
+    }
+   ],
+   "block": "library/arxiv-1003.4808v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "2",
+   "text": "πi",
+   "marks": [
+    {
+     "page": 4,
+     "context": "J3(K; q) = J(K"
+    },
+    {
+     "page": 5,
+     "context": "ICS(A)isonlywell-deﬁneduptoshiftsof8π"
+    },
+    {
+     "page": 5,
+     "context": "(A)isonlywell-deﬁneduptoshiftsof8π2,leadingtoanambiguityof4π"
+    }
+   ],
+   "block": "library/arxiv-1003.4808v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p005-4",
+   "page": 5,
+   "mark": "4",
+   "text": "Intermsofrepresentationtheory,theintegerkisidentiﬁedastheleveloftheaﬃneLiealgebra [ su(2)k. The representation theory of the quantum group Uq(su(2)) also (crucially) simpliﬁes greatly when q is a root of unity, becoming essentially equivalent to the representation theory of [ su(2)k. See also Sections 3.3.1-3.3.2.",
+   "marks": [
+    {
+     "page": 5,
+     "context": "Strictlyspeaking,thisvariableshouldbearootofunity"
+    }
+   ],
+   "block": "library/arxiv-1003.4808v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p006-3",
+   "page": 6,
+   "mark": "5",
+   "text": "Onemethodinvolvesanalyticallycontinuingthesummandasaratioofquantumdilogarithm functions (cf. [17, 11]), approximating the sum by an integral, and evaluating it at its saddle point.",
+   "marks": [
+    {
+     "page": 6,
+     "context": "(andaninformativeexercise"
+    }
+   ],
+   "block": "library/arxiv-1003.4808v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p008-1",
+   "page": 8,
+   "mark": "6",
+   "text": "Theactualcomplexiﬁedvolumethatappearsintheliteratureonhyperbolicgeometry(cf.[19, 20, 21]) is related to ICS(A(u)) as Vol(S3\\K; u) + iCS(S3\\K; u) = i",
+   "marks": [
+    {
+     "page": 8,
+     "context": "(ev′, eu′) = (evhyp(u), eu),asinFigure2b."
+    },
+    {
+     "page": 8,
+     "context": "A(ℓ, m) = (ℓ−1)(m4ℓ2−(1 −m2−2m4−m"
+    }
+   ],
+   "block": "library/arxiv-1003.4808v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p008-2",
+   "page": 8,
+   "mark": "2",
+   "text": "ICS(A(u)) + 2iv(u)Re(u) −2πu + 2π2i . (2.9) Note that ICS(A(u)) is analytic in u, whereas Vol(u) + iCS(u) is not.",
+   "marks": [
+    {
+     "page": 7,
+     "context": "(orq→1,qN= e"
+    },
+    {
+     "page": 8,
+     "context": "A(ℓ, m) = (ℓ−1)(m4ℓ"
+    },
+    {
+     "page": 8,
+     "context": "A(ℓ, m) = (ℓ−1)(m4ℓ2−(1 −m"
+    },
+    {
+     "page": 8,
+     "context": "A(ℓ, m) = (ℓ−1)(m4ℓ2−(1 −m2−2m4−m6+ m8)ℓ+ m4ℓ"
+    },
+    {
+     "page": 8,
+     "context": "where x = epis the solution to m3x"
+    },
+    {
+     "page": 8,
+     "context": "where x = epis the solution to m3x2+(1−m"
+    }
+   ],
+   "block": "library/arxiv-1003.4808v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p009-1",
+   "page": 9,
+   "mark": "2",
+   "text": "πi",
+   "marks": [
+    {
+     "page": 9,
+     "context": "q= e"
+    }
+   ],
+   "block": "library/arxiv-1003.4808v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p009-2",
+   "page": 9,
+   "mark": "7",
+   "text": "WethankE.Wittenforusefulobservationsonthissubject.",
+   "marks": [
+    {
+     "page": 9,
+     "context": "continuation."
+    }
+   ],
+   "block": "library/arxiv-1003.4808v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p011-1",
+   "page": 11,
+   "mark": "2",
+   "text": "πi",
+   "marks": [
+    {
+     "page": 10,
+     "context": "4π"
+    },
+    {
+     "page": 10,
+     "context": "−m−4+ 2m−2+ 1 + 2m"
+    },
+    {
+     "page": 10,
+     "context": "1 −m"
+    },
+    {
+     "page": 10,
+     "context": "12(4π"
+    },
+    {
+     "page": 10,
+     "context": "1 −m"
+    },
+    {
+     "page": 10,
+     "context": "(4π"
+    }
+   ],
+   "block": "library/arxiv-1003.4808v2/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p013-1",
+   "page": 13,
+   "mark": "8",
+   "text": "Tobecompletelyprecise,theintegerkusedthroughouttheselecturesisthesumoftheChern- Simons level and the dual Coxeter number of G.",
+   "marks": [
+    {
+     "page": 13,
+     "context": "constantofthecompactChern-Simonstheory."
+    }
+   ],
+   "block": "library/arxiv-1003.4808v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p014-1",
+   "page": 14,
+   "mark": "2",
+   "text": "πi",
+   "marks": [
+    {
+     "page": 13,
+     "context": "(q= e"
+    },
+    {
+     "page": 13,
+     "context": "Theintegerk(appearinginq=e"
+    }
+   ],
+   "block": "library/arxiv-1003.4808v2/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p018-1",
+   "page": 18,
+   "mark": "9",
+   "text": "Thereisanambiguityinchoosingθ,directlyrelatedtothechoiceofcoordinatesofM(positions versus momenta) that elements of H are to depend on.",
+   "marks": [
+    {
+     "page": 18,
+     "context": "andω|L= 0.Letθbe1-form(calledaLiouville1-form"
+    }
+   ],
+   "block": "library/arxiv-1003.4808v2/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p024-1",
+   "page": 24,
+   "mark": "10",
+   "text": "IfGisnotcompact,theremaybeelementsthatarenotsodiagonalizable,buttheyformlower- dimensional components of M which should not be considered in the quantization.",
+   "marks": [
+    {
+     "page": 24,
+     "context": "diagonalized"
+    }
+   ],
+   "block": "library/arxiv-1003.4808v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p025-1",
+   "page": 25,
+   "mark": "2",
+   "text": "πi",
+   "marks": [
+    {
+     "page": 24,
+     "context": "M\\K,with∂M= T"
+    },
+    {
+     "page": 24,
+     "context": "T"
+    },
+    {
+     "page": 24,
+     "context": "T2issimplythespaceofﬂatG-connectionsonT"
+    },
+    {
+     "page": 24,
+     "context": "M = Mﬂat(G; T"
+    },
+    {
+     "page": 24,
+     "context": "representations:π1(T"
+    },
+    {
+     "page": 24,
+     "context": "The fundamental group π1(T"
+    },
+    {
+     "page": 24,
+     "context": "M ≃(Tr× Tr)/W= T"
+    },
+    {
+     "page": 24,
+     "context": "T"
+    },
+    {
+     "page": 25,
+     "context": "k,"
+    },
+    {
+     "page": 25,
+     "context": "k..., iπ,andthespaceHT"
+    },
+    {
+     "page": 25,
+     "context": "M\\K(with∂M=T"
+    },
+    {
+     "page": 25,
+     "context": "ate”M.ThismanifoldLissimplydeﬁnedasthesetofﬂatconnectionsonT"
+    }
+   ],
+   "block": "library/arxiv-1003.4808v2/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p029-1",
+   "page": 29,
+   "mark": "2",
+   "text": "πiu",
+   "marks": [
+    {
+     "page": 29,
+     "context": "byamultiplicativefactore"
+    }
+   ],
+   "block": "library/arxiv-1003.4808v2/blocks/prose-sec-013"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p005-2",
+   "page": 5,
+   "mark": "2",
+   "text": "π",
+   "block": "library/arxiv-1003.4808v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p005-3",
+   "page": 5,
+   "mark": "2",
+   "text": "πi",
+   "block": "library/arxiv-1003.4808v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "2",
+   "text": "πi",
+   "block": "library/arxiv-1003.4808v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p006-2",
+   "page": 6,
+   "mark": "2",
+   "text": "πi",
+   "block": "library/arxiv-1003.4808v2/blocks/prose-sec-000"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "umeconjecturestatesthatforahyperbolicknotKinthethree-sphereS"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "perbolic volume of the knot complement S"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "LetKbeanorientedknot(orlink)inthethree-sphereS"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "oftheknotcomplementS"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "hyperbolicvolumeofS"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "JR(K"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "VN(K, q) =JN(K;"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "Vol(S"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "whereVol(∆)=Im Li2(e"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "hedron.TheChern-SimonsinvariantCS(S"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "= Vol(S"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "toconsidernotjusthyperbolicknotsinS"
+  },
+  {
+   "page": 7,
+   "mark": "u",
+   "context": "(orq→1,qN= e2"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "k,N→∞JN(K;"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "k,N→∞JN(K; q)"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "thehyperbolicstructureonaknotcomplementS"
+  },
+  {
+   "page": 7,
+   "mark": "u",
+   "context": "\u0012e"
+  },
+  {
+   "page": 7,
+   "mark": "u",
+   "context": "(Aslongase"
+  },
+  {
+   "page": 7,
+   "mark": "u",
+   "context": "matrixdiag(e"
+  },
+  {
+   "page": 7,
+   "mark": "u",
+   "context": "haveholonomiesconjugatetodiag(e"
+  },
+  {
+   "page": 7,
+   "mark": "v",
+   "context": "haveholonomiesconjugatetodiag(eu, e−u)anddiag(e"
+  },
+  {
+   "page": 7,
+   "mark": "v",
+   "context": "ℓ= e"
+  },
+  {
+   "page": 7,
+   "mark": "u",
+   "context": "m = e"
+  },
+  {
+   "page": 7,
+   "mark": "u",
+   "context": "Givenaﬁxede"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "mentS"
+  },
+  {
+   "page": 8,
+   "mark": "v",
+   "context": "isaone-formonthecurveA(e"
+  },
+  {
+   "page": 8,
+   "mark": "u",
+   "context": "isaone-formonthecurveA(ev′, e"
+  },
+  {
+   "page": 8,
+   "mark": "v",
+   "context": "thecompletehyperbolicstructureat(e"
+  },
+  {
+   "page": 8,
+   "mark": "u",
+   "context": "thecompletehyperbolicstructureat(ev′, e"
+  },
+  {
+   "page": 8,
+   "mark": "v",
+   "context": "(e"
+  },
+  {
+   "page": 8,
+   "mark": "u",
+   "context": "(ev′, e"
+  },
+  {
+   "page": 8,
+   "mark": "v",
+   "context": "(ev′, eu′) = (e"
+  },
+  {
+   "page": 8,
+   "mark": "u",
+   "context": "(ev′, eu′) = (evhyp(u), e"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "(1 −q"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "A(ℓ, m) = (ℓ−1)(m"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "A(ℓ, m) = (ℓ−1)(m4ℓ2−(1 −m2−2m"
+  },
+  {
+   "page": 8,
+   "mark": "8",
+   "context": "A(ℓ, m) = (ℓ−1)(m4ℓ2−(1 −m2−2m4−m6+ m"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "A(ℓ, m) = (ℓ−1)(m4ℓ2−(1 −m2−2m4−m6+ m8)ℓ+ m"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "ICS(A(u)) = 2Li2(e−p−u) −2Li2(e"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "where x = e"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "where x = epis the solution to m"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "where x = epis the solution to m3x2+(1−m2−m"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "where x = epis the solution to m3x2+(1−m2−m4)x+m"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Sn(u)ℏ"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Sn(iπ)ℏ"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "˜Snℏ"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "−m−4+ 2m−2+ 1 + 2m2−m"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "−i(T41)"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "1 −m2−2m"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "1 −m2−2m4+ 15m"
+  },
+  {
+   "page": 10,
+   "mark": "8",
+   "context": "1 −m2−2m4+ 15m6−2m"
+  },
+  {
+   "page": 10,
+   "mark": "10",
+   "context": "1 −m2−2m4+ 15m6−2m8−m"
+  },
+  {
+   "page": 10,
+   "mark": "12",
+   "context": "1 −m2−2m4+ 15m6−2m8−m10+ m"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "12(4π2)"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "12(4π2)3m"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "S3(u) =−2(T"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "S3(u) =−2(T4"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "S3(u) =−2(T41)"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "1 −m2−2m"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "1 −m2−2m4+ 5m"
+  },
+  {
+   "page": 10,
+   "mark": "8",
+   "context": "1 −m2−2m4+ 5m6−2m"
+  },
+  {
+   "page": 10,
+   "mark": "10",
+   "context": "1 −m2−2m4+ 5m6−2m8−m"
+  },
+  {
+   "page": 10,
+   "mark": "12",
+   "context": "1 −m2−2m4+ 5m6−2m8−m10+ m"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "(4π2)"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "(4π2)6m"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "Z(S"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "JN(K; q)∼Z(S"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "JN(K; q)∼Z(S3\\K; ℏ; u)/Z(S"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "JN(K; q)∼Z(S3\\K; ℏ; u)/Z(S3; ℏ),whereZ(S"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "functionofthethree-sphereS"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "knotinS"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "Rλ(K;"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "R(K;"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "R(K; q)dependson"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "R(K; q)dependsonarootofunity"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "qλ∗+ρ∗= e"
+  },
+  {
+   "page": 12,
+   "mark": "u",
+   "context": "qλ∗+ρ∗= e2"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "q= e"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "R(K;"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "Sn(u)ℏ"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "Rλ(K;"
+  },
+  {
+   "page": 12,
+   "mark": "u",
+   "context": "Hol(µ) = m = e"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "whereθ∼−P"
+  },
+  {
+   "page": 12,
+   "mark": "v",
+   "context": "i=1"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i=1v"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i=1vi du"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "i=1vi dui+ exactis a diﬀerential on an"
+  },
+  {
+   "page": 12,
+   "mark": "v",
+   "context": "cutoutbyrequationsAj(e"
+  },
+  {
+   "page": 12,
+   "mark": "u",
+   "context": "cutoutbyrequationsAj(ev, e"
+  },
+  {
+   "page": 12,
+   "mark": "v",
+   "context": "utbyrequationsAj(ev, eu) = 0,withr= rank(G).TheequationsAj(e"
+  },
+  {
+   "page": 12,
+   "mark": "u",
+   "context": "requationsAj(ev, eu) = 0,withr= rank(G).TheequationsAj(ev, e"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "describethemodulispaceofﬂatGCconnectionsonS"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "ofcohomologyofS"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "{Ra}(M, L;"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "{Ra}(M, L; q) =ZG(M, L; {R"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "JN(K; q) =ZSU(2)(S"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "ZSU(2)(S"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "4ℏICS({u"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "pert(M\\L; {u"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "pert(M\\L; {u"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "Rλ(K;"
+  },
+  {
+   "page": 14,
+   "mark": "u",
+   "context": "pert(M\\K;"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "closed1-manifoldS"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "categoryZ(S"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "bewrittenasN= M"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "bewrittenasN= M1 ∪Σ2M"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "bewrittenasN= M1 ∪Σ2M2,with∂M"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "bewrittenasN= M1 ∪Σ2M2,with∂M1= (−Σ"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "bewrittenasN= M1 ∪Σ2M2,with∂M1= (−Σ1) ⊔Σ"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "bewrittenasN= M1 ∪Σ2M2,with∂M1= (−Σ1) ⊔Σ2and∂M"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "bewrittenasN= M1 ∪Σ2M2,with∂M1= (−Σ1) ⊔Σ2and∂M2= (−Σ"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "bewrittenasN= M1 ∪Σ2M2,with∂M1= (−Σ1) ⊔Σ2and∂M2= (−Σ2) ⊔Σ"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "s up as a puncture on Σ and TQFT would assign the boundary S"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "unctureinΣthecategoryofrepresentationsoftheaﬃneLiealgebra bg"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "Z(S"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "Z(S1) ∼repsofbg"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "NK≃D"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "NK≃D2× S"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "timesS"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "aroundthemeridianofT"
+  },
+  {
+   "page": 17,
+   "mark": "u",
+   "context": "e"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Veryroughly,theHilbertspaceHconsistsofL"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "overMwithcurvature"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "ℏS"
+  },
+  {
+   "page": 18,
+   "mark": "x",
+   "context": "Z"
+  },
+  {
+   "page": 18,
+   "mark": "f",
+   "context": "thesefunctionstooperatorsO"
+  },
+  {
+   "page": 18,
+   "mark": "f",
+   "context": "O"
+  },
+  {
+   "page": 18,
+   "mark": "f",
+   "context": "If the O"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "ntum line bundle L →M with a unitary connection of curvature"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "2πℏω∈H"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "thechoiceofasetof"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "2dimR MvectorﬁeldsP"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "2dimR MvectorﬁeldsPj,called"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "αij∂i(f)∂j(g) +ℏ"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "+ℏ"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "ℏ"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "maphasﬁxedpointsandbothmapsaredistinctateverypoint.Therearen"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "edpointsandbothmapsaredistinctateverypoint.Therearenn(n + 1)"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "α"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "αi"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "αi4"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "αi4j"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "αi4j4(∂i3α"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "αi4j4(∂i3αi"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "αi4j4(∂i3αi1"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "αi4j4(∂i3αi1j"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "αi4j4(∂i3αi1j1)(∂j1∂j4α"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "αi4j4(∂i3αi1j1)(∂j1∂j4αi"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "αi4j4(∂i3αi1j1)(∂j1∂j4αi2"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "αi4j4(∂i3αi1j1)(∂j1∂j4αi2j"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "αi4j4(∂i3αi1j1)(∂j1∂j4αi2j2)(∂i2∂i4α"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "αi4j4(∂i3αi1j1)(∂j1∂j4αi2j2)(∂i2∂i4αi"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "αi4j4(∂i3αi1j1)(∂j1∂j4αi2j2)(∂i2∂i4αi3"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "αi4j4(∂i3αi1j1)(∂j1∂j4αi2j2)(∂i2∂i4αi3j"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "∂x"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "∂y"
+  },
+  {
+   "page": 21,
+   "mark": "x",
+   "context": "2"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "2x"
+  },
+  {
+   "page": 21,
+   "mark": "x",
+   "context": "2"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "2x"
+  },
+  {
+   "page": 21,
+   "mark": "p",
+   "context": "2"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "2p"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "classicalphasespaceMisjustR"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "inphasespace.ThisdeﬁnesaLagrangiansubmanifoldL(E)≃S"
+  },
+  {
+   "page": 21,
+   "mark": "x",
+   "context": "2"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "2x"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "Nowletusquantizethesystem.SinceH"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "θ=p dx.TheHilbertspaceHcansimplybeidentiﬁedasL"
+  },
+  {
+   "page": 22,
+   "mark": "d",
+   "context": "ˆp := Op= −iℏ"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "2(ˆ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "2(ˆx"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "2(ˆx2 +ˆ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "2(ˆx2 +ˆp"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "Z"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "Z"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "2ℏ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "2ℏx"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "2E −x"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "2ℏ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "2ℏx"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2πℏω∈H"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "2πℏω∈H2(M; Z)thatensurestheexistenceof"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "SU(2)/U(1) ≃P"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "LettingωbetheunitvolumeformonP"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "Theprequantumlinebundlewithcurvatureℏ−1ωissimplyO(λ)→P"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "thesecondStieﬀel-Whitneyclassw2(M)∈H"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "boundaryconditionsinH(T"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "oactuallycalculatepartitionfunctions,wemustunderstandwhatH(T"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "M ≃(T"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "M ≃(Tr× T"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "M ≃(Tr× Tr)/W= T2"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "Forexample,foracompactgroupG = SU(n)thephasespaceisM = (S"
+  },
+  {
+   "page": 24,
+   "mark": "u",
+   "context": "Thiscanbeexpressedmoreconcretelyincoordinates{mi, ℓi} = {e"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "Thiscanbeexpressedmoreconcretelyincoordinates{mi, ℓi} = {eu"
+  },
+  {
+   "page": 24,
+   "mark": "v",
+   "context": "scanbeexpressedmoreconcretelyincoordinates{mi, ℓi} = {eui, e"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "canbeexpressedmoreconcretelyincoordinates{mi, ℓi} = {eui, ev"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": " functions but as sections of the line bundle with curvature"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "kZ.Therefore,"
+  },
+  {
+   "page": 25,
+   "mark": "f",
+   "context": "kZ.Therefore,afunction"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "kZ.Therefore,afunctionf(u)onlytakesnonzerovaluesat"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "(andnormalizebythepartitionfunctionofS"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "Dependingonwhetherwerestricttoℓ, m∈S"
+  },
+  {
+   "page": 26,
+   "mark": "b",
+   "context": "n terms of the colored Jones polynomial JN(K, q), this means"
+  },
+  {
+   "page": 26,
+   "mark": "j",
+   "context": "bA"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "(C∗)"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "(C∗)r× (C∗)"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "complexgaugegroup,thephasespaceisM=Mﬂat(GC; T"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "2ω"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "2ω"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "T"
+  },
+  {
+   "page": 26,
+   "mark": "g",
+   "context": "T2 Tr(δA ∧δA)asin(3.34).TheconnectionAnowtakesvaluesin"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "integrablefunctionsf(u, ¯u)∈L"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "integrablefunctionsf(u, ¯u)∈L2((C∗)"
+  },
+  {
+   "page": 26,
+   "mark": "u",
+   "context": "pert(M;"
+  },
+  {
+   "page": 26,
+   "mark": "u",
+   "context": "pert(M;"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "ℏS"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "2 log ℏ+ S"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "2 log ℏ+ S1(u) + ℏS"
+  },
+  {
+   "page": 26,
+   "mark": "u",
+   "context": "pert(M;"
+  },
+  {
+   "page": 26,
+   "mark": "u",
+   "context": "pert(M;"
+  },
+  {
+   "page": 27,
+   "mark": "u",
+   "context": "eigenvaluesm=e"
+  },
+  {
+   "page": 27,
+   "mark": "u",
+   "context": "atﬁxedm=e"
+  },
+  {
+   "page": 27,
+   "mark": "j",
+   "context": "ization in the compact case.In other words, the operators OA"
+  },
+  {
+   "page": 27,
+   "mark": "j",
+   "context": "ion in the compact case.In other words, the operators OAj=bA"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 27,
+   "mark": "u",
+   "context": "pert(M;"
+  },
+  {
+   "page": 27,
+   "mark": "j",
+   "context": "bA"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "bAj(bℓ,bm, e"
+  },
+  {
+   "page": 27,
+   "mark": "u",
+   "context": "pert(M;"
+  },
+  {
+   "page": 27,
+   "mark": "b",
+   "context": "with"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "withbℓ"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "withbℓiZ(M; u; ℏ)=Z(M; u"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "withbℓiZ(M; u; ℏ)=Z(M; ui+ ℏ; ℏ)(inotherwordsbv"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "withbℓiZ(M; u; ℏ)=Z(M; ui+ ℏ; ℏ)(inotherwordsbvi=ℏ∂u"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "withbℓiZ(M; u; ℏ)=Z(M; ui+ ℏ; ℏ)(inotherwordsbvi=ℏ∂ui)andbm"
+  },
+  {
+   "page": 27,
+   "mark": "u",
+   "context": "u"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "uu"
+  },
+  {
+   "page": 27,
+   "mark": "u",
+   "context": "pert(M;"
+  },
+  {
+   "page": 27,
+   "mark": "v",
+   "context": "i"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "iv"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "ivi du"
+  },
+  {
+   "page": 27,
+   "mark": "a",
+   "context": "ivi duiis"
+  },
+  {
+   "page": 27,
+   "mark": "a",
+   "context": "ivi duiisaLiouville1-formandγαis"
+  },
+  {
+   "page": 27,
+   "mark": "v",
+   "context": "L={Aj=0}endingatthepoint(e"
+  },
+  {
+   "page": 27,
+   "mark": "u",
+   "context": "L={Aj=0}endingatthepoint(evα(u), e"
+  },
+  {
+   "page": 27,
+   "mark": "u",
+   "context": "G(M;"
+  },
+  {
+   "page": 27,
+   "mark": "u",
+   "context": "G(M;"
+  },
+  {
+   "page": 27,
+   "mark": "u",
+   "context": "pert(M;"
+  },
+  {
+   "page": 28,
+   "mark": "u",
+   "context": "G(M;"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "3A"
+  },
+  {
+   "page": 28,
+   "mark": "u",
+   "context": "ﬁxedholonomyeigenvaluese"
+  },
+  {
+   "page": 29,
+   "mark": "u",
+   "context": "GC(M;"
+  },
+  {
+   "page": 29,
+   "mark": "u",
+   "context": "GC(M;"
+  },
+  {
+   "page": 29,
+   "mark": "u",
+   "context": "G(M;"
+  }
+ ]
+}

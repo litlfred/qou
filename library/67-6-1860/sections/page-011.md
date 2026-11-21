@@ -1,13 +1,15 @@
 ---
 doc_id: 67-6-1860
-doc_title: "Progress of Theoretical Physics, Vol. 67, No. 6, June 1982"
+doc_title: "Quaternionic Weinberg-Salam Theory"
 section_id: page-011
 section_title: "Page 11"
-section_number: null
 pages: 11-11
+pdf_page: 11
 source_pdf: 67-6-1860.pdf
 source_sha256: e2e5d45edd369762
-toc_source: undetermined
+text_source: ocr
+granularity: page
+doc_brief: "Quaternionic Weinberg-Salam Theory — 17 sections: Page 1; Page 2; Page 3"
 ---
 1870 K. Morita
 
@@ -58,4 +60,4 @@ space’ in a way that reflects the canonical quantization for the local fields.
 quaternionic Hilbert space depends on the scalar products employed. Horwitz et
 al.‘ used complex scalar products to construct a quaternionic Fock space. We
 
-9z0z Ainr 90 uo ysanB Aq 79Z2881/0981/9/29/A101112/d}d/Wios'dno-o1wapese//:sdyjy Wo. pepeojuMoq
+9z0z Ainr 06 uo ysanB Aq 79Z2881/0981/9/29/A101112/d}d/Wios'dno-o1wapese//:sdyjy Wo. pepeojuMoq

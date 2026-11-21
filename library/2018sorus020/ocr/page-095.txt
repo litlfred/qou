@@ -1,0 +1,46 @@
+Notation. Here, and in the sequel, we will denote by p; and fz the residual re-
+presentations obtained from p; and p. We will denote by fy the restriction of
+pi: ™(M;) > SLo(k) to 71(%) through the map 71(“) > 7(M;) induced by inclu-
+sion. Similarly, we will denote by 2,9, the restriction of py to ™(O0M2), and fo,
+
+the restriction of fp) to any curve ¥, in particular y = OD.
+
+We need to prove that the torsion has a pole at the ideal point x. Denote by v the
+
+valuation associated to x, that means that the determinant of the map
+
+6: H'(M,, p1) @ H' (Mg, ph) => H'(5, py)
+(i, Z2) > (Zy _ Un Z2)|\s,
+
+has positive valuation. Consider the k-linear map 6: H'(M,, p,) ® H'(Mg, px) >
+H}(X, py) which is 6 modulo t, it maps (2, 22) onto 2), — (uty ).
+
+Lemma 3.3.7. The torsion has a pole at x iff @ is not an isomorphism.
+
+Proof. It is clear from the fact that det(@) = (det 6)(0), that is v(det(0)) > 0 iff
+
+det (6) = 0. oO
+
+Let us prove that det(@) = 0. Let OM be the boundary of Mz, and y = ON C OMy
+the union of boundary curves of U. Since } is incompressible and 0X Cc OM, all
+the components of 0X are parallel in OM because it is a torus, in particular they
+define the same free homotopy class. Assumption 3 implies that f2(y) = (101), hence
+H'(7, fz,7) is not trivial. The long exact sequence for the coefficients of C*(7, p2,1)
+ends with
+
+> Hy, poy) > H(7,k) 20
+
+There are two possibilities, namely p2(y) = Id or not, but in any case, the map
+py : H'(y, poy) + H*(7,k) is not zero.
+On the other hand, the inclusion © C 0M, provides the sequence
+
+H'(0Mo, ©; po,am,) > H*(OMo, poaay) > H'(E, pos) > H?(OMo, ©; poam,) > 0
+(3.1)
+Denote by A the union of small annulus neighborhood of the components of y in
+OMp. By excision, we have H?(0M,™; poom,) ~ H?(A, OA; po,7). Now Poincaré-
+Lefschetz duality implies that it is the same that Ho(A, f2,,), and by homotopy this
+is Ho(7, P2,,). Again by duality we obtain H'(y, p21).
+
+We summarize that in the following commutative diagram :
+
+94

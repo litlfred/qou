@@ -7,10 +7,11 @@ section_number: 2.3
 pages: 9-13
 source_pdf: 1103.4815v3.pdf
 source_sha256: 28647b02ea1441e3
-doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non -abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.704
-latex_coverage_ratio: 0.986
+latex_coverage_ratio: 0.985
+doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non-abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal 2-bundles."
 ---
 \label{sec:ana}
 

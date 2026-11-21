@@ -20,7 +20,7 @@ LaTeX label: `def:phi-q-piece`
 
 ## References
 
-- [manuscript] Ch 3 §sec:calibration-algebraic-mass / phi-q-piece
+- [leitner2026] Ch 3 §sec:calibration-algebraic-mass / phi-q-piece
 - [kauffman1991] Knots and Physics, World Scientific, ISBN 978-981-02-0343-7
 -/
 
@@ -52,7 +52,7 @@ structure SubLink where
     This is the abstract specification; the geometric construction
     (Kauffman L₀-smoothing of the diagram) is recorded in the
     accompanying `.md` file. -/
--- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / phi-q-piece
+-- Ref: [leitner2026] Ch 3 §sec:calibration-algebraic-mass / phi-q-piece
 -- Ref: [kauffman1991] Knots and Physics, World Scientific
 noncomputable def subLink (β : Braid) (S : Finset (Fin (β.n - 1))) :
     SubLink :=
@@ -62,7 +62,7 @@ noncomputable def subLink (β : Braid) (S : Finset (Fin (β.n - 1))) :
 
 /-- The empty piece `K_∅` is the trivial unlink; its hyperbolic volume
     is zero by convention. -/
--- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / phi-q-piece
+-- Ref: [leitner2026] Ch 3 §sec:calibration-algebraic-mass / phi-q-piece
 theorem subLink_empty (β : Braid) :
     (subLink β ∅).hypVolume = 0 := rfl
 

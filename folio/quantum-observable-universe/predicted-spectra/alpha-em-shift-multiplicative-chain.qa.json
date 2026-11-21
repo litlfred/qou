@@ -60,6 +60,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0e42ecec1b31",
+          "ts": "08949c5b9c0d",
+          "lean": "436a6195663a",
+          "lean_statement": "862910c62f40"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:59.441Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "Sibling `.lean:67` (ref resolves only there) proves the list equality `[alphaShift 2 9, alphaShift 3 5] = [9, 10]`, where `alphaShift p k := k*(p−1)` by definition (`AlphaShiftTorusKnot.lean:59`, claimed closed form taken as a definition; the class `HasAlphaShiftTorus` is unused). Neither α_EM⁻¹, q, the q-integers nor the base ring appears. Proof: the composition is correct (9·1=9, 5·2=10) given the two cited propositions. The proof block carries a CODATA comparison (\"\\ | chain − CODATA\\ | ≈ 0.213\", prf:46): empirical content inside the proof (it belongs in a comparison remark). Note the stated \"identity\" for α_EM⁻¹ evaluates to 136.823 at q₀, so it is an identity for the model quantity defined by `prop:em-coupling-projection`, not for the measured constant; the statement does not say so"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2074,6 +2092,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T01:29:16.086Z",
+  "updated_at": "2026-11-15T21:55:59.441Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

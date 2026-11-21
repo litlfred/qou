@@ -1,0 +1,39 @@
+1264 Francois Guéritaud and David Futer
+
+A way to compute a,a’ is to set ay = aj = 0 and to define inductively
+
+mT — 2a, rT 24)
+
+cos
+N M
+and a similar expression for a’, ,, with a change of sign. The sequences a, a, converge
+exponentially fast to a,a’. The constants a,a’ become arbitrarily small for large
+enough N,M, hence b ~ 7/N and b’ ~ 7/M. So plugging into (6), a ~ in/N and
+a’ ~ —in/M. Using the Landau symbol O(A, B) in the sense of O(max{A, B}), this in
+turn yields
+
+ds41 = arcsin (itan
+
+ba §-RE +0Gh gp) a= BHR +0Ghap)
+(7)
+b= 8+ +1313 a= SF+GR +0, gp)
+
+(In fact a, a’, b, b’ are analytic functions of yp u , by the Implicit Function Theorem.)
+
+Proposition 10.1 The fan which corresponds to RN can be embedded into C with
+nodes at complex coordinates + cotb and intermediary vertices cot(a + sb) where
+—1<s< N+1; similarly, the fan corresponding to L” can be embedded into C
+(possibly with a different scaling factor) with nodes + cot b’ and intermediary vertices
+cot(a’ + sb’) where —1 < s <M +1 (see Figure 11).
+
+Figure 11
+
+Proof There are several things to check. First, the congruence of pairs of triangles
+inside each fan follows from the identity of complex ratios
+
+cot(As+b)—cotb _ cot(A, — b) + cotb sin? A,
+
+8 = =
+@&) cot(As + b)—cotAs; — cot(As — b) — cot As sin? b
+
+Geometry & Topology 10 (2006)

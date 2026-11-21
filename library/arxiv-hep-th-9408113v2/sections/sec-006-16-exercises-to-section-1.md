@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408113v2
-doc_title: "arXiv:hep-th/9408113v2 25 Aug 1994"
+doc_title: "Dilogarithm identities"
 section_id: sec-006-16-exercises-to-section-1
 section_title: "Exercises to Section 1."
 section_number: 1.6
@@ -8,7 +8,9 @@ pages: 31-34
 source_pdf: 9408113v2.pdf
 source_sha256: dadd96e1155e820f
 toc_source: inferred
+doc_brief: "Dilogarithm identities — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
 ---
+1.6. Exercises to Section 1.
 1. Using the integral representation (1.1) for the Euler dilogarithm Li2(x), prove the
 simple single-variable functional equations
 i) Li2(z) + Li2(−z) = 1

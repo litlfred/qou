@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2505.02719v2/blocks/prose-sec-009",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "The topology of arclength manifolds",
-  "pageStart": 20,
-  "pageEnd": 23,
-  "text": "../sections/sec-009-the-topology-of-arclength-manifolds.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2505.02719v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2505.02719v2",
+  "title": "The arclength manifolds N1+s and A1+s",
+  "pageStart": 17,
+  "pageEnd": 20,
+  "text": "../sections/sec-009-the-arclength-manifolds-n1s-and-a1s.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2505.02719v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2505.02719v2/manifest.jsonld",
   "provenance": "ingested"
 }

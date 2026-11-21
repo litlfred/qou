@@ -4,14 +4,15 @@ doc_title: "BRING’S CURVE: OLD AND NEW"
 section_id: sec-002-21-basic-properties
 section_title: "Basic Properties"
 section_number: 2.1
-pages: 2-8
+pages: 3-8
 source_pdf: 2208.13692v1.pdf
 source_sha256: 567eff9fb44ef3e5
-doc_brief: "Bring's curve: old and new — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
-duplicate_of: "s40879-023-00706-0"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.977
-latex_coverage_ratio: 0.782
+latex_prose_ratio: 0.968
+latex_coverage_ratio: 0.982
+doc_brief: "Bring’s curve: old and new — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
+duplicate_of: "s40879-023-00706-0"
 ---
 Towards proving the birational equivalence of the two models given for Bring's curve we begin with some basic properties of the curve. We introduce affine coordinates $(x,y)=(X/Z,Y/Z)$ such that the HC-model is $0=f(x,y)=F(x,y,1)$. Then $\mathop{\mathrm{Res}}_y(f(x,y),\partial_y f(x,y))=x^4(x^5-1)^2(256x^{10}-837 x^5+3456)$. Investigation of the vanishing of this resultant leads to the following.
 

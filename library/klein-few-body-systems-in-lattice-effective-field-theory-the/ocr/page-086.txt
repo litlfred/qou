@@ -1,0 +1,54 @@
+Chapter 7 Conclusions and Perspectives
+
+smearing parameter, which was chosen constant for all three lattice spacings. For P and D waves there
+was a general improvement from leading order to next-to-next-to-leading order and from coarse to the
+fine lattice. While the next-to-next-to-leading order descriptions stopped to give a very good description
+for almost half of the P and D waves at 100 MeV for a = 1.97 fm, almost all P and D waves are described
+well up to 150 MeV or even beyond for a = 1.32 fm. The extension to pp and nn interaction worked
+quite well and the 's 0 pp description follows the same pattern as the 's 0 np description. In the 3N
+sector, we have shown that the necessary infinite volume extrapolation due to increased lattice size was
+precise for the finest lattice spacing and the difference between an assumed 2+1 or 1+1+1 bound state is
+negligible. The main motivation for this chapter was the Tjon band, which states that ‘He binding energy
+should be automatically reproduced once the remaining 3N parameter is fixed by the physical 3H binding
+energy. Without a 3N force, the 3H-“He data points should appear in an almost linear band. However, we
+have found a strong overbinding of ‘He at the standard lattice spacing of a = 1.97 fm. This has been
+observed in earlier calculations and it has been conjectured that the overbinding is caused by the coarse
+lattice and that it should vanish with smaller lattice spacing. After fixing the triton binding energy at
+its physical value, the *He binding energy prediction was -34.55(18)(3) MeV, -31.09(7)(6) MeV and
+-28.37(28)(3) MeV for a = 1.97 fm, a = 1.64 fm, a = 1.32 fm respectively. Hence, the lattice spacing of
+a = 1.32 fm is small enough to reproduce the 4He binding energy of E4,,, = —28.30 MeV without an
+additional 4N force.
+
+The third part was given in Chap. 6 where we turned to some aspects of lattice field. The well-
+known Symanzik improvement program has been applied successfully to the few-boson system in one
+dimension. We calculated binding energies and radial mean square radii up to five bosons as well as
+scattering properties for 1+1 and 2+1 scattering processes. As these systems have an exact solution,
+it is possible to distinct lattice spacing errors from other error sources. Due to dimensional analysis,
+the lattice spacing errors scale with O(a), O(a’) and O(a’) at leading order, next-to-leading order and
+next-to-next-to-leading order. We could reproduce the predicted scaling particularly for two- and three-
+bosons system as well as for next-to- and next-to-next-to-leading order. For instance, having a look at the
+binding energy, we see the expected overbinding for large lattice spacings, which is reduced for finer
+lattice spacings as well as for the inclusion of higher-order corrections. The overbinding becomes more
+severe, the more particles are in the system reflecting its origin in the implicit many-particle interaction.
+
+Generally, we have successfully handled the lattice spacing effects in NLEFT for the description of
+few-body nuclear physics. However, there are still different possibilities to increase the predictability and
+efficiency of NLEFT:
+
+e In Chap. 4 we have used a soft position-space regularization for the one-pion-exchange. It would
+be interesting to use such an operator for the full analysis in combination with an exact momentum
+space discretization. The advantages are two-fold. Firstly, the one-pion exchange does not have
+a singular structure in the origin anymore due to the position-space regularization and thus it
+improves Monte Carlo simulations. Secondly, one already has an improved description of P waves
+at leading order due to the exact momentum space discretization [116].
+
+e There was already a preliminary study on the effect of the temporal discretization in relation to
+the spatial discretization [163]. Hence, it may be useful to vary this parameter and see, whether
+we could reach the Tjon band already for coarse lattices and as such reduce the effect of implicit
+multiparticle interaction.
+
+e The analysis of Chap. 5 could be extended to larger nuclei like 8Be, Ro 160, etc.. Once the
+four-body force is not necessary in the case of ‘He, it should not be necessary in larger nuclei as
+well and these binding energies should be reproduced correctly.
+
+80

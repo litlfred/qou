@@ -7,10 +7,11 @@ section_number: 3.3
 pages: 21-22
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
-doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.909
-latex_coverage_ratio: 0.951
+latex_prose_ratio: 0.955
+latex_coverage_ratio: 0.956
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 \label{subsec-rotating}
 

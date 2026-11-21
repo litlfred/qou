@@ -624,7 +624,7 @@
           "in_degree": 0,
           "cone_size": 14,
           "depth": 8,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 2,
           "edge_span_mean": 2,
           "worst_target": ""
@@ -928,6 +928,53 @@
         "notes": "Logical transitions in the derivation of '*Proof.*' are sound; no non-sequiturs detected.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality-proof.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "25ec54ad9dc3",
+          "ts": "eaaac0532b65"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:27:35.151Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "Part (3): the vertex volumes V^_i are never defined. The step \"multiplicativity of the standard trace on products of matrix units\" is not valid (trace is not multiplicative). The citation is mixed (\"Wenzl 1988, Theorem 5.13.2 in the QOU manuscript\"). The Wedderburn decomposition over Q(q^{1/2}) is a convention-C remnant. And \"checked exactly for every lambda |- n <= 5\" is a computation offered inside a proof."
+      },
+      {
+        "field_hash": {
+          "md": "5142de883e09",
+          "ts": "337e701bd198"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:57:29.773Z",
+        "reviewed_sha": "f84776ece33e7b2ccfa5cfa386fc4c0238ec4a2d",
+        "severity": "minor",
+        "evidence": "Re-review after b606a8175. Part (3) is gone, so the earlier fail (undefined vertex volumes, 'trace multiplicative') is resolved. (1) is correct: σ⁻¹ = σ−h gives z₋ = z−h. (2) is informal: 'depends non-locally' and 'can require rewriting many generators' are asserted with no precise statement or example. Also the trace codomain is written R⊗ℚ."
+      },
+      {
+        "field_hash": {
+          "md": "994c8eb01a67",
+          "ts": "337e701bd198"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T23:30:08.060Z",
+        "reviewed_sha": "c87aa9c757e841db81341bde59da76b34fd2ece6",
+        "evidence": "Re-review after #8075. Statement and proof now match: Markov property for x ∈ H_n by definition (thm:jones-markov-trace, z = q³/(q²+1)), and z₋ = z − h from σ⁻¹ = σ − h. Minor: the trace codomain is written R⊗ℚ."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1339,7 +1386,7 @@
         },
         "reviewed_at": "2026-08-19T21:34:10.200Z",
         "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
-        "evidence": "Closes by naming which arrow each operational stance corresponds to \u2014 the reconciliation the proposition asserts."
+        "evidence": "Closes by naming which arrow each operational stance corresponds to — the reconciliation the proposition asserts."
       }
     ],
     "trap-meta-commentary": [
@@ -1532,6 +1579,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-19T21:34:10.534Z",
+  "updated_at": "2026-11-15T23:30:08.060Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

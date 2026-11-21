@@ -17,7 +17,7 @@ K^∨ = c · G⁻¹      (so (K^∨)_j = Σ_i c_i (G⁻¹)_{ij}).
 Its defining property is the recovery of the original coordinates
 under the Gram pairing: `⟨K^∨, b_j⟩_F = c_j`, i.e. `(K^∨) ⬝ G = c`.
 
--- Ref: [manuscript] def:frobenius-dual-h3
+-- Ref: [leitner2026] def:frobenius-dual-h3
 -- Ref: [kassel1995] Kassel, "Quantum Groups," GTM 155, Springer (1995)
 -/
 

@@ -7,10 +7,11 @@ section_number: 3
 pages: 6-7
 source_pdf: 2108.03616v2.pdf
 source_sha256: 63696ad045602440
-doc_brief: "Circuit imbalance measures and linear programming ∗ — We study properties and applications of various circuit imbalance mea sures associated with linear spaces."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.966
-latex_coverage_ratio: 0.986
+latex_coverage_ratio: 0.993
+doc_brief: "Circuit imbalance measures and linear programming ∗ — We study properties and applications of various circuit imbalance measures associated with linear spaces."
 ---
 \label{sec:basic}
 

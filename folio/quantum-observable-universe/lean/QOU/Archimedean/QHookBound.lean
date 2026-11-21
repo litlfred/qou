@@ -52,7 +52,7 @@ equation: same function, one canonical meaning, no proof touched. -/
 theorem qIntReal_eq_canonical (q : ℝ) (m : ℕ) :
     qIntReal q m = QOU.QInteger.qIntBalCl q m := by
   simp [qIntReal, QOU.QInteger.qIntBal, QOU.QInteger.qIntBalCl,
-    QOU.Mass.QHookDimensionBalanced.qIntBal, inv_pow, zpow_neg, zpow_natCast]
+    QOU.Mass.QHookDimensionBalanced.qIntBal, inv_pow]
 
 /-- For q > 1 and m ≥ 1, [m]_q > 0. -/
 theorem qInt_pos (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :
@@ -411,12 +411,18 @@ instance qIntRatioBoundSmall_four (q : ℝ) (hq : q > 1) (hq2 : q < 3/2)
              mul_nonneg (by linarith : s - 2 ≥ 0) (by linarith : (13/6 : ℝ) - s ≥ 0),
              sq_nonneg s]
 
-/-- Per-instance form. -/
+/-- **Unconditional q-integer ratio bound for `1 ≤ m ≤ 4`.**
+    Discharges all four cases `m = 1, 2, 3, 4` directly from the proved
+    instances `qIntRatioBoundSmall_one` through `qIntRatioBoundSmall_four`,
+    without assuming a self-projecting `[QIntRatioBoundSmall]` hypothesis. -/
 theorem qInt_ratio_bound_small (q : ℝ) (hq : q > 1) (hq2 : q < 3/2)
-    (m : ℕ) (hm : 1 ≤ m) (hm4 : m ≤ 4)
-    [hi : QIntRatioBoundSmall q hq hq2 m hm hm4] :
-    |qIntReal q m / m - 1| ≤ (q - q⁻¹) ^ 2 * m / 6 :=
-  hi.bound
+    (m : ℕ) (hm : 1 ≤ m) (hm4 : m ≤ 4) :
+    |qIntReal q m / m - 1| ≤ (q - q⁻¹) ^ 2 * m / 6 := by
+  interval_cases m
+  · exact (qIntRatioBoundSmall_one q hq hq2 le_rfl (by decide)).bound
+  · exact (qIntRatioBoundSmall_two q hq hq2 (by decide) (by decide)).bound
+  · exact (qIntRatioBoundSmall_three q hq hq2 (by decide) (by decide)).bound
+  · exact (qIntRatioBoundSmall_four q hq hq2 (by decide) le_rfl).bound
 
 /-! ## §2  q-factorial perturbation -/
 
@@ -604,12 +610,19 @@ instance qFactRatioBound_three (q : ℝ) (hq : q > 1) (hq2 : q < 2) :
              sq_nonneg (q + q⁻¹), sq_nonneg (q - q⁻¹),
              hq_pos, hq_inv_pos]
 
-/-- Per-instance form. -/
+/-- **Unconditional q-factorial ratio bound for `k ≤ 3`.**
+    Discharges all four low-degree cases `k = 0, 1, 2, 3` directly from the
+    proved instances `qFactRatioBound_zero` through `qFactRatioBound_three`,
+    without assuming a self-projecting `[QFactRatioBound]` hypothesis. -/
 theorem qFact_ratio_bound (q : ℝ) (hq : q > 1) (hq2 : q < 2)
-    (k : ℕ) [hi : QFactRatioBound q hq hq2 k] :
+    (k : ℕ) (hk : k ≤ 3) :
     |qFactReal q k / (k.factorial : ℝ) - 1| ≤
-    (q - q⁻¹) ^ 2 * k * (k + 1) * (2 * k + 1) / 36 :=
-  hi.bound
+    (q - q⁻¹) ^ 2 * k * (k + 1) * (2 * k + 1) / 36 := by
+  interval_cases k
+  · exact (qFactRatioBound_zero q hq hq2).bound
+  · exact (qFactRatioBound_one q hq hq2).bound
+  · exact (qFactRatioBound_two q hq hq2).bound
+  · exact (qFactRatioBound_three q hq hq2).bound
 
 /-! ## §3  q-hook formula perturbation -/
 

@@ -8,7 +8,7 @@
   "pages": 9,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -22,7 +22,7 @@
   },
   "doi": null,
   "title": "Knots in Condensed Matters",
-  "authors_raw": "Y. M. Cho\u2217",
+  "authors_raw": "Y. M. Cho∗",
   "title_lines": [
    "Knots in Condensed Matters"
   ],
@@ -143,7 +143,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "The non-Abelian vortex (dashed line) with m = 0, n = 1 and the helical vortex (solid line) with m = n = 1 in two-gap superconductor. Here we have put g = 1, \u03bb = 2, k = \u03c10/10, and",
+   "title": "The non-Abelian vortex (dashed line) with m = 0, n = 1 and the helical vortex (solid line) with m = n = 1 in two-gap superconductor. Here we have put g = 1, λ = 2, k = ρ0/10, and",
    "page": 7,
    "confidence": 0.9,
    "evidence": [
@@ -156,7 +156,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "The regular helical magnetic vortex with m = n = 1 in two-gap superconductor. Here we have put g = 1, \u03bb = 2, k = 0.12\u03c10, A2(0) = 0.5, and",
+   "title": "The regular helical magnetic vortex with m = n = 1 in two-gap superconductor. Here we have put g = 1, λ = 2, k = 0.12ρ0, A2(0) = 0.5, and",
    "page": 8,
    "confidence": 0.9,
    "evidence": [
@@ -256,8 +256,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 947,
-   "n_words": 141,
+   "n_chars": 944,
+   "n_words": 140,
    "label_start": null,
    "label_end": null
   },
@@ -268,8 +268,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1679,
-   "n_words": 252,
+   "n_chars": 1692,
+   "n_words": 253,
    "label_start": null,
    "label_end": null
   },
@@ -279,20 +279,44 @@
    "title": "Knot in Skyrme theory",
    "level": 1,
    "page_start": 1,
-   "page_end": 8,
-   "n_chars": 25658,
-   "n_words": 4871,
+   "page_end": 3,
+   "n_chars": 6063,
+   "n_words": 1163,
    "label_start": null,
+   "label_end": "3"
+  },
+  {
+   "id": "sec-002-3-knot-in-two-component-bose-einstein-condensate",
+   "number": "3",
+   "title": "Knot in Two-component Bose-Einstein Condensates",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 10595,
+   "n_words": 1982,
+   "label_start": "3",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-003-4-knot-in-two-gap-superconductors",
+   "number": "4",
+   "title": "Knot in Two-gap Superconductors",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 8943,
+   "n_words": 1712,
+   "label_start": "6",
    "label_end": "8"
   },
   {
-   "id": "sec-002-5-discussion",
+   "id": "sec-004-5-discussion",
    "number": "5",
    "title": "Discussion",
    "level": 1,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 4049,
+   "n_chars": 4058,
    "n_words": 700,
    "label_start": "8",
    "label_end": "9"
@@ -312,13 +336,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 4,
-  "chars_total": 32333,
+  "sections": 6,
+  "chars_total": 32295,
+  "furniture_lines_stripped": 8,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "cm9.tex",
    "tex_sections": 5,
-   "overlaid": 3,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -334,23 +359,39 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.643,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-knot-in-skyrme-theory",
      "title": "Knot in Skyrme theory",
-     "prose_ratio": 0.941,
-     "coverage_ratio": 0.959,
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.802,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-5-discussion",
+     "id": "sec-002-3-knot-in-two-component-bose-einstein-condensate",
+     "title": "Knot in Two-component Bose-Einstein Condensates",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-4-knot-in-two-gap-superconductors",
+     "title": "Knot in Two-gap Superconductors",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-5-discussion",
      "title": "Discussion",
      "prose_ratio": 0.962,
-     "coverage_ratio": 0.765,
+     "coverage_ratio": 0.761,
      "result": "overlaid",
      "converter": "latex"
     }

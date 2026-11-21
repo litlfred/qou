@@ -2,17 +2,22 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-0808.1923v3",
  "source_sha256": "3c53f7c0fd9acf89",
- "brief": "Connections on Non-Abelian Gerbes and their Holonomy — We introduce an axiomatic framework for the parallel transp ort of connections on gerbes.",
- "extended": "**Connections on Non-Abelian Gerbes and their Holonomy**\n\n*Urs Schreiber and Konrad Waldorf*\n\n57 pp, 20 sections.\n\n**Abstract.** We introduce an axiomatic framework for the parallel transp ort of connections on gerbes. It incorporates parallel transport along curves and along sur faces, and is formulated in terms of gluing axioms and smoothness conditions. The smoothness co nditions are imposed with respect to a strict Lie 2-group, which plays the role of a band, or stru cture 2-group. Upon choosing certain examples of Lie 2-groups, our axiomatic framework r eproduces in a systematical way several known concepts of gerbes with connection: non-abelian diﬀe rential cocycles, Breen-Messing gerbes, abelian and non-abelian bundle gerbes. These relationship s convey a well-deﬁned notion of surface holonomy from our axiomatic framework to each of these concr ete models. Till now, holonomy was only known for abelian gerbes; our approach reproduces t hat known concept and extends it to non-abelian gerbes.\n\n**Outline.** 1 Introduction; 2 Foundations of the Transport Functor Formali; 2.1 The Path 2-Groupoid of a Smooth Manifold; 2.2 Local Trivializations and Descent Data; 2.3 Smooth 2-Functors; 2.4 Transport Functors; 3.1 Smooth Descent Data; 3 Transport 2-Functors; 3.2 Transport 2-Functors; 3.3 Some Features of Transport 2-Functors; 3.4 Curvature 2-Functors; 4 Transport 2-Functors are Non-Abelian Gerbes; 4.2 Abelian Bundle Gerbes with Connection; 4.3 Non-Abelian Bundle Gerbes with Connection; 4.4 2-Bundles with Connections; 5 Surface Holonomy; 5.1 Markings and Fundamental Bigons; 5.2 Reduced Surface Holonomy\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.4.2: LetX be a smooth manifold. The assignment\n- Theorem 3.2.2: LetM be a smooth manifold, and let i : Gr /d47/d47 T be a full and faithful 2-functor.\n- Theorem 3.2.2: is proved by the following two lemmata. As an intermediat e step we introduce –\n- Theorem 3.4.1: The curvature 2-functor K(tra) is a transport 2-functor with BEG-structure.\n- Theorem 4.1.1: The correspondences described above furnish a strict 2-\n- Theorem 4.1.6: Let G be a Lie 2-group, and let i : BG /d47/d47 T be an equivalence of 2-categories.",
+ "brief": "Connections on Non-Abelian Gerbes and their Holonomy — We introduce an axiomatic framework for the parallel transport of connections on gerbes.",
+ "extended": "**Connections on Non-Abelian Gerbes and their Holonomy**\n\n*Urs Schreiber and Konrad Waldorf*\n\n57 pp, 22 sections.\n\n**Abstract.** We introduce an axiomatic framework for the parallel transport of connections on gerbes. It incorporates parallel transport along curves and along surfaces, and is formulated in terms of gluing axioms and smoothness conditions. The smoothness conditions are imposed with respect to a strict Lie 2-group, which plays the role of a band, or structure 2-group. Upon choosing certain examples of Lie 2-groups, our axiomatic framework reproduces in a systematical way several known concepts of gerbes with connection: non-abelian diﬀerential cocycles, Breen-Messing gerbes, abelian and non-abelian bundle gerbes. These relationships convey a well-deﬁned notion of surface holonomy from our axiomatic framework to each of these concrete models. Till now, holonomy was only known for abelian gerbes; our approach reproduces that known concept and extends it to non-abelian gerbes.\n\n**Outline.** Front matter; 1 Introduction; 2 Foundations of the Transport Functor Formali; 2.1 The Path 2-Groupoid of a Smooth Manifold; 2.2 Local Trivializations and Descent Data; 2.3 Smooth 2-Functors; 2.4 Transport Functors; 3 Transport 2-Functors; 3.1 Smooth Descent Data; 3.2 Transport 2-Functors; 3.3 Some Features of Transport 2-Functors; 3.4 Curvature 2-Functors; 4 Transport 2-Functors are Non-Abelian Gerbes; 4.1 Differential Non-Abelian Cohomology; 4.2 Abelian Bundle Gerbes with Connection; 4.3 Non-Abelian Bundle Gerbes with Connection; 4.4 2-Bundles with Connections; 5 Surface Holonomy",
  "tokens": {
-  "brief": 36,
-  "extended": 550
+  "brief": 35,
+  "extended": 401
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-6"
+   "pages": "2-6"
   },
   {
    "id": "sec-001-2-foundations-of-the-transport-functor-formalism",
@@ -37,16 +42,16 @@
   {
    "id": "sec-005-24-transport-functors",
    "title": "Transport Functors",
-   "pages": "10-11"
+   "pages": "10-12"
   },
   {
-   "id": "sec-006-31-smooth-descent-data",
-   "title": "Smooth Descent Data",
-   "pages": "11-12"
-  },
-  {
-   "id": "sec-007-3-transport-2-functors",
+   "id": "sec-006-3-transport-2-functors",
    "title": "Transport 2-Functors",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-007-31-smooth-descent-data",
+   "title": "Smooth Descent Data",
    "pages": "12-15"
   },
   {
@@ -67,45 +72,50 @@
   {
    "id": "sec-011-4-transport-2-functors-are-non-abelian-gerbes",
    "title": "Transport 2-Functors are Non-Abelian Gerbes",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-012-41-differential-non-abelian-cohomology",
+   "title": "Differential Non-Abelian Cohomology",
    "pages": "25-33"
   },
   {
-   "id": "sec-012-42-abelian-bundle-gerbes-with-connection",
+   "id": "sec-013-42-abelian-bundle-gerbes-with-connection",
    "title": "Abelian Bundle Gerbes with Connection",
    "pages": "33-36"
   },
   {
-   "id": "sec-013-43-non-abelian-bundle-gerbes-with-connection",
+   "id": "sec-014-43-non-abelian-bundle-gerbes-with-connection",
    "title": "Non-Abelian Bundle Gerbes with Connection",
    "pages": "36-41"
   },
   {
-   "id": "sec-014-44-2-bundles-with-connections",
+   "id": "sec-015-44-2-bundles-with-connections",
    "title": "2-Bundles with Connections",
    "pages": "41-46"
   },
   {
-   "id": "sec-015-5-surface-holonomy",
+   "id": "sec-016-5-surface-holonomy",
    "title": "Surface Holonomy",
    "pages": "46-46"
   },
   {
-   "id": "sec-016-51-markings-and-fundamental-bigons",
+   "id": "sec-017-51-markings-and-fundamental-bigons",
    "title": "Markings and Fundamental Bigons",
    "pages": "46-49"
   },
   {
-   "id": "sec-017-52-reduced-surface-holonomy",
+   "id": "sec-018-52-reduced-surface-holonomy",
    "title": "Reduced Surface Holonomy",
    "pages": "49-52"
   },
   {
-   "id": "sec-018-53-properties-of-reduced-surface-holonomy",
+   "id": "sec-019-53-properties-of-reduced-surface-holonomy",
    "title": "Properties of Reduced Surface Holonomy",
    "pages": "52-56"
   },
   {
-   "id": "sec-019-references",
+   "id": "sec-020-references",
    "title": "References",
    "pages": "56-57"
   }
@@ -114,8 +124,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

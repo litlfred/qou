@@ -1,1 +1,1 @@
-Let Y be a ﬁbered category, g : Y − → X be a morphism and D be a sub-
+Let A be an R-algebra. Then the push-forward map QCoh XA −→QCoh X extends naturally to an equivalence QCoh XA −→QCohA X.

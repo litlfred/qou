@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-096",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "FGK208 IJ (page 160)",
+  "pageStart": 160,
+  "pageEnd": 160,
+  "contains": [
+    "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-096"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kondev-2021-chinese-phys-c-45-030001/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kondev-2021-chinese-phys-c-45-030001/manifest.jsonld",
+  "provenance": "ingested"
+}

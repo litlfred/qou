@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1704.00850v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1704.00850v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1704.00850v3",
+  "title": "Estimating the spectral gap of a trace-class Markov operator",
   "contains": [
+    "library/arxiv-1704.00850v3/sections/sec-front-matter",
     "library/arxiv-1704.00850v3/sections/sec-000",
     "library/arxiv-1704.00850v3/sections/sec-001",
     "library/arxiv-1704.00850v3/sections/sec-002",
@@ -21,10 +22,11 @@
     "library/arxiv-1704.00850v3/sections/sec-007",
     "library/arxiv-1704.00850v3/sections/sec-008",
     "library/arxiv-1704.00850v3/sections/sec-009",
-    "library/arxiv-1704.00850v3/sections/sec-010"
+    "library/arxiv-1704.00850v3/sections/sec-010",
+    "library/arxiv-1704.00850v3/sections/sec-011"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -34,7 +36,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1704.00850v3",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1704.00850v3.pdf",
     "source_sha256": "09dd9c99453ba251bf59236fd6af5f5061182c60f2bd752e82688dbd04680b31",
     "pages": 34,
@@ -45,8 +49,8 @@
       "stamp_date": "4 Apr 2019"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

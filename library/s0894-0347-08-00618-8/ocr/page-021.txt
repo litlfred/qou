@@ -1,0 +1,59 @@
+NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS 541
+
+prove that the distribution at time t > 0 for the (not necessarily finite) symmetric
+exclusion process is CNA+ whenever the initial distribution is a product measure,
+which confirms Conjecture [2.2]
+
+Symmetric strongly Rayleigh measures are described in the following theorem.
+Recall that a (possibly infinite) matrix A is said to be totally non-negative of order
+p, or TP, for short, if for any k < p all its k x k minors are non-negative [49]. If A
+has all non-negative minors, then A is called totally non-negative, or TP for short.
+
+Theorem 3.8 (Exchangeable Strongly Rayleigh Case). Suppose wp € Pn has a
+symmetric generating polynomial and rank sequence {rp}R_9- The following are
+equivalent:
+
+(a) The generating polynomial of is stable, i.e., js is strongly Rayleigh.
+
+(b) All zeros of the univariate polynomial yp_9 Tkz* are real.
+(c) The infinite Toeplitz matrix (ri-;)?—9 is TP, where rp = 0 if k € {0}U[n].
+
+Proof. The equivalence (b) < (c) is a classical result due to Aissen, Schoenberg
+and Whitney [I], while the equivalence (a) < (b) is a consequence of the Grace-
+Walsh-Szegé coincidence theorem (see Theorem [4.6] below). O
+
+4. NEGATIVE DEPENDENCE THEORY FOR STRONGLY RAYLEIGH MEASURES
+
+The importance of strongly Rayleigh measures — that is, measures with stable
+generating polynomials (cf. Definition 2-10) — in negative dependence stems from
+the theorem below proved by one of the authors in (cf. §3-T).
+
+Theorem 4.1. Let g € R[z1,...,2n] be a multi-affine polynomial. Then g is stable
+if and only if
+
+Og Og Og
+Be" de () 2 Tada (x)g(x)
+for any x = (%1,.-.,%,) € R” and i,j € [n].
+
+Hence, perhaps somewhat surprisingly, if the Rayleigh condition in Definition
+is enforced to hold for all real vectors, then this stronger correlation condition is
+equivalent to real stability. Clearly, a strongly Rayleigh measure is automatically
+Rayleigh (cf. Remark 2.5). As we will see in this section, the geometric properties
+encoded in the concept of real stability allow us to show that strongly Rayleigh
+measures enjoy all virtues of negative dependence, including the strongest form of
+negative association CNA+.
+
+4.1. Symmetric homogenization via Garding hyperbolic polynomials. The
+following theorem shows that the symmetric homogenization (cf. §2.3) of any
+strongly Rayleigh measure is again strongly Rayleigh, so that strongly Rayleigh
+measures belong to the class PHR (Definition 22.6).
+
+Theorem 4.2. [f js € PB, is strongly Rayleigh, then so is its symmetric homoge-
+nization Ush © Bon-
+
+The proof of Theorem [4.2] makes use of the theory of hyperbolic polynomials
+that has its origins in partial differential equations and was developed by Petrovsky,
+Garding, Hormander, Atiyah and Bott [43]. Recently, hyperbolic polynomi-
+als have proved to be quite useful in other areas of mathematics such as convex
+optimization [4] complex analysis [7], matrix theory and combinatorics [34] [35].
+

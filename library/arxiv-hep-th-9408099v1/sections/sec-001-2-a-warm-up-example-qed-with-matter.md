@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408099v1
-doc_title: "arXiv:hep-th/9408099v1 17 Aug 1994"
+doc_title: "Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD"
 section_id: sec-001-2-a-warm-up-example-qed-with-matter
 section_title: "A warm-up example: QED with matter"
 section_number: 2
@@ -8,6 +8,7 @@ pages: 7-8
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
 toc_source: inferred
+doc_brief: "Seiberg–Witten, Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD (1994) — exact metric on the moduli space of quantum vacua and exact stable-state spectrum for SU(2) with…"
 ---
 2.1. QED
 For background, we ﬁrst consider abelian gauge theories with N = 2 supersymmetry

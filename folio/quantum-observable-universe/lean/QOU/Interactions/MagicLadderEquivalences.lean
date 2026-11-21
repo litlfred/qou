@@ -23,10 +23,10 @@ pairwise equivalent.
 
 ## References
 
-- [manuscript] conj:algebraic-primality-equals-empirical-at-q0
-- [manuscript] conj:homological-shell-condensation
-- [manuscript] prop:torus-knot-shell-binding
-- [manuscript] conj:double-magic-delta-i-bound
+- [leitner2026] conj:algebraic-primality-equals-empirical-at-q0
+- [leitner2026] conj:homological-shell-condensation
+- [leitner2026] prop:torus-knot-shell-binding
+- [leitner2026] conj:double-magic-delta-i-bound
 -/
 
 namespace QOU.Interactions.MagicLadderEquivalences
@@ -42,7 +42,7 @@ open QOU.LiftingDescent.HomologicalCondensation
     pairwise equivalent: `P n ↔ Q n` for every `n`.
 
     Proof: chain the two iffs through the middle term. -/
--- Ref: [manuscript] conj:magic-ladder equivalences
+-- Ref: [leitner2026] conj:magic-ladder equivalences
 theorem predicate_equivalence_via_magic
     {P Q : ℕ → Prop}
     (hP : ∀ n, P n ↔ n ∈ magicLadder)
@@ -58,8 +58,8 @@ theorem predicate_equivalence_via_magic
     (conjecture C). The `n = 1` case is excluded because A's
     `empiricalMagicLadder` contains 1 (vacuously) while C's
     `magicLadder` does not. -/
--- Ref: [manuscript] conj:algebraic-primality-equals-empirical-at-q0
--- Ref: [manuscript] conj:homological-shell-condensation
+-- Ref: [leitner2026] conj:algebraic-primality-equals-empirical-at-q0
+-- Ref: [leitner2026] conj:homological-shell-condensation
 theorem primality_iff_condensation_for_n_ge_2
     [A : MagicEqualsEmpirical] [C : ShellCondensationConjecture]
     {n : ℕ} (hn : 2 ≤ n) :

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-ph-9502366v1
-doc_title: "arXiv:hep-ph/9502366v1 22 Feb 1995"
+doc_title: "Chiral Perturbation Theory"
 section_id: sec-017-10-large-nc-limit-u1a-anomaly-and-strong-cp-viol
 section_title: "Large-NC limit, U(1)A anomaly and strong CP violation"
 section_number: 10
@@ -8,6 +8,7 @@ pages: 42-45
 source_pdf: 9502366v1.pdf
 source_sha256: 56df064956ca03f8
 toc_source: inferred
+doc_brief: "Chiral Perturbation Theory — An introduction to the basic ideas and methods of Chiral Perturbation Theory is presented."
 ---
 In the large-NC limit the U(1)A anomaly (Adler 1969, Adler and Bardeen 1969,
 Bell and Jackiw 1969) is absent.
@@ -56,8 +57,6 @@ i2
 (10.2)
 which breaks U(3)L⊗U(3)R but preserves SU(3)L⊗SU(3)R⊗U(1)V . The parameter a
 has dimensions of mass squared and, with the factor 1/NC pulled out, is booked to be
-Chiral Perturbation Theory
-43
 of O(1) in the large-NC counting rules. Its value is not ﬁxed by symmetry requirements
 alone; it depends crucially on the dynamics of instantons. In the presence of the term
 (10.2), the η1-ﬁeld becomes massive even in the chiral limit: Mη2
@@ -141,8 +140,6 @@ det eU †
 
 ,
 (10.9)
-44
-A Pich
 where now the matrix eχ = 2 eB0M ≡diag(eχ2
 u, eχ2
 d, eχ2
@@ -241,5 +238,3 @@ In particular it induces the phase-space allowed decays
 Comparing the prediction Br(η →π+π−) = 1.8 × 102 θ2 with the
 present experimental upper bound, Br(η →π+π−) < 1.5 × 10−3, one gets the limit
 |θ| < 3 × 10−3 (Pich and de Rafael 1991b).
-Chiral Perturbation Theory
-45

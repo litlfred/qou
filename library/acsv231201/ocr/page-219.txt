@@ -1,0 +1,41 @@
+7.3 The general case via stratified Morse theory 201
+
+aX aX
+f*\ f*\
+
+LN 7
+
+Ze \ ~
+LN\ L\ LN ¢.
+fe \_ fe\ fs)”
+
+Figure 7.17 Building M via successive attachments at the critical values c) >
+C2 > +++ > Cm. In this case we attach three bumps to M,,, around critical points
+at height c,,, then attach a single bump, and so on until attaching two final bumps.
+
+and assume there are no CVAI in [cm, 00). For each j let cj denote cj — €
+where ¢ > 0 is sufficiently small so that there are no critical values or CVAI in
+[cj—é, c;), and let c;, denote cj+¢ where € > 0 is sufficiently small so that there
+are no critical values or CVAI in (c, cj + €]. Intuitively, we think of building up
+the space M from the space M,,,_ by successive attachment. First, we attach
+(M,,,4,Mc,,-) to arrive at the space M,,,,, which, by Lemma 7.28, is homo-
+topy equivalent to the space M,,,_,-. Next we attach the pair (M,,,_,4,M.,,_,-)-
+Repeating this until the pair (M_,,, M.,—) has been attached, we have built the
+space M..,, which is homotopy equivalent to Mz, for all sufficiently large b,
+and hence to M itself. This process is illustrated in Figure 7.17. The “bump”
+N(p) near a point p is the intersection of M with a ball of sufficiently small
+radius 6. Shrinking ¢ if necessary, (M.,- U N(p), Mc;) has the homotopy type
+of the local pair M?!°¢ discussed above.
+
+Each attachment has a long exact homology sequence. Because all of the
+spaces involved are cell complexes of real dimension at most d (see Section D.4
+of Appendix D), the homology groups H; of dimension k > d+1 vanish. Thus,
+the long exact sequence for any j < m always begins
+
+0 > Ha(M,,-) > Ha(Me,+) @ Ha(Mej+,Mej-) 9 o> - (7.14)
+
+Definition 7.29. For each critical point p at height cj, let G(p) denote the
+image in Hy(M,,,,M.,-) of the map projecting M,, U N(p) to the pair
+(M,,- UN(p), M.,), as in Figure 7.17. In other words, G(p) are those relative
+d-homology classes, once the bump N(p) near p is added, that are represented
+by absolute cycles. We further define G = G(c;) := Brac; G(p).

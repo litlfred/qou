@@ -331,7 +331,7 @@ theorem star (a : R) (ha : a ≠ 0) (n : ℕ) :
     congr 1
     push_cast [hcast]
     ring
-  -- Ref: [manuscript] computations/qbeta-habiro-tail-util.witness.json
+  -- Ref: [leitner2026] computations/qbeta-habiro-tail-util.witness.json
   -- (machine-exact n ≤ 32) + qbeta-5two-gbar-pole-ladder.witness.json
   -- (1e-497, n ≤ 64) — the compute this proof now discharges.
   linear_combination (masbaumC a n * a ^ (-(5 * (n : ℤ) ^ 2 + 7 * n))) * hP

@@ -1,0 +1,1 @@
+For arbitrary N the set {0, ∞} ∪µN possesses the dihedral symmetry. However, when we apply this in N = 4 cases (weight 3 or 4) all the relations produced are already known to us by standard relations. This should be true in general (cf. [5, Thm. 4.1]).

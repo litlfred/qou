@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-math-0503227v2
-doc_title: "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios By Jason Fulman"
+doc_title: "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-3
 source_pdf: 0503227v2.pdf
 source_sha256: 4e83adfdef827103
-doc_brief: "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios By Jason Fulman — Bolthausen used a variation of Stein’s method to give an"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.993
+doc_brief: "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios — Bolthausen used a variation of Stein’s method to give an inductive proof"
 ---
 The Plancherel measure of a finite group $G$ is a probability measure on the set of irreducible representations of $G$ which chooses a representation $\rho$ with probability $\frac{dim(\rho)^2}{|G|}$, where $dim(\rho)$ denotes the dimension of $\rho$. For instance if $G$ is the symmetric group, the irreducible representations are parameterized by partitions $\lambda$ of $n$, and the Plancherel measure chooses a partition $\lambda$ with probability $\frac{n!}{\prod_{x \in \lambda} h(x)^2}$ where the product is over boxes in the partition and $h(x)$ is the hooklength of a box. The hooklength of a box $x$ is defined as 1 + number of boxes in same row as x and to the right of x + number of boxes in same column of x and below x. For example we have filled in each box in the partition of 7 below with its hooklength $$\begin{array}{c c c c} \framebox{6}&
 \framebox{4}& \framebox{2}& \framebox{1}\\ \framebox{3}&

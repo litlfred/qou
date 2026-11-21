@@ -1,0 +1,68 @@
+thus 3M. unit-disc-fiz M A moebius-pt M u' = u A moebius-pt M v' = v
+by blast
+qed
+qed
+then obtain M where unit-disc-fix M \ moebius-pt M u' = u A moebius-pt M v' = v
+using assms (u # v)
+by blast
+hence unit-disc-fix (-M) A moebius-pt (-M) u = u' A moebius-pt (—M) v = v'
+using wnit-disc-fiz-moebius-inv|of M]
+by auto
+thus ?thesis
+by blast
+qed
+
+lemma unique-midpoint-x-axis:
+assumes «: is-real 1 —1 < Rex Rex < 1 and
+y: is-real y —1 < Rey Rey < 1 and
+cH#y
+shows 4! z. —1 < Rez A Rez < 1 A is-real z A poincare-distance (of-complex z) (of-compler x) = poincare-distance
+(of-complex z) (of-complez y) (is 4! z. ?R z (of-complex x) (of-complez y))
+proof—
+let 2x = of-complex x and ?y = of-complex y
+let ?P=Acy.dlz. ?Rzxey
+have V 2. —1 < Rex A Rex < 1 A is-real x A of-complex x # ?y —> ?P (of-complex x) ?y (is ?Q (of-complex y))
+proof (rule wlog-real-zero)
+show ?y € unit-disc
+using y
+by (simp add: cmod-eq-Re)
+next
+show is-real (to-complex ?y)
+using y
+by simp
+next
+show 7Q 0;
+proof (rule alll, rule impI, (erule conjE)+)
+fix x
+assume z: —1 < Rex Rex < 1 is-real x
+let ?x = of-complex x
+assume ?r 4 0),
+hence z # 0
+by auto
+hence Re « # 0
+using x
+using complex-neq-0
+by auto
+
+have *:V a.-1 <aANa< 1—~
+(poincare-distance (of-complex (cor a)) ?x = poincare-distance (of-complex (cor a)) 0p, +
+(Rez) *a*a-—2*a+Rer=0)
+proof (rule alll, rule imp1)
+fix a :: real
+assume —1 <aAa< 1
+hence of-complex (cor a) € unit-disc
+by auto
+moreover
+have (a — Re x)? / ((1 — a”) * (1 — (Re x)?)) = a? / (1 — a?) Ho
+(Rex) *a*a-—2*a+ Rex=0 (is ?lhs ~~ ?rhs)
+proof—
+have 1 — a? 40
+using (-1 <aAa< 1»
+by (metis cancel-comm-monoid-add-class.diff-cancel diff-eq-diff-less less-numeral-extra(4) power2-eq-1-iff
+right-minus-eq)
+hence ?lhs <> (a — Re x)? / (1 — (Re 2)”) = a?
+by (smt divide-cancel-right divide-divide-eq-left mult.commute)
+also have ... <> (a — Re 2)? = a? (1 — (Re x)’)
+proof—
+
+60

@@ -3,13 +3,14 @@
  "doc_id": "arxiv-hep-th-9310070v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "b979ebf2f47a465388a723997e70cc863ce0a1ecc5f8a049d195b24014ff08b6",
   "file": "9310070v1.pdf"
  },
  "provenance": {
-  "title": "September, 1993 Quantum Dilogarithm",
-  "authors": "L.D. Faddeev1,2,\u2020, R.M. Kashaev 1,\u2217,\u2020",
+  "title": "Quantum dilogarithm",
+  "authors": "L.D. Faddeev1,2,\u2020, R.M. Kashaev1,\u2217,\u2020",
   "arxiv": {
    "id": "hep-th/9310070",
    "version": "1",
@@ -24,7 +25,20 @@
   "by_kind": {
    "theorem": 1
   },
-  "formalization_candidates": 1
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
  },
  "candidates": [
   {
@@ -32,13 +46,25 @@
    "source_kind": "theorem",
    "number": null,
    "name": null,
-   "statement": "The following \u201cquantum pentagon \u201d identity holds :",
-   "section_file": "sections/sec-003-3-quantum-dilogarithm-at-\u03b8n-1.md",
-   "section_title": "Quantum Dilogarithm at \u03b8N = 1",
-   "pages": "5-8",
+   "statement": "The following \u201cquantum pentagon\u201d identity holds: \u03a8( \u02c6V )\u03a8\u2032( \u02c6U) = \u03a8\u2032\u2032( \u02c6U)\u03a8\u2032\u2032\u2032(\u2212\u02c6U \u02c6V )\u03a8\u2032\u2032\u2032\u2032( \u02c6V ), (3.9) where \u03a8# (# symbolizes any number of dashes from zero to four) are de\ufb01ned by (3.8) with a#, b#, c# satisfying (3.4), and yy\u2032\u2032 = y\u2032y\u2032\u2032\u2032\u2032, y\u2032 = y\u2032\u2032y\u2032\u2032\u2032, x\u2032\u2032\u2032 = xx\u2032, x\u2032\u2032 = x\u2032y\u2032\u2032\u2032\u2032, x\u2032\u2032\u2032\u2032 = xy\u2032\u2032, (3.10a) for x# = \u03c91/2a#/b#, y# = c#/b#. (3.10b) To prove the theorem, note that the combination \u03a8\u2032\u2032( \u02c6U)\u22121\u03a8( \u02c6V )\u03a8\u2032( \u02c6U)\u03a8\u2032\u2032\u2032\u2032( \u02c6V )\u22121 (3.11) commutes with operator \u2212\u02c6U \u02c6V , provided relations (3.10) hold. Therefore (3.11) is some function of \u2212\u02c6U \u02c6V . It is a simple task to show that this function satis\ufb01es (3.8). So, relation (3.9) holds up to some co",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/page-006.md (p. 6-6)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/page-006.md",
+   "section_title": "Page 6",
+   "pages": "6-6",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/page-006.md (p. 6-6)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-page-006-01",
+   "block_iri": "library/arxiv-hep-th-9310070v1/blocks/thm-page-006-01",
+   "claim_id": "arxiv-hep-th-9310070v1#thm-page-006-01",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

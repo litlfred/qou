@@ -1,0 +1,1 @@
+Note that we could alternatively deﬁne a morphism Tr(Ψ, ψ) by applying the unit ηΨ to the right of ΦA, rotating the trace in the opposite direction, and again using the counit on the right. It is elementary to give a natural equivalence of the two constructions using nothing more than the dualizability of A.

@@ -1,0 +1,69 @@
+to-complex-of-complez)
+qed
+qed
+
+lemma poincare-distance-zero-x-axis:
+assumes «x € unit-disc and « € circline-set x-axis
+shows poincare-distance 0, x = (let x’ = to-complex x in abs (In (Re ((1 — x’) / (4 + &')))))
+using assms
+using poincare-distance-z-axis-x-axis[of 0), 2]
+by (simp add: Let-def)
+
+lemma poincare-distance-zero:
+assumes x € unit-disc
+shows poincare-distance 0p x = (let x’ = to-complex x in abs (In (Re ((1 — cmod x’) / (1 + cmod x'))))) (is ?P 2)
+proof (cases t = 0p)
+case True
+thus ?thesis
+by auto
+next
+case False
+show ?thesis
+proof (rule wlog-rotation-to-positive-z-azis)
+show «x € unit-disc « £ 0; by fact+
+next
+fix yu
+assume wu € unit-disc u # On ?P (moebius-pt (moebius-rotation y) u)
+thus ?P u
+using unit-disc-fix-preserve-poincare-distance|of moebius-rotation y On ul
+by (cases u = cop) (simp-all add: Let-def)
+next
+fix x
+assume is-real x 0 < Rex Rex < 1
+thus ?P (of-complex x)
+using poincare-distance-zero-x-axis[of of-complex |
+by simp (auto simp add: circline-set-z-axis cmod-eq-Re complex-is-Real-iff)
+qed
+qed
+
+lemma poincare-distance-zero-opposite [simp]:
+assumes of-compler z € unit-disc
+shows poincare-distance 0 (of-compler (— z)) = poincare-distance Op (of-complex z)
+proof—
+have «: of-compler (—z) € unit-disc
+using assms
+by auto
+show ?thesis
+using poincare-distance-zero[OF assms]
+using poincare-distance-zero[OF *]
+by simp
+qed
+
+5.1 Distance explicit formula
+
+Instead of the h-distance itself, very frequently its hyperbolic cosine is analyzed.
+
+abbreviation cosh-dist uv = cosh (poincare-distance wu v)
+
+lemma cosh-poincare-distance-cross-ratio-average:
+assumes wu € unit-disc v € unit-disc u # v ideal-points (poincare-line uv) = {i1, i2}
+shows cosh-dist uv =
+((Re-cross-ratio u il v i2) + (Re-cross-ratio v il u i2)) / 2
+proof—
+let ?cr = cross-ratio u il v i2
+let ?crRe = Re (to-complex ?cr)
+have ?cr # oop is-real (to-complex ?cr) ?crRe > 0
+using distance-cross-ratio-real-positive|OF assms(1—3)] assms(4)
+by simp-all
+
+48

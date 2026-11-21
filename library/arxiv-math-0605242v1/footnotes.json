@@ -1,0 +1,1633 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-math-0605242v1",
+ "status": "determined",
+ "pages_unread": [
+  6
+ ],
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "†",
+   "text": "SupportedinpartbytheEuropeannetworkADONET504438andbygrantFOR468oftheDeutscheForschungs- gemeinschaft.",
+   "marks": [
+    {
+     "page": 1,
+     "context": "RaymondHemmecke"
+    }
+   ],
+   "block": "library/arxiv-math-0605242v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p001-2",
+   "page": 1,
+   "mark": "‡",
+   "text": "SupportedinpartbyagrantfromISF-theIsraelScienceFoundation,bytheTechnionPresidentFund,andbythe Jewish Communities of Germany Research Fund.",
+   "marks": [
+    {
+     "page": 1,
+     "context": "ShmuelOnn"
+    }
+   ],
+   "block": "library/arxiv-math-0605242v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p001-3",
+   "page": 1,
+   "mark": "§",
+   "text": "SupportedinpartbytheEuropeannetworkADONET504438andbygrantFOR468oftheDeutscheForschungs- gemeinschaft.",
+   "marks": [
+    {
+     "page": 1,
+     "context": "RobertWeismantel"
+    }
+   ],
+   "block": "library/arxiv-math-0605242v1/blocks/prose-sec-front-matter"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "q",
+   "context": "min {cx :Ax = b,x ∈N"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "and integer vectors b = (b"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "and integer vectors b = (b0, b"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "and integer vectors b = (b0, b1, . . . , b"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "and integer vectors b = (b0, b1, . . . , bn) and c = (c"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "eger vectors b = (b0, b1, . . . , bn) and c = (c1, . . . , c"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "s b = (b0, b1, . . . , bn) and c = (c1, . . . , cn), where b"
+  },
+  {
+   "page": 2,
+   "mark": "q",
+   "context": " = (b0, b1, . . . , bn) and c = (c1, . . . , cn), where b0∈Z"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "b1, . . . , bn) and c = (c1, . . . , cn), where b0∈Zq, and b"
+  },
+  {
+   "page": 2,
+   "mark": "p",
+   "context": " . . . , bn) and c = (c1, . . . , cn), where b0∈Zq, and bk∈Z"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": " , bn) and c = (c1, . . . , cn), where b0∈Zq, and bk∈Zpand c"
+  },
+  {
+   "page": 2,
+   "mark": "q",
+   "context": "bn) and c = (c1, . . . , cn), where b0∈Zq, and bk∈Zpand ck∈N"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "k= 1, . . . , n, ﬁnd a nonnegativeintegervectorx = (x"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": " . . . , n, ﬁnd a nonnegativeintegervectorx = (x1, . . . , x"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": " ﬁnd a nonnegativeintegervectorx = (x1, . . . , xn), where x"
+  },
+  {
+   "page": 2,
+   "mark": "q",
+   "context": "d a nonnegativeintegervectorx = (x1, . . . , xn), where xk∈N"
+  },
+  {
+   "page": 2,
+   "mark": "c",
+   "context": "k=1"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "k=1c"
+  },
+  {
+   "page": 2,
+   "mark": "x",
+   "context": "k=1ck"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "k=1ckx"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "k=1ckxksubjecttotheequationsP"
+  },
+  {
+   "page": 2,
+   "mark": "x",
+   "context": "k=1"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "k=1x"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "k=1xk= b"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "k=1xk= b0andAx"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "k=1xk= b0andAxk= b"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "k=1xk= b0andAxk= bkfor"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "minimizescx =P"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "programsmin{c"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "programsmin{ckx:Ax"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "programsmin{ckx:Axk=b"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "programsmin{ckx:Axk=bk,x"
+  },
+  {
+   "page": 2,
+   "mark": "q",
+   "context": "programsmin{ckx:Axk=bk,xk∈N"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "smin{ckx:Axk=bk,xk∈Nq}inﬁxeddimension;however,theconstraintP"
+  },
+  {
+   "page": 2,
+   "mark": "x",
+   "context": "k=1"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "k=1x"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "k=1xk=b"
+  },
+  {
+   "page": 2,
+   "mark": "q",
+   "context": "erobjectivevectorc ∈Znqandtheintegerright-handsidevectorb ∈Z"
+  },
+  {
+   "page": 2,
+   "mark": "r",
+   "context": "min{ cx:x ∈N"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "respectively.Givenpositiveintegernandintegervectorsb = (b"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "espectively.Givenpositiveintegernandintegervectorsb = (b0, b"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "Givenpositiveintegernandintegervectorsb = (b0, b1, . . . , b"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "veintegernandintegervectorsb = (b0, b1, . . . , bn)andc = (c"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "dintegervectorsb = (b0, b1, . . . , bn)andc = (c1, . . . , c"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "b"
+  },
+  {
+   "page": 3,
+   "mark": "s",
+   "context": "b0∈Z"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "b0∈Zs,andb"
+  },
+  {
+   "page": 3,
+   "mark": "r",
+   "context": "b0∈Zs,andbk∈Z"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "b0∈Zs,andbk∈Zrandc"
+  },
+  {
+   "page": 3,
+   "mark": "q",
+   "context": "b0∈Zs,andbk∈Zrandck∈N"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "b0∈Zs,andbk∈Zrandck∈Nqfork= 1, . . . , n,ﬁnd x = (x"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "Zs,andbk∈Zrandck∈Nqfork= 1, . . . , n,ﬁnd x = (x1, . . . , x"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "k∈Zrandck∈Nqfork= 1, . . . , n,ﬁnd x = (x1, . . . , xn)withx"
+  },
+  {
+   "page": 3,
+   "mark": "q",
+   "context": "randck∈Nqfork= 1, . . . , n,ﬁnd x = (x1, . . . , xn)withxk∈N"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "k=1"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "k=1c"
+  },
+  {
+   "page": 3,
+   "mark": "x",
+   "context": "k=1ck"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "k=1ckx"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "k=1ckxksubjecttoP"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "k=1Bx"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "k=1Bxk= b"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "k=1Bxk= b0andAx"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "k=1Bxk= b0andAxk= b"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "k=1Bxk= b0andAxk= bkfor"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "whichminimizescx =P"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "x ∈R"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "x ∈Rm"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "x ∈Rm1×···×m"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "x"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "xi"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "xi1,...,id= u"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "xi1,...,id= ui"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "x"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "xi"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "xi1,...,id= u"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "xi1,...,id= ui"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "xi1,...,id= ui1,i"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "x"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "xi"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "xi1,...,id= u"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "xi1,...,id= ui"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "Proposition2.1AnyrationalpolytopeP={y∈R"
+  },
+  {
+   "page": 4,
+   "mark": "r",
+   "context": "{ x ∈R"
+  },
+  {
+   "page": 4,
+   "mark": "r",
+   "context": "e means that there is a coordinate-erasing projection from R"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "t there is a coordinate-erasing projection from Rr×s×3onto R"
+  },
+  {
+   "page": 4,
+   "mark": "r",
+   "context": "bijectionbetweenTandPand betweenthesets ofintegerpoints T ∩Z"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "weenTandPand betweenthesets ofintegerpoints T ∩Zr×s×3andP ∩Z"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "min{ cx:x ∈N"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "n:=l,p:=r + s,andq:=r · s.Reindexthevariablesasx"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "isx=(x"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "isx=(x1, . . . , x"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "isx=(x1, . . . , xn)withx"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "isx=(x1, . . . , xn)withxk=(x"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "i,j)∈N"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "i,j)∈Nr×s"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "i,j)∈Nr×sa2-way"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "i,j)∈Nr×sa2-wayr × stable-the"
+  },
+  {
+   "page": 5,
+   "mark": "x",
+   "context": "i,j)∈Nr×sa2-wayr × stable-thekthlayerofthe3-waytable"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "Similarlywritec = (c"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Similarlywritec = (c1, . . . , c"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "Similarlywritec = (c1, . . . , cn)withc"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "Similarlywritec = (c1, . . . , cn)withck∈Z"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": " . . . , cn)withck∈Zr×sfortheobjectivevector.Next,putb := (b"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": " . , cn)withck∈Zr×sfortheobjectivevector.Next,putb := (b0, b"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "ck∈Zr×sfortheobjectivevector.Next,putb := (b0, b1, . . . , b"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "withb"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "withb0∈Nrsdeﬁnedbyb"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "withb0∈Nrsdeﬁnedbyb0:=(ui,j),andb"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "withb0∈Nrsdeﬁnedbyb0:=(ui,j),andbk∈N"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "withb0∈Nrsdeﬁnedbyb0:=(ui,j),andbk∈Nr+sdeﬁnedbyb"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "forcingrow-sumsandcolumn-sumsoneachofther × slayersx"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "forcingrow-sumsandcolumn-sumsoneachofther × slayersxkbyAx"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "forcingrow-sumsandcolumn-sumsoneachofther × slayersxkbyAxk=b"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "theequationsAx"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "theequationsAxk=b"
+  },
+  {
+   "page": 5,
+   "mark": "x",
+   "context": "k=1"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "k=1x"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "k=1xk= b"
+  },
+  {
+   "page": 5,
+   "mark": "u",
+   "context": "k=1xk= b0forcesthe“long”line-sums"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "bindingconstraintP"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "Thenp = 6,q= 9,andwritingx"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "Thenp = 6,q= 9,andwritingxk= (x"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "1,1, x"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "1,2, x"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "1,3, x"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "2,1, x"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "2,2, x"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "2,3, x"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "3,1, x"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "3,2, x"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "v:=P"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "j=1⌈n"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "j=1⌈nj/⌊u/w"
+  },
+  {
+   "page": 7,
+   "mark": "u",
+   "context": "j=1⌈nj/⌊u/wj⌋⌉,ofcapacity"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "j=1⌈nj/⌊u/wj⌋⌉,ofcapacityu"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "onlycorrectionneededisthateachslackvariablex"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "q=x"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "t+1,measuringtheunusedwidthofthe"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "sed. Thus the formulation as an n-fold program is with n :=P"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "j=1⌈n"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "j=1⌈nj/⌊u/w"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "j=1⌈nj/⌊u/wj⌋⌉,"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "j=1⌈nj/⌊u/wj⌋⌉, p := 1,"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "A:=(w1, w2, . . . , wt, 1),variablesx"
+  },
+  {
+   "page": 7,
+   "mark": "w",
+   "context": "jrepresentingthenumberofrollsofwidth"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "jrepresentingthenumberofrollsofwidthw"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "jrepresentingthenumberofrollsofwidthwjcutoutofthe"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "rollforj= 1, . . . , tandx"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "qrepresentingtheunusedwidthofthe"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "qrepresentingtheunusedwidthofthekthstandardroll,costs"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "qrepresentingtheunusedwidthofthekthstandardroll,costsc"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "j:=w"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "q:= 1,and demands"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "q:= 1,and demands b"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "q:= 1,and demands bk:= u for"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "q:= 1,and demands bk:= u fork= 1, . . . , nand"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "q:= 1,and demands bk:= u fork= 1, . . . , nand b"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "q:= 1,and demands bk:= u fork= 1, . . . , nand b0:= (n"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "and demands bk:= u fork= 1, . . . , nand b0:= (n1, . . . , n"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "nds bk:= u fork= 1, . . . , nand b0:= (n1, . . . , nt, nu −P"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "j= 1, . . . , tand c"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "j=1"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "j=1n"
+  },
+  {
+   "page": 7,
+   "mark": "w",
+   "context": "j=1nj"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "j=1njw"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "polynomialinP"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "j=1⌈n"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "j=1⌈nj/⌊u/w"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "j=1⌈nj/⌊u/wj⌋⌉andinthebitsizeofthenumbers"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "j=1⌈nj/⌊u/wj⌋⌉andinthebitsizeofthenumbersn"
+  },
+  {
+   "page": 7,
+   "mark": "u",
+   "context": "/⌊u/wj⌋⌉andinthebitsizeofthenumbersnjofordersandrawrollwidth"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "arefeasiblesolutionsoftheknapsackproblem{y∈N"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "arefeasiblesolutionsoftheknapsackproblem{y∈Nt:P"
+  },
+  {
+   "page": 7,
+   "mark": "w",
+   "context": "j=1"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "j=1w"
+  },
+  {
+   "page": 7,
+   "mark": "y",
+   "context": "j=1wj"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "j=1wjy"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "handle. But then the values ⌊u/w"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "handle. But then the values ⌊u/wj⌋are large and hence n :=P"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "j=1⌈n"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "j=1⌈nj/⌊u/w"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "b ∈Z"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "b ∈Zmandarbitraryobjectivevectorc ∈Z"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "traryobjectivevectorc ∈Zn,sharingthesameconstraintmatrixA ∈Z"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "min{cx :Ax = b,x ∈N"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "ltestsetforthefamilyIPAisaﬁnitesubsetGofthelatticeL(A):={x∈Z"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": ", namely such that x−gis feasible and better, that is, x−g∈N"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "Augmentationproblem.GivenA∈Z"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Augmentationproblem.GivenA∈Zm×n,x∈N"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Augmentationproblem.GivenA∈Zm×n,x∈Nnandc∈Z"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "g∈Z"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "g∈Zn,namelyonewithx −g∈{y∈N"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "queriedonx ∈N"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "queriedonx ∈Nnandc∈Z"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "N"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "NntoZ"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "NntoZn.Foru, v∈Z"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "i = 1, . . . , n, that is, u and vliein the sameorthant of R"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "Directedaugmentationproblem.GivenA∈Z"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Directedaugmentationproblem.GivenA∈Zm×n,x∈N"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Directedaugmentationproblem.GivenA∈Zm×n,x∈Nnandc′, c′′∈Z"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "g+−g−∈Z"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "g+−g−∈Znsatisfyingx −g∈{y∈N"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Hereandthroughout,g+, g−∈N"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "ndthroughout,g+, g−∈Nndenotethepositiveandnegativepartsofg∈Z"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i:=max{g"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "i:=max{gi,"
+  },
+  {
+   "page": 9,
+   "mark": "g",
+   "context": "i:=max{gi, 0}and"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i:=−min{g"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "i:=−min{gi,"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i:=−min{gi, 0}for"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "queriedonx ∈N"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "queriedonx ∈Nn,c′, c′′∈Z"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "In[21],itwasassumedthattheinputincludesanupperboundvectoru∈N"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "thattheactualfeasiblesetis{y∈N"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "programIPA(b, c):min{cy:Ay=b,y∈N"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Ay=b,y∈R"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "sisof[21];forinstance,uk:= m! n(n + 1)(max |xj|)(max |Ai,j|)"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "sition3.1Thereisapolynomialoracletimealgorithmthat,givenA ∈Z"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "1Thereisapolynomialoracletimealgorithmthat,givenA ∈Zm×n,x ∈N"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "isapolynomialoracletimealgorithmthat,givenA ∈Zm×n,x ∈Nn,c ∈Z"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "Lemma3.2LetG(A)betheGraverbasisofA∈Z"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Lemma3.2LetG(A)betheGraverbasisofA∈Zm×n.Foranyx∈N"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "mma3.2LetG(A)betheGraverbasisofA∈Zm×n.Foranyx∈Nnandc′, c′′∈Z"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "g∈Z"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "g∈Znwithx −g∈{y∈N"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "tnecessarilydistinct)elementsoftheGraverbasisofA,thatis,g=Pg"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "g"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "gi⊑gandg"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "ch case, by induction on ⊑, there is a conformal sum g−h =Pg"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "uction on ⊑, there is a conformal sum g−h =Pgigiving g= h+Pg"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "Now,g"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "Now,gi⊑gisequivalentto(g"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "Now,gi⊑gisequivalentto(gi)+≤g+and(g"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": ",gi⊑gisequivalentto(gi)+≤g+and(gi)−≤g−,sotheconformalsumg=Pg"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "corresponding sums ofthepositiveandnegativeparts g+=P(g"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "onding sums ofthepositiveandnegativeparts g+=P(gi)+andg−=P(g"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "(g"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "(c′(g"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "(c′(gi)+−c′′(g"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "(g"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "whichimpliesthatthereissomeg"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "whichimpliesthatthereissomegiinthissumwithc′(g"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "whichimpliesthatthereissomegiinthissumwithc′(gi)+−c′′(g"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "pliesthatthereissomegiinthissumwithc′(gi)+−c′′(gi)−> 0.Now,g"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "Ag"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "Agi= 0andhenceA(x −g"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "Agi= 0andhenceA(x −gi) = Ax.Finallyweshowthatx −g"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "Agi= 0andhenceA(x −gi) = Ax.Finallyweshowthatx −gi≥0:ifg"
+  },
+  {
+   "page": 10,
+   "mark": "x",
+   "context": "j≤0then"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "j≤0thenx"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "j≤0thenxj−g"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "j≥x"
+  },
+  {
+   "page": 10,
+   "mark": "g",
+   "context": "j>0then"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "j>0theng"
+  },
+  {
+   "page": 10,
+   "mark": "g",
+   "context": "j>0thengi⊑gimplies"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "j>0thengi⊑gimpliesg"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "andifg"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "j≤g"
+  },
+  {
+   "page": 10,
+   "mark": "x",
+   "context": "j≤gjandthus"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "j≤gjandthusx"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "j≤gjandthusxj−g"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "j≥x"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "j≥xj−g"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "becausegisanimprovingdirection.Sog"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "rem3.3Thereisapolynomialtimealgorithmthat,givenanymatrixA ∈Z"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "GraverbasisG(A),andvectorsx ∈N"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "GraverbasisG(A),andvectorsx ∈Nnandc ∈Z"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "ofn-foldmatrices.Considervectorsx=(x"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "ofn-foldmatrices.Considervectorsx=(x1, . . . , x"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "ofn-foldmatrices.Considervectorsx=(x1, . . . , xn)withx"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "ofn-foldmatrices.Considervectorsx=(x1, . . . , xn)withxk∈N"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "thenumber|{k:x"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "thenumber|{k:xk̸=0}|ofnonzerocomponentsx"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "thenumber|{k:xk̸=0}|ofnonzerocomponentsxk∈N"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "Proposition4.1ForeverypairofintegermatricesA ∈Z"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": "Proposition4.1ForeverypairofintegermatricesA ∈Zr×qandB∈Z"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "Theorem4.2FixanypairofintegermatricesA∈Z"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": "Theorem4.2FixanypairofintegermatricesA∈Zr×qandB∈Z"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "Consideranygindices1≤k"
+  },
+  {
+   "page": 11,
+   "mark": "g",
+   "context": "Consideranygindices1≤k1<· · ·<k"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "Consideranygindices1≤k1<· · ·<kg≤nanddeﬁneamapφ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "Consideranygindices1≤k1<· · ·<kg≤nanddeﬁneamapφk"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "x = (x"
+  },
+  {
+   "page": 11,
+   "mark": "g",
+   "context": "x = (x1, . . . , x"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "x = (x1, . . . , xg)toy= (y"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "x = (x1, . . . , xg)toy= (y1, . . . , y"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "x = (x1, . . . , xg)toy= (y1, . . . , yn)deﬁnedbyy"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "x = (x1, . . . , xg)toy= (y1, . . . , yn)deﬁnedbyyk"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "x = (x1, . . . , xg)toy= (y1, . . . , yn)deﬁnedbyykt:= x"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "oy= (y1, . . . , yn)deﬁnedbyykt:= xtfort = 1, . . . , g,andy"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "mapsφ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "mapsφk"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "mapsφk1,...,kgforall1 ≤k"
+  },
+  {
+   "page": 12,
+   "mark": "g",
+   "context": "mapsφk1,...,kgforall1 ≤k1< · · · < k"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "ifx=(x"
+  },
+  {
+   "page": 12,
+   "mark": "g",
+   "context": "ifx=(x1, . . . , x"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "x := (y"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "x := (yk"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "x := (yk1, . . . , y"
+  },
+  {
+   "page": 12,
+   "mark": "g",
+   "context": "x := (yk1, . . . , yk"
+  },
+  {
+   "page": 12,
+   "mark": "g",
+   "context": "|G([A, B](g))|=O(n"
+  },
+  {
+   "page": 12,
+   "mark": "g",
+   "context": "basisG([A, B](n))isO(n"
+  },
+  {
+   "page": 12,
+   "mark": "g",
+   "context": "=O(n"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "mapsφ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "mapsφk"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "mapsφk1,k"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "mapsφk1,k2: N"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "mapsφk1,k2: N2·2−→N"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "mapsφk1,k2: N2·2−→N4·2for1 ≤k"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "mapsφk1,k2: N2·2−→N4·2for1 ≤k1< k"
+  },
+  {
+   "page": 13,
+   "mark": "r",
+   "context": "Lemma5.1Fix any pair of integer matrices A ∈Z"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "Lemma5.1Fix any pair of integer matrices A ∈Zr×qand B∈Z"
+  },
+  {
+   "page": 13,
+   "mark": "r",
+   "context": "Lemma5.2FixanypairofintegermatricesA∈Z"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "Lemma5.2FixanypairofintegermatricesA∈Zr×qandB∈Z"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "timealgorithmthat,givennanddemandvectorb ∈N"
+  }
+ ]
+}

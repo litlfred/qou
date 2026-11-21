@@ -2,50 +2,80 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-hep-lat-9806003v2",
  "source_sha256": "e34739e703aae6db",
- "brief": "Statistical analysis and the equivalent of a Thouless energy in lattice QCD Dirac spectra — 8 sections: INTRODUCTION; COMPLETE DIRAC SPECTRA IN SU(2) GA; DATA ANALYSIS",
- "extended": "**Statistical analysis and the equivalent of a Thouless energy in lattice QCD Dirac spectra**\n\n*T. Guhr1, J.-Z. Ma1, S. Meyer2 and T. Wilke1*\n\n26 pp, 8 sections.\n\n**Outline.** I INTRODUCTION; II COMPLETE DIRAC SPECTRA IN SU(2) GAUGE THEOR; III DATA ANALYSIS; 1 Ensemble unfolding; 3 Windowing; C Two–Point Spectral Correlations; IV SUMMARY AND DISCUSSION; Acknowledgments",
+ "brief": "Statistical analysis and the equivalent of a Thouless energy in lattice QCD Dirac spectra — 14 sections: Front matter; Introduction; Complete Dirac spectra in SU(2) ga",
+ "extended": "**Statistical analysis and the equivalent of a Thouless energy in lattice QCD Dirac spectra**\n\n*T. Guhr1, J.-Z. Ma1, S. Meyer2 and T. Wilke1*\n\n26 pp, 14 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Complete Dirac spectra in SU(2) gauge theory; 3 Data analysis; 3.1 Unfolding; 3.1.1 Ensemble unfolding; 3.1.2 Configuration unfolding; 3.1.3 Windowing; 3.2 Nearest Neighbor Spacing Distribution; 3.3 Two--Point Spectral Correlations; 3.4 Higher Order Spectral Correlations; 3.5 Qualitative discussion of the deviations f; 4 Summary and discussion; Acknowledgments",
  "tokens": {
   "brief": 41,
-  "extended": 92
+  "extended": 142
  },
  "sections": [
   {
-   "id": "sec-000-i-introduction",
-   "title": "INTRODUCTION",
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
    "pages": "1-2"
   },
   {
-   "id": "sec-001-ii-complete-dirac-spectra-in-su2-gauge-theory",
-   "title": "COMPLETE DIRAC SPECTRA IN SU(2) GAUGE THEORY",
+   "id": "sec-001-2-complete-dirac-spectra-in-su2-gauge-theory",
+   "title": "Complete Dirac spectra in SU(2) gauge theory",
    "pages": "2-2"
   },
   {
-   "id": "sec-002-iii-data-analysis",
-   "title": "DATA ANALYSIS",
+   "id": "sec-002-3-data-analysis",
+   "title": "Data analysis",
    "pages": "2-3"
   },
   {
-   "id": "sec-003-1-ensemble-unfolding",
-   "title": "Ensemble unfolding",
-   "pages": "3-5"
+   "id": "sec-003-31-unfolding",
+   "title": "Unfolding",
+   "pages": "3-3"
   },
   {
-   "id": "sec-004-3-windowing",
+   "id": "sec-004-311-ensemble-unfolding",
+   "title": "Ensemble unfolding",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-005-312-configuration-unfolding",
+   "title": "Configuration unfolding",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-006-313-windowing",
    "title": "Windowing",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-007-32-nearest-neighbor-spacing-distribution",
+   "title": "Nearest Neighbor Spacing Distribution",
    "pages": "5-6"
   },
   {
-   "id": "sec-005-c-twopoint-spectral-correlations",
-   "title": "Two–Point Spectral Correlations",
-   "pages": "6-10"
+   "id": "sec-008-33-two--point-spectral-correlations",
+   "title": "Two--Point Spectral Correlations",
+   "pages": "6-7"
   },
   {
-   "id": "sec-006-iv-summary-and-discussion",
-   "title": "SUMMARY AND DISCUSSION",
+   "id": "sec-009-34-higher-order-spectral-correlations",
+   "title": "Higher Order Spectral Correlations",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-010-35-qualitative-discussion-of-the-deviations-for",
+   "title": "Qualitative discussion of the deviations for configuration unfolding",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-011-4-summary-and-discussion",
+   "title": "Summary and discussion",
    "pages": "10-12"
   },
   {
-   "id": "sec-007-acknowledgments",
+   "id": "sec-012-acknowledgments",
    "title": "Acknowledgments",
    "pages": "12-26"
   }

@@ -6,10 +6,12 @@
   "sha256": "852b7bbc81a6288324eb1f707f3e42e77ece5e23b092ea16ab5cee2337d00e61",
   "bytes": 626848,
   "pages": 44,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,17 +23,27 @@
   "doi": null,
   "title": "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS",
   "authors_raw": "VERONICA FANTINI AND CAMPBELL WHEELER",
-  "abstract": "We prove conjectures of Garoufalidis-Gu-Mari\u02dc no [ 9] that perturbative series associated with the hyperbolic knots 4 1 and 5 2 are resurgent and Borel summable. In the process, we give an algorithm that can be used to explicitly compute t he Borel\u2013Laplace resummation as a combination of state integrals of Andersen\u2013Kash aev [ 1]. This gives a complete description of the resurgent structure in these example s and allows for explicit computations of Stokes constants.",
-  "docinfo": {
-   "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20241028212825-04'00'",
-   "Creator": "LaTeX with hyperref",
-   "Title": "",
-   "Author": ""
-  },
   "title_lines": [
    "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS"
-  ]
+  ],
+  "abstract": "We prove conjectures of Garoufalidis-Gu-Mari˜no [9] that perturbative series associated with the hyperbolic knots 41 and 52 are resurgent and Borel summable. In the process, we give an algorithm that can be used to explicitly compute the Borel–Laplace resummation as a combination of state integrals of Andersen–Kashaev [1]. This gives a complete description of the resurgent structure in these examples and allows for explicit computations of Stokes constants.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20241028212825-04'00'"
+  },
+  "title_raw": "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS",
+   "outline": "1. Introduction",
+   "text": "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -39,190 +51,1106 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Deforming the volume of a three-manifold",
    "page": 2,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "State integrals",
    "page": 4,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
-   "title": "Proving Borel\u2013Laplace summability",
+   "title": "Proving Borel–Laplace summability",
    "page": 5,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Acknowledgements",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "From thimbles to state integrals",
    "page": 9,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Existence of thimbles",
    "page": 9,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "A relative homology for state integrals contours",
    "page": 12,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "A state integral basis",
    "page": 14,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "Asymptotics of state integrals",
    "page": 16,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "A steepest descent algorithm",
    "page": 17,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Proof of Theorem 1.4",
    "page": 19,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "Examples",
    "page": 21,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "The 4_1 knot",
    "page": 21,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "The case of (A,B)=(4,1)",
    "page": 27,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 1,
    "title": "Appendix A. Critical points and independence of state integrals",
    "page": 36,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 1,
    "title": "Appendix B. Faddeev's dilogarithm",
    "page": 37,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "37"
   },
   {
    "level": 2,
    "title": "B.1. Asymptotics of the Pochhammer symbol",
    "page": 37,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "37"
   },
   {
    "level": 2,
    "title": "B.2. Asymptotics of Faddeev's dilogarithm for Im(tau)=/=0",
    "page": 39,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 2,
    "title": "B.3. Asymptotics of Faddeev's dilogarithm for Im(tau) near 0",
    "page": 40,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 1,
    "title": "References",
    "page": 43,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Domain of D3π/4(z) given by C\\",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The two conventions for the branch cuts of the function V . Taking the principle branch of Li2 we ﬁnd that for V (z+, m+) = B Li2(e(z+))",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "This ﬁgure depicts in orange the analytic continuation of the set C(−5/6,0),ϑ for ϑ = 1.6650 and (A, B) = (1, 2). The blue lines are parallel to the",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The m-sheet of Σ+",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "The projection of Σ+",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "For −1/τ = eiϑ = eiθ, Re(τ) > 0 and A −B < 0, these pictures",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "15"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "This reproduces Figure 6 with the change A −B > 0. We see that Lemma 2.7 and Proposition 2.6 imply the following corollary",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "15"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "This ﬁgure depicts in orange the set C(−5/6,0),ϑ for ϑ = 1.6650 and",
+   "page": 17,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "This ﬁgure depicts in orange the set C(−5/6,0),ϑ for ϑ = 1.6650 and",
+   "page": 17,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "This ﬁgure illustrates the Stokes rays in τ-plane with ϑ = arg(−1/τ) forming a peacock pattern. Note that this is stretched in the direc-",
+   "page": 21,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "21"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "This ﬁgure depicts in orange the set C(−1/6,0),ϑ for ϑ",
+   "page": 22,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "This ﬁgure depicts in orange the set C(−5/6,0),ϑ for ϑ",
+   "page": 22,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "This ﬁgure depicts in orange the set C(−5/6,0),ϑ for ϑ",
+   "page": 23,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "23"
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "This ﬁgure depicts in orange the set C(−5/6,0),ϑ for ϑ",
+   "page": 23,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "23"
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "This ﬁgure depicts in orange the set C(−5/6,0),ϑ for ϑ",
+   "page": 24,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "24"
+  },
+  {
+   "kind": "figure",
+   "number": "16",
+   "title": "This ﬁgure depicts in orange the set C(−5/6,0),ϑ for ϑ",
+   "page": 24,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "24"
+  },
+  {
+   "kind": "figure",
+   "number": "17",
+   "title": "This ﬁgure depicts in orange the set C(−5/6,0),ϑ for ϑ",
+   "page": 25,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "25"
+  },
+  {
+   "kind": "figure",
+   "number": "18",
+   "title": "This ﬁgure depicts the contours γe,ϑ that we add at the ﬁrst and second iteration of the algorithm to Ip1,V1,III as showed in Figure 17",
+   "page": 26,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "26"
+  },
+  {
+   "kind": "figure",
+   "number": "19",
+   "title": "This ﬁgure depicts the Stokes rays in τ-plane with ϑ = arg(−1/τ)",
+   "page": 28,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "28"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "p1",
+   "page": 28,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "28"
+  },
+  {
+   "kind": "figure",
+   "number": "20",
+   "title": "From the right, this ﬁgure depicts in orange the analytic continuation of the set Cp1,ϑ, Cp2,ϑ, Cp3,ϑ and Cp4,ϑ for ϑ = arg(−1/τ) = 2.54159 and",
+   "page": 29,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "29"
+  },
+  {
+   "kind": "figure",
+   "number": "21",
+   "title": "This ﬁgure depicts in orange the set Cp4,ϑ for ϑ = arg(−1/τ) =",
+   "page": 29,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "29"
+  },
+  {
+   "kind": "figure",
+   "number": "22",
+   "title": "This ﬁgure depicts in orange the set Cp4,ϑ for ϑ = arg(−1/τ) =",
+   "page": 30,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "30"
+  },
+  {
+   "kind": "figure",
+   "number": "23",
+   "title": "This ﬁgure depicts in orange the set Cp4,ϑ for ϑ = arg(−1/τ) =",
+   "page": 30,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "30"
+  },
+  {
+   "kind": "figure",
+   "number": "24",
+   "title": "This ﬁgure depicts in orange the set Cp4,ϑ for ϑ = arg(−1/τ) =",
+   "page": 31,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "31"
+  },
+  {
+   "kind": "figure",
+   "number": "25",
+   "title": "This ﬁgure depicts in orange the set Cp1,ϑ for ϑ = arg(−1/τ) =",
+   "page": 31,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "31"
+  },
+  {
+   "kind": "figure",
+   "number": "26",
+   "title": "This ﬁgure depicts in orange the set Cp1,ϑ for ϑ = arg(−1/τ) =",
+   "page": 32,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "32"
+  },
+  {
+   "kind": "figure",
+   "number": "27",
+   "title": "This ﬁgure depicts in orange the set Cp4,ϑ for ϑ = arg(−1/τ) =",
+   "page": 32,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "32"
+  },
+  {
+   "kind": "figure",
+   "number": "28",
+   "title": "This ﬁgure depicts in orange the set Cp4,τ for ϑ = arg(−1/τ) =",
+   "page": 33,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "33"
+  },
+  {
+   "kind": "figure",
+   "number": "29",
+   "title": "This ﬁgure depicts in violet the tail that contributes in the decomposition of the set Cp4,ϑ given by state integral contours",
+   "page": 33,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "33"
+  },
+  {
+   "kind": "figure",
+   "number": "30",
+   "title": "Domain of L3π/4(z) given by C\\(Z + (i −1)R≤0). Given that (A0, B0) = 1, we see that A0 is invertible modulo B0. Therefore, Equation (101) implies that (−1)A ≡(−1)AAA",
+   "page": 37,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "37"
+  },
+  {
+   "kind": "figure",
+   "number": "31",
+   "title": "Domain of D3π/4(z) given by C\\",
+   "page": 39,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "39"
+  },
+  {
+   "kind": "figure",
+   "number": "32",
+   "title": "The blue region depicts the region the ﬁrst line of Equation (122) considered for Φ(τz; τ) as τ is deﬁned and the green region depicts the region the second line is deﬁned",
+   "page": 40,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "40"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1952,
+   "n_words": 285,
+   "label_start": "1",
+   "label_end": "2"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 2604,
+   "n_words": 412,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-001-11-deforming-the-volume-of-a-three-manifold",
    "number": "1.1",
    "title": "Deforming the volume of a three-manifold",
    "level": 2,
-   "page_start": 1,
-   "page_end": 3,
-   "n_chars": 4266,
-   "n_words": 719
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 3250,
+   "n_words": 678,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
    "id": "sec-002-12-state-integrals",
    "number": "1.2",
    "title": "State integrals",
    "level": 2,
-   "page_start": 3,
+   "page_start": 4,
    "page_end": 5,
-   "n_chars": 6228,
-   "n_words": 1328
+   "n_chars": 3083,
+   "n_words": 590,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-003-13-proving-borellaplace-summability",
    "number": "1.3",
-   "title": "Proving Borel\u2013Laplace summability",
+   "title": "Proving Borel–Laplace summability",
    "level": 2,
    "page_start": 5,
    "page_end": 8,
-   "n_chars": 8253,
-   "n_words": 1536
+   "n_chars": 8143,
+   "n_words": 1426,
+   "label_start": "5",
+   "label_end": "8"
   },
   {
    "id": "sec-004-acknowledgements",
@@ -231,8 +1159,10 @@
    "level": 1,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 668,
-   "n_words": 107
+   "n_chars": 659,
+   "n_words": 99,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
    "id": "sec-005-2-from-thimbles-to-state-integrals",
@@ -241,8 +1171,10 @@
    "level": 1,
    "page_start": 9,
    "page_end": 9,
-   "n_chars": 570,
-   "n_words": 102
+   "n_chars": 603,
+   "n_words": 105,
+   "label_start": "9",
+   "label_end": "9"
   },
   {
    "id": "sec-006-21-existence-of-thimbles",
@@ -251,8 +1183,10 @@
    "level": 2,
    "page_start": 9,
    "page_end": 12,
-   "n_chars": 6263,
-   "n_words": 1352
+   "n_chars": 6168,
+   "n_words": 1273,
+   "label_start": "9",
+   "label_end": "12"
   },
   {
    "id": "sec-007-22-a-relative-homology-for-state-integrals-conto",
@@ -261,8 +1195,10 @@
    "level": 2,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 3818,
-   "n_words": 840
+   "n_chars": 3762,
+   "n_words": 780,
+   "label_start": "12",
+   "label_end": "14"
   },
   {
    "id": "sec-008-23-a-state-integral-basis",
@@ -271,8 +1207,10 @@
    "level": 2,
    "page_start": 14,
    "page_end": 16,
-   "n_chars": 5101,
-   "n_words": 1062
+   "n_chars": 5093,
+   "n_words": 1011,
+   "label_start": "14",
+   "label_end": "16"
   },
   {
    "id": "sec-009-3-asymptotics-of-state-integrals",
@@ -281,8 +1219,10 @@
    "level": 1,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 1381,
-   "n_words": 252
+   "n_chars": 1375,
+   "n_words": 246,
+   "label_start": "16",
+   "label_end": "17"
   },
   {
    "id": "sec-010-31-a-steepest-descent-algorithm",
@@ -291,8 +1231,10 @@
    "level": 2,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 5832,
-   "n_words": 1237
+   "n_chars": 5777,
+   "n_words": 1181,
+   "label_start": "17",
+   "label_end": "19"
   },
   {
    "id": "sec-011-32-proof-of-theorem-14",
@@ -301,8 +1243,10 @@
    "level": 2,
    "page_start": 19,
    "page_end": 21,
-   "n_chars": 3236,
-   "n_words": 641
+   "n_chars": 3176,
+   "n_words": 583,
+   "label_start": "19",
+   "label_end": "21"
   },
   {
    "id": "sec-012-4-examples",
@@ -310,52 +1254,135 @@
    "title": "Examples",
    "level": 1,
    "page_start": 21,
-   "page_end": 36,
-   "n_chars": 25356,
-   "n_words": 5376
+   "page_end": 27,
+   "n_chars": 10776,
+   "n_words": 2111,
+   "label_start": "21",
+   "label_end": "27"
   },
   {
-   "id": "sec-013-appendix-a-critical-points-and-independence-of-s",
+   "id": "sec-013-42-the-case-of-ab41",
+   "number": "4.2",
+   "title": "The case of (A,B)=(4,1)",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 36,
+   "n_chars": 14275,
+   "n_words": 3020,
+   "label_start": "27",
+   "label_end": "36"
+  },
+  {
+   "id": "sec-014-appendix-a-critical-points-and-independence-of-s",
    "number": null,
    "title": "Appendix A. Critical points and independence of state integrals",
    "level": 1,
    "page_start": 36,
    "page_end": 37,
-   "n_chars": 1666,
-   "n_words": 326
+   "n_chars": 1452,
+   "n_words": 280,
+   "label_start": "36",
+   "label_end": "37"
   },
   {
-   "id": "sec-014-b1-asymptotics-of-the-pochhammer-symbol",
+   "id": "sec-015-appendix-b-faddeevs-dilogarithm",
+   "number": null,
+   "title": "Appendix B. Faddeev's dilogarithm",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 161,
+   "n_words": 24,
+   "label_start": "37",
+   "label_end": "37"
+  },
+  {
+   "id": "sec-016-b1-asymptotics-of-the-pochhammer-symbol",
    "number": null,
    "title": "B.1. Asymptotics of the Pochhammer symbol",
    "level": 2,
    "page_start": 37,
-   "page_end": 43,
-   "n_chars": 9714,
-   "n_words": 2130
+   "page_end": 39,
+   "n_chars": 2711,
+   "n_words": 553,
+   "label_start": "37",
+   "label_end": "39"
   },
   {
-   "id": "sec-015-references",
+   "id": "sec-017-b2-asymptotics-of-faddeevs-dilogarithm-for-imtau",
+   "number": null,
+   "title": "B.2. Asymptotics of Faddeev's dilogarithm for Im(tau)=/=0",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 2265,
+   "n_words": 430,
+   "label_start": "39",
+   "label_end": "40"
+  },
+  {
+   "id": "sec-018-b3-asymptotics-of-faddeevs-dilogarithm-for-imtau",
+   "number": null,
+   "title": "B.3. Asymptotics of Faddeev's dilogarithm for Im(tau) near 0",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 43,
+   "n_chars": 4293,
+   "n_words": 885,
+   "label_start": "40",
+   "label_end": "43"
+  },
+  {
+   "id": "sec-019-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 43,
    "page_end": 44,
-   "n_chars": 4200,
-   "n_words": 563
+   "n_chars": 4172,
+   "n_words": 525,
+   "label_start": "43",
+   "label_end": "44"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 21,
-  "sections": 16,
-  "chars_total": 86552,
+  "toc_inferred_entries": 0,
+  "figure_entries": 33,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 4,
+    "items": [
+     "A relative homology for state integrals contours",
+     "A steepest descent algorithm",
+     "The 41 knot",
+     "Asymptotics of Faddeev’s dilogarithm for Im(τ) near 0 40 References"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 21,
+  "chars_total": 85750,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "stat.phase.stat.int._20_.tex",
    "tex_sections": 38,
-   "overlaid": 10,
+   "overlaid": 12,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -363,30 +1390,39 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.95,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-001-11-deforming-the-volume-of-a-three-manifold",
      "title": "Deforming the volume of a three-manifold",
-     "prose_ratio": 0.45,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.939,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-12-state-integrals",
      "title": "State integrals",
-     "prose_ratio": 0.953,
-     "coverage_ratio": 0.589,
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-13-proving-borellaplace-summability",
-     "title": "Proving Borel\u2013Laplace summability",
+     "title": "Proving Borel–Laplace summability",
      "prose_ratio": 0.962,
-     "coverage_ratio": 0.969,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -394,7 +1430,7 @@
      "id": "sec-004-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.893,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -402,7 +1438,7 @@
      "id": "sec-005-2-from-thimbles-to-state-integrals",
      "title": "From thimbles to state integrals",
      "prose_ratio": 0.976,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -410,7 +1446,7 @@
      "id": "sec-006-21-existence-of-thimbles",
      "title": "Existence of thimbles",
      "prose_ratio": 0.902,
-     "coverage_ratio": 0.938,
+     "coverage_ratio": 0.947,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -418,15 +1454,15 @@
      "id": "sec-007-22-a-relative-homology-for-state-integrals-conto",
      "title": "A relative homology for state integrals contours",
      "prose_ratio": 0.795,
-     "coverage_ratio": 0.933,
+     "coverage_ratio": 0.932,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-008-23-a-state-integral-basis",
      "title": "A state integral basis",
-     "prose_ratio": 0.813,
-     "coverage_ratio": 0.951,
+     "prose_ratio": 0.824,
+     "coverage_ratio": 0.957,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -434,7 +1470,7 @@
      "id": "sec-009-3-asymptotics-of-state-integrals",
      "title": "Asymptotics of state integrals",
      "prose_ratio": 0.976,
-     "coverage_ratio": 0.646,
+     "coverage_ratio": 0.645,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -442,7 +1478,7 @@
      "id": "sec-010-31-a-steepest-descent-algorithm",
      "title": "A steepest descent algorithm",
      "prose_ratio": 0.697,
-     "coverage_ratio": 0.945,
+     "coverage_ratio": 0.964,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -454,23 +1490,43 @@
     {
      "id": "sec-012-4-examples",
      "title": "Examples",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.671,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-013-appendix-a-critical-points-and-independence-of-s",
+     "id": "sec-013-42-the-case-of-ab41",
+     "title": "The case of (A,B)=(4,1)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-appendix-a-critical-points-and-independence-of-s",
      "title": "Appendix A. Critical points and independence of state integrals",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-014-b1-asymptotics-of-the-pochhammer-symbol",
+     "id": "sec-015-appendix-b-faddeevs-dilogarithm",
+     "title": "Appendix B. Faddeev's dilogarithm",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-b1-asymptotics-of-the-pochhammer-symbol",
      "title": "B.1. Asymptotics of the Pochhammer symbol",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-015-references",
+     "id": "sec-017-b2-asymptotics-of-faddeevs-dilogarithm-for-imtau",
+     "title": "B.2. Asymptotics of Faddeev's dilogarithm for Im(tau)=/=0",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-b3-asymptotics-of-faddeevs-dilogarithm-for-imtau",
+     "title": "B.3. Asymptotics of Faddeev's dilogarithm for Im(tau) near 0",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-references",
      "title": "References",
      "result": "no matching \\section"
     }

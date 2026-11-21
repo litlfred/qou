@@ -50,7 +50,7 @@ namespace QOU.Interactions
     estimate.  No instance is provided here, faithfully representing the
     conjecture's open state. -/
 -- Ref: [jones1985] doi:10.2307/1971403   (Markov trace / brane-tower trace structure)
--- Ref: [manuscript] conj:archimedean-remainder-exponential-decay
+-- Ref: [leitner2026] conj:archimedean-remainder-exponential-decay
 class ArchimedeanRemainderExponentialDecay (remainder : ℕ → ℝ) : Prop where
   /-- Exponential-decay control of the truncation remainder: there is a
       positive prefactor `C` and positive rate `c` with

@@ -1,0 +1,2625 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-20T18:09:26.575453+00:00",
+  "commitSha": "a8d448c2fb16f5b8b5c881fbbc170d8eca054c08",
+  "assertions": [
+    {
+      "name": "P0.tau1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "tau(1) = 1.0"
+    },
+    {
+      "name": "P0.tau_sigma",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "tau(sigma_0) - z_D = 7.7788e-62"
+    },
+    {
+      "name": "P0.delta_S",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "tau(Delta_S) = -0.106235639848092790892142 vs scorecard closed form, dev -6.81e-62"
+    },
+    {
+      "name": "P0.chi21_V3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "chi_(2,1)(V^3) dev 9.33e-61"
+    },
+    {
+      "name": "P0.D_two_row",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "H_6: y > 0 exactly on two-row shapes (convention D)"
+    },
+    {
+      "name": "P1.netrow_witness",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "committed witness: rank 5, 1'v = 0.090237233270, 0/4238 demand-admissible"
+    },
+    {
+      "name": "P1.altchar_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "chi_(1^3)(V^k) = 1 for k = 0..10: radical pairing of every gamma-gamma word is 1 != 0"
+    },
+    {
+      "name": "P2.three_divides",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "survivors [3, 6, 9] = {k : 3 | k} (prediction 1)"
+    },
+    {
+      "name": "P2.flavour_blind",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "p and n survivor sets are identical (same candidate set, no flavour index)"
+    },
+    {
+      "name": "P3.ran",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "225 H_6 candidates evaluated"
+    },
+    {
+      "name": "P4.cost_minimal_zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "cost-minimal selection p = n = V^3 gives Q_beta = 0 exactly (prediction 2)"
+    },
+    {
+      "name": "P4.diag_zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "every equal pair gives 0"
+    },
+    {
+      "name": "P4.offdiag_nonzero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "every unequal pair gives a non-zero value (prediction 3)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5734,
+  "computation": "qbeta-gg-sdp-base",
+  "scriptFile": "qbeta_gg_sdp_base_probe.py",
+  "scriptHash": "f074f4fcc847",
+  "scriptCommitSha": "a8d448c2fb16f5b8b5c881fbbc170d8eca054c08",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "ae1028699afd20c5"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_gg_sdp_base/qbeta_gg_sdp_base_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_gg_sdp_base/qbeta_gg_sdp_base_probe.py"
+  },
+  "description": "qou-ales / qou-vd7j: gamma-gamma + reading-3 (every level) word selection and the Q_beta it gives on the ruled base (Markov trace at z_D, tower-summed E0). H_3 survivors 3 | k, identical for p and n; cost-minimal selection p = n = V^3 so Q_beta = 0; all ordered survivor pairs reported, not ranked. vd7j: the G x = nf demand fails only through the radical pairing chi_(1^3) = 1. Pre-registered at b3a70fdf25.",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "dps": 60,
+    "convention": "D (z = q^3/(q^2+1))"
+  },
+  "data": {
+    "z_D": "0.6126880371464652515958298639458992480263",
+    "E0_canonical_MeV": "4.22748335562903055026805602659",
+    "H6_y": {
+      "(6,)": "0.11532422490206616611",
+      "(5, 1)": "0.078952962475926678988",
+      "(4, 2)": "0.046032434692020426937",
+      "(4, 1, 1)": "0.0",
+      "(3, 3)": "0.015123810098023319304",
+      "(3, 2, 1)": "0.0",
+      "(3, 1, 1, 1)": "0.0",
+      "(2, 2, 2)": "0.0",
+      "(2, 2, 1, 1)": "0.0",
+      "(2, 1, 1, 1, 1)": "0.0",
+      "(1, 1, 1, 1, 1, 1)": "0.0"
+    },
+    "H3_table": {
+      "0": {
+        "pass": true,
+        "chi": {
+          "(3,)": "1.0",
+          "(2, 1)": "2.0"
+        },
+        "tau_zD": "1.0"
+      },
+      "1": {
+        "pass": false,
+        "chi": {
+          "(3,)": "1.0",
+          "(2, 1)": "-1.0437062085325219894"
+        },
+        "tau_zD": "0.24729788674803459840622064838"
+      },
+      "2": {
+        "pass": false,
+        "chi": {
+          "(3,)": "1.0",
+          "(2, 1)": "-0.91067735027066772325"
+        },
+        "tau_zD": "0.280195642272694981433122577576"
+      },
+      "3": {
+        "pass": true,
+        "chi": {
+          "(3,)": "1.0",
+          "(2, 1)": "1.9941858129799640867"
+        },
+        "tau_zD": "0.998562163836787265951213135147"
+      },
+      "4": {
+        "pass": false,
+        "chi": {
+          "(3,)": "1.0",
+          "(2, 1)": "-1.1706667637039955701"
+        },
+        "tau_zD": "0.215900809753771926504758756605"
+      },
+      "5": {
+        "pass": false,
+        "chi": {
+          "(3,)": "1.0",
+          "(2, 1)": "-0.77235364357942904192"
+        },
+        "tau_zD": "0.314402802624593280430525514816"
+      },
+      "6": {
+        "pass": true,
+        "chi": {
+          "(3,)": "1.0",
+          "(2, 1)": "1.976777056690560301"
+        },
+        "tau_zD": "0.99425701519550615352205864346"
+      },
+      "7": {
+        "pass": false,
+        "chi": {
+          "(3,)": "1.0",
+          "(2, 1)": "-1.2908208433731539301"
+        },
+        "tau_zD": "0.186186959767434075941936741026"
+      },
+      "8": {
+        "pass": false,
+        "chi": {
+          "(3,)": "1.0",
+          "(2, 1)": "-0.62953932835881340018"
+        },
+        "tau_zD": "0.349720480976019201184991435401"
+      },
+      "9": {
+        "pass": true,
+        "chi": {
+          "(3,)": "1.0",
+          "(2, 1)": "1.9478749488966414629"
+        },
+        "tau_zD": "0.987109585015506124604566572104"
+      },
+      "10": {
+        "pass": false,
+        "chi": {
+          "(3,)": "1.0",
+          "(2, 1)": "-1.4034698492495802879"
+        },
+        "tau_zD": "0.158329098669926906547402463656"
+      }
+    },
+    "H3_nonzero_survivors": [
+      3,
+      6,
+      9
+    ],
+    "nucleon_survivors": {
+      "p": [
+        3,
+        6,
+        9
+      ],
+      "n": [
+        3,
+        6,
+        9
+      ]
+    },
+    "H6_rows": [
+      {
+        "a": 3,
+        "b": 3,
+        "bond": "none",
+        "m": 0,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "bond": "P1=s2 s3^-1",
+        "m": 1,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.03276301835846"
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "bond": "P1=s2 s3^-1",
+        "m": 2,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.946911255672473"
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "bond": "P1=s2 s3^-1",
+        "m": 3,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "bond": "P1=s2 s3^-1",
+        "m": 4,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.2915009781789"
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "bond": "P1=s2 s3^-1",
+        "m": 5,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.673112585582011"
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "bond": "P1=s2 s3^-1",
+        "m": 6,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "bond": "P2=s3 s2^-1",
+        "m": 1,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.20956546737711"
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "bond": "P2=s3 s2^-1",
+        "m": 2,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.762381441947955"
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "bond": "P2=s3 s2^-1",
+        "m": 3,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "bond": "P2=s3 s2^-1",
+        "m": 4,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.45954809998748"
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "bond": "P2=s3 s2^-1",
+        "m": 5,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.48192829799939"
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "bond": "P2=s3 s2^-1",
+        "m": 6,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "bond": "P3=s1 s2^-1",
+        "m": 1,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.962874479401565"
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "bond": "P3=s1 s2^-1",
+        "m": 2,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.866813620661671"
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "bond": "P3=s1 s2^-1",
+        "m": 3,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "bond": "P3=s1 s2^-1",
+        "m": 4,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.2180921735345"
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "bond": "P3=s1 s2^-1",
+        "m": 5,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.596242872843876"
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "bond": "P3=s1 s2^-1",
+        "m": 6,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "bond": "P4=s2 s1^-1",
+        "m": 1,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.12641326930863"
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "bond": "P4=s2 s1^-1",
+        "m": 2,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.696127170299774"
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "bond": "P4=s2 s1^-1",
+        "m": 3,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "bond": "P4=s2 s1^-1",
+        "m": 4,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.37353245787718"
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "bond": "P4=s2 s1^-1",
+        "m": 5,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.419401164971333"
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "bond": "P4=s2 s1^-1",
+        "m": 6,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "bond": "none",
+        "m": 0,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "bond": "P1=s2 s3^-1",
+        "m": 1,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.958708131869211"
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "bond": "P1=s2 s3^-1",
+        "m": 2,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.05021617242032"
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "bond": "P1=s2 s3^-1",
+        "m": 3,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "bond": "P1=s2 s3^-1",
+        "m": 4,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.22078263879232"
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "bond": "P1=s2 s3^-1",
+        "m": 5,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.780686851949305"
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "bond": "P1=s2 s3^-1",
+        "m": 6,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "bond": "P2=s3 s2^-1",
+        "m": 1,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.3081164081926"
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "bond": "P2=s3 s2^-1",
+        "m": 2,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.685536585108958"
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "bond": "P2=s3 s2^-1",
+        "m": 3,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "bond": "P2=s3 s2^-1",
+        "m": 4,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.55288807906283"
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "bond": "P2=s3 s2^-1",
+        "m": 5,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.402856268972978"
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "bond": "P2=s3 s2^-1",
+        "m": 6,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "bond": "P3=s1 s2^-1",
+        "m": 1,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.939873856110357"
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "bond": "P3=s1 s2^-1",
+        "m": 2,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.841425425332255"
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "bond": "P3=s1 s2^-1",
+        "m": 3,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "bond": "P3=s1 s2^-1",
+        "m": 4,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.19246005004525"
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "bond": "P3=s1 s2^-1",
+        "m": 5,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.573496838887523"
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "bond": "P3=s1 s2^-1",
+        "m": 6,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "bond": "P4=s2 s1^-1",
+        "m": 1,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.09850248632065"
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "bond": "P4=s2 s1^-1",
+        "m": 2,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.675863739130759"
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "bond": "P4=s2 s1^-1",
+        "m": 3,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "bond": "P4=s2 s1^-1",
+        "m": 4,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.34323332774157"
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "bond": "P4=s2 s1^-1",
+        "m": 5,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.401964703301755"
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "bond": "P4=s2 s1^-1",
+        "m": 6,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 9,
+        "bond": "none",
+        "m": 0,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 9,
+        "bond": "P1=s2 s3^-1",
+        "m": 1,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.880337563549067"
+      },
+      {
+        "a": 3,
+        "b": 9,
+        "bond": "P1=s2 s3^-1",
+        "m": 2,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.15000546268756"
+      },
+      {
+        "a": 3,
+        "b": 9,
+        "bond": "P1=s2 s3^-1",
+        "m": 3,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 9,
+        "bond": "P1=s2 s3^-1",
+        "m": 4,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.14459475017276"
+      },
+      {
+        "a": 3,
+        "b": 9,
+        "bond": "P1=s2 s3^-1",
+        "m": 5,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.885984757793346"
+      },
+      {
+        "a": 3,
+        "b": 9,
+        "bond": "P1=s2 s3^-1",
+        "m": 6,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 9,
+        "bond": "P2=s3 s2^-1",
+        "m": 1,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.40196135944754"
+      },
+      {
+        "a": 3,
+        "b": 9,
+        "bond": "P2=s3 s2^-1",
+        "m": 2,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.605583468390025"
+      },
+      {
+        "a": 3,
+        "b": 9,
+        "bond": "P2=s3 s2^-1",
+        "m": 3,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 9,
+        "bond": "P2=s3 s2^-1",
+        "m": 4,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.64038752936872"
+      },
+      {
+        "a": 3,
+        "b": 9,
+        "bond": "P2=s3 s2^-1",
+        "m": 5,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.321929936389412"
+      },
+      {
+        "a": 3,
+        "b": 9,
+        "bond": "P2=s3 s2^-1",
+        "m": 6,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 9,
+        "bond": "P3=s1 s2^-1",
+        "m": 1,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.914308274325147"
+      },
+      {
+        "a": 3,
+        "b": 9,
+        "bond": "P3=s1 s2^-1",
+        "m": 2,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.812022603251508"
+      },
+      {
+        "a": 3,
+        "b": 9,
+        "bond": "P3=s1 s2^-1",
+        "m": 3,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 9,
+        "bond": "P3=s1 s2^-1",
+        "m": 4,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.1630829937545"
+      },
+      {
+        "a": 3,
+        "b": 9,
+        "bond": "P3=s1 s2^-1",
+        "m": 5,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.547904365187328"
+      },
+      {
+        "a": 3,
+        "b": 9,
+        "bond": "P3=s1 s2^-1",
+        "m": 6,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 9,
+        "bond": "P4=s2 s1^-1",
+        "m": 1,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.06546323098066"
+      },
+      {
+        "a": 3,
+        "b": 9,
+        "bond": "P4=s2 s1^-1",
+        "m": 2,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.654261236539682"
+      },
+      {
+        "a": 3,
+        "b": 9,
+        "bond": "P4=s2 s1^-1",
+        "m": 3,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 3,
+        "b": 9,
+        "bond": "P4=s2 s1^-1",
+        "m": 4,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.3067526971667"
+      },
+      {
+        "a": 3,
+        "b": 9,
+        "bond": "P4=s2 s1^-1",
+        "m": 5,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.38445384250979"
+      },
+      {
+        "a": 3,
+        "b": 9,
+        "bond": "P4=s2 s1^-1",
+        "m": 6,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 3,
+        "bond": "none",
+        "m": 0,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 3,
+        "bond": "P1=s2 s3^-1",
+        "m": 1,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.04005224584387"
+      },
+      {
+        "a": 6,
+        "b": 3,
+        "bond": "P1=s2 s3^-1",
+        "m": 2,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.965316815637391"
+      },
+      {
+        "a": 6,
+        "b": 3,
+        "bond": "P1=s2 s3^-1",
+        "m": 3,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 3,
+        "bond": "P1=s2 s3^-1",
+        "m": 4,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.29809856006709"
+      },
+      {
+        "a": 6,
+        "b": 3,
+        "bond": "P1=s2 s3^-1",
+        "m": 5,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.692725873096319"
+      },
+      {
+        "a": 6,
+        "b": 3,
+        "bond": "P1=s2 s3^-1",
+        "m": 6,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 3,
+        "bond": "P2=s3 s2^-1",
+        "m": 1,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.22677229421793"
+      },
+      {
+        "a": 6,
+        "b": 3,
+        "bond": "P2=s3 s2^-1",
+        "m": 2,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.770435941891891"
+      },
+      {
+        "a": 6,
+        "b": 3,
+        "bond": "P2=s3 s2^-1",
+        "m": 3,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 3,
+        "bond": "P2=s3 s2^-1",
+        "m": 4,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.47557215778807"
+      },
+      {
+        "a": 6,
+        "b": 3,
+        "bond": "P2=s3 s2^-1",
+        "m": 5,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.490817247825964"
+      },
+      {
+        "a": 6,
+        "b": 3,
+        "bond": "P2=s3 s2^-1",
+        "m": 6,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 3,
+        "bond": "P3=s1 s2^-1",
+        "m": 1,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.858529742135694"
+      },
+      {
+        "a": 6,
+        "b": 3,
+        "bond": "P3=s1 s2^-1",
+        "m": 2,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.926324782115189"
+      },
+      {
+        "a": 6,
+        "b": 3,
+        "bond": "P3=s1 s2^-1",
+        "m": 3,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 3,
+        "bond": "P3=s1 s2^-1",
+        "m": 4,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.11514412877048"
+      },
+      {
+        "a": 6,
+        "b": 3,
+        "bond": "P3=s1 s2^-1",
+        "m": 5,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.661457817740509"
+      },
+      {
+        "a": 6,
+        "b": 3,
+        "bond": "P3=s1 s2^-1",
+        "m": 6,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 3,
+        "bond": "P4=s2 s1^-1",
+        "m": 1,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.17984660029532"
+      },
+      {
+        "a": 6,
+        "b": 3,
+        "bond": "P4=s2 s1^-1",
+        "m": 2,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.590964382347826"
+      },
+      {
+        "a": 6,
+        "b": 3,
+        "bond": "P4=s2 s1^-1",
+        "m": 3,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 3,
+        "bond": "P4=s2 s1^-1",
+        "m": 4,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.42054924901634"
+      },
+      {
+        "a": 6,
+        "b": 3,
+        "bond": "P4=s2 s1^-1",
+        "m": 5,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.314003724448769"
+      },
+      {
+        "a": 6,
+        "b": 3,
+        "bond": "P4=s2 s1^-1",
+        "m": 6,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "bond": "none",
+        "m": 0,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "bond": "P1=s2 s3^-1",
+        "m": 1,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.963734193076949"
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "bond": "P1=s2 s3^-1",
+        "m": 2,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.06988104293125"
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "bond": "P1=s2 s3^-1",
+        "m": 3,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "bond": "P1=s2 s3^-1",
+        "m": 4,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.22519206865561"
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "bond": "P1=s2 s3^-1",
+        "m": 5,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.801635111274878"
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "bond": "P1=s2 s3^-1",
+        "m": 6,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "bond": "P2=s3 s2^-1",
+        "m": 1,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.3264968769753"
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "bond": "P2=s3 s2^-1",
+        "m": 2,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.691263377522617"
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "bond": "P2=s3 s2^-1",
+        "m": 3,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "bond": "P2=s3 s2^-1",
+        "m": 4,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.56999060095561"
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "bond": "P2=s3 s2^-1",
+        "m": 5,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.409363818271745"
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "bond": "P2=s3 s2^-1",
+        "m": 6,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "bond": "P3=s1 s2^-1",
+        "m": 1,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.83884379185291"
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "bond": "P3=s1 s2^-1",
+        "m": 2,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.8977025123841"
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "bond": "P3=s1 s2^-1",
+        "m": 3,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "bond": "P3=s1 s2^-1",
+        "m": 4,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.09268606534139"
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "bond": "P3=s1 s2^-1",
+        "m": 5,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.63533824706966"
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "bond": "P3=s1 s2^-1",
+        "m": 6,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "bond": "P4=s2 s1^-1",
+        "m": 1,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.14885986050855"
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "bond": "P4=s2 s1^-1",
+        "m": 2,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.574136816783368"
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "bond": "P4=s2 s1^-1",
+        "m": 3,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "bond": "P4=s2 s1^-1",
+        "m": 4,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.38735001564955"
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "bond": "P4=s2 s1^-1",
+        "m": 5,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.300104195991323"
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "bond": "P4=s2 s1^-1",
+        "m": 6,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "bond": "none",
+        "m": 0,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "bond": "P1=s2 s3^-1",
+        "m": 1,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.883071236019299"
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "bond": "P1=s2 s3^-1",
+        "m": 2,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.17081530850961"
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "bond": "P1=s2 s3^-1",
+        "m": 3,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "bond": "P1=s2 s3^-1",
+        "m": 4,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.14679039076128"
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "bond": "P1=s2 s3^-1",
+        "m": 5,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.908146191832721"
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "bond": "P1=s2 s3^-1",
+        "m": 6,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "bond": "P2=s3 s2^-1",
+        "m": 1,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.4214086026891"
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "bond": "P2=s3 s2^-1",
+        "m": 2,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.608949256631287"
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "bond": "P2=s3 s2^-1",
+        "m": 3,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "bond": "P2=s3 s2^-1",
+        "m": 4,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.65846907809287"
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "bond": "P2=s3 s2^-1",
+        "m": 5,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.326018249051706"
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "bond": "P2=s3 s2^-1",
+        "m": 6,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "bond": "P3=s1 s2^-1",
+        "m": 1,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.817180290764362"
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "bond": "P3=s1 s2^-1",
+        "m": 2,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.864738410392617"
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "bond": "P3=s1 s2^-1",
+        "m": 3,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "bond": "P3=s1 s2^-1",
+        "m": 4,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.06706317371759"
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "bond": "P3=s1 s2^-1",
+        "m": 5,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.606012679142215"
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "bond": "P3=s1 s2^-1",
+        "m": 6,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "bond": "P4=s2 s1^-1",
+        "m": 1,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.11245186117839"
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "bond": "P4=s2 s1^-1",
+        "m": 2,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.556561639148347"
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "bond": "P4=s2 s1^-1",
+        "m": 3,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "bond": "P4=s2 s1^-1",
+        "m": 4,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.34771277916929"
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "bond": "P4=s2 s1^-1",
+        "m": 5,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.286722504450948"
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "bond": "P4=s2 s1^-1",
+        "m": 6,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 3,
+        "bond": "none",
+        "m": 0,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 3,
+        "bond": "P1=s2 s3^-1",
+        "m": 1,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.04255284160677"
+      },
+      {
+        "a": 9,
+        "b": 3,
+        "bond": "P1=s2 s3^-1",
+        "m": 2,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.980700369859911"
+      },
+      {
+        "a": 9,
+        "b": 3,
+        "bond": "P1=s2 s3^-1",
+        "m": 3,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 3,
+        "bond": "P1=s2 s3^-1",
+        "m": 4,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.29877706349638"
+      },
+      {
+        "a": 9,
+        "b": 3,
+        "bond": "P1=s2 s3^-1",
+        "m": 5,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.71057422166889"
+      },
+      {
+        "a": 9,
+        "b": 3,
+        "bond": "P1=s2 s3^-1",
+        "m": 6,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 3,
+        "bond": "P2=s3 s2^-1",
+        "m": 1,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.23974608138984"
+      },
+      {
+        "a": 9,
+        "b": 3,
+        "bond": "P2=s3 s2^-1",
+        "m": 2,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.774888561217674"
+      },
+      {
+        "a": 9,
+        "b": 3,
+        "bond": "P2=s3 s2^-1",
+        "m": 3,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 3,
+        "bond": "P2=s3 s2^-1",
+        "m": 4,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.4862052160451"
+      },
+      {
+        "a": 9,
+        "b": 3,
+        "bond": "P2=s3 s2^-1",
+        "m": 5,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.497340472513868"
+      },
+      {
+        "a": 9,
+        "b": 3,
+        "bond": "P2=s3 s2^-1",
+        "m": 6,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 3,
+        "bond": "P3=s1 s2^-1",
+        "m": 1,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.752092996267448"
+      },
+      {
+        "a": 9,
+        "b": 3,
+        "bond": "P3=s1 s2^-1",
+        "m": 2,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.981327696079158"
+      },
+      {
+        "a": 9,
+        "b": 3,
+        "bond": "P3=s1 s2^-1",
+        "m": 3,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 3,
+        "bond": "P3=s1 s2^-1",
+        "m": 4,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.00890068043088"
+      },
+      {
+        "a": 9,
+        "b": 3,
+        "bond": "P3=s1 s2^-1",
+        "m": 5,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.723314901311784"
+      },
+      {
+        "a": 9,
+        "b": 3,
+        "bond": "P3=s1 s2^-1",
+        "m": 6,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 3,
+        "bond": "P4=s2 s1^-1",
+        "m": 1,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.22767850903836"
+      },
+      {
+        "a": 9,
+        "b": 3,
+        "bond": "P4=s2 s1^-1",
+        "m": 2,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.484956143712032"
+      },
+      {
+        "a": 9,
+        "b": 3,
+        "bond": "P4=s2 s1^-1",
+        "m": 3,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 3,
+        "bond": "P4=s2 s1^-1",
+        "m": 4,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.46093501049031"
+      },
+      {
+        "a": 9,
+        "b": 3,
+        "bond": "P4=s2 s1^-1",
+        "m": 5,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.209043306385334"
+      },
+      {
+        "a": 9,
+        "b": 3,
+        "bond": "P4=s2 s1^-1",
+        "m": 6,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 6,
+        "bond": "none",
+        "m": 0,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 6,
+        "bond": "P1=s2 s3^-1",
+        "m": 1,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.964415349993962"
+      },
+      {
+        "a": 9,
+        "b": 6,
+        "bond": "P1=s2 s3^-1",
+        "m": 2,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.08591595172668"
+      },
+      {
+        "a": 9,
+        "b": 6,
+        "bond": "P1=s2 s3^-1",
+        "m": 3,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 6,
+        "bond": "P1=s2 s3^-1",
+        "m": 4,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.22410631203604"
+      },
+      {
+        "a": 9,
+        "b": 6,
+        "bond": "P1=s2 s3^-1",
+        "m": 5,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.820185212979735"
+      },
+      {
+        "a": 9,
+        "b": 6,
+        "bond": "P1=s2 s3^-1",
+        "m": 6,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 6,
+        "bond": "P2=s3 s2^-1",
+        "m": 1,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.34006448871444"
+      },
+      {
+        "a": 9,
+        "b": 6,
+        "bond": "P2=s3 s2^-1",
+        "m": 2,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.69384861341422"
+      },
+      {
+        "a": 9,
+        "b": 6,
+        "bond": "P2=s3 s2^-1",
+        "m": 3,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 6,
+        "bond": "P2=s3 s2^-1",
+        "m": 4,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.5811531568181"
+      },
+      {
+        "a": 9,
+        "b": 6,
+        "bond": "P2=s3 s2^-1",
+        "m": 5,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.413979227904693"
+      },
+      {
+        "a": 9,
+        "b": 6,
+        "bond": "P2=s3 s2^-1",
+        "m": 6,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 6,
+        "bond": "P3=s1 s2^-1",
+        "m": 1,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.735836176789699"
+      },
+      {
+        "a": 9,
+        "b": 6,
+        "bond": "P3=s1 s2^-1",
+        "m": 2,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.949637767175551"
+      },
+      {
+        "a": 9,
+        "b": 6,
+        "bond": "P3=s1 s2^-1",
+        "m": 3,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 6,
+        "bond": "P3=s1 s2^-1",
+        "m": 4,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.989747252442824"
+      },
+      {
+        "a": 9,
+        "b": 6,
+        "bond": "P3=s1 s2^-1",
+        "m": 5,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.693973657995201"
+      },
+      {
+        "a": 9,
+        "b": 6,
+        "bond": "P3=s1 s2^-1",
+        "m": 6,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 6,
+        "bond": "P4=s2 s1^-1",
+        "m": 1,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.19379597515306"
+      },
+      {
+        "a": 9,
+        "b": 6,
+        "bond": "P4=s2 s1^-1",
+        "m": 2,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.471662282365413"
+      },
+      {
+        "a": 9,
+        "b": 6,
+        "bond": "P4=s2 s1^-1",
+        "m": 3,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 6,
+        "bond": "P4=s2 s1^-1",
+        "m": 4,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.42502870044406"
+      },
+      {
+        "a": 9,
+        "b": 6,
+        "bond": "P4=s2 s1^-1",
+        "m": 5,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.198761525597962"
+      },
+      {
+        "a": 9,
+        "b": 6,
+        "bond": "P4=s2 s1^-1",
+        "m": 6,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "bond": "none",
+        "m": 0,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "bond": "P1=s2 s3^-1",
+        "m": 1,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.881928993716727"
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "bond": "P1=s2 s3^-1",
+        "m": 2,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.18740834191937"
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "bond": "P1=s2 s3^-1",
+        "m": 3,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "bond": "P1=s2 s3^-1",
+        "m": 4,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.14394668688489"
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "bond": "P1=s2 s3^-1",
+        "m": 5,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.92729019290931"
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "bond": "P1=s2 s3^-1",
+        "m": 6,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "bond": "P2=s3 s2^-1",
+        "m": 1,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.43549115436341"
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "bond": "P2=s3 s2^-1",
+        "m": 2,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.609652078043747"
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "bond": "P2=s3 s2^-1",
+        "m": 3,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "bond": "P2=s3 s2^-1",
+        "m": 4,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.67009623037343"
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "bond": "P2=s3 s2^-1",
+        "m": 5,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.328699008774918"
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "bond": "P2=s3 s2^-1",
+        "m": 6,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "bond": "P3=s1 s2^-1",
+        "m": 1,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.718200712044651"
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "bond": "P3=s1 s2^-1",
+        "m": 2,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.913304044727259"
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "bond": "P3=s1 s2^-1",
+        "m": 3,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "bond": "P3=s1 s2^-1",
+        "m": 4,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.96802750176988"
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "bond": "P3=s1 s2^-1",
+        "m": 5,
+        "bond_is_gg_vertex": true,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.661085500176905"
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "bond": "P3=s1 s2^-1",
+        "m": 6,
+        "bond_is_gg_vertex": true,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "bond": "P4=s2 s1^-1",
+        "m": 1,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.15423091474987"
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "bond": "P4=s2 s1^-1",
+        "m": 2,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.458216615056129"
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "bond": "P4=s2 s1^-1",
+        "m": 3,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "bond": "P4=s2 s1^-1",
+        "m": 4,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-1.38246531636427"
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "bond": "P4=s2 s1^-1",
+        "m": 5,
+        "bond_is_gg_vertex": false,
+        "pass_H6": false,
+        "pass_every_level": false,
+        "min_char": "-0.189586806966438"
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "bond": "P4=s2 s1^-1",
+        "m": 6,
+        "bond_is_gg_vertex": false,
+        "pass_H6": true,
+        "pass_every_level": true,
+        "min_char": "1.0"
+      }
+    ],
+    "H6_survivor_count": 81,
+    "H6_by_bond": {
+      "none^0": "9/9",
+      "P1=s2 s3^-1^1": "0/9",
+      "P1=s2 s3^-1^2": "0/9",
+      "P1=s2 s3^-1^3": "9/9",
+      "P1=s2 s3^-1^4": "0/9",
+      "P1=s2 s3^-1^5": "0/9",
+      "P1=s2 s3^-1^6": "9/9",
+      "P2=s3 s2^-1^1": "0/9",
+      "P2=s3 s2^-1^2": "0/9",
+      "P2=s3 s2^-1^3": "9/9",
+      "P2=s3 s2^-1^4": "0/9",
+      "P2=s3 s2^-1^5": "0/9",
+      "P2=s3 s2^-1^6": "9/9",
+      "P3=s1 s2^-1^1": "0/9",
+      "P3=s1 s2^-1^2": "0/9",
+      "P3=s1 s2^-1^3": "9/9",
+      "P3=s1 s2^-1^4": "0/9",
+      "P3=s1 s2^-1^5": "0/9",
+      "P3=s1 s2^-1^6": "9/9",
+      "P4=s2 s1^-1^1": "0/9",
+      "P4=s2 s1^-1^2": "0/9",
+      "P4=s2 s1^-1^3": "9/9",
+      "P4=s2 s1^-1^4": "0/9",
+      "P4=s2 s1^-1^5": "0/9",
+      "P4=s2 s1^-1^6": "9/9"
+    },
+    "qbeta_table": [
+      {
+        "p": "V^3",
+        "n": "V^3",
+        "eps_delta": "0.0",
+        "Q_beta_MeV": "0.0",
+        "vs_codata_pct": "-100.0"
+      },
+      {
+        "p": "V^3",
+        "n": "V^6",
+        "eps_delta": "-0.00430514864128111242915449168691",
+        "Q_beta_MeV": "0.018199944224524838689",
+        "vs_codata_pct": "-97.673634"
+      },
+      {
+        "p": "V^3",
+        "n": "V^9",
+        "eps_delta": "-0.0114525788212811413466465630422",
+        "Q_beta_MeV": "0.048415586345995566776",
+        "vs_codata_pct": "-93.811388"
+      },
+      {
+        "p": "V^6",
+        "n": "V^3",
+        "eps_delta": "0.00430514864128111242915449168691",
+        "Q_beta_MeV": "0.018199944224524838689",
+        "vs_codata_pct": "-97.673634"
+      },
+      {
+        "p": "V^6",
+        "n": "V^6",
+        "eps_delta": "0.0",
+        "Q_beta_MeV": "0.0",
+        "vs_codata_pct": "-100.0"
+      },
+      {
+        "p": "V^6",
+        "n": "V^9",
+        "eps_delta": "-0.00714743018000002891749207135526",
+        "Q_beta_MeV": "0.030215642121470728087",
+        "vs_codata_pct": "-96.137755"
+      },
+      {
+        "p": "V^9",
+        "n": "V^3",
+        "eps_delta": "0.0114525788212811413466465630422",
+        "Q_beta_MeV": "0.048415586345995566776",
+        "vs_codata_pct": "-93.811388"
+      },
+      {
+        "p": "V^9",
+        "n": "V^6",
+        "eps_delta": "0.00714743018000002891749207135526",
+        "Q_beta_MeV": "0.030215642121470728087",
+        "vs_codata_pct": "-96.137755"
+      },
+      {
+        "p": "V^9",
+        "n": "V^9",
+        "eps_delta": "0.0",
+        "Q_beta_MeV": "0.0",
+        "vs_codata_pct": "-100.0"
+      }
+    ],
+    "cost_minimal_selection": {
+      "p": "V^3",
+      "n": "V^3",
+      "Q_beta_MeV": "0"
+    },
+    "scope": "(a): gamma-gamma grammar applied alone; no flavour-carrying letters",
+    "no_target": "no AME read; CODATA Q_beta read only for the final comparison column"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

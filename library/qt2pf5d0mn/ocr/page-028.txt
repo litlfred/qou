@@ -1,0 +1,37 @@
+Section 2.1 Ribbon Fusion Categories
+
+on Ci, R x {1}
+Lo R x {0} pt tp,
+
+1
+
+Figure 2.6: A local picture near a rectangle (Left), R x {0} (Middle), R x {1} (Right)
+
+2. Each arc is labelled with an object. Each rectangle is labelled by a morphism
+f : A — B where the description of f is as follows. Let the picture around
+the rectangle be as shown in Figure then A = Aj! @--- @ A& and B=
+BP 1 @---@ Be, where ¢; = 1 if the arc labelled by A; is directed downwards near
+the rectangle and « = —1 if it is directed upwards, (3; is defined in the same way
+depending on the direction of the arc labelled by Bj, and for an object C, CT! is
+
+C and C7! is C*.
+
+Given a picture R, let R be as in Figure (Middle) and Figure (Right) near
+the intersections of R with R x {0} and with R x {1}, respectively. Then define S(R) =
+Co @-+-@ Ce and T(R) = D? @--- @ D#, where e; and 8; are defined in the same
+way as above. A picture R can be interpreted as a morphism from S(R) to T(R) by the
+following rules.
+
+Interpret the pictures in Figure as the morphism below them. If Ri,R» are
+disjoint and put side by side, then R1 UR, is the tensor product of R; and Ry. If Ri, Re
+are two pictures such as T(R1) = S(R2), then we can glue R» on top of R; along their
+common end points and compress the resulting graph to within R x [0, 1]. The morphism
+represented by the glued picture is the composition of R; followed by Ra, i.e., Reo Ri.
+
+By the above rules, any picture can be interpreted as a morphism which is a composi-
+tion of morphisms, each of which is a tensor product of some morphisms from Figure[2-1]
+By [14], the morphism thus obtained is well-defined, and if there is an isotopy mapping
+
+one picture to another picture and preserving the labels of arcs, then the two pictures
+
+19

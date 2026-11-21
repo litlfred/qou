@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/oberwolfachreports1223-v20120708-9-40/sections/sec-026",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Combinatorial Spatial Graph Floer Homology",
+  "pageStart": 54,
+  "pageEnd": 58,
+  "contains": [
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/prose-sec-026",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p055-1",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p056-1",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p057-1",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p058-1"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/oberwolfachreports1223-v20120708-9-40/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/oberwolfachreports1223-v20120708-9-40/manifest.jsonld",
+  "provenance": "ingested"
+}

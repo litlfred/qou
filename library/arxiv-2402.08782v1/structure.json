@@ -6,10 +6,12 @@
   "sha256": "30311f0bd815f93f253a60438c999770726ebcf838e361d5741b564b313389a1",
   "bytes": 1190195,
   "pages": 12,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,19 +21,30 @@
    "stamp_date": "13 Feb 2024"
   },
   "doi": null,
-  "title": "Hecke\u2013Farey coordinates for Bring\u2019s surface",
-  "authors_raw": "Doha Kattan 1 and David Singerman 2",
-  "abstract": "The modular group\u0393 (which is the Hecke groupH3) can be used to study triangular maps, Here we use the Hecke groupH4 to study the reg- ular map that underlies Bring\u2019s surface of genus 4. Our main result is the determination of the 20-sided hyperbnolic polygon that gives Bring\u2019s surface.",
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20240215015441Z",
-   "Creator": "LaTeX with hyperref",
-   "Producer": "pdfTeX-1.40.25",
-   "Title": ""
-  },
+  "title": "Hecke–Farey coordinates for Bring’s surface",
+  "authors_raw": "Doha Kattan1 and David Singerman2",
   "title_lines": [
-   "Hecke\u2013Farey coordinates for Bring\u2019s surface"
-  ]
+   "Hecke–Farey coordinates for Bring’s surface"
+  ],
+  "abstract": "The modular group Γ (which is the Hecke group H3) can be used to study triangular maps, Here we use the Hecke group H4 to study the reg- ular map that underlies Bring’s surface of genus 4. Our main result is the determination of the 20-sided hyperbnolic polygon that gives Bring’s surface.",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.25",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20240215015441Z"
+  },
+  "title_raw": "Hecke–Farey coordinates for Bring’s surface",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Hecke–Farey coordinates for Bring’s surface Doha Kattan 1 and David Singerman 2",
+   "outline": "1. Introduction",
+   "text": "Hecke–Farey coordinates for Bring’s surface",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Hecke–Farey coordinates for Bring’s surface Doha Kattan 1 and David Singerman 2"
  },
  "toc": [
   {
@@ -39,163 +52,464 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Bring's surface",
    "page": 1,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The congruence subgroups of the Hecke groups",
    "page": 3,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Universal q-gonal maps",
    "page": 4,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Farey fractions modulo n",
    "page": 7,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Hecke-Farey fractions for the cube",
    "page": 7,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The Bring curve M4(5)",
    "page": 8,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Poles",
    "page": 9,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "Hecke\u2013Farey coordinates for Bring's surface",
+   "title": "Hecke–Farey coordinates for Bring's surface",
    "page": 9,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Equivalence classes of vertices",
    "page": 11,
    "source": "outline",
-   "number": "10"
+   "number": "10",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The fundamental region Fλ4 for H4",
+   "page": 4,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Principal face when q = 4",
+   "page": 5,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Drawing of M3(5) with Farey coordinates [4]",
+   "page": 7,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "M4(3); Cube embedded in a sphere",
+   "page": 8,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "",
+   "page": 8,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "",
+   "page": 9,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "",
+   "page": 11,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "",
+   "page": 11,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 377,
+   "n_words": 63,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 3,
-   "n_chars": 3857,
-   "n_words": 719
+   "page_end": 1,
+   "n_chars": 1177,
+   "n_words": 203,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-3-the-congruence-subgroups-of-the-hecke-groups",
+   "id": "sec-001-2-brings-surface",
+   "number": "2",
+   "title": "Bring's surface",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 2723,
+   "n_words": 576,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-3-the-congruence-subgroups-of-the-hecke-groups",
    "number": "3",
    "title": "The congruence subgroups of the Hecke groups",
    "level": 1,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 1982,
-   "n_words": 383
+   "n_chars": 2024,
+   "n_words": 425,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-4-universal-q-gonal-maps",
+   "id": "sec-003-4-universal-q-gonal-maps",
    "number": "4",
    "title": "Universal q-gonal maps",
    "level": 1,
    "page_start": 4,
    "page_end": 7,
-   "n_chars": 2325,
-   "n_words": 477
+   "n_chars": 1747,
+   "n_words": 397,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-6-hecke-farey-fractions-for-the-cube",
+   "id": "sec-004-5-farey-fractions-modulo-n",
+   "number": "5",
+   "title": "Farey fractions modulo n",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 647,
+   "n_words": 151,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-6-hecke-farey-fractions-for-the-cube",
    "number": "6",
    "title": "Hecke-Farey fractions for the cube",
    "level": 1,
    "page_start": 7,
-   "page_end": 9,
-   "n_chars": 2020,
-   "n_words": 502
+   "page_end": 8,
+   "n_chars": 1276,
+   "n_words": 285,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-8-poles",
+   "id": "sec-006-7-the-bring-curve-m45",
+   "number": "7",
+   "title": "The Bring curve M4(5)",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 702,
+   "n_words": 236,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-9-heckefarey-coordinates-for-brings-surface",
+   "number": "9",
+   "title": "Hecke–Farey coordinates for Bring's surface",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-8-poles",
    "number": "8",
    "title": "Poles",
    "level": 1,
    "page_start": 9,
    "page_end": 11,
-   "n_chars": 4576,
-   "n_words": 924
+   "n_chars": 4684,
+   "n_words": 1025,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-10-equivalence-classes-of-vertices",
+   "id": "sec-009-10-equivalence-classes-of-vertices",
    "number": "10",
    "title": "Equivalence classes of vertices",
    "level": 1,
    "page_start": 11,
    "page_end": 11,
-   "n_chars": 939,
-   "n_words": 190
+   "n_chars": 984,
+   "n_words": 235,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-references",
+   "id": "sec-010-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 1838,
-   "n_words": 266
+   "n_chars": 1850,
+   "n_words": 278,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 11,
-  "sections": 7,
-  "chars_total": 17537,
+  "toc_inferred_entries": 0,
+  "figure_entries": 8,
+  "figure_sequence_gaps": [
+   "figure 3"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 12,
+  "chars_total": 18191,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "KS4.tex",
    "tex_sections": 10,
-   "overlaid": 6,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -203,47 +517,81 @@
    },
    "sections": [
     {
-     "id": "sec-000-1-introduction",
-     "title": "Introduction",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 0.866,
-     "result": "overlaid",
-     "converter": "latex"
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
     },
     {
-     "id": "sec-001-3-the-congruence-subgroups-of-the-hecke-groups",
-     "title": "The congruence subgroups of the Hecke groups",
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-4-universal-q-gonal-maps",
+     "id": "sec-001-2-brings-surface",
+     "title": "Bring's surface",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.935,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-the-congruence-subgroups-of-the-hecke-groups",
+     "title": "The congruence subgroups of the Hecke groups",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-4-universal-q-gonal-maps",
      "title": "Universal q-gonal maps",
-     "prose_ratio": 0.775,
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.921,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-5-farey-fractions-modulo-n",
+     "title": "Farey fractions modulo n",
+     "prose_ratio": 0.969,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-003-6-hecke-farey-fractions-for-the-cube",
+     "id": "sec-005-6-hecke-farey-fractions-for-the-cube",
      "title": "Hecke-Farey fractions for the cube",
-     "prose_ratio": 0.833,
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.939,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-7-the-bring-curve-m45",
+     "title": "The Bring curve M4(5)",
+     "prose_ratio": 0.955,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-004-8-poles",
-     "title": "Poles",
-     "prose_ratio": 0.979,
-     "coverage_ratio": 0.848,
-     "result": "overlaid",
-     "converter": "latex"
+     "id": "sec-007-9-heckefarey-coordinates-for-brings-surface",
+     "title": "Hecke–Farey coordinates for Bring's surface",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-005-10-equivalence-classes-of-vertices",
+     "id": "sec-008-8-poles",
+     "title": "Poles",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.293,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-009-10-equivalence-classes-of-vertices",
      "title": "Equivalence classes of vertices",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -251,7 +599,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-006-references",
+     "id": "sec-010-references",
      "title": "References",
      "result": "no matching \\section"
     }

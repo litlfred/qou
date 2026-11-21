@@ -1,9 +1,9 @@
 **Remark (bar-symmetry class, categorical sectors, and the $c_5$ falsifiable prediction).**
 
-> **Bar-symmetry class** (per [`def:bar-involution`](#def:bar-involution)):
-> $c_5(q) = -b^2(q) - 1/2 = -3/2 + 1/[2]_q^2$ is **bar-symmetric** as a function of $q$. The Hoefsmit-Quantum-2 identity $b^2 = 1 - 1/[2]_q^2$ is a proved algebraic theorem in the Lean sibling. The "$-1/2$" piece is a q-independent commutative-QOU constant; $c_5(q=1) = -5/4$ proved as `c5_classical_limit_eq_neg_five_quarters`. The $c_5$ outlier at silver is the arithmetic sum of two clean bar-symmetric pieces landing on inert prime $11 \in \mathbb{Z}[1+\sqrt 2]$, not a quantum-deformation artifact.
+> **Bar-symmetry class** (per [Bar-involution and its $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projections](#def:bar-involution)):
+> $c_5(q) = -b^2(q) - 1/2 = -3/2 + 1/[2]_q^2$ is **bar-symmetric** as a function of $q$. The Hoefsmit-Quantum-2 identity $b^2 = 1 - 1/[2]_q^2$ is a proved algebraic theorem. The "$-1/2$" piece is a q-independent commutative-QOU constant; $c_5(q=1) = -5/4$ is proved. The $c_5$ outlier at silver is the arithmetic sum of two clean bar-symmetric pieces landing on inert prime $11 \in \mathbb{Z}[1+\sqrt 2]$, not a quantum-deformation artifact.
 
-> **Pentagon-reduction cross-link.** The Leibniz expansion uses the q-dilogarithm pentagon identity implicitly. The algebraic identity making this rigorous lives in [`pentagon_reduction_li2q.py`](../../../computations/pentagon_reduction_li2q.py). The Pentagon coherence layer of $c_5$'s decomposition is what `pentagon_reduction_li2q.py` makes algebraic.
+> **Pentagon-reduction cross-link.** The Leibniz expansion uses the q-dilogarithm pentagon identity implicitly. The algebraic identity making this rigorous is a symbolic pentagon reduction for $\mathrm{Li}_2^q$, which makes the pentagon-coherence layer of $c_5$'s decomposition algebraic.
 
 ## Categorical interpretation
 
@@ -19,7 +19,7 @@ The proton braid has 11 typed crossings: 7 pure $\sigma_0$, 4 pure $\sigma_1$, 1
 
 By combinatorial counting, the predicted averaging-resonance rungs are those $k$ for which $\binom{2}{2} \cdot (\text{combinatorial weight})$ peaks. The first is $k = 5$; subsequent peaks are predicted at $k = 8, 11, \ldots$ (every 3 rungs).
 
-This is testable by extending SDP-$T_\beta$ extraction to $k \geq 8$ and checking whether $c_8$ has a $1/2$ fingerprint. The extraction is set up in [`computations/qbeta/qbeta_decay_sdp_extended_ck.py`](../../computations/qbeta/qbeta_decay_sdp_extended_ck.py).
+This is testable by extending SDP-$T_\beta$ extraction to $k \geq 8$ and checking whether $c_8$ has a $1/2$ fingerprint.
 
 ## Discussion
 

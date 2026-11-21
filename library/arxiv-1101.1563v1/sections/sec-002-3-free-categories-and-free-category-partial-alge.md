@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-1101.1563v1
-doc_title: "Gröbner-Shirshov bases for categories∗ L. A. Bokut†"
+doc_title: "Gröbner-Shirshov bases for categories"
 section_id: sec-002-3-free-categories-and-free-category-partial-alge
 section_title: "Free categories and free category partial algebras"
 section_number: 3
@@ -10,7 +10,8 @@ source_sha256: 0c45b250fc4a2a49
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.971
+doc_brief: "Gröbner-Shirshov bases for categories — In this paper we establish Composition-Diamond lemma for small categories. We give Gr¨obner-Shirshov bases for simplicial category and cyclic category."
 ---
 Let $X=(V(X),E(X))$ be an oriented (multi) graph. Then the free category on $X$ is $C(X)=(Ob(X), Arr(X))$, where $Ob(X)=V(X),$ and $Arr(X)$ is the set of all paths ("words\") of $X$ including the empty paths $1_{v}$, $v\in V(X)$. It is easy to check $C(X)$ has the following universal property. Let $\mathscr{C}$ be a category and $\Gamma_{\mathscr{C}}$ the graph relative to $\mathscr{C}$ i.e., $V(\Gamma_{\mathscr{C}})=Ob(\mathscr{C})$ and $E(\Gamma_{\mathscr{C}})=mor(\mathscr{C})$. Let $e:X\rightarrow
 C(X)$ be a mono graph morphism of the graph $X$ to the graph $\Gamma_{C(X)},$ where $e=(e_1,e_2)$, and $e_1$ is a mapping on $V(X),$ $e_2$ on $E(X),$ both $e_1$ and $e_2$ are mono. For any graph morphism $b$ from $X$ to $\Gamma_{\mathscr{C}},$ where $b=(b_1,b_2)$, and $b_1$ is mono, there exists a unique category morphism (a functor) $f:C(X)\rightarrow \mathscr{C}$, such that the corresponding diagram is commutative i.e., $fe=b$. Therefore each category $\mathscr{C}$ is a homomorphic image of a free category $C(X)$ for some graph $X$ and thus $\mathscr{C}$ is isomorphic to $C(X)/\rho(S)$ for some set $S$, where $S=\{(u,v)|u,v\mbox{ have\

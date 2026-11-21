@@ -1,0 +1,8916 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-2301.08311v4",
+  "pages": [
+    {
+      "page": 4,
+      "rotation": 0,
+      "drawings": 14,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. The Lagrangian torus Tγ"
+      ],
+      "labels": [
+        {
+          "text": "FLOER COHOMOLOGY AND HIGHER MUTATIONS",
+          "bbox": [
+            198.82,
+            51.82,
+            413.2,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            535.79,
+            51.82,
+            540.02,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Given a simple closed curve γ : S1 →C∗, we can define an embedded Lagrangian torus",
+          "bbox": [
+            72.0,
+            69.34,
+            487.38,
+            84.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Tγ = {(z1, z2, . . . zn) ∈Cn| πm(z1, z2, . . . zn) ∈γ(S1), |z1| = |z2| = . . . |zn|}.",
+          "bbox": [
+            131.35,
+            104.11,
+            480.65,
+            119.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(1.2.2)",
+          "bbox": [
+            70.72,
+            106.49,
+            101.64,
+            117.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Tγ",
+          "bbox": [
+            348.05,
+            215.54,
+            358.78,
+            227.44
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "π−1",
+          "bbox": [
+            290.64,
+            269.05,
+            306.87,
+            280.39
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "m (p)",
+          "bbox": [
+            296.31,
+            270.42,
+            320.13,
+            282.85
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Cn",
+          "bbox": [
+            365.62,
+            274.32,
+            381.96,
+            288.67
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96,
+            14.35
+          ]
+        },
+        {
+          "text": "πm",
+          "bbox": [
+            307.5,
+            317.52,
+            321.21,
+            329.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "γ",
+          "bbox": [
+            268.64,
+            377.72,
+            274.29,
+            388.63
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "C",
+          "bbox": [
+            317.39,
+            385.09,
+            327.75,
+            399.44
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MSBM10"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            296.58,
+            386.7,
+            301.59,
+            396.66
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 1. The Lagrangian torus Tγ",
+          "bbox": [
+            218.12,
+            424.8,
+            392.9,
+            439.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "The Hamiltonian isotopy class of the Lagrangian Tγ depends on geometric properties of the curve",
+          "bbox": [
+            83.96,
+            472.63,
+            540.01,
+            485.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "γ. For a fixed area enclosed by the curve γ, with respect to a symplectic form dλn (see Definition",
+          "bbox": [
+            72.0,
+            485.56,
+            540.01,
+            498.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.94
+          ]
+        },
+        {
+          "text": "2.7), there are at most two Hamiltonian isotopy classes depending on whether the curve γ encloses",
+          "bbox": [
+            71.73,
+            498.53,
+            539.98,
+            509.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.87,
+            10.91
+          ]
+        },
+        {
+          "text": "0 inside it. We elaborate on constructing Hamiltonian isotopies of Tγ in Subsection 2.3. When the",
+          "bbox": [
+            72.0,
+            511.48,
+            540.03,
+            524.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.88,
+            10.91
+          ]
+        },
+        {
+          "text": "curve γ encloses 0, we say that the torus is of Clifford type, and if it does not, we say that it is",
+          "bbox": [
+            72.0,
+            524.35,
+            540.03,
+            535.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "of Chekanov type. The process of interchanging between Clifford and Chekanov type tori is the",
+          "bbox": [
+            72.0,
+            537.3,
+            540.06,
+            548.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "simplest occurrence of mutation. See [CS10] for a slightly different construction of the Chekanov",
+          "bbox": [
+            72.0,
+            550.27,
+            540.33,
+            561.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.0
+          ]
+        },
+        {
+          "text": "tori. Pascaleff-Tonkonog use the local model (M0, Tγ) to define higher toric mutations in a toric",
+          "bbox": [
+            72.0,
+            563.2,
+            540.03,
+            575.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "manifold in [PT20]. We briefly discuss Pascaleff-Tonkonog’s higher toric mutation now. Assume",
+          "bbox": [
+            72.0,
+            576.15,
+            540.04,
+            587.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "that X is a monotone toric manifold with Delzant polytope ∆, whose barycenter is 0. Let I be",
+          "bbox": [
+            72.0,
+            589.11,
+            540.0,
+            600.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "a line joining a vertex w of ∆with 0. The toric fibration, over a neighborhood of the line I, is",
+          "bbox": [
+            72.0,
+            602.06,
+            540.0,
+            613.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "symplectomorphic ( as total spaces, not fibrations ) to the fibration πm over a neighborhood of the",
+          "bbox": [
+            72.0,
+            615.09,
+            540.03,
+            627.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.85,
+            10.91
+          ]
+        },
+        {
+          "text": "unit circle γ(θ) = eiθ attached with the line segment S joining the point 0 with the point −1 such",
+          "bbox": [
+            72.0,
+            624.35,
+            540.0,
+            639.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "that the monotone torus is mapped to Clifford-type Tγ. Choose a curve γ′ in a neighborhood of the",
+          "bbox": [
+            72.0,
+            637.39,
+            540.04,
+            653.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "union of curves γ ∪S, such that the area enclosed by the curve γ′ is the same as that of γ and the",
+          "bbox": [
+            72.0,
+            650.29,
+            540.01,
+            665.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.87,
+            10.91
+          ]
+        },
+        {
+          "text": "Lagrangian torus Tγ′ is of Chekanov-type. Tγ′ is the mutation of the monotone torus with respect",
+          "bbox": [
+            72.0,
+            666.73,
+            540.31,
+            679.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "to the vertex w.",
+          "bbox": [
+            72.0,
+            680.12,
+            148.32,
+            691.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "We recall the definition of monotonicity. Let (M, ω) be a symplectic manifold. Let Iω be the",
+          "bbox": [
+            83.96,
+            698.44,
+            540.0,
+            711.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "symplectic area functional and Ic be the first Chern class defined on π2(M).",
+          "bbox": [
+            72.0,
+            711.47,
+            435.84,
+            724.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "rotation": 0,
+      "drawings": 21,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2. Torus segment Tγ over a path γ",
+        "Figure 3. Admissible path γ"
+      ],
+      "labels": [
+        {
+          "text": "FLOER COHOMOLOGY AND HIGHER MUTATIONS",
+          "bbox": [
+            198.82,
+            51.82,
+            413.2,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "8",
+          "bbox": [
+            535.79,
+            51.82,
+            540.02,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Tγ",
+          "bbox": [
+            283.46,
+            130.91,
+            294.19,
+            142.82
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Cn",
+          "bbox": [
+            377.38,
+            145.22,
+            390.4,
+            156.13
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "πm",
+          "bbox": [
+            311.12,
+            161.39,
+            324.83,
+            173.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            295.69,
+            199.66,
+            301.14,
+            210.57
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "γ",
+          "bbox": [
+            237.33,
+            203.31,
+            242.98,
+            214.22
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "C",
+          "bbox": [
+            358.13,
+            203.84,
+            366.0,
+            214.75
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 2. Torus segment Tγ over a path γ",
+          "bbox": [
+            201.56,
+            236.0,
+            409.84,
+            250.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "R",
+          "bbox": [
+            385.92,
+            280.6,
+            393.79,
+            291.51
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            293.75,
+            282.49,
+            299.2,
+            293.39
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "γ",
+          "bbox": [
+            230.83,
+            284.24,
+            236.48,
+            295.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 3. Admissible path γ",
+          "bbox": [
+            234.11,
+            312.84,
+            377.29,
+            326.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Definition 2.3 (Locally mutable). We call a Lagrangian L ,→(M, ω) locally mutable if the following",
+          "bbox": [
+            72.0,
+            341.23,
+            540.02,
+            352.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "hold:",
+          "bbox": [
+            72.0,
+            354.32,
+            95.65,
+            365.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(1) There is an open set B in M that is symplectomorphic via ϕ to an open ball B(0) around",
+          "bbox": [
+            89.41,
+            374.97,
+            540.02,
+            385.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91,
+            10.94
+          ]
+        },
+        {
+          "text": "0 ∈Cn such that ϕ(B ∩L) = Tγ for some admissible path γ in C.",
+          "bbox": [
+            108.33,
+            383.99,
+            421.61,
+            400.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(2) i∗: H1(B ∩L) ,→H1(L) is a split injection, i.e., 0 →H1(Tγ) →H1(L) extends to split short",
+          "bbox": [
+            89.41,
+            400.76,
+            540.31,
+            412.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "exact sequence. Here i∗is induced from i : ϕ−1(Tγ) →L.",
+          "bbox": [
+            108.33,
+            412.41,
+            380.14,
+            426.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(3) L \\ B is connected.",
+          "bbox": [
+            89.41,
+            426.99,
+            199.78,
+            438.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Example 2.4. Note that we can use a Hamiltonian isotopy (with respect to ωn) to map a circle in",
+          "bbox": [
+            72.0,
+            446.1,
+            540.01,
+            458.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.81,
+            10.91
+          ]
+        },
+        {
+          "text": "the complex plane that does not pass through 0 to a curve γ that has an arc which is admissible.",
+          "bbox": [
+            72.0,
+            458.99,
+            542.13,
+            469.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91,
+            10.99
+          ]
+        },
+        {
+          "text": "Thus, a similar argument as Lemma 2.16 shows that the Clifford and Chekanov tori are locally",
+          "bbox": [
+            71.61,
+            471.92,
+            540.43,
+            482.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "mutable.",
+          "bbox": [
+            72.0,
+            484.95,
+            113.52,
+            495.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Remark 2.5. For dimension 2, [Hau20] proves that if there is an isotropic surgery disc D whose",
+          "bbox": [
+            72.0,
+            503.87,
+            539.99,
+            514.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91,
+            10.97
+          ]
+        },
+        {
+          "text": "boundary cleanly intersects a Lagrangian L, then L satisfies condition (1) of Definition 2.3.",
+          "bbox": [
+            72.0,
+            516.87,
+            508.18,
+            527.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Definition 2.6 (Mutation neighborhood). The open set B in Definition 2.3 is called the mutation",
+          "bbox": [
+            72.0,
+            535.84,
+            540.03,
+            546.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.85,
+            10.91
+          ]
+        },
+        {
+          "text": "neighborhood.",
+          "bbox": [
+            72.0,
+            548.79,
+            139.93,
+            559.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Now we can define local higher mutations. Intuitively, Local Higher Mutation is a cut-paste",
+          "bbox": [
+            83.96,
+            573.13,
+            540.04,
+            584.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "construction where we cut out a torus segment over a path and replace it with another torus segment",
+          "bbox": [
+            72.0,
+            586.25,
+            540.32,
+            597.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "over “flipped” curve that goes around 0 in the opposite direction. We need to replace the curve",
+          "bbox": [
+            72.0,
+            599.03,
+            540.05,
+            610.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "while preserving some symplectic area so that eventually we preserve monotonicity of Lagrangians.",
+          "bbox": [
+            71.61,
+            612.09,
+            542.13,
+            622.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.88
+          ]
+        },
+        {
+          "text": "xdy−ydx",
+          "bbox": [
+            412.65,
+            628.93,
+            446.43,
+            637.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Definition 2.7. We define λn as the 1-form on C∗given by λn =",
+          "bbox": [
+            72.0,
+            629.29,
+            398.49,
+            644.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "n . The form λn is",
+          "bbox": [
+            444.47,
+            631.59,
+            540.0,
+            649.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI6",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "n−1",
+          "bbox": [
+            439.76,
+            637.23,
+            453.77,
+            643.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR6",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "2(x2+y2)",
+          "bbox": [
+            403.62,
+            641.22,
+            438.57,
+            649.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "i xidyi −yidxi, on Cn, under the diagonal nth-root map,",
+          "bbox": [
+            279.76,
+            649.73,
+            541.52,
+            666.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "obtained by pulling back the 1-form λ0 = P",
+          "bbox": [
+            72.0,
+            651.78,
+            279.76,
+            670.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "z 7→(z1/n, . . . , z1/n).",
+          "bbox": [
+            72.0,
+            664.61,
+            169.6,
+            677.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Definition 2.8 (Local Higher Mutation). Given a locally mutable Lagrangian L, the local higher",
+          "bbox": [
+            72.0,
+            685.25,
+            540.23,
+            696.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "mutation Lµ of L is the Lagrangian obtained by removing ϕ−1(Tc) for an arc c of γ i.e. c : (−r, r) →",
+          "bbox": [
+            72.0,
+            696.43,
+            540.0,
+            710.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "C∗and c(x) = γ(x) and gluing back ϕ−1(Tc′) for a curve c′ such that,",
+          "bbox": [
+            72.0,
+            707.52,
+            404.32,
+            723.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY6",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "rotation": 0,
+      "drawings": 75,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4. Locally mutable L in M",
+        "Figure 5. Mutation of paths"
+      ],
+      "labels": [
+        {
+          "text": "FLOER COHOMOLOGY AND HIGHER MUTATIONS",
+          "bbox": [
+            198.82,
+            51.82,
+            413.2,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "9",
+          "bbox": [
+            535.79,
+            51.82,
+            540.02,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Tγ",
+          "bbox": [
+            417.22,
+            171.19,
+            427.96,
+            183.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "L",
+          "bbox": [
+            170.18,
+            184.53,
+            177.6,
+            195.44
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ϕ",
+          "bbox": [
+            285.16,
+            193.2,
+            291.66,
+            204.11
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Cn",
+          "bbox": [
+            450.19,
+            204.53,
+            463.21,
+            215.44
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "B",
+          "bbox": [
+            190.55,
+            230.92,
+            198.83,
+            241.83
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "π",
+          "bbox": [
+            403.4,
+            255.3,
+            409.62,
+            266.2
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "M",
+          "bbox": [
+            203.07,
+            274.44,
+            213.65,
+            285.35
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "iR",
+          "bbox": [
+            402.76,
+            295.88,
+            414.4,
+            309.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "γ",
+          "bbox": [
+            397.96,
+            337.23,
+            403.12,
+            347.19
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "R",
+          "bbox": [
+            309.41,
+            339.68,
+            317.28,
+            350.59
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "C",
+          "bbox": [
+            415.73,
+            371.58,
+            423.61,
+            382.49
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 4. Locally mutable L in M",
+          "bbox": [
+            219.74,
+            423.5,
+            391.07,
+            436.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(1) there is an ϵ > 0 such that c(x) = c′(x) for x ∈(−r, −r + ϵ) ∪(r −ϵ, r),",
+          "bbox": [
+            89.41,
+            450.75,
+            449.4,
+            463.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(2) the glued curve c ∪c′ is homotopic to the unit circle around 0 ,",
+          "bbox": [
+            89.41,
+            461.51,
+            410.44,
+            476.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(3) the resulting curve γ′ = (γ \\ c) ∪c′ is smooth,",
+          "bbox": [
+            89.41,
+            474.46,
+            326.72,
+            489.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "R",
+          "bbox": [
+            108.33,
+            490.43,
+            113.48,
+            501.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "R",
+          "bbox": [
+            146.01,
+            490.43,
+            151.16,
+            501.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(4)",
+          "bbox": [
+            89.41,
+            491.37,
+            103.35,
+            502.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "c λn =",
+          "bbox": [
+            113.48,
+            491.37,
+            142.98,
+            506.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "c′ λn.",
+          "bbox": [
+            151.16,
+            491.37,
+            174.86,
+            505.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Definition 2.9 (Mutated admissible path). Given an admissible path γ, we call the curve γ′ as",
+          "bbox": [
+            72.0,
+            506.82,
+            539.99,
+            521.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "constructed in Definition 2.8 the mutated admissible path of γ.",
+          "bbox": [
+            72.0,
+            523.81,
+            374.07,
+            534.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Remark 2.10. For dimension 2, Lagrangian mutation is the same as performing an anti-surgery as",
+          "bbox": [
+            72.0,
+            543.12,
+            540.04,
+            553.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "defined in [Hau20] followed by a Lagrangian surgery.",
+          "bbox": [
+            72.0,
+            555.99,
+            323.27,
+            566.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "γ",
+          "bbox": [
+            198.86,
+            598.44,
+            204.51,
+            609.35
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "γ′",
+          "bbox": [
+            343.9,
+            599.57,
+            352.45,
+            612.24
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Mutation",
+          "bbox": [
+            289.89,
+            602.09,
+            334.46,
+            613.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 5. Mutation of paths",
+          "bbox": [
+            234.39,
+            633.3,
+            377.64,
+            646.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "We will show that the monodromy of the fiber torus around the origin is trivial in the mapping",
+          "bbox": [
+            83.96,
+            659.67,
+            540.09,
+            670.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.9
+          ]
+        },
+        {
+          "text": "class group. In Definition 2.8, condition (1) implies replacing c with c′ does not change the topology",
+          "bbox": [
+            72.0,
+            668.75,
+            540.41,
+            683.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "of the Lagrangian L. We will also show that condition (3) implies that the symplectic areas of the",
+          "bbox": [
+            72.0,
+            685.57,
+            540.02,
+            696.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.89,
+            10.91
+          ]
+        },
+        {
+          "text": "discs remain the same after local higher mutation and Lemma 2.16 implies all such choices of paths",
+          "bbox": [
+            72.0,
+            698.6,
+            540.01,
+            709.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "c′ produces Hamiltonian isotopic Lµ.",
+          "bbox": [
+            72.0,
+            707.52,
+            247.84,
+            723.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 14,
+      "rotation": 0,
+      "drawings": 23,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 6. Disc used in creating homotopy from uprepre to upre"
+      ],
+      "labels": [
+        {
+          "text": "FLOER COHOMOLOGY AND HIGHER MUTATIONS",
+          "bbox": [
+            198.82,
+            51.82,
+            413.2,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "14",
+          "bbox": [
+            531.55,
+            51.82,
+            540.01,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Sector",
+          "bbox": [
+            318.82,
+            199.32,
+            348.55,
+            210.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Disc with removed sector",
+          "bbox": [
+            144.12,
+            209.85,
+            264.45,
+            220.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 6. Disc used in creating homotopy from uprepre to upre",
+          "bbox": [
+            153.98,
+            311.0,
+            457.53,
+            325.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Definition 2.22. (Monotone tuple of Lagrangians, Definition 4.1.2 in [WW10]) A pair of Lagrangians",
+          "bbox": [
+            72.0,
+            347.84,
+            540.09,
+            358.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "(L1, L2) is called a monotone pair if there is a there exists a τ for which we have the following",
+          "bbox": [
+            70.72,
+            360.62,
+            540.02,
+            372.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "an action-index relation for maps with boundary on Li. Let u : Σ →M where ∂Σ = {Ci} and",
+          "bbox": [
+            72.0,
+            373.51,
+            540.01,
+            385.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "u(Ci) ⊂Li, then we have",
+          "bbox": [
+            72.0,
+            386.46,
+            192.36,
+            398.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            271.75,
+            401.74,
+            277.82,
+            412.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "u∗ω = τµ(u).",
+          "bbox": [
+            284.48,
+            406.44,
+            347.52,
+            419.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            264.48,
+            408.75,
+            269.93,
+            419.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "We can use the method of Lemma 2.21 to prove that monotonicity of a Lagrangian pair is preserved",
+          "bbox": [
+            71.44,
+            440.77,
+            540.04,
+            451.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "when one of the Lagrangians is mutated.",
+          "bbox": [
+            71.61,
+            453.63,
+            266.48,
+            464.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Lemma 2.23. If (L, K) is a monotone pair of Lagrangians and L is locally mutable, then the pair",
+          "bbox": [
+            72.0,
+            475.1,
+            539.85,
+            486.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.85,
+            10.91
+          ]
+        },
+        {
+          "text": "(Lµ, K) is also a monotone pair.",
+          "bbox": [
+            70.72,
+            488.05,
+            226.87,
+            499.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "3. SFT Compactness",
+          "bbox": [
+            249.9,
+            523.34,
+            362.11,
+            536.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "In this section, we will explain a version of the neck-stretching procedure where the Lagrangian",
+          "bbox": [
+            83.96,
+            550.61,
+            540.03,
+            561.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.9
+          ]
+        },
+        {
+          "text": "passes through the neck region and prove a compactness result with assumptions on the Legendrian",
+          "bbox": [
+            72.0,
+            563.64,
+            540.03,
+            574.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "that models the Lagrangian in the neck region.",
+          "bbox": [
+            72.0,
+            576.51,
+            296.85,
+            587.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Bourgeois, Eliashberg, Hofer, Wysocki and Zehnder [BEH+03] proves compactness result for",
+          "bbox": [
+            83.96,
+            593.25,
+            540.21,
+            605.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.02
+          ]
+        },
+        {
+          "text": "closed holomorphic curves under neck-stretching for Morse-Bott Reeb dynamics. Abbas [Abb14]",
+          "bbox": [
+            72.0,
+            607.78,
+            540.03,
+            618.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.01
+          ]
+        },
+        {
+          "text": "proves compactness for open holomorphic curves with boundary on cylindrical Lagrangians for",
+          "bbox": [
+            72.0,
+            620.73,
+            540.29,
+            631.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "the case of non-degenerate Reeb dynamics. We prove a version of the compactness result for",
+          "bbox": [
+            72.0,
+            633.68,
+            540.21,
+            644.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "neck-stretching along a contact type hypersurface Z with a free S1 action that generates the Reeb",
+          "bbox": [
+            72.0,
+            642.78,
+            539.99,
+            657.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.88,
+            10.91
+          ]
+        },
+        {
+          "text": "field for discs with boundary on a cylindrical Lagrangian that intersects Z at the Legendrian Λ in",
+          "bbox": [
+            72.0,
+            659.66,
+            540.02,
+            670.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the neck region such that Λ is a finite cover of an embedded Lagrangian in Z/S1. Notice that the",
+          "bbox": [
+            72.0,
+            670.96,
+            540.0,
+            683.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.93
+          ]
+        },
+        {
+          "text": "case of stretching along the boundary of a Darboux ball where we perform a local mutation falls in",
+          "bbox": [
+            72.0,
+            685.63,
+            540.07,
+            696.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.83
+          ]
+        },
+        {
+          "text": "this case since the boundary sphere S2n−1 has a natural S1 action that generates the Reeb field,",
+          "bbox": [
+            72.0,
+            694.48,
+            541.52,
+            709.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "the Lagrangian intersects the sphere in two disjoint tori that descends to the Clifford torus in Pn−1.",
+          "bbox": [
+            72.0,
+            709.09,
+            542.07,
+            722.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.81,
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 15,
+      "rotation": 0,
+      "drawings": 14,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 7. Symplectic manifold W and Lagrangian submanifold L with neck pieces of length 2ϵ"
+      ],
+      "labels": [
+        {
+          "text": "FLOER COHOMOLOGY AND HIGHER MUTATIONS",
+          "bbox": [
+            198.82,
+            51.82,
+            413.2,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "15",
+          "bbox": [
+            531.55,
+            51.82,
+            540.01,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "3.1. Setup. We begin by setting the notations and conventions for this section. Let (W, ω, J) be a",
+          "bbox": [
+            72.0,
+            73.44,
+            540.0,
+            84.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.83,
+            10.91
+          ]
+        },
+        {
+          "text": "closed symplectic manifold and Z be a compact codimension 1 submanifold of contact-type, i.e. in a",
+          "bbox": [
+            72.0,
+            86.39,
+            540.03,
+            97.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "tubular neighbourhood N ∼= (−ϵ, ϵ)×Z, there is a contact form λ on Z such that ω = d(ektλ) where",
+          "bbox": [
+            72.0,
+            96.19,
+            539.99,
+            110.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "t ∈(−ϵ, ϵ) and k is a positive integer. In our case, we assume Z separates W into two connected",
+          "bbox": [
+            72.0,
+            112.15,
+            540.0,
+            123.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "components for simplifying the combinatorial structure, but this is not a necessary assumption. Let",
+          "bbox": [
+            72.0,
+            125.33,
+            540.35,
+            136.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "L be a Lagrangian such that in the tubular neighbourhood of the hypersurface Z, L is translation",
+          "bbox": [
+            72.0,
+            138.19,
+            540.02,
+            149.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.9,
+            10.91
+          ]
+        },
+        {
+          "text": "invariant over a Legendrian, i.e. there is a Legendrian Λ ⊂Z such that N ∩L = (−ϵ, ϵ) × Λ, we",
+          "bbox": [
+            72.0,
+            151.0,
+            539.99,
+            162.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "call such Lagrangians to be cylindrical near Z. Assume J is a compatible complex structure on",
+          "bbox": [
+            72.0,
+            164.01,
+            540.01,
+            175.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "(W, ω) such that it is translation invariant on N and is adjusted to the form ω in the SFT sense,",
+          "bbox": [
+            70.72,
+            176.96,
+            541.51,
+            187.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "i.e., J ∂",
+          "bbox": [
+            72.0,
+            188.6,
+            106.58,
+            201.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.81,
+            10.91
+          ]
+        },
+        {
+          "text": "∂t = R where R is the Reeb field of λ . Call the metric induced by the compatible pair (ω, J)",
+          "bbox": [
+            100.59,
+            190.6,
+            541.28,
+            205.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.81,
+            10.91
+          ]
+        },
+        {
+          "text": "on W to be gW . Assume there is a free S1 action on Z that generates the Reeb field, the quotient",
+          "bbox": [
+            72.0,
+            200.49,
+            540.31,
+            217.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.92
+          ]
+        },
+        {
+          "text": "Y = Z/S1 has a natural symplectic form induced from dλ. Assume Λ is closed under multiplying",
+          "bbox": [
+            72.0,
+            213.41,
+            540.01,
+            228.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.96
+          ]
+        },
+        {
+          "text": "by −1 from the S1 action (i.e. −Λ = Λ), projects to an embedded Lagrangian LY in Y and the",
+          "bbox": [
+            72.0,
+            226.31,
+            540.01,
+            242.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "projection map is a finite cover.",
+          "bbox": [
+            72.0,
+            243.31,
+            223.66,
+            254.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "W",
+          "bbox": [
+            267.84,
+            292.2,
+            278.13,
+            303.1
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "L",
+          "bbox": [
+            264.39,
+            320.74,
+            271.82,
+            331.65
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(−ϵ, ϵ) × Z",
+          "bbox": [
+            329.47,
+            369.45,
+            380.93,
+            380.5
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(−ϵ, ϵ) × Λ",
+          "bbox": [
+            186.52,
+            370.08,
+            238.1,
+            381.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 7. Symplectic manifold W and Lagrangian submanifold L with neck pieces",
+          "bbox": [
+            107.86,
+            505.47,
+            504.13,
+            518.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.83,
+            10.91
+          ]
+        },
+        {
+          "text": "of length 2ϵ",
+          "bbox": [
+            107.86,
+            520.72,
+            163.51,
+            531.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of radius r centred at 0 inside Cn has a tubular neighbourhood Φ :",
+          "bbox": [
+            224.82,
+            549.68,
+            541.56,
+            564.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.86,
+            10.91
+          ]
+        },
+        {
+          "text": "Example 3.1. A sphere S2n−1",
+          "bbox": [
+            72.0,
+            551.84,
+            220.68,
+            564.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.86,
+            10.91
+          ]
+        },
+        {
+          "text": "r",
+          "bbox": [
+            199.86,
+            558.6,
+            203.69,
+            566.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "→Cn given by Φ(s, p) = esp. Clearly Φ∗J0 is a translation invariant almost complex",
+          "bbox": [
+            144.52,
+            562.68,
+            540.31,
+            579.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "(−ϵ, ϵ) × S2n−1",
+          "bbox": [
+            70.72,
+            564.79,
+            140.99,
+            577.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "r",
+          "bbox": [
+            120.16,
+            571.55,
+            123.99,
+            579.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "structure as scaling is a biholomorphism in Cn. Moreover, Φ∗ω0 = d(e2sλ) where λ =",
+          "bbox": [
+            72.0,
+            577.92,
+            483.7,
+            592.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.99
+          ]
+        },
+        {
+          "text": "λ0",
+          "bbox": [
+            508.34,
+            578.11,
+            516.93,
+            586.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "P |xi|2+|yi|2 .",
+          "bbox": [
+            487.92,
+            580.24,
+            542.12,
+            595.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX8",
+            "CMMI6",
+            "CMMI8",
+            "CMR10",
+            "CMR6",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.99
+          ]
+        },
+        {
+          "text": "Here ω0, λ0 are the standard symplectic and contact forms respectively.",
+          "bbox": [
+            72.0,
+            594.92,
+            412.9,
+            607.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Note that Tγ for an admissible γ is cylindrical over disjoint union of two Legendrian tori. This",
+          "bbox": [
+            83.96,
+            613.28,
+            540.07,
+            625.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.96
+          ]
+        },
+        {
+          "text": "follows from the fact that fa(Tz)) = Tanz where fa is the scaling map, multiplication by a.",
+          "bbox": [
+            72.0,
+            626.27,
+            503.0,
+            638.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI6",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "3.1.1. Neck stretching. We now explain the process of neck stretching. The τ−stretched manifold",
+          "bbox": [
+            72.0,
+            653.12,
+            540.01,
+            664.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91,
+            10.96
+          ]
+        },
+        {
+          "text": "W τ is defined by removing the tubular ‘neck’ around Z and replacing with a 2τ sized neck as defined",
+          "bbox": [
+            72.0,
+            662.34,
+            540.0,
+            677.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "below -",
+          "bbox": [
+            72.0,
+            679.16,
+            106.54,
+            690.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "W τ = (W \\ N) ∪(−τ, τ) × Z",
+          "bbox": [
+            234.07,
+            691.29,
+            372.3,
+            706.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            374.89,
+            695.79,
+            377.93,
+            706.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "|",
+          "bbox": [
+            265.61,
+            710.96,
+            270.52,
+            721.87
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "{z",
+          "bbox": [
+            314.44,
+            710.96,
+            324.26,
+            721.87
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "}",
+          "bbox": [
+            368.17,
+            710.96,
+            373.08,
+            721.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "gluing Z at the ends",
+          "bbox": [
+            282.77,
+            715.12,
+            358.73,
+            723.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 17,
+      "rotation": 0,
+      "drawings": 25,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 8. Breaking of W"
+      ],
+      "labels": [
+        {
+          "text": "FLOER COHOMOLOGY AND HIGHER MUTATIONS",
+          "bbox": [
+            198.82,
+            51.82,
+            413.2,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "17",
+          "bbox": [
+            531.55,
+            51.82,
+            540.01,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "W",
+          "bbox": [
+            348.65,
+            103.21,
+            359.7,
+            115.16
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Z × (a, b)",
+          "bbox": [
+            289.72,
+            143.14,
+            335.06,
+            154.2
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "W τ",
+          "bbox": [
+            361.71,
+            190.99,
+            378.15,
+            204.16
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Z × (−τ, τ)",
+          "bbox": [
+            278.1,
+            219.22,
+            332.88,
+            230.27
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Z × R",
+          "bbox": [
+            291.49,
+            279.38,
+            320.92,
+            292.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Wout",
+          "bbox": [
+            360.45,
+            290.04,
+            383.56,
+            302.91
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Win",
+          "bbox": [
+            202.4,
+            293.81,
+            221.48,
+            306.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "c",
+          "bbox": [
+            360.81,
+            295.61,
+            372.76,
+            307.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "c",
+          "bbox": [
+            202.76,
+            299.39,
+            214.72,
+            311.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 8. Breaking of W",
+          "bbox": [
+            242.51,
+            348.5,
+            367.97,
+            361.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "3.1.3. Broken manifold and broken discs. The geometric objects that are obtained as a result of",
+          "bbox": [
+            72.0,
+            382.53,
+            540.01,
+            393.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "neck stretching can be intuitively imagined to be broken manifolds, which we explain in detail below.",
+          "bbox": [
+            72.0,
+            395.65,
+            542.19,
+            406.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "As before, assume (W, ω, J, L) be a symplectic manifold with a contact type hypersurface, Z such",
+          "bbox": [
+            71.6,
+            408.49,
+            540.0,
+            419.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91,
+            10.94
+          ]
+        },
+        {
+          "text": "that J, L are cylindrical near the hypersurface Z. Conceptually as τ →∞, the neck of the manifold",
+          "bbox": [
+            72.0,
+            421.33,
+            540.02,
+            432.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "gets longer and longer and one can view the ‘limit’ to be given by adding positive and negative",
+          "bbox": [
+            72.0,
+            434.34,
+            540.07,
+            445.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "symplectization of Z to the two boundaries in W \\ Z. If we further assume that the hypersurface Z",
+          "bbox": [
+            72.0,
+            447.23,
+            539.22,
+            458.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "divides the manifold W into two connected components W in, W out with contact type boundaries, a",
+          "bbox": [
+            72.0,
+            460.73,
+            540.02,
+            473.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "broken manifold W[k] with k necks is given by the collection",
+          "bbox": [
+            72.0,
+            471.3,
+            361.47,
+            484.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": ", [",
+          "bbox": [
+            359.36,
+            491.23,
+            385.94,
+            506.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Win, R × Z, R × Z, R × Z, . . .",
+          "bbox": [
+            221.91,
+            493.64,
+            359.37,
+            507.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Wout,",
+          "bbox": [
+            364.2,
+            496.02,
+            390.09,
+            507.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "d",
+          "bbox": [
+            223.44,
+            501.11,
+            239.2,
+            512.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "|",
+          "bbox": [
+            245.58,
+            510.58,
+            250.49,
+            521.49
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "{z",
+          "bbox": [
+            297.56,
+            510.58,
+            307.38,
+            521.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "}",
+          "bbox": [
+            354.45,
+            510.58,
+            359.36,
+            521.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "k times",
+          "bbox": [
+            288.92,
+            514.74,
+            316.01,
+            522.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "X denotes symplectization of the contact type boundary of the manifold X and Wi refers to",
+          "bbox": [
+            102.78,
+            532.37,
+            540.0,
+            544.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.84,
+            10.91
+          ]
+        },
+        {
+          "text": "where b",
+          "bbox": [
+            71.61,
+            532.43,
+            111.67,
+            551.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.84,
+            10.91
+          ]
+        },
+        {
+          "text": "either the ith neck piece or the corresponding symplectizations. When we want to refer to a broken",
+          "bbox": [
+            72.0,
+            541.43,
+            540.03,
+            556.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.83,
+            10.91
+          ]
+        },
+        {
+          "text": "manifold without specifying the number of necks, we use the notation W.",
+          "bbox": [
+            72.0,
+            555.89,
+            422.82,
+            569.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Similar to a broken symplectic manifold, one has a notion of broken Lagrangian submanifold in",
+          "bbox": [
+            83.95,
+            576.68,
+            540.1,
+            587.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "a broken symplectic manifold. We can construct L from a Lagrangian L if we assume that L is",
+          "bbox": [
+            72.0,
+            587.25,
+            540.0,
+            600.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "cylindrical near the hypersurface Z. We define the broken Lagrangian L[k] with k−necks to be the",
+          "bbox": [
+            72.0,
+            600.2,
+            539.99,
+            613.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "collection",
+          "bbox": [
+            72.0,
+            615.54,
+            116.85,
+            626.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Lin, R × Λ, R × Λ, R × Λ, . . .",
+          "bbox": [
+            224.86,
+            647.19,
+            359.3,
+            661.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": ", d",
+          "bbox": [
+            359.29,
+            649.57,
+            382.0,
+            668.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Lout,",
+          "bbox": [
+            364.14,
+            649.57,
+            387.14,
+            661.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "d",
+          "bbox": [
+            224.95,
+            654.66,
+            240.7,
+            665.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "|",
+          "bbox": [
+            245.65,
+            664.13,
+            250.56,
+            675.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "{z",
+          "bbox": [
+            297.56,
+            664.13,
+            307.38,
+            675.04
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "}",
+          "bbox": [
+            354.38,
+            664.13,
+            359.29,
+            675.04
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "k times",
+          "bbox": [
+            288.84,
+            668.29,
+            316.08,
+            676.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "where Lin and Lout denote the intersection of L with Win, Wout respectively and the hat b denotes",
+          "bbox": [
+            71.61,
+            680.9,
+            540.0,
+            699.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.89,
+            10.91
+          ]
+        },
+        {
+          "text": "the extension to the symplectization by the cylinder of the Legendrian Λ and Li refers to the ith",
+          "bbox": [
+            72.0,
+            692.19,
+            539.5,
+            706.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.01
+          ]
+        },
+        {
+          "text": "neck piece.",
+          "bbox": [
+            72.0,
+            706.8,
+            123.51,
+            717.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 18,
+      "rotation": 0,
+      "drawings": 31,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 9. Broken disc in W[1]"
+      ],
+      "labels": [
+        {
+          "text": "FLOER COHOMOLOGY AND HIGHER MUTATIONS",
+          "bbox": [
+            198.82,
+            51.82,
+            413.2,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "18",
+          "bbox": [
+            531.55,
+            51.82,
+            540.01,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "out",
+          "bbox": [
+            328.64,
+            77.85,
+            344.12,
+            88.76
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "in",
+          "bbox": [
+            180.96,
+            100.7,
+            191.26,
+            111.61
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "in",
+          "bbox": [
+            232.39,
+            101.54,
+            242.7,
+            112.44
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "out",
+          "bbox": [
+            317.29,
+            101.95,
+            332.77,
+            112.86
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            273.38,
+            102.37,
+            278.83,
+            113.28
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "W[1]",
+          "bbox": [
+            234.49,
+            247.2,
+            256.92,
+            260.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 9. Broken disc in W[1]",
+          "bbox": [
+            230.51,
+            311.0,
+            381.5,
+            324.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Definition 3.3 (Broken disc). A broken disc with k−necks (u, D) is a map from a nodal disk with",
+          "bbox": [
+            72.0,
+            346.27,
+            540.02,
+            357.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "EUFM10"
+          ],
+          "sizes": [
+            10.82,
+            10.91
+          ]
+        },
+        {
+          "text": "marked points D to a broken manifold with k necks with the following properties.",
+          "bbox": [
+            72.0,
+            359.33,
+            463.78,
+            370.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "EUFM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "• D is a nodal disc with labels l ∈{in = 0, 1, 2, . . . , k, out = k + 1} such that neighboring discs",
+          "bbox": [
+            97.9,
+            381.43,
+            540.02,
+            392.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "EUFM10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "have labels differing at most by 1. We designate some nodes to be “puncture nodes” that",
+          "bbox": [
+            108.33,
+            394.48,
+            540.32,
+            405.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.97
+          ]
+        },
+        {
+          "text": "are the nodes in the disc between two components with different labels.We write the nodal",
+          "bbox": [
+            108.33,
+            407.5,
+            540.02,
+            418.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.88
+          ]
+        },
+        {
+          "text": "disks as D = (Din, D1, . . . , Dout) where D refers to a collection of discs.",
+          "bbox": [
+            108.33,
+            418.05,
+            444.57,
+            432.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "EUFM10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "• u = (uin, u1, . . . , uout) is a map from D to W[k] such that ui is a map from Di to Wi with",
+          "bbox": [
+            97.9,
+            431.0,
+            540.01,
+            445.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "EUFM10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "boundary on Li and near the puncture nodes of D between components of differing label ui",
+          "bbox": [
+            108.33,
+            446.29,
+            539.5,
+            458.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "EUFM10"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "and ui+1 asymptote to the same Reeb chord or Reeb orbit.",
+          "bbox": [
+            108.33,
+            459.28,
+            390.51,
+            471.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "• (Stability) for all i ∈[1, . . . , k], at least one of the component in each neck Di has to be a",
+          "bbox": [
+            97.9,
+            469.85,
+            540.0,
+            484.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "non-trivial strip, or have enough markings to make it stable.",
+          "bbox": [
+            108.33,
+            485.19,
+            397.46,
+            496.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Remark 3.4. The labels in and out are chosen to refer to the “inside” and “outside” where inside",
+          "bbox": [
+            72.0,
+            514.65,
+            540.04,
+            525.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.84
+          ]
+        },
+        {
+          "text": "means where we do a local mutation and outside means where we don’t make any changes.",
+          "bbox": [
+            72.0,
+            527.55,
+            507.15,
+            538.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Now that we have defined broken discs, we will proceed to define the notion of convergence of",
+          "bbox": [
+            83.96,
+            554.1,
+            540.03,
+            565.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "broken discs. We say a sequence of discs un : D2 →(W n, Jn, Ln) converge to a broken disc (u, D)",
+          "bbox": [
+            72.0,
+            563.04,
+            541.28,
+            579.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "EUFM10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.99
+          ]
+        },
+        {
+          "text": "with k−necks if the following holds:",
+          "bbox": [
+            71.61,
+            579.95,
+            242.93,
+            591.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "• there is a sequence of maps ϕn : Dn →D such that they are biholomorphic diffeomorphisms",
+          "bbox": [
+            97.9,
+            602.16,
+            540.02,
+            614.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "EUFM10"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "except away from a certain circle or line that might get mapped to a node in D",
+          "bbox": [
+            108.33,
+            615.21,
+            488.74,
+            626.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "EUFM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "i ∈R such that un",
+          "bbox": [
+            204.35,
+            625.82,
+            293.88,
+            642.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.83,
+            10.91
+          ]
+        },
+        {
+          "text": "i ◦ϕ−1",
+          "bbox": [
+            288.74,
+            626.44,
+            322.0,
+            642.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "i converges in C∞to ui on every compact",
+          "bbox": [
+            339.65,
+            626.44,
+            540.29,
+            642.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.83,
+            10.91
+          ]
+        },
+        {
+          "text": "• there is a sequence tn",
+          "bbox": [
+            97.89,
+            626.54,
+            209.49,
+            639.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.83,
+            10.91
+          ]
+        },
+        {
+          "text": "n + tn",
+          "bbox": [
+            311.18,
+            626.54,
+            344.79,
+            641.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.83,
+            10.91
+          ]
+        },
+        {
+          "text": "subset. Here +t refers to translation in the R direction by t",
+          "bbox": [
+            108.33,
+            638.77,
+            393.57,
+            652.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Similarly, we say a sequence of broken disks (un, Dn) with k necks converges to a broken disk (u, D)",
+          "bbox": [
+            72.0,
+            661.67,
+            541.28,
+            675.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "EUFM10"
+          ],
+          "sizes": [
+            7.97,
+            10.81,
+            10.91
+          ]
+        },
+        {
+          "text": "with k′ > k necks if the following hold:",
+          "bbox": [
+            71.61,
+            672.36,
+            257.15,
+            687.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "• There is a sequence of maps ϕn : Dn →D such that they are biholomorphic diffeomorphisms,",
+          "bbox": [
+            97.89,
+            698.38,
+            541.54,
+            711.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "EUFM10"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "except away from certain circles or lines that might get mapped to a node in D.",
+          "bbox": [
+            108.33,
+            711.43,
+            491.28,
+            722.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "EUFM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 20,
+      "rotation": 0,
+      "drawings": 25,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 10. R × Z as a C∗fibration"
+      ],
+      "labels": [
+        {
+          "text": "FLOER COHOMOLOGY AND HIGHER MUTATIONS",
+          "bbox": [
+            198.82,
+            51.82,
+            413.2,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "20",
+          "bbox": [
+            531.55,
+            51.82,
+            540.01,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "• Step 1 : Compactify R × Z to a symplectic manifold N with compatible almost complex",
+          "bbox": [
+            97.89,
+            71.05,
+            540.29,
+            84.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "structure such that R × Λ compactifies to a cleanly self intersecting Lagrangian L in N.",
+          "bbox": [
+            108.33,
+            84.0,
+            528.41,
+            97.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "• Step 2 : Show that πR(u) diverges to ±∞where πR is the projection of R × Z to R.",
+          "bbox": [
+            97.89,
+            96.96,
+            510.69,
+            111.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "• Step 3 : Extend u to a map u to N with boundary on L.",
+          "bbox": [
+            97.9,
+            112.15,
+            381.11,
+            123.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "• Step 4 : Use analysis done in [Sch16] to conclude convergence in N.",
+          "bbox": [
+            97.9,
+            125.1,
+            432.44,
+            136.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "• Step 5 : Get convergence in cylindrical metric from convergence in N.",
+          "bbox": [
+            97.9,
+            138.05,
+            443.36,
+            149.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "C∗fiber",
+          "bbox": [
+            292.19,
+            190.75,
+            329.99,
+            204.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "{r} × Z",
+          "bbox": [
+            200.36,
+            232.1,
+            237.28,
+            243.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "R × Z",
+          "bbox": [
+            337.18,
+            269.53,
+            365.84,
+            282.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Y",
+          "bbox": [
+            283.29,
+            316.38,
+            289.63,
+            327.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 10. R × Z as a C∗fibration",
+          "bbox": [
+            218.51,
+            369.48,
+            393.51,
+            382.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Proof. Step 1 : Compactification of target",
+          "bbox": [
+            72.0,
+            399.91,
+            298.52,
+            410.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "We will compactify our target manifold by adding two copies of the symplectic manifold Y . Since",
+          "bbox": [
+            83.4,
+            418.32,
+            540.0,
+            429.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "Z is a principal circle bundle over Y , the cylinder R × Z is a R × S1 bundle on Y . The transition",
+          "bbox": [
+            72.0,
+            427.3,
+            540.02,
+            442.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.93
+          ]
+        },
+        {
+          "text": "functions between trivializations of R × Z over the base Y is given by rotation action of S1, thus",
+          "bbox": [
+            72.0,
+            441.84,
+            540.01,
+            455.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.99
+          ]
+        },
+        {
+          "text": "the cylinder R × Z can be viewed as a C∗bundle over Y . Moreover, we can extend this bundle to a",
+          "bbox": [
+            72.0,
+            454.79,
+            540.02,
+            468.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "CP1 bundle over Y by compactifying each fiber to a CP1 and using the induced transition functions,",
+          "bbox": [
+            72.0,
+            466.25,
+            541.57,
+            481.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "call this compactification N. Thus, N is a CP1 bundle over the base Y . Clearly N is compact as",
+          "bbox": [
+            72.0,
+            479.05,
+            539.98,
+            494.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.99
+          ]
+        },
+        {
+          "text": "Y is compact. Denote the zero section of Y by Y0 and the infinity section (y 7→(y, ∞) in each",
+          "bbox": [
+            72.0,
+            495.88,
+            540.0,
+            508.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "trivialization) by Y∞. The complex structure J extends naturally to a complex structure JN on N",
+          "bbox": [
+            72.0,
+            508.98,
+            538.82,
+            521.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.86,
+            10.91
+          ]
+        },
+        {
+          "text": "that restricts to the standard complex structure on the CP1 fibers. We can define a symplectic form",
+          "bbox": [
+            72.0,
+            518.06,
+            540.0,
+            532.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "ωN that is compatible with JN by defining it in each trivialization CP1 × U for U open set in Y as",
+          "bbox": [
+            72.0,
+            530.78,
+            540.0,
+            547.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.83,
+            10.91
+          ]
+        },
+        {
+          "text": "following,",
+          "bbox": [
+            72.0,
+            547.83,
+            117.47,
+            558.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            284.55,
+            562.53,
+            292.58,
+            573.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            343.97,
+            562.53,
+            352.0,
+            573.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ωFS",
+          "bbox": [
+            292.59,
+            563.46,
+            311.06,
+            575.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            335.22,
+            563.46,
+            340.68,
+            574.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ωN =",
+          "bbox": [
+            255.15,
+            570.07,
+            281.53,
+            582.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            353.82,
+            570.07,
+            356.85,
+            580.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            299.57,
+            576.41,
+            305.02,
+            587.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "dλ",
+          "bbox": [
+            331.93,
+            576.41,
+            343.97,
+            587.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "where ωFS is the Fubini-Study form. The form ωN is a well-defined symplectic form on N as the",
+          "bbox": [
+            71.61,
+            594.51,
+            540.0,
+            607.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.99
+          ]
+        },
+        {
+          "text": "transition functions of N seen as a CP1 fibration are given by the rotation action of the S1 on",
+          "bbox": [
+            72.0,
+            603.48,
+            540.01,
+            618.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "CP1. One can check from the construction of ωN and JN that they are compatible from a direct",
+          "bbox": [
+            72.0,
+            618.09,
+            540.31,
+            633.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "computation.",
+          "bbox": [
+            72.0,
+            633.43,
+            135.04,
+            644.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "We describe the closure of the cylindrical Lagrangian in the compactified symplectic manifold.",
+          "bbox": [
+            83.4,
+            651.75,
+            542.16,
+            662.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.01
+          ]
+        },
+        {
+          "text": "Denote the closure of the cylindrical Lagrangian R × Z in N by L. We can check that L is obtained",
+          "bbox": [
+            72.0,
+            662.4,
+            540.01,
+            675.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "by adding LY in the 0 and infinity divisor of the CP1 fibration to R × Λ. Indeed, a trivialization",
+          "bbox": [
+            72.0,
+            673.69,
+            540.03,
+            690.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "CP1 × U of N over some open U in Y such that U ∩LY is nonempty, we see that",
+          "bbox": [
+            72.0,
+            686.59,
+            462.39,
+            703.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "L ∩(CP1 × U) = {0, ∞} × (U ∩LY ) ∪((CP1 × U) ∩(R × Λ)).",
+          "bbox": [
+            158.0,
+            706.83,
+            454.0,
+            724.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 21,
+      "rotation": 0,
+      "drawings": 18,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 11. Compactification of R × Z to N"
+      ],
+      "labels": [
+        {
+          "text": "FLOER COHOMOLOGY AND HIGHER MUTATIONS",
+          "bbox": [
+            198.82,
+            51.82,
+            413.2,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "21",
+          "bbox": [
+            531.55,
+            51.82,
+            540.01,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Y∞",
+          "bbox": [
+            251.55,
+            92.83,
+            266.35,
+            104.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "R × Z",
+          "bbox": [
+            202.52,
+            153.67,
+            231.18,
+            166.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Y0",
+          "bbox": [
+            326.32,
+            207.01,
+            336.89,
+            218.91
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "N",
+          "bbox": [
+            268.11,
+            231.85,
+            276.88,
+            242.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 11. Compactification of R × Z to N",
+          "bbox": [
+            197.92,
+            266.0,
+            412.9,
+            279.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "This directly shows adding two copies of the Lagrangian LY to the cylinder R × Z produces the",
+          "bbox": [
+            71.61,
+            294.2,
+            540.0,
+            309.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "closure L. Since the Legendrian Λ is closed under the action of −1, we see that L cleanly self",
+          "bbox": [
+            72.0,
+            309.39,
+            540.0,
+            320.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "intersects at LY in the 0 and infinity divisor. Call the intersection loci LY0, LY∞respectively.",
+          "bbox": [
+            72.0,
+            322.48,
+            517.78,
+            335.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR6",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Step 2 : Divergence of πR(u)",
+          "bbox": [
+            83.95,
+            340.89,
+            238.51,
+            351.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "We now show that near the ends of the strip, the image escapes to infinity. We will prove that in",
+          "bbox": [
+            83.4,
+            359.38,
+            540.05,
+            370.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "the limit as s →∞, u diverges to either ∞or −∞. The proof employs a version of monotonicity",
+          "bbox": [
+            72.0,
+            372.1,
+            540.43,
+            383.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91,
+            10.94
+          ]
+        },
+        {
+          "text": "lemma (Proposition 2.69 [Abb14]) and gradient-boundedness of finite Hofer energy maps.",
+          "bbox": [
+            72.0,
+            385.2,
+            499.25,
+            396.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "We state the monotonicity lemma without proof.",
+          "bbox": [
+            83.4,
+            403.6,
+            317.45,
+            414.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Lemma 3.6 (Proposition 2.69 [Abb14]). Let (W, ω) be a compact symplectic manifold, E0 > 0, let",
+          "bbox": [
+            72.0,
+            423.41,
+            539.97,
+            435.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.86,
+            10.91
+          ]
+        },
+        {
+          "text": "J be an ω-compatible almost complex structure and let L ⊂W be a Lagrangian submanifold. Let",
+          "bbox": [
+            72.0,
+            436.22,
+            539.97,
+            447.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "D =",
+          "bbox": [
+            72.0,
+            446.93,
+            91.42,
+            460.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91,
+            10.93
+          ]
+        },
+        {
+          "text": "z ∈C",
+          "bbox": [
+            100.81,
+            446.93,
+            127.58,
+            460.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": ", N ∈N and Ik = {eit|2π",
+          "bbox": [
+            169.21,
+            446.93,
+            285.14,
+            462.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.93
+          ]
+        },
+        {
+          "text": "N k} ⊂∂D for k = 1, . . . N. Then there",
+          "bbox": [
+            355.08,
+            446.93,
+            540.0,
+            463.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.93
+          ]
+        },
+        {
+          "text": "N (k −1) ≤t ≤2π",
+          "bbox": [
+            276.95,
+            447.31,
+            363.27,
+            463.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.93
+          ]
+        },
+        {
+          "text": "|z| < 1",
+          "bbox": [
+            127.58,
+            447.88,
+            162.84,
+            465.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91,
+            10.93
+          ]
+        },
+        {
+          "text": "\b",
+          "bbox": [
+            94.45,
+            448.32,
+            100.81,
+            459.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "are constants δ0, c0 > 0 such that the following holds:",
+          "bbox": [
+            71.16,
+            462.26,
+            324.28,
+            474.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Let u : D →W be a J-holomorphic disk with E(u) ≤E0 so that u(Ik) ⊂L for k even. Let",
+          "bbox": [
+            83.96,
+            478.29,
+            539.97,
+            493.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "z0 ∈D \\ ∪kI2k+1 and 0 < r < δ0 so that u(∪kI2k+1) ⊂W \\ Br(u(z0)). Then",
+          "bbox": [
+            72.0,
+            492.37,
+            431.35,
+            507.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            249.21,
+            511.52,
+            255.28,
+            522.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ω ≥c0r2.",
+          "bbox": [
+            318.62,
+            516.32,
+            362.79,
+            530.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "u(D)∩Br(u(z0))",
+          "bbox": [
+            255.27,
+            530.61,
+            316.3,
+            539.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "Another ingredient in the proof of divergence of πR is a slight modification of Proposition 2 in",
+          "bbox": [
+            83.55,
+            551.22,
+            540.04,
+            563.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.0
+          ]
+        },
+        {
+          "text": "[Bao12]. Define the norm ∥∥L∞for a map u : H →R × Z as follows",
+          "bbox": [
+            72.0,
+            561.86,
+            394.66,
+            576.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "CMSY6",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "∥∇u∥L∞:= sup (s,t)∈H|∇u(s, t)|,",
+          "bbox": [
+            229.49,
+            582.25,
+            382.51,
+            595.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY6",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "where the norm | · | is taken with respect to the standard Euclidean metric on H and cylindrical",
+          "bbox": [
+            71.61,
+            599.0,
+            540.02,
+            612.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "metric on R × Z.",
+          "bbox": [
+            72.0,
+            611.95,
+            153.59,
+            625.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Lemma 3.7. If v : H →R × Z is a holomorphic map with boundary on R × Λ with zero horizontal",
+          "bbox": [
+            72.0,
+            631.76,
+            539.7,
+            645.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "energy, Eω(v) = 0, and bounded derivative, ∥v∥L∞< ∞, then v is a constant map.",
+          "bbox": [
+            71.1,
+            646.95,
+            465.78,
+            659.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "CMSY6",
+            "CMTI10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Proof. Since Eω(v) = 0, we have that πY (v) is a constant map. Thus, the map v lies in a fiber",
+          "bbox": [
+            72.0,
+            672.27,
+            540.23,
+            684.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "R × S1. The map v maps the boundary R ⊂H to R × {∗} for some ∗∈S1 . Since H is simply",
+          "bbox": [
+            72.0,
+            681.26,
+            540.4,
+            696.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "connected, v factors as follows v = eh where h : H →C is a holomorphic map. The map h sends the",
+          "bbox": [
+            72.0,
+            694.65,
+            539.99,
+            709.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "boundary R ⊂H to R + iy for some y ∈R. We can use a doubling trick using Schwarz reflection to",
+          "bbox": [
+            72.0,
+            709.09,
+            540.03,
+            722.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 24,
+      "rotation": 0,
+      "drawings": 13,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 12. Angles between the Lagrangians L0,L1 at q∞."
+      ],
+      "labels": [
+        {
+          "text": "FLOER COHOMOLOGY AND HIGHER MUTATIONS",
+          "bbox": [
+            198.82,
+            51.82,
+            413.2,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "24",
+          "bbox": [
+            531.55,
+            51.82,
+            540.01,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "L1",
+          "bbox": [
+            303.93,
+            103.0,
+            315.59,
+            114.9
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "LY∞",
+          "bbox": [
+            248.59,
+            130.33,
+            268.23,
+            142.77
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "u(s, t)",
+          "bbox": [
+            164.28,
+            152.49,
+            192.92,
+            163.4
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "q∞",
+          "bbox": [
+            225.74,
+            169.58,
+            239.08,
+            181.38
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "L0",
+          "bbox": [
+            325.2,
+            193.33,
+            336.85,
+            205.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Tq∞L0",
+          "bbox": [
+            261.21,
+            251.67,
+            291.32,
+            264.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR8",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "θq",
+          "bbox": [
+            338.56,
+            275.76,
+            347.45,
+            287.67
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Tq∞L1",
+          "bbox": [
+            396.34,
+            314.15,
+            426.45,
+            326.54
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR8",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 12. Angles between the Lagrangians L0,L1 at q∞.",
+          "bbox": [
+            165.21,
+            356.0,
+            446.8,
+            370.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "So far, we have proved exponential convergence of a J−holomorphic strip in a compact manifold.",
+          "bbox": [
+            83.96,
+            392.82,
+            542.15,
+            403.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.81,
+            10.91
+          ]
+        },
+        {
+          "text": "In this step, we will prove exponential convergence in the cylindrical manifold R × Z with respect to",
+          "bbox": [
+            72.0,
+            403.53,
+            540.0,
+            416.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "a cylindrical metric. We will use the convergence in the compact manifold N to obtain exponential",
+          "bbox": [
+            72.0,
+            418.87,
+            540.03,
+            429.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.83,
+            10.91
+          ]
+        },
+        {
+          "text": "convergence in the cylindrical manifold R × Z.",
+          "bbox": [
+            72.0,
+            429.43,
+            294.53,
+            442.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The choice of metric in N in (3.2.3) to define the exponentiation is not vital, since exponentiation",
+          "bbox": [
+            83.56,
+            450.22,
+            540.06,
+            461.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "is an analytic local diffeomorphism and derivative at 0 is identity. From a Taylor-series computation,",
+          "bbox": [
+            72.0,
+            463.26,
+            541.57,
+            474.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "we see that changing the metric doesn’t change the leading order decaying term in the equation",
+          "bbox": [
+            71.61,
+            476.04,
+            540.03,
+            487.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "(3.2.3). Let g",
+          "bbox": [
+            70.72,
+            488.99,
+            151.3,
+            507.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "expq∞denote exponentiation at q∞with a different metric. The Taylor-series of",
+          "bbox": [
+            135.09,
+            488.99,
+            539.99,
+            502.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY6",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "exp−1",
+          "bbox": [
+            72.0,
+            501.57,
+            99.49,
+            515.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "q∞◦expq∞is as follows,",
+          "bbox": [
+            88.67,
+            504.27,
+            203.01,
+            517.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "g",
+          "bbox": [
+            72.46,
+            512.25,
+            88.21,
+            523.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "exp−1",
+          "bbox": [
+            182.89,
+            541.76,
+            210.38,
+            555.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "exp−1",
+          "bbox": [
+            289.33,
+            541.76,
+            316.81,
+            555.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "q∞◦expq∞)0(ev) + O(|ev|2)",
+          "bbox": [
+            305.99,
+            542.39,
+            427.18,
+            563.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "q∞◦expq∞(ev) = d(g",
+          "bbox": [
+            199.56,
+            544.45,
+            305.53,
+            563.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "g",
+          "bbox": [
+            183.35,
+            552.44,
+            199.1,
+            563.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "exp−1",
+          "bbox": [
+            285.08,
+            560.54,
+            312.57,
+            574.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "q∞0 ◦dexpq∞0(ev) + O(|ev|2)",
+          "bbox": [
+            301.75,
+            561.17,
+            429.11,
+            582.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "= dg",
+          "bbox": [
+            267.89,
+            563.37,
+            301.29,
+            582.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "= Id ◦Id(ev) + O(|ev|2)",
+          "bbox": [
+            267.89,
+            579.79,
+            369.58,
+            600.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(3.2.4)",
+          "bbox": [
+            70.72,
+            581.99,
+            101.64,
+            592.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Thus, from equations (3.2.3) and (3.2.4) we get that u converges exponentially to the strip",
+          "bbox": [
+            71.61,
+            604.3,
+            540.02,
+            615.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "expq∞(e−(2kπ+θq)(s+it)v).",
+          "bbox": [
+            72.0,
+            616.28,
+            188.39,
+            631.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI6",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY6",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "g",
+          "bbox": [
+            72.46,
+            625.89,
+            88.21,
+            636.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "We choose a metric on the compactified manifold N that lets us easily obtain trivial strips from",
+          "bbox": [
+            83.4,
+            636.45,
+            540.03,
+            647.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.88,
+            10.91
+          ]
+        },
+        {
+          "text": "geodesic exponentiation. Choose a metric in g for N such that in the trivialization U × CP1 in a",
+          "bbox": [
+            72.0,
+            645.37,
+            540.01,
+            660.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.01
+          ]
+        },
+        {
+          "text": "neighborhood U of q, g = g1 ⊕g2 where g1 is the restriction of some metric on Y and g2 is a metric",
+          "bbox": [
+            72.0,
+            662.21,
+            540.0,
+            674.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "on CP1 for which an open disc B∞centered at ∞is isometric to a disc B0 in C with standard",
+          "bbox": [
+            72.0,
+            671.26,
+            540.01,
+            687.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "Euclidean metric. Since v in (3.2.3) lies in the vertical component, we have that",
+          "bbox": [
+            72.0,
+            688.26,
+            454.95,
+            699.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "expq∞((e−(2kπ+θq)(s+it)v)",
+          "bbox": [
+            247.2,
+            708.98,
+            364.8,
+            724.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI6",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY6",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 65,
+      "rotation": 0,
+      "drawings": 16,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 13. Creating eu by replacing the disc A with A′ and removing the outside pieces B and C"
+      ],
+      "labels": [
+        {
+          "text": "FLOER COHOMOLOGY AND HIGHER MUTATIONS",
+          "bbox": [
+            198.82,
+            51.82,
+            413.2,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "65",
+          "bbox": [
+            531.55,
+            51.82,
+            540.01,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "C",
+          "bbox": [
+            254.55,
+            140.87,
+            262.35,
+            151.78
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "A′",
+          "bbox": [
+            347.2,
+            170.02,
+            357.68,
+            182.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "B",
+          "bbox": [
+            247.91,
+            180.68,
+            256.2,
+            191.59
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            176.86,
+            186.28,
+            185.04,
+            197.19
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "eu",
+          "bbox": [
+            385.55,
+            222.65,
+            391.61,
+            240.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "EUFM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "u",
+          "bbox": [
+            228.01,
+            225.6,
+            233.65,
+            236.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "EUFM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 13. Creating eu by replacing the disc A with A′ and removing the outside",
+          "bbox": [
+            107.86,
+            320.8,
+            504.15,
+            343.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMEX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY8",
+            "EUFM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.99
+          ]
+        },
+        {
+          "text": "pieces B and C",
+          "bbox": [
+            107.86,
+            337.77,
+            180.91,
+            348.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "length ( i.e., π/n), the dimension Min is larger than the dimension of the matching condition RC.",
+          "bbox": [
+            72.0,
+            364.84,
+            542.12,
+            377.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Thus, for non-minimal Reeb chords, there is a non-trivial kernel of the evaluation map",
+          "bbox": [
+            71.61,
+            377.94,
+            485.49,
+            388.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "evin : Min →RC,",
+          "bbox": [
+            263.39,
+            395.39,
+            348.61,
+            408.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "hence such configurations cannot arise in rigid broken strips. This ends the proof for rigid broken",
+          "bbox": [
+            72.0,
+            413.1,
+            540.09,
+            424.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.94
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            531.52,
+            423.69,
+            540.0,
+            434.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "strips. For rigid broken discs, exactly the same argument would work.",
+          "bbox": [
+            72.0,
+            426.07,
+            406.61,
+            436.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "7. Floer Cohomology and Mutations",
+          "bbox": [
+            202.29,
+            451.47,
+            409.71,
+            464.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "We begin this section with recalling the notion of Lagrangian Intersection Floer cohomology with",
+          "bbox": [
+            83.96,
+            478.82,
+            540.05,
+            489.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "local systems. After setting up the conventions and the review of the Floer cohomology, we prove",
+          "bbox": [
+            72.0,
+            491.66,
+            540.03,
+            502.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.94
+          ]
+        },
+        {
+          "text": "the invariance of Floer cohomology under mutation. This review follows the exposition in Section 2",
+          "bbox": [
+            72.0,
+            504.71,
+            540.33,
+            515.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.82
+          ]
+        },
+        {
+          "text": "of [PT20] and the local system version follows the exposition in [Aur14].",
+          "bbox": [
+            72.0,
+            517.59,
+            417.4,
+            528.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "7.1. Floer Cohomology with local system. We explain the construction of Floer cohomology",
+          "bbox": [
+            72.0,
+            542.67,
+            540.42,
+            553.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.93
+          ]
+        },
+        {
+          "text": "with local system for monotone Lagrangians. This was first introduced by Oh in [Oh93], [Oh95a].",
+          "bbox": [
+            71.61,
+            555.6,
+            542.19,
+            566.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.96
+          ]
+        },
+        {
+          "text": "Let (L, K) be a monotone pair of compact orientable spin Lagrangians in a compact monotone",
+          "bbox": [
+            72.0,
+            568.5,
+            540.04,
+            579.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "symplectic manifold M that transversely intersect where L is locally mutable and K is outside the",
+          "bbox": [
+            72.0,
+            581.54,
+            540.0,
+            592.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.86,
+            10.91
+          ]
+        },
+        {
+          "text": "mutation neighborhood. Assume the minimal Maslov number of L, K are at least 2. Let EL, EK be",
+          "bbox": [
+            72.0,
+            594.35,
+            540.0,
+            607.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.84,
+            10.91
+          ]
+        },
+        {
+          "text": "flat C line bundles over L, K with holonomy ρL, ρK. We denote the tuple (L, ρL) and (K, ρK) by",
+          "bbox": [
+            72.0,
+            605.06,
+            540.41,
+            619.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.0
+          ]
+        },
+        {
+          "text": "eL, eK. We define the chain complex CF(eL, eK) as follows.",
+          "bbox": [
+            72.0,
+            621.8,
+            342.96,
+            640.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "M",
+          "bbox": [
+            290.33,
+            650.75,
+            306.81,
+            661.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "hom(EeL|p, E e",
+          "bbox": [
+            314.9,
+            653.12,
+            376.83,
+            671.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX8",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "K|p)",
+          "bbox": [
+            370.16,
+            653.12,
+            390.4,
+            667.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "CF(eL, eK) =",
+          "bbox": [
+            221.61,
+            653.27,
+            281.04,
+            672.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "p∈L∩K",
+          "bbox": [
+            284.06,
+            668.72,
+            312.52,
+            676.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "We explain the relevant moduli spaces of strips that we use to define a coboundary operator.",
+          "bbox": [
+            83.96,
+            685.49,
+            542.17,
+            696.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "Fix a t-dependent almost complex structure Jt such that Jt = Jstd in the mutation neighborhood",
+          "bbox": [
+            72.0,
+            698.48,
+            540.04,
+            711.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.96
+          ]
+        },
+        {
+          "text": "and makes all the holomorphic strips u : R × [0, 1] →M with u(R × {0}) ⊂L and u(R × {1}) ⊂K",
+          "bbox": [
+            72.0,
+            709.09,
+            539.22,
+            722.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.82,
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 71,
+      "rotation": 0,
+      "drawings": 11,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 14. Clifford and Chekanov type tori"
+      ],
+      "labels": [
+        {
+          "text": "FLOER COHOMOLOGY AND HIGHER MUTATIONS",
+          "bbox": [
+            198.82,
+            51.82,
+            413.2,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "71",
+          "bbox": [
+            531.55,
+            51.82,
+            540.01,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "ϕ(L)",
+          "bbox": [
+            323.39,
+            164.18,
+            345.8,
+            175.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ϕ(L)",
+          "bbox": [
+            223.28,
+            171.21,
+            245.69,
+            182.12
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Lµ",
+          "bbox": [
+            261.27,
+            175.03,
+            273.79,
+            186.93
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "L",
+          "bbox": [
+            167.41,
+            176.64,
+            174.84,
+            187.55
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 14. Clifford and Chekanov type tori",
+          "bbox": [
+            198.49,
+            266.0,
+            413.54,
+            279.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Similarly, using the 1 ↔n and n ↔1 correspondence, and keeping track of the homology classes,",
+          "bbox": [
+            83.96,
+            297.67,
+            541.53,
+            308.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "we see that the coboundary operators match up exactly,",
+          "bbox": [
+            71.61,
+            310.76,
+            340.32,
+            321.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "eP",
+          "bbox": [
+            262.01,
+            341.5,
+            268.36,
+            353.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "eP",
+          "bbox": [
+            321.42,
+            341.5,
+            327.77,
+            353.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "(∂",
+          "bbox": [
+            251.37,
+            343.81,
+            261.4,
+            354.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "D)(eL, e",
+          "bbox": [
+            261.4,
+            343.81,
+            291.41,
+            363.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX8",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "K) = (∂",
+          "bbox": [
+            284.74,
+            343.81,
+            320.82,
+            358.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "D)(f",
+          "bbox": [
+            320.82,
+            343.81,
+            345.65,
+            361.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX8",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Lµ, e",
+          "bbox": [
+            336.04,
+            350.34,
+            355.81,
+            363.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX8",
+            "CMMI6",
+            "CMMI8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "K)",
+          "bbox": [
+            349.14,
+            350.34,
+            360.13,
+            358.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "where (∂eP",
+          "bbox": [
+            71.61,
+            370.25,
+            119.85,
+            382.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX8",
+            "CMMI10",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.86,
+            10.91
+          ]
+        },
+        {
+          "text": "K) is the bulk D deformed Floer coboundary for the pair (eL, eK) and (∂eP",
+          "bbox": [
+            136.19,
+            370.25,
+            482.61,
+            390.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMEX8",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.86,
+            10.91
+          ]
+        },
+        {
+          "text": "D)(eL, e",
+          "bbox": [
+            112.89,
+            372.05,
+            142.87,
+            391.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX8",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.86
+          ]
+        },
+        {
+          "text": "D)(eL, e",
+          "bbox": [
+            475.66,
+            372.05,
+            505.63,
+            391.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX8",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.86
+          ]
+        },
+        {
+          "text": "K) is the",
+          "bbox": [
+            498.96,
+            372.05,
+            540.0,
+            386.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.86
+          ]
+        },
+        {
+          "text": "D (eL, eK) ∼= HF P",
+          "bbox": [
+            395.32,
+            386.81,
+            473.7,
+            408.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Lµ, eK). Thus, we have HF P",
+          "bbox": [
+            266.34,
+            388.19,
+            402.76,
+            408.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "bulk D deformed Floer coboundary for (f",
+          "bbox": [
+            72.0,
+            389.95,
+            278.31,
+            405.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "D (f",
+          "bbox": [
+            466.26,
+            389.95,
+            491.07,
+            405.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Lµ, eK). Now",
+          "bbox": [
+            479.11,
+            389.95,
+            540.39,
+            408.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "using Lemma 7.4 we get that the Floer homologies are the same.",
+          "bbox": [
+            72.0,
+            402.91,
+            381.93,
+            413.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            531.52,
+            418.93,
+            540.0,
+            429.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Now, Theorem 1.2 directly follows from Theorem 7.5.",
+          "bbox": [
+            83.96,
+            447.5,
+            339.9,
+            458.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "7.4. Applications.",
+          "bbox": [
+            72.0,
+            475.12,
+            166.51,
+            486.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Proof of Corollary 1.5. We will apply Theorem 1.2 to L, ϕ(L) where ϕ(L) is a Hamiltonian pertur-",
+          "bbox": [
+            72.0,
+            501.3,
+            541.84,
+            512.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.87,
+            10.91
+          ]
+        },
+        {
+          "text": "bation of L such that ϕ(L)∩L is away from the mutation neighborhood. Such a perturbation always",
+          "bbox": [
+            72.0,
+            514.11,
+            540.07,
+            525.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "exists for Clifford type torus in [PT20], see Figure 14. By applying Theorem 1.2 to L, K = ϕ(L).",
+          "bbox": [
+            72.0,
+            527.12,
+            542.12,
+            538.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "We have",
+          "bbox": [
+            71.44,
+            540.16,
+            111.74,
+            551.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "HF(eL, eϕ(L)) ∼= HF(eLµ, eϕ(L)).",
+          "bbox": [
+            232.76,
+            551.33,
+            379.24,
+            573.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Now using invariance of HF under Hamiltonian isotopy we have",
+          "bbox": [
+            72.0,
+            571.06,
+            380.39,
+            581.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "HF(eL, eL) ∼= HF(eLµ, eL).",
+          "bbox": [
+            247.75,
+            587.56,
+            364.25,
+            609.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            531.52,
+            607.18,
+            540.0,
+            618.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Thus we have that the Clifford and Chekanov tori are Hamiltonian non-dis placeable.",
+          "bbox": [
+            71.61,
+            609.56,
+            480.36,
+            620.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Remark 7.6 (Non-Displaceability of Chekanov tori and Real Projective spaces in odd dimensions).",
+          "bbox": [
+            72.0,
+            629.85,
+            542.43,
+            640.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.81
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            71.79,
+            640.93,
+            76.02,
+            648.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "One straightforward generalization of Theorem 1.2 can be obtained by considering Lagrangians",
+          "bbox": [
+            83.96,
+            661.25,
+            540.07,
+            672.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.92
+          ]
+        },
+        {
+          "text": "with local-systems coming from F−line bundles, where F is any field. The proof of Theorem 1.2 is",
+          "bbox": [
+            71.61,
+            671.83,
+            540.02,
+            685.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.9,
+            10.91
+          ]
+        },
+        {
+          "text": "based on comparing moduli space of rigid broken disks. The field C was not essential in any part",
+          "bbox": [
+            72.0,
+            684.78,
+            540.31,
+            698.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91,
+            10.96
+          ]
+        },
+        {
+          "text": "2This answers a question raised in Remark 3.2.3 of [KS23].",
+          "bbox": [
+            71.79,
+            710.3,
+            309.11,
+            721.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8",
+            "CMR9"
+          ],
+          "sizes": [
+            7.97,
+            8.97
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1253,6 +1253,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "34fbd112475b",
+          "ts": "040e3ae14458",
+          "lean": "95466b4d876a",
+          "lean_statement": "258c1e374c50"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:00:13.889Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "[sidecar review 2026-11-15, issue #8030] sibling `invariant_functional_unique` is a genuine induction, but it replaces G_q-invariance by a *tower-compatibility* hypothesis ψ_n∘𝔡_n = ψ_{n+1}, takes uniqueness at level 0 from the field `schur_at_zero` (every functional on level 0 is a multiple of the trace), and concludes \"unique up to a scalar\", while the md says \"unique\". G_q never appears. S↔P: A_∞ = lim End_𝐂(A_n), and morphisms of 𝐂 commute with every monoidal automorphism of τ, so G_q = Aut^⊗(τ) acts **trivially** by conjugation on End_𝐂(A_n): every functional is invariant. Uniqueness would then need dim End_𝐂(A_n) = 1, which the corpus itself contradicts: prop:descent-eigenspaces splits End_𝐂(A_{n+1}) = im τ̂ ⊕ ker τ̂ with τ̂ a non-scalar idempotent, so tr and tr∘τ̂ are two invariant functionals that differ (on 1 − τ̂). The step \"an invariant functional factors through the fixed subalgebra\" is also wrong in general (it …"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2668,6 +2686,6 @@
       }
     ]
   },
-  "updated_at": "2026-09-15T23:41:46.848Z",
+  "updated_at": "2026-11-15T22:00:13.889Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

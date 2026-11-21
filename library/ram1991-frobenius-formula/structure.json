@@ -1,37 +1,24 @@
 {
- "_schema": "pdf-structure/v1",
- "doc_id": "ram1991-frobenius-formula",
  "source": {
   "file": "ram1991-frobenius-formula.pdf",
   "sha256": "26b2fc85338d915051bd4ad75ccf390a0182f148ed7364c870b6964c5bc5f5a6",
   "bytes": 1982991,
+  "mtime": "2026-11-15T11:07:55Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "pages": 28,
   "text_source": "ocr",
-  "extractor": "pymupdf",
-  "mtime": "2026-10-10T19:16:49Z",
-  "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "runContext": {
+   "sha256": "628e8bdb0ae9ceb0bc2a3c1e1e37b63ba1e54f5bd2e553a4804075dab3936adf"
+  }
  },
  "metadata": {
-  "arxiv": null,
-  "doi": null,
   "title": "A Frobenius formula for the characters of the Hecke algebras",
-  "authors_raw": "Arun Ram",
-  "title_lines": [
-   "Invent. math. 106, 461-488 (1991)",
-   "Inventiones",
-   "mathematicae",
-   "Springer-Verlag 1991",
-   "A Frobenius formula for the characters of",
-   "the Hecke algebras"
-  ],
-  "abstract": "This paper uses the theory of quantum groups and the quantum Yang-Baxter equation as a guide in order to produce a method of computing the irreducible characters of the Hecke algebra. This approach is motivated by an observation of M. Jimbo giving a representation of the Hecke algebra on tensor space which generates the full centralizer of a tensor power of the \"standard\" representation of the quantum group U_q(sl(n)). By rewriting the solutions of the quantum Yang-Baxter equation for U_q(sl(n)) in a different form one can avoid the quantum group completely and produce a “Frobenius\" formula for the characters of the Hecke algebra by elementary methods. Using this formula we derive a combinatorial rule for computing the irreducible characters of the Hecke algebra. This combinatorial rule is a q-extension of the Murnaghan-Nakayama for computing the irreducible characters of the symmetric group. Along the way one finds connections, apparently unexplored, between the irreducible characters of the Hecke algebra and Hall-Littlewood symmetric functions and Kronecker products of symmetric groups.",
   "docinfo": {},
-  "title_raw": "Invent. math. 106, 461-488 (1991) Inventiones mathematicae Springer-Verlag 1991 A Frobenius formula for the characters of the Hecke algebras",
-  "title_source": "text",
+  "title_raw": null,
+  "title_source": "filename",
   "title_verified": false,
   "title_evidence": {
-   "text": "Invent. math. 106, 461-488 (1991) Inventiones mathematicae Springer-Verlag 1991 A Frobenius formula for the characters of the Hecke algebras",
    "corroborated_by": [],
    "browser_print": false
   },
@@ -39,200 +26,294 @@
   "rights_note": "Cut from the Göttingen State and University Library (SUB/GDZ) digitisation of Inventiones Mathematicae vol. 106 (1991), WerkId PPN356556735_0106. The GDZ Terms and Conditions on page 1 of that volume file state that access is provided 'strictly for noncommercial educational, research and private purposes', that 'each copy of any part of this document must contain these Terms and Conditions', and that 'Reproductions of material on the web site may not be made for or donated to other repositories, nor may be further reproduced without written permission from the Goettingen State- and University Library.' The volume file itself is NOT held in this repository; this per-article cut does not carry the GDZ cover page. Owner decision whether to keep this copy.",
   "journal_ref": "Invent. Math. 106 (1991) 461-488",
   "volume_pdf_pages": "468-495",
-  "journal_page_offset": 460
+  "journal_page_offset": 460,
+  "title_prev": "A Frobenius formula for the characters of the Hecke algebras"
  },
- "toc": [
-  {
-   "level": 1,
-   "title": "Introduction",
-   "page": 1,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "The symmetric group S_f and the Hecke algebra H_f",
-   "page": 2,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Remarks on the quantum group U_q(sl(n)) and the solutions of the quantum Yang-Baxter equation",
-   "page": 4,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "The action of H_f on V^{⊗f}",
-   "page": 7,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "The Frobenius formula for the characters of H_f",
-   "page": 10,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "Formulas for the irreducible characters of H_f",
-   "page": 16,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "A combinatorial rule for computing the irreducible characters of the Hecke algebras",
-   "page": 19,
-   "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "Work of King-Wybourne and Vershik-Kerov",
-   "page": 23,
-   "source": "inferred",
-   "number": "7"
-  },
-  {
-   "level": 1,
-   "title": "Tables and formulas for special cases",
-   "page": 25,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 27,
-   "source": "inferred",
-   "number": null
-  }
- ],
- "toc_source": "inferred",
+ "_schema": "pdf-structure/v1",
+ "doc_id": "ram1991-frobenius-formula",
+ "toc_source": "none",
+ "granularity": "page",
  "sections": [
   {
-   "id": "sec-front-matter",
+   "id": "page-001",
    "number": null,
-   "title": "Front matter",
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1372,
-   "n_words": 205
+   "n_chars": 2218,
+   "n_words": 343
   },
   {
-   "id": "sec-000-0-introduction",
-   "number": "0",
-   "title": "Introduction",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 2,
-   "n_chars": 3329,
-   "n_words": 553
-  },
-  {
-   "id": "sec-001-1-the-symmetric-group-s-f-and-the-hecke-alge",
-   "number": "1",
-   "title": "The symmetric group S_f and the Hecke algebra H_f",
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
    "level": 1,
    "page_start": 2,
-   "page_end": 4,
-   "n_chars": 4501,
-   "n_words": 914
+   "page_end": 2,
+   "n_chars": 3343,
+   "n_words": 565
   },
   {
-   "id": "sec-002-2-remarks-on-the-quantum-group-u-q-sl-n-and",
-   "number": "2",
-   "title": "Remarks on the quantum group U_q(sl(n)) and the solutions of the quantum Yang-Baxter equation",
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 2387,
+   "n_words": 456
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
    "level": 1,
    "page_start": 4,
-   "page_end": 7,
-   "n_chars": 4495,
-   "n_words": 868
+   "page_end": 4,
+   "n_chars": 2254,
+   "n_words": 405
   },
   {
-   "id": "sec-003-3-the-action-of-h-f-on-v-f",
-   "number": "3",
-   "title": "The action of H_f on V^{⊗f}",
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1384,
+   "n_words": 284
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 2409,
+   "n_words": 458
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
    "level": 1,
    "page_start": 7,
-   "page_end": 10,
-   "n_chars": 5770,
-   "n_words": 1189
+   "page_end": 7,
+   "n_chars": 2138,
+   "n_words": 427
   },
   {
-   "id": "sec-004-4-the-frobenius-formula-for-the-characters-o",
-   "number": "4",
-   "title": "The Frobenius formula for the characters of H_f",
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1964,
+   "n_words": 374
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1573,
+   "n_words": 318
+  },
+  {
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
    "level": 1,
    "page_start": 10,
-   "page_end": 16,
-   "n_chars": 7121,
-   "n_words": 1439
+   "page_end": 10,
+   "n_chars": 1682,
+   "n_words": 328
   },
   {
-   "id": "sec-005-5-formulas-for-the-irreducible-characters-of",
-   "number": "5",
-   "title": "Formulas for the irreducible characters of H_f",
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 1642,
+   "n_words": 300
+  },
+  {
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1419,
+   "n_words": 263
+  },
+  {
+   "id": "page-013",
+   "number": null,
+   "title": "Page 13",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 1036,
+   "n_words": 203
+  },
+  {
+   "id": "page-014",
+   "number": null,
+   "title": "Page 14",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 1018,
+   "n_words": 223
+  },
+  {
+   "id": "page-015",
+   "number": null,
+   "title": "Page 15",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 1185,
+   "n_words": 218
+  },
+  {
+   "id": "page-016",
+   "number": null,
+   "title": "Page 16",
    "level": 1,
    "page_start": 16,
-   "page_end": 19,
-   "n_chars": 4666,
-   "n_words": 898
+   "page_end": 16,
+   "n_chars": 1699,
+   "n_words": 341
   },
   {
-   "id": "sec-006-6-a-combinatorial-rule-for-computing-the-irr",
-   "number": "6",
-   "title": "A combinatorial rule for computing the irreducible characters of the Hecke algebras",
+   "id": "page-017",
+   "number": null,
+   "title": "Page 17",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 1781,
+   "n_words": 324
+  },
+  {
+   "id": "page-018",
+   "number": null,
+   "title": "Page 18",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 1164,
+   "n_words": 229
+  },
+  {
+   "id": "page-019",
+   "number": null,
+   "title": "Page 19",
    "level": 1,
    "page_start": 19,
-   "page_end": 23,
-   "n_chars": 6245,
-   "n_words": 1208
+   "page_end": 19,
+   "n_chars": 1297,
+   "n_words": 250
   },
   {
-   "id": "sec-007-7-work-of-king-wybourne-and-vershik-kerov",
-   "number": "7",
-   "title": "Work of King-Wybourne and Vershik-Kerov",
+   "id": "page-020",
+   "number": null,
+   "title": "Page 20",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 2018,
+   "n_words": 419
+  },
+  {
+   "id": "page-021",
+   "number": null,
+   "title": "Page 21",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 2013,
+   "n_words": 390
+  },
+  {
+   "id": "page-022",
+   "number": null,
+   "title": "Page 22",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 1502,
+   "n_words": 312
+  },
+  {
+   "id": "page-023",
+   "number": null,
+   "title": "Page 23",
    "level": 1,
    "page_start": 23,
-   "page_end": 25,
-   "n_chars": 3561,
-   "n_words": 671
+   "page_end": 23,
+   "n_chars": 2078,
+   "n_words": 387
   },
   {
-   "id": "sec-008-8-tables-and-formulas-for-special-cases",
-   "number": "8",
-   "title": "Tables and formulas for special cases",
+   "id": "page-024",
+   "number": null,
+   "title": "Page 24",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 1660,
+   "n_words": 317
+  },
+  {
+   "id": "page-025",
+   "number": null,
+   "title": "Page 25",
    "level": 1,
    "page_start": 25,
-   "page_end": 27,
-   "n_chars": 1940,
-   "n_words": 568
+   "page_end": 25,
+   "n_chars": 652,
+   "n_words": 150
   },
   {
-   "id": "sec-009-references",
+   "id": "page-026",
    "number": null,
-   "title": "References",
+   "title": "Page 26",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 716,
+   "n_words": 168
+  },
+  {
+   "id": "page-027",
+   "number": null,
+   "title": "Page 27",
    "level": 1,
    "page_start": 27,
+   "page_end": 27,
+   "n_chars": 1000,
+   "n_words": 224
+  },
+  {
+   "id": "page-028",
+   "number": null,
+   "title": "Page 28",
+   "level": 1,
+   "page_start": 28,
    "page_end": 28,
-   "n_chars": 2897,
-   "n_words": 425
+   "n_chars": 2743,
+   "n_words": 401
   }
  ],
- "diagnostics": {
-  "pages_without_text": 0,
-  "likely_scanned": true,
-  "toc_entries": 10,
-  "toc_inferred_entries": 10,
-  "sections": 11,
-  "chars_total": 45897
- },
- "structure_note": "Sectioning: split by hand at the OCR'd numbered section headings (journal pages from the printed contents / running heads)."
+ "structure_note": "Ingested at PAGE granularity by scripts/pdf-pages.py. This PDF carries no embedded outline and its inferred chapter structure was measurably wrong (bean 6xaz), so no chapter tree is claimed. A page is a determined division; an inferred chapter was not."
 }

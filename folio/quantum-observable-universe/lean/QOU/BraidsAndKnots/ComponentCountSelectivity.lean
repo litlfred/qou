@@ -22,6 +22,7 @@ import Mathlib.Algebra.Order.Ring.Defs
 import Mathlib.Algebra.Order.Ring.Abs
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
+import QOU.BraidsAndKnots.ClosureComponentsSignInvariant
 
 namespace QOU.BraidsAndKnots.ComponentCountSelectivity
 
@@ -91,10 +92,73 @@ theorem no_separation_of_equal_component_count
     (f : ℕ → R) {c c' : ℕ} (h : c = c') : f c = f c' := by
   rw [h]
 
-/-- Specialised to the proton/neutron pair: any component-count function assigns
-them the same value, because the framework gives both `c = 3`. -/
-theorem proton_neutron_indistinguishable (f : ℕ → R) :
-    f 3 = f 3 :=
-  no_separation_of_equal_component_count f rfl
+/-! ### The nucleon specialisation, through the closure-component count
+
+The specialisation used to read `f 3 = f 3`, a reflexive tautology that took
+the component count `3` as given (bean `qou-6qbv`). The count is now
+**computed** from the braid word: the Borromean word `(σ₁σ₂⁻¹)³` induces the
+identity permutation on its three strands, so its closure has three
+components, and every resolution of any word sharing its crossing indices has
+the same count (`braidClosureComponents_eq_of_indices_eq`).
+
+What stays prose, and is cited rather than proved: that the framework assigns
+the proton and the neutron braid words sharing the Borromean index sequence.
+The statement below takes that assignment as explicit hypotheses `hp`, `hn`,
+so a different assignment makes it inapplicable rather than silently true. -/
+
+open Equiv QOU.BraidsAndKnots in
+/-- The identity permutation on `n` strands has `n` closure components. -/
+theorem closureComponents_one (n : ℕ) :
+    QOU.BraidsAndKnots.closureComponents (1 : Perm (Fin n)) = n := by
+  unfold QOU.BraidsAndKnots.closureComponents
+  have hbij : Function.Bijective
+      (Quotient.mk (MulAction.orbitRel (Subgroup.zpowers (1 : Perm (Fin n))) (Fin n))) := by
+    refine ⟨fun a b h => ?_, Quotient.mk_surjective⟩
+    have h' : a ∈ MulAction.orbit (Subgroup.zpowers (1 : Perm (Fin n))) b :=
+      Quotient.exact h
+    rw [MulAction.mem_orbit_iff] at h'
+    obtain ⟨⟨g, hg⟩, hgb⟩ := h'
+    simp only [Subgroup.zpowers_one_eq_bot, Subgroup.mem_bot] at hg
+    subst hg
+    simpa using hgb.symm
+  rw [← Nat.card_eq_of_bijective _ hbij, Nat.card_eq_fintype_card, Fintype.card_fin]
+
+/-- The Borromean braid word `(σ₁σ₂⁻¹)³` on three strands, in the corpus's
+`List (Fin (n - 1) × Bool)` encoding (`true` = positive crossing). -/
+def borromeanWord : List (Fin (3 - 1) × Bool) :=
+  [(0, true), (1, false), (0, true), (1, false), (0, true), (1, false)]
+
+open QOU.BraidsAndKnots in
+/-- The Borromean word induces the identity permutation on its strands
+(a finite computation in `S₃`). -/
+theorem borromeanWord_perm :
+    wordPerm adjacentPerm borromeanWord = 1 := by
+  decide
+
+open QOU.BraidsAndKnots in
+/-- The closure of the Borromean word has three components. -/
+theorem borromeanWord_components :
+    closureComponents (wordPerm adjacentPerm borromeanWord) = 3 := by
+  rw [borromeanWord_perm, closureComponents_one]
+
+open QOU.BraidsAndKnots in
+/-- **Proton/neutron indistinguishability by any component-count function.**
+If the proton and neutron words `wp`, `wn` share the Borromean crossing-index
+sequence (the framework's assignment, carried as `hp`, `hn`), then both
+closures have three components, whatever the crossing signs, and every
+function of the component count assigns them the same value. -/
+theorem proton_neutron_indistinguishable (f : ℕ → R)
+    {wp wn : List (Fin (3 - 1) × Bool)}
+    (hp : wp.map Prod.fst = borromeanWord.map Prod.fst)
+    (hn : wn.map Prod.fst = borromeanWord.map Prod.fst) :
+    closureComponents (wordPerm adjacentPerm wp) = 3 ∧
+    closureComponents (wordPerm adjacentPerm wn) = 3 ∧
+    f (closureComponents (wordPerm adjacentPerm wp))
+      = f (closureComponents (wordPerm adjacentPerm wn)) := by
+  have hp3 : closureComponents (wordPerm adjacentPerm wp) = 3 := by
+    rw [braidClosureComponents_eq_of_indices_eq hp, borromeanWord_components]
+  have hn3 : closureComponents (wordPerm adjacentPerm wn) = 3 := by
+    rw [braidClosureComponents_eq_of_indices_eq hn, borromeanWord_components]
+  exact ⟨hp3, hn3, by rw [hp3, hn3]⟩
 
 end QOU.BraidsAndKnots.ComponentCountSelectivity

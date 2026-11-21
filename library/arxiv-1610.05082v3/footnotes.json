@@ -1,0 +1,3088 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1610.05082v3",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p018-1",
+   "page": 18,
+   "mark": "2",
+   "text": "dn",
+   "marks": [
+    {
+     "page": 17,
+     "context": "andletv"
+    },
+    {
+     "page": 17,
+     "context": "n→∞N(0, v"
+    },
+    {
+     "page": 18,
+     "context": "Moreoverv"
+    },
+    {
+     "page": 18,
+     "context": "v"
+    },
+    {
+     "page": 18,
+     "context": "v"
+    },
+    {
+     "page": 18,
+     "context": "v"
+    },
+    {
+     "page": 18,
+     "context": "v"
+    },
+    {
+     "page": 18,
+     "context": "v"
+    }
+   ],
+   "block": "library/arxiv-1610.05082v3/blocks/prose-sec-015"
+  },
+  {
+   "id": "fn-p021-1",
+   "page": 21,
+   "mark": "2",
+   "text": "∥x(i)−y(j)∥1",
+   "marks": [
+    {
+     "page": 20,
+     "context": "Letv"
+    },
+    {
+     "page": 20,
+     "context": "v"
+    },
+    {
+     "page": 20,
+     "context": "|Λn|tendstov"
+    },
+    {
+     "page": 20,
+     "context": "k⟩β,h≤D"
+    },
+    {
+     "page": 20,
+     "context": "Thisprovesthatv"
+    },
+    {
+     "page": 20,
+     "context": "v"
+    },
+    {
+     "page": 20,
+     "context": "v"
+    },
+    {
+     "page": 21,
+     "context": "thenumberofoccurrencesof˜PinΛn.Letv"
+    }
+   ],
+   "block": "library/arxiv-1610.05082v3/blocks/prose-sec-016"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "d",
+   "context": "subsetsΛofZ"
+  },
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "subsetsΛofZd.Foranylatticesitei ∈Λ,thereisarandomvariableσ"
+  },
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "−1andrepresentsthespinatsitei.Aspinconﬁgurationω= (σ"
+  },
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "−1andrepresentsthespinatsitei.Aspinconﬁgurationω= (σi(ω))"
+  },
+  {
+   "page": 1,
+   "mark": "d",
+   "context": "TheIsingmodelisapriorideﬁnedonaﬁnitesubsetΛ ⊂Z"
+  },
+  {
+   "page": 1,
+   "mark": "d",
+   "context": "thethermodynamiclimitΛ ↑Z"
+  },
+  {
+   "page": 1,
+   "mark": "d",
+   "context": "s,foreachpairofparameters(β, h),ameasureµβ,hontheset{−1, 1}Z"
+  },
+  {
+   "page": 1,
+   "mark": "d",
+   "context": "ﬁgurationsonthewholed-dimensionallatticeZ"
+  },
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "orderrofspinsσ"
+  },
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "orderrofspinsσi1, . . . , σ"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "exp(t"
+  },
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "exp(t1σ"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "exp(t1σi"
+  },
+  {
+   "page": 1,
+   "mark": "r",
+   "context": "exp(t1σi1+ · · · + t"
+  },
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "exp(t1σi1+ · · · + trσ"
+  },
+  {
+   "page": 1,
+   "mark": "r",
+   "context": "exp(t1σi1+ · · · + trσi"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "o [19, Section 1] —:he proved that the joint cumulant κβ,h(σ"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "veryhightemperature:κβ,h(σ"
+  },
+  {
+   "page": 2,
+   "mark": "d",
+   "context": "Theorem1.1.WeconsidertheIsingmodelonZ"
+  },
+  {
+   "page": 2,
+   "mark": "r",
+   "context": "Thenforanyr≥1,thereexistsaconstantD"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "Thenforanyr≥1,thereexistsaconstantDrsuchthatforallA = {i"
+  },
+  {
+   "page": 2,
+   "mark": "r",
+   "context": "nyr≥1,thereexistsaconstantDrsuchthatforallA = {i1, . . . , i"
+  },
+  {
+   "page": 2,
+   "mark": "d",
+   "context": ",thereexistsaconstantDrsuchthatforallA = {i1, . . . , ir} ⊂Z"
+  },
+  {
+   "page": 2,
+   "mark": "r",
+   "context": "≤D"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "κβ,h(σ"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "κβ,h(σi"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "κβ,h(σi1, . . . , σ"
+  },
+  {
+   "page": 2,
+   "mark": "r",
+   "context": "κβ,h(σi1, . . . , σi"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "{Y"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "•Ghasvertex-setA,i.e.wehaveonevertexinGpervariablein{Y"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "•thesmallertheweightofanedge{a, b}is,theclosertoindependentY"
+  },
+  {
+   "page": 2,
+   "mark": "b",
+   "context": "mallertheweightofanedge{a, b}is,theclosertoindependentYaandY"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "Supposenowthat,foreachn,thefamilyofrandomvariables{Ya,n, a∈A"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "dependencygraphG"
+  },
+  {
+   "page": 2,
+   "mark": "f",
+   "context": "dependencygraphGn.Considertherenormalisedsum"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "checkconditionsontherenormalisingfactora"
+  },
+  {
+   "page": 2,
+   "mark": "f",
+   "context": "checkconditionsontherenormalisingfactoran,thevarianceof"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "ofG"
+  },
+  {
+   "page": 2,
+   "mark": "f",
+   "context": "ofGn,"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "dencygraphforafamily{Y"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "a∈IY"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "a∈IYaintheY"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "a∈IYaintheYa’swith"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "a∈IYaintheYa’swithaﬁxedboundonthedegree(here,Iis"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "atedintermsofweighteddependencygraphsfortherandomvariables{σ"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "ermsofweighteddependencygraphsfortherandomvariables{σi: i ∈Z"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "Theorem1.2.Letω= (σi(ω))i∈Z"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "vertexsetZ"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "ThenGisaC-weighteddependencygraphforthefamily{σ"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "ThenGisaC-weighteddependencygraphforthefamily{σi:i∈Z"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "setAisafamilyofrandomvariables{Y"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "setAisafamilyofrandomvariables{Ya, a ∈A}suchthat,forsubsetsA"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "Aisafamilyofrandomvariables{Ya, a ∈A}suchthat,forsubsetsA1,A"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "amilyofrandomvariables{Ya, a ∈A}suchthat,forsubsetsA1,A2andA"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "yofrandomvariables{Ya, a ∈A}suchthat,forsubsetsA1,A2andA3,{Y"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "omvariables{Ya, a ∈A}suchthat,forsubsetsA1,A2andA3,{Ya, a ∈A"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "and{Y"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "and{Ya, a ∈A"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "and{Ya, a ∈A2}areindependentconditionallyon{Y"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "and{Ya, a ∈A2}areindependentconditionallyon{Ya, a ∈A"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "pendentconditionallyon{Ya, a ∈A3}assoonaseverypathgoingfromA"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "patternsofspins in a growing box Λ"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "WedeﬁnealocalpatternPtobeapair(D, s),whereDisaﬁnitesubsetofZ"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "D= {j∈Z"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "wherei ∈Z"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "ωisaset{x(1), . . . , x(m)}ofmelementsofZ"
+  },
+  {
+   "page": 3,
+   "mark": "x",
+   "context": "(1)foralli ∈{1, . . . , m},σ"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "patternPinΛ"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "Theorem1.3.ConsidertheIsingmodelonZ"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "thateitherh > h"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "thateitherh > h1(d)or(h = 0;β< β"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "thateitherh > h1(d)or(h = 0;β< β1(d))or(h = 0;β> β"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "n→∞N(0, v"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "|Λ"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "Pdenotesthenumberofoccurrencesof"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "Pdenotesthenumberofoccurrencesofaglobalpattern˜PinΛ"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "Theorem1.4.ConsidertheIsingmodelonZ"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "thateitherh>h"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "thateitherh>h1(d)or(h=0;β<β"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "thateitherh>h1(d)or(h=0;β<β1(d))or(h=0;β>β"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "P) ≥An"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "P) ≥An2"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "P) ≤Bn"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "P) ≤Bn2"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i)"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "i)i∈Z"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "{x"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "{x1,...,x"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": ",xm}thecharacteristicfunctionoftheoccurrenceof˜Pinposition{x"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "cteristicfunctionoftheoccurrenceof˜Pinposition{x1, . . . , x"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "{x1,...,xm})isnot"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "2.1.TheIsingmodel.WeconsidertheIsingmodelonaﬁnitesubsetΛofZ"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "outthepaper,∥i −j∥1denotesthegraphdistanceinZ"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "σ"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "σi(ω)σ"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "oundarycondition,byconsideringtheIsingmodelonthefulllatticeZ"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "spinsoutsideofΛareﬁxed.Fixingaspinconﬁgurationη∈{−1, 1}Z"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "ω∈{−1, 1}Z"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "ω∈{−1, 1}Zd: ω"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "ω∈{−1, 1}Zd: ωi= η"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "σ"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "σi(ω)σ"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "{i,j}∈E"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "{i, j} ⊂Z"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "whereE"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "al boundary conditions are the + boundary condition, where η"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "ions are the + boundary condition, where ηi= +1 for all i ∈Z"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "andthe−boundarycondition,whereη"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "andthe−boundarycondition,whereηi=−1foralli∈Z"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "WenowtakeanincreasingsequenceΛ"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "WenowtakeanincreasingsequenceΛnofﬁnitesubsetsofZ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n≥1Λ"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "n≥1Λn=Z"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "n≥1Λn=Zd.Itis"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "β,has"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "β,hasn→∞.Inthehightemperaturecase(β<β"
+  },
+  {
+   "page": 6,
+   "mark": "h",
+   "context": "β,hasn→∞.Inthehightemperaturecase(β<βc(d),"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "exp(t"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "exp(t1X"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "exp(t1X1 + · · · + t"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "exp(t1X1 + · · · + trX"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "randomvariablesX"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "randomvariablesX1, · · ·, X"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "omvariablesX1, · · ·, XrareequaltothesamevariableX,wedenoteκ"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "ainly interested in the case where Vis a ﬁnite subset A of Z"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "subsetsBofZ"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "possiblyotherverticesofZ"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "latticeZ"
+  },
+  {
+   "page": 7,
+   "mark": "4",
+   "context": "x"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "x"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Proposition2.2.ForallA = {x"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Proposition2.2.ForallA = {x1, . . . , x"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "Proposition2.2.ForallA = {x1, . . . , xn}ﬁnitesubsetofZ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "sameprobabilityspace;andletC= (C"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "sameprobabilityspace;andletC= (C1, C"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "B= {α"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "B= {α1, . . . , α"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "\u0001 ≤C"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Theorem2.4.Supposethat,foreachn,{Yn,i, 1≤j≤N"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Assumethat,foreachn,onehasaC-weighteddependencygraphG"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "t,foreachn,onehasaC-weighteddependencygraphGnfor{Yn,i, 1≤j≤N"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "LetX"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "LetXn=PN"
+  },
+  {
+   "page": 7,
+   "mark": "v",
+   "context": "i=1Yn,iand"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "i=1Yn,iandv"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n= V ar(X"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "n= V ar(Xn).Assumethatthereexists"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n= V ar(Xn).Assumethatthereexistsasequence(a"
+  },
+  {
+   "page": 7,
+   "mark": "s",
+   "context": "n= V ar(Xn).Assumethatthereexistsasequence(an),aninteger"
+  },
+  {
+   "page": 7,
+   "mark": "v",
+   "context": "(1)"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "(1)v"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "n→∞v"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "(2)foralln,a"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "n≤C"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n≤C2N"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "X"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Xn −E(X"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "n→∞N(0, v"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "σ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "σnby a"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "FixaﬁnitedomainΛ⊂Z"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "FixaﬁnitedomainΛ⊂ZdandletA={x"
+  },
+  {
+   "page": 8,
+   "mark": "r",
+   "context": "FixaﬁnitedomainΛ⊂ZdandletA={x1, . . . , x"
+  },
+  {
+   "page": 8,
+   "mark": "r",
+   "context": "\u0010P"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "e−HΛ;β,"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "j=1"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "j=1t"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "j=1tjσ"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "j=1tjσx"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "Λ;β,0thenumeratoroftheright-handside.ThedenominatorZΛ;β,"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "Λ;β,"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "Λ,A)bethesetofpairs(E, B),whereE⊂EZ"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "j∈B(tanh"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "j∈B(tanht"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "Λ;β,"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "writeinshortσ"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "writeinshortσiforσ"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "writeinshortσiforσi(ω).Sinceσ"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "writeinshortσiforσi(ω).Sinceσx"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "exp(t"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "exp(tjσ"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "exp(tjσxj) = cosh(t"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "exp(tjσxj) = cosh(tj) + σ"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "exp(tjσxj) = cosh(tj) + σxj sinh(t"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "exp(tjσxj) = cosh(tj) + σxj sinh(tj) = cosh(t"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "1 + σ"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "1 + σxj tanh(t"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "(σ"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "(σxj tanh(t"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "again being the graph of some (E"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "again being the graph of some (Ei, B"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "iwt(E"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "iwt(Ei, B"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "iP"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "j=1"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "j=1t"
+  },
+  {
+   "page": 9,
+   "mark": "x",
+   "context": "j=1tjσ"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "j=1tjσx"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "Λ,A,let"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "|wt(E, B)|e"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "(2)foreachﬁxedpair(E⋆, B⋆)whereE⋆isaﬁnitesubsetofEZ"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "|wt(E, B)|e"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "E⊂EZd ,B⊂Z"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "E⊂EZd ,B⊂Z"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "E⊂EZ"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "E⊂EZdcontaining0ofsizekisboundedfromaboveby(2d)"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "E⊂EZdcontaining0ofsizekisboundedfromaboveby(2d)2"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(2d)"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "(2d)2"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "(2d)2k2"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "(2d)2k2k+1(tanhβ)"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "(2d)2k2k+1(tanhβ)ke"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "X= {(E"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "X= {(E1, B"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "X= {(E1, B1), . . . , (E"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "X= {(E1, B1), . . . , (Er, B"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "whereforaclusterX= {(E"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "whereforaclusterX= {(E1, B"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "whereforaclusterX= {(E1, B1), . . . , (E"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "whereforaclusterX= {(E1, B1), . . . , (Er, B"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "φ((E"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "φ((E1, B"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "φ((E1, B1), . . . , (E"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "φ((E1, B1), . . . , (Er, B"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "|t"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "|t1|, . . . , |t"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "3.1.2.Boundsonjointcumulants.RecallthatA = {x"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "3.1.2.Boundsonjointcumulants.RecallthatA = {x1, . . . , x"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "Λ;β,"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "Λ;β,"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "Λ;β,0contributes to the coeﬃcient of"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "Λ;β,0contributes to the coeﬃcient of t"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "Λ;β,0contributes to the coeﬃcient of t1 . . . t"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "analyticfunctionsonaneighborhoodof0.AclusterX= {(E"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "analyticfunctionsonaneighborhoodof0.AclusterX= {(E1, B"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "functionsonaneighborhoodof0.AclusterX= {(E1, B1), . . . , (E"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "tionsonaneighborhoodof0.AclusterX= {(E1, B1), . . . , (Er, B"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "coeﬃcientoft"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "coeﬃcientoft1 . . . t"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "coeﬃcientoft1 . . . tronlyifA = B"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "coeﬃcientoft1 . . . tronlyifA = B1 ⊎· · · ⊎B"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "ϕ((E"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "ϕ((E1, B"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "ϕ((E1, B1), . . . , (E"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "ϕ((E1, B1), . . . , (Er, B"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "ϕ((E1, B1), . . . , (Er, Br)) (tanh β)"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "≤C"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "≤Cr 1[Xisconnected] (tanh β)"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "wheree(X) = |E"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "wheree(X) = |E1| + · · · + |E"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "Cr(tanh β)"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "|κΛ;β,"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "|κΛ;β,0(σ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "|κΛ;β,0(σx"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "|κΛ;β,0(σx1, . . . , σ"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "|κΛ;β,0(σx1, . . . , σx"
+  },
+  {
+   "page": 11,
+   "mark": "d",
+   "context": "TakingthelimitΛ↑Z"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "TakingthelimitΛ↑Zd,wegetasimilarupperboundforthecumulantκβ,"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "kingthelimitΛ↑Zd,wegetasimilarupperboundforthecumulantκβ,0(σ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "ingthelimitΛ↑Zd,wegetasimilarupperboundforthecumulantκβ,0(σx"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "↑Zd,wegetasimilarupperboundforthecumulantκβ,0(σx1, . . . , σ"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "Zd,wegetasimilarupperboundforthecumulantκβ,0(σx1, . . . , σx"
+  },
+  {
+   "page": 11,
+   "mark": "d",
+   "context": "probabilitymeasureµβ,0correspondingtothewholelatticeZ"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "Cr(tanh β)"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "|κβ,"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "|κβ,0(σ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "|κβ,0(σx"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "|κβ,0(σx1, . . . , σ"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "|κβ,0(σx1, . . . , σx"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "(tanh β)"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "(tanh β′)"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "wtβ′(E"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "wtβ′(Ei, B"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "wtβ′(E"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "wtβ′(Ei, B"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "wtβ′(E"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "wtβ′(E1, B"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "wtβ′(E1, B1)e|a(E"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "wtβ′(E1, B1)e|a(E1,B"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "wtβ′(E1, B1)e|a(E1,B1)|≤a(∅, {x"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "(tanh β)"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "(tanh β′)"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "|κβ,"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "|κβ,0(σ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "|κβ,0(σx"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "|κβ,0(σx1, . . . , σ"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "|κβ,0(σx1, . . . , σx"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "|κβ,0(σx1, . . . , σxr)| ≤C"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "(σ"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "(σi(ω)σ"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "usconsideraﬁnitesubsetΛ ⊂Z"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "Λ,letΛ−(ω)denotethesetoflatticepoints"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "Λ,letΛ−(ω)denotethesetoflatticepointsiwhereσ"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "Λ,letΛ−(ω)denotethesetoflatticepointsiwhereσi(ω)=−1.Foreach"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "letΛ−(ω)denotethesetoflatticepointsiwhereσi(ω)=−1.Foreachi∈Z"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "2]dtobetheunitcubeofR"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "2]dtobetheunitcubeofRdcentredat"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "deﬁneS"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "S"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "Γ′(ω) = {γ"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "Γ′(ω) = {γ1, . . . , γ"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "Each of the γ"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "S"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "Si.Wedenoteby|γ"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "Si.Wedenoteby|γi|thenumberofsuchfacesinγ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "aclusterisacollectionX= {γ"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "aclusterisacollectionX= {γ1, . . . , γ"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "ionX= {γ1, . . . , γr}ofcontourssuchthatforeverytwocontoursγ"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": " {γ1, . . . , γr}ofcontourssuchthatforeverytwocontoursγiandγ"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "InthefollowingwewriteX⊆ΛtosaythatX⊆∪i∈ΛS"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "InthefollowingwewriteX⊆ΛtosaythatX⊆∪i∈ΛSiassubsetsofR"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "whereforaclusterX= {γ"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "whereforaclusterX= {γ1, . . . , γ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "φ(γ"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "φ(γ1, . . . , γ"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "φ(γ1, . . . , γr)e−2β P"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i=1|γ"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "0ifγ"
+  },
+  {
+   "page": 13,
+   "mark": "j",
+   "context": "0ifγi ∩γ"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "i∈Aσ"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "σA(ω)"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "σA(ω)e−HΛ;β,"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "Λandany"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "σ"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "σi(ω) = (−1)|{γ∈Γ′(ω):"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "i∈A|{γ∈Γ′(ω):"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "γ∈Γ′(ω)|{i∈A:"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "(−1)|{i∈A:"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "whereforaclusterX= {γ"
+  },
+  {
+   "page": 13,
+   "mark": "r",
+   "context": "whereforaclusterX= {γ1, . . . , γ"
+  },
+  {
+   "page": 13,
+   "mark": "r",
+   "context": "P"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "j=1|{i∈A:"
+  },
+  {
+   "page": 13,
+   "mark": "j",
+   "context": "j=1|{i∈A:i∈Int(γ"
+  },
+  {
+   "page": 13,
+   "mark": "r",
+   "context": "j=1|{i∈A:i∈Int(γj)}|e−2β P"
+  },
+  {
+   "page": 13,
+   "mark": "j",
+   "context": "j=1|γ"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "β(X)isalways"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "ofγ.TheseriesisabsolutelyconvergentandwecanletΛ ↑Z"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "Wenowwanttoﬁndestimatesonthejointcumulantsofthevariables{σ"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "imatesonthejointcumulantsofthevariables{σi: i ∈A},forallA ⊂Z"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "Q (Y"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "⟨σ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "⟨σ1σ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "⟨σ"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "β,"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "β,0⟨σ"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "WeshowaboundonthequantitiesQβ,"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "WeshowaboundonthequantitiesQβ,0 (σ"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "WeshowaboundonthequantitiesQβ,0 (σj; j∈A)forallﬁniteA ⊂Z"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "Lemma3.9.LetAbeaﬁnitesubsetofZ"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "|Qβ,"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "|Qβ,0 (σ"
+  },
+  {
+   "page": 14,
+   "mark": "r",
+   "context": "|Qβ,0 (σj; j∈A) −1| ≤C"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "log Q (σ"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "log Q (σ"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "log Q (σ"
+  },
+  {
+   "page": 14,
+   "mark": "r",
+   "context": "Finally,thereare2"
+  },
+  {
+   "page": 14,
+   "mark": "r",
+   "context": "2(2"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "|log Q (σ"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "vertexv∈Z"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Moreover,ifaclusterofsizeRhasj"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "atdistanceatmostRofj1.ThereareatmostCR"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "CR"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "R"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "|log Q (σ"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "r"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "rdependingon"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "Proposition3.10.LetAbeaﬁnitesubsetofZ"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "|κβ,"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "|κβ,0 (σ"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "|κβ,0 (σj; j∈A) | ≤D"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "Qβ,"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "Qβ,0 (σ"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "whereGistheweightedgraphdeﬁnedonZ"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "⟨σ"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "|κβ,"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "|κβ,0 (σ"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "β,"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "Butforallj∈A,wehave⟨σ"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "β,"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "β,0≤1,andforβlargeenough,⟨σ"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "⟨σ"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "β,"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "Thus|κβ,"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "Thus|κβ,0 (σ"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "Thus|κβ,0 (σj; j∈A) | ≤D"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "negativeh(smallerthan−h"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "FixΛ⊂Z"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "δ"
+  },
+  {
+   "page": 16,
+   "mark": "b",
+   "context": "δeΛ−= {{i, j} ∈E"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "Λ,"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "Λ,i ∈Λ−,"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "Deﬁnealsowt(Λ−) = exp(−2β |δ"
+  },
+  {
+   "page": 16,
+   "mark": "b",
+   "context": "β|E"
+  },
+  {
+   "page": 16,
+   "mark": "t",
+   "context": "i∈A"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "i∈At"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "i∈Atiσ"
+  },
+  {
+   "page": 16,
+   "mark": "b",
+   "context": "β|E"
+  },
+  {
+   "page": 16,
+   "mark": "b",
+   "context": "β|E"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "exp(−2t"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "AsetΛ−⊆ΛcanbeseenasasubgraphofthelatticeZ"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "asdisjointunionofitsconnectedcomponentsΛ−=S"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "asdisjointunionofitsconnectedcomponentsΛ−=S1⊔S"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "asdisjointunionofitsconnectedcomponentsΛ−=S1⊔S2⊔· · ·⊔S"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "multiplicativelywithrespecttothisdecompositionwt(Λ−)=Q"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "i=1wt(S"
+  },
+  {
+   "page": 16,
+   "mark": "t",
+   "context": "i∈A∩Λ−exp(−2"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "i∈A∩Λ−exp(−2t"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "ofrandomvariables{σ"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "ofrandomvariables{σi:i∈Z"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "dependencygraphfor{σ"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "dependencygraphfor{σi: i ∈Z"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "ProofofTheorem1.2:Let B= {i"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "ProofofTheorem1.2:Let B= {i1, ..., i"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "eorem1.2:Let B= {i1, ..., ir} be a multiset of elements of Z"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "!\f\f\f\f\f ≤D"
+  },
+  {
+   "page": 17,
+   "mark": "e",
+   "context": "w"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "weinG.Moreovertherandomvariablesσ"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "σ"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "|κβ,h (σ"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "|κβ,h (σi"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "|κβ,h (σi1, . . . , σ"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "|κβ,h (σi1, . . . , σi"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "|κβ,h (σi1, . . . , σir)| ≤D"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "|κβ,h (σ"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "|κβ,h (σi"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "|κβ,h (σi1, . . . , σ"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "|κβ,h (σi1, . . . , σi"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "|κβ,h (σi1, . . . , σir)| ≤D"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "Remark4.1.Foralli ∈Z"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "Remark4.1.Foralli ∈Zd,letusdeﬁneX"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "Remark4.1.Foralli ∈Zd,letusdeﬁneXi=σ"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "derofthispaper,itwillsometimesbemoreconvenienttoconsidertheX"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "2r κβ,h(σ"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "2r κβ,h(σ1, . . . , σ"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "2r κβ,h(σ1, . . . , σr)for"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": " 1.2 is also a C-weighted dependency graph for the family {X"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": " also a C-weighted dependency graph for the family {Xi: i ∈Z"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "WeconsidertheIsingmodelonZ"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "positiveintegern,wedeﬁneΛ"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "ndenotethevarianceofS"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "⟨σ"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "⟨σi; σ"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "⟨σi; σj⟩β,h:= ⟨σ"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "⟨σi; σj⟩β,h:= ⟨σiσ"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "⟨σi; σj⟩β,h:= ⟨σiσj⟩β,h −⟨σ"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "⟨σi; σj⟩β,h:= ⟨σiσj⟩β,h −⟨σi⟩β,h⟨σ"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "Theorem4.2.ConsidertheIsingmodelonZ"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "Sn −E(S"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "|Λ"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "|Λ"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "⟨σ"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "⟨σ0; σ"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "i∈Z"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "⟨σ"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "⟨σ0; σ"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "|Λ"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "i∈Z"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "in Theorem 1.2.Then for all n, G[Λ"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "hen for all n, G[Λn] is a C-weighted dependency graph for {σ"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": " all n, G[Λn] is a C-weighted dependency graph for {σi; i ∈Λ"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "N"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "Nn= |Λ"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "Nn= |Λn| = (2n + 1)"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "There are 2"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "points at distance yof 0 in Z"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "such that |y"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "such that |y1|+· · ·+|y"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "choices for the values of |y"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "choices for the values of |y1|, . . . , |y"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "choices for the values of |y1|, . . . , |yd|,and each y"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "itherpositiveornegative,whichmultipliesthenumberofchoicesby2"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "2"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "values of βand h are, the spin at 0 is not constant, thus ⟨σ"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "es of βand h are, the spin at 0 is not constant, thus ⟨σ0, σ"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "theotherhand,becauseoftheGKSinequalities[13,17],foralli∈Z"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "heotherhand,becauseoftheGKSinequalities[13,17],foralli∈Zd,⟨σ"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "herhand,becauseoftheGKSinequalities[13,17],foralli∈Zd,⟨σ0; σ"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "v"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "v2= ⟨σ"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "v2= ⟨σ0, σ"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "⟨σ"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "⟨σ0; σ"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "i∈Z"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "withcardinalityatmostm.Thenthem-thpowerG"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "Proposition4.6.Let{Y"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "G.Then G"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "a∈IY"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "and X(i,−)= 1−X"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "Start with the following observation.We have, for all A = {i"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "he following observation.We have, for all A = {i1, . . . , i"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "llowing observation.We have, for all A = {i1, . . . , ir} ⊆Z"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "|κβ,h(X"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "|κβ,h(Xi"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "|κβ,h(Xi1, . . . , X"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "|κβ,h(Xi1, . . . , Xi"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "|κβ,h(Xi1, . . . , Xir)| = |κβ,h(Y"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "|κβ,h(Xi1, . . . , Xir)| = |κβ,h(Yi"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "|κβ,h(Xi1, . . . , Xir)| = |κβ,h(Yi1, . . . , Y"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "|κβ,h(Xi1, . . . , Xir)| = |κβ,h(Yi1, . . . , Yi"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "whereonsomesubsetBofA,Y"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "whereonsomesubsetBofA,Yi= X(i,+),andonA \\ B,Y"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "graphwithvertexsetZ"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "graphwithvertexsetZd× {+, −},suchthatforalli, j∈Z"
+  },
+  {
+   "page": 19,
+   "mark": "s",
+   "context": "G"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "GsisaC-weighteddependencygraphforthefamily{X(i,s); i∈Z"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "Theorem 4.7.Consider the Ising model on Z"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "IofelementsofZ"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "i∈IX"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "i∈IXi.ThenG"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "sis"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "sisaD"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "Z"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "},forsomesequenceD"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "considerGPtherestrictionofG"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "NotethatverticesofGParecanonicallyindexedbyi∈Z"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "withvertexsetZ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "2(∥i"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "2(∥i1−i"
+  },
+  {
+   "page": 19,
+   "mark": "w",
+   "context": "j1∈D,j2∈D"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "j1∈D,j2∈Dw(i"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "j1∈D,j2∈Dw(i1 + j"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "j1∈D,j2∈Dw(i1 + j1, i"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "j1∈D,j2∈Dw(i1 + j1, i2 + j"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "ThegraphGPisaD-weighteddependencygraphfor{Z"
+  },
+  {
+   "page": 20,
+   "mark": "d",
+   "context": "ThegraphGPisaD-weighteddependencygraphfor{Zi, i∈Z"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "thenumberofoccurrencesofPwhosepositionisinΛ"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "X"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "(1 −X"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "n,PdenotethevarianceofSn,P.Wehave"
+  },
+  {
+   "page": 20,
+   "mark": "v",
+   "context": "|Λn|tendsto"
+  },
+  {
+   "page": 20,
+   "mark": "d",
+   "context": "k∈Z"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "|Λ"
+  },
+  {
+   "page": 20,
+   "mark": "d",
+   "context": "k∈Z"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "|Λ"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "|Λ"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "|Λ"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "|Λ"
+  },
+  {
+   "page": 20,
+   "mark": "d",
+   "context": "j∈Z"
+  },
+  {
+   "page": 20,
+   "mark": "d",
+   "context": "j∈Z"
+  },
+  {
+   "page": 20,
+   "mark": "d",
+   "context": "k∈Z"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "Wedenoteδ(i, ∂Λ"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "Wedenoteδ(i, ∂Λn) = min"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "Wedenoteδ(i, ∂Λn) = minj∈∂Λ"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "eδ(i, ∂Λn) = minj∈∂Λn∥i −j∥1,whichisthedistancebetweeniand∂Λ"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "integer,letusconsiderthepointsi ∈Λ"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "sconsiderthepointsi ∈ΛnatdistancemorethanRfromtheboundaryofΛ"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "|Λ"
+  },
+  {
+   "page": 20,
+   "mark": "d",
+   "context": "j∈Z"
+  },
+  {
+   "page": 20,
+   "mark": "d",
+   "context": "k∈Z"
+  },
+  {
+   "page": 20,
+   "mark": "d",
+   "context": "k∈Z"
+  },
+  {
+   "page": 20,
+   "mark": "0",
+   "context": "k⟩β,h|isabsolutelyconvergentsothesumabovetendsto"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "|Λ"
+  },
+  {
+   "page": 20,
+   "mark": "d",
+   "context": "j∈Z"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "C|∂Λ"
+  },
+  {
+   "page": 20,
+   "mark": "d",
+   "context": "C|∂Λn|R"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "k⟩β,h| ≤C′ |∂Λ"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "|Λ"
+  },
+  {
+   "page": 20,
+   "mark": "d",
+   "context": "|Λn|R"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "|Λ"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "|Λ"
+  },
+  {
+   "page": 20,
+   "mark": "d",
+   "context": "j∈Z"
+  },
+  {
+   "page": 20,
+   "mark": "d",
+   "context": "k∈Z"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "Butasntendsto∞,|∂Λ"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "|Λn|tendsto0.Thereforefor"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "|Λ"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "j∈Z"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "ThenumberofverticesisN"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "n|=|Λ"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "|Λ"
+  },
+  {
+   "page": 21,
+   "mark": "m",
+   "context": "therestrictionofG"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "{x(1),...,x(m)}, {x(1), . . . , x(m)} ⊂Z"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "thenumberofoccurrencesof˜PinΛ"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "P[Λ"
+  },
+  {
+   "page": 21,
+   "mark": "m",
+   "context": "N"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "n= |Λ"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "bounditsmaximalweighteddegree∆n−1.Fix{x(1), . . . , x(m)} ⊂Λ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "2mini,j∈{1,...,m} ∥x(i)−y(j)∥1≤m"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "2mini,j∈{1,...,m} ∥x(i)−y(j)∥1≤m2|Λ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "v"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "|Λ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "m"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "m2|Λ"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "A|Λ"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "A|Λn|2"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "A|Λn|2m−2+ε≤cst|Λ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "m"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "m2|Λ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "Proof:Bydeﬁnition,andusingthatX(x(1),+)X(y(1),+)= X"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "\u0003\f\f ≤cst"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "P) ≥An"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "P) ≥An2"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "P) ≥B·N"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "P) ≥B·N1, where N"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "asinLemma4.10.ForﬁxedR>0,thisnumberisclearlyoforderN"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "asinLemma4.10.ForﬁxedR>0,thisnumberisclearlyoforderN2"
+  }
+ ]
+}

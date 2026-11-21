@@ -8,6 +8,7 @@ pages: 11-12
 source_pdf: 1909.06744v1.pdf
 source_sha256: 82e3980da78c07da
 toc_source: inferred
+doc_brief: "Springer correspondence for symmetric spaces — This is a survey on the Springer correspondence for symmetric spaces."
 ---
 Historically, the symmetric space G/K, where G is a connected Lie group and K
 is a compact subgroup such that (Gθ)0 ⊂K ⊂Gθ for an involutive automorphism θ

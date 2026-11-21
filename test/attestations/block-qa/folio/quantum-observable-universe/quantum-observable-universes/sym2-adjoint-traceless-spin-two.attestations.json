@@ -1,0 +1,526 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/quantum-observable-universes/sym2-adjoint-traceless-spin-two",
+    "path": "folio/quantum-observable-universe/quantum-observable-universes/sym2-adjoint-traceless-spin-two"
+  },
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:26.200Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:27.434Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "respects_archimedean_wall": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:28.934Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "code_is_commented": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:30.921Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "variables_typed": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:32.106Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "has_references_to_paper": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:33.483Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "connected_to_ci_pipeline": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:34.283Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "deprecated": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:35.127Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "uses_library_framework_appropriately": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:35.919Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "assertions_are_falsifiable": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:36.712Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:29.565Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Statement is the bare decomposition; graviton reading is in rem:sym2-adjoint-spin-two-gauge-not-lorentz (interprets:). Scope/encoding paragraphs are formalisation notes, not interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:30.347Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "In sec:emergence-spin-labels beside prop:spin-labels and ex:spin-labels-su2, whose spin-2 row it uses; no sibling states Sym^2(V_1)."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:31.330Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Representation theory of the gauge SU(2) from thm:su2-emergence; no Real.*, numeric q or order hypothesis. Lean is finite Nat bookkeeping."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:32.356Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Proof is Clebsch-Gordan (cited fulton-harris1991) plus parity rule and dimension count; algebraic, no archimedean machinery."
+      }
+    ],
+    "uses-editorial-completeness": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:33.144Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "uses su2-emergence (G, V_1=Ad A), spin-labels, ex:spin-labels-su2 (dimension table), thm:ew-triplet-charge-spin-from-involution (Encoding paragraph); all cited in prose."
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:33.934Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "md:15 'The electroweak spin label 2s of the charge-spin theorem is defined' (14/16): purpose not stated first (H3, H5).",
+        "notes": "Open the Encoding paragraph with its purpose: 'The spin label used for electroweak carriers cannot record the spin of V_2.' Then give spinDouble_ne_four and the pigeonhole lemma. Optionally move the GradedSpin sentences into the .ts authorNotes, since no Lean statement connects them to this proposition."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:34.757Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Statement, proof and scope paragraph each give 1+5=6 in a distinct role (claim, derivation, Lean fact); no deletable duplicate."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:35.611Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "md:15 'from having two values, not from the particular values chosen' restates bool_sector_not_injective_on_spins; contrast is the claim, passes with note."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:36.539Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; dashes are en-dashes in names (Clebsch-Gordan, charge-spin); the four Lean facts are a substantive list; block ends on a content sentence."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:37.335Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; dashes are en-dashes in names (Clebsch-Gordan, charge-spin); the four Lean facts are a substantive list; block ends on a content sentence."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:38.114Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; dashes are en-dashes in names (Clebsch-Gordan, charge-spin); the four Lean facts are a substantive list; block ends on a content sentence."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:38.898Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; dashes are en-dashes in names (Clebsch-Gordan, charge-spin); the four Lean facts are a substantive list; block ends on a content sentence."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:39.715Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; dashes are en-dashes in names (Clebsch-Gordan, charge-spin); the four Lean facts are a substantive list; block ends on a content sentence."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:40.509Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; dashes are en-dashes in names (Clebsch-Gordan, charge-spin); the four Lean facts are a substantive list; block ends on a content sentence."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:41.316Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; dashes are en-dashes in names (Clebsch-Gordan, charge-spin); the four Lean facts are a substantive list; block ends on a content sentence."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:42.072Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; dashes are en-dashes in names (Clebsch-Gordan, charge-spin); the four Lean facts are a substantive list; block ends on a content sentence."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "7b48647c734c",
+          "ts": "2c6ed74a1b42",
+          "lean": "f7418be553c2",
+          "lean_statement": "bae669123e45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:42.894Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; dashes are en-dashes in names (Clebsch-Gordan, charge-spin); the four Lean facts are a substantive list; block ends on a content sentence."
+      }
+    ]
+  }
+}

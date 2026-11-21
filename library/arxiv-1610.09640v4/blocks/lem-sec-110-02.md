@@ -1,0 +1,1 @@
+Let F, G : D(A, gr) →D(B, gr) be quasi-compact triangulated functors, and let η : F →G be a morphism of triangulated functors. Assume that ηA : F(A) →G(A) is an isomorphism. Then η is an isomorphism. Derived Categories | Amnon Yekutieli |

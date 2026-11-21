@@ -2,367 +2,92 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-9910147v1",
  "source_sha256": "1feefdb019e76ea7",
- "brief": "Tensor Products of Principal Unitary Representations of Quantum Lorentz Group and Askey-Wilson Polynomials E. Buffenoir ∗ — We study the tensor product of principal unitary representa tions of the",
- "extended": "**Tensor Products of Principal Unitary Representations of Quantum Lorentz Group and Askey-Wilson Polynomials E. Buffenoir ∗**\n\n*Laboratoire de Physique Mathématique et Théorique†*\n\n34 pp, 71 sections.\n\n**Abstract.** We study the tensor product of principal unitary representa tions of the quantum Lorentz Group, prove a decomposition theorem and compute the associ ated intertwiners. We show that these intertwiners can be expressed in terms of complex continuations of 6 j symbols of Uq(su(2)). These intertwiners are expressed in terms of q-Racah polyno mials and Askey- Wilson polynomials. The orthogonality of these intertwine rs imply some relation mixing these two families of polynomials. The simplest of these rel ations is the orthogonality of Askey-Wilson Polynomials. Work supported by CNRS. ∗ e-mail:buﬀenoi@lpm.univ-montp2.fr † Laboratoire du CNRS UMR 5825 ‡ e-mail:roche@math.mit.edu § Laboratoire Propre du CNRS UPR 14 1\n\n**Outline.** Abstract; 1 Introduction; 2 Z × R} the set of principal; 2 (m2 +ρ2)dρ where; 2 Z,m +m′ +m′′ ∈ Z}. The aim of the present ar; 2 Z×] − π; 2 Deﬁnition and properties of various continua; 2.1 Intertwiners and 6j(0) of Uq(su(2)); 2 Z+, ∀m ∈ 1; 2 Z we deﬁne; 2.2 Deﬁnitions and properties of continuation ; 2 Z+, and for a suﬃciently large half-integer ; 2 Z+,X 1,X 2,Y 1,Y 2,Z 1 ∈ C − 1; 2 Z+,X 1 −X2 ∈ 1; 2 Z,Y 1 −Y2 ∈ 1; 2 Z and deﬁned by; 2.3 Quantum Lorentz group, Principal Unitary R; 2 Z+ the elements",
+ "brief": "arXiv:math/9910147v1 [math.QA] 27 Oct 1999 — We study the tensor product of principal unitary representations of the quantum Lorentz Group, prove a decomposition theorem and compute the associated",
+ "extended": "**arXiv:math/9910147v1 [math.QA] 27 Oct 1999**\n\n*Laboratoire de Physique Mathématique et Théorique†*\n\n34 pp, 16 sections.\n\n**Abstract.** We study the tensor product of principal unitary representations of the quantum Lorentz Group, prove a decomposition theorem and compute the associated intertwiners. We show that these intertwiners can be expressed in terms of complex continuations of 6j symbols of Uq(su(2)). These intertwiners are expressed in terms of q-Racah polynomials and Askey- Wilson polynomials. The orthogonality of these intertwiners imply some relation mixing these two families of polynomials. The simplest of these relations is the orthogonality of Askey-Wilson Polynomials. Work supported by CNRS. ∗e-mail:buﬀenoi@lpm.univ-montp2.fr †Laboratoire du CNRS UMR 5825 ‡e-mail:roche@math.mit.edu §Laboratoire Propre du CNRS UPR 14\n\n**Outline.** Front matter; 1 Introduction; 2 Definition and properties of various continu; 2.1 Intertwiners and 6j(0) of ${\\mathfrak U}_q; 2.2 Definitions and properties of continuation; 2.3 Quantum Lorentz group, Principal Unitary R; 3 Intertwiners associated to unitary represent; 4 Alternative Construction of Intertwiners in ; 5 Decomposition Theorem of the Tensor Product ; 5.2 R-matrix in the Tensor Product of Infinite; 5.3 Connection with Askey-Wilson Polynomials.; 6 Conclusion; 7 Appendix; 7.1 Formulae on Basic Hypergeometric Functions; 7.2 Asymptotics of Intertwiners; 7.3 Formulae on coefficients $\\Lambda^{BC}_{AD",
  "tokens": {
   "brief": 49,
-  "extended": 363
+  "extended": 368
  },
  "sections": [
   {
-   "id": "sec-000-abstract",
-   "title": "Abstract",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-2"
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-002-2-z-r-the-set-of-principal",
-   "title": "Z × R} the set of principal",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-003-2-m2-ρ2dρ-where",
-   "title": "(m2 +ρ2)dρ where",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-004-2-zm-m-m-z-the-aim-of-the-present-article-is-to",
-   "title": "Z,m +m′ +m′′ ∈ Z}. The aim of the present article is to prove the",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-005-2-z-π",
-   "title": "Z×] − π",
    "pages": "2-3"
   },
   {
-   "id": "sec-006-2-deﬁnition-and-properties-of-various-continuati",
-   "title": "Deﬁnition and properties of various continuations of 6j",
+   "id": "sec-001-2-definition-and-properties-of-various-continuat",
+   "title": "Definition and properties of various continuations of 6j symbols of ${\\mathfrak U}_q(su(2))$",
    "pages": "3-3"
   },
   {
-   "id": "sec-007-21-intertwiners-and-6j0-of-uqsu2",
-   "title": "Intertwiners and 6j(0) of Uq(su(2))",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-008-2-z-m-1",
-   "title": "Z+, ∀m ∈ 1",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-009-2-z-we-deﬁne",
-   "title": "Z we deﬁne",
+   "id": "sec-002-21-intertwiners-and-6j0-of-mathfrak-u-qsu2",
+   "title": "Intertwiners and 6j(0) of ${\\mathfrak U}_q(su(2))$",
    "pages": "3-5"
   },
   {
-   "id": "sec-010-22-deﬁnitions-and-properties-of-continuation-of",
-   "title": "Deﬁnitions and properties of continuation of quantum 6j symbols",
-   "pages": "5-7"
+   "id": "sec-003-22-definitions-and-properties-of-continuation-of",
+   "title": "Definitions and properties of continuation of quantum $6j$ symbols",
+   "pages": "5-10"
   },
   {
-   "id": "sec-011-2-z-and-for-a-suﬃciently-large-half-integer-k-we",
-   "title": "Z+, and for a suﬃciently large half-integer K we",
-   "pages": "7-8"
+   "id": "sec-004-23-quantum-lorentz-group-principal-unitary-repre",
+   "title": "Quantum Lorentz group, Principal Unitary Representations and Harmonic Analysis",
+   "pages": "10-13"
   },
   {
-   "id": "sec-012-2-zx-1x-2y-1y-2z-1-c-1",
-   "title": "Z+,X 1,X 2,Y 1,Y 2,Z 1 ∈ C − 1",
-   "pages": "8-8"
+   "id": "sec-005-3-intertwiners-associated-to-unitary-representat",
+   "title": "Intertwiners associated to unitary representations of the quantum Lorentz group",
+   "pages": "13-17"
   },
   {
-   "id": "sec-013-2-zx-1-x2-1",
-   "title": "Z+,X 1 −X2 ∈ 1",
-   "pages": "8-8"
+   "id": "sec-006-4-alternative-construction-of-intertwiners-in-te",
+   "title": "Alternative Construction of Intertwiners in terms of the Quantum Haar Measure",
+   "pages": "17-22"
   },
   {
-   "id": "sec-014-2-zy-1-y2-1",
-   "title": "Z,Y 1 −Y2 ∈ 1",
-   "pages": "8-8"
+   "id": "sec-007-5-decomposition-theorem-of-the-tensor-product-of",
+   "title": "Decomposition Theorem of the Tensor Product of Principal Representations and Askey-Wilson Polynomials",
+   "pages": "22-24"
   },
   {
-   "id": "sec-015-2-z-and-deﬁned-by",
-   "title": "Z and deﬁned by",
-   "pages": "8-10"
+   "id": "sec-008-52-r-matrix-in-the-tensor-product-of-infinite-di",
+   "title": "R-matrix in the Tensor Product of Infinite dimensional Representations",
+   "pages": "24-25"
   },
   {
-   "id": "sec-016-23-quantum-lorentz-group-principal-unitary-repre",
-   "title": "Quantum Lorentz group, Principal Unitary Representati ons and",
-   "pages": "10-10"
+   "id": "sec-009-53-connection-with-askey-wilson-polynomials",
+   "title": "Connection with Askey-Wilson Polynomials.",
+   "pages": "25-26"
   },
   {
-   "id": "sec-017-2-z-the-elements",
-   "title": "Z+ the elements",
-   "pages": "10-10"
-  },
-  {
-   "id": "sec-018-2-z-span-the",
-   "title": "Z+ span the",
-   "pages": "10-11"
-  },
-  {
-   "id": "sec-019-2-zρ-π",
-   "title": "Z,ρ ∈]− π",
-   "pages": "11-12"
-  },
-  {
-   "id": "sec-020-2-z",
-   "title": "Z+,",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-021-2-zendcdi",
-   "title": "Z+End(CdI )",
-   "pages": "12-13"
-  },
-  {
-   "id": "sec-022-2-z-ρ-π",
-   "title": "Z, ∀ρ ∈] − π",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-023-2-zf-m-is-a-l2-function-on-π",
-   "title": "Z,f (m,. ) is a L2 function on ] − π",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-024-2-n-m-mm-0f-m-0",
-   "title": "N, ∀m, |m|>m 0,f (m,. ) = 0,",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-025-2-z-m0-bc-1",
-   "title": "Z+ ∩ [|m0|, +∞[, ∀B,C ∈ 1",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-026-3-intertwiners-associated-to-unitary-representat",
-   "title": "Intertwiners associated to unitary representations of th e",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-027-2-zy-0",
-   "title": "Z+,Y (0)",
-   "pages": "13-14"
-  },
-  {
-   "id": "sec-028-2-this-system-is-therefore",
-   "title": "This system is therefore",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-029-2-aν",
-   "title": "A+ν",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-030-2-cσ",
-   "title": "C+σ",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-031-2-b-ǫµ",
-   "title": "B +ǫ+µ",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-032-2-z2y-0",
-   "title": "Z+)2,Y (0)",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-033-2-z2a-mx-nq",
-   "title": "Z+)2,A − mX ∈ N},Q =",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-034-2-z2b-my-n-p-q-is-the-intersection-of-a-lattice",
-   "title": "(Z+)2,B −mY ∈ N}. ∆ ∩P ∩Q is the intersection of a lattice with a convex set",
-   "pages": "14-17"
-  },
-  {
-   "id": "sec-035-4-alternative-construction-of-intertwiners-in-te",
-   "title": "Alternative Construction of Intertwiners in terms of the",
-   "pages": "17-19"
-  },
-  {
-   "id": "sec-036-2-z-there-exist-qq-r-such-that-ρxρ-yρ-z-π",
-   "title": "Z, there exist Q,Q ′ ∈ R, such that ∀ρX,ρ Y,ρ Z ∈] − π",
-   "pages": "19-21"
-  },
-  {
-   "id": "sec-037-2-x-2",
-   "title": "X 2",
-   "pages": "21-21"
-  },
-  {
-   "id": "sec-038-2-z0-1ν2y11ν2y0-1",
-   "title": "Z0 (1)∞ν∞(2Y1+1)ν∞(2Y0 +1)",
-   "pages": "21-21"
-  },
-  {
-   "id": "sec-039-2-z1ν2x0-1ν2x0νz0-z1-1νz0-z1",
-   "title": "Z1ν∞(2X0 +1)ν∞(−2X0)ν∞(Z0 +Z1 + 1)ν∞(−Z0 −Z1)",
-   "pages": "21-21"
-  },
-  {
-   "id": "sec-040-0-x0x1λ-bb",
-   "title": "(X0X1)Λ BB",
-   "pages": "21-21"
-  },
-  {
-   "id": "sec-041-0-y0y1λ-bb",
-   "title": "(Y0Y1)Λ BB",
-   "pages": "21-21"
-  },
-  {
-   "id": "sec-042-0-z0z1-76",
-   "title": "(Z0Z1). (76)",
-   "pages": "21-21"
-  },
-  {
-   "id": "sec-043-0-x0x0-2x012b1",
-   "title": "(X0X0) = [(2X0+1)(2B+1)]",
-   "pages": "21-22"
-  },
-  {
-   "id": "sec-044-5-decomposition-theorem-of-the-tensor-product-of",
-   "title": "Decomposition Theorem of the Tensor Product of Prin-",
-   "pages": "22-23"
-  },
-  {
-   "id": "sec-045-2-z-k-cc",
-   "title": "Z+, ∀k = −C,..,C",
-   "pages": "23-24"
-  },
-  {
-   "id": "sec-046-52-r-matrix-in-the-tensor-product-of-inﬁnite-dim",
-   "title": "R-matrix in the Tensor Product of Inﬁnite dimensional Re presen-",
-   "pages": "24-26"
-  },
-  {
-   "id": "sec-047-6-conclusion",
+   "id": "sec-010-6-conclusion",
    "title": "Conclusion",
    "pages": "26-26"
   },
   {
-   "id": "sec-048-7-appendix",
+   "id": "sec-011-7-appendix",
    "title": "Appendix",
-   "pages": "26-27"
+   "pages": "26-26"
   },
   {
-   "id": "sec-049-2-z-c-deﬁned-by",
-   "title": "Z → C, deﬁned by:",
-   "pages": "27-27"
+   "id": "sec-012-71-formulae-on-basic-hypergeometric-functions",
+   "title": "Formulae on Basic Hypergeometric Functions.",
+   "pages": "26-28"
   },
   {
-   "id": "sec-050-2-z-93",
-   "title": "Z. (93)",
-   "pages": "27-27"
-  },
-  {
-   "id": "sec-051-2-z-94",
-   "title": "Z (94)",
-   "pages": "27-27"
-  },
-  {
-   "id": "sec-052-2-z-n-p-z-95",
-   "title": "Z, (n −p) ∈ Z, (95)",
-   "pages": "27-28"
-  },
-  {
-   "id": "sec-053-2-q2z-q2z",
-   "title": "(q2z +q−2z)",
-   "pages": "28-28"
-  },
-  {
-   "id": "sec-054-72-asymptotics-of-intertwiners",
+   "id": "sec-013-72-asymptotics-of-intertwiners",
    "title": "Asymptotics of Intertwiners",
-   "pages": "28-28"
-  },
-  {
-   "id": "sec-055-2-p-3x2x11p-x2x1ν2p-1ν1",
-   "title": "(P −3X2−X1−1)(P +X2−X1)ν∞(2P + 1)ν∞(1)",
    "pages": "28-29"
   },
   {
-   "id": "sec-056-2-z0-1ν2y1-1ν2y0-1",
-   "title": "Z0 (1)∞ν∞(2Y1 +1)ν∞(2Y0 +1)",
-   "pages": "29-29"
-  },
-  {
-   "id": "sec-057-2-z1ν2x01ν2x0νz0-z1-1νz0-z1",
-   "title": "Z1ν∞(2X0+1)ν∞(−2X0)ν∞(Z0 +Z1 + 1)ν∞(−Z0 −Z1)",
-   "pages": "29-29"
-  },
-  {
-   "id": "sec-058-73-formulae-on-coeﬃcients-λ-bc",
-   "title": "Formulae on coeﬃcients Λ BC",
-   "pages": "29-31"
-  },
-  {
-   "id": "sec-059-2-z-r-1",
-   "title": "Z+, ∀R ∈ 1",
-   "pages": "31-31"
-  },
-  {
-   "id": "sec-060-2-z-m-1",
-   "title": "Z, ∀m ∈ 1",
-   "pages": "31-31"
-  },
-  {
-   "id": "sec-061-2-z-c-b-0-ρ-r-b-b-λ-b-b-r",
-   "title": "Z, ∃ C, B > 0, ∀ρ ∈ R, ∀B >B, |Λ B B +R",
-   "pages": "31-31"
-  },
-  {
-   "id": "sec-062-2-d-1",
-   "title": "D+ 1",
-   "pages": "31-31"
-  },
-  {
-   "id": "sec-063-2-d1",
-   "title": "D+1",
-   "pages": "31-31"
-  },
-  {
-   "id": "sec-064-2-from-the-asymptotics-property-112-when-b-goes",
-   "title": "From the asymptotics property (112) when B goes to + ∞, and the induction hy-",
-   "pages": "31-32"
-  },
-  {
-   "id": "sec-065-2-zb-r-n-x0x1-s-c-r",
-   "title": "Z,B ±R ∈ N, ∀(X0X1) ∈ S, ∃C ∈ R",
-   "pages": "32-32"
-  },
-  {
-   "id": "sec-066-0-x0x1",
-   "title": "(X0X1) =",
-   "pages": "32-32"
-  },
-  {
-   "id": "sec-067-0-x0x1-ℏdp-δmx-p",
-   "title": "(X0X1) = ℏ[dP ]δmX ,P",
-   "pages": "32-32"
-  },
-  {
-   "id": "sec-068-0-x0x1-is-non-zero-only-when-mx-0-the",
-   "title": "(X0X1) is non zero only when mX = 0 . The",
-   "pages": "32-32"
-  },
-  {
-   "id": "sec-069-0-x0x1-is-in-this-case-very-simple-to-compute-be",
-   "title": "(X0X1) is in this case very simple to compute because Λ KK",
-   "pages": "32-33"
-  },
-  {
-   "id": "sec-070-references",
-   "title": "References",
-   "pages": "33-34"
+   "id": "sec-014-73-formulae-on-coefficients-lambdabc-adx-0x-1",
+   "title": "Formulae on coefficients $\\Lambda^{BC}_{AD}(X_0X_1)$",
+   "pages": "29-34"
   }
  ],
  "provenance": {

@@ -318,6 +318,39 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "352797590f8f",
+          "ts": "7024bc155e96"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:35.073Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "critical",
+        "evidence": "frobenius-self-duality-forces-lp-dual-extraction-proof.md:7-11 'Non-degeneracy is the content of ... Σ d_λ y_λ = 1 with every y_λ(q) ≠ 0'; counterexample n=3, convention D: y_(1³)=0 (convention-d-kills-antisymmetriser.md:12-17)",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: other"
+      },
+      {
+        "field_hash": {
+          "md": "4c08f00cca8f",
+          "ts": "7024bc155e96"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:12:07.734Z",
+        "reviewed_sha": "5f209b510c5b50294fd755d263c17c75d49be3ed",
+        "severity": "minor",
+        "evidence": "Steps 1-2 checked: convention-D weights at n=3, y_(3)=(q^4+1)/(q^2+1)^2, y_(2,1)=q^2/(q^2+1)^2, sum d*y=1, tr(sigma)=z. Step 4 strong duality needs the standard LP hypotheses (feasibility/Slater), not stated. Phi_tau is written on H_n but must be read on the TL_n quotient."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1340,7 +1373,7 @@
           "in_degree": 0,
           "cone_size": 1,
           "depth": 1,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1640,7 +1673,7 @@
         },
         "reviewed_at": "2026-08-21T15:58:06.480Z",
         "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
-        "evidence": "Three em-dashes in 551 words after fixes; the survivor ('\u2014 primal feasibility and primal boundedness (or, equivalently ...)') introduces a genuine specification.",
+        "evidence": "Three em-dashes in 551 words after fixes; the survivor ('— primal feasibility and primal boundedness (or, equivalently ...)') introduces a genuine specification.",
         "notes": "One emphasis-staging pair was removed under trap-meta-commentary."
       }
     ],
@@ -1744,8 +1777,8 @@
         "reviewed_at": "2026-08-21T15:58:06.589Z",
         "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
         "severity": "major",
-        "evidence": "Two emphasis-staging constructions announcing the force of a claim rather than placing it: 'Obs_tau(a) = tau(a . -) is **literally** Phi_tau' and 'an observable produced by tau-extraction is \u2014 *by definition* \u2014 a dual-space element'.",
-        "notes": "FIXED: 'is **literally** $\\Phi_\\tau$.' -> 'is $\\Phi_\\tau$.'; 'is \u2014 *by definition* \u2014 a dual-space element.' -> 'is, by definition, a dual-space element.' (the qualifier is genuine, only the dash-and-italic staging removed)."
+        "evidence": "Two emphasis-staging constructions announcing the force of a claim rather than placing it: 'Obs_tau(a) = tau(a . -) is **literally** Phi_tau' and 'an observable produced by tau-extraction is — *by definition* — a dual-space element'.",
+        "notes": "FIXED: 'is **literally** $\\Phi_\\tau$.' -> 'is $\\Phi_\\tau$.'; 'is — *by definition* — a dual-space element.' -> 'is, by definition, a dual-space element.' (the qualifier is genuine, only the dash-and-italic staging removed)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1779,7 +1812,7 @@
         },
         "reviewed_at": "2026-08-21T15:58:06.627Z",
         "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
-        "evidence": "'Strong duality + the Frobenius identification together imply the tau-extraction is the dual map' closes Step 4 by naming what Step 5 then proves \u2014 a bridge, not a closer."
+        "evidence": "'Strong duality + the Frobenius identification together imply the tau-extraction is the dual map' closes Step 4 by naming what Step 5 then proves — a bridge, not a closer."
       }
     ],
     "trap-performed-warmth": [
@@ -1884,7 +1917,7 @@
         "reviewed_at": "2026-08-21T15:58:06.736Z",
         "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
         "evidence": "Steps are short and each display is set out; no noun-chain stalls.",
-        "notes": "TWO RIGOR FLAGS. (1) CONTRADICTION WITH THE SAME CHAPTER: Step 1 asserts the Markov trace is non-degenerate because 'every $y_\\lambda(q) \\neq 0$', giving 'a strictly positive linear combination of characters'. Under the canonical convention D that is false at n=3: prop:frobenius-gram-matrix and rem:frobenius-gram-matrix-context in this chapter state y_{(1^3)} = 0 exactly, the (1^3) block lies in the radical, and det G = 0 identically (I reproduced det G = 0 and the null eigenvalue independently). Step 1 and Step 2's isomorphism Phi_tau are therefore convention-C statements; under D they hold on H_n/rad tr_M only. The whole chain (Steps 1-5, both corollaries) inherits this. Fix: state the non-degeneracy hypothesis with its convention, and read Phi_tau on the quotient. Note tau(1) = sum_lambda d_lambda y_lambda = 1 is correct in either convention \u2014 it is the STRICT positivity that fails. (2) Broken cross-reference: the final parenthetical '(see / mass-formula-iterative-lp-dual)' is a bare label on its own line with no markdown link, unlike every other reference in the block \u2014 link stripped."
+        "notes": "TWO RIGOR FLAGS. (1) CONTRADICTION WITH THE SAME CHAPTER: Step 1 asserts the Markov trace is non-degenerate because 'every $y_\\lambda(q) \\neq 0$', giving 'a strictly positive linear combination of characters'. Under the canonical convention D that is false at n=3: prop:frobenius-gram-matrix and rem:frobenius-gram-matrix-context in this chapter state y_{(1^3)} = 0 exactly, the (1^3) block lies in the radical, and det G = 0 identically (I reproduced det G = 0 and the null eigenvalue independently). Step 1 and Step 2's isomorphism Phi_tau are therefore convention-C statements; under D they hold on H_n/rad tr_M only. The whole chain (Steps 1-5, both corollaries) inherits this. Fix: state the non-degeneracy hypothesis with its convention, and read Phi_tau on the quotient. Note tau(1) = sum_lambda d_lambda y_lambda = 1 is correct in either convention — it is the STRICT positivity that fails. (2) Broken cross-reference: the final parenthetical '(see / mass-formula-iterative-lp-dual)' is a bare label on its own line with no markdown link, unlike every other reference in the block — link stripped."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1907,6 +1940,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T15:58:06.736Z",
+  "updated_at": "2026-11-16T07:12:07.734Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

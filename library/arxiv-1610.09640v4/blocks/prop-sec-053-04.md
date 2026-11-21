@@ -1,1 +1,1 @@
-If a triangulated right derived functor(RF,ηR) exists, then
+Consider the situation of Proposition 7.1.1 and Theorem 7.1.3. (1) The cohomological functor H : K →M factors into H = HS ◦Q, where HS : KS →M is a cohomological functor. (2) Let M be an object of K. The object Q(M) is zero in KS iﬀthe objects H(Ti((M)) are zero in M for all i.

@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2211.12836v2/blocks/prose-sec-002",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "A complete family of commuting Markov kernels associated to Bk,n",
-  "pageStart": 4,
-  "pageEnd": 6,
-  "text": "../sections/sec-002-22-a-complete-family-of-commuting-markov-kernels.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2211.12836v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2211.12836v2",
+  "title": "k-configuration on a circle and continuous counterpart",
+  "pageStart": 3,
+  "pageEnd": 4,
+  "text": "../sections/sec-002-21-k-configuration-on-a-circle-and-continuous-co.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2211.12836v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2211.12836v2/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -2,367 +2,197 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-hep-th-9303139v2",
  "source_sha256": "79b9a45fd4c5b4aa",
- "brief": "ITFA 93-10 March 1993 A.Morozov — The theory of matrix models is reviewed from the point of view of its relation to integrable hierarchies.",
- "extended": "**ITFA 93-10 March 1993 A.Morozov**\n\n*INTEGRABILITY AND MATRIX MODELS*\n\n149 pp, 71 sections.\n\n**Abstract.** The theory of matrix models is reviewed from the point of view of its relation to integrable hierarchies. Discrete 1-matrix, 2-matrix, ”conformal” (multicomponent) and Kontsevich models are considered in some detail, to- gether with the Ward identites (”W-constraints”), determinantal formulas and continuum limits, taking one kind of models into another. Subtle points and directions of the future research are also discussed. Lectures presented at the University of Amsterdam and the Dutch Institute for High Energy Physics(NIKHEF) in February-March 1993 1ITEP 117259 Moscow; morozov@vxdesy.desy.de 1\n\n**Outline.** Abstract; 3 Kontsevich model; 1 Introduction; 2 Ward identities for the simplest matrix mode; 2.1 Ward identites versus equations of motion; 2.2 Virasoro constraints for the discrete 1-ma; 2.3 CFT formulation of matrix models; 2.4 Gross-Newman equation; 2.5 Ward identities for Generalized Kontsevich; 2.6 Discrete Virasoro constraints for the Gaus; 2.7 Continuous Virasoro constraints for the V ; 3 Eigenvalue models; 3.1 What are eigenvalue models; 3.3 Itzykson-Zuber and Kontsevich integrals; 3.4 Conventional Multimatrix models; 3.5 Determinant formulas for eigenvalue models; 3.6 Orthogonal polinomials; 3.7 Two-component models in Miwa parametrizati",
+ "brief": "arXiv:hep-th/9303139v2 5 Apr 1993 — The theory of matrix models is reviewed from the point of view of its relation to integrable hierarchies.",
+ "extended": "**arXiv:hep-th/9303139v2 5 Apr 1993**\n\n149 pp, 37 sections.\n\n**Abstract.** The theory of matrix models is reviewed from the point of view of its relation to integrable hierarchies. Discrete 1-matrix, 2-matrix, ”conformal” (multicomponent) and Kontsevich models are considered in some detail, to- gether with the Ward identites (”W-constraints”), determinantal formulas and continuum limits, taking one kind of models into another. Subtle points and directions of the future research are also discussed. Lectures presented at the University of Amsterdam and the Dutch Institute for High Energy Physics(NIKHEF) in February-March 1993 1ITEP 117259 Moscow; morozov@vxdesy.desy.de 1\n\n**Outline.** Front matter; 1 Introduction; 2 Ward identities for the simplest matrix mode; 2.1 Ward identites versus equations of motion; 2.2 Virasoro constraints for the discrete 1-ma; 2.3 CFT formulation of matrix models; 2.4 Gross-Newman equation; 2.5 Ward identities for Generalized Kontsevich; 2.6 Discrete Virasoro constraints for the Gaus; 2.7 Continuous Virasoro constraints for the $V; 3 Eigenvalue models; 3.1 What are eigenvalue models; 3.2 1-matrix model; 3.3 Itzykson-Zuber and Kontsevich integrals; 3.4 Conventional Multimatrix models; 3.5 Determinant formulas for eigenvalue models; 3.6 Orthogonal polinomials; 3.7 Scalar-product models in Miwa parametrizat",
  "tokens": {
-  "brief": 34,
-  "extended": 345
+  "brief": 35,
+  "extended": 337
  },
  "sections": [
   {
-   "id": "sec-000-abstract",
-   "title": "Abstract",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-001-3-kontsevich-model",
-   "title": "Kontsevich model",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-2"
   },
   {
-   "id": "sec-002-1-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
    "pages": "2-2"
   },
   {
-   "id": "sec-003-2-ward-identities-for-the-simplest-matrix-models",
+   "id": "sec-001-2-ward-identities-for-the-simplest-matrix-models",
    "title": "Ward identities for the simplest matrix models",
    "pages": "2-2"
   },
   {
-   "id": "sec-004-21-ward-identites-versus-equations-of-motion",
+   "id": "sec-002-21-ward-identites-versus-equations-of-motion",
    "title": "Ward identites versus equations of motion",
    "pages": "2-2"
   },
   {
-   "id": "sec-005-22-virasoro-constraints-for-the-discrete-1-matri",
+   "id": "sec-003-22-virasoro-constraints-for-the-discrete-1-matri",
    "title": "Virasoro constraints for the discrete 1-matrix model",
    "pages": "2-2"
   },
   {
-   "id": "sec-006-23-cft-formulation-of-matrix-models",
+   "id": "sec-004-23-cft-formulation-of-matrix-models",
    "title": "CFT formulation of matrix models",
    "pages": "2-2"
   },
   {
-   "id": "sec-007-24-gross-newman-equation",
+   "id": "sec-005-24-gross-newman-equation",
    "title": "Gross-Newman equation",
    "pages": "2-2"
   },
   {
-   "id": "sec-008-25-ward-identities-for-generalized-kontsevich-mo",
+   "id": "sec-006-25-ward-identities-for-generalized-kontsevich-mo",
    "title": "Ward identities for Generalized Kontsevich Model",
    "pages": "2-2"
   },
   {
-   "id": "sec-009-26-discrete-virasoro-constraints-for-the-gaussia",
+   "id": "sec-007-26-discrete-virasoro-constraints-for-the-gaussia",
    "title": "Discrete Virasoro constraints for the Gaussian Kontsevich model",
-   "pages": "2-2"
+   "pages": "2-32"
   },
   {
-   "id": "sec-010-27-continuous-virasoro-constraints-for-the-v-x3",
-   "title": "Continuous Virasoro constraints for the V = X3",
-   "pages": "2-2"
+   "id": "sec-008-27-continuous-virasoro-constraints-for-the-v-fra",
+   "title": "Continuous Virasoro constraints for the $V = \\frac{X^3}{3}$ Kontsevich model",
+   "pages": "32-46"
   },
   {
-   "id": "sec-011-3-eigenvalue-models",
+   "id": "sec-009-3-eigenvalue-models",
    "title": "Eigenvalue models",
-   "pages": "2-2"
+   "pages": "46-46"
   },
   {
-   "id": "sec-012-31-what-are-eigenvalue-models",
+   "id": "sec-010-31-what-are-eigenvalue-models",
    "title": "What are eigenvalue models",
-   "pages": "2-2"
+   "pages": "46-47"
   },
   {
-   "id": "sec-013-33-itzykson-zuber-and-kontsevich-integrals",
+   "id": "sec-011-32-1-matrix-model",
+   "title": "1-matrix model",
+   "pages": "47-49"
+  },
+  {
+   "id": "sec-012-33-itzykson-zuber-and-kontsevich-integrals",
    "title": "Itzykson-Zuber and Kontsevich integrals",
-   "pages": "2-2"
+   "pages": "49-52"
   },
   {
-   "id": "sec-014-34-conventional-multimatrix-models",
+   "id": "sec-013-34-conventional-multimatrix-models",
    "title": "Conventional Multimatrix models",
-   "pages": "2-2"
+   "pages": "52-53"
   },
   {
-   "id": "sec-015-35-determinant-formulas-for-eigenvalue-models",
+   "id": "sec-014-35-determinant-formulas-for-eigenvalue-models",
    "title": "Determinant formulas for eigenvalue models",
-   "pages": "2-2"
+   "pages": "53-59"
   },
   {
-   "id": "sec-016-36-orthogonal-polinomials",
+   "id": "sec-015-36-orthogonal-polinomials",
    "title": "Orthogonal polinomials",
-   "pages": "2-2"
+   "pages": "59-65"
   },
   {
-   "id": "sec-017-37-two-component-models-in-miwa-parametrization",
-   "title": "Two-component models in Miwa parametrization",
-   "pages": "2-2"
+   "id": "sec-016-37-scalar-product-models-in-miwa-parametrization",
+   "title": "Scalar-product models in Miwa parametrization",
+   "pages": "65-66"
   },
   {
-   "id": "sec-018-38-equivalence-of-the-discrete-1-matrix-and-gaus",
+   "id": "sec-017-38-equivalence-of-the-discrete-1-matrix-and-gaus",
    "title": "Equivalence of the discrete 1-matrix and Gaussian Kontsevich models",
-   "pages": "2-2"
+   "pages": "66-68"
   },
   {
-   "id": "sec-019-39-volume-of-unitary-group",
+   "id": "sec-018-39-volume-of-unitary-group",
    "title": "Volume of unitary group",
-   "pages": "2-2"
+   "pages": "68-70"
   },
   {
-   "id": "sec-020-4-integrable-structure-of-eigenvalue-models",
+   "id": "sec-019-4-integrable-structure-of-eigenvalue-models",
    "title": "Integrable structure of eigenvalue models",
-   "pages": "2-2"
+   "pages": "70-70"
   },
   {
-   "id": "sec-021-41-the-concept-of-integrability",
+   "id": "sec-020-41-the-concept-of-integrability",
    "title": "The concept of integrability",
-   "pages": "2-2"
+   "pages": "70-75"
   },
   {
-   "id": "sec-022-42-the-notion-of-τ-function",
-   "title": "The notion of τ-function",
-   "pages": "2-2"
+   "id": "sec-021-42-the-notion-of-tau-function",
+   "title": "The notion of $\\tau$-function",
+   "pages": "75-83"
   },
   {
-   "id": "sec-023-44-basic-determinant-formula-for-the-free-fermio",
+   "id": "sec-022-44-basic-determinant-formula-for-the-free-fermio",
    "title": "Basic determinant formula for the free-fermion correlator",
-   "pages": "2-2"
+   "pages": "83-87"
   },
   {
-   "id": "sec-024-45-toda-lattice-τ-function-and-linear-reductions",
-   "title": "Toda-lattice τ-function and linear reductions of Toda-lattice hierar-",
-   "pages": "2-2"
+   "id": "sec-023-45-toda-lattice-tau-function-and-linear-reductio",
+   "title": "Toda-lattice $\\tau$-function and linear reductions of Toda hierarchy",
+   "pages": "87-92"
   },
   {
-   "id": "sec-025-46-fermion-correlator-in-miwa-coordinates",
+   "id": "sec-024-46-fermion-correlator-in-miwa-coordinates",
    "title": "Fermion correlator in Miwa coordinates",
-   "pages": "2-2"
+   "pages": "92-99"
   },
   {
-   "id": "sec-026-48-string-equations-and-generic-concept-of-reduc",
-   "title": "String equations and generic concept of reduction",
-   "pages": "2-2"
+   "id": "sec-025-47-matrix-models-versus-tau-functions",
+   "title": "Matrix models versus $\\tau$-functions.",
+   "pages": "99-104"
+  },
+  {
+   "id": "sec-026-48-string-equations-and-general-concept-of-reduc",
+   "title": "String equations and general concept of reduction",
+   "pages": "104-110"
   },
   {
    "id": "sec-027-49-on-the-theory-of-gkm",
    "title": "On the theory of GKM",
-   "pages": "2-2"
+   "pages": "110-118"
   },
   {
-   "id": "sec-028-5-continuum-limits-of-discrete-matrix-models",
+   "id": "sec-028-410-1-matrix-model-versus-toda-chain-hierarchy",
+   "title": "1-Matrix model versus Toda-chain hierarchy",
+   "pages": "118-121"
+  },
+  {
+   "id": "sec-029-5-continuum-limits-of-discrete-matrix-models",
    "title": "Continuum limits of discrete matrix models",
-   "pages": "2-3"
+   "pages": "121-121"
   },
   {
-   "id": "sec-029-51-what-is-continuum-limit",
+   "id": "sec-030-51-what-is-continuum-limit",
    "title": "What is continuum limit",
-   "pages": "3-3"
+   "pages": "121-124"
   },
   {
-   "id": "sec-030-52-from-toda-chain-to-kdv",
+   "id": "sec-031-52-from-toda-chain-to-kdv",
    "title": "From Toda-chain to KdV",
-   "pages": "3-3"
+   "pages": "124-126"
   },
   {
-   "id": "sec-031-53-double-scaling-limit-of-1-matrix-model",
+   "id": "sec-032-53-double-scaling-limit-of-1-matrix-model",
    "title": "Double-scaling limit of 1-matrix model",
-   "pages": "3-3"
+   "pages": "126-134"
   },
   {
-   "id": "sec-032-54-from-gaussian-to-x3-kontsevich-model",
-   "title": "From Gaussian to X3-Kontsevich model",
-   "pages": "3-3"
+   "id": "sec-033-54-from-gaussian-to-x3-kontsevich-model",
+   "title": "From Gaussian to $X^3$ Kontsevich model",
+   "pages": "134-138"
   },
   {
-   "id": "sec-033-6-conclusion",
-   "title": "Conclusion",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-034-7-acknowledgements",
-   "title": "Acknowledgements",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-035-8-references",
-   "title": "References",
-   "pages": "3-4"
-  },
-  {
-   "id": "sec-036-introduction",
-   "title": "Introduction",
-   "pages": "4-25"
-  },
-  {
-   "id": "sec-037-10-this-is-possible-only-for-very-special-kac-mo",
-   "title": "This is possible only for very special Kac-Moody algebras, and such formulation is",
-   "pages": "25-30"
-  },
-  {
-   "id": "sec-038-2-z-x2",
-   "title": "Z X2",
-   "pages": "30-31"
-  },
-  {
-   "id": "sec-039-13-this-small-correction-is-a-manifestation-of-a",
-   "title": "This small correction is a manifestation of a very general phenomenon: from the",
-   "pages": "31-35"
-  },
-  {
-   "id": "sec-040-14-therefore-it-could-be-reasonable-to-use-a-diﬀ",
-   "title": "Therefore it could be reasonable to use a diﬀerent notation: Ln instead of L2n. We",
-   "pages": "35-39"
-  },
-  {
-   "id": "sec-041-2-hn",
-   "title": "Hn",
-   "pages": "39-39"
-  },
-  {
-   "id": "sec-042-1-hm",
-   "title": "Hm",
-   "pages": "39-40"
-  },
-  {
-   "id": "sec-043-3-hb2",
-   "title": "Hb2",
-   "pages": "40-41"
-  },
-  {
-   "id": "sec-044-2-hc1",
-   "title": "Hc1",
-   "pages": "41-41"
-  },
-  {
-   "id": "sec-045-2-hc2",
-   "title": "Hc2",
-   "pages": "41-43"
-  },
-  {
-   "id": "sec-046-16-here-it-is-for-the-ﬁrst-time-that-we-encounte",
-   "title": "Here it is for the ﬁrst time that we encounter an important idea: matrix models -",
-   "pages": "43-46"
-  },
-  {
-   "id": "sec-047-18-this-can-be-understood-if-one-notes-that-matr",
-   "title": "This can be understood if one notes that matrix models",
-   "pages": "46-46"
-  },
-  {
-   "id": "sec-048-18-particles-are-always-related-to-the-angular-u",
-   "title": "Particles are always related to the ”angular (unitary-) matrix” integrals (as everybody",
-   "pages": "46-60"
-  },
-  {
-   "id": "sec-049-21-of-course-one-can-also-use-this-link-just-wit",
-   "title": "Of course, one can also use this link just with the aim to put the rich and beau-",
-   "pages": "60-62"
-  },
-  {
-   "id": "sec-050-2-d",
-   "title": "(−d",
-   "pages": "62-62"
-  },
-  {
-   "id": "sec-051-4-h-2-d",
-   "title": "(h −2 d",
-   "pages": "62-66"
-  },
-  {
-   "id": "sec-052-2-detλn",
-   "title": "(detΛ)N",
-   "pages": "66-67"
-  },
-  {
-   "id": "sec-053-2-trh2detλ-i-i-h",
-   "title": "TrH2Det(Λ ⊗I −I ⊗H)",
-   "pages": "67-67"
-  },
-  {
-   "id": "sec-054-23-note-that-this-system-of-functions-ϕk-ikhekih",
-   "title": "Note that this system of functions ϕk = i−kHek(ih) looks like ϕ0 = 1, ϕ1 = h, ϕ2 =",
-   "pages": "67-68"
-  },
-  {
-   "id": "sec-055-2-trh2-cn",
-   "title": "TrH2 = cN",
-   "pages": "68-72"
-  },
-  {
-   "id": "sec-056-2-j-d",
-   "title": "J D",
-   "pages": "72-77"
-  },
-  {
-   "id": "sec-057-26-note-that-normalization-factor-here-is-diﬀere",
-   "title": "Note that normalization factor here is diﬀerent by a factor of",
-   "pages": "77-78"
-  },
-  {
-   "id": "sec-058-27-we-once-again-emphasize-that-this-trick-is-sp",
-   "title": "We once again emphasize that this trick is speciﬁc for the free fermions and for the",
-   "pages": "78-78"
-  },
-  {
-   "id": "sec-059-28-formulas-in-brackets-are-indeed-correct-befor",
-   "title": "Formulas in brackets are indeed correct, before them the usual symbolic relations are",
-   "pages": "78-79"
-  },
-  {
-   "id": "sec-060-29-it-is-also-the-reason-why-these-are-free-ferm",
-   "title": "It is also the reason, why these are free-fermion tau-functions, that appear in the",
-   "pages": "79-80"
-  },
-  {
-   "id": "sec-061-30-this-relation-is-straightforward-in-the-case",
-   "title": "This relation is straightforward in the case of Virasoro constraints, since Virasoro",
-   "pages": "80-81"
-  },
-  {
-   "id": "sec-062-2-t-a-i-i-t-a2-t-at-a-i-i-t-at-a-if-further-t-a",
-   "title": "((T a ⊗I + I ⊗T a)2 −T aT a ⊗I −I ⊗T aT a).) If further, T a ⊗T a",
-   "pages": "81-92"
-  },
-  {
-   "id": "sec-063-0-uzjz",
-   "title": "U(z)J(z) =",
-   "pages": "92-92"
-  },
-  {
-   "id": "sec-064-0-uzφz",
-   "title": "U(z)∂φ(z) = −",
-   "pages": "92-101"
-  },
-  {
-   "id": "sec-065-37-we-remind-that-all-conventional-multimatrix-m",
-   "title": "We remind that all conventional multimatrix models (with inter-matrix",
-   "pages": "101-131"
-  },
-  {
-   "id": "sec-066-2-φ2-u-of-antiperiodic-ﬁeld-φu-are",
-   "title": "(∂Φ)2 (u) of antiperiodic ﬁeld Φ(u)), are:",
-   "pages": "131-138"
-  },
-  {
-   "id": "sec-067-conclusion",
+   "id": "sec-034-6-conclusion",
    "title": "Conclusion",
    "pages": "138-140"
   },
   {
-   "id": "sec-068-acknowledgements",
+   "id": "sec-035-7-acknowledgements",
    "title": "Acknowledgements",
-   "pages": "140-140"
-  },
-  {
-   "id": "sec-069-references",
-   "title": "References",
-   "pages": "140-143"
-  },
-  {
-   "id": "sec-070-ii-the-kontsevich-integrals-preprint-spht92-001",
-   "title": "The Kontsevich Integrals, Preprint SPhT/92-001, to appear in",
-   "pages": "143-149"
+   "pages": "140-149"
   }
  ],
  "provenance": {

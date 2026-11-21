@@ -15,7 +15,7 @@ number, and nearby knots interact via short-range repulsion.
 
 ## References
 
-- [manuscript] §3 Lifting of Quantum Torsion
+- [leitner2026] §3 Lifting of Quantum Torsion
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -56,13 +56,13 @@ structure BundleState where
   -- combinatorial ground ring `R_q` carries no order, so the
   -- non-negativity constraint is archimedean and lives in the ℝ
   -- specialisation, not here.
-  -- Ref: [manuscript] §3, Definition: Torsion-driven knot flow
+  -- Ref: [leitner2026] §3, Definition: Torsion-driven knot flow
 
 /-- Intrinsic angular momentum of a knot type, proportional to crossing
     number: `ω_K = c(K) · 2π`.  Archimedean specialisation over `ℝ`
     (AGENTS.md §7c) — the `2π` factor is genuinely real-valued, so this
     observable lands in `ℝ` rather than the combinatorial ground ring `R_q`. -/
--- Ref: [manuscript] §3 Lifting of Quantum Torsion
+-- Ref: [leitner2026] §3 Lifting of Quantum Torsion
 noncomputable def intrinsicAngularMomentum (pd : KnotTheory.BraidWord) : ℝ :=
   (pd.crossingCount : ℝ) * (2 * Real.pi)
 

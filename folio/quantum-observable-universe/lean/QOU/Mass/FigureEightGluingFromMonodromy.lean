@@ -28,7 +28,7 @@ than computations:
 Nothing here asserts the triangulation is geometric — that is the probe's `Im z > 0` check and
 its volume; these are the exact identities the geometry rests on.
 
--- Ref: [manuscript] computations/probes/nz_gluing_from_braid_monodromy_probe.py
+-- Ref: [leitner2026] computations/probes/nz_gluing_from_braid_monodromy_probe.py
 -- Ref: library/arxiv-0808.2716v4 (Futer–Kalfagianni–Purcell) §2.2 for the R, L matrices.
 -- Ref: [martelli2016] §14.1 (Prop 14.1.8 + Fig 14.7: the two-tetrahedron, valence-6 triangulation
 --   with all shapes e^{iπ/3} is the figure-eight complement — the literature form of the

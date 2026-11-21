@@ -21,7 +21,7 @@ The remaining Riemann-sum convergence (the uniform-partition limit in the
 genuine analytic core of Part A — scoped here, not yet discharged.  Part B
 (substrate continuation `q → 1⁺`, `x → 1⁻` uniformity) is untouched.
 
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit
 -- Ref: [faddeev1994] https://doi.org/10.1142/S0217732394002793
 -/
 

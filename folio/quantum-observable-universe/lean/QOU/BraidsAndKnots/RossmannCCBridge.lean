@@ -34,7 +34,7 @@ projection.
 ## References
 Springer, Invent. Math. 36 (1976) 173–207; Invent. Math. 44 (1978) 279–293.
 Shoji, arXiv:1909.06744.  Rossmann, *Invariant eigendistributions … II*.
--- Ref: [manuscript] docs/audits/2026-08-02-rossmann-cc-bridge-deltalambda-realization.md
+-- Ref: [leitner2026] docs/audits/2026-08-02-rossmann-cc-bridge-deltalambda-realization.md
 -/
 
 namespace QOU.BraidsAndKnots
@@ -115,5 +115,14 @@ theorem rossmann_cc_two_parity_fails :
       (0 ≤ target → 0 ≤ e - o) ∧ (target ≤ 0 → e - o ≤ 0) ∧
       e - o ≠ target := by
   refine ⟨1, 1, 2, 2, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩ <;> norm_num
+
+/-- **Double even-degree mass decomposition from concentration (`qou-zcjg`).**
+Combining `C.total l` (`e + o = dim`) with `rossmann_cc_realizes_deltaLambda l`
+(`e - o = target`) yields `2 * e = dim + target`. -/
+theorem rossmann_cc_double_even_eq_dim_add_target [C : RossmannCCConcentration Λ] (l : Λ) :
+    2 * C.e l = C.dim l + C.target l := by
+  have htot := C.total l
+  have hdiff := rossmann_cc_realizes_deltaLambda (C := C) l
+  linarith
 
 end QOU.BraidsAndKnots

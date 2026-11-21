@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds/sections/page-026",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 26",
+  "pageStart": 26,
+  "pageEnd": 26,
+  "contains": [
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds/blocks/prose-page-026",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds/blocks/figure-img-p026-22",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds/blocks/figure-img-p026-23",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds/blocks/figure-img-p026-24",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds/blocks/figure-img-p026-25",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds/blocks/figure-img-p026-236",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds/blocks/figure-img-p026-237",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds/blocks/figure-img-p026-238"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds/manifest.jsonld",
+  "provenance": "ingested"
+}

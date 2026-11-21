@@ -1,0 +1,57 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-155
+section_title: "Page 155"
+section_number: null
+pages: 155-155
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+Problems on invariants of knots and 3-manifolds 527
+
+11 The LMO invariant
+
+The LMO invariant Z™9(M) € A(Q) of closed oriented 3-manifolds was in-
+troduced in [249]. The LMO invariant of rational homology 3-spheres was
+reformulated by Aarhus integral [36]. The LMO invariant is a universal per-
+turbative invariant of rational homology 3-spheres (see [320, 36, 321]), and a
+universal finite type invariant of integral homology 3-spheres [244].
+
+11.1 Calculation of the LMO invariant
+
+Problem 11.1 For each rational homology 3-sphere M, calculate Z'M°(M)
+for all degrees.
+
+Remark Bar-Natan and Lawrence [37] showed a rational surgery formula for
+the LMO invariant. By using it, they obtained
+
+Z (L(p,q)) = (Qe, %;'Qy/p) x EXD Pg (51)
+for the lens space L(p,q) of type (p,q), where s(q,p) denotes the Dedekind
+sum. For the notation (Q2,Q;1Q2/p)« see [37].
+
+Remark The degree 1 part of Z°(M) is given by the Casson-Walker in-
+variant of M [249]. Further, the degree < d part of Z™°(M) of integral
+homology 3-spheres are given by finite type invariants of degree < d. Hence, it
+is algorithmically possible to calculate the degree < d part of ZIMO (ME ) of an
+integral homology 3-sphere for each d. It is meaningful to calculate Z“M°(M)
+for all degrees.
+
+Remark It is meaningful to calculate Z'M°(M) when M is a rational ho-
+mology 3-sphere. Otherwise, it is known that Z IMO (1M ) can be given by some
+“classical” invariants. When b)(M/) = 1, the value of Z4!°(M) can be pre-
+sented by using the Alexander polynomial of M [138, 259]. When b(M) = 2,
+the value of Z IMO (1M ) can be presented by using the Casson-Walker-Lescop in-
+variant of M [162]. When b;(M) = 3, the value of Z“M°(M) can be presented
+by using the cohomology ring of M [161]. When b;(M) > 3, we always have
+that ZMO(M) = 1 [161].
+
+11.2 Does the LMO invariant distinguish integral homology 3-
+spheres?
+
+Conjecture 11.2 The LMO invariant distinguishes integral homology 3-spheres.
+(See Conjecture 10.9.)
+
+Geometry & Topology Monographs, Volume 4 (2002)

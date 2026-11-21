@@ -7,11 +7,12 @@ section_number: 4.2
 pages: 20-21
 source_pdf: 2208.13692v1.pdf
 source_sha256: 567eff9fb44ef3e5
-doc_brief: "Bring's curve: old and new — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
-duplicate_of: "s40879-023-00706-0"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.884
-latex_coverage_ratio: 0.961
+latex_coverage_ratio: 1.0
+doc_brief: "Bring’s curve: old and new — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
+duplicate_of: "s40879-023-00706-0"
 ---
 []{#subsec: relations between quotients label="subsec: relations between quotients"} We now consider the various relationships we might expect between the quotient curves of Bring's curve. Recall (again from Riemann-Hurwitz) that if $\mathcal{C}$ is a curve of genus $g\ge2$ and $H\le \mathop{\mathrm{Aut}}(\mathcal{C})$ is such that $|H|>4(g-1)$, a so called 'large automorphism group', then the genus of the quotient curve $g_{\mathcal{C}/H}=0$. For Brings's curve we are therefore interested in subgroups of $S_5$ of order less than or equal to $12$, and as we have seen the quotient by a 5-cycle leads to genus $0$ we may exclude subgroups containing such. The relevant conjugacy classes of subgroups are then[^1]
 

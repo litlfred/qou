@@ -27,23 +27,21 @@ modelled here as the pair `(↑a, ↑a⁻¹) ∈ R × R` with `a = q^{2k} ∈ R�
 The Higgs is the bar-even / self-dual / real-volume carrier
 (`braids-and-knots/self-dual-higgs-real-volume`); `W±, Z` are bar-odd.
 
-**(Task 4 — forced charge+spin, provable modulo one postulate.)** The single
-residual physics input is the **sector-selection postulate**
-`EWSectorSelection`: which carrier lives in `A₊` (singlet) vs `A₋` (doublet),
-plus the bare `T₃` label map. Given it:
+**(Task 4 — sector label and charge computed through `σ`, modulo one
+postulate.)** The residual physics input is the hypothesis class
+`EWSectorSelection`: the `σ`-sector of each carrier (`A₊` = `σ`-even, `A₋` =
+`σ`-odd; both are one-dimensional `ℤ/2`-sectors), the carrier eigenvalues, `W⁻`
+as the `σ`-image of `W⁺`, and non-degeneracy `a² ≠ 1`. Given it:
 
-* **spin is forced** — `spinDouble c := if isSinglet c then 0 else 2` is a
-  *definition*; `H` singlet `⇒` scalar (`spin 0`), `W±, Z` doublets `⇒`
-  vectors (`spin 1`) are **theorems** (`by decide`-level from the postulate);
-* **neutrality is forced** — bar-even `⇒` neutral, bar-odd `⇒` charged, from
-  Task 3;
-* the only genuinely postulated bits are the sector map itself and the `T₃`
-  label (`W± ↦ ±1`; `Z ↦ 0` *neutral via the `(W³,B) → (Z,γ)` Weinberg
-  mixing*, cite `particle-interactions/weinberg-angle-categorical`).
-
-Everything downstream of the postulate is a `theorem`, not a conjecture. This
-**collapses the former C3 (charge) + C4 (spin)** into consequences of the one
-selection postulate.
+* the sector label `spinDouble` (`2s`; "spin" names this two-valued sector
+  label, not a Lorentz spin) is *computed* from whether `σ = swap₂` fixes the
+  carrier's sector vector: `H ↦ 0`, `W±, Z ↦ 2` are theorems;
+* the charge `ewCharge` is the skew functional of the sector vector: `H` has
+  zero charge, `W⁺` nonzero charge, `W⁻` the opposite charge;
+* `σ`-parity does **not** make `Z` neutral (`z_not_neutral_by_parity`); the
+  `T₃` table `ewT3Double` (`W± ↦ ±1`, `Z, H ↦ 0`) is recorded, not derived. `Z`
+  neutrality rests on the `(W³,B) → (Z,γ)` Weinberg mixing
+  (`particle-interactions/weinberg-angle-categorical`).
 
 The `SpinInvolution` structure lives in the `def:spin-involution` content
 sibling (`mass-theory/spin-involution.lean`, namespace `QOU.BraidKnot`), whose
@@ -56,7 +54,7 @@ LaTeX label: `thm:ew-triplet-charge-spin-from-involution`.
 
 ## References
 
-- [manuscript] particle-interactions/electroweak-triplet-charge-spin-from-involution
+- [leitner2026] particle-interactions/electroweak-triplet-charge-spin-from-involution
 - `def:spin-involution` (`QOU.BraidKnot.SpinInvolution`; the abstract σ algebra)
 - `thm:hoefsmit-ew-cell-content` (sym/alt block, the `tr_pure` bar-even trace)
 - `braids-and-knots/self-dual-higgs-real-volume` (H = bar-even carrier)
@@ -173,12 +171,23 @@ theorem skew_minusPart_carrier (a : Rˣ) :
 
 end BarParity
 
-/-! ## Task 4 — the forced charge+spin theorem (conditional on one postulate)
+/-! ## Task 4 — spin and charge computed through `σ` (conditional on one postulate)
 
-The former C3 (charge) + C4 (spin) collapse to consequences of a *single*
-physics selection postulate: the sector assignment `A₊`/`A₋` for each carrier,
-plus the bare `T₃` label map. Spin follows by definition; neutrality by
-bar-parity (Task 3). -/
+The postulate `EWSectorSelection` carries only *inputs*: the `σ`-sector of each
+carrier (`A₊` or `A₋`), the carrier eigenvalue `a = q^{2k} ∈ Rˣ`, the statement
+that `W⁻` carries the `σ`-image eigenvalue of `W⁺`, and non-degeneracy
+`a² ≠ 1`. From these, each carrier is given its **sector vector**: the `σ`-even
+projection `plusPart (carrier a)` if it is in `A₊`, the `σ`-odd projection
+`minusPart (carrier a)` if it is in `A₋`. Then
+
+* the **sector label** `spinDouble` (`2s`) is *computed* from the action of
+  `σ = swap₂` on the sector vector (`0` if `σ` fixes it, `2` otherwise), and
+* the **charge** `ewCharge` is the skew (`P_skew`) functional of the sector
+  vector.
+
+"Spin" here is the name of this two-valued `σ`-sector label of the model; it is
+not a computation of a Lorentz spin. The `T₃` values are **not** derived: see
+`ewT3Double`, which records them as a table. -/
 
 /-- The four electroweak carriers. -/
 inductive EWCarrier
@@ -188,95 +197,199 @@ inductive EWCarrier
   | H
 deriving DecidableEq
 
-/-- **The single physics selection postulate** (axiomatised `def:spin-involution`
-sector map + bare `T₃` label). Content-bearing §3b conjecture class: it fixes
-which carrier is a spin-singlet (`A₊`, bar-even, neutral) versus a spin-doublet
-(`A₋`, bar-odd, charged), and the isospin labels. Everything else is derived.
+/-- **The physics selection postulate** (§3b-cond hypothesis class). It carries
+the inputs only, never the spin/charge conclusions:
 
-The Higgs is the singlet (`self-dual-higgs-real-volume`); `W±, Z` are doublets.
-The `Z ↦ 0` label is neutral *via the Weinberg `(W³,B) → (Z,γ)` mixing*
-(`weinberg-angle-categorical`), not by bar-even membership — the one residual
-subtlety carried explicitly. -/
-class EWSectorSelection (R : Type*) [Field R] [Invertible (2 : R)] where
-  /-- `true` = spin-singlet (`A₊`); `false` = spin-doublet (`A₋`). -/
+* `isSinglet` — the `σ`-sector of each carrier: `true` = `σ`-even sector `A₊`,
+  `false` = `σ`-odd sector `A₋` (both are `ℤ/2`-sectors of the involution, i.e.
+  one-dimensional characters; "singlet" is the historical field name);
+* the Higgs is in `A₊` (`self-dual-higgs-real-volume`); `W±, Z` are in `A₋`;
+* `eig c` — the eigenvalue `q^{2k}` of the even-twist carrier of `c`;
+* `wMinus_eig` — `W⁻` carries the `σ`-image (bar image) of the `W⁺` eigenvalue;
+* `eig_sq_ne_one` — non-degeneracy `q^{4k} ≠ 1` (genuinely twisted carrier).
+
+No instance is supplied. -/
+class EWSectorSelection (R : Type*) [Field R] where
+  /-- `true` = `σ`-even sector `A₊`; `false` = `σ`-odd sector `A₋`. -/
   isSinglet : EWCarrier → Bool
-  /-- Higgs is the bar-even self-dual singlet. -/
+  /-- Higgs is in the bar-even sector `A₊`. -/
   higgs_singlet : isSinglet EWCarrier.H = true
-  /-- `W⁺` is a bar-odd doublet. -/
+  /-- `W⁺` is in the bar-odd sector `A₋`. -/
   wPlus_doublet : isSinglet EWCarrier.Wp = false
-  /-- `W⁻` is a bar-odd doublet. -/
+  /-- `W⁻` is in the bar-odd sector `A₋`. -/
   wMinus_doublet : isSinglet EWCarrier.Wm = false
-  /-- `Z` is a bar-odd doublet (vector); neutral via mixing, not via `A₊`. -/
+  /-- `Z` is in the bar-odd sector `A₋`. -/
   z_doublet : isSinglet EWCarrier.Z = false
-  /-- Doubled isospin `2·T₃` label map. -/
-  t3Double : EWCarrier → ℤ
-  /-- `W⁺`: `T₃ = +1`. -/
-  wPlus_t3 : t3Double EWCarrier.Wp = 1
-  /-- `W⁻`: `T₃ = −1`. -/
-  wMinus_t3 : t3Double EWCarrier.Wm = -1
-  /-- `Z`: `T₃ = 0` — neutral via Weinberg mixing. -/
-  z_t3 : t3Double EWCarrier.Z = 0
-  /-- Higgs: `T₃ = 0` — neutral singlet. -/
-  higgs_t3 : t3Double EWCarrier.H = 0
+  /-- Carrier eigenvalue `q^{2k}` of each electroweak carrier. -/
+  eig : EWCarrier → Rˣ
+  /-- `W⁻` is the `σ`-image of `W⁺`: its eigenvalue is the bar image `a⁻¹`. -/
+  wMinus_eig : eig EWCarrier.Wm = (eig EWCarrier.Wp)⁻¹
+  /-- Non-degeneracy: `(q^{2k})² ≠ 1` for every carrier. -/
+  eig_sq_ne_one : ∀ c, ((eig c : R)) ^ 2 ≠ 1
 
-variable {R : Type*} [Field R] [Invertible (2 : R)] [EWSectorSelection R]
+variable {R : Type*} [Field R] [EWSectorSelection R]
 
-/-- **Doubled spin** (`2s`), *defined* from the sector: singlet `⇒ 0` (scalar,
-spin 0), doublet `⇒ 2` (vector, spin 1). -/
-def spinDouble (c : EWCarrier) : ℕ :=
-  if EWSectorSelection.isSinglet (R := R) c then 0 else 2
+/-- Sector vector of a carrier: the `σ`-even projection of its block vector if
+it is in `A₊`, the `σ`-odd projection if it is in `A₋`. -/
+def sectorVec (c : EWCarrier) : R × R :=
+  if EWSectorSelection.isSinglet (R := R) c then
+    plusPart (carrier (EWSectorSelection.eig c))
+  else
+    minusPart (carrier (EWSectorSelection.eig c))
 
-/-- **Neutrality** (bar-even membership): singlet carriers are neutral. -/
-def isNeutralByParity (c : EWCarrier) : Prop :=
-  EWSectorSelection.isSinglet (R := R) c = true
+open Classical in
+/-- **Doubled sector label** `2s`, computed from the action of `σ = swap₂` on the
+sector vector: `0` if `σ` fixes it, `2` otherwise. -/
+noncomputable def spinDouble (c : EWCarrier) : ℕ :=
+  if swap₂ (sectorVec (R := R) c) = sectorVec (R := R) c then 0 else 2
 
-/-- **Higgs is a scalar** (`spin 0`) — forced by the singlet postulate. -/
-theorem higgs_scalar : spinDouble (R := R) EWCarrier.H = 0 := by
-  simp [spinDouble, EWSectorSelection.higgs_singlet]
+/-- **Charge** of a carrier: the skew (`P_skew`) functional of its sector
+vector. -/
+def ewCharge (c : EWCarrier) : R := skew (sectorVec (R := R) c)
 
-/-- **`W⁺` is a vector** (`spin 1`) — forced by the doublet postulate. -/
-theorem wPlus_vector : spinDouble (R := R) EWCarrier.Wp = 2 := by
-  simp [spinDouble, EWSectorSelection.wPlus_doublet]
+/-- **Neutrality by parity**: zero skew charge. -/
+def isNeutralByParity (c : EWCarrier) : Prop := ewCharge (R := R) c = 0
 
-/-- **`W⁻` is a vector** (`spin 1`). -/
-theorem wMinus_vector : spinDouble (R := R) EWCarrier.Wm = 2 := by
-  simp [spinDouble, EWSectorSelection.wMinus_doublet]
+/-- The isospin table `2·T₃` used by the paper: `W± ↦ ±1`, `Z ↦ 0`, `H ↦ 0`.
+This is a **recorded label table, not derived** from `σ`. `Z ↦ 0` rests on the
+Weinberg `(W³,B) → (Z,γ)` mixing (`weinberg-angle-categorical`), and `H ↦ 0` is
+the model's assignment (the Standard Model gives the neutral Higgs component
+`T₃ = −½`). The values `W± ↦ ±1` read as `2·T₃` give `T₃ = ±½`, the doublet
+values of `def:spin-involution`, not the triplet values `T₃ = ±1` (the `.md` now
+states the table as `2·T₃`); the table is compared with `σ` in `IsospinFromSkew` / `OrderedSign`. -/
+def ewT3Double : EWCarrier → ℤ
+  | .Wp => 1
+  | .Wm => -1
+  | .Z => 0
+  | .H => 0
 
-/-- **`Z` is a vector** (`spin 1`). -/
-theorem z_vector : spinDouble (R := R) EWCarrier.Z = 2 := by
-  simp [spinDouble, EWSectorSelection.z_doublet]
+omit [EWSectorSelection R] in
+/-- `σ` negates the skew functional. -/
+theorem skew_swap₂ (p : R × R) : skew (swap₂ p) = - skew p := by
+  unfold skew swap₂; ring
 
-/-- **Higgs is neutral** — bar-even singlet. -/
+omit [EWSectorSelection R] in
+/-- A `σ`-even sector vector has zero skew. -/
+theorem skew_plusPart (p : R × R) : skew (plusPart p) = 0 := by
+  unfold skew plusPart swap₂
+  simp only [Prod.smul_fst, Prod.smul_snd, Prod.fst_add, Prod.snd_add, smul_eq_mul]
+  ring
+
+omit [EWSectorSelection R] in
+/-- For a non-degenerate carrier, the `σ`-odd skew `a − a⁻¹` is nonzero. -/
+theorem sub_inv_ne_zero_of_sq_ne_one (a : Rˣ) (h : ((a : R)) ^ 2 ≠ 1) :
+    (a : R) - (a : R)⁻¹ ≠ 0 := by
+  intro h0
+  apply h
+  have he : (a : R) = (a : R)⁻¹ := sub_eq_zero.mp h0
+  rw [sq]
+  nth_rewrite 2 [he]
+  exact mul_inv_cancel₀ a.ne_zero
+
+/-- Charge of an `A₊` carrier vanishes. -/
+theorem ewCharge_of_singlet {c : EWCarrier}
+    (h : EWSectorSelection.isSinglet (R := R) c = true) :
+    ewCharge (R := R) c = 0 := by
+  unfold ewCharge sectorVec
+  rw [if_pos h]
+  exact skew_plusPart _
+
+/-- Charge of an `A₋` carrier is `a − a⁻¹` (the bar-odd skew). -/
+theorem ewCharge_of_doublet [Invertible (2 : R)] {c : EWCarrier}
+    (h : EWSectorSelection.isSinglet (R := R) c = false) :
+    ewCharge (R := R) c =
+      (EWSectorSelection.eig (R := R) c : R) - (EWSectorSelection.eig (R := R) c : R)⁻¹ := by
+  unfold ewCharge sectorVec
+  rw [if_neg (by simp [h])]
+  exact skew_minusPart_carrier _
+
+/-- **The sector label is computed by `σ`.** With `2 ∈ Rˣ`, `σ` fixes the sector
+vector exactly for `A₊` carriers; so `spinDouble` equals the sector-valued
+encoding `0` on `A₊`, `2` on `A₋`. Uses `swap₂_plusPart`, `swap₂_minusPart`,
+non-degeneracy, and `2 ≠ 0`. -/
+theorem spinDouble_eq_sector [Invertible (2 : R)] (c : EWCarrier) :
+    spinDouble (R := R) c = if EWSectorSelection.isSinglet (R := R) c then 0 else 2 := by
+  unfold spinDouble
+  cases hc : EWSectorSelection.isSinglet (R := R) c
+  · -- `A₋`: `σ v = -v`, and `-v = v` would force zero skew
+    rw [if_neg]
+    · rfl
+    intro hfix
+    have hsk := congrArg skew hfix
+    rw [skew_swap₂] at hsk
+    have h2 : (2 : R) * ewCharge (R := R) c = 0 := by
+      unfold ewCharge; linear_combination -hsk
+    have hz : ewCharge (R := R) c = 0 :=
+      (mul_eq_zero.mp h2).resolve_left (isUnit_of_invertible (2 : R)).ne_zero
+    rw [ewCharge_of_doublet hc] at hz
+    exact sub_inv_ne_zero_of_sq_ne_one _ (EWSectorSelection.eig_sq_ne_one c) hz
+  · rw [if_pos]
+    · rfl
+    unfold sectorVec
+    rw [if_pos hc]
+    exact swap₂_plusPart _
+
+/-- **Higgs: sector label `0`** — computed from `σ` fixing its sector vector. -/
+theorem higgs_scalar [Invertible (2 : R)] : spinDouble (R := R) EWCarrier.H = 0 := by
+  rw [spinDouble_eq_sector, EWSectorSelection.higgs_singlet]; rfl
+
+/-- **`W⁺`: sector label `2`.** -/
+theorem wPlus_vector [Invertible (2 : R)] : spinDouble (R := R) EWCarrier.Wp = 2 := by
+  rw [spinDouble_eq_sector, EWSectorSelection.wPlus_doublet]; rfl
+
+/-- **`W⁻`: sector label `2`.** -/
+theorem wMinus_vector [Invertible (2 : R)] : spinDouble (R := R) EWCarrier.Wm = 2 := by
+  rw [spinDouble_eq_sector, EWSectorSelection.wMinus_doublet]; rfl
+
+/-- **`Z`: sector label `2`.** -/
+theorem z_vector [Invertible (2 : R)] : spinDouble (R := R) EWCarrier.Z = 2 := by
+  rw [spinDouble_eq_sector, EWSectorSelection.z_doublet]; rfl
+
+/-- **Higgs is neutral** — its `σ`-even sector vector has zero skew. -/
 theorem higgs_neutral : isNeutralByParity (R := R) EWCarrier.H :=
-  EWSectorSelection.higgs_singlet
+  ewCharge_of_singlet EWSectorSelection.higgs_singlet
 
-/-- **`W⁺` is charged** — bar-odd doublet, not neutral. -/
-theorem wPlus_charged : ¬ isNeutralByParity (R := R) EWCarrier.Wp := by
-  unfold isNeutralByParity; rw [EWSectorSelection.wPlus_doublet]; decide
+/-- **`W⁺` is charged** — nonzero skew `a − a⁻¹` of its `σ`-odd sector vector. -/
+theorem wPlus_charged [Invertible (2 : R)] : ¬ isNeutralByParity (R := R) EWCarrier.Wp := by
+  unfold isNeutralByParity
+  rw [ewCharge_of_doublet EWSectorSelection.wPlus_doublet]
+  exact sub_inv_ne_zero_of_sq_ne_one _ (EWSectorSelection.eig_sq_ne_one _)
 
-/-- **Theorem (charge + spin forced from the selection postulate).**
+/-- **`W⁻` has the opposite charge to `W⁺`** — its eigenvalue is the `σ`-image,
+and the skew changes sign under `a ↦ a⁻¹`. -/
+theorem wMinus_charge_neg [Invertible (2 : R)] :
+    ewCharge (R := R) EWCarrier.Wm = - ewCharge (R := R) EWCarrier.Wp := by
+  rw [ewCharge_of_doublet EWSectorSelection.wMinus_doublet,
+    ewCharge_of_doublet EWSectorSelection.wPlus_doublet, EWSectorSelection.wMinus_eig]
+  simp only [Units.val_inv_eq_inv_val, inv_inv]
+  ring
 
-    Conditional on the single physics postulate `EWSectorSelection`, the full
-    spin and isospin table of the electroweak triplet is *derived*: `H` is a
-    neutral scalar, `W±` are charged vectors with `T₃ = ±1`, `Z` is a
-    (mixing-)neutral vector with `T₃ = 0`. C3 (charge) and C4 (spin) are no
-    longer independent open conjectures — they follow from the sector map and
-    bar-parity. -/
-theorem ew_charge_spin_forced :
+/-- **Honest negative: `σ`-parity does not make `Z` neutral.** `Z` is in `A₋`, so
+its skew charge is nonzero. The neutrality of `Z` (`ewT3Double Z = 0`) is not a
+parity consequence; it rests on the Weinberg mixing (cf.
+`signed_C_does_not_force_W_slot_but_forces_neutral_mixed`). -/
+theorem z_not_neutral_by_parity [Invertible (2 : R)] : ¬ isNeutralByParity (R := R) EWCarrier.Z := by
+  unfold isNeutralByParity
+  rw [ewCharge_of_doublet EWSectorSelection.z_doublet]
+  exact sub_inv_ne_zero_of_sq_ne_one _ (EWSectorSelection.eig_sq_ne_one _)
+
+/-- **Theorem (sector label and charge computed through `σ`).**
+
+    Conditional on the postulate `EWSectorSelection` (sectors, eigenvalues,
+    `W⁻` = `σ`-image of `W⁺`, non-degeneracy), the action of `σ = swap₂` on the
+    sector vectors gives: `H` has sector label `0` and zero charge; `W±, Z` have
+    sector label `2`; `W⁺` has nonzero charge and `W⁻` the opposite charge.
+    The `T₃` table `ewT3Double` is not part of this theorem. -/
+theorem ew_charge_spin_forced [Invertible (2 : R)] :
     spinDouble (R := R) EWCarrier.H = 0 ∧
     spinDouble (R := R) EWCarrier.Wp = 2 ∧
     spinDouble (R := R) EWCarrier.Wm = 2 ∧
     spinDouble (R := R) EWCarrier.Z = 2 ∧
-    EWSectorSelection.t3Double (R := R) EWCarrier.Wp = 1 ∧
-    EWSectorSelection.t3Double (R := R) EWCarrier.Wm = -1 ∧
-    EWSectorSelection.t3Double (R := R) EWCarrier.Z = 0 ∧
-    EWSectorSelection.t3Double (R := R) EWCarrier.H = 0 ∧
-    isNeutralByParity (R := R) EWCarrier.H ∧
-    ¬ isNeutralByParity (R := R) EWCarrier.Wp :=
+    ewCharge (R := R) EWCarrier.H = 0 ∧
+    ewCharge (R := R) EWCarrier.Wp ≠ 0 ∧
+    ewCharge (R := R) EWCarrier.Wm = - ewCharge (R := R) EWCarrier.Wp :=
   ⟨higgs_scalar, wPlus_vector, wMinus_vector, z_vector,
-    EWSectorSelection.wPlus_t3, EWSectorSelection.wMinus_t3,
-    EWSectorSelection.z_t3, EWSectorSelection.higgs_t3,
-    higgs_neutral, wPlus_charged⟩
+    higgs_neutral, wPlus_charged, wMinus_charge_neg⟩
 
 /-! ## Task 2 — the σ₅⁸ bar-grading is DERIVED from spin (not merely stated)
 
@@ -294,10 +407,10 @@ a bare postulate to a spin-derived theorem: the only residual postulate is that
 (`spinDouble c = 2`) must inhabit the doublet `A₋` (`isSinglet = false`). The
 sector is *determined* by the spin — it is not an independent free choice once
 the spin is fixed. -/
-theorem sector_forced_by_spin (c : EWCarrier) :
+theorem sector_forced_by_spin [Invertible (2 : R)] (c : EWCarrier) :
     (spinDouble (R := R) c = 0 → EWSectorSelection.isSinglet (R := R) c = true) ∧
     (spinDouble (R := R) c = 2 → EWSectorSelection.isSinglet (R := R) c = false) := by
-  unfold spinDouble
+  rw [spinDouble_eq_sector]
   cases EWSectorSelection.isSinglet (R := R) c <;> simp
 
 /-- Bar-sector recovered from the (doubled) spin via the spin-involution grading
@@ -309,9 +422,10 @@ def barSectorOfSpin (twoS : ℕ) : Bool := twoS == 0
 every EW carrier it recovers the sector from the spin (`barSectorOfSpin ∘
 spinDouble = isSinglet`). This injectivity is what makes "spin forces sector" a
 *derivation* rather than a re-postulation. -/
-theorem barSectorOfSpin_inverts (c : EWCarrier) :
+theorem barSectorOfSpin_inverts [Invertible (2 : R)] (c : EWCarrier) :
     barSectorOfSpin (spinDouble (R := R) c) = EWSectorSelection.isSinglet (R := R) c := by
-  unfold barSectorOfSpin spinDouble
+  rw [spinDouble_eq_sector]
+  unfold barSectorOfSpin
   cases EWSectorSelection.isSinglet (R := R) c <;> rfl
 
 /-- The two occupants of the Hoefsmit slot `σ₅⁸` (`= T(2,8)`, strands 5–6): the
@@ -357,22 +471,23 @@ sub-saturating slot hosts the charged carrier is a **free label**. Below:
 `A₊` singlet is neutral; and (ii) the *underdetermination* — two distinct
 crossing→isospin labelings both satisfy every proved constraint. -/
 
-/-- **Forced part of the charge labeling.** From the sector postulate alone: the
-charged carriers `W±` (`t₃ = ±1 ≠ 0`) are bar-odd `A₋` doublets, and the `A₊`
-singlet `H` is neutral (`t₃ = 0`). So *charge ⇒ doublet* and *singlet ⇒ neutral*
-hold for these carriers. What is **not** entailed is which crossing slot the
-charged pair occupies — that is the free label of `which_slot_is_W_free`. -/
-theorem charged_are_doublets_singlet_neutral :
-    EWSectorSelection.isSinglet (R := R) EWCarrier.Wp = false ∧
-    EWSectorSelection.isSinglet (R := R) EWCarrier.Wm = false ∧
-    EWSectorSelection.t3Double (R := R) EWCarrier.Wp ≠ 0 ∧
-    EWSectorSelection.t3Double (R := R) EWCarrier.Wm ≠ 0 ∧
-    EWSectorSelection.isSinglet (R := R) EWCarrier.H = true ∧
-    EWSectorSelection.t3Double (R := R) EWCarrier.H = 0 :=
-  ⟨EWSectorSelection.wPlus_doublet, EWSectorSelection.wMinus_doublet,
-    by rw [EWSectorSelection.wPlus_t3]; decide,
-    by rw [EWSectorSelection.wMinus_t3]; decide,
-    EWSectorSelection.higgs_singlet, EWSectorSelection.higgs_t3⟩
+/-- **Forced part of the charge labeling.** From the sector postulate, computed
+through `σ`: a carrier with nonzero skew charge is in the bar-odd sector `A₋`
+(contrapositive of `ewCharge_of_singlet`), so the charged `W±` are `A₋` carriers,
+and the `A₊` Higgs has zero charge. What is **not** entailed is which crossing
+slot the charged pair occupies — that is the free label of `which_slot_is_W_free`. -/
+theorem charged_are_doublets_singlet_neutral [Invertible (2 : R)] :
+    (∀ c : EWCarrier, ewCharge (R := R) c ≠ 0 →
+      EWSectorSelection.isSinglet (R := R) c = false) ∧
+    ewCharge (R := R) EWCarrier.Wp ≠ 0 ∧
+    ewCharge (R := R) EWCarrier.Wm ≠ 0 ∧
+    ewCharge (R := R) EWCarrier.H = 0 := by
+  refine ⟨fun c hc => ?_, wPlus_charged, ?_, higgs_neutral⟩
+  · cases h : EWSectorSelection.isSinglet (R := R) c
+    · rfl
+    · exact absurd (ewCharge_of_singlet h) hc
+  · rw [wMinus_charge_neg]
+    exact neg_ne_zero.mpr wPlus_charged
 
 /-- A crossing→isospin labeling of the two *vector* (`A₋` doublet) electroweak
 slots, indexed by their crossing counts. `t3` gives the doubled isospin at each
@@ -768,5 +883,315 @@ theorem label_forced_given_group_assignment [EWGroupAssignment] :
     · rw [if_neg h]; exact iff_of_false (by decide) h
 
 end SignedCrossing
+
+
+/-! ## Spin-2 no-go for the `Bool`-sector encoding, and its `ℕ`-graded extension
+
+`spinDouble` factors through the two-valued sector `isSinglet : EWCarrier → Bool`
+(singlet `↦ 0`, doublet `↦ 2`). It is therefore a `ℤ/2`-valued label in disguise,
+and that is enough for the electroweak carriers, which have spin `0` or `1`.
+
+It is *not* enough for the spin-`2` summand `V₂ = Sym²(V₁) ⊖ V₀` of the gauge
+`SU(2)` (`QOU.Eightfold.Sym2AdjointSpinTwo.adjoint_sym2_traceless_is_spin_two`).
+This section records, precisely, that the existing encoding cannot represent
+spin `2`, and gives an extension that can, which restricts to the existing
+encoding on the electroweak carriers.
+
+* `spinDouble_ne_four` — no carrier has doubled spin `4`;
+* `bool_sector_not_injective_on_spins` — *any* two-valued sector map, whatever
+  its values, identifies two of the spins `0, 1, 2`; so the obstruction is the
+  `ℤ/2` target, not the particular choice `0 ↦ 0, 1 ↦ 2`;
+* `barSectorOfSpin_spinOne_eq_spinTwo` — the existing inverse `barSectorOfSpin`
+  sends spin `1` and spin `2` to the same sector;
+* `GradedSpin` — doubled spin as an unrestricted natural number (the
+  non-negative part of `ℤ`; the same `twice_j` convention as `QOU.SpinLabels`),
+  with `GradedSpin.ofSector` / `GradedSpin.toSector` the embedding of the old
+  encoding and its retraction. `GradedSpin` is a wrapper around `ℕ`; it adds a
+  value range, not new mathematics, and it is linked to
+  `QOU.Eightfold.Sym2AdjointSpinTwo.spinTwo` only by the shared `twice_j`
+  convention, not by an import.
+
+Nothing in this section says that any electroweak carrier, or any object at all,
+*has* spin `2`. -/
+
+section SpinTwoNoGo
+
+/-- The `Bool`-sector encoding that `spinDouble` factors through:
+singlet (`true`) `↦ 0`, doublet (`false`) `↦ 2`. -/
+def sectorSpinDouble (b : Bool) : ℕ := if b then 0 else 2
+
+/-- The encoding takes only the values `0` and `2`. -/
+theorem sectorSpinDouble_mem (b : Bool) :
+    sectorSpinDouble b = 0 ∨ sectorSpinDouble b = 2 := by
+  cases b <;> decide
+
+/-- The encoding never takes the value `4` (doubled spin of `V₂`). -/
+theorem sectorSpinDouble_ne_four (b : Bool) : sectorSpinDouble b ≠ 4 := by
+  cases b <;> decide
+
+/-- **No-go (spin 2 is not representable).** For every sector selection, no
+electroweak carrier has `spinDouble = 4`, i.e. spin `2`. -/
+theorem spinDouble_ne_four [Invertible (2 : R)] (c : EWCarrier) :
+    spinDouble (R := R) c ≠ 4 := by
+  -- `spinDouble = sectorSpinDouble ∘ isSinglet` by `spinDouble_eq_sector`.
+  rw [spinDouble_eq_sector]
+  exact sectorSpinDouble_ne_four (EWSectorSelection.isSinglet (R := R) c)
+
+/-- **No-go, independent of the encoding's values.** A map from doubled spin to
+a two-valued sector cannot separate the three spins `0, 1, 2` (doubled: `0, 2,
+4`): two of them always share a sector (pigeonhole). -/
+theorem bool_sector_not_injective_on_spins (f : ℕ → Bool) :
+    f 0 = f 2 ∨ f 0 = f 4 ∨ f 2 = f 4 := by
+  cases h0 : f 0 <;> cases h2 : f 2 <;> cases h4 : f 4 <;> decide
+
+/-- The existing inverse `barSectorOfSpin` sends spin `1` and spin `2` to the
+same (doublet) sector: it inverts `spinDouble` on `{0, 2}` only. -/
+theorem barSectorOfSpin_spinOne_eq_spinTwo :
+    barSectorOfSpin 2 = barSectorOfSpin 4 := by decide
+
+/-- **`ℕ`-graded spin label**: doubled spin `2s` with no restriction to
+`{0, 2}`. Same `twice_j` convention as `QOU.SpinLabels`; the spin-`2` label of
+`QOU.Eightfold.Sym2AdjointSpinTwo.spinTwo` is `twoS = 4`. -/
+structure GradedSpin where
+  /-- Twice the spin. -/
+  twoS : ℕ
+deriving DecidableEq
+
+/-- Embedding of the old two-valued encoding into the graded label. -/
+def GradedSpin.ofSector (b : Bool) : GradedSpin := ⟨sectorSpinDouble b⟩
+
+/-- Projection of a graded label back to the `Bool` sector, via the existing
+`barSectorOfSpin` (`true` iff spin `0`). -/
+def GradedSpin.toSector (s : GradedSpin) : Bool := barSectorOfSpin s.twoS
+
+/-- The spin-`2` graded label. -/
+def GradedSpin.spinTwo : GradedSpin := ⟨4⟩
+
+/-- **Compatibility 1.** `toSector` is a retraction of `ofSector`: no sector
+information is lost by passing to the graded label. -/
+theorem GradedSpin.toSector_ofSector (b : Bool) :
+    (GradedSpin.ofSector b).toSector = b := by
+  cases b <;> decide
+
+/-- **Compatibility 2.** Projecting the graded label of a carrier recovers its
+sector; this is `barSectorOfSpin_inverts`, read through `GradedSpin`. -/
+theorem GradedSpin.toSector_spinDouble [Invertible (2 : R)] (c : EWCarrier) :
+    (GradedSpin.mk (spinDouble (R := R) c)).toSector =
+      EWSectorSelection.isSinglet (R := R) c :=
+  barSectorOfSpin_inverts (R := R) c
+
+/-- **The extension is proper.** The spin-`2` label is not in the image of the
+old encoding. -/
+theorem GradedSpin.spinTwo_not_ofSector (b : Bool) :
+    GradedSpin.ofSector b ≠ GradedSpin.spinTwo := by
+  cases b <;> decide
+
+/-- Projecting spin `2` back to the `Bool` sector lands on the doublet, the
+same sector as spin `1`; the projection forgets exactly what the extension adds. -/
+theorem GradedSpin.spinTwo_toSector :
+    GradedSpin.spinTwo.toSector = (GradedSpin.ofSector false).toSector := by
+  decide
+
+end SpinTwoNoGo
+
+/-! ## Isospin `T₃` against the skew charge (2026-11-20)
+
+The recorded table `ewT3Double` is compared with what `σ` and the skew
+functional compute. Three results:
+
+* **No-go (generic field).** `ewT3Double` is not an affine function `λ·Q + μ` of
+  the skew charge. The `H` row forces `μ = 0`, the `Z` row (`Q(Z) ≠ 0`,
+  `z_not_neutral_by_parity`) forces `λ = 0`, and the `W⁺` row then reads `1 = 0`.
+* **Normalised skew (generic field).** `Q(c)/Q(W⁺)` equals `1, −1, 0` on
+  `W⁺, W⁻, H`, and is nonzero on `Z`. It agrees with the table except at `Z`.
+* **Sign rule (ordered field).** `def:spin-involution` sets `2T₃ = 0` on `A₊`
+  and `2T₃ = ±1` on `A₋`, with the sign an input there (`isospinT3` takes
+  `sgn : ℤ`). Reading the sign as the sign of the skew charge gives
+  `H ↦ 0`, `W± ↦ ±1`, `Z ↦ +1` when the eigenvalues exceed `1`. It agrees with
+  the table on `W±, H` and disagrees at `Z`.
+
+In every reading the obstruction is the same: `Z ∈ A₋` has nonzero skew. -/
+
+section IsospinFromSkew
+
+/-- **No-go: the `T₃` table is not affine in the skew charge.** There are no
+`λ μ : R` with `ewT3Double c = λ · Q(c) + μ` for every carrier. -/
+theorem ewT3Double_not_affine_in_charge [Invertible (2 : R)] :
+    ¬ ∃ lam mu : R, ∀ c : EWCarrier,
+      ((ewT3Double c : ℤ) : R) = lam * ewCharge (R := R) c + mu := by
+  rintro ⟨lam, mu, h⟩
+  have hH := h EWCarrier.H
+  have hZ := h EWCarrier.Z
+  have hW := h EWCarrier.Wp
+  rw [higgs_neutral] at hH
+  simp only [ewT3Double, Int.cast_zero, Int.cast_one, mul_zero, zero_add] at hH hZ hW
+  rw [← hH, add_zero] at hZ hW
+  have hQZ : ewCharge (R := R) EWCarrier.Z ≠ 0 := z_not_neutral_by_parity
+  have hlam : lam = 0 := by
+    rcases mul_eq_zero.mp hZ.symm with h0 | h0
+    · exact h0
+    · exact absurd h0 hQZ
+  rw [hlam, zero_mul] at hW
+  exact one_ne_zero hW
+
+/-- Skew charge normalised by the `W⁺` charge. -/
+def t3OfSkew (c : EWCarrier) : R :=
+  ewCharge (R := R) c / ewCharge (R := R) EWCarrier.Wp
+
+/-- **Normalised skew on the four carriers.** `W⁺ ↦ 1`, `W⁻ ↦ −1`, `H ↦ 0`,
+and `Z ↦` a nonzero value. Agreement with `ewT3Double` on `W±, H`; disagreement
+at `Z`. -/
+theorem t3OfSkew_values [Invertible (2 : R)] :
+    t3OfSkew (R := R) EWCarrier.Wp = 1 ∧
+    t3OfSkew (R := R) EWCarrier.Wm = -1 ∧
+    t3OfSkew (R := R) EWCarrier.H = 0 ∧
+    t3OfSkew (R := R) EWCarrier.Z ≠ 0 := by
+  have hW : ewCharge (R := R) EWCarrier.Wp ≠ 0 := wPlus_charged
+  refine ⟨div_self hW, ?_, ?_, ?_⟩
+  · unfold t3OfSkew; rw [wMinus_charge_neg, neg_div, div_self hW]
+  · unfold t3OfSkew; rw [higgs_neutral, zero_div]
+  · exact div_ne_zero z_not_neutral_by_parity hW
+
+end IsospinFromSkew
+
+section OrderedSign
+
+variable [LinearOrder R] [IsStrictOrderedRing R]
+
+omit [EWSectorSelection R] in
+/-- For `a > 1` the skew `a − a⁻¹` is positive. -/
+theorem sub_inv_pos_of_one_lt (a : Rˣ) (h : 1 < (a : R)) : 0 < (a : R) - (a : R)⁻¹ := by
+  have ha : (0 : R) < a := lt_trans zero_lt_one h
+  have hi : (a : R)⁻¹ < 1 := inv_lt_one_of_one_lt₀ h
+  linarith
+
+/-- **Doubled `T₃` by the spin-involution sign rule**: the sign of the skew
+charge. It is `0` exactly on the `σ`-even sector (`sgnT3Double_eq_zero_iff`). -/
+def sgnT3Double (c : EWCarrier) : ℤ := (SignType.sign (ewCharge (R := R) c) : ℤ)
+
+omit [IsStrictOrderedRing R] in
+/-- The sign rule vanishes exactly on `A₊`. -/
+theorem sgnT3Double_eq_zero_iff [Invertible (2 : R)] (c : EWCarrier) :
+    sgnT3Double (R := R) c = 0 ↔ EWSectorSelection.isSinglet (R := R) c = true := by
+  unfold sgnT3Double
+  have hcast : ∀ t : SignType, ((t : ℤ) = 0 ↔ t = 0) := by
+    intro t; cases t <;> decide
+  rw [hcast, sign_eq_zero_iff]
+  constructor
+  · intro h0
+    cases hc : EWSectorSelection.isSinglet (R := R) c
+    · rw [ewCharge_of_doublet hc] at h0
+      exact absurd h0 (sub_inv_ne_zero_of_sq_ne_one _ (EWSectorSelection.eig_sq_ne_one c))
+    · rfl
+  · intro hc; exact ewCharge_of_singlet hc
+
+/-- **Sign rule on the four carriers.** With `1 < a_{W⁺}` and `1 < a_Z`
+(`a = q^{2k}`, `q > 1`, `k ≥ 1`): `H ↦ 0`, `W⁺ ↦ 1`, `W⁻ ↦ −1`, `Z ↦ 1`. -/
+theorem sgnT3Double_values [Invertible (2 : R)]
+    (hW : 1 < (EWSectorSelection.eig (R := R) EWCarrier.Wp : R))
+    (hZ : 1 < (EWSectorSelection.eig (R := R) EWCarrier.Z : R)) :
+    sgnT3Double (R := R) EWCarrier.H = 0 ∧
+    sgnT3Double (R := R) EWCarrier.Wp = 1 ∧
+    sgnT3Double (R := R) EWCarrier.Wm = -1 ∧
+    sgnT3Double (R := R) EWCarrier.Z = 1 := by
+  have pW : 0 < ewCharge (R := R) EWCarrier.Wp := by
+    rw [ewCharge_of_doublet EWSectorSelection.wPlus_doublet]
+    exact sub_inv_pos_of_one_lt _ hW
+  have pZ : 0 < ewCharge (R := R) EWCarrier.Z := by
+    rw [ewCharge_of_doublet EWSectorSelection.z_doublet]
+    exact sub_inv_pos_of_one_lt _ hZ
+  have nM : ewCharge (R := R) EWCarrier.Wm < 0 := by
+    rw [wMinus_charge_neg]; linarith
+  unfold sgnT3Double
+  refine ⟨?_, ?_, ?_, ?_⟩
+  · rw [higgs_neutral, sign_zero]; rfl
+  · rw [sign_pos pW]; rfl
+  · rw [sign_neg nM]; rfl
+  · rw [sign_pos pZ]; rfl
+
+/-- **The sign rule agrees with the recorded table on `W±, H` and disagrees at
+`Z`.** -/
+theorem sgnT3Double_vs_table [Invertible (2 : R)]
+    (hW : 1 < (EWSectorSelection.eig (R := R) EWCarrier.Wp : R))
+    (hZ : 1 < (EWSectorSelection.eig (R := R) EWCarrier.Z : R)) :
+    sgnT3Double (R := R) EWCarrier.H = ewT3Double EWCarrier.H ∧
+    sgnT3Double (R := R) EWCarrier.Wp = ewT3Double EWCarrier.Wp ∧
+    sgnT3Double (R := R) EWCarrier.Wm = ewT3Double EWCarrier.Wm ∧
+    sgnT3Double (R := R) EWCarrier.Z ≠ ewT3Double EWCarrier.Z := by
+  obtain ⟨h1, h2, h3, h4⟩ := sgnT3Double_values (R := R) hW hZ
+  refine ⟨h1, h2, h3, ?_⟩
+  rw [h4]; decide
+
+end OrderedSign
+
+/-! ## The `(W³, B) → (Z, γ)` rotation and a linear charge (2026-11-20)
+
+`weinberg-angle-categorical` names the rotation but does not formalise it. Here
+it is the rotation `Z = c·W³ − s·B`, `γ = s·W³ + c·B` with `c² + s² = 1`, and a
+charge functional extended linearly from its values `x = Q(W³)`, `y = Q(B)`.
+The rotation preserves `x² + y²`, so it cannot make both `Z` and `γ` neutral
+unless `x = y = 0`. At the corpus angle `c = cot θ_W · s`, `Q(Z) = 0` holds iff
+`cot θ_W · x = y`. -/
+
+section WeinbergMixing
+
+variable {K : Type*} [Field K]
+
+/-- Linear charge of `Z = c·W³ − s·B`. -/
+def mixChargeZ (c s x y : K) : K := c * x - s * y
+
+/-- Linear charge of `γ = s·W³ + c·B`. -/
+def mixChargeGamma (c s x y : K) : K := s * x + c * y
+
+/-- The rotation preserves the charge norm `x² + y²`. -/
+theorem mixCharge_norm (c s x y : K) (h : c ^ 2 + s ^ 2 = 1) :
+    mixChargeZ c s x y ^ 2 + mixChargeGamma c s x y ^ 2 = x ^ 2 + y ^ 2 := by
+  unfold mixChargeZ mixChargeGamma
+  linear_combination (x ^ 2 + y ^ 2) * h
+
+/-- **No-go: mixing cannot neutralise both `Z` and `γ`.** If both rotated charges
+vanish, then `Q(W³) = Q(B) = 0`. -/
+theorem mixing_neutral_both_iff (c s x y : K) (h : c ^ 2 + s ^ 2 = 1) :
+    (mixChargeZ c s x y = 0 ∧ mixChargeGamma c s x y = 0) ↔ (x = 0 ∧ y = 0) := by
+  unfold mixChargeZ mixChargeGamma
+  constructor
+  · rintro ⟨hZ, hG⟩
+    exact ⟨by linear_combination c * hZ + s * hG - x * h,
+      by linear_combination (-s) * hZ + c * hG - y * h⟩
+  · rintro ⟨rfl, rfl⟩; constructor <;> ring
+
+/-- If `Z` is neutral, the photon carries the whole charge norm:
+`Q(γ)² = x² + y²`. -/
+theorem mixChargeGamma_sq_of_Z_neutral (c s x y : K) (h : c ^ 2 + s ^ 2 = 1)
+    (hZ : mixChargeZ c s x y = 0) :
+    mixChargeGamma c s x y ^ 2 = x ^ 2 + y ^ 2 := by
+  have := mixCharge_norm c s x y h
+  rw [hZ] at this
+  linear_combination this
+
+/-- **`Z` is neutral at the corpus angle iff `cot θ_W · Q(W³) = Q(B)`.** With
+`c = cot θ_W · s` and `s ≠ 0` (the parametrisation of
+`weinberg-angle-categorical`, `cot_identification`). -/
+theorem mixChargeZ_eq_zero_iff_cot (cotW s x y : K) (hs : s ≠ 0) :
+    mixChargeZ (cotW * s) s x y = 0 ↔ cotW * x = y := by
+  unfold mixChargeZ
+  have e : cotW * s * x - s * y = s * (cotW * x - y) := by ring
+  rw [e, mul_eq_zero, sub_eq_zero]
+  exact ⟨fun h => h.resolve_left hs, Or.inr⟩
+
+/-- **In the model, both pre-mixing charges are nonzero.** If `W³` and `B` are
+`σ`-odd sector vectors of non-degenerate eigenvalues `a, b` (the `σ₅⁸` grading
+puts `B ∈ A₋`), their skew charges `a − a⁻¹`, `b − b⁻¹` are nonzero, so no
+rotation makes both `Z` and `γ` neutral. -/
+theorem mixing_cannot_neutralise_model [Invertible (2 : K)] (a b : Kˣ)
+    (ha : (a : K) ^ 2 ≠ 1) (c s : K) (h : c ^ 2 + s ^ 2 = 1) :
+    ¬ (mixChargeZ c s (skew (minusPart (carrier a))) (skew (minusPart (carrier b))) = 0 ∧
+       mixChargeGamma c s (skew (minusPart (carrier a))) (skew (minusPart (carrier b))) = 0) := by
+  intro hb
+  have hx := ((mixing_neutral_both_iff c s _ _ h).mp hb).1
+  rw [skew_minusPart_carrier] at hx
+  exact sub_inv_ne_zero_of_sq_ne_one a ha hx
+
+end WeinbergMixing
 
 end QOU.ParticleInteractions

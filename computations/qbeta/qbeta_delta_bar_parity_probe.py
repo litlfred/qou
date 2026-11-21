@@ -229,10 +229,12 @@ def _mult(word_ops):
     return M
 
 
+_CHECKS: list[str] = []
 _FAILURES: list[str] = []
 
 
 def check(name, ok, detail, w=None):
+    _CHECKS.append(name)
     print(f"  [{'PASS' if ok else 'FAIL'}] {name}")
     print(f"         {detail}")
     if w is not None:
@@ -499,12 +501,13 @@ def main() -> int:
     w.add_data("adjudicates_the_fork", False)
     w.add_data("wires_anything", False)
 
-    npass = 15 - len(_FAILURES)
-    print(f"\n  {npass}/15 checks passed")
+    ntotal = len(_CHECKS)
+    npass = ntotal - len(_FAILURES)
+    print(f"\n  {npass}/{ntotal} checks passed")
     if _FAILURES:
         print(f"  FAILURES: {', '.join(_FAILURES)}")
     w.add_data("checks_passed", npass)
-    w.add_data("checks_total", 15)
+    w.add_data("checks_total", ntotal)
     out = w.save()
     print(f"\n  witness -> {out}")
     return 1 if _FAILURES else 0

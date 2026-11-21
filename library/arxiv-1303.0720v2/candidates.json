@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1303.0720v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "389ab465e81a06674df137c14c10ae3f34ab0626b329424eac052cf8a8e9f185",
+  "file": "1303.0720v2.pdf"
+ },
+ "provenance": {
+  "title": "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS",
+  "authors": "ANTTI HAIMI AND HAAKAN HEDENMALM",
+  "arxiv": {
+   "id": "1303.0720",
+   "version": "2",
+   "primary_class": "math.CV",
+   "stamp_date": "9 Mar 2013"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

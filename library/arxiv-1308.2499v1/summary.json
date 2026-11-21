@@ -3,39 +3,49 @@
  "doc_id": "arxiv-1308.2499v1",
  "source_sha256": "3b20abdc0e1b0ba9",
  "brief": "Towards a regularity theory for integral Menger curvature — We generalize the notion of integral Menger curvature introduced by Gonzalez and Maddocks [14] by decoupling the powers in the integrand.",
- "extended": "**Towards a regularity theory for integral Menger curvature**\n\n*Simon Blatt∗ Philipp Reiter∗∗*\n\n32 pp, 6 sections.\n\n**Abstract.** We generalize the notion of integral Menger curvature introduced by Gonzalez and Maddocks [14] by decoupling the powers in the integrand. This leads to a new two-parameter family of knot energies intM(p,q). We classify ﬁnite-energy curves in terms of Sobolev-Slobodecki˘ı spaces. More- over, restricting to the range of parameters leading to a sub-critical Euler-Lagrange equation, we prove existence of minimizers within any knot class via a uniform bi- Lipschitz bound. Consequemtly, intM(p,q) is a knot energy in the sense of O’Hara. Restricting to the non-degenerate sub-critical case, a suitable decomposition of the ﬁrst variation allows to establish a bootstrapping argument that leads to C∞- smoothness of critical points.\n\n**Outline.** Front matter; Introduction; 2 Existence of minimizers within knot classes; 4 Regularity of stationary points; A Product and chain rule; B Equivalence of fractional seminorms",
+ "extended": "**Towards a regularity theory for integral Menger curvature**\n\n*Simon Blatt∗*\n\n32 pp, 8 sections.\n\n**Abstract.** We generalize the notion of integral Menger curvature introduced by Gonzalez and Maddocks [14] by decoupling the powers in the integrand. This leads to a new two-parameter family of knot energies intM(p,q). We classify ﬁnite-energy curves in terms of Sobolev-Slobodecki˘ı spaces. More- over, restricting to the range of parameters leading to a sub-critical Euler-Lagrange equation, we prove existence of minimizers within any knot class via a uniform bi- Lipschitz bound. Consequemtly, intM(p,q) is a knot energy in the sense of O’Hara. Restricting to the non-degenerate sub-critical case, a suitable decomposition of the ﬁrst variation allows to establish a bootstrapping argument that leads to C∞- smoothness of critical points.\n\n**Outline.** Front matter; Introduction; 1 Classification of finite-energy curves; 2 Existence of minimizers within knot classes; 3 Differentiability; 4 Regularity of stationary points; A Product and chain rule; B Equivalence of fractional seminorms",
  "tokens": {
   "brief": 49,
-  "extended": 262
+  "extended": 273
  },
  "sections": [
   {
    "id": "sec-front-matter",
    "title": "Front matter",
-   "pages": "1-1"
+   "pages": "1-2"
   },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
-   "pages": "1-11"
+   "pages": "2-6"
   },
   {
-   "id": "sec-001-2-existence-of-minimizers-within-knot-classes",
+   "id": "sec-001-1-classification-of-finite-energy-curves",
+   "title": "Classification of finite-energy curves",
+   "pages": "6-11"
+  },
+  {
+   "id": "sec-002-2-existence-of-minimizers-within-knot-classes",
    "title": "Existence of minimizers within knot classes",
-   "pages": "11-19"
+   "pages": "11-15"
   },
   {
-   "id": "sec-002-4-regularity-of-stationary-points",
+   "id": "sec-003-3-differentiability",
+   "title": "Differentiability",
+   "pages": "15-19"
+  },
+  {
+   "id": "sec-004-4-regularity-of-stationary-points",
    "title": "Regularity of stationary points",
    "pages": "19-26"
   },
   {
-   "id": "sec-003-a-product-and-chain-rule",
+   "id": "sec-005-a-product-and-chain-rule",
    "title": "A Product and chain rule",
    "pages": "26-27"
   },
   {
-   "id": "sec-004-b-equivalence-of-fractional-seminorms",
+   "id": "sec-006-b-equivalence-of-fractional-seminorms",
    "title": "B Equivalence of fractional seminorms",
    "pages": "27-32"
   }

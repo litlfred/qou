@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2301.00125v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2301.00125v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-2301.00125v3",
+  "title": "Generating Function for Pinsky’s Combinatorial Second Moment Formula for the Generalized Ulam Problem",
   "contains": [
+    "library/arxiv-2301.00125v3/sections/sec-front-matter",
     "library/arxiv-2301.00125v3/sections/sec-000",
     "library/arxiv-2301.00125v3/sections/sec-001",
     "library/arxiv-2301.00125v3/sections/sec-002",
@@ -26,10 +27,14 @@
     "library/arxiv-2301.00125v3/sections/sec-012",
     "library/arxiv-2301.00125v3/sections/sec-013",
     "library/arxiv-2301.00125v3/sections/sec-014",
-    "library/arxiv-2301.00125v3/sections/sec-015"
+    "library/arxiv-2301.00125v3/sections/sec-015",
+    "library/arxiv-2301.00125v3/sections/sec-016",
+    "library/arxiv-2301.00125v3/sections/sec-017",
+    "library/arxiv-2301.00125v3/sections/sec-018",
+    "library/arxiv-2301.00125v3/sections/sec-019"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {
     "status": "stated",
@@ -39,7 +44,9 @@
   },
   "meta": {
     "doc_id": "arxiv-2301.00125v3",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "2301.00125v3.pdf",
     "source_sha256": "7ecd0cff7d6c2ec4ca969bc68728e9d29769c57dfa49b482addae9a11ff89cc0",
     "pages": 35,
@@ -50,8 +57,8 @@
       "stamp_date": "3 May 2023"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

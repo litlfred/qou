@@ -1,0 +1,1 @@
+Suppose φ1 : Q1 →P1 and φ2 : I2 →J2 are quasi-isomorphisms in C(A, M), and either of the conditions below holds: (i) Q1 and P1 are both K-projective. (ii) I2 and J2 are both K-injective. Then the homomorphism HomA,M(φ1, φ2) : HomA,M(P1, I2) →HomA,M(Q1, J2) in C(K) is a quasi-isomorphism.

@@ -1,0 +1,1 @@
+Assume that kH is quasicentral. If the image of the canonical map t, : CF(H) — CF(kH) contains ch(Ro(kH)), then the map e is injective (hence, given two projective H-modules M and N, we have KM ~ KN if and only if M ~ N). In particular, the decomposi- tion map d has finite cokernel and the algebra KH has at least as many simple modules as the algebra kH.

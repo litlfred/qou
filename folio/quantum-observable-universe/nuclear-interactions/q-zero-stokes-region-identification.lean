@@ -193,6 +193,38 @@ theorem q_0_exists_in_universal_base
     Nonempty R := by
   exact ⟨(inferInstance : QZeroStokesIdentification K R).q_0⟩
 
+/-- In any `UniversalBase R`, the generator `q` is a unit, witnessed by
+    `q_inv_property : q * q_inv = 1`. -/
+theorem q_isUnit (R : Type*) [CommRing R] [ub : UniversalBase R] :
+    IsUnit ub.q :=
+  isUnit_of_mul_eq_one ub.q ub.q_inv ub.q_inv_property
+
+/-- In any `UniversalBase R`, the inverse generator `q_inv` is also a unit. -/
+theorem q_inv_isUnit (R : Type*) [CommRing R] [ub : UniversalBase R] :
+    IsUnit ub.q_inv :=
+  isUnit_of_mul_eq_one ub.q_inv ub.q (by rw [mul_comm, ub.q_inv_property])
+
+/-- Under Mostow–Prasad rigidity (`MPD.rigid`), any conjugacy-invariant
+    functional `traceInvariant` assigns the exact same value `q_0` to every
+    discrete-faithful representation `r : MPD.Rep`. -/
+theorem q_0_eq_traceInvariant_of_isDiscreteFaithful
+    (K : KnotComplement) (R : Type*) [CommRing R]
+    [UniversalBase R] [MPD : MostowPrasadDistinguished K] [ReidTraceField K]
+    [inst : QZeroStokesIdentification K R]
+    (hconj : ∀ r₁ r₂ : MPD.Rep, MPD.Conjugate r₁ r₂ →
+      inst.traceInvariant r₁ = inst.traceInvariant r₂)
+    (r : MPD.Rep) (hr : MPD.IsDiscreteFaithful r) :
+    inst.q_0 = inst.traceInvariant r := by
+  rw [inst.identification_witness, ← hconj r MPD.rho_DF (MPD.rigid r hr)]
+
+/-- By Reid's trace-field degree bound (`finite_positive`), the trace field
+    degree over `ℚ` is non-zero. -/
+theorem trace_field_degree_ne_zero
+    (K : KnotComplement) [MostowPrasadDistinguished K] [rtf : ReidTraceField K] :
+    rtf.trace_field_degree ≠ 0 := by
+  have h := rtf.finite_positive
+  omega
+
 /-! ## §4. INSTANCE for borromean — explicitly the OPEN status
 
 We do NOT inhabit the classes for `borromean` here. Each instance

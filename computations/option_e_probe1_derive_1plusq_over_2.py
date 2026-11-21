@@ -46,6 +46,7 @@ import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from q_parameter import q_at, q_muon_at  # noqa: E402
+from codata_constants import AME_B_HE3_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 DPS = 50
 mp.mp.dps = DPS
@@ -57,7 +58,7 @@ M_PI_MEV = mp.mpf(M_PI_PM_MEV_VALIDATION)           # CAL-3 pion mass (input)
 STALE_Q0 = mp.mpf("1.1097090249")        # the v9 hardcoded muon-anchor literal
 
 # AME binding energies (MeV) — same source as the v9 script.
-AME = {"T": AME_B_TRITIUM_MEV_VALIDATION, "3He": mp.mpf("7.71806")}
+AME = {"T": AME_B_TRITIUM_MEV_VALIDATION, "3He": AME_B_HE3_MEV_VALIDATION}
 DIFF_TARGET = AME["T"] - AME["3He"]      # B_T - B_³He (target)
 
 REPO = Path(__file__).resolve().parent.parent

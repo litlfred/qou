@@ -1,0 +1,44 @@
+242 Effective computations and ACSV
+
+To determine asymptotic behavior of the power series coefficients of F we
+need to represent F in terms of the local basis expansions near the singular
+points of (8.9) (which can contain the singularities of F, the singularities of
+other solutions to the differential equation, and spurious points). In practice,
+this is accomplished using the series expansion of F at the origin to express it
+in terms of a basis near the origin, then approximating change of basis matrices
+from analytically continuing series centered at the origin to series centered at
+the singular points of (8.9). Using ideas going back to Cauchy’s method of
+majorants, implemented by Mezzarobba [Mez16] in the Sage ore_algebra
+package, it is possible to rigorously compute numerical approximations of the
+entries of the change of basis matrices to any desired accuracy.
+
+Ultimately, one can use these techniques to compute expansions of F near
+the singularities of (8.9) with rigorously approximated coefficients. This can
+often be used to identify the dominant singularities of F, and compute asymp-
+totics of its power series coefficients up to constants that are rigorously approx-
+imated. Unfortunately, it is an open problem to identify when approximated
+coefficients that are zero to many decimal places are identically zero. This
+connection problem means that it not always possible to identify the dominant
+asymptotics of a D-finite function directly from a D-finite equation it satisfies
+(although using current implementations one can get the relevant constants to
+thousands of decimal places, so even if a rigorous proof can’t be found very
+strong heuristic evidence is always possible).
+
+Example 8.23. Let a, denote the number of lattice paths with the set of allow-
+able steps {(-1,-1), (1,-1), (-1, 1), 1, 1)} that start at the origin and stay in
+the nonnegative quadrant N*. The kernel method [Mel21, Chapter 4] implies
+that the generating function A(7) of (a,) satisfies the D-finite equation
+
+0=P(4t+ 1) - 492A’"(t) + 101 — 401127 — 5)A”(1)
++ 4(8t — 1)(207 - 3t— DA’(t) + (128P - 484 - DAD).
+
+The dominant singularities of A occur at t = +1/4, and the Sage package of
+Mezzarobba computes expansions
+
+A(O) = ([-0.636 + 3- 10-9] + [44- 10-7 ]) log(t- 1/4)
++([2.54+7- 1079] +[+1.56-10-']i) (t- 1/4) log(r- 1/4) +--+
+
+near tf = 1/4, where the notation [a+b] denotes a constant in the interval
+[a- b,a +b], and
+
+A() = [1£7- 1018] + [1.273 # 3-107] (¢- 1/4)log(t — 1/4) ++

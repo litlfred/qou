@@ -8,6 +8,7 @@ pages: 30-31
 source_pdf: 1106.2975v1.pdf
 source_sha256: 7e966c7392b70ae0
 toc_source: outline
+doc_brief: "The Polyanalytic Ginibre Ensembles — For integers n, q = 1, 2, 3, . . ., let Poln,q denote the C-linear space of polynomials in z and ¯z, of degree ≤n −1 in z and of degree ≤q −1 in ¯z."
 ---
 [1] L. Abreu, Sampling and interpolation in Bargmann-Fock spaces of polyanalytic functions,
 Appl. Comp. Harm. Anal. 29 (2010), 287–302.

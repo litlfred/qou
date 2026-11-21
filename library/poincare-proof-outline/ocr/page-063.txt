@@ -1,0 +1,66 @@
+next
+case False
+hence Re x < 0
+using ‘Re x # 0)
+by simp
+have 1 + Rex > 0
+using (Re x > —1>
+by simp
+hence 2xRe z + 2*Re xxRe xz < 0
+using (Re xz < 0»
+by (metis comm-semiring-class. distrib mult.commute mult-2-right mult-less-0-iff one-add-one zero-less-double-add-iff-zero-less-si
+hence 1 — (Re x)? > (— 1 — (Re 2))”
+by (simp add: field-simps power2-eq-square)
+hence sqrt (1 — (Re x)?) > -1 — Rex
+using real-less-rsqrt
+by simp
+thus ?thesis
+using (Re xz < 0»
+by (simp add: field-simps)
+qed
+hence ?b < —-1 V ?o>1
+by auto
+
+hence Re z = 7a
+using (Re z = ?a V Re z = 2b» x
+by auto
+thus z = ?a
+using **« complez-of-real-Re
+by fastforce
+qed
+qed
+next
+fix au
+let ?M = moebius-pt (blaschke a)
+let ?Mu = ?Mu
+assume wu € unit-disc is-real a cmod a < 1
+assume «: ?Q ?Mu
+show ?Qu
+proof (rule alll, rule impI, (erule conjE)+)
+fix x
+assume wz: —1 < Rex Re x < 1 is-real x of-complex « # u
+let ?Mz = ?M (of-complex x)
+have of-complex x € unit-disc
+using x cmod-eq-Re
+by auto
+hence ?Mz € unit-disc
+using <is-real ay «cmod a < 1» blaschke-unit-disc-fiz|of a]
+using unit-disc-fir-discl
+by blast
+hence ?Mz 4 con
+by auto
+moreover
+have of-complex x € circline-set r-axis
+using x
+by auto
+hence ?Mz € circline-set x-axis
+using blaschke-real-preserve-x-axis|OF <is-real ay «cmod a < 1, of of-complex z]
+by auto
+hence —1 < Re (to-compler ?Mx) \ Re (to-compler ?Mzx) < 1 A is-real (to-complex ?Mzx)
+using <?Mzx 4 oon) «?Max © unit-disc»
+unfolding circline-set-x-azxis
+by (auto simp add: cmod-eq-Re)
+moreover
+have ?Mz 4 ?Mu
+using <of-compler x # u)
+by simp

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2211.08164v2
-doc_title: "INFINITELY MANY RIEMANN SURF ACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS"
+doc_title: "INFINITELY MANY RIEMANN SURFACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS"
 section_id: sec-002-3-proof-of-the-main-theorem
 section_title: "Proof of the main theorem"
 section_number: 3
 pages: 3-6
 source_pdf: 2211.08164v2.pdf
 source_sha256: aff9ff3ef5ac28be
-doc_brief: "INFINITELY MANY RIEMANN SURFACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS — In this short note, we prove the existence of inﬁnitely many pairwise non-isomorphic, non-hyperelliptic Riemann"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.811
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.772
+latex_coverage_ratio: 0.978
+doc_brief: "INFINITELY MANY RIEMANN SURFACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS — In this short note, we prove the existence of inﬁnitely many pairwise non-isomorphic, non-hyperelliptic Riemann"
 ---
 The proof of the main theorem will be a consequence of the following four facts.
 

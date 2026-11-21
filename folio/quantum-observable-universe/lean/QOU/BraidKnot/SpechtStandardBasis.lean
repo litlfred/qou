@@ -139,4 +139,10 @@ theorem specht_finrank_eq_numSYT (μ : YoungDiagram) :
   rw [Module.finrank_eq_nat_card_basis (standardBasis (k := k) (μ := μ))]
   rfl
 
+/-- Zero-subtracted difference between the standard-basis Specht finrank and `numSYT μ` vanishes. -/
+theorem specht_finrank_sub_numSYT_eq_zero (μ : YoungDiagram) :
+    Module.finrank k (Specht.SpechtSubmodule (k := k) μ) - QOU.BraidKnot.numSYT μ = 0 := by
+  rw [specht_finrank_eq_numSYT (k := k) μ]
+  exact Nat.sub_self (QOU.BraidKnot.numSYT μ)
+
 end QOU.BraidKnot.SpechtStandardBasis

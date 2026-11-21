@@ -7,7 +7,8 @@
   "bytes": 756610,
   "pages": 66,
   "text_source": "embedded",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,525 +21,1264 @@
    "Mathematisches Forschungsinstitut Oberwolfach",
    "Report No. 52/2018"
   ],
-  "abstract": "The workshop brought together experts investigating algeb raic Lie theory from the geometric and categorical viewpoints. Mathematics Subject Classiﬁcation (2010): 17B35, 17B37, 20G15.",
+  "abstract": "The workshop brought together experts investigating algebraic Lie theory from the geometric and categorical viewpoints. Mathematics Subject Classiﬁcation (2010): 17B35, 17B37, 20G15.",
   "docinfo": {
+   "Title": "../52/Report-52_2018.dvi",
    "Producer": "GPL Ghostscript 9.26",
-   "CreationDate": "D:20191209094213+01'00'",
    "Creator": "dvips(k) 5.997 Copyright 2017 Radical Eye Software",
-   "Title": "../52/Report-52_2018.dvi"
+   "CreationDate": "D:20191209094213+01'00'"
+  },
+  "title_raw": "Mathematisches Forschungsinstitut Oberwolfach Report No. 52/2018",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "metadata": "/52/Report-52_2018.dvi",
+   "heading": "Mathematisches Forschungsinstitut Oberwolfach Report No. 52/2018 DOI: 10.4171/OWR/2018/52 Enveloping Algebras and Geometric Representation Theory 25 November – 1 December 2018 Introduction by the Organisers",
+   "text": "Mathematisches Forschungsinstitut Oberwolfach Report No. 52/2018",
+   "corroborated_by": [],
+   "browser_print": false
   },
   "title_prev": "Mathematisches Forschungsinstitut Oberwolfach Report No. 52/2018"
  },
  "toc": [
   {
    "level": 1,
-   "title": "References",
+   "title": "Enveloping Algebras and Geometric Representation Theory",
+   "page": 3,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.5,
+   "evidence": [
+    "contents"
+   ],
+   "page_label": "3083"
+  },
+  {
+   "level": 2,
+   "title": "The nearby cycles formalism for parity sheaves",
+   "page": 5,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "3085"
+  },
+  {
+   "level": 2,
+   "title": "Center of G1T -modules and cohomology of aﬃne Springer ﬁbres",
    "page": 7,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "3087"
   },
   {
-   "level": 1,
-   "title": "Let HC(A) be the quotient of the category HC( A) by the full subcategory of",
-   "page": 9,
+   "level": 2,
+   "title": "Harish-Chandra bimodules over quantized symplectic singularities",
+   "page": 8,
    "source": "inferred",
-   "number": "1"
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "3088"
   },
   {
-   "level": 1,
-   "title": "(Xreg ) is ﬁnite. For example, for X = V/ Γ, this group coincides with Γ. So",
-   "page": 9,
+   "level": 2,
+   "title": "Diﬀerential operators on G/U and the Gelfand-Graev action",
+   "page": 10,
    "source": "inferred",
-   "number": "1"
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "3090"
   },
   {
    "level": 1,
-   "title": "(Σi\\",
-   "page": 9,
+   "title": "Geordie Williamson (joint with Simon Riche) A tale of two modules",
+   "page": 12,
    "source": "inferred",
-   "number": "1"
+   "number": null,
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "body"
+   ],
+   "page_label": "3092"
   },
   {
-   "level": 1,
-   "title": "(Xreg). The inclusion Σ i\\{ 0}֒→Xreg give rise to a group",
-   "page": 9,
+   "level": 2,
+   "title": "Macdonald polynomials and decomposition numbers for ﬁnite unitary groups",
+   "page": 14,
    "source": "inferred",
-   "number": "1"
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "3094"
   },
   {
-   "level": 1,
-   "title": "Galleries",
+   "level": 2,
+   "title": "Representations of sl(∞) arising from categorical action",
+   "page": 18,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "3098"
+  },
+  {
+   "level": 2,
+   "title": "Semiinﬁnite highest weight and ǫ-stratiﬁed categories",
+   "page": 20,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "3100"
+  },
+  {
+   "level": 2,
+   "title": "Cuspidal D-modules and generalized quantum Hamiltonian reduction",
+   "page": 24,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "3104"
+  },
+  {
+   "level": 2,
+   "title": "Generalized Lakshmibai-Seshadri galleries",
    "page": 27,
    "source": "inferred",
-   "number": "1"
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "3107"
   },
   {
    "level": 2,
-   "title": "Dimension and properties of galleries. Let γ be a gallery, with nota-",
-   "page": 28,
-   "source": "inferred",
-   "number": "1.1"
-  },
-  {
-   "level": 2,
-   "title": "Semisimpliﬁcation. Let C denote a k-linear ( k a ﬁeld) braided rigid",
+   "title": "Semisimpliﬁcation of representation categories",
    "page": 29,
    "source": "inferred",
-   "number": "0.1"
-  },
-  {
-   "level": 2,
-   "title": "Representation categories. Examples of such categories are often coming",
-   "page": 30,
-   "source": "inferred",
-   "number": "0.2"
-  },
-  {
-   "level": 2,
-   "title": "Representations of supergroups. The results of [AK02] generalize par-",
-   "page": 30,
-   "source": "inferred",
-   "number": "0.3"
-  },
-  {
-   "level": 2,
-   "title": "The categoryRep(GL(m|n)). LetTm|n be the category of ﬁnite dimensional",
-   "page": 30,
-   "source": "inferred",
-   "number": "0.4"
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "3109"
   },
   {
    "level": 1,
-   "title": "Main question",
-   "page": 36,
+   "title": "Jacob Greenstein (joint with Arkady Berenstein and Jian-Rong Li) Braidings, cacti and crystals",
+   "page": 32,
    "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Quantum Grothendieck ring",
-   "page": 36,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Isomorphisms and cluster algebras",
-   "page": 37,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Application to the Kazhdan-Lusztig algorithm",
-   "page": 38,
-   "source": "inferred",
-   "number": "4"
+   "number": null,
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "body"
+   ],
+   "page_label": "3112"
   },
   {
    "level": 2,
-   "title": "Crystals. The inﬁnity crystal B(∞) is a combinatorial object which, among",
+   "title": "On the pure cohomology of multiplicative quiver varieties",
+   "page": 33,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "body"
+   ],
+   "page_label": "3113"
+  },
+  {
+   "level": 1,
+   "title": "Harold Williams (joint with Sabin Cautis) The Coherent Satake Category",
+   "page": 34,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "body"
+   ],
+   "page_label": "3114"
+  },
+  {
+   "level": 2,
+   "title": "Finkelberg-Nakajima construction",
+   "page": 39,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "body"
+   ],
+   "page_label": "3119"
+  },
+  {
+   "level": 2,
+   "title": "Nilpotent Slodowy slices and collapsing levels for W-algebras",
+   "page": 41,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "3121"
+  },
+  {
+   "level": 2,
+   "title": "Quiver varieties and crystals in symmetrizable type via modulated graphs",
    "page": 44,
    "source": "inferred",
-   "number": "1.1"
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "3124"
   },
   {
    "level": 2,
-   "title": "Kashiwara and Saito’s construction. We will mostly review this using",
-   "page": 44,
-   "source": "inferred",
-   "number": "1.2"
-  },
-  {
-   "level": 2,
-   "title": "Punch line. About 8 years ago, two things bothered me about this:",
-   "page": 45,
-   "source": "inferred",
-   "number": "1.3"
-  },
-  {
-   "level": 2,
-   "title": "Symmetrizable quiver varieties. Consider e.g. B2, with Dynkin diagram",
-   "page": 45,
-   "source": "inferred",
-   "number": "1.4"
-  },
-  {
-   "level": 2,
-   "title": "Aﬃne sl2. This case is symmetric, but we have more freedom to choose the",
-   "page": 45,
-   "source": "inferred",
-   "number": "1.5"
-  },
-  {
-   "level": 2,
-   "title": "Relation with folding. Our construction is related to the method of folding",
+   "title": "Satake equivalence",
    "page": 46,
    "source": "inferred",
-   "number": "1.6"
+   "number": null,
+   "confidence": 0.5,
+   "evidence": [
+    "contents"
+   ],
+   "page_label": "3126"
   },
   {
    "level": 2,
-   "title": "Relation to work of Geiss, Leclerc and Schroer. In [4] they consider",
-   "page": 46,
-   "source": "inferred",
-   "number": "1.7"
-  },
-  {
-   "level": 2,
-   "title": "Let Λ = ⨁",
-   "page": 46,
-   "source": "inferred",
-   "number": "0.1"
-  },
-  {
-   "level": 2,
-   "title": "Given a reductive complex algebraic group G, Schieder [9] constructed a",
-   "page": 47,
-   "source": "inferred",
-   "number": "0.2"
-  },
-  {
-   "level": 2,
-   "title": "In order to produce an isomorphism A",
-   "page": 48,
-   "source": "inferred",
-   "number": "0.3"
-  },
-  {
-   "level": 1,
-   "title": "Supports",
+   "title": "Supports for linear degenerations of ﬂag varieties",
    "page": 50,
    "source": "inferred",
-   "number": "1"
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "3130"
   },
   {
    "level": 1,
-   "title": "Linear degenerations",
-   "page": 51,
+   "title": "Valerio Toledano Laredo (joint with Sachin Gautam) Elliptic quantum groups",
+   "page": 53,
    "source": "inferred",
-   "number": "2"
+   "number": null,
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "body"
+   ],
+   "page_label": "3133"
   },
   {
-   "level": 1,
-   "title": "Main result",
-   "page": 52,
+   "level": 2,
+   "title": "Rigid indecomposable modules and real Schur roots",
+   "page": 55,
    "source": "inferred",
-   "number": "3"
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "3135"
   },
   {
-   "level": 1,
-   "title": "Techniques",
-   "page": 52,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "Introduction",
+   "level": 2,
+   "title": "Conformal blocks for Galois covers of algebraic groups",
    "page": 58,
    "source": "inferred",
-   "number": "1"
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "3138"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "A dominant gallery of dimension 10 for the simple exceptional Lie algebra of type G2. It consists of six alcoves: the ﬁve distinct ones a0, the fundamental alcove, a1, a2, a3, a4, which are noted in the picture, and a5 = a4. The corresponding fold at the panel p5 is negative. The panels are indicate",
+   "page": 28,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3108"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "3081",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "3082",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3083",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3084",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "3085",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "3086",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "3087",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "3088",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "3089",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "3090",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "3091",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "3092",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "3093",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "3094",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "3095",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "3096",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "3097",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "3098",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "3099",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "3100",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "3101",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "3102",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "3103",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "3104",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "3105",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "3106",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "3107",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "3108",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "3109",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "3110",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "3111",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "3112",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "3113",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "3114",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "3115",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "3116",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "3117",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "3118",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "3119",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "3120",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "3121",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "3122",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "3123",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "3124",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "3125",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "3126",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "3127",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "3128",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "3129",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "3130",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "3131",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "3132",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "3133",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "3134",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "3135",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "3136",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "3137",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "3138",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "3139",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "3140",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "3141",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "3142",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "3143",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "3144",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "3145",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "3146",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-references",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "References",
+   "title": "Front matter",
    "level": 1,
-   "page_start": 7,
-   "page_end": 9,
-   "n_chars": 6336,
-   "n_words": 1082
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 4777,
+   "n_words": 725,
+   "label_start": "3081",
+   "label_end": "3083"
   },
   {
-   "id": "sec-001-1-let-hca-be-the-quotient-of-the-category-hc-a-b",
-   "number": "1",
-   "title": "Let HC(A) be the quotient of the category HC( A) by the full subcategory of",
+   "id": "sec-000-enveloping-algebras-and-geometric-representation",
+   "number": null,
+   "title": "Enveloping Algebras and Geometric Representation Theory",
    "level": 1,
-   "page_start": 9,
-   "page_end": 9,
-   "n_chars": 359,
-   "n_words": 62
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 3829,
+   "n_words": 954,
+   "label_start": "3083",
+   "label_end": "3085"
   },
   {
-   "id": "sec-002-1-xreg-is-ﬁnite-for-example-for-x-v-γ-this-group",
-   "number": "1",
-   "title": "(Xreg ) is ﬁnite. For example, for X = V/ Γ, this group coincides with Γ. So",
-   "level": 1,
-   "page_start": 9,
-   "page_end": 9,
-   "n_chars": 1215,
-   "n_words": 237
-  },
-  {
-   "id": "sec-003-1-σi",
-   "number": "1",
-   "title": "(Σi\\",
-   "level": 1,
-   "page_start": 9,
-   "page_end": 9,
-   "n_chars": 17,
-   "n_words": 5
-  },
-  {
-   "id": "sec-004-1-xreg-the-inclusion-σ-i-0xreg-give-rise-to-a-gr",
-   "number": "1",
-   "title": "(Xreg). The inclusion Σ i\\{ 0}֒→Xreg give rise to a group",
-   "level": 1,
-   "page_start": 9,
-   "page_end": 27,
-   "n_chars": 43780,
-   "n_words": 7559
-  },
-  {
-   "id": "sec-005-1-galleries",
-   "number": "1",
-   "title": "Galleries",
-   "level": 1,
-   "page_start": 27,
-   "page_end": 28,
-   "n_chars": 2593,
-   "n_words": 486
-  },
-  {
-   "id": "sec-006-11-dimension-and-properties-of-galleries-let-γ-b",
-   "number": "1.1",
-   "title": "Dimension and properties of galleries. Let γ be a gallery, with nota-",
+   "id": "sec-001-the-nearby-cycles-formalism-for-parity-sheaves",
+   "number": null,
+   "title": "The nearby cycles formalism for parity sheaves",
    "level": 2,
-   "page_start": 28,
-   "page_end": 29,
-   "n_chars": 2539,
-   "n_words": 476
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 7128,
+   "n_words": 1187,
+   "label_start": "3085",
+   "label_end": "3087"
   },
   {
-   "id": "sec-007-01-semisimpliﬁcation-let-c-denote-a-k-linear-k-a",
-   "number": "0.1",
-   "title": "Semisimpliﬁcation. Let C denote a k-linear ( k a ﬁeld) braided rigid",
+   "id": "sec-002-center-of-g1t--modules-and-cohomology-of-aﬃne-sp",
+   "number": null,
+   "title": "Center of G1T -modules and cohomology of aﬃne Springer ﬁbres",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2865,
+   "n_words": 475,
+   "label_start": "3087",
+   "label_end": "3088"
+  },
+  {
+   "id": "sec-003-harish-chandra-bimodules-over-quantized-symplect",
+   "number": null,
+   "title": "Harish-Chandra bimodules over quantized symplectic singularities",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 4368,
+   "n_words": 787,
+   "label_start": "3088",
+   "label_end": "3090"
+  },
+  {
+   "id": "sec-004-diﬀerential-operators-on-gu-and-the-gelfand-grae",
+   "number": null,
+   "title": "Diﬀerential operators on G/U and the Gelfand-Graev action",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 14,
+   "n_chars": 11456,
+   "n_words": 2097,
+   "label_start": "3090",
+   "label_end": "3094"
+  },
+  {
+   "id": "sec-005-macdonald-polynomials-and-decomposition-numbers",
+   "number": null,
+   "title": "Macdonald polynomials and decomposition numbers for ﬁnite unitary groups",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 18,
+   "n_chars": 7343,
+   "n_words": 1264,
+   "label_start": "3094",
+   "label_end": "3098"
+  },
+  {
+   "id": "sec-006-representations-of-sl-arising-from-categorical-a",
+   "number": null,
+   "title": "Representations of sl(∞) arising from categorical action",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 5878,
+   "n_words": 1026,
+   "label_start": "3098",
+   "label_end": "3100"
+  },
+  {
+   "id": "sec-007-semiinﬁnite-highest-weight-and-ǫ-stratiﬁed-categ",
+   "number": null,
+   "title": "Semiinﬁnite highest weight and ǫ-stratiﬁed categories",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 24,
+   "n_chars": 10236,
+   "n_words": 1712,
+   "label_start": "3100",
+   "label_end": "3104"
+  },
+  {
+   "id": "sec-008-cuspidal-d-modules-and-generalized-quantum-hamil",
+   "number": null,
+   "title": "Cuspidal D-modules and generalized quantum Hamiltonian reduction",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 27,
+   "n_chars": 7499,
+   "n_words": 1234,
+   "label_start": "3104",
+   "label_end": "3107"
+  },
+  {
+   "id": "sec-009-generalized-lakshmibai-seshadri-galleries",
+   "number": null,
+   "title": "Generalized Lakshmibai-Seshadri galleries",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 29,
+   "n_chars": 5115,
+   "n_words": 974,
+   "label_start": "3107",
+   "label_end": "3109"
+  },
+  {
+   "id": "sec-010-semisimpliﬁcation-of-representation-categories",
+   "number": null,
+   "title": "Semisimpliﬁcation of representation categories",
    "level": 2,
    "page_start": 29,
-   "page_end": 30,
-   "n_chars": 605,
-   "n_words": 114
+   "page_end": 33,
+   "n_chars": 11375,
+   "n_words": 1851,
+   "label_start": "3109",
+   "label_end": "3113"
   },
   {
-   "id": "sec-008-02-representation-categories-examples-of-such-ca",
-   "number": "0.2",
-   "title": "Representation categories. Examples of such categories are often coming",
+   "id": "sec-011-on-the-pure-cohomology-of-multiplicative-quiver",
+   "number": null,
+   "title": "On the pure cohomology of multiplicative quiver varieties",
    "level": 2,
-   "page_start": 30,
-   "page_end": 30,
-   "n_chars": 1004,
-   "n_words": 173
+   "page_start": 33,
+   "page_end": 39,
+   "n_chars": 16098,
+   "n_words": 2483,
+   "label_start": "3113",
+   "label_end": "3119"
   },
   {
-   "id": "sec-009-03-representations-of-supergroups-the-results-of",
-   "number": "0.3",
-   "title": "Representations of supergroups. The results of [AK02] generalize par-",
+   "id": "sec-012-finkelberg-nakajima-construction",
+   "number": null,
+   "title": "Finkelberg-Nakajima construction",
    "level": 2,
-   "page_start": 30,
-   "page_end": 30,
-   "n_chars": 1119,
-   "n_words": 171
+   "page_start": 39,
+   "page_end": 41,
+   "n_chars": 3680,
+   "n_words": 551,
+   "label_start": "3119",
+   "label_end": "3121"
   },
   {
-   "id": "sec-010-04-the-categoryrepglmn-lettmn-be-the-category-of",
-   "number": "0.4",
-   "title": "The categoryRep(GL(m|n)). LetTm|n be the category of ﬁnite dimensional",
+   "id": "sec-013-nilpotent-slodowy-slices-and-collapsing-levels-f",
+   "number": null,
+   "title": "Nilpotent Slodowy slices and collapsing levels for W-algebras",
    "level": 2,
-   "page_start": 30,
-   "page_end": 36,
-   "n_chars": 17125,
-   "n_words": 2755
-  },
-  {
-   "id": "sec-011-1-main-question",
-   "number": "1",
-   "title": "Main question",
-   "level": 1,
-   "page_start": 36,
-   "page_end": 36,
-   "n_chars": 653,
-   "n_words": 104
-  },
-  {
-   "id": "sec-012-2-quantum-grothendieck-ring",
-   "number": "2",
-   "title": "Quantum Grothendieck ring",
-   "level": 1,
-   "page_start": 36,
-   "page_end": 37,
-   "n_chars": 2927,
-   "n_words": 484
-  },
-  {
-   "id": "sec-013-3-isomorphisms-and-cluster-algebras",
-   "number": "3",
-   "title": "Isomorphisms and cluster algebras",
-   "level": 1,
-   "page_start": 37,
-   "page_end": 38,
-   "n_chars": 955,
-   "n_words": 140
-  },
-  {
-   "id": "sec-014-4-application-to-the-kazhdan-lusztig-algorithm",
-   "number": "4",
-   "title": "Application to the Kazhdan-Lusztig algorithm",
-   "level": 1,
-   "page_start": 38,
+   "page_start": 41,
    "page_end": 44,
-   "n_chars": 16580,
-   "n_words": 2764
+   "n_chars": 9171,
+   "n_words": 1580,
+   "label_start": "3121",
+   "label_end": "3124"
   },
   {
-   "id": "sec-015-11-crystals-the-inﬁnity-crystal-b-is-a-combinato",
-   "number": "1.1",
-   "title": "Crystals. The inﬁnity crystal B(∞) is a combinatorial object which, among",
+   "id": "sec-014-quiver-varieties-and-crystals-in-symmetrizable-t",
+   "number": null,
+   "title": "Quiver varieties and crystals in symmetrizable type via modulated graphs",
    "level": 2,
    "page_start": 44,
-   "page_end": 44,
-   "n_chars": 806,
-   "n_words": 128
-  },
-  {
-   "id": "sec-016-12-kashiwara-and-saitos-construction-we-will-mos",
-   "number": "1.2",
-   "title": "Kashiwara and Saito’s construction. We will mostly review this using",
-   "level": 2,
-   "page_start": 44,
-   "page_end": 45,
-   "n_chars": 1366,
-   "n_words": 251
-  },
-  {
-   "id": "sec-017-13-punch-line-about-8-years-ago-two-things-bothe",
-   "number": "1.3",
-   "title": "Punch line. About 8 years ago, two things bothered me about this:",
-   "level": 2,
-   "page_start": 45,
-   "page_end": 45,
-   "n_chars": 952,
-   "n_words": 161
-  },
-  {
-   "id": "sec-018-14-symmetrizable-quiver-varieties-consider-eg-b2",
-   "number": "1.4",
-   "title": "Symmetrizable quiver varieties. Consider e.g. B2, with Dynkin diagram",
-   "level": 2,
-   "page_start": 45,
-   "page_end": 45,
-   "n_chars": 1357,
-   "n_words": 265
-  },
-  {
-   "id": "sec-019-15-aﬃne-sl2-this-case-is-symmetric-but-we-have-m",
-   "number": "1.5",
-   "title": "Aﬃne sl2. This case is symmetric, but we have more freedom to choose the",
-   "level": 2,
-   "page_start": 45,
    "page_end": 46,
-   "n_chars": 186,
-   "n_words": 27
+   "n_chars": 7767,
+   "n_words": 1313,
+   "label_start": "3124",
+   "label_end": "3126"
   },
   {
-   "id": "sec-020-16-relation-with-folding-our-construction-is-rel",
-   "number": "1.6",
-   "title": "Relation with folding. Our construction is related to the method of folding",
+   "id": "sec-015-satake-equivalence",
+   "number": null,
+   "title": "Satake equivalence",
    "level": 2,
    "page_start": 46,
-   "page_end": 46,
-   "n_chars": 315,
-   "n_words": 52
-  },
-  {
-   "id": "sec-021-17-relation-to-work-of-geiss-leclerc-and-schroer",
-   "number": "1.7",
-   "title": "Relation to work of Geiss, Leclerc and Schroer. In [4] they consider",
-   "level": 2,
-   "page_start": 46,
-   "page_end": 46,
-   "n_chars": 1766,
-   "n_words": 285
-  },
-  {
-   "id": "sec-022-01-let-λ",
-   "number": "0.1",
-   "title": "Let Λ = ⨁",
-   "level": 2,
-   "page_start": 46,
-   "page_end": 47,
-   "n_chars": 1703,
-   "n_words": 310
-  },
-  {
-   "id": "sec-023-02-given-a-reductive-complex-algebraic-group-g-s",
-   "number": "0.2",
-   "title": "Given a reductive complex algebraic group G, Schieder [9] constructed a",
-   "level": 2,
-   "page_start": 47,
-   "page_end": 48,
-   "n_chars": 3463,
-   "n_words": 689
-  },
-  {
-   "id": "sec-024-03-in-order-to-produce-an-isomorphism-a",
-   "number": "0.3",
-   "title": "In order to produce an isomorphism A",
-   "level": 2,
-   "page_start": 48,
    "page_end": 50,
-   "n_chars": 4459,
-   "n_words": 753
+   "n_chars": 9788,
+   "n_words": 1760,
+   "label_start": "3126",
+   "label_end": "3130"
   },
   {
-   "id": "sec-025-1-supports",
-   "number": "1",
-   "title": "Supports",
-   "level": 1,
+   "id": "sec-016-supports-for-linear-degenerations-of-ﬂag-varieti",
+   "number": null,
+   "title": "Supports for linear degenerations of ﬂag varieties",
+   "level": 2,
    "page_start": 50,
-   "page_end": 52,
-   "n_chars": 3715,
-   "n_words": 670
+   "page_end": 55,
+   "n_chars": 11506,
+   "n_words": 1919,
+   "label_start": "3130",
+   "label_end": "3135"
   },
   {
-   "id": "sec-026-3-main-result",
-   "number": "3",
-   "title": "Main result",
-   "level": 1,
-   "page_start": 52,
-   "page_end": 52,
-   "n_chars": 487,
-   "n_words": 93
-  },
-  {
-   "id": "sec-027-4-techniques",
-   "number": "4",
-   "title": "Techniques",
-   "level": 1,
-   "page_start": 52,
+   "id": "sec-017-rigid-indecomposable-modules-and-real-schur-root",
+   "number": null,
+   "title": "Rigid indecomposable modules and real Schur roots",
+   "level": 2,
+   "page_start": 55,
    "page_end": 58,
-   "n_chars": 14815,
-   "n_words": 2478
+   "n_chars": 7322,
+   "n_words": 1281,
+   "label_start": "3135",
+   "label_end": "3138"
   },
   {
-   "id": "sec-028-1-introduction",
-   "number": "1",
-   "title": "Introduction",
-   "level": 1,
+   "id": "sec-018-conformal-blocks-for-galois-covers-of-algebraic",
+   "number": null,
+   "title": "Conformal blocks for Galois covers of algebraic groups",
+   "level": 2,
    "page_start": 58,
    "page_end": 66,
-   "n_chars": 16300,
-   "n_words": 2644
+   "n_chars": 16279,
+   "n_words": 2573,
+   "label_start": "3138",
+   "label_end": "3146"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 30,
-  "sections": 29,
-  "chars_total": 149497
+  "toc_entries": 23,
+  "toc_inferred_entries": 25,
+  "toc_inferred_mean_confidence": 0.81,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "contents",
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "Satake equivalence"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 2,
+    "items": [
+     "Enveloping Algebras and Geometric Representation Theory: listed p3, found p1",
+     "polynomials: listed p36, found p22"
+    ]
+   }
+  },
+  "sections": 20,
+  "chars_total": 163480,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "polynomials",
+    "page": 22,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "polynomials",
+    "page": 36,
+    "action": "dropped",
+    "why": "opens in lower case"
+   }
+  ]
  }
 }

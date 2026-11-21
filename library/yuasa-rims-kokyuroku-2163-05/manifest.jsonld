@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/yuasa-rims-kokyuroku-2163-05",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/yuasa-rims-kokyuroku-2163-05/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -24,7 +24,7 @@
     "library/yuasa-rims-kokyuroku-2163-05/sections/page-011"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "yuasa-rims-kokyuroku-2163-05",
     "title_source": "slug",

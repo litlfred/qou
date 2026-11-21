@@ -1,0 +1,46 @@
+348 Cone point asymptotics
+
+e In Section 11.2.2 we generalize to certain /og-Laurent polynomials by defin-
+ing the cone of a function f at one of its zeros x + iy to be a choice of a
+cone of hyperbolicity for the leading homogeneous part of f at a + iy. Our
+constructions are well defined only for certain values of x.
+
+e Section 11.2.3 introduces notions of weak and strong hyperbolicity. The
+weaker notion is equivalent to hyperbolicity of a homogenization, and the
+main result of the section is that the stronger notion holds in similar circum-
+stances.
+
+e Section 11.2.4 establishes lower semi-continuity for a family of cones intro-
+duced in Section 11.2.3.
+
+e Section 11.2.5 completes the proof of Theorem 11.1.
+
+e Section 11.2.6 extends the construction of the deformations Cs in Theo-
+rem 11.5 to a limiting log-linear deformation. This will be important later,
+when computing integrals.
+
+11.2.1 Cones of hyperbolicity in the homogeneous case
+
+The following definition of hyperbolicity, originally developed in order to clas-
+sify and study wavelike second-order partial differential equations, goes back
+to [Gar50].
+
+Definition 11.12 (hyperbolicity). A homogeneous complex polynomial A of
+degree m > 1 is a hyperbolic polynomial in the direction v € R¢ if A(v) # 0
+and for all 2 € R¢ the polynomial t + A(x + tv) has only real roots. A
+seemingly weaker but actually equivalent condition is that A(v + iy) # 0 for
+ally € R’.
+
+The set of v for which A is hyperbolic in direction v is an open set whose
+components are convex cones in R4, and each of these cones is called a cone
+of hyperbolicity for the homogeneous polynomial A. Denote by K”(A) the
+cone of hyperbolicity of A containing a given vector v. Some multiple of A is
+positive on K*(A) and vanishing on 0 K”(A), and for 2 € K"(A) the roots of
+A(a+tv) will all be negative. These properties are proved, among other places,
+in [Giil97, Theorem 3.1].
+
+Example 11.13 (hyperbolicity of a linear function). If A(z) = v- a is a real
+linear function then its cones of hyperbolicity are the halfspaces {a € R¢ :
+v-x>Ojand{aeR! : v- a <0}. 4
+Example 11.14 (hyperbolicity of a quadratic function). If A(a) = xt - Dien XG
+is the standard Lorentzian quadratic then its cones of hyperbolicity are the

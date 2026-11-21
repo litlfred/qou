@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1905.06064v1.pdf
 source_sha256: 3ffe25c8ee62779d
 toc_source: outline
+doc_brief: "ON O’HARA KNOT ENERGIES I: REGULARITY FOR CRITICAL KNOTS — We develop a regularity theory for extremal knots of scale invariant knot ener- gies deﬁned by J. O’hara in 1991."
 ---
 ON O’HARA KNOT ENERGIES I: REGULARITY FOR CRITICAL KNOTS
 SIMON BLATT, PHILIPP REITER, AND ARMIN SCHIKORRA
@@ -23,4 +24,3 @@ spheres. Using this connection we are able to adapt the regularity theory for de
 fractional harmonic maps in the critical dimension to prove regularity for minimizers and
 critical knots of the scale-invariant O’hara knot energies.
 Contents
-1.

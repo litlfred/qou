@@ -3,12 +3,17 @@
  "doc_id": "arxiv-1010.4386v5",
  "source_sha256": "168226dbb5a479ed",
  "brief": "ON THE HOMOLOGY OF COMPLETION AND TORSION — Let A be a commutative ring, and a a weakly proregular ideal in A.",
- "extended": "**ON THE HOMOLOGY OF COMPLETION AND TORSION**\n\n*MARCO PORTA, LIRAN SHAUL AND AMNON YEKUTIELI*\n\n33 pp, 9 sections.\n\n**Abstract.** Let A be a commutative ring, and a a weakly proregular ideal in A. This includes the noetherian case: if A is noetherian then any ideal in it is weakly proregular; but there are other interesting e xamples. In this paper we prove the MGM equivalence , which is an equivalence between the category of cohomologically a-adically complete complexes and the category of cohomologically a-torsion complexes . These are triangulated subcategories of the derived category of A-modules. Our work extends earlier work by Alonso- Jeremias-Lipman, Schenzel and Dwyer-Greenlees.\n\n**Outline.** 0 Introduction; 1 Preliminaries on Homological Algebra; 2 The Derived Completion and Torsion Functors; 3 Koszul Complexes and Weak Proregularity; 4 The Telescope Complex; 5 Permanence of Weak Proregularity; 6 MGM Equivalence; 7 Derived Localization; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 0.1: LetA be a commutative ring, and a a weakly\n- Theorem 0.2: LetA be a commutative ring, let a be a weakly proregular sequence\n- Theorem 0.4: Let A be a commutative ring, a a weakly proregular sequence in\n- Theorem 3.24: Let a be a ﬁnite sequence in a ring A. The following conditions\n- Theorem 3.34: IfA is noetherian, then every ﬁnite sequence in A is weakly proreg-\n- Theorem 4.21: LetA be any ring, let a be a weakly proregular sequence in A, and",
+ "extended": "**ON THE HOMOLOGY OF COMPLETION AND TORSION**\n\n*MARCO PORTA, LIRAN SHAUL AND AMNON YEKUTIELI*\n\n33 pp, 10 sections.\n\n**Abstract.** Let A be a commutative ring, and a a weakly proregular ideal in A. This includes the noetherian case: if A is noetherian then any ideal in it is weakly proregular; but there are other interesting examples. In this paper we prove the MGM equivalence, which is an equivalence between the category of cohomologically a-adically complete complexes and the category of cohomologically a-torsion complexes. These are triangulated subcategories of the derived category of A-modules. Our work extends earlier work by Alonso- Jeremias-Lipman, Schenzel and Dwyer-Greenlees.\n\n**Outline.** Front matter; 0 Introduction; 1 Preliminaries on Homological Algebra; 2 The Derived Completion and Torsion Functors; 3 Koszul Complexes and Weak Proregularity; 4 The Telescope Complex; 5 Permanence of Weak Proregularity; 6 MGM Equivalence; 7 Derived Localization; References",
  "tokens": {
   "brief": 27,
-  "extended": 370
+  "extended": 245
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-0-introduction",
    "title": "Introduction",
@@ -59,8 +64,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

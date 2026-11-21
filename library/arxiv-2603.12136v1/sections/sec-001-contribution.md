@@ -7,6 +7,7 @@ section_number: null
 pages: 5-6
 source_pdf: 2603.12136v1.pdf
 source_sha256: e9c50616344b24e0
+toc_source: outline
 doc_brief: "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the"
 ---
 We extend the DRCR procedure from [11] in several directions. First of all, we show
@@ -27,15 +28,15 @@ for mixed-integer linear programs by specializing DRCR to mixed-integer linear
 programs. In particular, we show the ‘folklore’ result that DRCR can also be applied
 to the continuous columns of mixed-integer linear programs. Additionally, we further
 investigate the application of DRCR in MILP to also aggregate integer variables.
-We useimplied integrality[29] andaffine TU decompositions[30] to infer redundant
+We use implied integrality [29] and affine TU decompositions [30] to infer redundant
 integrality constraints on a subset of variables. Then, the implied convexity of these
 variables is exploited by applying DRCR to aggregate these variables. Our approach
-can also be thought of asExact Orbital Shrinking, where one shows that the orbital
+can also be thought of as Exact Orbital Shrinking, where one shows that the orbital
 shrinking relaxation has the same strength as the original problem, and the feasi-
 bility subproblem is an integer program that is given by a perfect formulation and
 can be solved using linear programming. We formulate an algorithm that specializes
 DRCR for mixed-integer linear programs. One of its crucial components are fast
-detection algorithms fornetwork matrices[31, 32], which are a subclass of totally
+detection algorithms for network matrices [31, 32], which are a subclass of totally
 unimodular matrices [33]. The developed algorithm does not handle the complete
 permutation symmetry group, but only aggregates variables that appear in auto-
 morphisms where all the permuted variables have no integrality constraints or have

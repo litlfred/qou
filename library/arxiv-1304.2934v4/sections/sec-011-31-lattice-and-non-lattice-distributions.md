@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.975
 latex_coverage_ratio: 0.959
+doc_brief: "MOD-φ CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS — In this paper, we use the framework of mod-φ convergence to prove pre- cise large or moderate deviations for quite general sequences of"
 ---
 If $\phi$ is an infinitely divisible distribution, recall that its characteristic function writes uniquely as
 \begin{equation}

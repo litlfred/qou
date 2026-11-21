@@ -1,0 +1,410 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-math-0403224v1",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "2",
+   "text": "(s−1)(t−1)(1−N)",
+   "marks": [
+    {
+     "page": 1,
+     "context": "JK(N)atq=e"
+    },
+    {
+     "page": 2,
+     "context": "k"
+    },
+    {
+     "page": 2,
+     "context": "k2−(st−s−t)"
+    }
+   ],
+   "block": "library/arxiv-math-0403224v1/blocks/prose-page-002"
+  },
+  {
+   "id": "fn-p003-1",
+   "page": 3,
+   "mark": "2",
+   "text": "(s−1)(t−1)(1−N)",
+   "marks": [
+    {
+     "page": 3,
+     "context": "k"
+    },
+    {
+     "page": 3,
+     "context": "k2−(st−s−t)"
+    },
+    {
+     "page": 3,
+     "context": "k"
+    },
+    {
+     "page": 3,
+     "context": "k2−(st−s−t)"
+    }
+   ],
+   "block": "library/arxiv-math-0403224v1/blocks/prose-page-003"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p002-2",
+   "page": 2,
+   "mark": "4",
+   "text": "st(1−N2)",
+   "block": "library/arxiv-math-0403224v1/blocks/prose-page-002"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "JK(N)atq=e2π"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "∆Ts,t(A) =(A"
+  },
+  {
+   "page": 2,
+   "mark": "s",
+   "context": "(A"
+  },
+  {
+   "page": 2,
+   "mark": "t",
+   "context": "(As/2−A−s/2)(A"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "A"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 3,
+   "mark": "s",
+   "context": "Ks,t(N) = 1 −q"
+  },
+  {
+   "page": 3,
+   "mark": "t",
+   "context": "Ks,t(N) = 1 −qs(1−N)−1−q"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "JT2,2m+1(N) = q"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "JT2,2m+1(N) = qm(1−N)"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "JT2,2m+1(N) = qm(1−N)1 −q"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "1 −q−N−q"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "1 −q−N−qm−(2"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "1 −q−N−qm−(2m+1)N"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "1 −q−N−qm−(2m+1)N1 −q"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "1 −q−NJT"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "1 −q−NJT2,"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "1 −q−NJT2,2"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "k≥0"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "k≥0a"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "k≥0akJK(N+ k)=0,into"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "k≥0"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "k≥0a"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "k≥0ak(Q,"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "k≥0ak(Q, q) E"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "AK(L, M) = AK(L, M"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(L −1) (−1 + L"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(L −1) (−1 + L2M"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "(L −1) (1 + L M2(2"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(1 −x q"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "qk"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "qki(k"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "qki(ki+1)x"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "qki(ki+1)x2"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "qki(ki+1)x2k"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(x)km+1 x"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "(x)km+1 xk"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "n2−(2m−1)"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "8(2"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "H2,2m+1(x) = 1 −q x"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "H2,2m+1(x) = 1 −q x2−q"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "H2,2m+1(x) = 1 −q x2−q2"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "H2,2m+1(x) = 1 −q x2−q2mx"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "H2,2m+1(x) = 1 −q x2−q2mx2"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "JT2,2m+1(N) = q"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "(q"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(q1−N)"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "(q1−N)km q−Nk"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "qk"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "qki(k"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "(q"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "(q1−N)"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "(q1−N)km (q"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "(q1−N)km (q1+N)"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "JT2,2m+1(N) = q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "JT2,2m+1(N) = qm (1−N"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "q(k"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "q(ki−k"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "q(ki−km)(k"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "q(ki−km)(ki−k"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "(q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "q2"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "q2"
+  }
+ ]
+}

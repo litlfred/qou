@@ -1,0 +1,55 @@
+4000 JOHN W. BARRETT AND BRUCE W. WESTBURY
+
+orientation. There is a unique standard linear map V7(M) — V(M) given by
+iterating the standard twist P: x @y++ y@«. This defines a linear map V(M) >
+V(M), and the element Z(M) is defined to be the trace of this linear map.
+
+Note that if A: X — Y and B: Y — X are linear maps, then
+tr*®Y (P(A @ B)) = tr* (AB) = tr’ (BA).
+
+This also introduces the notation, used throughout the paper, that the map X
+composed with map Y is written XY (not Yo X).
+
+A state sum invariant of a closed manifold is obtained by a weighted sum of
+these elements Z(M) over a class of labellings. This state sum invariant is defined
+in section 5.
+
+2. SPHERICAL CATEGORIES
+
+The data which defines the state sum model is a spherical category, whose defi-
+nition is obtained by axiomatising the properties of the category of representations
+of the spherical Hopf algebra. The reason this abstraction is necessary is that the
+category of representations of a Hopf algebra may be degenerate, and it is necessary
+to take a non-degenerate quotient category to construct the invariants.
+
+This quotient is not the category of representations of any finite dimensional Hopf
+algebra. The reason for this is that it is not possible to assign a positive integer,
+the dimension, to each object which is additive under direct sum and multiplicative
+under the tensor product.
+
+First we recall the definition of a strict pivotal category given in [6]. The def-
+inition of a (relaxed) pivotal category is given in [3] and a similar definition is
+given in [7]. A spherical category is a pivotal category which satisfies an additional
+condition.
+
+In this paper we will only consider strict pivotal categories. There is no loss of
+generality, as it is shown in [3] that every pivotal category is canonically equivalent
+to a strict pivotal category. However the main examples of pivotal categories are
+categories of representations of Hopf algebras and are not strict. The difference
+between a pivotal category and a strict pivotal category is that some objects that are
+equal in a strict pivotal category are canonically isomorphic in a pivotal category. In
+this section we denote any such canonical isomorphism by =. These constructions
+can be extended to pivotal categories by putting in the canonical isomorphism for
+each =.
+
+Definition 2.1. A category with strict duals consists of a category C, a functor
+@:C xC > C, an object e and a functor ~ : C > C°?. The conditions are that
+(C, ®,e) is a strict monoidal category and
+1. The functors ~~ and 1 are equal.
+2. The objects é and e are equal.
+3. The functors C x C > C which on objects are given by (a,b) > (a@b)~ and
+(a,b) > 6 @ @ are equal.
+
+Definition 2.2. A strict pivotal category is a category with strict duals together
+with a morphism e(c): e > c @ é for each object c € C.
+The conditions on the morphisms €(c) are the following:

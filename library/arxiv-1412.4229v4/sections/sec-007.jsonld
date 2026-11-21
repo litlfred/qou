@@ -9,13 +9,23 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "References",
-  "pageStart": 43,
-  "pageEnd": 44,
+  "title": "The Squaring Operation",
+  "pageStart": 38,
+  "pageEnd": 43,
   "contains": [
-    "library/arxiv-1412.4229v4/blocks/prose-sec-007"
+    "library/arxiv-1412.4229v4/blocks/prose-sec-007",
+    "library/arxiv-1412.4229v4/blocks/prop-sec-007-01",
+    "library/arxiv-1412.4229v4/blocks/rem-sec-007-02",
+    "library/arxiv-1412.4229v4/blocks/thm-sec-007-03",
+    "library/arxiv-1412.4229v4/blocks/thm-sec-007-04",
+    "library/arxiv-1412.4229v4/blocks/prop-sec-007-05",
+    "library/arxiv-1412.4229v4/blocks/thm-sec-007-06",
+    "library/arxiv-1412.4229v4/blocks/cor-sec-007-07",
+    "library/arxiv-1412.4229v4/blocks/prop-sec-007-08",
+    "library/arxiv-1412.4229v4/blocks/prop-sec-007-09",
+    "library/arxiv-1412.4229v4/blocks/thm-sec-007-10"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1412.4229v4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1412.4229v4",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1412.4229v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1412.4229v4/manifest.jsonld",
   "provenance": "ingested"
 }

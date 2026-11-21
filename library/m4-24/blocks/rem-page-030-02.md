@@ -1,0 +1,1 @@
+It is known (due to W. Thurston) that knot groups are residually finite. So if hg can be approximated by finite-type invariants for all finite groups G, then Vassiliev invariants would distinguish the unknot.

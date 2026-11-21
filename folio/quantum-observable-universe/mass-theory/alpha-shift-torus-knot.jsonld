@@ -2,19 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-alpha-shift-torus-knot",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:alpha-shift-torus-knot",
   "kind": "proposition",
   "title": "Pole order at $q=0$ of the torus-knot character: $\\alpha_{\\mathrm{shift}}(T_{p,k}) = k(p-1)$ on $V_{(1^p)}$",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-force-carrier-intertwining-correspondence"
+    "papers/quantum-observable-universe/blocks/def-delta-q-decoration"
   ],
   "tags": [
     "alpha-shift",

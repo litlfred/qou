@@ -13,7 +13,7 @@ Alexander weight of N pairwise Hopf links.
 
 ## References
 
-- [manuscript] Ch. 10, §2 Molecular Hopf chains and rings
+- [leitner2026] Ch. 10, §2 Molecular Hopf chains and rings
 - [kauffman1991] https://doi.org/10.1142/1116
 -/
 
@@ -22,7 +22,7 @@ namespace QOU.Organic
 /-- The threading link T(2,N) for a ring of N atoms.
     For even N, this is a 2-component torus link.
     For odd N, it is a torus knot. -/
--- Ref: [manuscript] Ch. 10, Definition: Threading link T(2,N)
+-- Ref: [leitner2026] Ch. 10, Definition: Threading link T(2,N)
 structure ThreadingLink where
   /-- Number of atoms threaded. -/
   atoms : ℕ
@@ -55,14 +55,14 @@ def ThreadingLink.numCrossings (t : ThreadingLink) : ℕ :=
 /-- Alexander weight of T(2,2m) at q=1 is m = N/2.
     This is half the pairwise weight N.
     (Only valid for even N.) -/
--- Ref: [manuscript] Ch. 10, Definition: Threading link T(2,N)
+-- Ref: [leitner2026] Ch. 10, Definition: Threading link T(2,N)
 -- Ref: [kauffman1991] Kauffman, "Knots and Physics," World Scientific 1991
 def ThreadingLink.alexanderWeightAtOne (t : ThreadingLink) : ℕ :=
   t.atoms / 2
 
 /-- The threading efficiency: alexander weight / pairwise weight = 1/2
     for even N. -/
--- Ref: [manuscript] Ch. 10, Proposition: Predicted vs. observed barrier
+-- Ref: [leitner2026] Ch. 10, Proposition: Predicted vs. observed barrier
 theorem ThreadingLink.half_efficiency (t : ThreadingLink)
     (h : Even t.atoms) :
     2 * t.alexanderWeightAtOne = t.atoms := by

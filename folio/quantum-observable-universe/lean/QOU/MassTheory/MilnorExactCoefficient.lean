@@ -71,9 +71,9 @@ is a *negative* result about Route B, not a proof of the exact law.
 Self-contained: the needed #4471 objects (`HasOrder`, `iterCommTower`) are
 restated as local defs and cited by PR number, matching #4471/#4389 style.
 
--- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/MassTheory/MilnorOrderLawGeneral.lean (#4471; all-A order lower bound + MilnorExactOrderConjecture)
--- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/MassTheory/MilnorParitySignLaw.lean (#4389; A=3 proved, A=4 measured)
--- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanTraceConventionSplit.lean (convention D = genuine Jones–Markov trace; A=3 closed form)
+-- Ref: [leitner2026] folio/quantum-observable-universe/lean/QOU/MassTheory/MilnorOrderLawGeneral.lean (#4471; all-A order lower bound + MilnorExactOrderConjecture)
+-- Ref: [leitner2026] folio/quantum-observable-universe/lean/QOU/MassTheory/MilnorParitySignLaw.lean (#4389; A=3 proved, A=4 measured)
+-- Ref: [leitner2026] folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanTraceConventionSplit.lean (convention D = genuine Jones–Markov trace; A=3 closed form)
 -- Ref: [barnatan1995] https://doi.org/10.1016/0040-9383(95)93237-2
 -- Ref: [habegger-masbaum2000] https://doi.org/10.1016/S0040-9383(99)00041-5
 -/
@@ -209,7 +209,7 @@ theorems asserting the exact order law (anti-laundering, matching #4471's
 candidate `μ̄`-sequence* — they do **not** prove the candidate equals the true
 leading coefficient (that identification is the open Milnor content, Route A).
 
--- Ref: [manuscript] computations/deltalambda/milnor-exact-coefficient.witness.json (#4480; A=5/A=6 measured orders + μ̄_A sequence)
+-- Ref: [leitner2026] computations/deltalambda/milnor-exact-coefficient.witness.json (#4480; A=5/A=6 measured orders + μ̄_A sequence)
 -/
 
 section RouteC

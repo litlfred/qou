@@ -7,188 +7,610 @@
   "bytes": 3769953,
   "pages": 42,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Commun. Math. Phys. 140, 481-521 (1991) Communications in Mathematical Physics\u00a9 Springer-Verlag 1991 Hochschild and Cyclic Homology of Quantum Groups",
+  "title": "Hochschild and cyclic homology of quantum groups",
   "authors_raw": "Ping Feng1'* and Boris Tsygan2'**",
   "title_lines": [
-   "Commun. Math. Phys. 140, 481-521 (1991) Communications in",
+   "Commun. Math. Phys. 140, 481-521 (1991)",
    "Mathematical",
-   "Physics\u00a9 Springer-Verlag 1991",
+   "Physics",
+   "© Springer-Verlag 1991",
    "Hochschild and Cyclic Homology of Quantum Groups"
   ],
   "abstract": "For an arbitrary complex linear semisimple Lie group G, we consider Hopf algebras of the deformations of the formal and algebraic functions on G. The Hochschild and cyclic homology of these Hopf algebras are computed when the value of the deformation parameter is generic. Table of Contents",
   "docinfo": {
-   "CreationDate": "D:20040924015228Z",
-   "Title": "",
    "Creator": "ABBYY FineReader",
-   "Author": "",
-   "Producer": ""
-  }
+   "CreationDate": "D:20040924015228Z"
+  },
+  "title_raw": "Commun. Math. Phys. 140, 481-521 (1991) Mathematical Physics © Springer-Verlag 1991 Hochschild and Cyclic Homology of Quantum Groups",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Mathematical Physics Hochschild and Cyclic Homology of Quantum Groups",
+   "text": "Commun. Math. Phys. 140, 481-521 (1991) Mathematical Physics © Springer-Verlag 1991 Hochschild and Cyclic Homology of Quantum Groups",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "Commun. Math. Phys. 140, 481-521 (1991) Mathematical Physics © Springer-Verlag 1991 Hochschild and Cyclic Homology of Quantum Groups"
  },
  "toc": [
+  {
+   "level": 1,
+   "title": "© Springer-Verlag",
+   "page": null,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.5,
+   "evidence": [
+    "contents"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.55,
+   "evidence": [
+    "contents",
+    "number"
+   ],
+   "page_label": null
+  },
   {
    "level": 1,
    "title": "Definitions of Hochschild and Cyclic Homology",
    "page": 4,
    "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Associativity:",
-   "page": 5,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Coassociativity:",
-   "page": 5,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Counit:",
-   "page": 5,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "Connection Axiom:",
-   "page": 6,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "Antipode:",
-   "page": 6,
-   "source": "inferred",
-   "number": "6"
+   "number": "2",
+   "confidence": 0.95,
+   "evidence": [
+    "contents",
+    "body",
+    "style",
+    "number"
+   ],
+   "page_label": "484"
   },
   {
    "level": 1,
    "title": "Quantum Groups",
    "page": 8,
    "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Let G be connected and semi-simple, then every Poisson Lie group structure on G",
-   "page": 9,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "For the Lie bialgebra (g, g*) there is a unique Lie algebra structure on the vector",
-   "page": 9,
-   "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 0.95,
+   "evidence": [
+    "contents",
+    "body",
+    "style",
+    "number"
+   ],
+   "page_label": "488"
   },
   {
    "level": 1,
    "title": "A Spectral Sequence",
    "page": 13,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 0.95,
+   "evidence": [
+    "contents",
+    "body",
+    "style",
+    "number"
+   ],
+   "page_label": "493"
   },
   {
    "level": 1,
    "title": "The Lie Algebra Homology",
    "page": 20,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 0.95,
+   "evidence": [
+    "contents",
+    "body",
+    "style",
+    "number"
+   ],
+   "page_label": "500"
   },
   {
    "level": 2,
-   "title": "Formal Functions. Recall that we have the identification:",
-   "page": 20,
-   "source": "inferred",
-   "number": "5.1"
-  },
-  {
-   "level": 2,
-   "title": "Algebraic Functions. Now we do not have a nice filtration for C[XC] as we",
+   "title": "Formal Functions",
    "page": 21,
    "source": "inferred",
-   "number": "5.2"
+   "number": "5.1",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "501"
+  },
+  {
+   "level": 2,
+   "title": "Algebraic Functions",
+   "page": 22,
+   "source": "inferred",
+   "number": "5.2",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "502"
   },
   {
    "level": 1,
    "title": "Hochschild and Cyclic Homology of Quantum Groups",
    "page": 25,
    "source": "inferred",
-   "number": "6"
+   "number": "6",
+   "confidence": 0.95,
+   "evidence": [
+    "contents",
+    "body",
+    "style",
+    "number"
+   ],
+   "page_label": "505"
   },
   {
    "level": 2,
-   "title": "Quantum Algebraic Groups. This subsection is mainly devoted to the proof2",
+   "title": "Quantum Formal Groups",
    "page": 26,
    "source": "inferred",
-   "number": "6.2"
+   "number": "6.1",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "506"
+  },
+  {
+   "level": 2,
+   "title": "Quantum Algebraic Groups",
+   "page": 26,
+   "source": "inferred",
+   "number": "6.2",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "506"
   },
   {
    "level": 1,
-   "title": "References",
-   "page": 40,
+   "title": "Notations about Calculus on Lie Groups",
+   "page": 35,
    "source": "inferred",
-   "number": null
+   "number": "Appendix A",
+   "confidence": 0.55,
+   "evidence": [
+    "contents",
+    "number"
+   ],
+   "page_label": "515"
   },
   {
    "level": 1,
-   "title": "Drinfeld, V. G.: Hamiltonian structure on Lie groups, Lie bialgebras and the geometric",
-   "page": 40,
+   "title": "Example G = SL(2, C)",
+   "page": 36,
    "source": "inferred",
-   "number": "12"
-  },
-  {
-   "level": 1,
-   "title": "Feigin, B. L., Tsygan, B. L.: Riemann-Roch theorem and Lie algebra cohomology. In:",
-   "page": 40,
-   "source": "inferred",
-   "number": "16"
-  },
-  {
-   "level": 1,
-   "title": "Hilton, P. J., Stammbach, U.: A course in homological algebra. Berlin, Heidelberg, New",
-   "page": 40,
-   "source": "inferred",
-   "number": "20"
-  },
-  {
-   "level": 1,
-   "title": "Knapp, A. W.: Representation theory of semisimple groups. Princeton, NJ: Princeton",
-   "page": 41,
-   "source": "inferred",
-   "number": "25"
-  },
-  {
-   "level": 1,
-   "title": "Lu, J.-H., Weinstein, A.: Poisson Lie groups, dressing transformations and the Bruhat",
-   "page": 41,
-   "source": "inferred",
-   "number": "28"
-  },
-  {
-   "level": 1,
-   "title": "Mack, G., Schomerus, V.: Conformal field algebras with quantum symmetry from the theory",
-   "page": 41,
-   "source": "inferred",
-   "number": "30"
+   "number": "Appendix B",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "516"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "482",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "483",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "484",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "485",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "486",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "487",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "488",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "489",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "490",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "491",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "492",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "493",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "494",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "495",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "496",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "497",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "498",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "499",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "500",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "501",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "502",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "503",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "504",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "505",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "506",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "507",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "508",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "509",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "510",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "511",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "512",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "513",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "514",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "515",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "516",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "517",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "518",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "519",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "520",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "521",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -196,236 +618,192 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 4,
-   "n_chars": 9140,
-   "n_words": 1449
+   "page_end": 1,
+   "n_chars": 79,
+   "n_words": 10,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-000-2-definitions-of-hochschild-and-cyclic-homology",
+   "id": "sec-000-springer-verlag",
+   "number": null,
+   "title": "© Springer-Verlag",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 588,
+   "n_words": 90,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 8451,
+   "n_words": 1347,
+   "label_start": null,
+   "label_end": "484"
+  },
+  {
+   "id": "sec-002-2-definitions-of-hochschild-and-cyclic-homology",
    "number": "2",
    "title": "Definitions of Hochschild and Cyclic Homology",
    "level": 1,
    "page_start": 4,
-   "page_end": 5,
-   "n_chars": 1481,
-   "n_words": 259
+   "page_end": 8,
+   "n_chars": 4648,
+   "n_words": 914,
+   "label_start": "484",
+   "label_end": "488"
   },
   {
-   "id": "sec-001-1-associativity",
-   "number": "1",
-   "title": "Associativity:",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 5,
-   "n_chars": 62,
-   "n_words": 18
-  },
-  {
-   "id": "sec-002-3-coassociativity",
-   "number": "3",
-   "title": "Coassociativity:",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 5,
-   "n_chars": 27,
-   "n_words": 7
-  },
-  {
-   "id": "sec-003-4-counit",
-   "number": "4",
-   "title": "Counit:",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 6,
-   "n_chars": 23,
-   "n_words": 6
-  },
-  {
-   "id": "sec-004-5-connection-axiom",
-   "number": "5",
-   "title": "Connection Axiom:",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 169,
-   "n_words": 36
-  },
-  {
-   "id": "sec-005-6-antipode",
-   "number": "6",
-   "title": "Antipode:",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 7,
-   "n_chars": 512,
-   "n_words": 105
-  },
-  {
-   "id": "sec-006-3-quantum-groups",
+   "id": "sec-003-3-quantum-groups",
    "number": "3",
    "title": "Quantum Groups",
    "level": 1,
-   "page_start": 7,
-   "page_end": 9,
-   "n_chars": 4040,
-   "n_words": 761
-  },
-  {
-   "id": "sec-007-2-let-g-be-connected-and-semi-simple-then-every",
-   "number": "2",
-   "title": "Let G be connected and semi-simple, then every Poisson Lie group structure on G",
-   "level": 1,
-   "page_start": 9,
-   "page_end": 9,
-   "n_chars": 429,
-   "n_words": 73
-  },
-  {
-   "id": "sec-008-3-for-the-lie-bialgebra-g-g-there-is-a-unique-li",
-   "number": "3",
-   "title": "For the Lie bialgebra (g, g*) there is a unique Lie algebra structure on the vector",
-   "level": 1,
-   "page_start": 9,
+   "page_start": 8,
    "page_end": 13,
-   "n_chars": 5488,
-   "n_words": 1045
+   "n_chars": 8043,
+   "n_words": 1548,
+   "label_start": "488",
+   "label_end": "493"
   },
   {
-   "id": "sec-009-4-a-spectral-sequence",
+   "id": "sec-004-4-a-spectral-sequence",
    "number": "4",
    "title": "A Spectral Sequence",
    "level": 1,
    "page_start": 13,
    "page_end": 20,
-   "n_chars": 9378,
-   "n_words": 1772
+   "n_chars": 9574,
+   "n_words": 1897,
+   "label_start": "493",
+   "label_end": "500"
   },
   {
-   "id": "sec-010-5-the-lie-algebra-homology",
+   "id": "sec-005-5-the-lie-algebra-homology",
    "number": "5",
    "title": "The Lie Algebra Homology",
    "level": 1,
    "page_start": 20,
-   "page_end": 20,
-   "n_chars": 321,
-   "n_words": 54
-  },
-  {
-   "id": "sec-011-51-formal-functions-recall-that-we-have-the-iden",
-   "number": "5.1",
-   "title": "Formal Functions. Recall that we have the identification:",
-   "level": 2,
-   "page_start": 20,
    "page_end": 21,
-   "n_chars": 3343,
-   "n_words": 564
+   "n_chars": 3619,
+   "n_words": 632,
+   "label_start": "500",
+   "label_end": "501"
   },
   {
-   "id": "sec-012-52-algebraic-functions-now-we-do-not-have-a-nice",
-   "number": "5.2",
-   "title": "Algebraic Functions. Now we do not have a nice filtration for C[XC] as we",
+   "id": "sec-006-51-formal-functions",
+   "number": "5.1",
+   "title": "Formal Functions",
    "level": 2,
    "page_start": 21,
    "page_end": 25,
-   "n_chars": 8655,
-   "n_words": 1500
+   "n_chars": 8853,
+   "n_words": 1550,
+   "label_start": "501",
+   "label_end": "505"
   },
   {
-   "id": "sec-013-6-hochschild-and-cyclic-homology-of-quantum-grou",
+   "id": "sec-007-6-hochschild-and-cyclic-homology-of-quantum-grou",
    "number": "6",
    "title": "Hochschild and Cyclic Homology of Quantum Groups",
    "level": 1,
    "page_start": 25,
    "page_end": 26,
-   "n_chars": 4507,
-   "n_words": 761
+   "n_chars": 2862,
+   "n_words": 504,
+   "label_start": "505",
+   "label_end": "506"
   },
   {
-   "id": "sec-014-62-quantum-algebraic-groups-this-subsection-is-m",
-   "number": "6.2",
-   "title": "Quantum Algebraic Groups. This subsection is mainly devoted to the proof2",
+   "id": "sec-008-61-quantum-formal-groups",
+   "number": "6.1",
+   "title": "Quantum Formal Groups",
    "level": 2,
    "page_start": 26,
-   "page_end": 40,
-   "n_chars": 22139,
-   "n_words": 4012
+   "page_end": 26,
+   "n_chars": 1607,
+   "n_words": 271,
+   "label_start": "506",
+   "label_end": "506"
   },
   {
-   "id": "sec-015-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 40,
-   "page_end": 40,
-   "n_chars": 1498,
-   "n_words": 219
+   "id": "sec-009-62-quantum-algebraic-groups",
+   "number": "6.2",
+   "title": "Quantum Algebraic Groups",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 36,
+   "n_chars": 17195,
+   "n_words": 3167,
+   "label_start": "506",
+   "label_end": "516"
   },
   {
-   "id": "sec-016-12-drinfeld-v-g-hamiltonian-structure-on-lie-gro",
-   "number": "12",
-   "title": "Drinfeld, V. G.: Hamiltonian structure on Lie groups, Lie bialgebras and the geometric",
+   "id": "sec-010-appendix-b-example-g-sl2-c",
+   "number": "Appendix B",
+   "title": "Example G = SL(2, C)",
    "level": 1,
-   "page_start": 40,
-   "page_end": 40,
-   "n_chars": 590,
-   "n_words": 93
-  },
-  {
-   "id": "sec-017-16-feigin-b-l-tsygan-b-l-riemann-roch-theorem-an",
-   "number": "16",
-   "title": "Feigin, B. L., Tsygan, B. L.: Riemann-Roch theorem and Lie algebra cohomology. In:",
-   "level": 1,
-   "page_start": 40,
-   "page_end": 40,
-   "n_chars": 407,
-   "n_words": 58
-  },
-  {
-   "id": "sec-018-20-hilton-p-j-stammbach-u-a-course-in-homologica",
-   "number": "20",
-   "title": "Hilton, P. J., Stammbach, U.: A course in homological algebra. Berlin, Heidelberg, New",
-   "level": 1,
-   "page_start": 40,
-   "page_end": 41,
-   "n_chars": 575,
-   "n_words": 84
-  },
-  {
-   "id": "sec-019-25-knapp-a-w-representation-theory-of-semisimple",
-   "number": "25",
-   "title": "Knapp, A. W.: Representation theory of semisimple groups. Princeton, NJ: Princeton",
-   "level": 1,
-   "page_start": 41,
-   "page_end": 41,
-   "n_chars": 274,
-   "n_words": 40
-  },
-  {
-   "id": "sec-020-28-lu-j-h-weinstein-a-poisson-lie-groups-dressin",
-   "number": "28",
-   "title": "Lu, J.-H., Weinstein, A.: Poisson Lie groups, dressing transformations and the Bruhat",
-   "level": 1,
-   "page_start": 41,
-   "page_end": 41,
-   "n_chars": 127,
-   "n_words": 22
-  },
-  {
-   "id": "sec-021-30-mack-g-schomerus-v-conformal-field-algebras-w",
-   "number": "30",
-   "title": "Mack, G., Schomerus, V.: Conformal field algebras with quantum symmetry from the theory",
-   "level": 1,
-   "page_start": 41,
+   "page_start": 36,
    "page_end": 42,
-   "n_chars": 2117,
-   "n_words": 316
+   "n_chars": 11385,
+   "n_words": 1948,
+   "label_start": "516",
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 1,
   "likely_scanned": false,
-  "toc_entries": 22,
-  "sections": 23,
-  "chars_total": 75302
+  "toc_entries": 13,
+  "toc_inferred_entries": 14,
+  "toc_inferred_mean_confidence": 0.775,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "contents",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 4,
+    "items": [
+     "© Springer-Verlag",
+     "Received October 23, 1990; in revised form February 20,",
+     "Introduction",
+     "Notations about Calculus on Lie Groups"
+    ]
+   },
+   "found_not_listed": {
+    "count": 3,
+    "items": [
+     "1 Associativity:",
+     "5 Connection Axiom:",
+     "2 Let G be connected and semi-simple, then every Poisson Lie group structure on G has the following form:"
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 12,
+  "chars_total": 76904,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "Received October 23, 1990; in revised form February 20,",
+    "page": null,
+    "action": "dropped",
+    "why": "ends with a comma"
+   }
+  ]
  }
 }

@@ -4,13 +4,14 @@ doc_title: "A Fourier-Free Density-Increment Proof of Roth's Theorem"
 section_id: sec-005-6-finding-a-genuine-integer-progression
 section_title: "Finding a genuine integer progression"
 section_number: 6
-pages: 6-9
+pages: 6-8
 source_pdf: 2605.19310v1.pdf
 source_sha256: 047d492babc63d2f
 toc_source: inferred
 text_source: latex
-latex_prose_ratio: 0.989
-latex_coverage_ratio: 0.984
+latex_prose_ratio: 0.982
+latex_coverage_ratio: 0.948
+doc_brief: "A Fourier-Free Density-Increment Proof of Roth's Theorem — We give an elementary, Fourier-free proof of Roth’s theorem."
 ---
 We now show how to pass from a density increment on a modular progression to one on a genuine integer progression.
 
@@ -43,28 +44,4 @@ Combining this with Lemma [\[lem:energy\]](#lem:energy){reference-type="ref" re
 ::: proof
 *Proof.* By Lemma [\[lem:energy\]](#lem:energy){reference-type="ref" reference="lem:energy"}, $\mathcal E(f)\gtrsim\alpha^{12}m^3$. Put $\beta\sim\alpha^{12}$ and choose $\ell\sim\beta m/\alpha^2\sim\alpha^{10}m$. The hypothesis $N\gtrsim\alpha^{-32}$ ensures that such an integer $\ell$ satisfies $1\leq\ell<m/2$. Lemma [\[lem:modular\]](#lem:modular){reference-type="ref" reference="lem:modular"} gives $d\in\mathbb{Z}_m^\times$ and $x\in\mathbb{Z}_m$ with $\sum_{i=0}^{\ell-1}f(x+id)\gtrsim \alpha^{11}\ell$. Set $\eta\sim\alpha^{11}$. Again using $N\gtrsim\alpha^{-32}$, we have $\ell\gtrsim\eta^{-2}$. Lemma [\[lem:rect\]](#lem:rect){reference-type="ref" reference="lem:rect"} gives an arithmetic progression $P\subset[N]$ with density increment $\gtrsim\alpha^{11}$ and length $$\lvert P\rvert\gtrsim \eta\sqrt{\ell}\gtrsim \alpha^{11}\alpha^5m^{1/2}
 \gtrsim \alpha^{16}N^{1/2}.$$ ◻
-:::
-
-# Proof of Roth's theorem and the quantitative bound
-
-::: proof
-*Proof of Theorem [\[thm:roth\]](#thm:roth){reference-type="ref" reference="thm:roth"}.* Fix $\alpha_0>0$ and suppose, for contradiction, that there are arbitrarily large $N$ and 3AP-free sets $A\subset[N]$ with $\lvert A\rvert\geq\alpha_0N$. Applying Proposition [\[prop:increment\]](#prop:increment){reference-type="ref" reference="prop:increment"}, then rescaling the progression it gives back to an interval, produces a new 3AP-free set with density increased by at least $c\alpha_0^{11}$. Repeating this, the density exceeds $1$ after $O(\alpha_0^{-11})$ steps.
-
-It remains only to ensure that the iteration can be run for that many steps. At each step the ambient length is replaced by a progression of length at least $c\alpha_0^{16}N_j^{1/2}$. Since the number of steps depends only on $\alpha_0$, choosing the original $N$ sufficiently large in terms of $\alpha_0$ keeps every intermediate interval above the threshold in Proposition [\[prop:increment\]](#prop:increment){reference-type="ref" reference="prop:increment"}. This contradiction proves the theorem. ◻
-:::
-
-A more careful analysis gives an explicit double-logarithmic bound.
-
-::: corollary
-[]{#cor:quantitative label="cor:quantitative"} There is an absolute constant $C>0$ such that $$r_3(N)\leq C\frac{N}{(\log\log N)^{1/11}}$$ for all sufficiently large $N$.
-:::
-
-::: proof
-*Proof.* Let $A\subset[N]$ be 3AP-free, and write $\alpha=\lvert A\rvert/N$. Set $J=\lfloor c_0\alpha^{-11}\rfloor$, where $c_0>0$ is a sufficiently small absolute constant. If the density increment can be applied $J$ times, then each step increases the density by at least $c\alpha^{11}$, since the densities only increase. After $J$ steps the density would exceed $1$, which is impossible.
-
-It remains to check that the lengths stay large enough for $J$ steps. At each step, after rescaling the subprogression back to an interval, Proposition [\[prop:increment\]](#prop:increment){reference-type="ref" reference="prop:increment"} gives $$\alpha_{j+1}\geq \alpha_j+c\alpha_j^{11},
-        \qquad
-        N_{j+1}\geq c\alpha_j^{16}N_j^{1/2}.$$ Since $\alpha_j\geq\alpha$, the length estimate implies $$\log N_{j+1}\geq \frac12\log N_j-C\log(e/\alpha).$$ Iterating this crude bound gives $$\log N_j\geq 2^{-j}\log N-C\log(e/\alpha).$$ Thus, if $\log N\geq C2^J\log(e/\alpha)$, then every $N_j$ with $j\leq J$ remains larger than a fixed power of $\alpha^{-1}$, and in particular remains above the threshold required by Proposition [\[prop:increment\]](#prop:increment){reference-type="ref" reference="prop:increment"}. Since $J\sim\alpha^{-11}$, this condition follows from $$\log\log N\geq C\alpha^{-11},$$ after increasing $C$.
-
-Therefore, if $\log\log N$ were larger than a sufficiently large constant times $\alpha^{-11}$, the iteration could run for $J$ steps and force the density above $1$. Hence $\log\log N\lesssim\alpha^{-11}$, so $\alpha\lesssim(\log\log N)^{-1/11}$. Since $\alpha=\lvert A\rvert/N$, this gives $$r_3(N)\lesssim \frac{N}{(\log\log N)^{1/11}}.$$ This proves the corollary. ◻
 :::

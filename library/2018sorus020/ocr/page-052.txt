@@ -1,0 +1,50 @@
+explicit formulae in many cases, this will permit us to perform direct computations
+
+in several examples.
+
+Proposition 2.2.4 (see also Corollary 4.2 of [Por97]). Given a finite point x in
+
+a component of irreducible type X of the augmented character variety, and v a
+
+valuation corresponding to x, we fix 4 a class in (OM). Then the following holds :
+1 2
+
+tor(M, Adop)(v) = adil, Adop) Jao Mi
+
+where T,(M, Ad of) is the torsion in the sense of Porti-Dubois at the point v, rela-
+
+tively to the curve pu.
+
+Remark 2.2.5. Here we use the convention of , that corresponds to ours. In
+for instance, the torsion defined is the inverse of the latter.
+
+Remark 2.2.6. Notice that 7, makes sense only when v is not a critical point of
+Y,,. If we pull-back this formula on the augmented variety by setting Y, = Z, + 2, I
+
+2 dy
+
+then the formula becomes rational : tor(M, Adop) = =5+#.
+we ou
+
+Proof. The torsion in the sense of Porti-Dubois is defined pointwise as a function on
+a smooth open subset U of the character varierty, and it is proved in that it is
+in fact analytic. For v € U, pick any generator P of H°(0M, Ad op). Then one obtains
+basis of H'(M, Adop),i = 1, 2, as follows : since we assumed that f is not a critical
+point of the trace function Y,, the restriction map H'(M, Adop) + H!(, Ad of) is
+an isomorphism. The latter is identified to k via H1(u, Adop) + k, f + Tr(Pf(p)),
+and the composition of those maps is simply the differential dY,,. Then the generator
+of H'(M, Ado) is fixed to be dY,-‘(1). For the generator of H?(M, Ad op), pull-
+back 1 via the isomorphisms H?(M, Adop) + H?(9M, Adop) *25 k, where p(f) =
+f(P). But P appears both in H! and in H?, hence the torsion does not depend on a
+choice of P. Finally, we have chosen H to be a generator of H?(M, Adop), and the
+isomorphism H,(M, Ad op) > Qxy)/e provides a term fo(js), we need to normalize
+
+by we. and the result follows. oO
+
+Example 2.2.7 (The trefoil knot). Recall that the tautological representation of
+the component of irreducible type X C X(M) is given by the formulae :
+
+7 t 1 _(-3 0
+#0= (ete 1) -0= (7 .)
+
+51

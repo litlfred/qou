@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1508.05448v1/blocks/prose-sec-006",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "The Euler-Maclaurin Formula",
-  "pageStart": 34,
-  "pageEnd": 36,
-  "text": "../sections/sec-006-24-the-euler-maclaurin-formula.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1508.05448v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1508.05448v1",
+  "title": "Concentration of Measure Results and other Necessary Background",
+  "pageStart": 14,
+  "pageEnd": 14,
+  "text": "../sections/sec-006-2-concentration-of-measure-results-and-other-nec.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1508.05448v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1508.05448v1/manifest.jsonld",
   "provenance": "ingested"
 }

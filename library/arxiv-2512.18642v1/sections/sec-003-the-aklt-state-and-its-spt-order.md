@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2512.18642v1
-doc_title: "A Hidden Quantum Markov model framework for"
+doc_title: "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain"
 section_id: sec-003-the-aklt-state-and-its-spt-order
 section_title: "The AKLT State and its SPT Order"
 section_number: null
 pages: 4-6
 source_pdf: 2512.18642v1.pdf
 source_sha256: c4c7f8b0a719aa2d
-doc_brief: "A Hidden Quantum Markov model framework for — This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af- fleck–Kennedy–Lieb–Tasaki (AKLT) state—a cornerstone example of a"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.945
-latex_coverage_ratio: 0.899
+latex_coverage_ratio: 0.978
+doc_brief: "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain — This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af"
 ---
 []{#SbSect_AKLT label="SbSect_AKLT"}
 

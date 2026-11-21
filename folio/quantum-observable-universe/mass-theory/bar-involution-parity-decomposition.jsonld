@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-bar-involution-parity-decomposition",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:bar-involution-parity-decomposition",
+  "kind": "lemma",
+  "title": "Even/odd decomposition under a linear involution",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-bar-involution"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-bar-involution-parity-decomposition"
+  ],
+  "leanRef": "qou:QOU.Mass.evenPart_add_oddPart",
+  "text": "bar-involution-parity-decomposition.md",
+  "leanSource": "bar-involution-parity-decomposition.lean",
+  "provenance": "authored"
+}

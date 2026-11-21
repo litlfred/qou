@@ -9,13 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "The second map",
-  "pageStart": 60,
-  "pageEnd": 64,
+  "title": "Preliminaries",
+  "pageStart": 51,
+  "pageEnd": 55,
   "contains": [
-    "library/arxiv-math-0105186v2/blocks/prose-sec-012"
+    "library/arxiv-math-0105186v2/blocks/prose-sec-012",
+    "library/arxiv-math-0105186v2/blocks/rem-sec-012-01",
+    "library/arxiv-math-0105186v2/blocks/lem-sec-012-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0105186v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0105186v2",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0105186v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0105186v2/manifest.jsonld",
   "provenance": "ingested"
 }

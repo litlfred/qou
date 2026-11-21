@@ -1,0 +1,1 @@
+Given an exact co-nomadic Finsler structure [F] on a manifold M, represented by the Finsler norm F, and an oriented closed curve, its length only depends on [F]. Moreover, the geodesics of F only depend on [F].

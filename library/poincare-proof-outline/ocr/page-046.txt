@@ -1,0 +1,69 @@
+thus ?thesis
+using **
+using cross-ratio-not-zero cross-ratio-not-inf all-different
+by auto (subst cross-ratio-commute-24, subst reciprocal-real, simp-all add: In-div)
+qed
+qed
+next
+fix d
+assume poincare-distance-pred uv d
+thus d = ?d
+using * <u # v>
+by auto
+qed
+qed
+
+lemma poincare-distance-satisfies-pred [simp]:
+assumes u € unit-disc and v € unit-disc
+shows poincare-distance-pred u v (poincare-distance u v)
+using distance-unique[OF assms| thel [of poincare-distance-pred u v]
+unfolding poincare-distance-def
+by blast
+
+lemma poincare-distance-I:
+assumes u € unit-disc and v € unit-disc and u # v and ideal-points (poincare-line u v) = {i1, i2}
+shows poincare-distance uv = calc-poincare-distance u il v i2
+using assms
+using poincare-distance-satisfies-pred|OF assms(1—2)|
+by simp
+
+lemma poincare-distance-refl [simp]:
+assumes u € unit-disc
+shows poincare-distance uu = 0
+using assms
+using poincare-distance-satisfies-pred|OF assms assms]
+by simp
+
+Unit disc preserving Mobius transformations preserve h-distance.
+
+lemma unit-disc-fit-preserve-poincare-distance [simp|:
+assumes unit-disc-fix M and u € unit-disc and v € unit-disc
+shows poincare-distance (moebius-pt M u) (moebius-pt M v) = poincare-distance u v
+proof (cases u = v)
+case True
+have moebius-pt M u € unit-disc moebius-pt M v € unit-disc
+using wnit-disc-fiz-iff[OF assms(1), symmetric] assms
+by blast+
+thus ?thesis
+using assms (u = v)
+by simp
+next
+case False
+obtain if i2 where »: ideal-points (poincare-line u v) = {i1, i2}
+using <u 4 v)
+by (rule obtain-ideal-points|OF is-poincare-line-poincare-line|of u v])
+let ?Mu = moebius-pt Mu and ?Mv = moebius-pt Mv and ?Mil = moebius-pt M il and ?Mi2 = moebius-pt M i2
+
+have **: ?Mu € unit-disc ?Mv € unit-disc
+using assms
+using unit-disc-fir-iff
+by blast+
+
+have «xx: ?Mu # ?Mv
+using <u 4 v)
+by simp
+have poincare-distance uv = calc-poincare-distance u il v i2
+
+using poincare-distance-I|OF assms(2—3) <u # v> *]
+
+46

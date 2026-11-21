@@ -2,37 +2,37 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0203160v3",
  "source_sha256": "a84f478d72d40af2",
- "brief": "Differential and complex geometry of two-dimensional noncommutative tori Momar Dieng Albert Schwarz∗ Department of Mathematics University of California — We analyze in detail projective modules over",
- "extended": "**Differential and complex geometry of two-dimensional noncommutative tori Momar Dieng Albert Schwarz∗ Department of Mathematics University of California**\n\n*Davis, CA 95616*\n\n13 pp, 5 sections.\n\n**Abstract.** We analyze in detail projective modules over two-dimension al noncom- mutative tori and complex structures on these modules.We co ncentrate our attention on properties of holomorphic vectors in these modules; the theory of these vectors generalizes the theory of theta-fun ctions. The pa- per is self-contained; it can be used also as an introduction to the theory of noncommutative spaces with simplest space of this kind th oroughly analyzed as a basic example.\n\n**Outline.** Abstract; 1 Introduction; Acknowledgments; References; 4 Appendix",
+ "brief": "arXiv:math/0203160v3 [math.QA] 28 Oct 2002 — We analyze in detail projective modules over two-dimensional noncom- mutative tori and complex structures on these modules.We concentrate our attention on",
+ "extended": "**arXiv:math/0203160v3 [math.QA] 28 Oct 2002**\n\n*Momar Dieng*\n\n13 pp, 5 sections.\n\n**Abstract.** We analyze in detail projective modules over two-dimensional noncom- mutative tori and complex structures on these modules.We concentrate our attention on properties of holomorphic vectors in these modules; the theory of these vectors generalizes the theory of theta-functions. The pa- per is self-contained; it can be used also as an introduction to the theory of noncommutative spaces with simplest space of this kind thoroughly analyzed as a basic example.\n\n**Outline.** Front matter; 1 Introduction; 2 Projective modules and their tensor products; 3 Connections and complex structures.; Acknowledgments",
  "tokens": {
   "brief": 49,
-  "extended": 188
+  "extended": 175
  },
  "sections": [
   {
-   "id": "sec-000-abstract",
-   "title": "Abstract",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-8"
+   "pages": "1-2"
   },
   {
-   "id": "sec-002-acknowledgments",
+   "id": "sec-001-2-projective-modules-and-their-tensor-products",
+   "title": "Projective modules and their tensor products.",
+   "pages": "2-6"
+  },
+  {
+   "id": "sec-002-3-connections-and-complex-structures",
+   "title": "Connections and complex structures.",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-003-acknowledgments",
    "title": "Acknowledgments",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-003-references",
-   "title": "References",
-   "pages": "8-10"
-  },
-  {
-   "id": "sec-004-4-appendix",
-   "title": "Appendix",
-   "pages": "10-13"
+   "pages": "8-13"
   }
  ],
  "provenance": {

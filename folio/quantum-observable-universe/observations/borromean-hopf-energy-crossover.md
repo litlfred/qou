@@ -3,7 +3,7 @@
 *1. Borromean phase ($\mathcal{P}_B$): Two Borromean baryons $\mathcal{B}_3 \cdot \mathcal{B}_3$. Each baryon possesses Borromean volume $V_B = 7.32772$ and features inter-baryon Hopf binding.*
 *2. Diquark phase ($\mathcal{P}_D$): Three Hopf diquark pairs ([Hopf diquark](#def:hopf-diquark)) $D_{[\mathfrak{u}\mathfrak{d}]} \cdot D_{[\mathfrak{d}\mathfrak{s}]} \cdot D_{[\mathfrak{s}\mathfrak{u}]}$. Each pair is bound by $\mathcal{L}_H$.*
 
-*We have:*
+*Explicitly:*
 
 *1. Mass comparison.*
 *The Borromean phase yields mass*
@@ -25,7 +25,7 @@ $$
   q + q^{-1}
    \approx  2.011  \text{Skein units}.
 $$
-*Since $\mathrm{Vol}(\mathcal{L}_H) = 0$, the diquark mass derives purely from crossing energy rather than hyperbolic volume. For any $q > 1$, we have $M_D \ll M_B$.*
+*Since $\mathrm{Vol}(\mathcal{L}_H) = 0$, the diquark mass derives purely from crossing energy rather than hyperbolic volume. For any $q > 1$, $M_D \ll M_B$.*
 
 *2. Binding energy comparison.*
 *The binding energy per baryon number is:*

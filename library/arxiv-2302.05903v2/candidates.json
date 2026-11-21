@@ -3,6 +3,7 @@
  "doc_id": "arxiv-2302.05903v2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "9a17abd36cc8a317e86c463e7b641bb0a1cef799920ff374e62f9cb229c2ea1b",
   "file": "2302.05903v2.pdf"
@@ -20,39 +21,9 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
-  "by_kind": {
-   "example": 1,
-   "remark": 1
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "example",
-   "source_kind": "example",
-   "number": null,
-   "name": null,
-   "statement": "s of these polynomials can be found in [13, Appendix]. They are obtained by using integration by parts",
-   "section_file": "sections/sec-008-strong-integrability-in-gaussian-hermitian-matri.md",
-   "section_title": "Strong integrability in Gaussian Hermitian matrix model",
-   "pages": "8-9",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": null,
-   "name": null,
-   "statement": "ably, all the coefficients \u03a8 \u03bd(k) are positive integers, and they can be interpreted as the numbers of",
-   "section_file": "sections/sec-011-hurwitz-tau-functions.md",
-   "section_title": "Hurwitz tau-functions",
-   "pages": "12-13",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  }
- ]
+ "candidates": []
 }

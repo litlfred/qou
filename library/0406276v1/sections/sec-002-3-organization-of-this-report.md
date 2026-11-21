@@ -8,6 +8,7 @@ pages: 6-7
 source_pdf: 0406276v1.pdf
 source_sha256: 8fdf4b5950e8b5f5
 toc_source: inferred
+doc_brief: "The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE — 16 sections: Front matter; Linking integrals in S3 and H3 .; Historical background."
 ---
 Gauss's degree-of-map derivation of his linking integral does not work on the  
 3-sphere  S3  because the set of ordered pairs of distinct points in  S3  deformation 
@@ -35,7 +36,4 @@ including a proposed application to solar physics, see the Ph.D. thesis of Jason
 Parsley (2004) . 
  
 We take pleasure in acknowledging Jason Parsley's help throughout the preparation 
-of this report, and especially in the development of electrodynamics on  S3 . 
- 
- 
-7
+of this report, and especially in the development of electrodynamics on  S3 .

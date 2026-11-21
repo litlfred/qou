@@ -72,7 +72,7 @@ class DescentDPPMarginConvergence (rhoP sigRatio : ℕ → ℝ) (rhoInf sigRatio
   (arc symbol ⇒ algebraic remainder), the remaining open computation.
   -- Ref: [johansson2001] [gorbunov2024] [deift-its-krasovsky2012] -/
   sigRatio_tendsto : Tendsto sigRatio atTop (𝓝 sigRatioInf)
-  /-- the leading margin is strictly positive. -- Ref: [manuscript] docs/audits/2026-08-29-covariance-kernel-M1-po72-leading-constants.md -/
+  /-- the leading margin is strictly positive. -- Ref: [leitner2026] docs/audits/2026-08-29-covariance-kernel-M1-po72-leading-constants.md -/
   leading_margin_pos : sigRatioInf < rhoInf
 
 /-- **The (CS) margin holds eventually (sorry-free), from the cited convergence.**
@@ -125,7 +125,7 @@ the strict inequality follows by `π`-cancellation in the square. **Unlike the t
 this one is NOT gated on the open bulk kernel rate** — it is a fact about the exact limit constants,
 now discharged modulo the certified numeric ceiling.
 
--- Ref: [manuscript] docs/audits/2026-08-29-covariance-kernel-M1-po72-leading-constants.md -/
+-- Ref: [leitner2026] docs/audits/2026-08-29-covariance-kernel-M1-po72-leading-constants.md -/
 theorem leading_margin_pos_of_VD_ceiling
     (VA VD sigRatioInf rhoInf p : ℝ)
     (hp : 0 < p)

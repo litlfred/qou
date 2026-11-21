@@ -1,0 +1,55 @@
+The Dilogarithm Function 37
+
+where the value of the Rogers dilogarithm divided by 7? corresponds to the
+central charge) [17], [30]. If one has found a conjectural relation of this sort
+(which can be done empirically, e.g. by computing lots of values of the Bloch-
+Wigner or Rogers dilogarithm at algebraic arguments and searching for Z-
+relations among them by the LLL algorithm), then one can always verify its
+correctness by finding an explicit expression of some multiple of it as a linear
+combination of five-term relations. We will describe a few examples and a
+general construction.
+
+(a) Recall that the five-term relation is }>[2;], where {x;} is a cyclically
+ordered 5-tuple of numbers satisfying 1-2; = 2;~12;41. The simplest example
+is when x; = a for all 7, where a is one of the two roots of the quadratic
+equation 1 — a = a?, ie., a = (—1 + V5)/2. It follows that the element [a]
+of Z[Q(V5)] is killed by 5 in the Bloch group for each of these two numbers.
+That they are really 5-torsion and not trivial follows from the fact that the
+corresponding values L((—1 + V/5)/2) = +n?/10 of the Rogers dilogarithm
+have the denominator 5 when divided by 7?/6.
+
+(b) We give a less trivial example which will be used in §3 in connection
+with Nahm’s conjecture. Set ¢ = /a, with a = (-1+ V5)/2 the inverse golden
+ratio as in Example (a). The field F = Q(e) has two real and two (conjugate)
+complex embeddings. Define € € Z[F'] by
+
+1
+
+=e, -
+a Q = >
+
+: €=[Q1] + [Q2]. (18)
+From the identities
+
+1-Q1 = Q1Q2, 1—Q2 = Q1Q2 (19)
+
+we obtain
+
+A(E) = (Q1) A (A(Q1) + (Q2)) + (Q2) A ((Q1) + (Q2)) = 0, (20)
+
+so € belongs to the Bloch group of F. To see that it is torsion, we use the
+relation (17) with « =y=e:
+
+l-e
+
+V(e,e) = 2[e] + 2[7—3] + [l-e] = 2€+[l-oa], = (21)
+
+and since we have already seen in (a) that [a] and hence [1 — a] are 5-torsion
+elements, this shows that 10€ = 0 in the Bloch group. To see that it really
+has this denominator, we calculate that L(€)/LZ(1) = 13/10 (numerically, but
+then exactly since we have just shown that 10 L(€)/L(1) must be an integer).
+
+(c) In example (a), the torsion element in the Bloch group had the form
+[2] for a single number a = (—1 + V5)/2. Another such example, even more
+obvious, is given by « = 1/2, for which « A (1-2) =a Aa =0 and L(x) =
+n?/12. We claim that the only torsion elements of the Bloch group of C of the

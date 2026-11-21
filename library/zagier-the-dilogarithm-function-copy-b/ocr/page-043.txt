@@ -1,0 +1,59 @@
+The Dilogarithm Function 45
+
+only real solutions. To see that (i) really is the right condition, we consider the
+matrix A = (¢ t). In this case (25) specializes to the system of equations (19)
+studied in example (b) of §2B, and by the discussion given there we know
+that the corresponding element €4 € B(Q(E,)) is torsion (of order 10) but is
+not totally real. So if (i) rather than total reality is the correct condition in
+the conjecture, then there should be pairs (B,C) € Q? x Q for which f4,p,c is
+modular. After some experimentation, using a method which will be explained
+briefly at the end of subsection C, we find that there are indeed at least two
+such pairs, the corresponding identities being
+
+5,1 (22)
+1 (2)= ne)
+
+where 45,1(z) and 45,2(z) are the same theta series as those occurring in (23).
+(These equations were not proved, but only verified to a high order in the
+power series in q.)
+
+Os, 95,2(22)
+F441) 122), 9 = ae?
+
+fan,
+
+(102): 1210
+
+(c) Must all solutions be torsion? If A is any positive definite matrix,
+even with real coefficients, then the system of equations (25) has exactly one
+solution with all Q; real and between 0 and 1. (To see this, one shows by
+induction on r the more general assertion that the system 1—Q; = ; I]; Qi”
+has a unique solution in (0,1)" for any real numbers \j,...,A, > 0.) Denote
+this solution by Q° = (Q9,...,Q®). If the coefficients of A are rational, the
+Q9 are real algebraic numbers (though not necessarily totally real—see (b))
+and we obtain a specific element £4 = €go € B(QMR). If condition (i) of
+the conjecture is satisfied, then this must be a torsion element and hence
+the corresponding Rogers dilogarithm value L(f4) = > L(Q®) must be a
+rational multiple of 7?. This criterion is numerically effective (one can find Q°
+numerically to high precision by an iterative procedure and then test L(£4)/7?
+for rationality) and is the one used for the computer searches described in (d)
+and (e) below. One can reasonably ask whether it is in fact sufficient, ice.,
+whether it is sufficient in (i) to assume only that €, is torsion. An example
+showing that this is not the case—we will see many others in (d) and (e)—is
+given by the matrix A = (3 $). Here Q° is equal to (o? w, ¢* — @y), with
+@ = (V5 +1)/2 and p = (1+ V2V5—1)/2, and ns 4 torsion, as we can
+see numerically from the dilogarithm values ( L(€) = ) for both €go and
+its real conjugate and D(€) = 0 for both non-real a ates of €go) and
+could verify algebraically as in section 2B. But the equations 1— Qi; = Q§Q3,
+1— Qe = Q3Q$ have another Galois orbit of four solutions where (Qi, Q2)
+belong to a different quartic field and where D(€) 4 0, so condition (i) of the
+conjecture is not satisfied. Here a computer search finds no B and C' making
+fa,B,c modular.
+
+(d) Rank two examples. An extensive search for positive definite matrices
+
+1
+A € M2(Q) for which L(E4)/L(1) € Q (specifically, a search over A = —() ’)
+m be
+
+with integers a, b, c, m less than or equal to 100) found three infinite families

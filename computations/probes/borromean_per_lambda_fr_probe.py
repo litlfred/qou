@@ -63,7 +63,7 @@ from __future__ import annotations
 import json
 import sys
 import warnings
-from math import comb
+from math import comb  # float64-ok: exact integer binomial coefficient
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -87,6 +87,8 @@ from codata_constants import (
     M_E_MEV as M_E  # noqa: E402,
 )
 from _li_2_q_util import li_2_q  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
+from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
 
 # AME2020 totals (MeV) — comparison target only (mirror of
 # borromean_binding_recompute.ISO).
@@ -111,8 +113,8 @@ from _li_2_q_util import li_2_q  # noqa: E402
 # Repointing them at `ame_binding_mev` would move this probe's numbers, so it
 # is not part of a precision drain; the headline spread is 7.16 against a 0.5
 # tolerance, so 3 ppm changes no conclusion either way.
-ISO = [("2H", 1, 1, "2.224573"), ("3H", 1, 2, "8.481821"),
-       ("3He", 2, 1, "7.718058"),
+ISO = [("2H", 1, 1, _ame_nstr(AME_B_DEUTERON_MEV_VALIDATION, 30)), ("3H", 1, 2, _ame_nstr(AME_B_TRITIUM_MEV_VALIDATION, 30)),
+       ("3He", 2, 1, _ame_nstr(AME_B_HE3_MEV_VALIDATION, 30)),
        ("4He", 2, 2, AME_B_HE4_MEV_VALIDATION),
        ("6Li", 3, 3, "31.994564"), ("7Li", 3, 4, "39.244533"),
        ("12C", 6, 6, "92.161728"), ("16O", 8, 8, "127.619"),
@@ -225,9 +227,9 @@ def main() -> int:
         return rows, spread
 
     base_rows, base_spread = sweep(tau, tau)
-    print(f"baseline (uniform)  spread={float(base_spread):.3f}")
+    print(f"baseline (uniform)  spread={float(base_spread):.3f}")  # float64-ok: stdout display only
     for nm, r in base_rows.items():
-        print(f"  {nm:5s} net/target={float(r['net_over_target']):7.3f}")
+        print(f"  {nm:5s} net/target={float(r['net_over_target']):7.3f}")  # float64-ok: stdout display only
 
     results = {"baseline": {"rows": base_rows, "spread": base_spread}}
     verdicts = {}
@@ -253,16 +255,16 @@ def main() -> int:
             verdict = ("PASS (U flattened)" if u_flattened else
                        "FAIL (monotone rescale)" if monotone else
                        f"FAIL (spread {'improved' if spread < base_spread else 'worsened'} "
-                       f"{float(base_spread):.2f}→{float(spread):.2f} "
+                       f"{float(base_spread):.2f}→{float(spread):.2f} "  # float64-ok: prose verdict string formatting
                        f"but not U-corrective)")
             results[key] = {"tau_weighted": tw, "rows": rows,
                             "spread": spread, "verdict": verdict}
             verdicts[key] = verdict
-            print(f"\n{key}  τ_w={float(tw):.6f}  "
-                  f"spread={float(spread):.3f}  → {verdict}")
+            print(f"\n{key}  τ_w={float(tw):.6f}  "  # float64-ok: stdout display only
+                  f"spread={float(spread):.3f}  → {verdict}")  # float64-ok: stdout display only
             for nm in rows:
-                print(f"  {nm:5s} {float(base_nt[nm]):7.3f} → "
-                      f"{float(new_nt[nm]):7.3f}")
+                print(f"  {nm:5s} {float(base_nt[nm]):7.3f} → "  # float64-ok: stdout display only
+                      f"{float(new_nt[nm]):7.3f}")  # float64-ok: stdout display only
 
     any_pass = any(v.startswith("PASS") for v in verdicts.values())
     if any_pass:
@@ -320,22 +322,27 @@ def main() -> int:
                "Referenced against the PRODUCER, not its committed witness, "
                "which is 17-23% stale (bean qou-5t68).")
     b.add_assertion(
-        # NAME IS HISTORICAL and deliberately not changed here.  The measured
-        # mismatch is 9.98e-51, not 2e-4, so `_to_2em4` names a gap convention
-        # D closed — and the `5e-4` tolerance, sized against that gap, is 47
-        # orders looser than the quantity it guards, so this assertion cannot
-        # fail for any regression short of total breakage.  Renaming it (and
-        # tightening the tolerance) is the same decision bean `qou-gik1` puts
-        # to the owner for probe_9b's identical claim; deciding it unilaterally
-        # here would pre-empt that.
+        # NAME IS HISTORICAL (`_to_2em4` recorded the pre-ruling convention-C
+        # gap). Under Convention D (Wenzl level r=2) the measured mismatch is
+        # 9.98e-51, so the tolerance is tightened from 5e-4 to 1e-40 alongside
+        # probe_9b (bean qou-gik1).
         "wedderburn_lift_consistent_to_2em4",
-        # `"0.0005"`, not `"5e-4"`: the committed record spells it out, and
-        # a string tolerance is compared as text by some consumers.
-        computed=fmt(lift_mismatch), expected="0", tolerance="0.0005",
-        source="y-lambda witness × proved chi vs Lean BorromeanMarkovTrace")
+        computed=fmt(lift_mismatch), expected="0", tolerance="1e-40",
+        source="y-lambda witness × proved chi vs Lean BorromeanMarkovTrace "
+               "(exact agreement under Convention D; bean qou-gik1)")
     b.save()
     return 0
 
 
+def _selftest() -> int:
+    set_compute_dps()
+    q, qi, h, E0, z, tau = params()
+    assert mp.mpf("0.998") < tau < mp.mpf("0.999"), f"unexpected tau: {tau}"
+    print("self-test: ok (BorromeanMarkovTrace tau verified)")
+    return 0
+
+
 if __name__ == "__main__":
+    if "--self-test" in sys.argv or "--selftest" in sys.argv:
+        raise SystemExit(_selftest())
     raise SystemExit(main())

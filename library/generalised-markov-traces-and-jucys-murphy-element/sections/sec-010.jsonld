@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/generalised-markov-traces-and-jucys-murphy-element/sections/sec-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Geometric Markov traces",
+  "pageStart": 8,
+  "pageEnd": 10,
+  "contains": [
+    "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prose-sec-010",
+    "library/generalised-markov-traces-and-jucys-murphy-element/blocks/thm-sec-010-01",
+    "library/generalised-markov-traces-and-jucys-murphy-element/blocks/rem-sec-010-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/generalised-markov-traces-and-jucys-murphy-element/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/generalised-markov-traces-and-jucys-murphy-element/manifest.jsonld",
+  "provenance": "ingested"
+}

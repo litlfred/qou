@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/104171-owr-2018-52/blocks/prose-sec-014",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Application to the Kazhdan-Lusztig algorithm",
-  "pageStart": 38,
-  "pageEnd": 44,
-  "text": "../sections/sec-014-4-application-to-the-kazhdan-lusztig-algorithm.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/104171-owr-2018-52",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/104171-owr-2018-52",
+  "title": "Quiver varieties and crystals in symmetrizable type via modulated graphs",
+  "pageStart": 44,
+  "pageEnd": 46,
+  "text": "../sections/sec-014-quiver-varieties-and-crystals-in-symmetrizable-t.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-owr-2018-52/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-owr-2018-52/manifest.jsonld",
   "provenance": "ingested"
 }

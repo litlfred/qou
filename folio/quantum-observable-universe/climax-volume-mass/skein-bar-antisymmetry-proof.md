@@ -19,16 +19,6 @@ bar-antisymmetry of (S) means those contributions enter the
 analysis as **bar-paired** terms, not independent ones.  The
 case-split is pure bookkeeping.
 
-**Connection to substrate bar T-duality.**
-
-Bar-antisymmetry of (S) is the **algebraic origin** of the
-substrate-level bar T-duality
-([bar T-duality substrate](#prop:bar-t-duality-substrate)):
-the Markov trace $\mathrm{tr}_M \colon H_n(q) \to \mathbb{C}(q)$
-commutes with $\overline{\,\cdot\,}$ up to sign on antisymmetric
-elements, so the geometric bar-pairing on the moduli of
-$\mathcal{E}_q$ inherits its sign structure from (S).
-
 **Categorical statement.**
 
 The bar involution defines a contravariant functor

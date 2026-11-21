@@ -1,1 +1,1 @@
-Let A be a (discrete) weak quasi-bialgebra Then A is called balanced if
+Let A be a (discrete) weak quasi-bialgebra Then A is called balanced if it is quasitriangular and is endowed with an invertible central element v ∈ A (v ∈ M(A)) such that R21R = v ⊗ v∆(v −1 ), (10.11) where R is the R-matrix. If in addition A has an antipode (S, α, β) such that S(v) = v, then A is called a ribbon weak quasi-Hopf algebra, and v the ribbon element. A balanced (ribbon) weak bialgebra is a weak bialgebra (weak Hopf algebra) is defined in the natural way.

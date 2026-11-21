@@ -1,0 +1,35 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "wu-1957-physrev-105-1413",
+ "source_sha256": "9c60475c26871854",
+ "brief": "Experimental Test of Parity Conservation in Beta Decay — 3 sections: Page 1; Page 2; Page 3",
+ "extended": "**Experimental Test of Parity Conservation in Beta Decay**\n\n*E D I TOR*\n\n3 pp, 3 sections.\n\n**Outline.** Page 1; Page 2; Page 3",
+ "tokens": {
+  "brief": 22,
+  "extended": 31
+ },
+ "sections": [
+  {
+   "id": "page-001",
+   "title": "Page 1",
+   "pages": "1-1"
+  },
+  {
+   "id": "page-002",
+   "title": "Page 2",
+   "pages": "2-2"
+  },
+  {
+   "id": "page-003",
+   "title": "Page 3",
+   "pages": "3-3"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

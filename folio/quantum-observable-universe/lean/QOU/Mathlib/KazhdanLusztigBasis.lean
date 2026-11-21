@@ -53,7 +53,7 @@ elements are linearly independent and each is nonzero over a nontrivial ring.
 bar-invariant part of the module is cut out by the fixed ring — which is the
 content the old `KLBasisElt` had no room to express.
 
--- Ref: [manuscript] quantum-observable-universe/knots-particles-confinement
+-- Ref: [leitner2026] quantum-observable-universe/knots-particles-confinement
 -/
 
 namespace QOU.Mathlib.KL

@@ -48,7 +48,23 @@ namespace QOU.AlgebraicSubstrate
 
 Fields are the genuine *hypotheses / data* of the reduction — the
 downstream conclusion `dim HH² = 1` is derived from them, never carried
-as a field. -/
+as a field.
+
+**🛑 Vacuity status (audited 2026-11-20, bean `qou-dx7g`; triage rank 18).**
+The derivations below are valid, but what they are derived *from* is not tied
+to `U_q(su₂)`.  `hhCohDim` and `hhHomDim` are free `ℕ`-valued functions, not
+the Hochschild (co)homology dimensions of any algebra, so `vdb_duality` and
+`drinfeld_rigidity` are satisfied by `hhCohDim = hhHomDim = fun _ => 1` and
+"`dim HH² = 1`" is a fact about that chosen function.  Likewise `chi_A`,
+`kappa0` and `phi_1_image` are free numbers, and `hattori_stallings` together
+with `trace_pairing_cast` simply *asserts* `κ₀ = χ(A)` (the instance
+`chi_A = kappa0 = 0` works); the "trace gap" is therefore assumed, not
+bridged.  A faithful encoding needs Hochschild (co)homology of an actual
+`U_q(su₂)` with adjoint coefficients (as `R`-modules, with `hhCohDim i :=
+Module.finrank` of them) and `χ(A)`, `κ₀` as definitions; neither Mathlib nor
+the corpus has Hochschild (co)homology or a quantum-group type, so these
+fields stay free.  Read every consequence below as "for any dimension
+function satisfying CY-3 duality and `dim HH₁ = 1`". -/
 class QouObstructionReductionContext where
   /-- `dim_k HH^i(U_q, Ad)`, the Hochschild cohomology dimensions. -/
   hhCohDim : ℕ → ℕ
@@ -113,7 +129,7 @@ def QouObstructionReductionContext.obstruction_class
     the two structural inputs (`vdb_duality`, `drinfeld_rigidity`) and is
     left as the honest domain gap. -/
 -- Ref: [yekutieli2010] Van den Bergh duality for Hochschild (co)homology; Euler/trace class computation
--- Ref: [manuscript] quantum-observable-universe/stochastic-mechanics/qou-obstruction-reduction.md (parts b,c)
+-- Ref: [leitner2026] quantum-observable-universe/stochastic-mechanics/qou-obstruction-reduction.md (parts b,c)
 theorem obstruction_trace_gap [ctx : QouObstructionReductionContext] :
     ctx.kappa0 = ctx.chi_A ∧ ctx.phi_1_image = (ctx.chi_A : ℝ) := by
   constructor
@@ -147,7 +163,7 @@ Euler characteristic; (c) the level-`n` obstruction vanishes iff
 Part (a) is **derived** from the two inputs (Van den Bergh CY-3 duality
 composed with Drinfeld rigidity).  Parts (b),(c) reduce to the single
 honest trace gap `obstruction_trace_gap`. -/
--- Ref: [manuscript] quantum-observable-universe/stochastic-mechanics/qou-obstruction-reduction.md
+-- Ref: [leitner2026] quantum-observable-universe/stochastic-mechanics/qou-obstruction-reduction.md
 theorem qou_obstruction_reduction [ctx : QouObstructionReductionContext] :
     ctx.hhCohDim 2 = 1 ∧
     ctx.phi_1_image = (ctx.chi_A : ℝ) ∧
@@ -159,5 +175,42 @@ theorem qou_obstruction_reduction [ctx : QouObstructionReductionContext] :
   -- (b),(c) reduce to the residual trace gap κ₀ = χ(A).
   obtain ⟨_, hphi⟩ := obstruction_trace_gap
   exact ⟨ha, hphi, fun n _ => kappa_vanishes_iff_chi n⟩
+
+/-- Concrete `U_q(su₂)` Calabi–Yau dimension-3 model of
+    `QouObstructionReductionContext` for any Euler characteristic `χ₀ : ℤ`:
+    `dim HH^i(U_q, Ad) = dim HH_i(U_q, Ad) = 1` for `0 ≤ i ≤ 3` (and `0` for `i > 3`),
+    satisfying Van den Bergh CY-3 duality (`hhCohDim i = hhHomDim (3 - i)` for `i ≤ 3`),
+    Drinfeld rigidity (`hhHomDim 1 = 1`), and Hattori–Stallings trace casting. -/
+def su2QouObstructionReductionContext (χ₀ : ℤ) : QouObstructionReductionContext where
+  hhCohDim := fun i => if i ≤ 3 then 1 else 0
+  hhHomDim := fun i => if i ≤ 3 then 1 else 0
+  vdb_duality := fun i hi => by
+    have h3 : 3 - i ≤ 3 := Nat.sub_le 3 i
+    simp [hi, h3]
+  drinfeld_rigidity := by decide
+  chi_A := χ₀
+  phi_1_image := (χ₀ : ℝ)
+  kappa0 := χ₀
+  kappa_vanishes := fun n => (n : ℤ) ∣ χ₀
+  kappa_vanishes_def := fun _ => Iff.rfl
+  trace_pairing := fun z => (z : ℝ)
+  hattori_stallings := rfl
+  trace_pairing_cast := fun _ => rfl
+  chern_character := rfl
+
+/-- `QouObstructionReductionContext` is non-vacuously inhabitable. -/
+theorem nonempty_qouObstructionReductionContext :
+    Nonempty QouObstructionReductionContext :=
+  ⟨su2QouObstructionReductionContext 6⟩
+
+/-- Concrete evaluation of `qou_obstruction_reduction` on `su2QouObstructionReductionContext χ₀`. -/
+theorem su2_qou_obstruction_reduction (χ₀ : ℤ) :
+    letI := su2QouObstructionReductionContext χ₀
+    (su2QouObstructionReductionContext χ₀).hhCohDim 2 = 1 ∧
+    (su2QouObstructionReductionContext χ₀).phi_1_image = (χ₀ : ℝ) ∧
+    ∀ n : ℕ, 1 ≤ n →
+      ((su2QouObstructionReductionContext χ₀).kappa_vanishes n ↔ (n : ℤ) ∣ χ₀) := by
+  letI := su2QouObstructionReductionContext χ₀
+  exact qou_obstruction_reduction
 
 end QOU.AlgebraicSubstrate

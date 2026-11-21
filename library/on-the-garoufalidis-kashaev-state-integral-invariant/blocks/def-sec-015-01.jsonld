@@ -3,7 +3,7 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/def-sec-015-01",
@@ -16,6 +16,16 @@
   "pageEnd": 18,
   "text": "def-sec-015-01.md",
   "derivedFrom": "library/on-the-garoufalidis-kashaev-state-integral-invariant/sections/sec-015",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/on-the-garoufalidis-kashaev-state-integral-invariant",
-  "provenance": "ingested"
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/on-the-garoufalidis-kashaev-state-integral-invariant/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2",
+    "source_kind": "definition",
+    "claim_domain": "math",
+    "evidence_kind": "axiomatic-definition",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper definition in sections/sec-015-character-groups-and-duality.md",
+    "claim_id": "on-the-garoufalidis-kashaev-state-integral-invariant#definition:2",
+    "lean_status": "unformalized"
+  }
 }

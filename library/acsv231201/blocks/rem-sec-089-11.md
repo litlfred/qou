@@ -1,0 +1,1 @@
+The deﬁnition of ΓΨ depends on the choice of factorization, each factor being determined only up to a complex multiple. Suitable normalizations are assumed later in the deﬁnition of the torus T following (10.3) and the determination of the orientation in the proof of Theorem 10.25.

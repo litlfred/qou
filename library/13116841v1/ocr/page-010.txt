@@ -1,0 +1,64 @@
+10
+2. Vector product
+
+The notion of “vector product” is defined by associating a vector operator t! to two vector operators t!, t4 using
+the CG coefficients,
+
+. : lliga;:
+th, =(t' At) m= So Qc th tl,. (32)
+
+mime
+
+Using their value (recalled in the appendix [B), we obtain explicitly
+
+. 2 “1 apart) ¢ 2 cust
+
+& = JEL (at metiy— atest), ba = yf El (het, <2),
+[4] [4]
+
+* 2 ~ ~ ~
+
+tp = 7 (tit, —thil+ («3 - ¢*) tits)
+
+As we shall see when giving a realization of the vector operators, this vector product is related to the commutation
+relations of the su(2) algebra (when g = 1) and to Witten’s proposal describing the g-deformation of the su(2) algebra
+[44]. Combining the scalar product with the wedge product, we obtain the generalization of the triple product.
+
+(that!) -th= Soyo ac smamams thi, tmgtiing: (33)
+ma
+
+This is nothing else than the image of trivalent intertwiner when restricted to j1 = jg = j3 = 1. The generalization
+to any j; is then
+
+j 3 Ii J2 Js ¢
+(+P 4 bP) t= Saye gC to 2 th that ins (34)
+mi
+
+In general, given a set of tensor operators, we can use the relevant intertwiner coefficients, to construct a scalar
+operator out of them. Observables for an intertwiner will be the generalization of this construction.
+
+C. Tensor products of tensor operators
+
+The tensor product of tensor operators necessitates more attention. Indeed if t ¢ L(W) and € € L(W’) are tensor
+operators for U,(su(2)), then in general t ® t will not be a tensor operator for U/,(su(2)). To see this, first we recall
+that we need the coproduct to define the action of the generators Ja on |j17m1, j2m2). For example,
+
+Je
+AJ4.|jim1, Jame) = (Jy @ K + K+@ Jy) |jimi,jam2), K=q?. (35)
+Ift@tisa (linear) module homomorphism, we have then
+
+(t@ t) (AJx|j1mi,jom2)) = (t et) (4, @K+K'@ Jelim, jem2))
+= (J,>th,) @(K>t2,) + (Kp th,) @ Jp oth,). (36)
+
+On the other hand this is must be equal to the action of J, on t @t seen as a linear map V @V’ > W @W’, so that
+
+Jeo (t® t) = (Js) yvev: (t® t) (K\waw _ @ (Kk! \veav (t® t) ( Je) wewr (37)
+
+We recall that by definition we have
+(K) vow = AK*}= (K*)y ,® (K*)y, (38)
+Si) waw = Ade, = Ji)w @ (K)y + (A) y @ Ti) (39)
+
+If t @t is a tensor operator, we must have = (37), which gives (we omit for simplicity the indices)
+(JytK 1 — q?KtJ,) @ (KEK?) + (K71tK) @ (Jy tK7! — g@? Kt) = (40)
+
+JytK @ KtK 14+ K¢K! @ J,tK 1! — @ (Kt, @ K 4K + KK @ Kt).

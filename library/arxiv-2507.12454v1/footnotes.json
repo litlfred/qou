@@ -1,0 +1,1545 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2507.12454v1",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p011-1",
+   "page": 11,
+   "mark": "1",
+   "text": "In fact the tautological bundle often is not well-defined as a vector bundle.It is well-defined as a projective bundle, and the “determinant” det E is also well-defined, but the determinant might have no n-th root and correspondingly c1(det E) ∈H2(XD, Z) may not be divisible by n. Since we are dealing with the cohomology with complex coefficients, this does not create a problem and all the Chern classes are still well-defined.",
+   "marks": [
+    {
+     "page": 11,
+     "context": "Considerthetautologicalbundle"
+    },
+    {
+     "page": 11,
+     "context": "σ1, . . . , σ2g∈H"
+    },
+    {
+     "page": 11,
+     "context": ").Thecohomologyisgeneratedbycertainelementsε1, . . . , ε2g∈H"
+    }
+   ],
+   "block": "library/arxiv-2507.12454v1/blocks/prose-sec-003"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p021-1",
+   "page": 21,
+   "mark": "993",
+   "text": "MR 4407969 [CDDP15] Wu-yen Chuang, Duiliu-Emanuel Diaconescu, Ron Donagi, and Tony Pantev, Parabolic refined invariants and Macdonald polynomials, Comm. Math. Phys. 335 (2015), no. 3, 1323–1379. MR 3320315 [CM18] Erik Carlsson and Anton Mellit, A proof of the shuffle conjecture, J. Amer. Math. Soc. 31 (2018), no. 3, 661–697. MR 3787405",
+   "block": "library/arxiv-2507.12454v1/blocks/prose-sec-006"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "theHilbertschemeofC"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "ρ : π1(∗, P"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "sheafonP"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "Moreexplicitly,thefundamentalgroupofP"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "π1(∗, P"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "xyz + x"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "xyz + x2+ y"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "xyz + x2+ y2+ z"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "+ a1a2a3a4 + a"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "1+ a"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "2+ a"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "3+ a"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "A1, . . . , An"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": " . . , An2formabasisofthespaceofn × nmatricesifandonlyifthen"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": " , An2formabasisofthespaceofn × nmatricesifandonlyifthen2× n"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "diagonalentryofM"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "diagonalentryofMibyλ"
+  },
+  {
+   "page": 4,
+   "mark": "4",
+   "context": "diagonalentryofMibyλiwemusthaveQ"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i=1λ"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i=1λi=1.Ontheotherhand,λ"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "i=1λi=1.Ontheotherhand,λiis"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "thepolynomialt"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "bytheMarkovequation(2.1)isnonsingular.LetX⊂CP"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "inCP"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "xyz + x"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "xyz + x2+ y"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "xyz + x2+ y2+ z"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "canbeobtainedasablowupofCP"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "lines we obtain a map X→CP"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "CP"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "C∗× C∗⊂CP"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "0 →H"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "0 →H1(X) →H"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "0 →H1(X) →H1(U) →H"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "0 →H1(X) →H1(U) →H2(X, U) →H"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "0 →H1(X) →H1(U) →H2(X, U) →H2(X) →H"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "relativecohomologygroupisH"
+  },
+  {
+   "page": 6,
+   "mark": "6",
+   "context": "relativecohomologygroupisH2(X, U)∼=C"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "sequencevanishes,exceptfortheisomorphismH"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "sequencevanishes,exceptfortheisomorphismH0(X)∼=H"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "uencevanishes,exceptfortheisomorphismH0(X)∼=H0(U)∼=C.ThemapC"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "H1(U)→H"
+  },
+  {
+   "page": 6,
+   "mark": "6",
+   "context": "H1(U)→H2(X, U)=C"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "apH2(X, U)→H1(U)issurjective,thedualmapisinjectiveandwehaveH"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "H"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "H2(X)isanextensionofH"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "H2(X)isanextensionofH2(U) = CbyH"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "H2(X)isanextensionofH2(U) = CbyH2(X, U)/H"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "H2(X)isanextensionofH2(U) = CbyH2(X, U)/H1(U)∼= C"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "This is reflected by the weight filtration on H"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "reflected by the weight filtration on H2(X).The cohomology H"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": " by the weight filtration on H2(X).The cohomology H2(X, U)/H"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "H"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "H2(X)asamixedHodgestructureispureofweight2,whileH"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "wehaveW2= H"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "wehaveW2= H2(X, U)/H"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "wehaveW2= H2(X, U)/H1(U) ⊂H"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "wehaveW2= H2(X, U)/H1(U) ⊂H2(X)withdim W2= 4,W3= W2,andW4= H"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "X0= X,X1= X0 \\ CP"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "X0= X,X1= X0 \\ CP1,X2= X0 \\ (CP"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "X0= X,X1= X0 \\ CP1,X2= X0 \\ (CP1∪CP"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "WiH"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "Wi+2H"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "Wi+2Hi/WiH"
+  },
+  {
+   "page": 7,
+   "mark": "4",
+   "context": "C"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "H"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "H"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "0 →H"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "0 →H1(Xi+1) →H"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "0 →H1(Xi+1) →H2(Xi, Xi+1) →H"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "0 →H1(Xi+1) →H2(Xi, Xi+1) →H2(Xi) →H"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "0 →H1(Xi+1) →H2(Xi, Xi+1) →H2(Xi) →H2(Xi+1) →H"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "0 →H"
+  },
+  {
+   "page": 7,
+   "mark": "4",
+   "context": "0 →H3(Xi+1) →H"
+  },
+  {
+   "page": 7,
+   "mark": "4",
+   "context": "0 →H3(Xi+1) →H4(Xi, Xi+1) →H"
+  },
+  {
+   "page": 7,
+   "mark": "4",
+   "context": "0 →H3(Xi+1) →H4(Xi, Xi+1) →H4(Xi) →H"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "use that H"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "use that Hk(Xi, Xi+1) = H"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "Initially we have H"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Initially we have H0(X0) = C,H"
+  },
+  {
+   "page": 7,
+   "mark": "7",
+   "context": "Initially we have H0(X0) = C,H2(X0) = C"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "CP"
+  },
+  {
+   "page": 7,
+   "mark": "4",
+   "context": "CP2andthe6exceptionalcurves),H"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Fori = 0wehaveX0 \\ X1= CP"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "Fori = 0wehaveX0 \\ X1= CP1,whichhasH"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Fori = 0wehaveX0 \\ X1= CP1,whichhasH0= CandH"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "H"
+  },
+  {
+   "page": 7,
+   "mark": "4",
+   "context": "H2(X0, X1) and H"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "H2(X0, X1) and H4(X0, X1) respectively and we see that in H"
+  },
+  {
+   "page": 7,
+   "mark": "4",
+   "context": "d H4(X0, X1) respectively and we see that in H2(X1) and in H"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "onelessdimensionthaninH"
+  },
+  {
+   "page": 7,
+   "mark": "4",
+   "context": "onelessdimensionthaninH2(X0),respectivelyH"
+  },
+  {
+   "page": 7,
+   "mark": "4",
+   "context": "onelessdimensionthaninH2(X0),respectivelyH4(X0).SoH"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "elessdimensionthaninH2(X0),respectivelyH4(X0).SoH4(X1) = 0,H"
+  },
+  {
+   "page": 7,
+   "mark": "6",
+   "context": "nsionthaninH2(X0),respectivelyH4(X0).SoH4(X1) = 0,H2(X1) = C"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "Fori=1wehaveX1 \\ X2=C,whichonlyhasH"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "dimensionlessinH"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "dimensionlessinH2(X2),nothingelsechanges:H"
+  },
+  {
+   "page": 7,
+   "mark": "5",
+   "context": "dimensionlessinH2(X2),nothingelsechanges:H2(X1) = C"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "Finally,fori=2wehaveX2 \\ X3=C∗,whichhasH"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Finally,fori=2wehaveX2 \\ X3=C∗,whichhasH0=CandH"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "toH"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "toH2(X2, X3)andH"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "dimensionsfromH"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "dimensionsfromH2(X2)outof5contributetoH"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "ThenettotalisH"
+  },
+  {
+   "page": 7,
+   "mark": "5",
+   "context": "ThenettotalisH2(X3)=C"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "dimensioncomesfromH"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "4dimensionscomingfromH"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "fromH"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "fromH3(X3, X2).TheweightofH"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "H"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "The4algebraicclassesinH"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ofXis1 + 5q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ofXis1 + 5q2andthemixedHodgepolynomialisP(q, t)=1 + 4q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ofXis1 + 5q2andthemixedHodgepolynomialisP(q, t)=1 + 4q2t"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ofXis1 + 5q2andthemixedHodgepolynomialisP(q, t)=1 + 4q2t2+ q"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "Xis1 + 5q2andthemixedHodgepolynomialisP(q, t)=1 + 4q2t2+ q2t"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(q −1)"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(q −1)2+ 6q= q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "q2+ 7q + 1 −(q + 1) −q −(q −1) = q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "thatq"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "thatq2correspondstoH"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "thatq2correspondstoH0and4q + 1correspondstoH"
+  },
+  {
+   "page": 8,
+   "mark": "g",
+   "context": "genusgcharactervarietyX= Char"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "gM"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "gM1· · · M"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "(i)Q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i=1det J"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "(ii)Q"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "i∈GL"
+  },
+  {
+   "page": 9,
+   "mark": "g",
+   "context": "Char"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "tr(M"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "tr(Mi1orA"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "tr(Mi1orAi1orB"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "tr(Mi1orAi1orBi1 · · · M"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "tr(Mi1orAi1orBi1 · · · MimorA"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "tr(Mi1orAi1orBi1 · · · MimorAimorB"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "D=P"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "i=1[t"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "point,preservedbytheresidueres"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "ing the stability condition, and into the Jordan form of res"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "Considerthetautologicalbundle1E→XD× C.Foreachi∈{0, 1, 2},ξ∈H"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "em(ξ) := (πX)∗(cm(E) ∪ξ) ∈H"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "em(ξ) := (πX)∗(cm(E) ∪ξ) ∈H2"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Herecm(E)∈H"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "Herecm(E)∈H2"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fjrj=E(t"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "ThecohomologyringoftheRiemannsurface Chasabasis1 ∈H"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "hecohomologyringoftheRiemannsurface Chasabasis1 ∈H0(C),pt ∈H"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "H"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "H2(XD),ψ1, . . . , ψ2g∈H"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "H2(XD),ψ1, . . . , ψ2g∈H2(XD)andβ∈H"
+  },
+  {
+   "page": 11,
+   "mark": "g",
+   "context": "0(ψ) ⊗C[α, β, γ]/J"
+  },
+  {
+   "page": 11,
+   "mark": "g",
+   "context": "whereJ"
+  },
+  {
+   "page": 11,
+   "mark": "g",
+   "context": "Hereγ=−2P"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1ψ"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1ψiψ"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "0(ψ)denotestheprimitivepartinthespaceof"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "iW"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "iWiH"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "iWiHi(XB)isnaturally"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "ω"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "dimC X−2iH"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "dimC X+2iH"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "dimC X+2iHj+2"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "beaninfinitesequenceofvariables.Supposewehaveasequenceµi:=(µ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "eaninfinitesequenceofvariables.Supposewehaveasequenceµi:=(µi"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "nfinitesequenceofvariables.Supposewehaveasequenceµi:=(µi1, µ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "finitesequenceofvariables.Supposewehaveasequenceµi:=(µi1, µi"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "jµij=n.Tothisweassociate"
+  },
+  {
+   "page": 13,
+   "mark": "g",
+   "context": "charactervarietyX"
+  },
+  {
+   "page": 13,
+   "mark": "g",
+   "context": "MH(X"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "q"
+  },
+  {
+   "page": 13,
+   "mark": "g",
+   "context": "qa(□)+1/2−tℓ(□)+1/2\u00012"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "(q"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "(qa(□)−tℓ(□)+1)(q"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "f(a"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "f(an, b"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "f(an, bn, c"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "vectorfieldsonC"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "r, s≥0,correspondingtothevectorfieldwithHamiltonianx"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "r, s≥0,correspondingtothevectorfieldwithHamiltonianxry"
+  },
+  {
+   "page": 15,
+   "mark": "y",
+   "context": "∂y,"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "∂y,y,"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "amiltonians correspond to the linear action of SL(2, C) on C"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "of matrices N= C"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "of(C∗× C)"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "C"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "fieldsonC∗× C,andonlythenitisdegeneratedtothealgebraforC"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "NowsupposeweareonHilb"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "NowsupposeweareonHilbn(C"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "Ω= χ(Hilbn(C"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "tionHilbn(C"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "tionHilbn(C2)=Sn−Hilb(C"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "tionHilbn(C2)=Sn−Hilb(C2"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "(1−q)(1−t)ismanifestlynotpositive,whenexpandedin"
+  },
+  {
+   "page": 16,
+   "mark": "t",
+   "context": "(1−q)(1−t)ismanifestlynotpositive,whenexpandedinqand"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Theorem5.2(M.-Romero,in preparation).LetL ⊂Hilbn(C"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "bytheequationsP"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "i= 0(r> 0).LetEbeanyvectorbundleonHilb"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "i= 0(r> 0).LetEbeanyvectorbundleonHilbn(C"
+  },
+  {
+   "page": 17,
+   "mark": "x",
+   "context": "i=1"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "i=1x"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "L(Hilb"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "L(Hilbn(C"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "H"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "HereH"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "Conjecture5.3.H"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "C=P"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "qn(λ′)t"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "□∈λ(q"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "□∈λ(qa(□) −tℓ(□)+1)(q"
+  },
+  {
+   "page": 17,
+   "mark": "z",
+   "context": "□∈λ(qa(□) −tℓ(□)+1)(qa(□)+1 −tℓ(□))"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "□∈λ(qa(□) −tℓ(□)+1)(qa(□)+1 −tℓ(□))z"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "qk+1(1 −t"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "qk+1(1 −t2) −t"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "qk+1(1 −t2) −tk+1(1 −q"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(q −t)(1 −q)(1 −q"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(q −t)(1 −q)(1 −q2)(1 −t)(1 −t"
+  },
+  {
+   "page": 17,
+   "mark": "z",
+   "context": "(q −t)(1 −q)(1 −q2)(1 −t)(1 −t2)"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(q −t)(1 −q)(1 −q2)(1 −t)(1 −t2)z"
+  },
+  {
+   "page": 17,
+   "mark": "z",
+   "context": "(1 −t)(1 −q)"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "q"
+  },
+  {
+   "page": 18,
+   "mark": "j",
+   "context": "qit"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 18,
+   "mark": "z",
+   "context": "(−1)k+1"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "(−1)k+1z + z"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "(−1)knz"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "(−1)knznχ(Hilbn(C"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "x,y)"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "x,y)kdenotesthelinearspanof"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "x,y⊂Rx,yis"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "x,yinsideRx,y.Thisisalso"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "x,y)"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "Γ(Hilbn(C"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "x,y)"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "x,y)kisfreeas"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "Γ(Hilbn(C"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "Γ(Hilbn(C"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "Proposition6.2.LetMn,k:=H"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "i<j≤n(x"
+  },
+  {
+   "page": 18,
+   "mark": "j",
+   "context": "i<j≤n(xi−x"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "i<j≤n(xi−xj).For"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "D(x"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "D(x1, . . . , x"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "D(x1, . . . , xn, ∂y"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "D(x1, . . . , xn, ∂y1, . . . , ∂y"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "x,y)"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "D(x"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "D(x1, . . . , x"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "D(x1, . . . , xn, ∂y"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "D(x1, . . . , xn, ∂y1, . . . , ∂y"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "x,y)"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "x,yand Mn,"
+  },
+  {
+   "page": 19,
+   "mark": "x",
+   "context": "x,yby"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "x,ybyx"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "x,ybyx1−x"
+  },
+  {
+   "page": 19,
+   "mark": "y",
+   "context": "x,ybyx1−x2and"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "x,ybyx1−x2andy"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "x,ybyx1−x2andy1−y"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "(x"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "(x1 −x"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "(x1 −x2)"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "(x1 −x2)i(∂y1−∂y2)"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "(x1 −x2)"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "(x1 −x2)i(y1 −y2)"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "(mod2).SoM2,khasadirectsumdecompositionM2,k=R(−1)"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "2,k,whereM"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "q−it"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "whichexactlymatchesthez"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "\""
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "Proposition6.4.TheLiealgebraH2 ⊗H∗(P"
+  },
+  {
+   "page": 19,
+   "mark": "s",
+   "context": "x"
+  },
+  {
+   "page": 19,
+   "mark": "s",
+   "context": "x"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "yi(−s∂y"
+  },
+  {
+   "page": 19,
+   "mark": "y",
+   "context": "yi(−s∂yi"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "yi(−s∂yiy"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "yi(−s∂yiyi−rx"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "yi(−s∂yiyi−rxi∂x"
+  },
+  {
+   "page": 20,
+   "mark": "s",
+   "context": "x"
+  },
+  {
+   "page": 20,
+   "mark": "s",
+   "context": "x"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "modules.For instance, there was (n+1)"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "[Hai02].The(n + 1)"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "x,y)>0= (n + 1)"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "operatorsP"
+  },
+  {
+   "page": 20,
+   "mark": "x",
+   "context": "i=1"
+  },
+  {
+   "page": 20,
+   "mark": "s",
+   "context": "i=1x"
+  },
+  {
+   "page": 20,
+   "mark": "f",
+   "context": "x,y,forinstance"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "x,y,forinstancef=P"
+  },
+  {
+   "page": 20,
+   "mark": "x",
+   "context": "i=1"
+  },
+  {
+   "page": 20,
+   "mark": "s",
+   "context": "i=1x"
+  },
+  {
+   "page": 20,
+   "mark": "y",
+   "context": "i"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "iy"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "atches the K¨unneth decomposition of the diagonal class in H"
+  }
+ ]
+}

@@ -1,0 +1,1 @@
+Under LSI(σ 2), for any bounded, smooth function f on R, Entμ  f dFn 2 ≤2σ 2 n  f ′2 dF. In analogy with Poincaré-type inequalities, one may also develop reﬁned applications to the rate of growth of moments and to large deviations of various functionals of empirical measures. In particular, we have the following proposition.

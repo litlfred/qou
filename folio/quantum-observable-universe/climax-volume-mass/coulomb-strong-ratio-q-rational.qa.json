@@ -1139,6 +1139,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "3b4f650e1fa9",
+          "ts": "c16a00d596b7",
+          "lean": "dc385ae21714",
+          "lean_statement": "f79b25edcb2a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:00:12.755Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "minor",
+        "evidence": "[sidecar review 2026-11-15, issue #8030] Lean `tanh(log q) = (q²−1)/(q²+1)` for q > 0 is correct and faithful to the displayed identity. But the statement also asserts that \"on a positive braid closure the antisymmetric-to-symmetric ratio of the Coulomb charge equals (q₀²−1)/(q₀²+1)\". Neither the Lean nor the prf touches the Coulomb charge or braid closures; the prf proves only the tanh identity. Statement claims more than the proof gives."
       }
     ],
     "proof-statement-integrity": [
@@ -2137,6 +2155,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-29T02:53:51.393Z",
+  "updated_at": "2026-11-15T22:00:12.755Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

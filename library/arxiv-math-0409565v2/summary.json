@@ -3,24 +3,33 @@
  "doc_id": "arxiv-math-0409565v2",
  "source_sha256": "236704063f12c05e",
  "brief": "Unital Gröbner Bases over Arbitrary Commutative Ground Rings — Let R be a commutative ring with unity and a let A be a not necessarily commutative R-algebra which is free as an R-module.",
- "extended": "**Unital Gröbner Bases over Arbitrary Commutative Ground Rings**\n\n*Frederick Leitner, Robert Pawloski ∗*\n\n10 pp, 1 sections.\n\n**Abstract.** Let R be a commutative ring with unity and a let A be a not necessarily commutative R-algebra which is free as an R-module. If I is an ideal in A, one can ask when A/I is also free as an R-module. We show that if A has an admissible system and I has a unital Gr¨ obner basisthen A/I is free as an R-module. We prove a version of Buchberger’s theorem over R and, as a corollary, we obtain a Gr¨ obner basis proof of the Poincare-Birkhoﬀ-Witt Theorem over a commutative ground ring.\n\n**Outline.** Introduction.\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2: Let R be a commutative algebra with unity. Let A be an R-\n- Theorem 8: Let R be a commutative ring with unity, A an\n- Proposition 7: Let R be a commutative ring with unity, A an R-algebra which\n- Corollary 9: Let g be a lie algebra over R, a commutative ring with\n- Lemma 6: Let R be a commutative ring with unity, A an R-algebra which",
+ "extended": "**Unital Gröbner Bases over Arbitrary Commutative Ground Rings**\n\n*Frederick Leitner, Robert Pawloski∗*\n\n10 pp, 3 sections.\n\n**Abstract.** Let R be a commutative ring with unity and a let A be a not necessarily commutative R-algebra which is free as an R-module. If I is an ideal in A, one can ask when A/I is also free as an R-module. We show that if A has an admissible system and I has a unital Gr¨obner basis then A/I is free as an R-module. We prove a version of Buchberger’s theorem over R and, as a corollary, we obtain a Gr¨obner basis proof of the Poincare-Birkhoﬀ-Witt Theorem over a commutative ground ring.\n\n**Outline.** Front matter; Introduction.; Unital Gröbner Bases.",
  "tokens": {
   "brief": 46,
-  "extended": 261
+  "extended": 170
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
    "id": "sec-000-introduction",
    "title": "Introduction.",
-   "pages": "1-10"
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-unital-gröbner-bases",
+   "title": "Unital Gröbner Bases.",
+   "pages": "2-10"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

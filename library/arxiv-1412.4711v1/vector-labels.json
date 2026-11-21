@@ -1,0 +1,2989 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1412.4711v1",
+  "pages": [
+    {
+      "page": 7,
+      "rotation": 0,
+      "drawings": 20,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. Coordinates for a tetrahedron of ﬂags"
+      ],
+      "labels": [
+        {
+          "text": "7",
+          "bbox": [
+            481.09,
+            96.12,
+            485.33,
+            104.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "i",
+          "bbox": [
+            316.87,
+            115.16,
+            320.63,
+            126.07
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "zij",
+          "bbox": [
+            271.62,
+            138.19,
+            283.0,
+            149.75
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "zik",
+          "bbox": [
+            342.33,
+            143.45,
+            354.69,
+            155.15
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "zil",
+          "bbox": [
+            317.28,
+            163.65,
+            327.76,
+            175.35
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "zijk",
+          "bbox": [
+            304.35,
+            197.99,
+            320.6,
+            209.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "zikl",
+          "bbox": [
+            338.16,
+            214.25,
+            353.27,
+            225.95
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "zilj",
+          "bbox": [
+            267.17,
+            215.77,
+            281.18,
+            227.47
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "k",
+          "bbox": [
+            400.03,
+            233.67,
+            405.72,
+            244.58
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "j",
+          "bbox": [
+            194.18,
+            236.12,
+            198.67,
+            247.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "l",
+          "bbox": [
+            311.64,
+            288.22,
+            314.89,
+            299.13
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 1. Coordinates for a tetrahedron of ﬂags",
+          "bbox": [
+            187.78,
+            311.81,
+            424.25,
+            325.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Given M and a triangulation T with n tetrahedra, we consider the space",
+          "bbox": [
+            138.63,
+            342.29,
+            485.33,
+            353.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of solutions of these equations and denote it by",
+          "bbox": [
+            126.67,
+            355.72,
+            352.71,
+            366.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Defor(M, T ) ⊂C16n.",
+          "bbox": [
+            256.49,
+            371.17,
+            355.51,
+            384.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "We call it the deformation variety of a triangulation.",
+          "bbox": [
+            126.67,
+            391.72,
+            378.89,
+            402.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Up to combinatoric choices, the holonomy map associates to each point",
+          "bbox": [
+            138.63,
+            405.01,
+            485.33,
+            415.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "in Defor(M, T ) a decorated representation into PGL(3, C) as in [1, section",
+          "bbox": [
+            126.67,
+            415.24,
+            485.33,
+            428.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "5]:",
+          "bbox": [
+            126.67,
+            430.92,
+            138.19,
+            441.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Defor(M, T ) →DecHom(π1(M), PGL(3, C)).",
+          "bbox": [
+            198.89,
+            441.83,
+            413.12,
+            456.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Moreover this map is algebraic3 and a diﬀerent initial choice gives a conju-",
+          "bbox": [
+            126.67,
+            456.36,
+            485.35,
+            471.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "gated decorated representation.",
+          "bbox": [
+            126.67,
+            473.54,
+            276.84,
+            484.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "So this gives two well deﬁned maps, landing in DecMon or DecX, both",
+          "bbox": [
+            138.63,
+            486.49,
+            485.34,
+            497.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "called holonomy maps and denoted by Hol. Note that the second one is",
+          "bbox": [
+            126.67,
+            499.45,
+            485.35,
+            510.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "algebraic:",
+          "bbox": [
+            126.67,
+            512.4,
+            172.16,
+            523.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Hol : Defor(M, T ) →DecMon(π1(M), PGL(3, C)),",
+          "bbox": [
+            184.19,
+            527.84,
+            427.81,
+            542.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "and",
+          "bbox": [
+            126.67,
+            548.74,
+            144.26,
+            559.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Hol : Defor(M, T ) →DecX(π1(M), PGL(3, C)),",
+          "bbox": [
+            190.0,
+            559.65,
+            422.0,
+            574.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "We extend the peripheral holonomy map deﬁned in the previous section in",
+          "bbox": [
+            126.67,
+            578.28,
+            485.39,
+            589.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "a natural way:",
+          "bbox": [
+            126.67,
+            591.23,
+            195.51,
+            602.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Holperiph : Defor(M, T ) →DecX(π1(T), PGL(3, C)) ≃(C∗)4",
+          "bbox": [
+            161.14,
+            606.67,
+            450.36,
+            622.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Let us comment a bit on the properties of both the holonomy maps Hol:",
+          "bbox": [
+            138.63,
+            627.57,
+            485.36,
+            638.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the ﬁrst map is injective but not surjective, as some representation are not",
+          "bbox": [
+            126.67,
+            640.52,
+            485.35,
+            651.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "detected by a given triangulation. Moreover, if you forget the decoration, the",
+          "bbox": [
+            126.67,
+            653.47,
+            485.4,
+            664.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "maps are not any more injective : there is a (generically) ﬁnite choice for a",
+          "bbox": [
+            126.67,
+            666.42,
+            485.35,
+            677.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "3indeed, by construction, the expression of the matrix entries are algebraic.",
+          "bbox": [
+            138.63,
+            688.42,
+            442.76,
+            699.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8",
+            "CMR9"
+          ],
+          "sizes": [
+            7.97,
+            8.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "rotation": 0,
+      "drawings": 30,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2. The diﬀerent representation varieties"
+      ],
+      "labels": [
+        {
+          "text": "9",
+          "bbox": [
+            481.09,
+            96.12,
+            485.33,
+            104.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Holperiph",
+          "bbox": [
+            304.33,
+            121.11,
+            337.82,
+            129.8
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "Defor",
+          "bbox": [
+            129.91,
+            124.17,
+            156.16,
+            135.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Hol",
+          "bbox": [
+            275.16,
+            130.19,
+            288.09,
+            138.16
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Hol",
+          "bbox": [
+            224.29,
+            139.36,
+            237.22,
+            147.33
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "DecMon",
+          "bbox": [
+            293.55,
+            162.08,
+            333.09,
+            172.98
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(up to",
+          "bbox": [
+            151.36,
+            171.17,
+            178.49,
+            181.13
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "choices)",
+          "bbox": [
+            147.88,
+            183.13,
+            181.96,
+            193.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Holperiph / DecXT",
+          "bbox": [
+            416.5,
+            193.87,
+            490.04,
+            211.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR6",
+            "CMR8",
+            "MSBM10",
+            "XYATIP-Medium"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            9.96,
+            10.91
+          ]
+        },
+        {
+          "text": "/ DecX",
+          "bbox": [
+            378.17,
+            198.06,
+            408.49,
+            211.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "XYATIP-Medium"
+          ],
+          "sizes": [
+            9.96,
+            10.91
+          ]
+        },
+        {
+          "text": "DecHom",
+          "bbox": [
+            204.47,
+            200.78,
+            245.22,
+            211.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "restr",
+          "bbox": [
+            426.24,
+            236.6,
+            443.23,
+            244.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "/ XT",
+          "bbox": [
+            463.43,
+            237.63,
+            481.02,
+            251.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "MSBM10",
+            "XYATIP-Medium"
+          ],
+          "sizes": [
+            7.97,
+            9.96,
+            10.91
+          ]
+        },
+        {
+          "text": "Hom",
+          "bbox": [
+            213.49,
+            240.36,
+            236.21,
+            251.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            390.43,
+            240.36,
+            399.47,
+            251.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Mon",
+          "bbox": [
+            302.56,
+            279.06,
+            324.09,
+            289.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 2. The diﬀerent representation varieties",
+          "bbox": [
+            189.75,
+            307.74,
+            422.26,
+            321.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "we ﬁx a basis of the homology group given by a choice of a longitude and a",
+          "bbox": [
+            126.67,
+            340.64,
+            485.39,
+            351.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "meridian. One can identify DecX(Z2, G) to the diagonal representations of",
+          "bbox": [
+            126.67,
+            350.87,
+            485.35,
+            364.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Z2. As before, we see that DecX(Z2, G) is isomorphic to (C∗)4. The map",
+          "bbox": [
+            126.67,
+            363.82,
+            485.33,
+            377.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "DecXT →XT is the quotient by the permutation group S3 acting on the",
+          "bbox": [
+            126.67,
+            379.01,
+            485.33,
+            392.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "triple of complex numbers whose product is 1.",
+          "bbox": [
+            126.67,
+            392.45,
+            347.57,
+            403.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Consider the closure of the image of DecX(π1(M), SL(3, C)) in DecX(Z2, G).",
+          "bbox": [
+            138.63,
+            402.67,
+            496.91,
+            417.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Let DM be the union of the component of maximal dimension of this closure.",
+          "bbox": [
+            126.67,
+            418.35,
+            485.37,
+            430.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Consider now a natural embedding C∗4 ⊂CP 4 given by (L, L∗, M, M∗, 1)",
+          "bbox": [
+            138.63,
+            426.31,
+            485.33,
+            442.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "and ¯DM the closure of the image of DM. The ideal boundary of DM is",
+          "bbox": [
+            126.67,
+            441.5,
+            485.32,
+            456.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "¯DM \\ DM. Essentially the following deﬁnition was given independently in",
+          "bbox": [
+            126.67,
+            454.45,
+            485.39,
+            469.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "[23].",
+          "bbox": [
+            126.67,
+            470.16,
+            146.68,
+            481.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Deﬁnition 1.7. We deﬁne the A-variety of M (for n = 3 and with a choice",
+          "bbox": [
+            126.67,
+            490.26,
+            485.34,
+            501.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of basis of the boundary torus homology) to be the closure of DM in C4.",
+          "bbox": [
+            126.67,
+            500.83,
+            485.33,
+            516.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "We deﬁne the A-ideal to be its deﬁning ideal.",
+          "bbox": [
+            126.67,
+            516.17,
+            344.37,
+            527.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2. The figure eight knot complement",
+          "bbox": [
+            200.78,
+            540.91,
+            411.22,
+            554.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "We present here the geometric and combinatorial facts on the ﬁgure eight",
+          "bbox": [
+            138.63,
+            563.07,
+            485.35,
+            573.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "knot complement M we use afterwards. We need a triangulation T of M – in",
+          "bbox": [
+            126.67,
+            575.53,
+            485.34,
+            586.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "order to study the variety Defor(M, T ) – together with some presentations",
+          "bbox": [
+            126.67,
+            588.49,
+            485.33,
+            599.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of its fundamental group for paramtrizing matrices.",
+          "bbox": [
+            126.67,
+            601.92,
+            372.75,
+            612.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2.1. Triangulation. It is a well-known fact, due to Riley and used by",
+          "bbox": [
+            126.67,
+            624.59,
+            485.35,
+            635.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Thurston [22], that the ﬁgure eight knot complement may be triangulated",
+          "bbox": [
+            126.67,
+            637.88,
+            485.39,
+            648.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "by two tetrahedra, with the combinatorics of face gluings displayed in ﬁgure",
+          "bbox": [
+            126.67,
+            650.83,
+            485.39,
+            661.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "3. In order to simplify the notations, we denote by uij and vij be the coor-",
+          "bbox": [
+            126.67,
+            663.78,
+            485.32,
+            676.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "dinates associated to the edge ij of the two tetrahedra as shown in Figure",
+          "bbox": [
+            126.67,
+            676.73,
+            485.35,
+            687.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "3.",
+          "bbox": [
+            126.67,
+            689.69,
+            135.16,
+            700.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 10,
+      "rotation": 0,
+      "drawings": 38,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3. The ﬁgure eight knot represented by two tetrahedra."
+      ],
+      "labels": [
+        {
+          "text": "E. FALBEL, A. GUILLOUX, P.-V. KOSELEFF, F. ROUILLIER AND M. THISTLETHWAITE",
+          "bbox": [
+            126.66,
+            96.12,
+            485.37,
+            104.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            126.67,
+            96.12,
+            135.14,
+            104.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            239.52,
+            118.65,
+            244.97,
+            129.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            366.54,
+            118.65,
+            371.99,
+            129.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "v12",
+          "bbox": [
+            371.49,
+            158.39,
+            385.24,
+            170.2
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "u12",
+          "bbox": [
+            243.88,
+            158.72,
+            258.59,
+            170.53
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "u34",
+          "bbox": [
+            216.55,
+            180.28,
+            231.26,
+            192.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "u43",
+          "bbox": [
+            256.37,
+            180.28,
+            271.08,
+            192.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "v34",
+          "bbox": [
+            341.62,
+            180.28,
+            355.37,
+            192.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "v43",
+          "bbox": [
+            382.39,
+            180.28,
+            396.14,
+            192.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            194.12,
+            188.28,
+            199.58,
+            199.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            283.48,
+            188.28,
+            288.94,
+            199.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            319.19,
+            188.28,
+            324.64,
+            199.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            412.45,
+            188.28,
+            417.9,
+            199.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "u21",
+          "bbox": [
+            243.88,
+            213.88,
+            258.59,
+            225.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "v21",
+          "bbox": [
+            369.34,
+            213.88,
+            383.09,
+            225.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            239.52,
+            257.92,
+            244.97,
+            268.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            364.58,
+            257.92,
+            370.04,
+            268.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 3.",
+          "bbox": [
+            149.61,
+            281.6,
+            200.66,
+            292.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The ﬁgure eight knot represented by two tetrahedra.",
+          "bbox": [
+            210.96,
+            284.33,
+            462.42,
+            295.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "From this triangulation, it is an elementary exercise to compute the equa-",
+          "bbox": [
+            138.63,
+            314.64,
+            485.35,
+            325.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "tions deﬁning Defor(M, T ) as explained in §1.4. These equations will actu-",
+          "bbox": [
+            126.67,
+            327.11,
+            485.33,
+            338.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ally be displayed in §3.2.",
+          "bbox": [
+            126.67,
+            340.06,
+            244.62,
+            351.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2.2. Presentations. Depending on the situations we will use two diﬀerent",
+          "bbox": [
+            126.67,
+            360.79,
+            485.35,
+            372.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "presentations of the ﬁgure eight knot complement fundamental group Γ8.",
+          "bbox": [
+            126.67,
+            374.08,
+            476.32,
+            385.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "We ﬁrst use the presentation (with generators as in [11])",
+          "bbox": [
+            138.63,
+            387.03,
+            409.08,
+            397.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "⟨g1, g2, g3 | g−1",
+          "bbox": [
+            205.33,
+            402.85,
+            279.41,
+            417.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2 g1g−1",
+          "bbox": [
+            268.2,
+            402.85,
+            306.26,
+            419.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "3 g−1",
+          "bbox": [
+            295.05,
+            402.85,
+            323.18,
+            419.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "1 g3, g−1",
+          "bbox": [
+            311.97,
+            402.85,
+            358.49,
+            419.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "3 g2g1g−1",
+          "bbox": [
+            347.28,
+            402.85,
+            395.28,
+            419.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "⟩.",
+          "bbox": [
+            399.39,
+            405.11,
+            406.67,
+            416.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            384.07,
+            410.92,
+            388.3,
+            418.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Observe then that",
+          "bbox": [
+            126.67,
+            423.66,
+            213.44,
+            434.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "g2 = [g1, g−1",
+          "bbox": [
+            223.04,
+            438.98,
+            281.74,
+            454.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "g3 = g2g1g−1",
+          "bbox": [
+            324.67,
+            438.98,
+            385.43,
+            454.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "3 ]",
+          "bbox": [
+            270.53,
+            441.72,
+            285.28,
+            455.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "and",
+          "bbox": [
+            296.19,
+            441.72,
+            313.77,
+            452.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2 .",
+          "bbox": [
+            374.22,
+            441.72,
+            388.97,
+            455.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "This presentation is the SnapPea non-simpliﬁed presentation with a change",
+          "bbox": [
+            126.67,
+            459.78,
+            485.37,
+            470.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of notations. Keeping only the generators g1 and g3, we get the usual para-",
+          "bbox": [
+            126.67,
+            472.74,
+            485.33,
+            485.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "bolic presentation, used in §5.2, with a = g1 and b = g3.",
+          "bbox": [
+            126.67,
+            485.2,
+            393.51,
+            498.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "The simpliﬁed presentation in SnapPea, which we use in §5.1, is given",
+          "bbox": [
+            138.63,
+            498.15,
+            485.33,
+            509.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(uppercase denotes inverse) by",
+          "bbox": [
+            126.67,
+            511.59,
+            272.97,
+            522.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "⟨a, b | ab3aBA2B ⟩",
+          "bbox": [
+            257.78,
+            527.77,
+            354.22,
+            540.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "with a = g3g2 and b = g−1",
+          "bbox": [
+            126.67,
+            545.89,
+            252.19,
+            561.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(hence g1 = ba).",
+          "bbox": [
+            256.33,
+            548.63,
+            333.08,
+            561.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            240.98,
+            553.95,
+            245.22,
+            561.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "With this notation, we know [22] that the canonical meridian is m = ab =",
+          "bbox": [
+            138.63,
+            561.58,
+            485.33,
+            572.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "g3 and the longitude l = abABaBAb = [g3, g−1",
+          "bbox": [
+            126.67,
+            572.29,
+            349.82,
+            587.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2 ][g3, g2].",
+          "bbox": [
+            338.61,
+            575.02,
+            387.16,
+            589.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "3. The deformation variety for the figure eight knot",
+          "bbox": [
+            153.28,
+            595.97,
+            458.71,
+            609.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "complement",
+          "bbox": [
+            279.64,
+            608.92,
+            346.31,
+            619.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "We ﬁx the usual ideal 2-tetrahedra triangulation of the ﬁgure eight knot",
+          "bbox": [
+            138.63,
+            631.07,
+            485.4,
+            641.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "complement (which we refer as the standard triangulation). In this section",
+          "bbox": [
+            126.67,
+            644.03,
+            485.36,
+            654.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "we prove the following theorem.",
+          "bbox": [
+            126.67,
+            656.98,
+            278.86,
+            667.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Theorem 2. Given the standard triangulation of the ﬁgure eight knot com-",
+          "bbox": [
+            126.67,
+            676.39,
+            485.33,
+            687.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "plement, the deformation variety Defor(M, T ) is the union of 3 distinct",
+          "bbox": [
+            126.67,
+            689.2,
+            485.33,
+            700.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 28,
+      "rotation": 0,
+      "drawings": 92,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4. SU(3) and SU(2, 1) representations in R2"
+      ],
+      "labels": [
+        {
+          "text": "E. FALBEL, A. GUILLOUX, P.-V. KOSELEFF, F. ROUILLIER AND M. THISTLETHWAITE",
+          "bbox": [
+            126.66,
+            96.12,
+            485.37,
+            104.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "28",
+          "bbox": [
+            126.67,
+            96.12,
+            135.14,
+            104.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "by H degenerates at ∆= 16; in the present context v = u the corresponding",
+          "bbox": [
+            126.67,
+            117.83,
+            485.34,
+            128.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "values of u are 0 , 4 , 4e2πi/3 , 4e4πi/3.",
+          "bbox": [
+            126.67,
+            126.93,
+            302.6,
+            141.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Substituting u = x + iy , v = x −iy (x , y ∈R) in the expression for",
+          "bbox": [
+            148.49,
+            145.81,
+            485.34,
+            159.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "∆(u, v), we obtain (with mild abuse of notation)",
+          "bbox": [
+            126.67,
+            161.48,
+            358.7,
+            172.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "∆(x, y) = −x4 −y4 −2x2y2 −24xy2 + 8x3 −16x2 −16y2 + 16 .",
+          "bbox": [
+            150.08,
+            174.63,
+            461.92,
+            190.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "We have therefore established that representations respecting Hermitian",
+          "bbox": [
+            148.49,
+            197.35,
+            485.34,
+            208.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "forms occur in the bounded complementary regions in the (x, y)–plane of",
+          "bbox": [
+            126.67,
+            210.3,
+            485.34,
+            221.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the curve ∆(x, y) = 0, see Figure 4. The SU(3) representations lie in the",
+          "bbox": [
+            126.67,
+            223.25,
+            485.35,
+            234.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "central complementary region, and the SU(2, 1) representations lie in the",
+          "bbox": [
+            126.67,
+            236.2,
+            485.34,
+            247.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "three petals. Corresponding Hermitian representations occur also on the",
+          "bbox": [
+            126.67,
+            249.16,
+            485.35,
+            260.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "curve itself, except for singularities at the three self-intersection points of the",
+          "bbox": [
+            126.67,
+            262.11,
+            485.35,
+            273.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "curve, where representations are not deﬁned. The quantity ∆has geometric",
+          "bbox": [
+            126.67,
+            275.06,
+            485.35,
+            285.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "signiﬁcance in that it is related to the Brehm shape invariant [3] of the",
+          "bbox": [
+            126.67,
+            288.01,
+            485.37,
+            298.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "triangle in the associated homogeneous space (complex projective plane CP2",
+          "bbox": [
+            126.67,
+            298.5,
+            484.83,
+            312.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "or complex hyperbolic plane CH2), whose vertices are the ﬁxed points of the",
+          "bbox": [
+            126.67,
+            311.72,
+            485.33,
+            325.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "elliptic isometries α , β , γ.",
+          "bbox": [
+            126.67,
+            327.4,
+            253.51,
+            338.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            180.5,
+            375.81,
+            183.74,
+            382.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.48
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            180.5,
+            423.71,
+            183.74,
+            430.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.48
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            180.5,
+            471.61,
+            183.74,
+            478.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.48
+          ]
+        },
+        {
+          "text": "-2",
+          "bbox": [
+            176.75,
+            519.38,
+            183.74,
+            525.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Mathematica1",
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.48
+          ]
+        },
+        {
+          "text": "-4",
+          "bbox": [
+            176.0,
+            567.28,
+            183.74,
+            573.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Mathematica1",
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.48
+          ]
+        },
+        {
+          "text": "-4",
+          "bbox": [
+            186.9,
+            601.75,
+            194.64,
+            608.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Mathematica1",
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.48
+          ]
+        },
+        {
+          "text": "-2",
+          "bbox": [
+            235.17,
+            601.75,
+            242.16,
+            608.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Mathematica1",
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.48
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            284.95,
+            601.88,
+            288.18,
+            608.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.48
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            332.84,
+            601.88,
+            336.08,
+            608.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.48
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            381.12,
+            601.88,
+            384.36,
+            608.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.48
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            428.64,
+            601.88,
+            431.88,
+            608.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.48
+          ]
+        },
+        {
+          "text": "Figure 4. SU(3) and SU(2, 1) representations in R2",
+          "bbox": [
+            179.49,
+            622.98,
+            432.02,
+            637.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "References",
+          "bbox": [
+            274.19,
+            658.56,
+            337.82,
+            669.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "[1] N. Bergeron, E. Falbel, and A. Guilloux. Tetrahedra of ﬂags, volume and homology",
+          "bbox": [
+            131.28,
+            679.9,
+            485.41,
+            688.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "of SL(3). arXiv:1101.2742., 2011. To appear in Geom. Top.",
+          "bbox": [
+            145.61,
+            690.86,
+            384.93,
+            699.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9",
+            "CMTI9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        }
+      ]
+    }
+  ]
+}

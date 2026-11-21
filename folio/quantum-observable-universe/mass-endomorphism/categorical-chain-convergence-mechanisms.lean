@@ -39,7 +39,7 @@ noncomputable def hbarQ (q : ℝ) : ℝ := 1 - q⁻¹
 noncomputable def cKBound (q : ℝ) (N : ℕ) : ℝ :=
   (hbarQ q)^(2*(N + 1)) / (1 - (hbarQ q)^2)
 
--- Ref: [manuscript] prop:categorical-chain-convergence-mechanisms §"Mechanism 1"
+-- Ref: [leitner2026] prop:categorical-chain-convergence-mechanisms §"Mechanism 1"
 /-- The c(K) bound is positive when 0 < q < 1 + √2 (ensuring ℏ_q² < 1).
     `_hq_lower` documents the physical substrate regime but the
     nonnegativity follows from the even numerator power + positive
@@ -134,7 +134,7 @@ theorem stabIter_spec (q : ℝ) [inst : MarkovDisjointStabilisation q] (k : ℕ)
 Under the single-strand Markov-M3 axiom, two unlinked braids' joint
 Markov trace factorises as product times z-power. -/
 
--- Ref: [manuscript] prop:categorical-chain-convergence-mechanisms §"Mechanism 2"
+-- Ref: [leitner2026] prop:categorical-chain-convergence-mechanisms §"Mechanism 2"
 -- Ref: [jones1985] doi:10.2307/1971403   (Markov axiom M3)
 /-- **Inter-knot decoupling theorem.** For two braids on disjoint strands
     (linking number zero), forming the disjoint union appends the `k`
@@ -160,7 +160,7 @@ Q_β^cat,full converges to a finite real number at q = q_0 because:
   - Inter-knot couplings factor by `inter_knot_decoupling` (Mechanism 2)
 -/
 
--- Ref: [manuscript] prop:categorical-chain-convergence-mechanisms
+-- Ref: [leitner2026] prop:categorical-chain-convergence-mechanisms
 /-- **Categorical-chain convergence (combined export).** Under both
     mechanisms, Q_β^cat,full evaluates to a finite real number at q_0
     via finite-truncation per-knot + linking-locality across knots. -/

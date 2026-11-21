@@ -14,9 +14,10 @@
       τ positive-semi-definite on squares, non-degenerate
 
   Then the SDP-min-norm primal-feasible element of A satisfying
-  `τ X = S` is `X = S • 1`, exactly.  Applied to A = H_n(R, q) (the
-  Iwahori–Hecke algebra at generic q) with τ = the Jones–Markov
-  trace τ_M, this gives T_β = S · 1_H.
+  `τ X = S` is `X = S • 1`, exactly.  The hypotheses FAIL for
+  A = H_n(R, q), n ≥ 3, with τ = τ_M (τ_M(X·X) < 0 at σ₁σ₂ − σ₂σ₁);
+  the Hecke case needs the twisted form τ_M(X · X†) and is not
+  covered by this file.
 
   **Strategy.**
 
@@ -89,9 +90,11 @@ structure NormalizedTrace (R : Type u) [CommSemiring R]
     The trace `τ` is positive-semi-definite on the Frobenius bilinear
     form `⟨X, Y⟩_τ := τ(X · Y)`, i.e. `0 ≤ τ(X · X)` for every `X`.
 
-    For the Jones–Markov trace `τ_M` on `H_n(R, q)` at generic `q > 0`
-    over `R = ℝ`, this follows from the q-hook-length formula
-    `dim_q(λ) > 0` and the Wedderburn decomposition.
+    **Not satisfied by the Jones–Markov `τ_M` on `H_n(R, q)` for
+    `n ≥ 3` (corrected 2026-11-15).**  At `X = σ₁σ₂ − σ₂σ₁ ∈ H₃`,
+    `τ_M(X · X) = −2(q⁴ + q² + 1)/(q² + 1)² < 0`.  The positive form on
+    `H_n` is the twisted one, `τ_M(X · X†)` with `†` the anti-involution
+    fixing each `σ_i`; this class does not encode it.
 
     Class hypothesis per AGENTS.md §3b-cond: the substantive analytic
     content is axiomatised here so the downstream min-norm theorem is
@@ -144,7 +147,7 @@ theorem smul_one_sq {R : Type u} [CommRing R] {A : Type v} [Ring A]
     (`S • X = (algebraMap R A S) * X`) and non-commutative ring
     manipulation.  Queued as a separate commit on this branch.
 
-    Ref: [manuscript] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
+    Ref: [leitner2026] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
          §"Categorical reading" + prop:t-beta-markov-frobenius-collapse .md
          §"Proof — Lagrangian / completing-the-square argument" -/
 theorem completing_the_square_general (R : Type u) [CommRing R]
@@ -152,7 +155,7 @@ theorem completing_the_square_general (R : Type u) [CommRing R]
     (τ : NormalizedTrace R A) (X : A) (S : R) :
     τ.tau (X * X) =
       τ.tau ((X - S • 1) * (X - S • 1)) + 2 * (S * τ.tau X) - S * S := by
-  -- Ref: [manuscript] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
+  -- Ref: [leitner2026] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
   -- Per copilot-review #1761 thread 5: theorem statement uses `- S * S`
   -- directly (using τ.tau_one = 1 inline) rather than `- S * S * τ.tau 1`,
   -- which reduces downstream simp/rw churn.
@@ -196,13 +199,13 @@ theorem completing_the_square_general (R : Type u) [CommRing R]
     attained iff `X = S • 1`, giving the full SHAPE-collapse claim
     `T_β = S · 1_H` of PR #1750.
 
-    Applied to the Iwahori–Hecke algebra `A = H_n(R, q)` at generic
-    `q > 0` with `τ = τ_M` (the Jones–Markov trace): the L2 SHAPE × S
+    This does not apply to `A = H_n(R, q)`, `n ≥ 3`, with `τ = τ_M`,
+    where `PSDTrace` fails (see the class docstring).  The L2 SHAPE × S
     decomposition of PR #1739 is basis-dependence of the
     coordinate-vector Euclidean norm on `ℝ^6`, NOT the categorical
     Frobenius norm on H_3(ℝ, q).
 
-    Ref: [manuscript] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
+    Ref: [leitner2026] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
          §"Categorical reading" + prop:t-beta-markov-frobenius-collapse .md -/
 theorem markov_frobenius_min_norm_lift
     (R : Type u) [Field R] [LinearOrder R] [IsStrictOrderedRing R]
@@ -211,7 +214,7 @@ theorem markov_frobenius_min_norm_lift
     [PSDTrace R A τ]
     (S : R) (X : A) (h_constraint : τ.tau X = S) :
     S * S ≤ τ.tau (X * X) := by
-  -- Ref: [manuscript] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
+  -- Ref: [leitner2026] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
   -- Step 1: invoke completing-the-square (statement uses simplified
   --   `- S * S` form; τ_one absorbed inline).
   have h := completing_the_square_general R A τ X S
@@ -241,7 +244,7 @@ theorem markov_frobenius_min_norm_lift
     - (⇐) `X = S • 1` ⇒ `τ(X*X) = τ((S•1)*(S•1)) = τ((S²)•1)
       = S² τ(1) = S²` by NormalizedTrace.tau_one.
 
-    Ref: [manuscript] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
+    Ref: [leitner2026] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
          §"Proof — Lagrangian / completing-the-square argument" -/
 theorem markov_frobenius_min_norm_uniqueness
     (R : Type u) [Field R] [LinearOrder R] [IsStrictOrderedRing R]
@@ -250,7 +253,7 @@ theorem markov_frobenius_min_norm_uniqueness
     [PSDTrace R A τ] [NonDegTrace R A τ]
     (S : R) (X : A) (h_constraint : τ.tau X = S) :
     τ.tau (X * X) = S * S ↔ X = S • 1 := by
-  -- Ref: [manuscript] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
+  -- Ref: [leitner2026] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
   constructor
   · -- Forward direction (⇒): τ(X²) = S² ⇒ X = S•1
     intro h_eq

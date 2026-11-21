@@ -145,7 +145,7 @@ theorem topDeg_lt_of_forall_ge_eq_zero (f : QuantumTorus A) {e : ℤ}
     coefficient vanishes because `f`'s top degree is `e` and the reduction
     monomial `L^{e-d}·g` has top degree `≤ e` (computed directly via
     `coeff_single_mul`), so `topDeg_lt_of_forall_ge_eq_zero` applies.
-    -- Ref: [manuscript] NT-T2 brick B3;
+    -- Ref: [leitner2026] NT-T2 brick B3;
     --      docs/workplans/2026-07-20-nguyen-tran-strong-aj-lean-workplan.md -/
 theorem skew_right_division_degree_drop (f g : QuantumTorus A) {d e : ℤ}
     (hg : topDeg g = (d : WithBot ℤ)) (hf : topDeg f = (e : WithBot ℤ))
@@ -221,7 +221,7 @@ theorem exists_skew_right_division_fuel (g : QuantumTorus A) {d : ℤ}
     remainder `0` or of strictly smaller L-degree.  Proof: pick a fuel bound
     from the finite top degree of `f` (`topDeg_eq_bot_iff` gives an exponent
     when `f ≠ 0`) and run `exists_skew_right_division_fuel`.
-    -- Ref: [manuscript] NT-T2 brick B3, paper §1.2 (Ã_K principal);
+    -- Ref: [leitner2026] NT-T2 brick B3, paper §1.2 (Ã_K principal);
     --      docs/workplans/2026-07-20-nguyen-tran-strong-aj-lean-workplan.md -/
 theorem exists_skew_right_division (f g : QuantumTorus A) {d : ℤ}
     (hg : topDeg g = (d : WithBot ℤ)) (hu : IsUnit (coeffAt g d)) :

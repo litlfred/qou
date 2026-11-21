@@ -54,6 +54,8 @@ from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402 — CAL-1
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
+from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
 
 set_compute_dps(30)
 q0 = mp.mpf(str(Q0))
@@ -62,7 +64,7 @@ E0 = mp.mpf(str(M_E_MEV)) / (q0 * (q0 - 1))      # 𝔈₀ ≈ 4.186 MeV (CAL-3)
 # Bond types as 2-nucleon (Z,N) sub-braids, all at H_6.
 BOND_ZN = {"pn": (1, 1), "pp": (2, 0), "nn": (0, 2)}
 ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}
-AME = {"D": "2.2245662", "T": "8.4818", "3He": "7.7180", "4He": "28.29566"}
+AME = {"D": _ame_nstr(AME_B_DEUTERON_MEV_VALIDATION, 30), "T": _ame_nstr(AME_B_TRITIUM_MEV_VALIDATION, 30), "3He": "7.7180", "4He": _ame_nstr(AME_B_HE4_MEV_VALIDATION, 30)}
 
 _ydict = {tuple(k) if isinstance(k, (list, tuple)) else k: mp.mpf(str(v))
           for k, v in y_lambda_at(6, q0).items()}

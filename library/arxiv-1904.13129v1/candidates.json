@@ -1,0 +1,70 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1904.13129v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "dfa7fd0ebf1ab8c446310a306cbed479e9da1fbec96dfdefdcedbfb6b801d8fa",
+  "file": "1904.13129v1.pdf"
+ },
+ "provenance": {
+  "title": "On the regularity of critical points for O\u2019Hara\u2019s knot energies: From smoothness to analyticity",
+  "authors": "Nicole Vorderobermeier",
+  "arxiv": {
+   "id": "1904.13129",
+   "version": "1",
+   "primary_class": "math.AP",
+   "stamp_date": "30 Apr 2019"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "theorem": 1
+  },
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.2",
+   "name": null,
+   "statement": "using Cauchy\u2019s method of majorants.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-001-2-preliminaries.md (p. 3-3)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-001-2-preliminaries.md",
+   "section_title": "Preliminaries",
+   "pages": "3-3",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-001-2-preliminaries.md (p. 3-3)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-001-01",
+   "block_iri": "library/arxiv-1904.13129v1/blocks/thm-sec-001-01",
+   "claim_id": "arxiv-1904.13129v1#theorem:1.2",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  }
+ ]
+}

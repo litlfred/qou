@@ -1,0 +1,42 @@
+9.1 Finitely minimal points and the surgery method 253
+
+Sections 9.3.1 and 9.3.2 complement the decomposition (9.9) by presenting
+an algorithm to determine the integer coefficients k,,, for bivariate series, the
+only case beyond minimal points and rational functions with linear denomi-
+nators where we know a general strategy for their calculation. Section 9.3.3
+also gives an asymptotic formula for degenerate critical points in the bivariate
+case. Finally, Section 9.4 ends this chapter with some related results, including
+explicit formulae for higher-order terms and a coordinate-free formula (9.23)
+in terms of geometric invariants such as the Gaussian curvature.
+
+9.1 Finitely minimal points and the surgery method
+
+To prove Theorem 9.5 we show that the Cauchy integral representation for se-
+ries coefficients is negligible outside a small neighborhood of w, reduce to a
+lower-dimensional integral using a univariate residue computation, parametrize
+the simplified integral to obtain a saddle point integral, and apply the theorems
+of Chapter 5 to the result.
+
+Localization and residue
+
+We start by assuming that W(7) contains a strictly minimal contributing sin-
+gularity w = w(7?).
+
+Definition 9.16. For simplicity, we write v° = (v,,...,Vvg_1) for any vector
+vec,
+
+Our hypotheses imply that O.,(w) # 0, so the implicit function theorem
+states that zz is locally analytically parametrized by z° near w on V. More
+specifically, if rg > 0 and we define p = |w,| then there exist a sufficiently
+small real number 6 > 0, a neighborhood N of w® in T(w®), and an analytic
+function g : N > C such that for z° € N,
+
+Gi) O(2°, g(2°)) = 0,
+(ii) p < |g(z°)| < p + 6 with equality only if z° = w°, and
+(iii) Q(z°, 1) # O if t # g(z°) and |t— wy] < 6.
+
+If ry < 0 then the same conditions hold except w being contributing means the
+inequality in (ii) is replaced by p — 6 <|g(z°)| < p.
+
+Let C, denote the circle of radius p — 6 centered at the origin of the complex
+plane and let C2 denote the circle of radius +6. The fact that w is contributing,

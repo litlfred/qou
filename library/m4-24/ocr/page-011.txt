@@ -1,0 +1,45 @@
+Problems on invariants of knots and 3-manifolds 383
+
+Remark In the viewpoint of mathematical physics, Witten [403] gave a 3-
+dimensional interpretation of the Jones polynomial of a link by a path integral
+including a holonomy along the link in the Chern-Simons field theory.
+
+Remark Certain special values of the Jones polynomial have some interpre-
+tations. The formulas Vz(1) = (—2)#4~! and Vz(exp 2avFT) = 1 are shown
+by the skein relation (1), where #L denotes the number of components of L.
+It is known that |Vz(—1)] is equal to the order of Hi(Mo,z) if its order is
+finite, and 0 otherwise. Here, M2, denotes the double branched cover of S38
+branched along L. It is shown, in [290], that Vi(V—1) = (-V2)#4-1(-1) 4%)
+
+if Arf(L) exists, and 0 otherwise. It is shown, in [257], that Vz (exp vt) =
+
+$a Teh) gti (Ma, 152/32) | If w is equal to a 2nd, 3rd, 4th, 6th root of
+unity, the computation of Vz(w) can be done in polynomial time of the number
+of crossings of diagrams of L by the above interpretation of Vz (w). Otherwise,
+Vi (w) does not have such a topological interpretation, in the sense that com-
+puting Vz(w) of an alternating link DL at a given value w is #P-hard except
+for the above mentioned roots of unity (see [183, 399]).
+
+Problem 1.4 (J. Roberts) Why is the Jones polynomial a polynomial?
+
+Remark (J. Roberts) A topological invariant of knots should ideally be de-
+fined in an intrinsically 3-dimensional fashion, so that its invariance under
+orientation-preserving diffeomorphisms of $° is built-in. Unfortunately, almost
+all of the known constructions of the Jones polynomial (via R-matrices, skein
+relations, braid groups or the Kontsevich integral, for example) break the sym-
+metry, requiring the introduction of an axis (Morsification of the knot) or plane
+of projection (diagram of the knot). I believe that the “perturbative” con-
+struction via configuration space integrals [381], whose output is believed to
+be essentially equivalent to the Kontsevich integral, is the only known intrinsic
+construction.
+
+In the definitions with broken symmetry, it is generally easy to see that the
+result is an integral Laurent polynomial in q or q?. In the perturbative ap-
+proach, however, we obtain a formal power series in h, and although we know
+that it ought to be the expansion of an integral Laurent polynomial under the
+substitution q = e”, it seems hard to prove this directly. A related observation
+is that the analogues of the Jones polynomial for knots in 3-manifolds other
+than 5S? are not polynomials, but merely functions from the roots of unity to
+algebraic integers. What is the special property of S$? (or perhaps R?) which
+
+Geometry & Topology Monographs, Volume 4 (2002)

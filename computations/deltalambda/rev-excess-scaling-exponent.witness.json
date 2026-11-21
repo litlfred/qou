@@ -1,9 +1,10 @@
 {
   "schema": "qou-witness/v1",
-  "computedAt": "2026-09-13T20:21:02.448208+00:00",
+  "computedAt": "2026-11-15T21:01:32.563762+00:00",
   "computation": "rev_excess_scaling_exponent_probe.py",
   "bean": "qou-hok7",
   "anchor": "physical_proton",
+  "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "description": "Measures the exponent alpha in excess ~ n^alpha for the best-found shape over the staircase. If alpha < 1/2 the excess is subleading and the Theta(sqrt n) coefficient is A*sqrt2 exactly, withdrawing #7286's 'strictly above' verdict.",
   "constants": {
@@ -55,7 +56,7 @@
       "excess": "0.1418310828873493723",
       "excess_over_sqrt_n": "0.02363851381455823",
       "excess_over_n_quarter": "0.05790229712339884",
-      "elapsed_sec": 0.08
+      "elapsed_sec": 0.15
     },
     {
       "k": 12,
@@ -66,7 +67,7 @@
       "excess": "0.69117475080428095935",
       "excess_over_sqrt_n": "0.07826012969163013",
       "excess_over_n_quarter": "0.2325756342300783",
-      "elapsed_sec": 0.47
+      "elapsed_sec": 0.87
     },
     {
       "k": 16,
@@ -77,7 +78,7 @@
       "excess": "1.2164376444788834204",
       "excess_over_sqrt_n": "0.1043086674711073",
       "excess_over_n_quarter": "0.35620919381353",
-      "elapsed_sec": 1.49
+      "elapsed_sec": 2.69
     },
     {
       "k": 20,
@@ -88,7 +89,7 @@
       "excess": "1.5714829809111992003",
       "excess_over_sqrt_n": "0.1084426282219477",
       "excess_over_n_quarter": "0.41281441914748",
-      "elapsed_sec": 3.55
+      "elapsed_sec": 5.88
     },
     {
       "k": 24,
@@ -99,7 +100,7 @@
       "excess": "1.9550306683303110575",
       "excess_over_sqrt_n": "0.1128737482634479",
       "excess_over_n_quarter": "0.4697570004847568",
-      "elapsed_sec": 7.7
+      "elapsed_sec": 13.47
     },
     {
       "k": 28,
@@ -110,7 +111,7 @@
       "excess": "2.1785338352203034154",
       "excess_over_sqrt_n": "0.1081188188665723",
       "excess_over_n_quarter": "0.4853251540203568",
-      "elapsed_sec": 14.25
+      "elapsed_sec": 24.26
     },
     {
       "k": 35,
@@ -121,7 +122,7 @@
       "excess": "2.3763657218869699344",
       "excess_over_sqrt_n": "0.09467667656802952",
       "excess_over_n_quarter": "0.4743273224877992",
-      "elapsed_sec": 34.48
+      "elapsed_sec": 58.83
     },
     {
       "k": 44,
@@ -132,7 +133,7 @@
       "excess": "2.4251626694200991925",
       "excess_over_sqrt_n": "0.07707672927090134",
       "excess_over_n_quarter": "0.4323466277291745",
-      "elapsed_sec": 84.44
+      "elapsed_sec": 108.81
     },
     {
       "k": 55,
@@ -143,7 +144,7 @@
       "excess": "2.4376480034288535712",
       "excess_over_sqrt_n": "0.06211702293305253",
       "excess_over_n_quarter": "0.3891265050490647",
-      "elapsed_sec": 211.43
+      "elapsed_sec": 293.99
     },
     {
       "k": 70,
@@ -154,7 +155,7 @@
       "excess": "2.4392259874248408114",
       "excess_over_sqrt_n": "0.04893153520909588",
       "excess_over_n_quarter": "0.3454780344488203",
-      "elapsed_sec": 547.17
+      "elapsed_sec": 416.84
     },
     {
       "k": 88,
@@ -165,7 +166,7 @@
       "excess": "2.4392948082722254204",
       "excess_over_sqrt_n": "0.03898010008545478",
       "excess_over_n_quarter": "0.308356864305599",
-      "elapsed_sec": 1378.32
+      "elapsed_sec": 842.65
     }
   ],
   "exponent_R3": {

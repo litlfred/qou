@@ -27,7 +27,7 @@ In the model, the Hecke relation reduces the word to a dressed photon plus the v
 
 **Perpendicular polarisation.**
 $$
-  \sigma_0 \cdot \sigma_1 = L_+ \quad (\text{Hopf link intermediate}).
+  \sigma_0 \cdot \sigma_1 = L_+ \quad (\text{intermediate}).
 $$
 The product is the normal-form basis element $L_+$, a two-strand entangled state. Applying a substrate Reeb insertion completes the trefoil:
 $$

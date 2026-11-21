@@ -1,0 +1,9618 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1601.02479v5",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "1",
+   "text": "SeeSection2.1foranintroductiontothiscategory. It is an enlargement of the ordinary category of mixed Hodge modules, taking account of the monodromy operation on the vanishing cycles functor.",
+   "marks": [
+    {
+     "page": 6,
+     "context": "ofmonodromic"
+    },
+    {
+     "page": 6,
+     "context": "χq(Ld, q"
+    },
+    {
+     "page": 6,
+     "context": "Z(L, q"
+    },
+    {
+     "page": 6,
+     "context": "Z(L, q1/2, x"
+    },
+    {
+     "page": 6,
+     "context": "χq(Ld, q"
+    }
+   ],
+   "block": "library/arxiv-1601.02479v5/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "2",
+   "text": "Thesubstitutionq1/27→q−1/2arisesfromthefactthatDTinvariantsaretypicallydeﬁned in terms of compactly supported cohomology, which is the dual to the cohomology theory we consider.",
+   "marks": [
+    {
+     "page": 7,
+     "context": "W,d(q1/2)are,bydeﬁnition"
+    }
+   ],
+   "block": "library/arxiv-1601.02479v5/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p007-2",
+   "page": 7,
+   "mark": "3",
+   "text": "Someauthorsrefertothecoeﬃcientsinthepartitionfunctiononthelefthandsideof(7)as (reﬁned) DT invariants, while some have reserved this term to refer to the Ωζ W,d(q1/2) appearing on the right hand side. In order to establish some distinction between the two types of invariants, W,d(q1/2) exclusively as BPS invariants, and to the left hand side of (7) as we will refer to the Ωζ the DT partition function.",
+   "marks": [
+    {
+     "page": 7,
+     "context": "Thomas/Bogomol’nyi–Prasad–Sommerﬁeld"
+    },
+    {
+     "page": 7,
+     "context": "χq(H(BC*, Q)vir, q1/2) = −q1/2−q"
+    }
+   ],
+   "block": "library/arxiv-1601.02479v5/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "4",
+   "text": "Strictlyspeaking,thesemapsareembeddingsinthecategoryofZ-gradedmonodromic mixed Hodge-modules, considered as maps in the derived category of monodromic mixed Hodge modules via the natural embedding of categories.",
+   "marks": [
+    {
+     "page": 10,
+     "context": "thatisrealizedviaacanonicalembedding"
+    }
+   ],
+   "block": "library/arxiv-1601.02479v5/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p011-1",
+   "page": 11,
+   "mark": "5",
+   "text": "Seepreviousfootnote.",
+   "marks": [
+    {
+     "page": 11,
+     "context": "dings"
+    }
+   ],
+   "block": "library/arxiv-1601.02479v5/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p019-1",
+   "page": 19,
+   "mark": "6",
+   "text": "Thesimilaritybetweenthenamesofthe“integralidentity”andthe“integralityconjecture” is merely coincidencidental.",
+   "marks": [
+    {
+     "page": 19,
+     "context": "backgroundresultintheproofoftheintegralityconjecture"
+    }
+   ],
+   "block": "library/arxiv-1601.02479v5/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p035-1",
+   "page": 35,
+   "mark": "f",
+   "text": ",d∩ρ−1(x)",
+   "marks": [
+    {
+     "page": 34,
+     "context": "µ→Xbe an embedding inside a smooth scheme, let"
+    },
+    {
+     "page": 34,
+     "context": "Γ"
+    },
+    {
+     "page": 34,
+     "context": "and we may alternatively deﬁne φ"
+    },
+    {
+     "page": 34,
+     "context": "and we may alternatively deﬁne φfF[−1] := (RΓ"
+    },
+    {
+     "page": 34,
+     "context": "α:RΓ"
+    },
+    {
+     "page": 34,
+     "context": "X"
+    },
+    {
+     "page": 34,
+     "context": "Xf,d:=X(Q"
+    },
+    {
+     "page": 34,
+     "context": "X"
+    },
+    {
+     "page": 34,
+     "context": "f,d:=X"
+    },
+    {
+     "page": 34,
+     "context": "whereG(1,d)= GL1(C) × Gd.AsaGd-equivariantvariety,X"
+    },
+    {
+     "page": 34,
+     "context": "decomposition X"
+    },
+    {
+     "page": 34,
+     "context": "decomposition Xf,d= Xd×V"
+    },
+    {
+     "page": 34,
+     "context": "decomposition Xf,d= Xd×Vf,d, where V"
+    },
+    {
+     "page": 34,
+     "context": "i∈Q0Hom(C"
+    },
+    {
+     "page": 34,
+     "context": "GL1(C)factoractsbyrescalingV"
+    },
+    {
+     "page": 34,
+     "context": "GL1(C)factoractsbyrescalingVf,d.WedeﬁneU"
+    },
+    {
+     "page": 34,
+     "context": "GL1(C)factoractsbyrescalingVf,d.WedeﬁneUf,d⊂V"
+    },
+    {
+     "page": 34,
+     "context": "Q0-tuplesofsurjectivemaps.ThegroupGdactsfreelyonU"
+    },
+    {
+     "page": 35,
+     "context": "× U"
+    },
+    {
+     "page": 35,
+     "context": "× U"
+    },
+    {
+     "page": 35,
+     "context": "× V"
+    },
+    {
+     "page": 35,
+     "context": "× V"
+    },
+    {
+     "page": 35,
+     "context": "×U"
+    },
+    {
+     "page": 35,
+     "context": "× U"
+    },
+    {
+     "page": 35,
+     "context": "× V"
+    },
+    {
+     "page": 35,
+     "context": "× U"
+    }
+   ],
+   "block": "library/arxiv-1601.02479v5/blocks/prose-sec-018"
+  },
+  {
+   "id": "fn-p042-1",
+   "page": 42,
+   "mark": "f",
+   "text": ",d1 ×...×Mζ f,ds",
+   "marks": [
+    {
+     "page": 42,
+     "context": "r≤s"
+    },
+    {
+     "page": 42,
+     "context": "r≤sf· dr.Fixn,andlet"
+    }
+   ],
+   "block": "library/arxiv-1601.02479v5/blocks/prose-sec-020"
+  },
+  {
+   "id": "fn-p053-1",
+   "page": 53,
+   "mark": "1",
+   "text": "≤i<j≤n|π(i)>π(j)(−1)ψ(ai,aj )",
+   "marks": [
+    {
+     "page": 52,
+     "context": "W,c"
+    },
+    {
+     "page": 52,
+     "context": "W,d"
+    },
+    {
+     "page": 52,
+     "context": "W,e"
+    },
+    {
+     "page": 52,
+     "context": "♥=(d"
+    },
+    {
+     "page": 52,
+     "context": "♠=(e"
+    },
+    {
+     "page": 53,
+     "context": "× A"
+    },
+    {
+     "page": 53,
+     "context": ") × A"
+    },
+    {
+     "page": 53,
+     "context": "a"
+    },
+    {
+     "page": 53,
+     "context": "Ga"
+    },
+    {
+     "page": 53,
+     "context": "Gπ(a"
+    }
+   ],
+   "block": "library/arxiv-1601.02479v5/blocks/prose-sec-026"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p035-2",
+   "page": 35,
+   "mark": "f",
+   "text": ",d∩ρ−1(x)",
+   "block": "library/arxiv-1601.02479v5/blocks/prose-sec-018"
+  },
+  {
+   "id": "fn-p064-1",
+   "page": 64,
+   "mark": "3",
+   "text": "FD, United Kingdom E-mail address: ben.davison@ed.ac.uk S. Meinhardt: School of Mathematics and Statistics, Hicks Building, Hounsfield Road, Sheffield S3 7RH, United Kingdom E-mail address: s.meinhardt@shef.ac.uk",
+   "block": "library/arxiv-1601.02479v5/blocks/prose-sec-030"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "µ⊂NQ"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "µ.Forfullgenerality,weconsider"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "W,µ)into"
+  },
+  {
+   "page": 3,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 3,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "isalways played by thegrading by NQ"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "CQ-modules,andconsidertheNQ"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "d∈NQ"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "ConsideringtheresultingcohomologyasaNQ"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "dimensional.TheinitialroleoftheNQ"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "Moreover,thecohomologicalHallalgebrastructurerespectstheNQ"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "Choosing a bijection between the vertices Q"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "unctions are expressed as formal power series in variables q"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "x"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "x"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "xd"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "isaformalLaurentpowerseriesinq"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "thedthgradedpieceoftherighthandsideof(2)—fornowq"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "ohomologicaldegree.Thesepowerseriesmayhaveﬁniteorderpolesatq"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "oftheweight ﬁltrationofaninﬁnite-dimensionalNQ"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "ζ—intheﬁnalversionofthetheory,q"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "change theperspectiveontheNQ"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "change theperspectiveontheNQ0-grading.Weconsider NQ"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "mixedHodgemodules)onthemonoidNQ"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "µtakes"
+  },
+  {
+   "page": 4,
+   "mark": "p",
+   "context": "µ,understandingthedirectimagealong"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "H"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "µ"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "SofthecategoryofCQ-representations.Ford∈NQ"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "W,dfor"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "W,dfor"
+  },
+  {
+   "page": 6,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 6,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 6,
+   "mark": "*",
+   "context": "ThedeﬁnitionofH(BC"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "thecorrespondencebetweenmonodromicmixedHodgemodulesonNQ"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "hecorrespondencebetweenmonodromicmixedHodgemodulesonNQ0andNQ"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "adedmonodromicmixedHodgestructures,isthefunctorthatsendsanNQ"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "graded monodromic mixedHodge structure Fsatisfying F"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "ed monodromic mixedHodge structure Fsatisfying F0= 0 totheNQ"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "Sym"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "given by taking the free NQ"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "theory”.GivenanelementL∈D"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "theory”.GivenanelementL∈Db(MMHM(NQ"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "χ"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "χq(L"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "χq(Ld, q1/2)x"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Z(L, q1/2, x1, . . . , x"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "d∈NQ"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "(−1)"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "χ"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "χq(L"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "j(H"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "j(Hi(L"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "j(Hi(Ld)))"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "µ))⊂D"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "µ))⊂Db(MMHM(NQ"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "derivedcategoryD"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "W,µ), q"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "W,µ), q1/2, x"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "W,µ), q1/2, x1, . . . , x"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Laurentseriesinq"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "µ,andforeach"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "j(H"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "W,d))isnonzeroforonlyﬁnitelymanyvaluesof"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "byD≥,lf(MMHM(NQ"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "byD≥,lf(MMHM(NQ0))⊂D(MMHM(NQ"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "j(H(L"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "j(H(Ld))vanishesfor"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "EXP:Z((q"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "EXP:Z((q1/2))[[x"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "EXP:Z((q1/2))[[x1, . . . , x"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "EXP:Z((q1/2))[[x1, . . . , xn]]+→Z((q"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "EXP:Z((q1/2))[[x1, . . . , xn]]+→Z((q1/2))[[x"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "EXP:Z((q1/2))[[x1, . . . , xn]]+→Z((q1/2))[[x1, . . . , x"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "d∈NQ"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "d∈NQ0"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "d∈NQ0a"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "d∈NQ0ad(q"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "d∈NQ0ad(q1/2)"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "d∈NQ0ad(q1/2)x"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "d∈NQ0ad(q1/2)xdsuchthat"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "d∈NQ0ad(q1/2)xdsuchthata"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "d∈NQ0ad(q1/2)xdsuchthata0(q"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "D≥,lf(MMHM(NQ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Z(L, q"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Z(L, q1/2, x"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Z(L, q1/2, x1, . . . , x"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Sym⊠+(L), q"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Sym⊠+(L), q1/2, x"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Sym⊠+(L), q1/2, x1, . . . , x"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "W,d(q"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "W,d(q−1/2)"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "W,d(q−1/2)x"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "W,d(q−1/2)xd/(q"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "W,µ), q"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "W,µ), q1/2, x"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "W,µ), q1/2, x1, . . . , x"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "W,d(q"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "χ"
+  },
+  {
+   "page": 7,
+   "mark": "*",
+   "context": "χq(H(BC"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "χq(H(BC*, Q)vir, q"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "χq(H(BC*, Q)vir, q1/2) = −q"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "χq(H(BC*, Q)vir, q1/2) = −q1/2−q3/2−. . . = (q"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "W,d(q−1/2) = χ"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "W,d, q"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "W,d(q"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "(lambda-)ringofD≥,lf(MMHM(NQ"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "(M"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "(Md→M"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "(Md→Md)∗φTr(W)"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "(Md→Md)∗φTr(W)dQM"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "(Md→Md)∗φTr(W)dQMd⊗L−dim(M"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "d∈NQ"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "whereM"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "whereMdisthestackofd-dimensionalCQ-representations, andM"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "insideD≥,lf(MMHM(NQ"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "Letf∈NQ"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 9,
+   "mark": "f",
+   "context": "W,d) ∼= L"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "W,d) ∼= Lf·d −(d,"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "W,d) ∼= Lf·d −(d,d)/2 ⊗H"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "H"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "W,µ)is"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "µ-gradedmonodromicmixedHodgestructures,whichcorrespondsto"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "whereF ⊠Gistheusualexternaltensorproduct,and+:NQ"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "whereF ⊠Gistheusualexternaltensorproduct,and+:NQ0× NQ"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "whereF ⊠Gistheusualexternaltensorproduct,and+:NQ0× NQ0→NQ"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "fromtheconstantsheafsupportedatthemonoidalunit0∈NQ"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "→NQ"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "anewone,whichdependsonNQ"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "ontheZ/2Z-vectorspaceV= (Z/2Z)Q"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "τsw(a ⊗b) = (−1)τ(d′,"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "whered′andd′′aretheNQ"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "by(−1)τ(d′,"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "a ⊗b 7→(−1)ψ(d′,"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 10,
+   "mark": "b",
+   "context": "W,d′) and"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "W,µ)induces"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "W,µ)),whichis"
+  },
+  {
+   "page": 10,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 10,
+   "mark": "*",
+   "context": "thatisrealizedviaacanonicalembedding4H(BC"
+  },
+  {
+   "page": 11,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "W,µ))is"
+  },
+  {
+   "page": 11,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 11,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 11,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 11,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 11,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 11,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "L"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "H"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "H0(L"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "Set Bto be the full subcategory of mixed Hodge modules on A"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "F∈Ob(MHM(A"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "F∈Ob(MHM(A1))suchthat(G"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "F∈Ob(MHM(A1))suchthat(Gm→A"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "admissible variations of mixed Hodge structure on A"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "FixXandletBXbethefullsubcategorycontainingthoseF∈MHM(X× A"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "suchthatforeachx ∈X,thetotalcohomologyof({x} × G"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "suchthatforeachx ∈X,thetotalcohomologyof({x} × Gm→X× A"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "MHM(X× A"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "MHM(X× A1),thecategoryBX⊂MHM(X× A"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "ICY ×A"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "structureonY′× G"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "ICY ×A"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "anyobjectPoftype(1)splitsintoadirectsumP∼= P"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "P"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "ICY ×A"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "ICY ×A1(L"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "forL"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "MHM(X × A"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "({x} × A"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "({x} × A1→X× A"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "A"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "A1.ItisgeneratedunderextensionsbysimpleobjectsoftheformP"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "{x}×A"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "ofthefunctorπ∗[1]:MHM(X) →MHM(X× A"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "π :X× A"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "subcategoryofMHM(X × A"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(1)Ψ(ν) = νΨ :Ψ →Ψ"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "F⊠(G"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "F⊠(Gm→A"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "F⊠(Gm→A1)!QG"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "ΨX(F) = (X× A"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "−−−−→X× A"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "j−→A"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "j−→A1)!QG"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "s−→(G"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "QA"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "QA1→({0}֒→A"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "ofmixedHodgemodulesonX× A"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "F∼=(X× A"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "F⊠({0}֒→A"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "−−−−→X × A"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "F⊠(G"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "F⊠(Gm→A"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "F⊠(Gm→A1)!QG"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "(X× A"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "−−−−→X × A"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "s′= (X× A"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "−−−−→X× A"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "idX×A"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "X× A"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "X× A1× A"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "X× A1× A1× A"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "X× A"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "X× A1× A"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "X × A"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "X × A1× A"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "X × A"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "ΨX(νF) = (idX ×+)∗(νF⊠id"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "ΨX(νF) = (idX ×+)∗(νF⊠idj!QG"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "= (idX ×+)∗(idX × + × idA"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "= (idX ×+)∗(idX × + × idA1)∗(idF ⊠s ⊠id"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "= (idX ×+)∗(idX × + × idA1)∗(idF ⊠s ⊠idj!QG"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "= (idX ×+)∗(idF ⊠+∗(s ⊠id"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "= (idX ×+)∗(idF ⊠+∗(s ⊠idj!QG"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "=(idX ×+)∗(idX × + × idA"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "=(idX ×+)∗(idX × + × idA1)∗(idF ⊠id"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "=(idX ×+)∗(idX × + × idA1)∗(idF ⊠idj!QG"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "=(idX ×+)∗(idF ⊠+∗(id"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "=(idX ×+)∗(idF ⊠+∗(idj!QG"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "+∗(s ⊠id"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "+∗(s ⊠idj!QGm[1]) = +∗(id"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "cone(νΨX(F))∼=(idX ×+)∗(F⊠+∗(j!QG"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "∼=(idX ×+)∗(F⊠+∗(j!QG"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "∼=(idX ×+)∗(F⊠+∗(j!QGm[1] ⊠QA"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "+∗(j!QG"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "+∗(j!QGm[1] ⊠QA"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "+∗(j!QGm[1] ⊠QA1[1]))∼= H∗(A"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "+∗(j!QGm[1] ⊠QA1[1]))∼= H∗(A1, j!QG"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "+∗(j!QGm[1] ⊠QA1[1]))∼= H∗(A1, j!QGm) ⊗QA"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "Proof.Wedenotebyπ :X× A"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "−−−−→X×A"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "−−−−→X×A1)∗(F⊠QA"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "−−−−→X×A1)∗(F⊠QA1) →(X×A"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "−−−−→X×A"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "−−−−→X×A1)∗(F⊠Q"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "π∗π∗F= (X×A"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "The natural pushforward (X×G"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "The natural pushforward (X×Gm→X×A"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "The natural pushforward (X×Gm→X×A1)! :MHM(X×G"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "isanequivalenceof categories, whereMHM(X × G"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "MHM(X ×G"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "({x} × G"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "({x} × Gm→X × G"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "ΘX :F7→(X× G"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "ΘX :F7→(X× Gm→X× A"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "ICY ×A"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "ICY ×G"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "ICY ×G"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "ICY ×Gm(L ⊠QG"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "DCX(BX)isstableundertheVerdierdualityfunctorDX×A"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "jGiszeroforall"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "FispureofweightiifeachH"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "Remark2.8.Theequivalence(X×G"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "Remark2.8.Theequivalence(X×Gm→X×A"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "Remark2.8.Theequivalence(X×Gm→X×A1)! :MHM(X×G"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "ture(G"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "ture(Gm→A"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "ture(Gm→A1)!QG"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "ture(Gm→A1)!QGm[1]∼= ({0}֒→A"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "bethoseinducedbythefunctors(f× idA"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "bethoseinducedbythefunctors(f× idA1)!, (f× idA"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "bethoseinducedbythefunctors(f× idA1)!, (f× idA1)∗, (f× idA"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "ucedbythefunctors(f× idA1)!, (f× idA1)∗, (f× idA1)!, (f× idA"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "τ−→NQ"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "τ−→NQ0over a monoid NQ"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "H(X, F)maybethoughtofasacohomologicallygradedNQ"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "theNQ"
+  },
+  {
+   "page": 17,
+   "mark": "c",
+   "context": "ure underlyingthetotal hypercohomologyofF.Similarly,wedeﬁneH"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "F⊗G:= (X× A"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "F⊗G:= (X× A1× A"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "−−−−→X× A"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "1,"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "1,"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "wherepri,j :X× A"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "wherepri,j :X× A1× A"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "wherepri,j :X× A1× A1→X× A"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "F⊠⊕G:= (X×YX × A"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "F⊠⊕G:= (X×YX × A1× A"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "−−−→X× A"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "1,"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "2,"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "F⊠G:= (X×Y ×A"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "F⊠G:= (X×Y ×A1×A"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "−−−−−−−→X×Y ×A"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "1,"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "2,"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "−−−−−→X× A"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "−−−−−→X×G"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "f−1(R<0) and X"
+  },
+  {
+   "page": 17,
+   "mark": "f",
+   "context": "f−1(R<0) and X0= f−1(0).We deﬁne the functor ψ"
+  },
+  {
+   "page": 17,
+   "mark": "f",
+   "context": "ψ"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "ψf:= (X"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "ψf:= (X0→X)∗(X"
+  },
+  {
+   "page": 17,
+   "mark": "f",
+   "context": "anddeﬁneφ"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "anddeﬁneφf:=cone((X"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "anddeﬁneφf:=cone((X0→X)∗(X"
+  },
+  {
+   "page": 17,
+   "mark": "f",
+   "context": "anddeﬁneφf:=cone((X0→X)∗(X0→X)∗→ψ"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": ":= (X× G"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": ":= (X× Gm→X× A"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": ":= (X× Gm→X× A1)!φf/u(X× G"
+  },
+  {
+   "page": 18,
+   "mark": "f",
+   "context": "Example2.11.Letf=0.Thenφ"
+  },
+  {
+   "page": 18,
+   "mark": "f",
+   "context": "Example2.11.Letf=0.Thenφf(F)∼=F[1],sinceψ"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "F=(X× G"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "F=(X× Gm→X× A"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "F=(X× Gm→X× A1)!(X× G"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "π−→X)∗Fandj :X× G"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "π−→X)∗Fandj :X× Gm→X× A"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "j!j∗G[1]whereG= (X× A"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Leti:X× {0}֒→X× A"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "−−−−−−−→X× A"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "fp,whichismoreover"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "fp,whichismoreoveranaturalisomorphismif"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "fp"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "fp"
+  },
+  {
+   "page": 18,
+   "mark": "c",
+   "context": "F⊗H"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "F⊗Hc(A"
+  },
+  {
+   "page": 18,
+   "mark": "j",
+   "context": "(6)(Thom–Sebastianiisomorphism):Letf"
+  },
+  {
+   "page": 18,
+   "mark": "j",
+   "context": "(6)(Thom–Sebastianiisomorphism):Letfj :X"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "f"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "f1⊞f"
+  },
+  {
+   "page": 18,
+   "mark": "f",
+   "context": "shiftoftheusualvanishingcyclefunctor,φ"
+  },
+  {
+   "page": 19,
+   "mark": "f",
+   "context": "withφ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "f"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "f1⊞f"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "a∈A"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "ConsidertheembeddingD"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "−→D"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "L := Hc(A"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "2.ThereisnosquarerootofLinD"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "2.ThereisnosquarerootofLinDb(MHM(pt)),i.e.anelementL"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "(L"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "(L1/2)⊗2∼= L,butafterembeddingD"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "(L1/2)⊗2∼= L,butafterembeddingDb(MHM(pt))inD"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "L"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "L1/2:= Hc(A"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "x2QA"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "wherex"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "wherex2:A"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "wherex2:A1→Cisconsideredasaregularfunction,andQA"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "(cohomologically shifted)mixedHodgemoduleonA"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "l:L"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "l:L1/2⊗L"
+  },
+  {
+   "page": 19,
+   "mark": "c",
+   "context": "isacanonicalisomorphismH"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "isacanonicalisomorphismHc(A"
+  },
+  {
+   "page": 19,
+   "mark": "x",
+   "context": "isacanonicalisomorphismHc(A1, φ"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "isacanonicalisomorphismHc(A1, φx"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "isacanonicalisomorphismHc(A1, φx2QA"
+  },
+  {
+   "page": 19,
+   "mark": "c",
+   "context": "twonaturalbasiselementsofH"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "twonaturalbasiselementsofHc(A"
+  },
+  {
+   "page": 19,
+   "mark": "x",
+   "context": "twonaturalbasiselementsofHc(A1, ψ"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "twonaturalbasiselementsofHc(A1, ψx"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "twonaturalbasiselementsofHc(A1, ψx2QA"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "turalbasiselementsofHc(A1, ψx2QA1)∼=Q ⊕Q.Inparticular,sinceA"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "L−1/2:= HomD"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "L−1/2:= HomDb(MMHM(pt))(L"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "L"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "SinceLispure,wededucefromRemark2.10thatL"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "theunderlyingderivedcategoryofconstructiblesheavesonA"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "theunderlyingderivedcategoryofconstructiblesheavesonA1∼= A"
+  },
+  {
+   "page": 20,
+   "mark": "b",
+   "context": "∼=L−dim(X)/2⊗H(X, Q) ∈D"
+  },
+  {
+   "page": 20,
+   "mark": "*",
+   "context": "andsinceinthestack-theoreticsensethedimensionofdim(BC"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "H(BC∗, Q)vir:= L"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "asfollows.LetV"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "asfollows.LetV1⊂V"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "clusionsofG-representations,andletU"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "clusionsofG-representations,andletU1⊂U"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "thateachprincipalbundlequotientU"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "thateachprincipalbundlequotientUi→U"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "andthatcodimV"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "andthatcodimVi(V"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "andthatcodimVi(Vi \\ U"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "andthatcodimVi(Vi \\ Ui) →∞asi →∞.ThemapX× U"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "andthatcodimVi(Vi \\ Ui) →∞asi →∞.ThemapX× Ui→X×G U"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "f"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "fi :X ×G U"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "fi :X ×G Ui→Ctobetheinducedmap,andι"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "fi :X ×G Ui→Ctobetheinducedmap,andιi :X ×G U"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "fi :X ×G Ui→Ctobetheinducedmap,andιi :X ×G Ui→X ×G U"
+  },
+  {
+   "page": 21,
+   "mark": "t",
+   "context": "Toﬁxnotation,weﬁxanembeddingG ⊂GL"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "Vi:= Hom(C"
+  },
+  {
+   "page": 21,
+   "mark": "t",
+   "context": "Vi:= Hom(Ci, C"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "anddeﬁneU"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "anddeﬁneUi⊂V"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "anddeﬁneUi⊂Vitobethesubschemeofsurjectivemaps;ifi≥tthenU"
+  },
+  {
+   "page": 21,
+   "mark": "t",
+   "context": "indeedcarryafreeG-actionviatheGLt(C)-actiononC"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "X"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "Xi:= X×G U"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "f"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "fi+1QX"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "fi+1QXi+1→p"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "F"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "andmorphismsF"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "andmorphismsFi′→F"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "Λ:H"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "Λ:Hn(Y, F"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "Λ:Hn(Y, Fi+1) →H"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "Λ:Hn(Y, Fi+1) →Hn(Y, F"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "sheaves.SoletF"
+  },
+  {
+   "page": 21,
+   "mark": "f",
+   "context": "sheaves.SoletFidenotethecomplexofperversesheavespi,∗φ"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "sheaves.SoletFidenotethecomplexofperversesheavespi,∗φf"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "sheaves.SoletFidenotethecomplexofperversesheavespi,∗φfiQX"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "Λcon :H"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "con(Y, F"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "con(Y, Fi+1) →H"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "con(Y, F"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "cone(F"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "cone(Fi+1→F"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "ConsiderthespaceUi,i+1⊂Hom(C"
+  },
+  {
+   "page": 21,
+   "mark": "t",
+   "context": "ConsiderthespaceUi,i+1⊂Hom(Ci+1, C"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "πi,i+1 :C"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "πi,i+1 :Ci+1→C"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "givenby(z"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "givenby(z1, . . . , z"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "givenby(z1, . . . , zi+1) 7→(z"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "givenby(z1, . . . , zi+1) 7→(z1, . . . , z"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "j"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "ji :Ui,i+1֒→U"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "τi,i+1 :Ui,i+1→U"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "ιi,i+1 :Xi,i+1→X"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "ti,i+1 :Xi,i+1→X"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "−−−→X"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "a−→H"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "H"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "con(p"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "con(pi+1,∗ιi,i+1,∗φ"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "con(pi+1,∗ιi,i+1,∗φfi,i+1QXi,i+1) →H"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "con(p"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "con(pi+1,∗φ"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "con(pi,∗φ"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "f"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "f i+1 :X×U"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "f i+1 :X×Ui+1→C given by the composition X×U"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "X× U"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "f"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "f i+1QX×U"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "f i+1QX×Ui+1∼= φ"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "f i+1QX×Ui+1∼= φfQX⊠QU"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "= idφ"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "= idφf QX⊠(QU"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "f"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "f i+1QX×U"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "Forﬁxedm,H"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "con(QU"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "con(QUi+1) →H"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i,sincethecodimensionofU"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i,sincethecodimensionofUi+1\\ Ui,i+1insideU"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "H"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "f"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "f i+1QX×U"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "isanisomorphism.Ontheotherhand,takingaZariskiopensubspaceC⊂X"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "C=C×X"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "C=C×Xi+1(X× U"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "f"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "f i+1QX×U"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "Hcon(φ"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "Hcon(φf"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "Hcon(φfi+1QX"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "Hcon(φfi+1QXi+1→ιi,i+1,∗φ"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "H"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "con(φ"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "con(φf"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "con(φfi+1QX"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "con(φfi+1QXi+1→ιi,i+1,∗φ"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "isanisomorphism.Thepushforward p"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "(X"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "p"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "pi+1,∗φ"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "pi+1,∗φf"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "pi+1,∗φfi+1QX"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "pi+1,∗φfi+1QXi+1→p"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "pi+1,∗φfi+1QXi+1→pi+1,∗ιi,i+1,∗φ"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "i7→∞H"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "i7→∞H"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "forthespacesV"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "forthespacesViandU"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "forthespacesViandUiinthedeﬁnitionofH"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "H"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "i) →H"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "Byanotherapplicationof[15,Prop.23], X"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": ":=X"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": ":=Xi×G"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "τ:H"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "i) →H"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "κ:H"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "i) →H"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "s∈SM"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "s∈SMs,withM"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "s∈SMs,withMs∼=X"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "s∈SMs,withMs∼=Xs/G"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "s∈SMs,withMs∼=Xs/GsandeachX"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "s∈SMs,withMs∼=Xs/GsandeachXs"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "andeachG"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "s∈SY"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "s∈SYsis"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "f|Xs/GsQX"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "f|Xs/GsQXs/G"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "f|Xs/GsL(dim(G"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "f|Xs/GsL(dim(Gs)−dim(X"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "ICM"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "s∈SQM"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "QX"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "QXi) ⊗Ldim(X"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "QXi) ⊗Ldim(Xi+1)−dim(X"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "H2 dim(U"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "((Xi,i+1→X"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "fi,i+1QXi,i+1) →H2 dim(U"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "isanisomorphismforsuﬃcientlylargei,andwecandeﬁneH"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "bethelimitofH"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "L−dim(U"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "H"
+  },
+  {
+   "page": 23,
+   "mark": "c",
+   "context": ":=L"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": ":=Lc⊗H"
+  },
+  {
+   "page": 23,
+   "mark": "c",
+   "context": "L"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "Remark2.19.Asaspecialcaseoftheaboveconstruction,ifτ:→NQ"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "overamonoidofdimensionvectors,witheachM"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "overamonoidofdimensionvectors,witheachMd∼= X"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "overamonoidofdimensionvectors,witheachMd∼= Xd/G"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "d∈NQ"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "d∈NQ"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "ICM"
+  },
+  {
+   "page": 24,
+   "mark": "c",
+   "context": "ICMd(Q)),H"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "ICM"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "thedeﬁnitionusedin[30,Sec.7]inthedeﬁnitionoftheunderlyingNQ"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "Deﬁnition2.20.LetX/G →NQ"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "υ"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "υi :XS×G U"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "υi :XS×G Ui→X ×G U"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "itherestrictionof"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "itherestrictionofp"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "itherestrictionofpitoXS×GU"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "i7→∞H"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "i7→∞H"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "L−dim(U"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "i→X"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "QX"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "NowassumethatX′andXaresmooth,orthathis.TakingH(DY (δ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "NowassumethatX′andXaresmooth,orthathis.TakingH(DY (δ1 ◦δ"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "usion L ⊂Pof the Levi subgroup of a parabolic subgroup of GL"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "X×HU"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "−→X×G U"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "hi,∗QX×HU"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "QX×HU"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "QX×HUi.Fromthemapshi,∗DX×HU"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "QX×HUi.Fromthemapshi,∗DX×HUiQX×HU"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "QX×HUi.Fromthemapshi,∗DX×HUiQX×HUi→DX×GU"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "QX×HUi.Fromthemapshi,∗DX×HUiQX×HUi→DX×GUiQX×GU"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "setsQ"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "setsQ0andQ"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "setsQ0andQ1,andapairofmapss:Q"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "setsQ0andQ1,andapairofmapss:Q1→Q"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "setsQ0andQ1,andapairofmapss:Q1→Q0andt:Q"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "setsQ0andQ1,andapairofmapss:Q1→Q0andt:Q1→Q"
+  },
+  {
+   "page": 25,
+   "mark": "f",
+   "context": "Vect"
+  },
+  {
+   "page": 25,
+   "mark": "d",
+   "context": "Vectf."
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "thecategory of ﬁniterank vector bundles over S.Let d ∈NQ"
+  },
+  {
+   "page": 25,
+   "mark": "d",
+   "context": "sion vector.Wedenote byM"
+  },
+  {
+   "page": 25,
+   "mark": "f",
+   "context": "thefullsubcategoryoffunctorsinFun(CQ, Vect"
+  },
+  {
+   "page": 25,
+   "mark": "d",
+   "context": "thefullsubcategoryoffunctorsinFun(CQ, Vectf."
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "S)suchthat"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "S)suchthati∈Q"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "S)suchthati∈Q0issentto"
+  },
+  {
+   "page": 25,
+   "mark": "d",
+   "context": "Hom(C"
+  },
+  {
+   "page": 25,
+   "mark": "s",
+   "context": "Hom(Cd"
+  },
+  {
+   "page": 25,
+   "mark": "d",
+   "context": "Hom(Cds(a), C"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": "Hom(Cds(a), Cd"
+  },
+  {
+   "page": 25,
+   "mark": "d",
+   "context": "X"
+  },
+  {
+   "page": 25,
+   "mark": "d",
+   "context": "Aut(C"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "Aut(Cd"
+  },
+  {
+   "page": 25,
+   "mark": "d",
+   "context": "G"
+  },
+  {
+   "page": 25,
+   "mark": "d",
+   "context": "andthereisanequivalenceofstacksM"
+  },
+  {
+   "page": 25,
+   "mark": "d",
+   "context": "andthereisanequivalenceofstacksMd∼=X"
+  },
+  {
+   "page": 25,
+   "mark": "d",
+   "context": "andthereisanequivalenceofstacksMd∼=Xd/G"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "d∈NQ"
+  },
+  {
+   "page": 25,
+   "mark": "d",
+   "context": "d∈NQ0M"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "Tothatend,weassumethatforeachd∈NQ"
+  },
+  {
+   "page": 25,
+   "mark": "d",
+   "context": "d⊂X"
+  },
+  {
+   "page": 25,
+   "mark": "d",
+   "context": "which are preserved by the action of G"
+  },
+  {
+   "page": 25,
+   "mark": "d",
+   "context": "d/G"
+  },
+  {
+   "page": 25,
+   "mark": "d",
+   "context": "ω"
+  },
+  {
+   "page": 25,
+   "mark": "d",
+   "context": "d→X"
+  },
+  {
+   "page": 25,
+   "mark": "d",
+   "context": "ω"
+  },
+  {
+   "page": 25,
+   "mark": "d",
+   "context": "d→M"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "Fortherestofthepaper,X"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "spacesaredeﬁned,wewillinsteadusethenotationX(Q)"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "Ford′+ d′′= d ∈NQ"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "Ford′+ d′′= d ∈NQ0letM"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "Ford′+ d′′= d ∈NQ0letMd′,"
+  },
+  {
+   "page": 26,
+   "mark": "a",
+   "context": "S)andι:F ′→Fis"
+  },
+  {
+   "page": 26,
+   "mark": "f",
+   "context": "F′, F∈Fun(CQ, Vect"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "F′, F∈Fun(CQ, Vectf."
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "i,rank(F(i))=d"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "foreveryi.Again,M"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "foreveryi.Again,Md′,"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "LetX"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "LetXd′,"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "LetXd′,d′′⊂X"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "ﬂagC"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "i⊂C"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "i⊂Cd"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "i⊂Cdiispreservedforalli∈Q"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "i⊂Cdiispreservedforalli∈Q0,andletG"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "i⊂Cdiispreservedforalli∈Q0,andletGd′,"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "i⊂Cdiispreservedforalli∈Q0,andletGd′,d′′⊂G"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "M"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "Md′,"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "Md′,d′′∼= X"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "Md′,d′′∼= Xd′,"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "Md′,d′′∼= Xd′,d′′/G"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "Md′,d′′∼= Xd′,d′′/Gd′,"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "d′,d′′⊂M"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "d′,d′′⊂Md′,"
+  },
+  {
+   "page": 26,
+   "mark": "x",
+   "context": "x→F"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "d′,d′′/G"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "d′,d′′/Gd′,"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "d′,d′′:= X"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "d′,d′′:= Xd′,"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "−1πφ)∈C|r>0, 0<φ≤1}Q"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "Atupleζ=(ζ"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "Atupleζ=(ζi)"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "Atupleζ=(ζi)i∈Q"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "Atupleζ=(ζi)i∈Q0∈HQ"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "CQ"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "LikewisewedeﬁneΞζ(d),ford ∈NQ"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "−1πφ) ∈C | r> 0, 0 < φ < 1}Q"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "−1πφ) ∈C | r> 0, 0 < φ < 1}Q0⊂HQ"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "WedeﬁnetwopairingsonZQ"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "d"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "di e"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "Notethat(d, d) = −dim M"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "µ⊂NQ"
+  },
+  {
+   "page": 27,
+   "mark": "e",
+   "context": "µimplies⟨d,"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "WesaythatζisaKingstabilityconditionifℑm(ζ"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "WesaythatζisaKingstabilityconditionifℑm(ζi) = 1andℜe(ζ"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "i ∈Q"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "a King stability condition ζ, we can ﬁx m ∈N such that mℜe(ζ"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "for every i.Welinearize theG"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "for every i.Welinearize theGd-action on X"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "elinearize theGd-action on Xdvia the trivial line bundleon X"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "χ"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "χd :G"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "det(gi)"
+  },
+  {
+   "page": 27,
+   "mark": "e",
+   "context": "det(gi)mℜ"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "det(gi)mℜe(ζ"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "(g"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "(gi)"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "(gi)i∈Q"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "//χdG"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "//χdG"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "Remark3.2.Fixadimensionvectord ∈NQ"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "−1−µ foralli ∈Q"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "µ= NQ"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "WewriteM"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "Γ(X(Q)"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "Γ(X(Q)d)G"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "M"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "and the closed points of M"
+  },
+  {
+   "page": 28,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 28,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 28,
+   "mark": "d",
+   "context": "X"
+  },
+  {
+   "page": 28,
+   "mark": "d",
+   "context": "Xd′,"
+  },
+  {
+   "page": 28,
+   "mark": "d",
+   "context": "/G"
+  },
+  {
+   "page": 28,
+   "mark": "d",
+   "context": "/Gd′,"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "ﬁniteifforeachZ∈π"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "n(H"
+  },
+  {
+   "page": 28,
+   "mark": "b",
+   "context": "n(Hi(F)|Z) belongs to D"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "n(H"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "n(Hi(F)|Z) = 0forall"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "The category D≥,lf(MMHM(NQ"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "torusisapowerseriesringwithcoeﬃcientsinZ((q"
+  },
+  {
+   "page": 28,
+   "mark": "d",
+   "context": "orusisapowerseriesringwithcoeﬃcientsinZ((q1/2))andvariablesx"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "NQ"
+  },
+  {
+   "page": 28,
+   "mark": "d",
+   "context": "variablesx"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "F⊠G:= (p:X × Y× A"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "F⊠G:= (p:X × Y× A1× A"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "−−−−−−−→X× Y× A"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "1,"
+  },
+  {
+   "page": 29,
+   "mark": "4",
+   "context": "2,"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "1,"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "1,"
+  },
+  {
+   "page": 29,
+   "mark": "4",
+   "context": "2,"
+  },
+  {
+   "page": 29,
+   "mark": "4",
+   "context": "2,"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "and so since p!:D(MHM(X ×A"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "and so since p!:D(MHM(X ×A1×Y×A"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "and so since p!:D(MHM(X ×A1×Y×A1)) →D(MHM(X ×Y×A"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "X"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "Xi,i ∈Ibeaﬁnitesetofalgebraic varieties,let L"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "eaﬁnitesetofalgebraic varieties,let LibeobjectsofD≥,lf(MHM(X"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "foreachi∈I,andletf"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "foreachi∈I,andletfi :X"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "foreachi∈I,andletfi :Xi→Y"
+  },
+  {
+   "page": 29,
+   "mark": "f",
+   "context": "i∈I"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "i∈If"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "D≥,lf(MHM(X"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "⊠i∈Ifi,∗L"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "⊠i∈Ifi,∗Li∼= f∗(⊠i∈IL"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "NowletL"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": ":X"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": ":Xn→Sym"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "Sym"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "∗⊠nL)S"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "H(Sym"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "H(SymnX, Sym"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "H(SymnX, SymnL)∼= Sym"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "H(X"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "id"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "X"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "Xn× A"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "(X× A"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "X×A"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "Sym"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "SymnX × A"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "Sym"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "Symn(X× A"
+  },
+  {
+   "page": 30,
+   "mark": "r",
+   "context": "X,∗(⊠nL)bytaking"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "andwecandeﬁneSym"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "andwecandeﬁneSymnLtobetheS"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "Sym"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "F7→(⊕∗F⊠n)S"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "Sym"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "π"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "π0(⊕):π"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "π0(⊕):π0(M) × π"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "π0(⊕):π0(M) × π0(M) →π"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "ispure.Ontheotherhand,Sym"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "theS"
+  },
+  {
+   "page": 30,
+   "mark": "d",
+   "context": "L⟨d′′,"
+  },
+  {
+   "page": 30,
+   "mark": "d",
+   "context": "L⟨d′′,d′⟩/2⊗(⊕∗(F"
+  },
+  {
+   "page": 30,
+   "mark": "d",
+   "context": "L⟨d′′,d′⟩/2⊗(⊕∗(Fd′⊠G"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "d′,d′′∈NQ"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "d′∈NQ"
+  },
+  {
+   "page": 30,
+   "mark": "d",
+   "context": "d′∈NQ0F"
+  },
+  {
+   "page": 30,
+   "mark": "d",
+   "context": "d′∈NQ0Fd′forF"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "d′′∈NQ"
+  },
+  {
+   "page": 30,
+   "mark": "d",
+   "context": "d′′∈NQ0G"
+  },
+  {
+   "page": 30,
+   "mark": "d",
+   "context": "G"
+  },
+  {
+   "page": 30,
+   "mark": "a",
+   "context": "d′′)).Sincewearetwistingby"
+  },
+  {
+   "page": 31,
+   "mark": "h",
+   "context": "d(h)))for"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "d(h)))forh = 1,"
+  },
+  {
+   "page": 31,
+   "mark": "d",
+   "context": "L⟨d(3),"
+  },
+  {
+   "page": 31,
+   "mark": "d",
+   "context": "ηF (1),F (2),F (3) :L⟨d(3) + d(2),"
+  },
+  {
+   "page": 31,
+   "mark": "d",
+   "context": "−→L⟨d(3) + d(2),"
+  },
+  {
+   "page": 31,
+   "mark": "d",
+   "context": "−→L⟨d(3) + d(2),d(1)⟩/2+⟨d(3),"
+  },
+  {
+   "page": 31,
+   "mark": "d",
+   "context": "−→L⟨d(3) + d(2),"
+  },
+  {
+   "page": 31,
+   "mark": "d",
+   "context": "−→L⟨d(3) + d(2),d(1)⟩/2+⟨d(3),"
+  },
+  {
+   "page": 31,
+   "mark": "d",
+   "context": "−→L⟨d(3),"
+  },
+  {
+   "page": 31,
+   "mark": "d",
+   "context": "L⟨d(2),"
+  },
+  {
+   "page": 31,
+   "mark": "d",
+   "context": "F(1),F(2),F(3):= (−1)⟨d(2),"
+  },
+  {
+   "page": 31,
+   "mark": "d",
+   "context": "F(1),F(2),F(3):= (−1)⟨d(2),d(3)⟩χ(d(1),"
+  },
+  {
+   "page": 31,
+   "mark": "d",
+   "context": "thedeﬁnitionofδ:inswappingL⟨d(4),"
+  },
+  {
+   "page": 31,
+   "mark": "d",
+   "context": "extrasign(−1)⟨d(4),"
+  },
+  {
+   "page": 31,
+   "mark": "d",
+   "context": "extrasign(−1)⟨d(4),d(3)⟩⟨d(2),"
+  },
+  {
+   "page": 31,
+   "mark": "0",
+   "context": "WedeﬁnethemonoidalproductonD≥,lf(MMHM(NQ"
+  },
+  {
+   "page": 31,
+   "mark": "d",
+   "context": "L⟨d′′,"
+  },
+  {
+   "page": 31,
+   "mark": "d",
+   "context": "L⟨d′′,d′⟩/2⊗(+∗(F"
+  },
+  {
+   "page": 31,
+   "mark": "d",
+   "context": "L⟨d′′,d′⟩/2⊗(+∗(Fd′⊠G"
+  },
+  {
+   "page": 31,
+   "mark": "0",
+   "context": "d′,d′′∈NQ"
+  },
+  {
+   "page": 31,
+   "mark": "0",
+   "context": "dim∗:D≥,lf(MMHM(Mζ -ss)) →D≥,lf(MMHM(NQ"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "Letf∈NQ"
+  },
+  {
+   "page": 32,
+   "mark": "f",
+   "context": "quiverQ"
+  },
+  {
+   "page": 32,
+   "mark": "f",
+   "context": "quiverQfbysettingQ"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "quiverQfbysettingQf=(Q"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "quiverQfbysettingQf=(Q0⊔{∞}, Q"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "quiverQfbysettingQf=(Q0⊔{∞}, Q1 ⊔{βi,l"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "quiverQfbysettingQf=(Q0⊔{∞}, Q1 ⊔{βi,li :∞→i|i∈Q"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "quiverQfbysettingQf=(Q0⊔{∞}, Q1 ⊔{βi,li :∞→i|i∈Q0,1≤l"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "quiverQfbysettingQf=(Q0⊔{∞}, Q1 ⊔{βi,li :∞→i|i∈Q0,1≤li≤f"
+  },
+  {
+   "page": 32,
+   "mark": "f",
+   "context": "forQ"
+  },
+  {
+   "page": 32,
+   "mark": "m",
+   "context": "f,∞)/ℑ"
+  },
+  {
+   "page": 32,
+   "mark": "f",
+   "context": "A CQ"
+  },
+  {
+   "page": 32,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 32,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 32,
+   "mark": "d",
+   "context": "Remark3.10.InfactG"
+  },
+  {
+   "page": 32,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 32,
+   "mark": "f",
+   "context": "f,d:= X(Q"
+  },
+  {
+   "page": 32,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 32,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 32,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 32,
+   "mark": "d",
+   "context": "M"
+  },
+  {
+   "page": 32,
+   "mark": "d",
+   "context": "µwemayalternativelyextend"
+  },
+  {
+   "page": 32,
+   "mark": "a",
+   "context": "µwemayalternativelyextenddto"
+  },
+  {
+   "page": 32,
+   "mark": "f",
+   "context": "µwemayalternativelyextenddtoadimensionvectorforQ"
+  },
+  {
+   "page": 32,
+   "mark": "f",
+   "context": "settingd∞= 0.ThereisanobviousisomorphismX(Q"
+  },
+  {
+   "page": 32,
+   "mark": "r",
+   "context": "F(a"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "F(ar) ◦. . . ◦F(a"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "F(ar) ◦. . . ◦F(a0):F(s(a"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "F(ar) ◦. . . ◦F(a0):F(s(a0)) →F(s(a"
+  },
+  {
+   "page": 32,
+   "mark": "r",
+   "context": "andTr(F(a"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "andTr(F(ar) ◦. . . ◦F(a"
+  },
+  {
+   "page": 32,
+   "mark": "d",
+   "context": "andTr(F(ar) ◦. . . ◦F(a0))determinesafunctiononX(Q)"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "(F(ar) ◦. . . ◦F(a0))determinesafunctiononX(Q)d,foreachd ∈NQ"
+  },
+  {
+   "page": 32,
+   "mark": "d",
+   "context": "Tr(W)"
+  },
+  {
+   "page": 32,
+   "mark": "d",
+   "context": "Tr(W)d :M"
+  },
+  {
+   "page": 33,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 33,
+   "mark": "r",
+   "context": "f,d:= T"
+  },
+  {
+   "page": 33,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 33,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 33,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 33,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "Jac(Q, W) := CQ/⟨∂W/∂a | a ∈Q"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "Inorder tokeeptoAssumption2.14wewillassumethatW∈⟨∂W/∂a|a ∈Q"
+  },
+  {
+   "page": 34,
+   "mark": "r",
+   "context": "µF[−1] ⊠φT"
+  },
+  {
+   "page": 34,
+   "mark": "r",
+   "context": "µG[−1] ⊠φT"
+  },
+  {
+   "page": 34,
+   "mark": "a",
+   "context": "µandconsiderFas"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "Xf,"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "Xf,d:=X(Qf)(1,"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "deﬁnesalinearizationofthenaturalG(1,"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "Xf,"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "f,d:=Xf,"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "f,d:=Xf,d//χG(1,"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "f,d/G"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "whereG(1,"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "whereG(1,d)= GL"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "whereG(1,d)= GL1(C) × G"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "whereG(1,d)= GL1(C) × Gd.AsaG"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "whereG(1,d)= GL1(C) × Gd.AsaGd-equivariantvariety,Xf,"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "decomposition Xf,"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "decomposition Xf,d= X"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "decomposition Xf,d= Xd×Vf,"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "decomposition Xf,d= Xd×Vf,d, where Vf,"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "i∈Q0Hom(Cf"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "i∈Q0Hom(Cfi, C"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "i∈Q0Hom(Cfi, Cd"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "GL"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "GL1(C)factoractsbyrescalingVf,"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "GL1(C)factoractsbyrescalingVf,d.WedeﬁneUf,"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "GL1(C)factoractsbyrescalingVf,d.WedeﬁneUf,d⊂Vf,"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "Q0-tuplesofsurjectivemaps.ThegroupG"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "Q0-tuplesofsurjectivemaps.ThegroupGdactsfreelyonUf,"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "schemes.ThereforeG"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "× Uf,"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "f,d/G"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "× Uf,"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "× Uf,d)/G"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "× Vf,"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "× Vf,d)/G"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "× Vf,"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "× Vf,d)/G"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "Inwhat followswe usethenotationf≫0tomeanthat f"
+  },
+  {
+   "page": 35,
+   "mark": "0",
+   "context": "what followswe usethenotationf≫0tomeanthat fi≫0forevery i ∈Q"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "H"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "→H"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "×Uf,"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "×Uf,d)/G"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "f,d/G"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "H"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "× Uf,"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "× Vf,"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "× Uf,"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "H"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "→H"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "f,d,W:H"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "f,d) ∼= H"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "f,d,W:H"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": ")∼= H"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "Proposition4.3.Foreveryd ∈NQ"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "ν"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "Proof.Theisomorphismsν"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "Theisomorphismsν"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "f′,"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "f′,"
+  },
+  {
+   "page": 36,
+   "mark": "f",
+   "context": "f′,d,∗ι"
+  },
+  {
+   "page": 36,
+   "mark": "f",
+   "context": "f′,d,∗ιf,"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "f′,"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "f′,"
+  },
+  {
+   "page": 36,
+   "mark": "f",
+   "context": "f′,d,∗ι"
+  },
+  {
+   "page": 36,
+   "mark": "f",
+   "context": "f′,d,∗ιf,"
+  },
+  {
+   "page": 36,
+   "mark": "f",
+   "context": "where f′> fand ι"
+  },
+  {
+   "page": 36,
+   "mark": "f",
+   "context": "where f′> fand ιf,"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "f′,"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "f′,"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "f′,"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "f′,"
+  },
+  {
+   "page": 36,
+   "mark": "f",
+   "context": "f′,d→ι"
+  },
+  {
+   "page": 36,
+   "mark": "f",
+   "context": "f′,d→ιf,"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "νc,"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "Proposition4.4.WithQasaboveaﬁnitequiver,d∈NQ"
+  },
+  {
+   "page": 37,
+   "mark": "d",
+   "context": "f,dL(d,"
+  },
+  {
+   "page": 37,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "H"
+  },
+  {
+   "page": 37,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 37,
+   "mark": "d",
+   "context": "f,dL(d,"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "H"
+  },
+  {
+   "page": 37,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 37,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 37,
+   "mark": "d",
+   "context": "f,dL(d,"
+  },
+  {
+   "page": 37,
+   "mark": "f",
+   "context": "d,"
+  },
+  {
+   "page": 37,
+   "mark": "d",
+   "context": "d,f,!L(d,"
+  },
+  {
+   "page": 37,
+   "mark": "f",
+   "context": "d,"
+  },
+  {
+   "page": 37,
+   "mark": "f",
+   "context": "d,"
+  },
+  {
+   "page": 37,
+   "mark": "d",
+   "context": "d,f,!L(d,"
+  },
+  {
+   "page": 37,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 37,
+   "mark": "f",
+   "context": "d,"
+  },
+  {
+   "page": 37,
+   "mark": "d",
+   "context": "d,f,!L(d,"
+  },
+  {
+   "page": 37,
+   "mark": "d",
+   "context": "f,dL(d,"
+  },
+  {
+   "page": 37,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 37,
+   "mark": "d",
+   "context": "ddeﬁnesananalyticfunctioninsomeneighbourhoodU"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "ddeﬁnesananalyticfunctioninsomeneighbourhoodUdof"
+  },
+  {
+   "page": 37,
+   "mark": "d",
+   "context": "throughanopensetU"
+  },
+  {
+   "page": 37,
+   "mark": "b",
+   "context": ") andD"
+  },
+  {
+   "page": 37,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 37,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 37,
+   "mark": "c",
+   "context": "W,d:= H"
+  },
+  {
+   "page": 37,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 37,
+   "mark": "b",
+   "context": "Hodge module,instead of merely being an element of D"
+  },
+  {
+   "page": 37,
+   "mark": "p",
+   "context": "andthepotentialW=x"
+  },
+  {
+   "page": 37,
+   "mark": "q",
+   "context": "andthepotentialW=xp+ y"
+  },
+  {
+   "page": 37,
+   "mark": "r",
+   "context": "andthepotentialW=xp+ yq+ z"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "ThenM"
+  },
+  {
+   "page": 37,
+   "mark": "3",
+   "context": "ThenM1=A"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "ThenM1=A3,andonM"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "QA"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "BPSW,"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 38,
+   "mark": "c",
+   "context": "W,d:= H"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 38,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 38,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 38,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 38,
+   "mark": "*",
+   "context": "(Q))∼= Sym⊠⊕(H(BC"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "→H"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "f,d,∗L(d,"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "H"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "f,d,∗L(d,"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": "0,µ)ispure,sinceH"
+  },
+  {
+   "page": 39,
+   "mark": "*",
+   "context": "Deﬁnition3.4,asisSym⊠⊕(H(BC"
+  },
+  {
+   "page": 39,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 39,
+   "mark": "*",
+   "context": "TheelementSym⊠⊕(H(BC"
+  },
+  {
+   "page": 39,
+   "mark": "a",
+   "context": "0,µ)isalso"
+  },
+  {
+   "page": 39,
+   "mark": "*",
+   "context": "(Q))andSym⊠⊕(H(BC"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "sameclassinK"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "InsideK"
+  },
+  {
+   "page": 39,
+   "mark": "i",
+   "context": "))considerthesubgroupI"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "eachK"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": ")))withthecompletionofK"
+  },
+  {
+   "page": 39,
+   "mark": "i",
+   "context": "respecttoI"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": ")) we let [F]K"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": ")).From the fact that the map Φ"
+  },
+  {
+   "page": 39,
+   "mark": "f",
+   "context": "0,"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "0,f,"
+  },
+  {
+   "page": 39,
+   "mark": "f",
+   "context": "L"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "f,d(Q)]K"
+  },
+  {
+   "page": 39,
+   "mark": "f",
+   "context": "H(P"
+  },
+  {
+   "page": 39,
+   "mark": "f",
+   "context": "H(Pf·d −1)vir ⊗L"
+  },
+  {
+   "page": 39,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "∼=ν"
+  },
+  {
+   "page": 39,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 39,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 39,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 39,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 39,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 39,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 39,
+   "mark": "c",
+   "context": "H(BC*)vir ⊗H"
+  },
+  {
+   "page": 40,
+   "mark": "*",
+   "context": "W,µ:H(BC"
+  },
+  {
+   "page": 40,
+   "mark": "0",
+   "context": "Fix adimensionvector d ∈NQ"
+  },
+  {
+   "page": 40,
+   "mark": "d",
+   "context": "Fix adimensionvector d ∈NQ0.DenotebyHN"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "types for d, that is, sequences d"
+  },
+  {
+   "page": 40,
+   "mark": "s",
+   "context": "types for d, that is, sequences d1, . . . , d"
+  },
+  {
+   "page": 40,
+   "mark": "0",
+   "context": "types for d, that is, sequences d1, . . . , ds∈NQ"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": ", sequences d1, . . . , ds∈NQ0\\{0} such that the slopes Ξζ(d"
+  },
+  {
+   "page": 40,
+   "mark": "s",
+   "context": ". . . , ds∈NQ0\\{0} such that the slopes Ξζ(d1), . . . , Ξζ(d"
+  },
+  {
+   "page": 40,
+   "mark": "d",
+   "context": "i=1"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "i=1d"
+  },
+  {
+   "page": 40,
+   "mark": "s",
+   "context": "arestrictlydecreasingandP"
+  },
+  {
+   "page": 40,
+   "mark": "d",
+   "context": "stackM"
+  },
+  {
+   "page": 40,
+   "mark": "d",
+   "context": "M"
+  },
+  {
+   "page": 40,
+   "mark": "d",
+   "context": "[37,Def.3.6]apartialordering≤′onHN"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "d=(d"
+  },
+  {
+   "page": 40,
+   "mark": "s",
+   "context": "d=(d1, . . . , d"
+  },
+  {
+   "page": 40,
+   "mark": "d",
+   "context": "HN"
+  },
+  {
+   "page": 40,
+   "mark": "k",
+   "context": "(P"
+  },
+  {
+   "page": 40,
+   "mark": "l",
+   "context": "l=1|d"
+  },
+  {
+   "page": 40,
+   "mark": "l",
+   "context": "l=1|dl|, Ξζ(d"
+  },
+  {
+   "page": 40,
+   "mark": "l",
+   "context": "l=1|dl|, Ξζ(dl)|d"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "l=1|dl|, Ξζ(dl)|dl|)for"
+  },
+  {
+   "page": 40,
+   "mark": "d",
+   "context": "closed,sincethemorphismM"
+  },
+  {
+   "page": 40,
+   "mark": "d",
+   "context": "closed,sincethemorphismMd′,"
+  },
+  {
+   "page": 40,
+   "mark": "d",
+   "context": "closed,sincethemorphismMd′,d −d′→M"
+  },
+  {
+   "page": 40,
+   "mark": "a",
+   "context": "dcanbewrittenas"
+  },
+  {
+   "page": 40,
+   "mark": "d",
+   "context": "d⊂X"
+  },
+  {
+   "page": 40,
+   "mark": "r",
+   "context": "suchthateachoftheassociatedd"
+  },
+  {
+   "page": 40,
+   "mark": "d",
+   "context": "d⊂G"
+  },
+  {
+   "page": 40,
+   "mark": "d",
+   "context": "d→M"
+  },
+  {
+   "page": 40,
+   "mark": "a",
+   "context": "d→Mdsending"
+  },
+  {
+   "page": 40,
+   "mark": "d",
+   "context": "d→M"
+  },
+  {
+   "page": 41,
+   "mark": "d",
+   "context": "M"
+  },
+  {
+   "page": 41,
+   "mark": "*",
+   "context": "W,µ⊗H(BC"
+  },
+  {
+   "page": 41,
+   "mark": "*",
+   "context": "W,µ⊗H(BC"
+  },
+  {
+   "page": 41,
+   "mark": "0",
+   "context": "NQ"
+  },
+  {
+   "page": 41,
+   "mark": "d",
+   "context": "NQ0.Thenifwecomplete≥′toatotalordering≥ofHN"
+  },
+  {
+   "page": 41,
+   "mark": "d",
+   "context": "d ∈HN"
+  },
+  {
+   "page": 41,
+   "mark": "d",
+   "context": "d⊂M"
+  },
+  {
+   "page": 41,
+   "mark": "a",
+   "context": "d⊂Mdis"
+  },
+  {
+   "page": 41,
+   "mark": "d",
+   "context": "d֒→M"
+  },
+  {
+   "page": 41,
+   "mark": "d",
+   "context": "d֒→M"
+  },
+  {
+   "page": 41,
+   "mark": "d",
+   "context": "d֒→M"
+  },
+  {
+   "page": 41,
+   "mark": "d",
+   "context": "p"
+  },
+  {
+   "page": 41,
+   "mark": "d",
+   "context": "p"
+  },
+  {
+   "page": 41,
+   "mark": "d",
+   "context": "p"
+  },
+  {
+   "page": 42,
+   "mark": "d",
+   "context": "d ∈HN"
+  },
+  {
+   "page": 42,
+   "mark": "d",
+   "context": "d/(G"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "d/(Gd"
+  },
+  {
+   "page": 42,
+   "mark": "d",
+   "context": "d/(Gd1× . . . × G"
+  },
+  {
+   "page": 42,
+   "mark": "s",
+   "context": "d/(Gd1× . . . × Gd"
+  },
+  {
+   "page": 42,
+   "mark": "s",
+   "context": "d"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "d"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "d"
+  },
+  {
+   "page": 42,
+   "mark": "s",
+   "context": "d"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "d"
+  },
+  {
+   "page": 42,
+   "mark": "s",
+   "context": "d"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "d"
+  },
+  {
+   "page": 42,
+   "mark": "s",
+   "context": "d"
+  },
+  {
+   "page": 42,
+   "mark": "d",
+   "context": "M"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "Md"
+  },
+  {
+   "page": 42,
+   "mark": "d",
+   "context": "Md1× . . . × M"
+  },
+  {
+   "page": 42,
+   "mark": "s",
+   "context": "Md1× . . . × Md"
+  },
+  {
+   "page": 42,
+   "mark": "d",
+   "context": "M"
+  },
+  {
+   "page": 42,
+   "mark": "r",
+   "context": "d"
+  },
+  {
+   "page": 42,
+   "mark": "r",
+   "context": "dr· d"
+  },
+  {
+   "page": 42,
+   "mark": "r",
+   "context": "d"
+  },
+  {
+   "page": 42,
+   "mark": "d",
+   "context": "s(a)"
+  },
+  {
+   "page": 42,
+   "mark": "r",
+   "context": "s(a)d"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "d) −f"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "Forf∈NQ"
+  },
+  {
+   "page": 42,
+   "mark": "r",
+   "context": "r≤sf· d"
+  },
+  {
+   "page": 42,
+   "mark": "n",
+   "context": "r≤sf· dr.Fix"
+  },
+  {
+   "page": 42,
+   "mark": "n",
+   "context": "H"
+  },
+  {
+   "page": 42,
+   "mark": "n",
+   "context": "∼= H"
+  },
+  {
+   "page": 42,
+   "mark": "s",
+   "context": "d"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "d"
+  },
+  {
+   "page": 42,
+   "mark": "s",
+   "context": "d"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "d"
+  },
+  {
+   "page": 42,
+   "mark": "d",
+   "context": "p"
+  },
+  {
+   "page": 42,
+   "mark": "s",
+   "context": "d"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "d"
+  },
+  {
+   "page": 42,
+   "mark": "n",
+   "context": "∼= H"
+  },
+  {
+   "page": 42,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 42,
+   "mark": "s",
+   "context": "f,d"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "d"
+  },
+  {
+   "page": 42,
+   "mark": "s",
+   "context": "d"
+  },
+  {
+   "page": 42,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "f,d"
+  },
+  {
+   "page": 43,
+   "mark": "d",
+   "context": "toeachspaceM"
+  },
+  {
+   "page": 43,
+   "mark": "d",
+   "context": "d′(Q))for"
+  },
+  {
+   "page": 43,
+   "mark": "d",
+   "context": "(68),involvingH(p"
+  },
+  {
+   "page": 43,
+   "mark": "d",
+   "context": "(68),involvingH(pd′,∗ICM"
+  },
+  {
+   "page": 43,
+   "mark": "0",
+   "context": "assumedtobegeneric.ThenthereisanisomorphismofNQ"
+  },
+  {
+   "page": 43,
+   "mark": "c",
+   "context": "H"
+  },
+  {
+   "page": 43,
+   "mark": "c",
+   "context": "µ−→−∞H"
+  },
+  {
+   "page": 43,
+   "mark": "c",
+   "context": "H"
+  },
+  {
+   "page": 43,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 43,
+   "mark": "0",
+   "context": "thestabilityconditionζ ∈HQ"
+  },
+  {
+   "page": 43,
+   "mark": "a",
+   "context": "⊕.Theresultis"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "d′,d′′/ (G"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "d′,d′′/ (Gd′× G"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "/ (G"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "/ (Gd′× G"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "d′,d′′/G"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "d′,d′′/Gd′,"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "d′′) ◦r"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "d′′ ◦r"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "d′,d′′ /(G"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "d′,d′′ /(Gd′×G"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "d′,d′′/G"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "d′,d′′/Gd′,"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "/G"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "/Gd′,"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 44,
+   "mark": "a",
+   "context": "d′,d′′is"
+  },
+  {
+   "page": 44,
+   "mark": "c",
+   "context": "d′,d′′isaclosedinclusion,while"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 44,
+   "mark": "a",
+   "context": "d′,d′′is"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "i∈Q"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "i∈Q0Hom(CN, C"
+  },
+  {
+   "page": 44,
+   "mark": "i",
+   "context": "i∈Q0Hom(CN, Cd"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "i∈Q0Homsurj(CN, C"
+  },
+  {
+   "page": 44,
+   "mark": "i",
+   "context": "i∈Q0Homsurj(CN, Cd"
+  },
+  {
+   "page": 44,
+   "mark": "i",
+   "context": "N≥max(d"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "N≥max(di),thegroupG"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "N≥max(di),thegroupGdactsfreelyonUN,asdoesG"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "N≥max(di),thegroupGdactsfreelyonUN,asdoesGd′,"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "N≥max(di),thegroupGdactsfreelyonUN,asdoesGd′,d′′⊂G"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "×G"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "d′,d′′×G"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "d′,d′′×Gd′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "d,NL(d′,"
+  },
+  {
+   "page": 45,
+   "mark": "s",
+   "context": "d,N"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "→L(d′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "L⟨d′′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "L⟨d′′,d′⟩/2⊗Lχ(d′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "Lχ(d′′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "L⟨d′′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "L⟨d′′,d′⟩/2⊗Lχ(d′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "L⟨d′′,d′⟩/2⊗Lχ(d′,d′)/2⊗Lχ(d′′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "\u0011id ⊗(β"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "\u0011id ⊗(βd′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "\u0011id ⊗(βd′,d′′ ◦α"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "\u0011id ⊗(βd′,d′′ ◦αd′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "L⟨d′′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "L⟨d′′,d′⟩/2+χ(d′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "L⟨d′′,d′⟩/2+χ(d′,d′)/2+χ(d′′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "L⟨d′′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "L⟨d′′,d′⟩/2+χ(d′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "L⟨d′′,d′⟩/2+χ(d′,d′)/2+χ(d′′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "L⟨d′′,d′⟩/2+χ(d′,d′)/2+χ(d′′,d′′)/2⊗Lχ(d′,"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "Lχ(d′ + d′′,"
+  },
+  {
+   "page": 45,
+   "mark": "e",
+   "context": "J"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "Lχ(d(2),"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "Lχ(d(2),d(3))⊗J"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "Lχ(d(2),d(3))⊗Jd(1)⊠J"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "Lχ(d(1),"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "Lχ(d(1),d(2))⊗J"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "Lχ(d(1),d(2))⊗Jd(1) + d(2)⊠⊕J"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "Lχ(d(1),"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "Lχ(d(1),d(2))+χ(d(1),"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "Lχ(d(1),d(2))+χ(d(1),d(3))+χ(d(2),"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "Lχ(d(1),d(2))+χ(d(1),d(3))+χ(d(2),d(3))⊗J"
+  },
+  {
+   "page": 46,
+   "mark": "d",
+   "context": "betweenthedomainsof(83)and(84)involvecommutingtheL⟨d(3),"
+  },
+  {
+   "page": 46,
+   "mark": "d",
+   "context": "inthesecondmonoidalproductpasttheLχ(d(1),"
+  },
+  {
+   "page": 46,
+   "mark": "d",
+   "context": ",introducingthesign(−1)⟨d(3),"
+  },
+  {
+   "page": 46,
+   "mark": "d",
+   "context": ",introducingthesign(−1)⟨d(3),d(2)⟩χ(d(1),"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "∈D≥,lf(MMHM(NQ"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "thatisnoncanonicallyisomorphictotheunderlyingNQ"
+  },
+  {
+   "page": 46,
+   "mark": "a",
+   "context": "W,µ),"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "monoidalcategory(D≥,lf(MMHM(NQ"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "d′,d′′×G"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "d′,d′′×Gd′×G"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "d′′) ×G"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "d′′) ×Gd′ ×G"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "Φ:H"
+  },
+  {
+   "page": 47,
+   "mark": "r",
+   "context": "□,N"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "□,Nr"
+  },
+  {
+   "page": 47,
+   "mark": "v",
+   "context": "L"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "a∈Q1"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "s(a)"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "d′□d′′,N→r"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "Ψ:H"
+  },
+  {
+   "page": 47,
+   "mark": "r",
+   "context": "◦,N"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "◦,Nr"
+  },
+  {
+   "page": 47,
+   "mark": "u",
+   "context": "L"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "i∈Q0"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "i"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 47,
+   "mark": "c",
+   "context": "d′,d′′ :H"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "L−(d′′,"
+  },
+  {
+   "page": 47,
+   "mark": "c",
+   "context": "L−(d′′,d′)/2⊗H"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "→L(d′,"
+  },
+  {
+   "page": 47,
+   "mark": "c",
+   "context": "→L(d′,d′′)/2⊗H"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 47,
+   "mark": "c",
+   "context": "d′,d′′ :H"
+  },
+  {
+   "page": 47,
+   "mark": "c",
+   "context": "W,µ) := H"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "(L−(d′,"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "d′,d′′) ◦(L⟨d′′,"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 47,
+   "mark": "0",
+   "context": "d′,d′′∈NQ"
+  },
+  {
+   "page": 48,
+   "mark": "0",
+   "context": "5.3.Theambientperverseﬁltration.Forf, d ∈NQ"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,d,!Lγ(f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,d,!Lγ(f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,d,!Lγ(f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,d,!Lγ(f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,dLγ(f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,d,!Lγ(f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,d,!Lγ(f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,dLγ(f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,dLγ(f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,dLγ(f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,dLγ(f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,dLγ(f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "p",
+   "context": "P"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,dL−(d,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "c",
+   "context": "isthedualofasplitsurjectionwithrightinverseH"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,dLγ(f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,dLγ(f,"
+  },
+  {
+   "page": 48,
+   "mark": "p",
+   "context": "P"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "c",
+   "context": "⊂H"
+  },
+  {
+   "page": 48,
+   "mark": "a",
+   "context": "d.As"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,dLγ(f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,dL−(d,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "f,dL−(d,"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "∼= A"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "andwemayidentifythe(reduced)nilpotentlocuswith0∈A"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "f,dL−(d,"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "∼= QA"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "f,dL−(d,"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "dQA"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "f,dL−(d,"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 49,
+   "mark": "0",
+   "context": "Theperverseﬁltrationiswell-deﬁnedinthelimitf≫0,asforﬁxedd∈NQ"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "f′,"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "f′,d,!Lγ(f ′,"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "f,d,!Lγ(f,"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "H"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "f′,"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "H"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "f′,"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "f′,d,!Lγ(f ′,"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "f,d,!Lγ(f,"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "H"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "H"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "f′,"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 49,
+   "mark": "0",
+   "context": "7.There is a natural isomorphism of monoids in D≥,lf(MMHM(NQ"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "Lemma5.8.LetVbeavectorbundleonM"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "Lemma5.8.LetVbeavectorbundleonMd,andleteu(V )∈H(M"
+  },
+  {
+   "page": 50,
+   "mark": "p",
+   "context": "eu(V ) · P"
+  },
+  {
+   "page": 50,
+   "mark": "c",
+   "context": "eu(V ) · Pp(H"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 50,
+   "mark": "p",
+   "context": "W,d)∨) ⊂P"
+  },
+  {
+   "page": 50,
+   "mark": "c",
+   "context": "W,d)∨) ⊂Pp+2 dim(V )(H"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 50,
+   "mark": "f",
+   "context": "→T (V )betheinclusionofthezerosection.LetT"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 50,
+   "mark": "f",
+   "context": "byforgettingtheframing,andletpr"
+  },
+  {
+   "page": 50,
+   "mark": "f",
+   "context": "byforgettingtheframing,andletprfandi"
+  },
+  {
+   "page": 50,
+   "mark": "f",
+   "context": "andinclusions.LetT r(W)V,"
+  },
+  {
+   "page": 50,
+   "mark": "f",
+   "context": "andinclusions.LetT r(W)V,fbethefunctioninducedbyTr(W)onT"
+  },
+  {
+   "page": 50,
+   "mark": "c",
+   "context": "N= H"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 50,
+   "mark": "f",
+   "context": "→i"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 50,
+   "mark": "f",
+   "context": "f,dpr"
+  },
+  {
+   "page": 50,
+   "mark": "f",
+   "context": "i"
+  },
+  {
+   "page": 50,
+   "mark": "f",
+   "context": "T r(W)V,"
+  },
+  {
+   "page": 50,
+   "mark": "f",
+   "context": "T"
+  },
+  {
+   "page": 50,
+   "mark": "c",
+   "context": "andtheactionof·eu(V )onH"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 50,
+   "mark": "f",
+   "context": "W,d)∨isgivenbyletting"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "(88)andtwistingbyL(d,"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "f,dL(d,"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 50,
+   "mark": "f",
+   "context": "i"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "if,∗L(d,"
+  },
+  {
+   "page": 50,
+   "mark": "f",
+   "context": "→i"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "→if,∗L−dim(V )+(d,"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "f,"
+  },
+  {
+   "page": 50,
+   "mark": "f",
+   "context": "f,d,∗pr"
+  },
+  {
+   "page": 50,
+   "mark": "f",
+   "context": "T r(W)V,"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 50,
+   "mark": "*",
+   "context": ":H(BC"
+  },
+  {
+   "page": 50,
+   "mark": "1",
+   "context": "Proof.There is a natural inclusion L"
+  },
+  {
+   "page": 50,
+   "mark": "*",
+   "context": "selytheﬁrstpieceoftheperverseﬁltrationofthetarget.ViatheH(BC"
+  },
+  {
+   "page": 50,
+   "mark": "0",
+   "context": "6.1.Symmetricmonoidalstructures,revisited.Letζ∈HQ"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "ω"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "ω"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "ωd′,"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "d,NL(d,"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "L"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "Ld′,"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "∈HG"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "∈HGd′ (pt) ⊗HG"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "n]Sym"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "=C[x1,1, . . . , x1,"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "1, . . . , xn,"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "1, . . . , xn,1, . . . , xn,"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "n]Sym"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "⊗C[y"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "⊗C[y1,"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "⊗C[y1,1, . . . , y"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "⊗C[y1,1, . . . , y1,"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "1, . . . , yn,"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "1, . . . , yn,1, . . . , yn,"
+  },
+  {
+   "page": 51,
+   "mark": "0",
+   "context": "withQ"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "Letd"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "Letd1, d"
+  },
+  {
+   "page": 51,
+   "mark": "3",
+   "context": "Letd1, d2, d"
+  },
+  {
+   "page": 51,
+   "mark": "4",
+   "context": "Letd1, d2, d3, d"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "d = d"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "d = d1+ d"
+  },
+  {
+   "page": 51,
+   "mark": "3",
+   "context": "d = d1+ d2+ d"
+  },
+  {
+   "page": 51,
+   "mark": "4",
+   "context": "d = d1+ d2+ d3+ d"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "c"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "c1= d"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "c1= d1+ d"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "c"
+  },
+  {
+   "page": 51,
+   "mark": "3",
+   "context": "c2= d"
+  },
+  {
+   "page": 51,
+   "mark": "4",
+   "context": "c2= d3+ d"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "e"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "e1= d"
+  },
+  {
+   "page": 51,
+   "mark": "3",
+   "context": "e1= d1+ d"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "e2= d"
+  },
+  {
+   "page": 51,
+   "mark": "4",
+   "context": "e2= d2+ d"
+  },
+  {
+   "page": 51,
+   "mark": "c",
+   "context": "I"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "Ic"
+  },
+  {
+   "page": 51,
+   "mark": "c",
+   "context": "Ic1⊠+ I"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "Ic1⊠+ Ic"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "(I"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "(Id"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "(Id1⊠+ I"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "(Id1⊠+ Id"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "(Id1⊠+ Id2⊠+ I"
+  },
+  {
+   "page": 51,
+   "mark": "3",
+   "context": "(Id1⊠+ Id2⊠+ Id"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "(Id1⊠+ Id2⊠+ Id3⊠+ I"
+  },
+  {
+   "page": 51,
+   "mark": "4",
+   "context": "(Id1⊠+ Id2⊠+ Id3⊠+ Id"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "(Id1⊠+ Id2⊠+ Id3⊠+ Id4)(d"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "(Id1⊠+ Id2⊠+ Id3⊠+ Id4)(d1,"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "(Id1⊠+ Id2⊠+ Id3⊠+ Id4)(d1,d"
+  },
+  {
+   "page": 51,
+   "mark": "3",
+   "context": "(Id1⊠+ Id2⊠+ Id3⊠+ Id4)(d1,d2),(d"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "(Id1⊠+ Id2⊠+ Id3⊠+ Id4)(d1,d2),(d3,"
+  },
+  {
+   "page": 51,
+   "mark": "4",
+   "context": "(Id1⊠+ Id2⊠+ Id3⊠+ Id4)(d1,d2),(d3,d"
+  },
+  {
+   "page": 51,
+   "mark": "e",
+   "context": "(I"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "(Ie"
+  },
+  {
+   "page": 51,
+   "mark": "e",
+   "context": "(Ie1⊠+ I"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "(Ie1⊠+ Ie"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "(Ie1⊠+ Ie2)(e"
+  },
+  {
+   "page": 51,
+   "mark": "e",
+   "context": "(Ie1⊠+ Ie2)(e1,"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "(Ie1⊠+ Ie2)(e1,e"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "rule),multiplyingbythescalar(−1)χ(d"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "rule),multiplyingbythescalar(−1)χ(d2,"
+  },
+  {
+   "page": 51,
+   "mark": "3",
+   "context": "rule),multiplyingbythescalar(−1)χ(d2,d"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "W,c"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "W,d"
+  },
+  {
+   "page": 52,
+   "mark": "3",
+   "context": "W,d"
+  },
+  {
+   "page": 52,
+   "mark": "4",
+   "context": "W,d"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "W,e"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "♥=(d1, d"
+  },
+  {
+   "page": 52,
+   "mark": "3",
+   "context": "♥=(d1, d2), (d"
+  },
+  {
+   "page": 52,
+   "mark": "4",
+   "context": "♥=(d1, d2), (d3, d"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "♠=(e1, e"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "τsw(α ⊗β) = (−1)χ(d"
+  },
+  {
+   "page": 52,
+   "mark": "d",
+   "context": "τsw(α ⊗β) = (−1)χ(d2,"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "τsw(α ⊗β) = (−1)χ(d2,d"
+  },
+  {
+   "page": 52,
+   "mark": "3",
+   "context": "τsw(α ⊗β) = (−1)χ(d2,d2)χ(d"
+  },
+  {
+   "page": 52,
+   "mark": "d",
+   "context": "τsw(α ⊗β) = (−1)χ(d2,d2)χ(d3,"
+  },
+  {
+   "page": 52,
+   "mark": "3",
+   "context": "τsw(α ⊗β) = (−1)χ(d2,d2)χ(d3,d"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "τsw(α ⊗β) = (−1)χ(d2,d2)χ(d3,d3)+χ(d"
+  },
+  {
+   "page": 52,
+   "mark": "d",
+   "context": "τsw(α ⊗β) = (−1)χ(d2,d2)χ(d3,d3)+χ(d2,"
+  },
+  {
+   "page": 52,
+   "mark": "3",
+   "context": "τsw(α ⊗β) = (−1)χ(d2,d2)χ(d3,d3)+χ(d2,d"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "tion.Theχ(d"
+  },
+  {
+   "page": 52,
+   "mark": "3",
+   "context": "tion.Theχ(d2, d"
+  },
+  {
+   "page": 52,
+   "mark": "d",
+   "context": "L(χ(d′,"
+  },
+  {
+   "page": 52,
+   "mark": "d",
+   "context": "L(χ(d′,d′)+χ(d′′,"
+  },
+  {
+   "page": 52,
+   "mark": "d",
+   "context": "L−χ(d′,"
+  },
+  {
+   "page": 52,
+   "mark": "d",
+   "context": "L−χ(d′′,"
+  },
+  {
+   "page": 52,
+   "mark": "d",
+   "context": "L(χ(d′,"
+  },
+  {
+   "page": 52,
+   "mark": "d",
+   "context": "L(χ(d′,d′)+χ(d′′,"
+  },
+  {
+   "page": 52,
+   "mark": "d",
+   "context": "L−χ(d′′,"
+  },
+  {
+   "page": 52,
+   "mark": "d",
+   "context": "L−χ(d′,"
+  },
+  {
+   "page": 52,
+   "mark": "d",
+   "context": "sorproductoftheobjectsL−χ(d′,"
+  },
+  {
+   "page": 52,
+   "mark": "d",
+   "context": "d′andL−χ(d′′,"
+  },
+  {
+   "page": 53,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 53,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 53,
+   "mark": "n",
+   "context": "T"
+  },
+  {
+   "page": 53,
+   "mark": "n",
+   "context": "T"
+  },
+  {
+   "page": 53,
+   "mark": "n",
+   "context": "T"
+  },
+  {
+   "page": 53,
+   "mark": "n",
+   "context": "Tn(G, d)carriesanactionofS"
+  },
+  {
+   "page": 53,
+   "mark": "n",
+   "context": "Tn(G, d)carriesanactionofSn,determinedbymorphismsforeachπ∈S"
+  },
+  {
+   "page": 53,
+   "mark": "n",
+   "context": "a1, . . . , a"
+  },
+  {
+   "page": 53,
+   "mark": "a",
+   "context": "G"
+  },
+  {
+   "page": 53,
+   "mark": "a",
+   "context": "Ga1⊠. . . ⊠G"
+  },
+  {
+   "page": 53,
+   "mark": "n",
+   "context": "Ga1⊠. . . ⊠Ga"
+  },
+  {
+   "page": 53,
+   "mark": "n",
+   "context": "Gπ(a1) ⊠. . . ⊠Gπ(a"
+  },
+  {
+   "page": 53,
+   "mark": "i",
+   "context": "(−1)τ(a"
+  },
+  {
+   "page": 53,
+   "mark": "j",
+   "context": "(−1)τ(ai,a"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "L(d,"
+  },
+  {
+   "page": 54,
+   "mark": "s",
+   "context": "d,N"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "d,Ns"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "d,Nsd′,"
+  },
+  {
+   "page": 54,
+   "mark": "s",
+   "context": "d,N"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "d,Ns"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "d,Nsd′,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "Dim∗s"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "Dim∗sd′,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "L(d′,"
+  },
+  {
+   "page": 54,
+   "mark": "c",
+   "context": "L(d′,d′′)/2⊗H"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 54,
+   "mark": "s",
+   "context": "⊂P"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "Γ :L(d′,"
+  },
+  {
+   "page": 54,
+   "mark": "c",
+   "context": "Γ :L(d′,d′′)/2⊗H"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "L(d′,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "L(d′,d′′)/2+(d′′,"
+  },
+  {
+   "page": 54,
+   "mark": "c",
+   "context": "L(d′,d′′)/2+(d′′,d′)/2⊗H"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 54,
+   "mark": "c",
+   "context": "W,d′)∨⊗H"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "L(d′,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "L(d′,d′′)/2+(d′′,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 54,
+   "mark": "c",
+   "context": "W,d′) ⊗H"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "L(d′,"
+  },
+  {
+   "page": 54,
+   "mark": "c",
+   "context": "L(d′,d′′)⊗H"
+  },
+  {
+   "page": 54,
+   "mark": "c",
+   "context": "+H"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 54,
+   "mark": "c",
+   "context": "+H"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "= Ps−2(d′,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "E1,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "E1,d′,"
+  },
+  {
+   "page": 54,
+   "mark": "s",
+   "context": "(x"
+  },
+  {
+   "page": 54,
+   "mark": "t",
+   "context": "(xs(a),l′−y"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "E0,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "E0,d′,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "1,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "1,d′,"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "1,d′,d′′E"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "1,d′,d′′E0,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "1,d′,d′′E0,d′,"
+  },
+  {
+   "page": 54,
+   "mark": "a",
+   "context": "1,d′,d′′E0,d′,d′′deﬁnes"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "W,d′,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "W,d′,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "1,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "1,d′,"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "1,d′,d′′E"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "1,d′,d′′E0,"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "1,d′,d′′E0,d′,"
+  },
+  {
+   "page": 54,
+   "mark": "e",
+   "context": "i∈Q0"
+  },
+  {
+   "page": 54,
+   "mark": "i",
+   "context": "i∈Q0e"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "i∈Q0ei.So,forexample,L"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "i∈Q0ei.So,forexample,Ld′,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "\u0011f"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "\u0011fd′,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "is an inclusion,since the operation ·L"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "is an inclusion,since the operation ·Ld′,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "(97),f"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "(97),fd′,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "1,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "1,d′,"
+  },
+  {
+   "page": 55,
+   "mark": "0",
+   "context": "1,d′,d′′· E"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "1,d′,d′′· E0,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "1,d′,d′′· E0,d′,"
+  },
+  {
+   "page": 55,
+   "mark": "a",
+   "context": "1,d′,d′′· E0,d′,d′′induces"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "Ps+2(d′,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 55,
+   "mark": "s",
+   "context": "⊂P"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "Lemma6.3.ThemapGrP(f"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "Lemma6.3.ThemapGrP(fd′,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "issuﬃcienttoshowthatthedegree2|d′||d′′|mapGrP(·L"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "issuﬃcienttoshowthatthedegree2|d′||d′′|mapGrP(·Ld′,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "f"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "fd′,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 55,
+   "mark": "b",
+   "context": "r≤n"
+  },
+  {
+   "page": 55,
+   "mark": "r",
+   "context": "r≤nb"
+  },
+  {
+   "page": 55,
+   "mark": "n",
+   "context": "Thena·L"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 55,
+   "mark": "b",
+   "context": "d′,d′′for"
+  },
+  {
+   "page": 55,
+   "mark": "r",
+   "context": "d′,d′′forb"
+  },
+  {
+   "page": 55,
+   "mark": "i",
+   "context": "d′,d′′forbr∈P"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 55,
+   "mark": "i",
+   "context": "P"
+  },
+  {
+   "page": 55,
+   "mark": "i",
+   "context": "Pi+2|d′||d′′|nbyLemma5.8,andsoa ∈P"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "Pi+2|d′||d′′|nbyLemma5.8,andsoa ∈Pi,byinjectivityofGrP(·L"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "Pi+2|d′||d′′|nbyLemma5.8,andsoa ∈Pi,byinjectivityofGrP(·Ld′,"
+  },
+  {
+   "page": 55,
+   "mark": "m",
+   "context": "ConsiderthesubgroupG"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "ConsiderthesubgroupGm∼= T⊂G"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "ConsiderthesubgroupGm∼= T⊂Gd′× G"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "(z"
+  },
+  {
+   "page": 55,
+   "mark": "i",
+   "context": "i)"
+  },
+  {
+   "page": 55,
+   "mark": "0",
+   "context": "i)i∈Q"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "iidC"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "i idC"
+  },
+  {
+   "page": 55,
+   "mark": "i",
+   "context": "i)"
+  },
+  {
+   "page": 55,
+   "mark": "0",
+   "context": "i)i∈Q"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "andletP"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "andletPd′,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "andletPd′,d′′:= (G"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "andletPd′,d′′:= (Gd′× G"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "theG"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "theGd′× G"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "theGd′× Gd′′-actionliftstoalinearizationoftheP"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "theGd′× Gd′′-actionliftstoalinearizationofthePd′,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "d′′)/P"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "d′′)/Pd′,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "pt /(G"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "pt /(Gd′× G"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "d′′)/P"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "d′′)/Pd′,"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "pt /P"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "pt /Pd′,"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "⊗HP"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "⊗HPd′,"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "⊗HPd′,d′′ (pt) HG"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "⊗HPd′,d′′ (pt) HGd′ ×G"
+  },
+  {
+   "page": 56,
+   "mark": "1",
+   "context": "⊗HPd′,d′′ (pt) HGd′ ×Gd′′ (pt) ⊗L"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "d′′/P"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "d′′/Pd′,"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "d′′)/P"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "d′′)/Pd′,"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "λ:HG"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "λ:HGd′×G"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "λ:HGd′×Gd′′ (pt)∼= HP"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "λ:HGd′×Gd′′ (pt)∼= HPd′,"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "d′′/P"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "d′′/Pd′,"
+  },
+  {
+   "page": 56,
+   "mark": "i",
+   "context": "D"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "ConsidertheassociatedgradedobjectGrD B.MultiplicationbyL"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "ConsidertheassociatedgradedobjectGrD B.MultiplicationbyLd′,"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "GrD(GrP(·L"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "GrD(GrP(·Ld′,"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "teristicofX"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "teristicofXd′,"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "teristicofXd′,d′′→X"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "teristicofXd′,d′′→Xd′× X"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "sub-bundlewithtrivial T -weight.It follows that GrD(GrP(·L"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "ub-bundlewithtrivial T -weight.It follows that GrD(GrP(·Ld′,"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "thatGrP(·L"
+  },
+  {
+   "page": 56,
+   "mark": "d",
+   "context": "thatGrP(·Ld′,"
+  },
+  {
+   "page": 56,
+   "mark": "x",
+   "context": "onlyiff"
+  },
+  {
+   "page": 56,
+   "mark": "i",
+   "context": " ∈ZbethelowestnumbersuchthattheconstructiblecohomologysheafH"
+  },
+  {
+   "page": 56,
+   "mark": "i",
+   "context": "R := H"
+  },
+  {
+   "page": 56,
+   "mark": "x",
+   "context": "Denotebyι"
+  },
+  {
+   "page": 56,
+   "mark": "x",
+   "context": "xC∼= cone(f"
+  },
+  {
+   "page": 56,
+   "mark": "i",
+   "context": "→H"
+  },
+  {
+   "page": 56,
+   "mark": "i",
+   "context": "xτ>iC) →H"
+  },
+  {
+   "page": 56,
+   "mark": "i",
+   "context": "xR) →H"
+  },
+  {
+   "page": 57,
+   "mark": "x",
+   "context": "xR[i] = 0forall"
+  },
+  {
+   "page": 57,
+   "mark": "a",
+   "context": "xR[i] = 0forallx,"
+  },
+  {
+   "page": 57,
+   "mark": "x",
+   "context": "andonlyiff"
+  },
+  {
+   "page": 57,
+   "mark": "x",
+   "context": "andonlyiffx= 0foreveryclosedpointι"
+  },
+  {
+   "page": 57,
+   "mark": "t",
+   "context": "Let{S"
+  },
+  {
+   "page": 57,
+   "mark": "t",
+   "context": "t∈TS"
+  },
+  {
+   "page": 57,
+   "mark": "t",
+   "context": "t∈TSt ⊗C Hom(S"
+  },
+  {
+   "page": 57,
+   "mark": "t",
+   "context": "tid"
+  },
+  {
+   "page": 57,
+   "mark": "t",
+   "context": "tidt ⊗f"
+  },
+  {
+   "page": 57,
+   "mark": "t",
+   "context": "t∈TS"
+  },
+  {
+   "page": 57,
+   "mark": "t",
+   "context": "t∈TSt ⊗C Hom(S"
+  },
+  {
+   "page": 57,
+   "mark": "t",
+   "context": "whereid"
+  },
+  {
+   "page": 57,
+   "mark": "t",
+   "context": "whereidt :S"
+  },
+  {
+   "page": 57,
+   "mark": "t",
+   "context": "whereidt :St→S"
+  },
+  {
+   "page": 57,
+   "mark": "t",
+   "context": "whereidt :St→Stistheidentitymap,andf"
+  },
+  {
+   "page": 57,
+   "mark": "t",
+   "context": "whereidt :St→Stistheidentitymap,andft :Hom(S"
+  },
+  {
+   "page": 57,
+   "mark": "t",
+   "context": "whereidt :St→Stistheidentitymap,andft :Hom(St, F)→Hom(S"
+  },
+  {
+   "page": 57,
+   "mark": "t",
+   "context": "xid"
+  },
+  {
+   "page": 57,
+   "mark": "*",
+   "context": "ofH(BC"
+  },
+  {
+   "page": 57,
+   "mark": "*",
+   "context": "Proposition6.7.Thesubspaceι(H(BC"
+  },
+  {
+   "page": 57,
+   "mark": "a",
+   "context": "W,µ)is"
+  },
+  {
+   "page": 57,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 57,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 57,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 57,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 57,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 57,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 57,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 57,
+   "mark": "*",
+   "context": "theimageofι(H(BC"
+  },
+  {
+   "page": 57,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 57,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 57,
+   "mark": "d",
+   "context": "d′,"
+  },
+  {
+   "page": 57,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 58,
+   "mark": "d",
+   "context": "d′,d′′ L(d,"
+  },
+  {
+   "page": 58,
+   "mark": "d",
+   "context": "µ,∗s"
+  },
+  {
+   "page": 58,
+   "mark": "d",
+   "context": "µ,∗sd′,"
+  },
+  {
+   "page": 58,
+   "mark": "d",
+   "context": "L(d,"
+  },
+  {
+   "page": 58,
+   "mark": "d",
+   "context": "L(d,"
+  },
+  {
+   "page": 58,
+   "mark": "d",
+   "context": "dν"
+  },
+  {
+   "page": 58,
+   "mark": "d",
+   "context": "dν"
+  },
+  {
+   "page": 58,
+   "mark": "d",
+   "context": "dνd′,"
+  },
+  {
+   "page": 58,
+   "mark": "d",
+   "context": "µ,∗s"
+  },
+  {
+   "page": 58,
+   "mark": "d",
+   "context": "µ,∗sd′,"
+  },
+  {
+   "page": 58,
+   "mark": "d",
+   "context": "µ,∗sd′,d′′,∗L(d,"
+  },
+  {
+   "page": 58,
+   "mark": "*",
+   "context": "(Q) ⊗H(BC"
+  },
+  {
+   "page": 58,
+   "mark": "d",
+   "context": "GrP(γ) ◦(L(d,"
+  },
+  {
+   "page": 58,
+   "mark": "d",
+   "context": "dν"
+  },
+  {
+   "page": 58,
+   "mark": "d",
+   "context": "Themaps ν"
+  },
+  {
+   "page": 58,
+   "mark": "d",
+   "context": "Themaps νdandν"
+  },
+  {
+   "page": 58,
+   "mark": "d",
+   "context": "Themaps νdandνd′,"
+  },
+  {
+   "page": 58,
+   "mark": "d",
+   "context": "µ,∗s"
+  },
+  {
+   "page": 58,
+   "mark": "d",
+   "context": "µ,∗sd′,"
+  },
+  {
+   "page": 58,
+   "mark": "d",
+   "context": "µ,∗sd′,d′′,∗L(d,"
+  },
+  {
+   "page": 58,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 58,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 58,
+   "mark": "d",
+   "context": "W,"
+  },
+  {
+   "page": 58,
+   "mark": "*",
+   "context": "τSym⊠⊕(H(BC"
+  },
+  {
+   "page": 58,
+   "mark": "*",
+   "context": "Free⊠⊕(H(BC"
+  },
+  {
+   "page": 59,
+   "mark": "n",
+   "context": "τSym"
+  },
+  {
+   "page": 59,
+   "mark": "*",
+   "context": "⊠⊕(H(BC"
+  },
+  {
+   "page": 59,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 59,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 59,
+   "mark": "x",
+   "context": "µ,byLemma6.5.Let"
+  },
+  {
+   "page": 59,
+   "mark": "d",
+   "context": "µ,byLemma6.5.Letxrepresentthepolystable"
+  },
+  {
+   "page": 59,
+   "mark": "i",
+   "context": "V"
+  },
+  {
+   "page": 59,
+   "mark": "i",
+   "context": "Vi ⊗C ρ"
+  },
+  {
+   "page": 59,
+   "mark": "x",
+   "context": "LetM"
+  },
+  {
+   "page": 59,
+   "mark": "i",
+   "context": "therepresentationsρ"
+  },
+  {
+   "page": 59,
+   "mark": "x",
+   "context": "therepresentationsρi.LetM"
+  },
+  {
+   "page": 59,
+   "mark": "x",
+   "context": "M"
+  },
+  {
+   "page": 59,
+   "mark": "x",
+   "context": "and M"
+  },
+  {
+   "page": 59,
+   "mark": "x",
+   "context": "if and only if Ξ|M"
+  },
+  {
+   "page": 59,
+   "mark": "0",
+   "context": "ofNQ"
+  },
+  {
+   "page": 59,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 59,
+   "mark": "c",
+   "context": "∼= H"
+  },
+  {
+   "page": 59,
+   "mark": "x",
+   "context": "∼= Hc(M"
+  },
+  {
+   "page": 59,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 59,
+   "mark": "x",
+   "context": "Hc(M"
+  },
+  {
+   "page": 59,
+   "mark": "x",
+   "context": "Hc(M"
+  },
+  {
+   "page": 59,
+   "mark": "x",
+   "context": "Hc(M"
+  },
+  {
+   "page": 59,
+   "mark": "a",
+   "context": "µH(ΓW,µ))thereis"
+  },
+  {
+   "page": 59,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 59,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 59,
+   "mark": "x",
+   "context": "Hc(M"
+  },
+  {
+   "page": 59,
+   "mark": "x",
+   "context": "(103).ThedualoftherestrictionofthismaptothedegreedpieceisΞ|M"
+  },
+  {
+   "page": 60,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 60,
+   "mark": "a",
+   "context": "W,µ)is"
+  },
+  {
+   "page": 60,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 60,
+   "mark": "*",
+   "context": "W,µ⊗H(BC"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "L"
+  },
+  {
+   "page": 60,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 61,
+   "mark": "*",
+   "context": "giving rise to canonical split inclusions H(BC"
+  },
+  {
+   "page": 61,
+   "mark": "*",
+   "context": "µ:H(BC"
+  },
+  {
+   "page": 61,
+   "mark": "*",
+   "context": "µ:H(BC"
+  },
+  {
+   "page": 61,
+   "mark": "*",
+   "context": "H(BC"
+  },
+  {
+   "page": 61,
+   "mark": "d",
+   "context": "d∈HN"
+  },
+  {
+   "page": 61,
+   "mark": "d",
+   "context": "d∈HNdbeaHarder–Narasimhantype.ExtendingthenotationM"
+  },
+  {
+   "page": 61,
+   "mark": "d",
+   "context": "d∈HNdbeaHarder–Narasimhantype.ExtendingthenotationMd′,"
+  },
+  {
+   "page": 61,
+   "mark": "d",
+   "context": "dbethestackofall"
+  },
+  {
+   "page": 61,
+   "mark": "a",
+   "context": "dbethestackofalld-dimensionalmodulesequippedwith"
+  },
+  {
+   "page": 61,
+   "mark": "d",
+   "context": "d→M"
+  },
+  {
+   "page": 61,
+   "mark": "d",
+   "context": "s"
+  },
+  {
+   "page": 61,
+   "mark": "d",
+   "context": "sd′,"
+  },
+  {
+   "page": 61,
+   "mark": "a",
+   "context": "dfactorsas"
+  },
+  {
+   "page": 61,
+   "mark": "a",
+   "context": "dfactorsasapropersurjectionand"
+  },
+  {
+   "page": 61,
+   "mark": "d",
+   "context": "d֒→M"
+  },
+  {
+   "page": 61,
+   "mark": "d",
+   "context": "notation,for each dimensionvector dwe continue to denote byη"
+  },
+  {
+   "page": 61,
+   "mark": "d",
+   "context": "MH (p"
+  },
+  {
+   "page": 61,
+   "mark": "d",
+   "context": "MH (pd,!ICM"
+  },
+  {
+   "page": 61,
+   "mark": "d",
+   "context": "r−→M"
+  },
+  {
+   "page": 61,
+   "mark": "d",
+   "context": "r−→MdoverM"
+  },
+  {
+   "page": 61,
+   "mark": "d",
+   "context": "deﬁnedbythemapalreadydenotedη"
+  },
+  {
+   "page": 61,
+   "mark": "d",
+   "context": "M"
+  },
+  {
+   "page": 62,
+   "mark": "d",
+   "context": "onM"
+  },
+  {
+   "page": 62,
+   "mark": "d",
+   "context": "M"
+  },
+  {
+   "page": 62,
+   "mark": "1",
+   "context": "Md"
+  },
+  {
+   "page": 62,
+   "mark": "d",
+   "context": "Md1× . . . × M"
+  },
+  {
+   "page": 62,
+   "mark": "s",
+   "context": "Md1× . . . × Md"
+  },
+  {
+   "page": 62,
+   "mark": "s",
+   "context": "d"
+  },
+  {
+   "page": 62,
+   "mark": "1",
+   "context": "d"
+  },
+  {
+   "page": 62,
+   "mark": "d",
+   "context": "P(M"
+  },
+  {
+   "page": 62,
+   "mark": "d",
+   "context": "d) ⊗P(M"
+  },
+  {
+   "page": 62,
+   "mark": "1",
+   "context": "d) ⊗P(Md"
+  },
+  {
+   "page": 62,
+   "mark": "d",
+   "context": "d) ⊗P(Md1× . . . × M"
+  },
+  {
+   "page": 62,
+   "mark": "s",
+   "context": "d) ⊗P(Md1× . . . × Md"
+  },
+  {
+   "page": 62,
+   "mark": "s",
+   "context": "d"
+  },
+  {
+   "page": 62,
+   "mark": "1",
+   "context": "d"
+  },
+  {
+   "page": 62,
+   "mark": "d",
+   "context": "⊕∗(η"
+  },
+  {
+   "page": 62,
+   "mark": "1",
+   "context": "⊕∗(ηd"
+  },
+  {
+   "page": 62,
+   "mark": "d",
+   "context": "⊕∗(ηd1,∗⊠. . . ⊠η"
+  },
+  {
+   "page": 62,
+   "mark": "s",
+   "context": "⊕∗(ηd1,∗⊠. . . ⊠ηd"
+  },
+  {
+   "page": 62,
+   "mark": "1",
+   "context": "d"
+  },
+  {
+   "page": 62,
+   "mark": "d",
+   "context": "Themapη"
+  },
+  {
+   "page": 62,
+   "mark": "1",
+   "context": "Themapηd"
+  },
+  {
+   "page": 62,
+   "mark": "d",
+   "context": "⊕η"
+  },
+  {
+   "page": 62,
+   "mark": "s",
+   "context": "⊕ηd"
+  },
+  {
+   "page": 62,
+   "mark": "1",
+   "context": "d"
+  },
+  {
+   "page": 62,
+   "mark": "d",
+   "context": "d1))→H(A"
+  },
+  {
+   "page": 62,
+   "mark": "d",
+   "context": "piece L(d,"
+  },
+  {
+   "page": 62,
+   "mark": "0",
+   "context": "d) of the ﬁltration of H(p∗IC"
+  },
+  {
+   "page": 62,
+   "mark": "d",
+   "context": "→L(d,"
+  },
+  {
+   "page": 62,
+   "mark": "d",
+   "context": "η"
+  },
+  {
+   "page": 62,
+   "mark": "1",
+   "context": "ηd"
+  },
+  {
+   "page": 62,
+   "mark": "1",
+   "context": "d"
+  },
+  {
+   "page": 62,
+   "mark": "d",
+   "context": "⊕η"
+  },
+  {
+   "page": 62,
+   "mark": "s",
+   "context": "⊕ηd"
+  },
+  {
+   "page": 62,
+   "mark": "1",
+   "context": "d"
+  },
+  {
+   "page": 62,
+   "mark": "a",
+   "context": "µis"
+  },
+  {
+   "page": 62,
+   "mark": "*",
+   "context": "µ⊗H(BC"
+  },
+  {
+   "page": 62,
+   "mark": "*",
+   "context": "µ⊗H(BC"
+  },
+  {
+   "page": 63,
+   "mark": "*",
+   "context": "W,µ⊗H(BC"
+  },
+  {
+   "page": 63,
+   "mark": "*",
+   "context": "W,µ⊗H(BC"
+  },
+  {
+   "page": 63,
+   "mark": "c",
+   "context": "W)) = H"
+  },
+  {
+   "page": 63,
+   "mark": "*",
+   "context": "W,µ⊗H(BC"
+  },
+  {
+   "page": 63,
+   "mark": "*",
+   "context": "W,µ⊗H(BC"
+  }
+ ]
+}

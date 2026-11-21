@@ -1,0 +1,1 @@
+Consider any M ∈C(A, M). (1) There is equality tT(M) = −T(tM) of degree −1 morphisms T(M) → T2(M) in C(A, M). (2) There is equality tT−1(M) = −T−1(tM) between these degree −1 morphisms T−1(M) →T(T−1(M)) = M = T−1(T(M)) in C(A, M).

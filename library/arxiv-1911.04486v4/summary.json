@@ -2,25 +2,60 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1911.04486v4",
  "source_sha256": "53a34938c0e63bad",
- "brief": "Knots and the Maxwell Equations — In this chapter, we review the Ra˜ nada ﬁeld line solutions of Maxwell’s equations in the vacuum, which describe a topologically non-trivial electro- magnetic ﬁeld",
- "extended": "**Knots and the Maxwell Equations**\n\n*Seropédica - Rio de Janeiro, Brazil*\n\n26 pp, 3 sections.\n\n**Abstract.** In this chapter, we review the Ra˜ nada ﬁeld line solutions of Maxwell’s equations in the vacuum, which describe a topologically non-trivial electro- magnetic ﬁeld, as well as their relation with the knot theory. Also, we present a generalization of these solutions to the non-linear electrodynamics recently published in the literature.\n\n**Outline.** 1 Introduction; 2.2 Maxwell equations in covariant formulation; 5 Knots in nonlinear electrodynamics",
+ "brief": "Knots and the Maxwell Equations — In this chapter, we review the Ra˜nada ﬁeld line solutions of Maxwell’s equations in the vacuum, which describe a topologically non-trivial electro- magnetic ﬁeld",
+ "extended": "**Knots and the Maxwell Equations**\n\n*Ion V. Vancea*\n\n26 pp, 10 sections.\n\n**Abstract.** In this chapter, we review the Ra˜nada ﬁeld line solutions of Maxwell’s equations in the vacuum, which describe a topologically non-trivial electro- magnetic ﬁeld, as well as their relation with the knot theory. Also, we present a generalization of these solutions to the non-linear electrodynamics recently published in the literature.\n\n**Outline.** Front matter; 1 Introduction; 2 Maxwell's equations; 2.1 Maxwell's equations in the three-dimension; 2.2 Maxwell equations in covariant formulation; 3 Knots in Maxwell's electrodynamics; 3.1 Ranãda solutions; 3.2 Electromagnetic knot fields; 4 Electric and magnetic knots in Bateman param; 5 Knots in nonlinear electrodynamics",
  "tokens": {
   "brief": 49,
-  "extended": 140
+  "extended": 191
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "2-7"
+   "pages": "2-3"
   },
   {
-   "id": "sec-001-22-maxwell-equations-in-covariant-formulation",
+   "id": "sec-001-2-maxwells-equations",
+   "title": "Maxwell's equations",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-21-maxwells-equations-in-the-three-dimensional-f",
+   "title": "Maxwell's equations in the three-dimensional formulation",
+   "pages": "3-7"
+  },
+  {
+   "id": "sec-003-22-maxwell-equations-in-covariant-formulation",
    "title": "Maxwell equations in covariant formulation",
-   "pages": "7-19"
+   "pages": "7-9"
   },
   {
-   "id": "sec-002-5-knots-in-nonlinear-electrodynamics",
+   "id": "sec-004-3-knots-in-maxwells-electrodynamics",
+   "title": "Knots in Maxwell's electrodynamics",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-005-31-ranãda-solutions",
+   "title": "Ranãda solutions",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-006-32-electromagnetic-knot-fields",
+   "title": "Electromagnetic knot fields",
+   "pages": "12-16"
+  },
+  {
+   "id": "sec-007-4-electric-and-magnetic-knots-in-bateman-paramet",
+   "title": "Electric and magnetic knots in Bateman parametrization",
+   "pages": "16-19"
+  },
+  {
+   "id": "sec-008-5-knots-in-nonlinear-electrodynamics",
    "title": "Knots in nonlinear electrodynamics",
    "pages": "19-26"
   }

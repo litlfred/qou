@@ -25,6 +25,7 @@ export default remark({
     "kock2004",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The vanishing of the alternating-block Ocneanu weight is (`QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows`, general $n$). **Witness**: `atom-mass-full-hecke.witness.json`. We lack independent witnesses for high-$A$ traces." },
     {
       kind: "caveat",
       date: "2026-06-22",

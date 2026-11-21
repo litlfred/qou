@@ -17,13 +17,13 @@ T_{3,5} has fewer than 10 crossings.
 LaTeX label: `prop:box-braid-irreducibility`
 
 ## References
-- [manuscript] §6/box-braid-irreducibility
+- [leitner2026] §6/box-braid-irreducibility
 -/
 
 namespace QOU.Archimedean
 
 /-- A torus knot T(m,n) with coprime winding numbers. -/
--- Ref: [manuscript] §6/box-braid-irreducibility
+-- Ref: [leitner2026] §6/box-braid-irreducibility
 structure TorusKnot where
   m : ℕ
   n : ℕ
@@ -33,12 +33,12 @@ structure TorusKnot where
 
 /-- The crossing number of a torus knot T(m,n) is
     min((m-1)*n, (n-1)*m). -/
--- Ref: [manuscript] §6/box-braid-irreducibility
+-- Ref: [leitner2026] §6/box-braid-irreducibility
 noncomputable def TorusKnot.crossingNumber (K : TorusKnot) : ℕ :=
   min ((K.m - 1) * K.n) ((K.n - 1) * K.m)
 
 /-- The weak mediator T(3,5). -/
--- Ref: [manuscript] §6/force-knot-identification
+-- Ref: [leitner2026] §6/force-knot-identification
 def T35 : TorusKnot where
   m := 3
   n := 5
@@ -47,30 +47,30 @@ def T35 : TorusKnot where
   coprime := by decide
 
 /-- The crossing number of T(3,5) is 10. -/
--- Ref: [manuscript] §6/box-braid-irreducibility
+-- Ref: [leitner2026] §6/box-braid-irreducibility
 theorem T35_crossing_number : T35.crossingNumber = 10 := by
   unfold T35 TorusKnot.crossingNumber
   norm_num
 
 /-- The braid index of T(m,n) is min(m,n). -/
--- Ref: [manuscript] §6/box-braid-irreducibility
+-- Ref: [leitner2026] §6/box-braid-irreducibility
 -- Ref: [morton1986] Morton, "Seifert circles and knot polynomials," Math. Proc. Cambridge Philos. Soc. 99 (1986)
 noncomputable def TorusKnot.braidIndex (K : TorusKnot) : ℕ :=
   min K.m K.n
 
 /-- The braid index of T(3,5) is 3. -/
--- Ref: [manuscript] §6/box-braid-irreducibility
+-- Ref: [leitner2026] §6/box-braid-irreducibility
 theorem T35_braid_index : T35.braidIndex = 3 := by
   unfold T35 TorusKnot.braidIndex
   norm_num
 
 /-- The braid word for T(m,n) in B_m is (σ₀σ₁⋯σ_{m-2})^n,
     which has exactly (m-1)*n crossings. -/
--- Ref: [manuscript] §6/box-braid-irreducibility
+-- Ref: [leitner2026] §6/box-braid-irreducibility
 def torusBraidWordLength (m n : ℕ) : ℕ := (m - 1) * n
 
 /-- T(3,5) has braid word (σ₀σ₁)⁵ with 10 crossings in B₃. -/
--- Ref: [manuscript] §6/box-braid-irreducibility
+-- Ref: [leitner2026] §6/box-braid-irreducibility
 theorem T35_braid_word_length : torusBraidWordLength 3 5 = 10 := by
   unfold torusBraidWordLength
   norm_num
@@ -78,7 +78,7 @@ theorem T35_braid_word_length : torusBraidWordLength 3 5 = 10 := by
 /- No braid whose closure is a torus knot T(m,n) has fewer than
    c(T(m,n)) crossings. This is because crossing number is a
    topological invariant — the minimum over ALL diagrams.
-   Ref: [manuscript] §6/box-braid-irreducibility
+   Ref: [leitner2026] §6/box-braid-irreducibility
    Ref: [kawauchi1996] Kawauchi, "A Survey of Knot Theory," Birkhäuser 1996
 
    **REMOVED 2026-05-17**: previous `crossing_number_is_minimum`
@@ -97,8 +97,8 @@ theorem T35_braid_word_length : torusBraidWordLength 3 5 = 10 := by
     the braid word `(σ₀σ₁)⁵` of length 10 in B₃ (braid index 3). This
     is the irreducible cost of the γ–ν interaction — 10 R-matrix
     applications / Planck steps (cf. `box_braid_min_crossings`). -/
--- Ref: [manuscript] §6/box-braid-irreducibility
--- Ref: [manuscript] §6/force-knot-identification
+-- Ref: [leitner2026] §6/box-braid-irreducibility
+-- Ref: [leitner2026] §6/force-knot-identification
 theorem photon_neutrino_requires_T35 :
     T35.crossingNumber = 10
       ∧ torusBraidWordLength 3 5 = 10
@@ -108,7 +108,7 @@ theorem photon_neutrino_requires_T35 :
 /-- **Box braid irreducibility**: the γγ → νν̄ box requires
     ≥ 10 crossings (= 10 R-matrix applications = 10 Planck steps).
     No simpler process exists. -/
--- Ref: [manuscript] §6/box-braid-irreducibility
+-- Ref: [leitner2026] §6/box-braid-irreducibility
 theorem box_braid_min_crossings :
     T35.crossingNumber = 10 ∧ T35.braidIndex = 3 := by
   exact ⟨T35_crossing_number, T35_braid_index⟩
@@ -116,7 +116,7 @@ theorem box_braid_min_crossings :
 /-- **Neutrino stability**: the neutrino mass m_ν ~ μ₀(q-1) is
     far below the T(3,5) crossing energy barrier.
     The ratio E_box / m_ν ≥ 10(q+q⁻¹)/q ≈ 19 at q = 1.1097. -/
--- Ref: [manuscript] §6/box-braid-irreducibility
+-- Ref: [leitner2026] §6/box-braid-irreducibility
 theorem neutrino_energy_barrier (q : ℝ) (hq : 1 < q)
     (μ₀ : ℝ) (hμ : 0 < μ₀) :
     10 * (q - 1/q) * μ₀ > μ₀ * (q - 1) := by
@@ -146,7 +146,7 @@ theorem neutrino_energy_barrier (q : ℝ) (hq : 1 < q)
         rw [mul_lt_mul_right hμ]; linarith [scalar]
 
 /-- Top-level alias matching the manifest declaration. -/
--- Ref: [manuscript] §6/box-braid-irreducibility
+-- Ref: [leitner2026] §6/box-braid-irreducibility
 noncomputable def BoxBraidIrreducibility : Prop :=
   T35.crossingNumber = 10
 

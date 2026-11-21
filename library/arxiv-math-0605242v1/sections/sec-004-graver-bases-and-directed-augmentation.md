@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-math-0605242v1
-doc_title: "N-Fold Integer Programming Jesús A. De Loera∗ Raymond Hemmecke † Shmuel Onn ‡ Robert Weismantel §"
+doc_title: "N-Fold Integer Programming"
 section_id: sec-004-graver-bases-and-directed-augmentation
 section_title: "Graver bases and directed augmentation"
 section_number: null
 pages: 8-11
 source_pdf: 0605242v1.pdf
 source_sha256: 65fac7285e4a77f4
-doc_brief: "N-Fold Integer Programming Jesús A. De Loera∗ Raymond Hemmecke † Shmuel Onn ‡ Robert Weismantel § — In this article we study a broad class of integer programming problem s in variable dimension."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.989
+latex_coverage_ratio: 0.996
+doc_brief: "N-Fold Integer Programming — In this article we study a broad class of integer programming problems in variable dimension."
 ---
 Consider the following family $\IP_A$ of integer programs in
 standard form, with arbitrary demand vector $b\in\Z^m$ and

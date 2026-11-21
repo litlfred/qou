@@ -25,5 +25,18 @@ export default proposition({
         "Audit: `docs/audits/2026-11-15-weak-vertex-left-projector.md`. The identification of " +
         "the vertex with the physical weak coupling is not made (scope (a)).",
     },
+    {
+      kind: "caveat",
+      date: "2026-11-15",
+      body:
+        "Provenance (owner question \"what chose corpus vertex?\", bean `qou-g0jn`): W = " +
+        "(one-sided-flip ansatz, `OneSidedWeakVertex.lean`) + (owner definition of left, " +
+        "`LeftLineDefinition.lean`) + uniqueness (`eq_of_eigen_action`). W_L = q⁻¹J and " +
+        "W_R = qJ (`oneSidedL_eq`, `oneSidedR_eq`). Emission probes: under the reading " +
+        "'emission = W − letter' the mirror emits more on the γγ nucleon word V³ (#7981, " +
+        "#7984); under the reading 'emission = Ř coefficient' the corpus/mirror ratio is " +
+        "q⁻⁴ for every word tested (`emission_reading_chirality_probe.py`), i.e. only the " +
+        "overall scale q² between the two one-sided elements.",
+    },
   ],
 });

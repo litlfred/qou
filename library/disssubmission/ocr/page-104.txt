@@ -1,0 +1,51 @@
+96 Chapter 5 — A family of surfaces
+
+because we assumed the theta divisor to be symmetric. The above Bertini
+argument yields the following
+
+COROLLARY 5.4. If the theta divisor is smooth or has only isolated
+singularities, then there exists a Zariski-open dense subset U C X such that
+for all x € U(C) the quotient morphism
+
+Ye — ¥P = X%/ox
+is an étale double covering between smooth varieties of dimension g — 2.
+
+Proof. From lemma 5.3 we get a Zariski-open dense subset U C X such
+that Y; is smooth of dimension g — 2 for all x € U(C). Shrinking this open
+dense subset we can furthermore assume that it does not contain points of
+the form x = 2y with y € @(C). Then the involution 0; : ¥, —> Y; is étale
+for all points x € U(C), and our claim follows. Oo
+
+For the rest of this section we always fix a point x with the properties in
+the above corollary, and we put
+
+Y=, YT=¥,* and o = oy
+
+for brevity. Like for any étale double cover of smooth complex varieties,
+the rational cohomology of the quotient Y* coincides with the eigenspace
+for the eigenvalue +1 in
+H°(Y,Q) = H°(Y,Q)* @H*(Y,Q)-
+
+where the upper index + indicates that the involution o acts by +1 on the
+respective two eigenspaces. Now recall the following version of the weak
+Lefschetz theorem [71, rem. 3.1.29]: If W is a smooth complex projective
+variety of dimension d, then for all ample effective divisors D,,...,D, the
+restriction map H"(W,Z) —> H"(D,Q---D,,Z) is an isomorphism in
+degrees n < d—r and a monomorphism in degree n = d—r. Note that
+the intersecting divisors are not required to be smooth or transverse to each
+other. In our case, since Y is the intersection of two ample divisors on X it
+follows that the restriction morphism
+
+A"(X,Q) — H"(¥,Q)
+
+is an isomorphism for n < g — 2 and a monomorphism for n = g—2. So
+the interesting part of the cohomology of Y sits in the middle cohomology
+degree n = g — 2 and can be defined as the orthocomplement
+
+V = H8(x,Q)* C He (¥,Q)
+with respect to the intersection form. The involution o acts by € = (—1)®
+on H8~?(X,Q), hence
+H8~?(Y,Q)* for g even,
+
+—2 —2 € _
+HE OQ) CHE)" = (eater for g odd.

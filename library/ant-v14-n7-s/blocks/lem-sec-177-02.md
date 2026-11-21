@@ -1,1 +1,1 @@
-Let K be a number ﬁeld, let K = K0 ⊂K1 ⊂K2 ⊂· · · be a tower of distinct cyclic p-extensions
+Let K be a number ﬁeld, let K = K0 ⊂K1 ⊂K2 ⊂· · · be a tower of distinct cyclic p-extensions of K, and let K∞= S Kn. If p is a prime of K with residue characteristic not equal to p, then p is unramiﬁed in K∞.

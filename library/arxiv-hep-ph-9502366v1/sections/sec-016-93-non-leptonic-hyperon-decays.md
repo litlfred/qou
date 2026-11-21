@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-ph-9502366v1
-doc_title: "arXiv:hep-ph/9502366v1 22 Feb 1995"
+doc_title: "Chiral Perturbation Theory"
 section_id: sec-016-93-non-leptonic-hyperon-decays
 section_title: "Non-leptonic hyperon decays"
 section_number: 9.3
@@ -8,6 +8,7 @@ pages: 41-42
 source_pdf: 9502366v1.pdf
 source_sha256: 56df064956ca03f8
 toc_source: inferred
+doc_brief: "Chiral Perturbation Theory — An introduction to the basic ideas and methods of Chiral Perturbation Theory is presented."
 ---
 Neglecting the small (27L, 1R) contribution, the lowest-order ∆S = 1 non-leptonic
 eﬀective Lagrangian involving baryons contains two terms (Manohar and Georgi 1984,
@@ -54,8 +55,6 @@ Fitting the parameters hD and hF to the measured S-wave amplitudes, one obtains
 a very bad description of the A(P )
 ij
 amplitudes. Therefore, higher-order corrections are
-42
-A Pich
 crucial in order to understand these decays. In fact, keeping only the non-analytic
 contributions evaluated at µ = 1 GeV, Bijnens et al (1985) found very large 1-loop
 corrections, which spoil the successful Lee-Sugawara relation for the S-waves, and are

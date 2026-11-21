@@ -402,6 +402,25 @@ Hecke cone: 14 fresh, TwRep and TwIndependent CHANGED. Rebuilt those 2, their do
 - TRAP: `/tmp/qou-lean-build-status.json` said `"status": "unavailable", "Lean toolchain present but unusable"` — FALSE; a 2-line `by decide` + `#eval` scratch exited 0. Run the elaborator, do not trust the status file.
 - TRAP (worktree-isolated agent harness): any Bash call with `$VAR`-computed args, pipes into `bash`, `cd` + compound, or a python heredoc that writes a file is REFUSED as "cannot be shown not to be git". Write a runner script with the Write tool and call `bash /abs/run.sh <file>` plainly; edit with Edit, not sed/python.
 
+## 2026-11-15 — TRAP: `scripts/setup-lean-toolchain.sh` now ALSO restores the cache, into the REAL .git, and fills the disk
+
+Fresh container, no toolchain. Running the script (3m36s) installed the toolchain AND ran a
+best-effort cache restore: it fetched `cat/folio-assistant-sci/lake-cache/qou-v4-24-0`
+(a792c46d01b) into the repo's own `.git` as **22 LOOSE objects (~1.7 G)**, `.git` 1.5G -> 3.2G,
+free 11G -> 1.7G. tar then died with `folio/unital-groebner-bases/lean/.lake/build: Cannot mkdir`
+(exit 2), "cache fetch failed (best-effort)". Mathlib nonetheless landed complete (3480 oleans
+under root `.lake/packages/mathlib`); QOU only **86 of ~2702** (partial, misleading tree).
+Reclaim: the loose objects were reachable only via FETCH_HEAD (`git for-each-ref` had no ref
+containing the commit) -> `rm` the commit/tree/20 part blobs by path + FETCH_HEAD: +1.7G.
+Lesson: on a low-disk container install the toolchain WITHOUT that script's restore step, then
+stream the parts from a throwaway repo (MEMORY.md §"stream the parts INTO tar").
+lean-direct of two Mathlib-only files: 3.7 s / 1.6 s; autoImplicit control re-confirmed both sides.
+
+## 2026-11-15 — ContentCasimir.lean (branch claude/q-laplacian-eigenvalue-derivation-2026-11-15)
+- BASELINE: toolchain already at ~/.elan/toolchains/leanprover--lean4---v4.24.0 (no ~/.elan/bin); release.lean-lang.org 403, GitHub zip 200 (730 MB, 24 s) — not needed.
+- BASELINE: streamed restore of cat/folio-assistant-sci/lake-cache/qou-v4-24-0 @ a792c46d01b: fetch 1m36s, root .lake 3758 / per-paper 2703 oleans; disk 16G -> 8.8G free.
+- STABLE: cone rebuild into a `cp -al` shadow of the per-paper lib dir (7 modules, HeckeAlgebra 64 s, rest ≤6 s), LEAN_PATH = shadow + root .lake/packages/*; works with no union mirror.
+
 ## 2026-11-15 — 4-PR merge verification (#7991/#7990/#7987/#7982), fresh container, no elan
 - STABLE: toolchain with no elan and no `zstd`: `curl -sSfL …/releases/download/v4.24.0/lean-4.24.0-linux.zip` (730 MB, ~30 s) + `python3 zipfile.extractall` + `chmod +x bin/*` → working `lean`. The `.tar.zst` downloads too but nothing here can decompress it.
 - STABLE: restore to a SEPARATE base dir (not the repo): stream `cat/folio-assistant-sci/lake-cache/qou-v4-24-0` (head a792c46d01b, 1m49s fetch, 50 s extract, 6492 oleans) into `tar xzf - -C $BASE --transform 's,^content/,folio/,'`. Per PR: `cp -al` each package lib dir into `$SHADOW/<QOU|UGB|Fred2005>`, put the shadow roots first on LEAN_PATH, rebuild the Lake-hash dirty closure there (unlink before `lean -o`, and `mkdir -p` the parent — new module dirs like `QOU/KZ/` are absent from the cache). Each PR worktree costs ~2.5 G.

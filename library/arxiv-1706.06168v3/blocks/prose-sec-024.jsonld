@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1706.06168v3/blocks/prose-sec-024",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "B.1 Polarization and Projection",
-  "pageStart": 34,
-  "pageEnd": 35,
-  "text": "../sections/sec-024-b1-polarization-and-projection.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1706.06168v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1706.06168v3",
+  "title": "A Tensor Product Decomposition of SL2(C) Representations",
+  "pageStart": 31,
+  "pageEnd": 31,
+  "text": "../sections/sec-024-a-tensor-product-decomposition-of-sl2c-represent.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1706.06168v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1706.06168v3/manifest.jsonld",
   "provenance": "ingested"
 }

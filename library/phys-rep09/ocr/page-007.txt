@@ -1,0 +1,66 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 157
+
+A Lie algebra g is a vector space whose elements can be combined by a second law, the Lie bracket, which we represent
+by [A, B] = C, with A, B, C elements of g, in such a way that the law is bilinear, skew-symmetric and satisfies the well known
+Jacobi identity,
+
+[A, [B, C]] + [B, [C, A]] + [C, [A, B]] = 0. (8)
+When dealing with matrices we take, as Lie bracket, the familiar commutator:
+
+[A,B] =AB—BA, A€g,Beg, (9)
+where AB stands for the usual matrix product. If we consider a finite-dimensional Lie algebra with dimension d and denote
+by Aj, i = 1, ..., d, the vectors of one of its bases, then the fundamental brackets one has to know are
+
+(Aj, Ail = cfAx, (10)
+
+where sum over repeated indexes is understood. The coefficients ch are the so-called structure constants of the algebra.
+Associated with any A € g we can define a linear operator ad, : g > g which acts according to
+
+ad,B=[A,B], ad,B=[A,ad/-'B],  ad°B=B, jeEN,Beg. (11)
+Also of interest, is the exponential of this ad, operator,
+Ada = exp(ada), (12)
+whose action on g is given by
+oo
+Vix
+Ada(B) = exp(A)Bexp(—A) = > pas, Bes. (13)
+
+The type of matrices we will handle more frequently are orthogonal, unitary and symplectic. Here are their
+characterization and the notation we shall use for their group and algebra.
+
+The special orthogonal group, SO(n), is the set of all n x n real matrices with unit determinant satisfying A'A = AA™ = I,
+where A! is the transpose of A and I denotes the identity matrix. The corresponding algebra so(n) consists of the skew-
+symmetric matrices.
+
+An x ncomplex matrix A is called unitary if A‘'A = AAT = I, where At is the conjugate transpose or Hermitian adjoint
+of A. The special unitary group, SU(n), is the set of all n x n unitary matrices with unit determinant. The corresponding
+algebra su(n) consists of the skew-Hermitian traceless matrices. Special relevance in some quantum mechanical problems
+we discuss will have the case n = 2. In this case a convenient basis for su(2) is made up by the Pauli matrices
+
+o1= (! s) ; = (; rn) : o3= (; ) : (14)
+
+They satisfy the identity
+
+GOK = Sik + ie, (15)
+and correspondingly
+
+[oj, on] = igor, (16)
+which directly give the structure constants for SU(2). The following identities will prove useful for a and b in R?:
+
+(a-o)(b-o) =a-b!I+i(ax b)-o, [a-o,b-o] = 2i(a x b)-o, (17)
+where we have denoted o = (04, 02, 03). Any U € SU(2) can be written as
+
+sin(a)
+
+U = exp(ia- 0) = cos(a)I +i a-o, (18)
+
+where a = |lal| = /@e + as + a. Amore elaborate expression which we shall make use of, in later sections, is (with a = 1)
+
+exp(ia- ot)(b- 0) exp(—ia- ot) = b-o + sin2t (bx a)-o+ sin’ t(a x (bx a))- 0. (19)
+In Hamiltonian problems, the symplectic group Sp(n) plays a fundamental role. It is the group of 2n x 2n real matrices
+satisfying
+AYA=J, withy= (Or fn (20)
+=—In On
+and I, denotes the n-dimensional identity matrix. Its corresponding Lie algebra sp(n) consists of matrices verifying B'J+JB =
+O2,. In fact, these can be considered particular instances of the so-called J-orthogonal group, defined as [41]
+
+O,(n) = {A € GL(n) : AYA = J}, (21)

@@ -1,0 +1,1 @@
+If f ∈L1(E, dµΠ) ∩L∞(E, dµΠ), then Ψ1+f ∈L1(Conf(E), PΠ) and EΠΨ1+f = det(I + fΠ). (5.5) In other words, multiplicative functionals define a continuous mapping Ψ1+(−) : L∞(E, dµΠ) ∩L1(E, dµΠ) →L1(Conf(E), PΠ).

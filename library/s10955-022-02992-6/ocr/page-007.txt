@@ -1,0 +1,58 @@
+Cluster Expansions: Necessary... Page7of47 33
+
+Proof Assume that (2.7) holds and define € = (&,)nen, € : X" — [0, 00), by
+En (XL, sees Xn) = C(r1) ++ ZEEE Fae)
+
+for some a(-) satisfying (2.7). The interactions fulfill the stability condition (2.1), therefore
+
+for every n € N and x1, ..., Xn € X there exists an index j € {1,..., n} such that the bound
+T] (4+ fej.s) se? (2.8)
+lsi<ni#j
+
+holds. Choose the selection rule s that always picks an element xj satisfying (2.8) from
+(X1,.--5 Xn). Plugging our choice of & into the left-hand side of Eq. (2.5) and bounding the
+interaction term as Tied + fxs, x!) < e28Os), we recognize an exponential series, and
+find altogether that the left-hand side of (2.5) is bounded by
+
+slay)e(as) ata yemeet ta exp [flay ye" Acldy) +2B(4)).
+
+By condition (2.7), this is in turn bounded by &, (x1, ..., X;). It follows that condition (i) of
+Theorem 2.1 is satisfied. Oo
+
+Analogously, one shows that the criterion by Fernandez and Procacci [8], extended to soft-
+core and continuum systems by Faris in [5] and by Jansen in [14], is sufficient for absolute
+convergence of the activity expansions p. We prove the result in the slightly more general
+setup of locally stable interactions.
+
+Corollary 2.3 Let z be a non-negative activity function and assume locally stable interactions
+
+in the sense of (2.2) for some C > 0. If there exists a measurable function pp : X — [0, 00)
+such that for all x € X
+
+io) k
+1 ;
+a) (14 05 [OT] [fev] TL a+ ron xahcayy | < neo,
+k=l j=l
+
+l<i<j<k
+(2.9)
+then the activity expansions Py(Xn,..., Xn; Z) converge absolutely and the bounds
+n
+PrOnre nid < TI (+ for.x)) TT eed
+l<i<j<n i=l
+hold for alln € N and (x1, ..., Xn) € X". Notice that for non-negative pair interactions, we
+
+can choose C = 0 in condition (2.9).
+
+Remark 2.3 The Fernéndez—Procacci condition improves on the the Kotecky—Preiss
+condition—in the sense that the assumptions of Corollary 2.2 yield the assumptions of Corol-
+lary 2.3. In other words, Corollary 2.3 in general guarantees convergence of p on a larger
+domain of activities .
+
+Proof Assume that (2.9) holds and define € = (&,)nen, &) : X” — [0, 00), by
+
+Gran) = TT (+ feix)) Teen
+
+I<i<j<n i=l
+
+D Springer

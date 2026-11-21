@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.992
 latex_coverage_ratio: 0.954
+doc_brief: "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES — This work forms a foundational study of factorization homology, or topological chiral homology, at the generality of stratiﬁed spaces with tangential"
 ---
 Recall from \cite{aft1} that the underlying space of a $n$-dimensional stratified space $X\in \snglr_n$ has a canonical filtration by the union of its strata $X_0 \subset X_1 \subset \ldots \subset X_n= X$ where each $X_i\smallsetminus X_{i-1}$ is a smooth $i$-dimensional manifold. As such, the definition of Goresky \& MacPherson's intersection homology~\cite{goreskymacpherson} applies verbatim. Namely, we restrict to stratified spaces $X$ have no codimension-1 strata, $X_{n-1}=X_{n-2}$ and for which the $n$-dimensional open stratum $X_n\smallsetminus X_{n-1}$ is nonempty.
 

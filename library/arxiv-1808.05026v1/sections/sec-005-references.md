@@ -8,7 +8,10 @@ pages: 9-9
 source_pdf: 1808.05026v1.pdf
 source_sha256: 2781e0b34e7889d6
 toc_source: outline
+doc_brief: "GRÖBNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS — For Temperley-Lieb algebras of type B, we construct their Gröbner-Shirshov bases and the corresponding standard monomials, which give another"
+duplicate_of: "fd58d8e182edda805fed0946606c5ab82f81"
 ---
+References
 [1] G. M. Bergman, The diamond lemma for ring theory, Adv. Math. 29 (1978), 178–218.
 [2] L. A. Bokut, Imbedding into simple associative algebras, Algebra and Logic 15 (1976), 117–142.
 [3] L. A. Bokut, L.-S. Shiao, Gr¨obner-Shirshov bases for Coxeter groups, Comm. Algebra 29 (2001), 4305–4319.

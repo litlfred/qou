@@ -4,13 +4,14 @@ doc_title: "Stability structures, motivic Donaldson-Thomas invariants and cluste
 section_id: sec-011-crossing-the-wall-of-second-kind
 section_title: "Crossing the wall of second kind"
 section_number: null
-pages: 30-33
+pages: 30-32
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
-doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.996
-latex_coverage_ratio: 0.973
+latex_prose_ratio: 0.995
+latex_coverage_ratio: 0.995
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 51 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 Here we will interpret the parallel transport in a different way, introducing a wall of another kind. We use the notation from the previous section. In particular, we fix the quadratic form $Q_0$ and the connected component $U$ of the set $\{Z\in \op{Hom}(\Gamma,\C)|\,\, (Q_{0})_{|\op{Ker} Z}<0\}$.
 
@@ -49,16 +50,3 @@ The set of continuous sections $\psi: U\to Stab(\g)$ such that $\psi(Z)$ is comp
 Let us also introduce a set ${\cal X}_2\subset \Gamma\times U$ which consists of such pairs $(\gamma,Z)$ that $Q_0(\gamma)\geqslant 0, Z(\gamma)>0$ and there are no non-zero $\Q$-independent elements $\gamma_1,\gamma_2\in \Gamma$ with the property $\gamma=\gamma_1+\gamma_2, Q_0(\gamma_i)\geqslant 0, Z(\gamma_i)>0, i=1,2$. Since ${\cal X}_2$ is a locally-closed hypersurface in $U\times \op{Hom}(\Gamma,\C)$ it has finitely many connected components. Obviously, we have ${\cal X}_1\subset {\cal X}_2$.
 
 It follows from the wall-crossing formula that for a continuous section $\psi:U\to Stab(\g)$ the restriction of the function $a$ to ${\cal X}_2$ is locally-constant and uniquely determines the section $\psi$. Therefore, the values of the restriction $a_{|\pi_0({\cal X}_2)}$ provides a countable coordinate system (satisfying a countable system of equations) on the set of continuous sections $\{\psi: U\to Stab(\g)\}$ as above. It can be compared with another countable coordinate system (with no constraints) given the value $\psi(Z_0)$ for $Z_0\in U$. The latter coordinate system is not very convenient since one has to choose a generic $Z_0$.
-
-## Invariants $\Omega(\gamma)$ and the dilogarithm
-
-Let $\Gamma$ be a free abelian group of finite rank $n$ as before, endowed with a skew-symmetric integer-valued bilinear form $\langle \bullet, \bullet\rangle : \Gamma \times \Gamma\to \Z$. Recall the Lie algebra $\g_{\Gamma}=\g_{\Gamma,\langle \bullet,\bullet \rangle}=\oplus_{\gamma\in \Gamma}\Q\cdot e_{\gamma}$ with the Lie bracket $$[e_{\gamma_1},e_{\gamma_2}]=(-1)^{\langle \gamma_1, \gamma_2\rangle}\langle \gamma_1, \gamma_2\rangle e_{\gamma_1+\gamma_2}\,\,.$$ Let us introduce a commutative associative product on $\g_{\Gamma}$ by the formula $$e_{\gamma_1}e_{\gamma_2}=(-1)^{\langle \gamma_1, \gamma_2\rangle}e_{\gamma_1+\gamma_2}\,\,.$$ We denote by ${\mathbb T}_{\Gamma}:={\mathbb T}_{\Gamma,\langle \bullet, \bullet\rangle}$ the spectrum of this commutative algebra. It is easy to see that ${\mathbb T}_{\Gamma}$ is a torsor over the algebraic torus $\op{Hom}(\Gamma, {\bf G}_m)$. Moreover ${\mathbb T}_{\Gamma}$ is an algebraic Poisson manifold with the Poisson bracket $$\{a,b\}:=[a,b]\,.$$ The Poisson structure on ${\mathbb T}_{\Gamma}$ is invariant with respect to the action of $\op{Hom}(\Gamma, {\bf G}_m)$.
-
-We can specify the results of the previous sections to the Lie algebra $\g_{\Gamma}$. For stability data $(Z,a)$ we can write uniquely (by the Möbius inversion formula) $$a(\gamma)=-\sum_{n\geqslant 1, {1\over{n}}\gamma\in \Gamma\setminus \{0\}}{\Omega(\gamma/n)\over{n^2}}e_{\gamma}\,\,,$$ where $\Omega:\Gamma\setminus \{0\}\to \Q$ is a function. Then we have $$\exp\left(\sum_{n\geqslant 1}a(n\gamma)\right)=\exp\left(-\sum_{n\geqslant 1} \Omega(n\gamma)\sum_{k\geqslant 1}{e_{kn\gamma}\over{k^2}}\right):=
-\exp\left(-\sum_{n\geqslant 1}\Omega(n\gamma)\op{Li}_2(e_{n\gamma})\right),$$ where $\op{Li}_2(t)=\sum_{k\geqslant 1}{t^k\over{k^2}}$ is the dilogarithm function.
-
-The Lie algebra $\g_{\Gamma}$ acts on ${\mathbb T}_{\Gamma}$ by Hamiltonian vector fields. Let us denote by $T_{\gamma}$ the formal Poisson automorphism $$T_{\gamma}=\exp(\{-\op{Li}_2(e_{\gamma}),\bullet\})\,\,,\,\,\, T_\gamma(e_\mu)=(1-e_\gamma)^{\langle \gamma,\mu \rangle} e_\mu$$ considered as an automorphism of algebra of functions.
-
-More precisely for any strict convex cone $C\subset \Gamma_{\R}$ containing $\gamma$ the element $T_{\gamma}$ acts on the formal scheme $Spf(\prod_{\mu\in \Gamma \cap C}\Q e_{\mu})$. Moreover $T_{\gamma}$ is the Taylor expansion of a birational automorphism of ${\mathbb T}_{\Gamma}$.
-
-Finally, in the case when $\Gamma$ comes from a $3d$ Calabi-Yau category the numbers $\Omega(\gamma)$ are (conjecturally) integers for $(\gamma,Z)\in {\cal X}_2$ in notation of Section 2.4. They provide generalization of DT-invariants (BPS degeneracies in physics language).

@@ -1,0 +1,7662 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-2206.14086v3",
+  "pages": [
+    {
+      "page": 2,
+      "rotation": 0,
+      "drawings": 20,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: TASEP"
+      ],
+      "labels": [
+        {
+          "text": "· · ·",
+          "bbox": [
+            190.23,
+            74.42,
+            201.85,
+            84.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "· · ·",
+          "bbox": [
+            408.49,
+            74.42,
+            420.12,
+            84.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 1: TASEP",
+          "bbox": [
+            267.73,
+            96.87,
+            344.29,
+            106.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "random matrix theory was completely unexpected at that time. Soon after, Johansson [53] proved a similar",
+          "bbox": [
+            72.0,
+            130.63,
+            540.05,
+            140.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "result for another model, giving yet another example of a KPZ limit theorem.",
+          "bbox": [
+            72.0,
+            143.54,
+            411.39,
+            153.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Exciting developments on KPZ limit theorems followed these results during the next two decades. For",
+          "bbox": [
+            86.94,
+            156.46,
+            540.03,
+            166.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "example, one-point limit theorems were extended to equal-time, multi-position distributions, multi-time",
+          "bbox": [
+            72.0,
+            169.37,
+            540.03,
+            179.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "distributions, and even to the 2d ﬁelds. Results were also generalized to several, mostly isolated, models,",
+          "bbox": [
+            72.0,
+            182.28,
+            540.01,
+            192.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and algebraic underpinning of these speciﬁc models was studied. The 2d ﬁeld limit, the KPZ ﬁxed point,",
+          "bbox": [
+            72.0,
+            195.19,
+            540.07,
+            205.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "was determined, and various properties of the limit were established. Limit theorems were also proved for",
+          "bbox": [
+            72.0,
+            208.1,
+            540.02,
+            218.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "inﬁnite space, half-inﬁnite space, and recently ﬁnite space with periodic boundary condition.",
+          "bbox": [
+            72.0,
+            221.01,
+            476.09,
+            230.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In this article, we give a historical overview of some KPZ limit theorems and present new results on",
+          "bbox": [
+            86.94,
+            233.93,
+            540.01,
+            243.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the periodic domain case. We start by introducing the subjects of KPZ universality, interacting particle",
+          "bbox": [
+            72.0,
+            246.84,
+            540.06,
+            256.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "systems, random growth, and directed polymers, in Section 2, focusing on one particular example. Then,",
+          "bbox": [
+            72.0,
+            259.75,
+            540.05,
+            269.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "we discuss some limit theorems on inﬁnite spaces in Section 3-4. After brieﬂy discussing the half-inﬁnite",
+          "bbox": [
+            72.0,
+            272.66,
+            540.02,
+            282.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "space case in Section 5, we present new results on the periodic case in Section 6. Section 7 compares the",
+          "bbox": [
+            72.0,
+            285.57,
+            539.98,
+            295.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "formulas of the limiting multi-point distributions for inﬁnite and periodic cases, and Section 8 concerns",
+          "bbox": [
+            72.0,
+            298.48,
+            540.08,
+            308.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "diﬀerential equations associated with distribution functions. We conclude the article with some comments",
+          "bbox": [
+            72.0,
+            311.4,
+            540.02,
+            321.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "on universality in Section 9.",
+          "bbox": [
+            72.0,
+            324.31,
+            193.88,
+            334.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The research on the KPZ universality has been developing rapidly and extensively over the last two",
+          "bbox": [
+            86.94,
+            337.22,
+            540.05,
+            347.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "decades. Hence, what is discussed in this article is only a small selection of the activities. The reader may",
+          "bbox": [
+            72.0,
+            350.13,
+            539.99,
+            360.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "beneﬁt from other excellent survey articles such as [32,34,72] to see other aspects.",
+          "bbox": [
+            72.0,
+            363.04,
+            431.27,
+            373.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            72.0,
+            394.0,
+            80.08,
+            408.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "TASEP, corner growth model, and exponential DLPP",
+          "bbox": [
+            96.22,
+            394.0,
+            476.82,
+            408.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "This section discusses one of the most well-studied examples of one-dimensional interacting particle systems,",
+          "bbox": [
+            72.0,
+            420.2,
+            539.98,
+            430.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1+1 random growth, and two-dimensional directed polymers.",
+          "bbox": [
+            72.0,
+            433.11,
+            339.31,
+            443.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2.1",
+          "bbox": [
+            72.0,
+            460.56,
+            89.2,
+            472.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "TASEP",
+          "bbox": [
+            102.65,
+            460.56,
+            146.53,
+            472.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The totally asymmetric simple exclusion process (TASEP), introduced by Spitzer [82] in 1970, is a continuous-",
+          "bbox": [
+            72.0,
+            481.46,
+            540.04,
+            491.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "time Markov process on Z. At any given time, each integer site of Z is occupied by at most one particle.",
+          "bbox": [
+            72.0,
+            492.2,
+            540.01,
+            504.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A particle moves to the adjacent site to its right after a random waiting time, but only if it is empty. The",
+          "bbox": [
+            72.0,
+            507.28,
+            540.04,
+            517.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "waiting time is exponentially distributed of mean 1, and the clock starts once the neighboring site becomes",
+          "bbox": [
+            72.0,
+            520.2,
+            540.03,
+            530.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "vacant. All waiting times are independent of each other. Note that all moves are to the right (hence, totally",
+          "bbox": [
+            72.0,
+            533.11,
+            540.04,
+            543.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "asymmetric), particles can move only one step at a time (simple), and no two particles occupy the same site",
+          "bbox": [
+            72.0,
+            546.02,
+            539.99,
+            555.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "at the same time (exclusion). Figure 1 is an example of the conﬁguration at a particular time. Black dots",
+          "bbox": [
+            72.0,
+            558.93,
+            540.03,
+            568.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "denote particles, and white dots mark empty sites. In this conﬁguration, only three particles can move, and",
+          "bbox": [
+            72.0,
+            571.84,
+            540.04,
+            581.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "they do so independently of each other.",
+          "bbox": [
+            72.0,
+            584.75,
+            244.24,
+            594.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The TASEP is an example of interacting particle systems. General systems may allow, for example, left",
+          "bbox": [
+            86.94,
+            597.67,
+            540.01,
+            607.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "moves in addition to right moves, multi-range moves, or several particles at each site.",
+          "bbox": [
+            72.0,
+            610.58,
+            444.42,
+            620.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "One particular initial condition we focus on in this article is the step initial condition that the sites in",
+          "bbox": [
+            86.94,
+            623.49,
+            540.07,
+            633.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Z−∪{0} are occupied, and all sites in Z+ are empty. The leftmost picture in Figure 2 shows the step initial",
+          "bbox": [
+            72.0,
+            634.22,
+            540.02,
+            647.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "condition.",
+          "bbox": [
+            72.0,
+            649.31,
+            115.19,
+            659.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            303.51,
+            712.21,
+            308.49,
+            722.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "rotation": 0,
+      "drawings": 85,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2: Corner growth model",
+        "Figure 3: Exponential DLPP Figure 4: An example of Gt"
+      ],
+      "labels": [
+        {
+          "text": "Figure 2: Corner growth model",
+          "bbox": [
+            237.66,
+            123.94,
+            374.36,
+            133.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(m, n)",
+          "bbox": [
+            233.76,
+            150.52,
+            260.66,
+            160.48
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(1, 1)",
+          "bbox": [
+            140.9,
+            196.44,
+            163.04,
+            206.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 4: An example of Gt",
+          "bbox": [
+            350.4,
+            219.85,
+            471.55,
+            230.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 3: Exponential DLPP",
+          "bbox": [
+            137.39,
+            221.25,
+            264.2,
+            231.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2.2",
+          "bbox": [
+            72.0,
+            253.37,
+            89.2,
+            265.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Corner growth model",
+          "bbox": [
+            102.65,
+            253.37,
+            229.35,
+            265.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The conﬁguration space for the TASEP is {0, 1}Z where 1 represents the presence of a particle and 0 an",
+          "bbox": [
+            72.0,
+            270.65,
+            540.01,
+            284.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "empty site. To each conﬁguration, we can associate a zig-zag graph in R2 as in Figure 2. We assign a particle",
+          "bbox": [
+            72.0,
+            283.57,
+            540.01,
+            297.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            193.93,
+            291.72,
+            202.23,
+            301.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2 and slope −1, and an empty site to a line segment of the same length and",
+          "bbox": [
+            202.23,
+            299.96,
+            540.02,
+            310.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to a line segment of length",
+          "bbox": [
+            72.0,
+            300.09,
+            190.23,
+            310.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "slope 1. Juxtaposing the line segments, we obtain a zig-zag graph as in Figure 2. We call the graph a height",
+          "bbox": [
+            72.0,
+            313.0,
+            540.04,
+            322.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "function h : R →R for the conﬁguration of the TASEP, and it is unique up to translations. The leftmost",
+          "bbox": [
+            72.0,
+            323.74,
+            540.08,
+            335.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "picture in Figure 2 is a translation of h(x) = |x|, and it corresponds to the step initial condition.",
+          "bbox": [
+            72.0,
+            338.7,
+            494.11,
+            348.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The TASEP induces a stochastic evolution of the height function, h(x, t), in which local valleys (corners)",
+          "bbox": [
+            86.94,
+            351.74,
+            540.01,
+            361.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "change to local peaks independently with rate 1. The resulting 1+1 random growth process deﬁned by the",
+          "bbox": [
+            72.0,
+            364.65,
+            540.05,
+            374.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "height function is called the corner growth process. See Figure 5 for a simulation.",
+          "bbox": [
+            72.0,
+            377.56,
+            428.18,
+            387.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2.3",
+          "bbox": [
+            72.0,
+            404.99,
+            89.2,
+            416.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Exponential DLPP",
+          "bbox": [
+            102.65,
+            404.99,
+            214.37,
+            416.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Consider the two-dimensional lattice Z2",
+          "bbox": [
+            72.0,
+            423.72,
+            248.8,
+            435.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "+. Let (m, n) ∈Z2",
+          "bbox": [
+            244.83,
+            423.72,
+            332.28,
+            437.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "+. An up/right (i.e., directed) path from (1, 1)",
+          "bbox": [
+            328.3,
+            425.89,
+            540.0,
+            437.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ", where pi ∈Z2",
+          "bbox": [
+            245.8,
+            436.63,
+            317.59,
+            450.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "to (m, n) is a sequence p = (pi)m+n−1",
+          "bbox": [
+            72.0,
+            436.79,
+            245.31,
+            449.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "+, p1 = (1, 1), pm+n−1 = (m, n), and pi+1 −pi ∈",
+          "bbox": [
+            313.61,
+            438.68,
+            540.0,
+            450.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i=1",
+          "bbox": [
+            216.99,
+            443.92,
+            229.9,
+            450.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "{(1, 0), (0, 1)}. The thick lines in Figure 3 are an example of a path in which we connected neighboring",
+          "bbox": [
+            72.0,
+            451.59,
+            540.05,
+            461.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "integer sites for visual aid. Let ws, s ∈Z2",
+          "bbox": [
+            72.0,
+            462.45,
+            251.36,
+            475.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "+, be a collection of independent random variables. The normalized",
+          "bbox": [
+            247.38,
+            464.63,
+            540.04,
+            476.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "free energy of the directed polymer measure, introduced by Huse and Henley [50], is",
+          "bbox": [
+            72.0,
+            477.54,
+            439.32,
+            487.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "m+n−1",
+          "bbox": [
+            386.65,
+            498.62,
+            414.96,
+            505.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "F(m, n; β) = 1",
+          "bbox": [
+            174.4,
+            502.08,
+            239.74,
+            518.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0010 X",
+          "bbox": [
+            257.71,
+            504.93,
+            279.72,
+            516.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "eβE(p)\u0011",
+          "bbox": [
+            281.37,
+            504.93,
+            313.9,
+            518.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            393.6,
+            506.52,
+            408.0,
+            516.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "where E(p) =",
+          "bbox": [
+            323.86,
+            508.82,
+            383.88,
+            518.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "wpi,",
+          "bbox": [
+            416.61,
+            508.82,
+            434.28,
+            520.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "β log",
+          "bbox": [
+            234.17,
+            508.83,
+            255.91,
+            525.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            270.46,
+            522.62,
+            274.57,
+            529.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "i=1",
+          "bbox": [
+            394.35,
+            522.91,
+            407.26,
+            529.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "the sum is over all directed paths p from (1, 1) to (m, n), and β > 0 is the inverse temperature. The zero-",
+          "bbox": [
+            72.0,
+            540.96,
+            539.99,
+            550.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "temperature, β = ∞, case is called the directed last passage percolation (DLPP). In this case, the normalized",
+          "bbox": [
+            72.0,
+            553.74,
+            540.01,
+            563.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "free energy becomes",
+          "bbox": [
+            72.0,
+            566.78,
+            159.27,
+            576.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L(m, n) = max",
+          "bbox": [
+            260.69,
+            579.69,
+            326.2,
+            589.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "E(p),",
+          "bbox": [
+            327.86,
+            579.69,
+            351.32,
+            589.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            314.87,
+            588.0,
+            318.98,
+            594.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "which we call the last passage time, interpreting E(p) as the travel time using path p.",
+          "bbox": [
+            72.0,
+            602.4,
+            446.76,
+            612.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "For the case when ws ≥0, the DLPP is related to a random growth model. For t > 0, deﬁne the subset",
+          "bbox": [
+            86.94,
+            615.18,
+            540.0,
+            626.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of R2 by",
+          "bbox": [
+            72.0,
+            624.61,
+            108.85,
+            638.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "((0, 1]2 + s)",
+          "bbox": [
+            206.6,
+            637.02,
+            256.7,
+            651.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "where St = {(m, n) ∈Z2 : L(m, n) ≤t}",
+          "bbox": [
+            276.62,
+            637.02,
+            447.35,
+            652.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "[",
+          "bbox": [
+            192.4,
+            638.83,
+            203.47,
+            648.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Gt =",
+          "bbox": [
+            164.65,
+            641.14,
+            186.51,
+            652.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "s∈St",
+          "bbox": [
+            189.27,
+            655.29,
+            206.1,
+            662.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "and we set L(m, n) = 0 if m ≤0 or n ≤0. See Figure 4. Since L(m, n) is greater than or equal to both",
+          "bbox": [
+            72.0,
+            669.28,
+            540.02,
+            679.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L(m −1, n) and L(m, n −1), we see that if (m, n) ∈Gt, then both points (m −1, n) and (m, n −1) are in",
+          "bbox": [
+            72.0,
+            682.2,
+            540.0,
+            693.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            303.51,
+            712.21,
+            308.49,
+            722.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "rotation": 0,
+      "drawings": 24,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 5: Simulation of the corner growth model",
+        "Figure 6: y = ¯h(x, t) for a few values of t"
+      ],
+      "labels": [
+        {
+          "text": "y",
+          "bbox": [
+            411.46,
+            79.9,
+            416.34,
+            89.87
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "x",
+          "bbox": [
+            464.81,
+            135.72,
+            470.5,
+            145.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 5: Simulation of the corner growth",
+          "bbox": [
+            107.18,
+            153.21,
+            294.42,
+            163.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 6: y = ¯h(x, t) for a few values of t",
+          "bbox": [
+            321.5,
+            155.42,
+            500.94,
+            168.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "model",
+          "bbox": [
+            107.18,
+            166.13,
+            133.47,
+            176.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Gt. The set Gt grows with time t. If we regard Gt in the ﬁrst quadrant as a stack of boxes, we can add a",
+          "bbox": [
+            72.0,
+            199.89,
+            540.02,
+            211.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "new box only at the corners.",
+          "bbox": [
+            72.0,
+            212.8,
+            196.66,
+            222.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A special case is the exponential DLPP in which ws are exponentially distributed with mean 1. In this",
+          "bbox": [
+            86.94,
+            225.71,
+            540.04,
+            237.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "case, each corner of Gt grows independently of rate 1, i.e., a unit box can be added to each corner independent",
+          "bbox": [
+            72.0,
+            238.62,
+            540.06,
+            250.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "at rate 1. Thus, the boundary of Gt is a rotation of the height function of the corner growth process. More",
+          "bbox": [
+            72.0,
+            251.53,
+            540.04,
+            262.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "precisely, for the TASEP with the step initial condition and the exponential DLPP,",
+          "bbox": [
+            72.0,
+            264.44,
+            436.15,
+            274.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "h(m −n, t) ≥m + n",
+          "bbox": [
+            193.35,
+            287.19,
+            282.57,
+            297.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L(m, n) ≤t.",
+          "bbox": [
+            365.32,
+            287.19,
+            418.66,
+            297.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "if and only if",
+          "bbox": [
+            295.86,
+            287.32,
+            352.07,
+            297.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(2.1)",
+          "bbox": [
+            519.52,
+            287.32,
+            540.0,
+            297.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "If the TASEP starts with a diﬀerent initial condition, we need to consider the exponential DLPP on a subset",
+          "bbox": [
+            72.0,
+            310.19,
+            540.06,
+            320.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of Z2, determined by the initial condition.",
+          "bbox": [
+            72.0,
+            320.93,
+            255.59,
+            333.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2.4",
+          "bbox": [
+            72.0,
+            350.55,
+            89.2,
+            362.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Hydrodynamic limit and KPZ limit",
+          "bbox": [
+            102.65,
+            350.55,
+            312.59,
+            362.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The hydrodynamic limit of TASEP is about h(x, t) when x and t are proportional. For the step initial",
+          "bbox": [
+            72.0,
+            371.45,
+            540.04,
+            381.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "condition, h(x, 0) = |x|, Rost [77] showed in 1981 that",
+          "bbox": [
+            72.0,
+            384.24,
+            308.08,
+            394.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "h(xT, tT)",
+          "bbox": [
+            263.49,
+            405.29,
+            305.18,
+            415.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "→¯h(x, t)",
+          "bbox": [
+            309.14,
+            409.4,
+            349.71,
+            421.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "T",
+          "bbox": [
+            280.73,
+            418.86,
+            286.55,
+            428.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "almost surely as T →∞, where ¯h(x, t) = t2+x2",
+          "bbox": [
+            72.0,
+            436.92,
+            276.28,
+            449.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "for |x| ≤t and ¯h(x, t) = |x| for |x| ≥t. See Figure 6 for the",
+          "bbox": [
+            281.28,
+            437.33,
+            540.01,
+            449.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2t",
+          "bbox": [
+            262.58,
+            445.73,
+            269.56,
+            452.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "graph. The hydrodynamic limit ¯h is deterministic, and it solves Burger’s equation [62,63].",
+          "bbox": [
+            72.0,
+            450.24,
+            466.57,
+            462.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The KPZ limit is about the next term, h(xT, tT) −¯h(x, t)T. Setting x = 0 for convenience and following",
+          "bbox": [
+            86.94,
+            463.15,
+            540.02,
+            475.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the 1:2:3 scale, the KPZ universality conjecture suggests that",
+          "bbox": [
+            72.0,
+            478.69,
+            339.54,
+            488.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "h(γT 2/3, τT) −¯h(0, τ)T",
+          "bbox": [
+            253.47,
+            497.81,
+            357.14,
+            510.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "T 1/3",
+          "bbox": [
+            296.14,
+            513.65,
+            315.37,
+            524.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "converges to a 2d random ﬁeld. If we do not set x = 0, then we should consider h(xT +γT 2/3, τT)−¯h(x, τ)T",
+          "bbox": [
+            72.0,
+            531.36,
+            538.61,
+            543.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "in the numerator. The limiting 2d ﬁeld, the KPZ ﬁxed point, depends on the initial condition. The step",
+          "bbox": [
+            72.0,
+            546.91,
+            540.09,
+            556.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "initial condition for the TASEP becomes the so-called narrow wedge initial condition for the KPZ ﬁxed point.",
+          "bbox": [
+            72.0,
+            559.82,
+            540.08,
+            569.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "TASEP has interpretations as an interacting particle system, a random growth process, and a last passage",
+          "bbox": [
+            86.94,
+            572.73,
+            540.03,
+            582.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "percolation model.",
+          "bbox": [
+            72.0,
+            585.64,
+            154.17,
+            595.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Each of these interpretations has natural extensions and generalizations.",
+          "bbox": [
+            162.56,
+            585.64,
+            489.23,
+            595.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The KPZ",
+          "bbox": [
+            497.63,
+            585.64,
+            540.05,
+            595.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "universality conjecture is that a large class of models in these generalizations has a universal limit. The exact",
+          "bbox": [
+            72.0,
+            598.55,
+            540.01,
+            608.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "class is not known, but for random growth models, three key features seem to be the locality of growth, some",
+          "bbox": [
+            72.0,
+            611.46,
+            540.02,
+            621.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "smoothing mechanism, and lateral growths. For directed last passage percolation, the universality is expected",
+          "bbox": [
+            72.0,
+            624.37,
+            540.03,
+            634.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "for all random variables ws with enough moments and without a large atom at the top of the support of the",
+          "bbox": [
+            72.0,
+            637.29,
+            540.05,
+            648.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "distribution. The last condition is to prevent the situation that there is always a path connecting (1, 1) and",
+          "bbox": [
+            72.0,
+            650.2,
+            540.01,
+            660.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(m, n) using only the top value, making the last passage time too concentrated.",
+          "bbox": [
+            72.0,
+            663.11,
+            419.36,
+            673.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            303.51,
+            712.21,
+            308.49,
+            722.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "rotation": 0,
+      "drawings": 18,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 7: Poisson DLPP"
+      ],
+      "labels": [
+        {
+          "text": "(t, s)",
+          "bbox": [
+            340.13,
+            75.97,
+            360.58,
+            85.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 7: Poisson DLPP",
+          "bbox": [
+            252.52,
+            158.45,
+            359.5,
+            168.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            72.0,
+            188.78,
+            80.08,
+            203.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "One-point distribution",
+          "bbox": [
+            96.22,
+            188.78,
+            255.16,
+            203.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "We discuss one-point KPZ limit theorems from [6] and [53] mentioned in the introduction, and extensions",
+          "bbox": [
+            72.0,
+            214.99,
+            540.06,
+            224.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to other models.",
+          "bbox": [
+            72.0,
+            227.9,
+            143.2,
+            237.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3.1",
+          "bbox": [
+            72.0,
+            255.35,
+            89.2,
+            267.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Poisson DLPP",
+          "bbox": [
+            102.65,
+            255.35,
+            188.03,
+            267.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Poisson directed last passage percolation is a variation of the exponential DLPP. Consider a realization of",
+          "bbox": [
+            72.0,
+            276.25,
+            540.05,
+            286.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a 2d Poisson process in R2",
+          "bbox": [
+            72.0,
+            286.98,
+            187.83,
+            299.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "+. An up/right path p this time is deﬁned as the graph of a continuous piecewise",
+          "bbox": [
+            183.86,
+            289.16,
+            540.01,
+            300.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "linear function of positive slopes connecting Poisson points, as shown in Figure 7. Let E(p) denote the",
+          "bbox": [
+            72.0,
+            302.07,
+            540.01,
+            312.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "number of the Poisson points on p. For (t, s) ∈R2",
+          "bbox": [
+            72.0,
+            312.81,
+            290.39,
+            324.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "+, deﬁne",
+          "bbox": [
+            286.42,
+            314.98,
+            324.58,
+            326.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "L(t, s) = sup",
+          "bbox": [
+            266.54,
+            337.86,
+            321.5,
+            347.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "p E(p),",
+          "bbox": [
+            311.94,
+            337.86,
+            345.46,
+            355.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "where the supremum is taken over all up/right paths p from (0, 0) to (t, s). The next theorem follows from [6].",
+          "bbox": [
+            72.0,
+            366.56,
+            540.01,
+            376.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The main theorem of [6] is stated for the case of a ﬁxed number of points, but the paper proves the Poisson",
+          "bbox": [
+            72.0,
+            379.47,
+            540.05,
+            389.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            394.49,
+            386.22,
+            402.79,
+            396.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            415.49,
+            386.22,
+            423.79,
+            396.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "d= L(",
+          "bbox": [
+            373.6,
+            391.13,
+            394.49,
+            404.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "points case ﬁrst, from which the main theorem follows. Since L(t, s)",
+          "bbox": [
+            72.0,
+            394.44,
+            370.55,
+            404.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ts,",
+          "bbox": [
+            402.79,
+            394.44,
+            413.83,
+            404.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ts), the next result applies",
+          "bbox": [
+            423.79,
+            394.44,
+            540.01,
+            404.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to general points (t, s).",
+          "bbox": [
+            72.0,
+            407.35,
+            171.68,
+            417.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 3.1 ( [6]). For every x ∈R,",
+          "bbox": [
+            72.0,
+            426.06,
+            241.93,
+            438.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0012L(t, t) −2t",
+          "bbox": [
+            255.53,
+            449.25,
+            310.41,
+            459.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            330.58,
+            449.25,
+            337.92,
+            459.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "≤x",
+          "bbox": [
+            314.38,
+            456.0,
+            330.59,
+            466.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "t→∞P",
+          "bbox": [
+            226.53,
+            456.13,
+            253.87,
+            471.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "lim",
+          "bbox": [
+            229.06,
+            456.13,
+            242.9,
+            466.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "= FTW(x)",
+          "bbox": [
+            340.69,
+            456.13,
+            385.47,
+            466.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "t1/3",
+          "bbox": [
+            279.17,
+            462.6,
+            294.8,
+            473.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "where FTW is the Tracy-Widom distribution.",
+          "bbox": [
+            72.0,
+            483.47,
+            267.65,
+            494.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The 1/3-power in t1/3 is consistent with the height scale of the KPZ universality: see (2.1). This result",
+          "bbox": [
+            86.94,
+            500.74,
+            540.02,
+            514.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "shows that the one-point marginal of the KPZ ﬁxed point (for the narrow wedge initial condition) must be",
+          "bbox": [
+            72.0,
+            517.26,
+            540.08,
+            527.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "distributed as the Tracy-Widom distribution. The Tracy-Widom distribution is the limiting distribution of",
+          "bbox": [
+            72.0,
+            530.18,
+            540.1,
+            540.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the largest eigenvalue of random Hermitian matrices such as Gaussian unitary ensemble matrices [86]. The",
+          "bbox": [
+            72.0,
+            543.09,
+            540.01,
+            553.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "connection of the KPZ ﬁxed point and random matrix theory was surprising and unexpected. See Section",
+          "bbox": [
+            72.0,
+            556.0,
+            540.07,
+            565.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "9.3 for more on this connection.",
+          "bbox": [
+            72.0,
+            568.91,
+            210.78,
+            578.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3.2",
+          "bbox": [
+            72.0,
+            596.36,
+            89.2,
+            608.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Longest increasing subsequence",
+          "bbox": [
+            102.65,
+            596.36,
+            287.91,
+            608.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The Poisson DLPP is particularly interesting due to its connection to longest increasing subsequences of",
+          "bbox": [
+            72.0,
+            617.26,
+            540.03,
+            627.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "random permutations. Note that ﬁnitely many points in a rectangle with distinct x and y coordinates can",
+          "bbox": [
+            72.0,
+            630.17,
+            540.0,
+            640.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "be associated with a permutation by considering the relative orderings of the coordinates. For example,",
+          "bbox": [
+            72.0,
+            643.08,
+            540.04,
+            653.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the points in Figure 7 are associated with the permutation π = 475168293.",
+          "bbox": [
+            72.0,
+            656.0,
+            416.24,
+            665.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "For this permutation, the",
+          "bbox": [
+            424.69,
+            656.0,
+            540.02,
+            665.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "subsequence 45689 is an increasing subsequence. Furthermore, it is the longest increasing subsequence, and",
+          "bbox": [
+            72.0,
+            668.91,
+            540.01,
+            678.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "its length, 5, is equal to the last passage time L(t, s).",
+          "bbox": [
+            72.0,
+            681.82,
+            303.46,
+            691.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            303.51,
+            712.21,
+            308.49,
+            722.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "rotation": 0,
+      "drawings": 38,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 8: Step initial condition on an integer ring",
+        "Figure 9: Hydrodynamic limits of periodic height function when t = O(t)"
+      ],
+      "labels": [
+        {
+          "text": "Figure 9: Hydrodynamic limits of periodic height",
+          "bbox": [
+            307.66,
+            141.77,
+            518.3,
+            151.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "function when t = O(t)",
+          "bbox": [
+            307.66,
+            154.68,
+            408.8,
+            164.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 8: Step initial condition on an integer ring",
+          "bbox": [
+            93.74,
+            154.85,
+            304.4,
+            164.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The papers [14, 15] obtained a one-point KPZ limit theorem at the origin for the Poisson PNG and",
+          "bbox": [
+            86.94,
+            188.35,
+            540.07,
+            198.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "discrete-time TASEP models. The height scales as T 1/3 for α ≥1/2 and as T 1/2 for α < 1/2. The limiting",
+          "bbox": [
+            72.0,
+            197.64,
+            540.01,
+            211.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "distribution is a variation of the Tracy-Widom distribution for α > 1/2, another variation for α = 1/2,",
+          "bbox": [
+            72.0,
+            214.17,
+            540.0,
+            224.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and the Gaussian distribution for α < 1/2. The result is extended to general positions and equal-time,",
+          "bbox": [
+            72.0,
+            227.08,
+            540.02,
+            237.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "multi-position distributions in [5,79] for the Poisson PNG and the discrete and continuous-time TASEP. The",
+          "bbox": [
+            72.0,
+            239.99,
+            540.08,
+            249.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "one-point distribution result was also extended to other models recently. The ASEP was analyzed in [17] for",
+          "bbox": [
+            72.0,
+            252.91,
+            540.05,
+            262.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a particular value of the boundary condition. The paper [52] established one-point distribution results for",
+          "bbox": [
+            72.0,
+            265.82,
+            540.1,
+            275.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "log-Gamma directed polymer, q-PushTASEP, and multiplicative stochastic heat equation, for general values",
+          "bbox": [
+            72.0,
+            278.73,
+            540.05,
+            288.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of the boundary condition. However, multi-time limit theorems are still yet to be established",
+          "bbox": [
+            72.0,
+            291.64,
+            477.52,
+            301.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            72.0,
+            322.54,
+            80.08,
+            336.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Ring domain",
+          "bbox": [
+            96.22,
+            322.54,
+            186.97,
+            336.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Consider the TASEP on the integer ring ZL = Z/LZ = {0, 1, · · · , L −1} where we identify sites L and 0.",
+          "bbox": [
+            72.0,
+            346.57,
+            540.01,
+            360.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "An equivalent model is the TASEP on Z that is spatially periodic, which we may call the periodic TASEP.",
+          "bbox": [
+            72.0,
+            359.48,
+            540.04,
+            371.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We call L the size of the ring or the period of the periodic TASEP.",
+          "bbox": [
+            72.0,
+            374.56,
+            364.59,
+            384.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The number N of particles in the TASEP on the ring is preserved. We assume the step initial condition",
+          "bbox": [
+            86.94,
+            387.48,
+            540.05,
+            397.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "shown in Figure 8. For the convenience of presentation, we assume that L is an even integer and N = L/2 so",
+          "bbox": [
+            72.0,
+            400.39,
+            540.0,
+            410.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "that the particle density ρ = N/L = 1/2. The initial height function of the periodic TASEP is the bottom",
+          "bbox": [
+            72.0,
+            413.3,
+            540.06,
+            423.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "curve in Figure 9. The other curves are the hydrodynamic limits, as time t and period L tend to inﬁnity",
+          "bbox": [
+            72.0,
+            426.21,
+            540.02,
+            436.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "proportionally when t/L = 0.5n for n = 1, 2, · · · , 6.",
+          "bbox": [
+            72.0,
+            438.99,
+            294.51,
+            449.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Consider two cases, one that t →∞with L ﬁxed and the other that L →∞with t ﬁxed. If t →∞with L",
+          "bbox": [
+            86.94,
+            451.91,
+            540.0,
+            462.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ﬁxed, the periodic corner growth model becomes essentially a one-dimensional growth model, and we expect",
+          "bbox": [
+            72.0,
+            464.95,
+            540.01,
+            474.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "that the height scales as t1/2 and converges to the Gaussian distribution. On the other hand, if L →∞with",
+          "bbox": [
+            72.0,
+            474.24,
+            540.01,
+            487.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "t ﬁxed, then the periodic TASEP becomes the usual TASEP on Z. Thus, the height scales as t1/3 if we let",
+          "bbox": [
+            72.0,
+            487.15,
+            540.0,
+            500.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "t →∞after taking L →∞. An interesting intermediate regime is when L, t →∞simultaneously such that",
+          "bbox": [
+            72.0,
+            503.55,
+            537.05,
+            513.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "t = O(L3/2).",
+          "bbox": [
+            278.71,
+            524.45,
+            333.29,
+            536.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(6.1)",
+          "bbox": [
+            519.52,
+            526.23,
+            540.0,
+            536.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Since the spatial scale for KPZ limit theorems on inﬁnite spaces is t2/3, we expect that the height functions",
+          "bbox": [
+            72.0,
+            547.5,
+            540.02,
+            558.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "at all positions on the ring of size L are correlated non-trivially. If (6.1) holds, we say that we are in the",
+          "bbox": [
+            72.0,
+            561.69,
+            540.04,
+            571.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "relaxation time regime.",
+          "bbox": [
+            72.0,
+            574.6,
+            173.07,
+            584.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "There were some results on transition probabilities and the spectral gap of the generator in the relaxation",
+          "bbox": [
+            86.94,
+            587.51,
+            540.04,
+            597.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "time regime, such as [48]. However, KPZ limit theorems were obtained only recently. The paper [71], which",
+          "bbox": [
+            72.0,
+            600.42,
+            540.02,
+            610.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "is a non-completely rigorous physics paper, and [9] obtained a one-point KPZ limit theorem almost at the",
+          "bbox": [
+            72.0,
+            613.33,
+            540.05,
+            623.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "same time independently. This result was further extended to 2d multi-point distributions in [10,11].",
+          "bbox": [
+            72.0,
+            626.25,
+            513.27,
+            636.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 6.1 ( [10]). Consider the TASEP on a ring of size L with the step initial condition and extend it",
+          "bbox": [
+            72.0,
+            646.87,
+            539.99,
+            656.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to the periodic TASEP. Assume that L is even and ρ = N/L = 1/2 for the convenience of presentation. Set",
+          "bbox": [
+            72.0,
+            659.78,
+            536.76,
+            669.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "T = L3/2.",
+          "bbox": [
+            284.72,
+            680.55,
+            327.28,
+            692.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "8",
+          "bbox": [
+            303.51,
+            712.21,
+            308.49,
+            722.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 10,
+      "rotation": 0,
+      "drawings": 54,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 10: The space Σ for KPZ ﬁxed point when m = 3",
+        "Figure 11: The space S for periodic KPZ ﬁxed when m = 3."
+      ],
+      "labels": [
+        {
+          "text": "Figure 11: The space S for periodic KPZ ﬁxed",
+          "bbox": [
+            300.94,
+            155.6,
+            511.56,
+            165.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSS10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 10: The space Σ for KPZ ﬁxed point",
+          "bbox": [
+            100.46,
+            156.92,
+            287.69,
+            166.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "when m = 3.",
+          "bbox": [
+            300.94,
+            168.51,
+            356.74,
+            178.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "when m = 3",
+          "bbox": [
+            100.46,
+            169.83,
+            153.49,
+            179.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "7.2",
+          "bbox": [
+            72.0,
+            201.43,
+            89.2,
+            213.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Periodic case",
+          "bbox": [
+            102.65,
+            201.43,
+            179.58,
+            213.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The formula of [10] is",
+          "bbox": [
+            72.0,
+            222.33,
+            165.91,
+            232.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "I",
+          "bbox": [
+            264.28,
+            232.98,
+            269.82,
+            242.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "I",
+          "bbox": [
+            289.19,
+            232.98,
+            294.73,
+            242.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "F pKPZ",
+          "bbox": [
+            189.08,
+            237.6,
+            217.56,
+            249.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "· · ·",
+          "bbox": [
+            275.9,
+            239.25,
+            287.53,
+            249.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "C(ζ) det(1 −Kζ)dζ1 · · · dζm,",
+          "bbox": [
+            300.81,
+            239.25,
+            422.92,
+            250.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSS10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(h; γ, τ) =",
+          "bbox": [
+            218.05,
+            239.38,
+            261.52,
+            249.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSS10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(7.3)",
+          "bbox": [
+            519.52,
+            239.38,
+            540.0,
+            249.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "m",
+          "bbox": [
+            195.49,
+            244.18,
+            202.56,
+            251.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "where this time there are m integrals and C(ζ) is an explicit function expressed in terms of polylog functions.",
+          "bbox": [
+            72.0,
+            261.95,
+            540.04,
+            271.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The kernel of the operator Kζ is of the same form as (7.2) but a(z) and b(z) are slightly diﬀerent. The key",
+          "bbox": [
+            72.0,
+            274.86,
+            540.01,
+            286.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSS10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "change is the space for Kζ. It is ℓ2(S), where S = S1 ∪· · · ∪Sm and Si is the discrete set of the roots of the",
+          "bbox": [
+            72.0,
+            286.49,
+            539.99,
+            299.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSS10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "equation",
+          "bbox": [
+            72.0,
+            300.68,
+            109.37,
+            310.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "e−s2/2 = ζi,",
+          "bbox": [
+            280.6,
+            309.48,
+            331.4,
+            324.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(7.4)",
+          "bbox": [
+            519.52,
+            313.59,
+            540.0,
+            323.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "shown in Figure 11. See the following subsection for how this equation arises.",
+          "bbox": [
+            72.0,
+            332.03,
+            410.49,
+            341.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "7.3",
+          "bbox": [
+            72.0,
+            359.35,
+            89.2,
+            371.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Transition probabilities",
+          "bbox": [
+            102.65,
+            359.35,
+            239.93,
+            371.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "We mentioned in Subsection 3.4 that one way of proving a KPZ limit theorem for the TASEP is to compute",
+          "bbox": [
+            72.0,
+            380.25,
+            540.06,
+            390.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the transition probabilities explicitly and then take an appropriate sum to ﬁnd the ﬁnite-time distribution",
+          "bbox": [
+            72.0,
+            393.16,
+            540.1,
+            403.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "functions. The summation part is often more technical, but here we discuss the transition probabilities to",
+          "bbox": [
+            72.0,
+            406.07,
+            540.05,
+            416.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "see how (7.4) arises.",
+          "bbox": [
+            72.0,
+            418.98,
+            159.49,
+            428.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Suppose that there are only N particles for the TASEP on Z. Let WN = {(a1, · · · , aN) ∈ZN : a1 <",
+          "bbox": [
+            86.94,
+            428.28,
+            540.0,
+            443.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "· · · < aN} be the ordered set of the particle locations. Sch¨utz [80] showed that",
+          "bbox": [
+            72.0,
+            444.68,
+            414.42,
+            455.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0014 1",
+          "bbox": [
+            246.5,
+            460.2,
+            262.33,
+            477.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0015N",
+          "bbox": [
+            408.04,
+            464.6,
+            419.61,
+            477.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "I",
+          "bbox": [
+            269.59,
+            467.85,
+            275.13,
+            477.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "sj−i+1(s + 1)−xi+yj+i−jetsds",
+          "bbox": [
+            281.21,
+            472.38,
+            408.04,
+            484.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "PY (X; t) = det",
+          "bbox": [
+            179.23,
+            474.25,
+            244.85,
+            485.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(7.5)",
+          "bbox": [
+            519.52,
+            474.25,
+            540.0,
+            484.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2πi",
+          "bbox": [
+            252.95,
+            481.08,
+            266.74,
+            491.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "i,j=1",
+          "bbox": [
+            413.3,
+            486.55,
+            432.28,
+            493.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "for X and Y in WN, where the contour is a circle that encloses the points s = 0, −1.",
+          "bbox": [
+            72.0,
+            502.56,
+            441.31,
+            513.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "For the periodic TASEP, the particle locations can be represented by the set",
+          "bbox": [
+            86.94,
+            515.6,
+            421.44,
+            525.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "N = {(a1, · · · , aN) ∈ZN : a1 < · · · < aN < a1 + L}.",
+          "bbox": [
+            198.38,
+            533.6,
+            423.46,
+            550.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "WL",
+          "bbox": [
+            188.54,
+            535.94,
+            204.67,
+            547.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Note that if we consider the TASEP on a ring, this set keeps track of global circulations of the particles. We",
+          "bbox": [
+            72.0,
+            559.83,
+            540.04,
+            569.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "showed in [9] that",
+          "bbox": [
+            72.0,
+            572.75,
+            150.11,
+            582.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "#N",
+          "bbox": [
+            401.03,
+            592.54,
+            413.15,
+            605.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\"",
+          "bbox": [
+            241.67,
+            595.3,
+            247.48,
+            605.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "wj−i+1(w + 1)−xi+yj+i−jetw",
+          "bbox": [
+            275.56,
+            597.07,
+            399.15,
+            608.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            249.58,
+            598.44,
+            254.56,
+            608.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "dz",
+          "bbox": [
+            433.29,
+            598.44,
+            443.46,
+            608.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "I",
+          "bbox": [
+            214.55,
+            598.78,
+            220.09,
+            608.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            258.31,
+            602.88,
+            272.71,
+            612.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "PY (X; t) =",
+          "bbox": [
+            162.78,
+            605.18,
+            211.79,
+            616.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "det",
+          "bbox": [
+            226.17,
+            605.18,
+            240.01,
+            615.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(7.6)",
+          "bbox": [
+            519.52,
+            605.18,
+            540.0,
+            615.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L",
+          "bbox": [
+            248.68,
+            612.01,
+            255.46,
+            621.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "w + N/L",
+          "bbox": [
+            317.9,
+            612.01,
+            357.51,
+            621.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2πiz",
+          "bbox": [
+            429.17,
+            612.01,
+            447.58,
+            621.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "w",
+          "bbox": [
+            262.53,
+            618.97,
+            268.29,
+            625.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "i,j=1",
+          "bbox": [
+            406.84,
+            620.46,
+            425.82,
+            627.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "for X, Y ∈WL",
+          "bbox": [
+            72.0,
+            636.79,
+            136.16,
+            648.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "N, where the integral contour for z is any circle enclosing the origin, and the sum inside is over",
+          "bbox": [
+            129.87,
+            638.07,
+            540.02,
+            650.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the roots of the equation",
+          "bbox": [
+            72.0,
+            650.98,
+            180.3,
+            660.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "wN(w + 1)L−N = z.",
+          "bbox": [
+            262.18,
+            659.78,
+            349.82,
+            673.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(7.7)",
+          "bbox": [
+            519.52,
+            663.89,
+            540.0,
+            673.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "See Figure 12.",
+          "bbox": [
+            72.0,
+            682.33,
+            133.89,
+            692.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            301.02,
+            712.21,
+            310.98,
+            722.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 11,
+      "rotation": 0,
+      "drawings": 396,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 12: Bethe roots when L = 24 and N = 8 for three values of z"
+      ],
+      "labels": [
+        {
+          "text": "Figure 12: Bethe roots when L = 24 and N = 8 for three values of z",
+          "bbox": [
+            156.63,
+            166.29,
+            454.93,
+            176.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We now explain the equation (7.7). Due to the periodicity, if A = (a1, · · · , aN) is in WN(L), then A′ =",
+          "bbox": [
+            86.94,
+            196.44,
+            540.0,
+            210.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(a2, · · · , aN, a1 +L) also represents the same particle conﬁguration of the periodic TASEP. Thus, the transi-",
+          "bbox": [
+            72.0,
+            212.83,
+            540.04,
+            224.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "tion probability should remain the same if we replace (x1, · · · , xN) and (y1, · · · , yN) by (x2, · · · , xN, x1 + L)",
+          "bbox": [
+            72.0,
+            225.75,
+            540.0,
+            237.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and (y2, · · · , yN, y1 + L), respectively. We can check directly that the determinant in (7.6) is unchanged",
+          "bbox": [
+            72.0,
+            238.66,
+            540.03,
+            250.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "thanks to the equation (7.7). Equation (7.7) takes care of the labeling ambiguity in the periodic case. Here",
+          "bbox": [
+            72.0,
+            251.7,
+            540.06,
+            261.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the variable z could have been any ﬁxed constant, but making it as a free parameter turns out to be the",
+          "bbox": [
+            72.0,
+            264.61,
+            540.05,
+            274.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "right choice. Since (7.5) and (7.6) were found by solving the Kolmogorov forward equation using the Bethe",
+          "bbox": [
+            72.0,
+            277.52,
+            540.07,
+            287.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ansatz method, the roots of (7.7) are called the Bethe roots.",
+          "bbox": [
+            72.0,
+            290.43,
+            335.8,
+            300.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Now, if we set L = 2N, w = −1",
+          "bbox": [
+            86.94,
+            301.76,
+            225.91,
+            313.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "s",
+          "bbox": [
+            249.4,
+            301.76,
+            253.16,
+            308.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "2N , and z = (−4)−Nζ in (7.7), and let N →∞, then the equation",
+          "bbox": [
+            251.02,
+            301.98,
+            540.02,
+            318.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 +",
+          "bbox": [
+            221.93,
+            303.34,
+            237.08,
+            316.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            244.48,
+            304.38,
+            251.02,
+            311.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            240.5,
+            310.38,
+            244.48,
+            317.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "becomes e−s2/2 = ζ, which is (7.4).",
+          "bbox": [
+            72.0,
+            315.98,
+            224.94,
+            329.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "8",
+          "bbox": [
+            72.0,
+            350.55,
+            80.08,
+            364.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Integrable diﬀerential equations",
+          "bbox": [
+            96.22,
+            350.55,
+            321.19,
+            364.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Distribution functions of the KPZ ﬁxed point have connections to deterministic integrable diﬀerential equa-",
+          "bbox": [
+            72.0,
+            376.75,
+            540.07,
+            386.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tions. As proved in 1994 [86], the Tracy-Widom distribution is expressible in terms of the Painlev´e II equation,",
+          "bbox": [
+            72.0,
+            389.66,
+            540.06,
+            399.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "one of a family of six special nonlinear ordinary diﬀerential equations [43]. The papers [2,20,73,87,92] also",
+          "bbox": [
+            72.0,
+            402.57,
+            540.07,
+            412.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "found diﬀerential equations for equal-time, multi-position distribution functions of the KPZ ﬁxed point. We",
+          "bbox": [
+            72.0,
+            415.49,
+            540.1,
+            425.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "state the following result for multi-point distributions for both inﬁnite and periodic domains.",
+          "bbox": [
+            72.0,
+            428.4,
+            478.22,
+            438.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁne the parameters",
+          "bbox": [
+            86.94,
+            441.31,
+            183.22,
+            451.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ti = τi/3,",
+          "bbox": [
+            231.68,
+            454.22,
+            272.29,
+            465.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSS10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "yi = γi,",
+          "bbox": [
+            293.87,
+            454.22,
+            326.31,
+            465.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSS10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "xi = hi,",
+          "bbox": [
+            347.89,
+            454.22,
+            380.32,
+            465.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSS10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and let",
+          "bbox": [
+            72.0,
+            473.11,
+            102.45,
+            483.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "m",
+          "bbox": [
+            230.02,
+            480.44,
+            237.09,
+            487.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "m",
+          "bbox": [
+            304.63,
+            480.44,
+            311.7,
+            487.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "m",
+          "bbox": [
+            379.87,
+            480.44,
+            386.95,
+            487.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            226.36,
+            488.26,
+            240.75,
+            498.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            300.97,
+            488.26,
+            315.36,
+            498.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            376.21,
+            488.26,
+            390.61,
+            498.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "∂t =",
+          "bbox": [
+            204.61,
+            490.56,
+            223.59,
+            502.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSS8"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∂ti,",
+          "bbox": [
+            242.41,
+            490.56,
+            256.8,
+            501.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMSS8"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∂y =",
+          "bbox": [
+            278.38,
+            490.56,
+            298.2,
+            502.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSS8"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∂yi,",
+          "bbox": [
+            317.02,
+            490.56,
+            332.15,
+            501.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMSS8"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∂x =",
+          "bbox": [
+            353.73,
+            490.56,
+            373.45,
+            502.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSS8"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∂xi.",
+          "bbox": [
+            392.26,
+            490.56,
+            407.39,
+            501.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMSS8"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i=1",
+          "bbox": [
+            227.1,
+            504.65,
+            240.01,
+            511.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "i=1",
+          "bbox": [
+            301.71,
+            504.65,
+            314.62,
+            511.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "i=1",
+          "bbox": [
+            376.96,
+            504.65,
+            389.87,
+            511.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Theorem 8.1 ( [12,13]). Let K = Kζ be the operator in either (7.1) or (7.3). If det(1 −K)̸ = 0, which holds",
+          "bbox": [
+            72.0,
+            519.62,
+            540.0,
+            531.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI7",
+            "CMR10",
+            "CMSS10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "for all but at most countably many parameters, then",
+          "bbox": [
+            72.0,
+            532.66,
+            299.0,
+            542.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "x log det(1 −K) = −rT p",
+          "bbox": [
+            257.21,
+            551.42,
+            360.08,
+            567.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMSS10",
+            "CMSS8",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∂2",
+          "bbox": [
+            251.92,
+            553.76,
+            261.74,
+            565.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "for complex-valued m × 1 vector functions p(t, y, x) and r(t, y, x) which satisfy the equations",
+          "bbox": [
+            72.0,
+            578.28,
+            468.16,
+            588.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSS10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "∂yp = 1",
+          "bbox": [
+            209.49,
+            598.28,
+            243.4,
+            615.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSS10",
+            "CMSS8"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∂yr = −1",
+          "bbox": [
+            316.86,
+            598.28,
+            356.92,
+            615.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSS10",
+            "CMSS8",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "x p −prT p,",
+          "bbox": [
+            249.88,
+            600.9,
+            294.84,
+            617.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMSS10",
+            "CMSS8",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "x r + rpT r",
+          "bbox": [
+            363.4,
+            600.9,
+            402.38,
+            617.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMSS10",
+            "CMSS8"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2∂2",
+          "bbox": [
+            238.42,
+            603.24,
+            254.41,
+            621.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2∂2",
+          "bbox": [
+            351.94,
+            603.24,
+            367.93,
+            621.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(8.1)",
+          "bbox": [
+            519.52,
+            605.02,
+            540.0,
+            614.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and",
+          "bbox": [
+            72.0,
+            629.73,
+            87.78,
+            639.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "x p −3(∂xp)rT p −3prT (∂xp) = 0,",
+          "bbox": [
+            163.85,
+            638.53,
+            303.22,
+            655.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSS10",
+            "CMSS8",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "x r −3(∂xr)pT r −3rpT (∂xr) = 0.",
+          "bbox": [
+            344.53,
+            638.53,
+            479.23,
+            655.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSS10",
+            "CMSS8",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∂tp + ∂3",
+          "bbox": [
+            132.77,
+            640.86,
+            168.38,
+            653.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSS10",
+            "CMSS8"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∂tr + ∂3",
+          "bbox": [
+            315.07,
+            640.86,
+            349.06,
+            653.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSS10",
+            "CMSS8"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(8.2)",
+          "bbox": [
+            519.52,
+            642.64,
+            540.0,
+            652.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Equation (8.2) is a coupled system of vector-valued modiﬁed Korteweg-De Vries (mKdV) equations. The",
+          "bbox": [
+            86.94,
+            663.52,
+            540.02,
+            673.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "x f −6(∂xf)f 2 = 0. On the other hand, equation (8.1) forms a coupled system",
+          "bbox": [
+            209.15,
+            672.82,
+            540.04,
+            688.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSS8",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "scalar mKdV equation is ∂tf +∂3",
+          "bbox": [
+            72.0,
+            675.15,
+            213.67,
+            687.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSS8"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "11",
+          "bbox": [
+            301.02,
+            712.21,
+            310.98,
+            722.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 12,
+      "rotation": 0,
+      "drawings": 37,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 13: Thin DLPP"
+      ],
+      "labels": [
+        {
+          "text": "(n, k)",
+          "bbox": [
+            396.65,
+            75.01,
+            420.31,
+            84.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            389.62,
+            104.42,
+            395.59,
+            114.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "t1n",
+          "bbox": [
+            266.53,
+            104.6,
+            280.57,
+            115.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "t2n",
+          "bbox": [
+            326.06,
+            104.6,
+            340.1,
+            115.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            191.69,
+            105.49,
+            196.67,
+            115.45
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 13: Thin DLPP",
+          "bbox": [
+            255.83,
+            128.41,
+            356.2,
+            138.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of vector-valued nonlinear forward and backward heat equations.",
+          "bbox": [
+            72.0,
+            162.17,
+            364.5,
+            172.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "They become vector-valued nonlinear",
+          "bbox": [
+            372.96,
+            162.17,
+            540.06,
+            172.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Sch¨odinger (NLS) equations if we change yi 7→iyi. NLS and mKdV equations are two of the most famous",
+          "bbox": [
+            72.0,
+            174.96,
+            540.02,
+            186.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMSS10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "integrable partial diﬀerential equations [1]. The above two systems of equations can be combined to the",
+          "bbox": [
+            72.0,
+            188.0,
+            540.03,
+            197.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Kadomtsev-Petviashvili (KP) equation, another integrable diﬀerential equation in three variables. Theorem",
+          "bbox": [
+            72.0,
+            200.91,
+            540.06,
+            210.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "8.1 was obtained using the fact that the operator is a so-called integrable operator [37,51].",
+          "bbox": [
+            72.0,
+            213.82,
+            467.5,
+            223.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Integrable diﬀerential equations have a long history starting with the work of Gardner, Greene, Kruskal,",
+          "bbox": [
+            86.94,
+            226.73,
+            540.08,
+            236.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and Miura in 1967.",
+          "bbox": [
+            72.0,
+            239.64,
+            159.94,
+            249.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "They found a scattering transform method, an equation-speciﬁc nonlinear Fourier",
+          "bbox": [
+            168.97,
+            239.64,
+            540.08,
+            249.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "transform, to solve the Korteweg-De Vries equation. Like the integrable models in the KPZ universality",
+          "bbox": [
+            72.0,
+            252.55,
+            540.03,
+            262.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "class, integrable diﬀerentiable equations are isolated examples of nonlinear diﬀerential equations that can",
+          "bbox": [
+            72.0,
+            265.47,
+            540.04,
+            275.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "often be solved explicitly and analyzed asymptotically. See, for example, [1,39]. It is intriguing that integrable",
+          "bbox": [
+            72.0,
+            278.38,
+            540.08,
+            288.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "probability models are related to integrable diﬀerential equations.",
+          "bbox": [
+            72.0,
+            291.29,
+            358.71,
+            301.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "9",
+          "bbox": [
+            72.0,
+            322.24,
+            80.08,
+            336.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Comments on universality",
+          "bbox": [
+            96.22,
+            322.24,
+            281.21,
+            336.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "KPZ limit theorems are proved for many isolated examples of integrable models. In this ﬁnal section, we",
+          "bbox": [
+            72.0,
+            348.45,
+            540.03,
+            358.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "discuss a few instances that universality is proved.",
+          "bbox": [
+            72.0,
+            361.36,
+            291.64,
+            371.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "9.1",
+          "bbox": [
+            72.0,
+            388.81,
+            89.2,
+            400.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Thin DLPP",
+          "bbox": [
+            102.65,
+            388.81,
+            171.95,
+            400.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The universality should hold for the last passage time L(n, k) as n, k →∞. It is easy to prove it for thin",
+          "bbox": [
+            72.0,
+            409.58,
+            540.02,
+            419.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "rectangles. Recall from Subsection 2.3 that ws denotes the random variable at site s ∈Z, representing the",
+          "bbox": [
+            72.0,
+            420.44,
+            540.0,
+            434.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "passage time through the site.",
+          "bbox": [
+            72.0,
+            435.53,
+            203.37,
+            445.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 9.1 ( [16,21]). Suppose that ws is an arbitrary random variable which has all moments. Assume",
+          "bbox": [
+            72.0,
+            456.41,
+            540.03,
+            467.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "that the mean is zero and the variance is one. Then, for every x,",
+          "bbox": [
+            72.0,
+            469.32,
+            356.48,
+            479.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            274.05,
+            482.89,
+            282.35,
+            492.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0010L(n, k) −2",
+          "bbox": [
+            219.31,
+            491.38,
+            274.05,
+            504.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "nk",
+          "bbox": [
+            282.35,
+            491.51,
+            293.52,
+            501.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0011",
+          "bbox": [
+            314.0,
+            494.35,
+            319.95,
+            504.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "for k = [na]",
+          "bbox": [
+            377.68,
+            496.47,
+            428.72,
+            508.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "≤x",
+          "bbox": [
+            297.79,
+            498.12,
+            314.01,
+            508.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n,k→∞P",
+          "bbox": [
+            183.29,
+            498.25,
+            219.31,
+            514.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "lim",
+          "bbox": [
+            190.16,
+            498.25,
+            204.0,
+            508.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "= FTW(x)",
+          "bbox": [
+            322.72,
+            498.25,
+            367.5,
+            509.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            252.18,
+            504.26,
+            255.58,
+            509.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "2 k−1",
+          "bbox": [
+            252.18,
+            504.26,
+            273.58,
+            516.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            245.01,
+            506.51,
+            250.99,
+            516.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            270.19,
+            509.33,
+            273.58,
+            514.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "with any 0 < a < 3/7.",
+          "bbox": [
+            72.0,
+            525.53,
+            167.55,
+            535.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The restriction a < 3/7 is technical. If we assume only ﬁnite p moments for p > 2, then the result holds",
+          "bbox": [
+            86.94,
+            546.42,
+            540.02,
+            556.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "for thinner rectangles satisfying 0 < a < 3(p−2)",
+          "bbox": [
+            72.0,
+            556.74,
+            275.62,
+            569.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            276.82,
+            559.33,
+            279.59,
+            569.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "7p",
+          "bbox": [
+            259.33,
+            565.1,
+            267.41,
+            572.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "For the case of ﬁxed k and large n, a directed path looks like the one in Figure 13. Since the sum of ws",
+          "bbox": [
+            86.94,
+            572.24,
+            539.5,
+            583.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "on each row converges to a Brownian motion, Donsker’s theorem implies that",
+          "bbox": [
+            72.0,
+            585.15,
+            410.27,
+            595.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "k",
+          "bbox": [
+            360.93,
+            606.22,
+            365.16,
+            613.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "L(n, k)",
+          "bbox": [
+            161.68,
+            609.6,
+            192.11,
+            619.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            355.93,
+            614.04,
+            370.33,
+            624.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "√n",
+          "bbox": [
+            169.75,
+            615.91,
+            184.03,
+            633.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⇒Dk",
+          "bbox": [
+            196.07,
+            616.21,
+            221.29,
+            627.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(Bi(ti) −Bi(ti−1))",
+          "bbox": [
+            370.32,
+            616.21,
+            451.52,
+            627.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "where Dk =",
+          "bbox": [
+            231.92,
+            616.34,
+            284.39,
+            627.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "sup",
+          "bbox": [
+            313.22,
+            616.34,
+            328.22,
+            626.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0=t0≤t1≤···≤tk=1",
+          "bbox": [
+            287.16,
+            626.96,
+            354.28,
+            634.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "i=1",
+          "bbox": [
+            356.68,
+            630.43,
+            369.59,
+            637.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "and Bi(t), i = 1, · · · , k, are independent Brownian motions. On the other hand, it is known [19] that",
+          "bbox": [
+            72.0,
+            647.39,
+            512.57,
+            658.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            284.96,
+            661.29,
+            293.26,
+            671.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "k)k1/6 ≤x) = FTW(x).",
+          "bbox": [
+            293.26,
+            666.15,
+            393.83,
+            681.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "k→∞P((Dk −2",
+          "bbox": [
+            218.17,
+            670.27,
+            284.96,
+            686.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "lim",
+          "bbox": [
+            221.4,
+            670.4,
+            235.24,
+            680.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "12",
+          "bbox": [
+            301.02,
+            712.21,
+            310.98,
+            722.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

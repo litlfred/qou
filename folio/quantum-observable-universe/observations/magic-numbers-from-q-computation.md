@@ -1,4 +1,4 @@
-This remark records the computation, interpretation, $q$-dependence, witness, and homological cross-link for [`conj:magic-numbers-from-q`](#conj:magic-numbers-from-q).
+This remark records the computation, interpretation, $q$-dependence, witness, and homological cross-link for [Some functional of the Wedderburn-weighted Hoefsmit character data at $q_0$ carries nuclear shell structure](#conj:magic-numbers-from-q).
 
 ## Computation
 
@@ -9,7 +9,7 @@ The Hoefsmit seminormal matrix for partition $\lambda$ at generator $g$ has bloc
 
 This structure yields $O(d)$ matrix--vector cost per crossing instead of $O(d^3)$ for dense multiplication. This enables a $15\,000\times$ speedup at $k = 9$ (from $557\,$s to $14\,$s) and makes $k = 10$ ($42$ partitions, $\dim \leq 768$) feasible in $48\,$s.
 
-We compute the nuclear character at each $Z$ by multiplying crossing matrices through the full atomic braid $\mathcal{N}(Z, Z)$. This includes intra-nucleon $\mathcal{B}_3 \times \text{quarks}$, inter-nucleon pp/nn/pn crossings, and electron pe crossings using both generators.
+Compute the nuclear character at each $Z$ by multiplying crossing matrices through the full atomic braid $\mathcal{N}(Z, Z)$. This includes intra-nucleon $\mathcal{B}_3 \times \text{quarks}$, inter-nucleon pp/nn/pn crossings, and electron pe crossings using both generators.
 
 ## Interpretation
 
@@ -29,8 +29,8 @@ At $q = 1$ (the classical limit), all $[\rho]_q \to \rho$, $w_\lambda \to \dim(\
 
 ## Witness
 
-The file `shell-closure.witness.json` records $\delta^2 \Phi(Z)$ for $Z = 1\ldots 30$ at $K = 10$. The block-diagonal optimised computation resides in `shell_closure_compute.py`.
+The second difference $\delta^2 \Phi(Z)$ is computed for $Z = 1\ldots 30$ at $K = 10$ by a block-diagonal optimised computation.
 
 ## Cross-link: homological route past the $K = 12$ barrier
 
-The Hoefsmit-seminormal pipeline above terminates at $K = 10$. The [homological shell-condensation conjecture](#prop:homological-shell-condensation) provides a $K$-independent algebraic-geometry route. The magic ladder $\{2, 8, 20, 28, 50, 82, 126\}$ is read off the collapse of a Białynicki–Birula spectral sequence at $E_2$, with no matrix evaluation required. The numerical agreement at $Z = 8, 20, 28$ above provides the [empirical computational verification](#rem:k12-barrier-bypass) of the homological prediction at the strand counts where Hoefsmit matrices remain tractable.
+The Hoefsmit-seminormal pipeline above terminates at $K = 10$. The [homological shell-condensation conjecture](#conj:homological-shell-condensation) provides a $K$-independent algebraic-geometry route. The magic ladder $\{2, 8, 20, 28, 50, 82, 126\}$ is read off the collapse of a Białynicki–Birula spectral sequence at $E_2$, with no matrix evaluation required.

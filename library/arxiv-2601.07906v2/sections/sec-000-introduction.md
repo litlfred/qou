@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2601.07906v2
-doc_title: "March 2026 A universal sum over topologies in 3d gravity"
+doc_title: "A universal sum over topologies in 3d gravity"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
-pages: 4-9
+pages: 4-10
 source_pdf: 2601.07906v2.pdf
 source_sha256: e69b1bf37f2c75b0
-doc_brief: "March 2026 A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS 3 quantum gravity and its relationship with the statistical interpretation of the boundary theory."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.905
+latex_coverage_ratio: 0.998
+doc_brief: "A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS3 quantum gravity and its relationship with the statistical interpretation of the boundary theory."
 ---
 \label{sec:intro}
 

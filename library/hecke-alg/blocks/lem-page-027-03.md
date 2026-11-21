@@ -1,0 +1,1 @@
+Let X be a partition of n and suppose that s and t are row standard A-tableauz, Then ms, can be written as a linear combination of elements My, where uand 0 are standard j-tableau for some partition js of n such that either (i) p>, or (ii) ph=A andubs andve t.

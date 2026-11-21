@@ -3,13 +3,14 @@
  "doc_id": "arxiv-0908.3425v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "5e88d45bbc1c1b9b71ddc373cf08ce63ae9a6318c47067919d679c988d552479",
   "file": "0908.3425v1.pdf"
  },
  "provenance": {
-  "title": "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer",
-  "authors": "Institut f\u00a8 ur Kernphysik, Johannes Gutenberg-Universit\u00a8at Mainz",
+  "title": "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector",
+  "authors": "S. Scherer",
   "arxiv": {
    "id": "0908.3425",
    "version": "1",
@@ -20,25 +21,134 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 1,
+  "candidates": 5,
   "by_kind": {
-   "example": 1
+   "proposition": 5
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 5
+  },
+  "by_evidence_kind": {
+   "computational-simulation": 3,
+   "empirical-measurement": 2
+  },
+  "by_evidence_location": {
+   "in-paper": 5
+  }
  },
  "candidates": [
   {
-   "kind": "example",
-   "source_kind": "example",
+   "kind": "proposition",
+   "source_kind": "computational-claim",
    "number": null,
    "name": null,
-   "statement": "s of the application of the power-counting formula a re shown in Fig. 6.",
-   "section_file": "sections/sec-021-power-counting-scheme.md",
-   "section_title": "Power-counting scheme",
-   "pages": "35-37",
+   "statement": "So far they have either been fixed using empirical input or theoretically using QCD-inspired models, meson-resonance saturation [@Ecker:1988te] [@Pich:2008xj], and lattice QCD (see Ref. [@Necco:2009cq] for a recent overview).",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-026-the-oq4-lagrangian-of-gasser-and-leutwyler.md (p. 38-39)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-026-the-oq4-lagrangian-of-gasser-and-leutwyler.md",
+   "section_title": "The O(q4) Lagrangian of Gasser and Leutwyler",
+   "pages": "38-39",
    "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-026-the-oq4-lagrangian-of-gasser-and-leutwyler.md (p. 38-39)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-026-01",
+   "block_iri": "library/arxiv-0908.3425v1/blocks/prop-sec-026-01",
+   "claim_id": "arxiv-0908.3425v1#prop-sec-026-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "The result extracted from the combined analysis of the 12 data points reads [@Ahrens:2004mg] $$\\label{alphambeta} (\\alpha-\\beta)_{\\pi^+}=(11.6\\pm 1.5_{\\rm stat}\\pm 3.0_{\\rm syst}\\pm 0.5_{\\rm mod}) \\times 10^{-4}\\, \\mbox{fm}^3$$ and has to be compared with the ChPT result of $(5.7 \\pm 1.0)\\times 10^{-4}\\, \\mbox{fm}^3$, which deviates by 2 standard deviations from the experimental result.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-029-electromagnetic-polarizabilities-of-the-pion.md (p. 46-49)",
+   "external_refs": [],
+   "quantitative_values": [
+    "2 standard deviations"
+   ],
+   "section_file": "sections/sec-029-electromagnetic-polarizabilities-of-the-pion.md",
+   "section_title": "Electromagnetic polarizabilities of the pion",
+   "pages": "46-49",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-029-electromagnetic-polarizabilities-of-the-pion.md (p. 46-49)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-029-01",
+   "block_iri": "library/arxiv-0908.3425v1/blocks/prop-sec-029-01",
+   "claim_id": "arxiv-0908.3425v1#prop-sec-029-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "Both the experimental determination as well as the theoretical extraction from experiment require further efforts.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-029-electromagnetic-polarizabilities-of-the-pion.md (p. 46-49)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-029-electromagnetic-polarizabilities-of-the-pion.md",
+   "section_title": "Electromagnetic polarizabilities of the pion",
+   "pages": "46-49",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-029-electromagnetic-polarizabilities-of-the-pion.md (p. 46-49)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-029-02",
+   "block_iri": "library/arxiv-0908.3425v1/blocks/prop-sec-029-02",
+   "claim_id": "arxiv-0908.3425v1#prop-sec-029-02"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "([\\[Mass:Exp\\]](#Mass:Exp){reference-type=\"ref\" reference=\"Mass:Exp\"}) currently play an important role in the extrapolation of lattice QCD results to physical quark masses.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-046-chiral-expansion-of-the-nucleon-mass-to-oq6.md (p. 67-68)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-046-chiral-expansion-of-the-nucleon-mass-to-oq6.md",
+   "section_title": "Chiral expansion of the nucleon mass to O(q6)",
+   "pages": "67-68",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-046-chiral-expansion-of-the-nucleon-mass-to-oq6.md (p. 67-68)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-046-01",
+   "block_iri": "library/arxiv-0908.3425v1/blocks/prop-sec-046-01",
+   "claim_id": "arxiv-0908.3425v1#prop-sec-046-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Chiral Low-Energy Constants from Lattice QCD. arXiv:0901.4257 [hep-lat]. [Noether, 1918] Noether, E.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-052-conclusion.md (p. 76-85)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-052-conclusion.md",
+   "section_title": "Conclusion",
+   "pages": "76-85",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-052-conclusion.md (p. 76-85)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-052-01",
+   "block_iri": "library/arxiv-0908.3425v1/blocks/prop-sec-052-01",
+   "claim_id": "arxiv-0908.3425v1#prop-sec-052-01"
   }
  ]
 }

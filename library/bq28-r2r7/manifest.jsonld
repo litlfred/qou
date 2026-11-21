@@ -5,16 +5,27 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bq28-r2r7",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bq28-r2r7/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "Classical and Quantum Algorithms for Characters of the Symmetric Group",
   "contains": [
-    "library/bq28-r2r7/sections/sec-000"
+    "library/bq28-r2r7/sections/sec-front-matter",
+    "library/bq28-r2r7/sections/sec-000",
+    "library/bq28-r2r7/sections/sec-001",
+    "library/bq28-r2r7/sections/sec-002",
+    "library/bq28-r2r7/sections/sec-003",
+    "library/bq28-r2r7/sections/sec-004",
+    "library/bq28-r2r7/sections/sec-005",
+    "library/bq28-r2r7/sections/sec-006",
+    "library/bq28-r2r7/sections/sec-007",
+    "library/bq28-r2r7/sections/sec-008",
+    "library/bq28-r2r7/sections/sec-009",
+    "library/bq28-r2r7/sections/sec-010"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "bq28-r2r7",
     "title_source": "pdf-info",

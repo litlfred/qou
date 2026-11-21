@@ -3,13 +3,14 @@
  "doc_id": "arxiv-1101.1563v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "0c45b250fc4a2a49a5eeb67715789dd99b191e1c6df32e428af5fbf43fc87791",
   "file": "1101.1563v1.pdf"
  },
  "provenance": {
-  "title": "Gr\u00a8 obner-Shirshov bases for categories\u2217 L. A. Bokut \u2020",
-  "authors": "School of Mathematical Sciences, South China Normal Univer sity",
+  "title": "Gr\u00f6bner-Shirshov bases for categories",
+  "authors": "School of Mathematical Sciences, South China Normal University",
   "arxiv": {
    "id": "1101.1563",
    "version": "1",
@@ -20,145 +21,174 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 10,
+  "candidates": 5,
   "by_kind": {
-   "remark": 3,
+   "theorem": 2,
    "corollary": 2,
-   "lemma": 2,
-   "theorem": 3
+   "remark": 1
   },
-  "formalization_candidates": 7
+  "formalization_candidates": 4,
+  "by_domain": {
+   "math": 5
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 4,
+   "explanatory": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 2,
+   "elsewhere": 3
+  },
+  "by_lean_status": {
+   "doc-cited-in-lean-unlinked-claim": 4
+  },
+  "needs_lean_proof": 4
  },
  "candidates": [
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": null,
-   "name": null,
-   "statement": "that Shirshov\u2019s approach was a most universal as we under stand now since Lie",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-7",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "corollary",
-   "source_kind": "corollary",
-   "number": null,
-   "name": null,
-   "statement": "The set of all irreducible NLSW\u2019s [ u] such that u does not contain any",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "4.2",
-   "name": null,
-   "statement": "Let a1s1b1, a 2s2b2 be monic S-words. If S is a Gr\u00a8 obner-Shirshov basis in",
-   "section_file": "sections/sec-002-4-composition-diamond-lemma-for-categories.md",
-   "section_title": "Composition-Diamond lemma for categories",
-   "pages": "8-20",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "4.3",
-   "name": null,
-   "statement": "Let S \u2282 kC (X) be a subset of monic polynomials and Irr (S) = {u \u2208",
-   "section_file": "sections/sec-002-4-composition-diamond-lemma-for-categories.md",
-   "section_title": "Composition-Diamond lemma for categories",
-   "pages": "8-20",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "4.4",
-   "name": "Composition-Diamond lemma for categories",
-   "statement": "Let S \u2282 kC (X) be a nonempty",
-   "section_file": "sections/sec-002-4-composition-diamond-lemma-for-categories.md",
-   "section_title": "Composition-Diamond lemma for categories",
-   "pages": "8-20",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": null,
-   "name": null,
-   "statement": "If the category in Theorem 4.4 has only one object, then Theorem 4 .4 is exact",
-   "section_file": "sections/sec-002-4-composition-diamond-lemma-for-categories.md",
-   "section_title": "Composition-Diamond lemma for categories",
-   "pages": "8-20",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
   {
    "kind": "theorem",
    "source_kind": "theorem",
    "number": "5.1",
    "name": null,
-   "statement": "Let X, S be de\ufb01ned as the above, the generating set and the relation se t",
-   "section_file": "sections/sec-002-4-composition-diamond-lemma-for-categories.md",
-   "section_title": "Composition-Diamond lemma for categories",
-   "pages": "8-20",
+   "statement": "Let X, S be de\ufb01ned as the above, the generating set and the relation set of the quotient category C(X|S) respectively. Then with the order \u227b1 on C(X), S is a Gr\u00a8obner-Shirshov basis for the category partial algebra kC(X|S).",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-004-5-gr\u00f6bner-shirshov-bases-for-the-simplicial-cate.md (p. 11-20)",
+   "external_refs": [],
+   "proof_excerpt": "According to the order \u227b1, \u00affq+1,q = \u03b5i q+1\u03b5j\u22121 q , \u00afgq,q+1 = \u03b7j q\u03b7i q+1 and \u00afhq\u22121,q = \u03b7j q\u22121\u03b5i q. So, all the possible compositions of S are the following: (a) (fq+2,q+1, fq+1,q) \u03b5k q+2\u03b5i q+1\u03b5j\u22121 q , k \u2264i \u2264j \u22121; (b) (gq\u22121,q, gq,q+1) \u03b7k q\u22121\u03b7j q\u03b7i q+1, i \u2264j \u2264k; (c) (hq,q+1, fq+1,q",
+   "section_file": "sections/sec-004-5-gr\u00f6bner-shirshov-bases-for-the-simplicial-cate.md",
+   "section_title": "Gr\u00f6bner-Shirshov bases for the simplicial category and the cyclic category",
+   "pages": "11-20",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-004-5-gr\u00f6bner-shirshov-bases-for-the-simplicial-cate.md (p. 11-20)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-004-01",
+   "block_iri": "library/arxiv-1101.1563v1/blocks/thm-sec-004-01",
+   "claim_id": "arxiv-1101.1563v1#theorem:5.1",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/Quotient.lean:coeffEq_refl"
+   ],
+   "needs_lean_proof": true
   },
   {
    "kind": "corollary",
    "source_kind": "corollary",
    "number": "5.2",
    "name": "Maclane [58], Lemma VIII. 5.1",
-   "statement": "In the category C(X|S), each morphism",
-   "section_file": "sections/sec-002-4-composition-diamond-lemma-for-categories.md",
-   "section_title": "Composition-Diamond lemma for categories",
-   "pages": "8-20",
+   "statement": "In the category C(X|S), each morphism \u00b5 : [q] \u2192[p] can be uniquely represented as \u03b5i1 p ...\u03b5im p\u2212m+1\u03b7j1 q\u2212n...\u03b7jn q\u22121, where p \u2265i1 > ... > im \u22650, 0 \u2264j1 < ... < jn < q, and q \u2212n + m = p.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "External attribution (Maclane [58], Lemma VIII. 5.1) [[58]",
+   "external_refs": [
+    "Maclane [58], Lemma VIII. 5.1",
+    "[58]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-004-5-gr\u00f6bner-shirshov-bases-for-the-simplicial-cate.md",
+   "section_title": "Gr\u00f6bner-Shirshov bases for the simplicial category and the cyclic category",
+   "pages": "11-20",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_note": "Deductive math claim (evidence: elsewhere, External attribution (Maclane [58], Lemma VIII. 5.1) [[58]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "cor-sec-004-02",
+   "block_iri": "library/arxiv-1101.1563v1/blocks/cor-sec-004-02",
+   "claim_id": "arxiv-1101.1563v1#corollary:5.2",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/Quotient.lean:coeffEq_refl"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "5.3",
+   "name": "Maclane [58], Theorem VIII. 5.2",
+   "statement": "L = C(X|S). The cyclic category is de\ufb01ned by generators and de\ufb01ning relations as follows, see [43]. Let Y = (V (Y ), E(Y )) be an oriented (multi) graph, where V (Y ) = {[p] | p \u2208Z+ \u222a{0}}, and E(Y ) = {\u03b5i p : [p \u22121] \u2192[p], \u03b7j q : [q + 1] \u2192[q], tq : [q] \u2192[q]| p > 0, 0 \u2264i \u2264p, 0 \u2264j \u2264 q}. Let S \u2286C(Y ) \u00d7 C(Y ) be the set consisting of the following relations: fq+1,q : \u03b5i q+1\u03b5j\u22121 q = \u03b5j q+1\u03b5i q, j > i, gq,q+1 : \u03b7j q\u03b7i q+1 = \u03b7i q\u03b7j+1 q+1, j \u2265i, hq\u22121,q : \u03b7j q\u22121\u03b5i q = \uf8f1 \uf8f2 \uf8f3 \u03b5i q\u22121\u03b7j\u22121 q\u22122, j > i, 1q\u22121, i = j, i = j + 1, \u03b5i\u22121 q\u22121\u03b7j q\u22122, i > j + 1, \u03c11 : tq\u03b5i q = \u03b5i\u22121 q tq\u22121, i = 1, ..., q, \u03c12 : tq\u03b7i q = \u03b7i\u22121 q tq+1, \u0131 = 1, ..., q, \u03c13 : tq+1 q = 1q. The c",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "External attribution (Maclane [58], Theorem VIII. 5.2) [[58]",
+   "external_refs": [
+    "Maclane [58], Theorem VIII. 5.2",
+    "[58]",
+    "[43]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-004-5-gr\u00f6bner-shirshov-bases-for-the-simplicial-cate.md",
+   "section_title": "Gr\u00f6bner-Shirshov bases for the simplicial category and the cyclic category",
+   "pages": "11-20",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: elsewhere, External attribution (Maclane [58], Theorem VIII. 5.2) [[58]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "cor-sec-004-03",
+   "block_iri": "library/arxiv-1101.1563v1/blocks/cor-sec-004-03",
+   "claim_id": "arxiv-1101.1563v1#corollary:5.3",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/Quotient.lean:coeffEq_refl"
+   ],
+   "needs_lean_proof": true
   },
   {
    "kind": "theorem",
    "source_kind": "theorem",
    "number": "5.4",
    "name": null,
-   "statement": "Let Y , S be de\ufb01ned as the above, the generating set and the relation se t",
-   "section_file": "sections/sec-002-4-composition-diamond-lemma-for-categories.md",
-   "section_title": "Composition-Diamond lemma for categories",
-   "pages": "8-20",
+   "statement": "Let Y , S be de\ufb01ned as the above, the generating set and the relation set of cyclic category C(Y |S) respectively. Let SC = S \u222a{\u03c14, \u03c15}, where \u03c14 : tq\u03b50 q = \u03b5q q, \u03c15 : tq\u03b70 q = \u03b7q qt2 q+1. Then (1) With the order \u227b2 on C(Y ), SC is a Gr\u00a8obner-Shirshov basis for the cyclic category partial algebra kC(Y |S). (2) For each morphism \u00b5 : [q] \u2192[p] in the cyclic category \u039b = C(Y |S), \u00b5 can be uniquely represented as \u03b5i1 p ...\u03b5im p\u2212m+1\u03b7j1 q\u2212n...\u03b7jn q\u22121tk q, where p \u2265i1 > ... > im \u22650, 0 \u2264j1 < ... < jn < q, 0 \u2264k \u2264q and q \u2212n + m = p.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-004-5-gr\u00f6bner-shirshov-bases-for-the-simplicial-cate.md (p. 11-20)",
+   "external_refs": [],
+   "proof_excerpt": "It is easy to check that \u00affq+1,q = \u03b5i q+1\u03b5j\u22121 q , \u00afgq,q+1 = \u03b7j q\u03b7i q+1, \u00afhq\u22121,q = \u03b7j q\u22121\u03b5i q, \u00af\u03c11 = tq\u03b5i q, \u00af\u03c12 = tq\u03b7i q, \u00af\u03c13 = tq+1 q , \u00af\u03c14 = tq\u03b50 q, and \u00af\u03c15 = tq\u03b70 q. First of all, we prove Id(S) = Id(SC). It su\ufb03ces to show \u03c14, \u03c15 \u2208Id(S). Since (\u03c13, \u03c11)tq+1 q \u03b5q q=tq q\u03b5q\u22121 q tq",
+   "section_file": "sections/sec-004-5-gr\u00f6bner-shirshov-bases-for-the-simplicial-cate.md",
+   "section_title": "Gr\u00f6bner-Shirshov bases for the simplicial category and the cyclic category",
+   "pages": "11-20",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-004-5-gr\u00f6bner-shirshov-bases-for-the-simplicial-cate.md (p. 11-20)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-004-04",
+   "block_iri": "library/arxiv-1101.1563v1/blocks/thm-sec-004-04",
+   "claim_id": "arxiv-1101.1563v1#theorem:5.4",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/Quotient.lean:coeffEq_refl"
+   ],
+   "needs_lean_proof": true
   },
   {
    "kind": "remark",
    "source_kind": "remark",
    "number": null,
    "name": null,
-   "statement": "According to Loday [51], the uniqueness property in Theorem 5.4 (2) was",
-   "section_file": "sections/sec-002-4-composition-diamond-lemma-for-categories.md",
-   "section_title": "Composition-Diamond lemma for categories",
-   "pages": "8-20",
+   "statement": "According to Loday [51], the uniqueness property in Theorem 5.4 (2) was known. References [1] I. Assem, D. Simson, A. Skowro\u00b4nski, Elements of the representation theory of asso- ciative algebras, London Mathematical Society Student Texts 65, 2006. [2] Yu. A. Bahturin, Lectures on Lie Algebras, Akademie-Verlag, Berlin, 1978. [3] Yu. Bahturin, A. Olshanskii, Filtrations and distortion in in\ufb01nite-dimensional alge- bras, arXiv:1002.0015. [4] B. Bakalov, A. D\u2019Andrea, V.G. Kac, Theory of \ufb01nite pseudoalgebras, Adv. Math., 162(1)(2001), 1-140. [5] G. M. Bergman, The diamond lemma for ring theory, Adv. Math., 29(1978), 178-218. [6] L. A. Bokut, Groups",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [51], [1], [2] in sections/sec-004-5-gr\u00f6bner-shirshov-bases-for-the-simplicial-cate.md",
+   "external_refs": [
+    "[51]",
+    "[1]",
+    "[2]",
+    "[3]",
+    "[4]",
+    "[5]",
+    "[6]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-004-5-gr\u00f6bner-shirshov-bases-for-the-simplicial-cate.md",
+   "section_title": "Gr\u00f6bner-Shirshov bases for the simplicial category and the cyclic category",
+   "pages": "11-20",
    "formalization_candidate": false,
    "formalization_note": null,
-   "route_to": null
+   "route_to": null,
+   "block_id": "rem-sec-004-05",
+   "block_iri": "library/arxiv-1101.1563v1/blocks/rem-sec-004-05",
+   "claim_id": "arxiv-1101.1563v1#rem-sec-004-05"
   }
  ]
 }

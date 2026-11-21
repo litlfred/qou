@@ -1,0 +1,26 @@
+372 Cone point asymptotics
+
+2 < 1/2, in which case these converge to a
+
+exponentially unless either 7? + §
+quantity in (0, 1) for fixed # as r > 0, or #? + §? > 1/2 and § > |?\, in which
+
+case the north-going placement probability converges to 1.
+
+Example 11.47 (fortress tiling). The fortress tiling ensemble is a combinato-
+rial structure enumerated by a generating function of the form G/(Q, -- - QQ),
+where the Q; are all smooth at the point (1, 1, 1) and Q is a nondegenerate quar-
+tic and the homogeneous part of Q o exp at (0,0, 0) is given by
+
+A(x, y, z) = 2002” (2:2 -x- y) + 9(x? - yy
+
+(see, for example, [Du11]). The zero set of A is a cone over the curve 400 —
+2002 — 200y? + 9 (x? - yy = 0 depicted in Figure 11.5.
+
+Figure 11.5 Cross-section of the homogeneous part of the fortress generating
+function.
+
+The Fourier transform of A will be computed in forthcoming work of Barysh-
+nikov and Pemantle. Without this, however, we can still prove that the coeffi-
+cients d,s; decay exponentially outside the algebraic dual curve. Computing a
+Grobner basis of the ideal (r—A,, s— Ay,t—A;, A) produces a basis whose first

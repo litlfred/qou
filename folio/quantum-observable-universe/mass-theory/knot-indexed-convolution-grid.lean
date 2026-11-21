@@ -15,7 +15,7 @@ def placement_depth : ExistingOperation → ℕ
     All operational knot-indexed convolutions live at depth 0. -/
 theorem existing_operations_depth_zero (op : ExistingOperation) :
     placement_depth op = 0 := by
-  -- Ref: [manuscript] prop:knot-indexed-convolution-grid
+  -- Ref: [leitner2026] prop:knot-indexed-convolution-grid
   cases op <;> rfl
 
 end QOU.BraidKnot.KnotIndexedConvolutionGrid

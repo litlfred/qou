@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1502.02882v2
-doc_title: "Fusion categories via string diagrams Bruce Bartlett"
+doc_title: "Fusion categories via string diagrams"
 section_id: sec-015-43-formula-for-the-pivotal-operators
 section_title: "Formula for the pivotal operators"
 section_number: 4.3
 pages: 24-25
 source_pdf: 1502.02882v2.pdf
 source_sha256: 43641c6f3aed63dd
-doc_brief: "Fusion categories via string diagrams Bruce Bartlett — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.945
-latex_coverage_ratio: 0.827
+latex_coverage_ratio: 0.843
+doc_brief: "Fusion categories via string diagrams — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories."
 ---
 \label{Form_piv_op}
 We now show how to compute the pivotal operators directly in terms of the associator matrix elements. More precisely, we express them in terms of the {\em apex associator monodromy}.

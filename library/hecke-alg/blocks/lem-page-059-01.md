@@ -1,0 +1,1 @@
+im In the next result (and similarly in the definition of Bs and Bs above), the only restriction on 6 and ¢ is that 9, < 8.+h; in particular, we do not require that b < ¢ as might be inferred from the notation.

@@ -17,7 +17,7 @@ The Markov trace `tr_M : ⨆_n H_n(q) → ℚ(q)` is uniquely determined by:
   tr_M(α β)             = tr_M(β α)                         (cyclicity)
 
 combined with the Hecke quadratic `σ_i² = h σ_i + 1`, where
-`h = q - q⁻¹` and `z = 1/(q^{1/2} + q^{-1/2})`.
+`h = q - q⁻¹` and `z = q³/(q² + 1)` (convention D).
 
 For `σ_1^7 σ_2^4 ∈ H_3(q)`, this gives the closed form
 
@@ -88,7 +88,7 @@ noncomputable def protonMarkovCoeffC : ℤ[X] := heckePowerB 7 * heckePowerB 4
     where `protonMarkovCoeffA = a_7 a_4`, `protonMarkovCoeffB = a_7 b_4 +
     b_7 a_4`, `protonMarkovCoeffC = b_7 b_4` are the Hecke-power
     coefficients (Laurent polynomials in `h = q - q⁻¹`) and
-    `z = 1/(q^{1/2} + q^{-1/2})`.
+    `z = q³/(q² + 1)` (convention D).
 
     The Hecke-power recurrence (`σ_i^k = a_k σ_i + b_k` with
     `a_{k+1} = h a_k + b_k`, `b_{k+1} = a_k`, derived by iterating the

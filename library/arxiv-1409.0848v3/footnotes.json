@@ -1,0 +1,1987 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1409.0848v3",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [],
+ "uncalled_notes": [
+  {
+   "id": "fn-p018-1",
+   "page": 18,
+   "mark": "1",
+   "text": "M",
+   "block": "library/arxiv-1409.0848v3/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p041-1",
+   "page": 41,
+   "mark": "c",
+   "text": "(R×V )",
+   "block": "library/arxiv-1409.0848v3/blocks/prose-sec-015"
+  },
+  {
+   "id": "fn-p051-1",
+   "page": 51,
+   "mark": "36",
+   "text": "(1995), no. 11, 6073–6105. [BeDr] Beilinson, Alexander; Drinfeld, Vladimir. Chiral algebras. American Mathematical Society Colloquium Pub- lications, 51. American Mathematical Society, Providence, RI, 2004. [BV] Boardman, J. Michael; Vogt, Rainer. Homotopy invariant algebraic structures on topological spaces. Lecture Notes in Mathematics, Vol. 347. Springer-Verlag, Berlin-New York, 1973. [Co] Costello, Kevin. Renormalization and eﬀective ﬁeld theory. Mathematical Surveys and Monographs, 170. Amer- ican Mathematical Society, Providence, RI, 2011. [CG] Costello, Kevin; Gwilliam, Owen. Factorization algebras in perturbative quantum ﬁeld theory. Preprint. Avail- able at http://www.math.northwestern.edu/~costello/renormalization [DI] Dugger, Daniel; Isaksen, Daniel. Topological hypercovers and A1-realizations. Math. Z. 246 (2004), no. 4, 667– 689. [Fr] Francis, John. The tangent complex and Hochschild cohomology of En-rings. Compos. Math. 149 (2013), no. 3, 430–480. [FG] Francis, John; Gaitsgory, Dennis. Chiral Koszul duality. Selecta Math. (N.S.) 18 (2012), no. 1, 2787. [GM1] Goresky, Mark; MacPherson, Robert. Intersection homology theory. Topology 19 (1980), no. 2, 135–162. [GM2] Goresky, Mark; MacPherson, Robert. Intersection homology. II. Invent. Math. 72 (1983), no. 1, 77–129.",
+   "block": "library/arxiv-1409.0848v3/blocks/prose-sec-018"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "MAofglobalobservableson"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "Alg"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "categorysendingak-manifoldMtoF(M◦× R"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "d(B)of"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "d(B)ofaframed"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "d(B)ofaframedd-diskalgebraBcarries"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "d⊂n-algebrasin V and V-valued homologytheoriesforframed"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "n-algebra,Bis"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "d(B)is"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "beenconstructedforgeneralmanifoldsK,otherthanS"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "beenconstructedforgeneralmanifoldsK,otherthanS3orR"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "The category of C"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "(1)Theemptyset∅isaC"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "(2)IfXisaC"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "openconeC(X)isaC"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "(3)If Xand Yare C"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "stratiﬁed spaces, then the product stratiﬁed space X×Yis a C"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "(4)IfXisaC"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "(U→P|U)isaC"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "(5)IfXisastratiﬁedtopologicalspaceadmittinganopencoverbyC"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "XisaC"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "ObservetheseexamplesofC"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "•Euclideanspaces,R"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "•Euclideanspaces,Ri= (R"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "•anyC"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "Aconicallysmoothstratiﬁedspace,orstratiﬁedspaceforshort,isaC"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "R"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "compactstratiﬁedspaceZ;together,thesedatadeﬁnetheC"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "tstratiﬁedspaceZ;together,thesedatadeﬁnetheC0stratiﬁedspaceR"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "for Pthe stratifying poset of Z, the stratifying poset of R"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "is the stratum R"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "is the stratum Ri= R"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "asC"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "hetransitionmaps,bywhichwemeantheinclusionsofopenembeddingsR"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "R"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "embeddingbetweenbasicstobeconicallysmooth.SoconsideranC"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "eenbasicstobeconicallysmooth.SoconsideranC0openembeddingf :R"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "C(Y )֒→R"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "•Awayfromthecone-locus:Eachelementoftheatlasψ:R"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "composite open embedding R"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "composite open embedding Ri×(0, ∞)×R"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "composite open embedding Ri×(0, ∞)×Rk×C(W)֒→R"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "composite open embedding Ri×(0, ∞)×Rk×C(W)֒→Ri×C(Y )֒→R"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "thedataofanopenembeddingfψ:R"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "thedataofanopenembeddingfψ:Ri+1+k× C(W)֒→R"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "thedataofanopenembeddingfψ:Ri+1+k× C(W)֒→Rj× C(Z) ∖R"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "fr(p, 0, y) =0forall(p, y)∈R"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "=0forall(p, y)∈Ri× Y .For0<k<∞,theconditionthatfisconicallyC"
+  },
+  {
+   "page": 8,
+   "mark": "f",
+   "context": ","
+  },
+  {
+   "page": 8,
+   "mark": "r",
+   "context": ", f"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "tobedeﬁnedasamapD∥f :T R"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "tobedeﬁnedasamapD∥f :T Ri× C(Y )→T R"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "ﬁnedasamapD∥f :T Ri× C(Y )→T Rj× C(Z),requiredtobeconicallyC"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "smoothnessrequiresthatfisconicallyC"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "ces is conically smoothif, for each pair of basic charts φ:R"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "ψ:R"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "ψ:Rj×C(Z)֒→Yfor which there is a containment f(φ(R"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "ψ:Rj×C(Z)֒→Yfor which there is a containment f(φ(Ri)) ⊂ψ(R"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "themapψ−1◦f ◦φ:R"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "themapψ−1◦f ◦φ:Ri× C(Y ) →R"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "fconesC(g) : C(M) →C(N)isconicallysmooth.Ifadditionallyh : R"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "nesC(g) : C(M) →C(N)isconicallysmooth.Ifadditionallyh : Ri→R"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "mapbetweenEuclideanspaces,thentheproductmaph × C(g) : R"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "tweenEuclideanspaces,thentheproductmaph × C(g) : Ri× C(M) →R"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "q-stratumf| :X|f −1Yq→Y"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i∈[p]t"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "j)"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "j)"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "kinO"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "(O"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "Likewise,foreachpairofobjects(O"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "Likewise,foreachpairofobjects(Oi)"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "j)"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "j)"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "VF(O"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "OO"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "cts are diﬀeomorphic to a ﬁnite disjoint union of standard R"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "nhasobjectsﬁnite,disjointunionsofR"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "nhasobjectsﬁnite,disjointunionsofRntogetherwith"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "ninduces"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "ninducesasymmetricmonoidalfunctorEnv(E"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "areintermsofthespacesConfI(R"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "areintermsofthespacesConfI(Rn):={I֒→R"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "ermsofthespacesConfI(Rn):={I֒→Rn},spacesofinjectivemapsintoR"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "n→Disk"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "theO(n)-invariants.TheﬁberoverR"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "heO(n)-invariants.TheﬁberoverRniscanonicallyidentiﬁedasEmb(R"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "n)-invariants.TheﬁberoverRniscanonicallyidentiﬁedasEmb(Rn, R"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "n-algebraA,"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "n−1-algebraB,and"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "i∈IB/M"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "Miisﬁnal,foritis"
+  },
+  {
+   "page": 21,
+   "mark": "s",
+   "context": "subsets∈V"
+  },
+  {
+   "page": 21,
+   "mark": "f",
+   "context": "V"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "Vf"
+  },
+  {
+   "page": 21,
+   "mark": "e",
+   "context": "Vf0(i)⊂eOliesinside"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "wedenotethecoinvariantsasConfJ(X)ΣJ .Finally,givenabasicU∼=R"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "ΣJi≀EndB(U"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "ConfJ"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "U⊔J"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "ConfJ"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "ConfJi(X[U"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "≃ConfJ"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "≃ConfJi(X[U"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "X)(R"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "X)(Ri֒ →X[Ui])"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "[Ui]whichis"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "[Ui]whichisabijectiononcomponents,and"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "[Ui]֒→X[U"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "[Ui]֒→X[Ui])form"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "X)(R"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "X)(Ri֒ →X[Ui])"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "Mforms"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "forthestandard Grothendieck topology onConfJ"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "ConfJ"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "≃ConfJ"
+  },
+  {
+   "page": 26,
+   "mark": "e",
+   "context": "Lemma2.23.Letr:"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "X→Snglr(Bsc)/Xgiven byassigning to(e"
+  },
+  {
+   "page": 26,
+   "mark": "e",
+   "context": "X→Snglr(Bsc)/Xgiven byassigning to(ei:"
+  },
+  {
+   "page": 26,
+   "mark": "e",
+   "context": "disjointunionsof basicsconically smoothlyopenlyembeddinginto"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "Bsc/ Conf"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "M)−→Bsc/ Conf"
+  },
+  {
+   "page": 26,
+   "mark": "f",
+   "context": "isalocalizationforeachﬁnitecardinalityiandeachreﬁnement"
+  },
+  {
+   "page": 26,
+   "mark": "f",
+   "context": "Because"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "M→Misareﬁnement,thensoisthemapofstratiﬁedspacesConf"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "By Lemma 2.27, the functor ev"
+  },
+  {
+   "page": 30,
+   "mark": "f",
+   "context": "By Lemma 2.27, the functor ev0: X"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "Proof.Thecollar-gluingisprescribedbyaconstructiblebundle"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "+be a collar-gluingamong B-manifolds.If eachof X+,X−,and R×X"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "•ConsiderasequenceX"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "•ConsiderasequenceX0⊂X"
+  },
+  {
+   "page": 33,
+   "mark": "a",
+   "context": "|BΣI→BΣI,whichisjustthedataof"
+  },
+  {
+   "page": 34,
+   "mark": "a",
+   "context": "−satisﬁesthe⊗-excisionaxiomfollowsbyapplyingTheorem2.25to"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "ConfJ(X"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "i≥0ConfJ(X"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "(U֒ →X"
+  },
+  {
+   "page": 36,
+   "mark": "p",
+   "context": "+, Y′+) →ZEmb(X+, Y+)isgivenon"
+  },
+  {
+   "page": 37,
+   "mark": "f",
+   "context": "efor which"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "(R × X"
+  },
+  {
+   "page": 37,
+   "mark": "e",
+   "context": "Xcompact.Bycomposing"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": "isanequivalence.WriteU∼=R"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": "U:=[0, 1) × R"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": "U:=R"
+  },
+  {
+   "page": 38,
+   "mark": "a",
+   "context": "U]induces"
+  },
+  {
+   "page": 40,
+   "mark": "a",
+   "context": "nsothat"
+  },
+  {
+   "page": 40,
+   "mark": "n",
+   "context": "Ω"
+  },
+  {
+   "page": 40,
+   "mark": "n",
+   "context": "XHZ ∧ω≃Ω"
+  },
+  {
+   "page": 40,
+   "mark": "n",
+   "context": "orollary 3.7 arrives at a canonical equivalence of spectra:Ω"
+  },
+  {
+   "page": 40,
+   "mark": "n",
+   "context": "H∗(X; Z)∼= H"
+  },
+  {
+   "page": 40,
+   "mark": "a",
+   "context": "n≃∗.Then"
+  },
+  {
+   "page": 40,
+   "mark": "a",
+   "context": "n≃∗.Thenacoeﬃcientsystemisequivalenttothedatumof"
+  },
+  {
+   "page": 40,
+   "mark": "n",
+   "context": "Xequipped with a B-structure on R"
+  },
+  {
+   "page": 41,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 41,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 41,
+   "mark": "n",
+   "context": "(−1,1)"
+  },
+  {
+   "page": 41,
+   "mark": "n",
+   "context": "(−1,1)n−k⊂R"
+  },
+  {
+   "page": 41,
+   "mark": "0",
+   "context": "ev"
+  },
+  {
+   "page": 41,
+   "mark": "k",
+   "context": "c:Mﬂd(B"
+  },
+  {
+   "page": 41,
+   "mark": "n",
+   "context": "(−1, 1)"
+  },
+  {
+   "page": 41,
+   "mark": "n",
+   "context": "(R"
+  },
+  {
+   "page": 41,
+   "mark": "n",
+   "context": "whichwethinkofas“sectionsofE|R"
+  },
+  {
+   "page": 41,
+   "mark": "k",
+   "context": "c(V )isconnectedforeveryV∈B"
+  },
+  {
+   "page": 41,
+   "mark": "k",
+   "context": "c(V )isconnectedforeveryV∈Bkwith"
+  },
+  {
+   "page": 41,
+   "mark": "a",
+   "context": "n≃∗.Here,"
+  },
+  {
+   "page": 41,
+   "mark": "n",
+   "context": "n-algebraisΩ"
+  },
+  {
+   "page": 41,
+   "mark": "k",
+   "context": "c(R"
+  },
+  {
+   "page": 41,
+   "mark": "k",
+   "context": "c(Rk) ≃Ω"
+  },
+  {
+   "page": 41,
+   "mark": "n",
+   "context": "c(Rk) ≃ΩkZ"
+  },
+  {
+   "page": 41,
+   "mark": "k",
+   "context": "c(H"
+  },
+  {
+   "page": 41,
+   "mark": "k",
+   "context": "c(Hk) ≃Ω"
+  },
+  {
+   "page": 41,
+   "mark": "n",
+   "context": "n-algebraAEisthedata(Ω"
+  },
+  {
+   "page": 41,
+   "mark": "n",
+   "context": "n-algebraAEisthedata(ΩnZ"
+  },
+  {
+   "page": 41,
+   "mark": "n",
+   "context": "n-algebraAEisthedata(ΩnZn, Ω"
+  },
+  {
+   "page": 41,
+   "mark": "n",
+   "context": "actionofΩ"
+  },
+  {
+   "page": 41,
+   "mark": "n",
+   "context": "actionofΩnZnonΩ"
+  },
+  {
+   "page": 41,
+   "mark": "n",
+   "context": "where aS⊂Tis theaction of Ω"
+  },
+  {
+   "page": 41,
+   "mark": "n",
+   "context": "where aS⊂Tis theaction of Ωn∖SFSon Ω"
+  },
+  {
+   "page": 41,
+   "mark": "n",
+   "context": "(Ω"
+  },
+  {
+   "page": 41,
+   "mark": "a",
+   "context": "c:Mﬂd(B)→Spacessatisﬁesexcision.Consider"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "c(X"
+  },
+  {
+   "page": 42,
+   "mark": "j",
+   "context": "c(W)isconnectedforeachB"
+  },
+  {
+   "page": 42,
+   "mark": "j",
+   "context": "c(W)isconnectedforeachBjmanifoldWfor"
+  },
+  {
+   "page": 42,
+   "mark": "k",
+   "context": "k,thecategoryof"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "R"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "R"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "S"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "S0×R"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": " marked point – its set of objects is the two-element set {U"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "∅−1, U"
+  },
+  {
+   "page": 43,
+   "mark": "0",
+   "context": "S"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "wejustiﬁablydenoteasR"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "wejustiﬁablydenoteasR1:=U"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "∅−1and(R"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "∅−1and(R1, {0}) :=U"
+  },
+  {
+   "page": 43,
+   "mark": "0",
+   "context": "S"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "dule with an invariant map from the unit.Speciﬁcally, A1≃A(R"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "invariant map from the unit.Speciﬁcally, A1≃A(R1) and Ab≃A(R"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "(S"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "betweenthefactorizationhomologyofthepointedcircle(S"
+  },
+  {
+   "page": 43,
+   "mark": "a",
+   "context": "1)(V) isthenequivalent,by evaluating ondirected graphs with"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "twocircleswithamarkedpointoneachcircle,(S"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "twocircleswithamarkedpointoneachcircle,(S1∪{0} S"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "(S"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "(S1∪{0}S"
+  },
+  {
+   "page": 43,
+   "mark": "j",
+   "context": "Forthedeﬁnitionbelowweusejth-stratumfunctor(−)"
+  },
+  {
+   "page": 43,
+   "mark": "n",
+   "context": "n→Bsc"
+  },
+  {
+   "page": 43,
+   "mark": "n",
+   "context": "n→BscnspannedbythosebasicsUforwhichU"
+  },
+  {
+   "page": 44,
+   "mark": "g",
+   "context": "nand"
+  },
+  {
+   "page": 44,
+   "mark": "p",
+   "context": "nandg:∆j→Xis"
+  },
+  {
+   "page": 44,
+   "mark": "f",
+   "context": "nandg:∆j→Xisp-allowable,then"
+  },
+  {
+   "page": 44,
+   "mark": "n",
+   "context": "nof"
+  },
+  {
+   "page": 44,
+   "mark": "n",
+   "context": "d⊂nwhoseobjectsareframed"
+  },
+  {
+   "page": 44,
+   "mark": "a",
+   "context": "d⊂nwhoseobjectsareframedn-manifoldsMwith"
+  },
+  {
+   "page": 44,
+   "mark": "n",
+   "context": "unionbythetwoobjectsR"
+  },
+  {
+   "page": 44,
+   "mark": "n",
+   "context": "unionbythetwoobjectsRn:= U"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "∅−1and(R"
+  },
+  {
+   "page": 44,
+   "mark": "n",
+   "context": "∅−1and(Rd⊂R"
+  },
+  {
+   "page": 44,
+   "mark": "n",
+   "context": "∅−1and(Rd⊂Rn) := U"
+  },
+  {
+   "page": 44,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 45,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 45,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 45,
+   "mark": "a",
+   "context": "d⊂n-algebraisequivalenttothatof"
+  },
+  {
+   "page": 45,
+   "mark": "a",
+   "context": "d⊂n-algebraisequivalenttothatofatriple(A, B, α),whereAis"
+  },
+  {
+   "page": 45,
+   "mark": "a",
+   "context": "n-algebra,Bis"
+  },
+  {
+   "page": 45,
+   "mark": "a",
+   "context": "d-algebra,andαis"
+  },
+  {
+   "page": 45,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 45,
+   "mark": "n",
+   "context": "–thisisanS"
+  },
+  {
+   "page": 45,
+   "mark": "a",
+   "context": "d⊂nhas"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "isomorphictothestratiﬁedspace(R"
+  },
+  {
+   "page": 45,
+   "mark": "n",
+   "context": "isomorphictothestratiﬁedspace(Rd⊂R"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "containatmostoneconnectedcomponentequivalentto(R"
+  },
+  {
+   "page": 45,
+   "mark": "n",
+   "context": "containatmostoneconnectedcomponentequivalentto(Rd⊂R"
+  },
+  {
+   "page": 45,
+   "mark": "a",
+   "context": "d⊂n)≤1with"
+  },
+  {
+   "page": 45,
+   "mark": "a",
+   "context": "d⊂n→Fin∗restrictsto"
+  },
+  {
+   "page": 45,
+   "mark": "f",
+   "context": "d⊂n)≤1→Fin∗whichisaninnerﬁbrationandforeachedge"
+  },
+  {
+   "page": 45,
+   "mark": "a",
+   "context": "d⊂n)≤1→Fin∗whichisaninnerﬁbrationandforeachedgefinFin∗with"
+  },
+  {
+   "page": 45,
+   "mark": "e",
+   "context": ")≤1→Fin∗whichisaninnerﬁbrationandforeachedgefinFin∗withalift"
+  },
+  {
+   "page": 45,
+   "mark": "a",
+   "context": "d⊂n)≤1thereiseither"
+  },
+  {
+   "page": 45,
+   "mark": "f",
+   "context": "d⊂n)≤1thereiseitheracoCartesianedgeover"
+  },
+  {
+   "page": 45,
+   "mark": "e",
+   "context": "d⊂n)≤1thereiseitheracoCartesianedgeoverfwithsource"
+  },
+  {
+   "page": 45,
+   "mark": "e",
+   "context": "ofmorphismsoverfwithsource"
+  },
+  {
+   "page": 45,
+   "mark": "a",
+   "context": "d⊂n)≤1overFin∗itismeant"
+  },
+  {
+   "page": 45,
+   "mark": "n",
+   "context": "n−d-F(R"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "n−d-F(Rn)-modulegivenbyF(R"
+  },
+  {
+   "page": 45,
+   "mark": "n",
+   "context": "n−d-F(Rn)-modulegivenbyF(Rd⊂R"
+  },
+  {
+   "page": 45,
+   "mark": "a",
+   "context": "n−d-F(Rn)-modulegivenbyF(Rd⊂Rn).Extendingsuch"
+  },
+  {
+   "page": 45,
+   "mark": "n",
+   "context": "algebraF(R"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "d-algebra structure on F(R"
+  },
+  {
+   "page": 45,
+   "mark": "n",
+   "context": "d-algebra structure on F(Rd⊂R"
+  },
+  {
+   "page": 45,
+   "mark": "n",
+   "context": "n−d-F(R"
+  },
+  {
+   "page": 45,
+   "mark": "a",
+   "context": "n−d-F(Rn)-module.Thatis,thefollowingis"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 46,
+   "mark": "a",
+   "context": "d-algebraBtothestructureof"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "n-foldbased loopspace Ω"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "Dfrn(Ω"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "Dfrn(ΩnZ) ≃Ω"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "n-HochschildcohomologyspaceofΩ"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "n-HochschildcohomologyspaceofΩnZandthe"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "Ω"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "Sn−1Ω"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "sendingtheobjectΩ"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "n-Ω"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "naturalinclusionofconstantmapsZ→ZS"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "Dfrn(Ω"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "Ω"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "ΩnZ(Ω"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "ΩnZ(ΩnZ, Ω"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "Map(Z, ZS"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "Chooseabasepointp∈S"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "Map(Z, ZS"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "Map(Z, Z)S"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "Map(Z, ZS"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "where the space of maps from the suspension S"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "where the space of maps from the suspension Sn= ΣS"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "pullbackofthetwodiagonalmapsMap(Z, Z)→Map(Z, Z)S"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "colimitcolim(∗←S"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "colimitcolim(∗←Sn−1→∗) ≃S"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "ofS"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "d⊂n-algebrastructureonthepair(Ω"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "d⊂n-algebrastructureonthepair(ΩnZ, Ω"
+  },
+  {
+   "page": 47,
+   "mark": "a",
+   "context": "n-algebrastructureonthepair(ΩnZ, ΩdW)isequivalenttothedataof"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "ZS"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "d⊂n-algebraon(Ω"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "d⊂n-algebraon(ΩnZ, Ω"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "Sn−d−1 Ω"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "d(Ω"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "Sn−d−1 Ω"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "d+1-algebrastothemappingspaceΩ"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "d+1-algebrastothemappingspaceΩd+1ZS"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "d(Ω"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "d(ΩdW)isequivalenttothespaceofmapstoΩ"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "Finally,a(d+1)-foldloopmapΩ"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "Finally,a(d+1)-foldloopmapΩd+1ZS"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "Finally,a(d+1)-foldloopmapΩd+1ZSn−d−1→Ω"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "tweentheir(d + 1)-folddeloopings.The(d + 1)-folddeloopingofΩ"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "their(d + 1)-folddeloopings.The(d + 1)-folddeloopingofΩd+1ZS"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": " 1)-folddeloopings.The(d + 1)-folddeloopingofΩd+1ZSn−d−1isZS"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "Zis n-connective; the (d+1)-fold delooping of Ω"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "ofBAut(W).However,sinceZS"
+  },
+  {
+   "page": 47,
+   "mark": "a",
+   "context": "d⊂n-algebras.Thatis,thereis"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "givenbyevaluatingontheobjectsR"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "givenbyevaluatingontheobjectsRnand(R"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "givenbyevaluatingontheobjectsRnand(Rd⊂R"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "complexE⊂D"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "complexE⊂Dd⊂n.EisacoproductEndD"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "complexE⊂Dd⊂n.EisacoproductEndDd⊂n(R"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "complexE⊂Dd⊂n.EisacoproductEndDd⊂n(Rn)`EndD"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "complexE⊂Dd⊂n.EisacoproductEndDd⊂n(Rn)`EndDd⊂n(R"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "complexE⊂Dd⊂n.EisacoproductEndDd⊂n(Rn)`EndDd⊂n(Rd⊂R"
+  },
+  {
+   "page": 48,
+   "mark": "n",
+   "context": "theirstandardframings{R"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "theirstandardframings{Rn}`{R"
+  },
+  {
+   "page": 48,
+   "mark": "n",
+   "context": "theirstandardframings{Rn}`{Rd⊂R"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "d the trefoil knot, whose knot group is presented by ⟨x, y|x"
+  },
+  {
+   "page": 49,
+   "mark": "3",
+   "context": "y"
+  },
+  {
+   "page": 49,
+   "mark": "a",
+   "context": "n≃ConfP (M).Consequently,factorization homology isnot"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "n-algebra A comes from an"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "n-algebra A comes from an n-fold loop space on an"
+  },
+  {
+   "page": 49,
+   "mark": "a",
+   "context": "ncanbeenhancedto"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "ncanbeenhancedtoaDisk"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "indicatedbytheassignmentsR"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "indicatedbytheassignmentsRn7→R"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "indicatedbytheassignmentsRn7→RnandR"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "indicatedbytheassignmentsRn7→RnandRd7→(R"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "indicatedbytheassignmentsRn7→RnandRd7→(Rd⊂R"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "Sn−d−1×R"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "d⊂n-algebrastructureAon(A"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "d⊂n-algebrastructureAon(An, A"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "n-algebra andA"
+  },
+  {
+   "page": 49,
+   "mark": "a",
+   "context": "n-algebra andAdis"
+  },
+  {
+   "page": 49,
+   "mark": "a",
+   "context": "d-algebra, isequivalenttothestructureof"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "Sn−d−1×R"
+  },
+  {
+   "page": 49,
+   "mark": "a",
+   "context": "n,whichis"
+  },
+  {
+   "page": 49,
+   "mark": "j",
+   "context": "S"
+  },
+  {
+   "page": 49,
+   "mark": "j",
+   "context": "nand"
+  },
+  {
+   "page": 49,
+   "mark": "a",
+   "context": "inertis"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "inertisapairofﬁnitesets(J"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "inertisapairofﬁnitesets(Jn, J"
+  },
+  {
+   "page": 49,
+   "mark": "a",
+   "context": "inertisapairofﬁnitesets(Jn, Jd)whileanedgeisthedataof"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "n)+and(J"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "inertasE= (J"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "inertasE= (Jn, J"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "(R"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "(Rd⊂R"
+  },
+  {
+   "page": 50,
+   "mark": "e",
+   "context": "P ,"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "erethevalueof(P•, Q•)on(Jn, Jd)iscanonicallyequivalent toP⊗J"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "evalueof(P•, Q•)on(Jn, Jd)iscanonicallyequivalent toP⊗Jn⊗Q⊗J"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "O(n)J"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "O(d⊂n)J"
+  },
+  {
+   "page": 50,
+   "mark": "e",
+   "context": "P ,"
+  },
+  {
+   "page": 50,
+   "mark": "e",
+   "context": "P ,"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "P⊗J"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "P⊗Jn⊗Q⊗J"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "d⊂nfromtheimageunder"
+  },
+  {
+   "page": 50,
+   "mark": "a",
+   "context": "inertis"
+  },
+  {
+   "page": 50,
+   "mark": "a",
+   "context": "isois"
+  },
+  {
+   "page": 50,
+   "mark": "a",
+   "context": "iso.Asso,thecolimit(4.3.2)breaksupas"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "intoaKanﬁbrationsequenceO(n)J"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "intoaKanﬁbrationsequenceO(n)Jn× O(d⊂n)J"
+  },
+  {
+   "page": 50,
+   "mark": "a",
+   "context": "isowhoseﬁberover E′istheKancomplexIso(E′, E)whichis"
+  },
+  {
+   "page": 50,
+   "mark": "a",
+   "context": "isoG−→Gwhoseﬁbersareeither"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "−−−−−→Viscanonically equivalent totheconstant mapatP⊗J"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "−−−−−→Viscanonically equivalent totheconstant mapatP⊗Jn⊗Q⊗J"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "P⊗J"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "P⊗Jn⊗Q⊗J"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "P⊗J"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "P⊗Jn⊗Q⊗J"
+  },
+  {
+   "page": 51,
+   "mark": "e",
+   "context": "Wemakeexpression(4.3.3)moreexplicitforthecasethat(eP,"
+  },
+  {
+   "page": 51,
+   "mark": "n",
+   "context": "J"
+  },
+  {
+   "page": 51,
+   "mark": "n",
+   "context": "JnR"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "Jd(R"
+  },
+  {
+   "page": 51,
+   "mark": "n",
+   "context": "Jd(Rd⊂R"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "R"
+  },
+  {
+   "page": 51,
+   "mark": "n",
+   "context": "Rd⊂R"
+  },
+  {
+   "page": 51,
+   "mark": "n",
+   "context": "R"
+  }
+ ]
+}

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2608.25107v1
-doc_title: "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples César Jesús-Valls1,∗ 1European Organization for Nuclear Research (CERN), 1211 Geneva 23, Switzerland"
+doc_title: "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples"
 section_id: sec-001-introduction
 section_title: "Introduction"
 section_number: null
 pages: 1-2
 source_pdf: 2608.25107v1.pdf
 source_sha256: 6dca8b99a1f32db4
-doc_brief: "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples César Jesús-Valls1,∗ 1European Organization for Nuclear Research (CERN), 1211 Geneva 23, Switzerland — 17 sections: ADoNIS: A Differe"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.85
+latex_prose_ratio: 0.836
+latex_coverage_ratio: 0.991
+doc_brief: "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples — 19 sections: ADoNIS: A Differentiable generatOr; Introduction; Differentiable programming in part"
 ---
 Neutrino oscillation experiments have entered a precision era. The determination of the leptonic charge-parity (CP)-violating phase, the resolution of the neutrino mass ordering, and the increasingly stringent tests of the three-flavour paradigm all rest on comparing measured event rates against predictions at the percent level [@T2K:2025wet; @NOvA:2025tmb; @DUNE:2020jqi; @Hyper-Kamiokande:2025fci]. Because accelerator neutrino beams are broad-band, the energy of each interacting neutrino is not known a priori and must be inferred from the observed final state. That inference is made through a model of the neutrino--nucleus interaction, so the accuracy of the model propagates directly into the accuracy of the oscillation measurement. Interaction modelling is consequently among the leading systematic uncertainties of the field, and one of the most difficult to control, since its sources lie in details of nuclear physics that are not directly observable, and can mimic the very shifts in the oscillation parameters that are being measured [@Coyle:2025xjk; @Liu:2025hpl; @Dolan:2026nlr].
 

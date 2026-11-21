@@ -1,0 +1,43 @@
+Geometry & Topology 10 (2006) 1239-1284 1239
+arXiv version: fonts, pagination and layout may vary from GT published version
+
+On canonical triangulations of once-punctured
+torus bundles and two-bridge link complements
+
+FRANGOIS GUERITAUD
+APPENDIX BY DAVID FUTER
+
+We prove the hyperbolization theorem for punctured torus bundles and two-bridge
+link complements by decomposing them into ideal tetrahedra which are then given
+hyperbolic structures, following Rivin’s volume maximization principle.
+
+57MS0; 57M27
+
+A la mémoire de Pierre Philipps
+
+1 Introduction
+
+Let T := (R?\Z?)/Z? be the once-punctured torus endowed with its differential
+structure and an orientation. The group G of isotopy classes of orientation-preserving
+diffeomorphisms y: T — T (or the mapping class group of T) is identified as
+G ~ SL2(Z), so each such map y has well-defined eigenvalues in C. For [y] in G,
+define the punctured torus bundle
+
+Vo :=T x [0,1]/~
+
+where ~ identifies (x,0) with (y(x), 1) for all x in T. Then Vy is a differentiable
+oriented 3—manifold, well-defined up to diffeomorphism. Thurston’s Hyperbolization
+Theorem [21] implies the following theorem as a very special case.
+
+Theorem 1.1 If ~ has two distinct real eigenvalues, the punctured torus bundle V,
+admits a finite-volume, complete hyperbolic metric.
+
+The aim of this paper is to prove Theorem 1.1 by elementary and, to some extent,
+constructive arguments. The strategy is to exhibit a canonical, geodesic triangulation H
+of V,, into ideal tetrahedra (hyperbolic tetrahedra whose vertices are at infinity).
+
+Combinatorially, 71 (sometimes called the Floyd—Hatcher or monodromy triangulation)
+is found by expressing a certain conjugate of +y as a product of positive transvection
+matrices. Once such combinatorial data for a triangulation is given, the problem of
+
+Published: 16 September 2006 DOE: 10.2140/gt.2006.10.1239

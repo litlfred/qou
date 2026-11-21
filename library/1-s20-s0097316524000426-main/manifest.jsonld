@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1-s20-s0097316524000426-main",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s20-s0097316524000426-main/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "1-s20-s0097316524000426-main",
+  "title": "Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions",
   "contains": [
+    "library/1-s20-s0097316524000426-main/sections/sec-front-matter",
     "library/1-s20-s0097316524000426-main/sections/sec-000",
     "library/1-s20-s0097316524000426-main/sections/sec-001",
     "library/1-s20-s0097316524000426-main/sections/sec-002",
@@ -20,10 +21,12 @@
     "library/1-s20-s0097316524000426-main/sections/sec-006"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "1-s20-s0097316524000426-main",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1-s2.0-S0097316524000426-main.pdf",
     "source_sha256": "76a8ab857163aa09806870d295d28c492be865cf5c1aae6a8f0d0dd9632efdcf",
     "pages": 10,

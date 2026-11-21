@@ -1,0 +1,35 @@
+192 Overview of analytic methods for multivariate GFs
+
+critical values, bp is above the highest critical value, and —oo is M, for any b
+less than the least critical value. See Section C.4 for details. ia)
+
+Remark 7.16. The isomorphism H,_\(V,,) = Oy Ha-1(Vej+e, Vee) i8 not
+natural. For each attachment at z; there is an arbitrary choice of an absolute
+cycle y; that projects to the generator of the homology group for the attach-
+ment. The cycle y; + @ would do equally well for any cycle a supported on
+V.;-e. One might say that the choice of y;,..., Ym, listed in decreasing order
+of height, can be altered by an arbitrary upper triangular map, replacing y;
+by vj + Lis; Divi. This is the so-called Stokes phenomenon, illustrated in Fig-
+ure 7.11: the saddle point integral from z; might pass on either side of z; as it
+travels downward, with the integrals over the two choices of contour differing
+by the integral over y;. Thus, for a cycle C the decomposition [C] = 7), xx
+is not natural. It is important to note, however, that the leading coefficient nj, is
+well-defined independent of the chosen basis {y;}, where j, is the least index
+such that nj, # 0.
+
+Figure 7.11 Stokes’s phenomenon reflects the fact that a curve draped over the
+higher saddle can descend on either side of the lower saddle, as shown here by
+two possible branches. The difference between these two curves is a curve draped
+over the lower saddle.
+
+The simplifying assumption of distinct critical values is not important. To
+get rid of this, we define the local homology pair V?"" at a critical point p at
+height c to be the pair (X, Y), where Y = V<-_,/2 and X is the union of Y with
+the ball B,(p) for ¢ > 0 sufficiently small (see Definition C.31 of Appendix C
+for full details). Any such pairs are homotopy equivalent as long as ¢ is small
+enough that the 2e-balls about different critical points are disjoint.
+
+Deformations defined in Appendix C show that if there is a unique critical
+point p with height c € [a,b] then, for small ¢ > 0, the local pair Pile is
+homotopy equivalent to the slab (V<c+2, Vee). The benefit to replacing the
+slab by the local pair occurs when there are multiple critical points sharing a

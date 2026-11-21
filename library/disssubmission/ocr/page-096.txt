@@ -1,0 +1,50 @@
+88 Chapter 4 — The Tannaka group of the theta divisor
+
+LEMMA 4.15. Let H be an irreducible connected subgroup of G(g)
+which is simple modulo its center. Then
+
+dim(H) < g! or H = Gg).
+
+Proof. Let V denote the standard representation of the symplectic or
+special orthogonal group G(g), and suppose dim(H) > g! = dim(V). Then
+by irreducibility the restriction of V to H must be one of the representations
+in table 1 of [3]. Since dim(V) is the factorial of a natural number, one of
+the following cases must occur for some r € N.
+
+(a) The group H is of type A,, C, or D, and acts on V via its standard
+representation.
+
+(b) The group H is of type A, and acts on V via the symmetric or via
+the alternating square of its standard representation.
+
+Case (a) can only occur for H = G(g) since G(g) is itself the symplectic
+or special orthogonal group with V as its standard representation. To deal
+with case (b), note that by the criterion in [46, th. 3.2.14] the symmetric
+square of the standard representation of A; is self-dual only if r = 1, but
+then it has dimension 3 4 dim(V). In the same vein, the alternating square
+of the standard representation of A, is self-dual of dimension g! only in the
+case (r,g) = (3,3) where H = G(g) = SO¢(C) for dimension reasons. O
+
+To complete the proof of theorem 4.2, all that remains to be done is to
+show that on a general ppav X we have
+
+dim(G) > g!
+
+for the group G = G(dg) attached to the theta divisor. But this follows by
+induction on the dimension g = dim(X). Indeed, we already know that the
+theorem holds for g < 3, so we can assume g > 4. To start the induction,
+for g = 4 we can use the subgroup in part (3) of proposition 4.12 since in
+that case dim(Slo,_2(C)) = 35 > g! = 24. This being settled, the induction
+step from dimension g— 1 to dimension g is provided by part (1) of the
+proposition because dim(G(g—1)) > g! for g > 5. This finishes the proof of
+the theorem. Going through the above arguments, one furthermore checks
+that for g = 4 all we need is part (3) of proposition 4.12. Hence theorem 4.3
+follows with the same proof.
+
+4.6. Singularities of type A;
+
+For completeness we include in this section some remarks about double
+points that have been used in the proof of part (2) of proposition 4.12. In that
+proof we have only dealt with ordinary double points, but since this is hardly
+more work, in what follows we place ourselves in a slightly more general
+setting. Let Y C C”*! be a complex analytic hypersurface. For k > 1, we

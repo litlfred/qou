@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.978
 latex_coverage_ratio: 0.948
+doc_brief: "FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS — Factorization homology theories of topological manifolds, after Beilinson, Drinfeld and Lurie, are homology-type theories for topological n-manifolds"
 ---
 We now consider $B$-framed $n$-disks. In terms of configuration spaces, we identify the maximal $\infty$-subgroupoid of $\mathop{\mathrm{{\mathcal D}\sf isk}}^B_{n/M}$, $B$-framed $n$-disks embedding into a $B$-framed $n$-manifold.
 

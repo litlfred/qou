@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2501.00914v2
-doc_title: "L-SPACES AND KNOT TRACES"
+doc_title: "L-spaces and knot traces"
 section_id: sec-001-11-nonzero-traces
 section_title: "Nonzero traces"
 section_number: 1.1
 pages: 3-3
 source_pdf: 2501.00914v2.pdf
 source_sha256: d94bd6edf8544d4a
-doc_brief: "L-SPACES AND KNOT TRACES — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.87
-latex_coverage_ratio: 0.838
+latex_prose_ratio: 0.93
+latex_coverage_ratio: 1.0
+doc_brief: "L-spaces and knot traces — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries."
 ---
 We  consider detection by nonzero traces as well, and prove several results that are in stark contrast with what is known about characterizing slopes. For instance, all rational surgeries characterize the trefoils  \cite{osz-characterizing}, but if $K$ is a positive torus knot besides the right-handed trefoil, then it is  unknown whether \emph{any} integer $n\leq 0$ is a characterizing slope for $K$. On the other hand, we use Theorem \ref{thm:lspace-detection-main} to prove the following:
 

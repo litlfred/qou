@@ -1,5 +1,5 @@
-| Bridge | Direction | Lean | Closure |
-|---|---|---|---|
-| `closureN @ n=2` $\leftrightarrow$ `closure2 ∘ writhe` | n=2 specialisation | `closureN_eq_closure2` | `rfl` |
-| `BraidWord 3` $\to$ `TypedBraidWord3` | n=3 conversion | `BraidWord.toBraid3` (`def`) | mapped via `BraidCrossing.toTypedB3` (`sigma`/`sigma_inv` subset) |
-| `BraidWord.toBraid3_length` | length preservation | `@[simp]` lemma | `List.length_map` |
+| Bridge | Direction | Content |
+|---|---|---|
+| general closure at $n=2$ $\leftrightarrow$ 2-strand closure of the writhe | $n=2$ specialisation | the two agree by definition |
+| 3-strand braid words $\to$ typed $\mathbf{B}_3$ braid words | $n=3$ conversion | each crossing $\sigma_i^{\pm 1}$ is mapped to the corresponding typed crossing |
+| length of the converted word | length preservation | the conversion preserves word length |

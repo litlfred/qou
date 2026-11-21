@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2601.05136v2
-doc_title: "State integrals for the quantized SL₂(ℂ) Chern–Simons invariant"
+doc_title: "State integrals for the quantized SL 2 ( C ) Chern-Simons invariant"
 section_id: sec-005-diagrams-and-colorings
 section_title: "Diagrams and colorings"
 section_number: null
 pages: 5-6
 source_pdf: 2601.05136v2.pdf
 source_sha256: cee15456257d3028
-doc_brief: "State integrals for the quantized SL₂(ℂ) Chern–Simons invariant — Previous work of the author and N."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.9
-latex_coverage_ratio: 0.757
+latex_coverage_ratio: 0.938
+doc_brief: "State integrals for the quantized SL 2 ( C ) Chern-Simons invariant — Previous work of the author and N."
 ---
 []{#sub:Diagrams label="sub:Diagrams"}
 

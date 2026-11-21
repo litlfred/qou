@@ -1,0 +1,39 @@
+26 Generating functions
+
+Exercise 2.4. Fix a natural number n.
+
+(a) What is the generating polynomial for the number of strictly increasing
+sequences of length k chosen from [n]?
+
+(b) Let S be the set of sequences of symbols from {0}U[n] starting with a 0 and
+such that the subsequence between any two consecutive zeros is strictly
+increasing. Find the bivariate generating function counting elements of S
+by their length and number of zeros.
+
+Transfer matrices and restricted transitions
+
+Suppose we want to count words (finite sequences) on an alphabet V such
+that consecutive pairs of letters must come from a fixed set E. Allowed words
+of length n are equivalent to paths of length n in the directed graph whose
+vertices are identified by the elements of V and whose edges are identified
+by the elements of E. To count such paths by number of steps, let IM be the
+adjacency matrix of (V, E): the square matrix indexed by V with M,,, = 1 if
+(v,w) € E and M,,, = 0 otherwise. The number of allowed paths of length
+n from v to w is (M"),,,. If we wish to enumerate paths by length we must
+sum (zM)" over n, so the generating function counting finite paths from v to
+w weighted by their length is
+Fyy(2) = DCM =|[-2M)"],
+This approach, known as the transfer matrix method, is quite versatile. For
+instance, to count all allowed paths by length we may sum in v and w, giving
+the generating function F(z) = trace((I — zM)~'J) where J is the |V| x |V|
+square matrix of 1s. More generally, we can enumerate by the number of each
+type of transition: if FE = {pi,...,p,} and My = zx if py = (v, w) and My =0
+if (v,w) ¢ E then F(Z) = (Ud - My! lw enumerates paths from v to w by
+the number of each transition, and F(z) = trace((I — M1)~! J) enumerates all
+paths by the number of each transition.
+
+Example 2.9 (binary strings revisited). The transfer matrix method may be
+used to re-derive the generating function in Example 2.1. Let V = {0, 1} and
+E = {(0,0), (0, 1), (1, 0)} contain all directed edges except (1, 1). Then
+
+welt o|

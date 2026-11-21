@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s40879-023-00706-0",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s40879-023-00706-0/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "Bring’s curve: old and new",
   "contains": [
+    "library/s40879-023-00706-0/sections/sec-front-matter",
     "library/s40879-023-00706-0/sections/sec-000",
     "library/s40879-023-00706-0/sections/sec-001",
     "library/s40879-023-00706-0/sections/sec-002",
@@ -32,10 +33,12 @@
     "library/s40879-023-00706-0/sections/sec-018",
     "library/s40879-023-00706-0/sections/sec-019",
     "library/s40879-023-00706-0/sections/sec-020",
-    "library/s40879-023-00706-0/sections/sec-021"
+    "library/s40879-023-00706-0/sections/sec-021",
+    "library/s40879-023-00706-0/sections/sec-022",
+    "library/s40879-023-00706-0/sections/sec-023"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "s40879-023-00706-0",
     "title_source": "pdf-info",

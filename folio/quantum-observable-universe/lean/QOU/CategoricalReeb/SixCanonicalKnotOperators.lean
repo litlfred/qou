@@ -18,7 +18,7 @@ discharge.
 
 ## References
 
-- [manuscript] folio/quantum-observable-universe/braids-and-knots/six-canonical-knot-operators.md
+- [leitner2026] folio/quantum-observable-universe/braids-and-knots/six-canonical-knot-operators.md
 -/
 
 namespace QOU.CategoricalReeb
@@ -160,7 +160,7 @@ theorem canonical_braid_count_six :
     footprints of the $q$-Reeb flow trajectories (which DOES
     consume the `QReebFlowOnColorCoords q` class) lives in the
     manuscript prose, not in this theorem. -/
--- Ref: [manuscript] folio/quantum-observable-universe/braids-and-knots/six-canonical-knot-operators.md
+-- Ref: [leitner2026] folio/quantum-observable-universe/braids-and-knots/six-canonical-knot-operators.md
 theorem boundary_perm_realises_S3 :
     Function.Injective CanonicalBraid.boundaryPerm ∧
     (∀ β : CanonicalBraid, Function.Bijective β.boundaryPerm) ∧

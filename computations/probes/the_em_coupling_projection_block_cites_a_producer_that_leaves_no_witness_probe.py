@@ -205,7 +205,7 @@ def main() -> int:
     # what it actually holds.
     mislabel = sum(1 for _ in re.finditer(r"CODATA α_EM = 1/137\.035999206",
                                           claim_src))
-    print(f"    producer sites still calling 137.035999206 'CODATA' = {mislabel}"
+    print(f"    producer sites still calling 137.035999206 'CODATA' = {mislabel}"  # noqa: P31 — names the mislabel it counts
           f"   (was 4)")
     check("no site now presents the Rb-87 value as a CODATA adjustment; the "
           "constant's value is unchanged", mislabel == 0)
@@ -324,7 +324,8 @@ def main() -> int:
         wb.add_caveat(
             "Says nothing about which pin either block SHOULD take. That is the owner "
             "ruling qou-i229 holds. No published figure is changed here.")
-        print(f"\nWitness: {wb.save()}")
+        print(f"\nWitness: {wb.save(extra={"q0Anchor": "ambiguous", "q0AnchorReason": (
+            "comparison by design: evaluates the block's quantity q[9]_q[10]_q at three registered pins (proton 1.10997858275138..., live CODATA-2022 muon 1.10997859564273..., retired CODATA-2018 muon 1.10997859555418...) to find which one the published figures come from")})}")
     except Exception as e:  # pragma: no cover
         print(f"\n(witness emit skipped: {e})")
 

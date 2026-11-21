@@ -6,10 +6,12 @@
   "sha256": "3d7e5a14a079c8c5810f97466d89979af7cbeea1a731c08933d630c2a71f9946",
   "bytes": 476611,
   "pages": 51,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +22,26 @@
   },
   "doi": null,
   "title": "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY",
-  "authors_raw": null,
-  "abstract": "We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory. In certain special cases we show that these problems hav e unique solutions which can be written explicitly as products of gamma functions. We brie\ufb02y explain c onnections with Gromov- Witten theory and exact WKB analysis.",
+  "authors_raw": "TOM BRIDGELAND",
+  "title_lines": [
+   "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY"
+  ],
+  "abstract": "We study a class of Riemann-Hilbert problems arising naturally in Donaldson-Thomas theory. In certain special cases we show that these problems have unique solutions which can be written explicitly as products of gamma functions. We brieﬂy explain connections with Gromov- Witten theory and exact WKB analysis.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20200624205611-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20200624205611-04'00'"
   },
-  "title_lines": [
-   "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY",
-   "TOM BRIDGELAND"
-  ],
-  "title_prev": "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND"
+  "title_raw": "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY 1. Introduction In this paper we study a class of Riemann-Hilbert problems arising naturally in Donaldson- Thomas theory. They involve maps from the complex plane to an algebraic torus, with prescribed discontinuities along a collection of rays",
+   "outline": "1. Introduction",
+   "text": "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -41,396 +49,1053 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Plan of the paper",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Acknowledgements",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "BPS structures: initial definitions",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Definition and terminology",
    "page": 3,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Donaldson-Thomas invariants",
    "page": 4,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Poisson algebraic torus",
    "page": 4,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Twisted torus",
    "page": 5,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Ray diagram",
    "page": 5,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Further terminology",
    "page": 6,
    "source": "outline",
-   "number": "2.6"
+   "number": "2.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "BPS automorphisms",
    "page": 7,
    "source": "outline",
-   "number": "2.7"
+   "number": "2.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Doubling construction",
    "page": 8,
    "source": "outline",
-   "number": "2.8"
+   "number": "2.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "A basic example: the Kronecker quiver",
    "page": 9,
    "source": "outline",
-   "number": "2.9"
+   "number": "2.9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "Summary of the contents of the paper",
    "page": 9,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "The Riemann-Hilbert problem",
    "page": 9,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Solution in the uncoupled case",
    "page": 10,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Variations of BPS structure",
    "page": 11,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Tau functions",
    "page": 12,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Tau function in the uncoupled case",
    "page": 13,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Two classes of examples",
    "page": 14,
    "source": "outline",
-   "number": "3.6"
+   "number": "3.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "(i) Topological strings.",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "(ii) Theories of class S",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "The Riemann-Hilbert problem",
    "page": 15,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Analytic BPS automorphisms",
    "page": 15,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Statement of the problem",
    "page": 17,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Remarks on the formulation",
    "page": 18,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Symmetries of the problem",
    "page": 19,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "Null vectors and uniqueness",
    "page": 20,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "Tau functions",
    "page": 22,
    "source": "outline",
-   "number": "4.6"
+   "number": "4.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 1,
    "title": "Explicit solutions in the finite, uncoupled case",
    "page": 23,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "Doubled A1 example",
    "page": 23,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "Solution in the doubled A1 case",
    "page": 24,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 2,
    "title": "The finite uncoupled case",
    "page": 26,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "Tau function in the uncoupled case",
    "page": 27,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 1,
    "title": "Geometric case: Gromov-Witten invariants",
    "page": 29,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 2,
    "title": "Gopakumar-Vafa invariants",
    "page": 29,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 2,
    "title": "Torsion sheaf BPS invariants",
    "page": 30,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 2,
    "title": "Formal computation of the -function",
    "page": 31,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   },
   {
    "level": 1,
    "title": "Quadratic differentials and exact WKB analysis",
    "page": 33,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 2,
    "title": "Quadratic differentials",
    "page": 33,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 2,
    "title": "Voros symbols",
    "page": 35,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
   },
   {
    "level": 1,
    "title": "Appendix A. Variations of BPS structure",
    "page": 36,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 2,
    "title": "A.1. Introductory remarks",
    "page": 36,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 2,
    "title": "A.2. Formal completions",
    "page": 37,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "37"
   },
   {
    "level": 2,
    "title": "A.3. Lie algebra and associated group",
    "page": 38,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 2,
    "title": "A.4. Products over rays",
    "page": 39,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 2,
    "title": "A.5. Deforming the central charge",
    "page": 40,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 2,
    "title": "A.6. Variations of BPS structure",
    "page": 40,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 2,
    "title": "A.7. Behaviour of BPS invariants",
    "page": 41,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
   },
   {
    "level": 1,
    "title": "Appendix B. Convergent BPS structures",
    "page": 43,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
   },
   {
    "level": 2,
    "title": "B.1. Convergent BPS structures",
    "page": 43,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
   },
   {
    "level": 2,
    "title": "B.2. Partially defined automorphisms",
    "page": 44,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "44"
   },
   {
    "level": 2,
    "title": "B.3. BPS automorphisms",
    "page": 45,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
   },
   {
    "level": 2,
    "title": "B.4. Compositions of BPS automorphisms",
    "page": 47,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "47"
   },
   {
    "level": 2,
    "title": "B.5. Birational transformations",
    "page": 48,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "48"
   },
   {
    "level": 1,
    "title": "References",
    "page": 50,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "50"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The ray diagram associated to a BPS structure. rays form a picture as in Figure 1, which we call the ray diagram of the BPS structure. In general there will be countably many active rays. We deﬁne the height of an active ray ℓ⊂C∗to be H(ℓ) = inf",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 432,
+   "n_words": 59,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -438,8 +1103,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 4564,
-   "n_words": 750
+   "n_chars": 4499,
+   "n_words": 699,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-001-plan-of-the-paper",
@@ -448,8 +1115,10 @@
    "level": 2,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 687,
-   "n_words": 108
+   "n_chars": 626,
+   "n_words": 97,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-002-acknowledgements",
@@ -458,8 +1127,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 433,
-   "n_words": 74
+   "n_chars": 427,
+   "n_words": 68,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
    "id": "sec-003-2-bps-structures-initial-definitions",
@@ -467,179 +1138,215 @@
    "title": "BPS structures: initial definitions",
    "level": 1,
    "page_start": 3,
-   "page_end": 4,
-   "n_chars": 1559,
-   "n_words": 285
+   "page_end": 3,
+   "n_chars": 593,
+   "n_words": 92,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
-   "id": "sec-004-22-donaldson-thomas-invariants",
+   "id": "sec-004-21-definition-and-terminology",
+   "number": "2.1",
+   "title": "Definition and terminology",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 844,
+   "n_words": 162,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-005-22-donaldson-thomas-invariants",
    "number": "2.2",
    "title": "Donaldson-Thomas invariants",
    "level": 2,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 566,
-   "n_words": 112
+   "n_chars": 561,
+   "n_words": 107,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
-   "id": "sec-005-23-poisson-algebraic-torus",
+   "id": "sec-006-23-poisson-algebraic-torus",
    "number": "2.3",
    "title": "Poisson algebraic torus",
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 599,
-   "n_words": 115
+   "n_chars": 546,
+   "n_words": 112,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
-   "id": "sec-006-24-twisted-torus",
+   "id": "sec-007-24-twisted-torus",
    "number": "2.4",
    "title": "Twisted torus",
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 1134,
-   "n_words": 221
+   "n_chars": 1127,
+   "n_words": 214,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
-   "id": "sec-007-25-ray-diagram",
+   "id": "sec-008-25-ray-diagram",
    "number": "2.5",
    "title": "Ray diagram",
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 1305,
-   "n_words": 263
+   "n_chars": 1279,
+   "n_words": 250,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
-   "id": "sec-008-26-further-terminology",
+   "id": "sec-009-26-further-terminology",
    "number": "2.6",
    "title": "Further terminology",
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 1210,
-   "n_words": 237
+   "n_chars": 1137,
+   "n_words": 214,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-009-27-bps-automorphisms",
+   "id": "sec-010-27-bps-automorphisms",
    "number": "2.7",
    "title": "BPS automorphisms",
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 1765,
-   "n_words": 332
+   "n_chars": 1729,
+   "n_words": 309,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
-   "id": "sec-010-28-doubling-construction",
+   "id": "sec-011-28-doubling-construction",
    "number": "2.8",
    "title": "Doubling construction",
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 777,
-   "n_words": 157
+   "n_chars": 696,
+   "n_words": 126,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
-   "id": "sec-011-29-a-basic-example-the-kronecker-quiver",
+   "id": "sec-012-29-a-basic-example-the-kronecker-quiver",
    "number": "2.9",
    "title": "A basic example: the Kronecker quiver",
    "level": 2,
    "page_start": 9,
    "page_end": 9,
-   "n_chars": 1076,
-   "n_words": 231
+   "n_chars": 1063,
+   "n_words": 218,
+   "label_start": "9",
+   "label_end": "9"
   },
   {
-   "id": "sec-012-3-summary-of-the-contents-of-the-paper",
+   "id": "sec-013-3-summary-of-the-contents-of-the-paper",
    "number": "3",
    "title": "Summary of the contents of the paper",
    "level": 1,
    "page_start": 9,
    "page_end": 9,
    "n_chars": 143,
-   "n_words": 27
+   "n_words": 27,
+   "label_start": "9",
+   "label_end": "9"
   },
   {
-   "id": "sec-013-31-the-riemann-hilbert-problem",
+   "id": "sec-014-31-the-riemann-hilbert-problem",
    "number": "3.1",
    "title": "The Riemann-Hilbert problem",
    "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 1879,
-   "n_words": 354
+   "n_chars": 1846,
+   "n_words": 336,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
-   "id": "sec-014-32-solution-in-the-uncoupled-case",
+   "id": "sec-015-32-solution-in-the-uncoupled-case",
    "number": "3.2",
    "title": "Solution in the uncoupled case",
    "level": 2,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 1576,
-   "n_words": 296
+   "n_chars": 1506,
+   "n_words": 277,
+   "label_start": "10",
+   "label_end": "11"
   },
   {
-   "id": "sec-015-33-variations-of-bps-structure",
+   "id": "sec-016-33-variations-of-bps-structure",
    "number": "3.3",
    "title": "Variations of BPS structure",
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 2123,
-   "n_words": 381
+   "n_chars": 2084,
+   "n_words": 357,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
-   "id": "sec-016-34-tau-functions",
+   "id": "sec-017-34-tau-functions",
    "number": "3.4",
    "title": "Tau functions",
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 2089,
-   "n_words": 398
+   "n_chars": 2022,
+   "n_words": 382,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
-   "id": "sec-017-35-tau-function-in-the-uncoupled-case",
+   "id": "sec-018-35-tau-function-in-the-uncoupled-case",
    "number": "3.5",
    "title": "Tau function in the uncoupled case",
    "level": 2,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 937,
-   "n_words": 190
+   "n_chars": 905,
+   "n_words": 173,
+   "label_start": "13",
+   "label_end": "14"
   },
   {
-   "id": "sec-018-36-two-classes-of-examples",
+   "id": "sec-019-36-two-classes-of-examples",
    "number": "3.6",
    "title": "Two classes of examples",
    "level": 2,
    "page_start": 14,
    "page_end": 14,
-   "n_chars": 266,
-   "n_words": 46
+   "n_chars": 263,
+   "n_words": 43,
+   "label_start": "14",
+   "label_end": "14"
   },
   {
-   "id": "sec-019-i-topological-strings",
+   "id": "sec-020-i-topological-strings",
    "number": null,
    "title": "(i) Topological strings.",
    "level": 2,
    "page_start": 14,
    "page_end": 14,
-   "n_chars": 977,
-   "n_words": 170
-  },
-  {
-   "id": "sec-020-4-the-riemann-hilbert-problem",
-   "number": "4",
-   "title": "The Riemann-Hilbert problem",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 14,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 1017,
+   "n_words": 167,
+   "label_start": "14",
+   "label_end": "14"
   },
   {
    "id": "sec-021-ii-theories-of-class-s",
@@ -648,291 +1355,427 @@
    "level": 2,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 1713,
-   "n_words": 302
+   "n_chars": 1350,
+   "n_words": 236,
+   "label_start": "14",
+   "label_end": "15"
   },
   {
-   "id": "sec-022-41-analytic-bps-automorphisms",
+   "id": "sec-022-4-the-riemann-hilbert-problem",
+   "number": "4",
+   "title": "The Riemann-Hilbert problem",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 259,
+   "n_words": 41,
+   "label_start": "15",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-023-41-analytic-bps-automorphisms",
    "number": "4.1",
    "title": "Analytic BPS automorphisms",
    "level": 2,
    "page_start": 15,
    "page_end": 17,
-   "n_chars": 2140,
-   "n_words": 404
+   "n_chars": 2033,
+   "n_words": 362,
+   "label_start": "15",
+   "label_end": "17"
   },
   {
-   "id": "sec-023-42-statement-of-the-problem",
+   "id": "sec-024-42-statement-of-the-problem",
    "number": "4.2",
    "title": "Statement of the problem",
    "level": 2,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 3019,
-   "n_words": 564
+   "n_chars": 2992,
+   "n_words": 552,
+   "label_start": "17",
+   "label_end": "18"
   },
   {
-   "id": "sec-024-43-remarks-on-the-formulation",
+   "id": "sec-025-43-remarks-on-the-formulation",
    "number": "4.3",
    "title": "Remarks on the formulation",
    "level": 2,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 2894,
-   "n_words": 495
+   "n_chars": 2821,
+   "n_words": 473,
+   "label_start": "18",
+   "label_end": "19"
   },
   {
-   "id": "sec-025-44-symmetries-of-the-problem",
+   "id": "sec-026-44-symmetries-of-the-problem",
    "number": "4.4",
    "title": "Symmetries of the problem",
    "level": 2,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 1509,
-   "n_words": 288
+   "n_chars": 1475,
+   "n_words": 269,
+   "label_start": "19",
+   "label_end": "20"
   },
   {
-   "id": "sec-026-45-null-vectors-and-uniqueness",
+   "id": "sec-027-45-null-vectors-and-uniqueness",
    "number": "4.5",
    "title": "Null vectors and uniqueness",
    "level": 2,
    "page_start": 20,
    "page_end": 22,
-   "n_chars": 3257,
-   "n_words": 590
+   "n_chars": 3156,
+   "n_words": 555,
+   "label_start": "20",
+   "label_end": "22"
   },
   {
-   "id": "sec-027-46-tau-functions",
+   "id": "sec-028-46-tau-functions",
    "number": "4.6",
    "title": "Tau functions",
    "level": 2,
    "page_start": 22,
    "page_end": 23,
-   "n_chars": 1994,
-   "n_words": 401
+   "n_chars": 1916,
+   "n_words": 374,
+   "label_start": "22",
+   "label_end": "23"
   },
   {
-   "id": "sec-028-5-explicit-solutions-in-the-finite-uncoupled-cas",
+   "id": "sec-029-5-explicit-solutions-in-the-finite-uncoupled-cas",
    "number": "5",
    "title": "Explicit solutions in the finite, uncoupled case",
    "level": 1,
    "page_start": 23,
    "page_end": 23,
-   "n_chars": 382,
-   "n_words": 63
+   "n_chars": 378,
+   "n_words": 59,
+   "label_start": "23",
+   "label_end": "23"
   },
   {
-   "id": "sec-029-51-doubled-a1-example",
+   "id": "sec-030-51-doubled-a1-example",
    "number": "5.1",
    "title": "Doubled A1 example",
    "level": 2,
    "page_start": 23,
-   "page_end": 27,
-   "n_chars": 5987,
-   "n_words": 1169
+   "page_end": 24,
+   "n_chars": 2110,
+   "n_words": 399,
+   "label_start": "23",
+   "label_end": "24"
   },
   {
-   "id": "sec-030-54-tau-function-in-the-uncoupled-case",
+   "id": "sec-031-52-solution-in-the-doubled-a1-case",
+   "number": "5.2",
+   "title": "Solution in the doubled A1 case",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 1804,
+   "n_words": 363,
+   "label_start": "24",
+   "label_end": "26"
+  },
+  {
+   "id": "sec-032-53-the-finite-uncoupled-case",
+   "number": "5.3",
+   "title": "The finite uncoupled case",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 1720,
+   "n_words": 305,
+   "label_start": "26",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-033-54-tau-function-in-the-uncoupled-case",
    "number": "5.4",
    "title": "Tau function in the uncoupled case",
    "level": 2,
    "page_start": 27,
    "page_end": 29,
-   "n_chars": 3501,
-   "n_words": 743
+   "n_chars": 3365,
+   "n_words": 677,
+   "label_start": "27",
+   "label_end": "29"
   },
   {
-   "id": "sec-031-6-geometric-case-gromov-witten-invariants",
+   "id": "sec-034-6-geometric-case-gromov-witten-invariants",
    "number": "6",
    "title": "Geometric case: Gromov-Witten invariants",
    "level": 1,
    "page_start": 29,
    "page_end": 29,
-   "n_chars": 556,
-   "n_words": 93
+   "n_chars": 549,
+   "n_words": 86,
+   "label_start": "29",
+   "label_end": "29"
   },
   {
-   "id": "sec-032-61-gopakumar-vafa-invariants",
+   "id": "sec-035-61-gopakumar-vafa-invariants",
    "number": "6.1",
    "title": "Gopakumar-Vafa invariants",
    "level": 2,
    "page_start": 29,
    "page_end": 30,
-   "n_chars": 1720,
-   "n_words": 328
+   "n_chars": 1701,
+   "n_words": 324,
+   "label_start": "29",
+   "label_end": "30"
   },
   {
-   "id": "sec-033-62-torsion-sheaf-bps-invariants",
+   "id": "sec-036-62-torsion-sheaf-bps-invariants",
    "number": "6.2",
    "title": "Torsion sheaf BPS invariants",
    "level": 2,
    "page_start": 30,
-   "page_end": 33,
-   "n_chars": 4526,
-   "n_words": 833
+   "page_end": 31,
+   "n_chars": 1797,
+   "n_words": 340,
+   "label_start": "30",
+   "label_end": "31"
   },
   {
-   "id": "sec-034-7-quadratic-differentials-and-exact-wkb-analysis",
+   "id": "sec-037-63-formal-computation-of-the--function",
+   "number": "6.3",
+   "title": "Formal computation of the -function",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 33,
+   "n_chars": 2453,
+   "n_words": 413,
+   "label_start": "31",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-038-7-quadratic-differentials-and-exact-wkb-analysis",
    "number": "7",
    "title": "Quadratic differentials and exact WKB analysis",
    "level": 1,
    "page_start": 33,
    "page_end": 35,
-   "n_chars": 3984,
-   "n_words": 738
+   "n_chars": 3874,
+   "n_words": 692,
+   "label_start": "33",
+   "label_end": "35"
   },
   {
-   "id": "sec-035-72-voros-symbols",
+   "id": "sec-039-72-voros-symbols",
    "number": "7.2",
    "title": "Voros symbols",
    "level": 2,
    "page_start": 35,
    "page_end": 36,
-   "n_chars": 3547,
-   "n_words": 652
+   "n_chars": 2886,
+   "n_words": 519,
+   "label_start": "35",
+   "label_end": "36"
   },
   {
-   "id": "sec-036-a1-introductory-remarks",
+   "id": "sec-040-appendix-a-variations-of-bps-structure",
+   "number": null,
+   "title": "Appendix A. Variations of BPS structure",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 571,
+   "n_words": 93,
+   "label_start": "36",
+   "label_end": "36"
+  },
+  {
+   "id": "sec-041-a1-introductory-remarks",
    "number": null,
    "title": "A.1. Introductory remarks",
    "level": 2,
    "page_start": 36,
    "page_end": 37,
-   "n_chars": 2137,
-   "n_words": 387
+   "n_chars": 2067,
+   "n_words": 367,
+   "label_start": "36",
+   "label_end": "37"
   },
   {
-   "id": "sec-037-a2-formal-completions",
+   "id": "sec-042-a2-formal-completions",
    "number": null,
    "title": "A.2. Formal completions",
    "level": 2,
    "page_start": 37,
    "page_end": 38,
-   "n_chars": 943,
-   "n_words": 187
+   "n_chars": 917,
+   "n_words": 176,
+   "label_start": "37",
+   "label_end": "38"
   },
   {
-   "id": "sec-038-a3-lie-algebra-and-associated-group",
+   "id": "sec-043-a3-lie-algebra-and-associated-group",
    "number": null,
    "title": "A.3. Lie algebra and associated group",
    "level": 2,
    "page_start": 38,
    "page_end": 39,
-   "n_chars": 1631,
-   "n_words": 301
+   "n_chars": 1543,
+   "n_words": 264,
+   "label_start": "38",
+   "label_end": "39"
   },
   {
-   "id": "sec-039-a4-products-over-rays",
+   "id": "sec-044-a4-products-over-rays",
    "number": null,
    "title": "A.4. Products over rays",
    "level": 2,
    "page_start": 39,
    "page_end": 40,
-   "n_chars": 740,
-   "n_words": 150
+   "n_chars": 705,
+   "n_words": 130,
+   "label_start": "39",
+   "label_end": "40"
   },
   {
-   "id": "sec-040-a5-deforming-the-central-charge",
+   "id": "sec-045-a5-deforming-the-central-charge",
    "number": null,
    "title": "A.5. Deforming the central charge",
    "level": 2,
    "page_start": 40,
    "page_end": 40,
-   "n_chars": 1560,
-   "n_words": 311
+   "n_chars": 1536,
+   "n_words": 286,
+   "label_start": "40",
+   "label_end": "40"
   },
   {
-   "id": "sec-041-a6-variations-of-bps-structure",
+   "id": "sec-046-a6-variations-of-bps-structure",
    "number": null,
    "title": "A.6. Variations of BPS structure",
    "level": 2,
    "page_start": 40,
    "page_end": 41,
-   "n_chars": 1978,
-   "n_words": 382
+   "n_chars": 1897,
+   "n_words": 352,
+   "label_start": "40",
+   "label_end": "41"
   },
   {
-   "id": "sec-042-a7-behaviour-of-bps-invariants",
+   "id": "sec-047-a7-behaviour-of-bps-invariants",
    "number": null,
    "title": "A.7. Behaviour of BPS invariants",
    "level": 2,
    "page_start": 41,
    "page_end": 43,
-   "n_chars": 2382,
-   "n_words": 448
+   "n_chars": 2230,
+   "n_words": 387,
+   "label_start": "41",
+   "label_end": "43"
   },
   {
-   "id": "sec-043-appendix-b-convergent-bps-structures",
+   "id": "sec-048-appendix-b-convergent-bps-structures",
    "number": null,
    "title": "Appendix B. Convergent BPS structures",
    "level": 1,
    "page_start": 43,
    "page_end": 43,
-   "n_chars": 205,
-   "n_words": 36
+   "n_chars": 204,
+   "n_words": 35,
+   "label_start": "43",
+   "label_end": "43"
   },
   {
-   "id": "sec-044-b1-convergent-bps-structures",
+   "id": "sec-049-b1-convergent-bps-structures",
    "number": null,
    "title": "B.1. Convergent BPS structures",
    "level": 2,
    "page_start": 43,
-   "page_end": 45,
-   "n_chars": 4341,
-   "n_words": 880
+   "page_end": 44,
+   "n_chars": 1622,
+   "n_words": 337,
+   "label_start": "43",
+   "label_end": "44"
   },
   {
-   "id": "sec-045-b3-bps-automorphisms",
+   "id": "sec-050-b2-partially-defined-automorphisms",
+   "number": null,
+   "title": "B.2. Partially defined automorphisms",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 45,
+   "n_chars": 2409,
+   "n_words": 463,
+   "label_start": "44",
+   "label_end": "45"
+  },
+  {
+   "id": "sec-051-b3-bps-automorphisms",
    "number": null,
    "title": "B.3. BPS automorphisms",
    "level": 2,
    "page_start": 45,
    "page_end": 47,
-   "n_chars": 2889,
-   "n_words": 576
+   "n_chars": 2769,
+   "n_words": 524,
+   "label_start": "45",
+   "label_end": "47"
   },
   {
-   "id": "sec-046-b4-compositions-of-bps-automorphisms",
+   "id": "sec-052-b4-compositions-of-bps-automorphisms",
    "number": null,
    "title": "B.4. Compositions of BPS automorphisms",
    "level": 2,
    "page_start": 47,
    "page_end": 48,
-   "n_chars": 3084,
-   "n_words": 651
+   "n_chars": 3018,
+   "n_words": 600,
+   "label_start": "47",
+   "label_end": "48"
   },
   {
-   "id": "sec-047-b5-birational-transformations",
+   "id": "sec-053-b5-birational-transformations",
    "number": null,
    "title": "B.5. Birational transformations",
    "level": 2,
    "page_start": 48,
    "page_end": 50,
-   "n_chars": 1697,
-   "n_words": 343
+   "n_chars": 1621,
+   "n_words": 333,
+   "label_start": "48",
+   "label_end": "50"
   },
   {
-   "id": "sec-048-references",
+   "id": "sec-054-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 50,
    "page_end": 51,
-   "n_chars": 4444,
-   "n_words": 663
+   "n_chars": 4351,
+   "n_words": 621,
+   "label_start": "50",
+   "label_end": "51"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 56,
-  "sections": 49,
-  "chars_total": 94425,
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 56,
+  "chars_total": 91444,
+  "furniture_lines_stripped": 100,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 55,
-   "overlaid": 40,
+   "overlaid": 44,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -940,10 +1783,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.804,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -951,7 +1799,7 @@
      "id": "sec-001-plan-of-the-paper",
      "title": "Plan of the paper",
      "prose_ratio": 0.931,
-     "coverage_ratio": 0.921,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -966,13 +1814,21 @@
     {
      "id": "sec-003-2-bps-structures-initial-definitions",
      "title": "BPS structures: initial definitions",
-     "prose_ratio": 0.98,
-     "coverage_ratio": 0.99,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-004-22-donaldson-thomas-invariants",
+     "id": "sec-004-21-definition-and-terminology",
+     "title": "Definition and terminology",
+     "prose_ratio": 0.911,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-22-donaldson-thomas-invariants",
      "title": "Donaldson-Thomas invariants",
      "prose_ratio": 0.902,
      "coverage_ratio": 0.974,
@@ -980,13 +1836,13 @@
      "converter": "latex"
     },
     {
-     "id": "sec-005-23-poisson-algebraic-torus",
+     "id": "sec-006-23-poisson-algebraic-torus",
      "title": "Poisson algebraic torus",
      "prose_ratio": 0.528,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-006-24-twisted-torus",
+     "id": "sec-007-24-twisted-torus",
      "title": "Twisted torus",
      "prose_ratio": 0.981,
      "coverage_ratio": 0.806,
@@ -994,39 +1850,39 @@
      "converter": "latex"
     },
     {
-     "id": "sec-007-25-ray-diagram",
+     "id": "sec-008-25-ray-diagram",
      "title": "Ray diagram",
      "prose_ratio": 0.924,
-     "coverage_ratio": 0.987,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-008-26-further-terminology",
+     "id": "sec-009-26-further-terminology",
      "title": "Further terminology",
      "prose_ratio": 0.866,
-     "coverage_ratio": 0.892,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-009-27-bps-automorphisms",
+     "id": "sec-010-27-bps-automorphisms",
      "title": "BPS automorphisms",
      "prose_ratio": 0.908,
-     "coverage_ratio": 0.991,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-010-28-doubling-construction",
+     "id": "sec-011-28-doubling-construction",
      "title": "Doubling construction",
      "prose_ratio": 0.907,
-     "coverage_ratio": 0.851,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-011-29-a-basic-example-the-kronecker-quiver",
+     "id": "sec-012-29-a-basic-example-the-kronecker-quiver",
      "title": "A basic example: the Kronecker quiver",
      "prose_ratio": 0.966,
      "coverage_ratio": 1.0,
@@ -1034,7 +1890,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-012-3-summary-of-the-contents-of-the-paper",
+     "id": "sec-013-3-summary-of-the-contents-of-the-paper",
      "title": "Summary of the contents of the paper",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -1042,47 +1898,47 @@
      "converter": "latex"
     },
     {
-     "id": "sec-013-31-the-riemann-hilbert-problem",
+     "id": "sec-014-31-the-riemann-hilbert-problem",
      "title": "The Riemann-Hilbert problem",
      "prose_ratio": 0.949,
-     "coverage_ratio": 0.991,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-014-32-solution-in-the-uncoupled-case",
+     "id": "sec-015-32-solution-in-the-uncoupled-case",
      "title": "Solution in the uncoupled case",
      "prose_ratio": 0.989,
-     "coverage_ratio": 0.958,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-015-33-variations-of-bps-structure",
+     "id": "sec-016-33-variations-of-bps-structure",
      "title": "Variations of BPS structure",
      "prose_ratio": 0.949,
-     "coverage_ratio": 0.993,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-016-34-tau-functions",
+     "id": "sec-017-34-tau-functions",
      "title": "Tau functions",
      "prose_ratio": 0.98,
-     "coverage_ratio": 0.962,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-017-35-tau-function-in-the-uncoupled-case",
+     "id": "sec-018-35-tau-function-in-the-uncoupled-case",
      "title": "Tau function in the uncoupled case",
      "prose_ratio": 0.957,
-     "coverage_ratio": 0.979,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-018-36-two-classes-of-examples",
+     "id": "sec-019-36-two-classes-of-examples",
      "title": "Two classes of examples",
      "prose_ratio": 0.867,
      "coverage_ratio": 1.0,
@@ -1090,75 +1946,75 @@
      "converter": "latex"
     },
     {
-     "id": "sec-019-i-topological-strings",
+     "id": "sec-020-i-topological-strings",
      "title": "(i) Topological strings.",
-     "prose_ratio": 0.868,
-     "coverage_ratio": 0.985,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-020-4-the-riemann-hilbert-problem",
-     "title": "The Riemann-Hilbert problem",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-021-ii-theories-of-class-s",
-     "title": "(ii) Theories of class S",
-     "prose_ratio": 0.974,
-     "coverage_ratio": 0.974,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-022-41-analytic-bps-automorphisms",
-     "title": "Analytic BPS automorphisms",
-     "prose_ratio": 0.892,
-     "coverage_ratio": 0.933,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-023-42-statement-of-the-problem",
-     "title": "Statement of the problem",
-     "prose_ratio": 0.957,
-     "coverage_ratio": 0.993,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-024-43-remarks-on-the-formulation",
-     "title": "Remarks on the formulation",
-     "prose_ratio": 0.974,
-     "coverage_ratio": 0.984,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-025-44-symmetries-of-the-problem",
-     "title": "Symmetries of the problem",
-     "prose_ratio": 0.932,
+     "prose_ratio": 0.921,
      "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-026-45-null-vectors-and-uniqueness",
-     "title": "Null vectors and uniqueness",
-     "prose_ratio": 0.655,
-     "coverage_ratio": 0.972,
+     "id": "sec-021-ii-theories-of-class-s",
+     "title": "(ii) Theories of class S",
+     "prose_ratio": 0.895,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-027-46-tau-functions",
-     "title": "Tau functions",
-     "prose_ratio": 0.495,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-022-4-the-riemann-hilbert-problem",
+     "title": "The Riemann-Hilbert problem",
+     "prose_ratio": 0.094,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-028-5-explicit-solutions-in-the-finite-uncoupled-cas",
+     "id": "sec-023-41-analytic-bps-automorphisms",
+     "title": "Analytic BPS automorphisms",
+     "prose_ratio": 0.892,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-024-42-statement-of-the-problem",
+     "title": "Statement of the problem",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-025-43-remarks-on-the-formulation",
+     "title": "Remarks on the formulation",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-026-44-symmetries-of-the-problem",
+     "title": "Symmetries of the problem",
+     "prose_ratio": 0.932,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-027-45-null-vectors-and-uniqueness",
+     "title": "Null vectors and uniqueness",
+     "prose_ratio": 0.65,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-028-46-tau-functions",
+     "title": "Tau functions",
+     "prose_ratio": 0.485,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-029-5-explicit-solutions-in-the-finite-uncoupled-cas",
      "title": "Explicit solutions in the finite, uncoupled case",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -1166,22 +2022,36 @@
      "converter": "latex"
     },
     {
-     "id": "sec-029-51-doubled-a1-example",
+     "id": "sec-030-51-doubled-a1-example",
      "title": "Doubled A1 example",
-     "prose_ratio": 0.694,
-     "coverage_ratio": 0.981,
+     "prose_ratio": 0.922,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-030-54-tau-function-in-the-uncoupled-case",
-     "title": "Tau function in the uncoupled case",
-     "prose_ratio": 0.674,
-     "coverage_ratio": 0.232,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "id": "sec-031-52-solution-in-the-doubled-a1-case",
+     "title": "Solution in the doubled A1 case",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-031-6-geometric-case-gromov-witten-invariants",
+     "id": "sec-032-53-the-finite-uncoupled-case",
+     "title": "The finite uncoupled case",
+     "prose_ratio": 0.434,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-033-54-tau-function-in-the-uncoupled-case",
+     "title": "Tau function in the uncoupled case",
+     "prose_ratio": 0.674,
+     "coverage_ratio": 0.231,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-034-6-geometric-case-gromov-witten-invariants",
      "title": "Geometric case: Gromov-Witten invariants",
      "prose_ratio": 0.98,
      "coverage_ratio": 1.0,
@@ -1189,126 +2059,147 @@
      "converter": "latex"
     },
     {
-     "id": "sec-032-61-gopakumar-vafa-invariants",
+     "id": "sec-035-61-gopakumar-vafa-invariants",
      "title": "Gopakumar-Vafa invariants",
      "prose_ratio": 0.943,
-     "coverage_ratio": 0.988,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-033-62-torsion-sheaf-bps-invariants",
+     "id": "sec-036-62-torsion-sheaf-bps-invariants",
      "title": "Torsion sheaf BPS invariants",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.966,
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-034-7-quadratic-differentials-and-exact-wkb-analysis",
+     "id": "sec-037-63-formal-computation-of-the--function",
+     "title": "Formal computation of the -function",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-038-7-quadratic-differentials-and-exact-wkb-analysis",
      "title": "Quadratic differentials and exact WKB analysis",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.711,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-035-72-voros-symbols",
-     "title": "Voros symbols",
      "prose_ratio": 0.99,
      "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-036-a1-introductory-remarks",
+     "id": "sec-039-72-voros-symbols",
+     "title": "Voros symbols",
+     "prose_ratio": 0.804,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-040-appendix-a-variations-of-bps-structure",
+     "title": "Appendix A. Variations of BPS structure",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-041-a1-introductory-remarks",
      "title": "A.1. Introductory remarks",
      "prose_ratio": 0.955,
-     "coverage_ratio": 0.956,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-037-a2-formal-completions",
+     "id": "sec-042-a2-formal-completions",
      "title": "A.2. Formal completions",
      "prose_ratio": 0.957,
-     "coverage_ratio": 0.978,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-038-a3-lie-algebra-and-associated-group",
+     "id": "sec-043-a3-lie-algebra-and-associated-group",
      "title": "A.3. Lie algebra and associated group",
-     "prose_ratio": 0.939,
-     "coverage_ratio": 0.931,
+     "prose_ratio": 0.927,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-039-a4-products-over-rays",
+     "id": "sec-044-a4-products-over-rays",
      "title": "A.4. Products over rays",
      "prose_ratio": 0.918,
-     "coverage_ratio": 0.978,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-040-a5-deforming-the-central-charge",
+     "id": "sec-045-a5-deforming-the-central-charge",
      "title": "A.5. Deforming the central charge",
      "prose_ratio": 0.555,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-041-a6-variations-of-bps-structure",
+     "id": "sec-046-a6-variations-of-bps-structure",
      "title": "A.6. Variations of BPS structure",
-     "prose_ratio": 0.474,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.445,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-042-a7-behaviour-of-bps-invariants",
+     "id": "sec-047-a7-behaviour-of-bps-invariants",
      "title": "A.7. Behaviour of BPS invariants",
-     "prose_ratio": 0.974,
-     "coverage_ratio": 0.942,
+     "prose_ratio": 0.957,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-043-appendix-b-convergent-bps-structures",
+     "id": "sec-048-appendix-b-convergent-bps-structures",
      "title": "Appendix B. Convergent BPS structures",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-044-b1-convergent-bps-structures",
+     "id": "sec-049-b1-convergent-bps-structures",
      "title": "B.1. Convergent BPS structures",
-     "prose_ratio": 0.711,
-     "coverage_ratio": 0.949,
+     "prose_ratio": 0.817,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-045-b3-bps-automorphisms",
-     "title": "B.3. BPS automorphisms",
-     "prose_ratio": 0.42,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-050-b2-partially-defined-automorphisms",
+     "title": "B.2. Partially defined automorphisms",
+     "prose_ratio": 0.631,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-046-b4-compositions-of-bps-automorphisms",
+     "id": "sec-051-b3-bps-automorphisms",
+     "title": "B.3. BPS automorphisms",
+     "prose_ratio": 0.412,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-052-b4-compositions-of-bps-automorphisms",
      "title": "B.4. Compositions of BPS automorphisms",
      "prose_ratio": 0.949,
-     "coverage_ratio": 0.992,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-047-b5-birational-transformations",
+     "id": "sec-053-b5-birational-transformations",
      "title": "B.5. Birational transformations",
      "prose_ratio": 0.904,
-     "coverage_ratio": 0.89,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-048-references",
+     "id": "sec-054-references",
      "title": "References",
      "result": "no matching \\section"
     }

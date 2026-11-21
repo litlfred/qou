@@ -1,1 +1,1 @@
-The generating function˜Z(X;z) is the germ at zero of a holomorphic function
+The generating function ˜Z(X; z) is the germ at zero of a holomorphic function ˜Z ∈O(C \ eΛ) given by the following formula ˜Z(X; z) = Z ∞ e−2yB(Z0)(y) 1 −ze−y dy + X θ∈CS∗ C(X) e4πiθ n−3 X j=0 Z(j) θ (0) j!

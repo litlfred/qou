@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/0310279v5/sections/sec-037",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Cleaning up the templates in T(m)",
+  "pageStart": 106,
+  "pageEnd": 109,
+  "contains": [
+    "library/0310279v5/blocks/prose-sec-037",
+    "library/0310279v5/blocks/prop-sec-037-01",
+    "library/0310279v5/blocks/cor-sec-037-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0310279v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0310279v5/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1111,7 +1111,7 @@
         "reviewed_at": "2026-06-27T13:05:09.443Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
         "severity": "minor",
-        "evidence": "`**Connection to the half-life.**` section gives physical interpretation (Fermi golden rule, why \u00b3H\u2192\u00b3He is shortest, \u00b9\u2074C longer) embedded in the proposition block; no companion `interprets:` remark.",
+        "evidence": "`**Connection to the half-life.**` section gives physical interpretation (Fermi golden rule, why ³H→³He is shortest, ¹⁴C longer) embedded in the proposition block; no companion `interprets:` remark.",
         "notes": "Much of the block is computational/normal-form content directly supporting the claim; the half-life paragraph is borderline interpretive. WARN."
       },
       {
@@ -1132,7 +1132,7 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
         "evidence": "nuclear-groebner-reduction.md:130 '**Connection to the half-life.**' and :155 'This is the quantity that determines the half-life via the Fermi golden rule.'",
-        "notes": "Substantive physical interpretation (half-life, Fermi golden rule, beta-decay energetics) follows the proposition statement in the same block with no companion interprets: remark. Borderline \u2014 much is mathematical elaboration of the normal form; the half-life/Fermi-rule prose is interpretive and would be better in a linked remark."
+        "notes": "Substantive physical interpretation (half-life, Fermi golden rule, beta-decay energetics) follows the proposition statement in the same block with no companion interprets: remark. Borderline — much is mathematical elaboration of the normal form; the half-life/Fermi-rule prose is interpretive and would be better in a linked remark."
       }
     ],
     "fit-section-chapter": [
@@ -1223,7 +1223,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Statement fixes the generic ground ring R=\u2124[q,q\u207b\u00b9] (md:13) \u2014 correctly substrate-generic, no archimedean construct in the claim."
+        "notes": "Statement fixes the generic ground ring R=ℤ[q,q⁻¹] (md:13) — correctly substrate-generic, no archimedean construct in the claim."
       }
     ],
     "wall-side-proof": [
@@ -1261,7 +1261,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Proof is Diamond-Lemma / confluence / length-lex termination \u2014 purely algebraic, matches the generic-ring statement."
+        "notes": "Proof is Diamond-Lemma / confluence / length-lex termination — purely algebraic, matches the generic-ring statement."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1291,6 +1291,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "01595ffad9dc",
+          "ts": "cc5a3e015b3d",
+          "lean": "a7eff43fe383"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:01.885Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "The ref (library `NuclearGroebnerReduction.lean:125-130`) is a `def … : Prop`, never asserted; inhabited by `nf=[]`; mentions neither the word nor uniqueness. Proof step 1 (`-proof.md:5`), \"G closed under composition\", is false for A≥4: σ₃σ₂σ₁σ₃ and σ₂σ₃σ₂σ₁ are both irreducible and equal (Bokut–Shiao); the corpus's own `UGB/GrobnerShirshov/HeckeGS.lean:651` `hecke_not_gs_basis_four` proves this on main. The proof says the Lean uses `sorry`; it has none. \"NF represents the lowest-energy state\" is physical. The ε=0 \"word\" ½(σ+σ⁻¹) is not a braid word"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1454,7 +1471,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The claim in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' is unverified due to Lean compilation failures: folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'.",
+        "notes": "The claim in 'Unique nuclear normal form via Gröbner reduction in $H_n(q)$' is unverified due to Lean compilation failures: folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:1"
       }
@@ -1498,7 +1515,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No circular reasoning or self-assuming definitions detected in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$'.",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Unique nuclear normal form via Gröbner reduction in $H_n(q)$'.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.ts:1"
       }
@@ -1520,9 +1537,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The prose in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' presents the result as established, but the Lean formalization in folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean is incomplete (has sorry).",
+        "notes": "The prose in 'Unique nuclear normal form via Gröbner reduction in $H_n(q)$' presents the result as established, but the Lean formalization in folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean is incomplete (has sorry).",
         "severity": "minor",
-        "evidence": "The prose in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' presents the result as established, but the Lean formalization in folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean is incomplete (has sorry)."
+        "evidence": "The prose in 'Unique nuclear normal form via Gröbner reduction in $H_n(q)$' presents the result as established, but the Lean formalization in folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean is incomplete (has sorry)."
       }
     ],
     "da-hidden-dof": [
@@ -1542,7 +1559,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$'.",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Unique nuclear normal form via Gröbner reduction in $H_n(q)$'.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.ts:1"
       }
@@ -1623,7 +1640,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No citations are present in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$', hence no citation misuse is possible.",
+        "notes": "No citations are present in 'Unique nuclear normal form via Gröbner reduction in $H_n(q)$', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.ts:1"
       }
@@ -1645,7 +1662,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Key terms and symbols in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' are mathematically defined and unambiguous.",
+        "notes": "Key terms and symbols in 'Unique nuclear normal form via Gröbner reduction in $H_n(q)$' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.ts:1"
       }
@@ -1667,7 +1684,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The algebraic and logical relations in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' are independent of empirical tuning parameters.",
+        "notes": "The algebraic and logical relations in 'Unique nuclear normal form via Gröbner reduction in $H_n(q)$' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.ts:1"
       }
@@ -1689,7 +1706,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The physical concepts described in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' are consistent with quantum observable mechanics.",
+        "notes": "The physical concepts described in 'Unique nuclear normal form via Gröbner reduction in $H_n(q)$' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.ts:1"
       }
@@ -1713,7 +1730,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:1 \u2014 folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:1 — folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'"
       },
       {
         "field_hash": {
@@ -1751,7 +1768,7 @@
         "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean fails compilation: folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean for 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' fails compilation with error: folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'. This invalidates the claim of formal verification.",
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean for 'Unique nuclear normal form via Gröbner reduction in $H_n(q)$' fails compilation with error: folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'. This invalidates the claim of formal verification.",
         "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean fails compilation: folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'"
       },
       {
@@ -2028,7 +2045,7 @@
         "reviewed_at": "2026-08-15T10:31:01.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
-        "evidence": "1 negation-contrast construction(s): \", not a free parameter.\" \u2014 state the positive claim directly"
+        "evidence": "1 negation-contrast construction(s): \", not a free parameter.\" — state the positive claim directly"
       },
       {
         "field_hash": {
@@ -2332,8 +2349,8 @@
         "reviewed_at": "2026-08-22T05:55:59.020Z",
         "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
         "severity": "minor",
-        "evidence": "Opening line: 'Gr\u00f6bner--Shirshov reduction in $H_A(q)$ produces a unique normal form representing the lowest-energy state.' And 'The nuclear braid word ... $\\mathcal{N}(Z, N) = \\prod_{1 \\leq i < j \\leq A}\\sigma_{i}^{\\epsilon(i, j)}$'.",
-        "notes": "Two defects. (1) A Gr\u00f6bner-Shirshov normal form is a canonical representative under a term order; nothing in the block or its proof connects it to an energy minimum, so 'representing the lowest-energy state' is unsupported. (2) SYMBOL COLLISION WITHIN THE BLOCK: the display two paragraphs earlier DEFINES N(Z,N) := r(N_raw(Z,N), G) as the REDUCED form and says 'By convention, N(Z,N) denotes the reduced normal form unless explicitly stated' -- then the next section says 'The unreduced braid word is N(Z,N) = prod...'. The same symbol is given both meanings, and the product itself is malformed: it ranges over pairs (i,j) but its generator index uses only i. Also minor: the prose calls the second Gr\u00f6bner element 'the Yang--Baxter relation' where prf:nuclear-groebner-reduction calls the same element 'the braid relation'."
+        "evidence": "Opening line: 'Gröbner--Shirshov reduction in $H_A(q)$ produces a unique normal form representing the lowest-energy state.' And 'The nuclear braid word ... $\\mathcal{N}(Z, N) = \\prod_{1 \\leq i < j \\leq A}\\sigma_{i}^{\\epsilon(i, j)}$'.",
+        "notes": "Two defects. (1) A Gröbner-Shirshov normal form is a canonical representative under a term order; nothing in the block or its proof connects it to an energy minimum, so 'representing the lowest-energy state' is unsupported. (2) SYMBOL COLLISION WITHIN THE BLOCK: the display two paragraphs earlier DEFINES N(Z,N) := r(N_raw(Z,N), G) as the REDUCED form and says 'By convention, N(Z,N) denotes the reduced normal form unless explicitly stated' -- then the next section says 'The unreduced braid word is N(Z,N) = prod...'. The same symbol is given both meanings, and the product itself is malformed: it ranges over pairs (i,j) but its generator index uses only i. Also minor: the prose calls the second Gröbner element 'the Yang--Baxter relation' where prf:nuclear-groebner-reduction calls the same element 'the braid relation'."
       }
     ],
     "trap-nonspeakable": [
@@ -2392,6 +2409,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T05:55:59.060Z",
+  "updated_at": "2026-11-15T21:56:01.885Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

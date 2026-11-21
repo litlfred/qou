@@ -1,0 +1,49 @@
+6.2 Polynomial amoebas 143
+
+appearing in f, and the Newton polytope N of f is the convex hull of its
+support,
+
+Ny := hull {r € Z : apz" is a non-zero monomial of f} .
+
+We now fix a Laurent polynomial f(z) = >; 4:2. The order map vy :
+amoeba(f)° — R® sends a point 2 € amoeba(f)° to the vector v(a#) with
+
+kth coordinate
+1 Sa (Oy vos Shy oe OM)
+W(H)E = = oo
+Qmi Sizer S(O"... 65 Zky C4)
+
+where (e"',...,Zx,...,e") denotes the vector z with z; = e*/ for j # k.
+
+Remark 6.13. Recall that if g is any univariate meromorphic function inside
+and on a contour y, with no zeros or poles on y, then the classical argument
+principle from complex analysis states that (counting with multiplicity) the
+number of zeros of g inside y minus the number of poles of g inside y equals
+
+I fs@),
+2ni Jy gz)
+
+ro) dz is an integer so the order map sends amoeba(f)° to
+
+In particular, a f
+ZA.
+
+Exercise 6.4. Use Cauchy’s residue theorem to prove the argument principle.
+
+Exercise 6.5. Prove that for any 2 € amoeba(f)°,
+
+Zif(2) dz
+(2ni)4 JRelogNay F(Z) Zefa
+
+VW(@) =
+
+Note that the order map is continuous, and hence constant on the connected
+components of amoeba(f)°, so the order of a component of amoeba(f)° is
+well defined. The order map was introduced by Forsberg et al. [FPTOO] as
+a multivariate generalization of the argument principle. Our treatment of the
+order map closely follows the arguments given in [FPTOO].
+
+Lemma 6.14. [f x € amoeba(f)° and s € Z* \ {0} then s - v(x) equals the
+number of zeros of as(w) = f(piw",..., paw”) inside the unit circle |w| = 1
+minus the order of the pole of ag(w) at the origin, where p € C4 is any point
+with x = Relog(p).

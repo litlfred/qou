@@ -1,0 +1,16 @@
+2.5 Labeled classes 59
+
+different types of leaves in a rooted ordered tree. Following [CDE06], we say
+that the leaf of a tree is old if it is the leftmost child of its parent, and young oth-
+erwise. The authors of [CDE06] enumerate such trees according to the number
+of old leaves, number of young leaves and number of edges, finding the alge-
+braic equation
+
+2(G(x, y,z) — 1+ x)
+1-<(G(x,y,z)- 1+y)
+Use the embedding procedure above to express this as a diagonal of a 4-
+variable rational function R. How exactly do we obtain the Narayana gen-
+erating function from G? Does the embedding procedure commute with this
+operation?
+
+G(x,y,z)= 14+

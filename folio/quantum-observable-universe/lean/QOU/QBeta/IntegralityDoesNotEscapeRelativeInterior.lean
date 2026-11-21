@@ -57,9 +57,9 @@
 
   Sorry-free. No `axiom`, no conditional class, no `native_decide`.
 
-  -- Ref: [manuscript] computations/meson/operator_selection_ilp_does_not_escape_s4.py
-  -- Ref: [manuscript] computations/meson/operator_selection_what_selects_b3.py
-  -- Ref: [manuscript] docs/audits/2026-08-24-operator-selection-lp-objective-defect.md
+  -- Ref: [leitner2026] computations/meson/operator_selection_ilp_does_not_escape_s4.py
+  -- Ref: [leitner2026] computations/meson/operator_selection_what_selects_b3.py
+  -- Ref: [leitner2026] docs/audits/2026-08-24-operator-selection-lp-objective-defect.md
 -/
 import Mathlib.Algebra.Module.LinearMap.Basic
 import Mathlib.Data.Real.Basic

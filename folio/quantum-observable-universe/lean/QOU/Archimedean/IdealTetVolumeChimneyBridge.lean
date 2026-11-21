@@ -61,7 +61,7 @@ Archimedean (ℝ, ℂ): `arg`, `Λ`, the hyperbolic measure, ordering, `π` — 
 
 -- Ref: [milnor1982] Appendix (the Λ-sum volume of an ideal tetrahedron)
 -- Ref: [thurston1978] Ch. 7 (shape parameters and ideal simplices)
--- Ref: [manuscript] beans qou-idvt (T2, still open), qou-krvm (iv), qou-7y3g
+-- Ref: [leitner2026] beans qou-idvt (T2, still open), qou-krvm (iv), qou-7y3g
 -/
 
 import QOU.Archimedean.OrthoschemeTiling

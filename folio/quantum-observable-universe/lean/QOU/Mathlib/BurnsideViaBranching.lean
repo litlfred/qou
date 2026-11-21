@@ -117,7 +117,7 @@ side, per AGENTS.md §"converge on landing".
 beyond `Finset` sums is used.
 
 -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589
--- Ref: [manuscript] QOU/Mathlib/RSKBurnsideTarget.lean
+-- Ref: [leitner2026] QOU/Mathlib/RSKBurnsideTarget.lean
 -/
 
 namespace QOU.Mathlib

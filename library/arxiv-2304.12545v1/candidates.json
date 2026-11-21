@@ -3,12 +3,13 @@
  "doc_id": "arxiv-2304.12545v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "bfc3c2be395b1b2da852c3ddefaf66b3daac043347f1fc9dcc7d19529dfe01ba",
   "file": "2304.12545v1.pdf"
  },
  "provenance": {
-  "title": "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP",
+  "title": "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP, AND THE WORK OF WALTER NEUMANN",
   "authors": "AND THE WORK OF WALTER NEUMANN",
   "arxiv": {
    "id": "2304.12545",
@@ -20,9 +21,43 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "This consequence was observed in~\\cite{Z:hyperbolic} and was also generalized there to the value of~$\\z_F(2)$ for arbitrary number fields~$F$, with $[F:\\BQ]=r_1+2r_2$ for any value of~$r_2\\ge1$.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-005-6-connections-to-number-theory.md (p. 12-17)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-005-6-connections-to-number-theory.md",
+   "section_title": "Connections to number theory",
+   "pages": "12-17",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-005-6-connections-to-number-theory.md (p. 12-17)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-005-01",
+   "block_iri": "library/arxiv-2304.12545v1/blocks/prop-sec-005-01",
+   "claim_id": "arxiv-2304.12545v1#prop-sec-005-01"
+  }
+ ]
 }

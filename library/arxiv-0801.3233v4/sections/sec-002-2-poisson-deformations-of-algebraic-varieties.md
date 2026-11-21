@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0801.3233v4
-doc_title: "Contemporary Mathematics Twisted Deformation Quantization of Algebraic Varieties (Survey) Amnon Yekutieli"
+doc_title: "Twisted Deformation Quantization of Algebraic Varieties (Survey)"
 section_id: sec-002-2-poisson-deformations-of-algebraic-varieties
 section_title: "Poisson Deformations of Algebraic Varieties"
 section_number: 2
 pages: 3-4
 source_pdf: 0801.3233v4.pdf
 source_sha256: d98f9d4a9ecb4c5e
-doc_brief: "Contemporary Mathematics Twisted Deformation Quantization of Algebraic Varieties (Survey) Amnon Yekutieli — Let X be a smooth algebraic variety over a ﬁeld of characteristic 0."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.938
+doc_brief: "Twisted Deformation Quantization of Algebraic Varieties (Survey) — Let X be a smooth algebraic variety over a ﬁeld of characteristic 0. We introduce the notion of twisted associative (resp."
 ---
 In algebraic geometry we have to consider deformations as sheaves. 
 

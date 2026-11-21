@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1208.1663v2/blocks/prose-sec-009",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Proof of triality: part (c) of Theorem 3.2",
-  "pageStart": 12,
-  "pageEnd": 13,
-  "text": "../sections/sec-009-44-proof-of-triality-part-c-of-theorem-32.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1208.1663v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1208.1663v2",
+  "title": "The rank of V+: part (b) of Theorem 3.2",
+  "pageStart": 11,
+  "pageEnd": 12,
+  "text": "../sections/sec-009-43-the-rank-of-v-part-b-of-theorem-32.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1208.1663v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1208.1663v2/manifest.jsonld",
   "provenance": "ingested"
 }

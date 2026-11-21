@@ -8,6 +8,7 @@ pages: 4-4
 source_pdf: Invariant_eigendistributions_2.pdf
 source_sha256: ee43c3ebeff95265
 toc_source: inferred
+doc_brief: "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups — 18 sections: Front matter; Contents; Introduction."
 ---
 In the above construction, choose V = {ν}, a single point. Then
 B∗(ν) = {(b, ν)|ν ∈b⊥},
@@ -22,4 +23,3 @@ The Weyl group W acts on the ﬂag-manifold B ≈U/T by
 a(w) · u · b1 = u · w−1b1(u ∈U).
 In the context of Springer’s construction, the analogue of the following lemma is the Specialization Theorem
 of Hotta-Springer [1977].
-3.1

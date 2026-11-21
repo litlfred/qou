@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1409.4073v1
-doc_title: "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI"
+doc_title: "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
 pages: 1-5
 source_pdf: 1409.4073v1.pdf
 source_sha256: b40be7f0022f70a1
-doc_brief: "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI — W e introduce “sheaﬁﬁcation” functors from categories of (l ax monoidal) linear functors to categories of quasi-coherent sheaves"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.987
-latex_coverage_ratio: 0.988
+latex_prose_ratio: 0.947
+latex_coverage_ratio: 0.973
+doc_brief: "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION — We introduce “sheaﬁﬁcation” functors from categories of (lax monoidal) linear functors to categories of quasi-coherent sheaves (of algebras) of"
 ---
 If $G$ is an affine group scheme over a field $k$, classical Tannaka's reconstruction problem consists in reconstructing the group $G$ from $\mathop{\mathrm{\textup{Rep}}}^{G}k$, its category of finite representations: if $F\colon\mathop{\mathrm{\textup{Rep}}}^{G}k\arr\mathop{\mathrm{\textup{Vect}}}k$ is the forgetful functor then $G$ is canonically isomorphic to the sheaf of automorphisms of $F$ (opportunely defined, see [@Deligne1982 Proposition 2.8]). More generally one can recover the stack $\mathop{\mathrm{\textup{B}}}G$ of $G$-torsors by looking at fiber functors. Given a ring $A$ denote by $\mathop{\mathrm{\textup{Loc}}}A$ the category of locally free sheaves of finite rank over $A$, that is finitely generated projective $A$-modules. If $\mathop{\mathrm{\textup{SMon}}}_{k}^{G}$ is the stack over $k$ whose fiber over a $k$-algebra $A$ is the category of $k$-linear, strong monoidal and exact functors $\Gamma\colon\mathop{\mathrm{\textup{Rep}}}^{G}k\arr\mathop{\mathrm{\textup{Loc}}}A$ then the functor $$\begin{aligned}
 \label{tannaka functor}

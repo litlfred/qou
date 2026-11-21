@@ -1,0 +1,46 @@
+10.4 Classifying multiple points 323
+
+When m; = | for all j in the decomposition (10.24), we say that Q is square-
+free at p.
+
+Proof The ring Op is a unique factorization domain [H6r90], so Q has some
+factorization into powers of distinct irreducibles. The variety V is locally the
+union of the vanishing sets of the irreducibles Q;, each of which defines a
+smooth hypersurface if and only if its gradient at p is non-zero. The transver-
+sality assertion follows immediately from the definition. ia)
+
+To give an algebraic criterion for the multiple point p to be an arrangement
+point, let Q;(z) be as in (10.24), and let €;(z) denote the linear polynomial
+
+Cz) = V Oj(p): (2 - p)
+
+forming the leading homogeneous part of Q; at p. The leading homogeneous
+part of Q at p is the homogeneous polynomial of degree n
+
+hom(Q, p) = | | &(2)"
+jel
+
+and therefore the zero set of hom(Q, p), which is the algebraic tangent cone
+algtan,,(Q) discussed previously in Chapter 6, equals the hyperplane arrange-
+ment A defined by the tangent planes to the Q; at p. We remark that the in-
+tersection lattice of this arrangement remains the same as p varies over the
+stratum S of V containing p. By definition, for p to be an arrangement point
+such a product decomposition must hold and the lattice of flats of A must be
+isomorphic to the intersection lattice of the local surfaces V; = Vo,. Repeated
+factors are allowed, so we may assume without loss of generality that each m;
+is equal to 1, arriving at the following algebraic criterion.
+
+Proposition 10.49. The point p € V is an arrangement point if and only if
+both hom(Q, p) and Q factor into smooth factors (the former will be linear
+polynomials in C[{z] and the latter will be in Op) and the two intersection
+lattices agree. ia)
+
+Example 10.50 (Example 10.4, continued). Let Q(x,y) be the polynomial
+from Example 10.4 and let p = (1, 1). Taking the monomials of least degree of
+Q(1 + x, 1+ y) gives
+
+hom(Q, p) = 4x7 + 10xy + 4y’.
+
+Every homogeneous quadratic in two variables is the product of linear factors,
+which are distinct unless the discriminant of the quadratic vanishes. In this
+example the discriminant is 36, hence p is an arrangement point. In fact it is a

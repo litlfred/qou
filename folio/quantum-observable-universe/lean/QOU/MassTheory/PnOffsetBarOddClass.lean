@@ -100,7 +100,7 @@ Not done in this PR: the ruling landed the same day, its migration is owned
 elsewhere, and the sibling `PnInterfaceBarStructure` is `[Field K] [CharZero K]`
 too — moving one of the pair and not the other makes both harder to migrate.
 
--- Ref: [manuscript] mass-theory/interface-knot-markov-z-proof.md,
+-- Ref: [leitner2026] mass-theory/interface-knot-markov-z-proof.md,
 --      §"The three factors are one bar-orbit"
 -/
 import Mathlib.Algebra.Field.Basic

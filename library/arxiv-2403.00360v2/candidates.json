@@ -3,13 +3,14 @@
  "doc_id": "arxiv-2403.00360v2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "b0764ca18a83a84f00ff8da5453541548bb9f51313500584cf27406a6009a23c",
   "file": "2403.00360v2.pdf"
  },
  "provenance": {
   "title": "CAUSAL FERMION SYSTEMS AND OCTONIONS",
-  "authors": "FELIX FINSTER, NIELS G. GRESNIGT, JOS \u00c9 M. ISIDRO, ANTONINO MARCIAN\u00d2",
+  "authors": "FELIX FINSTER, NIELS G. GRESNIGT, JOS\u00c9 M. ISIDRO, ANTONINO MARCIAN\u00d2",
   "arxiv": {
    "id": "2403.00360",
    "version": "2",
@@ -20,38 +21,9 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
-  "by_kind": {
-   "definition": 2
-  },
-  "formalization_candidates": 2
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "definition",
-   "source_kind": "definition",
-   "number": "3.1",
-   "name": null,
-   "statement": "(causal fermion systems) Given a separable complex Hilbert space H",
-   "section_file": "sections/sec-008-31-causal-fermion-systems-and-the-reduced-causal.md",
-   "section_title": "Causal Fermion Systems and the Reduced Causal Action Principle",
-   "pages": "10-11",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "definition",
-   "source_kind": "definition",
-   "number": "3.2",
-   "name": null,
-   "statement": "(causal structure) For any x,y \u2208 F, we again denote the non-",
-   "section_file": "sections/sec-009-32-spacetime-structures.md",
-   "section_title": "Spacetime Structures",
-   "pages": "11-12",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  }
- ]
+ "candidates": []
 }

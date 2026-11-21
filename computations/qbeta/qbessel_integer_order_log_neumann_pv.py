@@ -45,9 +45,10 @@ import sys as _sys, pathlib as _pl  # noqa: E402
 _sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
 import _path_bridge  # noqa: F401,E402
 from q_parameter import Q_MP  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402  (AME registry)
 Q0 = Q_MP
 QMU = mpf("1.110037")
-B_DEU_OVER_ME = mpf("2.224573") / mpf("0.510999")
+B_DEU_OVER_ME = AME_B_DEUTERON_MEV_VALIDATION / mpf("0.510999")
 HERE = pathlib.Path(__file__).resolve().parent
 DEU = HERE.parent / "atom-chi-rust-d.witness.json"
 

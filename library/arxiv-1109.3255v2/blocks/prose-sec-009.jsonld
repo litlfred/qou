@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1109.3255v2/blocks/prose-sec-009",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "A degeneration of holomorphic triangles",
-  "pageStart": 32,
-  "pageEnd": 32,
-  "text": "../sections/sec-009-4-a-degeneration-of-holomorphic-triangles.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1109.3255v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1109.3255v2",
+  "title": "Symplectic monodromy associated to a Hessian metric",
+  "pageStart": 20,
+  "pageEnd": 22,
+  "text": "../sections/sec-009-31-symplectic-monodromy-associated-to-a-hessian.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1109.3255v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1109.3255v2/manifest.jsonld",
   "provenance": "ingested"
 }

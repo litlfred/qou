@@ -24,14 +24,14 @@ that recovers empirical binding energies from the cyclotomic projection
 $\pi_{n_\star}^{(z)}$ uniformly across atoms.
 
 ## References
-- [manuscript] conj:brane-tower-z-habiro
-- [manuscript] def:z-habiro-ring
-- [manuscript] prop:atom-knot-mass-derivation
+- [leitner2026] conj:brane-tower-z-habiro
+- [leitner2026] def:z-habiro-ring
+- [leitner2026] conj:atom-knot-mass-derivation
 -/
 
 namespace QOU.BraidKnot
 
--- Ref: [manuscript] conj:brane-tower-z-habiro
+-- Ref: [leitner2026] conj:brane-tower-z-habiro
 
 /-- **BraneTowerZHabiro** — the conjectural class.
 
@@ -39,8 +39,8 @@ namespace QOU.BraidKnot
     the brane-tower partial sums converge in the `z`-Habiro topology
     and that a structural level-selection rule `nStar` exists which
     recovers empirical binding energies without per-atom calibration. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro
--- Ref: [manuscript] def:z-habiro-ring
+-- Ref: [leitner2026] conj:brane-tower-z-habiro
+-- Ref: [leitner2026] def:z-habiro-ring
 class BraneTowerZHabiro (n₀ : ℕ) (q : ℝ) where
   /-- The canonical cyclotomic truncation level for a confined particle
       with confinement level `ell`, strand count `n₀`, and GB grade `k`. -/
@@ -58,7 +58,7 @@ class BraneTowerZHabiro (n₀ : ℕ) (q : ℝ) where
     interpretation `recovery_holds` closes by `trivial`.  Encodes
     none of the conjectural recovery content (no per-atom binding
     energies are checked) but discharges the §3b-cond hypothesis. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Skeleton"
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"Skeleton"
 instance canonical (n₀ : ℕ) (q : ℝ) : BraneTowerZHabiro n₀ q where
   nStar := fun ell _ => max ell 1
   nStar_pos := by intro ell k _; simp
@@ -152,7 +152,7 @@ def witnessPerEigenvalueOperatorBestMaxAbsErrPct : ℝ := 64.75
     best uniform-depth candidate (`k = 2`, subtractive form) leaves a
     `+134%` residual on `³He` — an order of magnitude above the
     falsifiability threshold. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Closure (2026-05-11)"
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"Closure (2026-05-11)"
 theorem witness_refutes_scalar_uniform_k_form :
     witnessUniformKBestMaxErrPct > falsifiabilityThresholdPct := by
   unfold witnessUniformKBestMaxErrPct falsifiabilityThresholdPct
@@ -162,7 +162,7 @@ theorem witness_refutes_scalar_uniform_k_form :
     proposed additive rule from `conj:brane-level-selection`
     overshoots `³He` by six orders of magnitude — refutation is
     immediate. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Closure (2026-05-11)"
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"Closure (2026-05-11)"
 theorem witness_refutes_scalar_ell_n0_k_form :
     witnessNStarRuleMaxErrPct > falsifiabilityThresholdPct := by
   unfold witnessNStarRuleMaxErrPct falsifiabilityThresholdPct
@@ -184,7 +184,7 @@ theorem witness_refutes_scalar_ell_n0_k_form :
     criterion forbids per-atom retuning ("does not constitute
     progress"), so the operator-valued `n_⋆` existence claim is
     refuted under this canonical promotion. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Operator-valued probe"
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"Operator-valued probe"
 theorem witness_refutes_per_eigenvalue_operator_form :
     witnessPerEigenvalueOperatorBestMaxAbsErrPct >
       falsifiabilityThresholdPct := by
@@ -200,7 +200,7 @@ theorem witness_refutes_per_eigenvalue_operator_form :
     refutation below (per-eigenvalue, signed, operator-trace) also
     fails, so the `n_⋆` existence claim is refuted across every
     empirically probed form. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Closure (2026-05-11)"
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"Closure (2026-05-11)"
 theorem nStar_scalar_eigenvalue_form_refuted :
     witnessUniformKBestMaxErrPct > falsifiabilityThresholdPct ∧
     witnessNStarRuleMaxErrPct > falsifiabilityThresholdPct :=
@@ -314,7 +314,7 @@ def lpDualActiveSetIncludesPairKnotAtMagicShells : Prop :=
     gap is a structural deficit of the brane-tower formula at
     A=3 / n_0=9 / 2-near-pole regime, not a level-selection
     failure. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Multiplicity / Type-B-fold probe"
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"Multiplicity / Type-B-fold probe"
 theorem witness_refutes_multiplicity_and_type_b_forms :
     witnessMultiplicityBestMaxAbsErrPct > falsifiabilityThresholdPct := by
   unfold witnessMultiplicityBestMaxAbsErrPct falsifiabilityThresholdPct
@@ -339,7 +339,7 @@ theorem witness_refutes_multiplicity_and_type_b_forms :
     `tr_M(σ_{i_1} ... σ_{i_k})` of the shell sub-braid as a single
     Hecke element via Hoefsmit seminormal) — pursued in the
     refinement theorem below. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Pair-knot magic-shell probe"
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"Pair-knot magic-shell probe"
 theorem witness_refutes_pair_knot_product_volume_form :
     witnessPairKnotProductVolumeMaxAbsErrPct >
       falsifiabilityThresholdPct := by
@@ -371,7 +371,7 @@ theorem witness_refutes_pair_knot_product_volume_form :
     AME light-isotope scale.  The ³He gap is NOT an operator-volume
     issue — it is a structural deficit of the brane-tower formula
     itself at the A=3 / n_0=9 / 2-near-pole regime. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Pair-knot Markov-trace refinement"
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"Pair-knot Markov-trace refinement"
 theorem witness_refutes_pair_knot_markov_trace_form :
     witnessPairKnotMarkovTraceMaxAbsErrPct >
       falsifiabilityThresholdPct := by
@@ -399,7 +399,7 @@ theorem witness_refutes_pair_knot_markov_trace_form :
       pointing at `tr_M(σ_{shell})` (full Markov trace of the
       shell sub-braid) instead of the simple product-volume
       convention. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Pair-knot Markov-trace refinement"
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"Pair-knot Markov-trace refinement"
 theorem nStar_all_probed_forms_refuted :
     witnessUniformKBestMaxErrPct > falsifiabilityThresholdPct ∧
     witnessNStarRuleMaxErrPct > falsifiabilityThresholdPct ∧
@@ -461,14 +461,14 @@ def thresholdTritium : ℝ := 0.10 * ameTritiumMeV
 
     Witness: probe-phiq-operator-valued.witness.json, atom = tritium,
     k = 1: B_op = 2.9896 MeV, AME = 8.4818 MeV, |Δ| = 5.49 MeV. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Operator-valued probe"
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"Operator-valued probe"
 def witnessTritiumBestKOneOpAbsErrMeV : ℝ := 5.49
 
 /-- The witness-recorded best-case error on tritium exceeds the
     10% threshold — refuting `RecoversWithRelativeError` for the
     operator-valued tower at any `Phi_proj` value within the
     `B_op` range. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Operator-valued probe"
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"Operator-valued probe"
 theorem operator_tower_violates_tritium_threshold :
     witnessTritiumBestKOneOpAbsErrMeV > thresholdTritium := by
   unfold witnessTritiumBestKOneOpAbsErrMeV thresholdTritium ameTritiumMeV
@@ -492,7 +492,7 @@ theorem operator_tower_violates_tritium_threshold :
     does NOT close uniformly under any of the six probed
     operator-volume conventions — the conclusion the six-way
     refutation chain delivers. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Closure" + §"Operator-valued probe"
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"Closure" + §"Operator-valued probe"
 theorem no_uniform_phi_proj_recovers_ame_at_threshold_10pct :
     witnessTritiumBestKOneOpAbsErrMeV > thresholdTritium :=
   operator_tower_violates_tritium_threshold

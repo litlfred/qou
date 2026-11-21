@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2203.06568v4",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "256fcfb588dac554d7ec70d9ca1851ed409aa9a91e9f4be0c1305e345e9a77f4",
+  "file": "2203.06568v4.pdf"
+ },
+ "provenance": {
+  "title": "Semide\ufb01nite programming bounds for binary codes from a split Terwilliger algebra",
+  "authors": "Pin-Chieh Tseng, Ching-Yi Lai, and Wei-Hsuan Yu",
+  "arxiv": {
+   "id": "2203.06568",
+   "version": "4",
+   "primary_class": "cs.IT",
+   "stamp_date": "10 Jun 2023"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

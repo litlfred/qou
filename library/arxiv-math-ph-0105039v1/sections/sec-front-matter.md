@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-ph-0105039v1
-doc_title: "arXiv:math-ph/0105039v1 28 May 2001"
+doc_title: "Hyperbolic Structure Arising from a Knot Invariant"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 0105039v1.pdf
 source_sha256: 850e6a00721e38d0
 toc_source: inferred
+doc_brief: "Hyperbolic Structure Arising from a Knot Invariant — We study the knot invariant based on the quantum dilogarithm function."
 ---
 arXiv:math-ph/0105039v1  28 May 2001
 December 23, 2000
@@ -28,5 +29,3 @@ consistency conditions in gluing polyhedra arise naturally in the classical limi
 equation of our invariant.
 Key Words:
 †E-mail: hikami@phys.s.u-tokyo.ac.jp
-1
-1

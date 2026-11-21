@@ -1,0 +1,73 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 161
+
+It remains to determine the eigenvalues of the operator ada. In fact, it is not difficult to show that if $2 has n eigenvalues
+{aj, j= 1,2,...,n}, then adg has rn? eigenvalues {Aj — Ak, j,k = 1,2,..., nj.
+As a consequence of the previous discussion, Theorem 1 can be rephrased more precisely in the following terms.
+
+Theorem 4. The solution of the differential equation Y' = A(t)Y with initial condition Y(0) = Yo can be written as Y(t) =
+exp({2(t))Yo with 2(t) defined by
+
+Q! = dexpy'(A(t)), 2(0) =O, (39)
+where
+© B,
+dexp,'(A) = )- —ad' (A).
+exp’ (A) > pide)
+
+Proof. Comparing the derivative of Y(t) = exp(2(t))Yo,
+dy
+dt
+
+with Y’ = A(t)Y, we obtain A(t) = d exp, (2’). Applying the inverse operator d exp! to this relation yields the differential
+
+equation (39) for Q(t).
+
+d
+=a (exp(2(t))) Yo = d expo (2’) exp(2(t))Yo
+
+Taking into account the numerical values of the first few Bernoulli numbers, the differential equation (39) therefore
+becomes
+
+1 1
+2! = A(t) — 3 l2. AI + pl? [2, A(t)]] +--+,
+which is nonlinear in Q. By defining
+t
+e2=0, a= [ A(ty)dty,
+0
+and applying Picard fixed point iteration, one gets
+‘ 1 1
+a= | A= fal" alt —[alh' pal" aly +--+) dtr
+0 2 12
+and lim,_... @!"!(t) = Q(t) ina suitably small neighborhood of the origin.
+
+2.2. Formulae for the first terms in Magnus expansion
+
+Suppose now that A is of first order in some parameter ¢ and try a solution in the form of a series
+
+Q(t) = > A(t), (40)
+
+n=1
+
+where £2, is supposed to be of order e". Equivalently, we replace A by ¢A in (30) and determine the successive terms of
+
+ES
+Q(t) = D> e"2,(0). (41)
+n=1
+This can be done explicitly, at least for the first terms, by substituting the series (41) in (39) and equating powers of e.
+Obviously, the Magnus series (40) is recovered by taking « = 1. Thus, using the notation A(t;) = Aj, the first four orders
+read
+
+(1) 2, =A,so that
+t
+Q(t) -|/ dtyAy. (42)
+0
+
+(2) 25 = —$[Q;, A]. Thus
+
+ire t
+2Q7(t) = al ar | dt,[Ai, Az]. (43)
+0 0
+
+(3) Qs, = —4[Qo, Aj+ SIs, [92,, A]]. After some work, and using the formula
+
+| dx [ fixydy = | dy i] fx, y)dx (44)
+0 i) 0 y

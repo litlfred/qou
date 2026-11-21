@@ -1,0 +1,1 @@
+Note also that a pivotal category is closed, in the sense that there are natural isomorphisms, for all a, b, and c; Hom(ab, c)$Hom(b, a*c), Hom(a, bc)$Hom(ac*, b) Hom(ab, c)$Hom(a, cb*), Hom(a, bc)$Hom(b*a, c).

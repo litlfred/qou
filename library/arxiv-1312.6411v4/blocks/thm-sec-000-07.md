@@ -1,1 +1,0 @@
-Let AbeacohomologicallyboundedtractablecommutativeDGring. If ¯Ais

@@ -1,0 +1,1 @@
+Assume that G is irreducible and primitive. Let k be the algebraic closure of k. We may extend φ on the latter. The following facts are equivalent. • D(G) = SO 3(C). • there exist T ∈ GL3(k), λ ∈ k∗ and B ∈ SO3(k) such that (6.6) φ(T )AT −1 = λB. • there exist T ∈ GL3(k), λ ∈ k ∗ and B ∈ SO3(k) such that (6.6) holds.

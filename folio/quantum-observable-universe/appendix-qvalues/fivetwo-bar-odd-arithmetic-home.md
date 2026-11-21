@@ -45,17 +45,16 @@ alone and needs no analytic input.
 Not settled: the *value*. Locating the line does not evaluate anything on it,
 and no bar-odd action value is asserted here or in the propositions this remark
 interprets. The sum rule
-([`prop:fivetwo-saddle-sum-rule`](#prop:fivetwo-saddle-sum-rule)) is symmetric in
+([The $5_2$ saddle sum rule](#prop:fivetwo-saddle-sum-rule)) is symmetric in
 the conjugate pair and therefore bar-even; it constrains the even channel and
 leaves the odd one open.
 
-## A correction this remark exists to carry
+## Alexander layer versus geometric layer
 
-The corpus previously recorded the bar-odd channel's arithmetic home as
-$\mathbb{Q}(\sqrt{-7})$, inferred from $\det(5_2) = 7$. That is the Alexander
-layer, not the geometric one, and it cannot be a subfield of a cubic. The
-identification was retracted; the line is $\sqrt{-23}$, and it was already
-visible in the corpus's own $\sigma$-pair data before the retraction.
+The bar-odd channel's arithmetic home is not $\mathbb{Q}(\sqrt{-7})$, the
+field one would infer from $\det(5_2) = 7$. That is the Alexander layer, not
+the geometric one, and it cannot be a subfield of a cubic. The line is
+$\sqrt{-23}$, already visible in the $\sigma$-pair data.
 
 The lesson generalises to a question to ask of any such claim: *which layer of
 the knot is this field attached to?* Abelian invariants — the

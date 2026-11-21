@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2501.03424v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "53e00a30fd850a5b978c0bc2fb204d7e987c23b469a6321cc6cbe9834f0566b6",
+  "file": "2501.03424v1.pdf"
+ },
+ "provenance": {
+  "title": "Soergel bimodules and Kazhdan-Lusztig polynomials",
+  "authors": "University of California, Berkeley",
+  "arxiv": {
+   "id": "2501.03424",
+   "version": "1",
+   "primary_class": "math.RT",
+   "stamp_date": "6 Jan 2025"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

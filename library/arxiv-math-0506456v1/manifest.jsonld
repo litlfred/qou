@@ -5,19 +5,27 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0506456v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0506456v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-0506456v1",
+  "title": "Asymptotics of the quantum invariants for surgeries on the figure 8 knot",
   "contains": [
     "library/arxiv-math-0506456v1/sections/sec-front-matter",
     "library/arxiv-math-0506456v1/sections/sec-000",
     "library/arxiv-math-0506456v1/sections/sec-001",
-    "library/arxiv-math-0506456v1/sections/sec-002"
+    "library/arxiv-math-0506456v1/sections/sec-002",
+    "library/arxiv-math-0506456v1/sections/sec-003",
+    "library/arxiv-math-0506456v1/sections/sec-004",
+    "library/arxiv-math-0506456v1/sections/sec-005",
+    "library/arxiv-math-0506456v1/sections/sec-006",
+    "library/arxiv-math-0506456v1/sections/sec-007",
+    "library/arxiv-math-0506456v1/sections/sec-008",
+    "library/arxiv-math-0506456v1/sections/sec-009",
+    "library/arxiv-math-0506456v1/sections/sec-010"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
     "searched": [
@@ -32,7 +40,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0506456v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0506456v1.pdf",
     "source_sha256": "ce11210245a29eecd6f823dc490027bf79f10e30bfc85836aca4a433884a83bd",
     "pages": 70,

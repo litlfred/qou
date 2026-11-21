@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "1f92f0edce04",
+          "ts": "ae8d7e04c4f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T00:43:10.869Z",
+        "reviewed_sha": "0eba507a077106abc6597936dd5f1cfb3cff653b",
+        "evidence": "Proof states both gaps explicitly; steps follow; c_lambda d_lambda = 6 at q = 1 is consistent."
+      }
+    ]
+  },
+  "updated_at": "2026-11-17T00:43:10.869Z"
+}

@@ -11,6 +11,5 @@
 | QU-4a | $[L_{-1}, a_m] = -ma_{m-1}$ | Translation |
 | QUO-1 | $\det G_{ij} \neq 0$ | Non-degeneracy |
 | QUO-2 | $\sigma_i w \sigma_i^{-1} = w\forall i \Rightarrow w \in R$ | Observability |
-| QUO-3a | $\sum_i \mathrm{tr}_M(\sigma_i - \sigma_i^{-1}) = 0$ | $c_1 = 0$ |
 | QUO-3b | $\sum_{i<j} \mathrm{tr}_M([\sigma_i,\sigma_j][\sigma_i,\sigma_j]^{\dagger}) = 0$ | $c_2 = 0$ |
 | QUO-4 | $\epsilon \circ \Lambda^2 g_V = \epsilon$ | Volume |

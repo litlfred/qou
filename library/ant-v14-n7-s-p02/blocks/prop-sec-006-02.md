@@ -1,0 +1,1 @@
+2.2. Lhar(K) has a canonical Lie bracket { · , · }har deﬁned by {S3 f, S3g}har = S3({ f, g}Ad). It is a Poisson bracket, i.e., we have {a. ∫1,0 har b, c} = {a, c}. ∫1,0 har b + a. ∫1,0 har {b, c}, where the product . ∫1,0 har is deﬁned by S3g. ∫1,0 har S3 f = S3(g. ∫1,0 Ad f ).

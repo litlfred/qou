@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-photon-threading-mass-interpretation",
@@ -16,7 +17,7 @@
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-photon-threading-mass",
     "papers/quantum-observable-universe/blocks/ex-mass-identity-su2",
-    "papers/quantum-observable-universe/blocks/thm-mass-energy-equivalence",
+    "papers/quantum-observable-universe/blocks/def-mass-energy",
     "papers/quantum-observable-universe/blocks/thm-groebner-shirshov-energy",
     "papers/quantum-observable-universe/blocks/ex-photon-wavefront"
   ],

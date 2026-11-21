@@ -8,7 +8,7 @@
   "pages": 41,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:25Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,7 +20,7 @@
   "title_lines": [
    "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS"
   ],
-  "abstract": "These notes are designed to accompany my mini-course on hyperbolic 3-manifolds at IHP in May 2025. The goal is to develop enough understanding of hyperbolic 3-manifolds to understand the background statements and some consequences of the Tameness Theorem, the Ending Lamination Theorem and the Density Theorem. The notes contain much more material than we will be able to cover in the actual mini-course. I left the four lane highway took a blacktop seven miles Down by the old country school I went to as a child Two miles down a gravel road I could see the proud old home A tribute to a way of life that\u2019s almost come and gone. The roots of my raising run deep I come back for the strength that I need And hope comes no matter how far down I sink The roots of my raising run deep. \u2014\u2014\u2014\u2014\u2014\u2013Tommy Collins1 0. Background material This section consists of background material on hyperbolic space and Teichm\u00a8uller space. We will not cover this material in the lectures, but we include the material for any participants who are not familiar with this material or would like a reminder. 0.1. The hyperbolic plane Recall that the upper half-plane model for the hyperbolic plane is given by H2 = {z \u2208C | Im(z) > 0} with Riemannian metric ds2 hyp = 1 y2 dxdy. Prosaically, if\u20d7v \u2208T(x,y)H2, then its hyperbolic length ||\u20d7v||hyp = |\u20d7v| y where |\u20d7v| is the Eucliden length of\u20d7v One may easily check that the y-axis L is a geodesic in this metric, since if p : H2 \u2192L is Euclidean perpendicular projection, then ||Dp(\u20d7v)||hyp \u2264||\u20d7v||hyp with equality if and only if\u20d7v is vertical. Moreover, segments of L are the only geodesic joining points on L. One may check that M\u00a8obius transformations with real co-efficients act as orientation-preserving isometries of H2, by Date: May 16, 2025. 1The most famous version of this song is sung by Merle Haggard 1",
+  "abstract": "These notes are designed to accompany my mini-course on hyperbolic 3-manifolds at IHP in May 2025. The goal is to develop enough understanding of hyperbolic 3-manifolds to understand the background statements and some consequences of the Tameness Theorem, the Ending Lamination Theorem and the Density Theorem. The notes contain much more material than we will be able to cover in the actual mini-course. I left the four lane highway took a blacktop seven miles Down by the old country school I went to as a child Two miles down a gravel road I could see the proud old home A tribute to a way of life that’s almost come and gone. The roots of my raising run deep I come back for the strength that I need And hope comes no matter how far down I sink The roots of my raising run deep. —————–Tommy Collins1 0. Background material This section consists of background material on hyperbolic space and Teichm¨uller space. We will not cover this material in the lectures, but we include the material for any participants who are not familiar with this material or would like a reminder. 0.1. The hyperbolic plane Recall that the upper half-plane model for the hyperbolic plane is given by H2 = {z ∈C | Im(z) > 0} with Riemannian metric ds2 hyp = 1 y2 dxdy. Prosaically, if⃗v ∈T(x,y)H2, then its hyperbolic length ||⃗v||hyp = |⃗v| y where |⃗v| is the Eucliden length of⃗v One may easily check that the y-axis L is a geodesic in this metric, since if p : H2 →L is Euclidean perpendicular projection, then ||Dp(⃗v)||hyp ≤||⃗v||hyp with equality if and only if⃗v is vertical. Moreover, segments of L are the only geodesic joining points on L. One may check that M¨obius transformations with real co-efficients act as orientation-preserving isometries of H2, by Date: May 16, 2025. 1The most famous version of this song is sung by Merle Haggard 1",
   "docinfo": {
    "Producer": "pdfTeX-1.40.26",
    "Creator": "LaTeX with hyperref",
@@ -30,7 +30,7 @@
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS I left the four lane highway took a blacktop seven miles Down by the old country school I went to as a child Two miles down a gravel road I could see the proud old home A tribute to a way of life that\u2019s almost come and gone. The roots of my raising run deep I c",
+   "heading": "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS I left the four lane highway took a blacktop seven miles Down by the old country school I went to as a child Two miles down a gravel road I could see the proud old home A tribute to a way of life that’s almost come and gone. The roots of my raising run deep I c",
    "outline": "0. Background material",
    "text": "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS",
    "corroborated_by": [],
@@ -70,7 +70,7 @@
   },
   {
    "level": 2,
-   "title": "Teichm\u00fcller space",
+   "title": "Teichmüller space",
    "page": 4,
    "source": "outline",
    "number": "0.3",
@@ -711,9 +711,9 @@
    "label_end": null
   },
   {
-   "id": "sec-003-03-teichm\u00fcller-space",
+   "id": "sec-003-03-teichmüller-space",
    "number": "0.3",
-   "title": "Teichm\u00fcller space",
+   "title": "Teichmüller space",
    "level": 2,
    "page_start": 4,
    "page_end": 6,
@@ -765,8 +765,8 @@
    "level": 2,
    "page_start": 10,
    "page_end": 13,
-   "n_chars": 7991,
-   "n_words": 1515,
+   "n_chars": 7988,
+   "n_words": 1514,
    "label_start": null,
    "label_end": null
   },
@@ -777,8 +777,8 @@
    "level": 2,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 953,
-   "n_words": 185,
+   "n_chars": 982,
+   "n_words": 188,
    "label_start": null,
    "label_end": null
   },
@@ -825,8 +825,8 @@
    "level": 2,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 4268,
-   "n_words": 851,
+   "n_chars": 4265,
+   "n_words": 850,
    "label_start": null,
    "label_end": null
   },
@@ -836,14 +836,26 @@
    "title": "A proof of the Local-to-global principle",
    "level": 2,
    "page_start": 19,
-   "page_end": 21,
-   "n_chars": 4709,
-   "n_words": 982,
+   "page_end": 20,
+   "n_chars": 3917,
+   "n_words": 837,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-014-31-quasiconformal-maps-and-beltrami-differential",
+   "id": "sec-014-3-bers-simultaneous-uniformization",
+   "number": "3",
+   "title": "Bers' Simultaneous uniformization",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 800,
+   "n_words": 148,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-015-31-quasiconformal-maps-and-beltrami-differential",
    "number": "3.1",
    "title": "Quasiconformal maps and Beltrami differentials",
    "level": 2,
@@ -855,7 +867,7 @@
    "label_end": null
   },
   {
-   "id": "sec-015-32-quasifconformal-conjugacy",
+   "id": "sec-016-32-quasifconformal-conjugacy",
    "number": "3.2",
    "title": "Quasifconformal conjugacy",
    "level": 2,
@@ -867,7 +879,7 @@
    "label_end": null
   },
   {
-   "id": "sec-016-33-simultaneous-uniformization",
+   "id": "sec-017-33-simultaneous-uniformization",
    "number": "3.3",
    "title": "Simultaneous uniformization",
    "level": 2,
@@ -879,7 +891,7 @@
    "label_end": null
   },
   {
-   "id": "sec-017-34-the-general-case",
+   "id": "sec-018-34-the-general-case",
    "number": "3.4",
    "title": "The general case",
    "level": 2,
@@ -891,7 +903,7 @@
    "label_end": null
   },
   {
-   "id": "sec-018-4-geometrically-tame-hyperbolic-3-manifolds",
+   "id": "sec-019-4-geometrically-tame-hyperbolic-3-manifolds",
    "number": "4",
    "title": "Geometrically tame hyperbolic 3-manifolds",
    "level": 1,
@@ -903,7 +915,7 @@
    "label_end": null
   },
   {
-   "id": "sec-019-41-the-first-explicit-examples",
+   "id": "sec-020-41-the-first-explicit-examples",
    "number": "4.1",
    "title": "The first explicit examples",
    "level": 2,
@@ -915,7 +927,7 @@
    "label_end": null
   },
   {
-   "id": "sec-020-42-simplicial-hyperbolic-surfaces",
+   "id": "sec-021-42-simplicial-hyperbolic-surfaces",
    "number": "4.2",
    "title": "Simplicial hyperbolic surfaces",
    "level": 2,
@@ -927,7 +939,7 @@
    "label_end": null
   },
   {
-   "id": "sec-021-43-simply-degenerate-ends",
+   "id": "sec-022-43-simply-degenerate-ends",
    "number": "4.3",
    "title": "Simply degenerate ends",
    "level": 2,
@@ -939,19 +951,31 @@
    "label_end": null
   },
   {
-   "id": "sec-022-44-the-tameness-theorem",
+   "id": "sec-023-44-the-tameness-theorem",
    "number": "4.4",
    "title": "The Tameness Theorem",
    "level": 2,
    "page_start": 29,
-   "page_end": 32,
-   "n_chars": 6255,
-   "n_words": 1079,
+   "page_end": 30,
+   "n_chars": 1342,
+   "n_words": 208,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-023-46-limit-sets-of-kleinian-groups",
+   "id": "sec-024-45-ahlfors-measure-conjecture",
+   "number": "4.5",
+   "title": "Ahlfors' Measure Conjecture",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 32,
+   "n_chars": 4879,
+   "n_words": 867,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-025-46-limit-sets-of-kleinian-groups",
    "number": "4.6",
    "title": "Limit sets of Kleinian groups",
    "level": 2,
@@ -963,7 +987,7 @@
    "label_end": null
   },
   {
-   "id": "sec-024-47-a-covering-theorem-for-hyperbolic-3-manifolds",
+   "id": "sec-026-47-a-covering-theorem-for-hyperbolic-3-manifolds",
    "number": "4.7",
    "title": "A covering theorem for hyperbolic 3-manifolds",
    "level": 2,
@@ -975,7 +999,7 @@
    "label_end": null
   },
   {
-   "id": "sec-025-5-the-classification-of-hyperbolic-3-manifolds",
+   "id": "sec-027-5-the-classification-of-hyperbolic-3-manifolds",
    "number": "5",
    "title": "The classification of hyperbolic 3-manifolds",
    "level": 1,
@@ -987,7 +1011,7 @@
    "label_end": null
   },
   {
-   "id": "sec-026-51-geodesic-laminations",
+   "id": "sec-028-51-geodesic-laminations",
    "number": "5.1",
    "title": "Geodesic laminations",
    "level": 2,
@@ -999,31 +1023,31 @@
    "label_end": null
   },
   {
-   "id": "sec-027-52-ending-laminations",
+   "id": "sec-029-52-ending-laminations",
    "number": "5.2",
    "title": "Ending laminations",
    "level": 2,
    "page_start": 36,
    "page_end": 37,
-   "n_chars": 3305,
-   "n_words": 605,
+   "n_chars": 3302,
+   "n_words": 604,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-028-53-the-ending-lamination-theorem",
+   "id": "sec-030-53-the-ending-lamination-theorem",
    "number": "5.3",
    "title": "The Ending Lamination Theorem",
    "level": 2,
    "page_start": 37,
    "page_end": 37,
-   "n_chars": 2130,
-   "n_words": 332,
+   "n_chars": 2165,
+   "n_words": 337,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-029-54-the-bers-sullivan-thurston-density-conjecture",
+   "id": "sec-031-54-the-bers-sullivan-thurston-density-conjecture",
    "number": "5.4",
    "title": "The Bers-Sullivan-Thurston Density Conjecture and other consequences",
    "level": 2,
@@ -1035,7 +1059,7 @@
    "label_end": null
   },
   {
-   "id": "sec-030-references",
+   "id": "sec-032-references",
    "number": null,
    "title": "References",
    "level": 1,
@@ -1058,7 +1082,8 @@
    "count": 0,
    "items": []
   },
-  "sections": 32,
-  "chars_total": 118408
+  "sections": 34,
+  "chars_total": 118437,
+  "furniture_lines_stripped": 0
  }
 }

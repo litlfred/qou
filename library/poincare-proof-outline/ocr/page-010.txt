@@ -1,0 +1,68 @@
+case True
+then obtain i/ i2 a where +:
+il € unit-circle-set M circline-set H i2 € unit-circle-set \ circline-set H
+a € circline-set H a ¢ unit-circle-set
+i Ail 4ai2F#a
+using * (7 {u, v, w} C unit-circle-set»
+by auto
+then obtain b where 6 € circline-set H b £ i1 b 4 i2b 4. ab F inversion a
+using ex-is-poincare-line-points'|of i1 H i2 a]
+by blast
+
+hence b ¢ unit-circle-set
+using « (H # unit-circley unique-circline-set|of il i2 b]
+unfolding unit-circle-set-def
+by auto
+
+thus ?thesis
+using * <b € circline-set Hy <b # a» <b # inversion ay
+by auto
+next
+case False
+then obtain f g h where
+x: f #4 gf € circline-set H f ¢ unit-circle-set
+g € circline-set H g €¢ unit-circle-set
+h € circline-set Hh A fhAg
+using *
+by auto
+show ?thesis
+proof (cases f = inversion g)
+case False
+thus ?thesis
+using *
+by auto
+next
+case True
+show ?thesis
+proof (cases h € unit-circle-set)
+case False
+thus ?thesis
+using * <f = inversion g>
+by auto
+next
+case True
+obtain m where cr2: cross-ratio m h f g = of-complex 2
+using ex-cross-ratiolof h fg) * (f Ag hA fr h# gr
+by auto
+hencem4#4hmz7fm4qg
+using hA¢Af hAg if #q
+using ex1-cross-ratio|of h f g]
+using cross-ratio-O[of h f g| cross-ratio-1[of h f g| cross-ratio-inf lof h g f]
+using cr2
+by auto
+hence m € circline-set H
+using four-points-on-circline-iff-cross-ratio-reallof m h f g| cr2
+using (h #4 f> (h #g> (f #g) *
+using unique-circline-set[of h f g]
+by auto
+
+show ?thesis
+proof (cases m € unit-circle-set)
+case False
+thus ?thesis
+using (m # f> «m # g> <f = inversion g> * «m € circline-set Hy
+by auto
+next
+case True
+
+10

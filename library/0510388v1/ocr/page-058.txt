@@ -1,0 +1,30 @@
+26. Plan of the proof.
+Consider the usual vector convolutions, this time in parallel transport format:
+ACV, O)(y) = Js3 PyxV(x) O(% y) dx
+B(V, )(y) = Sss Py Vx) x Vyo(% y) dx
+AV, oy) = Js PyxV(x) © Vyh(x, y) dx
+G(V, o)(y) = Vy eV, oy) = Vy S33 Py VOX) ¢ Vyb(x, y) dx.
+Step 1. First we will determine the unknown kernel function so as to make
+Vy x ACV, 6)(y) = —BCV, by) = — BS(V)(y) .
+
+Insisting that ¢ have a singularity only at a = 0 andnotat a = x leads
+to the unique solution @ = 2 given in the statement of the theorem above.
+
+Step 2. Then, as a consequence of Maxwell's equation, we will have
+—VyXVy XACV, $2)(y) = Vy XBS(V)(y)
+
+= Vy) — Vy Js Vx © VOX) oo(x, y) dx.
+Hence
+
+yA(V, b2)(y) = — Vy XVy XACV, b2)(y) + VyoVy © ACV, b2)(y))
+= Viy) — Vy Ss: Va © V(X) o(x, y) dx + Vy(Vy © ACV, b2)(y))
+= V(y) + some gradient field .
+
+We then find the kernel function 3; sothat ,G(V,3)(y) = G(V, 3)(y)
+is the negative of the above gradient field, in which case defining
+
+Gr(V)(y) = ACV, b2)(y) + G(V, o3)(y)
+
+yields the desired equation ,Gr(V)(y) = V(y).
+
+58

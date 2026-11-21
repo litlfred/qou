@@ -8,7 +8,7 @@ Here, $q$ acquires an imaginary part $\theta \neq 0$. The [complex substrate int
 
 This meets Sakharov's conditions:
 1. Frobenius degeneration enables baryon number violation.
-2. The deformation magnitude $r = \lvert q\rvert$ supplies CP violation. **Not the phase:** the framework's matter-antimatter discriminant is $\delta_{\mathrm{CP}} = (r^2-1)/(r^2+1)$ for every $\theta$ (`QOU.Observations.crossingDisc_norm_theta_free`, sorry-free), so $\theta$ is absent from it — see [CP violation evidence](#sec:cp-violation-evidence). In this regime that strengthens the condition rather than weakening it: as $q \to \infty$ the discriminant tends to $1$, its maximum, whereas the phase-based reading would have needed an imperfect projection to leave a residual $\theta_{\mathrm{res}}$.
+2. The deformation magnitude $r = \lvert q\rvert$ supplies CP violation. **Not the phase:** the framework's matter-antimatter discriminant is $\delta_{\mathrm{CP}} = (r^2-1)/(r^2+1)$ for every $\theta$, so $\theta$ is absent from it — see [CP violation evidence](#sec:cp-violation-evidence). In this regime that strengthens the condition rather than weakening it: as $q \to \infty$ the discriminant tends to $1$, its maximum, whereas the phase-based reading would have needed an imperfect projection to leave a residual $\theta_{\mathrm{res}}$.
 3. The Big Bang provides non-equilibrium.
 
 Condition 2 being satisfied *maximally* does not close baryogenesis; it sharpens what remains. The framework's asymmetry at the substrate anchor already exceeds the observed baryon-to-photon ratio by $\approx 1.7\times10^{8}$, so the open object is a suppression, not a further source of asymmetry (again [CP violation evidence](#sec:cp-violation-evidence)).
@@ -19,7 +19,7 @@ The Hopf algebra becomes cocommutative. The [quantum Planck constant](#def:subst
 
 **Categorical picture (conjectural).**
 
-We require a category of QOU degenerations $\mathbf{QOU}_{\mathrm{deg}}$ with morphisms preserving structure while selectively degrading axioms:
+This requires a category of QOU degenerations $\mathbf{QOU}_{\mathrm{deg}}$ with morphisms preserving structure while selectively degrading axioms:
 
 - The **initial object** represents the Big Bang ($q = \infty$, degenerate Frobenius form).
 - The **terminal object** is [Bring's surface](#thm:descartes) ($q = 1$).
@@ -33,4 +33,4 @@ The $1 < q < \infty$ regime enforces chirality conservation:
 2. **Observable era**: Chirality is frozen.
 3. **Heat death**: The $q \to 1$ limit erases chirality distinctions.
 
-In a cyclic universe, exceptional divisors reset topology at the aeon boundary. We conjecture this transition as a morphism from the terminal object of one $\mathbf{QOU}_{\mathrm{deg}}$ to the initial object of the next.
+In a cyclic universe, exceptional divisors reset topology at the aeon boundary. The conjecture is that this transition is a morphism from the terminal object of one $\mathbf{QOU}_{\mathrm{deg}}$ to the initial object of the next.

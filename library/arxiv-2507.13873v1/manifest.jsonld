@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2507.13873v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2507.13873v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "Probing the singularity at the holographic screen via $q$-holography",
   "contains": [
+    "library/arxiv-2507.13873v1/sections/sec-front-matter",
     "library/arxiv-2507.13873v1/sections/sec-000",
     "library/arxiv-2507.13873v1/sections/sec-001",
     "library/arxiv-2507.13873v1/sections/sec-002",
@@ -22,10 +23,11 @@
     "library/arxiv-2507.13873v1/sections/sec-008",
     "library/arxiv-2507.13873v1/sections/sec-009",
     "library/arxiv-2507.13873v1/sections/sec-010",
-    "library/arxiv-2507.13873v1/sections/sec-011"
+    "library/arxiv-2507.13873v1/sections/sec-011",
+    "library/arxiv-2507.13873v1/sections/sec-012"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",

@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/springer-1976-invent-36-173/blocks/ex-page-004-01",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "kind": "example",
+  "pageStart": 4,
+  "pageEnd": 4,
+  "text": "ex-page-004-01.md",
+  "derivedFrom": "library/springer-1976-invent-36-173/sections/page-004",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/springer-1976-invent-36-173/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "1.5",
+    "source_kind": "example",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/page-004.md (p. 4-4)",
+    "claim_id": "springer-1976-invent-36-173#example:1.5"
+  }
+}

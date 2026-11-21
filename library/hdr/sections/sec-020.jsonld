@@ -9,13 +9,18 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Rational Cherednik Algebras at t = 0",
-  "pageStart": 44,
-  "pageEnd": 45,
+  "title": "Rational Cherednik Algebras at t =1",
+  "pageStart": 39,
+  "pageEnd": 41,
   "contains": [
-    "library/hdr/blocks/prose-sec-020"
+    "library/hdr/blocks/prose-sec-020",
+    "library/hdr/blocks/rem-sec-020-01",
+    "library/hdr/blocks/prop-sec-020-02",
+    "library/hdr/blocks/rem-sec-020-03",
+    "library/hdr/blocks/rem-sec-020-04",
+    "library/hdr/blocks/prop-sec-020-05"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hdr",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hdr",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
   "provenance": "ingested"
 }

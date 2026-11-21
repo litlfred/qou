@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2512.02998v1
-doc_title: "STABILITY OFKNOT EQUIVALENCE AT LOW REGULARITY, AND SYMMETRIC CRITICAL KNOTS FOR THEMÖBIUS ENERGY"
+doc_title: "Stability of knot equivalence at low regularity, and symmetric critical knots for the M\'obius energy"
 section_id: sec-004-14-symmetric-critical-points-for-scale-invariant
 section_title: "Symmetric critical points for scale-invariant knot energies"
 section_number: 1.4
 pages: 4-5
 source_pdf: 2512.02998v1.pdf
 source_sha256: 146ff93cd70baad4
-doc_brief: "STABILITY OFKNOT EQUIVALENCE AT LOW REGULARITY, AND SYMMETRIC CRITICAL KNOTS FOR THEMÖBIUS ENERGY — We present sufficient criteria for the equivalence of tame knots at low regularity."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.97
-latex_coverage_ratio: 0.883
+latex_coverage_ratio: 1.0
+doc_brief: "Stability of knot equivalence at low regularity, and symmetric critical knots for the M\'obius energy — We present sufficient criteria for the equivalence of tame knots at low regularity."
 ---
 The fractional Sobolev space $W^{\frac32, 2}(\R/\Z,\R^3)$ is the natural
 energy space for  the 

@@ -1,0 +1,71 @@
+using <is-real Ze1> <is-real z1) <is-real 22) «Rel > 0) «—1 < Re 21) «Re z1 < 1) ‘-1 < Re 22) (Re 22 < 1»
+by auto
+thus False
+using (zl # 22>
+by simp
+qed
+
+hence *: (Re x1’)? + (Im a1’)? — 2 * Re x1'* Zel + Zel * Zel — cor (Rel * Rel) = 0
+(Re a1’)? + (Im x1’)? — 2 * Re xl’ * Ze2 + Ze2 * Ze2 — cor (Re2 * Re2) = 0
+
+(Re 22')? + (Im 22")? — 2 * Re 12'* Zel + Zel * Zel — cor (Rel * Rel) = 0
+(Re 22’)? + (Im 22")? — 2 * Re «2'* Ze2 + Ze2 * Ze2 — cor (Re2 * Re2) = 0
+using circle-equation|of Re1 Ze1] circle-equation|of Re2 Ze2] circle
+using eq-cnj-iff-real[of Ze1] <is-real Ze1» «Rel > 0»
+using eq-cnj-iff-real[of Ze2] <is-real Ze2» «Re2 > 0»
+using complez-add-cnjlof x1'| complex-add-cnj{of x2']
+using distrib-left{of Ze1 x1' cnj x1'| distrib-left{of Ze2 x1’ cnj x1'|
+using distrib-left[of Ze1 x2’ cnj x2'| distrib-left{of Ze2 12’ enj 12’
+by (auto simp add: complex-mult-cnj power2-eq-square field-simps)
+hence — 2 * Real’ * Ze1 + Zel « Zel — cor (Rel * Rel) = — 2 * Real’ * Ze2 + Ze2 * Ze2 — cor (Re2 * Re2)
+
+— 2 Re x2'* Zel + Zel * Zel — cor (Rel * Rel) =— 2 * Re x2' * Ze2 + Ze2 * Ze2 — cor (Re2 * Re2)
+by (smt add-diff-cancel-right' add-diff-eq eq-iff-diff-eq-0 minus-diff-eq mult-minus-left of-real-minus)+
+hence 2 « Re x1’ * (Ze2 — Zel) = (Ze2 * Ze2 — cor (Re2 * Re2)) — (Zel * Zel — cor (Rel * Rel1))
+2% Re x2'* (Ze2 — Zel) = (Ze2 * Ze2 — cor (Re2 * Re2)) — (Zel *« Zel — cor (Rel * Rel))
+by simp-all (simp add: field-simps)+
+hence 2 « Re w1' « (Ze2 — Zel) = 2 * Re x2' * (Ze2 — Zel)
+by simp
+hence Re r1' = Re x2
+using (Zel # Ze2)
+by simp
+moreover
+hence (Im x1’)? = (Im x2’)?
+using *(1) *(3)
+by (simp add: <is-real Ze1> complex-eq-if-Re-eq)
+
+hence Im x1' = Im 22'V Im «1' = —Im 22’
+using power2-eq-iff
+by blast
+
+ultimately
+
+show ?thesis
+using x’ (rl A 72>
+using complez.expand
+by (metis cnj.code complex-surj conjugate-of-complex)
+qed
+
+Two h-circles of the same radius centered at mutually conjugate points intersect at the x-axis
+
+lemma intersect-poincare-circles-conjugate-centers:
+assumes in-disc: z1 € unit-disc z2 € unit-disc and
+z1 # 22 and 21 = conjugate z2 and r > 0 and
+u: u € poincare-circle z1 r M poincare-circle 22 r
+shows is-real (to-complex u)
+proof—
+obtain zle rle z2e r2e where
+euclidean: (zle, rle) = poincare-circle-euclidean z1 r
+(z2e, r2e) = poincare-circle-euclidean 22 r
+by (metis poincare-circle-euclidean-def )
+obtain z1’ 22’ where z’: z1 = of-complex z1' 22 = of-complex 22’
+using inf-or-of-complez|of z1| inf-or-of-complez|of z2| in-disc
+by auto
+obtain u’ where wu’: u = of-complex u’
+using w inf-or-of-complez|of u]
+by (auto simp add: poincare-circle-def)
+have 21! = cnj 22’
+using (21 = conjugate 22> z’
+by (auto simp add: of-complex-inj)
+moreover
+let ?cz = 1 — (cmod 22")?

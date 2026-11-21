@@ -1,0 +1,45 @@
+Galois action on the principal block and cyclic Sylow subgroups 1955
+
+This paper is structured as follows. In Section 1 we prove that Conjecture B follows from the Alperin—
+McKay-Navarro conjecture. To do so, we study the action of o; on the irreducible characters of blocks
+with normal defect group. The rest of the paper is devoted to proving Theorem A. In Section 2, we reduce
+Theorem A to statements on finite simple groups, and in Section 3 we prove Theorem C thus completing
+the proof of Theorem A.
+
+1. Blocks with normal defect group
+
+The aim of this section is to prove that Conjecture B follows from the Alperin-McKay—Navarro conjecture,
+stated below.
+
+For a fixed prime p, consider the set BI(G) of Brauer (p-)blocks of G as in [Navarro 1998], so that
+B\(G) is a partition of Irr(G) UIBr(G) (recall that p-Brauer characters are defined on p-regular elements
+of G). Write Irnr(B) = BN Irr(G) and IBr(B) = BO IBr(G) for any B € BI(G). Every block B has
+associated a uniquely defined conjugacy class of p-subgroups of G, namely its defect groups. Given a
+block B of G with defect group D, we write B € BI(G| D) and we let b € BI(NG(D) | D) denote its
+Brauer first main correspondent. Finally, x € Irr(B) has height zero in B if x(1)p = |G: D|p, and we
+write Irro(B) to denote the subset of height zero characters in Irr(B).
+
+Assuming the notation of the introduction, we have that the group G acts on {Irr(B) | B € BI(G)}
+by [Navarro 1998, Theorem 3.19]. The group H further acts on the set Bl(G) by [Navarro 2004,
+Theorem 2.1]. While the action of G on characters is not natural enough in global-local contexts, Navarro
+[2004] conjectured the following.
+
+Conjecture (Alperin-McKay—Navarro conjecture). Let B € Bl(G| D) and let b € B\(Ng(D) | D) be its
+
+Brauer first main correspondent. If o € H., then
+[Irr9(B)” | = [lrro(b)?|.
+
+Here we are only concerned with the action of a specific element of H, namely o1. Recall that 0) € H
+fixes p’-roots of unity and sends any root of unity of order a power of p to its (p+1)-st power. If G is a
+finite group of order dividing some integer n and , is a primitive n-th root of unity, then by elementary
+number theory, the restriction @ of 0; to the n-th cyclotomic field Q(é,) has order a power of p, and w
+acts as o; on the ordinary characters of every subgroup of G. Abusing notation, we will also write oj
+for any such restriction. In particular, 0; fixes the elements of IBr(G), and hence acts trivially on BI(G).
+(Note that in general G does not act on IBr(G), but H does by Theorem 2.1 of [Navarro 2004].)
+
+In order to prove that Conjecture B follows from the Alperin-McKay—Navarro conjecture, we need to
+study blocks with a normal defect group. We follow the notation in Chapter 9 of [Navarro 1998]. Let
+B € B\(G| D) and assume that D«aG. Write C = Cg(D). We will denote by b € BI(CD| D) a root
+of B, and we will let @ € Irr(b) be the canonical character associated with B, which is unique up to
+G-conjugacy (see [Navarro 1998, Theorem 9.12] and the subsequent discussion). Recall that D C ker6
+and 6 has p-defect zero when viewed as a character of CD/D (that is, 0(1), =|CD : D|p), the stabilizer

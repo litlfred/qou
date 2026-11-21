@@ -1,0 +1,54 @@
+A representation theoretic explanation... 1397
+
+This result then has a few corollaries which will help to shed light on results related to
+polarization and the apolarity form. The first will be useful in elucidating the representation
+theoretic ties to the Grace-Walsh—Szeg6 coincidence theorem below.
+
+Lemma B.2 Fix 4 € Ng. Then the apolarity form commutes with polarization up to scalar.
+That is:
+
+D* =D") om} @ Mm)
+
+Proof The map DO 6 ca! ® m}) : V(A) @ V(A) > Cis an (SL2(C))”-invariant bilinear
+form on V (A). By uniqueness (see Corollary A.12), this then must equal D* up to scalar. 0
+
+The content of this result is that fact that we have commutativity even though D“”? is
+a priori the apolarity form with respect to a different group action than that of D* (ie.,
+(SL2(C))!"! instead of (SL2(C))). That said, it should be noted that the analogous commu-
+tativity statement with the projection map ny does not hold (unless of course, one restricts
+to the image of m1).
+
+The purpose of this result is then to demonstrate the connection between a polynomial and
+its polarization. In particular, if Grace’s theorem gives stability information via the apolarity
+form, then the previous result shows that the polarizations of those polynomials will have the
+same stability information. We prove this rigorously in Corollary B.5.
+
+Proposition B.1 also leads to one of the crucial results used in the proof of the Borcea—
+Briandén characterization of linear operators (Lemma 2.5 in [1]). It relies on the notion of “the
+polarization of an operator”, given by T +> mm oTo ny (see §2.2 in [1]). We do not make
+explicit use of this result, but we state it here to demonstrate that operator polarization has a
+representation theoretic interpretation similar to that of the usual polynomial polarization.
+
+Proposition B.3 The symbol of the polarization of an operator T is the polarization of the
+symbol of T.
+
+Proof Using Proposition B.1 and Definition 3.6, it is straightforward to see that all the maps
+involved are injective (SL (C))?”-invariant linear maps (i.e., polarization of polynomials,
+polarization of operators, the Symb map). The result then follows from a dimension argument
+and Schur’s lemma, in a way similar to that of the proof of Proposition B.1. Oo
+
+B.2 The coincidence theorem
+
+The Grace—Walsh—Szeg6 coincidence theorem has strong ties to Grace’s theorem, and most
+books and surveys on the subject state the two results side by side. Some books (e.g., [15])
+even go so far as to demonstrate their equivalence, perhaps with other results involving typical
+polynomial convolutions. Here, we will state and prove the general multivariate version of
+the theorem in terms of homogeneous polynomials, making use of evaluation symbols and
+Grace’s theorem (Theorem 5.1).
+
+First though, consider the following corollary to the symbol lemma (Lemma 3.7) which
+is similar in spirit to the evaluation symbol lemma (Lemma 5.10). Note that when applied
+to p € V(n) with m = 1, this result has the following intuitive statement as a corollary:
+D" (q ® p) is equal to the evaluation of n p at the roots of q.
+
+D Springer

@@ -1,0 +1,149 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-math-0701051v4",
+  "figures": [
+    {
+      "id": "vfig-p004",
+      "file": "figures/vfig-p004.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 4
+      },
+      "page": 4,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": [
+        242.2,
+        110.01,
+        369.51,
+        157.81
+      ],
+      "assembly": {
+        "drawings": 5,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              242.2,
+              110.01,
+              267.32,
+              157.81
+            ],
+            "drawings": 2,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "(1)",
+              "(2)"
+            ]
+          },
+          {
+            "bbox": [
+              339.54,
+              118.86,
+              369.51,
+              148.84
+            ],
+            "drawings": 1,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "(12)",
+              "b"
+            ]
+          },
+          {
+            "bbox": [
+              270.68,
+              122.56,
+              338.71,
+              145.24
+            ],
+            "drawings": 2,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "b"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              242.2,
+              132.69,
+              267.32,
+              157.81
+            ],
+            "parent": null,
+            "labels": [
+              "(1)"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              242.2,
+              110.01,
+              267.32,
+              135.13
+            ],
+            "parent": null,
+            "labels": [
+              "(2)"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              339.54,
+              118.86,
+              369.51,
+              148.84
+            ],
+            "parent": null,
+            "labels": [
+              "(12)",
+              "b"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              270.68,
+              133.9,
+              338.71,
+              145.24
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              270.68,
+              122.56,
+              338.71,
+              133.9
+            ]
+          }
+        ],
+        "between": [
+          "b"
+        ],
+        "outside": 57
+      }
+    }
+  ]
+}

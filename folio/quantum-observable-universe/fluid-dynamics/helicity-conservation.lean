@@ -55,7 +55,7 @@ neither is a field of anything.
   Moffatt limit) have **no encoding at all** in this file.
 
 ## References
-- [manuscript] §Fluid dynamics / Categorical helicity conservation,
+- [leitner2026] §Fluid dynamics / Categorical helicity conservation,
   prop:helicity-conservation
 -/
 
@@ -80,12 +80,12 @@ structure FilamentHelicity where
 proposition about one caller-supplied filament.  Classical for the
 undeformed invariants; its `q`-deformation is asserted by the manuscript and
 is **not** proved here. -/
--- Ref: [manuscript] prop:helicity-conservation
+-- Ref: [leitner2026] prop:helicity-conservation
 def CWFHolds (f : FilamentHelicity) : Prop := f.Wr + f.Tw = f.Lk
 
 /-- **Moffatt–Ricca self-helicity identity** `∮_ϱ v·ω ds = Lk_q(ϱ)·(Γ^{(q)})²`,
 as a proposition about one caller-supplied filament.  Not proved here. -/
--- Ref: [manuscript] prop:helicity-conservation
+-- Ref: [leitner2026] prop:helicity-conservation
 def SelfHelicityIsLinking (f : FilamentHelicity) : Prop :=
   f.selfHelicity = f.Lk * f.Gamma ^ 2
 
@@ -113,7 +113,7 @@ Derived, not assumed: summing `∮ = Lk·Γ²` and `Wr + Tw = Lk` over the
 filaments gives `Σ ∮ = Σ Wr·Γ² + Σ Tw·Γ²`.  Both inputs are hypotheses on
 caller-supplied filaments; neither is a field of anything, and the
 conclusion is neither. -/
--- Ref: [manuscript] prop:helicity-conservation
+-- Ref: [leitner2026] prop:helicity-conservation
 theorem selfSum_eq_writhe_add_twist (fs : List FilamentHelicity)
     (hCWF : ∀ f ∈ fs, CWFHolds f)
     (hSelf : ∀ f ∈ fs, SelfHelicityIsLinking f) :
@@ -147,7 +147,7 @@ expression.  The decomposition is `selfSum_eq_writhe_add_twist`.
 What the hypotheses cost is stated in the module docstring: `hdef` is where
 the quantum Euler equation would enter and is not established here, and the
 two per-filament identities are cited rather than proved. -/
--- Ref: [manuscript] prop:helicity-conservation
+-- Ref: [leitner2026] prop:helicity-conservation
 theorem helicity_conservation
     (Hq : ℝ → ℝ) (fs : List FilamentHelicity) (mutualLk : ℝ)
     (hdef : ∀ t, Hq t = selfHelicitySum fs + mutualLk)
@@ -167,7 +167,7 @@ The sub-ceiling magnitude `g` extracted via the Reeb-flow helicity for a
 
 The `[HelicityContext]` binder this carried until 2026-08-31 was decorative —
 the proof never used it, and the class it named is gone. -/
--- Ref: [manuscript] docs/audits/2026-07-05-reeb-linking-operation-attack.md
+-- Ref: [leitner2026] docs/audits/2026-07-05-reeb-linking-operation-attack.md
 theorem reeb_linking_magnitude_bound (q : ℝ) (hq : q > 1) :
     let g := 1 / Real.sqrt (5 + (q - 1) ^ 2 / q)
     g < 1 / Real.sqrt 5 := by

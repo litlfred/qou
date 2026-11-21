@@ -2,287 +2,82 @@
  "_schema": "library-summary/v1",
  "doc_id": "fulltext",
  "source_sha256": "05079cf525c6ba0f",
- "brief": "The Dilogarithm Function — 55 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and",
- "extended": "**The Dilogarithm Function**\n\n*Don Zagier*\n\n63 pp, 55 sections.\n\n**Outline.** 4 Don Zagier; I The dilogarithm function in geometry and num; 3 The Bloch-Wigner function D(z) and its gener; 4 Volumes of hyperbolic 3-manifolds... .......; II Further aspects of the dilogarithm ........; 3 Dilogarithms and modular functions: the Nahm; 1 This paper is a revised version of a lecture; 6 Don Zagier; 1 Special values; 2 Li2; 8 Don Zagier; 2 Li2(1)− 1; 2 Functional equations; 10 Don Zagier; 3 The Bloch-Wigner function D(z); 12 Don Zagier; 2 (z1,z2)=; 2 (z1,z2)= 1",
+ "brief": "The Dilogarithm Function — 14 sections: Front matter; The dilogarithm function in geomet; Special values",
+ "extended": "**The Dilogarithm Function**\n\n*Don Zagier*\n\n63 pp, 14 sections.\n\n**Outline.** Front matter; I The dilogarithm function in geometry and num; 1 Special values; 2 Functional equations; 3 The Bloch-Wigner function D(z) and its gener; 4 Volumes of hyperbolic 3-manifolds; References; Notes on Chapter I; II Further aspects of the dilogarithm; 1 Variants of the dilogarithm function; 2 Dilogarithm identities; 3 Dilogarithms and modular functions: the Nahm; 4 Higher polylogarithms; References",
  "tokens": {
-  "brief": 30,
-  "extended": 139
+  "brief": 26,
+  "extended": 121
  },
  "sections": [
   {
-   "id": "sec-000-4-don-zagier",
-   "title": "Don Zagier",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-001-i-the-dilogarithm-function-in-geometry-and-numbe",
-   "title": "The dilogarithm function in geometry and number theory 5",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-002-3-the-bloch-wigner-function-dz-and-its-generaliz",
-   "title": "The Bloch-Wigner function D(z) and its generalizations . . . . . . . . . . . . 10",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-003-4-volumes-of-hyperbolic-3-manifolds-1-3",
-   "title": "Volumes of hyperbolic 3-manifolds... ........................... 1 3",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-004-ii-further-aspects-of-the-dilogarithm-2-2",
-   "title": "Further aspects of the dilogarithm ....................... 2 2",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-005-3-dilogarithms-and-modular-functions-the-nahm-eq",
-   "title": "Dilogarithms and modular functions: the Nahm equation . . . . . . . . . . . 41",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-3"
   },
   {
-   "id": "sec-006-1-this-paper-is-a-revised-version-of-a-lecture-w",
-   "title": "This paper is a revised version of a lecture which was given in Bonn on the",
+   "id": "sec-000-i-the-dilogarithm-function-in-geometry-and-numbe",
+   "title": "The dilogarithm function in geometry and number theory",
    "pages": "3-4"
   },
   {
-   "id": "sec-007-6-don-zagier",
-   "title": "Don Zagier",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-008-1-special-values",
+   "id": "sec-001-1-special-values",
    "title": "Special values",
-   "pages": "4-5"
+   "pages": "4-6"
   },
   {
-   "id": "sec-009-2-li2",
-   "title": "Li2",
-   "pages": "5-6"
-  },
-  {
-   "id": "sec-010-8-don-zagier",
-   "title": "Don Zagier",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-011-2-li21-1",
-   "title": "Li2(1)− 1",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-012-2-functional-equations",
+   "id": "sec-002-2-functional-equations",
    "title": "Functional equations",
    "pages": "6-8"
   },
   {
-   "id": "sec-013-10-don-zagier",
-   "title": "Don Zagier",
-   "pages": "8-8"
+   "id": "sec-003-3-the-bloch-wigner-function-dz-and-its-generaliz",
+   "title": "The Bloch-Wigner function D(z) and its generalizations",
+   "pages": "8-11"
   },
   {
-   "id": "sec-014-3-the-bloch-wigner-function-dz",
-   "title": "The Bloch-Wigner function D(z)",
-   "pages": "8-10"
+   "id": "sec-004-4-volumes-of-hyperbolic-3-manifolds",
+   "title": "Volumes of hyperbolic 3-manifolds",
+   "pages": "11-18"
   },
   {
-   "id": "sec-015-12-don-zagier",
-   "title": "Don Zagier",
-   "pages": "10-10"
-  },
-  {
-   "id": "sec-016-2-z1z2",
-   "title": "(z1,z2)=",
-   "pages": "10-11"
-  },
-  {
-   "id": "sec-017-2-z1z2-1",
-   "title": "(z1,z2)= 1",
-   "pages": "11-12"
-  },
-  {
-   "id": "sec-018-14-don-zagier",
-   "title": "Don Zagier",
-   "pages": "12-14"
-  },
-  {
-   "id": "sec-019-16-don-zagier",
-   "title": "Don Zagier",
-   "pages": "14-16"
-  },
-  {
-   "id": "sec-020-18-don-zagier",
-   "title": "Don Zagier",
-   "pages": "16-16"
-  },
-  {
-   "id": "sec-021-3-fo-fk3f-the-exact-deﬁnition-ofkind",
-   "title": "(F)o fK3(F). The exact deﬁnition ofKind",
-   "pages": "16-16"
-  },
-  {
-   "id": "sec-022-3-f-is-not-relevant-here-what",
-   "title": "(F) is not relevant here. What",
-   "pages": "16-16"
-  },
-  {
-   "id": "sec-023-3-f-with-bf-this-mapping",
-   "title": "(F) with BF this mapping",
-   "pages": "16-16"
-  },
-  {
-   "id": "sec-024-2-it-should-be-mentioned-that-the-deﬁnition-of-b",
-   "title": "It should be mentioned that the deﬁnition of BF w h i c hw eg a v ef o rF = C or",
-   "pages": "16-17"
-  },
-  {
-   "id": "sec-025-3-fa-n-d",
-   "title": "(F)a n d",
-   "pages": "17-18"
-  },
-  {
-   "id": "sec-026-20-don-zagier",
-   "title": "Don Zagier",
-   "pages": "18-18"
-  },
-  {
-   "id": "sec-027-references",
+   "id": "sec-005-references",
    "title": "References",
-   "pages": "18-20"
+   "pages": "18-19"
   },
   {
-   "id": "sec-028-22-don-zagier",
-   "title": "Don Zagier",
+   "id": "sec-006-notes-on-chapter-i",
+   "title": "Notes on Chapter I",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-007-ii-further-aspects-of-the-dilogarithm",
+   "title": "Further aspects of the dilogarithm",
    "pages": "20-20"
   },
   {
-   "id": "sec-029-1-variants-of-the-dilogarithm-function",
+   "id": "sec-008-1-variants-of-the-dilogarithm-function",
    "title": "Variants of the dilogarithm function",
-   "pages": "20-21"
+   "pages": "20-31"
   },
   {
-   "id": "sec-030-2-z-just-like-its-complex-ana",
-   "title": "Z, just like its complex ana-",
-   "pages": "21-22"
-  },
-  {
-   "id": "sec-031-24-don-zagier",
-   "title": "Don Zagier",
-   "pages": "22-24"
-  },
-  {
-   "id": "sec-032-26-don-zagier",
-   "title": "Don Zagier",
-   "pages": "24-24"
-  },
-  {
-   "id": "sec-033-c-the-double-logarithm-in-recent-years-there-has",
-   "title": "The double logarithm. In recent years there has been a resurgence of",
-   "pages": "24-26"
-  },
-  {
-   "id": "sec-034-28-don-zagier",
-   "title": "Don Zagier",
-   "pages": "26-28"
-  },
-  {
-   "id": "sec-035-30-don-zagier",
-   "title": "Don Zagier",
-   "pages": "28-29"
-  },
-  {
-   "id": "sec-036-2-x",
-   "title": "(x)=",
-   "pages": "29-29"
-  },
-  {
-   "id": "sec-037-2-x-and-the-corresponding-higherp-adic",
-   "title": "(x), and the corresponding higherp-adic",
-   "pages": "29-31"
-  },
-  {
-   "id": "sec-038-2-dilogarithm-identities",
+   "id": "sec-009-2-dilogarithm-identities",
    "title": "Dilogarithm identities",
-   "pages": "31-37"
+   "pages": "31-39"
   },
   {
-   "id": "sec-039-c-dilogarithm-identities-from-triangulated-3-man",
-   "title": "Dilogarithm identities from triangulated 3-manifolds. Finally, we",
-   "pages": "37-39"
+   "id": "sec-010-3-dilogarithms-and-modular-functions-the-nahm-eq",
+   "title": "Dilogarithms and modular functions: the Nahm equation",
+   "pages": "39-56"
   },
   {
-   "id": "sec-040-3-dilogarithms-and-modular-functions",
-   "title": "Dilogarithms and modular functions",
-   "pages": "39-43"
-  },
-  {
-   "id": "sec-041-5-l1-for-both-ξq0-and",
-   "title": "L(1) for both ξQ0 and",
-   "pages": "43-44"
-  },
-  {
-   "id": "sec-042-5-l1",
-   "title": "L(1),",
-   "pages": "44-46"
-  },
-  {
-   "id": "sec-043-1-rh1q2-q3r1q3-q2r1-withr-qh",
-   "title": "Rh,1−Q2 =Q3R,1−Q3 =Q2R−1 withR =(Qh",
-   "pages": "46-48"
-  },
-  {
-   "id": "sec-044-c-asymptotic-calculations-in-this-subsection-we",
-   "title": "Asymptotic calculations. In this subsection we study the asymptotic",
-   "pages": "48-48"
-  },
-  {
-   "id": "sec-045-2-an2bnc",
-   "title": "An2+Bn+C",
-   "pages": "48-50"
-  },
-  {
-   "id": "sec-046-2-an2bn",
-   "title": "An2+Bn",
-   "pages": "50-50"
-  },
-  {
-   "id": "sec-047-2-ab-fabaq-37",
-   "title": "A+B FA,B+A(q) (37)",
-   "pages": "50-50"
-  },
-  {
-   "id": "sec-048-2-abεhabaε",
-   "title": "A+B)εHA,B+A(ε)",
-   "pages": "50-51"
-  },
-  {
-   "id": "sec-049-2-an2bnc",
-   "title": "An2+Bn+C)",
-   "pages": "51-52"
-  },
-  {
-   "id": "sec-050-2-an2bn-xn",
-   "title": "An2+Bn x−n",
-   "pages": "52-52"
-  },
-  {
-   "id": "sec-051-2-an2bn-xn",
-   "title": "An2+Bn x−n =",
-   "pages": "52-56"
-  },
-  {
-   "id": "sec-052-4-higher-polylogarithms",
+   "id": "sec-011-4-higher-polylogarithms",
    "title": "Higher polylogarithms",
-   "pages": "56-58"
+   "pages": "56-61"
   },
   {
-   "id": "sec-053-5-l31-forr2-0-however-the-correcta3f",
-   "title": "L3(1). Forr2 > 0, however, the correctA3(F)",
-   "pages": "58-60"
-  },
-  {
-   "id": "sec-054-2-if-we-observe-that-dx",
-   "title": "If we observe that D(x′",
-   "pages": "60-63"
+   "id": "sec-012-references",
+   "title": "References",
+   "pages": "61-63"
   }
  ],
  "provenance": {

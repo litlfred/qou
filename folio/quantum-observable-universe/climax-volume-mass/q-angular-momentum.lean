@@ -12,7 +12,7 @@ to the standard `j(j+1)`.
 LaTeX label: `def:q-angular-momentum`
 
 ## References
-- [manuscript] §6/q-angular-momentum
+- [leitner2026] §6/q-angular-momentum
 - Kassel, "Quantum Groups" (1995)
 
 **Ground ring (AGENTS.md §7c).** The Casimir is a product of two q-numbers
@@ -59,7 +59,7 @@ variable {R : Type*} [CommRing R]
 
 /-- The q-Casimir eigenvalue `J_q²(j) = [j]_q · [j+1]_q`, over any commutative
 ring, for any q-number `qn`. -/
--- Ref: [manuscript] §6/q-angular-momentum
+-- Ref: [leitner2026] §6/q-angular-momentum
 def qCasimir (qn : R → R → R) (q j : R) : R := qn q j * qn q (j + 1)
 
 /-- A q-number vanishing at `0` forces the Casimir to vanish at `j = 0`.
@@ -67,7 +67,7 @@ def qCasimir (qn : R → R → R) (q j : R) : R := qn q j * qn q (j + 1)
 This is the ring-generic content of the classical limit `[n]_q → n` as
 `q → 1`: it needs no ordering, no exponentiation and no archimedean
 structure, only that the bracket kills `0`. -/
--- Ref: [manuscript] §6/q-angular-momentum
+-- Ref: [leitner2026] §6/q-angular-momentum
 -- Ref: [kassel1995] Kassel, "Quantum Groups" (1995)
 theorem qCasimir_zero_of_qNumber_zero (qn : R → R → R) (q : R)
     (h : qn q 0 = 0) : qCasimir qn q 0 = 0 := by
@@ -75,7 +75,7 @@ theorem qCasimir_zero_of_qNumber_zero (qn : R → R → R) (q : R)
   rw [h, zero_mul]
 
 /-- The Casimir eigenvalue carried by an instance. -/
--- Ref: [manuscript] §6/q-angular-momentum
+-- Ref: [leitner2026] §6/q-angular-momentum
 def casimir [PartialOrder R] (A : QAngularMomentum R) : R :=
   qCasimir A.qNumber A.q A.j
 
@@ -92,12 +92,12 @@ load-bearing: `qCasimir` is evaluated at `j` and `j + 1` for a *spin* `j`,
 which takes half-integer values. The canonical bracket and its `ℤ`-indexed
 sibling `qIntBalZ` are both discretely indexed, so neither can express this;
 there is no equation to state, not merely none convenient. -/
--- Ref: [manuscript] §6/q-angular-momentum
+-- Ref: [leitner2026] §6/q-angular-momentum
 noncomputable def qNumberReal (q n : ℝ) : ℝ :=
   (q ^ n - q ^ (-n)) / (q - q ^ (-(1 : ℝ)))
 
 /-- `[0]_q = 0`: the numerator is `q⁰ - q⁰`. -/
--- Ref: [manuscript] §6/q-angular-momentum
+-- Ref: [leitner2026] §6/q-angular-momentum
 theorem qNumberReal_zero (q : ℝ) : qNumberReal q 0 = 0 := by
   unfold qNumberReal
   simp
@@ -107,7 +107,7 @@ theorem qNumberReal_zero (q : ℝ) : qNumberReal q 0 = 0 := by
 The literal is a rounded illustration, not the substrate anchor — the live
 pin is `q_at()` in `qou_substrate.constants`, currently
 `1.1099785827513808`. -/
--- Ref: [manuscript] §6/q-angular-momentum
+-- Ref: [leitner2026] §6/q-angular-momentum
 noncomputable def spinHalfCasimirIllustration : ℝ :=
   qCasimir qNumberReal 1.1097 (1 / 2 : ℝ)
 

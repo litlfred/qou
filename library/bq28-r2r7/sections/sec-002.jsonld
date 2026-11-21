@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/bq28-r2r7/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "III.. BUILDING THE CHARACTER",
+  "pageStart": 3,
+  "pageEnd": 5,
+  "contains": [
+    "library/bq28-r2r7/blocks/prose-sec-002",
+    "library/bq28-r2r7/blocks/lem-sec-002-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bq28-r2r7/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bq28-r2r7/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,51 @@
+1912 Lillian B. Pierce and Junyan Xu
+
+S(F; N, H) of the form o(||H||) were known only in special cases, such as when F is a product of n
+linear forms that are linearly independent over F,, or when n = 2 and F is a binary quadratic form (see
+Section 1C2 for details). In this paper, we prove nontrivial bounds for S(F; N, H) in any dimension n
+for a very general class of “admissible” forms F, as long as
+
+||| Ainin > gt,
+
+for some x > 0, where Hmin = min; Hj. In particular, this is satisfied when H = (H,..., H) with
+H = q’** for any x > 0, where
+1 1
+=x- . 1-3
+Bn 2 2(n+1) 9)
+
+1A. Statement of the main theorem. We now provide a formal statement of the condition that a form F
+must satisfy in order to be “admissible” for our main result. We only need to rule out those forms F for
+which a nontrivial bound for S(F; N, H) would naively fail, such as when F is a perfect A-th power
+and x is order A, or when F can be made to depend on fewer than n variables.
+
+Condition ((A, ¢)-admissible). Let g be a fixed prime and A > | a fixed integer. We will say that a
+polynomial f € Fg[x1,..., Xn] is (A, g)-admissible if the following holds. Factorize f = gh, where
+gh eFalx1,..., xn] and h is A-th power-free over Fz. Then h has the property that it cannot be made
+independent of (at least) one variable after a linear transformation, i.e., there exists no linear change of
+variables A € GL, (F,) such that h(x A) € Fg[x2,..., Xn].
+
+See Section 3 for further details on this condition, and a precise definition of being A-th power-free.
+If A > 2 is a fixed integer, any form F € Z[x1,..., Xn] such that F = G4H with G, H €Z[x1,..., xn]
+where H is A-th power-free and nondegenerate with respect to changes of variables in GL,(Z), has
+the property that its reduction modulo q is (A, q)-admissible for all but finitely many primes g; see
+Lemma 3.4. For any D, the form xP peer p xP is an example of such a form. Moreover, such forms
+are generic among all forms in Z[x;, ..., x,] of degree at most D, since those that violate the conditions
+depend on fewer parameters.
+
+Our main result is as follows:
+
+Theorem 1.1. Let x be anonprincipal multiplicative Dirichlet character of order A modulo a prime q.
+Let n > 2 be fixed. For each r > 1, define
+
+@=6,,= ||.
+7
+
+Let H = (M,..., Hn) € R2, have maximum element Hyax and minimum element Hyin, and assume
+HmaxHmin < q'*!/0®. For every degree D form F € Z[x1,..., Xp] such that its reduction modulo q is
+
+(A, q)-admissible, then uniformly in N = (Nj, ..., Nn), for every integer r > 1,
+ISP: N, |< PAO 29 Pr Gg @O 41/47 (gg gt, (1-4)
+
+min
+
+in which the implied constant depends only on D, A, n,r and is otherwise independent of F.

@@ -4,13 +4,14 @@ doc_title: "arXiv:hep-th/9211141v1 1 Dec 1992"
 section_id: sec-000-1-introduction-and-summary-of-results
 section_title: "INTRODUCTION AND SUMMARY OF RESULTS"
 section_number: 1
-pages: 2-9
+pages: 2-4
 source_pdf: 9211141v1.pdf
 source_sha256: bd9fbd329884c26e
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.944
-latex_coverage_ratio: 0.578
+latex_coverage_ratio: 1.0
+doc_brief: "arXiv:hep-th/9211141v1 1 Dec 1992 — 17 sections: Front matter; INTRODUCTION AND SUMMARY OF RESULT; The System of Partial Differential"
 ---
 []{#sec:intro_summary label="sec:intro_summary"}
 

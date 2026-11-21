@@ -1,0 +1,49 @@
+364 Cone point asymptotics
+
+Recall from Definition 6.46 that deg(Q, w) denotes the order of vanishing
+of an analytic function Q at a point w, equal to zero if Q(z) # 0. We define the
+order of vanishing of a real power Q(z)° to be s - deg(Q, z), and remark that if
+Q is a Laurent polynomial then a branch of Q* may be defined on the domain
+of convergence of any Laurent series for F. Finally, we also define the degree
+of a product Q(z) = Ties Q;(z)*) of Laurent polynomials by
+
+k
+
+deg(Q, w) = 5; deg(Qj,w)
+
+j=l
+
+and abuse notation slightly by writing
+
+k k
+amoeba(Q) = amoeba (CI a] = () amoeba(Q)).
+jel jel
+
+Lemma 11.37 (Big-O Lemma). Let Q(z) = []j-, O;'(z) for Laurent polyno-
+mials Q\,..., Q, and real numbers s,,..., 8% that are not negative integers, let
+F = P(z)/Q(z) for a Laurent polynomial P coprime to Q, and let f = F 0 exp.
+Fix a component B of amoeba(Q)° corresponding to the convergent expansion
+F(Z) = Dp a2" on B, and fix a direction f., such that —?,-x is minimized on B
+at a unique point x, € OB. Let z = exp(x, + iw) for some w € localarg(f..).
+Assume the last conclusion of Lemma 11.27 and let C5(z) = exp[Cs(w)] be
+a chain satisfying the conclusion of Lemma 11.32. If #, is a non-obstructed
+vector in the interior to the dual cone N(z) then the following estimates hold
+uniformly as r > 00 while * = r/|r| varies over a neighborhood of ?..
+
+(i) If $(2) is any function that is O(\z/) at the origin with B + d > 0 then
+
+|z"| exp(-r - 2’)6(2’) dz’ = O(\r|)-**. (11.14)
+
+cw)
+
+(ii) The same estimate holds for the chain Cs5(w) in place of c(w).
+(iii) Let D = deg(F, z) = deg(P, 2)-Di s; deg(Q;, z). Then for any bounded
+function wy,
+
+21} W2)ql2")exp(-r- 2) dz! = O(|r*) .
+
+t5(w)
+(iv) The estimate |z|" ay = O(\r|-4":) holds where Dy = mitweiocai deg(F, w).
+
+Proof The cone ¢c(w) is a subset of an infinite cone )j:9 AS, and we may
+decompose dz = t4~! dtAdS where dS is a finite measure on S.. It follows from

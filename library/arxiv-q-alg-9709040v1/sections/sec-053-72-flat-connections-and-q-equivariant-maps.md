@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-053-72-flat-connections-and-q-equivariant-maps
 section_title: "Flat connections and Q-equivariant maps"
 section_number: 7.2
@@ -8,6 +8,7 @@ pages: 31-32
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
 Let M be a C∞-manifold (or a complex analytic manifold, or an algebraic manifold, or a projective
 limit of manifolds,...). Denote by ΠT M the supermanifold which is the total space of the tangent bundle of

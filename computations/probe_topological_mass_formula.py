@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Probe — `prop:topological-mass-formula` (+ `-algebraic`) (I1).
+"""Probe — `conj:topological-mass-formula` (+ `-algebraic`) (I1).
 
 Claims:
 
@@ -92,14 +92,14 @@ def main() -> int:
     w = WitnessBuilder("probe-topological-mass-formula", engine="mpmath")
     w.set_description(
         "Symbolic + 50-dps numerical cross-check of the topological mass "
-        "formula combine Vol + Vol*(1/hbar^2 - 1) = Vol/hbar^2 (prop:"
+        "formula combine Vol + Vol*(1/hbar^2 - 1) = Vol/hbar^2 (conj:"
         "topological-mass-formula, Lean ArchimedeanMassFormula) and the "
         "algebraic-side mass_alg = phi1/hbar_sq (prop:topological-mass-"
         "formula-algebraic, Lean AlgebraicMassFormula). hbar_q = 1-1/q0."
     )
     # One witness, two content blocks: primary is the archimedean prop;
     # the algebraic sibling is recorded in data + a dedicated assertion.
-    w.set_content_block("prop:topological-mass-formula")
+    w.set_content_block("conj:topological-mass-formula")
     w.add_parameter("q0", Q_50_DIGIT_STR)
     w.add_parameter("hbar_q_def", "1 - 1/q0")
     w.add_parameter("compute_dps", mp.mp.dps)

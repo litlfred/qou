@@ -1,0 +1,1 @@
+Let A(t) be a known function of t (in general, in an associative ring), and let Y(t) be an unknown function satisfying (30) with Y(0) = I. Then, if certain unspecified conditions of convergence are satisfied, Y(t) can be written in the form

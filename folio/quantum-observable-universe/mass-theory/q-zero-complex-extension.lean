@@ -20,8 +20,8 @@ It is research-grade infrastructure for the bar-symmetric /
 bar-anti-symmetric decomposition refinement.
 -/
 
--- Ref: [manuscript] prop:q-zero-complex-extension
--- Ref: [manuscript] def:bar-involution
+-- Ref: [leitner2026] prop:q-zero-complex-extension
+-- Ref: [leitner2026] def:bar-involution
 -- Ref: [wenzl1988] doi:10.1007/BF01404457
 
 namespace QOU.BraidKnot.QZeroComplexExtension

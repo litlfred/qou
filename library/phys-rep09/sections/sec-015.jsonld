@@ -9,13 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Preliminary linear transformations",
-  "pageStart": 22,
-  "pageEnd": 23,
+  "title": "Further discussion",
+  "pageStart": 19,
+  "pageEnd": 21,
   "contains": [
-    "library/phys-rep09/blocks/prose-sec-015"
+    "library/phys-rep09/blocks/prose-sec-015",
+    "library/phys-rep09/blocks/ex-sec-015-01",
+    "library/phys-rep09/blocks/ex-sec-015-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/phys-rep09",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/phys-rep09",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/phys-rep09/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/phys-rep09/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,1 @@
+Let A be an AS Gorenstein graded ring, of dimension n and with AS index l. Then there is a unique automorphism φ of A in Rnggr/c K such that the complex RA := A(φ, −l)[n] ∈D(Aen, gr) is a balanced dualizing complex over A.

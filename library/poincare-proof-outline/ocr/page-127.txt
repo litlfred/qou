@@ -1,0 +1,68 @@
+instantiation p-point :: metric-space
+begin
+definition dist-p-point = p-dist
+definition (uniformity-p-point :: (p-point x p-point) filter) = (INF e€{0<..}. principal {(x, y). dist-class.dist x y <
+e})
+definition open-p-point (U :: p-point set) = (V x € U. eventually (A(2', y). x’ = x —> y € U) uniformity)
+instance
+proof
+fix vy :: p-point
+show (dist-class.dist x y = 0) = (x = y)
+unfolding dist-p-point-def
+by (transfer, simp add: poincare-distance-eq-0-iff )
+next
+fix vy z:: p-point
+show dist-class.dist x y < dist-class.dist x z + dist-class.dist y z
+unfolding dist-p-point-def
+apply transfer
+using poincare-distance-triangle-inequality poincare-distance-sym
+by metis
+qed (simp-all add: open-p-point-def uwniformity-p-point-def)
+end
+
+10.6 H-betweennes
+
+lift-definition p-between :: p-point => p-point => p-point => bool is poincare-between
+done
+
+end
+
+11 Poincaré model satisfies Tarski axioms
+
+theory Poincare-Tarski
+imports Poincare Poincare-Lines-Avzis-Intersections Tarski
+begin
+
+11.1 Pasch axiom
+
+lemma Pasch-fun-mono:
+fixes rl r2 :: real
+assumes (0 < rl and rl < r2 and r2 < 1
+shows rl + 1/r1 > r2 + 1/r2
+proof (cases rl = r2)
+case True
+thus ?thesis
+by simp
+next
+case False
+hence r2 — rl > 0
+using assms
+by simp
+
+have rl * r2 < 1
+using assms
+by (smt mult-le-cancel-left1)
+hence 1 / (ri * r2) > 1
+using assms
+by simp
+hence (r2 — rl) / (ri « r2) > (r2 — rl)
+using (r2 — rl > 0»
+using mult-less-cancel-left-pos[of r2 — rl 11 / (r1 * r2)]
+by simp
+hence 1 /ri—1/7r2>r2-r1
+using assms
+by (simp add: field-simps)
+thus ?thesis
+by simp
+
+127

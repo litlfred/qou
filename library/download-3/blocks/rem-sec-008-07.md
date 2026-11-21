@@ -1,0 +1,1 @@
+Formula (2.3.4) i) is equivalent to S([* n) = -l^-D for any n > 0. Proof of 2.3.4. The composition CCa(A[η])®CCb(B[η]) -> C defines a product for which η Un = (n — l)\η® n. Now, as we have seen above, the boundary map d induces the isomorphisms HCa(A[η]) — » HCa-\(k\ etc., and - U(/7+l) _ (2w)[ ι(g;(2/ι+l) Π ' — /?! . i — i

@@ -47,7 +47,7 @@ $$
 where the "spectator" color $c$ denotes the tube excluded from the diquark. This generates the CFL pairing pattern.
 
 **CFL gap.**
-The superconducting gap $\Delta_{\mathrm{CFL}}$ represents the energy required to break a Cooper pair. It equals the crossing energy of the binding Hopf link:
+The superconducting pairing gap $\Delta_{\mathrm{CFL}}$ is the energy threshold required to dissociate a diquark pair. It equals the crossing energy of the binding Hopf link:
 
 $$
   \Delta_{\mathrm{CFL}}

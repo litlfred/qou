@@ -12,9 +12,9 @@ the "Pentagon → uv-commutation" subconjecture in
 
 Per AGENTS.md §3b, this is a `lemma` (provable, not conjectural).
 
--- Ref: [manuscript] lem:vhat-pair-commutation-trace
--- Ref: [manuscript] def:algebraic-quantum-volume
--- Ref: [manuscript] prop:markov-pair-z2
+-- Ref: [leitner2026] lem:vhat-pair-commutation-trace
+-- Ref: [leitner2026] def:algebraic-quantum-volume
+-- Ref: [leitner2026] prop:markov-pair-z2
 -- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2
@@ -35,7 +35,7 @@ namespace QOU.BraidKnot
     because the underlying Hecke-algebra layer is in
     `QOU.BraidKnot.MarkovTrace` and is orthogonal to the lemma's
     content. -/
--- Ref: [manuscript] lem:vhat-pair-commutation-trace
+-- Ref: [leitner2026] lem:vhat-pair-commutation-trace
 theorem VhatPairCommutationTrace
     {R : Type*} [CommRing R] (V_i V_j : R) :
     V_i * V_j = V_j * V_i :=
@@ -45,7 +45,7 @@ theorem VhatPairCommutationTrace
     `R`-linear trace `tr` and any two elements that commute (which
     they always do in a commutative ring), the trace is symmetric
     under swap. -/
--- Ref: [manuscript] lem:vhat-pair-commutation-trace §"Statement"
+-- Ref: [leitner2026] lem:vhat-pair-commutation-trace §"Statement"
 theorem trace_symmetric
     {R : Type*} [CommRing R] (tr : R → R) (V_i V_j : R) :
     tr (V_i * V_j) = tr (V_j * V_i) := by

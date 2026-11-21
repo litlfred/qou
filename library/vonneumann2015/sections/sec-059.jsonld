@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/vonneumann2015/sections/sec-059",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "E(Trace(w)) exists and is equal to the Voiculescu trace of the same word viewed as an element of C⟨X1, X2, · · · Xn⟩.",
+  "pageStart": 138,
+  "pageEnd": 139,
+  "contains": [
+    "library/vonneumann2015/blocks/prose-sec-059"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "provenance": "ingested"
+}

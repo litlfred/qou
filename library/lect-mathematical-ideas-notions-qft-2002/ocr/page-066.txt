@@ -1,0 +1,56 @@
+66 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY
+
+9.8. Integration on supermanifolds. Now we will define densities on super-
+manifolds. Let M be a supermanifold, and {U,} be an open cover of M together
+with isomorphisms fy : Ua > U!,, where U!, is a superdomain in R"”. Let
+Gas? faUaNnUg) > fa(Ua Ug) be the transition map fafz’- Then a density s
+on M is a choice of an element sq € Cf7(Ua) for each a, such that on Ua M Ug one
+has 89(2) = 8a(2)|Ber(gas)(fa(2))):
+
+Remark. It is clear that a density on M is a global section of a certain sheaf
+on M, called the sheaf of densities.
+
+Now, for any (compactly supported) density w on M, the integral f,,w is well
+defined. Namely, it is defined as is usual calculus: one uses partition of unity ¢q
+such that Supp¢a C (Ua)o are compact subsets, and sets fy,w := doy fay baw
+(where the summands can be defined using f,). Berezin’s theorem guarantees then
+that the final answer will be independent on the choices made.
+
+9.9. Gaussian integrals in an odd space. Now let us generalize to the odd case
+the theory of Gaussian integrals, which was, in the even case, the basis for the path
+integral approach to quantum mechanics and field theory.
+
+Recall first the notion of Pfaffian. Let A be a skew-symmetric matrix of even
+size. Then the determinant of A is the square of a polynomial in the entries of A.
+This polynomial is determined by this condition up to sign. The sign is usually
+fixed by requiring that the polynomial should be 1 for the direct sum of matrices
+e 0): With this convention, this polynomial is called the Pfaffian of A and
+denoted PfA. The Pfaffian obviously has the property Pf(X7 AX) = Pf(A) det(X)
+for any matrix X.
+
+Let now V be an 2m-dimensional vector space with a volume element dv, and B
+a skew-symmetric bilinear form on V. We define the Pfaffian PfB of B to be the
+Pfaffian of the matrix of B in any unimodular basis by the above transfoamtion
+formula, it does not depend on the choice of the basis). It is easy to see (by reducing
+B to canonical form) that
+
+A"B
+= Pf(B)dv.
+m!)
+In terms of matrices, this translates into the following (well known) formula for the
+Pfaffian of a skew symmetric matrix of size 2m:
+Pf(A)= So ew Il Gio(i);
+cEllm — i€{1,...,.2m},i<a (a)
+where II,, is the set of pairings of {1,...,2m}, and <, is the sign of the permutation
+sending 1, ...,2m to 41, 0(i1),...,4m, (im) (where i, < o(i,) for all r). For example,
+for m = 2 (ie. a 4 by 4 matrix),
+P£(A) = aj2a34 + ay4a93 — a13424.
+
+Now consider an odd vector space V of dimension 2m with a volume element dé.
+Let B be a symmetric bilinear form on V (i.e. a skewsymmetric form on IV). Let
+&,...,€2m be unimodular linear coordinates on V (i.e. d€ = d&; A... Ad&m). Then
+if € = (&1,....€n) then B(E,£) = Yo; ; big€i€j, where bj; is a skewsymmetric matrix.
+
+Proposition 9.7.
+| e2 BE) (dé)~! = PF(B).
+Vv

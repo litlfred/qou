@@ -1,0 +1,72 @@
+166 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+so that, by comparing (64) and (65),
+
+a(e St +3)= ae 4int >) (66)
+1/2 2 1/2 3) = 1/2 z 1/2 3
+and thus 92 does not contain even powers of s. If A(t) is an analytic function and a Taylor series centered around t1/2 is
+considered, then each term in {2; is an odd function of s and, in particular, 82;,1(s) = @(s?'*3). This fact has been noticed in
+[61,62] and will be fully exploited in Section 5.4 when analyzing the Magnus expansion as a numerical device for integrating
+differential equations.
+
+2.7. Convergence of the Magnus expansion
+
+As we pointed out in the introduction, from a mathematical point of view, there are at least two different issues of
+paramount importance at the very basis of the Magnus expansion:
+
+(1) (Existence). For what values of t and for what operators A does Eq. (30) admit an exponential solution in the form
+Y(t) = exp(Q2(t)) for a certain Q(t)?
+(2) (Convergence). Given a certain operator A(t), for what values of t does the Magnus series (40) converge?
+
+Of course, given the relevance of the expansion, both problems have been extensively treated in the literature since
+Magnus proposed this formalism in 1954. We next review some of the most relevant contributions available regarding both
+aspects, with special emphasis on the convergence of the Magnus series.
+
+2.7.1. On the existence of 2 (t)
+
+In most cases, one is interested in the case where A belongs to a Lie algebra g under the commutator product. In this
+general setting, the Magnus theorem can be formulated as four statements concerning the solution of Y’ = A(t)Y, each one
+more stringent than the preceding [16]. Specifically,
+
+(A) The differential equation Y’ = A(t)Y has a solution of the form Y(t) = exp 2(t).
+
+(B) The exponent {2(t) lies in the Lie algebra g.
+
+(C) The exponent £2(t) is a continuous differentiable function of A(t) and t, satisfying the nonlinear differential equation
+Q! = dexpy' (A(t).
+
+(D) The operator §2(t) can be computed by the Magnus series (40).
+
+Let us now analyze in detail the conditions under which statements (A)-(D) hold.
+
+(A) If A(t) and Y(t) aren x n matrices, from well-known general theorems on differential equations it is clear that the initial
+value problem defined by (30) and Y(0) = J always has a uniquely determined solution Y(t) which is continuous and has
+a continuous first derivative in any interval in which A(t) is continuous [63]. Furthermore, the determinant of Y is always
+different from zero, since
+
+det Y(t) = exp (/ tra(sas) :
+0
+
+On the other hand, it is well known that any matrix Y can be written in the form exp if and only if det Y 4 0 [64, p. 239],
+so that it is always possible to write Y(t) = exp Q(t).
+
+In the general context of Lie groups and Lie algebras, it is indeed the regularity of the exponential map from the Lie algebra
+gto the Lie group g that determines the global existence of an 82(t) € g [65,66]: the exponential map of a complex Lie algebra
+is globally one-to-one if and only if the algebra is nilpotent, i.e. there exists a finite n such that ad,, ad, ---ady,_ Xn = 0,
+where x; are arbitrary elements from the Lie algebra. In general, however, the injectivity of the exponential map is only
+assured for € € g such that ||&|| < 9 for areal number pg > 0 and some norm in g [32,67].
+
+(B) Although in principle pg constitutes a sharp upper bound for the mere existence of the operator 2 € 4, its practical
+value in the case of differential equations is less clear. As we have noticed, any nonsingular matrix has a logarithm, but this
+logarithm might be in gl(n, C) even when the matrix is real. The logarithm of Y(t) may be complex even for real A(t) [16].
+In such a situation, the solution of (30) cannot be written as the exponential of a matrix belonging to the Lie algebra over the
+field of real numbers. One might argue that this is indeed possible over the field of complex numbers, but (i) the element
+2 cannot be computed by the Magnus series (40), since it contains only real rational coefficients, and (ii) examples exist
+where the logarithm of a complex matrix does not lie in the corresponding Lie subalgebra [16].
+
+It is therefore interesting to determine for which range of t a real A(t) in (30) leads to a real logarithm. This issue has
+been tackled by Moan in [67] in the context of a complete normed (Banach) algebra, proving that if
+
+| IA(s) lads < x (67)
+0
+
+then the solution of (30) can indeed be written as Y(t) = exp 2(t), where £2 (t) is in the Banach algebra.

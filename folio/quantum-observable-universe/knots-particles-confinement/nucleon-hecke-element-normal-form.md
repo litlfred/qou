@@ -11,7 +11,7 @@ $$
   + c_{e^-}\sigma_0\sigma_1\sigma_0
 $$
 
-The coefficients $c_\bullet \in \mathbb{Z}[q, q^{-1}]$ encode the particle content of the nucleon: the photon channel $\gamma$ ($\mathbf{1}$), virtual crossings $\sigma_0, \sigma_1$, Hopf links $L_+, L_-$ ($\sigma_0\sigma_1, \sigma_1\sigma_0$), and the trefoil (electron) $e^-$ ($\sigma_0\sigma_1\sigma_0$).
+The coefficients $c_\bullet \in \mathbb{Z}[q, q^{-1}]$ encode the particle content of the nucleon: the photon channel $\gamma$ ($\mathbf{1}$), virtual crossings $\sigma_0, \sigma_1$, $L_+, L_-$ ($\sigma_0\sigma_1, \sigma_1\sigma_0$, each closing in $B_3$ to the unknot), and the electron $e^-$ ($\sigma_0\sigma_1\sigma_0$, whose closure is the Hopf link).
 
 The **net** of the nucleon is:
 
@@ -22,5 +22,3 @@ $$
 $$
 
 evaluated at the substrate parameter $q_0$.
-
-**Witness**: `breit-wheeler-nucleon-nf.witness.json`.

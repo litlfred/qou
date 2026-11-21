@@ -1,0 +1,69 @@
+7  H-betweenness in the Poincaré model
+
+7.1 H-betwenness expressed by a cross-ratio
+
+The point v is h-between u and w if the cross-ratio between the pairs u and w and v and inverse of v is real
+and negative.
+
+definition poincare-between :: complex-homo = complez-homo = complex-homo = bool where
+poincare-between uv w +<—
+u=vVv=wVv
+(let cr = cross-ratio uv w (inversion v)
+in is-real (to-complex cr) A Re (to-complex cr) < 0)
+
+7.1.1 H-betwenness is preserved by h-isometries
+
+Since they preserve cross-ratio and inversion, h-isometries (unit disc preserving Mobius transformations and
+conjugation) preserve h-betweeness.
+
+lemma unit-disc-fiz-moebius-preserve-poincare-between [simp]:
+assumes unit-disc-fix M and u € unit-disc and v € unit-disc and w € unit-disc
+shows poincare-between (moebius-pt M u) (moebius-pt M v) (moebius-pt M w) <>
+poincare-between uv w
+proof (cases u =v V v= w)
+case True
+thus ?thesis
+using assms
+unfolding poincare-between-def
+by auto
+next
+case False
+moreover
+hence moebius-pt Mu 4 moebius-pt M v A moebius-pt M v 4 moebius-pt M w
+by auto
+moreover
+have v # inversion v w ¥ inversion v
+using inversion-noteq-unit-disc|of v w]
+using inversion-noteq-unit-disc[of v v]
+using <v € unit-discy (w € unit-discy
+by auto
+ultimately
+show ?thesis
+using assms
+using wnit-circle-fiz-moebius-pt-inversion|of M v, symmetric]
+unfolding poincare-between-def
+by (simp del: unit-circle-fix-moebius-pt-inversion)
+qed
+
+lemma conjugate-preserve-poincare-between [simp]:
+assumes u € unit-disc and v € unit-disc and w € unit-disc
+shows poincare-between (conjugate u) (conjugate v) (conjugate w) <->
+poincare-between uv w
+proof (cases u =v V v= w)
+case True
+thus ?thesis
+using assms
+unfolding poincare-between-def
+by auto
+next
+case False
+moreover
+hence conjugate u # conjugate v \ conjugate v # conjugate w
+using conjugate-inj by blast
+moreover
+have v # inversion v w ¥ inversion v
+using inversion-noteq-unit-disc|of v w]
+using inversion-noteq-unit-disc[of v v]
+using <v € unit-discy (w € unit-discy
+
+77

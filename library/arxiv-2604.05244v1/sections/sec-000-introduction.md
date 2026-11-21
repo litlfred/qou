@@ -10,7 +10,8 @@ source_sha256: a5097e763dd89d06
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.933
-latex_coverage_ratio: 0.982
+latex_coverage_ratio: 0.98
+doc_brief: "Edge universality in Floquet sideband spectra — We show that, for non-interacting fermions under a monochromatic phase drive (Tien– Gordon regime), the outgoing sideband occupations at a sharp Fermi"
 ---
 Periodically driven (Floquet) quantum systems are now routinely realized in superconducting circuits, optomechanical cavities, semiconductor quantum dots, and cold-atom platforms [@PlateroAguado2004; @HaugJauho2008; @Clerk2010; @MoskaletsBook; @Eckardt2017]. In all of these settings the experiment records a finite time trace of a linear output signal---a current, a voltage, a homodyne photocurrent [@YuenChan1983]---and then processes it: filtering, demodulating, gating. The resulting number depends not only on the physics of the driven device but also on the details of this linear analysis chain.
 

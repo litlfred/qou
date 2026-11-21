@@ -1,0 +1,44 @@
+164 Laurent series, amoebas, and convex geometry
+
+so A(z) = 0 by the continuity of A. Thus, any limit point of V, as e > 0 lies
+in Vo.
+
+Conversely, fix a unit vector z € Vo. The homogeneous polynomial A is not
+identically zero, therefore there is a projective line along which A has a zero
+of finite order k at z. Let y : C — S, denote any analytic curve through z
+along which A has a zero of finite order at z. The univariate analytic function
+y 0 Q, converges uniformly to yo A, and Hurwitz’s Theorem [Con78b, p. 152]
+implies that for ¢ sufficiently small it has k zeros of Q, converging uniformly
+to z as e — O. In particular, z is a limit point of V, as ¢ > 0. a
+
+Exercise 6.12. Is it true that the algebraic tangent cone Vhomcy,z) is always
+homeomorphic to V; within a sufficiently small ball around z?
+
+Finally, let A be a homogeneous polynomial with square-free part A (equal
+to the product of the distinct irreducible factors of A), soV4 = Vj but V4 is
+locally a manifold near any point where the gradient of A doesn’t vanish. Any
+hyperplane H,, = {z € C4 : z-m = 0} through the origin can be identified with
+its normal n, viewed as an element in complex projective space CP*"!. We say
+the hyperplane Hp, is a tangent hyperplane to V4 if n = (VA)(w) for some
+zero w of A in CP4"!. The closure of all normals n to tangent hyperplanes
+of V4 in CP“! is an algebraic variety VY, called the projective dual variety
+to A. In generic situations V¥ is defined by the vanishing of a homogeneous
+polynomial A*, called the algebraic dual polynomial to A.
+
+Example 6.50. If A(x, y,z) = x° + y? + 2 then (X, ¥,Z) € VY if and only if
+(X, ¥,Z) = AVA(x, y, 2) = A(2x, 2y, 2z) and x? + y? + 2? = 0 for some (x, y,z) €
+V, and A # 0. Eliminating x,y, and z from these equations gives X?/4A? +
+Y?/4A? + Z?/4A? = 0, so the algebraic dual of A(x, y, z) is A*(X, ¥,Z) = X? +
+Y?+Z?. 4
+
+Exercise 6.13. Prove that if A is a nonsingular quadratic form A(z) = 27 Mz
+then A* is the quadratic form A*(Z) = Z7M“'Z.
+
+Exercise 6.14. Find the algebraic dual to A(x, y, z) = xy.
+
+Notes
+
+Perhaps the earliest use of amoebas is the algebraic work of Bergman [Ber71],
+although their application to the problems considered here, along with the
+coinage of the term amoeba, is generally credited to Gelfand, Kapranov, and
+Zelevinsky [GKZ08]. That seminal text on discriminants devotes much of its

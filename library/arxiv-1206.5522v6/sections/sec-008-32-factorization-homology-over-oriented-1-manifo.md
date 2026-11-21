@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.975
+doc_brief: "FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS — Factorization homology theories of topological manifolds, after Beilinson, Drinfeld and Lurie, are homology-type theories for topological n-manifolds"
 ---
 []{#sec.interval label="sec.interval"} We show that factorization homology of a closed interval is a two-sided bar construction.
 

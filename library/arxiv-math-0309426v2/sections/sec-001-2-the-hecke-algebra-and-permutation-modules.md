@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0309426v2
-doc_title: "arXiv:math/0309426v2 [math.RT] 1 Jul 2004"
+doc_title: "ELEMENTARY DIVISORS OF SPECHT MODULES"
 section_id: sec-001-2-the-hecke-algebra-and-permutation-modules
 section_title: "The Hecke algebra and permutation modules"
 section_number: 2
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.703
 latex_coverage_ratio: 0.806
+doc_brief: "ELEMENTARY DIVISORS OF SPECHT MODULES — 9 sections: Front matter; Introduction and statement of main; The Hecke algebra and permutation"
 ---
 Fix a positive integer $n$ and let $\Sym_n$ be the symmetric group of
 degree $n$. 

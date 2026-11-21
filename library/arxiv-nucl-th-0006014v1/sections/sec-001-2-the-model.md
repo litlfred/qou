@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-nucl-th-0006014v1
-doc_title: "arXiv:nucl-th/0006014v1 9 Jun 2000"
+doc_title: "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)"
 section_id: sec-001-2-the-model
 section_title: "The model"
 section_number: 2
-pages: 3-7
+pages: 4-7
 source_pdf: 0006014v1.pdf
 source_sha256: 208c7a6aaf628b30
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.987
-latex_coverage_ratio: 0.682
+latex_coverage_ratio: 0.835
+doc_brief: "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn) — 56 sections: Front matter; Introduction; The model"
 ---
 As discussed in the Introduction, the CD-Bonn potential is based upon meson exchange. We include all mesons with masses below the nucleon mass, i. e., $\pi$, $\eta$, $\rho(770)$, and $\omega(782)$. Besides this, we introduce two scalar-isoscalar $\sigma$ bosons.
 

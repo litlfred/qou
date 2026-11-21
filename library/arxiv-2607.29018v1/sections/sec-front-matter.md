@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 2607.29018v1.pdf
 source_sha256: 789faa122dd32290
 toc_source: inferred
+doc_brief: "The Aldous property for normal Cayley graphs on symmetric groups — Aldous’ spectral gap conjecture states that the random walk and the interchange process on any connected graph have the same"
 ---
 The Aldous property for normal Cayley graphs on
 symmetric groups
@@ -43,4 +44,3 @@ Mathematics Subject Classification (2020): 05C50, 05C25, 05C81
 E-mail addresses: lch1994@mail.ustc.edu.cn (Chenhui Lv), sanming@unimelb.edu.au (Sanming Zhou)
 1
 arXiv:2607.29018v1  [math.CO]  31 Jul 2026
-1

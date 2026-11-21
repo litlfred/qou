@@ -50,13 +50,13 @@ import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules mo
 # now. All unconditional — function-call-time NameError if a function
 # is called without the import being available (caught by PR #1085
 # review).
-import math
+import math  # float64-ok: integer math.factorial and legacy boundary helpers
 import json as _json
 import os as _os
 import sys as _sys
 from pathlib import Path as _Path
 from fractions import Fraction
-import numpy as np
+import numpy as np  # float64-ok: object-dtype arrays and Clarabel/scipy SDP interface
 
 from q_parameter import Q as q0, Q_INV as qi, HA as h, q_int, E_CROSS
 # EXACT twins of q0/qi/h.  The float64 names above stay for the many
@@ -296,26 +296,23 @@ def q_laplacian_eigenvalue(partition):
     """q-Laplacian eigenvalue on the λ-block of the Wedderburn
     decomposition (prop:q-heat-kernel-peter-weyl, def:q-heat-equation).
 
-    From the Peter-Weyl spectral decomposition of the q-heat kernel
-    (merged PR #368, prop:q-heat-kernel-peter-weyl):
+        μ_λ(q) = Σ_{□ ∈ λ} [c(□)]_q × [c(□) + 1]_q
 
-        μ_λ(q) = ℏ_q² × Σ_{□ ∈ λ} [c(□)]_q × [c(□) + 1]_q
+    where c(□) = col − row is the content of cell □ and [k]_q is the
+    SYMMETRIC q-integer (q^k − q^−k)/(q − q^−1).  No ℏ_q² prefactor.
 
-    where c(□) = col − row is the content of cell □, [k]_q is the
-    symmetric q-integer, and ℏ_q = (q−1)/q is the quantum Planck
-    constant.  This is the eigenvalue of the pure-spin piece
-    (1 − q⁻¹)²Δ_ξ from the q-Laplacian three-term expansion
-    (rem:q-laplacian-expansion); the classical-core piece q⁻²Δ acts
-    on spatial modes and doesn't depend on λ, and Coriolis cross-terms
-    vanish on Hecke-representation spaces by Schur's lemma.
-
-    Derived via Jucys-Murphy q-Casimir (Ram's q-deformation):
-    L_i · T = [c(T,i)]_q · T on SYTs; the Casimir sum
-    Σ [c]_q[c+1]_q is the q-analogue of j(j+1) from the
-    SU_q(2) representation (def:q-angular-momentum).
-
-    Base-ring independent: formula is polynomial in q, q⁻¹ with
-    integer coefficients, valid over any ring where q − 1 invertible.
+    DERIVED (2026-11-16, issue #8091; docs/audits/
+    2026-11-16-binding-reeb-holonomy-laplacian.md).  This is the block
+    eigenvalue of the Reeb-holonomy Laplacian
+        (q − q⁻¹)⁻² Σ_k (q·L_k + q⁻¹·L_k⁻¹ − (q + q⁻¹)),
+    with L_k the relative full twist (Lean:
+    QOU.BraidKnot.Hecke.reebLaplacianB_smul_of_weight,
+    fullTwistB_succ_eq_mul_jmRawB; centrality
+    QOU.SchurWeyl.contentCasimir_comm_σ).  The Reeb part of Δ_q enters
+    with weight (q⁻¹ + ℏ_q)² = 1, not ℏ_q²: on a mode with no horizontal
+    derivative d_q and δ_q reduce to d and δ.  So the bare sum below is
+    the derived value; the paper's former ℏ_q² and Jackson integers were
+    corrected to match it.  No number changed in this function.
 
     PRECISION (2026-09-12, owner directive "excise float64"; bean
     `qou-oiz3`).  This accumulated `casimir_sum = 0.0` over the FLOAT64
@@ -330,13 +327,8 @@ def q_laplacian_eigenvalue(partition):
     lam = list(partition)
     if not lam:
         return _mp.mpf(0)
-    # Jucys-Murphy Casimir: Σ [c]_q[c+1]_q (bare, no ℏ_q² prefactor).
-    # The ℏ_q² = ((q−1)/q)² is the conversion factor to the SPIN piece
-    # of the q-Laplacian (Δ_ξ eigenvalue = ℏ_q² × JM Casimir).  For
-    # the Hecke algebra LP-dual problem, the bare JM Casimir is the
-    # correct spectral operator — it measures the TOTAL partition
-    # content including both spatial and spin pieces via the Jucys-Murphy
-    # representation of the centre of H_n(q).
+    # Reeb-holonomy Laplacian eigenvalue: Σ [c]_q[c+1]_q, symmetric integers,
+    # no ℏ_q² (derived; see the docstring).
     casimir_sum = _mp.mpf(0)
     for i, li in enumerate(lam):
         for j in range(li):
@@ -430,15 +422,23 @@ def lp_shadow_price(partition):
     """
     k = sum(partition)
     if k == 0:
-        return 0.0
-    w = wedderburn_weight(partition)
+        return _mp.mpf(0)
     d = partition_dimension(partition)
+    if d == 1:
+        # For the two one-dimensional blocks (k,) and (1^k) of H_k(q),
+        # H_q(λ) == [k]_q! identically, so d_q(λ) == 1 and w_λ / d_λ == 1/[k]_q! == y_0
+        # is an exact algebraic identity (bean qou-f2pf). Evaluating
+        # (q_factorial(k)/q_hook_product(λ))**2 / q_factorial(k) - 1/q_factorial(k)
+        # left a ~4.3e-19 1-ulp residue on 6 of the 20 one-dimensional blocks
+        # (k = 6, 7, 9) where q_hook_product multiplied [k]_q..[1]_q in reverse order.
+        return _mp.mpf(0)
+    w = wedderburn_weight(partition)
     # y_0 is the smallest of w_λ/d_λ across all partitions of k.
     # For the trivial (n) partition (sym): w = 1/[n]_q!, d = 1.
     # So y_0 = 1/[n]_q!.  NOT the LP normalisation dual — that one is
     # identically 0 (see this function's docstring).  It is a weight
     # normalisation whose measured effect is to zero (k) and (1^k).
-    y_0 = 1.0 / q_factorial(k)
+    y_0 = _mp.mpf(1) / q_factorial(k)
     return w / d - y_0
 
 
@@ -920,7 +920,7 @@ def _phi1_nuclear(Z, N):
     # The pn crossing is mediated by the shared electron.
     # Reference: prop:mass-endomorphism-tower
     if A == 2:
-        # V̂_e = w_sym × q³ + w_std × V_std + w_alt × (-1/q³)
+        # V̂_e = V_std, the convention-D Markov trace (was the w_sym/w_std/w_alt mixture)
         # For trefoil σ₁³ on 2 strands: 3 crossings, all (c=1, d=0) on gen 0.
         # V_std = z×M[0][0] + M[1][0] where M = T(1,0)³
         # T(1,0) = [[h, 1],[1, 0]] → T³ = specific matrix
@@ -932,7 +932,8 @@ def _phi1_nuclear(Z, N):
                   [_M[1][0]*_t[0][0]+_M[1][1]*_t[1][0],
                    _M[1][0]*_t[0][1]+_M[1][1]*_t[1][1]]]
         _V_std = z * _M[0][0] + _M[1][0]
-        _V_e = W_SYM * q0**3 + W_STD * _V_std + W_ALT * (-qi**3)
+        # Convention D (owner, 2026-11-18): the Markov trace of a*sigma+b is z*a+b.
+        _V_e = _V_std
         CATALAN_G = 0.915965594177219015054603514932
         _alpha = M_E_MEV * 8 * CATALAN_G
         return _alpha * abs(_V_e)
@@ -2527,7 +2528,7 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
             per_step[-1]['n_tight_final'] = n_tight
             per_step[-1]['k_exact'] = k_exact
             per_step[-1]['k_max'] = k_max
-        return float(cumul_total), per_step
+        return float(cumul_total), per_step  # float64-ok: public return boundary after mpf accumulation
     # float, as this function has always returned -- the cast is at the public
     # boundary, and NOW that is true.  The note that stood here said the
     # accumulation "keeps its precision ... because math.log already narrows
@@ -2535,7 +2536,7 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
     # conclusion from it: a log that narrows inside the loop is exactly what
     # stops the accumulation keeping anything.  Every log on this path goes
     # through `_exact_log` as of 2026-09-07.
-    return float(cumul_total)
+    return float(cumul_total)  # float64-ok: public return boundary after mpf accumulation
 
 
 def _jet_witness_path(Z, N, jet, witness_dir):
@@ -2577,7 +2578,7 @@ def _atom_character_raw_exact(Z, N, entry, include_inter=True):
     """
     A = Z + N
     if A < 1 or not entry.get('has_ysn') or not entry.get('ysn'):
-        return (float(entry.get('dim', 1)), 0.0, int(entry.get('dim', 1)))
+        return (float(entry.get('dim', 1)), 0.0, int(entry.get('dim', 1)))  # float64-ok: legacy public tuple contract
 
     ordering = []
     pc, nc = 0, 0
@@ -2602,7 +2603,7 @@ def _atom_character_raw_exact(Z, N, entry, include_inter=True):
         for _k in range(A)])
     if _ks:
         _tr, _ln = _ks[-1]
-        return (float(_tr), float(_ln), int(dim))
+        return (float(_tr), float(_ln), int(dim))  # float64-ok: legacy public tuple contract after MPFR kernel
     for kkk in range(A):
         nuc = ordering[kkk]
         prev_types = ordering[:kkk]
@@ -2662,7 +2663,7 @@ def _atom_character_raw_exact(Z, N, entry, include_inter=True):
                           for i in range(dim))
             log_norm += _exact_log(m_max)
     chi = _trace_dim(M, dim)
-    return (float(chi), float(log_norm), int(dim))
+    return (float(chi), float(log_norm), int(dim))  # float64-ok: legacy public tuple contract after mpf accumulation
 
 
 def _contrib_single_partition(Z, N, entry):
@@ -3325,7 +3326,7 @@ def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None):
     pair_couplings = []
     self_conj_indices = []
     seen = set()
-    h_val = float(h)
+    h_val = float(h)  # float64-ok: Clarabel SDP solver float64 input
     name_to_idx = {tuple(e['partition']): i for i, e in enumerate(active)}
     for i, e in enumerate(active):
         lam = tuple(e['partition'])
@@ -3422,7 +3423,7 @@ def binding_energy(Z, N, *, sdp=True, frobenius=True):
     # narrowing on the path, and it costs whatever the accumulation carried,
     # which is measured in the hundreds of significand bits rather than 53.
     # It stays because the public contract is a float (bean `qou-sv7h`).
-    return float(B)
+    return float(B)  # float64-ok: public return boundary after mpf accumulation
 
 
 def q_value_beta(Z_parent, N_parent):

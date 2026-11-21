@@ -1,0 +1,1 @@
+If m n →c = 1 and q ∈N then the 2q-th moment of µlmρΓ converges as n →∞to the meander polynomial Mq(l). MOTOHISA FUKUDA AND PIOTR ´SNIADY (A) (B) FIGURE 4. (a) graphical representation of a noncrossing partition  {1, 3, 4}{2}

@@ -1,0 +1,1 @@
+The moduli space M∗ 0,n is endowed with a natural K¨ahler metric of constant negative curvature for each k/d ∈(1/n, 2/n), and con- stant positive curvature for each k/d ∈(1−1/n, 1). These metrics are modeled on the symmetric spaces CPn−2 and CHn−2 respectively. (For more on the complex hyperbolic case, see §10 and [Th2].)

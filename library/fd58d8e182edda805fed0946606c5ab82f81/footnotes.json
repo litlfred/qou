@@ -1,0 +1,635 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "fd58d8e182edda805fed0946606c5ab82f81",
+ "status": "determined",
+ "body_size": 10.4,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "†",
+   "text": "She is grateful to KIAS for its hospitality during this work. ∗The corresponding author. This research was supported by NRF Grant # 2014R1A1A2054811 and a research grant from Seoul Women’s University(2018).",
+   "marks": [
+    {
+     "page": 1,
+     "context": "Sungsoon Kim"
+    }
+   ],
+   "block": "library/fd58d8e182edda805fed0946606c5ab82f81/blocks/prose-page-001"
+  },
+  {
+   "id": "fn-p003-1",
+   "page": 3,
+   "mark": "n",
+   "text": "−2",
+   "marks": [
+    {
+     "page": 3,
+     "context": "n+1(2"
+    },
+    {
+     "page": 3,
+     "context": "Weremarkthatthenumber"
+    },
+    {
+     "page": 3,
+     "context": "2C"
+    }
+   ],
+   "block": "library/fd58d8e182edda805fed0946606c5ab82f81/blocks/prose-page-003"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p003-2",
+   "page": 3,
+   "mark": "k",
+   "text": "=1",
+   "block": "library/fd58d8e182edda805fed0946606c5ab82f81/blocks/prose-page-003"
+  },
+  {
+   "id": "fn-p003-3",
+   "page": 3,
+   "mark": "k",
+   "text": "=0",
+   "block": "library/fd58d8e182edda805fed0946606c5ab82f81/blocks/prose-page-003"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "E"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i−δE"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "The corresponding"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "E"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "Ei1,j1E"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "Ei1,j1Ei2,j2 · · · E"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "(thecaseofp=0isthemonomial1).Wedenotethesetof"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "byMT (An−1)andthenumber|MT (An−1)|of"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "Example 3.2. Note that |MT (A3)| = C4= 14.Explicitly, the"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "E"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i= δE"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "convention, Ei,i+1= 1 and E"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "Ei,0E"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "Ei,0E1,jEi= Ei−2,0E"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "Ei,0E"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "Ei,0E1,jEi= (EiEi−1Ei)Ei−2,0E"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "Ei,0E1,jEi= (EiEi−1Ei)Ei−2,0E1,j= EiEi−2,0E"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "Ei,0E1,jEi= (EiEi−1Ei)Ei−2,0E1,j= EiEi−2,0E1,j= Ei−2,0E"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "Let"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "Lemma4.1.Fromthis,wedeﬁneMT (Bn)bythesetof"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": " monomials inMT (Bn),we consider the monomials which are not"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "is, we take only"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "byM"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "T (Bn).NotethateachmonomialinM"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "T (Bn)containsE"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "T (Bn)containsE0.WedecomposethesetM"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "T (Bn)⨿M"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "M"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "T (Bn)= M"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "where the monomials in M"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "E0E"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "E0Ei1,j1E"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "E0Ei1,j1Ei2,j2 · · · E"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "he case of p = 0 is the monomial E0), and the monomials in M"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "i1,j1E"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "i1,j1Ei2,j2· · · E"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "i,j= Ei,"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "i,j= Ei,0E"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "tion on i’s and j’s as above.It can be easily checked that M"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "of"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "ofbRT (Bn)-standard monomials which are not"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "To each monomial E"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "To each monomial E0E"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "To each monomial E0Ei1,"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "To each monomial E0Ei1,0E"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "To each monomial E0Ei1,0Ei2,"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "To each monomial E0Ei1,0Ei2,0 · · · E"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "To each monomial E0Ei1,0Ei2,0 · · · Eik,"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "To each monomial E0Ei1,0Ei2,0 · · · Eik,0E"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "To each monomial E0Ei1,0Ei2,0 · · · Eik,0Eik+1,jk+1 · · · E"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "monomial E0Ei1,0Ei2,0 · · · Eik,0Eik+1,jk+1 · · · Eip,jpin M"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "T (Bn)with"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "T (Bn)with j"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "d by northern moves.As an example, the monomial E0E1,0E2,1∈M"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "Counting the number of elements in M"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "Theorem4.2. ThealgebraT (Bn)hasaGröbner-Shirshovbasis"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "E"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "i−δE"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "Ei,0E"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "Ei,0E1,jEi −Ei−2,0E"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "The cardinality of the set MT (Bn), i.e.the set of"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "ϕ : M"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "T (Bn)\\ {E"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "T (Bn)\\ {E0} →M"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "deﬁned byϕ(E0E"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "deﬁned byϕ(E0Ei1,j1E"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "deﬁned byϕ(E0Ei1,j1Ei2,j2 · · · E"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "i1,j1E"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "i1,j1Ei2,j2· · · E"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "T (Bn)|,itisenoughtocountthethenumberofelementsinM"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "ordertocompute|M"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "tothemonomialE"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "tothemonomialE0E"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "tothemonomialE0Ei1,j1E"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "tothemonomialE0Ei1,j1Ei2,j2 · · · E"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "Thus the number of monomials of the form E"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "Thus the number of monomials of the form E0E"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "Thus the number of monomials of the form E0Ei1,"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "Thus the number of monomials of the form E0Ei1,0 · · · E"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "whichisthesamequantityas"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "2C"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "|M"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "2C"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "T (Bn)| = C"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "2C"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "Then, the number of"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "|MT (An−1)| + 1 + 2|M"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "T (Bn)\\ {E"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "T (Bn)\\ {E0}| = C"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "2C"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "asmentionedin[17,§5]and[6,§7].Theorem2.6yieldsthat"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "Example 4.3. (1) We enumerate the"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "1,E"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1,E0E"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "1,E0E2,"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1,E0E2,0, E"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "1,E0E2,0, E2,"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "1,E0E2,0, E2,0,E"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1,E0E2,0, E2,0,E0E"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "1,E0E2,0, E2,0,E0E2,"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "2,1,E"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "2,1,E0E"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1E"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "(2) The product of two"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "number of non-identity fully commutative top monomials is (2"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "n) −1 = |M"
+  },
+  {
+   "page": 7,
+   "mark": "s",
+   "context": "λ"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "(the sum is over all partitionsλ such thatλ −µ is a vertical"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "that the righthand side of the case of µ=1"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "that the righthand side of the case of µ=1r(or µ=1"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "|M"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "r) = (2"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "2(2"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "2C"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "Sungsoon Kim"
+  }
+ ]
+}

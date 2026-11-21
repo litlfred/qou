@@ -1,0 +1,47 @@
+94 Chapter 5 — A family of surfaces
+
+Here by the monodromy group G = Im(m(U,x) —> Autc(V4,x)) we
+mean the image of the monodromy representation of the fundamental group
+on the stalk of V. at some chosen point x € U(C). Up to isomorphism this
+image is of course independent of our choices.
+
+We remark that the occurance of the Weyl group W(£g) in the present
+context can be related to the 27 lines on a cubic surface via the work of
+E. Izadi on Prym-embedded curves [61], though this relationship will not
+be used in what follows (for more about this see section 5.5 below). For the
+proof of theorem 5.1 a detailed guideline will be provided in section 5.2,
+so let us here only mention the most important points. To show that the
+monodromy group G must be a subgroup of W (Eg), we give in section 5.3
+and 5.4 a detailed study of the integral cohomology and of the Néron-Severi
+lattices of the smooth surfaces Y, and Y,* for general x € X(C). Once this
+has been done, the main task will be to find a sufficiently large lower bound
+on the monodromy group. For this we use two ideas. On the one hand, in
+section 5.6 we relate the variation of Hodge structures V , to the convolution
+square of the theta divisor — this allows to apply the Tannakian formalism
+from chapters 2 and 3 and theorem 4.2 to conclude that for a general ppav
+the monodromy group G acts irreducibly on the stalks. On the other hand, a
+degeneration argument will show that in dimension g = 4 this monodromy
+group contains as a subgroup the corresponding monodromy group for the
+Jacobian variety JC of a general curve C.
+
+For Jacobian varieties we have the following result. Let C be a smooth
+complex projective curve of even genus g = 2n, and identify the symmetric
+product
+
+Qn = (Cx +X C)/Gn
+
+with the set of effective divisors of degree n. We then have the difference
+morphism
+dn: CyX Cy —> JC = Pic®(C)
+
+which sends a pair (D,E) of effective divisors of degree n on the curve C
+to the isomorphism class of the line bundle @-(D— E). Using the Poincaré
+formula we will see in section 5.8 that the morphism d,, is generically finite
+of degree N = 7"). In particular, over some Zariski-open dense subset
+of X the difference morphism restricts to a finite étale cover, and it makes
+sense to speak of its Galois group G(d,). An application of Brill-Noether
+sheaves [106] to be explained in proposition 5.24 (b) shows that if C is
+a non-hyperelliptic curve of genus g = 4, the Galois group G(d2) can be
+identified in a natural way with the monodromy group of the local system
+underlying V. on the Jacobian variety. The desired lower bound for the
+proof of theorem 5.1 is then given by the following observation.

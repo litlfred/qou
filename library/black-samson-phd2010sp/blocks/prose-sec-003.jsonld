@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/black-samson-phd2010sp/blocks/prose-sec-003",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "COMBINATORIAL PROOF",
-  "pageStart": 49,
-  "pageEnd": 58,
-  "text": "../sections/sec-003-v-combinatorial-proof.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/black-samson-phd2010sp",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/black-samson-phd2010sp",
+  "title": "3. The Temperley-Lieb Algebra",
+  "pageStart": 22,
+  "pageEnd": 24,
+  "text": "../sections/sec-003-ii-3-the-temperley-lieb-algebra.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/black-samson-phd2010sp/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/black-samson-phd2010sp/manifest.jsonld",
   "provenance": "ingested"
 }

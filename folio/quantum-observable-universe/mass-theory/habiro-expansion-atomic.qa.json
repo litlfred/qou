@@ -1309,6 +1309,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb",
+          "lean": "92c7f245fb4a",
+          "lean_statement": "b0ae092baecf"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:06:43.814Z",
+        "reviewed_sha": "06a3439cc5ff0cdc91182a4199f03868f80ab9b8",
+        "severity": "major",
+        "evidence": "Lean proves every integer polynomial has a unique terminating Habiro expansion with M(M-1)<=2 deg. The md object Vol_alg(H) is not identified with such a polynomial in Lean (atomic_braid_polynomial_integral is witnessed by p=0), and 'N correlates with valence nucleons' is an empirical remark inside a proposition statement."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2972,6 +2990,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T16:21:43.193Z",
+  "updated_at": "2026-11-16T07:06:43.814Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

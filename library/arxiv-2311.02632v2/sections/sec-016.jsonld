@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2311.02632v2/sections/sec-016",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Appendix B. GAP code for the automorphism group of the Fricke-Macbeath surface",
+  "pageStart": 37,
+  "pageEnd": 38,
+  "contains": [
+    "library/arxiv-2311.02632v2/blocks/prose-sec-016"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2311.02632v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2311.02632v2/manifest.jsonld",
+  "provenance": "ingested"
+}

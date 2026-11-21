@@ -1,0 +1,48 @@
+508 Residue forms and classical Morse theory
+
+Building up by successive attachments
+
+If we understand the topology of each pair (X;4, X,) of consecutive elements
+in a filtration Xp C --- C X,, and we understand the homology groups of Xo
+then, using the argument above and induction, we understand the homology
+groups of all X;. Furthermore, if X is a smooth manifold with a proper height
+function h then the Morse Lemma implies that the topology of the continuum
+of spaces {X<;,} is captured by a filtration of sets described by the critical values
+co < cy < +++ < Cy-1 Of A. The Morse filtration of X with respect to h is the
+filtration defined by X; = Xecj-e for0 < j<n-1 and X, = Xx, 42, where €
+is any sufficiently small positive number.
+
+When / has distinct critical values the pairs (Xj, X;) are homotopy equiv-
+alent to XP:°°, where pj; are the critical points listed in order of increasing
+
+height. In general, the successive pairs are homotopy equivalent to B XPzloc
+
+p)=c;
+as c; increases through all critical values. We could describe how to keep track
+
+of generators and relations for the homologies of X; inductively on j in the gen-
+eral case, however what we will need is both more specialized (our spaces are
+complex algebraic or analytic varieties) and more general (our spaces may not
+be manifolds). Accordingly, we restrict the discussion here to one illustration,
+continuing our example of the torus to show what can happen.
+
+Example C.37. In Example C.30 we examined a height function on the torus
+X with four critical points: one of Morse index 0, two of Morse index 1, and one
+of Morse index 2. All 0, maps vanish so the homology groups Ho(X), H1(X),
+and H>(X) are cyclic groups of rank 1,2, and 1, respectively. The filtration con-
+sists of Xo = @ , X; which is contractible to a point, X. which is homeomorphic
+to acylinder, X3; which is homeomorphic to a punctured torus, and X4 which is
+the whole torus.
+
+As an illustration of the non-naturality of the homology basis in (C.4.1),
+consider the second 1-cell to be added. Let a be the homology class in H)(X)
+of the first 1-cell. Then the second 1-cell, which is a well-defined relative ho-
+mology class 6 in H\(X3, X2), may be completed to an absolute class in H)(X3)
+in many different ways, resulting in cycles differing by multiples of a. Geomet-
+rically, one may for example complete f to the circle defined by x* + z? = 1,
+or instead wrap around the torus any integer number of times. 4
+
+Exercise C.5. Let y be the cycle pictured in Figure C.7, going around the torus
+between the critical points p4 and p3. Applying the Pushing Down Lemma with
+respect to the Morse filtration for the pictured height function, what is j and
+what cycle represents u(C,.) = m(C)?

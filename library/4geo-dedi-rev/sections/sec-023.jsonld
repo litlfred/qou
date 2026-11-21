@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/4geo-dedi-rev/sections/sec-023",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIBRED CUSPED 3-MANIFOLDS (page 25)",
+  "pageStart": 25,
+  "pageEnd": 25,
+  "contains": [
+    "library/4geo-dedi-rev/blocks/prose-sec-023",
+    "library/4geo-dedi-rev/blocks/lem-sec-023-01",
+    "library/4geo-dedi-rev/blocks/prop-sec-023-02",
+    "library/4geo-dedi-rev/blocks/cor-sec-023-03",
+    "library/4geo-dedi-rev/blocks/cor-sec-023-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/4geo-dedi-rev/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/4geo-dedi-rev/manifest.jsonld",
+  "provenance": "ingested"
+}

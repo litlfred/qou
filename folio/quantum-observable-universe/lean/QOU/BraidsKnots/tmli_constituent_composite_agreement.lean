@@ -48,7 +48,7 @@ AGENTS.md §3b-cond item 5).
   theorem **derives** the aggregate identity by induction on the prefix
   length.  The `peel` field is the per-step hypothesis, not the aggregate
   conclusion (§3b-cond item 5, non-degenerate).  It mirrors the chain-list
-  realisation `QOU.Braiding.markov_trace_flatten`.
+  realisation `QOU.Hecke.markov_trace_append (ascending blocks on consecutive generators)`.
 - `tmli_constituent_product_is_link_polynomial` is **derived**: chaining
   the agreement identity with the definitional link
   `P_K(q) = tr_M(ρ(β_𝔥))` gives `∏ᵢ V̂ᵢ = P_K(q)` — the outer equality
@@ -67,8 +67,8 @@ them.  With real instance binders the paths are defeq (Mathlib forgetful
 inheritance) and the proof goes through.  Hence this block does not extend
 the shared data-field carrier `QOU.Shared.MarkovTraceContext`.
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.md
--- Ref: QOU.Braiding.markov_trace_flatten (chain-list realisation of the same identity)
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.md
+-- Ref: QOU.Hecke.markov_trace_append (ascending blocks on consecutive generators) (chain-list realisation of the same identity)
 -/
 
 namespace QOU.BraidsKnots
@@ -141,8 +141,8 @@ class TmliConstituentCompositeAgreementContext
     length; the definitional links `constituent_product_def` /
     `composite_trace_def` / `partial_full` reduce the claim to that
     aggregate. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.md
--- Ref: QOU.Braiding.markov_trace_flatten (chain-list realisation)
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.md
+-- Ref: QOU.Hecke.markov_trace_append (ascending blocks on consecutive generators) (chain-list realisation)
 theorem tmli_constituent_composite_agreement
     {R : Type u} [CommRing R] [Inv R] {n : ℕ} {q : R}
     {A : Type u} [Ring A] [Algebra R A]
@@ -175,7 +175,7 @@ theorem tmli_constituent_composite_agreement
     `P_K(q) = tr_M(ρ(β_𝔥))` gives the outer equality of the manuscript
     display, `∏ᵢ V̂ᵢ^const = P_{K_𝔥}(q)`.  Genuine composition of the
     main claim with a definitional link, not a projected field. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.md
 theorem tmli_constituent_product_is_link_polynomial
     {R : Type u} [CommRing R] [Inv R] {n : ℕ} {q : R}
     {A : Type u} [Ring A] [Algebra R A]

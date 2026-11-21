@@ -1,0 +1,10663 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2207.07246v2",
+ "status": "determined",
+ "pages_unread": [
+  147
+ ],
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p015-1",
+   "page": 15,
+   "mark": "1",
+   "text": "Thatis,themomentumdependenceispredominantlydeterminedbythemomentumtransfer which Fourier transforms to a local in space potential",
+   "marks": [
+    {
+     "page": 15,
+     "context": "onecanwritedownamostlylocalversionofthechiralinteraction"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p015-2",
+   "page": 15,
+   "mark": "2",
+   "text": "ThosearethemethodsIwasmainlyusinginmymasterdegreecareer(Chenetal.(2012)).",
+   "marks": [
+    {
+     "page": 15,
+     "context": "order(NLO)termsareforν= 2.Thenext-to-next-to-leadingorder(N"
+    },
+    {
+     "page": 15,
+     "context": "(Gezerlisetal.(2013))uptoN"
+    },
+    {
+     "page": 15,
+     "context": "models"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p017-1",
+   "page": 17,
+   "mark": "3",
+   "text": "By‘soft’wemeanthepotentialremainrelativelysmallwhenthedistancerbetweenthenucleons r →0 and it varies not too abruptly with r. ‘Hard’ is the opposite.",
+   "marks": [
+    {
+     "page": 17,
+     "context": "ishardinsteadofsoft"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p018-1",
+   "page": 18,
+   "mark": "4",
+   "text": "BriefintroductionstoVMCisinAppendixA.",
+   "marks": [
+    {
+     "page": 18,
+     "context": "cusoncontinuumQMC.ThesemethodsaremainlyvariationalMonteCarlo"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p019-1",
+   "page": 19,
+   "mark": "5",
+   "text": "BriefintroductionstoDMCisinAppendixB.",
+   "marks": [
+    {
+     "page": 19,
+     "context": "(VMC),DiﬀusionMonteCarlo(DMC)"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p019-2",
+   "page": 19,
+   "mark": "6",
+   "text": "BriefintroductionstoAFDMCisinAppendixC.",
+   "marks": [
+    {
+     "page": 19,
+     "context": "MonteCarlo"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p019-3",
+   "page": 19,
+   "mark": "7",
+   "text": "For12C,GFMCcostabout130millioncorehours(Lovatoetal.(2020))ontheMIRAsupercom- puter at Argonne National Laboratory located in Lemont, Illinois, USA.",
+   "marks": [
+    {
+     "page": 19,
+     "context": "computationalcostistoohigh"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p020-1",
+   "page": 20,
+   "mark": "8",
+   "text": "DiﬀusionbasedQMCmethodstypicallyuseatechniquecalled‘futurewalking’(Hammondetal. (1994)) or ‘forward walking’ (Runge (1992); Casulleras and Boronat (1995); Samaras and Hamer (1999)) to deal with operators which do not commute with H. This technique is sensitive to the quality of the trial wave function ΨT .",
+   "marks": [
+    {
+     "page": 20,
+     "context": "expectationvaluescannotbeobtainedwithouttradeoﬀ"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p022-1",
+   "page": 22,
+   "mark": "9",
+   "text": "As of June 2020 (Wikipediacontributors (2020b)), the most powerful supercomputer inthe world is Fugaku (peak performance is around 0.54 exaFLOPS) which is installed at RIKEN Center for Computational Science in Kobe, Japan. It is preceded by the Summit (peak performance is around",
+   "marks": [
+    {
+     "page": 22,
+     "context": "the1980scoulddoabout10"
+    },
+    {
+     "page": 22,
+     "context": "(2017)),andtoday’smostpowerfulsupercomputerFugaku"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-013"
+  },
+  {
+   "id": "fn-p027-1",
+   "page": 27,
+   "mark": "1",
+   "text": "ItcanbeseenfromEq.(2.13)thattheDMCtotalimaginarytimeτdcanbejusthalfofthe PIMC total imaginary time τ, τd = 0.5τ, because DMC project out the ground state only from one side while PIMC does so from both sides.",
+   "marks": [
+    {
+     "page": 26,
+     "context": "(usually we set τ1= τ2), then replacing e−Hτ"
+    },
+    {
+     "page": 26,
+     "context": "2), then replacing e−Hτ1and e−Hτ2with corresponding (e−H∆τ)N"
+    },
+    {
+     "page": 27,
+     "context": "which is called mixed estimator"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-016"
+  },
+  {
+   "id": "fn-p027-2",
+   "page": 27,
+   "mark": "2",
+   "text": "theDMCresultsareobtainedbyusingtheextrapolatedestimatorEq.(B.48).",
+   "marks": [
+    {
+     "page": 26,
+     "context": "(usually we set τ1= τ2), then replacing e−Hτ1and e−Hτ"
+    },
+    {
+     "page": 26,
+     "context": "and(e−H∆τ)N"
+    },
+    {
+     "page": 27,
+     "context": "ofthemisthetruegroundstateexpectationvalue"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-016"
+  },
+  {
+   "id": "fn-p032-6",
+   "page": 32,
+   "mark": "2",
+   "text": "0",
+   "marks": [
+    {
+     "page": 31,
+     "context": "methods.However,itwasshownthatuptoN"
+    },
+    {
+     "page": 31,
+     "context": "etal.(2018a,b)).ForchirallocalN"
+    },
+    {
+     "page": 31,
+     "context": "The complete chiral N"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-017"
+  },
+  {
+   "id": "fn-p032-8",
+   "page": 32,
+   "mark": "3",
+   "text": "0",
+   "marks": [
+    {
+     "page": 31,
+     "context": "etal.(2018b)),V"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-017"
+  },
+  {
+   "id": "fn-p033-1",
+   "page": 33,
+   "mark": "3",
+   "text": "TheAV6’andlocalchiralN2LOweuseinthisworkconservethenumberofisospinstates.For \u00004 example, for 4He we begin with \u0001 = 6 diﬀerent isospin states, the interaction we use always generate",
+   "marks": [
+    {
+     "page": 33,
+     "context": "andA −Zneutrons"
+    },
+    {
+     "page": 33,
+     "context": "2⟩⊗|s"
+    },
+    {
+     "page": 33,
+     "context": "2s"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-017"
+  },
+  {
+   "id": "fn-p043-1",
+   "page": 43,
+   "mark": "p",
+   "text": "=1vp(rij)Op",
+   "marks": [
+    {
+     "page": 43,
+     "context": "vp(rij)O"
+    },
+    {
+     "page": 43,
+     "context": "p=1v"
+    },
+    {
+     "page": 43,
+     "context": "p=1vp(rij)O"
+    },
+    {
+     "page": 43,
+     "context": "ij∆τinEq.(2.64)canbelinearizedbytheoriginal6operatorsO"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-020"
+  },
+  {
+   "id": "fn-p045-1",
+   "page": 45,
+   "mark": "6",
+   "text": "AlltheerrorstructuresofthepropagatorcanbefoundbyrepeatedlyusingCampbell-Baker- Hausdorﬀ(CBH) formula (Reinsch (2000)), eAeB = eA+B+ 1",
+   "marks": [
+    {
+     "page": 45,
+     "context": "is1,andEq.(2.61)becomesthehigh-accuracyTrotterformula"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-020"
+  },
+  {
+   "id": "fn-p045-2",
+   "page": 45,
+   "mark": "2",
+   "text": "[A,B]+1",
+   "marks": [
+    {
+     "page": 44,
+     "context": "p"
+    },
+    {
+     "page": 44,
+     "context": "2∆τℏ"
+    },
+    {
+     "page": 44,
+     "context": "2π∆τℏ"
+    },
+    {
+     "page": 44,
+     "context": "and(R′−R)"
+    },
+    {
+     "page": 44,
+     "context": "(R′−R)"
+    },
+    {
+     "page": 44,
+     "context": "i−ri)"
+    },
+    {
+     "page": 44,
+     "context": "i−xi)"
+    },
+    {
+     "page": 44,
+     "context": "i−yi)"
+    },
+    {
+     "page": 44,
+     "context": "i−zi)"
+    },
+    {
+     "page": 44,
+     "context": "4iℏ"
+    },
+    {
+     "page": 45,
+     "context": "2∆τwhich is Eq.(2.63) alone has O(∆τ"
+    },
+    {
+     "page": 45,
+     "context": "writtentheformofEq.(2.74),theO(∆τ"
+    },
+    {
+     "page": 45,
+     "context": "= e−Hτ+ O(∆τ"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-020"
+  },
+  {
+   "id": "fn-p050-1",
+   "page": 50,
+   "mark": "7",
+   "text": "ForanyRIandRJonthetimelinewhichisrepresentedbythelonghorizontallinesinFig.",
+   "marks": [
+    {
+     "page": 50,
+     "context": "I,I+1inEq.(2.96)isdeﬁnedas"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-023"
+  },
+  {
+   "id": "fn-p050-2",
+   "page": 50,
+   "mark": "2",
+   "text": "5 on which there are black points (beads), the general form of the free particle propagator can be written as, \u0013 3A (RI −RJ )2 \u0012 m −",
+   "marks": [
+    {
+     "page": 49,
+     "context": "DR⟨ΨT|R0S0⟩⟨R0S0|[U(∆τ)]N1ˆO[U(∆τ)]N"
+    },
+    {
+     "page": 50,
+     "context": "T|R0S0⟩⟨R0S0|[U(∆τ)]N1ˆOM[U(∆τ)]N"
+    },
+    {
+     "page": 50,
+     "context": "(RI −RI+1)"
+    },
+    {
+     "page": 50,
+     "context": "2∆τℏ"
+    },
+    {
+     "page": 50,
+     "context": "2π∆τℏ"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-023"
+  },
+  {
+   "id": "fn-p060-1",
+   "page": 60,
+   "mark": "8",
+   "text": "InPIMCcalculation,thesignproblemisequivalenttosaythattheBlr(R)inEq.(2.100)we sampled may frequently oscillate between 1 and -1, which can make the ⟨Blr(R)⟩in Eq.(2.87) close to zero and therefore lead to a big error bar. However, In our light nuclei PIMC calculation, e.g. the",
+   "marks": [
+    {
+     "page": 60,
+     "context": "signproblem"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-027"
+  },
+  {
+   "id": "fn-p070-1",
+   "page": 70,
+   "mark": "2",
+   "text": "k",
+   "marks": [
+    {
+     "page": 69,
+     "context": "andthereforetotallyaboutN"
+    },
+    {
+     "page": 70,
+     "context": "thanN= 500.SoN(1/u + 1/a)updatesmuchmorecheaperthanN"
+    },
+    {
+     "page": 70,
+     "context": "2"
+    },
+    {
+     "page": 70,
+     "context": "4"
+    },
+    {
+     "page": 70,
+     "context": "4"
+    },
+    {
+     "page": 70,
+     "context": "2k"
+    },
+    {
+     "page": 70,
+     "context": "2k"
+    },
+    {
+     "page": 70,
+     "context": "2k"
+    },
+    {
+     "page": 70,
+     "context": "2k 2n, ..., R"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-032"
+  },
+  {
+   "id": "fn-p073-1",
+   "page": 73,
+   "mark": "2",
+   "text": "n)2",
+   "marks": [
+    {
+     "page": 73,
+     "context": "2n= R"
+    },
+    {
+     "page": 73,
+     "context": "2n= R"
+    },
+    {
+     "page": 73,
+     "context": "0−R"
+    },
+    {
+     "page": 73,
+     "context": "0−R2n)"
+    },
+    {
+     "page": 73,
+     "context": "2×2n∆τℏ"
+    },
+    {
+     "page": 73,
+     "context": "2n∆τℏ"
+    },
+    {
+     "page": 73,
+     "context": "i= r"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-032"
+  },
+  {
+   "id": "fn-p081-1",
+   "page": 81,
+   "mark": "2",
+   "text": "σ2",
+   "marks": [
+    {
+     "page": 80,
+     "context": "2σ"
+    },
+    {
+     "page": 80,
+     "context": "2σ"
+    },
+    {
+     "page": 80,
+     "context": "2σ"
+    },
+    {
+     "page": 80,
+     "context": "2πσ"
+    },
+    {
+     "page": 81,
+     "context": "2σ"
+    },
+    {
+     "page": 81,
+     "context": "2σ"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-034"
+  },
+  {
+   "id": "fn-p082-1",
+   "page": 82,
+   "mark": "1",
+   "text": "NotethatT imp(s →s′",
+   "marks": [
+    {
+     "page": 82,
+     "context": "2)isalso"
+    },
+    {
+     "page": 82,
+     "context": "8)is"
+    },
+    {
+     "page": 82,
+     "context": "i)areall"
+    },
+    {
+     "page": 82,
+     "context": "j→si)"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-034"
+  },
+  {
+   "id": "fn-p082-2",
+   "page": 82,
+   "mark": "i",
+   "text": ")isavalidproposedtransitionprobability.BecauseforEq.(3.73),with",
+   "marks": [
+    {
+     "page": 82,
+     "context": "j) =nT(s"
+    },
+    {
+     "page": 82,
+     "context": "j→s"
+    },
+    {
+     "page": 82,
+     "context": "j→s"
+    },
+    {
+     "page": 82,
+     "context": "j→s"
+    },
+    {
+     "page": 82,
+     "context": "j→si)π(s"
+    },
+    {
+     "page": 82,
+     "context": "i=1π(s"
+    },
+    {
+     "page": 82,
+     "context": "j→s"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-034"
+  },
+  {
+   "id": "fn-p083-1",
+   "page": 83,
+   "mark": "i",
+   "text": ") s′ i=1 s′ i n T(s →s′",
+   "marks": [
+    {
+     "page": 83,
+     "context": "jisacceptedornotbytheacceptanceprobabilityA(s"
+    },
+    {
+     "page": 83,
+     "context": "j→s"
+    },
+    {
+     "page": 83,
+     "context": "j→s"
+    },
+    {
+     "page": 83,
+     "context": "j→s"
+    },
+    {
+     "page": 83,
+     "context": "i=1π(s"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-034"
+  },
+  {
+   "id": "fn-p092-1",
+   "page": 92,
+   "mark": "2",
+   "text": "m i i=1 i=1",
+   "marks": [
+    {
+     "page": 91,
+     "context": "twopropagatorsas⟨ΨT|e−Hτ1ˆOe−Hτ"
+    },
+    {
+     "page": 91,
+     "context": "forcomparisons.ThetotalimaginarytimeforchiralN"
+    },
+    {
+     "page": 91,
+     "context": "chiralN"
+    },
+    {
+     "page": 92,
+     "context": "−ℏ"
+    },
+    {
+     "page": 92,
+     "context": "T⟩=−ℏ"
+    },
+    {
+     "page": 92,
+     "context": "d"
+    },
+    {
+     "page": 92,
+     "context": "i+d"
+    },
+    {
+     "page": 92,
+     "context": "i+d"
+    },
+    {
+     "page": 92,
+     "context": "dx"
+    },
+    {
+     "page": 92,
+     "context": "dy"
+    },
+    {
+     "page": 92,
+     "context": "dz"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p093-1",
+   "page": 93,
+   "mark": "1",
+   "text": "Forexample,forxithexcoordinateofparticlei,itiscalculatedas,",
+   "marks": [
+    {
+     "page": 93,
+     "context": "the2ndordercentralﬁnitediﬀerenceformula(Fornberg(1988))"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p094-5",
+   "page": 94,
+   "mark": "2",
+   "text": "0",
+   "marks": [
+    {
+     "page": 93,
+     "context": "calculatetheground-stateenergyE0,r"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p094-9",
+   "page": 94,
+   "mark": "4",
+   "text": "0",
+   "marks": [
+    {
+     "page": 93,
+     "context": "InourPIMCcalculationsfor"
+    },
+    {
+     "page": 93,
+     "context": "InFig.4.1,weshowthecalculationofthe"
+    },
+    {
+     "page": 93,
+     "context": "thetruegroundstateenergyE0for"
+    },
+    {
+     "page": 94,
+     "context": "4.1:Energyvs.timestep∆τfor diﬀerent total imaginarytime τfor"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p095-5",
+   "page": 95,
+   "mark": "2",
+   "text": "0",
+   "marks": [
+    {
+     "page": 95,
+     "context": "onthelocalchiralN"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p095-9",
+   "page": 95,
+   "mark": "4",
+   "text": "0",
+   "marks": [
+    {
+     "page": 95,
+     "context": "4.3:Energyvs.timestep∆τfor diﬀerent total imaginarytime τfor"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p098-1",
+   "page": 98,
+   "mark": "2",
+   "text": "NotethatthepotentialoperatorsandtheHamiltoniandonotcommute,sotheeigenstatesof",
+   "marks": [
+    {
+     "page": 97,
+     "context": "Table4.2:ThelocalchiralN"
+    },
+    {
+     "page": 98,
+     "context": "AV6’interactionandinTable4.2forthechiralN"
+    },
+    {
+     "page": 98,
+     "context": "In Fig.4.5"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p101-1",
+   "page": 101,
+   "mark": "3",
+   "text": "Inordertosavecomputationtime,wedidnotincludespin-orbitinteraction,butitdoesnotalter the conclusion. Fig. 4.6 is not as smooth as Fig. 4.5 simply because we used fewer core hours for it than we did for Fig. 4.5.",
+   "marks": [
+    {
+     "page": 101,
+     "context": "chiralinteractionwhichalsoindicatesτ= 0.2MeV−1issuﬃcient"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-041"
+  },
+  {
+   "id": "fn-p102-1",
+   "page": 102,
+   "mark": "i",
+   "text": "Ai(τ,∆τ) a∗ i=1",
+   "marks": [
+    {
+     "page": 101,
+     "context": "A0(τ, ∆τ)|Φ"
+    },
+    {
+     "page": 102,
+     "context": "e−(E"
+    },
+    {
+     "page": 102,
+     "context": "iA"
+    },
+    {
+     "page": 102,
+     "context": "iAi(τ,∆τ)E"
+    },
+    {
+     "page": 102,
+     "context": "iA"
+    },
+    {
+     "page": 102,
+     "context": "iA"
+    },
+    {
+     "page": 102,
+     "context": "iAi(τ,∆τ)E"
+    },
+    {
+     "page": 102,
+     "context": "iA"
+    },
+    {
+     "page": 102,
+     "context": "iA"
+    },
+    {
+     "page": 102,
+     "context": "iAi(τ,∆τ)E"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-041"
+  },
+  {
+   "id": "fn-p102-2",
+   "page": 102,
+   "mark": "0",
+   "text": "A0(τ,∆τ)",
+   "marks": [
+    {
+     "page": 102,
+     "context": "e−Hτ|ΨT⟩= a0e−E"
+    },
+    {
+     "page": 102,
+     "context": "e−(Ei−E"
+    },
+    {
+     "page": 102,
+     "context": "∆τ→0A"
+    },
+    {
+     "page": 102,
+     "context": "∆τ→0A0(τ, ∆τ) = a"
+    },
+    {
+     "page": 102,
+     "context": "∆τ→0A0(τ, ∆τ) = a0e−E"
+    },
+    {
+     "page": 102,
+     "context": "e−(En−E"
+    },
+    {
+     "page": 102,
+     "context": "0A"
+    },
+    {
+     "page": 102,
+     "context": "0A0(τ,∆τ)E"
+    },
+    {
+     "page": 102,
+     "context": "0A"
+    },
+    {
+     "page": 102,
+     "context": "0A"
+    },
+    {
+     "page": 102,
+     "context": "0A0(τ,∆τ)E"
+    },
+    {
+     "page": 102,
+     "context": "0A"
+    },
+    {
+     "page": 102,
+     "context": "0A"
+    },
+    {
+     "page": 102,
+     "context": "0A0(τ,∆τ)E"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-041"
+  },
+  {
+   "id": "fn-p103-1",
+   "page": 103,
+   "mark": "4",
+   "text": "Inthecode,wecalculatetheaveragedoperatorˆrm=1",
+   "marks": [
+    {
+     "page": 103,
+     "context": "operatorcanbewrittenas"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-041"
+  },
+  {
+   "id": "fn-p104-1",
+   "page": 104,
+   "mark": "5",
+   "text": "Inthe code, wecalculate the averaged operatorˆrp(n)=",
+   "marks": [
+    {
+     "page": 104,
+     "context": "Similarly,wecandeﬁnetheproton(neutron)radiioperatorˆrp(n)as"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-042"
+  },
+  {
+   "id": "fn-p104-2",
+   "page": 104,
+   "mark": "j",
+   "text": "=1ˆrj",
+   "marks": [
+    {
+     "page": 104,
+     "context": "j=1r"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-042"
+  },
+  {
+   "id": "fn-p106-1",
+   "page": 106,
+   "mark": "6",
+   "text": "Inthecode,weactuallycalculatetheaveragedˆρ(r)operator(Lynnetal.(2019)),   A A ˆρ(r) = 1 ˆri −1 X X δ r − ˆrj . (4.31) A A i=1 j=1 We use Eq.(4.32) for illustration purpose.",
+   "marks": [
+    {
+     "page": 106,
+     "context": "cle1asthereferenceparticle,andtheoperatorˆρ(r)canbewrittenas"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p108-14",
+   "page": 108,
+   "mark": "1",
+   "text": "0",
+   "marks": [
+    {
+     "page": 107,
+     "context": "ˆr"
+    },
+    {
+     "page": 107,
+     "context": "r"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p108-24",
+   "page": 108,
+   "mark": "3",
+   "text": "0 r (fm)",
+   "marks": [
+    {
+     "page": 107,
+     "context": "3πh"
+    },
+    {
+     "page": 107,
+     "context": "3πh3[(k + 1)"
+    },
+    {
+     "page": 107,
+     "context": "3πh3[(k + 1)3 −k"
+    },
+    {
+     "page": 107,
+     "context": "4πh"
+    },
+    {
+     "page": 107,
+     "context": "4πh3[(k+1)"
+    },
+    {
+     "page": 107,
+     "context": "4πh3[(k+1)3−k"
+    },
+    {
+     "page": 107,
+     "context": "4πh"
+    },
+    {
+     "page": 107,
+     "context": "4πh3[(k+1)"
+    },
+    {
+     "page": 107,
+     "context": "4πh3[(k+1)3−k"
+    },
+    {
+     "page": 107,
+     "context": "4πh"
+    },
+    {
+     "page": 107,
+     "context": "4πh3[(k+1)"
+    },
+    {
+     "page": 107,
+     "context": "4πh3[(k+1)3−k"
+    },
+    {
+     "page": 107,
+     "context": "4πh"
+    },
+    {
+     "page": 107,
+     "context": "4πh3[(k+1)"
+    },
+    {
+     "page": 107,
+     "context": "4πh3[(k+1)3−k"
+    },
+    {
+     "page": 107,
+     "context": "4πh"
+    },
+    {
+     "page": 107,
+     "context": "4πh3[(k+1)"
+    },
+    {
+     "page": 107,
+     "context": "4πh3[(k+1)3−k"
+    },
+    {
+     "page": 107,
+     "context": "of"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p114-1",
+   "page": 114,
+   "mark": "1",
+   "text": "5",
+   "marks": [
+    {
+     "page": 114,
+     "context": "E(k, τ) =eωqeτ⟨ΨT|e−Hτ"
+    },
+    {
+     "page": 114,
+     "context": "e−Hτ"
+    },
+    {
+     "page": 114,
+     "context": "⟨ΨT|e−Hτ"
+    },
+    {
+     "page": 114,
+     "context": "⟨ΨT|e−Hτ1e−Hτe−Hτ"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p114-10",
+   "page": 114,
+   "mark": "7",
+   "text": "Thedetailedangleaveragedcalculationsof R be found in Appendix E.1.",
+   "marks": [
+    {
+     "page": 114,
+     "context": "lr,M(R)iscalculatedas"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p115-1",
+   "page": 115,
+   "mark": "8",
+   "text": "SeeAppendixE.2fortheconversionprocess.",
+   "marks": [
+    {
+     "page": 115,
+     "context": "butwehaveconvertedourresultstothelabframe"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p117-1",
+   "page": 117,
+   "mark": "9",
+   "text": "DependingonthenumberofCPUcores,thenumberofbeadsinthePIMCcalculationandthe total computation time involved, a complete path ﬁle can take from tens of GB to several TB storage space. In the future we may use MPI/IO which can further improve the parallel scaling.",
+   "marks": [
+    {
+     "page": 117,
+     "context": "whichincludesalltheinformationofalltheseindependentpaths"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-045"
+  },
+  {
+   "id": "fn-p117-2",
+   "page": 117,
+   "mark": "10",
+   "text": "AllthecalculationsinthisworkareperformedattheAgaveclusteratResearchComputingat Arizona State University during 2019 and 2020. The Cluster is mostly conﬁgured with Intel Xeon E5-2680v4 CPUs (CPU Architecture Broadwell) running at 2.40GHz at each node. Each node has 28 cores. Each core is conﬁgured with about 4.5GB of RAM. There are 297 nodes so there are 8316 cores (≈320 FP64 TFLOPS) and 4.5PB storage space. Sometimes we also use some Intel Xeon Gold 6230 and Intel Xeon Gold 6252 (CPU Architectures are both CascadeLake). Occasionally, we use several AMD EPYC 7551 (CPU Architecture is Naples) too. Our code currently does not run on coprocessors such as Intel Xeon Phi 7210 (CPU Architecture Knights Landing), because although each Xeon Phi CPU has hundreds of cores, each core is slow and does not have enough RAM. We checked the scaling only up to 500 cores simply because it is diﬃcult to request much more than that number of cores to actually run the code on the Agave cluster.",
+   "marks": [
+    {
+     "page": 117,
+     "context": "Sincethecodeisparallel,wecheckedthescalingofourPIMCcode"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-045"
+  },
+  {
+   "id": "fn-p119-1",
+   "page": 119,
+   "mark": "1",
+   "text": "SuchastheFacilityforRareIsotopeBeams(FRIB)atMichiganStateUniversity.",
+   "marks": [
+    {
+     "page": 119,
+     "context": "thelaboratories"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-047"
+  },
+  {
+   "id": "fn-p163-1",
+   "page": 163,
+   "mark": "i",
+   "text": "ˆri",
+   "marks": [
+    {
+     "page": 162,
+     "context": "e−ik·r"
+    },
+    {
+     "page": 162,
+     "context": "e"
+    },
+    {
+     "page": 162,
+     "context": "e"
+    },
+    {
+     "page": 162,
+     "context": "e"
+    },
+    {
+     "page": 162,
+     "context": "e"
+    },
+    {
+     "page": 162,
+     "context": "e"
+    },
+    {
+     "page": 162,
+     "context": "e"
+    },
+    {
+     "page": 162,
+     "context": "e"
+    },
+    {
+     "page": 162,
+     "context": "e"
+    },
+    {
+     "page": 162,
+     "context": "e"
+    },
+    {
+     "page": 162,
+     "context": "e"
+    },
+    {
+     "page": 163,
+     "context": "i=1p"
+    },
+    {
+     "page": 163,
+     "context": "e"
+    },
+    {
+     "page": 163,
+     "context": "e"
+    },
+    {
+     "page": 163,
+     "context": "operatore"
+    },
+    {
+     "page": 163,
+     "context": "ne"
+    },
+    {
+     "page": 163,
+     "context": "e"
+    },
+    {
+     "page": 163,
+     "context": "e"
+    },
+    {
+     "page": 163,
+     "context": "e"
+    },
+    {
+     "page": 163,
+     "context": "e"
+    },
+    {
+     "page": 163,
+     "context": "e"
+    }
+   ],
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-069"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p022-2",
+   "page": 22,
+   "mark": "0",
+   "text": "2 exaFLOPS) which is located at the Oak Ridge National Laboratory in Tennessee, USA.",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-013"
+  },
+  {
+   "id": "fn-p032-1",
+   "page": 32,
+   "mark": "0",
+   "text": "0",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-017"
+  },
+  {
+   "id": "fn-p032-2",
+   "page": 32,
+   "mark": "0",
+   "text": "0",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-017"
+  },
+  {
+   "id": "fn-p032-3",
+   "page": 32,
+   "mark": "0",
+   "text": "5",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-017"
+  },
+  {
+   "id": "fn-p032-4",
+   "page": 32,
+   "mark": "1",
+   "text": "0",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-017"
+  },
+  {
+   "id": "fn-p032-5",
+   "page": 32,
+   "mark": "1",
+   "text": "5",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-017"
+  },
+  {
+   "id": "fn-p032-7",
+   "page": 32,
+   "mark": "2",
+   "text": "5",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-017"
+  },
+  {
+   "id": "fn-p032-9",
+   "page": 32,
+   "mark": "0",
+   "text": "0",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-017"
+  },
+  {
+   "id": "fn-p032-10",
+   "page": 32,
+   "mark": "0",
+   "text": "5",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-017"
+  },
+  {
+   "id": "fn-p032-11",
+   "page": 32,
+   "mark": "1",
+   "text": "0",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-017"
+  },
+  {
+   "id": "fn-p032-12",
+   "page": 32,
+   "mark": "1",
+   "text": "5",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-017"
+  },
+  {
+   "id": "fn-p032-13",
+   "page": 32,
+   "mark": "2",
+   "text": "0",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-017"
+  },
+  {
+   "id": "fn-p032-14",
+   "page": 32,
+   "mark": "2",
+   "text": "5",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-017"
+  },
+  {
+   "id": "fn-p032-15",
+   "page": 32,
+   "mark": "3",
+   "text": "0 r (fm) r (fm) r (fm)",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-017"
+  },
+  {
+   "id": "fn-p043-2",
+   "page": 43,
+   "mark": "4",
+   "text": "SeeAppendixDfordetailsaboutlinearizingtheAV6’operatorsinthepropagator.Inorder to save time, in the code all the up(r) are tabulated for the relevant range of r before performing the Monte Carlo simulations. And the interpolations of the table are done by Lagrange 4-point interpolation polynomials.",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-020"
+  },
+  {
+   "id": "fn-p043-3",
+   "page": 43,
+   "mark": "5",
+   "text": "ThethreebodyinteractionV3b=P i<j<k Vijk may be added in the same way as the spin-orbit",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-020"
+  },
+  {
+   "id": "fn-p045-3",
+   "page": 45,
+   "mark": "12",
+   "text": "[A−B,[A,B]]+1",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-020"
+  },
+  {
+   "id": "fn-p045-4",
+   "page": 45,
+   "mark": "24",
+   "text": "[B,[A,[B,A]]]+..., (2.72) where A and B are operators or matrices. From Eq.(2.72) we can further ﬁnd that, B B",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-020"
+  },
+  {
+   "id": "fn-p045-5",
+   "page": 45,
+   "mark": "2",
+   "text": "= eA+B+1",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-020"
+  },
+  {
+   "id": "fn-p045-6",
+   "page": 45,
+   "mark": "2",
+   "text": "eAe",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-020"
+  },
+  {
+   "id": "fn-p045-7",
+   "page": 45,
+   "mark": "24",
+   "text": "[2A+B,[A,B]]+.... e (2.73) and that is how we can write down (Apaja (2009)) Eq.(2.74).",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-020"
+  },
+  {
+   "id": "fn-p050-3",
+   "page": 50,
+   "mark": "m",
+   "text": ", e (2.97)",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-023"
+  },
+  {
+   "id": "fn-p050-4",
+   "page": 50,
+   "mark": "2",
+   "text": "π|J −I|∆τℏ2",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-023"
+  },
+  {
+   "id": "fn-p060-2",
+   "page": 60,
+   "mark": "4",
+   "text": "Hecalculation,weﬁnd⟨Blr(R)⟩≈0.9whichmeansthereareonlyabout5%oftheBlr(R)samples ﬂip their signs from 1 to -1. So we do not have any serious sign problems in this work, partially because our total imaginary time is not big, and also we are summing over all the spin isospin states and this makes the sign ﬂipping less likely to happen.",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-027"
+  },
+  {
+   "id": "fn-p078-1",
+   "page": 78,
+   "mark": "2",
+   "text": "σ2",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-033"
+  },
+  {
+   "id": "fn-p083-2",
+   "page": 83,
+   "mark": "i",
+   "text": ")π(s′",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-034"
+  },
+  {
+   "id": "fn-p083-3",
+   "page": 83,
+   "mark": "i",
+   "text": ") X X = n Pn",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-034"
+  },
+  {
+   "id": "fn-p083-4",
+   "page": 83,
+   "mark": "j",
+   "text": "=1π(s′",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-034"
+  },
+  {
+   "id": "fn-p083-5",
+   "page": 83,
+   "mark": "j",
+   "text": ") i=1 s′ i Pn",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-034"
+  },
+  {
+   "id": "fn-p083-6",
+   "page": 83,
+   "mark": "i",
+   "text": "=1π(s′",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-034"
+  },
+  {
+   "id": "fn-p083-7",
+   "page": 83,
+   "mark": "i",
+   "text": ") X T(s →s′ = n",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-034"
+  },
+  {
+   "id": "fn-p083-8",
+   "page": 83,
+   "mark": "i",
+   "text": ") Pn",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-034"
+  },
+  {
+   "id": "fn-p083-9",
+   "page": 83,
+   "mark": "j",
+   "text": "=1π(s′",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-034"
+  },
+  {
+   "id": "fn-p083-10",
+   "page": 83,
+   "mark": "j",
+   "text": ") s′ i X T(s →s′ = n",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-034"
+  },
+  {
+   "id": "fn-p083-11",
+   "page": 83,
+   "mark": "i",
+   "text": ") s′ i = 1. (3.74) So T imp(s →s′",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-034"
+  },
+  {
+   "id": "fn-p083-12",
+   "page": 83,
+   "mark": "i",
+   "text": ") based on the importance sampling algorithm is a valid proposed transition probability because it is non-negative and its summation over all the possible states is 1. Actually Eq.(3.74) may not really need to be required. As long as the normalization factors of T imp can be canceled in acceptance rate A(s →s′) it will be correct.",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-034"
+  },
+  {
+   "id": "fn-p092-2",
+   "page": 92,
+   "mark": "2",
+   "text": "m i i=1 i=1",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p093-2",
+   "page": 93,
+   "mark": "i",
+   "text": "S|ψr",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p093-3",
+   "page": 93,
+   "mark": "i",
+   "text": "S|ψr T ⟩−2⟨RS|ψr ⟨Rx+ T ⟩+⟨Rx− T ⟩ d2⟨RS|ψr T ⟩ = , (4.11) dx2 ∆2 i ⟨ψl",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p093-4",
+   "page": 93,
+   "mark": "i",
+   "text": "S⟩+⟨ψl",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p093-5",
+   "page": 93,
+   "mark": "i",
+   "text": "S⟩−2⟨ψl T |Rx+ T |Rx− T |RS⟩ d2⟨ψl T |RS⟩ = . (4.12) dx2 ∆2 i where ∆is the spatial ﬁnite diﬀerence which is set as about 10−2 fm in our calculations. Rx+",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p093-6",
+   "page": 93,
+   "mark": "i",
+   "text": "means keeping all the other coordinates in the conﬁguration of the system R the same and just change xi to xi + ∆, and Rx−",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p093-7",
+   "page": 93,
+   "mark": "i",
+   "text": "meanschangexitoxi −∆.",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p094-1",
+   "page": 94,
+   "mark": "0",
+   "text": "0",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p094-2",
+   "page": 94,
+   "mark": "0",
+   "text": "5",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p094-3",
+   "page": 94,
+   "mark": "1",
+   "text": "0",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p094-4",
+   "page": 94,
+   "mark": "1",
+   "text": "5",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p094-6",
+   "page": 94,
+   "mark": "2",
+   "text": "5",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p094-7",
+   "page": 94,
+   "mark": "3",
+   "text": "0",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p094-8",
+   "page": 94,
+   "mark": "3",
+   "text": "5",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p094-10",
+   "page": 94,
+   "mark": "4",
+   "text": "5",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p094-11",
+   "page": 94,
+   "mark": "5",
+   "text": "0 -3 -1 Time step (10 MeV )",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p095-1",
+   "page": 95,
+   "mark": "0",
+   "text": "0",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p095-2",
+   "page": 95,
+   "mark": "0",
+   "text": "5",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p095-3",
+   "page": 95,
+   "mark": "1",
+   "text": "0",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p095-4",
+   "page": 95,
+   "mark": "1",
+   "text": "5",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p095-6",
+   "page": 95,
+   "mark": "2",
+   "text": "5",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p095-7",
+   "page": 95,
+   "mark": "3",
+   "text": "0",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p095-8",
+   "page": 95,
+   "mark": "3",
+   "text": "5",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p095-10",
+   "page": 95,
+   "mark": "4",
+   "text": "5",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p095-11",
+   "page": 95,
+   "mark": "5",
+   "text": "0 -3 -1 Time step (10 MeV )",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-040"
+  },
+  {
+   "id": "fn-p099-1",
+   "page": 99,
+   "mark": "0",
+   "text": "00",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-041"
+  },
+  {
+   "id": "fn-p099-2",
+   "page": 99,
+   "mark": "0",
+   "text": "05",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-041"
+  },
+  {
+   "id": "fn-p099-3",
+   "page": 99,
+   "mark": "0",
+   "text": "10",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-041"
+  },
+  {
+   "id": "fn-p099-4",
+   "page": 99,
+   "mark": "0",
+   "text": "15",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-041"
+  },
+  {
+   "id": "fn-p099-5",
+   "page": 99,
+   "mark": "0",
+   "text": "20 V -99 -100 -101 -4 -1 MeV -102 -103",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-041"
+  },
+  {
+   "id": "fn-p099-6",
+   "page": 99,
+   "mark": "0",
+   "text": "00",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-041"
+  },
+  {
+   "id": "fn-p099-7",
+   "page": 99,
+   "mark": "0",
+   "text": "05",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-041"
+  },
+  {
+   "id": "fn-p099-8",
+   "page": 99,
+   "mark": "0",
+   "text": "10",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-041"
+  },
+  {
+   "id": "fn-p099-9",
+   "page": 99,
+   "mark": "0",
+   "text": "15",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-041"
+  },
+  {
+   "id": "fn-p099-10",
+   "page": 99,
+   "mark": "0",
+   "text": "20",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-041"
+  },
+  {
+   "id": "fn-p099-11",
+   "page": 99,
+   "mark": "0",
+   "text": "25",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-041"
+  },
+  {
+   "id": "fn-p099-12",
+   "page": 99,
+   "mark": "0",
+   "text": "30 -1 (MeV )",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-041"
+  },
+  {
+   "id": "fn-p102-3",
+   "page": 102,
+   "mark": "1",
+   "text": "A1(τ,∆τ)E1",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-041"
+  },
+  {
+   "id": "fn-p102-4",
+   "page": 102,
+   "mark": "0",
+   "text": "A0(τ,∆τ)E0",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-041"
+  },
+  {
+   "id": "fn-p102-5",
+   "page": 102,
+   "mark": "1",
+   "text": "A1(τ,∆τ) a∗",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-041"
+  },
+  {
+   "id": "fn-p102-6",
+   "page": 102,
+   "mark": "0",
+   "text": "A0(τ,∆τ)",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-041"
+  },
+  {
+   "id": "fn-p103-2",
+   "page": 103,
+   "mark": "j",
+   "text": "=1ˆrj A i=1 A",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-041"
+  },
+  {
+   "id": "fn-p104-3",
+   "page": 104,
+   "mark": "p",
+   "text": "(n),where Np(n) i=1 A Np(n) is the number of protons (neutrons).",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-042"
+  },
+  {
+   "id": "fn-p107-1",
+   "page": 107,
+   "mark": "4",
+   "text": "πh3[(k+1)3−k3]",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p107-2",
+   "page": 107,
+   "mark": "4",
+   "text": "πh3[(k+1)3−k3]",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p108-1",
+   "page": 108,
+   "mark": "0",
+   "text": "07 p",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p108-2",
+   "page": 108,
+   "mark": "0",
+   "text": "06",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p108-3",
+   "page": 108,
+   "mark": "0",
+   "text": "05",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p108-4",
+   "page": 108,
+   "mark": "0",
+   "text": "04",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p108-5",
+   "page": 108,
+   "mark": "0",
+   "text": "03",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p108-6",
+   "page": 108,
+   "mark": "0",
+   "text": "02",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p108-7",
+   "page": 108,
+   "mark": "0",
+   "text": "01",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p108-8",
+   "page": 108,
+   "mark": "0",
+   "text": "00",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p108-9",
+   "page": 108,
+   "mark": "0",
+   "text": "0",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p108-10",
+   "page": 108,
+   "mark": "0",
+   "text": "2",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p108-11",
+   "page": 108,
+   "mark": "0",
+   "text": "4",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p108-12",
+   "page": 108,
+   "mark": "0",
+   "text": "6",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p108-13",
+   "page": 108,
+   "mark": "0",
+   "text": "8",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p108-15",
+   "page": 108,
+   "mark": "1",
+   "text": "2",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p108-16",
+   "page": 108,
+   "mark": "1",
+   "text": "4",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p108-17",
+   "page": 108,
+   "mark": "1",
+   "text": "6",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p108-18",
+   "page": 108,
+   "mark": "1",
+   "text": "8",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p108-19",
+   "page": 108,
+   "mark": "2",
+   "text": "0",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p108-20",
+   "page": 108,
+   "mark": "2",
+   "text": "2",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p108-21",
+   "page": 108,
+   "mark": "2",
+   "text": "4",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p108-22",
+   "page": 108,
+   "mark": "2",
+   "text": "6",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p108-23",
+   "page": 108,
+   "mark": "2",
+   "text": "8",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p114-2",
+   "page": 114,
+   "mark": "1",
+   "text": "0",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p114-3",
+   "page": 114,
+   "mark": "0",
+   "text": "5 -1 -1 k=350 MeV/c =0.2 MeV , =0.00015 MeV , N=1334 tot",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p114-4",
+   "page": 114,
+   "mark": "0",
+   "text": "0",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p114-5",
+   "page": 114,
+   "mark": "0",
+   "text": "00",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p114-6",
+   "page": 114,
+   "mark": "0",
+   "text": "01",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p114-7",
+   "page": 114,
+   "mark": "0",
+   "text": "02",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p114-8",
+   "page": 114,
+   "mark": "0",
+   "text": "03",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p114-9",
+   "page": 114,
+   "mark": "0",
+   "text": "04 (MeV -1 )",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p116-1",
+   "page": 116,
+   "mark": "0",
+   "text": "02",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p116-2",
+   "page": 116,
+   "mark": "0",
+   "text": "00",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p135-1",
+   "page": 135,
+   "mark": "4",
+   "text": "Dτ i=1 i=1",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-053"
+  },
+  {
+   "id": "fn-p148-1",
+   "page": 148,
+   "mark": "3",
+   "text": "A",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-064"
+  },
+  {
+   "id": "fn-p148-2",
+   "page": 148,
+   "mark": "3",
+   "text": "A",
+   "block": "library/arxiv-2207.07246v2/blocks/prose-sec-064"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "theLocalChiralN"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "N"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "RadialFunctionsoftheAV6’andtheChiralN"
+  },
+  {
+   "page": 9,
+   "mark": "30",
+   "context": "j. . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+  },
+  {
+   "page": 9,
+   "mark": "16",
+   "context": "Single-particleOrbitalStatesof"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "IllustrationofCalculating|ψ"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "K(R)⟩and|ψ"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "Energy Vs.Time Step ∆τfor Diﬀerent Total Imaginary Time τfor"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "Energy Vs.Time Step ∆τfor Diﬀerent Total Imaginary Time τfor"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "Energy Vs.Time Step ∆τfor Diﬀerent Total Imaginary Time τfor"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "BasedontheLocalChiralN"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "Energy Vs.Time Step ∆τfor Diﬀerent Total Imaginary Time τfor"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "BasedontheLocalChiralN"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "4HeBasedontheLocalChiralN"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "TheGroundStateOne-ParticleNumberDensityDistributionsof"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "TheGroundStateOne-ParticleNumberDensityDistributionsof"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "BasedontheLocalChiralN"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "LightNucleiBasedontheAV6’InteractionandtheLocalChiralN"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "4.12Angle Averaged Euclidean Response Functions of"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "4.13Angle Averaged Euclidean Response Functions of"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "fortheLocalChiralN"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "(Yukawa(1935))whichisVYukawa(r) = −g"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "(Yukawa(1935))whichisVYukawa(r) = −g2"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "etal.(2002)).Thenext-to-next-to-next-to-leadingorder(N"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "Λχ)"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "Λχ)"
+  },
+  {
+   "page": 15,
+   "mark": "4",
+   "context": "Λχ)"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "(Gezerlisetal.(2013))uptoN2LO(beginningfromN"
+  },
+  {
+   "page": 19,
+   "mark": "12",
+   "context": "thecurrentstage,GFMCcalculationsarenotabletogofarbeyond"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "ofA"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "(2006))whichalsoscalesasO(A"
+  },
+  {
+   "page": 20,
+   "mark": "16",
+   "context": "wasabletoaccuratelycalculatenucleiupto"
+  },
+  {
+   "page": 22,
+   "mark": "17",
+   "context": ")),andtoday’smostpowerfulsupercomputerFugaku9candomorethan10"
+  },
+  {
+   "page": 22,
+   "mark": "8",
+   "context": "FLOPS.Withamagnitudeof10"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "nucleiupto"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "⟨ˆO⟩=⟨ΨT|e−Hτ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "⟨ˆO⟩=⟨ΨT|e−Hτ1ˆOe−Hτ"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "⟨ˆO⟩=Re⟨ΨT|e−Hτ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "⟨ˆO⟩=Re⟨ΨT|e−Hτ1ˆOe−Hτ"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "Afteroperatingwiththepropagatore−Hτ"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "e−Hτ"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "e−Hτ1|ΨT⟩= a0e−E"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "e−Hτ1|ΨT⟩= a0e−E0τ"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "e−(E"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "e−(Ei−E"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "e−(Ei−E0)τ"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "Therefore,ifτiisbigenough,thefactore−(E"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "Therefore,ifτiisbigenough,thefactore−(Ei−E"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "Therefore,ifτiisbigenough,thefactore−(Ei−E0)τ"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "τi→∞e−Hτ"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "τi→∞e−Hτi|ΨT⟩∝|Φ"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "So,e−Hτ"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "⟨ˆO⟩=⟨Φ"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "⟨ˆO⟩=⟨Φ0| ˆO|Φ"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "=Re⟨Φ"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "=Re⟨Φ0| ˆO|Φ"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "wholeexactpropagatore−Hτ"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "e−Hτ"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "e−Hτi= (e−H∆τ)N"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "τiﬁrstsuchthate−Hτ"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "multiplytheNishort-timepropagatorse−H∆τtogethertoreplacee−Hτ"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "aretryingtousealargeenoughtotalimaginarytimeτdine−Hτ"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "⟨ˆO⟩=Re⟨ΨT| ˆOe−Hτ"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "Re⟨ΨT|e−Hτ"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "Re⟨ΨT|e−Hτd|ΨT⟩=Re⟨ΨT| ˆO|Φ"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "U(∆τ) = e−H∆τ+ O(∆τ"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "of∆τ"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "⟨ˆO(∆τ)⟩=Re⟨ΨT|[U(∆τ)]N"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "⟨ˆO(∆τ)⟩=Re⟨ΨT|[U(∆τ)]N1ˆO[U(∆τ)]N"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "Re⟨ΨT|[U(∆τ)]N"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "Re⟨ΨT|[U(∆τ)]N1+N"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "p"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "ByusingboththelocalchiralinteractionwithN"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "nucleisuchas"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "nucleisuchas2H,"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "nucleisuchas2H,3H,"
+  },
+  {
+   "page": 29,
+   "mark": "4",
+   "context": "nucleisuchas2H,3H,3Heand"
+  },
+  {
+   "page": 29,
+   "mark": "p",
+   "context": "vp(rij)O"
+  },
+  {
+   "page": 29,
+   "mark": "p",
+   "context": "diﬀerentforchiralandAV6’interactions.Theﬁrst6oftheoperatorsO"
+  },
+  {
+   "page": 30,
+   "mark": "7",
+   "context": "nothavethe7thoperatorO"
+  },
+  {
+   "page": 30,
+   "mark": "v",
+   "context": "ij,soits"
+  },
+  {
+   "page": 30,
+   "mark": "7",
+   "context": "ij,soitsv"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "containsp"
+  },
+  {
+   "page": 31,
+   "mark": "7",
+   "context": "O"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "2ℏ(r"
+  },
+  {
+   "page": 31,
+   "mark": "j",
+   "context": "2ℏ(ri −r"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "2ℏ(ri −rj) × (p"
+  },
+  {
+   "page": 31,
+   "mark": "j",
+   "context": "2ℏ(ri −rj) × (pi −p"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "2(σ"
+  },
+  {
+   "page": 31,
+   "mark": "j",
+   "context": "2(σi + σ"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "etal.(2018b)),V3"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "= vC(rij)P"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "iP"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "whereP"
+  },
+  {
+   "page": 31,
+   "mark": "z",
+   "context": "i=(1 + τiz)/2istheprotonprojectionoperatorandτizistheisospin"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "thechiralN"
+  },
+  {
+   "page": 33,
+   "mark": "4",
+   "context": "Take"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "|S⟩≡|s"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "1⟩⊗|s"
+  },
+  {
+   "page": 33,
+   "mark": "4",
+   "context": "3⟩⊗|s"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "4⟩≡|s"
+  },
+  {
+   "page": 33,
+   "mark": "s",
+   "context": "1"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "1s"
+  },
+  {
+   "page": 33,
+   "mark": "s",
+   "context": "2"
+  },
+  {
+   "page": 33,
+   "mark": "s",
+   "context": "3"
+  },
+  {
+   "page": 33,
+   "mark": "4",
+   "context": "3s"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "Rof"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "|R⟩≡|r"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1⟩⊗|r"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "2⟩⊗|r"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "3⟩⊗|r"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "4⟩≡|r"
+  },
+  {
+   "page": 34,
+   "mark": "r",
+   "context": "1"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1r"
+  },
+  {
+   "page": 34,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "2r"
+  },
+  {
+   "page": 34,
+   "mark": "r",
+   "context": "3"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "3r"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "Infact,withouttheCoulombinteraction,for"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "Theprojectionof|ΦS⟩onstate|S⟩≡|s"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": "1"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "1s"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": "2"
+  },
+  {
+   "page": 36,
+   "mark": "3",
+   "context": "2s"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": "3"
+  },
+  {
+   "page": 36,
+   "mark": "4",
+   "context": "3s"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "⟨s"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "⟨s"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "⟨s"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "⟨s"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "⟨s"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "1|s"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "⟨s"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "⟨s"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "1|s"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "⟨s"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "j⟩= ⟨s"
+  },
+  {
+   "page": 37,
+   "mark": "4",
+   "context": "Again,take"
+  },
+  {
+   "page": 37,
+   "mark": "4",
+   "context": "↑1n ↓2p ↑3p ↓4⟩fromthebasis,thenantisymmetrizeittoform|ΦS⟩of"
+  },
+  {
+   "page": 37,
+   "mark": "p",
+   "context": "f"
+  },
+  {
+   "page": 37,
+   "mark": "p",
+   "context": "ijO"
+  },
+  {
+   "page": 37,
+   "mark": "p",
+   "context": "whereO"
+  },
+  {
+   "page": 37,
+   "mark": "f",
+   "context": "ijarethesameAV6’operators,and"
+  },
+  {
+   "page": 37,
+   "mark": "p",
+   "context": "ijarethesameAV6’operators,andf"
+  },
+  {
+   "page": 37,
+   "mark": "p",
+   "context": "tionoperator(Lomnitz-Adleretal.(1981)).Afteroperatingon|R⟩,f"
+  },
+  {
+   "page": 37,
+   "mark": "p",
+   "context": "becomeafunctionf"
+  },
+  {
+   "page": 37,
+   "mark": "r",
+   "context": "ij(rij)whichonlydependsonthedistance"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": "ij(rij)whichonlydependsonthedistancerijbetweenparticle"
+  },
+  {
+   "page": 37,
+   "mark": "p",
+   "context": "f"
+  },
+  {
+   "page": 37,
+   "mark": "p",
+   "context": "ij(rij)O"
+  },
+  {
+   "page": 37,
+   "mark": "p",
+   "context": "(Carlsonetal.(2015)),andthusisanimprovementoverthosewithoutO"
+  },
+  {
+   "page": 38,
+   "mark": "p",
+   "context": ",suchatrialwavefunctionisusuallyexpensivetocalculate.EvenifO"
+  },
+  {
+   "page": 38,
+   "mark": "l",
+   "context": "Inourcalculation,weuse‘l’todenoteasampledorder⟨Ψ"
+  },
+  {
+   "page": 38,
+   "mark": "r",
+   "context": "‘r’todenoteasampledorder|Ψ"
+  },
+  {
+   "page": 38,
+   "mark": "l",
+   "context": "⟨Ψ"
+  },
+  {
+   "page": 38,
+   "mark": "r",
+   "context": "|Ψ"
+  },
+  {
+   "page": 38,
+   "mark": "l",
+   "context": "⟨Ψ"
+  },
+  {
+   "page": 38,
+   "mark": "r",
+   "context": "⟨RS|Ψ"
+  },
+  {
+   "page": 38,
+   "mark": "r",
+   "context": "and⟨RS|Ψ"
+  },
+  {
+   "page": 38,
+   "mark": "l",
+   "context": "T⟩and⟨Ψ"
+  },
+  {
+   "page": 38,
+   "mark": "r",
+   "context": "Y"
+  },
+  {
+   "page": 38,
+   "mark": "r",
+   "context": "⟨RS|Ψ"
+  },
+  {
+   "page": 38,
+   "mark": "p",
+   "context": "f"
+  },
+  {
+   "page": 38,
+   "mark": "p",
+   "context": "ij(rij)O"
+  },
+  {
+   "page": 38,
+   "mark": "l",
+   "context": "Y"
+  },
+  {
+   "page": 38,
+   "mark": "p",
+   "context": "∗(rij)O"
+  },
+  {
+   "page": 38,
+   "mark": "l",
+   "context": "⟨Ψ"
+  },
+  {
+   "page": 38,
+   "mark": "p",
+   "context": "f"
+  },
+  {
+   "page": 38,
+   "mark": "r",
+   "context": "Y"
+  },
+  {
+   "page": 38,
+   "mark": "l",
+   "context": "Y"
+  },
+  {
+   "page": 38,
+   "mark": "a",
+   "context": "i<jtodenote"
+  },
+  {
+   "page": 38,
+   "mark": "l",
+   "context": "i<j.This"
+  },
+  {
+   "page": 38,
+   "mark": "r",
+   "context": "i<j.Thisland"
+  },
+  {
+   "page": 39,
+   "mark": "4",
+   "context": "of{[A(A −1)/2]!}2.For"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "of{[A(A −1)/2]!}2.For4Hethatis(6!)"
+  },
+  {
+   "page": 39,
+   "mark": "l",
+   "context": "arerelativelysmall, soallthe[A(A −1)/2]!termsfromeither ⟨Ψ"
+  },
+  {
+   "page": 39,
+   "mark": "r",
+   "context": "T|or |Ψ"
+  },
+  {
+   "page": 40,
+   "mark": "s",
+   "context": "j"
+  },
+  {
+   "page": 40,
+   "mark": "s",
+   "context": "j"
+  },
+  {
+   "page": 40,
+   "mark": "s",
+   "context": "j"
+  },
+  {
+   "page": 40,
+   "mark": "j",
+   "context": "α⟩= φα(r"
+  },
+  {
+   "page": 40,
+   "mark": "j",
+   "context": "α⟩= φα(rj, s"
+  },
+  {
+   "page": 40,
+   "mark": "s",
+   "context": "α⟩= φα(rj, sj)δ"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "asimultaneouseigenfunctionofl"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "asimultaneouseigenfunctionofl2,s"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "asimultaneouseigenfunctionofl2,s2andj"
+  },
+  {
+   "page": 40,
+   "mark": "m",
+   "context": "isaspinsphericalharmonicY"
+  },
+  {
+   "page": 41,
+   "mark": "q",
+   "context": "combinationofnφSlaterdeterminants|D"
+  },
+  {
+   "page": 41,
+   "mark": "q",
+   "context": "cq|D"
+  },
+  {
+   "page": 41,
+   "mark": "q",
+   "context": "wherecqissomecoeﬃcientandtheamplitude⟨RS|D"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "⟨r"
+  },
+  {
+   "page": 41,
+   "mark": "s",
+   "context": "1"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "1s"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "1|φ"
+  },
+  {
+   "page": 41,
+   "mark": "s",
+   "context": "A"
+  },
+  {
+   "page": 41,
+   "mark": "q",
+   "context": "⟨RS|D"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "⟨r"
+  },
+  {
+   "page": 41,
+   "mark": "s",
+   "context": "1"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "1s"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "1|φ"
+  },
+  {
+   "page": 41,
+   "mark": "s",
+   "context": "A"
+  },
+  {
+   "page": 41,
+   "mark": "16",
+   "context": "Figure2.4:Single-particleorbitalstatesof"
+  },
+  {
+   "page": 41,
+   "mark": "16",
+   "context": "Forexample, consider"
+  },
+  {
+   "page": 41,
+   "mark": "16",
+   "context": "shellmodel, asillustratedinFig.2.4, weknowthat"
+  },
+  {
+   "page": 42,
+   "mark": "16",
+   "context": "todescribethewavefunctionof"
+  },
+  {
+   "page": 42,
+   "mark": "6",
+   "context": "nφSlaterdeterminants.E.g.,"
+  },
+  {
+   "page": 42,
+   "mark": "6",
+   "context": "φSlaterdeterminants.E.g.,6He(0+, 1)needs9Slaterdeterminants,"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "32and"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "localchiralN"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "2∆τ= e−H∆τ+ O(∆τ"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "+ O(∆τ)"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "wheretheO(∆τ)"
+  },
+  {
+   "page": 43,
+   "mark": "v",
+   "context": "p=1"
+  },
+  {
+   "page": 43,
+   "mark": "6",
+   "context": "e−P"
+  },
+  {
+   "page": 44,
+   "mark": "f",
+   "context": "× G"
+  },
+  {
+   "page": 44,
+   "mark": "f",
+   "context": "ThesymbolG"
+  },
+  {
+   "page": 44,
+   "mark": "f",
+   "context": "G"
+  },
+  {
+   "page": 44,
+   "mark": "m",
+   "context": "2"
+  },
+  {
+   "page": 44,
+   "mark": "i",
+   "context": "i−r"
+  },
+  {
+   "page": 44,
+   "mark": "i",
+   "context": "i−x"
+  },
+  {
+   "page": 44,
+   "mark": "i",
+   "context": "i−y"
+  },
+  {
+   "page": 44,
+   "mark": "i",
+   "context": "i−z"
+  },
+  {
+   "page": 44,
+   "mark": "i",
+   "context": "ijis the distance between particle"
+  },
+  {
+   "page": 44,
+   "mark": "j",
+   "context": "ijis the distance between particle i and"
+  },
+  {
+   "page": 44,
+   "mark": "r",
+   "context": "jis the distance between particle i and jin conﬁguration R′,"
+  },
+  {
+   "page": 44,
+   "mark": "i",
+   "context": "ij≡r"
+  },
+  {
+   "page": 44,
+   "mark": "j",
+   "context": "ij≡ri−r"
+  },
+  {
+   "page": 44,
+   "mark": "a",
+   "context": "jfrom"
+  },
+  {
+   "page": 45,
+   "mark": "3",
+   "context": "SchmidtandLee(1995))whichhasO(∆τ)"
+  },
+  {
+   "page": 45,
+   "mark": "3",
+   "context": "2∆τ= e−H∆τ−∆τ"
+  },
+  {
+   "page": 45,
+   "mark": "3",
+   "context": "24[2T+V,[T,V]]+...= e−H∆τ+ O(∆τ)"
+  },
+  {
+   "page": 45,
+   "mark": "†",
+   "context": "wherethesubscriptletterSmeanssymmetricbecauseUS(∆τ) = U"
+  },
+  {
+   "page": 45,
+   "mark": "3",
+   "context": "ntheformofEq.(2.74),theO(∆τ2)cancelsandoneisleftwithonlyO(∆τ"
+  },
+  {
+   "page": 45,
+   "mark": "f",
+   "context": "US(∆τ) = e−H∆τ+ ˆ"
+  },
+  {
+   "page": 45,
+   "mark": "3",
+   "context": "US(∆τ) = e−H∆τ+ ˆf"
+  },
+  {
+   "page": 45,
+   "mark": "3",
+   "context": "US(∆τ) = e−H∆τ+ ˆf3∆τ"
+  },
+  {
+   "page": 45,
+   "mark": "f",
+   "context": "US(∆τ) = e−H∆τ+ ˆf3∆τ 3+ ˆ"
+  },
+  {
+   "page": 45,
+   "mark": "5",
+   "context": "US(∆τ) = e−H∆τ+ ˆf3∆τ 3+ ˆf"
+  },
+  {
+   "page": 45,
+   "mark": "5",
+   "context": "US(∆τ) = e−H∆τ+ ˆf3∆τ 3+ ˆf5∆τ"
+  },
+  {
+   "page": 45,
+   "mark": "f",
+   "context": "US(∆τ) = e−H∆τ+ ˆf3∆τ 3+ ˆf5∆τ 5+ ˆ"
+  },
+  {
+   "page": 45,
+   "mark": "7",
+   "context": "US(∆τ) = e−H∆τ+ ˆf3∆τ 3+ ˆf5∆τ 5+ ˆf"
+  },
+  {
+   "page": 45,
+   "mark": "7",
+   "context": "US(∆τ) = e−H∆τ+ ˆf3∆τ 3+ ˆf5∆τ 5+ ˆf7∆τ"
+  },
+  {
+   "page": 45,
+   "mark": "n",
+   "context": "τ= N∆τ,soNO(∆τ"
+  },
+  {
+   "page": 45,
+   "mark": "n",
+   "context": "τ= N∆τ,soNO(∆τn) = τO(∆τ"
+  },
+  {
+   "page": 45,
+   "mark": "f",
+   "context": "e−H∆τ+ ˆ"
+  },
+  {
+   "page": 45,
+   "mark": "3",
+   "context": "e−H∆τ+ ˆf"
+  },
+  {
+   "page": 45,
+   "mark": "3",
+   "context": "e−H∆τ+ ˆf3∆τ"
+  },
+  {
+   "page": 45,
+   "mark": "f",
+   "context": "e−H∆τ+ ˆf3∆τ 3+ ˆ"
+  },
+  {
+   "page": 45,
+   "mark": "5",
+   "context": "e−H∆τ+ ˆf3∆τ 3+ ˆf"
+  },
+  {
+   "page": 45,
+   "mark": "5",
+   "context": "e−H∆τ+ ˆf3∆τ 3+ ˆf5∆τ"
+  },
+  {
+   "page": 45,
+   "mark": "4",
+   "context": "= e−Hτ+ O(∆τ2) + O(∆τ"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "⟨ˆO(∆τ)⟩=Re⟨ΨT|[US(∆τ)]N"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "⟨ˆO(∆τ)⟩=Re⟨ΨT|[US(∆τ)]N1ˆO[US(∆τ)]N"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "= ⟨ˆO⟩×1 + O(∆τ"
+  },
+  {
+   "page": 46,
+   "mark": "4",
+   "context": "= ⟨ˆO⟩×1 + O(∆τ 2) + O(∆τ"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "1 + O(∆τ"
+  },
+  {
+   "page": 46,
+   "mark": "4",
+   "context": "1 + O(∆τ2) + O(∆τ"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "C2n(∆τ"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "C2n(∆τ2"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "ForthelocalchiralN"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "short-timepropagatorandithaserrorsO(∆τ"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "NO(∆τ"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "⟨ˆO(∆τ)⟩=Re⟨ΨT|[U(∆τ)]N"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "⟨ˆO(∆τ)⟩=Re⟨ΨT|[U(∆τ)]N1ˆO[U(∆τ)]N"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "= ⟨ˆO⟩×1 + O(∆τ) + O(∆τ"
+  },
+  {
+   "page": 46,
+   "mark": "3",
+   "context": "= ⟨ˆO⟩×1 + O(∆τ) + O(∆τ 2) + O(∆τ"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "1 + O(∆τ) + O(∆τ"
+  },
+  {
+   "page": 46,
+   "mark": "3",
+   "context": "1 + O(∆τ) + O(∆τ2) + O(∆τ"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "⟨ˆO(∆τ)⟩= ⟨ˆO⟩+ O(∆τ) + O(∆τ"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "Cn(∆τ"
+  },
+  {
+   "page": 47,
+   "mark": "0",
+   "context": "dR"
+  },
+  {
+   "page": 48,
+   "mark": "†",
+   "context": "V"
+  },
+  {
+   "page": 48,
+   "mark": "†",
+   "context": "V"
+  },
+  {
+   "page": 48,
+   "mark": "f",
+   "context": "|SI+1⟩× G"
+  },
+  {
+   "page": 48,
+   "mark": "f",
+   "context": "RI−1RIG"
+  },
+  {
+   "page": 48,
+   "mark": "f",
+   "context": "calculatedbyEq.(2.63).ThefreeparticlepropagatorG"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "DR⟨ΨT|R0S0⟩⟨R0S0|[U(∆τ)]N"
+  },
+  {
+   "page": 50,
+   "mark": "l",
+   "context": "⟨Ψ"
+  },
+  {
+   "page": 50,
+   "mark": "0",
+   "context": "T|R"
+  },
+  {
+   "page": 50,
+   "mark": "0",
+   "context": "T|R0S"
+  },
+  {
+   "page": 50,
+   "mark": "0",
+   "context": "T|R0S0⟩⟨R"
+  },
+  {
+   "page": 50,
+   "mark": "0",
+   "context": "T|R0S0⟩⟨R0S"
+  },
+  {
+   "page": 50,
+   "mark": "r",
+   "context": "T|R0S0⟩⟨R0S0|[U(∆τ)]N|RNSN⟩⟨RNSN|Ψ"
+  },
+  {
+   "page": 50,
+   "mark": "g",
+   "context": "lr(R)"
+  },
+  {
+   "page": 50,
+   "mark": "0",
+   "context": "T|R"
+  },
+  {
+   "page": 50,
+   "mark": "0",
+   "context": "T|R0S"
+  },
+  {
+   "page": 50,
+   "mark": "0",
+   "context": "T|R0S0⟩⟨R"
+  },
+  {
+   "page": 50,
+   "mark": "0",
+   "context": "T|R0S0⟩⟨R0S"
+  },
+  {
+   "page": 50,
+   "mark": "1",
+   "context": "T|R0S0⟩⟨R0S0|[U(∆τ)]N"
+  },
+  {
+   "page": 50,
+   "mark": "r",
+   "context": "T|R0S0⟩⟨R0S0|[U(∆τ)]N1ˆOM[U(∆τ)]N2|RNSN⟩⟨RNSN|Ψ"
+  },
+  {
+   "page": 50,
+   "mark": "l",
+   "context": "⟨Ψ"
+  },
+  {
+   "page": 50,
+   "mark": "g",
+   "context": "lr,M(R)"
+  },
+  {
+   "page": 50,
+   "mark": "f",
+   "context": "G"
+  },
+  {
+   "page": 50,
+   "mark": "f",
+   "context": "wherethefreeparticlepropagatorG"
+  },
+  {
+   "page": 50,
+   "mark": "f",
+   "context": "G"
+  },
+  {
+   "page": 50,
+   "mark": "f",
+   "context": "I=0G"
+  },
+  {
+   "page": 51,
+   "mark": "f",
+   "context": "lr,M(R) and"
+  },
+  {
+   "page": 51,
+   "mark": "f",
+   "context": "lr,M(R)inEq.(2.99)and"
+  },
+  {
+   "page": 52,
+   "mark": "f",
+   "context": "1,theblackcurvedlinejustrepresentsthefreeparticlepropagatorG"
+  },
+  {
+   "page": 52,
+   "mark": "†",
+   "context": "conﬁgurationRIwhileP"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "needed.FortheAV6’interaction,↓means1,forthelocalchiralN"
+  },
+  {
+   "page": 52,
+   "mark": "g",
+   "context": "lr(R)and"
+  },
+  {
+   "page": 52,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 52,
+   "mark": "l",
+   "context": "theorderedoperatorsabovetheblacktimelinebetween⟨ψ"
+  },
+  {
+   "page": 52,
+   "mark": "r",
+   "context": "T|and|ψ"
+  },
+  {
+   "page": 52,
+   "mark": "g",
+   "context": "lr(R)by"
+  },
+  {
+   "page": 53,
+   "mark": "g",
+   "context": "lr,M(R)and"
+  },
+  {
+   "page": 53,
+   "mark": "g",
+   "context": "lr(R)and"
+  },
+  {
+   "page": 53,
+   "mark": "r",
+   "context": "Fig.2.5,wedeﬁnestates|ψ"
+  },
+  {
+   "page": 53,
+   "mark": "l",
+   "context": "M(R)⟩and|ψ"
+  },
+  {
+   "page": 53,
+   "mark": "r",
+   "context": "|ψ"
+  },
+  {
+   "page": 53,
+   "mark": "l",
+   "context": "M(R)⟩and|ψ"
+  },
+  {
+   "page": 53,
+   "mark": "r",
+   "context": "|ψ"
+  },
+  {
+   "page": 53,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 53,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 53,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 53,
+   "mark": "r",
+   "context": "|S⟩⟨RNS|ψ"
+  },
+  {
+   "page": 53,
+   "mark": "r",
+   "context": "|S⟩⟨RNS|ψ"
+  },
+  {
+   "page": 53,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 53,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 53,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 53,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 53,
+   "mark": "r",
+   "context": "|S⟩⟨RNS|ψ"
+  },
+  {
+   "page": 53,
+   "mark": "l",
+   "context": "|ψ"
+  },
+  {
+   "page": 53,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 53,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 53,
+   "mark": "l",
+   "context": "|S⟩⟨R0S|ψ"
+  },
+  {
+   "page": 53,
+   "mark": "l",
+   "context": "|S⟩⟨R0S|ψ"
+  },
+  {
+   "page": 53,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 53,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 53,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 53,
+   "mark": "l",
+   "context": "|S⟩⟨R0S|ψ"
+  },
+  {
+   "page": 53,
+   "mark": "l",
+   "context": "Both|ψ"
+  },
+  {
+   "page": 53,
+   "mark": "r",
+   "context": "M(R)⟩and|ψ"
+  },
+  {
+   "page": 54,
+   "mark": "r",
+   "context": "|S⟩withaccordinglyprobabilityamplitudeφ"
+  },
+  {
+   "page": 54,
+   "mark": "l",
+   "context": "M(R, S)andφ"
+  },
+  {
+   "page": 54,
+   "mark": "r",
+   "context": "φ"
+  },
+  {
+   "page": 54,
+   "mark": "r",
+   "context": "M(R, S) = ⟨S|ψ"
+  },
+  {
+   "page": 54,
+   "mark": "l",
+   "context": "φ"
+  },
+  {
+   "page": 54,
+   "mark": "l",
+   "context": "M(R, S) = ⟨S|ψ"
+  },
+  {
+   "page": 54,
+   "mark": "r",
+   "context": "|ψ"
+  },
+  {
+   "page": 54,
+   "mark": "r",
+   "context": "|S⟩⟨S|ψ"
+  },
+  {
+   "page": 54,
+   "mark": "r",
+   "context": "φ"
+  },
+  {
+   "page": 54,
+   "mark": "l",
+   "context": "|ψ"
+  },
+  {
+   "page": 54,
+   "mark": "l",
+   "context": "|S⟩⟨S|ψ"
+  },
+  {
+   "page": 54,
+   "mark": "l",
+   "context": "φ"
+  },
+  {
+   "page": 54,
+   "mark": "a",
+   "context": "lr,M(R)dependsonwhichbeadMtheoperatorˆOisplacedat.For"
+  },
+  {
+   "page": 54,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 54,
+   "mark": "l",
+   "context": "⟨ψ"
+  },
+  {
+   "page": 54,
+   "mark": "r",
+   "context": "G|ψ"
+  },
+  {
+   "page": 54,
+   "mark": "e",
+   "context": "M−1(R)|G"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "T| ˆO|R"
+  },
+  {
+   "page": 54,
+   "mark": "r",
+   "context": "T| ˆO|R0S⟩⟨S|ψ"
+  },
+  {
+   "page": 54,
+   "mark": "l",
+   "context": "⟨ψ"
+  },
+  {
+   "page": 54,
+   "mark": "r",
+   "context": "N(R)|S⟩⟨RNS| ˆO|ψ"
+  },
+  {
+   "page": 54,
+   "mark": "l",
+   "context": "⟨ψ"
+  },
+  {
+   "page": 54,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 55,
+   "mark": "l",
+   "context": "lr(R) = ⟨ψ"
+  },
+  {
+   "page": 55,
+   "mark": "r",
+   "context": "M(R)|G|ψ"
+  },
+  {
+   "page": 55,
+   "mark": "l",
+   "context": "⟨ψ"
+  },
+  {
+   "page": 55,
+   "mark": "r",
+   "context": "M(R)|S⟩⟨S|G|ψ"
+  },
+  {
+   "page": 55,
+   "mark": "r",
+   "context": "⟨S|G|ψ"
+  },
+  {
+   "page": 55,
+   "mark": "r",
+   "context": "i)\f ψ"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "4iℏ"
+  },
+  {
+   "page": 55,
+   "mark": "r",
+   "context": "ij,"
+  },
+  {
+   "page": 55,
+   "mark": "r",
+   "context": "ij,"
+  },
+  {
+   "page": 55,
+   "mark": "l",
+   "context": "lr(R) = ⟨ψ"
+  },
+  {
+   "page": 55,
+   "mark": "r",
+   "context": "M(R)|ψ"
+  },
+  {
+   "page": 55,
+   "mark": "l",
+   "context": "⟨ψ"
+  },
+  {
+   "page": 55,
+   "mark": "r",
+   "context": "M(R)|S⟩⟨S|ψ"
+  },
+  {
+   "page": 55,
+   "mark": "r",
+   "context": "∗(R, S)φ"
+  },
+  {
+   "page": 55,
+   "mark": "l",
+   "context": "φ"
+  },
+  {
+   "page": 55,
+   "mark": "r",
+   "context": "acertainbasisstateisφ"
+  },
+  {
+   "page": 55,
+   "mark": "r",
+   "context": "canbestoredasa(3, 11) = φ"
+  },
+  {
+   "page": 55,
+   "mark": "l",
+   "context": "M(R, S).Integer"
+  },
+  {
+   "page": 55,
+   "mark": "i",
+   "context": "M(R, S).Integerl"
+  },
+  {
+   "page": 56,
+   "mark": "l",
+   "context": "up,soitis| ↑↓↑↑⟩.Allthose|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "r",
+   "context": "M(R)⟩and|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "r",
+   "context": "foreachbead,arerepresentedbytheircoeﬃcientsφ"
+  },
+  {
+   "page": 56,
+   "mark": "l",
+   "context": "M(R, S)andφ"
+  },
+  {
+   "page": 56,
+   "mark": "r",
+   "context": "a(li, ls).Allthequantitiescanbecalculatedfrom|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "l",
+   "context": "M(R)⟩and|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "g",
+   "context": "lr(R)and"
+  },
+  {
+   "page": 56,
+   "mark": "r",
+   "context": "Wecaninsteadfromrighttoleftdirectlycalculate|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "r",
+   "context": "N−1(R)⟩from|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "r",
+   "context": "|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "r",
+   "context": "N−2(R)⟩from|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "r",
+   "context": "N−1(R)⟩,...,until|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "r",
+   "context": "M+1(R)⟩from|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "l",
+   "context": "right,wecancalculate|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "l",
+   "context": "1(R)⟩from|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "l",
+   "context": "0(R)⟩,then|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "l",
+   "context": "2(R)⟩from|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "l",
+   "context": "|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "l",
+   "context": "M(R)⟩from|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 56,
+   "mark": "r",
+   "context": "|S⟩⟨S|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "r",
+   "context": "|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "r",
+   "context": "|S⟩⟨RNS|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 56,
+   "mark": "r",
+   "context": "G|S⟩⟨S|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 56,
+   "mark": "l",
+   "context": "|S⟩⟨S|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "l",
+   "context": "|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "l",
+   "context": "|S⟩⟨R0S|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 56,
+   "mark": "†",
+   "context": "G"
+  },
+  {
+   "page": 56,
+   "mark": "l",
+   "context": "G†|S⟩⟨S|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "r",
+   "context": "Oncewehavethecorresponding|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "l",
+   "context": "M(R)⟩and|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "g",
+   "context": "lr(R)and"
+  },
+  {
+   "page": 56,
+   "mark": "r",
+   "context": "andthus⟨ˆO(∆τ)⟩.Thisupdatingstrategyfor|ψ"
+  },
+  {
+   "page": 56,
+   "mark": "l",
+   "context": "M(R)⟩and|ψ"
+  },
+  {
+   "page": 57,
+   "mark": "r",
+   "context": "Figure2.6:Illustrationofcalculating|ψ"
+  },
+  {
+   "page": 57,
+   "mark": "r",
+   "context": "K−1(R)⟩from|ψ"
+  },
+  {
+   "page": 57,
+   "mark": "r",
+   "context": "states|ψ"
+  },
+  {
+   "page": 57,
+   "mark": "l",
+   "context": "M(R)⟩and|ψ"
+  },
+  {
+   "page": 57,
+   "mark": "g",
+   "context": "lr(R)and"
+  },
+  {
+   "page": 57,
+   "mark": "r",
+   "context": "Fig.2.6illustratestherighttoleftdirectcalculationof|ψ"
+  },
+  {
+   "page": 57,
+   "mark": "r",
+   "context": "K−1(R)⟩from|ψ"
+  },
+  {
+   "page": 57,
+   "mark": "r",
+   "context": "In the direct calculation |ψ"
+  },
+  {
+   "page": 57,
+   "mark": "r",
+   "context": "K−1(R)⟩and |ψ"
+  },
+  {
+   "page": 57,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 57,
+   "mark": "r",
+   "context": "onthecolumnvector|ψ"
+  },
+  {
+   "page": 57,
+   "mark": "r",
+   "context": "newcolumnvectorseachtimeuntilwegetthenextcolumnvector|ψ"
+  },
+  {
+   "page": 58,
+   "mark": "b",
+   "context": "Thestandarddeviationofthen"
+  },
+  {
+   "page": 58,
+   "mark": "n",
+   "context": "Thestandarddeviationofthenbsamplesof¯A"
+  },
+  {
+   "page": 58,
+   "mark": "n",
+   "context": "Thestandarddeviationofthenbsamplesof¯Anand¯B"
+  },
+  {
+   "page": 58,
+   "mark": "n",
+   "context": "Bn=σ ¯B"
+  },
+  {
+   "page": 59,
+   "mark": "n",
+   "context": "NotethatwhenσPBnissmall,thegaussiandistributionP(¯B"
+  },
+  {
+   "page": 61,
+   "mark": "n",
+   "context": "P"
+  },
+  {
+   "page": 61,
+   "mark": "i",
+   "context": "i=0F(s"
+  },
+  {
+   "page": 64,
+   "mark": "g",
+   "context": "l′r′(R′)"
+  },
+  {
+   "page": 64,
+   "mark": "g",
+   "context": "lr(R)"
+  },
+  {
+   "page": 64,
+   "mark": "l",
+   "context": "lr(R)gF(R)T"
+  },
+  {
+   "page": 64,
+   "mark": "g",
+   "context": "l′r′(R′)"
+  },
+  {
+   "page": 64,
+   "mark": "f",
+   "context": "1,"
+  },
+  {
+   "page": 64,
+   "mark": "g",
+   "context": "lr(R)"
+  },
+  {
+   "page": 64,
+   "mark": "l",
+   "context": "lr(R)gF(R)T"
+  },
+  {
+   "page": 65,
+   "mark": "f",
+   "context": "1,"
+  },
+  {
+   "page": 65,
+   "mark": "g",
+   "context": "l′r′(R)"
+  },
+  {
+   "page": 65,
+   "mark": "g",
+   "context": "lr(R)"
+  },
+  {
+   "page": 65,
+   "mark": "g",
+   "context": "lr(R′)"
+  },
+  {
+   "page": 65,
+   "mark": "f",
+   "context": "1,"
+  },
+  {
+   "page": 65,
+   "mark": "g",
+   "context": "lr(R)"
+  },
+  {
+   "page": 65,
+   "mark": "f",
+   "context": "l′r′(R′)and"
+  },
+  {
+   "page": 65,
+   "mark": "g",
+   "context": "l′r′(R′)"
+  },
+  {
+   "page": 65,
+   "mark": "g",
+   "context": "lr(R)"
+  },
+  {
+   "page": 65,
+   "mark": "g",
+   "context": "l′r′(R′)"
+  },
+  {
+   "page": 65,
+   "mark": "f",
+   "context": "1,"
+  },
+  {
+   "page": 65,
+   "mark": "g",
+   "context": "lr(R)"
+  },
+  {
+   "page": 66,
+   "mark": "f",
+   "context": "1,"
+  },
+  {
+   "page": 66,
+   "mark": "0",
+   "context": "K,thenR′= {R"
+  },
+  {
+   "page": 66,
+   "mark": "f",
+   "context": "0= G"
+  },
+  {
+   "page": 66,
+   "mark": "f",
+   "context": "G"
+  },
+  {
+   "page": 66,
+   "mark": "f",
+   "context": "N= G"
+  },
+  {
+   "page": 66,
+   "mark": "f",
+   "context": "G"
+  },
+  {
+   "page": 66,
+   "mark": "f",
+   "context": "where G"
+  },
+  {
+   "page": 66,
+   "mark": "f",
+   "context": "0′1and G"
+  },
+  {
+   "page": 66,
+   "mark": "f",
+   "context": "G"
+  },
+  {
+   "page": 66,
+   "mark": "2",
+   "context": "2∆τℏ"
+  },
+  {
+   "page": 66,
+   "mark": "1",
+   "context": "0|e−T∆τ|R"
+  },
+  {
+   "page": 66,
+   "mark": "2",
+   "context": "2π∆τℏ"
+  },
+  {
+   "page": 66,
+   "mark": "2",
+   "context": "2∆τℏ"
+  },
+  {
+   "page": 66,
+   "mark": "f",
+   "context": "G"
+  },
+  {
+   "page": 66,
+   "mark": "2",
+   "context": "2π∆τℏ"
+  },
+  {
+   "page": 67,
+   "mark": "f",
+   "context": "0= G"
+  },
+  {
+   "page": 67,
+   "mark": "f",
+   "context": "N= G"
+  },
+  {
+   "page": 67,
+   "mark": "f",
+   "context": "gF(R′) = G"
+  },
+  {
+   "page": 67,
+   "mark": "f",
+   "context": "K−1,K′G"
+  },
+  {
+   "page": 67,
+   "mark": "f",
+   "context": "G"
+  },
+  {
+   "page": 67,
+   "mark": "f",
+   "context": "G"
+  },
+  {
+   "page": 67,
+   "mark": "f",
+   "context": "whereG"
+  },
+  {
+   "page": 67,
+   "mark": "f",
+   "context": "K−1,K′andG"
+  },
+  {
+   "page": 67,
+   "mark": "2",
+   "context": "a+b(RM −RL)"
+  },
+  {
+   "page": 67,
+   "mark": "2",
+   "context": "a(RM−RN)"
+  },
+  {
+   "page": 67,
+   "mark": "2",
+   "context": "a(RM−RN)2+b(RN−RL)"
+  },
+  {
+   "page": 67,
+   "mark": "2",
+   "context": "+(RM−RL)"
+  },
+  {
+   "page": 67,
+   "mark": "2",
+   "context": "(RM−RN)"
+  },
+  {
+   "page": 67,
+   "mark": "2",
+   "context": "(RM−RN)2+ (RN−RL)"
+  },
+  {
+   "page": 67,
+   "mark": "f",
+   "context": "q.(3.30), the product of the two free particle propagators G"
+  },
+  {
+   "page": 67,
+   "mark": "f",
+   "context": "K−1,K′G"
+  },
+  {
+   "page": 67,
+   "mark": "2",
+   "context": "−(RK−1−RK+1)"
+  },
+  {
+   "page": 67,
+   "mark": "2",
+   "context": "∆τℏ"
+  },
+  {
+   "page": 67,
+   "mark": "2",
+   "context": "4∆τℏ"
+  },
+  {
+   "page": 67,
+   "mark": "f",
+   "context": "G"
+  },
+  {
+   "page": 67,
+   "mark": "f",
+   "context": "K−1,K′G"
+  },
+  {
+   "page": 67,
+   "mark": "2",
+   "context": "2π∆τℏ"
+  },
+  {
+   "page": 67,
+   "mark": "2",
+   "context": "∆τℏ"
+  },
+  {
+   "page": 67,
+   "mark": "2",
+   "context": "π∆τℏ"
+  },
+  {
+   "page": 68,
+   "mark": "2",
+   "context": "∆τℏ"
+  },
+  {
+   "page": 68,
+   "mark": "2",
+   "context": "π∆τℏ"
+  },
+  {
+   "page": 68,
+   "mark": "r",
+   "context": "1,"
+  },
+  {
+   "page": 68,
+   "mark": "r",
+   "context": "2, ...,"
+  },
+  {
+   "page": 68,
+   "mark": "r",
+   "context": "1,"
+  },
+  {
+   "page": 68,
+   "mark": "r",
+   "context": "2, ...,"
+  },
+  {
+   "page": 68,
+   "mark": "a",
+   "context": "A).Wealsodeﬁne"
+  },
+  {
+   "page": 68,
+   "mark": "3",
+   "context": "A).Wealsodeﬁnea"
+  },
+  {
+   "page": 68,
+   "mark": "1",
+   "context": "tor"
+  },
+  {
+   "page": 68,
+   "mark": "2",
+   "context": "∆τℏ"
+  },
+  {
+   "page": 68,
+   "mark": "1",
+   "context": "i= r"
+  },
+  {
+   "page": 68,
+   "mark": "i",
+   "context": "i+ g"
+  },
+  {
+   "page": 68,
+   "mark": "2",
+   "context": "∆τℏ"
+  },
+  {
+   "page": 68,
+   "mark": "2",
+   "context": "∆τℏ"
+  },
+  {
+   "page": 69,
+   "mark": "r",
+   "context": "Intheprogram,westorealltheprobabilityamplitudesφ"
+  },
+  {
+   "page": 69,
+   "mark": "l",
+   "context": "andφ"
+  },
+  {
+   "page": 69,
+   "mark": "0",
+   "context": "M(R, S)inEq.(2.104)forMfrom"
+  },
+  {
+   "page": 69,
+   "mark": "r",
+   "context": "update all the φ"
+  },
+  {
+   "page": 69,
+   "mark": "l",
+   "context": "M(R′, S) for K≤M≤Nand φ"
+  },
+  {
+   "page": 69,
+   "mark": "r",
+   "context": "foreitherφ"
+  },
+  {
+   "page": 69,
+   "mark": "l",
+   "context": "M(R, S)inEq.(2.103)orφ"
+  },
+  {
+   "page": 69,
+   "mark": "r",
+   "context": "weneedtoupdatesomebeadsfortheφ"
+  },
+  {
+   "page": 69,
+   "mark": "l",
+   "context": "M(R, S)andsomefortheφ"
+  },
+  {
+   "page": 70,
+   "mark": "n",
+   "context": "randomly pick 2"
+  },
+  {
+   "page": 70,
+   "mark": "n",
+   "context": "randomly pick 2n+1 contingent beads from bead Ito bead I +2"
+  },
+  {
+   "page": 70,
+   "mark": "n",
+   "context": "frombeadItobeadI+ 2"
+  },
+  {
+   "page": 70,
+   "mark": "n",
+   "context": "frombeadItobeadI+ 2nasR0toR2"
+  },
+  {
+   "page": 70,
+   "mark": "n",
+   "context": "R = {R0, R1, R2, ..., R2"
+  },
+  {
+   "page": 70,
+   "mark": "n",
+   "context": "R = {R0, R1, R2, ..., R2n−1, R2"
+  },
+  {
+   "page": 70,
+   "mark": "n",
+   "context": "TheconﬁgurationsR0toR2"
+  },
+  {
+   "page": 70,
+   "mark": "n",
+   "context": "RI+2"
+  },
+  {
+   "page": 70,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 70,
+   "mark": "f",
+   "context": "G"
+  },
+  {
+   "page": 70,
+   "mark": "n",
+   "context": "Wecangroupthe2"
+  },
+  {
+   "page": 70,
+   "mark": "n",
+   "context": "Wecangroupthe2n+ 1beads{R0, R1, ..., R2"
+  },
+  {
+   "page": 70,
+   "mark": "n",
+   "context": "L"
+  },
+  {
+   "page": 70,
+   "mark": "n",
+   "context": "R0, R2"
+  },
+  {
+   "page": 70,
+   "mark": "n",
+   "context": "L"
+  },
+  {
+   "page": 70,
+   "mark": "n",
+   "context": "22"
+  },
+  {
+   "page": 70,
+   "mark": "n",
+   "context": "L"
+  },
+  {
+   "page": 70,
+   "mark": "n",
+   "context": "42"
+  },
+  {
+   "page": 70,
+   "mark": "3",
+   "context": "42n, R"
+  },
+  {
+   "page": 70,
+   "mark": "n",
+   "context": "42"
+  },
+  {
+   "page": 70,
+   "mark": "k",
+   "context": "(2"
+  },
+  {
+   "page": 70,
+   "mark": "n",
+   "context": "L"
+  },
+  {
+   "page": 70,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 70,
+   "mark": "n",
+   "context": "2k 2"
+  },
+  {
+   "page": 70,
+   "mark": "3",
+   "context": "2k 2n, R"
+  },
+  {
+   "page": 70,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 70,
+   "mark": "n",
+   "context": "2k 2"
+  },
+  {
+   "page": 70,
+   "mark": "5",
+   "context": "2k 2n, R"
+  },
+  {
+   "page": 70,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 70,
+   "mark": "n",
+   "context": "2k 2"
+  },
+  {
+   "page": 70,
+   "mark": "k",
+   "context": "2k 2n, ..., R 2"
+  },
+  {
+   "page": 70,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 71,
+   "mark": "n",
+   "context": "L"
+  },
+  {
+   "page": 71,
+   "mark": "n",
+   "context": "whereL"
+  },
+  {
+   "page": 71,
+   "mark": "k",
+   "context": "k(R)isdeﬁnedastheproductofgaussianfunctionsatlevel"
+  },
+  {
+   "page": 71,
+   "mark": "f",
+   "context": "G"
+  },
+  {
+   "page": 71,
+   "mark": "n",
+   "context": "0,2"
+  },
+  {
+   "page": 71,
+   "mark": "n",
+   "context": "L"
+  },
+  {
+   "page": 71,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 71,
+   "mark": "f",
+   "context": "G"
+  },
+  {
+   "page": 71,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 71,
+   "mark": "2",
+   "context": "2k"
+  },
+  {
+   "page": 71,
+   "mark": "n",
+   "context": "2k 2"
+  },
+  {
+   "page": 71,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 71,
+   "mark": "2",
+   "context": "2k"
+  },
+  {
+   "page": 71,
+   "mark": "n",
+   "context": "2k2"
+  },
+  {
+   "page": 71,
+   "mark": "2",
+   "context": "2k2n;"
+  },
+  {
+   "page": 71,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 71,
+   "mark": "2",
+   "context": "2k"
+  },
+  {
+   "page": 71,
+   "mark": "n",
+   "context": "2k2"
+  },
+  {
+   "page": 71,
+   "mark": "2",
+   "context": "2k2n,"
+  },
+  {
+   "page": 71,
+   "mark": "f",
+   "context": "ForanynonnegativeintegerJ,K,L,M,N,theG"
+  },
+  {
+   "page": 71,
+   "mark": "f",
+   "context": "theG"
+  },
+  {
+   "page": 71,
+   "mark": "2",
+   "context": "∆τℏ"
+  },
+  {
+   "page": 71,
+   "mark": "f",
+   "context": "G"
+  },
+  {
+   "page": 71,
+   "mark": "m",
+   "context": "2"
+  },
+  {
+   "page": 71,
+   "mark": "2",
+   "context": "π|N−L|∆τℏ"
+  },
+  {
+   "page": 71,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 71,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 71,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 71,
+   "mark": "n",
+   "context": "whereR0andR2"
+  },
+  {
+   "page": 71,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 71,
+   "mark": "n",
+   "context": "L"
+  },
+  {
+   "page": 71,
+   "mark": "n",
+   "context": "L"
+  },
+  {
+   "page": 71,
+   "mark": "n",
+   "context": "T"
+  },
+  {
+   "page": 71,
+   "mark": "n",
+   "context": "T"
+  },
+  {
+   "page": 71,
+   "mark": "n",
+   "context": "k(R′) = L"
+  },
+  {
+   "page": 72,
+   "mark": "n",
+   "context": "T"
+  },
+  {
+   "page": 72,
+   "mark": "n",
+   "context": "T"
+  },
+  {
+   "page": 72,
+   "mark": "n",
+   "context": "thebeadslevel by level fromlevel 0tolevel n, by using T"
+  },
+  {
+   "page": 72,
+   "mark": "n",
+   "context": "integern,randomlypick2"
+  },
+  {
+   "page": 72,
+   "mark": "n",
+   "context": "integern,randomlypick2n+ 1contingentbeadsfromRItoRI+2"
+  },
+  {
+   "page": 73,
+   "mark": "n",
+   "context": "callthemR0toR2"
+  },
+  {
+   "page": 73,
+   "mark": "n",
+   "context": "callthemR0toR2ninsteadofRItoRI+2"
+  },
+  {
+   "page": 73,
+   "mark": "n",
+   "context": "R = {R0, R1, R2, ..., R2"
+  },
+  {
+   "page": 73,
+   "mark": "n",
+   "context": "R = {R0, R1, R2, ..., R2n−1, R2"
+  },
+  {
+   "page": 73,
+   "mark": "n",
+   "context": "Forexample,inFig.3.1,itisn=3so2"
+  },
+  {
+   "page": 73,
+   "mark": "n",
+   "context": "1.IfwekeepR0andR2"
+  },
+  {
+   "page": 73,
+   "mark": "0",
+   "context": "0= R"
+  },
+  {
+   "page": 73,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 73,
+   "mark": "n",
+   "context": "2n= R2"
+  },
+  {
+   "page": 73,
+   "mark": "n",
+   "context": "2n= R2n.Inthiscase,L"
+  },
+  {
+   "page": 73,
+   "mark": "n",
+   "context": "0(R′) = L"
+  },
+  {
+   "page": 73,
+   "mark": "n",
+   "context": "L"
+  },
+  {
+   "page": 73,
+   "mark": "n",
+   "context": "2.Else,ifwekeepR2"
+  },
+  {
+   "page": 73,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 73,
+   "mark": "n",
+   "context": "2n= R2"
+  },
+  {
+   "page": 73,
+   "mark": "n",
+   "context": "0−R2"
+  },
+  {
+   "page": 73,
+   "mark": "n",
+   "context": "accordingtoEq.(3.41),L"
+  },
+  {
+   "page": 73,
+   "mark": "n",
+   "context": "2×2"
+  },
+  {
+   "page": 73,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 73,
+   "mark": "n",
+   "context": "i= r2"
+  },
+  {
+   "page": 73,
+   "mark": "3",
+   "context": "0andgotostep"
+  },
+  {
+   "page": 73,
+   "mark": "n",
+   "context": "0andgotostep3fortherestL"
+  },
+  {
+   "page": 73,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 73,
+   "mark": "0",
+   "context": "0=R"
+  },
+  {
+   "page": 74,
+   "mark": "n",
+   "context": "Step3AccordingtotheproductofgaussianfunctionsofL"
+  },
+  {
+   "page": 74,
+   "mark": "k",
+   "context": "proposethemoveslevelbylevel,sokfrom1ton.Atlevelk,2"
+  },
+  {
+   "page": 74,
+   "mark": "k",
+   "context": "needbetomoved,whichmeansfromI=1to2"
+  },
+  {
+   "page": 74,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 74,
+   "mark": "2",
+   "context": "2k"
+  },
+  {
+   "page": 74,
+   "mark": "n",
+   "context": "2k2"
+  },
+  {
+   "page": 74,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 74,
+   "mark": "2",
+   "context": "2k"
+  },
+  {
+   "page": 74,
+   "mark": "n",
+   "context": "2k2"
+  },
+  {
+   "page": 74,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 74,
+   "mark": "2",
+   "context": "2k"
+  },
+  {
+   "page": 74,
+   "mark": "n",
+   "context": "2k2"
+  },
+  {
+   "page": 74,
+   "mark": "r",
+   "context": "k(R′)inEq.(3.45),suchthat"
+  },
+  {
+   "page": 74,
+   "mark": "n",
+   "context": "k(R′)inEq.(3.45),suchthatr′(2I−1)2"
+  },
+  {
+   "page": 74,
+   "mark": "f",
+   "context": "theG"
+  },
+  {
+   "page": 74,
+   "mark": "n",
+   "context": "′inL"
+  },
+  {
+   "page": 74,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 74,
+   "mark": "2",
+   "context": "2k"
+  },
+  {
+   "page": 74,
+   "mark": "n",
+   "context": "2k2"
+  },
+  {
+   "page": 74,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 74,
+   "mark": "2",
+   "context": "2k"
+  },
+  {
+   "page": 74,
+   "mark": "n",
+   "context": "2k2"
+  },
+  {
+   "page": 74,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 74,
+   "mark": "2",
+   "context": "2k"
+  },
+  {
+   "page": 74,
+   "mark": "n",
+   "context": "2k 2"
+  },
+  {
+   "page": 74,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 74,
+   "mark": "2",
+   "context": "2k"
+  },
+  {
+   "page": 74,
+   "mark": "n",
+   "context": "2k2"
+  },
+  {
+   "page": 74,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 74,
+   "mark": "2",
+   "context": "2k"
+  },
+  {
+   "page": 74,
+   "mark": "n",
+   "context": "2k2"
+  },
+  {
+   "page": 74,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 74,
+   "mark": "2",
+   "context": "2k"
+  },
+  {
+   "page": 74,
+   "mark": "n",
+   "context": "2k 2"
+  },
+  {
+   "page": 74,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 74,
+   "mark": "2",
+   "context": "2k ∆τℏ"
+  },
+  {
+   "page": 74,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 74,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 74,
+   "mark": "2",
+   "context": "2k"
+  },
+  {
+   "page": 74,
+   "mark": "n",
+   "context": "2k2"
+  },
+  {
+   "page": 74,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 74,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 74,
+   "mark": "1",
+   "context": "Level1k= 1,2"
+  },
+  {
+   "page": 74,
+   "mark": "3",
+   "context": "Level1k= 1,21−1= 1,I= 1,each[(2I−1)2"
+  },
+  {
+   "page": 74,
+   "mark": "2",
+   "context": "4∆τℏ"
+  },
+  {
+   "page": 74,
+   "mark": "2",
+   "context": "Level2k= 2, 2"
+  },
+  {
+   "page": 74,
+   "mark": "3",
+   "context": "Level2k= 2, 22−1= 2, so I= 1, 2, each [(2I−1)2"
+  },
+  {
+   "page": 74,
+   "mark": "2",
+   "context": "2∆τℏ"
+  },
+  {
+   "page": 75,
+   "mark": "2",
+   "context": "2∆τℏ"
+  },
+  {
+   "page": 75,
+   "mark": "3",
+   "context": "Level3k= 3,2"
+  },
+  {
+   "page": 75,
+   "mark": "3",
+   "context": "Level3k= 3,23−1= 4,soI= 1, 2, 3, 4,each[(2I−1)2"
+  },
+  {
+   "page": 75,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 75,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 75,
+   "mark": "3",
+   "context": "2n}instep"
+  },
+  {
+   "page": 75,
+   "mark": "n",
+   "context": "I+2"
+  },
+  {
+   "page": 75,
+   "mark": "n",
+   "context": "I+2"
+  },
+  {
+   "page": 75,
+   "mark": "n",
+   "context": "I+2"
+  },
+  {
+   "page": 76,
+   "mark": "f",
+   "context": "l′r′(R′)and"
+  },
+  {
+   "page": 78,
+   "mark": "i",
+   "context": "i)istheproposedtransitionprobabilityforparticle"
+  },
+  {
+   "page": 78,
+   "mark": "i",
+   "context": "iTI(r"
+  },
+  {
+   "page": 78,
+   "mark": "3",
+   "context": "(2α)"
+  },
+  {
+   "page": 78,
+   "mark": "i",
+   "context": "i= r"
+  },
+  {
+   "page": 78,
+   "mark": "u",
+   "context": "i= ri+ α"
+  },
+  {
+   "page": 78,
+   "mark": "i",
+   "context": "i= ri+ αu"
+  },
+  {
+   "page": 78,
+   "mark": "i",
+   "context": "i−r"
+  },
+  {
+   "page": 79,
+   "mark": "i",
+   "context": "i= r"
+  },
+  {
+   "page": 79,
+   "mark": "g",
+   "context": "i= ri+ σ"
+  },
+  {
+   "page": 79,
+   "mark": "i",
+   "context": "i= ri+ σg"
+  },
+  {
+   "page": 79,
+   "mark": "a",
+   "context": "IisproposedfromthecurrentRI,with"
+  },
+  {
+   "page": 79,
+   "mark": "3",
+   "context": "IisproposedfromthecurrentRI,witha"
+  },
+  {
+   "page": 80,
+   "mark": "s",
+   "context": "1to"
+  },
+  {
+   "page": 80,
+   "mark": "a",
+   "context": "n.Similarly, for"
+  },
+  {
+   "page": 80,
+   "mark": "s",
+   "context": "n.Similarly, foragivenstate"
+  },
+  {
+   "page": 80,
+   "mark": "s",
+   "context": "n.Similarly, foragivenstates′, therecanbeseveralstates"
+  },
+  {
+   "page": 80,
+   "mark": "1",
+   "context": "n.Similarly, foragivenstates′, therecanbeseveralstatess"
+  },
+  {
+   "page": 80,
+   "mark": "n",
+   "context": "milarly, foragivenstates′, therecanbeseveralstatess1, ..., s"
+  },
+  {
+   "page": 81,
+   "mark": "3",
+   "context": "thereareintotaln=2"
+  },
+  {
+   "page": 81,
+   "mark": "s",
+   "context": "1to"
+  },
+  {
+   "page": 81,
+   "mark": "s",
+   "context": "8.E.g.,set"
+  },
+  {
+   "page": 81,
+   "mark": "s",
+   "context": "1≡(+ + +).Set"
+  },
+  {
+   "page": 81,
+   "mark": "s",
+   "context": "2≡(−+ +),etc.Finallyset"
+  },
+  {
+   "page": 81,
+   "mark": "s",
+   "context": "8≡(−−−).Sonow,"
+  },
+  {
+   "page": 81,
+   "mark": "s",
+   "context": "1to"
+  },
+  {
+   "page": 81,
+   "mark": "n",
+   "context": "8simplymeanthe"
+  },
+  {
+   "page": 82,
+   "mark": "x",
+   "context": "R"
+  },
+  {
+   "page": 82,
+   "mark": "s",
+   "context": "2)isalso1/8.Thesummationoverallthe"
+  },
+  {
+   "page": 82,
+   "mark": "a",
+   "context": "8)whichhasthesameintegrandasEq.(3.70)andagainwith"
+  },
+  {
+   "page": 82,
+   "mark": "x",
+   "context": "R"
+  },
+  {
+   "page": 82,
+   "mark": "y",
+   "context": "R"
+  },
+  {
+   "page": 82,
+   "mark": "z",
+   "context": "R"
+  },
+  {
+   "page": 82,
+   "mark": "s",
+   "context": "1to"
+  },
+  {
+   "page": 82,
+   "mark": "s",
+   "context": "1to"
+  },
+  {
+   "page": 82,
+   "mark": "a",
+   "context": "n.Wecanpick"
+  },
+  {
+   "page": 82,
+   "mark": "s",
+   "context": "n.Wecanpickastate"
+  },
+  {
+   "page": 82,
+   "mark": "n",
+   "context": "P"
+  },
+  {
+   "page": 82,
+   "mark": "n",
+   "context": "\""
+  },
+  {
+   "page": 82,
+   "mark": "n",
+   "context": "P"
+  },
+  {
+   "page": 82,
+   "mark": "n",
+   "context": "P"
+  },
+  {
+   "page": 83,
+   "mark": "s",
+   "context": "1fromT(s →s′)wefurtherpick"
+  },
+  {
+   "page": 83,
+   "mark": "n",
+   "context": "P"
+  },
+  {
+   "page": 83,
+   "mark": "n",
+   "context": "P"
+  },
+  {
+   "page": 83,
+   "mark": "s",
+   "context": "1)fromtheinitiallychosen"
+  },
+  {
+   "page": 84,
+   "mark": "a",
+   "context": "1fromonedirection,thereisalways"
+  },
+  {
+   "page": 84,
+   "mark": "s",
+   "context": "1fromonedirection,thereisalwaysastate"
+  },
+  {
+   "page": 84,
+   "mark": "s",
+   "context": "1to"
+  },
+  {
+   "page": 84,
+   "mark": "s",
+   "context": "5isattheoppositedirectionof"
+  },
+  {
+   "page": 84,
+   "mark": "s",
+   "context": "4,"
+  },
+  {
+   "page": 84,
+   "mark": "s",
+   "context": "6istheoppositeof"
+  },
+  {
+   "page": 84,
+   "mark": "s",
+   "context": "3,"
+  },
+  {
+   "page": 84,
+   "mark": "s",
+   "context": "2,and"
+  },
+  {
+   "page": 84,
+   "mark": "s",
+   "context": "8istheoppositeof"
+  },
+  {
+   "page": 84,
+   "mark": "s",
+   "context": "1,sowegroup"
+  },
+  {
+   "page": 84,
+   "mark": "s",
+   "context": "5to"
+  },
+  {
+   "page": 84,
+   "mark": "s",
+   "context": "1, we take"
+  },
+  {
+   "page": 84,
+   "mark": "s",
+   "context": "2in the opposite direction of"
+  },
+  {
+   "page": 84,
+   "mark": "s",
+   "context": "2as"
+  },
+  {
+   "page": 84,
+   "mark": "s",
+   "context": "1−.Forthechosen"
+  },
+  {
+   "page": 84,
+   "mark": "s",
+   "context": "1or"
+  },
+  {
+   "page": 84,
+   "mark": "a",
+   "context": "2,thereis"
+  },
+  {
+   "page": 84,
+   "mark": "s",
+   "context": "2,thereisacorresponding"
+  },
+  {
+   "page": 84,
+   "mark": "2",
+   "context": "2,thereisacorrespondings"
+  },
+  {
+   "page": 84,
+   "mark": "1",
+   "context": "i→s"
+  },
+  {
+   "page": 84,
+   "mark": "2",
+   "context": "i→s"
+  },
+  {
+   "page": 84,
+   "mark": "3",
+   "context": "dimensionhas2diﬀerentchoicesofcoordinates,sothereare2"
+  },
+  {
+   "page": 84,
+   "mark": "1",
+   "context": "K.CallthestatewithtotalconﬁgurationR′= {R"
+  },
+  {
+   "page": 84,
+   "mark": "s",
+   "context": "K, ..., RN}as"
+  },
+  {
+   "page": 85,
+   "mark": "s",
+   "context": "K−, ..., RN}as"
+  },
+  {
+   "page": 85,
+   "mark": "s",
+   "context": "2or"
+  },
+  {
+   "page": 85,
+   "mark": "g",
+   "context": "l′r′(R′)"
+  },
+  {
+   "page": 85,
+   "mark": "g",
+   "context": "l′r′(R′)"
+  },
+  {
+   "page": 85,
+   "mark": "g",
+   "context": "−)"
+  },
+  {
+   "page": 85,
+   "mark": "s",
+   "context": "Kwhichmeans"
+  },
+  {
+   "page": 85,
+   "mark": "s",
+   "context": "K−whichmeans"
+  },
+  {
+   "page": 85,
+   "mark": "s",
+   "context": "iisselected,thereareonlytwochoicesfor"
+  },
+  {
+   "page": 85,
+   "mark": "1",
+   "context": "iisselected,thereareonlytwochoicesfors"
+  },
+  {
+   "page": 85,
+   "mark": "s",
+   "context": "iisselected,thereareonlytwochoicesfors1and"
+  },
+  {
+   "page": 85,
+   "mark": "2",
+   "context": "iisselected,thereareonlytwochoicesfors1ands"
+  },
+  {
+   "page": 85,
+   "mark": "s",
+   "context": "K−. For the picked new state"
+  },
+  {
+   "page": 85,
+   "mark": "1",
+   "context": "i→s"
+  },
+  {
+   "page": 85,
+   "mark": "2",
+   "context": "∆τℏ"
+  },
+  {
+   "page": 85,
+   "mark": "g",
+   "context": "l′r′(R′)"
+  },
+  {
+   "page": 85,
+   "mark": "g",
+   "context": "−)"
+  },
+  {
+   "page": 85,
+   "mark": "e",
+   "context": "1,"
+  },
+  {
+   "page": 85,
+   "mark": "2",
+   "context": "∆τℏ"
+  },
+  {
+   "page": 85,
+   "mark": "g",
+   "context": "lr(R)"
+  },
+  {
+   "page": 85,
+   "mark": "g",
+   "context": "lr(R−)"
+  },
+  {
+   "page": 85,
+   "mark": "f",
+   "context": "1,"
+  },
+  {
+   "page": 85,
+   "mark": "s",
+   "context": "i),thenewstate"
+  },
+  {
+   "page": 85,
+   "mark": "s",
+   "context": "iisaccepted,sosetitasthecurrentstate"
+  },
+  {
+   "page": 85,
+   "mark": "s",
+   "context": "iisaccepted,sosetitasthecurrentstates,namely"
+  },
+  {
+   "page": 86,
+   "mark": "s",
+   "context": "iisjustthecurrentstate"
+  },
+  {
+   "page": 86,
+   "mark": "1",
+   "context": "iisjustthecurrentstates),thengotostep"
+  },
+  {
+   "page": 86,
+   "mark": "s",
+   "context": "Kas"
+  },
+  {
+   "page": 86,
+   "mark": "s",
+   "context": "K−as"
+  },
+  {
+   "page": 86,
+   "mark": "s",
+   "context": "K−RK.If"
+  },
+  {
+   "page": 86,
+   "mark": "s",
+   "context": "1or"
+  },
+  {
+   "page": 86,
+   "mark": "s",
+   "context": "2, denote the corresponding RK−as"
+  },
+  {
+   "page": 86,
+   "mark": "2",
+   "context": "2, denote the corresponding RK−as s"
+  },
+  {
+   "page": 86,
+   "mark": "1",
+   "context": "i→s"
+  },
+  {
+   "page": 86,
+   "mark": "f",
+   "context": "1,"
+  },
+  {
+   "page": 86,
+   "mark": "g",
+   "context": "l′r′(R′)"
+  },
+  {
+   "page": 86,
+   "mark": "g",
+   "context": "−)"
+  },
+  {
+   "page": 86,
+   "mark": "g",
+   "context": "lr(R)"
+  },
+  {
+   "page": 86,
+   "mark": "g",
+   "context": "lr(R−)"
+  },
+  {
+   "page": 86,
+   "mark": "f",
+   "context": "l′r′(R′)G"
+  },
+  {
+   "page": 86,
+   "mark": "f",
+   "context": "K−1,K′G"
+  },
+  {
+   "page": 86,
+   "mark": "f",
+   "context": "−)G"
+  },
+  {
+   "page": 86,
+   "mark": "f",
+   "context": "−G"
+  },
+  {
+   "page": 86,
+   "mark": "f",
+   "context": "lr(R)G"
+  },
+  {
+   "page": 86,
+   "mark": "f",
+   "context": "K−1,KG"
+  },
+  {
+   "page": 86,
+   "mark": "f",
+   "context": "lr(R−)G"
+  },
+  {
+   "page": 86,
+   "mark": "f",
+   "context": "K−1,K−G"
+  },
+  {
+   "page": 87,
+   "mark": "f",
+   "context": "−appearattheIorJsubscriptinG"
+  },
+  {
+   "page": 87,
+   "mark": "r",
+   "context": "bandswithtexture,westoreallthestatesfrom|ψ"
+  },
+  {
+   "page": 87,
+   "mark": "r",
+   "context": "0(R)⟩to|ψ"
+  },
+  {
+   "page": 87,
+   "mark": "l",
+   "context": "N(R)⟩and|ψ"
+  },
+  {
+   "page": 87,
+   "mark": "l",
+   "context": "|ψ"
+  },
+  {
+   "page": 87,
+   "mark": "r",
+   "context": "N(R)⟩,bystoringallthecoeﬃcientsfromφ"
+  },
+  {
+   "page": 87,
+   "mark": "r",
+   "context": "0(R, S)toφ"
+  },
+  {
+   "page": 87,
+   "mark": "l",
+   "context": "N(R, S)andfromφ"
+  },
+  {
+   "page": 87,
+   "mark": "l",
+   "context": "toφ"
+  },
+  {
+   "page": 87,
+   "mark": "f",
+   "context": "N(R, S)|S⟩inthearrays.Wealsostore"
+  },
+  {
+   "page": 87,
+   "mark": "n",
+   "context": "beadI+ 1tobeadI+ 2"
+  },
+  {
+   "page": 87,
+   "mark": "n",
+   "context": "thoseinR.WhenweproposenewmovesfrombeadI + 1tobeadI + 2"
+  },
+  {
+   "page": 87,
+   "mark": "r",
+   "context": "need to calculate from right to left, from φ"
+  },
+  {
+   "page": 87,
+   "mark": "n",
+   "context": "I+2"
+  },
+  {
+   "page": 87,
+   "mark": "r",
+   "context": "I+2n−1(R′, S) until φ"
+  },
+  {
+   "page": 87,
+   "mark": "r",
+   "context": "recursionrelationsEq.(2.112)startingfromφ"
+  },
+  {
+   "page": 87,
+   "mark": "n",
+   "context": "I+2"
+  },
+  {
+   "page": 87,
+   "mark": "l",
+   "context": "ψ"
+  },
+  {
+   "page": 87,
+   "mark": "r",
+   "context": "I(R) |G| ψ"
+  },
+  {
+   "page": 88,
+   "mark": "r",
+   "context": "updatealltherestbeads.Fromrighttoleftweupdatefromφ"
+  },
+  {
+   "page": 88,
+   "mark": "r",
+   "context": "I(R′, S)untilφ"
+  },
+  {
+   "page": 88,
+   "mark": "r",
+   "context": "andfromlefttorightweupdatefromφ"
+  },
+  {
+   "page": 88,
+   "mark": "r",
+   "context": "I+1(R′, S)untilφ"
+  },
+  {
+   "page": 88,
+   "mark": "2",
+   "context": "2) and an additional π(s"
+  },
+  {
+   "page": 89,
+   "mark": "7",
+   "context": "n1=2"
+  },
+  {
+   "page": 89,
+   "mark": "6",
+   "context": "n1=27=128andn2=2"
+  },
+  {
+   "page": 90,
+   "mark": "4",
+   "context": "τand∆τanduse"
+  },
+  {
+   "page": 90,
+   "mark": "i",
+   "context": "theratioai/a0andthefactore−(E"
+  },
+  {
+   "page": 90,
+   "mark": "0",
+   "context": "theratioai/a0andthefactore−(Ei−E"
+  },
+  {
+   "page": 90,
+   "mark": "1",
+   "context": "theratioai/a0andthefactore−(Ei−E0)τ"
+  },
+  {
+   "page": 90,
+   "mark": "4",
+   "context": "TheexperimentalgroundstateenergyE0of"
+  },
+  {
+   "page": 90,
+   "mark": "1",
+   "context": "τ1=0.1MeV−1thene−(E"
+  },
+  {
+   "page": 90,
+   "mark": "0",
+   "context": "τ1=0.1MeV−1thene−(E1−E"
+  },
+  {
+   "page": 90,
+   "mark": "1",
+   "context": "τ1=0.1MeV−1thene−(E1−E0)τ"
+  },
+  {
+   "page": 90,
+   "mark": "1",
+   "context": "|Φ1⟩in|ΨT⟩willbegreatlysuppressedby|a1/a0e−(E"
+  },
+  {
+   "page": 90,
+   "mark": "0",
+   "context": "|Φ1⟩in|ΨT⟩willbegreatlysuppressedby|a1/a0e−(E1−E"
+  },
+  {
+   "page": 90,
+   "mark": "1",
+   "context": "|Φ1⟩in|ΨT⟩willbegreatlysuppressedby|a1/a0e−(E1−E0)τ"
+  },
+  {
+   "page": 90,
+   "mark": "1",
+   "context": "ΨT⟩willbegreatlysuppressedby|a1/a0e−(E1−E0)τ1|,thereforee−Hτ"
+  },
+  {
+   "page": 90,
+   "mark": "i",
+   "context": "|Φ1⟩duetothefactor|ai/a0e−(E"
+  },
+  {
+   "page": 90,
+   "mark": "0",
+   "context": "|Φ1⟩duetothefactor|ai/a0e−(Ei−E"
+  },
+  {
+   "page": 90,
+   "mark": "1",
+   "context": "|Φ1⟩duetothefactor|ai/a0e−(Ei−E0)τ"
+  },
+  {
+   "page": 91,
+   "mark": "1",
+   "context": "twopropagatorsas⟨ΨT|e−Hτ"
+  },
+  {
+   "page": 92,
+   "mark": "l",
+   "context": "⟨ψ"
+  },
+  {
+   "page": 92,
+   "mark": "0",
+   "context": "T|H|R"
+  },
+  {
+   "page": 92,
+   "mark": "r",
+   "context": "T|H|R0S⟩⟨S|ψ"
+  },
+  {
+   "page": 92,
+   "mark": "l",
+   "context": "⟨ψ"
+  },
+  {
+   "page": 92,
+   "mark": "r",
+   "context": "N(R)|S⟩⟨RNS|H|ψ"
+  },
+  {
+   "page": 92,
+   "mark": "l",
+   "context": "⟨ψ"
+  },
+  {
+   "page": 92,
+   "mark": "0",
+   "context": "T|H|R"
+  },
+  {
+   "page": 92,
+   "mark": "r",
+   "context": "T|H|R0S⟩⟨S|ψ"
+  },
+  {
+   "page": 92,
+   "mark": "l",
+   "context": "⟨ψ"
+  },
+  {
+   "page": 92,
+   "mark": "r",
+   "context": "N(R)|S⟩⟨RNS|H|ψ"
+  },
+  {
+   "page": 92,
+   "mark": "r",
+   "context": "Thecalculationsof⟨RS|H|ψ"
+  },
+  {
+   "page": 92,
+   "mark": "l",
+   "context": "T⟩and⟨ψ"
+  },
+  {
+   "page": 92,
+   "mark": "r",
+   "context": "⟨RS|H|ψ"
+  },
+  {
+   "page": 92,
+   "mark": "r",
+   "context": "T⟩= ⟨RS|T|ψ"
+  },
+  {
+   "page": 92,
+   "mark": "r",
+   "context": "T⟩+ ⟨RS|V |ψ"
+  },
+  {
+   "page": 92,
+   "mark": "l",
+   "context": "⟨ψ"
+  },
+  {
+   "page": 92,
+   "mark": "l",
+   "context": "T|H|RS⟩= ⟨ψ"
+  },
+  {
+   "page": 92,
+   "mark": "l",
+   "context": "T|T|RS⟩+ ⟨ψ"
+  },
+  {
+   "page": 92,
+   "mark": "4",
+   "context": "Then,withthehelpofEqs.(2.62)and(2.53),taking"
+  },
+  {
+   "page": 92,
+   "mark": "r",
+   "context": ")Y"
+  },
+  {
+   "page": 92,
+   "mark": "p",
+   "context": "f"
+  },
+  {
+   "page": 92,
+   "mark": "p",
+   "context": "ij(rij)O"
+  },
+  {
+   "page": 92,
+   "mark": "r",
+   "context": "⟨RS|V |ψ"
+  },
+  {
+   "page": 92,
+   "mark": "l",
+   "context": ")Y"
+  },
+  {
+   "page": 92,
+   "mark": "p",
+   "context": "f"
+  },
+  {
+   "page": 92,
+   "mark": "p",
+   "context": "∗(rij)O"
+  },
+  {
+   "page": 92,
+   "mark": "l",
+   "context": "⟨ψ"
+  },
+  {
+   "page": 92,
+   "mark": "r",
+   "context": "⟨RS|T|ψ"
+  },
+  {
+   "page": 92,
+   "mark": "r",
+   "context": "2m⟨RS|ψ"
+  },
+  {
+   "page": 92,
+   "mark": "r",
+   "context": "⟨RS|ψ"
+  },
+  {
+   "page": 96,
+   "mark": "2",
+   "context": "tateresultsforsmalltimestep∆τ.Usuallywedoanextrapolationat∆τ"
+  },
+  {
+   "page": 96,
+   "mark": "2",
+   "context": "⟨ˆO(∆τ)⟩= ⟨ˆO⟩+ C2∆τ"
+  },
+  {
+   "page": 96,
+   "mark": "2",
+   "context": "wheretheerrorof∆τ"
+  },
+  {
+   "page": 96,
+   "mark": "2",
+   "context": "wheretheerrorof∆τ2dominates,sothatwecanobserveaclear∆τ"
+  },
+  {
+   "page": 96,
+   "mark": "2",
+   "context": "ough estimation, by looking at Eq.(2.79) we would require |C"
+  },
+  {
+   "page": 96,
+   "mark": "2",
+   "context": "h estimation, by looking at Eq.(2.79) we would require |C2∆τ"
+  },
+  {
+   "page": 96,
+   "mark": "4",
+   "context": "C4∆τ"
+  },
+  {
+   "page": 96,
+   "mark": "2",
+   "context": "wecanroughlyestimate|C"
+  },
+  {
+   "page": 96,
+   "mark": "2",
+   "context": "wecanroughlyestimate|C2∆τ"
+  },
+  {
+   "page": 96,
+   "mark": "4",
+   "context": "C4∆τ"
+  },
+  {
+   "page": 96,
+   "mark": "2",
+   "context": "Re⟨ΨT |TTTTV |ψT ⟩∆τ"
+  },
+  {
+   "page": 96,
+   "mark": "2",
+   "context": "magnitudeofTandVare10"
+  },
+  {
+   "page": 96,
+   "mark": "2",
+   "context": "magnitudeofTandVare102MeVorder,so|C"
+  },
+  {
+   "page": 96,
+   "mark": "2",
+   "context": "magnitudeofTandVare102MeVorder,so|C2∆τ"
+  },
+  {
+   "page": 96,
+   "mark": "4",
+   "context": "C4∆τ"
+  },
+  {
+   "page": 96,
+   "mark": "2",
+   "context": "Re⟨ΨT |TTTTV |ψT ⟩∆τ"
+  },
+  {
+   "page": 96,
+   "mark": "2",
+   "context": "roughlyestimatedas|C"
+  },
+  {
+   "page": 96,
+   "mark": "2",
+   "context": "roughlyestimatedas|C2∆τ"
+  },
+  {
+   "page": 96,
+   "mark": "6",
+   "context": "10"
+  },
+  {
+   "page": 96,
+   "mark": "4",
+   "context": "10"
+  },
+  {
+   "page": 96,
+   "mark": "2",
+   "context": "104∆τ"
+  },
+  {
+   "page": 96,
+   "mark": "2",
+   "context": "104∆τ2|.Inorder tomakesure|C"
+  },
+  {
+   "page": 96,
+   "mark": "2",
+   "context": "104∆τ2|.Inorder tomakesure|C2∆τ"
+  },
+  {
+   "page": 96,
+   "mark": "4",
+   "context": "C4∆τ"
+  },
+  {
+   "page": 96,
+   "mark": "10",
+   "context": "10"
+  },
+  {
+   "page": 96,
+   "mark": "2",
+   "context": "1010∆τ"
+  },
+  {
+   "page": 96,
+   "mark": "4",
+   "context": "C4∆τ"
+  },
+  {
+   "page": 96,
+   "mark": "2",
+   "context": "WeﬁndthatinFig.4.1wecanobserveaclear∆τ"
+  },
+  {
+   "page": 96,
+   "mark": "4",
+   "context": "InFig.4.3weshowtheresultsof"
+  },
+  {
+   "page": 96,
+   "mark": "2",
+   "context": "InFig.4.3weshowtheresultsof4HebasedonthelocalchiralN"
+  },
+  {
+   "page": 97,
+   "mark": "4",
+   "context": "g.4.2showsawiderrangeof∆τthanFig.4.1,andweuseEq.(2.78)upto∆τ"
+  },
+  {
+   "page": 97,
+   "mark": "3",
+   "context": "InFig.4.4weﬁtthewiderangeofthedatabyusingEq.(2.83)upto∆τ"
+  },
+  {
+   "page": 98,
+   "mark": "1",
+   "context": "⟨V (τ1)⟩=Re⟨ΨT|e−Hτ"
+  },
+  {
+   "page": 98,
+   "mark": "1",
+   "context": "e−H(τ−τ"
+  },
+  {
+   "page": 99,
+   "mark": "4",
+   "context": "re4.5:Thepotentialenergyalongthebeadsforτ= 0.2and0.3MeV−1for"
+  },
+  {
+   "page": 102,
+   "mark": "e",
+   "context": "∆τ→0A0(τ, ∆τ) = a0"
+  },
+  {
+   "page": 102,
+   "mark": "n",
+   "context": "A0(τ, ∆τ)=a"
+  },
+  {
+   "page": 102,
+   "mark": "n",
+   "context": "e−(E"
+  },
+  {
+   "page": 102,
+   "mark": "n",
+   "context": "1 +P"
+  },
+  {
+   "page": 103,
+   "mark": "a",
+   "context": "andsinceEq.(4.20)isreal,wecanassume"
+  },
+  {
+   "page": 103,
+   "mark": "1",
+   "context": "1A"
+  },
+  {
+   "page": 103,
+   "mark": "0",
+   "context": "0A"
+  },
+  {
+   "page": 103,
+   "mark": "a",
+   "context": "B1(τ, ∆τ) = Re"
+  },
+  {
+   "page": 103,
+   "mark": "1",
+   "context": "1A"
+  },
+  {
+   "page": 103,
+   "mark": "0",
+   "context": "0A"
+  },
+  {
+   "page": 103,
+   "mark": "1",
+   "context": "1 + B1(τ, ∆τ)E"
+  },
+  {
+   "page": 103,
+   "mark": "1",
+   "context": "S(τ, ∆τ)changesasB"
+  },
+  {
+   "page": 103,
+   "mark": "1",
+   "context": "S(τ, ∆τ)willbecloseto"
+  },
+  {
+   "page": 103,
+   "mark": "1",
+   "context": "ˆr"
+  },
+  {
+   "page": 103,
+   "mark": "i",
+   "context": "ˆr"
+  },
+  {
+   "page": 104,
+   "mark": "2",
+   "context": "andwecalculate⟨r"
+  },
+  {
+   "page": 104,
+   "mark": "0",
+   "context": "m⟩=Re⟨Φ"
+  },
+  {
+   "page": 104,
+   "mark": "r",
+   "context": "m⟩=Re⟨Φ0|ˆ"
+  },
+  {
+   "page": 104,
+   "mark": "2",
+   "context": "m⟩=Re⟨Φ0|ˆr"
+  },
+  {
+   "page": 104,
+   "mark": "0",
+   "context": "m|Φ"
+  },
+  {
+   "page": 104,
+   "mark": "2",
+   "context": "⟨r"
+  },
+  {
+   "page": 104,
+   "mark": "1",
+   "context": "Re⟨ΨT|e−H∆τ...e−H∆τr"
+  },
+  {
+   "page": 104,
+   "mark": "r",
+   "context": "j=1"
+  },
+  {
+   "page": 104,
+   "mark": "2",
+   "context": "ˆr"
+  },
+  {
+   "page": 104,
+   "mark": "g",
+   "context": "matthemiddlebeadM,thecorresponding"
+  },
+  {
+   "page": 104,
+   "mark": "1",
+   "context": "r"
+  },
+  {
+   "page": 104,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 104,
+   "mark": "l",
+   "context": "lr,M(R) = ⟨ψ"
+  },
+  {
+   "page": 104,
+   "mark": "r",
+   "context": "G|ψ"
+  },
+  {
+   "page": 104,
+   "mark": "e",
+   "context": "M−1(R)|G"
+  },
+  {
+   "page": 104,
+   "mark": "2",
+   "context": "herfunctionsremainthesameasinsection2.7.1.Oncewecalculated⟨r"
+  },
+  {
+   "page": 104,
+   "mark": "2",
+   "context": "⟨r"
+  },
+  {
+   "page": 104,
+   "mark": "1",
+   "context": "ˆr"
+  },
+  {
+   "page": 104,
+   "mark": "1",
+   "context": "P"
+  },
+  {
+   "page": 104,
+   "mark": "1",
+   "context": "p=1+τ"
+  },
+  {
+   "page": 104,
+   "mark": "z",
+   "context": "p=1+τ1"
+  },
+  {
+   "page": 104,
+   "mark": "1",
+   "context": "n=1−τ"
+  },
+  {
+   "page": 104,
+   "mark": "z",
+   "context": "n=1−τ1"
+  },
+  {
+   "page": 104,
+   "mark": "1",
+   "context": "whereP"
+  },
+  {
+   "page": 104,
+   "mark": "1",
+   "context": "andP"
+  },
+  {
+   "page": 104,
+   "mark": "2",
+   "context": "lightnucleibasedontheAV6’interactionandtheN"
+  },
+  {
+   "page": 104,
+   "mark": "3",
+   "context": "andtheCoulombinteraction, rm, rpandrnarenotthesame.E.g., for"
+  },
+  {
+   "page": 104,
+   "mark": "i",
+   "context": "ˆr"
+  },
+  {
+   "page": 104,
+   "mark": "i",
+   "context": "P"
+  },
+  {
+   "page": 105,
+   "mark": "2",
+   "context": "Table4.4:PIMCrmsradiioflightnucleibasedonthelocalchiralN"
+  },
+  {
+   "page": 105,
+   "mark": "4",
+   "context": "3Heistheopposite.Thesmalldiﬀerencebetweenrpandrnfor"
+  },
+  {
+   "page": 105,
+   "mark": "4",
+   "context": "Thegroundstateof"
+  },
+  {
+   "page": 105,
+   "mark": "2",
+   "context": "4πr"
+  },
+  {
+   "page": 106,
+   "mark": "1",
+   "context": "ˆr"
+  },
+  {
+   "page": 106,
+   "mark": "0",
+   "context": "ρ(r) =Re⟨Φ"
+  },
+  {
+   "page": 106,
+   "mark": "0",
+   "context": "ρ(r) =Re⟨Φ0|ˆρ(r)|Φ"
+  },
+  {
+   "page": 106,
+   "mark": "1",
+   "context": "ˆr"
+  },
+  {
+   "page": 106,
+   "mark": "r",
+   "context": "j=1ˆ"
+  },
+  {
+   "page": 106,
+   "mark": "j",
+   "context": "j=1ˆr"
+  },
+  {
+   "page": 106,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 106,
+   "mark": "1",
+   "context": "ˆr"
+  },
+  {
+   "page": 106,
+   "mark": "l",
+   "context": "lr,M(R) = ⟨ψ"
+  },
+  {
+   "page": 106,
+   "mark": "r",
+   "context": "G|ψ"
+  },
+  {
+   "page": 106,
+   "mark": "e",
+   "context": "M−1(R)|G"
+  },
+  {
+   "page": 107,
+   "mark": "a",
+   "context": "4πh3[(k+1)3−k3]toget"
+  },
+  {
+   "page": 107,
+   "mark": "k",
+   "context": "4πh3[(k+1)3−k3]toget a"
+  },
+  {
+   "page": 107,
+   "mark": "r",
+   "context": "j=1ˆ"
+  },
+  {
+   "page": 107,
+   "mark": "j",
+   "context": "j=1ˆr"
+  },
+  {
+   "page": 107,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 107,
+   "mark": "l",
+   "context": "⟨ψ"
+  },
+  {
+   "page": 107,
+   "mark": "r",
+   "context": "G|ψ"
+  },
+  {
+   "page": 107,
+   "mark": "e",
+   "context": "M−1(R)|G"
+  },
+  {
+   "page": 107,
+   "mark": "k",
+   "context": "M+1(R)⟩b"
+  },
+  {
+   "page": 107,
+   "mark": "d",
+   "context": "M+1(R)⟩bk"
+  },
+  {
+   "page": 107,
+   "mark": "r",
+   "context": "M+1(R)⟩bkd"
+  },
+  {
+   "page": 107,
+   "mark": "r",
+   "context": "j=1"
+  },
+  {
+   "page": 107,
+   "mark": "j",
+   "context": "j=1r"
+  },
+  {
+   "page": 107,
+   "mark": "r",
+   "context": "j=1"
+  },
+  {
+   "page": 107,
+   "mark": "j",
+   "context": "j=1r"
+  },
+  {
+   "page": 107,
+   "mark": "k",
+   "context": "j=1rj|.Atthesametime,the"
+  },
+  {
+   "page": 107,
+   "mark": "a",
+   "context": "j=1rj|.Atthesametime,thekthelementinA(k)takes"
+  },
+  {
+   "page": 108,
+   "mark": "4",
+   "context": "re4.8:Thegroundstateone-particlenumberdensitydistributionsof"
+  },
+  {
+   "page": 109,
+   "mark": "2",
+   "context": "interactionandFig.4.9forthelocalchiralN"
+  },
+  {
+   "page": 109,
+   "mark": "4",
+   "context": "imaginarytime,theparticlenumberdensitydistributionof"
+  },
+  {
+   "page": 109,
+   "mark": "1",
+   "context": "ˆr"
+  },
+  {
+   "page": 109,
+   "mark": "i",
+   "context": "ˆr"
+  },
+  {
+   "page": 109,
+   "mark": "1",
+   "context": "P"
+  },
+  {
+   "page": 109,
+   "mark": "i",
+   "context": "P"
+  },
+  {
+   "page": 109,
+   "mark": "1",
+   "context": "p=1+τ"
+  },
+  {
+   "page": 109,
+   "mark": "z",
+   "context": "p=1+τ1"
+  },
+  {
+   "page": 109,
+   "mark": "1",
+   "context": "n=1−τ"
+  },
+  {
+   "page": 109,
+   "mark": "z",
+   "context": "n=1−τ1"
+  },
+  {
+   "page": 109,
+   "mark": "i",
+   "context": "whereP"
+  },
+  {
+   "page": 109,
+   "mark": "i",
+   "context": "andP"
+  },
+  {
+   "page": 109,
+   "mark": "i",
+   "context": "nucleonwithlabeli.SinceP"
+  },
+  {
+   "page": 109,
+   "mark": "i",
+   "context": "p+ P"
+  },
+  {
+   "page": 109,
+   "mark": "2",
+   "context": "onthelocalchiralN"
+  },
+  {
+   "page": 109,
+   "mark": "3",
+   "context": "asrdecreases.For"
+  },
+  {
+   "page": 110,
+   "mark": "2",
+   "context": "nucleibasedontheAV6’interactionandthelocalchiralN"
+  },
+  {
+   "page": 110,
+   "mark": "3",
+   "context": "ofﬁndingaprotonρp(r)."
+  },
+  {
+   "page": 110,
+   "mark": "3",
+   "context": "ofﬁndingaprotonρp(r).3Handitsmirrornuclei"
+  },
+  {
+   "page": 110,
+   "mark": "3",
+   "context": "i.e.,"
+  },
+  {
+   "page": 110,
+   "mark": "3",
+   "context": "i.e.,3H’sρp(r)islikethe"
+  },
+  {
+   "page": 110,
+   "mark": "3",
+   "context": "i.e.,3H’sρp(r)islikethe3He’sρn(r)and"
+  },
+  {
+   "page": 110,
+   "mark": "3",
+   "context": "i.e.,3H’sρp(r)islikethe3He’sρn(r)and3H’sρn(r)islike"
+  },
+  {
+   "page": 111,
+   "mark": "0",
+   "context": "n⟨Φ"
+  },
+  {
+   "page": 111,
+   "mark": "†",
+   "context": "n⟨Φ0|ρ"
+  },
+  {
+   "page": 111,
+   "mark": "n",
+   "context": "n⟨Φ0|ρ†(k)|Φ"
+  },
+  {
+   "page": 111,
+   "mark": "n",
+   "context": "n⟨Φ0|ρ†(k)|Φn⟩⟨Φ"
+  },
+  {
+   "page": 111,
+   "mark": "0",
+   "context": "n⟨Φ0|ρ†(k)|Φn⟩⟨Φn|ρ(k)|Φ"
+  },
+  {
+   "page": 111,
+   "mark": "0",
+   "context": "n⟨Φ0|ρ†(k)|Φn⟩⟨Φn|ρ(k)|Φ0⟩δ(ω + E"
+  },
+  {
+   "page": 111,
+   "mark": "n",
+   "context": "n⟨Φ0|ρ†(k)|Φn⟩⟨Φn|ρ(k)|Φ0⟩δ(ω + E0 −E"
+  },
+  {
+   "page": 111,
+   "mark": "0",
+   "context": "n⟨Φ"
+  },
+  {
+   "page": 111,
+   "mark": "†",
+   "context": "n⟨Φ0|ρ"
+  },
+  {
+   "page": 111,
+   "mark": "e",
+   "context": "n⟨Φ0|ρ†(k)"
+  },
+  {
+   "page": 111,
+   "mark": "n",
+   "context": "n⟨Φ0|ρ†(k)e−Hτ|Φ"
+  },
+  {
+   "page": 111,
+   "mark": "n",
+   "context": "n⟨Φ0|ρ†(k)e−Hτ|Φn⟩⟨Φ"
+  },
+  {
+   "page": 111,
+   "mark": "0",
+   "context": "n⟨Φ0|ρ†(k)e−Hτ|Φn⟩⟨Φn|ρ(k)|Φ"
+  },
+  {
+   "page": 111,
+   "mark": "0",
+   "context": "e−E"
+  },
+  {
+   "page": 111,
+   "mark": "0",
+   "context": "=eωqeτ⟨Φ"
+  },
+  {
+   "page": 111,
+   "mark": "†",
+   "context": "=eωqeτ⟨Φ0|ρ"
+  },
+  {
+   "page": 111,
+   "mark": "e",
+   "context": "=eωqeτ⟨Φ0|ρ†(k)"
+  },
+  {
+   "page": 111,
+   "mark": "0",
+   "context": "=eωqeτ⟨Φ0|ρ†(k)e−Hτρ(k)|Φ"
+  },
+  {
+   "page": 111,
+   "mark": "1",
+   "context": "=eωqeτ⟨ΨT|e−Hτ"
+  },
+  {
+   "page": 111,
+   "mark": "†",
+   "context": "ρ"
+  },
+  {
+   "page": 111,
+   "mark": "1",
+   "context": "e−Hτ"
+  },
+  {
+   "page": 111,
+   "mark": "1",
+   "context": "⟨ΨT|e−Hτ"
+  },
+  {
+   "page": 111,
+   "mark": "1",
+   "context": "⟨ΨT|e−Hτ1e−Hτe−Hτ"
+  },
+  {
+   "page": 111,
+   "mark": "2",
+   "context": "whereωqe= k"
+  },
+  {
+   "page": 112,
+   "mark": "4",
+   "context": "Inthiswork, wecalculatethe"
+  },
+  {
+   "page": 112,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 112,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 112,
+   "mark": "i",
+   "context": "eik·r"
+  },
+  {
+   "page": 112,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 112,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 112,
+   "mark": "i",
+   "context": "eik·r"
+  },
+  {
+   "page": 112,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 112,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 112,
+   "mark": "i",
+   "context": "eik·r"
+  },
+  {
+   "page": 112,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 112,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 112,
+   "mark": "i",
+   "context": "eik·r"
+  },
+  {
+   "page": 112,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 112,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 112,
+   "mark": "i",
+   "context": "eik·r"
+  },
+  {
+   "page": 112,
+   "mark": "†",
+   "context": "IndiﬀusionQMCsuchasGFMCandAFDMC,itisoften⟨ΨT|ρ"
+  },
+  {
+   "page": 112,
+   "mark": "†",
+   "context": "thatiscalculated.Sincetheoperatorρ"
+  },
+  {
+   "page": 112,
+   "mark": "†",
+   "context": "Hamiltonian,⟨ΨT|ρ"
+  },
+  {
+   "page": 112,
+   "mark": "†",
+   "context": "⟨Φ0|ρ"
+  },
+  {
+   "page": 112,
+   "mark": "1",
+   "context": "and|ΨT⟩byusingtheprojectionoperatore−Hτ"
+  },
+  {
+   "page": 112,
+   "mark": "†",
+   "context": "PIMCreallycalculatesthegroundstateestimator⟨Φ0|ρ"
+  },
+  {
+   "page": 112,
+   "mark": "†",
+   "context": "ρ"
+  },
+  {
+   "page": 113,
+   "mark": "†",
+   "context": "(2M−N)∆τ.Wejustneedtoplacetheoperatorρ"
+  },
+  {
+   "page": 113,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 113,
+   "mark": "l",
+   "context": "lr,M(R) = eωqeτ⟨ψ"
+  },
+  {
+   "page": 113,
+   "mark": "†",
+   "context": "ρ"
+  },
+  {
+   "page": 113,
+   "mark": "r",
+   "context": "|ψ"
+  },
+  {
+   "page": 113,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 113,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 113,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 113,
+   "mark": "4",
+   "context": "Thegroundstateof"
+  },
+  {
+   "page": 114,
+   "mark": "†",
+   "context": "ρ"
+  },
+  {
+   "page": 114,
+   "mark": "†",
+   "context": "ρ"
+  },
+  {
+   "page": 114,
+   "mark": "†",
+   "context": "−V"
+  },
+  {
+   "page": 114,
+   "mark": "l",
+   "context": "lr,M(R) = eωqeτ⟨ψ"
+  },
+  {
+   "page": 114,
+   "mark": "r",
+   "context": "G|ψ"
+  },
+  {
+   "page": 114,
+   "mark": "e",
+   "context": "L−1(R)|G"
+  },
+  {
+   "page": 115,
+   "mark": "4",
+   "context": "Figure4.13:AngleaveragedEuclideanresponsefunctionsof"
+  },
+  {
+   "page": 115,
+   "mark": "2",
+   "context": "forthelocalchiralN"
+  },
+  {
+   "page": 115,
+   "mark": "2",
+   "context": "isforthelocalchiralN"
+  },
+  {
+   "page": 115,
+   "mark": "3",
+   "context": "withlabframe.Wethenmultiplyourresultsbye−16."
+  },
+  {
+   "page": 116,
+   "mark": "4",
+   "context": "isoscalartargetlikethegroundstate"
+  },
+  {
+   "page": 118,
+   "mark": "2",
+   "context": "onthelocalchiralN"
+  },
+  {
+   "page": 119,
+   "mark": "4",
+   "context": "Wehopeour"
+  },
+  {
+   "page": 120,
+   "mark": "4",
+   "context": "AnuclearPIMCﬁnitetemperaturecalculationof"
+  },
+  {
+   "page": 121,
+   "mark": "54",
+   "context": "totheMonteCarlosignproblem:Realisticcalculationsof"
+  },
+  {
+   "page": 122,
+   "mark": "4",
+   "context": "Applicationtoliquid"
+  },
+  {
+   "page": 125,
+   "mark": "12",
+   "context": "of(νℓ, ℓ−)and(νℓ, ℓ+)inclusivescatteringin"
+  },
+  {
+   "page": 125,
+   "mark": "12",
+   "context": "rgeformfactorandsumrulesofelectromagneticresponsefunctionsin"
+  },
+  {
+   "page": 125,
+   "mark": "4",
+   "context": "and neutral-weak response functions of"
+  },
+  {
+   "page": 125,
+   "mark": "12",
+   "context": "and neutral-weak response functions of4He and"
+  },
+  {
+   "page": 131,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 131,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 131,
+   "mark": "1",
+   "context": "eik"
+  },
+  {
+   "page": 131,
+   "mark": "1",
+   "context": "eik1·r"
+  },
+  {
+   "page": 131,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 131,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 131,
+   "mark": "2",
+   "context": "eik"
+  },
+  {
+   "page": 131,
+   "mark": "1",
+   "context": "eik2·r"
+  },
+  {
+   "page": 131,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 131,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 131,
+   "mark": "1",
+   "context": "eik"
+  },
+  {
+   "page": 131,
+   "mark": "2",
+   "context": "eik1·r"
+  },
+  {
+   "page": 131,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 131,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 131,
+   "mark": "2",
+   "context": "eik"
+  },
+  {
+   "page": 131,
+   "mark": "2",
+   "context": "eik2·r"
+  },
+  {
+   "page": 131,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 131,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 131,
+   "mark": "1",
+   "context": "eik"
+  },
+  {
+   "page": 131,
+   "mark": "3",
+   "context": "eik1·r"
+  },
+  {
+   "page": 131,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 131,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 131,
+   "mark": "2",
+   "context": "eik"
+  },
+  {
+   "page": 131,
+   "mark": "3",
+   "context": "eik2·r"
+  },
+  {
+   "page": 133,
+   "mark": "k",
+   "context": "akΦk(x)e−iE"
+  },
+  {
+   "page": 133,
+   "mark": "t",
+   "context": "akΦk(x)e−iEk"
+  },
+  {
+   "page": 133,
+   "mark": "k",
+   "context": "ckΦk(x)e−i(E"
+  },
+  {
+   "page": 133,
+   "mark": "t",
+   "context": "ckΦk(x)e−i(Ek−ET )"
+  },
+  {
+   "page": 133,
+   "mark": "k",
+   "context": "ckΦk(x)e−(E"
+  },
+  {
+   "page": 134,
+   "mark": "2",
+   "context": "|φ(τ2)⟩= e−(H−ET )(τ"
+  },
+  {
+   "page": 134,
+   "mark": "1",
+   "context": "|φ(τ2)⟩= e−(H−ET )(τ2−τ"
+  },
+  {
+   "page": 134,
+   "mark": "2",
+   "context": "⟨y|e−(H−ET )(τ"
+  },
+  {
+   "page": 134,
+   "mark": "1",
+   "context": "⟨y|e−(H−ET )(τ2−τ"
+  },
+  {
+   "page": 134,
+   "mark": "2",
+   "context": "⟨y|e−(H−ET )(τ"
+  },
+  {
+   "page": 134,
+   "mark": "1",
+   "context": "⟨y|e−(H−ET )(τ2−τ"
+  },
+  {
+   "page": 134,
+   "mark": "i",
+   "context": "Φi(y)Φi(x)e−(E"
+  },
+  {
+   "page": 134,
+   "mark": "c",
+   "context": "k"
+  },
+  {
+   "page": 134,
+   "mark": "k",
+   "context": "kc"
+  },
+  {
+   "page": 134,
+   "mark": "k",
+   "context": "kckΦ"
+  },
+  {
+   "page": 134,
+   "mark": "k",
+   "context": "ckΦk(y)e−(E"
+  },
+  {
+   "page": 134,
+   "mark": "k",
+   "context": "ckΦk(y)e−(E"
+  },
+  {
+   "page": 135,
+   "mark": "2",
+   "context": "whereD= ℏ"
+  },
+  {
+   "page": 135,
+   "mark": "2",
+   "context": "2[V, J]τ"
+  },
+  {
+   "page": 135,
+   "mark": "3",
+   "context": "2[V, J]τ 2+O(τ"
+  },
+  {
+   "page": 135,
+   "mark": "i",
+   "context": "e−(y"
+  },
+  {
+   "page": 135,
+   "mark": "i",
+   "context": "e−(yi−x"
+  },
+  {
+   "page": 135,
+   "mark": "i",
+   "context": "diﬀ(y"
+  },
+  {
+   "page": 135,
+   "mark": "x",
+   "context": "diﬀ(yi,"
+  },
+  {
+   "page": 135,
+   "mark": "i",
+   "context": "diﬀ(yi, x"
+  },
+  {
+   "page": 137,
+   "mark": "2",
+   "context": "wavefunctionΨ0(notΨ"
+  },
+  {
+   "page": 138,
+   "mark": "x",
+   "context": "˜Gdiﬀ(y, x, τ)satisﬁesthediﬀusionequation∂˜Gdiﬀ(y,"
+  },
+  {
+   "page": 139,
+   "mark": "2",
+   "context": "Ψ"
+  },
+  {
+   "page": 139,
+   "mark": "i",
+   "context": ",and⟨EL⟩willjustbevariationalenergy.AssumingthequantumforceF"
+  },
+  {
+   "page": 139,
+   "mark": "i",
+   "context": "diﬀ(y"
+  },
+  {
+   "page": 139,
+   "mark": "x",
+   "context": "diﬀ(yi,"
+  },
+  {
+   "page": 139,
+   "mark": "i",
+   "context": "diﬀ(yi, x"
+  },
+  {
+   "page": 139,
+   "mark": "2",
+   "context": "ebranchpart,thediﬀusionprocesswillevolvethedistributionintoΨ"
+  },
+  {
+   "page": 139,
+   "mark": "0",
+   "context": "=⟨Ψ"
+  },
+  {
+   "page": 140,
+   "mark": "3",
+   "context": "2τV= e−τH+ τ"
+  },
+  {
+   "page": 140,
+   "mark": "2",
+   "context": "H′= H +τ"
+  },
+  {
+   "page": 140,
+   "mark": "2",
+   "context": "(τ) = E0 +c2τ"
+  },
+  {
+   "page": 140,
+   "mark": "2",
+   "context": "(τ) = E0 + c1τ+ c2τ"
+  },
+  {
+   "page": 140,
+   "mark": "2",
+   "context": "Ψ"
+  },
+  {
+   "page": 140,
+   "mark": "d",
+   "context": "0"
+  },
+  {
+   "page": 140,
+   "mark": "x",
+   "context": "0d"
+  },
+  {
+   "page": 140,
+   "mark": "2",
+   "context": "Ψ"
+  },
+  {
+   "page": 140,
+   "mark": "d",
+   "context": "T"
+  },
+  {
+   "page": 140,
+   "mark": "x",
+   "context": "Td"
+  },
+  {
+   "page": 141,
+   "mark": "2",
+   "context": "MasM(1).WethenuseM(RT)"
+  },
+  {
+   "page": 141,
+   "mark": "2",
+   "context": "probabilityA(y, x, τ) = min[1, q(y, x, τ)]intheM(RT)"
+  },
+  {
+   "page": 144,
+   "mark": "i",
+   "context": "i⟩withitsweightW(X, R"
+  },
+  {
+   "page": 144,
+   "mark": "i",
+   "context": "i⟩withitsweightW(X, Ri, S"
+  },
+  {
+   "page": 144,
+   "mark": "†",
+   "context": "ˆO"
+  },
+  {
+   "page": 145,
+   "mark": "i",
+   "context": "dXP(X)⟨ΨT|T(X)|R"
+  },
+  {
+   "page": 145,
+   "mark": "i",
+   "context": "dXP(X)⟨ΨT|T(X)|RiS"
+  },
+  {
+   "page": 145,
+   "mark": "i",
+   "context": "i⟩=T(X)|R"
+  },
+  {
+   "page": 145,
+   "mark": "i",
+   "context": "i⟩=T(X)|RiS"
+  },
+  {
+   "page": 145,
+   "mark": "i",
+   "context": "dXP(X)⟨ΨT|T(X)|R"
+  },
+  {
+   "page": 145,
+   "mark": "i",
+   "context": "dXP(X)⟨ΨT|T(X)|RiS"
+  },
+  {
+   "page": 145,
+   "mark": "2",
+   "context": "O(δt"
+  },
+  {
+   "page": 145,
+   "mark": "i",
+   "context": "N= e−[EL(R"
+  },
+  {
+   "page": 145,
+   "mark": "i",
+   "context": "N= e−[EL(RiS"
+  },
+  {
+   "page": 145,
+   "mark": "i",
+   "context": "EL(Ri, Si) =⟨ΨT|H|R"
+  },
+  {
+   "page": 145,
+   "mark": "i",
+   "context": "EL(Ri, Si) =⟨ΨT|H|RiS"
+  },
+  {
+   "page": 145,
+   "mark": "i",
+   "context": "dX˜P(X)e−[EL(R"
+  },
+  {
+   "page": 145,
+   "mark": "i",
+   "context": "dX˜P(X)e−[EL(RiS"
+  },
+  {
+   "page": 145,
+   "mark": "i",
+   "context": "dX˜P(X)e−[EL(RiSi)−ET ]δtT(X)|R"
+  },
+  {
+   "page": 145,
+   "mark": "i",
+   "context": "dX˜P(X)e−[EL(RiSi)−ET ]δtT(X)|RiS"
+  },
+  {
+   "page": 145,
+   "mark": "2",
+   "context": "O"
+  },
+  {
+   "page": 145,
+   "mark": "2",
+   "context": "dxe−x"
+  },
+  {
+   "page": 145,
+   "mark": "2",
+   "context": "λjO"
+  },
+  {
+   "page": 146,
+   "mark": "2",
+   "context": "andthentheDMCpropagator(neglectingO(δt"
+  },
+  {
+   "page": 146,
+   "mark": "x",
+   "context": "j=1"
+  },
+  {
+   "page": 146,
+   "mark": "j",
+   "context": "j=1x"
+  },
+  {
+   "page": 146,
+   "mark": "e",
+   "context": "(2π)N/2"
+  },
+  {
+   "page": 146,
+   "mark": "x",
+   "context": "j=1"
+  },
+  {
+   "page": 146,
+   "mark": "2",
+   "context": "j=1x"
+  },
+  {
+   "page": 146,
+   "mark": "j",
+   "context": "λ"
+  },
+  {
+   "page": 146,
+   "mark": "j",
+   "context": "λjδtO"
+  },
+  {
+   "page": 146,
+   "mark": "3",
+   "context": "neglectingO(δt"
+  },
+  {
+   "page": 146,
+   "mark": "j",
+   "context": "λδt⟨ΨT|O"
+  },
+  {
+   "page": 146,
+   "mark": "i",
+   "context": "λδt⟨ΨT|Oj|R"
+  },
+  {
+   "page": 146,
+   "mark": "i",
+   "context": "λδt⟨ΨT|Oj|RiS"
+  },
+  {
+   "page": 146,
+   "mark": "x",
+   "context": "j=1"
+  },
+  {
+   "page": 146,
+   "mark": "j",
+   "context": "j=1x"
+  },
+  {
+   "page": 146,
+   "mark": "j",
+   "context": "λ"
+  },
+  {
+   "page": 146,
+   "mark": "j",
+   "context": "λjδtO"
+  },
+  {
+   "page": 146,
+   "mark": "e",
+   "context": "i⟩isgivenby"
+  },
+  {
+   "page": 146,
+   "mark": "i",
+   "context": "i⟩isgivenbye−[EL(R"
+  },
+  {
+   "page": 146,
+   "mark": "i",
+   "context": "i⟩isgivenbye−[EL(RiS"
+  },
+  {
+   "page": 146,
+   "mark": "2",
+   "context": "F( ˜O) ≡e−˜O"
+  },
+  {
+   "page": 146,
+   "mark": "e",
+   "context": "2π"
+  },
+  {
+   "page": 146,
+   "mark": "2",
+   "context": "d˜Oeix ˜Oe−˜O"
+  },
+  {
+   "page": 146,
+   "mark": "2",
+   "context": "2πe−x"
+  },
+  {
+   "page": 146,
+   "mark": "2",
+   "context": "e−˜O"
+  },
+  {
+   "page": 146,
+   "mark": "e",
+   "context": "2π"
+  },
+  {
+   "page": 146,
+   "mark": "2",
+   "context": "2πe−x"
+  },
+  {
+   "page": 146,
+   "mark": "e",
+   "context": "2πe−x2/2"
+  },
+  {
+   "page": 148,
+   "mark": "2",
+   "context": "p"
+  },
+  {
+   "page": 148,
+   "mark": "c",
+   "context": "v"
+  },
+  {
+   "page": 148,
+   "mark": "t",
+   "context": "iα,jβ= vσ(rij)δαβ+ v"
+  },
+  {
+   "page": 148,
+   "mark": "r",
+   "context": "iα,jβ= vσ(rij)δαβ+ vt(rij)(3ˆα · ˆ"
+  },
+  {
+   "page": 148,
+   "mark": "r",
+   "context": "iα,jβ= vσ(rij)δαβ+ vt(rij)(3ˆα · ˆrijˆβ · ˆ"
+  },
+  {
+   "page": 148,
+   "mark": "r",
+   "context": "iα,jβ= vστ(rij)δαβ+ vtτ(rij)(3ˆα · ˆ"
+  },
+  {
+   "page": 148,
+   "mark": "r",
+   "context": "iα,jβ= vστ(rij)δαβ+ vtτ(rij)(3ˆα · ˆrijˆβ · ˆ"
+  },
+  {
+   "page": 149,
+   "mark": "i",
+   "context": "= a"
+  },
+  {
+   "page": 149,
+   "mark": "i",
+   "context": "= ai|p ↑⟩+ b"
+  },
+  {
+   "page": 149,
+   "mark": "i",
+   "context": "= ai|p ↑⟩+ bi|p ↓⟩+ c"
+  },
+  {
+   "page": 149,
+   "mark": "i",
+   "context": "= ai|p ↑⟩+ bi|p ↓⟩+ ci|n ↑⟩+ d"
+  },
+  {
+   "page": 149,
+   "mark": "3",
+   "context": "particlesintheperiodicboxofvolumeL"
+  },
+  {
+   "page": 149,
+   "mark": "i",
+   "context": "φα(ri, si) = e"
+  },
+  {
+   "page": 149,
+   "mark": "k",
+   "context": "φα(ri, si) = ei"
+  },
+  {
+   "page": 149,
+   "mark": "i",
+   "context": "φα(ri, si) = eikα·r"
+  },
+  {
+   "page": 151,
+   "mark": "n",
+   "context": "i"
+  },
+  {
+   "page": 151,
+   "mark": "6",
+   "context": "hP"
+  },
+  {
+   "page": 151,
+   "mark": "v",
+   "context": "p=1"
+  },
+  {
+   "page": 151,
+   "mark": "p",
+   "context": "p=1v"
+  },
+  {
+   "page": 151,
+   "mark": "p",
+   "context": "p=1vp(rij)O"
+  },
+  {
+   "page": 151,
+   "mark": "c",
+   "context": "e−[v"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "e−[vc+vσ⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "e−[vc+vσ⃗σ1·⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "t",
+   "context": "e−[vc+vσ⃗σ1·⃗σ2+v"
+  },
+  {
+   "page": 151,
+   "mark": "12",
+   "context": "e−[vc+vσ⃗σ1·⃗σ2+vtS"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "12",
+   "context": "e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ2+vtτS"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ2+vtτS12⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ2+vtτS12⃗τ1·⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "c",
+   "context": "Next,wesandwiche−[v"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "Next,wesandwiche−[vc+vσ⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "Next,wesandwiche−[vc+vσ⃗σ1·⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "t",
+   "context": "Next,wesandwiche−[vc+vσ⃗σ1·⃗σ2+v"
+  },
+  {
+   "page": 151,
+   "mark": "12",
+   "context": "Next,wesandwiche−[vc+vσ⃗σ1·⃗σ2+vtS"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "Next,wesandwiche−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "Next,wesandwiche−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "Next,wesandwiche−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "Next,wesandwiche−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "Next,wesandwiche−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "t,wesandwiche−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "12",
+   "context": "ndwiche−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ2+vtτS"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "che−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ2+vtτS12⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ2+vtτS12⃗τ1·⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "c",
+   "context": "⟨1|e−[v"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "⟨1|e−[vc+vσ⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "⟨1|e−[vc+vσ⃗σ1·⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "t",
+   "context": "⟨1|e−[vc+vσ⃗σ1·⃗σ2+v"
+  },
+  {
+   "page": 151,
+   "mark": "12",
+   "context": "⟨1|e−[vc+vσ⃗σ1·⃗σ2+vtS"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "⟨1|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "⟨1|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "⟨1|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "⟨1|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "⟨1|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "⟨1|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "12",
+   "context": "⟨1|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ2+vtτS"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "1|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ2+vtτS12⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ2+vtτS12⃗τ1·⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "c",
+   "context": "⟨2|e−[v"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "⟨2|e−[vc+vσ⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "⟨2|e−[vc+vσ⃗σ1·⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "t",
+   "context": "⟨2|e−[vc+vσ⃗σ1·⃗σ2+v"
+  },
+  {
+   "page": 151,
+   "mark": "12",
+   "context": "⟨2|e−[vc+vσ⃗σ1·⃗σ2+vtS"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "⟨2|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "⟨2|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "⟨2|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "⟨2|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "⟨2|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "⟨2|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "12",
+   "context": "⟨2|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ2+vtτS"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "2|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ2+vtτS12⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ2+vtτS12⃗τ1·⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "c",
+   "context": "⟨3|e−[v"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "⟨3|e−[vc+vσ⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "⟨3|e−[vc+vσ⃗σ1·⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "t",
+   "context": "⟨3|e−[vc+vσ⃗σ1·⃗σ2+v"
+  },
+  {
+   "page": 151,
+   "mark": "12",
+   "context": "⟨3|e−[vc+vσ⃗σ1·⃗σ2+vtS"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "⟨3|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "⟨3|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "⟨3|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "⟨3|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "⟨3|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "⟨3|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "12",
+   "context": "⟨3|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ2+vtτS"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "3|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ2+vtτS12⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ2+vtτS12⃗τ1·⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "c",
+   "context": "⟨4|e−[v"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "⟨4|e−[vc+vσ⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "⟨4|e−[vc+vσ⃗σ1·⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "t",
+   "context": "⟨4|e−[vc+vσ⃗σ1·⃗σ2+v"
+  },
+  {
+   "page": 151,
+   "mark": "12",
+   "context": "⟨4|e−[vc+vσ⃗σ1·⃗σ2+vtS"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "⟨4|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "⟨4|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "⟨4|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "⟨4|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "⟨4|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "⟨4|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "12",
+   "context": "⟨4|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ2+vtτS"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "4|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ2+vtτS12⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ2+vtτS12⃗τ1·⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "c",
+   "context": "⟨5|e−[v"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "⟨5|e−[vc+vσ⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "⟨5|e−[vc+vσ⃗σ1·⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "t",
+   "context": "⟨5|e−[vc+vσ⃗σ1·⃗σ2+v"
+  },
+  {
+   "page": 151,
+   "mark": "12",
+   "context": "⟨5|e−[vc+vσ⃗σ1·⃗σ2+vtS"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "⟨5|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "⟨5|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "⟨5|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "⟨5|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "⟨5|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "⟨5|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "12",
+   "context": "⟨5|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ2+vtτS"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "5|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ2+vtτS12⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ2+vtτS12⃗τ1·⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "c",
+   "context": "⟨6|e−[v"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "⟨6|e−[vc+vσ⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "⟨6|e−[vc+vσ⃗σ1·⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "t",
+   "context": "⟨6|e−[vc+vσ⃗σ1·⃗σ2+v"
+  },
+  {
+   "page": 151,
+   "mark": "12",
+   "context": "⟨6|e−[vc+vσ⃗σ1·⃗σ2+vtS"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "⟨6|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "⟨6|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "⟨6|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "⟨6|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "⟨6|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "⟨6|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ"
+  },
+  {
+   "page": 151,
+   "mark": "12",
+   "context": "⟨6|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ2+vtτS"
+  },
+  {
+   "page": 151,
+   "mark": "1",
+   "context": "6|e−[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ2+vtτS12⃗τ"
+  },
+  {
+   "page": 151,
+   "mark": "2",
+   "context": "[vc+vσ⃗σ1·⃗σ2+vtS12+vτ⃗τ1·⃗τ2+vστ⃗τ1·⃗τ2⃗σ1·⃗σ2+vtτS12⃗τ1·⃗τ"
+  },
+  {
+   "page": 152,
+   "mark": "p",
+   "context": "sixcoeﬃcientspc, pσ, pt, pτ, pστ, ptτarethecorrespondingsixu"
+  },
+  {
+   "page": 154,
+   "mark": "†",
+   "context": "ρ"
+  },
+  {
+   "page": 154,
+   "mark": "i",
+   "context": "Notethattheplanewavee"
+  },
+  {
+   "page": 154,
+   "mark": "k",
+   "context": "Notethattheplanewaveei"
+  },
+  {
+   "page": 154,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 154,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 154,
+   "mark": "k",
+   "context": "ℓ(ˆ"
+  },
+  {
+   "page": 154,
+   "mark": "m",
+   "context": "ℓ(ˆk)Y"
+  },
+  {
+   "page": 154,
+   "mark": "m",
+   "context": "iℓjℓ(krji)Y"
+  },
+  {
+   "page": 154,
+   "mark": "m",
+   "context": "∗(ˆrji)Y"
+  },
+  {
+   "page": 154,
+   "mark": "m",
+   "context": "iℓjℓ(krji)Y"
+  },
+  {
+   "page": 155,
+   "mark": "k",
+   "context": "ℓ(ˆ"
+  },
+  {
+   "page": 155,
+   "mark": "m",
+   "context": "ℓ(ˆk) = Y"
+  },
+  {
+   "page": 155,
+   "mark": "m",
+   "context": "spherical harmonics Y"
+  },
+  {
+   "page": 155,
+   "mark": "2",
+   "context": "k"
+  },
+  {
+   "page": 155,
+   "mark": "2",
+   "context": "k2r"
+  },
+  {
+   "page": 155,
+   "mark": "2",
+   "context": "k"
+  },
+  {
+   "page": 155,
+   "mark": "2",
+   "context": "k2r"
+  },
+  {
+   "page": 155,
+   "mark": "k",
+   "context": "0(ˆ"
+  },
+  {
+   "page": 155,
+   "mark": "0",
+   "context": "0(ˆk) = Y"
+  },
+  {
+   "page": 155,
+   "mark": "0",
+   "context": "Y"
+  },
+  {
+   "page": 155,
+   "mark": "0",
+   "context": "0(θ, ϕ) = Y"
+  },
+  {
+   "page": 155,
+   "mark": "2",
+   "context": "2π· e−2iϕ · sin"
+  },
+  {
+   "page": 155,
+   "mark": "2",
+   "context": "π· (3 cos"
+  },
+  {
+   "page": 155,
+   "mark": "0",
+   "context": "Y"
+  },
+  {
+   "page": 155,
+   "mark": "1",
+   "context": "Y"
+  },
+  {
+   "page": 155,
+   "mark": "2",
+   "context": "2π· e"
+  },
+  {
+   "page": 155,
+   "mark": "2",
+   "context": "2π· e2iϕ · sin"
+  },
+  {
+   "page": 155,
+   "mark": "2",
+   "context": "Y"
+  },
+  {
+   "page": 155,
+   "mark": "r",
+   "context": "2π· (ˆ"
+  },
+  {
+   "page": 155,
+   "mark": "x",
+   "context": "2π· (ˆr"
+  },
+  {
+   "page": 155,
+   "mark": "r",
+   "context": "2π· (ˆrx −iˆ"
+  },
+  {
+   "page": 155,
+   "mark": "y",
+   "context": "2π· (ˆrx −iˆr"
+  },
+  {
+   "page": 155,
+   "mark": "2",
+   "context": "2π· (ˆrx −iˆry)"
+  },
+  {
+   "page": 155,
+   "mark": "r",
+   "context": "2π· (ˆ"
+  },
+  {
+   "page": 155,
+   "mark": "x",
+   "context": "2π· (ˆr"
+  },
+  {
+   "page": 155,
+   "mark": "r",
+   "context": "2π· (ˆrx −iˆ"
+  },
+  {
+   "page": 155,
+   "mark": "y",
+   "context": "2π· (ˆrx −iˆr"
+  },
+  {
+   "page": 155,
+   "mark": "r",
+   "context": "2π· (ˆrx −iˆry)ˆ"
+  },
+  {
+   "page": 155,
+   "mark": "z",
+   "context": "2π· (ˆrx −iˆry)ˆr"
+  },
+  {
+   "page": 155,
+   "mark": "r",
+   "context": "2(ˆ"
+  },
+  {
+   "page": 155,
+   "mark": "0",
+   "context": "Y"
+  },
+  {
+   "page": 155,
+   "mark": "r",
+   "context": "π· (2ˆ"
+  },
+  {
+   "page": 155,
+   "mark": "2",
+   "context": "π· (2ˆr"
+  },
+  {
+   "page": 155,
+   "mark": "r",
+   "context": "z−ˆ"
+  },
+  {
+   "page": 155,
+   "mark": "2",
+   "context": "z−ˆr"
+  },
+  {
+   "page": 155,
+   "mark": "r",
+   "context": "x−ˆ"
+  },
+  {
+   "page": 155,
+   "mark": "2",
+   "context": "x−ˆr"
+  },
+  {
+   "page": 155,
+   "mark": "r",
+   "context": "2(ˆ"
+  },
+  {
+   "page": 155,
+   "mark": "1",
+   "context": "Y"
+  },
+  {
+   "page": 155,
+   "mark": "r",
+   "context": "2π· (ˆ"
+  },
+  {
+   "page": 155,
+   "mark": "x",
+   "context": "2π· (ˆr"
+  },
+  {
+   "page": 155,
+   "mark": "r",
+   "context": "2π· (ˆrx + iˆ"
+  },
+  {
+   "page": 155,
+   "mark": "y",
+   "context": "2π· (ˆrx + iˆr"
+  },
+  {
+   "page": 155,
+   "mark": "r",
+   "context": "2π· (ˆrx + iˆry)ˆ"
+  },
+  {
+   "page": 155,
+   "mark": "z",
+   "context": "2π· (ˆrx + iˆry)ˆr"
+  },
+  {
+   "page": 155,
+   "mark": "r",
+   "context": "2(ˆ"
+  },
+  {
+   "page": 155,
+   "mark": "2",
+   "context": "Y"
+  },
+  {
+   "page": 155,
+   "mark": "r",
+   "context": "2π· (ˆ"
+  },
+  {
+   "page": 155,
+   "mark": "x",
+   "context": "2π· (ˆr"
+  },
+  {
+   "page": 155,
+   "mark": "r",
+   "context": "2π· (ˆrx + iˆ"
+  },
+  {
+   "page": 155,
+   "mark": "y",
+   "context": "2π· (ˆrx + iˆr"
+  },
+  {
+   "page": 155,
+   "mark": "2",
+   "context": "2π· (ˆrx + iˆry)"
+  },
+  {
+   "page": 156,
+   "mark": "2",
+   "context": "Z"
+  },
+  {
+   "page": 156,
+   "mark": "m",
+   "context": "ℓ(θ, ϕ) Y"
+  },
+  {
+   "page": 156,
+   "mark": "m",
+   "context": "Y"
+  },
+  {
+   "page": 156,
+   "mark": "m",
+   "context": "Y"
+  },
+  {
+   "page": 156,
+   "mark": "m",
+   "context": "∗= (−1)"
+  },
+  {
+   "page": 156,
+   "mark": "2",
+   "context": "cos"
+  },
+  {
+   "page": 156,
+   "mark": "0",
+   "context": "5Y"
+  },
+  {
+   "page": 156,
+   "mark": "1",
+   "context": "∗(θ, ϕ) −Y"
+  },
+  {
+   "page": 156,
+   "mark": "1",
+   "context": "∗(θ, ϕ) + Y"
+  },
+  {
+   "page": 156,
+   "mark": "2",
+   "context": "sin"
+  },
+  {
+   "page": 156,
+   "mark": "2",
+   "context": "Y"
+  },
+  {
+   "page": 156,
+   "mark": "2",
+   "context": "sin"
+  },
+  {
+   "page": 156,
+   "mark": "2",
+   "context": "∗(θ, ϕ) −Y"
+  },
+  {
+   "page": 156,
+   "mark": "2",
+   "context": "sin"
+  },
+  {
+   "page": 156,
+   "mark": "2",
+   "context": "sin2θ sin"
+  },
+  {
+   "page": 156,
+   "mark": "0",
+   "context": "5Y"
+  },
+  {
+   "page": 156,
+   "mark": "2",
+   "context": "Y"
+  },
+  {
+   "page": 156,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 156,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 156,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 156,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 156,
+   "mark": "m",
+   "context": "iℓjℓ(krji)Y"
+  },
+  {
+   "page": 156,
+   "mark": "m",
+   "context": "Y"
+  },
+  {
+   "page": 156,
+   "mark": "d",
+   "context": "ℓ(θ, ϕ)"
+  },
+  {
+   "page": 156,
+   "mark": "m",
+   "context": "iℓjℓ(krji)Y"
+  },
+  {
+   "page": 156,
+   "mark": "m",
+   "context": "Y"
+  },
+  {
+   "page": 156,
+   "mark": "0",
+   "context": "4πY"
+  },
+  {
+   "page": 156,
+   "mark": "m",
+   "context": "iℓjℓ(krji)Y"
+  },
+  {
+   "page": 157,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 157,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 157,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 157,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 157,
+   "mark": "2",
+   "context": "ℓ(θ, ϕ) sin"
+  },
+  {
+   "page": 157,
+   "mark": "2",
+   "context": "ℓ(θ, ϕ) sin2 θ cos"
+  },
+  {
+   "page": 157,
+   "mark": "m",
+   "context": "iℓjℓ(krji)Y"
+  },
+  {
+   "page": 157,
+   "mark": "m",
+   "context": "Y"
+  },
+  {
+   "page": 157,
+   "mark": "m",
+   "context": "iℓjℓ(krji)Y"
+  },
+  {
+   "page": 157,
+   "mark": "m",
+   "context": "Y"
+  },
+  {
+   "page": 157,
+   "mark": "0",
+   "context": "5Y"
+  },
+  {
+   "page": 157,
+   "mark": "2",
+   "context": "Y"
+  },
+  {
+   "page": 157,
+   "mark": "m",
+   "context": "iℓjℓ(krji)Y"
+  },
+  {
+   "page": 157,
+   "mark": "2",
+   "context": "5δℓ"
+  },
+  {
+   "page": 157,
+   "mark": "m",
+   "context": "5δℓ2 δ"
+  },
+  {
+   "page": 157,
+   "mark": "0",
+   "context": "5δℓ2 δm"
+  },
+  {
+   "page": 157,
+   "mark": "2",
+   "context": "15δℓ"
+  },
+  {
+   "page": 157,
+   "mark": "m",
+   "context": "15δℓ2 δ"
+  },
+  {
+   "page": 157,
+   "mark": "2",
+   "context": "15δℓ"
+  },
+  {
+   "page": 157,
+   "mark": "m",
+   "context": "15δℓ2 δ"
+  },
+  {
+   "page": 157,
+   "mark": "2",
+   "context": "15δℓ2 δm"
+  },
+  {
+   "page": 157,
+   "mark": "0",
+   "context": "j0(krji)Y"
+  },
+  {
+   "page": 157,
+   "mark": "j",
+   "context": "5"
+  },
+  {
+   "page": 157,
+   "mark": "2",
+   "context": "5j"
+  },
+  {
+   "page": 157,
+   "mark": "0",
+   "context": "5j2(krji)Y"
+  },
+  {
+   "page": 157,
+   "mark": "2",
+   "context": "∗(ˆrji) −j2(krji)Y"
+  },
+  {
+   "page": 157,
+   "mark": "2",
+   "context": "j0(krji) + j2(krji)(ˆr"
+  },
+  {
+   "page": 157,
+   "mark": "r",
+   "context": "z+ ˆ"
+  },
+  {
+   "page": 157,
+   "mark": "2",
+   "context": "z+ ˆr"
+  },
+  {
+   "page": 157,
+   "mark": "r",
+   "context": "y−2ˆ"
+  },
+  {
+   "page": 157,
+   "mark": "2",
+   "context": "y−2ˆr"
+  },
+  {
+   "page": 157,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 157,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 157,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 157,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 157,
+   "mark": "2",
+   "context": "ℓ(θ, ϕ) sin"
+  },
+  {
+   "page": 157,
+   "mark": "m",
+   "context": "iℓjℓ(krji)Y"
+  },
+  {
+   "page": 157,
+   "mark": "m",
+   "context": "Y"
+  },
+  {
+   "page": 157,
+   "mark": "m",
+   "context": "iℓjℓ(krji)Y"
+  },
+  {
+   "page": 157,
+   "mark": "m",
+   "context": "Y"
+  },
+  {
+   "page": 157,
+   "mark": "2",
+   "context": "∗(θ, ϕ) −Y"
+  },
+  {
+   "page": 157,
+   "mark": "1",
+   "context": "∗(ˆrji)"
+  },
+  {
+   "page": 157,
+   "mark": "m",
+   "context": "iℓjℓ(krji)Y"
+  },
+  {
+   "page": 157,
+   "mark": "2",
+   "context": "15(δℓ"
+  },
+  {
+   "page": 157,
+   "mark": "m",
+   "context": "15(δℓ2 δ"
+  },
+  {
+   "page": 157,
+   "mark": "2",
+   "context": "15(δℓ2 δm−2 −δℓ"
+  },
+  {
+   "page": 157,
+   "mark": "m",
+   "context": "15(δℓ2 δm−2 −δℓ2 δ"
+  },
+  {
+   "page": 157,
+   "mark": "2",
+   "context": "15(δℓ2 δm−2 −δℓ2 δm"
+  },
+  {
+   "page": 157,
+   "mark": "2",
+   "context": "15−Y"
+  },
+  {
+   "page": 158,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 158,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 158,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 158,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 158,
+   "mark": "m",
+   "context": "iℓjℓ(krji)Y"
+  },
+  {
+   "page": 158,
+   "mark": "m",
+   "context": "Y"
+  },
+  {
+   "page": 158,
+   "mark": "1",
+   "context": "∗(θ, ϕ) −Y"
+  },
+  {
+   "page": 158,
+   "mark": "m",
+   "context": "iℓjℓ(krji)Y"
+  },
+  {
+   "page": 158,
+   "mark": "m",
+   "context": "Y"
+  },
+  {
+   "page": 158,
+   "mark": "m",
+   "context": "iℓjℓ(krji)Y"
+  },
+  {
+   "page": 158,
+   "mark": "2",
+   "context": "15δℓ"
+  },
+  {
+   "page": 158,
+   "mark": "m",
+   "context": "15δℓ2 δ"
+  },
+  {
+   "page": 158,
+   "mark": "2",
+   "context": "15δℓ"
+  },
+  {
+   "page": 158,
+   "mark": "m",
+   "context": "15δℓ2 δ"
+  },
+  {
+   "page": 158,
+   "mark": "1",
+   "context": "15δℓ2 δm"
+  },
+  {
+   "page": 158,
+   "mark": "1",
+   "context": "15−Y"
+  },
+  {
+   "page": 158,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 158,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 158,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 158,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 158,
+   "mark": "2",
+   "context": "ℓ(θ, ϕ) sin"
+  },
+  {
+   "page": 158,
+   "mark": "2",
+   "context": "ℓ(θ, ϕ) sin2 θ cos"
+  },
+  {
+   "page": 158,
+   "mark": "m",
+   "context": "iℓjℓ(krji)Y"
+  },
+  {
+   "page": 158,
+   "mark": "m",
+   "context": "Y"
+  },
+  {
+   "page": 158,
+   "mark": "m",
+   "context": "iℓjℓ(krji)Y"
+  },
+  {
+   "page": 158,
+   "mark": "m",
+   "context": "Y"
+  },
+  {
+   "page": 158,
+   "mark": "0",
+   "context": "5Y"
+  },
+  {
+   "page": 158,
+   "mark": "2",
+   "context": "Y"
+  },
+  {
+   "page": 158,
+   "mark": "m",
+   "context": "iℓjℓ(krji)Y"
+  },
+  {
+   "page": 158,
+   "mark": "2",
+   "context": "5δℓ"
+  },
+  {
+   "page": 158,
+   "mark": "m",
+   "context": "5δℓ2 δ"
+  },
+  {
+   "page": 158,
+   "mark": "0",
+   "context": "5δℓ2 δm"
+  },
+  {
+   "page": 158,
+   "mark": "2",
+   "context": "15(δℓ"
+  },
+  {
+   "page": 158,
+   "mark": "m",
+   "context": "15(δℓ2 δ"
+  },
+  {
+   "page": 158,
+   "mark": "2",
+   "context": "15(δℓ2 δm−2 + δℓ"
+  },
+  {
+   "page": 158,
+   "mark": "m",
+   "context": "15(δℓ2 δm−2 + δℓ2 δ"
+  },
+  {
+   "page": 158,
+   "mark": "2",
+   "context": "15(δℓ2 δm−2 + δℓ2 δm"
+  },
+  {
+   "page": 158,
+   "mark": "0",
+   "context": "j0(krji)Y"
+  },
+  {
+   "page": 158,
+   "mark": "j",
+   "context": "5"
+  },
+  {
+   "page": 158,
+   "mark": "2",
+   "context": "5j"
+  },
+  {
+   "page": 158,
+   "mark": "0",
+   "context": "5j2(krji)Y"
+  },
+  {
+   "page": 158,
+   "mark": "j",
+   "context": "15"
+  },
+  {
+   "page": 158,
+   "mark": "0",
+   "context": "15j"
+  },
+  {
+   "page": 158,
+   "mark": "j",
+   "context": "15"
+  },
+  {
+   "page": 158,
+   "mark": "2",
+   "context": "15j"
+  },
+  {
+   "page": 158,
+   "mark": "2",
+   "context": "15j2(krji)Y"
+  },
+  {
+   "page": 158,
+   "mark": "2",
+   "context": "j0(krji) + j2(krji)(ˆr"
+  },
+  {
+   "page": 158,
+   "mark": "r",
+   "context": "z+ ˆ"
+  },
+  {
+   "page": 158,
+   "mark": "2",
+   "context": "z+ ˆr"
+  },
+  {
+   "page": 158,
+   "mark": "r",
+   "context": "x−2ˆ"
+  },
+  {
+   "page": 158,
+   "mark": "2",
+   "context": "x−2ˆr"
+  },
+  {
+   "page": 159,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 159,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 159,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 159,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 159,
+   "mark": "m",
+   "context": "iℓjℓ(krji)Y"
+  },
+  {
+   "page": 159,
+   "mark": "m",
+   "context": "Y"
+  },
+  {
+   "page": 159,
+   "mark": "1",
+   "context": "∗(θ, ϕ) + Y"
+  },
+  {
+   "page": 159,
+   "mark": "m",
+   "context": "iℓjℓ(krji)Y"
+  },
+  {
+   "page": 159,
+   "mark": "m",
+   "context": "Y"
+  },
+  {
+   "page": 159,
+   "mark": "2",
+   "context": "15δℓ"
+  },
+  {
+   "page": 159,
+   "mark": "m",
+   "context": "15δℓ2 δ"
+  },
+  {
+   "page": 159,
+   "mark": "m",
+   "context": "iℓjℓ(krji)Y"
+  },
+  {
+   "page": 159,
+   "mark": "2",
+   "context": "15δℓ"
+  },
+  {
+   "page": 159,
+   "mark": "m",
+   "context": "15δℓ2 δ"
+  },
+  {
+   "page": 159,
+   "mark": "1",
+   "context": "15δℓ2 δm"
+  },
+  {
+   "page": 159,
+   "mark": "1",
+   "context": "15+ Y"
+  },
+  {
+   "page": 159,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 159,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 159,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 159,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 159,
+   "mark": "2",
+   "context": "ℓ(θ, ϕ) cos"
+  },
+  {
+   "page": 159,
+   "mark": "m",
+   "context": "iℓjℓ(krji)Y"
+  },
+  {
+   "page": 159,
+   "mark": "m",
+   "context": "Y"
+  },
+  {
+   "page": 159,
+   "mark": "m",
+   "context": "iℓjℓ(krji)Y"
+  },
+  {
+   "page": 159,
+   "mark": "m",
+   "context": "Y"
+  },
+  {
+   "page": 159,
+   "mark": "0",
+   "context": "5Y"
+  },
+  {
+   "page": 159,
+   "mark": "m",
+   "context": "iℓjℓ(krji)Y"
+  },
+  {
+   "page": 159,
+   "mark": "2",
+   "context": "5δℓ"
+  },
+  {
+   "page": 159,
+   "mark": "m",
+   "context": "5δℓ2 δ"
+  },
+  {
+   "page": 159,
+   "mark": "0",
+   "context": "5δℓ2 δm"
+  },
+  {
+   "page": 159,
+   "mark": "0",
+   "context": "j0(krji)Y"
+  },
+  {
+   "page": 159,
+   "mark": "j",
+   "context": "5"
+  },
+  {
+   "page": 159,
+   "mark": "2",
+   "context": "5j"
+  },
+  {
+   "page": 159,
+   "mark": "0",
+   "context": "5j2(krji)Y"
+  },
+  {
+   "page": 159,
+   "mark": "2",
+   "context": "j0(krji) + j2(krji)(ˆr"
+  },
+  {
+   "page": 159,
+   "mark": "r",
+   "context": "x+ ˆ"
+  },
+  {
+   "page": 159,
+   "mark": "2",
+   "context": "x+ ˆr"
+  },
+  {
+   "page": 159,
+   "mark": "r",
+   "context": "y−2ˆ"
+  },
+  {
+   "page": 159,
+   "mark": "2",
+   "context": "y−2ˆr"
+  },
+  {
+   "page": 159,
+   "mark": "†",
+   "context": "ρ"
+  },
+  {
+   "page": 160,
+   "mark": "†",
+   "context": "ρ"
+  },
+  {
+   "page": 160,
+   "mark": "d",
+   "context": "N(k) ˆOρN(k)"
+  },
+  {
+   "page": 160,
+   "mark": "k",
+   "context": "e−i"
+  },
+  {
+   "page": 160,
+   "mark": "i",
+   "context": "e−ik·r"
+  },
+  {
+   "page": 160,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 160,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 160,
+   "mark": "j",
+   "context": "eik·r"
+  },
+  {
+   "page": 160,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 160,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 160,
+   "mark": "p",
+   "context": "p(k) ˆOρ"
+  },
+  {
+   "page": 160,
+   "mark": "d",
+   "context": "p(k) ˆOρp(k)"
+  },
+  {
+   "page": 160,
+   "mark": "†",
+   "context": "ρ"
+  },
+  {
+   "page": 160,
+   "mark": "k",
+   "context": "e−i"
+  },
+  {
+   "page": 160,
+   "mark": "i",
+   "context": "e−ik·r"
+  },
+  {
+   "page": 160,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 160,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 160,
+   "mark": "j",
+   "context": "eik·r"
+  },
+  {
+   "page": 160,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 160,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 160,
+   "mark": "d",
+   "context": "τ(k) ˆOρτ(k)"
+  },
+  {
+   "page": 160,
+   "mark": "†",
+   "context": "ρ"
+  },
+  {
+   "page": 160,
+   "mark": "k",
+   "context": "e−i"
+  },
+  {
+   "page": 160,
+   "mark": "i",
+   "context": "e−ik·r"
+  },
+  {
+   "page": 160,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 160,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 160,
+   "mark": "j",
+   "context": "eik·r"
+  },
+  {
+   "page": 160,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 160,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 161,
+   "mark": "†",
+   "context": "ρ"
+  },
+  {
+   "page": 161,
+   "mark": "d",
+   "context": "στL(k) ˆOρστL(k)"
+  },
+  {
+   "page": 161,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 161,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 161,
+   "mark": "j",
+   "context": "eik·r"
+  },
+  {
+   "page": 161,
+   "mark": "k",
+   "context": "e−i"
+  },
+  {
+   "page": 161,
+   "mark": "i",
+   "context": "e−ik·r"
+  },
+  {
+   "page": 161,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 161,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 161,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 161,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 161,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 161,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 161,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 161,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 161,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 161,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 161,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 161,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 161,
+   "mark": "2",
+   "context": "j0(krji) + j2(krji)(ˆr"
+  },
+  {
+   "page": 161,
+   "mark": "r",
+   "context": "z+ ˆ"
+  },
+  {
+   "page": 161,
+   "mark": "2",
+   "context": "z+ ˆr"
+  },
+  {
+   "page": 161,
+   "mark": "r",
+   "context": "y−2ˆ"
+  },
+  {
+   "page": 161,
+   "mark": "2",
+   "context": "y−2ˆr"
+  },
+  {
+   "page": 161,
+   "mark": "2",
+   "context": "j0(krji) + j2(krji)(ˆr"
+  },
+  {
+   "page": 161,
+   "mark": "r",
+   "context": "x+ ˆ"
+  },
+  {
+   "page": 161,
+   "mark": "2",
+   "context": "x+ ˆr"
+  },
+  {
+   "page": 161,
+   "mark": "r",
+   "context": "z−2ˆ"
+  },
+  {
+   "page": 161,
+   "mark": "2",
+   "context": "z−2ˆr"
+  },
+  {
+   "page": 161,
+   "mark": "2",
+   "context": "j0(krji) + j2(krji)(ˆr"
+  },
+  {
+   "page": 161,
+   "mark": "r",
+   "context": "x+ ˆ"
+  },
+  {
+   "page": 161,
+   "mark": "2",
+   "context": "x+ ˆr"
+  },
+  {
+   "page": 161,
+   "mark": "r",
+   "context": "y−2ˆ"
+  },
+  {
+   "page": 161,
+   "mark": "2",
+   "context": "y−2ˆr"
+  },
+  {
+   "page": 162,
+   "mark": "†",
+   "context": "ρ"
+  },
+  {
+   "page": 162,
+   "mark": "d",
+   "context": "στT(k) ˆO · ρστT(k)"
+  },
+  {
+   "page": 162,
+   "mark": "k",
+   "context": "e−i"
+  },
+  {
+   "page": 162,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 162,
+   "mark": "j",
+   "context": "eik·r"
+  },
+  {
+   "page": 162,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 162,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 162,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 162,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 162,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 162,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 162,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 162,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 162,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 162,
+   "mark": "2",
+   "context": "2j0(krji) + j2(krji)(2ˆr"
+  },
+  {
+   "page": 162,
+   "mark": "r",
+   "context": "y−ˆ"
+  },
+  {
+   "page": 162,
+   "mark": "2",
+   "context": "y−ˆr"
+  },
+  {
+   "page": 162,
+   "mark": "r",
+   "context": "x−ˆ"
+  },
+  {
+   "page": 162,
+   "mark": "2",
+   "context": "x−ˆr"
+  },
+  {
+   "page": 162,
+   "mark": "2",
+   "context": "2j0(krji) + j2(krji)(2ˆr"
+  },
+  {
+   "page": 162,
+   "mark": "r",
+   "context": "z−ˆ"
+  },
+  {
+   "page": 162,
+   "mark": "2",
+   "context": "z−ˆr"
+  },
+  {
+   "page": 162,
+   "mark": "r",
+   "context": "x−ˆ"
+  },
+  {
+   "page": 162,
+   "mark": "2",
+   "context": "x−ˆr"
+  },
+  {
+   "page": 162,
+   "mark": "2",
+   "context": "2j0(krji) + j2(krji)(2ˆr"
+  },
+  {
+   "page": 162,
+   "mark": "r",
+   "context": "x−ˆ"
+  },
+  {
+   "page": 162,
+   "mark": "2",
+   "context": "x−ˆr"
+  },
+  {
+   "page": 162,
+   "mark": "r",
+   "context": "y−ˆ"
+  },
+  {
+   "page": 162,
+   "mark": "2",
+   "context": "y−ˆr"
+  },
+  {
+   "page": 163,
+   "mark": "2",
+   "context": "ctionscalculatedusingthecenterofmassrimultiplybyafactorofe−k"
+  },
+  {
+   "page": 163,
+   "mark": "2",
+   "context": "centerofmasspartHCM= P"
+  },
+  {
+   "page": 163,
+   "mark": "p",
+   "context": "i=1"
+  },
+  {
+   "page": 163,
+   "mark": "k",
+   "context": "e−i"
+  },
+  {
+   "page": 163,
+   "mark": "r",
+   "context": "e−ik·ˆ"
+  },
+  {
+   "page": 163,
+   "mark": "j",
+   "context": "e−ik·ˆr"
+  },
+  {
+   "page": 163,
+   "mark": "2",
+   "context": "e−ik·ˆrje−P"
+  },
+  {
+   "page": 163,
+   "mark": "k",
+   "context": "e−i"
+  },
+  {
+   "page": 163,
+   "mark": "r",
+   "context": "e−ik·ˆ"
+  },
+  {
+   "page": 163,
+   "mark": "j",
+   "context": "e−ik·ˆr"
+  },
+  {
+   "page": 163,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 163,
+   "mark": "r",
+   "context": "eik·ˆ"
+  },
+  {
+   "page": 163,
+   "mark": "n",
+   "context": "eik·ˆr"
+  },
+  {
+   "page": 163,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 163,
+   "mark": "r",
+   "context": "eik·ˆ"
+  },
+  {
+   "page": 163,
+   "mark": "n",
+   "context": "eik·ˆr"
+  },
+  {
+   "page": 163,
+   "mark": "k",
+   "context": "operatorei"
+  },
+  {
+   "page": 163,
+   "mark": "r",
+   "context": "operatoreik·ˆ"
+  },
+  {
+   "page": 163,
+   "mark": "n",
+   "context": "operatoreik·ˆr"
+  },
+  {
+   "page": 163,
+   "mark": "e",
+   "context": "n"
+  },
+  {
+   "page": 163,
+   "mark": "k",
+   "context": "nei"
+  },
+  {
+   "page": 163,
+   "mark": "r",
+   "context": "neik·ˆ"
+  },
+  {
+   "page": 163,
+   "mark": "n",
+   "context": "neik·ˆr"
+  },
+  {
+   "page": 163,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 163,
+   "mark": "r",
+   "context": "eik·ˆ"
+  },
+  {
+   "page": 163,
+   "mark": "n",
+   "context": "eik·ˆr"
+  },
+  {
+   "page": 163,
+   "mark": "2",
+   "context": "therefore[Hrel, P ] = 0,soe−Hrelτande−P"
+  },
+  {
+   "page": 163,
+   "mark": "k",
+   "context": "e−i"
+  },
+  {
+   "page": 163,
+   "mark": "r",
+   "context": "e−ik·ˆ"
+  },
+  {
+   "page": 163,
+   "mark": "j",
+   "context": "e−ik·ˆr"
+  },
+  {
+   "page": 163,
+   "mark": "2",
+   "context": "e−ik·ˆrje−P"
+  },
+  {
+   "page": 163,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 163,
+   "mark": "r",
+   "context": "eik·ˆ"
+  },
+  {
+   "page": 163,
+   "mark": "n",
+   "context": "eik·ˆr"
+  },
+  {
+   "page": 163,
+   "mark": "k",
+   "context": "e−i"
+  },
+  {
+   "page": 163,
+   "mark": "r",
+   "context": "e−ik·ˆ"
+  },
+  {
+   "page": 163,
+   "mark": "j",
+   "context": "e−ik·ˆr"
+  },
+  {
+   "page": 163,
+   "mark": "2",
+   "context": "e−ik·ˆrje−Hrelτe−P"
+  },
+  {
+   "page": 163,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 163,
+   "mark": "r",
+   "context": "eik·ˆ"
+  },
+  {
+   "page": 163,
+   "mark": "n",
+   "context": "eik·ˆr"
+  },
+  {
+   "page": 163,
+   "mark": "2",
+   "context": "= e−k"
+  },
+  {
+   "page": 163,
+   "mark": "k",
+   "context": "e−i"
+  },
+  {
+   "page": 163,
+   "mark": "r",
+   "context": "e−ik·ˆ"
+  },
+  {
+   "page": 163,
+   "mark": "j",
+   "context": "e−ik·ˆr"
+  },
+  {
+   "page": 163,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 163,
+   "mark": "r",
+   "context": "eik·ˆ"
+  },
+  {
+   "page": 163,
+   "mark": "n",
+   "context": "eik·ˆr"
+  },
+  {
+   "page": 163,
+   "mark": "2",
+   "context": "RCM)e−P"
+  },
+  {
+   "page": 163,
+   "mark": "k",
+   "context": "e−i"
+  },
+  {
+   "page": 163,
+   "mark": "r",
+   "context": "e−ik·(ˆ"
+  },
+  {
+   "page": 163,
+   "mark": "j",
+   "context": "e−ik·(ˆr"
+  },
+  {
+   "page": 163,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 163,
+   "mark": "r",
+   "context": "eik·(ˆ"
+  },
+  {
+   "page": 163,
+   "mark": "n",
+   "context": "eik·(ˆr"
+  },
+  {
+   "page": 164,
+   "mark": "e",
+   "context": "n"
+  },
+  {
+   "page": 164,
+   "mark": "k",
+   "context": "ne±i"
+  },
+  {
+   "page": 164,
+   "mark": "r",
+   "context": "ne±ik·(ˆ"
+  },
+  {
+   "page": 164,
+   "mark": "n",
+   "context": "ne±ik·(ˆr"
+  },
+  {
+   "page": 164,
+   "mark": "k",
+   "context": "e±i"
+  },
+  {
+   "page": 164,
+   "mark": "2",
+   "context": "RCM)e−P"
+  },
+  {
+   "page": 164,
+   "mark": "k",
+   "context": "e−i"
+  },
+  {
+   "page": 164,
+   "mark": "r",
+   "context": "e−ik·(ˆ"
+  },
+  {
+   "page": 164,
+   "mark": "j",
+   "context": "e−ik·(ˆr"
+  },
+  {
+   "page": 164,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 164,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 164,
+   "mark": "r",
+   "context": "eik·(ˆ"
+  },
+  {
+   "page": 164,
+   "mark": "n",
+   "context": "eik·(ˆr"
+  },
+  {
+   "page": 164,
+   "mark": "k",
+   "context": "e−i"
+  },
+  {
+   "page": 164,
+   "mark": "r",
+   "context": "e−ik·ˆ"
+  },
+  {
+   "page": 164,
+   "mark": "j",
+   "context": "e−ik·ˆr"
+  },
+  {
+   "page": 164,
+   "mark": "i",
+   "context": "e−ik·ˆrje"
+  },
+  {
+   "page": 164,
+   "mark": "k",
+   "context": "e−ik·ˆrjei"
+  },
+  {
+   "page": 164,
+   "mark": "k",
+   "context": "RCMe−Hrelτe−i"
+  },
+  {
+   "page": 164,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 164,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 164,
+   "mark": "r",
+   "context": "eik·ˆ"
+  },
+  {
+   "page": 164,
+   "mark": "n",
+   "context": "eik·ˆr"
+  },
+  {
+   "page": 164,
+   "mark": "k",
+   "context": "e−i"
+  },
+  {
+   "page": 164,
+   "mark": "r",
+   "context": "e−ik·ˆ"
+  },
+  {
+   "page": 164,
+   "mark": "j",
+   "context": "e−ik·ˆr"
+  },
+  {
+   "page": 164,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 164,
+   "mark": "k",
+   "context": "ei"
+  },
+  {
+   "page": 164,
+   "mark": "r",
+   "context": "eik·ˆ"
+  },
+  {
+   "page": 164,
+   "mark": "n",
+   "context": "eik·ˆr"
+  },
+  {
+   "page": 164,
+   "mark": "2",
+   "context": "needtomultiplybythefactorofe−k"
+  },
+  {
+   "page": 164,
+   "mark": "4",
+   "context": "Eq.(E.40).Take"
+  },
+  {
+   "page": 164,
+   "mark": "2",
+   "context": "E.40).Take4Heasanexample,inourplots,k= 350MeV/c,m = 939MeV/c"
+  },
+  {
+   "page": 164,
+   "mark": "2",
+   "context": "M= 4m = 8, sothefactor e−k"
+  },
+  {
+   "page": 164,
+   "mark": "3",
+   "context": "2Mbecomes e−16."
+  },
+  {
+   "page": 164,
+   "mark": "3",
+   "context": "ecoordinate(laboratoryframe).Wethenmultiplyourresultsbye−16."
+  }
+ ]
+}

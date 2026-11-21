@@ -1,0 +1,46 @@
+238 Effective computations and ACSV
+
+hand, arguments. Minimality for general Laurent expansions can be tested us-
+ing similar methods, but only becomes even more expensive to compute. As of
+the publication of this book, completely automatic detection of minimal critical
+points is practical only for combinatorial power series expansions.
+
+8.4 Further computations for asymptotics
+
+We end this section with additional computational results that will be necessary
+for our asymptotic arguments in later chapters.
+
+8.4.1 Local Hessian and quadratic degeneracy
+
+Let S be a stratum of codimension s < d, locally defined near some w € S
+
+by the vanishing of functions H,,...,H,, and assume that there exist distinct
+coordinates {o,,...,o,} such that the Jacobian matrix
+Hw) _ Hw)
+H"(w) cae H'l(w)
+s s
+
+is nonsingular, where H!?! denotes the partial derivative of H,, with respect to
+zp. If w = {m,...,Ag-s} = {1,...,d} \ {o1,..., 05} denotes the remaining co-
+ordinates, then the implicit function theorem implies the existence of analytic
+
+functions gj(Zz,,..-,2n,.,) for j ¢ m and a sufficiently small neighborhood O of
+w in C4 such that for all z € O, z lies in S if and only if By = Bilas +++ Zs)
+for all j ¢ 7.
+
+To derive asymptotics, we will ultimately apply the saddle point analyses of
+Chapters 4 and 5 to phase functions of the form
+
+. 0 iO.» d-s
+Bj (Wa en, Way
+$(8) =)" rjlog Bulbine swine) +i) 10, (8.6)
+jen Wj j=l
+obtained by substituting zj = gj(Zr,,..-52x,.,) for j ¢ 7m into log(z”/w™) and
+
+then switching to exponential coordinates near w. In order to use saddle point
+techniques in later chapters, we verify the following.
+
+Lemma 8.21. /f w is a critical point of S then @(0) = 0 and (V¢)(0) = 0.
+
+Proof By construction gj(Wz,,...,Wz,.,) = wy; for all j ¢ a, so 6(0) =
+Liew r;log(w;/wj) = 0.

@@ -4,13 +4,14 @@ doc_title: "A FUNK PERSPECTIVE ON BILLIARDS, PROJECTIVE GEOMETRY AND MAHLER VOLU
 section_id: sec-002-12-summary-of-results
 section_title: "Summary of results"
 section_number: 1.2
-pages: 1-6
+pages: 2-6
 source_pdf: 2012.12159v3.pdf
 source_sha256: 473ec6959e82cd98
-doc_brief: "A FUNK PERSPECTIVE ON BILLIARDS, PROJECTIVE GEOMETRY AND MAHLER VOLUME — We explore connections furnished by the Funk metric, a relative of the Hilbert metric, between projective geometry, billiards"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.843
-latex_coverage_ratio: 0.788
+latex_prose_ratio: 0.954
+latex_coverage_ratio: 0.985
+doc_brief: "A FUNK PERSPECTIVE ON BILLIARDS, PROJECTIVE GEOMETRY AND MAHLER VOLUME — We explore connections furnished by the Funk metric, a relative of the Hilbert metric, between projective geometry, billiards"
 ---
 If $K\subset\mathbb{R}\mathbb{P}^n$ is a convex body with interior, we may fix a hyperplane at infinity $\eta$ that is disjoint from $K$, and consider the corresponding $\eta$-Funk metric on $K$, denoted $\mathop{\mathrm{Funk}}_K^\eta$. Changing $\eta$ results in a change to the Funk metric, but of a very particular type: the Finsler norm is changed by an exact 1-form. This is the core reason behind the projective invariance of many metric invariants associated to the Funk metric, as follows.
 

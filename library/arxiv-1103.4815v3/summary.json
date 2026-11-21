@@ -2,17 +2,22 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1103.4815v3",
  "source_sha256": "28647b02ea1441e3",
- "brief": "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non -abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal",
- "extended": "**Four Equivalent Versions of Non-Abelian Gerbes**\n\n*Thomas Nikolaus a and Konrad Waldorf b*\n\n65 pp, 18 sections.\n\n**Abstract.** We recall and partially improve four versions of smooth, non -abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal 2-bundles. We prove that all these four ver- sions are equivalent, and so establish new relations betwee n interesting recent developments. Prominent partial results that we prove are a bijection betw een the continuous and smooth non- abelian cohomology, and an explicit equivalence between bu ndle gerbes and principal 2-bundles as 2-stacks.\n\n**Outline.** 1 Introduction; 2 Preliminaries; 2.1 Lie Groupoids and Groupoid Actions on Mani; 2.2 Principal Groupoid Bundles; 2.3 Anafunctors; 2.4 Lie 2-Groups and crossed Modules; 3 Version I: Groupoid-valued Cohomology; 4 Version II: Classifying Maps; 5 Version III: Groupoid Bundle Gerbes; 5.2 Properties of Groupoid Bundle Gerbes; 6 Version IV: Principal 2-Bundles; 6.2 Properties of Principal 2-Bundles; 7 Equivalence between Bundle Gerbes and 2-Bund; 7.1 From Principal 2-Bundles to Bundle Gerbes; 7.2 From Bundle Gerbes to Principal 2-Bundles; A Equivariant Anafunctors and Group Actions; B Constructing Equivalences between 2-Stacks; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.3.13: A smooth functor F : X /d47/d47 Y is a weak equivalence if and only if the following\n- Theorem 4.6: For M a smooth manifold and Γ a smoothly separable Lie 2-group, there is a\n- Theorem 5.1.5: The pre-2-stack GrbΓ of Γ -bundle gerbes is a 2-stack.\n- Theorem 5.2.2: Suppose Λ : Γ /d47/d47 Ω is a weak equivalence between Lie 2-groups. Then, the\n- Theorem 5.3.2: LetM be a smooth manifold and let Γ be a Lie 2-group. The above construction\n- Theorem 6.2.1: Principal Γ -2-bundles form a 2-stack 2-BunΓ over smooth manifolds.",
+ "brief": "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non-abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal 2-bundles.",
+ "extended": "**Four Equivalent Versions of Non-Abelian Gerbes**\n\n*Thomas Nikolaus a and Konrad Waldorf b*\n\n65 pp, 22 sections.\n\n**Abstract.** We recall and partially improve four versions of smooth, non-abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal 2-bundles. We prove that all these four ver- sions are equivalent, and so establish new relations between interesting recent developments. Prominent partial results that we prove are a bijection between the continuous and smooth non- abelian cohomology, and an explicit equivalence between bundle gerbes and principal 2-bundles as 2-stacks.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.1 Lie Groupoids and Groupoid Actions on Mani; 2.2 Principal Groupoid Bundles; 2.3 Anafunctors; 2.4 Lie 2-Groups and crossed Modules; 3 Version I: Groupoid-valued Cohomology; 4 Version II: Classifying Maps; 5 Version III: Groupoid Bundle Gerbes; 5.1 Definition via the Plus Construction; 5.2 Properties of Groupoid Bundle Gerbes; 5.3 Classification by Cech Cohomology; 6 Version IV: Principal 2-Bundles; 6.1 Definition of Principal 2-Bundles; 6.2 Properties of Principal 2-Bundles; 7 Equivalence between Bundle Gerbes and 2-Bund; 7.1 From Principal 2-Bundles to Bundle Gerbes",
  "tokens": {
-  "brief": 47,
-  "extended": 464
+  "brief": 49,
+  "extended": 311
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-5"
+   "pages": "2-5"
   },
   {
    "id": "sec-001-2-preliminaries",
@@ -52,50 +57,65 @@
   {
    "id": "sec-008-5-version-iii-groupoid-bundle-gerbes",
    "title": "Version III: Groupoid Bundle Gerbes",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-009-51-definition-via-the-plus-construction",
+   "title": "Definition via the Plus Construction",
    "pages": "21-27"
   },
   {
-   "id": "sec-009-52-properties-of-groupoid-bundle-gerbes",
+   "id": "sec-010-52-properties-of-groupoid-bundle-gerbes",
    "title": "Properties of Groupoid Bundle Gerbes",
-   "pages": "27-33"
+   "pages": "27-31"
   },
   {
-   "id": "sec-010-6-version-iv-principal-2-bundles",
+   "id": "sec-011-53-classification-by-cech-cohomology",
+   "title": "Classification by Cech Cohomology",
+   "pages": "31-33"
+  },
+  {
+   "id": "sec-012-6-version-iv-principal-2-bundles",
    "title": "Version IV: Principal 2-Bundles",
+   "pages": "33-33"
+  },
+  {
+   "id": "sec-013-61-definition-of-principal-2-bundles",
+   "title": "Definition of Principal 2-Bundles",
    "pages": "33-36"
   },
   {
-   "id": "sec-011-62-properties-of-principal-2-bundles",
+   "id": "sec-014-62-properties-of-principal-2-bundles",
    "title": "Properties of Principal 2-Bundles",
    "pages": "36-38"
   },
   {
-   "id": "sec-012-7-equivalence-between-bundle-gerbes-and-2-bundle",
+   "id": "sec-015-7-equivalence-between-bundle-gerbes-and-2-bundle",
    "title": "Equivalence between Bundle Gerbes and 2-Bundles",
    "pages": "38-39"
   },
   {
-   "id": "sec-013-71-from-principal-2-bundles-to-bundle-gerbes",
+   "id": "sec-016-71-from-principal-2-bundles-to-bundle-gerbes",
    "title": "From Principal 2-Bundles to Bundle Gerbes",
    "pages": "39-48"
   },
   {
-   "id": "sec-014-72-from-bundle-gerbes-to-principal-2-bundles",
+   "id": "sec-017-72-from-bundle-gerbes-to-principal-2-bundles",
    "title": "From Bundle Gerbes to Principal 2-Bundles",
    "pages": "48-57"
   },
   {
-   "id": "sec-015-a-equivariant-anafunctors-and-group-actions",
+   "id": "sec-018-a-equivariant-anafunctors-and-group-actions",
    "title": "A Equivariant Anafunctors and Group Actions",
    "pages": "57-59"
   },
   {
-   "id": "sec-016-b-constructing-equivalences-between-2-stacks",
+   "id": "sec-019-b-constructing-equivalences-between-2-stacks",
    "title": "B Constructing Equivalences between 2-Stacks",
    "pages": "59-62"
   },
   {
-   "id": "sec-017-references",
+   "id": "sec-020-references",
    "title": "References",
    "pages": "62-65"
   }
@@ -104,8 +124,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

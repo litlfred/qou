@@ -15,4 +15,4 @@ The functor $\tau_{\mathrm{arch}}$ is the only legal bridge between these column
 * Bridging equalities that cross the wall must use $\approx$ unless stating an explicit error term. They describe the functor, not algebraic derivation steps.
 
 **Motivic shorthand.**
-The $z$-Habiro completion cleanly houses algebraic encounter data, treating quantum dilogarithm poles as quotients of cyclotomic ideals. Under $\tau_{\mathrm{arch}}$, these algebraic poles realize as hyperbolic-triangulation cusps. Any violation of the wall boundary breaks the formal derivation.
+The $z$-Habiro completion houses algebraic encounter data, treating quantum dilogarithm poles as quotients of cyclotomic ideals. Under $\tau_{\mathrm{arch}}$, these algebraic poles realize as hyperbolic-triangulation cusps. Any violation of the wall boundary breaks the formal derivation.

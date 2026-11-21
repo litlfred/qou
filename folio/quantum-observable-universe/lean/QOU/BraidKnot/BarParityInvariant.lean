@@ -38,7 +38,7 @@ Generic `{K : Type*} [Field K]` throughout (the bar-involution needs `q⁻¹`); 
 two lemmas that must divide by `2` (the odd-part-forced-zero corollary and the
 even/odd reconstruction).
 
--- Ref: [manuscript] docs/audits/2026-08-01-mu-p-tension-attack-recon-floor-verdict.md; docs/coordination/s5-so3-keystone.md; bean s5bb
+-- Ref: [leitner2026] docs/audits/2026-08-01-mu-p-tension-attack-recon-floor-verdict.md; docs/coordination/s5-so3-keystone.md; bean s5bb
 -/
 
 namespace QOU.BraidKnot.BarParityInvariant

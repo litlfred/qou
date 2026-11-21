@@ -1,1 +1,1 @@
-LetD(K) =ˆβ, where β∈B3 is a negative braid that satisﬁes the assumptions of Lemma 2.1.
+Then β is generic and the parameter k from the Schreier normal form β′ can be expressed in terms of the original 3-braid β as k = −# {induced products σn2 2 σn1 of negative syllables of β, where n1, n2 ≤−3} .

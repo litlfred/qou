@@ -221,7 +221,7 @@ def main() -> int:
 
     print("\n  muon anchor, SAME extractor, two CODATA editions:")
     print(f"    q  (2022, 206.7682827) = {mp.nstr(q_mu_22, 28)}")
-    print(f"    q  (2018, 206.7682830) = {mp.nstr(q_mu_18, 28)}")
+    print(f"    q  (2018, 206.7682830) = {mp.nstr(q_mu_18, 28)}")  # noqa: P31 — the 2018 edition, compared on purpose
     print(f"    q  (frozen pin)        = {mp.nstr(q_mu_frozen, 28)}")
     print(f"    c_3 @ 2022  = {mp.nstr(c3_22, 15)}   <- what the probe computes")
     print(f"    c_3 @ 2018  = {mp.nstr(c3_18, 15)}   <- what the corpus records")
@@ -411,7 +411,7 @@ def main() -> int:
             "a third value or a computation error. Residual after the edition is "
             "5.0e-9, the corpus literal's own 9-sig-fig rounding. Prices the "
             "whole c_3 target against the CAL-1/2/3 published uncertainties."),
-        "contentBlock": "prop:three-calibration-inputs",
+        "contentBlock": "def:three-calibration-discipline",
         "assertions": a,
         "allPassed": all_passed,
         "parameters": {

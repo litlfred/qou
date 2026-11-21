@@ -8,7 +8,9 @@ pages: 10-10
 source_pdf: Zhao_standard_2010.pdf
 source_sha256: 94a70847c2937ba7
 toc_source: inferred
+doc_brief: "Standard Relations of Multiple Polylogarithm Values at Roots of Unity — Let N be a positive integer."
 ---
+Weight one relations
 When N ≥4 there exist linear relations among MPVs of weight one by a
 theorem of Bass [1]. These relations are important because by multiplying any
 MPV of weight w −1 by such a relation one can get a relation between MPVs
@@ -51,4 +53,3 @@ X
 0≤j<d
 Z(y1,a+jN/d ∗w) =Z(y1,ad ∗w).
 (13)
-4

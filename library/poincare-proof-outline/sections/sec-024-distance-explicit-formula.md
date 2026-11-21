@@ -1,6 +1,6 @@
 ---
 doc_id: poincare-proof-outline
-doc_title: "Poincaré Disc Model"
+doc_title: "Formalization of the Poincare disc model of hyperbolic geometry"
 section_id: sec-024-distance-explicit-formula
 section_title: "Distance explicit formula"
 section_number: null
@@ -8,223 +8,270 @@ pages: 48-54
 source_pdf: POINCARE-proof-outline.pdf
 source_sha256: 8ac25ddb38d360b4
 toc_source: outline
+doc_brief: "Formalization of the Poincare disc model of hyperbolic geometry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant."
 ---
 Instead of the h-distance itself, very frequently its hyperbolic cosine is analyzed.
-abbreviation cosh-dist u v ≡cosh (poincare-distance u v)
+
+abbreviation cosh-dist uv = cosh (poincare-distance wu v)
+
 lemma cosh-poincare-distance-cross-ratio-average:
-assumes u ∈unit-disc v ∈unit-disc u̸ = v ideal-points (poincare-line u v) = {i1, i2}
-shows cosh-dist u v =
-((Re-cross-ratio u i1 v i2) + (Re-cross-ratio v i1 u i2)) / 2
-proof−
-let ?cr = cross-ratio u i1 v i2
+assumes wu € unit-disc v € unit-disc u # v ideal-points (poincare-line uv) = {i1, i2}
+shows cosh-dist uv =
+((Re-cross-ratio u il v i2) + (Re-cross-ratio v il u i2)) / 2
+proof—
+let ?cr = cross-ratio u il v i2
 let ?crRe = Re (to-complex ?cr)
-have ?cr̸ = ∞h is-real (to-complex ?cr) ?crRe > 0
-using distance-cross-ratio-real-positive[OF assms(1−3)] assms(4)
+have ?cr # oop is-real (to-complex ?cr) ?crRe > 0
+using distance-cross-ratio-real-positive|OF assms(1—3)] assms(4)
 by simp-all
+
 48
-then obtain cr where ∗: cross-ratio u i1 v i2 = of-complex cr cr̸ = 0 is-real cr Re cr > 0
-using inf-or-of-complex[of cross-ratio u i1 v i2]
+then obtain cr where *: cross-ratio u il v i2 = of-complex cr cr # 0 is-real cr Re cr > 0
+using inf-or-of-complez|of cross-ratio u il v i2]
 by (smt to-complex-of-complex zero-complex.simps(1))
 thus ?thesis
-using ∗
-using assms cross-ratio-commute-13[of v i1 u i2]
-unfolding poincare-distance-I[OF assms] calc-poincare-distance-def cosh-def
-by (cases Re cr ≥1)
-(auto simp add: ln-div[of 0] exp-minus ﬁeld-simps Re-divide power2-eq-square complex.expand)
+using *
+using assms cross-ratio-commute-13 [of v il u i2]
+unfolding poincare-distance-I{OF assms] calc-poincare-distance-def cosh-def
+by (cases Re cr > 1)
+(auto simp add: In-div[of 0] exp-minus field-simps Re-divide power2-eq-square complex. expand)
 qed
-deﬁnition poincare-distance-formula ′ :: complex ⇒complex ⇒real where
-[simp]: poincare-distance-formula ′ u v = 1 + 2 ∗((cmod (u −v))2 / ((1 −(cmod u)2) ∗(1 −(cmod v)2)))
+
+definition poincare-distance-formula' :: complet = complex = real where
+[simp]: poincare-distance-formula’ uv = 1 + 2 * ((emod (u — v))? / ((1 — (emod u)?) * (1 — (emod v)?)))
+
 Next we show that the following formula expresses h-distance between any two h-points (note that the ideal
-points do not ﬁgure anymore).
-deﬁnition poincare-distance-formula :: complex ⇒complex ⇒real where
-[simp]: poincare-distance-formula u v = arcosh (poincare-distance-formula ′ u v)
+points do not figure anymore).
+
+definition poincare-distance-formula :: complex = complex = real where
+[simp]: poincare-distance-formula uv = arcosh (poincare-distance-formula’ u v)
+
 lemma blaschke-preserve-distance-formula [simp]:
-assumes of-complex k ∈unit-disc u ∈unit-disc v ∈unit-disc
+assumes of-complex k € unit-disc u € unit-disc v € unit-disc
 shows poincare-distance-formula (to-complex (moebius-pt (blaschke k) u)) (to-complex (moebius-pt (blaschke k) v)) =
-poincare-distance-formula (to-complex u) (to-complex v)
+poincare-distance-formula (to-complez u) (to-complex v)
 proof (cases k = 0)
 case True
 thus ?thesis
 by simp
 next
 case False
-obtain u ′ v ′ where ∗: u ′ = to-complex u v ′ = to-complex v
+obtain u’ v’ where «: u’ = to-complex u v' = to-complex v
 by auto
-have cmod u ′ < 1 cmod v ′ < 1 cmod k < 1
-using assms ∗
-using inf-or-of-complex[of u] inf-or-of-complex[of v]
+
+have cmod u' < 1 cmod v' < 1 cmodk < 1
+using assms *
+using inf-or-of-complez[of u] inf-or-of-complez|of v]
 by auto
+
 obtain nu du nv dv d kk ddu ddv where
-∗∗: nu = u ′ −k du = 1 −cnj k ∗u ′ nv = v ′ −k dv = 1 −cnj k ∗v ′
-d = u ′ −v ′ ddu = 1 −u ′∗cnj u ′ ddv = 1 −v ′∗cnj v ′ kk = 1 −k∗cnj k
+xe nu =u’ —kdu=1— enjk eu’ nv =v'—kdv=1—-cnjkx*v'
+d=u'—v' ddu=1 — u'xcnj u! ddv = 1 — v'xenj uv! kk = 1 — keenjk
 by auto
-have d: nu∗dv −nv∗du = d∗kk
-by (subst ∗∗)+ (simp add: ﬁeld-simps)
-have ddu: du∗cnj du −nu∗cnj nu = ddu∗kk
-by (subst ∗∗)+ (simp add: ﬁeld-simps)
-have ddv: dv∗cnj dv −nv∗cnj nv = ddv∗kk
-by (subst ∗∗)+ (simp add: ﬁeld-simps)
-have du̸ = 0
+
+have d: nuxdv — nvxdu = dxkk
+by (subst *«)+ (simp add: field-simps)
+have ddu: duxcnj du — nuxcnj nu = dduxkk
+by (subst *«)+ (simp add: field-simps)
+have ddv: dvxcnj dv — nvxcnj nv = dduxkk
+by (subst *«)+ (simp add: field-simps)
+
+have du # 0
 proof (rule ccontr)
-assume ¬ ?thesis
-hence cmod (1 −cnj k ∗u ′) = 0
-using ‹du = 1 −cnj k ∗u ′›
+assume — ?thesis
+hence cmod (1 — enjk * u') = 0
+using (du = 1 — cnjk * uy
 by auto
-hence cmod (cnj k ∗u ′) = 1
+hence cmod (cnj k *« u') = 1
 by auto
 thus False
-using ‹cmod k < 1› ‹cmod u ′ < 1›
-using mult-strict-mono[of cmod k 1 cmod u ′ 1]
+using (cmod k < 1> «cmod u' < 1>
+using mult-strict-mono|of cmod k 1 cmod u’ 1]
 by (simp add: norm-mult)
 qed
-have dv̸ = 0
+
+have dv 4 0
+
 proof (rule ccontr)
-assume ¬ ?thesis
+assume — ?thesis
+
 49
-hence cmod (1 −cnj k ∗v ′) = 0
-using ‹dv = 1 −cnj k ∗v ′›
+hence cemod (1 — enjk * v') = 0
+using (dv = 1 — cnjk * vy
 by auto
-hence cmod (cnj k ∗v ′) = 1
+
+hence emod (cnj k * v’) = 1
 by auto
+
 thus False
-using ‹cmod k < 1› ‹cmod v ′ < 1›
-using mult-strict-mono[of cmod k 1 cmod v ′ 1]
+using <cmod k < 1» «cmod v' < 1»
+using mult-strict-mono|of cmod k 1 cmod v' 1]
 by (simp add: norm-mult)
+
 qed
-have kk̸ = 0
+
+have kk # 0
 proof (rule ccontr)
-assume ¬ ?thesis
-hence cmod (1 −k ∗cnj k) = 0
-using ‹kk = 1 −k ∗cnj k›
+assume — ?thesis
+hence cmod (1 — k « cnj k) = 0
+using «kk = 1 — k x cnj ky
 by auto
-hence cmod (k ∗cnj k) = 1
+hence cmod (k * cnj k) = 1
 by auto
 thus False
-using ‹cmod k < 1›
-using mult-strict-mono[of cmod k 1 cmod k 1]
-using complex-mod-sqrt-Re-mult-cnj by auto
+using (cmod k < 1)
+using mult-strict-mono|of cmod k 1 cmod k 1]
+using complez-mod-sqrt-Re-mult-cnj by auto
 qed
-note nz = ‹du̸ = 0› ‹dv̸ = 0› ‹kk̸ = 0›
-have nu / du −nv / dv = (nu∗dv −nv∗du) / (du ∗dv)
+
+note nz = (du # 0» «du # 0» ‘kk F O»
+
+have nu / du — nv / dv = (nuxdv — nuxdu) / (du « dv)
 using nz
-by (simp add: ﬁeld-simps)
-hence (cmod (nu/du −nv/dv))2 = cmod ((d∗kk) / (du∗dv) ∗(cnj ((d∗kk) / (du∗dv)))) (is ?lhs = -)
-unfolding complex-mod-mult-cnj[symmetric]
+by (simp add: field-simps)
+hence (cmod (nu/du — nv/dv))? = cemod ((d*kk) / (duxdu) * (enj ((d*kk) / (duxdv)))) (is 2lhs = -)
+unfolding complez-mod-mult-cnj[symmetric]
 by (subst (asm) d) simp
-also have ... = cmod ((d∗cnj d∗kk∗kk) / (du∗cnj du∗dv∗cnj dv))
-by (simp add: ﬁeld-simps norm-mult norm-divide)
-ﬁnally have 1: ?lhs = cmod ((d∗cnj d∗kk∗kk) / (du∗cnj du∗dv∗cnj dv)) .
-have (1 −((cmod nu) / (cmod du))2)∗(1 −((cmod nv) / (cmod dv))2) =
-(1 −cmod((nu ∗cnj nu) / (du ∗cnj du)))∗(1 −cmod((nv ∗cnj nv) / (dv ∗cnj dv))) (is ?rhs = -)
+also have ... = cmod ((d«cnj dxkkxkk) / (duxcnj duxduxcnj dv))
+by (simp add: field-simps norm-mult norm-divide)
+finally have 1: ?lhs = cmod ((dxenj dxkkxkk) / (duxcnj duxduxcnj dv)) .
+
+have (1 — ((emod nu) / (cmod du))?)*(1 — ((emod nv) / (emod dv))?) =
+(1 — cmod((nu * cnj nu) / (du * enj du)))*(1 — emod((nv * enj nv) / (du * cnj dv))) (is ?rhs = -)
 by (metis norm-divide complex-mod-mult-cnj power-divide)
-also have ... = cmod(((du∗cnj du −nu∗cnj nu) / (du ∗cnj du)) ∗((dv∗cnj dv −nv∗cnj nv) / (dv ∗cnj dv)))
-proof−
-have u ′̸ = 1 / cnj k v ′̸ = 1 / cnj k
-using ‹cmod u ′ < 1› ‹cmod v ′ < 1› ‹cmod k < 1›
+also have ... = cmod(((duxcnj du — nuxcnj nu) / (du * cnj du)) * ((duxenj dv — nuxenj nv) / (du * cnj dv)))
+proof—
+have u’ 4 1 / enjkv' A 1 / cnjk
+using <cmod u' < 1» «cmod v' < 1» «emod k < 1
 by (auto simp add: False norm-divide)
 moreover
-have cmod k̸ = 1
-using ‹cmod k < 1›
+have cmod k # 1
+using (cmod k < 1)
 by linarith
 ultimately
-have cmod (nu/du) < 1 cmod (nv/dv) < 1
-using ∗∗(1−4)
-using unit-disc-ﬁx-discI[OF blaschke-unit-disc-ﬁx[OF ‹cmod k < 1›] ‹u ∈unit-disc›] ‹u ′ = to-complex u›
-using unit-disc-ﬁx-discI[OF blaschke-unit-disc-ﬁx[OF ‹cmod k < 1›] ‹v ∈unit-disc›] ‹v ′ = to-complex v›
-using inf-or-of-complex[of u] ‹u ∈unit-disc› inf-or-of-complex[of v] ‹v ∈unit-disc›
-using moebius-pt-blaschke[of k u ′] using moebius-pt-blaschke[of k v ′]
+have cmod (nu/du) < 1 cmod (nu/dv) < 1
+using **(1—4)
+using unit-disc-fir-discI[OF blaschke-unit-disc-fit[OF <cmod k < 1>| «u € unit-disc»] <u’ = to-complex wu
+using unit-disc-fir-discl[OF blaschke-unit-disc-fix[|OF «cmod k < 1%] «v € unit-disc»] <v' = to-complez v»
+using inf-or-of-complez[of u] <u € unit-discy inf-or-of-complex|of v] «v € unit-discr
+using mocbius-pt-blaschke[of k u’| using moebius-pt-blaschke[of k v']
 by auto
-hence (cmod (nu/du))2 < 1 (cmod (nv/dv))2 < 1
-by (simp-all add: cmod-def )
-hence cmod (nu ∗cnj nu / (du ∗cnj du)) < 1 cmod (nv ∗cnj nv / (dv ∗cnj dv)) < 1
+hence (cmod (nu/du))? < 1 (emod (nv/dv))? < 1
+by (simp-all add: cmod-def)
+hence cmod (nu * cnj nu / (du * enj du)) < 1 cmod (nv * cnj nv / (dv * cnj dv)) < 1
 by (metis complex-mod-mult-cnj norm-divide power-divide)+
 moreover
-have is-real (nu ∗cnj nu / (du ∗cnj du)) is-real (nv ∗cnj nv / (dv ∗cnj dv))
-using eq-cnj-iﬀ-real[of nu ∗cnj nu / (du ∗cnj du)]
-using eq-cnj-iﬀ-real[of nv ∗cnj nv / (dv ∗cnj dv)]
-50
+have is-real (nu « cnj nu / (du * enj du)) is-real (nv * cnj nv / (dv * cnj dv))
+using eq-cnj-iff-real[of nu * cnj nu / (du * cnj du)|
+using eq-cnj-iff-reallof nv * cnj nv / (du * enj dv)]
 by (auto simp add: mult.commute)
+
 moreover
-have Re (nu ∗cnj nu / (du ∗cnj du)) ≥0 Re (nv ∗cnj nv / (dv ∗cnj dv)) ≥0
-using ‹du̸ = 0› ‹dv̸ = 0›
+
+have Re (nu * cnj nu / (du * cnj du)) > 0 Re (nv * cnj nv / (du * enj dv)) > 0
+using (du # 0) «dv £ 0»
 unfolding complex-mult-cnj-cmod
 by simp-all
+
 ultimately
-have 1 −cmod (nu ∗cnj nu / (du ∗cnj du)) = cmod (1 −nu ∗cnj nu / (du ∗cnj du))
-1 −cmod (nv ∗cnj nv / (dv ∗cnj dv)) = cmod (1 −nv ∗cnj nv / (dv ∗cnj dv))
-by (simp-all add: cmod-def )
+
+have 1 — cmod (nu * cnj nu / (du « cnj du)) = cmod (1 — nu * cnj nu / (du * cnj du))
+
+1 — cmod (nv * cnj nv / (du * cnj dv)) = cmod (1 — nv * cnj nv / (dv * enj dv))
+
+by (simp-all add: cmod-def)
+
 thus ?thesis
+
 using nz
-by (simp add: diﬀ-divide-distrib norm-mult)
+by (simp add: diff-divide-distrib norm-mult)
 qed
-also have ... = cmod(((ddu ∗kk) / (du ∗cnj du)) ∗((ddv ∗kk) / (dv ∗cnj dv)))
+also have ... = cmod(((ddu * kk) / (du * cnj du)) * ((ddv * kk) / (du * cnj dv)))
 by (subst ddu, subst ddv, simp)
-also have ... = cmod((ddu∗ddv∗kk∗kk) / (du∗cnj du∗dv∗cnj dv))
-by (simp add: ﬁeld-simps)
-ﬁnally have 2: ?rhs = cmod((ddu∗ddv∗kk∗kk) / (du∗cnj du∗dv∗cnj dv))
-.
+also have ... = cmod((dduxdduxkk«kk) / (duxcnj duxduxcnj dv))
+
+by (simp add: field-simps)
+finally have 2: ?rhs = cmod((dduxdduxkk«xkk) / (duxcnj duxdu«cnj dv))
+
 have ?lhs / ?rhs =
-cmod ((d∗cnj d∗kk∗kk) / (du∗cnj du∗dv∗cnj dv)) / cmod((ddu∗ddv∗kk∗kk) / (du∗cnj du∗dv∗cnj dv))
+cmod ((d*cnj dxkkxkk) / (duxcnj duxduxcnj dv)) / cmod((dduxdduxkk*kk) / (duxcnj duxduxcnj dv))
+
 by (subst 1, subst 2, simp)
-also have ... = cmod ((d∗cnj d)/(ddu∗ddv))
+
+also have ... = cmod ((d*cnj d)/(dduxddv))
+
 using nz by (simp add: norm-mult norm-divide)
-also have ... = (cmod d)2 / ((1 −(cmod u ′)2)∗(1 −(cmod v ′)2))
-proof−
-have (cmod u ′)2 < 1 (cmod v ′)2 < 1
-using ‹cmod u ′ < 1› ‹cmod v ′ < 1›
-by (simp-all add: cmod-def )
-hence cmod (1 −u ′ ∗cnj u ′) = 1 −(cmod u ′)2 cmod (1 −v ′ ∗cnj v ′) = 1 −(cmod v ′)2
-by (auto simp add: cmod-eq-Re cmod-power2 power2-eq-square[symmetric])
+also have ... = (cmod d)? / ((1 — (emod u')?)*(1 — (emod v')?))
+proof—
+
+have (cmod u’)? < 1 (cmod v’)? < 1
+using <cmod u' < 1» «cmod v' < 1>
+by (simp-all add: cmod-def)
+hence cmod (1 — u' * enj u’) = 1 — (emod u’)? emod (1 — v! * enj v') = 1 — (emod v')?
+by (auto simp add: cmod-eq-Re cmod-power2 power2-eq-square|symmetric])
 thus ?thesis
 using nz
-by (simp add: ∗∗(6) ∗∗(7) norm-divide norm-mult power2-eq-square)
+by (simp add: **(6) **(7) norm-divide norm-mult power2-eq-square)
 qed
-ﬁnally
-have 3: ?lhs / ?rhs = (cmod d)2 / ((1 −(cmod u ′)2)∗(1 −(cmod v ′)2)) .
-have cmod k̸ = 1 u ′̸ = 1 / cnj k v ′̸ = 1 / cnj k u̸ = ∞h v̸ = ∞h
-using ‹cmod k < 1› ‹u ∈unit-disc› ‹v ∈unit-disc› ∗‹k̸ = 0› ∗∗‹kk̸ = 0› nz
+finally
+have 3: ?lhs / ?rhs = (emod d)? / ((1 — (emod u’)?)*(1 — (emod v')?)) «
+
+have cmodk 4 1u' 41 / cnjkv' £1 / cnjkuF won vF Wn
+using <cmod k < 1) <u € unit-disc» «v € unit-discy * (k A 0» ** «kk # Oy nz
 by auto
+
 thus ?thesis using assms
-using ∗∗∗3
-using moebius-pt-blaschke[of k u ′]
-using moebius-pt-blaschke[of k v ′]
+using * ** 3
+using moebius-pt-blaschke|of k u'|
+using moebius-pt-blaschke[of k v']
 by (simp add: norm-divide)
+
 qed
-To prove the equivalence between the h-distance deﬁnition and the distance formula, we shall employ the without
+
+To prove the equivalence between the h-distance definition and the distance formula, we shall employ the without
 loss of generality principle. Therefore, we must show that the distance formula is preserved by h-isometries.
+
 Rotation preserve poincare-distance-formula.
+
 lemma rotation-preserve-distance-formula [simp]:
-assumes u ∈unit-disc v ∈unit-disc
-shows poincare-distance-formula (to-complex (moebius-pt (moebius-rotation ϕ) u)) (to-complex (moebius-pt (moebius-rotation
-ϕ) v)) =
-poincare-distance-formula (to-complex u) (to-complex v)
+
+assumes u € unit-disc v € unit-disc
+
+shows poincare-distance-formula (to-complex (moebius-pt (moebius-rotation y) u)) (to-complex (moebius-pt (moebius-rotation
+gy) vy) =
+
+poincare-distance-formula (to-complez u) (to-complex v)
+
 using assms
-using inf-or-of-complex[of u] inf-or-of-complex[of v]
+
+using inf-or-of-complez|of u] inf-or-of-complez|of v]
+
 by (auto simp: norm-mult)
-Unit disc ﬁxing Möbius preserve poincare-distance-formula.
-lemma unit-disc-ﬁx-preserve-distance-formula [simp]:
-assumes unit-disc-ﬁx M u ∈unit-disc v ∈unit-disc
-51
-shows poincare-distance-formula (to-complex (moebius-pt M u)) (to-complex (moebius-pt M v)) =
-poincare-distance-formula (to-complex u) (to-complex v) (is ?P ′ u v M)
-proof−
-have ∀u ∈unit-disc. ∀v ∈unit-disc. ?P ′ u v M (is ?P M)
-proof (rule wlog-unit-disc-ﬁx[OF assms(1)])
-ﬁx k
+
+Unit disc fixing Mébius preserve poincare-distance-formula.
+
+lemma unit-disc-fic-preserve-distance-formula [simp]:
+assumes unit-disc-fix Mu € unit-disc v € unit-disc
+shows poincare-distance-formula (to-complez (moebius-pt M u)) (to-complex (moebius-pt M v)) =
+poincare-distance-formula (to-complez u) (to-complez v) (is ?P’ uv M)
+proof—
+have V u € unit-disc. V v € unit-disc. ?P' uv M (is ?P M)
+proof (rule wlog-unit-disc-fix|OF assms(1)])
+fix k
 assume cmod k < 1
-hence of-complex k ∈unit-disc
+hence of-complez k € wnit-disc
 by simp
 thus ?P (blaschke k)
 using blaschke-preserve-distance-formula
 by simp
 next
-ﬁx ϕ
-show ?P (moebius-rotation ϕ)
+fix y
+show ?P (moebius-rotation »)
 using rotation-preserve-distance-formula
 by simp
 next
-ﬁx M1 M2
-assume ∗: ?P M1 and ∗∗: ?P M2 and u11: unit-disc-ﬁx M1 unit-disc-ﬁx M2
+fix M1 M2
+assume *: ?P M1 and *«*: ?P M2 and w11: unit-disc-fix M1 unit-disc-fix M2
 thus ?P (M1 + M2)
 by (auto simp del: poincare-distance-formula-def )
 qed
@@ -232,47 +279,58 @@ thus ?thesis
 using assms
 by simp
 qed
+
 The equivalence between the two h-distance representations.
+
 lemma poincare-distance-formula:
-assumes u ∈unit-disc and v ∈unit-disc
-shows poincare-distance u v = poincare-distance-formula (to-complex u) (to-complex v) (is ?P u v)
-proof (rule wlog-x-axis)
-ﬁx x
-assume ∗: is-real x 0 ≤Re x Re x < 1
-show ?P 0 h (of-complex x) (is ?lhs = ?rhs)
-proof−
-have of-complex x ∈unit-disc of-complex x ∈circline-set x-axis cmod x < 1
-using ∗cmod-eq-Re
-by (auto simp add: circline-set-x-axis)
-hence ?lhs = |ln (Re ((1 −x) / (1 + x)))|
-using poincare-distance-zero-x-axis[of of-complex x]
+assumes u € unit-disc and v € unit-disc
+shows poincare-distance u v = poincare-distance-formula (to-complex u) (to-complex v) (is ?P uv)
+proof (rule wlog-x-azis)
+fix x
+assume *: is-real zr 0 < Rex Rex < 1
+show ?P 0» (of-complex x) (is ?lhs = ?rhs)
+proof—
+have of-complex x € unit-disc of-complex x € circline-set x-axis cmod x < 1
+using * cmod-eq-Re
+by (auto simp add: circline-set-x-azis)
+hence ?lhs = |In (Re ((1 — x) / (1 + 2)))|
+using poincare-distance-zero-x-axis[of of-complex |
 by simp
 moreover
-have ?rhs = |ln (Re ((1 −x) / (1 + x)))|
-proof−
-let ?x = 1 + 2 ∗(cmod x)2 / (1 −(cmod x)2)
-have 0 ≤2 ∗(cmod x)2 / (1 −(cmod x)2)
-by (smt ‹cmod x < 1› divide-nonneg-nonneg norm-ge-zero power-le-one zero-le-power2)
-hence arcosh-real-gt: 1 ≤?x
+have ?rhs = |In (Re ((1 — 2) / (1 + 2)))|
+proof —
+let 2x = 1 + 2 * (emod x)? / (1 — (emod 2)?)
+have 0 < 2 * (cmod x)? / (1 — (emod x)?)
+by (smt <cmod x < 1) divide-nonneg-nonneg norm-ge-zero power-le-one zero-le-power2)
+hence arcosh-real-gt: 1 < ?x
+
 by auto
 have ?rhs = arcosh ?x
+
 by simp
-also have ... = ln ((1 + (cmod x)2) / (1 −(cmod x)2) + 2 ∗(cmod x) / (1 −(cmod x)2))
-proof−
-have 1 −(cmod x)2 > 0
-using ‹cmod x < 1›
+also have ... = In ((1 + (cmod x)”) / (1 — (emod x)?) + 2 * (emod x) / (1 — (cmod x)?))
+proof—
+
+have 1 — (cmod x)? > 0
+
+using (cmod x < 1»
+
 by (smt norm-not-less-zero one-power2 power2-eq-imp-eq power-mono)
-hence 1: ?x = (1 + (cmod x)2) / (1 −(cmod x)2)
-by (simp add: ﬁeld-simps)
-have 2: ?x2 −1 = (4 ∗(cmod x)2) / (1 −(cmod x)2)2
-using ‹1 −(cmod x)2 > 0›
+hence 1: 2x = (1 + (cmod x)”) / (1 — (emod x)?)
+
+by (simp add: field-simps)
+have 2: ?1? — 1 = (4 * (cmod x)”) / (1 — (emod x)*)?
+
+using «1 — (cmod x)? > 0»
+
 apply (subst 1)
+
 unfolding power-divide
-by (subst divide-diﬀ-eq-iﬀ, simp, simp add: power2-eq-square ﬁeld-simps)
+
+by (subst divide-diff-eq-iff, simp, simp add: power2-eq-square field-simps)
 show ?thesis
-52
-using ‹1 −(cmod x)2 > 0›
-apply (subst arcosh-real-def [OF arcosh-real-gt])
+using «1 — (cmod x)? > 0»
+apply (subst arcosh-real-def|OF arcosh-real-gt])
 apply (subst 2)
 apply (subst 1)
 apply (subst real-sqrt-divide)
@@ -280,107 +338,119 @@ apply (subst real-sqrt-mult)
 apply simp
 done
 qed
-also have ... = ln (((1 + (cmod x))2) / (1 −(cmod x)2))
-apply (subst add-divide-distrib[symmetric])
-apply (simp add: ﬁeld-simps power2-eq-square)
+also have ... = In (((1 + (emod x))*) / (1 — (emod x)?))
+apply (subst add-divide-distrib|symmetric])
+apply (simp add: field-simps power2-eq-square)
 done
-also have ... = ln ((1 + cmod x) / (1 −(cmod x)))
-using ‹cmod x < 1›
-using square-diﬀ-square-factored[of 1 cmod x]
+also have ... = In ((1 + cmod x) / (1 — (cmod z)))
+using (cmod « < 1»
+using square-diff-square-factored|of 1 cmod a]
 by (simp add: power2-eq-square)
-also have ... = |ln (Re ((1 −x) / (1 + x)))|
-proof−
-have ∗: Re ((1 −x) / (1 + x)) ≤1 Re ((1 −x) / (1 + x)) > 0
-using ‹is-real x› ‹Re x ≥0› ‹Re x < 1›
-using complex-is-Real-iﬀ
+also have ... = |In (Re ((1 — z) / (1 + 2)))|
+proof—
+have «: Re ((1 — x) / (1 +2)) <1 Re ((1 — 2) / (1+ 2))>0
+using <is-real z» «(Re x > 0) (Rea < 1»
+using complex-is-Real-iff
 by auto
-hence |ln (Re ((1 −x) / (1 + x)))| = −ln (Re ((1 −x) / (1 + x)))
+hence |In (Re ((1 — x) / (1 + 2)))| = — In (Re ((1 — z) / (1 + 2)))
 by auto
-hence |ln (Re ((1 −x) / (1 + x)))| = ln (Re ((1 + x) / (1 −x)))
-using ln-div[of 1 Re ((1 −x)/(1 + x))] ∗‹is-real x›
-by (fastforce simp: complex-is-Real-iﬀ)
+hence |In (Re ((1 — x) / (1 + 2)))| = In (Re ((1 +. z) / (1 — 2)))
+using In-divlof 1 Re ((1 — x)/(1 + 2))] * <és-real x»
+by (fastforce simp: complex-is-Real-iff)
 moreover
-have ln ((1 + cmod x) / (1 −cmod x)) = ln ((1 + Re x) / (1 −Re x))
-using ‹Re x ≥0› ‹is-real x›
+have In ((1 + cmod x) / (1 — cmod x)) = In ((1 + Rez) / (1 — Re z))
+using (Re x > 0)» <is-real x»
 using cmod-eq-Re by auto
 moreover
-have (1 + Re x) / (1 −Re x) = Re ((1 + x) / (1 −x))
-using ‹is-real x› ‹Re x < 1›
-by (smt Re-divide-real eq-iﬀ-diﬀ-eq-0 minus-complex.simps one-complex.simps plus-complex.simps)
+have (1 + Re x) / (1 — Re x) = Re ((1 +z) / (1 - 2))
+using <is-real z» «Re x < 1>
+by (smt Re-divide-real eq-iff-diff-eq-0 minus-complex.simps one-complez.simps plus-complex.simps)
 ultimately
 show ?thesis
 by simp
 qed
-ﬁnally
+finally
 show ?thesis
-.
+
 qed
 ultimately
 show ?thesis
 by simp
 qed
 next
-ﬁx M u v
-assume ∗: unit-disc-ﬁx M u ∈unit-disc v ∈unit-disc
-assume ?P (moebius-pt M u) (moebius-pt M v)
-thus ?P u v
-using ∗(1−3)
+fix Muv
+assume *: unit-disc-fir M wu € unit-disc v € unit-disc
+assume ?P (mocbius-pt M u) (moebius-pt M v)
+thus ?Puv
+using *(1—3)
 by (simp del: poincare-distance-formula-def )
 next
-show u ∈unit-disc v ∈unit-disc
+show wu € unit-disc v € unit-disc
 by fact+
 qed
+
 Some additional properties proved easily using the distance formula.
+
 poincare-distance is symmetric.
+
 lemma poincare-distance-sym:
-assumes u ∈unit-disc and v ∈unit-disc
+assumes u € unit-disc and v € unit-disc
 shows poincare-distance u v = poincare-distance v u
-53
 using assms
+
 using poincare-distance-formula[OF assms(1) assms(2)]
 using poincare-distance-formula[OF assms(2) assms(1)]
 by (simp add: mult.commute norm-minus-commute)
-lemma poincare-distance-formula ′-ge-1:
-assumes u ∈unit-disc and v ∈unit-disc
-shows 1 ≤poincare-distance-formula ′ (to-complex u) (to-complex v)
-using unit-disc-cmod-square-lt-1[OF assms(1)] unit-disc-cmod-square-lt-1[OF assms(2)]
+
+lemma poincare-distance-formula'-ge-1:
+assumes u € unit-disc and v € unit-disc
+shows 1 < poincare-distance-formula’ (to-complex u) (to-complez v)
+using unit-disc-cmod-square-lt-1|OF assms(1)| unit-disc-cmod-square-lt-1[OF assms(2)]
 by auto
+
 poincare-distance is non-negative.
+
 lemma poincare-distance-ge0:
-assumes u ∈unit-disc and v ∈unit-disc
-shows poincare-distance u v ≥0
-using poincare-distance-formula ′-ge-1 assms by (simp add: poincare-distance-formula)
+assumes u € unit-disc and v € unit-disc
+shows poincare-distance uv > 0
+using poincare-distance-formula'-ge-1 assms by (simp add: poincare-distance-formula)
+
 lemma cosh-dist:
-assumes u ∈unit-disc and v ∈unit-disc
-shows cosh-dist u v = poincare-distance-formula ′ (to-complex u) (to-complex v)
-using poincare-distance-formula[OF assms] poincare-distance-formula ′-ge-1[OF assms]
+assumes u € unit-disc and v € unit-disc
+shows cosh-dist uv = poincare-distance-formula’ (to-complex u) (to-complez v)
+using poincare-distance-formula[OF assms| poincare-distance-formula'-ge-1[OF assms]
 by simp
+
 poincare-distance is zero only if the two points are equal.
-lemma poincare-distance-eq-0-iﬀ:
-assumes u ∈unit-disc and v ∈unit-disc
-shows poincare-distance u v = 0 ←→u = v
+
+lemma poincare-distance-eq-0-iff :
+assumes u € unit-disc and v € unit-disc
+shows poincare-distance uv = 0 +> u=v
 using assms
 apply auto
-using poincare-distance-formula ′-ge-1[OF assms]
-using unit-disc-cmod-square-lt-1[OF assms(1)] unit-disc-cmod-square-lt-1[OF assms(2)]
+using poincare-distance-formula'-ge-1[OF assms]
+using unit-disc-cmod-square-lt-1|OF assms(1)| unit-disc-cmod-square-lt-1[OF assms(2)]
 apply (simp add: poincare-distance-formula)
 by (simp add: unit-disc-to-complex-inj)
+
 Conjugate preserve poincare-distance-formula.
+
 lemma conjugate-preserve-poincare-distance [simp]:
-assumes u ∈unit-disc and v ∈unit-disc
+assumes u € unit-disc and v € unit-disc
 shows poincare-distance (conjugate u) (conjugate v) = poincare-distance u v
-proof−
-obtain u ′ v ′ where ∗: u = of-complex u ′ v = of-complex v ′
-using assms inf-or-of-complex[of u] inf-or-of-complex[of v]
+proof—
+obtain u’ v' where «: u = of-complex u' v = of-complex v'
+using assms inf-or-of-complez|of u] inf-or-of-complez|of v]
 by auto
-have ∗∗: conjugate u ∈unit-disc conjugate v ∈unit-disc
-using ∗assms
+
+have **: conjugate u € unit-disc conjugate v € unit-disc
+using * assms
 by auto
+
 show ?thesis
-using ∗
-using poincare-distance-formula[OF assms]
-using poincare-distance-formula[OF ∗∗]
-by (metis complex-cnj-diﬀcomplex-mod-cnj conjugate-of-complex poincare-distance-def poincare-distance-formula ′-def
+using *
+using poincare-distance-formula|OF assms]
+using poincare-distance-formula[OF x]
+by (metis complez-cnj-diff complex-mod-cnj conjugate-of-complex poincare-distance-def poincare-distance-formula'-def
 poincare-distance-formula-def to-complex-of-complex)
 qed
-5.2

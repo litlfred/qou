@@ -21,7 +21,7 @@ the convergence half is the named next infra brick.
 Verified `lean`-direct against the pinned Mathlib `Complex.Analytic` cone (built from source)
 + `PhiBProd`. Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-07-25-faddeev-uniqueness-keystone-state.md
+-- Ref: [leitner2026] docs/audits/2026-07-25-faddeev-uniqueness-keystone-state.md
 -/
 
 open Set Complex

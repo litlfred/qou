@@ -1,41 +1,56 @@
 Affine Hecke algebras 415
-depends only on w owing to (1.1). We note that (1.6) and its counterpart for p' can
+
+depends only on w owing to (1.1). We note that (1.6) and its counterpart for #’ can
 be deduced directly from formulas (2.9)-(2.12) below. But one has to prove
-independently that (2.9)-(2.12) give a representation of f or J' in this way. This is
-not difficult. Another way is to use @; and ; below. For some questions (e.g., for
-q'q" -- O) it is convenient to replace C[ Y] by C Y., αe Z- J in the definitions. To
-do this we multiply (1.3) by Y-1,
+independently that (2.9)—(2.12) give a representation of # or #’ in this way. This is
+not difficult. Another way is to use ®; and @; below. For some questions (e.g., for
+q'q" = 0) it is convenient to replace C[ Y] by CL Y,, «€Z_] in the definitions. To
+do this we multiply (1.3) by ¥;?.
+
 There is the action
-w(Yc) = Yw(a), w(ya) = yw(a), αeZ ,
-of the Weyl group W w on C[ YJ and CEyJ. Note that @"- 1 Cy; can be identified
-with our basic Cn in a natural way. Then Cy is nothing else but the symmetric
-algebra of Cn with the usual induced action of W.
+
+W(Y2) = Yio, W(Va) =Ywe, ED,
+
+of the Weyl group Waw on C[Y] and C[y]. Note that @3_, Cy; can be identified
+with our basic C” in a natural way. Then C[y] is nothing else but the symmetric
+algebra of C” with the usual induced action of W.
+
 Proposition 1.2 (a) The elements
-Φ; = T; +(qi- 1)/(Y;- 1)e死, 1 ≤i≤n, (1.8)
+%=T,+(qi-)A%-NeH, 1Sisn, (1.8)
+
 satisfy the relations
-Φ, Y= Ysi(α)Φi, αeZ. (1.9)
-(b) The elements @w = @i; . . . @i, where w = Si, . . . Sir, I(w) = l, have the following
+OY, = Yow i, vEL. (1.9)
+
+(b) The elements ®, = ;,... ®;,, where w = Si,» «Siz, (w) = 1, have the following
 properties
-dwY= Yw(α)dw, αeE, (1.10)
- = wew C(Y)Φw = ④wewΦw C(Y) . (1.11)
-(c) The element w does not depend on the choice of reduced decomposition of w:
-ΦwΦw = Φww* if l(ww') = l(w) + l(w") . (1.12)
-(d) Properties (a), (b), (c) hold good for Jp' with Y; replaced by y; and @; by
-Φi= Si + hiyil, 1≤i≤n. (1.13)
-The proof can be found in [Lul, Sect. 5]. The particular case of An (to be more
-precise, of the root system for GLn + 1) was considered in [Ch 3, Sect. 3]. Statements
+
+Oy ¥, = Yuya) Py, ES , (1.10)
+H = Owew C(Y)®y = Ovew Py C(Y) (1.11)
+(c) The element ©,, does not depend on the choice of reduced decomposition of w:
+,%, = O,, if I(ww') = lw) + lw’). (1.12)
+(d) Properties (a), (b), (c) hold good for #' with Y; replaced by y; and ©; by
+gi=sthyrt, 1Sisn. (1.13)
+
+The proof can be found in [Lu1, Sect. 5]. The particular case of A, (to be more
+precise, of the root system for GL, ,) was considered in [Ch 3, Sect. 3]. Statements
 (a), (b), (c) are close to the corresponding (slightly weaker) properties of the
 intertwiners from [Ma, (4.3.2)] and [Ro]. For the sake of completeness we will
 prove the proposition briefly (the proof from [Lu1] is somewhat different).
+
 Formulas (1.8), (1.9) are nothing else but relations (1.3). Let us introduce the set
-{ @w} for some choice of the corresponding reduced decompositions of elements
-we W (now we do not worry about the uniqueness). Then (1.1O) is quite clear.
+{®,,} for some choice of the corresponding reduced decompositions of elements
+we W (now we do not worry about the uniqueness). Then (1.10) is quite clear.
 Assertion (1.11) can be easily deduced from (1.6) by induction. The only thing we
 need for this is the set of decompositions
-@w = Tw +Z Pw, Tw", (1.14)
-where Pw.eC(Y), w, w'e W, l(w') < l(w). To prove (c) we will use the following
-Lemma 1.3 (a) The algebra C[Y] coincides with its centralizer ZC[YJ--
-(Z e  IEZ, C[Y]] = O} (see [Ch3] for GLn+ 1).
-(b) The centre of  is the algebra C[Y]w of W-invariant polynomials in C[Y]
-(due to Bernstein).
-(c) The above statements hold good for C(Y)   and for Xp', Xp'
+
+G, = Ty +> Pw Tw (1.14)
+
+where P,,,€C(Y), w, w’e W, I(w’) < I(w). To prove (c) we will use the following
+
+Lemma 1.3 (a) The algebra C[Y] coincides with its centralizer ZC[Y]=
+{Ze H#|[Z, CLY]] = 0} (see [(Ch3] for GL, +1).
+
+(b) The centre of # is the algebra C[Y]” of W-invariant polynomials in CLY]
+(due to Bernstein). _ _
+
+(c) The above statements hold good for C(Y) < # and for #’, #’.

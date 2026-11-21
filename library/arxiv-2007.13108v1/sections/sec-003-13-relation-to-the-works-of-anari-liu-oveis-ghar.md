@@ -7,10 +7,11 @@ section_number: 1.3
 pages: 5-6
 source_pdf: 2007.13108v1.pdf
 source_sha256: b298478f5f5b948d
-doc_brief: "Log concavity and concentration of Lipschitz functions on the Boolean hypercube — It is well-known that measures whose density is the form e−V where V is a uniformly convex potential on Rn attain"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.985
 latex_coverage_ratio: 1.0
+doc_brief: "Log concavity and concentration of Lipschitz functions on the Boolean hypercube — It is well-known that measures whose density is the form e−V where V is a uniformly convex potential on Rn attain"
 ---
 A seemingly related notion of log-concavity of measures on the discrete hypercube was given in a series of works by Anari, Liu, Oveis-Gharan and Vinzant in \cite{AOV2,AOV1}. Given $\{-1,1\}$-Bernoulli random variables $X_1,\dots,X_n$ distributed according to a law $\nu$, which can be identified with a random subset $A \subset [n]$ by $X_i = 2 \mathbf{1}_{i \in A} - 1$, they consider the generating polynomial
 $$

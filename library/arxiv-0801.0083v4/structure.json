@@ -7,10 +7,11 @@
   "bytes": 419302,
   "pages": 36,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,28 @@
    "stamp_date": "18 Feb 2010"
   },
   "doi": null,
-  "title": "CENTRAL EXTENSIONS OF GERBES AMNON YEKUTIELI",
-  "authors_raw": null,
+  "title": "CENTRAL EXTENSIONS OF GERBES",
+  "authors_raw": "AMNON YEKUTIELI",
   "title_lines": [
-   "CENTRAL EXTENSIONS OF GERBES",
-   "AMNON YEKUTIELI"
+   "CENTRAL EXTENSIONS OF GERBES"
   ],
-  "abstract": "W e introduce the notion of central extension of gerbes on a to po- logical space X. W e show that there are obstruction classes to lifting objec ts and isomorphisms in a central extension. W e also discuss pro nilpotent gerbes. These results are used in the paper [Ye] to study twisted defo rmation quanti- zation on algebraic varieties.",
+  "abstract": "We introduce the notion of central extension of gerbes on a topo- logical space X. We show that there are obstruction classes to lifting objects and isomorphisms in a central extension. We also discuss pronilpotent gerbes. These results are used in the paper [Ye] to study twisted deformation quanti- zation on algebraic varieties.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20210722013854-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20210722013854-04'00'"
+  },
+  "title_raw": "CENTRAL EXTENSIONS OF GERBES",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "CENTRAL EXTENSIONS OF GERBES Contents Introduction Recalling some Facts on 2-Categories Prestacks on a Topological Space Extensions of Gerbes Obstruction Classes Suﬃcient Conditions for Existence of Obstruction Classes Pronilpotent Gerbes Fake Global Objects of Gerbes References 0. Introduction A ge",
+   "outline": "0. Introduction",
+   "text": "CENTRAL EXTENSIONS OF GERBES",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "CENTRAL EXTENSIONS OF GERBES AMNON YEKUTIELI"
  },
  "toc": [
   {
@@ -41,149 +50,490 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "0"
+   "number": "0",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Recalling some Facts on 2-Categories",
    "page": 3,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Prestacks on a Topological Space",
    "page": 8,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Extensions of Gerbes",
    "page": 12,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Obstruction Classes",
    "page": 19,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Sufficient Conditions for Existence of Obstruction Classes",
    "page": 25,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Pronilpotent Gerbes",
    "page": 29,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Fake Global Objects of Gerbes",
    "page": 33,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 36,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 437,
+   "n_words": 66,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-0-introduction",
    "number": "0",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 8,
-   "n_chars": 16650,
-   "n_words": 3337
+   "page_end": 3,
+   "n_chars": 5631,
+   "n_words": 1012,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-2-prestacks-on-a-topological-space",
+   "id": "sec-001-1-recalling-some-facts-on-2-categories",
+   "number": "1",
+   "title": "Recalling some Facts on 2-Categories",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 8,
+   "n_chars": 10493,
+   "n_words": 2062,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-2-prestacks-on-a-topological-space",
    "number": "2",
    "title": "Prestacks on a Topological Space",
    "level": 1,
    "page_start": 8,
-   "page_end": 11,
-   "n_chars": 7223,
-   "n_words": 1558
+   "page_end": 12,
+   "n_chars": 9941,
+   "n_words": 1953,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-3-extensions-of-gerbes",
+   "id": "sec-003-3-extensions-of-gerbes",
    "number": "3",
    "title": "Extensions of Gerbes",
    "level": 1,
-   "page_start": 11,
+   "page_start": 12,
    "page_end": 19,
-   "n_chars": 19597,
-   "n_words": 4175
+   "n_chars": 16135,
+   "n_words": 3288,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-4-obstruction-classes",
+   "id": "sec-004-4-obstruction-classes",
    "number": "4",
    "title": "Obstruction Classes",
    "level": 1,
    "page_start": 19,
    "page_end": 25,
-   "n_chars": 12450,
-   "n_words": 2693
+   "n_chars": 12103,
+   "n_words": 2346,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-5-sufficient-conditions-for-existence-of-obstruc",
+   "id": "sec-005-5-sufficient-conditions-for-existence-of-obstruc",
    "number": "5",
    "title": "Sufficient Conditions for Existence of Obstruction Classes",
    "level": 1,
    "page_start": 25,
    "page_end": 29,
-   "n_chars": 8359,
-   "n_words": 1739
+   "n_chars": 8110,
+   "n_words": 1567,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-6-pronilpotent-gerbes",
+   "id": "sec-006-6-pronilpotent-gerbes",
    "number": "6",
    "title": "Pronilpotent Gerbes",
    "level": 1,
    "page_start": 29,
-   "page_end": 36,
-   "n_chars": 17707,
-   "n_words": 3537
+   "page_end": 33,
+   "n_chars": 9201,
+   "n_words": 1750,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-references",
+   "id": "sec-007-7-fake-global-objects-of-gerbes",
+   "number": "7",
+   "title": "Fake Global Objects of Gerbes",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 36,
+   "n_chars": 8117,
+   "n_words": 1478,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 36,
    "page_end": 36,
-   "n_chars": 1740,
-   "n_words": 250
+   "n_chars": 1724,
+   "n_words": 234,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 9,
-  "sections": 7,
-  "chars_total": 83726,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 10,
+  "chars_total": 81892,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 8,
-   "overlaid": 6,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -191,55 +541,76 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-0-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.624,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.906,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-2-prestacks-on-a-topological-space",
+     "id": "sec-001-1-recalling-some-facts-on-2-categories",
+     "title": "Recalling some Facts on 2-Categories",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-2-prestacks-on-a-topological-space",
      "title": "Prestacks on a Topological Space",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.965,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-3-extensions-of-gerbes",
+     "id": "sec-003-3-extensions-of-gerbes",
      "title": "Extensions of Gerbes",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-003-4-obstruction-classes",
+     "id": "sec-004-4-obstruction-classes",
      "title": "Obstruction Classes",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-004-5-sufficient-conditions-for-existence-of-obstruc",
+     "id": "sec-005-5-sufficient-conditions-for-existence-of-obstruc",
      "title": "Sufficient Conditions for Existence of Obstruction Classes",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-005-6-pronilpotent-gerbes",
+     "id": "sec-006-6-pronilpotent-gerbes",
      "title": "Pronilpotent Gerbes",
-     "prose_ratio": 0.997,
-     "coverage_ratio": 0.961,
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-006-references",
+     "id": "sec-007-7-fake-global-objects-of-gerbes",
+     "title": "Fake Global Objects of Gerbes",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-references",
      "title": "References",
      "result": "no matching \\section"
     }

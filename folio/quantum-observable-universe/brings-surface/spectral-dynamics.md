@@ -3,7 +3,7 @@ The growth profiles of the quaternionic spectral resolvents separate the space-l
 - *$\omega_1$ (space-like):* the factor $1/\ln_q(1+r)$ diverges as $r\to 0$. Thus $\omega_1$ achieves infinite density at the base stratum $M_0$, characterising the primordial vortex. This mode anchors the $U(1)$ longitudinal backbone of the $\mathrm{SU}(2)$ bundle.
 - *$\omega_2,\omega_3$ (time-like):* the factor $\exp_q(r)-1$ vanishes at $r=0$ and grows rapidly for small $r$, driven by the $q$-deformed Reeb flow ([$q$-Reeb flow](#ex:q-reeb-flow)). These ladder modes expand at the big bang before tapering as the geometric viscosity ([$q$-harmonic physical interpretation](#rem:q-harmonic-physical)) takes hold.
 
-We embed the radial parameter into $\mathrm{Sp}(1)$ via the unit quaternion to realise the rotation as a function of $r$:
+Embed the radial parameter into $\mathrm{Sp}(1)$ via the unit quaternion to realise the rotation as a function of $r$:
 
 ```tex
 \begin{equation}\label{eq:sp1-quaternion}

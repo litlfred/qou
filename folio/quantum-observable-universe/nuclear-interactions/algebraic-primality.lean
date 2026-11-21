@@ -15,7 +15,7 @@ predicate `inSpan n parts`, so the *combinatorial* structure of the predicate
 (quantifying over nontrivial decompositions) is formalised exactly. The
 vacuous primality of `n = 1` is proved sorry-free.
 
--- Ref: [manuscript] particle-interactions/algebraic-primality
+-- Ref: [leitner2026] particle-interactions/algebraic-primality
 -/
 
 namespace QOU.Interactions.AlgebraicPrimality

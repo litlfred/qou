@@ -1,0 +1,57 @@
+Co
+Lo]
+
+3.4.1 Method for proving Conjecture 3.12
+
+Consider He annulus Q in Figure 3.18 with Dirichlet boundary conditions. In particular,
+we can take 2 to be a subspace of a hyperbolic cylinder with a as its core geodesic.
+
+Table C.2 shows that numerically,
+Ai(Q) & 5.35.
+
+Regarding the fact that 5.35 is relatively much largbr than the figurelof 4.15 that we want
+
+to bound it away from, the outlook for producing a rigorous bound seems good.
+The method that_we have in mind to prove Conjecture 3.12 is a generalization of the
+
+maximum principle. Um! particular, we have the following:
+
+Theorem 3.16 /68, Theorem 10] Let u(x) be an eigenfunction of the Laplacian with
+eigenvalue A on a compact Riemannian manifold (M, g) with Lipschitz boundary OM. If
+
+there exists a function w(x) that is strictly positive on MUOM, and
+(-A + A)u(a) <0 in M,
+
+then u(x)/w(ax) cannot attain a non-negative mazimum in M unless it is a constant. If
+u(a)/w(2x) attains its non-negative maximum at a point p € OM that lies on the boundary
+
+of a ball in M and if u/w is not constant, then
+
+Ou
+
+> (—) >0 t p,
+
+Ov (<) Ow Ps
+where & is any outward directional derivative.
+
+ov
+
+Corollary 3.17 Let (M, g) be as above, and assume OM # ). Assume there exists a
+strictly positive function w € C™(M) with
+
+(-A+A)w <0 in M.
+Then there is no Dirichlet eigenvalue in [0, A| in M.
+
+Corollary 3.18 Let (M, g) be as above, and assume OM # ). Assume there exists a
+function w € C%(M) that is positive on the interior of M and non-negative on M,
+satisfying
+
+(-A+A)w <0 in M.
+
+Then there is no Dirichlet eigenvalue in [0, A) in M.
+
+Proof: [Sketch of proof of Chrotiey 3-48H# hve have a function w that is strictly positive
+
+on the interior of M, then we can make M a tiny bit smaller to obtain a region M; C M.
+
+82

@@ -46,7 +46,7 @@ theorem `prop:gb-spectral-sequence`.
 
 ## References
 
-- [manuscript] `prop:graded-markov-trace-from-gs-filtration`
+- [leitner2026] `prop:graded-markov-trace-from-gs-filtration`
 - [geckpfeiffer2000] Gröbner–Shirshov filtration on `H_n(q)` (two-sided).
 - [jones1987] https://doi.org/10.2307/1971403 — Markov-trace existence.
 -/
@@ -112,7 +112,7 @@ def gradedKer (ℓ : ℕ) : Submodule R (s.filtration ℓ) :=
     map out of `J^ℓ / J^{ℓ+1}` is determined by its values on
     representatives.  Both are produced here, not assumed — no `sorry`,
     no axiom, no projected field. -/
--- Ref: [manuscript] `prop:graded-markov-trace-from-gs-filtration`
+-- Ref: [leitner2026] `prop:graded-markov-trace-from-gs-filtration`
 theorem gradedTrace_exists_unique (ℓ : ℕ) :
     ∃! g : ((s.filtration ℓ) ⧸ s.gradedKer ℓ) →ₗ[R] R,
         ∀ x : s.filtration ℓ,

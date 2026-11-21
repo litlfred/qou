@@ -24,10 +24,10 @@ requires the descent measure `μ` — the open wall documented in the
 `χ(A) = −6` is **Descartes-universe-specific** (Bring's surface `Σ₄`, genus 4),
 not a general-QOU fact; the `_of_chi_neg_six` corollary is therefore stated with
 `χ(A) = −6` as an explicit hypothesis, matching the scoping of the q-Collatz
-contact-boundary block (`prop:collatz-contact-boundary`, scoped to "QOU with
+contact-boundary block (`conj:collatz-contact-boundary`, scoped to "QOU with
 `2 ∣ χ(A)`").
 
--- Ref: [manuscript] quantum-observable-universe/appendix-surreals/collatz-contact-boundary.md
+-- Ref: [leitner2026] quantum-observable-universe/appendix-surreals/collatz-contact-boundary.md
 -/
 
 namespace QOU.AlgebraicSubstrate

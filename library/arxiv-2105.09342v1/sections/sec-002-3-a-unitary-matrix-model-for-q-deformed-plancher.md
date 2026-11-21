@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.955
 latex_coverage_ratio: 0.985
+doc_brief: "A Unitary Matrix Model for q-deformed Plancherel Growth — In this paper we construct a unitary matrix model that captures the asymptotic growth of Young diagrams under q-deformed Plancherel measure."
 ---
 The growth of Young diagrams can be compared with the growth of a two-dimensional crystal as shown in figure \ref{rotated_YD}. We consider every box as a unit falling from sky under gravity. There is a boundary given by the two lines passing through the origin with slope $\pm1$. Since the gravity is working downward it is easy to understand that the boxes will arrange themselves following the rules of a rotated Young diagrams. One can study a controlled growth process by assigning a probability to each diagram in this process. Following \cite{Eynard:2008mt, Chattopadhyay:2019pkl}, we can define a grand canonical ensemble of Young diagrams
 

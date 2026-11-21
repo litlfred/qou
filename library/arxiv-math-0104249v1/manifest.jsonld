@@ -5,17 +5,17 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0104249v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0104249v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-0104249v1",
+  "title": "Irrationality of values of the zeta-function",
   "contains": [
     "library/arxiv-math-0104249v1/sections/sec-front-matter",
     "library/arxiv-math-0104249v1/sections/sec-000"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -25,7 +25,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0104249v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0104249v1.pdf",
     "source_sha256": "c2fcdefc73b8df24e16105e9621b47e498b83aa01288e5d9853c0af99e36feaa",
     "pages": 16,

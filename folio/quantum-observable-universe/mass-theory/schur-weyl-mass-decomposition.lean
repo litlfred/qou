@@ -15,7 +15,7 @@ characters:
 where `w_λ(q) = s_λ(q)/H_q(λ)` is the ratio of the Schur function
 to the q-hook product.
 
-Ref: [manuscript] Chapter 6, §Nuclear Binding and Beta Stability
+Ref: [leitner2026] Chapter 6, §Nuclear Binding and Beta Stability
 LaTeX label: `prop:schur-weyl-mass-decomposition`
 -/
 
@@ -58,7 +58,7 @@ noncomputable def schurWeylWeight {n : ℕ} (lam : PartitionOfN n) (q : ℝ) : �
     additive-H₃-per-generator approximation drops all partitions
     that are not concatenations of three-row blocks.
 
-    Ref: [manuscript] `thm:wedderburn-mass-formula`,
+    Ref: [leitner2026] `thm:wedderburn-mass-formula`,
          `prop:three-parameters-wedderburn`. -/
 class SchurWeylMassDecomposition (A : ℕ) where
   /-- The atomic braid as an element of `H_{3A}(q)` (opaque). -/
@@ -79,7 +79,7 @@ class SchurWeylMassDecomposition (A : ℕ) where
 -- partitions of 3 are `(3)`, `(2,1)`, `(1,1,1)`, giving the
 -- three-channel Wedderburn weights.  This recovers
 -- `thm:wedderburn-mass-formula`.
--- Ref: [manuscript] `prop:three-parameters-wedderburn`.
+-- Ref: [leitner2026] `prop:three-parameters-wedderburn`.
 /-! ## The partition list is FREE DATA -- two axioms deleted 2026-09-06
 
 `SchurWeylMassDecomposition` carries `partitions` as an ordinary field

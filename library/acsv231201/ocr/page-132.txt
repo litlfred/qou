@@ -1,0 +1,41 @@
+5
+
+Multivariate Fourier—Laplace integrals
+
+5.1 Overview
+
+In this chapter we generalize the univariate saddle point techniques of Chap-
+ter 4 to multivariate Fourier-Laplace integrals of the form
+
+L(A) = [aw exp(—A¢(z)) dz, (5.1)
+c
+
+where the amplitude A and phase ¢ are now analytic functions of a vector
+argument z in d variables and C is a d-chain in C4 (see Section A.3 of Ap-
+pendix A for definitions involving integration of chains on manifolds). In one
+variable, the comprehensive Theorem 4.1 covers all degrees of vanishing of
+the phase and amplitude functions. The range of possibilities for the phase
+function ¢ in higher dimensions is much greater, however, and we restrict our-
+selves here to the case of nondegenerate phase where the dxd Hessian matrix
+H = ve
+
+Oz; OZK
+termining asymptotics. The Taylor series for ¢ at a point p € C4 is
+
+of ¢ is nonsingular at the points in the domain of integration de-
+
+1
+$(2) = Op) + (2 ~ p)" (VON) + 52 - py" H(p\(z — p) + O(|z - pI’).
+
+hence the Hessian matrix H(p) represents (twice) the quadratic term in the
+phase, and nondegeneracy is a generalization of nonvanishing of the quadratic
+term for a univariate phase function.
+
+Exercise 5.1. Determine whether the phase function (x, y, z) = 2+(x+y)z+xy
+is degenerate at the origin.
+
+We begin, analogously to the univariate case, by considering integrals whose
+phase is restricted to the standard quadratic S(z) := z tet zi. Asymptotic
+behavior when A is monomial and ¢ is the standard quadratic (Corollary 5.7
+
+114

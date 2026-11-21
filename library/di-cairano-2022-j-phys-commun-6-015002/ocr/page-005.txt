@@ -1,0 +1,75 @@
+IOP Publishing
+
+J. Phys. Commun. 6 (2022) 015002 LDiCairano
+
+1
+HOP, p, Q 4) = H(P, Q) + 3p — ap(P, Q)I" Kpplp — ap(P, Q)I
+
++ sla = ag(P, QF Kaglq = ag(P, QI
+
++ [p — ap(P, QI Kgl — aq(P, Q)1.- (13)
+
+Now, by imposing Kp, = 1 and a,(P, Q) = 0, Kpq = Kap = 0 and setting Ky, = diag {wj, w5y...,wy} and
+aj (P, Q) = a;,(Q) = 22, equation (13) reduces to (12). We note that {w?} is the set of free oscillation frequencies
+of the heat bath particles whereas {7}. is the set of coupling coefficients which determine the strength of the
+heat bath-heavy particle interactions. Thus, a specific interaction can be switched off just imposing 7; > 0 which
+implies a, (Q) =0.
+
+By specializing definitions (8) and (9) to this example, a cumbersome but straightforward calculation leads to
+the noise term
+
+F,(t) = —Kyq cos(Kj/? t) + Ki/? sin(Kj/? 0) p, (14)
+
+whereas for the kernel matrix, we have
+
+Lag(t) = Kyg cos(Kj/? 1). (15)
+As already stressed, the friction matrix (15) does not depend on the coupling coefficients, 7; and, thereby, the
+FDR is ill-defined as we will see in a moment. In fact, by plugging equations (14) and (15) into the definition (11)
+for the FDR, one gets:
+
+N
+(E(t) - F,(r)) = keT Tr[Kqq cos(Ky,? (t — 7))] = keT Tr[Lgg(t — 7)] = ke TDS w? cos(wi(t — 7). (16)
+i=1
+
+It is evident that the friction function on the last right-hand side, that is:
+N
+E(t — 7) = Dw} cos(wj(t — 7)), (17)
+i=1
+just depends on the oscillation frequencies {w;} ,, therefore, the obtained FDR (16) does not recover the usual
+definition.
+Finally, we stress that, adopting the same example, Zwanzig writes a different friction function (which is also
+the correct one) and it reads (see equation (23) in [31]):
+N
+
+2
+6, (t— 1) = >(%) cos(w;(t — 7)). (18)
+i=1°
+This suggests that he maybe absorbed, ad hoc, the 7;-coefficients within ¢.
+Based on that, we conclude that the definition (18) should be adjusted in order to obtain the correct ¢
+function without any ad hoc-adjustment and this is the principal aim of the paper.
+
+1.3. Notation
+In this section, we formalize the derivation introduced in the previous section.
+
+We consider a Hamiltonian function describing a classical physical system composed bya heat bath (P)
+interacting with a heavy particle (Z). The heat bath consists of N particles with mass m = 1 smaller than the
+heavier particle mass M.
+
+We assume that the system is embedded in the three dimensional physical space R? so that the phase space,
+denoted byT, isa subset of R&Y x R°N x R° x R°. Therefore, the heat bath conjugated coordinates are:
+
+N N
+[%:= er e€ RY, Qe =>)ae e ERY, a=x,y,z (19)
+i=1 i=1
+where we have introduced the canonical base {e;}_, of RN. The heavy particle Hamiltonian conjugated
+coordinates are
+
+3 3
+X= SV) Xe, ER’, P= D> Pee, € RB.
+
+asl a=1
+
+The system Hamiltonian function, #: T —> R can be split into three terms:
+
+HP, I, X, Q) = Ha(P, X) + Hall, Q) + Hinr(Q, X),
+

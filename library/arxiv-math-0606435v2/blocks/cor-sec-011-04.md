@@ -1,0 +1,1 @@
+Let W be a 3-braid link. Then the following are equivalent: 1) W is ﬁbered, 2) maxdeg∆(W) = 1 −χ(W) and maxcf∆(W) = ±1, 3) W’s Xu form is not of the type L−1 or R, with syllable length of L or R divisible by 3. ✷

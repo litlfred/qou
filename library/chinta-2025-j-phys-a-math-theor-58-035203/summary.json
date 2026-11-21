@@ -2,97 +2,77 @@
  "_schema": "library-summary/v1",
  "doc_id": "chinta-2025-j-phys-a-math-theor-58-035203",
  "source_sha256": "baba83ca76c773d4",
- "brief": "Mathematical and Theoretical PAPER • OPEN ACCESS The discrete analogue of the Gaussian To cite this article: Gautam Chinta et al 2025 J. Phys. A: Math. Theor. 58 035203 — 17 sections: Department of Ma",
- "extended": "**Mathematical and Theoretical PAPER • OPEN ACCESS The discrete analogue of the Gaussian To cite this article: Gautam Chinta et al 2025 J. Phys. A: Math. Theor. 58 035203**\n\n*View the article online for updates and enhancements*\n\n23 pp, 17 sections.\n\n**Outline.** 1 Department of Mathematics The City College o; 2 Section de mathématiques Université de Genèv; 3 Matematiska institutionen Uppsala universite; 4 Department of Mathematics and Computer Scien; Abstract; 1 Introduction; 2 The building block of heat kernels of graphs; 3 Discrete local limit theorem; 4 Application 1: Bessel identities; 5 Application 2: finite trigonometric sums; 6 Application 3: asymptotics by passing from t; 7 Spectral zeta functions; 7.1 Spectral zeta function of Z; 7.2 Application 4: spectral zeta function of r; 8 Potential applications to differential priva; References; 28 C Musili, M Nori, E Previato and M Stillman",
+ "brief": "The discrete analogue of the Gaussian — 13 sections: Front matter; The discrete analogue of the Gauss; Introduction",
+ "extended": "**The discrete analogue of the Gaussian**\n\n*View the article online for updates and enhancements*\n\n23 pp, 13 sections.\n\n**Outline.** Front matter; The discrete analogue of the Gaussian; 1 Introduction; 2 The building block of heat kernels of graphs; 3 Discrete local limit theorem; 4 Application 1: Bessel identities; 5 Application 2: finite trigonometric sums; 6 Application 3: asymptotics by passing from t; 7 Spectral zeta functions; 7.1 Spectral zeta function of Z; 7.2 Application 4: spectral zeta function of r; 8 Potential applications to differential priva; References",
  "tokens": {
-  "brief": 50,
-  "extended": 226
+  "brief": 28,
+  "extended": 144
  },
  "sections": [
   {
-   "id": "sec-000-1-department-of-mathematics-the-city-college-of",
-   "title": "Department of Mathematics The City College of New York Convent Avenue at",
-   "pages": "2-2"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
   },
   {
-   "id": "sec-001-2-section-de-mathématiques-université-de-genève",
-   "title": "Section de mathématiques Université de Genève, Case Postale 64, 1211 Genève 4,",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-002-3-matematiska-institutionen-uppsala-universitet",
-   "title": "Matematiska institutionen Uppsala universitet Box 256, 751 05 Uppsala, Sweden",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-003-4-department-of-mathematics-and-computer-science",
-   "title": "Department of Mathematics and Computer Science University of Sarajevo Zmaja",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-004-abstract",
-   "title": "Abstract",
+   "id": "sec-000-the-discrete-analogue-of-the-gaussian",
+   "title": "The discrete analogue of the Gaussian",
    "pages": "2-3"
   },
   {
-   "id": "sec-005-1-introduction",
+   "id": "sec-001-1-introduction",
    "title": "Introduction",
    "pages": "3-7"
   },
   {
-   "id": "sec-006-2-the-building-block-of-heat-kernels-of-graphs",
+   "id": "sec-002-2-the-building-block-of-heat-kernels-of-graphs",
    "title": "The building block of heat kernels of graphs",
    "pages": "7-8"
   },
   {
-   "id": "sec-007-3-discrete-local-limit-theorem",
+   "id": "sec-003-3-discrete-local-limit-theorem",
    "title": "Discrete local limit theorem",
    "pages": "8-11"
   },
   {
-   "id": "sec-008-4-application-1-bessel-identities",
+   "id": "sec-004-4-application-1-bessel-identities",
    "title": "Application 1: Bessel identities",
    "pages": "11-14"
   },
   {
-   "id": "sec-009-5-application-2-finite-trigonometric-sums",
+   "id": "sec-005-5-application-2-finite-trigonometric-sums",
    "title": "Application 2: finite trigonometric sums",
    "pages": "14-15"
   },
   {
-   "id": "sec-010-6-application-3-asymptotics-by-passing-from-the",
+   "id": "sec-006-6-application-3-asymptotics-by-passing-from-the",
    "title": "Application 3: asymptotics by passing from the discrete to the continuous",
    "pages": "15-16"
   },
   {
-   "id": "sec-011-7-spectral-zeta-functions",
+   "id": "sec-007-7-spectral-zeta-functions",
    "title": "Spectral zeta functions",
    "pages": "16-16"
   },
   {
-   "id": "sec-012-71-spectral-zeta-function-of-z",
+   "id": "sec-008-71-spectral-zeta-function-of-z",
    "title": "Spectral zeta function of Z",
    "pages": "16-17"
   },
   {
-   "id": "sec-013-72-application-4-spectral-zeta-function-of-regul",
+   "id": "sec-009-72-application-4-spectral-zeta-function-of-regul",
    "title": "Application 4: spectral zeta function of regular trees and hypergeometric identities",
    "pages": "17-20"
   },
   {
-   "id": "sec-014-8-potential-applications-to-differential-privacy",
+   "id": "sec-010-8-potential-applications-to-differential-privacy",
    "title": "Potential applications to differential privacy",
-   "pages": "20-20"
+   "pages": "20-21"
   },
   {
-   "id": "sec-015-references",
+   "id": "sec-011-references",
    "title": "References",
-   "pages": "20-23"
-  },
-  {
-   "id": "sec-016-28-c-musili-m-nori-e-previato-and-m-stillman-bir",
-   "title": "C Musili, M Nori, E Previato and M Stillman (Birkhäuser Boston, Inc) p xiii+ 235",
-   "pages": "23-23"
+   "pages": "21-23"
   }
  ],
  "provenance": {

@@ -1,0 +1,80 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 195
+
+ae
+
+Exact
+— O— Magnus-1 (Adiab.)
+—4A— T.Pert.-1  (Adiab.)
+
+0.84
+
+1)
+
+% WW — ©@— Magnus-1 (Dirac)
+2 oe- \\ —A—TPert-1 (Dirac)
+3 A,
+2Q
+g ‘\
+= at
+§ 04-4 A
+3 ~
+5 Wa,
+
+0.24
+
+0.0 : T
+
+0.0 05 1.0 1.6
+§
+
+Fig. 8. Rosen-Zener model: Transition probability as a function of €, with y = 1. The solid line stands for the exact result in (204). The remaining lines
+stand for first order computations with ME (circles) and perturbation theory (triangles). Open symbols are for the Adiabatic Picture and solid symbols for
+the Interaction Picture.
+
+4,3, Fer and Wilcox infinite-product expansions
+
+Next we illustrate the use of Fer and Wilcox infinite-product expansions by using the same time-dependent systems as
+before.
+
+4.3.1, Linearly forced harmonic oscillator
+
+Since the commutator [a_, a] is ac-number, Fer iterated Hamiltonians H withn > 1 eventually vanish so that F, = 0
+forn > 2. The Wilcox operators W, with n > 2 in eq. (106) vanish for the same reason. Thus, in this particular case, the
+second-order approximation in either method leads to the exact solution of the Schrodinger equation, just as ME did. To
+sum up, the final result reads
+
+U, = e212 — eWieWW2 — efigl2 — eB en ilaay+a%a—) (214)
+where a(t) and B(t) are given in (185) and (186), respectively.
+
+4.3.2. Two-level quantum system: Rectangular step
+For the Hamiltonian (194), the first-order Fer and Wilcox operators in the Interaction Picture verify
+
+t
+Fp=W, = 2) = [ dt, F(t), (215)
+0
+
+where H(t) is given by (198). The explicit expression is collected in (200) (first equation). Analogously, the second equation
+there also corresponds to the second-order Wilcox operator W2 = 922.
+
+To proceed further with Fer’s method, we must calculate the modified Hamiltonian A® in (96). After straightforward
+algebra, one eventually obtains
+
+~ 1 /sin’@ 1 /sin20 ~
+AM. 1 (= —sin20 + — (=" - c0520) r) (Fi. Ar), (216)
+
+20 @ é
+
+where 6 = (2y/€) sin(&/2) (notice that A and therefore Fy depend on 0, and 02, while W, is proportional to o3). Since
+it does not seem possible to derive an analytical expression for F2, the corresponding matrix elements have been computed
+by replacing the integral by a conveniently chosen quadrature.
+
+The transition probability P(t) from an initial state with spin up to a state with spin down (or vice versa) is given by
+(193). This expression has been computed assuming U; ~ e"! = e™1,U, ~ eMe®,U, ~ eM1e"2, U, ~ efelel3 and
+U, = e”1e2eW3, and the results have been compared with the exact analytical solution (196).
+
+In Figs. 9 and 10 we show the transition probability P as a function of € for two different values of y (y = 1.5 and y = 2,
+respectively), while in Fig. 11 we have plotted P versus y for & fixed. Notice that the second order in the Wilcox expansion
+does not contribute to the transition probability (this is similar to what happens in perturbation theory). On the other hand,
+Fer’s second-order approximation is already in remarkable agreement with the exact result, whereas the third order cannot
+even be distinguished from the exact result in Fig. 10 at the cost of a much larger computational effort. Wilcox approximants
+preserve unitarity but do not give acceptable approximations.

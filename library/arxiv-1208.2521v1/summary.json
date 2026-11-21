@@ -2,101 +2,111 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1208.2521v1",
  "source_sha256": "8d0281aa84043865",
- "brief": "On q-analogues of the Fourier and Hankel transforms — For the third q-Bessel function (ﬁrst introduced by F. H. Jackson, later rediscovered by W. Hahn in a special case and by H.",
- "extended": "**On q-analogues of the Fourier and Hankel transforms**\n\n*AND HANKEL TRANSFORMS*\n\n20 pp, 18 sections.\n\n**Abstract.** For the third q-Bessel function (ﬁrst introduced by F. H. Jackson, later rediscovered by W. Hahn in a special case and by H. Exton) we deriv e Hansen- Lommel type orthogonality relations, which, by a symmetry, turn out to be equivalent to orthogonality relations which are q-analogues of the Hankel integral transform pair. These results are implicit, in the context of quantum groups, in a paper by Vaksman and Korogodski ˘ ı. As a specialization we get q-cosines and q-sines which admit q- analogues of the Fourier-cosine and Fourier-sine transforms. We g et also a formula which is both an analogue of Graf’s addition formula and of the W eber-Schafheitlin discontinuous integral. This is a corrected version of a paper wh ich appeared in Trans. Amer. Math. Soc. 333 (1992), 445–461.\n\n**Outline.** 2 TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW; 1 Introduction; 4 TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW; 2 Symmetry and orthogonality for q-Bessel func; 6 TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW; 8 TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW; 3 Some limit transitions; 10 TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW; 4 A q-analogue of Graf’s addition formula; 12 TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW; 14 TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW; 16 TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW; 18 TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW; References; 1 G. E. Andrews, q-Series: their development a; 2 G. E. Andrews and R. Askey, Enumeration of p; 9 E. Heine, Handbuch der Kugelfunctionen, Theo; 20 TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW\n\n**Extracted claims (proposals, not verified).**\n- Proposition 2.1: The series in (2.2) deﬁnes an entire analytic function in z, w ,\n- Proposition 2.5: For z, t ∈ C such that 0 < |t| < |z|− 1 there is the absolutely\n- Proposition 2.6: For |z| < 1 and n, m ∈ Z we have\n- Proposition 4.2: For |sxy| < 1 and x2, y 2 ⁄= q− l (l = 0, 1, 2, . . . ), we have\n- Proposition: A.1. For 0 < a < q − 1, 0 ≤ b < q − 1 we have\n- Lemma: B.1. Formula (B.3) is valid for integer n if c, qb/a, q/a, q n+1/a, q − nc/b, c/b",
+ "brief": "ON q-ANALOGUES OF THE FOURIER AND HANKEL TRANSFORMS — For the third q-Bessel function (ﬁrst introduced by F. H. Jackson, later rediscovered by W. Hahn in a special case and by H.",
+ "extended": "**ON q-ANALOGUES OF THE FOURIER AND HANKEL TRANSFORMS**\n\n*TOM H. KOORNWINDER and RENÉ F. SWARTTOUW*\n\n20 pp, 20 sections.\n\n**Abstract.** For the third q-Bessel function (ﬁrst introduced by F. H. Jackson, later rediscovered by W. Hahn in a special case and by H. Exton) we derive Hansen- Lommel type orthogonality relations, which, by a symmetry, turn out to be equivalent to orthogonality relations which are q-analogues of the Hankel integral transform pair. These results are implicit, in the context of quantum groups, in a paper by Vaksman and Korogodski˘ı. As a specialization we get q-cosines and q-sines which admit q- analogues of the Fourier-cosine and Fourier-sine transforms. We get also a formula which is both an analogue of Graf’s addition formula and of the Weber-Schafheitlin discontinuous integral. This is a corrected version of a paper which appeared in Trans. Amer. Math. Soc. 333 (1992), 445–461.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16; Page 17; Page 18",
  "tokens": {
   "brief": 44,
-  "extended": 546
+  "extended": 270
  },
  "sections": [
   {
-   "id": "sec-000-2-tom-h-koornwinder-and-ren-e-f-sw-arttouw",
-   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
+   "id": "page-001",
+   "title": "Page 1",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-1-introduction",
-   "title": "Introduction",
-   "pages": "1-4"
+   "id": "page-002",
+   "title": "Page 2",
+   "pages": "2-2"
   },
   {
-   "id": "sec-002-4-tom-h-koornwinder-and-ren-e-f-sw-arttouw",
-   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
+   "id": "page-003",
+   "title": "Page 3",
+   "pages": "3-3"
+  },
+  {
+   "id": "page-004",
+   "title": "Page 4",
    "pages": "4-4"
   },
   {
-   "id": "sec-003-2-symmetry-and-orthogonality-for-q-bessel-functi",
-   "title": "Symmetry and orthogonality for q-Bessel functions",
-   "pages": "4-6"
+   "id": "page-005",
+   "title": "Page 5",
+   "pages": "5-5"
   },
   {
-   "id": "sec-004-6-tom-h-koornwinder-and-ren-e-f-sw-arttouw",
-   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
-   "pages": "6-8"
+   "id": "page-006",
+   "title": "Page 6",
+   "pages": "6-6"
   },
   {
-   "id": "sec-005-8-tom-h-koornwinder-and-ren-e-f-sw-arttouw",
-   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
+   "id": "page-007",
+   "title": "Page 7",
+   "pages": "7-7"
+  },
+  {
+   "id": "page-008",
+   "title": "Page 8",
    "pages": "8-8"
   },
   {
-   "id": "sec-006-3-some-limit-transitions",
-   "title": "Some limit transitions",
-   "pages": "8-10"
+   "id": "page-009",
+   "title": "Page 9",
+   "pages": "9-9"
   },
   {
-   "id": "sec-007-10-tom-h-koornwinder-and-ren-e-f-sw-arttouw",
-   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
+   "id": "page-010",
+   "title": "Page 10",
    "pages": "10-10"
   },
   {
-   "id": "sec-008-4-a-q-analogue-of-grafs-addition-formula",
-   "title": "A q-analogue of Graf’s addition formula",
-   "pages": "10-12"
+   "id": "page-011",
+   "title": "Page 11",
+   "pages": "11-11"
   },
   {
-   "id": "sec-009-12-tom-h-koornwinder-and-ren-e-f-sw-arttouw",
-   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
-   "pages": "12-14"
+   "id": "page-012",
+   "title": "Page 12",
+   "pages": "12-12"
   },
   {
-   "id": "sec-010-14-tom-h-koornwinder-and-ren-e-f-sw-arttouw",
-   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
-   "pages": "14-16"
+   "id": "page-013",
+   "title": "Page 13",
+   "pages": "13-13"
   },
   {
-   "id": "sec-011-16-tom-h-koornwinder-and-ren-e-f-sw-arttouw",
-   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
-   "pages": "16-18"
+   "id": "page-014",
+   "title": "Page 14",
+   "pages": "14-14"
   },
   {
-   "id": "sec-012-18-tom-h-koornwinder-and-ren-e-f-sw-arttouw",
-   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
-   "pages": "18-19"
+   "id": "page-015",
+   "title": "Page 15",
+   "pages": "15-15"
   },
   {
-   "id": "sec-013-references",
-   "title": "References",
+   "id": "page-016",
+   "title": "Page 16",
+   "pages": "16-16"
+  },
+  {
+   "id": "page-017",
+   "title": "Page 17",
+   "pages": "17-17"
+  },
+  {
+   "id": "page-018",
+   "title": "Page 18",
+   "pages": "18-18"
+  },
+  {
+   "id": "page-019",
+   "title": "Page 19",
    "pages": "19-19"
   },
   {
-   "id": "sec-014-1-g-e-andrews-q-series-their-development-and-app",
-   "title": "G. E. Andrews, q-Series: their development and application in analysis, nu mber theory,",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-015-2-g-e-andrews-and-r-askey-enumeration-of-partiti",
-   "title": "G. E. Andrews and R. Askey, Enumeration of partitions: The role of Eulerian series and",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-016-9-e-heine-handbuch-der-kugelfunctionen-theorie-u",
-   "title": "E. Heine, Handbuch der Kugelfunctionen, Theorie und Anwendungen. Er ster Band: Theorie",
-   "pages": "19-20"
-  },
-  {
-   "id": "sec-017-20-tom-h-koornwinder-and-ren-e-f-sw-arttouw",
-   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
+   "id": "page-020",
+   "title": "Page 20",
    "pages": "20-20"
   }
  ],
@@ -104,8 +114,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

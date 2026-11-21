@@ -1,0 +1,1 @@
+Thus in the period 1929-1949 the law of baryon number conservation was formulated by Weyl, Stueckelberg and Wigner~\cite{weyl}, and the first experimental test of the idea was proposed by Maurice Goldhaber in 1954~\cite{Goldhaber:1988gb,Reines:1980by}.

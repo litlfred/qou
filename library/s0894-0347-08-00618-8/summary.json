@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "s0894-0347-08-00618-8",
  "source_sha256": "7c0b2ca41992b21c",
- "brief": "AMERICAN MATHEMATICAL SOCIETY — 20 sections: Introduction; A plethora of negative dependence ; Negative dependence concepts",
- "extended": "**AMERICAN MATHEMATICAL SOCIETY**\n\n*V olume 22, Number 2, April 2009, Pages 521–567*\n\n47 pp, 20 sections.\n\n**Outline.** 1 Introduction; 2 A plethora of negative dependence properties; 2.1 Negative dependence concepts; 2.2 Strongly Rayleigh measures; 2.3 Symmetric homogenization; 2.5 Towards a theory of negative dependence: P; 3 Negative dependence in mathematics and physi; 3.1 Real stable polynomials and transcendental; 3.2 Hadamard-Fischer inequalities and GKK-matr; 3.3 Determinantal probability measures; 3.4 Graphs, Laplacians, spanning trees and the; 3.5 Interacting particle systems and exclusion; 4 Negative dependence theory for strongly Rayl; 4.2 Stability implies negative association; 4.3 Stochastic domination and truncations; 4.4 The partial symmetrization procedure; 6 Almost exchangeable measures; 7 Negative results on negative dependence",
+ "brief": "AMERICAN MATHEMATICAL SOCIETY S 0894-0347(08)00618-8 — 24 sections: Front matter; Introduction; A plethora of negative dependence",
+ "extended": "**AMERICAN MATHEMATICAL SOCIETY S 0894-0347(08)00618-8**\n\n*Article electronically published on September 19, 2008*\n\n47 pp, 24 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 A plethora of negative dependence properties; 2.1 Negative dependence concepts; 2.2 Strongly Rayleigh measures; 2.3 Symmetric homogenization; 2.4 Measures on countably infinite sets; 2.5 Towards a theory of negative dependence: P; 3 Negative dependence in mathematics and physi; 3.1 Real stable polynomials and transcendental; 3.2 Hadamard-Fischer inequalities and GKK-matr; 3.3 Determinantal probability measures; 3.4 Graphs, Laplacians, spanning trees and the; 3.5 Interacting particle systems and exclusion; 4 Negative dependence theory for strongly Rayl; 4.1 Symmetric homogenization via Gårding hyper; 4.2 Stability implies negative association; 4.3 Stochastic domination and truncations",
  "tokens": {
-  "brief": 30,
-  "extended": 214
+  "brief": 32,
+  "extended": 218
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -32,80 +37,95 @@
   {
    "id": "sec-004-23-symmetric-homogenization",
    "title": "Symmetric homogenization",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-005-24-measures-on-countably-infinite-sets",
+   "title": "Measures on countably infinite sets",
    "pages": "10-11"
   },
   {
-   "id": "sec-005-25-towards-a-theory-of-negative-dependence-probl",
+   "id": "sec-006-25-towards-a-theory-of-negative-dependence-probl",
    "title": "Towards a theory of negative dependence: Problems and solutions",
    "pages": "11-13"
   },
   {
-   "id": "sec-006-3-negative-dependence-in-mathematics-and-physics",
+   "id": "sec-007-3-negative-dependence-in-mathematics-and-physics",
    "title": "Negative dependence in mathematics and physics",
    "pages": "13-13"
   },
   {
-   "id": "sec-007-31-real-stable-polynomials-and-transcendental-en",
+   "id": "sec-008-31-real-stable-polynomials-and-transcendental-en",
    "title": "Real stable polynomials and transcendental entire functions",
    "pages": "13-15"
   },
   {
-   "id": "sec-008-32-hadamard-fischer-inequalities-and-gkk-matrice",
+   "id": "sec-009-32-hadamard-fischer-inequalities-and-gkk-matrice",
    "title": "Hadamard-Fischer inequalities and GKK-matrices",
    "pages": "15-17"
   },
   {
-   "id": "sec-009-33-determinantal-probability-measures",
+   "id": "sec-010-33-determinantal-probability-measures",
    "title": "Determinantal probability measures",
    "pages": "17-18"
   },
   {
-   "id": "sec-010-34-graphs-laplacians-spanning-trees-and-the-rand",
+   "id": "sec-011-34-graphs-laplacians-spanning-trees-and-the-rand",
    "title": "Graphs, Laplacians, spanning trees and the random cluster model",
    "pages": "18-20"
   },
   {
-   "id": "sec-011-35-interacting-particle-systems-and-exclusion-ev",
+   "id": "sec-012-35-interacting-particle-systems-and-exclusion-ev",
    "title": "Interacting particle systems and exclusion evolutions",
    "pages": "20-21"
   },
   {
-   "id": "sec-012-4-negative-dependence-theory-for-strongly-raylei",
+   "id": "sec-013-4-negative-dependence-theory-for-strongly-raylei",
    "title": "Negative dependence theory for strongly Rayleigh measures",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-014-41-symmetric-homogenization-via-gårding-hyperbol",
+   "title": "Symmetric homogenization via Gårding hyperbolic polynomials",
    "pages": "21-24"
   },
   {
-   "id": "sec-013-42-stability-implies-negative-association",
+   "id": "sec-015-42-stability-implies-negative-association",
    "title": "Stability implies negative association",
    "pages": "24-25"
   },
   {
-   "id": "sec-014-43-stochastic-domination-and-truncations",
+   "id": "sec-016-43-stochastic-domination-and-truncations",
    "title": "Stochastic domination and truncations",
    "pages": "25-29"
   },
   {
-   "id": "sec-015-44-the-partial-symmetrization-procedure",
+   "id": "sec-017-44-the-partial-symmetrization-procedure",
    "title": "The partial symmetrization procedure",
-   "pages": "29-33"
+   "pages": "29-31"
   },
   {
-   "id": "sec-016-6-almost-exchangeable-measures",
+   "id": "sec-018-5-preservation-of-negative-dependence-by-symmetr",
+   "title": "Preservation of negative dependence by symmetric exclusion processes",
+   "pages": "31-33"
+  },
+  {
+   "id": "sec-019-6-almost-exchangeable-measures",
    "title": "Almost exchangeable measures",
    "pages": "33-41"
   },
   {
-   "id": "sec-017-7-negative-results-on-negative-dependence",
+   "id": "sec-020-7-negative-results-on-negative-dependence",
    "title": "Negative results on negative dependence",
    "pages": "41-44"
   },
   {
-   "id": "sec-018-acknowledgements",
+   "id": "sec-021-acknowledgements",
    "title": "Acknowledgements",
    "pages": "44-45"
   },
   {
-   "id": "sec-019-references",
+   "id": "sec-022-references",
    "title": "References",
    "pages": "45-47"
   }

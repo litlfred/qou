@@ -1,0 +1,44 @@
+H®(As;(0)) ® k{[t]] followed by the projection k{[t]!"~L=0" > H"(As,(0)) ® kI[é],
+and r; = dim ker As;(0).
+Then det(A) = t@c, with ¢ € k*.
+
+Proof. Define the sequence (rn)n as in the lemma. As det A # 0, there is an ip such
+that rj, = 0. Take 0 < i < io, after fixing appropriated bases of ker Ay;_1(0), one
+write As;(0) as a diagonal matrix, with r;_; zeros on the diagonal, and 1’s after. Then
+the classical formula for the determinant tells us that det As; = t™ det Asj41 +0(t"),
+
+and the result follows by induction. Oo
+
+We will apply this lemma to the morphism A). Recall that for 1, 9, py : T >
+SL2(O,), we have the so-called residual representations fi, f2,fps : T — SLo(k)
+taking values in the residual field k. Moreover, py = fy = Ti pyyU,t is reducible,
+non abelian, thus we have as in Section [2.3.2]:
+
+Lemma 2.4.9. The residual representations have the form
+
+_ [A 0 _ [Aa AT us
+ALS = du, 7} > P25 = 9 \-l
+
+with X € H1(S,k*),u, € H4(E,A~?), uw € Al(D, ky2) non trivial.
+
+Proof. The expression of fi; follows from the conjugacy formula p; = U,p,Uz71
+when restricted on 7(%), the w;’s are non trivial because the residuals representa-
+tions are not abelian.
+
+O
+
+The former sequence becomes residually H :
+0 ks H1(M,, Adop,) @ H"(Mp, Ad ops) 2% H'(E, Ad ops) 2s k +0
+
+with d)(1) = (v1, v2), and Do(G, G) = zoF', where zy denotes the lower-left entry
+of 2, restricted to 7(™).
+Again (see Section 2.3.2), the triangularity of the adjoint action of f;,5 provides the
+following splittings :
+
+0 Ky > Adopyy > ky2 > 0
+
+0 Ky > Adopyy > ky-2 > 0
+
+0> ky» 9 ky ok 0
+
+76

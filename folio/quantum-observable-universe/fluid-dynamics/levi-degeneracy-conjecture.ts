@@ -2,23 +2,94 @@ import { conjecture } from "../../schema/builders";
 
 export default conjecture({
   label: "conj:levi-degeneracy",
-  lean: { ref: "qou:QOU.FluidDynamics.LeviDegeneracy" },
+  lean: { ref: "qou:QOU.FluidDynamics.LeviDegeneracyQ1.LeviDegeneracy" },
   title:
-    "Levi degeneracy conjecture: contact non-degeneracy at vortex collision determines NS regularity",
+    "Levi degeneracy conjecture: a vanishing Levi scalar $\\xi\\cdot\\mathrm{curl}\\,\\xi$ on the high-vorticity set prevents blow-up",
   uses: [
     "prop:core-levi-form",
-    "prop:root-of-unity-truncation",
   ],
+  cites: ["constantin1993", "beiraodaveiga2002"],
   tags: [
     "tier:famous",
     "conjecture",
     "levi-form",
     "contact-degeneracy",
+    "vorticity-direction",
     "millennium-problem",
-    "root-of-unity",
     "navier-stokes",
   ],
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-10-13",
+      body:
+        "**Consumers re-scoped (owner option 2, follow-up to Q1).** The consumers " +
+        "named in the caveat below as \"not edited here\" have since been " +
+        "re-scoped: `rem:core-levi-interpretation`, " +
+        "`rem:hyperbolic-overlap-saturation`, `rem:observability-fluid-context`, " +
+        "`rem:q-metric-contact-deformation`, " +
+        "`rem:observability-independent-motivation` (+ its table), " +
+        "`prop:ns-obstruction-tower` (proof step (d) withdrawn) and " +
+        "`rem:ns-obstruction-tower-summary`. In Lean, " +
+        "`levi_growth_trichotomy.lean` now carries `GrowthExponent` (no Levi " +
+        "reading, no branch fields) and `levi_pair_channel_branch_b.lean` keeps " +
+        "`linear_seq_forces_beta_one` as an aspect-ratio statement; the old " +
+        "theorem names survive as deprecated aliases. Still carrying the " +
+        "withdrawn statements and NOT edited: `yekutieli_levi_unification.lean` " +
+        "(step (d) as a class field), `qou_ns_in_qou.lean` " +
+        "(`QOUFluidUniverseLevi`, branch A), `ns-singularity-descartes-proof` " +
+        "(lists the core-Levi equivalence as an input) and " +
+        "`ns-singularity-descartes-interpretation`. Bean `qou-fm7s`." +
+        " Update 2026-11-15 (owner option 1, PR #7747): all of these are now re-scoped; see bean qou-fm7s.",
+    },
+    {
+      kind: "caveat",
+      date: "2026-10-13",
+      body:
+        "**Re-scoped onto the vorticity plane field (owner decision 2026-10-13, " +
+        "Q1: $\\varTheta = f\\,\\xi^\\flat$).** The block previously stated a " +
+        "trichotomy on $\\beta = \\limsup_\\kappa \\log\\mathcal{C}_L(\\kappa)/" +
+        "\\log\\kappa$ along the root-of-unity ladder: (A) $\\beta = 0$, Levi " +
+        "non-degenerate, NS blows up (the branch the framework argued for); (B) " +
+        "$\\beta = 1$, Levi degenerates, NS regular; (C) $0<\\beta<1$ undetermined. " +
+        "Changes: **(A) is withdrawn**, refuted under this reading by the smooth " +
+        "Beltrami solution $u = e^{-\\nu t}(\\sin z, \\cos z, 0)$ on " +
+        "$\\mathbb{T}^3$ ($\\xi\\cdot\\mathrm{curl}\\,\\xi = 1$ everywhere, " +
+        "$|\\omega| \\le 1$) — scope (b) for the implication under " +
+        "$\\varTheta = f\\,\\xi^\\flat$, the counterexample being the invariant; " +
+        "Lean `beltrami_refutes_branchA`. **$\\mathcal{C}_L$, $\\beta$ and regime " +
+        "(C) are withdrawn as undefined**: in dimension 3 the Levi form of a plane " +
+        "field is $1\\times1$ (`prop:core-levi-form`). **(B) is kept as the open " +
+        "conjecture**, restated on the Levi scalar; Constantin–Fefferman / " +
+        "Beirão da Veiga–Berselli bound $\\nabla\\xi$ only from above, and " +
+        "neither degeneracy nor non-degeneracy of $\\xi\\cdot\\mathrm{curl}\\,\\xi$ " +
+        "implies their hypothesis, so nothing in the standard literature supports " +
+        "(B). **Added** the standard-cited contrapositive of Beirão da " +
+        "Veiga–Berselli as the chapter's true conditional statement (Lean " +
+        "`blowup_forces_direction_incoherence`, derived from the cited theorem " +
+        "carried as the one field of `BeiraoDaVeigaBerselliCriterion`; primary " +
+        "texts not held). The old `LeviDegeneracy` class (degeneracy set of an " +
+        "abstract `leviForm` equal to $\\{1/\\kappa\\}$) is removed: under this " +
+        "reading the Levi datum lives on the flow domain, not on the $q$-ladder. " +
+        "`prop:root-of-unity-truncation` is dropped from `uses` for the same reason. " +
+        "**The five notes below are kept as records**: the pair-channel " +
+        "$\\beta = 1$ result, the lock formula $\\mathcal{C}_L = \\Gamma/(\\pi\\nu_q)$ " +
+        "and $\\kappa^2 = V_2/V_1 \\to 0$ are statements about the Townsend core " +
+        "aspect ratio, which stays well-defined, not about Levi data. " +
+        "`QOU/FluidDynamics/levi_growth_trichotomy.lean` and " +
+        "`levi_pair_channel_branch_b.lean` still carry the $\\beta$ / condition-number " +
+        "encoding and are not edited here. Consumers still written against the " +
+        "old statement (not edited here): `rem:core-levi-interpretation` and " +
+        "`rem:hyperbolic-overlap-saturation` (both assert branch (A)), " +
+        "`rem:observability-fluid-context`, `rem:q-metric-contact-deformation`, " +
+        "`rem:observability-independent-motivation`, `prop:ns-obstruction-tower` " +
+        "and `rem:ns-obstruction-tower-summary` (Levi eigenvalues / condition " +
+        "number). " +
+        "The conjecture is NOT resolved. Audits: " +
+        "`docs/audits/2026-10-12-ns-v1-geometric-depletion.md` §3.4–3.5, " +
+        "`docs/audits/2026-10-12-ns-attack-vectors-unforced.md` §3 V1, §4 Q1.",
+      see: "../../../docs/audits/2026-10-12-ns-v1-geometric-depletion.md",
+    },
     {
       kind: "note",
       date: "2026-09-03",
@@ -109,5 +180,7 @@ export default conjecture({
         "Restated from a two-way dichotomy to an exhaustive **trichotomy** on the growth exponent $\\beta = \\limsup_\\kappa \\log \\mathcal{C}_L / \\log \\kappa \\in [0,1]$: $\\beta = 0$ (blow-up, branch A), $\\beta = 1$ (regular via sheet-flattening, branch B), $0 < \\beta < 1$ (marginal, undetermined). The original \"exactly one of (A)/(B)\" was not a valid partition — it dropped the marginal window. Growth-rate formalisation added in `QOU/FluidDynamics/levi_growth_trichotomy.lean` (`levi_trichotomy_exhaustive`, `levi_marginal_undetermined`, `levi_branches_exclusive`, lean-direct exit 0); the existing `LeviDegeneracy` class encodes only the degeneracy set. Rationale: audit 2026-07-18 Finding 3; bean `qou-3g5m`.",
       see: "../../../../docs/audits/2026-07-18-q-ns-classical-gap-decomposition.md",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): Records computed for $\\mathcal{C}_L$ remain valid as statements about the core aspect ratio of [the Townsend model](#rem:townsend-biot-savart-strain), not as Levi data." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): A realisation of [Counter-example to Navier--Stokes regularity via $q \\to 1$ degeneration](#conj:ns-counterexample) by smooth solutions would therefore need the filaments to bend or twist without bound inside the high-vorticity set. This applies to the chapter's $q \\to 1$ limit flow only if that flow is a smooth solution on $[0, T^\\ast)$, which is not established here." },
   ],
 });

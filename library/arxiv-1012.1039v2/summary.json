@@ -3,12 +3,17 @@
  "doc_id": "arxiv-1012.1039v2",
  "source_sha256": "acb2575050db419d",
  "brief": "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS — Let M be a hyperbolic n–manifold whose cusps have torus cross- sections.",
- "extended": "**SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS**\n\n*KOJI FUJIW ARA AND JASON FOX MANNING*\n\n22 pp, 10 sections.\n\n**Abstract.** Let M be a hyperbolic n–manifold whose cusps have torus cross- sections. In [FM10], the authors constructed a variety of no npositively and negatively curved spaces as “2 π –ﬁllings” of M by replacing the cusps of M with compact “partial cones” of their boundaries. These 2 π –ﬁllings are closed pseudomanifolds, and so have a fundamental class. W e show th at the simplicial volume of any such 2 π –ﬁlling is positive, and bounded above by Vol(M ) vn , where vn is the volume of a regular ideal hyperbolic n–simplex. This result gener- alizes the fact that hyperbolic Dehn ﬁlling of a 3–manifold d oes not increase hyperbolic volume.\n\n**Outline.** 1 Introduction; 1.1 Outline; 2 Simplicial volume and duality; 2.1 Gromov norms; 2.2 Symmetrization; 3 Main result; Appendix A. A proportionality theorem; Appendix B. (Anti)Symmetrization of chains; Acknowledgments; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.4: [FM10] LetM be an n–dimensional hyperbolic manifold as above.\n- Theorem 1.5: LetM be a compact n–manifold with boundary a union of (n − 1)–\n- Theorem 1.5: gives further information (an upper bound) on the simp licial vol-\n- Theorem: A.1. Let M be a manifold with boundary, so that the interior V of M\n- Proposition 2.3: LetM be a closed orientable aspherical n–dimensional pseudo-\n- Proposition 3.7: We can choose a ﬁnite cover ˜M",
+ "extended": "**SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS**\n\n*KOJI FUJIWARA AND JASON FOX MANNING*\n\n22 pp, 11 sections.\n\n**Abstract.** Let M be a hyperbolic n–manifold whose cusps have torus cross- sections. In [FM10], the authors constructed a variety of nonpositively and negatively curved spaces as “2π–ﬁllings” of M by replacing the cusps of M with compact “partial cones” of their boundaries. These 2π–ﬁllings are closed pseudomanifolds, and so have a fundamental class. We show that the simplicial volume of any such 2π–ﬁlling is positive, and bounded above by Vol(M) vn , where vn is the volume of a regular ideal hyperbolic n–simplex. This result gener- alizes the fact that hyperbolic Dehn ﬁlling of a 3–manifold does not increase hyperbolic volume. In particular, we obtain information about the simplicial volumes of some 4–dimensional homology spheres described by Ratcliﬀe and Tschantz, answer- ing a question of Belegradek and establishing the existence of 4–dimensional homology spheres with positive simplicial volume.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Outline; 2 Simplicial volume and duality; 2.1 Gromov norms; 2.2 Symmetrization; 3 Main result; Appendix A. A proportionality theorem; Appendix B. (Anti)Symmetrization of chains; Acknowledgments; References",
  "tokens": {
   "brief": 32,
-  "extended": 376
+  "extended": 321
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -64,8 +69,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

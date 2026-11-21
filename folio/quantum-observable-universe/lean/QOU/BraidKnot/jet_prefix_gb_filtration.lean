@@ -5,7 +5,7 @@ import Mathlib.Tactic.FieldSimp
 /-!
 # QOU.BraidKnot.jet_prefix_gb_filtration
 
-**Proposition** ([`prop:jet-prefix-gb-filtration`](../../../mass-theory/jet-prefix-gb-filtration.md)).
+**Proposition** ([`conj:jet-prefix-gb-filtration`](../../../mass-theory/jet-prefix-gb-filtration.md)).
 
 *Define the Gröbner–Shirshov-filtered prefix `β_k^GS` of an atomic braid word
 `T_w ∈ H_{3A}(q)` as the projection onto the filtration stratum*
@@ -69,13 +69,13 @@ not mistaken for having had a defensible reading.
 
 Bean `qou-z9ws`.
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory/jet-prefix-gb-filtration.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/jet-prefix-gb-filtration.md
 -/
 
 namespace QOU.BraidKnot
 
 /-- **The jet-level prefix evaluation**
-([`prop:jet-prefix-gb-filtration`](../../../mass-theory/jet-prefix-gb-filtration.md)),
+([`conj:jet-prefix-gb-filtration`](../../../mass-theory/jet-prefix-gb-filtration.md)),
 as a proposition over caller-supplied data:
 
     a_k = tr_M^{[ℓ]}(β_k^GS) / Σ_λ w_λ · dim Res^{H_k}_{H_3}(V_λ).
@@ -83,7 +83,7 @@ as a proposition over caller-supplied data:
 **Named, not asserted.**  See the module docstring for what the previous
 encoding claimed instead, and for what this formula would need in order to be
 about braids rather than about reals. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/jet-prefix-gb-filtration.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/jet-prefix-gb-filtration.md
 def jet_prefix_gb_filtration {P : Type} (partitions : Finset P)
     (w dimRes : P → ℝ) (a_k trM : ℝ) : Prop :=
   a_k = trM / (partitions.sum fun lam => w lam * dimRes lam)
@@ -97,7 +97,7 @@ The hypothesis is doing real work rather than tidying: Lean's `x / 0 = 0`
 means that with a vanishing denominator the formula is *satisfied* by
 `a_k = 0` and constrains nothing, so the division alone does not carry the
 mathematical content. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/jet-prefix-gb-filtration.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/jet-prefix-gb-filtration.md
 theorem trM_eq_of_jet_prefix {P : Type} {partitions : Finset P}
     {w dimRes : P → ℝ} {a_k trM : ℝ}
     (hne : (partitions.sum fun lam => w lam * dimRes lam) ≠ 0)

@@ -1155,6 +1155,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "99cf8a2e12d7",
+          "ts": "2f4acb505909",
+          "lean": "d0e7718151a5",
+          "lean_statement": "b454b15ed70b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:02.265Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "Lean ref `benzene_weights` is `(6-1=5) ∧ (6/2=3) ∧ (5-3=2) := by omega` in ℕ; the statement is an energy estimate \"ΔE ∝ …\" with an eV scale \"∼1–2 eV\" that is chosen, not derived. The Lean module docstring says the 193–386 kJ/mol range \"match[es] the experimental range of 200–400 kJ/mol\" (`chain-ring-comparison.lean:9-10`). The whole block is a model-vs-data comparison typed as a proposition. Arithmetic checks: 2 eV = 193 kJ/mol, 4 eV = 386 kJ/mol"
       }
     ],
     "proof-statement-integrity": [
@@ -2129,6 +2147,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T07:01:06.467Z",
+  "updated_at": "2026-11-15T21:56:02.265Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

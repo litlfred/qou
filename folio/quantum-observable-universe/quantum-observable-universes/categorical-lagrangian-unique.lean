@@ -13,7 +13,7 @@ LaTeX: `\label{prop:categorical-lagrangian-unique}`
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/categorical-lagrangian-unique
+- [leitner2026] §2-quantum-observable-universes/categorical-lagrangian-unique
 - [connes1994] Noncommutative Geometry
 -/
 

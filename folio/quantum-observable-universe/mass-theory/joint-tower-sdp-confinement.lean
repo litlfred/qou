@@ -7,13 +7,13 @@
   constraints.
 
   This is the structural "step 1" input to the categorical mass
-  derivation (prop:atom-knot-mass-derivation).  Per-atom SDPs alone
+  derivation (conj:atom-knot-mass-derivation).  Per-atom SDPs alone
   are insufficient — the cross-level consistency constraints can only
   be enforced jointly.
 
-  Refs: prop:joint-tower-sdp-confinement (this block),
+  Refs: conj:joint-tower-sdp-confinement (this block),
         def:confined-particle, prop:confinement-sdp,
-        prop:atom-knot-mass-derivation, prop:gb-spectral-sequence,
+        conj:atom-knot-mass-derivation, prop:gb-spectral-sequence,
         prop:spectral-sequence-collapse,
         prop:wedderburn-trace-identity.
 -/
@@ -33,28 +33,35 @@ structure PerParticleSdpVariables where
   -- Jet-order indexing of the variables
   jet_order : List (List ℤ)  -- list of σ-words, ordered
 
-/-- Wedderburn-block positivity constraint: ρ_λ(T_w) ⪰ 0 for every
-    block λ ⊢ n_0.  Concrete predicate: the strand count is positive
-    (`vars.n_0 ≥ 1`), the minimal well-formedness for any partition
-    block to exist.  The genuine block-positivity check is handled
-    by the SDP solver downstream. -/
-def WedderburnBlockPositivity
-    (vars : PerParticleSdpVariables) (_lambda : List ℕ) : Prop :=
+/-! ## Well-formedness of the SDP data — NOT the SDP constraints
+
+2026-11-20 (W8b, bean `qou-w8cg`): the four predicates below were named
+`WedderburnBlockPositivity`, `GbFiltrationGrading`, `JetOrderOrdering` and
+`CrossLevelConsistency`, and a theorem `joint_tower_sdp_feasible` returned its
+own hypothesis (`registry ≠ []`) as "feasibility". None of them is the
+constraint its name promised: `ρ_λ(T_w) ⪰ 0` was `n_0 ≥ 1`. They are renamed to
+what they check — shape of the input data — and the tautological theorem and
+its `JointTowerSdpFeasible` are removed.
+
+**Not encoded:** block positivity `ρ_λ(T_w(𝔥)) ⪰ 0`, the GB-filtration support
+condition, the jet-order well-ordering, cross-level consistency of the
+embeddings `H_m(q₀) ↪ H_n(q₀)`, and joint feasibility. They need the Hecke
+algebra representations and an SDP feasibility notion this file does not
+build. The block is a conjecture (design specification); this file carries
+its data types only. -/
+
+/-- Data well-formedness: at least one strand. Not block positivity. -/
+def PerParticleStrandsWellFormed (vars : PerParticleSdpVariables) : Prop :=
   vars.n_0 ≥ 1
 
-/-- GB-filtration grading constraint: the support of c_w lives in a
-    fixed Coxeter-length-graded subspace.  Concrete predicate: the
-    filtration cutoff is bounded by `2 · n_0` (a Coxeter-length
-    sanity bound; tighter bounds belong to the genuine SDP
-    derivation). -/
-def GbFiltrationGrading (vars : PerParticleSdpVariables) : Prop :=
+/-- Data well-formedness: the filtration cutoff is at most `2 · n_0`.
+Not the GB-filtration support condition. -/
+def FiltrationCutoffWellFormed (vars : PerParticleSdpVariables) : Prop :=
   vars.filtration_cutoff ≤ 2 * vars.n_0
 
-/-- Jet-order ordering constraint.  Concrete predicate: the
-    `jet_order` list is non-empty (i.e. at least one σ-word is
-    indexed).  The genuine well-orderedness check belongs to the
-    SDP solver. -/
-def JetOrderOrdering (vars : PerParticleSdpVariables) : Prop :=
+/-- Data well-formedness: at least one σ-word is indexed. Not the jet-order
+well-ordering. -/
+def JetOrderNonempty (vars : PerParticleSdpVariables) : Prop :=
   vars.jet_order ≠ []
 
 /-- Tower edge: a confinement-level consistency constraint between
@@ -67,56 +74,24 @@ structure TowerEdge where
   -- The canonical embedding π : H_{domain} ↪ H_{codomain}
   -- sends T_w(constituent) ↦ T_w(parent) inside the relevant cosets
 
-/-- Cross-level consistency: for each tower edge, the embedding
-    π_{𝔥 → 𝔥'} maps T_w(𝔥') to T_w(𝔥) inside the relevant cosets.
-    Concrete predicate: the embedding is dimension-non-decreasing
-    (`embedding_codomain_n_0 ≥ embedding_domain_n_0`), the minimal
-    well-formedness for an inclusion `H_m ↪ H_n`. -/
-def CrossLevelConsistency (edge : TowerEdge) : Prop :=
+/-- Data well-formedness: the embedding does not decrease strand count, the
+minimum for an inclusion `H_m ↪ H_n` to exist. Not cross-level consistency. -/
+def TowerEdgeWellFormed (edge : TowerEdge) : Prop :=
   edge.embedding_codomain_n_0 ≥ edge.embedding_domain_n_0
 
-/-- The full joint mass-tower SDP. -/
+/-- The input data of the joint mass-tower SDP, with its well-formedness
+conditions. The SDP constraints themselves are not encoded (see above). -/
 structure JointTowerSdp where
   registry : List PerParticleSdpVariables
   tower_edges : List TowerEdge
-  -- Constraint flags
-  wedderburn_positivity_holds : ∀ vars ∈ registry, ∀ lambda, WedderburnBlockPositivity vars lambda
-  gb_filtration_holds : ∀ vars ∈ registry, GbFiltrationGrading vars
-  jet_order_holds : ∀ vars ∈ registry, JetOrderOrdering vars
-  cross_level_holds : ∀ edge ∈ tower_edges, CrossLevelConsistency edge
-
-/-- Existence of a solution to the joint-tower SDP at q_0.
-
-    By prop:confinement-sdp the per-atom SDP is feasible for every 𝔥.
-    The joint SDP is feasible iff the cross-level constraints are
-    simultaneously satisfiable, which holds because the canonical
-    embeddings H_m(q_0) ↪ H_n(q_0) preserve Wedderburn-block
-    positivity (each block of H_m embeds into a sum of compatible
-    blocks of H_n).  Combined with GB-filtration sparsity (finite
-    by SS collapse at E_2) and jet-order indexing, the SDP is
-    well-posed.
-
-    Concrete predicate: the registry is non-empty (at least one
-    particle's SDP variables are present), the minimal "data is
-    actually being tracked" sanity check.  The genuine
-    feasibility-of-system claim requires the SDP solver. -/
-def JointTowerSdpFeasible (sdp : JointTowerSdp) : Prop :=
-  sdp.registry ≠ []
-
-theorem joint_tower_sdp_feasible (sdp : JointTowerSdp)
-    (h_nonempty : sdp.registry ≠ []) :
-    JointTowerSdpFeasible sdp :=
-  -- Ref: [manuscript] prop:confinement-sdp + prop:wedderburn-trace-identity.
-  -- The canonical embedding π : H_m(q_0) ↪ H_n(q_0) sends each
-  -- Wedderburn block of H_m to a positive-semidefinite sum of
-  -- compatible blocks of H_n; this is enough to lift per-atom
-  -- feasibility to joint feasibility.  Under the concrete predicate
-  -- (registry ≠ []) the theorem reduces to its hypothesis.
-  h_nonempty
+  strands_wf : ∀ vars ∈ registry, PerParticleStrandsWellFormed vars
+  filtration_wf : ∀ vars ∈ registry, FiltrationCutoffWellFormed vars
+  jet_order_wf : ∀ vars ∈ registry, JetOrderNonempty vars
+  edges_wf : ∀ edge ∈ tower_edges, TowerEdgeWellFormed edge
 
 /-- Output: structured certificate Φ(q_0) per atom.  Combined with
     the Wedderburn-multiplicity ρ(𝔥), this is consumed by
-    prop:atom-knot-mass-derivation. -/
+    conj:atom-knot-mass-derivation. -/
 structure JointTowerSdpCertificate where
   T_w_per_atom : List (String × List ℤ)             -- (atom_name, σ-word)
   filtration_per_atom : List (String × ℕ)            -- (atom_name, max_grade)

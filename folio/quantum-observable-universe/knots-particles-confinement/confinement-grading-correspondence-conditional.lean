@@ -12,7 +12,7 @@
   it derives the confinement = KLR-grading correspondence directly
   from the class fields.
 
-  Refs: thm:confinement-grading-correspondence-conditional (this block),
+  Refs: conj:confinement-grading-correspondence-conditional (this block),
         conj:crystal-graph-realization,
         conj:confinement-grading-correspondence,
         def:confinement-level,
@@ -59,7 +59,7 @@ opaque KLRModule (n : ℕ) : Type := Unit
 opaque KLRTopDegree {n : ℕ} (M : KLRModule n) : ℕ := 0
 
 /-- Confinement level `ℓ(K, q)` of a normal form (opaque accessor; def:confinement-level). -/
--- Ref: [manuscript] def:confinement-level
+-- Ref: [leitner2026] def:confinement-level
 opaque confinementLevel {n : ℕ} {q : ℝ} (T : HeckeNormalForm n q) : ℕ := 0
 
 /-! ## Conjectural class

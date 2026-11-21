@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/oberwolfachreports1223-v20120708-9-40/sections/sec-018",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Spinal open books and algebraic torsion in contact 3-manifolds",
+  "pageStart": 36,
+  "pageEnd": 39,
+  "contains": [
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/prose-sec-018",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/thm-sec-018-01",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/thm-sec-018-02",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p037-1",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p038-1",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p039-1"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/oberwolfachreports1223-v20120708-9-40/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/oberwolfachreports1223-v20120708-9-40/manifest.jsonld",
+  "provenance": "ingested"
+}

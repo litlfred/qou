@@ -1,1 +1,1 @@
-The orbit decomposition of even theta characteristics on Bring’s curve
+KQ = AQ(S), and as such S is a theta characteristic. The deﬁnition of the RCV also requires that the differentials are normalised with respect to the homology basis taken {a j, b j} such that ' a j ωi = δi j. As such hidden in the above result is the fact that the Szeg˝o kernel divisor is homology dependent, because the RCV is.

@@ -1,0 +1,1006 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form",
+    "path": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement is a bare mathematical claim."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement respects the chapter's base-ring regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Proof machinery matches the statement regime."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "ec50bfd4f107"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qou-z9ws-vacuity-drain",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-31T11:20:30.777Z",
+        "reviewed_sha": "c2cae021ba996bee9a1f30fa2011b8c47d7cf275",
+        "severity": "minor",
+        "evidence": "core-levi-form.lean omits three things the md asserts. (1) The (1 + O(hbar_q^2)) factors of md parts (a) and (b) are NOT encoded -- AspectSqIsEigenvalueRatio states the leading-order relation as an exact equality, so md (b) comes out as the exact identity cond = max(aperp/apar, apar/aperp)^2. (2) md (c) is encoded only as the (1)<=>(2) equivalence; clauses (3) contact non-degeneracy, (4) the observability axiom Hom_C(1, Ad(A)) = 0, and (5) clean failure of Frobenius integrability have no Lean. (3) The q > 1 restriction on md (d) is not encoded -- CoreLeviData carries no q, and QuantumPressureBound is stated without it. md (e), the q = 1 degeneration, has no encoding either.",
+        "notes": "The class is re-encoded as data + named propositions and both projections are gone. CoreLeviContext previously carried lamPar, lamPerp, aPar, aPerp, cond, hbar, C0 AND md conclusions (b) and (d) as its own fields; lamPar = lamPerp = aPar = aPerp = cond = 1, hbar = C0 = 0 satisfies every field, so the binder assumed nothing, and core_levi_cond_aspect_bound / core_levi_cond_bound returned a field each. FINDING: one of the two was redundant. The old docstring said cond_aspect_bound 'carries the O(hbar_q^2) correction as an explicit bound'. It carried none -- the class already asserted cond = max lam / min lam and (aperp/apar)^2 = lampar/lamperp EXACTLY, and those two force cond = max(aspect)^2 on the nose, so the bound was 0 <= C0*hbar^2 wearing an absolute value. It is now derived. The other, md (d), is a genuine physical claim and is now an explicit hypothesis whose derived consequence (a bound on the aspect ratio) is a different statement. Bean qou-z9ws."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No false claims identified in 'Core aspect ratio equals Levi form condition number on the normal plane': mathematical reasoning is consistent.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The block 'Core aspect ratio equals Levi form condition number on the normal plane' presents substantial mathematical content: [`conj:q-aubin-lions`](#conj:q-aubin-lions), [`conj:ns-counterexample`](#conj:ns...",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Core aspect ratio equals Levi form condition number on the normal plane'.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No overclaims: the scope of 'Core aspect ratio equals Levi form condition number on the normal plane' is appropriately qualified.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Core aspect ratio equals Levi form condition number on the normal plane'.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The argument flow in 'Core aspect ratio equals Levi form condition number on the normal plane' is logically sound, mapping onto the cited dependencies.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean formalization and narrative for 'Core aspect ratio equals Levi form condition number on the normal plane' are in complete agreement.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No citations are present in 'Core aspect ratio equals Levi form condition number on the normal plane', hence no citation misuse is possible.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Key terms and symbols in 'Core aspect ratio equals Levi form condition number on the normal plane' are mathematically defined and unambiguous.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The algebraic and logical relations in 'Core aspect ratio equals Levi form condition number on the normal plane' are independent of empirical tuning parameters.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The physical concepts described in 'Core aspect ratio equals Levi form condition number on the normal plane' are consistent with quantum observable mechanics.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The derivation steps and formal definitions in 'Core aspect ratio equals Levi form condition number on the normal plane' are reproducible.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Core aspect ratio equals Levi form condition number on the normal plane' are consistent.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote fluid-dynamics_seq4.md to eliminate passive fluff and prioritize 'Why'. Kept '<!-- FILE_START: ... -->' bounds.",
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Both flagged items are gone: the AGENTS.md tag \"§7c\" was dropped and \"This block sits on the archimedean side\" was rewritten to \"What follows sits on the archimedean side of the substrate wall.\"",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.256Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "full text read; no instances of this construction"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.300Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "full text read; no instances of this construction"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.349Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "full text read; no instances of this construction"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.652Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "5-item equivalence list in (c) is the proposition's clause structure — substantive"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.390Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "full text read; no instances of this construction"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.431Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "full text read; no instances of this construction"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.474Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "full text read; no instances of this construction"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.516Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "full text read; no instances of this construction"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.688Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "severity": "minor",
+        "evidence": "'tightly bounds', 'strictly equivalent', 'fails cleanly', 'mechanically enforces', 'holds rigidly' spread across (a)-(e)",
+        "notes": "fixed: 'remains structurally inviolate' -> 'remains intact'. proposed: strip tightly/strictly/cleanly/mechanically/rigidly (5 sentences incl. equivalence-list items — structural, math-adjacent)"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.596Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "full text read; no instances of this construction"
+      }
+    ]
+  }
+}

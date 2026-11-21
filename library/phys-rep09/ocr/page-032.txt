@@ -1,0 +1,73 @@
+182 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+
+several interesting applications in physics and applied mathematics, from molecular dynamics to micromagnetics to linear
+algebra [100].
+
+Since Y(t) and Y (0) share the same spectrum, there exists a matrix function Q(t) € SO(n) such that Y(t)Q(t) = Q(t)Y(0)
+or, equivalently,
+
+Y(t) = Q(t)¥Q"(t). (144)
+Then, by inserting (144) into (143), it is clear that the time evolution of Q(t) is described by
+Q' =Alt, WQ)Q, Q(0) =I, (145)
+
+ie., an equation of type (139). Yet there is another possibility: if we seek the orthogonal matrix solution of (145) as
+Q(t) = exp(2(t)) with 2 skew-symmetric,
+
+Y(t) =e®@Ype"2,  t > 0, A(t) € son), (146)
+then the corresponding equation for 2 reads
+2! = dexpy' (A(t, e*Yoe™@)), 20) =O. (147)
+
+In a similar way as for Eq. (141), we apply Picard’s iteration to (147) and truncate the dexp~! series at k = m — 2. Now we
+can also consistently truncate the operator
+
+AdgYp = e? Yoe? = e42 Yq
+
+and the outcome still lies in so(n). By doing so, we replace the computation of one matrix exponential by several
+commutators.
+In the end, the scheme reads
+
+t
+amet) = il A(s, Yo)ds
+0
+
+m—1
+
+1
+Om-1() = P| Fadigim-niey Yo (148)
+l=0 ~
+
+m—2 t
+By
+alm) = ») al adi int, Om_1(s))ds, m>2
+k=0 ~"
+
+and, as before, one has 2(t) = 2!\(t) + (t'"*!). Thus
+Ox(t) = Yo + [2"(t), Yo]
+
+t
+Q(t) = il A(s, @1(s))ds
+0
+@2(t) = Yo + [21(t), Yo] + sla, (21(t), Yol]
+
+t t
+aro= f ACs, exsyas— > [ [21(s), As, O2(s))Ids
+0 0
+
+and so on. Observe that this procedure preserves the isospectrality of the flow, since the approximation 2!"!(t) lies in so(n)
+for allm > 1 and t > 0. It is also equally possible to develop a formalism based on rooted trees in this case, in a similar way
+as for the standard Magnus expansion.
+
+Example. The double bracket equation
+Y’=[[Y,N],Y], | Y() = Yo € Sym(n) (149)
+
+was introduced by Brockett [101] and Chu & Driessel [102] to solve certain standard problems in applied mathematics,
+although similar equations also appear in the formulation of physical theories such as micromagnetics [103]. Here N is a
+constant n x n symmetric matrix. It clearly constitutes an example of an isospectral flow with A(t, Y) = [Y, N]. When the
+procedure (148) is applied to (149), one reproduces exactly the expansion obtained in [104] with the convergence domain
+established in[105]. O
+
+3.4, Treatment of general nonlinear equations
+
+As a matter of fact, the Magnus expansion can be formally generalized to any nonlinear explicitly time-dependent
+differential equation. Given the importance of the expansion, it has, indeed, been (re)derived a number of times along
+the years in different settings. We have to mention, in this respect, the work of Agrachev and Gamkrelidze [106-108], and

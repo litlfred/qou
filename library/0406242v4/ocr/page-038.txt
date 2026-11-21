@@ -1,0 +1,43 @@
+1276 Francois Guéritaud and David Futer
+
+(2) If A; is flat, then w; = 0.
+(3) If A; is flat, then i is a hinge index, not equal to 1 or c — 1.
+(4) If A; is flat, then i is adjacent to at least two consecutive identical letters.
+
+(5) If both hinge layers at the ends of a syllable R* or L* are flat, then k > 3.
+
+Proof All the discussion and results of Section 7 apply equally well in our context.
+Thus we have conclusion (1) as a restatement of Proposition 7.1. The domino effect of
+Proposition 7.2 also applies; in fact, it is clear from the proof of the Proposition that the
+domino effect works both forward and backward. Thus it does not matter that our word
+Q. is not cyclic.
+
+Almost all the claims of (2)—(5) are proved in Section 7, either in Proposition 7.3
+or in the discussion that follows. The one exception is the claim that A; and A,_;
+cannot flatten. This follows because, in the case of two-bridge links, wo = we = 77/2.
+Thus setting w, or w,_; to 0 or 7/2 will trigger the domino effect and force all the
+tetrahedra to flatten, giving a volume of 0. im
+
+It remains to prove that at any point (w;) € OP satisfying the properties of Lemma A.4,
+the volume will increase as we move into the interior of P. Following Guéritaud, we do
+this using the geometrical statement of Lemma 8.2. The proof of this lemma transfers
+perfectly to our context when the fan under consideration corresponds to a subword in
+the interior of 2. As it turns out, the same statement is even easier to prove when the
+degenerate layer is near the beginning or end of (22.
+
+Lemma A.5_ Recall the word 2 = R“'L® --- , and suppose that the hinge layer Ag,
+has flattened, with wa, = 0. Then the fan corresponding to R“'L admits a complete
+Euclidean structure with boundary along S,,. Let Q, P, T be the lengths of the
+segments of the broken line in which Sq, intersects the cusp, as in Figure 20. Then
+QO<P+T.
+
+Of course, the analogous statement holds near the end of 2.
+
+Proof Note that, by Lemma A.4, we have a; > 2. For all 1 <i < a; — 2, the
+parameter w; can vary in a small interval, and no generality is lost in assuming that
+OV /Ow; = 0. (Otherwise, volume is easy to increase.) Then, as in the proof of
+Lemma 8.2, the criticality of volume with respect to these parameters implies that the
+fan of R“'L has a complete Euclidean structure. If i > 1, the computation is the same
+as in Sublemma 6.4. If i = 1, the angle zo of Figure 7 is replaced by the hairpin turn,
+
+Geometry & Topology 10 (2006)

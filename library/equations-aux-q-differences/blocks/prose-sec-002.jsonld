@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/equations-aux-q-differences/blocks/prose-sec-002",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "R´esolution et classiﬁcation locale",
-  "pageStart": 8,
-  "pageEnd": 12,
-  "text": "../sections/sec-002-31-resolution-et-classiﬁcation-locale.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/equations-aux-q-differences",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/equations-aux-q-differences",
+  "title": "Classiﬁcation et conﬂuence des syst`emes fuchsiens rationnels",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "text": "../sections/sec-002-3-classiﬁcation-et-conﬂuence-des-systemes-fuchsi.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/equations-aux-q-differences/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/equations-aux-q-differences/manifest.jsonld",
   "provenance": "ingested"
 }

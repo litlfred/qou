@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/invariant-eigendistributions-2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/invariant-eigendistributions-2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -31,7 +31,7 @@
     "library/invariant-eigendistributions-2/sections/sec-016"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "invariant-eigendistributions-2",
     "title_source": "corroborated",

@@ -1,7 +1,7 @@
 {
   "engine": "python-stdlib-exact",
   "engineVersion": "fractions + math (exact integers, no float64)",
-  "computedAt": "2026-08-08T20:30:10.849151+00:00",
+  "computedAt": "2026-11-18T22:03:11.802487+00:00",
   "assertions": [
     {
       "name": "s1_s2_zero",
@@ -50,12 +50,42 @@
       "computed": "True",
       "expected": "True",
       "passed": true
+    },
+    {
+      "name": "gpmt_zD_sub_q_neg_for_pos_q",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "gpmt_dMod111_neg_and_qInt_reciprocal",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "gpmt_threeRow_cumulant_signs_inverted",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "gpmt_BextGPMT_values_and_pos",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "gpmt_twoTerm_mirror_split_A3",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
     }
   ],
   "allPassed": true,
   "computation": "threerow-extensive-cumulant-forward",
   "scriptFile": "threerow_extensive_cumulant_forward_probe.py",
-  "scriptHash": "94df557bbfe1",
+  "scriptHash": "1a069c9abb13",
   "q0_anchor": "none (q₀-free construction; ratio-only test)",
   "description": "LEAD 1 (bean qou-prjo): the q₀-free ≥3-row extensive cumulant built FORWARD from the proved Δ_λ=(−1)^{n(λ)}f^λ restricted to ℓ(λ)≥3, fed into the derived C(A,k) cluster basis. free_parameters=0, no q₀, no AME inversion. Re-derives μ₂=0 combinatorially (0-fit) but gives the (−,+) sign order vs the derived (+,−) window and |ν₄/ν₃|=2 vs ~9.75; extensive AME ratio B_ext(4)/B_ext(3)=6.0 vs AME 3.336. scope-(a); nothing wired. Forward, q₀-free twin of deltalambda_kappa_interface_residual_simplex_probe.py.",
   "contentBlock": "rem:ohtsuki-tower-bar-parity",
@@ -208,6 +238,75 @@
       "reading_X_single": "2.0000",
       "verdict": "brackets AME (Y +80%, X −40%); no q₀-free convention lands on it; interpolating is the forbidden fit."
     },
-    "verdict": "scope-(a): the q₀-free ≥3-row signed-Springer-dimension content, ALONE, reproduces the derived μ₂=0 (0-fit) but not the 3-body sign, the (+,−) sign-change window, or the |μ₄/μ₃|≈9.75 magnitude. The many-body binding sign+magnitude live in the q₀-dependent y_λ·χ^λ trace weighting, not in the combinatorial Δ_λ. Nothing wired."
-  }
+    "verdict": "scope-(a): the q₀-free ≥3-row signed-Springer-dimension content, ALONE, reproduces the derived μ₂=0 (0-fit) but not the 3-body sign, the (+,−) sign-change window, or the |μ₄/μ₃|≈9.75 magnitude. The many-body binding sign+magnitude live in the q₀-dependent y_λ·χ^λ trace weighting, not in the combinatorial Δ_λ. Nothing wired.",
+    "gpmt_renormalized_three_row_bridge": {
+      "lean_module": "QOU.MassTheory.GPMTThreeRowCumulantBridge",
+      "bean": "qou-8mxc",
+      "rational_test_point_q": "111/100",
+      "zD_sub_q_exact": "-11100/22321",
+      "zD_sub_q_is_negative": true,
+      "dMod111_exact": "-1367631000000/8370755372161",
+      "dMod111_is_negative": true,
+      "dMod111_matches_neg_inv_qInt2_mul_qInt3": true,
+      "gpmt_weighted_cumulants": {
+        "mu2_GPMT": "0",
+        "mu3_GPMT": "1367631000000/8370755372161",
+        "mu4_GPMT": "-2735262000000/8370755372161",
+        "mu3_GPMT_pos": true,
+        "mu4_GPMT_neg": true,
+        "mu4_eq_neg_two_mul_mu3": true,
+        "sign_window": [
+          "+",
+          "-"
+        ],
+        "inverts_unweighted_sign_window_to_physical_plus_minus": true
+      },
+      "gpmt_extensive_cluster_BextGPMT": {
+        "2": "0",
+        "3": "1367631000000/8370755372161",
+        "4": "8205786000000/8370755372161",
+        "BextGPMT_3_pos": true,
+        "BextGPMT_4_pos": true,
+        "BextGPMT_4_eq_6_mul_BextGPMT_3": true
+      },
+      "coordination_simplex_verification": {
+        "simplexA2": "0",
+        "simplexA3": "1367631000000/8370755372161",
+        "simplexA4": "2735262000000/8370755372161",
+        "matches_single_algebra_sRow3GPMT": true
+      },
+      "two_term_mirror_split_A3": {
+        "triton_charges_3H": [
+          1,
+          0,
+          0
+        ],
+        "helium3_charges_3He": [
+          0,
+          1,
+          1
+        ],
+        "triton_isospin_3H": [
+          1,
+          -1,
+          -1
+        ],
+        "helium3_isospin_3He": [
+          -1,
+          1,
+          1
+        ],
+        "helium3_is_neg_triton_isospin": true,
+        "isospin_exchange_matrix_mirror_invariant": true,
+        "pairChargeA3_triton": 0,
+        "pairChargeA3_helium3": 1,
+        "B_3H_minus_B_3He_equals_c_EM": true
+      }
+    }
+  },
+  "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
+  "commitSha": "dbbda13e9feb9f7ece8365033b12502cc8e2e16d",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

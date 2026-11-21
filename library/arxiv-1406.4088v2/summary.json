@@ -1,0 +1,156 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1406.4088v2",
+ "source_sha256": "d8f2ff1efb5bea30",
+ "brief": "Ab initio calculation of the neutron-proton mass difference — 27 sections: Front matter; 1; Outline",
+ "extended": "**Ab initio calculation of the neutron-proton mass difference**\n\n*Sz. Borsanyi1, S. Durr1,2, Z. Fodor1,2,3, C. Hoelbling1, S. D. Katz3,4, S. Krieg1,2, L. Lellouch5, T. Lippert1,2, A*\n\n57 pp, 27 sections.\n\n**Outline.** Front matter; 1; 1 Outline; 2 Lattice and action details; 2.1 Photon action; 2.2 The Dirac operator; 2.3 HEX smearing; 3 Analytical studies of various QED formulatio; 3.1 Computation of finite-volume corrections i; 3.2 Results for finite-volume corrections to t; 4 Finite-volume and lattice-spacing correction; 5 Finite-volume effects for composite particle; 5.1 Comparison to numerical QCD+QED results; 6 Algorithms; 6.1 Hybrid Monte Carlo; 6.2 Updating the photon field; 6.3 Cost issues; 7 Ensembles\n\n**Extracted claims (proposals, not verified).**\n- Proposition: Here, we provide a fully controlled ab initio calculation for these isospin splittings.\n- Proposition: Because the precision of the experimental result for the nucleon is far greater than ours, we additionally give the QED and QCD separation obtained using the experimental value of\n- Proposition: Supplementary Materials for Ab initio calculation of the neutron-proton mass difference Sz.\n- Proposition: However signiﬁcant complications were observed in simulations with a non-vanishing zero-mode (34).\n- Proposition: This setup is the one used in all previous studies which include QED corrections to hadronic observables in lattice QCD (7, 10, 11, 35).\n- Proposition: Finite-volume corrections in QEDTL on T4 The setup considered in this section, QEDTL on the four-torus T4 of dimensions L3 × T, is the one used in all previous studies which",
+ "tokens": {
+  "brief": 24,
+  "extended": 407
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-000-1",
+   "title": "1",
+   "pages": "2-13"
+  },
+  {
+   "id": "sec-001-1-outline",
+   "title": "Outline",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-002-2-lattice-and-action-details",
+   "title": "Lattice and action details",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-003-21-photon-action",
+   "title": "Photon action",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-004-22-the-dirac-operator",
+   "title": "The Dirac operator",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-005-23-hex-smearing",
+   "title": "HEX smearing",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-006-3-analytical-studies-of-various-qed-formulations",
+   "title": "Analytical studies of various QED formulations in finite volume",
+   "pages": "17-19"
+  },
+  {
+   "id": "sec-007-31-computation-of-finite-volume-corrections-in-v",
+   "title": "Computation of finite-volume corrections in various QED formulations",
+   "pages": "19-21"
+  },
+  {
+   "id": "sec-008-32-results-for-finite-volume-corrections-to-the",
+   "title": "Results for finite-volume corrections to the pole mass and consequences for the various QED formulations",
+   "pages": "21-23"
+  },
+  {
+   "id": "sec-009-4-finite-volume-and-lattice-spacing-corrections",
+   "title": "Finite-volume and lattice-spacing corrections in QED: numerical investigations",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-010-5-finite-volume-effects-for-composite-particles",
+   "title": "Finite-volume effects for composite particles",
+   "pages": "24-27"
+  },
+  {
+   "id": "sec-011-51-comparison-to-numerical-qcdqed-results",
+   "title": "Comparison to numerical QCD+QED results",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-012-6-algorithms",
+   "title": "Algorithms",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-013-61-hybrid-monte-carlo",
+   "title": "Hybrid Monte Carlo",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-014-62-updating-the-photon-field",
+   "title": "Updating the photon field",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-015-63-cost-issues",
+   "title": "Cost issues",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-016-7-ensembles",
+   "title": "Ensembles",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-017-8-electric-charge-renormalization",
+   "title": "Electric charge renormalization",
+   "pages": "30-32"
+  },
+  {
+   "id": "sec-018-9-extracting-hadron-masses",
+   "title": "Extracting hadron masses",
+   "pages": "32-33"
+  },
+  {
+   "id": "sec-019-10-reaching-the-physical-point",
+   "title": "Reaching the physical point",
+   "pages": "33-33"
+  },
+  {
+   "id": "sec-020-101-normalizing-hadron-masses",
+   "title": "Normalizing hadron masses",
+   "pages": "33-33"
+  },
+  {
+   "id": "sec-021-102-determining-the-isospin-splittings",
+   "title": "Determining the isospin splittings",
+   "pages": "33-34"
+  },
+  {
+   "id": "sec-022-103-separating-qed-and-qcd-effects",
+   "title": "Separating QED and QCD effects",
+   "pages": "34-35"
+  },
+  {
+   "id": "sec-023-104-the-coleman-glashow-relation",
+   "title": "The Coleman-Glashow relation",
+   "pages": "35-35"
+  },
+  {
+   "id": "sec-024-11-akaikes-information-criterion",
+   "title": "Akaike's information criterion",
+   "pages": "35-36"
+  },
+  {
+   "id": "sec-025-12-final-results-and-systematic-errors",
+   "title": "Final results and systematic errors",
+   "pages": "36-57"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

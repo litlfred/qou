@@ -1,0 +1,65 @@
+---
+doc_id: schechtman-varchenko1991-arrangements
+doc_title: "Arrangements of hyperplanes and Lie algebra homology"
+section_id: page-040
+section_title: "Page 40"
+pages: 40-40
+pdf_page: 40
+source_pdf: schechtman-varchenko1991-arrangements.pdf
+source_sha256: 0100fd32438740f0
+text_source: ocr
+granularity: page
+doc_brief: "Arrangements of hyperplanes and Lie algebra homology — 56 sections: Page 1; Page 2; Page 3"
+---
+178 V.V. Schechtman and A.N. Varchenko
+
+This Lemma proves 6.6 for p=0, n=1 and any J. The case of general p, n
+follows from the commutativity of squares
+
+C,(n, M), —*— C,(ft, M)
+(6.11.8) s | [>
+C.(n, Mf —2— C,(A, M)
+
+which in turn follows from 6.11.7 (cf. 6.9 and 6.10).
+The proof of 6.6 is complete.
+
+6.12 Remark. In view of 6.6, the determinant formula 3.7 applied to arrange-
+ments @,,y appears to be a variant of the Shapovalov determinant formula
+[Sh].
+
+6.13 In conditions of 6.6, put g=g/ker S; it is the Kac-Moody Lie algebra
+associated with the matrix A defined in 6.3. Put n=n/kerScg; L(A)
+= M(A))/ker S — these are irreducible g-modules; L=L,@...@L,. As in § 3,
+denote by ¥” the image S(F )c av’.
+
+Corollary. The maps ¥ induce isomorphisms of complexes
+
+C.(fi, L), > FY~"(@,,y)*
+for any AEN".
+
+In the rest of this section we'll introduce a structure of a Lie bialgebra
+on b[D] and a structure of a b-comodule on M=M(A,)@...@ M(A,). Com-
+plexes o/"~*(@,,y) are identified with homogeneous parts of the standard com-
+plex C.(n*, M*).
+
+6.14 Cobracket. 6.14.1 Lemma-definition. There exists a unique map v:b>bAb
+such that
+
+(i) v(h)=0; v(fp=4f, rh, for all heb; i=1,...,r;
+
+(ii) v(Lx, y])=xv(y)—yv(x) for all x, yeb, where the action of b on bab is
+the adjoint one: a(bAc)=[a, b]Ac+aa[b, c] (i.e. v is a 1-cocycle of b with
+values in b Ab).
+
+Proof. Left to the reader (cf. [D, Example 3.2]). 0
+Let us define the map pu: N’ +5 by the formula p(k,, ...,k,)= Yk; hy.
+i=t
+
+Note that v([h, x])=h-v(x) for heb, xeb. Hence the cobracket v preserves
+the weight decomposition (with respect to the h-action).
+
+6.14.2 Lemma. For every xen,
+(i) v(x)=—4 yA) Ax+v(x)_ where v(x)_Eenancbab.
+(ii) For every i
+
+V(Lhis *])- =i v0) hi, MAD SAX =fr VO) +A Thi x]-

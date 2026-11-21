@@ -1,8 +1,8 @@
-The two classes taken as `[Instance]` hypotheses by the Lean theorem
-[`QOU.Archimedean.archimedean_functor_uniqueness`](archimedean-functor-uniqueness.lean)
-are the only unproved inputs; both are well-established results
-awaiting Mathlib formalisation (`Real.dilog`, `BlochGroup`, the
-Suslin map).
+The two hypotheses of the
+[archimedean functor uniqueness theorem](#prop:archimedean-functor-uniqueness)
+are its only unproved inputs; both are well-established results in the
+literature (on the dilogarithm, the Bloch group and the Suslin map) and
+enter as cited inputs.
 
 ## Pre-archimedean / archimedean separation
 
@@ -25,11 +25,7 @@ motivic class is canonical. (ii) *Provenance of $\pi$*: any
 transcendental constant in a QOU observable is the
 $\tau_{\text{arch}}$-image of substrate pentagon data via $D$ (or
 its multivariate generalisations), and is therefore not an external
-import. The additive Bring zero-mode candidate
-[`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)
-illustrates the second point: the $2/(3\pi) = 2g/(4\pi(g-1))$
-correction at $g = 4$ is the archimedean shadow of pentagon
-data on Bring's surface, not a $\pi$-import outside $R$.
+import.
 
 The algebraic / archimedean dichotomy establishes a clean separation between categorical structure and continuum measurement. The mass formula evaluates a closed cycle on the Frobenius-Hopf substrate. The non-degenerate Frobenius pairing $\int_A \circ \mu$ identifies $A \cong A^\vee$, making the substrate algebra self-dual. This self-duality drives the descent involution $\hat{\tau}_n$ on the endomorphism algebra, which splits the categorical mass endomorphism into a descended baseline component and a transient component localized at the exceptional divisors of the brane tower.
 
@@ -48,29 +44,17 @@ To satisfy the Descartes condition $\chi = -6$, the physical state space restric
 
 ## Corollaries
 
-**(a) Resolves the pre-archimedean concern in
-[`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode).**
-The $\pi$ in the additive correction $2/(3\pi) = 2g/(4\pi(g-1))$
-at $g=4$ is the unique archimedean shadow of pentagon-coherent
-substrate data on Bring's surface. The substrate's pentagon
-coherence forces the archimedean image to involve $D$ (and hence
-$\pi$ via $D$'s functional equation); no other transcendental
-shape is admissible. The additive correction is therefore *not*
-outside $R$ — it is the canonical $\tau_{\text{arch}}$-image of
-$R$-internal pentagon data.
-
-**(b) Forecloses arbitrary $\pi$-imports.** Any candidate closed
+**(a) Forecloses arbitrary $\pi$-imports.** Any candidate closed
 form for a QOU observable that includes a transcendental constant
 not derivable from $D$ (or its multivariate generalisations
 $D_n$) is excluded. This is a falsifiability constraint: the
-multiplicative gluon-octet form (a legacy PSLQ-empirical conjecture,
-since superseded by [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode))
+multiplicative gluon-octet form (a PSLQ-empirical candidate)
 required arbitrary integer ratios $45 \cdot [3]_q \cdot
 (1+\delta_{CS}+8q\delta_{CS}^2)$ that would have to come from a
 non-pentagon source, is ruled out *structurally* in addition to
 the existing PSLQ ruling.
 
-**(c) Pins the figure-8 knot example.** The figure-8 knot $4_1$
+**(b) Pins the figure-8 knot example.** The figure-8 knot $4_1$
 embeds smoothly into Bring's surface as the amphichiral mass
 mechanism. On the pre-archimedean side it has a rigorous
 motivic / algebraic representation via its Hecke normal form in
@@ -99,10 +83,9 @@ transcendental continuum required for geometric measurement. See
    $D_n$ at $n \geq 3$ is open in the literature (Goncharov 1995
    conjectures); the QOU framework can take it as input where
    needed.
-3. **Lean formalisation of Suslin1991.** Mathlib has neither
-   `Real.dilog` nor `BlochGroup`. The Lean stub records this as
-   a sorry keyed to [`suslin1991`]; closure depends on upstream
-   Mathlib work.
+3. **Suslin's theorem as a cited input.** The result of
+   \cite{suslin1991} is used as a cited input and is not proved
+   here.
 
 ## Witness
 
@@ -111,9 +94,4 @@ relevant cross-check is that any new closed form for a QOU
 observable proposed in this repository must be expressible as a
 $\tau_{\text{arch}}$-image of a pentagon-coherent
 $R$-internal class, or equivalently, must factor through $D$ (or
-$D_n$) in its archimedean expansion. The
-[`em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)
-candidate satisfies this; the legacy gluon-octet PSLQ candidate
-(now removed; superseded by
-[`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode))
-did not.
+$D_n$) in its archimedean expansion.

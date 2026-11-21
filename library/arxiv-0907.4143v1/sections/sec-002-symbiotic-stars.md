@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0907.4143v1
-doc_title: "Soft and Supersoft X-ray Sources in Symbiotic Stars1"
+doc_title: "Soft and Supersoft X-ray Sources in Symbiotic Stars 1"
 section_id: sec-002-symbiotic-stars
 section_title: "Symbiotic stars"
 section_number: null
 pages: 3-4
 source_pdf: 0907.4143v1.pdf
 source_sha256: a2090d1e574b27db
-doc_brief: "Soft and Supersoft X-ray Sources in Symbiotic Stars1 — Assuming that soft X-ray sources in symbiotic stars result from strong thermonu- clear runaways, and supersoft X-ray sources from weak"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.978
-latex_coverage_ratio: 0.944
+latex_coverage_ratio: 0.937
+doc_brief: "Soft and Supersoft X-ray Sources in Symbiotic Stars 1 — Assuming that soft X-ray sources in symbiotic stars result from strong thermonu- clear runaways, and supersoft X-ray sources from weak"
 ---
 SySs are complex binary systems, and can be divided into two
 subgroups: `ordinary' SySs, which are assumed to burn hydrogen

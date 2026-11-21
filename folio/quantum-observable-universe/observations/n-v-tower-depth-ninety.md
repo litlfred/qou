@@ -11,7 +11,7 @@ An alternative factorisation $90 = 6 \cdot 15$ suggests six generations traversi
 
 ## Constructions required
 
-We require three components:
+Three components are required:
 1. **Operational definition** of brane-tower depth.
 2. **Derivation of 90** from Bring combinatorics.
 3. **Sub-leading correction** proof.

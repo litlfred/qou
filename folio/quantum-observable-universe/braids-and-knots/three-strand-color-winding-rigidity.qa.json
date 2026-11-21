@@ -1737,8 +1737,61 @@
         "reviewed_at": "2026-08-30T12:11:38.660Z",
         "reviewed_sha": "7f450c4a62ac12fdbf8a4c748b1cdaf820b6d8b5"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "a198a968c2d7",
+          "ts": "875a8c6dc34e",
+          "lean": "45c9c7230a51",
+          "lean_statement": "7898ffffa15b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:26:48.382Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "notes": "Statement and Lean threeStrand_cubes_to_one agree: generic CommRing, q a unit, a and beta constrained (a(1-q^4)=h, beta^2=a_-2 a+1), hypothesis 1-q^2 a unit, conclusion M^3=1; trace/det lemmas carry the eigenvalue claim."
+      },
+      {
+        "field_hash": {
+          "md": "252e2859712a",
+          "ts": "875a8c6dc34e",
+          "lean": "45c9c7230a51",
+          "lean_statement": "7898ffffa15b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:57:01.259Z",
+        "reviewed_sha": "f84776ece33e7b2ccfa5cfa386fc4c0238ec4a2d",
+        "evidence": "Re-review after 9fb2b100f. Statement hypothesis is now 1−q⁴ invertible; the Lean (generic CommRing, β and a₂ constrained, needs only 1−q² invertible for the trace) is weaker in hypothesis, hence implies the statement. Notational note: the statement writes a₂ = (q−q⁻¹)/(1−q⁴) while the proof block labels that entry a_{−2}."
+      },
+      {
+        "field_hash": {
+          "md": "70c918b5574c",
+          "ts": "875a8c6dc34e",
+          "lean": "45c9c7230a51",
+          "lean_statement": "7898ffffa15b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T23:30:07.106Z",
+        "reviewed_sha": "c87aa9c757e841db81341bde59da76b34fd2ece6",
+        "evidence": "Re-review after #8075 (label a_{-2} now used consistently). The Lean's constrained variable satisfies a·(1−q⁴) = h, which is a_{−2}, as the narrative now says; Lean needs only 1−q² invertible, weaker than the statement's 1−q⁴."
+      }
     ]
   },
-  "updated_at": "2026-08-30T12:11:38.660Z",
+  "updated_at": "2026-11-15T23:30:07.106Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

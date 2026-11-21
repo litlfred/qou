@@ -8,7 +8,7 @@
   "pages": 31,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:21Z",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -26,7 +26,7 @@
   "title_lines": [
    "EXPLICIT DESCRIPTION OF CHRISTOFFEL DEFORMATIONS AND"
   ],
-  "abstract": "Christo\ufb00el deformation of a measure on the real line consists of multipying this measure by a squared polynomial having its roots in R. We introduce Christo\ufb00el deformations of discrete orthogonal polynomial ensembles by considering the Christo\ufb00el de- formations of the underlying measure, and prove that this construction extends to more general point processes describing distribution on partitions: the poissonized Plancherel measure and the z-measures. These deformations contain the theory of Palm measures, and for example, explicit formulas for the Palm measures of the poissonized Plancherel mea- sure provide a description of the TASEP with initial wedge condition with frozen particles. We also obtain new formulas for Palm measures of the z-measures. The extension to the Plancherel measure is obtained via a limit transition from the Charlier ensemble, while the extension to the z-measures follows from an analytic continuation argument. A limit pro- cedure starting from the non-degenerate z-measures leads to a deformation of the Gamma process introduced by Borodin and Olshanski. CNRS, UMR 7373, \u00b4Ecole centrale de Marseille, Institut de Math\u00b4ematiques de Marseille, Aix-Marseille Universit\u00b4e, Marseille, France SISSA, via Bonomea 265, 34136, Trieste, Italy INFN, Section of Trieste pierrelazag@hotmail.fr",
+  "abstract": "Christoﬀel deformation of a measure on the real line consists of multipying this measure by a squared polynomial having its roots in R. We introduce Christoﬀel deformations of discrete orthogonal polynomial ensembles by considering the Christoﬀel de- formations of the underlying measure, and prove that this construction extends to more general point processes describing distribution on partitions: the poissonized Plancherel measure and the z-measures. These deformations contain the theory of Palm measures, and for example, explicit formulas for the Palm measures of the poissonized Plancherel mea- sure provide a description of the TASEP with initial wedge condition with frozen particles. We also obtain new formulas for Palm measures of the z-measures. The extension to the Plancherel measure is obtained via a limit transition from the Charlier ensemble, while the extension to the z-measures follows from an analytic continuation argument. A limit pro- cedure starting from the non-degenerate z-measures leads to a deformation of the Gamma process introduced by Borodin and Olshanski. CNRS, UMR 7373, ´Ecole centrale de Marseille, Institut de Math´ematiques de Marseille, Aix-Marseille Universit´e, Marseille, France SISSA, via Bonomea 265, 34136, Trieste, Italy INFN, Section of Trieste pierrelazag@hotmail.fr",
   "docinfo": {
    "Producer": "GPL Ghostscript 10.01.2",
    "Creator": "LaTeX with hyperref",
@@ -36,7 +36,7 @@
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "EXPLICIT DESCRIPTION OF CHRISTOFFEL DEFORMATIONS AND PALM MEASURES OF THE PLANCHEREL MEASURE, THE z -MEASURES AND THE GAMMA PROCESS Keywords: determinantal point processes, Palm measures, Christo\ufb00el deformations, Plancherel measures, z -measures, Gamma process 1. Introduction 1.1. Random partitions",
+   "heading": "EXPLICIT DESCRIPTION OF CHRISTOFFEL DEFORMATIONS AND PALM MEASURES OF THE PLANCHEREL MEASURE, THE z -MEASURES AND THE GAMMA PROCESS Keywords: determinantal point processes, Palm measures, Christoﬀel deformations, Plancherel measures, z -measures, Gamma process 1. Introduction 1.1. Random partitions",
    "outline": "1. Introduction",
    "text": "EXPLICIT DESCRIPTION OF CHRISTOFFEL DEFORMATIONS AND",
    "corroborated_by": [],
@@ -610,14 +610,38 @@
    "title": "Random partitions as point processes",
    "level": 2,
    "page_start": 1,
-   "page_end": 4,
-   "n_chars": 7314,
-   "n_words": 1189,
+   "page_end": 2,
+   "n_chars": 1463,
+   "n_words": 278,
    "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-002-12-determinantal-point-processes-and-christoffel",
+   "number": "1.2",
+   "title": "Determinantal point processes and Christoffel deformations",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 962,
+   "n_words": 153,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-003-13-background-and-motivations-characteristic-pol",
+   "number": "1.3",
+   "title": "Background and motivations: characteristic polynomials and Palm measures",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 4776,
+   "n_words": 744,
+   "label_start": "2",
    "label_end": "4"
   },
   {
-   "id": "sec-002-14-main-results",
+   "id": "sec-004-14-main-results",
    "number": "1.4",
    "title": "Main results",
    "level": 2,
@@ -629,7 +653,7 @@
    "label_end": "4"
   },
   {
-   "id": "sec-003-15-organization-of-the-paper",
+   "id": "sec-005-15-organization-of-the-paper",
    "number": "1.5",
    "title": "Organization of the paper",
    "level": 2,
@@ -641,19 +665,31 @@
    "label_end": "5"
   },
   {
-   "id": "sec-004-acknowledgments",
+   "id": "sec-006-acknowledgments",
    "number": null,
    "title": "Acknowledgments.",
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 688,
-   "n_words": 104,
+   "n_chars": 611,
+   "n_words": 91,
    "label_start": "5",
    "label_end": "5"
   },
   {
-   "id": "sec-005-data-availability",
+   "id": "sec-007-conflict-of-interest",
+   "number": null,
+   "title": "Conflict of interest",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-008-data-availability",
    "number": null,
    "title": "Data availability",
    "level": 2,
@@ -665,7 +701,7 @@
    "label_end": "5"
   },
   {
-   "id": "sec-006-2-christoffel-deformations-of-orthogonal-polynom",
+   "id": "sec-009-2-christoffel-deformations-of-orthogonal-polynom",
    "number": "2",
    "title": "Christoffel deformations of orthogonal polynomial ensembles",
    "level": 1,
@@ -677,19 +713,31 @@
    "label_end": "5"
   },
   {
-   "id": "sec-007-21-notation",
+   "id": "sec-010-21-notation",
    "number": "2.1",
    "title": "Notation",
    "level": 2,
    "page_start": 5,
-   "page_end": 8,
-   "n_chars": 3408,
-   "n_words": 727,
+   "page_end": 6,
+   "n_chars": 650,
+   "n_words": 142,
    "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-011-22-christoffel-deformations-of-discrete-orthogon",
+   "number": "2.2",
+   "title": "Christoffel deformations of discrete orthogonal polynomials",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 2672,
+   "n_words": 573,
+   "label_start": "6",
    "label_end": "8"
   },
   {
-   "id": "sec-008-23-discrete-orthogonal-polynomial-ensembles-and",
+   "id": "sec-012-23-discrete-orthogonal-polynomial-ensembles-and",
    "number": "2.3",
    "title": "Discrete orthogonal polynomial ensembles and determinantal point processes",
    "level": 2,
@@ -701,7 +749,7 @@
    "label_end": "10"
   },
   {
-   "id": "sec-009-24-palm-measures-of-determinantal-point-processe",
+   "id": "sec-013-24-palm-measures-of-determinantal-point-processe",
    "number": "2.4",
    "title": "Palm measures of determinantal point processes",
    "level": 2,
@@ -713,7 +761,7 @@
    "label_end": "11"
   },
   {
-   "id": "sec-010-3-the-charlier-ensemble-and-a-deformation-of-the",
+   "id": "sec-014-3-the-charlier-ensemble-and-a-deformation-of-the",
    "number": "3",
    "title": "The Charlier ensemble and a deformation of the Plancherel measure",
    "level": 1,
@@ -725,19 +773,31 @@
    "label_end": "11"
   },
   {
-   "id": "sec-011-31-on-the-plancherel-measure-on-partitions",
+   "id": "sec-015-31-on-the-plancherel-measure-on-partitions",
    "number": "3.1",
    "title": "On the Plancherel measure on partitions",
    "level": 2,
    "page_start": 11,
-   "page_end": 13,
-   "n_chars": 3656,
-   "n_words": 664,
+   "page_end": 12,
+   "n_chars": 1310,
+   "n_words": 240,
    "label_start": "11",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-016-32-christoffel-deformations-of-the-charlier-ense",
+   "number": "3.2",
+   "title": "Christoffel deformations of the Charlier ensemble and main result",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 2267,
+   "n_words": 412,
+   "label_start": "12",
    "label_end": "13"
   },
   {
-   "id": "sec-012-33-proof-of-theorem-31",
+   "id": "sec-017-33-proof-of-theorem-31",
    "number": "3.3",
    "title": "Proof of Theorem 3.1",
    "level": 2,
@@ -749,7 +809,7 @@
    "label_end": "17"
   },
   {
-   "id": "sec-013-34-palm-measures-of-the-discrete-bessel-point-pr",
+   "id": "sec-018-34-palm-measures-of-the-discrete-bessel-point-pr",
    "number": "3.4",
    "title": "Palm measures of the discrete Bessel point process",
    "level": 2,
@@ -761,19 +821,31 @@
    "label_end": "18"
   },
   {
-   "id": "sec-014-4-the-z-measures-and-a-deformation-of-the-gamma",
+   "id": "sec-019-4-the-z-measures-and-a-deformation-of-the-gamma",
    "number": "4",
    "title": "The z-measures and a deformation of the gamma process",
    "level": 1,
    "page_start": 18,
+   "page_end": 18,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "18",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-020-41-christoffel-deformations-of-the-z-measures",
+   "number": "4.1",
+   "title": "Christoffel deformations of the z-measures",
+   "level": 2,
+   "page_start": 18,
    "page_end": 25,
-   "n_chars": 15166,
-   "n_words": 3031,
+   "n_chars": 15084,
+   "n_words": 3020,
    "label_start": "18",
    "label_end": "25"
   },
   {
-   "id": "sec-015-42-palm-measures-of-the-z-measures",
+   "id": "sec-021-42-palm-measures-of-the-z-measures",
    "number": "4.2",
    "title": "Palm measures of the z-measures",
    "level": 2,
@@ -785,7 +857,7 @@
    "label_end": "26"
   },
   {
-   "id": "sec-016-43-a-deformation-of-the-gamma-kernel",
+   "id": "sec-022-43-a-deformation-of-the-gamma-kernel",
    "number": "4.3",
    "title": "A deformation of the Gamma kernel",
    "level": 2,
@@ -797,7 +869,7 @@
    "label_end": "28"
   },
   {
-   "id": "sec-017-44-proof-of-theorem-45",
+   "id": "sec-023-44-proof-of-theorem-45",
    "number": "4.4",
    "title": "Proof of Theorem 4.5",
    "level": 2,
@@ -809,7 +881,7 @@
    "label_end": "30"
   },
   {
-   "id": "sec-018-references",
+   "id": "sec-024-references",
    "number": null,
    "title": "References",
    "level": 1,
@@ -832,13 +904,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 20,
-  "chars_total": 64611,
+  "sections": 26,
+  "chars_total": 64174,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 24,
-   "overlaid": 12,
+   "overlaid": 16,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -854,18 +927,34 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-001-11-random-partitions-as-point-processes",
      "title": "Random partitions as point processes",
-     "prose_ratio": 0.926,
+     "prose_ratio": 0.867,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-14-main-results",
+     "id": "sec-002-12-determinantal-point-processes-and-christoffel",
+     "title": "Determinantal point processes and Christoffel deformations",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-13-background-and-motivations-characteristic-pol",
+     "title": "Background and motivations: characteristic polynomials and Palm measures",
+     "prose_ratio": 0.928,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-14-main-results",
      "title": "Main results",
      "prose_ratio": 0.898,
      "coverage_ratio": 1.0,
@@ -873,7 +962,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-15-organization-of-the-paper",
+     "id": "sec-005-15-organization-of-the-paper",
      "title": "Organization of the paper",
      "prose_ratio": 0.89,
      "coverage_ratio": 1.0,
@@ -881,35 +970,49 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-acknowledgments",
+     "id": "sec-006-acknowledgments",
      "title": "Acknowledgments.",
-     "prose_ratio": 0.911,
+     "prose_ratio": 0.904,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-data-availability",
+     "id": "sec-007-conflict-of-interest",
+     "title": "Conflict of interest",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-data-availability",
      "title": "Data availability",
      "prose_ratio": 0.333,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-006-2-christoffel-deformations-of-orthogonal-polynom",
+     "id": "sec-009-2-christoffel-deformations-of-orthogonal-polynom",
      "title": "Christoffel deformations of orthogonal polynomial ensembles",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-007-21-notation",
+     "id": "sec-010-21-notation",
      "title": "Notation",
-     "prose_ratio": 0.931,
-     "coverage_ratio": 0.969,
+     "prose_ratio": 0.857,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-23-discrete-orthogonal-polynomial-ensembles-and",
+     "id": "sec-011-22-christoffel-deformations-of-discrete-orthogon",
+     "title": "Christoffel deformations of discrete orthogonal polynomials",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-23-discrete-orthogonal-polynomial-ensembles-and",
      "title": "Discrete orthogonal polynomial ensembles and determinantal point processes",
      "prose_ratio": 0.948,
      "coverage_ratio": 0.985,
@@ -917,7 +1020,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-24-palm-measures-of-determinantal-point-processe",
+     "id": "sec-013-24-palm-measures-of-determinantal-point-processe",
      "title": "Palm measures of determinantal point processes",
      "prose_ratio": 0.903,
      "coverage_ratio": 0.988,
@@ -925,21 +1028,29 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-3-the-charlier-ensemble-and-a-deformation-of-the",
+     "id": "sec-014-3-the-charlier-ensemble-and-a-deformation-of-the",
      "title": "The Charlier ensemble and a deformation of the Plancherel measure",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-011-31-on-the-plancherel-measure-on-partitions",
+     "id": "sec-015-31-on-the-plancherel-measure-on-partitions",
      "title": "On the Plancherel measure on partitions",
-     "prose_ratio": 0.953,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-33-proof-of-theorem-31",
+     "id": "sec-016-32-christoffel-deformations-of-the-charlier-ense",
+     "title": "Christoffel deformations of the Charlier ensemble and main result",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-33-proof-of-theorem-31",
      "title": "Proof of Theorem 3.1",
      "prose_ratio": 0.946,
      "coverage_ratio": 0.984,
@@ -947,7 +1058,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-34-palm-measures-of-the-discrete-bessel-point-pr",
+     "id": "sec-018-34-palm-measures-of-the-discrete-bessel-point-pr",
      "title": "Palm measures of the discrete Bessel point process",
      "prose_ratio": 0.844,
      "coverage_ratio": 0.982,
@@ -955,15 +1066,21 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-4-the-z-measures-and-a-deformation-of-the-gamma",
+     "id": "sec-019-4-the-z-measures-and-a-deformation-of-the-gamma",
      "title": "The z-measures and a deformation of the gamma process",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-020-41-christoffel-deformations-of-the-z-measures",
+     "title": "Christoffel deformations of the z-measures",
      "prose_ratio": 0.952,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-42-palm-measures-of-the-z-measures",
+     "id": "sec-021-42-palm-measures-of-the-z-measures",
      "title": "Palm measures of the z-measures",
      "prose_ratio": 0.859,
      "coverage_ratio": 1.0,
@@ -971,18 +1088,18 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-43-a-deformation-of-the-gamma-kernel",
+     "id": "sec-022-43-a-deformation-of-the-gamma-kernel",
      "title": "A deformation of the Gamma kernel",
      "prose_ratio": 0.573,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-017-44-proof-of-theorem-45",
+     "id": "sec-023-44-proof-of-theorem-45",
      "title": "Proof of Theorem 4.5",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-018-references",
+     "id": "sec-024-references",
      "title": "References",
      "result": "no matching \\section"
     }

@@ -3,13 +3,14 @@
  "doc_id": "arxiv-2212.04436v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "0f98a851d030ec05262ee046de574af7467facf7b8ea5b6f6440457f44e6c02b",
   "file": "2212.04436v1.pdf"
  },
  "provenance": {
   "title": "Dilute neutron star matter from neural-network quantum states",
-  "authors": "Bryce Fore,1 Jane M. Kim, 2 Giuseppe Carleo, 3 Morten Hjorth-Jensen, 2, 4 and Alessandro Lovato 5, 6, 7",
+  "authors": "Bryce Fore,1 Jane M. Kim,2 Giuseppe Carleo,3 Morten Hjorth-Jensen,2, 4 and Alessandro Lovato5, 6, 7",
   "arxiv": {
    "id": "2212.04436",
    "version": "1",
@@ -20,9 +21,69 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 2,
+  "by_kind": {
+   "proposition": 2
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 2
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 2
+  },
+  "by_evidence_location": {
+   "in-paper": 2
+  }
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "slightly larger than the experimental value of \u221218.9(4) fm, see [41] and references therein, while the e\ufb00ective range is well reproduced.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/page-002.md (p. 2-2)",
+   "external_refs": [
+    "[41]"
+   ],
+   "quantitative_values": [
+    "18.9(4) fm"
+   ],
+   "section_file": "sections/page-002.md",
+   "section_title": "Page 2",
+   "pages": "2-2",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/page-002.md (p. 2-2)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-page-002-01",
+   "block_iri": "library/arxiv-2212.04436v1/blocks/prop-page-002-01",
+   "claim_id": "arxiv-2212.04436v1#prop-page-002-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "These minor di\ufb00er- ences are likely because model \u201co\u201d yields a slightly larger nn scattering length than the experimental value and, therefore, more attraction in neutron matter.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/page-003.md (p. 3-3)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/page-003.md",
+   "section_title": "Page 3",
+   "pages": "3-3",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/page-003.md (p. 3-3)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-page-003-01",
+   "block_iri": "library/arxiv-2212.04436v1/blocks/prop-page-003-01",
+   "claim_id": "arxiv-2212.04436v1#prop-page-003-01"
+  }
+ ]
 }

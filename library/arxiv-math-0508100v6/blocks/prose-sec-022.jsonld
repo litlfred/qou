@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-math-0508100v6/blocks/prose-sec-022",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Growth rates of R-matrices and the Lobachevsky function",
-  "pageStart": 18,
-  "pageEnd": 19,
-  "text": "../sections/sec-022-8-growth-rates-of-r-matrices-and-the-lobachevsky.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0508100v6",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0508100v6",
+  "title": "Bounds for the coefficients",
+  "pageStart": 14,
+  "pageEnd": 16,
+  "text": "../sections/sec-022-62-bounds-for-the-coefficients.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0508100v6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0508100v6/manifest.jsonld",
   "provenance": "ingested"
 }

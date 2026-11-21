@@ -9,8 +9,9 @@ source_pdf: 1303.0720v2.pdf
 source_sha256: 389ab465e81a0667
 toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.957
-latex_coverage_ratio: 0.957
+latex_prose_ratio: 0.968
+latex_coverage_ratio: 0.952
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 Given an integer $q=1,2,3,\ldots$, a continuous function $f:\Omega\to{\mathbb C}$ is said to be *$q$-analytic (or $q$-holomorphic) in $\Omega$* if it solves the partial differential equation $$\bar\partial_z^q f(z)=0,\qquad z\in\Omega,$$ in the sense of distribution theory. So the $1$-analytic functions are just the ordinary holomorphic functions. A function $f$ is said to be *polyanalytic* if it is $q$-analytic for some $q$; then the number $q-1$ is said to be the *polyanalytic degree* of $f$. By solving the $\bar\partial$-equation repeatedly, it is easy to see that $f$ is $q$-holomorphic if and only if it can be expressed in the form $$f(z)=f_1(z)+\bar zf_2(z)+\cdots+\bar z^{q-1}f_q(z) ,
 \label{eq-Alm-1}$$ where each $f_j$ is holomorphic in $\Omega$, for $j=1,\ldots,q$. So the dependence on $\bar z$ is polynomial of degree at most $q-1$. We observe quickly that the vector-valued holomorphic function $$\mathbf{V}[f](z):=(f_1(z),f_2(z),\ldots,f_q(z)),$$ is in a one-to-one relation with the $q$-analytic function $f$. We will think of $\mathbf{V}[f](z)$ as a *column vector*. In a way, this means that we may think of a polyanalytic function as a vector-valued holomorphic function supplied with the additional structure of scalar point evaluations ${\mathbb C}^q\to{\mathbb C}$ given by $$(f_1(z),f_2(z),\ldots,f_q(z)) \mapsto 
@@ -40,19 +41,3 @@ If we let $\phi_1,\phi_2,\phi_3,\ldots$ be an orthonormal basis for $\mathrm{PA}
 \sum_{j=1}^{+\infty}\mathbf{E}[\phi_j](z,z')\overline{\mathbf{E}[\phi_j](w,w')},
 \qquad (z,z',w,w')\in\Omega\times{\mathbb C}\times\Omega\times{\mathbb C}.
 \label{eq-bk3}$$ The lifted kernel $\mathbf{E}_{\otimes2}[K_q]$ is also independent of the choice of basis, just like the kernel $K_q$ itself. If $\mathrm{PA}^2_{q}(\Omega,\omega)$ would happen to be finite-dimensional, the above sums defining kernels should be replaced by sums ranging over a finite set of indices $j$.
-
-## The polyanalytic Bergman space in the model case of the unit disk with constant weight
-
-For $q=1,2,3,\ldots$, we consider the spaces $\mathrm{PA}^2_q({\mathbb D}):=\mathrm{PA}^2_q({\mathbb D},\pi^{-1})$ where the domain is the unit disk ${\mathbb D}$ and the weight is $\omega(z)\equiv1/\pi$. The corresponding reproducing kernel $K_q$ was obtained Koshelev [@koselev]: $$K_q(z,w)=q\sum_{j=0}^{q-1}(-1)^j\binom{q}{j+1}\binom{q+j}{q}
-\frac{(1-w\bar z)^{q-j-1}|z-w|^{2j}}{(1-z\bar w)^{q+j+1}}.
-\label{eq-mcdisk1}$$ Its diagonal restriction is given by $$K_q(z,z)=\frac{q^2}{(1-|z|^2)^{2}}.$$ Based on [\[eq-mcdisk1\]](#eq-mcdisk1){reference-type="eqref" reference="eq-mcdisk1"}, the lift is $K_q$ is then easily calculated, $$\mathbf{E}_{\otimes2}[K_q](z,z';w,w')=
-q\sum_{j=0}^{q-1}(-1)^j\binom{q}{j+1}\binom{q+j}{q}
-\frac{(1-w'\bar z')^{q-j-1}(z-w')^j(\bar z'-\bar w)^{j}}{(1-z\bar w)^{q+j+1}}.$$ so that $$\begin{gathered}
-\mathbf{E}_{\otimes2}[K_q](z,z';z,z')=
-q\sum_{j=0}^{q-1}\binom{q}{j+1}\binom{q+j}{q}
-\frac{(1-|z'|^2)^{q-j-1}|z-z'|^{2j}}{(1-|z|^2)^{q+j+1}}
-\\
-=q(1-|z|^2)^{-2}\sum_{j=0}^{q-1}\binom{q}{j+1}\binom{q+j}{q}
-\bigg(\frac{1-|z'|^2}{1-|z|^2}\bigg)^{q-j-1}\bigg(\frac{|z-z'|}{1-|z|^2}
-\bigg)^{2j}.
-\end{gathered}$$

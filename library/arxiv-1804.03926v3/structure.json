@@ -8,9 +8,19 @@
   "pages": 34,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:21Z",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 18,
+    "reason": "12 of 516 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 24,
+    "reason": "11 of 438 words are a stray single letter: the text layer splits words"
+   }
+  ],
   "math_source": "text-layer"
  },
  "metadata": {
@@ -21,25 +31,25 @@
    "stamp_date": "23 Nov 2018"
   },
   "doi": null,
-  "title": "Weighted Poincar\u00e9 inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one",
+  "title": "Weighted Poincaré inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one",
   "authors_raw": "Adrien Saumard",
   "title_lines": [
-   "Weighted Poincar\u00e9 inequalities, concentration inequalities and tail",
+   "Weighted Poincaré inequalities, concentration inequalities and tail",
    "bounds related to Stein kernels in dimension one"
   ],
-  "abstract": "We investigate links between the so-called Stein\u2019s density approach in dimension one and some functional and concentration inequalities. We show that measures having a \ufb01nite \ufb01rst moment and a density with connected support satisfy a weighted Poincar\u00b4e inequality with the weight being the Stein kernel, that indeed exists and is unique in this case. Furthermore, we prove weighted log-Sobolev and asymmetric Brascamp-Lieb type inequalities related to Stein kernels. We also show that existence of a uniformly bounded Stein kernel is su\ufb03cient to ensure a positive Cheeger isoperimetric constant. Then we derive new concentration inequalities. In particular, we prove generalized Mills\u2019 type inequalities when a Stein kernel is uniformly bounded and sub-gamma concentration for Lipschitz functions of a variable with a sub-linear Stein kernel. When some exponential moments are \ufb01nite, a general concentration inequality is then expressed in terms of Legendre-Fenchel transform of the Laplace transform of the Stein kernel. Along the way, we prove a general lemma for bounding the Laplace transform of a random variable, that should be useful in many other contexts when deriving concentration inequalities. Finally, we provide density and tail formulas as well as tail bounds, generalizing previous results that where obtained in the context of Malliavin calculus.",
+  "abstract": "We investigate links between the so-called Stein’s density approach in dimension one and some functional and concentration inequalities. We show that measures having a ﬁnite ﬁrst moment and a density with connected support satisfy a weighted Poincar´e inequality with the weight being the Stein kernel, that indeed exists and is unique in this case. Furthermore, we prove weighted log-Sobolev and asymmetric Brascamp-Lieb type inequalities related to Stein kernels. We also show that existence of a uniformly bounded Stein kernel is suﬃcient to ensure a positive Cheeger isoperimetric constant. Then we derive new concentration inequalities. In particular, we prove generalized Mills’ type inequalities when a Stein kernel is uniformly bounded and sub-gamma concentration for Lipschitz functions of a variable with a sub-linear Stein kernel. When some exponential moments are ﬁnite, a general concentration inequality is then expressed in terms of Legendre-Fenchel transform of the Laplace transform of the Stein kernel. Along the way, we prove a general lemma for bounding the Laplace transform of a random variable, that should be useful in many other contexts when deriving concentration inequalities. Finally, we provide density and tail formulas as well as tail bounds, generalizing previous results that where obtained in the context of Malliavin calculus.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref package",
    "CreationDate": "D:20181125210852-05'00'"
   },
-  "title_raw": "Weighted Poincar\u00e9 inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one",
+  "title_raw": "Weighted Poincaré inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one",
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "Weighted Poincar\u00b4e inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one",
+   "heading": "Weighted Poincar´e inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one",
    "outline": "1 Introduction",
-   "text": "Weighted Poincar\u00e9 inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one",
+   "text": "Weighted Poincaré inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one",
    "corroborated_by": [],
    "browser_print": false
   }
@@ -77,7 +87,7 @@
   },
   {
    "level": 2,
-   "title": "Weighted Poincar\u00e9-type inequality",
+   "title": "Weighted Poincaré-type inequality",
    "page": 9,
    "source": "outline",
    "number": "3.1",
@@ -455,8 +465,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1607,
-   "n_words": 233,
+   "n_chars": 1605,
+   "n_words": 232,
    "label_start": "1",
    "label_end": "1"
   },
@@ -467,7 +477,7 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 7620,
+   "n_chars": 7631,
    "n_words": 1224,
    "label_start": "1",
    "label_end": "3"
@@ -479,8 +489,8 @@
    "level": 1,
    "page_start": 3,
    "page_end": 8,
-   "n_chars": 12433,
-   "n_words": 2597,
+   "n_chars": 12477,
+   "n_words": 2603,
    "label_start": "3",
    "label_end": "8"
   },
@@ -491,20 +501,20 @@
    "level": 1,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 2031,
-   "n_words": 290,
+   "n_chars": 2065,
+   "n_words": 293,
    "label_start": "8",
    "label_end": "9"
   },
   {
-   "id": "sec-003-31-weighted-poincar\u00e9-type-inequality",
+   "id": "sec-003-31-weighted-poincaré-type-inequality",
    "number": "3.1",
-   "title": "Weighted Poincar\u00e9-type inequality",
+   "title": "Weighted Poincaré-type inequality",
    "level": 2,
    "page_start": 9,
    "page_end": 14,
-   "n_chars": 15799,
-   "n_words": 3020,
+   "n_chars": 15830,
+   "n_words": 3022,
    "label_start": "9",
    "label_end": "14"
   },
@@ -515,8 +525,8 @@
    "level": 2,
    "page_start": 14,
    "page_end": 18,
-   "n_chars": 10835,
-   "n_words": 2483,
+   "n_chars": 10759,
+   "n_words": 2428,
    "label_start": "14",
    "label_end": "18"
   },
@@ -527,8 +537,8 @@
    "level": 2,
    "page_start": 18,
    "page_end": 20,
-   "n_chars": 2115,
-   "n_words": 473,
+   "n_chars": 2105,
+   "n_words": 471,
    "label_start": "18",
    "label_end": "20"
   },
@@ -539,8 +549,8 @@
    "level": 2,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 4047,
-   "n_words": 816,
+   "n_chars": 4068,
+   "n_words": 817,
    "label_start": "20",
    "label_end": "21"
   },
@@ -551,8 +561,8 @@
    "level": 1,
    "page_start": 21,
    "page_end": 28,
-   "n_chars": 14137,
-   "n_words": 2961,
+   "n_chars": 14097,
+   "n_words": 2923,
    "label_start": "21",
    "label_end": "28"
   },
@@ -563,8 +573,8 @@
    "level": 1,
    "page_start": 28,
    "page_end": 34,
-   "n_chars": 15348,
-   "n_words": 2600,
+   "n_chars": 15360,
+   "n_words": 2602,
    "label_start": "28",
    "label_end": "34"
   }
@@ -581,7 +591,8 @@
    "items": []
   },
   "sections": 10,
-  "chars_total": 85972,
+  "chars_total": 85997,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "SteinDimOne_rev1.tex",
@@ -602,7 +613,7 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.425,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-001-2-on-covariance-identities-and-the-stein-kernel",
@@ -615,8 +626,8 @@
      "result": "no matching \\section"
     },
     {
-     "id": "sec-003-31-weighted-poincar\u00e9-type-inequality",
-     "title": "Weighted Poincar\u00e9-type inequality",
+     "id": "sec-003-31-weighted-poincaré-type-inequality",
+     "title": "Weighted Poincaré-type inequality",
      "result": "no matching \\section"
     },
     {

@@ -1,0 +1,50 @@
+4.1 Real integrands 95
+
+O(y"), where each coefficient a; is a polynomial in cz,...,c;. Let a be an inde-
+terminate, and substitute the value of y in (4.5) into the quantity
+
+@(x,y) = x- (Yt aay? +205 + ayy"! + ay").
+
+The result ®(x, y(x)) is a polynomial in x, whose coefficients in degrees up to
+n—1 vanish due to the induction hypothesis, plus a remainder of O(") coming
+from our starting assumption. The coefficient of the x” term may be written as
+a— P(dp,...,Gn-1,C2,..-,Cn), Where P is a polynomial. By induction, this is a
+polynomial in co,...,C,. Setting a, = P(az,...,Gn-1,C2,---,Cn), we see that
+n
+x-y- )lajy! = 0"),
+
+=)
+
+completing the induction. When n = M — 1, observing that O(x”) = O(y")
+
+completes the proof of the lemma for c; = 1. For general c; # 1 we can
+use this argument to represent x as a function of y/c;, which shows that x =
+Di! ajy! + OG™) with each c{aj a polynomial in c2,...,¢). a
+
+Exercise 4.5. Write down the quadratic Taylor expansion (with remainder
+term O(2°)) near zero for y = 1 — V1 — x and find its compositional inverse.
+Check your work afterward by computing x as a function of y explicitly.
+
+We can now establish Theorem 4.1 for real integrands. Recall that for each
+natural number M, a real function f is said to be of class C“ or C-smooth
+if all derivatives of f up to and including order M are continuous; if this holds
+for all M we say f belongs to C® and is smooth.
+
+Theorem 4.6. Let M be a positive integer and let k and € be integers with
+0 < k,€ < M, and k > 2. Suppose that A is a real function, and ¢ is a C™-
+smooth real function, with series expansions
+
+M-1
+A(x) = » bjx! + O(x")
+jae
+okt
+(x) = » cjxl + o(x"**)
+jk
+
+as x — 0, where be,cy # 0. Then £4(A) = h A(x) exp(—A@(x)) dx has the
+asymptotic expansion
+
+M-1
+T,(0) =D) ajCtk, ce ay" + 0 (AH) (4.6)
+
+ie

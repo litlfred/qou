@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-gr-qc-0407051v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-gr-qc-0407051v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-gr-qc-0407051v2",
+  "title": "Black hole entropy from quantum geometry",
   "contains": [
     "library/arxiv-gr-qc-0407051v2/sections/sec-front-matter",
     "library/arxiv-gr-qc-0407051v2/sections/sec-000",
@@ -19,7 +19,7 @@
     "library/arxiv-gr-qc-0407051v2/sections/sec-004"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
     "searched": [
@@ -34,7 +34,9 @@
   },
   "meta": {
     "doc_id": "arxiv-gr-qc-0407051v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0407051v2.pdf",
     "source_sha256": "2de07e909b17c5a5117b4021c0a42d2ed3deeedad318a446c233de63d2cbf9f3",
     "pages": 14,

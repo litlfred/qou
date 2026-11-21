@@ -1,141 +1,260 @@
 ---
 doc_id: di-cairano-2022-j-phys-commun-6-015002
-doc_title: "On the derivation of a nonlinear generalized Langevin equation"
+doc_title: "On the derivation of a Nonlinear Generalized Langevin Equation"
 section_id: sec-004-13-notation
 section_title: "Notation"
 section_number: 1.3
 pages: 5-6
 source_pdf: Di_Cairano_2022_J._Phys._Commun._6_015002.pdf
 source_sha256: f75313b507f97172
-doc_brief: "On the derivation of a nonlinear generalized Langevin equation — 14 sections: Introduction; State-of-art; Introduction to the problem"
+toc_source: outline
+doc_brief: "On the derivation of a Nonlinear Generalized Langevin Equation — 15 sections: Front matter; Introduction; State-of-art"
 ---
 In this section, we formalize the derivation introduced in the previous section.
-We consider a Hamiltonian function describing a classical physical system composed by a heat bath(P)
-interacting with a heavy particle (B). The heat bath consists ofN particles with massm = 1 smaller than the
-heavier particle massM.
-We assume that the system is embedded in the three dimensional physical space 3 so that thephase space,
-denoted by Γ, is a subset of NN333 3  ´´ ´ . Therefore, the heat bath conjugated coordinates are:
-eeIp Qq x y z ,, , , , 1 9
-i
-N
-i i N
-i
-N
-i i N
-11
-≔≔ ( ) åå aÎÎ =a a a a
-==
-where we have introduced the canonical base ei i
-N
-1{ }= of N .TheheavyparticleHamiltonianconjugated
-coordinatesare
-Xe P e XP ,.
-1
-3
-3
-1
-3
-3≔≔ åå ÎÎ
-a
-a a
-a
-a a
-==
-The system Hamiltonian function, : ⟶ GH can be split into three terms:
-PIXQ PX IQ QXHH H,, , , , , , INT() ≔ ( ) ( ) ( ) ++H BP
-4
-J. Phys. Commun.6 (2022) 015002 L Di Cairano
+
+We consider a Hamiltonian function describing a classical physical system composed bya heat bath (P)
+interacting with a heavy particle (Z). The heat bath consists of N particles with mass m = 1 smaller than the
+heavier particle mass M.
+
+We assume that the system is embedded in the three dimensional physical space R? so that the phase space,
+denoted byT, isa subset of R&Y x R°N x R° x R°. Therefore, the heat bath conjugated coordinates are:
+
+N N
+[%:= er e€ RY, Qe =>)ae e ERY, a=x,y,z (19)
+i=1 i=1
+where we have introduced the canonical base {e;}_, of RN. The heavy particle Hamiltonian conjugated
+coordinates are
+
+3 3
+X= SV) Xe, ER’, P= D> Pee, € RB.
+
+asl a=1
+
+The system Hamiltonian function, #: T —> R can be split into three terms:
+
+HP, I, X, Q) = Ha(P, X) + Hall, Q) + Hinr(Q, X),
+
 where, as usual, we have:
 
- 
-PX
+
+
+P X
 P
 X
-IQ
-I p
-H M V
+I Q
+I
+p
 H
-, 2 ,
-, 22 ,2 0
+M
+V
+H
+,
+2
+,
+,
+2
+2
+,
+20
 i
-N i
+N
+i
 2
 2
 1
-2N
+2
+N
 3
-33
-() ( )
-() ( )
+3
+3
+(
+)
+( )
+(
+)
+(
+)
 
-
+
+
 å
-=+
-==
+=
++
+=
+=
 =
 B
 P
-where the potential functionV : 3  describes any external force which just acts on the heavy particle and it
-could have a generic dependence onX.
+where the potential function V:
+3
+
+
+
+describes any external force which just acts on the heavy particle and it
+could have a generic dependence on X.
 The interaction term is given by:
-Q X qa X K qa XH , 1
-2 ,. 2 1INT
-ij
+Q X
+q
+a X
+K
+q
+a X
+H
+,
+1
+2
+,
+.
+21
+INT
+i j
 N
-i ii j j j
-,1
-3() ≔ ( ) ( ( ) ) ( ) å á- - ñ
+i
+i
+ij
+j
+j
+,
+1
+3
+(
+) ≔
+( )
+(
+( ))
+(
+)
+
+å á
+-
+-
+ñ
 =
-Thus, the interactions are described by the so-calledinteraction matrix which is a linear application
-K : NN33  acting on the heat bath degrees of freedom. Note that eachKij is a three dimensional matrix since
+Thus, the interactions are described by the so-called interaction matrix which is a linear application
+K:
+N
+N
+3
+3
+
+
+
+acting on the heat bath degrees of freedom. Note that each Kij is a three dimensional matrix since
 also the spatial degrees of freedom are included.
-The meaning of the interaction described byHINT is to assume a harmonic approximation around the
-equilibrium positions Q* ≔ a(X) of the heat bath system, wherea: N33 provides the equilibrium
-conﬁguration of all the heat bath particles for a givenX 3Î .
+The meaning of the interaction described by HINT is to assume a harmonic approximation around the
+equilibrium positions Q* ≔a(X) of the heat bath system, where a:
+N
+3
+3
+
+
+
+provides the equilibrium
+conﬁguration of all the heat bath particles for a given X
+3
+
+Î
+.
 The system of Hamilton’s equations, then, reads:
 
 
 
 
-X P
-Pa X K Q a X X
-QI
-IK Q a X
-t t
+X
+P
+P
+a
+X
+K Q
+a X
+X
+Q
+I
+I
+K Q
+a X
+t
+t
 M
-tt t t V t
-tt
-tt t
+t
+t
+t
+t
+V
+t
+t
+t
+t
+t
+t
 ,
 ,
 ,
-,2 2
-XXt T t
-() ()
-( ) ( ( )) ( ( ) ( ( ))) ( ( ))
-() ()
-() ( () ( () ) ) ( )
-() ()
+,
+22
+X
+X
+t
+T
+t
+( )
+( )
+( )
+(
+( ))
+(
+( )
+(
+( )))
+(
+( ))
+( )
+( )
+( )
+(
+( )
+(
+( )))
+(
+)
+( )
+( )
 =
-= - -
+= 
+-
+- 
 =
-=- -
-where a:X t N33 3()  ´ and the superscriptT denotes the transpose operation.
-The system of equations above can be reduced to a GLE for the system position vectorX(t). To do so, oneﬁrst
-focuses on the heat bath equations(the last two equations) and, by just having a linear dependence on theQ-
-coordinates, one interprets the factorKa(X) as an external force. Hence, one exploits the Laplace transform
-method to obtain a formal solutionQS(t) for the heat bath position vector. Actually, the Hamiltonian(21)
-presents a translational invariance since it only depends onQ − a(X). This feature reﬂects on the formal heat
+= -
+-
+where
+a:
+X t
+N
+3
+3
+3
+( )
+
+
+
+
+
+´
+and the superscript T denotes the transpose operation.
+The system of equations above can be reduced to a GLE for the system position vector X(t). To do so, one ﬁrst
+focuses on the heat bath equations (the last two equations) and, by just having a linear dependence on the Q-
+coordinates, one interprets the factor Ka(X) as an external force. Hence, one exploits the Laplace transform
+method to obtain a formal solution QS(t) for the heat bath position vector. Actually, the Hamiltonian (21)
+presents a translational invariance since it only depends on Q −a(X). This feature reﬂects on the formal heat
 bath solution and, as we will see later, we obtain an explicit mathematical expression of the heat bath solution
-directly in terms ofQ
-S(t) − a(X(t)). Then, the solution can be plugged into the equation of motion of the heavy
+directly in terms of QS(t) −a(X(t)). Then, the solution can be plugged into the equation of motion of the heavy
 particle and the resulting equation explicitly takes the form of a GLE.
 We will explicitly employ such a procedure in the next section after having studied more deeply the
-properties of the equilibrium mapa(X) which plays a fundamental role in the deﬁnition of the kernel matrix and
+properties of the equilibrium map a(X) which plays a fundamental role in the deﬁnition of the kernel matrix and
 noise vector.
 We conclude this section, mentioning that the procedure above described, called elimination of the heat
-bath degrees of freedom, has been already introduced by Kacet al [30] ﬁrst and by Zwanzig[31] later. However,
+bath degrees of freedom, has been already introduced by Kac et al [30] ﬁrst and by Zwanzig [31] later. However,
 Kac et al just considered linear system-heat bath interactions that, in our notation, translates in deﬁning the a
-map to beai(X) ≔ X and absorbing all the parameters representing the interaction strength within theK matrix.
-Zwanzig extended their system assuming a generic dependency of thea map on the heavy particle position
+map to be ai(X) ≔X and absorbing all the parameters representing the interaction strength within the K matrix.
+Zwanzig extended their system assuming a generic dependency of the a map on the heavy particle position
 vector X and since it could be nonlinear, the elimination procedure led to a nonlinear GLE.

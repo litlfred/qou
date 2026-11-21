@@ -1,0 +1,67 @@
+lemma unit-circle-fix-preserve-is-poincare-line [simp]:
+assumes unit-circle-fix M is-poincare-line H
+shows is-poincare-line (moebius-circline M H)
+using assms
+unfolding is-poincare-line-iff
+proof (safe)
+let ?H’ = mocbius-ocircline M (of-circline H)
+let ?U' = moebius-ocircline M ounit-circle
+assume ++: unit-circle-fix M perpendicular H unit-circle
+have ounit: ounit-circle = moebius-ocircline M ounit-circle V
+ounit-circle = moebius-ocircline M (opposite-ocircline ounit-circle)
+using ++(1) unit-circle-fix-iff [of M|
+by (simp add: inj-of-ocircline moebius-circline-ocircline)
+
+show perpendicular (moebius-circline M H) unit-circle
+proof (cases pos-oriented ?H')
+case True
+hence *: of-circline (of-ocircline ?H') = ?H’
+using of-circline-of-ocircline-pos-oriented
+by blast
+from ounit show ?thesis
+proof
+assume **: ounit-circle = moebius-ocircline M ounit-circle
+show ?thesis
+using ++
+unfolding perpendicular-def
+by (simp, subst moebius-circline-ocircline, subst *, subst «*) simp
+next
+assume *«: ounit-circle = moebius-ocircline M (opposite-ocircline ounit-circle)
+show ?thesis
+using ++
+unfolding perpendicular-def
+by (simp, subst moebius-circline-ocircline, subst *, subst «*) simp
+qed
+next
+case False
+hence «: of-circline (of-ocircline ?H') = opposite-ocircline ?H'
+by (metis of-circline-of-ocircline pos-oriented-of-circline)
+from ounit show ?thesis
+proof
+assume **: ounit-circle = moebius-ocircline M ounit-circle
+show ?thesis
+using ++
+unfolding perpendicular-def
+by (simp, subst moebius-circline-ocircline, subst *, subst «*) simp
+next
+assume *«: ounit-circle = moebius-ocircline M (opposite-ocircline ounit-circle)
+show ?thesis
+using ++
+unfolding perpendicular-def
+by (simp, subst moebius-circline-ocircline, subst *, subst «*) simp
+qed
+qed
+qed simp
+
+lemma unit-circle-fit-preserve-is-poincare-line-iff [simp]:
+assumes unit-circle-fix M
+shows is-poincare-line (moebius-circline M H) «—+ is-poincare-line H
+using assms
+using unit-circle-fic-preserve-is-poincare-line|of M H]
+using wnit-circle-fic-preserve-is-poincare-line|of moebius-inv M moebius-circline M H]
+by (auto simp del: unit-circle-fir-preserve-is-poincare-line)
+
+Since h-lines are preserved by transformations that fix the unit circle, so is collinearity.
+
+lemma unit-disc-fiz-preserve-poincare-collinear [simp]:
+assumes unit-circle-fix M poincare-collinear A

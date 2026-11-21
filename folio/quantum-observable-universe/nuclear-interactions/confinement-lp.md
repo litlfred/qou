@@ -1,4 +1,4 @@
-We recast the confinement operator selection as a linear program over the NF basis of $H_3(q)$. This connects the categorical minimum-action principle to standard LP duality theory, providing a rigorous proof of uniqueness.
+Recast the confinement operator selection as a linear program over the NF basis of $H_3(q)$. This connects the categorical minimum-action principle to standard LP duality theory, providing a rigorous proof of uniqueness.
 
 ## Primal program (operator selection)
 

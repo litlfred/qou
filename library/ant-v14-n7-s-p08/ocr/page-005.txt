@@ -1,0 +1,47 @@
+Burgess bounds for short character sums evaluated at forms 1915
+
+1C. Overview of previous literature. To situate our results, we recall previous literature on Burgess
+bounds and in particular for the sums S(F; N, H).
+
+1C1. The classical Burgess bound. For any integer q > 1, the Polya—Vinogradov inequality states that
+|IS(N, H)| « q\/? logg (see [Pélya 1918; Vinogradov 1918] or for a modern treatment [Iwaniec and
+Kowalski 2004, §12.4]). This provides a nontrivial upper bound for |S(N, H)| as long as H >> q!/?+°
+for some ¢ > 0. When A is shorter than this range, the sum is considered to be “short,” and obtaining an
+o(H) bound is much more difficult. Conjecturally, under the generalized Riemann hypothesis, a bound as
+strong as |S(0, H)| <, H'/?q* should hold for all ¢ > 0, thus leading to a nontrivial upper bound in any
+range H >, q°* (see, e.g., [Iwaniec and Kowalski 2004, Equation (12.54)], or [Friedlander et al. 2013,
+Equation (9.6)]; see also the more general Conjecture C,, in [Friedlander et al. 2013, §9]).
+
+Burgess [1957; 1962; 1963; 1986] showed that for x a primitive character to a prime modulus q, for
+all integers r > 1, the inequality (1-1) holds, with an implied constant uniform in N, yielding a nontrivial
+bound for H >> q!/4+*, « > 0. More generally, with log replaced by q° for arbitrarily small ¢, Burgess
+proved that this bound also holds for cube-free moduli q for all r > 1, and for any integer q, for r < 3.
+The q'/4+« “threshold” of the Burgess bound remains essentially unimproved since its inception, despite
+significant interest, due to its applications.
+
+As a consequence of (1-1), Burgess [1963] proved a landmark subconvexity bound
+
+|L(4+ir, x)| Kp 0 ql iete
+
+for all ¢ > 0, with x a nonprincipal Dirichlet character modulo q as above; there is a corresponding
+hybrid subconvexity bound |L(3 +it, x)| Ke (|t|q)!/4-"/16+* of Heath-Brown [1980]. This remains the
+best bound known to hold for all Dirichlet L-functions. (Special cases of the modulus g in which a better
+subconvexity bound is known include: smooth moduli [Graham and Ringrose 1990; Goldmakher 2010;
+Chang 2014; Irving 2016]; prime-power moduli [Postnikov 1956; Barban et al. 1964; Gallagher 1972;
+Milicevi¢ 2016], or powerful moduli [Iwaniec 1974]. Most recently, Petrow and Young [2018] proved a
+better Weyl-strength subconvex estimate of size q!/° for all cube-free moduli g.!) There is great interest
+in establishing bounds of at least the strength of a “Burgess exponent” for analogous bounds in higher
+rank contexts. For example, in the GL(2) setting, the “Burgess bound” for an L-function of a Hecke cusp
+form g twisted by a primitive Dirichlet character y modulo q is |L(4 +it,g@ x)| <Ke.e gi P-U8+® for
+all ¢ > 0 (as has been obtained in [Bykovskii 1996; Blomer and Harcos 2008]). Reaching the Burgess
+exponent in new settings, or even re-proving such Burgess bounds is currently an important proving
+ground for new methods (e.g., [Munshi 2018] via a GL(2) delta method and subsequently [Aggarwal
+et al. 2018] via a trivial delta method).
+
+In another direction, the Burgess bound establishes an upper bound for the least quadratic non-
+residue n(p) modulo a prime p. Vinogradov conjectured that n(p) <- p* for every ¢ > 0; Burgess’s
+
+After the writing of this paper, Petrow and Young [2019] posted a preprint proving a Weyl-strength subconvex estimate for
+
+all Dirichlet L-functions, without a restriction on the modulus g. This breakthrough result also implies a small improvement on
+the classical Burgess upper bound (1-1) for the cases r = 2, 3 but not for larger r.

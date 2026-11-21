@@ -1,0 +1,59 @@
+MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 73
+
+vectors of this basis. Then
+
+H = SF mj(&jO; — O58) = J mj (26j0; - 1).
+j j
+
+This shows that if dimV is even then the partition function on the circle of
+length L for our theory is
+
+Z =sTr(e£#) = Ile" — emit)
+j
+If the dimension of V is odd then the partition function is zero.
+
+Now we would like to consider the fermionic analog of the Feynman-Kac formula.
+For simplicity consider the fully massive case, when dim V is even and m; # 0 (i.e.
+M is nondegenerate). In this case, we have a unique up to scaling lowest eigenvector
+of H, namely Q = 1.
+
+Let &(0) € V ® End(H) be the element corresponding to the action map V* >
+End(H), and w(t) = e##a(O)e“*7. Also, let < o(t1)...W(tn) >, ti >... > tn, be
+the correlation function for the free theory in the Lagrangian setting, taking values
+in V®", so in this expression ¢(t;) is a formal symbol and not an operator.
+
+Theorem 10.3. (i) For the free theory on the line we have
+< U(t1)..V(tn) >= (0, U(t1).. Yin) Q).
+(ii) For the free theory on the circle of length L we have
+
+sTr(a)(t1)...W(tn)ew 2")
+
+< W(t1)...W(tn) >= wT!)
+
+Exercise. Prove this theorem. (The proof is analogous to Theorem 8.3 in the
+free case).
+
+It should now be straightforward for the reader to formulate and prove the
+Feynman-Kac formula for an interacting theory which includes both bosonic and
+Fermionic massive fields. We leave this as an instructive exercise.
+
+11. FREE FIELD THEORIES IN HIGHER DIMENSIONS
+
+11.1. Minkowski and Euclidean space. Now we pass from quantum mechanics
+to quantum field theory in dimensions d > 1. As we explained above, we have two
+main settings.
+
+1. Minkowski space. Fields are functions on a spacetime Vj,, which is a real
+inner product space of signature (1,d—1). This is where physical processes actually
+“take place”. The symmetry group of V, G = SO(1,d— 1), is called the Lorenz
+group; it is the group of transformation of spacetime in special relativity. Therefore,
+field theories in Minkowski space which are in an approariate sense “compatible”
+with the action of G are called relativistic.
+
+Recall some standard facts and definitions. The light cone in V is the cone
+described by the equation |v|? = 0, where |v|? := (v,v). Vectors belonging to the
+light cone are called lightlike. The light cone divides the space V into spacelike
+vectors |v|? < 0 (the outside of the cone), and timelike vectors |v|? > 0 (inside
+the cone). We will choose one of the two components of the interior of the cone
+and call it positive; it will be denoted by V;. The opposite (negative) component
+is denoted by V_. The group of g € SO(V) = SO(1,d — 1) which preserve Vy.

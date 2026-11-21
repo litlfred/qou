@@ -333,7 +333,17 @@ def main() -> None:
             "fails: untouched."),
     })
     wb.add_upstream_records(_UPSTREAM_RECORDS)
-    out = wb.save()
+    out = wb.save(extra={
+        "q0Anchor": "ambiguous",
+        "q0AnchorReason": (
+            "q0 enters only through upstream data: kappa(A) is read from "
+            "em-linking-mirror-series.witness.json, whose producer divides by "
+            "a TYPED per-pair Coulomb unit tanh(ln q0)*B_pp = 0.2376702253 "
+            "with no recorded pin (the proton-pinned "
+            "mirror-pair-coulomb-sign-correction witness it cites now carries "
+            "0.2212723003), and that upstream witness is itself unstamped; the "
+            "pin of the series this probe fits is therefore undetermined"),
+    })
 
     print(f"implied separations (kernel coth-1): alpha in "
           f"[{mp.nstr(a_min, 6)}, {mp.nstr(a_max, 6)}]")

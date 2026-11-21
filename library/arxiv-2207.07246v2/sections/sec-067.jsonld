@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2207.07246v2/sections/sec-067",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "D AV6' LINEARIZING TRICK",
+  "pageStart": 150,
+  "pageEnd": 153,
+  "contains": [
+    "library/arxiv-2207.07246v2/blocks/prose-sec-067"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2207.07246v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2207.07246v2/manifest.jsonld",
+  "provenance": "ingested"
+}

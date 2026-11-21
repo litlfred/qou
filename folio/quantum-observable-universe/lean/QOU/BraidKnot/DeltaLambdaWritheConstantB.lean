@@ -26,7 +26,7 @@ import Mathlib.Tactic
   All `ring` over a generic `[CommRing R]` (§7c: pure algebra; the residual
   values live in `ℝ` only at the evaluation site).
 
-  -- Ref: [manuscript] docs/audits/2026-06-29-delta-lambda-residual-synthesis.md
+  -- Ref: [leitner2026] docs/audits/2026-06-29-delta-lambda-residual-synthesis.md
 -/
 
 namespace QOU.BraidKnot

@@ -2,65 +2,115 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2602.15276v1",
  "source_sha256": "18d77d6aa140fc50",
- "brief": "Compact Q-balls and Q-shells within aCP N Skyrme-Faddeev type model — 11 sections: Introduction; The Lagrangian and Euler-Lagrange ; Radial reduction",
- "extended": "**Compact Q-balls and Q-shells within aCP N Skyrme-Faddeev type model**\n\n*E. L. Cola¸ co,1,∗ P. Klimas,1,† L. R. Livramento, 2, 3,‡ N. Sawado,4,§ and S. Yanai5,¶*\n\n44 pp, 11 sections.\n\n**Outline.** Introduction; The Lagrangian and Euler-Lagrange equations; Radial reduction; Energy density; Noether currents; Expansion at the compacton boundary; Expansion at the center; Numerical solutions; Shooting method; Q-shells; Acknowledgmets",
+ "brief": "Compact Q-balls and Q-shells within a $CP^N$ Skyrme-Faddeev type model — 21 sections: Compact Q-balls and Q-shells withi; Introduction; The extended Skyrme-Faddeev model",
+ "extended": "**Compact Q-balls and Q-shells within a $CP^N$ Skyrme-Faddeev type model**\n\n*E. L. Cola¸co,1, ∗P. Klimas,1, † L. R. Livramento,2, 3, ‡ N. Sawado,4, § and S. Yanai5, ¶*\n\n44 pp, 21 sections.\n\n**Outline.** Compact Q-balls and Q-shells within a CPN Skyr; Introduction; The extended Skyrme-Faddeev model with potenti; The Lagrangian and Euler-Lagrange equations; Radial reduction; Energy density; Noether currents; Compactons; Expansion at the compacton boundary; Expansion at the center; Q-ball case: N=1, (l=0); Q-ball case: N=3, (l=1); Q-shell case: N=5,7,9,…, (l=2,3,4,…); Numerical solutions; Shooting method; CP1 Q-balls; CP3 Q-balls; Q-shells",
  "tokens": {
-  "brief": 37,
-  "extended": 108
+  "brief": 42,
+  "extended": 161
  },
  "sections": [
   {
-   "id": "sec-000-introduction",
+   "id": "sec-000-compact-q-balls-and-q-shells-within-a-cpn-skyrme",
+   "title": "Compact Q-balls and Q-shells within a CPN Skyrme-Faddeev type model",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-introduction",
    "title": "Introduction",
    "pages": "1-4"
   },
   {
-   "id": "sec-001-the-lagrangian-and-euler-lagrange-equations",
+   "id": "sec-002-the-extended-skyrme-faddeev-model-with-potential",
+   "title": "The extended Skyrme-Faddeev model with potential",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-003-the-lagrangian-and-euler-lagrange-equations",
    "title": "The Lagrangian and Euler-Lagrange equations",
    "pages": "4-7"
   },
   {
-   "id": "sec-002-radial-reduction",
+   "id": "sec-004-radial-reduction",
    "title": "Radial reduction",
    "pages": "7-9"
   },
   {
-   "id": "sec-003-energy-density",
+   "id": "sec-005-energy-density",
    "title": "Energy density",
    "pages": "9-12"
   },
   {
-   "id": "sec-004-noether-currents",
+   "id": "sec-006-noether-currents",
    "title": "Noether currents",
    "pages": "12-14"
   },
   {
-   "id": "sec-005-expansion-at-the-compacton-boundary",
+   "id": "sec-007-compactons",
+   "title": "Compactons",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-008-expansion-at-the-compacton-boundary",
    "title": "Expansion at the compacton boundary",
    "pages": "14-15"
   },
   {
-   "id": "sec-006-expansion-at-the-center",
+   "id": "sec-009-expansion-at-the-center",
    "title": "Expansion at the center",
-   "pages": "15-17"
+   "pages": "15-15"
   },
   {
-   "id": "sec-007-numerical-solutions",
+   "id": "sec-010-q-ball-case-n1-l0",
+   "title": "Q-ball case: N=1, (l=0)",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-011-q-ball-case-n3-l1",
+   "title": "Q-ball case: N=3, (l=1)",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-012-q-shell-case-n579-l234",
+   "title": "Q-shell case: N=5,7,9,…, (l=2,3,4,…)",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-013-numerical-solutions",
    "title": "Numerical solutions",
    "pages": "17-17"
   },
   {
-   "id": "sec-008-shooting-method",
+   "id": "sec-014-shooting-method",
    "title": "Shooting method",
-   "pages": "17-24"
+   "pages": "17-18"
   },
   {
-   "id": "sec-009-q-shells",
+   "id": "sec-015-cp1-q-balls",
+   "title": "CP1 Q-balls",
+   "pages": "18-22"
+  },
+  {
+   "id": "sec-016-cp3-q-balls",
+   "title": "CP3 Q-balls",
+   "pages": "22-24"
+  },
+  {
+   "id": "sec-017-q-shells",
    "title": "Q-shells",
-   "pages": "24-40"
+   "pages": "24-25"
   },
   {
-   "id": "sec-010-acknowledgmets",
+   "id": "sec-018-energy-noether-charge-and-radius-of-the-compacto",
+   "title": "Energy, Noether charge and radius of the compactons for l=0,1,2,5",
+   "pages": "25-39"
+  },
+  {
+   "id": "sec-019-summary-and-remarks",
+   "title": "Summary and remarks",
+   "pages": "39-40"
+  },
+  {
+   "id": "sec-020-acknowledgmets",
    "title": "Acknowledgmets",
    "pages": "40-44"
   }

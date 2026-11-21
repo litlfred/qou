@@ -1,1 +1,1 @@
-ensures that neither C6, C′
+(Quadrilateral Lemma) Let α and β denote the internal angles of C4 subtended at adjacent vertices of C4 as shown in Figure 6. If α ∈{2π −k arccos(1/3) | k = 1, 2, 3}, then C4 cannot exist in DX and if α = 2π −4 arccos(1/3), then β /∈{2π −k arccos(1/3) | k = 1, 2, 3, 4}.

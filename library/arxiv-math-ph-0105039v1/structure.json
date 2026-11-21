@@ -8,9 +8,15 @@
   "pages": 31,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 19,
+    "reason": "26 of 355 words are a stray single letter: the text layer splits words"
+   }
+  ],
   "math_source": "latex"
  },
  "metadata": {
@@ -21,33 +27,34 @@
    "stamp_date": "28 May 2001"
   },
   "doi": null,
-  "title": "arXiv:math-ph/0105039v1 28 May 2001",
+  "title": "Hyperbolic Structure Arising from a Knot Invariant",
   "authors_raw": "Department of Physics, Graduate School of Science",
   "title_lines": [
    "December 23, 2000",
    "(Revised Edition)",
    "Hyperbolic Structure Arising from a Knot Invariant",
-   "Kazuhiro HIKAMI \u2020"
+   "Kazuhiro HIKAMI †"
   ],
-  "abstract": "We study the knot invariant based on the quantum dilogarithm function. This invariant can be regarded as a non-compact analogue of Kashaev\u2019s invariant, or the colored Jones invariant, and is de\ufb01ned by an integral form. The 3-dimensional picture of our invariant originates from the pentagon identity of the quantum dilogarithm function, and we show that the hyperbolicity consistency conditions in gluing polyhedra arise naturally in the classical limit as the saddle point equation of our invariant.",
+  "abstract": "We study the knot invariant based on the quantum dilogarithm function. This invariant can be regarded as a non-compact analogue of Kashaev’s invariant, or the colored Jones invariant, and is deﬁned by an integral form. The 3-dimensional picture of our invariant originates from the pentagon identity of the quantum dilogarithm function, and we show that the hyperbolicity consistency conditions in gluing polyhedra arise naturally in the classical limit as the saddle point equation of our invariant.",
   "docinfo": {
    "Title": "arXiv:math-ph/0105039v1  28 May 2001",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20190506143712-04'00'"
   },
-  "title_raw": "December 23, 2000 (Revised Edition) Hyperbolic Structure Arising from a Knot Invariant Kazuhiro HIKAMI \u2020",
+  "title_raw": "December 23, 2000 (Revised Edition) Hyperbolic Structure Arising from a Knot Invariant Kazuhiro HIKAMI †",
   "title_source": "metadata",
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:math-ph/0105039v1 28 May 2001",
    "heading": "Hyperbolic Structure Arising from a Knot Invariant",
-   "text": "December 23, 2000 (Revised Edition) Hyperbolic Structure Arising from a Knot Invariant Kazuhiro HIKAMI \u2020",
+   "text": "December 23, 2000 (Revised Edition) Hyperbolic Structure Arising from a Knot Invariant Kazuhiro HIKAMI †",
    "corroborated_by": [
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:math-ph/0105039v1 28 May 2001"
  },
  "toc": [
   {
@@ -251,7 +258,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "Braid relation, or the constant Yang\u2013Baxter equation",
+   "title": "Braid relation, or the constant Yang–Baxter equation",
    "page": 8,
    "confidence": 0.8,
    "evidence": [
@@ -263,7 +270,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "Due to sign of the function V (x, y) in eqs. (4.1) these tetrahedra are mirror images each other. Therein the modulus of the ideal tetrahedron is given by ep\u2032",
+   "title": "Due to sign of the function V (x, y) in eqs. (4.1) these tetrahedra are mirror images each other. Therein the modulus of the ideal tetrahedron is given by ep′",
    "page": 12,
    "confidence": 0.9,
    "evidence": [
@@ -276,7 +283,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "Pachner move 2 \u21943",
+   "title": "Pachner move 2 ↔3",
    "page": 13,
    "confidence": 0.9,
    "evidence": [
@@ -289,7 +296,7 @@
   {
    "kind": "figure",
    "number": "6",
-   "title": "Assignment of the octahedron to the braiding operator \ufb01rst appeared in Ref. 10, and it was later used to give the decomposition of the knot complement directly from Kashaev\u2019s invariant [8]",
+   "title": "Assignment of the octahedron to the braiding operator ﬁrst appeared in Ref. 10, and it was later used to give the decomposition of the knot complement directly from Kashaev’s invariant [8]",
    "page": 14,
    "confidence": 0.8,
    "evidence": [
@@ -301,7 +308,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "The braid operator ( \u02c7R-matrix) \u27e8\u20d7p | \u02c7R |\u20d7p\u2032\u27e9is represented by the octahedron",
+   "title": "The braid operator ( ˇR-matrix) ⟨⃗p | ˇR |⃗p′⟩is represented by the octahedron",
    "page": 15,
    "confidence": 0.9,
    "evidence": [
@@ -377,7 +384,7 @@
   {
    "kind": "figure",
    "number": "12",
-   "title": "The \ufb01gure-eight knot 41",
+   "title": "The ﬁgure-eight knot 41",
    "page": 24,
    "confidence": 0.9,
    "evidence": [
@@ -390,7 +397,7 @@
   {
    "kind": "figure",
    "number": "13",
-   "title": "We attach octahedra for each crossing of the \ufb01gure-eight knot",
+   "title": "We attach octahedra for each crossing of the ﬁgure-eight knot",
    "page": 25,
    "confidence": 0.9,
    "evidence": [
@@ -455,7 +462,7 @@
   {
    "kind": "figure",
    "number": "18",
-   "title": "Complement of the \ufb01gure-eight knot",
+   "title": "Complement of the ﬁgure-eight knot",
    "page": 27,
    "confidence": 0.9,
    "evidence": [
@@ -755,8 +762,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 832,
-   "n_words": 120,
+   "n_chars": 828,
+   "n_words": 118,
    "label_start": "1",
    "label_end": "2"
   },
@@ -766,22 +773,22 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 2,
-   "page_end": 2,
-   "n_chars": 541,
-   "n_words": 84,
+   "page_end": 3,
+   "n_chars": 3131,
+   "n_words": 521,
    "label_start": "2",
-   "label_end": "2"
+   "label_end": "3"
   },
   {
    "id": "sec-001-2-quantum-dilogarithm-function",
    "number": "2",
    "title": "Quantum Dilogarithm Function",
    "level": 1,
-   "page_start": 2,
+   "page_start": 3,
    "page_end": 3,
-   "n_chars": 3062,
-   "n_words": 512,
-   "label_start": "2",
+   "n_chars": 488,
+   "n_words": 76,
+   "label_start": "3",
    "label_end": "3"
   },
   {
@@ -790,117 +797,141 @@
    "title": "Classical Dilogarithm Function",
    "level": 2,
    "page_start": 3,
-   "page_end": 8,
-   "n_chars": 6012,
-   "n_words": 1231,
+   "page_end": 5,
+   "n_chars": 2439,
+   "n_words": 465,
    "label_start": "3",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-003-22-quantum-dilogarithm-function-and-the-r-operat",
+   "number": "2.2",
+   "title": "Quantum Dilogarithm Function and the $R$ Operator",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 3504,
+   "n_words": 751,
+   "label_start": "5",
    "label_end": "8"
   },
   {
-   "id": "sec-003-23-representation",
+   "id": "sec-004-23-representation",
    "number": "2.3",
    "title": "Representation",
    "level": 2,
    "page_start": 8,
    "page_end": 10,
-   "n_chars": 1853,
-   "n_words": 496,
+   "n_chars": 1862,
+   "n_words": 494,
    "label_start": "8",
    "label_end": "10"
   },
   {
-   "id": "sec-004-3-invariant-of-knot-and-link",
+   "id": "sec-005-3-invariant-of-knot-and-link",
    "number": "3",
    "title": "Invariant of Knot and Link",
    "level": 1,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 2300,
-   "n_words": 463,
+   "n_chars": 2322,
+   "n_words": 466,
    "label_start": "10",
    "label_end": "11"
   },
   {
-   "id": "sec-005-4-asymptotic-behavior-and-3-dimensional-picture",
+   "id": "sec-006-4-asymptotic-behavior-and-3-dimensional-picture",
    "number": "4",
    "title": "Asymptotic Behavior and 3-dimensional Picture",
    "level": 1,
    "page_start": 11,
    "page_end": 14,
-   "n_chars": 4011,
-   "n_words": 837,
+   "n_chars": 4046,
+   "n_words": 838,
    "label_start": "11",
    "label_end": "14"
   },
   {
-   "id": "sec-006-5-3-dimensional-picture-of-the-invariant",
+   "id": "sec-007-5-3-dimensional-picture-of-the-invariant",
    "number": "5",
    "title": "3-Dimensional Picture of the Invariant",
    "level": 1,
    "page_start": 14,
+   "page_end": 14,
+   "n_chars": 42,
+   "n_words": 6,
+   "label_start": "14",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-008-51-r-operators-as-the-braid-operator",
+   "number": "5.1",
+   "title": "$R$-Operators as the Braid Operator",
+   "level": 2,
+   "page_start": 14,
    "page_end": 18,
-   "n_chars": 5746,
-   "n_words": 1196,
+   "n_chars": 5692,
+   "n_words": 1185,
    "label_start": "14",
    "label_end": "18"
   },
   {
-   "id": "sec-007-52-hyperbolicity-condition-for-surface",
+   "id": "sec-009-52-hyperbolicity-condition-for-surface",
    "number": "5.2",
    "title": "Hyperbolicity Condition for Surface",
    "level": 2,
    "page_start": 18,
    "page_end": 20,
-   "n_chars": 2392,
-   "n_words": 570,
+   "n_chars": 1932,
+   "n_words": 402,
    "label_start": "18",
    "label_end": "20"
   },
   {
-   "id": "sec-008-53-gluing-around-ridgeline-of-octahedron",
+   "id": "sec-010-53-gluing-around-ridgeline-of-octahedron",
    "number": "5.3",
    "title": "Gluing Around Ridgeline of Octahedron",
    "level": 2,
    "page_start": 20,
    "page_end": 24,
-   "n_chars": 4427,
+   "n_chars": 4451,
    "n_words": 824,
    "label_start": "20",
    "label_end": "24"
   },
   {
-   "id": "sec-009-6-example-figure-eight-knot",
+   "id": "sec-011-6-example-figure-eight-knot",
    "number": "6",
    "title": "Example: Figure-Eight Knot",
    "level": 1,
    "page_start": 24,
    "page_end": 28,
-   "n_chars": 3718,
-   "n_words": 742,
+   "n_chars": 3731,
+   "n_words": 740,
    "label_start": "24",
    "label_end": "28"
   },
   {
-   "id": "sec-010-7-concluding-remarks",
+   "id": "sec-012-7-concluding-remarks",
    "number": "7",
    "title": "Concluding Remarks",
    "level": 1,
    "page_start": 28,
    "page_end": 29,
-   "n_chars": 2624,
-   "n_words": 434,
+   "n_chars": 2640,
+   "n_words": 435,
    "label_start": "28",
    "label_end": "29"
   },
   {
-   "id": "sec-011-acknowledgement",
+   "id": "sec-013-acknowledgement",
    "number": null,
    "title": "Acknowledgement",
    "level": 1,
    "page_start": 29,
    "page_end": 31,
-   "n_chars": 2455,
-   "n_words": 409,
+   "n_chars": 2446,
+   "n_words": 406,
    "label_start": "29",
    "label_end": "31"
   }
@@ -911,7 +942,7 @@
   "toc_entries": 14,
   "toc_inferred_entries": 14,
   "toc_inferred_mean_confidence": 1.0,
-  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_empty_share": 0.071,
   "toc_inferred_method": "latex",
   "figure_entries": 18,
   "figure_sequence_gaps": [],
@@ -919,13 +950,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 13,
-  "chars_total": 39973,
+  "sections": 15,
+  "chars_total": 39554,
+  "furniture_lines_stripped": 32,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "canoquan2.tex",
    "tex_sections": 14,
-   "overlaid": 9,
+   "overlaid": 11,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -940,26 +972,35 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.229,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-001-2-quantum-dilogarithm-function",
-     "title": "Quantum Dilogarithm Function",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.0,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
-    },
-    {
-     "id": "sec-002-21-classical-dilogarithm-function",
-     "title": "Classical Dilogarithm Function",
-     "prose_ratio": 0.888,
-     "coverage_ratio": 0.899,
+     "prose_ratio": 0.719,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-003-23-representation",
+     "id": "sec-001-2-quantum-dilogarithm-function",
+     "title": "Quantum Dilogarithm Function",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-21-classical-dilogarithm-function",
+     "title": "Classical Dilogarithm Function",
+     "prose_ratio": 0.906,
+     "coverage_ratio": 0.752,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-22-quantum-dilogarithm-function-and-the-r-operat",
+     "title": "Quantum Dilogarithm Function and the $R$ Operator",
+     "prose_ratio": 0.887,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-23-representation",
      "title": "Representation",
      "prose_ratio": 0.909,
      "coverage_ratio": 1.0,
@@ -967,15 +1008,15 @@
      "converter": "latex"
     },
     {
-     "id": "sec-004-3-invariant-of-knot-and-link",
+     "id": "sec-005-3-invariant-of-knot-and-link",
      "title": "Invariant of Knot and Link",
      "prose_ratio": 0.925,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-005-4-asymptotic-behavior-and-3-dimensional-picture",
+     "id": "sec-006-4-asymptotic-behavior-and-3-dimensional-picture",
      "title": "Asymptotic Behavior and 3-dimensional Picture",
      "prose_ratio": 0.933,
      "coverage_ratio": 1.0,
@@ -983,23 +1024,29 @@
      "converter": "latex"
     },
     {
-     "id": "sec-006-5-3-dimensional-picture-of-the-invariant",
+     "id": "sec-007-5-3-dimensional-picture-of-the-invariant",
      "title": "3-Dimensional Picture of the Invariant",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-51-r-operators-as-the-braid-operator",
+     "title": "$R$-Operators as the Braid Operator",
      "prose_ratio": 0.94,
      "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-007-52-hyperbolicity-condition-for-surface",
+     "id": "sec-009-52-hyperbolicity-condition-for-surface",
      "title": "Hyperbolicity Condition for Surface",
      "prose_ratio": 0.933,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-008-53-gluing-around-ridgeline-of-octahedron",
+     "id": "sec-010-53-gluing-around-ridgeline-of-octahedron",
      "title": "Gluing Around Ridgeline of Octahedron",
      "prose_ratio": 0.936,
      "coverage_ratio": 1.0,
@@ -1007,27 +1054,27 @@
      "converter": "latex"
     },
     {
-     "id": "sec-009-6-example-figure-eight-knot",
+     "id": "sec-011-6-example-figure-eight-knot",
      "title": "Example: Figure-Eight Knot",
      "prose_ratio": 0.926,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-010-7-concluding-remarks",
+     "id": "sec-012-7-concluding-remarks",
      "title": "Concluding Remarks",
      "prose_ratio": 0.933,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-011-acknowledgement",
+     "id": "sec-013-acknowledgement",
      "title": "Acknowledgement",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.218,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

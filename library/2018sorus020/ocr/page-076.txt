@@ -1,0 +1,47 @@
+Now each term of the sequence can be thought as an O,-module tensorized by k(Y),
+but the map dz does not restrict to a morphism of O,-module. Hence in the sequel
+
+we will consider the exact sequence H, :
+0 k(Y) S H4(My, Adop,) @ H4( My, Ad op) * H#(D, Adopy) 4 k(Y) 3 0
+
+where we just have multiplied dz, by t”. We will denote by D2 this new map,
+which restricts to morphism of O,-modules H!(M,, Ad op;), ® H1(Mo, Ad op}), Pe,
+H*(d, Adopy)y.
+
+From now on we suppose that the choices of bases we made hy,h, and hg gave
+splittings H1(M,, Adop:;) ® H'(My, Adops) = kerdy © Ey, and H1(X, Adopy) =
+do(E1) ® Ey. Let A» be the restricted map Dy), : By > do(E£)).
+
+Lemma 2.4.7.
+
+1
+tor(Hi) = qa,” with c € O*
+
+Proof. Considering the definition of the torsion of Section[1.5.3} the following equa-
+lity holds :
+
+ton(H,) = Sete RO) > BOY) det (6: Ey + k(Y))
+
+Then we conclude the proof noting that the numerator lies in O¥. O
+
+Hence we are now reduced to compute v(det(Ag)).
+
+To do this, the idea is the following : recall that the completion of the valuation ring
+O, is isomorphic to k|[t]], the ring of formal series. Consider a matrix A € M,(O,)
+as a formal series A = )>t'A;, with A; € M,(k), the problem is to compute the
+valuation of its determinant. If det Ag 4 0, then A is invertible, det A € OF and
+u(det A) = 0. If not, we have k” 4%, 4" which is not invertible and define H' (Ao) =
+ker Ay, H1(Ao) = coker Ap, hence H®(Ap) ~ H1(Ao) 4 0. Pick P,Q € GL,(k) such
+that PApQ = (0 Tey ) is diagonal, where rp = dim ker Ao, and J,_,, is the (n — 19)
+identity matrix. Then to compute det A, it’s enough to compute the determinant
+of the ro X ro first block of A; + tAg.... More precisely det A = t" det Ai + o(t"),
+where Aj, is the restriction of > t’Aji1 to H®(Ag) @ k[[t]], followed by the projection
+ki" + H(Ag) © Kile).
+
+One proceeds by induction, the argument is formalized in the following lemma :
+
+Lemma 2.4.8. Let A: O? > O? a morphism such that det A 4 0. Working in
+
+the completion ©, if necessary, we define Aso = A, Asiqi = SAS; restricted to
+
+75

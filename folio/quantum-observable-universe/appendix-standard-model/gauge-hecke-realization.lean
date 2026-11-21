@@ -29,7 +29,7 @@ the Hecke quotient.
 ## References
 
 - [kassel2008] Kassel–Turaev, Braid Groups
-- [manuscript] Appendix: Toward the Standard Model
+- [leitner2026] Appendix: Toward the Standard Model
 -/
 
 namespace QOU.StandardModel

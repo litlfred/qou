@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9707006v1
-doc_title: "arXiv:q-alg/9707006v1 4 Jul 1997"
+doc_title: "Drinfeld twist for quantum su(2) in the adjoint representation"
 section_id: sec-004-3-the-drinfeld-kohno-theorem
 section_title: "The Drinfeld-Kohno theorem"
 section_number: 3
@@ -8,7 +8,9 @@ pages: 4-5
 source_pdf: 9707006v1.pdf
 source_sha256: b9513be9294f56d9
 toc_source: inferred
+doc_brief: "Drinfeld twist for quantum su(2) in the adjoint representation — We give a detailed description of the adjoint representation of Drinfeld’s twist element, as well as of its coproduct, for suq(2)."
 ---
+The Drinfeld-Kohno theorem
 We give a brief discussion of the essential points only, as they pertain to the particular case examined (in particular,
 we do not mention coassociativity since it is not essential to the problem at hand) - the reader is referred to [5]
 for a detailed account of these matters in a general context.
@@ -41,8 +43,6 @@ t = ∆c(Cc) −Cc ⊗1 −1 ⊗Cc .
 Adopting this point of view one sees the universal R-matrix of Uq to be the image, under the twist, of its classical
 counterpart according to
 R = F′RcF−1
-(15)
 where F′ ≡P(F) and P is the permutation operator in U⊗2
 q
 .
-4

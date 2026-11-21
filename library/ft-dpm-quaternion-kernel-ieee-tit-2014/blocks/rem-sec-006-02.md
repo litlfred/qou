@@ -1,0 +1,1 @@
+Observe that the right-multiplication by L(g0) ∥g0∥2 , which yields Eq. (4), holds the key to differentiate the proof for Thm. 1 from that of the complex and real cases. Due to the non-commutative property of the quaternion ring, the element g = L∗(g0)g0/ ∥g0∥2 is different from ¯g = g0L∗(g0)/ ∥g0∥2, which is used in the proof for the real/complex cases in [10, Theorem 6.2.4].

@@ -1,0 +1,70 @@
+by (simp add: real-sgn-eq right-diff-distrib)
+
+thus calc-x-axis-intersection-cmat-cvec H1 ~v
+calc-z-axis-intersection-cmat-cvec H2
+using hh k
+by (auto simp del: calc-x-axis-intersection-cvec-def )
+qed
+
+lemma calc-2-azis-intersection-in-unit-disc:
+assumes is-poincare-line H intersects-x-aris H
+shows calc-a-axis-intersection H € unit-disc
+proof (cases is-line H)
+case True
+thus ?thesis
+using assms
+unfolding unit-disc-def disc-def
+by simp (transfer, transfer, auto simp add: vec-cnj-def)
+next
+case False
+thus ?thesis
+using assms
+unfolding unit-disc-def disc-def
+proof (simp, transfer, transfer)
+fix H
+assume hh: hermitean H \ H # mat-zero
+then obtain A B D where *: H = (A, B, cnj B, D) is-real A is-real D
+using hermitean-elems
+by (cases H) blast
+assume is-poincare-line-cmat H
+hence *: H = (A, B, cnj B, A) is-real A
+using *
+by auto
+
+assume 7— circline-A0-cmat H
+hence A 4 0
+
+using *
+
+by simp
+
+assume intersects-1-axis-cmat H
+hence (Re B)? > (Re A)?
+using * (A #4 0»
+by (auto simp add: power2-eq-square complex.expand)
+
+hence Re B 4 0
+by auto
+
+have Re A # 0
+using <is-real Ay «A # 0»
+by (auto simp add: complex.expand)
+
+have sqrt((Re B)? — (Re A)*) < sqrt((Re B)?)
+using «Re A # 0
+by (subst real-sqrt-less-iff) auto
+
+also have ... = sgn (Re B) « (Re B)
+by (smt mult-minus-right nonzero-eq-divide-eq real-sgn-eq real-sqrt-abs)
+finally
+
+have 1: sqrt((Re B)? — (Re A)*) < sgn (Re B) * (Re B)
+
+have 2: (Re B)? — (Re A)? < sgn (Re B) * (Re B) * sqrt((Re B)? — (Re A)?)
+using «(Re B)? > (Re A)?»
+using mult-strict-right-mono|OF 1, of sqrt ((Re B)? — (Re A)*)]
+by simp
+
+have 3: (Re B)? — 2xsgn (Re B)*Re Bxsqrt((Re B)*? — (Re A)”) + (Re B)? — (Re A)? < (Re A)?
+
+102

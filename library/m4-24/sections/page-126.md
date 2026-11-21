@@ -1,0 +1,61 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-126
+section_title: "Page 126"
+section_number: null
+pages: 126-126
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+498 T. Ohtsuki (Editor)
+
+Problem 8.11 (G. Masbaum) Is there a relation between the Nielsen-Thurs-
+
+ton classification of mapping classes of 1g and their images on V(Xg) for
+TQFT’s (V, Z)?
+
+Remark The Nielsen-Thurston classification says that any mapping class of
+a surface is either finite order, reducible, or pseudo-Anosov (see, e.g. [83]). It
+is known that a Dehn twist is taken to a matrix of finite order by any TQFT
+derived from a modular category of a quantum group. On the other hand, it
+is shown in [274] that a certain product of two non-commuting Dehn twists
+is taken to a matrix of infinite order in the SU(2) TQFT at level k unless
+k =1,2,4,8.
+
+8.5 Half-projective and homological TQFT’s
+
+In [145] it is shown that, for a restricted set of cobordisms, the Reshetikhin-
+Turaev TQFT at a prime p-th root of unity ¢, can be defined, at least ab-
+stractly, as a functor V, : Cob — Z{¢,|-mod, meaning the category of free Z[¢,]-
+modules. Note that there is a well defined ring epimorphism Z[G,]—» F,[y]/y?71,
+which sends ¢, ++ 1+y and maps integer coefficients canonically onto the fi-
+nite field F, = Z/pZ. Thus an endomorphism, which for a choice of basis
+of the free Z{¢,|-modules is given by a matrix with entries in Z[¢,], will be
+represented by the same matrix with reduced coefficients now in F,[y]/y?7!.
+Collecting the coefficients for each degree we can thus reexpress such a matrix
+as a sum of matrices over F, multiplied with powers of y, or, more succinctly,
+use Mat(F,[y]/y’-!) = Mat(F,,)[y]/y’-!. This means that in the ring-reduction
+
+the TQFT assigns to cobordisms a polynomial V,(M) = ar yi vel),
+
+where each vy li ) is a matrix over F, and is well defined for given bases.
+
+Recall also the notion of a half-projective TQFT with respect to an element x €
+R in the base ring, introduced in [210]. It is defined, by perturbing functoriality
+
+into V(N o M) = x¥™4N)y(N)V(M), where (M,N) = rank(H)(N o M) 4,
+Ho(NNM)).
+
+Problem 8.12 (T. Kerler) [Cyclotomic integer TQFT’s]
+
+(1) Find explicit/computable bases for the Vp(Xg) as free modules over Z[{G)].
+
+(2) Show that V, can be extended to all cobordisms as a half-projective
+3
+
+TQFT with x = ( — 1)? €R=Z[G].
+
+Geometry & Topology Monographs, Volume 4 (2002)

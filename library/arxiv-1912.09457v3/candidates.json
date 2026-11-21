@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1912.09457v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "c00b3801060fc3cc8cfd0e3aec3e8e5fad4f8d61c1f2f643aa2bbcdd9f83df55",
+  "file": "1912.09457v3.pdf"
+ },
+ "provenance": {
+  "title": "GENERALIZED NEGLIGIBLE MORPHISMS AND THEIR TENSOR IDEALS",
+  "authors": "THORSTEN HEIDERSDORF AND HANS WENZL",
+  "arxiv": {
+   "id": "1912.09457",
+   "version": "3",
+   "primary_class": "math.RT",
+   "stamp_date": "8 Dec 2021"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

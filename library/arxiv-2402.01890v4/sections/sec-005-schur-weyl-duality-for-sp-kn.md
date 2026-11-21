@@ -7,10 +7,11 @@ section_number: null
 pages: 9-15
 source_pdf: 2402.01890v4.pdf
 source_sha256: e1eeb2865f0b53e1
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.95
-latex_coverage_ratio: 0.889
-doc_brief: "On the spherical partition algebra — For k ∈ N we introduce an idempotent subalgebra, the spherical partition algebra SP k, of the partition algebra Pk, that we define using an embedding associated"
+latex_prose_ratio: 0.635
+latex_coverage_ratio: 0.921
+doc_brief: "On the spherical partition algebra — For k ∈N we introduce an idempotent subalgebra, the spherical partition algebra SPk, of the partition algebra Pk, that we define using an embedding associated"
 ---
 \label{Schur-Weyl duality}
 In this section we study the specialized spherical partition algebra 
@@ -549,3 +550,647 @@ We shall not consider $\AntiSpheAlg$ further in the paper.
 
 \end{remark}
 }}
+
+  
+
+
+
+
+
+\section{Cellularity of $\SpheAlg(t)$ }\label{sectioncellularity}
+In this section we initiate the study of the representation theory of $\SpheAlg(t)$,
+for arbitrary $ t \in \CC$.
+
+\medskip
+It was shown in \cite{PMartin1} that 
+$ \ParAlg(t) $ is semisimple if and only if $ t \notin \{ 0, 1, 2, \ldots, 2k -2 \} $. 
+This gives us immediately the following Theorem.
+\begin{theorem}\label{semisimple}
+  Suppose that $ t \notin \{ 0, 1, 2, \ldots, 2k -2 \} $. Then $\SpheAlg(t)$
+  is a semisimple algebra. 
+\end{theorem}
+\begin{dem}
+  Let $ \mathcal{J}_k $ and $ \mathcal{SJ}_k $ be the Jacobson radicals for $ \ParAlg(t) $ and
+  $\SpheAlg(t)$, respectively. Then, by definition, $ a \in \mathcal{J}_k $ if and only if $ a L = 0 $ for all
+  irreducible $ \ParAlg(t) $-modules, and similarly for $ \mathcal{SJ}_k $.
+
+  \medskip Since $ t \notin \{ 0, 1, 2, \ldots, 2k -2 \} $ we have that $ \ParAlg(t) $ is semisimple, which by definition means that
+  $ \mathcal{J}_k =0 $. On the other hand, it is known that the irreducible $\SpheAlg(t)$-modules are the nonzero
+  $  e_k L $'s for $ L $ running over irreducible $ \ParAlg(t) $-modules, see (iv) of Theorem (4) of {\bf A1} of the appendix to \cite{Donkin}. 
+  Suppose now that $ e_k a e_k \in \mathcal{SJ}_k$. Then $ e_k a e_k (e_k L)=0 $ and hence
+  $ e_k a e_k  L=0 $ for all irreducible
+  $ \ParAlg(t) $-modules $L$. But this means that $ e_k a e_k \in \mathcal{J}_k $ and so $ e_k a e_k =0 $, as claimed.
+\end{dem}  
+
+\medskip
+
+In general, even when $  \ParAlg(t) $ is not semisimple, it is always a {\it cellular algebra} in the sense of \cite{GL},
+as was shown in \cite{DW} and \cite{Xi}, 
+and so $\SpheAlg(t)$
+becomes a cellular algebra as well, since
+it is an idempotent truncation of $ \ParAlg(t) $. 
+
+\medskip
+Let us give the details of this statement, starting with the definition of a cellular algebra from \cite{GL}. 
+\begin{definition}{\label{cellular}} Suppose that $\mathcal{A}$ is a
+  $\Bbbk $-algebra over the domain $ \Bbbk $. Suppose moreover that $(\PP,\leq)$ is a poset
+  such that for each $\lambda\in \PP$ there is a
+finite set $T(\lambda)$ and elements $C_{\s\T}\in \mathcal{A}$ such that
+\begin{equation}
+  \mathcal{C}=\left\{C_{\s\T}\mid \lambda\in \PP \mbox{ and } \s,\T\in T(\lambda)\right\}
+\end{equation}  
+is a $\Bbbk$-basis for $\mathcal{A} $. Then the pair $(\mathcal{C},\PP)$ is called a 
+\textit{cellular basis} for $\mathcal{A}$ if
+\begin{enumerate}\renewcommand{\labelenumi}{\textbf{(\roman{enumi})}}
+\item The $\Bbbk$-linear map $*:\mathcal{A}\to \mathcal{A}$ determined by
+$(\mathop{C_{\s\T}})^*=C_{\T\s}$ for all
+$\lambda\in\PP$ and $\s,\T\in T(\lambda)$ is an algebra
+anti-automorphism of $\mathcal A$.
+
+\item For any $\lambda\in \PP,\; \T\in T(\lambda)$ and $a\in \mathcal{A}$
+there exist elements $ r_{a \s \U} \in \Bbbk$ such that for all $\s\in T(\lambda)$
+\begin{equation}\label{multicell}
+  a C_{\s\T}  \equiv \sum_{\U\in T(\lambda)} r_{a \s \U}C_{\U\T} \mod{\mathcal{A}^{> \lambda}}
+  \end{equation}
+where $\mathcal{A}^{    >\lambda} $ is the free $\Bbbk$-submodule of $\mathcal{A}$, given by 
+$\left\{C_{\U\V}\mid \mu\in \PP,\mu>\lambda \mbox{ and }
+\U,\V\in T(\mu)\right\}$.
+\end{enumerate}
+If $\mathcal A$ has a cellular basis we say that it is a \textit{cellular
+algebra} with \textit{cell datum} $(\PP,T,\mathcal{C})$.
+\end{definition}
+
+Suppose that $\mathcal A$ is a a cellular algebra with cell datum $(\PP,T,\mathcal{C})$.
+With each $ \s \in T(\lambda) $ we associate a symbol $ C_{\s} $ and next define
+$ \Delta(\lambda) $ as the free $  \Bbbk $-module with basis $ \{ C_{\s} \,| \, \s \in T(\lambda) \} $. 
+Then $ \Delta(\lambda) $ becomes a left $ \mathcal A$-module, called the {\it cell module}, via
+\begin{equation}
+a C_{\s} = \sum_{\U\in T(\lambda)} r_{a \s \U}C_{\U}
+\end{equation}  
+where $ r_{a \s \U} $ is as in \eqref{multicell}. We shall call $ \{ C_{\s} \, | \, \s \in T(\lambda) \} $
+the {\it cellular basis} for $ \Delta(\lambda) $. 
+
+
+\medskip
+We now state the cell datum for $ \ParAlg(t)$, using a small variation of the
+constructions given in \cite{DW} and \cite{Xi}. 
+For $ \Lambda $ we use
+\begin{equation}\label{poserpar}
+\Lambda^k  = \bigcup_{l=0}^{k} \Par_l. 
+\end{equation}
+For the order relation
+$ \unlhd $ on $ \Lambda^k $ we use the usual dominance order on each $ \Par_l $, and
+extend it to all of $ \Lambda^k $ via $ \lambda \lhd \mu $ if $ \lambda \in \Par_l $
+and $ \mu \in \Par_{\overline{l}} $ where $ l >\overline{l} $.
+Suppose that $ \lambda \in \Par_l \subseteq \Lambda^k$.
+Then for $ T(\lambda) $ we use $ T_k(\lambda ) = \std(\lambda) \times {\mathcal C}_l $ where $ {\mathcal C}_l $
+is as in \eqref{2.19}. Thus, the elements of $ T_k(\lambda) $ are of the form  $ \cc = ( \s, c , S) $
+where
+$ \s \in \std(\lambda) $ for $ \lambda \in \Par_l$, and $ c $ is a set partition on $ \{ 1,2, \ldots, k \} $
+with $ S$ being a subset of the blocks of $ c$, such that $ | S | = l $. 
+
+Finally, in order to give the cellular basis itself,
+we need to recall Murphy's {\it standard basis} for $ \CC \Si_l $.
+For $ \lambda \in \Par_l $, we denote by $ \T^{\lambda} $ the {\it row reading} tableau that
+was already used in the proof of Theorem
+\ref{lemma2}. In $ \T^{\lambda} $, the numbers $ \{1, 2, 3, \ldots, l \} $
+are filled in increasingly along the rows of $ \lambda$ and down the columns, for example
+for $ \lambda = (5,3,2) $ we have 
+
+\begin{equation}
+\T^{\lambda} =  \raisebox{-.45\height}{\includegraphics[scale=0.7]{dib23.pdf}}
+\raisebox{-15\height}{.} 
+\end{equation}
+
+Let $ \Si_{\lambda } \le \Si_l $ be the Young subgroup for $ \lambda $, 
+that is the row stabilizer 
+of $ \T^{\lambda} $, and define $ x_{\lambda \lambda } \in \CC \Si_l $ via 
+$ x_{\lambda \lambda } = \sum_{ w \in \Si_{\lambda}} w $.
+For $ \s \in \tab(\lambda) $, let $ d(\s) \in \Si_l $ be defined by the condition that $ d(\s) \T^{\lambda} = \s $, 
+and for $ \s, \T \in \tab(\lambda) $ let $ x_{ \s \T} = d(\s) x_{\lambda \lambda } d(\T)^{-1} $. 
+Then it was proved in \cite{Mathas} and \cite{Murphy}
+that the set $ \{ x_{ \s \T} \, | \, \s, \T \in \std(\lambda), \lambda \in \Par_l \} $
+is a cellular basis for $ \CC \Si_l $: Murphy's standard basis. 
+(In fact, in \cite{Mathas} and \cite{Murphy} the authors work in the more general setting of
+Hecke algebras of type $ A_{l-1}$).
+
+
+\medskip
+Let $ \II_l^{ \rhd \lambda} = \spa \{ x_{\s \T} \, | \,
+\s, \T \in \std(\mu), \mu \rhd \lambda \} \subseteq \CC \Si_l $ be the {\it cell ideal}
+in $ \CC \Si_l $ 
+corresponding to $ \lambda $
+and let $ x_{\s } = x_{ \s \T^{\lambda}} \, \, {\rm mod} \, \,  \II_l^{\rhd \lambda} \subseteq   \CC \Si_l/\II_l^{\rhd \lambda}
+$. When $  \T^{\lambda} $ appears as a subscript, we sometimes
+write $ \lambda $ instead of $ \T^{\lambda} $, 
+for example $ x_{\s \lambda} =  x_{ \s \T^{\lambda} }  $ and $ x_{\lambda} =  x_{  \T^{\lambda} }  $.
+Then the Specht module $ S(\lambda) $ for $ {\mathbb C}\Si_l $ is the submodule of $  {\mathbb C}\Si_l/ \II_l^{ \rhd \lambda} $ generated by $ x_{\lambda} $. It is the cell module associated with Murphy's standard basis and 
+$ \{ x_{\s } \, | \, \s \in \std(\lambda) \} $
+is a cellular basis for $ S(\lambda) $. 
+
+\medskip
+Returning to $  \ParAlg(t) $ we finally obtain 
+its cellular basis. 
+For $ \cc = (\s, c , S ) $ and $  \dd = (\T, d, T) $ in $  T_k(\lambda)$ we define 
+$ C_{\cc \dd} \in  \ParAlg(t)  $ via 
+\begin{equation} C_{\cc \dd}  = g \bigl ( (c, S) \otimes  x_{\s \T} \otimes (d, T) \bigr )
+\end{equation}
+where $ g $ is the isomorphism induced by $ f^{-1} $ for $ f $ as in \eqref{bijection}. 
+Then $ \{ C_{\cc \dd} \, | \,  \cc, \dd \in T_k(\lambda) \, \,   \mbox{for} \, \, \lambda \in \Lambda^k \} $ is
+the cellular basis for $ \ParAlg(t) $. 
+A typical basis element $ C_{\cc \dd} $ has the diagrammatic form 
+
+\begin{equation}\label{before dd}
+C_{\cc \dd}  = \raisebox{-.47\height}{\includegraphics[scale=0.8]{dib24.pdf}}
+\raisebox{-20\height}{.} 
+\end{equation}
+
+
+
+For $ \lambda \in \Lambda^k $, we now give a description 
+of the cell module $ \Delta_k(\lambda) $ for $ \ParAlg(t) $. For 
+$ \lambda \in \Par_l \in \Lambda^k $ we  
+let $ \dd_{\lambda} \in T(\lambda) $ be the element defined via
+$ \dd_{\lambda} = ( \T^{\lambda}, d, T ) $ where $ T =  \{ \{1\}, \{2\}, \ldots, \{ l\} \}  $
+and $ d =  \{ \{1\}, \{2\}, \ldots, \{ l\},   \{ l+1, l+2, \ldots, k \} \}  $. 
+For $  \cc = (\s, c, S) \in T(\lambda) $ we set
+\begin{equation}\label{6.8}
+C_{\cc} = C_{\cc \dd_{\lambda}} \mod \ParAlg^{  \rhd \lambda}(t)
+\end{equation}
+where 
+$ \ParAlg^{\rhd \lambda}(t) = {\rm span}\{ C_{ \cc \dd} \, | \, \cc, \dd \in T(\mu),  \mu \rhd \lambda \} $
+and have then $ \Delta_k(\lambda) =   {\rm span} \{ C_{\cc} \, | \, \cc \in  T_k(\lambda) \} $.
+Then, by definition, $ \Delta_k(\lambda) $ is the submodule of $ \ParAlg(t)/ \ParAlg^{\rhd \lambda}(t) $ generated by 
+$ \{ C_{\cc} \, | \, \cc \in  T_k(\lambda) \} $.
+We represent a typical basis element $  C_{\cc} $ for $ \Delta_k(\lambda) $ as a {\it half diagram} as follows 
+\begin{equation}\label{6.9}
+  C_{\cc} = \raisebox{-.24\height}{\includegraphics[scale=0.8]{dib25.pdf}}
+\end{equation}
+thus leaving out $ \dd_{\lambda} $ from the diagram. 
+The action of $ a \in \ParAlg(t) $ on $ C_{\cc} \in \Delta_k (\lambda) $,
+that is $ a  C_{\cc} \in \Delta_k (\lambda)$, is given by concatenation
+with $ a $ on top of $ C_{\cc} $, followed by the elimination of internal blocks as in $ \ParAlg(t)$, 
+and of terms involving $ \{ C_{ \dd} \, | \, \dd \notin T_k(\lambda)  \} $ that are set equal to $ 0 $. 
+
+\medskip
+By construction we have 
+\begin{equation}\label{bytheconstruction}
+\dim \Delta_k(\lambda) = | T_k(\lambda) | = | \std(\lambda) | | C_l | 
+\end{equation}
+where $ C_l $ is as in \eqref{2.19}. This formula can be explicitly expressed in terms of Stirling numbers of the second kind, as explained in \cite{DW}. 
+
+
+
+
+{\color{black}{
+\begin{example}\label{example 2}
+  \normalfont
+For the partitions 
+$ ( k ) $ and $ (1^k)  $ in $ \Lambda^{k} $ we get via \eqref{bytheconstruction} that 
+$ \dim \Delta_k(k) = \dim \Delta_k(1^k) = 1   $ and so in particular
+$  \Delta_k(k) $ and $\Delta_k(1^k)$ are simple $\ParAlg(t)$-modules. 
+Suppose that $ n \ge 2k $ such that 
+$ \ParAlg(n) $ is semisimple by \cite{PMartin1}. 
+Then explicit expressions for the primitive idempotents in $ \ParAlg(n) $
+associated
+with $ \Delta_k(k) $ and $ \Delta_k(1^k) $ were determined in \cite{BH} and \cite{Campbell}.
+In the notation of \cite{Campbell}, these idempotents are the elements 
+$ \overline{\textsf{Quasi}_k}$ and $\overline{\textsf{Alt}_k}  $ of $ \ParAlg(n) $. 
+\end{example}
+}}
+
+
+
+
+We now pass to $\SpheAlg(t)$. 
+With the preparations just made we are in position to formulate and prove the promised cellularity of $\SpheAlg(t)$. 
+\begin{theorem}\label{cellularity}
+  The spherical partition algebra $\SpheAlg(t) $ is cellular on the poset $ \Lambda^k $. 
+The cell modules for $\SpheAlg(t) $ are $ \{ e_k  \Delta_k (\lambda) \, | \,  \lambda \in \Lambda^k \}$. 
+\end{theorem}
+\begin{dem}
+  Defining $ \cc = (\s, d , S) \in T(\lambda) $ where $ \lambda =(k) $, 
+  $ \s= \T^{\lambda} $ and $ d = S=  \{ \{1 \}, \{2 \}, \ldots, \{k \} \} $, we have 
+  $ e_k = \frac{1}{k!}C_{ \cc \cc} $. From this it follows that $ e_k^{\ast} = e_k^{} $ and so we may apply 
+Proposition 4.3 of \cite{KoXi}. This proves the Lemma. 
+\end{dem}
+
+
+\medskip
+Note that Proposition 4.3 of \cite{KoXi} does not give rise to a basis for $ e_k  \Delta_k (\lambda) $
+and in fact our next goal is to construct such a basis. 
+
+\medskip
+For this we need several new notational ingredients. 
+Suppose first that $ \nu= (\nu_1^{a_1}, \nu_2^{a_2}, \ldots, \nu_p^{a_p} ) \in \Par_i $.
+We then define the function 
+\begin{equation}
+\Psi: \Par_i \rightarrow \Par,  \Psi(\nu) = \ord(a_1, a_2, \ldots, a_p )
+\end{equation}
+which may be considered as a variation of  
+the function $ \Phi$ defined in 
+\eqref{weobtainafunction}. 
+Define also $ p_i = | \Par_i| $; this is just the classical partition function. 
+
+\medskip
+Suppose that $ \s $ is a semistandard $ \lambda $-tableau of type $ \mu $. Following
+section 7 in \cite{Murphy}, we now set
+\begin{equation}
+  x_{\s } = \sum_{ \substack{  w  \in \Si_{\mu}  \\ w \T^{\lambda } \in \Std(\lambda) }}   x_{w \T^{\lambda }} \in S(\lambda). 
+\end{equation}  
+For example, for $\s = \raisebox{-.45\height}{\includegraphics[scale=0.6]{dib45.pdf}} $
+we have
+\begin{equation}\label{asin}
+  x_{\s} = x_{\raisebox{-.45\height}{\includegraphics[scale=0.6]{dib46.pdf}}} +
+  x_{\raisebox{-.45\height}{\includegraphics[scale=0.6]{dib47.pdf}}} +
+  x_{\raisebox{-.45\height}{\includegraphics[scale=0.6]{dib48.pdf}}} +
+  x_{\raisebox{-.45\height}{\includegraphics[scale=0.6]{dib49.pdf}}}.
+\end{equation}
+
+Moreover, for any $ \tau \in  \Comp_i $ we define $ d_{\tau} \in \SetPar_i $ as the set partition 
+whose blocks are the rows of $ \T^{\tau} $. For example, if $ \tau= (3,2,1,3) $
+we get $ d_{\tau} = \{ \{ 1,2,3 \}, \{ 4,5\}, \{6\}, \{7,8,9\}  \}$. 
+
+\medskip
+Suppose now that $ \lambda \in \Par_l \subseteq \Lambda^k$ and that $ \nu \in \Par_i $ with 
+$ \Psi(\nu) \in \Par_l $ for $ l \le i \le k $. Suppose furthermore that $ \s $ is a semistandard $ \lambda $-tableau of
+type $  \Psi(\nu) $ and that $ \mu \in \Par_{k-i}$. Using this information we define an element
+$ x_{\nu, \s, \mu} \in e_k \Delta_k(\lambda) $ as follows
+\begin{equation}\label{semistandardbasis}
+x_{\nu, \s, \mu}  = e_k g \bigl ( ( d_{ \nu \cdot \mu}, d_{\nu}) \otimes  x_{\s} \otimes \dd_{\lambda}  \bigr )
+\end{equation}  
+where $ \dd_{\lambda} $ is as below \eqref{before dd} and
+$ g $ is the isomorphism induced by $ f^{-1} $ for $ f $ as in \eqref{bijection}. 
+For example, for $ k = 17 $, $ l = 6$, $ \nu = (3^2,2^2, 1^2) $, $ \mu = (2^2, 1) $ and $ \lambda$ and $ \s $ as
+in \eqref{asin}, we have 
+
+\begin{equation} x_{\nu, \s, \mu} = e_{17} \left( \raisebox{-.45\height}{\includegraphics[scale=0.8]{dib50.pdf}}\right)
+\raisebox{-20\height}{.} 
+\end{equation}  
+
+
+
+
+
+\medskip
+With this notation we can now state and prove the following Theorem. 
+\begin{theorem}\phantomsection\label{stateandproveA}
+  \begin{description}
+  \item[a)] 
+    Let $ \lambda \in \Par_l \subseteq \Lambda^k $. Then the set 
+    \begin{equation}\label{4.13}
+      {\cal B}_{\lambda} = \{ x_{\nu, \s, \mu} \, | \, \nu \in \Par_i  \mbox{ for }   l \le i \le k \mbox{ such that } \Psi(\nu) \in \Par_l, \, 
+\s \in \sstd(\lambda, \Psi(\nu)), \, \mu \in \Par_{k-i} \}
+    \end{equation}
+    is a cellular basis for $ e_k \Delta_k(\lambda) $. 
+\item[b)] Suppose that $ \lambda \in \Par_l \subseteq \Lambda^k$. Then we have the
+  following dimension formula
+  \begin{equation}\label{48}
+    \dim e_k \Delta_k(\lambda) =
+    \sum_{i=l}^k \sum_{\substack{  \nu \in \Par_i  \\  \Psi(\nu) \in \Par_l }} K_{\lambda,  \Psi(\nu)} p_{{k-i}}
+      \end{equation}    
+where $ K_{\lambda,  \Psi(\nu)} $ is the Kostka number. 
+  \end{description}
+\end{theorem}
+\begin{dem}
+  The right{\color{black}{-}}hand side of \eqref{48} is just the cardinality of $ {\cal B}_{\lambda}$ from ${ \bf a)} $ and so we 
+only have to show ${ \bf a)} $. 
+
+\medskip
+For this we first recall the set ${\mathcal C}_l$ defined in \eqref{2.19}. 
+For $ (c, S) \in  {\mathcal C}_l $ we define
+\begin{equation}
+  M(c,S) = e_k g \left( (c,S) \otimes {\mathbb C} \Si_l \otimes \dd_{\lambda} \right). 
+\end{equation}
+We consider $ M(c,S) $ as a right $ {\mathbb C} \Si_l $-module, with action
+coming from the right $ \Si_l $-multiplication in the factor $ {\mathbb C} \Si_l $ of $   M(c,S) $. 
+For the special element $ e_k g( (c,S) \otimes  1 \otimes \dd_{\lambda} ) \in   M(c,S)$ we let 
+$ ( \s, \T )_{\sim_l} $ be the equivalence class of pairs corresponding to $ g( (c,S) \otimes  1 \otimes \dd_{\lambda} ) $ 
+under the bijection described in the paragraphs from \eqref {2.21} to \eqref{2.22}. 
+The $ \Si_k $-left action on these classes is
+faithful and transitive and 
+so in the expansion of $ e_k g( (c,S) \otimes  1 \otimes \dd_{\lambda} )  $ there is 
+a class represented by a distinguished pair $ ( \s_1, \T^{ (1^l, k-l )}) $ satisfying that the numbers $ \{1, 2, \ldots, k \} $ below the red
+line of $ \s_1 $ are all bigger than the numbers above the red line. Moreover, the numbers above the red line of $ \s_1 $ are filled in along rows,
+starting with the longest row, followed by the second longest row and so on, and similarly for the numbers below the red line.
+In the case of rows of equal lengths, the numbers are filled in
+along these rows starting with top one and finishing with the bottom one. Below we give an example of 
+$ ( \s, \T^ {  (1^l, k-l) } )_{\sim_l}  $ and its distinguished representative
+$ ( \s_1, \T^{  (1^l, k-l) } )  $. 
+
+\begin{equation}\label{distinguished}
+     \left( \raisebox{-.5\height}{\includegraphics[scale=0.8]{dib51.pdf}}\right)_{\! \! \! \sim 4} \, \, 
+\raisebox{-40\height}{,} 
+  \, \,  \, \,  \, \,  \, \,  \, \,  \, \, 
+     \left( \raisebox{-.5\height}{\includegraphics[scale=0.8]{dib52.pdf}}\right)
+  \end{equation}
+
+On the other hand, under the bijection described in the paragraphs from \eqref {2.21} to \eqref{2.22}, the $ \Si_l $-action
+on $M(c,S) $
+is given by 
+row permutations of the top $ l $ rows of the first component of the classes $ ( \s, \T )_{\sim l}  $,
+Using this and the description of the distinguished representative for $ ( \s, \T^{  (1^l, k-l) }  )_{\sim_l}  $
+just obtained, 
+we conclude that $   M(c,S)  $ is isomorphic to the right 
+$ {\mathbb C} \Si_l $-permutation module given by $ \Psi(\nu) $, that is $ M( \Psi(\nu) ) \cong
+x_{ \Psi(\nu)  \Psi(\nu)} {\mathbb C} \Si_l   
+$ where $ \nu =  \ord( \shape({\s_1}_{|1, \ldots, l})) $
+for $ {\s_1}_{|1, \ldots, l} $ the restriction of $ \s_1 $ to the first $ l $ rows.
+
+\medskip
+We now recall the fact, shown in
+\cite{Murphy}, that 
+the set $ \{ x_{\s} \, | \, \s \in \sstd(\lambda,  \Psi(\nu)) \} $ is 
+a basis for $ x_{ \Psi(\nu)  \Psi(\nu)} S(\lambda) $. Finally taking into account $ \mu =
+\ord( \shape({\s_1}_{|l+1, \ldots })) $, where
+$ {\s_1}_{|l+1, \ldots } $ is the restriction of $ \s_1 $ to the rows below the red line,
+we arrive at the basis given in \eqref{4.13}, which shows that $ {\cal B}_{\lambda}$ indeed is a basis for $e_k \Delta_k(\lambda) $. 
+
+\medskip
+Finally, since we already know that the $ e_k \Delta_k(\lambda) $'s are the cell modules for the cellular algebra
+$ \SpheAlg(t) $, we get that $ {\cal B}_{\lambda} $ is even a cellular basis for $e_k \Delta_k(\lambda) $. 
+{\color{black}{This concludes our proof.}}
+\end{dem}
+
+
+
+\medskip
+\medskip
+
+By cellularity of $\SpheAlg(t) $ we have 
+$ \dim  \SpheAlg(t) = \sum_{ \lambda \in \Lambda^k } (\dim e_k  \Delta_k(\lambda) )^2 $, which 
+via Theorem \ref{lemma2} and Theorem \ref{stateandproveA} becomes the following 
+identity involving $ bp_k $
+\begin{equation}\label{415}
+  bp_k = \sum_{ \lambda \in \Par_l \subseteq \Lambda^k }\biggl (   \sum_{i=l}^k \sum_{\substack{  \nu \in \Par_i  \\  \Psi(\nu) \in \Par_l }} K_{\lambda,  \Psi(\nu)} p_{{k-i}}
+  \biggr)^2. 
+\end{equation}
+It may be surprising that the identity \eqref{415} can in fact be proved 
+with combinatorial tools, as we shall now briefly explain.
+
+
+\medskip
+Fix $\nu \in \Par_i $, $  \mu \in \Par_j $ such that $ \Psi(\nu),  \Psi(\mu) \in \Par_l  $ for
+some $ l \in \{0, 1, \ldots, k \} $ 
+and consider their contribution to \eqref{415}, that is 
+\begin{equation}\label{thissum}
+   \sum_{ \lambda \in \Par_l  } K_{\lambda,  \Psi(\mu)} K_{\lambda,  \Psi(\nu)}. 
+\end{equation}
+The sum in \eqref{thissum} has a
+combinatorial interpretation, which is a consequence of the RSK algorithm.
+
+
+\medskip
+Indeed, 
+let $ {\mathcal N }_{ \Psi(\mu), \Psi(\nu) } $ be the set of non-negative integer valued matrices 
+with row sum $ \Psi(\mu) $ and column sum $  \Psi(\nu)  $.
+For example, if $ \mu = ( 2^3, 1^2) $ and $ \nu = (3^2, 2^2, 1)  $ we have 
+$ \Psi(\mu) = (3,2) $ and $ \Psi(\nu) = (2,2,1) $ and then ${\mathcal N }_{ \Psi(\mu), \Psi(\nu) } $ 
+consists of the matrices
+\begin{equation}\label{fivematrices}
+\begin{bmatrix*}[r]
+  1 & 1 & 1  \\ 1 & 1 & 0  \end{bmatrix*}, \, \, \, 
+\begin{bmatrix*}[r]
+  0 & 2 & 1  \\ 2 & 0 & 0  \end{bmatrix*}
+, \, \, \, 
+\begin{bmatrix*}[r]
+2 & 0 & 1  \\ 0 & 2 & 0  \end{bmatrix*}
+, \, \, \, 
+\begin{bmatrix*}[r]
+  1 & 2 & 0  \\ 1 & 0 & 1  \end{bmatrix*}
+, \, \, \, 
+\begin{bmatrix*}[r]
+2 & 1 & 0  \\ 0 & 1 & 1  \end{bmatrix*}. 
+\end{equation}  
+With this notation we have the following formula for \eqref{thissum}, 
+see for example Corollary 7.13.2 in \cite{Stanley}
+
+
+
+\begin{equation}
+ \sum_{ \lambda \in \Par_l  } K_{\lambda,  \Psi(\mu)} K_{\lambda,  \Psi(\nu)}  = | {\mathcal N }_{ \Psi(\mu), \Psi(\nu) } | . 
+\end{equation}
+Now each matrix in ${\mathcal N }_{ \Psi(\mu), \Psi(\nu) } $ corresponds to the propagating part of
+an element of $ \BiPar_k $, in the normal form $ GG(b) $ given by Garsia and Gessel, as in \eqref{gg},
+with the entries of the matrix giving the number of propagating lines that connect equally sized parts. 
+For example, for $ \mu $ and $ \nu $ as above, the five matrices in
+${\mathcal N }_{ \Psi(\mu), \Psi(\nu) } $ given by \eqref{fivematrices} correspond to the diagrams
+\begin{equation}
+\begin{array}{lll}
+\raisebox{-.24\height}{\includegraphics[scale=0.8]{dib32.pdf}}, & 
+\raisebox{-.24\height}{\includegraphics[scale=0.8]{dib33.pdf}}, &
+\raisebox{-.24\height}{\includegraphics[scale=0.8]{dib34.pdf}}, \\ && \\
+\raisebox{-.24\height}{\includegraphics[scale=0.8]{dib35.pdf}}, & 
+\raisebox{-.24\height}{\includegraphics[scale=0.8]{dib36.pdf}} &
+\end{array} 
+\end{equation}  
+in {\color{black}{the specified}}
+order. Using this, and taking into the account the possibilities for the non-propagating part,
+we obtain our combinatorial proof of the identity \eqref{415}.
+
+\medskip
+
+We next draw a couple of consequences of Theorem \ref{stateandproveA}. We first
+define $ \Lambda_{sph}^{k} \subseteq \Lambda^k $ via
+\begin{equation}\label{concretelydefined2}
+  \Lambda_{sph}^{k} = \{ \lambda = (\lambda_1, \lambda_2, \ldots, \lambda_l )  \in \Lambda^k \, | \,  \overline{b}(\lambda) 
+\le k   \}
+\end{equation}
+where
+\begin{equation} \overline{b}(\lambda) =  \sum_{i=1}^l i \lambda_i.
+\end{equation}
+This definition 
+should be contrasted with the definition of $\ParSph $ in
+\eqref{defineLambaSph}. We get
+\begin{corollary}\label{sphpar}
+With the above notation we have $ e_k \Delta_k(\lambda) \neq 0 $ if and only if $ \lambda \in \Lambda_{sph}^{k}$. 
+\end{corollary}
+\begin{dem}
+  If $ \lambda \in \Lambda_{sph}^{k} $ we consider $ \nu = (l^{\lambda_l}, (l-1)^{\lambda_{l-1}}, \ldots, 1^{\lambda_1} ) $. Then
+  $ | \nu |  \le k $ and $ \Psi(\nu )= \lambda $ and so $ K_{\lambda  \Psi(\nu ) } =  K_{\lambda  \lambda } \neq  0 $
+  which implies $ e_k \Delta_k(\lambda) \neq 0$, by Theorem \ref{stateandproveA}.
+\medskip
+  
+Suppose now that $ e_k \Delta_k(\lambda) \neq 0$. Then, by Theorem \ref{stateandproveA}, we have $ K_{\lambda \Psi(\nu)} \neq 0 $ for some
+partition 
+$ \nu  $ with $ | \nu |  \le k $, which implies $ \lambda \unrhd \Psi(\nu) $. Let $ \nu = ( \nu_1^{ a_1}, \nu_2^{ a_2}, \ldots, \nu_l^{ a_l} ) $
+where $ \nu_1 > \nu_2 > \cdots > \nu_l $ and suppose that $ \ord(a_1, a_2, \ldots, a_l ) = (b_1, b_2, \ldots, b_l ) $, in other words
+$ \Psi(\nu) = (b_1, b_2, \ldots, b_l ) $. Then from $ | \nu |  \le k $ we get 
+\begin{equation}\label{which is less than}
+\nu_1 a_1 + \nu_2 a_2 + \ldots + \nu_l a_l \le k \Longrightarrow  \nu_1 b_l + \nu_2 b_{l-1} + \ldots + \nu_l b_1 \le k
+\Longrightarrow l  b_l  + (l-1) b_{l-1}  + \ldots + 1 b_1 \le k.
+\end{equation}
+Let now $ \T $ be the semistandard $ \lambda$-tableau of type $ \Psi(\nu) $ that exists
+because $ K_{\lambda \Psi(\nu)} \neq 0 $. In $ \T $ the number 1 appears $ b_1 $ times, the number 2 appears $ b_2 $ times etc, 
+and so the sum of the numbers appearing in $ \T $ is
+$ 1 b_1 + 2 b_2 + \ldots + l b_l  $ which is less than $ k $ by
+\eqref{which is less than}.
+Let now $ \s $ be the semistandard $ \lambda $-tableau that
+is obtained from $ \T $ by replacing each number in $\T $ by the row index of its node. 
+The numbers in the $i^{\color{black} \rm th} \,$ row of $ \T $ cannot be strictly less than $ i$, and so also the sum of the numbers in $ \s $ is
+smaller than $ k $. On the other hand, $ \s $ is the unique semistandard $\lambda$-tableau of type $ \lambda$ that
+has 1 in the nodes of the first row, 2 in the nodes of the second row, etc, and therefore the sum of
+numbers in $ \s $ is $ \overline{b}(\lambda) $. This proves the Corollary. 
+\end{dem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\medskip
+
+
+It follows from the Corollary that $  \Lambda_{sph}^{k}  $ is a natural parametrizing index set for the representation
+theory of $ \SpheAlg(t) $.
+Let $ \mathcal A $ be a cellular algebra with cell datum $(\PP,T,\mathcal{C})$ 
+as in Definition \ref{cellular} and let $ \{ \Delta(\lambda) \, | \,  \lambda \in \Lambda \} $ be the associated set of cell modules. 
+Each $ \Delta(\lambda) $ is endowed with a $ \Bbbk $-valued bilinear form $ \langle \cdot, \cdot \rangle_{\lambda} $
+which is important for the representation theory of $ \mathcal A $. To explain $ \langle \cdot, \cdot \rangle_{\lambda} $
+one first chooses arbitrarily $ \T_0 \in T(\lambda) $. For basis elements $ C_{\s}, C_{\T} \in \Delta(\lambda) $ 
+one considers the expansion of $ C_{\T_0 \T} C_{ \s \T_0 }  $ in the cellular basis for $ \mathcal A$ and then defines
+\begin{equation}\label{intheaboveexpansion}
+\langle C_{\s}, C_{\T} \rangle_{\lambda}= \coeff_{  C_{\T_0 \T_0 }}(C_{\T_0 \T} C_{ \s \T_0 })
+\end{equation}
+where $ \coeff_{  C_{\T_0 \T_0 }}(C_{\T_0 \T} C_{ \s \T_0 }) $ is the coefficient of
+$ C_{\T_0 \T_0}  $ in the above expansion.
+
+\medskip
+Suppose now that $ \Bbbk $ is a field. We define $ \rad(\lambda) =
+\{ v \in \Delta(\lambda) \, | \, \langle v , w \rangle_{\lambda} =0 \mbox{ for all } w \in \Delta(\lambda) \} $.
+Then $  \rad(\lambda) $ is a submodule of $ \Delta(\lambda) $ and moreover, by the general theory of cellular algebras
+developed in \cite{GL}, the quotient module $ L(\lambda) = \Delta(\lambda)/\rad(\lambda) $ is either zero or irreducible,
+and the set of nonzero $ L(\lambda)$'s forms a complete set of isomorphism classes for the irreducible $ \mathcal A$-modules.
+
+\medskip
+We get the following Theorem. 
+
+\begin{theorem}\label{classiirre}
+  Suppose that $ t\notin \{0,1,2, \ldots, 2k-2 \} $. Then $ \SpheAlg(t) $ is semisimple and
+  $ \{ e_k \Delta_k(\lambda) \, | \,  \lambda \in \Lambda_{sph}^{k} \} $ is a complete set of representatives for the isomorphism classes 
+  of irreducible $ \SpheAlg(t) $-modules. 
+\end{theorem}  
+\begin{proof}
+  We know from Theorem \ref{semisimple} that $ \SpheAlg(t) $ is semisimple. It then follows from Theorem 3.8 of \cite{GL}
+  that the nonzero cell modules, that is $ \{ e_k \Delta_k(\lambda) \, | \,  \lambda \in \Lambda_{sph}^{k} \} $,
+  are irreducible and pairwise inequivalent.
+
+\end{proof}
+
+
+
+
+
+
+
+In the following we shall use the language of quasi-hereditary algebras, 
+see for example the appendix to \cite{Donkin}.
+
+In our setting, the following Theorem is useful for us.
+\begin{theorem}\label{GLqh}
+  $ \mathcal A $ is quasi-hereditary if and only if $ \langle \cdot , \cdot \rangle_{\lambda} \neq 0 $
+  for all $ \lambda \in \Lambda$.
+\end{theorem}
+
+
+
+For $ t \neq 0 $ it is known that $  \ParAlg(t)$ is a quasi-hereditary algebra,  
+see \cite{Donkin2} or \cite{KoXi2}. In Theorem \ref{classiirre} we showed that $ \SpheAlg(t) $ is semisimple
+and determined its irreducible modules if
+$ t \notin \{0, 1,2,\ldots, 2k-2\} $. Combining 
+Theorem \ref{stateandproveA} with Theorem \ref{GLqh}, we now obtain the quasi-heredity of 
+$ \SpheAlg(t) $ in the remaining cases, except when  $ t=0$. 
+\begin{corollary}\label{quasiheriditarySphe}
+
+
+
+  
+Suppose that $ t \in \{ 1,2,\ldots, 2k-2\} $. Then   
+$\SpheAlg(t) $ is quasi-hereditary on the poset $ \Lambda_{sph}^{k}  $ 
+with standard modules $ \{ e_k \Delta(\lambda) \, | \, \lambda \in \Lambda_{sph}^{k} \} $.
+\end{corollary}  
+\begin{dem}
+  Let $ \lambda = (\lambda_1, \lambda_2, \ldots, \lambda_p) \in  \Lambda_{sph}^{k} $ with $ |\lambda |= l $.
+  We then construct a special cellular basis element $ x_{\nu, \s, \mu} $
+  for $ \Delta_k(\lambda) $ as in \eqref{semistandardbasis}. 
+  For $ \nu $ we use $ \nu = (p^{\lambda_p}, (p-1)^{\lambda_{p-1}} ,\ldots, 1^{\lambda_1} ) $ which satisfies $ | \nu |  \le k $ 
+  and $ \Psi(\nu ) = \lambda$. For $ \s $ we use the unique semistandard
+  $ \lambda $-tableau of type $ \Psi(\nu) $, which has $1 $ in the nodes of the first row, $2$ in the nodes
+  of the second row, and so on. Note that $ x_{\s} = x_{\lambda \lambda} $. Finally, for $ \mu $ we use the one-row partition $ \mu = (k-i) $ where
+  $|  \nu |= i $. For these choices we set $ C_{\T_0} = x_{\nu, \s, \mu} $ and,
+  in view of \eqref{intheaboveexpansion} and Theorem \ref{GLqh}, we must calculate the coefficient
+  of $ C_{\T_0 \T_0} $ in the expansion of $ C_{\T_0 \T_0} C_{\T_0 \T_0} $ in terms of the cellular basis for $ \SpheAlg(t) $.
+  For example, for $ k = 9$, $ \lambda= (2,2) $, $ \nu= (2^2, 1^2) $ and $ \mu=(3) $ we have diagrammatically 
+\begin{equation}\label{intheabove}
+  C_{\T_0 \T_0}= \raisebox{-.5\height}{\includegraphics[scale=0.8]{dib53.pdf}},  \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \,
+  C_{\T_0 \T_0} C_{\T_0 \T_0} = \raisebox{-.5\height}{\includegraphics[scale=0.8]{dib54.pdf}}
+\end{equation}    
+and must calculate the coefficient of $  C_{\T_0 \T_0}$ in the expansion of $  C_{\T_0 \T_0}  C_{\T_0 \T_0} $. 
+For this we first observe that $ x_{\lambda \lambda }^2 = (\prod_{i=1}^p \lambda_i !) x_{\lambda \lambda } $.
+
+
+\medskip
+We next consider the contribution to the coefficient of $ C_{\T_0 \T_0} $ given by $ \sigma \in \Si_k $
+from the expansion of the middle $ e_k $ of $ C_{\T_0 \T_0} C_{\T_0 \T_0} $ in terms of the group element basis
+of $ \CC \Si_k $. 
+We divide the elements $ \sigma \in \Si_k $ in three types, according to their contribution 
+to the coefficient of $ C_{\T_0 \T_0}  $ in $ C_{\T_0 \T_0}  C_{\T_0 \T_0}  $. A key point
+for what follows is the observation that this division
+is exhaustive.
+
+\begin{itemize}
+\item[1.] We say that $ \sigma $ is of type 1 if it has the form $ \sigma= \sigma_1 \sigma_2 $ 
+  where $ \sigma_1 $ is a permutation of the numbers within blocks of $ d_{\nu \cdot  \mu} $
+  and $ \sigma_2 $ is a permutation of the blocks of $  d_{\nu } $ induced by an element from $ \Si_{\lambda} $.
+  In the example \eqref{intheabove}, this means that $ \sigma_1 \in \Si_{1,2} \times \Si_{3,4} \times \Si_{7,8,9}
+\le \Si_9$ 
+and that $ \sigma_2 \in \langle (1,3)(2,4), (5,6) \rangle \le \Si_9$. Each element of type 1 has a contribution of
+$ (\prod_{i=1}^p \lambda_i !) \frac{t }{k!} $
+to the coefficient of $ C_{\T_0 \T_0}  $ in the product $ C_{\T_0 \T_0}  C_{\T_0 \T_0}  $. Below we give two examples of elements of type 1, the first of the form $ \sigma = \sigma_1 $ and
+the second of the form $ \sigma = \sigma_2 $.
+\begin{equation}\label{weillustratethisbelow1}
+   \raisebox{-.5\height}{\includegraphics[scale=0.8]{dib55.pdf}},  \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \,
+   \raisebox{-.5\height}{\includegraphics[scale=0.8]{dib56.pdf}}
+\raisebox{-50\height}{.} 
+\end{equation}
+
+ 
+\item[2.] We say that $ \sigma $ is of type 2 if it has contribution $ (\prod_{i=1}^p \lambda_i !) \frac{1 }{k!} $ to
+  the coefficient of $ C_{\T_0 \T_0}  $, in other words, the factor $ t $ appearing in the contribution coming from
+  type 1 elements is no longer present. Type 2 elements arise the same way as type 1 elements, except that
+  the blocks coming from $ d_{\mu}$ are merged into the other blocks. 
+  Below we give an example of an element of type 2.
+\begin{equation}\label{weillustratethisbelow2}
+   \raisebox{-.5\height}{\includegraphics[scale=0.8]{dib57.pdf}}
+\raisebox{-50\height}{.} 
+\end{equation}
+
+\item[3.] Finally, we say that $ \sigma $ is of type 3 if it gives rise to a diagram with no contribution to $ C_{\T_0 \T_0}  $
+  in the expansion of $  C_{\T_0 \T_0}  C_{\T_0 \T_0}  $, in other words, the diagram in question has strictly fewer than $ l $ propagating blocks. 
+  Here is an  example.
+\begin{equation}\label{weillustratethisbelow3}
+  \raisebox{-.5\height}{\includegraphics[scale=0.8]{dib58.pdf}}
+\raisebox{-50\height}{.} 
+  \end{equation}
+\end{itemize}
+Let $ A_1, A_2 $ and $ A_3 $ be the cardinalites of type 1, type 2 and type 3 elements, respectively.
+The numbers $ A_1, A_2 $ and $A_3 $ can be calculated using combinatorial methods, but we do not need their exact values and shall therefore
+not do so. On the other hand, one easily checks that if $ \lambda \neq \emptyset $ then 
+$ A_1 > 0 $ whereas $  A_2 > 0 $ if $ \lambda = \emptyset$. 
+    
+\medskip
+Finally, to conclude the proof of the Corollary we now note that the coefficient of $ C_{\T_0 \T_0}  $ in $  C_{\T_0 \T_0}  C_{\T_0 \T_0}  $ is
+$  (\prod_{i=1}^p \lambda_i !) \frac{1 }{k!} (A_1 t+ A_2) $ and this is nonzero by the hypothesis on $ t $. 
+\end{dem}

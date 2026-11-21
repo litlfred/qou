@@ -7,10 +7,11 @@
   "bytes": 636640,
   "pages": 65,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -25,13 +26,23 @@
   "title_lines": [
    "Four Equivalent Versions of Non-Abelian Gerbes"
   ],
-  "abstract": "We recall and partially improve four versions of smooth, non -abelian gerbes: \u02c7Cech cocycles, classifying maps, bundle gerbes, and principal 2-bundles. We prove that all these four ver- sions are equivalent, and so establish new relations betwee n interesting recent developments. Prominent partial results that we prove are a bijection betw een the continuous and smooth non- abelian cohomology, and an explicit equivalence between bu ndle gerbes and principal 2-bundles as 2-stacks.",
+  "abstract": "We recall and partially improve four versions of smooth, non-abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal 2-bundles. We prove that all these four ver- sions are equivalent, and so establish new relations between interesting recent developments. Prominent partial results that we prove are a bijection between the continuous and smooth non- abelian cohomology, and an explicit equivalence between bundle gerbes and principal 2-bundles as 2-stacks.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.08",
-   "CreationDate": "D:20130717213749-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20130717213749-04'00'"
+  },
+  "title_raw": "Four Equivalent Versions of Non-Abelian Gerbes",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Four Equivalent Versions of Non-Abelian Gerbes",
+   "outline": "1 Introduction",
+   "text": "Four Equivalent Versions of Non-Abelian Gerbes",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -40,160 +51,730 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 5,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Lie Groupoids and Groupoid Actions on Manifolds",
    "page": 5,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Principal Groupoid Bundles",
    "page": 6,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Anafunctors",
    "page": 9,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Lie 2-Groups and crossed Modules",
    "page": 13,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "Version I: Groupoid-valued Cohomology",
    "page": 16,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 1,
    "title": "Version II: Classifying Maps",
    "page": 18,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 1,
    "title": "Version III: Groupoid Bundle Gerbes",
    "page": 21,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "Definition via the Plus Construction",
    "page": 21,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "Properties of Groupoid Bundle Gerbes",
    "page": 27,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 2,
    "title": "Classification by Cech Cohomology",
    "page": 31,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   },
   {
    "level": 1,
    "title": "Version IV: Principal 2-Bundles",
    "page": 33,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 2,
    "title": "Definition of Principal 2-Bundles",
    "page": 33,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 2,
    "title": "Properties of Principal 2-Bundles",
    "page": 36,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 1,
    "title": "Equivalence between Bundle Gerbes and 2-Bundles",
    "page": 38,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 2,
    "title": "From Principal 2-Bundles to Bundle Gerbes",
    "page": 39,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 2,
    "title": "From Bundle Gerbes to Principal 2-Bundles",
    "page": 48,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "48"
   },
   {
    "level": 1,
    "title": "A Equivariant Anafunctors and Group Actions",
    "page": 57,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "57"
   },
   {
    "level": 1,
    "title": "B Constructing Equivalences between 2-Stacks",
    "page": 59,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "59"
   },
   {
    "level": 1,
    "title": "References",
    "page": 62,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "62"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 51,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 52,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 53,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 54,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 55,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 56,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 59,
+   "label": "59",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 61,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 62,
+   "label": "62",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 64,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 65,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2386,
+   "n_words": 557,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 5,
-   "n_chars": 8566,
-   "n_words": 1630
+   "n_chars": 7064,
+   "n_words": 1161,
+   "label_start": null,
+   "label_end": "5"
   },
   {
    "id": "sec-001-2-preliminaries",
@@ -202,8 +783,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 208,
-   "n_words": 33
+   "n_chars": 220,
+   "n_words": 32,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
    "id": "sec-002-21-lie-groupoids-and-groupoid-actions-on-manifol",
@@ -212,8 +795,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 2350,
-   "n_words": 505
+   "n_chars": 2337,
+   "n_words": 507,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
    "id": "sec-003-22-principal-groupoid-bundles",
@@ -222,8 +807,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 9,
-   "n_chars": 5513,
-   "n_words": 1061
+   "n_chars": 5252,
+   "n_words": 1049,
+   "label_start": "6",
+   "label_end": "9"
   },
   {
    "id": "sec-004-23-anafunctors",
@@ -232,8 +819,10 @@
    "level": 2,
    "page_start": 9,
    "page_end": 13,
-   "n_chars": 7986,
-   "n_words": 1528
+   "n_chars": 7571,
+   "n_words": 1484,
+   "label_start": "9",
+   "label_end": "13"
   },
   {
    "id": "sec-005-24-lie-2-groups-and-crossed-modules",
@@ -242,8 +831,10 @@
    "level": 2,
    "page_start": 13,
    "page_end": 16,
-   "n_chars": 7053,
-   "n_words": 1329
+   "n_chars": 6764,
+   "n_words": 1291,
+   "label_start": "13",
+   "label_end": "16"
   },
   {
    "id": "sec-006-3-version-i-groupoid-valued-cohomology",
@@ -252,8 +843,10 @@
    "level": 1,
    "page_start": 16,
    "page_end": 18,
-   "n_chars": 4203,
-   "n_words": 834
+   "n_chars": 4104,
+   "n_words": 813,
+   "label_start": "16",
+   "label_end": "18"
   },
   {
    "id": "sec-007-4-version-ii-classifying-maps",
@@ -262,8 +855,10 @@
    "level": 1,
    "page_start": 18,
    "page_end": 21,
-   "n_chars": 5971,
-   "n_words": 1083
+   "n_chars": 5767,
+   "n_words": 1043,
+   "label_start": "18",
+   "label_end": "21"
   },
   {
    "id": "sec-008-5-version-iii-groupoid-bundle-gerbes",
@@ -271,112 +866,195 @@
    "title": "Version III: Groupoid Bundle Gerbes",
    "level": 1,
    "page_start": 21,
-   "page_end": 27,
-   "n_chars": 12211,
-   "n_words": 2222
+   "page_end": 21,
+   "n_chars": 420,
+   "n_words": 60,
+   "label_start": "21",
+   "label_end": "21"
   },
   {
-   "id": "sec-009-52-properties-of-groupoid-bundle-gerbes",
+   "id": "sec-009-51-definition-via-the-plus-construction",
+   "number": "5.1",
+   "title": "Definition via the Plus Construction",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 27,
+   "n_chars": 11210,
+   "n_words": 2120,
+   "label_start": "21",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-010-52-properties-of-groupoid-bundle-gerbes",
    "number": "5.2",
    "title": "Properties of Groupoid Bundle Gerbes",
    "level": 2,
    "page_start": 27,
-   "page_end": 33,
-   "n_chars": 13361,
-   "n_words": 2551
+   "page_end": 31,
+   "n_chars": 9127,
+   "n_words": 1865,
+   "label_start": "27",
+   "label_end": "31"
   },
   {
-   "id": "sec-010-6-version-iv-principal-2-bundles",
+   "id": "sec-011-53-classification-by-cech-cohomology",
+   "number": "5.3",
+   "title": "Classification by Cech Cohomology",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 33,
+   "n_chars": 3602,
+   "n_words": 676,
+   "label_start": "31",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-012-6-version-iv-principal-2-bundles",
    "number": "6",
    "title": "Version IV: Principal 2-Bundles",
    "level": 1,
    "page_start": 33,
-   "page_end": 36,
-   "n_chars": 6218,
-   "n_words": 1174
+   "page_end": 33,
+   "n_chars": 692,
+   "n_words": 112,
+   "label_start": "33",
+   "label_end": "33"
   },
   {
-   "id": "sec-011-62-properties-of-principal-2-bundles",
+   "id": "sec-013-61-definition-of-principal-2-bundles",
+   "number": "6.1",
+   "title": "Definition of Principal 2-Bundles",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 36,
+   "n_chars": 5049,
+   "n_words": 1046,
+   "label_start": "33",
+   "label_end": "36"
+  },
+  {
+   "id": "sec-014-62-properties-of-principal-2-bundles",
    "number": "6.2",
    "title": "Properties of Principal 2-Bundles",
    "level": 2,
    "page_start": 36,
    "page_end": 38,
-   "n_chars": 4583,
-   "n_words": 823
+   "n_chars": 4411,
+   "n_words": 782,
+   "label_start": "36",
+   "label_end": "38"
   },
   {
-   "id": "sec-012-7-equivalence-between-bundle-gerbes-and-2-bundle",
+   "id": "sec-015-7-equivalence-between-bundle-gerbes-and-2-bundle",
    "number": "7",
    "title": "Equivalence between Bundle Gerbes and 2-Bundles",
    "level": 1,
    "page_start": 38,
    "page_end": 39,
-   "n_chars": 1856,
-   "n_words": 321
+   "n_chars": 1870,
+   "n_words": 300,
+   "label_start": "38",
+   "label_end": "39"
   },
   {
-   "id": "sec-013-71-from-principal-2-bundles-to-bundle-gerbes",
+   "id": "sec-016-71-from-principal-2-bundles-to-bundle-gerbes",
    "number": "7.1",
    "title": "From Principal 2-Bundles to Bundle Gerbes",
    "level": 2,
    "page_start": 39,
    "page_end": 48,
-   "n_chars": 21310,
-   "n_words": 4460
+   "n_chars": 20290,
+   "n_words": 4071,
+   "label_start": "39",
+   "label_end": "48"
   },
   {
-   "id": "sec-014-72-from-bundle-gerbes-to-principal-2-bundles",
+   "id": "sec-017-72-from-bundle-gerbes-to-principal-2-bundles",
    "number": "7.2",
    "title": "From Bundle Gerbes to Principal 2-Bundles",
    "level": 2,
    "page_start": 48,
    "page_end": 57,
-   "n_chars": 15979,
-   "n_words": 3303
+   "n_chars": 15330,
+   "n_words": 3104,
+   "label_start": "48",
+   "label_end": "57"
   },
   {
-   "id": "sec-015-a-equivariant-anafunctors-and-group-actions",
+   "id": "sec-018-a-equivariant-anafunctors-and-group-actions",
    "number": null,
    "title": "A Equivariant Anafunctors and Group Actions",
    "level": 1,
    "page_start": 57,
    "page_end": 59,
-   "n_chars": 4528,
-   "n_words": 922
+   "n_chars": 4262,
+   "n_words": 883,
+   "label_start": "57",
+   "label_end": "59"
   },
   {
-   "id": "sec-016-b-constructing-equivalences-between-2-stacks",
+   "id": "sec-019-b-constructing-equivalences-between-2-stacks",
    "number": null,
    "title": "B Constructing Equivalences between 2-Stacks",
    "level": 1,
    "page_start": 59,
    "page_end": 62,
-   "n_chars": 6299,
-   "n_words": 1218
+   "n_chars": 5882,
+   "n_words": 1141,
+   "label_start": "59",
+   "label_end": "62"
   },
   {
-   "id": "sec-017-references",
+   "id": "sec-020-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 62,
    "page_end": 65,
-   "n_chars": 4977,
-   "n_words": 706
+   "n_chars": 4926,
+   "n_words": 655,
+   "label_start": "62",
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 21,
-  "sections": 18,
-  "chars_total": 133172,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "Introduction"
+    ]
+   },
+   "found_not_listed": {
+    "count": 2,
+    "items": [
+     "1 An",
+     "1 Its total space is"
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 22,
+  "chars_total": 128536,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 28,
-   "overlaid": 17,
+   "overlaid": 20,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -384,17 +1062,22 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.919,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.882,
+     "prose_ratio": 0.941,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
@@ -402,8 +1085,8 @@
     {
      "id": "sec-002-21-lie-groupoids-and-groupoid-actions-on-manifol",
      "title": "Lie Groupoids and Groupoid Actions on Manifolds",
-     "prose_ratio": 0.775,
-     "coverage_ratio": 0.957,
+     "prose_ratio": 0.787,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -411,7 +1094,7 @@
      "id": "sec-003-22-principal-groupoid-bundles",
      "title": "Principal Groupoid Bundles",
      "prose_ratio": 0.902,
-     "coverage_ratio": 0.931,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -419,7 +1102,7 @@
      "id": "sec-004-23-anafunctors",
      "title": "Anafunctors",
      "prose_ratio": 0.704,
-     "coverage_ratio": 0.986,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -427,60 +1110,84 @@
      "id": "sec-005-24-lie-2-groups-and-crossed-modules",
      "title": "Lie 2-Groups and crossed Modules",
      "prose_ratio": 0.791,
-     "coverage_ratio": 0.975,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-006-3-version-i-groupoid-valued-cohomology",
      "title": "Version I: Groupoid-valued Cohomology",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.905,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-007-4-version-ii-classifying-maps",
      "title": "Version II: Classifying Maps",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-008-5-version-iii-groupoid-bundle-gerbes",
      "title": "Version III: Groupoid Bundle Gerbes",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.684,
+     "prose_ratio": 0.921,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-009-52-properties-of-groupoid-bundle-gerbes",
+     "id": "sec-009-51-definition-via-the-plus-construction",
+     "title": "Definition via the Plus Construction",
+     "prose_ratio": 0.919,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-52-properties-of-groupoid-bundle-gerbes",
      "title": "Properties of Groupoid Bundle Gerbes",
-     "prose_ratio": 0.91,
-     "coverage_ratio": 0.955,
+     "prose_ratio": 0.89,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-010-6-version-iv-principal-2-bundles",
+     "id": "sec-011-53-classification-by-cech-cohomology",
+     "title": "Classification by Cech Cohomology",
+     "prose_ratio": 0.937,
+     "coverage_ratio": 0.942,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-6-version-iv-principal-2-bundles",
      "title": "Version IV: Principal 2-Bundles",
-     "prose_ratio": 0.871,
-     "coverage_ratio": 0.963,
+     "prose_ratio": 0.929,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-011-62-properties-of-principal-2-bundles",
+     "id": "sec-013-61-definition-of-principal-2-bundles",
+     "title": "Definition of Principal 2-Bundles",
+     "prose_ratio": 0.854,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-62-properties-of-principal-2-bundles",
      "title": "Properties of Principal 2-Bundles",
      "prose_ratio": 0.935,
-     "coverage_ratio": 0.971,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-012-7-equivalence-between-bundle-gerbes-and-2-bundle",
+     "id": "sec-015-7-equivalence-between-bundle-gerbes-and-2-bundle",
      "title": "Equivalence between Bundle Gerbes and 2-Bundles",
      "prose_ratio": 0.914,
      "coverage_ratio": 1.0,
@@ -488,39 +1195,39 @@
      "converter": "latex"
     },
     {
-     "id": "sec-013-71-from-principal-2-bundles-to-bundle-gerbes",
+     "id": "sec-016-71-from-principal-2-bundles-to-bundle-gerbes",
      "title": "From Principal 2-Bundles to Bundle Gerbes",
      "prose_ratio": 0.806,
-     "coverage_ratio": 0.973,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-014-72-from-bundle-gerbes-to-principal-2-bundles",
+     "id": "sec-017-72-from-bundle-gerbes-to-principal-2-bundles",
      "title": "From Bundle Gerbes to Principal 2-Bundles",
      "prose_ratio": 0.878,
-     "coverage_ratio": 0.986,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-015-a-equivariant-anafunctors-and-group-actions",
+     "id": "sec-018-a-equivariant-anafunctors-and-group-actions",
      "title": "A Equivariant Anafunctors and Group Actions",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.885,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-016-b-constructing-equivalences-between-2-stacks",
+     "id": "sec-019-b-constructing-equivalences-between-2-stacks",
      "title": "B Constructing Equivalences between 2-Stacks",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.647,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-017-references",
+     "id": "sec-020-references",
      "title": "References",
      "result": "no matching \\section"
     }

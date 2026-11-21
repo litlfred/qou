@@ -2,20 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-alpha-k-derivation-procedure",
+  "@id": "papers/quantum-observable-universe/blocks/conj-alpha-k-derivation-procedure",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
-  "label": "prop:alpha-k-derivation-procedure",
-  "kind": "proposition",
+  "label": "conj:alpha-k-derivation-procedure",
+  "kind": "conjecture",
   "title": "Linear-system procedure for Jones--Markov weights $y_\\lambda$ and stratum prefactors $\\alpha_k$ at $H_n(R, q)$",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-mass-tower-coefficient-stratification",
-    "papers/quantum-observable-universe/blocks/prop-spectral-sequence-h3-explicit"
+    "papers/quantum-observable-universe/blocks/conj-spectral-sequence-h3-explicit"
   ],
   "tags": [
     "alpha-k",

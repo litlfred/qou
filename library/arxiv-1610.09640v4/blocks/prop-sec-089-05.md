@@ -1,1 +1,1 @@
-Let A be a nonnegative graded ring, with augmentation
+Let A1 →A2 →A3 be homomorphisms between weakly commutative DG rings. For each i let Mi ∈D(Ai). There is an isomorphism (M1 ⊗L A1 M2) ⊗L A2 M3 ∼= M1 ⊗L A1 (M2 ⊗L A2 M3) in D(A3). This isomorphisms is functorial in the Mi.

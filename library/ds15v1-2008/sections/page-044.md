@@ -1,0 +1,57 @@
+---
+doc_id: ds15v1-2008
+doc_title: "Rogers-Ramanujan-Slater Type Identities"
+section_id: page-044
+section_title: "Page 44"
+pages: 44-44
+pdf_page: 44
+source_pdf: ds15v1-2008.pdf
+source_sha256: aef155a324c6fdf4
+text_source: ocr
+granularity: page
+doc_brief: "Rogers-Ramanujan-Slater Type Identities — In this survey article, we present an expanded version of Lucy Slater’s famous list of identities of the Rogers-Ramanujan type, including identities of"
+---
+These identities are somewhat reminiscent of the following identities of Gessel and Stanton
+[24]:
+
+. an) Jong 3 5 8.8 (=@?; 1 )oo
+ir (8; PB) n(Pi Wn ee (5 d")oo | 61.24)
+>, ae Jon qr ten _ (a =a Moca a, (6.1.25)
+n= :@) 2n+1 (-@; qd 4) nH (q 74 Joo
+Transform. | Identity a b 7 base change
+6.1.4 8.2 0 q
+6.1.4 8.3 1 q
+6.1.3 S.4 | —q'/? | -q¢ | —¢/? qo
+6.1.4 S.9 1 -g q-@
+6.1.3 S.10 -1 q q q-
+6.1.3 $.11 -q |q@ ¢ q-@
+6.1.4 $.52 1 —ql? q-@
+6.1.4 S.47 -1 qi? qo @
+
+Table 2: Identities deriving directly from general transformations.
+
+6.2 Inter-dependence of Identities via the Jacobi Triple Product
+Identity
+
+Let m > 2 be a positive integer. By considering sums in the m arithmetic progressions
+mk+r,0<r<mand k € Z, we easily get that
+
+m—-1 k
+> x gil (k-1)/2 _ > q' r—-1) )/2 “v > (xg —m-+2mr) yey gn 2(K2— k)/2
+k=—00 r=0 k=—00
+
+and thus, after applying the Jacobi triple product, that
+
+(—2, —9/2, 45 q) oo
+m1
+
+_ > Gg’? Dg (—amgin? mame, ym gi tm—2mr)/2 q”; a”) . (6.2.1)
+
+lee)
+The case m = 2 is of course Bailey’s expression
+(-2, -q/2,4; oo = (—27¢, -2 7G 0°). + @ (-2°@, -2 70,07),
+If we replace q by qg® and set x = —q in (6.2.1), then
+
+(2: Doo = (-P,-9. 773 9")00 — Ua" 4,97 7) o0 (m= 2) (6.2.2)
+
+THE ELECTRONIC JOURNAL OF COMBINATORICS 15 (2008), #DS15 44

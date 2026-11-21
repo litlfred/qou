@@ -1,0 +1,1 @@
+Let M ∈M(A, gr) be an m-torsion module, and let I be an injective hull of M in M(A, gr). Then I ∼= A∗⊗W, where W is the socle of M. In particular, I is an m-torsion module. Derived Categories | Amnon Yekutieli |

@@ -1,0 +1,1715 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1911.04486v4",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "apairofcomplexscalarﬁeldsthatareinterpretedasHopfmapsS"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "apairofcomplexscalarﬁeldsthatareinterpretedasHopfmapsS3→S"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "entireR"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "formsfromeitherΩ"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "formsfromeitherΩk(R"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "formsfromeitherΩk(R3)orΩ"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "formsfromeitherΩk(R3)orΩk(R"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "formsfromeitherΩk(R3)orΩk(R1,"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "projectedontotheorthonormalCartesianbasisofR"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "Thebasis(dx, dy, dz)fromthespaceΩ"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "Thebasis(dx, dy, dz)fromthespaceΩ1(R"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "canonical procedure to the basis (x, y, z) from R"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(dx ∧dy, dy ∧dz, dz ∧dx) in the space Ω"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "(dx ∧dy, dy ∧dz, dz ∧dx) in the space Ω2(R"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "∧: Ω"
+  },
+  {
+   "page": 5,
+   "mark": "s",
+   "context": "∧: Ωk× Ω"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "∧: Ωk× Ωs→Ω"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "thewedgeproductisdeﬁnedinthesamewayoneitherR"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "thewedgeproductisdeﬁnedinthesamewayoneitherR3orR"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "thewedgeproductisdeﬁnedinthesamewayoneitherR3orR1,"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "mapfromΩ"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "mapfromΩk→Ω"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "df= ∂if dx"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "d (ω ∧σ) = d (ω) ∧σ + (−)"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "forms.Notethattheexteriorderivativeisnilpotent,i.e.d"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "TheHodgedualoperation⋆isdeﬁnedasthemapfromΩ"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "TheHodgedualoperation⋆isdeﬁnedasthemapfromΩn−k→Ω"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "k!ω"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "k!ωi"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "k!ωi1,...,i"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "k!ωi1,...,ikdx"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "k!ωi1,...,ikdxi"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "k!ωi1,...,ikdxi1∧· · · ∧dx"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "k!ωi1,...,ikdxi1∧· · · ∧dxi"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "ωi1,...,ikdx"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "ωi1,...,ikdxi"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "ωi1,...,ikdxi1∧· · · ∧dx"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "ωi1,...,ikdxi1∧· · · ∧dxi"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "(n −k)!(⋆ω)"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(n −k)!(⋆ω)i"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "(n −k)!(⋆ω)ik+1,...,i"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "(n −k)!(⋆ω)ik+1,...,indx"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(n −k)!(⋆ω)ik+1,...,indxi"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "(n −k)!(⋆ω)ik+1,...,indxik+1∧· · · ∧dx"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "(n −k)!(⋆ω)ik+1,...,indxik+1∧· · · ∧dxi"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "form from the space Ω"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "form degree by one, and its image belongs to the space Ω"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "ω∈Ω"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "on of Maxwell’s equations in terms of diﬀerential forms on R"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Minkowskispace-timeR"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "Minkowskispace-timeR1,"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "equations in terms of diﬀerential forms on R"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "equations in terms of diﬀerential forms on R1,"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "sis {dx"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "sis {dxi} on R"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": " {dxi} on R3must be extended to the corresponding basis on R"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "dxi} on R3must be extended to the corresponding basis on R1,"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "by{dxµ} = {dx"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "by{dxµ} = {dx0= dt, dx"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "by{dxµ} = {dx0= dt, dxi},byincludingthetime-like1-formdx"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "F= B + E ∧dx"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "and from the nilpotency of the exterior derivative, i.e.d"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "dF= dB + dE ∧dx"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "RecallthattheexteriorderivativeonR"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "RecallthattheexteriorderivativeonR1,"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "terms:theexteriorderivativedonthespatialsubspaceR"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "terms:theexteriorderivativedonthespatialsubspaceR3∈R"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "terms:theexteriorderivativedonthespatialsubspaceR3∈R1,"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "1-formdx"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "d = dx"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "intermsof1-formsontheEuclideanspaceR"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "⋆F= ⋆E −⋆B ∧dx"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "smoothscalarcomplexﬁeldsonR"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "φ : R"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "θ: R"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "2Fµνdxµ ∧dxν= −εjklB"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "2Fµνdxµ ∧dxν= −εjklBjdx"
+  },
+  {
+   "page": 10,
+   "mark": "l",
+   "context": "2Fµνdxµ ∧dxν= −εjklBjdxk ∧dx"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "2Fµνdxµ ∧dxν= −εjklBjdxk ∧dxl + E"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "2Fµνdxµ ∧dxν= −εjklBjdxk ∧dxl + Ejdx"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "2Fµνdxµ ∧dxν= −εjklBjdxk ∧dxl + Ejdxj∧dx"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "2⋆Fµνdxµ ∧dxν= εjklE"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "2⋆Fµνdxµ ∧dxν= εjklEjdx"
+  },
+  {
+   "page": 10,
+   "mark": "l",
+   "context": "2⋆Fµνdxµ ∧dxν= εjklEjdxk ∧dx"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "2⋆Fµνdxµ ∧dxν= εjklEjdxk ∧dxl + B"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "2⋆Fµνdxµ ∧dxν= εjklEjdxk ∧dxl + Bjdx"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "2⋆Fµνdxµ ∧dxν= εjklEjdxk ∧dxl + Bjdxj∧dx"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "E"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "EjE"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "EjEk−B"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "EjEk−BjB"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "termsoffourcanonical1-formsdσ"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "termsoffourcanonical1-formsdσa,dξ"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "termsoffourcanonical1-formsdσa,dξa,dρ"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "termsoffourcanonical1-formsdσa,dξa,dρaanddζ"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "F= δab dσ"
+  },
+  {
+   "page": 11,
+   "mark": "b",
+   "context": "F= δab dσa∧dξ"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "⋆F= δab dρ"
+  },
+  {
+   "page": 11,
+   "mark": "b",
+   "context": "⋆F= δab dρa∧dζ"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "dσ"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "dσa∧dξ"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "dσa∧dξa= dρ"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "dσa∧dξa= dρa∧dζ"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "αa: R"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "βa: R"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "tum, be ﬁnite.Therefore, if the ﬁeld is deﬁned in the full R"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "thecompactiﬁcationR"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "thecompactiﬁcationR3∪{∞}=S"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "θtakevaluesinthecompactiﬁcationC ∪{∞}=S"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "fromS"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "fromS3toS"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "d"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "d"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "d"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "d"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "d"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "d"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "d"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "d"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "∂x"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "∂x0+ εnrs∂rC"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "∂x"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "∂x0−εnrs∂rA"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "∂x"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "∂x0+ εjmn∂mC"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "∂x0+ εjmn∂mCn= ∂jκ"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "∂x"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "∂x0−εjmn∂mA"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "∂x0−εjmn∂mAn= ∂jκ"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "∂x"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "∂x"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "d"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "∂x"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "∂x"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "φ =(ax"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "φ =(ax1 −x"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "φ =(ax1 −x0"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "φ =(ax1 −x0x"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "φ =(ax1 −x0x3) + i(ax"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "φ =(ax1 −x0x3) + i(ax2 + x"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "θ=[ax"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "θ=[ax2 + x"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "θ=[ax2 + x0(a −1)] + i(ax"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "θ=[ax2 + x0(a −1)] + i(ax3 + x"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "θ=[ax2 + x0(a −1)] + i(ax3 + x0"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "θ=[ax2 + x0(a −1)] + i(ax3 + x0x"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "a =r"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "a =r2 −x"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "δmnx"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "m"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "mx"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "0)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(a"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(a2+ x"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "0)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(a"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(a2+ x"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "1+ (x"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "1+ (x2+ x"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "1+ (x2+ x0)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "−1 −x"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "3+ x"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "1 + x"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "1−x"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "3−(x"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "3−(x2+ x"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "3−(x2+ x0)"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "a2−3x"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "0−3"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "0−3a"
+  },
+  {
+   "page": 15,
+   "mark": "x",
+   "context": "3+ i(δmn"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "3+ i(δmnx"
+  },
+  {
+   "page": 15,
+   "mark": "x",
+   "context": "3+ i(δmnxm"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "3+ i(δmnxmx"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "2x"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "d"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "(2π)"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "d"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "(2π)"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "P =e−k"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": ","
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": ", k"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": ", k0"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": ", k0k"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": ", k0k2 + k"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "2+ k"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "−k"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "−k1"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "−k1k"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": ", −k"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": ", −k0"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": ", −k0k"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": ", −k0k1 + k"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": ", −k0k1 + k1"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": ", −k0k1 + k1k"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "Q =e−k"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "−k"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "−k0"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "−k0k"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "−k0k2 + k"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "1+ k"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": ","
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": ", k"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": ", k1"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": ", k1k"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": ","
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": ", k"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": ", k0"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": ", k0k"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": ", k0k3 + k"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": ", k0k3 + k2"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": ", k0k3 + k2k"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "themassofthewavepacketisﬁniteandithasthevaluem"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "α : R"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "β: R"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "B"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "−E"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "−Em= F"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "−Em= F0"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "R"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "2δmn (E"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "2δmn (EmE"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "2δmn (EmEn + B"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "2δmn (EmEn + BmB"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "fandgdeﬁnedonC"
+  },
+  {
+   "page": 18,
+   "mark": "x",
+   "context": "0+ δmn"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "0+ δmnx"
+  },
+  {
+   "page": 18,
+   "mark": "x",
+   "context": "0+ δmnxm"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "0+ δmnxmx"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "0+ δmnxmxn −1 + 2ix"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "α =−x"
+  },
+  {
+   "page": 18,
+   "mark": "x",
+   "context": "0+ δmn"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "0+ δmnx"
+  },
+  {
+   "page": 18,
+   "mark": "x",
+   "context": "0+ δmnxm"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "0+ δmnxmx"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "0+ δmnxmxn + 1 + 2ix"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "−x"
+  },
+  {
+   "page": 18,
+   "mark": "x",
+   "context": "0+ δmn"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "0+ δmnx"
+  },
+  {
+   "page": 18,
+   "mark": "x",
+   "context": "0+ δmnxm"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "0+ δmnxmx"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "0+ δmnxmxn + 1 + 2ix"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "−x"
+  },
+  {
+   "page": 18,
+   "mark": "x",
+   "context": "0+ δmn"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "0+ δmnx"
+  },
+  {
+   "page": 18,
+   "mark": "x",
+   "context": "0+ δmnxm"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "0+ δmnxmx"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "0+ δmnxmxn + 1 + 2ix"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "0+ δmnxmxn + 1 + 2ix0)"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "(−x"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "whereξ=ξµ∂µisanarbitraryinﬁnitesimalsmoothvectorﬁeldonR"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "whereξ=ξµ∂µisanarbitraryinﬁnitesimalsmoothvectorﬁeldonR1,"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "α = eı(x"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "α = eı(x3−x"
+  },
+  {
+   "page": 19,
+   "mark": "x",
+   "context": "0+ δmn"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "0+ δmnx"
+  },
+  {
+   "page": 19,
+   "mark": "x",
+   "context": "0+ δmnxm"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "0+ δmnxmx"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "0+ δmnxmxn + 2ix"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "1 −x"
+  },
+  {
+   "page": 19,
+   "mark": "x",
+   "context": "0+ δmn"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "0+ δmnx"
+  },
+  {
+   "page": 19,
+   "mark": "x",
+   "context": "0+ δmnxm"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "0+ δmnxmx"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "0+ δmnxmxn + 2ix"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "1 −x"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "1 + F−P"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "SBI= −γ"
+  },
+  {
+   "page": 19,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "L = γ−2δmn (B"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "L = γ−2δmn (BmB"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "L = γ−2δmn (BmBn−E"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "L = γ−2δmn (BmBn−EmE"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "P= γ−2δmnE"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "P= γ−2δmnEmB"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "∂B"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "∂E"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "1 + F−P"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "1 + F−P2(B"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "1 + F−P2(Bm −PE"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "1 + F−P"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "1 + F−P2(E"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "1 + F−P2(Em −PB"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "Consideran-dimensionalunitsphereS"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "Sn= { x ∈R"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "TheHopfﬁbrationisthemappingh:S"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "TheHopfﬁbrationisthemappingh:S3→S"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "TheHopfﬁbrationisthemappingh:S3→S2≃CP"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "0+ x"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "1−x"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "2−x"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "3, 2(x"
+  },
+  {
+   "page": 21,
+   "mark": "x",
+   "context": "3, 2(x0"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "3, 2(x0x"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "3, 2(x0x3+ x"
+  },
+  {
+   "page": 21,
+   "mark": "x",
+   "context": "3, 2(x0x3+ x1"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "3, 2(x0x3+ x1x"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "3, 2(x0x3+ x1x2) , 2(x"
+  },
+  {
+   "page": 21,
+   "mark": "x",
+   "context": "3, 2(x0x3+ x1x2) , 2(x1"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "3, 2(x0x3+ x1x2) , 2(x1x"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "3, 2(x0x3+ x1x2) , 2(x1x2−x"
+  },
+  {
+   "page": 21,
+   "mark": "x",
+   "context": "3, 2(x0x3+ x1x2) , 2(x1x2−x0"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "3, 2(x0x3+ x1x2) , 2(x1x2−x0x"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "coordinatesonthespheresS"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "coordinatesonthespheresS2andS"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "S"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "S2= {(x, z) ∈R × C:x"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "S3= {(z1, z2) ∈C"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "SincetheprojectivespaceisaquotientsetCP"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "SincetheprojectivespaceisaquotientsetCP1≃S"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "U(1)onS"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "U(1)onS3deﬁnestheﬁbresoverS"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "S"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "S2asfollows.ConsidertheequivalenceclassofpointsofS"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "2) ∼(z"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "2) ∼(z1, z"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "2) = (λz"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "2) = (λz1, λz"
+  },
+  {
+   "page": 21,
+   "mark": "h",
+   "context": "2) = |λ|2"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "2) = |λ|2h(z"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "2) = |λ|2h(z1, z"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "2)and(z"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "2)and(z1, z"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "2)and(z1, z2)ofS"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "2)and(z1, z2)ofS3belongto"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "2)and(z1, z2)ofS3belongtoaﬁbreoverS"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "mappedontothesamepointofS"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "Fromthegeometricalpointofview,theﬁbreofS"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "ItiseasytoseethattheHopfmaphtakesthepointsfromtheﬁbresofS"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "tothefollowingpointsonS"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "tothefollowingpointsonS2⊂R"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "TheHopfmapinverseγ= h−1takespoints(x, z)fromS"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "TheHopfmapinverseγ= h−1takespoints(x, z)fromS2intoloopsonS"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "d"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "d"
+  }
+ ]
+}

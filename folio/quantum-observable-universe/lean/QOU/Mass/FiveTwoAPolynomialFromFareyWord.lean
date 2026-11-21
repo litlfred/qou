@@ -25,7 +25,7 @@ check by hand, as theorems over any commutative ring:
 Nothing geometric is asserted here; the Newton-polygon slopes `{−10, −4, 0}` (the literature's
 `{0, 4, 10}` for the mirror) are read off the polynomial in the probe.
 
--- Ref: [manuscript] computations/probes/two_bridge_cusp_rows_apoly_probe.py
+-- Ref: [leitner2026] computations/probes/two_bridge_cusp_rows_apoly_probe.py
 -- Ref: [kronheimer2004] Kronheimer–Mrowka, Witten's conjecture and Property P.
 -/
 

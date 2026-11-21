@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-einstein-nonsymmetric-metric-comparison",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:einstein-nonsymmetric-metric-comparison",
+  "kind": "remark",
+  "title": "Position against Einstein's non-symmetric field theory",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-crossing-energy-decomposition",
+    "papers/quantum-observable-universe/blocks/def-crossing-energy",
+    "papers/quantum-observable-universe/blocks/ex-braid-group-su2",
+    "papers/quantum-observable-universe/blocks/rem-crossing-energy-interpretation",
+    "papers/quantum-observable-universe/blocks/prop-em-coupling-projection",
+    "papers/quantum-observable-universe/blocks/rem-madelung-acoustic-metric",
+    "papers/quantum-observable-universe/blocks/rem-q-metric-contact-deformation",
+    "papers/quantum-observable-universe/blocks/rem-substrate-gm-torsion",
+    "papers/quantum-observable-universe/blocks/rem-lqg-adm-ashtekar-comparison"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-crossing-energy-decomposition",
+  "cites": [
+    "references/einstein1925",
+    "references/einstein1946",
+    "references/einstein1955",
+    "references/schrodinger1950",
+    "references/damour1993",
+    "references/moffat1995"
+  ],
+  "tags": [
+    "einstein",
+    "nonsymmetric-metric",
+    "unified-field-theory",
+    "electromagnetism",
+    "crossing-energy",
+    "braiding",
+    "comparison"
+  ],
+  "text": "einstein-nonsymmetric-metric-comparison.md",
+  "provenance": "authored"
+}

@@ -7,9 +7,12 @@ import Mathlib.LinearAlgebra.Matrix.Trace
 **Canonical declaration** for content block at
 [`quantum-observable-universe/mass-theory/frobenius-self-duality-forces-lp-dual-extraction.ts`](quantum-observable-universe/mass-theory/frobenius-self-duality-forces-lp-dual-extraction.ts).
 
-Formalises the manuscript proposition: the Markov trace `τ` on `H_n(R,q)` is
-a non-degenerate symmetric bilinear pairing, making `(H_n, τ)` a Frobenius
-algebra, hence self-dual; the Observation Frame `Obs_τ(a) = τ(a·−)` extracts
+Formalises the manuscript proposition for any algebra on which the trace is
+non-degenerate (taken as a field of the carrier). Under convention D the Markov
+trace on `H_n(R,q)` is DEGENERATE for `n ≥ 3` (`y_(1³) = 0`; radical = the
+three-row blocks), so the carrier applies to the quotient `TL_n(q)`, not to
+`H_n` itself (corrected 2026-11-15). On such an algebra `τ` is a
+non-degenerate symmetric pairing, hence self-dual; the Observation Frame `Obs_τ(a) = τ(a·−)` extracts
 the shadow-price representative of every observable. Generic ring (§7c-clean).
 -/
 
@@ -89,6 +92,6 @@ noncomputable def matrixModel (n : ℕ) (R : Type*) [Field R] :
 
 end FrobeniusSelfDualityForcesLPDualExtraction
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory/frobenius-self-duality-forces-lp-dual-extraction.ts
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/frobenius-self-duality-forces-lp-dual-extraction.ts
 
 end QOU.BraidKnot

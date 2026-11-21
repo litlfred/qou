@@ -1,0 +1,48 @@
+R. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392 9
+
+(this is the fact that the Log-Laplace transform is the cumulant-generating function).
+Thus, if v is 6-log-concave, we have
+
+Va,(w) = V?L[v](w) X Bln. (9)
+2.2. Stochastic localization
+
+We construct a stochastic process driven by a Brownian motion, which we refer to as
+stochastic localization. A somewhat similar process was originally used in [6] to establish
+concentration properties for log-concave measures on R". Here we use a discrete version,
+similar to the construction which appears in [7,8]. In this section we occasionally allow
+ourselves to omit some of the details of the proofs, and the reader is referred to [7] for
+more rigorous derivations.
+
+The high-level plan is to construct a stochastic evolution of measures (1);>0 on Cn
+such that v9 = v and such that 4 converges to a Dirac measure supported on a random
+point x € C,. This process will be a martingale in the sense that M? := Je, yd, is
+a martingale for every test function y : C, — R, which will allow us to decompose
+the variance Var,[y] into two terms, one involving the quadratic variation of M? and
+the other of the form EVar,,[y]. The main step in our proof will be to show that the
+quadratic variation d[M*], can be bounded by an expression involving the modulo of
+log-concavity of v.
+
+Let B, be a standard Brownian motion on R" adapted to a filtration F;. Consider
+the system of equations,
+
+Fo(x) =1, dFi(x) = Fy(x)(@ — a, dB,), Vax € Cn, (10)
+where a, := f xF;(x)dv(x). Finally, define the measures 1 by the equation
+
+dy,
+
+wD a) =Fi(x), Va €Cp.
+
+Clearly, by definition we have vp = v. We will see below that the process 4, ends up
+with a Dirac measure whose support is v-distributed. Let us first summarize some useful
+properties of this process.
+
+Proposition 10. The process defined above satisfies the following properties.
+
+1. Almost surely, for all t, 4% is a probability measure.
+2. For all AC Cy, the process 4,(A) is a martingale.
+
+~
+
+The process a, almost surely converges to a point in Cn, and doo := limp+oo at ts
+distributed according to the law v. Moreover, the measure 4% almost-surely weakly
+converges to a Dirac measure at dg.

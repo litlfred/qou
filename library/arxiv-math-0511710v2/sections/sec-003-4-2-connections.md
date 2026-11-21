@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0511710v2
-doc_title: "arXiv:math/0511710v2 [math.DG] 28 Jun 2006"
+doc_title: "Higher gauge theory"
 section_id: sec-003-4-2-connections
 section_title: "2-Connections"
 section_number: 4
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.944
 latex_coverage_ratio: 0.943
+doc_brief: "Higher gauge theory — Just as gauge theory describes the parallel transport of point particles using connections on bundles, higher gauge theory describes the parallel transport of 1-dimensional"
 ---
 \label{section: 2-Connections}
 

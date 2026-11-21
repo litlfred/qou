@@ -61,7 +61,7 @@ noncomputable def hopfJonesAtQOne : ℝ := -2
     `c2 1 = -1` (PR #1786 Taylor-exact) and `c3 1 = -2 = J_Hopf(1)`
     (registry §3 anchor). A candidate must satisfy BOTH to instantiate
     the class. -/
--- Ref: [manuscript] prop:q-beta-q-eq-one-shadow-gate
+-- Ref: [leitner2026] prop:q-beta-q-eq-one-shadow-gate
 -- Ref: [pr1786] https://github.com/litlfred/qou/pull/1786
 class QOneShadowGateClass (c2 c3 : ℝ → ℝ) : Prop where
   /-- The c_2 classical-limit shadow equals the PR #1786 anchor `-1`. -/
@@ -82,7 +82,7 @@ class QOneShadowGateClass (c2 c3 : ℝ → ℝ) : Prop where
     hypotheses on `c2`/`c3`, which are arbitrary functions here, so the
     statement is genuinely conditional and may not be strengthened to a
     global `axiom`. -/
--- Ref: [manuscript] prop:q-beta-q-eq-one-shadow-gate
+-- Ref: [leitner2026] prop:q-beta-q-eq-one-shadow-gate
 def qbeta_q_eq_one_shadow_anchors
     (c2 c3 : ℝ → ℝ) [hC : QOneShadowGateClass c2 c3] :
     c2 1 = -1 ∧ c3 1 = hopfJonesAtQOne :=
@@ -93,7 +93,7 @@ def qbeta_q_eq_one_shadow_anchors
 
     If a candidate predicts `c2 1 = a` with `a ≠ -1`, then the class
     cannot be instantiated for `(c2, c3)`. -/
--- Ref: [manuscript] prop:q-beta-q-eq-one-shadow-gate
+-- Ref: [leitner2026] prop:q-beta-q-eq-one-shadow-gate
 theorem q_eq_one_shadow_gate_reject_c2
     (c2 c3 : ℝ → ℝ) (a : ℝ)
     (h_candidate_c2 : c2 1 = a) (h_mismatch : a ≠ -1) :
@@ -106,7 +106,7 @@ theorem q_eq_one_shadow_gate_reject_c2
 
 /-- **The gate theorem (refute direction, c_3 failure): rejection
     lemma when the c_3 shadow is wrong.** -/
--- Ref: [manuscript] prop:q-beta-q-eq-one-shadow-gate
+-- Ref: [leitner2026] prop:q-beta-q-eq-one-shadow-gate
 theorem q_eq_one_shadow_gate_reject_c3
     (c2 c3 : ℝ → ℝ) (a : ℝ)
     (h_candidate_c3 : c3 1 = a) (h_mismatch : a ≠ hopfJonesAtQOne) :
@@ -119,7 +119,7 @@ theorem q_eq_one_shadow_gate_reject_c3
 
 /-- **Composition with the exact `J_Hopf(1) = -2` value**: the gate's
     c_3 anchor unfolds to the literal `-2` value. -/
--- Ref: [manuscript] prop:q-beta-q-eq-one-shadow-gate
+-- Ref: [leitner2026] prop:q-beta-q-eq-one-shadow-gate
 theorem hopf_jones_at_q_one_unfolds :
     hopfJonesAtQOne = -2 := rfl
 

@@ -1,0 +1,1 @@
+Under Setup 10.4.7, assume that K has enough K-injectives. Then the left derived functor (LF, ηL) : Dop →E of F exists. Furthermore, for every K-injective DG module I ∈K, the morphism ηL I : LF(I) →F(I) in E is an isomorphism.

@@ -62,8 +62,8 @@ open QOU.Archimedean
 /-! **Beta decay receptivity.**
 
     The e⁻ coefficient (index 5 in the NF basis) of a nucleon
-    is the trefoil demand. If c₅ < 0, the nucleon is receptive
-    to beta decay: it can emit an electron (trefoil) to reduce
+    is the electron (σ₀σ₁σ₀) demand. If c₅ < 0, the nucleon is receptive
+    to beta decay: it can emit an electron to reduce
     its demand.
 
     The sign of the e⁻ coefficient for the proton and neutron is

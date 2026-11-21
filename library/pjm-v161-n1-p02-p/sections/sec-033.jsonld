@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/pjm-v161-n1-p02-p/sections/sec-033",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "(resp. b^ (page 63)",
+  "pageStart": 63,
+  "pageEnd": 63,
+  "contains": [
+    "library/pjm-v161-n1-p02-p/blocks/prose-sec-033",
+    "library/pjm-v161-n1-p02-p/blocks/lem-sec-033-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/pjm-v161-n1-p02-p/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/pjm-v161-n1-p02-p/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "folio-document-images/v1",
+  "doc_id": "kondev-2021-chinese-phys-c-45-030001",
+  "images": [
+    {
+      "id": "img-p002-1",
+      "file": "images/img-p002-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.001272,
+        "imagesOnPage": 1,
+        "page": 2
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    }
+  ]
+}

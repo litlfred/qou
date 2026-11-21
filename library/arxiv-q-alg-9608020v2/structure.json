@@ -6,7 +6,9 @@
   "sha256": "727268098db7f23d90cf3ec2ef0b566f2cfc4d722338046429e9cc2934b684e5",
   "bytes": 136678,
   "pages": 9,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,249 +22,243 @@
   "doi": null,
   "title": "Shifted Jack polynomials, binomial formula, and applications",
   "authors_raw": "FORMULA, AND APPLICATIONS",
-  "abstract": "In this note we prove an explicit binomial formula for Jack poly nomials and discuss some applications of it. 1. Jack polynomials ( [M,St]). In this note we use the parameter θ = 1/α inverse to the standard parameter α for Jack polynomials. Jack symmetric poly- nomials Pλ (x1,...,x n;θ) are eigenfunctions of Sekiguchi diﬀerential operators D(u;θ) = V (x)−1 det [ xn−j i ( xi ∂ ∂x i + (n −j)θ +u )] 1≤i,j ≤n , D(u;θ)Pλ (x;θ) = ( ∏ i (λ i + (n −i)θ +u) ) Pλ (x;θ),(1.1) where V (x) =∏ i<j(xi −xj) is the Vandermonde determinant and u is a parame- ter. The operators {D(u;θ),u ∈ C} generate a commutative algebra; denote it by D(n;θ). We normalize Pλ (x1,...,x n;θ) so that Pλ (x1,...,x n;θ) = xλ 1 1 ...x λ n n +... , where dots stand for lower monomials in lexicographic order . Then one has (1.2) P(λ 1+1,...,λ n+1)(x;θ) = ( ∏ xi ) Pλ (x;θ). Using (1.2) one can deﬁne Jack rational functions for any int egers λ 1 ≥ · · · ≥ λ n and still (1.1), and hence the binomial theorem below, will h old. Note that the eigenvalues in (1.1) are symmetric in variable sλ i −θi,i = 1,...,n . The authors were supported by the Russian Basic Research Foundat ion (grant 95-01-00814). The ﬁrst author was supported by the NSF grant DMS 9304580. 1Institute for Advanced Study, Princeton, NJ 08540. Current add ress: Dept. of Mathematics, University of Chicago, 5734 South University Ave., Chicago, I L 60637-1546. E-mail address: okounkov@math.uchicago.edu 2Institute for Problems of Information Transmission, Bolshoy K aretny 19, 101447 Moscow GSP–4, Russia. E-mail address: olsh@ippi.ac.msk.su Typeset by AMS-TEX 1",
-  "docinfo": {
-   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181024043119-04'00'",
-   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:q-alg/9608020v2  8 Sep 1997"
-  },
   "title_lines": [
    "SHIFTED JACK POLYNOMIALS, BINOMIAL"
   ],
-  "title_prev": "SHIFTED JACK POLYNOMIALS, BINOMIAL"
+  "abstract": "In this note we prove an explicit binomial formula for Jack polynomials and discuss some applications of it. 1. Jack polynomials ([M,St]). In this note we use the parameter θ = 1/α inverse to the standard parameter α for Jack polynomials. Jack symmetric poly- nomials Pλ(x1, . . . , xn; θ) are eigenfunctions of Sekiguchi diﬀerential operators D(u; θ) = V (x)−1 det \u0014 xn−j i \u0012 xi ∂ ∂xi + (n −j)θ + u \u0013\u0015 1≤i,j≤n , D(u; θ) Pλ(x; θ) = Y i (λi + (n −i)θ + u) ! Pλ(x; θ) , (1.1) where V (x) = Q i<j(xi −xj) is the Vandermonde determinant and u is a parame- ter. The operators {D(u; θ), u ∈C} generate a commutative algebra; denote it by D(n; θ). We normalize Pλ(x1, . . ., xn; θ) so that Pλ(x1, . . ., xn; θ) = xλ1 1 . . . xλn n + . . . , where dots stand for lower monomials in lexicographic order. Then one has (1.2) P(λ1+1,...,λn+1)(x; θ) = \u0010Y xi \u0011 Pλ(x; θ) . Using (1.2) one can deﬁne Jack rational functions for any integers λ1 ≥· · · ≥λn and still (1.1), and hence the binomial theorem below, will hold. Note that the eigenvalues in (1.1) are symmetric in variables λi−θi, i = 1, . . ., n. The authors were supported by the Russian Basic Research Foundation (grant 95-01-00814). The ﬁrst author was supported by the NSF grant DMS 9304580. 1Institute for Advanced Study, Princeton, NJ 08540. Current address: Dept. of Mathematics, University of Chicago, 5734 South University Ave., Chicago, IL 60637-1546. E-mail address: okounkov@math.uchicago.edu 2Institute for Problems of Information Transmission, Bolshoy Karetny 19, 101447 Moscow GSP–4, Russia. E-mail address: olsh@ippi.ac.msk.su T t b",
+  "docinfo": {
+   "Title": "arXiv:q-alg/9608020v2  8 Sep 1997",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20181024043119-04'00'"
+  },
+  "title_raw": "SHIFTED JACK POLYNOMIALS, BINOMIAL",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:q-alg/9608020v2 8 Sep 1997",
+   "heading": "SHIFTED JACK POLYNOMIALS, BINOMIAL FORMULA, AND APPLICATIONS A. Okounkov 1 and G. Olshanski 2 1. Jack polynomials ( [M,St] ). In this note we use the parameter inverse to the standard parameter α for Jack polynomials. Jack symmetric polynomials P λ ( x 1 , . . . , x n ; θ ) are eigenfunctions of Sek",
+   "text": "SHIFTED JACK POLYNOMIALS, BINOMIAL",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "arXiv:q-alg/9608020v2 8 Sep 1997"
  },
- "toc": [
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "11 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (11 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed): one section per page.",
+ "figures": [],
+ "pages": [
   {
-   "level": 1,
-   "title": "Jack polynomials ( [M,St]). In this note we use the parameter",
-   "page": 1,
-   "source": "inferred",
-   "number": "1"
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "A. OKOUNKOV AND G. OLSHANSKI",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Shifted Jack polynomials ( [S1,OO,Ok1,KS,Ok3]). Denote by Λ θ (n) the al-",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Binomial formula. Given a partition µ and a number t set",
-   "page": 3,
-   "source": "inferred",
-   "number": "3"
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "A. OKOUNKOV AND G. OLSHANSKI",
-   "page": 4,
-   "source": "inferred",
-   "number": "4"
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Looking at",
-   "page": 4,
-   "source": "inferred",
-   "number": "1"
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Bessel functions ( [D,Op,J]). For a real vector l = (l1,...,l n) denote by",
-   "page": 5,
-   "source": "inferred",
-   "number": "4"
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "A. OKOUNKOV AND G. OLSHANSKI",
-   "page": 6,
-   "source": "inferred",
-   "number": "6"
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "F ormula for θ-dimension of a skew diagram λ/µ . Deﬁne the θ-dimension",
-   "page": 6,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "Integral representation of Jack polynomials. Writeν ≺λ if",
-   "page": 7,
-   "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "A. OKOUNKOV AND G. OLSHANSKI",
-   "page": 8,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "Other applications. The binomial theorem itself and the formula (5.2) result",
-   "page": 8,
-   "source": "inferred",
-   "number": "7"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 8,
-   "source": "inferred",
-   "number": null
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   }
  ],
- "toc_source": "inferred",
  "sections": [
   {
-   "id": "sec-000-1-jack-polynomials-mst-in-this-note-we-use-the-p",
-   "number": "1",
-   "title": "Jack polynomials ( [M,St]). In this note we use the parameter",
+   "id": "page-001",
+   "number": null,
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 1426,
-   "n_words": 255
+   "page_end": 1,
+   "n_chars": 1736,
+   "n_words": 311,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-2-a-okounkov-and-g-olshanski",
-   "number": "2",
-   "title": "A. OKOUNKOV AND G. OLSHANSKI",
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
    "level": 1,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 1960,
+   "n_words": 382,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
-   "id": "sec-002-2-shifted-jack-polynomials-s1oook1ksok3-denote-b",
-   "number": "2",
-   "title": "Shifted Jack polynomials ( [S1,OO,Ok1,KS,Ok3]). Denote by Λ θ (n) the al-",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 3,
-   "n_chars": 3063,
-   "n_words": 609
-  },
-  {
-   "id": "sec-003-3-binomial-formula-given-a-partition-µ-and-a-num",
-   "number": "3",
-   "title": "Binomial formula. Given a partition µ and a number t set",
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
    "level": 1,
    "page_start": 3,
-   "page_end": 4,
-   "n_chars": 512,
-   "n_words": 113
+   "page_end": 3,
+   "n_chars": 1772,
+   "n_words": 367,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
-   "id": "sec-004-4-a-okounkov-and-g-olshanski",
-   "number": "4",
-   "title": "A. OKOUNKOV AND G. OLSHANSKI",
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
    "level": 1,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 336,
-   "n_words": 72
+   "n_chars": 1427,
+   "n_words": 305,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
-   "id": "sec-005-1-looking-at",
-   "number": "1",
-   "title": "Looking at",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 5,
-   "n_chars": 2321,
-   "n_words": 482
-  },
-  {
-   "id": "sec-006-4-bessel-functions-dopj-for-a-real-vector-l-l1l",
-   "number": "4",
-   "title": "Bessel functions ( [D,Op,J]). For a real vector l = (l1,...,l n) denote by",
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
    "level": 1,
    "page_start": 5,
-   "page_end": 6,
-   "n_chars": 775,
-   "n_words": 155
+   "page_end": 5,
+   "n_chars": 2115,
+   "n_words": 455,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
-   "id": "sec-007-6-a-okounkov-and-g-olshanski",
-   "number": "6",
-   "title": "A. OKOUNKOV AND G. OLSHANSKI",
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
    "level": 1,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 1562,
-   "n_words": 290
+   "n_chars": 2371,
+   "n_words": 453,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
-   "id": "sec-008-5-f-ormula-for-θ-dimension-of-a-skew-diagram-λµ",
-   "number": "5",
-   "title": "F ormula for θ-dimension of a skew diagram λ/µ . Deﬁne the θ-dimension",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 7,
-   "n_chars": 1372,
-   "n_words": 308
-  },
-  {
-   "id": "sec-009-6-integral-representation-of-jack-polynomials-wr",
-   "number": "6",
-   "title": "Integral representation of Jack polynomials. Writeν ≺λ if",
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
    "level": 1,
    "page_start": 7,
-   "page_end": 8,
-   "n_chars": 1102,
-   "n_words": 256
+   "page_end": 7,
+   "n_chars": 1800,
+   "n_words": 398,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
-   "id": "sec-010-8-a-okounkov-and-g-olshanski",
-   "number": "8",
-   "title": "A. OKOUNKOV AND G. OLSHANSKI",
-   "level": 1,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 759,
-   "n_words": 145
-  },
-  {
-   "id": "sec-011-7-other-applications-the-binomial-theorem-itself",
-   "number": "7",
-   "title": "Other applications. The binomial theorem itself and the formula (5.2) result",
-   "level": 1,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 133,
-   "n_words": 21
-  },
-  {
-   "id": "sec-012-references",
+   "id": "page-008",
    "number": null,
-   "title": "References",
+   "title": "Page 8",
    "level": 1,
    "page_start": 8,
+   "page_end": 8,
+   "n_chars": 3344,
+   "n_words": 525,
+   "label_start": "8",
+   "label_end": "8"
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
    "page_end": 9,
-   "n_chars": 3827,
-   "n_words": 600
+   "n_chars": 1420,
+   "n_words": 212,
+   "label_start": "9",
+   "label_end": "9"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 13,
-  "sections": 13,
-  "chars_total": 17188
+  "toc_entries": 0,
+  "toc_inferred_entries": 11,
+  "toc_inferred_mean_confidence": 0.0,
+  "toc_inferred_empty_share": 0.182,
+  "toc_inferred_method": "regex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 9,
+  "chars_total": 17945,
+  "furniture_lines_stripped": 6
  }
 }

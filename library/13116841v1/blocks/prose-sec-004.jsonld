@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/13116841v1/blocks/prose-sec-004",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Outlook",
-  "pageStart": 24,
-  "pageEnd": 29,
-  "text": "../sections/sec-004-outlook.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/13116841v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/13116841v1",
+  "title": "B q-harmonic oscillators and the Schwinger-Jordan trick",
+  "pageStart": 7,
+  "pageEnd": 7,
+  "text": "../sections/sec-004-b-q-harmonic-oscillators-and-the-schwinger-jorda.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/13116841v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/13116841v1/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -7,103 +7,1075 @@
   "bytes": 1021913,
   "pages": 67,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 44,
+    "reason": "12 of 472 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.4171/OWR/2012/28",
-  "title": "Mathematisches Forschungsinstitut Ober wolf ach Report No. 28/2012 Invariants in Low-Dimensional Topology and Knot Theory Organised by",
+  "title": "Mathematisches Forschungsinstitut Oberwolfach Report No. 28/2012 Invariants in Low-Dimensional Topology and Knot Theory Organised by",
   "authors_raw": "Selman Akbulut, East Lansing",
   "title_lines": [
-   "Mathematisches Forschungsinstitut Ober wolf ach",
+   "Mathematisches Forschungsinstitut Oberwolfach",
    "Report No. 28/2012",
    "Invariants in Low-Dimensional Topology and Knot Theory",
    "Organised by"
   ],
-  "abstract": "This meeting concentrated on topological invariants in low di- mensional topology and knot theory . W e include both three an df o u rd i - mensional manifolds in our phrase low dimensional topology .T h e i n t e n t o f the conference was to understand the reach of knot theoretic invariants into four dimensions, including results in Khovanov homology , variants of Floer homology and quandle cohomology and to understand relation ships among categori\ufb01cation, topological quantum \ufb01eld theories and four dimensional man- ifold invariants as in particular Seiberg-Witten invariants. Mathematics Subject Classi\ufb01cation (2000):55-xx, 57-xx.",
+  "abstract": "This meeting concentrated on topological invariants in low di- mensional topology and knot theory. We include both three and four di- mensional manifolds in our phrase low dimensional topology. The intent of the conference was to understand the reach of knot theoretic invariants into four dimensions, including results in Khovanov homology, variants of Floer homology and quandle cohomology and to understand relationships among categoriﬁcation, topological quantum ﬁeld theories and four dimensional man- ifold invariants as in particular Seiberg-Witten invariants. Mathematics Subject Classiﬁcation (2000): 55-xx, 57-xx.",
   "docinfo": {
    "Title": "oberwolfach_reports_1223_v20120708_9_40.pdf",
    "Producer": "Mac OS X 10.10.3 Quartz PDFContext",
    "Creator": "Preview",
    "CreationDate": "D:20161004193345Z00'00'"
-  }
+  },
+  "title_raw": "Mathematisches Forschungsinstitut Oberwolfach Report No. 28/2012 Invariants in Low-Dimensional Topology and Knot Theory Organised by",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "metadata": "oberwolfach_reports_1223_v20120708_9_40.pdf",
+   "heading": "Mathematisches Forschungsinstitut Oberwolfach Report No. 28/2012 DOI: 10.4171/OWR/2012/28 Invariants in Low-Dimensional Topology and Knot Theory June 3rd – June 9th, 2012 Introduction by the Organisers",
+   "text": "Mathematisches Forschungsinstitut Oberwolfach Report No. 28/2012 Invariants in Low-Dimensional Topology and Knot Theory Organised by",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "Mathematisches Forschungsinstitut Ober wolf ach Report No. 28/2012 Invariants in Low-Dimensional Topology and Knot Theory Organised by"
  },
  "toc": [
   {
    "level": 1,
-   "title": "References",
-   "page": 11,
+   "title": "Invariants in Low-Dimensional Topology and Knot Theory",
+   "page": 5,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.5,
+   "evidence": [
+    "contents"
+   ],
+   "page_label": null
   },
   {
-   "level": 1,
-   "title": "A new description of the biquandle",
+   "level": 2,
+   "title": "Virtual Knot Theory - Problems and Ideas",
+   "page": 9,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "9"
+  },
+  {
+   "level": 2,
+   "title": "Invariants and homology of biquandle classifying space",
    "page": 12,
    "source": "inferred",
-   "number": "1"
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "12"
   },
   {
-   "level": 1,
-   "title": "The idea of a \u201cpartial\u201d biquandle",
+   "level": 2,
+   "title": "Injectivity of satellite operators in knot concordance",
    "page": 12,
    "source": "inferred",
-   "number": "2"
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "12"
+  },
+  {
+   "level": 2,
+   "title": "A new construction of the Fukaya–Seidel category",
+   "page": 15,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "15"
+  },
+  {
+   "level": 2,
+   "title": "Naturality of Heegaard Floer homology",
+   "page": 16,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "16"
+  },
+  {
+   "level": 2,
+   "title": "Free Knots and Parity in Low-Dimensional Topology",
+   "page": 19,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "19"
   },
   {
    "level": 1,
-   "title": "Applications to classical knots\u2014in particular discriminating the left and",
-   "page": 12,
+   "title": "Hugh R Morton Mutant knots with symmetry",
+   "page": 21,
    "source": "inferred",
-   "number": "3"
+   "number": null,
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "body"
+   ],
+   "page_label": "21"
+  },
+  {
+   "level": 2,
+   "title": "Cork twisting exotic Stein 4-manifolds",
+   "page": 23,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "23"
+  },
+  {
+   "level": 2,
+   "title": "Towards a categoriﬁcation of the universal sl(2) link invariant",
+   "page": 23,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "23"
+  },
+  {
+   "level": 2,
+   "title": "Corks and Exotic Smooth Structures of 4-Manifolds",
+   "page": 24,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "24"
+  },
+  {
+   "level": 2,
+   "title": "Unlinking numbers of links and their families",
+   "page": 24,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "24"
+  },
+  {
+   "level": 2,
+   "title": "Detecting tightness through open book decompositions",
+   "page": 27,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "27"
+  },
+  {
+   "level": 2,
+   "title": "Yokonuma–Hecke algebras",
+   "page": 28,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "body"
+   ],
+   "page_label": "28"
+  },
+  {
+   "level": 2,
+   "title": "Seiberg-Witten maps and stable homotopy",
+   "page": 31,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "31"
+  },
+  {
+   "level": 2,
+   "title": "Recognizing trivial links in polynomial time",
+   "page": 31,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "31"
   },
   {
    "level": 1,
-   "title": "The de\ufb01nition of the biquandle can be simpli\ufb01ed by the application of",
-   "page": 12,
+   "title": "Scott Carter How to Fold a Manifold",
+   "page": 32,
    "source": "inferred",
-   "number": "1"
+   "number": "J",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "32"
+  },
+  {
+   "level": 2,
+   "title": "Gluck twisting 4-manifolds with odd intersection form",
+   "page": 33,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "33"
+  },
+  {
+   "level": 2,
+   "title": "Distributivity versus associativity in the homology theory of algebraic structures",
+   "page": 33,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "33"
+  },
+  {
+   "level": 2,
+   "title": "Spinal open books and algebraic torsion in contact 3-manifolds",
+   "page": 36,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "36"
+  },
+  {
+   "level": 2,
+   "title": "Vassiliev invariants for virtual knots",
+   "page": 39,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "39"
+  },
+  {
+   "level": 2,
+   "title": "Surface bundles, Lefschetz ﬁbrations, and their (multi)sections",
+   "page": 42,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "42"
+  },
+  {
+   "level": 2,
+   "title": "On a cohomology theory for colored tangles",
+   "page": 43,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "43"
+  },
+  {
+   "level": 2,
+   "title": "Seiberg-Witten theory and four-dimensional homology cobordisms",
+   "page": 46,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "46"
+  },
+  {
+   "level": 2,
+   "title": "Torus bundles, and the lower central series of metabelian groups",
+   "page": 46,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "46"
+  },
+  {
+   "level": 2,
+   "title": "Curves on class VII surfaces. A gauge theoretical approach for proving existence of a cycle",
+   "page": 48,
+   "source": "inferred",
+   "number": "82",
+   "confidence": 0.5,
+   "evidence": [
+    "contents"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "Partial biquandles are now de\ufb01ned onallpairs\u2014in particular taking thedouble",
-   "page": 12,
+   "title": "Igor Nikonov Functorial maps and weak parities",
+   "page": 51,
    "source": "inferred",
-   "number": "2"
+   "number": null,
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "body"
+   ],
+   "page_label": "51"
+  },
+  {
+   "level": 2,
+   "title": "Recent progress on topologically slice knots",
+   "page": 52,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "52"
+  },
+  {
+   "level": 2,
+   "title": "Combinatorial Spatial Graph Floer Homology",
+   "page": 54,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "54"
   },
   {
    "level": 1,
-   "title": "In the classifying space of the double of the 3-colour quandle, th e left and right",
-   "page": 12,
+   "title": "Aaron Kaestner (joint with Louis H. Kauﬀman) Parity Biquandles",
+   "page": 57,
    "source": "inferred",
-   "number": "3"
+   "number": null,
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "body"
+   ],
+   "page_label": "57"
+  },
+  {
+   "level": 2,
+   "title": "Floer theoretically essential tori in rational blowdowns",
+   "page": 58,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.9,
+   "evidence": [
+    "contents",
+    "body",
+    "style"
+   ],
+   "page_label": "58"
   },
   {
    "level": 1,
-   "title": "Using this criterion, for many (sub)families of knots we can con\ufb01rm",
-   "page": 26,
+   "title": "Allison Henrich (joint with Tomas Boothby and Alexander Leaf) Minimal Diagrams of Free Knots",
+   "page": 59,
    "source": "inferred",
-   "number": "2"
+   "number": null,
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "body"
+   ],
+   "page_label": "59"
   },
   {
    "level": 1,
-   "title": "Any Kato is a deformation of blown up Hopf surfaces and has ( intriguing)b2",
-   "page": 49,
+   "title": "Hang Wang (joint with Vassily O. Manturov) Markov Theorem for Free Links",
+   "page": 59,
    "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "Class VII surfaces (not classi\ufb01ed yet) VI I\u2283VI Ib2>0",
-   "page": 49,
-   "source": "inferred",
-   "number": "2"
+   "number": null,
+   "confidence": 0.5,
+   "evidence": [
+    "contents"
+   ],
+   "page_label": "59"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Labeled Flat Crossing and Example 1",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Associating a spatial graph to a graph grid diagram",
+   "page": 56,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Resmoothing along two chords yields one or three circles",
+   "page": 64,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Rotating circuit shown by a thick line; chord diagram",
+   "page": 64,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 56,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "58",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "59",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 61,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 62,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 63,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 64,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 65,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 66,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 67,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -111,116 +1083,393 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 11,
-   "n_chars": 16490,
-   "n_words": 2689
+   "page_end": 5,
+   "n_chars": 6498,
+   "n_words": 1014,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-000-references",
+   "id": "sec-000-invariants-in-low-dimensional-topology-and-knot",
    "number": null,
-   "title": "References",
+   "title": "Invariants in Low-Dimensional Topology and Knot Theory",
    "level": 1,
-   "page_start": 11,
-   "page_end": 12,
-   "n_chars": 552,
-   "n_words": 122
+   "page_start": 5,
+   "page_end": 9,
+   "n_chars": 4828,
+   "n_words": 1359,
+   "label_start": null,
+   "label_end": "9"
   },
   {
-   "id": "sec-001-1-a-new-description-of-the-biquandle",
-   "number": "1",
-   "title": "A new description of the biquandle",
-   "level": 1,
+   "id": "sec-001-virtual-knot-theory---problems-and-ideas",
+   "number": null,
+   "title": "Virtual Knot Theory - Problems and Ideas",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 12,
+   "n_chars": 6267,
+   "n_words": 1149,
+   "label_start": "9",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-002-invariants-and-homology-of-biquandle-classifying",
+   "number": null,
+   "title": "Invariants and homology of biquandle classifying space",
+   "level": 2,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 608,
+   "n_words": 108,
+   "label_start": "12",
+   "label_end": "12"
   },
   {
-   "id": "sec-002-2-the-idea-of-a-partial-biquandle",
-   "number": "2",
-   "title": "The idea of a \u201cpartial\u201d biquandle",
-   "level": 1,
+   "id": "sec-003-injectivity-of-satellite-operators-in-knot-conco",
+   "number": null,
+   "title": "Injectivity of satellite operators in knot concordance",
+   "level": 2,
    "page_start": 12,
-   "page_end": 12,
-   "n_chars": 0,
-   "n_words": 0
+   "page_end": 15,
+   "n_chars": 7168,
+   "n_words": 1227,
+   "label_start": "12",
+   "label_end": "15"
   },
   {
-   "id": "sec-003-3-applications-to-classical-knotsin-particular-d",
-   "number": "3",
-   "title": "Applications to classical knots\u2014in particular discriminating the left and",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 12,
-   "n_chars": 13,
-   "n_words": 2
+   "id": "sec-004-a-new-construction-of-the-fukayaseidel-category",
+   "number": null,
+   "title": "A new construction of the Fukaya–Seidel category",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 2536,
+   "n_words": 472,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
-   "id": "sec-004-1-the-de\ufb01nition-of-the-biquandle-can-be-simpli\ufb01e",
-   "number": "1",
-   "title": "The de\ufb01nition of the biquandle can be simpli\ufb01ed by the application of",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 12,
-   "n_chars": 18,
-   "n_words": 6
+   "id": "sec-005-naturality-of-heegaard-floer-homology",
+   "number": null,
+   "title": "Naturality of Heegaard Floer homology",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 19,
+   "n_chars": 5653,
+   "n_words": 992,
+   "label_start": "16",
+   "label_end": "19"
   },
   {
-   "id": "sec-005-2-partial-biquandles-are-now-de\ufb01ned-onallpairsin",
-   "number": "2",
-   "title": "Partial biquandles are now de\ufb01ned onallpairs\u2014in particular taking thedouble",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 12,
-   "n_chars": 79,
-   "n_words": 7
+   "id": "sec-006-free-knots-and-parity-in-low-dimensional-topolog",
+   "number": null,
+   "title": "Free Knots and Parity in Low-Dimensional Topology",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 23,
+   "n_chars": 9343,
+   "n_words": 1559,
+   "label_start": "19",
+   "label_end": "23"
   },
   {
-   "id": "sec-006-3-in-the-classifying-space-of-the-double-of-the",
-   "number": "3",
-   "title": "In the classifying space of the double of the 3-colour quandle, th e left and right",
+   "id": "sec-007-hugh-r-morton-mutant-knots-with-symmetry",
+   "number": null,
+   "title": "Hugh R Morton Mutant knots with symmetry",
    "level": 1,
-   "page_start": 12,
-   "page_end": 26,
-   "n_chars": 31863,
-   "n_words": 5413
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 41,
+   "n_words": 5,
+   "label_start": "23",
+   "label_end": "23"
   },
   {
-   "id": "sec-007-2-using-this-criterion-for-many-subfamilies-of-k",
-   "number": "2",
-   "title": "Using this criterion, for many (sub)families of knots we can con\ufb01rm",
-   "level": 1,
-   "page_start": 26,
-   "page_end": 49,
-   "n_chars": 60774,
-   "n_words": 10314
+   "id": "sec-008-cork-twisting-exotic-stein-4-manifolds",
+   "number": null,
+   "title": "Cork twisting exotic Stein 4-manifolds",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 766,
+   "n_words": 116,
+   "label_start": "23",
+   "label_end": "23"
   },
   {
-   "id": "sec-008-0-any-kato-is-a-deformation-of-blown-up-hopf-sur",
-   "number": "0",
-   "title": "Any Kato is a deformation of blown up Hopf surfaces and has ( intriguing)b2",
-   "level": 1,
-   "page_start": 49,
-   "page_end": 49,
-   "n_chars": 360,
-   "n_words": 60
+   "id": "sec-009-towards-a-categoriﬁcation-of-the-universal-sl2-l",
+   "number": null,
+   "title": "Towards a categoriﬁcation of the universal sl(2) link invariant",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 1041,
+   "n_words": 157,
+   "label_start": "23",
+   "label_end": "24"
   },
   {
-   "id": "sec-009-2-class-vii-surfaces-not-classi\ufb01ed-yet-vi-ivi-ib",
-   "number": "2",
-   "title": "Class VII surfaces (not classi\ufb01ed yet) VI I\u2283VI Ib2>0",
-   "level": 1,
-   "page_start": 49,
+   "id": "sec-010-corks-and-exotic-smooth-structures-of-4-manifold",
+   "number": null,
+   "title": "Corks and Exotic Smooth Structures of 4-Manifolds",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 436,
+   "n_words": 65,
+   "label_start": "24",
+   "label_end": "24"
+  },
+  {
+   "id": "sec-011-unlinking-numbers-of-links-and-their-families",
+   "number": null,
+   "title": "Unlinking numbers of links and their families",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 27,
+   "n_chars": 7617,
+   "n_words": 1306,
+   "label_start": "24",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-012-detecting-tightness-through-open-book-decomposit",
+   "number": null,
+   "title": "Detecting tightness through open book decompositions",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 2897,
+   "n_words": 443,
+   "label_start": "27",
+   "label_end": "28"
+  },
+  {
+   "id": "sec-013-yokonumahecke-algebras",
+   "number": null,
+   "title": "Yokonuma–Hecke algebras",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 31,
+   "n_chars": 8036,
+   "n_words": 1571,
+   "label_start": "28",
+   "label_end": "31"
+  },
+  {
+   "id": "sec-014-seiberg-witten-maps-and-stable-homotopy",
+   "number": null,
+   "title": "Seiberg-Witten maps and stable homotopy",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 1153,
+   "n_words": 179,
+   "label_start": "31",
+   "label_end": "31"
+  },
+  {
+   "id": "sec-015-recognizing-trivial-links-in-polynomial-time",
+   "number": null,
+   "title": "Recognizing trivial links in polynomial time",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 33,
+   "n_chars": 5174,
+   "n_words": 907,
+   "label_start": "31",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-016-gluck-twisting-4-manifolds-with-odd-intersection",
+   "number": null,
+   "title": "Gluck twisting 4-manifolds with odd intersection form",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 541,
+   "n_words": 101,
+   "label_start": "33",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-017-distributivity-versus-associativity-in-the-homol",
+   "number": null,
+   "title": "Distributivity versus associativity in the homology theory of algebraic structures",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 36,
+   "n_chars": 7985,
+   "n_words": 1399,
+   "label_start": "33",
+   "label_end": "36"
+  },
+  {
+   "id": "sec-018-spinal-open-books-and-algebraic-torsion-in-conta",
+   "number": null,
+   "title": "Spinal open books and algebraic torsion in contact 3-manifolds",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 39,
+   "n_chars": 8176,
+   "n_words": 1440,
+   "label_start": "36",
+   "label_end": "39"
+  },
+  {
+   "id": "sec-019-vassiliev-invariants-for-virtual-knots",
+   "number": null,
+   "title": "Vassiliev invariants for virtual knots",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 42,
+   "n_chars": 7646,
+   "n_words": 1315,
+   "label_start": "39",
+   "label_end": "42"
+  },
+  {
+   "id": "sec-020-surface-bundles-lefschetz-ﬁbrations-and-their-mu",
+   "number": null,
+   "title": "Surface bundles, Lefschetz ﬁbrations, and their (multi)sections",
+   "level": 2,
+   "page_start": 42,
+   "page_end": 43,
+   "n_chars": 658,
+   "n_words": 94,
+   "label_start": "42",
+   "label_end": "43"
+  },
+  {
+   "id": "sec-021-on-a-cohomology-theory-for-colored-tangles",
+   "number": null,
+   "title": "On a cohomology theory for colored tangles",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 46,
+   "n_chars": 7454,
+   "n_words": 1304,
+   "label_start": "43",
+   "label_end": "46"
+  },
+  {
+   "id": "sec-022-seiberg-witten-theory-and-four-dimensional-homol",
+   "number": null,
+   "title": "Seiberg-Witten theory and four-dimensional homology cobordisms",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 46,
+   "n_chars": 416,
+   "n_words": 69,
+   "label_start": "46",
+   "label_end": "46"
+  },
+  {
+   "id": "sec-023-torus-bundles-and-the-lower-central-series-of-me",
+   "number": null,
+   "title": "Torus bundles, and the lower central series of metabelian groups",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 48,
+   "n_chars": 5011,
+   "n_words": 851,
+   "label_start": "46",
+   "label_end": null
+  },
+  {
+   "id": "sec-024-82-curves-on-class-vii-surfaces-a-gauge-theoreti",
+   "number": "82",
+   "title": "Curves on class VII surfaces. A gauge theoretical approach for proving existence of a cycle",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 52,
+   "n_chars": 9658,
+   "n_words": 1703,
+   "label_start": null,
+   "label_end": "52"
+  },
+  {
+   "id": "sec-025-recent-progress-on-topologically-slice-knots",
+   "number": null,
+   "title": "Recent progress on topologically slice knots",
+   "level": 2,
+   "page_start": 52,
+   "page_end": 54,
+   "n_chars": 7699,
+   "n_words": 1248,
+   "label_start": "52",
+   "label_end": "54"
+  },
+  {
+   "id": "sec-026-combinatorial-spatial-graph-floer-homology",
+   "number": null,
+   "title": "Combinatorial Spatial Graph Floer Homology",
+   "level": 2,
+   "page_start": 54,
+   "page_end": 58,
+   "n_chars": 10388,
+   "n_words": 1706,
+   "label_start": "54",
+   "label_end": "58"
+  },
+  {
+   "id": "sec-027-floer-theoretically-essential-tori-in-rational-b",
+   "number": null,
+   "title": "Floer theoretically essential tori in rational blowdowns",
+   "level": 2,
+   "page_start": 58,
    "page_end": 67,
-   "n_chars": 47833,
-   "n_words": 8494
+   "n_chars": 21902,
+   "n_words": 3651,
+   "label_start": "58",
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 2,
   "likely_scanned": false,
-  "toc_entries": 10,
-  "sections": 11,
-  "chars_total": 157982
+  "toc_entries": 33,
+  "toc_inferred_entries": 33,
+  "toc_inferred_mean_confidence": 0.838,
+  "toc_inferred_empty_share": 0.036,
+  "toc_inferred_method": "contents",
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 2,
+    "items": [
+     "existence of a cycle",
+     "Hang Wang (joint with Vassily O. Manturov) Markov Theorem for Free Links"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 1,
+    "items": [
+     "Invariants in Low-Dimensional Topology and Knot Theory: listed p5, found p3"
+    ]
+   }
+  },
+  "sections": 29,
+  "chars_total": 157596,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "existence of a cycle",
+    "page": 48,
+    "action": "rejoined",
+    "as": "Curves on class VII surfaces. A gauge theoretical approach for proving existence of a cycle",
+    "why": "opens in lower case"
+   }
+  ]
  }
 }

@@ -6,7 +6,9 @@
   "sha256": "a1d472d37291a3331a74fb16e387bbfdbf13a41e7a8120582c1e38ad01728c9b",
   "bytes": 1305650,
   "pages": 128,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -14,21 +16,29 @@
   "arxiv": null,
   "doi": "10.2140/gt.2006.10.413",
   "title": "Stabilization in the braid groups I: MTWS",
-  "authors_raw": "Choose any oriented link type X and closed braid representatives X+, X− of",
+  "authors_raw": "JOAN S BIRMAN",
+  "title_lines": [
+   "Stabilization in the braid groups I: MTWS"
+  ],
   "abstract": null,
   "docinfo": {
-   "Author": "",
-   "Title": "",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.4",
+   "Creator": "LaTeX with hyperref package",
    "CreationDate": "D:20241126212952Z"
   },
-  "title_lines": [
-   "Stabilization in the braid groups I: MTWS",
-   "JOAN S BIRMAN",
-   "WILLIAM W MENASCO"
-  ],
-  "title_prev": "Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENASCO"
+  "title_raw": "Stabilization in the braid groups I: MTWS",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Stabilization in the braid groups I: MTWS Introduction",
+   "outline": "1 Introduction",
+   "text": "Stabilization in the braid groups I: MTWS",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Stabilization in the braid groups I: MTWS Introduction"
  },
  "toc": [
   {
@@ -36,291 +46,2387 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "413"
   },
   {
    "level": 2,
    "title": "The problem",
    "page": 1,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "413"
   },
   {
    "level": 2,
    "title": "Block-strand diagrams and templates",
    "page": 5,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "417"
   },
   {
    "level": 3,
    "title": "The two destabilization templates",
    "page": 7,
    "source": "outline",
-   "number": "1.2.1"
+   "number": "1.2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "419"
   },
   {
    "level": 3,
    "title": "The admissible flype templates",
    "page": 7,
    "source": "outline",
-   "number": "1.2.2"
+   "number": "1.2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "419"
   },
   {
    "level": 3,
    "title": "The exchange move template and sequences of exchange moves",
    "page": 9,
    "source": "outline",
-   "number": "1.2.3"
+   "number": "1.2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "421"
   },
   {
    "level": 3,
    "title": "The cyclic templates",
    "page": 11,
    "source": "outline",
-   "number": "1.2.4"
+   "number": "1.2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "423"
   },
   {
    "level": 3,
    "title": "The G–flype and G–exchange templates",
    "page": 11,
    "source": "outline",
-   "number": "1.2.5"
+   "number": "1.2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "423"
   },
   {
    "level": 2,
    "title": "Statement of results",
    "page": 12,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "424"
   },
   {
    "level": 2,
    "title": "Plan of the paper",
    "page": 17,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "429"
   },
   {
    "level": 1,
    "title": "Getting started",
    "page": 19,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "431"
   },
   {
    "level": 2,
    "title": "The basic construction for knots",
    "page": 19,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "431"
   },
   {
    "level": 2,
    "title": "The general case",
    "page": 23,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "435"
   },
   {
    "level": 2,
    "title": "A key example of the basic construction",
    "page": 24,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "436"
   },
   {
    "level": 1,
    "title": "Introducing braid foliations",
    "page": 26,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "438"
   },
   {
    "level": 2,
    "title": "Braid foliations of Seifert surfaces",
    "page": 26,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "438"
   },
   {
    "level": 2,
    "title": "Control over the foliations",
    "page": 30,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "442"
   },
   {
    "level": 2,
    "title": "Using braid foliations to detect destabilizations and exchange moves",
    "page": 34,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "446"
   },
   {
    "level": 2,
    "title": "Using braid foliations to detect stabilizations",
    "page": 37,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "449"
   },
   {
    "level": 1,
    "title": "Braid foliations of the immersed annulus",
    "page": 38,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "450"
   },
   {
    "level": 2,
    "title": "Tile types in PA",
    "page": 39,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "451"
   },
   {
    "level": 2,
    "title": "Preliminary modifications in the clasp arcs",
    "page": 45,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "457"
   },
   {
    "level": 2,
    "title": "Construction of the tabs",
    "page": 46,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "458"
   },
   {
    "level": 2,
    "title": "The two finger moves",
    "page": 49,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "461"
   },
   {
    "level": 2,
    "title": "Creating symmetric normal neighborhoods of the clasp arcs",
    "page": 52,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "464"
   },
   {
    "level": 1,
    "title": "Pushing across CA",
    "page": 58,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "470"
   },
   {
    "level": 2,
    "title": "The complexity function c(X+,X-,CA)",
    "page": 59,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "471"
   },
   {
    "level": 2,
    "title": "Pushing across a microflype region",
    "page": 67,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "479"
   },
   {
    "level": 2,
    "title": "Pushing across thin annuli",
    "page": 69,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "481"
   },
   {
    "level": 3,
    "title": "Constructing the thin annuli",
    "page": 69,
    "source": "outline",
-   "number": "5.3.1"
+   "number": "5.3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "481"
   },
   {
    "level": 3,
    "title": "Using flypes to push X+ across S",
    "page": 77,
    "source": "outline",
-   "number": "5.3.2"
+   "number": "5.3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "489"
   },
   {
    "level": 2,
    "title": "Constructing a candidate for a template (D+,D-) from CA",
    "page": 88,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "500"
   },
   {
    "level": 2,
    "title": "Pushing across regions with a G–flype foliation",
    "page": 92,
    "source": "outline",
-   "number": "5.5"
+   "number": "5.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "504"
   },
   {
    "level": 2,
    "title": "Pushing across regions with a G–exchange foliation",
    "page": 94,
    "source": "outline",
-   "number": "5.6"
+   "number": "5.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "506"
   },
   {
    "level": 2,
    "title": "Pushing across a standard annulus",
    "page": 101,
    "source": "outline",
-   "number": "5.7"
+   "number": "5.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "513"
   },
   {
    "level": 1,
    "title": "The proof of the MTWS",
    "page": 102,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "514"
   },
   {
    "level": 2,
    "title": "6.1",
    "page": 102,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "514"
   },
   {
    "level": 2,
    "title": "Cleaning up the templates in T(m)",
    "page": 106,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "518"
   },
   {
    "level": 2,
    "title": "The set T(m) is finite",
    "page": 109,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "521"
   },
   {
    "level": 1,
    "title": "Open problems",
    "page": 123,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "535"
   },
   {
    "level": 1,
    "title": "Bibliography",
    "page": 127,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "539"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The two destabilization moves",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "414"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The exchange move",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "416"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The two ﬂype moves",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "416"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "(a) The support of a positive ﬂype with weighted strands. (b) Example of an inadmissible ﬂype. Notice the extra twists introduced because of the weighted strands",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "420"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "A very simple Markov tower",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "421"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "The exchange move can lead to arbitrarily many distinct braid isotopy classes of closed n–braid representatives of a single knot type, n ≥4",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "421"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "A sequence of exchange moves passes a distinguished strand (the thick black one) over a block-strand tree",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "422"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Example of a 4–braid cyclic template, and the Markov tower (stabilize, exchange, exchange, exchange, destabilize) that it replaces",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "423"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Example of a G–ﬂype on a 6–braid",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "425"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Example of a G–exchange move on a 6–braid",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "426"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "Clasp intersections",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "431"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "Constructing X0",
+   "page": 21,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "433"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "(a) Alexander’s trick",
+   "page": 22,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "434"
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "A key example",
+   "page": 25,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "437"
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "(a) Foliation of surface near a vertex",
+   "page": 27,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "439"
+  },
+  {
+   "kind": "figure",
+   "number": "16",
+   "title": "In this sketch the ﬁbers of H are to be thought of as horizontal planes. (a) Surgering F along the disc ∆removes the singularity. (b) The change in foliation on F",
+   "page": 28,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "440"
+  },
+  {
+   "kind": "figure",
+   "number": "17",
+   "title": "",
+   "page": 29,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "441"
+  },
+  {
+   "kind": "figure",
+   "number": "18",
+   "title": "Tiles of type bb, ab, aa",
+   "page": 29,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "441"
+  },
+  {
+   "kind": "figure",
+   "number": "19",
+   "title": "Embeddings of tiles of type bb, ab, aa in 3–space",
+   "page": 30,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "442"
+  },
+  {
+   "kind": "figure",
+   "number": "20",
+   "title": "The ﬁrst change in foliation, in the case when both tiles have type bb. There are two other cases, obtained from the one which is illustrated by deleting part of the bb–tile and adding one or both dotted arcs as boundary, to convert to an ab–tile. The 3 cases are: case (1), two bb–tiles; case (2), o",
+   "page": 31,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "443"
+  },
+  {
+   "kind": "figure",
+   "number": "21",
+   "title": "Sketch (a) shows the second change in foliation. Sketch (b) shows N, embedded in 3–space, before the change, illustrating the position of ∆. The move is a push downward of s1 along ∆",
+   "page": 33,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "445"
+  },
+  {
+   "kind": "figure",
+   "number": "22",
+   "title": "Destabilization along a valence 1 vertex, viewed (a) on the foliated surface and (b) in 3–space",
+   "page": 34,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "446"
+  },
+  {
+   "kind": "figure",
+   "number": "23",
+   "title": "The type ab–exchange move",
+   "page": 35,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "447"
+  },
+  {
+   "kind": "figure",
+   "number": "24",
+   "title": "The type bb–exchange move, followed by an isotopy of F",
+   "page": 36,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "448"
+  },
+  {
+   "kind": "figure",
+   "number": "25",
+   "title": "Changes in foliation after the removal of inessential b–arcs",
+   "page": 37,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "449"
+  },
+  {
+   "kind": "figure",
+   "number": "26",
+   "title": "Stabilization along an ab–tile, viewed (a) as a move on the foliated surface, and (b) concentrating on how it alters the boundary",
+   "page": 37,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "449"
+  },
+  {
+   "kind": "figure",
+   "number": "27",
+   "title": "Stabilization along an ab–tile, viewed in 3–space",
+   "page": 38,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "450"
+  },
+  {
+   "kind": "figure",
+   "number": "28",
+   "title": "There are new issues to settle. The ﬁrst question we ask is whether a simple closed curve c could intersect both A+ and A−? Assume that the homoclinic loop determined by c is innermost in Hθ, and also innermost in the foliation of CA. Then c bounds a disc on A+ ∪A−which is foliated by simple closed",
+   "page": 40,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "452"
+  },
+  {
+   "kind": "figure",
+   "number": "29",
+   "title": "Non-singular leaves in the foliation of A+ ∪A−, as viewed in the preimage of CA",
+   "page": 43,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "455"
+  },
+  {
+   "kind": "figure",
+   "number": "30",
+   "title": "Type a−a−and a−s singularities do not occur",
+   "page": 44,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "456"
+  },
+  {
+   "kind": "figure",
+   "number": "31",
+   "title": "Possible tile types in the foliation of A+ ∪A−. The black (resp. grey) arcs always represent subarcs of X+ (resp. X−), with one exception: when we construct the tabs we will be working in A−and X0 will enter the picture as a (dotted) grey arc",
+   "page": 44,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "456"
+  },
+  {
+   "kind": "figure",
+   "number": "32",
+   "title": "Eliminating short clasp arcs",
+   "page": 45,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "457"
+  },
+  {
+   "kind": "figure",
+   "number": "33",
+   "title": "An example of a tab",
+   "page": 47,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "459"
+  },
+  {
+   "kind": "figure",
+   "number": "34",
+   "title": "Rechoosing the disc Ri. In sketches (a) and (b) the dark area is in R′",
+   "page": 48,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "460"
+  },
+  {
+   "kind": "figure",
+   "number": "35",
+   "title": "Controlled local changes in the clasp arc in a neighborhood of a singularity after the ﬁrst and second ﬁnger moves",
+   "page": 50,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "462"
+  },
+  {
+   "kind": "figure",
+   "number": "36",
+   "title": "The 4 possible choices of the signs of the pair (vertex,singularity)",
+   "page": 50,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "462"
+  },
+  {
+   "kind": "figure",
+   "number": "37",
+   "title": "Normal neighborhoods of γ−and γ+ in PA. The left (resp. middle and right) sketch shows N+ (resp. N−, N−). The arc γ−ends near X+ in the middle sketch and in the interior of PA in the right sketch. In all 3 sketches the foliation is deﬁned up to reﬂection about a vertical axis which joins X−and X+",
+   "page": 52,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "464"
+  },
+  {
+   "kind": "figure",
+   "number": "38",
+   "title": "Tab neighborhood pair in PA",
+   "page": 54,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "466"
+  },
+  {
+   "kind": "figure",
+   "number": "39",
+   "title": "Local changes, as they appear on T+",
+   "page": 55,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "467"
+  },
+  {
+   "kind": "figure",
+   "number": "40",
+   "title": "Local changes, depicted in a neighborhood of γ−on PA",
+   "page": 56,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "468"
+  },
+  {
+   "kind": "figure",
+   "number": "41",
+   "title": "Positioning the clasp arc γ−into a ﬁnite number of leaves (singular and/or non-singular)",
+   "page": 57,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "469"
+  },
+  {
+   "kind": "figure",
+   "number": "42",
+   "title": "The graph Gϵ,δ includes all singular leaves through vertices of sign ϵ and singularities of sign δ. The thick edges in this example illustrate the passage of G+,+, G−,−, G+,−, G−,+ through a bb–tile",
+   "page": 60,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "472"
+  },
+  {
+   "kind": "figure",
+   "number": "43",
+   "title": "Examples of a standard annulus, a trivially foliated annulus, and regions in a thin annulus. Thin annuli will be deﬁned in Section 5.3",
+   "page": 66,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "478"
+  },
+  {
+   "kind": "figure",
+   "number": "44",
+   "title": "The foliation of PA, near the puncture point of a clasp arc γ−but outside its normal neighborhood. It is assumed here that the puncture point of γ−is in the interior of PA",
+   "page": 67,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "479"
+  },
+  {
+   "kind": "figure",
+   "number": "45",
+   "title": "It is a subset of Ni",
+   "page": 70,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "482"
+  },
+  {
+   "kind": "figure",
+   "number": "46",
+   "title": "Adjacent pairs of foliated connected normal neighborhoods. Sketches a,b,c,d in the bottom row show all possibilities, after the elimination of inessential b–arcs",
+   "page": 71,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "483"
+  },
+  {
+   "kind": "figure",
+   "number": "47",
+   "title": "Possible arrangements of clasp arcs in adjacent intersecting normal neighborhoods in PA, near the right and left boundaries of a connected collection of normal neighborhoods",
+   "page": 72,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "484"
+  },
+  {
+   "kind": "figure",
+   "number": "48",
+   "title": "The isotopy of X+ across S in a simple example",
+   "page": 78,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "490"
+  },
+  {
+   "kind": "figure",
+   "number": "49",
+   "title": "The 3–space embedding of X+ and X−in the Example in Figure 48",
+   "page": 78,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "490"
+  },
+  {
+   "kind": "figure",
+   "number": "50",
+   "title": "Amalgamating microﬂypes can result in ﬂypes with weighted strands",
+   "page": 79,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "491"
+  },
+  {
+   "kind": "figure",
+   "number": "51",
+   "title": "Four independent ﬂypes which cannot be amalgamated",
+   "page": 80,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "492"
+  },
+  {
+   "kind": "figure",
+   "number": "52",
+   "title": "(i) The four microstrands associated to a doubly long clasp arc. (ii) The associated microblocks. (iii) The braid projection of the microstrands on the cylinder walls",
+   "page": 81,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "493"
+  },
+  {
+   "kind": "figure",
+   "number": "53",
+   "title": "The projection of related microstrands onto the cylindrical walls in the boundaries of amalgamating blocks",
+   "page": 84,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "496"
+  },
+  {
+   "kind": "figure",
+   "number": "54",
+   "title": "Subdividing non-trivially foliated regions in S . The black (resp. dotted grey) horizontal arcs are the arcs we refer to in the text as ‘y’ (resp. ‘y’). The intersections of the clasp arcs with the regions of interest are labeled gi",
+   "page": 86,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "498"
+  },
+  {
+   "kind": "figure",
+   "number": "55",
+   "title": "An example that shows how a stabilization, two microﬂypes and a destabilization are amalgamated into a ﬂype. The bottom left and right sketches show the corresponding subsets of",
+   "page": 87,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "499"
+  },
+  {
+   "kind": "figure",
+   "number": "56",
+   "title": "The foliation of PA, in the situation of the 6–braid template of Figure 9",
+   "page": 93,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "505"
+  },
+  {
+   "kind": "figure",
+   "number": "57",
+   "title": "Foliated subsurface of PA which are the support of the G–exchange move of Figure 10",
+   "page": 94,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "506"
+  },
+  {
+   "kind": "figure",
+   "number": "58",
+   "title": "(a) The root foliation on PA. (b) The root diagram. (c) The two viewpoints are put together",
+   "page": 96,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "508"
+  },
+  {
+   "kind": "figure",
+   "number": "59",
+   "title": "A block and strand tree. The dotted parts will be discussed later",
+   "page": 97,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "509"
+  },
+  {
+   "kind": "figure",
+   "number": "60",
+   "title": "Expanding root foliations to tree foliations",
+   "page": 98,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "510"
+  },
+  {
+   "kind": "figure",
+   "number": "61",
+   "title": "Pushing across a standard annulus",
+   "page": 102,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "514"
+  },
+  {
+   "kind": "figure",
+   "number": "62",
+   "title": "The possibilities for b–edges of bb– and ab–tiles. A black undotted b–edge means strongly essential A black dotted b–edge means weakly essential",
+   "page": 122,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "534"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "413",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "414",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "415",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "416",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "417",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "418",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "419",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "420",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "421",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "422",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "423",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "424",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "425",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "426",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "427",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "428",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "429",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "430",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "431",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "432",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "433",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "434",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "435",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "436",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "437",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "438",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "439",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "440",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "441",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "442",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "443",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "444",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "445",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "446",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "447",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "448",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "449",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "450",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "451",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "452",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "453",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "454",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "455",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "456",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "457",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "458",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "459",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "460",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "461",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "462",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "463",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "464",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "465",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "466",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "467",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "468",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "469",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "470",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "471",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "472",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "473",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "474",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "475",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "476",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "477",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "478",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "479",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "480",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "481",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "482",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "483",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "484",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "485",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "486",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "487",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": "488",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 77,
+   "label": "489",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": "490",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 79,
+   "label": "491",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 80,
+   "label": "492",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 81,
+   "label": "493",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 82,
+   "label": "494",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 83,
+   "label": "495",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 84,
+   "label": "496",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 85,
+   "label": "497",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 86,
+   "label": "498",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 87,
+   "label": "499",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 88,
+   "label": "500",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 89,
+   "label": "501",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 90,
+   "label": "502",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 91,
+   "label": "503",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 92,
+   "label": "504",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 93,
+   "label": "505",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 94,
+   "label": "506",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 95,
+   "label": "507",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 96,
+   "label": "508",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 97,
+   "label": "509",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 98,
+   "label": "510",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 99,
+   "label": "511",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 100,
+   "label": "512",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 101,
+   "label": "513",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 102,
+   "label": "514",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 103,
+   "label": "515",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 104,
+   "label": "516",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 105,
+   "label": "517",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 106,
+   "label": "518",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 107,
+   "label": "519",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 108,
+   "label": "520",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 109,
+   "label": "521",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 110,
+   "label": "522",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 111,
+   "label": "523",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 112,
+   "label": "524",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 113,
+   "label": "525",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 114,
+   "label": "526",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 115,
+   "label": "527",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 116,
+   "label": "528",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 117,
+   "label": "529",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 118,
+   "label": "530",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 119,
+   "label": "531",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 120,
+   "label": "532",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 121,
+   "label": "533",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 122,
+   "label": "534",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 123,
+   "label": "535",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 124,
+   "label": "536",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 125,
+   "label": "537",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 126,
+   "label": "538",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 127,
+   "label": "539",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 128,
+   "label": "540",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1272,
+   "n_words": 223,
+   "label_start": "413",
+   "label_end": "413"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -328,8 +2434,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 12,
+   "n_words": 1,
+   "label_start": "413",
+   "label_end": "413"
   },
   {
    "id": "sec-001-11-the-problem",
@@ -338,8 +2446,10 @@
    "level": 2,
    "page_start": 1,
    "page_end": 5,
-   "n_chars": 8068,
-   "n_words": 1392
+   "n_chars": 8120,
+   "n_words": 1434,
+   "label_start": "413",
+   "label_end": "417"
   },
   {
    "id": "sec-002-12-block-strand-diagrams-and-templates",
@@ -348,8 +2458,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 6561,
-   "n_words": 1205
+   "n_chars": 6666,
+   "n_words": 1278,
+   "label_start": "417",
+   "label_end": "419"
   },
   {
    "id": "sec-003-121-the-two-destabilization-templates",
@@ -357,276 +2469,458 @@
    "title": "The two destabilization templates",
    "level": 3,
    "page_start": 7,
-   "page_end": 9,
-   "n_chars": 2997,
-   "n_words": 541
+   "page_end": 7,
+   "n_chars": 350,
+   "n_words": 53,
+   "label_start": "419",
+   "label_end": "419"
   },
   {
-   "id": "sec-004-123-the-exchange-move-template-and-sequences-of",
+   "id": "sec-004-122-the-admissible-flype-templates",
+   "number": "1.2.2",
+   "title": "The admissible flype templates",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 2677,
+   "n_words": 494,
+   "label_start": "419",
+   "label_end": "421"
+  },
+  {
+   "id": "sec-005-123-the-exchange-move-template-and-sequences-of",
    "number": "1.2.3",
    "title": "The exchange move template and sequences of exchange moves",
    "level": 3,
    "page_start": 9,
    "page_end": 11,
-   "n_chars": 2624,
-   "n_words": 458
+   "n_chars": 2694,
+   "n_words": 478,
+   "label_start": "421",
+   "label_end": "423"
   },
   {
-   "id": "sec-005-124-the-cyclic-templates",
+   "id": "sec-006-124-the-cyclic-templates",
    "number": "1.2.4",
    "title": "The cyclic templates",
    "level": 3,
    "page_start": 11,
-   "page_end": 12,
-   "n_chars": 3788,
-   "n_words": 696
+   "page_end": 11,
+   "n_chars": 981,
+   "n_words": 183,
+   "label_start": "423",
+   "label_end": "423"
   },
   {
-   "id": "sec-006-13-statement-of-results",
+   "id": "sec-007-125-the-gflype-and-gexchange-templates",
+   "number": "1.2.5",
+   "title": "The G–flype and G–exchange templates",
+   "level": 3,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 2838,
+   "n_words": 532,
+   "label_start": "423",
+   "label_end": "424"
+  },
+  {
+   "id": "sec-008-13-statement-of-results",
    "number": "1.3",
    "title": "Statement of results",
    "level": 2,
    "page_start": 12,
    "page_end": 17,
-   "n_chars": 6330,
-   "n_words": 1216
+   "n_chars": 6410,
+   "n_words": 1278,
+   "label_start": "424",
+   "label_end": "429"
   },
   {
-   "id": "sec-007-14-plan-of-the-paper",
+   "id": "sec-009-14-plan-of-the-paper",
    "number": "1.4",
    "title": "Plan of the paper",
    "level": 2,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 4633,
-   "n_words": 786
+   "n_chars": 4660,
+   "n_words": 799,
+   "label_start": "429",
+   "label_end": "431"
   },
   {
-   "id": "sec-008-2-getting-started",
+   "id": "sec-010-2-getting-started",
    "number": "2",
    "title": "Getting started",
    "level": 1,
    "page_start": 19,
    "page_end": 19,
-   "n_chars": 316,
-   "n_words": 61
+   "n_chars": 333,
+   "n_words": 64,
+   "label_start": "431",
+   "label_end": "431"
   },
   {
-   "id": "sec-009-21-the-basic-construction-for-knots",
+   "id": "sec-011-21-the-basic-construction-for-knots",
    "number": "2.1",
    "title": "The basic construction for knots",
    "level": 2,
    "page_start": 19,
    "page_end": 23,
-   "n_chars": 9269,
-   "n_words": 1805
+   "n_chars": 9299,
+   "n_words": 1807,
+   "label_start": "431",
+   "label_end": "435"
   },
   {
-   "id": "sec-010-22-the-general-case",
+   "id": "sec-012-22-the-general-case",
    "number": "2.2",
    "title": "The general case",
    "level": 2,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 2571,
-   "n_words": 456
+   "n_chars": 2616,
+   "n_words": 487,
+   "label_start": "435",
+   "label_end": "436"
   },
   {
-   "id": "sec-011-23-a-key-example-of-the-basic-construction",
+   "id": "sec-013-23-a-key-example-of-the-basic-construction",
    "number": "2.3",
    "title": "A key example of the basic construction",
    "level": 2,
    "page_start": 24,
    "page_end": 26,
-   "n_chars": 3863,
-   "n_words": 749
+   "n_chars": 3915,
+   "n_words": 768,
+   "label_start": "436",
+   "label_end": "438"
   },
   {
-   "id": "sec-012-3-introducing-braid-foliations",
+   "id": "sec-014-3-introducing-braid-foliations",
    "number": "3",
    "title": "Introducing braid foliations",
    "level": 1,
    "page_start": 26,
    "page_end": 26,
-   "n_chars": 738,
-   "n_words": 129
+   "n_chars": 767,
+   "n_words": 132,
+   "label_start": "438",
+   "label_end": "438"
   },
   {
-   "id": "sec-013-31-braid-foliations-of-seifert-surfaces",
+   "id": "sec-015-31-braid-foliations-of-seifert-surfaces",
    "number": "3.1",
    "title": "Braid foliations of Seifert surfaces",
    "level": 2,
    "page_start": 26,
    "page_end": 30,
-   "n_chars": 8923,
-   "n_words": 1656
+   "n_chars": 8966,
+   "n_words": 1667,
+   "label_start": "438",
+   "label_end": "442"
   },
   {
-   "id": "sec-014-32-control-over-the-foliations",
+   "id": "sec-016-32-control-over-the-foliations",
    "number": "3.2",
    "title": "Control over the foliations",
    "level": 2,
    "page_start": 30,
    "page_end": 34,
-   "n_chars": 6379,
-   "n_words": 1230
+   "n_chars": 6420,
+   "n_words": 1247,
+   "label_start": "442",
+   "label_end": "446"
   },
   {
-   "id": "sec-015-33-using-braid-foliations-to-detect-destabilizat",
+   "id": "sec-017-33-using-braid-foliations-to-detect-destabilizat",
    "number": "3.3",
    "title": "Using braid foliations to detect destabilizations and exchange moves",
    "level": 2,
    "page_start": 34,
    "page_end": 37,
-   "n_chars": 5776,
-   "n_words": 1082
+   "n_chars": 5856,
+   "n_words": 1102,
+   "label_start": "446",
+   "label_end": "449"
   },
   {
-   "id": "sec-016-34-using-braid-foliations-to-detect-stabilizatio",
+   "id": "sec-018-34-using-braid-foliations-to-detect-stabilizatio",
    "number": "3.4",
    "title": "Using braid foliations to detect stabilizations",
    "level": 2,
    "page_start": 37,
    "page_end": 38,
-   "n_chars": 1690,
-   "n_words": 294
+   "n_chars": 1740,
+   "n_words": 302,
+   "label_start": "449",
+   "label_end": "450"
   },
   {
-   "id": "sec-017-4-braid-foliations-of-the-immersed-annulus",
+   "id": "sec-019-4-braid-foliations-of-the-immersed-annulus",
    "number": "4",
    "title": "Braid foliations of the immersed annulus",
    "level": 1,
    "page_start": 38,
    "page_end": 39,
-   "n_chars": 2125,
-   "n_words": 401
+   "n_chars": 2166,
+   "n_words": 407,
+   "label_start": "450",
+   "label_end": "451"
   },
   {
-   "id": "sec-018-41-tile-types-in-pa",
+   "id": "sec-020-41-tile-types-in-pa",
    "number": "4.1",
    "title": "Tile types in PA",
    "level": 2,
    "page_start": 39,
-   "page_end": 46,
-   "n_chars": 14980,
-   "n_words": 2752
+   "page_end": 45,
+   "n_chars": 11999,
+   "n_words": 2218,
+   "label_start": "451",
+   "label_end": "457"
   },
   {
-   "id": "sec-019-43-construction-of-the-tabs",
+   "id": "sec-021-42-preliminary-modifications-in-the-clasp-arcs",
+   "number": "4.2",
+   "title": "Preliminary modifications in the clasp arcs",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 46,
+   "n_chars": 3029,
+   "n_words": 573,
+   "label_start": "457",
+   "label_end": "458"
+  },
+  {
+   "id": "sec-022-43-construction-of-the-tabs",
    "number": "4.3",
    "title": "Construction of the tabs",
    "level": 2,
    "page_start": 46,
-   "page_end": 52,
-   "n_chars": 11768,
-   "n_words": 2248
+   "page_end": 49,
+   "n_chars": 6282,
+   "n_words": 1264,
+   "label_start": "458",
+   "label_end": "461"
   },
   {
-   "id": "sec-020-45-creating-symmetric-normal-neighborhoods-of-th",
+   "id": "sec-023-44-the-two-finger-moves",
+   "number": "4.4",
+   "title": "The two finger moves",
+   "level": 2,
+   "page_start": 49,
+   "page_end": 52,
+   "n_chars": 5595,
+   "n_words": 1076,
+   "label_start": "461",
+   "label_end": "464"
+  },
+  {
+   "id": "sec-024-45-creating-symmetric-normal-neighborhoods-of-th",
    "number": "4.5",
    "title": "Creating symmetric normal neighborhoods of the clasp arcs",
    "level": 2,
    "page_start": 52,
    "page_end": 58,
-   "n_chars": 13021,
-   "n_words": 2449
+   "n_chars": 13181,
+   "n_words": 2559,
+   "label_start": "464",
+   "label_end": "470"
   },
   {
-   "id": "sec-021-5-pushing-across-ca",
+   "id": "sec-025-5-pushing-across-ca",
    "number": "5",
    "title": "Pushing across CA",
    "level": 1,
    "page_start": 58,
-   "page_end": 69,
-   "n_chars": 26506,
-   "n_words": 4913
+   "page_end": 59,
+   "n_chars": 2103,
+   "n_words": 375,
+   "label_start": "470",
+   "label_end": "471"
   },
   {
-   "id": "sec-022-53-pushing-across-thin-annuli",
+   "id": "sec-026-51-the-complexity-function-cxx-ca",
+   "number": "5.1",
+   "title": "The complexity function c(X+,X-,CA)",
+   "level": 2,
+   "page_start": 59,
+   "page_end": 67,
+   "n_chars": 19819,
+   "n_words": 3724,
+   "label_start": "471",
+   "label_end": "479"
+  },
+  {
+   "id": "sec-027-52-pushing-across-a-microflype-region",
+   "number": "5.2",
+   "title": "Pushing across a microflype region",
+   "level": 2,
+   "page_start": 67,
+   "page_end": 69,
+   "n_chars": 4618,
+   "n_words": 870,
+   "label_start": "479",
+   "label_end": "481"
+  },
+  {
+   "id": "sec-028-53-pushing-across-thin-annuli",
    "number": "5.3",
    "title": "Pushing across thin annuli",
    "level": 2,
    "page_start": 69,
    "page_end": 69,
-   "n_chars": 864,
-   "n_words": 162
+   "n_chars": 892,
+   "n_words": 167,
+   "label_start": "481",
+   "label_end": "481"
   },
   {
-   "id": "sec-023-531-constructing-the-thin-annuli",
+   "id": "sec-029-531-constructing-the-thin-annuli",
    "number": "5.3.1",
    "title": "Constructing the thin annuli",
    "level": 3,
    "page_start": 69,
-   "page_end": 88,
-   "n_chars": 42908,
-   "n_words": 8026
+   "page_end": 77,
+   "n_chars": 19565,
+   "n_words": 3862,
+   "label_start": "481",
+   "label_end": "489"
   },
   {
-   "id": "sec-024-54-constructing-a-candidate-for-a-template-dd--f",
+   "id": "sec-030-532-using-flypes-to-push-x-across-s",
+   "number": "5.3.2",
+   "title": "Using flypes to push X+ across S",
+   "level": 3,
+   "page_start": 77,
+   "page_end": 88,
+   "n_chars": 23709,
+   "n_words": 4511,
+   "label_start": "489",
+   "label_end": "500"
+  },
+  {
+   "id": "sec-031-54-constructing-a-candidate-for-a-template-dd--f",
    "number": "5.4",
    "title": "Constructing a candidate for a template (D+,D-) from CA",
    "level": 2,
    "page_start": 88,
-   "page_end": 94,
-   "n_chars": 14958,
-   "n_words": 2750
+   "page_end": 92,
+   "n_chars": 10230,
+   "n_words": 1919,
+   "label_start": "500",
+   "label_end": "504"
   },
   {
-   "id": "sec-025-56-pushing-across-regions-with-a-gexchange-folia",
+   "id": "sec-032-55-pushing-across-regions-with-a-gflype-foliatio",
+   "number": "5.5",
+   "title": "Pushing across regions with a G–flype foliation",
+   "level": 2,
+   "page_start": 92,
+   "page_end": 94,
+   "n_chars": 4920,
+   "n_words": 980,
+   "label_start": "504",
+   "label_end": "506"
+  },
+  {
+   "id": "sec-033-56-pushing-across-regions-with-a-gexchange-folia",
    "number": "5.6",
    "title": "Pushing across regions with a G–exchange foliation",
    "level": 2,
    "page_start": 94,
-   "page_end": 100,
-   "n_chars": 13521,
-   "n_words": 2611
+   "page_end": 101,
+   "n_chars": 16848,
+   "n_words": 3298,
+   "label_start": "506",
+   "label_end": "513"
   },
   {
-   "id": "sec-026-57-pushing-across-a-standard-annulus",
+   "id": "sec-034-57-pushing-across-a-standard-annulus",
    "number": "5.7",
    "title": "Pushing across a standard annulus",
    "level": 2,
-   "page_start": 100,
+   "page_start": 101,
    "page_end": 102,
-   "n_chars": 5445,
-   "n_words": 978
+   "n_chars": 2381,
+   "n_words": 449,
+   "label_start": "513",
+   "label_end": "514"
   },
   {
-   "id": "sec-027-6-the-proof-of-the-mtws",
+   "id": "sec-035-6-the-proof-of-the-mtws",
    "number": "6",
    "title": "The proof of the MTWS",
    "level": 1,
    "page_start": 102,
    "page_end": 102,
-   "n_chars": 181,
-   "n_words": 35
+   "n_chars": 203,
+   "n_words": 40,
+   "label_start": "514",
+   "label_end": "514"
   },
   {
-   "id": "sec-028-61",
+   "id": "sec-036-61",
    "number": null,
    "title": "6.1",
    "level": 2,
    "page_start": 102,
-   "page_end": 123,
-   "n_chars": 57272,
-   "n_words": 10523
+   "page_end": 106,
+   "n_chars": 8511,
+   "n_words": 1562,
+   "label_start": "514",
+   "label_end": "518"
   },
   {
-   "id": "sec-029-7-open-problems",
+   "id": "sec-037-62-cleaning-up-the-templates-in-tm",
+   "number": "6.2",
+   "title": "Cleaning up the templates in T(m)",
+   "level": 2,
+   "page_start": 106,
+   "page_end": 109,
+   "n_chars": 11208,
+   "n_words": 2116,
+   "label_start": "518",
+   "label_end": "521"
+  },
+  {
+   "id": "sec-038-63-the-set-tm-is-finite",
+   "number": "6.3",
+   "title": "The set T(m) is finite",
+   "level": 2,
+   "page_start": 109,
+   "page_end": 123,
+   "n_chars": 38027,
+   "n_words": 7269,
+   "label_start": "521",
+   "label_end": "535"
+  },
+  {
+   "id": "sec-039-7-open-problems",
    "number": "7",
    "title": "Open problems",
    "level": 1,
    "page_start": 123,
    "page_end": 128,
-   "n_chars": 14459,
-   "n_words": 2396
+   "n_chars": 14468,
+   "n_words": 2393,
+   "label_start": "535",
+   "label_end": "540"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 41,
-  "sections": 30,
-  "chars_total": 292534
+  "toc_inferred_entries": 0,
+  "figure_entries": 62,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 41,
+  "chars_total": 296346,
+  "furniture_lines_stripped": 0
  }
 }

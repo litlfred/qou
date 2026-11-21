@@ -1,0 +1,1 @@
+Suppose A is a ring and S is a right denominator set in it. Then the right Ore localization AS is ﬂat as left A-module. See [130, Theorem 3.1.20]. We have no idea if something like this is true for linear categories with more than one object.

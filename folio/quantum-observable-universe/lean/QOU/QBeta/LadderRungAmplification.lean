@@ -37,7 +37,7 @@ Base ring: a generic `Field`, per §7c. Pure algebra — `cs` is an arbitrary
 field element standing for `cos(α_eff)`, never `Real.cos` — so there is no
 archimedean content and this specialises to `ℝ` for free.
 
--- Ref: [manuscript] bean `qou-cds1`;
+-- Ref: [leitner2026] bean `qou-cds1`;
 -- `computations/qbeta/qbeta_alpha_required_c_vs_d_probe.py`;
 -- `computations/qbeta/qbeta_ck_cache.py` (the extraction this mirrors).
 -/

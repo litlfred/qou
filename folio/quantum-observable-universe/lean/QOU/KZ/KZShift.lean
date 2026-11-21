@@ -18,7 +18,7 @@ commutes with everything in sight, then the Cauchy product `H E` solves `kzM0 A 
 
 Base: generic ring (formal part). Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S2, shift invariance)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S2, shift invariance)
 -/
 
 noncomputable section

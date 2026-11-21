@@ -1,0 +1,49 @@
+SUBFACTORS FROM BRAIDED C* TENSOR CATEGORIES 367
+
+(b) Assume that the A-R-bimodule H decomposes as H = G)m;H;, with H;
+irreducible A-B-bimodules, and let | = dim(Endy.@(H)) = do; m?. Then we
+have >>; ind( Hj) > ind(H)/1, with equality only if dimy (Hj) =m; dima(H)/1
+for alli.
+
+Proof. It is well-known that the inclusion of higher relative commutants Jl’ 9
+My CN’ A MG defines periodic commuting squares which generate in the limit
+a subfactor of index [tl : N’]. Hence we can use the results of [Wenzl 1988],
+Theorem 1.5(iii). It follows that the index is equal to the quotient of the /?-norms
+of the weight vectors of WN Wd, and N’N My for k sufficiently large. Let p;, and
+Pp, be minimal idempotents in UN At, and N’ OW; respectively. Then we have
+ind(p, Aly) = tr(p,)?[Ml : NYE and ind(p,.Ml,) = tr(p,)?[t : NIE+!. Solving for
+tr(p,)? and tr(p,)*, we obtain
+
+_ Dy ind(py.th)/LAl: NTE
+Yo ind (pr My) /[Ml: NYT
+
+The claimed formula follows from this in the case that our system of bimodules la-
+bels the vertices of the principal graph. One obtains the claim for the dual principal
+graph by the same proof applied to the inclusion Jl C tt).
+
+Part (b) is proved using Lagrange multipliers as follows: Let x; = dim,(H;) and
+let d =dimy H. Then the minimum of the function f(x1,...,%-) => x? subject
+to the condition }* m;x; = d is obtained for 2x; = Am;, and we deduce from the
+constraint that d = 4 > m? = 1/2. Hence x; = mjd/I and
+
+[al : A]
+
+. da”
+Yo dima Hi)? = ami aa/l. (*)
+i i
+
+Now observe that if p; is the projection onto the submodule H; C H, we have
+tr(p;) = dimy(H;)/dimy(H) and ind(H;) = tr(p;)*ind(A) (again see [Wenzl
+1988], Theorem 1.5(iii)). The claim follows from this after multiplying («) by
+ind(H)/d?. Oo
+
+2. Categories
+
+In this section we deal with categories which can be considered as generalizations
+of the representation categories of finite groups. This allows us to deal simulta-
+neously with categories of bimodules of von Neumann factors, fusion categories
+(which can be constructed using quantum groups or loop groups) and categories ob-
+tained from unitary braid representations. For more details, we refer to [Mac Lane
+1998], [Freyd 1964] for general categorical notions, and to [Kassel 1995], [Turaev
+1994] for tensor categories; our treatment of traces also uses results from [Longo
+and Roberts 1997].

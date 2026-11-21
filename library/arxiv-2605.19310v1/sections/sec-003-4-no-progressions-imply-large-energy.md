@@ -10,7 +10,8 @@ source_sha256: 047d492babc63d2f
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.974
-latex_coverage_ratio: 0.974
+latex_coverage_ratio: 0.961
+doc_brief: "A Fourier-Free Density-Increment Proof of Roth's Theorem — We give an elementary, Fourier-free proof of Roth’s theorem."
 ---
 For functions $f_1,f_2,f_3\colon\mathbb{Z}_m\to\mathbb R$, define $$\Lambda(f_1,f_2,f_3):=\sum_{x,r\in\mathbb{Z}_m} f_1(x)f_2(x+r)f_3(x+2r).$$ If $A\subset [N]\subset\mathbb{Z}_m$, then $\Lambda(\mathbf{1}_A,\mathbf{1}_A,\mathbf{1}_A)$ is the number of three-term arithmetic progressions in $A$, including the trivial progressions with $r=0$. Hence, if $A$ contains no nontrivial three-term progressions, then $\Lambda(\mathbf{1}_A,\mathbf{1}_A,\mathbf{1}_A)=\lvert A\rvert$. On the other hand, $\Lambda(\mathbf{1}_{[N]},\mathbf{1}_{[N]},\mathbf{1}_{[N]})\gtrsim N^2$, since $[N]$ contains $\gtrsim N^2$ three-term progressions.
 

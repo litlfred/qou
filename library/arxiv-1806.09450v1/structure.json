@@ -6,10 +6,12 @@
   "sha256": "8556b67d97856446c79d3dfc2e3a9601902b4b097312e31d2528b43976b4182a",
   "bytes": 1204558,
   "pages": 16,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,21 +21,31 @@
    "stamp_date": "17 Jun 2018"
   },
   "doi": null,
-  "title": "Deducing the symmetry of the standard model from the automorphism and structure groups of the exceptional Jordan algebra \u2217",
-  "authors_raw": "Ivan Todorov1, Michel Dubois-Violette 2",
-  "abstract": "We continue the study undertaken in [DV] of the exceptional Jordan algebra J = J 8 3 as (part of) the \ufb01nite-dimensional quantum algebra in an almost classical space-time approach to particle physics. Along with reviewing known properties of J and of the associated exceptional Lie groups we argue that the symmetry of the model can be deduced from the Borel-de Siebenthal theory of maximal connected subgroups of simple compact Lie groups. \u2217Updated version of IHES/P/17/03 with minor corrections. 1 arXiv:1806.09450v1 [hep-th] 17 Jun 2018",
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20180626003127Z",
-   "Creator": "LaTeX with hyperref package",
-   "Producer": "pdfTeX-1.40.17",
-   "Title": ""
-  },
+  "title": "Deducing the symmetry of the standard model from the automorphism and structure groups of the exceptional Jordan algebra ∗",
+  "authors_raw": "Ivan Todorov1, Michel Dubois-Violette2",
   "title_lines": [
    "Deducing the symmetry of the standard model",
    "from the automorphism and structure groups of",
-   "the exceptional Jordan algebra \u2217"
-  ]
+   "the exceptional Jordan algebra ∗"
+  ],
+  "abstract": "We continue the study undertaken in [DV] of the exceptional Jordan algebra J = J8 3 as (part of) the ﬁnite-dimensional quantum algebra in an almost classical space-time approach to particle physics. Along with reviewing known properties of J and of the associated exceptional Lie groups we argue that the symmetry of the model can be deduced from the Borel-de Siebenthal theory of maximal connected subgroups of simple compact Lie groups. ∗Updated version of IHES/P/17/03 with minor corrections. 1 arXiv:1806.09450v1 [hep-th] 17 Jun 2018",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.17",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20180626003127Z"
+  },
+  "title_raw": "Deducing the symmetry of the standard model from the automorphism and structure groups of the exceptional Jordan algebra ∗",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Deducing the symmetry of the standard model from the automorphism and structure groups of the exceptional Jordan algebra ∗",
+   "outline": "1 Introduction",
+   "text": "Deducing the symmetry of the standard model from the automorphism and structure groups of the exceptional Jordan algebra ∗",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -41,115 +53,331 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Exceptional finite quantum geometry",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The Lie algebra of derivations of J and its extensions: the structure and the conformal algebras",
    "page": 6,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The automorphism group F4 of the exceptional Jordan algebra and its Lie algebra f4",
    "page": 6,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The magic square",
    "page": 8,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The exceptional Lie groups E6 and E7",
    "page": 10,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Borel-de Siebenthal theory and intersections of maximal subgroups of compact exceptional Lie groups",
    "page": 12,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Magic square of Lie algebras L(K, K′) (sp (6) being the rank 3 unitary symplectic Lie algebra)",
+   "page": 9,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Projective plane in Z3",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1089,
+   "n_words": 157,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 2,
-   "page_end": 6,
-   "n_chars": 9791,
-   "n_words": 1733
+   "page_end": 3,
+   "n_chars": 4258,
+   "n_words": 821,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-31-the-automorphism-group-f4-of-the-exceptional",
+   "id": "sec-001-2-exceptional-finite-quantum-geometry",
+   "number": "2",
+   "title": "Exceptional finite quantum geometry",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 4856,
+   "n_words": 928,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-3-the-lie-algebra-of-derivations-of-j-and-its-ex",
+   "number": "3",
+   "title": "The Lie algebra of derivations of J and its extensions: the structure and the conformal algebras",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 798,
+   "n_words": 130,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-31-the-automorphism-group-f4-of-the-exceptional",
    "number": "3.1",
    "title": "The automorphism group F4 of the exceptional Jordan algebra and its Lie algebra f4",
    "level": 2,
    "page_start": 6,
    "page_end": 8,
-   "n_chars": 3039,
-   "n_words": 597
+   "n_chars": 3136,
+   "n_words": 650,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-32-the-magic-square",
+   "id": "sec-004-32-the-magic-square",
    "number": "3.2",
    "title": "The magic square",
    "level": 2,
    "page_start": 8,
    "page_end": 10,
-   "n_chars": 3421,
-   "n_words": 667
+   "n_chars": 3476,
+   "n_words": 708,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-33-the-exceptional-lie-groups-e6-and-e7",
+   "id": "sec-005-33-the-exceptional-lie-groups-e6-and-e7",
    "number": "3.3",
    "title": "The exceptional Lie groups E6 and E7",
    "level": 2,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 2829,
-   "n_words": 523
+   "n_chars": 2906,
+   "n_words": 570,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-4-borel-de-siebenthal-theory-and-intersections-o",
+   "id": "sec-006-4-borel-de-siebenthal-theory-and-intersections-o",
    "number": "4",
    "title": "Borel-de Siebenthal theory and intersections of maximal subgroups of compact exceptional Lie groups",
    "level": 1,
    "page_start": 12,
    "page_end": 16,
-   "n_chars": 8901,
-   "n_words": 1429
+   "n_chars": 9061,
+   "n_words": 1549,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 7,
-  "sections": 5,
-  "chars_total": 27981,
+  "toc_inferred_entries": 0,
+  "figure_entries": 2,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 29580,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "JordanAlgebra_29mars.tex",
    "tex_sections": 8,
-   "overlaid": 4,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -157,40 +385,63 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.539,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-001-31-the-automorphism-group-f4-of-the-exceptional",
+     "id": "sec-001-2-exceptional-finite-quantum-geometry",
+     "title": "Exceptional finite quantum geometry",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-the-lie-algebra-of-derivations-of-j-and-its-ex",
+     "title": "The Lie algebra of derivations of J and its extensions: the structure and the conformal algebras",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.941,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-31-the-automorphism-group-f4-of-the-exceptional",
      "title": "The automorphism group F4 of the exceptional Jordan algebra and its Lie algebra f4",
      "prose_ratio": 0.993,
-     "coverage_ratio": 0.972,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-32-the-magic-square",
+     "id": "sec-004-32-the-magic-square",
      "title": "The magic square",
      "prose_ratio": 0.98,
-     "coverage_ratio": 0.974,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-33-the-exceptional-lie-groups-e6-and-e7",
+     "id": "sec-005-33-the-exceptional-lie-groups-e6-and-e7",
      "title": "The exceptional Lie groups E6 and E7",
      "prose_ratio": 0.991,
-     "coverage_ratio": 0.982,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-4-borel-de-siebenthal-theory-and-intersections-o",
+     "id": "sec-006-4-borel-de-siebenthal-theory-and-intersections-o",
      "title": "Borel-de Siebenthal theory and intersections of maximal subgroups of compact exceptional Lie groups",
-     "prose_ratio": 0.827,
-     "coverage_ratio": 0.995,
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.63,
      "result": "overlaid",
      "converter": "pandoc"
     }

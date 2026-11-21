@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408113v2
-doc_title: "arXiv:hep-th/9408113v2 25 Aug 1994"
+doc_title: "Dilogarithm identities"
 section_id: sec-005-14-kuniba-nakanishis-dilogarithm-conjecture
 section_title: "Kuniba-Nakanishi’s dilogarithm conjecture."
 section_number: 1.4
@@ -8,6 +8,7 @@ pages: 26-31
 source_pdf: 9408113v2.pdf
 source_sha256: dadd96e1155e820f
 toc_source: inferred
+doc_brief: "Dilogarithm identities — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
 ---
 Recall that the dilogarithm function is deﬁned by
 Li2(z) =
@@ -369,4 +370,3 @@ p + k + 1 + 6Z,
 If k = 1 one can obtain an exact formula for the remainder term in (1.39) (see [Kir7]
 or Exercise 11).
 Dilogarithm identities
-31

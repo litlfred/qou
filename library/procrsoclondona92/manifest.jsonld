@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/procrsoclondona92",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/procrsoclondona92/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -32,7 +32,7 @@
     "library/procrsoclondona92/sections/page-019"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "procrsoclondona92",
     "title_source": "slug",

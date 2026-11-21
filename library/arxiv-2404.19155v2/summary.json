@@ -2,22 +2,27 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2404.19155v2",
  "source_sha256": "45b9ed90006536b3",
- "brief": "Octahedral coordinates from the Wirtinger presentation Calvin McPhail-Snyder Duke University calvin@sl2.site — Letρ be a representation of a knot group (or more generally, the funda- mental group of",
- "extended": "**Octahedral coordinates from the Wirtinger presentation Calvin McPhail-Snyder Duke University calvin@sl2.site**\n\n21 pp, 6 sections.\n\n**Abstract.** Letρ be a representation of a knot group (or more generally, the funda- mental group of a tangle complement) intoSL2(C) expressed in terms of the Wirtinger generators of a diagramD. This diagram also determines an ideal triangulation of the complement called the octahedral decompo- sition.ρ induces a hyperbolic structure on the complement ofD, and in this note we give a direct algebraic formula for the geometric parameters of the octahedral decomposition induced by this structure. Our formula gives a new, explicit criterion for whetherρ occurs as a critical point of the diagram’s Neumann-Zagier–Yokota potential function.\n\n**Outline.** Introduction; Octahedral colorings; The holonomy of an octahedral coloring; Gauge transformations; Shape parameters and the potential function; Bibliography\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3: that for knot diagrams this condition is equivalent to being arc-faithful, meaning\n- Theorem 2.11: The coloringi7→χi defined by (11) is an octahedral coloring: it satisfies the\n- Theorem 3.5: LetD be a tangle diagram. For each segmenti writei↑ for the region abovei\n- Theorem 1: LetD be a tangle diagram and i7→gi,j 7→uj be a decorated shadow SL2(C)-\n- Theorem 2: LetD be any tangle diagram andρ :π(D)→ SL2(C) any decorated representation.\n- Theorem 5.2: LetD be a tangle diagram with an admissible decorated shadowSL2(C) coloring",
+ "brief": "Octahedral coordinates from the Wirtinger presentation — Let ρ be a representation of a knot group (or more generally, the funda- mental group of a tangle complement) into SL2(C) expressed in terms",
+ "extended": "**Octahedral coordinates from the Wirtinger presentation**\n\n*Calvin McPhail-Snyder*\n\n21 pp, 7 sections.\n\n**Abstract.** Let ρ be a representation of a knot group (or more generally, the funda- mental group of a tangle complement) into SL2(C) expressed in terms of the Wirtinger generators of a diagram D. This diagram also determines an ideal triangulation of the complement called the octahedral decompo- sition. ρ induces a hyperbolic structure on the complement of D, and in this note we give a direct algebraic formula for the geometric parameters of the octahedral decomposition induced by this structure. Our formula gives a new, explicit criterion for whether ρ occurs as a critical point of the diagram’s Neumann-Zagier–Yokota potential function.\n\n**Outline.** Front matter; Introduction; Octahedral colorings; The holonomy of an octahedral coloring; Gauge transformations; Shape parameters and the potential function; Bibliography",
  "tokens": {
   "brief": 49,
-  "extended": 385
+  "extended": 234
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-introduction",
    "title": "Introduction",
-   "pages": "2-3"
+   "pages": "2-4"
   },
   {
    "id": "sec-001-octahedral-colorings",
    "title": "Octahedral colorings",
-   "pages": "3-7"
+   "pages": "4-7"
   },
   {
    "id": "sec-002-the-holonomy-of-an-octahedral-coloring",
@@ -44,8 +49,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

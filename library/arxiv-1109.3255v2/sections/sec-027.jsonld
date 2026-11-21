@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1109.3255v2/sections/sec-027",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Algebraic motivation",
+  "pageStart": 64,
+  "pageEnd": 64,
+  "contains": [
+    "library/arxiv-1109.3255v2/blocks/prose-sec-027"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1109.3255v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1109.3255v2/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/download",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/download/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "Concentration of empirical distribution functions with applications to non-i.i.d. models",
   "contains": [
+    "library/download/sections/sec-front-matter",
     "library/download/sections/sec-000",
     "library/download/sections/sec-001",
     "library/download/sections/sec-002",
@@ -24,7 +25,7 @@
     "library/download/sections/sec-010"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "download",
     "title_source": "pdf-info",
@@ -34,8 +35,8 @@
     "pages": 30,
     "arxiv": null,
     "doi": "10.3150/10-BEJ254",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

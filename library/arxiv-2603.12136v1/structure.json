@@ -7,11 +7,11 @@
   "bytes": 1282526,
   "pages": 70,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -27,12 +27,27 @@
    "Folding Mixed-Integer Linear Programs and",
    "Reflection Symmetries"
   ],
-  "abstract": "For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the performance of branch- and-bound and linear optimization algorithms. A common strategy to handle symmetriesin linearprogramsisto reducethedimensionof thelinearprogramby aggregating symmetric variables and solving a linear program of reduced dimen- sion. In their workDimension Reduction via Color Refinement(DRCR), Grohe, Kersting, Mladenov and Selman show that it is sufficient to run a fast color refinement algorithm to detect permutation symmetries and reduce the dimen- sion of the linear program. We extend DRCR in two directions. First, we show that DRCR can be extended to reflection symmetries, which generalize permuta- tion symmetries. Second, we show the folklore result that DRCR can be applied to the continuous columns of mixed-integer linear programs. In order to derive additional reductions on the integer variables we useaffine totally unimodular decompositionsto reformulate mixed-integer linear programs into mixed-integer linear programs with fewer integer variables. Computational experiments on MIPLIB 2017 collection set using SCIP 10 show that DRCR is an effective tool for handling symmetries. For the linear programming relaxations, DRCR with reflection symmetries yields a modest reduction in running time compared to the original DRCR procedure. For mixed-integer linear programming models, DRCR is very effective at reducing the solution time compared to the default configura- tion of SCIP. Moreover, the developed DRCR detection algorithms are fast and scale well to large problem instances.",
+  "abstract": "For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the performance of branch- and-bound and linear optimization algorithms. A common strategy to handle symmetries in linear programs is to reduce the dimension of the linear program by aggregating symmetric variables and solving a linear program of reduced dimen- sion. In their work Dimension Reduction via Color Refinement (DRCR), Grohe, Kersting, Mladenov and Selman show that it is sufficient to run a fast color refinement algorithm to detect permutation symmetries and reduce the dimen- sion of the linear program. We extend DRCR in two directions. First, we show that DRCR can be extended to reflection symmetries, which generalize permuta- tion symmetries. Second, we show the folklore result that DRCR can be applied to the continuous columns of mixed-integer linear programs. In order to derive additional reductions on the integer variables we use affine totally unimodular decompositions to reformulate mixed-integer linear programs into mixed-integer linear programs with fewer integer variables. Computational experiments on MIPLIB 2017 collection set using SCIP 10 show that DRCR is an effective tool for handling symmetries. For the linear programming relaxations, DRCR with reflection symmetries yields a modest reduction in running time compared to the original DRCR procedure. For mixed-integer linear programming models, DRCR is very effective at reducing the solution time compared to the default configura- tion of SCIP. Moreover, the developed DRCR detection algorithms are fast and scale well to large problem instances.",
   "docinfo": {
+   "Title": "Folding Mixed-Integer Linear Programs and Reflection Symmetries",
    "Author": "Rolf van der Hulst",
-   "Creator": "arXiv GenPDF (tex2pdf:8e18bb9)",
    "Producer": "pikepdf 8.15.1",
-   "Title": "Folding Mixed-Integer Linear Programs and Reflection Symmetries"
+   "Creator": "arXiv GenPDF (tex2pdf:8e18bb9)"
+  },
+  "title_raw": "Folding Mixed-Integer Linear Programs and Reflection Symmetries",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Folding Mixed-Integer Linear Programs and Reflection Symmetries",
+   "heading": "Folding Mixed-Integer Linear Programs and Reflection Symmetries",
+   "outline": "Introduction",
+   "text": "Folding Mixed-Integer Linear Programs and Reflection Symmetries",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -41,172 +56,834 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Contribution",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Outline",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Dimension Reduction via Color Refinement",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Equitable partitions and fractional automorphisms",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Dimension Reduction of a Linear Program",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Extending DRCR to reflection symmetries",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Centering the linear program",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Split reformulations of linear programs",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Equitable partitions of split reformulations",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Reducing the split reformulation",
    "page": 22,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Choosing the affine offset",
    "page": 28,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Comparison with reflection symmetries",
    "page": 32,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Detecting reflection reductions",
    "page": 34,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Choosing gamma, lambda and delta",
    "page": 36,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Dimension Reduction for Mixed-Integer Linear Programs",
    "page": 37,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Affine TU decompositions for mixed-integer linear programs",
    "page": 44,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Example: Generalized Assignment problem",
    "page": 45,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Detecting DRCR for mixed-integer linear programs",
    "page": 48,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Computational Results",
    "page": 55,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Folding reflection symmetries for Linear Programs",
    "page": 56,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Folding symmetries in Mixed-Integer Linear Programming",
    "page": 57,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Discussion",
    "page": 60,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Experimental results",
    "page": 69,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Examples of symmetric integral polyhedra with non-integral affine fibers",
+   "page": 40,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "algorithm",
+   "number": "1",
+   "title": "Detecting DRCR for MILP using affine TU decompositions",
+   "page": 51,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "The complete results can be found in Appendix A",
+   "page": 56,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Performance comparison between SCIP 10 and R-DRCR- N on the solvable instances of the MIPLIB2017 collection set that are affected by R-DRCR-N. The subsets contain the instances whose solution time for SCIP 10 (in seconds) lies in the indicated bracket",
+   "page": 58,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "Performance comparison between SCIP 10 and R-DRCR- T on the solvable instances of the MIPLIB2017 collection set that that are affected by R-DRCR-T",
+   "page": 58,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "4",
+   "title": "Comparison of SCIP 10 and R-DRCR-N and R- DRCR-T on unsolved instances of MIPLIB 2017 collection set that are affected by the R-DRCR-N or R-DRCR-T",
+   "page": 59,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "5",
+   "title": "Distribution of the time taken (in seconds) to detect and postsolve for R-DRCR-N and R-DRCR-T for the affected instances. For each bracket, the number of instances that fall into it is indicated",
+   "page": 60,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 51,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 52,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 53,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 54,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 55,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 56,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 57,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 58,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 59,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 60,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 61,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 62,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 63,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 64,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 65,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 66,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 67,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 68,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 69,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 70,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1966,
+   "n_words": 282,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -214,8 +891,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 5,
-   "n_chars": 10093,
-   "n_words": 1528
+   "n_chars": 10107,
+   "n_words": 1542,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-contribution",
@@ -224,8 +903,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 3437,
-   "n_words": 526
+   "n_chars": 3444,
+   "n_words": 533,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-outline",
@@ -235,7 +916,9 @@
    "page_start": 6,
    "page_end": 6,
    "n_chars": 442,
-   "n_words": 67
+   "n_words": 67,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-dimension-reduction-via-color-refinement",
@@ -244,8 +927,10 @@
    "level": 1,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 859,
-   "n_words": 119
+   "n_chars": 950,
+   "n_words": 210,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-equitable-partitions-and-fractional-automorphism",
@@ -254,8 +939,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 8,
-   "n_chars": 3479,
-   "n_words": 570
+   "n_chars": 3707,
+   "n_words": 798,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-dimension-reduction-of-a-linear-program",
@@ -264,8 +951,10 @@
    "level": 2,
    "page_start": 8,
    "page_end": 10,
-   "n_chars": 7584,
-   "n_words": 1212
+   "n_chars": 7942,
+   "n_words": 1570,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-extending-drcr-to-reflection-symmetries",
@@ -274,8 +963,10 @@
    "level": 1,
    "page_start": 10,
    "page_end": 13,
-   "n_chars": 7033,
-   "n_words": 1216
+   "n_chars": 7178,
+   "n_words": 1361,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-centering-the-linear-program",
@@ -284,8 +975,10 @@
    "level": 2,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 1654,
-   "n_words": 252
+   "n_chars": 1735,
+   "n_words": 333,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-008-split-reformulations-of-linear-programs",
@@ -293,19 +986,23 @@
    "title": "Split reformulations of linear programs",
    "level": 2,
    "page_start": 14,
-   "page_end": 15,
-   "n_chars": 3844,
-   "n_words": 563
+   "page_end": 16,
+   "n_chars": 4183,
+   "n_words": 837,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-009-equitable-partitions-of-split-reformulations",
    "number": null,
    "title": "Equitable partitions of split reformulations",
    "level": 2,
-   "page_start": 15,
+   "page_start": 16,
    "page_end": 22,
-   "n_chars": 19044,
-   "n_words": 3240
+   "n_chars": 20266,
+   "n_words": 4507,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-010-reducing-the-split-reformulation",
@@ -314,8 +1011,10 @@
    "level": 2,
    "page_start": 22,
    "page_end": 28,
-   "n_chars": 14046,
-   "n_words": 2218
+   "n_chars": 15041,
+   "n_words": 3213,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-011-choosing-the-affine-offset",
@@ -324,8 +1023,10 @@
    "level": 2,
    "page_start": 28,
    "page_end": 32,
-   "n_chars": 11063,
-   "n_words": 1871
+   "n_chars": 11542,
+   "n_words": 2350,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-012-comparison-with-reflection-symmetries",
@@ -334,8 +1035,10 @@
    "level": 2,
    "page_start": 32,
    "page_end": 34,
-   "n_chars": 4653,
-   "n_words": 687
+   "n_chars": 4867,
+   "n_words": 901,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-013-detecting-reflection-reductions",
@@ -344,8 +1047,10 @@
    "level": 2,
    "page_start": 34,
    "page_end": 37,
-   "n_chars": 7945,
-   "n_words": 1278
+   "n_chars": 8151,
+   "n_words": 1484,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-014-dimension-reduction-for-mixed-integer-linear-pro",
@@ -354,8 +1059,10 @@
    "level": 1,
    "page_start": 37,
    "page_end": 44,
-   "n_chars": 18837,
-   "n_words": 2963
+   "n_chars": 19544,
+   "n_words": 3670,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-015-affine-tu-decompositions-for-mixed-integer-linea",
@@ -364,8 +1071,10 @@
    "level": 2,
    "page_start": 44,
    "page_end": 45,
-   "n_chars": 3763,
-   "n_words": 741
+   "n_chars": 3980,
+   "n_words": 958,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-016-example-generalized-assignment-problem",
@@ -374,8 +1083,10 @@
    "level": 2,
    "page_start": 45,
    "page_end": 48,
-   "n_chars": 6054,
-   "n_words": 981
+   "n_chars": 6250,
+   "n_words": 1177,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-017-detecting-drcr-for-mixed-integer-linear-programs",
@@ -384,8 +1095,10 @@
    "level": 1,
    "page_start": 48,
    "page_end": 55,
-   "n_chars": 18215,
-   "n_words": 3031
+   "n_chars": 18969,
+   "n_words": 3785,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-018-computational-results",
@@ -394,8 +1107,10 @@
    "level": 1,
    "page_start": 55,
    "page_end": 56,
-   "n_chars": 1538,
-   "n_words": 225
+   "n_chars": 1551,
+   "n_words": 238,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-019-folding-reflection-symmetries-for-linear-program",
@@ -404,8 +1119,10 @@
    "level": 2,
    "page_start": 56,
    "page_end": 57,
-   "n_chars": 3230,
-   "n_words": 525
+   "n_chars": 3234,
+   "n_words": 529,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-020-folding-symmetries-in-mixed-integer-linear-progr",
@@ -414,8 +1131,10 @@
    "level": 2,
    "page_start": 57,
    "page_end": 60,
-   "n_chars": 8017,
-   "n_words": 1307
+   "n_chars": 8063,
+   "n_words": 1353,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-021-discussion",
@@ -424,8 +1143,10 @@
    "level": 1,
    "page_start": 60,
    "page_end": 69,
-   "n_chars": 22837,
-   "n_words": 3085
+   "n_chars": 22946,
+   "n_words": 3185,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-022-experimental-results",
@@ -434,16 +1155,26 @@
    "level": 1,
    "page_start": 69,
    "page_end": 70,
-   "n_chars": 5720,
-   "n_words": 944
+   "n_chars": 5719,
+   "n_words": 943,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 24,
-  "sections": 23,
-  "chars_total": 183387,
+  "toc_inferred_entries": 0,
+  "figure_entries": 7,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 24,
+  "chars_total": 191777,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "exactorbitalshrinking.tex",
@@ -456,10 +1187,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.994,
+     "prose_ratio": 0.813,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -477,7 +1213,7 @@
      "id": "sec-003-dimension-reduction-via-color-refinement",
      "title": "Dimension Reduction via Color Refinement",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.645,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -485,7 +1221,7 @@
      "id": "sec-004-equitable-partitions-and-fractional-automorphism",
      "title": "Equitable partitions and fractional automorphisms",
      "prose_ratio": 0.966,
-     "coverage_ratio": 0.673,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -493,7 +1229,7 @@
      "id": "sec-005-dimension-reduction-of-a-linear-program",
      "title": "Dimension Reduction of a Linear Program",
      "prose_ratio": 0.976,
-     "coverage_ratio": 0.823,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -501,7 +1237,7 @@
      "id": "sec-006-extending-drcr-to-reflection-symmetries",
      "title": "Extending DRCR to reflection symmetries",
      "prose_ratio": 0.982,
-     "coverage_ratio": 0.942,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -509,15 +1245,15 @@
      "id": "sec-007-centering-the-linear-program",
      "title": "Centering the linear program",
      "prose_ratio": 0.99,
-     "coverage_ratio": 0.96,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-008-split-reformulations-of-linear-programs",
      "title": "Split reformulations of linear programs",
-     "prose_ratio": 0.952,
-     "coverage_ratio": 0.77,
+     "prose_ratio": 0.973,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -525,7 +1261,7 @@
      "id": "sec-009-equitable-partitions-of-split-reformulations",
      "title": "Equitable partitions of split reformulations",
      "prose_ratio": 0.979,
-     "coverage_ratio": 0.592,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -533,7 +1269,7 @@
      "id": "sec-010-reducing-the-split-reformulation",
      "title": "Reducing the split reformulation",
      "prose_ratio": 0.963,
-     "coverage_ratio": 0.721,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -541,7 +1277,7 @@
      "id": "sec-011-choosing-the-affine-offset",
      "title": "Choosing the affine offset",
      "prose_ratio": 0.97,
-     "coverage_ratio": 0.803,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -549,7 +1285,7 @@
      "id": "sec-012-comparison-with-reflection-symmetries",
      "title": "Comparison with reflection symmetries",
      "prose_ratio": 0.949,
-     "coverage_ratio": 0.86,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -557,15 +1293,15 @@
      "id": "sec-013-detecting-reflection-reductions",
      "title": "Detecting reflection reductions",
      "prose_ratio": 0.977,
-     "coverage_ratio": 0.908,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-014-dimension-reduction-for-mixed-integer-linear-pro",
      "title": "Dimension Reduction for Mixed-Integer Linear Programs",
-     "prose_ratio": 0.98,
-     "coverage_ratio": 0.776,
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -573,7 +1309,7 @@
      "id": "sec-015-affine-tu-decompositions-for-mixed-integer-linea",
      "title": "Affine TU decompositions for mixed-integer linear programs",
      "prose_ratio": 0.958,
-     "coverage_ratio": 0.718,
+     "coverage_ratio": 0.967,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -581,15 +1317,15 @@
      "id": "sec-016-example-generalized-assignment-problem",
      "title": "Example: Generalized Assignment problem",
      "prose_ratio": 0.961,
-     "coverage_ratio": 0.819,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-017-detecting-drcr-for-mixed-integer-linear-programs",
      "title": "Detecting DRCR for mixed-integer linear programs",
-     "prose_ratio": 0.973,
-     "coverage_ratio": 0.991,
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -605,7 +1341,7 @@
      "id": "sec-019-folding-reflection-symmetries-for-linear-program",
      "title": "Folding reflection symmetries for Linear Programs",
      "prose_ratio": 0.938,
-     "coverage_ratio": 0.969,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -613,15 +1349,15 @@
      "id": "sec-020-folding-symmetries-in-mixed-integer-linear-progr",
      "title": "Folding symmetries in Mixed-Integer Linear Programming",
      "prose_ratio": 0.954,
-     "coverage_ratio": 0.979,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-021-discussion",
      "title": "Discussion",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.994,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.626,
      "result": "overlaid",
      "converter": "pandoc"
     },

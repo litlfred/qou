@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0408210v3
-doc_title: "arXiv:math/0408210v3 [math.QA] 7 May 2005"
+doc_title: "A simple algebraic proof of the algebraic index theorem"
 section_id: sec-007-4-concluding-remarks
 section_title: "Concluding remarks."
 section_number: 4
@@ -10,7 +10,8 @@ source_sha256: 16d5ccb83a86954f
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.992
-latex_coverage_ratio: 0.618
+latex_coverage_ratio: 0.613
+doc_brief: "A simple algebraic proof of the algebraic index theorem — In math.QA/0311303 B. Feigin, G. Felder, and B."
 ---
 We would like to mention that our result (theorem [\[index\]](#index){reference-type="ref" reference="index"}) is derived from the purely algebraic fact ([\[FFS\]](#FFS){reference-type="ref" reference="FFS"}) about the cohomology of Lie algebra of matrices over the Weyl algebra. In this respect our approach is very reminiscent of finding "local" proofs of the Riemann-Roch-Hirzebruch theorem [@ACKP], [@BS], [@BNT], [@BNT1], and [@FT]. Thus, in [@ACKP] and [@BS] the Riemann-Roch theorem for families of Riemann curves is deduced from purely algebraic facts about the cohomology of the Lie algebra of vector fields. In paper [@FT] this idea is generalized to higher dimensions.
 

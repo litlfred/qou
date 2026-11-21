@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1207.4990v3/blocks/prose-sec-004",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Fisher-Hartwig singularities. Fisher-Hartwig conjecture",
-  "pageStart": 29,
-  "pageEnd": 36,
-  "text": "../sections/sec-004-6-fisher-hartwig-singularities-fisher-hartwig-co.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1207.4990v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1207.4990v3",
+  "title": "New questions for SSLT",
+  "pageStart": 27,
+  "pageEnd": 29,
+  "text": "../sections/sec-004-5-new-questions-for-sslt.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1207.4990v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1207.4990v3/manifest.jsonld",
   "provenance": "ingested"
 }

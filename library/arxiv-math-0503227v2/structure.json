@@ -7,10 +7,11 @@
   "bytes": 185165,
   "pages": 14,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,22 +21,30 @@
    "stamp_date": "8 Aug 2006"
   },
   "doi": null,
-  "title": "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios By Jason Fulman",
-  "authors_raw": "Department of Mathematics, University of Southern Califor nia",
+  "title": "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios",
+  "authors_raw": "By Jason Fulman",
   "title_lines": [
    "An Inductive Proof of the Berry-Esseen Theorem for Character",
    "Ratios",
-   "Running head: Berry-Esseen Theorem for Character Ratios",
-   "By Jason Fulman"
+   "Running head: Berry-Esseen Theorem for Character Ratios"
   ],
-  "abstract": "Bolthausen used a variation of Stein\u2019s method to give an inductive proof of the Berry-Esseen theorem for sums of inde pendent, iden- tically distributed random variables. We modify this techn ique to prove a Berry-Esseen theorem for character ratios of a random repre sentation of the symmetric group on transpositions. An analogous result is p roved for Jack measure on partitions.",
+  "abstract": "Bolthausen used a variation of Stein’s method to give an inductive proof of the Berry-Esseen theorem for sums of independent, iden- tically distributed random variables. We modify this technique to prove a Berry-Esseen theorem for character ratios of a random representation of the symmetric group on transpositions. An analogous result is proved for Jack measure on partitions.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20190429144604-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20190429144604-04'00'"
+  },
+  "title_raw": "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios Submitted 3/9/05; Revised 8/6/06 By Jason Fulman Department of Mathematics, University of Southern California Los Angeles, CA 90089, USA fulman@usc.edu Abstract : Bolthausen us",
+   "outline": "1. Introduction",
+   "text": "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios By Jason Fulman"
  },
  "toc": [
   {
@@ -43,39 +52,168 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Central limit theorem for Plancherel measure",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Central limit theorem for Jack measure",
    "page": 9,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Acknowledgements",
    "page": 13,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 877,
+   "n_words": 120,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -83,8 +221,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 6524,
-   "n_words": 1213
+   "n_chars": 6424,
+   "n_words": 1118,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-central-limit-theorem-for-plancherel-measure",
@@ -93,8 +233,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 9,
-   "n_chars": 10680,
-   "n_words": 2569
+   "n_chars": 10332,
+   "n_words": 2243,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-3-central-limit-theorem-for-jack-measure",
@@ -103,8 +245,10 @@
    "level": 1,
    "page_start": 9,
    "page_end": 13,
-   "n_chars": 6701,
-   "n_words": 1523
+   "n_chars": 6497,
+   "n_words": 1324,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-4-acknowledgements",
@@ -113,8 +257,10 @@
    "level": 1,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 74,
-   "n_words": 12
+   "n_chars": 73,
+   "n_words": 11,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-references",
@@ -123,16 +269,26 @@
    "level": 1,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 4768,
-   "n_words": 723
+   "n_chars": 4728,
+   "n_words": 683,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 5,
-  "sections": 5,
-  "chars_total": 28747,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 28931,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -145,6 +301,11 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 1.0,
@@ -155,16 +316,16 @@
     {
      "id": "sec-001-2-central-limit-theorem-for-plancherel-measure",
      "title": "Central limit theorem for Plancherel measure",
-     "prose_ratio": 0.992,
-     "coverage_ratio": 0.996,
+     "prose_ratio": 0.977,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-3-central-limit-theorem-for-jack-measure",
      "title": "Central limit theorem for Jack measure",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 0.982,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },

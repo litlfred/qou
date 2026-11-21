@@ -1,6 +1,6 @@
 ### Proof
 
-**Step 1.** [`prop:depth-2-identification-bloch-suslin`](#prop:depth-2-identification-bloch-suslin)
+**Step 1.** [Depth-2 identification of $G^{(2)}(\mathcal{H}_q)$ with $K_3^{\mathrm{ind}}(F) \otimes \mathbb{Q}$](#prop:depth-2-identification-bloch-suslin)
 establishes that, *over any number field $F$*, the depth-2
 grouplike image $\tau_{\mathrm{arch}}(G^{(2)}|_F) / \mathcal{P}_1$ is
 isomorphic to $K_3^{\mathrm{ind}}(F) \otimes \mathbb{Q}$ via the
@@ -8,7 +8,7 @@ Bloch–Suslin regulator. **Theorem-level (no conditional).**
 
 **Step 2.** For $F = \mathbb{Q}(\zeta_6) = \mathbb{Q}(\sqrt{-3})$:
 $\dim_\mathbb{Q} K_3^{\mathrm{ind}}(\mathbb{Q}(\zeta_6)) \otimes \mathbb{Q} = 1$
-([`prop:borel-partial-resolution`](#prop:borel-partial-resolution)).
+([Borel's theorem partially discharges the depth correspondence's sharpness target — explicit dimensions](#prop:borel-partial-resolution)).
 The Bloch–Suslin regulator's image is the $\mathbb{Q}$-line spanned
 by $D(\zeta_6) = \mathrm{Cl}_2(\pi/3)$. **Theorem-level (Borel).**
 
@@ -17,7 +17,7 @@ $\mathrm{Li}_2^q(\zeta_6) \in G^{(2)}(\mathcal{H}_q)$ via the
 Markov trace yields, after Hoefsmit + Schur–Weyl combinatorics, the
 specific number $2 D(\zeta_6) = 2\,\mathrm{Cl}_2(\pi/3) \approx
 2.029\ldots$ — verified numerically at 50 dps in
-[`conj:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness).
+[Bring figure-8 volume as depth-2 grouplike value (50-digit numerical witness)](#conj:bring-figure-eight-depth-2-witness).
 **Theorem-level (explicit Hoefsmit/Markov computation).**
 
 **Step 4.** Murakami–Murakami 2001 \cite{murakami-murakami2001}:

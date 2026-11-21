@@ -1,0 +1,1 @@
+HH+(A) = H+(C.(A\ d) = Tor£μ, /c), where A is considered as a right A-module via p defined in (2.15), and k is considered as a left A-module via the counit ε. It is this new complex that we are going to use for computing the Hochschild

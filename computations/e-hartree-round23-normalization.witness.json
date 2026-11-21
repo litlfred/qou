@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T04:11:05.052314+00:00",
-  "commitSha": "92ad0c0c9c60eb0dd4c9c8c8088182a0b2d27ceb",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T04:37:51.022143+00:00",
+  "commitSha": "2f9ef58d2792aa97b41d03bd00bd30c583911694",
   "assertions": [
     {
       "name": "normalizer (q[9][10])² = α_EM^{-2} = two EM-exchange cost (cplx·cplx)",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 467,
+  "durationMs": 398,
   "computation": "e-hartree-round23-normalization",
   "scriptFile": "e_hartree_round23_normalization.py",
-  "scriptHash": "3e9711bbc7a0",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptHash": "80c3da2013e5",
+  "scriptCommitSha": "4368f190768ffff142d30a9a01fc47befb68ba1c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,14 +32,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -47,7 +47,7 @@
     ],
     "reproduce": "python3 -u computations/e_hartree_round23_normalization.py"
   },
-  "description": "conj:e-hartree round 23 (item 3, the normalization): reduces the round-20 normalizer (q[9]_q[10]_q)² = α_EM^{-2} to established structure rather than the refuted Mechanism B.  cplx = q[9][10] is the EM Bring-complex force-carrier complexity (prop:em-coupling-projection) = the q-DIMENSION-LAYER cost of one EM (2,2)-block exchange (round 11; NOT a per-crossing Markov weight, which round 10 refuted).  The normalizer is cplx·cplx = TWO such exchanges, the exponent 2 being the covalent Pauli count (2 shared electrons through the (2,2)=EM scalar block, prop:force-carrier-intertwining-correspondence).  So ρ_(2,2) = χ_(2,2)·α_EM² with α² = two-electron covalent EM cost — the normalization is FORCED by (i) em-coupling-projection per-exchange cost + (ii) Pauli-2, modulo ONE isolated natural assumption: the molecular EM exchange reuses the bare EM complexity cplx (same Bring complex).  That assumption is the honest residual (successor to the refuted Mechanism B); exact bookkeeping (cplx²=α^{-2}, ρ=C·α²) verified.  No fit, no experimental number.",
+  "description": "conj:e-hartree round 23 (item 3, the normalization): reduces the round-20 normalizer (q[9]_q[10]_q)² = α_EM^{-2} to established structure rather than the refuted Mechanism B.  cplx = q[9][10] is the EM Bring-complex force-carrier complexity (prop:em-coupling-projection) = the q-DIMENSION-LAYER cost of one EM (2,2)-block exchange (round 11; NOT a per-crossing Markov weight, which round 10 refuted).  The normalizer is cplx·cplx = TWO such exchanges, the exponent 2 being the covalent Pauli count (2 shared electrons through the (2,2)=EM scalar block, conj:force-carrier-intertwining-correspondence).  So ρ_(2,2) = χ_(2,2)·α_EM² with α² = two-electron covalent EM cost — the normalization is FORCED by (i) em-coupling-projection per-exchange cost + (ii) Pauli-2, modulo ONE isolated natural assumption: the molecular EM exchange reuses the bare EM complexity cplx (same Bring complex).  That assumption is the honest residual (successor to the refuted Mechanism B); exact bookkeeping (cplx²=α^{-2}, ρ=C·α²) verified.  No fit, no experimental number.",
   "contentBlock": "conj:e-hartree-categorical-derivation",
   "data": {
     "q0": "1.10997858275138080759166909561076887987449912187357873607281",

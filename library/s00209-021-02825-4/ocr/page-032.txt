@@ -1,0 +1,60 @@
+1390 J. Leake
+
+is real-rooted or identically zero. The proof of Lemma 7.3 then implies T is degenerate, a
+contradiction. Otherwise condition (b) of the lemma holds, and therefore the real roots of
+T[(wox — zoy)"] must be in J. So in fact, T maps 71 -stable evaluation symbols entirely
+to nonzero (H\J/)-stable polynomials or entirely to nonzero (H—\J)-stable polynomials.
+Finally, 7 maps /-rooted evaluation symbols to nonzero (H+\J)-stable and (H_\J)-stable
+polynomials by assumption. The complex characterization (Theorem 6.2) then implies (a) or
+(b).
+
+Otherwise, T is degenerate and T[V(n)] consists entirely of real-rooted polynomials.
+Condition (c) follows from Lemma 7.6.
+
+(ii) > (i). By Corollary 7.4, T preserves weak real-rootedness. If (a) or (b) holds, then the
+complex characterization (Theorem 6.2) and the fact that T restricts to a real operator imply
+T maps J-rooted polynomials to nonzero J-rooted polynomials.
+
+Otherwise (c) holds. For any real-rooted p, let A(p) and j4(p) denote the largest and
+smallest roots of p, respectively. Since q, r are top-degree monic, every convex combination
+of g and r has all its roots in the interval [j(q), A(r)] © J. Since yy - 2 > O (not both
+zero) holds for /-rooted polynomials, we have that T maps /-rooted polynomials to nonzero
+J-rooted polynomials. Oo
+
+Notice that this result immediately holds for other closed, connected regions J, J C R by
+the action of some appropriate @ € SL2(R). In fact, one can directly apply the action of @
+to conditions (ii)(a) and (ii)(b), due to the fact that our definition of the “universal” symbol
+works for any projectively convex regions. The only significant change comes when applying
+¢ to condition (ii)(c). Further, the only issue with (ii)(c) as it is written now is the requirement
+that p; and p2 be top-degree monic polynomials. Having zeros at infinity, for instance, means
+that a polynomial cannot ever be top-degree monic (as the leading homogeneous coefficient is
+0). There are ways to rewrite (ii)(c) that avoids this problem, but it is probably more intuitive
+to state the result as above and apply @ € SL2(R).
+
+Additionally, the result holds for open and half-open bounded intervals J C R, with a bit
+of tweaking to condition (ii)(c). (Again, the universality of the symbol means that (ii)(a) and
+(ii)(b) remain unchanged.) We state this in the following, where the action of @ € SL2(R)
+can be used to obtain similar results regarding open and half-open connected regions in R.
+
+Corollary 7.9 The previous theorem holds when J _C R is an open (or half-open) bounded
+interval, given the following alterations to condition (ii)(c): if the image of T is of dimension
+exactly two, then p1, p2 € Va(m) are top-degree monic J-rooted polynomials such that the
+largest root of p, and the smallest root of pz are in J (for py < p2), and w, # 0 (resp.
+W2 #0) whenever po (resp. p) is not J-rooted.
+
+Proof The condition that the largest root of p; and the smallest root of p2 are in J (and the
+fact that p) < pz) implies that ap; + Bp2 is J-rooted for all a, B > 0. Applying Lemma
+7.6 to J completes the proof. Oo
+
+We now give a few examples. The first demonstrates the necessity of the premise that T
+preserves weak real-rootedness.
+
+Example 7.10 Consider the operator T, : V(n) + V(n) defined via:
+Tn xty"* as Hmg,, [x(x — D(x — 2)--- (x —k + 1]
+
+By Proposition 7.31 in [7], J, preserves positive-rootedness for all n. However, Ty does not
+preserve real-rootedness, for example. In particular:
+
+T(x? + 2xy + y?) =x —y) + 2xy+ yar? txyty?
+
+D Springer

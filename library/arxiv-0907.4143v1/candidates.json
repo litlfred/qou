@@ -1,0 +1,63 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0907.4143v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "a2090d1e574b27dbd479637a4057c31e4a46e23696fbb431c9a30d31e5db87dd",
+  "file": "0907.4143v1.pdf"
+ },
+ "provenance": {
+  "title": "Soft and Supersoft X-ray Sources in Symbiotic Stars 1",
+  "authors": "Chunhua Zhua,b, Guoliang L\u00fcb, Zhaojun Wanga,b and",
+  "arxiv": {
+   "id": "0907.4143",
+   "version": "1",
+   "primary_class": "astro-ph.SR",
+   "stamp_date": "23 Jul 2009"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "computational-simulation": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "We carry out binary population synthesis via Monte Carlo simulation technique in order to obtain the properties of SSs and SSSs' population in SySs.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-004-basic-parameters-of-the-monte-carlo-simulation.md (p. 5-6)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-004-basic-parameters-of-the-monte-carlo-simulation.md",
+   "section_title": "Basic parameters of the Monte Carlo simulation",
+   "pages": "5-6",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-004-basic-parameters-of-the-monte-carlo-simulation.md (p. 5-6)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-004-01",
+   "block_iri": "library/arxiv-0907.4143v1/blocks/prop-sec-004-01",
+   "claim_id": "arxiv-0907.4143v1#prop-sec-004-01"
+  }
+ ]
+}

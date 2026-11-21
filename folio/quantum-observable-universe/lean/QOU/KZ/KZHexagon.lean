@@ -18,7 +18,7 @@ turns these pointwise relations into relations between constants; going once aro
 `G₀ = G₀ Q`, and invertibility of `G₀` near `0` gives `Q = 1`.
 
 -- Ref: [drinfeld1990] Leningrad Math. J. 1 (1990) 1419–1457, §2
--- Ref: [manuscript] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §2 Step 1
+-- Ref: [leitner2026] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §2 Step 1
 -/
 namespace QOU.KZ.KZHexagon
 open Set Filter Topology QOU.KZ.FuchsianFormal QOU.KZ.KZComplex QOU.KZ.KZHalfMonodromy

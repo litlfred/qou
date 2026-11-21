@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/hdr/sections/sec-029",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Bibliography",
+  "pageStart": 68,
+  "pageEnd": 75,
+  "contains": [
+    "library/hdr/blocks/prose-sec-029"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
+  "provenance": "ingested"
+}

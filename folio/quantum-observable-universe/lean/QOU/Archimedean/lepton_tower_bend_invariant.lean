@@ -68,7 +68,7 @@ parameter-free bridge needs `bend f ≈ 12.295` at `p = 1`, or `≈ 3.51` at
 `p = 2`, or `≈ 2.31` at `p = 3`.  Anything with `bend` near `1` requires a
 large exponent and is a fit, not a derivation.
 
--- Ref: [manuscript] quantum-observable-universe/predicted-spectra/lepton-continuant-recurrence.md
+-- Ref: [leitner2026] quantum-observable-universe/predicted-spectra/lepton-continuant-recurrence.md
 -/
 
 namespace QOU.Archimedean

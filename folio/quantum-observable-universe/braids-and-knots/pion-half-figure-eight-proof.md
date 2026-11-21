@@ -18,5 +18,8 @@ $$
 
 The eigenvalues are therefore identical:
 $\lambda = \tfrac{-(h^2+1) \pm \sqrt{(h^2+1)^2 - 4}}{2}$,
-giving complex conjugates on the unit circle with the same
-phase $\theta = \arccos\bigl(-(h^2+1)/2\bigr)$.  $\square$
+so the two operators have the same eigenvalues and hence the same
+phases. For $h^2 < 1$, that is $\varphi^{-1} < q < \varphi$, they are
+complex conjugates on the unit circle with phase
+$\theta = \arccos\bigl(-(h^2+1)/2\bigr)$; for $h^2 \geq 1$ they are
+real and negative, with phase $\pi$.  $\square$

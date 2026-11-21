@@ -1,0 +1,48 @@
+440 Integration on manifolds
+
+Proposition A.3. Suppose Q is a holomorphic function of d complex variables
+and let Vg be the affine holomorphic variety Vg = {z € C4 : Q(z) = O}. If
+VQ(z) is nonvanishing for every z € Vg then VQ is an embedded real (2d—2)-
+manifold. ia)
+
+Remarks. (i) Using the complex implicit function theorem, instead of map-
+ping to R~ and using the real implicit function theorem, shows that Vg will
+be a complex (d — 1)-manifold. We do not need this extra structure at present.
+(ii) When Q is the product of distinct irreducible polynomials then this result
+is sharp: if V Q vanishes at some z € Vg then no neighborhood of z in Q is
+diffeomorphic to C4~!.
+
+Exercise A.1. For which polynomials Q is Vg a manifold?
+
+Q) Q(x, y) = x? +y +z?—c, where c is a constant. Does the value of c matter?
+(2) Oy) = y> — 7
+
+(3) Oxy) = 2 - (xt yP
+
+(4) Oxy) = 1-x-y-xy
+
+Example A.4. The unit torus in C4 is the set {z € C4 : |z;| = 1 forall 1 < j<
+d}. Identifying C4 with R~, this set is defined by xj +7 = 1 forall 1 < j<d,
+and is thus always a real d-manifold. On the other hand, the unit torus is never
+a complex manifold. When d is odd this follows immediately from the fact that
+it has the wrong dimension to be a complex manifold (when d is even then the
+concept of tangent spaces, described below, can be used to prove the unit torus
+is not a complex manifold). See Exercise A.14 for another example of lack of
+complex structure. 4
+
+A.1.2 Abstract manifolds and projective spaces
+
+Instead of working directly with subsets of R¢ or C4, it is possible to define
+abstract manifolds whose ground sets can be anything. Although the Whitney
+embedding theorem states that an abstract d-manifold can be embedded in R™4,
+in some cases it is more natural to consider a definition requiring only a lo-
+cal embedding into some real or complex space. In particular, expanding to
+abstract manifolds helps us discuss projective spaces, which arise in the for-
+mulation of critical points at infinity and the singular integrals of Chapter 11.
+
+Let M be a second-countable Hausdorff space. A chart of dimension d on
+M is an open subset U Cc M and a homeomorphism ¢ from U onto an open
+subset of R¢. We say that the chart (U,) contains p if p € U. Two charts
+(U, ¢) and (V, W) are compatible if the transition maps
+
+gdow!:WUNV)>dUNV) and ypog!: UNV) > WUNV)

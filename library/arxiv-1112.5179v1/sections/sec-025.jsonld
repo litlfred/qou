@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1112.5179v1/sections/sec-025",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Symplectic action",
+  "pageStart": 62,
+  "pageEnd": 65,
+  "contains": [
+    "library/arxiv-1112.5179v1/blocks/prose-sec-025"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1112.5179v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1112.5179v1/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -40,7 +40,7 @@ sharper statement than the audit's prose, and the reason this file exists.
 
 Nothing here derives `A_ω`; these are structural facts about the channel.
 
--- Ref: [manuscript] docs/audits/2026-08-01-3bp8-entirety-and-channel-correctness.md
+-- Ref: [leitner2026] docs/audits/2026-08-01-3bp8-entirety-and-channel-correctness.md
 -- Ref: [garoufalidis-gu-marino2021] GGM 2012.00062
 -/
 

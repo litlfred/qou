@@ -36,7 +36,7 @@ Archimedean (ℝ): `Real.sqrt`, `arccos`, ordering `0 < z` — §7c.
 
 -- Ref: [thurston1978] Ch. 7 (the upper half-space model and its conformal metric)
 -- Ref: [milnor1982] §1 (the metric `ds² = (dx²+dy²+dz²)/z²`)
--- Ref: [manuscript] beans qou-473l (T2 File 1), qou-idvt (T2)
+-- Ref: [leitner2026] beans qou-473l (T2 File 1), qou-idvt (T2)
 -/
 
 import Mathlib.Geometry.Euclidean.Angle.Unoriented.Basic

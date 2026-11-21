@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-elliptic-stability-locus",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:elliptic-stability-locus",
+  "kind": "remark",
+  "title": "The nuclear degeneracy locus is an elliptic curve over the Bring's surface",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-integer-stability",
+    "papers/quantum-observable-universe/blocks/def-color-tube-fibers",
+    "papers/quantum-observable-universe/blocks/prop-neutron-prediction-comparison",
+    "papers/quantum-observable-universe/blocks/prop-beta-stability",
+    "papers/quantum-observable-universe/blocks/prop-color-elliptic",
+    "papers/quantum-observable-universe/blocks/prop-descartes-elliptic-curve"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-integer-stability",
+  "tags": [
+    "elliptic-curve",
+    "stability",
+    "diophantine",
+    "color-fibration",
+    "coulomb",
+    "pairing",
+    "bring-surface"
+  ],
+  "leanRef": "qou:QOU.EllipticStabilityLocus.EllipticStabilityLocus",
+  "text": "elliptic-stability-locus.md",
+  "leanSource": "elliptic-stability-locus.lean",
+  "provenance": "authored"
+}

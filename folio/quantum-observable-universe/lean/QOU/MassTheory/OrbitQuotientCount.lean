@@ -47,7 +47,7 @@ one of the cycle factors** — which is exactly the split `orbitCount` is define
 so the bridge is what makes `orbitCount` a genuine count of orbits rather than a
 `cycleType` bookkeeping device.
 
--- Ref: [manuscript] bean qou-uinl; the permutation character on a tensor power is
+-- Ref: [leitner2026] bean qou-uinl; the permutation character on a tensor power is
 -- classical, and the `d^{c(σ)}` form is standard in any treatment of Schur–Weyl.
 -/
 

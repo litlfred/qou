@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-ph-0012035v3
-doc_title: "arXiv:math-ph/0012035v3 16 Jan 2002"
+doc_title: "Non-Abelian Stokes theorem in action"
 section_id: sec-004-13-contents
 section_title: "Contents"
 section_number: 1.3
@@ -8,7 +8,9 @@ pages: 4-7
 source_pdf: 0012035v3.pdf
 source_sha256: 06a4c8096c8ebb10
 toc_source: inferred
+doc_brief: "Non-Abelian Stokes theorem in action — In this short review main issues related to the non-Abelian Stokes theorem have been addressed."
 ---
+Contents
 The propert part of the paper consists of two sections. The ﬁrst section is de-
 voted to the non-Abelian Stokes theorem itself. In the beginning, we introduce
 necessary notions and conventions. The operator version of the non-Abelian
@@ -172,4 +174,3 @@ with an explicit parametrization, or some variations of thereof. Here, the ori-
 ented smooth path L starting at the point x′ and endng at the point x′′ is
 parametrized by the function xi(t), where t′ ≤t ≤t′′, and x′i = xi(t′),
 x′′i = xi(t′′).
-2.1

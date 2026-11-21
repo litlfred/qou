@@ -49,7 +49,7 @@
 
   -- Ref: [milnor1982] Appendix (the circumcentre subdivision)
   -- Ref: [thurston1978] Ch. 7
-  -- Ref: [manuscript] beans qou-w3eg (H4-5), qou-5gai (H4)
+  -- Ref: [leitner2026] beans qou-w3eg (H4-5), qou-5gai (H4)
 -/
 
 import QOU.Archimedean.OrthoschemeRotation

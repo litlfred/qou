@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-031",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Annexe A. Relations algébriques dans les corps de solutions",
-  "pageStart": 45,
-  "pageEnd": 48,
-  "text": "../sections/sec-031-annexe-a-relations-algébriques-dans-les-corps-de.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/aif-2000-50-4-1021-0",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/aif-2000-50-4-1021-0",
+  "title": "Un exemple irrégulier",
+  "pageStart": 40,
+  "pageEnd": 41,
+  "text": "../sections/sec-031-53-un-exemple-irrégulier.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2000-50-4-1021-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2000-50-4-1021-0/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1512.04993v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1512.04993v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1512.04993v2",
+  "title": "Complexity, action, and black holes",
   "contains": [
+    "library/arxiv-1512.04993v2/sections/sec-front-matter",
     "library/arxiv-1512.04993v2/sections/sec-000",
     "library/arxiv-1512.04993v2/sections/sec-001",
     "library/arxiv-1512.04993v2/sections/sec-002",
@@ -51,10 +52,15 @@
     "library/arxiv-1512.04993v2/sections/sec-037",
     "library/arxiv-1512.04993v2/sections/sec-038",
     "library/arxiv-1512.04993v2/sections/sec-039",
-    "library/arxiv-1512.04993v2/sections/sec-040"
+    "library/arxiv-1512.04993v2/sections/sec-040",
+    "library/arxiv-1512.04993v2/sections/sec-041",
+    "library/arxiv-1512.04993v2/sections/sec-042",
+    "library/arxiv-1512.04993v2/sections/sec-043",
+    "library/arxiv-1512.04993v2/sections/sec-044",
+    "library/arxiv-1512.04993v2/sections/sec-045"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -64,7 +70,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1512.04993v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1512.04993v2.pdf",
     "source_sha256": "b8047bc3d3815406ddc69a4c17fe8d9f80a16c0dc235e5dbeb242259e451d8d3",
     "pages": 70,

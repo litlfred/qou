@@ -65,7 +65,7 @@ caller-supplied.
 
 ## References
 
-- [manuscript] §3 Lifting and Descent
+- [leitner2026] §3 Lifting and Descent
 -/
 
 namespace QOU
@@ -78,7 +78,7 @@ proposition over a caller-supplied algebra map.
 **Named, not asserted.** An algebra homomorphism rather than a linear one,
 matching the `.md`; see the module docstring for the two claims of the lemma
 that remain unencoded. -/
--- Ref: [manuscript] §3 Lifting and Descent
+-- Ref: [leitner2026] §3 Lifting and Descent
 def descent_surjective {R A B : Type*} [CommSemiring R] [Semiring A] [Semiring B]
     [Algebra R A] [Algebra R B] (descentMap : A →ₐ[R] B) : Prop :=
   Function.Surjective descentMap
@@ -91,7 +91,7 @@ tower `{Aₙ}_{n ≥ 0}`.
 
 This is why the lemma is stated for a tower rather than a single pair, and it
 is the one consequence obtainable without constructing `End_C(Aₙ)`. -/
--- Ref: [manuscript] §3 Lifting and Descent
+-- Ref: [leitner2026] §3 Lifting and Descent
 theorem descentSurjective_comp {R A B C : Type*} [CommSemiring R]
     [Semiring A] [Semiring B] [Semiring C]
     [Algebra R A] [Algebra R B] [Algebra R C]

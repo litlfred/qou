@@ -1,6 +1,6 @@
 {
   "$schema": "block-qa/v1",
-  "label": "prop:alpha-k-derivation-procedure",
+  "label": "conj:alpha-k-derivation-procedure",
   "kind": "proposition",
   "paths": {
     "ts": "folio/quantum-observable-universe/mass-theory/alpha-k-derivation-procedure.ts",
@@ -48,6 +48,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "fa2bb65937f8",
+          "ts": "e61aeab1bc5e",
+          "lean": "a089b9a282ab",
+          "lean_statement": "9a4ea1762e55"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:28.404Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "alpha-k-derivation-procedure.lean:55-57 `theorem alpha_k_derivation_procedure (A : Matrix (Fin p) (Fin p) ℝ) [Invertible A] (b) : ∃! y, A *ᵥ y = b` — generic lemma; invertibility of the character matrix (the claim, .md:18) is a hypothesis; tr_M, χ_λ and tr_M(w_μ)=z^{n−len μ} unencoded; ℝ instead of R(q)",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2121,6 +2139,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-19T21:29:25.906Z",
+  "updated_at": "2026-11-15T21:57:28.404Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
