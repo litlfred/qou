@@ -164,6 +164,22 @@
         "severity": "critical",
         "evidence": "CRITICAL: S↔P: the displayed dual is not the dual of this primal. x is free (md:5), so stationarity gives the equality y_0 + Σ_i G_ji y_i + s_j = t_j. The md writes \"y_0 + Σ G_ji y_i − s_j ≤ t_j\" (md:69) and the effective dual \"y_0 + Σ G_ji y_i ≤ t_j\" (md:86), which is the dual of the x ≥ 0 program. Exact counterexample (sympy, H_3, convention D, q = 11/10, n_target = 1; a weak-duality violation). t = (1, 1331/2210, 1331/2210, 1771561/4884100, 1771561/4884100, 32797171/48841000). The radical vector v = (−q³, q², q², −q, −q, 1) gives the primal-feasible x = (1331, −1210, −1210, 1100, 1100, −1000)/111: Σx = 1, Gx = 0, x ≥ −M for M ≥ 1210/111, objective 0. Meanwhile y = 0, s = 0, y_0 = 1771561/4884100 is feasible for both displayed duals with value > 0. Dual > primal, so the \"strong duality\" display (md:95-98) and \"the dual certificate (y_0*, y*) certifies optimality\" (md:26) are false as written. The prf proves strong duality only abstractly (prf:7-9) and never derives the dual. The prf also contradicts the statement's degeneracy section: \"the Borromean link B_3 as the unique LP vertex\" (prf:41-42) against md:49-56 \"The set of minimisers is not a point\". The active set {σ_0, L_-} (prf:37) is read off the non-optimal NF(B_3).",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: other"
+      },
+      {
+        "field_hash": {
+          "md": "d1196a6c733c",
+          "ts": "e961e98e2412"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:16:10.365Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "minor",
+        "evidence": "Full review 2026-11-21. The statement block (operator-selection-lp.md) was repaired: the dual is now derived with equality constraints y_0 + sum_i G_ij y_i + w_j = t_j (md:70-90), the x>=0 inequality form is explicitly rejected, and a degeneracy section proves the optimum is 0 (G_1j = t_j) and the minimiser set is a face, not a point. The proof no longer claims 'B_3 as the unique LP vertex' and the active set read off NF(B_3) is gone, so the earlier critical findings (weak-duality counterexample at H_3, q=11/10; vertex-uniqueness contradiction) no longer apply. The prf's argument - non-empty, bounded (Sum x = n_target with x_i >= -M bounds every x_i above), hence LP strong duality - is valid. Remaining gaps: (1) prf:3-6 asserts G e_1 = t > 0 componentwise 'for generic q' without proof; feasibility needs t_j >= 0 for the rescaled identity, which is an archimedean sign claim on traces that is neither proved nor obviously true for all q; (2) the complementary-slackness display omits the box multipliers w_i(x_i + M) = 0; (3) the higher-strand table still lists d = n! before the box that corrects it to C_n, so the section reads as self-contradicting; the physical-regime column is interpretation, not used as a premise. No ruling conflicts."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1511,6 +1527,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:27.512Z",
+  "updated_at": "2026-11-21T08:16:10.365Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

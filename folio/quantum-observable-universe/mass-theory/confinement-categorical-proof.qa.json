@@ -175,6 +175,22 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "788b37457743"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:17:36.660Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "minor",
+        "evidence": "Full review 2026-11-21 (earlier evidence was empty). Steps (1)-(3) are standard and sound for A = H_n(q) semisimple at generic q: Hochschild cohomology of a separable algebra vanishes in degree >= 1, so only HH^0 = Z(A) survives; a trace vanishes on [A,A] and HH_0 = A/[A,A] is identified with Z(A) for a symmetric semisimple algebra; Wedderburn splits the integral blockwise. Gaps: (a) the statement's 'colored non-central elements vanish cohomologically' conflates HH^0 = Z(A) (a cohomology group) with elements of A; the proof shows the former, not a statement about elements. (b) mu(e_lambda) = w_lambda names the weight without saying which trace it is (Markov y_lambda times dim, or a Plancherel/Molien weight), so the identification is notational. (c) After the box, the 'confinement reading' and the Vol(B3) = 8G matching dim su(3) = 8 sentence are interpretation and numerology, not premises of the proof; they are not used as steps. No empirical premise; no ruling conflict."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -974,7 +990,7 @@
           "in_degree": 0,
           "cone_size": 12,
           "depth": 10,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1192,7 +1208,7 @@
         "reviewed_at": "2026-08-15T10:31:00.335Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
-        "evidence": "1 negation-contrast construction(s): \", not independent ingredients.\" \u2014 state the positive claim directly"
+        "evidence": "1 negation-contrast construction(s): \", not independent ingredients.\" — state the positive claim directly"
       },
       {
         "field_hash": {
@@ -1539,6 +1555,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T14:57:52.556Z",
+  "updated_at": "2026-11-21T08:17:36.660Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -1683,6 +1683,24 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "Lean proves only n=4: content-genfun-palindromic.lean:51-52 `def C4 (q : Rˣ) : R := ↑(q ^ (6 : ℤ)) + 3 * ↑(q ^ (2 : ℤ)) + 2 + …` and :57 `theorem C4_palindromic`; statement .md:3 'For n ≥ 1' and .md:17-20 bar-even claim for all n; .md:39-40 'The Lean sibling here records the fully machine-checked n=4 instance'",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
+      },
+      {
+        "field_hash": {
+          "md": "5e1aaefa4c50",
+          "ts": "a5ce5e6daf47",
+          "lean": "7594948a8d7c",
+          "lean_statement": "d7066e7e693c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:17:16.125Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "Full review 2026-11-21. Statement is for all n >= 1 (md:3-22); lean.ref QOU.Mass.ContentGenfun.C4_palindromic proves only the n = 4 instance (C4 written out explicitly, content-genfun-palindromic.lean:51-57). The md now says the conjugation fact 'is proved for every n' (md:31-34). What exists is the abstract lemma pair QOU/Common/AntiInvolutionPalindrome.lean:42 palindromic_sum_of_antiInvolution and :60 first_moment_zero_of_antiInvolution over an arbitrary Finset with an involution sigma satisfying w(sigma i) = w i and e(sigma i) = -e i as HYPOTHESES. No file instantiates it at partitions of n with sigma = conjugation (grep: only its own file references it), and f^{lambda'} = f^lambda is not proved anywhere in QOU (MathlibExt/ContentSumNStatistic gives contentSum = n(lambda') - n(lambda), which yields the content half only). The O((q-1)^2) bar-even claim and C_n(1) = I(n) are not encoded. So the general-n proposition is unformalised and md:31-34 overstates what is proved; improvement since the last review is the pointer to a real abstract lemma. No ruling conflicts."
       }
     ]
   },
@@ -1692,6 +1710,6 @@
     "lean": "7594948a8d7c",
     "lean_statement": "d7066e7e693c"
   },
-  "updated_at": "2026-11-15T21:57:28.715Z",
+  "updated_at": "2026-11-21T08:17:16.125Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

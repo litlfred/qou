@@ -249,6 +249,21 @@
         "reviewed_at": "2026-11-16T07:13:24.165Z",
         "reviewed_sha": "5f209b510c5b50294fd755d263c17c75d49be3ed",
         "evidence": "Checked: sigma_k J_k = J_{k+1} sigma_k^{-1} and sigma_k J_{k+1} = h J_{k+1} + J_k sigma_k sum to commutation with J_k+J_{k+1}; Step 1 cites Mathas Ch.3."
+      },
+      {
+        "field_hash": {
+          "md": "632010dd7ec0",
+          "ts": "649c65099147"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:17:59.998Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-16 review: cross-ref label and witness filename replaced by descriptions; the commutation argument unchanged. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Checked: sigma_k J_k = J_{k+1} sigma_k^{-1} and sigma_k J_{k+1} = h J_{k+1} + J_k sigma_k sum to commutation with J_k+J_{k+1}; Step 1 cites Mathas Ch.3."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1737,6 +1752,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-16T07:13:24.165Z",
+  "updated_at": "2026-11-21T08:17:59.998Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

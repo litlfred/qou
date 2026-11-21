@@ -16,8 +16,23 @@
         "reviewed_at": "2026-11-17T00:43:10.477Z",
         "reviewed_sha": "0eba507a077106abc6597936dd5f1cfb3cff653b",
         "evidence": "Each step follows; checked the G1 quadratic relation and the (1,1) commutator entry = 1 by hand."
+      },
+      {
+        "field_hash": {
+          "md": "c2798fd5389c",
+          "ts": "5f4997f35509"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:15:55.595Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-17 review: Lean declaration names removed and sentences reworded; same items and same standard-fact citation. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Each step follows; checked the G1 quadratic relation and the (1,1) commutator entry = 1 by hand."
       }
     ]
   },
-  "updated_at": "2026-11-17T00:43:10.477Z"
+  "updated_at": "2026-11-21T08:15:55.595Z"
 }

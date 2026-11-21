@@ -1143,6 +1143,24 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "wedderburn-mass-formula.lean:56-60 `def atomicMass … := Z * m_p + N * m_n + Z * m_e + α * (Φ₁ + β₂ * Φ₂ + β₃ * Φ₃)` — formula as definition, no theorem; duplicate name in knot-particle-generation.lean:125",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
+      },
+      {
+        "field_hash": {
+          "md": "77c451e2291c",
+          "ts": "f2b17322417f",
+          "lean": "920312b73df1",
+          "lean_statement": "58e7549be632"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:16:30.190Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "Full review 2026-11-21. lean.ref is still QOU.WedderburnMass.atomicMass, a def (wedderburn-mass-formula.lean:56-60) that writes the formula Z m_p + N m_n + Z m_e + alpha(Phi1 + beta2 Phi2 + beta3 Phi3) as a definition over free fields of ThreeInvariants / MassParams; a theorem block whose ref is a definition does not prove that the atomic mass equals this. Phi1, Phi2, Phi3 are free ring elements with no transfer matrix M_i, no ln, no z; beta3 is a free field, not h_A^2. Improved: the md now limits the three-block claim to n <= 3, and that restriction is proved (extremal_exhausts_iff_n_le_three, non_extremal_irreps_at_n_eq_four, adjacentChain_twice_lt_allPairs_twice, all by decide/omega on lookup tables partitionCountLow/extremalIrrepCount, i.e. counts not representation theory), and the dependency 2 beta3 + beta2 + 6 = 0 is proved as QOU.Mass.WedderburnMassFormulaCoefficients.beta3_of_beta2. Remains: the central identity is unproved; the Lean module header still says 'These are complete: no fourth invariant exists' (lean:8-9), contradicting md:46-50; md:62 'zero fitted parameters' while m_p and m_n are free inputs (MassParams fields); and the absolute-mass target m(Z,N) in MeV is excised by owner ruling 2026-08-11. No conflict with the photon/electron/quark rulings."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2129,6 +2147,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:25.899Z",
+  "updated_at": "2026-11-21T08:16:30.190Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
