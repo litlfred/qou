@@ -230,3 +230,17 @@ are the same under both options.
 **My judgement:** option 2. It is the projection that keeps split words split, which is the
 property every route relied on. Under option 1 the signal comes from the projection rather than
 from the braid.
+
+## 5. Pre-registered priors, scored
+
+| prior | outcome |
+|---|---|
+| PR1 colouring U ⇒ `t₂ ≡ 0` | held: exact 0 on every P1 word (`pairSum_eq_of_total_eq`) |
+| PR2 sector-connected ≡ 0 | held for the colour-block sectors, on every colouring tested (probe check + `pairSum_union`) |
+| PR3 raw connected ≠ 0 on W0 | held: −4.98·10⁻⁵ (A), 1.96·10⁻⁴ (B) |
+| PR4 covariant ≠ 0, vanishes at q = 1 | held: every `c_λ − c̄ ∝ (q²−1)` |
+| PR5 P4 two-term separates n⊗ν / p⊗e⁻ on W0 | held: 0.00869 (A) |
+| PR6 P3 unchanged | held (one-dimensional space) |
+| PR7 no `Q_β` without choosing `c_em` | held |
+
+None of the numbers were used to choose between colourings, projections or words.
