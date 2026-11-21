@@ -15,8 +15,8 @@ namespace QOU.Archimedean
 
 
 /-- Abstract context for the `skew_poisson_integration` claim — manuscript-themed
-    typed fields below; `claim_i` / `claim_ii` / `claim_iii` carry the three
-    numbered sub-claims of the manuscript proposition. -/
+    typed fields below. The three sub-claims are stated in
+    `skew_poisson_integration`, not carried here. -/
 class SkewPoissonIntegrationContext where
   /-- Categorical object / monoidal structure (formal group `H`). -/
   H : Type
@@ -24,27 +24,16 @@ class SkewPoissonIntegrationContext where
   G : Type
   /-- Reduction mod `p` of `G`. -/
   G_mod_p : Type
-  /-- Manuscript sub-claim (i): `G ⊗_{ℤ_p} 𝔽_p ≅ H`. Captured as the
-      existence of bijections going each way. -/
-  claim_i_reduction_isomorphism :
-    ∃ (f : G_mod_p → H) (g : H → G_mod_p),
-      Function.LeftInverse g f ∧ Function.RightInverse g f
   /-- Distribution algebra type `Dist(G)`. -/
   DistG : Type
   /-- Distribution algebra type `Dist(H)`. -/
   DistH : Type
   /-- Deformation map `Dist(H) → Dist(G)`. -/
   deformation : DistH → DistG
-  /-- Manuscript sub-claim (ii): the deformation map is injective
-      (Gröbner–Shirshov deformation preserves distinctness). -/
-  claim_ii_distribution_deformation : Function.Injective deformation
   /-- Frobenius LHS `(id ⊗ m) ∘ (Δ ⊗ id)` applied to `x : DistG`. -/
   Frob_LHS : DistG → DistG
   /-- Frobenius RHS `Δ ∘ m` applied to `x : DistG`. -/
   Frob_RHS : DistG → DistG
-  /-- Manuscript sub-claim (iii): Frobenius relation is preserved
-      under the deformation `Frob_LHS = Frob_RHS`. -/
-  claim_iii_frobenius_preserved : ∀ x : DistG, Frob_LHS x = Frob_RHS x
 
 /-- **Manuscript statement** (full body):
 
@@ -64,15 +53,21 @@ $\pi_<$ a skewed-Poisson structure on $H$.  Then there exists a
    *strong multiplicativity* condition: the Frobenius relation
    $(\mathrm{Id}\otimes m)\circ(\Delta\otimes\mathrm{Id}) = \Delta\circ m$ is preserved under the deformation.
 
-    The Lean encoding below splits the manuscript claim into named
-    sub-claim fields; concretisation requires per-block manuscript
-    translation. -/
+    Stated, not proved. Until 2026-11-21 the context class carried the
+    three sub-claims as fields `claim_i_reduction_isomorphism`,
+    `claim_ii_distribution_deformation`, `claim_iii_frobenius_preserved`,
+    and the theorem returned them (round-trip audit pass 2, C17). The
+    fields are deleted. The context as it stands is opaque data with no
+    formal-group structure, so the statement is not provable from it; a
+    proof needs the formal groups, `Dist`, and the Gröbner–Shirshov
+    deformation as actual structures. -/
 -- Ref: [leitner2026] quantum-observable-universe/models-of-qous/skew-poisson-integration.ts
 theorem skew_poisson_integration [ctx : SkewPoissonIntegrationContext] :
     (∃ (f : ctx.G_mod_p → ctx.H) (g : ctx.H → ctx.G_mod_p),
       Function.LeftInverse g f ∧ Function.RightInverse g f) ∧
     Function.Injective ctx.deformation ∧
-    (∀ x : ctx.DistG, ctx.Frob_LHS x = ctx.Frob_RHS x) :=
-  by refine ⟨ctx.claim_i_reduction_isomorphism, ctx.claim_ii_distribution_deformation, ctx.claim_iii_frobenius_preserved⟩
+    (∀ x : ctx.DistG, ctx.Frob_LHS x = ctx.Frob_RHS x) := by
+  -- Ref: [fred2005] Integration of Skewed-Poisson Structures on Non-commutative Formal Groups
+  sorry
 
 end QOU.Archimedean
