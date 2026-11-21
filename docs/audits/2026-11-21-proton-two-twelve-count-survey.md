@@ -132,3 +132,38 @@ weight-space files, not itself derived here.
 **What remains.** With the 3 derived, the −12 holds iff the Reeb square is the scalar −k²·𝟙 with
 k = ±2 (`twelve_iff_weight_two`, `large_weight_misses`). Neither the scalar form nor k = 2 is
 derived. The current hypothesis `hReebP` is not scalar (`ProtonTwelveOrigin.reebSlot_not_constant`).
+
+## §4. The Reeb weight k, on the KZ realisation (option 1, 2026-11-21)
+
+**Question.** In `−12 = −k²·3`, §3 derived the 3. Does the corpus fix `k`?
+
+**What fixes R.** In the two-term bridge, `R = L_p.dirac.reeb` is free data
+(`CategoricalDiracOperator.reeb`). The corpus has one concrete realisation:
+`LagrangianKZIdentification.arnold_euler`. It applies on the KZ sector, under that file's
+postulates P1–P3, none of which is derived. There the Reeb part is the Euler contraction
+`R = Σ_{i<j} 2κ(P_{ij} − c)`. Here `q = e^{2πiκ}` (Lean normalisation, §5.2 of the
+Drinfeld–Kohno audit), and the shift `c` is free: the Hecke factorisation holds for every `c`.
+
+**Results.** Lean file `QOU/MassTheory/ProtonReebKZWeight.lean`: sorry-free, `lean -DautoImplicit=false` exit 0. Exact sympy twin: `computations/probes/proton_reeb_kz_weight_probe.py`.
+
+1. On `W_p`, `Σ_{i<j} P_{ij}` is the all-ones matrix `J` (`transpositionSum_eq_ones`).
+2. `R∘R` is scalar on `W_p` **iff** `c = 1/2`, for `κ ≠ 0` (`reeb_sq_scalar_iff`). That value is the
+   traceless 𝔰𝔩₂ Casimir `P − ½`. This answers the "Reeb square is scalar" gap of §3
+   conditionally: it holds on this realisation exactly in the 𝔰𝔩₂ normalisation. It fails at
+   the 𝔤𝔩₂ value `c = 0`, where the eigenvalues are 36κ² and 0.
+3. At `c = 1/2`, `R∘R = 9κ²·𝟙`, with trace `27κ²` (`trace_reeb_sq_sl2`).
+4. That trace equals −12 iff `9κ² = −4`, i.e. `k² = −9κ² = 4` (`trace_eq_neg_twelve_iff`).
+
+**Comparison point (not a proof input).** At the proton pin `q₀`,
+`κ₀ = ln q₀ /(2πi)`. This gives `k² = 9(ln q₀)²/(4π²) ≈ 0.002482`, so `k ≈ 0.0498`. Getting
+`k = 2` would need `q = e^{±4π/3}` (≈ 65.94 or 0.01516).
+
+**Verdict: scope (a).** On the corpus's one concrete realisation of the Reeb part, `k = 2` is
+not produced at the pinned `q₀`; it misses by a factor ≈ 40. The 12 therefore stays a fit
+(owner ruling 2026-11-18).
+
+What this does **not** exclude:
+- a different realisation of `R`;
+- a different coupling normalisation, i.e. a rescaled `κ`.
+
+A rescaling chosen so that `k = 2` would be selection against the target.
