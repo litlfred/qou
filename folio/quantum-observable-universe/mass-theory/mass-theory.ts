@@ -223,10 +223,6 @@ export default chapter({
         "quantum-dilog-convergence",
         "brane-tower-z-habiro",
         "brane-tower-z-habiro-table1-data",
-        "hoefsmit-ew-cell-content",
-        "hoefsmit-ew-cell-content-context",
-        "hoefsmit-ew-cell-content-table1-data",
-        "hoefsmit-ew-cell-content-table2-data",
       ],
     }),
 

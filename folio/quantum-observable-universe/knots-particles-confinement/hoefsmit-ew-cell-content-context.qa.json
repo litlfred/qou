@@ -1,10 +1,10 @@
 {
   "$schema": "block-qa/v1",
-  "label": "tbl:hoefsmit-ew-cell-content-table1-data",
-  "kind": "table",
+  "label": "rem:hoefsmit-ew-cell-content-context",
+  "kind": "remark",
   "paths": {
-    "ts": "folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content-table1-data.ts",
-    "md": "folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content-table1-data.md"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/hoefsmit-ew-cell-content-context.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/hoefsmit-ew-cell-content-context.md"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -22,8 +22,8 @@
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -40,8 +40,8 @@
     "voice-probe-narrative": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -58,8 +58,8 @@
     "cite-named-theorem": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -76,8 +76,8 @@
     "voice-agent-speak": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -94,8 +94,8 @@
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -112,8 +112,8 @@
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -130,8 +130,8 @@
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -148,8 +148,8 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -166,8 +166,8 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -184,8 +184,8 @@
     "voice-scholarly-default": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -202,8 +202,8 @@
     "voice-title-scholarly": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -220,8 +220,8 @@
     "voice-ai-slop": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -238,8 +238,8 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -256,8 +256,8 @@
     "voice-status-section": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -274,8 +274,8 @@
     "framework-canonical": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -292,8 +292,8 @@
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "n/a",
         "reviewer": {
@@ -311,8 +311,8 @@
     "proof-no-trivial-skeleton": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "n/a",
         "reviewer": {
@@ -331,8 +331,8 @@
     "canonical-calibration-count": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -346,11 +346,29 @@
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
+    "canonical-no-numerology": [
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "3871b924cf65",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
     "canonical-witness-pinned": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -367,8 +385,8 @@
     "canonical-script-not-deprecated": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -385,8 +403,8 @@
     "canonical-dilogarithm-context": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -403,8 +421,8 @@
     "canonical-no-hardcoded-observable": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -418,11 +436,47 @@
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
+    "canonical-ck-tiered-not-binary": [
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "5fb9d70acf54",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "canonical-no-negative-result-in-paper": [
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "5c2b3e6cb87e",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
     "compute-witness-exists": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -439,8 +493,8 @@
     "compute-lp-dual-present": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -457,8 +511,8 @@
     "detangler-no-forward-ref": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -475,8 +529,8 @@
     "detangler-section-band": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "n/a",
         "reviewer": {
@@ -493,8 +547,8 @@
     "detangler-no-xchapter-fwd": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "n/a",
         "reviewer": {
@@ -511,8 +565,8 @@
     "detangler-archimedean-wall": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "n/a",
         "reviewer": {
@@ -530,8 +584,8 @@
     "detangler-block-tanglement": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -552,8 +606,8 @@
           "cone_size": 231,
           "depth": 52,
           "pagerank": 7.4e-05,
-          "edge_span_max": 2,
-          "edge_span_mean": 2,
+          "edge_span_max": 1,
+          "edge_span_mean": 1,
           "worst_target": ""
         }
       }
@@ -561,8 +615,8 @@
     "detangler-graph-energy": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -584,8 +638,8 @@
     "detangler-topic-coherence": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "n/a",
         "reviewer": {
@@ -602,8 +656,8 @@
     "detangler-no-dependency-cycle": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -620,8 +674,8 @@
     "uses-editorial-hygiene": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "pass",
         "reviewer": {
@@ -644,8 +698,8 @@
     "uses-formal-coverage": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "n/a",
         "reviewer": {
@@ -664,8 +718,8 @@
     "lean-ref-owns-decl": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "n/a",
         "reviewer": {
@@ -683,8 +737,8 @@
     "bib-cite-resolves": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "n/a",
         "reviewer": {
@@ -703,8 +757,8 @@
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "n/a",
         "reviewer": {
@@ -723,8 +777,8 @@
     "bib-cited-ref-metadata-ok": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "n/a",
         "reviewer": {
@@ -743,8 +797,8 @@
     "bib-cited-ref-has-screenshot": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "n/a",
         "reviewer": {
@@ -763,8 +817,8 @@
     "q-usage-regime-detected": [
       {
         "field_hash": {
-          "ts": "f4bc8c63435e",
-          "md": "197143417d26"
+          "ts": "184b7f050cb3",
+          "md": "5b3728c969c2"
         },
         "result": "pass",
         "reviewer": {
@@ -774,14 +828,14 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
-        "notes": "{\"regimes\":[\"na\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"knots-particles-confinement\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
       {
         "field_hash": {
-          "ts": "f4bc8c63435e",
-          "md": "197143417d26"
+          "ts": "184b7f050cb3",
+          "md": "5b3728c969c2"
         },
         "result": "n/a",
         "reviewer": {
@@ -796,8 +850,8 @@
     "q-usage-archimedean-in-categorical-chapter": [
       {
         "field_hash": {
-          "ts": "f4bc8c63435e",
-          "md": "197143417d26"
+          "ts": "184b7f050cb3",
+          "md": "5b3728c969c2"
         },
         "result": "n/a",
         "reviewer": {
@@ -812,8 +866,8 @@
     "q-usage-positivity-implicit": [
       {
         "field_hash": {
-          "ts": "f4bc8c63435e",
-          "md": "197143417d26"
+          "ts": "184b7f050cb3",
+          "md": "5b3728c969c2"
         },
         "result": "n/a",
         "reviewer": {
@@ -828,8 +882,8 @@
     "q-usage-modulus-vs-real-mismatch": [
       {
         "field_hash": {
-          "ts": "f4bc8c63435e",
-          "md": "197143417d26"
+          "ts": "184b7f050cb3",
+          "md": "5b3728c969c2"
         },
         "result": "n/a",
         "reviewer": {
@@ -844,8 +898,8 @@
     "q-usage-root-of-unity-undeclared": [
       {
         "field_hash": {
-          "ts": "f4bc8c63435e",
-          "md": "197143417d26"
+          "ts": "184b7f050cb3",
+          "md": "5b3728c969c2"
         },
         "result": "pass",
         "reviewer": {
@@ -860,8 +914,8 @@
     "q-usage-narrative-chapter-mismatch": [
       {
         "field_hash": {
-          "ts": "f4bc8c63435e",
-          "md": "197143417d26"
+          "ts": "184b7f050cb3",
+          "md": "5b3728c969c2"
         },
         "result": "pass",
         "reviewer": {
@@ -873,11 +927,355 @@
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.753Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "severity": "major",
+        "evidence": "1 negation-contrast construction(s): \", not a derivation.\" \u2014 state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:11.701Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "\"identifying these algebraic actions with physical carriers is an interpretive alignment, not a derivation\" is exactly the substantive-epistemic contrast the corpus wants kept; the other near-contrasts (\"treats W, Z, H as independent\" vs the corrected braid) are content."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.753Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:11.747Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "The disjoint-product-then-interface-knot sequence is a genuine refinement, not a manufactured setup."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.753Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 235 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:11.796Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Zero em-dashes."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.753Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 235 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:11.848Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No reflex triple; the one list is four items."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.753Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:11.906Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Closes on an honest scope statement (\"an interpretive alignment, not a derivation\") \u2014 the opposite of a manufactured closer."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.753Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:11.949Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No narration of emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.753Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:11.988Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "severity": "minor",
+        "evidence": "The \"Plancherel weight is a degenerate special case\" and \"Implication for N_v derivation\" sections make overlapping points, but the second adds the PSLQ-basis consequence, so it is not pure restatement."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.753Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:12.029Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Institutional register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.753Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:12.086Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "\"preserves bar-self-duality automatically\" is the only intensifier and is a structural claim about the disjoint-pair construction."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.753Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:12.129Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "severity": "minor",
+        "evidence": "\"This modifies pattern multiplicities, impacts bar-self-duality, gives the Higgs-vev automorphism a concrete form, and twists the 8 pure patterns\" is a four-verb compression with no agent detail, but it reads aloud.",
+        "notes": "Separate (non-trap) findings: (1) \"parallels Morita's quaternionic formulation of the electroweak sector\" attributes a named result with NO citation \u2014 the .ts carries no cites[] at all. (2) The projector bookkeeping is internally consistent and checks against the table I independently reproduced: six EW projectors of rank 1 to 3 (multiplicities 2,1,3,3,1,2) plus two non-EW (vacuum 4, fully-broken 4) = eight, summing to the 20 pure tableaux. (3) \"The earlier Plancherel-weighted multiplier framing is incorrect\" retracts an earlier framing without naming the block that carried it, so a reader cannot find and cross-check the superseded claim."
+      }
+    ],
     "wall-base-ring-minimal": [
       {
         "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
         },
         "result": "n/a",
         "reviewer": {
@@ -891,192 +1289,12 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
-    ],
-    "trap-negation-contrast": [
-      {
-        "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:f00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-22T02:23:34.506Z",
-        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
-        "evidence": "table( pure-data block, 8 sym/alt patterns with multiplicities. INDEPENDENTLY RE-DERIVED FROM FIRST PRINCIPLES: enumerated every standard Young tableau of every shape lambda |- 6 and kept those pure for (sigma_1,sigma_3,sigma_5) -- i.e. each of {1,2},{3,4},{5,6} lies in a single row (sym, eigenvalue q) or a single column (alt, eigenvalue -q^{-1}). Result: 20 pure tableaux total, distributed 4/2/1/3/3/1/2/4 across the eight patterns in the table's own row order. Every multiplicity matches, and the total matches the parent theorem's 'exactly 20 such pure tableaux'. Worth stating explicitly because the multiplicities look wrong: the three single-flip patterns are 2, 1, 3 rather than equal, which reads like a transcription error but is CORRECT -- the three generators are not interchangeable in the tableau count. The one genuine symmetry present, multiplicity invariance under global sym<->alt flip (4/4, 2/2, 1/1, 3/3), also holds exactly. Parent's topological identification checks too: sigma_1^4, sigma_3^6, sigma_5^8 close to T(2,4), T(2,6), T(2,8), each a 2-component link as stated.",
-        "notes": "NOTATION FINDING (minor, not fixed -- table cell, meaning at stake): the 'Candidate physical meaning' column writes Z^- and H^- excited. The Z boson and the Higgs are electrically neutral; the parent block itself writes 'W^pm, Z, H'. The minus is evidently the alt-channel marker, not a charge, but it collides with the standard charge superscript in the one column where a physics reader will read it as charge. Proposed fix: use a channel marker that is not a charge sign (e.g. Z_alt, or a subscript)."
-      }
-    ],
-    "trap-rhetorical-pivot": [
-      {
-        "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:f00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-22T02:23:34.561Z",
-        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
-        "evidence": "table( pure-data block, 8 sym/alt patterns with multiplicities. INDEPENDENTLY RE-DERIVED FROM FIRST PRINCIPLES: enumerated every standard Young tableau of every shape lambda |- 6 and kept those pure for (sigma_1,sigma_3,sigma_5) -- i.e. each of {1,2},{3,4},{5,6} lies in a single row (sym, eigenvalue q) or a single column (alt, eigenvalue -q^{-1}). Result: 20 pure tableaux total, distributed 4/2/1/3/3/1/2/4 across the eight patterns in the table's own row order. Every multiplicity matches, and the total matches the parent theorem's 'exactly 20 such pure tableaux'. Worth stating explicitly because the multiplicities look wrong: the three single-flip patterns are 2, 1, 3 rather than equal, which reads like a transcription error but is CORRECT -- the three generators are not interchangeable in the tableau count. The one genuine symmetry present, multiplicity invariance under global sym<->alt flip (4/4, 2/2, 1/1, 3/3), also holds exactly. Parent's topological identification checks too: sigma_1^4, sigma_3^6, sigma_5^8 close to T(2,4), T(2,6), T(2,8), each a 2-component link as stated.",
-        "notes": "NOTATION FINDING (minor, not fixed -- table cell, meaning at stake): the 'Candidate physical meaning' column writes Z^- and H^- excited. The Z boson and the Higgs are electrically neutral; the parent block itself writes 'W^pm, Z, H'. The minus is evidently the alt-channel marker, not a charge, but it collides with the standard charge superscript in the one column where a physics reader will read it as charge. Proposed fix: use a channel marker that is not a charge sign (e.g. Z_alt, or a subscript)."
-      }
-    ],
-    "trap-em-dash": [
-      {
-        "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:f00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-22T02:23:34.610Z",
-        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
-        "evidence": "table( pure-data block, 8 sym/alt patterns with multiplicities. INDEPENDENTLY RE-DERIVED FROM FIRST PRINCIPLES: enumerated every standard Young tableau of every shape lambda |- 6 and kept those pure for (sigma_1,sigma_3,sigma_5) -- i.e. each of {1,2},{3,4},{5,6} lies in a single row (sym, eigenvalue q) or a single column (alt, eigenvalue -q^{-1}). Result: 20 pure tableaux total, distributed 4/2/1/3/3/1/2/4 across the eight patterns in the table's own row order. Every multiplicity matches, and the total matches the parent theorem's 'exactly 20 such pure tableaux'. Worth stating explicitly because the multiplicities look wrong: the three single-flip patterns are 2, 1, 3 rather than equal, which reads like a transcription error but is CORRECT -- the three generators are not interchangeable in the tableau count. The one genuine symmetry present, multiplicity invariance under global sym<->alt flip (4/4, 2/2, 1/1, 3/3), also holds exactly. Parent's topological identification checks too: sigma_1^4, sigma_3^6, sigma_5^8 close to T(2,4), T(2,6), T(2,8), each a 2-component link as stated.",
-        "notes": "NOTATION FINDING (minor, not fixed -- table cell, meaning at stake): the 'Candidate physical meaning' column writes Z^- and H^- excited. The Z boson and the Higgs are electrically neutral; the parent block itself writes 'W^pm, Z, H'. The minus is evidently the alt-channel marker, not a charge, but it collides with the standard charge superscript in the one column where a physics reader will read it as charge. Proposed fix: use a channel marker that is not a charge sign (e.g. Z_alt, or a subscript)."
-      }
-    ],
-    "trap-triples": [
-      {
-        "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:f00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-22T02:23:34.658Z",
-        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
-        "evidence": "table( pure-data block, 8 sym/alt patterns with multiplicities. INDEPENDENTLY RE-DERIVED FROM FIRST PRINCIPLES: enumerated every standard Young tableau of every shape lambda |- 6 and kept those pure for (sigma_1,sigma_3,sigma_5) -- i.e. each of {1,2},{3,4},{5,6} lies in a single row (sym, eigenvalue q) or a single column (alt, eigenvalue -q^{-1}). Result: 20 pure tableaux total, distributed 4/2/1/3/3/1/2/4 across the eight patterns in the table's own row order. Every multiplicity matches, and the total matches the parent theorem's 'exactly 20 such pure tableaux'. Worth stating explicitly because the multiplicities look wrong: the three single-flip patterns are 2, 1, 3 rather than equal, which reads like a transcription error but is CORRECT -- the three generators are not interchangeable in the tableau count. The one genuine symmetry present, multiplicity invariance under global sym<->alt flip (4/4, 2/2, 1/1, 3/3), also holds exactly. Parent's topological identification checks too: sigma_1^4, sigma_3^6, sigma_5^8 close to T(2,4), T(2,6), T(2,8), each a 2-component link as stated.",
-        "notes": "NOTATION FINDING (minor, not fixed -- table cell, meaning at stake): the 'Candidate physical meaning' column writes Z^- and H^- excited. The Z boson and the Higgs are electrically neutral; the parent block itself writes 'W^pm, Z, H'. The minus is evidently the alt-channel marker, not a charge, but it collides with the standard charge superscript in the one column where a physics reader will read it as charge. Proposed fix: use a channel marker that is not a charge sign (e.g. Z_alt, or a subscript)."
-      }
-    ],
-    "trap-closing-aphorism": [
-      {
-        "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:f00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-22T02:23:34.722Z",
-        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
-        "evidence": "table( pure-data block, 8 sym/alt patterns with multiplicities. INDEPENDENTLY RE-DERIVED FROM FIRST PRINCIPLES: enumerated every standard Young tableau of every shape lambda |- 6 and kept those pure for (sigma_1,sigma_3,sigma_5) -- i.e. each of {1,2},{3,4},{5,6} lies in a single row (sym, eigenvalue q) or a single column (alt, eigenvalue -q^{-1}). Result: 20 pure tableaux total, distributed 4/2/1/3/3/1/2/4 across the eight patterns in the table's own row order. Every multiplicity matches, and the total matches the parent theorem's 'exactly 20 such pure tableaux'. Worth stating explicitly because the multiplicities look wrong: the three single-flip patterns are 2, 1, 3 rather than equal, which reads like a transcription error but is CORRECT -- the three generators are not interchangeable in the tableau count. The one genuine symmetry present, multiplicity invariance under global sym<->alt flip (4/4, 2/2, 1/1, 3/3), also holds exactly. Parent's topological identification checks too: sigma_1^4, sigma_3^6, sigma_5^8 close to T(2,4), T(2,6), T(2,8), each a 2-component link as stated.",
-        "notes": "NOTATION FINDING (minor, not fixed -- table cell, meaning at stake): the 'Candidate physical meaning' column writes Z^- and H^- excited. The Z boson and the Higgs are electrically neutral; the parent block itself writes 'W^pm, Z, H'. The minus is evidently the alt-channel marker, not a charge, but it collides with the standard charge superscript in the one column where a physics reader will read it as charge. Proposed fix: use a channel marker that is not a charge sign (e.g. Z_alt, or a subscript)."
-      }
-    ],
-    "trap-meta-commentary": [
-      {
-        "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:f00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-22T02:23:34.777Z",
-        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
-        "evidence": "table( pure-data block, 8 sym/alt patterns with multiplicities. INDEPENDENTLY RE-DERIVED FROM FIRST PRINCIPLES: enumerated every standard Young tableau of every shape lambda |- 6 and kept those pure for (sigma_1,sigma_3,sigma_5) -- i.e. each of {1,2},{3,4},{5,6} lies in a single row (sym, eigenvalue q) or a single column (alt, eigenvalue -q^{-1}). Result: 20 pure tableaux total, distributed 4/2/1/3/3/1/2/4 across the eight patterns in the table's own row order. Every multiplicity matches, and the total matches the parent theorem's 'exactly 20 such pure tableaux'. Worth stating explicitly because the multiplicities look wrong: the three single-flip patterns are 2, 1, 3 rather than equal, which reads like a transcription error but is CORRECT -- the three generators are not interchangeable in the tableau count. The one genuine symmetry present, multiplicity invariance under global sym<->alt flip (4/4, 2/2, 1/1, 3/3), also holds exactly. Parent's topological identification checks too: sigma_1^4, sigma_3^6, sigma_5^8 close to T(2,4), T(2,6), T(2,8), each a 2-component link as stated.",
-        "notes": "NOTATION FINDING (minor, not fixed -- table cell, meaning at stake): the 'Candidate physical meaning' column writes Z^- and H^- excited. The Z boson and the Higgs are electrically neutral; the parent block itself writes 'W^pm, Z, H'. The minus is evidently the alt-channel marker, not a charge, but it collides with the standard charge superscript in the one column where a physics reader will read it as charge. Proposed fix: use a channel marker that is not a charge sign (e.g. Z_alt, or a subscript)."
-      }
-    ],
-    "trap-thesis-restatement": [
-      {
-        "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:f00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-22T02:23:34.841Z",
-        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
-        "evidence": "table( pure-data block, 8 sym/alt patterns with multiplicities. INDEPENDENTLY RE-DERIVED FROM FIRST PRINCIPLES: enumerated every standard Young tableau of every shape lambda |- 6 and kept those pure for (sigma_1,sigma_3,sigma_5) -- i.e. each of {1,2},{3,4},{5,6} lies in a single row (sym, eigenvalue q) or a single column (alt, eigenvalue -q^{-1}). Result: 20 pure tableaux total, distributed 4/2/1/3/3/1/2/4 across the eight patterns in the table's own row order. Every multiplicity matches, and the total matches the parent theorem's 'exactly 20 such pure tableaux'. Worth stating explicitly because the multiplicities look wrong: the three single-flip patterns are 2, 1, 3 rather than equal, which reads like a transcription error but is CORRECT -- the three generators are not interchangeable in the tableau count. The one genuine symmetry present, multiplicity invariance under global sym<->alt flip (4/4, 2/2, 1/1, 3/3), also holds exactly. Parent's topological identification checks too: sigma_1^4, sigma_3^6, sigma_5^8 close to T(2,4), T(2,6), T(2,8), each a 2-component link as stated.",
-        "notes": "NOTATION FINDING (minor, not fixed -- table cell, meaning at stake): the 'Candidate physical meaning' column writes Z^- and H^- excited. The Z boson and the Higgs are electrically neutral; the parent block itself writes 'W^pm, Z, H'. The minus is evidently the alt-channel marker, not a charge, but it collides with the standard charge superscript in the one column where a physics reader will read it as charge. Proposed fix: use a channel marker that is not a charge sign (e.g. Z_alt, or a subscript)."
-      }
-    ],
-    "trap-performed-warmth": [
-      {
-        "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:f00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-22T02:23:34.894Z",
-        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
-        "evidence": "table( pure-data block, 8 sym/alt patterns with multiplicities. INDEPENDENTLY RE-DERIVED FROM FIRST PRINCIPLES: enumerated every standard Young tableau of every shape lambda |- 6 and kept those pure for (sigma_1,sigma_3,sigma_5) -- i.e. each of {1,2},{3,4},{5,6} lies in a single row (sym, eigenvalue q) or a single column (alt, eigenvalue -q^{-1}). Result: 20 pure tableaux total, distributed 4/2/1/3/3/1/2/4 across the eight patterns in the table's own row order. Every multiplicity matches, and the total matches the parent theorem's 'exactly 20 such pure tableaux'. Worth stating explicitly because the multiplicities look wrong: the three single-flip patterns are 2, 1, 3 rather than equal, which reads like a transcription error but is CORRECT -- the three generators are not interchangeable in the tableau count. The one genuine symmetry present, multiplicity invariance under global sym<->alt flip (4/4, 2/2, 1/1, 3/3), also holds exactly. Parent's topological identification checks too: sigma_1^4, sigma_3^6, sigma_5^8 close to T(2,4), T(2,6), T(2,8), each a 2-component link as stated.",
-        "notes": "NOTATION FINDING (minor, not fixed -- table cell, meaning at stake): the 'Candidate physical meaning' column writes Z^- and H^- excited. The Z boson and the Higgs are electrically neutral; the parent block itself writes 'W^pm, Z, H'. The minus is evidently the alt-channel marker, not a charge, but it collides with the standard charge superscript in the one column where a physics reader will read it as charge. Proposed fix: use a channel marker that is not a charge sign (e.g. Z_alt, or a subscript)."
-      }
-    ],
-    "trap-superlative": [
-      {
-        "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:f00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-22T02:23:34.958Z",
-        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
-        "evidence": "table( pure-data block, 8 sym/alt patterns with multiplicities. INDEPENDENTLY RE-DERIVED FROM FIRST PRINCIPLES: enumerated every standard Young tableau of every shape lambda |- 6 and kept those pure for (sigma_1,sigma_3,sigma_5) -- i.e. each of {1,2},{3,4},{5,6} lies in a single row (sym, eigenvalue q) or a single column (alt, eigenvalue -q^{-1}). Result: 20 pure tableaux total, distributed 4/2/1/3/3/1/2/4 across the eight patterns in the table's own row order. Every multiplicity matches, and the total matches the parent theorem's 'exactly 20 such pure tableaux'. Worth stating explicitly because the multiplicities look wrong: the three single-flip patterns are 2, 1, 3 rather than equal, which reads like a transcription error but is CORRECT -- the three generators are not interchangeable in the tableau count. The one genuine symmetry present, multiplicity invariance under global sym<->alt flip (4/4, 2/2, 1/1, 3/3), also holds exactly. Parent's topological identification checks too: sigma_1^4, sigma_3^6, sigma_5^8 close to T(2,4), T(2,6), T(2,8), each a 2-component link as stated.",
-        "notes": "NOTATION FINDING (minor, not fixed -- table cell, meaning at stake): the 'Candidate physical meaning' column writes Z^- and H^- excited. The Z boson and the Higgs are electrically neutral; the parent block itself writes 'W^pm, Z, H'. The minus is evidently the alt-channel marker, not a charge, but it collides with the standard charge superscript in the one column where a physics reader will read it as charge. Proposed fix: use a channel marker that is not a charge sign (e.g. Z_alt, or a subscript)."
-      }
-    ],
-    "trap-nonspeakable": [
-      {
-        "field_hash": {
-          "md": "197143417d26",
-          "ts": "f4bc8c63435e"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:f00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-22T02:23:35.005Z",
-        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
-        "evidence": "table( pure-data block, 8 sym/alt patterns with multiplicities. INDEPENDENTLY RE-DERIVED FROM FIRST PRINCIPLES: enumerated every standard Young tableau of every shape lambda |- 6 and kept those pure for (sigma_1,sigma_3,sigma_5) -- i.e. each of {1,2},{3,4},{5,6} lies in a single row (sym, eigenvalue q) or a single column (alt, eigenvalue -q^{-1}). Result: 20 pure tableaux total, distributed 4/2/1/3/3/1/2/4 across the eight patterns in the table's own row order. Every multiplicity matches, and the total matches the parent theorem's 'exactly 20 such pure tableaux'. Worth stating explicitly because the multiplicities look wrong: the three single-flip patterns are 2, 1, 3 rather than equal, which reads like a transcription error but is CORRECT -- the three generators are not interchangeable in the tableau count. The one genuine symmetry present, multiplicity invariance under global sym<->alt flip (4/4, 2/2, 1/1, 3/3), also holds exactly. Parent's topological identification checks too: sigma_1^4, sigma_3^6, sigma_5^8 close to T(2,4), T(2,6), T(2,8), each a 2-component link as stated.",
-        "notes": "NOTATION FINDING (minor, not fixed -- table cell, meaning at stake): the 'Candidate physical meaning' column writes Z^- and H^- excited. The Z boson and the Higgs are electrically neutral; the parent block itself writes 'W^pm, Z, H'. The minus is evidently the alt-channel marker, not a charge, but it collides with the standard charge superscript in the one column where a physics reader will read it as charge. Proposed fix: use a channel marker that is not a charge sign (e.g. Z_alt, or a subscript)."
-      }
     ]
   },
   "source_hashes": {
-    "md": "197143417d26",
-    "ts": "f4bc8c63435e"
+    "md": "5b3728c969c2",
+    "ts": "184b7f050cb3"
   },
-  "updated_at": "2026-08-22T02:23:35.005Z",
+  "updated_at": "2026-08-21T16:24:12.129Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

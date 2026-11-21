@@ -13,7 +13,7 @@ form (`def:bring-cone-tetraplectic-structure`) decomposes
 `L²(M,Ω)` into irreducible `S₅`-representations indexed by the **partitions of 5**,
 and Nekrasov localization concentrates the finite state-sum on the corresponding
 Young-tableaux fixed points (Hoefsmit seminormal basis,
-`mass-theory/hoefsmit-ew-cell-content.md`).
+`knots-particles-confinement/hoefsmit-ew-cell-content.md`).
 
 ## Honest scope — what is PROVED vs. structure-carried
 

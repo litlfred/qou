@@ -3,9 +3,9 @@
   "label": "thm:hoefsmit-ew-cell-content",
   "kind": "theorem",
   "paths": {
-    "ts": "folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.ts",
-    "md": "folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.md",
-    "lean": "folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.lean"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/hoefsmit-ew-cell-content.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/hoefsmit-ew-cell-content.md",
+    "lean": "folio/quantum-observable-universe/knots-particles-confinement/hoefsmit-ew-cell-content.lean"
   },
   "source_hashes": {
     "md": "194d2b22bdee",
@@ -850,7 +850,7 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
-        "notes": "{\"regimes\":[\"generic-R\",\"root-of-unity\",\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+        "notes": "{\"regimes\":[\"generic-R\",\"root-of-unity\",\"symbolic\"],\"chapter\":\"knots-particles-confinement\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
@@ -1399,7 +1399,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.ts:0: forward ref: uses prop:knot-operator-lp-selection (manifest pos 751) which appears after this block (pos 140) in the chapter"
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/hoefsmit-ew-cell-content.ts:0: forward ref: uses prop:knot-operator-lp-selection (manifest pos 751) which appears after this block (pos 140) in the chapter"
       }
     ],
     "detangler-section-band": [
