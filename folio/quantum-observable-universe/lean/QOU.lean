@@ -7,6 +7,7 @@ import QOU.BringsSurface.CoveringDegreeRamification
 import QOU.RiemannSurface.GermStabiliserCyclic
 import QOU.RiemannSurface.CombinatorialMapQuotient
 import QOU.RiemannSurface.CombinatorialMapEuler
+import QOU.RiemannSurface.CycleCountSwap
 import QOU.BringsSurface.GenusFourFromGermStabilisers
 import QOU.Eightfold.AmbientInvolutionDoesNotDecideType
 import QOU.Eightfold.CommutativeImageDegeneration
@@ -1799,3 +1800,4 @@ import QOU.QBeta.CoshHolonomyAndGPMTBaseBridge
 import QOU.ShellCondensation.SelectorPrune
 import QOU.ShellCondensation.BringLatticeRanks
 import QOU.ShellCondensation.CoefficientPurity
+import QOU.ShellCondensation.GammaGammaAtom
