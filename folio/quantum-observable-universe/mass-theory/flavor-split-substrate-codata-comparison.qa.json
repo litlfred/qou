@@ -294,6 +294,21 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "253dbd402780bc0b8d294634baf53c8eb141fb1f"
+      },
+      {
+        "field_hash": {
+          "md": "3ea5d592f939",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:20:00.000Z",
+        "reviewed_sha": "8e1db9fdd0de1228744ce32b1cc2750ca8b166a6",
+        "evidence": "QA re-refresh of #8917 at 8e1db9fdd0d. The remark marks itself as the comparison point (\"This remark is where the formula ... is compared with measurement. The identity itself makes no empirical claim.\") and is tagged comparison-boundary. No Lean, so no empirical value enters a formal proof. It also states that the Step 2 ansatz was chosen partly for this agreement."
       }
     ],
     "render-math-mode-envelope": [
@@ -451,6 +466,22 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "253dbd402780bc0b8d294634baf53c8eb141fb1f"
+      },
+      {
+        "field_hash": {
+          "md": "3ea5d592f939",
+          "ts": "340a34fc77ec"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:20:00.000Z",
+        "reviewed_sha": "8e1db9fdd0de1228744ce32b1cc2750ca8b166a6",
+        "severity": "minor",
+        "evidence": "QA re-refresh of #8917 at 8e1db9fdd0d. The remark evaluates at the muon pin q0 = 1.109978595642739 (16 dps). The default evaluation pin is the proton one (AGENTS.md q0 anchor convention), and the cited witness used q0 = 1.10997858275138 (the proton value, though its q0_source string says muon-anchored). The difference is invisible at 4 significant figures, but the remark and its witness disagree on which pin they use. Not fixed here."
       }
     ],
     "canonical-script-not-deprecated": [
@@ -951,6 +982,22 @@
         },
         "reviewed_tree": "253dbd402780bc0b8d294634baf53c8eb141fb1f",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "3ea5d592f939",
+          "ts": "340a34fc77ec"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:20:00.000Z",
+        "reviewed_sha": "8e1db9fdd0de1228744ce32b1cc2750ca8b166a6",
+        "severity": "major",
+        "evidence": "QA re-refresh of #8917 at 8e1db9fdd0d. The comparison numbers do not match a 30-dps recomputation or the block's own witness (computations/probes/flavor-split-substrate-probe.witness.json, relative error 1.277e-3). At q0 = 1.1099785956 (and equally at the proton pin): (q0-1)^2(1-q0^-4)/3 = 1.37571e-3 against CODATA 1.29333251/938.918756 = 1.37747e-3, residual -0.128%, not -0.10%. Intermediate: q0^-4 = 0.65878 and 1-q0^-4 = 0.34122, not 0.6585 and 0.3415. Row 3: M_N times the formula = 1.2917 MeV (1.29168 with M_N = 938.92), residual -0.13%, not 1.287 MeV and -0.52%. Row 2: with mu_avg = M_N/3 (Step 6 of the proof) the CODATA value is 4.1324e-3 and the residual -0.13%; the stated 4.148e-3 implies mu_avg = 311.75 MeV, the fitted dressed masses, which contradicts Step 6. The same numbers stood in the statement block on main, unflagged there; they now sit at the comparison point this PR creates, which is where the empirical claim lives. Not fixed here."
       }
     ],
     "da-vacuous": [
@@ -1537,5 +1584,5 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T18:39:33.000Z"
+  "updated_at": "2026-11-21T19:20:00.000Z"
 }
