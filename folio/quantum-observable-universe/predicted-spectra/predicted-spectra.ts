@@ -43,6 +43,8 @@ export default chapter({
         "linking-relations-table-table3-data",
         "linking-relations-table-table4-data",
         "linking-relations-table-table5-data",
+        "borromean-quark",
+        "borromean-quark-table-data",
       ],
     }),
     section({

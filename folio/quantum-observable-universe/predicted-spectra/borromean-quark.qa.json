@@ -3,9 +3,9 @@
   "label": "conj:borromean-quark",
   "kind": "conjecture",
   "paths": {
-    "ts": "folio/quantum-observable-universe/observations/borromean-quark.ts",
-    "md": "folio/quantum-observable-universe/observations/borromean-quark.md",
-    "lean": "folio/quantum-observable-universe/observations/borromean-quark.lean"
+    "ts": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts",
+    "md": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.md",
+    "lean": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.lean"
   },
   "source_hashes": {
     "md": "61798d4c5983",
@@ -331,7 +331,7 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
-        "notes": "{\"regimes\":[\"fixed-q0\",\"real-gt-1\",\"real-positive\",\"symbolic\"],\"chapter\":\"observations\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+        "notes": "{\"regimes\":[\"fixed-q0\",\"real-gt-1\",\"real-positive\",\"symbolic\"],\"chapter\":\"predicted-spectra\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
@@ -1030,7 +1030,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false claims identified in 'Quarks as Borromean-linked unknots in the exceptional divisor': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/observations/borromean-quark.ts:1"
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts:1"
       }
     ],
     "da-vacuous": [
@@ -1073,7 +1073,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Quarks as Borromean-linked unknots in the exceptional divisor'.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/observations/borromean-quark.ts:1"
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1117,7 +1117,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Quarks as Borromean-linked unknots in the exceptional divisor'.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/observations/borromean-quark.ts:1"
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1137,9 +1137,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.688728Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/observations/borromean-quark.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/predicted-spectra/borromean-quark.lean.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/observations/borromean-quark.lean:1"
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1159,7 +1159,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.688728Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The Lean sibling folio/quantum-observable-universe/observations/borromean-quark.lean uses a class-conjecture pattern, matching the conjectural nature of 'Quarks as Borromean-linked unknots in the exceptional divisor'.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/borromean-quark.lean uses a class-conjecture pattern, matching the conjectural nature of 'Quarks as Borromean-linked unknots in the exceptional divisor'.",
         "severity": "minor"
       }
     ],
@@ -1182,7 +1182,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'Quarks as Borromean-linked unknots in the exceptional divisor', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/observations/borromean-quark.ts:1"
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1202,7 +1202,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Quarks as Borromean-linked unknots in the exceptional divisor' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/observations/borromean-quark.ts:1"
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts:1"
       },
       {
         "field_hash": {
@@ -1244,7 +1244,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Quarks as Borromean-linked unknots in the exceptional divisor' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/observations/borromean-quark.ts:1"
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1266,7 +1266,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Quarks as Borromean-linked unknots in the exceptional divisor' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/observations/borromean-quark.ts:1"
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1286,9 +1286,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.688728Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The Lean sibling folio/quantum-observable-universe/observations/borromean-quark.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/borromean-quark.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/observations/borromean-quark.lean:1 \u2014 folio/quantum-observable-universe/observations/borromean-quark.lean:35:16: error(lean.unknownIdentifier): Unknown constant `Finset.univ.sum`"
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.lean:1 \u2014 folio/quantum-observable-universe/predicted-spectra/borromean-quark.lean:35:16: error(lean.unknownIdentifier): Unknown constant `Finset.univ.sum`"
       },
       {
         "field_hash": {

@@ -37,8 +37,6 @@ export default chapter({
       label: "sec:particle-conjectures",
       blocks: [
         "particle-conjectures-intro",
-        "borromean-quark",
-        "borromean-quark-table-data",
         "higgs-t28",
         "s5-equivariant-torus-knots",
         "s5-equivariant-torus-knots-table-data",
