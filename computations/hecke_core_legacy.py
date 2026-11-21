@@ -3318,7 +3318,7 @@ def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None, *, as_mpf=Fal
     `as_mpf=True` accumulates in mpf. The self-conjugate h/2 terms are then
     exact algebra at the working precision (`_H_MP`, mpf `M_E_MEV`, mpf
     Wedderburn weight). The cross-block couplings `c_ij` are the output of a
-    float64 conic solver (cvxpy / Clarabel), so their digits past the solver
+    float64 conic solver (cvxpy / SCS), so their digits past the solver
     tolerance carry no information; they are carried as `mpf(str(c))`, which
     adds no error but cannot add precision either. Callers that serialise the
     total must report that part separately (see `binding_energy(parts=...)`).

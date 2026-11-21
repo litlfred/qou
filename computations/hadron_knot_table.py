@@ -257,10 +257,10 @@ def compute_atom(name, Z, N, quarks=None):
         "knot_type": knot_name,
         "B_MeV": fmt(B),
         # B's SDP cross-block term comes from a float64 conic solver
-        # (Clarabel); record it apart so the solver-limited digits are visible.
+        # (cvxpy/SCS); record it apart so the solver-limited digits are visible.
         "B_parts_MeV": {k: fmt(v) for k, v in B_parts.items()},
         "B_solver_note": ("sdp_solver_limited_MeV is float64 solver output "
-                          "(cvxpy/Clarabel); B_MeV is exact only modulo that term"),
+                          "(cvxpy/SCS); B_MeV is exact only modulo that term"),
         # Per-generator traced volumes (mass-tower formula, sum 1 + 3)
         "ordering": ordering,
         "V_per_gen": [fmt(v) for v in V_list],
