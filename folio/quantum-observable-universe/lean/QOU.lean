@@ -1807,6 +1807,7 @@ import QOU.Mass.KZHolonomy.ConfConnected
 import QOU.Mass.KZHolonomy.BraidGauge
 import QOU.Mass.KZHolonomy.ConfRegions
 import QOU.Mass.KZHolonomy.ConfGeneric
+import QOU.Mass.KZHolonomy.ArtinGeneration
 import QOU.QBeta.BorromeanThreeCuspNZHessian
 import QOU.QBeta.McPhailSnyderBridgeExclusion
 import QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm
