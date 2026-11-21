@@ -4343,3 +4343,9 @@ Leptons from the knot blocks (e⁻ = σ³ trefoil, ν̄ = 1-strand unknot); exac
 ## 2026-11-19 — PR #8518's "70–76% of the N=2 residual" is measured on the retired base
 
 Probe `computations/probes/np_two_term_qed_mup_tension_probe.py`, run on main. Its `Q_N2^D` is `Q_A·cos(α−u/2)·(1−u²)` with `Q_A` = Form A (z=1, 0.7836458 MeV); only the phase uses z_D. The N=2 residual there is +600.6 ppm (0.00046988 MeV). The four DERIVED-Bor-V3-Conn weightings (−0.000332 to −0.000368 MeV) cut it to 177–130 ppm, i.e. 62–78%. On the ruled z_D base the same terms close 0.10–0.11% of the gap (order-zero E0, Q = 0.4447004, gap 0.3376 MeV) or 0.25–0.28% (dashboard cell 0.6518563, gap 0.1305 MeV). Four weightings of one term plus ~30 other candidates are listed, so taking the best match is selection against the target. Not a closure on the ruled base.
+## 2026-11-21 01:10Z — RESULT B (one-strand blob), sample point q = 11/10, Q = 3/2, y = 1/3 (exact rationals)
+Method: Ariki–Koike seminormal representations of H₃^B for all 10 bipartitions (relations checked symbolically); Geck–Lambropoulou trace weights solved from the Markov conditions (z = z_D, tr t'_k = y), unique at n = 2 and n = 3.
+- tr(β_Bor) = 0.99900075 (matches the type-A value at this q, as it must).
+- One loop (p, d at slot 0/1/2): tr(β·t_d)/tr(β) = y EXACTLY for every slot. A single blob only multiplies by y.
+- Two loops (n): slots (0,1) 0.106602, (1,2) 0.116568, (0,2) 0.106602, against y² = 0.111111. Slot-dependent, so the flip symmetry is broken, as expected.
+So B can separate p from n, but the split is set by the free blob data (Q, y), which nothing in the corpus fixes. Scope (a): B is a parametrised ingredient, not a derived split. Nothing scored. Symbolic (Q, y) run not done (timed out); scripts in session scratchpad blob/.
