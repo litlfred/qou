@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T02:00:00Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-q4oa
 ---
 
@@ -288,3 +288,9 @@ Unclaimed. Status moved `in-progress` → `todo`.
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8457, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-08-08: "lean(qou-slpd): the Newton slope is the q-Gevrey LEVEL — item 5, chain closed"). The work may be partly or fully done. Read the bean before you close it.
+
+## 2026-11-21 — paper-structure drain (https://claude.ai/code/session_01Qmmkt8R1YXFpKDbBiKB3hh)
+
+On main: natDegree_c1MultPoly, l1CoeffAt_eq_zero_iff, c1InfCoeff_order_two, newtonSlopes_c1_ne_ggm, and the sympy level probe. NOT on main: slopeOneCoeff_order_one / slopeTwoCoeff_order_half, and theta_eq_half_gs_bridge's docstring (QGevreyOrder.lean ~l.571) still cites 'the RSZ slope=order theorem'. Docstring fix is corpus-derived; proposed.
+
+Report: docs/audits/2026-11-21-paper-structure-bean-drain.md on branch claude/paper-structure-drain-2026-11-21.

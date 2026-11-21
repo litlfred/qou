@@ -8,7 +8,7 @@ tags:
     - part-1-foundations
     - quantum-universe-axioms
 created_at: 2026-11-20T17:30:00Z
-updated_at: 2026-11-20T17:30:00Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-d4kh
 ---
 
@@ -20,3 +20,9 @@ Found by W14b while draining Ch 1 (PR #8577), not changed.
 At most one is right. If (v) is right, the existence proof's second witness is not a witness and should be replaced by the deformed family (which needs Ch 2's parameter) or dropped; the trivial witness A = R (Omega^1 = 0) still stands, but whether its braiding satisfies axiom 1 should be checked by the same criterion. Content decision for the owner: which reading of axiom 1 is intended (does a symmetric braiding vacuously induce a well-founded ordering, or none at all).
 
 Created by W14b (https://claude.ai/code/session_01VQDpPc68uEsyxoN3soj6Ws).
+
+## 2026-11-21 — paper-structure drain (https://claude.ai/code/session_01Qmmkt8R1YXFpKDbBiKB3hh)
+
+Still live on main; owner decision (which reading of axiom 1).
+
+Report: docs/audits/2026-11-21-paper-structure-bean-drain.md on branch claude/paper-structure-drain-2026-11-21.

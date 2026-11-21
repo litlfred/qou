@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-10T12:40:00Z
-updated_at: 2026-10-04T15:22:16Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-q4oa
 ---
 
@@ -87,3 +87,9 @@ $O((\Delta m/M_N)^2)$ correction to `prop:flavor-split-substrate`"* — so the
 size of the residual may already be understood, and only the caption is wrong.
 That would make this a one-line fix rather than a derivation gap. Worth
 checking first.
+
+## 2026-11-21 — paper-structure drain (https://claude.ai/code/session_01Qmmkt8R1YXFpKDbBiKB3hh)
+
+Caption fixed (PR #5008). Still open: p/n rows reproduce an input (μ̄ ≈ M_N/3 in dressed-quark-numerology-at-q0), only m_n − m_p is predicted; formula column vs proof route unreconciled; deuteron/binding rows underived. Options on the owner card.
+
+Report: docs/audits/2026-11-21-paper-structure-bean-drain.md on branch claude/paper-structure-drain-2026-11-21.

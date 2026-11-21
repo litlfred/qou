@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-01T04:19:34Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-q4oa
 ---
 
@@ -273,3 +273,9 @@ Was in-progress with no bean update since 2026-09-08 and no main commit naming i
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8457, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-09-01: "fix(qou-i9gk): the tanh(ln q) / EM match is formal — Step 28's last positive downgraded; bean closed"). The work may be partly or fully done. Read the bean before you close it.
+
+## 2026-11-21 — paper-structure drain (https://claude.ai/code/session_01Qmmkt8R1YXFpKDbBiKB3hh)
+
+Every positive claim withdrawn in this bean's own body; recommend the owner closes it.
+
+Report: docs/audits/2026-11-21-paper-structure-bean-drain.md on branch claude/paper-structure-drain-2026-11-21.

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T11:02:55Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-q4oa
 ---
 
@@ -276,3 +276,9 @@ qou-adwi either way.
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8452, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21 — paper-structure drain (https://claude.ai/code/session_01Qmmkt8R1YXFpKDbBiKB3hh)
+
+Two-Planck-lengths inconsistency resolved on main by notation (ℓ_P(q) = 1 normalised circuit total; ℓ_P^step ∼ ℏ_q = ℓ_q). What remains is a research opening (spectral distance from the categorical Dirac operator), not a statement defect.
+
+Report: docs/audits/2026-11-21-paper-structure-bean-drain.md on branch claude/paper-structure-drain-2026-11-21.

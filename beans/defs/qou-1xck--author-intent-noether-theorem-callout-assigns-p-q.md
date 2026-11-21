@@ -8,7 +8,12 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-11T00:05:20Z
-updated_at: 2026-10-04T15:16:30Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-q4oa
 ---
 
+## 2026-11-21 — paper-structure drain (https://claude.ai/code/session_01Qmmkt8R1YXFpKDbBiKB3hh)
+
+Live: noether-theorem-callout.md pairs 'Braid stabilisation / Markov II shift' with conserved 'p_q(β) (writhe)', but Markov II changes writhe by ±1. Owner intent needed.
+
+Report: docs/audits/2026-11-21-paper-structure-bean-drain.md on branch claude/paper-structure-drain-2026-11-21.

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T13:20:20Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-q4oa
 ---
 
@@ -209,3 +209,9 @@ Was in-progress with no bean update since 2026-08-24 and no main commit naming i
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8443, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-08-24: "bean(qou-2joi): both disagreements resolved; the straddle is a class of 11"). The work may be partly or fully done. Read the bean before you close it.
+
+## 2026-11-21 — paper-structure drain (https://claude.ai/code/session_01Qmmkt8R1YXFpKDbBiKB3hh)
+
+blm1990 registered and refs added on main. Left: lusztig1990 DOI conflict (references json 10.2307/1990961 vs two Lean files 10.2307/2152736) — no DOI resolver reachable from this container, not guessed. Wenzl 1988 / Jones 1987 still not ingested.
+
+Report: docs/audits/2026-11-21-paper-structure-bean-drain.md on branch claude/paper-structure-drain-2026-11-21.
