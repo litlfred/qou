@@ -243,6 +243,10 @@ The source is now held (`uploads/0208154v2.pdf`, commit `f5d31c46b93`). §16.2 c
 
 The corpus fixes the home: `conj:type-b-folding-cpt` folds the physical H_n(q), and the owner ruling of 2026-11-21 writes the nucleon word in the ambient six-strand H_6(q), mirrors summed. So the words live in the ambient at q. What is open is the descent to the type-B algebra: Lusztig §16 uses the ι-twisted K♯ trace (traceless swapped pairs vanish), while the ruling uses a plain trace. A one-letter toy check gives plain {q², −1, −1, q⁻²}, naive swap trace {q², q⁻²}, Lusztig {q², −q⁻²}; the naive model has the wrong sign on the q⁻² line. Reading B (0.949115) is the K♯-level descent and has no strand-level model in the corpus. Details: `computations/probes/bridge_b/h11_result.md`.
 
+### 10i. Graded strand model for the descent (H12, 2026-11-21)
+
+Grading the σ eigenlines with the −q⁻¹ line odd and putting a Koszul sign on the doubled letter makes the mirror-twisted trace reproduce Lusztig's folded letter {q², −q⁻²} for one letter and for two commuting letters; the opposite grading fails. The test is weak (diagonal, target known in advance), the Koszul sign is a modelling choice, and non-commuting letters, the wall and V³ are untested. Details: `computations/probes/bridge_b/h12_result.md`.
+
 ## 11. What remains open
 
 - A symmetry-breaking object (a vacuum or boundary choice in the Higgs role) that distinguishes u from d inside the
