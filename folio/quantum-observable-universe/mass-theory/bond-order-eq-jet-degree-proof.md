@@ -5,7 +5,7 @@ a nucleon to an $(n-1)$-cluster appends its block and the crossings binding it
 to the cluster, raising the Gröbner--Shirshov normal-form length by a fixed
 increment ([Length-filtration spectral sequence of the Hochschild complex of $H_n(R, q)$](#prop:gb-spectral-sequence)). Reading
 this length through the jet-prefix order
-([Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)](#prop:jet-prefix-gb-filtration)) places the
+([Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)](#conj:jet-prefix-gb-filtration)) places the
 $n$-nucleon cluster sub-word at jet vertical degree $n$.
 
 *Step 2 — the graded component is the cluster term.* The standard basis

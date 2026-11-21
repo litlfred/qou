@@ -23,7 +23,7 @@ import { proposition } from "../../schema/builders";
  * into "h²/(force-carrier categorical-trace product)" — moving it from
  * the operator-selection LP layer into the q-dimension layer.
  *
- * Combined with prop:force-carrier-intertwining-correspondence, this
+ * Combined with conj:force-carrier-intertwining-correspondence, this
  * provides the post-round-18 closure path for
  * conj:e-hartree-categorical-derivation.
  */

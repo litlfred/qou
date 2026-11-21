@@ -9,7 +9,7 @@ export default lemma({
   title: "Body order equals jet degree: the n-nucleon cluster sits at jet vertical degree n",
   uses: [
     "prop:gb-spectral-sequence",
-    "prop:jet-prefix-gb-filtration",
+    "conj:jet-prefix-gb-filtration",
   ],
   proofs: ["prf:bond-order-eq-jet-degree"],
   authorNotes: [

@@ -6,13 +6,13 @@
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-joint-galois-braid-figure-8-verified",
+  "@id": "papers/quantum-observable-universe/blocks/conj-joint-galois-braid-figure-8-verified",
   "@type": [
-    "folio-assistant-sci:Proposition",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
-  "label": "prop:joint-galois-braid-figure-8-verified",
-  "kind": "proposition",
+  "label": "conj:joint-galois-braid-figure-8-verified",
+  "kind": "conjecture",
   "title": "Joint Galois $\\times$ braid action commutes on the figure-8 bi-filtration cell — verified directly",
   "uses": [
     "papers/quantum-observable-universe/blocks/conj-joint-galois-braid-action",

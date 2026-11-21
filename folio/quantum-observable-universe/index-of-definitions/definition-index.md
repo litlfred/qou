@@ -289,7 +289,7 @@
 | [thm:centre-cocentre-descent](#thm:centre-cocentre-descent) | Centre–cocentre splitting: $A = Z(A)\oplus[A,A]$ gives a unique descended/transient split that every trace sees only through its central part | Ch 11 | `qou:QOU.MassCore.CentreCocentre.trace_eq_trace_desc` |
 | [thm:quantum-gap-collapse](#thm:quantum-gap-collapse) | Collapse of the quantum gap | Ch 19 | `qou:QOU.AlgebraicSubstrate.quantum_gap_collapse` |
 | [thm:qou-obstruction-reduction](#thm:qou-obstruction-reduction) | Conditional on the Wigner axiom: the obstruction is the Euler characteristic of the base | Ch 19 | `qou:QOU.AlgebraicSubstrate.qou_obstruction_reduction` |
-| [thm:confinement-grading-correspondence-conditional](#thm:confinement-grading-correspondence-conditional) | Confinement = KLR grading shift (conditional on Brundan–Kleshchev isomorphism + crystal-graph realisation) | Ch 7 | `qou:QOU.BraidsAndKnots.confinement_grading_correspondence_conditional` |
+| [conj:confinement-grading-correspondence-conditional](#conj:confinement-grading-correspondence-conditional) | Confinement = KLR grading shift (conditional on Brundan–Kleshchev isomorphism + crystal-graph realisation) | Ch 7 | `qou:QOU.BraidsAndKnots.confinement_grading_correspondence_conditional` |
 | [thm:descartes](#thm:descartes) | Descartes theorem | Ch 6 | `qou:QOU.Archimedean.descartes` |
 | [thm:embeddability-closure](#thm:embeddability-closure) | Embeddability closure under knot-particle generation | Ch 6 | `qou:QOU.Torsion.embeddability_closure` |
 | [thm:su2-emergence](#thm:su2-emergence) | Emergence of the gauge group | Ch 2 | `qou:QOU.su2_emergence_rank_forced` |
@@ -577,7 +577,7 @@
 | [prop:torus-knot-generators](#prop:torus-knot-generators) | Finiteness of the $T_{m,n}$ generator set | Ch 6 | `qou:QOU.Torsion.torus_knot_generators_finite` |
 | [prop:skein-finiteness-bound](#prop:skein-finiteness-bound) | Finiteness of the nuclear chart: the Skein polynomial zero as stability boundary | Ch 14 | `qou:QOU.Archimedean.skein_finiteness_bound` |
 | [prop:jackson-q-bessel-contiguity-recurrence](#prop:jackson-q-bessel-contiguity-recurrence) | First-order contiguity recurrence for the Jackson first- and second-kind $q$-Bessel coefficients (fibre-level) | Ch 11 | `qou:QOU.QBeta.qbessel_first_kind_coeff_closed_form` |
-| [prop:force-carrier-intertwining-correspondence](#prop:force-carrier-intertwining-correspondence) | Force carrier $T_{p,q}$ acting on $n$-strand braid lands on Wedderburn channel $\lambda = (p, 1^{n-p})$ | Ch 11 | `qou:QOU.BraidKnot.force_carrier_intertwining_correspondence` |
+| [conj:force-carrier-intertwining-correspondence](#conj:force-carrier-intertwining-correspondence) | Force carrier $T_{p,q}$ acting on $n$-strand braid lands on Wedderburn channel $\lambda = (p, 1^{n-p})$ | Ch 11 | `qou:QOU.BraidKnot.force_carrier_intertwining_correspondence` |
 | [prop:h3-frobenius-casimir-markov-trace](#prop:h3-frobenius-casimir-markov-trace) | Frobenius Casimir of $H_3(q)$: Schur elements, Markov weights, its Markov trace, and $\sum_{\lambda\vdash3}1/\dim_q\lambda = 2+1/[2]_q$ | Ch 11 | `qou:QOU.MassCore.H3FrobeniusCasimir.tr_casimir_D` |
 | [prop:positive-definite-dagger](#prop:positive-definite-dagger) | Frobenius dagger is positive-definite | Ch 1 | `qou:QOU.frobenius_dagger_positive_definite` |
 | [prop:frobenius-gram-matrix](#prop:frobenius-gram-matrix) | Frobenius Gram matrix and dual construction in $H_3(q)$ | Ch 11 | `qou:QOU.Archimedean.frobenius_gram_matrix` |
@@ -618,7 +618,7 @@
 | [prop:hoefsmit-is-surreal-construction](#prop:hoefsmit-is-surreal-construction) | Hoefsmit seminormal form is Conway's $\{L \mid R\}$ construction | Ch 25 | `qou:QOU.AppendixSurreals.hoefsmit_is_surreal_construction` |
 | [prop:hoefsmit-seminormal-form](#prop:hoefsmit-seminormal-form) | Hoefsmit seminormal matrices as $R$-matrix evaluations in $H_n(q)$ | Ch 11 | `qou:QOU.BraidKnot.hoefsmit_seminormal_form` |
 | [prop:hoefsmit-V21-cos-symmetrization](#prop:hoefsmit-V21-cos-symmetrization) | Hoefsmit seminormal matrix for $V_{(2,1)}$ + Markov-symmetrized cos character: $\chi^{(2,1),\mathrm{symm}}_q(\beta) = \mathrm{tr}\,\rho_{(2,1)}(\beta) \cdot \cos((z-1)h/2)$ | Ch 11 | `qou:QOU.BraidKnot.hoefsmit_V21_cos_symmetrization` |
-| [prop:hook-weight-derivation](#prop:hook-weight-derivation) | Hook weight $\beta_4 = -\tfrac{1}{2} w_{[2,2]}(4)$ from baryon Wedderburn-Artin decomposition | Ch 11 | `qou:QOU.BaryonWeight.beta4_hook` |
+| [conj:hook-weight-derivation](#conj:hook-weight-derivation) | Hook weight $\beta_4 = -\tfrac{1}{2} w_{[2,2]}(4)$ from baryon Wedderburn-Artin decomposition | Ch 11 | `qou:QOU.BaryonWeight.beta4_hook` |
 | [prop:hopf-link-symmetric-decomposition](#prop:hopf-link-symmetric-decomposition) | Hopf-link symmetric decomposition: $\sigma_1^2 = q^2 e_+ + q^{-2} e_-$ | Ch 20 | `qou:QOU.HopfSymmetric.hopf_symmetric_decomposition` |
 | [prop:inductive-gb-reduction](#prop:inductive-gb-reduction) | Inductive Gröbner--Shirshov reduction | Ch 12 | `qou:QOU.Interactions.inductiveGBReduction` |
 | [prop:q-dilogarithm-exists](#prop:q-dilogarithm-exists) | Inhabitation of the $q$-dilogarithm structure | Ch 2 | `qou:QOU.QDilogarithm.exists_of_addZeroClass` |
@@ -631,8 +631,8 @@
 | [prop:q-jacobiator](#prop:q-jacobiator) | Jacobiator of the q-Lie bracket | Ch 2 | `qou:QOU.q_jacobiator` |
 | [prop:categorical-jet-prolongation](#prop:categorical-jet-prolongation) | Jet prolongation | Ch 4 | `qou:QOU.categorical_jet_prolongation` |
 | [prop:jet-prolongation](#prop:jet-prolongation) | Jet Prolongation | Ch 4 | `qou:QOU.JetProlongation` |
-| [prop:jet-prefix-gb-filtration](#prop:jet-prefix-gb-filtration) | Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6) | Ch 11 | `qou:QOU.BraidKnot.jet_prefix_gb_filtration` |
-| [prop:joint-galois-braid-figure-8-verified](#prop:joint-galois-braid-figure-8-verified) | Joint Galois $\times$ braid action commutes on the figure-8 bi-filtration cell — verified directly | Ch 19 | `qou:QOU.AlgebraicSubstrate.JointGaloisBraidFigure8.figure_8_joint_action` |
+| [conj:jet-prefix-gb-filtration](#conj:jet-prefix-gb-filtration) | Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6) | Ch 11 | `qou:QOU.BraidKnot.jet_prefix_gb_filtration` |
+| [conj:joint-galois-braid-figure-8-verified](#conj:joint-galois-braid-figure-8-verified) | Joint Galois $\times$ braid action commutes on the figure-8 bi-filtration cell — verified directly | Ch 19 | `qou:QOU.AlgebraicSubstrate.JointGaloisBraidFigure8.figure_8_joint_action` |
 | [prop:joint-galois-braid-discharged](#prop:joint-galois-braid-discharged) | Joint motivic-Galois $\times$ braid action commutes on every bi-filtration cell — discharged | Ch 19 | `qou:QOU.AlgebraicSubstrate.JointGaloisBraidDischarged.joint_action_discharged` |
 | [prop:meson-kaon-pion-hecke-seifert](#prop:meson-kaon-pion-hecke-seifert) | Kaon-to-pion mass ratio from Hecke characters and Seifert volumes | Ch 11 | `qou:QOU.Mass.seifert_ratio_T25_T23` |
 | [prop:kelvin-dispersion-derivation](#prop:kelvin-dispersion-derivation) | Kelvin wave dispersion from the $q$-Laplacian eigenvalue problem | Ch 18 | `qou:QOU.FluidDynamics.kelvin_dispersion_derivation` |
@@ -782,7 +782,7 @@
 | [prop:coxeter-strong-exchange](#prop:coxeter-strong-exchange) | Strong exchange for Coxeter systems, via the reflection cocycle | Ch 5 | `qou:QOU.Machinery.CoxeterParabolic.strong_exchange` |
 | [prop:brane-boundary](#prop:brane-boundary) | Structure of the defining boundary | Ch 4 | `qou:QOU.Torsion.brane_boundary_structure` |
 | [prop:subset-cumulant-recursion](#prop:subset-cumulant-recursion) | Subset cumulants of the bond model: reconstruction, the $c_k$-only recursion, and vanishing across a split | Ch 11 | `qou:QOU.Mass.SubsetCumulantRecursion.cum_eq_sizeCum` |
-| [prop:proton-mass-substrate-identity](#prop:proton-mass-substrate-identity) | Substrate evaluation: $m_p = 2 \cdot m_\mu \cdot F_{\mathrm{Bor}}(q_0) - 12 \cdot m_e$ to $0.24\,\mathrm{ppm}$ at $q = q_0$ | Ch 24 | `qou:QOU.AppendixQValues.ProtonBorromeanAssembly.proton_mass_substrate_identity` |
+| [conj:proton-mass-substrate-identity](#conj:proton-mass-substrate-identity) | Substrate evaluation: $m_p = 2 \cdot m_\mu \cdot F_{\mathrm{Bor}}(q_0) - 12 \cdot m_e$ to $0.24\,\mathrm{ppm}$ at $q = q_0$ | Ch 24 | `qou:QOU.AppendixQValues.ProtonBorromeanAssembly.proton_mass_substrate_identity` |
 | [prop:substrate-radial-coordinate](#prop:substrate-radial-coordinate) | Substrate parameter as the radial coordinate | Ch 2 | `qou:QOU.substrate_radial_coordinate` |
 | [prop:bar-t-duality-substrate](#prop:bar-t-duality-substrate) | Substrate-level bar T-duality: $\mathcal{E}_q \leftrightarrow \mathcal{E}_{1/q}$ | Ch 14 | `qou:QOU.Archimedean.BarTDualitySubstrate.bar_t_duality_substrate` |
 | [prop:flavor-split-substrate](#prop:flavor-split-substrate) | Substrate-pure derivation of the $u$--$d$ flavor split | Ch 15 | `qou:QOU.HadronicMass.flavor_split_substrate` |
@@ -796,7 +796,7 @@
 | [prop:tannaka-krein-reconstruction](#prop:tannaka-krein-reconstruction) | Tannaka--Krein reconstruction of the quantum gauge group | Ch 2 | `qou:QOU.tannaka_krein_reconstruction` |
 | [prop:q-exponential-taylor](#prop:q-exponential-taylor) | Taylor series of $\exp_q$ (archimedean) | Ch 20 | `qou:QOU.qExponentialTaylor` |
 | [prop:terminal-resolution](#prop:terminal-resolution) | Terminal Resolution of Hadronic Mass | Ch 11 | `qou:QOU.Experimental.TerminalResolution` |
-| [prop:collatz-contact-boundary](#prop:collatz-contact-boundary) | The $[2]_q$-contact boundary on the Reeb bundle | Ch 25 | `qou:QOU.AlgebraicSubstrate.collatz_contact_boundary` |
+| [conj:collatz-contact-boundary](#conj:collatz-contact-boundary) | The $[2]_q$-contact boundary on the Reeb bundle | Ch 25 | `qou:QOU.AlgebraicSubstrate.collatz_contact_boundary` |
 | [prop:alpha-em-habiro-bar-involution](#prop:alpha-em-habiro-bar-involution) | The $\alpha_{EM}$ Habiro element $[2]_q(1-h^2\alpha)$ is a bar-involution fixed point, with $H(1)=2$, $H(-1)=-2$ | Ch 5 | `qou:QOU.BraidKnot.alphaEmHabiro_bar_invariant` |
 | [prop:alpha-cluster-activation-gate](#prop:alpha-cluster-activation-gate) | The $\alpha$-cluster activation gate: Milnor indeterminacy, sign-rep obstruction, and $\mathrm{Vol}=0$ annihilation | Ch 11 | `qou:QOU.Mass.MilnorIndeterminacyGate.gate_open_iff_brunnian` |
 | [prop:beta-eq-ln-q-dictionary](#prop:beta-eq-ln-q-dictionary) | The $\beta = \ln q$ partition-function dictionary | Ch 2 | `qou:QOU.Thermo.boltzmann_energyOf` |
@@ -937,7 +937,7 @@
 | [prop:vertex-is-exceptional-divisor](#prop:vertex-is-exceptional-divisor) | Vertex operators factor through the exceptional divisor | Ch 11 | `qou:QOU.vertex_is_exceptional_divisor` |
 | [prop:volume-perturbation-formula](#prop:volume-perturbation-formula) | Volume perturbation: $\delta\Phi_k = z^2 \cdot \mathrm{Vol}(4_1) \cdot [k{-}3]_q$ | Ch 11 | `qou:QOU.BraidKnot.volume_perturbation` |
 | [prop:weak-equiv-invariance](#prop:weak-equiv-invariance) | Weak equivalence invariance of physical states | Ch 4 | `qou:QOU.Torsion.weak_equiv_invariance` |
-| [prop:weak-symmetric-normalization](#prop:weak-symmetric-normalization) | Weak-sector symmetric-channel Plancherel normalization $\mathcal{N}_{\rm sym}(q)$ | Ch 11 | `qou:QOU.BraidsAndKnots.weak_symmetric_normalization` |
+| [conj:weak-symmetric-normalization](#conj:weak-symmetric-normalization) | Weak-sector symmetric-channel Plancherel normalization $\mathcal{N}_{\rm sym}(q)$ | Ch 11 | `qou:QOU.BraidsAndKnots.weak_symmetric_normalization` |
 | [prop:wenzl-qmn-synergy](#prop:wenzl-qmn-synergy) | Wenzl-bridge + q-Murnaghan-Nakayama synergy: $\mathrm{tr}_M$ on canonical braids in $O(p(n)(\max\text{hooks} + n^2))$ | Ch 11 | `qou:QOU.BraidsAndKnots.wenzl_qmn_synergy` |
 | [prop:wigner-coefficient-derivation](#prop:wigner-coefficient-derivation) | Wigner coefficient $[5]_q! \cdot m_e$ from Frobenius reciprocity | Ch 11 | `qou:QOU.BraidKnot.wigner_coefficient` |
 | [prop:wigner-np-pairing](#prop:wigner-np-pairing) | Wigner energy from $T{=}0$ np pairing: $(2,2)$ partition at $k{=}4$ | Ch 11 | `qou:QOU.Archimedean.ConfinedKnotBinding.wigner_energy_from_22` |

@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:weak-symmetric-normalization",
+export default conjecture({
+  label: "conj:weak-symmetric-normalization",
   title:
     "Weak-sector symmetric-channel Plancherel normalization $\\mathcal{N}_{\\rm sym}(q)$",
   lean: {
@@ -32,6 +32,7 @@ export default proposition({
     status: "verified",
   },
   authorNotes: [
+    { kind: "status", date: "2026-11-21", body: "Demoted from `conj:weak-symmetric-normalization` (owner, #8526, 2026-11-21; bean qou-tm3c). The identity $(q^4+q^6+q^8)/3 = q^4(1+q^2+q^4)/3$ is unconditional algebra. Its reading as the electroweak symmetric-channel weight is not derived (the block says so), and an earlier note already called the block demoted and open." },
     {
       kind: "deprecated",
       body: "**DEMOTED.** Earlier drafts of this proposition framed $\\mathcal{N}_{\\rm sym}(q)$ as a Plancherel-weighted ratio with uniform $1/[2]_q$ weights — derived under the dimensionally-inconsistent $H_2(q)$-only formulation. Per `thm:hoefsmit-ew-cell-content`, the operative structural quantity is the **direct cell-content trace** of $\\sigma_1^4 \\sigma_3^6 \\sigma_5^8$ on the pure-eigenspace — bar-self-dual, derived without Plancherel weights. The Plancherel-weighted form is retained only as a **degenerate special case** for backward reference; do not use it for $N_v$ derivation.",

@@ -31,7 +31,7 @@ export default theorem({
     },
     {
       kind: "status",
-      body: "**Open.** The open inputs are: (1) the $W \\leftrightarrow \\sigma_1^4$, $Z \\leftrightarrow \\sigma_3^6$, $H \\leftrightarrow \\sigma_5^8$ identification, now a naming in `rem:hoefsmit-ew-cell-content-context` whose physical content is `conj:electroweak-higgs-torus-link-triplet` (and, for the boson-to-strand-pair assignment, `conj:categorical-higgs-mechanism`); (2) a closed-form generating function for the pure-pattern multiplicities; (3) refinement of `prop:weak-spectral-completeness` and `prop:weak-symmetric-normalization` to reference this $n = 6$ formulation.",
+      body: "**Open.** The open inputs are: (1) the $W \\leftrightarrow \\sigma_1^4$, $Z \\leftrightarrow \\sigma_3^6$, $H \\leftrightarrow \\sigma_5^8$ identification, now a naming in `rem:hoefsmit-ew-cell-content-context` whose physical content is `conj:electroweak-higgs-torus-link-triplet` (and, for the boson-to-strand-pair assignment, `conj:categorical-higgs-mechanism`); (2) a closed-form generating function for the pure-pattern multiplicities; (3) refinement of `prop:weak-spectral-completeness` and `conj:weak-symmetric-normalization` to reference this $n = 6$ formulation.",
     },
   ],
 });

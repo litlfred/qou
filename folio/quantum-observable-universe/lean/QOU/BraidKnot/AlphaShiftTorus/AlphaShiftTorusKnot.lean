@@ -76,7 +76,7 @@ witness assertions passing.
 
 -- Ref: [leitner2026] §round-19 of conj:e-hartree-categorical-derivation
 -- Ref: [leitner2026] prop:em-coupling-projection (the bare 1/α formula at p ∈ {2,3})
--- Ref: [leitner2026] prop:force-carrier-intertwining-correspondence (the V_{(p,1^{n-p})} channel)
+-- Ref: [leitner2026] conj:force-carrier-intertwining-correspondence (the V_{(p,1^{n-p})} channel)
 -/
 class HasAlphaShiftTorus (p k : ℕ) : Prop where
   alpha_shift_eq : alphaShift p k = k * (p - 1)

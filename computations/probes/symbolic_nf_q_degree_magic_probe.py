@@ -13,7 +13,7 @@ structure. The corpus is explicit:
   * `bond-order-eq-jet-degree-proof` -- adding a nucleon "rais[es] the
     Groebner-Shirshov normal-form length by a fixed increment", placing the
     n-nucleon cluster sub-word at JET VERTICAL DEGREE n.
-  * `prop:gb-spectral-sequence` (E_2 collapse) + `prop:jet-prefix-gb-filtration`
+  * `prop:gb-spectral-sequence` (E_2 collapse) + `conj:jet-prefix-gb-filtration`
     -- the associated graded gr_n IS the n-nucleon cluster contribution.
 
 So the NF is not six numbers, it is six LAURENT POLYNOMIALS IN q, and the
