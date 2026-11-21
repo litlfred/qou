@@ -221,7 +221,7 @@ theorem uq_ideal_eq :
   apply le_antisymm
   · rw [TwoSidedIdeal.span_le]
     rintro x ⟨r, hr, rfl⟩
-    simp only [qSerreRewritingSystem, qSerreRules, List.mem_cons, List.not_mem_nil,
+    simp only [qSerreRewritingSystem, RewritingSystem.mem_ofList_rules, qSerreRules, List.mem_cons, List.not_mem_nil,
       or_false] at hr
     rcases hr with rfl | rfl | rfl | rfl | rfl | rfl | rfl
     · rw [QSerreGS.r1]; convert s1 using 1; simp only [ofW_nil]; module

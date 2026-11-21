@@ -126,9 +126,8 @@ noncomputable def rule (p : {p : G × G // p ∈ d.pairs}) : ReductionRule G k w
     exact one_ne_zero
 
 /-- The splay rewriting system. -/
-noncomputable def sys : RewritingSystem G k where
-  rules := d.pairs.attach.map d.rule
-  nonempty := by simpa using d.pairs_ne
+noncomputable def sys : RewritingSystem G k :=
+  .ofList (d.pairs.attach.map d.rule) (by simpa using d.pairs_ne)
 
 theorem mem_sys {r : ReductionRule G k} : r ∈ d.sys.rules ↔ ∃ p, d.rule p = r := by
   simp [sys]

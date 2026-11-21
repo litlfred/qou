@@ -551,7 +551,7 @@ not an axiom**. -/
 -- Ref: [bokut2005] https://doi.org/10.1142/S0218196705002347 (q-Serre rewriting system for U_q(su(2)))
 def qSerreRewritingSystem (k : Type v) [Field k]
     (qs : QSerreRelations k) : RewritingSystem SU2Gen k :=
-  ⟨qSerreRules qs, by simp [qSerreRules]⟩
+  .ofList (qSerreRules qs) (by simp [qSerreRules])
 
 /-- **The q-Serre rules have unit leading coefficients.**
 
@@ -562,7 +562,7 @@ theorem qSerre_rules_monic (k : Type v) [Field k] (qs : QSerreRelations k) :
     ∀ r ∈ (qSerreRewritingSystem k qs).rules, IsUnit (r.lc degLexOrder) := by
   obtain ⟨h1, h2, h3, h4, h5, h6, h7⟩ := qSerre_rule_lc_eq_one qs
   intro r hr
-  simp only [qSerreRewritingSystem, qSerreRules, List.mem_cons, List.not_mem_nil,
+  simp only [qSerreRewritingSystem, RewritingSystem.mem_ofList_rules, qSerreRules, List.mem_cons, List.not_mem_nil,
     or_false] at hr
   rcases hr with rfl | rfl | rfl | rfl | rfl | rfl | rfl
   · rw [h1]; exact isUnit_one

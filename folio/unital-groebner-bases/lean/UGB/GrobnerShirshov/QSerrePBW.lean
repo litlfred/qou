@@ -88,7 +88,7 @@ theorem qSerre_normal_iff_isChain (qs : QSerreRelations k) (m : Monomial SU2Gen)
       | exact hn (qSerreRule6 qs) (by simp [qSerreRewritingSystem, qSerreRules]) (by simpa using hinf)
       | exact hn (qSerreRule7 qs) (by simp [qSerreRewritingSystem, qSerreRules]) (by simpa using hinf)
   · intro hc r hr hinf
-    simp only [qSerreRewritingSystem, qSerreRules, List.mem_cons, List.not_mem_nil,
+    simp only [qSerreRewritingSystem, RewritingSystem.mem_ofList_rules, qSerreRules, List.mem_cons, List.not_mem_nil,
       or_false] at hr
     obtain ⟨s, t, hst⟩ := hinf
     rcases hr with rfl | rfl | rfl | rfl | rfl | rfl | rfl <;>
