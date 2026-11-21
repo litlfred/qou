@@ -49,6 +49,7 @@ import QOU.MathlibExt.HeckeToTemperleyLieb
 import QOU.MathlibExt.TraceRadicalNondegenerate
 import QOU.MathlibExt.LocalCocycleTransport
 import QOU.MathlibExt.LocalCocycleGenerated
+import QOU.MathlibExt.PathLebesgue
 import QOU.MathlibExt.TemperleyLiebSpanning
 import QOU.MathlibExt.TemperleyLiebWedderburn
 import QOU.MathlibExt.TemperleyLiebNormalForm
