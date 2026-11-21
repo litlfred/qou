@@ -1,15 +1,15 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-06T06:39:41.596945+00:00",
-  "commitSha": "3974fe0882707cb5f390641207291fffd7b67e12",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T21:39:27.036146+00:00",
+  "commitSha": "c63b508f6a65bb7c71e62c779929de6b246f3016",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "trm-provenance-chain",
   "scriptFile": "trm_provenance_chain_probe.py",
-  "scriptHash": "06b122473a9b",
-  "scriptCommitSha": "d57852f81a2407a11b7c839f56a9ce1bb2b92cca",
+  "scriptHash": "4ca08db91c43",
+  "scriptCommitSha": "619bf86767da7208e60bc834c992620ead90a557",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,14 +17,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "1.9.3",
+    "pyhecke_native_build": "515e4065be9006d2"
   },
   "invocation": {
     "argv": [
@@ -52,47 +53,47 @@
     {
       "check": "copy/deuteron",
       "pass": true,
-      "detail": "option_e tr_M == chi tr_M_at_q0 verbatim: 0.5751722439177718708265... vs 0.5751722439177718708265..."
+      "detail": "option_e tr_M == chi tr_M_at_q0 verbatim: 0.1519683392042316075926... vs 0.1519683392042316075926..."
     },
     {
       "check": "copy/tritium",
       "pass": true,
-      "detail": "option_e tr_M == chi tr_M_at_q0 verbatim: 0.2293101021045565073320... vs 0.2293101021045565073320..."
+      "detail": "option_e tr_M == chi tr_M_at_q0 verbatim: 0.0291440423609720653572... vs 0.0291440423609720653572..."
     },
     {
       "check": "copy/helium-3",
       "pass": true,
-      "detail": "option_e tr_M == chi tr_M_at_q0 verbatim: 0.4037670368514281703686... vs 0.4037670368514281703686..."
+      "detail": "option_e tr_M == chi tr_M_at_q0 verbatim: 0.0585962536544363802189... vs 0.0585962536544363802189..."
     },
     {
       "check": "selfconsistent/deuteron",
       "pass": true,
-      "detail": "|sum y*chi - tr_M|/|tr_M| = 1.51559e-50"
+      "detail": "|sum y*chi - tr_M|/|tr_M| = 4.1972e-50"
     },
     {
       "check": "selfconsistent/tritium",
       "pass": true,
-      "detail": "|sum y*chi - tr_M|/|tr_M| = 8.99332e-51"
+      "detail": "|sum y*chi - tr_M|/|tr_M| = 3.56722e-51"
     },
     {
       "check": "selfconsistent/helium-3",
       "pass": true,
-      "detail": "|sum y*chi - tr_M|/|tr_M| = 1.51848e-51"
+      "detail": "|sum y*chi - tr_M|/|tr_M| = 9.82407e-51"
     },
     {
       "check": "current/deuteron",
       "pass": true,
-      "detail": "max |y_chi - y_default| = 6.77599e-51 at (6,) (n=6)"
+      "detail": "max |y_chi - y_default| = 3.22401e-51 at (6,) (n=6)"
     },
     {
       "check": "current/tritium",
       "pass": true,
-      "detail": "max |y_chi - y_default| = 6.9148e-52 at (7, 2) (n=9)"
+      "detail": "max |y_chi - y_default| = 3.18693e-52 at (8, 1) (n=9)"
     },
     {
       "check": "current/helium-3",
       "pass": true,
-      "detail": "max |y_chi - y_default| = 6.9148e-52 at (7, 2) (n=9)"
+      "detail": "max |y_chi - y_default| = 3.18693e-52 at (8, 1) (n=9)"
     },
     {
       "check": "vanishing/default",
@@ -125,6 +126,8 @@
     "[6]": "1.94844848"
   },
   "classification": "y_lambda weight-table regeneration",
+  "q0Anchor": "ambiguous",
+  "q0AnchorReason": "provenance audit across pins: reads recorded values from the proton-anchored chi-*-at-q0-50dps and y-lambda-mpfr-proton witnesses AND from the muon-stamped y-lambda-mpfr-witness (whose recorded q0 is the retired frozen pin A), and compares them; it evaluates nothing at q0 itself",
   "ruled_out": [
     "mu-p pin swap (11.5 ppb, three orders too small)",
     "convention C->D (z identical either side of the move)",
