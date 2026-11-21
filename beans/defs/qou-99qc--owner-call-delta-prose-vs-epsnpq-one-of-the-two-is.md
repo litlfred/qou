@@ -8935,3 +8935,13 @@ Run under the 12:20Z pre-registration, ≤ 10 crossings, proton pin, convention 
 - **Arm B (all twelve terms, comparison):** minimum σ₁ (cost 1); β_Bor reachable and feasible but not minimal.
 - **Writhe (the ε-Y5 question).** Letter writhes in A: σσ terms 2, σV / Vσ terms 1, V·V 0. Every candidate has writhe ≥ 0 (0…10); the only writhe-0 words are V², V⁴, both infeasible. So the "every γγ word has writhe 0" premise holds ONLY in arm V. Under arm A the grammar is one-signed (chiral), not writhe-0, and the writhe is unbounded in length, so it supplies no per-strand twist bound either.
 Consequence for ε-Y5: its exclusion stands for the V-only grammar and is VOID as stated for the full photon product. Neither arm derives |t| ≤ 1; Y = ±1/3 stays a labelled conditional input. Scope (a) throughout. Nucleon element still underived under arm A; which arm is the grammar is the owner's call (stage-7 card, still unruled). Bean stays OPEN.
+
+### OWNER 2026-11-21 12:17Z — "Decide later; derive the cut" (stage-7R card). V-only grammar stays in use; nothing ruled.
+
+### PRE-REGISTRATION 2026-11-21 12:25Z — D1: derive the φ₀₁ψ₀₁ cut from "a γγ element that IS a braid"
+Written before any computation. Corpus facts used: the ruled nucleon is an ELEMENT identity, β_Bor = γ(0,0,qh)·γ(0,0,−q⁻¹h) = V³ (QEDHigherOrderCovariance.photon_product_eq_borWord, weights chosen in the ruling, not derived); and the corpus already uses "is a scalar multiple of a two-photon product" as a test on words (a682c89c65e / 3220cc8720f: σ₀σ₁σ₀ is not). So the candidate cut is: the γγ-produced braids are exactly the braid words w with γ(φ)γ(ψ) = c·w in H₃(q) for some photon weights and c ≠ 0.
+**Test.** In the regular representation of H₃(q) over ℚ(q) (σ² = hσ + 1, σ⁻¹ = σ − h; exact sympy, q symbolic), for every free-reduced word w in σ₀^±, σ₁^± with 1..6 crossings, solve γ(φ₀,φ₁,φ₀₁)·γ(ψ₀,ψ₁,ψ₀₁) = c·w for (φ, ψ, c), c ≠ 0, over the algebraic closure of ℚ(q).
+**Reported:** which w are two-photon multiples; for each, the solution set; writhe and components of w.
+**Questions, no predicted answer:** 1. Is V³ among them, and does every solution have φ₀ = φ₁ = ψ₀ = ψ₁ = 0? 2. Are the weights (qh, −q⁻¹h) forced up to the swap φ ↔ ψ? 3. Does any OTHER 3-component word appear, and with which weights? 4. Is every two-photon-multiple word writhe 0?
+**Reading.** If (1) and (2) hold and every 3-component solution lies in the φ₀₁ψ₀₁ sector, the V-only cut is DERIVED from the element criterion (scope b within words ≤ 6 crossings). Otherwise it is not, and the result is reported as is.
+**Not allowed:** changing the word bound, ring or criterion after results; choosing among solutions by Q_β or any mass.
