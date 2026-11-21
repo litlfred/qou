@@ -306,6 +306,7 @@ import QOU.MathlibExt.ManifoldVolumePositive
 import QOU.MathlibExt.Bicommutant
 import QOU.MathlibExt.BraidGroup
 import QOU.MathlibExt.PLPolygonalLink
+import QOU.MathlibExt.PLAffineEquivariance
 import QOU.Knot.FiveTwoVolumeConstant
 import QOU.Knot.FiveTwoAngleSum
 import QOU.Knot.FiveTwoNinthPower
