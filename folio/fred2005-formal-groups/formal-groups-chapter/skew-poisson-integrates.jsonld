@@ -2,12 +2,13 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/fred2005-formal-groups/blocks/thm-skew-poisson-integrates",
   "@type": [
-    "folio-assistant-core:Theorem",
+    "folio-assistant-sci:Theorem",
     "doco:Section"
   ],
   "label": "thm:skew-poisson-integrates",
@@ -16,9 +17,11 @@
   "uses": [
     "papers/fred2005-formal-groups/blocks/def-commutative-formal-group",
     "papers/fred2005-formal-groups/blocks/def-skewed-poisson-structure",
+    "papers/fred2005-formal-groups/blocks/def-strong-multiplicativity",
     "papers/fred2005-formal-groups/blocks/def-non-commutative-formal-group"
   ],
   "cites": [
+    "references/leitner2006",
     "references/fred2005"
   ],
   "tags": [
@@ -26,7 +29,7 @@
     "formal-group",
     "main-theorem"
   ],
-  "leanRef": "fred2005:Fred2005.skew_poisson_integrates",
+  "leanRef": "fred2005:Fred2005.integration_commutator",
   "text": "skew-poisson-integrates.md",
   "leanSource": "skew-poisson-integrates.lean",
   "provenance": "authored"

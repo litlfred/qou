@@ -2,27 +2,28 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/fred2005-formal-groups/blocks/def-skewed-poisson-structure",
   "@type": [
-    "folio-assistant-core:Definition",
+    "folio-assistant-sci:Definition",
     "doco:Section"
   ],
   "label": "def:skewed-poisson-structure",
   "kind": "definition",
-  "title": "Skewed-Poisson structure",
+  "title": "Poisson structure on a splay",
   "uses": [
     "papers/fred2005-formal-groups/blocks/def-commutative-formal-group"
   ],
   "cites": [
-    "references/fred2005"
+    "references/leitner2006"
   ],
   "tags": [
     "poisson",
     "biderivation",
-    "formal-group"
+    "splay"
   ],
   "leanRef": "fred2005:Fred2005.SkewedPoissonStructure",
   "text": "skewed-poisson-structure.md",
