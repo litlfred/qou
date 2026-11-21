@@ -4,7 +4,7 @@ title: 'Part C''s Q_MP sweep created 31 PRECISION STRADDLES: mpmath side moved t
 status: todo
 type: task
 created_at: 2026-11-21T04:30:36Z
-updated_at: 2026-11-21T05:05:00Z
+updated_at: 2026-11-21T05:25:00Z
 parent: qou-9nnz
 ---
 
@@ -68,3 +68,38 @@ The confirmed one is `two_nucleon_binding_law_comparison_probe`: its `tr`/`ph` c
 **"Crosses into mpmath" is necessary, not sufficient**, so the other 33 are *candidates*, not established defects — a file could convert the sympy value and still never combine it with a `Q_MP`-derived one. Do not quote 31 or 34 as a defect count; quote them as the population to triage, with 1 confirmed.
 
 This matters for prioritisation: if most of the 33 turn out to keep the two values in separate quantities, the fix is small. If they mix, each one is a wrong number at the 1e-50 level that nothing currently asserts tightly enough to catch.
+
+### 2026-11-21 — option D VALIDATED end-to-end; the tie fix verified against over-grouping
+
+**The chain settles the cross-witness half.** With the straddle closed in both probes and `gamma-gamma-nn-pn-selection-probe` refreshed:
+
+| check | upstream it reads | before | after |
+|---|---|---|---|
+| `H6_traces_match_nn_pn_witness` | `nn_pn` (refreshed) | FAIL | **pass** |
+| `D2_log_matches_template_witness` | `nn_pn` (refreshed) | FAIL | **pass** |
+| `D4_ratios_match_isospin_witness` | `isospin` (**timed out**) | FAIL | FAIL |
+
+Every check whose upstream was refreshed passes. D4 fails only because `gamma_gamma_isospin_channel_probe` hit its 600 s budget at **49/72** (it needs ~860 s), so its witness was never written.
+
+**An accidental control arm confirmed it.** A later run reverted `nn_pn` to the committed version *before* the probe read it (upstreams are read after the 144-character computation), and H6 and D2 failed again — same code, stale upstream → FAIL; refreshed upstream → PASS. The dependence is established in both directions, not inferred.
+
+**`log_and_mayer_orders_identical` now passes** (`fb278110687`), and `L_log` / `L_mayer` are identical at all four D3 vertices with ties explicit: `nn = pn > pp`, `pp > nn = pn`, `nn > pn = pp`, `pn = pp > nn`.
+
+**The tolerance was checked against over-grouping — the obvious way this fix could have been a weakening.** Every pair the tie-aware `order_desc` grouped, with its relative gap:
+
+| vertex | law | pair | relative gap |
+|---|---|---|---|
+| V1 | `L_log` | `nn=pn` | `1.27758e-58` |
+| V1 | `L_mayer` | `nn=pn` | `0.0` |
+| V2 | `L_log` | `nn=pn` | `5.33149e-59` |
+| V2 | `L_mayer` | `nn=pn` | `0.0` |
+| V3 | `L_log` | `pn=pp` | `0.0` |
+| V3 | `L_mayer` | `pn=pp` | `7.11406e-60` |
+| V4 | `L_log` | `pn=pp` | `5.42074e-60` |
+| V4 | `L_mayer` | `pn=pp` | `1.25658e-59` |
+
+The loosest is **7.8e+7× tighter** than the `1e-50` bound, and the smallest genuine gap in the probe is `0.0132` — 48 orders the other way. So the bound is doing none of the work; the separation is.
+
+**And the fix surfaced ties I had not found.** My hand analysis identified the V1/V2 `nn=pn` pair; V3 and V4 carry `pn=pp` ties as well, so there are **8 tied pairs** across the four vertices, not 2. The strict order was hiding real structure, which is the strongest argument for the fix being a correction rather than a relaxation.
+
+**Remaining for this bean:** `pyhecke_native` built for the python 3.13 that now has sympy, then refresh `gamma_gamma_isospin_channel_probe` under it with a budget above 860 s. That should close D4 and let all three witnesses land provenance-clean. The nine confirmed-mixing straddles (taint analysis above) are the separate tranche.
