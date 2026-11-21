@@ -1,13 +1,13 @@
 ---
 # qou-07ts
 title: 'compute_atom_chi_rust 3He is nondeterministic at the 50th digit: 4 distinct outputs in 8 runs'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T08:33:29Z
-updated_at: 2026-11-21T13:05:00Z
+updated_at: 2026-11-21T16:40:00Z
 parent: qou-v2om
 ---
 
@@ -195,3 +195,7 @@ Premise check against `docs/coordination/owner-rulings.md` on main `2ae54ab40` (
 Same masked fingerprint, 10 runs each on main `2ae54ab40`: **3He 1 output** (equal to the committed one), **T 2 outputs (5/5), neither equal to the committed one**. The diffs are one unit in the 50th digit of single partitions, e.g. `/atom/by_partition[10]`: `...401691` vs `...401690`. 4He was not finished (the run timed out at 30 min).
 
 Cause: `compute_atom_chi` ran the MPFR kernel at exactly `dps = 50` and printed at 50, with no guard digits. Fix (commit dc60cf674, PR #8849): the kernel now runs at `max(dps+20, COMPUTE_DPS) = 70`, which the witness's `precisionMetadata` already declared, and prints at 50. After the fix, D, T and 3He each give **1 output in 10 runs**. The refreshed witnesses moved only in the last 1–2 digits (max rel 4.4e-49). Close on merge. 4He's witness still needs one guarded re-run (about 21 min).
+
+## 2026-11-21 — PR #8849 merged (binding-hygiene, session https://claude.ai/code/session_01Qmmkt97hXiyVzatJQADqZY)
+
+**Completed:** the fix landed on main with PR #8849 (merged 2026-11-21).

@@ -1,14 +1,14 @@
 ---
 # qou-yaqm
 title: 'BUG: hecke offset drops generator sign in load_atom_braids (delta_lambda_jsj_phase3)'
-status: in-progress
+status: completed
 pr: 8849
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T15:03:20Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-21T16:40:00Z
 parent: qou-v2om
 ---
 
@@ -44,3 +44,7 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8344, closed o
 Premise check against `docs/coordination/owner-rulings.md` on main `2ae54ab40` (owner instruction 2026-11-21: no bean is worked on a superseded basis). The fix is basis-independent: it is how any signed sub-word is translated. The words the two consumers build use the pre-γγ interface letters, so their outputs stay records of the superseded word.
 
 **Fixed in draft PR #8849 (issue #8848), branch `claude/binding-hygiene-2026-11-21`, commit 2cf8025d6.** New `atom_braid_words.shift_word` keeps the sign at all 11 sites. Self-test PASS 18/18 (4 new checks); SnapPy-inferred strands now 6/9/9/12 for D/T/3He/4He (were 5/8/8/11). Witnesses NOT regenerated: a re-run moves the D JSJ volume 12.776 -> 26.158 and writes 19 raw float64 SnapPy fields. Close on merge.
+
+## 2026-11-21 — PR #8849 merged (binding-hygiene, session https://claude.ai/code/session_01Qmmkt97hXiyVzatJQADqZY)
+
+**Completed:** the fix landed on main with PR #8849 (merged 2026-11-21).
