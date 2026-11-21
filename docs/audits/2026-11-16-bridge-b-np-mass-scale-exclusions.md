@@ -166,6 +166,19 @@ This computes only the `M_QCD` term of the two-term trace. The `M_QED` charge te
 
 Verdict, scope (a). The boundary fixes the direction up to one binary choice, namely which end carries the wall. It does not fix the size of an n − p splitting, that is, the coupling between the boundary and the bulk.
 
+### 10a. What fixes the coupling and the end: no hit (H6, 2026-11-21)
+
+Pre-registered in `computations/probes/bridge_b/h6_boundary_coupling_preregistration.md`; result
+in `h6_result.md`. Six candidates were checked, and none fixes `ε` or the end:
+- the Stokes boundary term: the corpus has no forms (`qou-20bk`), and the surface-term coefficient is not derived;
+- the type-B Markov value `q²(x+y)/(q²+1)`: still free;
+- the XXZ surface term: restricted traces 0 on both spaces;
+- folding, the Markov orientation, the over-strand rule, Reeb.
+
+One exact fact sharpens the gap. Strand reversal composed with the flavour swap fixes the Jimbo
+`Ř` and inverts the pivot `K`. So the end choice is the same bit as the sign of n − p. It is not a
+second unknown. Scope (a).
+
 ## 11. What remains open
 
 - A symmetry-breaking object (a vacuum or boundary choice in the Higgs role) that distinguishes u from d inside the
