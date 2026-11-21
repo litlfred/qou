@@ -104,3 +104,31 @@ cannot be "take one standard count of β_Bor, its closure, or H₃(q)": none of 
 equals 12.
 
 No number moves.
+
+## 3. The 3 in −12 = −k²·3 (owner request 2026-11-21: "derive 3, show it follows from the mass derivation pipeline")
+
+Reading taken: the −12 audit reduced the term to τ(R_p∘R_p) = −k²·dim W_p, where W_p is the
+proton weight space that `hReebP` traces over with the unnormalised `Matrix.trace` on `Fin 3`.
+Until now the 3 was the size of that matrix. Lean: `QOU/MassTheory/ProtonWeightSpaceDim.lean`
+(core Lean, exit 0; `dim_proton_weight_space`, `charge_iff_one_d`, `kostka_split` use no axioms,
+`twelve_iff_weight_two` and `large_weight_misses` use propext and Quot.sound).
+
+**Derived.** dim W_p = 3 follows from three inputs the pipeline already fixes:
+(1) three strands, β_Bor ∈ B₃; (2) V = C² per strand (level-2 Jimbo, `NucleonWeightSpaceTraces`);
+(3) the proton sector is the K^{⊗3}-eigenspace of eigenvalue q (`Kp = q • 1`). A state with d
+copies of e₂ has weight q^(3−2d); the exponents on (C²)^{⊗3} are 3, 1, −1, −3, so for q not a
+root of unity weight q means d = 1, and there are exactly 3 such states, the corpus basis
+e₁e₁e₂, e₁e₂e₁, e₂e₁e₁ (`protonStates_eq`). Charge +1 with Q = diag(2/3, −1/3) cuts out the
+same 3 states (`charge_iff_one_d`); the neutron sector (charge 0, weight q⁻¹) also has
+dimension 3 (`neutron_dim`). Schur–Weyl splits W_p as V_(3) ⊕ V_(2,1), 3 = 1 + 2
+(`kostka_split`).
+
+**Scope.** This is the 3 of the two-term Lagrangian route (`CategoricalLagrangianTwoTermBridge`),
+which the scoreboard uses by the 2026-11-21 ruling. The production identity in
+`canonical_mass.py` uses the H₃ Markov trace and has no weight space in it, so this does not
+derive anything in that formula. Input (2), C² per strand, is the corpus's set-up for the
+weight-space files, not itself derived here.
+
+**What remains.** With the 3 derived, the −12 holds iff the Reeb square is the scalar −k²·𝟙 with
+k = ±2 (`twelve_iff_weight_two`, `large_weight_misses`). Neither the scalar form nor k = 2 is
+derived. The current hypothesis `hReebP` is not scalar (`ProtonTwelveOrigin.reebSlot_not_constant`).
