@@ -239,6 +239,10 @@ Markov condition fixes a trace value, not `Q`.
 
 The source is now held (`uploads/0208154v2.pdf`, commit `f5d31c46b93`). §16.2 confirms the folding rule: the fixed group is Coxeter on the orbit longest elements, with the weight function L equal to the restricted ambient length. So the wall has L = 1 and the bulk L = 2. §16.7(b) fixes the quadratic relations with the **ambient** v. `conj:type-b-folding-cpt` folds the physical H_n(q), so v = q: the folded bulk is at q² and the wall at q. H10 had set the folded bulk to q (v = q^{1/2}), which does not match the conjecture's ambient. On V³ the supported reading gives D(q₀) = 0.94911520554914481986 (H10 as written: 0.96807142877888556063); D(1) = 1 in both. Whether the photon words live in the folded bulk (q²) or the ambient (q) is a new open input. D is a trace ratio, not a mass. Details: `computations/probes/bridge_b/h10_result.md` and `h10b_lusztig_normalisation_probe.py`.
 
+### 10h. Where the photon word lives (H11, 2026-11-21)
+
+The corpus fixes the home: `conj:type-b-folding-cpt` folds the physical H_n(q), and the owner ruling of 2026-11-21 writes the nucleon word in the ambient six-strand H_6(q), mirrors summed. So the words live in the ambient at q. What is open is the descent to the type-B algebra: Lusztig §16 uses the ι-twisted K♯ trace (traceless swapped pairs vanish), while the ruling uses a plain trace. A one-letter toy check gives plain {q², −1, −1, q⁻²}, naive swap trace {q², q⁻²}, Lusztig {q², −q⁻²}; the naive model has the wrong sign on the q⁻² line. Reading B (0.949115) is the K♯-level descent and has no strand-level model in the corpus. Details: `computations/probes/bridge_b/h11_result.md`.
+
 ## 11. What remains open
 
 - A symmetry-breaking object (a vacuum or boundary choice in the Higgs role) that distinguishes u from d inside the
