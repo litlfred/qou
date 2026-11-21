@@ -8874,3 +8874,14 @@ Owner: *"Keep these as options and explore the implications of each. Can we rule
 - **e_R next step:** derive the strand order (matter-left vs Higgs-left) and the Yukawa strengths from the corpus — agent dispatched (branch claude/eR-strand-order-yukawa-derivation-2026-11-21).
 - **Two-term with a lepton strand (#8707): not picked from the two readings.** Owner: "The two term came out from looking at the Lagrangian and tracking through non-abelian Stokes. Do the same for the lepton." Agent dispatched to derive the lepton two-term the same way (branch claude/lepton-two-term-from-lagrangian-stokes-2026-11-21).
 - **Pair-creation word (#8696): leaning b (require chirality) and d (rule mirror vertices first), NOT ruled.** Owner asks for more context first: what is derived, what is aligned with physics, downstream implications. Analysis agent dispatched.
+
+## 2026-11-21 — decision brief for #8696 rulings (b)/(d) (PR #8742)
+
+Owner asked: "What is derivation? What is aligned to physical?" Brief: docs/audits/2026-11-21-pair-word-derivation-vs-physics-brief.md (PR #8742). Nothing ruled.
+
+Measured (probe computations/probes/pair_word_brief/mirror_vertex_nucleon_probe.py, exact Q(q), proton q0 70 dps):
+- eps_flavour (scored Q_beta split, #8586) is identical on V^3 and Vbar^3. The 6 mixed {V,Vbar} 3-vertex words share -(q^2-1)(q^8-q^6+3q^4-q^2+1)/(q^2(q^2+1)^3) = -0.0805502 vs -0.0769805 (ratio 1.04637). (d)-in therefore turns the nucleon selection into an 8-way tie; the scored row moves only if a mixed word is chosen.
+- V2V0V1V2 free-reduces to s2 s3^-1 s0 s3^-1 (4 crossings). Closed with beta_Bor, nucleon strands 0 and 1 merge and nu-bar is Hopf-linked (lk -1) to the e- component.
+- #8696 "chiral" = zero reverse block = directionality, NOT V-A handedness. The SM H_W is Hermitian: electron capture is its h.c. term. Open, cheap check: are A's two blocks adjoints?
+- Which corpus involution is P/CP is unruled (bar and iota send V to Vbar; the group inverse and C do not). "(d)-out breaks CPT" is neither shown nor refuted.
+- Recommendation (judgement): (d)-out for now, with a stated reason; hold (b) until the adjointness check is done.
