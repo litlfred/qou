@@ -8,7 +8,7 @@
     "lean": "folio/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.lean"
   },
   "source_hashes": {
-    "md": "0bbf488cdd33",
+    "md": "56246e33a35a",
     "ts": "21bc5fe8a9a1",
     "lean": "86329d43c396",
     "lean_statement": "0e2a3867cc7c"
@@ -101,6 +101,25 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "voice-emoji-content": [
@@ -178,6 +197,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "voice-first-person-work": [
@@ -255,6 +293,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "voice-time-stamped-notes": [
@@ -332,6 +389,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "voice-unicode-crash": [
@@ -409,6 +485,25 @@
           "def_hash": "63a6e57fead9"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "voice-editorializing": [
@@ -486,6 +581,25 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "voice-scholarly-default": [
@@ -631,6 +745,42 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "voice-title-scholarly": [
@@ -814,6 +964,42 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "voice-author-notes-pollution": [
@@ -891,6 +1077,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "voice-status-section": [
@@ -968,6 +1173,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5b0082576ba9",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "framework-canonical": [
@@ -1045,6 +1269,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "wall-side-correct": [
@@ -1122,6 +1365,25 @@
           "def_hash": "2ff53167ead5"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "q-usage-regime-detected": [
@@ -1319,6 +1581,25 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "canonical-witness-pinned": [
@@ -1396,6 +1677,25 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -1512,6 +1812,25 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -1589,6 +1908,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "canonical-no-negative-result-in-paper": [
@@ -1666,6 +2004,25 @@
           "def_hash": "791b80875ca1"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ee603ee4f369",
+          "script_commit_sha": "unknown",
+          "def_hash": "791b80875ca1"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "compute-witness-exists": [
@@ -1884,6 +2241,26 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c",
+          "graph": "c92e4c0e3553"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1967,6 +2344,27 @@
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0",
         "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c",
+          "graph": "c92e4c0e3553"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d",
+        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-archimedean-wall": [
@@ -2049,6 +2447,27 @@
           "def_hash": "19a5005a8bb6"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c",
+          "graph": "c92e4c0e3553"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c17b282a7de7",
+          "script_commit_sha": "unknown",
+          "def_hash": "19a5005a8bb6"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -2322,6 +2741,32 @@
           "top_other_chapter": "quantum-observable-universes",
           "top_other_score": 2
         }
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c",
+          "graph": "c92e4c0e3553"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d",
+        "metrics": {
+          "home_chapter": "braids-and-knots",
+          "home_score": 2,
+          "top_other_chapter": "quantum-observable-universes",
+          "top_other_score": 2
+        }
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -2463,6 +2908,26 @@
           "def_hash": "e703243fe06f"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -2544,6 +3009,26 @@
           "def_hash": "e08cc9c741f6"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "bib-cited-ref-metadata-ok": [
@@ -2625,6 +3110,26 @@
           "def_hash": "e08cc9c741f6"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -2706,6 +3211,26 @@
           "def_hash": "17f40a4ba0f4"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -2905,6 +3430,26 @@
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0",
         "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0b437d66ec19",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d",
+        "notes": "not implemented: stub checker"
       }
     ],
     "proof-lean-compiles": [
@@ -2987,6 +3532,26 @@
           "def_hash": "a1e400281510"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e8d0b02f4cef",
+          "script_commit_sha": "unknown",
+          "deps_hash": "16d8c7a8984e",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "fit-section-chapter": [
@@ -3087,6 +3652,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "wall-side-statement": [
@@ -3158,6 +3740,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "da-citation-misuse": [
@@ -3251,6 +3850,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "da-hidden-dof": [
@@ -3343,6 +3959,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -3437,6 +4070,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). Fixed: the prior major (x_-^2 = c_sign x_- attributed to the Lean file, which does not prove it) is reworded; the Lean file proves the Schur-element identities named."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "da-definitional-ambiguity": [
@@ -3529,6 +4179,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "da-referee-verdict": [
@@ -3617,6 +4284,23 @@
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "severity": "minor",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). Accept with minor revision: only the milnor-brevity duplication remains."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "da-false-claim": [
@@ -3703,6 +4387,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). Fixed: d_c t = -u^-1 q^-3 now matches d_z t(z_D) = -q^-3 divided by dc/dz = u. Schur elements, z_D, units of Z[q,q^-1] re-checked."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "da-vacuous": [
@@ -3787,6 +4488,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "da-circular": [
@@ -3872,6 +4590,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "da-overclaim": [
@@ -3957,6 +4692,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "da-non-sequitur": [
@@ -4042,6 +4794,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "da-empirical-fragility": [
@@ -4127,6 +4896,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "da-physical-implausibility": [
@@ -4212,6 +4998,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "da-reproducibility": [
@@ -4297,6 +5100,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -4367,6 +5187,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -4433,6 +5270,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "proof-statement-integrity": [
@@ -4644,6 +5498,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "milnor-brevity": [
@@ -4712,6 +5583,23 @@
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "severity": "minor",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). The modified-trace paragraph still restates most of conj:proton-normaliser-kl-coordinate; a one-sentence pointer would do."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). Fixed: the duplicated paragraph is now a one-sentence pointer."
       }
     ],
     "voice-probe-narrative": [
@@ -4789,6 +5677,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "cite-named-theorem": [
@@ -4866,6 +5773,25 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "voice-agent-speak": [
@@ -4943,6 +5869,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "clarity-defterm-bold": [
@@ -5046,6 +5991,27 @@
           "def_hash": "6ed1c90f444f"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0",
+        "notes": "no docs/audits/lean-profile.json"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-cost.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "3eb5d65c22b2",
+          "script_commit_sha": "unknown",
+          "deps_hash": "4df6f652b039",
+          "def_hash": "6ed1c90f444f"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d",
         "notes": "no docs/audits/lean-profile.json"
       }
     ],
@@ -5252,6 +6218,26 @@
           "def_hash": "d292915cbf8a"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "trap-negation-contrast": [
@@ -5337,6 +6323,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -5422,6 +6425,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "trap-em-dash": [
@@ -5507,6 +6527,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "trap-triples": [
@@ -5592,6 +6629,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "trap-closing-aphorism": [
@@ -5677,6 +6731,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "trap-meta-commentary": [
@@ -5762,6 +6833,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "trap-thesis-restatement": [
@@ -5847,6 +6935,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "trap-performed-warmth": [
@@ -5932,6 +7037,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "trap-superlative": [
@@ -6017,6 +7139,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "trap-nonspeakable": [
@@ -6102,6 +7241,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "wall-base-ring-minimal": [
@@ -6219,6 +7375,25 @@
           "def_hash": "440226b73b33"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "proof-no-placeholder-stub": [
@@ -6448,6 +7623,25 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "foreshadows-point-forward": [
@@ -6510,6 +7704,26 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c",
+          "graph": "c92e4c0e3553"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d"
       }
     ],
     "dak-companion-present": [
@@ -6562,6 +7776,23 @@
           "version": "v1"
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0",
+        "notes": "criterion applies to dak; block kind \"definition\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d",
         "notes": "criterion applies to dak; block kind \"definition\" is mathpaper"
       }
     ],
@@ -6673,6 +7904,23 @@
         },
         "reviewed_tree": "27e440149344524bc8a45d43acc7c98dab055de0",
         "notes": "criterion applies to dak; block kind \"definition\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "81526531f0954a3ba93c7c56662d1844c9150b7d",
+        "notes": "criterion applies to dak; block kind \"definition\" is mathpaper"
       }
     ],
     "id-unique": [
@@ -6769,6 +8017,23 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ],
     "da-arity-conflation": [
@@ -6822,9 +8087,26 @@
         "reviewed_at": "2026-11-21T23:42:46.000Z",
         "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
         "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
       }
     ]
   },
-  "updated_at": "2026-11-21T23:42:46.000Z",
+  "updated_at": "2026-11-21T23:45:15.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
