@@ -803,3 +803,30 @@ alternatives give Δ = 0:
 - the inversion-odd part, which is the analogue of σ − σ⁻¹ = h.
 
 Which connection is the right one is not settled in the corpus. It is left for the owner to decide.
+
+## §27 A corpus reason for ∇ = hol − 1, and the reason against
+
+**Where ∇ is defined.** `CategoricalQConnection` (`QDifferentialGeometry.lean`) and
+`def:categorical-q-connection` take ∇ : A → A ⊗ Ω¹ as given ("the classical connection"); at q = 1
+it is the instanton connection. The corpus does not define ∇ through the holonomy.
+
+**For hol − 1.** `def:mass-identity` (`mass-endomorphism/mass-identity.md`) uses the holonomy
+*linearly*: the cycle is ϱ = hol(w), and each crossing is expanded as T(σ_a^{±1}) = q^{±1}·1 − e_a.
+So hol is a sum over 2^k states, and the all-zero state contributes ∏c(ℓ_j)·1.
+For V³ = (σ₀σ₁⁻¹)³ the writhe is 0, so that coefficient is 1. Hence
+
+  hol − 1 = the sum of the s ≠ 0 (Temperley–Lieb loop) states, exactly.
+
+Checked in `mn_connection_tl_state_sum_check.py`: 64 states, exact sympy, all checks pass.
+In that expansion, hol − 1 is "everything except the identity channel". log hol has no
+counterpart in this linear expansion.
+
+**Against.** If ∇ is read as a Lie-algebra-valued 1-form, as the classical connection is, then
+the holonomy is its multiplicative integral, and the infinitesimal object is log hol. These two
+readings differ already in the trace: tr(hol − 1) = 2cos θ − 2 ≈ −θ², while tr log hol = 0. The
+first-order part is traceless, so Δ (which by `delta_np_general` sees only the trace) is decided
+by this second-order difference.
+
+**Status.** There is a corpus reason (the mass identity's TL expansion) for reading ∇ as hol − 1
+on this word. That is a reading of how the mass identity uses the holonomy; it is not a proof
+that the ∇ in 𝒟 equals hol − 1. The choice is still open for the owner.
