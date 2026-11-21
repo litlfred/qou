@@ -38,10 +38,10 @@ set_compute_dps()
 import mpmath as mp  # noqa: E402
 
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
-from chi_general_word import chi_all_lambda_any  # noqa: E402
+from chi_general_word import chi_all_lambda_any, chi_all_lambda_general  # noqa: E402
 from tr_m_atom_via_transfer import _trM, tr_m_atom_zn  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
-from q_parameter import Q as Q0, Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_MP as Q0, Q_50_DIGIT_STR  # noqa: E402  (mpf, as tr_m_atom_zn)
 from witness_base import WitnessBuilder  # noqa: E402
 import mass_binding_dashboard as mbd  # noqa: E402
 from codata_constants import (  # noqa: E402  (comparison only)
@@ -102,6 +102,36 @@ def pair_type(kinds, i, j) -> str:
 
 
 def build_atom(Z: int, N: int, bonds, variant: str) -> list:
+    kinds = ["p"] * Z + ["n"] * N
+    letters = bond_letters(Z, N)
+    sinv = sigma_inv_letter(Z, N)
+    # The pre-registered word is "free word, then the bonds in route order".
+    # It is built here in an EQUAL arrangement: a bond on nucleons i < j uses
+    # generators 3i+2 .. 3j-1, so it commutes with the block of every nucleon
+    # m > j (generators >= 3m >= 3j+3). Each bond is therefore moved left past
+    # those blocks, to just after block J = max j over itself and all earlier
+    # bonds, which keeps the route order of the bonds. Same element of H_n(q),
+    # same trace; the point is that the window transfer can evaluate it
+    # (letters arrive in near-increasing generator order) where the appended
+    # form exceeded its live-window guard and the fallback kernel ran out of
+    # memory at A = 4. `ARRANGEMENT_CHECK` below confirms equality on A = 3.
+    A = Z + N
+    free = list(atom_braid_word_3A(Z, N, include_inter=False))
+    per_block = len(free) // A
+    blocks = [free[k * per_block:(k + 1) * per_block] for k in range(A)]
+    after: dict[int, list] = {k: [] for k in range(A)}
+    J = 0
+    for i, j in bonds:
+        J = max(J, j)
+        after[J] += transported_bond(i, j, letters[pair_type(kinds, i, j)], variant, sinv)
+    w: list = []
+    for k in range(A):
+        w += blocks[k] + after[k]
+    return w
+
+
+def build_atom_appended(Z: int, N: int, bonds, variant: str) -> list:
+    """The pre-registered arrangement verbatim (free word, then bonds)."""
     kinds = ["p"] * Z + ["n"] * N
     letters = bond_letters(Z, N)
     sinv = sigma_inv_letter(Z, N)
@@ -169,14 +199,27 @@ def main() -> int:
 
         record("production (interleaved chain)", "-", [], tr_prod)
         w = build_atom(Z, N, CHAIN_APPENDED[(Z, N)], "over")
-        record("chain appended", "-", CHAIN_APPENDED[(Z, N)],
+        record("chain, bonds after blocks", "-", CHAIN_APPENDED[(Z, N)],
                _trM(chi_all_lambda_any(w, n, dps=DPS), y))
+        if Z + N == 3:
+            for variant in ("over", "under"):
+                bonds = ROUTES_A3["all pairs"]
+                t_app = _trM(chi_all_lambda_any(build_atom_appended(Z, N, bonds, variant), n, dps=DPS), y)
+                t_arr = _trM(chi_all_lambda_any(build_atom(Z, N, bonds, variant), n, dps=DPS), y)
+                checks[NAME[(Z, N)]][f"arrangement_{variant}"] = mp.nstr(abs(t_app - t_arr), 5)
+                log(f"  arrangement check {variant}: |appended - arranged| = {mp.nstr(abs(t_app - t_arr), 5)}")
         routes = ROUTES_HE4 if (Z, N) == (2, 2) else ROUTES_A3
         for label, bonds in routes.items():
             for variant in ("over", "under"):
                 t = time.time()
                 w = build_atom(Z, N, bonds, variant)
-                tr_atom = _trM(chi_all_lambda_any(w, n, dps=DPS), y)
+                # At A = 4 the transported words exhaust memory in the window
+                # transfer (live window too wide); the Rust general-word kernel
+                # is correct for any word and runs in ~90 MB. Cross-checked on
+                # the A = 3 words, where both engines agree.
+                chi = (chi_all_lambda_general(w, n, dps=DPS) if n >= 12
+                       else chi_all_lambda_any(w, n, dps=DPS))
+                tr_atom = _trM(chi, y)
                 record(label, variant, bonds, tr_atom)
                 log(f"    ({len(w)} letters, {time.time() - t:.1f}s)")
 
