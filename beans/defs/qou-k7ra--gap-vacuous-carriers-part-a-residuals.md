@@ -26,3 +26,11 @@ each needing an object neither the corpus nor Mathlib has:
 6. **DoubleMagicConjecture** — define LR coefficients (count of LR tableaux on YoungDiagram).
 7. **confinement-nf-partial-proof.lean** keeps its own vacuous copy of HasFiniteLPDuality.
 8. UGB file: GroebnerBasis.has_representation and SPolynomial are still True/TODO placeholders.
+
+## 2026-11-21T04:55:05Z — item 6 done; the conjecture is false with real LR coefficients (PR #8728)
+
+QOU/Mathlib/LittlewoodRichardson.lean defines lrCoeff (LR-tableau count). With lr := lrCoeff,
+not_doubleMagicConjecture holds for every (Z,N): lambda+mu always occurs, uniqueness forces nu =
+lambda+mu, conjugation symmetry forces it self-conjugate, but its first row exceeds its first
+column. Conditional (for the .md statement) on LR conjugation symmetry, not formalised (GAP).
+Open: LR commutativity/conjugation symmetry; lr_conj-free refutation; bridge to Interactions.LRFusion.
