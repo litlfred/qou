@@ -40,3 +40,14 @@ each in the one-sided and the shared placement, report without choosing:
 (c) the q → 1 behaviour of Q_β (finite or ~E₀);
 (d) the exact value with both E₀ forms (order-zero, tower) to show the E₀ spread;
 (e) only then the comparison with CODATA Q_β and m_n − m_p.
+
+## Addendum 3 (written before `reading_probe.py` ran; owner: "not yet, derive the reading")
+
+Question: which energy is E₀·F for the one-sided nucleon-rule F = ε_n − ε_p·f? Test each reading
+against the energy map it would have to use, with no comparison value used to decide:
+(g) linear map E(X) = E₀·ε(X), multiplicative traces: the energies E(n), E(p), E(p e⁻ ν̄), the
+    lepton-pair energy E(p e⁻ ν̄) − E(p), and E(n) − E(p). Pass for the Q_β reading iff the
+    lepton-pair energy is > 0; pass for the m_n − m_p reading iff E(n) − E(p) = E₀·F.
+(h) logarithmic map E(X) = ±E₀·ln ε(X), both signs: the same two quantities.
+(i) only after (g) and (h): the lepton-pair energy against m_e, printed, not used to decide.
+Lean twin: `QOU.QBeta.OneSidedReading` (signs proved on 1 < q ≤ 23/20).
