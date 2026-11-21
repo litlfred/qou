@@ -563,7 +563,8 @@ def random_search(sy, nstarts, rng, S0s, log=LOG):
 
 def main():
     mode = sys.argv[1]
-    outf = os.path.join(HERE, f"leray-dss-logphase-{mode}.witness.json")
+    tag = os.environ.get("LERAY_TAG", "")
+    outf = os.path.join(HERE, f"leray-dss-logphase-{mode}{tag}.witness.json")
     out = dict(description=__doc__.strip().splitlines()[0], dps=DPS, radial_rule=dict(QN=QN, phase_per_panel=s40(PHASE_PER_PANEL, 4)),
                trial_tail='(1+rho)^-(p + i theta m w); theta=1: mode m decays like |y|^(-1-2imw)', mode=mode)
     def save(): json.dump(out, open(outf, 'w'), indent=1)
