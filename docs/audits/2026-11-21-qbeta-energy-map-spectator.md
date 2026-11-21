@@ -617,3 +617,30 @@ What (G) adds over the whole-nucleon log map: that map was a premise; here it fo
 weight-space trace plus the m ↔ −m symmetry of β_Bor's trace, which is proved for this braid only.
 What stays a premise: (G) itself, (L), and that the weight-space trace (not the convention-D Markov
 trace) is the Gibbs weight. How T relates to τ_D(β_Bor) is not settled here; it does not affect n − p.
+
+## 25. The weight-space trace and the convention-D Markov trace (owner "Lean prove your assertions", "1y")
+
+Lean, `QOU/QBeta/WeightSpaceMarkov.lean`, lean-direct exit 0, no `sorry`, standard axioms only.
+It imports `WeightSpaceNucleon` and `QOU.BraidsAndKnots.FibreDimensionForcesTL`.
+
+The §24 report stated four facts not yet in Lean. Now proved:
+- `chi3_bor`: on the trivial representation (the weight spaces m = ±3) β_Bor acts as 1.
+- `T_eq_chi3_add_chi21`: T = 1 + tr ρ₍₂,₁₎(β_Bor), where ρ₍₂,₁₎ is an explicit 2-dimensional
+  representation of H₃ (`hecke_r21a/b`, `braid_r21`) whose σ-character is q − q⁻¹.
+- `T_at_one`: T(1) = 3.
+- `T_pos`: T > 0 for 1 ≤ q and q² ≤ 2. This range contains the proton q₀ (q₀² ≈ 1.232), so
+  `np_eq_cell` applies there. Outside it, T changes sign at q² ≈ 2.475 (sympy, not in Lean).
+
+Option 1, T against the convention-D Markov trace:
+- `qtrace_one`, `qtrace_sigma`: the K-weighted sum over the four weight spaces,
+  φ(x) = (q³t₃ + q t₁ + q⁻¹t₋₁ + q⁻³t₋₃)/[2]³, gives φ(1) = 1 and φ(σ₁) = q²/[2] = z_D.
+- `qtrace_bor_weights`: φ(β_Bor) = y₃·1 + y₂₁·(T − 1), with y₃ = 1 − 2/[2]², y₂₁ = 1/[2]², y₁₃ = 0.
+- `qtrace_weights_D_moments`: these weights solve the corpus's Markov moment equations
+  (normalisation, σ, σ²) at z = z_D.
+- `D_moments_force_weights`: any weights solving them at z = z_D are exactly these. The step
+  y₁₃ = 0 uses the corpus lemma `threeRow_eq_zero_of_jones_ocneanu`.
+
+**Consequence.** τ_D(β_Bor) = (q³ + q⁻³ + [2]·T)/[2]³ = 1 + (T − 3)/[2]². So the convention-D Markov
+trace is the normalised K-weighted sum over all four weight spaces. The nucleon Gibbs weight of §24 is
+its (m = ±1) slice, q^{±1}·T. At the proton q₀ (rendering only): T ≈ 2.994186, τ_D(β_Bor) ≈ 0.998562.
+This fixes the flavour-independent binding term −E₀·ln T. It does not change n − p.

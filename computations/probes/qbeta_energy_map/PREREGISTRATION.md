@@ -400,3 +400,11 @@ To be proved:
 Expected outcome: the §19/§22/§23 mismatch disappears under (G), because the trace no longer weights
 the quark masses. n − p is the cell, 0.873537 MeV at the proton q₀, which is still below
 m_n − m_p (1.29333 MeV), the comparison value. So (G) settles consistency, not accuracy.
+
+### Addendum 15 (owner "Lean prove your assertions", "1y", "2y")
+
+Not a preregistration in the strict sense: it records that the claims stated in the §24 report
+(T = 3 at q = 1, T > 0 at the pin, χ₍₃₎(β_Bor) = 1, T = χ₍₃₎ + χ₍₂,₁₎) and option 1 (relate T to the
+convention-D Markov trace) were proved in `WeightSpaceMarkov.lean` after a sympy check. Option 2 (a
+derived term for the gap between the cell and m_n − m_p) starts with the corpus-grep checklist; no
+term will be added unless the corpus derives it.
