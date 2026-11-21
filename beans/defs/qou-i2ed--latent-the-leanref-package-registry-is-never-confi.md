@@ -1,13 +1,13 @@
 ---
 # qou-i2ed
 title: 'LATENT: the lean.ref package registry is never configured in production, so 8 lookup sites can never resolve — masked today because every block also has a sibling .lean'
-status: in-progress
+status: completed
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-27T05:54:25Z
-updated_at: 2026-10-04T15:15:44Z
+updated_at: 2026-11-21T22:41:42Z
 parent: qou-5vkl
 ---
 
@@ -215,3 +215,7 @@ Superseded-premise check: "gated on the platform pin advancing past formal-ref" 
 Measured (platform at pin, qou main 4e8ceb10): refs with no sibling `.lean` that resolve 0/425 -> 422/425; wall-side sweep 860/867 -> 1249/1289 pass; base-ring 827/867 (254 hits) -> 1167/1238 (529 hits). New failures are library `.lean` files scored for the first time, not fixed here.
 
 Still open: option 2 (a `leanPackagesConfigured()` guard at the 8 platform sites) was not done. Stays in-progress until #8915 merges.
+
+## 2026-11-21T22:41:42Z — completed
+
+qou#8915 merged: check-wall-side.ts and check-base-ring.ts now call configureLeanPackages from folio-assistant-sci/pipeline/lean-formal-ref, so the 425 refs without a sibling .lean resolve (0 -> 422). Option 2 (a leanPackagesConfigured() guard at the 8 platform lookup sites) was not done; it is a platform change and would need its own bean and owner go-ahead. The new library-file failures the sweeps surface are not triaged here.

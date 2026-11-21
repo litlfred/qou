@@ -1,14 +1,14 @@
 ---
 # 3t8p
 title: CI live lake build to score proof-build-green/no-axiom-growth/lean-compiles
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - lightning-followup
     - reorg-2026-10-04
 created_at: 2026-07-06T04:11:12Z
-updated_at: 2026-10-04T15:16:57Z
+updated_at: 2026-11-21T22:41:42Z
 parent: qou-5vkl
 ---
 
@@ -83,3 +83,7 @@ into `ab_methodology_metrics` M5: bean `qou-306p`.
 The two stubs now live in folio-assistant-sci `pipeline/qa-checkers-extended.ts`. Retired in litlfred/folio-assistant-sci#211 (functions, dispatch entries, qa-checkers JSONs, test, skill docs) and litlfred/cat-harness-tools#2484 (registry entries). Tests in a mounted platform: sci 301/0, registry + sci 426/0. `proof-lean-compiles` stays; axiom status is `scripts/lean-axiom-guard.py`. Out of scope: the two detangler stubs (bean qou-306p).
 
 Complete after: both PRs merge, the folio-assistant lock is bumped, and qou's `.folio-assistant-pin` moves past it.
+
+## 2026-11-21T22:41:42Z — completed
+
+Both stub checkers retired and the pins moved, owner go-ahead at each step (2026-11-21): folio-assistant-sci#211 and cat-harness-tools#2484 merged; folio-assistant#3189 re-pinned them in the index (main ba3914bec); qou#8970 moved qou's pin there. run-validate on the same corpus: 120 -> 166 issues (+46 warn-only defterm-forward-ref; two broken cross-paper uses fixed in #8970). The detangler stubs remain out of scope (qou-306p).
