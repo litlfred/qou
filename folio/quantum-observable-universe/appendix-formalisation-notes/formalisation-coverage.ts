@@ -13,7 +13,7 @@ export default prose({
     {
       kind: "note",
       date: "2026-11-20",
-      body: "Counts re-measured 2026-11-21 with `bun scripts/refresh-authors-note.ts` (PR #8888): 705/720 provable blocks sorry-free (97.9 %), 97 primary conjectures, 72 (74.2 %) class-axiomatised. They move with the corpus; re-run that script before quoting them.",
+      body: "Counts re-measured 2026-11-21 with `bun scripts/refresh-authors-note.ts` (PR #8888): 706/720 provable blocks sorry-free (98.1 %), 97 primary conjectures, 72 (74.2 %) class-axiomatised. They move with the corpus; re-run that script before quoting them.",
     },
   ],
 });
