@@ -1,3 +1,5 @@
+**Proposition (conditional on [the substrate flavor split conjecture](#conj:flavor-split-substrate-mass)).** In Lean the conjectured closed form is the `split` field of the hypothesis class `DressedMassSubstrateSplit`, which has no instance.
+
 *Let $\mu \colon \mathbf{Flavor} \to \mathbb{R}_{>0}$ be the flavor dressing functor. Let $M_N$ be the average nucleon mass, and $q = q_0$ the substrate parameter. The down-up dressed mass splitting is exactly determined by the substrate flavor formula:*
 
 $$
@@ -26,7 +28,7 @@ Here $z_{\mathrm{mkv}} = \sqrt q/(q+1)$ is the excised convention-C Markov weigh
 
 **Conditional on two upstream results, neither yet formalised.** The formal
 backing is a named accessor for a hypothesis carrying the substrate side
-([Substrate-pure derivation of the $u$--$d$ flavor split](#prop:flavor-split-substrate)) together with
+([the substrate flavor split conjecture](#conj:flavor-split-substrate-mass)) together with
 the Skein side ([Pair Skein mass and crossing-by-crossing recursion](#lem:pair-skein-mass-formula)),
 which is also where the $O\!\left((\Delta m / M_N)^2\right)$ correction is
 absorbed. The equality above is asserted for a triple $(\mu, M_N, q)$ carrying

@@ -34,7 +34,7 @@ second term is the Lean-proved writhe normalisation
   `t = ½ − δ(q)/4`,  `δ(q) = (q−1)²(1−q⁻⁴)/3`
 
 — the *bar-symmetric* weight `½`, split by the leading flavour asymmetry
-`δ = Δm/M_N` proved in `prop:flavor-split-substrate`.
+`δ = Δm/M_N` conjectured in `conj:flavor-split-substrate-mass`.
 
 Numerically (mpmath, 60 dps, no float64), at the canonical proton pin
 `q₀ = 1.109978582751380807…` and CODATA `mₑ = 0.51099895069 MeV`:
@@ -120,7 +120,7 @@ interchangeable.  Tracked separately — do not "reconcile" them by substitution
 ## References
 
 - [jones1987] https://doi.org/10.2307/1971403
-- [leitner2026] prop:flavor-split-substrate (leading `δ(q)`)
+- [leitner2026] conj:flavor-split-substrate-mass (leading `δ(q)`)
 - [leitner2026] `QOU.QBeta.WritheNormalisation` (writhe factor, sorry-free)
 - docs/audits/2026-08-25-low-isotope-binding-error-staleness-vs-gap.md §6 GAP-1
 - computations/mass_binding_dashboard.py `_bond_type_L` (production form)
@@ -141,7 +141,7 @@ noncomputable def zD (q : ℝ) : ℝ := q ^ 3 / (q ^ 2 + 1)
 noncomputable def hq (q : ℝ) : ℝ := q - q⁻¹
 
 /-- Leading flavour split `δ(q) = (q−1)²·(1 − q⁻⁴)/3`
-(`prop:flavor-split-substrate`, `_li_2_q_util.flavor_split_leading`). -/
+(`conj:flavor-split-substrate-mass`, `_li_2_q_util.flavor_split_leading`). -/
 noncomputable def flavorDelta (q : ℝ) : ℝ := (q - 1) ^ 2 * (1 - (q ^ 4)⁻¹) / 3
 
 /-- Interface factor of the p–n bond at colour weight `t`:

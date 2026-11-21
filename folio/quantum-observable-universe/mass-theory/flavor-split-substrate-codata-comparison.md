@@ -1,6 +1,6 @@
 **Remark (comparison with CODATA).**
 
-This remark is where the formula of [the flavor-split identity](#prop:flavor-split-substrate) is compared with measurement. The identity itself makes no empirical claim.
+This remark is where the formula of [the flavor-split identity](#prop:flavor-split-substrate) is compared with measurement. The identity itself makes no empirical claim; the claim compared here is [the conjectured mass split](#conj:flavor-split-substrate-mass).
 
 At $q = q_0 = 1.109978595642739\ldots$ (muon pin, 16 dps):
 
