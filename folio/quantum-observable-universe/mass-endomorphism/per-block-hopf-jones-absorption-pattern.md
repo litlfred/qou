@@ -30,8 +30,6 @@ The one-dimensional representations ($V_{(3)}$ trivial, $V_{(1,1,1)}$ sign) abso
 
 ## Connection to $c_3 = -2$
 
-The global precision-ladder coefficient $c_3 = J_{\text{Hopf}}(q{=}1) = -2$ emerges via the two-strand sub-braid argument ([categorical derivation of $c_3 = -2$](#prop:q-beta-c3-hopf-three-fold-markov)). The per-block decomposition shows that this Hopf-Jones value arises structurally per Wedderburn block. 
-
 Both one-dimensional representations absorb $-2$ in full. The two-dimensional representation absorbs $-1$, but carries a character-formula multiplicity $\dim V_{(2,1)} = 2$ in the Wedderburn sum. The dimension-weighted sum reproduces the global $c_3$ before Wenzl-bridge re-weighting via $y_\lambda$:
 
 $$
