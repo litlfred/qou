@@ -6,13 +6,13 @@
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-proton-mass-substrate-identity",
+  "@id": "papers/quantum-observable-universe/blocks/conj-proton-mass-substrate-identity",
   "@type": [
-    "folio-assistant-sci:Proposition",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
-  "label": "prop:proton-mass-substrate-identity",
-  "kind": "proposition",
+  "label": "conj:proton-mass-substrate-identity",
+  "kind": "conjecture",
   "title": "Substrate evaluation: $m_p = 2 \\cdot m_\\mu \\cdot F_{\\mathrm{Bor}}(q_0) - 12 \\cdot m_e$ to $0.24\\,\\mathrm{ppm}$ at $q = q_0$",
   "uses": [
     "papers/quantum-observable-universe/blocks/conj-proton-borromean-assembly",

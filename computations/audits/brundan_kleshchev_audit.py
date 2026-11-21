@@ -7,7 +7,7 @@ $H_n(R, q)$ at level 1 is isomorphic to a cyclotomic Khovanov–
 Lauda–Rouquier (KLR) algebra $R_\\alpha^\\Lambda$ as graded
 algebras.  This isomorphism is the upstream conjectural input
 axiomatised by `class CrystalGraphRealization` in
-`thm:confinement-grading-correspondence-conditional` (this PR).
+`conj:confinement-grading-correspondence-conditional` (this PR).
 
 A *full* Lean-level instance of the BK isomorphism is
 out-of-scope for this audit.  This script collects a battery of
@@ -47,7 +47,7 @@ References
 - [jucys1974] Jucys, "Symmetric polynomials and the centre of the
   symmetric group ring", Rep. Math. Phys.
 - conj:crystal-graph-realization
-- thm:confinement-grading-correspondence-conditional
+- conj:confinement-grading-correspondence-conditional
 """
 
 
@@ -152,7 +152,7 @@ def main():
             "separation, q-dimension bar-invariance) and reports them "
             "as the empirical input feeding `CrystalGraphRealization`'s "
             "class-axiomatised instance in "
-            "`thm:confinement-grading-correspondence-conditional`."
+            "`conj:confinement-grading-correspondence-conditional`."
         )
         .set_audit_only(
             "docs/audits/brundan-kleshchev-audit.md"

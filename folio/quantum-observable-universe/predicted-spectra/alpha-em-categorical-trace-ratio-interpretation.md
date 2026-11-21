@@ -6,7 +6,7 @@ The structural picture requires two components:
 
 The $h^{2}$ numerator originates from the two $(q - q^{-1})$ factors in the denominators of $[9]_q$ and $[10]_q$.
 
-**Significance for the Hartree-energy conjecture.** This identity supplies the algebraic mechanism introducing $\alpha_{EM}^{2}$ into the binding energy. The molecular bound state projects onto the Wedderburn channels $(3, 1)$ and $(2, 1, 1)$ with non-trivial $\delta_q$ weight ([Force carrier $T_{p,q}$ acting on $n$-strand braid lands on Wedderburn channel $\lambda = (p, 1^{n-p})$](#prop:force-carrier-intertwining-correspondence)).
+**Significance for the Hartree-energy conjecture.** This identity supplies the algebraic mechanism introducing $\alpha_{EM}^{2}$ into the binding energy. The molecular bound state projects onto the Wedderburn channels $(3, 1)$ and $(2, 1, 1)$ with non-trivial $\delta_q$ weight ([Force carrier $T_{p,q}$ acting on $n$-strand braid lands on Wedderburn channel $\lambda = (p, 1^{n-p})$](#conj:force-carrier-intertwining-correspondence)).
 
 Squaring the trace-ratio identity yields:
 

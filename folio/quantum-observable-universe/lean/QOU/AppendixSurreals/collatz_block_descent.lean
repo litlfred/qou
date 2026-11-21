@@ -22,7 +22,7 @@ steps the net change is `1 − v`: contractive exactly when `v ≥ 2`.
 
 `v ≥ 2` is precisely the contact-boundary condition `⟨v_[2]⟩ ≥ 2` — *"each
 tripling followed by at least two halvings on average"*
-(`prop:collatz-contact-boundary`, `rem:collatz-three-forms`). So the paper's own
+(`conj:collatz-contact-boundary`, `rem:collatz-three-forms`). So the paper's own
 convergence criterion is a statement about **blocks**, while every reduction
 available to discharge it was stated **per step**. A candidate measure was being
 tested against a requirement the problem never had.

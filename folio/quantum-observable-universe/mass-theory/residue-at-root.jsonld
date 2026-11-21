@@ -14,9 +14,7 @@
   "label": "prop:residue-at-root",
   "kind": "proposition",
   "title": "Cyclotomic residues of $\\Phi_q \\cdot \\mathrm{tr}_{M, \\ell}$ — algebraic definition",
-  "uses": [
-    "papers/quantum-observable-universe/blocks/conj-gs-residue-at-root-existence"
-  ],
+  "uses": [],
   "cites": [
     "references/kassel1995",
     "references/geckpfeiffer2000",
@@ -30,7 +28,7 @@
     "gs-filtration",
     "narrative-replacement"
   ],
-  "leanRef": "qou:QOU.BraidKnot.residue_isRingHom_of_residueAtRoot",
+  "leanRef": "qou:QOU.BraidKnot.residue_at_root",
   "text": "residue-at-root.md",
   "leanSource": "residue-at-root.lean",
   "provenance": "authored"

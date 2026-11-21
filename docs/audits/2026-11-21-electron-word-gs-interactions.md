@@ -302,3 +302,59 @@ not to that of `σ₀⁵` (cinquefoil, `−t²(t⁵ − t⁴ + t³ − t² − 1
 key (no witness was ever committed). The same mislabelled word survives under `T_{2,5}` "cinquefoil
 (muon)" in `photon_operator_table.py:130,227` and its witness, `gram-matrix-dual.py:391`, and
 `probes/photon_chiral/photon_chiral_ports_probe.py:75`; not changed.
+
+## 8. Addendum (2026-11-21, later the same day): C2c proved for every `q`
+
+**Claim.** For every field `K`, every `h ∈ K`, and every `K`-algebra `A` with `x, y ∈ A` (`y` a
+unit) satisfying `x² = hx + 1`, `y² = hy + 1`, `xyx = yxy`, in which `1, x, y, xy, yx, xyx` are
+linearly independent: if `γ(φ)·γ(ψ) = c·xyx` then `c = 0`. Here `γ` is the photon
+`1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹` with `σ₀ = x`, `σ₁ = y`. `H₃(q)` with `h = q − q⁻¹` satisfies the
+hypotheses for every invertible `q`. **There is no exceptional `q`**: the proof never divides by
+anything depending on `q`, so `q² = −1` (where the two eigenvalues of `σ` coincide and `H₂(q)` is
+not split), `h = 0` (the group algebra of `S₃`) and roots of unity are all covered.
+This settles the open item "C2c for generic `q`" of §4.
+
+**Proof.**
+
+1. `σ₁⁻¹ = σ₁ − h`, so `γ(φ) = 1 + a x + b y + e xy` with `a = φ₀ − hφ₀₁`, `b = φ₁`, `e = φ₀₁`
+   (a linear bijection of the weights). Write `ψ` likewise with `a', b', e'`.
+2. Reducing the product with the three relations gives the coefficients on
+   `1, x, y, xy, yx, xyx`:
+   `1 + aa' + bb'`, `a + a' + haa' + eb'`, `b + b' + hbb' + ae'`,
+   `e + e' + ab' + h(ae' + eb')`, `ba' + ee'`, `be' + ea' + hee'`.
+   Checked against this probe's exact `ℚ(q)` model (all six differences simplify to 0).
+   Setting the first five to 0 and the last to `c` is the system to refute.
+3. Structure behind it: `γ = α + βy` with `α = 1 + ax`, `β = b + ex` in the commutative subalgebra
+   `K[x]`, and `H₃` is free over `K[x]` on `1, y, yx`. The equation splits into
+   `αα' + b'β = 0`, `αβ' + (1 + hb')β = 0`, `β(a' + e'x) = cx`.
+   Put `δ = b'β' − (1 + hb')α' = δ₀ + δ₁x`. Then `αδ = b'·(2nd) − (1 + hb')·(1st)`, and multiplying
+   by `α'(a' + e'x)` gives `b'c·xδ = 0`; the factor `b'` cancels as a polynomial identity, leaving
+   `c·δ₁ = 0` and `c·(δ₀ + hδ₁) = 0` as explicit polynomial combinations of the six equations.
+4. If `c ≠ 0`: `δ₀ = b'² − hb' − 1 = 0` and `δ₁ = b'e' − a' − ha'b' = 0`. The first gives
+   `b'(b' − h) = 1`, so `b' ≠ 0`, and `b'(e' − a'b') = δ₁ − a'δ₀ = 0` gives `e' = a'b'`. Then, modulo the
+   fifth and sixth equations, `c = −a'e·δ₀ + (e' − a'b')(b − b'e + eh) = 0`, a contradiction. (Equivalently: `a' + e'x = a'(1 + b'x)` and `(1 + b'x)(b' − x) = x·δ₀ = 0`, so
+   `1 + b'x` is a zero divisor and cannot divide the unit `cx`.)
+
+**Cross-checks (this session, exact arithmetic).** Gröbner basis of the six equations plus
+`u·c − 1` in `a, b, e, a', b', e', u`: `{1}` over `ℚ(h)` (117 s); `{1}` at `h = 2i` and `h = −2i`
+(`q = ±i`, over `ℚ(i)`), at `h = 0`, and at `h = 0, 1 (mod 2)`, `h = 1 (mod 3)`, `h = 2 (mod 5)`.
+Consistent with the eight specialisations of §3.
+
+**Lean.** [`QOU/BraidKnot/LongestWordNotTwoPhoton.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidKnot/LongestWordNotTwoPhoton.lean),
+imported in `QOU.lean`: `core` (the scalar step, via `linear_combination` certificates),
+`inv_eq`, `photon_straight`, `mul_straight`, and the main
+`photon_mul_photon_ne_smul_longest`. `lean -DautoImplicit=false -s 65536` exit 0; `#print axioms`:
+`propext`, `Quot.sound`, plus `Classical.choice` for `core` and the main theorem; no `sorryAx`.
+Orphan gate: no new orphans.
+
+**Not done.** The hypotheses are stated abstractly; they are not yet discharged for the corpus's
+concrete `QOU.Hecke.IwahoriHecke` (whose independence of the `T_w` is
+`QOU.Hecke.TwIndependent.linearIndependent_Tw`; its generator normalisation would need to be matched
+to `σ² = hσ + 1`). Nothing here bears on `(σ₀σ₁)²` (X6), which §3 also found not to be a
+two-photon product at eight `q`; that remains measured, not proved.
+
+**Label copies (§7 follow-up).** The `T_{2,5}`/"cinquefoil (muon)" and `T_{2,3}`/"trefoil
+(electron)" keys for `(σ₀σ₁)²σ₀` and `σ₀σ₁σ₀` are now `T_{2,4}^{(3)}` and `T_{2,2}^{(3)}` in
+`photon_operator_table.py`, `gram-matrix-dual.py` and `photon_chiral_ports_probe.py` (witness
+regenerated, labels only). `photon-operator-table.witness.json` is not regenerated: a re-run moves
+its `q`, `h`, `z` parameters at about the 50th digit (an upstream dps change), so it was held.

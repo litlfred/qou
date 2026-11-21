@@ -1,138 +1,83 @@
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Data.Int.Order.Basic
+import QOU.BraidKnot.SeminormalDiagonalPoleOrder
 
 /-!
-# QOU.BraidKnot.CrystalRMatrixSubLemma — operator-valued sub-lemma 2.1
+# prop:crystal-r-matrix-sub-lemma — pole order of the seminormal diagonal entry
 
-§3b-cond formalisation of the operator-valued Wenzl branching
-sub-lemma 2.1 (per `mass-theory/crystal-r-matrix-sub-lemma.md`).
+**Statement.** Let `ρ = ρ_T(i) = c(cell of i+1 in T) − c(cell of i in T)`
+be the axial distance (`c = col − row`). In Hoefsmit's seminormal form the
+boundary generator `σ_i` acts on the basis vector `v_T` with diagonal entry
 
-Sub-lemma 2.1 (Wenzl, Invent. Math. 92 (1988) 349-383): for `λ ⊢ n`
-with `n = n_1 + n_2`, a boundary generator `σ_i ∈ H_n(q)`, and its
-`(μ, ν)`-block `A^λ_{μν}(σ_i) ∈ End(V_μ ⊗ V_ν)^{⊕ c^λ_{μν}}` in the
-Wenzl LR decomposition of `V_λ ↓ H_{n_1}(q) ⊗ H_{n_2}(q)`, the
-matrix-entry pole order of `A^λ_{μν}(σ_i)` at `q = 0` on any standard
-Young tableau `T ∈ SYT(λ)` in the `(μ, ν)`-block is the indicator
+    a_T(i) = (q − q⁻¹) / (1 − q^{−2ρ}).
 
-  pole(A^λ_{μν}(σ_i), T) = 𝟙[ρ_T(i) ≤ -1]
+(Check of the orientation: a column tableau has `ρ = −1` and the entry is
+`−q⁻¹`, the sign-representation eigenvalue; a row tableau has `ρ = +1` and the
+entry is `q`.)
 
-where `ρ_T(i) := c(cell of i+1 in T) − c(cell of i in T)` and
-`c(□) := col(□) − row(□)` is the axial distance.
+The pole order of `a_T(i)` at `q = 0` is the indicator `𝟙[ρ ≤ −1]`:
 
-This file follows the §3b-cond conditional-class pattern of the `.md`
-sibling: the conjectural input is the Brundan–Kleshchev / Kashiwara
-crystal realisation (`CrystalGraphRealization`), carried as an explicit
-`[Instance]` hypothesis; the sub-lemma is the class
-`CrystalRMatrixSubLemma`, whose field `pole_indicator_correct` encodes
-the boxed pole-order identity. A trivial model proves the
-axiomatisation is consistent (no `sorry` introduced), and the
-unconditional structural lemmas are discharged by `rfl` / `decide`.
+* `ρ = −(m+1)`: `a_T(i) = q⁻¹ · (q² − 1)/(1 − q^{2(m+1)})`, and the second
+  factor has numerator `−1` and denominator `1` at `q = 0`: a simple pole;
+* `ρ = m + 1`: `a_T(i) = q^{2m+1} · (q² − 1)/(q^{2(m+1)} − 1)`, and the second
+  factor has numerator `−1` and denominator `−1` at `q = 0`: no pole.
 
-Numerical verification: H_9 multi-interface extension verified at
-machine ε for tritium (30/30 partitions) per
-docs/audits/2026-05-16-sublemma-2-1-h9-phase-1.md; the canonical
-pole-order witness records 21/21 passing assertions
-(computations/crystal-pole-order.witness.json).
+No crystal hypothesis is used. Until 2026-11-21 this block was stated
+conditional on `conj:crystal-graph-realization`, carried as a class whose field
+was the boxed identity itself.
 
-Ref: [leitner2026] prop:crystal-r-matrix-sub-lemma
-Ref: [wenzl1988] Wenzl, Invent. Math. 92 (1988) 349-383
-Ref: [brundankleshchev2009] Brundan & Kleshchev, Invent. Math. 178 (2009)
-Local audit: docs/audits/2026-05-16-sublemma-2-1-h9-phase-1.md
+**Scope.** This is the diagonal entry. That the `(μ, ν)`-block of `σ_i` in
+the Wenzl decomposition acts on `v_T` with this diagonal entry is Hoefsmit's
+seminormal form (cited, not formalised here). Off-diagonal entries are not
+covered.
+
+Ref: [hoefsmit1974] seminormal form; [wenzl1988] branching.
 -/
 
-namespace QOU.BraidKnot
+namespace QOU.BraidKnot.CrystalRMatrix
 
-universe u
+open QOU.BraidKnot.SeminormalDiagonalPoleOrder
 
-/-- **Crystal-graph realisation (conjecture, upstream hypothesis).**
+variable {K : Type*} [Field K]
 
-    Class axiomatisation of `conj:crystal-graph-realization` (the
-    Brundan–Kleshchev isomorphism plus the Kashiwara crystal limit at
-    `q → 0`). Mirrors the library class
-    `QOU.BraidKnot.CrystalGraphRealization`; carried here as the
-    upstream conjectural input so the conditional sub-lemma below
-    resolves standalone.
+/-- The seminormal diagonal entry at axial distance `ρ`. -/
+noncomputable def seminormalDiag (q : K) (ρ : ℤ) : K :=
+  (q - q⁻¹) / (1 - q ^ (-2 * ρ))
 
-    The `crystal_realises` field is the conjecture itself (it plays the
-    role of a `sorry`): every GS normal form's crystal node is a
-    highest-weight vector (annihilated by every Kashiwara raising
-    operator). -/
-class CrystalGraphRealization (R : Type u) [CommRing R] (q : R) where
-  /-- Abstract type of Hecke normal forms. -/
-  NormalForm : Type u
-  /-- Abstract type of crystal nodes of `Cryst(𝔰𝔩_n)`. -/
-  CrystalNode : Type u
-  /-- Crystal node attached to a normal form. -/
-  nodeOf : NormalForm → CrystalNode
-  /-- Kashiwara raising operator `ẽ_i` (`none` on a highest-weight node). -/
-  raising : ℕ → CrystalNode → Option CrystalNode
-  /-- The conjecture: every GS normal form's crystal node is annihilated
-      by every raising operator. -/
-  crystal_realises : ∀ (T : NormalForm) (i : ℕ),
-    raising i (nodeOf T) = none
+/-- **`ρ ≤ −1`: simple pole.** The entry is `q⁻¹` times a factor whose
+numerator `q² − 1` and denominator `1 − q^{2(m+1)}` are `−1` and `1` at
+`q = 0`. -/
+theorem seminormalDiag_of_le_neg_one {q : K} (hq : q ≠ 0) (m : ℕ)
+    (hd : 1 - q ^ (2 * (m + 1)) ≠ 0) :
+    seminormalDiag q (-((m : ℤ) + 1)) =
+      q⁻¹ * ((q ^ 2 - 1) / (1 - q ^ (2 * (m + 1)))) := by
+  unfold seminormalDiag
+  have e : (-2 : ℤ) * -((m : ℤ) + 1) = ((2 * (m + 1) : ℕ) : ℤ) := by push_cast; ring
+  rw [e, zpow_natCast]
+  exact diag_pos_axial hq m hd
 
-/-- **Crystal R-matrix Sub-lemma 2.1 (operator-valued, §3b-cond class).**
+/-- **`ρ ≥ 1`: no pole.** The entry is `q^{2m+1}` times a factor whose
+numerator `q² − 1` and denominator `q^{2(m+1)} − 1` are both `−1` at
+`q = 0`. -/
+theorem seminormalDiag_of_ge_one {q : K} (hq : q ≠ 0) (m : ℕ)
+    (hd : q ^ (2 * (m + 1)) - 1 ≠ 0) :
+    seminormalDiag q ((m : ℤ) + 1) =
+      q ^ (2 * m + 1) * ((q ^ 2 - 1) / (q ^ (2 * (m + 1)) - 1)) := by
+  unfold seminormalDiag
+  have e : (-2 : ℤ) * ((m : ℤ) + 1) = -(((2 * (m + 1) : ℕ) : ℤ)) := by push_cast; ring
+  rw [e, zpow_neg, zpow_natCast]
+  exact diag_neg_axial hq m hd
 
-    Conditional on the upstream `CrystalGraphRealization R q`: the
-    `q → 0` limit of the boundary generator `σ_i` on the seminormal
-    basis is the combinatorial `R`-matrix on `B_μ ⊗ B_ν ⊆ B_λ`, and its
-    matrix-entry pole order on a standard Young tableau is the indicator
-    of the axial distance `ρ` being `≤ -1`.
+/-- **Orientation check.** At `ρ = −1` the entry is `−q⁻¹` and at `ρ = 1` it
+is `q`: the sign and trivial eigenvalues of `σ_i`. -/
+theorem seminormalDiag_neg_one_and_one {q : K} (hq : q ≠ 0) (h2 : q ^ 2 ≠ 1) :
+    seminormalDiag q (-1) = -q⁻¹ ∧ seminormalDiag q 1 = q := by
+  have h2' : q ^ 2 - 1 ≠ 0 := sub_ne_zero.mpr h2
+  have h2'' : 1 - q ^ 2 ≠ 0 := sub_ne_zero.mpr (Ne.symm h2)
+  unfold seminormalDiag
+  constructor
+  · norm_num
+    field_simp
+    ring
+  · norm_num
+    field_simp
 
-    The conjectural input is the upstream `[CrystalGraphRealization R q]`
-    instance; the field `pole_indicator_correct` is the content of the
-    boxed identity `pole = 𝟙[ρ ≤ -1]`, with `ρ` the axial distance
-    `ρ_T(i)` (an integer). -/
-class CrystalRMatrixSubLemma (R : Type u) [CommRing R] (q : R)
-    [CrystalGraphRealization R q] where
-  /-- The pole-order indicator: returns `true` exactly when the
-      operator `A^λ_{μν}(σ_i)` has a pole on a tableau with axial
-      distance `ρ`. -/
-  poleIndicator : ℤ → Bool
-  /-- **The sub-lemma (operator-valued identity).** The pole order is
-      the indicator `𝟙[ρ ≤ -1]` of the axial distance. -/
-  pole_indicator_correct : ∀ rho : ℤ,
-    poleIndicator rho = decide (rho ≤ -1)
-
-namespace CrystalRMatrixSubLemma
-
-variable {R : Type u} [CommRing R] {q : R} [CrystalGraphRealization R q]
-
-/-- The class axiomatisation is **consistent**: the literal indicator
-    `fun rho => decide (rho ≤ -1)` inhabits the class, so no `sorry` is
-    introduced by the §3b-cond axiomatisation. -/
-def trivialModel : CrystalRMatrixSubLemma R q where
-  poleIndicator := fun rho => decide (rho ≤ -1)
-  pole_indicator_correct := fun _ => rfl
-
-/-- **Structural lemma.** On a tableau with axial distance `-1` the
-    operator has a pole. -/
-theorem poleIndicator_minus_one_eq_true
-    [L : CrystalRMatrixSubLemma R q] :
-    L.poleIndicator (-1) = true := by
-  rw [L.pole_indicator_correct]; decide
-
-/-- **Structural lemma.** On a tableau with axial distance `+1` the
-    operator is regular (no pole). -/
-theorem poleIndicator_plus_one_eq_false
-    [L : CrystalRMatrixSubLemma R q] :
-    L.poleIndicator 1 = false := by
-  rw [L.pole_indicator_correct]; decide
-
-/-- **AXKIA sanity check** (axial distance `ρ = -2`, e.g. the
-    `T_{(2,9)}` interface): negative axial distance ⇒ pole. -/
-theorem axkia_pole_T_2_9
-    [L : CrystalRMatrixSubLemma R q] :
-    L.poleIndicator (-2) = true := by
-  rw [L.pole_indicator_correct]; decide
-
-/-- **AXKIA sanity check** (axial distance `ρ = 0`, e.g. a balanced
-    `T_{(3,5)}` step): non-negative axial distance ⇒ no pole. -/
-theorem axkia_pole_T_3_5
-    [L : CrystalRMatrixSubLemma R q] :
-    L.poleIndicator 0 = false := by
-  rw [L.pole_indicator_correct]; decide
-
-end CrystalRMatrixSubLemma
-
-end QOU.BraidKnot
+end QOU.BraidKnot.CrystalRMatrix

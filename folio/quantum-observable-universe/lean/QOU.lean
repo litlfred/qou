@@ -106,6 +106,9 @@ import QOU.Mathlib.BorelCaratheodory
 -- factor vanishes at an explicit point for every b /= 0, so it is not entire and
 -- IsEntireOfOrderLE cannot be assumed for it. Sorry-free.
 import QOU.Mathlib.HadamardApplicability
+-- Littlewood-Richardson coefficients c^nu_{lambda mu} as a count of LR tableaux
+-- (decidable; small values by kernel `decide`). Sorry-free.
+import QOU.Mathlib.LittlewoodRichardson
 -- Faddeev rigidity: the ratio of two FaddeevPhi solutions is ib- and i/b-periodic
 -- (the prefactor cancels), and given an entire ratio that extends from the dense
 -- complement of the prefactor zeros to everywhere. Collapses the open input
@@ -668,6 +671,8 @@ import QOU.BraidKnot
 -- hidden outside it.
 import QOU.BraidKnot.MesonFusionIndexSelection
 import QOU.BraidKnot.ElectronWordCandidates
+import QOU.BraidKnot.LongestWordNotTwoPhoton
+import QOU.BraidKnot.LongestWordNotTwoPhotonHecke
 import QOU.BraidKnot.SpechtBaseChange
 import QOU.BraidKnot.SpechtIrreducible
 import QOU.BraidKnot.GBRewriteDifferential

@@ -289,7 +289,7 @@
 | [thm:centre-cocentre-descent](#thm:centre-cocentre-descent) | Centre–cocentre splitting: $A = Z(A)\oplus[A,A]$ gives a unique descended/transient split that every trace sees only through its central part | Ch 11 |
 | [thm:quantum-gap-collapse](#thm:quantum-gap-collapse) | Collapse of the quantum gap | Ch 19 |
 | [thm:qou-obstruction-reduction](#thm:qou-obstruction-reduction) | Conditional on the Wigner axiom: the obstruction is the Euler characteristic of the base | Ch 19 |
-| [thm:confinement-grading-correspondence-conditional](#thm:confinement-grading-correspondence-conditional) | Confinement = KLR grading shift (conditional on Brundan–Kleshchev isomorphism + crystal-graph realisation) | Ch 7 |
+| [conj:confinement-grading-correspondence-conditional](#conj:confinement-grading-correspondence-conditional) | Confinement = KLR grading shift (conditional on Brundan–Kleshchev isomorphism + crystal-graph realisation) | Ch 7 |
 | [thm:descartes](#thm:descartes) | Descartes theorem | Ch 6 |
 | [thm:embeddability-closure](#thm:embeddability-closure) | Embeddability closure under knot-particle generation | Ch 6 |
 | [thm:su2-emergence](#thm:su2-emergence) | Emergence of the gauge group | Ch 2 |
@@ -495,7 +495,7 @@
 | [prop:skein-crossing-asymmetry](#prop:skein-crossing-asymmetry) | Crossing asymmetry and per-crossing Coulomb correction | Ch 10 |
 | [prop:crossing-energy-decomposition](#prop:crossing-energy-decomposition) | Crossing energy decomposes into strong and Coulomb channels | Ch 15 |
 | [prop:strangelet-crossing-energy](#prop:strangelet-crossing-energy) | Crossing energy of strange quark matter is purely strong | Ch 15 |
-| [prop:crystal-r-matrix-sub-lemma](#prop:crystal-r-matrix-sub-lemma) | Crystal R-matrix Sub-lemma 2.1 (operator-valued) | Ch 11 |
+| [prop:crystal-r-matrix-sub-lemma](#prop:crystal-r-matrix-sub-lemma) | Crystal R-matrix Sub-lemma 2.1: pole order of the seminormal diagonal entry | Ch 11 |
 | [prop:crystal-basis-resolves-mass-tower-open-problems](#prop:crystal-basis-resolves-mass-tower-open-problems) | Crystal-basis correspondence (Brundan-Kleshchev + Type-B folding) reduces three mass-tower open problems to crystal-graph combinatorics | Ch 11 |
 | [prop:crystal-isospin-degeneracy](#prop:crystal-isospin-degeneracy) | Crystal-limit isospin degeneracy: $S_{\mathrm{crystal}}$ is invariant under $\sigma_i \leftrightarrow \sigma_i^{-1}$ | Ch 11 |
 | [prop:cusp-shape-bar-parity](#prop:cusp-shape-bar-parity) | Cusp-shape bar-parity: the figure-eight modulus splits as $\mathfrak{V} = \mathrm{Vol} + i\,\mathrm{CS}$ | Ch 5 |
@@ -577,7 +577,7 @@
 | [prop:torus-knot-generators](#prop:torus-knot-generators) | Finiteness of the $T_{m,n}$ generator set | Ch 6 |
 | [prop:skein-finiteness-bound](#prop:skein-finiteness-bound) | Finiteness of the nuclear chart: the Skein polynomial zero as stability boundary | Ch 14 |
 | [prop:jackson-q-bessel-contiguity-recurrence](#prop:jackson-q-bessel-contiguity-recurrence) | First-order contiguity recurrence for the Jackson first- and second-kind $q$-Bessel coefficients (fibre-level) | Ch 11 |
-| [prop:force-carrier-intertwining-correspondence](#prop:force-carrier-intertwining-correspondence) | Force carrier $T_{p,q}$ acting on $n$-strand braid lands on Wedderburn channel $\lambda = (p, 1^{n-p})$ | Ch 11 |
+| [conj:force-carrier-intertwining-correspondence](#conj:force-carrier-intertwining-correspondence) | Force carrier $T_{p,q}$ acting on $n$-strand braid lands on Wedderburn channel $\lambda = (p, 1^{n-p})$ | Ch 11 |
 | [prop:h3-frobenius-casimir-markov-trace](#prop:h3-frobenius-casimir-markov-trace) | Frobenius Casimir of $H_3(q)$: Schur elements, Markov weights, its Markov trace, and $\sum_{\lambda\vdash3}1/\dim_q\lambda = 2+1/[2]_q$ | Ch 11 |
 | [prop:positive-definite-dagger](#prop:positive-definite-dagger) | Frobenius dagger is positive-definite | Ch 1 |
 | [prop:frobenius-gram-matrix](#prop:frobenius-gram-matrix) | Frobenius Gram matrix and dual construction in $H_3(q)$ | Ch 11 |
@@ -618,7 +618,7 @@
 | [prop:hoefsmit-is-surreal-construction](#prop:hoefsmit-is-surreal-construction) | Hoefsmit seminormal form is Conway's $\{L \mid R\}$ construction | Ch 25 |
 | [prop:hoefsmit-seminormal-form](#prop:hoefsmit-seminormal-form) | Hoefsmit seminormal matrices as $R$-matrix evaluations in $H_n(q)$ | Ch 11 |
 | [prop:hoefsmit-V21-cos-symmetrization](#prop:hoefsmit-V21-cos-symmetrization) | Hoefsmit seminormal matrix for $V_{(2,1)}$ + Markov-symmetrized cos character: $\chi^{(2,1),\mathrm{symm}}_q(\beta) = \mathrm{tr}\,\rho_{(2,1)}(\beta) \cdot \cos((z-1)h/2)$ | Ch 11 |
-| [prop:hook-weight-derivation](#prop:hook-weight-derivation) | Hook weight $\beta_4 = -\tfrac{1}{2} w_{[2,2]}(4)$ from baryon Wedderburn-Artin decomposition | Ch 11 |
+| [conj:hook-weight-derivation](#conj:hook-weight-derivation) | Hook weight $\beta_4 = -\tfrac{1}{2} w_{[2,2]}(4)$ from baryon Wedderburn-Artin decomposition | Ch 11 |
 | [prop:hopf-link-symmetric-decomposition](#prop:hopf-link-symmetric-decomposition) | Hopf-link symmetric decomposition: $\sigma_1^2 = q^2 e_+ + q^{-2} e_-$ | Ch 20 |
 | [prop:inductive-gb-reduction](#prop:inductive-gb-reduction) | Inductive Gröbner--Shirshov reduction | Ch 12 |
 | [prop:q-dilogarithm-exists](#prop:q-dilogarithm-exists) | Inhabitation of the $q$-dilogarithm structure | Ch 2 |
@@ -631,8 +631,8 @@
 | [prop:q-jacobiator](#prop:q-jacobiator) | Jacobiator of the q-Lie bracket | Ch 2 |
 | [prop:categorical-jet-prolongation](#prop:categorical-jet-prolongation) | Jet prolongation | Ch 4 |
 | [prop:jet-prolongation](#prop:jet-prolongation) | Jet Prolongation | Ch 4 |
-| [prop:jet-prefix-gb-filtration](#prop:jet-prefix-gb-filtration) | Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6) | Ch 11 |
-| [prop:joint-galois-braid-figure-8-verified](#prop:joint-galois-braid-figure-8-verified) | Joint Galois $\times$ braid action commutes on the figure-8 bi-filtration cell — verified directly | Ch 19 |
+| [conj:jet-prefix-gb-filtration](#conj:jet-prefix-gb-filtration) | Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6) | Ch 11 |
+| [conj:joint-galois-braid-figure-8-verified](#conj:joint-galois-braid-figure-8-verified) | Joint Galois $\times$ braid action commutes on the figure-8 bi-filtration cell — verified directly | Ch 19 |
 | [prop:joint-galois-braid-discharged](#prop:joint-galois-braid-discharged) | Joint motivic-Galois $\times$ braid action commutes on every bi-filtration cell — discharged | Ch 19 |
 | [prop:meson-kaon-pion-hecke-seifert](#prop:meson-kaon-pion-hecke-seifert) | Kaon-to-pion mass ratio from Hecke characters and Seifert volumes | Ch 11 |
 | [prop:kelvin-dispersion-derivation](#prop:kelvin-dispersion-derivation) | Kelvin wave dispersion from the $q$-Laplacian eigenvalue problem | Ch 18 |
@@ -782,7 +782,7 @@
 | [prop:coxeter-strong-exchange](#prop:coxeter-strong-exchange) | Strong exchange for Coxeter systems, via the reflection cocycle | Ch 5 |
 | [prop:brane-boundary](#prop:brane-boundary) | Structure of the defining boundary | Ch 4 |
 | [prop:subset-cumulant-recursion](#prop:subset-cumulant-recursion) | Subset cumulants of the bond model: reconstruction, the $c_k$-only recursion, and vanishing across a split | Ch 11 |
-| [prop:proton-mass-substrate-identity](#prop:proton-mass-substrate-identity) | Substrate evaluation: $m_p = 2 \cdot m_\mu \cdot F_{\mathrm{Bor}}(q_0) - 12 \cdot m_e$ to $0.24\,\mathrm{ppm}$ at $q = q_0$ | Ch 24 |
+| [conj:proton-mass-substrate-identity](#conj:proton-mass-substrate-identity) | Substrate evaluation: $m_p = 2 \cdot m_\mu \cdot F_{\mathrm{Bor}}(q_0) - 12 \cdot m_e$ to $0.24\,\mathrm{ppm}$ at $q = q_0$ | Ch 24 |
 | [prop:substrate-radial-coordinate](#prop:substrate-radial-coordinate) | Substrate parameter as the radial coordinate | Ch 2 |
 | [prop:bar-t-duality-substrate](#prop:bar-t-duality-substrate) | Substrate-level bar T-duality: $\mathcal{E}_q \leftrightarrow \mathcal{E}_{1/q}$ | Ch 14 |
 | [prop:flavor-split-substrate](#prop:flavor-split-substrate) | Substrate-pure derivation of the $u$--$d$ flavor split | Ch 15 |
@@ -796,7 +796,7 @@
 | [prop:tannaka-krein-reconstruction](#prop:tannaka-krein-reconstruction) | Tannaka--Krein reconstruction of the quantum gauge group | Ch 2 |
 | [prop:q-exponential-taylor](#prop:q-exponential-taylor) | Taylor series of $\exp_q$ (archimedean) | Ch 20 |
 | [prop:terminal-resolution](#prop:terminal-resolution) | Terminal Resolution of Hadronic Mass | Ch 11 |
-| [prop:collatz-contact-boundary](#prop:collatz-contact-boundary) | The $[2]_q$-contact boundary on the Reeb bundle | Ch 25 |
+| [conj:collatz-contact-boundary](#conj:collatz-contact-boundary) | The $[2]_q$-contact boundary on the Reeb bundle | Ch 25 |
 | [prop:alpha-em-habiro-bar-involution](#prop:alpha-em-habiro-bar-involution) | The $\alpha_{EM}$ Habiro element $[2]_q(1-h^2\alpha)$ is a bar-involution fixed point, with $H(1)=2$, $H(-1)=-2$ | Ch 5 |
 | [prop:alpha-cluster-activation-gate](#prop:alpha-cluster-activation-gate) | The $\alpha$-cluster activation gate: Milnor indeterminacy, sign-rep obstruction, and $\mathrm{Vol}=0$ annihilation | Ch 11 |
 | [prop:beta-eq-ln-q-dictionary](#prop:beta-eq-ln-q-dictionary) | The $\beta = \ln q$ partition-function dictionary | Ch 2 |
@@ -937,7 +937,7 @@
 | [prop:vertex-is-exceptional-divisor](#prop:vertex-is-exceptional-divisor) | Vertex operators factor through the exceptional divisor | Ch 11 |
 | [prop:volume-perturbation-formula](#prop:volume-perturbation-formula) | Volume perturbation: $\delta\Phi_k = z^2 \cdot \mathrm{Vol}(4_1) \cdot [k{-}3]_q$ | Ch 11 |
 | [prop:weak-equiv-invariance](#prop:weak-equiv-invariance) | Weak equivalence invariance of physical states | Ch 4 |
-| [prop:weak-symmetric-normalization](#prop:weak-symmetric-normalization) | Weak-sector symmetric-channel Plancherel normalization $\mathcal{N}_{\rm sym}(q)$ | Ch 11 |
+| [conj:weak-symmetric-normalization](#conj:weak-symmetric-normalization) | Weak-sector symmetric-channel Plancherel normalization $\mathcal{N}_{\rm sym}(q)$ | Ch 11 |
 | [prop:wenzl-qmn-synergy](#prop:wenzl-qmn-synergy) | Wenzl-bridge + q-Murnaghan-Nakayama synergy: $\mathrm{tr}_M$ on canonical braids in $O(p(n)(\max\text{hooks} + n^2))$ | Ch 11 |
 | [prop:wigner-coefficient-derivation](#prop:wigner-coefficient-derivation) | Wigner coefficient $[5]_q! \cdot m_e$ from Frobenius reciprocity | Ch 11 |
 | [prop:wigner-np-pairing](#prop:wigner-np-pairing) | Wigner energy from $T{=}0$ np pairing: $(2,2)$ partition at $k{=}4$ | Ch 11 |
