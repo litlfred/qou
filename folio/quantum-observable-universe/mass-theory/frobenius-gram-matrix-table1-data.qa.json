@@ -1,21 +1,29 @@
 {
   "$schema": "block-qa/v1",
-  "label": "tbl:ground-state-ordering-table1-data",
+  "label": "tbl:frobenius-gram-matrix-table1-data",
   "kind": "table",
   "paths": {
-    "ts": "folio/quantum-observable-universe/nuclear-interactions/ground-state-ordering-table1-data.ts",
-    "md": "folio/quantum-observable-universe/nuclear-interactions/ground-state-ordering-table1-data.md"
-  },
-  "source_hashes": {
-    "md": "1e891ba8d3ed",
-    "ts": "f1e7e2e74dd5"
+    "ts": "folio/quantum-observable-universe/mass-theory/frobenius-gram-matrix-table1-data.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/frobenius-gram-matrix-table1-data.md"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -25,15 +33,15 @@
           "script_hash": "bbc03dd9670f",
           "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "voice-probe-narrative": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -43,15 +51,15 @@
           "script_hash": "c43b7731faf9",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T11:33:35.560Z",
+        "reviewed_at": "2026-08-09T11:33:51.153Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
       }
     ],
     "cite-named-theorem": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -61,15 +69,15 @@
           "script_hash": "c43b7731faf9",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T11:33:35.560Z",
+        "reviewed_at": "2026-08-09T11:33:51.153Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
       }
     ],
     "voice-agent-speak": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -79,15 +87,15 @@
           "script_hash": "c43b7731faf9",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T11:33:35.560Z",
+        "reviewed_at": "2026-08-09T11:33:51.153Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
       }
     ],
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -97,15 +105,15 @@
           "script_hash": "d3230d986a2b",
           "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -115,15 +123,15 @@
           "script_hash": "6d35011108e2",
           "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -133,15 +141,15 @@
           "script_hash": "4dc9ee1f7d79",
           "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -151,15 +159,15 @@
           "script_hash": "c35d809edf9a",
           "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -169,15 +177,15 @@
           "script_hash": "5a542b9ddb77",
           "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "voice-scholarly-default": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -187,15 +195,15 @@
           "script_hash": "7e311e463351",
           "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "voice-title-scholarly": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -205,15 +213,15 @@
           "script_hash": "dbe50250022f",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "voice-ai-slop": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -223,15 +231,15 @@
           "script_hash": "20fe4199458f",
           "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -241,15 +249,15 @@
           "script_hash": "c43b7731faf9",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T11:33:35.560Z",
+        "reviewed_at": "2026-08-09T11:33:51.153Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
       }
     ],
     "voice-status-section": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -259,15 +267,15 @@
           "script_hash": "c43b7731faf9",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T11:33:35.560Z",
+        "reviewed_at": "2026-08-09T11:33:51.153Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
       }
     ],
     "framework-canonical": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -277,15 +285,15 @@
           "script_hash": "cf3d4ea0ab0a",
           "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "n/a",
         "reviewer": {
@@ -303,8 +311,8 @@
     "proof-no-trivial-skeleton": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "n/a",
         "reviewer": {
@@ -315,7 +323,7 @@
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
           "deps_hash": "21d9ff417741"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
       }
@@ -323,8 +331,8 @@
     "canonical-calibration-count": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -334,15 +342,15 @@
           "script_hash": "c58bf6bca27b",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "canonical-witness-pinned": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -352,15 +360,15 @@
           "script_hash": "3050ae1775d6",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "canonical-script-not-deprecated": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -370,15 +378,15 @@
           "script_hash": "89bcd82bd3ff",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "canonical-dilogarithm-context": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -388,15 +396,15 @@
           "script_hash": "a065b3633f0f",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "canonical-no-hardcoded-observable": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -406,15 +414,15 @@
           "script_hash": "96a346415fd2",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "compute-witness-exists": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -424,15 +432,15 @@
           "script_hash": "47384e4fd1b4",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "compute-lp-dual-present": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -442,15 +450,15 @@
           "script_hash": "772b3e8dc930",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "detangler-no-forward-ref": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -460,15 +468,15 @@
           "script_hash": "f6f0b2cd1afb",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "detangler-section-band": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "n/a",
         "reviewer": {
@@ -478,15 +486,15 @@
           "script_hash": "696ee4c80040",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "detangler-no-xchapter-fwd": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "n/a",
         "reviewer": {
@@ -496,15 +504,15 @@
           "script_hash": "b01f61430d2a",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "detangler-archimedean-wall": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "n/a",
         "reviewer": {
@@ -514,7 +522,7 @@
           "script_hash": "3edb7220507a",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
       }
@@ -522,10 +530,10 @@
     "detangler-block-tanglement": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
@@ -533,28 +541,28 @@
           "script_hash": "ac7512959351",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "metrics": {
-          "fwd_emitted": 1,
+          "fwd_emitted": 0,
           "fwd_received": 0,
-          "tanglement_score": 1,
+          "tanglement_score": 0,
           "out_degree": 1,
           "in_degree": 0,
-          "cone_size": 2,
-          "depth": 2,
-          "pagerank": 0.000074,
+          "cone_size": 1,
+          "depth": 1,
+          "pagerank": 7.4e-05,
           "edge_span_max": 0,
           "edge_span_mean": 0,
-          "worst_target": "emits fwd-ref to quantum-observable-universe/mass-theory: prop:ground-state-ordering"
+          "worst_target": ""
         }
       }
     ],
     "detangler-graph-energy": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -564,7 +572,7 @@
           "script_hash": "aacb0bf5d4b9",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "metrics": {
           "graph_energy": 0,
@@ -576,8 +584,8 @@
     "detangler-topic-coherence": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "n/a",
         "reviewer": {
@@ -587,15 +595,15 @@
           "script_hash": "280aea9a61d8",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "detangler-no-dependency-cycle": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -605,15 +613,15 @@
           "script_hash": "39dfc0abf653",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "uses-editorial-hygiene": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "pass",
         "reviewer": {
@@ -624,7 +632,7 @@
           "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
           "deps_hash": "c7f602946422"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "metrics": {
           "uses_count": 1,
@@ -636,8 +644,8 @@
     "uses-formal-coverage": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "n/a",
         "reviewer": {
@@ -648,7 +656,7 @@
           "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
           "deps_hash": "f9b547e15cfd"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
       }
@@ -656,8 +664,8 @@
     "lean-ref-owns-decl": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "n/a",
         "reviewer": {
@@ -668,15 +676,15 @@
           "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
           "deps_hash": "c7f602946422"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "bib-cite-resolves": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "n/a",
         "reviewer": {
@@ -687,7 +695,7 @@
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
           "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
       }
@@ -695,8 +703,8 @@
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "n/a",
         "reviewer": {
@@ -707,7 +715,7 @@
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
           "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
       }
@@ -715,8 +723,8 @@
     "bib-cited-ref-metadata-ok": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "n/a",
         "reviewer": {
@@ -727,7 +735,7 @@
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
           "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
       }
@@ -735,8 +743,8 @@
     "bib-cited-ref-has-screenshot": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "n/a",
         "reviewer": {
@@ -747,7 +755,7 @@
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
           "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
       }
@@ -755,8 +763,8 @@
     "q-usage-regime-detected": [
       {
         "field_hash": {
-          "ts": "f1e7e2e74dd5",
-          "md": "1e891ba8d3ed"
+          "ts": "0cde43c42f89",
+          "md": "f71f231c90b8"
         },
         "result": "pass",
         "reviewer": {
@@ -766,14 +774,14 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
-        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"nuclear-interactions\",\"expected\":null}"
+        "notes": "{\"regimes\":[\"na\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
       {
         "field_hash": {
-          "ts": "f1e7e2e74dd5",
-          "md": "1e891ba8d3ed"
+          "ts": "0cde43c42f89",
+          "md": "f71f231c90b8"
         },
         "result": "n/a",
         "reviewer": {
@@ -788,8 +796,8 @@
     "q-usage-archimedean-in-categorical-chapter": [
       {
         "field_hash": {
-          "ts": "f1e7e2e74dd5",
-          "md": "1e891ba8d3ed"
+          "ts": "0cde43c42f89",
+          "md": "f71f231c90b8"
         },
         "result": "n/a",
         "reviewer": {
@@ -804,8 +812,8 @@
     "q-usage-positivity-implicit": [
       {
         "field_hash": {
-          "ts": "f1e7e2e74dd5",
-          "md": "1e891ba8d3ed"
+          "ts": "0cde43c42f89",
+          "md": "f71f231c90b8"
         },
         "result": "n/a",
         "reviewer": {
@@ -820,8 +828,8 @@
     "q-usage-modulus-vs-real-mismatch": [
       {
         "field_hash": {
-          "ts": "f1e7e2e74dd5",
-          "md": "1e891ba8d3ed"
+          "ts": "0cde43c42f89",
+          "md": "f71f231c90b8"
         },
         "result": "n/a",
         "reviewer": {
@@ -836,8 +844,8 @@
     "q-usage-root-of-unity-undeclared": [
       {
         "field_hash": {
-          "ts": "f1e7e2e74dd5",
-          "md": "1e891ba8d3ed"
+          "ts": "0cde43c42f89",
+          "md": "f71f231c90b8"
         },
         "result": "pass",
         "reviewer": {
@@ -852,10 +860,10 @@
     "q-usage-narrative-chapter-mismatch": [
       {
         "field_hash": {
-          "ts": "f1e7e2e74dd5",
-          "md": "1e891ba8d3ed"
+          "ts": "0cde43c42f89",
+          "md": "f71f231c90b8"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
@@ -868,8 +876,8 @@
     "wall-base-ring-minimal": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
         "result": "n/a",
         "reviewer": {
@@ -887,183 +895,188 @@
     "trap-negation-contrast": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:g01",
+          "id": "agent:e02",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T02:54:13.047Z",
-        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
-        "evidence": "Table-only block (4-column matrix/eigenvalue/det/tr table, no prose sentences). Recomputed every cell: T_pp eig {+q,-q^-1} => det=-1, tr=q-q^-1=+h; T_nn eig {+q^-1,-q} => det=-1, tr=-h; T_pn eig +-sqrt(1+h^2/4) => det=-(1+h^2/4), tr=0. All four columns self-consistent under h=q-q^-1.",
-        "notes": "Clean; table verified arithmetically. No prose to carry a trap."
+        "reviewed_at": "2026-08-22T01:41:00.794Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every row RECOMPUTED symbolically (sympy, Hecke relation sigma_i^2 = h sigma_i + 1 with h = q - q^-1, Markov property tr(x sigma_n) = z tr(x)). tr_M(1)=1, tr_M(sigma_0)=tr_M(sigma_1)=z, tr_M(sigma_0 sigma_1)=tr_M(sigma_1 sigma_0)=z^2, and tr_M(sigma_0 sigma_1 sigma_0) = z*tr(sigma_0^2) = z(hz+1) = h z^2 + z. ALL SIX ROWS CORRECT.",
+        "notes": "Convention-clean: the table carries z symbolically, so it is neither convention C nor D and needs no re-derivation under the 2026-08-15 ruling. Generator naming follows 7a (sigma_i, never T). One naming note for the author: the six-element basis names the identity 'gamma = 1' (the photon) and sigma_0 sigma_1 sigma_0 'e^-', which is a physics labelling of an algebra basis; it is used consistently across tbl:frobenius-gram-matrix-table2-data and prop:gamma-gamma-generates-particles, so no action."
       }
     ],
     "trap-rhetorical-pivot": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:g01",
+          "id": "agent:e02",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T02:54:13.083Z",
-        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
-        "evidence": "Table-only block (4-column matrix/eigenvalue/det/tr table, no prose sentences). Recomputed every cell: T_pp eig {+q,-q^-1} => det=-1, tr=q-q^-1=+h; T_nn eig {+q^-1,-q} => det=-1, tr=-h; T_pn eig +-sqrt(1+h^2/4) => det=-(1+h^2/4), tr=0. All four columns self-consistent under h=q-q^-1.",
-        "notes": "Clean; table verified arithmetically. No prose to carry a trap."
+        "reviewed_at": "2026-08-22T01:41:00.842Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every row RECOMPUTED symbolically (sympy, Hecke relation sigma_i^2 = h sigma_i + 1 with h = q - q^-1, Markov property tr(x sigma_n) = z tr(x)). tr_M(1)=1, tr_M(sigma_0)=tr_M(sigma_1)=z, tr_M(sigma_0 sigma_1)=tr_M(sigma_1 sigma_0)=z^2, and tr_M(sigma_0 sigma_1 sigma_0) = z*tr(sigma_0^2) = z(hz+1) = h z^2 + z. ALL SIX ROWS CORRECT.",
+        "notes": "Convention-clean: the table carries z symbolically, so it is neither convention C nor D and needs no re-derivation under the 2026-08-15 ruling. Generator naming follows 7a (sigma_i, never T). One naming note for the author: the six-element basis names the identity 'gamma = 1' (the photon) and sigma_0 sigma_1 sigma_0 'e^-', which is a physics labelling of an algebra basis; it is used consistently across tbl:frobenius-gram-matrix-table2-data and prop:gamma-gamma-generates-particles, so no action."
       }
     ],
     "trap-em-dash": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:g01",
+          "id": "agent:e02",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T02:54:13.119Z",
-        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
-        "evidence": "Table-only block (4-column matrix/eigenvalue/det/tr table, no prose sentences). Recomputed every cell: T_pp eig {+q,-q^-1} => det=-1, tr=q-q^-1=+h; T_nn eig {+q^-1,-q} => det=-1, tr=-h; T_pn eig +-sqrt(1+h^2/4) => det=-(1+h^2/4), tr=0. All four columns self-consistent under h=q-q^-1.",
-        "notes": "Clean; table verified arithmetically. No prose to carry a trap."
+        "reviewed_at": "2026-08-22T01:41:00.886Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every row RECOMPUTED symbolically (sympy, Hecke relation sigma_i^2 = h sigma_i + 1 with h = q - q^-1, Markov property tr(x sigma_n) = z tr(x)). tr_M(1)=1, tr_M(sigma_0)=tr_M(sigma_1)=z, tr_M(sigma_0 sigma_1)=tr_M(sigma_1 sigma_0)=z^2, and tr_M(sigma_0 sigma_1 sigma_0) = z*tr(sigma_0^2) = z(hz+1) = h z^2 + z. ALL SIX ROWS CORRECT.",
+        "notes": "Convention-clean: the table carries z symbolically, so it is neither convention C nor D and needs no re-derivation under the 2026-08-15 ruling. Generator naming follows 7a (sigma_i, never T). One naming note for the author: the six-element basis names the identity 'gamma = 1' (the photon) and sigma_0 sigma_1 sigma_0 'e^-', which is a physics labelling of an algebra basis; it is used consistently across tbl:frobenius-gram-matrix-table2-data and prop:gamma-gamma-generates-particles, so no action."
       }
     ],
     "trap-triples": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:g01",
+          "id": "agent:e02",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T02:54:13.156Z",
-        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
-        "evidence": "Table-only block (4-column matrix/eigenvalue/det/tr table, no prose sentences). Recomputed every cell: T_pp eig {+q,-q^-1} => det=-1, tr=q-q^-1=+h; T_nn eig {+q^-1,-q} => det=-1, tr=-h; T_pn eig +-sqrt(1+h^2/4) => det=-(1+h^2/4), tr=0. All four columns self-consistent under h=q-q^-1.",
-        "notes": "Clean; table verified arithmetically. No prose to carry a trap."
+        "reviewed_at": "2026-08-22T01:41:00.933Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every row RECOMPUTED symbolically (sympy, Hecke relation sigma_i^2 = h sigma_i + 1 with h = q - q^-1, Markov property tr(x sigma_n) = z tr(x)). tr_M(1)=1, tr_M(sigma_0)=tr_M(sigma_1)=z, tr_M(sigma_0 sigma_1)=tr_M(sigma_1 sigma_0)=z^2, and tr_M(sigma_0 sigma_1 sigma_0) = z*tr(sigma_0^2) = z(hz+1) = h z^2 + z. ALL SIX ROWS CORRECT.",
+        "notes": "Convention-clean: the table carries z symbolically, so it is neither convention C nor D and needs no re-derivation under the 2026-08-15 ruling. Generator naming follows 7a (sigma_i, never T). One naming note for the author: the six-element basis names the identity 'gamma = 1' (the photon) and sigma_0 sigma_1 sigma_0 'e^-', which is a physics labelling of an algebra basis; it is used consistently across tbl:frobenius-gram-matrix-table2-data and prop:gamma-gamma-generates-particles, so no action."
       }
     ],
     "trap-closing-aphorism": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:g01",
+          "id": "agent:e02",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T02:54:13.192Z",
-        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
-        "evidence": "Table-only block (4-column matrix/eigenvalue/det/tr table, no prose sentences). Recomputed every cell: T_pp eig {+q,-q^-1} => det=-1, tr=q-q^-1=+h; T_nn eig {+q^-1,-q} => det=-1, tr=-h; T_pn eig +-sqrt(1+h^2/4) => det=-(1+h^2/4), tr=0. All four columns self-consistent under h=q-q^-1.",
-        "notes": "Clean; table verified arithmetically. No prose to carry a trap."
+        "reviewed_at": "2026-08-22T01:41:01.134Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every row RECOMPUTED symbolically (sympy, Hecke relation sigma_i^2 = h sigma_i + 1 with h = q - q^-1, Markov property tr(x sigma_n) = z tr(x)). tr_M(1)=1, tr_M(sigma_0)=tr_M(sigma_1)=z, tr_M(sigma_0 sigma_1)=tr_M(sigma_1 sigma_0)=z^2, and tr_M(sigma_0 sigma_1 sigma_0) = z*tr(sigma_0^2) = z(hz+1) = h z^2 + z. ALL SIX ROWS CORRECT.",
+        "notes": "Convention-clean: the table carries z symbolically, so it is neither convention C nor D and needs no re-derivation under the 2026-08-15 ruling. Generator naming follows 7a (sigma_i, never T). One naming note for the author: the six-element basis names the identity 'gamma = 1' (the photon) and sigma_0 sigma_1 sigma_0 'e^-', which is a physics labelling of an algebra basis; it is used consistently across tbl:frobenius-gram-matrix-table2-data and prop:gamma-gamma-generates-particles, so no action."
       }
     ],
     "trap-meta-commentary": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:g01",
+          "id": "agent:e02",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T02:54:13.227Z",
-        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
-        "evidence": "Table-only block (4-column matrix/eigenvalue/det/tr table, no prose sentences). Recomputed every cell: T_pp eig {+q,-q^-1} => det=-1, tr=q-q^-1=+h; T_nn eig {+q^-1,-q} => det=-1, tr=-h; T_pn eig +-sqrt(1+h^2/4) => det=-(1+h^2/4), tr=0. All four columns self-consistent under h=q-q^-1.",
-        "notes": "Clean; table verified arithmetically. No prose to carry a trap."
+        "reviewed_at": "2026-08-22T01:41:01.195Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every row RECOMPUTED symbolically (sympy, Hecke relation sigma_i^2 = h sigma_i + 1 with h = q - q^-1, Markov property tr(x sigma_n) = z tr(x)). tr_M(1)=1, tr_M(sigma_0)=tr_M(sigma_1)=z, tr_M(sigma_0 sigma_1)=tr_M(sigma_1 sigma_0)=z^2, and tr_M(sigma_0 sigma_1 sigma_0) = z*tr(sigma_0^2) = z(hz+1) = h z^2 + z. ALL SIX ROWS CORRECT.",
+        "notes": "Convention-clean: the table carries z symbolically, so it is neither convention C nor D and needs no re-derivation under the 2026-08-15 ruling. Generator naming follows 7a (sigma_i, never T). One naming note for the author: the six-element basis names the identity 'gamma = 1' (the photon) and sigma_0 sigma_1 sigma_0 'e^-', which is a physics labelling of an algebra basis; it is used consistently across tbl:frobenius-gram-matrix-table2-data and prop:gamma-gamma-generates-particles, so no action."
       }
     ],
     "trap-thesis-restatement": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:g01",
+          "id": "agent:e02",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T02:54:13.262Z",
-        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
-        "evidence": "Table-only block (4-column matrix/eigenvalue/det/tr table, no prose sentences). Recomputed every cell: T_pp eig {+q,-q^-1} => det=-1, tr=q-q^-1=+h; T_nn eig {+q^-1,-q} => det=-1, tr=-h; T_pn eig +-sqrt(1+h^2/4) => det=-(1+h^2/4), tr=0. All four columns self-consistent under h=q-q^-1.",
-        "notes": "Clean; table verified arithmetically. No prose to carry a trap."
+        "reviewed_at": "2026-08-22T01:41:01.244Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every row RECOMPUTED symbolically (sympy, Hecke relation sigma_i^2 = h sigma_i + 1 with h = q - q^-1, Markov property tr(x sigma_n) = z tr(x)). tr_M(1)=1, tr_M(sigma_0)=tr_M(sigma_1)=z, tr_M(sigma_0 sigma_1)=tr_M(sigma_1 sigma_0)=z^2, and tr_M(sigma_0 sigma_1 sigma_0) = z*tr(sigma_0^2) = z(hz+1) = h z^2 + z. ALL SIX ROWS CORRECT.",
+        "notes": "Convention-clean: the table carries z symbolically, so it is neither convention C nor D and needs no re-derivation under the 2026-08-15 ruling. Generator naming follows 7a (sigma_i, never T). One naming note for the author: the six-element basis names the identity 'gamma = 1' (the photon) and sigma_0 sigma_1 sigma_0 'e^-', which is a physics labelling of an algebra basis; it is used consistently across tbl:frobenius-gram-matrix-table2-data and prop:gamma-gamma-generates-particles, so no action."
       }
     ],
     "trap-performed-warmth": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:g01",
+          "id": "agent:e02",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T02:54:13.296Z",
-        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
-        "evidence": "Table-only block (4-column matrix/eigenvalue/det/tr table, no prose sentences). Recomputed every cell: T_pp eig {+q,-q^-1} => det=-1, tr=q-q^-1=+h; T_nn eig {+q^-1,-q} => det=-1, tr=-h; T_pn eig +-sqrt(1+h^2/4) => det=-(1+h^2/4), tr=0. All four columns self-consistent under h=q-q^-1.",
-        "notes": "Clean; table verified arithmetically. No prose to carry a trap."
+        "reviewed_at": "2026-08-22T01:41:01.308Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every row RECOMPUTED symbolically (sympy, Hecke relation sigma_i^2 = h sigma_i + 1 with h = q - q^-1, Markov property tr(x sigma_n) = z tr(x)). tr_M(1)=1, tr_M(sigma_0)=tr_M(sigma_1)=z, tr_M(sigma_0 sigma_1)=tr_M(sigma_1 sigma_0)=z^2, and tr_M(sigma_0 sigma_1 sigma_0) = z*tr(sigma_0^2) = z(hz+1) = h z^2 + z. ALL SIX ROWS CORRECT.",
+        "notes": "Convention-clean: the table carries z symbolically, so it is neither convention C nor D and needs no re-derivation under the 2026-08-15 ruling. Generator naming follows 7a (sigma_i, never T). One naming note for the author: the six-element basis names the identity 'gamma = 1' (the photon) and sigma_0 sigma_1 sigma_0 'e^-', which is a physics labelling of an algebra basis; it is used consistently across tbl:frobenius-gram-matrix-table2-data and prop:gamma-gamma-generates-particles, so no action."
       }
     ],
     "trap-superlative": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:g01",
+          "id": "agent:e02",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T02:54:13.333Z",
-        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
-        "evidence": "Table-only block (4-column matrix/eigenvalue/det/tr table, no prose sentences). Recomputed every cell: T_pp eig {+q,-q^-1} => det=-1, tr=q-q^-1=+h; T_nn eig {+q^-1,-q} => det=-1, tr=-h; T_pn eig +-sqrt(1+h^2/4) => det=-(1+h^2/4), tr=0. All four columns self-consistent under h=q-q^-1.",
-        "notes": "Clean; table verified arithmetically. No prose to carry a trap."
+        "reviewed_at": "2026-08-22T01:41:01.359Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every row RECOMPUTED symbolically (sympy, Hecke relation sigma_i^2 = h sigma_i + 1 with h = q - q^-1, Markov property tr(x sigma_n) = z tr(x)). tr_M(1)=1, tr_M(sigma_0)=tr_M(sigma_1)=z, tr_M(sigma_0 sigma_1)=tr_M(sigma_1 sigma_0)=z^2, and tr_M(sigma_0 sigma_1 sigma_0) = z*tr(sigma_0^2) = z(hz+1) = h z^2 + z. ALL SIX ROWS CORRECT.",
+        "notes": "Convention-clean: the table carries z symbolically, so it is neither convention C nor D and needs no re-derivation under the 2026-08-15 ruling. Generator naming follows 7a (sigma_i, never T). One naming note for the author: the six-element basis names the identity 'gamma = 1' (the photon) and sigma_0 sigma_1 sigma_0 'e^-', which is a physics labelling of an algebra basis; it is used consistently across tbl:frobenius-gram-matrix-table2-data and prop:gamma-gamma-generates-particles, so no action."
       }
     ],
     "trap-nonspeakable": [
       {
         "field_hash": {
-          "md": "1e891ba8d3ed",
-          "ts": "f1e7e2e74dd5"
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:g01",
+          "id": "agent:e02",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T02:54:13.370Z",
-        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
-        "evidence": "Table-only block (4-column matrix/eigenvalue/det/tr table, no prose sentences). Recomputed every cell: T_pp eig {+q,-q^-1} => det=-1, tr=q-q^-1=+h; T_nn eig {+q^-1,-q} => det=-1, tr=-h; T_pn eig +-sqrt(1+h^2/4) => det=-(1+h^2/4), tr=0. All four columns self-consistent under h=q-q^-1.",
-        "notes": "Clean; table verified arithmetically. No prose to carry a trap."
+        "reviewed_at": "2026-08-22T01:41:01.420Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every row RECOMPUTED symbolically (sympy, Hecke relation sigma_i^2 = h sigma_i + 1 with h = q - q^-1, Markov property tr(x sigma_n) = z tr(x)). tr_M(1)=1, tr_M(sigma_0)=tr_M(sigma_1)=z, tr_M(sigma_0 sigma_1)=tr_M(sigma_1 sigma_0)=z^2, and tr_M(sigma_0 sigma_1 sigma_0) = z*tr(sigma_0^2) = z(hz+1) = h z^2 + z. ALL SIX ROWS CORRECT.",
+        "notes": "Convention-clean: the table carries z symbolically, so it is neither convention C nor D and needs no re-derivation under the 2026-08-15 ruling. Generator naming follows 7a (sigma_i, never T). One naming note for the author: the six-element basis names the identity 'gamma = 1' (the photon) and sigma_0 sigma_1 sigma_0 'e^-', which is a physics labelling of an algebra basis; it is used consistently across tbl:frobenius-gram-matrix-table2-data and prop:gamma-gamma-generates-particles, so no action."
       }
     ]
   },
-  "updated_at": "2026-08-22T02:54:13.370Z"
+  "source_hashes": {
+    "md": "f71f231c90b8",
+    "ts": "0cde43c42f89"
+  },
+  "updated_at": "2026-08-22T01:41:01.420Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -31,9 +31,6 @@ export default chapter({
       label: "sec:markov-axioms-braid-link",
       blocks: [
         "intro-markov-axioms-braid-link",
-        "q-beta-categorical-precision-ladder-table1-data",
-        "q-beta-categorical-precision-ladder-table2-data",
-        "q-beta-categorical-precision-ladder-table3-data",
         "bar-involution-table1-data",
         "bar-involution-table2-data",
         "bar-involution-table3-data",
@@ -112,7 +109,6 @@ export default chapter({
         "graded-baer-star-Hq",
         "two-filtration-bridge-small-cases",
         "two-filtration-bridge-small-cases-table-data",
-        "two-filtration-bridge-general-table-data",
         "classical-riemann-zeta",
         "classical-riemann-hypothesis",
         "adelic-critical-line-persistence",

@@ -164,7 +164,6 @@ export default chapter({
       blocks: [
         "transfer-beta-decay-intro",
         "ground-state-ordering-table2-data",
-        "ground-state-ordering-table1-data",
         "energy-scale-planck",
         "neutron-qvalue-symbolic",
         "qbeta-counit-closed-form",

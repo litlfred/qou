@@ -62,8 +62,6 @@ export default chapter({
         "knot-operator-selection",
         "knot-operator-selection-proof",
         "knot-operator-selection-multichannel",
-        "frobenius-gram-matrix-table1-data",
-        "frobenius-gram-matrix-table2-data",
       ],
     }),
     section({
