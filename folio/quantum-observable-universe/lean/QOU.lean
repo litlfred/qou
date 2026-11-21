@@ -307,6 +307,7 @@ import QOU.MathlibExt.Bicommutant
 import QOU.MathlibExt.BraidGroup
 import QOU.MathlibExt.PLPolygonalLink
 import QOU.MathlibExt.PLAffineEquivariance
+import QOU.MathlibExt.PLVertexSlide
 import QOU.Knot.FiveTwoVolumeConstant
 import QOU.Knot.FiveTwoAngleSum
 import QOU.Knot.FiveTwoNinthPower
