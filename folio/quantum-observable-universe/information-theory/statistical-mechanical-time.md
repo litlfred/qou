@@ -18,4 +18,4 @@ At $q = q_0$ ($t_P \approx 10$), each Planck unit executes $\sim 10$ braiding ev
 At the classical limit ($t_P \to \infty$), infinitely many iterations fill each unit. The Julia set dynamics degenerates into continuous Reeb flow. The orbit structure flattens into the smooth invariant measure $\mu_J$.
 
 **Connection to jet prolongation.**
-Each Reeb operation executes exactly one jet prolongation ([Planck steps as jet orders](#rem:jet-planck-steps)). The $\sim 10$ jet prolongations occurring within a single Planck time generate a statistical jet, which averages the intermediate polynomial orders. The continuous limit ($q \to 1$) recovers the analytic germ $J^\infty E$. The smooth Taylor series arises as the thermodynamic limit of the discrete jet tower.
+Each Reeb operation executes exactly one jet prolongation. The $\sim 10$ jet prolongations occurring within a single Planck time generate a statistical jet, which averages the intermediate polynomial orders. The continuous limit ($q \to 1$) recovers the analytic germ $J^\infty E$. The smooth Taylor series arises as the thermodynamic limit of the discrete jet tower.

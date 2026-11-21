@@ -7,5 +7,6 @@ export default remark({
   tags: ["magic-numbers", "hoefsmit", "shell-closure", "computation"],
   authorNotes: [
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The file `shell-closure.witness.json` records $\\delta^2 \\Phi(Z)$ for $Z = 1\\ldots 30$ at $K = 10$. The block-diagonal optimised computation resides in `shell_closure_compute.py`." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The numerical agreement at $Z = 8, 20, 28$ above provides the [empirical computational verification](#rem:k12-barrier-bypass) of the homological prediction at the strand counts where Hoefsmit matrices remain tractable." },
   ],
 });
