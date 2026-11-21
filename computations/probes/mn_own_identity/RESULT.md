@@ -108,6 +108,6 @@ a larger gap dominates).** The only derivable correction inside these arms is th
 It is computed, not dropped: the covariant all-pairs pair charge is the same scalar on every basis
 state of a sector (`−1/3` on `N`, `−1` on `P`), so its connected part is exactly 0 for **every**
 element, including the selected word (`twoTerm_connected_zero`; probe agrees). The raw (unconnected)
-two-term parts differ (`tr_P` side `1 − h²` times `−1`, `N` side `−1/3`), but the raw part is not
+two-term parts on `w` differ (`−1/3` on `N`, `−(1 − h²)` on `P`), but the raw part is not
 the ruled two-term trace. Not derivable here, so not included: a lepton-sector constant in place of
 the `−12`, and the coupling `c_em` (it multiplies 0 in any case).
