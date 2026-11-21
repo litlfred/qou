@@ -8774,3 +8774,5 @@ The P3 side finding about `beta_decay_energy_negative` is resolved in Lean: the 
 - **W (#8696): all four words kept open** (D mirror-vertex grammar, A V₁³, B passage σ₀σ₁σ₂, C σ₂). Owner asked for the implications of each and which can be ruled out; follow-up agent dispatched.
 - **Y (#8694): owner asked whether a right-handed singlet strand is consistent with physics**; answered in chat, no ruling yet.
 - #8698 (meson cluster, option 1) merged with the conjecture restated (option A): κ = ε · partnerCrossings.
+
+- **Correction (owner, 2026-11-21 04:52 CET):** route L is **HELD, not stopped by ruling**. The entry above ("STOPPED as an energy theory (owner option 3)") overstated it. L is paused pending derived nucleon/lepton words; κ's sign and scale stay open choices, nothing ruled against the route. Same correction posted on PR #8693.
