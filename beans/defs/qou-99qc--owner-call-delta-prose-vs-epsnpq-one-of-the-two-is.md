@@ -8945,3 +8945,9 @@ Written before any computation. Corpus facts used: the ruled nucleon is an ELEME
 **Questions, no predicted answer:** 1. Is V³ among them, and does every solution have φ₀ = φ₁ = ψ₀ = ψ₁ = 0? 2. Are the weights (qh, −q⁻¹h) forced up to the swap φ ↔ ψ? 3. Does any OTHER 3-component word appear, and with which weights? 4. Is every two-photon-multiple word writhe 0?
 **Reading.** If (1) and (2) hold and every 3-component solution lies in the φ₀₁ψ₀₁ sector, the V-only cut is DERIVED from the element criterion (scope b within words ≤ 6 crossings). Otherwise it is not, and the result is reported as is.
 **Not allowed:** changing the word bound, ring or criterion after results; choosing among solutions by Q_β or any mass.
+
+### RESULT 2026-11-21 — D1 (two-photon-multiple criterion), computations/probes/gg_photon_cut/
+Deviation from pre-reg, stated: Gröbner over generic ℚ(q) timed out, so each word was decided exactly over ℚ at q = 2 and q = 3/2 (both agree on every word). Words: all 52 free-reduced words ≤ 3 crossings, plus V³; V² stopped unfinished after 1 h.
+- 47 of 52 are two-photon multiples, every one needing σ₀/σ₁ weights (out of sector). NOT multiples: σ₁σ₀, σ₀σ₁σ₀, σ₁σ₀σ₁, σ₀⁻¹σ₁σ₀, σ₁σ₀σ₁⁻¹ (σ₀σ₁σ₀ matches a682c89c65e — control). σ₀σ₁ is a multiple, σ₁σ₀ is not (chirality of the ruled photon).
+- V³: a multiple both IN the φ₀₁ψ₀₁ sector (the ruled weights) and OUT of it.
+Answers: Q1 V³ yes, but not only in-sector; Q2 not forced; Q3 n/a at ≤ 3 crossings; Q4 no (σ₀ etc. have writhe ≠ 0). Reading: the element criterion does NOT derive the V-only cut (scope a). V-only stays in use (owner, 12:17Z).
