@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-20T18:30:00Z
-updated_at: 2026-11-20T20:01:28Z
+updated_at: 2026-11-21T02:23:33Z
 parent: qou-6qbv
 ---
 
@@ -43,3 +43,5 @@ Items 2-4 put to the owner on cards.
 Owner ruled 2026-11-20 on items 2-4 (all recommended options) and they are applied in #8655: atom-knot 25 % bound dropped (class now states B = m_e·M); baryon integrand restated as the velocity Vandermonde (false proof steps removed); wedderburn statement restated to the proved forms. Item 1 (re-run the y_λ Jones-Markov witness at the proton pin) remains open.
 
 Item 1 done in #8655 (2fe41f665c): y-lambda-jones-markov witness re-pinned to proton via q_parameter.Q_50_DIGIT_STR, fmt-serialised. Effect ≤ 4.59e-8 relative on the weights and on the consumer. Found while checking: binding-a3plus-joint-ji-combiner.witness.json (computed 2026-09-06) is stale independent of the re-pin. A fresh run moves e.g. 4He joint_B_pred 15.87 → 0.587 MeV, and both old and new runs fail he3_baseline_sum_reproduces_full_theta_assembly (expected 0.7587; listed in witness-failed-assertion-baseline.json). Not regenerated: another arc's numbers. Cause not identified.
+
+#8655 merged 2026-11-21 (e2cc9f6). Open: the stale binding-a3plus-joint-ji-combiner witness and its failing he3 read-check (cause not found).
