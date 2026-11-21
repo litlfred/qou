@@ -81,7 +81,7 @@ gives:
 | $S_0$ ($n = 3, 6, 9, \ldots$) |         $e^-$        |           $6.4\%$           | $a_5 \approx 13.4$ |
 
 The electron mass is mostly carried by the **crossing
-channels** ($\sigma_0, \sigma_1$), not by the trefoil
+channels** ($\sigma_0, \sigma_1$), not by the $e^-$
 channel itself.  The $e^-$ coefficient ($\approx 13.4$
 including the descended part) is only $12\%$ of the total
 mass element norm.

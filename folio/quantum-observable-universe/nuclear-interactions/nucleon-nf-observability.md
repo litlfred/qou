@@ -16,7 +16,7 @@ A braid word of length $\ell$ is **observable** when the corresponding knot or l
 - **$\ell = 0$**: The identity $\mathbf{1}$ is topologically trivial.
 - **$\ell = 1$**: A single crossing $\sigma_i$ is virtual (topologically removable).
 - **$\ell = 2$**: The products $\sigma_0\sigma_1$ and $\sigma_1\sigma_0$ form Hopf links. They are topologically non-trivial and observable.
-- **$\ell = 3$**: The product $\sigma_0\sigma_1\sigma_0$ is the trefoil knot. It is observable.
+- **$\ell = 3$**: The product $\sigma_0\sigma_1\sigma_0$ is the electron word $e^-$; its closure on three strands is the two-component Hopf link. It is observable.
 
 ## Positive coefficients: observable vs virtual
 

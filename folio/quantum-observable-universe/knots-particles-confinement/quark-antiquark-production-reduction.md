@@ -5,7 +5,7 @@ Each photon is the Hecke algebra element $\gamma = \mathbf{1} + \varphi_0\sigma_
 Their product NF in $H_3(q)$ yields Hopf link terms $L_+$ and $L_-$ exclusively from cross-color products.
 
 **Quark creation: step-by-step reduction of $L_+ \cdot e^-$.**
-The positive Hopf link $L_+ = \sigma_0\sigma_1$ applied to the trefoil $e^- = \sigma_0\sigma_1\sigma_0$ reduces to:
+The positive Hopf link $L_+ = \sigma_0\sigma_1$ applied to the electron word $e^- = \sigma_0\sigma_1\sigma_0$ (whose closure on three strands is the Hopf link) reduces to:
 
 $$
   \mathrm{NF}(L_+ \cdot e^-)
@@ -16,7 +16,7 @@ $$
   h^2e^-
 $$
 
-The Hopf link operator $L_+$ transmutes the trefoil electron into a virtual crossing $\sigma_1$ plus residual Hopf and trefoil content. The $e^-$ coefficient $h^2$ is the residual electron. The dominant output $\sigma_1$ is the hadronic crossing that becomes the up quark. The mirror operator $L_-$ creates an antiquark from the positron channel.
+The Hopf link operator $L_+$ transmutes the electron word $e^-$ into a virtual crossing $\sigma_1$ plus residual $L_\pm$ and $e^-$ content. The $e^-$ coefficient $h^2$ is the residual electron. The dominant output $\sigma_1$ is the hadronic crossing that becomes the up quark. The mirror operator $L_-$ creates an antiquark from the positron channel.
 
 **Two independent productions.**
 When two independent colored photon pairs undergo pair creation simultaneously, each produces a quark--antiquark channel. The quark type is determined by the crossing orientation.

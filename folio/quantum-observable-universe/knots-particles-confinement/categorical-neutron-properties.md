@@ -21,7 +21,7 @@ $$
   \mathrm{net}(\mathfrak{n}) = +0.7976
 $$
 
-Relative to the proton ($\mathrm{net} = +1.0065$), the additional down quark demands a larger $L_+$ compensation ($-0.2206$ versus $-0.1114$). After Hopf gluon stabilisation, the trefoil channel $e^- \approx +1.0$ dominates both nucleons.
+Relative to the proton ($\mathrm{net} = +1.0065$), the additional down quark demands a larger $L_+$ compensation ($-0.2206$ versus $-0.1114$). After Hopf gluon stabilisation, the electron-word channel $e^- \approx +1.0$ dominates both nucleons.
 
 **Transition: proton $\to$ neutron.**
 The normal-form difference yields the dimensionless $\beta$-decay transition:

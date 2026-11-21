@@ -62,8 +62,8 @@ own knot type.
    $h_{\mathrm{A}}$-weighted crossing.
 
 6. **Single-crossing unknot quarks.**  Each quark enters as a
-   single-crossing unknot rather than a full trefoil word
-   $\sigma_0\sigma_1\sigma_0$: the trefoil assignment triples
+   single-crossing unknot rather than the full three-crossing
+   word $\sigma_0\sigma_1\sigma_0$: the three-crossing assignment triples
    $|\Delta \times E_0|$ to $-2.51$ MeV, whereas the
    single-crossing assignment gives $\Delta \times E_0 = -0.782$ MeV,
    in agreement with CODATA.

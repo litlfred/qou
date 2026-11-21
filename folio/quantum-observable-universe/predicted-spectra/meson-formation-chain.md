@@ -11,7 +11,7 @@ $$
 $$
 
 **Step 2: Quark creation.**
-To create a quark on the trefoil channel, the Hopf link $L_+ = \sigma_0\sigma_1$ from the colored photon normal form acts as a creation operator:
+To create a quark on the electron-word ($e^-$) channel, the Hopf link $L_+ = \sigma_0\sigma_1$ from the colored photon normal form acts as a creation operator:
 
 $$
   L_+ \cdot e^-

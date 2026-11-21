@@ -8,10 +8,10 @@ Quark flavor rigidly specifies the crossing eigenvalue. The $\mathfrak{u}$-$\mat
 
 **Scope of the LP stability constraint.** Under the Markov-recursion evaluation $\mathrm{tr}_M(e^-) = h z^2 + z$ (rather than the retired ansatz $\mathrm{tr}_M(e^-) = z^3$), the bare nine-crossing element $\mathcal{B}_3 \times \Delta_3(\mathfrak{u}\mathfrak{u}\mathfrak{d})$ has $\mathrm{tr}_M = +0.544 > 0$, and every intermediate step of the typed build also maintains positive trace. Consequently, the bare nucleon already lies inside the Frobenius-positive feasible set without requiring a Hopf gluon link $L_- = \sigma_1\sigma_0$ to repair a sign violation; whether the gluon stabilizer is forced by an independent variational constraint remains open.
 
-What survives unchanged is the *scope* of the enumeration. The integer LP dual enumerates all feasible gluon combinations and selects the configuration minimizing $|\mathrm{tr}_M|$. That enumeration ranges over every non-trivial braid word inside the crossing cap, not over $L_\pm$ alone. The trefoil word $e^- = \sigma_0\sigma_1\sigma_0$ is inside the range and is admissible; it is not selected because it loses the minimisation, not because anything forbids it.
+What survives unchanged is the *scope* of the enumeration. The integer LP dual enumerates all feasible gluon combinations and selects the configuration minimizing $|\mathrm{tr}_M|$. That enumeration ranges over every non-trivial braid word inside the crossing cap, not over $L_\pm$ alone. The electron word $e^- = \sigma_0\sigma_1\sigma_0$ is inside the range and is admissible; it is not selected because it loses the minimisation, not because anything forbids it.
 
 **Step 3: Proton NF.**
-Applying typed crossings and Hopf link stabilisation yields $\mathrm{net}(\mathfrak{p}) = +1.0065$. The dominant term is $e^- \approx +1.022$. The Hopf gluon link actively redistributes normal-form weight from $\sigma_1$ into the trefoil channel.
+Applying typed crossings and Hopf link stabilisation yields $\mathrm{net}(\mathfrak{p}) = +1.0065$. The dominant term is $e^- \approx +1.022$. The Hopf gluon link actively redistributes normal-form weight from $\sigma_1$ into the $e^-$ channel.
 
 **Mass.**
 The proton mass derives from the muon-anchored Hecke energy of the Borromean braid:

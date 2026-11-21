@@ -5,4 +5,4 @@
 | $\sigma_1$ | $+0.099$ | Vertical polarization |
 | $L_+$ | $+0.043$ | Positive Hopf link |
 | $L_-$ | $+0.003$ | Cross-color Hopf |
-| $e^-$ | $+0.002$ | Trefoil channel (4-term only) |
+| $e^-$ | $+0.002$ | Electron-word channel (4-term only) |

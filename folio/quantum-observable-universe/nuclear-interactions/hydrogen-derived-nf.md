@@ -26,4 +26,4 @@ $$
   \mathrm{net}(\mathcal{A}(1,0)) \approx +1.489
 $$
 
-The $e^-$ coefficient flips from $-0.043$ (unbound proton) to $+0.080$ (hydrogen atom). The Hopf linking with the electron satisfies the proton's trefoil deficit. The bound atom has $e^- > 0$, closing the beta decay channel. The only remaining deficit is $\sigma_1 = -0.024$. This reflects the incomplete $1s^1$ shell. Hydrogen has one electron rather than the closed-shell pair of helium.
+The $e^-$ coefficient flips from $-0.043$ (unbound proton) to $+0.080$ (hydrogen atom). The Hopf linking with the electron satisfies the proton's $e^-$ deficit. The bound atom has $e^- > 0$, closing the beta decay channel. The only remaining deficit is $\sigma_1 = -0.024$. This reflects the incomplete $1s^1$ shell. Hydrogen has one electron rather than the closed-shell pair of helium.

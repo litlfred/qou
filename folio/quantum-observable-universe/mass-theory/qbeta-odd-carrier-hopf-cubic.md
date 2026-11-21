@@ -38,7 +38,7 @@ the origin of the cubic:
 | knot sector | crossings | $\Delta^{\mathrm{odd}}_{\mathrm{sector}}$ |
 |---|---|---|
 | virtual ($\sigma_0, \sigma_1$) | 1 | $0$ |
-| trefoil ($\sigma_0\sigma_1\sigma_0$) | 3 | $0$ |
+| electron word $e^-$ ($\sigma_0\sigma_1\sigma_0$) | 3 | $0$ |
 | unknot ($\mathbf{1}$) | 0 | $\frac{h}{4} \cdot (2y^2 - 7y + 4) = \frac{h}{4} \cdot C_{\mathrm{unknot}}(y)$ |
 | Hopf ($\sigma_0\sigma_1 + \sigma_1\sigma_0$) | 2 | $\frac{h}{4} \cdot (y^3 - 6y^2 + 10y - 6) = \frac{h}{4} \cdot C_{\mathrm{Hopf}}(y)$ |
 

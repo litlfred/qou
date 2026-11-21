@@ -51,7 +51,7 @@ $$
   \mathrm{NF}(\mathfrak{M}_-) \approx 0.209\,\sigma_0 + 1.044\,L_+ + 0.044\,L_- + 0.218\,e^-
 $$
 
-Both mesons carry identical Hopf link ($L_+ + L_-$) and trefoil ($e^-$) content, differing only in the single-generator excitation.
+Both mesons carry identical Hopf link ($L_+ + L_-$) and electron-word ($e^-$) content, differing only in the single-generator excitation.
 
 **Particle content.**
-The dominant $L_+$ term (coefficient $\approx 1.044$) establishes the Hopf link binding. The trefoil component $e^-$ ($\approx 0.218$) encodes the residual lepton channel. In contrast, the bare quark--antiquark pair ($T_{01} \cdot T_{10}$) yields $\mathrm{net} = +1.418$ and contains a neutrino $\nu$ component in place of the Hopf links. The Hopf link binding actively replaces the neutrino channel and increases the net amplitude by $\approx 0.097$.
+The dominant $L_+$ term (coefficient $\approx 1.044$) establishes the Hopf link binding. The electron-word component $e^-$ ($\approx 0.218$) encodes the residual lepton channel. In contrast, the bare quark--antiquark pair ($T_{01} \cdot T_{10}$) yields $\mathrm{net} = +1.418$ and contains a neutrino $\nu$ component in place of the Hopf links. The Hopf link binding actively replaces the neutrino channel and increases the net amplitude by $\approx 0.097$.
