@@ -4,7 +4,7 @@ $$
   \mathrm{Li}_2^q(y) + \mathrm{Li}_2^q(x) = \mathrm{Li}_2^q(xy) + \mathrm{Li}_2^q\!\left(\frac{x(1-y)}{1-xy}\right) + \mathrm{Li}_2^q\!\left(\frac{y(1-x)}{1-xy}\right).
 $$
 
-By [`def:q-dilogarithm`](q-dilogarithm.md) there is exactly one level-2 primitive satisfying this relation, so the pentagon axiom *names* $\mathrm{Li}_2^q$ rather than merely constraining it — the dilogarithm is the unique scalar shadow of the associator. In operator form this is the Faddeev–Kashaev identity: the quantum dilogarithm is the **quantum associator** (equivalently the $6j$-symbol), and the operator pentagon
+The relation fixes the evaluation map of $\mathrm{Li}_2^q$, not the element: if the five-term relation is rigid, any two $q$-dilogarithm structures sharing the pentagon data have the same evaluation map ([prop:q-dilogarithm-unique](#prop:q-dilogarithm-unique)). Under that hypothesis the dilogarithm's evaluation is the unique scalar shadow of the associator; the element itself needs a normalisation the pentagon data does not carry. In operator form this is the Faddeev–Kashaev identity: the quantum dilogarithm is the **quantum associator** (equivalently the $6j$-symbol), and the operator pentagon
 
 $$
   \Phi(\mathsf P)\,\Phi(\mathsf Q) = \Phi(\mathsf Q)\,\Phi(\mathsf P+\mathsf Q)\,\Phi(\mathsf P)

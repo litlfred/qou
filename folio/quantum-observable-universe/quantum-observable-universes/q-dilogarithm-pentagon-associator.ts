@@ -9,6 +9,7 @@ export default remark({
     "def:q-dilogarithm",
     "prop:phi-q-aj-machinery-identification",
     "prop:dilog-pentagon-is-associator",
+    "prop:q-dilogarithm-unique",
   ],
   cites: ["faddeev_kashaev1994"],
   authorNotes: [
