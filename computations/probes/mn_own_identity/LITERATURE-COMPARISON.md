@@ -446,3 +446,33 @@ The production identity writes the constant in units of `m_e` (`12 m_e`). If the
 is the matter pairing of the electron state in the same Lagrangian, then CAL-1 fixes `s`, and the
 nucleon/electron ratio of matter pairings is scale-free. That is not a fourth calibration. Whether
 the electron's mass is such a pairing is not yet established.
+
+## 15. Pairing ratio and the mirror Frobenius relation (2026-11-21, owner: "3")
+
+Pre-registered in `PREREGISTRATION-pairing-ratio-and-mirror.md` before running.
+
+**A. Nucleon/electron ratio** (`mn_pairing_ratio_probe.py`, exact `ℚ(q)`). Mixed-state expectation
+`⟨X⟩ = tr(K X)/tr(K)` (a ratio of closed traces, so scale-free), Jimbo `Ř` on `V^{⊗3}`, electron
+`σ₀σ₁σ₀`, nucleon `(σ₀σ₁⁻¹)³`.
+
+| sector | ratio `⟨X_N⟩/⟨X_e⟩` | at `q = 1` |
+|---|---|---|
+| E1 whole space | `−(q¹² − 3q¹⁰ + 2q⁸ − 4q⁶ + 2q⁴ − 3q² + 1)/(q⁷(q⁴+1))` | `2` |
+| E2 proton sector | `−(q²+1)²(q¹² − 3q¹⁰ + 3q⁸ − 5q⁶ + 3q⁴ − 3q² + 1)/(3q⁹(q⁴+1))` | `2` |
+| E2 neutron sector | same as proton | `2` |
+
+Pass criterion was `12` identically. **Scope-(a) negative for this class only**: the ratio is
+`q`-dependent and equals `2` at `q = 1`, not `12`. The proton and neutron sector expectations of
+`V³` are equal, so this class does not produce the `q⁻²` split either (that comes from the weight
+of a pure state, §10–11, which the mixed average divides out). Observation, not a claim: at
+`q = 1` the ratio is `2 = dim V_(2,1)`, the factor already present in the production identity; the
+missing factor is `6 = |S₃|`.
+
+**B. Mirror Frobenius relation.** In the pre-registered commutative class (`ℚ[x]/(x²)`, `S = id`)
+every solution satisfies the mirror relation; no counterexample. Element-level argument that it
+holds more generally in a **symmetric** category: apply `antipode_anti_comul` to the stated
+relation `Δ(ab) = Δ(a)(1⊗b)`. With `antipode_anti_mul` this gives
+`Δ(S b · S a) = (S b ⊗ 1) Δ(S a)`, and `S` is bijective (`antipode_involutive`), so
+`Δ(cd) = (c ⊗ 1)Δ(d)`: the mirror relation. Not formalised; the braided (non-symmetric) case is
+not checked. `counit_snake_left_of_mirror` (sorry-free) then gives the left snake identity for
+`λ = ε`, `coev = η ≫ Δ`. So in the symmetric case `λ = ε` satisfies both snake identities.

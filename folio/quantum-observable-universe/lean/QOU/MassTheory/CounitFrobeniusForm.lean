@@ -42,6 +42,24 @@ theorem counit_snake_right (F : QOU.FrobeniusHopfData C) :
   simp only [Iso.inv_hom_id_assoc]
   rw [← Category.assoc F.comul, F.comul_counit, Iso.inv_hom_id]
 
+/-- Left snake identity for the counit as Frobenius form, given the mirror Frobenius relation
+`μ ≫ Δ = (A ◁ Δ) ≫ α⁻¹ ≫ (μ ▷ A)` (not an axiom of `FrobeniusHopfData`; in a symmetric
+category it follows from the antipode laws, element-level argument in
+`LITERATURE-COMPARISON.md` §15, not formalised here). -/
+theorem counit_snake_left_of_mirror (F : QOU.FrobeniusHopfData C)
+    (hmirror : F.mul ≫ F.comul =
+      (F.obj ◁ F.comul) ≫ (α_ F.obj F.obj F.obj).inv ≫ (F.mul ▷ F.obj)) :
+    (ρ_ F.obj).inv ≫ (F.obj ◁ (F.unit ≫ F.comul)) ≫ (α_ F.obj F.obj F.obj).inv ≫
+      ((F.mul ≫ F.counit) ▷ F.obj) ≫ (λ_ F.obj).hom = 𝟙 F.obj := by
+  have h1 : (F.obj ◁ (F.unit ≫ F.comul)) ≫ (α_ F.obj F.obj F.obj).inv ≫
+      ((F.mul ≫ F.counit) ▷ F.obj) =
+      (F.obj ◁ F.unit) ≫ (F.mul ≫ F.comul) ≫ (F.counit ▷ F.obj) := by
+    rw [hmirror, whiskerLeft_comp, comp_whiskerRight]
+    simp only [Category.assoc]
+  rw [reassoc_of% h1, ← Category.assoc (F.obj ◁ F.unit) F.mul, F.mul_one]
+  simp only [Iso.inv_hom_id_assoc]
+  rw [← Category.assoc F.comul, F.counit_comul, Iso.inv_hom_id]
+
 variable {K : Type*} [Field K] [Preadditive C] [Linear K C]
   [MonoidalPreadditive C] [MonoidalLinear K C]
 

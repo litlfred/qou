@@ -1,0 +1,27 @@
+{
+  "E1_whole": {
+    "nucleon_expectation": "-(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**4*(q**2 + 1)**2)",
+    "ratio": "-(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**7*(q**4 + 1))",
+    "ratio_at_q1": "2",
+    "ratio_eq_12_identically": false
+  },
+  "E2_proton_sector": {
+    "nucleon_expectation": "-(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/(3*q**6)",
+    "ratio": "-(q**2 + 1)**2*(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/(3*q**9*(q**4 + 1))",
+    "ratio_at_q1": "2",
+    "ratio_eq_12_identically": false
+  },
+  "E2_neutron_sector": {
+    "nucleon_expectation": "-(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/(3*q**6)",
+    "ratio": "-(q**2 + 1)**2*(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/(3*q**9*(q**4 + 1))",
+    "ratio_at_q1": "2",
+    "ratio_eq_12_identically": false
+  },
+  "electron_expectation_whole": "q**3*(q**4 + 1)/(q**2 + 1)**2",
+  "checks": {
+    "hecke_relation": true,
+    "braid_relation": true,
+    "K_commutes_with_braids": true
+  },
+  "verdict": "scope-(a) negative: no sector in the pre-registered class gives ratio 12"
+}
