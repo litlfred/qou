@@ -8,4 +8,4 @@ $$
   \zeta_5  =  e^{2\pi i/5},
 $$
 
-is an automorphism of $\mathcal{X}_5$ of order $5$. It generates a cyclic group $\langle \phi_5 \rangle \cong \mathbb{Z}_5$ inside $\mathrm{Aut}(\mathcal{X}_5)$.
+with $\zeta_5$ a primitive fifth root of unity, is an automorphism of $\mathcal{X}_5$ of order $5$. It generates a cyclic group $\langle \phi_5 \rangle \cong \mathbb{Z}_5$ inside $\mathrm{Aut}(\mathcal{X}_5)$.
