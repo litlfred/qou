@@ -113,3 +113,55 @@ sweeps.
 
 If the owner says nothing: the branch stays at its current 15 fixed files, and the 86
 files keep reporting in the audit.
+
+## Outcome of T1 → T3 (same day, owner chose "T1, then T2 and T3")
+
+Audit after the tranches: **F64_CAST 81 files / 157 sites** (from 86 / 162), and
+`F64_ENGINE_ENTRY` has **0 propagating** producers (from 2). Nine terminal
+probes are left in that tier.
+
+**New shared helper.** `mass_at_3A_proper.chi_lambda_of_word_mpfr(shape, word, q)`
+is the full-precision twin of the float `chi_lambda_of_word`. It takes the same
+`(c, d, gen)` word and runs `pyhecke_native.chi_q_atomic_mpfr`. It refuses a
+float q. On the deuteron word it agrees with the float kernel to 3e-15–5e-15.
+Any remaining T1 caller can switch with a one-line change.
+
+**T1, converted:**
+- `iterative_lp_dual_h6_deuteron`: χ^λ(β_D) moves by up to 4.1e-14. Its own
+  tr_M cross-check was at 0.736 in the committed witness (stale); the re-run
+  gives 1.18e-8 and passes.
+- `paper_six_term_shadow_price_sweep`: only the recorded q₀ was 16 digits.
+
+**T1, not converted, with reasons.**
+- `markov_trace_3A` (the only `chi_lambda_of_word` call in `mass_at_3A_proper`) is
+  deprecated, as is the `qbeta_perlambda_collapse` probe that reads it.
+- These need the matrix itself, not its trace, so they are numpy by design:
+  - `binding_k_solver` (determinants and eigenvalues, plus an LP);
+  - `A_operator_extract_general` (lstsq fit; the mpmath combiner supersedes it);
+  - `gram_*` probes, `alpha_k_jones_markov_h3/h4`, `atom_level_wedderburn_tower`
+    (marked not_production).
+
+**T2, both converted.**
+- `all_nuclides_wedderburn_spectral_v2`: its native cross-check now uses the MPFR
+  entry. The deviation is 2.1e-40, where before it could only show ~1e-16. No
+  data field moves.
+- `fr_pullback_cosh_h_test`: MPFR characters, and `dim_q`/`qfac` at the mpf proton
+  pin. Its inputs (`atom-chi-rust-*`) were already MPFR. My change moves results
+  by ≤ 3.9e-14. **The witness was not refreshed**, because re-running the
+  *unmodified* producer today already moves the deuteron B by ~110%. That flips its
+  verdict from "cosh(h) injection NEUTRAL, best variance 1.54" to "HELPS at
+  v5, +1.1%, best variance 2.33". That movement is staleness from upstream word
+  changes, and refreshing it is an owner decision.
+
+**T3: no clean wins.** Of the nine `hecke_core` importers:
+- `markov_peel_rust_bridge` uses h only to classify a crossing's sign.
+- `canonical_tr_m_via_branching` and `wenzl_a3_cross_check` are numpy/complex128
+  pipelines whose mpmath sibling is the combiner itself.
+- `k_versus_selected_operator_probe` is a numpy solve over the float `TR_M` table.
+- The rest are legacy or `not_production`.
+
+None is a substitution that adds digits to a published number.
+
+**Held for the owner (stale witnesses, not precision):**
+1. `hecke-character-symbolic.witness.json`: (2,1) characters move up to 7×.
+2. `fr-pullback-cosh-h.witness.json`: the verdict flips, as above.
