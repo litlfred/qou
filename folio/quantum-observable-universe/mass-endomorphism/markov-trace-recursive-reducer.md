@@ -67,11 +67,17 @@ By induction on $(n, \ell)$, the output equals $\mathrm{tr}_M(\beta)$ in $\mathb
 
 ## Disjoint-product property
 
-For $\alpha \in H_k$ on strands $\{1, \ldots, k\}$ and $\beta \in H_{n-k-1}$ on strands $\{k+2, \ldots, n\}$ (no $\sigma_{k+1}$ appears in $\beta$), the words commute. One has $\alpha \beta = \beta \alpha$, and the Markov axiom plus cyclicity gives:
+Write $\beta^{\uparrow}$ for $\beta$ with every generator index raised by $k+1$, so that $\alpha$ uses $\sigma_1, \ldots, \sigma_k$ and $\beta^{\uparrow}$ uses $\sigma_{k+1}, \ldots$. Then
 $$
-  \mathrm{tr}_M(\alpha \beta) \;=\; \mathrm{tr}_M(\alpha) \cdot \mathrm{tr}_M(\beta)
+  \mathrm{tr}_M(\alpha \beta^{\uparrow}) \;=\; \mathrm{tr}_M(\alpha) \cdot \mathrm{tr}_M(\beta).
 $$
-by induction on $\ell(\beta)$. The recursive algorithm realises this property automatically. The peeling phase strips $\beta$'s top generators $\sigma_{n-2}, \sigma_{n-3}, \ldots, \sigma_{k+2}$ in order. This contributes factors of $z$ that exactly match the standalone $\mathrm{tr}_M(\beta)$ computed in its own algebra $H_{n-k-1}$.
+The proof is by induction on the number $m$ of generators of $\beta$, with Ocneanu's reduction inside each level. Fix $\alpha$ and let $F(\beta)$ be the difference of the two sides. Both sides satisfy the Hecke quadratic, braid and far-commutation relations in any context, so $F$ does too.
+
+- If $\beta$ avoids its top generator $\sigma_{m}$, stability lowers $m$ on both sides, and the induction hypothesis gives $F(\beta) = 0$.
+- If $\beta = a\,\sigma_{m}\,b$ uses it once, cyclicity moves $b^{\uparrow}$ to the front, the Markov axiom strips the top letter with a factor $z$, and cyclicity restores $\alpha (ab)^{\uparrow}$. The same steps on the right side give $z\,\mathrm{tr}_M(ab)$, and the induction hypothesis closes the case.
+- If $\beta$ uses $\sigma_m$ twice or more, take two consecutive occurrences $\sigma_m x \sigma_m$. If $x$ avoids $\sigma_{m-1}$, far commutation brings the two letters together and the quadratic relation shortens the word. If $x$ uses $\sigma_{m-1}$ once, one braid move removes a $\sigma_m$. Otherwise $x$ is first reduced one level down by the same argument.
+
+Every function on words that satisfies the three relations and vanishes on words using the top generator at most once therefore vanishes, so $F = 0$. Both clusters share one strand, so the closures form a connected sum. The statement's split case, with $\sigma_{k+1}$ unused, is the subcase where $\beta$ avoids $\sigma_1$. It additionally needs $\mathrm{tr}_M$ to be invariant under a uniform index shift, which is not formalised here.
 
 ## Which axioms the disjoint product actually needs
 
@@ -98,9 +104,9 @@ contradicts $\mathrm{tr}_M(\sigma_1^2) = hz + 1$. The axiom set
 therefore restricts stripping, stability and cyclicity to words of $H_n$ and adds
 the Hecke quadratic, braid and far-commutation relations. From these axioms it
 proves $\mathrm{tr}_M(\sigma_n^2) = hz + 1$ and the product law when $\beta$ is
-an ascending run $\sigma_{k+1}\cdots\sigma_{k+m}$. The general product law
-requires reducing $\beta$ to a Hecke normal form. That reduction is Ocneanu's
-uniqueness argument, and it is not formalised.
+an ascending run $\sigma_{k+1}\cdots\sigma_{k+m}$, and the general product law
+by the reduction in the previous section (Lean: `markovTrace_disjointProduct`,
+sorry-free).
 
 ## Empirical verification
 
