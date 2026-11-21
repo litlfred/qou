@@ -44,7 +44,7 @@ divergence is **21 %** on the bridge ratio — not a vintage, a different formul
 
 WHICH SIDE IS STALE — AND IT IS NOT THE ONE I EXPECTED
 --------------------------------------------------------
-`prop:q-beta-spectral-bridge` **defines**
+`conj:q-beta-spectral-bridge` **defines**
 
     z := 1 / (sqrt q + 1/sqrt q)
 
@@ -68,7 +68,7 @@ WHAT THIS PROBE DOES NOT DO
 ---------------------------
 It does not rule on which `z` is correct. The proposition defines one and the
 producer computes the other; deciding whether the definition or the compute
-moved is an authoring question about `prop:q-beta-spectral-bridge`, and both
+moved is an authoring question about `conj:q-beta-spectral-bridge`, and both
 readings have a live consequence (the `Q_beta` MeV figures differ by ~0.05 MeV).
 It does not touch the producer, the proposition, or the table's values. It does
 correct the block's provenance sentence, which is false under either reading.
@@ -104,7 +104,7 @@ ROWS = (("h", "0.2090603219955937", "h"),
 
 
 def z_prop(q):
-    """`prop:q-beta-spectral-bridge`'s definition: `1/(sqrt q + 1/sqrt q)`."""
+    """`conj:q-beta-spectral-bridge`'s definition: `1/(sqrt q + 1/sqrt q)`."""
     return 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
 
 
@@ -205,7 +205,7 @@ def main() -> int:
     print("  witness's, and the witness declares q0Anchor 'proton', not the")
     print("  canonical CAL-2 pinning it names. Corrected in the block.")
     print()
-    print("  Which z is right is NOT settled here. prop:q-beta-spectral-bridge")
+    print("  Which z is right is NOT settled here. conj:q-beta-spectral-bridge")
     print("  DEFINES z = 1/(sqrt q + 1/sqrt q), which the table uses and the")
     print("  producer does not — so for once the compute has drifted from the")
     print("  stated definition rather than content lagging compute. A name")
@@ -220,7 +220,7 @@ def main() -> int:
         wb.set_description(
             "tbl:q-beta-spectral-bridge-table-data and the witness it cites compute "
             "different z under the same name and differ by 21 %. The block uses "
-            "prop:q-beta-spectral-bridge's own definition z = 1/(sqrt q + 1/sqrt q) at "
+            "conj:q-beta-spectral-bridge's own definition z = 1/(sqrt q + 1/sqrt q) at "
             "q0 = 1.109978595557335 and reproduces every published value exactly; the "
             "producer q_beta_spectral_bridge_witness.py computes q^3/(q^2+1) at the "
             "PROTON pin, stores it in a field named z_markov_jones, and also reproduces "

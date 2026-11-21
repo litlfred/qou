@@ -1180,6 +1180,7 @@ export default chapter({
       blocks: [
         "mass-open-problems-intro",
         "terminal-resolution",
+        "terminal-resolution-scope",
         "mass-from-generators",
         "volume-tower-decomposition",
         "mass-tower-open-problems-classes",

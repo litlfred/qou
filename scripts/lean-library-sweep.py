@@ -391,6 +391,19 @@ def main() -> int:
                          "default all discovered")
     args = ap.parse_args()
 
+    # Make the root and paper olean trees hold the same union before anything
+    # resolves against them (bean qou-4h26, wired 2026-11-21).  Lean answers a
+    # whole package from the FIRST LEAN_PATH root holding its directory, so an
+    # incomplete tree first on the path produced phantom MISSING-OLEAN reds
+    # (qou-tpdg).  Hardlinks only, idempotent, ~0.2 s when already in sync.
+    if os.environ.get("LEAN_NO_TREE_SYNC") != "1":
+        r = subprocess.run([str(ROOT / "scripts/lean-sync-olean-trees.sh")],
+                           capture_output=True, text=True)
+        if r.returncode != 0:
+            print("WARNING: lean-sync-olean-trees.sh failed; a MISSING-OLEAN "
+                  "red may be an environment artifact.\n" + r.stderr[-800:],
+                  file=sys.stderr)
+
     global PKG, LIB
     todo_pkgs = packages()
     if args.package:

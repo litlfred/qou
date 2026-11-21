@@ -2530,21 +2530,20 @@
     "trap-negation-contrast": [
       {
         "field_hash": {
-          "md": "d58f740bb806",
-          "ts": "8da9dac8e4dc"
+          "md": "cc857d399c40",
+          "ts": "acef2896ece3"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/language-trap-audit.ts",
           "version": "v1",
-          "script_hash": "86b27c0abb9a",
-          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+          "script_hash": "dac9afc17cfb",
+          "script_commit_sha": "2ae54ab401071cea1ddab17b6fc54465011fa29d"
         },
-        "reviewed_at": "2026-08-15T10:31:00.377Z",
-        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
-        "severity": "major",
-        "evidence": "1 negation-contrast construction(s): \", not classical probabilities.\" — state the positive claim directly"
+        "reviewed_at": "2026-11-21T17:52:22.780Z",
+        "reviewed_sha": "7b3e92fda3d99fd9576cac69dc5ec43e1f9b867d",
+        "evidence": "no negation-contrast constructions"
       },
       {
         "field_hash": {
@@ -2580,19 +2579,19 @@
     "trap-rhetorical-pivot": [
       {
         "field_hash": {
-          "md": "d58f740bb806",
-          "ts": "8da9dac8e4dc"
+          "md": "cc857d399c40",
+          "ts": "acef2896ece3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/language-trap-audit.ts",
           "version": "v1",
-          "script_hash": "86b27c0abb9a",
-          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+          "script_hash": "dac9afc17cfb",
+          "script_commit_sha": "2ae54ab401071cea1ddab17b6fc54465011fa29d"
         },
-        "reviewed_at": "2026-08-15T10:31:00.377Z",
-        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "reviewed_at": "2026-11-21T17:52:22.780Z",
+        "reviewed_sha": "7b3e92fda3d99fd9576cac69dc5ec43e1f9b867d",
         "evidence": "no rhetorical pivots"
       },
       {
@@ -2630,20 +2629,20 @@
     "trap-em-dash": [
       {
         "field_hash": {
-          "md": "d58f740bb806",
-          "ts": "8da9dac8e4dc"
+          "md": "cc857d399c40",
+          "ts": "acef2896ece3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/language-trap-audit.ts",
           "version": "v1",
-          "script_hash": "86b27c0abb9a",
-          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+          "script_hash": "dac9afc17cfb",
+          "script_commit_sha": "2ae54ab401071cea1ddab17b6fc54465011fa29d"
         },
-        "reviewed_at": "2026-08-15T10:31:00.377Z",
-        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
-        "evidence": "dash density acceptable (0 in 405 words)"
+        "reviewed_at": "2026-11-21T17:52:22.780Z",
+        "reviewed_sha": "7b3e92fda3d99fd9576cac69dc5ec43e1f9b867d",
+        "evidence": "dash density acceptable (0 in 403 words)"
       },
       {
         "field_hash": {
@@ -2679,20 +2678,20 @@
     "trap-triples": [
       {
         "field_hash": {
-          "md": "d58f740bb806",
-          "ts": "8da9dac8e4dc"
+          "md": "cc857d399c40",
+          "ts": "acef2896ece3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/language-trap-audit.ts",
           "version": "v1",
-          "script_hash": "86b27c0abb9a",
-          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+          "script_hash": "dac9afc17cfb",
+          "script_commit_sha": "2ae54ab401071cea1ddab17b6fc54465011fa29d"
         },
-        "reviewed_at": "2026-08-15T10:31:00.377Z",
-        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
-        "evidence": "triple density acceptable (0 in 405 words)"
+        "reviewed_at": "2026-11-21T17:52:22.780Z",
+        "reviewed_sha": "7b3e92fda3d99fd9576cac69dc5ec43e1f9b867d",
+        "evidence": "triple density acceptable (0 in 403 words)"
       },
       {
         "field_hash": {
@@ -2728,19 +2727,19 @@
     "trap-closing-aphorism": [
       {
         "field_hash": {
-          "md": "d58f740bb806",
-          "ts": "8da9dac8e4dc"
+          "md": "cc857d399c40",
+          "ts": "acef2896ece3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/language-trap-audit.ts",
           "version": "v1",
-          "script_hash": "86b27c0abb9a",
-          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+          "script_hash": "dac9afc17cfb",
+          "script_commit_sha": "2ae54ab401071cea1ddab17b6fc54465011fa29d"
         },
-        "reviewed_at": "2026-08-15T10:31:00.377Z",
-        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "reviewed_at": "2026-11-21T17:52:22.780Z",
+        "reviewed_sha": "7b3e92fda3d99fd9576cac69dc5ec43e1f9b867d",
         "evidence": "closer is content, not aphorism"
       },
       {
@@ -2777,19 +2776,19 @@
     "trap-meta-commentary": [
       {
         "field_hash": {
-          "md": "d58f740bb806",
-          "ts": "8da9dac8e4dc"
+          "md": "cc857d399c40",
+          "ts": "acef2896ece3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/language-trap-audit.ts",
           "version": "v1",
-          "script_hash": "86b27c0abb9a",
-          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+          "script_hash": "dac9afc17cfb",
+          "script_commit_sha": "2ae54ab401071cea1ddab17b6fc54465011fa29d"
         },
-        "reviewed_at": "2026-08-15T10:31:00.377Z",
-        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "reviewed_at": "2026-11-21T17:52:22.780Z",
+        "reviewed_sha": "7b3e92fda3d99fd9576cac69dc5ec43e1f9b867d",
         "evidence": "no meta-commentary on the block's own rhetoric"
       },
       {
@@ -2826,19 +2825,19 @@
     "trap-thesis-restatement": [
       {
         "field_hash": {
-          "md": "d58f740bb806",
-          "ts": "8da9dac8e4dc"
+          "md": "cc857d399c40",
+          "ts": "acef2896ece3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/language-trap-audit.ts",
           "version": "v1",
-          "script_hash": "86b27c0abb9a",
-          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+          "script_hash": "dac9afc17cfb",
+          "script_commit_sha": "2ae54ab401071cea1ddab17b6fc54465011fa29d"
         },
-        "reviewed_at": "2026-08-15T10:31:00.377Z",
-        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "reviewed_at": "2026-11-21T17:52:22.780Z",
+        "reviewed_sha": "7b3e92fda3d99fd9576cac69dc5ec43e1f9b867d",
         "evidence": "no thesis restatement"
       },
       {
@@ -2875,19 +2874,19 @@
     "trap-performed-warmth": [
       {
         "field_hash": {
-          "md": "d58f740bb806",
-          "ts": "8da9dac8e4dc"
+          "md": "cc857d399c40",
+          "ts": "acef2896ece3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/language-trap-audit.ts",
           "version": "v1",
-          "script_hash": "86b27c0abb9a",
-          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+          "script_hash": "dac9afc17cfb",
+          "script_commit_sha": "2ae54ab401071cea1ddab17b6fc54465011fa29d"
         },
-        "reviewed_at": "2026-08-15T10:31:00.377Z",
-        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "reviewed_at": "2026-11-21T17:52:22.780Z",
+        "reviewed_sha": "7b3e92fda3d99fd9576cac69dc5ec43e1f9b867d",
         "evidence": "register is institutional"
       },
       {
@@ -2924,19 +2923,19 @@
     "trap-superlative": [
       {
         "field_hash": {
-          "md": "d58f740bb806",
-          "ts": "8da9dac8e4dc"
+          "md": "cc857d399c40",
+          "ts": "acef2896ece3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/language-trap-audit.ts",
           "version": "v1",
-          "script_hash": "86b27c0abb9a",
-          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+          "script_hash": "dac9afc17cfb",
+          "script_commit_sha": "2ae54ab401071cea1ddab17b6fc54465011fa29d"
         },
-        "reviewed_at": "2026-08-15T10:31:00.377Z",
-        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "reviewed_at": "2026-11-21T17:52:22.780Z",
+        "reviewed_sha": "7b3e92fda3d99fd9576cac69dc5ec43e1f9b867d",
         "evidence": "superlative density acceptable (0)"
       },
       {
@@ -2977,19 +2976,19 @@
     "trap-nonspeakable": [
       {
         "field_hash": {
-          "md": "d58f740bb806",
-          "ts": "8da9dac8e4dc"
+          "md": "cc857d399c40",
+          "ts": "acef2896ece3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/language-trap-audit.ts",
           "version": "v1",
-          "script_hash": "86b27c0abb9a",
-          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+          "script_hash": "dac9afc17cfb",
+          "script_commit_sha": "2ae54ab401071cea1ddab17b6fc54465011fa29d"
         },
-        "reviewed_at": "2026-08-15T10:31:00.377Z",
-        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "reviewed_at": "2026-11-21T17:52:22.780Z",
+        "reviewed_sha": "7b3e92fda3d99fd9576cac69dc5ec43e1f9b867d",
         "evidence": "sentence lengths speakable"
       },
       {
@@ -3264,6 +3263,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T15:49:16.000Z",
+  "updated_at": "2026-11-21T17:52:22.780Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

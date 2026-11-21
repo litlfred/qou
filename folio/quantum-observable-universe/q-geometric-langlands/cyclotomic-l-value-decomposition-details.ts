@@ -8,7 +8,7 @@ export default remark({
   uses: [
     "prop:cyclotomic-l-value-decomposition",
     "prop:jonquiere-cyclotomic-tate-rationality",
-    "prop:cyclotomic-dimension-synthesis-all-depths",
+    "conj:cyclotomic-dimension-synthesis-all-depths",
   ],
   cites: ["bloch2000", "zagier1986"],
   tags: [

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-terminal-resolution-scope",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:terminal-resolution-scope",
+  "kind": "remark",
+  "title": "Predictive scope of the pair Skein nucleon map",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-terminal-resolution",
+    "papers/quantum-observable-universe/blocks/prop-flavor-split-substrate"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-terminal-resolution",
+  "tags": [
+    "mass",
+    "hadronic",
+    "pair-skein",
+    "convention-c",
+    "scope"
+  ],
+  "text": "terminal-resolution-scope.md",
+  "provenance": "authored"
+}

@@ -289,7 +289,7 @@ def main() -> int:
         "- the two NFs expand DIFFERENT ELEMENTS. That audit's own section 2 "
         "proves the net IS the counit, which is what makes the section 1 "
         "label a category error against it.")
-    w.set_content_block("prop:q-beta-spectral-bridge")
+    w.set_content_block("conj:q-beta-spectral-bridge")
     w.add_parameter("q0_anchor", "proton (physical_proton pin)")
     w.add_data("assertions_passed", npass)
     w.add_data("assertions_total", len(checks))
