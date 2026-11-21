@@ -167,3 +167,13 @@ not fixed here.
 Render QA: grep battery (balanced `$`/`$$`/braces, `\bigl`/`\bigr`,
 `\begin`/`\end`, no list-hijack line inside `$$`) clean on all 29 edited
 content `.md` files. The pipeline render was not run.
+
+**QA response (review on #8888, 2026-11-21).** Four major findings, all
+addressed:
+
+| finding | fix |
+|---|---|
+| The C04, C05 and C06 `sorry`s cannot be closed as stated: the class fields (`oneBoxShift`, `support_after`; `pi_centre`, `observable`, `integral`, `e_block`, `E_infinity_00`; the free ℕ `total_hom_dim`) are unconstrained, so a counterexample instance exists | each docstring now says so and names the strengthening the class needs (q-Pieri plus Young-lattice data; Hochschild/centre data; the sl₂ adjoint module). The classes are not strengthened here: Mathlib lacks the machinery |
+| C09: the content sibling `quantum-universes/frobenius-relation.lean` still proved the relation by projecting a field, and `lean.ref` resolution picks the sibling first | sibling deleted (no consumers); the ref now resolves to `lean/QOU/frobenius_relation.lean` (`sorry`); stale `leanSource` dropped from the `.jsonld` |
+| The Wigner 2026-10-11 author note still said the axiom discharges the theorem | note now says it did until 2026-11-21, when the axiom was deleted |
+| C16: the `.md` said tr(id) = −6 determines χ(M₀), while both Leans take χ = −6 as input | `.md` states the identification as a hypothesis; the sibling's module, structure and `genus_unique` docstrings no longer claim "maximal" (lean-direct exit 0, axioms `propext, Classical.choice, Quot.sound`) |
