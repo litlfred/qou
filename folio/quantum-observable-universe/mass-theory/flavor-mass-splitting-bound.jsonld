@@ -15,7 +15,8 @@
   "kind": "theorem",
   "title": "Two-sided substrate bound on the dressed-quark splitting",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-flavor-dressed-mass-from-substrate-split"
+    "papers/quantum-observable-universe/blocks/prop-flavor-dressed-mass-from-substrate-split",
+    "papers/quantum-observable-universe/blocks/conj-flavor-split-substrate-mass"
   ],
   "tags": [
     "flavor",
@@ -26,6 +27,5 @@
   ],
   "leanRef": "qou:QOU.FlavorDressing.flavor_mass_splitting_bound",
   "text": "flavor-mass-splitting-bound.md",
-  "leanSource": "flavor-mass-splitting-bound.lean",
   "provenance": "authored"
 }
