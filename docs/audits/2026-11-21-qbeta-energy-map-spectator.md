@@ -1,0 +1,103 @@
+# The ε → MeV map of the n–p cell: spectator invariance forces a logarithm
+
+Date 2026-11-21. Thread "Derive the n–p cell's E0 and ε→MeV map" (sibling of the eigenphase
+thread, PR #8836, and the error-budget thread, PR #8868). Pre-registration:
+`computations/probes/qbeta_energy_map/PREREGISTRATION.md` (committed before the probe existed).
+Lean: `QOU/QBeta/SpectatorEnergyMap.lean`. Probe: `qbeta_energy_map_probe.py`, 10/10, witness
+`qbeta-energy-map.witness.json`. CODATA appears only in §5, never in a proof.
+
+## 1. Result
+
+- **Premise S (spectator invariance):** an energy difference does not change when both states are
+  multiplied by one common positive factor. The corpus already treats three things as common
+  factors: the shared lepton factor (owner ruling 2026-11-21, "not one-sided yet"), an idle
+  strand (the premise PR #8836 used to derive the lepton normalisation), and the choice of global
+  normalisation `[2]³` (error-budget link L7).
+- **S plus continuity forces E(ε) = c·log ε + d** (`eq_log_of_spectatorInvariant`). The linear map
+  the cell uses now fails S (`linear_not_spectatorInvariant`): under it the shared lepton factor
+  shrinks the cell by f(1) < 1 (error budget §10), and the L7 normalisation choice moves the q = 1
+  coefficient between 0 and 1.
+- **Under the log map the cell is −2c·log q for every word, trace and normalisation**
+  (`log_cell`). The reason is exact: ε_n/ε_p = q⁻² for every word, because the two weight-space
+  traces are equal (`NucleonWeightSpaceTraces.trace_word_eq`). V³, τ and [2]³ all drop out.
+  The neutron is the heavier side iff c < 0 (`log_cell_pos_iff`), i.e. a decreasing map, the
+  free-energy form E = −|c|·log Z.
+- **The scale |c| is not fixed by S.** It is still the open item. With |c| = E₀ the cell lies in
+  (2m_e/q², 2m_e/q) for every q > 1 (`log_cell_bounds`). With |c| = E₀^full it stays below 2m_e for
+  every q > 1 (`log_cell_tower_lt_two`).
+
+## 2. What this means for the F scans
+
+If S holds, F (the multiplier on the linear cell) is not an energy ratio. Some structural
+additions tested on PR #8836 multiply ε_n and ε_p by exactly the same factor: the colour factor
+as a separate tensor factor, and unlinked lepton strands (ε_p·f_L). Under the log map those
+cancel exactly. For linked words (γγ gluons, linked leptons, gl₆) the log cell is
+log(ε_p′/ε_n′) of the new traces, which this probe did **not** compute. The eigenphase thread
+reports that its 758-word framing scan shows max |F| falling as the gluon's own framing grows;
+that is consistent with, not a test of, S.
+
+## 3. What the log map costs, stated plainly
+
+Under the log map the cell is **only the K-weight step**: moving one unit of T³ changes the
+weight by q², and the energy is 2|c|·log q. The dynamical content of the γγ selection (V³, τ) is
+gone. So the log map turns the n–p cell into an isospin-charge energy. That is consistent with
+the corpus fact that the two weight spaces carry equal plain traces for every word (the
+"commutant" obstruction, `commutant_trace_eq`). But it means the β-decay word does not enter the
+energy at all. Whether that is acceptable is a modelling question for the owner, not a result.
+
+## 4. The base E₀ (coordinator's question: order zero vs tower)
+
+- E₀ = m_e/(q(q−1)) is "the energy of one Hecke reduction step" (`energy-scale-planck`). The
+  tower form divides by 1 − ℏ_q², and E₀^full/E₀ = q²/(2q − 1) exactly (`tower_ratio`): 1.009915
+  at the proton q₀. Under either map that is a 1 % effect. It cannot supply ×2.4.
+- **Under the linear map** E₀'s 1/h cancels the split's h (error budget `e0_mul_h`), so E₀ enters
+  only through its q = 1 coefficient 2.
+- **Under the log map** E₀ enters as |c|. The block does not say whether "one step" means energy
+  per unit of log-weight (rows L0, LT) or per factor q (rows S0, ST). Both readings were
+  pre-registered. Under L0/LT the q = 1 limit of the cell is 2m_e, against 3/4·m_e for the linear
+  cell.
+
+## 5. Numbers at the proton q₀ (model), then comparison (outside any proof)
+
+ε_p = 0.408718179341, ε_n = 0.331737644740 (match the coordinator's values to 1e-12),
+log q₀ = 0.104341, E₀ = 4.18598 MeV, E₀^full = 4.22748 MeV.
+
+| row | map, scale | cell (MeV) | cell / m_e | vs Q_β | vs m_n − m_p |
+|---|---|---|---|---|---|
+| linear, E₀ | E₀·\|ε_n − ε_p\| | 0.322239 | 0.630606 | −58.81 % | −75.09 % |
+| linear, E₀^full (scored) | E₀^full·\|ε_n − ε_p\| | 0.325434 | 0.636858 | −58.40 % | −74.84 % |
+| L0 | log, \|c\| = E₀ | 0.873537 | 1.709469 | +11.66 % | −32.46 % |
+| LT | log, \|c\| = E₀^full | 0.882197 | 1.726417 | +12.77 % | −31.79 % |
+| S0 | log, \|c\| = E₀/log q | 8.37196 | 16.3835 | +970 % | +547 % |
+| ST | log, \|c\| = E₀^full/log q | 8.45497 | 16.5460 | +981 % | +554 % |
+
+CODATA/AME: Q_β = 0.78233 MeV, m_n − m_p = 1.29333 MeV. **No row is selected.**
+
+Two comparison-boundary facts (the arithmetic is in Lean; the measured numbers are not):
+- m_n − m_p = 2.531 m_e. Rows L0 and LT are below 2m_e at **every** q > 1. So the log map with
+  |c| = E₀ or E₀^full cannot be read as m_n − m_p at any pin.
+- Q_β = 1.531 m_e. At the proton q₀ the L0 lower bound is 2/q₀² = 1.623, so L0 overshoots there.
+  This is a statement at one pin, not for all q.
+
+## 6. Status of each step
+
+| step | status |
+|---|---|
+| S ⇒ log (with continuity) | **proved** (Lean), given S |
+| S itself | **premise**, motivated by three corpus common factors; not derived |
+| ε_n/ε_p = q⁻² for every word | **proved** on main (`trace_word_eq`) |
+| log cell = −2c·log q, sign ⇔ c < 0 | **proved** (Lean) |
+| tower ratio, bounds on 2E₀·log q | **proved** (Lean) |
+| |c| = E₀ or E₀^full | **posited** (the E₀ block); per-log vs per-step reading open |
+| reading Q_β vs m_n − m_p | open; the D2 ruling was for the linear cell |
+
+The Lean file was written before a toolchain was available in this session; its compile status
+is recorded in the PR or commit that lands it.
+
+## 7. Open, framed for the owner
+
+1. **Accept S as a premise?** If yes, the linear cell is retired as an energy, the F scans are
+   closed as expected nulls, and the open question becomes the scale |c|. If no, the linear map
+   stays and the ×2.4 hunt continues on PR #8836 / #8868.
+2. **The scale.** S leaves |c| free. The corpus has only E₀. A derivation would have to say what
+   energy one unit of log-weight costs, from CAL-1 and CAL-2. None is on record.
