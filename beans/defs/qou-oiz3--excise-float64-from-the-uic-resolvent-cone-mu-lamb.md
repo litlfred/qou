@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-12T20:47:33Z
-updated_at: 2026-11-21T02:45:00Z
+updated_at: 2026-11-21T02:58:00Z
 parent: qou-9nnz
 ---
 
@@ -479,3 +479,22 @@ Cause: the driver was launched as `nohup python3 -u … &` **inside** a `run_in_
 - **47 producers remain** (`/tmp/refresh_todo_r2.json`), the two expensive `gamma_gamma_*` last.
 - **`hbar_q_order_of_binding_observables_probe` gated out at worst `1.33e+01`** — a 13× move, not rounding. Correctly refused: the gate cannot distinguish a real upstream change from an environment difference at that size, so the committed witness stands. Not diagnosed.
 - **`precision-gates.sh --changed` still owes a clean pass.** It was **SIGTERM'd (exit 143)** by my own 400 s timeout while CPU-starved by D — it never passed, and no commit has claimed it did.
+
+### 2026-11-21 — CORRECTION to the entry above: the `1.33e+01` gate-out is stated against a BASELINE THAT NO LONGER EXISTS
+
+The "Still open" list above records *"`hbar_q_order_of_binding_observables_probe` gated out at worst `1.33e+01` … Not diagnosed."* **That verdict is not re-checkable as stated, and I wrote it twenty minutes after the fact without noticing.**
+
+| event | time |
+|---|---|
+| the `1.33e+01` was measured (`refresh5.log`) | 2026-11-20 **19:59** |
+| the merge of main landed (`73854df6192`) | 2026-11-21 **02:29:50** |
+
+So the gate compared the fresh run against a **pre-merge** `HEAD`, and main has since moved **67 witnesses and 87 Python modules** under `computations/`. The number is a verdict about a reference that was replaced six and a half hours later. It may be larger, smaller or absent now.
+
+**And nothing will re-measure it**: the probe is at index 1 of the resume list, so it was already verdicted and is **not** in `refresh_todo_r2.json` (the 47 D is currently working). It would be silently left as a dangling "open item" pointing at a dead baseline.
+
+**What the diagnosis did establish, and it is read-only so it is safe alongside the running refresh.** The producer's own source is **unchanged** on main since the merge base, and so are the two numeric modules in its direct import cone — `b_over_a_evaluator.py` and `tr_m_atom_via_transfer.py`. That matters because `tr_m_atom_via_transfer` is the module AGENTS.md names as *the* import-cone drift case (it moved `tr_M_atom` 0.388 → 0.575, 48 %, while its caller's source was byte-stable). So **direct cone drift is ruled out** as the cause of the 13×. It does not rule out a *transitive* change — `derived_masses.py`, `canonical_mass.py` and `codata_2022_source.py` are all among the 87 — nor an environment difference, and the gate by design cannot separate those two.
+
+**Deliberately not run.** Re-running the producer now would write a witness into the working tree, and the refresh driver scans `git status --porcelain` after every producer and would gate my file as its own output. Queued instead: re-measure `hbar_q_order_of_binding_observables_probe` against the **post-merge** baseline once D finishes, and only then diagnose.
+
+Also logged by D-r2 and subject to the same caveat going forward (it is post-merge, so this one is sound): `probe-d-symbolic-prospects` gated out at worst `1.81e-03`.
