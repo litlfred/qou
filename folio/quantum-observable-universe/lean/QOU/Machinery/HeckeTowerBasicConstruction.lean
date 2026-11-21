@@ -27,7 +27,7 @@ and the concrete rung quadratics. A concrete 2×2 slice
 **OPEN layer (§3b conjecture classes, NO instances).** What the local
 algebra cannot supply is the *tower* data: the conditional expectation
 (`HeckeConditionalExpectation`), the basic-construction absorption
-`e·y·e = ι(ε y)·e` (`JonesBasicConstruction`), and the Wenzl ascent
+`e·ι₂ y·e = ι₂(ι(ε y))·e` one level up (`JonesBasicConstruction`), and the Wenzl ascent
 "level-`n` semisimple + trace nondegenerate ⇒ level-`n+1` semisimple"
 (`WenzlTowerStep`). Each is a content-bearing DEPENDENT conjecture class
 binding `HeckeBraidedPresentation` in its type (the §3b-tax dependency
@@ -202,22 +202,35 @@ class HeckeConditionalExpectation (R : Type*) [Field R] (q : R) (rank : ℕ)
   bimodule : ∀ (x z : Hn) (y : Hn1), ε (ι x * y * ι z) = x * ε y * z
 
 /-- **§3b DEPENDENT conjecture — basic-construction absorption (bean
-`qou-iri6`).** GIVEN a conditional expectation, the level-`n` Jones
-projection `e = jonesIdempotent q (σn1 n)` absorbs through it:
-`e · y · e = ι (ε y) · e` for every `y : Hn1`. This is the defining
-relation of the Jones basic construction `⟨Hn1, e⟩`; combined with the
-PROVED local layer (`jonesIdempotent_mul_self` at `σn1 n`) it generates
-the Temperley–Lieb quotient tower. OPEN — no instance. -/
+`qou-iri6`).** Three levels `Hn ⊂ Hn1 ⊂ Hn2`, with `ι : Hn → Hn1`,
+`ι₂ : Hn1 → Hn2`, and a conditional expectation `ε : Hn1 → Hn`. The Jones
+projection `e = jonesIdempotent q (σn2 n)` lives one level **above** `Hn1`, and
+for every `y : Hn1` it absorbs through `ε`:
+`e · ι₂ y · e = ι₂ (ι (ε y)) · e`. This is the defining relation of the Jones
+basic construction `⟨Hn1, e⟩` ([jones1983] §3: `e x e = E_N(x) e` for `x ∈ M`).
+The field `compat` asks that `ι₂` carry the lower generators to the upper ones.
+
+**Restated 2026-11-21 (owner "Fix", bean `qou-c8p8`).** The earlier form used
+two levels and took `e = jonesIdempotent q (σn1 n)` inside `Hn1` itself, so `y`
+could be `e`. With `e² = e`, absorption at `y = e` gave `e = ι(ε e) · e`, which
+forces `e = 0` at every Markov expectation `ε(e) = τ•1` with `τ ≠ 1`
+(`QOU.Machinery.HeckeTower.Instances.sameLevel_forces_e_eq_zero`). OPEN — no
+general instance. -/
 class JonesBasicConstruction (R : Type*) [Field R] (q : R) (rank : ℕ)
-    (Hn Hn1 : Type*) [Ring Hn] [Ring Hn1] [Algebra R Hn] [Algebra R Hn1]
+    (Hn Hn1 Hn2 : Type*) [Ring Hn] [Ring Hn1] [Ring Hn2]
+    [Algebra R Hn] [Algebra R Hn1] [Algebra R Hn2]
     (σn1 : ℕ → Hn1) [HeckeBraidedPresentationOfRank q rank Hn1 σn1]
+    (σn2 : ℕ → Hn2) [HeckeBraidedPresentationOfRank q (rank + 1) Hn2 σn2]
     (ι : Hn →ₐ[R] Hn1) (ε : Hn1 →ₗ[R] Hn)
-    [HeckeConditionalExpectation R q rank Hn Hn1 σn1 ι ε] (n : ℕ) : Prop where
-  /-- Absorption: `e · y · e = ι (ε y) · e` with
-  `e = jonesIdempotent q (σn1 n)`. -/
+    [HeckeConditionalExpectation R q rank Hn Hn1 σn1 ι ε]
+    (ι₂ : Hn1 →ₐ[R] Hn2) (n : ℕ) : Prop where
+  /-- `ι₂` carries the generators of `Hn1` to those of `Hn2`. -/
+  compat : ∀ i, i + 1 < rank → ι₂ (σn1 i) = σn2 i
+  /-- Absorption: `e · ι₂ y · e = ι₂ (ι (ε y)) · e` with
+  `e = jonesIdempotent q (σn2 n)`, for every `y : Hn1`. -/
   absorb : ∀ y : Hn1,
-    jonesIdempotent q (σn1 n) * y * jonesIdempotent q (σn1 n) =
-      ι (ε y) * jonesIdempotent q (σn1 n)
+    jonesIdempotent q (σn2 n) * ι₂ y * jonesIdempotent q (σn2 n) =
+      ι₂ (ι (ε y)) * jonesIdempotent q (σn2 n)
 
 /-- **§3b DEPENDENT conjecture — the Wenzl tower step (bean `qou-2c4t`,
 the A1 apex).** GIVEN the presentations, the inclusion, and the Markov
