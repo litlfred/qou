@@ -544,6 +544,46 @@ theorem hasDerivAt_trXMinus_idempotent_coord {q : 𝕜} (h0 : q ≠ 0) (h1 : q ^
   field_simp
   ring
 
+/-- **The trivial block, by the same rule.** `tr_z(x₊)` vanishes at
+`z₊ = −1/(q³ + q)` (`trXPlus_zD_relabel`), and its derivative there is exactly
+`q³`, the `q`-power of the trivial Schur element `c_triv = q³·[3]_q!`. So in the
+standard coordinate `z`, both linear blocks satisfy
+"derivative of the block's trace at its zero = ± (Schur element)/[3]_q!"
+(`linear_blocks_derivative_rule`). This is a check of the rule on a second block,
+not a derivation of it: in a non-integral coordinate such as `τ(P₋)` the same
+rule fails for both. -/
+theorem hasDerivAt_trXPlus_zero {q : 𝕜} (h0 : q ≠ 0) (h1 : q ^ 3 + q ≠ 0) :
+    HasDerivAt (fun z => (q * z + 1) * (q ^ 3 * z + q * z + 1))
+      (q ^ 3) (-1 / (q ^ 3 + q)) := by
+  have hd := (((hasDerivAt_id (-1 / (q ^ 3 + q))).const_mul q).add_const 1).mul
+    ((((hasDerivAt_id (-1 / (q ^ 3 + q))).const_mul (q ^ 3)).add
+      ((hasDerivAt_id (-1 / (q ^ 3 + q))).const_mul q)).add_const 1)
+  have h2 : q ^ 2 + 1 ≠ 0 := by
+    have e : q ^ 3 + q = q * (q ^ 2 + 1) := by ring
+    rw [e] at h1
+    exact right_ne_zero_of_mul h1
+  have h3 : 1 + q ^ 2 ≠ 0 := by rwa [add_comm]
+  convert hd using 1
+  simp only [id, mul_one, Pi.add_apply]
+  field_simp
+  ring
+
+/-- The same function as the named trace, via `trXPlus_factor`. -/
+theorem trXPlus_eq_fun {q : 𝕜} (h0 : q ≠ 0) :
+    (fun z => trXPlus q z) = (fun z => (q * z + 1) * (q ^ 3 * z + q * z + 1)) := by
+  funext z
+  exact trXPlus_factor q z h0
+
+/-- **Both linear Schur elements from one rule.** With `d₊ = q³` the derivative
+of `tr_z(x₊)` at its zero and `d₋ = −q⁻³` that of `tr_z(x₋)` at `z_D`
+(`hasDerivAt_trXPlus_zero`, `hasDerivAt_trXMinus_zD`):
+`d₊·[3]_q! = c_triv` and `−d₋·[3]_q! = c_sign`. -/
+theorem linear_blocks_derivative_rule {q : 𝕜} (h0 : q ≠ 0) :
+    q ^ 3 * qFactThreeBalanced q = schurTriv q ∧
+      -(-(q ^ 3)⁻¹) * qFactThreeBalanced q = schurSign q := by
+  refine ⟨(schurTriv_eq q h0).symm, ?_⟩
+  rw [neg_neg, ← fBor_normaliser_eq_schurSign q h0, div_eq_inv_mul]
+
 end Derivative
 
 /-! ### A canonical-coordinate criterion: integral and bar-invariant

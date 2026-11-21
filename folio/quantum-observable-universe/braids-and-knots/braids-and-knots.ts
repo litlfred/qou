@@ -100,6 +100,7 @@ export default chapter({
             "hecke-log-decomposition-table-data",
             "hecke-algebra-from-braiding",
             "f-bor-borromean-observable",
+            "proton-normaliser-kl-coordinate",
             "hecke-normal-form",
             "markov-moves-brane-tower",
             "markov-trace-ambient-s3",
