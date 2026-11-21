@@ -24,14 +24,16 @@
  *   leak-reading-order (L4)  (L4a) a `q`-dependent token (`$q$`, `[n]_q`,
  *       `\Phi_d`, `SU_q`, Hecke, "archimedean wall") in a block read before
  *       the first block of `sec:substrate-parameter`, where `q` is
- *       introduced (fails in Chapter 1, advisory in Chapter 2 §1-6, where
- *       `q` appears as the parameter of the q-operators; an `outro-*`
- *       block and the introduction may preview);
- *       (L4b) a `](#label)` link to a block later in reading
- *       order. L4b is failing only in the Part I chapters listed in
- *       PART_I_STRICT and ADVISORY elsewhere: a forward reference is
- *       ordinary in a monograph; the owner's audit asked for none in the
- *       foundations.
+ *       introduced. An `outro-*` block may name what the next chapter
+ *       introduces;
+ *       (L4b) a `](#label)` link to a block later in reading order.
+ *       Links to back matter and to the block's own table sibling are not
+ *       counted.
+ *       Both fail in EVERY chapter (owner ruling 2026-11-20: "All the
+ *       chapters should be strict"), except the introduction, which
+ *       previews the paper (PREVIEW_CHAPTERS, same ruling). This
+ *       replaces the earlier scoping, in which L4a failed only in Chapter 1
+ *       and L4b only in Chapters 1-2, and were advisory elsewhere.
  *
  * High-recall / agent-confirmed: a hit is a candidate. Fenced code is
  * skipped everywhere; inline math is removed for L1-L3 (L4a reads math).
@@ -53,12 +55,11 @@ export interface LeakHit {
   advisory?: boolean;
 }
 
-export const PART_I_STRICT = new Set(["quantum-universes", "quantum-observable-universes"]);
-/** Chapter where a premature `q` token fails; elsewhere before the intro it is advisory. */
-export const Q_STRICT_CHAPTER = "quantum-universes";
 export const Q_INTRO_SECTION = "sec:substrate-parameter";
 /** Back matter a forward link may always point to. */
 export const BACK_MATTER = new Set(["glossary", "notation", "index-of-definitions"]);
+/** Chapters that preview what follows, exempt from L4 (owner ruling 2026-11-20: exempt the introduction). */
+export const PREVIEW_CHAPTERS = new Set(["introduction"]);
 /**
  * Owner rulings 2026-11-20 (second [W14 ask] on #8526, answers 1b / 2a / 3a):
  * - CODE_BY_DESIGN: chapters whose subject IS the formalisation or the code.
@@ -230,13 +231,14 @@ export async function audit(paperDir: string, classes: Set<LeakClass>): Promise<
     scanned++;
     const src = readFileSync(b.md, "utf8");
     // An outro may name what the next chapter introduces.
-    const premature = b.idx < qIntro && PART_I_STRICT.has(b.chapter) && !b.name.startsWith("outro-");
+    const preview = PREVIEW_CHAPTERS.has(b.chapter);
+    const premature = b.idx < qIntro && !b.name.startsWith("outro-") && !preview;
     const srcLines = src.split("\n");
-    let hits = scanText(src, { premature, prematureAdvisory: b.chapter !== Q_STRICT_CHAPTER })
+    let hits = scanText(src, { premature, prematureAdvisory: false })
       .filter((h) => classes.has(h.cls))
       .filter((h) => !(CODE_BY_DESIGN.has(b.chapter) && (h.cls === "L1" || h.cls === "L2")))
       .filter((h) => !(REFERENCE_TABLES.has(b.chapter) && h.cls === "L2" && /^\s*\|/.test(srcLines[h.line - 1] ?? "")));
-    if (classes.has("L4"))
+    if (classes.has("L4") && !preview)
       unfence(src).forEach((raw, i) => {
         for (const m of raw.matchAll(LINK_RE)) {
           const t = labelIdx.get(m[1]!);
@@ -249,7 +251,7 @@ export async function audit(paperDir: string, classes: Set<LeakClass>): Promise<
             sub: tb.chapter !== b.chapter ? "forward-link-cross-chapter"
               : tb.section !== b.section ? "forward-link-later-section" : "forward-link-same-section",
             line: i + 1, text: m[1]!,
-            advisory: !PART_I_STRICT.has(b.chapter),
+            advisory: false,
           });
         }
       });

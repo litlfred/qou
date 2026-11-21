@@ -57,12 +57,12 @@ describe("L3 person", () => {
   });
 });
 
-describe("L4 premature q (Chapter 1 only)", () => {
+describe("L4 premature q", () => {
   it("q tokens fail when premature", () => {
     expect(failing("its rigid trace is $\\mathrm{SU}_q(2)$", { premature: true })).toContain("L4:premature-su_q");
     expect(failing("$\\dim_q [V_n] = [n+1]_q$", { premature: true })).toContain("L4:premature-q-integer");
   });
-  it("are advisory in Chapter 2 and silent where q is introduced", () => {
+  it("the scanner option still marks them advisory, and is silent where q is introduced", () => {
     expect(failing("$[2]_q$", { premature: true, prematureAdvisory: true })).toEqual([]);
     expect(failing("$[2]_q$")).toEqual([]);
   });
@@ -77,5 +77,17 @@ describe("owner rulings 2a/3a/1b (exemption sets)", () => {
     expect(CODE_BY_DESIGN.has("appendix-mass-binding-algorithms")).toBe(true);
     expect(CODE_BY_DESIGN.has("appendix-formalisation-notes")).toBe(true);
     for (const c of ["glossary", "notation", "index-of-definitions"]) expect(REFERENCE_TABLES.has(c)).toBe(true);
+  });
+});
+
+describe("owner ruling 2026-11-20 (every chapter is strict)", () => {
+  const { audit } = require("./voice-leak-audit");
+  it("no L4 hit in any chapter is advisory", async () => {
+    const { reports } = await audit("folio/quantum-observable-universe", new Set(["L4"]));
+    const advisory = reports.flatMap((r: any) => r.hits).filter((h: any) => h.advisory);
+    expect(advisory).toEqual([]);
+    const chapters = new Set(reports.map((r: any) => r.chapter));
+    expect(chapters.size).toBeGreaterThan(2);
+    expect(chapters.has("introduction")).toBe(false);
   });
 });
