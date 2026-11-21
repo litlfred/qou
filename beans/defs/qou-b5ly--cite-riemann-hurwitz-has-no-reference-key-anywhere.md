@@ -1,13 +1,13 @@
 ---
 # qou-b5ly
 title: 'CITE: Riemann-Hurwitz has no reference key anywhere in references.ts — M — brings-is-qou-verification.md:15 (no cites at all), CoveringDegreeRamification.lean:88-91'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:06:49Z
-updated_at: 2026-11-21T12:26:55Z
+updated_at: 2026-11-21T12:54:01Z
 parent: qou-1qhv
 ---
 
@@ -62,3 +62,7 @@ Verdict: **done-partial** (commit `bb423d22e2f`, branch `claude/cite-intake-drai
 Superseded-premise check: the edited text was read against `docs/coordination/owner-rulings.md` (photon 1+φ₀σ₀+φ₁σ₁+φ₀₁σ₀σ₁⁻¹; electron σ₀σ₁σ₀ with Hopf closure; up quark an unknot strand; two-term Lagrangian trace; T(2,n_s) withdrawn; no virtual photons). None of these forms is asserted or relied on in the cited sentences.
 
 Status stays in-progress until PR #8818 merges.
+
+## 2026-11-21 — PR #8818 merged
+
+The cite-intake work above landed on main. Status set to completed.
