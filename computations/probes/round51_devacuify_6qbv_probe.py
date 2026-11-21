@@ -313,7 +313,12 @@ def main() -> int:
                "h2_fullTwist_eigenvalue_{sym,alt}, and pnCrossingProduct_{deuteron,triton,alpha}",
     )
 
-    out = builder.save()
+    from qou_substrate.constants import Q_50_DIGIT_STR
+    out = builder.save({
+        "q0Anchor": "proton",
+        "q0Value": Q_50_DIGIT_STR,
+        "q0AnchorReason": "q = qou_substrate.constants.q_at(), the package default, which is the proton pin",
+    })
     print(f"✓ Witness saved: {out.name}")
     return 0
 

@@ -1,8 +1,8 @@
 {
   "engine": "exact-integer-seifert-determinant-plus-corpus-grep",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T08:25:48.164090+00:00",
-  "commitSha": "113c2e68746c3989bed2277bcd4eddfcfd489a43",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T06:43:21.042641+00:00",
+  "commitSha": "4df387c63984604f09a181716f7a20ca9712ec2a",
   "assertions": [
     {
       "name": "both_sources_held",
@@ -50,7 +50,7 @@
       "expected": "PASS",
       "passed": true,
       "tolerance": "exact",
-      "source": "8 'trefoil' hits and 0 '5_2' hits in arxiv-1707.02991v1 section text; the correspondence paper works one explicit example and it is not this knot"
+      "source": "9 'trefoil' hits and 0 '5_2' hits in arxiv-1707.02991v1 section text; the correspondence paper works one explicit example and it is not this knot"
     },
     {
       "name": "symmetric_vs_antisymmetric_guard",
@@ -62,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 13,
   "computation": "d1b-52-charge-lattice-source-exclusion",
   "scriptFile": "d1b_52_charge_lattice_source_exclusion_probe.py",
-  "scriptHash": "27d0c3f30ff9",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e9749c9c8597",
+  "scriptCommitSha": "e81e6204c34f35c49818a444ba147161b6444687",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -74,14 +74,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -193,5 +194,7 @@
       "wired": false,
       "fit": false
     }
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "structural exclusion over exact Fractions and a text scan of library sections; q0 is never read"
 }

@@ -1,8 +1,8 @@
 {
   "engine": "exact-integer-nz-and-source-audit",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T10:32:26.432686+00:00",
-  "commitSha": "d450e549a50753e41a9bad5acbb7c94d43928175",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T06:40:38.422582+00:00",
+  "commitSha": "4df387c63984604f09a181716f7a20ca9712ec2a",
   "assertions": [
     {
       "name": "C1_GGM_defines_no_charge_lattice",
@@ -10,7 +10,7 @@
       "expected": "PASS",
       "passed": true,
       "tolerance": "exact",
-      "source": "P1 CONFIRMED. Measured over the sectioned text of arXiv:2012.00062v3: 'charge lattice' 0, 'Dirac pairing' 0, 'symplectic' 2 (both §7, both naming Neumann-Zagier). The sigma are labels for asymptotic series; GGM equips them with no lattice and no pairing, so H as stated is untestable against its own source"
+      "source": "P1 CONFIRMED. Measured over the sectioned text of arXiv:2012.00062v3: 'charge lattice' 0, 'Dirac pairing' 0, 'symplectic' 3 (both §7, both naming Neumann-Zagier). The sigma are labels for asymptotic series; GGM equips them with no lattice and no pairing, so H as stated is untestable against its own source"
     },
     {
       "name": "C2_NZ_edge_block_is_exactly_zero",
@@ -42,7 +42,7 @@
       "expected": "PASS",
       "passed": true,
       "tolerance": "exact",
-      "source": "arXiv:1707.02991v1 ('BPS states, knots and quivers') is the one held source assigning quivers to knots, and its quivers are SYMMETRIC (5 occurrences of 'symmetric quiver'; the paper defines it as #arrows(i->j) = #arrows(j->i)). eq (98) is ANTIsymmetric, so it is not a KRSS quiver matrix on symmetry alone. Recorded SEPARATELY from the D1 bean's standing 'do not resurrect the refuted KRSS open-sector route (det(K)=5)' -- that is a different claim about a different construction, and the two must not be read as evidence for each other"
+      "source": "arXiv:1707.02991v1 ('BPS states, knots and quivers') is the one held source assigning quivers to knots, and its quivers are SYMMETRIC (6 occurrences of 'symmetric quiver'; the paper defines it as #arrows(i->j) = #arrows(j->i)). eq (98) is ANTIsymmetric, so it is not a KRSS quiver matrix on symmetry alone. Recorded SEPARATELY from the D1 bean's standing 'do not resurrect the refuted KRSS open-sector route (det(K)=5)' -- that is a different claim about a different construction, and the two must not be read as evidence for each other"
     },
     {
       "name": "C6_the_missing_object_named_precisely",
@@ -62,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 24,
+  "durationMs": 13,
   "computation": "d1b-52-charge-lattice-sourcing",
   "scriptFile": "d1b_52_charge_lattice_sourcing_probe.py",
-  "scriptHash": "e5dc6fa60c98",
-  "scriptCommitSha": "5c16c52fc7ad7f5a7fd51268c1541f59e642fb28",
+  "scriptHash": "3948c23c795d",
+  "scriptCommitSha": "e81e6204c34f35c49818a444ba147161b6444687",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -74,14 +74,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -95,7 +96,7 @@
       "paper": "arXiv:2012.00062v3 (Garoufalidis-Gu-Marino)",
       "charge_lattice": 0,
       "dirac_pairing": 0,
-      "symplectic": 2,
+      "symplectic": 3,
       "note": "the 2 'symplectic' are both in section 7 and both name Neumann-Zagier; nothing defines a lattice on the sigma"
     },
     "R2_nz_antisymmetrization": {
@@ -211,7 +212,7 @@
     },
     "R3_krss_symmetry": {
       "paper": "arXiv:1707.02991v1 (BPS states, knots and quivers)",
-      "symmetric_quiver_occurrences": 5,
+      "symmetric_quiver_occurrences": 6,
       "krss_definition": "#arrows(i->j) = #arrows(j->i)",
       "eq98_is_antisymmetric": true,
       "verdict": "eq (98) is not a KRSS quiver matrix, on symmetry alone",
@@ -237,5 +238,7 @@
       "wired": false,
       "fit": false
     }
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "exact integer/rational lattice algebra and a text scan of library sections; q0 is never read"
 }

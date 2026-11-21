@@ -1,23 +1,23 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-06T11:28:58.424021+00:00",
-  "commitSha": "d008450a263dc86a0ef46879a7331467de9e5803",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T06:45:47.819526+00:00",
+  "commitSha": "4df387c63984604f09a181716f7a20ca9712ec2a",
   "assertions": [
     {
       "name": "assertion_api_is_not_a_central_lever",
       "computed": "1",
       "expected": "1",
       "passed": true,
-      "source": "589 of 35199 non-integral float leaves sit under .assertions[] (1.67 %). Stated as a predicate (under 5 %) so the witness summary reports a pass for a measured negative rather than FAILURES."
+      "source": "461 of 26980 non-integral float leaves sit under .assertions[] (1.71 %). Stated as a predicate (under 5 %) so the witness summary reports a pass for a measured negative rather than FAILURES."
     }
   ],
   "allPassed": true,
-  "durationMs": 4549,
+  "durationMs": 2528,
   "computation": "raw-float64-backlog-structure",
   "scriptFile": "raw_float64_backlog_structure.py",
-  "scriptHash": "662d58468c4b",
-  "scriptCommitSha": "d008450a263dc86a0ef46879a7331467de9e5803",
+  "scriptHash": "d1a277800d47",
+  "scriptCommitSha": "e81e6204c34f35c49818a444ba147161b6444687",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,14 +25,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -43,68 +44,64 @@
   "description": "Bean qou-oots. Asks whether the raw-float64 backlog (33,702 fields / 1015 witnesses after the 2026-09-06 ratchet) is reachable by a CENTRAL fix, and answers NO with the measurements. Records that the obvious candidate -- WitnessBuilder.add_assertion, whose `expected`/`computed` are the most WIDESPREAD dirty leaf names -- is a false lead twice over: integral floats are excluded from the count and were inflating that ranking ~3x (assertions are 1.6 % of non-integral leaves), and the `_tolerance_literal` mechanism cannot be generalised to `expected` because the significant-digit bimodality that justifies its cut does not exist there. Reports where the work actually is, by producer bucket, so a campaign has a starting point.",
   "data": {
     "population": {
-      "baselined_witnesses": 1012,
-      "witnesses_scanned": 1012,
-      "non_integral_float_leaves": 35199,
-      "distinct_leaf_names": 4166,
+      "baselined_witnesses": 1003,
+      "witnesses_scanned": 1001,
+      "non_integral_float_leaves": 26980,
+      "distinct_leaf_names": 3695,
       "note": "Integral floats are EXCLUDED, matching the audit's own `_count(integral_is_exact=True)`. Counting them measures a different population and inflates every name ranking."
     },
     "central_fix_candidates": {
-      "under_assertions_pct": "1.67",
-      "under_assertions_count": 589,
-      "solver_output_names_pct": "10.80",
-      "solver_output_names_count": 3801,
+      "under_assertions_pct": "1.71",
+      "under_assertions_count": 461,
+      "solver_output_names_pct": "14.00",
+      "solver_output_names_count": 3776,
       "integral_excluded_in_assertions": {
-        "expected": 555,
-        "computed": 290,
-        "tolerance": 129
+        "expected": 518,
+        "computed": 279,
+        "tolerance": 113
       },
       "verdict": "The assertion API is under 2 % of the backlog, NOT a lever. Solver output is ~10 % and is float64 because scipy and Clarabel are -- not a serialization slip, and not fixed by carrying mpf to the boundary."
     },
     "sig_digit_histograms": {
       "expected": {
         "1": 9,
-        "2": 20,
-        "3": 29,
-        "4": 36,
-        "5": 19,
+        "2": 18,
+        "3": 27,
+        "4": 34,
+        "5": 17,
         "6": 4,
-        "7": 10,
-        "8": 25,
-        "9": 8,
+        "7": 3,
+        "8": 3,
+        "9": 5,
         "10": 3,
         "11": 7,
         "12": 7,
         "13": 2,
         "15": 3,
-        "16": 17,
-        "17": 10
+        "16": 16,
+        "17": 9
       },
       "computed": {
         "1": 3,
-        "2": 8,
+        "2": 7,
         "3": 15,
         "4": 17,
         "5": 3,
         "6": 3,
-        "7": 7,
-        "8": 27,
-        "9": 2,
+        "8": 4,
         "10": 2,
         "11": 7,
         "12": 5,
         "13": 2,
         "14": 1,
-        "15": 10,
-        "16": 114,
-        "17": 90
+        "15": 9,
+        "16": 104,
+        "17": 80
       },
       "tolerance": {
-        "7": 5,
-        "8": 14,
-        "9": 6,
-        "16": 13,
-        "17": 11
+        "9": 1,
+        "16": 8,
+        "17": 8
       }
     },
     "why_tolerance_mechanism_does_not_generalise": {
@@ -114,23 +111,25 @@
     },
     "where_the_work_is": {
       "B. mpmath, no fmt": {
-        "files": 453,
-        "fields": 13121
-      },
-      "A. no mpmath at all": {
-        "files": 181,
-        "fields": 8600
+        "files": 414,
+        "fields": 8754
       },
       "unresolved producer": {
-        "files": 297,
-        "fields": 8181
+        "files": 299,
+        "fields": 8248
+      },
+      "A. no mpmath at all": {
+        "files": 171,
+        "fields": 7479
       },
       "C. mpmath AND fmt, still dirty": {
-        "files": 81,
-        "fields": 2054
+        "files": 119,
+        "fields": 6504
       },
       "reading": "B is where the mass is and is the more tractable half: the arithmetic is already mpmath and only the write is missing, so routing it through `fmt` is mechanical. It is a CANDIDATE class, not a guaranteed one -- `import mpmath` does not establish that the DIRTY LEAF was computed in mpf, so confirm per producer. A is expensive under any reading: the computation itself is f64, so changing it moves recorded numbers. 'unresolved producer' is this script's resolver, not necessarily a defect class.",
       "predicate_correction": "The first run of this audit had B and C swapped (C read 463 files / 15,189 fields against a true 81 / 2,054) because binds_fmt asked `\"_precision import\" in src`, a substring that `from _precision import set_compute_dps` satisfies without binding fmt. 377 producers were misfiled and the audit's own recommendation about where to start was inverted. Now an AST walk -- see binds_fmt."
     }
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "structural audit of the committed witness corpus and producer sources (float-leaf counts, AST import buckets); computes no q-dependent quantity and never reads q0"
 }

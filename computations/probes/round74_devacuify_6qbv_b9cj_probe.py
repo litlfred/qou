@@ -171,6 +171,15 @@ def main() -> None:
         "generatedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "allPassed": all_passed,
         "checks": checks,
+        # No q is evaluated here. The checks are arithmetic on typed inputs
+        # (m_mu, m_e, F_Bor) and on integers; F_Bor = |tr_M(beta_Bor)|*[3]_q!/q^3
+        # was evaluated at SOME q0 upstream and the literal does not record which.
+        "q0Anchor": "ambiguous",
+        "q0AnchorReason": (
+            "No q is evaluated in this probe; it checks arithmetic on typed literals. "
+            "The F_Bor literal 4.4692623718 is q0-dependent and its source pin is not "
+            "recorded, so neither proton nor muon can be asserted."
+        ),
     }
 
     out_path = repo_root / "computations" / "probes" / "round74-devacuify-6qbv-b9cj.witness.json"
