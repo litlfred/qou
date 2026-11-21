@@ -30,6 +30,6 @@ export default proposition({
   uses: [
     "prop:confinement-topological",
     "prop:ordering-jet-compatibility",
-    "unital-groebner-bases:prop:jet-stratified-reduction",
+    "unital-groebner-bases:def:jet-stratified-reduction",
   ],
 });
