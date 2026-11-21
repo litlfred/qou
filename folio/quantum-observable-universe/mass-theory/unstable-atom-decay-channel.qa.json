@@ -3,9 +3,9 @@
   "label": "prop:unstable-atom-decay-channel",
   "kind": "proposition",
   "paths": {
-    "ts": "folio/quantum-observable-universe/knots-particles-confinement/unstable-atom-decay-channel.ts",
-    "md": "folio/quantum-observable-universe/knots-particles-confinement/unstable-atom-decay-channel.md",
-    "lean": "folio/quantum-observable-universe/knots-particles-confinement/unstable-atom-decay-channel.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/unstable-atom-decay-channel.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/unstable-atom-decay-channel.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/unstable-atom-decay-channel.lean"
   },
   "source_hashes": {
     "md": "75f48595dd4d",
@@ -181,7 +181,7 @@
         "reviewed_at": "2026-08-31T11:53:56.465Z",
         "reviewed_sha": "52844595f8db28fbd291aba42e8c85ff9f0b3297",
         "severity": "major",
-        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/unstable-atom-decay-channel.lean:75: so the hypothesis constrains the caller's data rather than data an instance"
+        "evidence": "folio/quantum-observable-universe/mass-theory/unstable-atom-decay-channel.lean:75: so the hypothesis constrains the caller's data rather than data an instance"
       }
     ],
     "voice-title-scholarly": [
@@ -318,7 +318,7 @@
         "reviewed_at": "2026-08-31T11:53:56.465Z",
         "reviewed_sha": "52844595f8db28fbd291aba42e8c85ff9f0b3297",
         "severity": "critical",
-        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/unstable-atom-decay-channel.lean:1: Lean file uses archimedean constructs but neither the .md narrative nor the .ts authorNotes acknowledge archimedean specialisation. Add a §7c-style note (in authorNotes, per §4d) or move the archimedean evaluation to a sibling block."
+        "evidence": "folio/quantum-observable-universe/mass-theory/unstable-atom-decay-channel.lean:1: Lean file uses archimedean constructs but neither the .md narrative nor the .ts authorNotes acknowledge archimedean specialisation. Add a §7c-style note (in authorNotes, per §4d) or move the archimedean evaluation to a sibling block."
       }
     ],
     "q-usage-regime-detected": [
@@ -336,7 +336,7 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
-        "notes": "{\"regimes\":[\"generic-R\"],\"chapter\":\"knots-particles-confinement\",\"expected\":null}"
+        "notes": "{\"regimes\":[\"generic-R\"],\"chapter\":\"mass-theory\",\"expected\":null}"
       }
     ],
     "q-usage-fixed-q0-leak": [

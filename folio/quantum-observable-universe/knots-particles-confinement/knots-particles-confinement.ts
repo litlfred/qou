@@ -286,9 +286,6 @@ export default chapter({
         "stable-atom-decidable",
         "stable-atom-decidable-proof",
         "unstable-atom",
-        "unstable-atom-decay-phase",
-        "unstable-atom-decay-channel",
-        "unstable-atom-decay-channel-proof",
       ],
     }),
 
