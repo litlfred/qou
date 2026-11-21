@@ -1,37 +1,29 @@
-import { proposition } from "../../schema/builders";
+import { definition } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:leray-profile",
-  lean: { ref: "qou:QOU.FluidDynamics.leray_profile", validation: "not_checked" },
-  title:
-    "Discretely self-similar blowup profile: the Leray equations with $\\mathrm{SU}_q(2)$ constraints",
-  uses: ["thm:ns-singularity-descartes"],
+export default definition({
+  label: "def:leray-profile",
+  renamedFrom: ["prop:leray-profile"],
+  lean: { ref: "qou:QOU.FluidDynamics.LerayProfile.DSSLerayProfile" },
+  title: "Discretely self-similar Leray profile",
+  defines: ["discretely-self-similar"],
+  uses: [],
   tags: [
     "leray",
     "discretely-self-similar",
     "blowup-profile",
-    "elliptic",
-    "representation-theory",
-    "construction",
   ],
   authorNotes: [
     {
-      kind: "refined-framing",
-      date: "2026-07-18",
+      kind: "note",
+      date: "2026-11-21",
       body:
-        "Re-scoped from *continuous* backward-self-similar to **discretely self-similar** ($s$-periodic in Leray's similarity variables). The continuous ($s$-independent) finite-energy Leray profile is excluded by Nečas–Růžička–Šverák (Acta Math. 176, 1996) + Tsai (1998); the QOU root-of-unity scaling $\\lambda_\\kappa$ supplies the surviving discrete symmetry. The Lean sibling is unaffected — it proves a finite-dimensional reconstruction identity, not an existence claim. Rationale: audit 2026-07-18 Finding 1; bean `qou-xq2w`.",
-      see: "../../../../docs/audits/2026-07-18-q-ns-classical-gap-decomposition.md",
+        "**Base ring (§7c).** The Lean sibling `leray-profile.lean` is archimedean by construction and states its types over `ℝ`: the Leray rescaling uses `Real.sqrt`, `Real.log` and `Real.exp`, the field lives on Euclidean `ℝ³`, and the hypothesis `t < T*` is an order condition. It is a post-wall specialisation; no generic-ring statement of the rescaling exists.",
     },
     {
-      kind: "caveat",
-      date: "2026-11-15",
+      kind: "refined-framing",
+      date: "2026-11-21",
       body:
-        "Scope note added per owner decision (Q-VO9T-2 = 1, beans qou-nzyr, qou-507c, qou-hjl0): " +
-        "`thm:ns-singularity-descartes` now states only the global Reeb bundle topology ($e(\\xi) = -6 \\in H^2(\\mathcal{S}, \\mathbb{Z})$), " +
-        "and the 5-mode Peter–Weyl ODE truncation at $q \\approx 1.110$ is a finite Galerkin/cascade model whose behaviour " +
-        "does not by itself transfer to the unforced 3D Navier–Stokes PDE (Tao, J. Amer. Math. Soc. 29 (2016), 601–674; " +
-        "`docs/audits/2026-10-12-ns-v3-tao-barrier.md`, row 15).",
-      see: "../../../../docs/audits/2026-10-12-ns-v3-tao-barrier.md",
+        "Demoted from `prop:leray-profile` to a definition on owner instruction (issue #8864). The proposition proved nothing: it stated a definition, a literature exclusion, and three claims now withdrawn — that the root-of-unity ladder $q_\\kappa = e^{i\\pi/\\kappa}$ fixes a scaling $\\lambda_\\kappa$ (it is a root of unity, excluded by `def:substrate-parameter`), that the profile decomposes into $\\mathrm{SU}_q(2)$ weight-$j$ components (velocity fields carry only integer degrees), and that the truncation at $k_{\\max} \\approx 4$ is an exact finite ODE system (it is a Galerkin truncation). It also stated the Nečas--Růžička--Šverák hypothesis as $V \\in L^2$; it is $V \\in L^3$. The exclusions and the Tao scope note moved to `rem:leray-profile-exclusions`. The Lean sibling `leray-profile.lean` now proves that $s$-periodicity is discrete scaling invariance with $P = 2\\log\\lambda$; the former library theorem `QOU.FluidDynamics.leray_profile` is kept as a Galerkin reconstruction identity.",
     },
   ],
 });
