@@ -1,11 +1,11 @@
 ---
 # qou-rh4b
 title: 'GAP: q-Habiro completion projection for prop:residue-at-root'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-11-20T20:05:00Z
-updated_at: 2026-11-20T20:05:00Z
+updated_at: 2026-11-21T06:00:00Z
 parent: qou-tm3c
 ---
 
@@ -20,3 +20,6 @@ Only the z-variable completion exists (`ZHabiroCompletion`, `lean/QOU/MassEndomo
 Caveat: neither block shows that Φ_q·tr_{M,ℓ} lies in Ẑ[q], so proving the projection does not by itself discharge the block.
 
 Found in the qou-tm3c residual analysis (#8526, comment 7048682948).
+
+## 2026-11-21 — built
+The build is QOU/BraidKnot/QHabiroCompletion.lean (sorry-free, commit 5de21159d9 on #8720). prop:residue-at-root now proves the residue on the constructed ring, with membership of Phi_q*tr as an explicit hypothesis. That membership is still the open content of conj:gs-residue-at-root-existence, which stays a conjecture. This bean covered only the construction.

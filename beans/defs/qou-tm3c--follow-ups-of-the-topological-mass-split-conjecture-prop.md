@@ -78,3 +78,13 @@ Not a closure of anything here. Proved (sorry-free, `QOU/Torsion/TopologicalMass
 - #8663 (labelled ready): cuts 13 unused edges (33 violators cleared, 0 new) and proves the seminormal q=0 pole-order fact that prop:crystal-r-matrix-sub-lemma attributes to the crystal hypothesis (QOU/BraidKnot/SeminormalDiagonalPoleOrder.lean, sorry-free). The lemma is not wired yet: the orientation of rho needs an owner call.
 - Remaining ~45 after #8647 + #8663. Most sit on blocks whose own claim is unproved or whose Lean does not prove the .md (group A). Cutting their edges would launder, so they are held. Framed ask with five decisions posted on #8526 (comment 7048682948).
 - Still open, not closing: this bean tracks open conjectures.
+
+## 2026-11-21 — #8647 and #8663 merged; #8720 opened
+- The owner merged #8647 and #8663 by direct word. Both were rebased onto main before merging: 0 new violators.
+- #8720 (labelled ready):
+  - proves residue-at-root (q-Habiro completion) and crystal-r-matrix (diagonal pole order);
+  - keeps diophantine-birthday-trajectory and binding-closure-conditional as theorems, with their false conjecture edges cut;
+  - demotes 8 blocks.
+- §3b violators: 82 on main at the start of the day, 32 on #8720.
+- Compute drift is flagged on #8720 (nv-pslq, phase3-deuteron, qbeta-row-cap, plus two mpf.__format__ crashes).
+- Still open: lem:bond-order-eq-jet-degree, which carries the many-body chain to conj:jet-prefix-gb-filtration, and the 2πi mismatch in binding-closure.
