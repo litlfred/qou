@@ -1,6 +1,6 @@
 *Within a QOU $(\mathbf{C}, A, \tau)$.* Part A below concerns the QOU's internal $q$-Navier--Stokes flow. Part B is a statement about the classical Navier--Stokes equation on $\mathbb{R}^3$. Identifying the internal flow with the classical equation is the separate open categorical-to-classical bridge and is not asserted here.
 
-The global regularity theorem ([$q$-NS well-posedness](#thm:q-ns-wellposedness)) holds for every $q > 1$. This block records what is expected at the endpoint $q = 1$. The two parts must be kept apart: Part A is about the $q$-family, Part B is a classical blow-up scenario, and neither implies the other without the bridge.
+The global regularity theorem ([$q$-NS well-posedness](#thm:q-ns-wellposedness)) holds for every $q > 1$. The conjecture concerns the endpoint $q = 1$.
 
 **Conjecture (regularity breakdown).**
 

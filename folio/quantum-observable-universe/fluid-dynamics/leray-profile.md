@@ -10,11 +10,11 @@ v(x, t) = (T^* - t)^{-1/2}\, V\bigl(y, s\bigr).
 $$
 The profile is **:defterm[discretely self-similar]{#discretely-self-similar}** with period $P > 0$ if $V(y, s + P) = V(y, s)$ for all $y$ and $s$. It is **steady** if $V$ does not depend on $s$.
 
-Writing $\lambda = e^{P/2} > 1$, periodicity in $s$ is equivalent to the discrete scaling invariance
+Writing $\lambda = e^{P/2} > 1$, periodicity in $s$ implies the discrete scaling invariance
 $$
 v(x, t) = \lambda\, v\bigl(x_0 + \lambda (x - x_0),\; T^* - \lambda^2 (T^* - t)\bigr),
 $$
-which for $x_0 = 0$, $T^* = 0$ is $v(x, t) = \lambda\, v(\lambda x, \lambda^2 t)$ (Lean `lerayField_discrete_scaling`). A steady profile is discretely self-similar for every period.
+which for $x_0 = 0$, $T^* = 0$ is $v(x, t) = \lambda\, v(\lambda x, \lambda^2 t)$ (Lean `lerayField_discrete_scaling`). Conversely, the invariance for all $x$ and all $t < T^*$ gives back periodicity by the same change of variables; only the forward direction is formalised. A steady profile is discretely self-similar for every period.
 
 The field $v$ solves the Navier--Stokes equation with viscosity $\nu$ if and only if $V$ solves the Leray system
 $$
