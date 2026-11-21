@@ -768,4 +768,208 @@ theorem braidClosure_stab (w : List (Fin m × Bool)) (b : Bool) :
 
 end Stab
 
+/-! ### Cancelling a letter against its inverse -/
+
+section Cancel
+
+variable {m L : ℕ}
+
+/-- Include the rows of a closure with `L` levels into one with `L + 2` levels. -/
+def rowEmb2 : Fin (L + 1) × Fin (m + 1) ↪ Fin (L + 1 + 1 + 1) × Fin (m + 1) :=
+  ⟨fun e => (e.1.castSucc.castSucc, e.2), fun e e' h => by
+    simp only [Prod.mk.injEq, Fin.castSucc_inj] at h; exact Prod.ext h.1 h.2⟩
+
+@[simp] theorem rowEmb2_apply (e : Fin (L + 1) × Fin (m + 1)) :
+    (rowEmb2 e : Fin (L + 1 + 1 + 1) × Fin (m + 1)) = (e.1.castSucc.castSucc, e.2) := rfl
+
+theorem letterCrossing_row2 (k : Fin L) (i : Fin m) (b : Bool) :
+    (letterCrossing k i b).map rowEmb2 = letterCrossing k.castSucc.castSucc i b := by
+  cases b <;> simp only [letterCrossing, Crossing.map, rowEmb2_apply, Fin.succ_castSucc] <;> rfl
+
+theorem letterJoins_row2 (k : Fin L) (i : Fin m) :
+    (letterJoins k i).map (Prod.map rowEmb2 (Prod.map rowEmb2 id)) =
+      letterJoins k.castSucc.castSucc i := by
+  rw [letterJoins, letterJoins, Multiset.map_map]
+  refine Multiset.map_congr rfl fun p _ => ?_
+  simp only [Function.comp_apply, Prod.map, rowEmb2_apply, id, Fin.succ_castSucc]
+
+/-- The rows of the last two levels. -/
+abbrev rowA (L : ℕ) (p : Fin (m + 1)) : Fin (L + 1 + 1 + 1) × Fin (m + 1) :=
+  ((Fin.last L).castSucc.castSucc, p)
+abbrev rowB (L : ℕ) (p : Fin (m + 1)) : Fin (L + 1 + 1 + 1) × Fin (m + 1) :=
+  ((Fin.last (L + 1)).castSucc, p)
+abbrev rowC (L : ℕ) (p : Fin (m + 1)) : Fin (L + 1 + 1 + 1) × Fin (m + 1) := (Fin.last (L + 1 + 1), p)
+abbrev rowZ (L : ℕ) (p : Fin (m + 1)) : Fin (L + 1 + 1 + 1) × Fin (m + 1) := (0, p)
+
+theorem letterCrossing_pair (i : Fin m) (b : Bool) :
+    ({letterCrossing (Fin.last L).castSucc i b, letterCrossing (Fin.last (L + 1)) i (!b)} :
+        Multiset (Crossing (Fin (L + 1 + 1 + 1) × Fin (m + 1)))) =
+      bigonPar (rowA L (oPos i b)) (rowC L (oPos i b)) (rowA L (uPos i b)) (rowC L (uPos i b))
+        (rowB L (uPos i b)) (rowB L (oPos i b)) b := by
+  cases b <;> simp [letterCrossing, bigonPar, uPos, oPos, Fin.succ_castSucc, Fin.succ_last]
+
+/-- The closure of a word ending in `(i, b), (i, !b)`, written out. -/
+theorem closureOf_snoc_snoc_eq (g : Fin L → Fin m × Bool) (i : Fin m) (b : Bool) :
+    closureOf (Fin.snoc (Fin.snoc g (i, b)) (i, !b) : Fin (L + 1 + 1) → Fin m × Bool) =
+      (wordCode g).map rowEmb2 + Code.ofJs ((Finset.univ.val : Multiset (Fin (m + 1))).map
+        fun p => (rowC L p, rowZ L p, (1 : ℤ))) +
+        Code.ofJs (chainJoins (rowA L) (rowB L) (rowC L) 0 0 (untouched i)) +
+        Code.ofXs (bigonPar (rowA L (oPos i b)) (rowC L (oPos i b)) (rowA L (uPos i b))
+          (rowC L (uPos i b)) (rowB L (uPos i b)) (rowB L (oPos i b)) b) := by
+  rw [← letterCrossing_pair]
+  refine code_ext ?_ ?_
+  · simp only [closureOf, wordCode, Code.map, ofXs, ofJs, add_xs, add_zero, zero_add]
+    rw [univ_map_castSucc_last, univ_map_castSucc_last, Multiset.map_map]
+    simp only [Fin.snoc_castSucc, Fin.snoc_last, Function.comp_def, letterCrossing_row2]
+    rw [Multiset.insert_eq_cons, ← Multiset.singleton_add]
+    exact add_assoc _ _ _
+  · simp only [closureOf, wordCode, Code.map, ofXs, ofJs, add_js, add_zero, zero_add,
+      Multiset.map_bind]
+    rw [univ_bind_castSucc_last, univ_bind_castSucc_last, chainJoins_eq]
+    simp only [Fin.snoc_castSucc, Fin.snoc_last, letterJoins_row2]
+    have h₁ : letterJoins (L := L + 1 + 1) (Fin.last L).castSucc i =
+        (untouched i).val.map fun p => (rowA L p, rowB L p, (0 : ℤ)) := by
+      rw [letterJoins, untouched]
+      refine Multiset.map_congr rfl fun p _ => ?_
+      simp only [Fin.succ_castSucc, Fin.succ_last]
+    have h₂ : letterJoins (L := L + 1 + 1) (Fin.last (L + 1)) i =
+        (untouched i).val.map fun p => (rowB L p, rowC L p, (0 : ℤ)) := by
+      rw [letterJoins, untouched]
+      refine Multiset.map_congr rfl fun p _ => ?_
+      simp only [Fin.succ_last]
+    rw [h₁, h₂]
+    abel
+
+/-- **Cancellation.** Appending a letter followed by its inverse does not change the closure up to
+Reidemeister equivalence (one Reidemeister II move). -/
+theorem closureOf_cancel (g : Fin L → Fin m × Bool) (i : Fin m) (b : Bool) :
+    ReidemeisterEquiv ⟨_, closureOf g⟩
+      ⟨_, closureOf (Fin.snoc (Fin.snoc g (i, b)) (i, !b) : Fin (L + 1 + 1) → Fin m × Bool)⟩ := by
+  set Wg := (wordCode g).map (rowEmb2 (m := m) (L := L)) with hWg
+  set CL : Multiset ((Fin (L + 1 + 1 + 1) × Fin (m + 1)) × (Fin (L + 1 + 1 + 1) × Fin (m + 1)) × ℤ) :=
+    (Finset.univ.val : Multiset (Fin (m + 1))).map fun p => (rowC L p, rowZ L p, 1) with hCL
+  have hval : ∀ k : Fin (L + 1), (k.castSucc.castSucc : Fin (L + 1 + 1 + 1)).val ≤ L := by
+    intro k; simp only [Fin.coe_castSucc]; omega
+  have hW : ∀ e, Wg.Occurs e → e.1.val ≤ L := by
+    intro e he
+    obtain ⟨x, -, rfl⟩ := (occurs_map _ _ _).1 he
+    exact hval x.1
+  have vA : ∀ p : Fin (m + 1), (rowA L p).1.val = L := by intro p; simp
+  have vB : ∀ p : Fin (m + 1), (rowB L p).1.val = L + 1 := by intro p; simp
+  have vC : ∀ p : Fin (m + 1), (rowC L p).1.val = L + 2 := by intro p; simp
+  have vZ : ∀ p : Fin (m + 1), (rowZ L p).1.val = 0 := by intro p; simp
+  have rowne : ∀ (e e' : Fin (L + 1 + 1 + 1) × Fin (m + 1)), e.1.val ≠ e'.1.val → e ≠ e' := by
+    rintro e e' h rfl; exact h rfl
+  -- Step 1: embed.
+  have hc : (closureOf g).map rowEmb2 = Wg + Code.ofJs
+      ((Finset.univ.val : Multiset (Fin (m + 1))).map fun p => (rowA L p, rowZ L p, (0 : ℤ) + 1)) := by
+    refine code_ext ?_ ?_
+    · simp [closureOf, wordCode, hWg, Code.map, Code.ofJs]
+    · simp only [closureOf, wordCode, hWg, Code.map, Code.ofJs, add_js, Multiset.map_add,
+        Multiset.map_map]
+      congr 1
+  have h1 := ReidemeisterEquiv.of_move (Move.embed rowEmb2 (closureOf g))
+  rw [hc] at h1
+  -- Step 2: split the closing arcs at the last row.
+  have h2 := (mergeJoins (rowA L) (rowC L) (rowZ L) 0 1 (fun p q h => (Prod.mk.inj h).2)
+    (fun p q => rowne _ _ (by rw [vC, vA]; omega)) (fun p q => rowne _ _ (by rw [vC, vZ]; omega))
+    Finset.univ Wg fun p _ h => by have := hW _ h; rw [vC] at this; omega).symm
+  -- Step 3: route the untouched strands through the middle row.
+  set R3 := Wg + Code.ofJs CL + Code.ofJs {(rowA L (oPos i b), rowC L (oPos i b), (0 : ℤ)),
+    (rowA L (uPos i b), rowC L (uPos i b), 0)} with hR3
+  have hR3v : ∀ e, R3.Occurs e → e.1.val ≠ L + 1 := by
+    intro e he
+    simp only [hR3, occurs_add] at he
+    rcases he with (h | h) | h
+    · have := hW _ h; omega
+    · rw [occurs_ofJs] at h
+      obtain ⟨_, hj, h⟩ := h
+      obtain ⟨p, -, rfl⟩ := Multiset.mem_map.1 hj
+      rcases h with rfl | rfl <;> simp
+    · rw [occurs_ofJs_pair] at h
+      rcases h with (rfl | rfl) | (rfl | rfl) <;> simp
+  have h3 := (mergeJoins (rowA L) (rowB L) (rowC L) 0 0 (fun p q h => (Prod.mk.inj h).2)
+    (fun p q => rowne _ _ (by rw [vB, vA]; omega)) (fun p q => rowne _ _ (by rw [vB, vC]; omega))
+    (untouched i) R3 fun p _ h => hR3v _ h (vB p)).symm
+  -- Step 4: Reidemeister II on the two strands of the letter.
+  set R4 := Wg + Code.ofJs CL + Code.ofJs (chainJoins (rowA L) (rowB L) (rowC L) 0 0 (untouched i))
+    with hR4
+  have huo : uPos i b ≠ oPos i b := by
+    have hcs : i.castSucc ≠ i.succ := (Fin.castSucc_lt_succ i).ne
+    cases b <;> simp [uPos, oPos, hcs, hcs.symm]
+  have hu : uPos i b ∉ untouched i := by cases b <;> simp [uPos, untouched]
+  have ho : oPos i b ∉ untouched i := by cases b <;> simp [oPos, untouched]
+  have hR4B : ∀ p, p = uPos i b ∨ p = oPos i b → ¬ R4.Occurs (rowB L p) := by
+    intro p hp h
+    simp only [hR4, occurs_add, occurs_ofJs, hCL, Multiset.mem_map, Finset.mem_val,
+      Finset.mem_univ, true_and] at h
+    rcases h with (h | ⟨_, ⟨q, rfl⟩, h | h⟩) | h
+    · have := hW _ h; simp at this
+    · simp [Fin.ext_iff] at h
+    · simp [Fin.ext_iff] at h
+    · obtain ⟨q, hq, h⟩ := occurs_chainJoins _ _ _ _ _ _ _ (by rwa [occurs_ofJs])
+      rcases h with h | h | h
+      · simp [Fin.ext_iff] at h
+      · obtain rfl := (Prod.mk.inj h).2
+        rcases hp with rfl | rfl
+        exacts [hu hq, ho hq]
+      · simp [Fin.ext_iff] at h
+  have h4 := ReidemeisterEquiv.of_move (Move.r2par R4 (rowA L (oPos i b)) (rowC L (oPos i b))
+    (rowA L (uPos i b)) (rowC L (uPos i b)) (rowB L (uPos i b)) (rowB L (oPos i b)) b
+    (hR4B _ (Or.inl rfl)) (hR4B _ (Or.inr rfl)) (fun h => huo (Prod.mk.inj h).2) (by
+      intro x hx
+      simp only [Set.mem_insert_iff, Set.mem_singleton_iff] at hx
+      rcases hx with rfl | rfl | rfl | rfl <;>
+        exact ⟨rowne _ _ (by simp), rowne _ _ (by simp)⟩))
+  refine (h1.trans h2).trans ((h3.of_eq ?_ ?_).trans (h4.of_eq rfl ?_))
+  · rw [chainJoins_eq, univ_map_untouched i (fun p => (rowA L p, rowC L p, (0 : ℤ)))]
+    refine code_ext ?_ ?_ <;>
+      simp only [hR3, hCL, ofJs, ofXs, add_xs, add_js, add_zero, zero_add] <;>
+      cases b <;> simp only [uPos, oPos, if_true, if_false, Bool.false_eq_true,
+        Multiset.insert_eq_cons, ← Multiset.singleton_add] <;> abel
+  · refine code_ext ?_ ?_ <;>
+      simp only [hR3, hR4, hCL, ofJs, ofXs, add_xs, add_js, add_zero, zero_add] <;> abel
+  · rw [closureOf_snoc_snoc_eq]
+
+theorem braidClosure_cancel_end (w : List (Fin m × Bool)) (i : Fin m) (b : Bool) :
+    ReidemeisterEquiv ⟨_, braidClosure w⟩ ⟨_, braidClosure (w ++ [(i, b), (i, !b)])⟩ := by
+  have h₂ := closureOf_congr (m := m) (by simp : w.length + 1 + 1 = (w ++ [(i, b), (i, !b)]).length)
+    (Fin.snoc (Fin.snoc w.get (i, b)) (i, !b)) (w ++ [(i, b), (i, !b)]).get fun k => by
+      refine Fin.lastCases ?_ (fun j => ?_) k
+      · simp
+      · refine Fin.lastCases ?_ (fun j => ?_) j
+        · simp
+        · simp [List.getElem_append_left]
+  rw [braidClosure_eq_closureOf, braidClosure_eq_closureOf]
+  exact (closureOf_cancel w.get i b).trans h₂
+
+theorem braidClosure_congr {w w' : List (Fin m × Bool)} (h : w = w') :
+    ReidemeisterEquiv ⟨_, braidClosure w⟩ ⟨_, braidClosure w'⟩ := by
+  subst h; exact .refl _
+
+/-- **Rotation by a block.** The closures of `u ++ v` and `v ++ u` are Reidemeister equivalent. -/
+theorem braidClosure_append_comm (u v : List (Fin m × Bool)) :
+    ReidemeisterEquiv ⟨_, braidClosure (u ++ v)⟩ ⟨_, braidClosure (v ++ u)⟩ := by
+  induction u generalizing v with
+  | nil => exact braidClosure_congr (by simp)
+  | cons x u ih =>
+    exact (braidClosure_rotate x (u ++ v)).trans
+      ((braidClosure_congr (by simp)).trans ((ih (v ++ [x])).trans (braidClosure_congr (by simp))))
+
+/-- **Cancellation anywhere.** Deleting a letter next to its inverse does not change the closure. -/
+theorem braidClosure_cancel (u v : List (Fin m × Bool)) (i : Fin m) (b : Bool) :
+    ReidemeisterEquiv ⟨_, braidClosure (u ++ [(i, b), (i, !b)] ++ v)⟩ ⟨_, braidClosure (u ++ v)⟩ :=
+  (braidClosure_append_comm (u ++ [(i, b), (i, !b)]) v).trans
+    ((braidClosure_congr (by simp)).trans ((braidClosure_cancel_end (v ++ u) i b).symm.trans
+      (braidClosure_append_comm v u)))
+
+/-- **Conjugation by a letter.** The closures of `σ w σ⁻¹` and `w` are Reidemeister equivalent. -/
+theorem braidClosure_conj (w : List (Fin m × Bool)) (i : Fin m) (b : Bool) :
+    ReidemeisterEquiv ⟨_, braidClosure ((i, b) :: w ++ [(i, !b)])⟩ ⟨_, braidClosure w⟩ :=
+  (braidClosure_append_comm [(i, b)] (w ++ [(i, !b)])).trans
+    ((braidClosure_congr (by simp)).trans ((braidClosure_cancel w [] i (!b)).trans
+      (braidClosure_congr (by simp))))
+
+end Cancel
+
 end QOU.MathlibExt.PL.Diagram
