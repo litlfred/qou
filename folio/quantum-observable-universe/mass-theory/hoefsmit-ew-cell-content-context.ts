@@ -9,5 +9,7 @@ export default remark({
     "thm:hoefsmit-ew-cell-content",
     "conj:electroweak-higgs-torus-link-triplet",
     "conj:categorical-higgs-mechanism",
+    "prop:weak-spectral-completeness",
   ],
+  cites: ["morita1982"],
 });
