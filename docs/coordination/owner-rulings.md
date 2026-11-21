@@ -21,6 +21,7 @@ carrier), then try to prove and derive it.
 | 2026-11-21 | **The electron is σ₀σ₁σ₀ ∈ B₃, whose closure is the Hopf link** — ruling for now. Verbatim: *"I think it is hopf link so take. That as ruling for now, but keep trefoil as backup in case need to recisit"*. **Backup:** the trefoil σ₀³ ∈ B₂ (leptons in H₂). Supersedes the 2026-11-20 wording "the trefoil T(2,3) is the electron". | `docs/audits/2026-11-21-electron-word-gs-interactions.md`; `docs/audits/2026-11-21-electron-word-options-downstream.md`; `QOU/BraidKnot/ElectronWordCandidates.lean`, `QOU/BraidKnot/LongestWordNotTwoPhoton.lean` |
 | 2026-11-21 | **The scoreboard and all β-decay routes use the two-term Lagrangian trace**, not only the one-term trace. | this ledger |
 | 2026-11-21 | **Nuclear Regime-I shell-size rule T(2,n_s) withdrawn.** Its basis was a mislabel: (σ₀σ₁)²σ₀ closes to T(2,4), not the cinquefoil T(2,5). Kept withdrawn until derived. | `nuclear-interactions/nuclear-operator-regimes.ts` (caveat); `docs/audits/2026-11-21-electron-word-gs-interactions.md` §7 |
+| 2026-11-21 | **Spin-involution LP-dual statement corrected (card: "Correct the conclusion").** It concludes y₀*(σ(β)*) = y₀*(β), assuming σ commutes with * and n_target(σ(β)*) = n_target(β); not y₀*(σ(β)) = y₀*(β). | `mass-theory/spin-involution-lp-dual-invariance.md`; PR #8765 |
 
 ## Working instructions for agents
 
