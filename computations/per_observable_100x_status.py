@@ -1593,9 +1593,12 @@ def main() -> dict:
             "(cubic form with the derived Schwinger factor (1-h^2 alpha), proton pin)",
         )
         _row["note"] = (
-            "CONDITIONAL on three unproved classes (ArchimedeanLimit, "
-            "BlochSuslinUniqueness, BringZeroModeBlochClass) — a conditional "
-            "prediction, not a proved derivation. The Schwinger factor is NOT "
+            "CANONICAL FORM OPEN (qou-aemx): see `arms` for the CS tower and the "
+            "additive A/B arms; compute consumers use the CS tower. The additive "
+            "form rests on an unproved postulate, the [10]_q coefficient, the "
+            "one-loop normalisation and c (docs/audits/2026-11-21-alpha-em-which-"
+            "form-is-canonical.md); of the three classes once listed here, two are "
+            "settled on main and the third is not load-bearing. The Schwinger factor is NOT "
             "FITTED and this is measured, not asserted: parametrising it as "
             "(1 - c*h^2*alpha), the c that hits CODATA exactly is 0.7312340272 "
             "and the 1-sigma window is [0.61846303, 0.84400502], so the "
@@ -1610,6 +1613,37 @@ def main() -> dict:
             "CODATA edition (the 2018->2022 shift is 2.2x the residual); the "
             "reference is read from the registry so the edition is not a choice."
         )
+        # ── Two labelled arms (owner card choice 2026-11-21, bean qou-aemx) ──
+        # The canonical alpha_em form is OPEN. Every alpha consumer in compute
+        # (pyhecke.constants, the m_K/m_pi EM term, coulomb_energy,
+        # atom_electron_mass) uses the CS tower, while this row's headline was
+        # Form B: two different objects. The row now carries every arm, each
+        # scored the same way. The headline stays Form B only so existing
+        # readers of `pred_MeV` keep working; it is NOT a canonical choice.
+        # Every arm misses the 100x target, so the scoreable counts do not
+        # depend on which arm is the headline.
+        from meson_em_sinh_closed_form import alpha_em_inv_derived as _a_cs
+        from q_parameter import Q_50_DIGIT_STR as _q50_for_cs  # noqa: E402
+        _arms = {
+            "cs_tower": (_a_cs(mpf(_q50_for_cs)),
+                         "meson_em_sinh_closed_form.alpha_em_inv_derived (exact resummation); "
+                         "the form every alpha consumer in compute uses"),
+            "additive_A_c0": (_alpha_w["data"]["ladder_proton"].get("form_A_alpha_inv"),
+                              "alpha-em-schwinger-ladder.witness.json :: form_A_alpha_inv"),
+            "additive_B_c1": (_alpha_inv_pred,
+                              "alpha-em-schwinger-ladder.witness.json :: form_B_alpha_inv (c = 1 is a choice)"),
+        }
+        _row["arms"] = {}
+        for _k, (_v, _src) in _arms.items():
+            if _v is None:
+                continue
+            _ar = _row_for("alpha_em_inv", mpf(str(_v)), _src)
+            _row["arms"][_k] = {f: _ar[f] for f in (
+                "pred_MeV", "err_ppb", "target_100x_ppb", "miss_factor",
+                "beats_1x", "beats_100x", "source_witness") if f in _ar}
+        _row["headline_arm"] = "additive_B_c1"
+        _row["canonical_form"] = "OPEN (qou-aemx); arms reported side by side"
+        _row["consumer_arm"] = "cs_tower"
         rows.append(_row)
     else:
         rows.append({"obs": "alpha_em_inv", "status": "NO-WITNESS"})
