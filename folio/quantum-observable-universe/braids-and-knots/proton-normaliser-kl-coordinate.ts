@@ -10,8 +10,12 @@ import { conjecture } from "../../schema/builders";
  *
  * Proved (Lean, sorry-free): such coordinates are exactly b = +-(sigma - q) + c
  * with c bar-invariant, so the derivative is +-q^{-3}; each condition is needed;
- * the same rule gives the trivial block's q^3. Not proved: that the observable
- * must be read in such a coordinate. Audit:
+ * the same rule gives the trivial block's q^3 (not independent: both linear
+ * Ocneanu weights have slope +-1/[3]_q!). Against it: bar(x_-) = q^6 x_-, so
+ * the bar-invariant generator is q^3 x_-, whose derivative is -1 and whose
+ * square constant is [3]_q! (k = 0); the reflection block fails the rule.
+ * Lean: QOU/MassTheory/ProtonQ3OcneanuSlopes.lean. Not proved: that the
+ * observable must be read in such a coordinate. Audit:
  * docs/audits/2026-11-21-proton-q3-kl-coordinate.md (PR #8964).
  */
 export default conjecture({

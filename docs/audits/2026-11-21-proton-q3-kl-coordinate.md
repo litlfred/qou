@@ -103,12 +103,51 @@ attempt produced is a check of the rule on a second block:
 | trivial, `x₊` | `z₊ = −1/(q³+q)` | `+q³` (`hasDerivAt_trXPlus_zero`) | `c_triv = q³·[3]_q!` |
 
 `linear_blocks_derivative_rule` states both: in the KL coordinates, each
-linear Schur element is ±(derivative)·[3]_q!. In the idempotent coordinate the
-same rule fails for both blocks. This is consistent with the criterion, and the
-second block could have contradicted it. It does not derive the criterion, and
-the rule was formulated on the sign block first, so the trivial block is one
-independent check, not more. The reflection block (`c_refl = [3]_q`, 2-dimensional)
-is not tested.
+linear Schur element is ±(derivative)·[3]_q!.
+
+> **Correction (third round, same day).** I first called this "one independent
+> check" that could have failed. It could not have failed. See the next section:
+> it follows from the Ocneanu slopes for any scaling of the element.
+
+## Third round (owner: *"1 / Try more on derivarion"*): the derivation fails
+
+Lean: `QOU/MassTheory/ProtonQ3OcneanuSlopes.lean`, lean-direct exit 0, standard
+axioms only.
+
+1. **Ocneanu weights.** `ocneanu_decomposition` checks
+   `tr_z = y₃χ_triv + y₁₃χ_sign + y₂₁χ_refl` on all four classes, with
+   - `y₃ = (qz+1)(q³z+qz+1)/((q²+1)(q⁴+q²+1))`
+   - `y₁₃ = q²(z−q)(z(q²+1)−q³)/((q²+1)(q⁴+q²+1))`
+   - `y₂₁ = −q(z−q)(qz+1)/(q⁴+q²+1)`
+
+   The reflection character values `2, q−q⁻¹, −1, 0` come from `τ = Σχ/c_χ`.
+2. **The derivative reading is circular.** Each linear weight has slope `±1/[3]_q!`
+   at its zeros (`ySign_slope_zD`, `yTriv_slope_zero`). Also
+   `tr_z(x₋) = c_sign·y₁₃` (`trXMinus_eq_schurSign_mul_ySign`). So the derivative of
+   the trace of any element of a linear block is its square constant over
+   `[3]_q!`. The `q⁻³` comes from scaling `x₋` with coefficient 1 on the identity,
+   and does not come from the derivative. The trivial-block result is the same
+   identity, not an independent check.
+3. **The criterion applied uniformly gives k = 0.** `bar(x₋) = q⁶x₋`, using the sign
+   character and `schurTriv_eq_q6_mul_schurSign`. The step "`bar(x₋)` lies in the
+   sign line" is argued, not formalised. Hence among the integral generators
+   `ε qᵐ x₋` only `m = 3` is bar-invariant (`sign_line_bar_fixed_iff`). For
+   `q³x₋` the derivative at `z_D` is `−1` (`hasDerivAt_klSign_zD`), and the
+   square constant is `q³c_sign = [3]_q!` (`q3_mul_schurSign`), the bar-symmetric
+   normaliser. **So "integral and bar-invariant", applied to both the coordinate
+   and the element, selects k = 0, not the proton's k = −3.** It is a proved
+   statement under that uniform criterion (scope b relative to the criterion).
+   It does not refute F_Bor, whose normaliser stays asserted.
+4. **Reflection block.** `y₂₁` vanishes at `z = q` with slope `−q(q²+1)/(q⁴+q²+1)`.
+   Times `[3]_q!` that is `−[2]_q²` (`yRefl_slope_times_fact`), not `±1`. The
+   slope rule does not extend.
+
+**Net.** The derivative route reduces to choosing a generator of the integral sign
+line, and that is the original `k` question restated. The uniform KL criterion
+picks `k = 0`. The proton's `k = −3` corresponds to "coefficient 1 on the identity",
+which is integral but not bar-invariant. I found no principle that selects it.
+`conj:proton-normaliser-kl-coordinate` is updated to say this. Whether to keep it,
+restate it, or retire it is the owner's call.
 
 What a derivation would need: a statement that every observable is a
 ℤ[q,q⁻¹]-linear functional on the integral Hecke algebra commuting with the
