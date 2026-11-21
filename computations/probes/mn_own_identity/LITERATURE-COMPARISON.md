@@ -903,3 +903,47 @@ here; I have not attached a number to it.
 `trace_mul_Dblock_one` (nucleon side vanishes at q = 1) and `trace_electron_D_sq_one_ne_zero`
 (electron side does not). Together they are the reason §28's electron-calibrated linear map
 gives E_n − E_p = O(hᵏ)·m_e.
+
+## §30 Does the corpus force a connection or insertion outside §29's class? (corpus search)
+
+§29 excluded every 𝒟-term with ∇ = F(hol), F(1) = 0, and q-independent insertions. This section
+asks whether the corpus forces any of the three escapes. No number is computed or compared.
+
+**Escape A: a connection with F(1) ≠ 0.** `def:categorical-connection`
+(`quantum-universes/categorical-connection.md`) asks only for a morphism ∇ : A → A ⊗ Ω¹(A)
+satisfying the Leibniz rule. `def:categorical-dirac-operator` and `def:categorical-q-connection`
+take ∇ as given, and at q = 1 both reduce to ∇. Leibniz forces ∇(1_A) = 0 on the unit, and
+nothing more. No block fixes ∇ on the nucleon weight blocks. So the corpus does not force
+F(1) ≠ 0. It also does not forbid it, but a choice would be a selection, so I have not made one.
+The q-flat curvature (`q-flat-connection.md`), ∇_q² = (q − 1)𝓕^intr + 𝓕^conn, adds a zero at
+q = 1, not a pole.
+
+**Escape B: a pole at q = 1.** The poles in the mass sector are, from a grep of every `.md`:
+- ℏ_q⁻² (via m_μ = m_e·Vol(4₁)/ℏ_q², ~400 sites);
+- c_q = (q − 1)⁻¹ and c_q²;
+- E₀ = m_e/(q(q − 1)), a single pole and a definition.
+
+ℏ_q⁻² is the strongest. The n − p of every 𝒟² arm is O(h³) (K-weighted) or O(h⁵) (plain) (§28).
+Multiplied by ℏ_q⁻² ~ h⁻², it is still O(h) or O(h³), so it vanishes at q = 1. A survivor needs a
+pole of order ≥ 3 at q = 1. The only one in the corpus is G_q ∝ c_q³ℏ_q/S_cell ~ (q − 1)⁻⁴ in
+`information-theory/gravitational-constant-properties.md`, which is gravity, not mass. Taking it
+would be selection against the target. Conclusion: no mass-sector corpus pole is strong enough
+(scope (b) for that list of poles; the invariant is pole order ≤ 2 against zero order ≥ 3).
+
+Separately, the muon word is not ruled. `owner-rulings.md` rules only the electron and the up
+quark, and 4₁ = (σ₀σ₁⁻¹)² is labelled "Higgs" in the knot registry. So calibrating on the muon
+instead of the electron would also mean choosing a word.
+
+**Escape C: a degree-0 Lagrangian.** The corpus has one: the on-shell Φ = Σ_λ α_λ e_λ on the
+central idempotents of H₃ (`mass-theory/three-parameters-wedderburn.md`).
+- W_p and W_n carry the same H₃-module (they are conjugate by P, `delta_np_general` /
+  `trN_V3_eq_trP_V3`), so tr e_λ is equal on both, and n − p = 0 for every α.
+- With the ruled K-weighting, Tr(K^{⊗3}·) is q·tr on W_p and q⁻¹·tr on W_n, so n − p is
+  (q⁻¹ − q)·tr = −h·tr. That vanishes at q = 1.
+- The only degree-0 term in the corpus whose n − p survives at q = 1 is a q-independent Cartan
+  insertion that is not in the image of H₃: the quark-charge QPair (−⅓ on W_n, 0 on W_p), §29.
+
+**Result.** The corpus forces none of the three escapes. A connection with F(1) ≠ 0 is allowed
+but not chosen. Every mass-sector pole is too weak. Every H₃-built degree-0 term is u ↔ d
+symmetric up to a factor h. What survives at q = 1 is the quark-charge insertion, which is §29's
+"Option 1" (a static charge term added to ℒ, with energy map fixed by CAL-1).
