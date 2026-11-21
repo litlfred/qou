@@ -758,6 +758,69 @@ def refine_chain(sy, x, pj, log=LOG):
         if ok and rec['cls'] == 'periodic': persisted += 1
     return out, persisted
 
+def damped_newton(sy, x0, theta, pj, maxit=20, log=LOG, on_iter=None, t_end=None, stall=4):
+    """Phase 5: least-squares Gauss-Newton with a backtracking line search on |F|.
+    Accepts the largest lam in {1, 1/2, ..., 1/64} with |F(x - lam dx)| < |F(x)| (and omega > 0).
+    Stops on convergence (|F| < 1e-(DPS-20)(1+|A|)), no admissible step, |F| stalled (< 1 digit gain
+    over `stall` iterations), omega -> 0 (S > 1e3), escape (|A| > 1e6), or the time limit.
+    Returns (x, |F|, history, ok, stop_reason)."""
+    n, K = sy.n, sy.K
+    tol = arb(10) ** (-(DPS - 20))
+    hstep = arb(10) ** (-(DPS // 2))
+    x = [mid(v) for v in x0]; hist = []
+    def evalF(xv):
+        A, om = unpack(xv, n, K)
+        sd = sy.build(om, theta); R, G = residual(sd, A, n, K)
+        F = flatF(R, A, n, K, pj)
+        return sd, G, F, mid(norm(F))
+    sd, G, F, nf = evalF(x)
+    reason = 'maxit'
+    for it in range(maxit):
+        xn = mid(norm(x[:-1])); om = x[-1]
+        hist.append(dict(it=it, res=nf.str(5, radius=False), amp=xn.str(8, radius=False),
+                         S=(2 * arb.pi() / om).str(16, radius=False)))
+        log(f"    it={it} |F|={nf.str(4, radius=False)} |A|={xn.str(6, radius=False)} S={(2*arb.pi()/om).str(16, radius=False)}")
+        if on_iter: on_iter(x, nf, hist)
+        if nf < tol * (1 + xn): reason = 'converged'; break
+        if 2 * arb.pi() / om > arb(10) ** 3: reason = 'omega_to_zero'; break
+        if xn > arb(10) ** 6: reason = 'escape_amplitude'; break
+        if t_end is not None and time.time() > t_end: reason = 'time_limit'; break
+        if it >= stall:
+            old = arb(hist[it - stall]['res'])
+            if not (nf * 10 < old): reason = 'stalled'; break
+        Jm = jacobian(sy, x, theta, pj, sd, F, G, hstep); D = len(x)
+        Jt = Jm.transpose(); N_ = Jt * Jm
+        shift = mid(sum((abs(N_[i, i]) for i in range(D)), arb(0)) / D) * arb(10) ** (-(DPS - 15))
+        for i in range(D): N_[i, i] += shift
+        dx = N_.solve(Jt * arb_mat(D, 1, F), algorithm="approx")
+        lam = arb(1); acc = None
+        for _ in range(7):
+            xt = [mid(x[i] - lam * dx[i, 0]) for i in range(D)]
+            if xt[-1] > 0:
+                r = evalF(xt)
+                if r[3] < nf: acc = (xt, r); break
+            lam /= 2
+        if acc is None: reason = 'no_descent_step'; break
+        x, (sd, G, F, nf) = acc[0], acc[1]
+        hist[-1]['lam'] = lam.str(4, radius=False)
+    ok = reason == 'converged'
+    return x, nf, hist, ok, reason
+
+def refine_chain_damped(sy, x, pj, log=LOG, t_end=None):
+    """Phase 5 refinement: K -> K+1, N -> N+1, L -> L+1 at theta = 1, each started from the
+    converged base orbit, with damped_newton."""
+    out = []; persisted = 0
+    for (L, N, K) in [(sy.L, sy.N, sy.K + 1), (sy.L, sy.N + 1, sy.K), (sy.L + 1, sy.N, sy.K)]:
+        s2 = System(L, N, K, axi=sy.axi)
+        y = embed(x, sy, s2)
+        pj2 = {l: i for i, l in enumerate(s2.labels)}[sy.labels[pj]]
+        xr, nf, h, ok, why = damped_newton(s2, y, arb(1), pj2, maxit=15, log=log, t_end=t_end)
+        rec = summary(xr, s2, nf, ok, arb(1)); rec.update(step=f"L{L}N{N}K{K}", stop=why, iters=len(h))
+        out.append(rec)
+        log(f"  refine {rec['step']}: {why} cls={rec['cls']} S={rec['period_S']} res={rec['residual']}")
+        if ok and rec['cls'] == 'periodic': persisted += 1
+    return out, persisted
+
 def random_search(sy, nstarts, rng, S0s, log=LOG):
     n, K = sy.n, sy.K
     hits = []
@@ -852,6 +915,56 @@ def main():
             ref, persisted = refine_chain(sy, x, pj); out['refinement'] = ref; out['persisted_count'] = persisted
             if persisted >= 1: LOG("!!! THETA=1 CANDIDATE PERSISTS UNDER REFINEMENT — STOP AND REPORT")
             save()
+    elif mode == 'seed1':
+        # Phase 5: direct damped / least-squares Newton at theta = 1 seeded from the last accepted
+        # shape of a phase-4 continuation (LERAY_SEEDFROM = arcB | arcC) with period S0 in
+        # LERAY_S0S and amplitude scale in LERAY_AMPS.  Witness checkpointed after every iteration.
+        src = os.environ.get('LERAY_SEEDFROM', 'arcC')
+        L, N = (2, 2) if src == 'arcB' else (2, 3)
+        K = int(os.environ.get('LERAY_K', '4'))
+        w = json.load(open(os.path.join(HERE, f'leray-dss-logphase-{src}.witness.json')))
+        st = w['state']; pj = w['phase_condition_index']
+        y1 = [arb(v) for v in st['y1']]; Wv = arb(st['W'])
+        xs = y1[:-1]; th_src = y1[-1] / Wv
+        sy = System(L, N, K)
+        t_end = time.time() + float(os.environ.get('LERAY_TMAX', '1e9'))
+        S0s = os.environ.get('LERAY_S0S', '0.6,0.7,0.8,0.855,0.9,1.0,1.2').split(',')
+        amps = os.environ.get('LERAY_AMPS', '1').split(',')
+        out.update(L=L, N=N, K=K, theta=1, seed_source=f'{src} witness state.y1 (last accepted point)',
+                   seed_theta=s40(th_src, 12), seed_S=s40(2 * arb.pi() / xs[-1], 16), seed_amp=s40(norm(xs[:-1]), 16),
+                   phase_condition_index=pj,
+                   method='least-squares Gauss-Newton (normal equations, 1e-%d Tikhonov shift) with backtracking '
+                          'line search on |F|; d/domega by FD (h=1e-%d)' % (DPS - 15, DPS // 2),
+                   stall_window=int(os.environ.get('LERAY_STALL', '4')), runs=[], verdict='running')
+        for S0 in S0s:
+            for a in amps:
+                if time.time() > t_end: break
+                x0 = [v * arb(a) for v in xs[:-1]] + [2 * arb.pi() / arb(S0)]
+                rec = dict(S0=S0, amp_scale=a, status='running'); out['runs'].append(rec)
+                LOG(f"== seed1 {src} L{L}N{N}K{K} S0={S0} amp*{a}")
+                def oi(xv, nf, hist):
+                    rec.update(iters=len(hist), history=hist); save()
+                t0 = time.time()
+                xr, nf, h, ok, why = damped_newton(sy, x0, arb(1), pj, maxit=int(os.environ.get('LERAY_MAXIT', '20')),
+                                                   on_iter=oi, t_end=t_end,
+                                                   stall=int(os.environ.get('LERAY_STALL', '4')))
+                sm = summary(xr, sy, nf, ok, arb(1))
+                rec.update(status=why, final_residual=nf.str(6, radius=False), final_S=sm['period_S'],
+                           final_amp=s40(norm(xr[:-1]), 16), cls=sm['cls'], mode_norms=sm['mode_norms'],
+                           omega_to_zero=(why == 'omega_to_zero' or sm['cls'] != 'periodic'),
+                           wall_s=int(time.time() - t0), iters=len(h), history=h)
+                LOG(f"  -> {why} res={rec['final_residual']} S={rec['final_S']} |A|={rec['final_amp']} cls={sm['cls']} ({rec['wall_s']}s)")
+                save()
+                if ok and sm['cls'] == 'periodic':
+                    rec['x'] = _vec(xr)
+                    ref, persisted = refine_chain_damped(sy, xr, pj, t_end=t_end + 3600)
+                    rec['refinement'] = ref; rec['persisted_count'] = persisted; save()
+                    if persisted >= 2:
+                        LOG("!!! PERSISTS ACROSS TWO REFINEMENTS — STOP AND REPORT")
+                        out['verdict'] = 'candidate_persists_two_refinements'; save(); break
+            if out['verdict'] != 'running': break
+        if out['verdict'] == 'running':
+            out['verdict'] = 'completed' if all(r['status'] != 'running' for r in out['runs']) and time.time() <= t_end else 'time_budget'
     elif mode == 'random':
         rng = random.Random(int(os.environ.get('LERAY_SEED', '20261121')))
         nst = int(os.environ.get('LERAY_NSTARTS', '20'))
