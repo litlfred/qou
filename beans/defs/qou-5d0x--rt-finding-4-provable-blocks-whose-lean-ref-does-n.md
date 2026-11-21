@@ -25,3 +25,4 @@ Next step: a full scan of all 435 sampled-population refs for this class.
 - 717 provable blocks with a `qou:` ref. 569 name a theorem/lemma. **148 (20.6 %) do not**: Prop-valued def 27, other def 41, structure 22, class 19, instance 16 (all `*-exists`), module/file 10, not found 11, abbrev 1, axiom 1 (`prop:tannaka-krein-reconstruction`).
 - Regex classifier over source, no elaboration: a candidate list, not verdicts. Per-block readings and any ref change wait for an owner yes (it is a sweep).
 - The 4 pass-1 cases are all still in the list on main.
+- Superseded-premise check (owner 2026-11-21, against docs/coordination/owner-rulings.md on main 2ae54ab40; list: L± photon, virtual photons, pre-Nov-15 γγ letters, T(2,n_s), convention C, single-term trace, trefoil-primary electron, 'c_2 = −1 PROVED', χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean's premises or in the files it names.
