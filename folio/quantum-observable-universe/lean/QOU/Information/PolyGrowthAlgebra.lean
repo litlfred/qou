@@ -124,4 +124,50 @@ theorem not_superPolynomial_of_polyBounded {f : ℕ → ℕ} (h : PolyBounded f)
     ¬ SuperPolynomial f :=
   not_superPolynomial_of_polyGrowth (of_polyBounded h)
 
+/-! ## Composition, and the exact duality (bean `qou-034l`)
+
+The bean asks for the grade algebra under `+`, `·` **and `∘`**. `+` and `·` are
+`add` / `mul` above. Composition closes the budget side: a polynomial-growth
+cost evaluated at a polynomial-growth size is polynomial-growth. The
+super-polynomial side is *not* closed under precomposition in general, and
+`superPolynomial_not_stable_under_precomp` records the obstruction, so the
+"stable under `∘`" reading of the bean title holds for the budget grade only. -/
+
+/-- **Closed under composition (sorry-free).**  `f (g n) ≤ c·(g n + 1)ᵏ
+    ≤ c·((c'+1)(n+1)^{k'})ᵏ`. -/
+theorem PolyGrowth.comp {f g : ℕ → ℕ} (hf : PolyGrowth f) (hg : PolyGrowth g) :
+    PolyGrowth (fun n => f (g n)) := by
+  obtain ⟨c, k, hfb⟩ := hf
+  obtain ⟨c', k', hgb⟩ := hg
+  refine ⟨c * (c' + 1) ^ k, k' * k, fun n => ?_⟩
+  have h1 : g n + 1 ≤ (c' + 1) * (n + 1) ^ k' := by
+    have hp : 1 ≤ (n + 1) ^ k' := Nat.one_le_pow _ _ (by omega)
+    nlinarith [hgb n]
+  calc f (g n) ≤ c * (g n + 1) ^ k := hfb (g n)
+    _ ≤ c * ((c' + 1) * (n + 1) ^ k') ^ k := by gcongr
+    _ = c * (c' + 1) ^ k * (n + 1) ^ (k' * k) := by rw [mul_pow, ← pow_mul]; ring
+
+/-- **Super-polynomial growth is not stable under precomposition (sorry-free).**
+    `2ⁿ` is super-polynomial, the constant size map `n ↦ 0` has polynomial
+    growth, and the composite is the constant `1`. -/
+theorem superPolynomial_not_stable_under_precomp :
+    ∃ f g : ℕ → ℕ, SuperPolynomial f ∧ PolyGrowth g ∧
+      ¬ SuperPolynomial (fun n => f (g n)) :=
+  ⟨fun n => 2 ^ n, fun _ => 0, superPoly_two_pow, polyGrowth_const 0,
+    not_superPolynomial_of_polyGrowth (by simpa using polyGrowth_const 1)⟩
+
+/-- **Exact De Morgan duality (sorry-free).**  `PolyGrowth` is precisely the
+    negation of `SuperPolynomial`. (`PolyBounded` is not: `n ↦ n + 1` is neither
+    `PolyBounded` nor super-polynomial, the `n = 0` artifact noted in the header.) -/
+theorem polyGrowth_iff_not_superPolynomial {f : ℕ → ℕ} :
+    PolyGrowth f ↔ ¬ SuperPolynomial f := by
+  refine ⟨not_superPolynomial_of_polyGrowth, fun h => ?_⟩
+  simp only [SuperPolynomial, not_forall, not_exists, not_and, not_lt] at h
+  obtain ⟨c, k, hb⟩ := h
+  refine ⟨c + f 0, k, fun n => ?_⟩
+  rcases Nat.eq_zero_or_pos n with rfl | hn
+  · simp
+  · calc f n ≤ c * n ^ k := hb n hn
+      _ ≤ (c + f 0) * (n + 1) ^ k := by gcongr <;> omega
+
 end QOU.Information

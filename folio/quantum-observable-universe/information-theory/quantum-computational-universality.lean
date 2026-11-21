@@ -11,7 +11,7 @@ The conjecture has four sub-claims:
    `c = 3N` crossings, there exists a root of unity
    `q_k = exp(2πi/(k+2))` with `k ≥ 3` and `k + 2 ≤ c² − 1` such
    that the Skein polynomial `P_L(q_k) ≠ 0`.
-2. **(Quantum universality.)** At `q_k` with `k ≥ 3`, the braiding
+2. **(Quantum universality.)** At `q_k` with `k ≥ 3`, `k ≠ 4`, the braiding
    representation `ρ_{q_k} : B_n → End(V⊗n)` is dense in
    `SU(2^n)` (FKLW). Every quantum circuit on `n` qubits with `N`
    gates can be approximated within `ε` by a braid with
@@ -52,11 +52,13 @@ opaque QuadraticLevelHolds (c : ℕ) : Prop
 
 /-- **Sub-claim (2): quantum universality (FKLW)**.
 
-    Opaque Prop. At level `k ≥ 3`, the braiding representation is
+    Opaque Prop. At level `k ≥ 3`, `k ≠ 4`, the braiding representation is
     dense in `SU(2^n)`; every quantum circuit on `n` qubits with
     `N` gates approximates within `ε` via a braid of
     `c = O(N polylog(1/ε))` crossings. -/
--- Ref: [freedman2003]
+-- Ref: [freedman2003] p. 5 (density for k ≥ 3, k ≠ 4, attributed there to
+--      Freedman–Larsen–Wang). Locator from bean qou-91qi's reading; the PDF is
+--      not held in library/, and the primary FLW paper is not yet registered.
 opaque QuantumUniversalityHolds (n N : ℕ) (eps : ℝ) : Prop
 
 /-- **Sub-claim (3): descent decomposition**.

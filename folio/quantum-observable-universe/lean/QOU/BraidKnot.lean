@@ -313,6 +313,7 @@ import QOU.BraidKnot.SpechtBranchingMultiplicityOne
 -- audit idea A3, 2026-07-18); the surviving object is an SL₂(ℝ) transfer family.
 import QOU.BraidKnot.TrBIntegerTracePrune
 import QOU.BraidKnot.HeckeReebHolonomyLaplacian
+import QOU.BraidKnot.HeckePresentationBridge
 
 /-!
 # BraidKnot — Module Index

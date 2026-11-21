@@ -40,7 +40,11 @@ single-class interface: `FaddeevPhiPhysical` packages the three requirements
   is a FaddeevPhi + strip-growth + NF solution. The class axioms are the
   honest open inputs.
 
--- Ref: [faddeev1995] Faddeev 1995 — uniqueness of Φ_b
+-- Ref: [faddeev1995] Faddeev 1995 — the integral solution s(P) of the shift
+--      equation s(P+p)/s(P) = 1/(1 + e^{iPq/ħ}) and its factorisation into
+--      the θ and −1/θ halves. The source states no uniqueness theorem; the
+--      strip-growth condition used here to single out Φ_b is not taken from
+--      a held source.
 -- Ref: docs/coordination/delta-lambda-magnitude-derivation.md — T1/T2
 -/
 

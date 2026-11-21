@@ -671,6 +671,7 @@ import QOU.BraidKnot
 -- hidden outside it.
 import QOU.BraidKnot.MesonFusionIndexSelection
 import QOU.BraidKnot.ElectronWordCandidates
+import QOU.BraidKnot.ElectronLevelWord
 import QOU.BraidKnot.LongestWordNotTwoPhoton
 import QOU.BraidKnot.LongestWordNotTwoPhotonHecke
 import QOU.BraidKnot.SpechtBaseChange
