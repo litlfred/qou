@@ -135,6 +135,23 @@
         "reviewed_at": "2026-11-21T18:42:40.155Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). No issue found."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -170,6 +187,23 @@
         "reviewed_at": "2026-11-21T18:42:40.573Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). No issue found."
       }
     ],
     "da-false-claim": [
@@ -222,6 +256,23 @@
         "reviewed_at": "2026-11-21T18:42:40.232Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). The new paragraph's Coxeter-level claims match Lusztig 2003: Sec. 16.2 (quasisplit case, L = restricted length) and Sec. 25 Case 3 (W of type B_n from A_2n or A_2n+1). Weights 1/2/3 verified at KL level for n = 3..7 (probe h15)."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). Coxeter-level claims match Lusztig 2003 Sec. 16.2 (quasisplit, weights = ambient lengths of orbit longest elements) and Sec. 25 Case 3. The new sentence that sigma_i sigma_{n-i} has eigenvalues q^2, -1, q^-2 follows from commuting generators with eigenvalues q, -q^-1 (checked in h20_pair_sign_probe.py)."
       }
     ],
     "da-vacuous": [
@@ -273,6 +324,23 @@
         "reviewed_at": "2026-11-21T18:42:40.271Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). No issue found."
       }
     ],
     "da-circular": [
@@ -325,6 +393,23 @@
         "reviewed_at": "2026-11-21T18:42:40.302Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). No issue found."
       }
     ],
     "da-overclaim": [
@@ -379,6 +464,23 @@
         "severity": "minor",
         "evidence": "type-b-folding-cpt.md:2 'The sl_n Cartan datum ... folds into a Type-B Cartan datum B_{floor(n/2)}'. For odd n = 2m+1 the diagram automorphism of A_{2m} puts the adjacent roots alpha_m, alpha_{m+1} in one orbit, so it is not admissible in the sense of Lusztig's quantum-groups folding of Cartan data (recalled, Lusztig 1993; not checked against a held copy). The Coxeter-group fold to B_m holds (lusztig2003 Sec. 16.2, Sec. 25 Case 3), and md:10 states the claim at that level.",
         "notes": "Proposed fix (owner decision): scope the statement's 'Cartan datum' to even n, or restate it at the Coxeter / Hecke level for all n."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). The Cartan-datum claim is gone; the statement is at the Coxeter/Hecke level for every n, \"folds to\" is scoped to Lusztig's quasisplit sense, and the block says the fold is not an algebra map on pair products. The CPT decomposition remains a conjecture, labelled as such."
       }
     ],
     "da-hidden-dof": [
@@ -431,6 +533,23 @@
         "reviewed_at": "2026-11-21T18:42:40.334Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). The one free choice (which type-B Markov trace T uses) is stated openly in the block."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). The one free choice (which type-B Markov trace T uses) is stated openly."
       }
     ],
     "da-non-sequitur": [
@@ -483,6 +602,23 @@
         "reviewed_at": "2026-11-21T18:42:40.365Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). No issue found."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -536,6 +672,23 @@
         "severity": "minor",
         "evidence": "type-b-folding-cpt.lean:89 and :175 docstrings say 'the block's own B_{n/2}', while md:2 now reads B_{floor(n/2)}. The Lean uses N division, so n / 2 is already floor(n/2) and the theorems are unaffected; only the docstring wording lags.",
         "notes": "Proposed fix: docstrings to 'B_{n/2} (N division, = floor(n/2))'. Needs lean-direct after the edit."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). md \"stable matter = elements fixed by theta(sigma_i) = sigma_{n-i}\" matches the Lean fields theta_gen / stable_iff_fixed. The Lean docstring names what is not formalised (type B, weights 1/2/3, bar-invariance, CPT decomposition), so no claim in the md is silently missing from the Lean."
       }
     ],
     "da-citation-misuse": [
@@ -588,6 +741,23 @@
         "reviewed_at": "2026-11-21T18:42:40.427Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). lusztig2003 Sec. 16.2 is the quasisplit definition cited; the type-B_n identification is also stated in its Sec. 25, Case 3. geck-lambropoulou-2004 citation unchanged."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). lusztig2003 Sec. 16.2 is now cited twice, for the quasisplit sense of \"folds to\" and for the weight function; both uses match that section. geck-lambropoulou-2004 unchanged."
       }
     ],
     "da-definitional-ambiguity": [
@@ -642,6 +812,23 @@
         "severity": "minor",
         "evidence": "md:10 heading 'Rank and wall weight' uses 'wall', which the block never defines; the body says 'middle generator'.",
         "notes": "Proposed fix: heading 'Rank and weights', or define the wall as the middle generator."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). \"Wall\" is gone (heading now \"Rank and generator weights\"); \"fixed points of the folding\" now names the involution theta on H_n(q)."
       }
     ],
     "da-empirical-fragility": [
@@ -694,6 +881,23 @@
         "reviewed_at": "2026-11-21T18:42:41.293Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "The block carries no code and makes no empirical claim."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Not applicable: the block makes no empirical comparison."
       }
     ],
     "da-physical-implausibility": [
@@ -746,6 +950,23 @@
         "reviewed_at": "2026-11-21T18:42:40.457Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). For odd n no simple root is iota-fixed (Lean typeBFold_label_free_of_odd_strands), so 'stable matter = fixed points' has no label-level shadow there; the block does not claim one."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). For odd n every generator is moved by theta (Lean typeBFold_gen_anti_of_odd), so stable matter there consists of products such as sigma_m sigma_{m+1} sigma_m (typeBFold_middle_fixed). Nothing in the block asserts a physical value."
       }
     ],
     "da-reproducibility": [
@@ -798,6 +1019,23 @@
         "reviewed_at": "2026-11-21T18:42:40.484Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). Rank and weights are reproduced by computations/probes/bridge_b/h15_folding_all_n_probe.py (n = 3..7)."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). Rank and weights are reproduced by computations/probes/bridge_b/h15_folding_all_n_probe.py (n = 3..7); weights forced by twisted traces in h18/h19; pair-product eigenvalues in h20."
       }
     ],
     "da-referee-verdict": [
@@ -854,6 +1092,25 @@
         "severity": "minor",
         "evidence": "Same as da-overclaim: md:2 claims a Cartan-datum fold for every n, while the support in md:10 is Coxeter-level. A referee would ask for the odd-n statement to be scoped.",
         "notes": "Otherwise the block is honestly scoped: conjecture kind, content-bearing Lean carrier, no instance."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). Internal tension a referee would raise: the block's own Scope paragraph defines the profile of P as exchanging P_+ and P_- (the eigenvalue idempotents of sigma_i). The fold theta(sigma_i) = sigma_{n-i} keeps q fixed and sends the idempotents of sigma_i to those of sigma_{n-i}, so it does not exchange P_+ and P_-, yet the C/P/T list says \"P from Type-B Coxeter folding\".",
+        "severity": "minor",
+        "notes": "Proposed fix (owner decision): either say which profile the fold has (it permutes letters and keeps eigenvalues), or drop \"P from Type-B Coxeter folding\" until a common type carrying C, P and T exists."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1033,6 +1290,23 @@
         "reviewed_at": "2026-11-21T18:42:40.514Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). No issue found."
       }
     ],
     "milnor-brevity": [
@@ -1065,6 +1339,23 @@
         "reviewed_at": "2026-11-21T18:42:40.543Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). No issue found."
       }
     ],
     "trap-negation-contrast": [
@@ -1099,6 +1390,23 @@
         "reviewed_at": "2026-11-21T18:42:40.603Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). No issue found."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1133,6 +1441,23 @@
         "reviewed_at": "2026-11-21T18:42:40.633Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). No issue found."
       }
     ],
     "trap-em-dash": [
@@ -1167,6 +1492,23 @@
         "reviewed_at": "2026-11-21T18:42:40.662Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). No issue found."
       }
     ],
     "trap-triples": [
@@ -1201,6 +1543,23 @@
         "reviewed_at": "2026-11-21T18:42:40.698Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). No issue found."
       }
     ],
     "trap-closing-aphorism": [
@@ -1235,6 +1594,23 @@
         "reviewed_at": "2026-11-21T18:42:40.731Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). No issue found."
       }
     ],
     "trap-meta-commentary": [
@@ -1269,6 +1645,23 @@
         "reviewed_at": "2026-11-21T18:42:40.766Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). No issue found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1303,6 +1696,23 @@
         "reviewed_at": "2026-11-21T18:42:40.805Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). No issue found."
       }
     ],
     "trap-performed-warmth": [
@@ -1337,6 +1747,23 @@
         "reviewed_at": "2026-11-21T18:42:40.840Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). No issue found."
       }
     ],
     "trap-superlative": [
@@ -1371,6 +1798,23 @@
         "reviewed_at": "2026-11-21T18:42:40.872Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). No issue found."
       }
     ],
     "trap-nonspeakable": [
@@ -1405,6 +1849,23 @@
         "reviewed_at": "2026-11-21T18:42:40.906Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). No issue found."
       }
     ],
     "uses-editorial-completeness": [
@@ -1424,6 +1885,23 @@
         "reviewed_at": "2026-11-21T18:42:40.200Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). No issue found."
       }
     ],
     "da-arity-conflation": [
@@ -1443,6 +1921,23 @@
         "reviewed_at": "2026-11-21T18:42:40.398Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Read the block (md, ts, lean) in full after the Coxeter/Hecke restatement and the Hecke-level Lean carrier (commits 74170d4, 49d1679, 38af0c8). No issue found."
       }
     ],
     "does_not_default_to_float": [
@@ -1462,6 +1957,23 @@
         "reviewed_at": "2026-11-21T18:42:40.937Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "The block carries no code and makes no empirical claim."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Not applicable: the block has no compute script or code; its Lean sibling is a conjecture carrier with no numerics."
       }
     ],
     "compute_no_mpf_to_float_cast": [
@@ -1481,6 +1993,23 @@
         "reviewed_at": "2026-11-21T18:42:40.975Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "The block carries no code and makes no empirical claim."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Not applicable: the block has no compute script or code; its Lean sibling is a conjecture carrier with no numerics."
       }
     ],
     "respects_archimedean_wall": [
@@ -1500,6 +2029,23 @@
         "reviewed_at": "2026-11-21T18:42:41.007Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "The block carries no code and makes no empirical claim."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Not applicable: the block has no compute script or code; its Lean sibling is a conjecture carrier with no numerics."
       }
     ],
     "code_is_commented": [
@@ -1519,6 +2065,23 @@
         "reviewed_at": "2026-11-21T18:42:41.053Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "The block carries no code and makes no empirical claim."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Not applicable: the block has no compute script or code; its Lean sibling is a conjecture carrier with no numerics."
       }
     ],
     "variables_typed": [
@@ -1538,6 +2101,23 @@
         "reviewed_at": "2026-11-21T18:42:41.092Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "The block carries no code and makes no empirical claim."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Not applicable: the block has no compute script or code; its Lean sibling is a conjecture carrier with no numerics."
       }
     ],
     "has_references_to_paper": [
@@ -1557,6 +2137,23 @@
         "reviewed_at": "2026-11-21T18:42:41.131Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "The block carries no code and makes no empirical claim."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Not applicable: the block has no compute script or code; its Lean sibling is a conjecture carrier with no numerics."
       }
     ],
     "connected_to_ci_pipeline": [
@@ -1576,6 +2173,23 @@
         "reviewed_at": "2026-11-21T18:42:41.172Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "The block carries no code and makes no empirical claim."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Not applicable: the block has no compute script or code; its Lean sibling is a conjecture carrier with no numerics."
       }
     ],
     "deprecated": [
@@ -1595,6 +2209,23 @@
         "reviewed_at": "2026-11-21T18:42:41.207Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "The block carries no code and makes no empirical claim."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Not applicable: the block has no compute script or code; its Lean sibling is a conjecture carrier with no numerics."
       }
     ],
     "uses_library_framework_appropriately": [
@@ -1614,6 +2245,23 @@
         "reviewed_at": "2026-11-21T18:42:41.239Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "The block carries no code and makes no empirical claim."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Not applicable: the block has no compute script or code; its Lean sibling is a conjecture carrier with no numerics."
       }
     ],
     "assertions_are_falsifiable": [
@@ -1633,6 +2281,23 @@
         "reviewed_at": "2026-11-21T18:42:41.267Z",
         "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
         "notes": "The block carries no code and makes no empirical claim."
+      },
+      {
+        "field_hash": {
+          "md": "70919ab4e134",
+          "ts": "b7c355d590b5",
+          "lean": "7f864e1a44fe",
+          "lean_statement": "5aaa75411e9a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v2"
+        },
+        "reviewed_at": "2026-11-21T19:23:01.000Z",
+        "reviewed_sha": "38af0c8ea998ca96357749eeb7f5133f4152ba01",
+        "evidence": "Not applicable: the block has no compute script or code; its Lean sibling is a conjecture carrier with no numerics."
       }
     ]
   }
