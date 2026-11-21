@@ -8,7 +8,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-15T06:44:54Z
-updated_at: 2026-10-04T15:19:29Z
+updated_at: 2026-11-21T18:00:00Z
 parent: qou-5vkl
 ---
 
@@ -76,3 +76,7 @@ of the 5 that fix surfaced), `qou-qf8t` (type-equality half, completed),
 
 ## Round 57 Implementation (PR #8350)
 - Implemented on branch `claude/round57-trd0-9nnz-fixes` (commit `35175f892e4827e826a23a3d007073dd800ff733`, https://github.com/litlfred/qou/pull/8350).
+
+## 2026-11-21 (thread: Design the remaining Lean vacuity detectors)
+
+Ported the PR #8350 hunk (anonymous binder keyed by class name, depth-aware := split) onto main in PR #8919 (issue #8918), owner ruling 2026-11-21. Corpus +5 candidates, 0 existing ledger entries moved; the 5 are needs-agent ledger rows under category proof-self-assuming-projection-py. Bean stays open until #8919 merges and the 5 are adjudicated. Follow-up: the TS audit (lean-vacuity-axiom-audit.ts) still skips anonymous binders.

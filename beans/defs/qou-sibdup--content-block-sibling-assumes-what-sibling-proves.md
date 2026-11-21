@@ -7,7 +7,7 @@ priority: medium
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T04:40:00Z
-updated_at: 2026-10-04T15:26:06Z
+updated_at: 2026-11-21T18:00:00Z
 parent: qou-5vkl
 ---
 
@@ -67,3 +67,7 @@ Unmeasured. The q-geometric-langlands chapter yielded one instance from three
 blocks, which says nothing about the rate — one hit in a chapter an agent had
 just spent a session inside is exactly the sample most likely to over-estimate.
 Measure before quoting a number.
+
+## 2026-11-21 (thread: Design the remaining Lean vacuity detectors)
+
+Advisory script scripts/lean-sibling-hypothesis-audit.py in PR #8919, with specificity filter; corpus 0 matches (232 with --unfiltered), worked hasse_weil_bound case pinned in --selftest. No ledger category, per owner ruling 2026-11-21. Open until #8919 merges.
