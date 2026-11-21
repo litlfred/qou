@@ -11,6 +11,8 @@ The framework's particle catalogue and operator algebra share a single six-eleme
 
 Torus knots carry zero hyperbolic volume, representing the massless, force-carrying sector. Hyperbolic knots carry positive volume, which translates to mass via $\mathrm{Vol}(K)/\hbar_q^{2}$. The photon is not a knot but a four-term element of $H_3(q)$ whose products generate the rest of the spectrum.
 
+The statement $\mathrm{Vol}=0$ for torus knots is about the hyperbolic volume of the knot complement, not about the absence of every volume invariant. A topological volume is defined for every closed $3$-manifold $M$ as the smallest volume of the complement of a possibly empty hyperbolic link in $M$, and the minimising link has no components exactly when $M$ is hyperbolic \cite[\S1--2]{kegel2024}. That invariant is defined for closed manifolds, whereas $\mathrm{Vol}(K)$ in the table is the volume of the knot complement $S^3\setminus K$, so it is not a replacement for the column above.
+
 The six Gröbner--Shirshov normal-form words span $H_3(q)$:
 
 | Operator | Braid word | Permutation | $\mathrm{tr}_M$ at $q_0$ |
