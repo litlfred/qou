@@ -2,6 +2,7 @@ import Mathlib.Data.Matrix.Mul
 import Mathlib.Data.Fin.VecNotation
 import Mathlib.LinearAlgebra.Matrix.Notation
 import Mathlib.Tactic
+import QOU.BraidsAndKnots.StrangeStrandOctet
 
 /-!
 # Weighted Jucys–Murphy sums on three strands: Coleman–Glashow is an identity
@@ -23,10 +24,10 @@ Every octet isospin member (`uud, udd, uus, dds, uss, dss`) has a weight space s
 three words `aab, aba, baa` of a multiset `{a, a, b}`, and `σ₁, σ₂` preserve it. On that basis
 they are the 3 × 3 blocks `blockS1`, `blockS2` below, where `ea` is the coefficient that `Ř`
 picks up on the pair `(a, b)` and `eb` the one on `(b, a)`: for the Jimbo braiding one of them
-is `h` and the other `0`. The block is written down from the rule above, not extracted from
-`StrangeStrandOctet.jimbo` by a Lean lemma; the probe's full 27-dimensional computation and
-this block reduction give the same splittings for the weights `Y`, `I₃`, `Q`
-(checked symbolically, 2026-11-21).
+is `h` and the other `0`. The section *Bridge* proves that these blocks are the restriction of the repo's
+`StrangeStrandOctet.jimbo` acting on strands `(1,2)` and `(2,3)` of `(Cⁿ)^{⊗3}`
+(`weightSpaceTrace_eq`), and restates Coleman–Glashow for that operator
+(`coleman_glashow_weightSpace`).
 
 ## Results
 
@@ -201,5 +202,168 @@ theorem isospin_sigma_split {K : Type*} [Field K] (q : K) (hq : q ≠ 0) (h2 : (
   simp only [splitSigma, murphyTrace_eq]
   field_simp
   ring
+
+/-! ### Bridge: the block is the repo's Jimbo braiding on three strands
+
+`StrangeStrandOctet.jimbo n q` is the braiding on `Cⁿ ⊗ Cⁿ`. Below, `sigma1` and `sigma2` act
+with it on strands `(1,2)` and `(2,3)` of `(Cⁿ)^{⊗3}`, the weighted Murphy trace over the weight
+space of a multiset `{a, a, b}` is taken on that 27-dimensional (for `n = 3`) space, and it is
+shown to equal `murphyTrace` with the Jimbo coefficients. So the block results above are
+statements about the repo's braiding, not about a separately written matrix. -/
+
+section Bridge
+
+open StrangeStrandOctet
+
+variable {K : Type*} [Field K] {n : ℕ}
+
+/-- Words on three strands. -/
+abbrev Word (n : ℕ) := Fin n × Fin n × Fin n
+
+/-- `σ₁ = Ř ⊗ 1` on `(Cⁿ)^{⊗3}`. -/
+def sigma1 (n : ℕ) (q : K) : Matrix (Word n) (Word n) K :=
+  fun x y => jimbo n q (x.1, x.2.1) (y.1, y.2.1) * if x.2.2 = y.2.2 then 1 else 0
+
+/-- `σ₂ = 1 ⊗ Ř` on `(Cⁿ)^{⊗3}`. -/
+def sigma2 (n : ℕ) (q : K) : Matrix (Word n) (Word n) K :=
+  fun x y => (if x.1 = y.1 then 1 else 0) * jimbo n q (x.2.1, x.2.2) (y.2.1, y.2.2)
+
+/-- The Murphy elements `L₂ = σ₁²`, `L₃ = σ₂σ₁²σ₂` on three strands. -/
+def murphyL2 (n : ℕ) (q : K) : Matrix (Word n) (Word n) K := sigma1 n q * sigma1 n q
+
+def murphyL3 (n : ℕ) (q : K) : Matrix (Word n) (Word n) K :=
+  sigma2 n q * sigma1 n q * sigma1 n q * sigma2 n q
+
+/-- The weighted Murphy operator's trace over a set of words: word `x` contributes
+`w(x₁) + w(x₂)·L₂(x,x) + w(x₃)·L₃(x,x)`. -/
+def weightedMurphyDiag (q : K) (w : Fin n → K) (x : Word n) : K :=
+  w x.1 + w x.2.1 * murphyL2 n q x x + w x.2.2 * murphyL3 n q x x
+
+/-- The three words of the weight space of `{a, a, b}`: `aab, aba, baa`. -/
+def wordEmb (a b : Fin n) : Fin 3 → Word n := ![(a, a, b), (a, b, a), (b, a, a)]
+
+/-- Trace of the weighted Murphy operator over the weight space of `{a, a, b}`, computed on
+the full space `(Cⁿ)^{⊗3}`. -/
+def weightSpaceTrace (q : K) (w : Fin n → K) (a b : Fin n) : K :=
+  ∑ i : Fin 3, weightedMurphyDiag q w (wordEmb a b i)
+
+/-- The Jimbo coefficient of the pair `(x, y)` for the order on `Fin n`. -/
+def jc (q : K) (x y : Fin n) : K := if y < x then q - q⁻¹ else 0
+
+theorem jc_eq_jimboCoeff (q : K) (x y : Fin n) :
+    jc q x y = jimboCoeff (fun i : Fin n => i.val) (q - q⁻¹) x y := by
+  simp only [jc, jimboCoeff, Fin.lt_iff_val_lt_val]
+
+/-- A matrix maps the span of `S` into itself. -/
+def Closed (S : Set (Word n)) (A : Matrix (Word n) (Word n) K) : Prop :=
+  ∀ x y, y ∈ S → A x y ≠ 0 → x ∈ S
+
+theorem closed_mul {S : Set (Word n)} {A B : Matrix (Word n) (Word n) K}
+    (hA : Closed S A) (hB : Closed S B) : Closed S (A * B) := by
+  intro x y hy h
+  rw [Matrix.mul_apply] at h
+  obtain ⟨z, -, hz⟩ := Finset.exists_ne_zero_of_sum_ne_zero h
+  exact hA x z (hB z y hy (right_ne_zero_of_mul hz)) (left_ne_zero_of_mul hz)
+
+theorem submatrix_mul_of_closed {e : Fin 3 → Word n} (he : Function.Injective e)
+    (A B : Matrix (Word n) (Word n) K) (hB : Closed (Set.range e) B) :
+    (A * B).submatrix e e = A.submatrix e e * B.submatrix e e := by
+  ext i j
+  simp only [Matrix.submatrix_apply, Matrix.mul_apply]
+  symm
+  refine Fintype.sum_of_injective e he _ (fun z => A (e i) z * B z (e j)) ?_ (fun _ => rfl)
+  intro z hz
+  by_contra hne
+  exact hz (hB z (e j) ⟨j, rfl⟩ (right_ne_zero_of_mul hne))
+
+theorem wordEmb_injective {a b : Fin n} (hab : a ≠ b) : Function.Injective (wordEmb a b) := by
+  intro i j h
+  fin_cases i <;> fin_cases j <;> simp_all [wordEmb, Prod.ext_iff, eq_comm]
+
+theorem sigma1_closed (q : K) (a b : Fin n) : Closed (Set.range (wordEmb a b)) (sigma1 n q) := by
+  rintro x y ⟨j, rfl⟩ h
+  unfold sigma1 at h
+  have h3 : x.2.2 = (wordEmb a b j).2.2 := by
+    by_contra hc; simp [hc] at h
+  have hj := jimbo_entry_ne_zero q _ _ (left_ne_zero_of_mul h)
+  obtain ⟨x1, x2, x3⟩ := x
+  fin_cases j <;> simp only [wordEmb, Prod.mk.injEq] at hj h3 ⊢ <;>
+    rcases hj with ⟨rfl, rfl⟩ | ⟨rfl, rfl⟩ <;> subst h3 <;>
+    first
+    | exact ⟨0, rfl⟩ | exact ⟨1, rfl⟩ | exact ⟨2, rfl⟩
+
+theorem sigma2_closed (q : K) (a b : Fin n) : Closed (Set.range (wordEmb a b)) (sigma2 n q) := by
+  rintro x y ⟨j, rfl⟩ h
+  unfold sigma2 at h
+  have h1 : x.1 = (wordEmb a b j).1 := by
+    by_contra hc; simp [hc] at h
+  have hj := jimbo_entry_ne_zero q _ _ (right_ne_zero_of_mul h)
+  obtain ⟨x1, x2, x3⟩ := x
+  fin_cases j <;> simp only [wordEmb, Prod.mk.injEq] at hj h1 ⊢ <;>
+    rcases hj with ⟨rfl, rfl⟩ | ⟨rfl, rfl⟩ <;> subst h1 <;>
+    first
+    | exact ⟨0, rfl⟩ | exact ⟨1, rfl⟩ | exact ⟨2, rfl⟩
+
+/-- **`σ₁` on the weight block is `blockS1`** with the Jimbo coefficients. -/
+theorem sigma1_block (q : K) {a b : Fin n} (hab : a ≠ b) :
+    (sigma1 n q).submatrix (wordEmb a b) (wordEmb a b) = blockS1 q (jc q a b) (jc q b a) := by
+  have hba : b ≠ a := Ne.symm hab
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [sigma1, wordEmb, jimbo, blockS1, jc, hab, hba]
+
+/-- **`σ₂` on the weight block is `blockS2`** with the Jimbo coefficients. -/
+theorem sigma2_block (q : K) {a b : Fin n} (hab : a ≠ b) :
+    (sigma2 n q).submatrix (wordEmb a b) (wordEmb a b) = blockS2 q (jc q a b) (jc q b a) := by
+  have hba : b ≠ a := Ne.symm hab
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [sigma2, wordEmb, jimbo, blockS2, jc, hab, hba]
+
+/-- **Bridge.** The weighted Murphy trace over the weight space of `{a, a, b}`, computed with
+the repo's Jimbo braiding on the full three-strand space, is `murphyTrace` with the Jimbo
+coefficients. -/
+theorem weightSpaceTrace_eq (q : K) (w : Fin n → K) {a b : Fin n} (hab : a ≠ b) :
+    weightSpaceTrace q w a b = murphyTrace q (jc q a b) (jc q b a) (w a) (w b) := by
+  have he := wordEmb_injective hab
+  have c1 := sigma1_closed q a b
+  have c2 := sigma2_closed q a b
+  have hL2 : (murphyL2 n q).submatrix (wordEmb a b) (wordEmb a b) =
+      blockS1 q (jc q a b) (jc q b a) * blockS1 q (jc q a b) (jc q b a) := by
+    rw [murphyL2, submatrix_mul_of_closed he _ _ c1, sigma1_block q hab]
+  have hL3 : (murphyL3 n q).submatrix (wordEmb a b) (wordEmb a b) =
+      blockS2 q (jc q a b) (jc q b a) * blockS1 q (jc q a b) (jc q b a) *
+        blockS1 q (jc q a b) (jc q b a) * blockS2 q (jc q a b) (jc q b a) := by
+    rw [murphyL3, submatrix_mul_of_closed he _ _ c2,
+      submatrix_mul_of_closed he _ _ c1, submatrix_mul_of_closed he _ _ c1,
+      sigma1_block q hab, sigma2_block q hab]
+  have e2 : ∀ i, murphyL2 n q (wordEmb a b i) (wordEmb a b i) =
+      (blockS1 q (jc q a b) (jc q b a) * blockS1 q (jc q a b) (jc q b a)) i i := by
+    intro i; rw [← hL2]; rfl
+  have e3 : ∀ i, murphyL3 n q (wordEmb a b i) (wordEmb a b i) =
+      (blockS2 q (jc q a b) (jc q b a) * blockS1 q (jc q a b) (jc q b a) *
+        blockS1 q (jc q a b) (jc q b a) * blockS2 q (jc q a b) (jc q b a)) i i := by
+    intro i; rw [← hL3]; rfl
+  simp only [weightSpaceTrace, weightedMurphyDiag, Fin.sum_univ_three, e2, e3]
+  simp only [murphyTrace, wordEmb]
+  simp
+
+/-- **Coleman–Glashow for the repo's Jimbo braiding, for every weight.** For three distinct
+flavours `u d s : Fin n` and any weight `w`, with `T a b` the weighted Murphy trace over the
+weight space of `{a, a, b}`:
+`D_Σ = T(d,s) − T(u,s)` equals `D_N + D_Ξ = (T(d,u) − T(u,d)) + (T(s,d) − T(s,u))`. -/
+theorem coleman_glashow_weightSpace (q : K) (w : Fin n → K) {u d s : Fin n}
+    (hud : u ≠ d) (hus : u ≠ s) (hds : d ≠ s) :
+    weightSpaceTrace q w d s - weightSpaceTrace q w u s =
+      (weightSpaceTrace q w d u - weightSpaceTrace q w u d) +
+        (weightSpaceTrace q w s d - weightSpaceTrace q w s u) := by
+  rw [weightSpaceTrace_eq q w hds, weightSpaceTrace_eq q w hus, weightSpaceTrace_eq q w hud.symm,
+    weightSpaceTrace_eq q w hud, weightSpaceTrace_eq q w hds.symm,
+    weightSpaceTrace_eq q w hus.symm]
+  have := coleman_glashow_jimbo (fun i : Fin n => i.val) q (q - q⁻¹) u d s w
+  simp only [jc_eq_jimboCoeff]
+  simpa [splitSigma, splitN, splitXi] using this
+
+end Bridge
 
 end QOU.BraidsAndKnots.IsospinMurphyOctetThreeStrand
