@@ -129,7 +129,7 @@ namespace QOU.Interactions
 
 open QOU.Archimedean
 
-/-! ## §1  Product reductions for Hopf links -/
+/-! ## §1  Product reductions for L₊ = σ₀σ₁ and L₋ = σ₁σ₀ -/
 
 /-- L₊² = (σ₀σ₁)² reduces to L₋ + HA·e⁻ in H₃(q).
 
@@ -141,12 +141,12 @@ open QOU.Archimedean
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-theorem hopfPlus_sq :
-    hopfPlus * hopfPlus =
-    hopfMinus + HA_t • (stdRep3_gen0 * stdRep3_gen1 * stdRep3_gen0) := by
+theorem lPlus_sq :
+    lPlus * lPlus =
+    lMinus + HA_t • (stdRep3_gen0 * stdRep3_gen1 * stdRep3_gen0) := by
   ext i j : 1
   fin_cases i <;> fin_cases j <;>
-    simp [hopfPlus, hopfMinus, stdRep3_gen0, stdRep3_gen1,
+    simp [lPlus, lMinus, stdRep3_gen0, stdRep3_gen1,
           Matrix.mul_apply, Matrix.smul_apply, Matrix.add_apply,
           Fin.sum_univ_two, Matrix.of_apply, smul_eq_mul] <;>
     simp only [HA_t, q_from_t, q_inv_from_t, t, t_inv, smul_eq_mul,
@@ -164,13 +164,13 @@ theorem hopfPlus_sq :
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-theorem hopfPlus_mul_hopfMinus :
-    hopfPlus * hopfMinus =
+theorem lPlus_mul_lMinus :
+    lPlus * lMinus =
     1 + HA_t • stdRep3_gen0 +
     HA_t • (stdRep3_gen0 * stdRep3_gen1 * stdRep3_gen0) := by
   ext i j : 1
   fin_cases i <;> fin_cases j <;>
-    simp [hopfPlus, hopfMinus, stdRep3_gen0, stdRep3_gen1,
+    simp [lPlus, lMinus, stdRep3_gen0, stdRep3_gen1,
           Matrix.mul_apply, Matrix.smul_apply, Matrix.add_apply,
           Matrix.one_apply, Fin.sum_univ_two, Matrix.of_apply, smul_eq_mul] <;>
     simp only [HA_t, q_from_t, q_inv_from_t, t, t_inv, smul_eq_mul,
@@ -202,15 +202,15 @@ theorem gram_indefinite_witness :
     -- In the 2×2 standard rep, L₊² + L₋² ≠ 2·L₊·L₋
     -- (which is equivalent to the Gram form being indefinite
     --  on the L₊ - L₋ direction).
-    hopfPlus * hopfPlus + hopfMinus * hopfMinus ≠
-    2 • (hopfPlus * hopfMinus) := by
+    lPlus * lPlus + lMinus * lMinus ≠
+    2 • (lPlus * lMinus) := by
   intro h
   -- The two matrices differ at entry (0,0): the LHS is `-1 = -T 0`, the RHS is
   -- `2·q² = 2•T 4`.  Fold both entries to `T`-monomial combinations, then read
   -- off the degree-`4` coefficient: `0` on the left (`(-T 0)` has no `T 4` term),
   -- `2` on the right (`2 • T 4`).
   have h00 := congr_fun (congr_fun h 0) 0
-  simp only [Matrix.add_apply, Matrix.smul_apply, hopfPlus, hopfMinus,
+  simp only [Matrix.add_apply, Matrix.smul_apply, lPlus, lMinus,
              stdRep3_gen0, stdRep3_gen1, Matrix.mul_apply, Fin.sum_univ_two,
              Matrix.of_apply, Matrix.cons_val_zero, Matrix.cons_val_one,
              Matrix.head_cons, smul_eq_mul,

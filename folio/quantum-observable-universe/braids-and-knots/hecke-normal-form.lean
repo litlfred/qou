@@ -12,8 +12,8 @@ inductive NFBasis3 where
   | identity  : NFBasis3  -- γ = 1
   | gen0      : NFBasis3  -- σ₀
   | gen1      : NFBasis3  -- σ₁
-  | hopfPlus  : NFBasis3  -- L₊ = σ₀σ₁
-  | hopfMinus : NFBasis3  -- L₋ = σ₁σ₀
+  | lPlus     : NFBasis3  -- L₊ = σ₀σ₁ (closure in B₃: unknot)
+  | lMinus    : NFBasis3  -- L₋ = σ₁σ₀ (closure in B₃: unknot)
   | trefoil   : NFBasis3  -- e⁻ = σ₀σ₁σ₀ (closure: Hopf link, ruling 2026-11-21; name predates it)
   deriving DecidableEq, Repr
 
