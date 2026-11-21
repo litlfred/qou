@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-11-15T19:58:54.987883+00:00",
-  "commitSha": "6109ea1793d3bd7dfe1aef4e1c2365f29a6074f2",
+  "computedAt": "2026-11-21T17:23:53.932902+00:00",
+  "commitSha": "50625d18d91ff56f19c2dcc280ed542ef8ba279c",
   "assertions": [
     {
       "name": "quotient_correction_is_not_negligible",
@@ -11,16 +11,16 @@
       "passed": true,
       "tolerance": 0,
       "unit": "boolean",
-      "source": "At the largest measured separation (alpha = 0.443227) the derived r^2 term is 14.46% of the kernel at the smallest corpus volume and 3.542% at the largest, against a noise floor of 2.656%. So the exact kernel is NOT indistinguishable from the one-term model on this data -- this is the first thing computing it would buy, and it grows with r, so it enters as a systematic trend."
+      "source": "At the largest measured separation (alpha = 0.422523) the derived r^2 term is 12.23% of the kernel at the smallest corpus volume and 2.996% at the largest, against a noise floor of 2.656%. So the exact kernel is NOT indistinguishable from the one-term model on this data -- this is the first thing computing it would buy, and it grows with r, so it enters as a systematic trend."
     },
     {
       "name": "correction_exceeds_coths_own_unresolvable_cubic",
-      "computed": "104.755",
+      "computed": "109.888",
       "expected": "1",
       "passed": true,
       "tolerance": "1e9",
       "unit": "ratio (recorded, not gated)",
-      "source": "The quotient r^2 term reaches 14.46% where coth's own r^3/45 term reaches 0.138%, a ratio of 104.75. Recorded with a wide tolerance because the ORDERING is the content, not the value: the correction the corpus never modelled is larger than the one it already declared unresolvable."
+      "source": "The quotient r^2 term reaches 12.23% where coth's own r^3/45 term reaches 0.1113%, a ratio of 109.89. Recorded with a wide tolerance because the ORDERING is the content, not the value: the correction the corpus never modelled is larger than the one it already declared unresolvable."
     },
     {
       "name": "fitter_selftest_refit_beats_frozen",
@@ -38,15 +38,15 @@
       "passed": true,
       "tolerance": 0,
       "unit": "boolean",
-      "source": "The derived term is NOT small -- it reaches 14.46% of the kernel, 5.44x the noise floor, against only 0.138% for coth's own r^3/45 term which the corpus already calls unresolvable. Yet at MATCHED degrees of freedom every corpus volume lands within 15% of the uncorrected 2.755%: 2.7% to 2.718%, bought by an exponent shift of up to 0.0405. So the exact kernel would change the KERNEL materially and the FIT hardly at all -- the same kernel/exponent degeneracy the companion probe measures, one order down."
+      "source": "The derived term is NOT small -- it reaches 12.23% of the kernel, 4.6x the noise floor, against only 0.111% for coth's own r^3/45 term which the corpus already calls unresolvable. Yet at MATCHED degrees of freedom every corpus volume lands within 15% of the uncorrected 2.751%: 2.682% to 2.707%, bought by an exponent shift of up to 0.03249. So the exact kernel would change the KERNEL materially and the FIT hardly at all -- the same kernel/exponent degeneracy the companion probe measures, one order down."
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "em-linking-quotient-kernel-correction",
   "scriptFile": "em_linking_quotient_kernel_correction_probe.py",
-  "scriptHash": "0a35c5f83153",
-  "scriptCommitSha": "547b78208f6bb667ec8b3580f16390a74dbb9ce4",
+  "scriptHash": "d09673b8d5dc",
+  "scriptCommitSha": "ce8ec9330f916d774e52478cbc484caf1422bf42",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -61,8 +61,8 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "cvxpy": "absent",
-    "pyhecke_native_build": "24ca776b0ad05497"
+    "cvxpy": "1.9.3",
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -79,67 +79,67 @@
       "condition": "Valid for r < inj(M). A cusped quotient has arbitrarily small injectivity radius in the cusp and the corpus holds no per-isotope geometry to check this. Everything here is conditional on it."
     },
     "implied_separations": {
-      "alpha_min": "0.2419449588265028653839734189137077150584113385941792041794757156762866",
-      "alpha_max": "0.4432265902557620761294102424662209736010422632438528425582235024616594",
+      "alpha_min": "0.2285328837543595103096865310295717857534272344089011657152439409996068",
+      "alpha_max": "0.4225234198712749824743373336520514885844048399022647126349699103252317",
       "kernel": "coth(alpha) - 1 (the O2-admissible boundary member)"
     },
-    "noise_floor_2param_power_law": "0.02656353256896967912426513775362961776510193512573902518246827129159277",
+    "noise_floor_2param_power_law": "0.02656352622026198237288420439323909984377089880404500039035290076516279",
     "uncorrected_one_term_baseline": {
-      "exponent": "0.1869745916470726114157992108405998678776593564112764376373706219795123",
-      "scale": "0.2050131933190159889423510280140107772431136274422276229342534025340673",
-      "kappa_rms": "0.02755252626126305655757938381714551891007756090222671155206679404349317"
+      "exponent": "0.1899168994110147972205956476966309428942248528119804874285946911867079",
+      "scale": "0.1930528848770516701495013512083605881815809379761565629793066749732175",
+      "kappa_rms": "0.02750997692898632810155041785974906676387549183720910029779285409333088"
     },
     "correction_size_relative_to_kernel": {
       "L6a4_3He (Borromean)": {
         "vol": "7.3277247534",
-        "rel_at_alpha_min": "0.005206470328206247482193713126330811943666671174608686474368160057780259",
-        "rel_at_alpha_max": "0.04004841114670852425002946550904416944073659195057213180065335002260356",
-        "ratio_to_noise_floor_at_max": "1.507646283216535446243606915678491730192088577471430617037528162546778"
+        "rel_at_alpha_min": "0.004324739099128850267967161697575982516565795319494192796279106840524683",
+        "rel_at_alpha_max": "0.03388344208822384236710831319901276769831949746016982481511260953226088",
+        "ratio_to_noise_floor_at_max": "1.275562657128646357683429184869448171769372252696467491049255765850861"
       },
       "knot_8_11_3H": {
         "vol": "8.2863168178",
-        "rel_at_alpha_min": "0.00460416640356851670361887444193019833979423792684596494536983730245825",
-        "rel_at_alpha_max": "0.03541546143440730126915677692880434678192752495862246724918542219116774",
-        "ratio_to_noise_floor_at_max": "1.333236132749077442790289524152583313902478193751738271097188761587499"
+        "rel_at_alpha_min": "0.003824437134796525216763018885699151123273480676981539261276490872257557",
+        "rel_at_alpha_max": "0.02996367901199719396921551248864751055712642282803917532169961526836189",
+        "ratio_to_noise_floor_at_max": "1.128000806953922461623938213665417657267022404056531599020419054158003"
       },
       "figure_eight_4_1": {
         "vol": "2.029883212819307250042405108549040571883378615060599584034978213553195",
-        "rel_at_alpha_min": "0.01879496379934625115304828980455300340564355212564951524973202863511849",
-        "rel_at_alpha_max": "0.1445717329158480981380600325686869939661536722367506546665014872195927",
-        "ratio_to_noise_floor_at_max": "5.442488966423474757601593814266980059292287613034184014154655292504606"
+        "rel_at_alpha_min": "0.0156119808019242258879895765690135721868438508592490274794974380108986",
+        "rel_at_alpha_max": "0.1223166612503903544723209930958354350228819650290825352027359196856786",
+        "ratio_to_noise_floor_at_max": "4.60468464300083455799431807775747018321681377888965037521523366193606"
       }
     },
     "coth_own_cubic_term_for_comparison": {
-      "rel_at_alpha_max": "0.001380095431323374795031207063697801339610343813296492299033683690145097",
+      "rel_at_alpha_max": "0.001113105500629051731080535315754184707543961474969254234270222696869947",
       "note": "The corpus already reports this term as unresolvable (0.97% against 3.5% scatter). The quotient correction is compared against it."
     },
     "parameter_free_test": {
       "L6a4_3He (Borromean)": {
         "vol": "7.3277247534",
-        "scale": "0.2045341107871720116618075801749271137026239067055393586005830903790087",
-        "exponent": "0.1936820991253644314868804664723032069970845481049562682215743440233236",
-        "kappa_rms": "0.02700441047994782784016890873391808580570724371769574430708465820935274",
-        "kappa_rms_without_refitting": "0.03938372723254498317316379227230137838443401585848939571546322066010071",
-        "delta_vs_uncorrected": "-0.0005481157813152287174104750832274331043703171845309672449821358341404291",
-        "exponent_shift_vs_uncorrected": "0.006707507478291820071081255631703339119425191693679830584203722043811293"
+        "scale": "0.1928923615160349854227405247813411078717201166180758017492711370262391",
+        "exponent": "0.1953189504373177842565597667638483965014577259475218658892128279883382",
+        "kappa_rms": "0.02702902388686235163116181641738632760826093408970060497405816957824906",
+        "kappa_rms_without_refitting": "0.03633742732778669022251966493749743944457536202771946190334289525780616",
+        "delta_vs_uncorrected": "-0.000480953042123976470388601442362739155614557747508495323734684515081817",
+        "exponent_shift_vs_uncorrected": "0.005402051026302987035964119067217453607232873135541378460618136801630245"
       },
       "knot_8_11_3H": {
         "vol": "8.2863168178",
-        "scale": "0.2048368513119533527696793002915451895043731778425655976676384839650146",
-        "exponent": "0.1925457725947521865889212827988338192419825072886297376093294460641399",
-        "kappa_rms": "0.0270495462443738030069235326139877500104081941033237056936662147799031",
-        "kappa_rms_without_refitting": "0.03712019343287737385940996275494246168932772044072765760003585101340525",
-        "delta_vs_uncorrected": "-0.0005029800168892535506558512031577688996693667989030058584005792635900658",
-        "exponent_shift_vs_uncorrected": "0.005571180947679575173122071958233951364323150877353299971958824084627622"
+        "scale": "0.1930574927113702623906705539358600583090379008746355685131195335276968",
+        "exponent": "0.1944734693877551020408163265306122448979591836734693877551020408163265",
+        "kappa_rms": "0.02706840362707105874694925004138359098398785953748357581281253331485882",
+        "kappa_rms_without_refitting": "0.03459954668314778318968877808079023654638999969074570481793762973235193",
+        "delta_vs_uncorrected": "-0.0004415733019152693546011678183654757798876322997255244849803207784720587",
+        "exponent_shift_vs_uncorrected": "0.004556569976740304820220678833981302003734330861488900326507349629618584"
       },
       "figure_eight_4_1": {
         "vol": "2.029883212819307250042405108549040571883378615060599584034978213553195",
-        "scale": "0.1947363265306122448979591836734693877551020408163265306122448979591837",
-        "exponent": "0.2274742857142857142857142857142857142857142857142857142857142857142857",
-        "kappa_rms": "0.02717681951772564771182563054618870450348622940384093312752990297883582",
-        "kappa_rms_without_refitting": "0.1054938826378397333676926561938624648888022761531676173651810794992319",
-        "delta_vs_uncorrected": "-0.0003757067435374088457537532709568144065913314983857784245368910646573484",
-        "exponent_shift_vs_uncorrected": "0.0404996940672131028699150748736858464080549293030092766483436637347734"
+        "scale": "0.1855853061224489795918367346938775510204081632653061224489795918367347",
+        "exponent": "0.2224081632653061224489795918367346938775510204081632653061224489795918",
+        "kappa_rms": "0.02681796281306138390721539906559531408097185634287974911308747547349594",
+        "kappa_rms_without_refitting": "0.09022385300693577656332026025983577839498900360787210267067001352176447",
+        "delta_vs_uncorrected": "-0.0006920141159249441943350187941537526829036354943293511847053786198349323",
+        "exponent_shift_vs_uncorrected": "0.03249126385429132522838394414010375098332616759618277787752775779288389"
       }
     },
     "scope": {
@@ -150,11 +150,11 @@
     "upstream_witness_hashes": [
       {
         "path": "em-linking-mirror-series.witness.json",
-        "sha256": "23ff1a347a0b112fea54e7712a47b0e8dd702d52abd577615f3c4e0421ac7b02",
-        "size_bytes": 10833,
-        "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
-        "scriptCommitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
-        "computedAt": "2026-08-24T14:40:43.555797+00:00"
+        "sha256": "1c210348da5cae7ec9a3ec2fd0a68a03e72d6c56a86b589f10461aaed835fe0c",
+        "size_bytes": 11561,
+        "commitSha": "50625d18d91ff56f19c2dcc280ed542ef8ba279c",
+        "scriptCommitSha": "183e8fd1d28f0eb84452f9bb7503cb3032c4046c",
+        "computedAt": "2026-11-21T17:14:14.539137+00:00"
       },
       {
         "path": "binding-link-volumes.witness.json",
@@ -166,6 +166,7 @@
       }
     ]
   },
-  "q0Anchor": "ambiguous",
-  "q0AnchorReason": "q0 enters only through upstream data: kappa(A) is read from em-linking-mirror-series.witness.json, whose producer divides by a TYPED per-pair Coulomb unit tanh(ln q0)*B_pp = 0.2376702253 with no recorded pin (the proton-pinned mirror-pair-coulomb-sign-correction witness it cites now carries 0.2212723003), and that upstream witness is itself unstamped; the pin of the series this probe fits is therefore undetermined"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "q0 enters only through upstream data: kappa(A) is read from em-linking-mirror-series.witness.json, which since 2026-11-21 derives its per-pair Coulomb unit from the proton-pinned mirror-pair-coulomb-sign-correction witness and is stamped proton"
 }

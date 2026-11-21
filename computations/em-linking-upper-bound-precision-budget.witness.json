@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T19:59:31.346277+00:00",
-  "commitSha": "bcc83be3dd9f64aac41dd75556e0de646969166b",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T17:16:14.797935+00:00",
+  "commitSha": "50625d18d91ff56f19c2dcc280ed542ef8ba279c",
   "assertions": [
     {
       "name": "split_is_at_most_1_6_percent_of_the_energy_at_A63",
@@ -33,7 +33,7 @@
     },
     {
       "name": "no_ropelength_or_ideal_knot_source_in_the_repo",
-      "computed": "3",
+      "computed": "36",
       "expected": "0",
       "passed": false,
       "tolerance": "0",
@@ -45,8 +45,8 @@
   "durationMs": 0,
   "computation": "em-linking-upper-bound-precision-budget",
   "scriptFile": "em_linking_upper_bound_precision_budget.py",
-  "scriptHash": "f963c4c6e5dd",
-  "scriptCommitSha": "d98c675e77f92d294d2e8a4d1d0477925d210f3e",
+  "scriptHash": "ed13ecc66913",
+  "scriptCommitSha": "0d4e4a005e3e7a4d358ab3816a8825ea69dac169",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,14 +54,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "1.9.3",
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -225,14 +226,31 @@
       "roots": [
         "docs",
         "computations",
-        "content",
+        "folio",
         "library"
       ],
-      "file_hits": 3,
+      "file_hits": 36,
       "paths": [
+        "computations/probes/bring_route2/core_sameloop_probe.py",
+        "computations/probes/bring_route2/fibres_probe.py",
+        "computations/probes/bring_route2/option1_ropelength_probe.py",
+        "computations/probes/bring_route2/preregistration-fibres.md",
+        "computations/probes/bring_route2/preregistration-option1.md",
+        "computations/probes/bring_route2/preregistration-pure.md",
+        "computations/probes/bring_route2/preregistration-sameloop.md",
+        "computations/probes/bring_route2/results_option1.md",
+        "computations/probes/bring_route2/results_sameloop.md",
+        "computations/probes/bring_route2/rules11_probe.py",
+        "computations/probes/bring_route2/sameloop_probe.py",
         "computations/probes/the_torsion_half_is_not_an_invariant_probe.py",
         "computations/probes/the_torsion_half_is_not_an_invariant_probe.witness.json",
-        "content/quantum-observable-universe/mass-theory/frenet-framing-is-not-an-invariant.md"
+        "folio/quantum-observable-universe/mass-theory/frenet-framing-is-not-an-invariant.md",
+        "library/1-s20-s0166864101002632-main/blocks/rem-sec-002-03.md",
+        "library/1-s20-s0166864101002632-main/candidates.json",
+        "library/1-s20-s0166864101002632-main/sections/sec-000-1-introduction.md",
+        "library/1-s20-s0166864101002632-main/sections/sec-001-2-the-lemmas.md",
+        "library/1-s20-s0166864101002632-main/sections/sec-002-3-thick-knots-have-bounded-energy.md",
+        "library/1-s20-s0166864101002632-main/sections/sec-003-references.md"
       ],
       "why_this_is_here": "the cheaper-looking answer to 'the route needs an upper bound' is 'go acquire one'. Recorded as a LIVE scan so a future acquisition flips this assertion; but note the precision argument above is independent of it, so acquiring the source would not rescue the route"
     },

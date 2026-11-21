@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-09T13:55:21.888623+00:00",
-  "commitSha": "f884620c6840951a00564d8681c30453c68160d2",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-21T17:14:35.450093+00:00",
+  "commitSha": "50625d18d91ff56f19c2dcc280ed542ef8ba279c",
   "assertions": [
     {
       "name": "transforms_scored",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 3,
   "computation": "em-linking-coth-separation",
   "scriptFile": "em_linking_coth_separation_probe.py",
   "scriptHash": "28f4fd93cb29",
-  "scriptCommitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
+  "scriptCommitSha": "0d4e4a005e3e7a4d358ab3816a8825ea69dac169",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,10 +36,21 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "1.9.3",
+    "pyhecke_native_build": "8094096a28948d48"
+  },
+  "invocation": {
+    "argv": [
+      "computations/em_linking_coth_separation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/em_linking_coth_separation_probe.py"
   },
   "description": "EXPLORATORY geometry-first test of the open two-like-charge EM-linking invariant (bean qou-zp6a). Hypothesis H_coth: the missing per-pair factor is the H^3 Coulomb kernel at the pair separation, kappa(A) = coth(alpha(A)). Inverts the existing kappa(A) data (NO fitting; coth is forced by the Green's function) and tests the implied separations against the independent nuclear-radius expectation alpha ~ A^(1/3), scored against NULL compressive transforms to control for the automatic variance reduction of arccoth. Nothing wired; four data points is a direction indicator, not evidence.",
   "auditOnly": "docs/audits/2026-08-01-em-linking-reads-round1.md",
@@ -48,105 +59,105 @@
       {
         "A": 3,
         "pair": "3H/3He",
-        "kappa": "3.2135073"
+        "kappa": "3.4516516"
       },
       {
         "A": 7,
         "pair": "7Li/7Be",
-        "kappa": "2.3058673"
+        "kappa": "2.4767492"
       },
       {
         "A": 11,
         "pair": "11B/11C",
-        "kappa": "2.3268956"
+        "kappa": "2.4993359"
       },
       {
         "A": 13,
         "pair": "13C/13N",
-        "kappa": "2.1057469"
+        "kappa": "2.2617984"
       }
     ],
     "implied_separations_alpha": {
-      "3": "0.32185856",
-      "7": "0.46441572",
-      "11": "0.45959877",
-      "13": "0.5163666"
+      "3": "0.29825663",
+      "7": "0.42812727",
+      "11": "0.42377547",
+      "13": "0.47487035"
     },
     "transform_comparison": {
       "H_coth: arccoth(kappa)": {
         "values_by_A": {
-          "3": "0.32185856",
-          "7": "0.46441572",
-          "11": "0.45959877",
-          "13": "0.5163666"
+          "3": "0.29825663",
+          "7": "0.42812727",
+          "11": "0.42377547",
+          "13": "0.47487035"
         },
         "ratio_to_A_cbrt": [
-          "0.22316426",
-          "0.24277701",
-          "0.20665597",
-          "0.21960574"
+          "0.20679959",
+          "0.22380694",
+          "0.19054823",
+          "0.20195779"
         ],
-        "coefficient_mean": "0.22305075",
-        "rel_scatter_about_A_cbrt": "0.058014604",
-        "rel_scatter_raw": "0.16355541"
+        "coefficient_mean": "0.20577814",
+        "rel_scatter_about_A_cbrt": "0.058144197",
+        "rel_scatter_raw": "0.16120939"
       },
       "null: 1/kappa": {
         "values_by_A": {
-          "3": "0.31118647",
-          "7": "0.4336763",
-          "11": "0.42975714",
-          "13": "0.47489088"
+          "3": "0.28971638",
+          "7": "0.40375505",
+          "11": "0.40010628",
+          "13": "0.44212605"
         },
         "ratio_to_A_cbrt": [
-          "0.21576465",
-          "0.22670774",
-          "0.19323785",
-          "0.20196652"
+          "0.20087812",
+          "0.21106617",
+          "0.17990552",
+          "0.18803195"
         ],
-        "coefficient_mean": "0.20941919",
-        "rel_scatter_about_A_cbrt": "0.061176274",
-        "rel_scatter_raw": "0.14801821"
+        "coefficient_mean": "0.19497044",
+        "rel_scatter_about_A_cbrt": "0.061176295",
+        "rel_scatter_raw": "0.14801816"
       },
       "null: ln(kappa)": {
         "values_by_A": {
-          "3": "1.167363",
-          "7": "0.83545687",
-          "11": "0.84453502",
-          "13": "0.74467023"
+          "3": "1.2388528",
+          "7": "0.90694689",
+          "11": "0.91602506",
+          "13": "0.81616025"
         },
         "ratio_to_A_cbrt": [
-          "0.80940427",
-          "0.43674173",
-          "0.37974037",
-          "0.31670108"
+          "0.85897258",
+          "0.47411371",
+          "0.41188546",
+          "0.34710509"
         ],
-        "coefficient_mean": "0.48564686",
-        "rel_scatter_about_A_cbrt": "0.39469619",
-        "rel_scatter_raw": "0.17855188"
+        "coefficient_mean": "0.52301921",
+        "rel_scatter_about_A_cbrt": "0.38066195",
+        "rel_scatter_raw": "0.16538552"
       },
       "null: kappa (untransformed)": {
         "values_by_A": {
-          "3": "3.2135073",
-          "7": "2.3058673",
-          "11": "2.3268956",
-          "13": "2.1057469"
+          "3": "3.4516516",
+          "7": "2.4767492",
+          "11": "2.4993359",
+          "13": "2.2617984"
         },
         "ratio_to_A_cbrt": [
-          "2.2281215",
-          "1.2054105",
-          "1.0462754",
-          "0.89555388"
+          "2.3932416",
+          "1.2947404",
+          "1.1238122",
+          "0.96192108"
         ],
-        "coefficient_mean": "1.3438403",
-        "rel_scatter_about_A_cbrt": "0.38856117",
-        "rel_scatter_raw": "0.17189264"
+        "coefficient_mean": "1.4434288",
+        "rel_scatter_about_A_cbrt": "0.3885611",
+        "rel_scatter_raw": "0.17189257"
       }
     },
     "ranking_best_first": [
       "H_coth: arccoth(kappa)",
       "null: 1/kappa",
-      "null: kappa (untransformed)",
-      "null: ln(kappa)"
+      "null: ln(kappa)",
+      "null: kappa (untransformed)"
     ],
     "monotonicity": {
       "strictly_monotone_increasing": false,
@@ -154,21 +165,21 @@
       "note": "A monotone-increasing alpha(A) is REQUIRED by H_coth, since coth is decreasing: kappa falls with A only if the pair separation grows with A."
     },
     "discrimination": {
-      "H_coth_vs_1_over_kappa_scatter_gap": "0.00316167",
+      "H_coth_vs_1_over_kappa_scatter_gap": "0.003032098",
       "indistinguishable_on_present_data": true,
       "why": "arccoth(k) = 1/k + 1/(3k^3) + ... , so on the observed range k in [2.1, 3.2] the two transforms agree to a few percent. The A <= 13 data therefore CANNOT select the hyperbolic kernel over a generic reciprocal law.",
       "diverging_forecast": {
         "A=27": {
-          "H_coth_kappa": "1.71109",
-          "null_1_over_kappa_kappa": "1.5917"
+          "H_coth_kappa": "1.8206",
+          "null_1_over_kappa_kappa": "1.70966"
         },
         "A=41": {
-          "H_coth_kappa": "1.54698",
-          "null_1_over_kappa_kappa": "1.38481"
+          "H_coth_kappa": "1.63825",
+          "null_1_over_kappa_kappa": "1.48743"
         },
         "A=57": {
-          "H_coth_kappa": "1.43794",
-          "null_1_over_kappa_kappa": "1.24077"
+          "H_coth_kappa": "1.51629",
+          "null_1_over_kappa_kappa": "1.33272"
         }
       },
       "discriminating_test": "The two hypotheses diverge at large A and in OPPOSITE directions: H_coth has kappa -> 1 (the derived per-pair unit becomes correct in heavy nuclei), while the 1/kappa power law has kappa -> 0 (the derived unit overshoots). Extending the kappa(A) mirror-pair table to A ~ 27-57 separates them decisively and requires no new theory, only more AME mirror pairs."
@@ -178,11 +189,11 @@
     "upstream_witness_hashes": [
       {
         "path": "em-linking-invariant-scoping.witness.json",
-        "sha256": "0567b346a50cd6862458b1b044e79a4d422011b518a95af608c9c883f7f18034",
-        "size_bytes": 3714,
-        "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
-        "scriptCommitSha": "unknown",
-        "computedAt": "2026-07-18T19:19:17.531763+00:00"
+        "sha256": "64d4a07e1b05d7faf7e2e58f6df9e6d53cbcfa72d16b322e9f7e0361dfa3bfd2",
+        "size_bytes": 3910,
+        "commitSha": "50625d18d91ff56f19c2dcc280ed542ef8ba279c",
+        "scriptCommitSha": "0d4e4a005e3e7a4d358ab3816a8825ea69dac169",
+        "computedAt": "2026-11-21T17:14:14.231562+00:00"
       }
     ]
   }

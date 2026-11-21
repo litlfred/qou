@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T20:57:58.956371+00:00",
-  "commitSha": "340c20508cea6ebcced7be10417b964850749996",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T17:14:36.410039+00:00",
+  "commitSha": "50625d18d91ff56f19c2dcc280ed542ef8ba279c",
   "assertions": [
     {
       "name": "corpus_kappa_decline_reproduced",
@@ -24,7 +24,7 @@
     },
     {
       "name": "kappa_divides_out_the_pair_count",
-      "computed": "5.042e-8",
+      "computed": "5.293e-8",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-6",
@@ -42,7 +42,7 @@
     },
     {
       "name": "required_flux_growth_is_opposite_in_sign_to_the_recorded_decline",
-      "computed": "9.4066228",
+      "computed": "9.406623",
       "expected": "9.4066226",
       "passed": true,
       "tolerance": "1e-6",
@@ -54,8 +54,8 @@
   "durationMs": 0,
   "computation": "em-linking-fh-mirror-split-charge-blindness",
   "scriptFile": "em_linking_fh_mirror_split_charge_blindness.py",
-  "scriptHash": "974836a1e1ff",
-  "scriptCommitSha": "0eaf1984d5ec954406ca7f68b05bab48d3653c67",
+  "scriptHash": "e417feed254a",
+  "scriptCommitSha": "9d5eec65c07afe8d49e71ad81964c6bbff9efa03",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -63,14 +63,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "1.9.3",
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -90,8 +91,8 @@
     },
     "kappa_is_a_per_pair_ratio_not_an_energy": {
       "definition": "kappa := split / (n_pairs * u)",
-      "u_constant_to_relative": "5.042e-8",
-      "u_value": "0.2376702203",
+      "u_constant_to_relative": "5.293e-8",
+      "u_value": "0.2212722948",
       "n_pairs_equals_Z_minus_1": true,
       "why_it_matters": "the pp-pair count (Z-1) is already divided out of kappa, so confronting eq. (43) -- a bound on an ENERGY -- with kappa asks it to explain a per-pair ratio. The energy-like observable is the split."
     },
@@ -115,7 +116,7 @@
       "corpus_says": "per-component flux must FALL by 1.4487357 (A=3 -> A=41)",
       "this_probe_says": "the proton-neutron flux DIFFERENCE must GROW by 9.529096 over the same range, 13.62771 over the full ladder",
       "these_are_opposite_in_sign": true,
-      "magnitude_ratio_full_ladder": "9.4066228",
+      "magnitude_ratio_full_ladder": "9.406623",
       "root_cause": "the corpus figure divides the pair count out of the observable before confronting it with a bound on the total energy"
     },
     "required_dphi_relative_to_A3": {
@@ -153,7 +154,7 @@
     },
     "what_would_have_to_be_supplied": {
       "not_one_function": "the obligation is the PAIR (Phi_p, Phi_n), not a single Flux(A); a charge-blind bound cannot produce a charge-driven observable otherwise",
-      "and_the_framework_defines_no_flux": "`Flux` occurs nowhere in content/quantum-observable-universe/lean/ as a quantity. The grep hits are a photon docstring (KnotRegistry.lean:48), meson colour flux tubes (MesonFluxTubeReduction.lean), and the English idiom \"in flux in Mathlib's CoxeterSystem API\" (Tw.lean:56, Defn.lean:114, Quotient.lean:62,136). Measured, not recalled.",
+      "and_the_framework_defines_no_flux": "`Flux` occurs nowhere in folio/quantum-observable-universe/lean/ as a quantity. The grep hits are a photon docstring (KnotRegistry.lean:48), meson colour flux tubes (MesonFluxTubeReduction.lean), and the English idiom \"in flux in Mathlib's CoxeterSystem API\" (Tw.lean:56, Defn.lean:114, Quotient.lean:62,136). Measured, not recalled.",
       "escape_hatches_not_excluded": "a carrier that is NOT vertex-transitive, or an ac that depends on the charge assignment, or an unsaturated bound, all evade this. Each is a further thing to derive, not a thing the sources supply."
     }
   },

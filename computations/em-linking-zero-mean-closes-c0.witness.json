@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-11-15T19:58:55.683988+00:00",
-  "commitSha": "6109ea1793d3bd7dfe1aef4e1c2365f29a6074f2",
+  "computedAt": "2026-11-21T17:23:54.330170+00:00",
+  "commitSha": "50625d18d91ff56f19c2dcc280ed542ef8ba279c",
   "assertions": [
     {
       "name": "prediction_is_insensitive_to_the_one_model_input",
@@ -11,7 +11,7 @@
       "passed": true,
       "tolerance": 0,
       "unit": "boolean",
-      "source": "d ln(p)/d ln(V) = 0.10279, so the assumed fibre volume must be wrong by 2.528x to move p by 10%, and by 1965.0x to reach the imported Euclidean p = 1/3 (which is 2.18x the derived 0.15288). The ball-vs-quotient model error is at most a factor of a few, so it CANNOT bridge that gap — the objection this construction most invites does not reach the conclusion."
+      "source": "d ln(p)/d ln(V) = 0.097916, so the assumed fibre volume must be wrong by 2.647x to move p by 10%, and by 2188.0x to reach the imported Euclidean p = 1/3 (which is 2.123x the derived 0.15698). The ball-vs-quotient model error is at most a factor of a few, so it CANNOT bridge that gap — the objection this construction most invites does not reach the conclusion."
     },
     {
       "name": "closed_form_matches_quadrature",
@@ -47,7 +47,7 @@
       "passed": true,
       "tolerance": "0.05",
       "unit": "relative spread",
-      "source": "L6a4 and 8_11 differ by 13.08% in volume yet give c0 within 2.548% and p within 1.244% of each other."
+      "source": "L6a4 and 8_11 differ by 13.08% in volume yet give c0 within 2.548% and p within 1.184% of each other."
     },
     {
       "name": "survives_round_sixs_own_zero_crossing_falsification",
@@ -56,24 +56,24 @@
       "passed": true,
       "tolerance": 0,
       "unit": "boolean",
-      "source": "For c0 > 1 the kernel changes sign at a finite A_zero; round 6 contradicted 48 of its 140 scanned members because that crossing fell inside A in [3, 63], where every measured kappa is strictly positive. The derived members put it at 9.09e+3, 9.85e+3, 4.4e+3 — sign-changing as O2 demands, with the crossing beyond the heaviest known nuclide (A = 294)."
+      "source": "For c0 > 1 the kernel changes sign at a finite A_zero; round 6 contradicted 48 of its 140 scanned members because that crossing fell inside A in [3, 63], where every measured kappa is strictly positive. The derived members put it at 1.01e+4, 1.1e+4, 4.8e+3 — sign-changing as O2 demands, with the crossing beyond the heaviest known nuclide (A = 294)."
     },
     {
       "name": "reproduces_the_one_measured_scalar",
-      "computed": "0.00585018",
+      "computed": "0.00549807",
       "expected": "0",
       "passed": true,
       "tolerance": "0.05",
       "unit": "relative gap",
-      "source": "s*p for the derived members against the directly measured -dln(kappa)/dln(A) = 0.26049893. It MUST agree by the degeneracy, so this checks the arithmetic and is NOT independent evidence for the kernel."
+      "source": "s*p for the derived members against the directly measured -dln(kappa)/dln(A) = 0.26049892. It MUST agree by the degeneracy, so this checks the arithmetic and is NOT independent evidence for the kernel."
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 3,
   "computation": "em-linking-zero-mean-closes-c0",
   "scriptFile": "em_linking_zero_mean_closes_c0_probe.py",
-  "scriptHash": "b8ed6a1f9938",
-  "scriptCommitSha": "547b78208f6bb667ec8b3580f16390a74dbb9ce4",
+  "scriptHash": "f6271bbcac8b",
+  "scriptCommitSha": "ce8ec9330f916d774e52478cbc484caf1422bf42",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -88,8 +88,8 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "cvxpy": "absent",
-    "pyhecke_native_build": "24ca776b0ad05497"
+    "cvxpy": "1.9.3",
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -143,7 +143,7 @@
       "limit_R_to_infinity": "1.000000000000000000000001033268269998189399941671556379541792823326628",
       "limit_R_to_zero": "1500.000199999998095237841269870624611701244136633671305298292517097192"
     },
-    "measured_scalar": "0.2604989283757977062692501263599057942919181947516129119673661834553306",
+    "measured_scalar": "0.2604989224547539011089220432974235917012742473423925202936528408054927",
     "derived_per_fibre": [
       {
         "fibre": "L6a4 / Borromean (3He)",
@@ -151,15 +151,15 @@
         "ball_radius": "1.110427107581824848426377959369651972341527842058738662901251681939602",
         "c0_derived": "1.569936919559309635325996800354557827086652262742959362554080658388089",
         "admissible_under_O2": true,
-        "p_predicted": "0.1528798507578952698758286252449490624809922636523829467131457574654719",
-        "scale": "0.1869208844947481928036359227270724965915434691876580654769287665296707",
-        "kernel_log_slope_s": "1.697329718721435147184606781637588767474185036415735094768884115467956",
-        "product_s_times_p": "0.2594875140850733623249569881624601008688915075720195496867543269563359",
-        "kappa_rms": "0.02869694394216351161952657397471627730270151792831973445158288816173882",
+        "p_predicted": "0.1569798275530051453361186897300530239664178416014398280630800348576188",
+        "scale": "0.1770563204746987344903317441721408394480989730160061250606053525035239",
+        "kernel_log_slope_s": "1.653404657432688210680145664685595251008239697830444785202781712208705",
+        "product_s_times_p": "0.2595511779991189423404880975139515909343335912316021458219160072070397",
+        "kappa_rms": "0.02857580355556156938187700762266985370910632823624645206490470798512702",
         "alpha_star_sign_change": "0.7530554727023911228024158692105852877245743183338061489077358114439475",
-        "alpha_min_measured": "0.2121823363442069162674730761482811010794349930208633795476555846192997",
-        "alpha_max_measured": "0.3501155939780587871813300214666681019632280149759470225316779317948704",
-        "A_zero": "9087.87624737478451486830202791054773080866270441737708555135835057929",
+        "alpha_min_measured": "0.2018370597479041879611582328292593406019018827048874921801858801557872",
+        "alpha_max_measured": "0.3373528230727807924874859269875376573636064426175167357180386205512728",
+        "A_zero": "10117.47508192285661230469151542578316640594842033736330137765727184324",
         "crossing_inside_measured_range": false
       },
       {
@@ -168,15 +168,15 @@
         "ball_radius": "1.150081082104481527184779493409413073307282262237836646688167453570678",
         "c0_derived": "1.530935682773331625422831367537499386874431023625054665273258451397418",
         "admissible_under_O2": true,
-        "p_predicted": "0.1547821159422062824483996057945407444262942610689602228458917097631193",
-        "scale": "0.1881153916253924736020593573476287964877785163772711987747678314701178",
-        "kernel_log_slope_s": "1.676717766136112528928689759414356903398626320423149846483675921202725",
-        "product_s_times_p": "0.2595259236804368882518729623206493605279213617698727954120456764575998",
-        "kappa_rms": "0.02862409175267525608372962498406714795548684549472789864925314097603173",
+        "p_predicted": "0.1588392327195431882539838315420151479087740741008529394496918720670407",
+        "scale": "0.1781177160127221658335386564360496126714821637788611731941806138699606",
+        "kernel_log_slope_s": "1.634275695922201138771607294638321481319898548532384303496628085691345",
+        "product_s_times_p": "0.2595870975924799053618663365012153247568301653064730995425664561621932",
+        "kappa_rms": "0.02850720399683236349990427979796428501047803647829497702420024007576325",
         "alpha_star_sign_change": "0.7808517296263043695788808155133773138196585738523487646122594152686634",
-        "alpha_min_measured": "0.2139800632772191950934541272883936261818376152921456186571337488860484",
-        "alpha_max_measured": "0.3551698051617913382612653878247864230436947677852768542872172993230296",
-        "A_zero": "9854.651415621101711653122476760697249471532821978030133249174931380954",
+        "alpha_min_measured": "0.2034607256179130074278696449601590961212890073583191717947972522424471",
+        "alpha_max_measured": "0.3420287218386289086116536222880502614679124109000380200053148890567311",
+        "A_zero": "10988.80300028735349421382116940750178208998648502239673983821434488578",
         "crossing_inside_measured_range": false
       },
       {
@@ -185,22 +185,22 @@
         "ball_radius": "0.7561703072264575496585062870467651211325640592589013321635259208525992",
         "c0_derived": "2.134031825831094906311562992080332992409293762838991873931557398692726",
         "admissible_under_O2": true,
-        "p_predicted": "0.1300366848054209642691768019182562498936945993225216280267357304672315",
-        "scale": "0.1707282600656207917752351757741608626258521151987068551577827754219925",
-        "kernel_log_slope_s": "1.991553098872129576590697090008057733958919544750521352348045871273013",
-        "product_s_times_p": "0.2589749625912944874450360851484810721895131310915598252555196938406847",
-        "kappa_rms": "0.02964598194962900042451950136085560922263731432441616552774932554363336",
+        "p_predicted": "0.1344595601620840449677286868062567088644293108186476682580643235585791",
+        "scale": "0.162576677412726367744813045379046426759974734679190714530839980351731",
+        "kernel_log_slope_s": "1.926725631864516686905085598745161535311404335935718961218285289812284",
+        "product_s_times_p": "0.2590666810135163772895193616488730204532281263441372376675757506887893",
+        "kappa_rms": "0.02947912734230931088462597223251862294850065775264874305420573405646232",
         "alpha_star_sign_change": "0.5082705144416166159975938830288781269761732644672071215605179245620521",
-        "alpha_min_measured": "0.1892286339838235475244411516625663464616296974964038937238079994987719",
-        "alpha_max_measured": "0.2907238163578860276037201068161936423970778029264394729600124493867807",
-        "A_zero": "4400.545002187831058172456390021604210276936047649619899710220895319136",
+        "alpha_min_measured": "0.1809794817826802637758088126116989163595957931437524212063648509779317",
+        "alpha_max_measured": "0.2819712001397865961266533166845208300968307582888050771372664651068733",
+        "A_zero": "4804.818861572447925118899520517254167664518294046056232473097315441965",
         "crossing_inside_measured_range": false
       }
     ],
     "robustness_across_the_A3_links": {
       "volume_spread": "0.1308171494781134746872709958249016673552502543155908162799088795807061",
       "c0_spread": "0.02547542475156514006425812281218366228606655520352763597175707353653463",
-      "p_spread": "0.01244287703631717929537228934614109698175407008555453063408145483995744",
+      "p_spread": "0.01184486692030671281803580721407300987023220541903744011037169457449574",
       "reading": "The two A=3 links differ by 13 % in volume and give c0 and p far closer than that, so the prediction does not hinge on which is taken as the fibre."
     },
     "volume_sensitivity": {
@@ -209,44 +209,44 @@
           "volume_factor": "0.25",
           "volume": "1.83193118835",
           "c0": "2.193595184742084358158654975829927107910878837572437516250005349367962",
-          "p": "0.128036887190592976077109708327017314988026015086133406184358649579454"
+          "p": "0.1324714944061047299510020320323528718719042099405865136155644457546031"
         },
         {
           "volume_factor": "0.5",
           "volume": "3.6638623767",
           "c0": "1.83581801678791395222302389767551385114096965010019863128265022414827",
-          "p": "0.1411320059799163943065200077938767235688054699924007526730172906527522"
+          "p": "0.1454418262988734206927440131823529615982398010214513427467589937462595"
         },
         {
           "volume_factor": "1.0",
           "volume": "7.3277247534",
           "c0": "1.569936919559309635325996800354557827086652262742959362554080658388089",
-          "p": "0.1528798507578952698758286252449490624809922636523829467131457574654719"
+          "p": "0.1569798275530051453361186897300530239664178416014398280630800348576188"
         },
         {
           "volume_factor": "2.0",
           "volume": "14.6554495068",
           "c0": "1.37754452877816909427192217555694138224344256225592909522643251181609",
-          "p": "0.1627865572803945151746725909732950892162436430021963594821299466583317"
+          "p": "0.1666357459660745952456371889794370006448531134466054545840015366044226"
         },
         {
           "volume_factor": "4.0",
           "volume": "29.3108990136",
           "c0": "1.242723027567719905967590704911813046840051127507805935620040074187979",
-          "p": "0.1706033412398055268392504286884153860960592277062011613996823551404905"
+          "p": "0.1742058442660217308867333284465371227736789465506844218696403992587282"
         },
         {
           "volume_factor": "10.0",
           "volume": "73.277247534",
           "c0": "1.129459190858910090088507090049452934691552366993183568322124262831599",
-          "p": "0.1778345274359070560956959552144859621278563403596449624572338208849426"
+          "p": "0.1811696919317159469821952266068486286479372424806942149638492702284422"
         }
       ],
-      "dln_p_dln_V": "0.1027899744020228494525133342287842256636324080551963503520864424664907",
-      "volume_error_to_move_p_by_10pct": "2.527504002440686606622836996597824993119151730115280990877021529867514",
+      "dln_p_dln_V": "0.09791559793358103768887345649503881131565182768180981954461806942768364",
+      "volume_error_to_move_p_by_10pct": "2.646905399900635999447134801870719412900130806883158256699965085418392",
       "euclidean_p": "0.3333333333333333333333333333333333333333333333333333333333333333333333",
-      "ratio_euclidean_over_derived": "2.180361451694567351252802328379043340131210771234735147379086543104588",
-      "volume_error_needed_to_reach_euclidean_p": "1965.169145272692796626747956473711356095829409399940476380449937488703",
+      "ratio_euclidean_over_derived": "2.123415081602006527393544562767416574613583792127232683419700936793631",
+      "volume_error_needed_to_reach_euclidean_p": "2187.597025071520414522429892943378395822095534731347009590866535974069",
       "reading": "The ball-vs-quotient identification is the one model input, and this is its leverage. p depends on the assumed volume only as V^0.103, so the volume would have to be wrong by 2.5x to move p by 10% and by ~2e3 to reconcile the derived p with the imported Euclidean 1/3. The model uncertainty cannot bridge that gap."
     },
     "scope": {
@@ -259,11 +259,11 @@
     "upstream_witness_hashes": [
       {
         "path": "em-linking-mirror-series.witness.json",
-        "sha256": "23ff1a347a0b112fea54e7712a47b0e8dd702d52abd577615f3c4e0421ac7b02",
-        "size_bytes": 10833,
-        "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
-        "scriptCommitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
-        "computedAt": "2026-08-24T14:40:43.555797+00:00"
+        "sha256": "1c210348da5cae7ec9a3ec2fd0a68a03e72d6c56a86b589f10461aaed835fe0c",
+        "size_bytes": 11561,
+        "commitSha": "50625d18d91ff56f19c2dcc280ed542ef8ba279c",
+        "scriptCommitSha": "183e8fd1d28f0eb84452f9bb7503cb3032c4046c",
+        "computedAt": "2026-11-21T17:14:14.539137+00:00"
       },
       {
         "path": "binding-link-volumes.witness.json",
@@ -275,6 +275,7 @@
       }
     ]
   },
-  "q0Anchor": "ambiguous",
-  "q0AnchorReason": "q0 enters only through upstream data: kappa(A) is read from em-linking-mirror-series.witness.json, whose producer divides by a TYPED per-pair Coulomb unit tanh(ln q0)*B_pp = 0.2376702253 with no recorded pin (the proton-pinned mirror-pair-coulomb-sign-correction witness it cites now carries 0.2212723003), and that upstream witness is itself unstamped; the pin of the series this probe fits is therefore undetermined"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "q0 enters only through upstream data: kappa(A) is read from em-linking-mirror-series.witness.json, which since 2026-11-21 derives its per-pair Coulomb unit from the proton-pinned mirror-pair-coulomb-sign-correction witness and is stamped proton"
 }

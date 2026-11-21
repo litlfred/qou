@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-25T17:56:19.318090+00:00",
-  "commitSha": "e98303953e0d692ddda3c1473e97d29120199f41",
+  "computedAt": "2026-11-21T17:14:35.126732+00:00",
+  "commitSha": "50625d18d91ff56f19c2dcc280ed542ef8ba279c",
   "assertions": [
     {
       "name": "scale_absorbs_multiplicative_factor",
@@ -20,7 +20,7 @@
       "passed": true,
       "tolerance": 0,
       "unit": "boolean",
-      "source": "Hyperbolic-consistent ln A scores 9.253% against the imported A^(1/3) at 3.505%, a factor 2.64."
+      "source": "Hyperbolic-consistent ln A scores 9.59% against the imported A^(1/3) at 3.531%, a factor 2.716."
     },
     {
       "name": "data_prefers_the_euclidean_exponent",
@@ -29,15 +29,15 @@
       "passed": true,
       "tolerance": 0,
       "unit": "boolean",
-      "source": "Free-power optimum p = 0.33 against the Euclidean 1/3. Diagnostic with one extra DOF; recorded as a boolean so a future run that moves it fails loudly."
+      "source": "Free-power optimum p = 0.31 against the Euclidean 1/3. Diagnostic with one extra DOF; recorded as a boolean so a future run that moves it fails loudly."
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 3,
   "computation": "em-linking-alpha-scaling-provenance",
   "scriptFile": "em_linking_alpha_scaling_provenance_probe.py",
   "scriptHash": "5844b9f01ae7",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "0d4e4a005e3e7a4d358ab3816a8825ea69dac169",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -45,10 +45,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "clarabel": "0.11.1",
+    "cvxpy": "1.9.3",
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -73,31 +78,31 @@
     },
     "law_scores": {
       "A^(1/3)  -- EUCLIDEAN nuclear-radius law, imported": {
-        "scale": "0.21944513",
-        "rel_scatter": "0.035046126"
+        "scale": "0.19950006",
+        "rel_scatter": "0.035309153"
       },
       "ln A     -- HYPERBOLIC self-consistent (H^3, V ~ A)": {
-        "scale": "0.20704401",
-        "rel_scatter": "0.092531432"
+        "scale": "0.18825982",
+        "rel_scatter": "0.095904723"
       },
       "(1/2)ln A -- same hypothesis, scale absorbed": {
-        "scale": "0.41408803",
-        "rel_scatter": "0.092531432"
+        "scale": "0.37651964",
+        "rel_scatter": "0.095904723"
       },
       "A^(1/4)": {
-        "scale": "0.29093915",
-        "rel_scatter": "0.063584332"
+        "scale": "0.26436319",
+        "rel_scatter": "0.055398321"
       },
       "A^(1/2)": {
-        "scale": "0.12619131",
-        "rel_scatter": "0.13946771"
+        "scale": "0.11484681",
+        "rel_scatter": "0.14836039"
       }
     },
     "cost_of_geometric_self_consistency": {
-      "euclidean_A_one_third": "0.035046126",
-      "hyperbolic_log_A": "0.092531432",
-      "ratio": "2.6402756",
-      "reading": "Using the geometry consistently costs a factor 2.64 in scatter. So H_coth's fit quality depends on the geometric mixture, not on the hyperbolic kernel alone."
+      "euclidean_A_one_third": "0.035309153",
+      "hyperbolic_log_A": "0.095904723",
+      "ratio": "2.7161434",
+      "reading": "Using the geometry consistently costs a factor 2.716 in scatter. So H_coth's fit quality depends on the geometric mixture, not on the hyperbolic kernel alone."
     },
     "corpus_cannot_settle_it": {
       "available": "binding-link-volumes.witness.json carries hyperbolic link volumes for A = 2 and A = 3 only: Hopf (0, Seifert-fibred), 8_11 (8.2863), L6a4 (7.3277).",
@@ -105,34 +110,34 @@
       "consequence": "There is no per-isotope hyperbolic geometry in the corpus beyond A = 3, so no alpha(A) law can currently be DERIVED from framework data. Whatever law is used on this front is imported from outside it."
     },
     "preferred_power_DIAGNOSTIC": {
-      "best_p": "0.33",
-      "rel_scatter_at_best_p": "0.034822765",
-      "rel_scatter_at_p_equals_one_third": "0.035046126",
+      "best_p": "0.31",
+      "rel_scatter_at_best_p": "0.032882506",
+      "rel_scatter_at_p_equals_one_third": "0.035309153",
       "DOF_WARNING": "This scan is a fit with one more DOF than any fixed-p hypothesis. It is a diagnostic, never support.",
       "reading": "The optimum sits essentially ON the Euclidean exponent, and its scatter is indistinguishable from the p = 1/3 value, so the data is consistent with exactly 1/3 and does not resolve a different power. The data independently prefers the Euclidean nuclear radius law."
     },
     "deflationary_reading": {
       "claim": "The kappa(A) profile is close to what plain Coulomb repulsion in a Euclidean nucleus of radius R ~ A^(1/3) gives, with the hyperbolic kernel contributing a small curvature correction.",
       "pure_coulomb_scatter": "0.05498509",
-      "coth_scatter": "0.035046126",
-      "improvement_factor": "1.5689349",
-      "calibration": "The curvature term does buy something real -- 5.499% falls to 3.505% for one shared parameter. But a factor 1.57 in scatter is suggestive, not decisive, and is comparable to what the frozen-B_pp confound (qou-gcmn) could account for on its own.",
+      "coth_scatter": "0.035309153",
+      "improvement_factor": "1.5572475",
+      "calibration": "The curvature term does buy something real -- 5.499% falls to 3.531% for one shared parameter. But a factor 1.56 in scatter is suggestive, not decisive, and is comparable to what the frozen-B_pp confound (qou-gcmn) could account for on its own.",
       "NOT_claimed": "That the geometry is Euclidean, that there is no hyperbolic content, or that H_coth is refuted. The measured range does not resolve the question; that is the point."
     },
     "scope": {
       "class": "(a) scope-limited negative on an INPUT ASSUMPTION shared by every hypothesis on this front",
-      "what_is_claimed": "alpha ~ A^(1/3) is imported Euclidean phenomenology, not derived; the framework carries no data from which to derive a rival; and geometric self-consistency costs 2.64x in fit.",
+      "what_is_claimed": "alpha ~ A^(1/3) is imported Euclidean phenomenology, not derived; the framework carries no data from which to derive a rival; and geometric self-consistency costs 2.72x in fit.",
       "what_is_NOT_claimed": "That A^(1/3) is wrong. The data prefers it. What is claimed is that its warrant is phenomenological rather than framework-derived, and that this has not been stated."
     },
-    "verdict": "The separation law every kernel on this front is fed, alpha ~ A^(1/3), is the EUCLIDEAN liquid-drop nuclear radius, imported and labelled 'fixed in advance' -- which guards against post-hoc selection but is not derivation. The kernel it feeds is hyperbolic by construction, so the two mix geometries. Scored on the same series: the imported law gives 3.505% scatter, the geometrically self-consistent ln A law gives 9.253% -- consistency costs 2.64x. The corpus cannot adjudicate: it carries hyperbolic link volumes at A = 2 and 3 only. A free-power diagnostic lands at p = 0.33, indistinguishable from 1/3, so the data independently prefers the Euclidean exponent. Deflationary reading, stated plainly: kappa(A) is close to plain Coulomb in a Euclidean nucleus (5.499% for the pure 1/r law), with the hyperbolic curvature term worth a factor 1.57 on one shared parameter -- suggestive, not decisive, and comparable to the frozen-B_pp confound. Nothing here refutes H_coth; what it removes is the impression that the hyperbolic reading was ever load-bearing for the fit.",
+    "verdict": "The separation law every kernel on this front is fed, alpha ~ A^(1/3), is the EUCLIDEAN liquid-drop nuclear radius, imported and labelled 'fixed in advance' -- which guards against post-hoc selection but is not derivation. The kernel it feeds is hyperbolic by construction, so the two mix geometries. Scored on the same series: the imported law gives 3.531% scatter, the geometrically self-consistent ln A law gives 9.59% -- consistency costs 2.72x. The corpus cannot adjudicate: it carries hyperbolic link volumes at A = 2 and 3 only. A free-power diagnostic lands at p = 0.31, indistinguishable from 1/3, so the data independently prefers the Euclidean exponent. Deflationary reading, stated plainly: kappa(A) is close to plain Coulomb in a Euclidean nucleus (5.499% for the pure 1/r law), with the hyperbolic curvature term worth a factor 1.56 on one shared parameter -- suggestive, not decisive, and comparable to the frozen-B_pp confound. Nothing here refutes H_coth; what it removes is the impression that the hyperbolic reading was ever load-bearing for the fit.",
     "upstream_witness_hashes": [
       {
         "path": "em-linking-mirror-series.witness.json",
-        "sha256": "23ff1a347a0b112fea54e7712a47b0e8dd702d52abd577615f3c4e0421ac7b02",
-        "size_bytes": 10833,
-        "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
-        "scriptCommitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
-        "computedAt": "2026-08-24T14:40:43.555797+00:00"
+        "sha256": "1c210348da5cae7ec9a3ec2fd0a68a03e72d6c56a86b589f10461aaed835fe0c",
+        "size_bytes": 11561,
+        "commitSha": "50625d18d91ff56f19c2dcc280ed542ef8ba279c",
+        "scriptCommitSha": "183e8fd1d28f0eb84452f9bb7503cb3032c4046c",
+        "computedAt": "2026-11-21T17:14:14.539137+00:00"
       }
     ]
   }

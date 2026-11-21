@@ -1,35 +1,35 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-11-15T19:57:09.004174+00:00",
-  "commitSha": "6109ea1793d3bd7dfe1aef4e1c2365f29a6074f2",
+  "computedAt": "2026-11-21T17:22:39.334238+00:00",
+  "commitSha": "50625d18d91ff56f19c2dcc280ed542ef8ba279c",
   "assertions": [
     {
       "name": "reproduces_committed_H_coth_bound_only",
-      "computed": "3.650257e-9",
+      "computed": "3.1625547e-9",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-8",
       "unit": "absolute deviation",
-      "source": "End-to-end: this probe's re-scoring of the incumbent under the COMMITTED statistic gives const 0.219445126 / scatter 0.0350461257 against committed 0.21944513 / 0.035046122. If this fails, nothing below is comparable to the published contest."
+      "source": "End-to-end: this probe's re-scoring of the incumbent under the COMMITTED statistic gives const 0.199500065 / scatter 0.0353091528 against committed 0.19950007 / 0.035309156. If this fails, nothing below is comparable to the published contest."
     },
     {
       "name": "reproduces_committed_H_FH_A_bound_only",
-      "computed": "1.0219121e-9",
+      "computed": "2.5738555e-9",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-8",
       "unit": "absolute deviation",
-      "source": "Second end-to-end anchor, on a different hypothesis: const 5.28989047 / scatter 0.054985091 against committed 5.2898905 / 0.05498509."
+      "source": "Second end-to-end anchor, on a different hypothesis: const 5.68191077 / scatter 0.0549850926 against committed 5.6819108 / 0.05498509."
     },
     {
       "name": "product_s_times_p_is_constant_across_the_c0_scan",
-      "computed": "0.0148413",
+      "computed": "0.0143846",
       "expected": "0",
       "passed": true,
       "tolerance": "0.03",
       "unit": "relative spread",
-      "source": "s*p spans 0.256649..0.260495 across c0 = 0..7.5, a relative spread of 1.484%, while p itself moves from 0.32906 to 0.054974. The product is what is measured; neither factor separately is. Including the three c0 < 0 bracket points the spread is 2.918%."
+      "source": "s*p spans 0.256764..0.260492 across c0 = 0..7.5, a relative spread of 1.438%, while p itself moves from 0.31666 to 0.058108. The product is what is measured; neither factor separately is. Including the three c0 < 0 bracket points the spread is 1.444%."
     },
     {
       "name": "the_sp_spread_is_ols_attenuation_not_variation",
@@ -38,7 +38,7 @@
       "passed": true,
       "tolerance": 0,
       "unit": "boolean",
-      "source": "The chain rule is exact pointwise, but s and p are OLS estimates whose product attenuates when ln(alpha) on ln(A) does not fit exactly. Two signatures establish that the measured spread IS that attenuation rather than genuine variation in the product: EVERY gap over c0 >= 0 is negative (attenuation only ever underestimates), and the smallest is 0.00157% -- i.e. where the estimator is clean, s*p reproduces the direct slope 0.26049893 essentially exactly. The largest is 1.478% against a 1.484% spread: the same size. So the product is the same number for every kernel to better than this decomposition can resolve, and the degeneracy is TIGHTER than the raw spread suggests."
+      "source": "The chain rule is exact pointwise, but s and p are OLS estimates whose product attenuates when ln(alpha) on ln(A) does not fit exactly. Two signatures establish that the measured spread IS that attenuation rather than genuine variation in the product: EVERY gap over c0 >= 0 is negative (attenuation only ever underestimates), and the smallest is 0.00253% -- i.e. where the estimator is clean, s*p reproduces the direct slope 0.26049892 essentially exactly. The largest is 1.434% against a 1.438% spread: the same size. So the product is the same number for every kernel to better than this decomposition can resolve, and the degeneracy is TIGHTER than the raw spread suggests."
     },
     {
       "name": "admissible_kernel_not_worse_once_the_exponent_is_freed",
@@ -47,7 +47,7 @@
       "passed": true,
       "tolerance": 0,
       "unit": "boolean",
-      "source": "With each kernel at its own exponent, c0 = 1 gives 2.755% against c0 = 0 at 2.807%, ratio 0.98143. The O2-admissible kernel is not disfavoured by this series."
+      "source": "With each kernel at its own exponent, c0 = 1 gives 2.751% against c0 = 0 at 2.742%, ratio 1.0032. The O2-admissible kernel is not disfavoured by this series."
     },
     {
       "name": "round_six_gap_is_an_artifact_of_the_pinned_exponent",
@@ -56,16 +56,16 @@
       "passed": true,
       "tolerance": 0,
       "unit": "boolean",
-      "source": "Pinned at p = 1/3 the admissible/incumbent rms ratio is 5.3742; freed it is 0.98143. The penalty round 6 reports is carried entirely by the pin, which its own third finding identifies as imported Euclidean phenomenology."
+      "source": "Pinned at p = 1/3 the admissible/incumbent rms ratio is 4.9208; freed it is 1.0032. The penalty round 6 reports is carried entirely by the pin, which its own third finding identifies as imported Euclidean phenomenology."
     },
     {
       "name": "every_scanned_kernel_lands_within_noise_of_a_power_law",
-      "computed": "1.26508",
+      "computed": "1.2581",
       "expected": "1",
       "passed": true,
       "tolerance": "0.35",
       "unit": "ratio to the 2-parameter power-law floor",
-      "source": "Over the incumbent + admissible family (c0 >= 0) the worst free-exponent member is 3.361% against the bare 2-parameter power law's 2.656%. No member is resolved from a straight line in log-log, so the series cannot rank them. NARROWED POPULATION, stated so the narrowing is visible: the three c0 < 0 bracket points reach 4.098% and would fail this tolerance. They are anti-neutralised, lie outside the family O2 and round 6 concern, and are scanned only to locate the Section E crossing -- their values are in degeneracy_scan."
+      "source": "Over the incumbent + admissible family (c0 >= 0) the worst free-exponent member is 3.342% against the bare 2-parameter power law's 2.656%. No member is resolved from a straight line in log-log, so the series cannot rank them. NARROWED POPULATION, stated so the narrowing is visible: the three c0 < 0 bracket points reach 3.394% and would fail this tolerance. They are anti-neutralised, lie outside the family O2 and round 6 concern, and are scanned only to locate the Section E crossing -- their values are in degeneracy_scan."
     },
     {
       "name": "hyperbolic_ball_law_needs_an_anti_neutralised_kernel",
@@ -74,7 +74,7 @@
       "passed": true,
       "tolerance": 0,
       "unit": "boolean",
-      "source": "alpha = (1/2)ln A + beta has its slope FIXED at 1 by hyperbolic ball volume with V ~ A. The data delivers that slope only at c0 = -0.359789, which is negative -- MORE positive than the unsubtracted kernel, so further from admissible than the incumbent. O2 requires c0 >= 1. The two geometric constraints are incompatible by 1.3598 in c0."
+      "source": "alpha = (1/2)ln A + beta has its slope FIXED at 1 by hyperbolic ball volume with V ~ A. The data delivers that slope only at c0 = -0.462819, which is negative -- MORE positive than the unsubtracted kernel, so further from admissible than the incumbent. O2 requires c0 >= 1. The two geometric constraints are incompatible by 1.4628 in c0."
     },
     {
       "name": "gcmn_systematic_dominates_the_statistical_error",
@@ -83,24 +83,24 @@
       "passed": true,
       "tolerance": 0,
       "unit": "boolean",
-      "source": "A strong-bond drift of only delta = 0.05 moves the admissible kernel's predicted exponent by 0.035947, which is 6.562 times its 1-sigma statistical error 0.005478. The frozen B_pp unit (qou-gcmn) enters the measured slope additively, not as a scatter nuisance."
+      "source": "A strong-bond drift of only delta = 0.05 moves the admissible kernel's predicted exponent by 0.03651, which is 6.576 times its 1-sigma statistical error 0.005552. The frozen B_pp unit (qou-gcmn) enters the measured slope additively, not as a scatter nuisance."
     },
     {
       "name": "one_third_coincidence_requires_zero_bpp_drift",
-      "computed": 1,
+      "computed": 0,
       "expected": 1,
-      "passed": true,
+      "passed": false,
       "tolerance": 0,
       "unit": "boolean",
-      "source": "At delta = 0 the incumbent kernel predicts p = 0.330072, which is 1/3 to 0.343 sigma -- the whole of H_coth's apparent success. At the measured LOCAL drift delta = 0.209026 (from the committed corrections of probes/bpp_higher_a_sparse_probe.py, which established B_pp DECLINES with A) the same prediction is p = 0.0652206, 28.19 sigma from 1/3. The drift is 80.24% of the entire measured slope, so 0.26050 is an upper bound on s*p rather than a measurement of it."
+      "source": "At delta = 0 the incumbent kernel predicts p = 0.317235, which is 1/3 to 1.8 sigma -- the whole of H_coth's apparent success. At the measured LOCAL drift delta = 0.209026 (from the committed corrections of probes/bpp_higher_a_sparse_probe.py, which established B_pp DECLINES with A) the same prediction is p = 0.0626841, 30.28 sigma from 1/3. The drift is 80.24% of the entire measured slope, so 0.26050 is an upper bound on s*p rather than a measurement of it."
     }
   ],
-  "allPassed": true,
-  "durationMs": 6497,
+  "allPassed": false,
+  "durationMs": 8046,
   "computation": "em-linking-kernel-exponent-degeneracy",
   "scriptFile": "em_linking_kernel_exponent_degeneracy_probe.py",
-  "scriptHash": "1fe8856e4a97",
-  "scriptCommitSha": "547b78208f6bb667ec8b3580f16390a74dbb9ce4",
+  "scriptHash": "d311cdf48327",
+  "scriptCommitSha": "ce8ec9330f916d774e52478cbc484caf1422bf42",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -113,8 +113,10 @@
     "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "cvxpy": "absent"
+    "cvxpy": "1.9.3",
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -124,287 +126,287 @@
   },
   "data": {
     "measured_scalar": {
-      "minus_dln_kappa_dln_A": "0.2604989283757977062692501263599057942919181947516129119673661834553306",
-      "standard_error": "0.007222462157188528422617283326824071221862358715321699961598962163514932",
-      "relative_standard_error": "0.02772549661612945443330184562016205883194869693820918148367234535939486",
+      "minus_dln_kappa_dln_A": "0.2604989224547539011089220432974235917012742473423925202936528408054927",
+      "standard_error": "0.007222460492910127083258792895838262647268569020164562333403158177995106",
+      "relative_standard_error": "0.02772549085750862322434867591430043571090609850412464607155218848346761",
       "n_bound_pairs": 29,
       "lever_arm_ln_Amax_over_Amin": "3.044522437723422996500597980365705434284575287404610640194084483575074",
       "what_it_is": "The ONLY quantity this series constrains. For any kernel F and separation law alpha ~ A^p, -dln(kappa)/dln(A) = s*p with s = -dln F/dln alpha. Kernel and exponent are jointly unidentifiable; fixing either predicts the other."
     },
     "two_parameter_power_law_noise_floor": {
-      "exponent": "0.2604989283757977062692501263599057942919181947516129119673661834553306",
-      "kappa_rms": "0.02656353256896967912426513775362961776510193512573902518246827129159277",
+      "exponent": "0.2604989224547539011089220432974235917012742473423925202936528408054927",
+      "kappa_rms": "0.02656352622026198237288420439323909984377089880404500039035290076516279",
       "why": "Every 1-parameter hypothesis on this series is competing against this. Any hypothesis reaching it has explained nothing beyond the slope."
     },
     "degeneracy_scan": [
       {
         "c0": "-0.3",
         "admissible_under_O2": false,
-        "p_predicted_by_this_kernel": "0.4710650889041347246229431128216524522292110592714597147447960028444165",
-        "p_standard_error": "0.01985859083157525764590135354687112463467616046922610299332721051402341",
-        "kernel_log_slope_s": "0.5369835471831971752646589904869391444502718337263062680333986382182063",
-        "product_s_times_p": "0.2529542023939104010469291685555267650679296770201460527423409158205421",
-        "kappa_rms_exponent_FREE": "0.04098036248301780629928408824806832643179599149315334242431706941265392",
-        "kappa_rms_exponent_PINNED_at_one_third": "0.05572430844206958143853631615145613111040111911472070868979045782782686",
-        "product_vs_direct_slope_rel": "-0.02896259892095689153941201331852802009643578667238251929404074916835188"
+        "p_predicted_by_this_kernel": "0.4194498321305632806007498013064586014232008512025457180322005975879725",
+        "p_standard_error": "0.01470346199806074470353275312811211553706044497323426676714741531705229",
+        "kernel_log_slope_s": "0.6121174014355048435183115316800487261922996821495430908402556365422189",
+        "product_s_times_p": "0.2567525412763191214931676890011019014200357775323039733706005756837783",
+        "kappa_rms_exponent_FREE": "0.033941458353229370719051121402392909977616035993166487648756127977477",
+        "kappa_rms_exponent_PINNED_at_one_third": "0.04467840698465469809538182127157770628880821882109048332173392537074439",
+        "product_vs_direct_slope_rel": "-0.01438156113327297602545172346788114676011807767284084819966942234704161"
       },
       {
         "c0": "-0.2",
         "admissible_under_O2": false,
-        "p_predicted_by_this_kernel": "0.4055903765111481585034960922854728945416677370577283308205232835156577",
-        "p_standard_error": "0.01396193532638755374058259506414560825726788052729067275844007225352828",
-        "kernel_log_slope_s": "0.6338162509013484288453554518882109162328146760955643539653627555891226",
-        "product_s_times_p": "0.2570697718419622576402110582613446527764208409614053635154158502948033",
-        "kappa_rms_exponent_FREE": "0.03330179394158547970427752424747913638357781333626491743295877652364403",
-        "kappa_rms_exponent_PINNED_at_one_third": "0.0412038207248176816567185328145385607654461194960164543743990928889613",
-        "product_vs_direct_slope_rel": "-0.01316380284255343160194061812565137902275455495496268940006440176943221"
+        "p_predicted_by_this_kernel": "0.3757730399360738222937725522465433322092392718732416566721830594654483",
+        "p_standard_error": "0.0117693399432437611740571444761842753596496515638267186998397275584928",
+        "kernel_log_slope_s": "0.688084821862307306216717799609612861278203687728323683401484187173082",
+        "product_s_times_p": "0.2585637252450710452719392323141027642520611518469759954677631486643309",
+        "kappa_rms_exponent_FREE": "0.03034895096878019276733571420264001754472063883339642540463306828880176",
+        "kappa_rms_exponent_PINNED_at_one_third": "0.03387783329520100345798378742153406424682288468449791545117319607660134",
+        "product_vs_direct_slope_rel": "-0.007428810804463041666840883598387027792309299908441279685208878266157254"
       },
       {
         "c0": "-0.1",
         "admissible_under_O2": false,
-        "p_predicted_by_this_kernel": "0.3617732146571270324247448914813398272481435467873079031731496098206953",
-        "p_standard_error": "0.01113304570847721792230270776742399766243082187502424119705627294332496",
-        "kernel_log_slope_s": "0.7154297899421200381031107807299340889768469700415872116013491247544431",
-        "product_s_times_p": "0.2588233349688338949312887914606251420775176014124679205614742867677394",
-        "kappa_rms_exponent_FREE": "0.02982876430253654284717981763696132534083422489257100263382268423862326",
-        "kappa_rms_exponent_PINNED_at_one_third": "0.03103401735473685458414626494440730636013451290428902205439624135968674",
-        "product_vs_direct_slope_rel": "-0.00643224683268787859303429086484587373352786475206734551988530631639788"
+        "p_predicted_by_this_kernel": "0.3428640463331136890273371118284823969165666623908766729278160200911947",
+        "p_standard_error": "0.01004818456461718673294331269395865630590603118426443037329268367783537",
+        "kernel_log_slope_s": "0.7568769573756668357902053379377445281632510219881476822737983433439622",
+        "product_s_times_p": "0.2595058961821167486782423778653450240348730609400975041391623850772165",
+        "kappa_rms_exponent_FREE": "0.0284534192064070193134078026427233140307955423633757583867576067424212",
+        "kappa_rms_exponent_PINNED_at_one_third": "0.02826989058741354407797024167139717054462105870628158680552854563245929",
+        "product_vs_direct_slope_rel": "-0.003812016814809018338480713989752287348652158287558954318389602019450749"
       },
       {
         "c0": "0.0",
         "admissible_under_O2": false,
-        "p_predicted_by_this_kernel": "0.3290588020823125544457373160038140868596304468928364727073112438557011",
-        "p_standard_error": "0.009510002628456649556090817801788905160907260340708963821256404494601127",
-        "kernel_log_slope_s": "0.7892194757235246296950198701171476932338121860922745140654056980545689",
-        "product_s_times_p": "0.2596996152616137689300657448259867243145460309200130741746593409800252",
-        "kappa_rms_exponent_FREE": "0.02807395996267220380293494152486847971656647863572675597419780490134971",
-        "kappa_rms_exponent_PINNED_at_one_third": "0.02844822353975603220511856158212954701771161859224835952732068537688365",
-        "product_vs_direct_slope_rel": "-0.003068393099225507179680372156542331497033420419209695863748892260015455"
+        "p_predicted_by_this_kernel": "0.3166566374755374951089173226017193281628020304973254326046111059190255",
+        "p_standard_error": "0.008936800857678831100148934764635706543148247616376867261552078647560319",
+        "kernel_log_slope_s": "0.8211541564964160343224000683246200339398715147387928057755455624895041",
+        "product_s_times_p": "0.2600239140452163946599893490126154195505159865002327535080349509335976",
+        "kappa_rms_exponent_FREE": "0.02742287655555913629750471445439216832484923189542793180829689617189786",
+        "kappa_rms_exponent_PINNED_at_one_third": "0.02999394392224038581327372094579698949443940474401929597484340103690175",
+        "product_vs_direct_slope_rel": "-0.001823456331647631803306154853632557412893333327440780400385865007488256"
       },
       {
         "c0": "0.25",
         "admissible_under_O2": false,
-        "p_predicted_by_this_kernel": "0.2726079000145285108833817719376519807884752565550899421436636725832297",
-        "p_standard_error": "0.007489720205138652713966607741241885815041464812753688723717503798928916",
-        "kernel_log_slope_s": "0.9554253352658995422855078329373623158439345244582710242325169043361326",
-        "product_s_times_p": "0.2604564942675137232150827905510111475470855819721220259721032691300309",
-        "kappa_rms_exponent_FREE": "0.02662049849236888198025757773737378332543568260272418577716625497720375",
-        "kappa_rms_exponent_PINNED_at_one_third": "0.05104828530110255353568253625080735217140464899317604038879531660905089",
-        "product_vs_direct_slope_rel": "-0.0001628955195653138793459952228288543713598831860599042376411106507865434"
+        "p_predicted_by_this_kernel": "0.2685845450750288718368981880369928781400490828187701160662299030193702",
+        "p_standard_error": "0.007372275989938627981462292917534233277478485041287912974876660330861004",
+        "kernel_log_slope_s": "0.969870910825750395016019873466886196237542909592385634003662758946002",
+        "product_s_times_p": "0.2604923373656380643956289031917756053479711596914916131615208131206892",
+        "kappa_rms_exponent_FREE": "0.02655587641834593269511234285962875707722500015361875226276665172863915",
+        "kappa_rms_exponent_PINNED_at_one_third": "0.05386840678222329986473731527587993642569160207572565934820838887730973",
+        "product_vs_direct_slope_rel": "-0.00002527875760016043236939129011953930782554779507668450707318279336750263"
       },
       {
         "c0": "0.5",
         "admissible_under_O2": false,
-        "p_predicted_by_this_kernel": "0.2352204442873378577148415766055275118112215444106319058245530310639595",
-        "p_standard_error": "0.006526014416265555624112683523351705984093557001524351762538583567093949",
-        "kernel_log_slope_s": "1.107449779007099057934932185577950453390669355167554896053787700198624",
-        "product_s_times_p": "0.2604948290439639665861110489321558768012272338659620306896562563850464",
-        "kappa_rms_exponent_FREE": "0.02662741193918789126948531480461958464258489937909425496893517822961284",
-        "kappa_rms_exponent_PINNED_at_one_third": "0.08441801865097374048514149434347974056717967038005377332729129757965445",
-        "product_vs_direct_slope_rel": "-0.00001573646332942282324897000623743824574642177914458982105723936641208478"
+        "p_predicted_by_this_kernel": "0.2350098074851563401976771591456384471729223480158624033635329311121228",
+        "p_standard_error": "0.006531624409928230056943015598703031461624881729449536243344168292419703",
+        "kernel_log_slope_s": "1.108403266564116942781693901085664482893367875685137067434954084772907",
+        "product_s_times_p": "0.2604856382911515481179532870413155918192117134833768882125531848372184",
+        "kappa_rms_exponent_FREE": "0.02664707460873833408431631657240575560772400882633881492014011937641392",
+        "kappa_rms_exponent_PINNED_at_one_third": "0.08460647006750562739900743190949927205179564933549765791114855394981466",
+        "product_vs_direct_slope_rel": "-0.000050995080813281749517380496118008290126144513308890332868840198264915"
       },
       {
         "c0": "1.0",
         "admissible_under_O2": true,
-        "p_predicted_by_this_kernel": "0.1869745916470726114157992108405998678776593564112764376373706219795123",
-        "p_standard_error": "0.005478047513184442591160950024530681585167836301831599792519053233015657",
-        "kernel_log_slope_s": "1.390948427926429790952136448405547020334492528810474124272188692534553",
-        "product_s_times_p": "0.2600720143136818198565467124081853738943128742716273025289026951220172",
-        "kappa_rms_exponent_FREE": "0.02755252626126305655757938381714551891007756090222671155206679404349317",
-        "kappa_rms_exponent_PINNED_at_one_third": "0.1528861905888490436271653140016207180573141607440365634349865791158145",
-        "product_vs_direct_slope_rel": "-0.001638832316039384958144204995049425600376191612689890953756381672273778"
+        "p_predicted_by_this_kernel": "0.1899168994110147972205956476966309428942248528119804874285946911867079",
+        "p_standard_error": "0.005551904695895003725644268508067778112041956499431965152373845881322188",
+        "kernel_log_slope_s": "1.369504867216402293023974954432149586242741782866600116201647760245823",
+        "product_s_times_p": "0.2600921181100326507191710127442945571414686702598360100888975101511884",
+        "kappa_rms_exponent_FREE": "0.02750997692898632810155041785974906676387549183720910029779285409333088",
+        "kappa_rms_exponent_PINNED_at_one_third": "0.1475948902654631706249514782308842761839783490418007175946560593290796",
+        "product_vs_direct_slope_rel": "-0.001561635422088581961373221412320500563318492945992295377276283442186628"
       },
       {
         "c0": "1.5",
         "admissible_under_O2": true,
-        "p_predicted_by_this_kernel": "0.1563275801031832720097021233954283980884519535068761670885735295597026",
-        "p_standard_error": "0.004821563574106059491147717326584527858067328635696911795969249878967817",
-        "kernel_log_slope_s": "1.660338094970135954031402995809849187029252466701164901896340743605646",
-        "product_s_times_p": "0.2595566365398106432460946494370363889635208401273907027313891042627577",
-        "kappa_rms_exponent_FREE": "0.02856563903309919660965620161514068012253029505513759972171951466186392",
-        "kappa_rms_exponent_PINNED_at_one_third": "0.2202603285863080869447447403064413602501470426587075664321324306236044",
-        "product_vs_direct_slope_rel": "-0.003617258012776566047788025962765983669844710291598435975928385134344654"
+        "p_predicted_by_this_kernel": "0.160348032226915745184301035242312015893073119113338300783659258841839",
+        "p_standard_error": "0.004918355385529097136411357523895940760831069958908634892605103984089554",
+        "kernel_log_slope_s": "1.619076806772924547731107634374723758176893020078543875210681276654277",
+        "product_s_times_p": "0.259615779990276742232669925554421622755253761624151517502183698673887",
+        "kappa_rms_exponent_FREE": "0.0284522406092164701402529857642008586479864887690979787088959265851841",
+        "kappa_rms_exponent_PINNED_at_one_third": "0.209873358868119875676590119007256381158306406548502962819012092300822",
+        "product_vs_direct_slope_rel": "-0.003390196228664063015747834717241200072200078562570318761512004381830079"
       },
       {
         "c0": "2.0",
         "admissible_under_O2": true,
-        "p_predicted_by_this_kernel": "0.1347869978535792426755207301494745936311088661570945255737196569748044",
-        "p_standard_error": "0.004330727643970162153447642367300598454518679446613861745483258506682164",
-        "kernel_log_slope_s": "1.922212510851291315393260376378905055219315334559551479527925373419845",
-        "product_s_times_p": "0.2590892535742361692478938547184836352685168698261387369670412036610355",
-        "kappa_rms_exponent_FREE": "0.02943774945216479017548749210730313318354265261312903242503917840484225",
-        "kappa_rms_exponent_PINNED_at_one_third": "0.2866188713742373849933830585349241429821459221462722825418653438877023",
-        "product_vs_direct_slope_rel": "-0.005411441844889010784864121065923599193589140161898556586909092627550358"
+        "p_predicted_by_this_kernel": "0.1391714653265908280557508411783798534403799754400275367987507765685304",
+        "p_standard_error": "0.004439316441600815865868731313436847466426474106230126321440899415490473",
+        "kernel_log_slope_s": "1.862274967921071131671720284946075690639106226491554768719138425590014",
+        "product_s_times_p": "0.2591755361266053976048006666327670249670351254962568809838916060416806",
+        "kappa_rms_exponent_FREE": "0.02927940412121484642471308272110210431640547280032293642254495320126319",
+        "kappa_rms_exponent_PINNED_at_one_third": "0.2713788833757246620573243257129803834648524712789043866375549268962043",
+        "product_vs_direct_slope_rel": "-0.00508019885716940991953317966513745829008818250906497388220588440442505"
       },
       {
         "c0": "3.0",
         "admissible_under_O2": true,
-        "p_predicted_by_this_kernel": "0.1061478715809976888062739904042077795144212594297500895377823945614493",
-        "p_standard_error": "0.003614664233270778406774896494192281400935542466097442263844694290517285",
-        "kernel_log_slope_s": "2.433777499981293911041572456941061973733635311886162480572193984124958",
-        "product_s_times_p": "0.2583403015247359910401696110260587364759117892235725863000906610565776",
-        "kappa_rms_exponent_FREE": "0.03077348689158971293927907595453687168644561705743933073554288936090288",
-        "kappa_rms_exponent_PINNED_at_one_third": "0.4174229970142262012644087655241337285540472247635729578981966130413484",
-        "product_vs_direct_slope_rel": "-0.008286509524321973243828561347924823903489825440772655189091489828125356"
+        "p_predicted_by_this_kernel": "0.1105420157881532250494887400697173986286883847610625176806013248921294",
+        "p_standard_error": "0.003732971711249241528167955451337131025714642325340886611971396361564255",
+        "kernel_log_slope_s": "2.338062603894175763746331428530369549010130676875321116765698749399177",
+        "product_s_times_p": "0.2584541532733606173154833843519302304181518964651402303638986331198464",
+        "kappa_rms_exponent_FREE": "0.03057466507599513331805742157297340515819631824254945454360306573326989",
+        "kappa_rms_exponent_PINNED_at_one_third": "0.3928520260910184007589481950878772116770119989262732969626975587921012",
+        "product_vs_direct_slope_rel": "-0.007849434316752078215499891023073464942266166408737687027441447769909355"
       },
       {
         "c0": "4.0",
         "admissible_under_O2": true,
-        "p_predicted_by_this_kernel": "0.08778616698477310530881119219283955224314868061319503922746981357509719",
-        "p_standard_error": "0.003107179077634861428878130337884396605545538635682796509223413917811841",
-        "kernel_log_slope_s": "2.936516157982625365833675950869925455549649841793847807477589929142928",
-        "product_s_times_p": "0.2577854977981471111669353786172164157231853971076378728536411565584835",
-        "kappa_rms_exponent_FREE": "0.03172606802954008617882402379132905486525595653403154086951475128041359",
-        "kappa_rms_exponent_PINNED_at_one_third": "0.5467530537059650045134788867027983335091791671294663833155423710225395",
-        "product_vs_direct_slope_rel": "-0.01041628307098515129546831452882661463561572233019325047481183075490378"
+        "p_predicted_by_this_kernel": "0.09191302299120150609889420752441876894153907671283861798196300889143118",
+        "p_standard_error": "0.003226415140730229652001489191910680254779039985376416897962776461763389",
+        "kernel_log_slope_s": "2.806004147995217747867506170195335172155593764045430021464205091109584",
+        "product_s_times_p": "0.2579083237680912423671408167167189302418066936264638334186501087238851",
+        "kappa_rms_exponent_FREE": "0.03151762330831078972482258554783401676565010803381332742860905760879563",
+        "kappa_rms_exponent_PINNED_at_one_third": "0.5130997317233613638080300216200213982911449605115145557257449729242699",
+        "product_vs_direct_slope_rel": "-0.00994475778345156201519065085375589546663824791768753691884644331456926"
       },
       {
         "c0": "7.5",
         "admissible_under_O2": true,
-        "p_predicted_by_this_kernel": "0.0549741312216768636668046627481566529681301774622651778840129052913269",
-        "p_standard_error": "0.002087819200063317356428780906656201796100380403507744407654158000117523",
-        "kernel_log_slope_s": "4.668542052326544424576116930673028804207049038115076845051593576120245",
-        "product_s_times_p": "0.2566490433985160680303029000154992743290920452290077649708095012023658",
-        "kappa_rms_exponent_FREE": "0.03360507455040174645695154526946610752656033300167234209339334806761953",
-        "kappa_rms_exponent_PINNED_at_one_third": "0.9946795125390927041809968413709353211205675809150472485958777362330575",
-        "product_vs_direct_slope_rel": "-0.01477888988367647071260033682670703698090458294200292888635338347286409"
+        "p_predicted_by_this_kernel": "0.05810797562727416368862548031032612636459508343190087898655113736137491",
+        "p_standard_error": "0.002192215630311698696490659314090742692293690374532445550858566955582013",
+        "kernel_log_slope_s": "4.418731048275431332165152422552131202951688123990675222471145546615585",
+        "product_s_times_p": "0.2567635160566683798356039456695394027391957716664171887863429808426533",
+        "kappa_rms_exponent_FREE": "0.03341952290078819390547571998973658244360738404196055508892247017803698",
+        "kappa_rms_exponent_PINNED_at_one_third": "0.9299095319224045662567813751402467730044535303939226735448820502438256",
+        "product_vs_direct_slope_rel": "-0.0143394312839598198308630646746789541153435626003492453468647399084267"
       }
     ],
     "ols_attenuation_check": {
-      "max_relative_gap_over_c0_ge_0": "0.01477888988367647071260033682670703698090458294200292888635338347286409",
-      "min_relative_gap_over_c0_ge_0": "0.00001573646332942282324897000623743824574642177914458982105723936641208478",
+      "max_relative_gap_over_c0_ge_0": "0.0143394312839598198308630646746789541153435626003492453468647399084267",
+      "min_relative_gap_over_c0_ge_0": "0.00002527875760016043236939129011953930782554779507668450707318279336750263",
       "every_gap_is_negative": true,
-      "direct_slope": "0.2604989283757977062692501263599057942919181947516129119673661834553306",
+      "direct_slope": "0.2604989224547539011089220432974235917012742473423925202936528408054927",
       "why": "dln(kappa)/dln(A) = s*p is exact pointwise (chain rule), but s and p are OLS slope ESTIMATES and their product need not equal the OLS estimate of the direct slope unless ln(alpha) on ln(A) fits exactly (it does not: R^2 ~ 0.973-0.978).",
       "verdict": "THE SPREAD IS THE ATTENUATION. Max gap 1.478% against a 1.484% spread of s*p across the family -- the same size, every gap NEGATIVE, and monotone away from c0 ~ 0.4 where it vanishes. That is the attenuation signature, not variation in the product. Where the estimator is clean (c0 = 0.5 and 0.25) s*p reproduces the direct slope to 0.002% and 0.016%.",
       "consequence": "The product is the SAME NUMBER for every kernel, to better than the resolution of this decomposition. The degeneracy is tighter than the raw spread suggests, not looser -- so this check strengthens the finding. An earlier version of this probe asserted the gap was 'an order of magnitude below' the spread; that was wrong, from a three-point spot check that missed the large-c0 end, and this assertion is what caught it."
     },
     "product_spread_across_scan": {
-      "relative_spread": "0.01484131145989506474284825589756315919786818270997724205959172471493435",
-      "min": "0.2566490433985160680303029000154992743290920452290077649708095012023658",
-      "max": "0.2604948290439639665861110489321558768012272338659620306896562563850464",
+      "relative_spread": "0.01438458165024760016284868593738409560130590414633401127397677361067469",
+      "min": "0.2567635160566683798356039456695394027391957716664171887863429808426533",
+      "max": "0.2604923373656380643956289031917756053479711596914916131615208131206892",
       "population": "c0 >= 0 (incumbent + admissible family)",
-      "relative_spread_including_c0_negative_bracket": "0.02918019431487420536340627113302504857997388081354991095601939429322111",
+      "relative_spread_including_c0_negative_bracket": "0.01444014081337402940105949137463434040213677240219141797561012149919126",
       "why": "s*p is near-constant across a 25-fold range of c0 while p itself moves by a factor of 6. That is the degeneracy, measured."
     },
     "round_six_reversal": {
-      "ratio_admissible_over_incumbent_PINNED": "5.374191129199773336223846693452077029318419127774109141033195675356016",
-      "ratio_admissible_over_incumbent_FREE": "0.9814264285443714482993177562988279932597583154113100723201809729449608",
+      "ratio_admissible_over_incumbent_PINNED": "4.920823038414170259609456682177939481261994790288046675532121106434285",
+      "ratio_admissible_over_incumbent_FREE": "1.003176193906963961780646484855228973691689886250213132878244826417087",
       "reading": "Pinned at the imported Euclidean p = 1/3 the admissible kernel looks far worse; with its own exponent it does not. Round 6's structural exclusion of the unsubtracted kernel stands; its numerical case against the admissible family does not survive freeing the pin."
     },
     "hyperbolic_ball_law_additive": [
       {
         "c0": "-0.3",
-        "fitted_slope_geometry_forces_1": "0.7819864142963121966490328481017058250251869102222711257878283726253162",
-        "best_beta": "-0.7083767412739711113829166736665386757698916501980537031824335919132512",
-        "kappa_rms": "0.5567240878321734225779358431136841871065930261695816882666243366056754"
+        "fitted_slope_geometry_forces_1": "0.593212586278301072837028488068361493106974972052056685064262738323962",
+        "best_beta": "-0.8542548166847015885864510408475623737060644602908656024680328070081153",
+        "kappa_rms": "0.5943426728643125640933071741683732250640776632293169028967127713283303"
       },
       {
         "c0": "-0.2",
-        "fitted_slope_geometry_forces_1": "0.5878281391876998587778935712052061771758687910054428475670507082943976",
-        "best_beta": "-0.8367059567337944936069111692134760195928164017543950052144871005899605",
-        "kappa_rms": "0.5773157658947104290412656977729065780476254695045813120358720561848782"
+        "fitted_slope_geometry_forces_1": "0.4801139103892643441364288926189155839964232926714908300069290392381086",
+        "best_beta": "-0.939163213803373095815517749394936705484324853026655132871221880864499",
+        "kappa_rms": "2.080071985159413594479313601994583641100670623767460140075610442248904"
       },
       {
         "c0": "-0.1",
-        "fitted_slope_geometry_forces_1": "0.47268652055625669439726960503171724094676308594563753044696756166851",
-        "best_beta": "-0.9252237528111503504284504538069368170595909930546248171159673942105826",
-        "kappa_rms": "1.557598384815750565990157673184152284829485356246394468236595448708515"
+        "fitted_slope_geometry_forces_1": "0.4023358702077831693605234326194788938190532499712309690068686428880628",
+        "best_beta": "-1.004202576853871172252320128339135444898500445528271070213241499759821",
+        "kappa_rms": "2.610416060794348832986030148946403158666008433388041091792364050597342"
       },
       {
         "c0": "0.0",
-        "fitted_slope_geometry_forces_1": "0.3942792850307075184970536618566082858336179037759494401341957718992717",
-        "best_beta": "-0.9926595260351526740529410613628167128307038500492955948297940899441679",
-        "kappa_rms": "4.293844589664751368416222584211871159577389554978220980670072930022709"
+        "fitted_slope_geometry_forces_1": "0.34497587240213166561507418428086960545194588485649501532137341366746",
+        "best_beta": "-1.056583995926813260316852113297390723583148491777869806639318999662761",
+        "kappa_rms": "1.201251893188218044986386908426616783198526033302652600846744832818469"
       },
       {
         "c0": "0.25",
-        "fitted_slope_geometry_forces_1": "0.2743844989046797797426020092915703071752103403480458534435440254100456",
-        "best_beta": "-1.11141398355105447029972077487368143719958814557596313175328672040309",
-        "kappa_rms": "1.180065647528157637164365094723564895350709514333750448669479125825772"
+        "fitted_slope_geometry_forces_1": "0.2504790275958871134399341896036244156797528460440603861509555246095594",
+        "best_beta": "-1.153751286751224061506526368708066403205630181503980423289381467425983",
+        "kappa_rms": "1.686975312208713934070470076610827573091190165440769336815641515409607"
       },
       {
         "c0": "0.5",
-        "fitted_slope_geometry_forces_1": "0.2060398003487586511815640996900003480549967390380611198824652581417593",
-        "best_beta": "-1.191352663784121567628850716557982032441218918790338932838644397074907",
-        "kappa_rms": "10.34545830745766466181379937958665733466753551841137255030122625053551"
+        "fitted_slope_geometry_forces_1": "0.1929062179844490005370073446462069687016743055417864626715723869338966",
+        "best_beta": "-1.222161488706019151562128330552036033748765998377899355158556352467312",
+        "kappa_rms": "3.70069466753706200692808119288790467207415768792729906328730638634033"
       },
       {
         "c0": "1.0",
-        "fitted_slope_geometry_forces_1": "0.1314639555246509198367470172519221258910591445256878612964766494121394",
-        "best_beta": "-1.295282371876794087622612274840274199039412759959595429050804617312436",
-        "kappa_rms": "7.407018072886290879891190116585024104428343739508073535202828186196669"
+        "fitted_slope_geometry_forces_1": "0.1268569273169337063683980729104693056510632914446737297447226346176272",
+        "best_beta": "-1.314182128327211042278058630298363850311426040012767391565428574204232",
+        "kappa_rms": "3.627200113007371968475643989693928771479544395466059385592804136201725"
       },
       {
         "c0": "1.5",
-        "fitted_slope_geometry_forces_1": "0.09238076704759476755440995332224677483322119504928861300881435419099201",
-        "best_beta": "-1.361285661370056166859242008947456666166855000784916141906062172004116",
-        "kappa_rms": "12.58832609762986051850492278765048979666187870387142043537254773145932"
+        "fitted_slope_geometry_forces_1": "0.09077409588539968254511456462992791793516909464151016198856716947885647",
+        "best_beta": "-1.374245877818276643651307787492515156802933624083983910342156417739463",
+        "kappa_rms": "5.036429765360848675412033172949138106765840250600156179832467643908642"
       },
       {
         "c0": "2.0",
-        "fitted_slope_geometry_forces_1": "0.06889239374735485648442904345869282084899272753845598006752822254434611",
-        "best_beta": "-1.407448607247902867463471972592809845556877045594218030041293151462994",
-        "kappa_rms": "10.88261225050723565060854121987335637840168741369426975029218178446126"
+        "fitted_slope_geometry_forces_1": "0.06853885601320606896074801207789533322866591176065751550676009555163231",
+        "best_beta": "-1.416950582948209576862200425484080669475493264495121888350086152028209",
+        "kappa_rms": "270.1730607359127337703832422021487229088309408554746976343011214185443"
       },
       {
         "c0": "3.0",
-        "fitted_slope_geometry_forces_1": "0.0428741382756920857172324041743411196126713301119504191791406773486542",
-        "best_beta": "-1.468280082325265531163449549469835835955391386635014605946223940004433",
-        "kappa_rms": "24.84526211808360745784338074515312778470964935365581883980673702737416"
+        "fitted_slope_geometry_forces_1": "0.04335081452124588746602271642439744788178251869348319049362980992504922",
+        "best_beta": "-1.474062154815779582839917078525579887635719286458509505907144449630278",
+        "kappa_rms": "50.46990557276609384455053102249037538031442121327595937357204350422484"
       },
       {
         "c0": "4.0",
-        "fitted_slope_geometry_forces_1": "0.0293756525493839369775699248543709755749539691341102497528202244943769",
-        "best_beta": "-1.506819578285692558958154900983169660396175711403099717124251384295463",
-        "kappa_rms": "7.590608176909028526442259750363703072295109279408966960607346052531357"
+        "fitted_slope_geometry_forces_1": "0.03000965674957846020172760816314343772252956076672282165798421598539902",
+        "best_beta": "-1.510724836005910512037349759318783806157461679678385422541636303591668",
+        "kappa_rms": "8.721076511421567701835354434489001594507811048183749408860851570006242"
       },
       {
         "c0": "7.5",
-        "fitted_slope_geometry_forces_1": "0.01154588383473297831197930151484832083606736050588136136262966825136533",
-        "best_beta": "-1.574475903002479702818633174929596407106158031435037864744633664191371",
-        "kappa_rms": "16.84761208017613925341461648345774822735146940797623540275785569363741"
+        "fitted_slope_geometry_forces_1": "0.01201427117745401553812988066918466328463626846801777737767966994973618",
+        "best_beta": "-1.575972119211938571457340365619316169088832439261654378008834648411369",
+        "kappa_rms": "13.37187324999170279825195288834604761833764536836160876392472006971268"
       }
     ],
     "hyperbolic_ball_law_crossing": {
-      "c0_where_forced_slope_equals_1": "-0.3597886091538435120660656217990158950062947415155925024307363775774695",
+      "c0_where_forced_slope_equals_1": "-0.4628190352267815983476261661913645654692652780744160258106009116194566",
       "admissible_floor": "1.0",
       "reading": "O2 neutrality pushes c0 >= 1; hyperbolic-ball extensivity pulls it negative. The two geometric constraints on the same object point in opposite directions and cannot both hold."
     },
     "gcmn_confound_as_additive_bias": [
       {
         "delta": "0.0",
-        "s_times_p": "0.2604989283757977062692501263599057942919181947516129119673661834553306",
-        "p_at_c0_1": "0.1872815146454704116841044403479078336699081397226233430314444799666941"
+        "s_times_p": "0.2604989224547539011089220432974235917012742473423925202936528408054927",
+        "p_at_c0_1": "0.1902139442441216000507719310135137854720681990253064889714493505735699"
       },
       {
         "delta": "0.01",
-        "s_times_p": "0.2504989283757977062692501263599057942919181947516129119673661834553306",
-        "p_at_c0_1": "0.1800921754872188009458890890722614408288020126708779950052333678021883"
+        "s_times_p": "0.2504989224547539011089220432974235917012742473423925202936528408054927",
+        "p_at_c0_1": "0.1829120351823994775724800804232169692563419571383306385089101857397228"
       },
       {
         "delta": "0.02",
-        "s_times_p": "0.2404989283757977062692501263599057942919181947516129119673661834553306",
-        "p_at_c0_1": "0.1729028363289671902076737377966150479876958856191326469790222556376826"
+        "s_times_p": "0.2404989224547539011089220432974235917012742473423925202936528408054927",
+        "p_at_c0_1": "0.1756101261206773550941882298329201530406157152513547880463710209058758"
       },
       {
         "delta": "0.05",
-        "s_times_p": "0.2104989283757977062692501263599057942919181947516129119673661834553306",
-        "p_at_c0_1": "0.1513348188542123579930276839696758694643775044638966029003889191441653"
+        "s_times_p": "0.2104989224547539011089220432974235917012742473423925202936528408054927",
+        "p_at_c0_1": "0.1537043989355109876593126780620297043934369895904272366587535264043345"
       },
       {
         "delta": "0.1",
-        "s_times_p": "0.1604989283757977062692501263599057942919181947516129119673661834553306",
-        "p_at_c0_1": "0.1153881230629543043019509275914439052588468692051698627693333583216366"
+        "s_times_p": "0.1604989224547539011089220432974235917012742473423925202936528408054927",
+        "p_at_c0_1": "0.117194853626900375267853425110545623314805780155547984346057702235099"
       }
     ],
     "measured_bpp_drift_destroys_the_one_third_coincidence": {
       "delta_local_A3_to_A4": "0.2090255813323294646090054493448054543692627623408422934177962275962774",
-      "share_of_the_measured_slope": "0.8024047647166808860302083398548530936577926791221145069392614967139964",
-      "p_at_c0_zero_delta_zero": "0.3300715914758474254247739398244542188591985784555311470137073544651222",
-      "sigma_from_one_third_delta_zero": "0.3429801215538934536984055744552855150079747452612493715774056712237006",
-      "p_at_c0_zero_delta_local": "0.06522057377800965969448931162028228596239038679030151981091897677709795",
-      "sigma_from_one_third_delta_local": "28.19271140399620555091318926882234196683670463400730805014405615473851",
+      "share_of_the_measured_slope": "0.8024047829550433198788501070834316645630004882320975364446393707378324",
+      "p_at_c0_zero_delta_zero": "0.3172351018305913681697509644350037583777006644364063716291041692729137",
+      "sigma_from_one_third_delta_zero": "1.801341638815837209290623117117575088971861591341151611502515615147981",
+      "p_at_c0_zero_delta_local": "0.06268413880049463562802714361921632559720290952706594174592746727281874",
+      "sigma_from_one_third_delta_local": "30.28479641014791788376749418586532759333947592852536278692964490681504",
       "provenance": "Drift read from the committed corrections of probes/bpp_higher_a_sparse_probe.py (merged 2026-08-31, PR #6336), which established that B_pp DECLINES with A. This probe does not re-derive that; it quantifies what it does to the slope.",
       "not_extrapolated": "That probe refuses to carry a three-point decline across a factor of ten in A, and the refusal is honoured: delta_local is used to show the confound is OF ORDER the signal, never as a value for delta over A = 3..63. No number here is corrected by it.",
       "reading": "0.26050 is an UPPER BOUND on s*p, so every exponent reported here is an upper bound. H_coth's single coincidence -- c0 = 0 predicting 1/3 -- holds only at delta = 0, and the corpus has measured that delta > 0."
@@ -424,11 +426,11 @@
     "upstream_witness_hashes": [
       {
         "path": "em-linking-mirror-series.witness.json",
-        "sha256": "23ff1a347a0b112fea54e7712a47b0e8dd702d52abd577615f3c4e0421ac7b02",
-        "size_bytes": 10833,
-        "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
-        "scriptCommitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
-        "computedAt": "2026-08-24T14:40:43.555797+00:00"
+        "sha256": "1c210348da5cae7ec9a3ec2fd0a68a03e72d6c56a86b589f10461aaed835fe0c",
+        "size_bytes": 11561,
+        "commitSha": "50625d18d91ff56f19c2dcc280ed542ef8ba279c",
+        "scriptCommitSha": "183e8fd1d28f0eb84452f9bb7503cb3032c4046c",
+        "computedAt": "2026-11-21T17:14:14.539137+00:00"
       },
       {
         "path": "bpp-higher-a-sparse.witness.json",
@@ -440,6 +442,7 @@
       }
     ]
   },
-  "q0Anchor": "ambiguous",
-  "q0AnchorReason": "q0 enters only through upstream data: kappa(A) is read from em-linking-mirror-series.witness.json, whose producer divides by a TYPED per-pair Coulomb unit tanh(ln q0)*B_pp = 0.2376702253 with no recorded pin (the proton-pinned mirror-pair-coulomb-sign-correction witness it cites now carries 0.2212723003), and that upstream witness is itself unstamped; the pin of the series this probe fits is therefore undetermined"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "q0 enters only through upstream data: kappa(A) is read from em-linking-mirror-series.witness.json, which since 2026-11-21 derives its per-pair Coulomb unit from the proton-pinned mirror-pair-coulomb-sign-correction witness and is stamped proton"
 }

@@ -63,16 +63,18 @@ SCOPING = HERE / "em-linking-invariant-scoping.witness.json"
 # main() is unaffected.
 set_compute_dps()
 
-# Per-pair Coulomb unit tanh(ln q0)*B_pp with the JUNE 2026 diproton bond
-# B_pp = 2.28608834 MeV (docs/audits/2026-06-18-he3-tower-charge-asymmetry-and-pairknot.md).
-# It is NOT the current corpus value: charge-coulomb-tn3he-derived.witness.json and
-# mirror-pair-coulomb-sign-correction.witness.json now give B_pp = 2.12836095,
-# unit 0.2212723003, after E0 moved. Kept deliberately (owner, 2026-11-15) so the
-# published kappa of em-linking-invariant-scoping.witness.json still validate:
-# swapping it raises every kappa by 7.41 % and leaves the hypothesis ranking
-# unchanged. The bond is on the single-crossing interface letters, which the
-# gamma-gamma ruling superseded; the redo waits on a gamma-gamma word (#7876).
-PER_PAIR_UNIT = mpf("0.237670225314853041078773435698")
+# Per-pair Coulomb unit ratio*B_pp, READ from the proton-pinned witness that
+# derives it (mirror-pair-coulomb-sign-correction.witness.json, field
+# parameters.per_pair_coulomb_unit_MeV = 0.2212723003..., B_pp = 2.12836095).
+# Until 2026-11-21 this was a typed copy of the JUNE 2026 value 0.23767022531
+# (B_pp = 2.28608834, before E0 moved), kept so the published kappa still
+# validated. Owner chose to swap it (card, 2026-11-21): every kappa(A) rises by
+# 0.23767/0.22127 - 1 = 7.41 %. Caveat unchanged: B_pp is the bond on the
+# single-crossing interface letters, which the gamma-gamma ruling superseded;
+# the proper redo still waits on a gamma-gamma word per nucleus (#7876).
+UNIT_SOURCE = HERE / "mirror-pair-coulomb-sign-correction.witness.json"
+PER_PAIR_UNIT = mpf(str(record_upstream(UNIT_SOURCE, _UPSTREAM_RECORDS)
+                        ["parameters"]["per_pair_coulomb_unit_MeV"]))
 
 
 def binding(Z: int, A: int):
@@ -277,7 +279,14 @@ def main() -> None:
         computed=int(max(r["A"] for r in rows)), expected=63, tolerance=0,
         unit="max A",
         source="The series now reaches the A ~ 41 discrimination regime.")
-    out = wb.save()
+    _unit_doc = json.loads(UNIT_SOURCE.read_text())
+    out = wb.save(extra={
+        "q0Anchor": "proton",
+        "q0Value": _unit_doc["q0Value"],
+        "q0AnchorReason": (
+            "q0 enters only through the per-pair Coulomb unit, read from the "
+            "proton-pinned mirror-pair-coulomb-sign-correction witness"),
+    })
 
     print(f"mirror series ({len(rows)} pairs; skipped {len(skipped)}):")
     for r in rows:

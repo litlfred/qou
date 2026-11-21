@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-11-15T19:58:56.278308+00:00",
-  "commitSha": "6109ea1793d3bd7dfe1aef4e1c2365f29a6074f2",
+  "computedAt": "2026-11-21T17:22:30.964299+00:00",
+  "commitSha": "50625d18d91ff56f19c2dcc280ed542ef8ba279c",
   "assertions": [
     {
       "name": "invertibility_test_is_vacuous_min_kappa_already_exceeds_one",
@@ -11,7 +11,7 @@
       "passed": true,
       "tolerance": 0,
       "unit": "boolean",
-      "source": "min(kappa) = 1.4020251 > 1 over the 29 bound points, so acoth(kappa + c0) is real for EVERY c0 >= 0 — admissible or not. Recorded so that 'the derived c0 keeps the series invertible' is never banked as a passed test: it is a test that cannot fail."
+      "source": "min(kappa) = 1.5059256 > 1 over the 29 bound points, so acoth(kappa + c0) is real for EVERY c0 >= 0 — admissible or not. Recorded so that 'the derived c0 keeps the series invertible' is never banked as a passed test: it is a test that cannot fail."
     },
     {
       "name": "bare_rms_is_monotone_in_c0_so_it_cannot_rank_kernels",
@@ -20,7 +20,7 @@
       "passed": true,
       "tolerance": 0,
       "unit": "boolean",
-      "source": "rms(ln alpha) falls monotonically across the scan, 0.0346058 -> 0.00759733 (factor 4.555). Not evidence: as c0 grows, acoth(kappa + c0) -> 1/c0, a constant, and a constant lies on a power law trivially."
+      "source": "rms(ln alpha) falls monotonically across the scan, 0.03252 -> 0.00797722 (factor 4.077). Not evidence: as c0 grows, acoth(kappa + c0) -> 1/c0, a constant, and a constant lies on a power law trivially."
     },
     {
       "name": "and_p_shrinks_in_lockstep_which_is_what_makes_it_an_artifact",
@@ -29,7 +29,7 @@
       "passed": true,
       "tolerance": 0,
       "unit": "boolean",
-      "source": "p falls monotonically alongside it, 0.329059 -> 0.0549741. This is the falsifiable half of the artifact diagnosis: if the rms improved while p did NOT collapse toward 0, the flattening explanation would be wrong and the rms ranking might have meant something."
+      "source": "p falls monotonically alongside it, 0.316657 -> 0.058108. This is the falsifiable half of the artifact diagnosis: if the rms improved while p did NOT collapse toward 0, the flattening explanation would be wrong and the rms ranking might have meant something."
     },
     {
       "name": "scale_free_between_model_spread_is_below_within_model_residual",
@@ -38,7 +38,7 @@
       "passed": true,
       "tolerance": 0,
       "unit": "boolean",
-      "source": "R^2 across the whole scan spans 0.01751, against 0.0199736 of variance the best member leaves unexplained. Choosing between these kernels moves less than the residual within any one of them — the precise sense in which this observable cannot rank them. Threshold is a comparison of two measured quantities, not a chosen tolerance."
+      "source": "R^2 across the whole scan spans 0.0170699, against 0.019937 of variance the best member leaves unexplained. Choosing between these kernels moves less than the residual within any one of them — the precise sense in which this observable cannot rank them. Threshold is a comparison of two measured quantities, not a chosen tolerance."
     },
     {
       "name": "every_derived_c0_lands_interior_not_at_an_optimum",
@@ -47,7 +47,7 @@
       "passed": true,
       "tolerance": 0,
       "unit": "boolean",
-      "source": "L6a4 / Borromean (3He): R^2 0.97464794, 5 of 9 scanned members fit better; knot 8_11 (3H): R^2 0.9748205, 5 of 9 scanned members fit better; figure-eight 4_1: R^2 0.97238228, 6 of 9 scanned members fit better. Could have failed: a derivation that landed at the top or bottom of the landscape would be visible to the series."
+      "source": "L6a4 / Borromean (3He): R^2 0.97493483, 5 of 9 scanned members fit better; knot 8_11 (3H): R^2 0.97509699, 5 of 9 scanned members fit better; figure-eight 4_1: R^2 0.97278388, 6 of 9 scanned members fit better. Could have failed: a derivation that landed at the top or bottom of the landscape would be visible to the series."
     },
     {
       "name": "the_shallow_optimum_is_inadmissible_but_is_not_the_incumbent",
@@ -56,7 +56,7 @@
       "passed": true,
       "tolerance": 0,
       "unit": "boolean",
-      "source": "the scale-free optimum is at c0 = 0.25 (R^2 0.98002642), below the O2 floor of 1 and so INADMISSIBLE, but strictly above 0 and so not the unsubtracted incumbent either. Reported as a LOCATION, not a preference: the margin over the derived value is 0.005378 in R^2 over 29 points, which discriminates nothing."
+      "source": "the scale-free optimum is at c0 = 0.25 (R^2 0.98006304), below the O2 floor of 1 and so INADMISSIBLE, but strictly above 0 and so not the unsubtracted incumbent either. Reported as a LOCATION, not a preference: the margin over the derived value is 0.005128 in R^2 over 29 points, which discriminates nothing."
     },
     {
       "name": "round_six_monotone_scatter_claim_does_not_survive_freeing_p",
@@ -65,15 +65,15 @@
       "passed": true,
       "tolerance": 0,
       "unit": "boolean",
-      "source": "round 6 reports scatter rising monotonically in c0 (3.505% at c0 = 0 to 22.32% at c0 = 7.5) with p PINNED at 1/3. With p freed and the metric scale-free, rms/span is NOT monotone increasing: it runs 0.03388 -> 0.03168 -> 0.04073, a total factor of 1.286. Independent of, and consistent with, the degeneracy probe's correction of the same audit."
+      "source": "round 6 reports scatter rising monotonically in c0 (3.505% at c0 = 0 to 22.32% at c0 = 7.5) with p PINNED at 1/3. With p freed and the metric scale-free, rms/span is NOT monotone increasing: it runs 0.03296 -> 0.03164 -> 0.0405, a total factor of 1.28. Independent of, and consistent with, the degeneracy probe's correction of the same audit."
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 4,
   "computation": "em-linking-derived-c0-is-invisible-to-the-series",
   "scriptFile": "em_linking_derived_c0_is_invisible_to_the_series_probe.py",
-  "scriptHash": "a6545c816915",
-  "scriptCommitSha": "547b78208f6bb667ec8b3580f16390a74dbb9ce4",
+  "scriptHash": "a6fe49a69b7d",
+  "scriptCommitSha": "ce8ec9330f916d774e52478cbc484caf1422bf42",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -88,8 +88,8 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "cvxpy": "absent",
-    "pyhecke_native_build": "24ca776b0ad05497"
+    "cvxpy": "1.9.3",
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -98,86 +98,87 @@
     "reproduce": "python3 -u computations/em_linking_derived_c0_is_invisible_to_the_series_probe.py"
   },
   "description": "Bean qou-17mq. MEASURES what probe 3 argued: the zero-mean-derived c0 is invisible to the kappa(A) series. Scale-free fit quality is flat across the whole c0 scan (R^2 spread smaller than the variance the best member leaves unexplained) and the derived value sits interior. Also records that the bare-rms metric is monotone in c0 by construction (acoth(kappa+c0) -> 1/c0, a constant, as c0 grows) and therefore cannot rank kernels, and that the invertibility test kappa + c0 > 1 is vacuous here. EXPLORATORY. Nothing fitted, nothing wired, no kernel selected.",
-  "q0Anchor": "ambiguous",
-  "q0AnchorReason": "q0 enters only through upstream data: kappa(A) is read from em-linking-mirror-series.witness.json, whose producer divides by a TYPED per-pair Coulomb unit tanh(ln q0)*B_pp = 0.2376702253 with no recorded pin (the proton-pinned mirror-pair-coulomb-sign-correction witness it cites now carries 0.2212723003), and that upstream witness is itself unstamped; the pin of the series this probe fits is therefore undetermined",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "q0 enters only through upstream data: kappa(A) is read from em-linking-mirror-series.witness.json, which since 2026-11-21 derives its per-pair Coulomb unit from the proton-pinned mirror-pair-coulomb-sign-correction witness and is stamped proton",
   "n_bound_points": 29,
   "A_range": [
     3,
     63
   ],
-  "kappa_min": "1.4020251",
+  "kappa_min": "1.5059256",
   "scan": [
     {
       "c0": "0.0",
       "admissible": false,
-      "p": "0.3290588021",
-      "rms_ln_alpha": "0.03460578943",
-      "r_squared": "0.977945725975",
-      "rms_over_span": "0.03388262093"
+      "p": "0.3166566375",
+      "rms_ln_alpha": "0.0325199751",
+      "r_squared": "0.978947193477",
+      "rms_over_span": "0.03295924479"
     },
     {
       "c0": "0.25",
       "admissible": false,
-      "p": "0.2726079",
-      "rms_ln_alpha": "0.02725421753",
-      "r_squared": "0.980026422346",
-      "rms_over_span": "0.03173158981"
+      "p": "0.2685845451",
+      "rms_ln_alpha": "0.02682685174",
+      "r_squared": "0.980063041314",
+      "rms_over_span": "0.03163910125"
     },
     {
       "c0": "0.5",
       "admissible": false,
-      "p": "0.2352204443",
-      "rms_ln_alpha": "0.02374740466",
-      "r_squared": "0.979640072292",
-      "rms_over_span": "0.03168002094"
+      "p": "0.2350098075",
+      "rms_ln_alpha": "0.02376781877",
+      "r_squared": "0.979569939774",
+      "rms_over_span": "0.03171227656"
     },
     {
       "c0": "1.0",
       "admissible": true,
-      "p": "0.1869745916",
-      "rms_ln_alpha": "0.01993397543",
-      "r_squared": "0.977348364865",
-      "rms_over_span": "0.03292853414"
+      "p": "0.1899168994",
+      "rms_ln_alpha": "0.0202027331",
+      "r_squared": "0.97744652061",
+      "rms_over_span": "0.03287323685"
     },
     {
       "c0": "1.5",
       "admissible": true,
-      "p": "0.1563275801",
-      "rms_ln_alpha": "0.01754510701",
-      "r_squared": "0.974958829491",
-      "rms_over_span": "0.03430145173"
+      "p": "0.1603480322",
+      "rms_ln_alpha": "0.01789732111",
+      "r_squared": "0.975226809669",
+      "rms_over_span": "0.0341496604"
     },
     {
       "c0": "2.0",
       "admissible": true,
-      "p": "0.1347869979",
-      "rms_ln_alpha": "0.01575901236",
-      "r_squared": "0.972882484778",
-      "rms_over_span": "0.03546466779"
+      "p": "0.1391714653",
+      "rms_ln_alpha": "0.01615415432",
+      "r_squared": "0.973262214564",
+      "rms_over_span": "0.03525513639"
     },
     {
       "c0": "3.0",
       "admissible": true,
-      "p": "0.1061478716",
-      "rms_ln_alpha": "0.01315334119",
-      "r_squared": "0.969640958266",
-      "rms_over_span": "0.03720599042"
+      "p": "0.1105420158",
+      "rms_ln_alpha": "0.0135838483",
+      "r_squared": "0.970129124959",
+      "rms_over_span": "0.03694988505"
     },
     {
       "c0": "4.0",
       "admissible": true,
-      "p": "0.08778616698",
-      "rms_ln_alpha": "0.01130666195",
-      "r_squared": "0.967281233649",
-      "rms_over_span": "0.03841658208"
+      "p": "0.09191302299",
+      "rms_ln_alpha": "0.01174054807",
+      "r_squared": "0.967801441974",
+      "rms_over_span": "0.03815379808"
     },
     {
       "c0": "7.5",
       "admissible": true,
-      "p": "0.05497413122",
-      "rms_ln_alpha": "0.007597330352",
-      "r_squared": "0.962516430551",
-      "rms_over_span": "0.04072744315"
+      "p": "0.05810797563",
+      "rms_ln_alpha": "0.007977216775",
+      "r_squared": "0.962993158971",
+      "rms_over_span": "0.04050373294"
     }
   ],
   "derived_fibres": [
@@ -185,36 +186,36 @@
       "label": "L6a4 / Borromean (3He)",
       "volume": "7.3277247534",
       "c0_derived": "1.56993691956",
-      "p": "0.1528798508",
-      "r_squared": "0.97464794068",
-      "rms_over_span": "0.03447782262",
+      "p": "0.1569798276",
+      "r_squared": "0.974934829208",
+      "rms_over_span": "0.03431583836",
       "scanned_members_fitting_better": 5,
-      "r2_gap_to_best": "0.0053784817"
+      "r2_gap_to_best": "0.0051282121"
     },
     {
       "label": "knot 8_11 (3H)",
       "volume": "8.2863168178",
       "c0_derived": "1.53093568277",
-      "p": "0.1547821159",
-      "r_squared": "0.974820496818",
-      "rms_over_span": "0.03438001783",
+      "p": "0.1588392327",
+      "r_squared": "0.97509698527",
+      "rms_over_span": "0.03422362189",
       "scanned_members_fitting_better": 5,
-      "r2_gap_to_best": "0.0052059255"
+      "r2_gap_to_best": "0.004966056"
     },
     {
       "label": "figure-eight 4_1",
       "volume": "2.02988321282",
       "c0_derived": "2.13403182583",
-      "p": "0.1300366848",
-      "r_squared": "0.972382282385",
-      "rms_over_span": "0.03573942149",
+      "p": "0.1344595602",
+      "r_squared": "0.972783879671",
+      "rms_over_span": "0.03551945785",
       "scanned_members_fitting_better": 6,
-      "r2_gap_to_best": "0.00764414"
+      "r2_gap_to_best": "0.0072791616"
     }
   ],
   "landscape": {
-    "r_squared_spread": "0.0175099917949",
-    "variance_unexplained_at_best": "0.0199735776537",
+    "r_squared_spread": "0.0170698823435",
+    "variance_unexplained_at_best": "0.019936958686",
     "between_model_below_within_model": true,
     "optimum_c0": "0.25",
     "optimum_is_admissible": false
@@ -223,11 +224,11 @@
   "upstream_witness_hashes": [
     {
       "path": "em-linking-mirror-series.witness.json",
-      "sha256": "23ff1a347a0b112fea54e7712a47b0e8dd702d52abd577615f3c4e0421ac7b02",
-      "size_bytes": 10833,
-      "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
-      "scriptCommitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
-      "computedAt": "2026-08-24T14:40:43.555797+00:00"
+      "sha256": "1c210348da5cae7ec9a3ec2fd0a68a03e72d6c56a86b589f10461aaed835fe0c",
+      "size_bytes": 11561,
+      "commitSha": "50625d18d91ff56f19c2dcc280ed542ef8ba279c",
+      "scriptCommitSha": "183e8fd1d28f0eb84452f9bb7503cb3032c4046c",
+      "computedAt": "2026-11-21T17:14:14.539137+00:00"
     },
     {
       "path": "binding-link-volumes.witness.json",

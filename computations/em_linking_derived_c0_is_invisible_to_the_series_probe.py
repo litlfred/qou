@@ -92,6 +92,7 @@ EXPLORATORY / audit-only. mpmath, no float64 anywhere.
 
 from __future__ import annotations
 
+import json
 import pathlib
 
 import _path_bridge  # noqa: F401
@@ -371,15 +372,13 @@ def main() -> None:
             f.pop(k)
 
     wb.save(extra={
-        "q0Anchor": "ambiguous",
+        "q0Anchor": "proton",
+        "q0Value": json.loads(SERIES.read_text())["q0Value"],
         "q0AnchorReason": (
             "q0 enters only through upstream data: kappa(A) is read from "
-            "em-linking-mirror-series.witness.json, whose producer divides by "
-            "a TYPED per-pair Coulomb unit tanh(ln q0)*B_pp = 0.2376702253 "
-            "with no recorded pin (the proton-pinned "
-            "mirror-pair-coulomb-sign-correction witness it cites now carries "
-            "0.2212723003), and that upstream witness is itself unstamped; the "
-            "pin of the series this probe fits is therefore undetermined"),
+            "em-linking-mirror-series.witness.json, which since 2026-11-21 "
+            "derives its per-pair Coulomb unit from the proton-pinned "
+            "mirror-pair-coulomb-sign-correction witness and is stamped proton"),
         "n_bound_points": len(rows),
         "A_range": [rows[0][0], rows[-1][0]],
         "kappa_min": mp.nstr(kappa_min, 12),

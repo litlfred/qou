@@ -1,16 +1,16 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:22:42.077242+00:00",
+  "computedAt": "2026-11-21T17:14:14.231562+00:00",
   "computation": "em-linking-invariant-scoping",
   "scriptFile": "em_linking_invariant_scoping.py",
-  "scriptHash": "aa43cfb3eac5",
+  "scriptHash": "236030a83cdb",
   "contentBlock": "def:coulomb-charge",
   "auditOnly": true,
   "auditDoc": "docs/workplans/2026-06-19-mirror-pair-coulomb-sign-correction.md",
   "description": "Formalize-first scoping of the open EM-linking invariant (the residual magnitude of the mirror-pair Coulomb sign-correction). States hypothesis class H0 (invariant = single q₀-constant × the derived per-pair unit ⇒ residual factor κ constant across A) and PRUNES it: κ varies ~2.1→3.2 across the A=3,7,11,13 mirror pairs, so H0 is REFUTED. The factor is entangled with the unknown A-dependence of the per-pair strong bond B_pp (fixed here at the A=3 H_6 value); the invariant is not isolable from the A=3 trace alone (H_{2A} bond intractable; LP-dual route independently degenerate). Scopes the open item via a structural pruning, not a numerical fit. EXPLORATORY.",
   "parameters": {
-    "per_pair_coulomb_unit_MeV": "0.237670225314853041078773435698",
+    "per_pair_coulomb_unit_MeV": "0.221272300251562814677557372751",
     "rigidity_threshold_rel": "0.05"
   },
   "data": {
@@ -19,36 +19,36 @@
         "A": 3,
         "pair": "3H/3He",
         "delta_proton_pairs": 1,
-        "need_per_pair_MeV": "0.763755",
-        "residual_factor_kappa": "3.2135073"
+        "need_per_pair_MeV": "0.76375488",
+        "residual_factor_kappa": "3.4516516"
       },
       {
         "A": 7,
         "pair": "7Li/7Be",
         "delta_proton_pairs": 3,
         "need_per_pair_MeV": "0.548036",
-        "residual_factor_kappa": "2.3058673"
+        "residual_factor_kappa": "2.4767492"
       },
       {
         "A": 11,
         "pair": "11B/11C",
         "delta_proton_pairs": 5,
         "need_per_pair_MeV": "0.5530338",
-        "residual_factor_kappa": "2.3268956"
+        "residual_factor_kappa": "2.4993359"
       },
       {
         "A": 13,
         "pair": "13C/13N",
         "delta_proton_pairs": 6,
         "need_per_pair_MeV": "0.50047333",
-        "residual_factor_kappa": "2.1057469"
+        "residual_factor_kappa": "2.2617984"
       }
     ],
-    "kappa_min": "2.1057468712",
-    "kappa_max": "3.21350728299",
-    "kappa_relative_spread": "0.526065324826",
-    "kappa_a3": "3.21350728299",
-    "kappa_high_A_mean": "2.24616992054",
+    "kappa_min": "2.26179839394",
+    "kappa_max": "3.45165155843",
+    "kappa_relative_spread": "0.526065085053",
+    "kappa_a3": "3.45165155843",
+    "kappa_high_A_mean": "2.41262783685",
     "H0_constant_invariant_refuted": true,
     "a3_diproton_outlier": true,
     "next_step": "compute per-pair bond B_pp at H_{2A} for A=7 to disentangle the bond's A-dependence from the EM-linking invariant (intractable at current basis sizes; flagged, not run)"
@@ -66,7 +66,7 @@
       "computed": 1,
       "expected": 1,
       "tolerance": 0,
-      "note": "A=3 κ=3.214 vs A≥7 mean 2.246 (>30%): the ³He diproton (whole nucleus) is a distinct regime"
+      "note": "A=3 κ=3.452 vs A≥7 mean 2.413 (>30%): the ³He diproton (whole nucleus) is a distinct regime"
     },
     {
       "name": "invariant_remains_open_not_fit",
@@ -82,5 +82,10 @@
     "charge-coulomb-tn3he-derived.witness.json (derived per-pair unit)",
     "he3-pairknot-composite-lp.witness.json (LP-dual degeneracy — independent)",
     "AME2020 mirror-pair binding energies (comparison only)"
-  ]
+  ],
+  "scriptCommitSha": "0d4e4a005e3e7a4d358ab3816a8825ea69dac169",
+  "commitSha": "50625d18d91ff56f19c2dcc280ed542ef8ba279c",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-25T17:43:32.890077+00:00",
-  "commitSha": "49da104a79a1ea2ec185f7c057a3d3fb4894b9f8",
+  "computedAt": "2026-11-21T17:14:36.746039+00:00",
+  "commitSha": "50625d18d91ff56f19c2dcc280ed542ef8ba279c",
   "assertions": [
     {
       "name": "saturation_regime_unreachable_in_the_nuclear_chart",
@@ -11,7 +11,7 @@
       "passed": true,
       "tolerance": 0,
       "unit": "boolean",
-      "source": "coth within 10% of its limit needs A = 333.80259; heaviest known nuclide is A = 294."
+      "source": "coth within 10% of its limit needs A = 444.26121; heaviest known nuclide is A = 294."
     },
     {
       "name": "hypothesis_spread_is_of_order_the_scatter",
@@ -20,7 +20,7 @@
       "passed": true,
       "tolerance": 0,
       "unit": "boolean",
-      "source": "The separation the test achieved, in units of the noise it is judged against: max spread 6.285% = 1.7934x the 3.505% scatter. A gap of order the noise is not a discrimination."
+      "source": "The separation the test achieved, in units of the noise it is judged against: max spread 4.897% = 1.38703x the 3.531% scatter. A gap of order the noise is not a discrimination."
     },
     {
       "name": "series_alpha_max_below_saturation_onset",
@@ -29,15 +29,15 @@
       "passed": true,
       "tolerance": 0,
       "unit": "boolean",
-      "source": "alpha_max = 0.87318473 against the 10% saturation onset 1.5222612."
+      "source": "alpha_max = 0.79382219 against the 10% saturation onset 1.5222612."
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 3,
   "computation": "em-linking-kappa-regime-reachability",
   "scriptFile": "em_linking_kappa_regime_reachability_probe.py",
   "scriptHash": "03536dd86491",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "0d4e4a005e3e7a4d358ab3816a8825ea69dac169",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -45,10 +45,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "clarabel": "0.11.1",
+    "cvxpy": "1.9.3",
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -60,11 +65,11 @@
   "auditOnly": "docs/audits/2026-08-25-em-linking-o2-neutrality-applied-to-kappa-contest.md",
   "data": {
     "alpha_range_spanned": {
-      "alpha_min": "0.31649464",
-      "alpha_max": "0.87318473",
+      "alpha_min": "0.28772889",
+      "alpha_max": "0.79382219",
       "A_min": 3,
       "A_max": 63,
-      "scale_used": "0.21944513",
+      "scale_used": "0.19950007",
       "note": "H_coth's own bound-only fitted scale, taken from the committed contest rather than refitted here."
     },
     "saturation_onset": {
@@ -72,17 +77,17 @@
       "thresholds": {
         "10pct": {
           "alpha_required": "1.5222612",
-          "A_required": "333.80259",
+          "A_required": "444.26121",
           "reachable_in_the_nuclear_chart": false
         },
         "5pct": {
           "alpha_required": "1.856786",
-          "A_required": "605.76997",
+          "A_required": "806.2253",
           "reachable_in_the_nuclear_chart": false
         },
         "1pct": {
           "alpha_required": "2.6516525",
-          "A_required": "1764.2981",
+          "A_required": "2348.1219",
           "reachable_in_the_nuclear_chart": false
         }
       },
@@ -90,17 +95,17 @@
       "reading": "Saturation is the feature the discrimination test was built to detect. If the A it requires lies beyond the nuclear chart, the test cannot be run -- which is a different and stronger statement than the test having been run and come out close."
     },
     "separability_from_short_range_asymptotics": {
-      "max_rel_dev_coth_vs_inverse_alpha": "0.19491423",
-      "max_rel_dev_coth_vs_inverse_alpha_plus_alpha_over_3": "0.0096987376",
-      "scatter_hypotheses_are_judged_on": "0.035046122",
+      "max_rel_dev_coth_vs_inverse_alpha": "0.16786296",
+      "max_rel_dev_coth_vs_inverse_alpha_plus_alpha_over_3": "0.006928449",
+      "scatter_hypotheses_are_judged_on": "0.035309156",
       "coth_separable_from_two_term_expansion_at_this_scatter": false,
       "reading": "Over the measured range coth(alpha) = 1/alpha + alpha/3 - alpha^3/45 + ... If coth cannot be told apart from that short-range expansion at the scatter the contest uses, then whatever advantage H_coth has on this data comes from the curvature term alpha^2/3, NOT from saturation."
     },
     "separation_achieved_vs_scatter": {
-      "max_rel_spread_H_coth_vs_H_FH_Z": "0.062851687",
-      "mean_rel_spread": "0.032468205",
-      "scatter": "0.035046122",
-      "max_spread_in_units_of_scatter": "1.7933992",
+      "max_rel_spread_H_coth_vs_H_FH_Z": "0.048974841",
+      "mean_rel_spread": "0.026530625",
+      "scatter": "0.035309156",
+      "max_spread_in_units_of_scatter": "1.3870295",
       "reading": "The predictive gap the two hypotheses actually open across the measured series, in units of the scatter they are judged against. A gap of order 1 scatter is not a discrimination."
     },
     "independent_route_to_the_subtraction": {
@@ -114,15 +119,15 @@
       "what_is_claimed": "The A = 63 series does not reach the regime in which its hypotheses diverge, so it cannot have selected among them on the stated grounds.",
       "what_is_NOT_claimed": "That H_coth is false, that a power law is true, or that the metric Coulomb route fails. This is about what the measurement can resolve, not about which kernel is right. Nothing is wired."
     },
-    "verdict": "The series spans alpha in [0.31649, 0.87318]. Saturation to within 10% of the limit needs alpha = 1.5222612, i.e. A = 333.80259 -- BEYOND the heaviest known nuclide (A = 294), so the discriminating regime is not reachable in any nucleus, let alone in this series. Over the measured range coth is within 0.9699% of its two-term short-range expansion 1/alpha + alpha/3, against the 3.505% scatter the hypotheses are judged on. And the two hypotheses' predictions differ by at most 6.285% across the whole series = 1.793x that scatter. So bean qou-i6rg's 'measurement that selects the hyperbolic kernel or kills it' could not have done either: what H_coth's advantage tracks on this data is the short-range curvature term, not the saturation the test was named for.",
+    "verdict": "The series spans alpha in [0.28773, 0.79382]. Saturation to within 10% of the limit needs alpha = 1.5222612, i.e. A = 444.26121 -- BEYOND the heaviest known nuclide (A = 294), so the discriminating regime is not reachable in any nucleus, let alone in this series. Over the measured range coth is within 0.6928% of its two-term short-range expansion 1/alpha + alpha/3, against the 3.531% scatter the hypotheses are judged on. And the two hypotheses' predictions differ by at most 4.897% across the whole series = 1.387x that scatter. So bean qou-i6rg's 'measurement that selects the hyperbolic kernel or kills it' could not have done either: what H_coth's advantage tracks on this data is the short-range curvature term, not the saturation the test was named for.",
     "upstream_witness_hashes": [
       {
         "path": "em-linking-mirror-series.witness.json",
-        "sha256": "23ff1a347a0b112fea54e7712a47b0e8dd702d52abd577615f3c4e0421ac7b02",
-        "size_bytes": 10833,
-        "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
-        "scriptCommitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
-        "computedAt": "2026-08-24T14:40:43.555797+00:00"
+        "sha256": "1c210348da5cae7ec9a3ec2fd0a68a03e72d6c56a86b589f10461aaed835fe0c",
+        "size_bytes": 11561,
+        "commitSha": "50625d18d91ff56f19c2dcc280ed542ef8ba279c",
+        "scriptCommitSha": "183e8fd1d28f0eb84452f9bb7503cb3032c4046c",
+        "computedAt": "2026-11-21T17:14:14.539137+00:00"
       }
     ]
   }

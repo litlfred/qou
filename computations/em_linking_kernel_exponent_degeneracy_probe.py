@@ -111,6 +111,7 @@ EXPLORATORY / audit-only. mpmath, no float64 anywhere.
 
 from __future__ import annotations
 
+import json
 import pathlib
 
 import _path_bridge  # noqa: F401
@@ -290,7 +291,17 @@ def main() -> None:
     def ball_slope(c0):
         return ols(half_lnA, [acoth(k + c0) for k in K])[0] - 1
 
-    crossing = mp.findroot(ball_slope, mpf("-0.36"))
+    # Bracket the root instead of starting from a hardcoded point: the
+    # start -0.36 was tuned to the old typed per-pair unit and does not
+    # converge once kappa is read from the derived unit (owner card
+    # 2026-11-21, PER_PAIR_UNIT swap). The scan starts just above the
+    # acoth domain edge c0 > 1 - min(K) and stops at the first sign change.
+    _lo = 1 - min(K) + mpf("1e-6")
+    _grid = [_lo + (mpf("8") - _lo) * i / 4000 for i in range(4001)]
+    _vals = [ball_slope(c) for c in _grid]
+    _br = next((a, b) for a, b, fa, fb in
+               zip(_grid, _grid[1:], _vals, _vals[1:]) if fa * fb <= 0)
+    crossing = mp.findroot(ball_slope, _br, solver="anderson")
 
     # ---- F. the qou-gcmn confound as an additive bias ------------------
     # The sign and low-A scale of the drift are read from the COMMITTED
@@ -593,15 +604,13 @@ def main() -> None:
     })
     wb.add_upstream_records(_UPSTREAM_RECORDS)
     out = wb.save(extra={
-        "q0Anchor": "ambiguous",
+        "q0Anchor": "proton",
+        "q0Value": json.loads(SERIES.read_text())["q0Value"],
         "q0AnchorReason": (
             "q0 enters only through upstream data: kappa(A) is read from "
-            "em-linking-mirror-series.witness.json, whose producer divides by "
-            "a TYPED per-pair Coulomb unit tanh(ln q0)*B_pp = 0.2376702253 "
-            "with no recorded pin (the proton-pinned "
-            "mirror-pair-coulomb-sign-correction witness it cites now carries "
-            "0.2212723003), and that upstream witness is itself unstamped; the "
-            "pin of the series this probe fits is therefore undetermined"),
+            "em-linking-mirror-series.witness.json, which since 2026-11-21 "
+            "derives its per-pair Coulomb unit from the proton-pinned "
+            "mirror-pair-coulomb-sign-correction witness and is stamped proton"),
     })
 
     print(f"bound mirror pairs: {len(bound)}  "
