@@ -17,7 +17,8 @@ Content block
 
 ## Manuscript statement
 
-For a Lie algebra $\mathfrak g$ over a commutative ring $R$,
+For a Lie algebra $\mathfrak g$ over a commutative ring $R$, free as an
+$R$-module,
 $U\mathfrak g = T\mathfrak g/J$ is $R$-module isomorphic to
 $S\mathfrak g$; the PBW basis arises as the Gröbner–Shirshov normal
 forms of the commutator relations $G = \{x_ix_j - x_jx_i - [x_i,x_j]\}$.
