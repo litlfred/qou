@@ -353,6 +353,7 @@ import QOU.MassTheory.BondFactorClassicalFloor
 import QOU.MassTheory.TwoRowTwoColumnCollision
 import QOU.MassTheory.TraceConventionGate
 import QOU.MassTheory.NeutronProtonEMSign
+import QOU.MassTheory.PhotonClaspChargeForm
 import QOU.MassTheory.BarParityExclusion
 import QOU.MassTheory.SU4SupermultipletGate
 import QOU.MassTheory.BodyOrderCumulant
@@ -674,6 +675,9 @@ import QOU.BraidKnot
 -- hidden outside it.
 import QOU.BraidKnot.MesonFusionIndexSelection
 import QOU.BraidKnot.ElectronWordCandidates
+import QOU.BraidKnot.WeakVertexElectronFactor
+import QOU.QBeta.WeakVertexTwoTerm
+import QOU.BraidKnot.ElectronPositronWrithe
 import QOU.BraidKnot.ElectronLevelWord
 import QOU.BraidKnot.LongestWordNotTwoPhoton
 import QOU.BraidKnot.LongestWordNotTwoPhotonHecke
@@ -1207,6 +1211,7 @@ import QOU.Mathlib.HadamardFactorization
 import QOU.Mathlib.JensenZeroCounting
 import QOU.Mathlib.ExponentOfConvergence
 import QOU.Mathlib.HadamardZeroFree
+import QOU.Mathlib.C1GevreyLinearCoeff
 import QOU.Mathlib.CanonicalProductGrowth
 import QOU.Mathlib.HadamardQuotient
 import QOU.Mathlib.HadamardMinimumModulus
@@ -1808,6 +1813,8 @@ import QOU.QBeta.McPhailSnyderBridgeExclusion
 import QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm
 import QOU.BraidsAndKnots.NucleonWeightSpaceQTrace
 import QOU.BraidsAndKnots.NucleonIdempotentModifiedTrace
+import QOU.BraidsAndKnots.StrangeStrandOctet
+import QOU.BraidsAndKnots.IsospinMurphyOctet
 import QOU.QuantumObservableUniverses.CategoricalLagrangianTwoTermBridge
 import QOU.MassTheory.GPMTThreeRowCumulantBridge
 import QOU.MassTheory.ThreeRowSpringerSYTDerivation

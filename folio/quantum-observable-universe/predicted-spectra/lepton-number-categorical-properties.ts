@@ -19,6 +19,7 @@ export default remark({
     "prop:torus-knot-generators",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Electron ruling (owner, 2026-11-21; owner chose 'rebuild on sigma_0 sigma_1 sigma_0'): the electron in the beta-decay products is the word e^- = sigma_0 sigma_1 sigma_0 (closure: Hopf link), the positron sigma_0^-1 sigma_1^-1 sigma_0^-1. The 3 + 0 + 7 crossing split is now a braid identity, (sigma_0 sigma_1)^5 = e^- (e^- (sigma_0 sigma_1)^2) in B_3, proved in QOU.BraidKnot.WeakVertexElectronFactor. Issue #8822. The chi = -6 selection paragraph no longer selects the electron (its closure has two components); recorded as a scope-(a) negative." },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): This is `QOU/StandardModel/WritheLevelParity.lean`'s\n`leptonNumber_collapses_at_minimal_level`, and it is the same obstruction\n`LeptonNumberCarrierChirality.lean` proved for the unframed knot type," },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): `QOU/StandardModel/ChiralFermionBraidWords.lean` proves the writhes from the\nwords and shows the candidate" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): It is also what the corpus already does --\n`AntiparticleCrossingReversalContext` takes the mirror" },
