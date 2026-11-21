@@ -313,6 +313,7 @@ export default chapter({
         "torus-knot-shell-binding-table3-data",
         "torus-knot-shell-binding-proof",
         "torus-knot-shell-binding-interpretation",
+        "hopf-link-non-magic",
       ],
     }),
     section({

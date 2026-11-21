@@ -637,7 +637,6 @@ export default chapter({
         "degree-two-baryon-weight-proof",
         "borromean-bloch-group-element",
         "poincare-lefschetz-borromean",
-        "hopf-link-non-magic",
       ],
     }),
 
