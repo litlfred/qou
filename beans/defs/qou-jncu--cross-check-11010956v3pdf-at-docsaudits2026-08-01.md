@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T16:13:03Z
-updated_at: 2026-10-04T15:18:17Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-8hur
 ---
 
@@ -24,3 +24,9 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   Algebraic constructions in the category of vector bundles
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [arcus2011] as the citation key when you do it.
+
+## 2026-11-21 — expo-cite-xcheck drain
+
+Re-upload request still open (arXiv:0901.1612, 1207.1793); no computation. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none.
+
+Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.

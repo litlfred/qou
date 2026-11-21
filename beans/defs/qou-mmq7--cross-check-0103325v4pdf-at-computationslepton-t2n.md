@@ -1,14 +1,14 @@
 ---
 # qou-mmq7
 title: Cross-check 0103325v4.pdf at computations/lepton_t2n_torus_tower.py
-status: todo
+status: completed
 pr: 8380
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:36:44Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-8hur
 ---
 
@@ -38,3 +38,9 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8380, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21 — expo-cite-xcheck drain
+
+Cross-check run (pre-registered, exact): [n]_q-[n-1]_q = Δ_{T(2,2n-1)} for n=2..16 holds with the BALANCED q-integer; with the unbalanced one the difference is q^(n-1), so the identity is convention-dependent. Probe check B. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): SUPERSEDED PREMISE FOUND: the bean wants this in the T(2,n) lepton tower (electron = T(2,3)); the trefoil-as-electron premise is superseded (2026-11-21). Verified as algebra only; not wired.
+
+Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.

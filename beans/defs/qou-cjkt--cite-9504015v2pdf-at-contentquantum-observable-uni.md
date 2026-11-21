@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T00:10:47Z
-updated_at: 2026-10-04T15:17:22Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-19m0
 ---
 
@@ -30,3 +30,9 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   Witten's invariants of rational homology spheres at prime values of K and trivial connection contribution
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [rozansky1995] as the citation key when you do it.
+
+## 2026-11-21 — expo-cite-xcheck drain
+
+`Ref: [rozansky1995]` added to KeystoneRTSurgeryConstruction.lean (Prop 1.1 is on p.6 of the held copy, not p.5); honest-scope banner unchanged. Completes on merge. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none.
+
+Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T16:13:06Z
-updated_at: 2026-10-04T15:17:08Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-19m0
 ---
 
@@ -30,3 +30,9 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   On the number of hyperbolic 3-manifolds of a given volume
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [hodgson2012] as the citation key when you do it.
+
+## 2026-11-21 — expo-cite-xcheck drain
+
+Cite `[hodgson2012]` added at hyperbolic-knot-positive-volume-via-reeb.md after checking §1 (Cao–Meyerhoff). Finding F1: the block's unqualified 'minimal hyperbolic volume' is minimal among orientable cusped manifolds only (shared with m003; Weeks is smaller); sentence not changed. Completes on merge. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none.
+
+Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.

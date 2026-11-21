@@ -1,13 +1,13 @@
 ---
 # qou-fs87
 title: Cite 0304010v1.pdf at prop:q-plancherel-asymptotic-skeleton
-status: todo
+status: scrapped
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T16:12:38Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-19m0
 ---
 
@@ -36,3 +36,9 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8499, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21 — expo-cite-xcheck drain
+
+Premise stale: the feray2010 fluctuation claim is gone from prop:q-plancherel-asymptotic-skeleton, and conj:jet-convergence-classical-limit already cites [ivanov-olshanski2003] §7. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none.
+
+Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.

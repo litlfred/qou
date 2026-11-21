@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:37:17Z
-updated_at: 2026-10-04T15:17:51Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-19m0
 ---
 
@@ -28,3 +28,9 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   Arithmetic of hyperbolic manifolds
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [neumann-reid] as the citation key when you do it.
+
+## 2026-11-21 — expo-cite-xcheck drain
+
+Cite `[neumann-reid]` added at cusp-shape-bar-parity.md (Thm 2.2 framework; p.35 figure-eight group in PGL2(O3)). Completes on merge. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none.
+
+Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.

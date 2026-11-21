@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:51Z
-updated_at: 2026-10-04T15:18:27Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-8hur
 ---
 
@@ -24,3 +24,9 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   Overpartitions, lattice paths and Rogers-Ramanujan identities
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [corteel-mallet2006] as the citation key when you do it.
+
+## 2026-11-21 — expo-cite-xcheck drain
+
+Blocked: Gasper–Rahman is not in library/, so the section locator in StageCSigma3LiftObligation.lean:54 cannot be checked here. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none.
+
+Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.

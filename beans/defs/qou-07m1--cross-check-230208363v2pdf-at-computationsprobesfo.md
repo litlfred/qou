@@ -1,14 +1,14 @@
 ---
 # qou-07m1
 title: Cross-check 2302.08363v2.pdf at computations/probes/fourone_stokes_series_selfcheck.py
-status: todo
+status: completed
 pr: 8298
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T00:10:49Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-8hur
 ---
 
@@ -39,3 +39,9 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8298, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21 — expo-cite-xcheck drain
+
+Cross-check run (pre-registered, exact): M_1 = g_0·2G_0 through q^4, product (1,-8,-9,18,46) = arXiv:2302.08363 §3. PASS. M_2/g_0 = -9q-12q^2+9q^3+36q^4; M_2/(g_0·2G_0) = -9q-75q^2-642q^3-5580q^4. Source says exact forms 'were conjectured in [ggm1]'. Probe computations/probes/expo_xcheck_exact_identities_probe.py check A. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none.
+
+Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.

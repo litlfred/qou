@@ -1,13 +1,13 @@
 ---
 # qou-5rou
 title: Cross-check Ohtsuki-99.pdf at computations/probes/keystone_colored_sigma235_wrt.py
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T00:10:45Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:40:00Z
 pr: 8315
 parent: qou-8hur
 ---
@@ -38,3 +38,9 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8315, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21 — expo-cite-xcheck drain
+
+Cross-check run (pre-registered, exact rationals via L(-2k,χ)): the corpus affine form gives Z = 1 - 6h + 45h^2 - 464h^3 + 6224h^4 - 102816h^5. (λ1,λ2) = (-6,45) = Lin–Wang's (6,39) under orientation reversal (λ2(M̄)=λ2(M)+λ1(M)); λ2 ∈ 3Z. PASS; the corpus series carries the reversed orientation. Probe check D. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none (trefoil here is a surgery knot, not the electron).
+
+Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.

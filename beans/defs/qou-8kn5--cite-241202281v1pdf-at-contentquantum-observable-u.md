@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:18Z
-updated_at: 2026-10-04T15:17:19Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-19m0
 ---
 
@@ -24,3 +24,9 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   Explicit evaluation of the q-Stokes matrices for certain confluent hypergeometric q-difference equations
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [lin2024] as the citation key when you do it.
+
+## 2026-11-21 — expo-cite-xcheck drain
+
+`Ref: [lin2024]` added to C1ConnectionPoles.lean, stating that applicability to the C1 module is not checked. Completes on merge. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none.
+
+Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.

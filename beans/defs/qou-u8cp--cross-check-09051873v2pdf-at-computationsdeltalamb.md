@@ -1,14 +1,14 @@
 ---
 # qou-u8cp
 title: Cross-check 0905.1873v2.pdf at computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py
-status: todo
+status: completed
 pr: 8404
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T16:13:00Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-8hur
 ---
 
@@ -35,3 +35,9 @@ In-progress in PR #8404 (`feat/qou-t8mi-tcgv-tiwv-u33z-u8cp-round68`, `QOU.QBeta
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8404, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21 — expo-cite-xcheck drain
+
+Answered: probe and TjonSimplexForm use 0.300 MeV as the N3LO long-range estimate, which Jurgenson et al. p.3 give as 'a rough estimate in Ref. [20] ... of order a few hundred keV' (a range); the 50 keV SRG-induced number is used separately. ×34 depends on the 0.300 pick; the >10× verdict holds below 1.02 MeV. Comment added in the probe on the branch. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): FINDING F4: mu4_target_exceeds_n3lo_bound puts an empirical literature value and AME B(D) inside a Lean theorem; flagged for the owner, not changed.
+
+Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.

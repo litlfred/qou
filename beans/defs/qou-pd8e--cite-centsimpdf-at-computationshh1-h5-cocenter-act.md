@@ -1,13 +1,13 @@
 ---
 # qou-pd8e
 title: Cite centsim.pdf at computations/hh1_h5_cocenter_action.py
-status: todo
+status: scrapped
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:37:35Z
-updated_at: 2026-10-04T15:17:49Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-19m0
 ---
 
@@ -32,3 +32,9 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   Centers and Simple Modules for Iwahori-Hecke Algebras
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [geck-rouquier-centsim] as the citation key when you do it.
+
+## 2026-11-21 — expo-cite-xcheck drain
+
+Misaddressed: hh1_h5_cocenter_action.py makes no Geck–Rouquier or 'dim Z = 7' claim; it computes dim HH_0 directly over Z[ζ]. Nothing to cite there. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none.
+
+Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.

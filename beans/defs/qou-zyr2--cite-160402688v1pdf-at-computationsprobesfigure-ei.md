@@ -1,14 +1,14 @@
 ---
 # qou-zyr2
 title: Cite 1604.02688v1.pdf at computations/probes/figure_eight_3d_index.py
-status: todo
+status: in-progress
 pr: 8445
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:37:22Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-19m0
 ---
 
@@ -35,3 +35,9 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8445, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21 — expo-cite-xcheck drain
+
+`[garoufalidis-hodgson-hoffman-rubinstein2016]` key added to figure_eight_3d_index.py docstring; probe re-run, payload byte-identical. Cor 10.21 = §10.3 corollary `1-efficient_degrees` (degree ≥ 1 for nonzero irreducible closed normal classes). Completes on merge. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none.
+
+Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.

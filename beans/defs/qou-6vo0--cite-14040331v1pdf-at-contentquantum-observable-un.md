@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T16:13:11Z
-updated_at: 2026-10-04T15:17:10Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-19m0
 ---
 
@@ -27,3 +27,9 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 
 ### Progress (Round 71 — PR litlfred/qou#8300)
 - Formalized in PR `litlfred/qou#8300` (`feat/round71-deltalambda-idempotent-ajtrefoil-n5-gbdepth-43c1`, Commit 1 `a2b0ac0a51416e015d2c71b026de5cf8836daab0`, Head `432940fd4ad329afd23f7d920528ba787ac8691a`, `scriptHash: 06c965f4587d`).
+
+## 2026-11-21 — expo-cite-xcheck drain
+
+`Ref: [tran2014] §0.3` added to AJTrefoil.lean header and StrongAJTrefoil docstring (strong AJ: trefoil by Sikora, torus knots by Tran). Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): the file called the trefoil 'the QOU electron knot' (superseded by the Hopf-electron ruling); relabelled as the backup candidate in the same branch. Completes on merge.
+
+Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.
