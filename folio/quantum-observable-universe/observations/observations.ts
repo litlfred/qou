@@ -267,7 +267,6 @@ export default chapter({
         "gravity-spectral-prefactor",
         "gravity-spectral-prefactor-proof",
         "gravity-spectral-prefactor-interpretation",
-        "g-q-closed-form",
         "gravity-emergent-data",
         "topological-defects",
         "topological-defects-data",

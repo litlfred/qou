@@ -89,6 +89,7 @@ section({
         "photon-threading-mass-interpretation",
         "gravitational-constant",
         "gravitational-constant-properties",
+        "g-q-closed-form",
         "operational-entropy-self-consistency",
         "julia-hausdorff-dimension-prediction",
         "hausdorff-dimension-recurrence",
