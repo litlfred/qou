@@ -98,3 +98,6 @@ STILL OPEN (192, each needs the block's later result; the ratchet on #8637 stays
 
 
 2026-11-21 (W14): owner "Break each loop": 48 links removed (87->39, after main merge); 39 kept because cutting would make text false; thurston-relaxation caveat restored without link. Owner "Allow banner links": audit exempts links inside a **<Kind> (conditional on ..).** banner (af2c71e1e9), 39->29. Remaining 29: in-body conditional hypotheses, links in definition/theorem statements, table cells, 4x dim_q in Ch1 definitions. Ratchet red on them; owner did not choose record-as-debt.
+
+
+2026-11-21T04:35Z (W14): owner "Fix issues": #8702 L4 29->17 (banners, inline restatements, reorder, table cells, retarget). 17 left need judgement: 4x dim_q Ch1 (audit flags notation defined in place), 3 citation defects (target lacks the claimed fact: mi-sw-abelianisation, hecke-baer-star-generic-proof, knot-operator-energy-exists), 3 links to remarks/conjectures, 2 mass-endomorphism-conjecture, gluon-ledger mutual loop, 2 conditional remarks, retracted-argument record, zeta(2) table row. Reread: markov-trace-frobenius-selection inline theorem hypothesis vs degenerate form.
