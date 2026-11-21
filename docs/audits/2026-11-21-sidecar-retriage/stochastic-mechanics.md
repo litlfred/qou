@@ -11,4 +11,6 @@ Umbrella issue #8766. There were 6 stale items, all with wording-only changes: l
 | adelic-reeb-restricted-product proof | proof | warn |
 | c5-involution-leibniz-decomposition proof | proof | fail |
 
+Also reviewed the never-reviewed polynomial-bar-involution proof: pass. The elementary substitution identities check out; the closing "unification" sentence is interpretation.
+
 Ruling check: no block in this chapter uses the photon form or the electron strand.
