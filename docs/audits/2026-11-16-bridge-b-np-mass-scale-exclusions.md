@@ -255,6 +255,12 @@ Written inside H₆(q), H12's per-letter Koszul sign (bᵢ = σ̂ᵢ − 2q⁻²
 
 The KL bases of S₆ (equal parameters) and of its ι-fixed B₃ with L = (1, 2, 2) were computed independently. For all 847 pairs y ≤ x in W, every folded coefficient is ≡ the ambient one mod 2 and no larger in absolute value, as Lusztig §16.6 predicts. The equal-parameter control fails. The two differ at 188 positions, 90 of them negative: the sign lives on whole words, which is why H13's per-crossing sign failed. This gives a strand-level model of reading B (bulk q², wall q). Necessary-condition check, not a proof. Details: `computations/probes/bridge_b/h14_result.md`.
 
+### 10l. Folding rule for all n, and the V³ word through the descent (H15, H16, 2026-11-21)
+
+H15: the KL-level check of §10k passes for n = 3..7. Even n folds to B_{n/2} with wall weight 1. Odd n folds to B_{(n−1)/2} with the middle generator s_m s_{m+1} s_m, of weight 3 (A₁ at n = 3). Details: `h15_result.md`.
+
+H16: the six-strand V³ word (H9), folded by Lusztig's descent and traced by the H8 functional, gives D = 0.94911520554914481986 at q₀, i.e. reading B to 20 digits. The naive untwisted projection agrees only mod 2 and gives D = 0.93900102455152553557; the two agree at q → 1. D is a trace ratio, not a mass. Necessary-condition check, not a proof. Details: `computations/probes/bridge_b/h16_result.md`.
+
 ## 11. What remains open
 
 - A symmetry-breaking object (a vacuum or boundary choice in the Higgs role) that distinguishes u from d inside the
