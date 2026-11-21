@@ -1968,6 +1968,146 @@ def main() -> dict:
         _r["scored_form_previous"] = ["two_term_plain_me", "two_term_derived_qtrace_me (adjacent, PR #8591 first pass)"]
         _r["two_term_scope"] = _TWO_TERM_SCOPE
 
+    # ── OWNER REQUEST 2026-11-21 04:57: two-term Lagrangian trace on EVERY row ──
+    # Verbatim: "Update the scoreboard to use the two-term Lagrangian trace."
+    # The two-term object M = M_QCD + M_QED is defined in the corpus on the
+    # three-strand NUCLEON weight spaces (2,1)/(1,2) only
+    # (QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm, NucleonQEDCovariance,
+    # NucleonWeightSpaceQTrace). It reaches a row in one of two ways:
+    #   * mass_decomposition — the row is a nucleon quantity, so its own value
+    #     carries the M_QED term (m_p, m_n, Q_beta, Delta_pn);
+    #   * q0_pin_only — the row's functional has no QCD+QED split in the corpus,
+    #     but it is evaluated at q0, and q0 is pinned by the proton identity,
+    #     which IS two-term (m_mu, alpha_em_inv, m_K/m_pi). The row's OWN QED
+    #     term (muon carrier, meson word, coupling) is NOT defined and is not
+    #     invented here.
+    # m_e is the CAL-1 unit: no two-term object exists for it and its error is
+    # defined 0, so it is marked not_defined.
+    # Scored form is the owner-ruled covariant all-pairs insertion with the
+    # derived weighting (2026-11-20 16:44). Its connected term is 0 on V^3
+    # (deltaT_allPairs_connected_eq_zero), so the two-term pin is the one-term
+    # pin and every value below equals its one-term value. The adjacent pins
+    # are carried as labelled, unscored alternatives.
+    from qou_substrate.constants import (
+        q_at as _q_at_pin,
+        q_two_term_borromean_at as _q2t_at,
+    )
+    _dps_now = mp.dps
+    _q_one = _q_at_pin(_dps_now)
+    _q_cov = _q2t_at(_dps_now)  # derived weighting, covariant all-pairs (default)
+    _tol_q = mpf(10) ** (-(_dps_now - 5))
+    assert abs(_q_cov - _q_one) / _q_one < _tol_q, (
+        "covariant two-term pin must coincide with the one-term pin "
+        f"(M_p^QED,conn = 0): gap {_q_cov - _q_one}")
+    assert abs(mpf(_q_1t_str) - _q_one) / _q_one < mpf(10) ** -45
+    _q_adj_derived = _q2t_at(_dps_now, insertion="adjacent")
+    _q_adj_plain = mpf(_q_2t_str)  # exact findroot comparison pin (#8554)
+
+    _NOT_DEFINED_REASON = {
+        "m_e": ("CAL-1 anchor: m_e fixes the MeV unit and its err is defined 0. "
+                "The corpus two-term object lives on the three-strand nucleon weight "
+                "spaces (NucleonWeightSpaceTwoTerm); there is no electron weight-space "
+                "QED term, and an electron self-energy would be absorbed into the unit."),
+    }
+    _OWN_TERM_NOT_DEFINED = {
+        "m_mu": ("The muon carrier m_mu/m_e = Vol(4_1)/hbar_q^2 has no QED term in the "
+                 "corpus; the two-term object enters only through q0. A derived muon "
+                 "correction is open (bean qou-6gf9)."),
+        "alpha_em_inv": ("alpha_em^-1 is a coupling, not a mass: the form-B tower has no "
+                         "M_QCD + M_QED split. The two-term object enters only through q0."),
+        "m_K/m_pi": ("Meson words live on V (x) V*, not on the three-strand nucleon weight "
+                     "spaces where the two-term QED operators are defined; no meson two-term "
+                     "QED term exists in the corpus. NOT to be confused with the retired "
+                     "'two-term truncation' (3q^2-1)/(2q^2) of the EM series (de-fitted "
+                     "2026-08-22) -- a different object. Enters only through q0 (and through "
+                     "alpha_em(q0) inside the closed form)."),
+    }
+
+    # One-term recomputation check for alpha_em: the inline form-B cubic must
+    # reproduce the ladder witness it replaces at the one-term pin.
+    _alpha_1t_recomp = _alpha_em_inv_form_b_at(_q_one)
+    if _alpha_inv_pred is not None:
+        _alpha_w_val = mpf(str(_alpha_inv_pred))
+        assert abs(_alpha_1t_recomp - _alpha_w_val) / _alpha_w_val < mpf(10) ** -25, (
+            f"form-B alpha drift vs ladder witness: {_alpha_1t_recomp - _alpha_w_val}")
+
+    _pin_eval = {
+        "alpha_em_inv": _alpha_em_inv_form_b_at,
+        "m_K/m_pi": _mk_over_mpi_at,
+    }
+    _pin_alts = {
+        "q0_two_term_adjacent_derived_weighting": _q_adj_derived,
+        "q0_two_term_adjacent_plain_weighting_8554": _q_adj_plain,
+    }
+    _one_keys = ("pred_MeV", "err_ppb", "miss_factor", "beats_1x_experimental",
+                 "beats_100x_experimental")
+    _coverage = {"mass_decomposition": [], "q0_pin_only": [], "not_defined": []}
+    for _r in rows:
+        _o = _r.get("obs")
+        if "pred_MeV" not in _r:
+            continue
+        if _o in ("Q_beta", "m_n", "Delta_pn"):
+            _r["two_term_entry"] = "mass_decomposition"
+            _coverage["mass_decomposition"].append(_o)
+        elif _o == "m_mu":
+            _r["two_term_entry"] = "q0_pin_only"
+            _r["two_term_own_term"] = {"status": "not_defined",
+                                       "reason": _OWN_TERM_NOT_DEFINED[_o]}
+            _coverage["q0_pin_only"].append(_o)
+        elif _o == "m_p":
+            # CAL-2 anchor round-trip through the TWO-TERM proton identity:
+            # m_p = m_p^QCD(q_cov) + M_p^QED,cov with M_p^QED,cov = 0.
+            _one = {k: _r[k] for k in _one_keys if k in _r}
+            # Use the UNROUNDED m_p_sub: pred_MeV is a 12-digit display string,
+            # and rebuilding from it moved the round-trip 0.002852 -> 0.003197 ppb.
+            if m_p_sub is None:
+                continue
+            _new = _row_for(_o, m_p_sub + _mp_qed_canon,
+                            _r.get("source_witness", ""))
+            for _k in ("pred_MeV", "err_ppb", "roundtrip_residual_ppb",
+                       "compute_truncation_ppb"):
+                _r[_k] = _new[_k]
+            _r["one_term"] = _one
+            _r["scored_form"] = "two_term_covariant_all_pairs_qtrace"
+            _r["two_term_entry"] = "mass_decomposition"
+            _r["two_term_note"] = (
+                "Anchor round-trip, NOT scored. Two-term proton identity "
+                "m_p = m_p^QCD + M_p^QED with the covariant all-pairs M_p^QED = 0 "
+                "(Lean deltaT_allPairs_connected_eq_zero); value equals one_term.")
+            _coverage["mass_decomposition"].append(_o)
+        elif _o in _pin_eval:
+            _codata_val = OBSERVABLES[_o][0]
+            _one = {k: _r[k] for k in _one_keys if k in _r}
+            _pred2 = _pin_eval[_o](_q_cov)
+            _new = _row_for(_o, _pred2, _r.get("source_witness", ""))
+            for _k in ("pred_MeV", "err_ppb", "miss_factor",
+                       "beats_1x_experimental", "beats_100x_experimental",
+                       "compute_truncation_ppb"):
+                _r[_k] = _new[_k]
+            _r["one_term"] = _one
+            _r["scored_form"] = "two_term_covariant_all_pairs_qtrace"
+            _r["two_term_entry"] = "q0_pin_only"
+            _r["two_term_scope"] = (
+                "Evaluated at the covariant two-term proton pin "
+                "(q_two_term_borromean_at, derived weighting, all-pairs), which "
+                "coincides with the one-term pin because M_p^QED,cov = 0; so the "
+                "scored value equals one_term. Adjacent-pin values are unscored "
+                "labelled alternatives (non-covariant insertion, issue #8524).")
+            _r["two_term_q0_scored"] = fmt(_q_cov, 50)
+            _r["two_term_own_term"] = {"status": "not_defined",
+                                       "reason": _OWN_TERM_NOT_DEFINED[_o]}
+            _r["two_term_alternatives_not_scored"] = {
+                _k: {"q0": fmt(_qv, 30),
+                     "pred": fmt(_pin_eval[_o](_qv), 20),
+                     "err_ppb": fmt(rel_error_ppb(_pin_eval[_o](_qv), _codata_val), 6)}
+                for _k, _qv in _pin_alts.items()
+            }
+            _coverage["q0_pin_only"].append(_o)
+        elif _o in _NOT_DEFINED_REASON:
+            _r["two_term"] = "not_defined"
+            _r["two_term_not_defined_reason"] = _NOT_DEFINED_REASON[_o]
+            _coverage["not_defined"].append(_o)
+
     return {
         "computation": "per-observable-100x-experimental-status",
         "description": (
@@ -2042,6 +2182,9 @@ def main() -> dict:
             "calibration_inputs": [
                 r["obs"] for r in rows if _is_calibration_input(r)
             ],
+            # Owner request 2026-11-21: which rows the two-term Lagrangian
+            # trace reaches, and how. not_defined rows need an owner decision.
+            "two_term_coverage": _coverage,
         },
     }
 
