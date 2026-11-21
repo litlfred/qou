@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-04T01:49:55Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:10:00Z
 parent: qou-n4nr
 ---
 
@@ -22,3 +22,18 @@ QOU/Knot/WhiteheadVolumeConjecture.lean: 1 sorry. Genuine volume conjecture — 
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8275, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21 — premise check against docs/coordination/owner-rulings.md (main) + Stage 4 progress
+
+Checked against today's owner-rulings ledger: **no superseded premise.** This bean and the
+van der Veen Lemma 1 derivation (issue #7912) are pure U_q(sl₂) representation theory on
+V_N⊗V_N; they use none of the photon form, virtual photons, γγ letters, T(2,n_s), Markov
+convention C/D, the one- vs two-term Lagrangian trace, the electron word, c_2, χ₍₂,₁₎, or any
+fitted/CODATA value. The quantum trace used is tr(Δ(K)·X), not the mass-sector Markov trace.
+
+Stage 4 on branch claude/whitehead-jones-assembly-2026-11-21 (sorry-free, lean-direct exit 0):
+- QuantumSl2ClaspDeltaF.lean: clasp commutes with Δ(F), scalar on each V_{2n+1}.
+- QuantumSl2Decomposition.lean: F-strings are a basis (V⊗V = ⊕ V_{2n+1}); tr(Δ(K)X) = Σ c_j [2(m−j)+1].
+- QuantumSl2TwistClaspTrace.lean: tr(Δ(K)·T^a X^c) = Σ_j [2n+1] t^{a n(n+1)} C(n)^c (b = d = 0).
+Still open: belt on V⊗V (b ≥ 1 is needed for every Whitehead chain), mirror clasp, framing, 1/[N].
+The volume conjecture itself stays OPEN; do not close this bean.
