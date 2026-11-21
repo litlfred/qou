@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-21T16:41:25.507003+00:00",
-  "commitSha": "fc10db52ed61b4d618975680b39baaadec3384da",
+  "computedAt": "2026-11-21T19:00:27.816399+00:00",
+  "commitSha": "94ba3eb9384fa72a6c8841142bfe0a881696b795",
   "assertions": [
     {
       "name": "R1_ruled_cell",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 98,
+  "durationMs": 2,
   "computation": "qbeta-framed-gluon",
   "scriptFile": "qbeta_framed_gluon_probe.py",
-  "scriptHash": "bbfe260ef173",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ff57e49d5365",
+  "scriptCommitSha": "44587d52bc04b169d7303e86f243fcb9c2dd60dd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,9 +52,12 @@
   "environment": {
     "python": "3.13.18",
     "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "cvxpy": "absent"
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "86e4feaa3cd4d3e9"
   },
   "invocation": {
     "argv": [

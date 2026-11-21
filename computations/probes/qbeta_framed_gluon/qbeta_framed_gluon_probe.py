@@ -31,6 +31,9 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 gg, mp, Q0, TOL = gsw.gg, gsw.mp, gsw.Q0, gsw.TOL
+# The sibling module already set 60 dps when it loaded; set it here too, so this
+# file states its own precision and does not depend on what it loaded first.
+mp.mp.dps = 60
 F_REQ = mp.mpf("2.40397")
 FAMILY = ((4, 8), (5, 7), (6, 5))
 RESULTS: list[tuple[str, bool, str]] = []
