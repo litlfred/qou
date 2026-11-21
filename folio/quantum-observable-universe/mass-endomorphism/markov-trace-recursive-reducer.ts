@@ -44,6 +44,7 @@ export default proposition({
     { kind: "status", date: "2026-11-21", body: "Two of the eight axioms are proved for `trWord`: normalised (`trWord_nil`, the empty word has trace 1) and stable (`trWord_stable`, adding an unused strand leaves the trace unchanged). Both are sorry-free with axioms propext, Classical.choice, Quot.sound. Still open: strip, cyclic, embed_disjoint, hecke, braid, far_comm. Bean qou-tmmt." },
     { kind: "status", date: "2026-11-21", body: "Hecke relation (`trWord_hecke`) and far commutation (`trWord_far_comm`) proved for `trWord`, sorry-free. The proof shows that pushing a combination of basis permutations through the word is linear, then checks each relation on one permutation. embed_disjoint is a property of the shift map alone. Still open for `trWord`: strip, cyclic, braid. Bean qou-tmmt." },
     { kind: "status", date: "2026-11-21", body: "Braid relation (`trWord_braid`) proved for `trWord`, sorry-free, by the same linearity reduction and a case split on the six orders of three adjacent values. Still open for `trWord`: strip, cyclic. Bean qou-tmmt." },
+    { kind: "status", date: "2026-11-21", body: "Markov stabilisation (`trWord_strip`) proved for `trWord`, sorry-free. All `IsMarkovTrace` fields now hold for `trWord` except `cyclic`. Cyclicity is the substantive half of Ocneanu existence and is open. Bean qou-tmmt." },
   ],
   title:
     "Existence of a recursive symbolic Markov-trace reducer for $H_n(q)$ with disjoint-product property",

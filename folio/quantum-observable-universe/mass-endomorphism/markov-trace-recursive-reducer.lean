@@ -872,7 +872,7 @@ with `x'` fixing the top point and lengths adding, so
 Every definition here is structurally recursive, so Lean's own termination
 check is the termination proof: the evaluator is a total function. What is
 NOT proved is that `trWord` satisfies all axioms of `IsMarkovTrace` (proved
-below: `normalised`, `stable`, `hecke`, `far_comm`, `braid`); that is
+below: all but `cyclic`); that is
 the existence half (Ocneanu). By `markovTrace_unique`, if it does, it is the
 trace. The `example`s below are kernel-checked computations, not proofs of the
 axioms: the Hecke quadratic, a braid relation, the product law, and agreement
@@ -921,8 +921,9 @@ example : trWord (5 : ℤ) 3 3 [0, 0, 2, 2] = trWord (5 : ℤ) 3 1 [0, 0] * trWo
 
 `trWord` is normalised (`trWord_nil`) and stable under adding a strand
 (`trWord_stable`); it also satisfies the Hecke relation (`trWord_hecke`) and
-far commutation (`trWord_far_comm`) and the braid relation (`trWord_braid`),
-proved further below. Strip and cyclicity are not yet proved for `trWord`. -/
+far commutation (`trWord_far_comm`), the braid relation (`trWord_braid`) and
+Markov stabilisation (`trWord_strip`), proved further below. Cyclicity is not
+yet proved for `trWord`. -/
 
 theorem trBasis_range {R : Type*} [CommRing R] (z h : R) :
     ∀ m : ℕ, trBasis z h m (List.range m) = 1
@@ -1406,6 +1407,111 @@ theorem trWord_braid (n : ℕ) (u v : List ℤ) (i : ℤ) (hs : Supp n (u ++ [i,
   exact key
 
 end BraidProof
+
+
+/-! ### Markov stabilisation (`strip`) for the evaluator
+
+Appending the new generator `σ_n` to a word of `H_{n+1}`: every basis
+permutation `p ++ [n+1]` is ascending at position `n`, so `σ_n` just swaps, and
+one peel of `trBasis` returns `z` times the trace of `p`. `PermR` records that
+the permutations stay permutations of `range L`. -/
+
+section StripProof
+variable {R : Type*} [CommRing R] (z h : R)
+
+theorem trBasis_strip (n : ℕ) (q : List ℕ) (x : ℕ) (hq : q.length = n)
+    (hx : x < n + 1) (hqv : ∀ y ∈ q, y < n + 1) :
+    trBasis z h (n + 2) (swapAt (q ++ [x] ++ [n + 1]) n) = z * trBasis z h (n + 1) (q ++ [x]) := by
+  have e0 : swapAt (q ++ [x] ++ [n + 1]) n = q ++ [n + 1, x] := by
+    have := swapAt_mid q [] x (n + 1); rw [hq] at this; simpa using this
+  have hnm : (n + 1) ∉ q := fun hm => by have := hqv _ hm; omega
+  have e1 : (q ++ [n + 1, x]).getD (n + 1) 0 = x := by
+    have := getD_mid (q ++ [n + 1]) [] x; simp only [List.length_append, hq] at this; simpa using this
+  have e2 : (q ++ [n + 1, x]).idxOf (n + 1) = n := by
+    rw [List.idxOf_append, if_neg hnm, hq]; simp
+  have e3 : swapAt (q ++ [n + 1, x]) n = q ++ [x, n + 1] := by
+    have := swapAt_mid q [] (n + 1) x; rw [hq] at this; simpa using this
+  have e4 : (q ++ [x, n + 1]).take (n + 1) = q ++ [x] := by
+    rw [List.take_append, hq, List.take_of_length_le (by omega)]; simp
+  rw [e0]
+  show trBasis z h (n + 1 + 1) (q ++ [n + 1, x]) = _
+  simp only [trBasis, e1, show x ≠ n + 1 by omega, if_false, e2,
+    show n + 1 - n = 1 by omega, show n + 1 - 1 - n = 0 by omega]
+  simp [e3, e4, mulGens]
+
+def PermR (L : ℕ) (e : List (R × List ℕ)) : Prop := ∀ p ∈ e, p.2.Perm (List.range L)
+
+theorem mulGen_permR (L i : ℕ) (hi : i + 1 < L) (e : List (R × List ℕ)) (he : PermR L e) :
+    PermR L (mulGen h e i) := by
+  intro p hp
+  simp only [mulGen, List.mem_flatMap] at hp
+  obtain ⟨q, hq, hp⟩ := hp
+  have hql := (he q hq).length_eq
+  simp only [List.length_range] at hql
+  split_ifs at hp <;> simp only [List.mem_cons, List.not_mem_nil, or_false] at hp
+  · subst hp; exact (swapAt_perm q.2 i (by omega)).trans (he q hq)
+  · rcases hp with rfl | rfl
+    · exact he q hq
+    · exact (swapAt_perm q.2 i (by omega)).trans (he q hq)
+
+theorem mulGens_permR (L : ℕ) : ∀ (v : List ℕ) (e : List (R × List ℕ)), (∀ i ∈ v, i + 1 < L) →
+    PermR L e → PermR L (mulGens h e v)
+  | [], _, _, he => he
+  | i :: v, e, hv, he => by
+    simp only [mulGens, List.foldl_cons] at *
+    exact mulGens_permR L v _ (fun j hj => hv j (by simp [hj]))
+      (mulGen_permR h L i (hv i (by simp)) e he)
+
+theorem strip_comb (n : ℕ) : ∀ e : List (R × List ℕ), PermR (n + 1) e →
+    trComb z h (n + 2) (mulGen h (e.map (appTop (n + 1))) n) = z * trComb z h (n + 1) e
+  | [], _ => by simp [mulGen, trComb]
+  | p :: e, he => by
+    have ih := strip_comb n e (fun q hq => he q (by simp [hq]))
+    have hp := he p (by simp)
+    have hl : p.2.length = n + 1 := by simpa using hp.length_eq
+    have hv : ∀ y ∈ p.2, y < n + 1 := fun y hy => by simpa using hp.subset hy
+    obtain ⟨q, x, hqx⟩ : ∃ q x, p.2 = q ++ [x] := by
+      rcases List.eq_nil_or_concat p.2 with h0 | ⟨q, x, h0⟩
+      · rw [h0] at hl; simp at hl
+      · exact ⟨q, x, by simpa using h0⟩
+    have hq : q.length = n := by rw [hqx] at hl; simpa using hl
+    have hx : x < n + 1 := hv x (by rw [hqx]; simp)
+    have hqv : ∀ y ∈ q, y < n + 1 := fun y hy => hv y (by rw [hqx]; simp [hy])
+    have g0 : (q ++ [x] ++ [n + 1]).getD n 0 = x := by
+      have := getD_mid q [n + 1] x; rw [hq] at this; simpa using this
+    have g1 : (q ++ [x] ++ [n + 1]).getD (n + 1) 0 = n + 1 := by
+      have := getD_mid (q ++ [x]) [] (n + 1); simp only [List.length_append, hq] at this
+      simpa using this
+    have hs := trBasis_strip z h n q x hq hx hqv
+    rw [show p :: e = [p] ++ e by simp, List.map_append, mulGen_app, evalC_app, ih]
+    simp only [List.map_cons, List.map_nil, appTop, hqx, mulGen, List.flatMap_cons,
+      List.flatMap_nil, List.append_nil, g0, g1, show x < n + 1 from hx, if_true]
+    simp only [trComb, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, hs,
+      List.singleton_append, hqx]
+    ring
+
+theorem trWord_strip (n : ℕ) (w : List ℤ) (hw : Supp n w) :
+    trWord z h (n + 1) (w ++ [Int.ofNat n]) = z * trWord z h n w := by
+  have hl : ∀ i ∈ w.map Int.toNat, i + 1 < n + 1 := by
+    intro i hi
+    obtain ⟨c, hc, rfl⟩ := List.mem_map.mp hi
+    have := hw c hc; omega
+  have hr : List.range (n + 1 + 1) = List.range (n + 1) ++ [n + 1] := List.range_succ
+  have h0 : [((1 : R), List.range (n + 1 + 1))]
+      = [((1 : R), List.range (n + 1))].map (appTop (n + 1)) := by
+    simp [appTop, hr]
+  obtain ⟨m1, -⟩ := mulGens_append h (n + 1) (n + 1) (w.map Int.toNat)
+    [((1 : R), List.range (n + 1))] hl (by simp)
+  have hP : PermR (n + 1) (mulGens h [((1 : R), List.range (n + 1))] (w.map Int.toNat)) :=
+    mulGens_permR h (n + 1) _ _ hl (by intro p hp; simp at hp; subst hp; exact List.Perm.refl _)
+  have key := strip_comb z h n _ hP
+  unfold trWord
+  rw [List.map_append, mulGens_cat, h0, m1]
+  simp only [List.map_cons, List.map_nil, Int.toNat_natCast]
+  show trComb z h (n + 2) (mulGens h _ [n]) = _
+  exact key
+
+end StripProof
 
 end Evaluator
 
