@@ -196,3 +196,24 @@ row because of where it lands would be selection against the target.
 the missing q = 1 factor. **What is open:** whether the lepton factor is one-sided, and which
 normalisation it carries. The one rule already ruled for ε (the nucleon rule) is the
 corpus-consistent candidate. It is not adopted here.
+
+## 10. Owner ruling 2026-11-21: not one-sided yet
+
+Owner card choice "Not one-sided yet". The lepton factor stays on both sides of the transition.
+It is then a common factor of ε_n and ε_p, and the functional stays order 1 at q = 1.
+
+Recorded result: **no interaction functional on record closes the Q_β gap.**
+- Cross terms are order ≥ 2 at q = 1 (§9).
+- The two-term connected terms lift the q = 1 coefficient to at most 1, against the ≈ 1.80 needed.
+- A shared lepton factor f multiplies the scored coefficient by f(1).
+  - Nucleon rule: f(1) = 1/16.
+  - Markov t(Δ): f(1) = 1/2.
+  - In both cases f(1) < 1, so the factor lowers the coefficient further.
+
+The one-sided rows of §9 stay as unadopted diagnostics. The ruling is in
+`docs/coordination/owner-rulings.md`.
+
+What remains open is a q = 1 counting factor ≥ 2.04 that none of the following supplies:
+- the derived links (h, V³, τ);
+- the normalisation family (≤ 1);
+- the interactions on record.
