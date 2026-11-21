@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T12:32:32Z
-updated_at: 2026-10-04T15:14:07Z
+updated_at: 2026-11-21T12:20:00Z
 parent: qou-5p7n
 ---
 
@@ -247,3 +247,7 @@ what the paper claims).
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-21 honesty-audits (bean-drain wave 1, session_01Qmmkt97DGEiUfDvuBj8sVr; issue #8813, PR #8819)
+- Re-read. The bean's own last entry already says the apply phase must not run as written: T1/T2/T6/T8 work as intended, C3 is owner-approved and guarded, C2/C4 belong to the 2026-08-24 probe. What is left, T3 and T10, changes what the paper claims, so it is an owner decision; not acted on.
+- Superseded-premise check (owner 2026-11-21, against docs/coordination/owner-rulings.md on main 2ae54ab40): **one found.** The carrier population this bean measured includes `TrefoilElectronMassConj`. The trefoil is no longer the primary electron (ruling 2026-11-21: σ₀σ₁σ₀ ∈ B₃ with Hopf closure; trefoil σ₀³ kept as backup). Any further work on that carrier must be scoped as the backup route, not redone as the electron.
