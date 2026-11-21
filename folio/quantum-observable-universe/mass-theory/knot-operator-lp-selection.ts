@@ -12,13 +12,6 @@ export default proposition({
     "rem:gram-matrix-spectral-connection",
     "prop:weak-spectral-completeness",
   ],
-  computation: {
-    engine: "python",
-    script: "computations/wedderburn_pair_volumes.py",
-    witness:
-      "computations/wedderburn-pair-volumes.witness.json",
-    status: "verified",
-  },
   tags: [
     "lp-dual",
     "sdp",
@@ -30,6 +23,11 @@ export default proposition({
     "shadow-price",
   ],
   authorNotes: [
+    {
+      kind: "status",
+      date: "2026-11-21",
+      body: "**No producer solves the stated LP; the `computation` pointer is removed.** The block declared `computations/wedderburn_pair_volumes.py` / `wedderburn-pair-volumes.witness.json` with status `verified`. That producer calls `solve_operator_selection_lp(t, G, n_target)` with $t_i = \\mathrm{tr}_M(b_i)$, the Gram matrix $G$ itself and a scalar net target $n_{\\mathrm{target}} = \\mathrm{net}(\\mathrm{NF}(B_3))$; the solver's program is $\\min t^{\\top}x$ subject to $\\mathbf{1}^{\\top}x = n_{\\mathrm{target}}$, $Gx \\ge 0$ and $x_i \\ge -M$ (a large box bound, not $x \\ge 0$). That is a different LP from $\\min t^{\\top}x$ subject to $G^{+}Sx \\ge n_T$, $x \\ge 0$. A search of `computations/` (`solve_operator_selection_lp`, `solve_frobenius_dual_lp`, `G_PINV`, `gram_quotient_inverse`, `pinv`) found no producer that solves the stated program: `solve_frobenius_dual_lp` imposes $Gx = u$ as an equality, and `confinement-operator-selection.py` / `gram-matrix-dual.py` apply $G^{+}$ to a demand profile without an LP. The block has no computational witness until such a producer exists. The witness file also records a stale `scriptHash` (`25431e10193a`, against `b093882f8ec9` for the current script); it is not refreshed here. The producer still names this block as the `source` of its assertions.",
+    },
     {
       kind: "status",
       date: "2026-11-20",
