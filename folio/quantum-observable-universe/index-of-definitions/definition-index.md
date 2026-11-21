@@ -478,7 +478,7 @@
 | [prop:confinement-categorical](#prop:confinement-categorical) | Confinement = spectral-sequence collapse (only Wedderburn-central observables survive) | Ch 11 |
 | [prop:confinement-lp](#prop:confinement-lp) | Confinement as linear program over the Hecke normal form basis | Ch 12 |
 | [prop:confinement-sdp](#prop:confinement-sdp) | Confinement as semidefinite program with matrix Frobenius positivity | Ch 11 |
-| [prop:confinement-frobenius-reciprocity](#prop:confinement-frobenius-reciprocity) | Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings | Ch 12 |
+| [conj:confinement-frobenius-reciprocity](#conj:confinement-frobenius-reciprocity) | Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings | Ch 12 |
 | [prop:confinement-topological](#prop:confinement-topological) | Confinement is topological (LP proof) | Ch 12 |
 | [prop:confinement-operator-selection](#prop:confinement-operator-selection) | Confinement operator selection via topological Brunnian minimality | Ch 12 |
 | [prop:confinement-phase-stratification](#prop:confinement-phase-stratification) | Confinement phases are open strata of the generic $q$-locus | Ch 7 |

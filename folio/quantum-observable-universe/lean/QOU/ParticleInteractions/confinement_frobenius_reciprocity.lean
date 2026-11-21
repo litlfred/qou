@@ -5,7 +5,7 @@ import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 /-!
 # QOU.ParticleInteractions.confinement_frobenius_reciprocity
 
-**Proposition** ([`prop:confinement-frobenius-reciprocity`](../../../quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.md)):
+**Conjecture** ([`conj:confinement-frobenius-reciprocity`](../../../quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.md)):
 *confinement Frobenius reciprocity.*
 
 Let `T ∈ H_n(q)` be a confined bound-state operator selected by the
@@ -59,7 +59,7 @@ theorem mem_activeSet {d : ℕ} (u : Fin d → ℝ) (i : Fin d) :
   simp [activeSet]
 
 /-- **Confinement Frobenius reciprocity, conditional on stationarity**
-    ([`prop:confinement-frobenius-reciprocity`]).
+    ([`conj:confinement-frobenius-reciprocity`]).
 
     Given the primal optimum `x`, shadow prices `u`, a symmetric dual-basis
     matrix `Ginv`, linearity of the expectation in `x`, and stationarity
