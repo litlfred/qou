@@ -83,6 +83,10 @@ rows = {
     "LT_log_E0full": 2 * E0T * L,
     "S0_perstep_E0": 2 * E0,
     "ST_perstep_E0full": 2 * E0T,
+    # Addendum 1, route D (dictionary beta = ln q): the cell is exactly 2 units; the unit is not
+    # fixed by the dictionary. Diagnostics for the two energy units the corpus uses:
+    "D_unit_me_cq2": 2 * me / (q0 - 1) ** 2,
+    "D_unit_me": 2 * me,
 }
 OUT["numbers"] = {
     "q0": s(q0, 30), "m_e_MeV": s(me, 14), "eps_p": s(eP, 15), "eps_n": s(eN, 15),
@@ -93,6 +97,11 @@ OUT["numbers"] = {
 }
 for k, val in rows.items():
     print(f"  {k:22s} {s(val, 10)} MeV  = {s(val / me, 8)} m_e")
+
+kT = me * (1 / (q0 - 1)) ** 2 * ((q0 - 1) / q0)
+check("route T: m_e c_q^2 hbar_q = E0", abs(kT - E0) < mp.mpf("1e-50"), s(kT))
+check("route D: -ln(eps_n)/ln q + ln(eps_p)/ln q = 2", abs((mp.log(eP) - mp.log(eN)) / L - 2) < mp.mpf("1e-50"), "exact 2")
+check("two inverse temperatures differ: ln q < 1/hbar_q", L < 1 / hb, f"{s(L,8)} vs {s(1/hb,8)}")
 
 # A common factor: linear cell rescales, log cell does not (S in numbers).
 fL = mp.mpf(3) / 4  # an arbitrary common factor; the identity holds for every f > 0
