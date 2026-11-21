@@ -1,18 +1,25 @@
 **Proof.**
-The Borromean braid of a nucleon with quarks $(q_1, q_2, q_3)$ has six crossings organised into three crossing pairs. Each pair corresponds to a color-exchange channel. At each pair involving quarks of species $a$ and $b$, a double application of the Skein relation yields the pair Skein mass
+Write $[2]_q = q + q^{-1}$. The two ingredients of $\mathcal{S}_{ab}$ are computed from the Markov trace at $z = q^3/(q^2+1)$.
+
+*The normaliser.* The Temperley–Lieb generator is $e_i = q - \sigma_i$, so its trace is $q - z$. From $z(q^2+1) = q^3$,
+
 $$
-  \mathcal{S}_{ab}(q)
-  =
-  \frac{q\mu_a +  q^{-1}\mu_b}
-       {q^{1/2} + q^{-1/2}},
+  (q - z)(q + q^{-1}) = \frac{q(q^2+1) - q^3}{q^2+1}\cdot\frac{q^2+1}{q} = 1,
 $$
-where $\mu_a$ is the dressed quark Skein mass of species $a$. This $\mu_a$ represents the mass contribution of a single quark strand including its strong-field dressing from the Hopf-link interaction with the color background. The total nucleon mass is the sum over the three crossing pairs:
+
+so $q - z = 1/[2]_q$. In particular $[2]_q \neq 0$.
+
+*The skein weights.* A link invariant $X = c^{\,w(\beta)}\,\kappa^{\,n-1}\,\mathrm{tr}(\beta)$, with $w$ the writhe, is unchanged by stabilising with $\sigma_n$ and with $\sigma_n^{-1}$ exactly when $c\,\kappa\,z = 1$ and $c^{-1}\kappa\,\mathrm{tr}(\sigma^{-1}) = 1$. Since $\sigma^{-1} = \sigma - (q - q^{-1})$,
+
 $$
-  m_N
-  =
-  \mathcal{S}_{q_1 q_2}(q)
-  + \mathcal{S}_{q_1 q_3}(q)
-  + \mathcal{S}_{q_2 q_3}(q).
+  \mathrm{tr}(\sigma^{-1}) = z - (q - q^{-1}) = q^{-4} z .
 $$
-The denominator $q^{1/2}+q^{-1/2}$ is not derived above. It is the reciprocal of the excised convention-C Markov weight $\sqrt q/(q+1)$, so the argument holds in the convention-C frame only.
-$\square$
+
+Dividing the two conditions gives $c^2 = q^{-4}$, so $c = \pm q^{-2}$. The trace relation $\mathrm{tr}(x\sigma) - \mathrm{tr}(x\sigma^{-1}) = (q - q^{-1})\,\mathrm{tr}(x)$ then reads $c^{-1}X(L_+) - c\,X(L_-) = (q - q^{-1})\,X(L_0)$, with weights $\pm q^{\pm 2}$.
+
+*The mass assignment.* Each crossing pair of the Borromean braid joins strands of species $a$ and $b$. Weight $\mu_a$ by the positive-crossing coefficient $q^{2}$ and $\mu_b$ by the negative-crossing coefficient $q^{-2}$, and normalise by the trace of $e_i$. This gives $\mathcal{S}_{ab} = (q - z)(q^2\mu_a + q^{-2}\mu_b)$. This step is a reading, not a derivation from the braid. It contains two choices, and both are fixed by tests the corpus already applies to this normaliser.
+
+1. *Bar-covariance.* The form above satisfies $\mathcal{S}_{ab}(q^{-1}) = \mathcal{S}_{ba}(q)$ identically. Normalising by $z$ instead multiplies every $\mathcal{S}_{ab}$ by $q^2$ (because $z = q^2(q - z)$), and that form is bar-covariant on $(\mu_a, \mu_b) = (1, 0)$ only if $q^4 = 1$.
+2. *Classical limit.* At $q = 1$ the form above gives $\mathcal{S}_{aa} = \mu_a$. The branch $c = -q^{-2}$ negates every $\mathcal{S}_{ab}$ and gives $-\mu_a$.
+
+The total nucleon mass is the sum over the three crossing pairs. $\square$

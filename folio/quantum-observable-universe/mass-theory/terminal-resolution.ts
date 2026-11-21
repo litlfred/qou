@@ -3,6 +3,17 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-11-21",
+      body:
+        "**Moved to convention D (issue #8923).** The statement used the " +
+        "convention-C normaliser $1/(q^{1/2}+q^{-1/2})$. It now uses the " +
+        "canonical frame $z = q^3/(q^2+1)$: $\\mathcal{S}_{ab} = " +
+        "(q^2\\mu_a + q^{-2}\\mu_b)/[2]_q$, the splitting coefficient is " +
+        "$[4]_q/[2]_q^2$, and the bijection is unchanged. Lean: " +
+        "`terminal_resolution_conventionD`, sorry-free over a generic field.",
+    },
+    {
       kind: "caveat",
       date: "2026-11-21",
       body:
@@ -21,12 +32,13 @@ export default proposition({
     {
       kind: "note",
       body:
-        "Lean sibling over a generic field (AGENTS.md §7c). The square root is " +
-        "avoided by writing $q = s^2$.",
+        "Lean sibling over a generic field (AGENTS.md §7c). The convention-C " +
+        "theorems are kept, written in $s$ with $q = s^2$; the convention-D " +
+        "theorems reuse them at $s := q$.",
     },
   ],
   label: "prop:terminal-resolution",
-  lean: { ref: "qou:QOU.MassTheory.PairSkeinNucleon.terminal_resolution",
+  lean: { ref: "qou:QOU.MassTheory.PairSkeinNucleon.terminal_resolution_conventionD",
     validation: "not_checked",
   },
   title: "Nucleon masses under the pair Skein formula",
@@ -34,5 +46,5 @@ export default proposition({
     "lem:pair-skein-mass-formula",
   ],
   proofs: ["prf:terminal-resolution"],
-  tags: ["mass", "hadronic", "pair-skein", "convention-c"],
+  tags: ["mass", "hadronic", "pair-skein", "convention-d"],
 });
