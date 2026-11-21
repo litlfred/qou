@@ -3,7 +3,7 @@ The algebraic factor arises from the Hecke representation theory
 of $H_3(q_0)$.  On the standard $(2,1)$ irreducible representation,
 $\sigma_1$ acts diagonally in the Hoefsmit seminormal basis with
 eigenvalues $q$ and $-q^{-1}$
-(cf. [`prop:hoefsmit-binding-amplitude`](../braids-and-knots/hoefsmit-binding-amplitude.md)).
+(cf. [Hoefsmit binding amplitude $b^2 = [3]_q/[2]_q^2$](../braids-and-knots/hoefsmit-binding-amplitude.md)).
 The character of $\sigma_1^n$ for odd $n$ is therefore
 
 $$
@@ -41,43 +41,41 @@ Combining: $(q_0^5 - q_0^{-5}) \times (9/5)^2 \approx 1.0914 \times
 
 ## Computational witness
 
-[`meson-kaon-pion-derivation.witness.json`](../../computations/meson-kaon-pion-derivation.witness.json)
-verifies the formula at $50$-digit precision, confirms the algebraic
-identity $q^5 - q^{-5} = h \cdot [5]_q$, and validates the Seifert
+A computation at $50$-digit precision verifies the formula, confirms the
+algebraic identity $q^5 - q^{-5} = h \cdot [5]_q$, and validates the Seifert
 ratio $V_S(T(2,5))/V_S(T(2,3)) = 9/5$ exactly.
 
-## Lean structure — what is proved vs. the remaining gap
+## What is proved vs. the remaining gap
 
-The Lean sibling separates the **two algebraic identities** (proved)
+The argument separates the **two algebraic identities** (proved)
 from the **physical / empirical content** of the mass-ratio
-claim (not a Lean theorem). This makes precise what remains "to be
+claim (not a theorem). This makes precise what remains "to be
 proved" downstream.
 
-| Lean declaration | content | status |
-|---|---|---|
-| `chi_21_odd` | $\chi^{(2,1)}(\sigma_1^n)=q^n+(-q^{-1})^n=q^n-q^{-n}$ for odd $n$ | **proved** |
-| `seifert_ratio_T25_T23` | $V_S(T(2,5))/V_S(T(2,3))=9/5$ | **proved** (needs char $\neq 2,3,5$) |
-| `meson_squaring_exponent` | the exponent record $n_q=2$ | **proved** (`rfl`) |
-| `mesonMassRatio` | the assembled formula $\chi^{(2,1)}(\sigma_1^5)\cdot(9/5)^2$ | **definition** |
+| content | status |
+|---|---|
+| $\chi^{(2,1)}(\sigma_1^n)=q^n+(-q^{-1})^n=q^n-q^{-n}$ for odd $n$ | **proved** |
+| $V_S(T(2,5))/V_S(T(2,3))=9/5$ | **proved** (needs char $\neq 2,3,5$) |
+| the exponent record $n_q=2$ | **recorded** (true by definition) |
+| the assembled formula $\chi^{(2,1)}(\sigma_1^5)\cdot(9/5)^2$ | **definition** |
 
-**The gap (NOT Lean-proved, and intentionally so):**
+**The gap (not proved, and intentionally so):**
 
 1. **The exponent $n_q=2$** has a *physical rationale* (two-quark
    composite) and is *not contradicted* by the power scan ($290$ ppm at
    $n_q=2$ vs $4.4\times 10^5$ ppm at $n_q=1$). It is **not derived** from
    the substrate, and the scan does not supply the missing derivation —
-   see the caveat in the proof body. The `meson_squaring_exponent` lemma
-   only records the value; it does not select it.
+   see the caveat in the proof body. Recording the value $n_q = 2$
+   does not select it.
 2. **The canonical exact match to the PDG ratio** ($\approx 290$ ppm) is a
-   *witnessed near-match*, not a Lean equality — the witness JSON is the
-   evidence, the Lean file proves only the two underlying identities.
+   *witnessed near-match*, not an equality — the numerical comparison is the
+   evidence; only the two underlying identities are proved.
 
-**Base-ring note.** The Lean sibling is stated over a generic
-`[Field R]` (no archimedean `$\mathbb{R}$` dependence). `chi_21_odd` is
-unconditional; `seifert_ratio_T25_T23` carries explicit `$2,3,5\neq 0$`
+**Base-ring note.** The identities are stated over a generic field
+(no archimedean $\mathbb{R}$ dependence). The character identity is
+unconditional; the Seifert-ratio identity carries explicit $2,3,5\neq 0$
 hypotheses — the invertibility the rational identity genuinely needs,
-vacuous in any characteristic-0 specialisation. This avoids `CharZero`
-entirely and is verified (`lake env lean`).
+vacuous in any characteristic-0 specialisation.
 
 ## Scope — this is not the canonical route to $m_K/m_\pi$
 
@@ -87,10 +85,10 @@ canonical closure of the meson ratio, and the two must not be conflated.
 The canonical route is the $q$-Clebsch--Gordan fusion together with the
 electromagnetic term,
 $m_K^2/m_\pi^2 = [3]_q\,[4]_q + (\alpha_{\mathrm{em}}/\pi)\bigl(1 + \log(1+\hbar_q)\bigr)$
-([`prop:meson-em-sinh-closed-form`](../braids-and-knots/meson-em-sinh-closed-form.md)),
+([Meson EM sinh-channel closed-form $1 + \hbar_q - \hbar_q^2/2 = (3q^2 - 1)/(2q^2)$](../braids-and-knots/meson-em-sinh-closed-form.md)),
 which is what the per-observable accuracy dashboard scores. The
 $(q_0^5 - q_0^{-5})(9/5)^2$ form here was formerly used there and was
-withdrawn from that role.
+excluded from that role.
 
 The two agree with each other only to about a part in $3\,400$: the form
 proved here sits at $290$ parts per million, which misses this

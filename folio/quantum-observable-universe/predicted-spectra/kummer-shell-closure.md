@@ -32,7 +32,7 @@ $$
   n  \big|  \chi(A)
 $$
 
-The obstruction vanishes when $n$ divides the Euler characteristic $\chi(A)$ of the brane configuration. We apply this to the nuclear braid.
+The obstruction vanishes when $n$ divides the Euler characteristic $\chi(A)$ of the brane configuration. Apply this to the nuclear braid.
 
 - At level $n = 2$, the obstruction $\kappa_0 \bmod 2 = 0$ vanishes when $\chi(A)$ is even. This corresponds to even-even nuclei. The Pauli factor is enhanced.
 - For magic numbers, the obstruction vanishes at specific levels $n$ corresponding to shell capacities. Magic number 2 corresponds to $\mu_2$. Magic 8 corresponds to $\mu_8$.
@@ -42,7 +42,7 @@ The obstruction vanishes when $n$ divides the Euler characteristic $\chi(A)$ of 
 
 For odd-odd nuclei, both $Z$ and $N$ are odd. The Euler characteristic $\chi(A)$ is odd at the relevant level. The condition $\kappa_0 \bmod 2 \neq 0$ implies the obstruction persists at the $\mu_2$ level. This produces three effects:
 
-1. The normal form has a lower total amplitude. We observe $\mathrm{net}(\text{odd-odd}) < \mathrm{net}(\text{even-even})$ at the same $A$.
+1. The normal form has a lower total amplitude. The observation is $\mathrm{net}(\text{odd-odd}) < \mathrm{net}(\text{even-even})$ at the same $A$.
 2. The alternating trace is suppressed relative to the net amplitude.
 3. The Pauli factor $F_{\mathrm{Pauli}}^{(A)}$ is lower.
 
@@ -76,7 +76,7 @@ Applying the quotient during construction yields an effective complexity of $O(A
 
 ## Symbolic witnesses
 
-The symbolic engine computes exact evaluations in $\mathbb{Z}[\check{q}, \check{q}^{-1}]$, where $\check{q} = q^{1/2}$ is the spinor information rate. It produces Laurent polynomial witnesses for $\mathrm{tr}_{\mathrm{alt}}(q)$ and $\mathrm{net}(q)$. We verify this through $A = 9$ (${}^9\mathrm{Be}$) without overflow.
+The symbolic engine computes exact evaluations in $\mathbb{Z}[\check{q}, \check{q}^{-1}]$, where $\check{q} = q^{1/2}$ is the spinor information rate. It produces Laurent polynomial witnesses for $\mathrm{tr}_{\mathrm{alt}}(q)$ and $\mathrm{net}(q)$. This is verified through $A = 9$ (${}^9\mathrm{Be}$) without overflow.
 
 For $A > 9$, the integer coefficients grow as $O(q^{A^2})$. This growth requires either larger integer types or modular arithmetic for exact computation. The float engine serves as a cross-check at $q_0$.
 

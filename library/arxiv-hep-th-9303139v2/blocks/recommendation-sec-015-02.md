@@ -1,1 +1,0 @@
-Our "inverse main question" in the case of the local measure should be now formulated as follows: Given a set of orthogonal polinomials $Q_i(h) = h^i +\ldots$ {\it which satisfy the 3-term relation} (\ref{3termrel}), what is the measure $d\mu_h$?

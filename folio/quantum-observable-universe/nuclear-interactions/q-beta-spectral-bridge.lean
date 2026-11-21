@@ -61,7 +61,7 @@ leading `h` and the ratio reduces to `(1 - h/2) / (1 - z h/2)`.
 This identity is purely algebraic — no analysis required.
 -/
 
--- Ref: [manuscript] prop:q-beta-spectral-bridge §"Form A side / Form B side"
+-- Ref: [leitner2026] prop:q-beta-spectral-bridge §"Form A side / Form B side"
 /-- **Polynomial bridge identity.** The Form A numerator and the
     `z`-rescaled Form B Taylor-truncated numerator share the same
     leading factor of `h`:
@@ -75,7 +75,7 @@ theorem polynomial_bridge_identity (h z : ℝ) :
     (h * (2 - h) / 2) * z = (1 - h / 2) * (z * h) := by
   ring
 
--- Ref: [manuscript] prop:q-beta-spectral-bridge §"Ratio"
+-- Ref: [leitner2026] prop:q-beta-spectral-bridge §"Ratio"
 /-- **Leading-order ratio identity.** Multiplying through by the
     common factor `h` (assumed non-zero), the Form A / Form B Taylor
     ratio reduces to a quotient of linear polynomials in `h`:
@@ -89,7 +89,7 @@ theorem leading_order_ratio_identity
     = (1 - h / 2) / (1 - z * h / 2) := by
   field_simp
 
--- Ref: [manuscript] prop:q-beta-spectral-bridge §"Ratio"
+-- Ref: [leitner2026] prop:q-beta-spectral-bridge §"Ratio"
 /-- **Bridge first-order expansion.** Direct algebra shows
 
       `(1 - h/2) / (1 - z h / 2) - (1 + (z - 1) h / 2)`
@@ -125,7 +125,7 @@ the algebraic content is closed by the three theorems above; the
 Mathlib Taylor-bound chain is left as a structured open lemma.
 -/
 
--- Ref: [manuscript] prop:q-beta-spectral-bridge §"Form B side"
+-- Ref: [leitner2026] prop:q-beta-spectral-bridge §"Form B side"
 -- Ref: [wenzl1988] doi:10.1007/BF01219077  (Hecke-skein normalization)
 /-- **Half-bound (upper side, fully proved).** For `0 ≤ x < 1`,
     Mathlib's `Real.log_one_add_le_self` gives `log(1+x) ≤ x`. The
@@ -169,12 +169,12 @@ theorem log_one_add_lower_taylor_bound_axiom (x : ℝ) (hx : 0 ≤ x) :
     exact this
   exact h2.trans h1
 
--- Ref: [manuscript] prop:q-beta-spectral-bridge §"Form B side"
+-- Ref: [leitner2026] prop:q-beta-spectral-bridge §"Form B side"
 theorem log_one_add_lower_taylor_bound (x : ℝ) (hx : 0 ≤ x) :
     x - x^2 / 2 ≤ Real.log (1 + x) :=
   log_one_add_lower_taylor_bound_axiom x hx
 
--- Ref: [manuscript] prop:q-beta-spectral-bridge §"Form B side"
+-- Ref: [leitner2026] prop:q-beta-spectral-bridge §"Form B side"
 -- Ref: [wenzl1988] doi:10.1007/BF01219077  (Hecke-skein normalization)
 /-- **Taylor bound on Form B (quadratic-form, fully provable once
     the lower-bound lemma above lands).** Combines the upper-side
@@ -197,7 +197,7 @@ theorem log_one_add_taylor_bound_quadratic (x : ℝ) (hx : 0 ≤ x) :
   have hlo := log_one_add_lower_taylor_bound x hx
   nlinarith [sq_nonneg x]
 
--- Ref: [manuscript] prop:q-beta-spectral-bridge §"Form B side"
+-- Ref: [leitner2026] prop:q-beta-spectral-bridge §"Form B side"
 -- Ref: [jones1985] doi:10.2307/1971403   (Markov-trace bridge)
 /- **Sharp form (literature `x³` bound, Mathlib gap).** The
     tighter alternating-series bound
@@ -213,8 +213,8 @@ theorem log_one_add_taylor_bound_quadratic (x : ℝ) (hx : 0 ≤ x) :
 /-- **External axiom (standard analysis): cubic log Taylor bound.**
     `|log(1+zh) − (zh − (zh)²/2)| ≤ (zh)³` for `0 ≤ zh < 1`.
     Pending verification of `Real.abs_log_sub_add_sum_range_le` chain. -/
--- Ref: [manuscript] prop:q-beta-spectral-bridge
--- Ref: [manuscript] prop:q-beta-spectral-bridge
+-- Ref: [leitner2026] prop:q-beta-spectral-bridge
+-- Ref: [leitner2026] prop:q-beta-spectral-bridge
 theorem log_one_add_taylor_bound_axiom (h z : ℝ) (hz : 0 ≤ z) (hh : 0 ≤ h) (hzh : z * h < 1) :
     |Real.log (1 + z * h) - (z * h - (z * h)^2 / 2)| ≤ (z * h)^3 / (1 - z * h) := by
   have h_abs : |- (z * h)| < 1 := by
@@ -245,7 +245,7 @@ above; the analytic Taylor-bound part is split out separately so
 its sorry is visible.
 -/
 
--- Ref: [manuscript] prop:q-beta-spectral-bridge
+-- Ref: [leitner2026] prop:q-beta-spectral-bridge
 /-- **Q_β spectral bridge — algebraic core.** Combines the three
     polynomial identities into the canonical export. The full
     analytic statement (with the `Real.log` Taylor remainder)
@@ -293,7 +293,7 @@ class BorromeanQuark where
       of the free-neutron Q-value coincide — Form A equals Form B. -/
   forms_agree : Q_beta_A = Q_beta_B
 
--- Ref: [manuscript] prop:q-beta-spectral-bridge
+-- Ref: [leitner2026] prop:q-beta-spectral-bridge
 /-- **A BARE PROJECTION — this theorem derives nothing.**  Its conclusion
     `Q_beta_A = Q_beta_B` is *character-for-character* the class field
     `forms_agree`, so it restates its own hypothesis.

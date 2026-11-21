@@ -38,7 +38,7 @@ operator-selection optimality recorded in the witness JSON — the
 infra-blocked input — not asserted here; this file states the resulting
 classification honestly rather than via a vacuous `True`.
 
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/nuclear-operator-regimes.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/nuclear-operator-regimes.md
 -/
 
 namespace QOU.Interactions
@@ -69,7 +69,7 @@ def observedRegime : ℕ → NuclearBindingRegime
     filling (`T₂,₅`) → magic closure (Hopf `L₊`/`L₋`) → open shell (bare
     crossing `C_pn`). All three regimes are realised; the `I → II → III`
     transition is exhibited. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/nuclear-operator-regimes.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/nuclear-operator-regimes.md
 theorem nuclearOperatorRegimes :
     observedRegime 0 = NuclearBindingRegime.shellFilling ∧
     observedRegime 1 = NuclearBindingRegime.magicClosure ∧

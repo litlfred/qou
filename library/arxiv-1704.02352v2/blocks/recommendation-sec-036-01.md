@@ -1,1 +1,0 @@
-The Reader should be advised that this is *not* Kerov's transition measure which is also a probability measure on the real line associated with a Young diagram [@Kerov1993transition] for similar purposes.

@@ -41,7 +41,7 @@ bean `qou-mpq5` scoped that as a multi-week gap (the Jimbo double-centralizer pl
 Hoefsmit matrix units) and deliberately refused to fake it. **That assessment stands.**
 Nothing here bears on it.
 
--- Ref: [manuscript] bean qou-mex9; the permutation character on a tensor power is
+-- Ref: [leitner2026] bean qou-mex9; the permutation character on a tensor power is
 -- classical, and `d^{c(σ)}` is its standard form.
 -/
 

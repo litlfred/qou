@@ -1,1 +1,0 @@
-This is related to the fact that our nonabelianization map $\Psi_{\wnet_\vartheta}$ most directly produces connections with structure group $GL(K,\IC)$, while the physically relevant objects should really be connections with structure group $SL(K,\IC)$, considered modulo some further discrete equivalences \cite{Gaiotto:2010be}.

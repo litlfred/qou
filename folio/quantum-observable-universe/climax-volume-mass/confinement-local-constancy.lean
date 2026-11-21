@@ -31,7 +31,7 @@ universe u
     justification needs the confinement-level definition over the
     base-ring topology and is not yet formalised.  Given `hℓ`, the
     theorem produces the explicit open neighborhood at any `q ∉ B`. -/
--- Ref: [manuscript] climax-volume-mass/local-shadow-ordering
+-- Ref: [leitner2026] climax-volume-mass/local-shadow-ordering
 theorem ConfinementLocalConstancy
     (R : Type u) [TopologicalSpace R]
     (B : Set R) (ℓ : R → ℤ)
@@ -40,7 +40,7 @@ theorem ConfinementLocalConstancy
     ∃ U : Set R, IsOpen U ∧ q ∈ U ∧ ∀ q' ∈ U, ℓ q' = ℓ q := by
   -- `ℓ` is eventually `ℓ q` near `q` (locally constant off `ℬ`, `hℓ`);
   -- unpack that neighborhood filter fact into an explicit open set.
-  -- Ref: [manuscript] climax-volume-mass/local-shadow-ordering
+  -- Ref: [leitner2026] climax-volume-mass/local-shadow-ordering
   obtain ⟨U, hUsub, hUopen, hqU⟩ := mem_nhds_iff.mp (hℓ q hq)
   exact ⟨U, hUopen, hqU, fun q' hq' => hUsub hq'⟩
 

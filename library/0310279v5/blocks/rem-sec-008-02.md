@@ -1,0 +1,1 @@
+When a passage Xj →Xj+1 is realized by a template T , there are braiding assignments to the blocks in T such that the initial and ﬁnal diagrams of T carry the pair (Xj, Xj+1). However, the template T also carries inﬁnitely many other knots and links, for other braiding assignments to the blocks. ♦

@@ -474,7 +474,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/predicted-spectra/moduli-symmetry-d4-proof.md:1 \u2014 detected regime [root-of-unity, unit-circle] is disjoint from chapter 'predicted-spectra' expected [fixed-q0, generic-R, na, real-gt-1, real-positive, symbolic]"
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/moduli-symmetry-d4-proof.md:1 — detected regime [root-of-unity, unit-circle] is disjoint from chapter 'predicted-spectra' expected [fixed-q0, generic-R, na, real-gt-1, real-positive, symbolic]"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -720,7 +720,7 @@
           "in_degree": 0,
           "cone_size": 104,
           "depth": 30,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -961,6 +961,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "632f30fb46c0",
+          "ts": "c02ae704cd6d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:03.718Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "(S↔P column of prop:moduli-symmetry-d4 row) Sibling `.lean:103` (ref resolves only there) proves the three relations σ⁴=id, τ²=id, (στ)²=id on ℂ^× (correct). \"Faithful action of D₄ of order 8\" and the golden-octet orbit are not encoded (relations only give a quotient of D₄; the faithfulness argument is in a docstring). md:1 calls σ an \"involution\"; it has order 4. Core proof (prf:2-10) is correct: orbit of φ has 8 points so the action is faithful; (z⁴−3z²+1)(z⁴+3z²+1)=z⁸−7z⁴+1. The rest of the proof block has false statements (sympy): M = [[−1,4],[4,3]] has det −19, so M ∉ GL₂(ℤ) and ∉ GL₂(ℤ[i]) (prf:28,45); M^σ = S⁻¹MS fixes {iφ, −i/φ}, not {i/φ, −iφ} as written (prf:39); \"each matrix fixes exactly one coset of G₈\" contradicts each fixing two points; \"G₈ ∪ ζ₈-orbit form the full D₄-fixed locus on ℂ^×\" (prf:55): D₄ has no fixed point on ℂ^× (σq=q forces q=0)"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1402,8 +1418,8 @@
         },
         "reviewed_at": "2026-08-22T04:24:00.673Z",
         "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
-        "evidence": "The block-final sentence ('The coordinates q and i govern the structure: q generates radial motion, while i generates the sigma-rotation connecting rays') is a decomposition reading \u2014 radial versus angular \u2014 not a restatement of anything the block established, so it does not fire this criterion.",
-        "notes": "pass on the trap criterion, but that closing sentence is loose on its own terms: q and i are not coordinates on C^x, and neither 'generates' anything in the group sense \u2014 sigma and tau are the generators, and q is the point being acted on. FIVE MATH FINDINGS, none fixed inline. (1) M IS NOT IN GL_2(Z). det [[-1,4],[4,3]] = -3 - 16 = -19, and GL_2(Z) requires det = +-1. The block asserts 'M in GL_2(Z)' and later 'M, M' in GL_2(Z) as the real-axis elements'. Its Moebius action is fine (only the projective class matters) and its FIXED PAIR IS CORRECT \u2014 I solved (-z+4)/(4z+3) = z and got exactly {1/phi, -phi} \u2014 so only the group-membership claim is wrong. Proposed: GL_2(Q), or PGL_2(Z[1/19]), or drop the ambient group. (2) THE TWO i-ROTATED FIXED PAIRS ARE SWAPPED. The block says M^sigma = S^{-1} M S 'fixes the i-rotated golden pair {i/phi, -i phi}' and that its bar conjugate fixes {i phi, -i/phi}. Solving (-z-4i)/(4iz+3) = z gives iz^2 + z + i = 0, i.e. z^2 - iz + 1 = 0, whose roots are i(1 +- sqrt 5)/2 = {i phi, -i/phi} \u2014 the OTHER pair. Two independent confirmations: direct substitution, M^sigma(i phi) = (-i(phi+4))/(3-4phi) = i phi exactly; and the conjugation identity, S^{-1}MS fixes S^{-1}(fix M) = -i{1/phi, -phi} = {-i/phi, i phi}. The pair the block assigns, {i/phi, -i phi}, is S(fix M), which is fixed by S M S^{-1}, the conjugate in the other direction. Proposed: swap the two sentences, or redefine M^sigma := S M S^{-1}. (3) M' IS NEVER DEFINED. It appears only in '{M, M', M^sigma, M'^sigma}' and 'M, M' in GL_2(Z)'. (4) 'Each matrix fixes exactly one coset of G_8' does not add up: each of the four matrices fixes a PAIR, so four matrices account for 8 = |G_8| points, whereas a coset of <sigma> in G_8 has 4 elements and four cosets would be 16. Proposed: 'Each matrix fixes exactly one antipodal pair'. (5) 'FIXED LOCUS' IS THE WRONG WORD, and the sentence is self-contradicting: 'Together, G_8 union {zeta_8-orbit} form the full D_4-fixed locus on C^x' \u2014 these are orbits, not fixed points (the stabilisers are trivial for G_8 and order 2 for the zeta_8 orbit), they do not exhaust C^x (D_4 acts on every point of C^x), and the table immediately below lists two further orbit types, so the union of two of the four is not 'the full' anything. The table's last row also puts 0 and infinity in a locus the header restricts to C^x, from which 0 is excluded by definition."
+        "evidence": "The block-final sentence ('The coordinates q and i govern the structure: q generates radial motion, while i generates the sigma-rotation connecting rays') is a decomposition reading — radial versus angular — not a restatement of anything the block established, so it does not fire this criterion.",
+        "notes": "pass on the trap criterion, but that closing sentence is loose on its own terms: q and i are not coordinates on C^x, and neither 'generates' anything in the group sense — sigma and tau are the generators, and q is the point being acted on. FIVE MATH FINDINGS, none fixed inline. (1) M IS NOT IN GL_2(Z). det [[-1,4],[4,3]] = -3 - 16 = -19, and GL_2(Z) requires det = +-1. The block asserts 'M in GL_2(Z)' and later 'M, M' in GL_2(Z) as the real-axis elements'. Its Moebius action is fine (only the projective class matters) and its FIXED PAIR IS CORRECT — I solved (-z+4)/(4z+3) = z and got exactly {1/phi, -phi} — so only the group-membership claim is wrong. Proposed: GL_2(Q), or PGL_2(Z[1/19]), or drop the ambient group. (2) THE TWO i-ROTATED FIXED PAIRS ARE SWAPPED. The block says M^sigma = S^{-1} M S 'fixes the i-rotated golden pair {i/phi, -i phi}' and that its bar conjugate fixes {i phi, -i/phi}. Solving (-z-4i)/(4iz+3) = z gives iz^2 + z + i = 0, i.e. z^2 - iz + 1 = 0, whose roots are i(1 +- sqrt 5)/2 = {i phi, -i/phi} — the OTHER pair. Two independent confirmations: direct substitution, M^sigma(i phi) = (-i(phi+4))/(3-4phi) = i phi exactly; and the conjugation identity, S^{-1}MS fixes S^{-1}(fix M) = -i{1/phi, -phi} = {-i/phi, i phi}. The pair the block assigns, {i/phi, -i phi}, is S(fix M), which is fixed by S M S^{-1}, the conjugate in the other direction. Proposed: swap the two sentences, or redefine M^sigma := S M S^{-1}. (3) M' IS NEVER DEFINED. It appears only in '{M, M', M^sigma, M'^sigma}' and 'M, M' in GL_2(Z)'. (4) 'Each matrix fixes exactly one coset of G_8' does not add up: each of the four matrices fixes a PAIR, so four matrices account for 8 = |G_8| points, whereas a coset of <sigma> in G_8 has 4 elements and four cosets would be 16. Proposed: 'Each matrix fixes exactly one antipodal pair'. (5) 'FIXED LOCUS' IS THE WRONG WORD, and the sentence is self-contradicting: 'Together, G_8 union {zeta_8-orbit} form the full D_4-fixed locus on C^x' — these are orbits, not fixed points (the stabilisers are trivial for G_8 and order 2 for the zeta_8 orbit), they do not exhaust C^x (D_4 acts on every point of C^x), and the table immediately below lists two further orbit types, so the union of two of the four is not 'the full' anything. The table's last row also puts 0 and infinity in a locus the header restricts to C^x, from which 0 is excluded by definition."
       }
     ],
     "trap-performed-warmth": [
@@ -1531,6 +1547,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T04:24:00.673Z",
+  "updated_at": "2026-11-15T21:56:03.718Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

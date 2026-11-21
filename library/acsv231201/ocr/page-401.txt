@@ -1,0 +1,57 @@
+12.1 Some classifications 383
+
+Form of GF Examples
+
+Denominator linear in a variable 9.10, 9.11, 9.13, 9.14, 9.39, 12.5, 12.6,
+12.9, 12.10, 12.11, 12.13, 12.15, 12.17
+
+Bivariate 9.10, 9.11, 9.13, 9.14, 9.32, 9.39, 10.28,
+
+10.27, 10.35, 10.47, 10.66, 10.69,
+11.11, 12.5, 12.6, 12.9, 12.15, 12.18,
+12.22, 12.23, 12.25
+
+Trivariate 11.41, 11.43, 11.45, 11.47, 11.50, 12.20,
+12.26, 12.29
+
+Higher/arbitrary dimension 12.10, 12.17, 12.27
+
+Repeated factors, m < d 12.29
+
+Repeated factors, m = d 10.28, 10.27, 10.66
+
+Repeated factors, m > d 10.32, 10.35, 10.47, 12.28
+
+Meromorphic, not rational 12.24, 12.30
+
+Algebraic 12.18, 12.20
+
+Non-combinatorial 9.32
+
+Table 12.2 Guide by form of GF (dimension d, number of denominator
+factors m).
+
+Multiple points that are not arrangement points are tricky, and the general
+theory has not been worked out. Two sheets that are tangent behave basically
+like a single repeated sheet, as seen in Proposition 10.68 of Chapter 10, al-
+though more complicated singularities can arise, as in Example 10.9. Chap-
+ter 11 contains essentially all that we know for more complicated singularities,
+with explicit results for cone points.
+
+Classification by form of generating function
+
+Table 12.2 classifies our examples by the algebraic form of the generating func-
+tion F(z) = P(z)/Q(z). The simplest case occurs when Q is linear in one of
+its variables, and the (perhaps surprising) ubiquity of examples of this form is
+a reflection of the fact that the sequence construction on combinatorial classes
+(described in Section 2.2 of Chapter 2) corresponds to the quasi-inverse map
+ff» 1/(.— f) on generating functions. The technique of Lagrange inversion
+can also be incorporated into this framework. Sections 12.2 and 12.3 cover ap-
+plications to Riordan arrays and Lagrange inversion, respectively. Section 12.4
+discusses the transfer matrix method.
+
+Our formulae are flexible enough to work in any dimension, and even for
+families with arbitrary dimension as a parameter, although computations are
+often simpler in lower dimensions. Repeated denominator factors correspond
+to higher order poles, and thus change asymptotic behavior, while multiple
+distinct factors lead to multiple points.

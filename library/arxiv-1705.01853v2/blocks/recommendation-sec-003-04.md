@@ -1,1 +1,0 @@
-It is noticeable that all fundamental fermions in the Standard Model obey this relationship between the charges\footnote{Wilson lines should be thought of as the insertion of infinitely heavy particles, and so are not directly associated to these massless, chiral fermions.

@@ -159,6 +159,8 @@ E_INF_7335 = mp.mpf("2.43929645512078402706542884314")
 with open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
                        "rev-e-infinity-search-reduction.witness.json"), encoding="utf-8") as _fh:
     INT_SUP = mp.mpf(json.load(_fh)["coercivity_S3"]["measured_B"])
+# witness-copy-intentional: #7349's per-row bound, quoted as published; this probe's own witness records
+# it, so reading it back from there would be circular.
 B_SHARP = mp.mpf("3.92139923021415319458053")          # #7349's per-row uniform bound
 
 CHECKS: list[tuple[str, bool, str]] = []

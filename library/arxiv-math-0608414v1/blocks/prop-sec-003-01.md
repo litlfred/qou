@@ -1,0 +1,1 @@
+i) For small ǫ, H∗l(1 + z) extends to an analytic function in the disk Dǫ := {z : |z| < ǫ}. Furthermore, for any δ there is an ǫ and a constant K1 := K1(δ, ǫ) such that for z ∈Dǫ the analytic continuation satisﬁes the estimate |H∗l(1 + z)|∧< K1δl (2.22)

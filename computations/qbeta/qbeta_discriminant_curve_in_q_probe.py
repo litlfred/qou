@@ -688,7 +688,7 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
             "the CODATA proton pin. The cyclotomic tower q = zeta_N is a genuine tower with "
             "phi_3 = phi_6 = 2 pi / 3 exactly, but its minimum over N <= 120 still exceeds "
             "the required phase by 24x."),
-        "contentBlock": "prop:three-calibration-inputs",
+        "contentBlock": "def:three-calibration-discipline",
         "assertions": a,
         "allPassed": ok,
         "parameters": {"pin": "experimental (proton)", "dps": 40,

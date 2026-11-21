@@ -1,1 +1,0 @@
-Under the assumptions we shall choose, we shall see that Ext(Pk, M′) can in turn be unscrewed (d´eviss´e) in the Ext(Pk, Pi) for i < k, and we expect to get a space with dimension P 1≤i<j≤k dim Ext(Pj, Pi).

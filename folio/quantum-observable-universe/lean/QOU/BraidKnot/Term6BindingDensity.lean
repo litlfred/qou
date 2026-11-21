@@ -29,7 +29,7 @@ LaTeX label: `prop:term6-binding-density`
 
 ## References
 
-- [manuscript] §Term 6 binding density
+- [leitner2026] §Term 6 binding density
 - [bethe1936] (BW formula context)
 - `prop:gb-spectral-sequence`
 - `2026-05-02-Term6-binding-derivation.md` (audit memo)

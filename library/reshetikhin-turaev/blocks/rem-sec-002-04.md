@@ -1,0 +1,1 @@
+If(A, R, w) is a ribbon Hopf algebra then w e A C A, so that v = Ew for some EEA, E#I. In view of (3.3.3) E generates a two-dimensional Hopf subalgebra, say,/~ of A with the basis { 1, E}. Clearly, .4 = A | E in the class of Hopf algebras.

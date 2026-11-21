@@ -1,0 +1,1 @@
+Let T be an R-tree and  2 B1ðTÞ. Then, for any p  1 and  > 0, we have VpðÞ  2m2=p  CRadðð’ÞðÞ; m  Þ þ Sep ð’ÞðÞ; m 3 ;    ð5:7Þ þ Sepðð’ÞðÞ; m  ; m  Þ  þ 2Vpð’Þ: In the case of p ¼ 2, we also have the better estimate V2ðÞ2  4m2  CRadðð’ÞðÞ; m  Þ þ Sep ð’ÞðÞ; m 3 ;    ð5:8Þ þ Sepðð’ÞðÞ; m  ; m  Þ 2 þ 2V2ð’Þ2:

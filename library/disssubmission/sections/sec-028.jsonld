@@ -14,13 +14,11 @@
   "pageEnd": 96,
   "contains": [
     "library/disssubmission/blocks/prose-sec-028",
-    "library/disssubmission/blocks/recommendation-sec-028-01",
-    "library/disssubmission/blocks/recommendation-sec-028-02",
-    "library/disssubmission/blocks/recommendation-sec-028-03",
-    "library/disssubmission/blocks/recommendation-sec-028-04",
-    "library/disssubmission/blocks/recommendation-sec-028-05"
+    "library/disssubmission/blocks/lem-sec-028-01",
+    "library/disssubmission/blocks/lem-sec-028-02",
+    "library/disssubmission/blocks/lem-sec-028-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/disssubmission",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/disssubmission",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/disssubmission/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/disssubmission/manifest.jsonld",
   "provenance": "ingested"
 }

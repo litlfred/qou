@@ -2,20 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-volume-tower-decomposition",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:volume-tower-decomposition",
   "kind": "proposition",
   "title": "Tower-level decomposition of hyperbolic volume",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-cosimplicial-crossed-groupoid",
-    "papers/quantum-observable-universe/blocks/prop-topological-mass-formula"
+    "papers/quantum-observable-universe/blocks/prop-cosimplicial-crossed-groupoid"
   ],
   "tags": [
     "hyperbolic-volume",

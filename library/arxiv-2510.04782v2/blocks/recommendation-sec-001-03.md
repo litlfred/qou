@@ -1,1 +1,0 @@
-::: numpar The term *stacky approach* refers to the idea that for any reasonable cohomology theory $\R\Gamma_?(X)$ there should be a geometric construction $X\mapsto X^?$ in such a way that $\R\Gamma_?(X)\simeq \R\Gamma(X^?,\Oo)$ is the sheaf cohomology of the geometric object $X^?$.

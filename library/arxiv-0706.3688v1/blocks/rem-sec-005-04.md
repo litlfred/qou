@@ -1,0 +1,1 @@
+The “unimodularity” condition imposed in Theorem 4.3 (cf. [7]) on our gauge transformations can now be viewed as the restriction to AF of the condition giving the group of inner automorphisms of A. Indeed this group is described as the unimodular unitary group: (4.9) Int(A) ∼SU(A) = {u ∈A |uu∗= u∗u = 1, det(u) = 1} . This applies also to the product geometry by the manifold M.

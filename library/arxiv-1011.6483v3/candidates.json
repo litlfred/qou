@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1011.6483v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "7a425e51860c37a43daf1d19b07152ab2602948c242ce3343aa9da49c118dc8c",
   "file": "1011.6483v3.pdf"
@@ -16,166 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 10,
-  "by_kind": {
-   "recommendation": 10
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In our context, the $(\\infty,1)$-categories we considered are obtained by a Dwyer-Kan localization process from standard model categories, though the results of this paper should not depend on the particular chosen approach to $(\\infty,1)$-categories, see also Remark [\\[R:non-unique\\]](#R:non-unique){reference-type=\"ref\" reference=\"R:non-unique\"}.",
-   "strength": "should-not",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It should satisfy a ''cosheaf-like'' condition, meaning that $\\mathcal{F}(V)$ can be computed by \u010cech complexes indexed on nice enough covers, called factorizing covers, see [@CG] and Section [\\[S:Factorization\\]](#S:Factorization){reference-type=\"ref\" reference=\"S:Factorization\"}.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since a CDGA $C$ is an $E_k$-algebra (as well as an $\\mathbb{E}_{M}^{\\otimes}$-algebra) for all $k$, $\\int_M C$ should not be able to distinguish different framings.",
-   "strength": "should-not",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since manifolds embed in euclidean spaces, we further see that $\\int_M C$ should makes sense for *any* manifold.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This hints that any deformation retract of a manifold should also have a well defined topological chiral homology (with value in a $C$) equivalent to the one of the manifold.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "However, it is also possible to work with simplicial commutative algebras, and all our results should makes sense in this setting.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Note that a simplicial set is determined by its $(\\infty, 0)$ path groupoid and therefore the category of simplicial sets should be thought of as the $(\\infty, 1)$ category of all $(\\infty, 0)$ groupoids.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-23-dwyer-kan-localization-and-1-categories.md",
-   "section_title": "Dwyer-Kan localization and (,1)-categories",
-   "pages": "8-10",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Building upon the last remark, we see that the topological chiral homology of an $(m+k)$-framed manifold $M$ with value in a CDGA should be equivalent (up to neglect of structure) to the topological chiral homology of $M$ equipped with the stable normal framing so that we get",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-014-52-locality-axiom-and-the-equivalence-of-topolog.md",
-   "section_title": "Locality axiom and the equivalence of topological chiral homology with higher Hochschild functor for CDGAs",
-   "pages": "43-47",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The Blob complex $\\mathcal{B}_*(M,\\mathcal{C}^{C_{\\scriptstyle\\bullet}(\\Omega^{n} Y)})$ for non-necessarily closed manifolds shall not be mistaken with the Blob complex associated to the $A_\\infty$-$n$-category associated to the fundamental groupoid of the space $Y$ in [@MW \u00a7 6] (though the construction share some similarities).",
-   "strength": "must-not",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-015-53-relation-with-the-blob-complex.md",
-   "section_title": "Relation with the Blob complex",
-   "pages": "47-49",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Theorem [\\[T:HF=TCH\\]](#T:HF=TCH){reference-type=\"ref\" reference=\"T:HF=TCH\"} below and Proposition [\\[P:blob\\]](#P:blob){reference-type=\"ref\" reference=\"P:blob\"} suggest that the blob complex should be closely related to Factorization algebras as well.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-015-53-relation-with-the-blob-complex.md",
-   "section_title": "Relation with the Blob complex",
-   "pages": "47-49",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

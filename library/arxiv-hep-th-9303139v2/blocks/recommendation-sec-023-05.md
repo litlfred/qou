@@ -1,1 +1,0 @@
-It also provides an example of {\it singular} $\tau$-functions, arising when $G = \exp \left(\sum A_{mn}\psi_m\tilde\psi_n\right)$ blows up and normal ordered operators should be used to define regularized $\tau$-functions.

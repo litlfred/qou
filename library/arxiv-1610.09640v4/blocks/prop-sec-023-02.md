@@ -1,0 +1,1 @@
+Suppose F, G : K →L are additive functors between linear categories, and η : F →G is a morphism of functors. Let M, M ′, N be objects of K, and assume that N ∼= M ⊕M ′. Then the following two conditions are equivalent. (i) ηN : F(N) →G(N) is an isomorphism. (ii) ηM : F(M) →G(M) and ηM ′ : F(M ′) →G(M ′) are isomorphisms. Exercise 2.5.5. Prove Proposition 2.5.4.

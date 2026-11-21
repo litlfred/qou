@@ -1,0 +1,1 @@
+(see e.g. [A], Section 9) For each indecomposable G-module M, the minimal subgroups H ⊂G such that M is relatively H-projective are conjugate, and they are p-groups. Deﬁnition 4.6. The minimal subgroup H ⊂G such that M is rela- tively H-projective (well-deﬁned up to conjugation thanks to Proposi- tion 4.5) is called the vertex of M.

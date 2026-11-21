@@ -1,1 +1,0 @@
-In this paper, we shall use the framework of mod-φ convergence to compute the precise asymp- totics of the distance between the law of Xn and the reference inﬁnitely divisible law, for various distances.

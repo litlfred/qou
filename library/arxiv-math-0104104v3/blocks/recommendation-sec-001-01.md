@@ -1,1 +1,0 @@
-The condition that $V^{w }:=wVw^{-1}$ is lower triangular implies in the case of $w =\id$ that $V^{\id}=V$ must be both upper and lower triangular hence equals the identity matrix and hence $\dim{\ZZ_{\id}}=\dim{\BB}$.

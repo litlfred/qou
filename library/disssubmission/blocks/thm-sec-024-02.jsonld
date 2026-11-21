@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/disssubmission/blocks/thm-sec-024-02",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 77,
+  "pageEnd": 81,
+  "text": "thm-sec-024-02.md",
+  "derivedFrom": "library/disssubmission/sections/sec-024",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/disssubmission/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4.2",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-024-4-the-tannaka-group-of-the-theta-divisor.md (p. 77-81)",
+    "claim_id": "disssubmission#theorem:4.2",
+    "lean_status": "unformalized"
+  }
+}

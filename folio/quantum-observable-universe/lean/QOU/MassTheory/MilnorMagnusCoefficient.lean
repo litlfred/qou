@@ -65,11 +65,11 @@ stays **MEASURED**.  `MilnorExactOrderConjecture` is left **instance-less**
 | QOU **Markov-trace** deficit `D_A` leading coeff `≠ 0` (⇒ exact order law) | **OPEN** — `MilnorExactOrderConjecture` (#4471), no instance; needs the Milnor = leading-Vassiliev bridge (cited, Mathlib-inaccessible) |
 | trace-normalised `μ̄_A = (3/4)·(−2)^{A−3}` | **MEASURED** (#4480), not derived here |
 
--- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/MassTheory/MilnorOrderLawGeneral.lean (#4471; iterCommTower + MilnorExactOrderConjecture)
--- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/MassTheory/MilnorExactCoefficient.lean (#4480; Route-B cyclic-trace wall)
--- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/MassTheory/MilnorVassilievGrading.lean (DD-1; grading crux, μ̄ Vassiliev degree A−1)
+-- Ref: [leitner2026] folio/quantum-observable-universe/lean/QOU/MassTheory/MilnorOrderLawGeneral.lean (#4471; iterCommTower + MilnorExactOrderConjecture)
+-- Ref: [leitner2026] folio/quantum-observable-universe/lean/QOU/MassTheory/MilnorExactCoefficient.lean (#4480; Route-B cyclic-trace wall)
+-- Ref: [leitner2026] folio/quantum-observable-universe/lean/QOU/MassTheory/MilnorVassilievGrading.lean (DD-1; grading crux, μ̄ Vassiliev degree A−1)
 -- Ref: [barnatan1995] https://doi.org/10.1016/0040-9383(95)93237-2
--- Ref: [manuscript] Habegger–Masbaum, The Kontsevich integral and Milnor's invariants, Topology 39 (2000) 1253–1289, https://doi.org/10.1016/S0040-9383(99)00041-5
+-- Ref: [leitner2026] Habegger–Masbaum, The Kontsevich integral and Milnor's invariants, Topology 39 (2000) 1253–1289, https://doi.org/10.1016/S0040-9383(99)00041-5
 -/
 
 namespace QOU.MassTheory.MilnorMagnusCoefficient

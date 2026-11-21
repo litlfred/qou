@@ -129,7 +129,7 @@ def eulerChar (_n : ℕ) : ℤ := 2 - 2 * 4
     else, under a docstring about level-invariance. It now names `eulerChar`
     and states both halves of the claim, so it is false if `eulerChar` is
     wrong or level-sensitive. -/
--- Ref: [manuscript] §4/vertex-algebra-jet-relations
+-- Ref: [leitner2026] §4/vertex-algebra-jet-relations
 theorem euler_level_stable (n : ℕ) :
     eulerChar n = eulerChar 0 ∧ eulerChar n = -6 := by
   constructor <;> norm_num [eulerChar]
@@ -180,7 +180,7 @@ structure DescentOperator (n : ℕ) (hp : HeckeParams) where
     (fermionic) parts.
 
     Proof: τ̂² = (ℓ ∘ 𝔡) ∘ (ℓ ∘ 𝔡) = ℓ ∘ (𝔡 ∘ ℓ) ∘ 𝔡 = ℓ ∘ id ∘ 𝔡 = ℓ ∘ 𝔡 = τ̂. -/
--- Ref: [manuscript] §4/vertex-algebra-jet-relations
+-- Ref: [leitner2026] §4/vertex-algebra-jet-relations
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 theorem descent_idempotent {n : ℕ} {hp : HeckeParams}
     (op : DescentOperator n hp)

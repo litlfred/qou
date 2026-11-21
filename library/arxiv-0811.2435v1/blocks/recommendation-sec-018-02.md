@@ -1,1 +1,0 @@
-We would like to define the descent data for such $E'$, which should be data necessary to define an object in (not yet defined) $\k$-linear category $\CC(\k)$ which becomes isomorphic to $E'$ after the extension of scalars from $\k$ to $\k'$.

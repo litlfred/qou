@@ -1,0 +1,61 @@
+54 Generating functions
+
+generating function of C = CYC(A) is
+
+DAG 1
+co=E= wa(; a) ’
+
+kl
+
+where log is the formal power series defined by log ( 4) = Del >
+
+Example 2.47 (permutations as labeled cycles). Viewing a permutation as a
+set of disjoint cycles, the class of permutations has the labeled construction P =
+SET(CYC(Z)), so that P(z) = exp [log(4)]. Comparing this to Example 2.46
+gives a combinatorial proof that
+
+1 1
+exp |log To: =To
+
+as formal power series. 4
+
+Exercise 2.12. Prove the following statements for formal power series using
+algebraic arguments.
+
+e If A(O) = BO) = 0 then cA0*8O = AG eBO,
+
+e If A(O) = BO) = | then log(A(z)B(z)) = log A(z) + log B(z).
+e If A(O) = 0 then log(exp(A(z))) = A(z).
+
+e If A(O) = 0 then exp(log(1 — A(z))) = 1 — A(z).
+
+Often, we wish to track the size of the tuple that defines an element in a
+sequence, set, or cycle class. If A is a labeled class with no objects of size
+zero and exponential generating function A(z) then the semi-exponential gen-
+erating function tracking the elements of SEQ(A) by size and tuple length
+
+1S
+1
+k k
+yA)" = —— .
+2 1 - yA(z)
+
+The term semi-exponential refers to the fact that the coefficient of yz" is di-
+vided by n! but not by k!. Similarly, the semi-exponential generating function
+for SET(A) is
+
+7k
+YA = expe
+
+!
+k>0 k!
+
+and the semi-exponential generating function for CYC(A) is
+
+yee hy
+
+og ——_..
+k=0 1 yA@)
+
+We end by listing several examples of (semi-)exponential generating functions
+that we return to in Chapter 3 when deriving asymptotics.

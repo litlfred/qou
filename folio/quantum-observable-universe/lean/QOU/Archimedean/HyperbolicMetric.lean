@@ -52,7 +52,9 @@ a derivation, CREATE A BEAN — not a `sorry`"), they are NOT stated as sorried
 theorems: this file stays 100 % sorry-free, and the gap is tracked in bean
 `qou-322e`.  None is needed for the isometry results (pure pointwise congruences)
 or the geodesic classification.  `dH_comm` and `dH_triangle` have since been
-CLOSED (below); the separation axiom remains open.
+CLOSED (below), and separation is now CLOSED too: `dH_eq_zero_eq` in
+`QOU.Archimedean.HyperbolicMetricSeparation` (sorry-free). The notes below record
+the route as it stood when this file was written.
 
 * Separation `dH x y = 0 → x = y` is **half proved**: the *height coordinate*
   is CLOSED unconditionally — `dH_eq_zero_height` derives `y₂ = x₂` from the
@@ -77,7 +79,7 @@ Archimedean (ℝ): `‖·‖`, `deriv`, ordering `0 < z` — §7c.
 
   -- Ref: [thurston1978] Ch. 2 §2.3 p. 12 (the metric `ds² = (dx²+dy²+dz²)/z²`)
   -- Ref: [milnor1982] §1 (upper half-space model, isometries by boundary inversion)
-  -- Ref: [manuscript] beans qou-473l (T2), qou-idvt (T2), qou-322e (metric-axiom walls)
+  -- Ref: [leitner2026] beans qou-473l (T2), qou-idvt (T2), qou-322e (metric-axiom walls)
 -/
 
 import Mathlib.MeasureTheory.Integral.Lebesgue.Basic

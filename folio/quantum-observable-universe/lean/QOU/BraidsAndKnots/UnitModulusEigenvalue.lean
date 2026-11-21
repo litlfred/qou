@@ -1,4 +1,8 @@
 import Mathlib.Algebra.Ring.Defs
+import Mathlib.LinearAlgebra.Matrix.Notation
+import Mathlib.LinearAlgebra.Matrix.Trace
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.Algebra.Ring.Int.Defs
 import Mathlib.Algebra.Group.Units.Basic
@@ -15,9 +19,14 @@ import Mathlib.Tactic.Ring
 2. **Even-length determinant**: a product of `2k` generators has
    `det = (−1)^{2k} = 1`, so its eigenvalues satisfy `λ₁λ₂ = 1`
    (the unit-circle condition together with `|tr| ≤ 2`).
-3. **Borromean fixed point**: the Borromean braid
-   `β_Bor = (σ₁σ₂⁻¹)³` has the degenerate eigenvalue `λ = −1` on
-   `V_{(2,1)}`.
+3. **Borromean trace (corrected 2026-11-16)**: on an explicit model of
+   `V_{(2,1)}` the Borromean braid `β_Bor = (σ₁σ₂⁻¹)³` has
+   `χ_{(2,1)}(β_Bor) = −(q⁴−q²+1)(q⁸−2q⁶−2q²+1)/q⁶`.  This is `+2` at
+   `q = 1`, `≈ 1.994` at the substrate `q₀`, and `−1573/64` at `q = 2`.
+   The earlier claim `χ_{(2,1)}(β_Bor) = −2` (eigenvalue `−1`) is false,
+   and so is unit modulus for every even word: `σ₁²` has eigenvalues
+   `q², q⁻²`.  Also `χ_{(2,1)}(σ₁σ₂) = −1` for every `q`, so with
+   `det = 1` its eigenvalues are the primitive cube roots of unity.
 
 ## Disposition (integrity)
 
@@ -25,20 +34,15 @@ The previous version carried two `def … : True := trivial`
 placeholders (`borromean_trace_21_eq_neg_two`,
 `all_positive_trace_positive`) — vacuous, and forbidden by AGENTS.md
 §1a. They are removed. The genuine algebraic content is proved:
-`hecke_generator_det_neg_one` (generic field), `even_braid_det_one`,
-and `borromean_eigenvalue_neg_one` (now concludes `λ = −1`, not merely
-the discriminant). The rep-theory inputs those placeholders gestured
-at — that `tr_{(2,1)}(β_Bor) = −2` (Hoefsmit seminormal rep /
-`BorromeanMarkovTrace.lean` closed form) and that all-positive braids
-have `0 < tr < 2` — are **not** formalised here (they need the Hoefsmit
-matrix infrastructure); they enter `borromean_eigenvalue_neg_one` as
-the explicit hypotheses `tr = −2`, `det = 1`, so the eigenvalue
-conclusion is a genuine *conditional* on those inputs, not a vacuous
-assertion.
+`hecke_generator_det_neg_one` (generic field) and `even_braid_det_one`.
+The later `borromean_eigenvalue_neg_one` concluded `λ = −1` from the
+hypothesis `tr_{(2,1)}(β_Bor) = −2`.  That hypothesis is false (see
+result 3), so the theorem was removed on 2026-11-16 and replaced by the
+explicit-model computation `borromean_trace_standard`.
 
 ## Base ring (§7c)
 
-Neither result needs a field; both are stated over the weakest class that
+The first two results need no field; they are stated over the weakest class that
 admits them, and the previous `[Field R]` is gone.
 
 * `hecke_generator_det_neg_one` is a **units** identity: the eigenvalue
@@ -47,16 +51,14 @@ admits them, and the previous `[Field R]` is gone.
   division. Over a field this is exactly the old `q ≠ 0` hypothesis, so no
   generality is lost and `ℤ[q, q⁻¹]` (where `q` *is* a unit) is now in
   scope.
-* `borromean_eigenvalue_neg_one` needs only that `(λ+1)² = 0 ⇒ λ+1 = 0`,
-  i.e. **no zero divisors** — `[CommRing R] [NoZeroDivisors R]`. A field is
-  one such ring, but so is `ℤ[q, q⁻¹]`. The hypothesis is genuinely
-  required: over `ZMod 4`, `λ = 1` satisfies `(λ+1)² = 0` yet `λ ≠ −1`.
+* The explicit model of `V_{(2,1)}` divides by `q` and `q² + 1`, so it is
+  stated over a field with those two hypotheses.
 
 Only the integer determinant `(−1)^{2k}` uses `ℤ`. No archimedean structure
 is needed — `|λ| = 1` is the narrative reading of `λ₁λ₂ = 1` with
 `|tr| ≤ 2`, not a Lean hypothesis here.
 
--- Ref: [manuscript] Hecke algebra Wedderburn decomposition
+-- Ref: [leitner2026] Hecke algebra Wedderburn decomposition
 -/
 
 namespace QOU.BraidsAndKnots
@@ -72,7 +74,7 @@ namespace QOU.BraidsAndKnots
     `q : Rˣ` and the inverse is `Units.inv`. Over a field this is exactly
     the old `q ≠ 0`; unlike the field version it also applies over
     `ℤ[q, q⁻¹]`, where `q` is a unit but no division is available. -/
--- Ref: [manuscript] Iwahori-Hecke algebra, det on standard rep
+-- Ref: [leitner2026] Iwahori-Hecke algebra, det on standard rep
 theorem hecke_generator_det_neg_one {R : Type*} [CommRing R] (q : Rˣ) :
     (q : R) * (-(↑q⁻¹ : R)) = -1 := by
   rw [mul_neg, Units.mul_inv]
@@ -83,35 +85,79 @@ theorem hecke_generator_det_neg_one {R : Type*} [CommRing R] (q : Rˣ) :
     has determinant `(−1)^{2k} = 1` (each generator contributes `−1`).
     Together with `|tr| ≤ 2` this is the unit-circle condition
     `λ₁λ₂ = 1`. -/
--- Ref: [manuscript] det(σ₁···σ_{2k}) = (−1)^{2k} = 1
+-- Ref: [leitner2026] det(σ₁···σ_{2k}) = (−1)^{2k} = 1
 theorem even_braid_det_one (n : ℕ) : (-1 : ℤ) ^ (2 * n) = 1 := by
   simp [pow_mul]
 
-/-! ## Borromean eigenvalue -/
+/-! ## Explicit model of `V_{(2,1)}` and the Borromean trace
 
-/-- **Borromean eigenvalue is `−1`.** If `λ` is an eigenvalue of
-    `ρ_{(2,1)}(β_Bor)` — a root of the `2×2` characteristic polynomial
-    `λ² − tr·λ + det` with the Borromean data `tr = −2`, `det = 1` —
-    then `λ = −1` (the degenerate fixed point).
+`σ₁` is diagonal with eigenvalues `q, −q⁻¹`; `σ₂` is the matrix below.
+`unitMod_braid` and `unitMod_s2_mul_s2inv` show this is a representation
+of `H_3(q)` with `σ₂⁻¹ = σ₂ − (q − q⁻¹)`.  It is the 2-dimensional block,
+since `σ₁` has both Hecke eigenvalues. -/
 
-    The characteristic polynomial is `(λ + 1)²`, so the only structure the
-    argument uses is the absence of zero divisors:
-    `(λ + 1)² = 0 ⇒ λ + 1 = 0 ⇒ λ = −1`.  §7c: stated over
-    `[CommRing R] [NoZeroDivisors R]` rather than `[Field R]` — the weakest
-    class that admits it.  `NoZeroDivisors` is not removable: over
-    `ZMod 4`, `λ = 1` satisfies `λ² + 2λ + 1 = 0` but `λ ≠ −1`.
-    The data `tr = −2` is the Hoefsmit / Markov-trace input (carried as
-    a hypothesis, not asserted here); `det = 1` is `even_braid_det_one`
-    for the 6-generator word. -/
--- Ref: [manuscript] BorromeanMarkovTrace.lean closed form (tr_{(2,1)}(β_Bor) = −2)
-theorem borromean_eigenvalue_neg_one {R : Type*} [CommRing R] [NoZeroDivisors R]
-    (lam tr det : R) (h_tr : tr = -2) (h_det : det = 1)
-    (h_root : lam ^ 2 - tr * lam + det = 0) : lam = -1 := by
-  subst h_tr; subst h_det
-  have hsq : (lam + 1) * (lam + 1) = 0 := by
-    calc (lam + 1) * (lam + 1) = lam ^ 2 - (-2) * lam + 1 := by ring
-      _ = 0 := h_root
-  have h1 : lam + 1 = 0 := mul_self_eq_zero.mp hsq
-  exact eq_neg_of_add_eq_zero_left h1
+section StandardRep
+
+variable {R : Type*} [Field R]
+
+/-- `σ₁` on `V_{(2,1)}`. -/
+def unitModS1 (q : R) : Matrix (Fin 2) (Fin 2) R := !![q, 0; 0, -q⁻¹]
+
+/-- `σ₂` on `V_{(2,1)}`. -/
+def unitModS2 (q : R) : Matrix (Fin 2) (Fin 2) R :=
+  !![-1 / (q * (q ^ 2 + 1)), 1;
+     (q ^ 4 + q ^ 2 + 1) / (q ^ 2 + 1) ^ 2, q ^ 3 / (q ^ 2 + 1)]
+
+/-- `σ₂⁻¹ = σ₂ − h`, from the Hecke relation. -/
+def unitModS2inv (q : R) : Matrix (Fin 2) (Fin 2) R :=
+  unitModS2 q - (q - q⁻¹) • (1 : Matrix (Fin 2) (Fin 2) R)
+
+theorem unitMod_s2_mul_s2inv (q : R) (hq : q ≠ 0) (hq2 : q ^ 2 + 1 ≠ 0) :
+    unitModS2 q * unitModS2inv q = 1 := by
+  ext i j; fin_cases i <;> fin_cases j <;>
+    simp [unitModS2, unitModS2inv, Matrix.mul_apply, Fin.sum_univ_two, Matrix.one_apply] <;>
+    field_simp <;> ring
+
+/-- The braid relation `σ₁σ₂σ₁ = σ₂σ₁σ₂` holds in the model. -/
+theorem unitMod_braid (q : R) (hq : q ≠ 0) (hq2 : q ^ 2 + 1 ≠ 0) :
+    unitModS1 q * unitModS2 q * unitModS1 q = unitModS2 q * unitModS1 q * unitModS2 q := by
+  ext i j; fin_cases i <;> fin_cases j <;>
+    simp [unitModS1, unitModS2, Matrix.mul_apply, Fin.sum_univ_two] <;>
+    field_simp <;> ring
+
+/-- `χ_{(2,1)}(σ₁σ₂) = −1` for every `q`. -/
+theorem unitMod_trace_s1s2 (q : R) (hq : q ≠ 0) (hq2 : q ^ 2 + 1 ≠ 0) :
+    Matrix.trace (unitModS1 q * unitModS2 q) = -1 := by
+  simp [unitModS1, unitModS2, Matrix.trace, Fin.sum_univ_two]
+  field_simp; ring
+
+/-- `σ₁σ₂⁻¹` in the model. -/
+def unitModBor (q : R) : Matrix (Fin 2) (Fin 2) R :=
+  !![-q ^ 4 / (q ^ 2 + 1), q;
+     -(q ^ 4 + q ^ 2 + 1) / (q * (q ^ 2 + 1) ^ 2), -1 / (q ^ 2 * (q ^ 2 + 1))]
+
+theorem unitMod_s1_mul_s2inv (q : R) (hq : q ≠ 0) (hq2 : q ^ 2 + 1 ≠ 0) :
+    unitModS1 q * unitModS2inv q = unitModBor q := by
+  ext i j; fin_cases i <;> fin_cases j <;>
+    simp [unitModS1, unitModS2, unitModS2inv, unitModBor, Matrix.mul_apply,
+      Fin.sum_univ_two, Matrix.one_apply] <;>
+    field_simp <;> ring
+
+/-- **Borromean trace on `V_{(2,1)}`.**
+    `χ_{(2,1)}((σ₁σ₂⁻¹)³) = −(q⁴−q²+1)(q⁸−2q⁶−2q²+1)/q⁶`.
+    At `q = 1` this is `2`, so the eigenvalues are near `+1`, not `−1`. -/
+-- Ref: [leitner2026] prop:unit-modulus-eigenvalue (corrected 2026-11-16)
+theorem borromean_trace_standard (q : R) (hq : q ≠ 0) (hq2 : q ^ 2 + 1 ≠ 0) :
+    Matrix.trace ((unitModS1 q * unitModS2inv q) * (unitModS1 q * unitModS2inv q)
+        * (unitModS1 q * unitModS2inv q))
+      = -((q ^ 4 - q ^ 2 + 1) * (q ^ 8 - 2 * q ^ 6 - 2 * q ^ 2 + 1)) / q ^ 6 := by
+  rw [unitMod_s1_mul_s2inv q hq hq2]
+  simp only [unitModBor, Matrix.trace, Matrix.diag, Fin.sum_univ_two, Matrix.mul_apply,
+    Matrix.of_apply, Matrix.cons_val', Matrix.cons_val_zero, Matrix.cons_val_one,
+    Matrix.empty_val', Matrix.cons_val_fin_one]
+  field_simp
+  ring
+
+end StandardRep
 
 end QOU.BraidsAndKnots

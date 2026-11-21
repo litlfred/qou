@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/candetgl/blocks/lem-sec-017-02",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 16,
+  "pageEnd": 18,
+  "text": "lem-sec-017-02.md",
+  "derivedFrom": "library/candetgl/sections/sec-017",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/candetgl/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "1",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-017-a-proof-of-theorem-b-easy-direction.md (p. 16-18)",
+    "claim_id": "candetgl#lemma:1",
+    "lean_status": "unformalized"
+  }
+}

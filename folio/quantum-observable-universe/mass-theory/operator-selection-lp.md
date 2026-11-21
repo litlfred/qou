@@ -57,24 +57,28 @@ vertex a solver returns is a property of its pivoting rule.
 
 ## Dual program (demand pricing)
 
-By LP duality, the dual is:
+The primal variable $x$ is free apart from the box $x_i \ge -M$, so the
+dual constraints are equalities. With multipliers $y_0$ (free) for the
+net constraint, $y_i \ge 0$ for the Frobenius constraints and
+$w_i \ge 0$ for the box, the dual is:
 
 $$
-  \max_{y_0, \, y \in \mathbb{R}^d} \quad n_{\mathrm{target}} \cdot y_0 - M \sum_{i=1}^{d} s_i
+  \max_{y_0,\, y,\, w} \quad n_{\mathrm{target}} \cdot y_0 - M \sum_{i=1}^{d} w_i
 $$
 
 *subject to:*
 
 $$
-  y_0 + \sum_{i=1}^{d} G_{ji}\, y_i - s_j \leq t_j
+  y_0 + \sum_{i=1}^{d} G_{ij}\, y_i + w_j \;=\; t_j
   \quad \forall\, j \in \{1, \ldots, d\}
 $$
 
 $$
-  y_i \geq 0, \quad s_i \geq 0 \quad \forall\, i
+  y_i \geq 0, \quad w_i \geq 0 \quad \forall\, i
 $$
 
-For large $M$, the slack variables $s_i$ are driven to zero at optimality. The effective dual simplifies to:
+If no box constraint is active at the optimum, then $w^* = 0$ and the
+dual reduces to:
 
 $$
   \max_{y_0, \, y \geq 0} \quad n_{\mathrm{target}} \cdot y_0
@@ -83,9 +87,14 @@ $$
 *subject to:*
 
 $$
-  y_0 + \sum_{i=1}^{d} G_{ji}\, y_i \leq t_j
+  y_0 + \sum_{i=1}^{d} G_{ij}\, y_i \;=\; t_j
   \quad \forall\, j \in \{1, \ldots, d\}
 $$
+
+The inequality form $y_0 + \sum_i G_{ij} y_i \le t_j$ is the dual of the
+program with $x \ge 0$, not of this one. Because $G_{1j} = t_j$ for
+$b_1 = 1$, the point $y_0 = 0$, $y = e_1$, $w = 0$ is dual-feasible with
+value $0$, which matches the primal optimum above.
 
 ## Strong duality
 
@@ -95,5 +104,8 @@ $$
 $$
   \sum_{i=1}^{d} t_i \, x_i^*
   \;=\;
-  n_{\mathrm{target}} \cdot y_0^*
+  n_{\mathrm{target}} \cdot y_0^* - M \sum_{i=1}^{d} w_i^*,
 $$
+
+*which equals $n_{\mathrm{target}} \cdot y_0^*$ when no box constraint is active.*
+

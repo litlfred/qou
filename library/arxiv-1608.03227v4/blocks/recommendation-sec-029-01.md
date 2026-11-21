@@ -1,1 +1,0 @@
-After the elimination the only term that has dependence on Y2 is the Koszul complex î G (Y2 −Adg23(Y3)++) ó and since π∗ 13(W) does not depend on Y2 and the correction correction diﬀerentials ∂, which could depend on Y2 does not contribute the square of the total diﬀerential, the element G must vanish.

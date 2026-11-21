@@ -1,1 +1,0 @@
-We shall say that $f$ is *$q$-asymptotic* to $\hat f$ on $U$ if, for all $n \in {\mathbf N}$ and every $\Sigma$-invariant strict subset $K \subset U$: $$z^{-n}\bigl(f(x)-S_{n-1} \hat{f}\bigr)$$ []{#not42 label="not42"} is bounded on $K$.

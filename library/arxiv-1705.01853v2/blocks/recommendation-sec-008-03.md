@@ -1,1 +1,0 @@
-Of course, these predictions are rather toothless: the particles have a mass which is constrained only by the Planck scale are unlikely to be abundant; one must hope that Nature is kind \cite{moedal}.

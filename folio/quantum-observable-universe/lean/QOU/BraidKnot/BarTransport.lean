@@ -18,7 +18,7 @@
 
   Pre-archimedean: generic `Field K`. No analysis, no ordering.
 
-  -- Ref: [manuscript] braids-and-knots, bar-involution transport
+  -- Ref: [leitner2026] braids-and-knots, bar-involution transport
 -/
 
 import QOU.BraidKnot.AJFigureEight

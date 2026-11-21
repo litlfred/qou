@@ -1,0 +1,1 @@
+Let A be a non-singular symmetric complex 3×3 matrix, and let ψ(z1, z2, z3) and r(z1, z2, z3) be holomorphic functions of the forms, ψ(z1, z2, z3) = zTA z + r(z1, z2, z3), r(z1, z2, z3) = ∑ i,j,k bijkzizjzk + ∑ i,j,k,l cijklzizjzkzl + · · · , (26) deﬁned in a neighborhood of 0 ∈C3. The restriction of the domain { (z1, z2, z3) ∈C3

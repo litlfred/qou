@@ -1,1 +1,0 @@
-We shall write $Red(\mu,A,\mu',A',U)$ for the pair $(F,V)$.\ Now, we come back to our usual notations [\[equation:forme-canonique\]](#equation:forme-canonique){reference-type="ref" reference="equation:forme-canonique"} and [\[equation:forme-canonique-diagonale\]](#equation:forme-canonique-diagonale){reference-type="ref" reference="equation:forme-canonique-diagonale"}.

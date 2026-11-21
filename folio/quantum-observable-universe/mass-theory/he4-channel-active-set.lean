@@ -22,7 +22,7 @@ Following AGENTS.md §3b-cond, the proposition is axiomatised as a
 class `HasHe4ChannelActiveSet` whose instance encodes the
 witness-verified primal+dual+active-set triple.
 
-Ref: [manuscript] §F1 ⁴He compositional probe (audit doc)
+Ref: [leitner2026] §F1 ⁴He compositional probe (audit doc)
 -/
 
 import Mathlib.Data.Rat.Defs

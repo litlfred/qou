@@ -71,6 +71,7 @@ export default proposition({
     "infrastructure",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): (`h4_markov_weights_closed_form.py`, asserted at run time). Two independent\npaths agree exactly — the Wenzl specialisation `y_lambda_symbolic` and that" },
     {
       kind: "refined-framing",
       date: "2026-11-15",

@@ -16,9 +16,9 @@ The Lean here mirrors the Frobenius-paired truncation identity at the
 level of finite sums over a graded R-module, with the depth-grading
 and orthogonality packaged as a typeclass-style record.
 
--- Ref: [manuscript] prop:quantum-dilogarithm-stratified
--- Ref: [manuscript] prop:curvature-rank-gb-stratification
--- Ref: [manuscript] prop:spectral-sequence-collapse
+-- Ref: [leitner2026] conj:quantum-dilogarithm-stratified
+-- Ref: [leitner2026] prop:curvature-rank-gb-stratification
+-- Ref: [leitner2026] prop:spectral-sequence-collapse
 -/
 
 namespace QOU.WedderburnMass
@@ -26,7 +26,7 @@ namespace QOU.WedderburnMass
 /-- A depth-graded R-module with Frobenius pairing: the centre Z(A) of
     a Hecke algebra, with GB-depth grading and Frobenius-orthogonality
     of strata at depths j ≠ k★(T_w) under the T_w-pairing. -/
--- Ref: [manuscript] prop:curvature-rank-gb-stratification
+-- Ref: [leitner2026] prop:curvature-rank-gb-stratification
 structure DepthGradedFrobeniusModule (R : Type*) [CommRing R] where
   /-- The depth-k Frobenius-dual coefficient (a function of the
       exceptional divisor index i). -/
@@ -36,22 +36,22 @@ structure DepthGradedFrobeniusModule (R : Type*) [CommRing R] where
   /-- The NF-support depth k★(T_w). -/
   k_star : ℕ
   /-- Frobenius-orthogonality: pairing vanishes for depths > k★(T_w). -/
-  -- Ref: [manuscript] prop:spectral-sequence-collapse §Frobenius duality
+  -- Ref: [leitner2026] prop:spectral-sequence-collapse §Frobenius duality
   vanish_above_kstar : ∀ k, k > k_star → pairing k = 0
 
 /-- The truncated brane-tower Frobenius pairing:
     Σ_{k ≤ N} pairing k. -/
--- Ref: [manuscript] prop:quantum-dilogarithm-stratified
+-- Ref: [leitner2026] conj:quantum-dilogarithm-stratified
 def truncatedPairing {R : Type*} [CommRing R]
     (M : DepthGradedFrobeniusModule R) (N : ℕ) : R :=
   Finset.sum (Finset.range (N + 1)) M.pairing
 
 /-- **Frobenius truncation theorem.** For any N ≥ k★(T_w), the
     truncated pairing equals the k★(T_w)-truncated pairing. This is
-    the Lean-formalised corollary of `prop:quantum-dilogarithm-stratified`:
+    the Lean-formalised corollary of `conj:quantum-dilogarithm-stratified`:
     replacing Φ_q(z_i) by its k★(T_w)-truncation in the Frobenius
     pairing with T_w gives the same result. -/
--- Ref: [manuscript] prop:quantum-dilogarithm-stratified
+-- Ref: [leitner2026] conj:quantum-dilogarithm-stratified
 theorem phi_q_frobenius_truncation {R : Type*} [CommRing R]
     (M : DepthGradedFrobeniusModule R)
     (N : ℕ) (h : N ≥ M.k_star) :
@@ -59,7 +59,7 @@ theorem phi_q_frobenius_truncation {R : Type*} [CommRing R]
   unfold truncatedPairing
   -- Split Finset.range (N + 1) at k_star + 1; the tail vanishes
   -- termwise by M.vanish_above_kstar.
-  -- Ref: [manuscript] prop:spectral-sequence-collapse §Frobenius duality
+  -- Ref: [leitner2026] prop:spectral-sequence-collapse §Frobenius duality
   have hsub : Finset.range (M.k_star + 1) ⊆ Finset.range (N + 1) := by
     intro j hj
     simp only [Finset.mem_range] at *
@@ -77,7 +77,7 @@ theorem phi_q_frobenius_truncation {R : Type*} [CommRing R]
     M N. The key statement of the stratified proposition is that this
     partial product captures exactly the depth-≤N strata of the
     Frobenius-dual decomposition. -/
--- Ref: [manuscript] prop:quantum-dilogarithm-stratified, Step 3
+-- Ref: [leitner2026] conj:quantum-dilogarithm-stratified, Step 3
 def partialProductPairing {R : Type*} [CommRing R]
     (M : DepthGradedFrobeniusModule R) (N : ℕ) : R :=
   truncatedPairing M N
@@ -86,7 +86,7 @@ def partialProductPairing {R : Type*} [CommRing R]
     above k★(T_w) all give the same value (the analytic Φ_q evaluation
     truncates to the categorical k★ truncation under Frobenius
     pairing with T_w). -/
--- Ref: [manuscript] prop:quantum-dilogarithm-stratified, Step 4
+-- Ref: [leitner2026] conj:quantum-dilogarithm-stratified, Step 4
 theorem partial_product_truncation {R : Type*} [CommRing R]
     (M : DepthGradedFrobeniusModule R)
     (N : ℕ) (h : N ≥ M.k_star) :

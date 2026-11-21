@@ -13,7 +13,7 @@ LaTeX label: `def:unit-particle-state`
 
 ## References
 
-- [manuscript] Ch 8 §2, The unit particle as a cohomological defect
+- [leitner2026] Ch 8 §2, The unit particle as a cohomological defect
 -/
 
 set_option autoImplicit false

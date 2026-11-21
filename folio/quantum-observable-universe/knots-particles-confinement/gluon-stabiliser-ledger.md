@@ -8,7 +8,7 @@ Step 4 of the [derived atom](#def:derived-atom) says the integer LP dual "select
 
 **Nor is double counting.** The Hopf gluon does redistribute normal-form weight from $\sigma_1$ into the trefoil channel, so $e^-$ is the output of stabilisation. That is a consequence of the selection, not a constraint on the search: an $e^-$ *input* would be a different, worse candidate, not a quantity counted twice.
 
-**Hyperbolic volume decides nothing here.** Where a competing channel carries a hyperbolic constituent, volume settles the selection outright — the Borromean rings carry $8G$ and a torus link carries none. That is what happens one step earlier, at the antiquark disposal, and [the antiquark ledger](#rem:antiquark-channel-ledger) works it out. That route is unavailable at step 4. All five non-identity [basis words](#fundamental-knots-operator-basis) are torus-type with $\mathrm{Vol} = 0$, so volume separates none of them, and the whole selection falls to $\mathrm{tr}_M$ and crossing count.
+**Hyperbolic volume decides nothing here.** Where a competing channel carries a hyperbolic constituent, volume settles the selection outright — the Borromean rings carry $8G$ and a torus link carries none. That is what happens one step earlier, at the antiquark disposal. That route is unavailable at step 4. All five non-identity [basis words](#fundamental-knots-operator-basis) are torus-type with $\mathrm{Vol} = 0$, so volume separates none of them, and the whole selection falls to $\mathrm{tr}_M$ and crossing count.
 
 **What is genuinely unsettled is the crossing count, not the feasible set.**
 

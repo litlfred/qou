@@ -1,0 +1,1 @@
+We define the function D : P →P such that for any partition λ of n, we have D(λ) := core2r(λ). Moreover, we set D((0)) := (0). Denote D0(λ) := λ and Dm(λ) := D(Dm−1(λ)) for any positive integer m. We define the oddness rank of the partition λ by OddRank(λ) = min{m ∈Z≥0 | Dm+1(λ) = Dm(λ)}.

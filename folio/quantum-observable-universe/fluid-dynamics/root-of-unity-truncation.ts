@@ -5,7 +5,7 @@ export default proposition({
   lean: { ref: "qou:QOU.FluidDynamics.root_of_unity_truncation_conditional", validation: "not_checked" },
   title:
     "Representation-theoretic truncation at roots of unity and the $q = 1$ accumulation",
-  uses: ["prop:vorticity-lower-bound", "prop:q-laplacian-spectral-tower"],
+  uses: ["conj:vorticity-lower-bound", "prop:q-laplacian-spectral-tower"],
   cites: ["verlinde1988"],
   tags: [
     "root-of-unity",
@@ -33,5 +33,6 @@ export default proposition({
         "replaced by coreBounded in both encodings.",
       see: "conj:levi-degeneracy",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): This establishes exactly the [regularity breakdown](#conj:regularity-breakdown) regime." },
   ],
 });

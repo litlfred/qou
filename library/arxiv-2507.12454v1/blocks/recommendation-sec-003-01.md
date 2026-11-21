@@ -1,1 +1,0 @@
-Initially, in the identity [\[eq:partition function logarithm\]](#eq:partition function logarithm){reference-type="eqref" reference="eq:partition function logarithm"} it was not at all clear that the right hand side has coefficients which are polynomials in $q$, $t$, which they should be because the mixed Hodge polynomials on the left hand side are polynomials by definition.

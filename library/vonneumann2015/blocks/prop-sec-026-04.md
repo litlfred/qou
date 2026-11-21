@@ -1,0 +1,1 @@
+Suppose that M = L∞(X, µ)⋊Γ is a type I or II factor for a free ergodic action of Γ on L∞(X, µ). Let tr be as above and p be a projection in M with tr(p) < ∞. Then E(p) = EL∞(X,µ)(p) and 0 < tr(E(p)2) ≤tr(p).

@@ -89,7 +89,11 @@ from derived_chi_catalogue_matrix_m_mpfr import (  # noqa: E402
     chi_via_numerical_matrix_m_mpfr,
     chi_rust_at_q_mpf,
 )
-from derived_chi_catalogue_matrix_m import _word_for_braid_word_3a  # noqa: E402
+from derived_chi_catalogue_matrix_m import (  # noqa: E402
+    ISOSPIN_DEGENERACY_NOTE,
+    _word_for_braid_word_3a,
+)
+from chi_via_rust_lossless import PN_SPLIT_NOTE  # noqa: E402
 
 
 def _save_partial(out_path: Path, payload: dict) -> None:
@@ -312,6 +316,9 @@ def build_chi_cache_at_q0_matrix_m(
                 ),
                 "producer": "matrix-m-chi-q-via-gp",
                 "convention": "sign-only-crossings",
+                "pn_split_carried": False,
+                "pn_split_note": PN_SPLIT_NOTE,
+                "isospinDegeneracyNote": ISOSPIN_DEGENERACY_NOTE,
                 f"q_0_{dps}dps": str(q),
                 "dps": dps,
                 "n_strands": n,
@@ -348,6 +355,9 @@ def build_chi_cache_at_q0_matrix_m(
         ),
         "producer": "matrix-m-chi-q-via-gp",
         "convention": "sign-only-crossings",
+        "pn_split_carried": False,
+        "pn_split_note": PN_SPLIT_NOTE,
+        "isospinDegeneracyNote": ISOSPIN_DEGENERACY_NOTE,
         f"q_0_{dps}dps": str(q),
         "dps": dps,
         "n_strands": n,
@@ -402,9 +412,16 @@ def save_witness(record: dict, start_time: float) -> Path:
     wb.add_data("n_strands", record["n_strands"])
     wb.add_data("n_partitions", record["n_partitions"])
     wb.add_data("tr_M_at_q0", record["tr_M_at_q0"])
+    wb.add_data("pn_split_carried", False)
+    wb.add_data("pn_split_note", PN_SPLIT_NOTE)
+    wb.add_data("isospinDegeneracyNote", ISOSPIN_DEGENERACY_NOTE)
     wb.add_data("compute_time_sec", record["compute_time_sec"])
     wb.add_data("cache_path", record["out_path"])
-    return wb.save()
+    return wb.save({
+        "pn_split_carried": False,
+        "pn_split_note": PN_SPLIT_NOTE,
+        "isospinDegeneracyNote": ISOSPIN_DEGENERACY_NOTE,
+    })
 
 
 def main() -> int:

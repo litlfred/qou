@@ -1,1 +1,0 @@
-Despite we will not give a proof of this theorem, we shall state and prove the following proposition : 18 Proposition 1.1.9. [CS83] Let Γ be a ﬁnitely generated group, then the algebra B[Γ] is ﬁnitely generated.

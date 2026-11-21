@@ -14,10 +14,13 @@ input:
 
   y_0*(σ(β)) = y_0*(β).
 
-QOU instance: σ = Hopf antipode on H_n(R, q), τ = Markov trace,
-c = P_ℓ = e_ℓ(J_1, …, J_n) (Murphy 1992 central element).
-The Z↔N swap on atomic-braid recipes is σ; mirror nuclei have
-exactly equal LP-dual binding-energy shadow prices.
+QOU instance — NOT available (corrected 2026-11-16).  It was claimed
+that σ = the antipode σ_i ↦ σ_i⁻¹ on H_n(R, q) with τ = Markov trace
+is an instance, giving equal shadow prices for mirror nuclei.  It is
+not: under convention D, τ(σ_i) = q³/(q²+1) but τ(σ_i⁻¹) = 1/(q(q²+1)),
+so `trace_invariant` fails; and σ_i ↦ σ_i⁻¹ respects the Hecke relation
+only together with q ↦ q⁻¹ (the bar involution), under which τ is
+equivariant, not invariant.  The theorem below is generic and stands.
 
 ## Architecture
 
@@ -255,7 +258,7 @@ theorem isospin_is_spin_grading_under_spin_involution
 
     This is the **algebraic basis** for the `z_n_symmetry` axiom
     in `conj:magic-shell-stabilization`. -/
--- Ref: [manuscript] prop:spin-involution-lp-dual-invariance §"Corollary (pair-knot Z↔N symmetry)"
+-- Ref: [leitner2026] prop:spin-involution-lp-dual-invariance §"Corollary (pair-knot Z↔N symmetry)"
 theorem pair_knot_Z_N_trace_invariance
     {F : FrobeniusSelfDualityForcesLPDualExtraction A R}
     (S : SpinInvolution F)
@@ -275,7 +278,7 @@ theorem pair_knot_Z_N_trace_invariance
     #638 closure work: AME data confirms this symmetry directly
     (substrate-binding difference between ³He and ³H vanishes
     after Coulomb correction, to ~0.03 MeV ≈ 0.5%). -/
--- Ref: [manuscript] prop:spin-involution-lp-dual-invariance §"Corollary"
+-- Ref: [leitner2026] prop:spin-involution-lp-dual-invariance §"Corollary"
 theorem mirror_nucleus_trace_equality
     {F : FrobeniusSelfDualityForcesLPDualExtraction A R}
     (S : SpinInvolution F)

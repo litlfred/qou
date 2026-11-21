@@ -1,1 +1,0 @@
-19 We shall first identify a quantum group fusion category at a fixed suitable root of unity with that of a corresponding affine VOA fusion category or conformal net fusion category as pre-tensor categories, then we identify them with all the structure on special variables which do not generate all the variables linearly.

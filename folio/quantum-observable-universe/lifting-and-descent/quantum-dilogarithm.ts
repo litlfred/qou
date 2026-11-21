@@ -8,7 +8,12 @@ export default corollary({
   title: "Quantum Dilogarithm as Localized Torsion Volume",
   proofs: ["prf:quantum-dilogarithm"],
   tags: ["quantum-dilogarithm", "torsion-volume", "reeb-flow", "archimedean"],
-  uses: ["thm:topological-mass", "def:briggs-klein-chart"],
+  // The statement identifies one term, the transient trace tr_trans(ϱ, p_i),
+  // and needs only its definition. That definition is stated in
+  // prop:topological-mass-upper-bound. The open equality
+  // conj:topological-mass (mass = sum of the term norms) is not used:
+  // the proof evaluates a single term and never sums the terms.
+  uses: ["prop:topological-mass-upper-bound", "def:briggs-klein-chart"],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/quantum-dilogarithm-0.svg", blockIndex: 0, hash: "9dfe6018a432" },
   ],

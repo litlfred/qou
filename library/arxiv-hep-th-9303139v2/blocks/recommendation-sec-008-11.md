@@ -1,1 +1,0 @@
-Now, if we are dealing with the $p-1=3$-matrix model, every $H_2$ standing to the right of all $H_3$'s can be substituted by $\frac{\partial}{\partial H_{3,tr}}$, otherwise one should also include terms with commutators when this $\frac{\partial}{\partial H_{3,tr}}$ is carried back to the place where $H_2$ was standing.

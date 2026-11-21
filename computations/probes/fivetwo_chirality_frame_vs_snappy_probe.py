@@ -44,6 +44,14 @@ import tempfile
 import time
 
 import mpmath as mp
+
+# 5_2's volume as the corpus derived it (aomega-m3 floor-remainder witness), read
+# rather than typed: the geometric volume is the largest of the conjugate volumes.
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                       "aomega-m3-floor-remainder-from-derived-shape-fields.witness.json")) as _fh:
+    _VOLS52 = json.load(_fh)["data"]["fivetwo"]["conjugate_volumes"]
+with mp.workdps(50):
+    _CORPUS_VOL_52 = max(mp.mpf(v) for v in _VOLS52)
 import sympy as sp
 
 mp.mp.dps = 50
@@ -142,7 +150,7 @@ def main():
     check("mirror-of-snappy-5_2-matches-derived-frame-exactly (shape to 38 digits, slopes)",
           abs(tau_mir - tau52) < tol and slm == slopes52)
     vol_sn = qd(Hp.volume())
-    check("snappy-5_2-volume-matches-corpus", abs(vol_sn - mp.mpmathify("2.8281220883307831627")) < mp.mpf(10) ** -18,
+    check("snappy-5_2-volume-matches-corpus", abs(vol_sn - _CORPUS_VOL_52) < mp.mpf(10) ** -18,
           snappy=mp.nstr(vol_sn, 25))
     # 4_1 control (amphichiral): shape purely imaginary, slopes +-4
     F = snappy.Manifold("4_1").high_precision()

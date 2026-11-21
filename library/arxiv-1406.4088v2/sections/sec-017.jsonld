@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1406.4088v2/sections/sec-017",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Electric charge renormalization",
+  "pageStart": 30,
+  "pageEnd": 32,
+  "contains": [
+    "library/arxiv-1406.4088v2/blocks/prose-sec-017",
+    "library/arxiv-1406.4088v2/blocks/prop-sec-017-01",
+    "library/arxiv-1406.4088v2/blocks/prop-sec-017-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1406.4088v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1406.4088v2/manifest.jsonld",
+  "provenance": "ingested"
+}

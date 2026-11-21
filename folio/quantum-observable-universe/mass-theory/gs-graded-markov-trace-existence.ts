@@ -37,4 +37,7 @@ export default conjecture({
     "closure-tier-b",
     "phase-2-sprint-4-discharge",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Lean encoding.** In `gb-residue-spectral-sum.lean`, this is encoded as the abstract class field `gradedTrace : Fin levelBound → ℝ` on `GBResidueSpectralSum`. Each atomic instance supplies its per-level values. Constructing a fully verifiable `def` requires Mathlib infrastructure for filtered algebras and remains tracked downstream.\n\n\n\nPromoting the formal Lean counterpart to a theorem requires formalising $\\mathrm{ConfinementLevel}$, constructing" },
+  ],
 });

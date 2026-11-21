@@ -1,1 +1,1 @@
-Let A be a weak quasi-bialgebra with coproduct ∆ and associator Φ, and
+Let A be a weak quasi-bialgebra with coproduct ∆ and associator Φ, and let F ∈ A ⊗ A be a twist. Then AF is a weak bialgebra if and only if Φ is the 3 coboundary associator defined by F as in (9.1), (9.2). In particular, if A is a weak bialgebra, AF is a weak bialgebra as well if and only if F is a 2-cocycle.

@@ -52,7 +52,7 @@ hand-audit — recorded here so the next reader does not "simplify" them back ou
 -- Ref: [gunaydin-gursey1973] J. Math. Phys. 14(11), 1651-1667 — the
 -- SU(3) stabilizer of a fixed imaginary unit inside Aut(O) = G_2, and the
 -- resulting Im(O) = R + C^3 splitting with 3 and 3bar complex conjugate.
--- (Was `[manuscript]` pointing at the corpus's own audit doc, which under
+-- (Was `[leitner2026]` pointing at the corpus's own audit doc, which under
 -- AGENTS.md §1 is licensed only when no published reference exists.)
 -- Corpus-side derivation record: docs/audits/2026-07-17-octonion-su3-stabilizer-in-g2.md
 -/

@@ -1,1 +1,0 @@
-Then by the definition of $m_{2,1}$ along with Lemma~\ref{lem.41.gx} and Lemma~\ref{lem.resf1.x} we see that $\calE_{4}$ is holomorphic and satisfies Equation~\eqref{41x} and therefore must be zero from Lemma~\ref{lem.41.x.holsol}.

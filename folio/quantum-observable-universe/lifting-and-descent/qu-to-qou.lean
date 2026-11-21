@@ -17,7 +17,7 @@ is a quantum observable universe with five structural properties:
 ## References
 
 - [yekutieli2010] Central Extensions of Gerbes
-- [manuscript] §3 Theorem: QU to QOU
+- [leitner2026] §3 Theorem: QU to QOU
 -/
 
 namespace QOU
@@ -68,8 +68,8 @@ structure TerminalFiber where
     lifting condition, it is a QOU with descent, obstruction, and fiber data.
 
     LaTeX: `\label{thm:qu-to-qou}`
-    Ref: [manuscript] §3 -/
--- Ref: [manuscript] §3
+    Ref: [leitner2026] §3 -/
+-- Ref: [leitner2026] §3
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 structure QuToQou where
   /-- (1) The descent tower terminates. -/
@@ -100,7 +100,7 @@ structure QuToQou where
     QU→QOU theorem (Properties 1–5); the derivation of these ingredients from
     a quantum universe with observability and the quantum lifting condition is
     the narrative content of §3. -/
--- Ref: [manuscript] §3
+-- Ref: [leitner2026] §3
 theorem qu_to_qou_exists
     (descent : DescentTower) (branchData : BranchData)
     (kappa0 eulerChar : ℤ) (htrace : kappa0 = eulerChar)

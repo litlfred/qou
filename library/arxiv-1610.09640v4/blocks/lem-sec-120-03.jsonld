@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/blocks/lem-sec-120-03",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 425,
+  "pageEnd": 429,
+  "text": "lem-sec-120-03.md",
+  "derivedFrom": "library/arxiv-1610.09640v4/sections/sec-120",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "18.3.5",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-120-183-interlude-graded-rings-of-laurent-type.md (p. 425-429)",
+    "claim_id": "arxiv-1610.09640v4#lemma:18.3.5",
+    "lean_status": "unformalized"
+  }
+}

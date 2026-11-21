@@ -1,0 +1,44 @@
+286 Smooth point asymptotics
+
+in Z¢ representing possible steps of the walk. At each time step, the particle
+chooses a new state j € [k] and then moves by a jump of v?. The amplitude
+of a transition from state i to j is the entry U;,;, while the amplitude of a path
+of n steps, starting in state ip and ending in states i, is aan U;,i,,,- Suppose the
+particle starts, at time zero, at the origin in state 7. The amplitude of moving
+from 0 to a point p in n time steps and ending in state j is obtained by summing
+the amplitudes of all paths of n steps having total displacement p and ending in
+state j. This description gives us everything we need to compute asymptotics
+of QRWs — for more on the interpretation of quantum walks, see [Amb+01;
+Bar+10].
+
+The multiplicative nature of the amplitudes makes QRW a perfect candidate
+for the transfer matrix method, the univariate version of which was discussed
+in Section 2.2 and whose multivariate version will be discussed at length in
+Section 12.4. Let M denote the k x k diagonal matrix whose (j, j)-entry is the
+monomial z’” and let P(p, n) be the matrix whose (i, j)-entry is the amplitude
+to go from the origin in state i at time zero to p in state j at time n. Define the
+spacetime generating function
+
+F(z) =D" P@,m(2°)P zig, (9.28)
+pez
+n>0
+where z° = (z1,...,Zy) are d variables tracking walk position and zy.) is a
+
+variable tracking walk length. The transfer matrix method easily gives
+F(z) = (I~ za1MU)",
+and the entries Fj; are rational functions with common denominator
+Q = det(I — za41 MU). (9.29)
+
+Exercise 9.12. Prove that Q in (9.29) satisfies the strong torality hypothesis
+from Definition 9.20.
+
+The component B of the amoeba complement that yields a series in Za41
+whose coefficients are Laurent polynomials in z),...,z is contained in the
+negative zy,1 halfspace and has the origin on its boundary. Its boundary is
+smooth everywhere except the origin, where its dual cone K has nonempty in-
+terior; see Figure 9.8. Recall the dual rate function 6" on directions from (6.5).
+Whenever 0 € OB we may deduce that 6"(#) < 0 with equality only possible
+if # € normal(B). The feasible velocity region of the QRW is the set R C R¢
+consisting of all (7;,...,7@) such that exponential growth rate Bn, +3 Ta, 1)
+from Definition 6.20 vanishes (in other words, it is the set of directions in
+which the chance of finding the particle roughly at that rescaled point after a

@@ -1,0 +1,1 @@
+The monotone Fukaya category F(M) is invariant, up to quasi-isomorphism, under rescaling the symplectic form. Some care must be taken, however, when considering products of monotone manifolds, since the factors cannot be scaled independently preserving monotonicity.

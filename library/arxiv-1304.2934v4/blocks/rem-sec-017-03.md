@@ -1,0 +1,1 @@
+One can give a sufﬁcient condition on the Lévy-Khintchine representation of φ to ensure the absolute continuity with respect to the Lebesgue measure; cf. [SH04, Chapter 4, Theorem 4.23]. Hence, it is the case if σ2 > 0, or if σ2 = 0 and if the absolutely continuous part of the Lévy measure Π has inﬁnite mass.

@@ -1222,6 +1222,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "fce9f63f8d1e",
+          "ts": "909b76b00c59",
+          "lean": "ddec9a75a9cd",
+          "lean_statement": "150178959498"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:00:12.813Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "[sidecar review 2026-11-15, issue #8030] Lean: two records with the same `dualValue` have equal `shadowPrice` (rfl after rewriting). Dependence on the absolute value \\ | ·\\ | _v (item 3) and \"up to base-ring equivalence\" are absent. **False step in the inline proof:** \"complementary slackness dictates a unique dual variable per binding constraint\" is wrong in general (LP duals are unique only under primal nondegeneracy), and per the def's own note u_λ is not an LP dual at all. Ostrowski is stated for ℚ but applied to R ∈ {ℝ, ℚ_p, 𝔽_p}."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2495,6 +2513,6 @@
       }
     ]
   },
-  "updated_at": "2026-09-06T09:43:16.155Z",
+  "updated_at": "2026-11-15T22:00:12.813Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

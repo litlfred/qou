@@ -19,10 +19,22 @@ an ordering, `Real.*`, or any archimedean input; the previous `ℝ`
 was a gratuitous specialisation.
 
 Why a **field** and not `CommRing` (the `wall-base-ring-minimal`
-adjudication): the Gram pairing is *normalised* by `χ_λ(𝟙)²`, and
-`χ_λ(𝟙) = dim_q V_λ` is a Laurent polynomial in `q`, not a unit of
-`ℤ[q^{±1}]`.  So the quotient genuinely leaves the Laurent ring and
-lands in its fraction field — `R := ℚ(q)` is the intended base.  The
+adjudication): the Gram pairing is *normalised* by `χ_λ(𝟙)² = d_λ²`,
+where `d_λ = dim V_λ` is the classical dimension, an integer that is
+not a unit of `ℤ[q^{±1}]`.  (This docstring previously said
+`χ_λ(𝟙) = dim_q V_λ`; the character of the identity is the module's
+dimension, `d_λ`.)  So the quotient leaves the Laurent ring and lands
+in its fraction field — `R := ℚ(q)` is the intended base.
+
+## What the narrative claims (corrected 2026-11-16)
+
+`a_K := τ(π(β) β*)` with `π` the central projection and `τ` the
+Markov trace, `τ(𝟙) = 1`.  Then
+`a_K = Σ_λ w_λ χ_λ(β) χ_λ(β*) / d_λ²` with `w_λ = τ(e_λ) = y_λ d_λ`,
+and `Σ_λ w_λ = 1`.  The structure below carries the character data
+abstractly; `knotFactor_of_trivial` records the normalisation
+consequence `a_𝟙 = Σ_λ w_λ`, which equals `1` exactly when the
+weights come from a trace with `τ(𝟙) = 1`.  The
 division is essential, not a restatable Laurent identity, and
 `[Field R]` is the weakest §7c class admitting it.  `R := ℝ` remains
 an instance for archimedean evaluation at the substrate anchor.
@@ -31,7 +43,7 @@ LaTeX label: `prop:knot-factor-spectral-form`
 
 ## References
 
-- [manuscript] §3/knot-factor-spectral-derivation
+- [leitner2026] §3/knot-factor-spectral-derivation
 - [jones1987] https://doi.org/10.2307/1971403
 -/
 
@@ -52,12 +64,13 @@ def knotFactor {R : Type*} [Field R] (n : ℕ)
   β.partitions.sum fun p =>
     β.weight p * (β.c p * β_mirror.c p) / (β.trivial p) ^ 2
 
-/-- **Proposition (knot factor as chirality Gram pairing)**.
-
-    For any braid `β ∈ B_n` with mirror `β*`, the knot factor
-    appearing in the unified mass formula is the Plancherel-weighted
-    character pairing displayed above. -/
--- Ref: [manuscript] §3/knot-factor-spectral-derivation
+/-- Unfolding lemma for `knotFactor` (true by definition; it is the
+    rewrite rule `KnotFactorAmphicheiral` uses).  The mathematical
+    content of the narrative identity, the evaluation
+    `τ(π(β) β*) = Σ_λ w_λ χ_λ(β) χ_λ(β*) / d_λ²`, is proved in the
+    `.md` from orthogonality of the central idempotents; it is not
+    encoded here, because `HeckeExpansion` carries no algebra. -/
+-- Ref: [leitner2026] §3/knot-factor-spectral-derivation
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
@@ -85,5 +98,19 @@ theorem knotFactor_self {R : Type*} [Field R] (n : ℕ)
   refine Finset.sum_congr rfl fun lam _ => ?_
   rw [div_pow]
   ring
+
+/-- **Normalisation.**  If both expansions are those of the identity
+    (`χ_λ(𝟙) = d_λ` on every block, `d_λ ≠ 0`), the knot factor is the
+    total weight `Σ_λ w_λ`.  With `w_λ = τ(e_λ)` that total is
+    `τ(𝟙) = 1`.  The old weights `dim_q² V_λ / [n]_q!` fail this, which
+    is the defect the 2026-11-16 restatement removes. -/
+theorem knotFactor_of_trivial {R : Type*} [Field R] (n : ℕ)
+    (β β_mirror : HeckeExpansion R n)
+    (hβ : ∀ lam ∈ β.partitions, β.c lam = β.trivial lam)
+    (hβm : ∀ lam ∈ β.partitions, β_mirror.c lam = β.trivial lam)
+    (hd : ∀ lam ∈ β.partitions, β.trivial lam ≠ 0) :
+    knotFactor n β β_mirror = ∑ lam ∈ β.partitions, β.weight lam := by
+  refine Finset.sum_congr rfl fun lam hlam => ?_
+  rw [hβ lam hlam, hβm lam hlam, ← sq, mul_div_assoc, div_self (pow_ne_zero 2 (hd lam hlam)), mul_one]
 
 end QOU.BraidKnot

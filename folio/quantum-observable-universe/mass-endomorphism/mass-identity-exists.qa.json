@@ -1231,6 +1231,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "aeb5cc844215",
+          "ts": "1501eb46bacd",
+          "lean": "3766a1bab16d",
+          "lean_statement": "4bebf315717d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:58.779Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "Lean (sibling only) is `[Nonempty R] : Nonempty R := infer_instance` — the hypothesis is the conclusion. Proof: the composite (∫_A⊗id)∘Δ∘ϱ is a morphism 1→A, while step 3 types tr as End_C(A)→R, so `tr(…)` of the composite does not typecheck; def:mass-identity was revised to ‖∫_A∘Ψ∘ϱ‖ with \"no trace is applied\", and this block still carries the old formula. PR #7990 touches only mass-identity.{md,ts,lean}, not this block"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2609,6 +2627,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-29T15:52:33.383Z",
+  "updated_at": "2026-11-15T21:55:58.779Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

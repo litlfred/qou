@@ -1,0 +1,50 @@
+12.8 Limit laws from probability theory 419
+
+and taking C/, to be B(m) (not depending on k after all) establishes (12.25) and
+the first conclusion.
+
+Pick v with 1/2 < vy < 2/3. When |r —km| < k’, the first conclusion implies
+that
+
+le ap — cn(r)| = o(n(r)) = o(kO-®?) ,
+
+It remains to establish the second conclusion when |r — km| = k”, which we
+do by showing that both terms being compared are small separately. The term
+n(r) is in fact bounded above by exp(—ck”"'/?) for some c > 0. On the other
+hand, when r € S the quantity r - x(r) differs from its value at r = m by
+at least a constant multiple of |r — mJ?. In general, when ry = k the value of
+r- a(r) differs from its value at r = km by at least a constant multiple of
+k'|r — km/?. When |r — km| > k” this is of order at least k?’-!, which is a
+positive power of k. Plugging this into (12.23) shows that a, is also at most
+exp(—ck?”"'), completing the proof. a
+
+Classical LCLT
+
+We end by deriving the classical LCLT for sums of independent lattice ran-
+dom variables whose moment generating functions are everywhere finite using
+Theorem 12.36. Let y be an aperiodic probability distribution on Z%, let u™
+denote the k-fold convolution of jz, and let
+
+F(z, Za+1) = » wOr)2” d+1
+
+(7, k)eZ4 XN
+
+denote the spacetime generating function for the random walk with increments
+distributed as jz. The d-dimensional probability generating function ¢ for ju is
+defined by
+
+(2) =D” Mrz”
+rez
+
+and finiteness of the moment generating function implies ¢ is an entire func-
+tion. The spacetime generating function F is related to the moment generating
+function ¢ for the distribution jz via
+
+1
+1 za41 O(2) ”
+The singular variety of F is globally defined by zy,1 = 1/#(z) so the logarith-
+mic singular variety is the graph of the function
+
+F(z)=
+
+g(x) = — log d(exp(a)).

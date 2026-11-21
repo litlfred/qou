@@ -1,1 +1,0 @@
-Notation We shall require a modicum of notation: given a function f : Fp →[0, 1], we write Λ(f) := Ex,d∈Fpf(x)f(x + d)f(x + 2d) (where E represents an averaged sum; thus the E above represents p−2 P).

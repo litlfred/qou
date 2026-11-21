@@ -1,0 +1,1 @@
+B.2. Equation (0-5) is related to the formula harpαN = harpα ◦6 har har(pα) N proved in [Jarossay 2015], where ◦6 har is the pro-unipotent harmonic action of series introduced in [loc. cit., Section 4.3]: restricting that equation to harm with m a power of p gives a functional equation satisﬁed by the map α 7→harpα, which expresses harpα+β in terms of harpα and har(pα) pβ .

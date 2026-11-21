@@ -33,7 +33,7 @@ observation a mechanism rather than a coincidence.
 Generic over a `Field`; no anchor, no `ℝ`, per §7c.  The evaluation at `q₀`
 lives in the probe.
 
--- Ref: [manuscript] `def:crossing-energy`,
+-- Ref: [leitner2026] `def:crossing-energy`,
 --      `prop:antiparticle-crossing-reversal`, beans `qou-fi93` / `qou-hjs8`
 -/
 import Mathlib.Algebra.Field.Basic

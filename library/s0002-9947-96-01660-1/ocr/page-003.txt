@@ -1,0 +1,57 @@
+INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS 3999
+
+Our notation for the orientation of a simplex is fixed as follows. The standard
+(n + 1)-simplex (012...n) with vertices {0,1,2,...n} has a standard orientation
+(+). The opposite orientation is indicated with a minus (—). The standard (ori-
+ented) tetrahedron +(0123) has boundary
+
+(123) — (023) + (013) — (012).
+
+The signs indicate the induced orientation of the boundary of +(0123). The tetra-
+hedron —(0123) has the opposite orientation for the boundary,
+
+—(123) + (023) — (013) + (012).
+In an oriented closed manifold, each triangle is in the boundary of exactly two
+tetrahedra, with each sign + or — occuring once.
+The data for a state sum model consists of three parts, a set of labels J, a set of
+state spaces for a triangle, and a set of partition functions for a tetrahedron.
+
+Definition 1.3. A labelled simplicial complex is a simplicial complex together with
+a function which assigns an element of I to each edge.
+
+Definition 1.4. Let T(a, b,c) be the standard oriented triangle +(012) labelled by
+OoT + a,01T + b,02T + c. The state space for this labelled triangle is a vector
+space, H(a,b,c). The state space for the oppositely oriented triangle —T(a, b,c) is
+defined to be the dual vector space, H* (a,b,c).
+
+Definition 1.5. Let A be the standard oriented tetrahedron +(0123) with the edge
+0;0;0 labelled by e;;. The partition function of this labelled tetrahedron is defined
+to be a linear map
+
+eo. €02 e€12| ,
+€23 €13 €03J 4
+H(€23, €03, €02) ® H(e12, €02, €01) > H(e23, €13, €12) ® H(e13, 03, €01):
+
+The partition function of —A with the same labelling is defined to be a linear
+map
+
+€01 €02 e€12\ ,
+€23 €13. €03f _—
+H(e23, €13, €12) ® H(e13, €03, €01) > H(e€23, €03, €02) ® H(e12, 02, €01):
+
+In the definition, the four factors in the tensor products correspond to each of
+the four faces. Also, the two factors in the domain of the linear map correspond to
+the two faces with sign — in the boundary of the tetrahedron, and the two factors
+in the range correspond to the two faces with sign +.
+
+Definition 1.6. The data for a state sum model determines an element Z(M) € F
+for each labelled simplicial closed manifold M. This is called the simplicial invariant
+of the labelled manifold. Let V(M) be the tensor product over the set of triangles
+of M of the state space for each triangle. For each tetrahedron in M, take the
+partition function of the labelled standard tetrahedron, A or —A, to which it is
+isomorphic.
+
+The tensor product over this set of partition functions is a linear map V (IM) >
+V7(M), where V"(M) is defined in the same way as V(M) but with the factors
+permuted by some permutation 7. This uses the fact that in a closed oriented
+manifold, each triangle is in the boundary of two tetrahedra, each with opposite

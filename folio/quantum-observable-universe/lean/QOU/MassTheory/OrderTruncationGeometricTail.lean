@@ -69,7 +69,7 @@ binding.
 `ℝ`: the content is an ordering/decay statement (`0 ≤ r < 1`, `<` on terms), i.e.
 archimedean by nature. A generic-ring version would be meaningless.
 
--- Ref: [manuscript] computations/deltalambda/wlambda_wstd_superexp_lower_bound.py
+-- Ref: [leitner2026] computations/deltalambda/wlambda_wstd_superexp_lower_bound.py
 -/
 
 namespace QOU.MassTheory

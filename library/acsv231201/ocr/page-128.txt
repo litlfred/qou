@@ -1,0 +1,55 @@
+110 Fourier-Laplace integrals in one variable
+
+Proof Let £,(A,k, €,6) denote the integral obtained by restricting the domain
+of integration in (4.19) to [0, co) and define £_(A,k, €, 5) by restricting the do-
+main of integration to (—co, 0]. The change of variables z = (6 — iA)'/*x implies
+T.(A,k, 6,6) = limy so. TA, k, €,6), where
+
+.M(5—iay'/* f
+TIM (Ak, 6,5) = = tay OME f etd
+0
+
+has as its domain of integration the line segment from the origin to M(6—ia)!/*
+in C. The integral over this line segment in complex space is the same as the
+integral over the real line segment from the origin to M|é — ia|!/* followed by
+the imaginary line segment from M6 — iA|!/* to M(6 — id)'/*. Thus, for fixed 2
+we can write
+
+Lee Misia k Lee Ma(b—iay k
+II, k, €,6) = (6-iay f eg dz+(6-iay f edz.
+0 M\6-ia|!/*
+Since k > 2 the modulus of the integrand ez! on the imaginary line seg-
+ment decays exponentially with M, and the length of this segment grows only
+linearly with M. Taking M — oo thus implies
+TA, k, €,6) = (6 = id Ok f et dz,
+0
+
+rotating our domain of integration back to the real axis. The definite integral
+in this expression has value C(k, 0) = k-''(1 + €)/k), and expanding (6 —
+iA OF O/k = (—ja)-O+9/K + 6i/A)-O*9/* using the binomial theorem gives
+(° + on)
+
+j
+
+TA, k, €,6) = Clk, He O/20 2-U+O1k Soy ai.
+
+j=0
+Writing
+
+C+1
+
+Ci(iek 6,6) = er( Jessen
+Kk, €, k
+
+“a+ O/ ‘i (4.20)
+
+J
+
+and defining constants C_(j,k, €,6) by performing the analogous computa-
+tion on L_(j,k, €,6) proves the lemma by taking C(j,k, €,6) = C(j,k, €,6) +
+C_(j,k, €,6). a
+
+¢ is a monomial and A is anything
+
+Theorem 4.14. Let ¢(x) = x* and let A be a smooth function with com-
+pact support containing the origin. If the Taylor series of A at the origin

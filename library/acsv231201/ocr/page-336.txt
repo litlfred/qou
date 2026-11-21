@@ -1,0 +1,48 @@
+318 Multiple point asymptotics
+
+sgn(det I’). This is equal to sgn(tp,7 , y) because the picture is the same, ex-
+cept rotated in the j-coordinate by the argument of pj.
+
+Conclusion (ii) is a consequence of the Paley—Wiener theorem for ACSV,
+described in Theorem 11.42. Briefly, the lognormal cone N(p) is the dual of
+the geometric tangent cone to B at p and, for any minimal point, the class [T]
+is represented as a fiber exp(a + iy) over some point a € B. Because # is not
+in the dual to the geometric tangent cone to B at p, there is some point p’ € B
+with —7 - p’ < —? - p, implying (ii). ao
+
+Example 10.39 (lemniscate, continued). Let F(x,y) = 1/Q(x, y) be the gen-
+erating function from Example 10.4. To apply Theorem 10.38 we first prove
+that the critical point (1, 1) is strictly minimal. The parametrization (10.18) be-
+low shows that V does not enter the unit polydisk near the point (1, 1). If this
+curve enters the unit polydisk anywhere else, then there is a point (xo, yo) with
+one coordinate having modulus | and the other having modulus less than 1.
+By symmetry, it suffices to check the points on V with |x] = 1 to see if
+ly| < 1 can hold. Using a rational parametrization of the unit circle, such as
+x(t) = (1 - #?)/(1 +?) + i(21)/(1 + #7), we can solve for the square norm of
+y(t) as an algebraic function of t. Studying the zeroes of the derivative |y(1)|?
+allows one to prove that [y()/? > 1 with equality only at r = 0, meaning (1, 1)
+is strictly minimal.
+
+Applying Theorem 10.38 is now straightforward. The cone N(1, 1) consists
+of the directions (7, s) between the logarithmic normals to the two branches of
+YY; the lognormal directions were computed in Example 10.43 to be the rays
+with slopes 2 and 1/2. The point (1, 1) is a square-free complete intersection so
+we may apply Corollary 10.14, with the values of xo, yo and P(xo, yo) all equal
+
+to 1. We obtain
+
+Ors = ; + Rrsy
+where R,., is a remainder converging to zero exponentially as (r, s) > oo with
+r/s remaining in a compact subset of (1/2, 2). The exponential decay of the er-
+ror term is detectable numerically: for instance, the asymptotic approximation
+of 430,30 © 0.1652 has a relative error rate around 0.8%, while the relative error
+
+approximating a¢0,60 is around 0.04%. 4
+
+Example 10.40. The number of nearest-neighbor walks of length n on the
+integer lattice that start at the origin, take steps in {VE,NW,S}, and remain
+confined to the nonnegative quadrant is shown in [MW 19] to be the main di-
+agonal of
+(1 + x)(1 = 2xyz)
+(1 = y)( = 21 + x? + xy?) = zxy?)’
+

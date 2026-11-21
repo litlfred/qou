@@ -23,12 +23,12 @@ open Equiv
     Cycle types of S_5 partitions and their LCMs:
       (1)^5 → 1, (2)(1)^3 → 2, (2)^2(1) → 2, (3)(1)^2 → 3,
       (3)(2) → 6, (4)(1) → 4, (5) → 5. -/
--- Ref: [manuscript] Chapter 7, §Particle identification conjectures
+-- Ref: [leitner2026] Chapter 7, §Particle identification conjectures
 def s5ElementOrders : Set ℕ := {1, 2, 3, 4, 5, 6}
 
 /-- Odd element orders ≥ 3 that occur in S_5.
     By inspection of s5ElementOrders: {3, 5}. -/
--- Ref: [manuscript] Chapter 7, §Particle identification conjectures
+-- Ref: [leitner2026] Chapter 7, §Particle identification conjectures
 def s5OddOrdersGe3 : Set ℕ := {3, 5}
 
 /-- **S_5-equivariant torus-knot classification**:
@@ -40,7 +40,7 @@ def s5OddOrdersGe3 : Set ℕ := {3, 5}
     By the orders-in-S_5 table, odd orders ≥ 3 are exactly {3, 5}.
 
     LaTeX: `\label{prop:s5-equivariant-torus-knots}`
-    Ref: [manuscript] Chapter 7, §Particle identification conjectures -/
+    Ref: [leitner2026] Chapter 7, §Particle identification conjectures -/
 theorem s5_equivariant_classification (s : ℕ)
     (hs : 3 ≤ s) (hodd : Odd s) :
     (s ∈ s5OddOrdersGe3) ↔ (s = 3 ∨ s = 5) := by

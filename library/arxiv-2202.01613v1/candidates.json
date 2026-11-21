@@ -1,0 +1,207 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2202.01613v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "b8768b78fe84c86a3a56443af4d193c7856be4264004dc4f84d3e9c22e738dc3",
+  "file": "2202.01613v1.pdf"
+ },
+ "provenance": {
+  "title": "The neutron-proton mass difference",
+  "authors": "Rome, Italy",
+  "arxiv": {
+   "id": "2202.01613",
+   "version": "1",
+   "primary_class": "hep-lat",
+   "stamp_date": "3 Feb 2022"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 8,
+  "by_kind": {
+   "proposition": 8
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 8
+  },
+  "by_evidence_kind": {
+   "computational-simulation": 8
+  },
+  "by_evidence_location": {
+   "elsewhere": 1,
+   "both": 1,
+   "in-paper": 6
+  }
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Introduction Today many lattice QCD calculations have reached the \ud835\udc42(1%) precision level [1], requiring to include the Isospin Breaking (IB) E\ufb00ects.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [1] in sections/sec-001-1-introduction.md",
+   "external_refs": [
+    "[1]"
+   ],
+   "quantitative_values": [],
+   "section_file": "sections/sec-001-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "2-4",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: elsewhere \u2014 Cites external source [1] in sections/sec-001-1-introduction.md). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "2 \ud835\udc40\ud835\udc5b\u2212\ud835\udc40\ud835\udc5din Lattice QCD+QED at LO in IB Simone Romiti On the lattice we use a mixed action approach as in [6].",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper result in sections/sec-001-1-introduction.md combined with [6]",
+   "external_refs": [
+    "[6]"
+   ],
+   "quantitative_values": [],
+   "section_file": "sections/sec-001-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "2-4",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: both \u2014 In-paper result in sections/sec-001-1-introduction.md combined with [6]). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "3 \ud835\udc40\ud835\udc5b\u2212\ud835\udc40\ud835\udc5din Lattice QCD+QED at LO in IB Simone Romiti",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-001-1-introduction.md (p. 2-4)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-001-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "2-4",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-001-1-introduction.md (p. 2-4)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "(12) 4 \ud835\udc40\ud835\udc5b\u2212\ud835\udc40\ud835\udc5din Lattice QCD+QED at LO in IB Simone Romiti Finally the IB correction to \ud835\udc40\u03a9\u2212is: \u0394\ud835\udc40\u03a9\u2212= \u2212\u0394\ud835\udc5a\ud835\udc60[\u03a9M 1 + \u03a9M 2 + \u03a9M 3 ] + \u0394\ud835\udc5a(\ud835\udc50\ud835\udc5f) \ud835\udc60 [\u03a9C 1 + \u03a9C 2 + \u03a9C 3 ] + \ud835\udc5e2 \ud835\udc60[\u03a9self 1 + \u03a9self 2 + \u03a9self 3 + \u03a9exch 3 + \u03a9exch 2 + \u03a9exch 1 ] + \u2211\ufe01 \ud835\udc53\u2208(\ud835\udc60\ud835\udc52\ud835\udc4e) \ud835\udc5e\ud835\udc53\ud835\udc5e\ud835\udc60 h \u03a9loop 1 \ud835\udc53 + \u03a9loop 2 \ud835\udc53 + \u03a9loop 3 \ud835\udc53 i + [isosymm. vac. pol. diag.] .",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-002-21-libes-in-the-hadronic-spectrum.md (p. 4-5)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-002-21-libes-in-the-hadronic-spectrum.md",
+   "section_title": "LIBEs in the hadronic spectrum",
+   "pages": "4-5",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-002-21-libes-in-the-hadronic-spectrum.md (p. 4-5)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "7 \ud835\udc40\ud835\udc5b\u2212\ud835\udc40\ud835\udc5din Lattice QCD+QED at LO in IB Simone Romiti The isosymmetric limit of hadronic masses \ud835\udc40\ud835\udc3bare found from the large time behavior of \u00ae\ud835\udc5d= \u00ae0 correlators with \ud835\udc40(0) \ud835\udc3bas the ground state.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-004-4-details-of-simulation-and-analysis.md (p. 7-8)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-004-4-details-of-simulation-and-analysis.md",
+   "section_title": "Details of simulation and analysis",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-004-4-details-of-simulation-and-analysis.md (p. 7-8)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "8 \ud835\udc40\ud835\udc5b\u2212\ud835\udc40\ud835\udc5din Lattice QCD+QED at LO in IB Simone Romiti 0.00 0.01 0.02 0.03 0.04 0.05 r\u2113\u2212r(phys) \u2113 0.95 1.00 1.05 1.10 1.15 1.20 1.25 1.30 Mn+Mp 2 (GeV) (L, r\u2113, a) extrapolation for Mn+Mp 2 (GeV) \u03b2 = 1.90 , L = \u221e \u03b2 = 1.95 , L = \u221e \u03b2 = 2.10 , L = \u221e \u03c72 d.o.f. = 0.89(37) experiment L < \u221e 0.00 0.01 0.02 0.03 0.04 0.05 r\u2113\u2212r(phys) \u2113 0 1 2 3 4 5 (Mn \u2212Mp) (MeV) (L, r\u2113, a) extrapolation for (Mn \u2212Mp) (MeV) \u03b2 = 1.90 , L = \u221e \u03b2 = 1.95 , L = \u221e \u03b2 = 2.10 , L = \u221e \u03c72 d.o.f. = 0.74(51) experiment L < \u221e Figure 2: Extrapolation of (\ud835\udc40\ud835\udc5b+ \ud835\udc40\ud835\udc5d)/2 (left panel) and \ud835\udc40\ud835\udc5b\u2212\ud835\udc40\ud835\udc5d(right panel).",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-005-5-nucleons-spectrum.md (p. 8-9)",
+   "external_refs": [],
+   "quantitative_values": [
+    "0.89(37)",
+    "0.74(51)"
+   ],
+   "section_file": "sections/sec-005-5-nucleons-spectrum.md",
+   "section_title": "Nucleons spectrum",
+   "pages": "8-9",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-005-5-nucleons-spectrum.md (p. 8-9)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "For 9 \ud835\udc40\ud835\udc5b\u2212\ud835\udc40\ud835\udc5din Lattice QCD+QED at LO in IB Simone Romiti 0.00 0.01 0.02 0.03 0.04 0.05 r\u2113\u2212r(phys) \u2113 1 2 3 4 5 (Mn \u2212Mp)(QCD) (MeV) (L, r\u2113, a) extrapolation for (Mn \u2212Mp)(QCD) (MeV) \u03b2 = 1.90 , L = \u221e \u03b2 = 1.95 , L = \u221e \u03b2 = 2.10 , L = \u221e \u03c72 d.o.f. = 1.12(55) L < \u221e 0.00 0.01 0.02 0.03 0.04 0.05 r\u2113\u2212r(phys) \u2113 \u22122.5 \u22122.0 \u22121.5 \u22121.0 \u22120.5 (Mn \u2212Mp)(QED) (MeV) (L, r\u2113, a) extrapolation for (Mn \u2212Mp)(QED) (MeV) \u03b2 = 1.90 , L = \u221e \u03b2 = 1.95 , L = \u221e \u03b2 = 2.10 , L = \u221e \u03c72 d.o.f. = 1.08(56) L < \u221e Figure 3: The same as \ufb01g.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-006-6-summary-and-outlook.md (p. 9-10)",
+   "external_refs": [],
+   "quantitative_values": [
+    "1.12(55)",
+    "1.08(56)"
+   ],
+   "section_file": "sections/sec-006-6-summary-and-outlook.md",
+   "section_title": "Summary and outlook",
+   "pages": "9-10",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-006-6-summary-and-outlook.md (p. 9-10)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "The neutron-proton mass di\ufb00erence Simone Romiti\ud835\udc4e,\ud835\udc4f,\u2217 \ud835\udc4eDipartimento di Matematica e Fisica, Universit\u00e0 degli Studi Roma Tre, Rome, Italy \ud835\udc4fIstituto Nazionale di Fisica Nucleare, Sezione di Roma Tre, Rome, Italy E-mail: simone.romiti@uniroma3.it We present a lattice calculation of the mass di\ufb00erence between neutron and proton, for which we \ufb01nd \ud835\udc40\ud835\udc5b\u2212\ud835\udc40\ud835\udc5d= 1.73(69) MeV .",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-front-matter.md (p. 1-2)",
+   "external_refs": [],
+   "quantitative_values": [
+    "1.73(69) MeV"
+   ],
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-front-matter.md (p. 1-2)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  }
+ ]
+}

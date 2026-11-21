@@ -1,1 +1,0 @@
-For instance, $\omega$ should belong to the center of $G(H)$; thus, if this group is centerless, then [\[eq:omega-square-antipode\]](#eq:omega-square-antipode){reference-type="eqref" reference="eq:omega-square-antipode"} does not hold in $H$.

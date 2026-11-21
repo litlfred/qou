@@ -969,6 +969,60 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5161a8c1f015",
+          "ts": "8d15d7818a7f",
+          "lean": "9e525b1aac4e",
+          "lean_statement": "10f5682056a9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:27:33.461Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "hoefsmit-binding-amplitude.lean:90-99 docstring: \"The amplitude b is defined by b^2 = [3]_q/[2]_q^2\"; hoefsmit_b_sq_eq_q3_over_q2sq (line 119) proves [3]/[2]^2 = 1 - 1/[2]^2. The md claims b^2 = [3]/[2]^2 for the off-diagonal entry of the Hoefsmit seminormal matrix; the Lean takes that value as the definition, so the claim is not encoded. No seminormal matrix is constructed."
+      },
+      {
+        "field_hash": {
+          "md": "8d8a42084d81",
+          "ts": "8d15d7818a7f",
+          "lean": "9e525b1aac4e",
+          "lean_statement": "10f5682056a9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:57:14.044Z",
+        "reviewed_sha": "f84776ece33e7b2ccfa5cfa386fc4c0238ec4a2d",
+        "severity": "major",
+        "evidence": "Re-review after 93cc4bbea (pion energy reading moved to a remark). hoefsmit-binding-amplitude.lean (unchanged) still introduces b through b² = [3]/[2]² and proves [3]/[2]² = 1−1/[2]²: the claimed value is taken as the definition, so the first displayed identity is not derived from the Hoefsmit entries a_ρ, a_{−ρ}."
+      },
+      {
+        "field_hash": {
+          "md": "541350faa86a",
+          "ts": "8d15d7818a7f",
+          "lean": "9e525b1aac4e",
+          "lean_statement": "10f5682056a9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T23:30:07.014Z",
+        "reviewed_sha": "c87aa9c757e841db81341bde59da76b34fd2ece6",
+        "severity": "major",
+        "evidence": "Re-review after #8075 (q⁴≠1 now stated). hoefsmit-binding-amplitude.lean is unchanged and still introduces b by b² = [3]/[2]², so the first identity is the definition, not derived from a_{±2}."
       }
     ],
     "proof-no-axiom-growth": [
@@ -2238,6 +2292,6 @@
       }
     ]
   },
-  "updated_at": "2026-09-06T09:57:33.894Z",
+  "updated_at": "2026-11-15T23:30:07.014Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

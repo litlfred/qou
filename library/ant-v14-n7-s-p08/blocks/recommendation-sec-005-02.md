@@ -1,1 +1,0 @@
-Now in general for n ≥2 we must reinterpret Bn,r( j; 2tσ −δσ )−1 in terms of the coordinates of K = 2t, in which we recall that t1 ≤t2 ≤· · · ≤tn; this argument is more complicated, and in particular for j = n we will get a positive power of 2δ we cannot ignore as in the case of n = 1 (e.g., compare to the top line of [Heath-Brown 2013, p.

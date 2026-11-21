@@ -1,11 +1,11 @@
 ## Proof of factorization
 
-The nuclear braid word is a product of crossing factors, each
-acting at a single generator $\sigma_i$.  After Hecke reduction
-(the only energy-changing step,
-[Gröbner--Shirshov energy](#thm:groebner-shirshov-energy)),
-the crossings at generator $\sigma_i$ reduce to
-$a_i \sigma_i + b_i$.
+By hypothesis the nuclear braid word is $X_0 X_1 \cdots X_{A-2}$,
+where $X_i$ collects the crossing factors at the single generator
+$\sigma_i$.  Using $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$,
+each $X_i$ reduces to $a_i \sigma_i + b_i$.  This step needs the
+grouping: Hecke reduction does not regroup an interleaved word, since
+adjacent generators do not commute.
 
 The full reduced element is the product
 $\prod_{i=0}^{A-2} (a_i \sigma_i + b_i)$ where the factors are

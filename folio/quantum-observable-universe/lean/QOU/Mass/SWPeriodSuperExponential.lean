@@ -82,8 +82,8 @@ period statements).
 
 ## References
 
-- [manuscript] §5-brings-surface/sw-classical-jet-exactness
-- [manuscript] §mass-theory/jet-filtration-binding-extensive
+- [leitner2026] §5-brings-surface/sw-classical-jet-exactness
+- [leitner2026] §mass-theory/jet-filtration-binding-extensive
 -/
 
 namespace QOU.Mass.SWPeriodSuperExponential

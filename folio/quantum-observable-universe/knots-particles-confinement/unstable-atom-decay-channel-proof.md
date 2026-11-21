@@ -1,3 +1,5 @@
+**Scope of the LP-relaxation argument.** The proof below was formulated for an existential form of [stability](#def:stable-atom) requiring *some* non-negative integer vector $x \in \mathbb{Z}_{\geq 0}^N$ to satisfy $\mathrm{G}(q)\,x \geq 0$ (which is trivially satisfied by $x = 0$). Under the universal formulation of [stability](#def:stable-atom) applied to the fixed normal-form coefficient vector $x(K, q)$ of $T_w$, the violated constraint is read directly as $\arg\min_\gamma (\mathrm{G}(q)\,x(K, q))_\gamma$ whenever $x(K, q) \in \mathbb{Z}_{\geq 0}^N$; the extension to signed normal-form coefficient vectors and its generic uniqueness remain open.
+
 *Proof.*
 *Since $K$ is unstable, the ILP $\{x \in \mathbb{Z}_{\geq 0}^N : \mathrm{G}(q) x \geq 0\}$ has no solution within the confinement filtration $J^{\ell(K, q)}(q)$.*
 

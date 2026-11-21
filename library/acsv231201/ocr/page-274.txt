@@ -1,0 +1,53 @@
+256 Smooth point asymptotics
+
+valid, provided @ is interpreted to be a square-free factorization in the local
+ring of germs of analytic functions (see Definition 10.42 below).
+
+Exercise 9.5. Let F(x, y) = 1/(e* + e” — 1). What can you deduce from Theo-
+rem 9.5 about the power series coefficients of F?
+
+Proof of Theorem 9.5
+
+Making the change of variables z; = wje" for 1 < j < d—1 turns y intoa
+saddle point integral
+
+x= Qn)!
+with amplitude A(@) = ¥, (we?) for Y,, defined in (9.15) and phase
+
+(ee) . AG -0)
+
+= SEma) yr f. A(O)e-"!% G0 (9.16)
+we
+
+6(6) = “ tog
+
+Iral
+
+Wa Iral
+
++1
+Ya
+
+= sgn(ra) |
+
+in the variables 6 = (6),..., 1), where (we?) = (wie™, a -Wa-1e) and
+N’ is aneighborhood of the origin in R“. Lemma 8.21 implies that this integral
+satisfies the conditions necessary to apply Theorem 5.2 in Chapter 5 (note that
+the real part of ¢ has a strict minimum at the origin by our conditions on g).
+Lemma 8.22 applied to sgn(rz)¢ simplifies the Hessian and finishes the proof.
+
+Modification for finitely minimal points
+
+When w(?) is finitely minimal then the Cauchy integral decays exponentially
+away from any element of W(?). We can thus restrict the domain of integration
+to a disjoint union of neighborhoods Nj, around the elements of W(?). The
+residue computation in Theorem 9.17 results in a sum as k varies of integrals
+over neighborhoods NV,,. The asymptotic contributions of each of the integrals
+in the sum can be computed in the same way as the strictly minimal case.
+
+Modification under strong torality hypothesis
+
+Because our residue computations are so explicit, they also hold under the fol-
+lowing strong torality hypothesis. This hypothesis is important when studying
+generating functions whose singularities have many symmetries, for instance
+in the case of quantum random walks (see Exercise 9.12).

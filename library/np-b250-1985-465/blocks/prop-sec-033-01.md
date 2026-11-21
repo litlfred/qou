@@ -1,0 +1,1 @@
+The measured value of FK: F,, the observed deviation from the Gell-Mann-Okubo formula and the relation (l 0.18) between (ME,,- M~. ):(M~ - M~) and the quark mass ratio (rod - rnu): (m~-r~) (on which we have independent information from isospin breaking in the baryon spectrum and from ,oto mixing) provide three further constraints on these low-energy constants.

@@ -14,7 +14,7 @@ Authoritative source: `folio/quantum-observable-universe/lean/QOU/Representation
 ## References
 
 - [leitnerpawloski2004] arXiv:math/0409565 — "Unital Gröbner Bases over Arbitrary Commutative Ground Rings" (Leitner & Pawloski); the single Pawloski–Leitner paper
-- [manuscript] §1, Proposition: Inner product on intertwiner spaces
+- [leitner2026] §1, Proposition: Inner product on intertwiner spaces
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -49,12 +49,12 @@ structure PawLeiInnerProduct where
   normSq : Fin num_basis → ℝ
   /-- All basis norm-squares are positive — the orthogonal PawLei basis has
       strictly positive norms, computed from hook lengths. -/
-  -- Ref: [manuscript] §1 — positivity of the adjoint-trace PawLei inner product (framework's own construction; the Gröbner paper [leitnerpawloski2004] supplies only the PBW basis, not the inner product)
+  -- Ref: [leitner2026] §1 — positivity of the adjoint-trace PawLei inner product (framework's own construction; the Gröbner paper [leitnerpawloski2004] supplies only the PBW basis, not the inner product)
   normSq_pos : ∀ i, normSq i > 0
 
 /-- Positive-definiteness: the PL inner product `⟨φ, φ⟩ > 0`
     for any nonzero intertwiner `φ` (follows from `normSq_pos`). -/
--- Ref: [manuscript] §1, Proposition: positive-definiteness of the adjoint-trace PawLei inner product (framework's own; not in the Gröbner paper [leitnerpawloski2004])
+-- Ref: [leitner2026] §1, Proposition: positive-definiteness of the adjoint-trace PawLei inner product (framework's own; not in the Gröbner paper [leitnerpawloski2004])
 theorem pawLei_pos_def (ip : PawLeiInnerProduct)
     (i : Fin ip.num_basis) : ip.normSq i > 0 :=
   ip.normSq_pos i

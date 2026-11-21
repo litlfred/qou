@@ -25,7 +25,7 @@ polynomials; cf. `Polynomial.cyclotomic d ℤ` evaluated at `q`). The integer co
 Generic base ring `[CommRing R]` (formal fibre parameter `q`, no archimedean structure, §7c).
 Sorry-free; each factorization is a machine-checked `ring` identity.
 
--- Ref: [manuscript] docs/audits/2026-06-27-lever1-qinvolution-cyclotomic-kernel.md §"Stage 5"
+-- Ref: [leitner2026] docs/audits/2026-06-27-lever1-qinvolution-cyclotomic-kernel.md §"Stage 5"
 -/
 import Mathlib.Tactic
 

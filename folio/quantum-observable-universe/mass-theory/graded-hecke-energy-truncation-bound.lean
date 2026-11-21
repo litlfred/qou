@@ -75,7 +75,7 @@ class GradedMarkovTraceDescent (K : Type*) [ConfinementLevel K] where
       generators in the highest-weight cone). -/
   vanishes_below : ∀ (P : MassSpectrum K) (d : ℤ),
     d < 0 → P.coeffs d = 0
-  -- Ref: [manuscript] prop:graded-markov-trace-from-gs-filtration descent +
+  -- Ref: [leitner2026] prop:graded-markov-trace-from-gs-filtration descent +
   --      def:confinement-level homological boundedness.
 
 /-- **Graded Hecke energy truncation bound.**

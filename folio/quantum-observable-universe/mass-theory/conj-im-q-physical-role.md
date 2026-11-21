@@ -22,7 +22,7 @@ below.*
 
 ## Exclusions for Im(q)
 
-Per [`rem:im-q-vs-p-skew`](rem-im-q-vs-p-skew.md), Im(q) is **NOT**:
+Per [Im(q) is not the EM / P_skew channel — distinct mechanisms](rem-im-q-vs-p-skew.md), Im(q) is **NOT**:
 - The EM / $P_{\mathrm{skew}}$ channel (this is a real-q mechanism)
 - A fourth calibration input (the 3-CAL count is cohomologically forced)
 - An observable in the current framework (mass formula uses $|\cdot|$)
@@ -106,8 +106,7 @@ $\mathrm{Im}\,q$, not that no construction does.
 
 What the rate formula genuinely lacks is its **scale**, not its shape. The
 weak-scale crossing count $N_v$ in $v = N_v\,\mathfrak{E}_\times\,\mu_0$ is
-undetermined, so $G_F$ enters numerically from experiment; the Lean carrier
-`all_six_agree` says so in its own docstring, and
+undetermined, so $G_F$ enters numerically from experiment;
 [the Fermi-relation block](../predicted-spectra/hadron-half-life-fermi.md)
 lists it as open computation 1. Since $m_e = 3\mathfrak{E}_\times\mu_0$, both
 $\mathfrak{E}_\times$ and $\mu_0$ cancel and
@@ -158,9 +157,7 @@ $y \cdot (\text{branch})$ with every branch empty on
 $\mathrm{Re}\,q > 1/2$, and the Apollonius circle above lies entirely in
 that half-plane: its centre is $1.0099145$ and its radius $0.1000641$, so
 its leftmost point is $0.9098504$ — closed forms $1/(1-k^2)$, $k/(1-k^2)$ and
-$1/(1+k)$ with $k^2 = \mathrm{Vol}(4_1)/(m_\mu/m_e)$, reproduced by
-[`the_apollonius_circle_from_cal2_reproduces_exactly_probe.py`](computations/probes/the_apollonius_circle_from_cal2_reproduces_exactly_probe.py)
-(4/4), which also records that **no $q_0$ enters**: CAL-2 is the equation that
+$1/(1+k)$ with $k^2 = \mathrm{Vol}(4_1)/(m_\mu/m_e)$, reproduced exactly; **no $q_0$ enters**: CAL-2 is the equation that
 *defines* $q_0$, so neither the anchor question nor the CODATA vintage reaches
 these three numbers. Only the two real intersections survive,
 and the circle's arc coordinate is not a live degree of freedom. The
@@ -213,11 +210,11 @@ directly. The candidate roles are all in **non-mass observables**.
 
 ## Connection to other conjectures
 
-- [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) F_ℓ
+- [Canonical operator-level lepton-mass-tower formula](lepton-mass-tower-canonical.md) F_ℓ
   — the canonical lepton-mass formula is Im(q)-robust (modulus projection
   invariance); F_ℓ does NOT distinguish the three candidate Im(q) roles.
   Hence the F_ℓ conjecture is consistent with ALL three candidates.
-- [`prop:rho-k-pair-gen-canonical-form`](conj-rho-k-pair-gen-canonical-form.md) —
+- [Conjectural canonical form of the pair-gen piece $\rho_K^{\text{pair-gen}}$](../mass-endomorphism/conj-rho-k-pair-gen-canonical-form.md) —
   similarly Im(q)-robust at LO.
 - The complex-q machinery is **decoupled** from the mass-formula closure;
   closing the $\mathfrak{Q}_\beta$ residual or deriving F_ℓ does **not** require resolving
@@ -230,7 +227,7 @@ canonical choice is **$\mathrm{Im}(q_0) = 0$** (real q). This is:
 - **Computationally simple**: real Hecke arithmetic, real
   $\mathrm{tr}_M$, real masses.
 - **Empirically sufficient**: all known mass observables fit
-  with real $q_0$ to the precision documented in `per-observable-100x-status.witness.json`.
+  with real $q_0$ to the documented per-observable precision.
 - **Structurally forced at the archimedean layer**, and no longer a
   convention. `qou:QOU.QBeta.im_qbeta_zero_iff_e2` derives
   $\mathrm{Im}(q_0) = 0$ from the reality of $\mathfrak{Q}_\beta$ on
@@ -244,9 +241,9 @@ canonical choice is **$\mathrm{Im}(q_0) = 0$** (real q). This is:
 
 ## Cross-references
 
-- [`prop:q-zero-complex-extension`](q-zero-complex-extension.md) — substrate polymorphism
-- [`prop:lusztig-vs-hermitian-bar`](lusztig-vs-hermitian-bar.md) — involution split for complex q
-- [`rem:im-q-vs-p-skew`](rem-im-q-vs-p-skew.md) — the distinction from P_skew
-- [`prop:categorical-mass-markov`](categorical-mass-markov.md) — modulus projection
+- [The pre-Archimedean substrate is polymorphic in its base ring](q-zero-complex-extension.md) — substrate polymorphism
+- [Lusztig bar vs Hermitian-$\ast$](lusztig-vs-hermitian-bar.md) — involution split for complex q
+- [Im(q) is not the EM / P_skew channel — distinct mechanisms](rem-im-q-vs-p-skew.md) — the distinction from P_skew
+- [Categorical mass as Markov trace](../mass-endomorphism/categorical-mass-markov.md) — modulus projection
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

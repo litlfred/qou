@@ -47,9 +47,9 @@ This is the "bar-symmetry ⟹ reality ⟹ `θ ∈ {0,π}`" step, fully verified.
 
 ## References
 
-- [manuscript] `def:bar-involution`, `def:coulomb-charge` (Ch. 4 §10),
+- [leitner2026] `def:bar-involution`, `def:coulomb-charge` (Ch. 4 §10),
   `appendix-standard-model/sm-params-theta-qcd.md`
-- [manuscript] `docs/audits/2026-07-12-keystone-wlambda-framing-is-phase.md`
+- [leitner2026] `docs/audits/2026-07-12-keystone-wlambda-framing-is-phase.md`
   (framing is a pure phase on the unit circle)
 
 **Ground ring (AGENTS.md §7c).** The algebraic core is stated over a

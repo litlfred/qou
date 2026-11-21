@@ -15,7 +15,7 @@ analog of the jet horizon H = V(𝔥).
 LaTeX label: `def:computational-boundary`
 
 ## References
-- [manuscript] §9/p-vs-np-boundary
+- [leitner2026] §9/p-vs-np-boundary
 -/
 
 namespace QOU.PvsNPBoundary
@@ -26,7 +26,7 @@ namespace QOU.PvsNPBoundary
     obtained as the topological closure minus the set itself.  In the
     abstract Set model, `closure` is supplied as a set `cl` containing
     `R°`; the boundary is the set-difference `cl ∖ R°`. -/
--- Ref: [manuscript] §9/p-vs-np-boundary
+-- Ref: [leitner2026] §9/p-vs-np-boundary
 def computationalBoundary
     (rCirc cl : Set ℕ) : Set ℕ :=
   cl \ rCirc
@@ -34,21 +34,21 @@ def computationalBoundary
 /-- The computational boundary is disjoint from the polynomial
     observable subcategory: no node is simultaneously inside R° and on
     its boundary. -/
--- Ref: [manuscript] §9/p-vs-np-boundary
+-- Ref: [leitner2026] §9/p-vs-np-boundary
 theorem computationalBoundary_disjoint
     (rCirc cl : Set ℕ) :
     Disjoint (computationalBoundary rCirc cl) rCirc := by
-  -- Ref: [manuscript] §9/p-vs-np-boundary
+  -- Ref: [leitner2026] §9/p-vs-np-boundary
   unfold computationalBoundary
   exact disjoint_sdiff_self_left
 
 /-- The computational boundary is empty iff the closure adds no new
     nodes beyond R° (closure ⊆ R°). -/
--- Ref: [manuscript] §9/p-vs-np-boundary
+-- Ref: [leitner2026] §9/p-vs-np-boundary
 theorem computationalBoundary_empty_iff
     (rCirc cl : Set ℕ) :
     computationalBoundary rCirc cl = ∅ ↔ cl ⊆ rCirc := by
-  -- Ref: [manuscript] §9/p-vs-np-boundary
+  -- Ref: [leitner2026] §9/p-vs-np-boundary
   unfold computationalBoundary
   rw [Set.eq_empty_iff_forall_not_mem]
   constructor

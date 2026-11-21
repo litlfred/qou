@@ -53,7 +53,7 @@ untouched here and recorded as out of scope in the content block.
 
 No `sorry`, no `axiom`, no instance of either class.
 
-Ref: [manuscript] fluid-dynamics/levi-degeneracy-conjecture, `conj:levi-degeneracy`
+Ref: [leitner2026] fluid-dynamics/levi-degeneracy-conjecture, `conj:levi-degeneracy`
 -/
 
 namespace QOU.FluidDynamics
@@ -238,7 +238,7 @@ the one component `ξ·curl ξ` does not imply it — nor does its non-vanishing
 (`beltrami_refutes_branchA` is the other side of that).  This is a primary
 conjecture; assuming it is assuming the open content. -/
 class LeviDegeneracy (IsSolution : FlowData → Prop) : Prop where
-  -- Ref: [manuscript] fluid-dynamics/levi-degeneracy-conjecture (branch B)
+  -- Ref: [leitner2026] fluid-dynamics/levi-degeneracy-conjecture (branch B)
   degenerate_implies_regular : ∀ s, IsSolution s → s.IsVorticityDirection →
     s.LeviDegenerateOnHighVort → s.VorticityBounded
 

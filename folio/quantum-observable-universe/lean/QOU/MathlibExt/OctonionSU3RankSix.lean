@@ -24,7 +24,7 @@ here it is proved from the corpus's own explicit `𝔤₂` basis. Structure:
 
 Base ring ℚ; nothing archimedean.
 
--- Ref: [manuscript] docs/audits/2026-07-17-octonion-su3-stabilizer-in-g2.md
+-- Ref: [leitner2026] docs/audits/2026-07-17-octonion-su3-stabilizer-in-g2.md
 -/
 
 namespace QOU.MathlibExt.OctonionDerivations

@@ -30,7 +30,7 @@ channels of the single complex-volume object `𝔙`.
 
 Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-06-28-wlambda-identity-i-rescope-no-hlf.md §"Finding 3"
+-- Ref: [leitner2026] docs/audits/2026-06-28-wlambda-identity-i-rescope-no-hlf.md §"Finding 3"
 -/
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 import Mathlib.Tactic
@@ -78,5 +78,10 @@ theorem sinh_zeta4_rotation (z : ℂ) :
     rw [Complex.sinh_mul_I, ← Complex.ofReal_sin, Real.sin_pi_div_two, Complex.ofReal_one,
       one_mul]
   rw [h0, h1]; ring
+
+/-- Subtracting the rotated hyperbolic sine term from the shifted hyperbolic cosine cancels to zero (`qou-f8rr`). -/
+theorem cosh_zeta4_rotation_sub_eq_zero (z : ℂ) :
+    Complex.cosh (z + (↑(Real.pi / 2) : ℂ) * Complex.I) - Complex.I * Complex.sinh z = 0 := by
+  rw [cosh_zeta4_rotation z, sub_self]
 
 end QOU.Mass.Zeta4ComplexVolumeModerator

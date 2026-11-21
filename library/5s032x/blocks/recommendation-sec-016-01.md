@@ -1,1 +1,0 @@
-There, it was proposed that the ‘special’ quaternion imaginary direction should be promoted to a dynamical variable, thus introducing an additional scalar degree of freedom into the theory (a move that was generalized to the octonionic case by Casalbouni, Domokos, and K¨ovesi-Domokos [68]).

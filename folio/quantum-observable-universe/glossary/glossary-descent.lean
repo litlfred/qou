@@ -20,7 +20,7 @@ namespace QOU
     *universe* `Prop`, so an instance chose the proposition and `True` was legal.
     Nothing read it and nothing constructed it. Stating it needs the morphism as
     a field, which this glossary wrapper does not carry.** -/
--- Ref: [manuscript] Ch. 8 Glossary
+-- Ref: [leitner2026] Ch. 8 Glossary
 -- Ref: [lurie2009] Lurie, "On the Classification of Topological Field Theories," arXiv:0905.0465
 structure DescentData where
   /-- Source brane level. -/

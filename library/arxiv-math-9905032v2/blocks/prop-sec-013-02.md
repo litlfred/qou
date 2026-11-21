@@ -1,0 +1,1 @@
+If X = {xn, yn} ⊂Z is regular then {J(xn, yn; z)} ∈F , Lim ({J(xn, yn; z)}) = S(d, a) . In the proof of this proposition it will be convenient to allow X ⊂C. For complex sequences X we shall require a ∈R; the number d ∈C may be arbitrary.

@@ -1,7 +1,7 @@
 /-
   Root-of-unity truncation (conditional on the q-NS cone).
 
-  Ref: [manuscript] §Fluid dynamics / Root-of-unity truncation,
+  Ref: [leitner2026] §Fluid dynamics / Root-of-unity truncation,
        prop:root-of-unity-truncation
 -/
 
@@ -73,7 +73,7 @@ class RootOfUnityTruncationContext where
     `RootOfUnityTruncationContext` (it composes them; it does not
     assume its own conclusion).
 
-    Ref: [manuscript] §Fluid dynamics / Root-of-unity truncation,
+    Ref: [leitner2026] §Fluid dynamics / Root-of-unity truncation,
          prop:root-of-unity-truncation -/
 def root_of_unity_truncation_conditional
     [ctx : RootOfUnityTruncationContext] :

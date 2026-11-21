@@ -42,7 +42,7 @@ arithmetic content that the conjectural Wedderburn-channel selection
 `T_{p,q} ↦ V_{(p, 1^{n-p})}` requires; the categorical selection
 itself is downstream of `conj:e-hartree-categorical-derivation`.
 
--- Ref: [manuscript] §round-18 of conj:e-hartree-categorical-derivation
+-- Ref: [leitner2026] §round-18 of conj:e-hartree-categorical-derivation
 -/
 
 /-- The intertwining-pattern shape of `T_{p,q}` on `n` strands is the

@@ -1,1 +1,0 @@
-We shall deal mostly with what we have called, for convenience, (analytic) {\it K-manifolds}, \ie paracompact strictly $K$-analytic spaces which satisfy the following condition (I.\ref{para:p-adic-manifold}):

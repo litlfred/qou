@@ -1,5 +1,5 @@
 /-
-He-4 two-row stratum dominance.
+He-4 two-row stratum dominance and exact convention-D support.
 
 LaTeX label:        prop:he4-two-row-dominance
 Computational ref:  computations/probe_he4_canonical_tr_m_fingerprint.py
@@ -7,53 +7,79 @@ Witness:            computations/he4-canonical-tr-m-block-fingerprint.witness.js
 Audit:              docs/audits/2026-05-15-three-pr-integration.md §F1 ⁴He
 
 For β_{⁴He} = canonical atomic braid word (mass_at_3A_proper.atom_braid_word_3A(2,2))
-on H_12(q), and c_λ(q_0) := y_λ(q_0) · χ^λ_q(β_{⁴He}), the witness
-verifies
+on H_12(q), and c_λ(q_0) := y_λ(q_0) · χ^λ_q(β_{⁴He}), under canonical
+convention D (`z_D = q³/(q²+1)`, Wenzl level `r = 2`) every partition λ ⊢ 12
+with ℓ(λ) > 2 has weight `y_λ = 0` identically (`QOU.MassTheory.TwoRowCap`), so
 
-  Σ_{λ ∈ Λ²(12)} c_λ(q_0) / Σ_{λ ⊢ 12} c_λ(q_0) ≈ 0.866
+  Σ_{λ ∈ Λ²(12)} c_λ(q_0) / Σ_{λ ⊢ 12} c_λ(q_0) = 1
 
-at 50 dps, where Λ²(12) = {(12), (11,1), (10,2), (9,3), (8,4), (7,5), (6,6)}.
+unconditionally whenever the Wedderburn sum is nonzero, where
+Λ²(12) = {(12), (11,1), (10,2), (9,3), (8,4), (7,5), (6,6)}.
 
-Following AGENTS.md §3b-cond (conditional class exception), the
-proposition is axiomatized as a Lean class `HasHe4TwoRowDominance`
-whose instance encodes the witness-verified ≥ 80 % bound.
-Downstream propositions take this class as a
-`[HasHe4TwoRowDominance]` hypothesis.
+The algebraic two-row support identity is specialized below from
+`QOU.MassTheory.TwoRowCap.twoRow_share_eq_one_of_wenzl`, while
+`HasHe4TwoRowDominance` records `ratio := 1` (`ratio_eq_one : ratio = 1`,
+retiring the superseded convention-C `866/1000` numeral) and
+`HasHe4DominantBlock` records the empirical within-stratum block ranking
+(`[9, 3]` as the leading non-trivial block vs `[12]` overall).
 
-Ref: [manuscript] §F1 ⁴He compositional probe (audit doc)
+Ref: [leitner2026] §F1 ⁴He compositional probe (audit doc)
+Ref: [wenzl1988] https://doi.org/10.1007/BF01404457
 -/
 
 import Mathlib.Tactic.Linarith
 import QOU.BraidKnot.TwoRowStratum
+import QOU.MassTheory.TwoRowCapDerived
 
 namespace QOU.BraidKnot.He4TwoRowDominance
 
-open QOU.BraidKnot.TwoRowStratum
+open Finset QOU.BraidKnot.TwoRowStratum QOU.QBeta.WenzlWeight QOU.MassTheory.TwoRowCap
 
-/-- The two-row stratum's contribution to |tr_M(β_⁴He)|, expressed as
-    a STRUCTURAL lower bound `4/5 ≤ ratio ≤ 1`. The class encodes the
-    categorical content (two-row dominance is at least 80 %); the
-    specific numerical value `866/1000 ≈ 86.6 %` from the empirical
-    witness is preserved in `he4-canonical-tr-m-block-fingerprint.witness.json`
-    but NOT in the class signature (per the empirical-conditional audit
-    on PR #1255 — pinning the value as a class axiom mixed empirical
-    numerics with the categorical proposition).
+/-! ## Unconditional convention-D two-row support (`ratio = 1`)
 
-    Downstream consumers should rely on `ratio_lower_bound` (the
-    structural ≥ 4/5 bound), not on a specific value. -/
+Specialized from `QOU.MassTheory.TwoRowCap`: at convention D (`r = 2`), every
+`≥ 3`-row partition vanishes through the Wenzl weight `schurPrincipal 2 Q μ / Z`,
+so the two-row stratum carries 100 % (`ratio = 1`) of any nonzero Wedderburn
+trace sum on `H₁₂(q)`. -/
+
+/-- The `≥ 3`-row complement of the ⁴He Wedderburn trace sum vanishes identically
+    under convention D (`r = 2`), by `threeRowPart_eq_zero_of_wenzl`. -/
+theorem he4_threeRowPart_eq_zero_of_wenzl {R : Type*} [Field R] {Q Z : R}
+    (hQ0 : Q ≠ 0) (hQ : ∀ k : ℤ, k ≠ 0 → Q ^ k ≠ 1) (hZ : Z ≠ 0)
+    (s : Finset YoungDiagram) (χ : YoungDiagram → R) :
+    ∑ μ ∈ s.filter (fun μ => ¬ μ.colLen 0 ≤ 2), (schurPrincipal 2 Q μ / Z) * χ μ = 0 :=
+  threeRowPart_eq_zero_of_wenzl hQ0 hQ hZ s χ
+
+/-- The two-row stratum share of a nonzero ⁴He Wedderburn trace sum is
+    unconditionally `1` under convention D (`r = 2`), specializing
+    `QOU.MassTheory.TwoRowCap.twoRow_share_eq_one_of_wenzl`. -/
+theorem he4_twoRow_share_eq_one_of_wenzl {R : Type*} [Field R] {Q Z : R}
+    (hQ0 : Q ≠ 0) (hQ : ∀ k : ℤ, k ≠ 0 → Q ^ k ≠ 1) (hZ : Z ≠ 0)
+    (s : Finset YoungDiagram) (χ : YoungDiagram → R)
+    (hne : ∑ μ ∈ s, (schurPrincipal 2 Q μ / Z) * χ μ ≠ 0) :
+    (∑ μ ∈ s.filter (fun μ => μ.colLen 0 ≤ 2), (schurPrincipal 2 Q μ / Z) * χ μ)
+      / (∑ μ ∈ s, (schurPrincipal 2 Q μ / Z) * χ μ) = 1 :=
+  twoRow_share_eq_one_of_wenzl hQ0 hQ hZ s χ hne
+
+/-- The two-row stratum's share of `tr_M(β_⁴He)` under canonical convention D.
+    Because convention D (`z_D = q³/(q²+1)`, Wenzl level `r = 2`) kills every
+    partition with `ℓ(λ) > 2` identically (`he4_twoRow_share_eq_one_of_wenzl`),
+    the two-row share is `ratio = 1` unconditionally (`ratio_eq_one`), which a
+    fortiori satisfies the `4/5 ≤ ratio ≤ 1` bounds consumed by downstream
+    propositions (`bean qou-58w3`). -/
 class HasHe4TwoRowDominance where
-  /-- The two-row stratum's share of the trace, as a rational
-      lower bound matched at 50 dps numerical precision. -/
+  /-- The two-row stratum's share of the trace (`1` under convention D). -/
   ratio : ℚ
-  /-- Lower bound: at least 80 %. -/
+  /-- Exact convention-D support: the two-row stratum carries the full trace. -/
+  ratio_eq_one : ratio = 1
+  /-- Lower bound: at least 80 % (corollary of `ratio_eq_one`). -/
   ratio_lower_bound : (4 : ℚ) / 5 ≤ ratio
-  /-- Upper bound: at most 100 %. -/
+  /-- Upper bound: at most 100 % (corollary of `ratio_eq_one`). -/
   ratio_upper_bound : ratio ≤ 1
 
-/-- The dominant block λ* for ⁴He is (9, 3).  Stated as a class
-    field so downstream consumers can reference the dominant
-    partition shape.  Empirically verified by the same witness
-    (29.0 % of the trace; largest among all 77 partitions). -/
+/-- The dominant non-trivial block λ* for ⁴He is `(9, 3)`, while the largest
+    block overall (including the trivial representation) is `(12)`.  Empirically
+    verified at 50 dps in `he4-canonical-tr-m-block-fingerprint.witness.json`. -/
 class HasHe4DominantBlock where
   /-- The leading NON-TRIVIAL block: the largest `|c_λ|` among the blocks
       whose character is not fixed by construction.  This is the quantity
@@ -85,18 +111,18 @@ class HasHe4DominantBlock where
       asserting they differ, is what keeps the distinction visible. -/
   leading_ne_largest : dominant_partition ≠ largest_partition
 
-/-- Categorical instance for ⁴He. The `ratio := 866/1000` value is
-    documentary only (the actual class axioms are the structural
-    bounds `≥ 4/5` and `≤ 1`); per the audit on PR #1255, the
-    specific empirical value lives in the witness JSON, not the
-    class signature. Downstream propositions inherit rigorous-
-    conditional status from the bounds. -/
+/-- Canonical convention-D instance for ⁴He: `ratio := 1` unconditionally
+    (matching both `he4_twoRow_share_eq_one_of_wenzl` and the 50-dps witness
+    `he4-canonical-tr-m-block-fingerprint.witness.json`, and retiring the
+    superseded convention-C `866/1000` numeral; `bean qou-58w3`). -/
 instance : HasHe4TwoRowDominance where
-  ratio := 866 / 1000
+  ratio := 1
+  ratio_eq_one := rfl
   ratio_lower_bound := by norm_num
   ratio_upper_bound := by norm_num
 
-/-- Empirical instance pinning the dominant block to (9, 3). -/
+/-- Empirical instance pinning the leading non-trivial block to `(9, 3)` and the
+    overall largest block to `(12)`. -/
 instance : HasHe4DominantBlock where
   dominant_partition := [9, 3]
   dominant_is_two_row := by decide
@@ -111,9 +137,14 @@ instance : HasHe4DominantBlock where
 /-! ## Derived theorems
 
 The following theorems are PROVED from the class instances above
-(no further `sorry` / empirical input).  They demonstrate that the
-conditional-class encoding is sufficient to derive structural
-consequences of the empirical witness. -/
+(no `sorry`). -/
+
+/-- Under convention D (`ratio = 1`), the non-two-row complement share is
+    identically `0`. -/
+theorem he4_complement_eq_zero
+    [h : HasHe4TwoRowDominance] :
+    1 - h.ratio = 0 := by
+  rw [h.ratio_eq_one, sub_self]
 
 /-- The complement (non-two-row) contribution is at most 20% of
     `|tr_M(β_⁴He)|`.  Direct corollary of `ratio_lower_bound`. -/
@@ -157,14 +188,5 @@ theorem dominant_eq_nine_three_in_stratum
     TwoRowStratum 12 [9, 3] := by
   rw [← h.dominant_eq]
   exact dominant_in_two_row_stratum
-
-/-- The dominant block contributes a positive share — bounded below
-    by 1/5 since it is necessarily ≤ the full two-row share but
-    must be the largest individual block.  (We give the loose
-    bound 1/77 from "at least one of 77 blocks", though the
-    empirical value is 29 %; tightening requires per-partition
-    contribution data not in this class.) -/
-theorem dominant_block_positive_share : (1 : ℚ) / 77 ≤ 866 / 1000 := by
-  norm_num
 
 end QOU.BraidKnot.He4TwoRowDominance

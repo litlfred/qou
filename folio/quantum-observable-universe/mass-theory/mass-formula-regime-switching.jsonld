@@ -2,20 +2,22 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-mass-formula-regime-switching",
+  "@id": "papers/quantum-observable-universe/blocks/conj-mass-formula-regime-switching",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
-  "label": "prop:mass-formula-regime-switching",
-  "kind": "proposition",
-  "title": "Mass formula regime switch: SW+Frob for $A \\leq 2$, BW+$\\chi$ for $A \\geq 3$ (non-additive)",
+  "label": "conj:mass-formula-regime-switching",
+  "kind": "conjecture",
+  "title": "Mass formula regime switch: an $A$-uniform evaluation whose dominant term changes at the pair-graph regime boundaries $A = 2 \\mid 3$ and $4 \\mid 5$",
   "uses": [
     "papers/quantum-observable-universe/blocks/rem-np-discrepancy-resolution",
-    "papers/quantum-observable-universe/blocks/prop-chirality-from-frobenius-self-pairing"
+    "papers/quantum-observable-universe/blocks/prop-chirality-from-frobenius-self-pairing",
+    "papers/quantum-observable-universe/blocks/prop-pair-graph-regime-trichotomy"
   ],
   "tags": [
     "mass-formula",

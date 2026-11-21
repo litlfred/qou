@@ -53,7 +53,7 @@ solution exists, is unique, and is smooth.
 
 ## References
 
-- [manuscript] quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.md
+- [leitner2026] quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.md
   (`thm:q-ns-wellposedness`)
 -/
 
@@ -116,11 +116,11 @@ class QNsWellposednessContext where
       solution.  This is the Millennium-adjacent content of the block
       and the only substantive thing assumed here (with
       `smooth_of_isSolution`).  Bean `qou-t28w`, tier B. -/
-  -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.md (thm:q-ns-wellposedness)
+  -- Ref: [leitner2026] quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.md (thm:q-ns-wellposedness)
   existence_uniqueness : ∃! sol : ℝ → Velocity × Pressure, IsSolution sol
   /-- **OPEN INPUT.**  Interior regularity: a solution is smooth in the
       internal hom of `𝐂`.  Block property (i). -/
-  -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.md (thm:q-ns-wellposedness)
+  -- Ref: [leitner2026] quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.md (thm:q-ns-wellposedness)
   smooth_of_isSolution : ∀ sol, IsSolution sol → Smooth (fun t => (sol t).1)
   /-- A solution starts at the initial datum. -/
   initial_datum : ∀ sol, IsSolution sol → (sol 0).1 = v₀

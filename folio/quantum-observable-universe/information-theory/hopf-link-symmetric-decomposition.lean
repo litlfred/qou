@@ -43,7 +43,7 @@ variable {R : Type*} [CommRing R]
     `σ²` decomposes over the two block projectors `(σ + q⁻¹)` and `(q − σ)`
     with weights `q²` and `q⁻²` (the squared block eigenvalues), after clearing
     the `[2]_q = q + q⁻¹` denominator. Sorry-free. -/
--- Ref: [manuscript] information-theory/hopf-link-symmetric-decomposition
+-- Ref: [leitner2026] information-theory/hopf-link-symmetric-decomposition
 theorem hopf_symmetric_decomposition (q : Rˣ) (σ : R)
     (hHecke : σ ^ 2 = ((q : R) - (↑q⁻¹ : R)) * σ + 1) :
     ((q : R) + (↑q⁻¹ : R)) * σ ^ 2

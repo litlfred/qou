@@ -13,7 +13,7 @@ LaTeX label: `prop:double-slit-massive-pattern`
 
 ## References
 - [bach2013] https://doi.org/10.1088/1367-2630/15/3/033018
-- [manuscript] Ch. 7, §double-slit-massive-pattern
+- [leitner2026] Ch. 7, §double-slit-massive-pattern
 
 **Ground ring**: `ℝ` (archimedean realisation).
 Evaluates formal results at q₀ ≈ 1.1098 for comparison with
@@ -49,7 +49,7 @@ noncomputable def envelope_width (q : ℝ) (hq : q ≠ 0)
 
 /-- At q = 1 the q-deformed intensity reduces to the standard
     Fraunhofer double-slit pattern: the fringe spacing is λL/d. -/
--- Ref: [manuscript] Ch. 7, §double-slit-massive-pattern
+-- Ref: [leitner2026] Ch. 7, §double-slit-massive-pattern
 theorem double_slit_massive_pattern_classical_fringe
     (lambda_ L d_slit : ℝ) :
     fringe_spacing 1 lambda_ L d_slit = lambda_ * L / d_slit := by
@@ -58,7 +58,7 @@ theorem double_slit_massive_pattern_classical_fringe
 
 /-- At q = 1 the interference phase reduces to the standard
     Young formula: ΔΦ₁ = 2π d sin θ / λ. -/
--- Ref: [manuscript] Ch. 7, §double-slit-massive-pattern
+-- Ref: [leitner2026] Ch. 7, §double-slit-massive-pattern
 theorem double_slit_massive_pattern_classical_phase
     (d_slit lambda_ theta Delta_phi_Reeb : ℝ) :
     interference_phase 1 one_ne_zero d_slit lambda_ theta Delta_phi_Reeb
@@ -67,7 +67,7 @@ theorem double_slit_massive_pattern_classical_phase
 
 /-- At q = 1 the envelope parameter reduces to the Fraunhofer form:
     β₁ = π a sin θ / λ. -/
--- Ref: [manuscript] Ch. 7, §double-slit-massive-pattern
+-- Ref: [leitner2026] Ch. 7, §double-slit-massive-pattern
 theorem double_slit_massive_pattern_classical_envelope
     (a_slit lambda_ theta beta_Reeb : ℝ) :
     envelope_param 1 one_ne_zero a_slit lambda_ theta beta_Reeb
@@ -87,7 +87,7 @@ theorem double_slit_massive_pattern_classical_envelope
     regime (`q ≠ 0, q ≠ 1`), where it is in fact false for `q ∈ (0,1)`
     with small `ratio`. The physical substrate has `q > 1`. -/
 -- Ref: [bach2013] Controlled double-slit electron diffraction — see folio/schema/references.ts
--- Ref: [manuscript] Ch. 7, §double-slit-massive-pattern
+-- Ref: [leitner2026] Ch. 7, §double-slit-massive-pattern
 theorem double_slit_massive_pattern (q : ℝ) (hq : q ≠ 0) (hq1 : 1 < q)
     (lambda_ L a_slit : ℝ) (ha : a_slit ≠ 0)
     (hpos : 0 < lambda_ * L / a_slit)

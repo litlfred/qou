@@ -21,6 +21,9 @@ We call a subset $G \subseteq A$ **unital** if:
    $\LC(\alpha \cdot g_\gamma \cdot \beta) \in R^\times$ whenever
    $\alpha \cdot g_\gamma \cdot \beta \neq 0$.
 
+Here $\LC(a)$ is the coefficient, in the expansion of $a$ in the $R$-basis $B$, of the
+$<$-greatest basis element occurring in $a$.
+
 An **S-polynomial** about $f, f' \in A$ is constructible if there exist
 $u, u', v, v' \in B$ and $\lambda, \lambda' \in R^*$ such that
 $\lambda \LT(u \cdot \LT(f) \cdot v) = \lambda' \LT(u' \cdot \LT(f') \cdot v')$,

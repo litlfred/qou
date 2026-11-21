@@ -1,57 +1,24 @@
 ---
 doc_id: hecke-alg
-doc_title: "symmetric group Andrew Mathas Author address: School thema University Sydney, Sydney 00. ustralia"
+doc_title: "Hecke algebras and Schur algebras of the symmetric group"
 section_id: page-075
 section_title: "Page 75"
-section_number: null
 pages: 75-75
+pdf_page: 75
 source_pdf: hecke_alg.pdf
 source_sha256: 4ac08dfd165fb366
-toc_source: undetermined
+text_source: ocr
+granularity: page
+doc_brief: "Hecke algebras and Schur algebras of the symmetric group — 78 sections: Page 1; Page 2; Page 3"
 ---
-0
-NOT
-A
-TIONAL
-INDEX
-S
-
-F
-(virtual)
-Sp
-ec
-h
-t
-mo
-dule
-corresp
-onding
-to
-the
-se-
-quence
-
-of
-b
-eta
-n
-um
-b
-ers
-W
-
-F
-(i)
-The
-ith
-mo
-dule
-in
-the
-Jan
-tzen
-ltration
-of
-W
-
-F
+70
+
+SF
+
+wei)
+
+NOTATIONAL INDEX
+
+(virtual) Specht module corresponding to the se-
+quence a of beta numbers
+The ith module in the Jantzen filtration of We

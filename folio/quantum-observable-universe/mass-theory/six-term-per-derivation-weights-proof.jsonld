@@ -2,20 +2,22 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prf-six-term-per-derivation-weights",
+  "@id": "papers/quantum-observable-universe/blocks/rem-six-term-per-derivation-weights-argument",
   "@type": [
-    "folio-assistant-core:Proof",
+    "folio-assistant-core:Remark",
     "doco:Section"
   ],
-  "label": "prf:six-term-per-derivation-weights",
-  "kind": "proof",
-  "title": "Proof of six term per derivation weights",
+  "label": "rem:six-term-per-derivation-weights-argument",
+  "kind": "remark",
+  "title": "Argument for the six-term per-derivation weights (not a proof)",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-six-term-per-derivation-weights"
+    "papers/quantum-observable-universe/blocks/conj-six-term-per-derivation-weights"
   ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-six-term-per-derivation-weights",
   "text": "six-term-per-derivation-weights-proof.md",
   "provenance": "authored"
 }

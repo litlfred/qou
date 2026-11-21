@@ -87,6 +87,8 @@ from codata_constants import (
     M_E_MEV as M_E  # noqa: E402,
 )
 from _li_2_q_util import li_2_q  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
+from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
 
 # AME2020 totals (MeV) — comparison target only (mirror of
 # borromean_binding_recompute.ISO).
@@ -111,8 +113,8 @@ from _li_2_q_util import li_2_q  # noqa: E402
 # Repointing them at `ame_binding_mev` would move this probe's numbers, so it
 # is not part of a precision drain; the headline spread is 7.16 against a 0.5
 # tolerance, so 3 ppm changes no conclusion either way.
-ISO = [("2H", 1, 1, "2.224573"), ("3H", 1, 2, "8.481821"),
-       ("3He", 2, 1, "7.718058"),
+ISO = [("2H", 1, 1, _ame_nstr(AME_B_DEUTERON_MEV_VALIDATION, 30)), ("3H", 1, 2, _ame_nstr(AME_B_TRITIUM_MEV_VALIDATION, 30)),
+       ("3He", 2, 1, _ame_nstr(AME_B_HE3_MEV_VALIDATION, 30)),
        ("4He", 2, 2, AME_B_HE4_MEV_VALIDATION),
        ("6Li", 3, 3, "31.994564"), ("7Li", 3, 4, "39.244533"),
        ("12C", 6, 6, "92.161728"), ("16O", 8, 8, "127.619"),

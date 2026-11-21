@@ -1,1 +1,0 @@
-Here we shall use the coupling constants we have calculated in the previous Sections in the ENJL cut-off model [@bbr] to make predictions on a large variety of processes where spin-1 particle are involved (anomalous transitions, radiative decays, $\cdots$).

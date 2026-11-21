@@ -402,7 +402,8 @@ def main():
     for ok_, name, detail in checks:
         wb.add_assertion(name, computed="PASS" if ok_ else "FAIL",
                          expected="PASS", tolerance="exact", source=detail)
-    wb.save()
+    wb.save(extra={"q0Anchor": "independent", "q0AnchorReason": (
+            "node count of a published 4_1 quiver checked over exact Fractions and a text scan; q0 is never read")})
 
     n_ok = sum(1 for ok_, _, _ in checks if ok_)
     print(f"\n  {n_ok}/{len(checks)} checks passed")

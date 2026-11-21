@@ -1,0 +1,24 @@
+206 Overview of analytic methods for multivariate GFs
+
+Figure 7.19 Critical points and their normal and tangential homology generators.
+On the right are two index-1 smooth critical points with tangential relative ho-
+mology generators y and normal homology generators 8 = S'. On the left is an
+isolated self-intersection point y of V, thus a zero-dimensional stratum, pictured
+with a two-dimensional normal link homotopy equivalent to (and in the picture
+homeomorphic to) a 2-torus.
+
+where d is distance and p is a fixed point in R” \ M. Explain why this is not
+a good Morse function to use if trying to establish the “bouquet of spheres”
+result for smooth varieties — described before Theorem 7.15 above — via The-
+orem 7.35(b).
+
+7.4 Geometry
+
+Theorems 7.15 and 7.35 allow us to express the Cauchy integral for coefficients
+as a finite sum of integrals localized near critical points (up to negligible error).
+Asymptotically approximating these integrals depends on the geometry of the
+singular set near the critical points, after which the coefficients nz appearing
+in (7.2) must be determined. To make this process more concrete, and give an
+idea of its implications for coefficient asymptotics, we discuss some special
+cases arising often in combinatorial examples. These situations are covered in
+great detail in Chapters 9-11.

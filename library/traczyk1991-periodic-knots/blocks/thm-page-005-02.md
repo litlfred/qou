@@ -1,0 +1,1 @@
+If b is a braid on n strands with (signed) crossing number c, then n—c—12 €max2@min= 1—n—c where @max is the largest exponent of | in the skein polynomial P(I, m) associated to the link formed from the braid, and e@min is the smallest exponent.

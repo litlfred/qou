@@ -1,0 +1,32 @@
+C.1 Intersection classes 483
+
+Figure C.2 Integral curves (dotted) making up the normal bundle, and a decom-
+position of z into (a(z), p(z)).
+
+Because 0 commutes with 0, cycles map to cycles, boundaries map to bound-
+aries, and the map o on the singular chain complex of V induces a map from
+Ay-1(V.) to Hy(M), where M = C4\ V. To simplify notation, we also denote
+this map on homology by o.
+
+We are now ready to define intersection classes after recalling a few con-
+structions from differential geometry. Two submanifolds A, B c C4 are said to
+intersect transversely if for all w € AN B the tangent spaces of A and B at
+w jointly span C“. Two classic results of differential geometry state that if A
+and B intersect transversely then AQ B is a manifold, and that if B is fixed and
+A is any manifold then A can be slightly perturbed into a manifold A’ that in-
+tersects B transversely (i.e., transversality is a generic property) — see [Hir76,
+Chapter 3], for instance.
+
+Theorem C.2 (intersection classes). Define 0 : Hy-1(V) > Ha(M) as above.
+Under our running assumption that V is a manifold,
+
+(i) ° is injective and its image is the kernel of the map t, induced by the
+inclusion M->C!.
+
+(ii) Given a € ker(t,) one may compute the inverse I(a) = 07'(@) by inter-
+secting V. with any (d + 1)-chain in C4*! whose boundary is a and for
+which the intersection with V., is transverse.
+
+When a = C —C’ in Theorem C.2, where C and C’ are two d-cycles in M
+homologous in C4, we call INT[C,C’; V] = I(C — C’) the intersection class
+of C and C’. We usually use the intersection class when C = T and C’ = T’ are

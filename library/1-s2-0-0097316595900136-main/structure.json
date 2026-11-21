@@ -1,81 +1,326 @@
 {
-  "_schema": "pdf-structure/v1",
-  "doc_id": "1-s2-0-0097316595900136-main",
-  "source": {
-    "file": "1-s2.0-0097316595900136-main.pdf",
-    "sha256": "c92d3e85b3dec20a86b4452420a09811900ce6edf67cddec7478b59edae98316",
-    "bytes": 703973,
-    "pages": 18,
-    "mtime": null,
-    "mimetype_sniffed": "application/pdf",
-    "mimetype_source": "magic-bytes"
-  },
-  "metadata": {
-    "arxiv": null,
-    "doi": null,
-    "title": "A q-Rational Murnaghan-Nakayama Rule",
-    "authors_raw": "Tom Halverson",
-    "citation": "J. Combin. Theory Ser. A 71 (1995) 1-18"
-  },
-  "toc": [],
-  "toc_source": "headings",
-  "sections": [
-    {
-      "number": "0",
-      "title": "INTRODUCTION",
-      "level": 1,
-      "page_start": 1,
-      "page_end": 2,
-      "id": "sec-000-introduction",
-      "n_chars": 1841,
-      "n_words": 506
-    },
-    {
-      "number": "2",
-      "title": "The Murnaghan-Nakayama rule (see [Mac l) states that",
-      "level": 1,
-      "page_start": 2,
-      "page_end": 8,
-      "id": "sec-001-the-murnaghan-nakayama-rule-see-mac-l-states-tha",
-      "n_chars": 13317,
-      "n_words": 2768
-    },
-    {
-      "number": "3",
-      "title": "THE q-RATIONAL MURNAGHAN-NAKAYAMA RULE",
-      "level": 1,
-      "page_start": 8,
-      "page_end": 11,
-      "id": "sec-002-the-q-rational-murnaghan-nakayama-rule",
-      "n_chars": 5858,
-      "n_words": 1327
-    },
-    {
-      "number": "2",
-      "title": "ZYHrr,n(q)(~) ST(Xr) =fi~(Xr; q)",
-      "level": 1,
-      "page_start": 11,
-      "page_end": 12,
-      "id": "sec-003-zyhrr-n-q-st-xr-fi-xr-q",
-      "n_chars": 1963,
-      "n_words": 411
-    },
-    {
-      "number": "4",
-      "title": "TABLES",
-      "level": 1,
-      "page_start": 12,
-      "page_end": 18,
-      "id": "sec-004-tables",
-      "n_chars": 5956,
-      "n_words": 1117
-    }
+ "_schema": "pdf-structure/v1",
+ "doc_id": "1-s2-0-0097316595900136-main",
+ "source": {
+  "file": "1-s2.0-0097316595900136-main.pdf",
+  "sha256": "c92d3e85b3dec20a86b4452420a09811900ce6edf67cddec7478b59edae98316",
+  "bytes": 703973,
+  "pages": 18,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "A q-Rational Murnaghan-Nakayama Rule",
+  "authors_raw": "Macalester College, Saint Paul, Minnesota 55105",
+  "title_lines": [
+   "A q-Rational Murnaghan-Nakayama Rule",
+   "TOM HALVERSON *"
   ],
-  "diagnostics": {
-    "pages_without_text": 0,
-    "likely_scanned": false,
-    "toc_entries": 0,
-    "sections": 5,
-    "chars_total": 30491
+  "abstract": null,
+  "docinfo": {
+   "Title": "PII: 0097-3165(95)90013-6",
+   "Producer": "PageGenie PDFGenerator",
+   "Creator": "3400200002.TIF",
+   "CreationDate": "Thu Jun 24 06:54:33 2004"
+  },
+  "title_raw": "A q-Rational Murnaghan-Nakayama Rule TOM HALVERSON *",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "PII: 0097-3165(95)90013-6",
+   "heading": "A q-Rational Murnaghan-Nakayama Rule",
+   "text": "A q-Rational Murnaghan-Nakayama Rule TOM HALVERSON *",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "citation": "J. Combin. Theory Ser. A 71 (1995) 1-18"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "THE q-RATIONAL MURNAGHAN-NAKAYAMA RULE",
+   "page": 8,
+   "source": "inferred",
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "8"
   }
+ ],
+ "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Removal of rim hooks",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "A (5, 3, -3, -4)-broken rim hook tableau of shape (4, -1, -1, -1). THEOREM 3.5",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Computing X~32-1)((2, 0, -2))",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 8,
+   "n_chars": 16386,
+   "n_words": 2966,
+   "label_start": "1",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-000-3-the-q-rational-murnaghan-nakayama-rule",
+   "number": "3",
+   "title": "THE q-RATIONAL MURNAGHAN-NAKAYAMA RULE",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 18,
+   "n_chars": 13784,
+   "n_words": 2625,
+   "label_start": "8",
+   "label_end": "18"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 1,
+  "toc_inferred_entries": 3,
+  "toc_inferred_mean_confidence": 0.75,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 2,
+  "chars_total": 30170,
+  "furniture_lines_stripped": 8,
+  "headings_tidied": [
+   {
+    "title": "ZH~., .,(~),",
+    "page": 11,
+    "action": "dropped",
+    "why": "ends with a comma"
+   },
+   {
+    "title": "TABLES",
+    "page": 12,
+    "action": "dropped",
+    "why": "a figure, table or box caption"
+   }
+  ]
+ }
 }

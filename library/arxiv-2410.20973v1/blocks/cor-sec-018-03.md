@@ -1,0 +1,1 @@
+7. If Im(z) > 0 and −arg(z) + π/2 < arg(τ) < arg(z + 1) + π/2, Im(z) < 0 and −π/2 −arg(z + 1) < arg(τ) < −arg(z) −π/2, or z ∈(−1, 0) and τ ∈C\R≤0, then Φ(zτ; τ) is the Borel–Laplace resummation of its asymptotics.

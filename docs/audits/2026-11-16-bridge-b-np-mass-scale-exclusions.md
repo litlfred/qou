@@ -1,0 +1,159 @@
+# Bridge B: what can and cannot split the neutron from the proton (2026-11-15/16)
+
+Issue #8101. This is the second "bridge" of the 2026-11-15 derivation-chain audit (Lagrangian → trace → non-abelian
+Stokes → weight-space decomposition → mass formula): the step from weight-space data to an MeV mass, tested on the
+neutron–proton difference. It records negatives and two structural exclusions. **No content block is changed.**
+The model terms "proton", "neutron", "u", "d" follow the repo's model-by-default ruling; physics enters only where a
+number is set against CODATA, and those comparisons are marked.
+
+Setting throughout: Jimbo braiding Ř on `(C²)^{⊗n}`, `h = q − q⁻¹`, convention-D pivot `K = diag(q, q⁻¹)`
+(forced, `MarkovOrientationForced.lean`), γγ nucleon word `V³ = (σ₁σ₂⁻¹)³` (owner ruling, qou-ales), proton =
+weight `+1` space of `(C²)^{⊗3}` (two u, one d; u = `T³ = +½`, merged #7971), neutron = weight `−1` space.
+Values at the proton pin `q₀ = 1.1099785827513808`.
+
+## Summary
+
+| object tested | proton/neutron difference it produces | status |
+|---|---|---|
+| one scalar λ × Markov trace for every mass (B1) | Δm ≈ 0.039 MeV, and m_p/m_e ≈ 1 (vs 1836) | refuted, scope (a) |
+| 𝒟² weight ratios as the source of the mass dressings | none (weights are pure powers of q) | refuted, scope (a) |
+| KZ connection, every direction (Reeb, translation, transverse) | none | excluded, scope (b) |
+| braid action, any signed word | none in the plain trace | **Lean**, scope (b) |
+| any operator commuting with the total lowering operator `F₃` | none beyond the pivot `q²` | **Lean**, scope (b) |
+| quantum trace restricted to the weight spaces | `T_p = q²·T_n`, the same for every word | **Lean** |
+| any rule seeing only "same / different quark" | none (`u ↔ d` symmetric) | **Lean**, scope (b) |
+| per-strand twist datum (hypercharge candidate) | constant `θ_V^{ΔT}`, ΔT assigned | scope (a) |
+| any diagonal single-strand datum `a + b·h` | first order: exactly `−2b`, word-independent (an input) | scope (b) |
+| one-photon exchange between tracked quarks (Y imported) | classical charge sums + `O(h⁴)` word-dependent term | probe, conditional |
+
+**Bottom line.** Everything in the chain is built from braids, Hecke elements and the KZ connection, and these all
+commute with the quantum-group symmetry (Schur–Weyl duality). Inside that class, proton and neutron can differ
+only by the trace's own pivot weight (the fixed factor `q^{∓2}`) or by a datum imported by hand. A derived,
+word-dependent n − p splitting needs an object that breaks that symmetry, and the corpus does not contain one.
+
+## 1. B1: one scalar times a trace (scope a)
+
+The action `𝔖 = λ·tr(ℒ)` has one scalar. Pre-registered reading: every mass is `λ ×` its trace, with the electron
+word in `{V⁰, V³, V⁶}`. Exact result (`b1_electron_normalised_probe.py`): `Δm ≈ 0.039 MeV` (−97 %) and
+`m_p/m_e ≈ 1` against CODATA 1836.15. Every Markov trace here is `1 + O(h²)`, so a linear trace → MeV map cannot
+produce the lepton–hadron hierarchy. The restricted traces are `T(p) = 0.4087`, `T(n) = 0.3317`.
+
+## 2. The mass dressings are not 𝒟² weight ratios (scope a; a proposal of this work, retracted)
+
+The corpus uses three underived q-dressings: `c_q² = 1/(q−1)²` (mass–energy block), `1/ℏ_q² = q²/(q−1)²` (CAL-2
+muon anchor) and `q⁻²/ℏ_q = 1/(q(q−1))` (hadronic `E₀`). A proposal made during this work read all three as ratios
+of the weights of `𝒟²`, using `𝒟 = q⁻¹∇ + ℏ_q ι_ξ∇` with weights `q⁻¹` and `ℏ_q`. **That reading double-counted
+the ξ-component.** Bridge A2 (`LagrangianKZIdentification.lean`, branch `claude/bridge-a-lagrangian-kz-2026-11-15`)
+shows `𝒟 = P∘∇` with `P = q⁻¹` transverse to ξ and `P = q⁻¹ + ℏ_q = 1` on ξ. So the 𝒟² weights are `q⁻²`, `q⁻¹`, `1`:
+pure powers of q, with no pole at `q = 1`, whereas every dressing has one. The proposal is refuted. The dressings
+remain underived.
+
+Recorded while checking this (not changed here): the Lean of `thm:mass-energy-equivalence` is definitional
+(`categoricalMass q E := E·(q−1)²`), and Step 1 of its proof sketch is false as stated: with the Jimbo Ř and
+`K = diag(q, 1/q)`, `Tr((K⊗K)Ř) = q(q²+1)`, not `q`. These go to the owner as a separate content question.
+
+## 3. The KZ connection is isospin-blind (scope b; invariant: diagonal-sl₂ equivariance)
+
+Each `Ω_ij = (C_ij − C_i − C_j)/2` is built from Casimirs, so it commutes with the total `E, F, H`
+(`h2_kz_isospin_blind_probe.py`, exact at n = 3). Hence `ω(u) = Σ Ω_ij u_ij` is equivariant for every direction.
+The characteristic polynomials of a generic `a·Ω₀₁ + b·Ω₀₂ + c·Ω₁₂` agree on the two weight spaces. The Reeb
+contraction `ι_E ω = Σ Ω_ij` (Bridge A, `InfinitesimalPureBraid.lean`, `connForm_euler`) has spectrum
+`{3/2, −3/2, −3/2}` on both. By A2, `𝒟` is exactly as blind as `∇`.
+
+## 4. Lean: the plain trace is the same for every signed word, and the pivot is the whole split
+
+`QOU/BraidsAndKnots/NucleonIsospinExclusions.lean` (generic `[Field R]`, `q ≠ 0`, `q² + 1 ≠ 0`):
+- `trace_sword_eq`: for every **signed** braid word, the plain trace on the proton-type and neutron-type weight
+  spaces agree. This extends `NucleonWeightSpaceTraces.trace_word_eq` (positive words only, np-splitting §17) via
+  the Hecke relation `σ⁻¹ = σ − h` (`intertwine_inv`, with `A_i · inv(A_i) = 1` proved for each generator).
+- `restrictedTrace_ratio`: `T_p = q²·T_n` for every signed word. `V3_ratio` instantiates it at the γγ word.
+
+- **General form** (`commutant_trace_eq`, `commutant_restrictedTrace_ratio`): `P` is not ad hoc. With
+  `Δ(F) = F⊗1 + K⁻¹⊗F` (the coproduct commuting with Ř), the block of `F₃` from the proton-type to the
+  neutron-type weight space is `q·P` (`lowerBlock_eq`; `h3_lowering_block_probe.py`, exact). So **any**
+  weight-preserving operator commuting with the total lowering operator has equal plain traces on the
+  two spaces and restricted quantum traces in ratio `q²`. Braid words are one instance
+  (`lowerBlock_intertwine_sword`). All declarations use only `propext`, `Classical.choice`, `Quot.sound`.
+
+So the B1 split is entirely the pivot weight. Numerically `T(p)/T(n) = 1.232052454166767` against
+`q₀² = 1.232052454166764`. The relative split is `1 − q⁻²` whatever the word. The same result was found
+independently by the n–p thread (`2026-11-15` np-splitting audit §13, "n/p = q^{∓2} exactly").
+
+## 5. Lean: same/different-quark rules cannot see `u ↔ d` (scope b; invariant: label complement)
+
+Pre-registered rule "labelled V³": keep the γγ word, label the strands, keep the letter on a same-quark crossing
+and use the derived weak element `W = (2/(q²+1))·½(σ+σ⁻¹)` on a u–d crossing. Exact result
+(`a2_labelled_v3_probe.py`): for all three placements of the odd quark,
+`t_p = t_n = (3q⁴ + 2q² + 3)²/(q²(q²+1)⁶)`, so Δm = 0.
+
+The reason is general and is proved (`decorate_proton_eq_neutron`): uud and udd are label complements, and a rule
+that sees only `l_a = l_b` gives the same decorated word for a labelling and its complement. The coloured-strand
+(Yokonuma–Hecke) route reached the same conclusion through the colour flip (np-splitting audit §12).
+
+## 6. Intrinsic u/d data on one strand (scope b; invariant: dim V = 2)
+
+Every weight-preserving single-strand operator on `V = C²` is `a + b·h`. Summed over the quarks at one time slot it
+equals `3a + b·H_total`, which commutes with Ř (checked exactly). So at first order any such datum (a mass term
+`diag(m_u, m_d)`, a charge, a twist read as an operator) gives **n − p = −2b = m_d − m_u exactly, for every word**:
+the braid contributes nothing, and the number is an input. The per-strand twist of `def:strand-twist-datum` acts on the
+irreducible V by a scalar, so it gives a word-independent constant `θ_V^{ΔT}` with assigned ΔT. Off-diagonal
+single-strand operators (E, F) vanish at first order in a diagonal trace; at second order they give the FE/EF terms
+(q⁻² for the symmetric combination, np-splitting §20). The weak-vertex thread confirms the same structure from the
+decay side: its emission asymmetry is exactly `2Y`, independent of q and of the word (ε-EM1).
+
+## 7. One-photon exchange (probe; conditional on imported `Y = 1/3`)
+
+The one object found that does depend on the word is a photon exchanged between two **tracked** quarks at two
+different points of the braid. The braiding does not just carry a quark's charge to its new strand:
+`Ř(h⊗1)Ř⁻¹ = 1⊗h − 2h·|↓↑⟩⟨↑↓|`. Rule (pre-registered): quark charge `Q = h/2 + 1/6` (SM hypercharge, **imported**),
+ordered pairs of distinct quarks, uniform weight over the 21 slot pairs of the word, restricted traces as above
+(`em1_photon_exchange_probe.py`). Equal-time symmetric Coulomb sums are excluded in advance, since
+`Σ_{a<b} Q_aQ_b` is a function of totals.
+
+| word | E(n) − E(p) at q₀ | at q = 1 |
+|---|---|---|
+| V³ | −0.6663932 | −2/3 |
+| V⁶ | −0.6660752 | −2/3 |
+
+At `q = 1` it reproduces the classical sums (p 0, n −2/3). The braid correction starts at `O(h⁴)` and depends on the
+word (+0.042 % on V³, +0.089 % on V⁶). Comparison point (physics): the classical sign makes the proton heavier from
+EM, which is the expected sign of the EM part; the measured total has the neutron heavier, so the larger non-EM term
+is still missing. No MeV scale was chosen for E.
+
+## 8. Corpus tension (reported, not edited)
+
+`appendix-standard-model/sm-params-quark-masses.md` says the framework "derives both Δ_pn *and* its own
+electromagnetic–strong decomposition", so `m_d − m_u` is "well-posed with no new inputs". Neither holds yet:
+Δ_pn has several incompatible values with an asserted scale (`ScaleHypothesis`, no instance), and
+`def:coulomb-charge` itself marks its EM reading open. Changing the sentence is a content change and waits on the owner.
+
+## 9. What breaks the symmetry (search, pre-registered)
+
+Criterion: an object counts only if it does not commute with `F₃` **and** has a framework-fixed size
+other than the pivot. No hit.
+
+- The pivot `K` breaks `u ↔ d`, with derived size `q^{∓2}`. That is the B1 split.
+- The weak-vertex family (`L± = Ř₁^{±1}Ř₂^{±1}`, `P_L`, `P_R`, `J`, `Δ_S`) is built from polynomials in Ř,
+  so it commutes with `F₃` and is excluded by `commutant_trace_eq`. This agrees with the weak-vertex
+  thread's measurements ε-L1 and ε-TR1 (draft PR #8104).
+- The corpus Higgs vacuum (`conj:g-action-on-substrate`, G-3/G-4) is a rank-1 projector on one weight
+  line of the doublet, so it breaks the symmetry. Its direction comes from an assigned hypercharge
+  `y = 1/2`, its norm from the measured VEV, and its coupling to quarks is not specified.
+- The Coulomb insertion breaks the symmetry with asymmetry `2Y`, where Y is an input (§7).
+
+Two tensions in `conj:g-action-on-substrate`, reported and not edited:
+1. G-3 asks for a non-zero morphism `𝟏 → A^{(H)}` with `A^{(H)}` the spin-½ irrep. By Schur that
+   Hom-space is zero in `Rep(SU_q(2))`, so a VEV cannot be a module map. It has to be adjoined from
+   outside the equivariant category, which is the categorical form of the no-go above.
+2. G-2/G-4 give `dim_q = [2]_q` for a rank-1 projector. A weight line has quantum dimension `q^{±1}`.
+
+## 10. What remains open
+
+- A symmetry-breaking object (a vacuum or boundary choice in the Higgs role) that distinguishes u from d inside the
+  framework. Without it, `m_d − m_u` is an input.
+- The MeV scale of any trace-level n − p quantity (`H_α` is asserted, `E₀` is linear in traces, neither is derived for
+  this use).
+- The hierarchy factor `1/ℏ_q²` (muon anchor) and its siblings: underived.
+
+Probes: `computations/probes/bridge_b/` (exact sympy; numbers at `q₀` by mpmath or exact rationals; outputs in
+`*.out.txt`). Project-file copies with pre-registrations: `qou-derivation-chain/bridge-b/`.

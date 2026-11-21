@@ -106,7 +106,7 @@ statement is kept, labelled, because it is true **for C**. -/
     `eigenphase_not_bar_odd`. -/
 theorem eigenphaseC_bar_involution (q : ℝ) (hq : 0 < q) :
     eigenphaseC q⁻¹ = - eigenphaseC q := by
-  -- Ref: [manuscript] prop:q-beta-cos-resummation §"Markov cyclicity"
+  -- Ref: [leitner2026] prop:q-beta-cos-resummation §"Markov cyclicity"
   -- Ref: [jones1985] doi:10.2307/1971403
   -- Reduce to algebraic identity:
   --   eigenphase(q⁻¹) + eigenphase(q) = 0
@@ -398,7 +398,7 @@ theorem cos_resummation_even (α : ℝ) :
     Form A base it gives `+1677.6 → +856.8` ppm. The superseded convention-C
     figure (`+1677.5 → +305.7` ppm, `5.49×`) is historical. None of these is
     a consequence of this theorem, and neither base is selected by residual. -/
--- Ref: [manuscript] prop:q-beta-cos-resummation
+-- Ref: [leitner2026] prop:q-beta-cos-resummation
 -- Ref: [jones1985] doi:10.2307/1971403   (Markov trace on H_n(q))
 -- Ref: [wenzl1988] doi:10.1007/BF01239526   (Wenzl-bridge `y_λ`)
 theorem q_beta_cos_resummation (q : ℝ) (M : Matrix (Fin 2) (Fin 2) ℝ)

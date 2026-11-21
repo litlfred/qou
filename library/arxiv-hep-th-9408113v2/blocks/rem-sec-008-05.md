@@ -1,0 +1,1 @@
+In the paper [FzSz2], Section 5.2, for a totally real ﬁeld of algebraic numbers F, a very interesting construction of elements in Kind (F) (the indecomposable part of K3(F), i.e. the cokernel of the product map K1(F)⊗3 →K3(F)) using the relative group K2 of projective line over F modulo two points and the solutions of the Bether-ansatz-like system of algebraic equations is given.

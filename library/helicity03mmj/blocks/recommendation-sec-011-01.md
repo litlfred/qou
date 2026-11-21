@@ -1,1 +1,0 @@
-In higher dimension, where the interpretation should be related to linking of possibly non-compact leaves of the foliations, one is lacking both a natural expanding system of sets, comprising the linking of diﬀerent leaves, and a natural generalization of short path systems.

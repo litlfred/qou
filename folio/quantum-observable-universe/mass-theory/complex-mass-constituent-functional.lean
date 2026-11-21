@@ -34,7 +34,7 @@ Archimedean side (§7c): this is the post-τ evaluation, so it lives over `ℂ`
 (mass = real part, confinement scale = imaginary part) — a genuine archimedean
 specialisation, not a gratuitous one.
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory/complex-mass-constituent-functional.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/complex-mass-constituent-functional.md
 -/
 
 namespace QOU.MassTheory

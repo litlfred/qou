@@ -1,1 +1,0 @@
-It is a classic argument that deck transformations of H3 which ﬁx inﬁnity must be parabolic, so the link of inﬁnity has two translational periods and provides a Euclidean realization of A (and of Figure 4).

@@ -1,1 +1,1 @@
-If A is a quasitriangular weak quasi-bialgebra algebra defined by R
+If A is a quasitriangular weak quasi-bialgebra algebra defined by R then ε ⊗ 1(R) = I, 1 ⊗ ε(R) = I. (10.15) If A is a weak Hopf algebra, S ⊗ S(R) = f21Rf −1, (10.16) where f is the element defined in Prop. 6.13.

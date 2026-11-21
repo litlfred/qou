@@ -1,0 +1,1 @@
+B.3. The proof of Corollary 2B.2 indicates that the equations of Corollary 2B.2 are compatible with the depth ﬁltration and the bounds on valuations of pMZVµN’s, which are two parameters in our computation. This can be viewed as a prerequisite for the next paragraphs in which we show a kind of compatibility between the iteration of the Frobenius and our computation of pMZVµN’s.

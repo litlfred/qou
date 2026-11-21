@@ -1,1 +1,0 @@
-The helon model does all this, but in addition it does away with the *ad hoc* assumption the permutations of preonic objects within a triplet are distinct, and explains why the the ordering of should matter (leading to three distinct colour charges) in a natural way.

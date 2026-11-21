@@ -2,17 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/def-breit-wheeler-pair-production",
   "@type": [
-    "folio-assistant-core:Definition",
+    "folio-assistant-sci:Definition",
     "doco:Section"
   ],
   "label": "def:breit-wheeler-pair-production",
   "kind": "definition",
   "title": "Breit--Wheeler pair production (categorical)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-photon"
+  ],
   "tags": [
     "breit-wheeler",
     "pair-production",

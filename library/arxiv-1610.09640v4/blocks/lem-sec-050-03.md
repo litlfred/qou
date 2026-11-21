@@ -1,0 +1,1 @@
+Let (AS, Q) be a right Ore localization, let a1, a2 ∈A and s1, s2 ∈S. The following conditions are equivalent: (i) Q(a1) ◦Q(s1)−1 = Q(a2) ◦Q(s2)−1 in AS. (ii) There are b1, b2 ∈A s.t. a1 ◦b1 = a2 ◦b2, and s1 ◦b1 = s2 ◦b2 ∈S.

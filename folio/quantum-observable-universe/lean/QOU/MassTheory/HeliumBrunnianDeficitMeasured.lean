@@ -43,7 +43,7 @@ alternates with Milnor length parity — a structural observation, 0-fit.
 Base ring (§7c): `ℝ`, because every statement is an archimedean ordering/sign fact
 (`< 1`, `1 <`, `0 <`, a numeric value `<` a numeric target).
 
--- Ref: [manuscript] computations/deltalambda/a4-h12-brunnian-deficit-measure.witness.json
+-- Ref: [leitner2026] computations/deltalambda/a4-h12-brunnian-deficit-measure.witness.json
    (Task 3 measured input; genuine Brunnian w₄=[[A₀₁,A₁₂],A₂₃], substrate q₀).
 -/
 import Mathlib.Tactic

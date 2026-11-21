@@ -1,0 +1,1 @@
+We have the following generating functions: (i) For 0 < |z| < |b|−1 we have ∞ X p=−∞ zpbp (qp+1; q)∞ (aqp/b; q)∞ 1ϕ1 aqp/b qp+1 ; q, bx  = (q, az, x/z; q)∞ (a/b, bz; q)∞ , (ii) For |d| < |w| < 1 we have ∞ X r=−∞ wr(qr+1; q)∞1ϕ1 dqr+1/y qr+1 ; q, y  = (d, q, y/w; q)∞ (w, d/w; q)∞ .

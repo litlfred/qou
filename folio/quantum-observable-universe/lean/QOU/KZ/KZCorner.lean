@@ -24,7 +24,7 @@ No commutation hypothesis between `X` and `Y` is needed.
 
 Base: complete normed `ℂ`-algebra (archimedean by necessity). Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §2 Step 1
+-- Ref: [leitner2026] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §2 Step 1
 -/
 
 namespace QOU.KZ.KZCorner

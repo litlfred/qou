@@ -1,1 +1,0 @@
-It remains to be seen whether these invariants are of interest in singularity theory, and whether Arnold’s invariants may be used to construct planar algebras with the special properties we shall describe.

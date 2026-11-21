@@ -31,7 +31,7 @@ Contents (all sorry-free):
   carries exactly `d` trits (`log₃ 3^d = d`), the filtration level, while its
   sequential cost is `3^d` steps.
 
--- Ref: [manuscript] information-theory/skein-turing-machine,
+-- Ref: [leitner2026] information-theory/skein-turing-machine,
    information-theory/p-vs-np-boundary
 -/
 

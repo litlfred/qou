@@ -18,8 +18,8 @@
   the tilt contributes nothing in the limit** — but it had to be carried, since
   before taking the limit it is a genuine `1 + O(1/N)` factor.
 
-  -- Ref: [manuscript] QOU/MathlibExt/GaussianThetaBound.lean
-  -- Ref: [manuscript] QOU/Knot/KashaevRatioExpansion.lean
+  -- Ref: [leitner2026] QOU/MathlibExt/GaussianThetaBound.lean
+  -- Ref: [leitner2026] QOU/Knot/KashaevRatioExpansion.lean
 -/
 import QOU.MathlibExt.GaussianThetaBound
 

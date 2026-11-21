@@ -1,0 +1,33 @@
+Introduction
+
+Consider an array! of complex numbers
+
+ri,...,ta € N}
+
+where, as in the rest of this book, we include zero in the set N = {0,1,2,...}.
+The numbers a, usually come with a story — a reason they are interesting.
+Often, they count a class of objects parametrized by r. For example, it could
+be that a, is the multinomial coefficient a, = (, m in which case a, counts
+sequences of elements in {1,...,d} with r; occurrences of 1, r2 occurrences
+of 2, and so forth up to ry occurrences of the symbol d. Another frequent
+source of these arrays is probability theory, where the numbers a, € [0, 1]
+are probabilities of events parametrized by r. For example, a,;; might be the
+probability that a simple random walk of r steps in {—1, 1} ends at the integer
+point s.
+
+Definition 1.1 (running notation). Throughout this text we use d to denote
+the dimension of an arbitrary array, and often employ r,s, and t as synonyms
+for r},1r2, and r3, respectively, so as to avoid subscripts in low-dimensional
+examples. We also use the notation |r| := an |rj| for any vector r, which
+helps us normalize in a way convenient for combinatorial examples.
+
+How might one understand an array of numbers? In some cases there may
+be a simple explicit formula, for instance the multinomial coefficients are given
+by a ratio of factorials. When a formula of such brevity exists, we don’t need
+fancy techniques to describe the array. Unfortunately, this rarely happens. Of-
+ten, if a formula exists at all, it will not be in closed form but will include in-
+definite summation. As Stanley [Sta97, Ex.1.1.4] notes in his foundational text
+on enumeration, “There are actually formulas in the literature (nameless here
+
+! To simplify our presentation in this introduction we consider arrays indexed by vectors of
+natural numbers, while later in the text we generalize to arrays indexed by integer vectors.

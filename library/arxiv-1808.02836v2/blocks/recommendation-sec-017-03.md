@@ -1,1 +1,0 @@
-Accordingly, the intersection of $\operatorname{LST}^\star(1, 2, 3)$ with all three canonical normal representatives of non-trivial classes of $H$ must result in a tetrahedron of type $\Delta_{\mathfrak{qq}}$ or $\Delta_{\emptyset}$.

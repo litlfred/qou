@@ -1,0 +1,1 @@
+B 2 = (B + 6) 2 = 6 2 = 0. /V00/ Direct computation. Cf. [LQ, Bu]. D Put Cm(A)= U CW(Λ) p+q=m We let the differential 6 act on C*(yί) by m 6(aQ 0 Θ α w) = ^(-1 ) //A«0 0 (8) ^(«A) 0 Θ αm , (2.1.3) λ=0 where μk = Σ(k +1). /=!

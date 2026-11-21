@@ -1,1 +1,1 @@
-a) hold, and we have the twisted wqh structure on (AW (g, q0, ℓ))T with the
+a) hold, and we have the twisted wqh structure on (AW (g, q0, ℓ))T with the properties of being unitary coboundary with compatible involution. For λ ∈ Λ +(q0), let Vλ be the classical representation of U(g). We consider the linear isomorphism between the Hilbert spaces ϕλ : Vλ(q0) → Vλ

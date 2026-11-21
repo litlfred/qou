@@ -1,0 +1,1 @@
+Let g be a deformation algebra over k[[h]] (see §1), and Re Ug@Ug and ®E Ug@Uge@Uzg invertible g-invariant elements satisfying (1.2), (1.4), and (1.6). Then by twisting via some g-invariant F € Ug @ Ug

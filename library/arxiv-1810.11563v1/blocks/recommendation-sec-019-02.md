@@ -1,1 +1,0 @@
-Because the slices and their volumes are defined in a coordinate invariant manner, according to the standard AdS/CFT lore there must be a holographic description of the wormhole volume: some property of the quantum state of the dual pair of CFTs at time $t$.

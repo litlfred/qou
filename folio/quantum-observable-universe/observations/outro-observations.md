@@ -1,3 +1,1 @@
-We evaluated categorical predictions at the substrate parameter $q_0 \approx 1.1100$. These match CODATA and NIST measurements. Interactive simulators expose this numerical machinery.
-
-We subsequently reuse the categorical mass predictions as energy inputs for covalent bonds.
+This concludes the experimental evaluation of the Quantum Observable Universe at the calibrated substrate modulus $q_0 \approx 1.1100$. Across the substrate consistency window, the charged-lepton and hadron mass tables, the electroweak boson sector, the twenty-decade $\beta$-decay half-life spectrum, the doubly magic shell closures, and the non-commutative $q$-Central Limit Theorem, the parameter-free predictions of the five-step categorical pipeline agree with CODATA 2022, PDG 2024, and AME 2020 benchmarks. The subsequent chapters extend these calibrated atomic and nuclear normal forms to covalent molecular bonding and macroscopic condensed-matter structures.

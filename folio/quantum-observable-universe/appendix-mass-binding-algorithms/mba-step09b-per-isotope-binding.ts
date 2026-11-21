@@ -4,6 +4,7 @@ export default algorithm({
   label: "alg:per-isotope-binding",
   title: "Per-isotope binding $B(K) = m_e \\cdot \\sum_\\lambda y_\\lambda \\chi^\\lambda \\Delta_\\lambda$",
   uses: [
+    "prop:delta-lambda-dt-index-unification",
     "rem:term6-binding-density",
     "thm:knot-mass-formula-unified",
     "alg:markov-trace",

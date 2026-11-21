@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-ns-singularity-descartes-interpretation",
@@ -12,7 +13,7 @@
   ],
   "label": "rem:ns-singularity-descartes-interpretation",
   "kind": "remark",
-  "title": "Arithmetic constraint $\\chi(A)=-6$ as a topological forcing term",
+  "title": "What $\\chi(\\mathcal{S})=-6$ fixes about the Reeb bundle, and what it does not",
   "uses": [
     "papers/quantum-observable-universe/blocks/thm-ns-singularity-descartes"
   ],

@@ -1,0 +1,43 @@
+13.7 Symmetric functions 433
+
+Theorem 10.38 and Corollary 10.41 in Chapter 10 imply that the asymptotic
+contribution of a minimal arrangement point is unchanged when the factors in
+the denominator are replaced by their first-order terms.
+
+Problem 13.7. Let Q(z) be any polynomial in d variables and let p be a zero
+of Q such that the homogeneous part H(z) of Q at p (in the sense of Defini-
+tion 6.46) factors into k < d linearly independent factors. Under what condi-
+tions is the dominant asymptotic contribution of p to the series coefficients of
+1/Q(z) the same as the dominant asymptotic contribution of p to the series
+coefficients of 1/H(z)?
+
+An approach to Problem 13.7 is provided by a series of results in [BP11].
+Lemma 2.24 of that paper shows that in the interior of the normal cone at
+p, the function 1/Q(z) can be expanded in negative powers of H(z), while
+Lemma 6.3 there shows that the Cauchy integral for the leading negative power
+is the inverse Fourier transform. These results are stated for points with specific
+types of local factorizations, but in fact appear to be much more general. As
+summarized in Chapter 11 of this text, the construction of a conical contour,
+and the error estimates that follow, rely only on the direction * being non-
+obstructed. In fact the types of local divisors allowed are Lorentzian quadratics
+and smooth divisors, which as a degenerate case (having no quadratics) include
+arrangement points. Thus, solving Problem 13.7 for a large class of functions
+should be possible by an application of the results in [BP 11].
+
+Some caution is indicated due to the asymptotics for two smooth tangential
+divisors, worked out in a special case in Proposition 10.68, and the fact that
+asymptotics for the square of a single smooth divisor are a special case but do
+not capture the results of Proposition 10.68 in general. The difficulty here may
+be traced back to the fact that the expansion in [BP11, Lemma 2.24] only holds
+in the interior of a cone where the homogeneous part does not vanish; because
+two tangential curves cannot be separated by a cone, the expansion does not
+hold near where Q vanishes.
+
+13.7 Symmetric functions
+
+Multivariate generating functions often possess some degree of symmetry. For
+example, the denominators in the Delannoy generating function, the cube grove
+generating function, the Friedrichs-Lewy-Szeg6 generating function, and the
+Gillis-Reznick—Zeilberger generating functions are all symmetric polynomi-
+als. The denominator in the Aztec Diamond generating function is symmetric
+in two of its variables.

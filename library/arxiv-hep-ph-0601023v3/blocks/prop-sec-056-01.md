@@ -1,0 +1,1 @@
+Recent lattice QCD calculation of the proton decay matrix element by the CP-PACS and the JLQCD Collaborations gives~\cite{Tsutsui:2004qc} \beqn |\alpha|=0.0090(09)(^{+5}_{-19}) ~{\rm GeV}^3\nonumber\\ |\beta=0.0096(09)(^{+6}_{-20}) ~{\rm GeV}^3 \label{alphabeta} \eeqn where $\alpha$ and $\beta$ have a relatively opposite sign.

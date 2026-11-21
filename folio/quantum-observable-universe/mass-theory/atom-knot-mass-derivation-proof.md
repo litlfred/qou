@@ -1,8 +1,8 @@
-**Proof.** After the pre-Archimedean / post-Archimedean simplification
+**Proof sketch.** After the pre-Archimedean / post-Archimedean simplification
 (Yekutieli at finite slices replaces any geometric-leg construction
 with finite-categorical Markov trace), the proof is a single
 pre-Archimedean categorical pipeline, terminated by the Archimedean
-realization functor. We treat the algebraic content first and then
+realization functor. The algebraic content is treated first and then
 the functor.
 
 ### Categorical (pre-Archimedean) leg
@@ -14,8 +14,7 @@ Hecke element $T_w \in H_{n_0}(q_0)$ in Gröbner–Shirshov normal form.
 The GB-NF carries a length filtration $\ell$ and a jet-order grading
 ($\ell$ from Coxeter length on $S_{n_0}$; jet-order from the temporal
 sequence of reductions; both certificate components verified for
-small cases by the canonical formalism
-and locked in [`gb-filtration-jet-order.witness.json`](../../../computations/gb-filtration-jet-order.witness.json)).
+small cases by the canonical formalism).
 
 **Yekutieli at finite slice** (multiplicative integration on surfaces,
 restricted to finite slicing depth = filtration grade $\leq k$):
@@ -23,13 +22,9 @@ the categorical action's holonomy on the braid $\beta$ underlying
 $T_w$ factors as the finite product
 $\rho(\beta) = \prod_{j} \rho(\sigma_{i_j})$. The non-abelian Stokes
 identity at adjacent slices reduces to braid + Hecke quadratic
-relations, which are the only $E_2$-differentials of the GB
-spectral sequence ([prop:gb-spectral-sequence](#prop:gb-spectral-sequence)).
-The spectral sequence collapses at $E_2$ for semisimple $H_n(q)$ at
-generic $q$ ([prop:spectral-sequence-collapse](#prop:spectral-sequence-collapse))
-because no relations beyond braid + Hecke exist; $E_\infty$
-identifications recover Wedderburn
-([prop:e-infinity-page-identifications](#prop:e-infinity-page-identifications)).
+relations. The argument below needs only the Wedderburn decomposition
+of the finite-dimensional semisimple algebra $H_n(q)$, not a spectral
+sequence.
 
 Wedderburn for the semisimple algebra $H_n(q)$ over the splitting
 field $\mathbb{Q}(q^{1/2})$ gives
@@ -42,19 +37,19 @@ finite-sum form
 $\mathrm{tr}_M = \sum_\lambda y_\lambda(q) \chi_\lambda$
 where $y_\lambda(q) = s_{\lambda, r}(Q) / Z$ is the Wenzl-bridge
 coefficient ([thm:jones-markov-trace](#thm:jones-markov-trace),
-[prop:alpha-k-derivation-procedure](#prop:alpha-k-derivation-procedure))
+[conj:alpha-k-derivation-procedure](#conj:alpha-k-derivation-procedure))
 and $\chi_\lambda$ is the $q$-Murnaghan–Nakayama character.
 
 **The categorical mass invariant.** Setting
 $M(\mathfrak{H}) := \nu_{\mathrm{SDP}} \cdot \mathrm{tr}_M(T_w) = \nu_{\mathrm{SDP}} \cdot \sum_\lambda y_\lambda(q) \chi_\lambda(T_w)$
 gives an element of $\mathbb{Q}(q)$. Every quantity is finite-sum and
-exact; the spectral-sequence collapse at $E_2$ guarantees no higher
-analytic content (asymptotic at roots of unity, volume conjecture,
+exact, because the trace is a finite sum over the Wedderburn
+blocks, so no higher analytic content (asymptotic at roots of unity, volume conjecture,
 Reeb-density integral on the cover, etc.) is needed. $\nu_{\mathrm{SDP}} \in \mathbb{Z}_{>0}$
 is read off as the multiplicity of $T_w$'s SDP solution in the
 Wedderburn decomposition (renamed from $\rho$ to
 disambiguate from the categorical density $\rho_K$ of
-[`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md) and the Hoefsmit
+[Atomic mass as Markov trace of the Gröbner–Shirshov normal form](../mass-endomorphism/atomic-mass-gb-nf.md) and the Hoefsmit
 irrep $\rho_\lambda$).
 
 ### Archimedean realization
@@ -119,9 +114,7 @@ place (step 1 of the algorithm). Within the present implementation:
 - A volume-match search that runs *backwards* from step 6 to a
  candidate knot, bypassing step 1 entirely, is excluded: it
  reverse-engineers the knot from the AME target rather than deriving
- it from the categorical pipeline. The principled atlas
- ([prop:recursive-atom-knot-atlas](#prop:recursive-atom-knot-atlas))
- admits no such entry.
+ it from the categorical pipeline.
 
 The collapsing-spectral-sequence framing
 ([prop:gb-spectral-sequence](#prop:gb-spectral-sequence),

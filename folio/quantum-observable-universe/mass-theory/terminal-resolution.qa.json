@@ -1234,6 +1234,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "739c7c17635e",
+          "ts": "3e692178b44f",
+          "lean": "657e7494e3cb",
+          "lean_statement": "4c92fe595ae9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:28.032Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "S↔L: the ref `QOU.Experimental.TerminalResolution` resolves (sibling first) to a structure whose field `all_agree` is the claimed CODATA agreement (sibling lean:154-166); nothing constructs it. The library twin is a `def TerminalResolution … : Prop` that is never asserted (lean/QOU/Experimental/terminal_resolution.lean:51-53, \"honestly *not asserted*\"). The md's table values are claimed values taken as definitions: `qou_proton_MeV : ℝ := 938.272` etc. are \"**placeholder pinned to the CODATA literal**, and every `*_bound` below is the **tautology** `|x − x| ≤ 0.001`\" (sibling lean:67-69, 82-86). The sibling docstring still claims \"All four rows match CODATA to sub-keV precision\" (lean:17), which the ts caveat retracts (ts:10-16). It uses a stale `substrate_q : ℝ := 1.1097` (lean:41) against q₀ ≈ 1.10998. The md's \"isospin splitting … −0.53 % residual\" (md:1) has no Lean. The md statement is itself a data comparison (\"CODATA (MeV)\" column, md:3-8), and the ts concedes the formula-column route and the proof route \"are not shown here to agree\" (md:16). No proof block in this unit.",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2479,6 +2497,6 @@
       }
     ]
   },
-  "updated_at": "2026-09-03T05:24:36.616Z",
+  "updated_at": "2026-11-15T21:57:28.032Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

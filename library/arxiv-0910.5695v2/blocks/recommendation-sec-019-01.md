@@ -1,1 +1,0 @@
-By Propositions [\[Liftprop\]](#Liftprop){reference-type="ref" reference="Liftprop"}(3) and [\[liftsim\]](#liftsim){reference-type="ref" reference="liftsim"}, $L(\rho)\otimes([1], \text{id}_1)$ must have $L(\lambda^{(i)})$ as an indecomposable summand in $\underline{\operatorname{Re}}\!\operatorname{p}(S_d; F)$.

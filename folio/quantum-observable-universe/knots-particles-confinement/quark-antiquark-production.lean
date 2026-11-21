@@ -6,7 +6,7 @@
   Two independent pair productions create quark–antiquark pairs that
   bind via the Hopf link to form mesons.
 
-  Ref: [manuscript] Chapter 6, §3b
+  Ref: [leitner2026] Chapter 6, §3b
 -/
 import Mathlib.Algebra.Ring.Units
 import Mathlib.Tactic.Ring
@@ -46,7 +46,7 @@ def hopfTrefoilNFCoeffs {R : Type*} [CommRing R] (q : Rˣ) : R × R × R × R :=
     fraction). This records the structural content of the manuscript
     derivation: the residual-electron coefficient is `h²` and the
     leading hadronic coefficient is `1`. -/
--- Ref: [manuscript] Chapter 6, §3b
+-- Ref: [leitner2026] Chapter 6, §3b
 theorem quarkAntiquarkProduction {R : Type*} [CommRing R] (q : Rˣ) :
     (hopfTrefoilNFCoeffs q).1 = 1
       ∧ (hopfTrefoilNFCoeffs q).2.1 = heckeH q
@@ -60,7 +60,7 @@ theorem quarkAntiquarkProduction {R : Type*} [CommRing R] (q : Rˣ) :
     `L₋` (from `φ₁ψ₀`) carry equal NF coefficient `h` in `L₊ · e⁻`,
     reflecting the chiral `quark/antiquark` symmetry of the two
     independent pair productions. -/
--- Ref: [manuscript] Chapter 6, §3b
+-- Ref: [leitner2026] Chapter 6, §3b
 theorem quark_antiquark_production_witness {R : Type*} [CommRing R]
     (q : Rˣ) :
     (hopfTrefoilNFCoeffs q).2.1 = (hopfTrefoilNFCoeffs q).2.2.1 :=
@@ -70,7 +70,7 @@ theorem quark_antiquark_production_witness {R : Type*} [CommRing R]
     `qou:QOU.Archimedean.QuarkAntiquarkProduction`: the residual-electron
     coefficient of `L₊ · e⁻` is `h²` while the leading hadronic
     coefficient is `1`. -/
--- Ref: [manuscript] Chapter 6, §3b
+-- Ref: [leitner2026] Chapter 6, §3b
 def QuarkAntiquarkProduction : Prop :=
   ∀ {R : Type} [inst : CommRing R] (q : Rˣ),
     (hopfTrefoilNFCoeffs q).1 = 1 ∧

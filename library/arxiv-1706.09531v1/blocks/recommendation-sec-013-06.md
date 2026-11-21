@@ -1,1 +1,0 @@
-Before discussing in more detail the consequences of an intact SUSY SO(10) or a string- uniﬁed G(2, 2, 4)-symmetry in 4D, I should mention brieﬂy an interesting line of attempt which proposes to achieve uniﬁcation through higher-dimensional (D=5 or 6) orbifold GUT- models based on SUSY SU(5) [99] or SO(10) [100].

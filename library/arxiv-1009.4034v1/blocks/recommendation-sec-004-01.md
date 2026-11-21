@@ -1,1 +1,0 @@
-In [@IO02], all the computations are done in this ring of generalized observables, and using the so-called Kerov degree; as we shall see here, this complicated framework is not at all required for the asymptotic analysis of fluctuations of Plancherel ($c=0$) and Schur-Weyl ($c>0$) measures.

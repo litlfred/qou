@@ -1,5 +1,3 @@
-The categorical Markov-Frobenius residue and the Seiberg-Witten (SW) thimble decomposition act as algebro-geometric duals. Each Picard-Lefschetz (PL) reduction maps to an SW critical-point structure. Each abelianization at an algebraic pole matches a Wedderburn-orbit decomposition.
+The algebraic residue calculus of the Markov–Frobenius trace and the geometric thimble decomposition of Seiberg–Witten (SW) theory form dual descriptions of the same period data: every Gröbner–Shirshov reduction step corresponds to a Picard–Lefschetz (PL) thimble transition, while every cyclotomic denominator pole corresponds to a Seiberg–Witten critical locus where the non-abelian braid monodromy abelianizes.
 
-The sequence traces $D_4$ moduli symmetry, the Möbius limit, Morse-wall $q$-moduli, and delta-lambda categorical closure. A jet/Gröbner/PL correspondence links Gröbner reduction to PL thimbles. Denominator-zeros form SW critical points. Algebraic poles induce abelianization.
-
-Orbital symmetry and cohomological embedding dictate consequences for fundamental particles.
+This section proves the bar-self-dual confinement-band theorem, establishes bar/$T$-duality on the substrate and its compatibility with the transfer matrix, and proves the golden-quartet Galois orbit theorem and $D_4$ dihedral moduli symmetry.

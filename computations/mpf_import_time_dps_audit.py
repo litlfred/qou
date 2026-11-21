@@ -315,16 +315,22 @@ def emits_witness(path: Path) -> bool:
     return "WitnessBuilder" in s or ".witness.json" in s
 
 
-def scan(all_files: bool = False) -> list[dict]:
+def scan(all_files: bool = False, include_tools: bool = False) -> list[dict]:
     rows: list[dict] = []
-    for p in sorted(HERE.rglob("*.py")):
-        if set(p.relative_to(HERE).parts) & SKIP_DIRS:
-            continue
-        if p.name == Path(__file__).name:
-            continue
-        if not all_files and not emits_witness(p):
-            continue
-        rows.extend(scan_file(p))
+    roots = [HERE]
+    if include_tools:
+        tools_pyhecke = ROOT / "tools" / "pyhecke"
+        if tools_pyhecke.is_dir():
+            roots.append(tools_pyhecke)
+    for r in roots:
+        for p in sorted(r.rglob("*.py")):
+            if set(p.relative_to(r).parts) & SKIP_DIRS:
+                continue
+            if p.name == Path(__file__).name:
+                continue
+            if r == HERE and not all_files and not emits_witness(p):
+                continue
+            rows.extend(scan_file(p))
     return rows
 
 
@@ -394,13 +400,15 @@ def main() -> int:
                     help="exit 1 if any import-time-lossy constant is found")
     ap.add_argument("--all", action="store_true",
                     help="include scripts that emit no witness (candidates, not defects)")
+    ap.add_argument("--include-tools", action="store_true",
+                    help="also scan tools/pyhecke for import-time mpf constants (bean qou-qpj5)")
     ap.add_argument("--rebaseline", action="store_true",
                     help="regenerate the baseline (draining only — counts must go DOWN)")
     a = ap.parse_args()
     if a.self_test:
         return self_test()
 
-    rows = scan(all_files=a.all)
+    rows = scan(all_files=a.all, include_tools=a.include_tools)
     by_file: dict[str, list[dict]] = {}
     for r in rows:
         by_file.setdefault(r["file"], []).append(r)

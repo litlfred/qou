@@ -1,1 +1,0 @@
-For a consistent labeling of the triangulation, called a "combinatorial flattening," the sum of log-parameters $w^{(i)}_j$ around every edge must vanish, and the (signed[^3]) sum of log-parameters along the two paths generating $\pi_1(T^2)={\mathbb{Z}}^2$ for any boundary (cusp) $T^2$ must equal twice the logarithm of the $SL(2,{\mathbb{C}})$ holonomies around these paths.

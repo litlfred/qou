@@ -62,7 +62,7 @@ opaque BiFiltration (q : R) (n : ℕ) (lam : List ℕ) : Type
     `BiFiltration` types. -/
 def convolution_compatible
     (q : R) (n₁ n₂ : ℕ) (lam₁ lam₂ : List ℕ) : Prop :=
-  -- Ref: [manuscript] §def:hq-bi-filtration "Compatibility with
+  -- Ref: [leitner2026] §def:hq-bi-filtration "Compatibility with
   -- the Hopf and braid structures" — closure properties of the
   -- bi-filtration under convolution, coproduct, bar involution,
   -- and Markov trace.
@@ -80,7 +80,7 @@ def convolution_compatible
     replaces vacuous `True` with a quantified statement asserting
     non-emptiness of the mirror stratum. -/
 def bar_compatible (q : R) (n : ℕ) (lam : List ℕ) : Prop :=
-  -- Ref: [manuscript] §rem:chirality-period-pairing — bar
+  -- Ref: [leitner2026] §rem:chirality-period-pairing — bar
   -- involution acts on partitions by transpose, swapping cells of
   -- chiral pairs and fixing self-conjugate cells.
   Nonempty (BiFiltration q n lam) →
@@ -95,7 +95,7 @@ def bar_compatible (q : R) (n : ℕ) (lam : List ℕ) : Prop :=
     Per Gemini PR #634 review: replaces vacuous `True` with the
     `Nonempty (BiFiltration q 2 [2, 2])` claim. -/
 def figure_eight_instance (q : R) : Prop :=
-  -- Ref: [manuscript] §conj:bring-figure-eight-depth-2-witness —
+  -- Ref: [leitner2026] §conj:bring-figure-eight-depth-2-witness —
   -- numerical witness Vol(4_1) = 2 Cl_2(π/3) at 50 dps.
   Nonempty (BiFiltration q 2 [2, 2])
 

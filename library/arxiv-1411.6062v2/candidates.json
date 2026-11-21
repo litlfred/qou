@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1411.6062v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "5abd328d027de43ccd396626dcde4f50d0937558a2c639b98cb5b35688f6b8d6",
   "file": "1411.6062v2.pdf"
@@ -16,13 +19,45 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "::: remark []{#rem.algebraic label=\"rem.algebraic\"} It [@GZ1] (see also [@DG2]) it was observed that although $(G^+(\\theta_+))^N$ and $(\\slashed{\\operatorname{D}}_N(\\theta_+,\\zeta_N))^N$ lie in the field $F_{G,N}=\\mathbbm Q(\\theta_+,\\zeta_N)$, their ratio lies in the smaller field $\\mathbbm Q(z,\\zeta_N)$ (where $z$ satisfies $\\operatorname{g}(z)=1$) which is an extension of $\\mathbbm Q(z)$ by $\\zeta_N$.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-003-13-evaluation-of-state-integrals.md (p. 4-6)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-003-13-evaluation-of-state-integrals.md",
+   "section_title": "Evaluation of state-integrals",
+   "pages": "4-6",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-003-13-evaluation-of-state-integrals.md (p. 4-6)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-003-01",
+   "block_iri": "library/arxiv-1411.6062v2/blocks/prop-sec-003-01",
+   "claim_id": "arxiv-1411.6062v2#prop-sec-003-01"
+  }
+ ]
 }

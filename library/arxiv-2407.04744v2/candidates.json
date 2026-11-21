@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2407.04744v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "fc6fda3138296fb1f0c693652d26ced7fd279b09f4742b9b1a8ef6459b5c63a2",
   "file": "2407.04744v2.pdf"
@@ -16,76 +19,45 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
+  "candidates": 1,
   "by_kind": {
-   "recommendation": 4
+   "proposition": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "Further, the authors of Ref. [@Valderrama:2015] previously argued, on the basis of the wave function anomalous dimension, that the contact operator contributing to the magnetic moment should have a power counting that places it roughly between N2LO and NLO, consistent with the enhancement observed here and in Refs. [@Gnech:2022vwr; @Martin:2023dhl]; however, such an effect could also be due to the implementation of cutoffs that are too soft, causing an uncontrolled sensitivity to the short-range physics [@Hammer:2019poc].",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-vmc-magnetic-moments-of-a3-7-nuclei.md",
-   "section_title": "VMC magnetic moments of A=3-7 nuclei",
-   "pages": "6-9",
+   "statement": "In Ref. [@King:2020wmp], a similar behavior was observed for axial transition densities in a study of Gamow-Teller $\\beta$-decay matrix elements.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-012-scaled-two-body-magnetic-densities.md (p. 11-12)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-012-scaled-two-body-magnetic-densities.md",
+   "section_title": "Scaled two-body magnetic densities",
+   "pages": "11-12",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Further, the authors of Ref. [@Valderrama:2015] previously argued, on the basis of the wave function anomalous dimension, that the contact operator contributing to the magnetic moment should have a power counting that places it roughly between N2LO and NLO, consistent with the enhancement observed here and in Refs. [@Gnech:2022vwr; @Martin:2023dhl]; however, such an effect could also be due to the implementation of cutoffs that are too soft, causing an uncontrolled sensitivity to the short-range physics [@Hammer:2019poc].",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-010-vmc-magnetic-moments-of-a8-10-nuclei.md",
-   "section_title": "VMC magnetic moments of A=8-10 nuclei",
-   "pages": "9-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Should advancements in electron scattering on radioisotopes progress enough to measure these form factors, they would also provide interesting cases to better understand two-body currents.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-018-lithium-8-and-boron-8.md",
-   "section_title": "Lithium-8 and Boron-8",
-   "pages": "17-17",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Tay- lor, CODATA recommended values of the fundamental physical constants: 2018*, Rev.",
-   "strength": null,
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-025-references.md",
-   "section_title": "References",
-   "pages": "25-29",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-012-scaled-two-body-magnetic-densities.md (p. 11-12)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-012-01",
+   "block_iri": "library/arxiv-2407.04744v2/blocks/prop-sec-012-01",
+   "claim_id": "arxiv-2407.04744v2#prop-sec-012-01"
   }
  ]
 }

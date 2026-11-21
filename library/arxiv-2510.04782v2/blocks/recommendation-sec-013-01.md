@@ -1,1 +1,0 @@
-For $\alpha\geqslant 1$, we must equip the legs of the pullback in [\[con:TwistedqHodgeFiltrationpAdic\]](#con:TwistedqHodgeFiltrationpAdic){reference-type="ref" reference="con:TwistedqHodgeFiltrationpAdic"} with the structure of symmetric monoidal transformations.

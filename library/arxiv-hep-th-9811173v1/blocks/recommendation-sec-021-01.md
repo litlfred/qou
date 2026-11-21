@@ -1,1 +1,0 @@
-The rationale for the underlinings in ([\[iq\]](#iq){reference-type="ref" reference="iq"}) should now be clear: it was these 10 imaginary-quadratic fields that had been distinguished by the Feynman orthoschemes of Table 22, which initiated our studies.

@@ -12,9 +12,11 @@ $\mathfrak{d}\mathfrak{d}$ crossing shifts the quantum dilogarithm by
 $\Delta\Phi = \Phi(\mathfrak{u}\mathfrak{d}\mathfrak{d}) - \Phi(\mathfrak{u}\mathfrak{u}\mathfrak{d})$.
 
 The ground-state configurations are $\mathfrak{u}\mathfrak{u}\mathfrak{d}$
-(proton, $\Phi_{\mathfrak{p}} = -0.8785$) and
-$\mathfrak{u}\mathfrak{d}\mathfrak{d}$ (neutron, $\Phi_{\mathfrak{n}} = -1.2261$).
-This yields $|\Delta\Phi| = 0.3476$.
+(proton) and $\mathfrak{u}\mathfrak{d}\mathfrak{d}$ (neutron). Each $\Phi$ is
+the traced volume, with each strand paired with every later strand, evaluated at
+the canonical Markov parameter $z_D = q^3/(q^2+1)$ at $q_0$:
+$\Phi_{\mathfrak{p}} \approx -0.614886$ and $\Phi_{\mathfrak{n}} \approx -0.896395$.
+This yields $|\Delta\Phi| \approx 0.281509$.
 
 At the quark level, a more negative $\Phi$ implies greater confinement energy
 (rather than reduced binding, as occurs at the nuclear level). The
@@ -22,31 +24,24 @@ $\mathfrak{d}\mathfrak{d}$ crossing ($\sigma^{-1}$) generates more
 confinement than the $\mathfrak{u}\mathfrak{u}$ crossing ($\sigma$). This
 excess makes the neutron heavier.
 
-The scale $\alpha = m_e \times 8G$ governing nuclear binding also dictates
-the quark-level confinement splitting:
+By $(\mathrm{H}_\alpha)$, the splitting is
 
 $$
-  \Delta m = 3.7445 \times 0.3476 \approx 1.302 \;\mathrm{MeV}.
+  \Delta m \approx 3.7445 \times 0.281509 \approx 1.0541 \;\mathrm{MeV}.
 $$
 
-This prediction compares to the CODATA value $\Delta m = 1.2934$ MeV,
-an error of $0.63\%$. $\square$
+$(\mathrm{H}_\alpha)$ is an assumption of this block; no derivation of it is on record. The corpus's derived hadronic scale $E_0 = m_e/(q(q-1))$, applied linearly to the restricted trace of the $\gamma\gamma$ nucleon, gives a different value.
 
-> **Scope: the stated agreement is not currently reproducible.**
-> Re-deriving the two $\Phi$ values from the crossing rules stated above,
-> convention C with the suffix-inclusive $\Phi_1$ reproduces
-> $\Phi_{\mathfrak{p}} = -0.8785233$ against the $-0.8785$ quoted above, the
-> only one of eight readings that lands. The same reading gives
-> $\Phi_{\mathfrak{n}} = -1.2677888$, not the $-1.2261$ quoted. Because the
-> reading is pinned by the proton, this is not reading ambiguity.
->
-> | source | $\lvert\Delta\Phi\rvert$ | $\Delta m$ (MeV) | vs CODATA |
-> |:---|:---|:---|:---|
-> | as stated above | $0.3476$ | $1.3016$ | $+0.63\%$ |
-> | re-derived, convention C | $0.3892655$ | $1.4576$ | $+12.7\%$ |
-> | re-derived, convention D | $0.3354835$ | $1.2562$ | $-2.87\%$ |
->
-> The derivation above is in convention C; under the canonical convention D
-> ($z = q^3/(q^2 + 1)$) the same construction gives $-2.87\%$. Eight readings
-> were tried, which is not an exhaustive exclusion, and no replacement value is
-> proposed. The $+0.63\%$ figure should not be cited as a confirmed prediction.
+$\square$
+
+**Comparison with measurement.** The CODATA value is
+$m_{\mathfrak{n}} - m_{\mathfrak{p}} \approx 1.2933$ MeV, so the model value is
+about $18.5\%$ below it.
+
+> **Earlier values (historical comparison only).** The previous version of
+> this proof quoted $\Phi_{\mathfrak{p}} = -0.8785$, $\Phi_{\mathfrak{n}} = -1.2261$
+> and $1.302$ MeV ($+0.63\%$). Those values use the retired convention-C
+> parameter $z = 4993/10000$ with the all-pairs strand pairing, which reproduces
+> both of them. Pairing adjacent strands only reproduces the proton value but not
+> the neutron value; under convention D that reading gives $-2.87\%$. The
+> all-pairs reading is the one stated above.

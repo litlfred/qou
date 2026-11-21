@@ -1,0 +1,1 @@
+The linear map induced by sλ 7→Qλ from the ring of symmetric functions to the skein of the annulus C is a ring homomorphism. Acknowledgements The results are part of my PhD thesis. I thank my super- visor Prof. Hugh Morton for his guidance and help. The thesis was funded by the DAAD by a HSP-III-grant.

@@ -1,7 +1,7 @@
 ### Proof (Markov axiom + Hecke skein)
 
 For a positive interface generator $\sigma_g$, the **Markov axiom**
-([`thm:jones-markov-trace`](#thm:jones-markov-trace)) gives
+([Existence and non-degeneracy of the Markov trace (Jones, 1987)](#thm:jones-markov-trace)) gives
 $$
   \mathrm{tr}_M(\alpha \cdot \sigma_g) \;=\; z \cdot \mathrm{tr}_M(\alpha)
   \qquad \forall\, \alpha \in H_{n}(q).
@@ -14,16 +14,53 @@ $$
   \;=\; \mathrm{tr}_M(\alpha \cdot \sigma_g) - h \cdot \mathrm{tr}_M(\alpha)
   \;=\; (z - h) \cdot \mathrm{tr}_M(\alpha).
 $$
-Iterating over the $p_+(K) + p_-(K)$ interface generators of
-$\bowtie_K$ — each one is "topmost" relative to the constituent
-sub-braid below it — and applying the appropriate factor per sign
-yields the boxed identity ($\star$).
+These two identities apply when the interface generator is the last
+letter. In $\mathcal{B}_K$ an interface generator sits *between* two
+blocks, so the iteration needs a block-multiplicativity lemma.
+
+**Lemma (block multiplicativity).** Let $x \in H_{k+1}(q)$, let
+$y \in H_m(q)$, and let $\mathrm{sh}_{k+1}(y)$ be $y$ with every
+$\sigma_i$ replaced by $\sigma_{i+k+1}$. Then
+$$
+  \mathrm{tr}_M\bigl(x\,\mathrm{sh}_{k+1}(y)\bigr) = \mathrm{tr}_M(x)\,\mathrm{tr}_M(y),
+  \qquad
+  \mathrm{tr}_M\bigl(x\,\sigma_k\,\mathrm{sh}_{k+1}(y)\bigr) = z\,\mathrm{tr}_M(x)\,\mathrm{tr}_M(y).
+$$
+
+*Proof.* Put $a = x$ or $a = x\sigma_k$; in both cases $a$ lies in
+$H_{k+2}(q)$. Consider the linear map $y \mapsto \mathrm{tr}_M(a\,\mathrm{sh}_{k+1}(y))$.
+For $m = 1$ it gives $\mathrm{tr}_M(a)$. For $m \ge 2$, write a basis
+element of $H_m(q)$ as $T_u\,\sigma_{m-1}\,T_v$ with $u, v \in S_{m-1}$, or
+as $T_u$ with $u \in S_{m-1}$. In the first case $\mathrm{sh}(T_v)\,a\,\mathrm{sh}(T_u)$ lies in
+$H_{m+k}(q)$, so cyclicity, the Markov property for the top generator
+$\sigma_{m+k}$, and cyclicity again give
+$$
+  \mathrm{tr}_M\bigl(a\,\mathrm{sh}(T_u)\,\sigma_{m+k}\,\mathrm{sh}(T_v)\bigr)
+  = z\,\mathrm{tr}_M\bigl(\mathrm{sh}(T_v)\,a\,\mathrm{sh}(T_u)\bigr)
+  = z\,\mathrm{tr}_M\bigl(a\,\mathrm{sh}(T_u T_v)\bigr).
+$$
+In the second case $\mathrm{sh}(T_u)$ lies in $H_{m+k}(q)$ and the trace
+restricts. This is the same recursion that computes $\mathrm{tr}_M(y)$ from
+$\mathrm{tr}_M(1) = 1$, so the map equals $\mathrm{tr}_M(a)\,\mathrm{tr}_M(y)$.
+The Markov property gives $\mathrm{tr}_M(x\sigma_k) = z\,\mathrm{tr}_M(x)$. $\square$
+
+Now write $\mathcal{B}_K = b_1\,\varepsilon_1\,b_2\,\varepsilon_2 \cdots
+\varepsilon_{A-1}\,b_A$, where $b_i$ is the word of the $i$-th nucleon on
+its own block of strands and $\varepsilon_i = \sigma_{g_i}^{\pm 1}$ joins
+blocks $i$ and $i+1$; the vacuum braid is $b_1 b_2 \cdots b_A$. Applying
+the lemma $A - 1$ times, with $\sigma^{-1} = \sigma - h$ for the negative
+connectors, gives $\mathrm{tr}_M(\mathcal{B}_K) = z^{p_+}(z-h)^{p_-}
+\prod_i \mathrm{tr}_M(b_i)$, and $\mathrm{tr}_M(\mathcal{B}_K^{\mathrm{vac}})
+= \prod_i \mathrm{tr}_M(b_i)$. Dividing yields the boxed identity
+($\star$). An exact check over $\mathbb{Q}$ at $q = 2$ (three blocks on
+nine strands, one positive and one negative connector) reproduces
+$z(z-h)$.
 
 ### Averaged (bar-invariant) p-n interface
 
 The same single Markov input fixes a **third** interface factor. The
 canonical p-n boundary (`closed_form_tau_M.canonical_interface_kinds`,
-`prop:averaging-resonance-rule`) carries no preferred chirality, so it is
+the averaging-resonance rule) carries no preferred chirality, so it is
 the **bar-invariant** ($q \leftrightarrow q^{-1}$ symmetric) crossing
 $$
   \sigma_{\mathrm{bar}} \;:=\; \tfrac{1}{2}\bigl(\sigma_g + \sigma_g^{-1}\bigr)
@@ -41,9 +78,8 @@ Thus **all three** per-interface factors — $z$ (positive), $z-h$
 trace-linearity from the *single* Markov axiom $\mathrm{tr}_M(\alpha\sigma_g) =
 z\,\mathrm{tr}_M(\alpha)$ plus the skein $\sigma_g^{-1}=\sigma_g-h$; none is an
 independent input or a fit. The division-free form
-$\mathrm{tr}_M(\alpha(\sigma_g+\sigma_g^{-1})) = (2z-h)\,\mathrm{tr}_M(\alpha)$ is
-formalised over a generic commutative ring as
-`interface_knot_markov_z_bar_symmetric` (the $\tfrac12$ normalisation is
+$\mathrm{tr}_M(\alpha(\sigma_g+\sigma_g^{-1})) = (2z-h)\,\mathrm{tr}_M(\alpha)$ holds
+over any commutative ring (the $\tfrac12$ normalisation is
 deferred to the archimedean realisation, per the base-ring convention).
 
 ### The three factors are one bar-orbit
@@ -83,7 +119,7 @@ $$
 $$
 
 with $\delta$ the substrate flavour split of
-[`prop:flavor-split-substrate`](#prop:flavor-split-substrate). A like-flavour
+[Substrate-pure derivation of the $u$--$d$ flavor split](#prop:flavor-split-substrate). A like-flavour
 bond has no mean to tilt — averaging $f_{pp}$ with itself returns $f_{pp}$ for
 any weights summing to one — which is why the weighting is defined at the p-n
 interface and nowhere else.
@@ -120,7 +156,7 @@ The colour weighting uses $\varepsilon = \delta/4$, and
 $\overline{\delta} = -q^{2}\delta$, so it misses bar-oddness by exactly a factor
 of $q^{2}$ and nothing else. That factor localises: in the factored form
 $\delta \sim \hbar_q^{2}\, h_q\, [2]_q$ of
-[`prop:flavor-split-substrate`](#prop:flavor-split-substrate), the Hecke
+[Substrate-pure derivation of the $u$--$d$ flavor split](#prop:flavor-split-substrate), the Hecke
 crossing $h_q$ is already bar-odd and the doublet integer $[2]_q$ is bar-even,
 so the **entire** obstruction is the $\hbar_q^{2}$ prefactor — the two quanta of
 substrate Planck action.
@@ -135,14 +171,11 @@ by order $8 \times 10^{-6}$ in $f_{pn}$.
 leaves a whole bar-even function $E$ free, so it does not by itself determine
 the weighting; selecting $E$ requires re-deriving the colour weighting from the
 colour-tube geometry, and no particular $E$ is asserted here. All of the above
-is checked exactly in
-[`pn_interface_bar_structure_probe.py`](../../../computations/probes/pn_interface_bar_structure_probe.py)
+is checked in exact arithmetic
 (17 assertions), and the four identities that are field-theoretic rather than
 substrate-specific — $\overline{z} = z - h$, the bar-symmetriser form, the bar
 defect $-(\overline{\varepsilon} + \varepsilon)h$, and the bar-even-iff-offset-bar-odd
-equivalence — are formalised over an arbitrary characteristic-zero field in
-[`QOU/MassTheory/PnInterfaceBarStructure.lean`](../lean/QOU/MassTheory/PnInterfaceBarStructure.lean),
-using only the axioms `propext`, `Classical.choice` and `Quot.sound`.
+equivalence — are proved over an arbitrary characteristic-zero field.
 
 ### Full-trace verification at convention D (4 atoms)
 
@@ -166,7 +199,7 @@ $0.12568415$, again equal to the predicted product to $\le 5\times10^{-50}$ (and
 likewise for the colour-blind $\sigma_g - h/2$). The identity ($\star$) therefore holds
 at convention D on every word tested, at the $10^{-50}$ floor of the arithmetic.
 
-Per-atom interface census (from `atom_braid_word_3A`):
+Per-atom interface census (from the canonical atom braid word):
 
 - **D**: $p \cdot \sigma_3 \cdot n$ — 1 positive (p-n).
 - **T**: $p \cdot \sigma_3 \cdot n \cdot \sigma_6^{-1} \cdot n$ — 1 positive (p-n) + 1 negative (n-n).
@@ -208,7 +241,7 @@ $$
   \quad\text{at }q_0.
 $$
 This is the content of
-`conj:constit-factor-2q-minus-1`, whose $0.033\%$ agreement was measured at the
+the conjectured constituent factor $2q - 1$, whose $0.033\%$ agreement was measured at the
 excised convention-C weight on the earlier grouped intra-nucleon word.
 
 **The step does not survive at convention D.** The constituent product is

@@ -16,7 +16,7 @@ Per [`mass-endomorphism-conjecture.md` §"Established results"]:
 - **Step 1 (proved, `prop:categorical-mass-markov`).** The single-level
   categorical mass is the descended Markov trace `|tr_M(ρ(β))|`
   (Nakayama `S² = id`).
-- **Step 2 (proved, `prop:topological-mass-formula`).** The full brane tower
+- **Step 2 (proved, `conj:topological-mass-formula`).** The full brane tower
   sums to `Vol(K_β)/ℏ_q²`.
 - **Step 3 (OPEN — the Volume Conjecture).** The Jones–Markov trace
   `tr_M(ρ(β)) = J(K;q)` (a Laurent polynomial) and the hyperbolic volume
@@ -63,7 +63,7 @@ is genuinely *modulo the Volume Conjecture*.
 > deterministic recipe `Braid n → MassEndomorphism R β`. `VolumeBridge`
 > remains the instance-free carrier for the open Volume-Conjecture bridge.
 
--- Ref: [manuscript] conj:mass-endomorphism §"Established results" (Steps 1–3)
+-- Ref: [leitner2026] conj:mass-endomorphism §"Established results" (Steps 1–3)
 -- Ref: [kashaev1997] https://doi.org/10.1007/BF01238857
 -- Ref: [murakami-murakami2001] https://doi.org/10.1007/BF02392716
 LaTeX label: `conj:mass-endomorphism`
@@ -83,7 +83,7 @@ namespace QOU.MassEndomorphism
       transient tower closes the Jones→Volume gap.
 
     Carries no instance: this is an honest open primary (§3b-tax). -/
--- Ref: [manuscript] conj:mass-endomorphism §"Step 3" (the open bridge)
+-- Ref: [leitner2026] conj:mass-endomorphism §"Step 3" (the open bridge)
 class VolumeBridge (R : Type*) [CommRing R] (β : Type*) where
   /-- Descended Markov trace `|tr_M(ρ(β))|` (Step 1, proved). -/
   descTrace : R
@@ -102,7 +102,7 @@ variable (R : Type*) [CommRing R] (β : Type*) [VolumeBridge R β]
 /-- **The transient identity** of `conj:mass-endomorphism`, derived from the
     bridge:
     `tr_M(Φ^trans) = Vol(K_β)/ℏ_q² − |tr_M(ρ(β))|`. -/
--- Ref: [manuscript] conj:mass-endomorphism §"Statement"
+-- Ref: [leitner2026] conj:mass-endomorphism §"Statement"
 theorem transient_identity :
     transient (R := R) β = volTerm (R := R) β - descTrace (R := R) β := by
   have h := archimedean_bridge (R := R) (β := β)
@@ -110,7 +110,7 @@ theorem transient_identity :
 
 /-- **Full categorical mass = volume term** (Step 2), derived from the bridge:
     the descended trace plus the transient tower equals `Vol(K_β)/ℏ_q²`. -/
--- Ref: [manuscript] conj:mass-endomorphism §"Established results", Step 2
+-- Ref: [leitner2026] conj:mass-endomorphism §"Established results", Step 2
 theorem fullMass_eq_volTerm :
     descTrace (R := R) β + transient (R := R) β = volTerm (R := R) β :=
   (archimedean_bridge (R := R) (β := β)).symm

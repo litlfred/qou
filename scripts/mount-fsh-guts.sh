@@ -9,9 +9,11 @@
 # Order of preference:
 #   1. The platform's `state:mount` (folio-assistant/). It keeps the per-worktree
 #      marker that `state:push` needs, so only a mount made this way can be
-#      written back. If the platform clone is absent, this script installs it
-#      first with scripts/setup-folio-assistant.sh (measured 2026-11-15: about
-#      1-2 min, 1.8 GB at pin 82b389982).
+#      written back. If the platform is absent, this script installs the
+#      light subset with scripts/mount-platform-lite.sh (measured 2026-11-15:
+#      about 20 s, 165 MB at pin 82b389982). The full
+#      scripts/setup-folio-assistant.sh (1.7 GB) is only for validate,
+#      qa-sweep and rendering; run it by hand when you need those.
 #   2. fsh-guts only: a READ-ONLY `git archive` copy when (1) fails.
 #      beans/ gets NO read-only fallback (owner, 2026-11-15: install the
 #      platform at start instead). If the beans mount fails, this script says
@@ -23,9 +25,11 @@ cd "$ROOT" || exit 0
 
 if command -v bun >/dev/null 2>&1; then
   if [ ! -d folio-assistant/cat-harness-tools/scripts ]; then
-    echo "mount-fsh-guts: platform clone absent; running setup-folio-assistant.sh"
-    timeout 900 ./scripts/setup-folio-assistant.sh >"${TMPDIR:-/tmp}/qou-setup-folio-assistant.log" 2>&1 \
-      || echo "mount-fsh-guts: platform setup failed (log: ${TMPDIR:-/tmp}/qou-setup-folio-assistant.log)" >&2
+    # Light install (about 20 s, 165 MB), not the full setup (1.7 GB, which
+    # timed out or filled the disk in two sessions on 2026-11-15).
+    echo "mount-fsh-guts: platform absent; running mount-platform-lite.sh"
+    timeout 600 ./scripts/mount-platform-lite.sh >"${TMPDIR:-/tmp}/qou-mount-platform-lite.log" 2>&1 \
+      || echo "mount-fsh-guts: light platform install failed (log: ${TMPDIR:-/tmp}/qou-mount-platform-lite.log)" >&2
   fi
   if [ -d folio-assistant/cat-harness-tools/scripts ]; then
     bun folio-assistant/cat-harness-tools/scripts/state-mount.ts
@@ -52,6 +56,6 @@ readonly_copy cat/cat-harness/fsh-guts fsh-guts
 if [ -z "$(ls -A beans/defs 2>/dev/null)" ]; then
   echo "mount-fsh-guts: beans/ is NOT mounted (platform setup or state:mount failed)." >&2
   echo "mount-fsh-guts: the bean work-plan is UNAVAILABLE in this session; an empty \`beans list\` must not be believed." >&2
-  echo "mount-fsh-guts: fix: ./scripts/setup-folio-assistant.sh && bun folio-assistant/cat-harness-tools/scripts/state-mount.ts" >&2
+  echo "mount-fsh-guts: fix: ./scripts/mount-platform-lite.sh && bun folio-assistant/cat-harness-tools/scripts/state-mount.ts" >&2
 fi
 exit 0

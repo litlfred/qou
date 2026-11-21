@@ -15,9 +15,9 @@ proof.
 
 ## References
 
-- `[manuscript]` `conj:aeon-boundary-generates-chart`
-- `[manuscript]` `def:cmb-functor`
-- `[manuscript]` `def:torsion-knot-flow`
+- `[leitner2026]` `conj:aeon-boundary-generates-chart`
+- `[leitner2026]` `def:cmb-functor`
+- `[leitner2026]` `def:torsion-knot-flow`
 -/
 
 namespace QOU.AeonBoundary

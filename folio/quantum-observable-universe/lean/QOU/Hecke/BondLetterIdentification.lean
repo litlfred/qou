@@ -114,7 +114,7 @@ is **not** a statement about the production `pn` interface.
    `qou-0fmb` is the bridge.
 
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
--- Ref: [manuscript] beans qou-qqm4, qou-0fmb; prop:interface-knot-markov-z.
+-- Ref: [leitner2026] beans qou-qqm4, qou-0fmb; prop:interface-knot-markov-z.
 -/
 
 namespace QOU.Hecke.BondLetterIdentification

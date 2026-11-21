@@ -52,7 +52,7 @@ def tr_M(perm, n):
 
 ## Correctness
 
-**Termination.** Each invocation of the recursive `tr_M` call either:
+**Termination.** Each invocation of the recursive $\mathrm{tr}_M$ call either:
 (i) truncates the ambient algebra ($n \to \text{max\_gen} + 2$ where $\text{max\_gen} + 2 < n$), strictly decreasing the integer $n$; or
 (ii) peels one $\sigma_{n-2}$ from the word and recurses on basis elements $w'$ with $\ell(w') \leq \ell(\text{rotated}) = \ell(w) - 1$, strictly decreasing the Coxeter length.
 
@@ -67,13 +67,16 @@ By induction on $(n, \ell)$, the output equals $\mathrm{tr}_M(\beta)$ in $\mathb
 
 ## Disjoint-product property
 
-For $\alpha \in H_k$ on strands $\{1, \ldots, k\}$ and $\beta \in H_{n-k-1}$ on strands $\{k+2, \ldots, n\}$ (no $\sigma_{k+1}$ appears in $\beta$), the words commute. We have $\alpha \beta = \beta \alpha$, and the Markov axiom plus cyclicity gives:
+For $\alpha \in H_k$ on strands $\{1, \ldots, k\}$ and $\beta \in H_{n-k-1}$ on strands $\{k+2, \ldots, n\}$ (no $\sigma_{k+1}$ appears in $\beta$), the words commute. One has $\alpha \beta = \beta \alpha$, and the Markov axiom plus cyclicity gives:
 $$
   \mathrm{tr}_M(\alpha \beta) \;=\; \mathrm{tr}_M(\alpha) \cdot \mathrm{tr}_M(\beta)
 $$
 by induction on $\ell(\beta)$. The recursive algorithm realises this property automatically. The peeling phase strips $\beta$'s top generators $\sigma_{n-2}, \sigma_{n-3}, \ldots, \sigma_{k+2}$ in order. This contributes factors of $z$ that exactly match the standalone $\mathrm{tr}_M(\beta)$ computed in its own algebra $H_{n-k-1}$.
 
 ## Which axioms the disjoint product actually needs
+
+**Scope of the right-induction step.** Right-induction yields $z^{\ell(\beta)}$ directly only when every generator in $\beta$ occurs with multiplicity one; for general words containing repeated generators (such as $\sigma_1^2$, where $\mathrm{tr}_M(\sigma_1^2) = hz + 1 \neq z^2$), the disjoint-product reduction alternates right-peeling with the quadratic Hecke relation $\sigma_i^2 = h\sigma_i + 1$.
+
 
 The argument above is stated in terms of the Markov axiom and cyclicity, but it
 uses two further properties silently, and both are named in the correctness
@@ -88,14 +91,16 @@ The product law fails at $k = 0$, $n = 2$, $\alpha = \beta = 1$, where the left
 side is $4$ and the right is $2^0 \cdot 2^1 = 2$. So a trace that grows with the
 ambient index alone is not excluded by stripping and rearrangement.
 
-With normalisation and stability added, the product law is a **consequence**
-rather than a further axiom: stability makes the value independent of the
-ambient index, stripping then peels one generator for a factor of $z$, and
-induction from the right gives $z^{\ell(\beta)}$ on both sides. The separating
-slot $\sigma_{k+1}$ plays no role in that argument, and the generator indices of
-$\beta$ must be non-negative for the peel to apply — a word on the upper cluster
-satisfies this, which is what the support condition $\{k+2, \ldots, n\}$ above
-amounts to in the index encoding.
+Normalisation and stability are therefore part of the axiom set, but they are
+not enough either: if stripping, stability and cyclicity are quantified over
+every word, they force $\mathrm{tr}_M(\beta) = z^{\ell(\beta)}$, which
+contradicts $\mathrm{tr}_M(\sigma_1^2) = hz + 1$. The axiom set
+therefore restricts stripping, stability and cyclicity to words of $H_n$ and adds
+the Hecke quadratic, braid and far-commutation relations. From these axioms it
+proves $\mathrm{tr}_M(\sigma_n^2) = hz + 1$ and the product law when $\beta$ is
+an ascending run $\sigma_{k+1}\cdots\sigma_{k+m}$. The general product law
+requires reducing $\beta$ to a Hecke normal form. That reduction is Ocneanu's
+uniqueness argument, and it is not formalised.
 
 ## Empirical verification
 

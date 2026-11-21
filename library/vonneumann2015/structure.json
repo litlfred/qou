@@ -1,0 +1,3013 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "vonneumann2015",
+ "source": {
+  "file": "vonNeumann2015.pdf",
+  "sha256": "781c6912b7d7b9a425d1e03fbaca251dd9a8ef229db280b040ca60ad57369886",
+  "bytes": 882198,
+  "pages": 161,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-18T18:23:09Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Von Neumann Algebras",
+  "authors_raw": "November 13, 2015",
+  "title_lines": [
+   "Von Neumann Algebras",
+   "Vaughan F.R. Jones 1"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.13",
+   "Creator": "TeX",
+   "CreationDate": "D:20151113100743-06'00'"
+  },
+  "title_raw": "Von Neumann Algebras. Vaughan F.R. Jones 1",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Von Neumann Algebras",
+   "text": "Von Neumann Algebras. Vaughan F.R. Jones 1",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Hilbert Space",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "The Spectral Theorem",
+   "page": 8,
+   "source": "inferred",
+   "number": "2.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Polar decomposition",
+   "page": 10,
+   "source": "inferred",
+   "number": "2.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Tensor product of Hilbert Spaces.",
+   "page": 10,
+   "source": "inferred",
+   "number": "2.4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "The bicommutant theorem.",
+   "page": 12,
+   "source": "inferred",
+   "number": "3.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "M is strongly closed.",
+   "page": 12,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "M is weakly closed.",
+   "page": 12,
+   "source": "inferred",
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Examples.",
+   "page": 13,
+   "source": "inferred",
+   "number": "3.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Elementary properties of von Neumann algebras.",
+   "page": 19,
+   "source": "inferred",
+   "number": "3.4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "De\ufb01nition of type I factor.",
+   "page": 25,
+   "source": "inferred",
+   "number": "4.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Classi\ufb01cation of all type I factors",
+   "page": 26,
+   "source": "inferred",
+   "number": "4.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Tensor product of von Neumann algebras.",
+   "page": 27,
+   "source": "inferred",
+   "number": "4.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Multiplicity and \ufb01nite dimensional von Neumann algebras.",
+   "page": 27,
+   "source": "inferred",
+   "number": "4.4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "A digression on index.",
+   "page": 29,
+   "source": "inferred",
+   "number": "4.5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Some simple but telling results on linear functionals.",
+   "page": 31,
+   "source": "inferred",
+   "number": "5.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The theorem",
+   "page": 32,
+   "source": "inferred",
+   "number": "5.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Order on projections",
+   "page": 35,
+   "source": "inferred",
+   "number": "6.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The GNS construction",
+   "page": 40,
+   "source": "inferred",
+   "number": "6.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Normal states.",
+   "page": 43,
+   "source": "inferred",
+   "number": "7.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Isomorphisms are spatial.",
+   "page": 46,
+   "source": "inferred",
+   "number": "7.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Exercises on two projections.",
+   "page": 47,
+   "source": "inferred",
+   "number": "7.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "0 ) and q corresponding to",
+   "page": 47,
+   "source": "inferred",
+   "number": "0",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Trace class and Hilbert Schmidt operators.",
+   "page": 49,
+   "source": "inferred",
+   "number": "8.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "A technical lemma.",
+   "page": 54,
+   "source": "inferred",
+   "number": "8.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Standard form.",
+   "page": 55,
+   "source": "inferred",
+   "number": "9.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Group actions.",
+   "page": 69,
+   "source": "inferred",
+   "number": "11.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The crossed product",
+   "page": 71,
+   "source": "inferred",
+   "number": "11.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The type of the crossed product.",
+   "page": 76,
+   "source": "inferred",
+   "number": "11.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "A wrinkle: 2-cohomology.",
+   "page": 79,
+   "source": "inferred",
+   "number": "11.4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "More on the group-measure space construc-",
+   "page": 81,
+   "source": "inferred",
+   "number": "11.5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The normaliser-the full group.",
+   "page": 83,
+   "source": "inferred",
+   "number": "11.6",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Unbounded Operators",
+   "page": 85,
+   "source": "inferred",
+   "number": "12.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "(R) (in\ufb01nitely di\ufb00erentiable functions with compact support), Sf = f \u2032. Show that S is preclosed.",
+   "page": 86,
+   "source": "inferred",
+   "number": "0",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "T \u2217is closed.",
+   "page": 87,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "D(T \u2217) is dense i\ufb00T is preclosed. In that case T = T \u2217\u2217.",
+   "page": 87,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Spectral Theory for Unbounded Operators",
+   "page": 88,
+   "source": "inferred",
+   "number": "12.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Polar Decomposition",
+   "page": 88,
+   "source": "inferred",
+   "number": "12.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Unbounded operators a\ufb03liated with a von Neumann algebra.",
+   "page": 90,
+   "source": "inferred",
+   "number": "12.4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "The projection onto \u0393(T) is a 2 \u00d7 2 matrix of operators in M.",
+   "page": 91,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "If T = u|T| is the polar decomposition of T then u \u2208M and f(|T|) \u2208M for any bounded Borel function of |T|.",
+   "page": 91,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "S,F and their graphs.",
+   "page": 94,
+   "source": "inferred",
+   "number": "13.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Proof of the main theorem.",
+   "page": 96,
+   "source": "inferred",
+   "number": "13.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Examples.",
+   "page": 98,
+   "source": "inferred",
+   "number": "13.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The KMS condition.",
+   "page": 102,
+   "source": "inferred",
+   "number": "13.4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The Connes unitary cocycle Radon-Nikodym theorem.",
+   "page": 105,
+   "source": "inferred",
+   "number": "14.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The hyper\ufb01nite type II1 factor R",
+   "page": 109,
+   "source": "inferred",
+   "number": "15.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The type III case.",
+   "page": 112,
+   "source": "inferred",
+   "number": "15.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Generalities.",
+   "page": 113,
+   "source": "inferred",
+   "number": "16.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Central sequences in R",
+   "page": 113,
+   "source": "inferred",
+   "number": "16.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Type II1 factors without property \u0393.",
+   "page": 114,
+   "source": "inferred",
+   "number": "16.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The Fock spaces.",
+   "page": 120,
+   "source": "inferred",
+   "number": "18.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 3,
+   "title": "Full Fock space",
+   "page": 120,
+   "source": "inferred",
+   "number": "18.1.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 3,
+   "title": "Fermionic Fock space.",
+   "page": 121,
+   "source": "inferred",
+   "number": "18.1.6",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "CAR algebra, CCR algebra and the (extended) Cuntz algebra.",
+   "page": 122,
+   "source": "inferred",
+   "number": "18.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 3,
+   "title": "CAR algebra",
+   "page": 122,
+   "source": "inferred",
+   "number": "18.2.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Vacuum expectation value",
+   "page": 124,
+   "source": "inferred",
+   "number": "18.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Quasi-free states",
+   "page": 125,
+   "source": "inferred",
+   "number": "18.4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Complex structure",
+   "page": 126,
+   "source": "inferred",
+   "number": "18.5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 3,
+   "title": "CCR algebra",
+   "page": 128,
+   "source": "inferred",
+   "number": "18.5.10",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 3,
+   "title": "Cuntz algebra",
+   "page": 128,
+   "source": "inferred",
+   "number": "18.5.11",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "E(Trace(w)) exists and is equal to the Voiculescu trace of the same word viewed as an element of C\u27e8X1, X2, \u00b7 \u00b7 \u00b7 Xn\u27e9.",
+   "page": 138,
+   "source": "inferred",
+   "number": "N",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Warmup. Finite Groups.",
+   "page": 139,
+   "source": "inferred",
+   "number": "19.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Index.",
+   "page": 141,
+   "source": "inferred",
+   "number": "19.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The tower of type II1 factors and the ei\u2019s.",
+   "page": 146,
+   "source": "inferred",
+   "number": "19.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Index restrictions",
+   "page": 147,
+   "source": "inferred",
+   "number": "19.4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Finite dimensions",
+   "page": 149,
+   "source": "inferred",
+   "number": "19.5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Appendix A",
+   "page": 155,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.55,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Appendix B",
+   "page": 157,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.55,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Then the modular group \u03c3\u03c6",
+   "page": 157,
+   "source": "inferred",
+   "number": "M",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Bibliography",
+   "page": 161,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.55,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": null
+  }
+ ],
+ "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 51,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 52,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 53,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 54,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 55,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 56,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 57,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 58,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 59,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 60,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 61,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 62,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 63,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 64,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 65,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 66,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 67,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 68,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 69,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 70,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 71,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 72,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 73,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 74,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 75,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 76,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 77,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 78,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 79,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 80,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 81,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 82,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 83,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 84,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 85,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 86,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 87,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 88,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 89,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 90,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 91,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 92,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 93,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 94,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 95,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 96,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 97,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 98,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 99,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 100,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 101,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 102,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 103,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 104,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 105,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 106,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 107,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 108,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 109,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 110,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 111,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 112,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 113,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 114,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 115,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 116,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 117,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 118,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 119,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 120,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 121,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 122,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 123,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 124,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 125,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 126,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 127,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 128,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 129,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 130,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 131,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 132,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 133,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 134,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 135,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 136,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 137,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 138,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 139,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 140,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 141,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 142,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 143,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 144,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 145,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 146,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 147,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 148,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 149,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 150,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 151,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 152,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 153,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 154,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 155,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 156,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 157,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 158,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 159,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 160,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 161,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 1125,
+   "n_words": 185,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-21-hilbert-space",
+   "number": "2.1",
+   "title": "Hilbert Space",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 5736,
+   "n_words": 1161,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-22-the-spectral-theorem",
+   "number": "2.2",
+   "title": "The Spectral Theorem",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 3934,
+   "n_words": 718,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-23-polar-decomposition",
+   "number": "2.3",
+   "title": "Polar decomposition",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 368,
+   "n_words": 67,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-24-tensor-product-of-hilbert-spaces",
+   "number": "2.4",
+   "title": "Tensor product of Hilbert Spaces.",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 2085,
+   "n_words": 409,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-32-the-bicommutant-theorem",
+   "number": "3.2",
+   "title": "The bicommutant theorem.",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 2007,
+   "n_words": 425,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-2-m-is-strongly-closed",
+   "number": "2",
+   "title": "M is strongly closed.",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 238,
+   "n_words": 40,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-33-examples",
+   "number": "3.3",
+   "title": "Examples.",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 19,
+   "n_chars": 12206,
+   "n_words": 2351,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-34-elementary-properties-of-von-neumann-algebras",
+   "number": "3.4",
+   "title": "Elementary properties of von Neumann algebras.",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 25,
+   "n_chars": 9946,
+   "n_words": 2027,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-41-de\ufb01nition-of-type-i-factor",
+   "number": "4.1",
+   "title": "De\ufb01nition of type I factor.",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 1819,
+   "n_words": 374,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-42-classi\ufb01cation-of-all-type-i-factors",
+   "number": "4.2",
+   "title": "Classi\ufb01cation of all type I factors",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 2388,
+   "n_words": 474,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-010-43-tensor-product-of-von-neumann-algebras",
+   "number": "4.3",
+   "title": "Tensor product of von Neumann algebras.",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 829,
+   "n_words": 175,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-011-44-multiplicity-and-\ufb01nite-dimensional-von-neuman",
+   "number": "4.4",
+   "title": "Multiplicity and \ufb01nite dimensional von Neumann algebras.",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 29,
+   "n_chars": 3841,
+   "n_words": 749,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-012-45-a-digression-on-index",
+   "number": "4.5",
+   "title": "A digression on index.",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 494,
+   "n_words": 110,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-013-51-some-simple-but-telling-results-on-linear-fun",
+   "number": "5.1",
+   "title": "Some simple but telling results on linear functionals.",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 1982,
+   "n_words": 377,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-014-52-the-theorem",
+   "number": "5.2",
+   "title": "The theorem",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 35,
+   "n_chars": 2777,
+   "n_words": 621,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-015-61-order-on-projections",
+   "number": "6.1",
+   "title": "Order on projections",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 40,
+   "n_chars": 10153,
+   "n_words": 1991,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-016-62-the-gns-construction",
+   "number": "6.2",
+   "title": "The GNS construction",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 43,
+   "n_chars": 5584,
+   "n_words": 1069,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-017-71-normal-states",
+   "number": "7.1",
+   "title": "Normal states.",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 46,
+   "n_chars": 6092,
+   "n_words": 1205,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-018-72-isomorphisms-are-spatial",
+   "number": "7.2",
+   "title": "Isomorphisms are spatial.",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 47,
+   "n_chars": 1621,
+   "n_words": 339,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-019-73-exercises-on-two-projections",
+   "number": "7.3",
+   "title": "Exercises on two projections.",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 47,
+   "n_chars": 1143,
+   "n_words": 233,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-020-0-0-and-q-corresponding-to",
+   "number": "0",
+   "title": "0 ) and q corresponding to",
+   "level": 1,
+   "page_start": 47,
+   "page_end": 49,
+   "n_chars": 1554,
+   "n_words": 300,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-021-81-trace-class-and-hilbert-schmidt-operators",
+   "number": "8.1",
+   "title": "Trace class and Hilbert Schmidt operators.",
+   "level": 2,
+   "page_start": 49,
+   "page_end": 54,
+   "n_chars": 6863,
+   "n_words": 1347,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-022-82-a-technical-lemma",
+   "number": "8.2",
+   "title": "A technical lemma.",
+   "level": 2,
+   "page_start": 54,
+   "page_end": 55,
+   "n_chars": 1176,
+   "n_words": 229,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-023-91-standard-form",
+   "number": "9.1",
+   "title": "Standard form.",
+   "level": 2,
+   "page_start": 55,
+   "page_end": 69,
+   "n_chars": 22061,
+   "n_words": 4284,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-024-111-group-actions",
+   "number": "11.1",
+   "title": "Group actions.",
+   "level": 2,
+   "page_start": 69,
+   "page_end": 71,
+   "n_chars": 4075,
+   "n_words": 798,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-025-112-the-crossed-product",
+   "number": "11.2",
+   "title": "The crossed product",
+   "level": 2,
+   "page_start": 71,
+   "page_end": 76,
+   "n_chars": 10692,
+   "n_words": 2105,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-026-113-the-type-of-the-crossed-product",
+   "number": "11.3",
+   "title": "The type of the crossed product.",
+   "level": 2,
+   "page_start": 76,
+   "page_end": 79,
+   "n_chars": 6899,
+   "n_words": 1339,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-027-114-a-wrinkle-2-cohomology",
+   "number": "11.4",
+   "title": "A wrinkle: 2-cohomology.",
+   "level": 2,
+   "page_start": 79,
+   "page_end": 81,
+   "n_chars": 2692,
+   "n_words": 481,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-028-115-more-on-the-group-measure-space-construc",
+   "number": "11.5",
+   "title": "More on the group-measure space construc-",
+   "level": 2,
+   "page_start": 81,
+   "page_end": 83,
+   "n_chars": 4617,
+   "n_words": 830,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-029-116-the-normaliser-the-full-group",
+   "number": "11.6",
+   "title": "The normaliser-the full group.",
+   "level": 2,
+   "page_start": 83,
+   "page_end": 85,
+   "n_chars": 2593,
+   "n_words": 512,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-030-121-unbounded-operators",
+   "number": "12.1",
+   "title": "Unbounded Operators",
+   "level": 2,
+   "page_start": 85,
+   "page_end": 86,
+   "n_chars": 2203,
+   "n_words": 414,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-031-0-r-in\ufb01nitely-di\ufb00erentiable-functions-with-compa",
+   "number": "0",
+   "title": "(R) (in\ufb01nitely di\ufb00erentiable functions with compact support), Sf = f \u2032. Show that S is preclosed.",
+   "level": 1,
+   "page_start": 86,
+   "page_end": 87,
+   "n_chars": 1051,
+   "n_words": 221,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-032-1-t-is-closed",
+   "number": "1",
+   "title": "T \u2217is closed.",
+   "level": 1,
+   "page_start": 87,
+   "page_end": 87,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-033-2-dt-is-dense-i\ufb00t-is-preclosed-in-that-case-t-t",
+   "number": "2",
+   "title": "D(T \u2217) is dense i\ufb00T is preclosed. In that case T = T \u2217\u2217.",
+   "level": 1,
+   "page_start": 87,
+   "page_end": 88,
+   "n_chars": 824,
+   "n_words": 193,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-034-122-spectral-theory-for-unbounded-operators",
+   "number": "12.2",
+   "title": "Spectral Theory for Unbounded Operators",
+   "level": 2,
+   "page_start": 88,
+   "page_end": 88,
+   "n_chars": 1402,
+   "n_words": 282,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-035-123-polar-decomposition",
+   "number": "12.3",
+   "title": "Polar Decomposition",
+   "level": 2,
+   "page_start": 88,
+   "page_end": 90,
+   "n_chars": 2825,
+   "n_words": 562,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-036-124-unbounded-operators-a\ufb03liated-with-a-von-neum",
+   "number": "12.4",
+   "title": "Unbounded operators a\ufb03liated with a von Neumann algebra.",
+   "level": 2,
+   "page_start": 90,
+   "page_end": 91,
+   "n_chars": 620,
+   "n_words": 134,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-037-1-the-projection-onto-\u03b3t-is-a-2-2-matrix-of-oper",
+   "number": "1",
+   "title": "The projection onto \u0393(T) is a 2 \u00d7 2 matrix of operators in M.",
+   "level": 1,
+   "page_start": 91,
+   "page_end": 91,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-038-2-if-t-ut-is-the-polar-decomposition-of-t-then-u",
+   "number": "2",
+   "title": "If T = u|T| is the polar decomposition of T then u \u2208M and f(|T|) \u2208M for any bounded Borel function of |T|.",
+   "level": 1,
+   "page_start": 91,
+   "page_end": 94,
+   "n_chars": 2170,
+   "n_words": 417,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-039-131-sf-and-their-graphs",
+   "number": "13.1",
+   "title": "S,F and their graphs.",
+   "level": 2,
+   "page_start": 94,
+   "page_end": 96,
+   "n_chars": 4542,
+   "n_words": 939,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-040-132-proof-of-the-main-theorem",
+   "number": "13.2",
+   "title": "Proof of the main theorem.",
+   "level": 2,
+   "page_start": 96,
+   "page_end": 98,
+   "n_chars": 2220,
+   "n_words": 443,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-041-133-examples",
+   "number": "13.3",
+   "title": "Examples.",
+   "level": 2,
+   "page_start": 98,
+   "page_end": 102,
+   "n_chars": 8602,
+   "n_words": 1634,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-042-134-the-kms-condition",
+   "number": "13.4",
+   "title": "The KMS condition.",
+   "level": 2,
+   "page_start": 102,
+   "page_end": 105,
+   "n_chars": 2930,
+   "n_words": 568,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-043-141-the-connes-unitary-cocycle-radon-nikodym-the",
+   "number": "14.1",
+   "title": "The Connes unitary cocycle Radon-Nikodym theorem.",
+   "level": 2,
+   "page_start": 105,
+   "page_end": 109,
+   "n_chars": 5878,
+   "n_words": 1186,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-044-151-the-hyper\ufb01nite-type-ii1-factor-r",
+   "number": "15.1",
+   "title": "The hyper\ufb01nite type II1 factor R",
+   "level": 2,
+   "page_start": 109,
+   "page_end": 112,
+   "n_chars": 5045,
+   "n_words": 985,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-045-152-the-type-iii-case",
+   "number": "15.2",
+   "title": "The type III case.",
+   "level": 2,
+   "page_start": 112,
+   "page_end": 113,
+   "n_chars": 958,
+   "n_words": 165,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-046-161-generalities",
+   "number": "16.1",
+   "title": "Generalities.",
+   "level": 2,
+   "page_start": 113,
+   "page_end": 113,
+   "n_chars": 1021,
+   "n_words": 204,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-047-162-central-sequences-in-r",
+   "number": "16.2",
+   "title": "Central sequences in R",
+   "level": 2,
+   "page_start": 113,
+   "page_end": 114,
+   "n_chars": 832,
+   "n_words": 157,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-048-163-type-ii1-factors-without-property-\u03b3",
+   "number": "16.3",
+   "title": "Type II1 factors without property \u0393.",
+   "level": 2,
+   "page_start": 114,
+   "page_end": 120,
+   "n_chars": 2990,
+   "n_words": 579,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-049-181-the-fock-spaces",
+   "number": "18.1",
+   "title": "The Fock spaces.",
+   "level": 2,
+   "page_start": 120,
+   "page_end": 120,
+   "n_chars": 16,
+   "n_words": 3,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-050-1811-full-fock-space",
+   "number": "18.1.1",
+   "title": "Full Fock space",
+   "level": 3,
+   "page_start": 120,
+   "page_end": 121,
+   "n_chars": 1692,
+   "n_words": 335,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-051-1816-fermionic-fock-space",
+   "number": "18.1.6",
+   "title": "Fermionic Fock space.",
+   "level": 3,
+   "page_start": 121,
+   "page_end": 122,
+   "n_chars": 1646,
+   "n_words": 337,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-052-1821-car-algebra",
+   "number": "18.2.1",
+   "title": "CAR algebra",
+   "level": 3,
+   "page_start": 122,
+   "page_end": 122,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-053-182-car-algebra-ccr-algebra-and-the-extended-cun",
+   "number": "18.2",
+   "title": "CAR algebra, CCR algebra and the (extended) Cuntz algebra.",
+   "level": 2,
+   "page_start": 122,
+   "page_end": 124,
+   "n_chars": 2765,
+   "n_words": 492,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-054-183-vacuum-expectation-value",
+   "number": "18.3",
+   "title": "Vacuum expectation value",
+   "level": 2,
+   "page_start": 124,
+   "page_end": 125,
+   "n_chars": 1690,
+   "n_words": 360,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-055-184-quasi-free-states",
+   "number": "18.4",
+   "title": "Quasi-free states",
+   "level": 2,
+   "page_start": 125,
+   "page_end": 126,
+   "n_chars": 3560,
+   "n_words": 700,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-056-185-complex-structure",
+   "number": "18.5",
+   "title": "Complex structure",
+   "level": 2,
+   "page_start": 126,
+   "page_end": 128,
+   "n_chars": 3000,
+   "n_words": 562,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-057-18510-ccr-algebra",
+   "number": "18.5.10",
+   "title": "CCR algebra",
+   "level": 3,
+   "page_start": 128,
+   "page_end": 128,
+   "n_chars": 11,
+   "n_words": 2,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-058-18511-cuntz-algebra",
+   "number": "18.5.11",
+   "title": "Cuntz algebra",
+   "level": 3,
+   "page_start": 128,
+   "page_end": 138,
+   "n_chars": 15503,
+   "n_words": 3127,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-059-n-etracew-exists-and-is-equal-to-the-voiculescu",
+   "number": "N",
+   "title": "E(Trace(w)) exists and is equal to the Voiculescu trace of the same word viewed as an element of C\u27e8X1, X2, \u00b7 \u00b7 \u00b7 Xn\u27e9.",
+   "level": 1,
+   "page_start": 138,
+   "page_end": 139,
+   "n_chars": 314,
+   "n_words": 57,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-060-191-warmup-finite-groups",
+   "number": "19.1",
+   "title": "Warmup. Finite Groups.",
+   "level": 2,
+   "page_start": 139,
+   "page_end": 141,
+   "n_chars": 3521,
+   "n_words": 694,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-061-192-index",
+   "number": "19.2",
+   "title": "Index.",
+   "level": 2,
+   "page_start": 141,
+   "page_end": 146,
+   "n_chars": 8994,
+   "n_words": 1827,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-062-193-the-tower-of-type-ii1-factors-and-the-eis",
+   "number": "19.3",
+   "title": "The tower of type II1 factors and the ei\u2019s.",
+   "level": 2,
+   "page_start": 146,
+   "page_end": 147,
+   "n_chars": 1666,
+   "n_words": 318,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-063-194-index-restrictions",
+   "number": "19.4",
+   "title": "Index restrictions",
+   "level": 2,
+   "page_start": 147,
+   "page_end": 149,
+   "n_chars": 3296,
+   "n_words": 693,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-064-195-finite-dimensions",
+   "number": "19.5",
+   "title": "Finite dimensions",
+   "level": 2,
+   "page_start": 149,
+   "page_end": 155,
+   "n_chars": 9574,
+   "n_words": 1933,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-065-appendix-a",
+   "number": null,
+   "title": "Appendix A",
+   "level": 2,
+   "page_start": 155,
+   "page_end": 157,
+   "n_chars": 63,
+   "n_words": 8,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-066-appendix-b",
+   "number": null,
+   "title": "Appendix B",
+   "level": 2,
+   "page_start": 157,
+   "page_end": 157,
+   "n_chars": 100,
+   "n_words": 19,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-067-m-then-the-modular-group-\u03c3\u03c6",
+   "number": "M",
+   "title": "Then the modular group \u03c3\u03c6",
+   "level": 1,
+   "page_start": 157,
+   "page_end": 161,
+   "n_chars": 3086,
+   "n_words": 595,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-068-bibliography",
+   "number": null,
+   "title": "Bibliography",
+   "level": 2,
+   "page_start": 161,
+   "page_end": 161,
+   "n_chars": 503,
+   "n_words": 77,
+   "label_start": null,
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 12,
+  "likely_scanned": false,
+  "toc_entries": 70,
+  "toc_inferred_entries": 70,
+  "toc_inferred_mean_confidence": 0.741,
+  "toc_inferred_empty_share": 0.072,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 70,
+  "chars_total": 246703,
+  "furniture_lines_stripped": 0
+ }
+}

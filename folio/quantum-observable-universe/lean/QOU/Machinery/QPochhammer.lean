@@ -32,7 +32,8 @@ Habiro-element promotion of the Q_β residue A and m_μ closure
 -/
 
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
-import Mathlib.Algebra.GeomSum
+import Mathlib.Algebra.Order.Ring.GeomSum
+import Mathlib.Tactic.Ring
 
 open BigOperators
 
@@ -131,19 +132,58 @@ theorem qBinomial_zero [Field R] (n : ℕ) (q : R) (hq : qPochhammerDiag q n ≠
   rw [qPochhammerDiag_zero, Nat.sub_zero, one_mul]
   exact div_self hq
 
-/-! ## Conditional class for the q-Pochhammer / Habiro link
+/-! ## The q-Pochhammer / Habiro projective system and root-of-unity truncation (bean `qou-n2un`)
 
-The Habiro ring identification of the Q_β residue A (per the KLR/crystal
-infra scope) requires the q-Pochhammer module to be wired into a
-Habiro-ring structure. This is captured as a conditional class so
-downstream theorems can carry it as a hypothesis. -/
+The Habiro ring `ℤ[q]^∧ = lim_← ℤ[q]/((q;q)_n)` rests on two structural properties of the
+diagonal q-Pochhammer tower `(q;q)_n = qPochhammerDiag q n` over any commutative ring `R`:
 
-/-- Conditional class axiomatising the Habiro-ring evaluation of
-q-Pochhammer products at roots of unity. NEAR-MATCH tier — instance
-not constructed (requires upstream Habiro-ring machinery in Mathlib). -/
-class QPochhammerHabiroEvaluation [CommRing R] (q : R) : Prop where
-  /-- The finite q-Pochhammer evaluates consistently at unity-shifted
-  arguments (opaque marker for the open derivation). -/
-  habiro_evaluation : True
+1. **Divisibility tower (`qPochhammerDiag_dvd_of_le`):** for `m ≤ n`, `(q;q)_m ∣ (q;q)_n`, so
+   the principal ideals `((q;q)_n)` form a descending chain and the quotient maps
+   `R / ((q;q)_n) → R / ((q;q)_m)` are well-defined.
+2. **Root-of-unity vanishing and Habiro series truncation (`qPochhammerDiag_eq_zero_of_pow_eq_one`,
+   `habiro_series_truncates_at_root_of_unity`):** if `q ^ k = 1` for some `1 ≤ k ≤ n`, then
+   `(q;q)_n = 0`, so every Habiro series `∑_{j < N} c_j · (q;q)_j` with `N ≥ k` truncates
+   identically to its finite prefix `∑_{j < k} c_j · (q;q)_j`.
+-/
+
+/-- **Tower divisibility for `qPochhammerFinite`:** for `m ≤ n`, `(a;q)_m ∣ (a;q)_n`. -/
+theorem qPochhammerFinite_dvd_of_le [CommRing R] (a q : R) {m n : ℕ} (hmn : m ≤ n) :
+    qPochhammerFinite a q m ∣ qPochhammerFinite a q n := by
+  induction hmn with
+  | refl => exact dvd_rfl
+  | @step k _ ih =>
+    rw [qPochhammerFinite_succ]
+    exact dvd_mul_of_dvd_left ih (1 - a * q ^ k)
+
+/-- **Habiro projective-system divisibility:** for `m ≤ n`, `(q;q)_m ∣ (q;q)_n`. -/
+theorem qPochhammerDiag_dvd_of_le [CommRing R] (q : R) {m n : ℕ} (hmn : m ≤ n) :
+    qPochhammerDiag q m ∣ qPochhammerDiag q n :=
+  qPochhammerFinite_dvd_of_le q q hmn
+
+/-- **Root-of-unity vanishing:** if `q ^ k = 1` for some `1 ≤ k ≤ n`, then the
+    `(k - 1)`-th factor `1 - q * q ^ (k - 1) = 1 - q ^ k` vanishes, so `(q;q)_n = 0`. -/
+theorem qPochhammerDiag_eq_zero_of_pow_eq_one [CommRing R] (q : R) {k n : ℕ}
+    (hk1 : 1 ≤ k) (hkn : k ≤ n) (hroot : q ^ k = 1) :
+    qPochhammerDiag q n = 0 := by
+  unfold qPochhammerDiag qPochhammerFinite
+  apply Finset.prod_eq_zero (i := k - 1)
+  · exact Finset.mem_range.mpr (by omega)
+  · have hpow : q * q ^ (k - 1) = q ^ k := by
+      rw [← pow_succ', Nat.sub_add_cancel hk1]
+    rw [hpow, hroot, sub_self]
+
+/-- **Habiro series root-of-unity truncation (evaluation homomorphism):** if `q ^ k = 1`
+    for `1 ≤ k ≤ N`, then every Habiro expansion `∑_{j < N} c j * (q;q)_j` truncates
+    exactly to its degree-`< k` prefix `∑_{j < k} c j * (q;q)_j`. -/
+theorem habiro_series_truncates_at_root_of_unity [CommRing R] (q : R) (c : ℕ → R)
+    {k N : ℕ} (hk1 : 1 ≤ k) (hkN : k ≤ N) (hroot : q ^ k = 1) :
+    (∑ j ∈ Finset.range N, c j * qPochhammerDiag q j) =
+      ∑ j ∈ Finset.range k, c j * qPochhammerDiag q j := by
+  symm
+  apply Finset.sum_subset (Finset.range_mono hkN)
+  intro j hjN hjk
+  rw [Finset.mem_range] at hjN hjk
+  push_neg at hjk
+  rw [qPochhammerDiag_eq_zero_of_pow_eq_one q hk1 hjk hroot, mul_zero]
 
 end QOU.Machinery

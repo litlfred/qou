@@ -23,7 +23,7 @@ closed ball of radius `‖b 0‖ + ‖b 1‖` — the same `Int.fract`/`⌊·⌋
 `DoublyPeriodicLiouville.const_of_doublyPeriodic`, but ending in the supplied compact-domain
 bound instead of Liouville. Verified `lean`-direct against the pinned Mathlib. Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-07-25-faddeev-uniqueness-keystone-state.md
+-- Ref: [leitner2026] docs/audits/2026-07-25-faddeev-uniqueness-keystone-state.md
 -/
 
 open QOU.MathlibExt.DoublyPeriodicLiouville

@@ -1,0 +1,60 @@
+384 Combinatorial applications
+
+Structure/application Typical type of GF Examples
+
+regular languages, words, Rational, smooth 12.6, 12.10, 12.17
+
+strings
+
+lattice walks Rational, 12.26
+smooth/multiple
+
+trees Algebraic or Riordan 12.9
+
+quantum walks Rational, toral 12.11, 12.13
+
+tilings Rational, cone/nasty 11.43, 11.45, 11.47
+
+sums of independent ran- Riordan 12.34
+
+dom variables
+
+number triangles Riordan 9.10, 9.11, 9.14, 12.15,
+
+12.20, 12.24
+
+constant coefficient linear Rational, 12.22
+
+recurrences smooth/multiple
+
+partitions Infinite product 12.30
+
+Table 12.3 Guide by application area.
+
+Most of our generating functions are rational, but our asymptotic results hold
+more generally for meromorphic functions. Some examples, such as F(x, y) =
+1/(1 - e* - e”), require solving transcendental equations for critical points,
+while others, such as
+
+< 1
+F(x,y) = I] T-x yi
+i=l
+
+can be reduced to cases with polynomial denominators. We can also find asymp-
+totics of algebraic generating functions by embedding them in rational series
+of higher dimension.
+
+Classification by application
+
+Many combinatorial families gives rise to multivariate generating functions
+with the same type of behavior, which can be analyzed together, and Table 12.3
+gives a rough guide for readers seeking to quickly find a relevant application.
+Note that some problems fall into multiple areas, due to bijections between
+various combinatorial objects.
+
+Examples where our standard hypotheses fail to hold
+
+Most asymptotic expansions derived in this text hold for nondegenerate con-
+tributing points, require intersections of multiple denominator factors to be
+transverse, and occur in directions in the interior of cones where asymptotic
+behavior transitions smoothly with direction. Furthermore, the first-order terms

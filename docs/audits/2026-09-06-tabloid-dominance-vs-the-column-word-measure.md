@@ -130,7 +130,7 @@ own proof of 3.14 answers it, and reading it was one command. Recording that as 
 before the finding: the doubt was raised from a *corpus* result about a *different* step,
 and the *source* settles it directly.
 
-`library/hecke-alg/sections/sec-000-document.md`, the proof of 3.14 (OCR normalised; `D` is
+`library/hecke-alg/sections/page-027.md`, the proof of 3.14 (OCR normalised; `D` is
 `⊵`, `B` is `▷`):
 
 > First suppose that `t` is row standard but not standard. By Lemma 3.13, `m_st = m_sg T_w`

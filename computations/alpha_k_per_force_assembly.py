@@ -108,15 +108,12 @@ except Exception:
 # The muon fallback below is retained only for the no-`qou_substrate`
 # environment, and taking it is warned about and recorded.
 #
-# STILL LIVE, but now LATENT rather than active: this module imports
-# `qou_substrate.constants.q_at` directly instead of routing through
-# `q_parameter`, and it is `q_parameter` that reads the manifest and honours an
-# `ideal_muon` tag. So the tag still cannot fire here. That is harmless while
-# the tag says `physical_proton` (the direct import gives the same pin), but if
-# this producer were ever re-tagged to `ideal_muon` the tag would silently fail
-# and this code would keep using proton -- the original defect, re-armed. Any
-# such re-tag must also switch this import to `q_parameter`. Tracked in
-# qou-7vm4, which stays OPEN for that reason.
+# RESOLVED 2026-11-15 (bean qou-7vm4): this module now routes anchor selection
+# through `qou_substrate.witness.resolve_q0_anchor(__file__)`, which consults
+# `QOU_Q0_ANCHOR` and `q0_anchor_manifest.json`, dispatching `q_muon_at()` when
+# resolved to `muon` and `q_at()` when resolved to `proton`. Under the current
+# `physical_proton` tag, `Q0`, `Q0_SOURCE`, and `Q0_ANCHOR` are unchanged, and a
+# future re-tag to `ideal_muon` will take effect automatically.
 def _manifest_tag() -> str:
     """This producer's anchor group, read from `q0_anchor_manifest.json`.
 
@@ -145,10 +142,17 @@ def _manifest_tag() -> str:
 
 
 try:
-    from qou_substrate.constants import q_at
-    Q0 = str(q_at())
-    Q0_SOURCE = "qou_substrate.constants.q_at()"
-    Q0_ANCHOR = "proton"
+    from qou_substrate.constants import q_at, q_muon_at
+    from qou_substrate.witness import resolve_q0_anchor
+    _resolved_anchor, _ = resolve_q0_anchor(__file__)
+    if _resolved_anchor == "muon":
+        Q0 = str(q_muon_at(mp.mp.dps if HAVE_MP else 70))
+        Q0_SOURCE = "qou_substrate.constants.q_muon_at() [via resolve_q0_anchor]"
+        Q0_ANCHOR = "muon"
+    else:
+        Q0 = str(q_at())
+        Q0_SOURCE = "qou_substrate.constants.q_at()"
+        Q0_ANCHOR = "proton"
 except Exception as _e:  # pragma: no cover - environment-dependent
     # No fallback (bean qou-4bef, 2026-09-03): the retired muon literal this fell
     # back to changed the physics anchor silently; refuse instead.

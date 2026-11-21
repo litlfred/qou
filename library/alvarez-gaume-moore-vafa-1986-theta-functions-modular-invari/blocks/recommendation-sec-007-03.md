@@ -1,1 +1,0 @@
-From the axial anomaly we know that to order A 2 the contribution of a Weyl fermion to the vacuum functional is (in momentum space) §kϊ-' y <45) If we are computing detD fD we must add the other chirality.

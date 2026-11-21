@@ -23,11 +23,12 @@ with `q = 1 + ε`, `w_ℓ = +1` for a `σ` letter, `−1` for `σ⁻¹`, `0` for
 averaged letter, and `σ^{(ℓ)}` the permutation of the word with letter `ℓ`
 deleted. Reading the per-letter data collapses it further to
 
-    c₁(Z,N) = (21Z + 16N)·(2^{−A−1} − 2^{−2A}) − 4·(I_pp − I_nn)·2^{−2A}
+    c₁(Z,N) = (3Z − 2N)·(2^{−A−1} − 2^{−2A}) − 4·(I_pp − I_nn)·2^{−2A}
 
-where `21 = 4·6 − 3` and `16 = 4·5 − 4` are the proton / neutron letter
-census `4·#σ − #σ⁻¹`, and `I_pp = Z−1`, `I_nn = N−1` (truncated at `0`) count
-the same-species interfaces of the chain.
+where `3 = 6/2` and `−2 = −4/2` are the Borromean proton / neutron half
+deletion sums `(S_p, S_n)/2` (superseded grouped: `21 = 42/2` and `16 = 32/2`),
+and `I_pp = Z−1`, `I_nn = N−1` (truncated at `0`) count the same-species
+interfaces of the chain.
 
 ## The four steps of [★], and what is formal here
 
@@ -62,7 +63,7 @@ about the log channel, nothing about the scale (`qou-59j5`), and nothing
 past first order — the exact `c₂` values are in the witness and are NOT
 closed-form here.
 
--- Ref: [manuscript] bean qou-pdg9; computations/probes/c1_leading_coefficient_derived_probe.py
+-- Ref: [leitner2026] bean qou-pdg9; computations/probes/c1_leading_coefficient_derived_probe.py
 -/
 
 namespace QOU.MassTheory
@@ -204,62 +205,62 @@ transposition product with that letter deleted (probe, Part B). Every deleted
 in the lists as `(1, c+1)` and `(−1, c−1)` against `c_free = 2A`,
 `c_atom = A+1`, with the single `nn`-interface `σ⁻¹` the one `(−1, c+1)`. -/
 
-/-- Letter data `(w, c(σ⁽ˡ⁾))` of the pp free word, n = 6: [★] = 21/4. -/
+/-- Letter data `(w, c(σ⁽ˡ⁾))` of the pp free word, n = 6: [★] = 3/4. -/
 def letters_ppFree : List (ℤ × ℕ) := [(1, 3), (-1, 3), (1, 5), (-1, 3), (1, 3), (-1, 5), (1, 3), (1, 3), (1, 3), (1, 3), (-1, 3), (1, 5), (-1, 3), (1, 3), (-1, 5), (1, 3), (1, 3), (1, 3)]
 theorem star_ppFree : starSum 6 letters_ppFree = 3 / 4 := by
   simp only [starSum, letters_ppFree, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; norm_num
 
-/-- Letter data `(w, c(σ⁽ˡ⁾))` of the pp atom word, n = 6: [★] = 23/8. -/
+/-- Letter data `(w, c(σ⁽ˡ⁾))` of the pp atom word, n = 6: [★] = 5/8. -/
 def letters_ppAtom : List (ℤ × ℕ) := [(1, 2), (-1, 2), (1, 4), (-1, 2), (1, 2), (-1, 4), (1, 2), (1, 2), (1, 2), (1, 4), (1, 2), (-1, 2), (1, 4), (-1, 2), (1, 2), (-1, 4), (1, 2), (1, 2), (1, 2)]
 theorem star_ppAtom : starSum 6 letters_ppAtom = 5 / 8 := by
   simp only [starSum, letters_ppAtom, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; norm_num
 
-/-- Letter data `(w, c(σ⁽ˡ⁾))` of the pn free word, n = 6: [★] = 37/8. -/
+/-- Letter data `(w, c(σ⁽ˡ⁾))` of the pn free word, n = 6: [★] = 1/8. -/
 def letters_pnFree : List (ℤ × ℕ) := [(1, 3), (-1, 3), (1, 5), (-1, 3), (1, 3), (-1, 5), (1, 3), (1, 3), (1, 3), (1, 3), (-1, 3), (1, 5), (-1, 3), (1, 3), (-1, 5), (-1, 5), (1, 3), (1, 3)]
 theorem star_pnFree : starSum 6 letters_pnFree = 1 / 8 := by
   simp only [starSum, letters_pnFree, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; norm_num
 
-/-- Letter data `(w, c(σ⁽ˡ⁾))` of the pn atom word, n = 6: [★] = 37/16. -/
+/-- Letter data `(w, c(σ⁽ˡ⁾))` of the pn atom word, n = 6: [★] = 1/16. -/
 def letters_pnAtom : List (ℤ × ℕ) := [(1, 2), (-1, 2), (1, 4), (-1, 2), (1, 2), (-1, 4), (1, 2), (1, 2), (1, 2), (1, 2), (-1, 2), (1, 4), (-1, 2), (1, 2), (-1, 4), (-1, 4), (1, 2), (1, 2)]
 theorem star_pnAtom : starSum 6 letters_pnAtom = 1 / 16 := by
   simp only [starSum, letters_pnAtom, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; norm_num
 
-/-- Letter data `(w, c(σ⁽ˡ⁾))` of the nn free word, n = 6: [★] = 4. -/
+/-- Letter data `(w, c(σ⁽ˡ⁾))` of the nn free word, n = 6: [★] = -1/2. -/
 def letters_nnFree : List (ℤ × ℕ) := [(1, 3), (-1, 3), (1, 5), (-1, 3), (1, 3), (-1, 5), (-1, 5), (1, 3), (1, 3), (1, 3), (-1, 3), (1, 5), (-1, 3), (1, 3), (-1, 5), (-1, 5), (1, 3), (1, 3)]
 theorem star_nnFree : starSum 6 letters_nnFree = -1 / 2 := by
   simp only [starSum, letters_nnFree, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; norm_num
 
-/-- Letter data `(w, c(σ⁽ˡ⁾))` of the nn atom word, n = 6: [★] = 7/4. -/
+/-- Letter data `(w, c(σ⁽ˡ⁾))` of the nn atom word, n = 6: [★] = -1/2. -/
 def letters_nnAtom : List (ℤ × ℕ) := [(1, 2), (-1, 2), (1, 4), (-1, 2), (1, 2), (-1, 4), (-1, 4), (1, 2), (1, 2), (-1, 4), (1, 2), (-1, 2), (1, 4), (-1, 2), (1, 2), (-1, 4), (-1, 4), (1, 2), (1, 2)]
 theorem star_nnAtom : starSum 6 letters_nnAtom = -1 / 2 := by
   simp only [starSum, letters_nnAtom, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; norm_num
 
-/-- Letter data `(w, c(σ⁽ˡ⁾))` of the T free word, n = 9: [★] = 53/16. -/
+/-- Letter data `(w, c(σ⁽ˡ⁾))` of the T free word, n = 9: [★] = -1/16. -/
 def letters_TFree : List (ℤ × ℕ) := [(1, 5), (-1, 5), (1, 7), (-1, 5), (1, 5), (-1, 7), (1, 5), (1, 5), (1, 5), (1, 5), (-1, 5), (1, 7), (-1, 5), (1, 5), (-1, 7), (-1, 7), (1, 5), (1, 5), (1, 5), (-1, 5), (1, 7), (-1, 5), (1, 5), (-1, 7), (-1, 7), (1, 5), (1, 5)]
 theorem star_TFree : starSum 9 letters_TFree = -1 / 16 := by
   simp only [starSum, letters_TFree, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; norm_num
 
-/-- Letter data `(w, c(σ⁽ˡ⁾))` of the T atom word, n = 9: [★] = 49/64. -/
+/-- Letter data `(w, c(σ⁽ˡ⁾))` of the T atom word, n = 9: [★] = -5/64. -/
 def letters_TAtom : List (ℤ × ℕ) := [(1, 3), (-1, 3), (1, 5), (-1, 3), (1, 3), (-1, 5), (1, 3), (1, 3), (1, 3), (1, 3), (-1, 3), (1, 5), (-1, 3), (1, 3), (-1, 5), (-1, 5), (1, 3), (1, 3), (-1, 5), (1, 3), (-1, 3), (1, 5), (-1, 3), (1, 3), (-1, 5), (-1, 5), (1, 3), (1, 3)]
 theorem star_TAtom : starSum 9 letters_TAtom = -5 / 64 := by
   simp only [starSum, letters_TAtom, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; norm_num
 
-/-- Letter data `(w, c(σ⁽ˡ⁾))` of the 3He free word, n = 9: [★] = 29/8. -/
+/-- Letter data `(w, c(σ⁽ˡ⁾))` of the 3He free word, n = 9: [★] = 1/4. -/
 def letters_He3Free : List (ℤ × ℕ) := [(1, 5), (-1, 5), (1, 7), (-1, 5), (1, 5), (-1, 7), (1, 5), (1, 5), (1, 5), (1, 5), (-1, 5), (1, 7), (-1, 5), (1, 5), (-1, 7), (1, 5), (1, 5), (1, 5), (1, 5), (-1, 5), (1, 7), (-1, 5), (1, 5), (-1, 7), (-1, 7), (1, 5), (1, 5)]
 theorem star_He3Free : starSum 9 letters_He3Free = 1 / 4 := by
   simp only [starSum, letters_He3Free, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; norm_num
 
-/-- Letter data `(w, c(σ⁽ˡ⁾))` of the 3He atom word, n = 9: [★] = 31/32. -/
+/-- Letter data `(w, c(σ⁽ˡ⁾))` of the 3He atom word, n = 9: [★] = 1/8. -/
 def letters_He3Atom : List (ℤ × ℕ) := [(1, 3), (-1, 3), (1, 5), (-1, 3), (1, 3), (-1, 5), (1, 3), (1, 3), (1, 3), (1, 5), (1, 3), (-1, 3), (1, 5), (-1, 3), (1, 3), (-1, 5), (1, 3), (1, 3), (1, 3), (1, 3), (-1, 3), (1, 5), (-1, 3), (1, 3), (-1, 5), (-1, 5), (1, 3), (1, 3)]
 theorem star_He3Atom : starSum 9 letters_He3Atom = 1 / 8 := by
   simp only [starSum, letters_He3Atom, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; norm_num
 
-/-- Letter data `(w, c(σ⁽ˡ⁾))` of the 4He free word, n = 12: [★] = 37/16. -/
+/-- Letter data `(w, c(σ⁽ˡ⁾))` of the 4He free word, n = 12: [★] = 1/16. -/
 def letters_He4Free : List (ℤ × ℕ) := [(1, 7), (-1, 7), (1, 9), (-1, 7), (1, 7), (-1, 9), (1, 7), (1, 7), (1, 7), (1, 7), (-1, 7), (1, 9), (-1, 7), (1, 7), (-1, 9), (1, 7), (1, 7), (1, 7), (1, 7), (-1, 7), (1, 9), (-1, 7), (1, 7), (-1, 9), (-1, 9), (1, 7), (1, 7), (1, 7), (-1, 7), (1, 9), (-1, 7), (1, 7), (-1, 9), (-1, 9), (1, 7), (1, 7)]
 theorem star_He4Free : starSum 12 letters_He4Free = 1 / 16 := by
   simp only [starSum, letters_He4Free, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; norm_num
 
-/-- Letter data `(w, c(σ⁽ˡ⁾))` of the 4He atom word, n = 12: [★] = 37/128. -/
+/-- Letter data `(w, c(σ⁽ˡ⁾))` of the 4He atom word, n = 12: [★] = 1/128. -/
 def letters_He4Atom : List (ℤ × ℕ) := [(1, 4), (-1, 4), (1, 6), (-1, 4), (1, 4), (-1, 6), (1, 4), (1, 4), (1, 4), (1, 6), (1, 4), (-1, 4), (1, 6), (-1, 4), (1, 4), (-1, 6), (1, 4), (1, 4), (1, 4), (1, 4), (-1, 4), (1, 6), (-1, 4), (1, 4), (-1, 6), (-1, 6), (1, 4), (1, 4), (-1, 6), (1, 4), (-1, 4), (1, 6), (-1, 4), (1, 4), (-1, 6), (-1, 6), (1, 4), (1, 4)]
 theorem star_He4Atom : starSum 12 letters_He4Atom = 1 / 128 := by
   simp only [starSum, letters_He4Atom, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; norm_num

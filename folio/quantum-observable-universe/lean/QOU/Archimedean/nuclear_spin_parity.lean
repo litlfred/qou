@@ -22,7 +22,7 @@ The Lean encoding records the parity claim via the predicate
 "twice the spin `2J` is an integer of the same parity as `A`".  This
 side-steps the half-integer issue by working with `2J : ℕ`.
 
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/nuclear-spin-parity.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/nuclear-spin-parity.md
 -/
 
 namespace QOU.Archimedean
@@ -46,7 +46,7 @@ class NucleusLike where
     `2J` has the same parity as the mass number `A = Z + N`.  In
     particular, `2J` is even ⟺ `A` is even, which corresponds to
     `J ∈ ℤ` ⟺ `A` even (and `J ∈ ℤ + 1/2` ⟺ `A` odd). -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/nuclear-spin-parity.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/nuclear-spin-parity.md
 theorem nuclear_spin_parity [n : NucleusLike] :
     n.twoJ % 2 = (n.Z + n.N) % 2 := by
   refine n.claim_spin_parity

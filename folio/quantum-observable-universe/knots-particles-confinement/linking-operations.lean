@@ -9,14 +9,14 @@ LaTeX label: `def:linking-operations`
 
 ## References
 
-- [manuscript] §11/knot-particle-generation
+- [leitner2026] §11/knot-particle-generation
 -/
 
 namespace QOU.Torsion
 
 /-- The two geometric linking operations acting on the exceptional
     divisor and the color-tube fibration. -/
--- Ref: [manuscript] §11/knot-particle-generation
+-- Ref: [leitner2026] §11/knot-particle-generation
 inductive LinkingOperation
   /-- Hopf linking on the exceptional divisor. -/
   | hopfLinking

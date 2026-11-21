@@ -1,1 +1,0 @@
-Instead, following the mean line of these notes, we shall concentrate on intrinsic relation between (multiscaling) continuum limits and integrability: the notion of continuum limits is in fact built into the theory of integrable hierarchies and the underlying representation theory of Kac-Moody algebras.

@@ -16,7 +16,7 @@ The Lean encoding records the uniqueness as a `∀ G', QuantumFlat G' →
 G' ≅ INN(G_q)` claim against an abstract `EmergenceContext` carrying
 the relevant categorical data.
 
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/emergence-to-quantum-flat.md
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/emergence-to-quantum-flat.md
 -/
 
 namespace QOU
@@ -46,7 +46,7 @@ class EmergenceToQuantumFlatContext where
     Any strict 2-group `G'` satisfying the quantum-flatness condition
     `F_A = B` (under the simplicity constraint `F_A⁻ = 0`) is
     isomorphic to `INN(G_q)`. -/
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/emergence-to-quantum-flat.md
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/emergence-to-quantum-flat.md
 theorem emergence_to_quantum_flat
     [ctx : EmergenceToQuantumFlatContext]
     (G' : Type) (h : ctx.QuantumFlat G') :

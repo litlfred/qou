@@ -1,0 +1,1 @@
+There is an equivalence of abelian categories Dmod(g)G ≃ ⊥ M (L,E) Dmod (z(l))WG,L , where the (ﬁnite) sum is indexed by cuspidal data (L, E) in the sense of Lusztig [Lus84].1 Here, L is a Levi subgroup of G, z(l) denotes the center of l = Lie(L) and WG,L = NG(L)/L is the relative Weyl group.

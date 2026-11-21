@@ -76,7 +76,7 @@ theorem trace_generator (i : Generator n) :
 
 /-- Pair-of-generators trace formula:
     tr_M(σ_i · σ_j) = z²  for i < j
-[manuscript] `prop:markov-pair-z2` — direct two-step Markov peel. -/
+[leitner2026] `prop:markov-pair-z2` — direct two-step Markov peel. -/
 theorem trace_pair (i j : Generator n) (h : i.idx.val < j.idx.val) :
     MT.trace (HA.embed i * HA.embed j) = MT.z_param * MT.z_param := by
   -- Ref: [prop:markov-pair-z2]; follows from trace_prod_gen field.

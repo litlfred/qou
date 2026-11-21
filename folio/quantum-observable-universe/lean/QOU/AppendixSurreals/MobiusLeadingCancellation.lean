@@ -22,7 +22,7 @@
 
   Audit: docs/audits/2026-07-19-jets-alien-qmobius-bring-interaction.md §3.3.
 
-  -- Ref: [manuscript] appendix-surreals, rem:mobius-surreal-renormalization
+  -- Ref: [leitner2026] appendix-surreals, rem:mobius-surreal-renormalization
 -/
 
 import Mathlib.Algebra.Module.Submodule.Basic

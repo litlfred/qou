@@ -20,7 +20,7 @@ import Mathlib.Tactic
 
 *holds, with cohomology class in `H²(M, 𝓞_M^×)`.*
 
--- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/descent-cocycle-deviation.md
+-- Ref: [leitner2026] quantum-observable-universe/lifting-and-descent/descent-cocycle-deviation.md
 -/
 
 namespace QOU.LiftingDescent
@@ -53,7 +53,7 @@ class DescentCocycleContext where
     ([`lem:descent-cocycle-deviation`]).
 
     `g_{ijk}^{(n+1)} = a_{ij} · a_{jk} · a_{ik}⁻¹ · g_{ijk}^{(n)}`. -/
--- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/descent-cocycle-deviation.md
+-- Ref: [leitner2026] quantum-observable-universe/lifting-and-descent/descent-cocycle-deviation.md
 theorem descent_cocycle_deviation
     [ctx : DescentCocycleContext] (n i j k : ℕ) :
     ctx.g_cocycle (n + 1) i j k
@@ -64,7 +64,7 @@ theorem descent_cocycle_deviation
 
 /-- **Twisted Čech 2-cocycle equation** (corollary of the deviation
     formula). -/
--- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/descent-cocycle-deviation.md
+-- Ref: [leitner2026] quantum-observable-universe/lifting-and-descent/descent-cocycle-deviation.md
 theorem twisted_cech_cocycle_equation
     [ctx : DescentCocycleContext] (n i j k : ℕ) :
     ctx.d_cocycle n i j k

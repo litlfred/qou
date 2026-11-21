@@ -1,1 +1,0 @@
-This is the dual story to what we analyzed here, since it involves an $S$-duality transformation of the string coupling constant, and it should make contact with the NS limit of the topological string.

@@ -18,4 +18,7 @@ export default remark({
     "precision-frontier",
     "appendix",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): See-also entry: - [`m_p_substrate_identity_50dps.py`](../../../computations/m_p_substrate_identity_50dps.py)\n  — production-grade compute script (50-dps MPFR)" },
+  ],
 });

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/blocks/lem-sec-100-05",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 314,
+  "pageEnd": 323,
+  "text": "lem-sec-100-05.md",
+  "derivedFrom": "library/arxiv-1610.09640v4/sections/sec-100",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "14.5.6",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/sec-100-145-tilting-bimodule-complexes-over-rings.md (p. 314-323) citing [130, Proposition 2.5.24]",
+    "claim_id": "arxiv-1610.09640v4#lemma:14.5.6",
+    "lean_status": "unformalized"
+  }
+}

@@ -1,0 +1,1 @@
+Similarly as in Remark 4.4, Proposition 4.6 can naturally be ex- tended to the case where the holomorphic function .z/ depends on N, if .z/ uniformly converges to 0.z/ as N ! 1, and 0.z/ satisﬁes the assumption of the proposition, and j‰.z/j is bounded by a constant which is independent of N. Similarly as in Remark 4.4, we can also choose " independently of N in this case.

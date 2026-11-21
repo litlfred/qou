@@ -1,0 +1,47 @@
+B.2 Tools for homology 473
+
+The homology of a union
+Instead of decomposing a space X using a subspace and the corresponding
+quotient space, we can instead represent X as a union X = A U B for subspaces
+A,B c X such that X = int(A) U int(B) and describe the homology of X in
+terms of the homologies of A, B, and A B. In particular, there is a short
+exact sequence of chain complexes defined by the short exact sequence in each
+dimension,
+
+0 = C,(A NB) > C,(A) ® Cy(B) > C,(A) + Cu(B) > 0,
+
+where p(a) = (—a, a) and s(a, b) = a+b, with C,(A)+C,(B) © C,(X) denoting
+a sum inside the space of chains on X. The corresponding long exact sequence
+is known as the Mayer—Vietoris sequence.
+
+Theorem B.14 (Mayer-Vietoris sequence). Let A,B C X be such that X is
+the union of the interiors of A and B. Then the inclusion of the chain complex
+C,(A) + C,(B) © C,(X) induces an isomorphism in homology. It follows that
+there is a long exact homology sequence
+
++++ — H,(AN B) > H(A) ® A, (B) > Hy(X) > Hye(ANB) >.
+Proof See [Hat02, Proposition 2.21] or [Mun84, Theorem 33.1]. oO
+
+Exercise B.6. Use the Mayer—Vietoris sequence to re-compute the homology
+of S” by decomposing it as the union of two hemispheres, expanded a little so
+their interiors cover S”. How does the result of this computation relate to a geo-
+metric understanding of two balls glued along their boundary? Try visualizing
+in dimensions one and two for greatest intuition.
+
+Attachments and the homology of a product
+
+Relative homology is useful for our asymptotic computations because it allows
+us to “ignore” points that are asymptotically negligible. In practice, to study
+complex integrals whose domains of integration are allowed to vary in some set
+M we describe M by attaching different spaces together as needed. In essence,
+we express M on-the-fly as a cell complex until we have enough information
+to perform the necessary asymptotic computations (much more information on
+this approach is given in the next appendix on Morse theory). This section, our
+final on the basics of homology, describes product complexes, attachments,
+and products of pairs.
+
+Let C’ and C” be chain complexes with boundary maps 0’ and 0”. The
+tensor product complex (or simply product complex) of C’ and C” is the chain
+complex C = C’ @C” whose n-chains C,, are defined by the direct sum C,, =
+
+hao C,,® C”,, where a basis for the tensor product C, ® C’”, is given by

@@ -65,12 +65,14 @@ from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from tr_m_wenzl_bridge_mpfr import (  # noqa: E402
     _build_seminormal_matrices_mpf, _chi_lambda_of_word_mpf,
 )
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
+from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
 
 T0 = time.time()
 
 AME_B_MEV = {
-    "deuteron": "2.224566", "tritium": "8.481821",
-    "helium-3": "7.718043", "helium-4": "28.295673",
+    "deuteron": _ame_nstr(AME_B_DEUTERON_MEV_VALIDATION, 30), "tritium": _ame_nstr(AME_B_TRITIUM_MEV_VALIDATION, 30),
+    "helium-3": _ame_nstr(AME_B_HE3_MEV_VALIDATION, 30), "helium-4": _ame_nstr(AME_B_HE4_MEV_VALIDATION, 30),
 }
 ATOMS = {"deuteron": (1, 1), "tritium": (1, 2),
          "helium-3": (2, 1), "helium-4": (2, 2)}

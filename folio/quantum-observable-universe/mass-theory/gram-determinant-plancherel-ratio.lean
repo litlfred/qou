@@ -16,11 +16,11 @@ where `c_λ^(•) = χ_λ(β_•)` are the central-idempotent character
 coefficients of the genus-4 torus knots `T_{2,9}` (strong) and
 `T_{3,5}` (weak).
 
-LaTeX label: `prop:gram-determinant-plancherel-ratio`
+LaTeX label: `conj:gram-determinant-plancherel-ratio`
 
 ## References
 
-- [manuscript] §5/gram-determinant-plancherel-ratio
+- [leitner2026] §5/gram-determinant-plancherel-ratio
 - [jones1987] https://doi.org/10.2307/1971403 — Jones polynomial of torus knots
 -/
 
@@ -82,7 +82,7 @@ noncomputable def gramKappa (n : ℕ)
     not flag this, and that part is correct as stated: its nearest criterion,
     `proof-no-unused-hypothesis-rfl`, needs an UNUSED binder, and every binder
     here is consumed by `gramKappa n q_factorial n_factorial cs cw`. -/
--- Ref: [manuscript] §5/gram-determinant-plancherel-ratio
+-- Ref: [leitner2026] §5/gram-determinant-plancherel-ratio
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
@@ -123,44 +123,58 @@ theorem gram_determinant_plancherel_ratio
 -- data is within 0.001 of 1.722. That statement is FALSIFIABLE — it constrains the
 -- product — and it is not proved here, so it carries `sorry` per §1a disposition 2
 -- ("state the REAL proposition with `sorry` + a `-- Ref:` citation").
+--
+-- 2026-11-20: that restatement was itself FALSE (its predicate is a universally
+-- quantified parameter, so `fun _ _ => True` is a legal instance). It is replaced by
+-- `gram_kappa_numerical_value_refuted` below, which proves the negation.
 
-/-- **Numerical value of `κ` at the substrate** (open — stated, not proved).
+/-- **The proposition formerly queued here behind `sorry` is FALSE (2026-11-20).**
 
-    For the genus-4 torus pair `T_{2,9}` (strong) and `T_{3,5}` (weak) at the
-    substrate `q₀ ≈ 1.1097`, the Plancherel-weighted product is `≈ 1.722`.
+    Until 2026-11-20 this file carried
 
-    The torus-pair data enters through `cs`, `cw` and the factorials.
-    `CharacterDecomposition` is a formal placeholder over arbitrary
-    `chi` / `dim_classical` / `dim_quantum`, so nothing in this file pins the
-    knots — which is why the torus-pair condition is carried as an ABSTRACT
-    PREDICATE parameter `IsTorusPairAtQ0` rather than as a construction.
+    ```
+    theorem gram_kappa_numerical_value
+        (n : ℕ) (q_factorial n_factorial : ℝ)
+        (cs cw : CharacterDecomposition n)
+        (IsTorusPairAtQ0 : CharacterDecomposition n → CharacterDecomposition n → Prop)
+        (h_torus_pair : IsTorusPairAtQ0 cs cw)
+        : |gramKappa n q_factorial n_factorial cs cw - 1.722| < 0.001
+    ```
 
-    **Why not a `True` placeholder.** The first draft of this replacement wrote
-    the condition as `(h_torus_pair : True)`. That is not a weak hypothesis, it
-    is NO hypothesis: `True` is supplied by `trivial`, so the statement it
-    guards is logically `∀ cs cw, |gramKappa … − 1.722| < 0.001`, which is
-    FALSE for generic character data (the product is unconstrained). Queuing a
-    false proposition behind `sorry` is a worse defect than the provable axiom
-    this replaced — the axiom was redundant, a false `sorry` is a trap for
-    whoever tries to discharge it. Caught by reading the statement, not by any
-    detector; the `true-class-field` pattern of `proof-claims-unencoded` covers
-    class FIELDS typed `True`, not theorem HYPOTHESES typed `True`, so nothing
-    in the audit would have flagged it. Recorded as a second blind spot.
+    with its proof left as a placeholder.
 
-    **What is open.** Nothing in this file constructs `IsTorusPairAtQ0`, so this
-    theorem has no instance and no consumer. Supplying that predicate — a
-    torus-knot character construction for `T_{2,9}` and `T_{3,5}` over the
-    `CharacterDecomposition` placeholder — IS the open work, and it is upstream
-    of discharging the `sorry`, not downstream of it. Unlike the superseded
-    axiom, the conclusion here constrains `gramKappa`. -/
--- Ref: [manuscript] §5/gram-determinant-plancherel-ratio
--- Ref: [jones1987] https://doi.org/10.2307/1971403 — Jones polynomial of torus knots
-theorem gram_kappa_numerical_value
-    (n : ℕ) (q_factorial n_factorial : ℝ)
-    (cs cw : CharacterDecomposition n)
-    (IsTorusPairAtQ0 : CharacterDecomposition n → CharacterDecomposition n → Prop)
-    (h_torus_pair : IsTorusPairAtQ0 cs cw)
-    : |gramKappa n q_factorial n_factorial cs cw - 1.722| < 0.001 := by
-  sorry
+    Its docstring rejected an earlier draft because a `(h : True)` hypothesis makes
+    the statement universally quantified over the character data, hence false. The
+    abstract-predicate version has the same defect one level up: the predicate is
+    itself a universally quantified PARAMETER, so a caller may pass
+    `fun _ _ => True`, and the statement is again the universal closure. This
+    theorem proves its negation: empty character data give `gramKappa = 1`
+    (empty product), and `|1 − 1.722| = 0.722`. So the `sorry` could never be
+    discharged. It is removed and this refutation stands in its place.
+
+    **Where 1.722 actually comes from.** It is the CS Gram-determinant ratio
+    `det G_cl / det G_q` (`def:cs-gram-determinant-ratio`), evaluated at the
+    proton pin by `meson_em_sinh_closed_form._alpha_em_inv_derived`:
+    `κ_gram(q₀) = 1.7216142017088`
+    (`computations/probes/alpha_em_two_term_q0_pull_probe.py`, 70 dps). That number
+    does not use `gramKappa` at all. The conjectured identification of the two
+    objects is not well-typed as written (the torus knots live in `H₂` and `H₃`,
+    the exponents are not integers, `T_{3,5}` is not central — see
+    `docs/audits/2026-11-15-sidecar-review-mass-theory/route-other.md` row 16),
+    so no `sorry` is queued for it: a well-typed statement has to be designed
+    first. Bean `qou-wkgp`. -/
+theorem gram_kappa_numerical_value_refuted :
+    ¬ (∀ (n : ℕ) (q_factorial n_factorial : ℝ) (cs cw : CharacterDecomposition n)
+        (IsTorusPairAtQ0 : CharacterDecomposition n → CharacterDecomposition n → Prop),
+        IsTorusPairAtQ0 cs cw →
+        |gramKappa n q_factorial n_factorial cs cw - 1.722| < 0.001) := by
+  intro h
+  have h1 := h 0 1 1 ⟨∅, fun _ => 0, fun _ => 0, fun _ => 0⟩
+    ⟨∅, fun _ => 0, fun _ => 0, fun _ => 0⟩ (fun _ _ => True) trivial
+  have h2 : gramKappa 0 1 1 ⟨∅, fun _ => 0, fun _ => 0, fun _ => 0⟩
+      ⟨∅, fun _ => 0, fun _ => 0, fun _ => 0⟩ = 1 := by
+    simp [gramKappa]
+  rw [h2, abs_lt] at h1
+  norm_num at h1
 
 end QOU.Archimedean

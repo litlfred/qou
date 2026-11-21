@@ -27,9 +27,10 @@ export default definition({
   uses: [
     "conj:schwinger-measure-computational-time",
     "prop:horizon-conformal-invariance",
-    "prop:boltzmann-constant",
+    "def:boltzmann-constant",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The archimedean Lean shell writes $c$ for the same scalar;" },
     {
       kind: "status",
       date: "2026-07-25",

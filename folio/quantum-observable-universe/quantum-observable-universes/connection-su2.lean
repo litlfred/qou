@@ -17,7 +17,7 @@ LaTeX label: `ex:connection-su2`
 ## References
 
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
-- [manuscript] §1 Example: Connection on O(SU(2))
+- [leitner2026] §1 Example: Connection on O(SU(2))
 -/
 
 namespace QOU.Examples
@@ -44,7 +44,7 @@ structure SU2ConnectionData where
   curvature_linear : curvatureRank ≤ numComponents * (numComponents - 1) / 2
 
 /-- The connection data for SU(2). -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 def su2Connection : SU2ConnectionData where
   numComponents := 3
   num_comp := rfl

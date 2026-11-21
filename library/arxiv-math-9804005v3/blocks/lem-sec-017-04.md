@@ -1,1 +1,1 @@
-A function dim deﬁned on ModfA and satisfying axioms (i)-(ii)
+A function dim deﬁned on ModfA and satisfying axioms (i)-(ii) (resp. axioms (i)-(iii)) extends uniquely to a function on ModA, satisfying axioms (i)-(ii) ( resp. axioms (i)-(iii)) and the axiom (iv) dim M = sup{dimM ′ |M ′ ⊂M ﬁnitely generated }.

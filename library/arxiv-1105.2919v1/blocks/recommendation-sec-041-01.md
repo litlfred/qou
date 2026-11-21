@@ -1,1 +1,0 @@
-It should be noted that this preliminary calculation involves many approximations, but it certainly provides the right order of magnitude of the result, which is indeed very small as compared to the full $^4$He binding energy of 28.3 MeV.

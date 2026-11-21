@@ -1,0 +1,48 @@
+C.4 Description at the level of homology 505
+
+values is then removed by homotopically perturbing / so as to satisfy the con-
+ditions, and a limiting argument removes the assumption of a finite number of
+critical points. ia)
+
+Example C.33. The 2-sphere from Example C.29 is a cell complex with one
+2-cell and one 0-cell; as noted above, up to homotopy equivalence, there is
+only one choice for the attachment map. The 2-torus from Example C.30 is
+a cell complex with one 0-cell, two 1-cells, and one 2-cell. Up to homotopy
+equivalence, the one skeleton must be the wedge of two circles. There are a
+number of ways to attach a 2-cell to a wedge of two circles, and the right
+attaching map can be worked out by knowing what the boundary (i.e., the level
+set € below the maximum height) looks like. 4
+
+Remark C.34. Let X be a complex d-manifold in C” and, for p € C", let
+hp denote the function mapping z € C” to the complex distance ||z — p|| =
+(Diet lzj- pry. Andreotti and Frankel’s original proof of Proposition B.20
+from Appendix B proved that p can be chosen to make /, a Morse function by
+establishing that the set of p for which it is not a Morse function has positive
+codimension, then showing that the Morse index of any critical point on X for
+hy is at most d.
+
+C.4 Description at the level of homology
+
+For our purposes it is useful to consider the successive attachments from the
+last section on the level of homology. Suppose that c is a critical value and
+(B, A) is any pair with the same homotopy type of the attachment (X<c+<2, X<e-«)-
+The long exact sequence has a portion
+
+Hyai(B,A) “5 Hy(A) “> Hy(B) => Hy(B,A) > Hyi(A),
+which implies
+
+Hy(A) — _ AnlA)
+
+ee =k es
+Tagen) ~ Kerte,) — ase.) = Kerr.)
+
+In particular, there is a short exact sequence
+
+H(A)
+
+————. > H, (B) > ker(0 0
+Tage) 7 Hat) > kerlOy) >
+
+and, by Remark B.7, H,,(B) decomposes as a direct sum of the kernel of 0,, and
+the cokernel of 0,,,.
+This decomposition allows us to construct a basis for the homology groups

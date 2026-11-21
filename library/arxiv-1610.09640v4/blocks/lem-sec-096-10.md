@@ -1,0 +1,1 @@
+Let L be a compact object of D(A), let P be a semi-free DG A-module of ﬁnite extension length, and let φ : L →P be a morphism in D(A). Then there is a ﬁnite semi-free DG A-module P ′, with a morphism φ′ : L →P ′ in D(A) and a monomorphism γ′ : P ′ →P in Cstr(A), such that φ = Q(γ′) ◦φ′.

@@ -1,1 +1,0 @@
-To show that it is fully faithful, we must show that $$\Hom_\Pp(S_1,S_2)\overset{\simeq}{\longrightarrow} \Hom_{\cat{Sm}_{A[\dim!^{-1}]}^{\leqslant n+1}}(S_1,S_2)$$ is an equivalence for all $S_1,S_2\in \Pp$.

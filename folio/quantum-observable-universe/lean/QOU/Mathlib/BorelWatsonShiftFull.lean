@@ -21,7 +21,7 @@
   across the shift. Archimedean (ℂ).
 
   -- Ref: [sokal1980] https://doi.org/10.1063/1.524408
-  -- Ref: [manuscript] bean el8w tranche 5 — Watson uniqueness brick 4b-ii assembly
+  -- Ref: [leitner2026] bean el8w tranche 5 — Watson uniqueness brick 4b-ii assembly
 -/
 
 import QOU.Mathlib.BorelWatsonUniqueness

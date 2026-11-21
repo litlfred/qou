@@ -13,7 +13,7 @@ Formalization: extracted from jet-horizon.lean for content-block co-location.
 Source declaration: `QOU.CMBBoundaryDatum` in jet-horizon.lean
 
 ## References
-- [manuscript] §9/cmb-boundary-datum
+- [leitner2026] §9/cmb-boundary-datum
 -/
 
 -- Prerequisite types mirrored from jet-horizon.lean (`QOU.JetHorizon` library
@@ -55,7 +55,7 @@ structure BigBangState extends JetHorizon where
 
 /-- The CMB (cosmic microwave background) of a big bang state:
     the degree ≥ 1 jet data that survives the degree-0 vanishing. -/
--- Ref: [manuscript] §9/cmb-boundary-datum
+-- Ref: [leitner2026] §9/cmb-boundary-datum
 structure CMBBoundaryDatum where
   /-- The big bang state whose CMB this is. -/
   source : BigBangState

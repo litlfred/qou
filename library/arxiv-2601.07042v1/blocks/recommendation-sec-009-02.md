@@ -1,1 +1,0 @@
-Then we have $$\tilde{\Phi}(s_E(\gamma))(V_{(a_{\sigma}/s)_{\sigma}}) = f^{-1}_{\gamma}(V_{(a_{\sigma}/s)_{\sigma}}\otimes 1)=f^{-1}_{\gamma}(\beta_{\gamma}(V)_{(a_{\gamma^{-1}\sigma}/s)_{\sigma}})=V_{(a_{\gamma^{-1}\sigma}/s)_{\sigma}}.$$ Finally, $T$ is a functor because morphisms of $\mathcal{W}_{E/F,s}$ must necessarily commute with the $\Phi$ and $f_{\gamma}$ maps.

@@ -1,1 +1,0 @@
-First, observe that, in view of [\[eq:geometric engineering\]](#eq:geometric engineering){reference-type="eqref" reference="eq:geometric engineering"}, we should consider the bundle of multiforms, i.e. the $g$-fold tensor product of the bundle of differential forms on the Hilbert scheme.

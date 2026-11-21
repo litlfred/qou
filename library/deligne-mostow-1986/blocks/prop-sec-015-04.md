@@ -1,0 +1,1 @@
+— Assume card S == 4 and ^ satisfies condition (INT). Set ( i ^12 ^i\ 8 == det«^, ^.» = det c^ i c^ [ ^11 c^ i / ^Sl ^S wA^ c- == —cos-^-, i <^,7<3. 7^ I\ ^ non-arithmetic in PU(V) if and only if k^ °8 < o for some a e Gal E with a 4= i on E.

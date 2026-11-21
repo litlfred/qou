@@ -1,0 +1,1 @@
+Let N ∈D+ f (B, gr), let M ∈D+ f (A, gr), and let θ : N →M be a backward morphism in D(A, gr). The following conditions are equivalent: (i) θ is a nondegenerate backward morphism on the A side. (ii) The morphism RΓm(θ) : RΓm(N) →RΓm(M) in D(A, gr) is a nondegen- erate backward morphism on the A side. Derived Categories | Amnon Yekutieli |

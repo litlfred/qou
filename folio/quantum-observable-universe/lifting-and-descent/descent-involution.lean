@@ -11,7 +11,7 @@ decomposition gives the descended/transient splitting.
 
 ## References
 
-- [manuscript] §3 Lifting and Descent
+- [leitner2026] §3 Lifting and Descent
 -/
 
 namespace QOU
@@ -24,7 +24,7 @@ variable {R : Type*} [CommRing R]
     the composition τₙ is idempotent: τₙ² = τₙ.
 
     LaTeX: `\label{def:descent-involution}` -/
--- Ref: [manuscript] §3, Definition: Descent involution
+-- Ref: [leitner2026] §3, Definition: Descent involution
 structure DescentInvolution (M : Type*) [AddCommGroup M] [Module R M] where
   /-- The ascent embedding ℓₙ. -/
   ascent : M →ₗ[R] M
@@ -39,7 +39,7 @@ def DescentInvolution.tau {M : Type*} [AddCommGroup M] [Module R M]
   di.ascent ∘ₗ di.descent
 
 /-- τₙ is idempotent. -/
--- Ref: [manuscript] §3
+-- Ref: [leitner2026] §3
 theorem DescentInvolution.tau_idem {M : Type*} [AddCommGroup M] [Module R M]
     (di : DescentInvolution (R := R) M) :
     di.tau ∘ₗ di.tau = di.tau := by

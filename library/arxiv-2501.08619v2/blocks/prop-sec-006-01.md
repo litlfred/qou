@@ -1,0 +1,1 @@
+After remov- ing all terms present in the continuum, we are finally left with a ‘correction term’, ∆S1, which quantifies—to leading order—the discretisation artefact present in our lattice calculation of the subtraction function.

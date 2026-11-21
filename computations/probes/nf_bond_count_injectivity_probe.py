@@ -247,7 +247,12 @@ def main() -> int:
         wb.add_assertion("normal_forms_distinct_on_this_sample",
                          computed=f"{len(by_nf)} normal forms / {n} configs",
                          expected=f"{len(by_nf)} normal forms / {n} configs")
-        out = wb.save(extra={"auditOnly": True})
+        out = wb.save(extra={
+            "auditOnly": True,
+            "q0Anchor": "independent",
+            "q0AnchorReason": "exact Laurent-polynomial normal forms over Q (fractions.Fraction) "
+                              "compared by dict equality; nothing is evaluated at any numerical q",
+        })
         print(f"\nWrote {out}", flush=True)
     except Exception as exc:  # pragma: no cover
         print(f"\n(witness not written: {exc})", flush=True)

@@ -245,13 +245,15 @@ theorem speed_diverges_at_one (ε : ℝ) (hε : 0 < ε) :
     degenerates to T² = 1.  Applying the Markov trace (which is linear
     and satisfies tr(ab) = tr(ba)) to T² = 1 gives tr(T²) = tr(1).
     Since tr(T²) = tr(T·T) and T is invertible with T⁻¹ = T (from
-    T² = 1), we get tr(T) = tr(T⁻¹).  Combined with the Markov
-    property tr(xT±1) = z±1 tr(x) at z = 0 (since z → 0 as q → 1),
-    this gives tr(T) = tr(1) for each generator.
+    T² = 1), we get tr(T) = tr(T⁻¹).  The theorem below records only
+    tr(T·T) = tr(1).
 
-    The full J_K(1) = 1 result follows from the fact that every
-    element of H_n(1) ≅ k[S_n] is a product of generators T_i,
-    and tr is multiplicative on the augmentation ideal at z = 0. -/
+    Scope (2026-11-16): z does NOT tend to 0. Under convention D,
+    z = q³/(q²+1) → 1/2, and the q = 1 trace is tr(w) = 2^{-(n - c(w))}
+    with c(w) the number of cycles. A generator has tr(T) = 1/2, not
+    tr(1) = 1. The normalised Jones value J = z^{-(n-1)} tr depends only
+    on the number of components (1 for a knot, 2^{c-1} for c components);
+    that is not shown here. -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the

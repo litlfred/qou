@@ -65,7 +65,7 @@ instance must supply, typed `UpperHalfPlane` so that a flat shape is
 not expressible.  The state variable `x : ℝ` keeps its own role in
 the q-Pochhammer asymptotic; it is not the shape.
 
--- Ref: [manuscript] conj:algebraic-geometric-dilog-equivalence
+-- Ref: [leitner2026] conj:algebraic-geometric-dilog-equivalence
 -- Ref: [kashaev1997] Kashaev, "The hyperbolic volume of knots from the quantum dilogarithm," Lett. Math. Phys. 39 (1997)
 -- Ref: [murakami-murakami2001] Murakami & Murakami, "The colored Jones polynomials and the simplicial volume of a knot," Acta Math. 186 (2001), arXiv:math/9905075
 -/
@@ -75,13 +75,13 @@ namespace QOU.QPochhammer
 /-- Local restatement of the q-Pochhammer denominator (mirrors the
     sibling `q-pochhammer-partial-product.lean`; kept self-contained
     so this file does not depend on cross-file elaboration). -/
--- Ref: [manuscript] def:q-pochhammer-partial-product
+-- Ref: [leitner2026] def:q-pochhammer-partial-product
 def denomPolyLocal (q x : ℝ) : ℕ → ℝ
   | 0 => 1
   | n + 1 => (1 - x * q ^ n) * denomPolyLocal q x n
 
 /-- Local restatement of the partial product `Φ_n(x; q) = 1 / (x; q)_n`. -/
--- Ref: [manuscript] def:q-pochhammer-partial-product
+-- Ref: [leitner2026] def:q-pochhammer-partial-product
 noncomputable def partialProductLocal (q x : ℝ) (n : ℕ) : ℝ :=
   (denomPolyLocal q x n)⁻¹
 
@@ -95,7 +95,7 @@ noncomputable def partialProductLocal (q x : ℝ) (n : ℕ) : ℝ :=
     plane, not a real number.  See the module docstring: on `ℝ` the
     function vanishes identically, so typing it `ℝ → ℝ` silently
     forces every volume it names to zero. -/
--- Ref: [manuscript] rem:kashaev-volume-density
+-- Ref: [leitner2026] rem:kashaev-volume-density
 -- Ref: [zagier1986] https://doi.org/10.1007/BF01388528 (Bloch-Wigner D)
 noncomputable def BlochWignerD (z : ℍ) : ℝ :=
   QOU.Archimedean.BlochWigner_lob (z : ℂ)
@@ -118,7 +118,7 @@ shape fatal; the second is what the `UpperHalfPlane` type buys. -/
     stays self-contained; the same statement is proved for the
     corpus's Bloch volume leg in
     `QOU.MassTheory.BlochVolumeLegFlatVanishing`.) -/
--- Ref: [manuscript] rem:kashaev-volume-density
+-- Ref: [leitner2026] rem:kashaev-volume-density
 theorem eq_zero_of_conjAntisymm_ofReal (D : ℂ → ℝ)
     (hD : ∀ z : ℂ, D ((starRingEnd ℂ) z) = - D z) (r : ℝ) :
     D (r : ℂ) = 0 := by
@@ -135,7 +135,7 @@ theorem eq_zero_of_conjAntisymm_ofReal (D : ℂ → ℝ)
     `QOU.Knot.FlatTet.BlochWigner_lob_ofReal`, which needs no
     antisymmetry hypothesis because `BlochWigner_lob` is defined
     rather than opaque. -/
--- Ref: [manuscript] conj:algebraic-geometric-dilog-equivalence §2
+-- Ref: [leitner2026] conj:algebraic-geometric-dilog-equivalence §2
 theorem flat_shape_has_no_volume (D : ℂ → ℝ)
     (hD : ∀ z : ℂ, D ((starRingEnd ℂ) z) = - D z) (V r : ℝ)
     (hV : V = D (r : ℂ)) : V = 0 := by
@@ -191,7 +191,7 @@ theorem shape_ne_zero_ne_one (z : ℍ) : (z : ℂ) ≠ 0 ∧ (z : ℂ) ≠ 1 :=
     a vacuous `∃ z, z k = q^{-k}` pole field; both are gone — the
     class now asserts exactly the open hypotheses and nothing
     provable-outright. -/
--- Ref: [manuscript] conj:algebraic-geometric-dilog-equivalence
+-- Ref: [leitner2026] conj:algebraic-geometric-dilog-equivalence
 class AlgebraicGeometricEquivalence (q x : ℝ) where
   /-- The matched ideal-tetrahedron shape parameter (upper half plane;
       a real shape would be a flat tetrahedron — see
@@ -208,7 +208,7 @@ class AlgebraicGeometricEquivalence (q x : ℝ) where
         ‖(1 - q) * Real.log (partialProductLocal q x m) - volume‖ < ε
   /-- Hypothesis (ii): the saddle volume is the Bloch-Wigner volume at
       the matched shape parameter. -/
-  -- Ref: [manuscript] conj:shared-denominator-cusp-holonomy
+  -- Ref: [leitner2026] conj:shared-denominator-cusp-holonomy
   pole_cusp_matched : volume = BlochWignerD shape
 
 /-! ## The pole side is a THEOREM (unconditional)
@@ -230,7 +230,7 @@ theorem denomPolyLocal_succ (q x : ℝ) (n : ℕ) :
 /-- **Pole vanishing (theorem).** `(x; q)_n` vanishes at each pole `x = q^{-j}`,
     `j < n` (`q ≠ 0`) — the unconditional algebraic half of
     `conj:algebraic-geometric-dilog-equivalence §1`. -/
--- Ref: [manuscript] conj:algebraic-geometric-dilog-equivalence §1
+-- Ref: [leitner2026] conj:algebraic-geometric-dilog-equivalence §1
 theorem denomPolyLocal_eq_zero_at_pole (q : ℝ) (hq : q ≠ 0)
     (n j : ℕ) (hj : j < n) : denomPolyLocal q (q ^ (-(j : ℤ))) n = 0 := by
   induction n with
@@ -257,7 +257,7 @@ theorem denomPolyLocal_eq_zero_at_pole (q : ℝ) (hq : q ≠ 0)
     polynomial. The old name was the sort of thing a downstream reader greps and
     cites as evidence for the geometric side; the corpus-grep discipline is
     exactly what it would have defeated. -/
--- Ref: [manuscript] conj:algebraic-geometric-dilog-equivalence §1
+-- Ref: [leitner2026] conj:algebraic-geometric-dilog-equivalence §1
 theorem denomPolyLocal_roots_explicit (q : ℝ) (hq : q ≠ 0) (n : ℕ) :
     ∃ z : Fin n → ℝ, (∀ k : Fin n, z k = q ^ (-(k : ℤ)))
       ∧ (∀ k : Fin n, denomPolyLocal q (z k) n = 0) :=
@@ -307,7 +307,7 @@ theorem asymptotic_volume_of_vc (q x V : ℝ) (z : ℍ)
     rescaled log partial product converges to the Bloch-Wigner volume at the
     instance's matched shape — the conclusion the previous class revision
     carried as a field, now a theorem via `asymptotic_volume_of_vc`. -/
--- Ref: [manuscript] conj:algebraic-geometric-dilog-equivalence §2
+-- Ref: [leitner2026] conj:algebraic-geometric-dilog-equivalence §2
 theorem AlgebraicGeometricEquivalence.asymptotic_volume (q x : ℝ)
     [h : AlgebraicGeometricEquivalence q x] :
     ∀ ε > (0 : ℝ), ∃ N : ℕ, ∀ m, N ≤ m →
@@ -320,7 +320,7 @@ theorem AlgebraicGeometricEquivalence.asymptotic_volume (q x : ℝ)
     needing only `q ≠ 0`); §2 is derived from the class hypotheses.  The
     only conjectural inputs are the class fields — the composition
     contains no `sorry` and assumes nothing provable-outright. -/
--- Ref: [manuscript] conj:algebraic-geometric-dilog-equivalence
+-- Ref: [leitner2026] conj:algebraic-geometric-dilog-equivalence
 theorem algebraic_geometric_equivalence
     (q x : ℝ) (hq : q ≠ 0) (n : ℕ) [h : AlgebraicGeometricEquivalence q x] :
     (∃ z : Fin n → ℝ, (∀ k : Fin n, z k = q ^ (-(k : ℤ)))

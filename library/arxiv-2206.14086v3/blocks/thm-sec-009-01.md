@@ -1,0 +1,1 @@
+Assume the step initial condition for the TASEP. Then, for every (τ, γ, h) ∈R+ × R × R, lim T →∞P h(γT 2/3, 2τT) −τT −T 1/3 ≤h  = FTW  h τ 1/3 + γ2 4τ 4/3  . Note from either side of the equation that the limit remains unchanged if we rescale (h, γ, τ) 7→(αh, α2γ, α3τ) (3.1) for any α > 0.

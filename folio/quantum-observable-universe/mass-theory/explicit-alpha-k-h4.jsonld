@@ -2,19 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-explicit-alpha-k-h4",
+  "@id": "papers/quantum-observable-universe/blocks/conj-explicit-alpha-k-h4",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
-  "label": "prop:explicit-alpha-k-h4",
-  "kind": "proposition",
+  "label": "conj:explicit-alpha-k-h4",
+  "kind": "conjecture",
   "title": "Explicit $\\alpha_3$ at $H_4(R, q)$ via Wedderburn-orthogonal class-function $r_3$",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-wedderburn-bratteli-recursion",
+    "papers/quantum-observable-universe/blocks/conj-wedderburn-bratteli-recursion",
     "papers/quantum-observable-universe/blocks/rem-y-lambda-sign-pattern"
   ],
   "tags": [

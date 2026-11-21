@@ -1,1 +1,0 @@
-The exact value $\theta_{\scr{C}}{=}\frac{\pi}{14}$ of the Cabibbo angle would then serve as the {\it noncommutativity measure} of relevant quantum space, responsible for the mixing and explicitly as yet unknown, in extra dimensions whose number should be not less than 2.

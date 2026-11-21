@@ -1,1 +1,0 @@
-In this paper, we only use evaluations of $\mu$ at pairs $(\pi,\{[n]\})$ (the second argument is the partition of $[n]$ in only one part, which is the maximum element of $\qym(n)$), so we shall use abusively the notation $\mu(\pi)$ for $\mu(\pi,\{[n]\})$.

@@ -1,0 +1,52 @@
+2.2 Rational operations on generating functions 25
+
+where
+(dl) ifjeSnT,
+(1,0) ifjeS\T,
+(0,1) ifjeT\S,
+(0,0) if 7¢S UT.
+
+ajp=
+
+If j and j + r are positions of consecutive occurrences of (1, 1) in @ then the
+possibilities for the string aj,; ---@j,, are as follows.
+
+Gi) If a@j,; = C1, 1) then the only possibility is r = 1.
+(ii) If a@j41 = (0,0) then the only possibility is r = 2 and aj) +++ ajsr =
+(0,0), (1, 1).
+(iii) If aj; = (1,0) then r > 2 may be arbitrary and @;,; --- @j,, alternates
+between (1,0) and (0, 1) until the final (1, 1).
+(iv) If @j4; = (0,1) then r > 2 may be arbitrary and aj.) --- aj, alternates
+between (0, 1) and (1,0) until the final (1, 1).
+
+We will build an element of F uniquely from blocks of one of these four types.
+In the first case, the generating function G(x, y, z, w) for a single block is sim-
+ply xyzw, while in the second case we obtain Go(x,y,z,w) = xyew. In the
+third case, we can write the block as either ((1,0)) or ((1, 0), (0, 1)), followed
+by zero or more alternations of length two; decomposing this way shows the
+
+case we obtain G4(x, y,z,w) = xyew
+the generating function
+
+1 1- x’yz 2x’y;
+Glx,y,z,0) = xyew! + x)(1 — x°yz) + xy + xz + 2x°yz
+
+1- xyz
+that enumerates all possible configurations of one block.
+
+Stringing together blocks of the four types gives all elements of F that end
+in (1, 1), and this subclass thus has generating function 1/(1— G(x, y, z, w)). An
+element (S,T) € 8? of this subclass must have n € S NT, and by removing
+n we obtain a bijection of such pairs to B., except that when n = 0 it is not
+possible to delete n. Applying this bijection reduces the weight of each pair in
+F by (1,1, 1, 1), ultimately giving
+
+1
+
+1- G(x, y,z,w) ~1) / Gye)
+
+F(x, y, Z,w) =
+
+d+xd — xyz) + XV tT + 2x? yz
+
+~ T= yz — xyew[(1 + al — 2y2) + ay + az + 2x2yz] |

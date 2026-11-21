@@ -11,8 +11,7 @@ weight $d_\lambda(q)$ by Schur orthogonality
 $\mathfrak{S} = \mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes \Phi) \circ \mathrm{coev}_A = \mathrm{tr}(\Phi)$
 is linear in $\Phi$.  Substituting the spectral decomposition
 (i) and using the identification
-$\mathrm{tr} = \mathrm{tr}_M$ (archimedean :refterm[descent]{#descent},
-[RJ interpretation](#rem:rj-inner-product-interpretation))
+$\mathrm{tr} = \mathrm{tr}_M$ (archimedean :refterm[descent]{#descent})
 gives the stated sum over channels.
 
 **(iii)** The Frobenius pairing
@@ -28,7 +27,7 @@ evaluation).
 self-dual curvature subspace ($S([\sigma_i, \sigma_j])^* = [\sigma_i, \sigma_j]$).
 Within this subspace, the extremum of $|\mathrm{tr}(\Phi)|$ is
 attained at the irrep with largest quantum dimension times
-character evaluation.  For pair production at our $q_0 = 1.109978595642739\ldots$ (muon pin, 16 dps),
+character evaluation.  For pair production at the observed $q_0 = 1.109978595642739\ldots$ (muon pin, 16 dps),
 this is $T_{2,3}$ (trefoil, $e^-$) — the lowest-crossing
 operator that unconditionally opens the degree-3 channel.
 
@@ -41,7 +40,7 @@ $$
   \quad \forall i.
 $$
 
-By non-degeneracy (**convention D**: read on the quotient $H_n/\mathrm{rad}\,\mathrm{tr}_M \cong \mathrm{TL}_n$, where the induced pairing is non-degenerate; on $H_n$ itself $\det G = 0$ exactly, the $(1^3)$ block being the radical — [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean)), $K^\vee$ exists and is unique. In the basis, $K^\vee = \sum_i c_i (G^{-1})_{ij} b_j$, where $G_{ij} = \langle b_i, b_j \rangle_F = \mathrm{tr}_M(b_i \cdot b_j)$ is the $6 \times 6$ Gram matrix of $H_3(q)$.
+By non-degeneracy (**convention D**: read on the quotient $H_n/\mathrm{rad}\,\mathrm{tr}_M \cong \mathrm{TL}_n$, where the induced pairing is non-degenerate; on $H_n$ itself $\det G = 0$ exactly, the $(1^3)$ block being the radical), $K^\vee$ exists and is unique. In the basis, $K^\vee = \sum_i c_i (G^{-1})_{ij} b_j$, where $G_{ij} = \langle b_i, b_j \rangle_F = \mathrm{tr}_M(b_i \cdot b_j)$ is the $6 \times 6$ Gram matrix of $H_3(q)$.
 
 The demand vector of $K$ is the negative part:
 

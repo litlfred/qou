@@ -142,4 +142,21 @@ theorem tendsto_center_linear_phase :
     Complex.continuous_exp.comp (Complex.continuous_ofReal.mul continuous_const)
   exact (hcont.tendsto (π / 4)).comp tendsto_center_linear_arg
 
+/-- **Reflection symmetry of the Fresnel quadratic around `N/2` (`qou-t2sc`):**
+Replacing `n` by `N - n` preserves the quadratic offset `(n - N/2)²`. -/
+theorem whiteheadLinkPhase_fresnel_symm (N n : ℕ) :
+    (((N : ℝ) - (n : ℝ)) - (N : ℝ) / 2) ^ 2 = ((n : ℝ) - (N : ℝ) / 2) ^ 2 := by
+  ring
+
+/-- **Exact vanishing of the Fresnel quadratic at the even central row `N = 2m, n = m` (`qou-t2sc`):**
+At `N = 2m` and `n = m` (`m > 0`), the total Whitehead phase argument simplifies to `(m - 1)π/4`. -/
+theorem whiteheadLinkPhase_arg_at_half_even (m : ℕ) (hm : 0 < m) :
+    -((m : ℝ) * ((m : ℝ) + 1 - 2 * (m : ℝ)) * π / (2 * (2 * (m : ℝ)))) =
+      (m : ℝ) * π / 4 - π / 4 := by
+  have hm' : (m : ℝ) ≠ 0 := by
+    have : (0 : ℝ) < m := by exact_mod_cast hm
+    exact ne_of_gt this
+  field_simp
+  ring
+
 end QOU.Knot.FigureEightVolume

@@ -126,8 +126,15 @@ OPERATORS = {
     "T_{1,0}": {"word": (), "phys": "trivial (vacuum)"},
     "T_{2,1}": {"word": (0,), "phys": "single crossing"},
     "T_{2,2}": {"word": (0, 0), "phys": "Hopf link (gluon)"},
-    "T_{2,3}": {"word": (0, 1, 0), "phys": "trefoil (electron)"},
-    "T_{2,5}": {"word": (0, 1, 0, 1, 0), "phys": "cinquefoil (muon)"},
+    # σ₀σ₁σ₀ ∈ B_3 closes to the HOPF LINK (2 components; Jones = that of
+    # σ₀² ∈ B_2), not the trefoil σ₀³; was keyed T_{2,3} until 2026-11-21
+    # (owner ruling: electron = σ₀σ₁σ₀, Hopf-link closure). (σ₀σ₁)²σ₀ ∈ B_3
+    # closes to the T(2,4) torus LINK (Jones = that of σ₀⁴ ∈ B_2), not the
+    # cinquefoil σ₀⁵; was keyed T_{2,5} "cinquefoil (muon)". Labels only:
+    # the words, and so every number in the witness, are unchanged. Same
+    # relabel as knot-operator-table.py (70340a13f9, c327602b49).
+    "T_{2,2}^{(3)}": {"word": (0, 1, 0), "phys": "Hopf link (closure of σ₀σ₁σ₀ ∈ B_3; electron word)"},
+    "T_{2,4}^{(3)}": {"word": (0, 1, 0, 1, 0), "phys": "T(2,4) torus link (closure of (σ₀σ₁)²σ₀ ∈ B_3)"},
 }
 
 
@@ -210,7 +217,7 @@ w.add_parameter("basis", NF_NAMES)
 #
 # This loop read `computed=data[...], expected=data[...]` — the same expression
 # on both sides, so it passed whatever the table contained and `allPassed` said
-# nothing about it (bean `qou-26f2`). The `T_{2,3}` assertion below already had
+# nothing about it (bean `qou-26f2`). The `T_{2,2}^{(3)}` assertion below already had
 # the right shape with a literal `expected=36`; the loop simply did not follow
 # it.
 #
@@ -223,8 +230,8 @@ EXPECTED_E_MINUS_PAIRS = {
     "T_{1,0}": 19,   # trivial (vacuum)
     "T_{2,1}": 24,   # single crossing
     "T_{2,2}": 24,   # Hopf link (gluon)
-    "T_{2,3}": 36,   # trefoil (electron) — universally opens the channel
-    "T_{2,5}": 36,   # cinquefoil (muon)
+    "T_{2,2}^{(3)}": 36,   # σ₀σ₁σ₀, Hopf-link closure (electron word) — universally opens the channel
+    "T_{2,4}^{(3)}": 36,   # (σ₀σ₁)²σ₀, T(2,4)-link closure
 }
 
 for op_name, data in results.items():
@@ -238,11 +245,11 @@ for op_name, data in results.items():
 
 # The critical physics result
 w.add_assertion(
-    "T_{2,3} universally opens e⁻ channel",
-    computed=results["T_{2,3}"]["e_minus_pairs"],
+    "T_{2,2}^{(3)} universally opens e⁻ channel",
+    computed=results["T_{2,2}^{(3)}"]["e_minus_pairs"],
     expected=36,
     tolerance=0,
-    source="Trefoil = e⁻ in NF basis; b_i·e⁻·b_j always has e⁻ ≠ 0",
+    source="σ₀σ₁σ₀ = e⁻ in NF basis (closure: Hopf link); b_i·e⁻·b_j always has e⁻ ≠ 0",
 )
 
 w.add_data("operators", results)

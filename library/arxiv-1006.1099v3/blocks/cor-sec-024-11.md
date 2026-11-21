@@ -1,0 +1,1 @@
+We have the following equivalences: • If Q ⊂P2g+1 is an even-dimensional quadric, DπF(Q; 0) ≃DπF(S0). • If Q ⊂P2g is an odd-dimensional quadric, DπF(Q; 0) ≃Dπ(mod-Cl1), except when dim(Q) = 1 and the nilpotent summand of the category is empty.

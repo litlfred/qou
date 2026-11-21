@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1901.08945v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "df222d76e597057fb4de115627fe041939fe30d8acaff7bbd4a68aa9a1789617",
   "file": "1901.08945v2.pdf"
@@ -16,76 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
-  "by_kind": {
-   "recommendation": 4
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since $\\mathcal{L}$ is a line bundle, it must also be homogeneous for some character $(\\psi, \\psi')$ of $(\\Delta\\times\\Delta')_S$ with respect to the gerbe $X\\times_S X' \\to S$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-4-twisted-sheaves.md",
-   "section_title": "Twisted sheaves",
-   "pages": "16-20",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Finally, it should be emphasized that there certainly are interesting cases when [\\[eq-equiv-qcoh\\]](#eq-equiv-qcoh){reference-type=\"eqref\" reference=\"eq-equiv-qcoh\"} is not an equivalence.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-5-the-derived-category-of-a-gerbe.md",
-   "section_title": "The derived category of a gerbe",
-   "pages": "20-24",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "If this were true, then it should be possible to adapt the proof to our situation and to get a decomposition of ${\\ensuremath{\\operatorname{Mod}}}(X_{\\operatorname{lis-\\acute{e}t}}, \\mathcal{O}_X)$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-5-the-derived-category-of-a-gerbe.md",
-   "section_title": "The derived category of a gerbe",
-   "pages": "20-24",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In fact, he only states that $S$ should be locally noetherian with the extra condition on points, but the other properties are used implicitly since he uses results from C\u0103ld\u0103raru's thesis, where the stronger assumptions are in effect [@caldararu2000 Section 2.1].",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-6-semi-orthogonal-decompositions-for-brauersever.md",
-   "section_title": "Semi-orthogonal decompositions for Brauer\u2013Severi schemes",
-   "pages": "24-27",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

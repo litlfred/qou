@@ -129,4 +129,36 @@ theorem level_ell_correction_via_esymm
     sp.centralScalar ℓ lambda = sp.esymm ℓ (sp.qContent lambda) :=
   jm_central_scalar_eq_esymm_qcontent q n ℓ sp lambda
 
+
+/-- **The key commutation step (proved).** In any ring `A`, let `σ` satisfy
+the Hecke relation `σ * σ = h • σ + 1` (with `h` a central scalar written
+as `hA`, i.e. `σ * σ = hA * σ + 1` with `hA` commuting with everything), let
+`Jk1 = σ * Jk * σ`, and let `Jk`, `Jk1` commute. Then `σ` commutes with
+`Jk + Jk1` and with `Jk * Jk1`. This is Step 2 of the proof: it is why
+symmetric polynomials in the multiplicative Jucys–Murphy elements are
+central. -/
+-- Ref: [mathas1999] ISBN 978-0-8218-1926-6 (Ch. 3, Jucys–Murphy elements)
+theorem jm_pair_symm_commute {A : Type*} [Ring A] (σ Jk Jk1 hA : A)
+    (hcen : ∀ x : A, hA * x = x * hA)
+    (hecke : σ * σ = hA * σ + 1)
+    (hdef : Jk1 = σ * Jk * σ)
+    (hcomm : Jk * Jk1 = Jk1 * Jk) :
+    σ * (Jk + Jk1) = (Jk + Jk1) * σ ∧ σ * (Jk * Jk1) = (Jk * Jk1) * σ := by
+  -- σ⁻¹ = σ - hA
+  have hinvR : σ * (σ - hA) = 1 := by
+    rw [mul_sub, hecke, hcen σ]; abel
+  have hinvL : (σ - hA) * σ = 1 := by
+    rw [sub_mul, hecke]; abel
+  -- σ * Jk = Jk1 * (σ - hA)
+  have h1 : σ * Jk = Jk1 * (σ - hA) := by
+    rw [hdef, mul_assoc, mul_assoc, hinvR, mul_one]
+  -- σ * Jk1 = hA * Jk1 + Jk * σ
+  have h2 : σ * Jk1 = hA * Jk1 + Jk * σ := by
+    rw [hdef, ← mul_assoc, ← mul_assoc, hecke, add_mul, add_mul, one_mul,
+      mul_assoc hA, mul_assoc hA]
+  refine ⟨?_, ?_⟩
+  · rw [mul_add, h1, h2, mul_sub, hcen Jk1, add_mul]; abel
+  · have h3 : (σ - hA) * Jk1 = Jk * σ := by rw [sub_mul, h2]; abel
+    rw [← mul_assoc, h1, mul_assoc, h3, ← mul_assoc, ← hcomm]
+
 end QOU.BraidKnot

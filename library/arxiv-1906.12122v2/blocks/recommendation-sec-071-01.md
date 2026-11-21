@@ -1,1 +1,0 @@
-In order to produce shallow poles, short-range physics does not need to be particularly strong, but must be fine-tuned to negatively interfere with OPE, or \viceversa. {(For example, in the $^1S_0$ channel with nonperturbative OPE the finite, energy-independent terms of {$I(\Lambda;k)$} in Eq.~\eqref{T01S0} must partially cancel the short-range term.)}

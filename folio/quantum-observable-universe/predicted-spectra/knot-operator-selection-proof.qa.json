@@ -718,7 +718,7 @@
           "in_degree": 0,
           "cone_size": 97,
           "depth": 29,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -959,6 +959,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f23d1658a7d5",
+          "ts": "ccea3cab0910"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:03.878Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "Proof (iii) (prf:20-21) says \"Non-degeneracy (QUO-1) means every element has a unique Frobenius dual\". Statement (iii) (md:35) says the pairing on H₃(q) is degenerate with det G = 0 and that some demand profiles admit no supply. The \"explicit dual\" (prf:44) still writes G⁻¹. Statement (i) says \"each irrep λ corresponds to a torus knot\" (md:15), which is not proved. Proof (iv) selects T₂,₃ at q₀ (prf:31-33) as a physical claim, and the positron demand profile numbers (prf:66) were not checked. [2]_{q₀} ≈ 2.011 was checked."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1190,7 +1206,7 @@
         },
         "reviewed_at": "2026-08-22T04:02:01.139Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the 4-part proof sketch plus the explicit dual construction. Register is proof prose; no manufactured emphasis, no aphorism (the block ends on a computed cost, [2]_q approx 2.011), no warmth, no triples reflex. Recomputed [2]_q = q+1/q at 40 dps: 2.010897 at the proton pin, 2.010897 at the muon pin, 2.010844 at 1.1097 \u2014 all four round to 2.011, so the quoted value discriminates no q0 pin.",
+        "evidence": "Full read of the 4-part proof sketch plus the explicit dual construction. Register is proof prose; no manufactured emphasis, no aphorism (the block ends on a computed cost, [2]_q approx 2.011), no warmth, no triples reflex. Recomputed [2]_q = q+1/q at 40 dps: 2.010897 at the proton pin, 2.010897 at the muon pin, 2.010844 at 1.1097 — all four round to 2.011, so the quoted value discriminates no q0 pin.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1225,7 +1241,7 @@
         },
         "reviewed_at": "2026-08-22T04:02:01.180Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the 4-part proof sketch plus the explicit dual construction. Register is proof prose; no manufactured emphasis, no aphorism (the block ends on a computed cost, [2]_q approx 2.011), no warmth, no triples reflex. Recomputed [2]_q = q+1/q at 40 dps: 2.010897 at the proton pin, 2.010897 at the muon pin, 2.010844 at 1.1097 \u2014 all four round to 2.011, so the quoted value discriminates no q0 pin.",
+        "evidence": "Full read of the 4-part proof sketch plus the explicit dual construction. Register is proof prose; no manufactured emphasis, no aphorism (the block ends on a computed cost, [2]_q approx 2.011), no warmth, no triples reflex. Recomputed [2]_q = q+1/q at 40 dps: 2.010897 at the proton pin, 2.010897 at the muon pin, 2.010844 at 1.1097 — all four round to 2.011, so the quoted value discriminates no q0 pin.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1260,8 +1276,8 @@
         },
         "reviewed_at": "2026-08-22T04:02:01.509Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Exactly one spaced dash in the block: 'this is T_{2,3} (trefoil, e^-) \u2014 the lowest-crossing operator that unconditionally opens the degree-3 channel.' It introduces a genuine appositive characterisation, and it is the only one in ~40 lines, so there is no density tell.",
-        "notes": "pass. THREE SEPARATE MATH FINDINGS, not fixed inline. (1) q0 PIN CURRENCY: part (iv) quotes 'q_0 = 1.109978595554181... (muon pin, 16 dps)'. That is the OLD muon value; the current CAL-2 muon pin is 1.10997859555733471 (they diverge at the 12th significant digit) and the compute default since the 2026-08-07 owner directive is the proton pin 1.1099785827513808. Proposed: re-pin to proton, or keep muon and correct the digits + label the layer. (2) INVERSE OF A SINGULAR MATRIX: the dual construction states 'on H_n itself det G = 0 exactly, the (1^3) block being the radical', and three sentences later writes K^vee = sum_i c_i (G^{-1})_{ij} b_j with G the 6x6 Gram of H_3(q) \u2014 G^{-1} does not exist for the object just declared singular. The construction has to be read on the quotient H_3/rad tr_M = TL_3 the parenthetical names (there the pairing is non-degenerate), i.e. on a 5-dimensional space, not on the 6-element basis {gamma, sigma_0, sigma_1, L_+, L_-, e^-}. The same formula also has a free index j on the left-hand sum. (3) BRAID WORD: 'the positron (e^+ = sigma_0^{-1} sigma_1^{-1} sigma_0^{-1})' is identified two sentences later with 'the mirror trefoil'. Computed the closure: the underlying permutation of sigma_0 sigma_1 sigma_0 in B_3 is the transposition (0 2), which has 2 cycles, so the closure is a 2-COMPONENT LINK (Markov-destabilises to sigma_0^2 in B_2, i.e. the Hopf link), not the 1-component trefoil. The corpus elsewhere fixes e^+ = T_{2,3}^{sigma} at 1 component / 3 crossings (observations/building-block-knots-table1-data.md). Correct 3-strand words for the mirror trefoil are (sigma_0 sigma_1)^{-2} (4 letters) or sigma_0^{-3} in B_2. The same wrong word also appears in mass-theory/breit-wheeler-vertex.md line 34, so this is a 2-block defect."
+        "evidence": "Exactly one spaced dash in the block: 'this is T_{2,3} (trefoil, e^-) — the lowest-crossing operator that unconditionally opens the degree-3 channel.' It introduces a genuine appositive characterisation, and it is the only one in ~40 lines, so there is no density tell.",
+        "notes": "pass. THREE SEPARATE MATH FINDINGS, not fixed inline. (1) q0 PIN CURRENCY: part (iv) quotes 'q_0 = 1.109978595554181... (muon pin, 16 dps)'. That is the OLD muon value; the current CAL-2 muon pin is 1.10997859555733471 (they diverge at the 12th significant digit) and the compute default since the 2026-08-07 owner directive is the proton pin 1.1099785827513808. Proposed: re-pin to proton, or keep muon and correct the digits + label the layer. (2) INVERSE OF A SINGULAR MATRIX: the dual construction states 'on H_n itself det G = 0 exactly, the (1^3) block being the radical', and three sentences later writes K^vee = sum_i c_i (G^{-1})_{ij} b_j with G the 6x6 Gram of H_3(q) — G^{-1} does not exist for the object just declared singular. The construction has to be read on the quotient H_3/rad tr_M = TL_3 the parenthetical names (there the pairing is non-degenerate), i.e. on a 5-dimensional space, not on the 6-element basis {gamma, sigma_0, sigma_1, L_+, L_-, e^-}. The same formula also has a free index j on the left-hand sum. (3) BRAID WORD: 'the positron (e^+ = sigma_0^{-1} sigma_1^{-1} sigma_0^{-1})' is identified two sentences later with 'the mirror trefoil'. Computed the closure: the underlying permutation of sigma_0 sigma_1 sigma_0 in B_3 is the transposition (0 2), which has 2 cycles, so the closure is a 2-COMPONENT LINK (Markov-destabilises to sigma_0^2 in B_2, i.e. the Hopf link), not the 1-component trefoil. The corpus elsewhere fixes e^+ = T_{2,3}^{sigma} at 1 component / 3 crossings (observations/building-block-knots-table1-data.md). Correct 3-strand words for the mirror trefoil are (sigma_0 sigma_1)^{-2} (4 letters) or sigma_0^{-3} in B_2. The same wrong word also appears in mass-theory/breit-wheeler-vertex.md line 34, so this is a 2-block defect."
       }
     ],
     "trap-triples": [
@@ -1295,7 +1311,7 @@
         },
         "reviewed_at": "2026-08-22T04:02:01.220Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the 4-part proof sketch plus the explicit dual construction. Register is proof prose; no manufactured emphasis, no aphorism (the block ends on a computed cost, [2]_q approx 2.011), no warmth, no triples reflex. Recomputed [2]_q = q+1/q at 40 dps: 2.010897 at the proton pin, 2.010897 at the muon pin, 2.010844 at 1.1097 \u2014 all four round to 2.011, so the quoted value discriminates no q0 pin.",
+        "evidence": "Full read of the 4-part proof sketch plus the explicit dual construction. Register is proof prose; no manufactured emphasis, no aphorism (the block ends on a computed cost, [2]_q approx 2.011), no warmth, no triples reflex. Recomputed [2]_q = q+1/q at 40 dps: 2.010897 at the proton pin, 2.010897 at the muon pin, 2.010844 at 1.1097 — all four round to 2.011, so the quoted value discriminates no q0 pin.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1330,7 +1346,7 @@
         },
         "reviewed_at": "2026-08-22T04:02:01.266Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the 4-part proof sketch plus the explicit dual construction. Register is proof prose; no manufactured emphasis, no aphorism (the block ends on a computed cost, [2]_q approx 2.011), no warmth, no triples reflex. Recomputed [2]_q = q+1/q at 40 dps: 2.010897 at the proton pin, 2.010897 at the muon pin, 2.010844 at 1.1097 \u2014 all four round to 2.011, so the quoted value discriminates no q0 pin.",
+        "evidence": "Full read of the 4-part proof sketch plus the explicit dual construction. Register is proof prose; no manufactured emphasis, no aphorism (the block ends on a computed cost, [2]_q approx 2.011), no warmth, no triples reflex. Recomputed [2]_q = q+1/q at 40 dps: 2.010897 at the proton pin, 2.010897 at the muon pin, 2.010844 at 1.1097 — all four round to 2.011, so the quoted value discriminates no q0 pin.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1365,7 +1381,7 @@
         },
         "reviewed_at": "2026-08-22T04:02:01.305Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the 4-part proof sketch plus the explicit dual construction. Register is proof prose; no manufactured emphasis, no aphorism (the block ends on a computed cost, [2]_q approx 2.011), no warmth, no triples reflex. Recomputed [2]_q = q+1/q at 40 dps: 2.010897 at the proton pin, 2.010897 at the muon pin, 2.010844 at 1.1097 \u2014 all four round to 2.011, so the quoted value discriminates no q0 pin.",
+        "evidence": "Full read of the 4-part proof sketch plus the explicit dual construction. Register is proof prose; no manufactured emphasis, no aphorism (the block ends on a computed cost, [2]_q approx 2.011), no warmth, no triples reflex. Recomputed [2]_q = q+1/q at 40 dps: 2.010897 at the proton pin, 2.010897 at the muon pin, 2.010844 at 1.1097 — all four round to 2.011, so the quoted value discriminates no q0 pin.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1400,7 +1416,7 @@
         },
         "reviewed_at": "2026-08-22T04:02:01.345Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the 4-part proof sketch plus the explicit dual construction. Register is proof prose; no manufactured emphasis, no aphorism (the block ends on a computed cost, [2]_q approx 2.011), no warmth, no triples reflex. Recomputed [2]_q = q+1/q at 40 dps: 2.010897 at the proton pin, 2.010897 at the muon pin, 2.010844 at 1.1097 \u2014 all four round to 2.011, so the quoted value discriminates no q0 pin.",
+        "evidence": "Full read of the 4-part proof sketch plus the explicit dual construction. Register is proof prose; no manufactured emphasis, no aphorism (the block ends on a computed cost, [2]_q approx 2.011), no warmth, no triples reflex. Recomputed [2]_q = q+1/q at 40 dps: 2.010897 at the proton pin, 2.010897 at the muon pin, 2.010844 at 1.1097 — all four round to 2.011, so the quoted value discriminates no q0 pin.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1435,7 +1451,7 @@
         },
         "reviewed_at": "2026-08-22T04:02:01.386Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the 4-part proof sketch plus the explicit dual construction. Register is proof prose; no manufactured emphasis, no aphorism (the block ends on a computed cost, [2]_q approx 2.011), no warmth, no triples reflex. Recomputed [2]_q = q+1/q at 40 dps: 2.010897 at the proton pin, 2.010897 at the muon pin, 2.010844 at 1.1097 \u2014 all four round to 2.011, so the quoted value discriminates no q0 pin.",
+        "evidence": "Full read of the 4-part proof sketch plus the explicit dual construction. Register is proof prose; no manufactured emphasis, no aphorism (the block ends on a computed cost, [2]_q approx 2.011), no warmth, no triples reflex. Recomputed [2]_q = q+1/q at 40 dps: 2.010897 at the proton pin, 2.010897 at the muon pin, 2.010844 at 1.1097 — all four round to 2.011, so the quoted value discriminates no q0 pin.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1470,7 +1486,7 @@
         },
         "reviewed_at": "2026-08-22T04:02:01.426Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the 4-part proof sketch plus the explicit dual construction. Register is proof prose; no manufactured emphasis, no aphorism (the block ends on a computed cost, [2]_q approx 2.011), no warmth, no triples reflex. Recomputed [2]_q = q+1/q at 40 dps: 2.010897 at the proton pin, 2.010897 at the muon pin, 2.010844 at 1.1097 \u2014 all four round to 2.011, so the quoted value discriminates no q0 pin.",
+        "evidence": "Full read of the 4-part proof sketch plus the explicit dual construction. Register is proof prose; no manufactured emphasis, no aphorism (the block ends on a computed cost, [2]_q approx 2.011), no warmth, no triples reflex. Recomputed [2]_q = q+1/q at 40 dps: 2.010897 at the proton pin, 2.010897 at the muon pin, 2.010844 at 1.1097 — all four round to 2.011, so the quoted value discriminates no q0 pin.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1505,7 +1521,7 @@
         },
         "reviewed_at": "2026-08-22T04:02:01.466Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the 4-part proof sketch plus the explicit dual construction. Register is proof prose; no manufactured emphasis, no aphorism (the block ends on a computed cost, [2]_q approx 2.011), no warmth, no triples reflex. Recomputed [2]_q = q+1/q at 40 dps: 2.010897 at the proton pin, 2.010897 at the muon pin, 2.010844 at 1.1097 \u2014 all four round to 2.011, so the quoted value discriminates no q0 pin.",
+        "evidence": "Full read of the 4-part proof sketch plus the explicit dual construction. Register is proof prose; no manufactured emphasis, no aphorism (the block ends on a computed cost, [2]_q approx 2.011), no warmth, no triples reflex. Recomputed [2]_q = q+1/q at 40 dps: 2.010897 at the proton pin, 2.010897 at the muon pin, 2.010844 at 1.1097 — all four round to 2.011, so the quoted value discriminates no q0 pin.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1529,6 +1545,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T04:02:01.509Z",
+  "updated_at": "2026-11-15T21:56:03.878Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -3,6 +3,11 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   authorNotes: [
     {
+      kind: "refined-framing",
+      date: "2026-11-15",
+      body: "Owner ruling 2026-09-05, re-affirmed 2026-09-08 and 2026-11-15: the canonical Phi_k weight is Molien $f^\\lambda q^{-\\kappa_\\lambda}\\dim_q(\\lambda)/[n]_q!$; $d_q^2/D^2$ is a labelled comparison arm (bean qou-oots). Prose previously called the choice open.",
+    },
+    {
       kind: "note",
       date: "2026-09-05",
       body: "Weight-family dependence of the K_3* ranking added 2026-09-05 (bean qou-oots). Measurements: docs/audits/2026-09-05-phi-k-weight-family.md; labelling sweep: docs/audits/2026-09-05-k3-weight-family-labelling.md.",

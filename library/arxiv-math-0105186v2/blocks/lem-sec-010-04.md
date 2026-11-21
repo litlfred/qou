@@ -1,0 +1,1 @@
+Let U ⊂S be a nonempty open subset disjoint from the ends, such that any partial section w : U →E|U which is horizontal and satisﬁes w(∂S ∩U) ⊂Q is the restriction of a u ∈Mh. Then, given some J ∈ Jh(E, π, j, {Je}), there are J′ ∈Jh(E, π, j, {Je}) arbitrarily close to it and which agree with it outside π−1(U), such that for all {xe}, any u ∈MJ({xe}) \ Mh is regular.

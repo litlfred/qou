@@ -22,7 +22,7 @@ bridge theorem is fully verified by Lean.  This is Workplan B from
 
 ## References
 
-- [manuscript] Ch 3 §sec:calibration-algebraic-mass /
+- [leitner2026] Ch 3 §sec:calibration-algebraic-mass /
   phi-q-tower-jsj-bridge
 - [kashaev1997] https://doi.org/10.1023/A:1007364912784
 - [murakami-murakami2001] https://doi.org/10.1007/BF02392716
@@ -68,7 +68,7 @@ remain local to this file. -/
     who wants to name it (`letI := skeletonRealisation q`), which is the honest
     use — witnessing that the class is inhabited, so the conditional theorems
     are not vacuously true — without standing in for the real realisation. -/
--- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / phi-q-tower-jsj-bridge
+-- Ref: [leitner2026] Ch 3 §sec:calibration-algebraic-mass / phi-q-tower-jsj-bridge
 def skeletonRealisation (q : ℝ) : TowerSummandRealization q where
   realisation := fun _ _ => 0
   realisation_nonneg := fun _ _ => le_refl 0
@@ -85,7 +85,7 @@ class PerPieceBridgeAxiom (q : ℝ) [VolumeConjecture q] [TowerSummandRealizatio
   bridge_per_piece : ∀ (β : Braid) (S : Finset (Fin (β.n - 1))),
     TowerSummandRealization.realisation (q := q) β S = rho q * pieceVolume q β S
 
--- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / phi-q-tower-jsj-bridge
+-- Ref: [leitner2026] Ch 3 §sec:calibration-algebraic-mass / phi-q-tower-jsj-bridge
 -- Ref: [kashaev1997] Kashaev, "The hyperbolic volume of knots from the quantum dilogarithm," Lett. Math. Phys. 39 (1997)
 instance skeletonBridge (q : ℝ) [VolumeConjecture q] [TowerSummandRealization q] [ctx : PerPieceBridgeAxiom q] :
     PerPieceBridge q where

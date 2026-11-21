@@ -1,0 +1,46 @@
+11.2 Proof of Theorem 11.1 353
+
+Proof Begin by observing a property of tangent cones in real space: if a unit
+vector 6 is in tan,(B) and v, — 0 with v,/|v,| — 6 then x + v, € B for
+sufficiently large n. Strong hyperbolicity of g in any direction u € tan,(B)
+then follows from the definitions of strong hyperbolicity and B.
+
+To derive the second conclusion, suppose for contradiction that g is not
+hyperbolic in unit direction w € R¢, meaning that (uw + i8) = 0 for some
+0 ¢ R¢. Because the algebraic tangent cone is the limiting secant cone by
+Lemma 6.48, there must be sequences of real vectors {a,} and {G,} such that
+(Qn + 1Bn)/|On + iBn| > (u + 18)/\u + iO| and G(z + a, + iB,) = 0. Because
+Q, > 0 with a,/|a,| > u, the above observation with v, = a, shows that
+a +a, € B for all sufficiently large n. But B is in the complement of the
+amoeba, contradicting g(z + a, + i8,) = 0 and proving hyperbolicity of g in
+direction w.
+
+The third conclusion, K“(g) 2 tan,,(B), follows immediately. For the final
+conclusion, fix any non-zero real vector €. Then g(€ + tu) is a polynomial
+of degree m with leading coefficient G(w) and constant term g(). The ratio
+G(&)/G(u) is (—1)” times the product of all the roots. By definition of cones of
+hyperbolicity, all the roots are real, therefore g(£)/q(u) is real. Because € was
+arbitrary, we conclude that (a)/(u) maps R¢ to R. ia)
+
+11.2.4 Semi-continuity
+
+Near any point in any stratum of a complex algebraic variety there are one
+or more cones contained in the complement of the variety. Hyperbolicity may
+be thought of as a kind of orientability for families of such cones, ensuring a
+consistent choice of “inward tangent cone” (see Exercise 11.10 for a related
+perspective). This provides some intuition as to why it’s easier to define hy-
+perbolicity for minimal points, since the meaning of “inward” can be inferred.
+Hyperbolicity is also used to ensure the cones are convex.
+
+Aiming at conclusion (iv) of Theorem 11.1, we quote and briefly outline
+proofs of the following semi-continuity results from [BP11, Theorem 2.14 and
+Corollary 2.15], which are also discussed in [ABG70, Lemma 3.22] and [Gar50;
+H6r83].
+
+Lemma 11.27 (semi-continuity). (i) Let A be a homogeneous polynomial
+and C a cone of hyperbolicity for A. Then the cone K‘(y) is lower
+semi-continuous in y.
+
+(ii) Let g = Qo exp for some Laurent polynomial Q, let B be a component
+of the complement of amoeba(Q), and let x € OB. Then K?3(z) is lower
+semi-continuous as z varies over T(a).

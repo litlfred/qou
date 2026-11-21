@@ -1,1 +1,0 @@
-Quartic and higher terms for $V(A)$ will be also generated and shall be added to [\[Affect\]](#Affect){reference-type="eqref" reference="Affect"}, potentially entailing a potential in $A$ for a spontaneous symmetry breaking.

@@ -1,0 +1,1 @@
+If G=GL, these sums can easily be computed. Then g=gl,, the Lie algebra of all 2 x 2-matrices and g’ can be identified with g via the pairing (X, X’) Tr(X X’). Let A’e(g’)’ be a noncentral semisimple element. Its cen- tralizer is a maximal k-torus T in G. Let t be its Lie algebra and r(=1, 2) its k-rank.

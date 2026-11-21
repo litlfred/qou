@@ -1,0 +1,1 @@
+If ζ̸ = 1 is a root of unity of order prime to p, then Lin(ζ) is in pnZp[ζ]. n (ζ) is in Qp(ζ) by Proposition 4.3, and by Proposition 4.8 we have |Li(p) n (ζ) is in Zp[ζ]. The result is now immediate from

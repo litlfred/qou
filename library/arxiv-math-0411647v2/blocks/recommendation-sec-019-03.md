@@ -1,1 +1,0 @@
-Equation [\[eq:dlaczegopushing\]](#eq:dlaczegopushing){reference-type="eqref" reference="eq:dlaczegopushing"} should explain the name of pushing sequences: imagine that $A\cup\{\ast\}$ is a set of some items and initially every item $x$ is located within a box which carries a label '$x$'.

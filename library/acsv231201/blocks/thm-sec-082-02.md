@@ -1,0 +1,1 @@
+24 (Stokes’s Theorem). Let p ≥1 and suppose that ω is a (p−1)- form on a manifold M of dimension at least p. If C is a p-chain on M then Z ∂C ω = Z C dω . Stokes’s Theorem follows from our deﬁnitions, integration by parts, and some elementary computations; see [War83, Theorem 4.7] for details.

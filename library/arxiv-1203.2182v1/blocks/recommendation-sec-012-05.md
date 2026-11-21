@@ -1,1 +1,0 @@
-As a result, ${\cal H }^{sl(r), \Lambda^r}_{i,j} (K)$ should also be one-dimensional for every knot $K$, and from [\[gradchoicea\]](#gradchoicea){reference-type="eqref" reference="gradchoicea"} it follows that $d_{-r}$ is also a canceling differential for ${\cal H }^{S^r}_{i,j,k} (K)$.

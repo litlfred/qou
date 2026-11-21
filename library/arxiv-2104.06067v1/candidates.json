@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2104.06067v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "750303181ca019ba16d94fa009a6505e6ede47d1b9ac2976f9d84ed69b0e01e8",
   "file": "2104.06067v1.pdf"
  },
  "provenance": {
-  "title": "ON IRREDUCIBLE CHARACTERS OF THE IWAHORI-HECKE ALGEBRA IN",
+  "title": "On irreducible characters of the Iwahori-Hecke algebra in type A",
   "authors": "TYPE A",
   "arxiv": {
    "id": "2104.06067",
@@ -16,31 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 1,
-  "by_kind": {
-   "recommendation": 1
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Note that $\\mu$ must be a partition $\\subset\\lambda$ with weight $|\\lambda|-k$ if $S_{\\lambda-\\tau}.1\\neq 0$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-4-determinant-type-murnaghan-nakayama-rule.md",
-   "section_title": "Determinant type Murnaghan-Nakayama rule",
-   "pages": "12-17",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

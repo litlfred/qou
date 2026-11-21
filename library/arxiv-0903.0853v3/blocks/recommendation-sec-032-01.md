@@ -1,1 +1,0 @@
-The $q$-Borel transform is then defined by: $$\label{not39} {\mathcal{B}}_{q,d} \left(\sum f_{n} z^{n}\right) := \sum \dfrac{f_{n}}{t_{n}} \xi^{n}.$$ We must also choose $d^{th}$ roots $B_{1},B_{2}$ of $A_{1},A_{2}$.

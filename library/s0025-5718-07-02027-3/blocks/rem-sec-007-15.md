@@ -1,0 +1,1 @@
+Computing the coeﬃcients of gn(v) as rational numbers is very in- eﬃcient so, instead, we use coeﬃcients in Qp with ﬁnite precision. If gn(v) = an,1v + an,2v2 + · · · , then kan+1,k = −(an,1 + an,2 + · · · + an,k) by Proposition 4.3. Hence, if we know an,k for 1 ≤k ≤gsl′ −1 up to precision

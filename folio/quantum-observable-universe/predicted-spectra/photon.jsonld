@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-photon",
+  "@type": [
+    "folio-assistant-sci:Definition",
+    "doco:Section"
+  ],
+  "label": "def:photon",
+  "kind": "definition",
+  "title": "Photon (four-term Hecke element with chiral vertex)",
+  "tags": [
+    "photon",
+    "hecke-algebra",
+    "colored-photon",
+    "gamma-gamma",
+    "definition"
+  ],
+  "defines": [
+    "photon",
+    "bare-photon",
+    "colour-weights"
+  ],
+  "leanRef": "qou:QOU.Photon.photon",
+  "text": "photon.md",
+  "provenance": "authored"
+}

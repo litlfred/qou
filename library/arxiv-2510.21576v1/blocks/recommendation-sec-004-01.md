@@ -1,1 +1,0 @@
-Additionally, in coordinate space $\ensuremath{\boldsymbol{p}} = -i \nabla$ and acts directly on the wave function (for sub-leading terms involving powers of $\ensuremath{\boldsymbol{p}}$, particular care must be taken when performing the Fourier transform from momentum to coordinate space).

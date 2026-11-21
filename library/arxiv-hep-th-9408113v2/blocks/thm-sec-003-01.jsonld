@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-hep-th-9408113v2/blocks/thm-sec-003-01",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 10,
+  "pageEnd": 23,
+  "text": "thm-sec-003-01.md",
+  "derivedFrom": "library/arxiv-hep-th-9408113v2/sections/sec-003",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9408113v2/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "1",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-003-12-accessible-dilogarithm-relations.md (p. 10-23)",
+    "claim_id": "arxiv-hep-th-9408113v2#theorem:1",
+    "lean_status": "doc-cited-in-lean-unlinked-claim"
+  }
+}

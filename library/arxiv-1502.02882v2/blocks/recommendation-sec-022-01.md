@@ -1,1 +1,0 @@
-For a 2-cocycle A ∈Z2(C), that is, a collection of linear opera- tors Ai jk satisfying (43),the vanishing of H2(C) means that Ai jk must take the form Ai jk = (cj −ci + ck) id (47) for some scalars ci, cj, ck.

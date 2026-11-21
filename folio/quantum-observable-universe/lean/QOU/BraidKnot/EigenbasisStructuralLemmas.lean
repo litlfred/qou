@@ -31,7 +31,7 @@ LaTeX / witness: probe `eigenbasis-structural-lemmas`, lemma L3.
 
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 - [jones1987] https://doi.org/10.2307/1971403
-- [manuscript] braids-and-knots / eigenbasis structural lemmas (PR #2502)
+- [leitner2026] braids-and-knots / eigenbasis structural lemmas (PR #2502)
 -/
 
 namespace QOU.BraidKnot.EigenbasisStructuralLemmas

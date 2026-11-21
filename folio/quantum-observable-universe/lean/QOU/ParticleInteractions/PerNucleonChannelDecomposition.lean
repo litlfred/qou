@@ -46,7 +46,7 @@ decomposed into four channels by the $T_{2,3}$ eigenstructure
 of $H_3(q)$.
 
     The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.ts
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.ts
 theorem PerNucleonChannelDecomposition [ctx : PerNucleonChannelDecompositionContext] :
     ctx.M = (Finset.univ.prod fun m : Fin ctx.A => ctx.M_m m) :=
   ctx.h_M.trans ctx.h_prod.symm

@@ -68,7 +68,7 @@ class GradedTraceResidueSplit (R : Type u) [CommRing R] where
 /-- Level-0 case: when oscillating residue vanishes, total = smooth.
     This recovers the pure-descended regime.
 
-    Ref: [manuscript] `prop:categorical-mass-markov`. -/
+    Ref: [leitner2026] `prop:categorical-mass-markov`. -/
 theorem level_zero_pure_descended
     {R : Type u} [CommRing R] (S : GradedTraceResidueSplit R)
     (h : S.oscillating = 0) :
@@ -78,7 +78,7 @@ theorem level_zero_pure_descended
 /-- The graded-trace residue split is the algebraic shadow of
     Strutinsky's `E = Ẽ + δE_shell`.
 
-    Ref: [manuscript] §Nuclear Binding and Beta Stability. -/
+    Ref: [leitner2026] §Nuclear Binding and Beta Stability. -/
 theorem strutinsky_analogue
     {R : Type u} [CommRing R] (S : GradedTraceResidueSplit R) :
     -- The split exists and is canonical; the physics interpretation

@@ -237,6 +237,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "864c40822fc3",
+          "ts": "d6ee8981cece"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:32.437Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "residue-at-root-proof.md:10-16 asserts Φ_q·tr_{M,ℓ} lies in the Habiro ring with no argument; :26-31 identifies the cyclotomic projection (an evaluation map) with the analytic residue at ζ_ℓ — a residue at a regular point is 0; Z[q]/Φ_{n_ℓ} vs Z[ζ_ℓ] index mismatch",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: other"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1140,7 +1156,7 @@
           "in_degree": 0,
           "cone_size": 24,
           "depth": 9,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 182,
           "edge_span_mean": 91.5,
           "worst_target": ""
@@ -1542,7 +1558,7 @@
         },
         "reviewed_at": "2026-08-22T02:29:35.896Z",
         "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
-        "evidence": "FIX APPLIED: 'well-defined *regardless* of analytic convergence \u2014 which is the point: the algebraic-side derivation does not need analytic continuation.' -> '... *regardless* of analytic convergence: the algebraic-side derivation does not need analytic continuation.' 'which is the point' announced the significance instead of leaving the colon to carry it."
+        "evidence": "FIX APPLIED: 'well-defined *regardless* of analytic convergence — which is the point: the algebraic-side derivation does not need analytic continuation.' -> '... *regardless* of analytic convergence: the algebraic-side derivation does not need analytic continuation.' 'which is the point' announced the significance instead of leaving the colon to carry it."
       }
     ],
     "trap-thesis-restatement": [
@@ -1679,7 +1695,7 @@
         "reviewed_at": "2026-08-22T02:29:36.130Z",
         "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
         "evidence": "Proof steps are short and sequential.",
-        "notes": "NON-TRAP FINDING, not fixed (attribution/convention, needs the author): 'Equivalence with the analytic definition ... is the content of the Habiro-completion theorem \\cite{habiro2002}: the cyclotomic projections agree with the analytic residue at zeta_l for any element of Zhat[q] that converges as a complex function on |q| > 1.' The convergence region looks inverted \u2014 Habiro-ring elements are sums a_n(q)(q;q)_n and (q;q)_n converges for |q| < 1 while growing for |q| > 1 \u2014 and I could not match the quoted equivalence to habiro2002, whose content is the cyclotomic completion and the unified WRT invariant rather than an analytic-residue comparison. Also inherits the zeta_l vs zeta_{n_l} index inconsistency recorded on residue-at-root.md, and identifies Z[q]/Phi_{n_l}(q) with Z[zeta_l] (a ring) where the proposition calls it the field Q(zeta_l)."
+        "notes": "NON-TRAP FINDING, not fixed (attribution/convention, needs the author): 'Equivalence with the analytic definition ... is the content of the Habiro-completion theorem \\cite{habiro2002}: the cyclotomic projections agree with the analytic residue at zeta_l for any element of Zhat[q] that converges as a complex function on |q| > 1.' The convergence region looks inverted — Habiro-ring elements are sums a_n(q)(q;q)_n and (q;q)_n converges for |q| < 1 while growing for |q| > 1 — and I could not match the quoted equivalence to habiro2002, whose content is the cyclotomic completion and the unified WRT invariant rather than an analytic-residue comparison. Also inherits the zeta_l vs zeta_{n_l} index inconsistency recorded on residue-at-root.md, and identifies Z[q]/Phi_{n_l}(q) with Z[zeta_l] (a ring) where the proposition calls it the field Q(zeta_l)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1702,6 +1718,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T02:29:36.130Z",
+  "updated_at": "2026-11-15T21:57:32.437Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

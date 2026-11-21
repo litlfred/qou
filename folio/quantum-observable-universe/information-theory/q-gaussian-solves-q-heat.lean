@@ -15,8 +15,8 @@ LaTeX label: `prop:q-gaussian-solves-q-heat`
 
 ## References
 
-- [manuscript] §9-information-theory/q-gaussian-solves-q-heat
-- [manuscript] §2-quantum-observable-universes/q-laplacian-expansion
+- [leitner2026] §9-information-theory/q-gaussian-solves-q-heat
+- [leitner2026] §2-quantum-observable-universes/q-laplacian-expansion
 
 **Char 0 only**: uses ℝⁿ, Gaussian integrals, classical Laplacian.
 -/
@@ -26,18 +26,18 @@ namespace QOU
 noncomputable section
 
 /-- The Reeb-invariant q-Gaussian kernel on ℝⁿ. -/
--- Ref: [manuscript] §9
+-- Ref: [leitner2026] §9
 def qGaussian (q t : ℝ) (n : ℕ) (x : EuclideanSpace ℝ (Fin n)) : ℝ :=
   (4 * Real.pi * t / q^2)^(-(n : ℝ) / 2) *
     Real.exp (-(q^2 * (‖x‖^2)) / (4 * t))
 
 /-- **q-Gaussian solves the q-heat equation**: on Reeb-invariant data,
     Δ_q reduces to q⁻² Δ, and G_q is the rescaled classical Gaussian. -/
--- Ref: [manuscript] §9
+-- Ref: [leitner2026] §9
 theorem qGaussianSolvesQHeat (q : ℝ) (hq : 0 < q) (n : ℕ) :
     ∀ (t : ℝ) (x : EuclideanSpace ℝ (Fin n)),
       0 < t → True := by
-  -- Ref: [manuscript] §9 — direct computation reduces to classical
+  -- Ref: [leitner2026] §9 — direct computation reduces to classical
   -- heat equation at rescaled time τ = q⁻² t.  Detailed proof relies
   -- on Mathlib's Gaussian heat-kernel lemma, which is WIP.
   intros _ _ _
@@ -45,7 +45,7 @@ theorem qGaussianSolvesQHeat (q : ℝ) (hq : 0 < q) (n : ℕ) :
 
 /-- **Classical limit** (q = 1): G_q recovers the ordinary Gaussian
     heat kernel. -/
--- Ref: [manuscript] §9
+-- Ref: [leitner2026] §9
 theorem qGaussian_classical_limit (n : ℕ)
     (t : ℝ) (x : EuclideanSpace ℝ (Fin n)) :
     qGaussian 1 t n x
@@ -66,7 +66,7 @@ def qGaussianVariance (q t : ℝ) (n : ℕ) : ℝ := (n : ℝ) * t / q ^ 2
     `field_simp; ring` (valid since `q ≠ 0`), and the narrowing
     `σ²_q < n·t` from `1 < q²` via `div_lt_self`-type reasoning —
     replacing the former `True` placeholder. -/
--- Ref: [manuscript] §9
+-- Ref: [leitner2026] §9
 theorem qGaussian_variance (q t : ℝ) (hq : 1 < q) (ht : 0 < t) (n : ℕ)
     (hn : 0 < n) :
     qGaussianVariance q t n * q ^ 2 = (n : ℝ) * t ∧

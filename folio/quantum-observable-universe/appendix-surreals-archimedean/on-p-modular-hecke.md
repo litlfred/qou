@@ -23,7 +23,7 @@ $\mathbf{On}_p$ in characteristic $p$ (Lenstra--Conway).
 
 ## Note on this paper
 
-This conjecture is **not** load-bearing for QOU's main results; the substrate value $q_0$ is generic (not a root of unity). The binary Hoefsmit / char-$0$ surreal picture applies throughout this paper. We include the char-$p$ extension here as a conceptual companion. It records how the Hoefsmit machinery maps into the modular setting.
+This conjecture is **not** load-bearing for QOU's main results; the substrate value $q_0$ is generic (not a root of unity). The binary Hoefsmit / char-$0$ surreal picture applies throughout this paper. The char-$p$ extension is included here as a conceptual companion. It records how the Hoefsmit machinery maps into the modular setting.
 
 ## Background: nimber surreals
 
@@ -104,8 +104,8 @@ Hecke algebra near roots of unity. Specifically:
  with $\dim_q(\lambda) = 0$ disappear; the surviving summands
  are reorganised into $p$-cycles.
 
-- **Quantum trivialisation**: when you tensor exactly $p$ copies of
- $V$ at $q = \zeta_p$, the trivial representation acquires
+- **Quantum trivialisation**: when exactly $p$ copies of
+ $V$ at $q = \zeta_p$ are tensored, the trivial representation acquires
  *multiplicity $p$* (or $0$, depending on parity), instead of
  $1$. This is the "$p$ braids coming together" — $p$ strands
  fuse into a single quantum-trivial channel.
@@ -143,8 +143,8 @@ The two lifts are related by:
 - they are *both* valid algebraic ambients for the same
  underlying $\mathbb{Z}[q^{\pm 1}]$-form of QOU.
 
-We do not pursue speculative physical readings of the char-$p$
-lifts here. The mathematical content — that modular Hecke at
+Speculative physical readings of the char-$p$
+lifts are not pursued here. The mathematical content — that modular Hecke at
 $\zeta_p$ corresponds to $\mathbf{On}_p$ surreals — is the actual
 claim.
 

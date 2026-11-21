@@ -1,1 +1,1 @@
-SupposeR ∈ D(Mod(A ⊗B◦)) is an Auslander dualizing complex.
+SupposeR ∈ D(Mod(A ⊗B◦)) is an Auslander dualizing complex. Then ModfA and ModfB◦ are in step duality. More precisely, for every q the func- tors Extq A(−,R ) and Extq B◦ (−,R ) induce a duality between the quotient categories Mq,f/Mq−1,f and M◦ q,f/M◦ q−1,f .

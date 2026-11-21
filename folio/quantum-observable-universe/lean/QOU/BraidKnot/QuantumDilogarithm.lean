@@ -26,7 +26,7 @@ tower on per-generator amplitudes.
 
 LaTeX label: `\label{def:quantum-dilogarithm-disambiguation}`
 
-Ref: [manuscript] `prop:mass-endomorphism-tower` (resolution note)
+Ref: [leitner2026] `prop:mass-endomorphism-tower` (resolution note)
 -/
 
 namespace QOU.BraidKnot
@@ -48,7 +48,7 @@ universe u
 
     Axiomatised here pending a Lean infinite-product implementation;
     the value at z = 0 is fixed by the empty-product convention. -/
--- Ref: [manuscript] prop:mass-endomorphism-tower §Quantum-dilogarithm form
+-- Ref: [leitner2026] prop:mass-endomorphism-tower §Quantum-dilogarithm form
 opaque phi_q_residual : ℝ → ℝ → ℝ
 
 /-- Quantum dilogarithm encoded as the empty-product baseline `1`
@@ -83,7 +83,7 @@ theorem phi_q_at_zero : ∀ q : ℝ, phi_q q 0 = 1 := by
     correct archimedean specialisation of `Vol_q^(S)` in the
     mass-endomorphism tower. The series has empty first term at
     z = 0, giving Li_2^q(q, 0) = 0. -/
--- Ref: [manuscript] prop:mass-endomorphism-tower §Trace-vs-evaluation note
+-- Ref: [leitner2026] prop:mass-endomorphism-tower §Trace-vs-evaluation note
 opaque li2_q_residual : ℝ → ℝ → ℝ
 
 /-- Symmetric q-dilogarithm encoded as the empty-sum baseline `0`
@@ -104,7 +104,7 @@ theorem li2_q_at_zero : ∀ q : ℝ, li2_q q 0 = 0 := by
     identity claim `Φ_q(z) = -Li_2^q(-z)`. The proof exhibits a
     counter-example at `z = 0`, where Φ_q is the empty product
     `1` and -Li_2^q(-0) is the empty sum `0`. -/
--- Ref: [manuscript] prop:mass-endomorphism-tower §Kashaev-integration-identity audit
+-- Ref: [leitner2026] prop:mass-endomorphism-tower §Kashaev-integration-identity audit
 theorem phi_q_ne_li2_q :
     ¬ (∀ q z : ℝ, phi_q q z = - li2_q q (-z)) := by
   intro h
@@ -165,7 +165,7 @@ theorem ne_phi_q_at_zero
 
 
 /-- Quantum-dilogarithm disambiguation (placeholder marker for content block ref resolution) -/
--- Ref: [manuscript] disambiguation marker for content-block resolution
+-- Ref: [leitner2026] disambiguation marker for content-block resolution
 structure QuantumDilogarithm where
 
 /-! ## z-Habiro Rogers saddle identity (conjecture — formalize-first)

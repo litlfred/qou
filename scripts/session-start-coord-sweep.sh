@@ -102,7 +102,7 @@ else
   # Since the beans cutover (issue #7642) beans/ is a branch mount made by
   # scripts/mount-fsh-guts.sh, whose own output goes to a log file. Say it here,
   # where the session sees it: a missing mount is NOT an empty work-plan.
-  echo "**⚠ Bean work-plan UNAVAILABLE: \`beans/defs/\` is not mounted.** An empty \`beans list\` must not be read as \"no work\". Fix: \`./scripts/setup-folio-assistant.sh && bun folio-assistant/cat-harness-tools/scripts/state-mount.ts\` (log: \`\${TMPDIR:-/tmp}/qou-mount-fsh-guts.log\`)."
+  echo "**⚠ Bean work-plan UNAVAILABLE: \`beans/defs/\` is not mounted.** An empty \`beans list\` must not be read as \"no work\". Fix: \`./scripts/mount-platform-lite.sh && bun folio-assistant/cat-harness-tools/scripts/state-mount.ts\` (log: \`\${TMPDIR:-/tmp}/qou-mount-fsh-guts.log\`)."
   echo
 fi
 

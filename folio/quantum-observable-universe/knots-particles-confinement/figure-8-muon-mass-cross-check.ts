@@ -4,7 +4,7 @@ export default remark({
   label: "rem:figure-8-muon-mass-cross-check",
   title:
     "Numerical cross-check of CAL-2: $\\mathrm{Vol}(4_1)/\\hbar_q^2 = m_\\mu/m_e$ at 50 dps",
-  interprets: "prop:three-calibration-inputs",
+  interprets: "conj:three-calibration-inputs",
   computation: {
     engine: "mpmath",
     script:

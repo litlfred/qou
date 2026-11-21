@@ -54,7 +54,7 @@
   The trivial-zero instance bundle that discharged all five is removed; see the
   note at the foot of this file.
 
-  Ref: [manuscript]
+  Ref: [leitner2026]
     - conj:q-aubin-lions
     - conj:ns-counterexample
     - conj:critical-exponent
@@ -94,7 +94,7 @@ namespace QOU.AlgebraicSubstrate
     `K = 0` for every `E`, so "scales linearly" appeared in the prose and
     nowhere in the Lean. `Prop` classes cannot carry data, hence `K` is a
     parameter. Bean `qou-3ytx`. -/
--- Ref: [manuscript] conj:q-aubin-lions
+-- Ref: [leitner2026] conj:q-aubin-lions
 class QAubinLions (K : ℝ → ℝ) : Prop where
   /-- The compactness constant is linear in the energy bound, with a strictly
       positive embedding constant. -/
@@ -134,7 +134,7 @@ class QAubinLions (K : ℝ → ℝ) : Prop where
     literally "there exists a non-negative real", with the initial-datum norm
     bound and discarded, and its own sub-docstring conceded "Trivially: `T* = 0`
     works." Bean `qou-5nj1`. -/
--- Ref: [manuscript] conj:ns-counterexample
+-- Ref: [leitner2026] conj:ns-counterexample
 class NSCounterexample (vorticitySup : ℝ → ℝ) : Prop where
   /-- The vorticity exceeds every bound `M` at times arbitrarily close to `T`
       from below: for every `t₀ < T` there is a `t` in `(t₀, T)` with
@@ -201,7 +201,7 @@ class NSCounterexample (vorticitySup : ℝ → ℝ) : Prop where
     nothing and every `[CriticalExponent]`-conditional theorem was vacuous in
     its critical-exponent leg. Beans `qou-93hu` (the vacuity) and `qou-4670`
     (the boxed value). -/
--- Ref: [manuscript] conj:critical-exponent
+-- Ref: [leitner2026] conj:critical-exponent
 class CriticalExponent (enstrophy : ℝ → ℝ) (α : ℝ) : Prop where
   /-- The exponent is positive: a genuine divergence, not a bounded
       oscillation. Mirrors upstream `criticalExponent_pos`. -/
@@ -256,7 +256,7 @@ class CriticalExponent (enstrophy : ℝ → ℝ) (α : ℝ) : Prop where
     a genuine blow-up by an `obstruction` that is nonzero somewhere against
     `smooth = False`. Witnesses in
     `docs/audits/2026-08-30-qns-carriers-are-refutable.lean`. -/
--- Ref: [manuscript] prop:blowup-yekutieli
+-- Ref: [leitner2026] prop:blowup-yekutieli
 -- Ref: [yekutieli2010] https://doi.org/10.1007/s00029-010-0029-8
 class BlowupYekutieli (obstruction : ℕ → ℕ) (smooth : Prop) : Prop where
   /-- **Smoothness-as-lifting.** `v` is smooth iff every brane-tower
@@ -285,7 +285,7 @@ class BlowupYekutieli (obstruction : ℕ → ℕ) (smooth : Prop) : Prop where
     its own sub-docstring conceded "Trivially: `μ = 0`". Note the discharger
     also reused the hypothesis directly (`⟨0, le_refl 0, hs⟩`): the proof term
     *was* the hypothesis. Bean `qou-m7a2`. -/
--- Ref: [manuscript] conj:regularity-breakdown
+-- Ref: [leitner2026] conj:regularity-breakdown
 class RegularityBreakdown (breakdownSet : Set ℝ) : Prop where
   /-- The breakdown locus is Lebesgue-null. -/
   breakdown_measure_zero : MeasureTheory.volume breakdownSet = 0

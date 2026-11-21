@@ -33,7 +33,7 @@ LaTeX label: `def:hecke-mass-element`
 
 ## References
 
-- [manuscript] §4/hecke-mass-element
+- [leitner2026] §4/hecke-mass-element
 - [jones1987] https://doi.org/10.2307/1971403
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -/
@@ -54,7 +54,7 @@ universe u
 
     We encode this as a structure carrying the decomposition data,
     polymorphic in the ground ring `R` (pre-Arch: `R = ℤ[q^±1]`). -/
--- Ref: [manuscript] §4/hecke-mass-element
+-- Ref: [leitner2026] §4/hecke-mass-element
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
@@ -76,7 +76,7 @@ structure HeckeMassElement (R : Type u) [CommRing R] where
     `m²(Φ) := ⟨Φ.massElement, Φ.massElement⟩_F`, where the Frobenius
     pairing is supplied by the caller.  Valued in `R` (no Archimedean
     norm). -/
--- Ref: [manuscript] §4/hecke-mass-element
+-- Ref: [leitner2026] §4/hecke-mass-element
 def frobeniusMassSquared
     {R : Type u} [CommRing R] (frobenius_form : R → R → R)
     (Φ : HeckeMassElement R) : R :=
@@ -90,7 +90,7 @@ def frobeniusMassSquared
 
     Per `QOU.GroundRingAnnotations`, this is **not** part of the
     pre-Arch chain. -/
--- Ref: [manuscript] §4/hecke-mass-element
+-- Ref: [leitner2026] §4/hecke-mass-element
 noncomputable def HeckeMassElement.mass
     {R : Type u} [NormedCommRing R]
     (Φ : HeckeMassElement R) : ℝ :=
@@ -98,7 +98,7 @@ noncomputable def HeckeMassElement.mass
 
 /-- The mass decomposes via the triangle inequality, with equality
     when descended and transient components are non-negative reals. -/
--- Ref: [manuscript] §4/hecke-mass-element
+-- Ref: [leitner2026] §4/hecke-mass-element
 theorem mass_upper_bound {R : Type u} [NormedCommRing R]
     (Φ : HeckeMassElement R) :
     Φ.mass ≤ ‖Φ.descendedComponent‖ + ‖Φ.transientComponent‖ := by
@@ -107,7 +107,7 @@ theorem mass_upper_bound {R : Type u} [NormedCommRing R]
   exact norm_add_le Φ.descendedComponent Φ.transientComponent
 
 /-- Exact mass decomposition for non-negative real components. -/
--- Ref: [manuscript] §4/hecke-mass-element
+-- Ref: [leitner2026] §4/hecke-mass-element
 -- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2

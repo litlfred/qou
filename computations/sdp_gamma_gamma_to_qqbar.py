@@ -12,7 +12,9 @@ vertex is encoded in the Hecke algebra:
   - σ_0 (horizontal polarization, eigenvalues +q / −q⁻¹)
   - σ_1 (vertical polarization, eigenvalues +q / −q⁻¹)
   - σ_0 · σ_1 → L₊ (Hopf link intermediate)
-  - σ_0 · σ_1 · σ_0 → trefoil (electron / quark closure)
+  - σ_0 · σ_1 · σ_0 → closure in B₃ has 2 components (its permutation is the
+    transposition of strands 0 and 2), so it is NOT the trefoil T(2,3); see
+    perm_e_gg (LeptonStrandPremise.lean, PR #8673).  The trefoil is σ³ in B₂.
 
 The classical reading: each photon enters a Hecke generator slot,
 the product gives the pair-creation amplitude in the polarization
@@ -39,6 +41,13 @@ That's the full pipeline. For now: H_2 γγ → e⁺e⁻ SDP as proof of
 concept, then H_3 qq̄ with one inner Borromean.
 
 NO Vol_hyp.  NO census.  Pure mpmath at 50 dps.
+
+Scope note (2026-11-20). Owner ruling (bean qou-99qc, 2026-11-18, confirmed 2026-11-20):
+def:photon is gamma(phi) = 1 + phi0 s0 + phi1 s1 + phi01 s0 s1^-1. A single crossing is a TERM of a
+photon, not a photon. The four-term recomputation of this file's photon claim is
+probes/photon_chiral/photon_chiral_ports_probe.py, section E (results.md there).
+The chiral vertex needs s1, so a four-term photon lives in H_3, not in this H_2 scaffold; the
+H_2 numbers here are unchanged and remain an H_2 statement about the s0 term.
 
 Output: sdp-gamma-gamma-to-qqbar.witness.json
 """
@@ -114,7 +123,8 @@ HA               = Q0 - QI0
 # (computations/qbeta/integer_lp_gluon_convention_d.py).  It does not force
 # k > 0: whether the gluon vertex is present at all is a separate question.
 # γγ → qq̄ "production" is described by σ_0³ (per breit-wheeler-vertex
-# the trefoil σ_0σ_1σ_0 closes to a trefoil knot = electron, not quark).
+# σ_0σ_1σ_0 is the γγ electron word, not a quark; its B₃ closure has 2
+# components (perm_e_gg, PR #8673), so it is not the trefoil T(2,3)).
 
 
 def h2_psd_check(c1, c_sigma):

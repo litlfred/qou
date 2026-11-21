@@ -9,13 +9,18 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Standard phase",
-  "pageStart": 136,
-  "pageEnd": 139,
+  "title": "Analytic versus smooth functions",
+  "pageStart": 123,
+  "pageEnd": 132,
   "contains": [
-    "library/acsv231201/blocks/prose-sec-022"
+    "library/acsv231201/blocks/prose-sec-022",
+    "library/acsv231201/blocks/lem-sec-022-01",
+    "library/acsv231201/blocks/lem-sec-022-02",
+    "library/acsv231201/blocks/cor-sec-022-03",
+    "library/acsv231201/blocks/lem-sec-022-04",
+    "library/acsv231201/blocks/thm-sec-022-05"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
   "provenance": "ingested"
 }

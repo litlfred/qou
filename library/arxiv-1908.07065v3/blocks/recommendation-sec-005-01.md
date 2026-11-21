@@ -1,1 +1,0 @@
-Similarly, the Borel transform of $\Pi_A(u,\hbar)$ should have branch points at the central charges of monopoles and dyons with electromagnetic charges $\pm(0,1), \pm(1,1)$, while the Borel transform of $\Pi_B(u,\hbar)$ have branch points only at the central charges of dyons.

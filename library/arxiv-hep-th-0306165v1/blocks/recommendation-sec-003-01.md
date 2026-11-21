@@ -1,1 +1,0 @@
-Three-Dimensional Quantum Gravity As we already mentioned earlier, there are several intriguing connections between three-dimensional gravity and Chern-Simons theory with complex gauge group GC = SL(2,C) and imaginary values of the parameter s (for convenience, in what follows we shall use a real parameter σ = is).

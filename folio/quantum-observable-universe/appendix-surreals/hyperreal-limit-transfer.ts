@@ -15,6 +15,11 @@ export default theorem({
     ref: "qou:QOU.AppendixSurreals.HyperrealTransfer.st_ofSeq_of_tendstoReal",
     validation: "leanok",
   },
-  uses: ["conj:surreal-limit-transfer"],
+  uses: [
+    // conj:surreal-limit-transfer removed (qou-tm3c): the theorem is st(*a) = L for a convergent sequence; the .md says the surreal carrier plays no role.
+  ],
   cites: ["robinson1966", "conway1976"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Original wording: the class \"is stated over `SurrealField` and carried with **no instance**\"; \"in Mathlib's hyperreals\"; \"literally Mathlib's characterisation of `IsSt`. The two agree by `rfl`.\"; \"convergence along `atTop`\"; \"which Mathlib does not package\"; \"exposed something about `SurrealField` itself\"." },
+  ],
 });

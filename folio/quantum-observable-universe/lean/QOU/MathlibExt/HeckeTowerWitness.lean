@@ -87,7 +87,7 @@ actually needs is the Iwahori-Hecke coset basis, or the direct limit of
 basis theorem is in the corpus (`finrank_le_factorial`, bean `qou-uoal`); the
 `n!` lower bound is the open half. Tracked as bean `qou-p8yg`.
 
--- Ref: [manuscript] beans qou-cins / qou-0fmb / qou-301d; Jones, *Hecke algebra
+-- Ref: [leitner2026] beans qou-cins / qou-0fmb / qou-301d; Jones, *Hecke algebra
 --      representations of braid groups and link polynomials*, Ann. of Math. 126
 --      (1987), §5 (the Ocneanu trace); Geck-Pfeiffer, *Characters of Finite
 --      Coxeter Groups and Iwahori-Hecke Algebras*, §4.4.

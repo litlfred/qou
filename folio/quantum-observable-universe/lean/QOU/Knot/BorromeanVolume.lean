@@ -33,7 +33,7 @@
 
   -- Ref: [garoufalidis-le-2011] https://doi.org/10.2140/gt.2011.15.2135
   -- Ref: [habiro2000] RIMS Kokyuroku 1172 (2000) 34-43
-  -- Ref: [manuscript] binding-scale-catalan
+  -- Ref: [leitner2026] binding-scale-catalan
 -/
 
 import QOU.Knot.FigureEightVolumeSqueeze

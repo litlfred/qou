@@ -1,10 +1,10 @@
 Let $\mathcal{B}_K$ be the canonical atomic braid of a nucleus with $A$
 nucleons — each nucleon a $3$-strand block, assembled by
-`atom_braid_word_3A` — and equip $H_{3A}(q)$ with the Gröbner--Shirshov
+the canonical atomic braid word — and equip $H_{3A}(q)$ with the Gröbner--Shirshov
 filtration by Coxeter length $\ell(w)$
-([`prop:gb-spectral-sequence`](#prop:gb-spectral-sequence)) read off through
+([Length-filtration spectral sequence of the Hochschild complex of $H_n(R, q)$](#prop:gb-spectral-sequence)) read off through
 the jet-prefix order
-([`prop:jet-prefix-gb-filtration`](#prop:jet-prefix-gb-filtration)). Then the
+([Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)](#prop:jet-prefix-gb-filtration)). Then the
 body-order decomposition of the binding coincides, term by term, with the
 jet-order filtration,
 

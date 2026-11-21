@@ -1,1 +1,0 @@
-Now, we must. have Seg (x, J) = —J-#+ Sem(a), since the only 1PI graph which contains 1-valent internal vertices (corresponding to J) is the graph with one edge, connecting an internal vertex with an external one (so it yields the term —J-2, and other graphs contain no J-vertices).

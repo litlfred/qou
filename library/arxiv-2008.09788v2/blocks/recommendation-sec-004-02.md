@@ -1,1 +1,0 @@
-\begin{proof} Indeed, should there exist $\lambda_0\neq 1$, we may find an exceptional curve whose singularity changes under $\Phi_N$, note that coefficients are products of normalization coordinates. \end{proof}

@@ -70,7 +70,7 @@ Literature: the q→1 confluence route outside RSZ is Di Vizio–Zhang
 legs: Fréchet–Shohat (Trans. AMS 33, 1931), Simon (Adv. Math. 137,
 1998), Billingsley (3rd ed., Thm. 30.2).
 
--- Ref: [manuscript] predicted-spectra, conj:schwinger-measure-computational-time;
+-- Ref: [leitner2026] predicted-spectra, conj:schwinger-measure-computational-time;
 --      docs/audits/2026-07-25-qborel-confluence-pos-attack.md §4;
 --      docs/audits/2026-07-25-kernel-convergence-mathlib-gap.md;
 --      [divizio-zhang2009] q-summation and confluence.

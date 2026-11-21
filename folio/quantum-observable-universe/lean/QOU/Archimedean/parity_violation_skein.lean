@@ -115,7 +115,7 @@ $\mathcal{P}:
     The Lean encoding below splits the manuscript claim into named
     sub-claim fields; concretisation requires per-block manuscript
     translation. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/parity-violation-skein.ts
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/parity-violation-skein.ts
 theorem parity_violation_skein [ctx : ParityViolationSkeinContext] :
     (ctx.lambda_sym = ctx.q ∧ ctx.lambda_alt = - ctx.q⁻¹) ∧
     (ctx.parityInvariant ↔ ctx.q = ctx.q⁻¹) ∧

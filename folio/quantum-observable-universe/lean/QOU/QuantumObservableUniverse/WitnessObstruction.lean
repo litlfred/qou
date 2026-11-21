@@ -41,7 +41,7 @@ This is scope **(a)**: it rules out module categories as QOU witnesses. It does
 **not** show a QOU exists anywhere, and it is not progress toward discharging
 `QuantumObservableUniverse.exists_instance`, whose `sorry` is untouched.
 
--- Ref: [manuscript] §2-quantum-observable-universes/quantum-observable-universe-exists
+-- Ref: [leitner2026] §2-quantum-observable-universes/quantum-observable-universe-exists
 -- Ref: [kassel1995] Quantum Groups (Springer GTM 155), §IX (quantum SU(2))
 -/
 
@@ -84,5 +84,25 @@ theorem no_qou_on_moduleCat (R : Type) [CommRing R]
     (hvanish : Subsingleton ((𝟙_ (ModuleCat R)) ⟶ adjointObj))
     (hnontrivial : incl ≠ 0) : False :=
   qou_needs_nongenerating_unit incl hvanish hnontrivial (moduleCat_unit_generates R)
+
+/-- Non-triviality of the adjoint inclusion `incl : adjointObj ⟶ A` forces `adjointObj`
+    not to be a zero object (`qou-btq3`). -/
+theorem adjointObj_not_isZero_of_nontrivial
+    {C : Type*} [Category C] [MonoidalCategory C] [Limits.HasZeroMorphisms C]
+    {adjointObj A : C} (incl : adjointObj ⟶ A)
+    (hnontrivial : incl ≠ 0) : ¬ IsZero adjointObj := by
+  intro hz
+  exact hnontrivial (hz.eq_zero_of_src _)
+
+/-- Contrapositive witness test (`qou-btq3`): if `incl : adjointObj ⟶ A` is non-zero
+    and `Hom(𝟙, −)` reflects zero objects, then `Hom(𝟙, adjointObj)` is not a subsingleton. -/
+theorem not_subsingleton_unit_hom_of_nontrivial
+    {C : Type*} [Category C] [MonoidalCategory C] [Limits.HasZeroMorphisms C]
+    {adjointObj A : C} (incl : adjointObj ⟶ A)
+    (hnontrivial : incl ≠ 0)
+    (hgen : ∀ W : C, Subsingleton ((𝟙_ C) ⟶ W) → IsZero W) :
+    ¬ Subsingleton ((𝟙_ C) ⟶ adjointObj) := by
+  intro hsub
+  exact qou_needs_nongenerating_unit incl hsub hnontrivial hgen
 
 end QOU.WitnessObstruction

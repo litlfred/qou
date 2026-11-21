@@ -45,7 +45,7 @@ logical necessity.
 
 None of this derives `A_ω`, and none of it depends on any literature value.
 
--- Ref: [manuscript] docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md (Route C, M0)
+-- Ref: [leitner2026] docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md (Route C, M0)
 -/
 
 namespace QOU.QBeta.ChiralityGradedCount

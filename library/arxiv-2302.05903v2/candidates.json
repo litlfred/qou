@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2302.05903v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "9a17abd36cc8a317e86c463e7b641bb0a1cef799920ff374e62f9cb229c2ea1b",
   "file": "2302.05903v2.pdf"
  },
  "provenance": {
-  "title": "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials Introduction",
+  "title": "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials",
   "authors": "A. Mironovb,c,d 1, A. Morozova,c,d 2",
   "arxiv": {
    "id": "2302.05903",
@@ -16,9 +19,7 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
   "candidates": 0,
   "by_kind": {},

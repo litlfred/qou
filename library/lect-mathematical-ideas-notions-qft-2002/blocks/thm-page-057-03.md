@@ -1,0 +1,1 @@
+(Feynman-Kac formula) If t; >... > tn then the function GHa™ admits an asymptotic expansion in h (near h = 0), which coincides with the path integral correlation function GY constructed above. Equivalently, the Wick rotated function GH™(—it,, ..., -itn) equals GP.

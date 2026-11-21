@@ -24,6 +24,12 @@ export default proposition({
   ],
   uses: ["prop:wedderburn-weight-canonical", "prop:algebraic-gns-embedding"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The Molien fake-degree weight is that of `QOU.MathlibExt.MolienFakeDegreeGeneralN.molienSum`; exact-rational verification for $n = 1,\\dots,9$ ([`probes/molien_feray_meliot_bridge_probe.py`](../../../computations/probes/molien_feray_meliot_bridge_probe.py)); `molienSum_eq_qFactorial` (Lean) says $\\sum_\\lambda f^\\lambda q^{-\\kappa_\\lambda}\\dim_q(\\lambda) = [n]_q!$, and" },
+    {
+      kind: "refined-framing",
+      date: "2026-11-15",
+      body: "Owner ruling 2026-09-05, re-affirmed 2026-09-08 and 2026-11-15: the canonical Phi_k weight is Molien $f^\\lambda q^{-\\kappa_\\lambda}\\dim_q(\\lambda)/[n]_q!$; $d_q^2/D^2$ is a labelled comparison arm (bean qou-oots). Prose previously called the choice open.",
+    },
     {
       kind: "note",
       body: "Two citation defects were found in the course of this and are only partly repaired. The block cited `feray2010`, which is Féray, *Stanley's formula for characters of the symmetric group* (Ann. Comb. 13(4)) — a different paper by one of the two authors, not the $q$-Plancherel one. That is corrected here to `feray-meliot2012`. Separately, the previous text stated clause 2 as a variance bound $O(1/\\sqrt{n-3})$; that expression does not occur anywhere in [`feray-meliot2012`] (all 27 sections searched), whose fluctuation result is a central limit theorem at scale $\\sqrt{n}$. Clause 2 is restated above as what that paper proves. Where the $O(1/\\sqrt{n-3})$ form came from is not established — a Féray–Śniady-style character upper bound is the plausible family and the corpus holds one (`arxiv-math-0701051v4`), but it has not been checked there, and the honest status is \"unsourced\" rather than \"wrong\".",

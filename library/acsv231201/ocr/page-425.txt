@@ -1,0 +1,41 @@
+12.7 Additional worked examples 407
+
+os 1 is 2 2s 3
+
+Figure 12.5 The zero set of (xe” — ye*)/(x — y) in the first quadrant.
+
+quadrant is a non-zero multiple of (@, 1 — a), where
+ax xQx(2, Y)
+xO,(x, ¥) + YO y)”
+
+which simplifies to
+
+l-x
+a
+
+a
+for points on V, except when (x,y) = (1, 1) and a = 1/2. Thus, Theorem 9.5
+implies that asymptotics in the direction (a, 1 — a) can be computed by solving
+the system
+
+_l-x y x
+
+a xe” = ye
+
+ee
+for positive real values (x, y) and using the expansion (9.7). The result, recalling
+
+that F is an exponential generating function, is that A(r, s) is asymptotically
+estimated by
+
+A(r, 8) ~ Co(r + sy ty" rts!
+
+where y = x~*y*"! and C, is a messy constant determined by (9.6) and (9.7).
+
+4
+
+Example 12.25 (Number of successes in a coin-flipping game). Consider a
+single player game with biased coins, so that heads appears with probability
+p = 2/3 for the first n flips and p = 1/3 thereafter. The player is told to get r
+heads and s tails, and is allowed to choose n. On average, how many choices
+of n<r+-s will be winning choices?

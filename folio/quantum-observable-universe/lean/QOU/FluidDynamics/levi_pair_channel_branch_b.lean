@@ -42,7 +42,7 @@ Archimedean: `β` is a `limsup` of real log-ratios and `Real.rpow` is the
 statement. `ℝ` is correct.
 
 ## References
-- [manuscript] fluid-dynamics/levi-degeneracy-conjecture (`conj:levi-degeneracy`),
+- [leitner2026] fluid-dynamics/levi-degeneracy-conjecture (`conj:levi-degeneracy`),
   hyperbolic-overlap-saturation (the lock `κ² = πν/Γ`), townsend-biot-savart-strain
 -/
 
@@ -72,7 +72,7 @@ theorem exists_large_rpow (c : ℝ) (hc : 0 ≤ c) (e : ℝ) (he : 0 < e) (M : �
     `s = (1+β)/2 < 1`, i.e. `A·κ^(1-s) ≤ 1` — but `κ^(1-s)` is unbounded.
     No fit and no precision claim enters.  (Its former reading as "branch B
     for the pair channel" is withdrawn; file docstring.) -/
--- Ref: [manuscript] fluid-dynamics/hyperbolic-overlap-saturation (the lock)
+-- Ref: [leitner2026] fluid-dynamics/hyperbolic-overlap-saturation (the lock)
 theorem linear_seq_forces_beta_one (T : GrowthExponent)
     (A : ℝ) (hA : 0 < A) (N₀ : ℕ)
     (hlin : ∀ κ : ℕ, N₀ ≤ κ → A * κ ≤ T.seq κ) :

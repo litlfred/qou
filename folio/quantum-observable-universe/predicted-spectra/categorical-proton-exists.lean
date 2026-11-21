@@ -10,7 +10,7 @@ LaTeX: `\label{prop:categorical-proton-exists}`
 
 ## References
 
-- [manuscript] §6-archimedean-universe/categorical-proton-exists
+- [leitner2026] §6-archimedean-universe/categorical-proton-exists
 - [jones1987] Hecke Algebra Representations of Braid Groups
 -/
 

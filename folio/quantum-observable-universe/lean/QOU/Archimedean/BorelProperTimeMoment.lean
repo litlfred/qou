@@ -71,7 +71,7 @@ Probe: computations/probes/borel_propertime_moment_attack_probe.py
 (exact sympy verifications of every identity here, n = 1..8, + the
 subleading-pattern falsifier quadratic-vs-linear and pin numerics).
 
--- Ref: [manuscript] mass-theory, conj:qdifference-kernel-prolongation-symbol;
+-- Ref: [leitner2026] mass-theory, conj:qdifference-kernel-prolongation-symbol;
 --      docs/audits/2026-07-25-borel-propertime-attack-a-e.md;
 --      docs/audits/2026-07-25-r2core-schwinger-measure-exploration.md §5;
 --      classical determinacy: B. Simon, "The classical moment problem as a

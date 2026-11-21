@@ -1,0 +1,63 @@
+302 Multiple point asymptotics
+
+T,, and a coordinatization of S as a complex (d — k)-space. Let T = '¥-'(T,),
+and let y be a (d — k)-chain in S on which h(z) = —? - Relog(z) is maximized
+at p. If detH{(p) # 0 then the integral of the Cauchy integrand over T has the
+asymptotic expansion
+
+ke d)/2
+
+1 gr ‘d-k)/2+\m-1| One £
+ooni F2)dz = p "Ir CoP)
+(2ni)4 Sexy det H(p) 5D
+
+(10.7)
+with
+
+ATS" P) Tew Pi
+(m-1)! det Ty
+
+When all poles are simple (m = 1), the matrix Ty is the d x d matrix of log
+
+Co = (-1)""
+
+gradients and the leading term of the asymptotic expansion (10.7) becomes
+
+1 { eR (2) dz ~ P(p) [View Pj Ir
+(221)! Jrxy (2m) ¢-/2 det Py VH(p)
+Remark 10.16. In the case of linear divisors, S is the intersection of hy-
+
+perplanes and some linear algebra proves that H(p) is always nonsingular;
+see [BMP23, Proposition 4.13].
+
+—r
+
+Pp
+
+Proof As in the proof of Theorem 10.12, combining Theorems C.17 and C.24
+from Appendix C computes the integral over 7, reducing now to an integral of
+an iterated residue over y. Using the formula for the residue in Theorem C.24
+and changing coordinates via z; = p; exp(i@;) for j € 7 implies
+
+1 “pt _ ol -r PT, 2)
+Oni Je Fade = Gyr f Tew Zi
+
+f exp(-|r|o(O))P(r, 2(8)) dO,
+N
+
+dz
+i= Ci(Zae) 2 ioe
+
+_ i
+
+~ (Qn)e-*
+where P(r, z) is the polynomial in r from Theorem C.24, N is a neighbor-
+hood of the origin in R¢*, and 6(@) = # - log z(@). Lemma 8.21 shows that
+this is a standard multivariate saddle point integral that can be evaluated using
+Theorem 5.2. The coefficient Co comes from the leading term of P(r, z(8)),
+which is described in Equation (C.2.15) of Appendix C. ia)
+
+10.3 Main results on coefficient asymptotics
+
+Having approximated the asymptotics of integrals near critical multiple points,
+to determine asymptotics of a, it remains only to determine the coefficients

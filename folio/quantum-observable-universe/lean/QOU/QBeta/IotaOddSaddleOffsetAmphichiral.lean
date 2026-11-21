@@ -85,7 +85,7 @@ The concrete grounding uses `R = ℚ` (a field with `2` invertible; **not** `ℝ
 no archimedean construct is required), reusing the *integer* certified Stokes
 data of `FiveTwoDTSpectrumSplit` by casting `ℤ → ℚ`.
 
--- Ref: [manuscript] docs/audits/2026-08-02-fivetwo-crossknot-34-resolution.md
+-- Ref: [leitner2026] docs/audits/2026-08-02-fivetwo-crossknot-34-resolution.md
 -- Ref: [garoufalidis-gu-marino2021] GGM 2012.00062 (5₂ DT spectrum, eqs 96/97/98)
 -/
 

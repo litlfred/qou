@@ -1,0 +1,1 @@
+Let P be a planar algebra with partition function Z. If T is a labelled tangle containing a planar network N as a connected component, then Φ(T) = Z(N )Φ(T ′) where T ′ is the tangle T from which N has been removed.

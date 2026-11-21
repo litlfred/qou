@@ -1,1 +1,0 @@
-This should provide us with another non-trivial homological invariant of $M_3$ which should have roughly the same level of complexity as the BPS Hilbert space on $D^2\times {\mathbb R}$ which categorifies the WRT invariant, but with several advantages due to the presence of operator-state correspondence and no need to specify a boundary condition at $\partial D^2=S^1$.

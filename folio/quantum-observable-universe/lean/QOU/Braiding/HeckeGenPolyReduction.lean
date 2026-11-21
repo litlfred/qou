@@ -33,7 +33,7 @@ The eigenvalue closed form `α = (E₁−E₂)/(q+q⁻¹)`, `E₁=∏(q+dⱼ)`,
 need `2`-invertibility; only the division-free `heckeAB` recursion is
 formalised here, and it suffices for correctness.
 
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hecke-generator-poly-reduction.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/hecke-generator-poly-reduction.md
 -/
 
 namespace QOU.Braiding
@@ -72,7 +72,7 @@ Proof: induction on `ds`, using only the quadratic relation (no division).
 
 This makes the per-generator block of the transfer-matrix χ a single
 `α·D(δ′) + β` evaluation; see the module docstring. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hecke-generator-poly-reduction.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/hecke-generator-poly-reduction.md
 theorem hecke_gen_poly_reduction (σ : A) (h : R) (hq : σ * σ = h • σ + 1)
     (ds : List R) :
     (ds.map (fun d => σ + d • (1 : A))).prod

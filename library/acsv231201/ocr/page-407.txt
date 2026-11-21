@@ -1,0 +1,29 @@
+12.2 Powers, quasi-powers, and Riordan arrays 389
+
+Example 12.6 (Maximum number of distinct subsequences). Flaxman, Har-
+row, and Sorkin [FHS04] study strings of length n over the alphabet {1,2,..., d}
+that contain as many distinct (not necessarily contiguous) subsequences of
+length k as possible. Let a,, denote the maximum number of distinct subse-
+quences of length k that can be found in a single string of length n. Initial
+segments S|, of the infinite string S consisting of repeated blocks of the string
+12---d turn out always to be maximizers, meaning S|, has exactly a,, distinct
+subsequences of length k. The generating function for {a,,} is then computed
+to be
+
+1
+F(x,y) = xyk = ——______
+(xy) D4 Y= Toyo oe’
+
+meaning a,, is a Riordan array with 6(x) = (1—x)~! and v(x) = x+x7+-+-+24,
+Assume for non-triviality that d > 2. The singular variety V is the union of
+the line x = 1 and the smooth curve y = 1/v(x), which meet transversely at the
+
+double point (1, 1/d); see Figure 12.1 for an illustration with d = 3.
+
+LSP
+
+O5}+
+
+0.5 ce 5 2
+
+Figure 12.1 ‘V in the case d = 3.

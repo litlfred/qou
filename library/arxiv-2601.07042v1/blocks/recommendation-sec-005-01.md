@@ -1,1 +1,0 @@
-Our fixed representation $\rho$ gives an $\mathfrak{f}_{E}$-semilinear automorphism $\Phi := \rho((1_{\sigma}), \mathfrak{f}_{E})$ of $V$, which is such that $\Phi^{s}$ acts by $\rho((\sigma(\varpi_{E})), 1)$; note also that $\rho \colon \prod_{\Gamma_{E/F}} \mathbb{G}_{m}(E_{s}) \to \mathrm{GL}_{V}$ must be an algebraic homomorphism.

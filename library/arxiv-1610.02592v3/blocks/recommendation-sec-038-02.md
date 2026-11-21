@@ -1,1 +1,0 @@
-When $g\geqslant 2$ we could similarly use the Fenchel-Nielsen coordinates and give $\Teich(S_g)$ the topology of $\matR^{6g-6}$, but then to be honest we should also check that the topology does not depend on the frame... we prefer to equip the Teichm\"uller space with an intrinsic topology and then prove that the Fenchel-Nielsen coordinates are homeomorphisms.\index{$\calS$}

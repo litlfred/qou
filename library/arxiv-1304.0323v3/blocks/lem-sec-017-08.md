@@ -1,0 +1,1 @@
+For any a∈J and β∈ Q+ J , the ( R(ǫa−ǫa+N−1 +β),R (β) ) - bimodule homomorphism fa,βRLa,RK (β) : La⋆RK(β)−−→RK(β)⋆La induces an isomorphism fa,βRLa,R(β) : La⋆R (β)−−→R(β)⋆La inAbig/S big which commutes with the right actions of R(β).

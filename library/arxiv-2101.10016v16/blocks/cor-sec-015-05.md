@@ -1,1 +1,1 @@
-If C is a fusion category then D(ρ) ≥ FPdim(ρ) for every weak dimension
+If C is a fusion category then D(ρ) ≥ FPdim(ρ) for every weak dimension function D on Gr(C). Another important class of examples is that for which Gr(C) is commutative. Yamagami showed that in this case that for the existence of the amenable dimension function is necessary and sufficient to verify that Λρ is bounded, see Theorem 3.5 in [195].

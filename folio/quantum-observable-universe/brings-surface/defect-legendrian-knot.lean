@@ -13,7 +13,7 @@ LaTeX label: `conj:defect-legendrian-knot`
 
 ## References
 
-- [manuscript] Ch 8 §2, The unit particle as a cohomological defect
+- [leitner2026] Ch 8 §2, The unit particle as a cohomological defect
 -/
 
 set_option autoImplicit false
@@ -34,7 +34,7 @@ variable {C : Type u} [CategoryTheory.Category.{v} C]
     The unit particle inherits a knot type from its embedding.
     The Legendrian condition (θ = 0 on supp) means the defect carries
     no transverse angular momentum. -/
--- Ref: [manuscript] Ch 8 §2
+-- Ref: [leitner2026] Ch 8 §2
 /-- The Legendrian condition on the unit-particle defect, as a **predicate**
     on the categorical data: the contact form `θ`, post-composed with the
     defect support `supp`, agrees with the (given) `zero` morphism composed

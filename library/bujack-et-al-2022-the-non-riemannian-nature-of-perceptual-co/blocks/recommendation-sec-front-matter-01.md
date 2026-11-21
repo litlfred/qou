@@ -1,1 +1,0 @@
-The key idea is that for a space to be Riemannian, distances ΔE between stimuli A, B, C along a geodesic must satisfy additivity: that is, ΔE(A, B) + ΔE(B, C) = ΔE(A, C), [1] while diminishing returns require the strict inequality of this relation (Eq.

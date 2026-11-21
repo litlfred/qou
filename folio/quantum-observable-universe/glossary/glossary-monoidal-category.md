@@ -1,6 +1,1 @@
 **:defterm[Monoidal category]{#monoidal-category}.** A category $\mathbf{C}$ equipped with a bifunctor $\otimes \colon \mathbf{C} \times \mathbf{C} \to \mathbf{C}$, a distinguished unit object $\mathbf{1}$, and coherent natural isomorphisms for associativity ($\alpha$), left unitality ($\lambda$), and right unitality ($\rho$). These satisfy Mac Lane's pentagon and triangle axioms.
-
-**Mathlib reference.**
-`CategoryTheory.MonoidalCategory` (class).
-Import: `Mathlib.CategoryTheory.Monoidal.Category`.
-Notation: $X \otimes Y$ for `tensorObj`, $\mathbf{1}$ for `tensorUnit`.

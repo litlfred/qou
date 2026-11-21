@@ -13,9 +13,12 @@
   "pageStart": 8,
   "pageEnd": 10,
   "contains": [
-    "library/rosso-1988-cmp-117-581/blocks/prose-sec-002"
+    "library/rosso-1988-cmp-117-581/blocks/prose-sec-002",
+    "library/rosso-1988-cmp-117-581/blocks/lem-sec-002-01",
+    "library/rosso-1988-cmp-117-581/blocks/cor-sec-002-02",
+    "library/rosso-1988-cmp-117-581/blocks/thm-sec-002-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/rosso-1988-cmp-117-581",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/rosso-1988-cmp-117-581",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/rosso-1988-cmp-117-581/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/rosso-1988-cmp-117-581/manifest.jsonld",
   "provenance": "ingested"
 }

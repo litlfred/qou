@@ -12,10 +12,6 @@ $$
 
 *where $\lambda^T$ is the transpose partition. Self-dual partitions $\lambda = \lambda^T$ have content sum zero.*
 
-## Lean structure
-
-See [Table](#tbl:type-b-folded-crystal-combinatorics-table-data).
-
 ## Application to chirality $\langle c \rangle_\beta$
 
 The chirality first-order coefficient is the Wedderburn-weighted average:
@@ -37,4 +33,4 @@ Self-dual partitions satisfy $\lambda = \lambda^T$ and contribute zero to the nu
 
 ## Significance
 
-This proposition closes a structural gap. A Lean theorem establishes the cell-level cancellation driving folded-crystal symmetry. The full chirality computation requires the character imbalance $\chi^\lambda(\beta) - \chi^{\lambda^T}(\beta)$. The partition-content cancellation provides the necessary structural infrastructure.
+This proposition closes a structural gap. The cell-level cancellation driving folded-crystal symmetry is proved. The full chirality computation requires the character imbalance $\chi^\lambda(\beta) - \chi^{\lambda^T}(\beta)$. The partition-content cancellation provides the necessary structural infrastructure.

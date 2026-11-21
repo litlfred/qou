@@ -1,1 +1,0 @@
-The generators should be (roughly) the funda- mental modules and their bilinear and trilinear invariants; more complicated morphisms in the category can be built out of these according to a graphical cal- culus (essentially Penrose’s tensor calculus) of “webs”.

@@ -1,0 +1,44 @@
+11.4 Examples and consequences 379
+Notes
+
+Hyperbolicity, as defined here, arose first in the context of PDEs. If f is a com-
+plex polynomial, let f(D) denote the corresponding linear partial differential
+operator obtained by replacing each x; by 0/0x;. For example, if f is the stan-
+dard Lorentzian quadratic xt - Yin am then f(D) is the wave operator. Garding
+set out to investigate when the equation
+
+f(D)u=g
+
+with g supported on a halfspace has a solution supported in the same halfspace.
+When f(D) is the wave operator, this is true and the solution is unique. It
+turns out that the class of homogeneous polynomials f for which this is true is
+precisely characterized as the hyperbolic homogeneous polynomials.
+
+The concept of hyperbolicity was used in the study of lacunas by [ABG70]
+to construct the deformations we have borrowed in this chapter. Later, the prop-
+erty of hyperbolicity turned up in algebraic combinatorics under the name of
+the real root property. Polynomials with this property are called real stable
+polynomials. Hyperbolicity and real stability are linked to a wide range of the-
+orems and conjectures, including the van der Waerden conjecture, the Strong
+Rayleigh property, and the Kadison—Singer problem, solved in 2013 by Mar-
+cus, Spielman, and Srivastava. The importance of these concepts seems to stem
+from the closure of the class of real stable polynomials under a great many al-
+gebraic and combinatorial operations, surveyed in [Wag11]. For polynomials
+which are generating functions of joint distributions of binary variables, the
+property implies a number of negative dependence properties, and this has re-
+sulted in the solution of a number of outstanding conjectures in the theory of
+negative dependence [BBLO09]. Although Proposition 11.15 follows from the
+conclusion (3.45) of [ABG70, Lemma 3.42], the self-contained proof provided
+above is satisfying, and was told to the authors of [BP11] by J. Borcea (per-
+sonal communication).
+
+In this chapter, while we have mostly excerpted and condensed [BP11], we
+have also taken the opportunity to correct some errors. The second implication
+of Proposition 11.25 is proved in [BP11, Proposition 2.11], however the last
+sentence of the cited result mistakenly claims a reverse implication (see Ex-
+ercise 11.9). The implication in the wrong direction (ii) > (iii) is then used
+to prove Proposition 11.26, one of the key results original to [BP11, Proposi-
+tion 2.12]. Our statement here of Proposition 11.25 corrects [BP11] by elim-
+inating the mistaken reverse implication in [BP11, Proposition 2.11], and our
+statement and proof of Proposition 11.26 derives [BP11, Proposition 2.12]
+without using the mistaken converse in the previous result. Beyond this, the

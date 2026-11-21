@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2304.07001v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "b6c0d7f50b6407f1159cf3b6b97dc2180b39100ef7e2c5a64454cdc6d05af324",
   "file": "2304.07001v3.pdf"
@@ -16,31 +19,103 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 1,
+  "candidates": 3,
   "by_kind": {
-   "recommendation": 1
+   "lemma": 2,
+   "proposition": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 3,
+  "by_domain": {
+   "math": 3
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 3
+  },
+  "by_evidence_location": {
+   "in-paper": 3
+  },
+  "by_lean_status": {
+   "unformalized": 3
+  },
+  "needs_lean_proof": 3
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.1",
    "name": null,
-   "statement": "Instead, one should consider the walks along braids method in [@armond; @bs].",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-4-concluding-remarks.md",
-   "section_title": "Concluding Remarks",
-   "pages": "17-17",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "For all k \u2208Z, 1 \u2264m \u2264t \u22121 and 1 \u2264n \u2264s \u22121, we have \u03c7(n,m) s,t (k) = \u03c7(s\u2212n,t\u2212m) s,t (k).",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-002-3-proof-of-theorem-14-and-corollary-15.md (p. 13-17)",
+   "external_refs": [],
+   "proof_excerpt": "By replacing n \u2192s \u2212n and m \u2192t \u2212m, we see that \u00b1((s \u2212n)t \u2212(t \u2212m)s) = \u00b1(ms \u2212nt) = \u2213(nt \u2212ms) , \u00b1((s \u2212n)t + (t \u2212m)s) = \u00b1(2st \u2212ms \u2212nt) \u2261\u2213(nt + ms) (mod 2st) , (3.1) and thus the result follows from (3.1).",
+   "section_file": "sections/sec-002-3-proof-of-theorem-14-and-corollary-15.md",
+   "section_title": "Proof of Theorem 1.4 and Corollary 1.5",
+   "pages": "13-17",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-002-3-proof-of-theorem-14-and-corollary-15.md (p. 13-17)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-002-01",
+   "block_iri": "library/arxiv-2304.07001v3/blocks/lem-sec-002-01",
+   "claim_id": "arxiv-2304.07001v3#lemma:3.1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.2",
+   "name": null,
+   "statement": "Let s and t be coprime positive integers and D(s, t) be the set given by (1.21). Then the integers in the set S = {\u00b1(nt \u00b1 ms) : (n, m) \u2208D(s, t)} are distinct and thus |S| = 2(s \u22121)(t \u22121). 14 S. CREW, V. FANTINI, A. GOSWAMI, R. OSBURN, AND C. WHEELER,",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-002-3-proof-of-theorem-14-and-corollary-15.md (p. 13-17)",
+   "external_refs": [],
+   "proof_excerpt": "We assume that s and t are coprime odd integers. A similar argument applies when s and t are of opposite parities. Let us consider two integers of the forms nit+m1s and not + mes where -s1 <n,n2< st and \u2014(t\u2014 1) < mi,m2 <t\u20141. Then",
+   "section_file": "sections/sec-002-3-proof-of-theorem-14-and-corollary-15.md",
+   "section_title": "Proof of Theorem 1.4 and Corollary 1.5",
+   "pages": "13-17",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-002-3-proof-of-theorem-14-and-corollary-15.md (p. 13-17)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-002-02",
+   "block_iri": "library/arxiv-2304.07001v3/blocks/lem-sec-002-02",
+   "claim_id": "arxiv-2304.07001v3#lemma:3.2",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3.3",
+   "name": null,
+   "statement": "For all k \u20ac Z, and (n,m) \u20ac D(s,t), we have ~(ny st bor tom! = Sitar). (3.4) (n!,m')ED(s,t)",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-002-3-proof-of-theorem-14-and-corollary-15.md (p. 13-17)",
+   "external_refs": [],
+   "proof_excerpt": "We assume that nt \u2014 ms > 0. A similar argument holds for nt \u2014 ms < 0. By (1.12), we",
+   "section_file": "sections/sec-002-3-proof-of-theorem-14-and-corollary-15.md",
+   "section_title": "Proof of Theorem 1.4 and Corollary 1.5",
+   "pages": "13-17",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-002-3-proof-of-theorem-14-and-corollary-15.md (p. 13-17)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-002-03",
+   "block_iri": "library/arxiv-2304.07001v3/blocks/prop-sec-002-03",
+   "claim_id": "arxiv-2304.07001v3#proposition:3.3",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

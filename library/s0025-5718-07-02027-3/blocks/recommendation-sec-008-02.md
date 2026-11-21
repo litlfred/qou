@@ -1,1 +1,0 @@
-To eliminate divisions in the conversion we may observe that division with remainder by pk may be replaced by multiplication by a precomputed R′/pk, where R′, again a power of 2t, should be bigger than all the possible Rx (say R′ = R2), followed by division by R′ (shifting by a number of computer words).

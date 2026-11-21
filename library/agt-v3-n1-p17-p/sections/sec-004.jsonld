@@ -13,9 +13,16 @@
   "pageStart": 12,
   "pageEnd": 17,
   "contains": [
-    "library/agt-v3-n1-p17-p/blocks/prose-sec-004"
+    "library/agt-v3-n1-p17-p/blocks/prose-sec-004",
+    "library/agt-v3-n1-p17-p/blocks/lem-sec-004-01",
+    "library/agt-v3-n1-p17-p/blocks/rem-sec-004-02",
+    "library/agt-v3-n1-p17-p/blocks/lem-sec-004-03",
+    "library/agt-v3-n1-p17-p/blocks/thm-sec-004-04",
+    "library/agt-v3-n1-p17-p/blocks/rem-sec-004-05",
+    "library/agt-v3-n1-p17-p/blocks/rem-sec-004-06",
+    "library/agt-v3-n1-p17-p/blocks/ex-sec-004-07"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/agt-v3-n1-p17-p",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/agt-v3-n1-p17-p",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v3-n1-p17-p/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v3-n1-p17-p/manifest.jsonld",
   "provenance": "ingested"
 }

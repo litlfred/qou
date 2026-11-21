@@ -1,1 +1,0 @@
-We shall show, using analogs of highest weight modules, that all finite dimensional representations are essentially obtained in this way (after possibly tensoring by a 1 -dimensional representation) and that all finite dimensional representations are completely reducible.

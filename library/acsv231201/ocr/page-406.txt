@@ -1,0 +1,62 @@
+388 Combinatorial applications
+
+where the generating function C(t) = a c it! is known explicitly but v(x)
+is known only implicitly through the equation v(x) = xC(v(x)). Subtleties that
+arise in computations when dealing with such implicitly defined v are discussed
+in [Wil05].
+
+Example 12.5 (Packing paths in paths). DoSli¢ [DoS19] derives the bivariate
+generating function
+
+F(x,y) = danny’ =
+
+nk
+
+J—x”
+
+l-x-x"(1- x")y
+
+for the number a,, of ways to maximally pack a path of length m in a path of
+length n, using exactly k copies of the smaller path. This is a Riordan array
+with d(x) = (1 — x”)/(1 — x) and v(x) = x(x), and ¢ and v have infinite radii
+of convergence since they are both polynomials.
+
+Taking derivatives shows that
+
+x +207 +--+ + (m= 1x"!
+Ttxeeype byl
+
+,
+
+BY; x) = m+
+
+and yu increases from m to 2m — | as x increases from zero to infinity, cov-
+ering all directions of combinatorial interest [DoS19, Proposition 2.1]. Thus,
+when 2 = n/k remains in a compact sub-interval of (m,2m — 1) the Gaussian
+asymptotic expansion (12.7) holds.
+
+To determine the leading term in this expansion with respect to A, one can
+compute a lexicographic Grébner basis of the ideal (u(v;x) — A,o7(v; x) -
+S,@(x) — T) in Q(A)[x, S,T] to eliminate x and write o? and ¢ in terms of
+A. For instance, when m = 3 we obtain the irreducible elimination polynomials
+
+281 712
+a
+3
+
+pS;a)=S? 4222-162 S)s + At 1623 + — A + 220
+
+q(T; A) = (A-5)T? + BA 16)T +3.
+
+In this case we can use the quadratic formula to express a? and ¢ explicitly
+in terms of A, but for general m one must identify the correct branch of the
+elimination polynomials implicitly. Note that the system p(S, A) = ps(S,A) =
+PaA(S,A) = 0 has no solutions, so the two branches given by solving p(S, A)
+for S do not meet. Because o? is a continuous function of A on the interval
+[m, 2m — 1], and limy n+ o?(v; x) = lim,_,9- 7(v; x) = 0, the value of a? as
+a function of 2 is the branch of p(S, A) = 0 passing through the point (S, 2) =
+(0, m). The correct branch of g(S, A) = 0 for @ with respect to A is determined
+analogously. 4
+
+The condition in Theorem 12.2 that ¢ has at least as large a radius of con-
+vergence as v is satisfied in many, but not all, applications.

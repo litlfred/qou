@@ -1,1 +1,0 @@
-It turns out that after the first step of the simplification algorithm must be a pair partition either of the form depicted on Figure [1](#fig:krzyz){reference-type="ref" reference="fig:krzyz"} or on Figure [2](#fig:gwiazdadawida){reference-type="ref" reference="fig:gwiazdadawida"}.

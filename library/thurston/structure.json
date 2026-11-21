@@ -7,7 +7,8 @@
   "bytes": 4162056,
   "pages": 33,
   "text_source": "embedded",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -22,397 +23,795 @@
   "abstract": null,
   "docinfo": {
    "Title": "[W._Thurston]_The_Geometry_and_Topology_of_Three-M(BookZZ.org)",
-   "Author": "",
    "Producer": "Mac OS X 10.10.3 Quartz PDFContext",
    "Creator": "Preview",
    "CreationDate": "D:20170329172022Z00'00'"
   },
-  "title_prev": "William P. Thurston"
+  "title_raw": "William P. Thurston",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "[W._Thurston]_The_Geometry_and_Topology_of_Three-M(BookZZ.org)",
+   "heading": "William P. Thurston The Geometry and Topology of Three-Manifolds",
+   "text": "William P. Thurston",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "William P. Thurston The Geometry and Topology of Three-Manifolds"
  },
- "toc": [
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "38 inferred entries, 100% of them starting on page(s) 9 of 33 — a list found ON a page, not the document's structure",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (38 inferred entries, 100% of them starting on page(s) 9 of 33 — a list found ON a page, not the document's structure): one section per page.",
+ "figures": [],
+ "pages": [
   {
-   "level": 1,
-   "title": "Introduction",
-   "page": 3,
-   "source": "inferred",
-   "number": null
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "Start with the three sphereS3, which may be easily visualized asR3, together",
-   "page": 9,
-   "source": "inferred",
-   "number": "0"
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "Any knot (closed simple curve) or link (union of disjoint closed simple curves)",
-   "page": 9,
-   "source": "inferred",
-   "number": "1"
+   "physical": 3,
+   "label": "iii",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "GEOMETRY AND THREE-MANIFOLDS",
-   "page": 10,
-   "source": "inferred",
-   "number": "1"
+   "physical": 4,
+   "label": "iv",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
   },
   {
-   "level": 1,
-   "title": "Cut out a tubular neighborhood of a knot or link, and glue it back in by a",
-   "page": 10,
-   "source": "inferred",
-   "number": "2"
+   "physical": 5,
+   "label": "v",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
-   "page": 10,
-   "source": "inferred",
-   "number": "2"
+   "physical": 6,
+   "label": "vi",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
-   "page": 12,
-   "source": "inferred",
-   "number": "4"
+   "physical": 7,
+   "label": "vii",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
-   "page": 14,
-   "source": "inferred",
-   "number": "6"
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "ELLIPTIC AND HYPERBOLIC GEOMETRY",
-   "page": 19,
-   "source": "inferred",
-   "number": "2"
+   "physical": 9,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
-   "page": 19,
-   "source": "inferred",
-   "number": "10"
+   "physical": 10,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
-   "page": 21,
-   "source": "inferred",
-   "number": "12"
+   "physical": 11,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
-   "page": 23,
-   "source": "inferred",
-   "number": "14"
+   "physical": 12,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 2,
-   "title": "THE PROJECTIVE MODEL. 2.8a",
-   "page": 24,
-   "source": "inferred",
-   "number": "2.4"
+   "physical": 13,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
-   "page": 25,
-   "source": "inferred",
-   "number": "16"
+   "physical": 14,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "In Euclidean spaceEn+1,c(X, Y) is the cosine of the angle betweenXandY. In",
-   "page": 27,
-   "source": "inferred",
-   "number": "1"
+   "physical": 15,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
-   "page": 27,
-   "source": "inferred",
-   "number": "18"
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 3,
-   "title": "If XandY2Hn, thenc(X, Y) = coshd(X, Y),",
-   "page": 28,
-   "source": "inferred",
-   "number": "2.6.2"
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 3,
-   "title": "X?andY?are parallel",
-   "page": 29,
-   "source": "inferred",
-   "number": "2.6.5"
+   "physical": 18,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
-   "page": 29,
-   "source": "inferred",
-   "number": "20"
+   "physical": 19,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 3,
-   "title": "If Xis a point inHnandY?a hyperplane, then",
-   "page": 30,
-   "source": "inferred",
-   "number": "2.6.6"
+   "physical": 20,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
-   "page": 31,
-   "source": "inferred",
-   "number": "22"
+   "physical": 21,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
-   "page": 33,
-   "source": "inferred",
-   "number": "24"
+   "physical": 22,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   }
  ],
- "toc_source": "inferred",
  "sections": [
   {
-   "id": "sec-000-introduction",
+   "id": "page-001",
    "number": null,
-   "title": "Introduction",
+   "title": "Page 1",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 813,
+   "n_words": 119,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 24,
+   "n_words": 5,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
    "level": 1,
    "page_start": 3,
-   "page_end": 9,
-   "n_chars": 5308,
-   "n_words": 831
+   "page_end": 3,
+   "n_chars": 1550,
+   "n_words": 265,
+   "label_start": "iii",
+   "label_end": "iii"
   },
   {
-   "id": "sec-001-1-geometry-and-three-manifolds",
-   "number": "1",
-   "title": "GEOMETRY AND THREE-MANIFOLDS",
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 24,
+   "n_words": 5,
+   "label_start": "iv",
+   "label_end": "iv"
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1252,
+   "n_words": 186,
+   "label_start": "v",
+   "label_end": "v"
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1415,
+   "n_words": 217,
+   "label_start": "vi",
+   "label_end": "vi"
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1089,
+   "n_words": 160,
+   "label_start": "vii",
+   "label_end": "vii"
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 24,
+   "n_words": 5,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
    "level": 1,
    "page_start": 9,
    "page_end": 9,
-   "n_chars": 628,
-   "n_words": 96
+   "n_chars": 1040,
+   "n_words": 167,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-002-0-start-with-the-three-spheres3-which-may-be-eas",
-   "number": "0",
-   "title": "Start with the three sphereS3, which may be easily visualized asR3, together",
-   "level": 1,
-   "page_start": 9,
-   "page_end": 9,
-   "n_chars": 26,
-   "n_words": 5
-  },
-  {
-   "id": "sec-003-1-any-knot-closed-simple-curve-or-link-union-of",
-   "number": "1",
-   "title": "Any knot (closed simple curve) or link (union of disjoint closed simple curves)",
-   "level": 1,
-   "page_start": 9,
-   "page_end": 9,
-   "n_chars": 638,
-   "n_words": 24
-  },
-  {
-   "id": "sec-004-2-thurston-the-geometry-and-topology-of-3-manifo",
-   "number": "2",
-   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
-   "level": 1,
-   "page_start": 9,
-   "page_end": 10,
-   "n_chars": 402,
-   "n_words": 66
-  },
-  {
-   "id": "sec-005-2-cut-out-a-tubular-neighborhood-of-a-knot-or-li",
-   "number": "2",
-   "title": "Cut out a tubular neighborhood of a knot or link, and glue it back in by a",
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
    "level": 1,
    "page_start": 10,
-   "page_end": 11,
-   "n_chars": 4890,
-   "n_words": 675
+   "page_end": 10,
+   "n_chars": 3033,
+   "n_words": 529,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
-   "id": "sec-006-4-thurston-the-geometry-and-topology-of-3-manifo",
-   "number": "4",
-   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
    "level": 1,
    "page_start": 11,
-   "page_end": 13,
-   "n_chars": 3782,
-   "n_words": 210
+   "page_end": 11,
+   "n_chars": 1959,
+   "n_words": 319,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
-   "id": "sec-007-6-thurston-the-geometry-and-topology-of-3-manifo",
-   "number": "6",
-   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 831,
+   "n_words": 147,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "page-013",
+   "number": null,
+   "title": "Page 13",
    "level": 1,
    "page_start": 13,
-   "page_end": 18,
-   "n_chars": 3396,
-   "n_words": 290
+   "page_end": 13,
+   "n_chars": 447,
+   "n_words": 72,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
-   "id": "sec-008-2-elliptic-and-hyperbolic-geometry",
-   "number": "2",
-   "title": "ELLIPTIC AND HYPERBOLIC GEOMETRY",
+   "id": "page-014",
+   "number": null,
+   "title": "Page 14",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 770,
+   "n_words": 126,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "page-015",
+   "number": null,
+   "title": "Page 15",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 266,
+   "n_words": 42,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "page-016",
+   "number": null,
+   "title": "Page 16",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 813,
+   "n_words": 119,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-017",
+   "number": null,
+   "title": "Page 17",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 24,
+   "n_words": 5,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-018",
+   "number": null,
+   "title": "Page 18",
    "level": 1,
    "page_start": 18,
    "page_end": 18,
-   "n_chars": 1795,
-   "n_words": 204
+   "n_chars": 1385,
+   "n_words": 223,
+   "label_start": "9",
+   "label_end": "9"
   },
   {
-   "id": "sec-009-10-thurston-the-geometry-and-topology-of-3-manif",
-   "number": "10",
-   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
+   "id": "page-019",
+   "number": null,
+   "title": "Page 19",
    "level": 1,
-   "page_start": 18,
-   "page_end": 20,
-   "n_chars": 3994,
-   "n_words": 581
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 1990,
+   "n_words": 346,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
-   "id": "sec-010-12-thurston-the-geometry-and-topology-of-3-manif",
-   "number": "12",
-   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
+   "id": "page-020",
+   "number": null,
+   "title": "Page 20",
    "level": 1,
    "page_start": 20,
-   "page_end": 22,
-   "n_chars": 3562,
-   "n_words": 318
+   "page_end": 20,
+   "n_chars": 1589,
+   "n_words": 286,
+   "label_start": "11",
+   "label_end": "11"
   },
   {
-   "id": "sec-011-14-thurston-the-geometry-and-topology-of-3-manif",
-   "number": "14",
-   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
+   "id": "page-021",
+   "number": null,
+   "title": "Page 21",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 898,
+   "n_words": 154,
+   "label_start": "12",
+   "label_end": "12"
+  },
+  {
+   "id": "page-022",
+   "number": null,
+   "title": "Page 22",
    "level": 1,
    "page_start": 22,
-   "page_end": 24,
-   "n_chars": 1796,
-   "n_words": 203
+   "page_end": 22,
+   "n_chars": 1216,
+   "n_words": 204,
+   "label_start": "13",
+   "label_end": "13"
   },
   {
-   "id": "sec-012-24-the-projective-model-28a",
-   "number": "2.4",
-   "title": "THE PROJECTIVE MODEL. 2.8a",
-   "level": 2,
-   "page_start": 24,
-   "page_end": 24,
-   "n_chars": 1067,
-   "n_words": 194
+   "id": "page-023",
+   "number": null,
+   "title": "Page 23",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 1316,
+   "n_words": 234,
+   "label_start": "14",
+   "label_end": "14"
   },
   {
-   "id": "sec-013-16-thurston-the-geometry-and-topology-of-3-manif",
-   "number": "16",
-   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
+   "id": "page-024",
+   "number": null,
+   "title": "Page 24",
    "level": 1,
    "page_start": 24,
-   "page_end": 26,
-   "n_chars": 3240,
-   "n_words": 415
+   "page_end": 24,
+   "n_chars": 1165,
+   "n_words": 219,
+   "label_start": "15",
+   "label_end": "15"
   },
   {
-   "id": "sec-014-18-thurston-the-geometry-and-topology-of-3-manif",
-   "number": "18",
-   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
+   "id": "page-025",
+   "number": null,
+   "title": "Page 25",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 1112,
+   "n_words": 206,
+   "label_start": "16",
+   "label_end": "16"
+  },
+  {
+   "id": "page-026",
+   "number": null,
+   "title": "Page 26",
    "level": 1,
    "page_start": 26,
-   "page_end": 27,
-   "n_chars": 1039,
-   "n_words": 152
+   "page_end": 26,
+   "n_chars": 1744,
+   "n_words": 292,
+   "label_start": "17",
+   "label_end": "17"
   },
   {
-   "id": "sec-015-1-in-euclidean-spaceen1cx-y-is-the-cosine-of-the",
-   "number": "1",
-   "title": "In Euclidean spaceEn+1,c(X, Y) is the cosine of the angle betweenXandY. In",
+   "id": "page-027",
+   "number": null,
+   "title": "Page 27",
    "level": 1,
    "page_start": 27,
-   "page_end": 28,
-   "n_chars": 482,
-   "n_words": 68
-  },
-  {
-   "id": "sec-016-262-if-xandy2hn-thencx-y-coshdx-y",
-   "number": "2.6.2",
-   "title": "If XandY2Hn, thenc(X, Y) = coshd(X, Y),",
-   "level": 3,
-   "page_start": 28,
-   "page_end": 28,
+   "page_end": 27,
    "n_chars": 1566,
-   "n_words": 154
+   "n_words": 342,
+   "label_start": "18",
+   "label_end": "18"
   },
   {
-   "id": "sec-017-20-thurston-the-geometry-and-topology-of-3-manif",
-   "number": "20",
-   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
+   "id": "page-028",
+   "number": null,
+   "title": "Page 28",
    "level": 1,
    "page_start": 28,
-   "page_end": 29,
-   "n_chars": 1300,
-   "n_words": 115
+   "page_end": 28,
+   "n_chars": 1465,
+   "n_words": 337,
+   "label_start": "19",
+   "label_end": "19"
   },
   {
-   "id": "sec-018-265-xandyare-parallel",
-   "number": "2.6.5",
-   "title": "X?andY?are parallel",
-   "level": 3,
+   "id": "page-029",
+   "number": null,
+   "title": "Page 29",
+   "level": 1,
    "page_start": 29,
-   "page_end": 30,
-   "n_chars": 374,
-   "n_words": 61
+   "page_end": 29,
+   "n_chars": 1228,
+   "n_words": 276,
+   "label_start": "20",
+   "label_end": "20"
   },
   {
-   "id": "sec-019-266-if-xis-a-point-inhnandya-hyperplane-then",
-   "number": "2.6.6",
-   "title": "If Xis a point inHnandY?a hyperplane, then",
-   "level": 3,
-   "page_start": 30,
-   "page_end": 30,
-   "n_chars": 1587,
-   "n_words": 172
-  },
-  {
-   "id": "sec-020-22-thurston-the-geometry-and-topology-of-3-manif",
-   "number": "22",
-   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
+   "id": "page-030",
+   "number": null,
+   "title": "Page 30",
    "level": 1,
    "page_start": 30,
-   "page_end": 32,
-   "n_chars": 2671,
-   "n_words": 166
+   "page_end": 30,
+   "n_chars": 1320,
+   "n_words": 269,
+   "label_start": "21",
+   "label_end": "21"
   },
   {
-   "id": "sec-021-24-thurston-the-geometry-and-topology-of-3-manif",
-   "number": "24",
-   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
+   "id": "page-031",
+   "number": null,
+   "title": "Page 31",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 797,
+   "n_words": 164,
+   "label_start": "22",
+   "label_end": "22"
+  },
+  {
+   "id": "page-032",
+   "number": null,
+   "title": "Page 32",
    "level": 1,
    "page_start": 32,
+   "page_end": 32,
+   "n_chars": 463,
+   "n_words": 81,
+   "label_start": "23",
+   "label_end": "23"
+  },
+  {
+   "id": "page-033",
+   "number": null,
+   "title": "Page 33",
+   "level": 1,
+   "page_start": 33,
    "page_end": 33,
-   "n_chars": 798,
-   "n_words": 46
+   "n_chars": 297,
+   "n_words": 57,
+   "label_start": "24",
+   "label_end": "24"
   }
  ],
  "diagnostics": {
   "pages_without_text": 4,
   "likely_scanned": false,
-  "toc_entries": 22,
-  "sections": 22,
-  "chars_total": 44341
+  "toc_entries": 0,
+  "toc_inferred_entries": 38,
+  "toc_inferred_mean_confidence": 0.551,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "contents",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 1,
+   "items": [
+    "p9: printed 1, contents vii"
+   ]
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 37,
+    "items": [
+     "Flexibility and rigidity of geometric structures",
+     "Gromov’s invariant and the volume of a hyperbolic manifold",
+     "Gromov’s invariant",
+     "Gromov’s proof of Mostow’s Theorem",
+     "Manifolds with Boundary",
+     "Ordinals",
+     "Commensurability",
+     "Some Examples",
+     "Computation of volume",
+     "References",
+     "Kleinian groups",
+     "The limit set",
+     "The domain of discontinuity",
+     "Convex hyperbolic manifolds",
+     "Geometrically ﬁnite groups",
+     "The geometry of the boundary of the convex hull",
+     "Measuring laminations",
+     "Quasi-Fuchsian groups",
+     "Uncrumpled surfaces",
+     "The structure of geodesic laminations: train tracks",
+     "Realizing laminations in three-manifolds",
+     "The structure of cusps",
+     "Harmonic functions and ergodicity",
+     "Algebraic convergence",
+     "Limits of discrete groups",
+     "The ending of an end",
+     "Taming the topology of an end",
+     "Interpolating negatively curved surfaces",
+     "Strong convergence from algebraic convergence",
+     "Realizations of geodesic laminations for surface groups with extra cusps, with a digression on stereographic coordinates",
+     "Ergodicity of the geodesic ﬂow",
+     "NOTE",
+     "Deforming Kleinian manifolds by homeomorphisms of the sphere at inﬁnity",
+     "Extensions of vector ﬁelds",
+     "Orbifolds",
+     "A geometric compactiﬁcation for the Teichm¨uller spaces of polygonal orbifolds",
+     "Index"
+    ]
+   },
+   "found_not_listed": {
+    "count": 7,
+    "items": [
+     "5 Heegaard decompositions.",
+     "2.1 The Poincar´e disk model.",
+     "2.2 The southern hemisphere.",
+     "2.3 The upper half-space model.",
+     "2.4 The projective model.",
+     "2.5 The sphere of imaginary radius.",
+     "2.6 Trigonometry."
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 33,
+  "chars_total": 34925,
+  "furniture_lines_stripped": 0
  }
 }

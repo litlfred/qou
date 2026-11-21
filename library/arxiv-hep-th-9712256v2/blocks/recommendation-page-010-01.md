@@ -1,1 +1,0 @@
-(51) Viewing the fusion transformations as being given by the conformal blocks, therefore indirectly from the current algebra symmetries, one should read (51) as possible starting point for the determination of the structure constants.

@@ -1,1 +1,0 @@
-In particular, note that an odd character degree of G with multiplicity one must necessarily come from a character ﬁxed by all automorphisms and G, which is therefore an X-invariant member of Irr2′(B0(G))σ1.

@@ -12,9 +12,12 @@ The QOU framework requires exactly three calibration inputs from experiment: the
 > $\beta$-decay Q-value $\mathfrak{Q}_\beta(n) = \hbar/P_{\mathrm{skew}}^{\beta}
 > = 0.78233341 \pm 0.00000061$ MeV is the **proxy for CAL-2**. The
 > hadronic energy scale $\mathfrak{E}_0$ is framework-derived from
-> $(m_e, q_0)$; $\mathfrak{Q}_\beta$ reproduced from $q_0$ then validates
-> it to $0.17\%$ (subject to the net-ansatz caveat below). It is a
-> cross-check, not a fourth calibration.
+> $(m_e, q_0)$; $\mathfrak{Q}_\beta$ computed from $q_0$ by the ruled
+> convention-D base (the Markov trace at $z_D$) gives $0.4447$ MeV, a
+> $-43.16\%$ miss, pending the convention-D $c_k$ ladder. The retired
+> Form A gave $0.17\%$ (subject to the net-ansatz caveat below) and is kept
+> only as a historical cross-check. Either way it is a cross-check, not a
+> fourth calibration.
 
 The first input is a **dimensionless ratio** — it fixes $q_0$
 via the **leading-order substrate-truncation** of the canonical
@@ -25,7 +28,7 @@ $$
 \frac{m_\mu}{m_e} \;\stackrel{\text{LO}}{=}\; \frac{\mathrm{Vol}(4_1)}{\hbar_q^2}
 $$
 
-([Skein mass relation](#rem:skein-mass-relation)), where
+where
 $\mathrm{Vol}(4_1) \approx 2.0299$ is the topological constant
 (hyperbolic volume of the figure-eight knot) and
 $\hbar_q = (q-1)/q$.  No units are involved.  The precision
@@ -59,10 +62,9 @@ $m_e(\text{MeV}) / m_e(\text{natural}) \approx 4.57 \times 10^{-3}$ MeV.
 the $\mathfrak{Q}_\beta$ cross-check.** (CAL-3 proper is the meson scale
 $m_\pi$; see below.) The leptonic inputs ($m_e$, $q_0$) give a
 framework-derived hadronic scale in two forms — the single-Planck-tick value
-$\mathfrak{E}_0^{(N=0)} = m_e/(q_0(q_0-1)) \approx 4.186$ MeV
-([energy scale](#rem:energy-scale-planck)) and the tower-summed
+$\mathfrak{E}_0^{(N=0)} = m_e/(q_0(q_0-1)) \approx 4.186$ MeV and the tower-summed
 $\mathfrak{E}_0^{\text{full}} = \mathfrak{E}_0^{(N=0)}/(1-\hbar_q^2)
-\approx 4.228$ MeV ([beta-decay energy scale](../particle-interactions/beta-decay-energy-scale.md)
+\approx 4.228$ MeV ([beta-decay energy scale](../nuclear-interactions/beta-decay-energy-scale.md)
 §"tower-summed form"). The free neutron $\beta$-decay Q-value
 calibrates $\mathfrak{E}_0$:
 
@@ -76,11 +78,10 @@ $$
 $$
 
 (The typed-crossings 6-term decomposition yields $\lvert\Delta(\text{net,typed})\rvert \approx 0.18829$ and a slightly smaller $\mathfrak{E}_0 \approx 4.155$ MeV; the 0.6% gap is finite-size noise in the typed decomposition — see
-[`beta-decay-energy-scale`](../particle-interactions/beta-decay-energy-scale.md) §"three values".)
+[`beta-decay-energy-scale`](../nuclear-interactions/beta-decay-energy-scale.md) §"three values".)
 
 where $\Delta(\mathrm{net}) = h(h-2)/2$ is the symbolic NF
-difference between neutron and proton
-([symbolic Q-value](#prop:neutron-qvalue-symbolic)).
+difference between neutron and proton.
 The free neutron is the simplest hadronic decay — one
 crossing change ($\mathfrak{d} \to \mathfrak{u}$) inside
 one nucleon, no nuclear environment. Once $\mathfrak{E}_0$ is fixed,
@@ -107,7 +108,7 @@ all but three real parameters:
    It controls all dimensionless ratios: mass ratios, coupling
    constants, crossing asymmetries.  The observability condition
    forces $q \neq 1$ (otherwise $\mathrm{Ad}(A)$ has invariants),
-   and the Descartes condition $\chi(A) = -6$ constrains $q$ to
+   and the Descartes condition $\chi_{\mathrm{eu}}(M_0) = -6$ constrains $q$ to
    a one-parameter family, but does not fix a specific value.
    The value $q_0 \approx 1.110$ is fixed by one dimensionless
    measurement.
@@ -148,8 +149,7 @@ No further parameters exist because:
   ([typed crossing operator](#def:typed-crossing-operator)).
 - The Markov trace $\mathrm{tr}_M$ is **unique** (up to the
   Markov parameter $z$, which is determined by $q$) by Schur
-  orthogonality
-  ([RJ canonical inner product](#prop:rj-canonical-inner-product)).
+  orthogonality.
 
 ## Predictions from the three inputs
 
@@ -158,7 +158,7 @@ No further parameters exist because:
 - Hecke amplitude: $h = q - q^{-1} \approx 0.209$
 - Crossing asymmetry: $q/q^{-1} \approx 1.231$ (matter/antimatter)
 - Neutron-proton splitting structure: $m_n - m_p \propto \mathcal{S}_{\mathfrak{d}\mathfrak{d}} - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}$
-- Pair production polarisation selection rule (a model statement; tree-level QED gives nonzero pair production for parallel linear polarisations, so this is not a successful prediction; see [rem:breit-wheeler-vertex](#rem:breit-wheeler-vertex))
+- Pair production polarisation selection rule (a model statement; tree-level QED gives nonzero pair production for parallel linear polarisations, so this is not a successful prediction)
 - All NF decompositions and operator selection weights
 
 **From $q_0$ + $m_e$ (in MeV):**

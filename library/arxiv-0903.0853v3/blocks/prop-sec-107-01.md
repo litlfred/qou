@@ -1,0 +1,1 @@
+6.3. — Let C′ be a commutative C-algebra and let M′ be a diﬀerence module over K′ := C′ ⊗C K, equipped with a (k −1)-ﬁltration: 0 = M′ 0 ⊂M′ 1 ⊂· · · ⊂M′ k−1 = M′ such that grM′ ≃P ′ 1 ⊕· · · ⊕P ′ k−1 (as usual, P ′ i := C′ ⊗C Pi). Then the functor in commutative C′-algebras C′′ ❀Ext(C′′ ⊗C Pk, C′′ ⊗C′ M′) is an aﬃne space over C′ with dimension P 1≤i≤k δi,k.

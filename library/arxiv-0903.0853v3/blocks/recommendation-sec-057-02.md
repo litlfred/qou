@@ -1,1 +1,0 @@
-We shall deduce the existence of solutions that are asymptotic to the formal solution $\hat F$ at zero along divisors $(\Lambda_1,\Lambda)$ (see definition [\[defi:Lambda1Lambda\]](#defi:Lambda1Lambda){reference-type="ref" reference="defi:Lambda1Lambda"}).

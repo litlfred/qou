@@ -49,7 +49,7 @@ Archimedean (ℝ): coordinates, squares, `Real.sqrt` — §7c.
 
   -- Ref: [milnor1982] Appendix (Milnor's normalized position: one face on the
   --   unit hemisphere, opposite vertex at ∞)
-  -- Ref: [manuscript] beans qou-473l (T2 File 2), qou-5gai (H-tier)
+  -- Ref: [leitner2026] beans qou-473l (T2 File 2), qou-5gai (H-tier)
 -/
 
 import QOU.Archimedean.HyperbolicConformalAngle

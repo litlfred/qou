@@ -4,7 +4,7 @@ example).**
 The figure-8 knot $4_1$ is the smallest hyperbolic knot
 [`thurston1978`] and serves as the cleanest illustration of the
 dual existence forced by
-[`prop:archimedean-functor-uniqueness`](#prop:archimedean-functor-uniqueness):
+[Uniqueness of the archimedean realization functor (Bloch-Suslin pentagon, conditional)](#prop:archimedean-functor-uniqueness):
 *algebraic / motivic in the substrate, transcendental in the
 laboratory*.
 
@@ -33,7 +33,7 @@ $$
 
 with the $\hat{V}_i(q)$ explicitly determined by the four-strand
 braid word above (cf.
-[`thm:markov-trace-factorization`](#thm:markov-trace-factorization)).
+[Exact factorization of the nuclear Markov trace](#thm:markov-trace-factorization)).
 At this level no $\pi$, no $\zeta$-values, no real-analytic
 transcendentals appear: the entire object is a Laurent polynomial
 in $q^{\pm 1/2}$ and lives strictly in the substrate ring $R$.
@@ -81,17 +81,9 @@ measurement. Both pictures are needed:
 | Archimedean | $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$ | $\mathbb{R}$ (transcendental) | Laboratory mass-scale, Higgs-like amphichiral mechanism |
 
 The bridge between the two columns is uniquely determined by
-[`prop:archimedean-functor-uniqueness`](#prop:archimedean-functor-uniqueness):
+[Uniqueness of the archimedean realization functor (Bloch-Suslin pentagon, conditional)](#prop:archimedean-functor-uniqueness):
 no other archimedean image is admissible.
 
-**Cross-reference: $\alpha_{EM}$.** The same dichotomy underlies
-the additive Bring zero-mode candidate
-[`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode):
-the $\pi$ in $4_1$'s archimedean image
-$2\,\mathrm{Cl}_2(\pi/3)$ and the $\pi$ in $1/\alpha_{EM}$'s
-correction $2/(3\pi) = 2g/(4\pi(g-1))$ at $g=4$ share a single
-provenance — the unique archimedean shadow of pentagon-coherent
-substrate data on Bring's surface, factored through the
-Bloch-Wigner dilogarithm. The exact algebraic values ${{ qou.computations.q-pinning-50-digit.calibration_inputs.Vol_4_1_str | precision: 6 }}\ldots =
+The exact algebraic values ${{ qou.computations.q-pinning-50-digit.calibration_inputs.Vol_4_1_str | precision: 6 }}\ldots =
 2\,\mathrm{Cl}_2(\pi/3)$ matches the standard hyperbolic
 2-tetrahedra triangulation [`thurston1978`].

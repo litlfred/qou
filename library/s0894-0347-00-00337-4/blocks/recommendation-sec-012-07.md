@@ -1,1 +1,0 @@
-Namely, we shall consider a family of embeddings ℓ2(Z) →L2(R), indexed by a positive number r > 0, which are deﬁned by ℓ2(Z) ∋χk 7→r1/6 χh k−2r r1/3 , k+1−2r r1/3 i ∈L2(R) , k ∈Z , (4.3) where χk ∈ℓ2(Z) is the characteristic function of the point k ∈Z and, similarly, the function on the right is the characteristic function of a segment of length r−1/3.

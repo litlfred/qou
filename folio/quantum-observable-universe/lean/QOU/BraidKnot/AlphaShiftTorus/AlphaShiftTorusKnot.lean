@@ -54,7 +54,7 @@ are not in Mathlib — so we elevate the witness-verified closed form
 to the definition.  The accompanying class `HasAlphaShiftTorus`
 remains, and every instance now closes by `rfl`.
 
--- Ref: [manuscript] §def α_shift in the alpha-shift-torus-knot.md proof
+-- Ref: [leitner2026] §def α_shift in the alpha-shift-torus-knot.md proof
 -/
 def alphaShift (p k : ℕ) : ℕ := k * (p - 1)
 
@@ -74,9 +74,9 @@ The instance is verified case-by-case for the test bench
 computations/alpha/alpha_shift_torus.py with all 14
 witness assertions passing.
 
--- Ref: [manuscript] §round-19 of conj:e-hartree-categorical-derivation
--- Ref: [manuscript] prop:em-coupling-projection (the bare 1/α formula at p ∈ {2,3})
--- Ref: [manuscript] prop:force-carrier-intertwining-correspondence (the V_{(p,1^{n-p})} channel)
+-- Ref: [leitner2026] §round-19 of conj:e-hartree-categorical-derivation
+-- Ref: [leitner2026] prop:em-coupling-projection (the bare 1/α formula at p ∈ {2,3})
+-- Ref: [leitner2026] prop:force-carrier-intertwining-correspondence (the V_{(p,1^{n-p})} channel)
 -/
 class HasAlphaShiftTorus (p k : ℕ) : Prop where
   alpha_shift_eq : alphaShift p k = k * (p - 1)
@@ -101,10 +101,10 @@ theorem alpha_shift_torus_knot
 Verified by `alpha-shift-torus.witness.json` assertion
 `alpha_shift[T_2_9]_equals_k_p_minus_1`.
 
--- Ref: [manuscript] §test-bench of prop:alpha-shift-torus-knot
+-- Ref: [leitner2026] §test-bench of prop:alpha-shift-torus-knot
 -/
 instance : HasAlphaShiftTorus 2 9 where
-  -- Ref: [manuscript] alpha-shift-torus.witness.json (T_2_9, 14 assertions all passed)
+  -- Ref: [leitner2026] alpha-shift-torus.witness.json (T_2_9, 14 assertions all passed)
   alpha_shift_eq := rfl
 
 /-- Witness-backed instance for T_{3,5}.
@@ -113,10 +113,10 @@ instance : HasAlphaShiftTorus 2 9 where
 Verified by `alpha-shift-torus.witness.json` assertion
 `alpha_shift[T_3_5]_equals_k_p_minus_1`.
 
--- Ref: [manuscript] §test-bench of prop:alpha-shift-torus-knot
+-- Ref: [leitner2026] §test-bench of prop:alpha-shift-torus-knot
 -/
 instance : HasAlphaShiftTorus 3 5 where
-  -- Ref: [manuscript] alpha-shift-torus.witness.json (T_3_5, 14 assertions all passed)
+  -- Ref: [leitner2026] alpha-shift-torus.witness.json (T_3_5, 14 assertions all passed)
   alpha_shift_eq := rfl
 
 end QOU.BraidKnot.AlphaShiftTorus

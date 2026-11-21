@@ -1,1 +1,0 @@
-In the following, $n$ should be interpreted as the number of \emph{independent variables}, $m$ as the number of \emph{dependent variables}, and $P$ as the space parameterizing both independent and dependent variables.

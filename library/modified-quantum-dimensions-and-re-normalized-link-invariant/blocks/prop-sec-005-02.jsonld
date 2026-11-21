@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/prop-sec-005-02",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 13,
+  "pageEnd": 18,
+  "text": "prop-sec-005-02.md",
+  "derivedFrom": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/sections/sec-005",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modified-quantum-dimensions-and-re-normalized-link-invariant/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "23",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/sec-005-6-examples.md (p. 13-18) citing [GP08b, GP08a]"
+  }
+}

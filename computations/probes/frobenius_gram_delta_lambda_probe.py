@@ -57,11 +57,12 @@ from codata_constants import (
 )
 from substrate.witness_base import WitnessBuilder  # noqa: E402
 from gram_transfer_quadratic import gram_norm_zn  # noqa: E402
+from codata_constants import AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 m_e = mpf(str(M_E_MEV))
 COMP = str(_COMP)
 
-B_AME = {"D": mpf("2.22452"), "T": mpf("8.48180"), "3He": AME_B_HE3_MEV_VALIDATION, "4He": AME_B_HE4_MEV_VALIDATION}
+B_AME = {"D": mpf("2.22452"), "T": AME_B_TRITIUM_MEV_VALIDATION, "3He": AME_B_HE3_MEV_VALIDATION, "4He": AME_B_HE4_MEV_VALIDATION}
 FILES = {"D": "atom-chi-rust-d.witness.json", "T": "atom-chi-rust-t.witness.json",
          "3He": "atom-chi-rust-3he.witness.json", "4He": "atom-chi-rust-4he.witness.json"}
 ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}

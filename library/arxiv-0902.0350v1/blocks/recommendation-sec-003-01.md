@@ -1,1 +1,0 @@
-Fejes T\'oth must be modified slightly so that the truncated Voronoi cells are polyhedra.) Thus, it should come as no surprise that many of the intermediate lemmas in the proof can also be expressed in this manner.

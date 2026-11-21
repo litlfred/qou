@@ -1,0 +1,1 @@
+— Let ˆf be a generic q-Gevrey series and let λ ∈C∗, d ∈[−π, π). Assume that λ /∈DS( ˆf) and (0, eid∞) ∩DS( ˆf) = ∅. Then (1) S[λ] q ˆf = S[λ] q ˆf, on a convenient domain Ω. (2) Sd q ˆf = Sd q ˆf on a convenient sector containing the direction d. Moreover we have: Sd q ˆf = ln q Z qeid eid S[λ] q ˆf dλ λ .

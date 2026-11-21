@@ -41,18 +41,32 @@ $$
 
 **QOU realization.**
 In the knot-particle dictionary, each meson is a quark--antiquark pair
-joined by the $\bowtie_K$ product.  The tensor decomposition
+joined by the $\bowtie_K$ product.  The splitting
 $\mathbf{3} \otimes \bar{\mathbf{3}} = \mathbf{8} \oplus \mathbf{1}$
-is realized by the Clebsch--Gordan decomposition of the Hecke algebra
-$H_3(q)$ acting on the tensor product of the fundamental and conjugate
-Specht modules.  The octet channel corresponds to the traceless
-component $V \otimes V^* / \langle \mathrm{tr} \rangle$, and the
-singlet to the trace $\mathrm{tr}(V \otimes V^*) \cong \mathbb{C}$.
+is the trace splitting of a rigid category.  Let $V$ be the fundamental
+of $U_q(\mathfrak{sl}_3)$ at generic $q$ and $V^*$ its dual, with
+coevaluation $c\colon \mathbf{1} \to V \otimes V^*$ and evaluation
+$e\colon V \otimes V^* \to \mathbf{1}$ (using the pivotal structure).
+The composite $e \circ c$ is multiplication by the quantum dimension
+$d = [3]_q = q^2 + 1 + q^{-2}$, which is nonzero for real $q \neq 0$.
+Then $p = d^{-1}\, c \circ e$ is an idempotent on $V \otimes V^*$.  Its
+image is the singlet, the image of $c$, and the complementary idempotent
+$1 - p$ projects onto the kernel of $e$, the octet.  At $q = 1$ this is the
+splitting of a $3 \times 3$ matrix into its trace part and its traceless
+part.  The Hecke algebra $H_3(q)$ does not enter here: it has no
+three-dimensional irreducible and no tensor product of modules, and it
+acts on $V^{\otimes 3}$ by Schur--Weyl duality, which is the baryon side.
+
+The idempotent algebra holds in any $k$-linear category: given
+$c\colon U \to W$ and $e\colon W \to U$ with $e \circ c = d \cdot 1_U$ and
+$d \neq 0$, the maps $p$ and $1 - p$ are complementary idempotents,
+$p \circ c = c$, $e \circ p = e$, and $e \circ (1 - p) = 0$.  The octet is not
+proved irreducible here, and
+$U_q(\mathfrak{sl}_3)$ is not constructed.
 
 **Conditional on $N = 3$.**
 This decomposition requires the flavor fundamental to be
-three-dimensional ($N = 3$).  As noted in
-[the Schur--Weyl proposition](#prop:schur-weyl-eightfold), the $N = 3$ question is
+three-dimensional ($N = 3$).  The $N = 3$ question is
 the chapter's central open problem.  The tensor decomposition itself
 is a theorem of $\mathrm{SU}(3)$ representation theory; its applicability
 to QOU depends on resolving how the three-dimensional flavor space

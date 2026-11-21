@@ -1,0 +1,1 @@
+The notion of real part AJ can be thought of as a reﬁnement of the center of the algebra in this geometric context. For instance, even though the center of AF is non- trivial, this geometry can still be regarded as “central” in this perspecive, since the real part of AF is reduced to just the scalars R.

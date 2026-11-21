@@ -17,7 +17,7 @@ LaTeX label: `ex:quantum-universe-su2`
 ## References
 
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
-- [manuscript] §1 Example: SU(2) as quantum universe
+- [leitner2026] §1 Example: SU(2) as quantum universe
 -/
 
 open CategoryTheory MonoidalCategory
@@ -53,7 +53,7 @@ theorem su2_tannaka_faithful (data : SU2QuantumUniverseData) :
   exact data.coord_gens
 
 /-- The SU(2) quantum universe instance. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 def su2QuantumUniverse : SU2QuantumUniverseData where
   dimFundamental := 2
   fund_dim := rfl
@@ -79,7 +79,7 @@ structure HaarFrobeniusData where
   calculus_eq : calculusRank = 3
 
 /-- Haar integral on O(SU(2)) is a valid Frobenius form. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 def su2HaarFrobenius : HaarFrobeniusData where
   numGenerators := 4
   generators_eq := rfl

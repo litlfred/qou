@@ -55,7 +55,7 @@ packaging of `Stab(B) ↪ S₆`, both flagged where they occur.
 §7c: generic `[Field K]` and a generic finite index type; no archimedean construct.
 Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-09-12-w1-route3-spectral-curve-not-a-q-gauge-invariant.md
+-- Ref: [leitner2026] docs/audits/2026-09-12-w1-route3-spectral-curve-not-a-q-gauge-invariant.md
 -/
 import Mathlib.Tactic
 import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
@@ -118,5 +118,13 @@ theorem det_charMatrix_conj (X : K) (A F : Matrix n n K) (hF : IsUnit F.det) :
       Matrix.smul_mul, Matrix.mul_nonsing_inv F hF]
   rw [hconj, Matrix.det_mul, Matrix.det_mul, Matrix.det_nonsing_inv,
     mul_right_comm, Ring.mul_inverse_cancel _ hF, one_mul]
+
+
+/-- **Equal-scalar specialization of `scalar_gauge_eq` (`qou-59i6`).**
+When `s = t` with `s ≠ 0`, `(s • 1) * B = A * (s • 1)` implies `B = A`. -/
+theorem scalar_gauge_self (s : K) (hs : s ≠ 0) (A B : Matrix n n K)
+    (h : (s • (1 : Matrix n n K)) * B = A * (s • (1 : Matrix n n K))) :
+    B = A := by
+  rw [scalar_gauge_eq s s hs A B h, div_self hs, one_smul]
 
 end QOU.Mass.QDifferenceGaugeMatrix

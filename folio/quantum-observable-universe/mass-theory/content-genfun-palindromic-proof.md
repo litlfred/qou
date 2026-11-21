@@ -23,11 +23,9 @@ $\sum_\lambda f^\lambda\,\mathrm{content}(\lambda) = \sum_\lambda f^{\lambda'}\,
 has no linear term and is $O((q-1)^2)$. Finally $C_n(1) = \sum_\lambda f^\lambda = I(n)$
 is the classical identity counting involutions by RSK shape. $\blacksquare$
 
-**Machine verification.** The two structural steps — reindexing by an anti-invariant
+**Verification.** The two structural steps — reindexing by an anti-invariant
 involution for palindromy, and the vanishing first moment for bar-evenness — are proved
-for arbitrary finite index sets in `QOU.AntiInvolutionPalindrome`
-(`palindromic_sum_of_antiInvolution`, `first_moment_zero_of_antiInvolution`).
-The Lean sibling checks the $n=4$ instance concretely
-(`C4_palindromic`, `C4_first_moment_zero`). Exact symbolic verification of the closed
+for arbitrary finite index sets.
+The $n=4$ instance is checked concretely. Exact symbolic verification of the closed
 form, palindromy, $C_n(1)=I(n)$ and the second-order rigidity has been carried out
 for $n \leq 8$, together with the parallel result for the Plancherel weight $(f^\lambda)^2$.

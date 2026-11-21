@@ -29,7 +29,7 @@ Mach-criterion equivalence and the brane Hawking-temperature identity are
 copy under `QOU/FluidDynamics/acoustic_horizon_conditions.lean`.
 
 ## References
-- [manuscript] §Fluid dynamics / Acoustic horizon conditions,
+- [leitner2026] §Fluid dynamics / Acoustic horizon conditions,
   prop:acoustic-horizon-conditions
 -/
 
@@ -78,7 +78,7 @@ class AcousticHorizonContext where
     `|v| = c_s ⟺ ℳ = 1`. Both directions are proved from the definition
     `ℳ = |v|/c_s` and `c_s ≠ 0` (`a/c = 1 ↔ a = c`), so the Lean statement
     matches the md's `⟺` criterion (md item (1)) rather than one direction. -/
--- Ref: [manuscript] prop:acoustic-horizon-conditions
+-- Ref: [leitner2026] prop:acoustic-horizon-conditions
 theorem acoustic_horizon_criterion_iff [ctx : AcousticHorizonContext] :
     ctx.vAbs = ctx.cs ↔ ctx.mach = 1 := by
   rw [ctx.mach_def, div_eq_one_iff_eq (ne_of_gt ctx.cs_pos)]
@@ -88,20 +88,20 @@ theorem acoustic_horizon_criterion_iff [ctx : AcousticHorizonContext] :
     On the horizon surface `Σ` the flow is transonic (`|v| = c_s`), so the
     Mach number reaches unity; the forward direction of
     `acoustic_horizon_criterion_iff`. -/
--- Ref: [manuscript] prop:acoustic-horizon-conditions
+-- Ref: [leitner2026] prop:acoustic-horizon-conditions
 theorem acoustic_horizon_conditions [ctx : AcousticHorizonContext] :
     ctx.mach = 1 :=
   (acoustic_horizon_criterion_iff).mp ctx.transonic
 
 /-- **Non-degeneracy + energy condition** hold on the horizon surface. -/
--- Ref: [manuscript] prop:acoustic-horizon-conditions
+-- Ref: [leitner2026] prop:acoustic-horizon-conditions
 def acoustic_horizon_regularity [ctx : AcousticHorizonContext] :
     ctx.gradMachSq ≠ 0 ∧ 0 ≤ ctx.T00 :=
   ⟨ctx.nondegenerate, ctx.energy_condition⟩
 
 /-- **Brane Hawking temperature.** Substituting `ℏ_q = (q−1)/q` into
     `T_H = ℏ_q κ_H / (2π c_s)` gives `T_H = (q−1)/(2π q) · κ_H / c_s`. -/
--- Ref: [manuscript] prop:acoustic-horizon-conditions
+-- Ref: [leitner2026] prop:acoustic-horizon-conditions
 theorem acoustic_horizon_hawking_temperature [ctx : AcousticHorizonContext] :
     ctx.TH = (ctx.q - 1) / (2 * ctx.piConst * ctx.q) * ctx.kappaH / ctx.cs := by
   rw [ctx.hawking, ctx.hbar_brane]

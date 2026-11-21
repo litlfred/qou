@@ -17,7 +17,7 @@ LaTeX label: `prop:emergence-to-quantum-flat`
 ## References
 
 - [baez2004] https://doi.org/10.4310/ATMP.2004.v8.n6.a3
-- [manuscript] §1-quantum-observable-universe/emergence-to-quantum-flat
+- [leitner2026] §1-quantum-observable-universe/emergence-to-quantum-flat
 
 **Ground ring**: `ℝ` (geometric/analytic realisation).
 Uses ℝ-specific analysis (trig, norms, real powers).
@@ -33,7 +33,7 @@ namespace QOU
     instanton equation F_A⁻ = 0 under the simplicity constraint.
     The 2-group INN(G_q) is the unique strict 2-group for which
     this equivalence holds. -/
--- Ref: [baez2004], [manuscript] §1
+-- Ref: [baez2004], [leitner2026] §1
 structure QuantumFlatnessEmergence where
   /-- The curvature F_A (scalar representative of the norm). -/
   curvature_norm : ℝ
@@ -60,14 +60,14 @@ structure QuantumFlatnessEmergence where
     flatness on the anti-self-dual component) and B⁻ = 0 (simplicity).
     The conclusion is *derived* by composing the two hypotheses — it is
     no longer carried as a field. -/
--- Ref: [baez2004], [manuscript] §1
+-- Ref: [baez2004], [leitner2026] §1
 theorem emergence_to_quantum_flat
     (qfe : QuantumFlatnessEmergence) :
     qfe.anti_self_dual = 0 :=
   qfe.quantum_flat_anti.trans qfe.simplicity
 
 /-- The self-dual part equals the B-field when F⁻ = 0. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 theorem self_dual_eq_b_field (qfe : QuantumFlatnessEmergence) :
     qfe.self_dual = qfe.b_field_norm := by
   have h1 := qfe.curvature_decomp

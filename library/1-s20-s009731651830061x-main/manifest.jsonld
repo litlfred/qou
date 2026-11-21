@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1-s20-s009731651830061x-main",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s20-s009731651830061x-main/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "Journal of Combinatorial Theory, Series A Constant term formulas for reﬁned enumerations of Gog and Magog trapezoids",
+  "title": "Constant term formulas for refined enumerations of Gog and Magog trapezoids",
   "contains": [
     "library/1-s20-s009731651830061x-main/sections/sec-front-matter",
     "library/1-s20-s009731651830061x-main/sections/sec-000",
@@ -54,8 +54,8 @@
     "pages": 45,
     "arxiv": null,
     "doi": "10.1016/j.jcta.2018.04.008",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

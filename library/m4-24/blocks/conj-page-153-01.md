@@ -1,0 +1,1 @@
+Let F be an oriented compact surface. Two homology cylinders C and C’ over F are Yq-equivalent if and only if v(C) = v(C") for any A-valued finite type invariant v of FY -degree < d for any abelian group A.

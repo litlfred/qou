@@ -15,7 +15,7 @@ export default proposition({
       "computations/cyclotomic-depth3-dimension-pslq.witness.json",
     status: "verified",
   },
-  uses: ["prop:two-filtration-bridge-general"],
+  uses: ["conj:two-filtration-bridge-general"],
   cites: ["bloch2000", "zagier1986"],
   tags: [
     "cyclotomic",

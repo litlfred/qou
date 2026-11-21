@@ -1,1 +1,0 @@
-Here is a diagram which is not in the span of $\LL$ maps at all, because it factors through ``lower terms." \igc{1}{notLLexample2} However, when viewed under adjunction as a map to $\emptyset$, it is an $\LL$ map. \igc{1}{notLLexample3} Note that $\emptyset$ has no lower terms, so that $\LL_{{\un{x}},e}$ should genuinely form a basis for $\Hom_{\DC}(B_{\un{x}},\1)$. \end{remark}

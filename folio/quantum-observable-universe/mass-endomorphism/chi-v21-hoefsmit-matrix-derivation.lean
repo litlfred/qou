@@ -139,7 +139,7 @@ noncomputable def chi_V21_difference_factored (q : ℝ) : ℝ :=
 noncomputable def chi_V21_difference_polynomial (q : ℝ) : ℝ :=
   (-q^6 + q^4 - q^2 + 1) / (4 * q^3)
 
--- Ref: [manuscript] rem:chi-v21-hoefsmit-matrix-derivation
+-- Ref: [leitner2026] rem:chi-v21-hoefsmit-matrix-derivation
 -- Ref: [hoefsmit1974] Hoefsmit's PhD thesis, seminormal form
 -- Ref: [jones1985] doi:10.2307/1971403
 /-- **Factored ↔ polynomial form** identity. -/
@@ -288,8 +288,8 @@ noncomputable def chi_v21_on_word (q : ℝ) (w : TypedB3Word) : ℝ :=
   Matrix.trace (w.foldl (init := (1 : Matrix (Fin 2) (Fin 2) ℝ))
     fun acc c => acc * crossing_to_matrix q c)
 
--- Ref: [manuscript] rem:chi-v21-hoefsmit-matrix-derivation §"matrix-product trace"
--- Ref: [manuscript] empirical sympy verification in
+-- Ref: [leitner2026] rem:chi-v21-hoefsmit-matrix-derivation §"matrix-product trace"
+-- Ref: [leitner2026] empirical sympy verification in
 --   computations/probe_per_wedderburn_block_ck.py
 --   (q_character_on_braid_word + sympy.cancel + sympy.factor)
 set_option maxHeartbeats 4000000 in
@@ -349,8 +349,8 @@ set_option maxHeartbeats 4000000 in
 
     The statement is unchanged from when it carried the `sorry`; only the
     matrices it is about were corrected. Bean `qou-18b6`. -/
--- Ref: [manuscript] rem:chi-v21-hoefsmit-matrix-derivation §"matrix-product trace"
--- Ref: [manuscript] empirical sympy verification in
+-- Ref: [leitner2026] rem:chi-v21-hoefsmit-matrix-derivation §"matrix-product trace"
+-- Ref: [leitner2026] empirical sympy verification in
 --   computations/probe_per_wedderburn_block_ck.py
 --   (q_character_on_braid_word + sympy.cancel + sympy.factor);
 --   closed form recorded in per-wedderburn-block-ck.witness.json
@@ -421,7 +421,7 @@ theorem sigma1_v21_param_sq_trace (q : ℝ) (b_arg : ℝ) :
   simp
   ring
 
--- Ref: [manuscript] rem:chi-v21-hoefsmit-matrix-derivation §"u-coordinate"
+-- Ref: [leitner2026] rem:chi-v21-hoefsmit-matrix-derivation §"u-coordinate"
 /-- **Sqrt-free closed form** for V_(2,1) character difference,
     using the polynomial b² = (q⁴ + q² + 1)/(q² + 1)² substitution.
 

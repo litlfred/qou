@@ -55,7 +55,7 @@ the mass formula and non-empty constraints is per-nucleus
 substantive open work; see
 `docs/coordination/2026-05-30-sdp-uniqueness-status.md`.
 
--- Ref: [manuscript] prop:recursive-atom-knot-atlas
+-- Ref: [leitner2026] prop:recursive-atom-knot-atlas
 -- Ref: PR #1537 (parameterised SDP uniqueness)
 -- Ref: PR #1542 (252-stable-isotope coverage)
 -- Ref: PR #1546 (atlas wiring documentation)

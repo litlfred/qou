@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-2101.10016v16/blocks/def-sec-003-14",
+  "@type": [
+    "folio-assistant-sci:Definition",
+    "doco:Section"
+  ],
+  "kind": "definition",
+  "pageStart": 23,
+  "pageEnd": 32,
+  "text": "def-sec-003-14.md",
+  "derivedFrom": "library/arxiv-2101.10016v16/sections/sec-003",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2101.10016v16/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4.13",
+    "source_kind": "definition",
+    "claim_domain": "math",
+    "evidence_kind": "axiomatic-definition",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper definition in sections/sec-003-4-preliminaries-on-tensor-categories-and-their-fun.md",
+    "claim_id": "arxiv-2101.10016v16#definition:4.13",
+    "lean_status": "unformalized"
+  }
+}

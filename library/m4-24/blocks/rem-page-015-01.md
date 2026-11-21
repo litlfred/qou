@@ -1,0 +1,1 @@
+The plottings in Figure 2 numerically describe the set of zeros of the Jones polynomial of many knots. Similar plottings are already published in [405] for some other infinite families of knots for which the Jones polynomial is known explicitly. See also [84] for some other plottings.

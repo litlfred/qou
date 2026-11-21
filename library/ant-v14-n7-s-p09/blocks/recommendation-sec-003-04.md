@@ -1,1 +1,0 @@
-In particular, if p = 3, then such a simple group must be of the form An with n < 9, one of a short list of sporadic simple groups, PSL2(q), PSLϵ n(q) for 3 | (q + ϵ) and n = 3, 4, 5, or PSp4(q) with 3∤q.

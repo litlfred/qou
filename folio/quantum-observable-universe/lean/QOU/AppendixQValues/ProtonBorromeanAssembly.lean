@@ -31,7 +31,7 @@ theorem composes them into the observed linear factor. Generic `[CommRing R]`
 (§7c, no archimedean structure); sorry-free modulo the class instance.
 
 -- @conjecture: primary
--- Ref: [manuscript] quantum-observable-universe/appendix-qvalues/proton-borromean-assembly.md
+-- Ref: [leitner2026] quantum-observable-universe/appendix-qvalues/proton-borromean-assembly.md
 -/
 
 namespace QOU.AppendixQValues
@@ -69,10 +69,19 @@ Given the conjectural Borromean assembly, the proton mass equals the published
 flat form `2·m_μ·F_Bor − 12·m_e`; the concrete integers are DERIVED
 (`2 = multiplicity`, `12 = multiplicity · bindingCount = 2 · 6`), not assumed.
 Sorry-free modulo the single class instance. -/
--- Ref: [manuscript] quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.md
+-- Ref: [leitner2026] quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.md
 theorem proton_mass_substrate_identity (R : Type*) [CommRing R]
     [A : ProtonBorromeanAssembly R] :
     A.protonMass = 2 * A.mMu * A.fBor - 12 * A.mE := by
   rw [A.assembly, A.multiplicity_eq_two, A.bindingCount_eq_six]; ring
+
+/-- **Isolated total electron-binding deficit (`bean qou-9f4h`):** under
+    `ProtonBorromeanAssembly`, the difference between the dressed constituent
+    term `2 · m_μ · F_Bor` and `protonMass` equals `12 · m_e`. -/
+theorem proton_mass_binding_deficit (R : Type*) [CommRing R]
+    [A : ProtonBorromeanAssembly R] :
+    2 * A.mMu * A.fBor - A.protonMass = 12 * A.mE := by
+  rw [proton_mass_substrate_identity R]
+  ring
 
 end QOU.AppendixQValues

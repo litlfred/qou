@@ -1,1 +1,0 @@
-In other words, should $\sigma^{-1}(\{L\})$ be empty and $\sigma^{-1}(\{R\})$ have cardinality at most $1$, then there is one multi-morphism from $\sigma$ to $M$ for each linear order on $\sigma^{-1}(M)$; should $\sigma^{-1}(\{L\})$ not be empty or $\sigma^{-1}(\{R\})$ have cardinality greater than $1$, then there are no multi-morphisms from $\sigma$ to $M$.

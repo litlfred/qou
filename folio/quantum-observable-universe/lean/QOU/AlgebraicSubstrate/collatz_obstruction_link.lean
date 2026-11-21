@@ -27,7 +27,7 @@ not a general-QOU fact; the `_of_chi_neg_six` corollary is therefore stated with
 contact-boundary block (`prop:collatz-contact-boundary`, scoped to "QOU with
 `2 ∣ χ(A)`").
 
--- Ref: [manuscript] quantum-observable-universe/appendix-surreals/collatz-contact-boundary.md
+-- Ref: [leitner2026] quantum-observable-universe/appendix-surreals/collatz-contact-boundary.md
 -/
 
 namespace QOU.AlgebraicSubstrate

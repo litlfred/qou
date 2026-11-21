@@ -69,6 +69,8 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from witness_base import WitnessBuilder  # noqa: E402
 sys.path.insert(0, str(_HERE.parent / 'substrate'))
 import mpmath as mp  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()  # raise dps BEFORE Q0 and the constants below are built
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 _spec = importlib.util.spec_from_file_location(
@@ -196,7 +198,7 @@ def main() -> int:
         rel = abs(r18 - val) / abs(val) if val != 0 else float("inf")
         hit = rel < 0.01
         matches[name] = {"value": val, "rel_err_vs_qstar": rel, "match_1pct": hit}
-        print(f"     q* vs {name:<20} = {val:.6f}   rel.err = {rel:6.2%}"
+        print(f"     q* vs {name:<20} = {mp.nstr(val, 7):>10}   rel.err = {mp.nstr(100 * rel, 4)}%"
               f"   {'*** MATCH' if hit else ''}")
     any_substrate_match = any(m["match_1pct"] for m in matches.values())
     e2_negative = not any_substrate_match

@@ -1,1 +1,0 @@
-Last, note that, along with these two forms, we shall also use in section [\[section:QuadForms\]](#section:QuadForms){reference-type="ref" reference="section:QuadForms"} the "classical" forms $\theta_{i,j}$, $i,j \in \{0,1\}$.

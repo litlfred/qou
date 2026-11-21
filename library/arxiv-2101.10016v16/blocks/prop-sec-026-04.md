@@ -1,1 +1,1 @@
-Let A be a weak quasi bialgebra and Q ∈ A ⊗ A a twist such that
+Let A be a weak quasi bialgebra and Q ∈ A ⊗ A a twist such that AQ = Aop. Then c(ρ, σ) := Σρ ⊗ σ(Q) is a generalised coboundary of Rep(A). We refer to (10.2), (10.3), (10.6), (10.15), with Q in place of R, for an explicit form of the equality AQ = Aop.

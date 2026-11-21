@@ -19,7 +19,7 @@
   `1 + 2 + … + (d−1) = d(d−1)/2`, not `d²`.  It costs one extra unit in the
   constant because `d(d−1) ≥ (d−1)²` fails at `d = 0`.
 
-  -- Ref: [manuscript] QOU/Knot/KashaevTailBound.lean
+  -- Ref: [leitner2026] QOU/Knot/KashaevTailBound.lean
 -/
 import Mathlib.Analysis.SumIntegralComparisons
 import Mathlib.Analysis.SpecialFunctions.Gaussian.GaussianIntegral

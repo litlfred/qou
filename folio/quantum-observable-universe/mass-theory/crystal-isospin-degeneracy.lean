@@ -114,7 +114,14 @@ def SignedBraidWord.flipAt
     The conjectural content (per `conj:crystal-graph-realization`):
     on every SYT eigenline, the q→0 actions of `σ_i` and
     `σ_i⁻¹` agree.  This is implemented by the `abs(i)` reduction
-    in `term7_alpha5_crystal_derivation.py`. -/
+    in `term7_alpha5_crystal_derivation.py`.
+
+    Scope (2026-11-16): this field is a modelling choice, not a
+    consequence of the Hecke relation `(σ - q)(σ + q⁻¹) = 0`, which
+    cannot be specialised at `q = 0`.  In `H_n(q)` the eigenvalues of
+    `σ_i` are `q, -q⁻¹` and those of `σ_i⁻¹` are `q⁻¹, -q`.  The
+    implication `CrystalGraphRealization ⟹ CrystalEigenlineSignBlind`
+    named in the module docstring is not proved anywhere. -/
 class CrystalEigenlineSignBlind (R : Type u) [Ring R] where
   /-- Per-eigenline eigenvalue of a single signed letter. -/
   eigLetter : SignedLetter → R
@@ -147,7 +154,7 @@ variable {R : Type u} [Ring R] [C : CrystalEigenlineSignBlind R]
 
 /-- A flipped letter has the same crystal character as the
     original.  Direct consequence of `eigLetter_sign_blind`. -/
--- Ref: [manuscript] braids-and-knots/crystal-isospin-degeneracy
+-- Ref: [leitner2026] braids-and-knots/crystal-isospin-degeneracy
 theorem eigLetter_invert (ℓ : SignedLetter) :
     C.eigLetter ℓ.invert = C.eigLetter ℓ := by
   cases ℓ with
@@ -160,7 +167,7 @@ theorem eigLetter_invert (ℓ : SignedLetter) :
 
 /-- A flipped letter under any predicate has the same crystal
     character as the original. -/
--- Ref: [manuscript] braids-and-knots/crystal-isospin-degeneracy
+-- Ref: [leitner2026] braids-and-knots/crystal-isospin-degeneracy
 theorem eigLetter_flipAt (flip : Bool) (ℓ : SignedLetter) :
     C.eigLetter (if flip then ℓ.invert else ℓ) = C.eigLetter ℓ := by
   cases flip with
@@ -176,7 +183,7 @@ end CrystalEigenlineSignBlind
     every offset `offset : ℕ`.  Proof: induction on `w`, using
     `eigLetter_flipAt` on the head and `eigWord_cons` to factor
     the per-letter contribution. -/
--- Ref: [manuscript] braids-and-knots/crystal-isospin-degeneracy
+-- Ref: [leitner2026] braids-and-knots/crystal-isospin-degeneracy
 theorem crystal_isospin_degeneracy_aux
     {R : Type u} [Ring R] [C : CrystalEigenlineSignBlind R]
     (flip : ℕ → Bool) (offset : ℕ) (w : SignedBraidWord) :
@@ -202,7 +209,7 @@ theorem crystal_isospin_degeneracy_aux
 
     Proof: instance of `crystal_isospin_degeneracy_aux` at
     `offset = 0`. -/
--- Ref: [manuscript] braids-and-knots/crystal-isospin-degeneracy
+-- Ref: [leitner2026] braids-and-knots/crystal-isospin-degeneracy
 -- Ref: [kashiwara1991] Kashiwara, "On crystal bases of the q-analogue of universal enveloping algebras," Duke Math. J. 63 (1991)
 theorem crystal_isospin_degeneracy
     {R : Type u} [Ring R] [_C : CrystalEigenlineSignBlind R]
@@ -230,7 +237,7 @@ theorem crystal_isospin_degeneracy
     Witness:
     `computations/term7-alpha5-crystal-derivation.witness.json`
     records both at 50 dps as `0.0020612874779541296`. -/
--- Ref: [manuscript] braids-and-knots/crystal-isospin-degeneracy
+-- Ref: [leitner2026] braids-and-knots/crystal-isospin-degeneracy
 theorem crystal_T_helium3_degeneracy
     {R : Type u} [Ring R] [_C : CrystalEigenlineSignBlind R]
     (w_T w_He3 : SignedBraidWord)

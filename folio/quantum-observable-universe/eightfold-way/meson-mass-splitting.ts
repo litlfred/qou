@@ -30,4 +30,7 @@ export default remark({
     "rem:q-deformation-weight-lattice",
     "prop:meson-octet-decomposition",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): This is proved over any commutative ring in\n`QOU/Eightfold/GellMannOkuboIdentity.lean`\n, together with the sharper consequence\n`gmo_cannot_discriminate`: two arbitrarily" },
+  ],
 });

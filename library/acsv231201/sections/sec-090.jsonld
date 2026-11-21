@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/acsv231201/sections/sec-090",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Classical Morse theory",
+  "pageStart": 517,
+  "pageEnd": 523,
+  "contains": [
+    "library/acsv231201/blocks/prose-sec-090",
+    "library/acsv231201/blocks/thm-sec-090-01",
+    "library/acsv231201/blocks/def-sec-090-02",
+    "library/acsv231201/blocks/lem-sec-090-03",
+    "library/acsv231201/blocks/thm-sec-090-04",
+    "library/acsv231201/blocks/ex-sec-090-05",
+    "library/acsv231201/blocks/ex-sec-090-06",
+    "library/acsv231201/blocks/thm-sec-090-07"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
+  "provenance": "ingested"
+}

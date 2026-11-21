@@ -61,7 +61,7 @@ Archimedean: `β` and the sequence are real (a `limsup` of real log-ratios, an
 order comparison). `ℝ` is correct.
 
 ## References
-- [manuscript] fluid-dynamics/levi-degeneracy-conjecture (`conj:levi-degeneracy`),
+- [leitner2026] fluid-dynamics/levi-degeneracy-conjecture (`conj:levi-degeneracy`),
   core-levi-form, townsend-biot-savart-strain
 -/
 

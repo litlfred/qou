@@ -1,0 +1,76 @@
+---
+doc_id: 9710022v2
+doc_title: "Harmonic Analysis on the quantum Lorentz group"
+section_id: page-053
+section_title: "Page 53"
+pages: 53-53
+pdf_page: 53
+source_pdf: 9710022v2.pdf
+source_sha256: e5ff373a1ec6884a
+text_source: ocr
+granularity: page
+doc_brief: "Harmonic Analysis on the quantum Lorentz group — This w ork b egins with a review of complexi cation and reali cation of Hopf algebras."
+---
+Contragredient:
+
+SO __ im(-C+B) [dc] 1 A- * __ in(-C4B) [dc] 1
+Se =e aap” ae , > =e Capp” rane
+
+B v Nae v
+Normalization:
+A- _ eT 5p a Va ~A _ eR A ~\
+-0 ~ J{dp] A yoo ~ /{dB] N
+< v NL v BB v 7 v
+
+One has to add to these relations those coming from elementary topological moves on ribbon
+graphs, which come from Yang-Baxter equation and quasitriangularity equations.
+
+Definitions of 67 symbols, relations and formulas
+
+ABJE\ .
+CF\pDs SPH) _-
+
+i
+
+A
+C B\D
++ ea {SEB} Sen)
+H Vv
+L Cc dv
+
+{> é r} = eT itc+425-4-Di(19 24 F4I])EA(A, B, BA(A, C, FA(C, B, D)A(D, B, F) x
+
+ce!" Y(A,B,E) Y(A,C,F)Y(C,E,D)Y(D,B,F) [U+1]!
+
+Cc
+
+AS Vv
+
+ve
+
+aiete A4B+O+D
+<U< 4 ALDLELF
+
+BeDte J” lpeceEsr
+
+D+C+E
+
+[J+K-I]![J4I-K]! [I[+K-J]!
+[I4+J+K+1]!
+
+1
+VL J, KE 52".
+
+with A(L, J, K) = i
+The 67 symbols satisfy the symmetry relations:
+AB|\|E|\ fBA|E|\_f[CD|\/E|_sfAD|/F (172)
+CD\|FS \DC/\FJS \ABI\FS |\CBIE
+They also satisfy the following relation, known as Racah-Wigner relation:
+
+talon} ol} acta
+
+) (173)
+
+* » [U-A—C_F]![U_A—B—E]![U—B—D—F]![U—D—C_E]![A+B+C+D-—U]! [A+D+E+F_U]![B+C+E+F_U]!
+
+(171)

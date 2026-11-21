@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2601.05136v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "cee15456257d3028d54a86f851f3bc714779023b88b5d98c57206a784e73ede3",
   "file": "2601.05136v2.pdf"
@@ -16,31 +19,54 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
   "candidates": 1,
   "by_kind": {
-   "recommendation": 1
+   "theorem": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "both": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
    "name": null,
-   "statement": "Sometimes instead one must consider a sum of such integrals. :::",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-background-and-motivation.md",
-   "section_title": "Background and motivation",
-   "pages": "2-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "Under the hypotheses above Z\u03c8 N is given by the sum (3.10) Z\u03c8 N(K, \u03c1, \u00b5) = N |E|/2\u22121/2 X k\u2208ZE JN(D, \u00b5, \u03b2|k) over all state integrals. \u231f",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-011-state-integrals.md (p. 11-12) citing [0,1]",
+   "external_refs": [
+    "[0,1]"
+   ],
+   "proof_excerpt": "De\ufb01ne a function F : RE \u2192C by F(t) := exp(NSN(D, \u00b5|t + \u03b2/N)). It restricts to a not-necessarily continuous, periodic function f : CE/ZE \u2192C. By Lemma 3.4(b) F is smooth and in particular (3.11) Z [0,1]E",
+   "section_file": "sections/sec-011-state-integrals.md",
+   "section_title": "State integrals",
+   "pages": "11-12",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-011-state-integrals.md (p. 11-12) citing [0,1]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-011-01",
+   "block_iri": "library/arxiv-2601.05136v2/blocks/thm-sec-011-01",
+   "claim_id": "arxiv-2601.05136v2#theorem:1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

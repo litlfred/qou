@@ -1,0 +1,1 @@
+— Label each edge of P Trun by a sign +, 0 or −in such a way that, for each face Q of P Trun , either all the edges of Q are labelled by 0 or there are at least 4 sign changes in ∂Q. Then, all the edges are labelled by 0.

@@ -1,0 +1,65 @@
+{
+  "$schema": "folio-run-context/v1",
+  "platform": {
+    "commit": "521b87dca76984317740425be33b352ba9ea059c"
+  },
+  "mounts": {
+    "state": "could-not-determine",
+    "reason": "no index.lock.json at /Users/litlfred/.gemini/antigravity-cli/brain/92bff8c9-777d-458a-a380-8dd5bf5cc0f3/scratch/lane-ingest-b/qou"
+  },
+  "releases": [
+    {
+      "state": "provisioned",
+      "release": "tesseract@5.5.2",
+      "digest": {
+        "algorithm": "sha256",
+        "digest": "d4965a3e2b128a457e88ad28980510fc45b4e4c6a1dbc3ef23bc0eeacbcf2b31"
+      }
+    },
+    {
+      "state": "provisioned",
+      "release": "pdftoppm@26.02.0",
+      "digest": {
+        "algorithm": "sha256",
+        "digest": "b2742a46635a013671534b512f1bd2a474dc1e33c48a308ce31f7e023c79861f"
+      }
+    },
+    {
+      "state": "provisioned",
+      "release": "tessdata-jpn@sha256-1f5de9236d2e",
+      "digest": {
+        "algorithm": "sha256",
+        "digest": "1f5de9236d2e85f5fdf4b3c500f2d4926f8d9449f28f5394472d9e8d83b91b4d"
+      }
+    },
+    {
+      "state": "provisioned",
+      "release": "tessdata-eng@sha256-7d4322bd2a77",
+      "digest": {
+        "algorithm": "sha256",
+        "digest": "7d4322bd2a7749724879683fc3912cb542f19906c83bcc1a52132556427170b2"
+      }
+    },
+    {
+      "state": "provisioned",
+      "release": "tessdata-osd@sha256-9cf5d576fcc4",
+      "digest": {
+        "algorithm": "sha256",
+        "digest": "9cf5d576fcc47564f11265841e5ca839001e7e6f38ff7f7aacf46d15a96b00ff"
+      }
+    }
+  ],
+  "invoker": {
+    "kind": "system",
+    "id": "scripts/pdf-ocr.py",
+    "script_hash": "46a522111e65bc58c40b96d9a7e90d3a2dca5a6ca52ea71cbd23d8a1e9c761f6"
+  },
+  "inputs": [
+    {
+      "hash": "bb39ed72ec1b",
+      "inputs": [
+        "uploads/TLCat.pdf"
+      ]
+    }
+  ]
+}

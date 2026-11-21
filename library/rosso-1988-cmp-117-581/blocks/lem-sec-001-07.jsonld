@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/rosso-1988-cmp-117-581/blocks/lem-sec-001-07",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 3,
+  "pageEnd": 8,
+  "text": "lem-sec-001-07.md",
+  "derivedFrom": "library/rosso-1988-cmp-117-581/sections/sec-001",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/rosso-1988-cmp-117-581/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-001-583-and-ί-is-not-a-root-of-1-the-if-1-00-determi.md (p. 3-8)",
+    "claim_id": "rosso-1988-cmp-117-581#lemma:4",
+    "lean_status": "unformalized"
+  }
+}

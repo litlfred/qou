@@ -16,7 +16,7 @@ reduction map is the only piece that is not constructive here.
 LaTeX label: `def:inter-shell-operator`
 
 ## References
-- [manuscript] §13/inter-shell-operator
+- [leitner2026] §13/inter-shell-operator
 -/
 
 namespace QOU.Archimedean

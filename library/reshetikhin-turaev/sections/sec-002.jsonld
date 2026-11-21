@@ -14,10 +14,12 @@
   "pageEnd": 8,
   "contains": [
     "library/reshetikhin-turaev/blocks/prose-sec-002",
-    "library/reshetikhin-turaev/blocks/recommendation-sec-002-01",
-    "library/reshetikhin-turaev/blocks/recommendation-sec-002-02"
+    "library/reshetikhin-turaev/blocks/rem-sec-002-01",
+    "library/reshetikhin-turaev/blocks/rem-sec-002-02",
+    "library/reshetikhin-turaev/blocks/thm-sec-002-03",
+    "library/reshetikhin-turaev/blocks/rem-sec-002-04"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/reshetikhin-turaev",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/reshetikhin-turaev",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/reshetikhin-turaev/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/reshetikhin-turaev/manifest.jsonld",
   "provenance": "ingested"
 }

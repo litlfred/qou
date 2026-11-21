@@ -1,1 +1,0 @@
-In Section [\[sec:horosphere\]](#sec:horosphere){reference-type="ref" reference="sec:horosphere"}, we show that the universal cover of one of these manifolds must contain a number of maximal horospheres whose size is bounded below.

@@ -1,0 +1,1 @@
+The following are equivalent for a hyperbolic knot complement other than the ﬁgure-eight knot complement: (1) it has hidden symmetries; (2) its orientable commensurator quotient has a rigid cusp; (3) the knot complement non-normally covers some orbifold.

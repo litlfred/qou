@@ -103,7 +103,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 import mpmath as mp  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import COMPUTE_DPS  # noqa: E402
 
 
 def q_int(m, q: "mp.mpf") -> "mp.mpf":
@@ -259,42 +259,48 @@ def z_from_weights(q: "mp.mpf", y: dict) -> "mp.mpf":
 
 
 # ── self-test ────────────────────────────────────────────────────────────
-# MUST precede the mpf() literals below. `mp.mp.dps` is only raised inside
-# self_test() (line ~271), which runs long after import — so without this the
-# registry constants are parsed at mpmath's default 15 dps, rounded to 53 bits,
-# and are ALREADY WRONG when built. `module_const_precision_audit --strict`
-# flags exactly REG_ZC / REG_ZD for this. Idempotent, and safe alongside the
-# dps juggling inside the self-test.
-set_compute_dps(50)
-
-_Q = "1.1099785827513808075916690956107688798744991218736"
-# docs/coordination/trace-convention-registry.md, at the proton pin
-REG_C = (mp.mpf("0.4153958"), mp.mpf("0.2809296"), mp.mpf("0.0227449"))
-# ── convention-D constants at 50 dps ──────────────────────────────────────
-# RE-EMITTED 2026-09-04 (bean qou-90k2).  These were carried at 17 significant
-# digits, and REG_ZD's 17th digit was WRONG: it read ...524 where the correct
-# rounding is ...525.  It was not merely short — it was worse than plain
-# float64 (rel err 1.89e-17 against float64's 6.69e-18), i.e. a float64 value
-# truncated once more.  It is the residue of the historical mis-record the
-# registry doc's own §Provenance records ("z_D was recorded ...524365, correct
-# is ...525160"); the doc was corrected and the Python was not.
+# The registry constants below MUST be parsed at full precision: at mpmath's
+# default 15 dps they are rounded to 53 bits and are ALREADY WRONG when built
+# (`module_const_precision_audit --strict` flags exactly REG_ZC / REG_ZD).
 #
-# It survived because the self-test cross-checked it at 1e-15 while every
-# INTERNAL check in the same function runs at 1e-25 — the one check tying this
-# module to the corpus's published number was pinned ten orders of magnitude
-# looser than its neighbours, so an error of 1.16e-17 passed by a factor of 86.
-# The tolerances below are now 1e-40, which is what makes these constants
-# load-bearing rather than decorative.
-#
-# Derived, not transcribed: z = q^3/(q^2+1) and the exact n=3 weights
-# y_(3) = (q^4+1)/(q^2+1)^2, y_(2,1) = q^2/(q^2+1)^2, y_(1^3) = 0, evaluated at
-# the 50-digit proton pin _Q.  Cross-checked against y_lambda_su_n(3, q, 2) at
-# 60 dps: agreement to 3e-62.  Regenerate the same way if _Q moves.
-REG_D = (mp.mpf("0.50540422650393080318755870324047227566035119774981"),
-         mp.mpf("0.24729788674803459840622064837976386216982440112509"),
-         mp.mpf("0"))
-REG_ZC = mp.mpf("0.49932033418369445241344268025766630375194816404153")
-REG_ZD = mp.mpf("0.61268803714646525159582986394589924802630839154509")
+# They are built inside a LOCAL `mp.workdps(COMPUTE_DPS)`, NOT under a
+# module-scope `set_compute_dps(50)`. That call used to sit here, and it
+# ASSIGNS the global `mp.dps` — so merely importing this module (including the
+# lazy import inside `wedderburn_jones_markov.y_lambda_at`) LOWERED every
+# caller already running at 60/70 dps to 50 for the rest of the process.
+# Measured: `paper_six_term_isotope_sweep` sat at 70 after import and at 50
+# after its first `aK_v2` call, then serialized at OUTPUT_DPS = 60 — ten
+# digits manufactured. Importing a library must not change the caller's
+# precision in either direction; `workdps` restores it on exit.
+with mp.workdps(COMPUTE_DPS):
+    _Q = "1.1099785827513808075916690956107688798744991218736"
+    # docs/coordination/trace-convention-registry.md, at the proton pin
+    REG_C = (mp.mpf("0.4153958"), mp.mpf("0.2809296"), mp.mpf("0.0227449"))
+    # ── convention-D constants at 50 dps ──────────────────────────────────────
+    # RE-EMITTED 2026-09-04 (bean qou-90k2).  These were carried at 17 significant
+    # digits, and REG_ZD's 17th digit was WRONG: it read ...524 where the correct
+    # rounding is ...525.  It was not merely short — it was worse than plain
+    # float64 (rel err 1.89e-17 against float64's 6.69e-18), i.e. a float64 value
+    # truncated once more.  It is the residue of the historical mis-record the
+    # registry doc's own §Provenance records ("z_D was recorded ...524365, correct
+    # is ...525160"); the doc was corrected and the Python was not.
+    #
+    # It survived because the self-test cross-checked it at 1e-15 while every
+    # INTERNAL check in the same function runs at 1e-25 — the one check tying this
+    # module to the corpus's published number was pinned ten orders of magnitude
+    # looser than its neighbours, so an error of 1.16e-17 passed by a factor of 86.
+    # The tolerances below are now 1e-40, which is what makes these constants
+    # load-bearing rather than decorative.
+    #
+    # Derived, not transcribed: z = q^3/(q^2+1) and the exact n=3 weights
+    # y_(3) = (q^4+1)/(q^2+1)^2, y_(2,1) = q^2/(q^2+1)^2, y_(1^3) = 0, evaluated at
+    # the 50-digit proton pin _Q.  Cross-checked against y_lambda_su_n(3, q, 2) at
+    # 60 dps: agreement to 3e-62.  Regenerate the same way if _Q moves.
+    REG_D = (mp.mpf("0.50540422650393080318755870324047227566035119774981"),
+             mp.mpf("0.24729788674803459840622064837976386216982440112509"),
+             mp.mpf("0"))
+    REG_ZC = mp.mpf("0.49932033418369445241344268025766630375194816404153")
+    REG_ZD = mp.mpf("0.61268803714646525159582986394589924802630839154509")
 
 
 def self_test() -> int:

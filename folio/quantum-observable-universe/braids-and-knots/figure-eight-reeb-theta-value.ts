@@ -16,4 +16,7 @@ export default remark({
     "amphichirality",
     "c3-bar-odd",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The unit-modulus property $|\\lambda_{4_1}| = 1$, the classical anchor $\\theta(1) = 2\\pi/3$ (primitive cube root of unity), the two trace identities, the bound $\\mathrm{tr} \\geq -2$, and $\\theta = 0$ at the golden ratio are established in the Lean file." },
+  ],
 });

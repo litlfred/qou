@@ -1,0 +1,53 @@
+400 Combinatorial applications
+
+n 1 2 4 8 16
+
+Exact 0.2986 0.2148 0.1532 0.1088 0.07709
+1-term 0.3090 0.2185 0.1545 0.1093 0.07726
+Rel. error -0.03486 -0.01742 -0.008698 —_-0.004345 ~—-0.002171
+2-term 0.2983 0.2147 0.1532 0.1088 0.07709
+
+Rel. error 0.001077 0.0002450 —_0.00005820 0.00001417 0.000003496
+
+Table 12.5 Approximations to scaled Delannoy numbers 432" F4n3n-
+
+Higher order terms in an asymptotic expansion for any direction 7 with pos-
+itive coordinates can be computed symbolically with the coordinates of 7 as
+parameters. 4
+
+Although the first terms in our asymptotic expansions are typically non-
+zero, and thus determine dominant asymptotic behavior, they can vanish. In
+this case, higher order terms need to be computed in order to determine how
+the sequence behaves.
+
+Example 12.16. The rational functions
+
+_ yd -2y)
+
+= » and F3(x,y) = —*
+l-x-y
+
+1
+F(x, y) = Tox-y’ F (x,y) -
+—x-y l-x-y
+
+all admit (x,y) = (1/2, 1/2) as a minimal contributing point in the main di-
+agonal direction. Applying the results of smooth ACSV gives an asymptotic
+expansion (9.4) of the coefficients of F; whose leading term is non-zero. The
+leading term in the asymptotic expansion of the coefficients of F' vanishes, as
+the numerator of F vanishes at the contributing point, but the second order
+term in this expansion is non-zero (in fact, the main diagonal of F> is the gen-
+erating function of the Catalan numbers — see Example 12.18 below). On the
+other hand, it can be shown that the main diagonal of F3 is identically zero, so
+all coefficients in the asymptotic expansion must vanish. It is not obvious how
+to detect automatically the vanishing of all terms in the asymptotic expansion
+for a general rational function. 4
+
+Another reason why we may need higher order terms is because of cancel-
+lation of terms when we combine asymptotic expansions of related functions.
+
+Example 12.17. Consider the (d + 1)-variate function
+
+A(a)
+
+W(a1,.--,XaY) = T-yB@)’

@@ -1,0 +1,1 @@
+There exists a positive constant Cc < ∞only depending on d and e such that ∥g ◦f ∥H1 ≤Cc∥g∥C1(1 + ∥f ∥H1) for all f ∈H1(R/Z, Rd), g ∈C1(Rd, Re) and e, d ∈N. Proof This follows from ∥g ◦f ∥W 1 ≤∥g ◦f ∥L2 + ∥(g ◦f )·∥L2 ≤∥g∥∞+ ∥˙g∥∞∥˙f ∥L2 ≤∥g∥C1(1 + ∥f ∥W 1) and by the equivalence of W 1- and H1-norm as stated above. ⊓⊔

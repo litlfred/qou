@@ -1,1 +1,0 @@
-We believe, however, that the test of q-isospin will come from its extension to a q-deformed ﬂavor SU(3), where the large mass diﬀerence between the strange quark and the light q-isospin doublet allows for much cleaner computations (q should be rather diﬀerent from one) and the pion mass diﬀerence is of no great import.

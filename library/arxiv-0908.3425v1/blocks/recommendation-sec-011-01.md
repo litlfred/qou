@@ -1,1 +1,0 @@
-While the model of Eq. ([\[2:2:1:lsm\]](#2:2:1:lsm){reference-type="ref" reference="2:2:1:lsm"}) is constructed to illustrate the concept of a spontaneous symmetry breaking, it is not fully understood theoretically why QCD should exhibit this phenomenon.

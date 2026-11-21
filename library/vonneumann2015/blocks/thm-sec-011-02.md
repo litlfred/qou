@@ -1,0 +1,1 @@
+If M is a type In factor, its type Im factors are all uniquely determined, up to conjugation by unitaries in M, by the integer (or ∞) k > 0 such that pMp is a type Ik factor, p being a minimal projection in the subfactor N and mk = n.

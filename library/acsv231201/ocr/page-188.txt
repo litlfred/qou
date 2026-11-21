@@ -1,0 +1,45 @@
+170 Overview of analytic methods for multivariate GFs
+
+results for families of generating functions with increasingly complicated sin-
+gular behavior, together covering most known examples of rational generating
+functions in the combinatorial literature. Chapter 12 then gives a large variety
+of examples and applications before Chapter 13 describes further extensions.
+
+In order to guide intuition and introduce the high-level constructions to be
+used in later chapters of the book, the current chapter begins by sketching the
+analysis on some examples, showing how the computations in the simplest
+case are a straightforward generalization of the univariate methods from Part I,
+describing the limits of these methods, and illustrating why we require more
+advanced techniques for our strongest results. After this we introduce the al-
+gebraic and topological constructions necessary for our work, and prove the
+theoretical results underpinning later chapters.
+
+The computation of asymptotics is considerably simpler, and easier to ex-
+plain, when the set of singularities V of F is smooth (meaning it is a manifold,
+at least near points dictating asymptotics). Before going into technical details,
+we illustrate the smooth case through extended examples in Section 7.1. Read-
+ers who want to understand the method but not the details can quit after the
+examples and skip to Chapters 8 and 9. In Section 7.2 we describe the theory
+when ‘V is smooth, allowing readers to understand the smooth point formulae
+of Chapter 9 without the greater overhead of stratified Morse theory.
+
+Section 7.3 gives a parallel treatment of everything in the previous sections,
+without the assumption that V is smooth. This involves the introduction of
+stratified Morse theory to explain the corresponding notions of critical points
+and quasi-local cycles for non-smooth varieties. The quasi-local cycles are de-
+fined in terms of the tangential cycles y; and homology generators §; for the
+normal link at z;. Section 7.4 discusses the types of singular geometry that
+arise frequently in combinatorial applications.
+
+The results of (stratified) Morse theory describe the topology of a surface
+using a height function mapping the surface to the real numbers. In classi-
+cal Morse theory this height function is almost always assumed to be proper,
+meaning the set of points with heights in a closed interval forms a compact
+set. Unfortunately, we work in situations where the height function is usually
+non-proper. To get around this difficulty, Section 7.5 introduces the concept of
+critical points at infinity (CPAI) and critical values at infinity (CVAD, which
+help characterize when the results of Morse theory we need apply without an
+assumption of a proper height function. A fundamental lemma is stated con-
+cerning the existence of certain deformations, provided there are no critical
+values at infinity, and its proof is cited from the literature. This lemma is then
+used to prove the theorems previously stated in the chapter.

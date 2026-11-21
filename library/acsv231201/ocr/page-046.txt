@@ -1,0 +1,52 @@
+28 Generating functions
+
+times associated with them. Suppose we have a database such that for each
+k > 1 there are b,; different queries that take k time units, and the protocol in
+use does not allow two large queries in a row, where a large query is one of
+size greater than some fixed number M. How many query sequences are there
+of total time n?
+
+The sequences of queries are bijectively equivalent to the composition A o
+(8,,B2), where A is the class from Example 2.9, counted by numbers of Os
+and 1s, and 8; and 8; are respectively the short queries and the long queries,
+counted by computation time. Thus,
+
+1
+1 — By(z) — Bi(<)Ba(z)
+
+enumerates query sequences in this model by length, where B,(z) = Dyan byzk
+and Bo(z) = Ys biz’. <
+
+A(B1, Bo) =
+
+Our next example may seem a natural candidate for the transfer matrix
+method, but is simpler to analyze from the viewpoint of compositions.
+
+Example 2.11 (Smirnov words). Let A be the class of Smirnov words on the
+alphabet [d], which are words where no consecutive repetition of any symbol is
+allowed. The definition immediately implies that there are d- (d — 1)"~! words
+of length n, and we now perform a more refined enumeration tracking each
+symbol.
+
+Let A(z) enumerate Smirnov words and B(z) enumerate the class 8 of all
+words on the alphabet [d], both weighted by the number of occurrences of each
+symbol. Starting with x € A and substituting an arbitrary nonempty string of
+the symbol j for every occurrence of j in x produces each element of 8 in
+a unique way. The generating function for a nonempty string of js is =
+
+whence
+Be) = al £1 vos).
+1-z l-zy
+
+We can solve for A by setting y; = z;/(1 — z;) in this equation, since inverting
+the substitution gives z; = y;/(1 + y;) and thus
+
+JI Ja
+A =B see :
+” (Ay 4)
+
+Since B(z) = 1/(1 - an zj) we ultimately obtain
+1
+
+A(z) = —=— -
+1- Mets

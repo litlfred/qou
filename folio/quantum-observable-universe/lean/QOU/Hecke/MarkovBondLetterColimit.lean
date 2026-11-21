@@ -44,7 +44,7 @@ Base ring: generic `[CommRing K]` for the general statements; the convention-D
 corollary is over a generic `[Field K]`.  No `ℝ`.
 
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
--- Ref: [manuscript] beans qou-5zl1 / qou-slz5 / qou-qqm4.
+-- Ref: [leitner2026] beans qou-5zl1 / qou-slz5 / qou-qqm4.
 -/
 
 namespace QOU.Hecke.MarkovBondLetterColimit

@@ -1,1 +1,0 @@
-This will be particularly interesting when we consider $M = U(1)$ in section [\[mstuffu1\]](#mstuffu1){reference-type="ref" reference="mstuffu1"}, but first we should define the cardinality of an $M$-stuff type:

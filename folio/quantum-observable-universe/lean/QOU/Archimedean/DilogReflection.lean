@@ -29,7 +29,7 @@ The build (bean milestone `qou-a3ps`):
 Everything is over `ℝ` (archimedean by construction — the reflection is a
 statement about the real dilogarithm's boundary regulator).
 
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit; Euler reflection (Lewin 1981)
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit; Euler reflection (Lewin 1981)
 -/
 
 namespace QOU.Archimedean

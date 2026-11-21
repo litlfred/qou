@@ -2,6 +2,8 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Moved out of the prose by the voice-leak drain (qou-d4kh, W14b, 2026-11-21): Lean for the 2026-11-20 update: `QOU.BraidsAndKnots.NucleonWeightSpaceQTrace.qtrace_crossing_eq_zD` (quantum trace reproduces z_D), `deltaT_allPairs_connected_eq_zero`, `deltaT_adjacent_connected_eq`." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The files `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm`, `QOU.BraidsAndKnots.NucleonIdempotentModifiedTrace` and `QOU.QuantumObservableUniverses.CategoricalLagrangianTwoTermBridge` prove, sorry-free, facts about the 3-strand weight spaces $W_p = (2,1)$ and $W_n = (1,2)$: the quark-charge operators $Q_iQ_j$ break the intertwiner $P(q)$ of `NucleonWeightSpaceTraces`; … $E_0 = m_e/(q(q-1))$ (a definition; `hadronicScale_mul_q_sq_hbar_eq_me` unfolds it)." },
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "caveat",
@@ -19,6 +21,46 @@ export default proposition({
         "fixed. The coefficients are `10000·(z q² + 2q − z)`, `5000·(q² − 2z q − 1)` and " +
         "`10000·(q² − z q − 1)` at `z = z_C`; do **not** substitute $z_D$ into them to improve the " +
         "residual, which would pick a convention by its miss.",
+    },
+    {
+      kind: "status",
+      date: "2026-11-15",
+      body:
+        "**Switched to convention D (owner ruling 2026-11-15: replace convention-C values with " +
+        "convention D even if worse).** This supersedes the 2026-10-10 caveat's instruction not to " +
+        "substitute $z_D$. The Lean closed form is now written in `z` and evaluated at " +
+        "`zD = q0^3/(q0^2+1)`; the pins are Phi(uud) = -0.614886, Phi(udd) = -0.896395 (50 dps), " +
+        "model value 1.0541 MeV, -18.5 % vs CODATA. The convention-C 1.302 MeV (+0.64 %) stays in " +
+        "the prose only as a labelled historical comparison.",
+    },
+    {
+      kind: "caveat",
+      date: "2026-11-15",
+      body:
+        "**The scale step (H_α) is not derived** (owner ruling 2026-11-15: state it as a named hypothesis). " +
+        "Two further points are open, recorded in `docs/audits/2026-11-15-np-splitting-error-budget.md` (PR #7966). " +
+        "§11: the traced product ∏ᵢ∏_{j>i}(σᵢ+dᵢⱼ) equals the half-twist trace for uud but not for udd. " +
+        "§13–§18: the first derived u/d difference is the level-2 weight q^{∓2}; its sign is derived (u = e₁), its MeV scale is not. " +
+        "The tautological Lean def `same_scale_both_levels` (`m_e·volB3 = m_e·volB3 := rfl`), which stood in for (H_α), is removed.",
+    },
+    {
+      kind: "status",
+      date: "2026-11-18",
+      body:
+        "**Two-term categorical Lagrangian & connected 4th-order Borromean V³ QED trace formalized (Epic qou-7xl8, 0 sorry).** " +
+        "`QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm` (`trace_QAdjp_borromeanV3`, `trace_QAdjn_borromeanV3_connected`, " +
+        "`trace_QAdj_connected_diff_borromeanV3`, `trace_e21_strong_cartan_diff_borromeanV3`), " +
+        "`QOU.BraidsAndKnots.NucleonIdempotentModifiedTrace` (`chi21Reduced_ratio_at_one`, `tMod111_neutron_eq_q_sq_mul_proton`), " +
+        "and `QOU.QuantumObservableUniverses.CategoricalLagrangianTwoTermBridge` (`hadronicScale_mul_q_sq_hbar_eq_me`, " +
+        "`trace_lagrangian_diff_concrete_borromean_connected`) formalize two-term charge-insertion algebra on $W_p=(2,1)$ and $W_n=(1,2)$. The mass scale and the adjacent-pair restriction are choices; see the 2026-11-19 caveat.",
+    },
+    {
+      kind: "caveat",
+      date: "2026-11-19",
+      body:
+        "The 2026-11-18 two-term figures (M_p^QED,conn = +0.22 keV, Δm_QED^conn = −0.33 keV, the μ–p and Q_β residual reductions) are selections, not derivations. " +
+        "Summed over all three quark pairs the charge insertion is word-independent (`trace_QPair_diff_word`); the word dependence comes from dropping pair 1–3, which the Borromean word does not single out. " +
+        "The scale (m_e, E_0, α_bind) and the four weightings were compared against targets. Measured in bean qou-99qc, 2026-11-19 00:10Z.",
     },
   ],
   label: "prop:neutron-proton-mass-splitting",

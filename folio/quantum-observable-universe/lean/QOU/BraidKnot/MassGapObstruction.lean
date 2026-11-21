@@ -56,7 +56,7 @@ open QOU.Torsion QOU.AlgebraicSubstrate
     the μ₂-vanishing of the gap: `2 ∣ 6`, so the level-2 obstruction
     class vanishes, matching the (unconditional) vanishing of the
     categorical gap bound at the classical point. -/
--- Ref: [manuscript] models-of-qous/yang-mills-mass-gap.md §G_m-torsion
+-- Ref: [leitner2026] models-of-qous/yang-mills-mass-gap.md §G_m-torsion
 theorem kummer_vanishes_at_two [ctx : QouObstructionReductionContext]
     (hchi : ctx.chi_A = -6) : ctx.kappa_vanishes 2 := by
   -- `kappa_vanishes 2 ↔ (2:ℤ) ∣ χ(A) = -6` (derived `kappa_vanishes_iff_chi`),
@@ -68,7 +68,7 @@ theorem kummer_vanishes_at_two [ctx : QouObstructionReductionContext]
     does NOT vanish at any prime `p > 3`: such a prime does not
     divide 6.  This is the workplan's "the classical-limit
     obstruction persists at all primes > 3" as a theorem. -/
--- Ref: [manuscript] docs/workplans/2026-06-11-mass-gap-three-step-program.md §0
+-- Ref: [leitner2026] docs/workplans/2026-06-11-mass-gap-three-step-program.md §0
 theorem kummer_persists_above_three [ctx : QouObstructionReductionContext]
     (hchi : ctx.chi_A = -6) {p : ℕ} (hp : Nat.Prime p) (hp3 : 3 < p) :
     ¬ ctx.kappa_vanishes p := by
@@ -96,7 +96,7 @@ theorem kummer_persists_above_three [ctx : QouObstructionReductionContext]
     See the module docstring for the mandatory universality caveat:
     this is a statement about the QOU framework's classical limit,
     conditional on `QouObstructionReductionContext`. -/
--- Ref: [manuscript] docs/workplans/2026-06-11-mass-gap-three-step-program.md §3
+-- Ref: [leitner2026] docs/workplans/2026-06-11-mass-gap-three-step-program.md §3
 -- Ref: [jaffe2006] https://www.claymath.org/millennium/yang-mills-the-maths-gap/
 theorem massgap_classical_limit_obstruction
     [ctx : QouObstructionReductionContext] (hchi : ctx.chi_A = -6) :

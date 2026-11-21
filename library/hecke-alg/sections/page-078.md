@@ -1,334 +1,124 @@
 ---
 doc_id: hecke-alg
-doc_title: "symmetric group Andrew Mathas Author address: School thema University Sydney, Sydney 00. ustralia"
+doc_title: "Hecke algebras and Schur algebras of the symmetric group"
 section_id: page-078
 section_title: "Page 78"
-section_number: null
 pages: 78-78
+pdf_page: 78
 source_pdf: hecke_alg.pdf
 source_sha256: 4ac08dfd165fb366
-toc_source: undetermined
+text_source: ocr
+granularity: page
+doc_brief: "Hecke algebras and Schur algebras of the symmetric group — 78 sections: Page 1; Page 2; Page 3"
 ---
+beta numbers, 52, 54
+
+blocks, 15, 61, 62
+
+braid relations, 1
+
+Bruhat-Chevalley order, 20
+dominance order, 20
+
+Cartan matrix, 13
+cell module, 10
+cellular algebra, 9
+cellular basis, 9
+character, 5, 8
+composition, 17
+core, 60
+
+decomposition matrix, 13, 34, 43, 59
+diagram, 17
+
+distinguished coset representatives, 18
+
+double, 37
+
+dominance order
+Bruhat—Chevalley order, 20
+partitions, 19
+tableau, 19, 46
+
+exchange condition, 2
+
+Garnir tableau, 21
+generic degree, 6
+
+generic Twahori-Hecke algebra, 5
+Gram determinant, 46
+
+hook, 55
+hook length, 35, 55
+
+induced representation, 18
+involved in, 23
+Iwahori—Hecke algebra, 3
+
+Jantzen filtration, 57
+Janzten filtration, 59
+Jucys—Murphy elements, 26, 28, 46
+
+left cell module, 10
+leg length, 55
+
+length, 1
+
+lexicographic ordering, 21
+linked, 15
+
+Murphy basis, 23, 26, 39, 41
+
 Index
-b
-eta
-n
-um
-b
-ers,
-,
-
-blo
-c
-ks,
-,
-,
-
-braid
-relations,
-
-Bruhat{Chev
-all
-ey
-order,
-0
-dominance
-order,
-0
-Cartan
-matrix,
-
-cell
-mo
-dule,
-0
-cellular
-algebra,
-	
-cellular
-basis,
-	
-c
-haracter,
-,
-
-comp
-osition
-,
-
-core,
-0
-decomp
-osit
-ion
-matrix,
-,
-,
-,
-	
-diagram,
-
-distinguishe
-d
-coset
-represen
-tativ
-es,
-
-double,
-
-dominance
-order
-Bruhat{Chev
-alle
-y
-order,
-0
-partitions,
-	
-tableau,
-	,
-
-exc
-hange
-condition,
-
-Garnir
-tableau,
-
-generic
-degree,
-
-generic
-Iw
-ahori{Hec
-k
-e
-algebra,
-
-Gram
-determinan
-t
-,
-
-ho
-ok,
-
-ho
-ok
-length,
-,
-
-induced
-represen
-tatio
-n,
-
-in
-v
-olv
-ed
-in,
-
-Iw
-ahori{Hec
-k
-e
-algebra,
-
-Jan
-tzen
-ltration,
-
-Janzten
-ltration,
-	
-Jucys{Murph
-y
-elemen
-ts,
-,
-,
-
-left
-cell
-mo
-dule,
-0
-leg
-length,
-
-length,
-
-lexicograph
-ic
-ordering,
-
-link
-ed,
-
-Murph
-y
-basis,
-,
-,
-	,
-
-Nak
-a
-y
-ama
-conjecture,
-
-no
-de,
-
-partition,
-
-conjugate
-partition,
-
-core,
-0
-diagram,
-
-parts,
-
-restricted,
-,
-
-w
-eigh
-t,
-
-q
-{Sc
-h
-ur
-algebra,
-
-reduced
-expression,
-
-residue,
-,
-
-rim
-ho
-ok,
-
-ro
-w
-standard,
-
-Sc
-h
-ur
-functor,
-,
-	
-semistandar
-d
-basis,
-,
-
-sign
-represen
-tation
-,
-,
-
-Sp
-ec
-h
-t
-mo
-dule,
-,
-
-dual
-Sp
-ec
-h
-t
-mo
-dule,
-
-Sp
-ec
-h
-t
-series,
-0
-sp
-ecializati
-on,
-
-sp
-ecializati
-on
-homomorphis
-m,
-
-standard
-basis,
-se
-e
-Murph
-y
-basis
-sub
-expressio
-n,
-	
-tableau,
-
-ro
-w
-semistandar
-d,
-
-restricted,
-,
-
-ro
-w
-standard,
-
-semistandard
-,
-
-shap
-e,
-,
-
-standard,
-
-trivial
-represen
-tat
-ion
-,
-
-un
-wrapping,
-
-w
-eigh
-t
-space,
-
-W
-eyl
-mo
-dule,
-
-wrapping,
-
-Y
-oung's
-seminormal
-form,
-0,
-
-
+
+73
+
+Nakayama conjecture, 62
+node, 17
+
+partition, 17
+conjugate partition, 52
+core, 60
+diagram, 17
+parts, 17
+restricted, 32, 34
+weight, 62
+
+q-Schur algebra, 36
+
+reduced expression, |
+residue, 28, 46
+
+rim hook, 56
+
+row standard, 17
+
+Schur functor, 43, 59
+semistandard basis, 41, 42
+sign representation, 1, 5
+Specht module, 25, 34
+
+dual Specht module, 25
+Specht series, 40
+specialization, 5
+specialization homomorphism, 5
+standard basis, sce Murphy basis
+subexpression, 19
+
+tableau, 17
+row semistandard, 36
+restricted, 32, 34
+row standard, 17
+semistandard, 36
+shape, 17, 36
+standard, 17
+
+trivial representation, 5
+
+unwrapping, 56
+
+weight space, 46
+Weyl module, 42
+wrapping, 56
+
+Young’s seminormal form, 30, 34

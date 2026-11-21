@@ -1,1 +1,1 @@
-Let K be a number ﬁeld, let φ(x), ψ(x) ∈K[x] be two polynomials of degree d ≥2,
+Let K be a number ﬁeld, let φ(x), ψ(x) ∈K[x] be two polynomials of degree d ≥2, and let α, β ∈K. (a) If (φ, α) is K-conjugate to (ψ, β), then K∞(φ, α) is contained in a ﬁnite extension of K ab if and only if K∞(ψ, β) is contained in a ﬁnite extension of K ab. (b) If φ(x), ψ(x), α, β are deﬁned over K ab and (φ, α) is K ab-conjugate to (ψ, β), then K∞(φ, α)/K is an abelian extension if and only if K∞(ψ, β)/K is an abelian extension.

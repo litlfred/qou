@@ -90,7 +90,7 @@ structure BlowupCalculus (K : Type*) [Field K] [LinearOrder K] [IsStrictOrderedR
   renorm_def :
     renormalised = BlowupField.st (X BlowupField.omega - C BlowupField.omega)
 
--- Ref: [manuscript] quantum-observable-universe/appendix-surreals/surreal-blowup-calculus.ts
+-- Ref: [leitner2026] quantum-observable-universe/appendix-surreals/surreal-blowup-calculus.ts
 
 /-- When the counterterm cancels the divergence exactly down to a
     natural-number constant `n` — i.e. `X(ω) − C(ω) = n` — the renormalised

@@ -1,1 +1,0 @@
-A \emph{weight system} on a train track $\tau\subset S_g$ is the assignment of a non-negative real number, called \emph{weight}, to each branch of $\tau$, such that at every vertex the \emph{switch condition} holds: the sum of the weights on the left branches should be equal to the sum of the weights on the right branches.

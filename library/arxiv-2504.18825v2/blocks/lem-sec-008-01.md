@@ -1,0 +1,1 @@
+1. Let ψλ be the irreducible character of the Hecke algebra in type A indexed by λ. Suppose λ, µ are two multipartitions of n. Then we have χλ µ = X M uM(q −q−1)#M−l(µ) m Y i=1 ψλ(i) − →c i(M), (A.1) summed over all m-multimatrices M such that the j-th row sum of M (r) equals µ(r) j and |ci(M)| = |λ(i)|.

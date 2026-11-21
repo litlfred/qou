@@ -70,5 +70,6 @@ export default proposition({
       body:
         "**Lean sibling restated in convention D and producer replaced (bean `qou-zuva`).**  `eigenphase` now uses `markovZD q = q^3/(q^2+1)`, and the class `TransferMatrixEigenphase` and theorem `q_beta_cos_resummation` are stated with it.  The convention-C declarations are kept and labelled C-historical (`markovZC`, `eigenphaseC`, `eigenphaseC_bar_involution`, plus a deprecated legacy alias `eigenphase_bar_involution`).  New sorry-free D facts: `markovZD_bar_ne` ($z_D(q^{-1}) \\neq z_D(q)$ for $q > 0$, $q \\neq 1$), `eigenphase_bar_even_sum` ($\\alpha_D(q^{-1}) + \\alpha_D(q) = (q^2-1)^2/(2q^2)$), `eigenphase_not_bar_odd`.  The computation now points at the mpmath producer `computations/qbeta/qbeta_cos_resummation_d_probe.py`, which reproduces every number in the block and its table (max deviation $4.7 \\times 10^{-11}$ on values, $0.05$ ppm on residuals); the former producer `probe_q_beta_tightening_landscape.py` is convention C.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The resummation lives in the real-$q$ (archimedean) regime of the framework's dilogarithm context-sorting, fixed once by the [$\\Phi_q$/AJ machinery identification](#prop:phi-q-aj-machinery-identification)." },
   ],
 });

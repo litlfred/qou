@@ -1,0 +1,1 @@
+There exists an isomorphism λ: H3(PSL(2, C); Z) →bB(C) such that the composition λ ◦R: H3(PSL(2, C); Z) →C/π2Z is the charac- teristic class given by i(vol +i cs). To describe the map λ we must give a geometric interpretation of bC.

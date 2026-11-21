@@ -1,0 +1,60 @@
+A is the quantum double of A [36][13].
+
+On the otherhand, if A is factorizable, endowed with a star structure of type C+, and if R
+satisfies the other condition R*®* = R-! then D(A) is isomorphic to A @c A with star structure
+defined by (a @ y)* = a* @ y*.
+
+Up to this point the reader can be puzzled by the fact that there exist more than one
+realification of a Hopf algebra depending on the choice of Q. In order to classify the possible
+realification we face two problems: what is the structure of the elements Q satisfying equations
+(34) ? What are the possible structures of a realification, eventually generalizing or not the
+structure we gave by twisted product? In the case of sl(2,C)g this problem has been studied in
+great details by Zakrewski and Woronowicz [52)[51].
+
+3 The Quantum Lorentz Group
+
+3.1 Quantum Deformation of the Envelopping Algebra of the Lorentz
+Group
+
+If A is a star algebra, Mat,(C) ® A will always be endowed with the star structure defined by
+(M*)i = (M})* where M € Maty(C) @ A.
+
+Let W be a hermitian vector space, a representation 7: A + End(W) is unitary if and only
+if r(a*) = 7(a)', Va € A.
+
+In this section we review the construction of the quantum deformation of the Lie algebra of
+the Lorentz group and precise our conventions.
+
+We first define A = {,(su(2)) for q €]0,1[, as being the star Hopf algebra defined by the
+generators J..,q*7:, and the relations:
+
+2J. _ g—2dJz
+ggh =1 0 gh Ing =q"'Ix (Jy, J-]=4 a (41)
+The coproduct is defined by
+A(q#2*) = qt @ q** A(Jg) = q7% @ Jn + Jz 8 (42)
+and the star structure is given by:
+yi =q™, JL=q¥ dg. (43)
+
+This Hopf algebra is a ribbon quasi-triangular Hopf algebra. A description of the universal
+R matrix, of the element j,v is given in the Appendix.
+
+Finite dimensional representations of U(su(2)) are completely reducible, and irreducible
+representations are completely classified by a couple (w, K) € {1,—1,i, -i} x 5Z*, the dimension
+of the representation is 2K + 1 and the spectrum of q7* is included in {wg”,n € 5Z}. The
+appearance of w € {—1,i, —i} comes from the existence of non trivial outer automorphisms 7,, of
+Uq(su(2)), defined by 7,,(q7*) = wq?*, T(J-) = w? Jy, To(J_) = J_. These automorphisms have
+no classical counterpart, and are a source of annoying features. In all the quantization schemes
+with specialization of the parameter to a complex number these automorphisms appear.
+
+It is easy to show that an irreducible representation is unitarizable if and only ifw € {+1,—1}.
+
+We will denote in the rest of this article Irr(A) the set of all equivalency classes of finite
+dimensional irreducible and unitary representations with w = 1. The tensor product of elements
+of Irr(A) is completely reducible in elements of Irr(A).
+
+Each of these classes 7 is labelled by its spin K (we will use a capital letter to denote it),
+
+K
+and let us define V as being the vector space associated to the representation of spin Kk. The
+
+10

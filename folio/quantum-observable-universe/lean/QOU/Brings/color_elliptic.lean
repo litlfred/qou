@@ -56,14 +56,14 @@ commutative ring `R`, `color_elliptic z X` is the proposition that
 This names the admissible-color-root condition at `z`; it is *not*
 asserted globally.  An inhabitant is produced from the power-sum
 condition by `color_elliptic_of_powerSum` below. -/
--- Ref: [manuscript] quantum-observable-universe/brings-surface/color-elliptic.md
+-- Ref: [leitner2026] quantum-observable-universe/brings-surface/color-elliptic.md
 def color_elliptic {R : Type*} [CommRing R] (z X : R) : Prop :=
     X ^ 3 + (z + 1) * X ^ 2 + (z ^ 2 + z + 1) * X +
       (z ^ 3 + z ^ 2 + z + 1) = 0
 
 /-- The power-sum quartic `P(t) = t⁴ + t³ + t² + t` whose difference
     quotient is the color-elliptic cubic. -/
--- Ref: [manuscript] quantum-observable-universe/brings-surface/color-elliptic.md
+-- Ref: [leitner2026] quantum-observable-universe/brings-surface/color-elliptic.md
 def powerSumQuartic {R : Type*} [CommRing R] (t : R) : R :=
   t ^ 4 + t ^ 3 + t ^ 2 + t
 
@@ -74,7 +74,7 @@ def powerSumQuartic {R : Type*} [CommRing R] (t : R) : R :=
 
     This is the algebraic core of the reduction of the power-sum
     conditions to the cubic at fixed `z`. -/
--- Ref: [manuscript] quantum-observable-universe/brings-surface/color-elliptic.md
+-- Ref: [leitner2026] quantum-observable-universe/brings-surface/color-elliptic.md
 theorem colorCubic_key_identity {R : Type*} [CommRing R] (z X : R) :
     (X - z) * (X ^ 3 + (z + 1) * X ^ 2 + (z ^ 2 + z + 1) * X +
       (z ^ 3 + z ^ 2 + z + 1)) = powerSumQuartic X - powerSumQuartic z := by
@@ -89,7 +89,7 @@ theorem colorCubic_key_identity {R : Type*} [CommRing R] (z X : R) :
     Derived (not assumed): the elimination identity turns the
     power-sum hypothesis into `(X − z) · cubic = 0`, and `X ≠ z`
     cancels the linear factor. -/
--- Ref: [manuscript] quantum-observable-universe/brings-surface/color-elliptic.md
+-- Ref: [leitner2026] quantum-observable-universe/brings-surface/color-elliptic.md
 theorem color_elliptic_of_powerSum {R : Type*} [CommRing R] [IsDomain R]
     {z X : R} (hne : X ≠ z)
     (hps : powerSumQuartic X = powerSumQuartic z) :

@@ -20,7 +20,7 @@
  * synthetic ledger — so they assert the INVARIANT rather than a corpus count
  * that legitimately moves as siblings drain the backlog.
  *
- * Run:  bun test content/pipeline/lean-vacuity-ledger-promotion.test.ts
+ * Run:  bun test folio/pipeline/lean-vacuity-ledger-promotion.test.ts
  */
 import { test, expect } from "bun:test";
 import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync } from "node:fs";
@@ -28,7 +28,7 @@ import { resolve } from "node:path";
 import { spawnSync } from "node:child_process";
 
 const REPO_ROOT = resolve(import.meta.dir, "..", "..");
-const SCRIPT = resolve(REPO_ROOT, "content/pipeline/lean-vacuity-axiom-audit.ts");
+const SCRIPT = resolve(REPO_ROOT, "folio/pipeline/lean-vacuity-axiom-audit.ts");
 
 /** Scratch dir under the repo: the scanner resolves paths against REPO_ROOT. */
 const TMPDIR = resolve(REPO_ROOT, "folio/quantum-observable-universe/.vacuity-promotion-selftest");

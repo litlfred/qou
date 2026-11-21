@@ -5,7 +5,15 @@ Ocneanu / Jones–Markov weights ω_λ(q, z) for Iwahori–Hecke H_n(q).
 
 Symmetric convention:
     σ² = (q − q⁻¹)σ + 1     (eigenvalues  q, −q⁻¹)
-    z = 1 / (q^{1/2} + q^{−1/2})   (Markov parameter)
+    z = q³ / (q² + 1)       (Markov parameter — convention D, canonical)
+
+This line read `z = 1 / (q^{1/2} + q^{−1/2})` — convention C, excised by owner
+ruling 2026-08-15 — until 2026-10-10, while the module's own bindings were
+already convention D: `z_num = Q0**3 / (Q0**2 + 1)` and
+`z_sym = q**3 / (q**2 + 1)` (both below). Only the LABELS were C; no binding in
+this file was ever the C value, and the value audit
+(`scripts/convention-c-value-audit.py`) has never reported one here. Bean
+`qou-pc7l`, re-measured on the 2026-10-10 C→D re-audit (`qou-am5t`).
 
 The canonical Jones–Markov trace on H_n(q) decomposes over irreps as
 
@@ -522,7 +530,12 @@ if __name__ == "__main__":
     from hecke_characters import partitions_of
     print("=" * 80)
     print("OCNEANU WEIGHTS ω_λ(q, z) — symmetric Hecke convention")
-    print(f"q₀ = {Q0:.6f},  z = 1/(q^½+q^{{-½}}) = {z_num:.6f}")
+    # The label here was `z = 1/(q^½+q^{-½})` — convention C — while `z_num` it
+    # formats has always been `Q0**3/(Q0**2+1)`, convention D. A mislabelled
+    # RUNTIME BANNER is worse than a mislabelled docstring: it is printed
+    # alongside the number it misnames, so a reader copying the pair out of a
+    # terminal carries the wrong attribution with the right value (bean qou-pc7l).
+    print(f"q₀ = {Q0:.6f},  z = q³/(q²+1) = {z_num:.6f}")
     print("=" * 80)
 
     # Hand-derived at H_2 (closed form from Markov-axiom system)

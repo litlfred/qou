@@ -1,0 +1,51 @@
+124 Multivariate Fourier—Laplace integrals
+
+{z € C4: h(z) > 0} except when z = 0, meaning there exists ¢ > 0 such that
+h(z) > € > 0 for all z € OC. Let
+
+A(z,t) = Re{z} + (1 — di Im{z}
+
+be a homotopy from the identity map to the projection map 2(z) = Re{z}. For
+any chain a, the homotopy H induces a chain homotopy H(c) satisfying
+
+OH(c) = 0 - m0) + H(0o).
+
+Taking a = C, and using the fact that h(H(z,t)) => h(z), we see there is a
+d-chain C’ supported on {z € C4 : A(z) > &} and a (d + 1)-chain D such that
+
+dD =C-A(C)+C’.
+Stokes’s Theorem (Theorem A.24 in Appendix A) implies that
+
+f w= [ do=0
+aD D
+
+for any holomorphic d-form w, which means
+
+for fi o- fe.
+c mC) (on
+
+When w = A(y)e~*S dy the integral over C’ is O (e“), giving
+
+I(a) = f Aye dy + O(e*) .
+nC)
+
+The projection z maps any real d-manifold in C4 locally diffeomorphically
+into R¢ wherever its tangent space is not parallel to the imaginary subspace of
+C“. Because /(z) > 0 on C, the tangent space to the support of C at the origin is
+not parallel to the imaginary subspace. The tangent space varies continuously,
+so in a neighborhood of the origin z is a diffeomorphism. In particular, the
+chain (C) is a disk A in R¢ plus a collection of points whose image under h is
+bounded above zero (which will contribute an exponentially negligible term to
+dominant asymptotic behavior). Observing that
+24A(0)
+
+det H
+finishes the proof, up to the choice of sign of the square root corresponding to
+the orientation of A.
+
+The stated sign choice of A(0) in this theorem can be verified by proving
+that the linear map dz o dy“! at the origin sends the standard basis of R¢ to
+another positively oriented basis if and only if det(dy(0)) is the product of
+the principal square roots of the eigenvalues of HH. We state and prove the
+
+A(0) = A(O) det(dy(0)) =

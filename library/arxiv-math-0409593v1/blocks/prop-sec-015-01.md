@@ -1,0 +1,1 @@
+Let s ∈S. There is a commutative diagram with fully faithful horizontal arrows Db σ(B) H / Fs  K(C-dgmod) Fs  Db σ(B) H / K(C-dgmod) In particular, we get a monoidal functor from BW to the category of self-equivalences of Db σ(B).

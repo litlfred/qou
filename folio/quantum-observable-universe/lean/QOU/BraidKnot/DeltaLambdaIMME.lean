@@ -26,7 +26,7 @@ import Mathlib.Tactic
   All `ring` over a generic `[CommRing R]` (§7c: pure algebra, no archimedean
   construct — the residual values live in `ℝ` only at the evaluation site).
 
-  -- Ref: [manuscript] docs/audits/2026-06-29-delta-lambda-imme-askey.md;
+  -- Ref: [leitner2026] docs/audits/2026-06-29-delta-lambda-imme-askey.md;
   --      Wigner (1957), isobaric multiplet mass equation.
 -/
 

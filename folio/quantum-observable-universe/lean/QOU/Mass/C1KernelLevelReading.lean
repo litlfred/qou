@@ -51,9 +51,9 @@ Nothing here constructs `D_q` or decides the conjecture.
 
 ## References
 
-- [manuscript] mass-theory/qdifference-kernel-prolongation-symbol
-- [manuscript] mass-theory/binding-genfun-qdifference
-- [manuscript] docs/audits/2026-09-04-c1-kernel-level-reading.md
+- [leitner2026] mass-theory/qdifference-kernel-prolongation-symbol
+- [leitner2026] mass-theory/binding-genfun-qdifference
+- [leitner2026] docs/audits/2026-09-04-c1-kernel-level-reading.md
 
 LaTeX label: (library module — no content block)
 -/

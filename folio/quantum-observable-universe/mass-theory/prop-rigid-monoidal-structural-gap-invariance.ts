@@ -20,6 +20,11 @@ export default proposition({
   },
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-11-16",
+      body: "The statement previously ended with: the Markov trace and LP-dual operator selections are strictly spin-invariant, which rigidly unifies pair-knot selection at magic shells. The first part is false ($\\tau(\\sigma_i) = q^3/(q^2+1)$ but $\\tau(\\sigma_i^{-1}) = 1/(q(q^2+1))$), and pair-knot selection is a retired knot-selection route. Replaced by the correct bar-equivariance statement. The convention-invariance of $\\Delta_{\\mathrm{cat}}$ is true but holds by definition, since $\\Delta_{\\mathrm{cat}}$ is defined from the canonical $\\tau$; queued for the weak-proofs pass.",
+    },
+    {
       kind: "note",
       date: "2026-06-12",
       body: [

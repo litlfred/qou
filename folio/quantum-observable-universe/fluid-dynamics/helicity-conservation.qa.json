@@ -1241,6 +1241,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0c8c68709a0b",
+          "ts": "adb20294ad50",
+          "lean": "b98b52d8ea2d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:10.879Z",
+        "reviewed_sha": "dd3595d7dc1ecd1099ddcb695fb47671676c4ba6",
+        "severity": "critical",
+        "evidence": "Lean takes `hdef : ∀ t, Hq t = selfSum + mutualLk` (t-independent) as a hypothesis, so conservation is assumed; its docstring says the Euler equation \"is not established here\". Items 3–4 not encoded. Item 3 is false as written: the displayed J_L(q) = exp(Σₙ (1/n) tr(Řⁿ)(q−q⁻¹)ⁿ) does not depend on L, so it would give the unknot and the trefoil the same Jones polynomial",
+        "notes": "Hand review 2026-11-15 (statement vs Lean); issue #8020. "
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2471,6 +2489,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-31T11:13:12.138Z",
+  "updated_at": "2026-11-15T21:55:10.879Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

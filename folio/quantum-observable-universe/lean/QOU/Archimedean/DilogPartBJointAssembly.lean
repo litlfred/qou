@@ -39,7 +39,7 @@ terms), **not** a curvature term (ledger 2026-07-26 correction).
 Archimedean throughout (`ℝ`): `LiTwo`, `Real.log`, `Real.pi`, and the one-sided filter
 `𝓝[<] 1` live past the substrate→archimedean wall.
 
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit; docs/coordination/dilog-part-b-cusp-attack.md
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit; docs/coordination/dilog-part-b-cusp-attack.md
 -- Ref: [faddeev1994] https://doi.org/10.1142/S0217732394002793
 -/
 

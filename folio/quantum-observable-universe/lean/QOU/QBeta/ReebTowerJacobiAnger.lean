@@ -105,4 +105,25 @@ theorem reeb_growth_hyperbola (η : ℝ) : cosh η ^ 2 - sinh η ^ 2 = 1 :=
 theorem reeb_rotation_circle (θ : ℝ) : cos θ ^ 2 + sin θ ^ 2 = 1 :=
   Real.cos_sq_add_sin_sq θ
 
+/-- **Parity-preserving two-step odd-tower recurrence (`t886`).** Stepping by `2 * η`
+preserves order parity in the odd tower:
+`sinh (a + 2 * η) + sinh (a - 2 * η) = (4 * cosh η ^ 2 - 2) * sinh a`. -/
+theorem reeb_tower_sinh_two_step (a η : ℝ) :
+    sinh (a + 2 * η) + sinh (a - 2 * η) = (4 * cosh η ^ 2 - 2) * sinh a := by
+  have h1 : a + 2 * η = (a + η) + η := by ring
+  have h2 : a - 2 * η = (a - η) - η := by ring
+  have h3 : (a + η) - η = a := by ring
+  have h4 : (a - η) + η = a := by ring
+  have s1 := reeb_tower_sinh_three_term (a + η) η
+  have s2 := reeb_tower_sinh_three_term (a - η) η
+  have s0 := reeb_tower_sinh_three_term a η
+  rw [← h1, h3] at s1
+  rw [← h2, h4] at s2
+  calc sinh (a + 2 * η) + sinh (a - 2 * η)
+      = (sinh (a + 2 * η) + sinh a) + (sinh a + sinh (a - 2 * η)) - 2 * sinh a := by ring
+    _ = 2 * cosh η * sinh (a + η) + 2 * cosh η * sinh (a - η) - 2 * sinh a := by rw [s1, s2]
+    _ = 2 * cosh η * (sinh (a + η) + sinh (a - η)) - 2 * sinh a := by ring
+    _ = 2 * cosh η * (2 * cosh η * sinh a) - 2 * sinh a := by rw [s0]
+    _ = (4 * cosh η ^ 2 - 2) * sinh a := by ring
+
 end QOU.QBeta

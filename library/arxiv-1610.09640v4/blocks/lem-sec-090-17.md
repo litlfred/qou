@@ -1,0 +1,1 @@
+Let M, M ′ ∈D−(A), and let i, i′ ∈Z be such that sup(H(M)) ≤i and sup(H(M ′)) ≤i′. Then Hi+i′(M ⊗L A M ′) ∼= Hi(M) ⊗A Hi′(M ′) as A-modules. Exercise 13.1.37. Prove Lemma 13.1.36. Derived Categories | Amnon Yekutieli |

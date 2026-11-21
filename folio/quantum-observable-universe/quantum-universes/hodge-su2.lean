@@ -20,7 +20,7 @@ LaTeX label: `ex:hodge-su2`
 
 ## References
 
-- [manuscript] §1 Example: Hodge star on O(SU(2))
+- [leitner2026] §1 Example: Hodge star on O(SU(2))
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -34,7 +34,7 @@ namespace QOU.Examples
     3-dimensional de Rham complex.
 
     LaTeX: `\label{ex:hodge-su2}` -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 structure SU2HodgeData where
   /-- The manifold dimension (for SU(2): dim = 3). -/
   manifoldDim : ℕ
@@ -56,7 +56,7 @@ structure SU2HodgeData where
   involutive : ∀ k, k ≤ 3 → hodgeTarget (hodgeTarget k) = k
 
 /-- The Hodge star data for SU(2). -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 def su2Hodge : SU2HodgeData where
   manifoldDim := 3
   dim_three := rfl

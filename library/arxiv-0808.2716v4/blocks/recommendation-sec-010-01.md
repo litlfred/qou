@@ -1,1 +1,0 @@
-Unless stated otherwise (e.g. in Theorem [\[thm:4ps-area\]](#thm:4ps-area){reference-type="ref" reference="thm:4ps-area"}), we shall always choose the cusp neighborhood in $N$ that comes from lifting a maximal cusp of the corresponding punctured torus bundle $M$ to the 4--punctured torus bundle $P$, and then projecting down to $N$.

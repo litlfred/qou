@@ -25,7 +25,7 @@ geometry is left to the consumer; nothing here forces `Mathlib.Data.Real.Basic`
 into the dependency cone.
 
 Reference for the geometric interpretation (Reeb quaternionic twist on the
-quaternionic-contact link): [manuscript] `lem:bring-cone-reeb-quaternionic-twist`
+quaternionic-contact link): [leitner2026] `lem:bring-cone-reeb-quaternionic-twist`
 (brings-surface §Spectral resolvents and gauge structures), with the SU(2)
 reading and its scope limits in `rem:tetraplectic-su2-gauge-reading`.
 -/

@@ -1,33 +1,26 @@
 ## Proof
 
-The pre-$\tau$ identity follows directly from the unified knot
-mass formula
-([`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified))
-with three observations:
+1. **The pre-$\tau$ object.** By definition
+   $\mathrm{Vol}_q(\beta) = \mathrm{tr}_M(\beta)$. The
+   [cleared mass trace](#prop:full-pole-structure-mass-trace) writes it as a
+   polynomial in $z = q^{3}/(q^{2}+1)$ with coefficients in $\mathbb{Z}[h]$,
+   $h = q - q^{-1}$. Since $z$ and $h$ lie in
+   $\mathbb{Z}[q^{\pm 1}][(q^{2}+1)^{-1}]$, so does $\mathrm{Vol}_q(\beta)$.
+   No absolute value, logarithm or limit is used at this stage.
+2. **The specialisation.** $\tau_{\mathrm{arch}}$ evaluates this element at
+   $q = q_0$, which is defined because $q_0^{2} + 1 \neq 0$. Only then are the
+   archimedean operations applied: the absolute value and, since $\mathrm{Vol}_{q_0}(\beta)\neq0$ by hypothesis, the logarithm give
+   $\Phi_1(\beta) = \ln\lvert\mathrm{Vol}_{q_0}(\beta)\rvert$, and dividing by
+   $\hbar_{q_0}^{2}$ gives $\mathfrak{m}_{\mathrm{alg}}(\beta)$.
 
-1. **Descended piece.** The level-$0$ Markov trace
-   $|\mathrm{tr}_M(\rho(\beta))|$ is the Jones polynomial
-   $J_K(q) \in \mathbb{Z}[q^{\pm 1/2}]$
-   ([`thm:jones-markov-trace`](#thm:jones-markov-trace)), an
-   element of $\mathbb{Q}(q)$.
-2. **Singleton tower.** Each $\Phi_q(|\hat V_i|)$ is a quantum
-   dilogarithm of an element of $\mathbb{Z}[q^{1/2}, q^{-1/2}]$;
-   formally well-defined in the Habiro completion
-   $\widehat{\mathbb{Z}[q]}$
-   ([`def:habiro-ring`](#def:habiro-ring)) without analytic
-   continuation.
-3. **Pair tower.** Each pair contribution
-   $\Phi_q(|\hat V_i \hat V_j|)$ is similarly in
-   $\widehat{\mathbb{Z}[q]}$, with the $z^2$ prefactor
-   established by
-   [`lem:tower-pair-equality-fixed-level`](#lem:tower-pair-equality-fixed-level)
-   as an exact equality.
+This proves the displayed identity, which is a definition of
+$\mathfrak{m}_{\mathrm{alg}}$ together with the claim that its only pre-$\tau$
+input is algebraic. The tower terms $\Phi_q(|\hat V_i|)$ of the
+[unified knot mass formula](#thm:knot-mass-formula-unified) are not used: they
+contain an absolute value and are themselves archimedean.
 
-The full sum is therefore an element of
-$\widehat{\mathbb{Z}[q]} \subset \mathbb{Q}(q)$ at every step. The
-$\tau_{\mathrm{arch}}$ specialisation at $q = q_0$ then produces
-the canonical mass; multiplication by $\hbar_q^{-2}$ and
-identification with $\mathrm{Vol}(K) / \hbar_{q_0}^{2}$ via the
-volume conjecture is the τ-image step recorded by
-[`prop:topological-mass-formula`](#prop:topological-mass-formula).
+The identification of $\Phi_1(\beta)$ with the hyperbolic volume
+$\mathrm{Vol}(K)$ is not proved here. It is conditional on the volume
+conjecture and is recorded separately in
+[Topological mass formula (Archimedean)](#conj:topological-mass-formula).
 $\square$

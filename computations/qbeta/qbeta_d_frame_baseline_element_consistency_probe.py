@@ -83,7 +83,7 @@ from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402 -- exact mpf, not the f64 twin
 from y_lambda_su_n import y_lambda_su_n  # noqa: E402
-from chi_monotone_transfer import chi_all_lambda  # noqa: E402
+from chi_general_word import chi_all_lambda_any as chi_all_lambda  # noqa: E402
 from hecke_core import (  # noqa: E402
     _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
 )
@@ -113,7 +113,10 @@ def check(name, passed, note, wb=None):
 
 
 def _word(g0, g1):
-    """The nucleon word. GROUPED -- and that is FORCED, not chosen.
+    """The nucleon word. GROUPED -- a CHOICE, no longer forced: since 2026-10-10 the kernel is
+    `chi_general_word.chi_all_lambda_any` (byte-identical output on this word),
+    and the canonical word MOVES these numbers -- which frame to use is an owner
+    call recorded in bean `qou-11l4`. The paragraph below is the history.
 
     `chi_monotone_transfer.chi_all_lambda`, which this probe uses, accepts only
     a monotone generator sequence. The canonical borromean word is non-monotone
@@ -145,7 +148,8 @@ def main() -> int:
     h = q - 1 / q
     me = mp.mpf(str(M_E_MEV))
     Qexp = mp.mpf(str(Q_NEUTRON_MEV))
-    E0 = me / (q * (q - 1))
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    E0 = _qbeta_e0.order_zero_scaled(me, q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
 
     wb = WitnessBuilder("qbeta-d-frame-baseline-element-consistency",
                         engine="sympy+mpmath")

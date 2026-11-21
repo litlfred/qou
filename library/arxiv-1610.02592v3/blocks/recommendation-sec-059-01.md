@@ -1,1 +1,0 @@
-The homotopically trivial components may be eliminated by isotoping them inside $M$ and capping them with discs; if the parallel copies are more than 1, since their signed sum is 1, there must be two of them that are close and with opposite signs, that can be canceled by isotoping them inside $M$ and capping them with an annulus.

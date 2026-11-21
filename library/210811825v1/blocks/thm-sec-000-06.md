@@ -1,0 +1,1 @@
+Let M be a smooth, connected, compact manifold, possibly with boundary ∂M. For the Neumann eigenvalue problem on M, or closed eigenvalue problem where ∂M = ∅, we have λk = sup Vk inf{R(f) | f̸ = 0, f ⊥Vk}, where Vk runs through the k-dimensional subspaces of W 1, 2(M). We consider the (k −1)-dimensional subspaces of W 1, 2 (M) for the Dirichlet eigenvalue problem on M.

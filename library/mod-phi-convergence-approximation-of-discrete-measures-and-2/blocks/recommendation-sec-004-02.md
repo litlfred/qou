@@ -1,1 +1,0 @@
-We shall prove in Section 3 that dL(µn, ν(r) n ), dK(µn, ν(r) n ) and dTV(µn, ν(r) n ) get smaller when r increases; in particular, ν(r⩾1) n is asymptotically a better approximation of µn than the basic scheme ν(0) n .

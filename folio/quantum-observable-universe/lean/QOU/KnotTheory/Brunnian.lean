@@ -90,7 +90,7 @@ opaque isUnlink : BraidWord → Prop
     finite sequence of Reidemeister moves (R1/R2/R3) and Markov
     moves (conjugation + stabilisation).
 
-    -- Ref: [manuscript] conj:brunnian-property-of-borromean
+    -- Ref: [leitner2026] conj:brunnian-property-of-borromean
 -/
 class LinkEquivalence where
   brunnian_borromean : ∀ i : ℕ, i < 3 → isUnlink (BraidWord.deleteComponent borromeanRings i)
@@ -107,7 +107,7 @@ class LinkEquivalence where
     is precisely the content of the `LinkEquivalence` class.
 
     -- Ref: [kawauchi1996] Survey of Knot Theory §1.5
-    -- Ref: [manuscript] conj:brunnian-property-of-borromean
+    -- Ref: [leitner2026] conj:brunnian-property-of-borromean
 -/
 theorem borromean_brunnian [le : LinkEquivalence] :
     ∀ i : Fin 3, isUnlink (BraidWord.deleteComponent borromeanRings i.val) := by

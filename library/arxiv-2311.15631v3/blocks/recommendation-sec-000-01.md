@@ -1,1 +1,0 @@
-The candidates should satisfy three conditions: i) $\text{rank}(\mathcal C)\le r_\text{max}=\lfloor\text{FPdim}(\mathcal B)\rfloor$, ii) $(1\le)\text{FPdim}(\mathcal C)\le\text{FPdim}(\mathcal B)$, and iii) $\text{FPdim}_{\mathcal B}(A)=\text{FPdim}(\mathcal B)/\text{FPdim}(\mathcal C)$.

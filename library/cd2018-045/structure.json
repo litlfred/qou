@@ -1,0 +1,281 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "cd2018-045",
+ "source": {
+  "file": "CD2018_045.pdf",
+  "sha256": "5e17341a413ac93a6adfedb932426979c501085fd908a1dc6421f8b78dac07a9",
+  "bytes": 260023,
+  "pages": 10,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-18T18:23:09Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "On the Cottingham formula and the electromagnetic contribution to the proton-neutron mass splitting",
+  "authors_raw": "On the Cottingham formula and the electromagnetic",
+  "title_lines": [
+   "PoS(CD2018)045"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.19",
+   "Creator": "TeX",
+   "CreationDate": "D:20190711003440-07'00'"
+  },
+  "title_raw": "PoS(CD2018)045",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "On the Cottingham formula and the electromagnetic contribution to the proton-neutron mass splitting",
+   "text": "PoS(CD2018)045",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_correction": {
+   "title": "On the Cottingham formula and the electromagnetic contribution to the proton-neutron mass splitting",
+   "basis": "Printed title on page 1 (A. Walker-Loud, PoS(CD2018)045); the extracted title was the proceedings identifier",
+   "extracted_title": "PoS(CD2018)045",
+   "corrected_on": "2026-11-18"
+  }
+ },
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "8 inferred entries, 62% of them starting on page(s) 6, 8 of 10 — a list found ON a page, not the document's structure",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (8 inferred entries, 62% of them starting on page(s) 6, 8 of 10 — a list found ON a page, not the document's structure): one section per page.",
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "page-001",
+   "number": null,
+   "title": "Page 1",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1687,
+   "n_words": 250,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 3193,
+   "n_words": 540,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 3839,
+   "n_words": 607,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 2354,
+   "n_words": 396,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 3024,
+   "n_words": 495,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 2998,
+   "n_words": 482,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 2988,
+   "n_words": 508,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 2922,
+   "n_words": 455,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 2827,
+   "n_words": 427,
+   "label_start": "8",
+   "label_end": "8"
+  },
+  {
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 3076,
+   "n_words": 471,
+   "label_start": "9",
+   "label_end": "9"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 0,
+  "toc_inferred_entries": 8,
+  "toc_inferred_mean_confidence": 0.75,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 10,
+  "chars_total": 28908,
+  "furniture_lines_stripped": 0
+ }
+}

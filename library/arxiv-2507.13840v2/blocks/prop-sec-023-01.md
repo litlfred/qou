@@ -1,0 +1,1 @@
+For a given (mixed) n-qubit state ρ, there exists an efficient algorithm to measure r4(ρ) to additive precision ϵ with failure probability δ using O(ϵ−2 log(2/δ)) copies of ρ, O(1) circuit depth, O(1) CNOT and Hadamard gates, and O(Nϵ−2 log(2/δ)) classical post-processing time.

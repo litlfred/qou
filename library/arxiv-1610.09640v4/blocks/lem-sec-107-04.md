@@ -1,0 +1,1 @@
+Assume the functors RqF are quasi-compact for all q ≥0. Let {Ix}x∈X be a collection of right F-acyclic complexes in C(A, gr), and deﬁne I := L x∈X Ix ∈C(A, gr). If I is a bounded below complex, or if F has ﬁnite right cohomological dimension, then I is a right F-acyclic complex.

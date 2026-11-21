@@ -23,8 +23,8 @@
   either way, and the factor `1/(1−σ) ≈ 4/a ≈ N` it has to beat is nothing.
   Sharpening this would be work spent where no constant is at stake.
 
-  -- Ref: [manuscript] QOU/MathlibExt/GaussianThetaBound.lean
-  -- Ref: [manuscript] QOU/MathlibExt/GaussianTiltedSum.lean
+  -- Ref: [leitner2026] QOU/MathlibExt/GaussianThetaBound.lean
+  -- Ref: [leitner2026] QOU/MathlibExt/GaussianTiltedSum.lean
 -/
 import QOU.MathlibExt.GaussianThetaBound
 

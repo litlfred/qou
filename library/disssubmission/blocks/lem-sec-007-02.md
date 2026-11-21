@@ -1,0 +1,1 @@
+Put g = dim(X), and assume P ∈Perv(X,C) is simple. If there is a closed subset Y ⊂X with dim(Y) ≤g−2 such that CC(P) = nXΛX + ∑ Z⊆Y nZΛZ and nX > 0, then P = Lχ[g] for some character χ, hence nX = 1 and nZ = 0 for Z̸ = X.

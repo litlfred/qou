@@ -14,10 +14,10 @@ The trefoil $3_1 = T_{2,3}$ has crossing number $3$. Its braid word requires thr
 - **Electron** $e^- = T_{2,3}$
 - **Positron** $e^+ = T_{2,3}^{\sigma}$
 
-Both appear at the same Planck step. The cubic jet produces both chiralities simultaneously. The same step produces the **up quark** ($u = T_{2,3}$) and **down quark** ($d = T_{2,3}^{\sigma}$) as the same trefoil pair in the color-tube sector.
+Both appear at the same Planck step. The cubic jet produces both chiralities simultaneously. The same trefoil pair is the lepton partner of the **up quark** and **down quark** ([knot–particle dictionary](#rem:knot-particle-dictionary)); the quarks themselves are unknot strands of the Borromean braid ([up quark](#def:up-quark)).
 
 **Step 4: the Higgs mass mechanism and the first hadrons.**
-The figure-eight knot $4_1$ has crossing number $4$ and is the first hyperbolic knot. It is amphichiral, so the Higgs field $H$ is its own antiparticle. The **Borromean baryon** $\mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$ also emerges at step 4. Although each constituent quark has crossing number $3$, the three-component Borromean linking requires the quartic jet to resolve the inter-component holonomy. The proton $p$, neutron $n$, and their antiparticles first appear here.
+The figure-eight knot $4_1$ has crossing number $4$ and is the first hyperbolic knot. It is amphichiral, so the Higgs field $H$ is its own antiparticle. The **Borromean baryon** $\mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$ also emerges at step 4. Each constituent quark is an unknot strand; the three-component Borromean linking requires the quartic jet to resolve the inter-component holonomy. The proton $p$, neutron $n$, and their antiparticles first appear here.
 
 **Step 5: the muon and heavy quarks.**
 The cinquefoil $5_1 = T_{2,5}$ has crossing number $5$ and genus $2$. It is chiral, producing:

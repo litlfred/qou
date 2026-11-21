@@ -9,13 +9,18 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Algebraic GFs",
-  "pageStart": 448,
-  "pageEnd": 450,
+  "title": "Transfer matrices",
+  "pageStart": 411,
+  "pageEnd": 417,
   "contains": [
-    "library/acsv231201/blocks/prose-sec-066"
+    "library/acsv231201/blocks/prose-sec-066",
+    "library/acsv231201/blocks/ex-sec-066-01",
+    "library/acsv231201/blocks/ex-sec-066-02",
+    "library/acsv231201/blocks/thm-sec-066-03",
+    "library/acsv231201/blocks/thm-sec-066-04",
+    "library/acsv231201/blocks/figure-img-p416-1"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,1 @@
+Let A be a self- adfoint operator on H with dense domain. Then there exists a ﬁnite measure space (X, µ), a real-valued a.e. ﬁnite function f on X and a unitary operator u : H →L2(X, µ) such that uAu∗= Mf

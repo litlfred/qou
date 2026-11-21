@@ -1,1 +1,0 @@
-Since we have already described the geometric realization of indecomposable bimodules, as intersection cohomology of subvarieties of $G$, we know abstractly that the Bott-Samelson bimodule $\S\Bi$ must be the hypercohomology of a perverse sheaf obtained by taking a direct sum of $\IC{}$-sheaves of these subvarieties with appropriate multiplicities.

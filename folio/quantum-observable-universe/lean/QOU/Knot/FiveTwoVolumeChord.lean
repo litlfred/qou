@@ -48,7 +48,7 @@
   constants at all (bean `qou-f8lit`, PR #6084).
 
   -- Ref: [neumann-zagier1985] Volumes of hyperbolic three-manifolds
-  -- Ref: [manuscript] bean qou-52ch
+  -- Ref: [leitner2026] bean qou-52ch
 -/
 
 import QOU.Knot.FiveTwoNinthPower

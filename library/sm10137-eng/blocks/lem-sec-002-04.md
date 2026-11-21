@@ -1,0 +1,1 @@
+Let b ∈H1(R+) ∩L1(R+), and let χ[R,∞)(Be−b −We−b)χ[R,∞) be a trace-class operator for each R > 0. Then there exists Z(b) such that for all R > 0 we have det(χ[0,R]We−b+BebWe−b−χ[0,R]) det(χ[R,∞)Web−Be−bWeb+χ[R,∞)) = Z(b). (3.5) Observe that the denominator in (3.5) equals QB R(b). The central step in the proof of Theorem 1 is as follows.

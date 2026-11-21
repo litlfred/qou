@@ -97,18 +97,52 @@ def packages() -> list[tuple[pathlib.Path, str]]:
     return out
 
 
+MATHLIB_DEPS = (
+    "Qq", "Batteries", "LeanSearchClient", "Aesop",
+    "Plausible", "ImportGraph", "ProofWidgets",
+)
+
+
+def _nonempty_olean_count(d: pathlib.Path) -> int:
+    """Count non-empty `.olean` files under `d` (0-byte files count as 0)."""
+    if not d.is_dir():
+        return -1
+    n = 0
+    for root, _dirs, files in os.walk(d):
+        for f in files:
+            if f.endswith(".olean"):
+                try:
+                    if (pathlib.Path(root) / f).stat().st_size > 0:
+                        n += 1
+                except OSError:
+                    pass
+    return n
+
+
 def find_oleans() -> pathlib.Path:
     """The restore seeds the ROOT workspace; a per-paper `lake build` seeds $PKG.
 
-    Both are real, so probe rather than assume — hardcoding either one makes the
-    script fail on exactly the tree it exists to verify against.
+    Both are real, so pick by COMPLETENESS (largest count of non-empty `.olean`
+    files under `<cand>/<LIB>`), matching `scripts/lean-shadow-verify.sh`,
+    rather than taking the first candidate with a `<LIB>/` directory (which may
+    be an incomplete mid-build stub).  Bean `qou-fo7l`.
     """
     env = os.environ.get("OLEANS")
-    cands = [pathlib.Path(env)] if env else [
-        PKG / ".lake/build/lib/lean", ROOT / ".lake/build/lib/lean"]
-    for c in cands:
+    if env:
+        c = pathlib.Path(env)
         if (c / LIB).is_dir():
             return c
+        sys.exit(f"no olean tree with a {LIB}/ dir; looked in: {c}")
+    cands = [PKG / ".lake/build/lib/lean", ROOT / ".lake/build/lib/lean"]
+    best_c, best_n = None, -1
+    for c in cands:
+        if not (c / LIB).is_dir():
+            continue
+        n = _nonempty_olean_count(c / LIB)
+        if n > best_n:
+            best_c, best_n = c, n
+    if best_c is not None:
+        return best_c
     sys.exit(f"no olean tree with a {LIB}/ dir; looked in: "
              f"{', '.join(str(c) for c in cands)}")
 
@@ -557,27 +591,43 @@ def sweep_one(args) -> int:
                 print(f"refreshing reused shadow: linked {added} file(s) "
                       f"the real tree gained since it was built")
 
-        siblings = [str(p) for p in ROOT.glob("folio/*/lean/.lake/build/lib/lean")
+        siblings = [str(p) for p in sorted(ROOT.glob("folio/*/lean/.lake/build/lib/lean"))
                     if p != oleans]
         # Dependency olean roots, in the order Lean should search them.
         #
-        # BOTH package locations are included deliberately, PAPER FIRST.  The
-        # root Lake workspace has `.lake/packages/` and each paper package has
-        # its own `<paper>/lean/.lake/packages/`; the documented sandbox restore
-        # (AGENTS.md §"Mathlib cache 403 fallback") fills the PAPER one, so that
-        # is the tree it GUARANTEES.
-        #
-        # The root tree is not reliably broken -- it is not reliably POPULATED,
-        # which is worse for a gate.  Measured on two containers: on one, root
-        # held a 0-byte `Mathlib/Tactic.olean`, no `Mathlib/Data/Real/Basic.olean`
-        # and 1212 oleans, so every Mathlib-importing module failed with
-        # "invalid header" / "does not exist" and this sweep reported 22 REDs
-        # that were entirely about its own environment.  On another, root was a
-        # 6990-olean SUPERSET of the paper tree with both files byte-identical,
-        # and the same code was fine.  Globbing the root alone therefore makes
-        # this gate correct by luck of environment.  Bean `qou-tpdg`.
-        pkg_roots = ([str(p) for p in ROOT.glob("folio/*/lean/.lake/packages/*/.lake/build/lib/lean")]
-                     + [str(p) for p in ROOT.glob(".lake/packages/*/.lake/build/lib/lean")])
+        # 1. Deterministically sort all glob results (`Path.glob` returns raw
+        #    filesystem `scandir` order).
+        # 2. Order the current package's `PKG/.lake/packages/*` and
+        #    `ROOT/.lake/packages/*` ahead of other `folio/*/lean/.lake/packages/*`
+        #    roots.
+        # 3. Filter out incomplete package roots that hold fewer non-empty
+        #    `.olean` files than the most complete root for that package name,
+        #    so a partial package directory earlier on `LEAN_PATH` can never
+        #    shadow a complete one (`qou-fo7l`, `qou-4h26`, `qou-tpdg`).
+        raw_pkg_cands = (
+            sorted(PKG.glob(".lake/packages/*/.lake/build/lib/lean"))
+            + sorted(ROOT.glob(".lake/packages/*/.lake/build/lib/lean"))
+            + [p for p in sorted(ROOT.glob("folio/*/lean/.lake/packages/*/.lake/build/lib/lean"))
+               if not p.is_relative_to(PKG)]
+        )
+        seen_cands: list[pathlib.Path] = []
+        seen_set: set[pathlib.Path] = set()
+        for p in raw_pkg_cands:
+            if p not in seen_set and p.is_dir():
+                seen_set.add(p)
+                seen_cands.append(p)
+        pkg_counts: dict[pathlib.Path, int] = {}
+        best_pkg_count: dict[str, int] = {}
+        for p in seen_cands:
+            pkg_name = p.parents[3].name
+            cnt = _nonempty_olean_count(p)
+            pkg_counts[p] = cnt
+            if cnt > best_pkg_count.get(pkg_name, -1):
+                best_pkg_count[pkg_name] = cnt
+        pkg_roots = [
+            str(p) for p in seen_cands
+            if pkg_counts[p] > 0 and pkg_counts[p] >= best_pkg_count.get(p.parents[3].name, 0)
+        ]
         lean_path = ":".join([str(shadow)] + pkg_roots + siblings + [str(oleans)])
 
         # BOUND TOTAL PARALLELISM, not process count.  `--jobs N` spawns N `lean`
@@ -711,7 +761,8 @@ def sweep_one(args) -> int:
                         broken.add(m)   # dependents cannot be judged either
                         print(f"  [{done_ct}/{n}] TIMEOUT  {m}  ({log})", flush=True)
                     else:
-                        errs = [l for l in log.splitlines() if ": error:" in l]
+                        errs = [l for l in log.splitlines()
+                                if re.search(r": error(?:\([^)]*\))?:", l)]
                         # THREE ways a non-zero exit is NOT a failing module, and
                         # reporting any of them as RED sends the next reader
                         # hunting a defect that has not been shown to exist --
@@ -737,15 +788,22 @@ def sweep_one(args) -> int:
                             if rc < 0:
                                 why = f"killed by signal {-rc}"
                             elif missing:
-                                # Name the MISSING MODULE, not the first 120
-                                # characters of its absolute path -- the path is
-                                # the same prefix for every hit and the module is
-                                # the only part that tells you what to fix.
-                                mo = re.search(r"of module ([\w.]+) does not exist",
-                                               missing[0])
-                                mm = mo.group(1) if mo else "?"
-                                where = "mathlib cache" if mm.startswith("Mathlib") \
-                                        else "build order"
+                                # Sort `missing` deterministically by module
+                                # name before picking the diagnostic to report:
+                                # Lean elaborates imports across threads, so
+                                # stderr lines arrive in thread-completion race
+                                # order (`qou-fo7l`).
+                                def _missing_mod(line: str) -> str:
+                                    m_ = re.search(r"of module ([\w.]+) does not exist", line)
+                                    return m_.group(1) if m_ else "?"
+                                missing_sorted = sorted(missing, key=lambda l: (_missing_mod(l), l))
+                                mm = _missing_mod(missing_sorted[0])
+                                if mm == "Mathlib" or mm.startswith("Mathlib."):
+                                    where = "mathlib cache"
+                                elif any(mm == d or mm.startswith(f"{d}.") for d in MATHLIB_DEPS):
+                                    where = "mathlib dep cache"
+                                else:
+                                    where = "build order"
                                 why = f"missing olean {mm} ({where})"
                             else:
                                 why = f"exit {rc}, no diagnostic"

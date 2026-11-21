@@ -1,0 +1,58 @@
+2. THE MURPHY BASIS 25
+
+3.18 The Murphy Basis Theorem (Murphy) The Hecke algebra # is a free
+R-module with basis
+
+M={ mo
+
+8,t€ Std() for some partition X of n }.
+
+Moreover,
+(i) mf, =m, for all X € A and all s,t € Std(A).
+(ii) Suppose that h € # and that t € Std(A). Then there exist ro € R such that
+for all s € Std(\)
+
+Mgh = > PypMsp mod KH,
+veStd(d)
+Consequently, (M, A) is a cellular basis of @.
+Proof. We have already seen that ™M is a basis of # and, from the definitions,
+it is immediate that m%, = m,,. Hence, it remains to prove (ii).
+Let Nj be the R-module spanned by #* and {my,|t€ Std(A) }. The ar-
+
+gument of Corollary 3.17 shows that Ny is a right ideal of #. Therefore, for any
+standard tableau t € Std() and h € # there exists rp € R such that
+
+Mpyh= Ss ryeMp, mod %».
+vestd(a)
+Multiplying this expression on the left by Tis) proves (ii) and hence the Theorem.
+Oo
+
+For future use, we note the following strengthening of Corollary 3.15.
+
+3.19 Corollary Suppose s and t are standard \—-tableau such that i and i+ 1 are
+in the same column of t for some i. Then, for alls € Std(Q),
+
+ms Ty = —ma + > TeMsy Mod AY.
+ubt
+
+for some r, ER.
+
+We can now use the theory of cellular algebras from Chapter 2 to construct all
+of the irreducible #-—modules. The cell modules of # are called Specht modules.
+
+Let \ be a partition of n. Rather than the abstract definition of Chapter 2
+we define the Specht module S* to be the right #-module (#* + m,).#. Note
+that #* + my is an element of the #-—module I | HO so that S is a submodule
+of 4).
+Warning The Specht module S*, as we have defined it, is isomorphic to the dual
+of the Specht module which Dipper-James [13] index by X’, the partition which is
+conjugate to A. Because of this, when comparing the results in these notes with
+those from the representation theory of the symmetric groups (q¢ = 1), or with the
+papers of Dipper and James, the Specht module $* must be replaced with S*’*. In
+the literature our Specht modules are sometimes called dual Specht modules.
+
+Given a standard \-tableau t let mp = #* + mp,. Then Theorem 3.18 gives
+us the following basis of S* (and shows that 5 is isomorphic to the cell module as
+defined in Chapter 2).
+3.20 Proposition Suppose that is a partition of n. Then the Specht module S*
+is a free R-module with basis {m, | t € Std(d) }.

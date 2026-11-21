@@ -2,12 +2,13 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-q-casimir-exists",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:q-casimir-exists",
@@ -25,7 +26,7 @@
     "quantum-group",
     "central-element"
   ],
-  "leanRef": "qou:QOU.QCasimir.exists",
+  "leanRef": "qou:QOU.QCasimir.not_exists_unconstrained",
   "text": "q-casimir-exists.md",
   "leanSource": "q-casimir-exists.lean",
   "provenance": "authored"

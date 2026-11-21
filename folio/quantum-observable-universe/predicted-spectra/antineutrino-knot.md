@@ -6,7 +6,7 @@ $$
 
 Because the unknot is amphichiral, the antineutrino shares identical knot invariants with the neutrino: Seifert genus $0$, crossing number $0$, zero hyperbolic volume, and trivial Jones and Alexander polynomials.
 
-Orientation—not knot type—distinguishes the neutrino and antineutrino. In the braid group, the neutrino acts as the identity braid $e \in B_1$ with positive orientation, while the antineutrino acts as $e$ with negative orientation. We draw the antineutrino as a dashed circle (⊙).
+Orientation—not knot type—distinguishes the neutrino and antineutrino. In the braid group, the neutrino acts as the identity braid $e \in B_1$ with positive orientation, while the antineutrino acts as $e$ with negative orientation. The antineutrino is drawn as a dashed circle (⊙).
 
 In $\beta^-$ decay, the $L_0^{-}$ smoothing of the $\mathfrak{d} \to \mathfrak{u}$ crossing change yields the decay products:
 

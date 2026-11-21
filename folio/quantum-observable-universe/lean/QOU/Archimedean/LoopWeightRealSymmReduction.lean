@@ -33,7 +33,7 @@ registered for the *actual* α_EM loop weight. The τ-identification `W = comple
 weakened in form, never fabricated. `1/(8π)` stays a phase-4 identification; nothing
 is wired.
 
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
 -- Ref: [voisin2002] https://doi.org/10.1017/CBO9780511615344
 -/
 import QOU.Archimedean.HodgeGramLift

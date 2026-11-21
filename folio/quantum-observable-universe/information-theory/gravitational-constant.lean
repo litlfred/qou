@@ -34,7 +34,7 @@ identity (`G = q²/(q−1)⁴` against `(ℏ/c)² = (q−1)⁴/q²`), needing no
 ## References
 - [jacobson1995] https://doi.org/10.1103/PhysRevLett.75.1260
 - [bekenstein1981] https://doi.org/10.1103/PhysRevD.23.287
-- [manuscript] §9/gravitational-constant
+- [leitner2026] §9/gravitational-constant
 -/
 
 namespace QOU.Information
@@ -45,7 +45,7 @@ variable {R : Type*} [CommRing R]
 
     `q u : Rˣ` are the substrate parameter and its shift `q − 1`, both as
     units (§7c); `/` is division in the group `Rˣ`. -/
--- Ref: [manuscript] §9/gravitational-constant
+-- Ref: [leitner2026] §9/gravitational-constant
 def cellEntropy (q u : Rˣ) : Rˣ := u ^ 2 / q ^ 3
 
 /-- **Gravitational constant** at substrate parameter q.
@@ -54,7 +54,7 @@ def cellEntropy (q u : Rˣ) : Rˣ := u ^ 2 / q ^ 3
 
     where c_q = 1/(q-1), ℏ_q = (q-1)/q, and S_cell = (q-1)²/q³. -/
 -- Ref: [jacobson1995] Thermodynamics of Spacetime: The Einstein Equation — see folio/schema/references.ts
--- Ref: [manuscript] §9/gravitational-constant
+-- Ref: [leitner2026] §9/gravitational-constant
 def gravitationalConstant (q u : Rˣ) : Rˣ :=
   let c : Rˣ := 1 / u
   let hbar : Rˣ := u / q
@@ -67,7 +67,7 @@ def gravitationalConstant (q u : Rˣ) : Rˣ :=
     itself is the commutative-group cancellation `q²/u⁴ · u⁴/q² = 1` and so
     holds for any pair of units.  The old version needed `q > 1` only through
     `q ≠ 0`, `q ≠ 1`, which the unit hypotheses now carry. -/
--- Ref: [manuscript] §9/gravitational-constant
+-- Ref: [leitner2026] §9/gravitational-constant
 theorem gravitational_planck_eq_one (q u : Rˣ)
     (_hu : (u : R) = (q : R) - 1) :
     gravitationalConstant q u * (u / q / (1 / u)) ^ 2 = 1 := by

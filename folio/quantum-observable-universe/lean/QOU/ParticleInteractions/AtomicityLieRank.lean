@@ -25,7 +25,7 @@ reduction from a trailing-degree-≤1 witness to `rank ≤ 1`. The concrete `�
 charpoly computation `natTrailingDegree (charpoly (ad h)) = 1` — the genuine
 remaining core — is bean `qou-atsd-t3-lie`.
 
--- Ref: [manuscript] conj:binding-manybody-eq-jet-filtration (atomicity); def:tannaka-dual
+-- Ref: [leitner2026] conj:binding-manybody-eq-jet-filtration (atomicity); def:tannaka-dual
 -/
 
 namespace QOU.Atomicity

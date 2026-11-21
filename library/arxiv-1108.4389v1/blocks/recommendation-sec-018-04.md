@@ -1,1 +1,0 @@
-From the perspective of SQED, $\phi_T \equiv \phi_X\phi_Y$ is a meson, and the new fields $\phi_{R},\,\phi_S$ are monopole operators; the second term in [\[Woct5\]](#Woct5){reference-type="eqref" reference="Woct5"} is just the "XYZ" superpotential that we must add during mirror symmetry.

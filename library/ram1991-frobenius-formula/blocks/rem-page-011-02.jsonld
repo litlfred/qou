@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/ram1991-frobenius-formula/blocks/rem-page-011-02",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 11,
+  "pageEnd": 11,
+  "text": "rem-page-011-02.md",
+  "derivedFrom": "library/ram1991-frobenius-formula/sections/page-011",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ram1991-frobenius-formula/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/page-011.md (p. 11-11)",
+    "claim_id": "ram1991-frobenius-formula#rem-page-011-02"
+  }
+}

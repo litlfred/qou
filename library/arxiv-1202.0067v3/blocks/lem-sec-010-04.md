@@ -1,0 +1,1 @@
+□ CHARACTER DEFLATIONS For the inductive step we need the following lemma and proposition. The former is well-known and can be deduced from [8, 2.3.12]. We write µ ⊆λ if µ is a subpartition of λ (i.e. the Young diagram of µ is contained in that of λ).

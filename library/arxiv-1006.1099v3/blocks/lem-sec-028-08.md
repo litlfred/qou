@@ -1,0 +1,1 @@
+Suppose dimC(B) > 1. Then Maslov index 2 disks with boundary on L × T 2 meet exactly one of E, H0 and H∞once, and are disjoint from Href. In particular, no such Maslov index 2 disk can project onto P1 under π.

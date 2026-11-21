@@ -21,7 +21,7 @@ The Lean encoding records the iff as a `Prop`-valued claim against
 an abstract `PBandwidthContext` carrying the link / Skein /
 computational data, plus the bandwidth function `𝓑(q)`.
 
--- Ref: [manuscript] quantum-observable-universe/information-theory/p-bandwidth-bound.md
+-- Ref: [leitner2026] quantum-observable-universe/information-theory/p-bandwidth-bound.md
 -/
 
 namespace QOU.Information
@@ -90,7 +90,7 @@ class PBandwidthContext where
   bandwidth_to_p : bandwidthBounded → inP
 
 /-- **The bandwidth `𝓑(q)` is positive for `q > 1`**. -/
--- Ref: [manuscript] quantum-observable-universe/information-theory/p-bandwidth-bound.md
+-- Ref: [leitner2026] quantum-observable-universe/information-theory/p-bandwidth-bound.md
 theorem informationBandwidth_pos [ctx : PBandwidthContext] :
     0 < informationBandwidth ctx.q ctx.η_q := by
   unfold informationBandwidth
@@ -108,7 +108,7 @@ theorem informationBandwidth_pos [ctx : PBandwidthContext] :
     steps. *Derived* by composing the two directional hypotheses of
     `PBandwidthContext` (`Iff.intro`); the theorem proves the iff, it
     does not assume it. -/
--- Ref: [manuscript] quantum-observable-universe/information-theory/p-bandwidth-bound.md
+-- Ref: [leitner2026] quantum-observable-universe/information-theory/p-bandwidth-bound.md
 theorem p_bandwidth_bound [ctx : PBandwidthContext] :
     ctx.inP ↔ ctx.bandwidthBounded :=
   ⟨ctx.p_to_bandwidth, ctx.bandwidth_to_p⟩

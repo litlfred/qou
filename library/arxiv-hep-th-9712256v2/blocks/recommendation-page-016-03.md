@@ -1,1 +1,0 @@
-To unambigously deﬁne r(j), consider the action of R(j) on the level zero subspace of Fj: It must be proportional to the SL(2, C)-intertwining operator Ij, so r(j) will be deﬁned by F − j (v, ¯v) = r(j)Ij  F + (v, ¯v) ≡r(j)2j + 1 π Z C d2v′ |v −v′|4j F + j (v′, ¯v′).

@@ -1,0 +1,55 @@
+1. THE COMBINATORICS OF TABLEAUX 19
+
+3.4 Corollary Let yt be a composition of n. Then M" is a free R-module with
+basis { myTyy | t a row standard y-tableau}. Moreover, if t is row standard and
+s = ts;, for some 1 <i<n, then
+
+gmyT ay, if s is not row standard,
+myTayTi=¥ MpTas) ifs is row standard and €(d(s)) > &(d()),
+amy Tas) + (9 — my Tay, if 8 is row standard and E(d(s)) < &(d(t)).
+
+Proof. That M* is a free R-module with the basis shown follows directly from
+Theorem 1.11, Lemma 3.2 and Proposition 3.3. It remains to verify the multipli-
+cation formulae.
+
+Let w = d(t)s;; then s = t*w. Now, s is not row standard if and only if 7
+and 7+ 1 are in the same row of t, in which case w and d(t) are in the same right
+coset of G,. Therefore, w = sd(t) for some s € G, and &(w) = &(d(t)) + 1 by
+Proposition 3.3; hence, myTay Ti = MpTsTay = GMpTayy by Lemma 3.2.
+
+Finally, if i and i+ 1 are not in the same row of s then s is row standard; thus,
+d(s) € Y, and the remaining statements follow from the multiplication formulae of
+Theorem 1.11. Oo
+
+3.5 To conclude this section we introduce two partial orders. Let y and v be
+compositions. Then yp > v if
+
+i i
+Sony > Soy forall @> 1.
+j=l jel
+
+Tf ye B v we say that ye dominates v. If yp 4 v we write p> v.
+
+Next, given a row standard tableau t and an integer m <n let t | m be the
+tableau obtained from t by deleting all of the entries greater than m. Note that
+t| m is a row standard tableau for some composition of m. Given row standard
+potableaux 5 and ¢ write s > t if Shape(s|m) & Shape(t{m) form = 1,2... ,n.
+Similarly, we write s > t when sb t ands £t.
+
+3.6 Example (i) Let A be a partition of n and let t be any row standard \—
+tableau. Then ( B t.
+
+(ii) Let s EI and t= EEE. Then the following table shows that $ > t.
+m 1 2 3 4 5
+sim
+tlm
+Suppose that 71 ...7;, is a not necessarily reduced expression for some element
+of G,, where 71,...,7% € S. A subexpression of 71...7% 1s any expression of the
+
+form 7;,...?i, where 1 <i) <-+-+< ip <k.
+
+Given two elements v and w in 6, write v & w if v has a reduced expression
+which is a subexpression of some reduced expression of w. For example, | & w for
+all w € G,,. By the strong exchange condition (1.5), v & w if and only if there exist
+reflections #;,... 4, € T such that w = vt;,...t, and (vty ...tj-1) < &(vty...t;)
+for j = 1,2,...,k. (In fact, one can show that v & w if and only if there exist

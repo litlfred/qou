@@ -1,1 +1,0 @@
-States used in a topological quantum computation scheme must be selected according to their fusion rules since the environment can distinguish between states fusing to different superselection sectors, causing decoherence.

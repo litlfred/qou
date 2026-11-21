@@ -1,1 +1,0 @@
-The Rogers-Shephard inequality becomes an equality when $L$ is a simplex, while the Brunn-Minkowski inequality above gives equality for symmetric bodies, that is $(K^o)^z$ must have antipodal symmetry (with respect to some point) for every $z\in L^o$.

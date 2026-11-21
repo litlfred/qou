@@ -1,1 +1,0 @@
-Pairs $(E,B)$ in $\mathcal{E}^{\text{even}}_{\Lambda,A}$ can be considered as subgraphs of $\Lambda$, where the vertices are all vertices incident to an edge of $E$ and the edge-set is precisely $E$ (vertices in $B$ must be adjacent to at least one edge in $E$).

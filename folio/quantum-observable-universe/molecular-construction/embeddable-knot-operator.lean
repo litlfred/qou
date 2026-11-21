@@ -13,7 +13,7 @@ plus `k-1` transverse channels, giving total binding `E₀·(1 + (k-1)·w⊥)`.
 Algebraic content over a commutative ring; the `(0,1]` constraint on `w` is an
 archimedean specialisation handled downstream.
 
--- Ref: [manuscript] molecular-construction/embeddable-knot-operator
+-- Ref: [leitner2026] molecular-construction/embeddable-knot-operator
 -/
 
 namespace QOU.Molecular

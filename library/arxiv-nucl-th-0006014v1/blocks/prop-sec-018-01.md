@@ -1,0 +1,1 @@
+(A40)], consistency requires that we determine γ based upon relativistic kinematics which is, Md ≡Mp + Mn −Bd = q M2p −γ2 + q M2n −γ2 , (D4) where Md denotes the deuteron rest mass and Bd the binding energy.

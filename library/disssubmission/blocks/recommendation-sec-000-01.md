@@ -1,1 +1,0 @@
-As a ﬁrst step in this direction, we conclude this dissertation with a recursive formula for the generic rank of Brill-Noether sheaves — in the hope that this formula may be given a representation-theoretic and more conceptual interpretation at some future time.

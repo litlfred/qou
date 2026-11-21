@@ -1,0 +1,46 @@
+11.1 Results on cones and deformations 343
+
+By construction ¢ is continuous with ¢o(Tpa) being the chain T.(w) for u =
+«x, + (a — x.) € B. Because each line segment from u to Vy) is in Z(y), and
+exp(iy+a,+v) ¢ V for any v in any Z(y), we see that the homotopy ¢ avoids
+‘V. The homotopy ¢ deforms T,(t) to the cycle (Ta), with the height of a
+point ¢;(y) given by —#, -Re{a, + Vy}. Because Vy) was picked according
+to conclusion (iii) of Theorem 11.1, we see that 7, - vy) is strictly positive,
+and therefore that hp,(¢:(y)) < —f. - x,, finishing the proof. ia)
+
+Theorem 11.5. Assume the hypotheses of Theorem 11.1 and let T = T.(a) for
+any x € OB. If local(F) is finite and nonempty then for any 6 > 0 the torus T
+is homotopic in M to a cycle whose maximum height is less than h, = —? - x,
+outside of balls of radius 5 around the points of W = local(f).
+
+Proof of Theorem 11.5 from Theorem 11.1 Repeat the proof of Theorem 11.4,
+with the following modifications. For y ¢ W, choose a smaller N(y) if neces-
+sary so that WNN(y) = 0. For y € W, define N(y) to be the preimage under
+the exponential map of the ball of radius 5 centered at exp(a, + iy) and set
+u(y) = 0. Choose again a finite open subcover N(y; : 1 < j < m} of Tha and
+construct V by (11.2) and ¢, by (11.3) as before. The cycle Cs = ¢1(Taat) is
+homotopic in M to T(w) and satisfies the conclusion of the theorem. Oo
+
+Corollary 11.6. The conclusions of Theorems 11.4 and 11.5 can be strength-
+ened to hold simultaneously for all ? in some neighborhood.
+
+Proof This follows from the finiteness of the open cover in each case and the
+fact that the strict inequality over each N(y) actually bounds 7, - Vy) away
+from zero. im
+
+A simplified argument for smooth points
+It will take a lot of work to prove Theorem 11.1 below, so we first illuminate
+the argument by proving a special case that does not need the full theory of
+cones of hyperbolicity. Assume for the remainder of this section that
+
+T(x.) NY consists only of smooth points of V. (*)
+
+It turns out that cones of hyperbolicity at smooth points are always halfspaces:
+Theorem 6.44 in Chapter 6 implies that for a minimal point z € V the vector
+Viog Q(Z) is a complex scalar multiple of a real unit vector A, and this real
+vector, with proper orientation, defines the correct cone.
+
+Definition 11.7. For y € Tha with g(a, + iy) # 0 define Z(y) = R¢. For
+y € Taat with q(x, + iy) = 0 and z = exp(x, + iy) a smooth point of Y, let
+
+Zy) = {aw € RY: &- Xz) <0}. (11.4)

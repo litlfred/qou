@@ -1,1 +1,0 @@
-Suppose then that S1 is a surface with strip-like ends, and S2 a compact surface, together with points ζk ∈∂Sk (ζ1 should not lie on any end; that can of course always be achieved by making the ends smaller).

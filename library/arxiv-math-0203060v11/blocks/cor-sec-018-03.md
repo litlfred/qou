@@ -1,0 +1,1 @@
+Let A be a ﬁnite dimensional weak Hopf algebra. If for every primitive idempotent π in A∗ t ∩A∗ s there exist idempotents ρπ, ρ′ π in πA∗ t such that (23) Tr(S2|ρπA∗S(ρ′π))̸ = 0, then A is semisimple.

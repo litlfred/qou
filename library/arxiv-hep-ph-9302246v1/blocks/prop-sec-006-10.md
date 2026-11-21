@@ -1,0 +1,1 @@
+However, the full width for the $a_1$ axial-vector particle we obtain from the results in the column Prediction 2, $\Gamma_{\rm full}\,=$ 359 MeV, is better when compared with the experimental result quoted above.

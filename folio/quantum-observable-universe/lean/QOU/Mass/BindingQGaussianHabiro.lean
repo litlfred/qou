@@ -40,7 +40,7 @@ generating-function log-expansion); no overlap.
 Generic base ring `[CommRing R]`: these are purely algebraic identities in the formal fibre
 parameter `q`, with no archimedean structure (AGENTS.md §7c). Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-06-27-lever1-qinvolution-cyclotomic-kernel.md §"Stage 5"
+-- Ref: [leitner2026] docs/audits/2026-06-27-lever1-qinvolution-cyclotomic-kernel.md §"Stage 5"
 -/
 import Mathlib.Tactic
 

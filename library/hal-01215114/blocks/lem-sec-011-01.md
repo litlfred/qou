@@ -1,0 +1,1 @@
+Let λ and µ be two partitions of the same integer n. If λ does not dominate µ then for any bijective ﬁllings Tλ and Tµ of the diagrams λ and µ with integers in [n] there exist two elements i and j which are in the same row of Tµ and in the same column of Tλ.

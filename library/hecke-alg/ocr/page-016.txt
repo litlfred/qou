@@ -1,0 +1,61 @@
+1. CELLULAR BASES 1
+
+2.7 Proposition Suppose that \ € A and let x,y €C*. Then
+
+(i) (aw, y) = (y, 2).
+
+(ii) (wa, y) = (a, ya*) for alla € A.
+(iii) aed, = (a, ed)ed for all u,v € TO).
+Proof. Because (, ) is bilinear it is sufficient to consider the case where x = ¢2
+and y = ch for some s,t € T(A). Let u and bv be any elements of 7(A). Then, by
+definition,
+
+(el )ety = dette = (Crecau)” = (Cet eg )eeu)” = (et ed)ety mod A,
+proving (i). Similarly for (ii),
+
+(da, eye, = (ja)ed, = A,(act,) = (ee, chat), mod A.
+
+Finally, when x = 2, part (iii) is precisely the definition of ( , ). Oo
+
+2.8 Let rad C® = {x € C* | (x,y) = 0 for all y € C* }. Then by Proposition 2.7(ii),
+rad C* is an A-submodule of C*. Accordingly, we define D* = C*/radC?.
+
+Although we have yet to do anything difficult, we can now exhibit some irre-
+ducible A—modules. Recall that the Jacobson radical of a module is the smallest
+submodule with a semisimple quotient; it is also the intersection of all of the max-
+imal ideal in the module.
+
+2.9 Proposition Suppose that R is a field and let X be any element of A such
+that D #0.
+
+(i) The right A-module D* is absolutely irreducible.
+
+(ii) The Jacobson radical of C> is equal to rad C?.
+
+Proof. Let # be any non-zero element of C* \ rad C*. Then (2, y) # 0 for some
+ye O and, because R is a field, we may assume that (x,y) = 1. Now y=
+DseTiy ls cd for some r, € R; so, for each t € F(A). define y% = Drea Pscar € A.
+Then, by Proposition 2.7(iii),
+
+ey = So rere = So releved)et = (x y)ed = et.
+
+s€T(A) 3€T(X)
+
+Consequently, x generates C*. This argument applies to any element of C* which
+does not belong to the radical; consequently, D* is irreducible and rad C is the
+unique maximal proper submodule of C%, proving (ii). By the same argument, D*
+is irreducible for any extension field of R so in fact D> is absolutely irreducible.
+
+Oo
+
+2.10 Proposition Suppose that R is a field and let X and yt be elements of A such
+that D® £0 and let M be a proper submodule of C".
+
+(i) If 6:C*—+C#/M is a non-zero homomorphism then > pt.
+
+(ii) Suppose that \ = jt. Then Hom,(C*,C*/M) = R.
+Proof. Define elements x, y and y= D>, rgc, as in the proof of Proposition 2.9,
+where ¢ € T(A) and let 6:C* —+C#/M be an A-module homomorphism. Then
+there exists some ag € C” such that 0(z) = M + ag. Therefore, O(c?) = 6(ay:) =
+O(x)y, = M + agy for all t € T(A). By Corollary 2.3(iii) and (2.4), if A # ye then
+dey = 0 so (cd) = 0 for all t. Consequently, if @# 0 then > p, proving (i).

@@ -124,7 +124,7 @@ namespace QOU.Interactions
     product uses no ordering, no radical and no `Real.*` construct, so `ℝ` bought
     nothing here; the channel data and the scalar map may even live in different
     types.  The archimedean instance is recovered at `α := ℝ`, `M := ℝ`. -/
--- Ref: [manuscript] quantum-observable-universe/nuclear-interactions/nucleon-ordering-factorization.md
+-- Ref: [leitner2026] quantum-observable-universe/nuclear-interactions/nucleon-ordering-factorization.md
 theorem scalar_channel_ordering_independent {α : Type*} {M : Type*} [CommMonoid M]
     (f : α → M) (ds ds' : List α) (hperm : ds.Perm ds') :
     (ds.map f).prod = (ds'.map f).prod :=
@@ -138,7 +138,7 @@ over caller-supplied data:
 **Named, not asserted.**  See the module docstring for why neither a
 projection nor a `sorry` is the honest form, and for what the master
 factorisation would need in order to be derived. -/
--- Ref: [manuscript] quantum-observable-universe/nuclear-interactions/nucleon-ordering-factorization.md
+-- Ref: [leitner2026] quantum-observable-universe/nuclear-interactions/nucleon-ordering-factorization.md
 def nucleon_ordering_factorization {R : Type*} [CommRing R]
     (trM_N W_sym W_std W_alt S_pi a_pi b_pi z A_pi : R) : Prop :=
   trM_N = W_sym * S_pi + W_std * (z * a_pi + b_pi) + W_alt * A_pi
@@ -155,7 +155,7 @@ This is why the decomposition is worth naming: it is a hypothesis something
 is proved **from**.  The standard channel is a `2 × 2` matrix product and is
 *not* ordering-independent in general, which is exactly why its agreement
 appears here as a hypothesis rather than as a lemma. -/
--- Ref: [manuscript] quantum-observable-universe/nuclear-interactions/nucleon-ordering-factorization-proof.md
+-- Ref: [leitner2026] quantum-observable-universe/nuclear-interactions/nucleon-ordering-factorization-proof.md
 theorem trace_ordering_independent {α : Type*} {R : Type*} [CommRing R]
     (fS fA : α → R) {ds ds' : List α} (hperm : ds.Perm ds')
     {trM trM' W_sym W_std W_alt a_pi b_pi a_pi' b_pi' z : R}
@@ -176,7 +176,7 @@ At `tr_M = 1` with every channel quantity zero it reads `1 = 0`.  Recorded
 as a theorem so a later attempt to "finish" this file by adding a `sorry`
 over free data fails against a standing counterexample — and so the
 2026-08-08 → `b67ee924e84` round trip cannot be repeated silently. -/
--- Ref: [manuscript] quantum-observable-universe/nuclear-interactions/nucleon-ordering-factorization.md
+-- Ref: [leitner2026] quantum-observable-universe/nuclear-interactions/nucleon-ordering-factorization.md
 theorem not_nucleonOrderingFactorization_of_free_data :
     ¬ nucleon_ordering_factorization (1 : ℤ) 0 0 0 0 0 0 0 0 := by
   simp [nucleon_ordering_factorization]

@@ -1,1 +1,0 @@
-Last, we get: $$S_{\lambda} \hat{f} - S_{\mu} \hat{f} = C \dfrac{{\theta_{q}}(-\lambda/\mu) {\theta_{q}}(z/\lambda\mu)} {{\theta_{q}}(-1/\lambda) {\theta_{q}}(-1/\mu) {\theta_{q}}(\lambda/z) {\theta_{q}}(z/\mu)} \cdot$$ We shall now see that $C = -{\theta_{q}}'(-1) = (q^{-1};q^{-1})_{\infty}^{3}$.

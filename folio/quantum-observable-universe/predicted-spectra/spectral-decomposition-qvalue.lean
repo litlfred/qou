@@ -18,7 +18,7 @@ LaTeX label: `cor:spectral-decomposition-qvalue`
 
 ## References
 
-- [manuscript] §5/spectral-decomposition-qvalue
+- [leitner2026] §5/spectral-decomposition-qvalue
 - [jones1987] https://doi.org/10.2307/1971403
 - [turaev2010] https://doi.org/10.1515/9783110221848
 
@@ -82,7 +82,7 @@ open scoped BigOperators
     remains open (bean `qou-xq3f`) is the strictly weaker *per-shell* input
     `hInactive` — that each inactive `F τ = 1`, i.e. the Rosso–Jones
     cancellation itself. -/
--- Ref: [manuscript] §5/spectral-decomposition-qvalue
+-- Ref: [leitner2026] §5/spectral-decomposition-qvalue
 theorem knot_operator_product_collapse
     {ι : Type*} (E : Finset ι) (F : ι → ℝ) (active : ι)
     (hActive : active ∈ E)
@@ -105,6 +105,13 @@ theorem knot_operator_product_collapse
     (iv)  The product collapses to a single term (shell cancellation)
     (v)   The decomposition is exact — terminates at degree 2 on Σ₄
 
+    **Scope (2026-11-16).** Under convention D the Pauli (fully filled shell)
+    factor `|tr_M(e_(1³)·τ·T_β·e_(1³))| / |tr_M(T_β)|` is identically `0`, since
+    the Ocneanu weight of every three-row partition vanishes at `z = q³/(q²+1)`
+    (`QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows`). The
+    corollary is asserted only for non-magic converting shells; this theorem is
+    the generic collapse and takes the active factor `F active` as given.
+
     **Restated 2026-08-22** (vacuity ledger, `proof-no-unused-hypothesis-rfl`).
     The prior form `∃ Q_q, Q_q = Q_bare · knotOperator` was a trivial existential
     (`⟨rhs, rfl⟩`) that asserted nothing.  This states the `(iv)` collapse of the
@@ -118,7 +125,7 @@ theorem knot_operator_product_collapse
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
 -- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
--- Ref: [manuscript] §5/spectral-decomposition-qvalue
+-- Ref: [leitner2026] §5/spectral-decomposition-qvalue
 theorem spectral_decomposition_qvalue
     {ι : Type*}
     (q parentPoly daughterPoly m_e : ℝ)
@@ -198,7 +205,7 @@ theorem shell_product_collapse
 
 /-- The jet bundle over Σ₄ has exactly three non-zero levels (k = 0, 1, 2).
     Degree 3 requires genus ≥ 13, exceeding the genus-4 bound. -/
--- Ref: [manuscript] §5/spectral-decomposition-qvalue
+-- Ref: [leitner2026] §5/spectral-decomposition-qvalue
 theorem tower_terminates_at_degree_2 (r s : ℕ)
     (hr : r ≥ 2) (hs : s ≥ 2) (hcop : Nat.Coprime r (s ^ 3))
     (hgen : (r - 1) * (s ^ 3 - 1) / 2 ≥ 13) :
@@ -211,7 +218,7 @@ theorem tower_terminates_at_degree_2 (r s : ℕ)
 
 /-- Self-duality: τ(r,s) ↔ τ(s,r) provides the inner product for
     completeness of the torus knot basis. -/
--- Ref: [manuscript] §5/spectral-decomposition-qvalue
+-- Ref: [leitner2026] §5/spectral-decomposition-qvalue
 theorem torus_knot_self_duality (r s : ℕ) :
     (r - 1) * (s - 1) = (s - 1) * (r - 1) := by
   ring

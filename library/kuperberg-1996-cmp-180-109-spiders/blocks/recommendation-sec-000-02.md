@@ -1,1 +1,0 @@
-To construct such a category, one must divide the tensor factors of an invariant space Inv(F] <g>...<8> Vn) into smaller tensor products which serve as the domain and target of a space of mor- phisms.

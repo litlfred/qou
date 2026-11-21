@@ -1,71 +1,24 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "1172-4",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "ffc47732ce0138e9fa08c0fd2598331679a94590b150f5a4f120b8c26f4f56ee",
   "file": "1172-4.pdf"
  },
  "provenance": {
-  "title": "Notes on Construction of the Knot Invariant from $\\mathrm{O}\\mathrm{u}\\mathrm{a}\\mathrm{n}\\mathrm{t}\\mathrm{u}\\sim \\mathrm{m}$ Dilogarithm Function \u6771\u4eac\u5927\u5b66\u5927\u5b66\u9662\u88e1\u638c\u91ce\u7814\u7a76\u79d1\u7269\u88e1\u5b66\u5c08\u653b",
+  "title": "Notes on Construction of the Knot Invariant from Quantum Dilogarithm Function",
   "authors": "Kazuhiro HIKAMI",
   "arxiv": null,
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 3,
-  "by_kind": {
-   "recommendation": 3
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "4 Quantum Dilogarithm Function II In the case of the $|q|=1$ we should modify the de\ufb01nition (3.1a) of the quantum diloga- rithm function.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "(5.6) 5.2 Asymptotic Behavior We shall study a $\\gammaarrow 0$ limit for th$eS$-and $R$-matrices by the saddle point method.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-51-momentum-space.md",
-   "section_title": "Momentum Space",
-   "pages": "9-13",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "(4.5), we see that the $S$-operator (5.2) is $\\langle p_{1},p_{2}|S_{1,2}|p\u20191\u2019 p_{2}\\rangle$ ; $\\sim\\delta(p_{1}+p_{2p\u2019}-1)\\cdot\\exp\\frac{1}{2\\mathrm{i}\\gamma}(-\\frac{\\pi^{2}}{6}+Li_{2}(\\mathrm{e}^{p_{2}^{J}}-p_{2})+p1(p2^{-}p_{2})\\prime \\mathrm{I}\\cdot$ (5.9a) In the same manner we \ufb01nd $\\langle p_{1},p_{2}|s-1|1,2p_{1},p\u20192\\rangle/$ $\\sim\\delta(p_{1}-p_{1}\u2019-p_{2}^{l})\\cdot\\exp\\frac{1}{2\\mathrm{i}\\gamma}(\\frac{\\pi^{2}}{6}-Li_{2}(\\mathrm{e}-p^{l}2)p_{2}-p_{1}(/p_{2}\u2019p2^{-})\\mathrm{I}\\cdot$ (5.9b) In the next section we shall associate tetrahedra to these $S$-operators, and in fact we see the exponential factor resembles with the $\\mathrm{B}1_{o\\mathrm{C}}\\mathrm{h}_{-}\\mathrm{W}\\mathrm{i}\\mathrm{g}\\mathrm{n}\\mathrm{e}\\mathrm{r}$ function (2.7).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-51-momentum-space.md",
-   "section_title": "Momentum Space",
-   "pages": "9-13",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

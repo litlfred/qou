@@ -50,6 +50,7 @@ export default proposition({
     // in places. Repairing that is authoring, not a status fix.
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): measured $2.89\\times10^{-51}$ at 50 dps ([`GramSignature.lean`](../lean/QOU/QBeta/GramSignature.lean))" },
     {
       kind: "refined-framing",
       body: "An earlier reading of this block as indefinite or Lorentzian was withdrawn (commit 748ba9b1); it came from quoting the bilinear pairing without saying so.",

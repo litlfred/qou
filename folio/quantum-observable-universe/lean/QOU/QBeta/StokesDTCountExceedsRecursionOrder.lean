@@ -89,7 +89,7 @@ order do **not** reproduce them. Nothing fitted, nothing wired. Core-Lean only
 
 -- Ref: [garoufalidis-gu-marino2023peacock] GGM 2012.00062 (peacock Conj 3(d); S⁺(0) 4₁; 5₂ blocks)
 -- Ref: [nguyen-tran-2021] strong AJ for 4₁ (recursion order 2 = A-polynomial L-degree 2)
--- Ref: [manuscript] docs/audits/2026-08-02-stokes-dt-bridge-moduli-gap-unification.md
+-- Ref: [leitner2026] docs/audits/2026-08-02-stokes-dt-bridge-moduli-gap-unification.md
 -/
 
 namespace QOU.QBeta.StokesDTCountExceedsRecursionOrder

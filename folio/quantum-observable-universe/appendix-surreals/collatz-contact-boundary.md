@@ -1,12 +1,12 @@
-**Proposition (within a QOU with $2 \mid \chi(A)$; conditional on [`conj:q-collatz`](#conj:q-collatz); "$[2]_q$-contact boundary").**
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with substrate parameter $q$ whose Frobenius–Hopf object satisfies $2 \mid \chi(A)$ — for instance the Descartes universe, $\chi(A) = -6$ — and let $\mathcal{R}_p = (S^3 \xrightarrow{\pi_H} S^2, \xi_q)$ be its Reeb bundle ([Reeb bundle](#def:reeb-bundle)) with $U(1)$ fiber parametrized by $q = e^{i\varTheta}$. The parity $2 \mid \chi(A)$ is what makes the $[2]_q$-divisor Kummer-removable below; $\chi(A) = -6$ is a property of the Descartes universe, not of a general QOU. The $q$-Collatz orbit of $P \in \mathcal{S}(q)_{>0}$ converges if and only if its orbit contact average ([Collatz contact boundary](#def:collatz-contact-boundary)) attains the threshold $\langle v_{[2]} \rangle(P) \geq 2$. Equivalently, the $q$-Collatz conjecture is the contact condition
+**Proposition (within a QOU with $2 \mid \chi(A)$; conditional on [The $q$-Collatz conjecture: Skein-module crossing resolution](#conj:q-collatz); "$[2]_q$-contact boundary").**
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with substrate parameter $q$ whose Frobenius–Hopf object satisfies $2 \mid \chi(A)$ — for instance the Descartes universe, $\chi_{\mathrm{eu}}(M_0) = -6$ — and let $\mathcal{R}_p = (S^3 \xrightarrow{\pi_H} S^2, \xi_q)$ be its Reeb bundle ([Reeb bundle](#def:reeb-bundle)) with $U(1)$ fiber parametrized by $q = e^{i\varTheta}$. The parity $2 \mid \chi(A)$ is what makes the $[2]_q$-divisor Kummer-removable below; $\chi_{\mathrm{eu}}(M_0) = -6$ is a property of the Descartes universe, not of a general QOU. The $q$-Collatz orbit of $P \in \mathcal{S}(q)_{>0}$ converges if and only if its orbit contact average ([Collatz contact boundary](#def:collatz-contact-boundary)) attains the threshold $\langle v_{[2]} \rangle(P) \geq 2$. Equivalently, the $q$-Collatz conjecture is the contact condition
 
 $$
 \bigl\langle v_{[2]}([3]_q P + 1) \bigr\rangle \geq 2 \quad\text{for all } P \in \mathcal{S}(q)_{>0}.
 $$
 
 **Proof.**
-Since $1 < v^*(q) < 2$ (we have $[2]_q < [3]_q < [2]_q^2$), the orbit converges whenever each tripling is followed by at least two halvings on average, i.e., $\langle v_{[2]} \rangle(P) \geq 2$.
+Since $1 < v^*(q) < 2$ (as $[2]_q < [3]_q < [2]_q^2$), the orbit converges whenever each tripling is followed by at least two halvings on average, i.e., $\langle v_{[2]} \rangle(P) \geq 2$.
 
 Two halvings multiply by $[2]_q^{-2}$; one tripling multiplies by $[3]_q / [2]_q$. The net factor per cycle is
 

@@ -19,7 +19,7 @@ is no approximation error.
 LaTeX label: `prop:integer-stability`
 
 ## References
-- [manuscript] Ch. 6, §3
+- [leitner2026] Ch. 6, §3
 -/
 
 namespace QOU.Archimedean
@@ -47,7 +47,7 @@ theorem bindingEnergy_vertex_form (α γ δ p : ℝ) (hα : α ≠ 0) :
     every real `p`, with equality iff `p = p*`.  Strict convexity then forces the
     integer minimiser to lie in `{⌊p*⌋, ⌈p*⌉}` — the exactness asserted in the
     narrative statement. -/
--- Ref: [manuscript] Ch. 6, §3
+-- Ref: [leitner2026] Ch. 6, §3
 theorem integer_stability (α γ δ : ℝ) (hα : 0 < α) (p : ℝ) :
     bindingEnergy α γ δ (continuousOptimum α γ) ≤ bindingEnergy α γ δ p := by
   rw [bindingEnergy_vertex_form α γ δ p (ne_of_gt hα),
@@ -58,7 +58,7 @@ theorem integer_stability (α γ δ : ℝ) (hα : 0 < α) (p : ℝ) :
 
 /-- Strict version: away from the vertex the binding energy is strictly larger,
     which is what makes the integer minimiser one of the two nearest integers. -/
--- Ref: [manuscript] Ch. 6, §3
+-- Ref: [leitner2026] Ch. 6, §3
 theorem integer_stability_strict (α γ δ : ℝ) (hα : 0 < α) (p : ℝ)
     (hp : p ≠ continuousOptimum α γ) :
     bindingEnergy α γ δ (continuousOptimum α γ) < bindingEnergy α γ δ p := by

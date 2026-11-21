@@ -2,25 +2,29 @@ import Mathlib.Algebra.Algebra.Basic
 import Mathlib.RingTheory.Ideal.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Tactic.NoncommRing
+import QOU.MathlibExt.UniversalDifferentials
 
 
 /-!
 # Cohomology vanishing collapses the GB spectral sequence
 
-For semisimple algebras over a field of characteristic zero,
-Hochschild cohomology vanishes in positive degrees (Whitehead lemma).
+For separable algebras (e.g. semisimple over a field of characteristic
+zero), Hochschild cohomology vanishes in positive degrees (Hochschild 1945,
+the associative analogue of Whitehead's lemma).
 The Iwahori-Hecke algebra `A = H_n(R, q)` is semisimple at generic q,
-so `HH^k(A) = 0` for `k ≥ 1`.  The GB filtration spectral sequence
-therefore collapses at `E_1` with all contributions concentrated in
-`HH^0 = Z(A) = ⊕_λ R · e_λ` (the centre).
+so `HH^k(A) = 0` for `k ≥ 1`.  The limit page of the GB filtration
+spectral sequence is therefore concentrated in `HH^0 = Z(A) = ⊕_λ R · e_λ`
+(the centre).  That does not imply collapse at `E_1` (corrected
+2026-11-16).
 
 The Markov trace (Frobenius integral `Int_A : A → R`) factors through
 the Wedderburn-Artin centre.  Plancherel weights `w_λ = dim_q²(λ)/[n]_q!`
-on the centre are bounded (`Σ_λ w_λ = 1`), avoiding the super-
+on the centre are bounded (but `Σ_λ w_λ(q) ≠ 1` at `q ≠ 1`; only the
+classical `w_λ(1)` sums to 1), avoiding the super-
 exponential blow-up that disrupted naive numerical tests of the
 universal residue.
 
--- Ref: [manuscript] prop:spectral-sequence-collapse
+-- Ref: [leitner2026] prop:spectral-sequence-collapse
 -/
 
 namespace QOU.WedderburnMass
@@ -48,6 +52,35 @@ structure Derivation (R : Type u) [CommRing R]
     (A : Type u) [Ring A] [Algebra R A] where
   d : A →ₗ[R] A
   leibniz : ∀ a b : A, d (a * b) = d a * b + a * d b
+
+open QOU.MathlibExt.UniversalDifferentials in
+/-- **Every derivation factors uniquely through `Ω¹(A)`.**  For a
+    derivation `D : A → A`, there is exactly one map `φ : Ω¹(A) → A` that is
+    a map of `A`-bimodules and satisfies `φ ∘ d = D`.  Here `Ω¹(A) = ker μ`
+    is the universal noncommutative calculus of
+    `QOU.MathlibExt.UniversalDifferentials`, the same `Ω¹` that the field
+    `QuantumUniverse.differentialForms` realises in `C`.
+
+    So derivations of `A` into itself are the same thing as bimodule maps
+    `Ω¹(A) → A`.  `WhiteheadHH` below is therefore a statement about maps out
+    of `Ω¹(A)`.
+
+    `Derivation` here is defined locally, not taken from Mathlib, because
+    Mathlib's `Derivation` needs a commutative algebra and the Hecke algebra
+    is not commutative. -/
+theorem Derivation.existsUnique_factor_Ω1
+    {R : Type u} [CommRing R] {A : Type u} [Ring A] [Algebra R A]
+    (D : Derivation R A) :
+    ∃! φ : Ω1 R A →ₗ[R] A,
+      (∀ a ω, φ (lsmul a ω) = a * φ ω) ∧
+      (∀ b ω, φ (rsmul b ω) = φ ω * b) ∧
+      ∀ a, φ (QOU.MathlibExt.UniversalDifferentials.d R A a) = D.d a := by
+  have hD : ∀ a b, D.d (a * b) = a • D.d b + MulOpposite.op b • D.d a := by
+    intro a b
+    rw [D.leibniz, smul_eq_mul, op_smul_eq_mul, add_comm]
+  refine ⟨lift D.d, ⟨fun a ω => lift_lsmul D.d a ω, fun b ω => ?_,
+    fun a => lift_d D.d hD a⟩, fun φ ⟨h1, _, h3⟩ => lift_unique D.d φ h1 h3⟩
+  rw [lift_rsmul D.d hD, op_smul_eq_mul]
 
 /-- Inner derivation `ad_x(a) = x·a − a·x`. -/
 def innerDerivation {R : Type u} [CommRing R]

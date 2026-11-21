@@ -1,16 +1,17 @@
 import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.QGeometricLanglands.q_gl_kummer_filtration — conjectural class (§3b)
+# QOU.QGeometricLanglands.q_gl_kummer_filtration — conjecture carrier (content-bearing, no instance)
 
-**§3b class axiomatisation** for content block
+**§3b-cond class axiomatisation** for content block
 [`conj:q-gl-kummer-filtration`](../../../quantum-observable-universe/q-geometric-langlands/q-gl-kummer-filtration.md):
 *Kummer-tower filtration of the moduli of $q$-local systems.*
 
-This is a **conjecture**: the class carries the conjecture's actual
-content as the `level1_all` and `lifts_iff_divides` fields; the
-`noncomputable instance`'s `sorry` represents the open conjecture itself
-(per AGENTS.md §3b), NOT a missing proof.
+This is a **conjecture**, and the honest open state is a **content-bearing class
+with no instance** (AGENTS.md §3b-tax). `q_gl_kummer_filtration` carries the
+conjecture's actual content as the `level1_all` and `lifts_iff_divides` fields.
+**No instance is provided anywhere in this file.** Downstream theorems take
+`[q_gl_kummer_filtration]` as an explicit hypothesis.
 
 The moduli of $q$-local systems is abstracted as a class parameter; the
 two substantive claims encoded are (1) the level-1 sublocus is
@@ -54,5 +55,37 @@ class q_gl_kummer_filtration where
 -- strictly stronger: a `sorry` at least shows up as `sorryAx`.)  Removed, not
 -- completed.  Downstream results must take `[q_gl_kummer_filtration]` as an explicit
 -- hypothesis.
+
+namespace q_gl_kummer_filtration
+
+/-- **The level-1 sublocus always lifts through the brane tower**, since
+    $(1 : \mathbb{Z}) \mid \chi(A)$ unconditionally. -/
+theorem liftsThroughTower_one [c : q_gl_kummer_filtration] :
+    c.liftsThroughTower 1 := by
+  rw [c.lifts_iff_divides 1 le_rfl]
+  exact one_dvd c.chiA
+
+/-- **Perpetual brane-tower lifting obstruction** when $n \nmid \chi(A)$:
+    for any level $n \ge 1$ whose integer cast does not divide $\chi(A)$,
+    the level-$n$ sublocus cannot lift through the brane tower. -/
+theorem not_liftsThroughTower_of_not_dvd [c : q_gl_kummer_filtration]
+    (n : ℕ) (hn : 1 ≤ n) (hndvd : ¬ ((n : ℤ) ∣ c.chiA)) :
+    ¬ c.liftsThroughTower n := by
+  rw [c.lifts_iff_divides n hn]
+  exact hndvd
+
+/-- **Brane-tower descent along divisibility**: if $1 \le m$, $1 \le n$,
+    $m \mid n$, and the level-$n$ sublocus lifts through the brane tower,
+    then the intermediate level-$m$ sublocus also lifts through the tower. -/
+theorem liftsThroughTower_of_dvd_trans [c : q_gl_kummer_filtration]
+    (m n : ℕ) (hm : 1 ≤ m) (hn : 1 ≤ n) (hmn : m ∣ n)
+    (hlift : c.liftsThroughTower n) :
+    c.liftsThroughTower m := by
+  rw [c.lifts_iff_divides m hm]
+  have hndvd : (n : ℤ) ∣ c.chiA := (c.lifts_iff_divides n hn).mp hlift
+  have hmn_int : (m : ℤ) ∣ (n : ℤ) := Int.ofNat_dvd.mpr hmn
+  exact dvd_trans hmn_int hndvd
+
+end q_gl_kummer_filtration
 
 end QOU.QGeometricLanglands

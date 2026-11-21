@@ -1,0 +1,1 @@
+8. We have I j F(s) = H(s, k, j) · L(N)(ψF, 2s + k j) 2k+2 X n=0 k+ j+n+1 even (−1) j2c( j, n)J n,2k−j F (s), where c( j, n) := (−1)k+1 2k−2 j X ℓ=0 ℓeven iℓ a( j, ℓ−1, n) −2b( j, ℓ, n)  , (normalised to agree with [Ghate 1999, p. 628]) where we take a( j, −1, n) = 0 for all j, n. The following is the main result of this appendix.

@@ -117,7 +117,12 @@ def chi_lambda_symbolic(shape, crossings) -> sp.Expr:
 
 
 def tr_q_plancherel_symbolic(crossings, n: int) -> sp.Expr:
-    """**q-Plancherel trace** (NOT the Markov trace — see warning).
+    """**q-Plancherel measure trace** (NOT the Markov trace — see warning).
+
+    Naming: the weights are the q-Plancherel measure w_λ(q) = dim_q²/[n]_q!.
+    This is a different object from the unweighted Plancherel functional
+    τ_P(p_λ) = dim_q·d_λ/[n]_q! and from the canonical trace
+    τ(σ_w) = δ_{w,1} (= τ_P with a q^{-κ_λ} factor, MolienFakeDegree.lean).
 
     Computes the q-Plancherel expectation of the normalized character:
         tr_qP(β) = Σ_λ (dim_q²(λ) / [n]_q!) · (χ^λ(β) / f^λ)
@@ -131,12 +136,12 @@ def tr_q_plancherel_symbolic(crossings, n: int) -> sp.Expr:
     is *not* the canonical Markov trace:
 
       - Markov trace: tr_M(1) = 1 for all q (axiomatic)
-      - q-Plancherel trace: tr_qP(1) ≠ 1 in general (e.g. on H_3 at q_0,
+      - q-Plancherel measure trace: tr_qP(1) ≠ 1 in general (e.g. on H_3 at q_0,
         tr_qP(1) ≈ 0.987, not 1)
 
       - Markov trace: tr_M(α·σ_n) = z · tr_M(α) with z = 1/[2]_{q^{1/2}}
         (the Wenzl Markov parameter)
-      - q-Plancherel trace: does NOT satisfy this Markov property
+      - q-Plancherel measure trace: does NOT satisfy this Markov property
 
     At q = 1 the two coincide (both reduce to the classical Plancherel
     trace), which is why they look equivalent at the classical limit.
@@ -145,7 +150,7 @@ def tr_q_plancherel_symbolic(crossings, n: int) -> sp.Expr:
     audit, the H_3 numerical comparison (57–99% relative differences
     on proton-like braids), and provenance (the original commit
     58e78090e flagged this distinction at creation but the production
-    chain has used this Plancherel trace as if it were the Markov
+    chain has used this q-Plancherel measure trace as if it were the Markov
     trace).
 
     For the canonical Markov trace, use
@@ -171,7 +176,7 @@ def tr_q_plancherel_symbolic(crossings, n: int) -> sp.Expr:
 
 def tr_M_symbolic(crossings, n: int) -> sp.Expr:
     """**Deprecated alias** — historical name. The function this points
-    at is the **q-Plancherel trace**, NOT the Markov trace. Use
+    at is the **q-Plancherel measure trace**, NOT the Markov trace. Use
     `tr_q_plancherel_symbolic` to make the convention explicit, or
     `tr_Markov_symbolic` for the canonical Markov trace via Wenzl y_λ.
 

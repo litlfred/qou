@@ -15,7 +15,7 @@ under the trace map, κ₀ ↦ χ(A) = tr(id_A).
 ## References
 
 - [yekutieli2010] Central Extensions of Gerbes
-- [manuscript] §3 Lifting and Descent
+- [leitner2026] §3 Lifting and Descent
 -/
 
 namespace QOU
@@ -27,7 +27,7 @@ namespace QOU
     continues; non-vanishing κₙ indicates topological charge.
 
     LaTeX: `\label{def:quantum-characteristic-classes}` -/
--- Ref: [yekutieli2010] §4, [manuscript] §3
+-- Ref: [yekutieli2010] §4, [leitner2026] §3
 structure QuantumCharacteristicClass where
   /-- Level in the brane tower. -/
   level : ℕ
@@ -81,7 +81,7 @@ instance (qcs : QuantumCharacteristicSequence) : AddCommGroup qcs.ObstructionSpa
     persists only for `n ∤ 6`; the "complementary subgroups" argument for
     persistence there is withdrawn (item 3 of `thm:qu-to-qou` is now the
     degree condition). -/
--- Ref: [manuscript] §3
+-- Ref: [leitner2026] §3
 theorem QuantumCharacteristicSequence.perpetual
     (qcs : QuantumCharacteristicSequence)
     (h_nontorsion : qcs.kappa 0 ≠ (0 : qcs.ObstructionSpace))

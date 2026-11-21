@@ -151,7 +151,7 @@ def qRogersAnalyticContinuation_qEqOne : QRogersAnalyticContinuation where
 
 /-- Best-match specialisation's pentagon-residual h⁴ coefficient
     (`half_h_squared`), from the Pachner→h⁴ probe.
-    -- Ref: [manuscript] computations/pentagon-to-borromean-h4-probe.witness.json -/
+    -- Ref: [leitner2026] computations/pentagon-to-borromean-h4-probe.witness.json -/
 noncomputable def borromeanH4BestSpecCoeff : ℝ := 2.488024668336228e-07
 
 /-- **Witnessed negative — the Pachner→h⁴ chain does NOT close via a natural

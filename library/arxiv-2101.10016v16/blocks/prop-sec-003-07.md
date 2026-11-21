@@ -1,0 +1,1 @@
+expresses naturality of F and G in ρ and σ, while the right inverse condition (4.3) implies that Pρ,σ = Gρ,σ ◦ Fρ,σ : F(ρ) ⊗ F(σ) → F(ρ) ⊗ F(σ) (4.5) is an idempotent satisfying Fρ,σ ◦ Pρ,σ = Fρ,σ, Pρ,σGρ,σ = Gρ,σ. If Pρ,σ = 1F(ρ)⊗F(σ)for all ρ, σ (i.e. all Fρ,σ are isomorphisms), we recover the notion of quasi-tensor functor of [47, 126].

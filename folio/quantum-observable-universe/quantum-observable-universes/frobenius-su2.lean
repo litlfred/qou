@@ -18,7 +18,7 @@ LaTeX label: `ex:frobenius-su2`
 ## References
 
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
-- [manuscript] §1 Example: Frobenius relation for SU(2)
+- [leitner2026] §1 Example: Frobenius relation for SU(2)
 -/
 
 namespace QOU.Examples
@@ -43,7 +43,7 @@ structure SU2FrobeniusData where
   frobenius_holds : numRelations = 1
 
 /-- The Frobenius data for SU(2). -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 def su2Frobenius : SU2FrobeniusData where
   integralOfUnit := 1
   haar_normalised := rfl

@@ -40,7 +40,7 @@ stays open.
 
 Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-07-25-odd-face-parity-constraint.md
+-- Ref: [leitner2026] docs/audits/2026-07-25-odd-face-parity-constraint.md
 -- Ref: [ramis-sauloy-zhang2013] q-difference formal classification / Stokes
 -/
 import QOU.QBeta.OddDecayWeightParity

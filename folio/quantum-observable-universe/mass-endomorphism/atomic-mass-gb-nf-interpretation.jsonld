@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-atomic-mass-gb-nf-interpretation",
@@ -19,7 +20,7 @@
     "papers/quantum-observable-universe/blocks/prop-rho-k-graded-expansion",
     "papers/quantum-observable-universe/blocks/prop-alpha-shift-torus-knot",
     "papers/quantum-observable-universe/blocks/prop-alpha-em-shift-multiplicative-chain",
-    "papers/quantum-observable-universe/blocks/prop-binding-scale-catalan",
+    "papers/quantum-observable-universe/blocks/conj-binding-scale-catalan",
     "papers/quantum-observable-universe/blocks/sec-atomic-braid-mass-foundations",
     "papers/quantum-observable-universe/blocks/prop-per-nucleon-shift-additive-linearity",
     "papers/quantum-observable-universe/blocks/thm-wedderburn-mass-formula",

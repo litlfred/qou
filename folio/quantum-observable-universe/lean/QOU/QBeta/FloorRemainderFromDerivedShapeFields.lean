@@ -45,8 +45,8 @@ both, `core_is_three_on_all_three`), and it does not reach `(−2,3,7)`, whose f
 the corpus does not derive. It upgrades the *provenance* of Part 4's rule on two
 knots; it derives nothing about `A_ω`.
 
--- Ref: [manuscript] computations/probes/two_bridge_layered_nz_probe.py (#6985)
--- Ref: [manuscript] docs/audits/2026-09-06-two-bridge-layering-from-farey-word.md
+-- Ref: [leitner2026] computations/probes/two_bridge_layered_nz_probe.py (#6985)
+-- Ref: [leitner2026] docs/audits/2026-09-06-two-bridge-layering-from-farey-word.md
 -- Ref: [garoufalidis-zagier-2024] library/arxiv-2111.06645v3 §2.1 (the transcribed table this replaces for 4₁, 5₂)
 -/
 

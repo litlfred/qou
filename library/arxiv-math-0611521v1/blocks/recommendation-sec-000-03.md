@@ -1,1 +1,0 @@
-We shall not use these results but we need them at the heuristic level in order to develop our $q$-analogies, therefore we shall insist on the underlying geometric ideas.\ We shall use *tannakian categories* as an essential tool (cf. [@DF], [@Simpson], 6, page 67).

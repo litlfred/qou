@@ -36,8 +36,8 @@ scalar closes the system exactly (no residual), two over-determine it by one.
 Nothing here derives `A_ω` or proposes a value of `ϑ`; these are structural
 facts about what the channel can and cannot be asked.
 
--- Ref: [manuscript] docs/scope/2026-08-01-theta-independent-routes.md
--- Ref: [manuscript] docs/scope/2026-08-01-t4-anchor-circularity.md
+-- Ref: [leitner2026] docs/scope/2026-08-01-theta-independent-routes.md
+-- Ref: [leitner2026] docs/scope/2026-08-01-t4-anchor-circularity.md
 -/
 
 namespace QOU.QBeta.AfreeThetaConstraint
