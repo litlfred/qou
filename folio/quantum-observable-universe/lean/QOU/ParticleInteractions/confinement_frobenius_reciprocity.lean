@@ -18,109 +18,83 @@ shadow prices**:
 
     ⟨O⟩_T = O(T) = ∑_{i,j ∈ A*(T)} u*ᵢ (G⁻¹)_{ij} ⟨O, bⱼ⟩ .
 
-## Disposition (integrity)
+## What is proved here (2026-11-21)
 
-The class carries only the **LP + Frobenius data** — the NF-basis size `d`,
-the Gram matrix `G` and its active-subspace dual `Ginv = G⁻¹`, the LP-active
-set `A_star`, the primal coefficients `x_star`, the dual shadow prices
-`u_star = y*`, the net-constraint dual `y_0_star`, the primal/dual objective
-values, and the observable pairing (`pairing O j = ⟨O, bⱼ⟩`) and physical
-expectation (`physExp O = O(T)`) maps.  It does **not** carry the reciprocity
-formula or the LP sub-claims as fields (the previous versions did — first a
-`theorem := ⟨ctx.claim_*⟩` self-assuming projection, then a `def … : Prop`
-that dropped the master formula entirely — both forbidden / weaker than the
-`.md`).
+Until this date the context class carried the reciprocity formula and the
+LP facts as fields and `confinement_frobenius_reciprocity` returned them
+(`⟨ctx.reciprocity, …⟩`), the self-assuming projection of AGENTS.md
+§3b-cond item 5, while this docstring claimed the class carried no
+conclusion and the proof ended in `sorry`. Neither was true.
 
-`confinement_frobenius_reciprocity` now states the genuine `.md` claim — the
-**master reciprocity formula** together with the LP supporting facts (primal
-optimum nontrivial, positive net dual, active set nonempty, active ⇔ positive
-shadow price, strong duality) — over that data, and ends in `sorry`
-(disposition B).  Establishing it requires the two-part argument of the
-manuscript: (1) non-degeneracy of the Markov trace as a Frobenius form on
-`H_n(q)` giving the dual basis `T^∨ = ∑ x*ᵢ (G⁻¹)_{ij} bⱼ`, and (2) the
-LP-active reduction via complementary slackness / KKT stationarity
-(`x*ᵢ = (G⁻¹ u*)ᵢ` on `A*(T)`) — neither present in the `QOU` library / Mathlib.
+The block's own proof sketch has two inputs:
+
+* **linearity** — `⟨O⟩_T = Σⱼ x*ⱼ ⟨O, bⱼ⟩`, since `T = Σⱼ x*ⱼ bⱼ`;
+* **stationarity** — `x*ⱼ = Σ_{i ∈ A*} (G⁻¹)ⱼᵢ u*ᵢ` on the active set and
+  `x*ⱼ = 0` off it.
+
+`confinement_frobenius_reciprocity` now carries exactly those as
+hypotheses (with `G⁻¹` symmetric, as the inverse of a symmetric Gram
+matrix is) and **derives** the master formula, together with
+"active ⇔ positive shadow price" (from the definition of `A*` as a filter)
+and "active set nonempty" (from a nonzero optimum supported on `A*`).
+
+**Stationarity is not a consequence of the LP.** The KKT conditions of a
+linear program are feasibility and complementary slackness; they do not
+give `x* = G⁻¹ u*`, which is the stationarity condition of a quadratic
+program. So the master formula is proved *conditional on* stationarity,
+and stationarity is the open input. Strong duality for this LP is proved
+in `lp_dual_stability.lean`.
 -/
 
 namespace QOU.ParticleInteractions
 
 open Finset
 
-/-- LP + Frobenius data of the confinement-reciprocity claim. All fields are
-    *inputs* (LP primal/dual data, the Frobenius Gram matrix and its
-    active-subspace inverse, and the observable pairing); none asserts the
-    reciprocity conclusion. -/
-class ConfinementFrobeniusReciprocityContext where
-  /-- NF basis size `d`. -/
-  d : ℕ
-  /-- The Frobenius Gram matrix `G_{ij} = tr_M(bᵢ bⱼ)`. -/
-  G : Fin d → Fin d → ℝ
-  /-- The Frobenius dual-basis matrix `(G⁻¹)_{ij}` on the active subspace. -/
-  Ginv : Fin d → Fin d → ℝ
-  /-- LP-active set `A*(T) = {i : y*ᵢ > 0}`. -/
-  A_star : Finset (Fin d)
-  /-- Primal-optimum coefficients `x*ᵢ` (`T = ∑ x*ᵢ bᵢ`). -/
-  x_star : Fin d → ℝ
-  /-- Dual shadow prices `u*ᵢ = y*ᵢ` on the active channels. -/
-  u_star : Fin d → ℝ
-  /-- The net-constraint dual variable `y₀*`. -/
-  y_0_star : ℝ
-  /-- Primal objective value `∑ᵢ tᵢ x*ᵢ`. -/
-  primal_obj : ℝ
-  /-- Dual objective value `n_target · y₀*`. -/
-  dual_obj : ℝ
-  /-- Observables `O ∈ H_n(q)`. -/
-  Observable : Type
-  /-- Frobenius pairing `⟨O, bⱼ⟩ = tr_M(O · bⱼ)`. -/
-  pairing : Observable → Fin d → ℝ
-  /-- Physical expectation value `⟨O⟩_T = O(T)`. -/
-  physExp : Observable → ℝ
-  /-- Master reciprocity formula. -/
-  reciprocity : ∀ O : Observable, physExp O = ∑ i ∈ A_star, ∑ j ∈ A_star, u_star i * Ginv i j * pairing O j
-  /-- Nontrivial primal optimum. -/
-  primal_nontrivial : ∃ i : Fin d, x_star i ≠ 0
-  /-- Positive net dual. -/
-  y_0_star_pos : 0 < y_0_star
-  /-- Nonempty active set. -/
-  A_star_nonempty : A_star.Nonempty
-  /-- Active ⇔ positive shadow price. -/
-  active_iff_pos_shadow : ∀ i : Fin d, i ∈ A_star ↔ 0 < u_star i
-  /-- Strong duality.
-      (Still an assumption, but not for the reason once given here: finite LP strong
-      duality IS proved in-repo, unconditionally, as
-      `QOU.Optimization.lp_strong_duality_uncond` (via Farkas from
-      `QOU.Mathlib.isClosed_coneSpan`). It cannot discharge this field because the
-      carrier records the objective values as free reals with no feasibility or
-      optimality data; discharging it needs the carrier to carry `(A, a, c, x)` with
-      `PrimalOptimal`. Bean `qou-9h4t`.) -/
-  strong_duality : primal_obj = dual_obj
+/-- The LP-active set `A*(T) = {i : u*ᵢ > 0}`. -/
+noncomputable def activeSet {d : ℕ} (u : Fin d → ℝ) : Finset (Fin d) :=
+  Finset.univ.filter fun i => 0 < u i
 
-/-- **Confinement Frobenius reciprocity** ([`prop:confinement-frobenius-reciprocity`]).
+theorem mem_activeSet {d : ℕ} (u : Fin d → ℝ) (i : Fin d) :
+    i ∈ activeSet u ↔ 0 < u i := by
+  simp [activeSet]
 
-The master claim: for every observable `O`, the physical expectation value in
-the confined bound state `T` is the Gram-inverse dual pairing weighted by the
-LP-active shadow prices,
+/-- **Confinement Frobenius reciprocity, conditional on stationarity**
+    ([`prop:confinement-frobenius-reciprocity`]).
 
-    ⟨O⟩_T = ∑_{i,j ∈ A*(T)} u*ᵢ (G⁻¹)_{ij} ⟨O, bⱼ⟩ ,
-
-together with the LP supporting facts: (i) nontrivial primal optimum,
-(ii) positive net dual `y₀* > 0`, (iii) nonempty active set, (iv) active ⇔
-positive shadow price, (v) strong duality `primal_obj = dual_obj`. -/
--- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP strong duality + complementary slackness / KKT)
--- Ref: [leitner2026] quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.md
-theorem confinement_frobenius_reciprocity
-    [ctx : ConfinementFrobeniusReciprocityContext] :
-    (∀ O : ctx.Observable,
-      ctx.physExp O
-        = ∑ i ∈ ctx.A_star, ∑ j ∈ ctx.A_star,
-            ctx.u_star i * ctx.Ginv i j * ctx.pairing O j) ∧
-    (∃ i : Fin ctx.d, ctx.x_star i ≠ 0) ∧
-    0 < ctx.y_0_star ∧
-    ctx.A_star.Nonempty ∧
-    (∀ i : Fin ctx.d, i ∈ ctx.A_star ↔ 0 < ctx.u_star i) ∧
-    ctx.primal_obj = ctx.dual_obj :=
-  ⟨ctx.reciprocity, ctx.primal_nontrivial, ctx.y_0_star_pos, ctx.A_star_nonempty, ctx.active_iff_pos_shadow, ctx.strong_duality⟩
-
-
+    Given the primal optimum `x`, shadow prices `u`, a symmetric dual-basis
+    matrix `Ginv`, linearity of the expectation in `x`, and stationarity
+    `x = Ginv u` on the active set (with `x = 0` off it), every observable's
+    expectation is the Gram-inverse pairing over the active set; membership in
+    the active set is positivity of the shadow price; and a nonzero optimum
+    makes the active set nonempty. Derived, sorry-free. -/
+-- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, complementary slackness)
+-- Ref: [leitner2026] quantum-observable-universe/nuclear-interactions/confinement-frobenius-reciprocity.md
+theorem confinement_frobenius_reciprocity {d : ℕ} {Obs : Type*}
+    (Ginv : Fin d → Fin d → ℝ) (x u : Fin d → ℝ)
+    (pairing : Obs → Fin d → ℝ) (physExp : Obs → ℝ)
+    (hsymm : ∀ i j, Ginv i j = Ginv j i)
+    (hlin : ∀ O, physExp O = ∑ j, x j * pairing O j)
+    (hstat : ∀ j ∈ activeSet u, x j = ∑ i ∈ activeSet u, Ginv j i * u i)
+    (hsupp : ∀ j, j ∉ activeSet u → x j = 0)
+    (hnontriv : ∃ i, x i ≠ 0) :
+    (∀ O, physExp O = ∑ i ∈ activeSet u, ∑ j ∈ activeSet u,
+        u i * Ginv i j * pairing O j) ∧
+    (∀ i, i ∈ activeSet u ↔ 0 < u i) ∧
+    (activeSet u).Nonempty := by
+  refine ⟨fun O => ?_, mem_activeSet u, ?_⟩
+  · rw [hlin O, ← Finset.sum_subset (Finset.subset_univ (activeSet u))
+      (fun j _ hj => by rw [hsupp j hj, zero_mul])]
+    calc ∑ j ∈ activeSet u, x j * pairing O j
+        = ∑ j ∈ activeSet u, ∑ i ∈ activeSet u, Ginv j i * u i * pairing O j := by
+          refine Finset.sum_congr rfl fun j hj => ?_
+          rw [hstat j hj, Finset.sum_mul]
+      _ = ∑ i ∈ activeSet u, ∑ j ∈ activeSet u, u i * Ginv i j * pairing O j := by
+          rw [Finset.sum_comm]
+          refine Finset.sum_congr rfl fun i _ => Finset.sum_congr rfl fun j _ => ?_
+          rw [hsymm j i]; ring
+  · obtain ⟨i, hi⟩ := hnontriv
+    by_contra h
+    rw [Finset.not_nonempty_iff_eq_empty] at h
+    exact hi (hsupp i (by simp [h]))
 
 end QOU.ParticleInteractions
