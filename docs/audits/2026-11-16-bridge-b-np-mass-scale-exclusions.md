@@ -235,6 +235,10 @@ It is a conditional derivation: it rests on `conj:type-b-folding-cpt`, on the bo
 the Lusztig monograph, which is not held. Equal parameters (`0.939957`) has no corpus support. A
 Markov condition fixes a trace value, not `Q`.
 
+### 10g. Lusztig's monograph read: normalisation corrected (H10b, 2026-11-21)
+
+The source is now held (`uploads/0208154v2.pdf`, commit `f5d31c46b93`). §16.2 confirms the folding rule: the fixed group is Coxeter on the orbit longest elements, with the weight function L equal to the restricted ambient length. So the wall has L = 1 and the bulk L = 2. §16.7(b) fixes the quadratic relations with the **ambient** v. `conj:type-b-folding-cpt` folds the physical H_n(q), so v = q: the folded bulk is at q² and the wall at q. H10 had set the folded bulk to q (v = q^{1/2}), which does not match the conjecture's ambient. On V³ the supported reading gives D(q₀) = 0.94911520554914481986 (H10 as written: 0.96807142877888556063); D(1) = 1 in both. Whether the photon words live in the folded bulk (q²) or the ambient (q) is a new open input. D is a trace ratio, not a mass. Details: `computations/probes/bridge_b/h10_result.md` and `h10b_lusztig_normalisation_probe.py`.
+
 ## 11. What remains open
 
 - A symmetry-breaking object (a vacuum or boundary choice in the Higgs role) that distinguishes u from d inside the

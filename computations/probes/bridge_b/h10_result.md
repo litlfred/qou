@@ -57,3 +57,24 @@ photon parameters, and the folding conjecture.
 So *given* L(bulk) = 2 and L(wall) = 1, the step "wall parameter = v = q^{1/2} when bulk q = v²" is confirmed from a held source.
 
 **What remains unconfirmed:** the folding rule itself, that the weight function on the fixed-point group W^σ of a quasi-split folding is the restriction L = ℓ|_{W^σ} of the ambient length. That is Lusztig's monograph, Chapter 16 as recalled; no held source states it. The conditionality of Q = q^{1/2} is therefore unchanged on that point.
+
+## Source check, second pass (2026-11-21): the monograph, now held
+
+The owner uploaded the source as `uploads/0208154v2.pdf` (commit `f5d31c46b93` on `main`; not yet ingested into `library/`). Read directly:
+
+- **§16.2 confirms the folding rule.** For a Coxeter group W̃ with diagram automorphism ι, the fixed group W is a Coxeter group on the generators w₀^I, one for each ι-orbit I with finite W̃_I, "and the restriction of l̃ to W is a weight function L" (Theorems A.8, A.9). This is the quasisplit case. For B(B_n) ⊂ B_{2n}, the middle generator is a one-element orbit with L = 1. A commuting mirror pair has w₀^I = s_{n−i}s_{n+i} with L = 2. Condition 3 above, "recalled rather than read", is **discharged**.
+- **§16.7(b) fixes the normalisation, and H10 used the other one.** The quadratic relation is (b_{w₀^I} − v^{l̃(w₀^I)})(b_{w₀^I} + v^{−l̃(w₀^I)}) = 0, where v is the **ambient** indeterminate, the grading shift of the W̃ Soergel category. So the folded bulk has eigenvalues {v², −v⁻²} and the wall {v, −v⁻¹}. The ratio "wall = square root of bulk" is right. Which of the two equals the physical q is fixed by what is folded:
+  - `conj:type-b-folding-cpt` folds **the canonical atomic-braid algebra H_n(q)** itself, so the ambient carries the physical q and v = q.
+  - Then the folded bulk is at **q²** and the wall at **q**. H10 instead set the folded bulk equal to q (v = q^{1/2}), which is Lusztig's algebra for an ambient H_n(q^{1/2}), not for the H_n(q) the conjecture names.
+- **§16.3–16.7: the folded algebra is not a subalgebra of H̃.** It is built from the ι-twisted Grothendieck group K♯ of Soergel bimodules. This is consistent with H9b, where braid-level folding gave a cubic.
+
+| reading | bulk | wall | D(q₀), V³ | D(1) |
+|---|---|---|---|---|
+| A (H10 as written) | q | q^{1/2} | 0.96807142877888556063 | 1 |
+| **B (Lusztig 16.7(b) with the conjecture's ambient H_n(q))** | **q²** | **q** | **0.94911520554914481986** | 1 |
+
+Script: `h10b_lusztig_normalisation_probe.py` (exact sympy; check A(q₀²) − B(q₀) = 0).
+
+**Caveat on B.** The H8 `D(s)` formula, the pivot K and the V³ pair were built in a bulk H₃ at parameter q. Reading B evaluates that same formula at bulk parameter q². That treats the photon words as living in the folded bulk. Whether they live there, or in the ambient H_n(q), is not fixed by the conjecture, and in the ambient there is no Hecke-level wall generator to pair them with. So B is the reading the source and conjecture support, but the photon placement is a new open input.
+
+**Revised verdict.** The folding rule is now sourced. The wall-to-bulk ratio is derived. The absolute normalisation of H10 (A) is **not** supported. Reading B follows from the held source plus the conjecture's own wording, and gives D(q₀) = 0.949115. D is still a trace ratio, not a mass; no CODATA comparison.
