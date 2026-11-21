@@ -14,7 +14,7 @@ inductive NFBasis3 where
   | gen1      : NFBasis3  -- σ₁
   | hopfPlus  : NFBasis3  -- L₊ = σ₀σ₁
   | hopfMinus : NFBasis3  -- L₋ = σ₁σ₀
-  | trefoil   : NFBasis3  -- e⁻ = σ₀σ₁σ₀
+  | trefoil   : NFBasis3  -- e⁻ = σ₀σ₁σ₀ (closure: Hopf link, ruling 2026-11-21; name predates it)
   deriving DecidableEq, Repr
 
 /-- A Hecke normal form is a linear combination of NF basis elements
