@@ -6,7 +6,6 @@ export default remark({
   title: "Crossing direction, Reeb flow and time reversal",
   uses: [
     "prop:braiding-induced-ordering",
-    "def:categorical-reeb-derivation",
     "prop:antiparticle-crossing-reversal",
   ],
   tags: ["braiding", "arrow-of-time", "temporal", "reeb", "cpt"],
