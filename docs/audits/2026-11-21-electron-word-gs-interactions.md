@@ -331,9 +331,8 @@ This settles the open item "C2c for generic `q`" of §4.
    by `α'(a' + e'x)` gives `b'c·xδ = 0`; the factor `b'` cancels as a polynomial identity, leaving
    `c·δ₁ = 0` and `c·(δ₀ + hδ₁) = 0` as explicit polynomial combinations of the six equations.
 4. If `c ≠ 0`: `δ₀ = b'² − hb' − 1 = 0` and `δ₁ = b'e' − a' − ha'b' = 0`. The first gives
-   `b'(b' − h) = 1`, so `b' ≠ 0`, and `b'(e' − a'b') = δ₁ − a'δ₀ = 0` gives `e' = a'b'`. Then
-   `c = b'·(ba' + ee') − (be' + ea' + hee') … ` reduces to `c = −a'e·δ₀ + (e' − a'b')(b − b'e + eh) = 0`,
-   a contradiction. (Equivalently: `a' + e'x = a'(1 + b'x)` and `(1 + b'x)(b' − x) = x·δ₀ = 0`, so
+   `b'(b' − h) = 1`, so `b' ≠ 0`, and `b'(e' − a'b') = δ₁ − a'δ₀ = 0` gives `e' = a'b'`. Then, modulo the
+   fifth and sixth equations, `c = −a'e·δ₀ + (e' − a'b')(b − b'e + eh) = 0`, a contradiction. (Equivalently: `a' + e'x = a'(1 + b'x)` and `(1 + b'x)(b' − x) = x·δ₀ = 0`, so
    `1 + b'x` is a zero divisor and cannot divide the unit `cx`.)
 
 **Cross-checks (this session, exact arithmetic).** Gröbner basis of the six equations plus
