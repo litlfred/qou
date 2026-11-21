@@ -3,6 +3,7 @@ Copyright (c) 2026 litlfred. All rights reserved.
 Released under Apache 2.0 license.
 -/
 import Mathlib.LinearAlgebra.FreeProduct.Basic
+import Mathlib.Algebra.RingQuot
 
 /-!
 # Poisson structures on splays
@@ -28,7 +29,13 @@ What is formalised, by paper reference:
   exactly when `A` is commutative (`commutatorPoisson`, `commutatorPoisson_eq_zero_iff`).
   By Rmk. 2.3.1 of the paper, the bracket on `Dist(G)` used in §3 is this commutator.
 
-Not formalised here: strong multiplicativity (Def. 1.11, which needs the symmetrised product
+* Thm. 3.7, the construction: the quotient `U = T / J` of an algebra by the two-sided ideal
+  `J = (fg − gf − π(f, g))` (`IntegrationQuotient`). In `U` the commutator of two images is
+  the image of their bracket (`integrationMk_commutator`). For the commutator bracket
+  `J = 0`, so `U` is the algebra itself (`commutatorIntegrationEquiv`).
+
+Not formalised here: that `U` is the distribution algebra of a formal group (the content of
+Thm. 3.7), strong multiplicativity (Def. 1.11, which needs the symmetrised product
 `· : T ⊗ T → T` through `S X`), the PBW theorem 1.9 and the main Theorem 3.7.
 -/
 
@@ -178,5 +185,51 @@ def commutatorSplayPoisson : SplayPoisson R A where
     rw [← map_mul, ← map_mul, mul_comm, sub_self]
 
 end Splay
+
+/-! ### Thm. 3.7: the quotient `U = T / J` -/
+
+section Integration
+
+variable {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
+
+/-- The relation `fg ~ gf + π(f, g)`. The two-sided ideal it generates is the ideal
+`J = (fg − gf − π(f, g) | f, g)` of Thm. 3.7 of arXiv:math/0602138. -/
+inductive IntegrationRel (π : PoissonStructure R A) : A → A → Prop
+  | of (f g : A) : IntegrationRel π (f * g) (g * f + π.bracket f g)
+
+/-- Thm. 3.7 of arXiv:math/0602138, the construction: `U := T / J`. The theorem says that,
+when `T` is the splay of the `Dist(Hᵢ)` of a commutative geometric formal group and `π` is
+strongly filtered and strongly multiplicative, `U` is the distribution algebra of a formal
+group. That identification is not formalised here. -/
+abbrev IntegrationQuotient (π : PoissonStructure R A) : Type _ := RingQuot (IntegrationRel π)
+
+/-- The quotient map `T → U`. -/
+def integrationMk (π : PoissonStructure R A) : A →ₐ[R] IntegrationQuotient π :=
+  RingQuot.mkAlgHom R (IntegrationRel π)
+
+/-- In `U = T / J` the commutator of two images is the image of their bracket: `π` becomes
+the commutator bracket of `U`. -/
+theorem integrationMk_commutator (π : PoissonStructure R A) (f g : A) :
+    integrationMk π f * integrationMk π g - integrationMk π g * integrationMk π f =
+      integrationMk π (π.bracket f g) := by
+  have h := RingQuot.mkAlgHom_rel R (IntegrationRel.of (π := π) f g)
+  simp only [map_mul, map_add] at h
+  rw [integrationMk, h, add_sub_cancel_left]
+
+variable (R A)
+
+/-- For the commutator bracket of Example 1.2 the ideal `J` is zero, so `U = T / J` is the
+algebra itself. -/
+noncomputable def commutatorIntegrationEquiv :
+    IntegrationQuotient (commutatorPoisson R A) ≃ₐ[R] A :=
+  AlgEquiv.ofAlgHom
+    (RingQuot.liftAlgHom R ⟨AlgHom.id R A, by
+      rintro _ _ ⟨f, g⟩
+      simp [commutatorPoisson]⟩)
+    (integrationMk _)
+    (by ext x; simp [integrationMk])
+    (by apply RingQuot.ringQuot_ext'; ext x; simp [integrationMk])
+
+end Integration
 
 end QOU.FormalGroups
