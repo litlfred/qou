@@ -386,4 +386,206 @@ theorem value_r2anti (R₀ : Code E) (a b c d e₁ f₁ : E) (s : Bool)
 
 end R2
 
+/-! ### The first Reidemeister move -/
+
+section R1
+
+variable {E : Type u} [Fintype E] [DecidableEq E] (M : Model R ι)
+
+omit [Fintype E] [DecidableEq ι] in
+/-- A sum over the label of one internal edge is a sum over `ι`. -/
+theorem sum_glue_single (e : E) (b : ι) (v : { x // x ∉ ({e} : Finset E) } → ι)
+    (G : (E → ι) → R) :
+    ∑ u, G (glue {e} u v) = ∑ i, G (Function.update (glue {e} (fun _ => b) v) e i) := by
+  let φ : ({ x // x ∈ ({e} : Finset E) } → ι) ≃ ι :=
+    { toFun := fun u => u ⟨e, by simp⟩
+      invFun := fun i _ => i
+      left_inv := by
+        intro u; funext ⟨x, hx⟩
+        simp only [Finset.mem_singleton] at hx
+        subst hx; rfl
+      right_inv := fun _ => rfl }
+  rw [← φ.symm.sum_comp]
+  refine Finset.sum_congr rfl fun i _ => congrArg G ?_
+  funext x
+  simp only [glue, Equiv.piEquivPiSubtypeProd_symm_apply, φ, Equiv.coe_fn_symm_mk,
+    Function.update_apply, Finset.mem_singleton]
+  by_cases hx : x = e
+  · subst hx; simp
+  · simp [hx]
+
+/-- The weight of a kink with incoming label `x`, outgoing label `y`, and label `i` on the loop. -/
+def kinkW (u s : Bool) (x y i : ι) : R :=
+  if u then M.X s x i i y else M.X s i y x i
+
+omit [Fintype ι] [DecidableEq ι] [Fintype E] [DecidableEq E] in
+theorem occurs_ofXs_kink (a b ℓ e : E) (u s : Bool) :
+    (Code.ofXs {kink a b ℓ u s}).Occurs e ↔ (a = e ∨ b = e) ∨ ℓ = e := by
+  cases u <;> simp [Code.Occurs, Code.ofXs, kink, Crossing.Mentions] <;> tauto
+
+omit [Fintype ι] [DecidableEq ι] [Fintype E] [DecidableEq E] in
+theorem occurs_ofJs_single (a b e : E) :
+    (Code.ofJs {(a, b)}).Occurs e ↔ a = e ∨ b = e := by
+  simp [Code.Occurs, Code.ofJs]
+
+/-- **First Reidemeister move, up to a factor.** If closing a strand through a kink of type
+`(u, s)` multiplies the identity by `κ`, then adding the kink multiplies the value by `κ`. -/
+theorem value_r1 (R₀ : Code E) (a b ℓ : E) (u s : Bool) (κ : R)
+    (hℓ : ¬ R₀.Occurs ℓ) (ha : ℓ ≠ a) (hb : ℓ ≠ b)
+    (hK : ∀ x y : ι, ∑ i, kinkW M u s x y i = κ * if x = y then 1 else 0) :
+    value M (R₀ + Code.ofXs {kink a b ℓ u s}) = κ * value M (R₀ + Code.ofJs {(a, b)}) := by
+  classical
+  refine value_local_smul M R₀ _ _ {ℓ} κ ?_ ?_ ?_
+  · intro e he
+    simp only [Finset.mem_singleton] at he
+    subst he; exact hℓ
+  · intro e he
+    simp only [Finset.mem_singleton] at he
+    rw [occurs_ofJs_single, occurs_ofXs_kink]
+    have : ℓ ≠ e := Ne.symm he
+    tauto
+  · intro v
+    rw [sum_glue_single ℓ M.base, sum_glue_single ℓ M.base]
+    set L₀ := glue {ℓ} (fun _ => M.base) v
+    have hupd : ∀ i, Function.update L₀ ℓ i ℓ = i ∧
+        ∀ x, x ≠ ℓ → Function.update L₀ ℓ i x = L₀ x :=
+      fun i => ⟨by simp, fun x h => by simp [h]⟩
+    have hrhs : ∀ i, loc M {ℓ} (Code.ofJs {(a, b)}) (Function.update L₀ ℓ i) =
+        if i = M.base then (if L₀ a = L₀ b then 1 else 0) else 0 := by
+      intro i
+      have hn : ¬ (Code.ofJs {(a, b)} : Code E).Occurs ℓ := by
+        rw [occurs_ofJs_single]; tauto
+      obtain ⟨h1, hx⟩ := hupd i
+      simp only [loc, Finset.prod_singleton, uf, if_neg hn, h1]
+      simp only [xw, jw, Code.ofJs, Multiset.map_zero, Multiset.prod_zero, one_mul,
+        Multiset.map_singleton, Multiset.prod_singleton, hx a (Ne.symm ha), hx b (Ne.symm hb)]
+      by_cases hi : i = M.base <;> simp [hi]
+    have hlhs : ∀ i, loc M {ℓ} (Code.ofXs {kink a b ℓ u s}) (Function.update L₀ ℓ i) =
+        kinkW M u s (L₀ a) (L₀ b) i := by
+      intro i
+      have ho : (Code.ofXs {kink a b ℓ u s} : Code E).Occurs ℓ := by
+        rw [occurs_ofXs_kink]; tauto
+      obtain ⟨h1, hx⟩ := hupd i
+      simp only [loc, Finset.prod_singleton, uf, if_pos ho, mul_one]
+      cases u <;>
+        simp [xw, jw, Code.ofXs, kink, kinkW, hx a (Ne.symm ha), hx b (Ne.symm hb)]
+    simp only [hlhs, hrhs]
+    rw [hK, Fintype.sum_eq_single M.base fun x hx => by simp [hx]]
+    simp
+
+end R1
+
+/-! ### The third Reidemeister move -/
+
+section R3
+
+variable {E : Type u} [Fintype E] [DecidableEq E] (M : Model R ι)
+
+omit [Fintype E] [DecidableEq ι] in
+/-- A sum over the labels of three internal edges is a triple sum over `ι`. -/
+theorem sum_glue_triple (e f g : E) (hef : e ≠ f) (heg : e ≠ g) (hfg : f ≠ g) (b : ι)
+    (v : { x // x ∉ ({e, f, g} : Finset E) } → ι) (G : (E → ι) → R) :
+    ∑ u, G (glue {e, f, g} u v) =
+      ∑ i, ∑ j, ∑ k, G (Function.update (Function.update (Function.update
+        (glue {e, f, g} (fun _ => b) v) e i) f j) g k) := by
+  let φ : ({ x // x ∈ ({e, f, g} : Finset E) } → ι) ≃ ι × ι × ι :=
+    { toFun := fun u => (u ⟨e, by simp⟩, u ⟨f, by simp⟩, u ⟨g, by simp⟩)
+      invFun := fun p x => if x.1 = e then p.1 else if x.1 = f then p.2.1 else p.2.2
+      left_inv := by
+        intro u; funext ⟨x, hx⟩
+        simp only [Finset.mem_insert, Finset.mem_singleton] at hx
+        rcases hx with rfl | rfl | rfl
+        · simp
+        · simp [Ne.symm hef]
+        · simp [Ne.symm heg, Ne.symm hfg]
+      right_inv := by intro p; simp [Ne.symm hef, Ne.symm heg, Ne.symm hfg] }
+  rw [← φ.symm.sum_comp, Fintype.sum_prod_type]
+  refine Finset.sum_congr rfl fun i _ => ?_
+  rw [Fintype.sum_prod_type]
+  refine Finset.sum_congr rfl fun j _ => Finset.sum_congr rfl fun k _ => congrArg G ?_
+  funext x
+  simp only [glue, Equiv.piEquivPiSubtypeProd_symm_apply, φ, Equiv.coe_fn_symm_mk,
+    Function.update_apply, Finset.mem_insert, Finset.mem_singleton]
+  by_cases hxg : x = g
+  · subst hxg; simp [Ne.symm heg, Ne.symm hfg]
+  · by_cases hxf : x = f
+    · subst hxf; simp [Ne.symm hef, hfg]
+    · by_cases hxe : x = e
+      · subst hxe; simp [hef, heg]
+      · simp [hxe, hxf, hxg]
+
+omit [Fintype ι] [DecidableEq ι] [Fintype E] [DecidableEq E] in
+theorem occurs_ofXs_triL (a₀ a₁ a₂ b₀ b₁ b₂ c₀ c₁ c₂ e : E) :
+    (Code.ofXs (triL a₀ a₁ a₂ b₀ b₁ b₂ c₀ c₁ c₂)).Occurs e ↔
+      a₀ = e ∨ a₁ = e ∨ a₂ = e ∨ b₀ = e ∨ b₁ = e ∨ b₂ = e ∨ c₀ = e ∨ c₁ = e ∨ c₂ = e := by
+  simp only [Code.Occurs, Code.ofXs, triL, Crossing.Mentions]
+  simp
+  tauto
+
+omit [Fintype ι] [DecidableEq ι] [Fintype E] [DecidableEq E] in
+theorem occurs_ofXs_triR (a₀ a₁ a₂ b₀ b₁ b₂ c₀ c₁ c₂ e : E) :
+    (Code.ofXs (triR a₀ a₁ a₂ b₀ b₁ b₂ c₀ c₁ c₂)).Occurs e ↔
+      a₀ = e ∨ a₁ = e ∨ a₂ = e ∨ b₀ = e ∨ b₁ = e ∨ b₂ = e ∨ c₀ = e ∨ c₁ = e ∨ c₂ = e := by
+  simp only [Code.Occurs, Code.ofXs, triR, Crossing.Mentions]
+  simp
+  tauto
+
+/-- **Third Reidemeister move.** If the positive crossing tensor satisfies the Yang–Baxter
+identity `hYB`, in which `i, j, k` are the labels of the internal edges `a₁, b₁, c₁`, the value is
+unchanged by `r3`. -/
+theorem value_r3 (R₀ : Code E) (a₀ a₁ a₂ b₀ b₁ b₂ c₀ c₁ c₂ : E)
+    (hint : ∀ x ∈ ({a₁, b₁, c₁} : Set E), ¬ R₀.Occurs x)
+    (hab : a₁ ≠ b₁) (hac : a₁ ≠ c₁) (hbc : b₁ ≠ c₁)
+    (hbd : ∀ x ∈ ({a₀, a₂, b₀, b₂, c₀, c₂} : Set E), x ≠ a₁ ∧ x ≠ b₁ ∧ x ≠ c₁)
+    (hYB : ∀ a₀ a₂ b₀ b₂ c₀ c₂ : ι,
+      ∑ i, ∑ j, ∑ k, M.X true b₀ j a₀ i * M.X true c₀ k i a₂ * M.X true k c₂ j b₂ =
+      ∑ i, ∑ j, ∑ k, M.X true c₀ k b₀ j * M.X true k c₂ a₀ i * M.X true j b₂ i a₂) :
+    value M (R₀ + Code.ofXs (triL a₀ a₁ a₂ b₀ b₁ b₂ c₀ c₁ c₂)) =
+      value M (R₀ + Code.ofXs (triR a₀ a₁ a₂ b₀ b₁ b₂ c₀ c₁ c₂)) := by
+  classical
+  obtain ⟨ha0a, ha0b, ha0c⟩ := hbd a₀ (by simp)
+  obtain ⟨ha2a, ha2b, ha2c⟩ := hbd a₂ (by simp)
+  obtain ⟨hb0a, hb0b, hb0c⟩ := hbd b₀ (by simp)
+  obtain ⟨hb2a, hb2b, hb2c⟩ := hbd b₂ (by simp)
+  obtain ⟨hc0a, hc0b, hc0c⟩ := hbd c₀ (by simp)
+  obtain ⟨hc2a, hc2b, hc2c⟩ := hbd c₂ (by simp)
+  refine value_local M R₀ _ _ {a₁, b₁, c₁} ?_ ?_ ?_
+  · intro e heT
+    exact hint e (by simpa using heT)
+  · intro e _
+    rw [occurs_ofXs_triL, occurs_ofXs_triR]
+  · intro v
+    rw [sum_glue_triple a₁ b₁ c₁ hab hac hbc M.base, sum_glue_triple a₁ b₁ c₁ hab hac hbc M.base]
+    set L₀ := glue {a₁, b₁, c₁} (fun _ => M.base) v
+    have hT : ∀ (S : Code E), S.Occurs a₁ → S.Occurs b₁ → S.Occurs c₁ → ∀ L,
+        loc M {a₁, b₁, c₁} S L = xw M S.xs L * jw S.js L := by
+      intro S h1 h2 h3 L
+      simp only [loc]
+      rw [Finset.prod_eq_one]
+      · ring
+      · intro e he
+        simp only [Finset.mem_insert, Finset.mem_singleton] at he
+        rcases he with rfl | rfl | rfl <;> simp [uf, *]
+    rw [Finset.sum_congr rfl fun i _ => Finset.sum_congr rfl fun j _ =>
+        Finset.sum_congr rfl fun k _ => hT _ (by rw [occurs_ofXs_triL]; tauto)
+          (by rw [occurs_ofXs_triL]; tauto) (by rw [occurs_ofXs_triL]; tauto) _,
+      Finset.sum_congr rfl fun i _ => Finset.sum_congr rfl fun j _ =>
+        Finset.sum_congr rfl fun k _ => hT _ (by rw [occurs_ofXs_triR]; tauto)
+          (by rw [occurs_ofXs_triR]; tauto) (by rw [occurs_ofXs_triR]; tauto) _]
+    have hx : ∀ i j k x, x ≠ a₁ → x ≠ b₁ → x ≠ c₁ → Function.update (Function.update
+        (Function.update L₀ a₁ i) b₁ j) c₁ k x = L₀ x :=
+      fun i j k x h1 h2 h3 => by simp [h1, h2, h3]
+    have hia : ∀ i j k, Function.update (Function.update (Function.update L₀ a₁ i) b₁ j) c₁ k a₁
+        = i := fun i j k => by simp [hab, hac]
+    have hib : ∀ i j k, Function.update (Function.update (Function.update L₀ a₁ i) b₁ j) c₁ k b₁
+        = j := fun i j k => by simp [hbc]
+    simp only [xw, jw, Code.ofXs, triL, triR, Multiset.map_zero, Multiset.prod_zero, mul_one,
+      Multiset.insert_eq_cons, Multiset.map_cons, Multiset.map_singleton, Multiset.prod_cons,
+      Multiset.prod_singleton, hx _ _ _ a₀ ha0a ha0b ha0c, hx _ _ _ a₂ ha2a ha2b ha2c,
+      hx _ _ _ b₀ hb0a hb0b hb0c, hx _ _ _ b₂ hb2a hb2b hb2c, hx _ _ _ c₀ hc0a hc0b hc0c,
+      hx _ _ _ c₂ hc2a hc2b hc2c, Function.update_self, hia, hib]
+    convert hYB (L₀ a₀) (L₀ a₂) (L₀ b₀) (L₀ b₂) (L₀ c₀) (L₀ c₂) using 4 <;> ring
+
+end R3
+
 end QOU.MathlibExt.PL.Diagram

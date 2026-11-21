@@ -166,7 +166,9 @@ inductive Move : Bundled.{u} → Bundled.{u} → Prop
       (hbd : ∀ x ∈ ({a, b, c, d} : Set E), x ≠ e₁ ∧ x ≠ f₁) :
       Move ⟨E, R + Code.ofJs {(a, b), (c, d)}⟩ ⟨E, R + Code.ofXs (bigonAnti a b c d e₁ f₁ s)⟩
   | r3 {E : Type u} [Fintype E] [DecidableEq E] (R : Code E) (a₀ a₁ a₂ b₀ b₁ b₂ c₀ c₁ c₂ : E)
-      (hint : ∀ x ∈ ({a₁, b₁, c₁} : Set E), ¬ R.Occurs x) :
+      (hint : ∀ x ∈ ({a₁, b₁, c₁} : Set E), ¬ R.Occurs x)
+      (hab : a₁ ≠ b₁) (hac : a₁ ≠ c₁) (hbc : b₁ ≠ c₁)
+      (hbd : ∀ x ∈ ({a₀, a₂, b₀, b₂, c₀, c₂} : Set E), x ≠ a₁ ∧ x ≠ b₁ ∧ x ≠ c₁) :
       Move ⟨E, R + Code.ofXs (triL a₀ a₁ a₂ b₀ b₁ b₂ c₀ c₁ c₂)⟩
         ⟨E, R + Code.ofXs (triR a₀ a₁ a₂ b₀ b₁ b₂ c₀ c₁ c₂)⟩
 
