@@ -12,7 +12,7 @@
       "arxiv-2208.13692v1"
     ]
   },
-  "type": "article",
+  "type": "article-journal",
   "title": "Bring's curve: old and new",
   "author": [
     {
@@ -24,14 +24,17 @@
       "given": "Linden"
     }
   ],
-  "container-title": "arXiv preprint (European Journal of Mathematics, 2023)",
+  "container-title": "European Journal of Mathematics",
   "issued": {
     "date-parts": [
       [
-        2022
+        2024
       ]
     ]
   },
   "URL": "https://arxiv.org/abs/2208.13692",
-  "note": "arXiv:2208.13692. Computes the genus-4 Bring period matrix, identifies a new elliptic quotient = the modular curve X₀(50), and gives the S₅-invariant theta-characteristic (divisor of the Szegő kernel). Source of the published j(τ₀) = −5·29³/2⁵ used in docs/coordination/alpha-em.md and QOU/Archimedean/BringEllipticFactor.lean. Registered 2026-07-18 to close the dangling -- Ref: [braden-disney-hogg-2022] in that Lean file (the key was previously unregistered); journal DOI omitted pending verification — arXiv URL is authoritative."
+  "note": "arXiv:2208.13692. Computes the genus-4 Bring period matrix, identifies a new elliptic quotient = the modular curve X₀(50), and gives the S₅-invariant theta-characteristic (divisor of the Szegő kernel). Source of the published j(τ₀) = −5·29³/2⁵ used in docs/coordination/alpha-em.md and QOU/Archimedean/BringEllipticFactor.lean. Registered 2026-07-18 to close the dangling -- Ref: [braden-disney-hogg-2022] in that Lean file (the key was previously unregistered); journal DOI verified 2026-11-21 from the held published copy (library/s40879-023-00706-0: Eur. J. Math. (2024) 10:3, accepted 16 Oct 2023), bean qou-kg76; the arXiv URL is kept as the preprint.",
+  "volume": "10",
+  "page": "3",
+  "DOI": "10.1007/s40879-023-00706-0"
 }

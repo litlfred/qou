@@ -48,6 +48,10 @@ spacetime are two computations of the same hyperbolic invariant.
   bar-symmetry corresponds to the parity-reversal of the squashed
   3-sphere $S^3_b \to S^3_{1/b}$.
 
+## Which theory the DGG construction produces (literature)
+
+The construction cited in Open Question 1 does not by itself produce the theory the dictionary above assumes. For a knot complement $N$ the theory $T^{DGG}[N]$ built from an ideal triangulation has as its vacua only a subset of the irreducible flat $SL(2,\mathbb{C})$ connections on $N$, because a triangulation captures only part of the character variety; it therefore describes a subsector of the six-dimensional theory $T^{6d}[N]$, not all of it, and generically carries only a $U(1)$ flavour symmetry where $T^{6d}$ carries $su(2)$ \cite[\S2.3]{arxiv-1803.04009v2}. The same source gives a topological criterion for when that $U(1)$ enhances to $SU(2)$ or $SO(3)$ \cite[\S3]{arxiv-1803.04009v2}, and identifies the field-theoretic operation that corresponds to Dehn filling, which builds theories for closed $3$-manifolds \cite[\S4.1]{arxiv-1803.04009v2}. All three statements are made for a $3$-manifold with a single torus boundary. The Borromean complement $\mathbf{S}^3 \setminus \mathcal{B}_3$ has three cusps, so whether the criterion or the filling operation transfers to it has not been checked, and the equality of partition functions stated at the top of this block should be read as holding at most for the subsector that $T^{DGG}$ realises.
+
 ## Open questions
 
 1. Identify the 3d $\mathcal{N}{=}2$ theory $T[\mathcal{B}_3]$

@@ -41,10 +41,13 @@ the audit is about a `q`-independent operator and does not apply.
 
 ## What is NOT proved here
 
-* **Centrality** is proved for the same element on the other Hecke presentation
-  (`QOU.SchurWeyl.contentCasimir_comm_σ`).  It is not re-proved on `HeckeGeneratorsBelow`.
-* **That every `V_λ` has a JM weight basis with eigenvalues `q^{2c}`** is the seminormal form
-  ([ram1997] Thm 4.1); here it is a hypothesis, as in `ContentCasimir`.
+* **Centrality** and **the eigenvalue on every block without a weight-vector hypothesis** are not
+  proved in this file.  Both are proved in `HeckePresentationBridge`, which maps the universal
+  `QOU.SchurWeyl.Hecke` onto any `HeckeGeneratorsBelow` family and sends `contentCasimir` to
+  `reebLaplacianB` (`toHeckeHom_contentCasimir`).  Centrality is `reebLaplacianB_comm_σ`; the
+  eigenvalue on every seminormal block and Wedderburn factor (Ram 4.1, already proved for every
+  shape) is `seminormalRep_reebLaplacianB` / `heckeWedderburn_reebLaplacianB`.  The theorem
+  `reebLaplacianB_smul_of_weight` below still takes the weight vector as a hypothesis.
 * **The geometric reading**: that `Δ²_k` is the holonomy of the Reeb (rotation) loop of the cluster
   of the first `k + 1` points.  That needs Bridge A: the `n`-body base with `ξ` the Euler field (P1
   of `a2-lagrangian-kz.md`) and Drinfeld–Kohno.  This file is the algebra that reading would use.

@@ -12,7 +12,7 @@ export default conjecture({
     "rem:kashaev-as-archimedean-realization",
     "def:quantum-bloch-group",
   ],
-  cites: ["kashaev1997", "murakami-murakami2001", "zagier1986", "neumann-zagier1985"],
+  cites: ["kashaev1997", "murakami-murakami2001", "zagier1986", "neumann-zagier1985", "arxiv-hep-th-0306165v1", "baseilhac2026"],
   tags: [
     "tier:famous",
     "kashaev",
