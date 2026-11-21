@@ -212,6 +212,18 @@ middle crossing, so its size is fixed with no free number. Its effect beyond the
 It is not a hit. It is conditional on `conj:type-b-folding-cpt`, on the boundary sharing the bulk λ,
 and on the choice of mirror reading.
 
+### 10e. Folding breaks the bulk Hecke relation (H9b, 2026-11-21)
+
+Result in `computations/probes/bridge_b/h9b_result.md`.
+
+- A folded bulk generator is a product of two commuting crossings. It satisfies the cubic
+  `(σ̂ − q²)(σ̂ + 1)(σ̂ − q⁻²) = 0`, not the Hecke quadratic. So braid-level folding derives the wall's
+  Hecke relation but leaves `H₃(q)`, where the photon lives. `V³ ≠ γγ` after folding: 0.958360 against
+  0.958055.
+- For a general photon pair, `D = 1` at q = 1 for every φ, and `D` depends on φ at q₀.
+- The Hecke-level reading (type B with equal parameters: the H5 wall with eigenvalues `{q, −q⁻¹}`, H8
+  N1, `D(q₀) = 0.939957`) keeps the bulk Hecke.
+
 ## 11. What remains open
 
 - A symmetry-breaking object (a vacuum or boundary choice in the Higgs role) that distinguishes u from d inside the
