@@ -96,6 +96,15 @@ def main() -> int:
         "P3_B_at_q2_is_0.2075": bool(p3), "B_at_q2": mp.nstr(q2_bpred, 20),
     }
     out["allPassed"] = bool(p1 and p2 and p3)
+    # q0 stamp (q0 anchor ratchet). The identity is q-generic (Lean:
+    # c1_linear_coeff_of_nonneg_init holds for every q > 1); the four q are
+    # sample points. "probe_q" is a typed 29-digit truncation of the proton
+    # pin, used as a sample point and not read from the substrate, so no
+    # canonical q0Value applies.
+    out["q0Anchor"] = "independent"
+    out["q0AnchorReason"] = ("q-generic identity checked at four sample q "
+                             "(6/5, a 29-digit truncation of the proton pin, "
+                             "3/2, 2); the substrate pin q0 is never read")
     print(json.dumps(out["checks"], indent=1))
     path = pathlib.Path(__file__).with_name("c1-gevrey-linear-coeff.witness.json")
     path.write_text(json.dumps(out, indent=1) + "\n")

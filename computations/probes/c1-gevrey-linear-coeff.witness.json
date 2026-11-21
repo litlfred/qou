@@ -311,5 +311,7 @@
   "P3_B_at_q2_is_0.2075": true,
   "B_at_q2": "0.20751874963942190927"
  },
- "allPassed": false
+ "allPassed": false,
+ "q0Anchor": "independent",
+ "q0AnchorReason": "q-generic identity checked at four sample q (6/5, a 29-digit truncation of the proton pin, 3/2, 2); the substrate pin q0 is never read"
 }
