@@ -503,3 +503,43 @@ a constructed Ocneanu trace on the Hecke tower, and the corpus has none of these
   keeping the one that passes would be selection against the target.
 
 Probe: `computations/qbeta/qbeta_splitting_first_order_linking_probe.py`.
+
+## 17. The selection rule over all `k`, and how much of the scored `Q_β` it determines (owner "Ok", 2026-11-21)
+
+**Option 1: the rule over all vertex counts.** PR #8747 merged
+`QOU/Mass/GammaGammaSelectionAllK.lean`, sorry-free. On `1 < q ≤ 23/20`, reading 3 selects
+`β_Bor = V³` among **every** non-empty γγ word inside `H₃`, and it is the only selected word. The
+proof needs only three facts: `V¹` and `V²` are infeasible, `V³` is feasible, and `V^k` costs
+`2k` crossings. The question the step-7 file left open, whether "`V^k` is feasible ⇔ `3 ∣ k`"
+holds for all `k`, is **false at `q₀`**. Measured in
+`computations/qbeta/qbeta_gg_all_k_pattern_probe.py` (mpmath, 60 digits): `χ_k = 2 cos kθ` with
+`θ = 2π/3 + 0.025423`. The first violation is `k = 23`, which is `≡ 2 mod 3` and feasible. The
+first infeasible multiple of 3 is `k = 63`. The selection is unaffected.
+
+**Option 3: derive the D1 = A weight split from the rule.** It cannot be derived from the rule,
+and this section measures why. The plain traces on the two T³ weight spaces are equal for every
+word, so the scored functional is `ε_flavour(X) = −h·tr_W(X)/[2]³`. The selected word enters
+only through `tr_W(X)`, and for `V³` (`FlavourSplitWordShare.lean`, sorry-free over a generic
+field)
+
+$$
+  \mathrm{tr}_W(V^3) = -P(q)/q^6 = 3 - h^4\,[3]_q .
+$$
+
+| part | Q_β at the proton pin, tower E₀ |
+|---|---|
+| word-free: `3h/[2]³·E₀` | 0.326066 MeV |
+| word correction: `−h⁵[3]/[2]³·E₀` | −0.000632 MeV (−0.194 % of the value) |
+| scored D1 = A | 0.325434 MeV (−58.40 % vs CODATA) |
+
+So **99.8 % of the scored value is fixed before any word is selected**. It comes from three
+things:
+- the T³ sector split (p ↔ T³ = +½);
+- the `K`-weight, which gives the factor `q − q⁻¹ = h`;
+- the `[2]³` normalisation and `E₀`.
+
+The selection rule fixes only the fourth-order correction `−h⁴[3]` to the trace. The leading 3 is
+the dimension of the weight space, the trace of the identity permutation, and it is the same for
+any word whose permutation is trivial. Deriving D1 = A therefore means deriving the sector split,
+the `K`-weighting and `E₀`, not the word. None of those is on the derivation chain of §13–§14.
+Probe: `computations/qbeta/qbeta_d1a_word_share_probe.py` (1/1 exact check).
