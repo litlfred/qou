@@ -43,8 +43,8 @@ exist and never did; the ref resolves to this sibling.
 
 The block makes four claims. Two are stated here, in caller-parameter form.
 
-**1. The Cartan-datum fold.** The `𝔰𝔩ₙ` simple roots `α₁, …, α_{n-1}` (the `A_{n-1}`
-diagram) are folded by the involution `ι : αᵢ ↔ α_{n-i}` — the diagram reversal. `fold` is
+**1. The diagram fold.** The simple reflections `s₁, …, s_{n-1}` of `Sₙ` (the `A_{n-1}`
+diagram) are folded by the involution `ι : sᵢ ↔ s_{n-i}` — the diagram reversal. `fold` is
 the caller's label map and `fold_reverses` pins it to the block's own `i ↦ n - i` on the
 label range.
 
@@ -85,8 +85,9 @@ Four consequences follow from the fields and are proved, not assumed:
   labels for odd `n`. This is the label-level shadow of the block's matter/antimatter split.
 * `typeBFold_orbit_complete_invariant` + `typeBFold_orbit_representative_range` — the
   `ι`-orbits on the `n-1` simple roots are classified by `min i (n - i) ∈ [1, n/2]`. That
-  orbit count **is** the rank of the folded datum, so this is the arithmetic behind the
-  block's own `B_{n/2}`, discharged rather than restated.
+  orbit count **is** the rank of the folded Coxeter group, so this is the arithmetic behind
+  the block's own `B_{⌊n/2⌋}` (`n / 2` in `ℕ` is already the floor), discharged rather than
+  restated.
 * `typeBFold_no_global_chirality_grading` — **the interesting one.** If any stable matter
   exists, the folded crystal admits no globally `foldAct`-odd chirality grading. This is
   the corpus's own proved obstruction, re-derived from this carrier's fields: compare
@@ -113,7 +114,7 @@ the duplicate-carrier failure the D11 library-twin check exists to prevent — s
 named and left where it lives.
 
 **4. The `CPT = C ⊗ P ⊗ T` tensor decomposition.** The block gives it as three rows (C from
-colour-sheet flavour conjugation, P from Type-B Cartan folding, T from Markov-trace
+colour-sheet flavour conjugation, P from Type-B Coxeter folding, T from Markov-trace
 cyclicity). Stating it needs `C`, `P` and `T` as maps on one common type, whose carriers
 are three separate blocks. #6728 left the identical composition unstated for
 `conj:p-from-braid-mirror` and named the same missing object; **what must grow first is a
@@ -124,14 +125,19 @@ composite identity can be written at all.
 bar-involution sends `σᵢ ↦ σᵢ⁻¹` **and** `q ↦ q⁻¹` and is `P·C·T` composed, while `P`
 alone is `σᵢ^ε ↦ σᵢ^{-ε}` with `q` held **fixed**. Nothing here restates bar. D22's claim
 is narrower and orthogonal: that in the folded realisation the *role of* `P` is played by
-the Cartan-fold `ℤ/2` rather than by explicit braid-mirror manipulation. Stating that
+the Coxeter-fold `ℤ/2` rather than by explicit braid-mirror manipulation. Stating that
 identification needs `P` and `foldAct` on one type — the same missing object as above — so
 it too is named and left.
 
-**Also not encoded: that the folded datum is of type `B` specifically.** The corpus has no
-Cartan-datum or root-system type; `Machinery/KashiwaraCrystalBasic.lean` carries
+**Also not encoded: that the folded Coxeter group is of type `B` specifically.** Since
+2026-11-21 the block states the fold at the level of Coxeter groups and Hecke algebras for
+every `n`, and makes no claim about Cartan data: for odd `n` the fold of the `𝔰𝔩ₙ` Cartan
+datum would put the adjacent roots `α_m`, `α_{m+1}` in one orbit. The crystal fields below
+only ask that `foldAct` intertwine `fᵢ` with `f_{ι(i)}`, a condition stated on labels that
+does not use any Cartan-datum fold. The corpus has no Coxeter-group or root-system type;
+`Machinery/KashiwaraCrystalBasic.lean` carries
 `CrystalGraph`, `TypeACrystal` and `DemazureSubcrystal`, but nothing that could distinguish
-`B_{n/2}` from `C_{n/2}` or from a bare folded datum of rank `n/2`. What is stated is the
+`B_{⌊n/2⌋}` from another rank-`⌊n/2⌋` group, or record the generator weights 1, 2, 3. What is stated is the
 `ℤ/2` and its orbit count (the *rank*); the type label would be invention. Per `qou-tsnp`'s
 guard, that is named rather than faked: **a root-system / Cartan-matrix type must grow
 first.**
@@ -171,18 +177,17 @@ theorem typeBFold_orbit_representative_range {n i : ℕ} (hi : 1 ≤ i) (hi' : i
 representative exactly when they are equal or swapped by the reversal.
 
 With `typeBFold_orbit_representative_range`, this says the `ι`-orbits on the `n-1` simple
-roots of `A_{n-1}` are indexed by `[1, n/2]` — i.e. the folded datum has rank `n/2`, which
-is the arithmetic content of the block's `B_{n/2}`. -/
+roots of `A_{n-1}` are indexed by `[1, n/2]` — i.e. the folded Coxeter group has rank `n/2` (the floor, in `ℕ`),
+which is the arithmetic content of the block's `B_{⌊n/2⌋}`. -/
 theorem typeBFold_orbit_complete_invariant {n i j : ℕ}
     (hi : 1 ≤ i) (hi' : i ≤ n - 1) (hj : 1 ≤ j) (hj' : j ≤ n - 1) :
     min i (n - i) = min j (n - j) ↔ (j = i ∨ j = n - i) := by omega
 
 /-! ### The carrier -/
 
-/-- **CONJECTURE (D22).** Type-B Cartan folding realises CPT via symmetric-crystal `ℤ/2`
-fixed points.
+/-- **CONJECTURE (D22).** Type-B Coxeter folding realises CPT via `ℤ/2` fixed points.
 
-The `𝔰𝔩ₙ` Cartan datum folds under `ι : αᵢ ↔ α_{n-i}`; the induced `ℤ/2` on the folded
+The diagram of `Sₙ` folds under `ι : sᵢ ↔ s_{n-i}`; the induced `ℤ/2` on the folded
 Kashiwara crystal splits its vertices into stable matter (the fixed points) and antimatter
 (the orbit complement).
 
@@ -194,7 +199,7 @@ physical leg, which fails independently).
 
 Deliberately **not** stated here: the bar-invariance of GS normal forms (carried by
 `QOU.BraidKnot.SymmetricCrystalPairProduction`), the `CPT = C ⊗ P ⊗ T` decomposition, and
-the identification of the folded datum as type `B` rather than merely rank-`n/2`. See the
+the identification of the folded Coxeter group as type `B` rather than merely rank-`n/2`. See the
 module docstring for what must grow first in each case.
 
 **No instance is provided.** Downstream results consume this as
