@@ -48,7 +48,8 @@ import pyhecke_native as ph
 from mpmath import mp, mpf, mpmathify
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "computations" / "substrate"))
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt as _fmt, set_compute_dps  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 set_compute_dps()
 # The substrate pin is READ, not transcribed. This file previously carried
@@ -186,7 +187,7 @@ def main():
     print()
 
     # --- bar-parity: evaluate the shift at q and at 1/q -------------------
-    Tmu_b, Te_b, _ = projected_traces(mp.nstr(qbar, 40))
+    Tmu_b, Te_b, _ = projected_traces(mp.nstr(qbar, 50))
     delta_b = Tmu_b - Te_b
     print("Bar-parity (q ↦ q⁻¹) of the shift δ:")
     print(f"  δ(q_0)    = {mp.nstr(delta, 14)}")
@@ -203,9 +204,113 @@ def main():
         verdict = "bar-MIXED (neither even nor odd)"
     print(f"  ⇒ {verdict}")
     print()
+
+    res_32 = abs(d["chi_32"] - d["bran_check_32"])
+    res_311 = abs(d["chi_311"] - d["bran_check_311"])
+    ratio_mu = abs(rel_mu) / target
+    payload = {
+        "description": (
+            "s5-so3 keystone q-deformed closure: the E_lambda-projected H_5 "
+            "Markov-trace shift between the muon home-block (3,2) and electron "
+            "home-block (3,1,1), evaluating the Borromean braid embedded in B_5. "
+            "Under the exact Wenzl bridge (Convention D, level r=2), y_(3,1,1)^H5 "
+            "is EXACTLY ZERO by the two-row cap, so T_electron = 0 and the shift "
+            "delta = T_muon is bar-EVEN to machine precision (bean qou-j3u0)."
+        ),
+        "tool": f"pyhecke_native v{ph.__version__}",
+        "q0": Q0,
+        "dps": DPS,
+        "braid": "(s1^-1 s2)^3  (Borromean, generators 1,2 on 5 strands)",
+        "branching_cross_check": {
+            "chi_3_2_minus_branching_residual": _fmt(res_32),
+            "chi_3_1_1_minus_branching_residual": _fmt(res_311),
+            "note": "validates pyhecke_native 5-strand chi^lambda against the S5->S3 branching to machine zero",
+        },
+        "h3_borromean_characters": {
+            "(3)": _fmt(d["chi3"][(3,)]),
+            "(2,1)": _fmt(d["chi3"][(2, 1)]),
+            "(1,1,1)": _fmt(d["chi3"][(1, 1, 1)]),
+        },
+        "h5_home_block_weights": {
+            "(3,2)": _fmt(d["y_32"]),
+            "(3,1,1)": _fmt(d["y_311"]),
+        },
+        "projected_block_characters": {
+            "chi_(3,2)": _fmt(d["chi_32"]),
+            "chi_(3,1,1)": _fmt(d["chi_311"]),
+        },
+        "projected_traces": {
+            "T_muon_3_2": _fmt(Tmu),
+            "T_electron_3_1_1": _fmt(Te),
+            "delta": _fmt(delta),
+            "delta_over_T_muon": _fmt(rel_mu),
+            "delta_over_T_electron": "UNDEFINED (T_e is exactly 0; y_(3,1,1)^H5 = 0 under two-row cap)",
+        },
+        "magnitude_vs_210ppb": {
+            "delta_over_T_muon_ratio": f"{mp.nstr(ratio_mu, 6)} too large",
+            "delta_over_T_electron_ratio": "UNDEFINED (T_e is 0)",
+            "target_is_fit": False,
+            "note": "210 ppb is a re-pin artifact, not a fit target",
+        },
+        "bar_parity": {
+            "delta_q0": _fmt(delta),
+            "delta_inv_q0": _fmt(delta_b),
+            "sum": _fmt(s),
+            "diff": _fmt(diff),
+            "verdict": verdict,
+        },
+        "verdict": (
+            "Under the exact Wenzl bridge (bean qou-j3u0), y_(3,1,1)^H5 = 0 "
+            "identically by the SU(2) two-row cap, so T_electron = 0, delta = T_muon, "
+            "and the shift is bar-EVEN (|delta(q0) - delta(1/q0)| ~ 0), correcting "
+            "the earlier float64-corrupted 'bar-MIXED' witness record. Magnitude "
+            "remains O(1) (~4.76e6x the 210 ppb re-pin scale)."
+        ),
+        "discipline": "No fit; nothing wired; c_k/Delta_lambda cal-anchored. Bean qou-j3u0.",
+    }
+    wb = WitnessBuilder.wrap_legacy(
+        "keystone-qdeform-projector-shift",
+        payload,
+        script_path=__file__,
+        engine="mpmath",
+        output_dir=_ROOT / "computations",
+    )
+    wb.add_assertion(
+        "branching_crosscheck_3_2_and_3_1_1",
+        computed=_fmt(max(res_32, res_311)),
+        expected="0",
+        tolerance="1e-40",
+        source="S_5 -> S_3 branching identity on Borromean braid",
+    )
+    wb.add_assertion(
+        "three_row_weight_3_1_1_is_exact_zero",
+        computed=_fmt(abs(d["y_311"])),
+        expected="0",
+        tolerance="1e-40",
+        source="SU(2)/N=2 Wenzl two-row cap forces y_(3,1,1)^H5 == 0 (bean qou-j3u0)",
+    )
+    wb.add_assertion(
+        "projected_shift_is_bar_even",
+        computed=_fmt(abs(diff)),
+        expected="0",
+        tolerance="1e-35",
+        source="|delta(q0) - delta(1/q0)| == 0 at working precision (bar-EVEN)",
+    )
+    saved = wb.save({"q0Anchor": "proton", "q0Value": Q0})
+    print(f"  Witness: {saved}")
     print("PROBE COMPLETE")
     return 0
 
 
+def _selftest() -> int:
+    set_compute_dps()
+    y311 = y_lambda_wenzl_bridge_numeric([3, 1, 1], Q0)
+    assert y311 == 0, f"expected y_(3,1,1) == 0, got {y311}"
+    print("self-test: ok (y_(3,1,1)^H5 == 0 verified)")
+    return 0
+
+
 if __name__ == "__main__":
+    if "--self-test" in sys.argv or "--selftest" in sys.argv:
+        raise SystemExit(_selftest())
     raise SystemExit(main())
