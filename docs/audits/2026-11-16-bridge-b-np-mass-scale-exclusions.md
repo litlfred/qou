@@ -202,6 +202,16 @@ wall's effect beyond the pivot is set by `s = x + y` alone. No corpus statement 
 
 No hit.
 
+### 10d. The folded wall (H9, 2026-11-21)
+
+Result in `computations/probes/bridge_b/h9_result.md`. In the six-strand folded model the wall is the
+middle crossing, so its size is fixed with no free number. Its effect beyond the pivot:
+- is 1 at q = 1;
+- at q₀ is `D = 0.958360` (mirror strands summed) or `0.957145` (mirror pinned to the ι-image).
+
+It is not a hit. It is conditional on `conj:type-b-folding-cpt`, on the boundary sharing the bulk λ,
+and on the choice of mirror reading.
+
 ## 11. What remains open
 
 - A symmetry-breaking object (a vacuum or boundary choice in the Higgs role) that distinguishes u from d inside the
