@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-21T12:00:00Z
+updated_at: 2026-11-21T06:46:35Z
 parent: qou-10v9
 ---
 
@@ -8893,3 +8893,10 @@ Pre-registered (`computations/probes/qbeta_yukawa_strand_order/PREREGISTRATION.m
 - **Strengths: NOT derived.** Generation label (all four carry 3), channel qdim (all 1), tr e_H = 1: all slot/type-blind ⇒ split 0, and each would be a NEW rule. Partner-knot Vol·ρ = 0 (unknot, Hopf link, trefoil). Vol(4₁)/ℏ_q² is a μ/e ratio. No CategoricalHiggsIdempotent Yukawa field.
 - Split classes: slot-only ⇒ 0 (both orders); type-only ⇒ −(y_q²−y_ℓ²)(q²−1)/(q²+1) matter-left, + Higgs-left (order-odd); balanced pivotal ⇒ (y_d²−y_e²+y_ν²−y_u²)/[2]. At proton q₀: (q²−1)/(q²+1) = 0.10396371005…, q→1 order t. No Q_β number, no CODATA comparison.
 - OPEN, owner: which (if any) rule fixes the strengths; strand order. Bean stays todo (rule 13a).
+
+## 2026-11-21 — selection over all k; how much of the scored Q_β the word fixes (PRs #8747, #8752 merged; qou-99qc audit §17)
+
+- `GammaGammaSelectionAllK.lean` (sorry-free): reading 3 selects β_Bor = V³ among ALL non-empty γγ words of H₃ on 1 < q ≤ 23/20, and it is the unique selection. Only V¹ and V² infeasible, V³ feasible and cost 2k are used.
+- "V^k feasible ⇔ 3∣k" is FALSE at q₀ (measured at 60 digits): θ = 2π/3 + 0.025423. The first violation is k = 23 (≡ 2 mod 3, feasible); the first infeasible multiple of 3 is k = 63. The selection is unaffected.
+- D1 = A: ε_flavour(X) = −h·tr_W(X)/[2]³, and tr_W(V³) = 3 − h⁴[3] (`FlavourSplitWordShare.lean`, sorry-free). The word fixes −0.194 % of the scored 0.325434 MeV. The other 99.8 % comes from the T³ split, the K-weight, [2]³ and E₀, none of which the selection rule supplies.
+- Still open.

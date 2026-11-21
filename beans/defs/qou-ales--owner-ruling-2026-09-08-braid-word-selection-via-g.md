@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-08T07:40:02Z
-updated_at: 2026-11-20T14:44:09Z
+updated_at: 2026-11-21T06:46:35Z
 parent: qou-v2om
 ---
 
@@ -294,3 +294,10 @@ PR #8564: under γγ words + reading 3 (whole word, every tower level) p and n s
 ### 2026-11-20 ~20:30 — N2 (PR #8636): reading 3 and the nucleon label
 
 The ruled reading 3 has no state argument, so it cannot select different words for n and p. A state-weighted variant (positivity of tr(Π^λ_s ρ(w)) on the nucleon's own weight space) is provably n/p-blind on three strands (`QOU.QuarkState.NucleonStateWeighted.feasible_iff`, scope b). On four strands with a lepton strand (choice C-lep) the characters differ on n⊗ν vs p⊗e, but at q₀ the selected element is the same for both: {V₁V₂ = σ₁σ₃⁻¹, V₂V₁}, 4 crossings, below the H₃ survivor V³. The coincidence holds on (1, q*), q*⁶ = q*² + 1 (q* = 1.150964), and breaks above. Note for this bean: once strand-4 letters are admitted, the minimal γγ survivor is a 4-crossing quark–lepton word, not V³. That changes what "the selected word" is whenever a fourth strand is in scope; owner call whether it is.
+
+## 2026-11-21 — selection over all k; how much of the scored Q_β the word fixes (PRs #8747, #8752 merged; qou-99qc audit §17)
+
+- `GammaGammaSelectionAllK.lean` (sorry-free): reading 3 selects β_Bor = V³ among ALL non-empty γγ words of H₃ on 1 < q ≤ 23/20, and it is the unique selection. Only V¹ and V² infeasible, V³ feasible and cost 2k are used.
+- "V^k feasible ⇔ 3∣k" is FALSE at q₀ (measured at 60 digits): θ = 2π/3 + 0.025423. The first violation is k = 23 (≡ 2 mod 3, feasible); the first infeasible multiple of 3 is k = 63. The selection is unaffected.
+- D1 = A: ε_flavour(X) = −h·tr_W(X)/[2]³, and tr_W(V³) = 3 − h⁴[3] (`FlavourSplitWordShare.lean`, sorry-free). The word fixes −0.194 % of the scored 0.325434 MeV. The other 99.8 % comes from the T³ split, the K-weight, [2]³ and E₀, none of which the selection rule supplies.
+- Still open.
