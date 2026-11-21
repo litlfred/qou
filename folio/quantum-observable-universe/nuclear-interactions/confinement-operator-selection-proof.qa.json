@@ -2021,6 +2021,22 @@
         },
         "reviewed_tree": "a67a1283b2d2ce59712d101df3beff7579f830a6",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "584c15e113e4",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:30:29.000Z",
+        "reviewed_sha": "bc225d97743d9814652a45adf60eb302f3bfddcf",
+        "evidence": "Full re-read at head bc225d977 after the gamma -> 1 label rename (3facd4a91, label only). The earlier verdict stands, unchanged by this PR: (i) 'B_3 provides the crossing-minimal such link' and 'No braid of fewer than six crossings is nontrivially Brunnian' are asserted, neither proved nor cited; (ii) 'Confinement requires ... Equivalently, the braid closure must be a Brunnian link' is a physical premise stated as an equivalence; (iii) empirical comparison inside a proof block: 'far from the physical proton mass' and 'confirmed against the physical data'. Item (iii) also conflicts with the owner ruling 'no empirical values inside formal proofs'.",
+        "severity": "major"
       }
     ],
     "render-math-mode-envelope": [
@@ -2428,5 +2444,5 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T08:13:15.560Z"
+  "updated_at": "2026-11-21T15:30:29.000Z"
 }
