@@ -1,14 +1,14 @@
 ---
 # qou-0seq
 title: Cross-check 1992EvansBerger.pdf at computations/deltalambda/mixed_multibond_mubar_integrality_pro…
-status: todo
+status: completed
 pr: 8347
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:37:06Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T14:56:36Z
 parent: qou-8hur
 ---
 
@@ -33,3 +33,11 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8347, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21T14:56:36Z cross-check result
+
+Probe computations/probes/evans_berger_third_order_winding_probe.py (branch claude/expo-cite-xcheck-wave2-2026-11-21, head 1603657639e). ALL PASS. Topology only; no nuclear data used.
+- Psi_123 on the corpus Borromean word P = (sigma_1 sigma_2^{-1})^3 is +1 to 40 digits. This equals mu-bar_123(Borromean) = 1 from the corpus Magnus machinery and matches the source's +1 for the Borromean rings.
+- The value is unchanged between two half-twist shapes (b = 1, 3), as eq (22) homotopy invariance requires. Psi(P P^{-1}) = 0.
+- Hopf spectator H = sigma_1^2 (lk_12 = 1): Psi(HP) = Psi(PH) = Psi(H) + Psi(P), with Psi(H) = 0. So Psi still reads 1 on this link, where MilnorIndeterminacyGate's gcd(1,0,0) = 1 leaves mu-bar_123 with no content. The source's claim checks out on the corpus's own word.
+Scope: this is the topological invariant only. Whether Psi feeds the mixed-multibond channel (the refuted mu-bar-idempotent) is not tested here and would need its own derivation; no number is wired.
