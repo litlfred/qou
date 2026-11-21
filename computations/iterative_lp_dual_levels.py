@@ -300,22 +300,22 @@ def main() -> int:
         "closed-form chain (a separate scope)."
     )
     w.set_content_block("prop:mass-formula-iterative-lp-dual")
-    w.add_parameter("q_0", float(Q0_FLOAT))
+    w.add_parameter("q_0", fmt(Q_MP))
     w.add_parameter("M_p_codata", M_P_MEV)
     w.add_parameter("M_n_codata", M_N_MEV)
     w.add_parameter("M_e_codata", M_E_MEV)
     w.add_parameter("hecke_level_n", n_total)
     w.add_data("y_lambda_at_q0_h3",
-               {str(k): float(v) for k, v in y_at_q0.items()})
+               {str(k): fmt(v) for k, v in y_at_q0.items()})
     w.add_data("c_ell_at_q0", {
-        str(p): {str(ell): float(v) for ell, v in d.items()}
+        str(p): {str(ell): fmt(v) for ell, v in d.items()}
         for p, d in c_ell_at_q0.items()
     })
     w.add_data("chi_lambda_proton_at_q0",
-               {str(k): float(v) for k, v in chi_proton_at_q0.items()})
+               {str(k): fmt(v) for k, v in chi_proton_at_q0.items()})
     w.add_data("u_levels_proton_MeV",
-               {str(ell): float(v) for ell, v in u_levels_proton.items()})
-    w.add_data("sum_u_levels_proton_MeV", float(sum_u))
+               {str(ell): fmt(v) for ell, v in u_levels_proton.items()})
+    w.add_data("sum_u_levels_proton_MeV", fmt(sum_u))
     w.add_data("sum_vs_codata_pct", err_pct)
     w.add_data("interpretation", (
         "Σ_ℓ u^{(ℓ)*}(p) at H_3 does NOT recover m_p; the sum captures only "
