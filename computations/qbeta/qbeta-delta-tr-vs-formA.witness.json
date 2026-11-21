@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.18",
-  "computedAt": "2026-11-20T15:51:12.577732+00:00",
-  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
+  "computedAt": "2026-11-21T02:48:16.259161+00:00",
+  "commitSha": "97f6f00912e0770b3cd6270637d80dccba1efd11",
   "assertions": [
     {
       "name": "delta_tr_is_not_form_A_delta_net",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1394,
+  "durationMs": 1000,
   "computation": "qbeta-delta-tr-vs-formA",
   "scriptFile": "qbeta_delta_tr_vs_formA.py",
-  "scriptHash": "85594426c083",
-  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "scriptHash": "49b12087680a",
+  "scriptCommitSha": "8a51be2e1185d397db5b6dafc674326efda41dce",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,6 +32,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "cvxpy": "absent",
     "pyhecke_native_build": "930c010e26215e56"
   },
