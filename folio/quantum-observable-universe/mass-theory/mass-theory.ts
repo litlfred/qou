@@ -26,6 +26,7 @@ export default chapter({
         "mass-endomorphism-jet-tower-table1-data",
         "topological-mass-formula",
         "topological-mass-formula-context",
+        "hyperbolic-volume-transcendence",
         "hecke-mass-element",
         "hecke-mass-trace",
         "hecke-mass-trace-proof",

@@ -3,8 +3,8 @@
   "label": "conj:hyperbolic-volume-transcendence",
   "kind": "conjecture",
   "paths": {
-    "ts": "folio/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.ts",
-    "md": "folio/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.md",
+    "ts": "folio/quantum-observable-universe/mass-theory/hyperbolic-volume-transcendence.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/hyperbolic-volume-transcendence.md",
     "lean": "folio/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeIndependence.lean"
   },
   "source_hashes": {
@@ -319,7 +319,7 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
-        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"predicted-spectra\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
@@ -1042,7 +1042,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.397391Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/mass-theory/hyperbolic-volume-transcendence.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
         "evidence": "hyperbolic-volume-transcendence.lean:1"
       },
@@ -1182,7 +1182,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.397391Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to incomplete proof (sorry stubs) in folio/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.lean.",
+        "notes": "Logical gaps exist due to incomplete proof (sorry stubs) in folio/quantum-observable-universe/mass-theory/hyperbolic-volume-transcendence.lean.",
         "severity": "minor",
         "evidence": "hyperbolic-volume-transcendence.lean:1"
       },
@@ -1217,9 +1217,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.397391Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.lean contains sorry, causing divergence from the fully-verified narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/mass-theory/hyperbolic-volume-transcendence.lean contains sorry, causing divergence from the fully-verified narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.lean contains sorry, causing divergence from the fully-verified narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/mass-theory/hyperbolic-volume-transcendence.lean contains sorry, causing divergence from the fully-verified narrative."
       },
       {
         "result": "pass",
@@ -1392,9 +1392,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.397391Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.lean contains sorry, indicating incomplete verification.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/mass-theory/hyperbolic-volume-transcendence.lean contains sorry, indicating incomplete verification.",
         "severity": "minor",
-        "evidence": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.lean contains sorry, indicating incomplete verification."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/mass-theory/hyperbolic-volume-transcendence.lean contains sorry, indicating incomplete verification."
       },
       {
         "result": "pass",
@@ -1427,11 +1427,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.397391Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.lean contains 'sorry' placeholders.",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/mass-theory/hyperbolic-volume-transcendence.lean contains 'sorry' placeholders.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
-        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.lean contains 'sorry' placeholders."
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/mass-theory/hyperbolic-volume-transcendence.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/mass-theory/hyperbolic-volume-transcendence.lean contains 'sorry' placeholders."
       },
       {
         "result": "pass",

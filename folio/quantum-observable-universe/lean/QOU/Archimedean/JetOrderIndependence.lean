@@ -12,7 +12,7 @@ import QOU.Archimedean.HyperbolicVolumeIndependence
 
 This file formalises the **reduction** that closes the deep
 algebraic-independence conjecture
-([`conj:hyperbolic-volume-transcendence`](../../../quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.md))
+([`conj:hyperbolic-volume-transcendence`](../../../quantum-observable-universe/mass-theory/hyperbolic-volume-transcendence.md))
 *relative to two narrower, QOU-native inputs*:
 
 1. `JetOrderIndependence` — finite jet-order independence: the order-`N`

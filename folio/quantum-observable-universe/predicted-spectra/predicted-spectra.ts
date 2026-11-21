@@ -373,7 +373,6 @@ export default chapter({
         "knot-formula-table-table5-data",
         "cs-evaluation-faithfulness",
         "cs-evaluation-faithfulness-corollaries",
-        "hyperbolic-volume-transcendence",
         "single-volume-irrationality",
         "borel-zagier-qou-volumes",
         "three-knot-jet-order-independence",
