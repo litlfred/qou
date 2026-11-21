@@ -1,10 +1,8 @@
-Quarks are reassigned from individual knot types to Borromean-linked unknots. With this identification, a baryon's mass arises almost entirely from the Borromean linking volume, matching the QCD result that ${\sim}99\%$ of proton mass is binding energy.
-
-The original dictionary assigned individual knot types to quarks. The revised picture identifies quarks as unknots (neutrinos) Borromean-linked in the exceptional divisor of Bring's surface. A baryon is the Borromean link $\mathcal{B}_3(\nu_r, \nu_g, \nu_b)$ bound by the Hopf link $\mathcal{L}_H$:
+Quarks are Borromean-linked unknots rather than individual knot types. The quarks are unknots (neutrinos) Borromean-linked in the exceptional divisor of Bring's surface, and a baryon is the Borromean link $\mathcal{B}_3(\nu_r, \nu_g, \nu_b)$ bound by the Hopf link $\mathcal{L}_H$:
 
 - **Proton**: $\mathcal{B}_3(\nu_r, \nu_g, \nu_b) \oplus \mathcal{L}_H$ with the $2 + 1$ crossing-orientation partition (two up, one down).
 - **Neutron**: $\mathcal{B}_3(\nu_r, \nu_g, \nu_b) \oplus \mathcal{L}_H$ with the $1 + 2$ partition (one up, two down).
 
-Up/down flavour arises from the crossing orientation of each unknot within $\mathcal{B}_3$, not from distinct knot types. The baryon mass comes almost entirely from the Borromean linking volume $\mathrm{Vol}(S^3 \setminus \mathcal{B}_3) = 7.328\ldots$.
+Up/down flavour arises from the crossing orientation of each unknot within $\mathcal{B}_3$, not from distinct knot types. The Borromean complement has hyperbolic volume $\mathrm{Vol}(S^3 \setminus \mathcal{B}_3) = 7.328\ldots$.
 
-The mass of each hadron is determined by the terminal resolution, matching CODATA values to sub-keV precision.
+Under the pair Skein formula the proton and neutron masses are an invertible function of two dressed quark masses, so the formula reproduces the measured values once those two masses are chosen; it does not predict them.

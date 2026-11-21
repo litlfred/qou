@@ -1,7 +1,7 @@
 {
  "scriptFile": "computations/probes/gg_gluon_segment/gg_gluon_segment_probe.py",
  "engine": "sympy exact over Q(q) + mpmath 60 dps display",
- "commitSha": "6c1bd186739d855e1fe1557dcf13eb9a88a36538",
+ "commitSha": "0c516e92a163850f1eeda3cc2f00e7d3b8aa18a8",
  "recipe": "computations/probes/gg_gluon_segment/preregistration.md (a341245311 step 1, a9ca10d266 step 2)",
  "bean_parent": "qou-99qc",
  "q0Anchor": "proton",
@@ -11,7 +11,7 @@
   "function": "qbeta_e0.canonical() (tower_summed)",
   "value_MeV": "4.22748335562903"
  },
- "Q_beta_codata_MeV": "0.782333409999999999999999999999999999999999999999999409829604",
+ "Q_beta_codata_MeV": "0.782333559310000000000000000000000000000000000000000142468838",
  "reference_nuc11_interleaved": {
   "gluon_segment": "σ0σ0 (census, nuc11_interleaved; reference only)",
   "g_odd": "-(q - 1)*(q + 1)*(q**2 + 1)*(q**4 + 1)/(8*q**4)",
@@ -21,7 +21,7 @@
   "reading3_p": false,
   "reading3_n": false,
   "Q_beta_MeV": "0.65185631006",
-  "Q_beta_pct_vs_codata": "-16.67794"
+  "Q_beta_pct_vs_codata": "-16.677956"
  },
  "rows": [
   {
@@ -46,7 +46,7 @@
    "reading3_both": false,
    "delta_tr_q0": "-0.12907543817031928056",
    "Q_beta_MeV": "0.545664266486",
-   "Q_beta_pct_vs_codata": "-30.251698",
+   "Q_beta_pct_vs_codata": "-30.251712",
    "g_odd_localisation": {}
   },
   {
@@ -71,7 +71,7 @@
    "reading3_both": true,
    "delta_tr_q0": "-0.054291641728763465377",
    "Q_beta_MeV": "0.229517011758",
-   "Q_beta_pct_vs_codata": "-70.662507",
+   "Q_beta_pct_vs_codata": "-70.662512",
    "g_odd_localisation": {
     "core": "-(q - 1)**4*(q + 1)**4*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(8*q**6*(q**2 + 1)**2)",
     "tail": "0",
@@ -104,7 +104,7 @@
    "reading3_both": false,
    "delta_tr_q0": "-0.13937186620108920352",
    "Q_beta_MeV": "0.589192244608",
-   "Q_beta_pct_vs_codata": "-24.687833",
+   "Q_beta_pct_vs_codata": "-24.687847",
    "g_odd_localisation": {
     "core": "(q - 1)**4*(q + 1)**4*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**2 + 1)/(8*q**8*(q**2 + 1)**2)",
     "tail": "0",
@@ -137,7 +137,7 @@
    "reading3_both": false,
    "delta_tr_q0": "-0.12535690413753803121",
    "Q_beta_MeV": "0.529944225755",
-   "Q_beta_pct_vs_codata": "-32.261077",
+   "Q_beta_pct_vs_codata": "-32.26109",
    "g_odd_localisation": {
     "core": "-(q - 1)**6*(q + 1)**6*(q**4 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/(8*q**10*(q**2 + 1)**2)",
     "tail": "0",
@@ -159,7 +159,7 @@
   "C2_g_odd_closed_form": true,
   "C3_delta_tr": true,
   "C3_E0_canonical": true,
-  "C3_Q_beta_scored_cell": true,
+  "C3_Q_beta_nuc11_history_cell": true,
   "C4_y_normalisation": true,
   "C4_y21_value": true,
   "C4_y111_zero_at_zD": true,

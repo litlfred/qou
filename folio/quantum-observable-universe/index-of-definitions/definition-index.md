@@ -795,7 +795,7 @@
 | [prop:sl2-prolongation-recurrence](#prop:sl2-prolongation-recurrence) | Symplectic prolongation (det B = 1) gives a one-parameter recurrence | Ch 11 |
 | [prop:tannaka-krein-reconstruction](#prop:tannaka-krein-reconstruction) | Tannaka--Krein reconstruction of the quantum gauge group | Ch 2 |
 | [prop:q-exponential-taylor](#prop:q-exponential-taylor) | Taylor series of $\exp_q$ (archimedean) | Ch 20 |
-| [prop:terminal-resolution](#prop:terminal-resolution) | Terminal Resolution of Hadronic Mass | Ch 11 |
+| [prop:terminal-resolution](#prop:terminal-resolution) | Nucleon masses under the pair Skein formula | Ch 11 |
 | [conj:collatz-contact-boundary](#conj:collatz-contact-boundary) | The $[2]_q$-contact boundary on the Reeb bundle | Ch 25 |
 | [prop:alpha-em-habiro-bar-involution](#prop:alpha-em-habiro-bar-involution) | The $\alpha_{EM}$ Habiro element $[2]_q(1-h^2\alpha)$ is a bar-involution fixed point, with $H(1)=2$, $H(-1)=-2$ | Ch 5 |
 | [prop:alpha-cluster-activation-gate](#prop:alpha-cluster-activation-gate) | The $\alpha$-cluster activation gate: Milnor indeterminacy, sign-rep obstruction, and $\mathrm{Vol}=0$ annihilation | Ch 11 |
@@ -1342,7 +1342,7 @@
 | [ex:nucleon-hecke-element-normal-form](#ex:nucleon-hecke-element-normal-form) | Six-term normal form and net of the nucleon | Ch 7 |
 | [ex:spin-labels-su2](#ex:spin-labels-su2) | Spin decomposition of $\mathrm{Rep}(\mathrm{SU}(2))$ | Ch 2 |
 | [ex:substrate-parameter-su2](#ex:substrate-parameter-su2) | Substrate parameter for $\mathrm{SU}(2)$ | Ch 2 |
-| [ex:terminal-resolution-cz](#ex:terminal-resolution-cz) | Terminal resolution in $\mathbb{C}[z]$ | Ch 15 |
+| [ex:terminal-resolution-cz](#ex:terminal-resolution-cz) | Lepton mass ratios in $\mathbb{C}[z]$ | Ch 15 |
 | [ex:nitrogen-14-threading](#ex:nitrogen-14-threading) | The ${}^{14}\mathrm{N}$ maximal braid shortcut vs ${}^{14}\mathrm{C}$ broken alternation | Ch 15 |
 | [ex:confinement-category-atomic-chain](#ex:confinement-category-atomic-chain) | The atomic chain in $\mathbf{Conf}$ | Ch 7 |
 | [ex:electron-knot-concrete](#ex:electron-knot-concrete) | The electron as the Hopf link on $\Sigma_4$ | Ch 14 |

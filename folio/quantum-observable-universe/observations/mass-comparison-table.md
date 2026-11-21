@@ -4,7 +4,7 @@ This table evaluates the topological knot formulas ([knot formula table](#rem:kn
 
 $$
   q = q_0, \quad
-  \hbar_q = 1 - q^{-1} = 0.09905, \quad
+  \hbar_q = 1 - q^{-1} \approx 0.09908, \quad
   \mathrm{Vol}(4_1) = {{ qou.computations.q-pinning-50-digit.calibration_inputs.Vol_4_1_str | precision: 6 }}.
 $$
 
@@ -14,7 +14,7 @@ $$
 
 See [Table 1](#tbl:mass-comparison-table-table1-data).
 
-The electron mass is an input. It fixes $\mu_{\mathfrak{u}}$ through the pair Skein mass. The muon mass prediction equals $\mathrm{Vol}(4_1)/\hbar_q^2$. This reproduces the CODATA value to six significant figures at $q = q_0$.
+The electron mass is an input: it fixes the MeV scale. The muon--electron ratio equals $\mathrm{Vol}(4_1)/\hbar_q^2$. This is the relation that fixes $q_0$, so it holds by construction rather than as a prediction.
 
 *Hadrons (from pair Skein masses).*
 
@@ -34,7 +34,7 @@ $$
 }
 $$
 
-with $h = q_0 - q_0^{-1}$, $\hbar_q = 1 - q_0^{-1}$ and $z_D = q_0^3/(q_0^2+1)$. The energy scale is the tower-summed $E_0$; the order-zero form $m_e/(q_0(q_0-1))$ gives $0.4447$ MeV. This is the ruled convention-D base: $\varepsilon$ is the Markov trace at $z_D$ (owner ruling 2026-09-08). It compares to the CODATA value of $0.7823$ MeV at $-42.59\%$ ($-333.2$ keV). The convention-D $c_k$ correction ladder that would act on this base is not yet derived, and the factor a cosine phase can supply is capped below $1$ ([cos-resummation](#prop:q-beta-cos-resummation)), so the miss is reported as it stands.
+with $h = q_0 - q_0^{-1}$, $\hbar_q = 1 - q_0^{-1}$ and $z_D = q_0^3/(q_0^2+1)$. The energy scale is the tower-summed $E_0$; the order-zero form $m_e/(q_0(q_0-1))$ gives $0.4447$ MeV. This is the ruled convention-D base: $\varepsilon$ is the Markov trace at $z_D$. It compares to the CODATA value of $0.7823$ MeV at $-42.59\%$ ($-333.2$ keV). The convention-D $c_k$ correction ladder that would act on this base is not yet derived, and the factor a cosine phase can supply is capped below $1$ ([cos-resummation](#prop:q-beta-cos-resummation)), so the miss is reported as it stands.
 
 The value scored on the L2 scorecard is a different functional on a different element: the $T^3$ weight split of the same $z_D$ trace on the $\gamma\gamma$ base $V^3 = (\sigma_0\sigma_1^{-1})^3$, $\mathfrak{Q}_\beta^{\mathrm{scored}} = |\varepsilon_{\mathrm{flavour}}(V^3)|\,E_0 \approx 0.3254$ MeV ($-58.40\%$), which gives $\mathfrak{m}_n - \mathfrak{m}_p \approx 0.8364$ MeV ($-35.3\%$). The $0.4491$ MeV above is kept as an unscored comparison.
 
@@ -50,7 +50,7 @@ See [Table 3](#tbl:mass-comparison-table-table3-data).
 
 † **LO output is constituent sum only.** The full prediction (beyond the constituent sum) is not yet available.
 
-**Notes.** The muon--electron mass ratio fixes the substrate parameter $q$. Hadronic masses follow from the pair Skein formula ([terminal resolution](#prop:terminal-resolution)). Nuclear binding follows from the Hopf-junction Skein change $\Delta E = \Delta\mathcal{S}$. Evaluate the multi-body Skein polynomials up to ${}^4\mathrm{He}$. Polynomials beyond $A = 4$ are computable in principle ([embeddability closure](#thm:embeddability-closure)) but remain unevaluated.
+**Notes.** The muon--electron mass ratio fixes the substrate parameter $q$. Hadronic masses follow from the pair Skein formula once the two dressed quark masses are given; that map is invertible, so the formula alone does not predict them ([nucleon masses under the pair Skein formula](#prop:terminal-resolution)). Nuclear binding follows from the Hopf-junction Skein change $\Delta E = \Delta\mathcal{S}$. Evaluate the multi-body Skein polynomials up to ${}^4\mathrm{He}$. Polynomials beyond $A = 4$ are computable in principle ([embeddability closure](#thm:embeddability-closure)) but remain unevaluated.
 
 **Sources and scope.** The proton and neutron entries use CODATA 2022 values directly. The nuclear entries use AME2020 binding energies. These entries recombine observed constants. The parameter $q$ predicts mass ratios ($m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$), Q-values ($\Delta\mathrm{net} \times E_0$), and half-life ratios via $\log_q(ft)$ spectroscopy. The single external scaling ruler is $m_e = {{ qou.library.codata-2022.electron-mass-energy-equivalent-in-mev | precision: 6 }}\;\text{MeV}$ MeV (CODATA 2022 input). This ruler converts dimensionless $q$-ratios to physical MeV. 
 

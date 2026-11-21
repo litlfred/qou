@@ -182,11 +182,20 @@ noncomputable def topological_mass (vol : ℝ) (q : ℝ) : ℝ :=
 noncomputable def muon_mass_topological : ℝ :=
   topological_mass vol_figure_eight substrate_q
 
-/-! ## Section 5: Row-by-Row Formalization
+/-! ## Section 5: CODATA-pinned record of the former table
 
-Each row of the Terminal Resolution table is formalized as:
-1. A `noncomputable def` computing the QOU result from the topological formula
-2. An approximation lemma showing agreement with CODATA -/
+**Not a derivation.** Each `*_topological` value below is defined as the
+CODATA constant (or, for the deuteron, the mass-deficit identity with the
+experimental binding energy). The lemmas that compared these values with
+CODATA held by construction and were removed (owner decision, PR #8897),
+together with their bundle `terminal_resolution_hadronic_mass`. The content
+block `prop:terminal-resolution` now states the pair Skein nucleon identities,
+proved in `QOU.MassTheory.PairSkeinNucleon` (content sibling
+`mass-theory/terminal-resolution.lean`). Under that map any `(m_p, m_n)` is
+reproduced by exactly one pair of dressed quark masses, so a CODATA match
+carries no content. The definitions are kept because Section 5a and the
+remaining identities use them. The per-row docstrings below describe the
+former reading. -/
 
 /-! ### Row 1: Proton (m_p) — Q(q) 𝓜(ℒ_Hopf)_uud -/
 
@@ -209,11 +218,6 @@ noncomputable def proton_quarks : QuarkFlavorFactor where
     Ref: Manuscript Table "Terminal Resolution of Hadronic Mass", Row 1. -/
 noncomputable def proton_topological : ℝ := proton_quarks.value
 
-theorem row1_proton_matches_CODATA :
-    |proton_topological - proton_mass_MeV| < 1e-3 := by
-  unfold proton_topological proton_quarks proton_mass_MeV
-  norm_num
-
 /-! ### Row 2: Neutron (m_n) — Q(q) 𝓜(ℒ_Hopf)_udd -/
 
 /-- Neutron quark content: 1 up quark, 2 down quarks. -/
@@ -234,11 +238,6 @@ noncomputable def neutron_quarks : QuarkFlavorFactor where
 
     Ref: Manuscript Table "Terminal Resolution of Hadronic Mass", Row 2. -/
 noncomputable def neutron_topological : ℝ := neutron_quarks.value
-
-theorem row2_neutron_matches_CODATA :
-    |neutron_topological - neutron_mass_MeV| < 1e-3 := by
-  unfold neutron_topological neutron_quarks neutron_mass_MeV
-  norm_num
 
 /-- The proton-neutron mass difference is 1.29333251 MeV, arising from
     the u ↔ d flavor exchange in the Skein functional.
@@ -264,7 +263,7 @@ theorem proton_neutron_mass_difference :
 
     Honesty note (2026-06-17): the binding term `binding_energy_QOU`
     here is the *experimental* mass deficit rounded to 4 sig figs (see
-    its docstring), so `row3_deuteron_matches_CODATA` below is a
+    its docstring), so the former CODATA comparison of this row was a
     mass-deficit consistency identity `m_p + m_n − B_exp ≈ m_D`, **not**
     an independent topological prediction of the deuteron mass.
 
@@ -283,13 +282,6 @@ theorem row3_deuteron_value :
   unfold deuteron_topological proton_topological neutron_topological
   unfold proton_quarks neutron_quarks
   unfold proton_mass_MeV neutron_mass_MeV binding_energy_QOU
-  norm_num
-
-theorem row3_deuteron_matches_CODATA :
-    |deuteron_topological - deuteron_mass_MeV| < 1e-3 := by
-  unfold deuteron_topological proton_topological neutron_topological
-  unfold proton_quarks neutron_quarks
-  unfold proton_mass_MeV neutron_mass_MeV binding_energy_QOU deuteron_mass_MeV
   norm_num
 
 /-! ### Row 4: Binding Energy — Δ Skein Polynomial -/
@@ -317,18 +309,6 @@ theorem row4_binding_from_skein :
       = binding_energy_QOU := by
   unfold deuteron_topological
   ring
-
-theorem row4_binding_CODATA_comparison :
-    |binding_energy_QOU - binding_energy_CODATA| < 0.001 := by
-  unfold binding_energy_QOU binding_energy_CODATA
-  norm_num
-
-/-- The QOU binding energy prediction (2.224 MeV) is within 0.567 keV
-    of the NIST-derived CODATA value (2.22456637 MeV). -/
-theorem row4_binding_precision :
-    |binding_energy_QOU - binding_energy_CODATA| = 0.00056637 := by
-  unfold binding_energy_QOU binding_energy_CODATA
-  norm_num
 
 /-! ## Section 5a: Pair Skein Mass Decomposition
 
@@ -605,7 +585,6 @@ noncomputable def borromean_mass_ratio : ℝ :=
 - `dressed_quark_mass_difference`: μ_d − μ_u = 1.29 MeV  ✓
 - `nucleon_mass_ratio_approx`: m_n/m_p ≈ 1.0013784  ✓
 - `binding_fraction_approx`: ΔE/m_D ≈ 0.11857%  ✓
-- `row4_binding_precision`: |QOU − CODATA| = 0.00056637 MeV  ✓
 -/
 
 /-! ## Section 9: Named Propositions
@@ -647,7 +626,7 @@ constants this file defines (mpmath, 40 dps):
 | RHS `(√q − 1/√q)·m_d` | **195.320153** |
 | difference | **0.8038 MeV**, rel **0.41 %** |
 
-For scale: this file's own `row1_proton_matches_CODATA` treats `1e-3 MeV` as
+For scale: the former CODATA-row lemmas of Section 5 treated `1e-3 MeV` as
 agreement, so the gap is ~800× that.
 
 **It is not a tolerance problem.** Two independent checks say the failure is
@@ -705,25 +684,6 @@ theorem skein_pnd_identity_false :
   have hsne : s ≠ 0 := ne_of_gt hs0
   field_simp at h
   nlinarith [hs2, hs0, h, sq_nonneg s, sq_nonneg (s - 1)]
-
-/-- **Proposition (Terminal Resolution of Hadronic Mass).**
-    Using the derived substrate parameter `q = 1.1097`, all four rows
-    of the hadronic mass table match NIST CODATA 2022 values:
-    1. Proton:  `|m_p^{QOU} − 938.27208943| < 0.001`
-    2. Neutron: `|m_n^{QOU} − 939.56542194| < 0.001`
-    3. Deuteron: `|m_D^{QOU} − 1875.61294500| < 0.001`
-    4. Binding: `|ΔE^{QOU} − 2.22456637| < 0.001`
-
-    LaTeX: `\label{prop:terminal-resolution}` -/
-theorem terminal_resolution_hadronic_mass :
-    |proton_topological - proton_mass_MeV| < 1e-3 ∧
-    |neutron_topological - neutron_mass_MeV| < 1e-3 ∧
-    |deuteron_topological - deuteron_mass_MeV| < 1e-3 ∧
-    |binding_energy_QOU - binding_energy_CODATA| < 0.001 :=
-  ⟨row1_proton_matches_CODATA,
-   row2_neutron_matches_CODATA,
-   row3_deuteron_matches_CODATA,
-   row4_binding_CODATA_comparison⟩
 
 /-! ## Section 10: Substrate-pure Flavor Split
 
