@@ -3,9 +3,9 @@
   "label": "prop:spectral-sequence-collapse",
   "kind": "proposition",
   "paths": {
-    "ts": "folio/quantum-observable-universe/mass-theory/spectral-sequence-collapse.ts",
-    "md": "folio/quantum-observable-universe/mass-theory/spectral-sequence-collapse.md",
-    "lean": "folio/quantum-observable-universe/mass-theory/spectral-sequence-collapse.lean"
+    "ts": "folio/quantum-observable-universe/mass-endomorphism/spectral-sequence-collapse.ts",
+    "md": "folio/quantum-observable-universe/mass-endomorphism/spectral-sequence-collapse.md",
+    "lean": "folio/quantum-observable-universe/mass-endomorphism/spectral-sequence-collapse.lean"
   },
   "source_hashes": {
     "md": "3575e83e3033",
@@ -866,7 +866,7 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
-        "notes": "{\"regimes\":[\"generic-R\",\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+        "notes": "{\"regimes\":[\"generic-R\",\"symbolic\"],\"chapter\":\"mass-endomorphism\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [

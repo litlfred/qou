@@ -1,1 +1,1 @@
-The descending Gröbner–Shirshov ideal filtration $J^\bullet(q)$ on the Iwahori–Hecke algebra $H_n(R, q)$ induces a spectral sequence whose $E_\infty$ page governs homological shell condensation and the motivic Galois coaction per cell.
+The descending Gröbner–Shirshov ideal filtration $J^\bullet(q)$ on the Iwahori–Hecke algebra $H_n(R, q)$ induces a spectral sequence. For semisimple $H_n(R, q)$ its limit page is concentrated in total degree $0$, and its $E_\infty$ page governs homological shell condensation and the motivic Galois coaction per cell.
