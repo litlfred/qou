@@ -258,7 +258,7 @@ def main():
               + "; ".join(f"{k}: {len(v)}" for k, v in cls.items()))
     out["P2"] = p2
 
-    # ---------------- P3: writhe != 0, rational-function equality with convention-D weights
+    # ---------------- P3: writhe != 0, rational-function equality with the corpus F_Bor weights (y3 = q^3/[3]!), NOT convention D (see Addendum 3)
     q = sp.symbols("q", positive=True)
     br2 = q + 1 / q
     br3 = q**2 + 1 + q**-2

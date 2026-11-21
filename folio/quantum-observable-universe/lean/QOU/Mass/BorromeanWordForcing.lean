@@ -16,21 +16,30 @@ force it, and which freedom the mass identity leaves.
 * `pureZeroLinking_short` — **no reduced three-strand word of length `1 … 5` is pure
   with all three pairwise linking numbers zero.** A finite check over every word.
 * `pureZeroLinking_six` — at length `6` exactly **16** reduced words are pure with
-  zero pairwise linking, listed in `lengthSixList`.
-* `lengthSix_split` — of those 16, four are the words of `borOrbit` (`β_Bor`, its
-  cyclic rotation, its mirror, and the mirror's rotation), and twelve are in `trivSix`.
+  zero pairwise linking, and each lies in `borOrbit` or `trivSix`
+  (`borOrbit_trivSix_sub` checks those two lists are made of such words). The four
+  words of `borOrbit` are `β_Bor`, its cyclic rotation, its mirror, and the mirror's
+  rotation; the twelve of `trivSix` are trivial in `B₃`.
 * `eval_trivSix` — each of the twelve is the identity of `B₃`
   (`QOU.MathlibExt.Braid.BraidGroup 2`); each is a rotation of `Δ·Δ'⁻¹` with
   `Δ = σ₀σ₁σ₀`, `Δ' = σ₁σ₀σ₁`, and the braid relation `Δ = Δ'` kills it.
-* `eval_borOrbit_conj` — the four words of `borOrbit` are conjugate in `B₃`.
+* `eval_borOrbit_conj` — the four words of `borOrbit` are conjugate in `B₃`
+  (`conj_flip`: swapping `σ₀ ↔ σ₁` is conjugation by `Δ = σ₀σ₁σ₀`; `conj_mirror`: the
+  mirror is a cyclic rotation followed by that swap).
 * `eval_borromean_ne_one` — `β_Bor ≠ 1` in `B₃`. The witness is the integer
   Burau representation at `t = −1` (`burauNeg`), where `β_Bor ↦ [[13, 8], [8, 5]]`.
 * `minimal_pure_zeroLinking` — **combining these: the shortest reduced three-strand
   words that are pure, have zero pairwise linking, and are not the identity of `B₃`
   have length 6, and every one of them is conjugate in `B₃` to `β_Bor`.**
-* `markovTrace_writhe_zero` — for weights with `y₍₃₎ + 2y₍₂,₁₎ + y₍₁³₎ = 1`, the
-  Markov trace of a writhe-0 word is `1 + y₍₂,₁₎(χ − 2)`, with `χ` its `(2,1)`
-  character. So **the mass identity sees the word only through `χ`** (and the writhe).
+* `heckeMat_quadratic`, `heckeMat_braid`, `heckeMat_inv` — the `(2,1)` matrices
+  `Tᵢ = q·Burauᵢ(t = q⁻²)` over any field satisfy the Hecke and braid relations;
+  `chi21 q w` is the trace of a word's product, and `chi21_borromean` gives its value
+  on `β_Bor`.
+* `markovTrace21_writhe_zero`, `markovTrace21_eq_of_chi` — for weights with
+  `y₍₃₎ + 2y₍₂,₁₎ + y₍₁³₎ = 1`, the Wedderburn-form trace of a writhe-0 word is
+  `1 + y₍₂,₁₎(chi21 − 2)`, so two writhe-0 words with the same `(2,1)` character have
+  the same trace. The Wedderburn form is taken as the **definition** of `tr_M` here.
+  So **the mass identity sees the word only through `χ`** (and the writhe).
 
 ## How this reads as "Brunnian" (a topological dictionary, cited, not proved here)
 
@@ -46,10 +55,11 @@ only. "Closure of `β_Bor` is not the unlink" also needs a link invariant
 
 ## What is NOT proved, and what the companion probe measured
 
-* That the minimum is unique **up to conjugacy among all words**, not only reduced
-  words of length 6: longer words representing a length-6 element are conjugates of
-  the same group elements, so this is covered by the group-level statement, but
-  nothing here enumerates `B₃` conjugacy classes.
+* Anything about **unreduced** words or about `B₃` elements beyond their shortest
+  spellings. `minimal_pure_zeroLinking` is stated for reduced words: it says the
+  shortest length is 6 and every length-6 solution is conjugate to `β_Bor`. It does
+  not enumerate `B₃` conjugacy classes, and it does not say a longer word is never
+  conjugate to `β_Bor` (many are).
 * That `χ` separates `β_Bor`'s conjugacy class. The probe
   `computations/probes/borromean_word_forcing/` (exact Laurent arithmetic,
   pre-registered) finds every writhe-0 word of length `≤ 14` with `χ = χ(β_Bor)`
@@ -59,7 +69,9 @@ only. "Closure of `β_Bor` is not the unlink" also needs a link invariant
   zero-linking words of length 10 with a different character (other Brunnian
   closed three-braids), and more at length 12. What singles out `β_Bor` is
   *minimal crossing number* among them; that cost is the same crossing-count cost the
-  γγ route uses (`QOU.Mass.GammaGammaSelectionAllK`), and it is an input, not derived.
+  γγ route uses (`QOU.Mass.GammaGammaSelectionAllK`) and the U(1)-neutral cut uses
+  (`QOU/PhotonU1NeutralCut.lean`, PR #8835, owner ruling of 2026-11-21 on whole-word U(1) neutrality), and it is an input,
+  not derived.
 
 Nothing here reads CODATA, AME or PDG.
 -/
@@ -470,6 +482,70 @@ theorem markovTrace_writhe_zero {q : R} (hq : q ≠ 0) (y3 y21 y111 χ : R)
   simp only [markovTraceH3, trivChar_eq_zpow hq, altChar_eq_zpow hq, hw, neg_zero,
     zpow_zero, he.neg_one_pow, mul_one]
   linear_combination hsum
+
+/-! ### The `(2,1)` character, concretely
+
+The two-dimensional block of `H₃(q)` is realised by `Tᵢ = q·Burauᵢ(t = q⁻²)`:
+`T₀ = [[-q⁻¹, q], [0, q]]`, `T₁ = [[q, 0], [q⁻¹, -q⁻¹]]`. Below: both satisfy the Hecke
+relation `T² = (q − q⁻¹)T + 1` and the braid relation, and `chi21 q w` is the trace of
+the product. The Wedderburn form `markovTraceH3` with this `χ` **is the definition**
+of `tr_M` used here; it is not derived from a trace axiom in this file. -/
+
+/-- The `(2,1)` Hecke matrix of a letter (generators `0` and `1`; any other index is
+sent to `T₁`, and no `B₃` word uses one). -/
+def heckeMat (q : R) (c : Crossing) : Matrix (Fin 2) (Fin 2) R :=
+  match c.gen, c.pos with
+  | 0, true => !![-q⁻¹, q; 0, q]
+  | 0, false => !![-q, q; 0, q⁻¹]
+  | _, true => !![q, 0; q⁻¹, -q⁻¹]
+  | _, false => !![q⁻¹, 0; q⁻¹, -q]
+
+/-- The `(2,1)` representation of a word, and its character. -/
+def rep21 (q : R) (w : Word) : Matrix (Fin 2) (Fin 2) R := (w.map (heckeMat q)).prod
+
+def chi21 (q : R) (w : Word) : R := (rep21 q w).trace
+
+theorem heckeMat_inv (q : R) (hq : q ≠ 0) (i : ℕ) (hi : i < 2) (s : Bool) :
+    heckeMat q ⟨i, s⟩ * heckeMat q ⟨i, !s⟩ = 1 := by
+  interval_cases i <;> cases s <;>
+    (ext j k; fin_cases j <;> fin_cases k <;>
+      simp [heckeMat, Matrix.mul_apply, Fin.sum_univ_two] <;> field_simp <;> ring)
+
+theorem heckeMat_quadratic (q : R) (hq : q ≠ 0) (i : ℕ) (hi : i < 2) :
+    heckeMat q ⟨i, true⟩ * heckeMat q ⟨i, true⟩
+      = (q - q⁻¹) • heckeMat q ⟨i, true⟩ + 1 := by
+  interval_cases i <;>
+    (ext j k; fin_cases j <;> fin_cases k <;>
+      simp [heckeMat, Matrix.mul_apply, Fin.sum_univ_two] <;> field_simp <;> ring)
+
+theorem heckeMat_braid (q : R) (hq : q ≠ 0) :
+    heckeMat q ⟨0, true⟩ * heckeMat q ⟨1, true⟩ * heckeMat q ⟨0, true⟩
+      = heckeMat q ⟨1, true⟩ * heckeMat q ⟨0, true⟩ * heckeMat q ⟨1, true⟩ := by
+  ext j k; fin_cases j <;> fin_cases k <;>
+    simp [heckeMat, Matrix.mul_apply, Fin.sum_univ_two, hq]
+
+/-- `χ₍₂,₁₎(β_Bor) = 4 − 3(q² + q⁻²) + 3(q⁴ + q⁻⁴) − (q⁶ + q⁻⁶)`, the value the probe
+records. -/
+theorem chi21_borromean (q : R) (hq : q ≠ 0) :
+    chi21 q [a, b', a, b', a, b'] =
+      4 - 3 * (q ^ 2 + q⁻¹ ^ 2) + 3 * (q ^ 4 + q⁻¹ ^ 4) - (q ^ 6 + q⁻¹ ^ 6) := by
+  simp [chi21, rep21, heckeMat, a, b', Matrix.trace_fin_two]
+  field_simp
+  ring
+
+/-- **At writhe 0 the trace depends on the word only through its `(2,1)` character**,
+now with `χ = chi21 q w` computed from the word. -/
+theorem markovTrace21_writhe_zero {q : R} (hq : q ≠ 0) (y3 y21 y111 : R)
+    (hsum : y3 + 2 * y21 + y111 = 1) (w : Word) (hw : writhe w = 0) :
+    markovTraceH3 q y3 y21 y111 (chi21 q w) w = 1 + y21 * (chi21 q w - 2) :=
+  markovTrace_writhe_zero hq y3 y21 y111 _ hsum w hw
+
+/-- Hence two writhe-0 words with equal `(2,1)` character have equal trace. -/
+theorem markovTrace21_eq_of_chi {q : R} (hq : q ≠ 0) (y3 y21 y111 : R)
+    (hsum : y3 + 2 * y21 + y111 = 1) (u v : Word) (hu : writhe u = 0) (hv : writhe v = 0)
+    (hχ : chi21 q u = chi21 q v) :
+    markovTraceH3 q y3 y21 y111 (chi21 q u) u = markovTraceH3 q y3 y21 y111 (chi21 q v) v := by
+  rw [markovTrace21_writhe_zero hq _ _ _ hsum u hu, markovTrace21_writhe_zero hq _ _ _ hsum v hv, hχ]
 
 end Trace
 
