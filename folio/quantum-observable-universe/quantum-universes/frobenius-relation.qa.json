@@ -2243,6 +2243,24 @@
         "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
         "evidence": "Re-review after #8888 commit e69e683b (C09): claim_frobenius_relation deleted; library QOU.frobenius_relation now sorry (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. Library: self-assuming field gone; the context has no pairing axioms linking Delta_mu to mu, so the sorry cannot be discharged as stated (the docstring says so). Three further gaps: (1) the content-block sibling quantum-universes/frobenius-relation.lean, which lean.ref resolution checks first, is unchanged and still proves frobenius_relation_holds by `exact fh.frobenius_relation`, a projection of a FrobeniusHopfData field; (2) the new authorNote says the previous proof \"is rewritten\", but frobenius-relation-proof.md is unchanged and still pairs a map A(x)A -> A(x)A with a single test element c; (3) the proof still conflates mu(b1(x)b2) with Delta(ab).",
         "severity": "major"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "ecb4ff6dd61d",
+          "lean": "0b389264e5a7",
+          "lean_statement": "f4ed4f657ef4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:51:00.000Z",
+        "reviewed_sha": "675d606bdda772e19688798472da0b6d6db70ce9",
+        "evidence": "Supersedes the entry above, whose point (2) went stale when commit 0b38345594e rewrote frobenius-relation-proof.md via the copairing (the proof now derives the relation from associativity and is correct). Remaining: library QOU.frobenius_relation is sorry over a context with no pairing axioms linking Delta_mu to mu, so it cannot be discharged as stated (the docstring says so); the content-block sibling quantum-universes/frobenius-relation.lean, which lean.ref resolution checks first, still proves frobenius_relation_holds by `exact fh.frobenius_relation`, a projection of a FrobeniusHopfData field. The narrative proof is now right; no Lean declaration proves it.",
+        "severity": "major"
       }
     ],
     "proof-rater-strategy-clarity": [
