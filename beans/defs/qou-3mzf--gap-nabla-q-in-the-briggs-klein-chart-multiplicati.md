@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-21T19:47:08Z
-updated_at: 2026-11-21T20:20:36Z
+updated_at: 2026-11-21T20:24:54Z
 ---
 
 Open input of conj:topological-mass-dilogarithm (folio/quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.md; Lean QOU/LiftingDescent/tm_dilogarithm_evaluation.lean, class TmDivisorChartInputs.chart_eval).
@@ -36,3 +36,12 @@ Bean stays open (open conjecture).
 - Observation (exact, termwise): with the symmetric q-difference operator D_q t^n = [n]_q t^(n-1), D_q ln_q(1+t) = 1/(1+t). So -Li2^q(-z) = int_0^z (1/t) * (D_q-primitive of ds/(1+s))(t) dt: one Jackson primitive and one classical primitive of a form with a simple pole of residue 1 at s = -1. That is the shape a q-difference prolongation would need. Nothing yet identifies ds/(1+s) with X dz on the colour cubic near a branch point; this is an observation, not a derivation.
 - z_i is defined only in the older proof (z_i = |V_i(q)|, algebraic volume); the Lean keeps z opaque.
 - Possible next step: local expansion of X dz at a branch point (X - X_c ~ c sqrt(z - z_c)) and test whether any q-difference prolongation of it has the D_q ln_q(1+t) shape. Research, not started.
+
+
+2026-11-21 (N2 thread), branch-point / residue check of lambda = X dz on the colour cubic F = X^3+(z+1)X^2+(z^2+z+1)X+(z^3+z^2+z+1) (sympy, exact):
+- disc_X F = -(16z^6+24z^5+35z^4+50z^3+35z^2+24z+16), six simple branch points (z ~ -0.975+-0.223i, 0.106+-0.937i, 0.119+-1.054i). No branching over infinity (three sheets X ~ -z, +iz, -iz), so Riemann-Hurwitz gives genus 1, matching prop:color-elliptic.
+- At a branch point (z - z_b = s^2) X dz = (X_b + ...)·2s ds is holomorphic: residue 0.
+- z = -1 is NOT special: F(X,-1) = X(X^2+1), three distinct finite roots, so X dz has no pole there on any sheet. The pole that D_q ln_q(1+t) = 1/(1+t) needs (residue 1 at t = -1) is absent in the z coordinate.
+- The only poles are over z = infinity, with residues 0, +5i/16, -5i/16 (sheets X ~ -z, -iz, +iz; sum 0). Purely imaginary, not 1. Rescaling by 16/(5i) to get residue 1 would be a chosen normalisation, i.e. a fit, and is not done.
+- Weight: a primitive of X dz gives elliptic periods plus logs (weight <= 1). -Li_2^q(-z) is an iterated integral (Jackson primitive of the classical primitive of ds/(1+s)), weight 2. One prolongation step of X dz cannot supply both the missing pole at -1 and the second integration unless the q-prolongation itself raises weight, which conj:qdifference-kernel-prolongation-symbol does not specify.
+Scope (a): this construction, with the classical form X dz on the colour cubic, does not give the D_q ln_q(1+t) shape. Not a structural exclusion; the prolongation is still undefined. Bean stays open.
