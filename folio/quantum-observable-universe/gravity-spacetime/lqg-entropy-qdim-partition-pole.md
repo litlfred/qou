@@ -11,6 +11,6 @@ where $\tau(C_q(V_j))$ is the archimedean image of the $\mathrm{SU}_q(2)$ Casimi
 
 1. **Entropy = pole.** The horizon-state generating function $\sum_{n\ge0} Z_1(s)^n = (1 - Z_1(s))^{-1}$ has a pole at the critical value $s_\star$ with $Z_1(s_\star) = 1$, and the entropy density is $s_\star$.
 2. **Gauss constraint = trace closure.** The closed-horizon $U(1)$ Gauss constraint $\sum_p m_p = 0$ is the trace-closure condition. The closed-link evaluation is a morphism $\mathbf{1} \to \mathbf{1}$.
-3. **Immirzi from criticality.** Matching to the Bekenstein–Hawking law $S = A/4\ell_p^2$ fixes the Barbero–Immirzi parameter as $\gamma = s_\star/2\pi$.
+3. **Immirzi from criticality.** Matching to the Bekenstein–Hawking law $S = A/4\ell_p^2$ fixes the Barbero–Immirzi parameter as $\gamma = s_\star/2\pi$. (Fixing $\gamma$ by agreement with the Bekenstein–Hawking law is the procedure of \cite[\S1]{domagala-lewandowski-2004}; the exact leading area term that makes the match possible is \cite{meissner2004}.)
 
-**Scope.** This is an algebraic recasting of an established analytic result, not a from-scratch derivation of black-hole entropy. The leading $\gamma$ is the $q \to 1$ value and is $q_0$-independent. True $q_0$-dependence enters only through the $q$-deformed degeneracy $[2j+1]_{q_0}$.
+**Scope.** This is an algebraic recasting of an established analytic result (the combinatorial state count of \cite{domagala-lewandowski-2004}, solved exactly, with a $-\tfrac12\ln A$ correction, in \cite{meissner2004}), not a from-scratch derivation of black-hole entropy. The leading $\gamma$ is the $q \to 1$ value and is $q_0$-independent. True $q_0$-dependence enters only through the $q$-deformed degeneracy $[2j+1]_{q_0}$.
