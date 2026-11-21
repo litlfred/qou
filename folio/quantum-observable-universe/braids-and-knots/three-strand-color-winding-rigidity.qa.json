@@ -1789,9 +1789,26 @@
         "reviewed_at": "2026-11-15T23:30:07.106Z",
         "reviewed_sha": "c87aa9c757e841db81341bde59da76b34fd2ece6",
         "evidence": "Re-review after #8075 (label a_{-2} now used consistently). The Lean's constrained variable satisfies a·(1−q⁴) = h, which is a_{−2}, as the narrative now says; Lean needs only 1−q² invertible, weaker than the statement's 1−q⁴."
+      },
+      {
+        "field_hash": {
+          "md": "6d612979662d",
+          "ts": "fbc8fb4b963b",
+          "lean": "45c9c7230a51",
+          "lean_statement": "7898ffffa15b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:53:40.689Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: sentences about the Lean sibling reworded. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Re-review after #8075 (label a_{-2} now used consistently). The Lean's constrained variable satisfies a·(1−q⁴) = h, which is a_{−2}, as the narrative now says; Lean needs only 1−q² invertible, weaker than the statement's 1−q⁴."
       }
     ]
   },
-  "updated_at": "2026-11-15T23:30:07.106Z",
+  "updated_at": "2026-11-21T07:53:40.689Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
