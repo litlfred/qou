@@ -41,3 +41,10 @@ strands close into one loop.
 
 For every word: F, c, the reading-3 verdict. Ranges of F over all words and over reading-3
 survivors. No word is selected by closeness to F_required.
+
+## Correction (before the probe ran)
+
+The Lean section above had the parity backwards. n + c even with c = 3 + g gives g even on five
+strands, so the two gluon strands close into **two** loops (`five_strands_two_gluon_loops`), and
+g odd on four strands, so the one gluon strand is one loop (`four_strands_one_gluon_loop`). Lean
+caught it: the false statement did not prove. Family and value are unchanged.
