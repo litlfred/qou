@@ -10,3 +10,5 @@ $$
 2. ***Constancy on a phase.** Let $C \subseteq \Omega(P)$ be connected. Suppose $u^*_\lambda$ and $s_\lambda$ are continuous in $q$, complementary ($u^*_\lambda s_\lambda = 0$) and strictly complementary ($u^*_\lambda > 0$ or $s_\lambda > 0$) at every $q \in C$. Then $\mathcal{S}^*(P, q)$ and $\mu(P, q)$ are constant on $C$.*
 
 *The remaining structure of the phases (the boundary stratification, analyticity of the Frobenius stability index, scope and phase transitions) is stated separately as [conj:confinement-phase-boundaries](#conj:confinement-phase-boundaries).*
+
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: the locus is a subset of $\mathbb{R}$, and openness and connectedness are statements about the real topology.

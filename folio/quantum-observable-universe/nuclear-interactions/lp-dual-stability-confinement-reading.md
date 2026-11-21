@@ -1,4 +1,4 @@
-Two further properties hold for the specific six-channel Gram matrix at the substrate. They are computed, not derived from linear-programming duality, and are recorded here rather than in the proposition:
+Two further properties are claimed for the specific six-channel Gram matrix at the substrate. They are not derived from linear-programming duality, and they are not currently established numerically: the Gram matrix built by the confinement operator-selection computation is singular, so it has no finite condition number, and that computation does not produce shadow prices. They are recorded here rather than in the proposition:
 
 - The dual shadow prices are bounded by $|y_i^*| \leq \kappa(G) \cdot \|t\|$, where $\kappa(G) \approx 7.0$ is the condition number of $G$. Linear-programming duality alone does not bound shadow prices by the condition number, so this is a property of this matrix.
 - The $B_3$ sub-braid $\sigma_0\sigma_1^{-1}$ is LP-unstable: $G\vec{x}$ has a negative $\sigma_0$ component. Partial confinement is therefore not sufficient, and all three units are required.

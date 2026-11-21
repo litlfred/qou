@@ -36,9 +36,9 @@ $$
 the upper bound of [prop:topological-mass-upper-bound](#prop:topological-mass-upper-bound) in its archimedean form, and an upper bound for the conjectured decomposition
 [eq:topological-mass-decomp](#eq:topological-mass-decomp).  Equality, and hence the conjectured decomposition itself, would need equality
 in both inequalities above. Both are open: neither is forced by the disc
-splitting and support hypotheses.  Each
+splitting and support hypotheses.  If each
 exceptional-divisor summand equals the quantum dilogarithm
-$\Phi_q(z_i)$ by
-([quantum dilogarithm evaluation](#conj:topological-mass-dilogarithm)),
-so the bound reads
+$\Phi_q(z_i)$, as the
+[quantum dilogarithm evaluation](#conj:topological-mass-dilogarithm) conjectures,
+then the bound reads
 $\mathfrak{m}(\varrho) \le \lVert \mathrm{Hol}_{\nabla_A}(\varrho_0; \mathfrak{G}) \rVert + \sum_{i=1}^{N} \Phi_q(z_i)$.  $\square$

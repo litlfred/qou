@@ -658,7 +658,7 @@
 | [prop:co-lp-dual-binding](#prop:co-lp-dual-binding) | LP dual for $CO$: covalent active-set $2$ ($+$ dative $=$ triple) | Ch 16 |
 | [prop:h2-lp-dual-binding](#prop:h2-lp-dual-binding) | LP dual gives optimal $H_2$ binding | Ch 16 |
 | [prop:co2-lp-dual-binding](#prop:co2-lp-dual-binding) | LP dual selects linear $O{=}C{=}O$ geometry | Ch 16 |
-| [prop:lp-dual-stability](#prop:lp-dual-stability) | LP dual stability: confined hadrons have bounded shadow prices | Ch 12 |
+| [prop:lp-dual-stability](#prop:lp-dual-stability) | LP dual stability: the confined optimum is LP-stable and strongly dual | Ch 12 |
 | [prop:atomic-lp-stability](#prop:atomic-lp-stability) | LP stability of the atomic braid | Ch 12 |
 | [prop:toffoli-lp-stability](#prop:toffoli-lp-stability) | LP-dual stability of the $q$-Toffoli braid and the golden-ratio threshold | Ch 20 |
 | [prop:lusztig-vs-hermitian-bar](#prop:lusztig-vs-hermitian-bar) | Lusztig bar ($q \mapsto q^{-1}$) vs Hermitian-$\ast$ ($q \mapsto \overline{q}^{-1}$) on the complex Hecke algebra: the two anti-involutions coincide on the parameter iff $q \in \mathbb{R}$. On the unit circle $|q| = 1$, Lusztig coincides with complex conjugation ($\overline{q} = q^{-1}$) while Hermitian becomes the identity on $q$; on general $|q| > 1$ with $\mathrm{Im}(q) \neq 0$ the three involutions (Lusztig, Hermitian, complex conjugation) are pairwise distinct. The split is the categorical home for any future $\mathrm{Im}(q_0)$ contribution. | Ch 11 |

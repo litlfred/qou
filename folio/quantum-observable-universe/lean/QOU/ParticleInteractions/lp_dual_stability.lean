@@ -7,7 +7,7 @@ import QOU.Optimization.MatrixFarkasInstance
 **Proposition** ([`prop:lp-dual-stability`](../../../quantum-observable-universe/nuclear-interactions/lp-dual-stability.md)):
 *LP dual stability of confined hadrons.*
 
-The block claims four things about the confined optimum `x*` of the
+Until 2026-11-21 the block claimed four things about the confined optimum `x*` of the
 operator-selection LP
 
     min tᵀx   s.t.   Σⱼ xⱼ = n_target,   G x ≥ 0,   x ≥ 0 :
