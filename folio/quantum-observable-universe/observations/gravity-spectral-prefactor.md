@@ -1,10 +1,12 @@
-*Working over $A = H_n(R, q)$, the universal curvature-rank tail $\mathfrak{m}^{\geq 4}_{q,\mathcal{K}}(\mathcal{T})$ of the unified mass formula ([universal residue](#prop:plancherel-term-7-formulation)) carries a stratum-dependent prefactor:*
+**Proposition (conditional on [binding scale from Catalan's constant](#conj:binding-scale-catalan)).**
+
+*Working over $A = H_n(R, q)$, write the stratum-dependent prefactor of the universal curvature-rank tail $\mathfrak{m}^{\geq 4}_{q,\mathcal{K}}(\mathcal{T})$ of the unified mass formula ([universal residue](#prop:plancherel-term-7-formulation)) as $\alpha = m_e \cdot 8\,G_q$. If, as [binding scale from Catalan's constant](#conj:binding-scale-catalan) conjectures,*
 
 $$
   \alpha \;=\; m_e \cdot 8\,G,
 $$
 
-*where $G = \sum_{k \geq 0} (-1)^k/(2k+1)^2 \approx 0.9159655942$ is Catalan's constant, so that $8G = \mathrm{Vol}(\mathcal{B}_3) \approx 7.3277$ is the hyperbolic volume of the Borromean complement — two regular ideal octahedra of volume $4G$ each. The coefficient $8$ is therefore fixed by the octahedral decomposition, not chosen. This is the same prefactor as [binding scale from Catalan's constant](#conj:binding-scale-catalan).*
+*where $G = \sum_{k \geq 0} (-1)^k/(2k+1)^2 \approx 0.9159655942$ is Catalan's constant, then $G_q = G$, and $8G = \mathrm{Vol}(\mathcal{B}_3) \approx 7.3277$ is the hyperbolic volume of the Borromean complement — two regular ideal octahedra of volume $4G$ each. Under that hypothesis the coefficient $8$ is fixed by the octahedral decomposition, not chosen. Without it, the extraction of $G_q$ from $\alpha$ is well-posed, and nothing more is claimed.*
 
 *The associated dimensionless spectral ratio at substrate parameter $q$ is:*
 

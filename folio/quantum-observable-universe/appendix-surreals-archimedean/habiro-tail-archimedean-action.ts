@@ -16,7 +16,7 @@ export default proposition({
     "archimedean",
     "hbar-N-wall",
   ],
-  cites: ["hakimoglu-brown2025"],
+  cites: ["hakimoglu-brown2025", "zagier-dilogarithm", "crew2023", "garoufalidis-wheeler-modular"],
   uses: ["def:ecalle-borel-resummation"],
   authorNotes: [
     {

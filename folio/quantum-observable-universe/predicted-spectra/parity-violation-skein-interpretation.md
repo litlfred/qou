@@ -16,7 +16,7 @@ The Wu experiment found a strong forward-backward asymmetry in ${}^{60}\mathrm{C
 
 **Connection to the $\mathbb{Z}/2$ of beta decay.**
 
-The involution $q \leftrightarrow q^{-1}$ exchanges $\beta^- \leftrightarrow \beta^+$. It acts as the combined $\widehat{CP}$ operation. It applies parity $\mathcal{P}$ by mirroring all crossings. It applies charge conjugation $\hat{C}$ by exchanging $T_{2,3} \leftrightarrow T_{2,3}^{\sigma}$.
+The involution $q \leftrightarrow q^{-1}$ exchanges $\beta^- \leftrightarrow \beta^+$. It acts as the combined $\widehat{CP}$ operation. It applies parity $\mathcal{P}$ by mirroring all crossings. It applies charge conjugation $\hat{C}$ by exchanging the electron $e^- = \sigma_0\sigma_1\sigma_0$ with the positron $e^+ = \sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$.
 
 - $\mathcal{P}$ alone is violated because $q \neq q^{-1}$.
 - $\hat{C}$ alone is violated because the electron and positron differ in mass ordering.
