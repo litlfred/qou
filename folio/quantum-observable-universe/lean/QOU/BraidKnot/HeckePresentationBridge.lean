@@ -134,7 +134,7 @@ noncomputable def heckeBelow (hq : q ≠ 0) :
   σ := heckeBelowσ q m
   hecke i hi := by
     rw [heckeBelowσ_of_lt q m (by omega : i < m), ← Algebra.smul_def]
-    exact QOU.SchurWeyl.Hecke.σ_quadratic_skein K q q⁻¹ m (mul_inv_cancel₀ hq) _
+    exact QOU.SchurWeyl.Hecke.σ_quadratic_qou K q q⁻¹ m (mul_inv_cancel₀ hq) _
   braid i hi := by
     rw [heckeBelowσ_of_lt q m (by omega : i < m), heckeBelowσ_of_lt q m (by omega : i + 1 < m)]
     exact QOU.SchurWeyl.Hecke.σ_braid K q q⁻¹ m ⟨i, by omega⟩ (by simp; omega)
@@ -163,6 +163,8 @@ end Universal
 section Spectrum
 
 open QOU.Mathlib (StandardYoungTableau)
+open QOU.SchurWeyl.TableauCells QOU.SchurWeyl.SeminormalRep
+open scoped Classical
 
 /-- **Eigenvalue on every seminormal block, unconditionally.**  For `q` not a root of unity, the
 Reeb-holonomy Laplacian of `H_{m+1}(q)` acts on the seminormal representation of shape `μ` by the
@@ -172,7 +174,8 @@ theorem seminormalRep_reebLaplacianB {K : Type*} [Field K] (q : K) (hq0 : q ≠ 
     (hN : μ.cells.card = m + 1) :
     seminormalRep q hq0 hq2 m hN (reebLaplacianB (heckeBelow q m hq0) (m + 1))
       = (∑ c ∈ μ.cells, cellCasimirVal q c)
-          • (1 : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) K) := by
+          • (1 : Matrix (_root_.QOU.Mathlib.StandardYoungTableau μ)
+            (_root_.QOU.Mathlib.StandardYoungTableau μ) K) := by
   rw [reebLaplacianB_heckeBelow]
   exact seminormalRep_contentCasimir q hq0 hq2 m hN
 
