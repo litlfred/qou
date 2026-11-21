@@ -14,8 +14,13 @@ Stage 4d-iv of the derivation of van der Veen's Lemma 1 (Zheng's formula). With 
 
 The factor `t^{(N²−1)/2} = q^{m(m+2)}` is a framing correction, included only when both strands
 of the clasp belong to one component, which for Whitehead chains means `c + d = 1`
-(`framingSc`). The remaining factor `t^{N(N−1)/2} Σ_k …` is `claspSc`, whose summands are
-`vdvTerm` (`QuantumSl2Clasp.lean`).
+(`framingSc`). The remaining factor `t^{N(N−1)/2} Σ_k …` is, up to the sign `(−1)^{N−1}`,
+`claspSc`, whose summands are `vdvTerm` (`QuantumSl2Clasp.lean`).
+
+**Sign.** The cup and cap of `V_N` carry `(−1)^{N−1}`, so the clasp scalar is `(−1)^{N−1}` times
+the printed `C(n,t)`, and `zhengJ` is `(−1)^{(N−1)(c+d)}` times the printed right-hand side.
+At `N = 2` the trace side gives the Jones polynomial normalised so that a two-component link
+has `V(1) = −2`, the standard value. The sign does not affect `|J_N|`.
 
 `zhengJ_eq_trace` shows that the right-hand side, as a function of `(a, b, c, d)`, is the
 normalised quantum trace `[N]⁻¹ tr_q(T^a B^b (φ X)^c (φ̄ X̄)^d)` on `V_N ⊗ V_N` of the
@@ -43,11 +48,13 @@ variable (s : 𝕜) (m : ℕ)
 /-- The framing scalar `t^{(N²−1)/2} = q^{m(m+2)}`, used only when `c + d = 1`. -/
 def framingSc (c d : ℕ) : 𝕜 := if c + d = 1 then (s ^ 2) ^ ((m : ℤ) * (m + 2)) else 1
 
-/-- van der Veen's `C(n, t)` with `N = m + 1`, including the framing factor when `c + d = 1`. -/
+/-- `(−1)^{N−1}` times van der Veen's `C(n, t)` (`N = m + 1`), including the framing factor
+when `c + d = 1`. -/
 def vdvC (n c d : ℕ) : 𝕜 := framingSc s m c d * claspSc s m (m - n)
 
 /-- **The right-hand side of van der Veen's Lemma 1**, with `N = m + 1`:
-`Σ_{n<N} ([2n+1]/[N]) t^{a n(n+1)} ([N(2n+1)]/[2n+1])^b C(n,t)^c C(n,t⁻¹)^d`. -/
+`Σ_{n<N} ([2n+1]/[N]) t^{a n(n+1)} ([N(2n+1)]/[2n+1])^b C(n,t)^c C(n,t⁻¹)^d`, up to the
+overall sign `(−1)^{(N−1)(c+d)}` (see the module docstring). -/
 def zhengJ (a b c d : ℕ) : 𝕜 :=
   ∑ n ∈ Finset.range (m + 1), qint (s ^ 2) (2 * n + 1) / qint (s ^ 2) (m + 1)
     * (((s ^ 2) ^ 2) ^ (n * (n + 1))) ^ a

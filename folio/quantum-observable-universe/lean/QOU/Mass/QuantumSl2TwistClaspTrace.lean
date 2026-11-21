@@ -8,8 +8,8 @@ clasp `X` are each scalar on every string `Δ(F)^i w_j`, i.e. on every summand
 `V_{2n+1}` (`n = m − j`):
 
 * `T` acts by `q^{2n(n+1)}` (`twist_eq`), van der Veen's `T(n,t) = t^{n(n+1)}` with `t = q²`;
-* `X` acts by `Σ_{k ≤ j} vdvTerm k (j−k) n` (`clasp_deltaF_pow_hwVec`), van der Veen's `C(n)`
-  before the framing factor.
+* `X` acts by `Σ_{k ≤ j} vdvTerm k (j−k) n` (`clasp_deltaF_pow_hwVec`), which is `(−1)^{N−1}`
+  times van der Veen's `C(n)` before the framing factor.
 
 So `T^a X^c` is scalar on every summand, and by `trace_deltaK_mul` its quantum trace is
 `Σ_j [2(m−j)+1] T_j^a C_j^c`. This is Lemma 1 of van der Veen for the twist and clasp boxes
