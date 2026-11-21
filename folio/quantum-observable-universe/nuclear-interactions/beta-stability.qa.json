@@ -1262,6 +1262,24 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "major",
         "evidence": "Library `lean/QOU/Braiding/beta_stability.lean` is intentionally empty. The sibling *defines* `betaStabilityLine` as the claimed formula (`.lean:29-30`) and proves only the a_C=0 limit and neutron excess. The derivation from ∂L_bind/∂n=0 and the a_C, a_A q-integer assignments are not encoded. The formula is the textbook Weizsäcker-SEMF line; the md gives no derivation from L_bind. The md says ∂/∂n; the Lean header says ∂/∂p"
+      },
+      {
+        "field_hash": {
+          "md": "dbf06c284b78",
+          "ts": "ba69cd1b61d0",
+          "lean": "cf104c099f95",
+          "lean_statement": "2bbb25b15ad3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:13:15.381Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: scope-note heading renamed to 'of the liquid-drop coefficient identification'. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Library `lean/QOU/Braiding/beta_stability.lean` is intentionally empty. The sibling *defines* `betaStabilityLine` as the claimed formula (`.lean:29-30`) and proves only the a_C=0 limit and neutron excess. The derivation from ∂L_bind/∂n=0 and the a_C, a_A q-integer assignments are not encoded. The formula is the textbook Weizsäcker-SEMF line; the md gives no derivation from L_bind. The md says ∂/∂n; the Lean header says ∂/∂p"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2485,6 +2503,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:56:01.767Z",
+  "updated_at": "2026-11-21T08:13:15.381Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
