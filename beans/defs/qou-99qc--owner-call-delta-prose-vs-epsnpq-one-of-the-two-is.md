@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-21T02:34:39Z
+updated_at: 2026-11-21T02:46:36Z
 parent: qou-10v9
 ---
 
@@ -4372,3 +4372,12 @@ Owner route Y. Pre-reg `76ddb991d3`. Lean `QOU/QuarkState/YukawaVacuumPairing.le
 - Type-blind pairings (one morphism on all strands) give split 0 (`split_typeBlind`). Compressed a·1+b·Ř: diag(a, a+bq) vev d, diag(a+bq, a+b(q−q⁻¹)) vev u. General diagonal: split = (a_q−b_q)−(a_ℓ−b_ℓ), 4 free.
 - Charge selection (only non-type-blind candidate): q^{3Q}-invariant 2-point pairing with the neutral vev vanishes on charged slots — quark couplings 0 (`pairing_quark_zero`), e⁻ 0 (`pairing_lepton`), ν free (`nu_coupling_free`); split = y_ν² (`split_neutral`), order q⁰, ≠ 0 at q=1. Gives energy to ν: opposite of SM (needs a right-handed singlet the strand model lacks).
 - No magnitude forced → no Q_β number (pre-registered). Comparison only: CODATA Q_β/m_e = 1.53099. Premise L assumed in arms 3–4, still open.
+
+## 2026-11-21 — route L (additive log-trace energy), PR #8693
+Owner-selected route L. E_κ = κ·log|tr| (conv-D Markov trace, no [N]!/q^N factor). It is the corpus's own B_sym channel (α = E₀), applied to the β words. Lean `QOU/QBeta/LogTraceAdditiveEnergy.lean` (sorry-free).
+- Additive on one-strand joins, unconditional (`logEnergy_tr_mul_adjoin_gen`); on disjoint blocks only conditional on `TowerSpan` (`logEnergy_disjoint_of_towerSpan`). Cross term = κ·log|trW/Πtr| (`crossTerm_eq_log_ratio`); ν̄ strand ↦ 0.
+- κ NOT fixed: additivity is invariant under κ ↦ cκ. α = E₀ is a named normalisation. The volume conjecture cannot supply κ (coloured Jones at e^{2πi/N}, not tr_M at real q₀; Vol(3₁) = 0 but log|tr(3₁)| = −0.16425).
+- P3 sign problem survives (`no_kappa_for_index_character`).
+- On the P2 Markov traces, both Q > 0 and E(e⁻) > 0 need κ < 0 (`markov_log_signs`; hypotheses checked exactly). The corpus sign (+E₀) makes β⁻ endothermic: split Q = −0.4889 MeV. At κ = −E₀ it is +0.4889 (−37.5 %), but that is sign selection, not derivation. κ needed = −13.107 m_e.
+- P1 wrapping words: C_log = 1.63e-4 (W3), 4.59e-5 (W4/W6), −0.0903 (W7); all R → 1 at q → 1. Family D: the sign of Q follows the chosen twist sign.
+Audit `docs/audits/2026-11-21-qbeta-route-l-additive-logtrace-energy.md`. Still open; not closing.
