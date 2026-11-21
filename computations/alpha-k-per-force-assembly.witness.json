@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T16:20:58.162949+00:00",
-  "commitSha": "157d6b22130e25f17aaa880e4084235600c9d02f",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T04:37:57.741888+00:00",
+  "commitSha": "2f9ef58d2792aa97b41d03bd00bd30c583911694",
   "assertions": [
     {
       "name": "EM trace-ratio identity h^2/(q dq9 dq10) = 1/(q[9]_q[10]_q)",
@@ -23,7 +23,7 @@
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "prop:force-carrier-intertwining-correspondence"
+      "source": "conj:force-carrier-intertwining-correspondence"
     },
     {
       "name": "1/alpha_EM assembled from derived decorations is within 0.2% of CODATA",
@@ -34,11 +34,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "alpha-k-per-force-assembly",
   "scriptFile": "alpha_k_per_force_assembly.py",
-  "scriptHash": "e02754e6f967",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptHash": "75c3156e7b01",
+  "scriptCommitSha": "4368f190768ffff142d30a9a01fc47befb68ba1c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,14 +46,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -62,7 +62,7 @@
     "reproduce": "python3 -u computations/alpha_k_per_force_assembly.py"
   },
   "description": "alpha_{basis-knot} step 3: per-force assembly.  Wires the step-2 writhe decoration delta_q(T_{m,k}) = h[(m-1)k]_q into the established force-carrier intertwining correspondence (prop:force-carrier-intertwining-correspondence): each carrier T_{m,k} carries an intertwining partition lambda=(m,1^{n-m}) [first index m] and a writhe decoration h[(m-1)k]_q [writhe (m-1)k].  The two genus-4 carriers are T_{2,9} (strong; (2,1,1), h[9]_q) and T_{3,5} (weak/beta; (3,1), h[10]_q), transpose partitions (Frobenius self-dual).  The established EM trace-ratio 1/alpha_EM = h^2/(q delta_q(T_{2,9}) delta_q(T_{3,5})) = q[9]_q[10]_q is assembled end-to-end from the derived writhe decorations (residual vs CODATA reported).  The per-force SELECTION rule (which carrier pair mediates the other forces) stays conditional on conj:e-hartree-categorical-derivation; NO carrier-pair-vs-coupling enumeration is done (anti-fishing).  Pre-archimedean decorations, no pi.",
-  "contentBlock": "prop:force-carrier-intertwining-correspondence",
+  "contentBlock": "conj:force-carrier-intertwining-correspondence",
   "data": {
     "q0": "1.109978582751380807591669095610768879874499121873578736072814240181799",
     "q0_anchor": "proton",

@@ -4,7 +4,7 @@ export default algorithm({
   label: "alg:jet-prefix-transport",
   title: "Jet-prefix transport in the $q \\to 1$ limit",
   uses: [
-    "prop:jet-prefix-gb-filtration",
+    "conj:jet-prefix-gb-filtration",
     "prop:gb-spectral-sequence",
   ],
   computation: {

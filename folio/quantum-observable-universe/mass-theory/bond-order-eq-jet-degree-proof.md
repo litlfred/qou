@@ -5,7 +5,7 @@ a nucleon to an $(n-1)$-cluster appends its block and the crossings binding it
 to the cluster, raising the Gröbner--Shirshov normal-form length by a fixed
 increment ([Length-filtration spectral sequence of the Hochschild complex of $H_n(R, q)$](#prop:gb-spectral-sequence)). Reading
 this length through the jet-prefix order
-([Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)](#prop:jet-prefix-gb-filtration)) places the
+([Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)](#conj:jet-prefix-gb-filtration)) places the
 $n$-nucleon cluster sub-word at jet vertical degree $n$.
 
 *Step 2 — the graded component is the cluster term.* The standard basis
@@ -17,6 +17,6 @@ length), so the filtration is exhaustive.
 *Conclusion.* Summing the graded components reconstructs the binding, and by
 Steps 1--2 the degree-$n$ component equals the $n$-body term:
 $\sum_n(\text{$n$-body term})=\sum_n\mathrm{gr}_n$. In
-[Body order equals jet degree](#lem:bond-order-eq-jet-degree) the
+[Body order equals jet degree](#conj:bond-order-eq-jet-degree) the
 graded match (Steps 1--2) and exhaustiveness are the hypotheses, and
 the body-order = jet-graded sum identity follows from them. $\qquad\blacksquare$
