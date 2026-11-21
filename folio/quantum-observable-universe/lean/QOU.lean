@@ -482,6 +482,7 @@ import QOU.Mass.LevelSelectionLogarithmic
 import QOU.Mass.EquidistantCoordinationCap
 import QOU.Mass.StrandLayoutForcesChain
 import QOU.Mass.TransportedPairBond
+import QOU.Mass.BlockRelabelConjugation
 import QOU.Calculations
 import QOU.HadronicMass
 import QOU.AtomicMass

@@ -131,6 +131,36 @@ Observations (measured, not proved):
   closed-shell excess of §3 survives the bond count.
 - B_diff (the licensed E₀·Δtr form) barely moves: 0.33 → 0.35 MeV.
 
+## 6b. Nucleon order is a conjugation (owner card "1+2 now, then 3")
+
+`QOU/Mass/BlockRelabelConjugation.lean` (sorry-free, no imports beyond
+`TransportedPairBond`) proves at the permutation level that the cable crossing
+`P_k` carries block `k` onto block `k + 1` and back, fixes every other strand,
+moves each internal letter of a nucleon with its block, and turns the neighbour
+bond `σ_{3k+2}` into a bond between non-adjacent strands (`3k` and `3k + 5`).
+
+`computations/probes/he4_order_conjugation/order_conjugation_probe.py` checks the
+braid-level half in every irrep of `H_9`. `P_k σ_g P_k⁻¹` matches `σ_{g'}` for
+the moved and the far letters, worst character gap 1.5e−59. The relabelled ³H
+and ³He words equal `W` in every character, worst gap 2.2e−60. So with the bonds
+carried along, swapping two nucleons does not change any trace.
+
+The naive chain, with bond letters re-attached to the new neighbours, does change
+the trace:
+
+| atom | order | naive chain tr_atom | production tr_atom |
+|---|---|---:|---:|
+| ³H | p n n → n p n | 0.036696859763 | 0.029144042361 |
+| ³He | p p n → p n p | 0.0486060765798 | 0.0585962536544 |
+
+Conclusion (measured, with the identity checked rather than proved at braid
+level): **order is not an independent input**. What changes a trace is which
+strands a bond joins and the path it takes to reach them. In the production
+convention a bond joins one nucleon's last strand to the next one's first. After
+a swap the conjugated bond joins a different pair of strands (the first strand
+of the left block to the last strand of the right block). That choice, and the
+over/under path, are what a γγ formation word has to fix.
+
 ## 7. Diagnostic: adding the GPMT ≥3-row cumulant
 
 The only Lean-backed many-body quantity on main is the GPMT ≥3-row cumulant
