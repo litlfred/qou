@@ -4,6 +4,7 @@ import UGB.GrobnerShirshov.NormalForms
 import UGB.GrobnerShirshov.NormalFormExistsRefutation
 import UGB.GrobnerShirshov.QSerreCriticalPairs
 import UGB.GrobnerShirshov.Quotient
+import UGB.GrobnerShirshov.NormalFormBasisProof
 import UGB.GrobnerShirshov.Flatness
 import UGB.GrobnerShirshov.StrongMultiplicativity
 import UGB.GrobnerShirshov.JetOrder
@@ -24,6 +25,7 @@ provides the algebraic engine behind the QOU lifting mechanism.
 | `NormalFormExistsRefutation` | proof that the `normal_form_exists` axiom is **false** |
 | `QSerreCriticalPairs` | reduces `qSerre_is_gs_basis` to its 8 genuine critical pairs |
 | `Quotient` | the quotient algebra `k⟨G⟩ / (Σ)` and `NormalFormBasis` |
+| `NormalFormBasisProof` | proof that a GS basis with unit leading coefficients gives `NormalFormBasis` (commutative `k`) |
 | `Flatness` | Flat deformation from GS confluence |
 | `StrongMultiplicativity` | tensor-product presentation (Bokut–Chen); see `leitner2006` Def. 1.11 for strong multiplicativity |
 | `JetOrder` | Jet-stratified reduction: ordering extension + complexity |
