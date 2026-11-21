@@ -738,3 +738,16 @@ against the target.
 They fix the q-dependence of the split. They do not produce 12 unless a further choice is
 made, and that choice is not in the corpus. Status: 12 was not found in the searched class.
 This does not show it is impossible.
+
+## §24 A count from the 𝒟² term (pre-registered e819fb1277c): negative
+
+Probe `mn_d2_leading_count_probe.py`. With 𝒟 = q⁻¹(hol − 1) + (1 − q⁻¹)T³ on W_p ⊕ W_n and
+h = q − q⁻¹, the leading coefficient is D₁ = T³/2. That is +¼·1 on W_p and −¼·1 on W_n:
+hol − 1 is O(h²), so the holonomy drops out at this order and only the Reeb term is left.
+
+- N = tr(D₁²) = 3/16 + 3/16 = **3/8** (3/2 in the unit 1 − q⁻¹).
+- rank D₁ = 6, the dimension of W_p ⊕ W_n.
+
+Verdict, as registered: scope-(a) negative for this one definition. N is not 12. The rank 6
+only counts the nucleon states, and the registration did not allow multiplying it by anything.
+All checks pass (Hecke relation, invariance of the weight spaces, limit equal to tr(D₁²)).
