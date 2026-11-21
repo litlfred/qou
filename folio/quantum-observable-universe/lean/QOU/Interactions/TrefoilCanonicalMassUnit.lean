@@ -165,6 +165,18 @@ def m_e_cat_unit : ℝ := 1
     abstract `HeckeElement 2` has no generators, so nothing forces `T` to be the
     image of `σ₀³`.  Closing that needs the braid → Hecke map on this carrier.
 
+    **Residual (GAP), which trace (added 2026-11-21).**  `ρ · |tr_M T|` is a
+    single trace of a Hecke element, through the opaque `markovTraceWeight`.
+    The corpus's mass functional is the **two-term Lagrangian trace**
+    `τ(ℒ_q) = τ(𝒟²) + τ(ψ*𝒟ψ)` (`QOU.CategoricalLagrangianTwoTermBridge`, epic
+    `qou-7xl8`), evaluated with the quantum trace `Tr(K^{⊗n} ·)/[2]_q^n` (owner ruling
+    2026-11-20, option 2) — the convention-D Markov trace
+    (`JimboActionKernel.jimboMarkov`).  So this class states at most the `𝒟²`
+    (braid) term of the trefoil's mass, with an unidentified trace weight, and
+    omits the matter term `τ(ψ*𝒟ψ)`.  What the matter term is for the electron
+    is not formalised; until it is, this conjecture is not the two-term
+    statement and should not be read as one.
+
     Status: PRIMARY CONJECTURE (open, no Lean proof from substrate).
     The class is left without an instance until a derivation is available.
     @conjecture: primary -/
