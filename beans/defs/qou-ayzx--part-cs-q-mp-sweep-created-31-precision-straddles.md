@@ -4,7 +4,7 @@ title: 'Part C''s Q_MP sweep created 31 PRECISION STRADDLES: mpmath side moved t
 status: todo
 type: task
 created_at: 2026-11-21T04:30:36Z
-updated_at: 2026-11-21T06:35:00Z
+updated_at: 2026-11-21T06:50:00Z
 parent: qou-9nnz
 ---
 
@@ -131,3 +131,36 @@ The loosest is **7.8e+7× tighter** than the `1e-50` bound, and the smallest gen
 **`delta_lambda_binding_reading_probe` is the one to do next**: it is the same `abs(tr − z·tr) < 1e-50` construction as the probe whose three checks broke, so it is the candidate most likely to be a *live* failure rather than a latent one. The other six mix at `2.1e-50` against tolerances of `1e-38`, `0.001` or nothing, so they are wrong numbers that nothing currently asserts tightly enough to catch — exactly the population this bean exists for.
 
 **A caveat on the one deliberate cross-check**, worth a line because it is not a defect but is weaker than it looks: `qbeta_per_block_chi_borromean_closed_forms_probe` compares its two routes at tolerance `1e-38` while the routes themselves sit at *different* `q` (sympy 50-digit vs `Q_MP`, `2.1e-50` apart). It passes, and it would pass whatever the routes disagreed about below `1e-38` — the q difference is not what limits it, but the cross-check cannot see anything finer than its own tolerance either.
+
+### 2026-11-21 — ✅ OPTION D COMPLETE: 8/8 green, all three witnesses provenance-clean
+
+`72c7f3b3848`. `two_nucleon_binding_law_comparison_probe` reports **allPassed: True, 8/8**, including `D4_ratios_match_isospin_witness` — the check that needed the isospin upstream refreshed.
+
+**What it took**, in the order the measurements forced:
+
+1. Close the `Q_MP`/sympy straddle in **both** probes (`f0cb4c0c718`).
+2. Make `order_desc` report ties instead of resolving them by round-off (`fb278110687`).
+3. Equip python 3.13: sympy (pins `mpmath<1.4`, so mpmath went to **1.3.0 — matching all three committed witnesses**), cvxpy **1.9.3** (matching main's agents), and `pyhecke_native` 0.9.0 built from this repo's own crate with maturin for cp313 — **44 s**, not the blocker it looked like.
+4. Run all three under python3.13.18 with a real budget. The isospin probe needed **13 min**; its two earlier failures were a 400 s and a 600 s budget *I* had set, so the 2026-11-21 *"resource-limited work goes to a bean for Antigravity"* ruling does **not** apply to it.
+
+**Both gates, all three:**
+
+| witness | value | provenance |
+|---|---|---|
+| `gamma-gamma-isospin-channel-probe` | worst `7.23e-49`, 738 fields | **upgraded** |
+| `gamma-gamma-nn-pn-selection-probe` | worst `7.12e-49`, 109 fields | **upgraded** |
+| `two-nucleon-binding-law-comparison-probe` | worst `8.60e-49`, 327 fields | **upgraded** |
+
+Moves of ~`7–9e-49` are the expected size for closing a `2.13e-50` straddle; no `allPassed` flip. The permutation detector excluded **20** reordered lists in the nn_pn witness — taxonomy row 59's class, correctly not counted as movement.
+
+**Provenance is strictly richer**, which was the point of step 3:
+
+    was: python 3.13.16, numpy 2.5.3, sympy 1.14.0, mpmath 1.3.0, pyhecke_native 0.9.0
+    now: python 3.13.18, numpy 2.5.3, scipy 1.18.1, sympy 1.14.0, mpmath 1.3.0,
+         pyhecke_native 0.9.0, clarabel 0.11.1, cvxpy 1.9.3
+
+**3 keys added, 0 lost**, python upgraded, everything else matched. `pyhecke_native_build` moves to the freshly built wheel's hash and is correctly treated as unordered.
+
+**cvxpy mattered beyond bookkeeping.** AGENTS.md records that its absence *changes numbers* (deuteron binding `−15.8142` without it, `+0.5381` with it — a sign flip from the import alone), and a default container here has it **absent** while main's agents have 1.9.3. Until it was installed, **no witness main produced could be refreshed here without a downgrade.** That generalises well beyond this bean.
+
+**Still open:** the 7 confirmed straddles (severity table above), top-ranked being `delta_lambda_binding_reading_probe` at a **1.19× margin**.
