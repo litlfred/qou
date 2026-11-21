@@ -126,3 +126,56 @@ What the table shows, read as a scope-(a) result for this model only:
 - **The bare margin rises monotonically toward 0.**
 
 The negative constrains this capture rule only: one Hopf capture, one neighbour crossing and one photon per electron. It does not exclude other capture rules (§3).
+
+## 8. All-pairs capture (owner card, 2026-11-21)
+
+**The rule.** Electron `k` now links the nucleus (`A_{0k}⁻¹`) and **every**
+earlier electron `j < k`, by the full pure-braid link `A_{jk}`. It then emits
+the photon `γ(φ)`. Earlier runs used a single crossing with the nearest electron
+only.
+
+The binding operator `O_k = W_{k−1}⁻¹ W_k` is the corpus **knot convolution**:
+`K = ρ(bound)·ρ(free)⁻¹` (`binding_k_solver.py`, bean `t7qv`), where the free
+constituents are `W_{k−1}` beside an unlinked new strand.
+
+Lean: `allPairs`, `bindOpAll`, `atomAll` and `atomAll_bare_isUnit` in
+`GammaGammaAtom.lean`. With the bare photon every atom word is a pure braid.
+
+**Complexity** (exact over F_P, `k = 1..7`;
+`gamma-gamma-shell-allpairs-partA.result.json`):
+
+- From `k = 4` the atom word fills the whole algebra: it has `(k+1)!` terms, and
+  its longest word is the longest element, of length `C(k+1, 2)`.
+- So this measure saturates and cannot see shells.
+- The convolution operator `O_k` grows linearly: `4k − 2` terms, longest word
+  `2k`. Nothing changes at a closure.
+
+**Positivity margin** (certified arb at the proton `q₀`;
+`gamma-gamma-shell-region-allpairs.result.json`):
+
+| Z | binds / grid | binds on {−1,0,1}³ | best relative margin | bare margin (absolute) | bare relative margin |
+|---|---|---|---|---|---|
+| 1 | 343/343 | 27 | 0.659 | 0.812 | 0.659 |
+| 2 | 258/343 | 16 | 0.992 | 0.812 | 0.744 |
+| 3 | 220/343 | 14 | 0.923 | 0.997 | 0.819 |
+| 4 | 188/343 | 12 | 0.908 | 1.175 | 0.683 |
+| 5 | 198/343 | 15 | 0.895 | 1.222 | 0.397 |
+| 6 | 185/343 | 11 | 0.787 | 1.832 | 0.261 |
+| 7 | 195/343 | 14 | 0.795 | 2.269 | 0.111 |
+| 8 | 179/343 | 11 | 0.539 | 4.263 | 0.057 |
+| 9 | 67/125 | 13 | 0.620 | 6.375 | 0.018 |
+| 10 | 61/125 | 11 | 0.541 | 14.93 | 0.0073 |
+| 11 | — | — | — | 27.11 (bare only) | 0.0018 |
+
+- **The bare atom binds at every `Z` through 11.** The tightest block is always
+  the most balanced two-row shape, `(⌈n/2⌉, ⌊n/2⌋)`.
+- **Its absolute margin grows smoothly.** The relative margin shrinks only
+  because the one-row and hook blocks grow faster.
+- **There is no stop at `Z = 2` and no stop at `Z = 10`.**
+- **Over φ the region again alternates by parity**, with odd `Z` higher from
+  `Z = 4`.
+
+**Verdict.** Scope (a), for this rule: the all-pairs knot convolution does not
+show the shell closures 2 or 10, either in normal-form complexity or in
+Frobenius positivity. Together with §6–7, both interaction ranges tested
+(nearest neighbour only, all pairs) give pairing parity and no closure.

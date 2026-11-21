@@ -81,5 +81,48 @@ theorem atom_bare_isUnit (σ : ℕ → Aˣ) : ∀ k, IsUnit (atom σ (bare : Col
       simp only [atom, bindOp, emission_bare, mul_one, ← mul_assoc]
       exact (ih.mul (capture σ (k + 2)).isUnit).mul (interaction σ (k + 2)).isUnit
 
+/-! ### All-pairs interaction (owner card, 2026-11-21)
+
+Electron `k` links every earlier electron `j` (`1 ≤ j < k`) by the pure braid
+`A_{jk} = σ_{k−1}⋯σ_{j+1} σ_j² σ_{j+1}⁻¹⋯σ_{k−1}⁻¹` (positive orientation, like
+charges), in place of the single neighbour crossing. -/
+
+/-- `σ_{k−1} ⋯ σ_{j+1}` as a unit (empty when `k ≤ j + 1`). -/
+def ladderFrom (σ : ℕ → Aˣ) (j : ℕ) : ℕ → Aˣ
+  | 0 => 1
+  | (k + 1) => if j + 1 ≤ k then σ k * ladderFrom σ j k else 1
+
+/-- The pure braid `A_{jk}`: strand `k` encircles strand `j`. -/
+def pairGen (σ : ℕ → Aˣ) (j k : ℕ) : Aˣ :=
+  ladderFrom σ j k * (σ j * σ j) * (ladderFrom σ j k)⁻¹
+
+/-- `A_{1k} A_{2k} ⋯ A_{mk}`. -/
+def pairsUpTo (σ : ℕ → Aˣ) (k : ℕ) : ℕ → Aˣ
+  | 0 => 1
+  | (m + 1) => pairsUpTo σ k m * pairGen σ (m + 1) k
+
+/-- `∏_{j=1}^{k−1} A_{jk}`, taken in increasing `j`. -/
+def allPairs (σ : ℕ → Aˣ) (k : ℕ) : Aˣ := pairsUpTo σ k (k - 1)
+
+/-- The all-pairs binding operator that adds electron `k`. -/
+def bindOpAll (σ : ℕ → Aˣ) (c : Colour R) (k : ℕ) : A :=
+  (capture σ k : A) * (allPairs σ k : A) * emission σ c k
+
+/-- The all-pairs atom word. -/
+def atomAll (σ : ℕ → Aˣ) (c : Colour R) : ℕ → A
+  | 0 => 1
+  | 1 => (capture σ 1 : A)
+  | (k + 2) => atomAll σ c (k + 1) * bindOpAll σ c (k + 2)
+
+/-- With the bare photon every all-pairs atom word is a unit (a pure braid). -/
+theorem atomAll_bare_isUnit (σ : ℕ → Aˣ) : ∀ k, IsUnit (atomAll σ (bare : Colour R) k)
+  | 0 => isUnit_one
+  | 1 => (capture σ 1).isUnit
+  | (k + 2) => by
+      have ih := atomAll_bare_isUnit σ (k + 1)
+      simp only [atomAll, bindOpAll, emission_bare, mul_one, ← mul_assoc]
+      exact (ih.mul (capture σ (k + 2)).isUnit).mul (allPairs σ (k + 2)).isUnit
+
 end QOU.ShellCondensation.GammaGammaAtom
+
 
