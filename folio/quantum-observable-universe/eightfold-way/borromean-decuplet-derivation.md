@@ -64,9 +64,7 @@ selection rule.  This is recorded as an open item in
 
 **Octet versus decuplet.**
 The mixed partition $\lambda = (2,1)$ gives the $8$-dimensional
-baryon octet (proton, neutron, $\Sigma$, $\Lambda$, $\Xi$), whose weight
-diagram and its degeneracy are treated in
-[the octet proposition](#prop:baryon-octet-decomposition).  The
+baryon octet (proton, neutron, $\Sigma$, $\Lambda$, $\Xi$).  The
 antisymmetric partition $\lambda = (1^3)$ gives the singlet.  The
 distinction between octet and decuplet is entirely carried by the
 Hecke module: the $S^{(3)}$ projector (one-dimensional) selects the

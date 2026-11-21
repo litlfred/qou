@@ -1,6 +1,6 @@
 **Remark (transcendental-accounting ledger — every period in the paper, indexed by Goncharov depth).**
 
-This is the dual ledger to [The algebraic core of QOU lifts to any real-closed field](#rem:algebraic-core-survives). That ledger enumerates the algebra that survives the archimedean wall; this one enumerates the transcendentals that appear on the other side. This section records which periods appear, where, how they relate, and whether their post-archimedean relations are forced by pre-archimedean $q$-rational structure or are archimedean accidents.
+This section records which periods appear, where, how they relate, and whether their post-archimedean relations are forced by pre-archimedean $q$-rational structure or are archimedean accidents.
 
 A relation $R(\alpha_1, \ldots, \alpha_m) = 0$ in $\mathbb{Z}[q^{\pm 1}]$ on the algebraic side survives under the archimedean realization functor $\tau_{\mathrm{arch}}$ if and only if it is a $q$-polynomial identity. A relation that holds only among the archimedean values $\tau_{\mathrm{arch}}(\alpha_i) \in \mathbb{R}$ but not among the $\alpha_i \in \mathbb{Z}[q^{\pm 1}]$ is an archimedean accident. The 5-term Bloch–Wigner relation among hyperbolic volumes is a typical example.
 

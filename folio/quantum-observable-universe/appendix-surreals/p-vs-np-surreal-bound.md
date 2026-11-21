@@ -16,4 +16,4 @@ This remark does not prove $\mathbf{P} \neq \mathbf{NP}$ classically. It shows t
 
 The classical NP-completeness structure is preserved by the standard part. Any Cook--Levin reduction on the $q$-substrate descends to a classical Cook--Levin reduction. Combined with the surreal squeeze above, the separation $\mathbf{P} \neq \mathbf{NP}$ follows from the strict inclusion at positive $\varepsilon$ and the non-compressibility witness of [P vs NP in the QOU](#conj:p-vs-np-qou).
 
-Unlike the RH, NS, and Collatz bounds, the P-vs-NP squeeze is conditional on an independent conjecture (non-compressibility of $\mathrm{BQP}_q \to \mathbf{P}$ as $\varepsilon \to 0$). This places P-vs-NP in the conditional millennium-problem column (see [millennium unification](#rem:millennium-unification)).
+Unlike the RH, NS, and Collatz bounds, the P-vs-NP squeeze is conditional on an independent conjecture (non-compressibility of $\mathrm{BQP}_q \to \mathbf{P}$ as $\varepsilon \to 0$). This places P-vs-NP in the conditional millennium-problem column.
