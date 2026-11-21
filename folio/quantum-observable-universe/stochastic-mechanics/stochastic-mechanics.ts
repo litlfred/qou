@@ -88,6 +88,7 @@ export default chapter({
         "qou-obstruction-reduction-table3-data",
         "qou-obstruction-reduction-table2-data",
         "qou-obstruction-reduction-table1-data",
+        "skein-resolution-obstruction",
         "surreal-notation-cheat-sheet",
         "surreal-notation-cheat-sheet-table-data",
         "reeb-epsilon",

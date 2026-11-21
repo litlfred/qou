@@ -58,7 +58,6 @@ export default chapter({
           title: "The Hecke quotient",
           label: "sec:categorical-braiding-hecke-quotient",
           blocks: [
-            "skein-resolution-obstruction",
             "markov-axioms-primitive",
             "jones-markov-trace",
             "jones-markov-trace-stabilisation",
