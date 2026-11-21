@@ -937,3 +937,11 @@ regeneration (h9/h12 are long symbolic computes) and re-running their consumers
 committed numbers move. Fixing the guard (fingerprint the ORDERED word) is cheap and
 corpus-derived; it is not done here because it would also invalidate every cache on
 the next run.
+
+## 2026-11-21 — both halves done on PR #8672 (owner: fix the check AND rebuild, full H9)
+
+- Guard: `word_fingerprint` (ordered word) now required by per_irrep_pole_atom; deuteron_tr_M_symbolic also guarded (it read the bound-word cache while building the free word).
+- New `chi_path_sum_symbolic.py`: dim-free SYT path sum over Q(q), Young natural form. (7,2) at H9: 1070 s -> 7 s. Verified vs the Hoefsmit build (20 partitions, exact) and vs the mpf orthogonal-form path sum at the 50-digit pin (T/3He/4He, <= 1.5e-54).
+- Caches now complete and on today's word: D 11/11, T 30/30, 3He 30/30, 4He 77/77.
+- Consumer moves: nucleus-operator-selection-sdp |tr_M| D 0.57517 -> 0.15197, T 0.22931 -> 0.02914, 3He 0.40377 -> 0.0586, 4He 0.16097 -> 0.01124; markov-identity deuteron peel 1.14576 -> 0.62933; per-irrep Path A rule: D 46/40 fail, T 66/61 fail, 3He 58/58 pass, 4He 78/79 fail.
+- Still open here: the numeric `-at-q0-50dps` caches (separate producer, separate probe) are not touched by this PR.
