@@ -105,7 +105,7 @@ theorem reeb_eq (κ c : K) :
     reeb κ c = (2 * κ) • (J - (3 * c) • (1 : Matrix (Fin 3) (Fin 3) K)) := by
   simp [reeb, transpositionSum_eq_ones]
 
-/-- `R∘R` is scalar on `W_p` iff `κ = 0` or `c = 1/2` (the 𝔰𝔩₂ normalisation). -/
+/-- For `κ ≠ 0`, `R∘R` is scalar on `W_p` iff `c = 1/2` (the 𝔰𝔩₂ normalisation). -/
 theorem reeb_sq_scalar_iff [CharZero K] (κ c : K) (hκ : κ ≠ 0) :
     (∃ μ : K, reeb κ c * reeb κ c = μ • (1 : Matrix (Fin 3) (Fin 3) K)) ↔ 2 * c = 1 := by
   rw [reeb_eq, Matrix.smul_mul, Matrix.mul_smul, smul_smul]

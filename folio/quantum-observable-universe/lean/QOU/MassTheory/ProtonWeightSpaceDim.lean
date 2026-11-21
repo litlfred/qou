@@ -20,9 +20,11 @@ the mass pipeline already fixes, instead of reading it off the `Fin 3` in the co
 A basis state of `(C²)^{⊗3}` with `d` copies of `e₂` has `K`-weight `q^(3−2d)`. For `q` not a
 root of unity, weight `q` holds iff `3 − 2d = 1`, i.e. `d = 1`, and there are exactly 3 such
 states (`e₁e₁e₂, e₁e₂e₁, e₂e₁e₁`), the basis the corpus uses. The same set is cut out by
-electric charge `+1` with `Q = diag(2/3, −1/3)` (`charge_iff_one_d`). Schur–Weyl splits it
-as `3 = 1 + 2` (`V_(3) ⊕ V_(2,1)`, Kostka numbers `K_{(3),(2,1)} = K_{(2,1),(2,1)} = 1`;
-`kostka_split`).
+electric charge `+1` with `Q = diag(2/3, −1/3)` (`charge_iff_one_d`). Lean checks the
+exponent step (`weight_one_iff_one_d`); the step "`q^e = q` forces `e = 1` for `q` not a root of
+unity" is standard and stays in prose. Schur–Weyl splits the space as `3 = 1 + 2`
+(`V_(3) ⊕ V_(2,1)`); that decomposition is cited, and Lean checks only the arithmetic and the
+transitivity of the `S₃` action (`kostka_split`, `transitive_on_proton`).
 
 Consequence (`twelve_iff_weight_two`): with `dim W_p = 3` derived, a scalar Reeb square
 `R∘R = −k²·𝟙` gives `−12` iff `k² = 4`. The Reeb weight `k` is still not derived.
@@ -68,7 +70,22 @@ theorem neutron_dim : (states.filter fun s => charge3 s = 0).length = 3 ∧
     (states.filter fun s => charge3 s = 0) = states.filter (fun s => weightExp s = -1) := by
   decide
 
-/-- Schur–Weyl: `dim W_p = dim V_(3)·K_{(3),(2,1)} + dim V_(2,1)·K_{(2,1),(2,1)} = 1·1 + 2·1`. -/
+/-- On the three strand states, weight exponent `1` is exactly `d = 1`. -/
+theorem weight_one_iff_one_d : ∀ s ∈ states, weightExp s = 1 ↔ numD s = 1 := by decide
+
+/-- Swap the entries at positions `i` and `j`. -/
+def swapList (s : List Bool) (i j : Nat) : List Bool :=
+  (s.set i (s.getD j false)).set j (s.getD i false)
+
+/-- `S₃` acts transitively on the proton states: any one is carried to any other by the
+identity or a transposition. -/
+theorem transitive_on_proton : ∀ s ∈ protonStates, ∀ t ∈ protonStates,
+    ∃ p ∈ [(0, 0), (0, 1), (0, 2), (1, 2)], swapList s p.1 p.2 = t := by decide
+
+/-- **Arithmetic only.** `dim W_p = 1·1 + 2·1`. The Schur–Weyl decomposition
+`W_p = V_(3) ⊕ V_(2,1)` is cited (Kostka numbers `K_{(3),(2,1)} = K_{(2,1),(2,1)} = 1`), not
+proved here. What is checked is `transitive_on_proton`: by Frobenius reciprocity (cited) a
+transitive permutation module contains `V_(3)` once, which leaves a 2-dimensional complement. -/
 theorem kostka_split : 1 * 1 + 2 * 1 = protonStates.length := by decide
 
 /-- With `dim W_p = 3`, a scalar Reeb square `−k²·𝟙` traces to `−12` iff `k = ±2`. -/

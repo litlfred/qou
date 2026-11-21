@@ -42,3 +42,11 @@ for name, u in (("i", qi), ("j", qj), ("k", qk)):
 Rs = [on3(M(u)) for u in (qi, qj, qk)]
 Cas = sum((r * r for r in Rs), sp.zeros(8, 8)).extract(idx, idx)
 print("Casimir sum_u R_u^2 on W_p eigenvalues:", Cas.eigenvals())
+
+# General pure unit u = a i + b j + c k: when does R_u preserve W_p?
+a, b, cc = sp.symbols("a b c", real=True)
+Mu = a * M(qi) + b * M(qj) + cc * M(qk)
+leak = on3(Mu).extract(out, idx)
+entries = sorted({sp.factor(e) for e in leak if e != 0}, key=str)
+print("general u: nonzero leak entries:", entries)
+print("leak vanishes iff", sp.solve(list(entries), [b, cc], dict=True))

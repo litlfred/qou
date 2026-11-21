@@ -24,7 +24,9 @@ basis `{1, j}`, `ℍ = ℂ·1 ⊕ ℂ·j`, and `M_i` is diagonal with eigenvalue
 This is the per-strand `C²` of `ProtonWeightSpaceDim`: `e₁ ↦ 1` and `e₂ ↦ j`. The
 `K`-weight direction is `u = i`.
 
-`R` is a vector field, so it acts on three strands by the Leibniz rule,
+The link from these lemmas to `reebEigen` below is not formalised. `reebEigen` is the
+integer bookkeeping of the eigenvalues `±i` that `reebI_one` and `reebI_j` give, and the
+Leibniz action is a modelling input. `R` is a vector field, so it acts on three strands by the Leibniz rule,
 `R = Σ_s M_i^{(s)}`. A state with `d` copies of `e₂` is then an eigenvector with eigenvalue
 `(3 − 2d)·i`. So `R∘R = −(3 − 2d)²` on it.
 
@@ -38,7 +40,8 @@ This is the per-strand `C²` of `ProtonWeightSpaceDim`: `e₁ ↦ 1` and `e₂ �
 * `weight_odd_of_odd`: the same holds for any odd number of strands.
 
 The Reeb direction `u` is a recorded open freedom (`BringCone.lean`, "a gap for the
-owner"). For `u ≠ ±i`, `R` does not preserve `W_p`; that case is in the sympy twin, not here.
+owner"). For a pure unit `u = a·i + b·j + c·k`, the sympy twin shows `R` preserves `W_p`
+iff `b = c = 0`, i.e. `u = ±i`. That case analysis is not in Lean.
 
 Base ring: any `CommRing` for the quaternion lemmas (§7c). Integer arithmetic otherwise.
 No empirical number.
