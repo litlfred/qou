@@ -59,3 +59,46 @@ theorem own_sector_sum_q {R : Type*} [Field R] (q : R) (hq : q ≠ 0) :
   ring
 
 end QOU.MassTheory.NucleonSectorBurnsideCount
+
+/-!
+## The labelled-closure count is `6` on each nucleon sector for every `q`
+
+A labelled closure keeps each closed component's `u/d` label, so on the permutation braid
+`T_σ` a labelling contributes its diagonal entry only if it is constant on the cycles of `σ`.
+On `W_p = (uud, udu, duu)` the consistent labellings are: all three for `e`; `uud` for `σ₁`;
+`duu` for `σ₂`; `udu` for `σ₁σ₂σ₁`; none for the two 3-cycles. With the closure weight
+`q^{c(σ) − 3}` (`c` = number of closure components) the count is `6` for every `q`, and the
+same holds on `W_n`. On `uuu` it is `5 + q²` (probe `mn_labelled_closure_probe.py`).
+
+Disclosure: the weight `q^{c − n}` was found by inspecting the proton-sector entries. The
+neutron result and the `uuu`/`ddd` failure were not used to choose it.
+-/
+
+namespace QOU.MassTheory.NucleonSectorBurnsideCount
+
+open Matrix QOU.BraidsAndKnots.NucleonWeightSpaceTraces
+
+variable {R : Type*} [Field R]
+
+/-- Labelled-closure count on the proton sector: `6` for every `q ≠ 0`. -/
+theorem labelled_count_proton (q : R) (hq : q ≠ 0) :
+    3 + q⁻¹ * A₁ q 0 0 + q⁻¹ * A₂ q 2 2 + q⁻¹ * (A₁ q * A₂ q * A₁ q) 1 1 = 6 := by
+  simp [A₁, A₂, Matrix.mul_apply, Fin.sum_univ_three]
+  field_simp
+  ring
+
+/-- Labelled-closure count on the neutron sector `(udd, dud, ddu)`: also `6`. -/
+theorem labelled_count_neutron (q : R) (hq : q ≠ 0) :
+    3 + q⁻¹ * B₁ q 2 2 + q⁻¹ * B₂ q 0 0 + q⁻¹ * (B₁ q * B₂ q * B₁ q) 1 1 = 6 := by
+  simp [B₁, B₂, Matrix.mul_apply, Fin.sum_univ_three]
+  field_simp
+  ring
+
+/-- On `uuu` every crossing acts by `q`; the same weighted count is `5 + q²`, which is not
+constant (it equals `6` only at `q² = 1`). -/
+theorem labelled_count_uuu (q : R) (hq : q ≠ 0) :
+    1 + q⁻¹ * q + q⁻¹ * q + q⁻¹ * q ^ 3 + q⁻¹ ^ 2 * q ^ 2 + q⁻¹ ^ 2 * q ^ 2 = 5 + q ^ 2 := by
+  field_simp
+  ring
+
+end QOU.MassTheory.NucleonSectorBurnsideCount

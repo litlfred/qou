@@ -220,3 +220,27 @@ the count and a sector restriction. It does not choose between "2 × own sector"
 Other candidates that equal 12 numerically are listed in the probe output with no mechanism
 attached (`3 colours × 4 weights of V^{⊗3}`, `|A_4|`, `dim H_4 / 2`, `2|χ(Bring)|`). Equal
 values with no mechanism are not evidence, and none is selected.
+
+## 7. Flavour-labelled closure (`mn_labelled_closure_probe.py` 7/7, `NucleonSectorBurnsideCount.lean`)
+
+A labelled closure keeps each closed component's `u/d` label: a labelling counts only if it is
+constant on the cycles of the braid's permutation. Computed with the full 8-dim Jimbo R-matrix.
+
+1. **It does not separate the volume term by itself.** `V³` is a pure braid, so every labelling
+   of a sector is consistent, and its labelled closure equals the sector trace on every sector.
+   Labelling therefore resolves the volume term as much as the constant, and by
+   `uniform_rule_neutron_not_heavier` that alone gives a lighter neutron. (Scope: this one
+   mechanism, applied uniformly.)
+2. **It gives a q-independent count of 6 exactly on the nucleon sectors.** On the six positive
+   permutation braids with closure weight `q^{c(σ) − 3}`, the labelled count is `6` on the
+   proton sector and `6` on the neutron sector for every `q` (`labelled_count_proton`,
+   `labelled_count_neutron`), and `5 + q²` on `uuu` and `ddd`. So the q-independence the `−12`
+   audit requires holds on the nucleon sectors and fails on the others.
+   Disclosure: the weight `q^{c − n}` was chosen by inspecting the proton entries; the neutron
+   value and the `uuu`/`ddd` failure are out of sample.
+
+What this does and does not give: a mechanism under which a q-independent `6` per nucleon
+sector appears, which would make the proton constant `2 × 6` and keeps it off the whole space.
+It does not give the neutron's `q⁻²` (the labelled count is `6` on both sectors; the `q⁻²`
+still needs the `K^{⊗3}` weight with the extra `q⁻¹`), it does not explain the factor 2, and it
+does not show the constant term is this count. Those stay open.
