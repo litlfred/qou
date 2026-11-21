@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-21T04:28:55Z
+updated_at: 2026-11-21T04:32:59Z
 parent: qou-10v9
 ---
 
@@ -8810,3 +8810,5 @@ Owner, 04:57: *"Update the scoreboard to use the two-term Lagrangian trace."* Ev
 - q0_pin_only: m_μ, α_em⁻¹, m_K/m_π. The row's own QED term is `not_defined`: muon carrier (qou-6gf9); no meson QED operator on V⊗V*; α_em is a coupling.
 - not_defined: m_e (CAL-1 unit).
 α_em⁻¹ and m_K/m_π are switched to `two_term_covariant_all_pairs_qtrace` with `one_term` kept. **No scored value moved**: the covariant pin equals the one-term pin (`deltaT_allPairs_connected_eq_zero`), asserted to 1e-65. Scoreable count is 1/6 before and after. Unscored adjacent-pin alternatives: α_em⁻¹ 30.895 ppb (derived weighting) and 75.970 ppb (#8554 plain); m_K/m_π 53.283 and 55.889 ppb. Already stale before this PR: docs/precision-goals.md:55 and the AGENTS.md precision section quote the old trio miss factors.
+
+- **2026-11-21 route Y step 2 (#8694): "find e_R in corpus".** Corpus-grep (6 paths + corpus-search CLI) found 8 candidates. One qualifies: the right line (−q⁻¹ eigenline, corpus `rightLine`) of the Jimbo crossing on (matter strand)⊗(Higgs strand), spanned by s = q·ud − du. Lean `QOU/QuarkState/RightHandedSingletChannel.lean` (sorry-free, generic Field): one line (`functional_eq_of_rightLine`), T³ = 0 with additive hypercharge (`singlet_weight_hypercharge`), qdim 1 (`qtrace_PR`), weak insertion blind (`weak_insertion_kills_singlet`); channel charges lepton⊗Φ̃ → −1 (e_R), quark⊗Φ̃ → −1/3 (d_R), quark⊗Φ → 2/3 (u_R), lepton⊗Φ → 0 (ν_R) = B2 right-handed row (`channel_charges`). Probe 26/26 also shows s is a genuine U_q(sl2) singlet (ΔE s = ΔF s = 0). Forced: vertex shape up to one scalar per channel. Free: y_u, y_d, y_ν, y_e and the strand order. Split (one-term qtrace; two-term forms add only pair terms, so identical) = (y_d²−y_e²)/(q²+1) + (y_ν²−y_u²)q²/(q²+1) (matter left; swap entries if Higgs left); equal strengths → 0. At proton q₀: q²/(q²+1) = 0.551981855026…, 1/(q²+1) = 0.448018144973…. No Q_β number. Fails: H₄ (3,1) right line (no T³), mirror/bar (doublet→doublet), σ₀σ₁⁻¹ (operator), sign block (Λ³V=0), Gen1Quark labels, Furey (literature). OPEN, owner call: whether to read this two-strand channel AS e_R (makes e_R a lepton⊗Higgs composite); framed in the PR #8694 body. Default: nothing adopted.
