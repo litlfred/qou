@@ -54,6 +54,12 @@ is allowed, so subdividing an edge is a special case of the move, as in Burde–
 * `Polygon.carrier_subdivideLast` — the point set after a subdivision is the old edges other than
   the closing one, together with `[a, c]` and `[c, b]`.
 * `PolygonalLink.carrier_of_relabel` — a relabelling does not change the link's point set.
+* `Polygon.isSimple_subdivideLast` — **a Δ-move keeps a polygon simple**: if `c ∉ {a, b}`,
+  `[a, c] ∩ [c, b] ⊆ {c}`, and the triangle `convexHull {a, b, c}` meets the polygon only inside
+  its closing edge `[a, b]`, the subdivided polygon is simple.
+* `PolygonalLink.deltaMove`, `PolygonalLink.move_deltaMove` — the same at link level: the
+  triangle condition against the whole link also keeps the components disjoint, so every
+  admissible Δ-move is a `Move`.
 * `Move.card_eq`, `DeltaEquiv.card_eq` — **the number of components is a Δ-invariant.**
 * Non-vacuity in `ℝ³` (`Fin 3 → ℝ`): `stdTriangle_isSimple` (an explicit triangle is a simple
   polygon), `unknot` and `unlink₂` (explicit 1- and 2-component links), and
@@ -66,9 +72,10 @@ is allowed, so subdividing an edge is a special case of the move, as in Burde–
 * That Δ-equivalence is ambient PL isotopy (stage 2 of #8902), regular projections (stage 3),
   diagrams and the Reidemeister theorem (stages 4–5), Alexander's and Markov's theorems
   (stage 6). None of these is used, cited or assumed below.
-* That the triangle condition in `Move.delta` makes the result simple: `Move` is a relation
-  **between links**, so both ends are simple by construction. Whether every admissible triangle
-  yields a simple polygon is a separate lemma, not needed for the definition.
+* That two presentations of the same oriented link (same point set and same orientation of
+  each component, different vertex lists) are Δ-equivalent. `Move` is a relation between
+  vertex-list presentations; this identification is not proved here. (Orientation matters:
+  the same point set with a component reversed is in general a different oriented link.)
 * Nothing here says any two particular links are *in*equivalent beyond the component count.
 -/
 
@@ -224,6 +231,270 @@ theorem carrier_subdivideLast (c : E) :
     · exact ⟨_, hE2.symm ▸ hx⟩
     · exact ⟨_, hE3.symm ▸ hx⟩
 
+/-! ### Simplicity, in adjacent / non-adjacent form -/
+
+lemma next_ne (i : Fin (P.n + 1)) : P.next i ≠ i := by
+  intro h
+  have h2 := P.two_le
+  have := congrArg Fin.val h
+  simp only [next, coe_finRotate] at this
+  split_ifs at this with hi
+  · subst hi; simp at this; omega
+  · omega
+
+/-- Simplicity from its two halves: consecutive edges meet in the shared vertex, and
+non-consecutive edges are disjoint. -/
+theorem isSimple_of (hinj : Function.Injective P.v)
+    (hadj : ∀ i, P.edge i ∩ P.edge (P.next i) = {P.v (P.next i)})
+    (hdisj : ∀ i j, i ≠ j → j ≠ P.next i → i ≠ P.next j → Disjoint (P.edge i) (P.edge j)) :
+    P.IsSimple := by
+  refine ⟨hinj, fun i j hij => ?_⟩
+  split_ifs with h1 h2
+  · subst h1; exact hadj i
+  · subst h2; rw [inter_comm]; exact hadj j
+  · exact disjoint_iff_inter_eq_empty.mp (hdisj i j hij h1 h2)
+
+lemma IsSimple.adj {P : Polygon E} (h : P.IsSimple) (i : Fin (P.n + 1)) :
+    P.edge i ∩ P.edge (P.next i) = {P.v (P.next i)} := by
+  rw [h.2 i (P.next i) (P.next_ne i).symm, if_pos rfl]
+
+lemma IsSimple.disj {P : Polygon E} (h : P.IsSimple) {i j : Fin (P.n + 1)} (hij : i ≠ j)
+    (h1 : j ≠ P.next i) (h2 : i ≠ P.next j) : Disjoint (P.edge i) (P.edge j) := by
+  rw [disjoint_iff_inter_eq_empty, h.2 i j hij, if_neg h1, if_neg h2]
+
+/-- A point shared by a non-closing edge `i` and the closing edge is either the start `v n` of
+the closing edge (and edge `i` ends there) or its end `v 0` (and `i = 0`). -/
+lemma IsSimple.mem_closing {P : Polygon E} (h : P.IsSimple) {i : Fin (P.n + 1)}
+    (hi : i ≠ Fin.last P.n) {x : E} (hx : x ∈ P.edge i) (hxl : x ∈ P.edge (Fin.last P.n)) :
+    (P.next i = Fin.last P.n ∧ x = P.v (Fin.last P.n)) ∨ (i = 0 ∧ x = P.v 0) := by
+  have key := h.2 i (Fin.last P.n) hi
+  have hx' : x ∈ P.edge i ∩ P.edge (Fin.last P.n) := ⟨hx, hxl⟩
+  rw [key] at hx'
+  split_ifs at hx' with h1 h2
+  · exact Or.inl ⟨h1.symm, hx'⟩
+  · rw [P.next_last] at h2
+    exact Or.inr ⟨h2, h2 ▸ hx'⟩
+  · exact absurd hx' (Set.notMem_empty x)
+
+/-! ### Edges of a subdivided polygon -/
+
+section subdivide
+
+variable (c : E)
+
+lemma subdivideLast_v_castSucc (i : Fin (P.n + 1)) :
+    (P.subdivideLast c).v i.castSucc = P.v i := by
+  simp [subdivideLast]
+
+lemma subdivideLast_v_last : (P.subdivideLast c).v (Fin.last (P.n + 1)) = c := by
+  simp [subdivideLast]
+
+lemma subdivideLast_next_castSucc {i : Fin (P.n + 1)} (hi : i ≠ Fin.last P.n) :
+    (P.subdivideLast c).next i.castSucc = (P.next i).castSucc := by
+  obtain ⟨k, rfl⟩ := Fin.exists_castSucc_eq.mpr hi
+  rw [P.next_castSucc_lt, ← Fin.succ_castSucc]
+  exact (P.subdivideLast c).next_castSucc_lt k.castSucc
+
+lemma subdivideLast_next_castSucc_last :
+    (P.subdivideLast c).next (Fin.last P.n).castSucc = Fin.last (P.n + 1) := by
+  rw [← Fin.succ_last]; exact (P.subdivideLast c).next_castSucc_lt (Fin.last P.n)
+
+lemma subdivideLast_next_last : (P.subdivideLast c).next (Fin.last (P.n + 1)) = 0 :=
+  (P.subdivideLast c).next_last
+
+lemma subdivideLast_edge_castSucc {i : Fin (P.n + 1)} (hi : i ≠ Fin.last P.n) :
+    (P.subdivideLast c).edge i.castSucc = P.edge i := by
+  unfold edge
+  rw [subdivideLast_next_castSucc P c hi, subdivideLast_v_castSucc, subdivideLast_v_castSucc]
+
+lemma subdivideLast_edge_castSucc_last :
+    (P.subdivideLast c).edge (Fin.last P.n).castSucc = segment ℝ (P.v (Fin.last P.n)) c := by
+  unfold edge
+  rw [subdivideLast_next_castSucc_last, subdivideLast_v_castSucc, subdivideLast_v_last]
+
+lemma subdivideLast_edge_last :
+    (P.subdivideLast c).edge (Fin.last (P.n + 1)) = segment ℝ c (P.v 0) := by
+  have h0 : (0 : Fin (P.n + 2)) = (0 : Fin (P.n + 1)).castSucc := rfl
+  unfold edge
+  rw [subdivideLast_next_last, subdivideLast_v_last, h0, subdivideLast_v_castSucc]
+
+lemma edge_last : P.edge (Fin.last P.n) = segment ℝ (P.v (Fin.last P.n)) (P.v 0) := by
+  rw [edge, next_last]
+
+/-- **A Δ-move keeps a polygon simple.** Let `[a, b]` be the closing edge of a simple polygon and
+`c ∉ {a, b}` a point with `[a, c] ∩ [c, b] ⊆ {c}` (true when `a, b, c` are affinely independent
+and when `c` lies strictly between `a` and `b`). If the triangle `convexHull {a, b, c}` meets the
+polygon only inside `[a, b]`, then inserting `c` gives a simple polygon. -/
+theorem isSimple_subdivideLast (h : P.IsSimple)
+    (hca : c ≠ P.v (Fin.last P.n)) (hcb : c ≠ P.v 0)
+    (hseg : segment ℝ (P.v (Fin.last P.n)) c ∩ segment ℝ c (P.v 0) ⊆ {c})
+    (htri : convexHull ℝ {P.v (Fin.last P.n), P.v 0, c} ∩ P.carrier ⊆
+      segment ℝ (P.v (Fin.last P.n)) (P.v 0)) :
+    (P.subdivideLast c).IsSimple := by
+  set a := P.v (Fin.last P.n) with ha_def
+  set b := P.v 0 with hb_def
+  set Q := P.subdivideLast c with hQ
+  set T := convexHull ℝ {a, b, c}
+  have hac_T : segment ℝ a c ⊆ T := segment_subset_convexHull (by simp) (by simp)
+  have hcb_T : segment ℝ c b ⊆ T := segment_subset_convexHull (by simp) (by simp)
+  -- a point of `T` on the polygon lies on the closing edge
+  have hT : ∀ x, x ∈ T → x ∈ P.carrier → x ∈ P.edge (Fin.last P.n) := fun x hxT hxP => by
+    rw [P.edge_last]; exact htri ⟨hxT, hxP⟩
+  have hb_ac : b ∉ segment ℝ a c := fun hb =>
+    hcb (hseg ⟨hb, right_mem_segment ℝ c b⟩).symm
+  have ha_cb : a ∉ segment ℝ c b := fun ha =>
+    hca (hseg ⟨left_mem_segment ℝ a c, ha⟩).symm
+  -- edges of `Q`
+  have eO := fun (i : Fin (P.n + 1)) (hi : i ≠ Fin.last P.n) =>
+    subdivideLast_edge_castSucc P c hi
+  have e1 : Q.edge (Fin.last P.n).castSucc = segment ℝ a c :=
+    subdivideLast_edge_castSucc_last P c
+  have e2 : Q.edge (Fin.last (P.n + 1)) = segment ℝ c b := subdivideLast_edge_last P c
+  have nO := fun (i : Fin (P.n + 1)) (hi : i ≠ Fin.last P.n) =>
+    subdivideLast_next_castSucc P c hi
+  have n1 : Q.next (Fin.last P.n).castSucc = Fin.last (P.n + 1) :=
+    subdivideLast_next_castSucc_last P c
+  have n2 : Q.next (Fin.last (P.n + 1)) = 0 := subdivideLast_next_last P c
+  have vO : ∀ i : Fin (P.n + 1), Q.v i.castSucc = P.v i := subdivideLast_v_castSucc P c
+  have vL : Q.v (Fin.last (P.n + 1)) = c := subdivideLast_v_last P c
+  have h0ne : (0 : Fin (P.n + 1)) ≠ Fin.last P.n := by
+    intro e; have := congrArg Fin.val e; simp at this; have := P.two_le; omega
+  have hcs0 : (0 : Fin (P.n + 2)) = (0 : Fin (P.n + 1)).castSucc := rfl
+  -- disjointness of `[a,c]` from an old edge not ending at `a`
+  have disj1 : ∀ i, i ≠ Fin.last P.n → P.next i ≠ Fin.last P.n →
+      Disjoint (segment ℝ a c) (P.edge i) := fun i hi hn => by
+    rw [Set.disjoint_left]
+    intro x hx hxi
+    rcases h.mem_closing hi hxi (hT x (hac_T hx) (P.edge_subset_carrier i hxi)) with
+      ⟨hn', -⟩ | ⟨-, rfl⟩
+    · exact hn hn'
+    · exact hb_ac hx
+  -- disjointness of `[c,b]` from an old edge other than edge `0`
+  have disj2 : ∀ i, i ≠ Fin.last P.n → i ≠ 0 →
+      Disjoint (segment ℝ c b) (P.edge i) := fun i hi h0 => by
+    rw [Set.disjoint_left]
+    intro x hx hxi
+    rcases h.mem_closing hi hxi (hT x (hcb_T hx) (P.edge_subset_carrier i hxi)) with
+      ⟨-, rfl⟩ | ⟨h0', -⟩
+    · exact ha_cb hx
+    · exact h0 h0'
+  have cne : ∀ i, c ≠ P.v i := fun i hci => by
+    by_cases hi : i = Fin.last P.n
+    · subst hi; exact hca hci
+    · have hvT : P.v i ∈ T := hci ▸ subset_convexHull ℝ _ (by simp)
+      rcases h.mem_closing hi (left_mem_segment ℝ _ _)
+          (hT _ hvT (P.vertex_mem_carrier i)) with ⟨-, hv⟩ | ⟨-, hv⟩
+      · exact hi (h.1 hv)
+      · exact hcb (hci.trans hv)
+  refine Q.isSimple_of ?inj ?adj ?disj
+  · -- injectivity
+    intro (i : Fin (P.n + 2)) (j : Fin (P.n + 2)) hij
+    induction i using Fin.lastCases with
+    | last =>
+      induction j using Fin.lastCases with
+      | last => rfl
+      | cast j =>
+        exfalso
+        rw [vL, vO] at hij
+        exact absurd hij (cne j)
+    | cast i =>
+      induction j using Fin.lastCases with
+      | last =>
+        exfalso
+        rw [vL, vO] at hij
+        exact absurd hij.symm (cne i)
+      | cast j =>
+        rw [vO, vO] at hij
+        rw [h.1 hij]
+  · -- consecutive edges
+    intro (i : Fin (P.n + 2))
+    induction i using Fin.lastCases with
+    | last =>
+      rw [n2, hcs0, vO, e2, eO 0 h0ne]
+      apply Subset.antisymm
+      · rintro x ⟨hx1, hx2⟩
+        have hl := hT x (hcb_T hx1) (P.edge_subset_carrier 0 hx2)
+        have := h.adj (Fin.last P.n)
+        rw [P.next_last] at this
+        have hx : x ∈ P.edge (Fin.last P.n) ∩ P.edge 0 := ⟨hl, hx2⟩
+        rwa [this] at hx
+      · rintro x rfl
+        exact ⟨right_mem_segment ℝ _ _, left_mem_segment ℝ _ _⟩
+    | cast i =>
+      induction i using Fin.lastCases with
+      | last =>
+        rw [n1, e1, e2, vL]
+        apply Subset.antisymm hseg
+        rintro x rfl
+        exact ⟨right_mem_segment ℝ _ _, left_mem_segment ℝ _ _⟩
+      | cast k =>
+        have hk : k.castSucc ≠ Fin.last P.n := Fin.castSucc_ne_last k
+        rw [nO _ hk, eO _ hk, vO]
+        by_cases hn : P.next k.castSucc = Fin.last P.n
+        · rw [hn, e1]
+          apply Subset.antisymm
+          · rintro x ⟨hx1, hx2⟩
+            have hl := hT x (hac_T hx2) (P.edge_subset_carrier _ hx1)
+            have hx : x ∈ P.edge k.castSucc ∩ P.edge (P.next k.castSucc) :=
+              ⟨hx1, hn ▸ hl⟩
+            rw [h.adj, hn] at hx
+            exact hx
+          · rintro x rfl
+            refine ⟨?_, left_mem_segment ℝ _ _⟩
+            have := right_mem_segment ℝ (P.v k.castSucc) (P.v (P.next k.castSucc))
+            rw [hn] at this
+            unfold edge; rw [hn]; exact this
+        · rw [eO _ hn]
+          exact h.adj _
+  · -- non-consecutive edges
+    intro (i : Fin (P.n + 2)) (j : Fin (P.n + 2)) hij h1 h2
+    induction i using Fin.lastCases with
+    | last =>
+      induction j using Fin.lastCases with
+      | last => exact absurd rfl hij
+      | cast j =>
+        induction j using Fin.lastCases with
+        | last => exact absurd n1.symm h2
+        | cast k =>
+          have hk : k.castSucc ≠ Fin.last P.n := Fin.castSucc_ne_last k
+          rw [e2, eO _ hk]
+          refine disj2 _ hk fun h0 => h1 ?_
+          rw [n2, h0]; rfl
+    | cast i =>
+      induction i using Fin.lastCases with
+      | last =>
+        induction j using Fin.lastCases with
+        | last => exact absurd n1.symm h1
+        | cast j =>
+          induction j using Fin.lastCases with
+          | last => exact absurd rfl hij
+          | cast k =>
+            have hk : k.castSucc ≠ Fin.last P.n := Fin.castSucc_ne_last k
+            rw [e1, eO _ hk]
+            refine disj1 _ hk fun hn => h2 ?_
+            rw [nO _ hk, hn]
+      | cast k =>
+        have hk : k.castSucc ≠ Fin.last P.n := Fin.castSucc_ne_last k
+        induction j using Fin.lastCases with
+        | last =>
+          rw [e2, eO _ hk]
+          refine (disj2 _ hk fun h0 => h2 ?_).symm
+          rw [n2, h0]; rfl
+        | cast j =>
+          induction j using Fin.lastCases with
+          | last =>
+            rw [e1, eO _ hk]
+            refine (disj1 _ hk fun hn => h1 ?_).symm
+            rw [nO _ hk, hn]
+          | cast k' =>
+            have hk' : k'.castSucc ≠ Fin.last P.n := Fin.castSucc_ne_last k'
+            rw [eO _ hk, eO _ hk']
+            refine h.disj (fun e => hij (by rw [e])) (fun e => h1 ?_) (fun e => h2 ?_)
+            · rw [nO _ hk, e]
+            · rw [nO _ hk', e]
+
+end subdivide
+
 end Polygon
 
 /-! ## Links -/
@@ -284,6 +555,81 @@ theorem PolygonalLink.carrier_of_relabel (L L' : PolygonalLink E) (e : Fin L.k �
     exact ⟨i, hj⟩
   · rintro ⟨i, hi⟩
     exact ⟨e i, by rw [h, Polygon.carrier_rotateBy]; exact hi⟩
+
+namespace PolygonalLink
+
+variable (L : PolygonalLink E)
+
+lemma comp_carrier_subset (i : Fin L.k) : (L.comp i).carrier ⊆ L.carrier :=
+  subset_iUnion (fun i => (L.comp i).carrier) i
+
+/-- **The Δ-move as an operation.** Under the hypotheses of
+`Polygon.isSimple_subdivideLast` on component `m`, with the triangle meeting the *whole link*
+only in the closing edge `[a, b]`, inserting `c` gives a polygonal link again. -/
+def deltaMove (m : Fin L.k) (c : E)
+    (hca : c ≠ (L.comp m).v (Fin.last _)) (hcb : c ≠ (L.comp m).v 0)
+    (hseg : segment ℝ ((L.comp m).v (Fin.last _)) c ∩ segment ℝ c ((L.comp m).v 0) ⊆ {c})
+    (htri : convexHull ℝ {(L.comp m).v (Fin.last _), (L.comp m).v 0, c} ∩ L.carrier =
+      segment ℝ ((L.comp m).v (Fin.last _)) ((L.comp m).v 0)) :
+    PolygonalLink E where
+  k := L.k
+  comp := Function.update L.comp m ((L.comp m).subdivideLast c)
+  simple := by
+    intro i
+    by_cases hi : i = m
+    · subst hi
+      rw [Function.update_self]
+      refine (L.comp i).isSimple_subdivideLast c (L.simple i) hca hcb hseg ?_
+      rintro x ⟨hxT, hxP⟩
+      rw [← htri]
+      exact ⟨hxT, L.comp_carrier_subset i hxP⟩
+    · rw [Function.update_of_ne hi]
+      exact L.simple i
+  disjoint := by
+    -- points of the new component lie on old edges of `comp m` or in the triangle
+    have key : ∀ x, x ∈ ((L.comp m).subdivideLast c).carrier → ∀ j, j ≠ m →
+        x ∉ (L.comp j).carrier := by
+      intro x hx j hj hxj
+      rw [Polygon.carrier_subdivideLast] at hx
+      have hT : segment ℝ ((L.comp m).v (Fin.last _)) c ∪ segment ℝ c ((L.comp m).v 0) ⊆
+          convexHull ℝ {(L.comp m).v (Fin.last _), (L.comp m).v 0, c} :=
+        union_subset (segment_subset_convexHull (by simp) (by simp))
+          (segment_subset_convexHull (by simp) (by simp))
+      have hm : x ∈ (L.comp m).carrier := by
+        rcases hx with (⟨-, ⟨k, rfl⟩, hk⟩ | hx) | hx
+        · exact (L.comp m).edge_subset_carrier _ hk
+        all_goals
+          have hab : x ∈ segment ℝ ((L.comp m).v (Fin.last _)) ((L.comp m).v 0) := by
+            rw [← htri]
+            exact ⟨hT (by first | exact Or.inl hx | exact Or.inr hx),
+              L.comp_carrier_subset j hxj⟩
+          rw [← Polygon.edge_last] at hab
+          exact (L.comp m).edge_subset_carrier _ hab
+      exact Set.disjoint_left.mp (L.disjoint (Ne.symm hj)) hm hxj
+    intro i j hij
+    by_cases hi : i = m
+    · subst hi
+      have hj : j ≠ i := Ne.symm hij
+      simp only [Function.update_self, Function.update_of_ne hj]
+      exact Set.disjoint_left.mpr fun x hx => key x hx j hj
+    · by_cases hj : j = m
+      · subst hj
+        simp only [Function.update_self, Function.update_of_ne hi]
+        exact Set.disjoint_right.mpr fun x hx => key x hx i hi
+      · simp only [Function.update_of_ne hi, Function.update_of_ne hj]
+        exact L.disjoint hij
+
+/-- **Every admissible Δ-move is a `Move`.** -/
+theorem move_deltaMove (m : Fin L.k) (c : E)
+    (hca : c ≠ (L.comp m).v (Fin.last _)) (hcb : c ≠ (L.comp m).v 0)
+    (hseg : segment ℝ ((L.comp m).v (Fin.last _)) c ∩ segment ℝ c ((L.comp m).v 0) ⊆ {c})
+    (htri : convexHull ℝ {(L.comp m).v (Fin.last _), (L.comp m).v 0, c} ∩ L.carrier =
+      segment ℝ ((L.comp m).v (Fin.last _)) ((L.comp m).v 0)) :
+    Move L (L.deltaMove m c hca hcb hseg htri) :=
+  Move.delta L _ (Equiv.refl _) m c
+    (fun _ hi => Function.update_of_ne hi _ _) (Function.update_self _ _ _) htri
+
+end PolygonalLink
 
 /-- **The number of components is preserved by a move.** -/
 theorem Move.card_eq {L L' : PolygonalLink E} (h : Move L L') : L.k = L'.k := by
