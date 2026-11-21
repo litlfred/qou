@@ -9,7 +9,8 @@ The optimal inter-nucleon binding operator `Φ_k` is **not fixed** — as the
 nucleus grows it transitions between three discrete regimes:
 
 * **I — shell filling**: within the first shell the demand-minimiser is the
-  torus knot `T_{2,n_s}` (e.g. `T_{2,5}` cinquefoil at `p → pp`);
+  braid `(σ₀σ₁)²σ₀ ∈ B₃` at `p → pp`, whose closure is the `T(2,4)` torus
+  link (it was mislabelled the `T_{2,5}` cinquefoil until 2026-11-21);
 * **II — magic closure**: at/after a magic number the optimum is a Hopf link
   `L_±` (demand closure `|dem| = 0`);
 * **III — open shell**: beyond a closed shell it reverts to the bare typed
@@ -25,7 +26,7 @@ at a non-existent "canonical" library twin). It is replaced here by an honest,
 
 | step (k) | nucleons | regime |
 |---|---|---|
-| 0 | `p → pp`        | I (T₂,₅) |
+| 0 | `p → pp`        | I ((σ₀σ₁)²σ₀) |
 | 1 | `pp → ppn`      | II (L₊)  |
 | 2 | `ppn → ppnn`    | II (L₊)  |
 | 3 | `ppnn → pppnn`  | II (L₋)  |
@@ -46,7 +47,7 @@ namespace QOU.Interactions
 /-- The three discrete inter-nucleon binding regimes of
     `prop:nuclear-operator-regimes`. -/
 inductive NuclearBindingRegime
-  /-- Regime I: shell filling — torus knot `T_{2,n_s}`. -/
+  /-- Regime I: shell filling — the braid `(σ₀σ₁)²σ₀` (closure `T(2,4)`). -/
   | shellFilling
   /-- Regime II: magic shell closure — Hopf link `L_±`. -/
   | magicClosure
@@ -66,7 +67,7 @@ def observedRegime : ℕ → NuclearBindingRegime
 /-- **Three operator regimes for nuclear binding** ([`prop:nuclear-operator-regimes`]).
 
     The observed `A ≤ 6` transition sequence is `I, II, II, II, III`: shell
-    filling (`T₂,₅`) → magic closure (Hopf `L₊`/`L₋`) → open shell (bare
+    filling (`(σ₀σ₁)²σ₀`) → magic closure (Hopf `L₊`/`L₋`) → open shell (bare
     crossing `C_pn`). All three regimes are realised; the `I → II → III`
     transition is exhibited. -/
 -- Ref: [leitner2026] quantum-observable-universe/particle-interactions/nuclear-operator-regimes.md
