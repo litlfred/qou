@@ -1,0 +1,149 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-21T13:50:13.298212+00:00",
+  "commitSha": "88a2ac8f1e008c9fef274982083216c97f362317",
+  "assertions": [
+    {
+      "name": "lean_table_agrees",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "QOU/Photon/U1NeutralCut.lean table"
+    },
+    {
+      "name": "rterm_forces_sigma_weights_zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "pre-registration 2026-11-21 14:05Z (recorded, not predicted)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "u1-neutral-cut-d2",
+  "scriptFile": "u1_neutral_cut_probe.py",
+  "scriptHash": "09f11c90d934",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gg_photon_cut/u1_neutral_cut_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gg_photon_cut/u1_neutral_cut_probe.py"
+  },
+  "q0Anchor": "proton",
+  "q0AnchorReason": "reading 3 at the proton pin, convention D",
+  "description": "PROBE D2: phi01-psi01 cut from central U(1) colour neutrality; R-term solve and R-word FrobeniusSelected over neutral words, arms A/B, <= 10 crossings.",
+  "R_term": {
+    "neutral_terms": {
+      "s0": false,
+      "s1": false,
+      "V": true,
+      "s0.s0": false,
+      "s0.s1": false,
+      "s1.s0": false,
+      "s1.s1": false,
+      "s0.V": false,
+      "V.s0": false,
+      "s1.V": false,
+      "V.V": true
+    },
+    "conditions": [
+      "phi0 + phi01*psi1 + psi0",
+      "phi1 + psi1",
+      "phi0*psi0",
+      "phi0*psi1",
+      "phi1*psi0",
+      "phi1*psi1",
+      "phi0*psi01",
+      "phi01*psi0",
+      "phi1*psi01"
+    ],
+    "solutions": [
+      {
+        "phi0": "0",
+        "phi1": "0",
+        "psi0": "0",
+        "psi1": "0"
+      },
+      {
+        "phi0": "0",
+        "phi01": "0",
+        "phi1": "0",
+        "psi0": "0",
+        "psi1": "0"
+      }
+    ],
+    "sigma_weights_forced_zero": true
+  },
+  "lean_table_agrees": true,
+  "R_word_arm_A": {
+    "neutral_words": 2,
+    "feasible": 0,
+    "min_cost": null,
+    "selected": [],
+    "neutral_by_cost": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 1,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 1,
+      "9": 0,
+      "10": 0
+    },
+    "feasible_list": []
+  },
+  "R_word_arm_B": {
+    "neutral_words": 5,
+    "feasible": 1,
+    "min_cost": 6,
+    "selected": [
+      {
+        "braid": "s0s1^-1s0s1^-1s0s1^-1",
+        "crossings": 6,
+        "components": 3,
+        "feasible": true,
+        "signs": {
+          "1:(1,)": "+",
+          "2:(2,)": "+",
+          "2:(1, 1)": "+",
+          "3:(3,)": "+",
+          "3:(2, 1)": "+"
+        }
+      }
+    ],
+    "neutral_by_cost": {
+      "1": 0,
+      "2": 1,
+      "3": 0,
+      "4": 1,
+      "5": 0,
+      "6": 1,
+      "7": 0,
+      "8": 1,
+      "9": 0,
+      "10": 1
+    },
+    "feasible_list": [
+      "s0s1^-1s0s1^-1s0s1^-1"
+    ]
+  },
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
