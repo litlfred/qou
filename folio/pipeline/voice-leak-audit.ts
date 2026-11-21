@@ -180,7 +180,10 @@ export function scanText(src: string, opts: { premature?: boolean; prematureAdvi
       hits.push({ cls: "L3", criterion: "leak-person", sub: m[0].toLowerCase().replace(/\s+/g, " "), line, text: m[0] });
     if (opts.premature)
       for (const { sub, re } of Q_TOKEN_RES) {
-        const m = raw.match(re);
+        // `\dim_q` is the categorical (quantum) dimension tr(id_X), which
+        // Chapter 1 defines in its own definitions; it is not premature use of
+        // the substrate parameter q (owner ruling 2026-11-21).
+        const m = raw.replace(/\\dim_q\b/g, "\\dim").match(re);
         if (m) { hits.push({ cls: "L4", criterion: "leak-reading-order", sub: `premature-${sub}`, line, text: m[0].slice(0, 60), advisory: opts.prematureAdvisory }); break; }
       }
   });

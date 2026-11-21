@@ -105,3 +105,10 @@ describe("owner ruling 2026-11-21 (conditional banners may point ahead)", () => 
     expect([...bannerLines("this is conditional on [X](#conj:x).")]).toEqual([]);
   });
 });
+
+describe("owner ruling 2026-11-21 (dim_q is defined in Chapter 1)", () => {
+  it("\\dim_q is not a premature q token, other q tokens still are", () => {
+    expect(failing("a quantum dimension $\\dim_q(\\lambda)$", { premature: true })).toEqual([]);
+    expect(failing("$\\dim_q(\\lambda) = [2]_q$", { premature: true })).toContain("L4:premature-q-integer");
+  });
+});
