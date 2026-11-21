@@ -555,8 +555,10 @@ form, and the idempotent `τ(P₋)` has `u = −[2]_q⁻¹`, which is not in the
 form `ℤ[q, q⁻¹]`.
 
 Ask that `b` generate `H₂` over `ℤ[q, q⁻¹]` together with `1` (so `u` is a unit,
-`u = ε q^m`, `ε = ±1`; this is the standard description of the units of a Laurent
-ring and is an input here, not proved) and that `b` be bar-invariant (the
+`u = ε q^m`, `ε = ±1`; proved, not assumed:
+`QOU.MathlibExt.LaurentUnits.int_isUnit_iff`, for any integral domain via
+`isUnit_iff_eq_C_mul_T`, and the bar-invariant case at ring level is
+`int_bar_invariant_unit`) and that `b` be bar-invariant (the
 Kazhdan–Lusztig condition; `bar σ = σ⁻¹ = σ − (q − q⁻¹)`, `bar q = q⁻¹`). The
 `σ`-coefficient of `bar b` is `bar u = ε q^{−m}`, so bar-invariance forces
 `q^{−m} = q^m`, hence `m = 0` (`kl_unit_exponent_zero`), and then
