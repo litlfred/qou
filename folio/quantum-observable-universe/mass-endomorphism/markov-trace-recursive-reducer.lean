@@ -871,8 +871,8 @@ with `x'` fixing the top point and lengths adding, so
 
 Every definition here is structurally recursive, so Lean's own termination
 check is the termination proof: the evaluator is a total function. What is
-NOT proved is that `trWord` satisfies all axioms of `IsMarkovTrace` (only
-`normalised` and `stable` are proved, below); that is
+NOT proved is that `trWord` satisfies all axioms of `IsMarkovTrace` (proved
+below: `normalised`, `stable`, `hecke`, `far_comm`); that is
 the existence half (Ocneanu). By `markovTrace_unique`, if it does, it is the
 trace. The `example`s below are kernel-checked computations, not proofs of the
 axioms: the Hecke quadratic, a braid relation, the product law, and agreement
@@ -920,8 +920,9 @@ example : trWord (5 : ℤ) 3 3 [0, 0, 2, 2] = trWord (5 : ℤ) 3 1 [0, 0] * trWo
 /-! ### Proved properties of the evaluator
 
 `trWord` is normalised (`trWord_nil`) and stable under adding a strand
-(`trWord_stable`). The remaining axioms (strip, cyclic, embed_disjoint,
-hecke, braid, far_comm) are not yet proved for `trWord`. -/
+(`trWord_stable`); it also satisfies the Hecke relation (`trWord_hecke`) and
+far commutation (`trWord_far_comm`), proved further below. Strip, cyclicity
+and the braid relation are not yet proved for `trWord`. -/
 
 theorem trBasis_range {R : Type*} [CommRing R] (z h : R) :
     ∀ m : ℕ, trBasis z h m (List.range m) = 1
@@ -1013,6 +1014,288 @@ theorem trWord_stable {R : Type*} [CommRing R] (z h : R) (n : ℕ) (w : List ℤ
   intro p hp
   simp only [Function.comp, appTop]
   rw [trBasis_append z h (n + 1) p.2 (m2 p hp)]
+
+
+/-! ### The Hecke and far-commutation relations for the evaluator
+
+`trComb` evaluates a formal combination of basis permutations. Pushing a
+combination through `mulGens` is linear (`trComb_mulGens`), so each relation
+reduces to a single basis permutation, where it is a finite case check.
+`PermInv` records that the permutations stay duplicate-free, which rules out
+the degenerate case `w(i) = w(i+1)` in the Hecke relation. -/
+
+section HeckeProof
+variable {R : Type*} [CommRing R] (z h : R)
+
+def trComb (m : ℕ) (e : List (R × List ℕ)) : R := (e.map fun p => p.1 * trBasis z h m p.2).sum
+
+def scaleTerm (c : R) (p : R × List ℕ) : R × List ℕ := (c * p.1, p.2)
+
+theorem mulGen_app (e₁ e₂ : List (R × List ℕ)) (i : ℕ) :
+    mulGen h (e₁ ++ e₂) i = mulGen h e₁ i ++ mulGen h e₂ i := by
+  simp [mulGen, List.flatMap_append]
+
+theorem mulGens_app : ∀ (v : List ℕ) (e₁ e₂ : List (R × List ℕ)),
+    mulGens h (e₁ ++ e₂) v = mulGens h e₁ v ++ mulGens h e₂ v
+  | [], _, _ => rfl
+  | i :: v, e₁, e₂ => by
+    simp only [mulGens, List.foldl_cons] at *
+    rw [mulGen_app]; exact mulGens_app v _ _
+
+theorem mulGen_sc (c : R) (i : ℕ) : ∀ e : List (R × List ℕ),
+    mulGen h (e.map (scaleTerm c)) i = (mulGen h e i).map (scaleTerm c)
+  | [] => rfl
+  | p :: e => by
+    have ih := mulGen_sc c i e
+    simp only [mulGen, List.map_cons, List.flatMap_cons] at ih ⊢
+    rw [ih, List.map_append]
+    congr 1
+    simp only [scaleTerm]; split_ifs <;> simp_all [scaleTerm, mul_assoc]
+
+theorem mulGens_sc (c : R) : ∀ (v : List ℕ) (e : List (R × List ℕ)),
+    mulGens h (e.map (scaleTerm c)) v = (mulGens h e v).map (scaleTerm c)
+  | [], _ => rfl
+  | i :: v, e => by
+    simp only [mulGens, List.foldl_cons] at *
+    rw [mulGen_sc]; exact mulGens_sc c v _
+
+theorem evalC_app (m : ℕ) (e₁ e₂ : List (R × List ℕ)) :
+    trComb z h m (e₁ ++ e₂) = trComb z h m e₁ + trComb z h m e₂ := by
+  induction e₁ with
+  | nil => simp [trComb]
+  | cons p e ih =>
+    simp only [trComb, List.cons_append, List.map_cons, List.sum_cons] at ih ⊢
+    rw [ih]; ring
+
+theorem evalC_sc (m : ℕ) (c : R) (e : List (R × List ℕ)) :
+    trComb z h m (e.map (scaleTerm c)) = c * trComb z h m e := by
+  induction e with
+  | nil => simp [trComb]
+  | cons p e ih =>
+    simp only [trComb, List.map_cons, List.sum_cons] at ih ⊢
+    rw [ih]; simp [scaleTerm]; ring
+
+theorem mulGens_nil_left : ∀ v : List ℕ, mulGens h ([] : List (R × List ℕ)) v = []
+  | [] => rfl
+  | i :: v => by simp only [mulGens, List.foldl_cons] at *; exact mulGens_nil_left v
+
+/-- The value of a single basis element pushed through the word `v`. -/
+def trCombOne (v : List ℕ) (m : ℕ) (x : List ℕ) : R := trComb z h m (mulGens h [((1 : R), x)] v)
+
+theorem evalC_mulGens (v : List ℕ) (m : ℕ) : ∀ e : List (R × List ℕ),
+    trComb z h m (mulGens h e v) = (e.map fun p => p.1 * trCombOne z h v m p.2).sum
+  | [] => by
+    simp [trComb, mulGens_nil_left]
+  | p :: e => by
+    have hp : [p] = [((1 : R), p.2)].map (scaleTerm p.1) := by simp [scaleTerm]
+    rw [show p :: e = [p] ++ e from rfl, mulGens_app, evalC_app, evalC_mulGens v m e, hp,
+      mulGens_sc, evalC_sc]
+    simp [trCombOne, scaleTerm]
+
+end HeckeProof
+
+theorem swapAt_eq (w : List ℕ) (i : ℕ) (hi : i + 1 < w.length) :
+    swapAt w i = (w.set i w[i + 1]).set (i + 1) w[i] := by
+  have h0 : i < w.length := by omega
+  simp [swapAt, List.getD_eq_getElem?_getD, List.getElem?_eq_getElem hi,
+    List.getElem?_eq_getElem h0]
+
+theorem swapAt_perm (w : List ℕ) (i : ℕ) (hi : i + 1 < w.length) : (swapAt w i).Perm w := by
+  rw [swapAt_eq w i hi]; exact List.set_set_perm _ _
+
+theorem swapAt_getD_fst (w : List ℕ) (i : ℕ) (hi : i + 1 < w.length) :
+    (swapAt w i).getD i 0 = w.getD (i + 1) 0 := by
+  have h0 : i < w.length := by omega
+  simp [swapAt, List.getD_eq_getElem?_getD, List.getElem?_set, List.getElem?_eq_getElem hi,
+    List.getElem?_eq_getElem h0, h0]
+
+theorem swapAt_getD_snd (w : List ℕ) (i : ℕ) (hi : i + 1 < w.length) :
+    (swapAt w i).getD (i + 1) 0 = w.getD i 0 := by
+  have h0 : i < w.length := by omega
+  simp [swapAt, List.getD_eq_getElem?_getD, List.getElem?_set, List.getElem?_eq_getElem hi,
+    List.getElem?_eq_getElem h0, hi]
+
+theorem swapAt_swapAt (w : List ℕ) (i : ℕ) (hi : i + 1 < w.length) :
+    swapAt (swapAt w i) i = w := by
+  have h0 : i < w.length := by omega
+  apply List.ext_getElem?
+  intro k
+  simp only [swapAt, List.getD_eq_getElem?_getD, List.getElem?_set]
+  by_cases a : k = i + 1
+  · subst a; simp [hi, h0, List.getElem?_eq_getElem hi, List.getElem?_eq_getElem h0]
+  · by_cases b : k = i
+    · subst b; simp [hi, h0, List.getElem?_eq_getElem hi, List.getElem?_eq_getElem h0]
+    · simp [Ne.symm a, Ne.symm b]
+
+theorem nodup_getD_ne (w : List ℕ) (i : ℕ) (hi : i + 1 < w.length) (hw : w.Nodup) :
+    w.getD i 0 ≠ w.getD (i + 1) 0 := by
+  have h0 : i < w.length := by omega
+  simp only [List.getD_eq_getElem?_getD, List.getElem?_eq_getElem hi,
+    List.getElem?_eq_getElem h0, Option.getD_some]
+  intro heq
+  have := (List.Nodup.getElem_inj_iff hw).mp heq
+  omega
+
+section HeckeRelProof
+variable {R : Type*} [CommRing R] (z h : R)
+
+def PermInv (L : ℕ) (e : List (R × List ℕ)) : Prop := ∀ p ∈ e, p.2.length = L ∧ p.2.Nodup
+
+theorem mulGen_inv (L i : ℕ) (hi : i + 1 < L) (e : List (R × List ℕ)) (he : PermInv L e) :
+    PermInv L (mulGen h e i) := by
+  intro p hp
+  simp only [mulGen, List.mem_flatMap] at hp
+  obtain ⟨q, hq, hp⟩ := hp
+  obtain ⟨hl, hn⟩ := he q hq
+  have hpm := swapAt_perm q.2 i (by omega)
+  split_ifs at hp <;> simp at hp <;>
+    rcases hp with rfl | rfl <;> simp_all [swapAt_length, hpm.nodup_iff]
+
+theorem mulGens_inv (L : ℕ) : ∀ (v : List ℕ) (e : List (R × List ℕ)), (∀ i ∈ v, i + 1 < L) →
+    PermInv L e → PermInv L (mulGens h e v)
+  | [], _, _, he => he
+  | i :: v, e, hv, he => by
+    simp only [mulGens, List.foldl_cons] at *
+    exact mulGens_inv L v _ (fun j hj => hv j (by simp [hj]))
+      (mulGen_inv h L i (hv i (by simp)) e he)
+
+theorem hecke_single (v : List ℕ) (m i : ℕ) (a : R) (w : List ℕ) (hi : i + 1 < w.length)
+    (hw : w.Nodup) :
+    trComb z h m (mulGens h (mulGen h (mulGen h [(a, w)] i) i) v)
+      = h * trComb z h m (mulGens h (mulGen h [(a, w)] i) v)
+        + trComb z h m (mulGens h [(a, w)] v) := by
+  have hne := nodup_getD_ne w i hi hw
+  have g1 := swapAt_getD_fst w i hi
+  have g2 := swapAt_getD_snd w i hi
+  have ss := swapAt_swapAt w i hi
+  rw [evalC_mulGens, evalC_mulGens, evalC_mulGens]
+  by_cases hlt : w.getD i 0 < w.getD (i + 1) 0
+  · have hn : ¬ (swapAt w i).getD i 0 < (swapAt w i).getD (i + 1) 0 := by omega
+    have m1 : mulGen h [(a, w)] i = [(a, swapAt w i)] := by
+      simp only [mulGen, List.flatMap_cons, List.flatMap_nil, List.append_nil]; rw [if_pos hlt]
+    have m2 : mulGen h [(a, swapAt w i)] i = [(a * h, swapAt w i), (a, w)] := by
+      simp only [mulGen, List.flatMap_cons, List.flatMap_nil, List.append_nil]; rw [if_neg hn, ss]
+    rw [m1, m2]; simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; ring
+  · have hp : (swapAt w i).getD i 0 < (swapAt w i).getD (i + 1) 0 := by omega
+    have m1 : mulGen h [(a, w)] i = [(a * h, w), (a, swapAt w i)] := by
+      simp only [mulGen, List.flatMap_cons, List.flatMap_nil, List.append_nil]; rw [if_neg hlt]
+    have m2 : mulGen h [(a * h, w), (a, swapAt w i)] i
+        = [(a * h * h, w), (a * h, swapAt w i), (a, w)] := by
+      simp only [mulGen, List.flatMap_cons, List.flatMap_nil, List.append_nil]
+      rw [if_neg hlt, if_pos hp, ss]; rfl
+    rw [m1, m2]; simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; ring
+
+theorem hecke_comb (v : List ℕ) (m L i : ℕ) (hi : i + 1 < L) : ∀ e : List (R × List ℕ),
+    PermInv L e →
+    trComb z h m (mulGens h (mulGen h (mulGen h e i) i) v)
+      = h * trComb z h m (mulGens h (mulGen h e i) v) + trComb z h m (mulGens h e v)
+  | [], _ => by simp [mulGen, mulGens_nil_left, trComb]
+  | p :: e, he => by
+    have ih := hecke_comb v m L i hi e (fun q hq => he q (by simp [hq]))
+    obtain ⟨hl, hn⟩ := he p (by simp)
+    have hs := hecke_single z h v m i p.1 p.2 (by omega) hn
+    rw [show p :: e = [(p.1, p.2)] ++ e by simp]
+    simp only [mulGen_app, mulGens_app, evalC_app]
+    rw [hs, ih]; ring
+
+theorem mulGens_cat (e : List (R × List ℕ)) (a b : List ℕ) :
+    mulGens h e (a ++ b) = mulGens h (mulGens h e a) b := by
+  simp [mulGens, List.foldl_append]
+
+theorem trWord_hecke (n : ℕ) (u v : List ℤ) (i : ℤ) (hs : Supp n (u ++ [i] ++ v)) :
+    trWord z h n (u ++ [i, i] ++ v) = h * trWord z h n (u ++ [i] ++ v) + trWord z h n (u ++ v) := by
+  have hu : ∀ j ∈ u.map Int.toNat, j + 1 < n + 1 := by
+    intro j hj
+    obtain ⟨c, hc, rfl⟩ := List.mem_map.mp hj
+    have := hs c (by simp [hc]); omega
+  have hi : i.toNat + 1 < n + 1 := by have := hs i (by simp); omega
+  have h0 : PermInv (n + 1) [((1 : R), List.range (n + 1))] := by
+    intro p hp; simp at hp; subst hp; exact ⟨by simp, List.nodup_range⟩
+  have hE := mulGens_inv h (n + 1) _ _ hu h0
+  have key := hecke_comb z h (v.map Int.toNat) (n + 1) (n + 1) i.toNat hi _ hE
+  unfold trWord
+  simp only [List.map_append, List.map_cons, List.map_nil, mulGens_cat]
+  exact key
+
+end HeckeRelProof
+
+theorem swapAt_getD_other (w : List ℕ) (i k : ℕ) (h1 : k ≠ i) (h2 : k ≠ i + 1) :
+    (swapAt w i).getD k 0 = w.getD k 0 := by
+  simp [swapAt, List.getD_eq_getElem?_getD, List.getElem?_set, Ne.symm h1, Ne.symm h2]
+
+theorem swapAt_getElem? (w : List ℕ) (i : ℕ) (hi : i + 1 < w.length) (k : ℕ) :
+    (swapAt w i)[k]? = if k = i then w[i + 1]? else if k = i + 1 then w[i]? else w[k]? := by
+  have h0 : i < w.length := by omega
+  rw [swapAt_eq w i hi]
+  by_cases a : k = i + 1
+  · subst a; simp [List.getElem?_set, hi]
+  · by_cases b : k = i
+    · subst b; simp [List.getElem?_set, h0, a]
+    · simp [List.getElem?_set, Ne.symm a, Ne.symm b, a, b]
+
+theorem swapAt_comm (w : List ℕ) (i j : ℕ) (hij : i + 1 < j ∨ j + 1 < i)
+    (hi : i + 1 < w.length) (hj : j + 1 < w.length) :
+    swapAt (swapAt w i) j = swapAt (swapAt w j) i := by
+  apply List.ext_getElem?
+  intro k
+  have l1 : j + 1 < (swapAt w i).length := by rw [swapAt_length]; exact hj
+  have l2 : i + 1 < (swapAt w j).length := by rw [swapAt_length]; exact hi
+  rw [swapAt_getElem? _ j l1, swapAt_getElem? _ i l2]
+  simp only [swapAt_getElem? w i hi, swapAt_getElem? w j hj]
+  split_ifs <;> first | rfl | omega
+
+section FarCommProof
+variable {R : Type*} [CommRing R] (z h : R)
+
+theorem far_single (v : List ℕ) (m i j : ℕ) (a : R) (w : List ℕ) (hij : i + 1 < j ∨ j + 1 < i)
+    (hi : i + 1 < w.length) (hj : j + 1 < w.length) :
+    trComb z h m (mulGens h (mulGen h (mulGen h [(a, w)] i) j) v)
+      = trComb z h m (mulGens h (mulGen h (mulGen h [(a, w)] j) i) v) := by
+  have gi1 := swapAt_getD_other w j i (by omega) (by omega)
+  have gi2 := swapAt_getD_other w j (i + 1) (by omega) (by omega)
+  have gj1 := swapAt_getD_other w i j (by omega) (by omega)
+  have gj2 := swapAt_getD_other w i (j + 1) (by omega) (by omega)
+  have cm := swapAt_comm w i j hij hi hj
+  rw [evalC_mulGens, evalC_mulGens]
+  by_cases ci : w.getD i 0 < w.getD (i + 1) 0 <;> by_cases cj : w.getD j 0 < w.getD (j + 1) 0 <;>
+    simp only [mulGen, List.flatMap_cons, List.flatMap_nil, List.append_nil, List.cons_append,
+      List.nil_append, gi1, gi2, gj1, gj2, ci, cj, if_true, if_false, cm, List.map_cons,
+      List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
+theorem far_comb (v : List ℕ) (m L i j : ℕ) (hij : i + 1 < j ∨ j + 1 < i)
+    (hi : i + 1 < L) (hj : j + 1 < L) :
+    ∀ e : List (R × List ℕ), PermInv L e →
+    trComb z h m (mulGens h (mulGen h (mulGen h e i) j) v)
+      = trComb z h m (mulGens h (mulGen h (mulGen h e j) i) v)
+  | [], _ => by simp [mulGen, mulGens_nil_left, trComb]
+  | p :: e, he => by
+    have ih := far_comb v m L i j hij hi hj e (fun q hq => he q (by simp [hq]))
+    obtain ⟨hl, -⟩ := he p (by simp)
+    have hs := far_single z h v m i j p.1 p.2 hij (by omega) (by omega)
+    rw [show p :: e = [(p.1, p.2)] ++ e by simp]
+    simp only [mulGen_app, mulGens_app, evalC_app]
+    rw [hs, ih]
+
+theorem trWord_far_comm (n : ℕ) (u v : List ℤ) (i j : ℤ) (hd : 2 ≤ |i - j|)
+    (hs : Supp n (u ++ [i, j] ++ v)) :
+    trWord z h n (u ++ [i, j] ++ v) = trWord z h n (u ++ [j, i] ++ v) := by
+  have hi := hs i (by simp)
+  have hj := hs j (by simp)
+  have hij : i.toNat + 1 < j.toNat ∨ j.toNat + 1 < i.toNat := by
+    rcases le_abs.mp hd with h1 | h1 <;> omega
+  have hu : ∀ c ∈ u.map Int.toNat, c + 1 < n + 1 := by
+    intro c hc
+    obtain ⟨d, hd, rfl⟩ := List.mem_map.mp hc
+    have := hs d (by simp [hd]); omega
+  have h0 : PermInv (n + 1) [((1 : R), List.range (n + 1))] := by
+    intro p hp; simp at hp; subst hp; exact ⟨by simp, List.nodup_range⟩
+  have key := far_comb z h (v.map Int.toNat) (n + 1) (n + 1) i.toNat j.toNat hij
+    (by omega) (by omega) _ (mulGens_inv h (n + 1) _ _ hu h0)
+  unfold trWord
+  simp only [List.map_append, List.map_cons, List.map_nil, mulGens_cat]
+  exact key
+
+end FarCommProof
 
 end Evaluator
 
