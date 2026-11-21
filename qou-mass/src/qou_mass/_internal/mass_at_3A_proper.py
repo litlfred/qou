@@ -861,6 +861,27 @@ def chi_lambda_of_word(sigmas, dim, word, n_gens_required: int) -> float:
     return _chi_of_word_structured(sigmas, dim, word)
 
 
+def chi_lambda_of_word_mpfr(shape, word, q, dps: int | None = None) -> mpf:
+    """Full-precision twin of `chi_lambda_of_word`: χ_λ(Π_k (c_k σ_{g_k} + d_k I)).
+
+    Same `(c, d, gen_idx)` word (0-based generators), but evaluated by the
+    native MPFR kernel `pyhecke_native.chi_q_atomic_mpfr`, so no float64
+    enters. `q` must be an mpf or a decimal string (a float is refused: it
+    would cap the result at ~1e-16 before the kernel sees it). Agrees with the
+    float64 kernel to 3e-15..5e-15 relative on the deuteron word (measured
+    2026-11-21, λ ⊢ 6), i.e. to the float floor.
+    """
+    import pyhecke_native as _pyn
+    if isinstance(q, float):
+        raise TypeError("chi_lambda_of_word_mpfr: q must be mpf or str, not float")
+    if dps is None:
+        dps = _mpm.mp.dps
+    q_str = q if isinstance(q, str) else _mpm.nstr(q, dps + 5)
+    factors = [(_mpm.nstr(_mpm.mpf(c), dps + 5), _mpm.nstr(_mpm.mpf(d), dps + 5),
+                int(g) + 1) for (c, d, g) in word]
+    return _mpm.mpf(_pyn.chi_q_atomic_mpfr(list(shape), factors, q_str, dps))
+
+
 def _chi_of_word_structured(sigmas, dim, word) -> float:
     """`tr(Π_k (c_k·σ_{g_k} + d_k·I))` in O(|word|·dim²) instead of O(|word|·dim³).
 

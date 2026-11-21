@@ -12,13 +12,12 @@ level $\ell = 1$ except the neutrino at $\ell = 0$:
 **protons** as Borromean baryons $B_3(\mathrm{uud})$ (3-strand
 flavored Borromean rings),
 **neutrons** as $B_3(\mathrm{udd})$,
-**electrons** as trefoil knots $T_{2,3} = 3_1$ (closure of
-$\sigma_1^3$ in $B_2$),
+**electrons** as the word $\sigma_0\sigma_1\sigma_0 \in B_3$, whose closure is the Hopf link (the simulator still draws the backup reading, the trefoil $3_1$, closure of $\sigma_1^3$ in $B_2$),
 and **neutrinos** as unknots $0_1$ (vacuum drag).
 The fermion--boson decomposition classifies all entries via
 [fermions are knots, bosons are links](#prop:fermion-boson-knot-link):
-fermions are single-component odd-$n$ torus knots, bosons are
-even-$n$ 2-component links.
+in the $T(2,n)$ family, fermions are single-component odd-$n$ torus knots and bosons are
+even-$n$ 2-component links. That rule does not decide the electron's statistics, which remain open.
 Building-block data including Jones polynomials and hyperbolic
 volumes is in
 ([building-block knots](#rem:building-block-knots)).

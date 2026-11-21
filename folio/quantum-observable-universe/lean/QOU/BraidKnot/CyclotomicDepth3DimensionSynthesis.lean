@@ -5,7 +5,7 @@ import QOU.Infra.Polylogarithm
 # Cyclotomic depth-3 dimension synthesis at every prime K ≥ 5
 
 Compiled formalisation of
-`prop:cyclotomic-depth3-dimension-synthesis`.
+`conj:cyclotomic-depth3-dimension-synthesis`.
 Sibling docstub at
 `braids-and-knots/cyclotomic-depth3-dimension-synthesis.lean`.
 
@@ -22,7 +22,7 @@ open QOU.Infra.BorelRank
 def predictedDim (K : ℕ) : ℕ := (K - 3) / 2
 
 /-- The depth-3 dimension-synthesis claim
-    (`prop:cyclotomic-depth3-dimension-synthesis`), as a **predicate** on the
+    (`conj:cyclotomic-depth3-dimension-synthesis`), as a **predicate** on the
     actual dimension: the dimension of genuinely-new depth-3 content over
     `ℚ(ζ_K)` (prime `K ≥ 5`) equals the predicted `(K-3)/2`.
 

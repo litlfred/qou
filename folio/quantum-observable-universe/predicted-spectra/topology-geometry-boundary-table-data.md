@@ -7,10 +7,10 @@
 | Trace sign structure | $\mathrm{sign}(\mathrm{tr})$ per nucleus | Exact (Singular) |
 | Hecke step count | $\Delta(\text{R2 steps}) = -1$ universally | Computed |
 | Writhe change | $\Delta w = A - 1$ | Computed |
-| Emission topology | $L_0^{-} = T_{2,3} \sqcup T_{1,0}^{\sigma}$ ($\beta^-$: $e^- + \nu_e^{\sigma}$) | Derived |
+| Emission topology | $L_0^{-} = T_{2,3} \sqcup T_{1,0}^{\sigma}$ ($\beta^-$: $e^- + \nu_e^{\sigma}$) | Backup model only (trefoil electron; not re-derived for $e^- = \sigma_0\sigma_1\sigma_0$) |
 | Shell blocking | $e_i p_n = 0$ in TL (Jones--Wenzl kills smoothing) | Algebraic |
-| Nucleon masses | $m_\mathfrak{p} = \mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}} \approx 938.272$ MeV | From $q$ (terminal resolution) |
-| Mass splitting | $m_n - m_p = \mathcal{S}_{\mathfrak{d}\mathfrak{d}} - \mathcal{S}_{\mathfrak{u}\mathfrak{u}} \approx 1.290$ MeV | From $q$ |
-| Deuteron binding | $B_d \approx 1.29$ MeV from Vol($\mathcal{B}_3 \bowtie_\text{Hopf} \mathcal{B}_3$) / $\hbar_q^2$ | From $q$ (SnapPy) |
+| Nucleon masses | $m_\mathfrak{p} = \mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}$ | Not predicted: the two dressed quark masses can reproduce any $(m_\mathfrak{p}, m_\mathfrak{n})$ |
+| Mass splitting | $m_n - m_p = [2]_q(\mu_\mathfrak{d} - \mu_\mathfrak{u})/(q^{1/2} + q^{-1/2})$ | Exact identity (convention C); the per-quark split itself is a fitted ansatz |
+| Deuteron binding | Vol($\mathcal{B}_3 \bowtie_\text{Hopf} \mathcal{B}_3$) / $\hbar_q^2$ | Retired: the deuteron binding is not a hyperbolic-volume term |
 | Relative decay rates | $\propto \prod_{i \leq p} \lvert\hat{V}_i^{\mathrm{par}}/\hat{V}_i^{\mathrm{dau}}\rvert^2$ | Computed |
 | Environmental $q$-shift | $q(p) = 1 + \lvert\langle L_\varTheta, F_A^+\rangle\rvert$ | Predicted |

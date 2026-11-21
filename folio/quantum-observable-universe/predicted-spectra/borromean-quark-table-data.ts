@@ -9,4 +9,7 @@ export default table({
     "count, Seifert genus, and physical role.",
   uses: ["conj:borromean-quark"],
   tags: ["torus-knot", "particle-spectrum", "borromean"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Electron ruling (owner, 2026-11-21): the trefoil row is the backup electron; the ruled electron's closure is the Hopf link. Muon and tau words are not ruled, so those rows carry a question mark like the boson rows." },
+  ],
 });

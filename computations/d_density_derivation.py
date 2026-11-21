@@ -51,7 +51,10 @@ sys.path.insert(0, str(Path(__file__).parent))
 from hecke_core import h as H_A_VAL
 from mass_at_3A_proper import atom_braid_word_3A
 from hecke_core import w_sym, w_std, w_alt
-from q_parameter import Q as Q0
+from q_parameter import Q_MP as Q0, HA_MP
+import mpmath as mp
+from _precision import set_compute_dps, fmt
+set_compute_dps()
 from experimental_constants import M_E_MEV
 from witness_base import WitnessBuilder
 
@@ -77,8 +80,8 @@ def chi_sym_closed_form(n_sigma: int, n_sigma_inv: int, n_ud: int,
 
     Ref: docs/chi-sym-alt-theorem.md §Individual closed forms.
     """
-    two_q = q + 1.0 / q
-    return (q ** (n_sigma - n_sigma_inv)) * (two_q / 2.0) ** n_ud
+    two_q = q + 1 / q
+    return (q ** (n_sigma - n_sigma_inv)) * (two_q / 2) ** n_ud
 
 
 def chi_alt_closed_form(n_sigma: int, n_sigma_inv: int, n_ud: int,
@@ -87,9 +90,9 @@ def chi_alt_closed_form(n_sigma: int, n_sigma_inv: int, n_ud: int,
 
     Ref: docs/chi-sym-alt-theorem.md §Individual closed forms.
     """
-    two_q = q + 1.0 / q
-    sign = -1.0 if (n_sigma + n_sigma_inv + n_ud) % 2 else 1.0
-    return sign * (q ** (n_sigma_inv - n_sigma)) * (two_q / 2.0) ** n_ud
+    two_q = q + 1 / q
+    sign = -1 if (n_sigma + n_sigma_inv + n_ud) % 2 else 1
+    return sign * (q ** (n_sigma_inv - n_sigma)) * (two_q / 2) ** n_ud
 
 
 def main():
@@ -102,8 +105,8 @@ def main():
         "are computed."
     )
     w.set_content_block("conj:mass-volume-factorization")
-    w.add_parameter("q_0", float(Q0))
-    w.add_parameter("H_A", float(H_A_VAL))
+    w.add_parameter("q_0", fmt(Q0))
+    w.add_parameter("H_A", fmt(HA_MP))
     w.add_parameter("m_e_MeV", float(M_E_MEV))
     w.add_caveat(
         "The rule ρ_F(P) = m_e · n_chir(P) is a conjecture "
@@ -121,9 +124,12 @@ def main():
     n_ud = counts["ud"]
     word_len = n_sigma + n_sigma_inv + n_ud
 
-    H_A_sq_4 = 1.0 + H_A_VAL * H_A_VAL / 4.0
-    chi_sym = chi_sym_closed_form(n_sigma, n_sigma_inv, n_ud, Q0, H_A_VAL)
-    chi_alt = chi_alt_closed_form(n_sigma, n_sigma_inv, n_ud, Q0, H_A_VAL)
+    # q₀ and H_A as 70-digit mpf. Until 2026-11-21 both entered as float64
+    # (q_parameter.Q, hecke_core.h), capping every character below at float64
+    # (f64_into_mpmath_audit F64_CAST).
+    H_A_sq_4 = 1 + HA_MP * HA_MP / 4
+    chi_sym = chi_sym_closed_form(n_sigma, n_sigma_inv, n_ud, Q0, HA_MP)
+    chi_alt = chi_alt_closed_form(n_sigma, n_sigma_inv, n_ud, Q0, HA_MP)
     chi_product = chi_sym * chi_alt
     chi_product_closed = -(H_A_sq_4 ** n_ud)
 
@@ -169,8 +175,12 @@ def main():
 
     # Reading (II): weight criterion.
     # Compare the Plancherel-weighted contributions of sym and alt.
-    w_sym_f = float(w_sym)
-    w_alt_f = float(w_alt)
+    # Wedderburn-Artin weights of H_3(q), same closed form as
+    # pyhecke.gram.W_SYM / W_ALT (q²/(q⁴+4q²+1)), evaluated in mpf.
+    _q2 = Q0 ** 2
+    w_sym_f = _q2 / (_q2 ** 2 + 4 * _q2 + 1)
+    w_alt_f = w_sym_f
+    assert abs(w_sym_f - float(w_sym)) < 1e-15 and abs(w_alt_f - float(w_alt)) < 1e-15
     contrib_sym = w_sym_f * chi_sym
     contrib_alt = w_alt_f * chi_alt
     ratio_alt_over_sym = (abs(contrib_alt) / abs(contrib_sym)
@@ -230,9 +240,9 @@ def main():
         "word_length": word_len,
     })
     w.add_data("characters_closed_form", {
-        "chi_sym": float(chi_sym),
-        "chi_alt": float(chi_alt),
-        "chi_sym_times_chi_alt": float(chi_product),
+        "chi_sym": fmt(chi_sym),
+        "chi_alt": fmt(chi_alt),
+        "chi_sym_times_chi_alt": fmt(chi_product),
     })
     w.add_data("reading_I_character", {
         "chi_alt_nonzero": bool(chi_alt_nonzero),
@@ -241,11 +251,11 @@ def main():
         "verdict": reading_I,
     })
     w.add_data("reading_II_weight", {
-        "w_sym": w_sym_f,
-        "w_alt": w_alt_f,
-        "contribution_sym": float(contrib_sym),
-        "contribution_alt": float(contrib_alt),
-        "ratio_alt_over_sym": float(ratio_alt_over_sym),
+        "w_sym": fmt(w_sym_f),
+        "w_alt": fmt(w_alt_f),
+        "contribution_sym": fmt(contrib_sym),
+        "contribution_alt": fmt(contrib_alt),
+        "ratio_alt_over_sym": fmt(ratio_alt_over_sym),
         "alt_saturated": bool(alt_saturated),
         "n_chir": n_chir_II,
         "rho_F_MeV": float(rho_F_II),

@@ -34,15 +34,15 @@ The $T_{3,5}$ braid insertion introduces $10$ crossings into the nuclear braid w
 
 | Crossings | Destination | Structure |
 |:---------:|-------------|-----------|
-| $3$ | Electron $T_{2,3}$ (trefoil) | $3$ positive crossings |
-| $0$ | Antineutrino $K_{0_1}$ (unknot) | Trivial topology |
+| $3$ | Electron $e^- = \sigma_0\sigma_1\sigma_0$ (closure: Hopf link) | $3$ positive crossings, a braid factor of the vertex |
+| $0$ | Antineutrino $K_{0_1}^{\sigma}$ (mirror unknot) | Trivial topology |
 | $7$ | Nuclear re-reduction | R2 moves absorbed into daughter normal form |
 
 The $7$ re-reduction crossings change the R2 step count between parent and daughter normal forms. This dominates the $Q$-value. The single-crossing approximation misses $6$ of these $7$ crossings.
 
 ## Crossing partition and the Skein relation
 
-Gröbner–Shirshov reduction partitions the $10$ crossings of $T_{3,5}$. The electron trefoil takes $3$. The neutrino unknot takes $0$. The daughter nuclear braid absorbs the remaining $7$ as R2 moves.
+Gröbner–Shirshov reduction partitions the $10$ crossings of $T_{3,5}$. The electron word takes $3$. The neutrino unknot takes $0$. The daughter nuclear braid absorbs the remaining $7$ as R2 moves.
 
 The Skein relation acts at each of the $10$ crossings:
 
@@ -61,7 +61,7 @@ The involution $q \mapsto q^{-1}$ on the Iwahori–Hecke algebra relates $\beta^
 |:---:|:---:|
 | $\mathfrak{d} \to \mathfrak{u}$ via $T_{3,5}$ | $\mathfrak{u} \to \mathfrak{d}$ via $T_{3,5}^{\sigma}$ |
 | $q  [L_+]$ | $q^{-1} [L_+]$ |
-| electron $T_{2,3}$ | positron $T_{2,3}^{\sigma}$ |
+| electron $e^- = \sigma_0\sigma_1\sigma_0$ | positron $e^+ = \sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$ |
 | antineutrino $K_{0_1}^{\sigma}$ | neutrino $K_{0_1}$ |
 | $\mathcal{S}_{ab}(q)$ | $\mathcal{S}_{ba}(q) = \mathcal{S}_{ab}(q^{-1})$ |
 
@@ -81,15 +81,21 @@ The pair Skein formula uses the excised convention-C Markov weight $1/(q^{1/2}+q
 
 ## The lepton pair from $T_{3,5}$ decomposition
 
-Gröbner–Shirshov reduction decomposes the $T_{3,5}$ braid $(\sigma_1 \sigma_2)^5$ into the lepton pair and a reduction residue. The electron trefoil $T_{2,3} = (\sigma_1)^3$ accounts for $3$ of the $10$ crossings. The antineutrino unknot $K_{0_1}$ accounts for $0$. The remaining $7$ crossings are the weak vertex residue. They are absorbed into R2 moves during re-reduction.
+Gröbner–Shirshov reduction decomposes the $T_{3,5}$ braid $(\sigma_1 \sigma_2)^5$ into the lepton pair and a reduction residue. In the generators $\sigma_0, \sigma_1$ the vertex is $(\sigma_0\sigma_1)^5$, and the electron word $e^- = \sigma_0\sigma_1\sigma_0$ ([electron](#def:electron-knot)) is a braid factor of it:
 
 $$
-  L_0^{-} =  T_{2,3} \sqcup T_{1,0}^{\sigma}
+  (\sigma_0\sigma_1)^5 = e^- \cdot \bigl(e^- \cdot (\sigma_0\sigma_1)^2\bigr)
+$$
+
+(`QOU.BraidKnot.WeakVertexElectronFactor.weakVertex_eq_electron_mul`). The proof is the braid relation once: $e^- \cdot e^- = \sigma_0\sigma_1\sigma_0 \cdot \sigma_1\sigma_0\sigma_1 = (\sigma_0\sigma_1)^3$, the full twist. So the electron accounts for $3$ of the $10$ crossings as an identity of braids, not only as a count. The antineutrino unknot $K_{0_1}$ accounts for $0$. The remaining $7$ crossings, $e^- \cdot (\sigma_0\sigma_1)^2$, are the weak vertex residue. They are absorbed into R2 moves during re-reduction. The mirror vertex factors the same way through the positron: $(\sigma_0^{-1}\sigma_1^{-1})^5 = e^+ \cdot \bigl(e^+ \cdot (\sigma_0^{-1}\sigma_1^{-1})^2\bigr)$.
+
+$$
+  L_0^{-} =  e^- \sqcup T_{1,0}^{\sigma}
   \qquad (\beta^- \text{ decay: } e^- + \nu_e^{\sigma})
 $$
 
 $$
-  L_0^{+} =  T_{2,3}^{\sigma} \sqcup T_{1,0}
+  L_0^{+} =  e^+ \sqcup T_{1,0}
   \qquad (\beta^+ \text{ decay: } e^+ + \nu_e)
 $$
 
@@ -112,7 +118,7 @@ The parent and daughter normal forms differ at all crossings affected by the $T_
 **Re-reduction cost (10-crossing).**
 The $T_{3,5}$ insertion at the converting quark adds $10$ crossings to the braid word. The Gröbner–Shirshov reduction must:
 
-1. Extract the $3$-crossing electron trefoil from the $T_{3,5}$ decomposition.
+1. Extract the $3$-crossing electron word $e^-$, a braid factor of the vertex.
 2. Reduce the remaining $7$ crossings via R2 moves ($T^2 = (q - q^{-1})T + 1$) and R3/far-commutativity moves.
 3. Propagate the flavour change through all inter-nucleon crossings involving the converting quark's strand.
 
@@ -132,4 +138,4 @@ The previous single-crossing approximation captured only $1$ of the $10$ crossin
 2. **Tritium accuracy.** The error for $A = 3$ is $< 2\%$. The nuclear braid is short. The $7$ re-reduction crossings have limited room to propagate. The single-crossing approximation succeeds accidentally.
 3. **Mass-dependent correction.** Heavier nuclei have more inter-nucleon crossings affected by the flavour change. The $7$ re-reduction crossings modify more transfer matrices.
 
-**Open computation.** The exact weak vertex form factor $\mathcal{W}(q) = \mathrm{tr}_{\mathrm{Markov}}((\sigma_1\sigma_2)^5)$ and the crossing budget ($3 + 0 + 7$) require verification by explicit Iwahori–Hecke algebra computation.
+**Open computation.** The braid-level split $3 + 0 + 7$ is the factorisation above. The weak vertex form factor is computed under the two-term trace in the half-life proof of this chapter: its one-term part is $\mathcal{W}(q) = \mathrm{tr}_{\mathrm{Markov}}((\sigma_1\sigma_2)^5) = q^2(q^{12}+q^8-1)/(q^2+1)^2$, and its connected part depends on the charges of the three vertex strands, which are not derived. How the $7$-letter residue reduces against a given nucleus still requires explicit Iwahori–Hecke algebra computation.

@@ -29,7 +29,7 @@ export default proposition({
   title:
     "Demazure-fiber Markov-trace functional $T^{\\mathrm{Dem}}(\\lambda; w) = y_\\lambda \\cdot D_w(\\lambda) / D_{w_0}(\\lambda)$",
   lean: {
-    ref: "qou:QOU.BraidsAndKnots.demazure_fiber_markov_trace",
+    ref: "qou:QOU.BraidsAndKnots.demazure_at_w0_equals_y_lambda",
     validation: "not_checked",
   },
   computation: {

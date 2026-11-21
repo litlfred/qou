@@ -32,4 +32,4 @@ The $L_0^{\pm}$ smoothing at a crossing in a braid word replaces the crossing wi
 
 See [Table 5](#tbl:linking-relations-table-table5-data).
 
-In each case, the $L_0^{\pm}$ smoothing produces exactly one charged lepton (trefoil or mirror trefoil) and one (anti)neutrino (unknot or mirror unknot). This construction ensures that lepton number is conserved.
+In each case, the $L_0^{\pm}$ smoothing produces exactly one charged lepton ($e^-$ or $e^+$, closing to the positive or negative Hopf link) and one (anti)neutrino (unknot or mirror unknot). This construction ensures that lepton number is conserved.
