@@ -1,13 +1,13 @@
 ---
 # qou-034l
 title: '#7 surreal bound-management: ord_ω cost/budget squeeze — grade algebra (super-poly ≻ poly, stable under +,·,∘)'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T10:28:35Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:48:00Z
 parent: qou-b1je
 ---
 
@@ -34,3 +34,5 @@ Branch `claude/pnp-surreal-grade-comp-2026-11-21` (commit `819da5b7f`, additive 
 - `polyGrowth_iff_not_superPolynomial`: the exact De Morgan dual. `PolyBounded` is not the dual, despite its docstring: `n ↦ n+1` is neither.
 
 All three: lean exit 0, axioms [propext, Classical.choice, Quot.sound]. Complete this bean when that PR merges.
+
+2026-11-21: PR #8844 merged. PolyGrowth.comp (poly stable under composition), superPolynomial_not_stable_under_precomp (the "∘" half of the title is false for super-poly in general, proved), polyGrowth_iff_not_superPolynomial. Sorry-free, standard axioms.
