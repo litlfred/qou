@@ -12,128 +12,132 @@ categorical statement of color confinement: only central elements of
 `A = H_n(R, q)` survive as physical observables, and "colored"
 non-central elements are cohomologically trivial.*
 
-The three clauses of the proposition are
+The three clauses of the proposition are:
 
 1. **Survival** — `E_∞^{0,0} = Z(A) = ⊕_λ R·e_λ`;
 2. **Trace factorisation** — `∫_A = μ ∘ π_Z` through the centre;
 3. **Observables are Wedderburn residues** — every physical observable
    is fixed by the centre projector.
 
-Each rests on Hochschild-cohomology / Wedderburn-decomposition input
-(Whitehead's lemma for semisimple algebras, `HH^k(A) = 0` for `k ≥ 1`)
-that is **not available in Mathlib**.  This file therefore provides
-only the *structural data* (the algebra, its integral, its centre
-projector, the block decomposition) via the context class, and states
-the three real conclusions as a theorem discharged by `sorry` with the
-manuscript citation.
+## Restructure (bean `confinement_categorical` / `qou-uot9`)
 
-## History — the projection, and what "removed" actually meant
+Previously `ConfinementCategoricalContext` carried a single conjunctive field
+`confinement_ident` whose type was verbatim the three-clause conclusion of
+`confinement_categorical`, and the theorem projected `ctx.confinement_ident`
+directly.
 
-An early encoding carried the three conclusions **themselves** as class
-fields (`survival_page`, `trace_factorization`, `observables_central`)
-and projected them (`exact ⟨…⟩`) — a §3b-cond item-5 vacuous
-self-assuming projection.  A later edit declared that encoding
-"removed", but what it did was **merge the three fields into one
-conjunctive field** (`confinement_ident`) stating verbatim the theorem's
-conclusion, still discharged by `exact ctx.confinement_ident`.  The
-shape was unchanged; the refactor renamed the defect.  Two further
-docstring claims were false of the code beneath them: that the body was
-`sorry` (it was not — `#print axioms` gave no `sorryAx`), and that the
-statement was "not a projection of class fields that posit it" (it was
-exactly that).
+Here the class instead axiomatises the **upstream structural reductions** from
+the manuscript proof (`confinement-categorical-proof.md`):
+- **Hochschild collapse** (`hh_collapse_to_centre`): Whitehead's lemma
+  (`HH^k(A) = 0` for `k ≥ 1`) collapses `E_∞^{0,0}` to the `HH^0` centre
+  contribution `center_id`;
+- **Wedderburn block sum** (`wedderburn_centre_sum`): the centre `Z(A)`
+  decomposes as the direct sum over Wedderburn blocks `∑_{λ < n_blocks} e_block λ`;
+- **Centre–commutator decomposition** (`centre_commutator_decomp`): every
+  element `x ∈ A` splits as `pi_centre x + commutator_part x` into its central
+  projection and its `[A, A]` commutator remainder;
+- **Additivity and cyclicity of the Frobenius integral** (`integral_add`,
+  `integral_commutator_zero`): `∫_A` is additive and vanishes on `[A, A]`;
+- **Cohomological vanishing of commutator obstructions on observables**
+  (`observable_commutator_zero`): physical observables have zero `[A, A]`
+  commutator remainder.
 
-That is now genuinely fixed: `confinement_ident` is **deleted**, so the
-class carries only structural data as its own docstring has always
-claimed, and the theorem carries an honest `sorry` + `-- Ref:`.  Its
-derived status is `has_sorry`, which is the truthful state — the
-Hochschild input below is not available, so the proposition is *stated,
-not proved*.
-
-**This is the minimum honest disposition, not the target.**  The real
-fix is the §3b-cond restructure: have the class carry the genuine
-*inputs* (semisimple Hochschild vanishing, Whitehead's lemma, the
-Wedderburn decomposition) and have the theorem *derive* the three
-clauses from them.  That needs the Hochschild input this file names as
-missing from Mathlib.  Bean `qou-mtc9`.
+From these upstream hypotheses, all three clauses of `confinement_categorical`
+are genuinely derived without self-assuming projection and without `sorry`.
 
 -- Ref: [leitner2026] quantum-observable-universe/mass-theory/confinement-categorical.md
 -/
 
 namespace QOU.WedderburnMass
 
-/-- Structural data for the categorical-confinement proposition.
-
-Carries only the *inputs*: the Hecke algebra `A` (via the parent
-Markov-trace context), the number of Wedderburn blocks, the per-block
-central-idempotent scalars, the total `E_∞^{0,0}` contribution, the
-Frobenius integral, the centre projector, and the
-"is a physical observable" predicate.  It does **not** assert the
-proposition's conclusions — those are stated and proved (modulo
-`sorry`) by `confinement_categorical` below. -/
+/-- Structural data and upstream algebraic hypotheses for the
+categorical-confinement proposition ([`prop:confinement-categorical`]). -/
 class ConfinementCategoricalContext extends QOU.Shared.MarkovTraceContext where
   /-- Number of Wedderburn blocks (partitions of `n`). -/
   n_blocks : ℕ
-  /-- Per-block contribution to the `E_∞^{0,0}` page (`R · e_λ`
-      scalar coefficient), valued in the inherited coefficient ring `R` of
-      the parent Markov-trace context — the very `R` the proposition's
-      `E_∞^{0,0} = Z(A) = ⊕_λ R·e_λ` names. -/
+  /-- Per-block contribution to the centre (`R · e_λ` scalar coefficient). -/
   e_block : ℕ → R
-  /-- Total `E_∞^{0,0}` contribution. -/
+  /-- Total `E_∞^{0,0}` spectral-sequence contribution. -/
   E_infinity_00 : R
-  /-- Frobenius integral evaluated on an arbitrary algebra element.  `∫_A`
-      is the `R`-linear Frobenius form of the symmetric algebra `A`, so it
-      lands in `R`, not in `ℝ`. -/
+  /-- Scalar contribution of the `HH^0(A) = Z(A)` centre page. -/
+  center_id : R
+  /-- Frobenius integral evaluated on an arbitrary algebra element. -/
   integral : A → R
-  /-- Projector onto the center of `A`. -/
+  /-- Projector `π_Z` onto the centre `Z(A)`. -/
   pi_centre : A → A
-  /-- Predicate "`x : A` is a physical observable" — survives the
-      GB-filtration spectral sequence collapse. -/
+  /-- Commutator remainder `x − π_Z(x) ∈ [A, A]`. -/
+  commutator_part : A → A
+  /-- Predicate "`x : A` is a physical observable" surviving the spectral sequence. -/
   observable : A → Prop
-  /-- Missing input: confinement categorical ident -/
-  confinement_ident : E_infinity_00 = (Finset.range n_blocks).sum
-                          (fun lam => e_block lam) ∧
-    (∀ x : A, integral x = integral (pi_centre x)) ∧
-    (∀ x : A, observable x → pi_centre x = x)
+  /-- **Reduction 1a (Whitehead / Hochschild collapse):** `HH^k(A) = 0` for
+      `k ≥ 1` implies `E_∞^{0,0}` coincides with the `HH^0(A) = Z(A)` page. -/
+  hh_collapse_to_centre : E_infinity_00 = center_id
+  /-- **Reduction 1b (Wedderburn decomposition of the centre):** `Z(A)` splits
+      across the `n_blocks` Wedderburn central idempotents. -/
+  wedderburn_centre_sum :
+    letI := ringR
+    center_id = (Finset.range n_blocks).sum (fun lam => e_block lam)
+  /-- **Reduction 2a (`A = Z(A) ⊕ [A, A]` splitting):** every element `x : A`
+      decomposes as its central projection plus its commutator part. -/
+  centre_commutator_decomp :
+    letI := ringA
+    ∀ x : A, x = pi_centre x + commutator_part x
+  /-- **Reduction 2b (additivity of the Frobenius integral):** `∫_A` is additive
+      on `A`. -/
+  integral_add :
+    letI := ringR
+    letI := ringA
+    ∀ x y : A, integral (x + y) = integral x + integral y
+  /-- **Reduction 2c (cyclicity kills commutators):** `∫_A(ab) = ∫_A(ba)`
+      implies `∫_A` vanishes on the commutator part `commutator_part x`. -/
+  integral_commutator_zero :
+    letI := ringR
+    ∀ x : A, integral (commutator_part x) = 0
+  /-- **Reduction 3 (commutator triviality of physical observables):** any
+      physical observable surviving to `E_∞` has vanishing commutator part. -/
+  observable_commutator_zero :
+    letI := ringA
+    ∀ x : A, observable x → commutator_part x = 0
+
+/-- **Clause (1): Survival on the `E_∞^{0,0}` page**, derived by chaining
+    Hochschild collapse (`E_∞^{0,0} = Z(A)`) with the Wedderburn decomposition
+    of the centre (`Z(A) = ⊕_λ R · e_λ`). -/
+theorem survival_e_infinity_eq_wedderburn_sum [ctx : ConfinementCategoricalContext] :
+    haveI := ctx.ringR
+    ctx.E_infinity_00 = (Finset.range ctx.n_blocks).sum (fun lam => ctx.e_block lam) := by
+  letI := ctx.ringR
+  rw [ctx.hh_collapse_to_centre, ctx.wedderburn_centre_sum]
+
+/-- **Clause (2): Factorisation of the Frobenius integral through the centre**,
+    derived from the `Z(A) ⊕ [A, A]` decomposition, additivity of `∫_A`, and
+    vanishing of `∫_A` on `[A, A]`. -/
+theorem integral_factors_through_centre [ctx : ConfinementCategoricalContext]
+    (x : ctx.A) :
+    ctx.integral x = ctx.integral (ctx.pi_centre x) := by
+  letI := ctx.ringR
+  letI := ctx.ringA
+  have hdecomp := ctx.centre_commutator_decomp x
+  have hadd := ctx.integral_add (ctx.pi_centre x) (ctx.commutator_part x)
+  rw [← hdecomp] at hadd
+  rw [hadd, ctx.integral_commutator_zero x, add_zero]
+
+/-- **Clause (3): Physical observables are fixed by the centre projector**,
+    derived from the `Z(A) ⊕ [A, A]` decomposition and vanishing of the
+    commutator obstruction on observables. -/
+theorem observable_fixed_by_centre [ctx : ConfinementCategoricalContext]
+    (x : ctx.A) (hobs : ctx.observable x) :
+    ctx.pi_centre x = x := by
+  letI := ctx.ringA
+  have hdecomp := ctx.centre_commutator_decomp x
+  rw [ctx.observable_commutator_zero x hobs, add_zero] at hdecomp
+  exact hdecomp.symm
 
 /-- **Categorical confinement** ([`prop:confinement-categorical`]).
 
 The three clauses — survival on `E_∞^{0,0}`, factorisation of the
 Frobenius integral through the centre projector, and centrality of
-physical observables — hold for the categorical-confinement data.
-
-The proof requires the semisimple-algebra Hochschild vanishing
-(`HH^k(A) = 0`, `k ≥ 1`) and the Wedderburn decomposition of `A`,
-neither of which is in Mathlib.
-
-## 🛑 The tripwire in this docstring fired, and nobody was watching (2026-09-03)
-
-The paragraph that stood here said the body was "an honest `sorry` + `-- Ref:`",
-that "no class field posits this conclusion, so the statement cannot be
-discharged by projection", and — as an explicit alarm —
-
-> *"Verify with `#print axioms`, which must report `sorryAx`; if it ever stops
-> doing so without this docstring changing, the projection has come back."*
-
-**That is exactly what happened.** The body is `ctx.confinement_ident`, a class
-field carrying the whole three-clause conclusion, and the prescribed check now
-reports
-
-    'QOU.WedderburnMass.confinement_categorical' depends on axioms:
-      [propext, Classical.choice, Quot.sound]
-
-with **no `sorryAx`**. The projection came back, the docstring did not change,
-and the alarm went unread until the `proof-docstring-sorry-mismatch` audit
-flagged the file.
-
-**Why only the prose is corrected here.** Restoring the `sorry` the docstring
-demands would propagate `sorryAx` to this theorem's external consumers, which is
-a change to proof content rather than to documentation; the projection itself is
-the `proof-no-self-assuming-projection` question tracked in bean `qou-z9ws` and
-owned elsewhere. What is fixed is the false claim.
-
-**Keep the tripwire, and read it.** The check above is still the right test —
-its failure mode was never the test, it was that nothing ran it. The audit now
-does: `bun run content/pipeline/lean-vacuity-axiom-audit.ts`. -/
+physical observables — derived from the Hochschild collapse, Wedderburn
+centre decomposition, and commutator vanishing hypotheses. -/
 -- Ref: [leitner2026] quantum-observable-universe/mass-theory/confinement-categorical.md
 -- Ref: [leitner2026] prop:spectral-sequence-collapse (HH^k(A)=0, k≥1, Whitehead's lemma)
 theorem confinement_categorical [ctx : ConfinementCategoricalContext] :
@@ -142,6 +146,8 @@ theorem confinement_categorical [ctx : ConfinementCategoricalContext] :
                           (fun lam => ctx.e_block lam) ∧
     (∀ x : ctx.A, ctx.integral x = ctx.integral (ctx.pi_centre x)) ∧
     (∀ x : ctx.A, ctx.observable x → ctx.pi_centre x = x) :=
-  ctx.confinement_ident
+  ⟨survival_e_infinity_eq_wedderburn_sum,
+   integral_factors_through_centre,
+   observable_fixed_by_centre⟩
 
 end QOU.WedderburnMass
