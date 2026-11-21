@@ -117,6 +117,20 @@ needs an extra q⁻¹. The plain K^⊗3 reading has no extra factor, but it move
 −12(q − 1) mₑ = −0.67 MeV, which breaks the proton round trip. Choosing between them by residual
 would be selection against the target, so neither is adopted.
 
+*Narrowing (same day), using only the proton test.* The −12 audit
+(`docs/audits/2026-11-21-proton-minus-twelve-origin.md`) found that at the muon pin the proton's
+constant must be q-independent to about 1 % of h²: a count or a dimension, not a trace evaluated
+at q₀. The plain K^⊗3 reading gives the proton −12q = −13.32. That moves m_p by −719 ppm, where the
+measured precision is at the ppb level. So that reading is **falsified by the proton**. This is the
+honest m_p prediction at the muon pin; it is not a choice made against n − p. The proton-normalised
+reading survives: the constant is 12 mₑ on the highest-weight member (p) and 12 q⁻² mₑ on the
+lowered member (n). That is the Cartan weight measured relative to the doublet's highest weight.
+Its split is 12(1 − q⁻²) mₑ = 1.15494 MeV, 10.7 % below experiment and below the lattice totals.
+The derivation target is therefore precise: a q-independent count, 12, on the proton weight space,
+and a reason why a lowered state carries q⁻² relative to it. Neither is derived. The rest of the
+gap (0.138 MeV) is the size of the EM pieces in §2(e). That is a magnitude comparison, not a
+closure.
+
 ## 3. Summary of the error, term by term
 
 | literature term (n − p) | this compute | status |
