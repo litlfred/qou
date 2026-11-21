@@ -350,6 +350,7 @@ import QOU.MassTheory.BondFactorClassicalFloor
 import QOU.MassTheory.TwoRowTwoColumnCollision
 import QOU.MassTheory.TraceConventionGate
 import QOU.MassTheory.NeutronProtonEMSign
+import QOU.MassTheory.PhotonClaspChargeForm
 import QOU.MassTheory.BarParityExclusion
 import QOU.MassTheory.SU4SupermultipletGate
 import QOU.MassTheory.BodyOrderCumulant
