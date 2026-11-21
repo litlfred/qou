@@ -89,4 +89,55 @@ open QOU.QuarkState in
 theorem gamma_gamma_reaches_eminus_NF (h : R) : pairNFChiral h 0 0 1 1 0 0 5 = 1 := by
   rw [pairNFChiral_eq]; simp
 
+open QOU.QuarkState in
+/-- **The two-photon products span `H₃(q)`.** Every coordinate vector of the
+    six-word basis `[1, σ₀, σ₁, L₋, L₊, e⁻]` is an `R`-linear combination of
+    normal forms `NF(γ(φ)·γ(ψ))`, so their span is the whole module `Fin 6 → R`.
+    Witnesses (`P(φ; ψ)` for `pairNFChiral h φ₀ φ₁ φ₀₁ ψ₀ ψ₁ ψ₀₁`):
+    `1 = P(0;0)`, `σ₀ = P(1,0,0;0) − 1`, `σ₁ = P(0,1,0;0) − 1`,
+    `L₋ = P(0,1,0;1,0,0) − 1 − σ₀ − σ₁`, `L₊ = P(1,0,0;0,1,0) − 1 − σ₀ − σ₁`,
+    `e⁻ = P(0,0,1;1,0,0) − (1 − h)·1 − (1 − h − h²)·σ₀ − L₊`. -/
+theorem gamma_gamma_span_top (h : R) :
+    Submodule.span R (Set.range fun p : Fin 6 → R =>
+      pairNFChiral h (p 0) (p 1) (p 2) (p 3) (p 4) (p 5)) = ⊤ := by
+  set S := Submodule.span R (Set.range fun p : Fin 6 → R =>
+      pairNFChiral h (p 0) (p 1) (p 2) (p 3) (p 4) (p 5)) with hS
+  have mem : ∀ a0 a1 a2 b0 b1 b2 : R, pairNFChiral h a0 a1 a2 b0 b1 b2 ∈ S := by
+    intro a0 a1 a2 b0 b1 b2
+    exact Submodule.subset_span ⟨![a0, a1, a2, b0, b1, b2], by simp⟩
+  have E0 : (![1, 0, 0, 0, 0, 0] : Fin 6 → R) ∈ S := by
+    have := mem 0 0 0 0 0 0
+    rw [pairNFChiral_eq] at this; simpa using this
+  have E1 : (![0, 1, 0, 0, 0, 0] : Fin 6 → R) ∈ S := by
+    have h1 := S.sub_mem (mem 1 0 0 0 0 0) E0
+    rw [pairNFChiral_eq] at h1
+    convert h1 using 1; funext i; fin_cases i <;> simp
+  have E2 : (![0, 0, 1, 0, 0, 0] : Fin 6 → R) ∈ S := by
+    have h1 := S.sub_mem (mem 0 1 0 0 0 0) E0
+    rw [pairNFChiral_eq] at h1
+    convert h1 using 1; funext i; fin_cases i <;> simp
+  have E3 : (![0, 0, 0, 1, 0, 0] : Fin 6 → R) ∈ S := by
+    have h1 := S.sub_mem (S.sub_mem (S.sub_mem (mem 0 1 0 1 0 0) E0) E1) E2
+    rw [pairNFChiral_eq] at h1
+    convert h1 using 1; funext i; fin_cases i <;> simp
+  have E4 : (![0, 0, 0, 0, 1, 0] : Fin 6 → R) ∈ S := by
+    have h1 := S.sub_mem (S.sub_mem (S.sub_mem (mem 1 0 0 0 1 0) E0) E1) E2
+    rw [pairNFChiral_eq] at h1
+    convert h1 using 1; funext i; fin_cases i <;> simp
+  have E5 : (![0, 0, 0, 0, 0, 1] : Fin 6 → R) ∈ S := by
+    have h1 := S.sub_mem (S.sub_mem (S.sub_mem (mem 0 0 1 1 0 0)
+      (S.smul_mem (1 - h) E0)) (S.smul_mem (1 - h - h ^ 2) E1)) E4
+    rw [pairNFChiral_eq] at h1
+    convert h1 using 1; funext i; fin_cases i <;> simp <;> ring
+  rw [eq_top_iff]
+  intro v _
+  have hv : v = v 0 • (![1, 0, 0, 0, 0, 0] : Fin 6 → R) + v 1 • ![0, 1, 0, 0, 0, 0]
+      + v 2 • ![0, 0, 1, 0, 0, 0] + v 3 • ![0, 0, 0, 1, 0, 0]
+      + v 4 • ![0, 0, 0, 0, 1, 0] + v 5 • ![0, 0, 0, 0, 0, 1] := by
+    funext i; fin_cases i <;> simp
+  rw [hv]
+  exact S.add_mem (S.add_mem (S.add_mem (S.add_mem (S.add_mem
+    (S.smul_mem _ E0) (S.smul_mem _ E1)) (S.smul_mem _ E2)) (S.smul_mem _ E3))
+    (S.smul_mem _ E4)) (S.smul_mem _ E5)
+
 end QOU.Archimedean.GammaGammaGeneration

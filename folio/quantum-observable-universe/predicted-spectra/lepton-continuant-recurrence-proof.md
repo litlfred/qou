@@ -19,9 +19,9 @@ At the substrate parameter $q_0 \approx 1.1100$, the continuant yields the follo
 
 | Lepton | Torus knot | $n$ | $a_n$ | $b_n$ | $\mathrm{net}$ |
 |:------:|:----------:|:---:|:-----:|:-----:|:---------:|
-| $e^-$  | $T_{2,3}$  | $3$ | $0.209$ | $1.044$ | $1.253$ |
-| $\mu^-$ | $T_{2,5}$ | $5$ | $0.427$ | $1.133$ | $1.560$ |
-| $\tau^-$ | $T_{2,7}$ | $7$ | $0.664$ | $1.272$ | $1.936$ |
+| $e^-$ (backup) | $T_{2,3}$  | $3$ | $0.209$ | $1.044$ | $1.253$ |
+| $\mu^-$ (not ruled) | $T_{2,5}$ | $5$ | $0.427$ | $1.133$ | $1.560$ |
+| $\tau^-$ (not ruled) | $T_{2,7}$ | $7$ | $0.664$ | $1.272$ | $1.936$ |
 
 The recurrence is exact in $\mathbb{Z}[q^{\pm 1}]$. The decimal values are evaluations at $q = q_0$.
 

@@ -3,7 +3,7 @@ The framework's particle catalogue and operator algebra share a single six-eleme
 | Particle | Knot / link | Type | Braid word | $q$-invariant |
 |---|---|---|---|---|
 | neutrino $\nu$ | unknot $0_1$ | trivial | $\mathbf{1}$ | $\mathrm{Vol}=0$, $J=1$ |
-| electron $e^-$ | trefoil $3_1 = T(2,3)$ | torus | $\sigma_1^3$ | $\mathrm{Vol}=0$ |
+| electron $e^-$ | Hopf link $T(2,2)$, closure of $\sigma_0\sigma_1\sigma_0 \in B_3$ (backup: trefoil $3_1$) | torus | $\sigma_0\sigma_1\sigma_0$ | $\mathrm{Vol}=0$ |
 | strong force | Hopf link $L2a1 = T(2,2)$ | torus | $\sigma_1^2$ | $\mathrm{Vol}=0$ |
 | Higgs $h$ | figure-eight $4_1$ | hyperbolic | $(\sigma_1\sigma_2^{-1})^2$ | $\mathrm{Vol}\approx 2.0299$ |
 | nucleon $\mathfrak{p},\mathfrak{n}$ | Borromean rings $L6a4$ | hyperbolic | $(\sigma_1\sigma_2^{-1})^3$ | $\mathrm{Vol}\approx 7.328 = 8G$ |
