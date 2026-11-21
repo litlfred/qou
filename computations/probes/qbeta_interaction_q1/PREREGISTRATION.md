@@ -51,3 +51,12 @@ against the energy map it would have to use, with no comparison value used to de
 (h) logarithmic map E(X) = ±E₀·ln ε(X), both signs: the same two quantities.
 (i) only after (g) and (h): the lepton-pair energy against m_e, printed, not used to decide.
 Lean twin: `QOU.QBeta.OneSidedReading` (signs proved on 1 < q ≤ 23/20).
+
+## Addendum 4 (before `nonlinear_maps_probe.py` ran; owner: "Q_beta I don't think is a linear map")
+
+For an arbitrary map E = g(ε) of the trace, report: (j) the ordering ε_p f < ε_n < ε_p at q₀ (it
+decides every monotone g, Lean `OneSidedNonlinearMaps.monotone_excluded`); (k) for each corpus
+map — linear, |·|, ±log, ℏ/𝔇 (1/x), power x^k (k = ±1, ±2, ±1/2), and the proton-style affine map
+with its q = 1 value subtracted, E = E₀(ε(q) − ε(1)) — the lepton-pair energy and Q, with a pass
+iff both are positive; (l) the density jump ρ_final/ρ_p > [2]⁴/q needed by the ρ-weighted map.
+CODATA printed last only.
