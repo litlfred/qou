@@ -208,8 +208,6 @@ These are the most serious findings. Fixed in this audit with `AUDIT NOTE` annot
 | `MassGapGm.lean` | Mass gap positive over Gm | `massGapReal_pos` | **Exact** |
 | `MassGapGm.lean` | Gap zero iff q = +/-1 | `massGapReal_eq_zero_iff` | **Exact** |
 | `HadronicMass.lean` | Mass sum rule | `mass_sum_rule` | **Exact (by ring)** |
-| `HadronicMass.lean` | Nucleon ratio | `nucleon_mass_ratio_approx` | **Exact (by norm_num)** |
-| `HadronicMass.lean` | Binding fraction | `binding_fraction_approx` | **Exact (by norm_num)** |
 | `CODATAChain.lean` | Derived substrate parameter | `end_to_end` | **Exact (interval arithmetic)**; the former CODATA nucleon rows held by construction and were removed |
 | `HeckeEngine.lean` | B3 NF via engine | `nf_b3_eq_witness` | **Exact (by ring)** |
 | `HeckeEngine.lean` | Nucleon trefoil formulas | `nf_proton4_trefoil`, `nf_neutron4_trefoil` | **Exact (by ring)** |

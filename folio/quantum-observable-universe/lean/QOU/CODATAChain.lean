@@ -115,21 +115,6 @@ theorem mass_ratio_from_ansatz {M : Type*}
     amf.totalMass = vol_figure_eight / amf.h_q ^ 2 := by
   rw [amf.mass_eq_vol_div_h_q_sq, h_vol]
 
-/-- When the ansatz volume is Vol(4₁) and q matches the derived substrate
-    parameter, the mass ratio equals the experimental muon–electron ratio
-    (within the tolerance of the q-derivation).
-
-    Specifically: if `amf.h_q = quantum_planck q` and
-    `experimental_mu_e_ratio = vol_figure_eight / (quantum_planck q)²`,
-    then the formula reproduces CODATA. -/
-theorem mass_ratio_reproduces_CODATA {M : Type*}
-    (amf : ArchimedeanMassFormula M)
-    (h_vol : amf.knotVolume = vol_figure_eight)
-    (h_hq : amf.h_q = quantum_planck amf.q)
-    (h_eq : experimental_mu_e_ratio = vol_figure_eight / (quantum_planck amf.q) ^ 2) :
-    amf.totalMass = experimental_mu_e_ratio := by
-  rw [amf.mass_eq_vol_div_h_q_sq, h_vol, h_hq, h_eq]
-
 /-! ## §3 Substrate parameter derivation
 
 The `Calculations` module already proves that from `Vol(4₁)` and the
@@ -174,11 +159,6 @@ theorem end_to_end :
     |derived_q - substrate_q| < 0.001 :=
   substrate_error_bound
 
-/-- The nucleon mass ratio m_n/m_p matches CODATA to 6 decimal places. -/
-theorem end_to_end_nucleon_ratio :
-    |neutron_mass_MeV / proton_mass_MeV - 1.0013784| < 1e-6 :=  -- noqa: P31 - re-export of nucleon_mass_ratio_approx; same deliberate round
-  nucleon_mass_ratio_approx
-
 /-! ## §5 Dependency audit
 
 The theorems in this file depend on:
@@ -189,7 +169,6 @@ The theorems in this file depend on:
 - `ArchimedeanMassFormula.mass_pos` — positivity
 - `Calculations.substrate_error_bound` — interval arithmetic
 - `Calculations.full_derivation_chain` — repackaging
-- `HadronicMass.nucleon_mass_ratio_approx` — norm_num
 - All bridge theorems in §1–§2 — rfl / rw
 
 ### Conjectured (hypotheses in ArchimedeanMassFormula)
