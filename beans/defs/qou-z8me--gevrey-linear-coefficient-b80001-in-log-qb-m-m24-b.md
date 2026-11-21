@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-07T01:00:00Z
-updated_at: 2026-10-04T15:25:58Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-frzo
 ---
 
@@ -57,3 +57,14 @@ up in two places is a prompt to derive, never evidence on its own.
 Low priority: `B` shifts the q-Borel radius (`q^{1/4+B}`) but the singularity
 *structure* — which is what carries the Stokes data — is established
 independently by the branch-dependence result.
+
+
+## 2026-11-21T12:40:00Z — alien-calculus drain (thread "Build the q-native alien calculus")
+
+**Answered: B is not 8. B = (1 − log_q(q − q⁻¹))/2, a function of q.** Lean `QOU/Mathlib/C1GevreyLinearCoeff.lean` (`c1_linear_coeff_of_nonneg_init`, `linear_coeff_tendsto`, `two_step_increment_tendsto`, `quad_coeff_tendsto`): for q > 1 and every solution of [m+k]_q b_{m+2} = b_{m+1} + b_m with b₁ ≥ 0, b₀ + b₁ > 0, (−log_q b_m − m²/4)/m → (k − 1 − log_q(q − q⁻¹))/2. Sorry-free, axioms [propext, Classical.choice, Quot.sound], lean-direct exit 0 (lean 4.24.0, restored cache).
+
+At the probe q the closed form is 8.000104239513764 (the fit gave 8.00010424); at q = 2 it is 0.2075. The self-linking 8 of T(2,9)/T(3,5) is a coincidence of evaluation: log_q(q − q⁻¹) ≈ −15.0002 at that q. The '7.5' heuristic above took β = λ/2; the increment of m²/4 + βm is m + 1 + 2β, so β = (1 + λ)/2. Parity-free q-Borel radius ξ_s = q^{B+1/4} = q^{3/4}/√(q − q⁻¹).
+
+Probe pre-registered: docs/audits/2026-11-21-c1-gevrey-linear-coefficient.md; computations/probes/c1_gevrey_linear_coeff_probe.py (300 dps). P3 pass; P1/P2 fail their 1e-15 thresholds at q≈1.11 only (correction q^{-300} ≈ 2.5e-14 exceeds the threshold I set); fail criterion 1e-10 not met. Branch claude/alien-calculus-c1-gevrey-2026-11-21 (local commit 8ce0789da, PR pending owner card).
+
+Scope: positive solutions only; sign-changing / complex data not proved. Superseded-premise check (owner 2026-11-21): none — pure q-difference object, q free, no photon/convention/trace/fit input.

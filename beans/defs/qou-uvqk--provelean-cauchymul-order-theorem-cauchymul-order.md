@@ -1,9 +1,9 @@
 ---
 # qou-uvqk
 title: 'PROVE(lean): cauchyMul_order — theorem cauchyMul_order {q s t : ℝ} {a b : ℕ → K} (ha : IsQGevreyOrder q s a) (hb : IsQGev [cited ramis-sauloy-zhang2013]'
-status: in-progress
+status: completed
 pr: 8224
-updated_at: 2026-11-17T06:27:22Z
+updated_at: 2026-11-21T12:40:00Z
 type: task
 priority: normal
 tags:
@@ -32,3 +32,8 @@ parent: qou-u2al
 - **Status**: `in-progress` (awaiting Merge Manager merge of `litlfred/qou#8224` at `9725d15463b70fb5b273b6c495db79723640032c`).
 - **Lean Formalization**: `QOU.QBeta.FaddeevHalvesSelectionAndQGevreyCauchyEnvelope.q_gevrey_cauchy_mul_quadratic_envelope_identity` (Exact completion of the square for the q-Gevrey Cauchy convolution exponent with harmonic-mean lower envelope s*t/(s+t).)
 - **80-dps Witness**: `computations/probes/faddeev-halves-selection-and-q-gevrey-cauchy-envelope.witness.json` (`scriptHash: cea527e5468d`, `scriptCommitSha: 9d85aecf9640ed04a9fa33fe94c3662500eae503`).
+
+
+## 2026-11-21T12:40:00Z — alien-calculus drain (thread "Build the q-native alien calculus")
+
+**Done on main; closing.** `QOU.Mathlib.QGevreyOrder.cauchyMul_order` is proved sorry-free on main 2ae54ab401: re-verified here with lean-direct (exit 0), `#print axioms` = [propext, Classical.choice, Quot.sound]. Note the statement this bean quotes is FALSE as written: main proves `cauchyMul_order_unhypothesised_false` and `cauchyMul_order_noCancellation_insufficient` (b ≡ 0 counterexample). The proved theorem adds NoCancellation and everywhere-nonzero factors, which the two refutations show are necessary, so this is a correction of the statement, not a weakening. The batch PR #8224 cited above is not needed for this. Superseded-premise check: none.
