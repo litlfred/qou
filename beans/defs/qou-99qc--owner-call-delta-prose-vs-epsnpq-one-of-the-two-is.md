@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-21T06:46:35Z
+updated_at: 2026-11-21T06:49:46Z
 parent: qou-10v9
 ---
 
@@ -8900,3 +8900,5 @@ Pre-registered (`computations/probes/qbeta_yukawa_strand_order/PREREGISTRATION.m
 - "V^k feasible ⇔ 3∣k" is FALSE at q₀ (measured at 60 digits): θ = 2π/3 + 0.025423. The first violation is k = 23 (≡ 2 mod 3, feasible); the first infeasible multiple of 3 is k = 63. The selection is unaffected.
 - D1 = A: ε_flavour(X) = −h·tr_W(X)/[2]³, and tr_W(V³) = 3 − h⁴[3] (`FlavourSplitWordShare.lean`, sorry-free). The word fixes −0.194 % of the scored 0.325434 MeV. The other 99.8 % comes from the T³ split, the K-weight, [2]³ and E₀, none of which the selection rule supplies.
 - Still open.
+
+**2026-11-21 — lepton two-term DERIVED from Lagrangian + non-abelian Stokes (PR #8743, owner: "Do the same for the lepton").** Pre-reg e4ad92f18d. The Stokes step carries the matter (QED) charge insertion round the closed boundary word, so it must be carried through EVERY crossing with each strand's charge moving with the strand. That is the full braid group on all strands with species carried, not either #8707 reading. Lean `QOU.QBeta.LeptonTwoTermStokesCovariance` (24 thms, generic Field, sorry-free, lean-direct exit 0). (1) One crossing: α₁Q₁²+α₂Q₂²+βQ₁Q₂ is carried ⇔ h·((2α₁−β)y₁−(2α₂−β)y₂)=0 (`quad_carry_iff`), and a spectator strand forces uniform pair weights (`pairWeight_uniform`). (2) Pairs-only (16:44 object) is carried at quark–quark crossings and NOT at quark–lepton ones (`pairOnly_quark_lepton_not_carried`; probe 0/6); scope (b) within species-weighted quadratic insertions. (3) The carried family is (β/2)Q_tot²+κΣQ²/y. The nucleon ruling forces κ=−βy_q/2, so the lepton insertion is all pairs + (2/3)Q_ℓ² (`lepton_self_weight_forced`, `natural_family_lepton`). It is a function of T³_tot and the species content (`natVal_eq_totals`), hence scalar on every W_m: connected two-term ≡ 0 on every word, and n⊗ν = p⊗e⁻ = −1/3 (`natural_beta_split_zero`). (4) A charge-0 neutral doublet is inadmissible (`singleCharge_not_carried`). Probe 15/15: scored two-term = one-term exactly on all 91 route quantities (P1/P4, P2 A/D, N2; route L moves 0). The derived two-term contributes NOTHING to Q_β. #8707's H_N non-zeros come from projecting a positional charge the lepton strand does not carry. Premise L (lepton = braided strand) is still undecided, but L′ also gives 0. Not identified with Q_β. Bean stays todo (rule 13a). Audit docs/audits/2026-11-21-lepton-two-term-from-lagrangian-stokes.md.
