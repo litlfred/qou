@@ -328,3 +328,44 @@ count (e.g. counting reductions in the matrix entry ⟨p⊗e⁻|ρ(W)|n⊗ν⟩ 
 preregistered and is not run here.
 
 Contamination: Addendum 5 (ΔM) was written after Addendum 4's numbers were printed.
+
+## 15. State-level reduction count, three words, placements B and C (prereg Addenda 6, 6b)
+
+Probe `qbeta_gb_state_reduction_probe.py`, 9/9 checks (each word's normal form is
+strategy-independent; each marked block at t = 1 reproduces the `analyse_element` CC and reverse
+block sums). Witness `qbeta-gb-state-reduction.witness.json`. A *firing* is a Jimbo step whose
+weight comes from a reduction (the h·du branch or the −h of an inverse). ⟨k⟩ = E′(1)/E(1) is the
+amplitude-weighted mean number of firings in a block. A = ⟨k⟩_forward − ⟨k⟩_reverse.
+
+| X (W = X·β_Bor) | ⟨k⟩_f·E₀ | ⟨k⟩_r·E₀ | **A·E₀** | (F/P)_f·E₀ | ΔM2·E₀ (S1 / S2) |
+|---|---|---|---|---|---|
+| V₁³ | 11.88 | 12.52 | **−0.648** | 18.77 | 138 / 130 |
+| V₀V₁V₀V₁ | 3.03 | 3.13 | **−0.099** | 21.97 | 83 / 158 |
+| V₁V₀V₁V₀ | 2.74 | 3.01 | **−0.265** | 21.67 | 108 / 86 |
+
+(MeV. Q_β = 0.782, m_n − m_p = 1.293, printed last in the witness.)
+
+**B equals C on the module, exactly.** Under B the input lepton-strand colour is summed over
+{u, d}. The d input has total T³ weight −2, the p⊗e⁻ output has 0, and the Jimbo Ř preserves
+weight, so the d input contributes zero. The B block is the C block for every word and every
+measure. So on V^{⊗4} the choice between B and C does not change any reduction count. They
+differ only in how the lepton's own energy is booked (§13 B: Q_β ≤ cell − m_e = 0.3625 MeV with
+E(ν̄) open).
+
+**What the numbers say, scope (a).**
+- Absolute state-level counts (⟨k⟩·E₀, F/P·E₀) are 3–22 MeV, between 3× and 30× Q_β. The
+  element-level ΔM stays at 80–230 MeV. Neither family is the n–p release.
+- The forward/reverse asymmetry A is the only state-level quantity that separates n⊗ν → p⊗e⁻ from
+  its reverse. It is negative for all three words (the forward transition needs fewer reductions
+  than the reverse), and |A|·E₀ is 0.099, 0.265 and 0.648 MeV. The three admissible words give
+  three different values, spread over a factor of 6.5.
+- **Caution, stated plainly.** |A|·E₀ for V₁³ is 17 % below Q_β. That is one word out of three,
+  and V₁³ is a proposal, not a ruling. Selecting V₁³ because of this number would be selection
+  against the target (AGENTS.md §NO FITTING). ⟨k⟩ is a signed-amplitude average (the diagonal block
+  gives negative ⟨k⟩), so it is not a probability-weighted count, and E₀ as "energy per firing"
+  is the §14 reading, not a derivation.
+
+**Status.** The GB-reduction route has one state-level observable with the right sign structure
+(A, forward cheaper than reverse) and the right order of magnitude (0.1–0.65 MeV). Its value
+depends on the β-decay word, which is not ruled. Deriving A, or selecting the word by a principle
+that does not read Q_β, is the open step.
