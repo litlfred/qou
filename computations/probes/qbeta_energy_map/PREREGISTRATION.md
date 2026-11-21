@@ -347,3 +347,33 @@ per factor q). Comparison values are already recorded in §5. No row is chosen.
 Addendum 12 (1) expected "|c| stays open". That expectation ignored this probe's own Addenda 1–2 and
 audit §8–9, which derive |c| = E₀ by route T. The reduction-step lemma stands but answers a narrower
 question. See audit §22.
+
+### Addendum 13 (owner "1": which premise gives way)
+
+Question. Under route T, a nucleon energy that is one Gibbs energy needs crossing weights with
+W = 1 (audit §22). Can the Markov trace at convention D supply per-crossing weights that sum to 1?
+Written before any Lean. The expectations below were worked by hand and are to be proved, not assumed.
+
+Setup. H₂(q), generator σ, Hecke relation σ² = hσ + 1, h = q − q⁻¹. Markov trace τ with τ(1) = 1 and
+τ(σ) = z_D = q³/(q² + 1). Then τ(σ⁻¹) = τ(σ − h) = z_D − h.
+
+To be proved (generic field, no number):
+1. τ(σ) = q²/[2]_q and τ(σ⁻¹) = q⁻²/[2]_q. So #8923's pair-Skein weights are exactly the trace values
+   of the two crossing elements: 𝒮ᴰ(a,b) = τ(σ)μ_a + τ(σ⁻¹)μ_b. If this holds, #8923's weights are
+   trace-derived, and only their assignment to strands (u takes τ(σ)) remains a reading.
+2. τ(σ) + τ(σ⁻¹) = τ(σ + σ⁻¹) = (q² + q⁻²)/[2]_q, the §19 factor.
+3. The channel weights y₍₂₎, y₍₁,₁₎ (trace of the two minimal idempotents of H₂) are [3]_q/[2]_q² and
+   1/[2]_q², and they sum to τ(1) = 1.
+
+To be proved (real q > 0, q ≠ 1):
+4. τ(σ) + τ(σ⁻¹) ≠ 1 at z_D, and also at the other admissible root z = q (where the sum is [2]_q).
+   So no admissible Markov parameter makes the crossing-element trace weights sum to 1.
+
+Expected reading (scope a). The trace gives two kinds of weight. Its values on the crossings σ, σ⁻¹
+are the #8923 weights, and they sum to τ(σ + σ⁻¹) ≠ τ(1). Its values on a partition of unity (the
+channel idempotents) sum to 1, but the channels are symmetric in the two strands, so they carry no
+over/under weight and cannot say which strand takes q². So the trace does not supply crossing weights
+with W = 1. What gives way is then a choice among: (Q); the one-temperature requirement; or reading the
+nucleon energy as a linear sum of crossing trace values. This test does not pick one. Normalising by
+τ(σ + σ⁻¹) would force W = 1, but that divisor is chosen to meet the constraint, so it is not a
+derivation and is recorded as such.
