@@ -119,6 +119,7 @@ KIND_LEGACY_RX = re.compile(r'kind:\s*"([a-z]+)"')
 DECL_KEYWORDS = (
     "def", "theorem", "lemma", "proposition", "corollary",
     "class", "structure", "instance", "axiom", "abbrev",
+    "inductive", "opaque",
 )
 
 
