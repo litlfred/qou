@@ -871,7 +871,8 @@ with `x'` fixing the top point and lengths adding, so
 
 Every definition here is structurally recursive, so Lean's own termination
 check is the termination proof: the evaluator is a total function. What is
-NOT proved is that `trWord` satisfies the axioms of `IsMarkovTrace`; that is
+NOT proved is that `trWord` satisfies all axioms of `IsMarkovTrace` (only
+`normalised` and `stable` are proved, below); that is
 the existence half (Ocneanu). By `markovTrace_unique`, if it does, it is the
 trace. The `example`s below are kernel-checked computations, not proofs of the
 axioms: the Hecke quadratic, a braid relation, the product law, and agreement
@@ -915,6 +916,103 @@ example : trWord (5 : ℤ) 3 1 [0, 0] = 3 * 5 + 1 := by decide
 example : trWord (5 : ℤ) 3 2 [0, 1, 0] = trWord (5 : ℤ) 3 2 [1, 0, 1] := by decide
 example : trWord (-1 : ℤ) 0 3 [0, 2, 1, 1, 0] = (-1) ^ 5 := by decide
 example : trWord (5 : ℤ) 3 3 [0, 0, 2, 2] = trWord (5 : ℤ) 3 1 [0, 0] * trWord (5 : ℤ) 3 1 [0, 0] := by decide
+
+/-! ### Proved properties of the evaluator
+
+`trWord` is normalised (`trWord_nil`) and stable under adding a strand
+(`trWord_stable`). The remaining axioms (strip, cyclic, embed_disjoint,
+hecke, braid, far_comm) are not yet proved for `trWord`. -/
+
+theorem trBasis_range {R : Type*} [CommRing R] (z h : R) :
+    ∀ m : ℕ, trBasis z h m (List.range m) = 1
+  | 0 => rfl
+  | m + 1 => by
+    have e1 : (List.range (m + 1)).getD m 0 = m := by simp
+    have e2 : (List.range (m + 1)).take m = List.range m := by
+      simp [List.range_succ]
+    simp only [trBasis, e1, if_true, e2, trBasis_range z h m]
+
+theorem trWord_nil {R : Type*} [CommRing R] (z h : R) (n : ℕ) :
+    trWord z h n [] = 1 := by
+  simp [trWord, mulGens, trBasis_range]
+
+theorem swapAt_length (w : List ℕ) (i : ℕ) : (swapAt w i).length = w.length := by
+  simp [swapAt]
+
+theorem swapAt_append (w : List ℕ) (x i : ℕ) (hi : i + 1 < w.length) :
+    swapAt (w ++ [x]) i = swapAt w i ++ [x] := by
+  have h0 : i < w.length := by omega
+  simp only [swapAt, List.getD_eq_getElem?_getD, List.getElem?_append_left h0,
+    List.getElem?_append_left hi]
+  rw [List.set_append_left _ _ h0, List.set_append_left _ _ (by simpa using hi)]
+
+def appTop {R : Type*} (x : ℕ) (p : R × List ℕ) : R × List ℕ := (p.1, p.2 ++ [x])
+
+theorem mulGen_append {R : Type*} [Mul R] (h : R) (x L i : ℕ) (hi : i + 1 < L) :
+    ∀ e : List (R × List ℕ), (∀ p ∈ e, p.2.length = L) →
+      mulGen h (e.map (appTop x)) i = (mulGen h e i).map (appTop x) ∧
+      ∀ p ∈ mulGen h e i, p.2.length = L
+  | [], _ => by simp [mulGen]
+  | q :: e, he => by
+    have hq : q.2.length = L := he q (by simp)
+    obtain ⟨ih1, ih2⟩ := mulGen_append h x L i hi e (fun p hp => he p (by simp [hp]))
+    have h0 : i < q.2.length := by omega
+    have h1 : i + 1 < q.2.length := by omega
+    have g0 : (q.2 ++ [x]).getD i 0 = q.2.getD i 0 := by
+      simp [List.getD_eq_getElem?_getD, List.getElem?_append_left h0]
+    have g1 : (q.2 ++ [x]).getD (i + 1) 0 = q.2.getD (i + 1) 0 := by
+      simp [List.getD_eq_getElem?_getD, List.getElem?_append_left h1]
+    have sw := swapAt_append q.2 x i h1
+    simp only [mulGen, List.map_cons, List.flatMap_cons] at ih1 ih2 ⊢
+    refine ⟨?_, ?_⟩
+    · rw [List.map_append, ← ih1]
+      simp only [appTop, g0, g1]
+      split_ifs <;> simp [appTop, sw]
+    · intro p hp
+      rcases List.mem_append.mp hp with hp | hp
+      · split_ifs at hp <;> simp at hp <;>
+          rcases hp with rfl | rfl <;> simp [swapAt_length, hq]
+      · exact ih2 p hp
+
+theorem mulGens_append {R : Type*} [Mul R] (h : R) (x L : ℕ) :
+    ∀ (l : List ℕ) (e : List (R × List ℕ)), (∀ i ∈ l, i + 1 < L) →
+      (∀ p ∈ e, p.2.length = L) →
+      mulGens h (e.map (appTop x)) l = (mulGens h e l).map (appTop x) ∧
+      ∀ p ∈ mulGens h e l, p.2.length = L
+  | [], e, _, he => ⟨rfl, he⟩
+  | i :: l, e, hl, he => by
+    obtain ⟨m1, m2⟩ := mulGen_append h x L i (hl i (by simp)) e he
+    have := mulGens_append h x L l (mulGen h e i) (fun j hj => hl j (by simp [hj])) m2
+    simp only [mulGens, List.foldl_cons] at this ⊢
+    rw [m1]; exact this
+
+theorem trBasis_append {R : Type*} [CommRing R] (z h : R) (m : ℕ) (p : List ℕ)
+    (hp : p.length = m) : trBasis z h (m + 1) (p ++ [m]) = trBasis z h m p := by
+  subst hp
+  have e1 : (p ++ [p.length]).getD p.length 0 = p.length := by
+    simp [List.getD_eq_getElem?_getD]
+  have e2 : (p ++ [p.length]).take p.length = p := by simp
+  simp only [trBasis, e1, if_true, e2]
+
+theorem trWord_stable {R : Type*} [CommRing R] (z h : R) (n : ℕ) (w : List ℤ)
+    (hw : Supp n w) : trWord z h (n + 1) w = trWord z h n w := by
+  have hl : ∀ i ∈ w.map Int.toNat, i + 1 < n + 1 := by
+    intro i hi
+    obtain ⟨c, hc, rfl⟩ := List.mem_map.mp hi
+    have := hw c hc; omega
+  have hr : List.range (n + 1 + 1) = List.range (n + 1) ++ [n + 1] := List.range_succ
+  have h0 : [((1 : R), List.range (n + 1 + 1))]
+      = [((1 : R), List.range (n + 1))].map (appTop (n + 1)) := by
+    simp [appTop, hr]
+  obtain ⟨m1, m2⟩ := mulGens_append h (n + 1) (n + 1) (w.map Int.toNat)
+    [((1 : R), List.range (n + 1))] hl (by simp)
+  unfold trWord
+  rw [h0, m1, List.map_map]
+  congr 1
+  apply List.map_congr_left
+  intro p hp
+  simp only [Function.comp, appTop]
+  rw [trBasis_append z h (n + 1) p.2 (m2 p hp)]
 
 end Evaluator
 
