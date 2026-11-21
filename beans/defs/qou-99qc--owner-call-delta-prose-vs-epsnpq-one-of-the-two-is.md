@@ -4339,3 +4339,7 @@ Leptons from the knot blocks (e⁻ = σ³ trefoil, ν̄ = 1-strand unknot); exac
 - Leptons attached through ONE nucleon strand are nucleon-blind: tr(W)/tr(N) identical for p, n, β_Bor in 9+729+27 words (connected sum; families A,B proved by Jones multiplicativity, C measured). Only a full twist on ≥2 nucleon strands + e⁻ is nucleon-sensitive (12/12); its trace cross term ∝ q⁶−1 (ν̄ unlinked), → 0 at q→1.
 - Trace channel |tr|[N]!/q^N extended uniformly (my extension; corpus defines N=3 only): E(ν̄)=m_μ/q₀=95.19 MeV, E(n)−E(p)=−72.92 MeV, X∈[8.5e3, 8.3e4] MeV, Q∈[−8.3e4, −8.8e3] MeV vs CODATA 0.78233. Scope (a). Volume channel gives e⁻, ν̄ zero; entangled volumes not computed (no SnapPy).
 - Linking letters are chosen: the corpus writes the pair only as ⊔. Still open; not closing.
+
+## 2026-11-19 — PR #8518's "70–76% of the N=2 residual" is measured on the retired base
+
+Probe `computations/probes/np_two_term_qed_mup_tension_probe.py`, run on main. Its `Q_N2^D` is `Q_A·cos(α−u/2)·(1−u²)` with `Q_A` = Form A (z=1, 0.7836458 MeV); only the phase uses z_D. The N=2 residual there is +600.6 ppm (0.00046988 MeV). The four DERIVED-Bor-V3-Conn weightings (−0.000332 to −0.000368 MeV) cut it to 177–130 ppm, i.e. 62–78%. On the ruled z_D base the same terms close 0.10–0.11% of the gap (order-zero E0, Q = 0.4447004, gap 0.3376 MeV) or 0.25–0.28% (dashboard cell 0.6518563, gap 0.1305 MeV). Four weightings of one term plus ~30 other candidates are listed, so taking the best match is selection against the target. Not a closure on the ruled base.
