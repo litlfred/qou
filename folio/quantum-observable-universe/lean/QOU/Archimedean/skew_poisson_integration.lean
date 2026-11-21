@@ -67,8 +67,9 @@ $\pi_<$ a skewed-Poisson structure on $H$.  Then there exists a
     reduction mod p, the lift relation `IsLift`, sorry-free), and the distribution algebra
     `Dist(G)` exists in `QOU.FormalGroups.Distributions` (convolution algebra, associative
     and unital, sorry-free). Still missing before this statement can be restated on them and
-    proved: the skewed-Poisson bracket on `H` (needs the definition from [leitner2026]) and
-    the Gröbner–Shirshov deformation. -/
+    proved: strong multiplicativity (Def. 1.11 of arXiv:math/0602138) and the Gröbner–Shirshov
+    deformation. The Poisson structure on a splay, with internal symmetry and the strong
+    filtration (§1, Def. 1.1 of that paper), is in `QOU.FormalGroups.SplayPoisson`. -/
 -- Ref: [leitner2026] quantum-observable-universe/models-of-qous/skew-poisson-integration.ts
 theorem skew_poisson_integration [ctx : SkewPoissonIntegrationContext] :
     (∃ (f : ctx.G_mod_p → ctx.H) (g : ctx.H → ctx.G_mod_p),
