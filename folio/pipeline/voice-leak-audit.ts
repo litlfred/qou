@@ -230,6 +230,15 @@ export async function audit(paperDir: string, classes: Set<LeakClass>): Promise<
   const order = await readingOrder(paperDir);
   const labelIdx = new Map<string, number>();
   for (const b of order) if (b.label && !labelIdx.has(b.label)) labelIdx.set(b.label, b.idx);
+  // An index row reproduces another block's title. A title from a
+  // CODE_BY_DESIGN chapter is checked (and exempt) at its source, so the
+  // copy in a reference table inherits that exemption; the paper's own
+  // reference-table prose is still checked.
+  const codeLabels = new Set(order.filter((b) => b.label && CODE_BY_DESIGN.has(b.chapter)).map((b) => b.label!));
+  const rowFromCodeChapter = (l: string) => {
+    const m = /^\s*\|\s*\[[^\]]*\]\(#([^)\s]+)\)/.exec(l);
+    return !!m && codeLabels.has(m[1]!);
+  };
   const qIntro = order.find((b) => b.section === Q_INTRO_SECTION)?.idx ?? Infinity;
   const reports: FileReport[] = [];
   let scanned = 0;
@@ -243,7 +252,8 @@ export async function audit(paperDir: string, classes: Set<LeakClass>): Promise<
     let hits = scanText(src, { premature, prematureAdvisory: b.chapter !== Q_STRICT_CHAPTER })
       .filter((h) => classes.has(h.cls))
       .filter((h) => !(CODE_BY_DESIGN.has(b.chapter) && (h.cls === "L1" || h.cls === "L2")))
-      .filter((h) => !(REFERENCE_TABLES.has(b.chapter) && h.cls === "L2" && /^\s*\|/.test(srcLines[h.line - 1] ?? "")));
+      .filter((h) => !(REFERENCE_TABLES.has(b.chapter) && h.cls === "L2" && /^\s*\|/.test(srcLines[h.line - 1] ?? "")))
+      .filter((h) => !(REFERENCE_TABLES.has(b.chapter) && (h.cls === "L1" || h.cls === "L2") && rowFromCodeChapter(srcLines[h.line - 1] ?? "")));
     if (classes.has("L4"))
       unfence(src).forEach((raw, i) => {
         for (const m of raw.matchAll(LINK_RE)) {
