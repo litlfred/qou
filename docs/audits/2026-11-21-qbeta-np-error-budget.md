@@ -360,3 +360,18 @@ after the fact: CODATA m_n − m_p = 1.29333 MeV, Q_β = 0.78233 MeV.)
 **Next step, not done here.** The γγ construction of ν̄ (eigenphase thread) must compute x. It
 then has to answer: does x land in (ε_n, ε_p), and which decreasing map does the construction
 itself force?
+
+## 15. γγ final states checked against the window (result from the eigenphase thread)
+
+Source: PR #8836, commit 5503ac443c; witness
+`computations/probes/qbeta_gg_process_word/qbeta-gg-process-word.witness.json` on that branch.
+Option 3 (6 strands with a neutral start, e⁻ + ν̄ + an unknot), embedded as 1560 words
+W = X·β_Bor·L on 9 strands. Each is normalised by the nucleon rule,
+x = Tr(K⁹ P ρ(W))/[2]⁹, the same normalisation as ε_p and ε_n here. The unlinked words factorise
+as ε_p·f_L, which confirms the normalisation matches.
+
+**Result, scope (a):** every x lies in [0.0034, 0.024] and f_L ≤ 0.054. None reaches the window
+(0.33174, 0.40872) from §14. The largest x falls short of its lower edge by a factor of 14. So
+across this word set, flavour/colour linking does not lift the final-state trace into the window;
+it stays at or below the product scale. With option 2 already excluded (§14) and option 1 not yet
+computed, no γγ final state on record supports a one-sided reading.
