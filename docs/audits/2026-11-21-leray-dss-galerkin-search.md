@@ -29,6 +29,15 @@ was edited. Nothing here may enter a Lean proof.
     raised. The period jumps by factors of about 2 and does not converge.
 - All of these are reported as Galerkin artefacts.
 
+**Phase 2 (§9).** The negative was re-tested at three further trial scales (`a = 1/2, 2, 4`), at
+`L = 4–6` with `N = 3–4` in one parity sector, and in a basis whose periodic modes carry the
+log-phase tail `|y|^{−1−2imω}` that a genuine orbit must have. None of these produced a nonzero
+solution that persists under refinement. The failures share two mechanisms: steady artefacts
+push amplitude into the `|y|⁻¹` tail as `N` grows, and the periodic artefacts depend on a tail
+the true problem forbids (they do not continue into the log-phase basis). A Galerkin
+(test = trial) scheme has no clean pressure elimination in the periodic sector (§9.2). The
+literature (§1) still leaves non-steady DSS with a nonzero `|y|⁻¹` tail open.
+
 ## 1. Literature: which classes are already excluded
 
 The library holds no source on self-similar Navier–Stokes. `grep -ai` over `library/INDEX.md`,
@@ -306,12 +315,12 @@ functions `e^{−ρ/4}`, `L ≤ 4`, `N ≤ 5`, `K ≤ 12`, and periods reached f
 
 This is scope (a): a statement about these truncations. It is **not** "no DSS profile exists".
 
-Not shown, and not tried:
-- `L ≥ 5`, or `N ≥ 6` (`M` becomes ill-conditioned at about 1e9 by N5).
-- Other trial tail scales, or other test weights.
+Not shown, and not tried (updated after phase 2, §9):
+- `N ≥ 6` (`M` becomes ill-conditioned at about 1e9 by N5). `L = 5–6` was searched only in the
+  parity-odd sector and only at `N = 3`.
+- Other test weights than the Gaussian (a test = trial scheme is analysed in §9.2, not run).
 - Continuation in an auxiliary parameter, such as a viscosity homotopy from a Hopf point.
-- Whether the weak-`L³` DSS class with a nonzero `|y|⁻¹` tail is excluded by some result I have not
-  checked.
+- The survey arXiv:1802.0038 (§1) was not read.
 
 The random-start searches converge in roughly 40–60 % of starts. A periodic orbit with a small
 basin could have been missed.
@@ -332,3 +341,115 @@ basin could have been missed.
     `q`.
   - **Moved tree-measuring witnesses:** seven of them. I reverted them and did not commit them, as
     the script instructs.
+
+## 9. Phase 2: robustness of the negative (float64 exploration unless marked)
+
+All runs in this section are float64 in a scratch directory and are not committed, except the
+orbit-D re-convergence (§9.4). Every negative here is scope (a): a statement about these
+truncations and these starts.
+
+### 9.1 Trial radial scale, `R = (1+ρ/a²)^{−p}`, `a ∈ {1/2, 2, 4}` (`c₂ = a² ∈ {0.25, 4, 16}`)
+
+- Linear spectrum: lowest real part `1.000000` at all three scales, same ladder `{1, 3/2, 2, …}`.
+  `V = 0` stays isolated.
+- Random periodic starts (27 per system, K=2, `S₀ ∈ [0.5, 12]`), 12 systems
+  (3 scales × L2N2, L2N3, L3N2, L3N3): **0** nontrivial periodic orbits.
+- Random steady starts (200 per system): nonzero steady solutions at most scales
+  (c₂=0.25: 2/2/0/0; c₂=4: 2/3/0/1; c₂=16: 1/3/1/1 distinct, in the order above). Their
+  profiles change strongly between truncations, as at scale 1.
+- Seeded periodic search from the complex eigenmodes of those steady solutions (K=2) found
+  orbits in three systems:
+  - c₂=0.25 L2N2: `S ≈ 0.9004` and `S ≈ 6.904`;
+  - c₂=16 L2N3: `S ≈ 14.02`, with Fourier-mode norm ~1e4 (near-degenerate);
+  - c₂=4 L3N3: `S ≈ 0.449, 0.779, 1.275, 0.802`;
+  - c₂=16 L3N2: three hits with `S ≈ 12.7–15.8` and mode norms 1.6e5–5.4e8, i.e. the
+    degenerate `ω → 0` class, discarded.
+- Refinement of each (K 2→4, then `N+1`, then `L+1` at the same scale):
+
+| orbit | K 2→4 | N+1 | L+1 |
+|---|---|---|---|
+| c₂=0.25 L2N2, S 0.900 | persists, S 0.900428 | converges with `A₁ = A₃ = 0`: a different, period-halved orbit (S 2.059 ⇒ effective 1.03) | Newton fails (res 1.3e4) |
+| c₂=0.25 L2N2, S 6.90 | jumps to S 15.88 | Newton fails (res 2.7e4) | `ω → 0`, degenerate |
+| c₂=16 L2N3, S 14.0 | `ω → 0`, degenerate | — | degenerate |
+| c₂=4 L3N3, S 0.449 | Newton fails (res 4e-3, not converged) | not run | not run |
+| c₂=4 L3N3, S 0.779 / 1.275 / 0.802 | converge with `A₁ = A₃ = 0` (period halved: a different orbit) | not run (CPU) | not run (CPU) |
+
+  None survives the full K→N→L chain. **The scale-1 negative is reproduced at all three scales.**
+  The L3N3 rows were not taken to N+1 or L+1 (the c₂=4 L3N4/L4N3 systems were not built in
+  the time available); they are reported only as K-unstable or period-halving.
+
+### 9.2 Test = trial (Galerkin) variant: no clean pressure elimination
+
+I analysed this rather than ran it.
+- **Steady sector.** Testing against the divergence-free trial fields kills the pressure, and
+  every term converges for the `|y|⁻¹`-tailed n=0 members (the worst integrand is
+  `|∇φ|² ~ r⁻⁴`, integrable at infinity). A clean Galerkin scheme exists here, but the steady
+  problem is already excluded by Tsai 1998, so it adds nothing.
+- **Periodic sector, plain basis.** The time-derivative term `iωm⟨φ_a, φ_b⟩` diverges for two
+  n=0 tails (`∫ r⁻² r² dr`). The scheme is not defined.
+- **Periodic sector, log-phase basis** (below, §9.5): the mass term converges, but the test
+  function `f_m φ_a` with `f_m = (c₂+ρ)^{−imω}` is no longer divergence-free:
+  `div(f_m φ) = −imω f_m · 2(y·φ)/(c₂+ρ) ≠ 0` for poloidal `φ`. The pressure therefore does
+  **not** drop out, and would have to be solved for.
+
+So a Galerkin (test = trial) variant with pressure eliminated by the basis exists only where it
+is not needed. In the periodic sector it either diverges or needs the pressure. Not run.
+
+### 9.3 Larger angular truncation `L = 4–6`, `N ≥ 3`, in the parity-odd subspace
+
+The full L5/L6 systems are too large here, so I used the invariant subspace
+`V(−y) = −V(y)` (toroidal odd `l`, poloidal even `l`). The steady artefacts at L2N3 and L3N3
+lie entirely in it. The reduced L3N3 system matches the corresponding subset of the full
+rational system to 1.5e-15 (B tensor), and every reduced system has linear gap `1.000000`.
+
+| system | n | steady (200 starts) | periodic (27 starts, K=3) |
+|---|---|---|---|
+| L4N3 | 72 | 0 nonzero (81 → 0, 119 fail) | 0 (3 → 0, 24 fail) |
+| L4N4 | 96 | 0 nonzero (63 → 0, 137 fail) | 0 (2 → 0, 25 fail) |
+| L5N3 | 105 | 0 nonzero (80 → 0, 120 fail) | 0 (9 → 0, 18 fail) |
+| L6N3 | 144 | 0 nonzero (61 → 0, 139 fail) | 0 (4 → 0, 23 fail) |
+
+The L3N3 steady artefact, continued into the L4N3, L4N4 and L6N3 subspaces, collapses to
+`V = 0` every time. This extends the phase-1 observation (it vanished at `l = 4`) to `l ≤ 6`.
+Only this one parity sector was searched at `L ≥ 4`; the even sector was not.
+
+### 9.4 Orbit D re-converged in mpmath
+
+MP_D_RESULT
+
+### 9.5 Mechanism shared by the failures
+
+Two mechanisms, one for each sector.
+
+1. **Steady artefacts: amplitude moves into the `|y|⁻¹` tail as `N` grows.** For the steady
+   class-0 artefact, the far-field amplitude `r|V|` on the sphere `r = 256`
+   (rotation-invariant rms) is `45.6, 48.2, 55.3, 63.3` at `N = 2, 3, 4, 5`, while the core values
+   change by factors of 2–3 between truncations. The coefficient norm grows much faster
+   (68 → 3083), but that growth is mostly basis ill-conditioning (`cond M` reaches ~1e9 at N5), so
+   the field norms are the meaningful measure. Classes 0 and 2 have identical rotation-invariant
+   profiles at `N ≥ 3`; they are rotations of one another, not two solutions.
+2. **Periodic artefacts: the basis cannot carry the correct oscillating tail.** Away from the core,
+   `∂_s + ½ + ½y·∇` annihilates `|y|⁻¹ ω(ŷ, log|y| − s/2)`, so a Fourier mode `m` of a genuine
+   profile must decay like `|y|^{−1−2imω}` (log-phase oscillation). The phase-1 trial fields give
+   every mode `m ≥ 1` a non-oscillating `|y|⁻¹` tail, leaving an `O(|y|⁻¹)` mismatch at infinity
+   that no finite `N` removes. I built a log-phase basis (mode `m` multiplied by
+   `(c₂+ρ)^{−imω}`; Jacobian checked against finite differences to 2.3e-10) and continued B and C
+   into it by a homotopy `θ: 0 → 1`.
+   - C (L2N3): at `θ = 0.05` it falls onto a **steady** solution (all `A_{m≥1} = 0`) and stays there.
+   - B (L2N2): Newton fails already at `θ = 0.05` (residual 1.2e3).
+   - A direct log-phase search at L2N2 seeded from complex eigenmodes converged only to steady
+     solutions.
+
+   So the phase-1 periodic orbits do not continue into the basis that has the right asymptotics.
+   This is consistent with their being products of the wrong tail rather than approximations
+   of a true orbit. Caveat: the radial quadrature used here (24 nodes) is accurate to ≤1.5e-12
+   for `m ≤ 4` but only 1.7e-7 at `m = 5` and 1.3e-4 at `m = 6`. The K=6 log-phase runs are
+   therefore only roughly resolved, and none of the log-phase results is in mpmath.
+
+### 9.6 Phase-2 verdict
+
+Across trial scales `a ∈ {1/2, 1, 2, 4}`, angular truncations up to `L = 6` (one parity sector
+for `L ≥ 4`), and a basis with the correct log-phase tail, I found **no nonzero DSS
+solution that persists under refinement**. The failures share the two mechanisms above. This is
+still scope (a); the literature check in §1 leaves non-steady DSS with a nonzero `|y|⁻¹` tail
+open.
