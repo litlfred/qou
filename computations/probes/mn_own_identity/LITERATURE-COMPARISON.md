@@ -425,3 +425,24 @@ Two things the structure does pin, and why they matter:
 
 The Markov normalisation `τ(1) = 1` fixes a trace on the Hecke tower, not `λ`; by
 `leftTrace_rescale` the categorical trace is already scale-free, so it adds nothing to `λ` either.
+
+## 14. λ = ε against the snakes; the matter constant as a closed trace (2026-11-21, owner: "3")
+
+`CounitFrobeniusForm.lean`, sorry-free:
+
+- `counit_snake_right`: with evaluation `μ ≫ ε` and coevaluation `η ≫ Δ`, the right snake identity
+  holds in every `FrobeniusHopfData`, from the stated Frobenius relation, `one_mul` and
+  `comul_counit` alone. So `λ = ε` is compatible with the right snake identity. The left snake would
+  need the mirror Frobenius relation `μ ≫ Δ = (A ◁ Δ) ≫ α⁻¹ ≫ (μ ▷ A)`, which is not an axiom of
+  `FrobeniusHopfData`; not checked. (Note: `FrobeniusHopfModelDichotomy` shows models collapse
+  under the convolution condition, which is no longer an axiom; it does not apply here.)
+- `matter_leftTrace_rescale`: the costate is `ψ* = λ ∘ S(ψ)`, so it carries its own `λ`. A closed
+  trace of the matter term cancels one `λ` against `coev` and keeps the costate's: it scales by `s`.
+  So **the matter constant cannot be made scale-free by writing it as a closed trace.** Its
+  normalisation is the normalisation of `λ`.
+
+What does remove the scale is a **ratio of two open pairings that share `λ`**: both scale by `s`.
+The production identity writes the constant in units of `m_e` (`12 m_e`). If the electron's own mass
+is the matter pairing of the electron state in the same Lagrangian, then CAL-1 fixes `s`, and the
+nucleon/electron ratio of matter pairings is scale-free. That is not a fourth calibration. Whether
+the electron's mass is such a pairing is not yet established.
