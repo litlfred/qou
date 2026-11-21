@@ -1797,6 +1797,7 @@ import QOU.KZ.Drinfeld.HeckeStrands
 import QOU.Mass.LagrangianKZInputs
 import QOU.Mass.BridgeADeligneGauge
 import QOU.Mass.BridgeADeligneKZ
+import QOU.Mass.KZHolonomy.FlatCocycle
 import QOU.QBeta.BorromeanThreeCuspNZHessian
 import QOU.QBeta.McPhailSnyderBridgeExclusion
 import QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm
