@@ -1279,6 +1279,24 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "major",
         "evidence": "[sidecar review 2026-11-15, issue #8030] Lean `sw_period_eq_residue_sum` returns the structure field `period_eq` verbatim; its own docstring calls it \"a projection, not a derivation\" (self-assuming). The derived content is `period_eq_zero_of_total_residue_vanishes`, which is not what the `.ts` ref names. prf: the bounding-cycle residue formula is the standard residue theorem and is fine. But the prf places the poles of a form on the exceptional divisor 𝒮_c ≅ ℙ¹ \"at the branch points z_c\", which are points of the z-line, not of 𝒮_c. The statement's \"Residue support and body order\" paragraph (\"the period at vertical degree n yields the n-body contribution\"; \"each residue constitutes a per-block quantum-dimensional weight\") is physical/structural content the prf never touches. Checked exactly (sympy): disc_X = −16z⁶−24z⁵−35z⁴−50z³−35z²−24z−16, squarefree, palindromic; w = z+1/z reduction 16w³+24w²−13w+2, discriminant −80000, …"
+      },
+      {
+        "field_hash": {
+          "md": "4aef4ab4f25e",
+          "ts": "b258e70e97d7",
+          "lean": "51c5bb0a705c",
+          "lean_statement": "e61b3696b7ac"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:39:26.322Z",
+        "reviewed_sha": "845e2f8200142fec69a10571d6695218dce8525e",
+        "severity": "major",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: Lean names were removed from the prose and the 'pole-order growth versus partition count' paragraph was reworded with the same content (a count bound on poles does not fix the numerical identity). No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: [sidecar review 2026-11-15, issue #8030] Lean `sw_period_eq_residue_sum` returns the structure field `period_eq` verbatim; its own docstring calls it \"a projection, not a derivation\" (self-assuming). The derived content is `period_eq_zero_of_total_residue_vanishes`, which is not what the `.ts` ref names. prf: the bounding-cycle residue formula is the standard residue theorem and is fine. But the prf places the poles of a form on the exceptional divisor 𝒮_c ≅ ℙ¹ \"at the branch points z_c\", which are points of the z-line, not of 𝒮_c. The statement's \"Residue support and body order\" paragraph (\"the period at vertical degree n yields the n-body contribution\"; \"each residue constitutes a per-block quantum-dimensional weight\") is physical/structural content the prf never touches. Checked exactly (sympy): disc_X = −16z⁶−24z⁵−35z⁴−50z³−35z²−24z−16, squarefree, palindromic; w = z+1/z reduction 16w³+24w²−13w+2, discriminant −80000, …"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2521,6 +2539,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T22:00:11.278Z",
+  "updated_at": "2026-11-21T07:39:26.322Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
