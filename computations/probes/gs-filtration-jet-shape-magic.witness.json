@@ -1,8 +1,8 @@
 {
   "engine": "python+fractions",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T10:44:00.640732+00:00",
-  "commitSha": "973f3d8c91cce57bb32f49bd5d5d9ce6d167c27c",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T04:41:05.775448+00:00",
+  "commitSha": "37a281c359874db2715c3fddd74a2aa775d5fe24",
   "assertions": [
     {
       "name": "h3_quotient_jet_grades",
@@ -24,14 +24,14 @@
     },
     {
       "name": "bond_sweep_distinct_shapes_over_configurations",
-      "computed": "107/222",
-      "expected": "107/222",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "z2n2_shapes_over_bond_counts",
-      "computed": "6/7",
-      "expected": "6/7",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
@@ -48,124 +48,124 @@
     },
     {
       "name": "both_groups_non_empty_at_A2",
-      "computed": "2/1",
-      "expected": "2/1",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A3",
-      "computed": "2/2",
-      "expected": "2/2",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A4",
-      "computed": "1/4",
-      "expected": "1/4",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A5",
-      "computed": "2/4",
-      "expected": "2/4",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A6",
-      "computed": "2/5",
-      "expected": "2/5",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A7",
-      "computed": "2/6",
-      "expected": "2/6",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A8",
-      "computed": "4/5",
-      "expected": "4/5",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A9",
-      "computed": "4/6",
-      "expected": "4/6",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A10",
-      "computed": "2/9",
-      "expected": "2/9",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A11",
-      "computed": "4/8",
-      "expected": "4/8",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A12",
-      "computed": "4/9",
-      "expected": "4/9",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A13",
-      "computed": "4/10",
-      "expected": "4/10",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A14",
-      "computed": "4/11",
-      "expected": "4/11",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A15",
-      "computed": "4/12",
-      "expected": "4/12",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A16",
-      "computed": "3/14",
-      "expected": "3/14",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A17",
-      "computed": "4/14",
-      "expected": "4/14",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A18",
-      "computed": "4/15",
-      "expected": "4/15",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A19",
-      "computed": "4/16",
-      "expected": "4/16",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A20",
-      "computed": "6/15",
-      "expected": "6/15",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 435404,
+  "durationMs": 413962,
   "computation": "gs-filtration-jet-shape-magic",
   "scriptFile": "gs_filtration_jet_shape_magic_probe.py",
-  "scriptHash": "8d7001aad7c4",
+  "scriptHash": "36f22f9a69a7",
   "scriptCommitSha": "30c5628b56945e953a5e3ed5640dd055d328c96d",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -174,14 +174,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [

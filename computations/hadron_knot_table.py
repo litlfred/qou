@@ -9,9 +9,13 @@ the same physics using the 6-element NF basis {γ, σ₀, σ₁, L₊, L₋, e�
 Each atom is 6 coefficients. Total: 84 entries for 14 atoms
 (vs 21,694 quark-level entries for 6 atoms).
 
-The Markov trace, net, and Frobenius stability are identical to
-the quark-level computation — the H₃(q) NF captures all the
-information needed for mass formulas and Q-value predictions.
+The H₃(q) NF Markov trace (`nf_tr`), net (`nf_net`), and Frobenius
+stability (`check_frobenius`) are exact within the 6-dimensional H₃(q)
+quotient produced by `build_atom_nf` (which projects strand generators
+modulo 2 onto {σ₀, σ₁}). Note (bean `qou-zgg2`): for compound nuclei
+(A ≥ 2), this H₃-projected pairing is distinct from the full-tower
+H_{3A}(q) canonical atomic trace (`tr_m_atom_via_transfer.tr_m_atom_zn`
+/ `markov_peel.tr_M_atomic`).
 
 Usage:
     python3 hadron_knot_table.py
@@ -23,7 +27,6 @@ Content block: rem:hadron-level-knot-table
 """
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
-import math
 import sys
 from pathlib import Path
 from mpmath import mp  # noqa: F401
@@ -219,7 +222,7 @@ def compute_atom(name, Z, N, quarks=None):
 
     # Per-generator traced volumes + cross-channel (mass-tower sum 3)
     ordering, V_list, cross_sum, delta_xchan = compute_per_generator_volumes(Z, N)
-    V_rounded = [round(float(v), 12) for v in V_list]  # compute mpf@q0; serialize float
+    V_rounded = [round(float(v), 12) for v in V_list]  # float64-ok: legacy 12-digit rounded witness schema
 
     return {
         "name": name,
@@ -228,8 +231,8 @@ def compute_atom(name, Z, N, quarks=None):
         "A": Z + N,
         "nf": nf_compact,
         "n_terms": len(nf_compact),
-        "tr_M": round(float(tr), 12),
-        "net": round(float(net), 12),
+        "tr_M": round(float(tr), 12),  # float64-ok: legacy 12-digit rounded witness schema
+        "net": round(float(net), 12),  # float64-ok: legacy 12-digit rounded witness schema
         "ln_abs_tr": round(mp.log(abs(tr)), 12) if abs(tr) > 1e-300 else None,
         "frobenius_stable": stable,
         "knot_type": knot_name,

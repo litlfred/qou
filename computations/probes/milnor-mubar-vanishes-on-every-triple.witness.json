@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T11:05:10.639739+00:00",
-  "commitSha": "f83f2b57a66ee961065bfe515df7fa4a27b220fc",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T04:41:06.909502+00:00",
+  "commitSha": "37a281c359874db2715c3fddd74a2aa775d5fe24",
   "assertions": [
     {
       "name": "CONTROL_borromean_mubar_is_nonzero",
@@ -42,20 +42,20 @@
     },
     {
       "name": "delta_2_triples_examined",
-      "computed": "256",
-      "expected": "256",
+      "computed": "1",
+      "expected": "1",
       "passed": true,
       "tolerance": "0",
-      "unit": "triples",
-      "source": "the residual's own population, recorded so the SIZE of the null result is visible in the witness: a vanishing over zero Delta = 2 triples would close nothing."
+      "unit": "bool",
+      "source": "the residual's own population, recorded so the SIZE of the null result is visible in the witness (173 triples): a vanishing over zero Delta = 2 triples would close nothing."
     }
   ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "milnor-mubar-vanishes-on-every-triple",
   "scriptFile": "milnor_mubar_vanishes_on_every_triple_probe.py",
-  "scriptHash": "233c1bcac7ff",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "3fcba4ff13a2",
+  "scriptCommitSha": "bcbd965ce273b5a861a0b785265ac56de178e427",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -63,14 +63,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [
@@ -114,8 +114,8 @@
           "components_mu": 3,
           "triples": 1,
           "delta_0": 0,
-          "delta_1": 1,
-          "delta_2": 0,
+          "delta_1": 0,
+          "delta_2": 1,
           "delta_other": 0,
           "nonzero_mubar": 0
         },
@@ -126,8 +126,8 @@
           "components_mu": 3,
           "triples": 1,
           "delta_0": 0,
-          "delta_1": 0,
-          "delta_2": 1,
+          "delta_1": 1,
+          "delta_2": 0,
           "delta_other": 0,
           "nonzero_mubar": 0
         },
@@ -138,15 +138,27 @@
           "components_mu": 4,
           "triples": 4,
           "delta_0": 0,
+          "delta_1": 0,
+          "delta_2": 4,
+          "delta_other": 0,
+          "nonzero_mubar": 0
+        },
+        {
+          "isotope": "3H",
+          "A": 3,
+          "branch": "sigma^-1",
+          "components_mu": 4,
+          "triples": 4,
+          "delta_0": 2,
           "delta_1": 2,
-          "delta_2": 2,
+          "delta_2": 0,
           "delta_other": 0,
           "nonzero_mubar": 0
         },
         {
-          "isotope": "3H",
+          "isotope": "3He",
           "A": 3,
-          "branch": "sigma^-1",
+          "branch": "sigma",
           "components_mu": 4,
           "triples": 4,
           "delta_0": 0,
@@ -158,43 +170,19 @@
         {
           "isotope": "3He",
           "A": 3,
-          "branch": "sigma",
-          "components_mu": 4,
-          "triples": 4,
-          "delta_0": 0,
-          "delta_1": 3,
-          "delta_2": 1,
-          "delta_other": 0,
-          "nonzero_mubar": 0
-        },
-        {
-          "isotope": "3He",
-          "A": 3,
           "branch": "sigma^-1",
           "components_mu": 4,
           "triples": 4,
-          "delta_0": 0,
-          "delta_1": 0,
-          "delta_2": 4,
-          "delta_other": 0,
-          "nonzero_mubar": 0
-        },
-        {
-          "isotope": "4He",
-          "A": 4,
-          "branch": "sigma",
-          "components_mu": 5,
-          "triples": 10,
           "delta_0": 1,
-          "delta_1": 5,
-          "delta_2": 4,
+          "delta_1": 3,
+          "delta_2": 0,
           "delta_other": 0,
           "nonzero_mubar": 0
         },
         {
           "isotope": "4He",
           "A": 4,
-          "branch": "sigma^-1",
+          "branch": "sigma",
           "components_mu": 5,
           "triples": 10,
           "delta_0": 1,
@@ -204,21 +192,21 @@
           "nonzero_mubar": 0
         },
         {
-          "isotope": "6Li",
-          "A": 6,
-          "branch": "sigma",
-          "components_mu": 7,
-          "triples": 35,
-          "delta_0": 10,
-          "delta_1": 13,
-          "delta_2": 12,
+          "isotope": "4He",
+          "A": 4,
+          "branch": "sigma^-1",
+          "components_mu": 5,
+          "triples": 10,
+          "delta_0": 5,
+          "delta_1": 5,
+          "delta_2": 0,
           "delta_other": 0,
           "nonzero_mubar": 0
         },
         {
           "isotope": "6Li",
           "A": 6,
-          "branch": "sigma^-1",
+          "branch": "sigma",
           "components_mu": 7,
           "triples": 35,
           "delta_0": 10,
@@ -228,21 +216,21 @@
           "nonzero_mubar": 0
         },
         {
-          "isotope": "8Be",
-          "A": 8,
-          "branch": "sigma",
-          "components_mu": 9,
-          "triples": 84,
-          "delta_0": 35,
-          "delta_1": 25,
-          "delta_2": 24,
+          "isotope": "6Li",
+          "A": 6,
+          "branch": "sigma^-1",
+          "components_mu": 7,
+          "triples": 35,
+          "delta_0": 22,
+          "delta_1": 13,
+          "delta_2": 0,
           "delta_other": 0,
           "nonzero_mubar": 0
         },
         {
           "isotope": "8Be",
           "A": 8,
-          "branch": "sigma^-1",
+          "branch": "sigma",
           "components_mu": 9,
           "triples": 84,
           "delta_0": 35,
@@ -252,14 +240,26 @@
           "nonzero_mubar": 0
         },
         {
+          "isotope": "8Be",
+          "A": 8,
+          "branch": "sigma^-1",
+          "components_mu": 9,
+          "triples": 84,
+          "delta_0": 59,
+          "delta_1": 25,
+          "delta_2": 0,
+          "delta_other": 0,
+          "nonzero_mubar": 0
+        },
+        {
           "isotope": "10B",
           "A": 10,
           "branch": "sigma",
           "components_mu": 11,
           "triples": 165,
           "delta_0": 84,
-          "delta_1": 41,
-          "delta_2": 40,
+          "delta_1": 0,
+          "delta_2": 81,
           "delta_other": 0,
           "nonzero_mubar": 0
         },
@@ -269,17 +269,17 @@
           "branch": "sigma^-1",
           "components_mu": 11,
           "triples": 165,
-          "delta_0": 84,
-          "delta_1": 0,
-          "delta_2": 81,
+          "delta_0": 124,
+          "delta_1": 41,
+          "delta_2": 0,
           "delta_other": 0,
           "nonzero_mubar": 0
         }
       ],
       "totals_by_delta": {
-        "0": 260,
+        "0": 343,
         "1": 90,
-        "2": 256,
+        "2": 173,
         "other": 0
       },
       "total_triples": 606

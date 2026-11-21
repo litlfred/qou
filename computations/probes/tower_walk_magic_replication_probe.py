@@ -122,7 +122,7 @@ figures recorded in `tower_walk_h3a_magic_probe.py` (0.0802 / 20.256 and
 """
 import os
 import sys, time, argparse
-import numpy as np
+import numpy as np  # float64-ok: scope-(a) numpy Hoefsmit matrix walk (see header scope note)
 
 sys.path[:0] = ['/home/user/qou/computations',
                 '/home/user/qou/computations/_deprecated',
@@ -244,7 +244,7 @@ def walk_one(lam, ops, rank_max=1000):
         if g not in sig:
             sig[g] = sigma_sparse(lam, g)
         st = apply_fast(st, sig[g], c, d)
-    tr = float(abs(np.trace(st)))
+    tr = float(abs(np.trace(st)))  # float64-ok: scope-(a) numpy Hoefsmit matrix trace (see header scope note)
     rk = None
     if dim <= rank_max:
         s = np.linalg.svd(st, compute_uv=False)
@@ -506,8 +506,8 @@ def main():
         j = judgements[A]
         if j.get("comparable"):
             wb.add_assertion(f"both_groups_non_empty_at_A{A}",
-                             computed=f"{j['n_magic']}/{j['n_non_magic']}",
-                             expected=f"{j['n_magic']}/{j['n_non_magic']}")
+                             computed=str(j["n_magic"] > 0 and j["n_non_magic"] > 0),
+                             expected="True")
     wb.add_assertion("selftest_reproduces_A3_reference_figures",
                      computed="True", expected="True")
     out = wb.save(extra={"auditOnly": True})
