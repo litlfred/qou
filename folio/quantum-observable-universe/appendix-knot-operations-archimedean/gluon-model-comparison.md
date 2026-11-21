@@ -36,13 +36,13 @@ Quarks interact as single-crossing unknots, not as full three-crossing words (De
 The Borromean braid $B_3$ has NF:
 
 $$
-  B_3 = +0.998\gamma - 0.010\sigma_0 + 0.009\sigma_1
+  B_3 = +0.998\,\mathbf{1} - 0.010\sigma_0 + 0.009\sigma_1
         + 0.046L_+ - 0.044L_-
 $$
 
 The $L_+$ and $L_-$ terms constitute the Hopf link $\mathcal{L}_H$. The $\oplus$ operation in $B = \mathcal{B}_3 \oplus \mathcal{L}_H$ is intrinsic to the Borromean braid algebra, not an additional factor. Explicitly adding Hopf links (Models B–E) double-counts the gluon contribution. The braid $B_3 = (\sigma_0\sigma_1^{-1})^3$ completely encodes confinement ($\mathcal{B}_3$) and gluon binding ($\mathcal{L}_H$). 
 
-The near-cancellation $+0.046 - 0.044 = +0.002$ reflects baryon color neutrality. The $\gamma$ term ($\approx +0.998$) places $B_3$ perturbatively close to the identity.
+The near-cancellation $+0.046 - 0.044 = +0.002$ reflects baryon color neutrality. The $\mathbf{1}$ term ($\approx +0.998$) places $B_3$ perturbatively close to the identity.
 
 The Model A proton and neutron NF are confirmed:
 
@@ -54,13 +54,13 @@ $$
 
 $$
   \mathrm{NF}(\mathfrak{p})
-  = -0.100\gamma + 0.036\sigma_0 + 0.998\sigma_1
+  = -0.100\,\mathbf{1} + 0.036\sigma_0 + 0.998\sigma_1
     + 0.099L_+ + 0.009L_- - 0.043e^-
 $$
 
 $$
   \mathrm{NF}(\mathfrak{n})
-  = -0.202\gamma + 0.048\sigma_0 + 1.009\sigma_1
+  = -0.202\,\mathbf{1} + 0.048\sigma_0 + 1.009\sigma_1
     - 0.010L_+ + 0.009L_- - 0.044e^-
 $$
 
