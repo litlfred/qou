@@ -8,6 +8,22 @@ import Mathlib.Tactic
 
 ## A weak-isospin (up/down-type) grading `T₃` orthogonal to the generation winding
 
+**Reading of `κ` (owner rulings 2026-11-20 and 2026-11-21).** A quark is an
+**unknot strand** of the pure braid `B₃`, carrying one crossing letter (`σ` or
+`σ⁻¹`); it is **not** a torus knot `T(2,n)`. The torus knot `T(2,n)` is the
+quark's **lepton partner** (`T(2,3)` the electron, `T(2,5)` the muon, `T(2,7)`
+the tau). So the integer `κ` below is read as follows:
+
+* `|κ| = n` is the **lepton partner's crossing count** — a generation label,
+  not a crossing count carried by the quark strand;
+* `sign κ` is the **quark strand's own crossing orientation** (`σ` positive,
+  `σ⁻¹` negative), which is a property of the quark.
+
+Every definition and theorem in this file is unchanged; only this reading of
+the data is. Where older prose below says "winding" or "writhe", read "the
+generation label `|κ|`" for the magnitude and "the quark strand's crossing
+orientation" for the sign. The identifier `signedWrithe` is kept as a name.
+
 Serves bean `qou-tdrd` (root of the convergence epic `qou-20sx`) and the
 honest negative of
 `docs/audits/2026-08-02-meson-fluxtube-junction-reduction.md`
@@ -21,12 +37,14 @@ strange both carry `n = 5`, so the `T(2,n)` dictionary collides the D-meson
 
 ### The derivation (what is proved below, sorry-free)
 
-The framework already carries **two** independent facts about a quark's
-canonical torus braid `T(2,n) = σ₁^{±n}`:
+The framework already carries **two** independent facts about a quark:
 
-* its **crossing NUMBER** `n` — the generation winding
-  (`lepton-meson-torus-knot-dictionary.lean`, `leptonTorusKnotIndex`);
-* its **crossing SIGN** — already a *physical* grading in the corpus: the
+* a **generation label** `n` — the crossing number of the quark's lepton
+  partner `T(2,n)` (`lepton-meson-torus-knot-dictionary.lean`,
+  `leptonTorusKnotIndex`); the quark strand itself does not carry `n`
+  crossings;
+* the **crossing SIGN** of the quark strand — already a *physical* grading in
+  the corpus: the
   strong-isospin interface uses `σ_g` (positive) for the `pp` channel and
   `σ_g⁻¹` (negative) for the `nn` channel
   (`crystal-isospin-degeneracy.md`, `isotope_record_schema.py:176-178`;
@@ -35,22 +53,24 @@ canonical torus braid `T(2,n) = σ₁^{±n}`:
   drives parity violation and up↔down transmutation
   (`force-knot-identification.md`).
 
-The **signed writhe** `κ = ±n` of the oriented braid therefore factors
-*canonically* as
+The signed integer `κ = ±n` (historically called the *signed writhe*; it
+combines the partner's crossing count with the strand's orientation) therefore
+factors *canonically* as
 ```
       κ  =  sign(κ) · |κ|
            └──┬───┘  └┬┘
-            T₃ grading  generation winding
+            T₃ grading  generation label
 ```
-The magnitude `|κ| = n` is the generation; the **sign** `sign(κ) ∈ {+1,−1}`
+The magnitude `|κ| = n` is the generation label (the lepton partner's crossing
+count); the **sign** `sign(κ) ∈ {+1,−1}`
 is an intrinsic `ℤ/2` grading **orthogonal to the magnitude by construction**
 (the sign and magnitude of an integer are independent data).  Normalised as a
 fundamental SU(2)_weak weight, `T₃ = sign(κ)/2 ∈ {+½, −½}`.
 
 With the sign convention **up-type = positive crossing** inherited from the
 strong-isospin `⋈_K` orientation (`pp = σ_g` positive; the proton is the
-more-up nucleon), charm `= σ₁^{+5}` gets `T₃ = +½` and strange `= σ₁^{−5}`
-gets `T₃ = −½`: **same generation `n = 5`, opposite `T₃`** — the degeneracy
+more-up nucleon), charm (positive strand, partner `T(2,5)`) gets `T₃ = +½` and strange
+(negative strand, partner `T(2,5)`) gets `T₃ = −½`: **same generation `n = 5`, opposite `T₃`** — the degeneracy
 `winding_content_not_injective` is resolved by refining the *unsigned* winding
 to the *signed* writhe.
 
@@ -111,11 +131,13 @@ inductive WeakType
   | upType | downType
 deriving DecidableEq
 
-/-- **The one derived datum.** The *signed* writhe `κ = ±n` of a quark's
-    canonical `T(2,n) = σ₁^{±n}` braid.  Magnitude `|κ| = n` is the
-    generation winding (`u,d = 3`, `s,c = 5`, `b,t = 7`, matching
-    `lepton-meson-torus-knot-dictionary`); the sign is the `⋈_K`-inherited
-    orientation, **up-type positive, down-type negative**.  Everything
+/-- **The one derived datum.** The signed integer `κ = ±n` attached to a
+    quark.  Magnitude `|κ| = n` is the **crossing count of the quark's lepton
+    partner** `T(2,n)` — a generation label (`u,d = 3`, `s,c = 5`, `b,t = 7`,
+    matching `lepton-meson-torus-knot-dictionary`); the quark itself is an
+    unknot strand of `B₃` (owner rulings 2026-11-20 / 2026-11-21).  The sign
+    is the quark strand's crossing orientation, `⋈_K`-inherited,
+    **up-type positive, down-type negative**.  Everything
     below is read off this single map — `genWinding`, `weakType`, and `T₃`
     are all functions of it, so the grading is not a second postulate but
     the sign-half of the object whose magnitude is already the generation. -/
@@ -123,17 +145,18 @@ def signedWrithe : Quark → ℤ
   | .up      => 3   | .charm   => 5   | .top     => 7
   | .down    => -3  | .strange => -5  | .bottom  => -7
 
-/-- **Generation winding = magnitude of the writhe.** Derived from
-    `signedWrithe`, not an independent datum. Reproduces the corpus
-    `T(2,n)` indices `{3,5,7}`. -/
+/-- **Generation label = magnitude of `κ`.** Derived from `signedWrithe`,
+    not an independent datum. Reproduces the lepton-partner indices `{3,5,7}`
+    of the corpus `T(2,n)` dictionary (the partner's crossing count, not the
+    quark strand's). -/
 def genWinding (q : Quark) : ℕ := (signedWrithe q).natAbs
 
 /-- **Weak-isospin sector = sign of the writhe.** -/
 def weakType (q : Quark) : WeakType :=
   if 0 < signedWrithe q then WeakType.upType else WeakType.downType
 
-/-- **Weak isospin `T₃ = sign(writhe)/2 ∈ {+½,−½}`** — the fundamental
-    SU(2)_weak weight read off the crossing sign. -/
+/-- **Weak isospin `T₃ = sign(κ)/2 ∈ {+½,−½}`** — the fundamental
+    SU(2)_weak weight read off the quark strand's crossing orientation. -/
 def T3 (q : Quark) : ℚ := ((signedWrithe q).sign : ℚ) / 2
 
 /-! ### ℤ-level sign/type values (kernel-decidable helpers)
@@ -160,7 +183,8 @@ theorem writheType_bottom  : weakType .bottom = WeakType.downType  := by decide
 
 /-! ### Orthogonality to the generation winding (the load-bearing content) -/
 
-/-- Generation winding reproduces the `T(2,n)` dictionary values. -/
+/-- The generation label reproduces the lepton-partner `T(2,n)` dictionary
+    values. -/
 theorem genWinding_values :
     genWinding .up = 3 ∧ genWinding .charm = 5 ∧ genWinding .top = 7 ∧
     genWinding .down = 3 ∧ genWinding .strange = 5 ∧ genWinding .bottom = 7 := by
@@ -227,8 +251,8 @@ def emCharge : Quark → ℚ
 def hyperchargeLeft : Quark → ℚ := fun _ => 1/3
 
 /-- **Gell-Mann–Nishijima holds for the topologically-derived `T₃`.**
-    `Q = T₃ + Y/2` for every quark, with `T₃ = sign(writhe)/2` (derived from
-    the braid) and the SM `Q`, `Y`.  This is the check, not a definition:
+    `Q = T₃ + Y/2` for every quark, with `T₃ = sign(κ)/2` (the quark strand's
+    crossing orientation) and the SM `Q`, `Y`.  This is the check, not a definition:
     had the sign convention or the `½` normalisation been wrong, it would
     fail.  It does not. -/
 theorem gellMannNishijima (q : Quark) :
@@ -365,7 +389,18 @@ theorem partner_flips_T3_same_generation (q : Quark) :
     reduces to the SU(3)-flavour / CKM sector.  A trivial `κ := signedWrithe`,
     `Y := hyperchargeLeft` would *fabricate* closure over this finite toy and
     is forbidden (§3b-tax: do not fabricate an instance to close an open
-    primary; the openness is physical, not formal). -/
+    primary; the openness is physical, not formal).
+
+    **Note (2026-11-21, owner rulings 2026-11-20 / 2026-11-21).** Under the
+    ruling that a quark is an unknot strand carrying one crossing letter, the
+    net signed crossing of the quark strand in `B₃` has magnitude `1`, not
+    `n`.  So `writhe_magnitude_is_generation` can no longer be met by reading
+    `κ` off the quark strand's own crossings; its magnitude has to come from
+    the lepton partner `T(2,n)`.  The field's statement is unchanged; what
+    changes is that "net-signed-crossing map from the canonical braids" above
+    now means "orientation of the quark strand times its partner's crossing
+    count".  Whether a framework-intrinsic map of that composite kind exists
+    is the open question this class records. -/
 class CanonicalWeakIsospinFromBowtie
     (κ : Quark → ℤ) (Y : Quark → ℚ) : Prop where
   /-- |κ| recovers the generation winding: κ splits as (generation)×(sign). -/
