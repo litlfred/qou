@@ -513,4 +513,26 @@ theorem trXMinus_eq_fun {q : ℝ} (hq : 0 < q) :
   funext z
   exact trXMinus_factor q z hq.ne'
 
+/-- **The coordinate is not forced.** In the idempotent coordinate
+`t = τ(P₋) = (q − z)/[2]_q`, so `z = q − [2]_q t`, the same trace has derivative
+`(q + q⁻¹)·q⁻³` at the convention-D point, so `−∂_t tr(x₋) = −[2]_q q⁻³`, not
+`q⁻³`. (Symbolically, Wenzl's `a = q^{2r}` gives
+`−1/(q⁴(q² − 1)(q² + 1)²)`, not a power of `q`.) Only the standard-basis
+coordinates `z = tr(T_s)` and `w = tr(T_s⁻¹)` give exactly `q⁻³`. -/
+theorem hasDerivAt_trXMinus_idempotent_coord {q : ℝ} (hq : 0 < q) :
+    HasDerivAt (fun t => (q - (q + q⁻¹) * t - q) *
+        ((q - (q + q⁻¹) * t) * (q ^ 2 + 1) - q ^ 3) / q ^ 4)
+      ((q + q⁻¹) * (q ^ 3)⁻¹) ((q - zD q) / (q + q⁻¹)) := by
+  have h1 : q ^ 2 + 1 ≠ 0 := by positivity
+  have h0 : q ≠ 0 := hq.ne'
+  have h2 : q + q⁻¹ ≠ 0 := by positivity
+  have hz : HasDerivAt (fun t : ℝ => q - (q + q⁻¹) * t) (-(q + q⁻¹))
+      ((q - zD q) / (q + q⁻¹)) := by
+    simpa using ((hasDerivAt_id ((q - zD q) / (q + q⁻¹))).const_mul (q + q⁻¹)).const_sub q
+  have hd := ((hz.sub_const q).mul ((hz.mul_const (q ^ 2 + 1)).sub_const (q ^ 3))).div_const (q ^ 4)
+  convert hd using 1
+  unfold zD
+  field_simp
+  ring
+
 end QOU.MassTheory.ProtonQ3Schur
