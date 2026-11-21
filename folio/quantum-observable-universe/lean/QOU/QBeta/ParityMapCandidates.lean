@@ -19,20 +19,25 @@ Maps compared (`h = q − q⁻¹`, `s` a Hecke letter):
 
 ## What this file proves (generic field `K`, generic `K`-algebra `A`; no `ℝ`, no `sorry`)
 
-§1 **The braid mirror at fixed `q` is not a map of `H_n(q)`.** If `σ⁻¹` satisfied the Hecke
-relation at the same `q` then `2h = 0` (`flip_letter_same_q`). So the corpus's P is an
-automorphism of the braid group `B_n` only; on the Hecke algebra a crossing mirror must either
-invert `q` (bar) or carry the sign twist (`ι`). Neither preserves the convention-D trace at a
-fixed `q` (`trace_flip`, `trace_swap`, `zD_sub_h`, `h_sub_zD`, `zD_sub_h_ne`, `h_sub_zD_ne`):
-the braid mirror sends the Markov parameter `z_D` to `z_D − h = z_D(q⁻¹)` (Jones mirror), and
-`ι` sends it to `h − z_D = −z_D(q⁻¹)`. In particular the trace-preservation component of the
-corpus's `conj:cpt-d6-d7-d8-closure` fails for the named P at `n = 2`, `β = σ`, whenever
-`h ≠ 0` (scope (b); the invariant is the Hecke relation).
+Prior work this file builds on, not re-proved: `Helicity.no_linear_flip` / `no_linear_neg`
+(the braid mirror `σ ↦ σ⁻¹` and `σ ↦ −σ` are not `K`-linear unless `2h = 0`), the Klein
+relations `flip_swap`, `flip_neg`, and the profile analysis of
+`docs/audits/2026-11-15-helicity-common-source-flavour-chirality.md` §10 (owner decision
+D-H5 = D + C). That analysis took the eigenvalue-labelled projector `P₊` as helicity.
 
-§2 **Both crossing-mirror lifts exchange the left and right lines.** For `|q| > 1`, the left line
-of the image letter is the right line of the original letter, for `ι` (`iota_leftLine`) and for
-bar (`bar_leftLine`); the weak-vertex insertion `−h·P_L` goes to `−h·P_R` under `ι`
-(`iota_insertion`) and to `+h·P_R` under bar (`bar_insertion`).
+§1 **Trace.** The braid mirror sends the Markov parameter `z_D` to `z_D − h = z_D(q⁻¹)` (Jones
+mirror, `zD_sub_h`); `ι` sends it to `h − z_D = −z_D(q⁻¹)` (`h_sub_zD`); neither fixes it when
+`h ≠ 0`, resp. `q⁴ + 1 ≠ 0` (`zD_sub_h_ne`, `h_sub_zD_ne`). So the trace-preservation
+component "P preserves `tr_M`" of `conj:cpt-d6-d7-d8-closure`, with P the braid mirror at fixed
+`q`, fails already at `n = 2`, `β = σ` (scope (b); invariant: the Hecke relation).
+
+§2 **With the RULED left line (eigenvalue of modulus `> 1`, owner 2026-11-15) the helicity
+column of the §10 table changes.** For `|q| > 1`: bar (`flip`, with `q ↦ q⁻¹`) exchanges the left
+and right lines (`bar_leftLine`), `ι` exchanges them (`iota_leftLine`), and `neg` KEEPS them
+(`neg_leftLine`), although `neg` exchanges the labelled `P₊, P₋`. The weak-vertex insertion
+`−h·P_L` goes to `−h·P_R` under `ι` (`iota_insertion`) and to `+h·P_R` under bar
+(`bar_insertion`). `neg` fixes the γγ vertex (`neg_vertex`) and maps the photon family to itself
+by `(φ₀, φ₁, φ₀₁) ↦ (−φ₀, −φ₁, φ₀₁)` (`neg_photon`).
 
 §3 **`ι` is an algebra automorphism of the `H₃` relations** (`swap_swap`, `iota_heckeH3Rel`),
 sends `V ↦ V̄` (`Helicity.iota_vertex`, already in the corpus), and maps the photon family into
@@ -75,31 +80,6 @@ section Letter
 open QOU.QuarkState.Helicity
 
 variable {K A : Type*} [Field K] [Ring A] [Algebra K A] {q : K} {s : A}
-
-/-- **The braid mirror at fixed `q` is not a letter.** If `σ⁻¹ = σ − h` satisfied the Hecke
-relation at the same `q`, then `2h = 0`. -/
-theorem flip_letter_same_q [Nontrivial A] (hs : IsLetter q s) (hf : IsLetter q (flip q s)) :
-    (2 : K) * (q - q⁻¹) = 0 := by
-  set c : K := q - q⁻¹ with hc
-  have hinv : s * flip q s = 1 := (inv_letter hs).1
-  have e1 : flip q s * flip q s = s * s - (2 * c) • s + (c * c) • (1 : A) := by
-    simp only [QOU.QuarkState.Helicity.flip, ← hc, sub_mul, mul_sub, smul_mul_assoc,
-      mul_smul_comm, one_mul, mul_one]
-    module
-  unfold IsLetter at hs hf
-  rw [← hc] at hs hf
-  rw [e1, hs] at hf
-  have key : ((2 : K) * c) • flip q s = 0 := by
-    have h2 : ((2 : K) * c) • flip q s =
-        (c • flip q s + 1) - (c • s + 1 - (2 * c) • s + (c * c) • (1 : A)) := by
-      simp only [QOU.QuarkState.Helicity.flip, ← hc]; module
-    rw [h2, ← hf, sub_self]
-  have h1 : ((2 : K) * c) • (1 : A) = 0 := by
-    have := congrArg (fun x => s * x) key
-    simpa [mul_smul_comm, hinv] using this
-  have h3 : algebraMap K A ((2 : K) * c) = 0 := by
-    rw [Algebra.algebraMap_eq_smul_one]; exact h1
-  exact (map_eq_zero_iff _ (algebraMap K A).injective).mp h3
 
 /-- A trace with `τ 1 = 1`, `τ σ = z` gives `τ(σ⁻¹) = z − h` (the braid mirror). -/
 theorem trace_flip (τ : A →ₗ[K] K) {z : K} (h1 : τ 1 = 1) (hz : τ s = z) :
@@ -190,6 +170,18 @@ theorem bar_insertion (hq : q ≠ 0) (hq2 : q + q⁻¹ ≠ 0) (hs : IsLetter q s
   rw [weakVertex_sub_letter (inv_ne_zero hq) hq2' (flip_hecke hs), bar_leftLine h1, inv_inv,
     ← neg_smul, neg_sub]
 
+/-- **`neg` (`σ ↦ −σ`, `q ↦ q⁻¹`) keeps the ruled left line.** The eigenvalue of `−σ` on the
+`q`-line of `σ` is `−q`, still of modulus `> 1`, so under the modulus definition of the left
+line (owner ruling 2026-11-15) `neg` does NOT exchange the lines, although it exchanges the
+eigenvalue-labelled projectors (`neg_Pp`). -/
+theorem neg_leftLine (h1 : 1 < |q|) : leftLine q⁻¹ (-s) = leftLine q s := by
+  have hn : ¬ 1 < |q⁻¹| := by
+    rw [abs_inv]
+    exact not_lt.mpr (inv_le_one_of_one_le₀ h1.le)
+  rw [leftLine_of_not_one_lt hn, leftLine_of_one_lt h1]
+  unfold Pm Pp
+  rw [inv_inv, add_comm q⁻¹ q, sub_neg_eq_add, add_comm (q⁻¹ • (1 : A)) s]
+
 end Lines
 
 /-! ## §3 `ι` on the `H₃` relations, the photon, and the Jimbo image -/
@@ -247,6 +239,22 @@ theorem bar_photon (H : HeckeH3Rel (q - q⁻¹) a b) (φ : Colour K) :
     QOU.QuarkState.Helicity.flip, sub_mul, mul_sub, smul_mul_assoc, mul_smul_comm, one_mul,
     mul_one, smul_sub, smul_smul]
   module
+
+/-- **`neg` fixes the γγ vertex:** with `h ↦ −h`, `(−σ₀)(−σ₁)⁻¹ = σ₀σ₁⁻¹`. -/
+theorem neg_vertex (h : K) (a b : A) :
+    QOU.Mass.BorromeanPhotonFactorisation.vertex (-h) (-a) (-b) =
+      QOU.Mass.BorromeanPhotonFactorisation.vertex h a b := by
+  simp only [QOU.Mass.BorromeanPhotonFactorisation.vertex, neg_smul, sub_neg_eq_add, neg_mul,
+    neg_add_eq_sub, ← mul_neg, neg_sub]
+
+/-- **`neg` maps the photon family to itself by `(φ₀, φ₁, φ₀₁) ↦ (−φ₀, −φ₁, φ₀₁)`** (letters
+`−σ` at `q⁻¹`; no scalar factor). -/
+theorem neg_photon (H : HeckeH3Rel (q - q⁻¹) a b) (φ : Colour K) :
+    photon (-a) (⟨-b, -(b - (q - q⁻¹) • 1), by rw [neg_mul_neg]; exact H.mul_inv,
+      by rw [neg_mul_neg]; exact H.inv_mul⟩ : Aˣ) φ =
+      photon a H.unitB (⟨-φ.phi0, -φ.phi1, φ.phi01⟩ : Colour K) := by
+  simp only [photon, QOU.Photon.vertex, HeckeH3Rel.unitB_val, HeckeH3Rel.unitB_inv,
+    Units.inv_mk, neg_mul_neg, neg_smul, smul_neg]
 
 /-- **`ι` does not descend to the Jimbo image.** Let `ρ : A → End(M)` be a representation in
 which a nonzero `v` is a common `q`-eigenvector of `ρ σ₀`, `ρ σ₁` and the Temperley–Lieb relation
