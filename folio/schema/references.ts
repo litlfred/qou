@@ -645,6 +645,11 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "necas-ruzicka-sverak1996" },
 
   { id: "tsai1998" },
+  { id: "leray1934" },
+  { id: "seregin2012" },
+  { id: "chae2013adss" },
+  { id: "chae-wolf2016dss" },
+  { id: "bradshaw-tsai2018survey" },
 
   { id: "leitner-2018" },
 
