@@ -1,13 +1,13 @@
 ---
 # qou-h0ou
 title: 'GAP: HasAction.action is scalar->scalar, so einsteinTensor cannot be rank-2 — wire FrobeniusPairingData'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-15T06:16:39Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-ddmn
 ---
 
@@ -297,3 +297,7 @@ Was in-progress with no bean update since 2026-09-15 and no main commit naming i
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8457, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21 — physics-scope re-check on main 2ae54ab40 (bean-drain sibling, issue #8810)
+
+Resolved on main. `MathlibExt/MonoidalCalcVar.lean:181-184` `HasAction.action : PairingSpace C X Y → R`; `:231` `einsteinTensor : PairingSpace C X Y`; `GaugeTheory.lean:161` likewise; `FrobeniusHopfData/PairingVariationalDerivative.lean` is on main. The scalar→scalar gap is closed. Remaining scope item (not this bean): the Einstein equation is still a class field (`HasCategoricalEOM`), whose one instance takes it as a `Fact`; recorded in the audit §2c. Audit: `docs/audits/2026-11-21-physics-claim-scope-recheck.md` on branch `claude/physics-scope-audit-2026-11-21` (4df574c79).

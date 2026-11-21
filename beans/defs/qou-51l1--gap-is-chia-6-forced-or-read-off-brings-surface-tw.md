@@ -1,13 +1,13 @@
 ---
 # qou-51l1
 title: 'GAP: is chi(A) = -6 forced or read off Bring''s surface? two corpus statements disagree'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T19:59:53Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-ddmn
 ---
 
@@ -217,3 +217,7 @@ Not enacting that edit — it is a content change outside the ask-first exemptio
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8443, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-09-15: "beans(qou-51l1): chi(A) = -6 is derived-modulo-one-input; three of my own claims were wrong"). The work may be partly or fully done. Read the bean before you close it.
+
+## 2026-11-21 — physics-scope re-check on main 2ae54ab40 (bean-drain sibling, issue #8810)
+
+Resolved on main. `introduction/chapter-overview.md:30` now reads "The lifting obstructions reduce to the genus of the base curve: χ_eu(M₀) = 2 − 2g with g ≥ 1, and the Descartes condition fixes g = 4" — the honest wording this bean recommended (option 2). Whole-folio grep for "force[sd] the Descartes" returns nothing. The open mathematical item (derive the branch-point count 6 from the axioms without reading it off Bring) is unchanged and remains tracked elsewhere (qou-1vau / qou-uy5c lineage); this bean's question, the contradiction between the two prose sites, is closed. Audit: `docs/audits/2026-11-21-physics-claim-scope-recheck.md` on branch `claude/physics-scope-audit-2026-11-21` (4df574c79).

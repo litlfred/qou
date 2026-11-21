@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T18:08:46Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-ddmn
 ---
 
@@ -26,3 +26,7 @@ Was in-progress with no bean update since 2026-09-14 and no main commit naming i
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8448, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21 — physics-scope re-check on main 2ae54ab40 (bean-drain sibling, issue #8810)
+
+Verdict still holds: `QOU.qou_is_ccc` (`JetHorizon.lean:306-312`) is three field projections; `.ts` validation not_checked. Title already narrowed to "horizon-local conditions", but the statement in `qou-is-ccc.md` still says "the three defining properties of a CCC" and CCC-2 names the CMB, which is observational and not in the Lean. Scoping edit proposed (audit §6 item 1), awaiting owner card. Audit: `docs/audits/2026-11-21-physics-claim-scope-recheck.md` on branch `claude/physics-scope-audit-2026-11-21` (4df574c79).

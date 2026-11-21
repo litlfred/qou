@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T12:53:38Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-ddmn
 ---
 
@@ -399,3 +399,7 @@ Was in-progress with no bean update since 2026-09-13 and no main commit naming i
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8467, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-09-14: "beans(qou-hjs8, qou-fi93): the theta claim is live in two blocks, and fi93's search is closed negatively"). The work may be partly or fully done. Read the bean before you close it.
+
+## 2026-11-21 — physics-scope re-check on main 2ae54ab40 (bean-drain sibling, issue #8810)
+
+Re-read, no change on main. The bar-even exclusion is scope (b) for counting objects built from q-integers only, with the invariant cited; no density coupling derived or excluded. The η_obs comparisons in this bean are empirical context and must not enter a formal statement. Audit: `docs/audits/2026-11-21-physics-claim-scope-recheck.md` on branch `claude/physics-scope-audit-2026-11-21` (4df574c79).
