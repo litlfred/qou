@@ -32,6 +32,9 @@ import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Linarith
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Chebyshev
+import Mathlib.Tactic.FinCases
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
 
 namespace QOU.QBeta.PhotonVertexEigenphase
 
@@ -109,5 +112,72 @@ theorem vertex_cube_elliptic {K : Type*} [Field K] [LinearOrder K] [IsStrictOrde
         _ = 4 := by norm_num
     linarith
   · linarith
+
+/-! ### The whole γγ tower `V^{3k}`
+
+The flavour split on a weight space `W ≅ V_3 ⊕ V_(2,1)` is
+`ε_flavour(V^{3k}) = −h·(1 + tr_{V_(2,1)} V^{3k}) / [2]_q³` (σ acts as `q` on `V_3`, so `V`
+acts as `1` there). The results below bound the bracket for every `k`: `|1 + tr V^{3k}| ≤ 3`.
+So no member of the tower, and no average over it with non-negative weights summing to one,
+exceeds `3h/[2]_q³`. -/
+
+/-- Cayley–Hamilton: a 2×2 matrix of determinant one satisfies `M² = (tr M) M − 1`. -/
+theorem sq_of_det_one (M : Matrix (Fin 2) (Fin 2) R) (hM : M.det = 1) :
+    M * M = M.trace • M - 1 := by
+  rw [Matrix.det_fin_two] at hM
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [Matrix.mul_apply, Fin.sum_univ_two, Matrix.trace_fin_two] <;>
+    first | linear_combination (-1 : R) * hM | ring
+
+theorem trace_pow_add_two (M : Matrix (Fin 2) (Fin 2) R) (hM : M.det = 1) (n : ℕ) :
+    (M ^ (n + 2)).trace = M.trace * (M ^ (n + 1)).trace - (M ^ n).trace := by
+  rw [pow_add, sq, sq_of_det_one M hM, Matrix.mul_sub, Matrix.mul_smul, Matrix.mul_one,
+    ← pow_succ, Matrix.trace_sub, Matrix.trace_smul, smul_eq_mul]
+
+open Polynomial Polynomial.Chebyshev in
+/-- `tr Mⁿ = 2 Tₙ(tr M / 2)` for a real 2×2 matrix of determinant one. -/
+theorem trace_pow_eq_chebyshev (M : Matrix (Fin 2) (Fin 2) ℝ) (hM : M.det = 1) (n : ℕ) :
+    (M ^ n).trace = 2 * (T ℝ (n : ℤ)).eval (M.trace / 2) := by
+  have key : ∀ m : ℕ, (M ^ m).trace = 2 * (T ℝ (m : ℤ)).eval (M.trace / 2) ∧
+      (M ^ (m + 1)).trace = 2 * (T ℝ ((m + 1 : ℕ) : ℤ)).eval (M.trace / 2) := by
+    intro m
+    induction m with
+    | zero =>
+      refine ⟨?_, ?_⟩
+      · norm_num [Matrix.trace_one]
+      · simp; ring
+    | succ m ih =>
+      refine ⟨ih.2, ?_⟩
+      rw [trace_pow_add_two M hM, ih.1, ih.2]
+      have e : ((m + 1 + 1 : ℕ) : ℤ) = (m : ℤ) + 2 := by push_cast; ring
+      have e1 : ((m + 1 : ℕ) : ℤ) = (m : ℤ) + 1 := by push_cast; ring
+      rw [e, e1, T_add_two]
+      simp only [eval_sub, eval_mul, eval_X, eval_ofNat]
+      ring
+  exact (key n).1
+
+/-- A real 2×2 matrix of determinant one with `|tr M| ≤ 2` has `|tr Mⁿ| ≤ 2` for all `n`. -/
+theorem abs_trace_pow_le_two (M : Matrix (Fin 2) (Fin 2) ℝ) (hM : M.det = 1)
+    (ht : |M.trace| ≤ 2) (n : ℕ) : |(M ^ n).trace| ≤ 2 := by
+  obtain ⟨h1, h2⟩ := abs_le.mp ht
+  have hc : Real.cos (Real.arccos (M.trace / 2)) = M.trace / 2 :=
+    Real.cos_arccos (by linarith) (by linarith)
+  rw [trace_pow_eq_chebyshev M hM n, ← hc, Polynomial.Chebyshev.T_real_cos, abs_mul]
+  have hb := Real.abs_cos_le_one (((n : ℤ) : ℝ) * Real.arccos (M.trace / 2))
+  rw [abs_two]
+  linarith
+
+/-- The γγ tower bracket: `|1 + tr_{V_(2,1)} V^{3k}| ≤ 3` for every `k`. -/
+theorem tower_bracket_le_three {h : ℝ} (B : HeckeBlock h) (hh : h ≠ 0) (hsmall : h ^ 2 < 1)
+    (k : ℕ) : |1 + (vertex B ^ (3 * k)).trace| ≤ 3 := by
+  have hdet : (vertex B ^ 3).det = 1 := by rw [Matrix.det_pow, det_vertex B]; norm_num
+  obtain ⟨l, u⟩ := vertex_cube_elliptic B hh hsmall
+  have ht : |(vertex B ^ 3).trace| ≤ 2 := abs_le.mpr ⟨by linarith, by linarith⟩
+  have hk := abs_trace_pow_le_two _ hdet ht k
+  rw [← pow_mul] at hk
+  calc |1 + (vertex B ^ (3 * k)).trace| ≤ |(1 : ℝ)| + |(vertex B ^ (3 * k)).trace| :=
+        abs_add_le _ _
+    _ ≤ 3 := by rw [abs_one]; linarith
 
 end QOU.QBeta.PhotonVertexEigenphase

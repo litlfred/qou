@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-21T12:18:57.733199+00:00",
-  "commitSha": "7f0529878ff7a0630a01a8049f0107e48ec11291",
+  "computedAt": "2026-11-21T12:22:14.343288+00:00",
+  "commitSha": "e5d68f9e7ba379b312b990236f834005a3215642",
   "assertions": [
     {
       "name": "v21_is_a_hecke_representation",
@@ -93,6 +93,14 @@
       "source": "tr V = -(1 + h^2) and 2 - tr V^3 = h^4 [3]_q exactly in Q(q), so the V^3 eigenphase is theta = 2 arcsin(h^2 sqrt([3]_q)/2) = 0.07626930096809879343628895 at q_0: real, O(h^2). A ladder factor built on it is cos(theta) = 0.99709290648998204336 < 1."
     },
     {
+      "name": "gamma_gamma_tower_closed_form_and_bound",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "eps_flavour(V^(3k)) = -h (1 + 2 cos k theta)/[2]^3 reproduces the committed k = [1, 2, 3] to 1e-35. Since |1 + 2 cos| <= 3, every tower member and every probability-weighted average of them gives Q_beta <= 3h E_0/[2]^3 = 0.326065864707 MeV, i.e. F_required >= 2.399311. A factor above 1 needs weights summing to more than 2.4 (a multiplicity), which the corpus does not derive."
+    },
+    {
       "name": "scored_cell_reproduced_and_cosh_lever_still_far_too_small",
       "computed": "PASS",
       "expected": "PASS",
@@ -102,11 +110,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 22,
   "computation": "qbeta-d-eigenphase-real-or-imaginary",
   "scriptFile": "qbeta_d_eigenphase_real_or_imaginary_probe.py",
-  "scriptHash": "f03dde3e2285",
-  "scriptCommitSha": "7f0529878ff7a0630a01a8049f0107e48ec11291",
+  "scriptHash": "a1d2098b23eb",
+  "scriptCommitSha": "e5d68f9e7ba379b312b990236f834005a3215642",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -232,6 +240,24 @@
       }
     ],
     "theta_V3": "0.07626930096809879343628895492484340226235",
+    "tower": [
+      {
+        "k": 1,
+        "eps_closed_form": "-0.0769805346013641724322626958124",
+        "eps_committed": "-0.07698053460136417243226269581244475136371"
+      },
+      {
+        "k": 2,
+        "eps_closed_form": "-0.0765329553762894953637514954708",
+        "eps_committed": "-0.07653295537628949536375149547078943833526"
+      },
+      {
+        "k": 3,
+        "eps_closed_form": "-0.0757898820174361267004342291591",
+        "eps_committed": "-0.07578988201743612670043422915905553554544"
+      }
+    ],
+    "Q_beta_tower_sup_MeV": "0.326065864707444644237605293582",
     "eps_flavour_V3": "-0.07698053460136417243226269581244475136371",
     "E0_canonical_MeV": "4.22748335562903055026805602659",
     "Q_beta_scored_MeV": "0.3254339287346917072909656439",

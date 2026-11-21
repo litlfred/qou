@@ -412,6 +412,43 @@ def main() -> int:
     xok = v3w is not None \
         and abs(epsF0 - mp.mpf(v3w["eps_flavour"])) < mp.mpf(10) ** -40 \
         and abs(QB_scored - mp.mpf(v3w["Q_beta_MeV"])) < mp.mpf(10) ** -25
+    # whole gamma-gamma tower V^{3k}: eps = -h (1 + 2 cos k theta) / [2]^3
+    # (W = V_3 + V_(2,1); V acts as 1 on V_3). Checked against the committed
+    # V^3, V^6, V^9 values; bounded by 3h/[2]^3 for every k
+    # (PhotonVertexEigenphase.tower_bracket_le_three).
+    two_q = mpv(q + 1 / q)
+    tower_ok = True
+    tower_rows = []
+    def _all_rows(node):
+        if isinstance(node, dict):
+            if str(node.get("element", "")).startswith("V^") and "eps_flavour" in node:
+                yield node
+            for v in node.values():
+                yield from _all_rows(v)
+        elif isinstance(node, list):
+            for v in node:
+                yield from _all_rows(v)
+    seen = set()
+    for r in _all_rows(_json.loads(wtxt)):
+        k = int(r["element"][2:]) // 3
+        if k in seen:
+            continue
+        seen.add(k)
+        pred = -h0 * (1 + 2 * mp.cos(k * theta3)) / two_q ** 3
+        tower_ok &= abs(pred - mp.mpf(r["eps_flavour"])) < mp.mpf(10) ** -35
+        tower_rows.append({"k": k, "eps_closed_form": mp.nstr(pred, 30),
+                           "eps_committed": r["eps_flavour"]})
+    QB_sup = 3 * h0 * E0c / two_q ** 3
+    check("gamma_gamma_tower_closed_form_and_bound",
+          tower_ok and len(seen) >= 3 and MP_QB / QB_sup > 1,
+          f"eps_flavour(V^(3k)) = -h (1 + 2 cos k theta)/[2]^3 reproduces the "
+          f"committed k = {sorted(seen)} to 1e-35. Since |1 + 2 cos| <= 3, every "
+          f"tower member and every probability-weighted average of them gives "
+          f"Q_beta <= 3h E_0/[2]^3 = {mp.nstr(QB_sup, 12)} MeV, i.e. F_required "
+          f">= {mp.nstr(MP_QB / QB_sup, 8)}. A factor above 1 needs weights "
+          "summing to more than 2.4 (a multiplicity), which the corpus does not "
+          "derive.")
+
     F_cur = MP_QB / QB_scored
     a_need = mp.acosh(F_cur)
     short = a_need / abs(mp.im(bDc))
@@ -461,6 +498,8 @@ def main() -> int:
                              "strands (BetaRoutesTwoTerm.pairSum_eq_of_total_eq)",
             "elements": cur_rows,
             "theta_V3": mp.nstr(theta3, 40),
+            "tower": tower_rows,
+            "Q_beta_tower_sup_MeV": mp.nstr(QB_sup, 30),
             "eps_flavour_V3": mp.nstr(epsF0, 40),
             "E0_canonical_MeV": mp.nstr(E0c, 30),
             "Q_beta_scored_MeV": mp.nstr(QB_scored, 30),
