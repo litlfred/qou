@@ -8,7 +8,7 @@
     "lean": "folio/quantum-observable-universe/lean/QOU/LiftingDescent/tm_dilogarithm_evaluation.lean"
   },
   "source_hashes": {
-    "md": "de62c8bc4526",
+    "md": "a84918d7fca1",
     "ts": "c9828d9658b7"
   },
   "criteria": {
@@ -127,6 +127,23 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "voice-emoji-content": [
@@ -198,6 +215,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "voice-first-person-work": [
@@ -269,6 +303,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "voice-time-stamped-notes": [
@@ -340,6 +391,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "voice-unicode-crash": [
@@ -411,6 +479,23 @@
           "def_hash": "63a6e57fead9"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "voice-editorializing": [
@@ -482,6 +567,23 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "voice-scholarly-default": [
@@ -644,6 +746,39 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. The new sentence 'The Lean field chart_eval carries no hypothesis on the domain of z_i.' puts formalisation status inside the italic conjecture statement. It is accurate; it would sit better in a remark or the authorNotes."
       }
     ],
     "voice-title-scholarly": [
@@ -876,6 +1011,38 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. No instance of this criterion."
       }
     ],
     "voice-author-notes-pollution": [
@@ -947,6 +1114,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "voice-status-section": [
@@ -1018,6 +1202,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5b0082576ba9",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "framework-canonical": [
@@ -1089,6 +1290,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "wall-side-correct": [
@@ -1198,6 +1416,24 @@
           "def_hash": "2ff53167ead5"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1424,6 +1660,23 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "canonical-no-numerology": [
@@ -1495,6 +1748,23 @@
           "def_hash": "bfbb93c220cc"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "52b4ba95f5c3",
+          "script_commit_sha": "unknown",
+          "def_hash": "bfbb93c220cc"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "canonical-witness-pinned": [
@@ -1600,6 +1870,23 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -1793,6 +2080,23 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -1864,6 +2168,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "canonical-cal4-acknowledged": [
@@ -1969,6 +2290,23 @@
           "def_hash": "b5e2fdf9d66a"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "da489d748555",
+          "script_commit_sha": "unknown",
+          "def_hash": "b5e2fdf9d66a"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -2074,6 +2412,23 @@
           "def_hash": "c8836d721722"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "852b0645c90b",
+          "script_commit_sha": "unknown",
+          "def_hash": "c8836d721722"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "canonical-no-negative-result-in-paper": [
@@ -2478,6 +2833,24 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7",
+          "graph": "58a5d260384c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -2574,6 +2947,25 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7",
+          "graph": "58a5d260384c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -2968,6 +3360,24 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7",
+          "graph": "58a5d260384c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -3121,6 +3531,25 @@
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -3198,6 +3627,25 @@
           "def_hash": "e08cc9c741f6"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -3277,6 +3725,25 @@
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -3354,6 +3821,25 @@
           "def_hash": "17f40a4ba0f4"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -3855,6 +4341,21 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. No instance of this criterion."
       }
     ],
     "wall-side-statement": [
@@ -4369,6 +4870,36 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. No instance of this criterion."
       }
     ],
     "da-vacuous": [
@@ -4551,6 +5082,36 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. No instance of this criterion."
       }
     ],
     "da-circular": [
@@ -4734,6 +5295,36 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. No instance of this criterion."
       }
     ],
     "da-overclaim": [
@@ -4916,6 +5507,36 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. No instance of this criterion."
       }
     ],
     "da-hidden-dof": [
@@ -5099,6 +5720,36 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. No instance of this criterion."
       }
     ],
     "da-non-sequitur": [
@@ -5282,6 +5933,36 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. No instance of this criterion."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -5467,6 +6148,36 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. The .md now restricts z_i > -1. In tm_dilogarithm_evaluation.lean, z : N -> R is opaque and TmDivisorChartInputs.chart_eval is stated for every i with no domain hypothesis. The conjecture is a hypothesis, so nothing false is proved, but the two statements now differ."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Fixed: the .md now states that the Lean field has no domain hypothesis, so the two statements no longer differ silently."
       }
     ],
     "da-citation-misuse": [
@@ -5650,6 +6361,36 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. No instance of this criterion."
       }
     ],
     "da-definitional-ambiguity": [
@@ -5837,6 +6578,36 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. Half fixed. The domain of z_i is now stated. The corpus defines ln_q(1+x) as the series sum (-1)^{n+1} x^n/[n]_q (quaternionic-spectral-resolvents, mass-endomorphism-tower-proof). With the symmetric [n]_q ~ q^{n-1} that series converges only for |x| < q, and the series -Li2^q(-z) likewise needs |z| < q. z_i > -1 makes ln_q(1+t) defined on [0, z_i] only through the analytic continuation (q - q^{-1}) sum_k ln(1 + t q^{-1-2k}), defined for t > -q. Then z_i > -1 is sufficient but not the boundary, and the second equality needs |z_i| < q, which is still unstated."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Fixed. With symmetric [n]_q ~ q^{n-1}/(1-q^{-2}) the radius of Li2^q is q (q > 1). The continuation is (q - q^{-1}) sum_k (-Li2(-z q^{-1-2k})) on the series side and (q - q^{-1}) sum_k ln(1 + t q^{-1-2k}) under the integral; both are defined for z > -q, so for every z_i > -1."
       }
     ],
     "da-empirical-fragility": [
@@ -6020,6 +6791,36 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. No instance of this criterion."
       }
     ],
     "da-physical-implausibility": [
@@ -6203,6 +7004,36 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. No instance of this criterion."
       }
     ],
     "da-reproducibility": [
@@ -6386,6 +7217,36 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. No instance of this criterion."
       }
     ],
     "da-referee-verdict": [
@@ -6571,6 +7432,36 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. No instance of this criterion."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -6664,6 +7555,21 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. No instance of this criterion."
       }
     ],
     "expo-milnor-clarity": [
@@ -6765,6 +7671,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "cite-named-theorem": [
@@ -6836,6 +7759,23 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "voice-agent-speak": [
@@ -6907,6 +7847,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "proof-not-machine-trivial": [
@@ -7410,6 +8367,21 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. No instance of this criterion."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -7520,6 +8492,21 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. No instance of this criterion."
       }
     ],
     "trap-em-dash": [
@@ -7630,6 +8617,21 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. No instance of this criterion."
       }
     ],
     "trap-triples": [
@@ -7740,6 +8742,21 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. No instance of this criterion."
       }
     ],
     "trap-closing-aphorism": [
@@ -7850,6 +8867,21 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. No instance of this criterion."
       }
     ],
     "trap-meta-commentary": [
@@ -7960,6 +8992,21 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. No instance of this criterion."
       }
     ],
     "trap-thesis-restatement": [
@@ -8070,6 +9117,21 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. No instance of this criterion."
       }
     ],
     "trap-performed-warmth": [
@@ -8180,6 +9242,21 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. No instance of this criterion."
       }
     ],
     "trap-superlative": [
@@ -8290,6 +9367,21 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. No instance of this criterion."
       }
     ],
     "trap-nonspeakable": [
@@ -8400,6 +9492,21 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. No instance of this criterion."
       }
     ],
     "wall-base-ring-minimal": [
@@ -8509,6 +9616,23 @@
           "def_hash": "440226b73b33"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "foreshadows-point-forward": [
@@ -8602,6 +9726,24 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7",
+          "graph": "58a5d260384c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "dak-companion-present": [
@@ -8697,6 +9839,21 @@
           "version": "v1"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
         "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
       }
     ],
@@ -8917,6 +10074,21 @@
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
         "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
       }
     ],
     "acronym-in-glossary": [
@@ -8970,6 +10142,23 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "da-arity-conflation": [
@@ -9062,6 +10251,36 @@
         "reviewed_at": "2026-11-21T21:15:00.000Z",
         "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
         "evidence": "Re-read at c4b1ef2. 2f18395 adds to the closing note: ', and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "a84918d7fca1",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. The closing note now reads 'The series converges for |z| < q; for other z_i > -1 both sides are meant by analytic continuation. The Lean field chart_eval carries no hypothesis on the domain of z_i.' in place of 'and z_i > -1, so that ln_q(1+t) is defined on the whole interval of integration'. No instance of this criterion."
       }
     ],
     "id-unique": [
