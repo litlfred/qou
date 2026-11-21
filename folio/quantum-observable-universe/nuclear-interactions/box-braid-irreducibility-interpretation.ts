@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   interprets: "prop:box-braid-irreducibility",
   label: "rem:box-braid-irreducibility-interpretation",
-  title: "Box-braid vertex structure and neutrino stability",
+  title: "Box-braid vertex structure and suppression of neutrino decay",
   tags: [
     "neutrino",
     "stability",
