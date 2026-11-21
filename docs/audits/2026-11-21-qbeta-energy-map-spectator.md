@@ -205,3 +205,25 @@ equal (`trace_word_eq`), so the Gibbs energy difference is 2·k_B T·ln q = 2E�
 defines, i.e. the corpus's partition-function reading applied to the T³ sectors. The dictionary
 block states it for Wedderburn blocks; applying it to weight-space sectors is one step beyond
 that block, and is named here rather than hidden.
+
+## 11. The Gibbs reading on T³ sectors is the dictionary's own microstates
+
+§10 named one step: the dictionary (E = −ln y/β, β = ln q) is stated for Wedderburn blocks, and
+the n–p cell uses T³ weight-space sectors. That step is not new. Under Schur–Weyl a block's
+U_q(sl₂) factor V_λ has a K-eigenbasis, and its quantum trace is Tr(K|V_λ) = Σ_μ q^μ over the
+weights μ of V_λ. Each q^μ is a Boltzmann weight at β = ln q with energy −μ (`state_weight`;
+one strand: [2]_q = q + q⁻¹ is the two-state partition function, `qd2_is_partition`). So the
+block weight is itself a partition function over the K-weight states, and the T³ sectors are
+those states. The sector energy difference n − p is the weight difference ΔH = 2 times
+k_B T·ln q.
+
+**Chain, with nothing hidden:**
+1. convention-D trace = Tr(K^{⊗n}·)/[2]^n (corpus, bean `qou-99qc`);
+2. K grouplike ⇒ trace multiplies over disjoint parts, H = log_q K additive (§10);
+3. the corpus Gibbs reading at β = ln q, whose microstates are the K-weight states (§11);
+4. k_B T in MeV = m_e·c_q²·ℏ_q = E₀ (`def:quantum-temperature`, `def:information-speed-of-light`,
+   CAL-1), with the dictionary unit reconciled (§9);
+5. result: n–p cell = 2E₀·ln q = 0.873537 MeV at the proton q₀.
+
+**Still open:** the tower factor (ruled, +1 %); the reading of the cell (Q_β or m_n − m_p). The
+cell ignores the β-decay word (§3).
