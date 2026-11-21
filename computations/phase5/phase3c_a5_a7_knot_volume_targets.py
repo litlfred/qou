@@ -208,7 +208,7 @@ def main():
         "clusters: ⁶Li=⁴He+D, ⁷Li=⁴He+T, ⁷Be=⁴He+³He. Separation "
         "energies computed from AME 2020."
     )
-    w.set_content_block("prop:proton-mass-substrate-identity")
+    w.set_content_block("conj:proton-mass-substrate-identity")
     w.add_data("alpha_cluster_separations_MeV", {
         "6Li_alpha_d": str(mp.nstr(S_li6, 10)),
         "7Li_alpha_t": str(mp.nstr(S_li7, 10)),

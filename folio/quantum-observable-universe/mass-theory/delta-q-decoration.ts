@@ -14,7 +14,7 @@ import { definition } from "../../schema/builders";
  * Key application: round-18 finding that the H_2 molecular braid's δ_q
  * decoration projects onto the (3,1) and (2,1,1) Wedderburn channels
  * (transpose pair), corresponding to T_{3,5} and T_{2,9} intertwining
- * the 4-strand bound state — see prop:force-carrier-intertwining-correspondence.
+ * the 4-strand bound state — see conj:force-carrier-intertwining-correspondence.
  *
  * Computational implementation: computations/delta_q_decoration.py
  * Cached witness: computations/delta-q-decoration.witness.json

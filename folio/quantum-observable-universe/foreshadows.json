@@ -351,11 +351,11 @@
     },
     "conj:proton-borromean-assembly": {
       "derived": [
-        "prop:proton-mass-substrate-identity"
+        "conj:proton-mass-substrate-identity"
       ],
       "declared": [],
       "effective": [
-        "prop:proton-mass-substrate-identity"
+        "conj:proton-mass-substrate-identity"
       ]
     },
     "conj:q-geometric-langlands": {
@@ -502,12 +502,12 @@
     "prop:weak-spectral-completeness": {
       "derived": [
         "prop:bar-t-duality-substrate",
-        "prop:weak-symmetric-normalization"
+        "conj:weak-symmetric-normalization"
       ],
       "declared": [],
       "effective": [
         "prop:bar-t-duality-substrate",
-        "prop:weak-symmetric-normalization"
+        "conj:weak-symmetric-normalization"
       ]
     },
     "conj:wigner-axiom": {
@@ -1057,11 +1057,11 @@
     },
     "prf:bond-order-eq-jet-degree": {
       "derived": [
-        "prop:jet-prefix-gb-filtration"
+        "conj:jet-prefix-gb-filtration"
       ],
       "declared": [],
       "effective": [
-        "prop:jet-prefix-gb-filtration"
+        "conj:jet-prefix-gb-filtration"
       ]
     },
     "prf:borromean-markov-trace-closed-form": {
@@ -2787,7 +2787,7 @@
         "prf:interface-knot-markov-z"
       ]
     },
-    "prop:proton-mass-substrate-identity": {
+    "conj:proton-mass-substrate-identity": {
       "derived": [
         "rem:proton-mass-substrate-identity-derivation"
       ],

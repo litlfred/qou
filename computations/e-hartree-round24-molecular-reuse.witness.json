@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T21:07:23.015395+00:00",
-  "commitSha": "unknown",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T04:37:51.543393+00:00",
+  "commitSha": "2f9ef58d2792aa97b41d03bd00bd30c583911694",
   "assertions": [
     {
       "name": "genus-4 coprime torus-knot sector is UNIQUE: {(2,9),(3,5)} (crossings 9,10) -- so the force-carrier complexity cplx is the only one (no molecular-vs-free distinction; LEG 1 discharged)",
@@ -29,19 +29,19 @@
   "allPassed": true,
   "computation": "e-hartree-round24-molecular-reuse",
   "scriptFile": "e_hartree_round24_molecular_reuse.py",
-  "scriptHash": "c853c04ecf76",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "02b3a738b53e",
+  "scriptCommitSha": "4368f190768ffff142d30a9a01fc47befb68ba1c",
   "precisionMetadata": {
     "enumeration": "exact integer arithmetic (Diophantine; no rounding)",
     "cplx_eval": "float64 reference value; structural check tol=1.0",
     "stdlib_only": true
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.13.18",
     "stdlib_only": true,
     "note": "no sympy/mpmath/qou_substrate required (integer enumeration + float64 reference eval)"
   },
-  "description": "conj:e-hartree round 24 (the molecular-reuse residual): examines the round-23 'molecular EM exchange reuses the bare EM complexity cplx' assumption against the UPSTREAM prop:em-coupling-projection (no circularity -- conj:e-hartree already uses it).  It decomposes into two legs, neither a new gap.  LEG 1 ('the molecule uses the bare complexity cplx = q[9]_q[10]_q') is DISCHARGED by Bring uniqueness: the genus-4 torus sector is exactly {(2,9),(3,5)} (re-derived here, exact), so there is ONE force-carrier complexity, a ring-invariant surviving any specialization -- no molecular-vs-free distinction is possible.  LEG 2 ('the molecular (2,2)-block exchange costs cplx and the covalent pair gives cplx^2') is NOT separate: it is the conjecture's own (2,2)=EM identification (absent from the 2-strand em-coupling-projection) plus the covalent Pauli-2 count.  Circularity caveat: prop:force-carrier-intertwining-correspondence is itself conditional on conj:e-hartree, so cannot prove the (2,2)=EM bridge.  NET: molecular-reuse is not a third gap; the residual is exactly (a) the (2,2)=EM dressed identification (core conditional) and (b) the m_e c^2 CAL-1 unit.  This tightens the round-23 accounting.  No fit; no experimental number.",
+  "description": "conj:e-hartree round 24 (the molecular-reuse residual): examines the round-23 'molecular EM exchange reuses the bare EM complexity cplx' assumption against the UPSTREAM prop:em-coupling-projection (no circularity -- conj:e-hartree already uses it).  It decomposes into two legs, neither a new gap.  LEG 1 ('the molecule uses the bare complexity cplx = q[9]_q[10]_q') is DISCHARGED by Bring uniqueness: the genus-4 torus sector is exactly {(2,9),(3,5)} (re-derived here, exact), so there is ONE force-carrier complexity, a ring-invariant surviving any specialization -- no molecular-vs-free distinction is possible.  LEG 2 ('the molecular (2,2)-block exchange costs cplx and the covalent pair gives cplx^2') is NOT separate: it is the conjecture's own (2,2)=EM identification (absent from the 2-strand em-coupling-projection) plus the covalent Pauli-2 count.  Circularity caveat: conj:force-carrier-intertwining-correspondence is itself conditional on conj:e-hartree, so cannot prove the (2,2)=EM bridge.  NET: molecular-reuse is not a third gap; the residual is exactly (a) the (2,2)=EM dressed identification (core conditional) and (b) the m_e c^2 CAL-1 unit.  This tightens the round-23 accounting.  No fit; no experimental number.",
   "contentBlock": "conj:e-hartree-categorical-derivation",
   "data": {
     "q0": "1.1099785827513808",
@@ -64,5 +64,6 @@
     "finding": "Round 23's 'molecular-reuse assumption' is not a free, separable input.  LEG 1 (reuse the bare complexity) is forced by Bring uniqueness -- genus-4 gives the UNIQUE pair {(2,9),(3,5)}, so the force-carrier complexity cplx = q[9]_q[10]_q (= 1/alpha_EM, the -0.155% bare value) is the only one the theory has, a ring-invariant with no molecular-vs-free version.  LEG 2 (the molecular (2,2) exchange costs cplx, two exchanges => cplx^2) is the conjecture's own (2,2)=EM identification plus the covalent Pauli-2 count, not an extra assumption.  Intertwining- correspondence cannot close LEG 2 (it is e-hartree-conditional -- circular).  Residual = (a) (2,2)=EM dressed identification + (b) m_e c^2 CAL-1; the molecular-reuse dissolves into these."
   },
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "durationMs": 0
 }

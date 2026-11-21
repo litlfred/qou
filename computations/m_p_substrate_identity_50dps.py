@@ -500,7 +500,7 @@ def main():
         "Substrate identity: m_p = 2·m_μ·|tr_M|·[3]_q!/q^3 - 12·m_e where "
         "the '12' is the Ocneanu cancellation reciprocal."
     )
-    w.set_content_block("prop:proton-mass-substrate-identity")
+    w.set_content_block("conj:proton-mass-substrate-identity")
     w.set_audit_only("docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md")
 
     w.add_parameter("q0", mp.nstr(q, 25))

@@ -1,4 +1,4 @@
-### Proof of joint commutativity
+### Argument sketch for joint commutativity
 
 **Step 1 (braid action fixes $e_{(2,2)}$).** $e_{(2,2)} \in Z(H_4(q))$
 is central by definition, so for any $\beta \in B_4$:
