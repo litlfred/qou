@@ -147,6 +147,32 @@ theorem rModel_r1_left (b : Bool) (x y : Fin (d + 1)) :
       rModel_X_true, qWt_rev, inv_inv]
     rw [← hf]
 
+/-! ### Weight conservation -/
+
+include hs in
+theorem qWt_mul_qWt_of_add_eq {a b a' b' : Fin (d + 1)} (h : (a : ℕ) + b = a' + b') :
+    qWt s d a * qWt s d b = qWt s d a' * qWt s d b' := by
+  unfold qWt
+  rw [← zpow_add₀ hs, ← zpow_add₀ hs]
+  congr 1
+  unfold wt
+  have h' : ((a : ℕ) : ℤ) + b = a' + b' := by exact_mod_cast h
+  linear_combination (-4 : ℤ) * h'
+
+/-- **The crossing tensors conserve weight:** `K(uin) K(oin) X = X K(uout) K(oout)`. This is the
+identity a crossing needs for a full turn of its neighbourhood to move the turns of its incoming
+edges onto its outgoing edges. -/
+theorem rModel_X_turn (b : Bool) (uin uout oin oout : Fin (d + 1)) :
+    qWt s d uin * qWt s d oin * (rModel s hs d).X b uin uout oin oout =
+      (rModel s hs d).X b uin uout oin oout * (qWt s d uout * qWt s d oout) := by
+  by_cases h : (uin : ℕ) + oin = uout + oout
+  · rw [qWt_mul_qWt_of_add_eq s hs d h, mul_comm]
+  · cases b
+    · rw [rModel_X_false, QOU.Mass.QuantumSl2.Markov.rCheckInv_grade s hs d _ _ (by simpa [add_comm] using h)]
+      ring
+    · rw [rModel_X_true, QOU.Mass.QuantumSl2.Markov.rCheck_grade s hs d _ _ (by simpa [add_comm] using h)]
+      ring
+
 /-! ### Crossing symmetry in coordinates -/
 
 section Crossing
