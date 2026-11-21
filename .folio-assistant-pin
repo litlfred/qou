@@ -302,4 +302,19 @@
 # KNOWN BREAK carried forward: .github/workflows/publish.yml is still absent at this
 # sha, so build.yml's `uses:` below names a file that does not exist (see 82b389982).
 #
-ba3914beca12f29a1f12d0fc2278b813d6b63241
+# BUMPED 2026-11-21 to 42bd8d605 (folio-assistant#3191 merged), owner reply "1 2" in the
+# thread "Turn the Lean build green on main". The index now pins cat-harness-tools
+# 6d48e106: #2487 (lean-packages warns once on stderr when the registry is read before
+# configureLeanPackages) and #2488 (defterm-forward-ref skips prose blocks and matches
+# a defterm by its label, not its slug).
+#
+# `run-validate folio/quantum-observable-universe` (sparse checkout):
+#
+#     ba3914bec, qou main before this PR     ->  "145 issue(s)" (25 defterm-forward-ref)
+#     42bd8d605, with this PR's photon-row drop ->  "125 issue(s)" (5 defterm-forward-ref)
+#     the other 120 issues are the same in both runs.
+#
+# KNOWN BREAK carried forward: .github/workflows/publish.yml is still absent at this
+# sha, so build.yml's `uses:` below names a file that does not exist (see 82b389982).
+#
+42bd8d605d8c4416656611be69def69e6e855367
