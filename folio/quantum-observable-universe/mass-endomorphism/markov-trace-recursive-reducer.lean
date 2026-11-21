@@ -872,7 +872,7 @@ with `x'` fixing the top point and lengths adding, so
 Every definition here is structurally recursive, so Lean's own termination
 check is the termination proof: the evaluator is a total function. What is
 NOT proved is that `trWord` satisfies all axioms of `IsMarkovTrace` (proved
-below: `normalised`, `stable`, `hecke`, `far_comm`); that is
+below: `normalised`, `stable`, `hecke`, `far_comm`, `braid`); that is
 the existence half (Ocneanu). By `markovTrace_unique`, if it does, it is the
 trace. The `example`s below are kernel-checked computations, not proofs of the
 axioms: the Hecke quadratic, a braid relation, the product law, and agreement
@@ -921,8 +921,8 @@ example : trWord (5 : ℤ) 3 3 [0, 0, 2, 2] = trWord (5 : ℤ) 3 1 [0, 0] * trWo
 
 `trWord` is normalised (`trWord_nil`) and stable under adding a strand
 (`trWord_stable`); it also satisfies the Hecke relation (`trWord_hecke`) and
-far commutation (`trWord_far_comm`), proved further below. Strip, cyclicity
-and the braid relation are not yet proved for `trWord`. -/
+far commutation (`trWord_far_comm`) and the braid relation (`trWord_braid`),
+proved further below. Strip and cyclicity are not yet proved for `trWord`. -/
 
 theorem trBasis_range {R : Type*} [CommRing R] (z h : R) :
     ∀ m : ℕ, trBasis z h m (List.range m) = 1
@@ -1296,6 +1296,116 @@ theorem trWord_far_comm (n : ℕ) (u v : List ℤ) (i j : ℤ) (hd : 2 ≤ |i - 
   exact key
 
 end FarCommProof
+
+
+/-! ### The braid relation for the evaluator
+
+Same reduction as for the Hecke relation: by linearity it suffices to check one
+basis permutation, written as `pre ++ p :: q :: r :: rest`. The six relative
+orders of `p, q, r` are checked by case split. -/
+
+theorem swapAt_mid (pre rest : List ℕ) (x y : ℕ) :
+    swapAt (pre ++ x :: y :: rest) pre.length = pre ++ y :: x :: rest := by
+  apply List.ext_getElem?
+  intro k
+  rw [swapAt_getElem? _ _ (by simp)]
+  by_cases a : k = pre.length
+  · subst a; simp
+  · by_cases b : k = pre.length + 1
+    · subst b; simp
+    · simp only [a, b, if_false]
+      rcases Nat.lt_or_gt_of_ne a with c | c
+      · simp [List.getElem?_append_left c]
+      · rw [List.getElem?_append_right (by omega), List.getElem?_append_right (by omega)]
+        obtain ⟨d, rfl⟩ : ∃ d, k = pre.length + 2 + d := ⟨k - pre.length - 2, by omega⟩
+        simp [show pre.length + 2 + d - pre.length = d + 2 by omega]
+
+theorem getD_mid (pre rest : List ℕ) (x : ℕ) : (pre ++ x :: rest).getD pre.length 0 = x := by
+  simp [List.getD_eq_getElem?_getD]
+
+section BraidProof
+variable {R : Type*} [CommRing R] (z h : R)
+
+theorem braid_single (v : List ℕ) (m : ℕ) (a : R) (pre rest : List ℕ) (p q r : ℕ)
+    (hpq : p ≠ q) (hqr : q ≠ r) (hpr : p ≠ r) :
+    trComb z h m (mulGens h (mulGen h (mulGen h (mulGen h [(a, pre ++ p :: q :: r :: rest)]
+      pre.length) (pre.length + 1)) pre.length) v)
+    = trComb z h m (mulGens h (mulGen h (mulGen h (mulGen h [(a, pre ++ p :: q :: r :: rest)]
+      (pre.length + 1)) pre.length) (pre.length + 1)) v) := by
+  have s0 : ∀ x y z' : ℕ, swapAt (pre ++ x :: y :: z' :: rest) pre.length
+      = pre ++ y :: x :: z' :: rest := fun x y z' => swapAt_mid pre (z' :: rest) x y
+  have s1 : ∀ x y z' : ℕ, swapAt (pre ++ x :: y :: z' :: rest) (pre.length + 1)
+      = pre ++ x :: z' :: y :: rest := by
+    intro x y z'
+    have := swapAt_mid (pre ++ [x]) rest y z'
+    simpa using this
+  have g0 : ∀ x y z' : ℕ, (pre ++ x :: y :: z' :: rest).getD pre.length 0 = x :=
+    fun x y z' => getD_mid pre _ x
+  have g1 : ∀ x y z' : ℕ, (pre ++ x :: y :: z' :: rest).getD (pre.length + 1) 0 = y := by
+    intro x y z'; have := getD_mid (pre ++ [x]) (z' :: rest) y; simpa using this
+  have g2 : ∀ x y z' : ℕ, (pre ++ x :: y :: z' :: rest).getD (pre.length + 2) 0 = z' := by
+    intro x y z'; have := getD_mid (pre ++ [x, y]) rest z'; simpa using this
+  rw [evalC_mulGens, evalC_mulGens]
+  rcases Nat.lt_or_gt_of_ne hpq with h1 | h1 <;> rcases Nat.lt_or_gt_of_ne hqr with h2 | h2 <;>
+    rcases Nat.lt_or_gt_of_ne hpr with h3 | h3 <;>
+    first
+    | (exfalso; omega)
+    | (simp (disch := omega) only [mulGen, List.flatMap_cons, List.flatMap_nil, List.append_nil,
+          List.cons_append, List.nil_append, s0, s1, g0, g1, g2, if_pos, if_neg,
+          List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]
+       all_goals ring)
+
+theorem braid_single' (v : List ℕ) (m i : ℕ) (a : R) (w : List ℕ) (hi : i + 2 < w.length)
+    (hw : w.Nodup) :
+    trComb z h m (mulGens h (mulGen h (mulGen h (mulGen h [(a, w)] i) (i + 1)) i) v)
+    = trComb z h m (mulGens h (mulGen h (mulGen h (mulGen h [(a, w)] (i + 1)) i) (i + 1)) v) := by
+  obtain ⟨p, q, r, rest, hd⟩ : ∃ p q r rest, w.drop i = p :: q :: r :: rest := by
+    match hm : w.drop i with
+    | p :: q :: r :: rest => exact ⟨p, q, r, rest, rfl⟩
+    | [] => have := congrArg List.length hm; simp at this; omega
+    | [_] => have := congrArg List.length hm; simp at this; omega
+    | [_, _] => have := congrArg List.length hm; simp at this; omega
+  have hw' : w = w.take i ++ p :: q :: r :: rest := by rw [← hd, List.take_append_drop]
+  have hl : (w.take i).length = i := by simp; omega
+  rw [hw'] at hw ⊢
+  have hn := hw
+  simp only [List.nodup_append, List.nodup_cons, List.mem_cons, not_or] at hn
+  obtain ⟨-, ⟨⟨hpq, hpr, -⟩, ⟨hqr, -⟩, -⟩, -⟩ := hn
+  have := braid_single z h v m a (w.take i) rest p q r hpq hqr hpr
+  rw [hl] at this
+  exact this
+
+theorem braid_comb (v : List ℕ) (m L i : ℕ) (hi : i + 2 < L) : ∀ e : List (R × List ℕ),
+    PermInv L e →
+    trComb z h m (mulGens h (mulGen h (mulGen h (mulGen h e i) (i + 1)) i) v)
+    = trComb z h m (mulGens h (mulGen h (mulGen h (mulGen h e (i + 1)) i) (i + 1)) v)
+  | [], _ => by simp [mulGen, mulGens_nil_left, trComb]
+  | p :: e, he => by
+    have ih := braid_comb v m L i hi e (fun q hq => he q (by simp [hq]))
+    obtain ⟨hl, hn⟩ := he p (by simp)
+    have hs := braid_single' z h v m i p.1 p.2 (by omega) hn
+    rw [show p :: e = [(p.1, p.2)] ++ e by simp]
+    simp only [mulGen_app, mulGens_app, evalC_app]
+    rw [hs, ih]
+
+theorem trWord_braid (n : ℕ) (u v : List ℤ) (i : ℤ) (hs : Supp n (u ++ [i, i + 1] ++ v)) :
+    trWord z h n (u ++ [i, i + 1, i] ++ v) = trWord z h n (u ++ [i + 1, i, i + 1] ++ v) := by
+  have hi := hs i (by simp)
+  have hi1 := hs (i + 1) (by simp)
+  have e1 : (i + 1).toNat = i.toNat + 1 := by omega
+  have hu : ∀ c ∈ u.map Int.toNat, c + 1 < n + 1 := by
+    intro c hc
+    obtain ⟨d, hd, rfl⟩ := List.mem_map.mp hc
+    have := hs d (by simp [hd]); omega
+  have h0 : PermInv (n + 1) [((1 : R), List.range (n + 1))] := by
+    intro p hp; simp at hp; subst hp; exact ⟨by simp, List.nodup_range⟩
+  have key := braid_comb z h (v.map Int.toNat) (n + 1) (n + 1) i.toNat (by omega) _
+    (mulGens_inv h (n + 1) _ _ hu h0)
+  unfold trWord
+  simp only [List.map_append, List.map_cons, List.map_nil, mulGens_cat, e1]
+  exact key
+
+end BraidProof
 
 end Evaluator
 
