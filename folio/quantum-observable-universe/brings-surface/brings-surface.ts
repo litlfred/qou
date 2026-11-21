@@ -173,7 +173,6 @@ export default chapter({
       label: "sec:archimedean-condition-statement",
       blocks: [
         "archimedean-condition-intro",
-        "descent-to-zero",
         "archimedean-condition",
         "chi-minus-six-chain",
         "archimedean-calabi-yau",
@@ -267,6 +266,7 @@ export default chapter({
         "descartes-theorem-intro",
         "descartes",
         "descartes-proof",
+        "descent-to-zero",
         "terminal-morphism-brings",
         "universality-general",
         "archimedean-yekutieli",

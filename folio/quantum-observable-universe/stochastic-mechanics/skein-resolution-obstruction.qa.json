@@ -3,9 +3,9 @@
   "label": "def:skein-resolution-obstruction",
   "kind": "definition",
   "paths": {
-    "ts": "folio/quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.ts",
-    "md": "folio/quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.md",
-    "lean": "folio/quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.lean"
+    "ts": "folio/quantum-observable-universe/stochastic-mechanics/skein-resolution-obstruction.ts",
+    "md": "folio/quantum-observable-universe/stochastic-mechanics/skein-resolution-obstruction.md",
+    "lean": "folio/quantum-observable-universe/stochastic-mechanics/skein-resolution-obstruction.lean"
   },
   "source_hashes": {
     "md": "81babc95bfe3",
@@ -333,7 +333,7 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
-        "notes": "{\"regimes\":[\"real-gt-1\",\"real-positive\",\"root-of-unity\",\"symbolic\"],\"chapter\":\"braids-and-knots\",\"expected\":[\"generic-R\",\"mod-gt-1\",\"mod-lt-1\",\"na\",\"real-positive\",\"symbolic\"]}"
+        "notes": "{\"regimes\":[\"real-gt-1\",\"real-positive\",\"root-of-unity\",\"symbolic\"],\"chapter\":\"stochastic-mechanics\",\"expected\":[\"generic-R\",\"mod-gt-1\",\"mod-lt-1\",\"na\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
@@ -1038,7 +1038,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Checked mathematical consistency of the claim '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and found no counterexamples under the stated conditions.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.ts:1"
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/skein-resolution-obstruction.ts:1"
       },
       {
         "result": "pass",
@@ -1105,7 +1105,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Traced dependencies ['thm:qou-obstruction-reduction', 'rem:kummer-filtration-obstruction', 'prop:ns-obstruction-tower'] for 'def:skein-resolution-obstruction' and confirmed no circular definitions or justifications.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.ts:1"
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/skein-resolution-obstruction.ts:1"
       },
       {
         "result": "pass",
@@ -1172,7 +1172,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.ts:1"
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/skein-resolution-obstruction.ts:1"
       },
       {
         "result": "pass",
@@ -1206,7 +1206,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Logical transitions in the derivation of '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' are sound; no non-sequiturs detected.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.ts:1"
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/skein-resolution-obstruction.ts:1"
       },
       {
         "result": "pass",
@@ -1274,7 +1274,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All references and uses ['thm:qou-obstruction-reduction', 'rem:kummer-filtration-obstruction', 'prop:ns-obstruction-tower'] cited in 'def:skein-resolution-obstruction' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.ts:1"
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/skein-resolution-obstruction.ts:1"
       },
       {
         "result": "pass",
@@ -1308,7 +1308,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All terms and algebraic structures in 'def:skein-resolution-obstruction' are uniquely defined or standard.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.ts:1"
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/skein-resolution-obstruction.ts:1"
       },
       {
         "result": "pass",
@@ -1342,7 +1342,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The algebraic statements in 'def:skein-resolution-obstruction' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.ts:1"
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/skein-resolution-obstruction.ts:1"
       },
       {
         "result": "pass",
@@ -1376,7 +1376,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Physical dimensions and units in 'def:skein-resolution-obstruction' are consistent with quantum observable universe models.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.ts:1"
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/skein-resolution-obstruction.ts:1"
       },
       {
         "result": "pass",
@@ -1408,9 +1408,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.327339Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: folio/quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Order/Ring/Lemmas.olean' of module Mathlib.Algebra.Order.Ring.Lemmas does not exist.",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: folio/quantum-observable-universe/stochastic-mechanics/skein-resolution-obstruction.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Order/Ring/Lemmas.olean' of module Mathlib.Algebra.Order.Ring.Lemmas does not exist.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.lean:1 — folio/quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Order/Ring/Lemmas.olean' of module Mathlib.Algebra.Order.Ring.Lemmas does not exist"
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/skein-resolution-obstruction.lean:1 — folio/quantum-observable-universe/stochastic-mechanics/skein-resolution-obstruction.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Order/Ring/Lemmas.olean' of module Mathlib.Algebra.Order.Ring.Lemmas does not exist"
       },
       {
         "result": "pass",
@@ -1442,11 +1442,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.327339Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: folio/quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Order/Ring/Lemmas.olean' of module Mathlib.Algebra.Order.Ring.Lemmas does not exist",
+        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: folio/quantum-observable-universe/stochastic-mechanics/skein-resolution-obstruction.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Order/Ring/Lemmas.olean' of module Mathlib.Algebra.Order.Ring.Lemmas does not exist",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling fails compilation with error: folio/quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Order/Ring/Lemmas.olean' of module Mathlib.Algebra.Order.Ring.Lemmas does not exist",
-        "evidence": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: folio/quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Order/Ring/Lemmas.olean' of module Mathlib.Algebra.Order.Ring.Lemmas does not exist"
+        "referee_argument": "The Lean sibling fails compilation with error: folio/quantum-observable-universe/stochastic-mechanics/skein-resolution-obstruction.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Order/Ring/Lemmas.olean' of module Mathlib.Algebra.Order.Ring.Lemmas does not exist",
+        "evidence": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: folio/quantum-observable-universe/stochastic-mechanics/skein-resolution-obstruction.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Order/Ring/Lemmas.olean' of module Mathlib.Algebra.Order.Ring.Lemmas does not exist"
       },
       {
         "result": "pass",
