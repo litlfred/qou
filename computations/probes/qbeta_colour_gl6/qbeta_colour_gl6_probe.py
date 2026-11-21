@@ -170,6 +170,57 @@ def main() -> int:
           "1.114 x F_required. Reported, not selected: the label order and trace element are "
           "not ruled.")
 
+    # G5 (addendum): N3 fixes the trace element. Partial quantum trace of R over the last
+    # strand must be a scalar for the Markov move.
+    ptr_scalar = {}
+    for order in ("isospin-major", "colour-major"):
+        lab = labels(order, 3)
+        inv = {v: k for k, v in lab.items()}
+        rank = sorted(lab.values())
+        for kel in ("K6", "K2x1"):
+            if kel == "K6":
+                kd = {l: qs ** (5 - 2 * rank.index(l)) for l in rank}
+            else:
+                kd = {l: qs ** (1 - 2 * inv[l][0]) for l in rank}
+            vals, offdiag = set(), False
+            for sgn in (1, -1):
+                for a in rank:
+                    for a2 in rank:
+                        tot = 0
+                        for b in rank:
+                            v = cross({(a, b): sp.Integer(1)}, 0, sgn, qs)
+                            tot += kd[b] * v.get((a2, b), 0)
+                        tot = sp.simplify(tot)
+                        if a == a2:
+                            vals.add((sgn, tot))
+                        elif tot != 0:
+                            offdiag = True
+            scal = not offdiag and len({v for v in vals if v[0] == 1}) == 1 and \
+                len({v for v in vals if v[0] == -1}) == 1
+            ptr_scalar[(order, kel)] = (scal, sorted(str(v[1]) for v in vals))
+    ok5 = all(ptr_scalar[(o, "K6")][0] for o in ("isospin-major", "colour-major")) and \
+        not any(ptr_scalar[(o, "K2x1")][0] for o in ("isospin-major", "colour-major"))
+    check("G5_markov_fixes_trace_element", ok5,
+          "ptr_last(K R^(+-1)) is a scalar for K6 in the R's own order (both orders): "
+          f"{ptr_scalar[('isospin-major', 'K6')][1]}; for K2 x 1 it is not (isospin-major "
+          f"diagonal values {ptr_scalar[('isospin-major', 'K2x1')][1]}). So closure invariance "
+          "(N3) excludes K2 x 1 and fixes K6.")
+    # G6 (addendum): N1 fixes the order. The ruled D1 isospin charge per quark is q^(+-1).
+    iso_exp = {}
+    for order in ("isospin-major", "colour-major"):
+        lab = labels(order, 3)
+        rank = sorted(lab.values())
+        e = {(t, c): 5 - 2 * rank.index(lab[(t, c)]) for t in (0, 1) for c in range(3)}
+        iso_exp[order] = {e[(0, c)] - e[(1, c)] for c in range(3)}
+    ok6 = iso_exp["isospin-major"] == {6} and iso_exp["colour-major"] == {2}
+    surv = [r for r in rows if r["order"] == "colour-major" and r["trace_element"] == "K6"]
+    check("G6_D1_charge_fixes_order", ok6,
+          f"isospin up/down K6 exponent gap at fixed colour: isospin-major {iso_exp['isospin-major']} "
+          f"(charge q^(+-3)), colour-major {iso_exp['colour-major']} (charge q^(+-1), as in D1; Lean "
+          "GlSixOrderCharge). N1 selects colour-major. Surviving members (colour-major, K6): F = "
+          f"{sorted({r['F'][:14] for r in surv})} (colour summed / colour-neutral). The isospin-major "
+          "F = 2.677 is not derived under N1 and N3.")
+
     allp = all(o for _, o, _ in RESULTS)
     print(f"  {sum(o for _, o, _ in RESULTS)}/{len(RESULTS)} checks passed")
     wb = WitnessBuilder("qbeta-colour-gl6", engine="mpmath")

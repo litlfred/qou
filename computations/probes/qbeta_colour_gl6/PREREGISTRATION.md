@@ -38,3 +38,19 @@ X² = hX + 1, and the block's inverse is X − h.
 ## What this does NOT do
 
 No member is selected by closeness to F_required. Nothing is mapped to MeV.
+
+## Addendum (2026-11-21, after the first run): deriving the order and trace element
+
+Owner direction via the coordinator: derive, do not choose. Written before the derivation
+checks are run. The premises are those of the lepton normalisation (N1 agreement with D1,
+N3 closure invariance), applied to the gl₆ braiding:
+
+* **N3 fixes the trace element.** The Markov move needs the partial quantum trace of R over
+  the last strand to be a scalar. Test, exactly, for K₆ (in the R's own order) and for
+  K₂ ⊗ 1, in both orders. A trace element that fails is excluded.
+* **N1 fixes the order.** D1 weighs the proton and neutron sectors by the isospin charge
+  q^{±1}. For the lexicographic orders on C² ⊗ C³, K₆ restricted to isospin is q^{3(1−2t)}
+  (isospin-major) or q^{(1−2t)} (colour-major) (Lean). Only the order that reproduces
+  q^{±1} agrees with D1.
+
+The verdict is whatever F the surviving member has, including F = 1. Reported either way.

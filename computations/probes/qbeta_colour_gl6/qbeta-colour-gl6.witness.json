@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-21T15:52:37.820941+00:00",
-  "commitSha": "5b6ee7c14d158819b8792cf3f12f0f83c68464e8",
+  "computedAt": "2026-11-21T15:54:36.064750+00:00",
+  "commitSha": "460e9f737ccbee2d7d5620b5642c002d219779ee",
   "assertions": [
     {
       "name": "G1_hecke_and_braid_relations",
@@ -35,14 +35,30 @@
       "passed": true,
       "tolerance": "exact",
       "source": "isospin-major, K6, colour summed: F = q^4 (q^4 + q^2 + 1)/(q^4 - q^2 + 1)^3 exactly (eps_p scales by q^8/(q^4-q^2+1)^3, eps_n by q^4/(q^4-q^2+1)^3); F -> 3 = number of colours as q -> 1; at q0 F = 2.67712056047084, 1.114 x F_required. Reported, not selected: the label order and trace element are not ruled."
+    },
+    {
+      "name": "G5_markov_fixes_trace_element",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "ptr_last(K R^(+-1)) is a scalar for K6 in the R's own order (both orders): ['q**(-6)', 'q**6']; for K2 x 1 it is not (isospin-major diagonal values ['(3 - 2*q**4)/q**2', '(3*q**4 - 2)/q**2', '-1 + 2/q**2', '-2 + 3/q**2', '-q**2 - 1 + 3/q**2', '2*q**2 - 1', '3*q**2 - 1 - 1/q**2', '3*q**2 - 2', 'q**(-2)', 'q**2']). So closure invariance (N3) excludes K2 x 1 and fixes K6."
+    },
+    {
+      "name": "G6_D1_charge_fixes_order",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "isospin up/down K6 exponent gap at fixed colour: isospin-major {6} (charge q^(+-3)), colour-major {2} (charge q^(+-1), as in D1; Lean GlSixOrderCharge). N1 selects colour-major. Surviving members (colour-major, K6): F = ['0.187157941210', '1.0'] (colour summed / colour-neutral). The isospin-major F = 2.677 is not derived under N1 and N3."
     }
   ],
   "allPassed": true,
   "durationMs": 9,
   "computation": "qbeta-colour-gl6",
   "scriptFile": "qbeta_colour_gl6_probe.py",
-  "scriptHash": "09d19cbdbfc4",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ec9b85ac9476",
+  "scriptCommitSha": "460e9f737ccbee2d7d5620b5642c002d219779ee",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
