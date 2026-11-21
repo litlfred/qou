@@ -43,7 +43,7 @@ that the realised splitting is exactly $(1/3) \cdot (q^{1/2} +
 q^{-1/2})/(q + q^{-1})$ of the bound (plus a small higher-order
 correction). The dominant factor is the explicit $1/3$ baked
 into the substrate formula of
-[Substrate-pure derivation of the $u$--$d$ flavor split](../observations/flavor-split-substrate.md).
+[Substrate-pure derivation of the $u$--$d$ flavor split](flavor-split-substrate.md).
 Tightening would require either:
 
 - A finer substrate factor that absorbs the $1/3$ directly into

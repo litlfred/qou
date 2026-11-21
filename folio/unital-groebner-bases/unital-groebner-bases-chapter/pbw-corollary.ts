@@ -9,5 +9,6 @@ export default corollary({
     "thm:unital-groebner-decomposition",
     "thm:buchberger",
   ],
+  cites: ["bokutchen2015pbw"],
   proofs: ["prf:pbw"],
 });

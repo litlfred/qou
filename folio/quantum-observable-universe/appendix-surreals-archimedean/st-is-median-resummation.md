@@ -27,7 +27,7 @@ read as an identity of the two selection rules, not as a new theorem:
 each side is the unique real, single-valued value compatible with the
 asymptotics of $\tilde f$ (Watson/Nevanlinna–Sokal uniqueness supplies
 the analytic half; the valuation quotient
-$\mathcal{O}/\mathfrak{m} \cong \mathbb{R}$ supplies the surreal half). A concrete class on which median resummation is proved to exist: for elements of the Habiro ring that arise from partial theta series through strange identities, the Borel transform of the associated series is resurgent, and its median resummation is analytic on $\mathrm{Re}(x) > 0$ with radial limits at the points $\tfrac{1}{2\pi i}\mathbb{Q}$ of its natural boundary \cite[Thm.~1.2]{crew2023}.
+$\mathcal{O}/\mathfrak{m} \cong \mathbb{R}$ supplies the surreal half). A concrete class on which median resummation is proved to exist: for elements of the Habiro ring that arise from partial theta series through strange identities, the Borel transform of the associated series is resurgent, and its median resummation is analytic on $\mathrm{Re}(x) > 0$ with radial limits at the points $\tfrac{1}{2\pi i}\mathbb{Q}$ of its natural boundary \cite[Thm.~1.2]{crew2023}. A second class: for the holomorphic quantum modular forms $g$ of their Types 4 and 5, $g$ equals the median resummation $\mathcal{S}^{\pi/2}_{\mathrm{med}}$ of its asymptotic expansion at a rational point $-d/c$ \cite[\S3.2]{mcspirit-rolen2025}.
 
 Three consequences:
 
