@@ -135,6 +135,7 @@ export default chapter({
             "pair-skein-mass-formula-proof",
             "flavor-split-substrate",
             "flavor-split-substrate-proof",
+            "flavor-split-substrate-mass",
             "flavor-split-substrate-interpretation",
             "flavor-split-substrate-codata-comparison",
           ],

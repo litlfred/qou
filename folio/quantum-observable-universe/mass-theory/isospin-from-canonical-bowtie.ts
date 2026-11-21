@@ -11,7 +11,7 @@ export default conjecture({
   uses: [
     "prop:crystal-isospin-degeneracy",
     "conj:inter-nucleon-channel-color-tube",
-    "prop:flavor-split-substrate",
+    "conj:flavor-split-substrate-mass",
     "def:bar-involution",
   ],
   computation: {

@@ -1,0 +1,16 @@
+n = 4: weights (b, w) = (2, 1); |W| = 8; ambient KL terms 24, swapped (dropped) 16
+  1. Phi(X) = Z mod 2: True
+  2. Phi(X) == Z: False
+  3. two-strand model, wall weight 1: bulk quadratic True, wall quadratic True, B2 relation KRKR = RKRK True
+     folded Z at q0: weight-space traces {2: -0.069100611329014486519, 0: -0.60686985000375287580, -2: -0.18094212676677350491}
+     folded Z at q~1: weight-space traces {2: -3.2000144000296000364e-17, 0: -4.0000060000660000320e-6, -2: -1.9999950000169999900e-6}
+     naive Phi(X) at q0: weight-space traces {2: -0.17796390295752196432, 0: -0.83364012834643969931, -2: -0.36550198638193919939}
+     naive Phi(X) at q~1: weight-space traces {2: -8.0000480000900002340e-12, 0: -7.9999800001799995680e-6, -2: -5.9999530003229984340e-6}
+n = 5: weights (b, w) = (2, 3); |W| = 8; ambient KL terms 120, swapped (dropped) 112
+  1. Phi(X) = Z mod 2: True
+  2. Phi(X) == Z: False
+  3. two-strand model, wall weight 3: bulk quadratic True, wall quadratic True, B2 relation KRKR = RKRK True
+     folded Z at q0: weight-space traces {2: -0.21032195971551411815, 0: -1.8642100585247170042, -2: -0.83390300995609435827}
+     folded Z at q~1: weight-space traces {2: -9.6000432001016001540e-17, 0: -0.000012000018000214000104, -2: -5.9999850002510000380e-6}
+     naive Phi(X) at q0: weight-space traces {2: 2.4314450306433644171, 0: 0.065017111005273753903, -2: -0.81178941830276894987}
+     naive Phi(X) at q~1: weight-space traces {2: 8.0000680003400012700e-6, 0: 3.2000175999656001868e-17, -2: -9.9999670001409989200e-6}

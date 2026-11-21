@@ -441,6 +441,7 @@ const ORDER: Array<FileSlot | Reference> = [
 
   // ── Lusztig 1993 ──────────────────────────────────────────────
   { id: "lusztig1993" },
+  { id: "lusztig2003" },
 
   // ── Atiyah 1988 ───────────────────────────────────────────────
   { id: "atiyah1988" },

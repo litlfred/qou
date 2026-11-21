@@ -11,7 +11,7 @@ that framing is wrong, and it was mine.**  The `1/4` is not a free parameter and
 there is nothing to derive: it is fixed by the *normalisation convention* of `δ`,
 and it changes to `1/2` under a different, equally natural convention.
 
-The corpus defines the substrate flavour split (`prop:flavor-split-substrate`,
+The corpus defines the substrate flavour split (`conj:flavor-split-substrate-mass`,
 `_li_2_q_util.flavor_split_leading`) as
 
     δ  =  Δm / M_N        with   Δm = m_n − m_p   and   M_N = (m_p + m_n)/2
@@ -38,7 +38,7 @@ is the real question, and the corpus answers it.
 ## What this does NOT retire — and it is the larger half
 
 * **The `(q−1)²/3` in `δ` is untouched.**  That is the substrate content, it is
-  derived only at leading order (`prop:flavor-split-substrate`), and its
+  conjectured only at leading order (`conj:flavor-split-substrate-mass`), and its
   subleading correction is explicitly **posited, not derived** —
   `flavor_split_subleading`'s `(1+ℏ_q³)` supplies 76 % of the gap CODATA
   demands and is labelled `posited` in its own docstring.  That remains open.
@@ -107,7 +107,7 @@ variable {R : Type*} [Field R] [CharZero R]
 
 /-- The substrate flavour split as the corpus normalises it: `Δm / M_N` with
 `M_N` the **mean** nucleon mass `(m_p + m_n)/2`
-(`_li_2_q_util.flavor_split_leading`, `prop:flavor-split-substrate`). -/
+(`_li_2_q_util.flavor_split_leading`, `conj:flavor-split-substrate-mass`). -/
 noncomputable def deltaMean (mp mn : R) : R := (mn - mp) / ((mp + mn) / 2)
 
 /-- The same split normalised by the **sum** `m_p + m_n` instead — the other
