@@ -1,12 +1,12 @@
 {
   "probe": "round74_devacuify_6qbv_b9cj_probe",
   "scriptPath": "computations/probes/round74_devacuify_6qbv_b9cj_probe.py",
-  "scriptCommitSha": "ffa6f4009ea1d8bfb9fcdb4c0721e486e42a5dca",
-  "scriptHash": "4a196a58dd1bece97127dcab1ea6d1b24742af09b0bfe92ff6aa73c2120b7023",
-  "scriptSha256": "4a196a58dd1bece97127dcab1ea6d1b24742af09b0bfe92ff6aa73c2120b7023",
+  "scriptCommitSha": "4565067775d08914818c2a92b2f9190b9a6513d9",
+  "scriptHash": "eb31ca2387ecd5f25e7ee0ae6f76ac81c125b00246665750395ef1dd48782690",
+  "scriptSha256": "eb31ca2387ecd5f25e7ee0ae6f76ac81c125b00246665750395ef1dd48782690",
   "dps": 80,
   "mpmathDps": 80,
-  "generatedAt": "2026-11-18T18:32:10.594928+00:00",
+  "generatedAt": "2026-11-21T18:34:58.385605+00:00",
   "allPassed": true,
   "checks": [
     {
@@ -28,10 +28,10 @@
       "theorems": [
         "proton_mass_binding_deficit"
       ],
-      "protonMassModel": "938.2980163753300218",
-      "bindingDeficitLhs": "6.1319874000000000000000000000000000000000000000000000000000000000000000000000003",
-      "bindingDeficitRhs": "6.1319874",
-      "residual": "3.120490591196234874407178e-79",
+      "protonMassModel": "938.29801636705002179999999999999999999999999999999999321467833719934638648058896",
+      "bindingDeficitLhs": "6.1319874082800000000000000000000000000000000000000067853216628006536135194110352",
+      "bindingDeficitRhs": "6.1319874082800000000000000000000000000000000000000067853216628006536135194110352",
+      "residual": "0.0",
       "passed": true
     },
     {

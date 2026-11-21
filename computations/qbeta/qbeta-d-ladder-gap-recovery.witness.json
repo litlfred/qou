@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-21T07:44:07.464942+00:00",
-  "commitSha": "c45bca44bd68e517316719c8bcbc1c3fff2dddfa",
+  "computedAt": "2026-11-21T18:35:33.123945+00:00",
+  "commitSha": "4565067775d08914818c2a92b2f9190b9a6513d9",
   "assertions": [
     {
       "name": "1. b^2 = [3]_q/[2]_q^2 equals the Hoefsmit b^2 (D-forced)",
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "qbeta-d-ladder-gap-recovery",
   "scriptFile": "qbeta_d_ladder_gap_recovery_probe.py",
-  "scriptHash": "a176369e13e0",
-  "scriptCommitSha": "c61dd68ca97043b90dcf8b7e05084d93e0d91307",
+  "scriptHash": "0d08bdb59392",
+  "scriptCommitSha": "29dd900368126e70bb85dc1aa56e02e637fb288b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -61,8 +61,8 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "cvxpy": "absent",
-    "pyhecke_native_build": "24ca776b0ad05497"
+    "cvxpy": "1.9.3",
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
