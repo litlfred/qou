@@ -26,6 +26,7 @@ export default chapter({
         "jet-prolongation-su2",
         "jet-prolongation-categorical-jet",
         "jet-prolongation-categorical-jet-proof",
+        "jet-comul-does-not-restrict",
         "jet-prolongation-proof",
         "prolongation-categorical",
         "recursive-brane-tower",

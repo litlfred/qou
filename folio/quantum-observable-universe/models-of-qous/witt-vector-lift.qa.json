@@ -8,10 +8,10 @@
     "lean": "folio/quantum-observable-universe/models-of-qous/witt-vector-lift.lean"
   },
   "source_hashes": {
-    "md": "8c72a97e836c",
-    "ts": "49c3a5849ca9",
-    "lean": "4f3ef71a2539",
-    "lean_statement": "f6f2fde424f9"
+    "md": "a8e4b312def7",
+    "ts": "e668cb921dcc",
+    "lean": "ec5054822396",
+    "lean_statement": "f22aef1e6feb"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -24,6 +24,23 @@
           "id": "local/branch-jargon-sweep",
           "agent_skill": "local/one-voice-audit"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "voice-status-leak": [
@@ -47,10 +64,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -62,7 +79,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "e7148867194b"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-emoji-content": [
@@ -86,10 +103,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -101,7 +118,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "2cfefc829099"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-first-person-work": [
@@ -125,10 +142,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -140,7 +157,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "2cfefc829099"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-time-stamped-notes": [
@@ -164,10 +181,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -179,7 +196,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "2cfefc829099"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-unicode-crash": [
@@ -203,10 +220,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -218,7 +235,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "63a6e57fead9"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-editorializing": [
@@ -242,10 +259,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -257,7 +274,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "340b4b0dd5c5"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-scholarly-default": [
@@ -296,10 +313,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -311,7 +328,24 @@
           "script_commit_sha": "unknown",
           "def_hash": "90af5388e1e9"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "voice-title-scholarly": [
@@ -335,10 +369,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -350,7 +384,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "a88562c76c07"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-ai-slop": [
@@ -389,9 +423,29 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -399,9 +453,9 @@
           "id": "agent:qa-refresh-2026-11-21",
           "version": "v1"
         },
-        "reviewed_at": "2026-11-21T19:30:00.000Z",
-        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
-        "evidence": "Re-read after the Lean sibling change at da84b06 (.md/.ts unchanged): `def reduction_preserves_dim : W.lieDim = W.lieDim := rfl` removed; `dist_algebra_generators` docstring now says it is only the field `lie_dim_pos` and that the PBW statement [zink2002] is NOT formalised. lean-direct exit 0; #print axioms dist_algebra_generators = [propext]. No slop in .md."
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "voice-author-notes-pollution": [
@@ -425,10 +479,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -440,7 +494,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "2cfefc829099"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-status-section": [
@@ -464,10 +518,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -479,7 +533,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "2cfefc829099"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "framework-canonical": [
@@ -503,10 +557,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -518,7 +572,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "2cfefc829099"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "wall-side-correct": [
@@ -542,10 +596,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -557,7 +611,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "2ff53167ead5"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "q-usage-regime-detected": [
@@ -701,10 +755,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -716,7 +770,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "e7148867194b"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-witness-pinned": [
@@ -740,10 +794,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -755,7 +809,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "5d8325c49fea"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -779,10 +833,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -794,7 +848,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "f0a866b13629"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-dilogarithm-context": [
@@ -818,10 +872,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -833,7 +887,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "5d8325c49fea"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -857,10 +911,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -872,7 +926,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "2cfefc829099"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-no-negative-result-in-paper": [
@@ -896,10 +950,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -911,7 +965,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "791b80875ca1"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "compute-witness-exists": [
@@ -935,10 +989,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -950,7 +1004,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "bcd452a1177c"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "compute-lp-dual-present": [
@@ -974,10 +1028,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -989,7 +1043,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "bcd452a1177c"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "detangler-no-forward-ref": [
@@ -1010,26 +1064,6 @@
         },
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      },
-      {
-        "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9",
-          "graph": "ee4abbd4d8db"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "pipeline/qa-checkers-extended.ts",
-          "actor": "local-sweep",
-          "version": "v1",
-          "script_hash": "9555791a2758",
-          "script_commit_sha": "unknown",
-          "def_hash": "f0a866b13629"
-        },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
       }
     ],
     "detangler-section-band": [
@@ -1050,26 +1084,6 @@
         },
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      },
-      {
-        "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9",
-          "graph": "ee4abbd4d8db"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "pipeline/qa-checkers-extended.ts",
-          "actor": "local-sweep",
-          "version": "v1",
-          "script_hash": "819473f60bdc",
-          "script_commit_sha": "unknown",
-          "def_hash": "a88562c76c07"
-        },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1090,27 +1104,6 @@
         },
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      },
-      {
-        "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9",
-          "graph": "ee4abbd4d8db"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "pipeline/qa-checkers-extended.ts",
-          "actor": "local-sweep",
-          "version": "v1",
-          "script_hash": "b8703f487cf4",
-          "script_commit_sha": "unknown",
-          "def_hash": "f0a866b13629"
-        },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276",
-        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-archimedean-wall": [
@@ -1131,27 +1124,6 @@
         },
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      },
-      {
-        "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9",
-          "graph": "ee4abbd4d8db"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "pipeline/qa-checkers-extended.ts",
-          "actor": "local-sweep",
-          "version": "v1",
-          "script_hash": "c17b282a7de7",
-          "script_commit_sha": "unknown",
-          "def_hash": "19a5005a8bb6"
-        },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276",
-        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-block-tanglement": [
@@ -1185,39 +1157,6 @@
           "edge_span_mean": 0,
           "worst_target": ""
         }
-      },
-      {
-        "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9",
-          "graph": "ee4abbd4d8db"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "pipeline/qa-checkers-extended.ts",
-          "actor": "local-sweep",
-          "version": "v1",
-          "script_hash": "c94bd6f761f1",
-          "script_commit_sha": "unknown",
-          "def_hash": "f0a866b13629"
-        },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276",
-        "metrics": {
-          "fwd_emitted": 0,
-          "fwd_received": 1,
-          "tanglement_score": 0,
-          "out_degree": 0,
-          "in_degree": 2,
-          "cone_size": 0,
-          "depth": 0,
-          "pagerank": 0.000333,
-          "edge_span_max": 0,
-          "edge_span_mean": 0,
-          "worst_target": ""
-        }
       }
     ],
     "detangler-graph-energy": [
@@ -1243,31 +1182,6 @@
           "fwd_edge_count": 0,
           "worst_span": 0
         }
-      },
-      {
-        "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9",
-          "graph": "ee4abbd4d8db"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "pipeline/qa-checkers-extended.ts",
-          "actor": "local-sweep",
-          "version": "v1",
-          "script_hash": "858efa00043a",
-          "script_commit_sha": "unknown",
-          "def_hash": "f0a866b13629"
-        },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276",
-        "metrics": {
-          "graph_energy": 0,
-          "fwd_edge_count": 0,
-          "worst_span": 0
-        }
       }
     ],
     "detangler-topic-coherence": [
@@ -1288,26 +1202,6 @@
         },
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      },
-      {
-        "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9",
-          "graph": "ee4abbd4d8db"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "pipeline/qa-checkers-extended.ts",
-          "actor": "local-sweep",
-          "version": "v1",
-          "script_hash": "97bd77959d5e",
-          "script_commit_sha": "unknown",
-          "def_hash": "340b4b0dd5c5"
-        },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -1328,26 +1222,6 @@
         },
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      },
-      {
-        "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9",
-          "graph": "ee4abbd4d8db"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "pipeline/qa-checkers-extended.ts",
-          "actor": "local-sweep",
-          "version": "v1",
-          "script_hash": "aa75d0ebd53e",
-          "script_commit_sha": "unknown",
-          "def_hash": "f0a866b13629"
-        },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1372,10 +1246,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -1388,7 +1262,7 @@
           "deps_hash": "3b50a96e80ae",
           "def_hash": "e08cc9c741f6"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "bib-cited-ref-metadata-ok": [
@@ -1413,10 +1287,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -1429,7 +1303,7 @@
           "deps_hash": "3b50a96e80ae",
           "def_hash": "e08cc9c741f6"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -1454,10 +1328,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -1470,7 +1344,7 @@
           "deps_hash": "3b50a96e80ae",
           "def_hash": "17f40a4ba0f4"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -1495,10 +1369,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -1511,7 +1385,7 @@
           "deps_hash": "21d9ff417741",
           "def_hash": "83422bec2bb4"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "proof-no-bare-sorries": [
@@ -1535,10 +1409,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -1550,7 +1424,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "a1e400281510"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "proof-build-green": [
@@ -1574,10 +1448,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "n/a",
         "reviewer": {
@@ -1589,7 +1463,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "670f26d08110"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276",
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -1616,10 +1490,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "n/a",
         "reviewer": {
@@ -1632,7 +1506,7 @@
           "deps_hash": "16d8c7a8984e",
           "def_hash": "a1e400281510"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "fit-section-chapter": [
@@ -1685,9 +1559,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -1695,9 +1570,9 @@
           "id": "agent:qa-refresh-2026-11-21",
           "version": "v1"
         },
-        "reviewed_at": "2026-11-21T19:30:00.000Z",
-        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
-        "evidence": "Re-read after the Lean sibling change at da84b06 (.md/.ts unchanged): `def reduction_preserves_dim : W.lieDim = W.lieDim := rfl` removed; `dist_algebra_generators` docstring now says it is only the field `lie_dim_pos` and that the PBW statement [zink2002] is NOT formalised. lean-direct exit 0; #print axioms dist_algebra_generators = [propext]."
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "wall-side-statement": [
@@ -1721,9 +1596,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -1731,9 +1607,9 @@
           "id": "agent:qa-refresh-2026-11-21",
           "version": "v1"
         },
-        "reviewed_at": "2026-11-21T19:30:00.000Z",
-        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
-        "evidence": "Re-read after the Lean sibling change at da84b06 (.md/.ts unchanged): `def reduction_preserves_dim : W.lieDim = W.lieDim := rfl` removed; `dist_algebra_generators` docstring now says it is only the field `lie_dim_pos` and that the PBW statement [zink2002] is NOT formalised. lean-direct exit 0; #print axioms dist_algebra_generators = [propext]. Definition over F_p / Z_p; no archimedean construct."
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "da-false-claim": [
@@ -1769,6 +1645,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "da-vacuous": [
@@ -1803,6 +1696,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "da-circular": [
@@ -1838,6 +1748,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "da-overclaim": [
@@ -1873,6 +1800,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "da-hidden-dof": [
@@ -1908,6 +1852,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "da-non-sequitur": [
@@ -1943,6 +1904,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1978,6 +1956,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "da-citation-misuse": [
@@ -2013,6 +2008,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "da-definitional-ambiguity": [
@@ -2048,6 +2060,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "da-empirical-fragility": [
@@ -2083,6 +2112,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "da-physical-implausibility": [
@@ -2118,6 +2164,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "da-reproducibility": [
@@ -2153,6 +2216,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "da-referee-verdict": [
@@ -2190,6 +2270,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "bib-cite-resolves": [
@@ -2214,10 +2311,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -2230,7 +2327,7 @@
           "deps_hash": "3b50a96e80ae",
           "def_hash": "e703243fe06f"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2253,9 +2350,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -2263,9 +2361,9 @@
           "id": "agent:qa-refresh-2026-11-21",
           "version": "v1"
         },
-        "reviewed_at": "2026-11-21T19:30:00.000Z",
-        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
-        "evidence": "Re-read after the Lean sibling change at da84b06 (.md/.ts unchanged): `def reduction_preserves_dim : W.lieDim = W.lieDim := rfl` removed; `dist_algebra_generators` docstring now says it is only the field `lie_dim_pos` and that the PBW statement [zink2002] is NOT formalised. lean-direct exit 0; #print axioms dist_algebra_generators = [propext]."
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -2281,6 +2379,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "proof-statement-integrity": [
@@ -2296,6 +2411,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -2314,19 +2446,20 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
-        "result": "warn",
-        "severity": "minor",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "agent:qa-refresh-2026-11-21",
           "version": "v1"
         },
-        "reviewed_at": "2026-11-21T19:30:00.000Z",
-        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
-        "evidence": "Re-read after the Lean sibling change at da84b06 (.md/.ts unchanged): `def reduction_preserves_dim : W.lieDim = W.lieDim := rfl` removed; `dist_algebra_generators` docstring now says it is only the field `lie_dim_pos` and that the PBW statement [zink2002] is NOT formalised. lean-direct exit 0; #print axioms dist_algebra_generators = [propext]. `dist_algebra_generators` is still a field projection (self-assuming audit: class-field-is-conclusion), now disclosed in its docstring. Pre-existing."
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "proof-no-trivial-true": [
@@ -2342,6 +2475,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "proof-no-false-premise": [
@@ -2357,6 +2507,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "proof-no-decide-masking": [
@@ -2372,6 +2539,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -2387,6 +2571,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2405,6 +2606,23 @@
         "score": {
           "value": 0.85
         }
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -2423,6 +2641,23 @@
         "score": {
           "value": 0.85
         }
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "proof-rater-novelty": [
@@ -2441,6 +2676,23 @@
         "score": {
           "value": 0.85
         }
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "expo-milnor-clarity": [
@@ -2456,6 +2708,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "milnor-brevity": [
@@ -2471,6 +2740,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "voice-probe-narrative": [
@@ -2494,10 +2780,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -2509,7 +2795,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "2cfefc829099"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "cite-named-theorem": [
@@ -2533,10 +2819,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -2548,7 +2834,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "340b4b0dd5c5"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-agent-speak": [
@@ -2572,10 +2858,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -2587,7 +2873,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "2cfefc829099"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "clarity-defterm-bold": [
@@ -2632,10 +2918,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "n/a",
         "reviewer": {
@@ -2648,7 +2934,7 @@
           "deps_hash": "4df6f652b039",
           "def_hash": "6ed1c90f444f"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276",
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "notes": "no docs/audits/lean-profile.json"
       }
     ],
@@ -2674,10 +2960,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -2690,7 +2976,7 @@
           "deps_hash": "34af1d8a2365",
           "def_hash": "f0a866b13629"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "uses-formal-coverage": [
@@ -2719,10 +3005,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -2735,10 +3021,10 @@
           "deps_hash": "794eb6c16a59",
           "def_hash": "ce2b8102b97f"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276",
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "metrics": {
           "formal_only_count": 0,
-          "editorial_only_count": 3
+          "editorial_only_count": 0
         }
       }
     ],
@@ -2767,10 +3053,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -2783,7 +3069,7 @@
           "deps_hash": "c378066449c5",
           "def_hash": "d292915cbf8a"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276",
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "metrics": {
           "decl_claimants": 1
         }
@@ -2821,6 +3107,23 @@
         "reviewed_at": "2026-08-22T06:29:45.278Z",
         "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
         "evidence": "Full read (definition, ~0.6kB). W(F_p) = Z_p is correct. All ten categories clean. The uncited 'in the sense of Fresse' attribution is reported once as an anomaly against the proof block where it does the most work."
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2855,6 +3158,23 @@
         "reviewed_at": "2026-08-22T06:29:45.332Z",
         "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
         "evidence": "Full read (definition, ~0.6kB). W(F_p) = Z_p is correct. All ten categories clean. The uncited 'in the sense of Fresse' attribution is reported once as an anomaly against the proof block where it does the most work."
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "trap-em-dash": [
@@ -2889,6 +3209,23 @@
         "reviewed_at": "2026-08-22T06:29:45.391Z",
         "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
         "evidence": "Full read (definition, ~0.6kB). W(F_p) = Z_p is correct. All ten categories clean. The uncited 'in the sense of Fresse' attribution is reported once as an anomaly against the proof block where it does the most work."
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "trap-triples": [
@@ -2923,6 +3260,23 @@
         "reviewed_at": "2026-08-22T06:29:45.443Z",
         "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
         "evidence": "Full read (definition, ~0.6kB). W(F_p) = Z_p is correct. All ten categories clean. The uncited 'in the sense of Fresse' attribution is reported once as an anomaly against the proof block where it does the most work."
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "trap-closing-aphorism": [
@@ -2957,6 +3311,23 @@
         "reviewed_at": "2026-08-22T06:29:45.486Z",
         "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
         "evidence": "Full read (definition, ~0.6kB). W(F_p) = Z_p is correct. All ten categories clean. The uncited 'in the sense of Fresse' attribution is reported once as an anomaly against the proof block where it does the most work."
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "trap-meta-commentary": [
@@ -2991,6 +3362,23 @@
         "reviewed_at": "2026-08-22T06:29:45.529Z",
         "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
         "evidence": "Full read (definition, ~0.6kB). W(F_p) = Z_p is correct. All ten categories clean. The uncited 'in the sense of Fresse' attribution is reported once as an anomaly against the proof block where it does the most work."
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "trap-thesis-restatement": [
@@ -3025,6 +3413,23 @@
         "reviewed_at": "2026-08-22T06:29:45.569Z",
         "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
         "evidence": "Full read (definition, ~0.6kB). W(F_p) = Z_p is correct. All ten categories clean. The uncited 'in the sense of Fresse' attribution is reported once as an anomaly against the proof block where it does the most work."
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "trap-performed-warmth": [
@@ -3059,6 +3464,23 @@
         "reviewed_at": "2026-08-22T06:29:45.611Z",
         "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
         "evidence": "Full read (definition, ~0.6kB). W(F_p) = Z_p is correct. All ten categories clean. The uncited 'in the sense of Fresse' attribution is reported once as an anomaly against the proof block where it does the most work."
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "trap-superlative": [
@@ -3093,6 +3515,23 @@
         "reviewed_at": "2026-08-22T06:29:45.654Z",
         "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
         "evidence": "Full read (definition, ~0.6kB). W(F_p) = Z_p is correct. All ten categories clean. The uncited 'in the sense of Fresse' attribution is reported once as an anomaly against the proof block where it does the most work."
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "trap-nonspeakable": [
@@ -3127,6 +3566,23 @@
         "reviewed_at": "2026-08-22T06:29:45.696Z",
         "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
         "evidence": "Full read (definition, ~0.6kB). W(F_p) = Z_p is correct. All ten categories clean. The uncited 'in the sense of Fresse' attribution is reported once as an anomaly against the proof block where it does the most work."
+      },
+      {
+        "field_hash": {
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Definition is now the standard one: a formal group law G over W(k), k perfect of char p, of the same dimension, with G (x)_{W(k),phi} k = H. Lean sibling QOU.WittVectorLift = {G : FormalGroupLaw R iota // G.IsLift phi H} over a general ring map phi (documented; W(k) not in the olean cone), plus isComm_of_isComm. lean-direct exit 0; axioms propext, Classical.choice, Quot.sound. The old Nat-arithmetic lemmas under Witt names are gone. No instance of this criterion."
       }
     ],
     "wall-base-ring-minimal": [
@@ -3150,10 +3606,10 @@
       },
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -3165,16 +3621,16 @@
           "script_commit_sha": "unknown",
           "def_hash": "10db4d17cd96"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "render-math-mode-envelope": [
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -3186,16 +3642,16 @@
           "script_commit_sha": "unknown",
           "def_hash": "440226b73b33"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "proof-no-placeholder-stub": [
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -3207,16 +3663,16 @@
           "script_commit_sha": "unknown",
           "def_hash": "a1e400281510"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "lean-no-vacuous-instance-data": [
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -3228,16 +3684,16 @@
           "script_commit_sha": "unknown",
           "def_hash": "670f26d08110"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "lean-no-definitional-laundering": [
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -3249,7 +3705,7 @@
           "script_commit_sha": "unknown",
           "def_hash": "670f26d08110"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276",
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "metrics": {
           "constant_prop_defs": 0,
           "lambda_constant_fields": 0,
@@ -3260,10 +3716,10 @@
     "lean-docstring-honesty": [
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -3275,16 +3731,16 @@
           "script_commit_sha": "unknown",
           "def_hash": "e9d9f6de595f"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "acronym-in-glossary": [
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -3296,38 +3752,16 @@
           "script_commit_sha": "unknown",
           "def_hash": "340b4b0dd5c5"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
-      }
-    ],
-    "foreshadows-point-forward": [
-      {
-        "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9",
-          "graph": "ee4abbd4d8db"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "pipeline/qa-checkers-extended.ts",
-          "actor": "local-sweep",
-          "version": "v1",
-          "script_hash": "a5e024fc97a0",
-          "script_commit_sha": "unknown",
-          "def_hash": "f0a866b13629"
-        },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "dak-companion-present": [
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "n/a",
         "reviewer": {
@@ -3336,17 +3770,17 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276",
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "notes": "criterion applies to dak; block kind \"definition\" is mathpaper"
       }
     ],
     "dak-bpmn-has-process": [
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "n/a",
         "reviewer": {
@@ -3355,17 +3789,17 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276",
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "notes": "criterion applies to dak; block kind \"definition\" is mathpaper"
       }
     ],
     "dak-dmn-has-decision-table": [
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "n/a",
         "reviewer": {
@@ -3374,17 +3808,17 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276",
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "notes": "criterion applies to dak; block kind \"definition\" is mathpaper"
       }
     ],
     "dak-fsh-declares-kind": [
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "n/a",
         "reviewer": {
@@ -3393,17 +3827,17 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276",
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "notes": "criterion applies to dak; block kind \"definition\" is mathpaper"
       }
     ],
     "dak-label-prefix-matches-kind": [
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "n/a",
         "reviewer": {
@@ -3412,19 +3846,19 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276",
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
         "notes": "criterion applies to dak; block kind \"definition\" is mathpaper"
       }
     ],
     "id-unique": [
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "pipeline/qa-checkers-ids.ts",
@@ -3434,18 +3868,16 @@
           "script_commit_sha": "unknown",
           "def_hash": "bcd452a1177c"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276",
-        "severity": "critical",
-        "evidence": "folio/fred2005-formal-groups/formal-groups-chapter/witt-vector-lift.ts:4: label \"def:witt-vector-lift\" is also declared here — one id, two blocks"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "id-stable": [
       {
         "field_hash": {
-          "md": "8c72a97e836c",
-          "ts": "49c3a5849ca9",
-          "lean": "4f3ef71a2539",
-          "lean_statement": "f6f2fde424f9"
+          "md": "a8e4b312def7",
+          "ts": "e668cb921dcc",
+          "lean": "ec5054822396",
+          "lean_statement": "f22aef1e6feb"
         },
         "result": "pass",
         "reviewer": {
@@ -3457,11 +3889,10 @@
           "script_commit_sha": "unknown",
           "def_hash": "f0a866b13629"
         },
-        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276",
-        "notes": "unchanged since origin/main"
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ]
   },
-  "updated_at": "2026-11-21T19:30:00.000Z",
+  "updated_at": "2026-11-21T20:30:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

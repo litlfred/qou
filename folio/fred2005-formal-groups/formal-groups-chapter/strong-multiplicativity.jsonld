@@ -2,30 +2,30 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/fred2005-formal-groups/blocks/thm-strong-multiplicativity",
+  "@id": "papers/fred2005-formal-groups/blocks/def-strong-multiplicativity",
   "@type": [
-    "folio-assistant-core:Theorem",
+    "folio-assistant-sci:Definition",
     "doco:Section"
   ],
-  "label": "thm:strong-multiplicativity",
-  "kind": "theorem",
+  "label": "def:strong-multiplicativity",
+  "kind": "definition",
   "title": "Strong multiplicativity",
   "uses": [
-    "papers/fred2005-formal-groups/blocks/def-non-commutative-formal-group",
-    "papers/fred2005-formal-groups/blocks/def-grobner-shirshov-basis"
+    "papers/fred2005-formal-groups/blocks/def-skewed-poisson-structure"
   ],
   "cites": [
-    "references/fred2005"
+    "references/leitner2006"
   ],
   "tags": [
     "strong-multiplicativity",
-    "frobenius",
-    "comultiplication"
+    "comultiplication",
+    "poisson"
   ],
-  "leanRef": "fred2005:Fred2005.strong_multiplicativity_holds",
+  "leanRef": "fred2005:Fred2005.StrongMult.IsStronglyMultiplicative",
   "text": "strong-multiplicativity.md",
   "leanSource": "strong-multiplicativity.lean",
   "provenance": "authored"

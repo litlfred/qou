@@ -1,4 +1,4 @@
-The [internal Poisson object](#def:poisson-object) makes explicit a structure implicit in the deformation theory. Over $\mathbf{C} = \mathrm{Mod}(\mathbb{F}_p)$ with $A = \mathcal{O}(H)$, this object is the $p$-truncated skew-Poisson biderivation $\pi_<$ of the skew-Poisson integration theorem, proved in the chapter on models of quantum observable universes.
+The [internal Poisson object](#def:poisson-object) makes explicit a structure implicit in the deformation theory. Over $\mathbf{C} = \mathrm{Mod}(\mathbb{F}_p)$ with $A = \mathcal{O}(H)$, the analogous structure is the Poisson structure of the skew-Poisson integration theorem, stated in the chapter on models of quantum observable universes.
 
 **From Hochschild to bivectors.** The first-order deformation $\phi_1 \in HH^2(A, A)$ of the Frobenius--Hopf algebra $A$ maps under the Hochschild--Kostant--Rosenberg isomorphism to a bivector field:
 
@@ -15,4 +15,4 @@ The image $\pi := \mathrm{HKR}(\phi_1)$ is a global section of the bivector obje
 
 **Internal vs. external.** The classical approach defines the Poisson bracket by passing through $\tau$ to the vector-space level and invoking HKR. The internal definition avoids this detour. The bivector $\pi \colon \mathbf{1} \to \Pi$ and the contraction live entirely inside $\mathbf{C}$.
 
-**Model: skew-Poisson integration.** When $\mathbf{C} = \mathrm{Mod}(\mathbb{F}_p)$ and $A = \mathcal{O}(H)$, the internal Poisson object specialises to the skewed-Poisson structure $\pi_<$ of the skew-Poisson integration theorem. The $p$-truncated Jacobi condition is the shadow of the internal Jacobi identity modulo $p$-th powers. The integration theorem lifts $(H, \pi_<)$ to a non-commutative formal group $G / \mathbb{Z}_p$.
+**Model: skew-Poisson integration.** When $\mathbf{C} = \mathrm{Mod}(\mathbb{F}_p)$ and $A = \mathcal{O}(H)$, the comparison is with the Poisson structure of the skew-Poisson integration theorem: a bracket on a splay of one-dimensional distribution algebras that vanishes on each factor and is strongly filtered. Whether it is a specialisation of the internal Poisson object is not shown here. The integration theorem builds a non-commutative formal group over the field $\mathbb{F}_p$ itself; it does not lift to $\mathbb{Z}_p$.

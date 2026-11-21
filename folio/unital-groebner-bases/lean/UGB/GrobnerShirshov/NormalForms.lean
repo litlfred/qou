@@ -22,7 +22,8 @@ appearing in the QOU manuscript:
 ## Key results
 
 - `qSerre_is_gs_basis`: the `q`-Serre relations form a GS basis
-  under the deg-lex order on `{E_+, K, K⁻¹, E_-}`.
+  under the deg-lex order on `{E_+, K, K⁻¹, E_-}`. Proved in `QSerreGS.lean`
+  (it was an axiom in this file until 2026-11-21).
 - `pbw_monomials_are_normal_forms`: PBW monomials are exactly the
   normal-form monomials under the `q`-Serre rewriting system.
 - `dist_algebra_gs_basis` (removed 2026-11-15, it was false as stated; see §5).
@@ -550,7 +551,7 @@ not an axiom**. -/
 -- Ref: [bokut2005] https://doi.org/10.1142/S0218196705002347 (q-Serre rewriting system for U_q(su(2)))
 def qSerreRewritingSystem (k : Type v) [Field k]
     (qs : QSerreRelations k) : RewritingSystem SU2Gen k :=
-  ⟨qSerreRules qs, by simp [qSerreRules]⟩
+  .ofList (qSerreRules qs) (by simp [qSerreRules])
 
 /-- **The q-Serre rules have unit leading coefficients.**
 
@@ -561,7 +562,7 @@ theorem qSerre_rules_monic (k : Type v) [Field k] (qs : QSerreRelations k) :
     ∀ r ∈ (qSerreRewritingSystem k qs).rules, IsUnit (r.lc degLexOrder) := by
   obtain ⟨h1, h2, h3, h4, h5, h6, h7⟩ := qSerre_rule_lc_eq_one qs
   intro r hr
-  simp only [qSerreRewritingSystem, qSerreRules, List.mem_cons, List.not_mem_nil,
+  simp only [qSerreRewritingSystem, RewritingSystem.mem_ofList_rules, qSerreRules, List.mem_cons, List.not_mem_nil,
     or_false] at hr
   rcases hr with rfl | rfl | rfl | rfl | rfl | rfl | rfl
   · rw [h1]; exact isUnit_one
@@ -572,7 +573,8 @@ theorem qSerre_rules_monic (k : Type v) [Field k] (qs : QSerreRelations k) :
   · rw [h6]; exact isUnit_one
   · rw [h7]; exact isUnit_one
 
-/-- **Theorem** (Bokut–Malcolmson 1996):
+/-! ### The Gröbner–Shirshov property (Bokut–Malcolmson 1996)
+
     The `q`-Serre relations form a Gröbner–Shirshov basis for
     `U_q(su(2))` under the deg-lex order.
 
@@ -603,22 +605,17 @@ theorem qSerre_rules_monic (k : Type v) [Field k] (qs : QSerreRelations k) :
     * adding the two missing rules (6 and 7, the `K⁻¹` commutation rules) gives
       **8** ambiguities, and **all 8 resolve**.
 
-    So this axiom is now stated of the **completed seven-rule system**, where the
-    critical-pair check passes. That check is a symbolic computation, not a Lean
-    proof: the axiom records a verified-but-not-formalised claim, which is a
-    materially better position than the unverified one it was in, and materially
-    worse than a theorem. Formalising the eight resolutions is the way to remove
-    it.
+    The statement `qSerre_is_gs_basis` is about the **completed seven-rule
+    system**. It was an axiom here, recording that symbolic check. It is now a
+    theorem, proved in `QSerreGS.lean` (which imports this file): each of the
+    eight resolutions is written out and machine-checked through the composition
+    lemma `Diamond.isGrobnerShirshovBasis_iff_compositionsTrivial`.
 
     History worth keeping: this is the third claim in this file to be examined by
     making it checkable, and the second to be found false — see
     `pbw_monomials_are_not_all_normal_forms` for the other.
 
     Reference: Bokut & Malcolmson, Israel J. Math. 96 (1996). -/
--- Ref: [bokut2005] https://doi.org/10.1142/S0218196705002347 (q-Serre relations form a GS basis for U_q(su(2)))
-axiom qSerre_is_gs_basis (k : Type v) [Field k]
-    (qs : QSerreRelations k) :
-    IsGrobnerShirshovBasis SU2Gen k degLexOrder (qSerreRewritingSystem k qs)
 
 /-! ## §4  PBW Basis -/
 
@@ -684,8 +681,10 @@ def pbwElement (k : Type v) [Field k] (m : PBWMonomial) : AlgElement SU2Gen k :=
 
     Nothing downstream is left resting on the false claim: `ugb_pbw_corollary`
     now takes normality as an explicit hypothesis rather than importing it from
-    here. Establishing it for the corrected shape is open, and is the genuine
-    remaining content of Bokut–Malcolmson Thm 3.2.
+    here. The corrected shape is proved in `QSerrePBW.lean`: the normal words
+    are exactly `E_-^c E_+^a K^n` (`n ∈ ℤ`, with `K^n = (K⁻¹)^(-n)` for
+    `n < 0`), and their classes are a `k`-basis of the quotient
+    (`qSerre_pbw_basis`), the content of Bokut–Malcolmson Thm 3.2.
 
     Reference: Bokut & Malcolmson, Israel J. Math. 96 (1996), Theorem 3.2. -/
 -- Ref: [bokut2005] https://doi.org/10.1142/S0218196705002347 (PBW monomials as GS normal forms — shape corrected)

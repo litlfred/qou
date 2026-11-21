@@ -8,9 +8,9 @@
     "lean": "folio/fred2005-formal-groups/formal-groups-chapter/grobner-shirshov-basis-exists.lean"
   },
   "source_hashes": {
-    "ts": "6d0cd896527d",
-    "md": "25b70f318130",
-    "lean": "282cf9b62575"
+    "md": "07da4baafcfd",
+    "ts": "1520f8de4a70",
+    "lean": "08c5d87c9d64"
   },
   "criteria": {
     "proof-narrative-lean-equiv": [
@@ -26,6 +26,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "severity": "minor",
+        "evidence": "Re-read at c8da524af60. No Lean ref; Prop 2.4 and Thm 1.9 are cited, not formalised (comment-only sibling says so)."
       }
     ],
     "voice-status-leak": [
@@ -45,6 +62,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-emoji-content": [
@@ -64,6 +99,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-first-person-work": [
@@ -83,6 +136,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-time-stamped-notes": [
@@ -102,6 +173,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-unicode-crash": [
@@ -121,6 +210,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-editorializing": [
@@ -140,6 +247,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-scholarly-default": [
@@ -175,6 +300,40 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Rewritten: Prop 2.4 (Groebner basis of I, Dist(G) = TX/I) and Thm 1.9 (PBW for splays, strongly filtered pi, A_i as in Lemma 1.5), both checked against the library text. Neither is formalised; the comment-only sibling says so. No instance of this criterion."
       }
     ],
     "voice-title-scholarly": [
@@ -194,6 +353,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9566207ee882",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "voice-ai-slop": [
@@ -229,6 +406,40 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Rewritten: Prop 2.4 (Groebner basis of I, Dist(G) = TX/I) and Thm 1.9 (PBW for splays, strongly filtered pi, A_i as in Lemma 1.5), both checked against the library text. Neither is formalised; the comment-only sibling says so. No instance of this criterion."
       }
     ],
     "voice-author-notes-pollution": [
@@ -248,6 +459,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "framework-canonical": [
@@ -267,6 +496,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "wall-side-correct": [
@@ -286,6 +533,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "wall-base-ring-minimal": [
@@ -305,6 +570,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c3dab60e46d6",
+          "script_commit_sha": "unknown",
+          "def_hash": "10db4d17cd96"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "q-usage-regime-detected": [
@@ -444,6 +727,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2d2fc456ab53",
+          "script_commit_sha": "unknown",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "proof-no-axiom-growth": [
@@ -463,6 +764,25 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f48af2ee9be8",
+          "script_commit_sha": "unknown",
+          "def_hash": "a4466d93bf08"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "not implemented: stub checker"
       }
     ],
     "proof-build-green": [
@@ -482,6 +802,25 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0b437d66ec19",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "not implemented: stub checker"
       }
     ],
     "proof-substantive": [
@@ -501,6 +840,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "7b935d9f5fec",
+          "script_commit_sha": "unknown",
+          "def_hash": "928b5cc3cbd7"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "proof-no-conj-propagation-violation": [
@@ -521,6 +878,25 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8edc99dd3099",
+          "script_commit_sha": "unknown",
+          "deps_hash": "22292b18c779",
+          "def_hash": "e49f4f5d3843"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -541,6 +917,25 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d83daee37fd8",
+          "script_commit_sha": "unknown",
+          "deps_hash": "21d9ff417741",
+          "def_hash": "83422bec2bb4"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "proof-conditional-class-banner": [
@@ -561,6 +956,25 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b1fd3fd4bb84",
+          "script_commit_sha": "unknown",
+          "deps_hash": "8285870ddd65",
+          "def_hash": "ddae4938d951"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "proof-lean-compiles": [
@@ -581,6 +995,25 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e8d0b02f4cef",
+          "script_commit_sha": "unknown",
+          "deps_hash": "16d8c7a8984e",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-calibration-count": [
@@ -600,6 +1033,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-no-numerology": [
@@ -619,6 +1070,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "52b4ba95f5c3",
+          "script_commit_sha": "unknown",
+          "def_hash": "bfbb93c220cc"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-witness-pinned": [
@@ -638,6 +1107,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -657,6 +1144,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e81239fd83a2",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-dilogarithm-context": [
@@ -676,6 +1181,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -695,6 +1218,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-cal4-acknowledged": [
@@ -714,6 +1255,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "da489d748555",
+          "script_commit_sha": "unknown",
+          "def_hash": "b5e2fdf9d66a"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -733,6 +1292,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "852b0645c90b",
+          "script_commit_sha": "unknown",
+          "def_hash": "c8836d721722"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "canonical-no-negative-result-in-paper": [
@@ -752,6 +1329,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ee603ee4f369",
+          "script_commit_sha": "unknown",
+          "def_hash": "791b80875ca1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "compute-prop-has-probe": [
@@ -771,6 +1366,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38950cd4dd0c",
+          "script_commit_sha": "unknown",
+          "def_hash": "4e3f006a8480"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "compute-prop-has-consumer": [
@@ -790,6 +1403,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8a3b3418b1c5",
+          "script_commit_sha": "unknown",
+          "def_hash": "4e3f006a8480"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "compute-witness-exists": [
@@ -809,6 +1440,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "13ec1960e3ad",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "compute-lp-dual-present": [
@@ -828,6 +1477,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6c278b93ad12",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "detangler-no-forward-ref": [
@@ -1000,6 +1667,25 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1020,6 +1706,25 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "bib-cited-ref-metadata-ok": [
@@ -1040,6 +1745,25 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -1060,6 +1784,25 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "proof-statement-integrity": [
@@ -1075,6 +1818,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Rewritten: Prop 2.4 (Groebner basis of I, Dist(G) = TX/I) and Thm 1.9 (PBW for splays, strongly filtered pi, A_i as in Lemma 1.5), both checked against the library text. Neither is formalised; the comment-only sibling says so. No instance of this criterion."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1090,6 +1849,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Rewritten: Prop 2.4 (Groebner basis of I, Dist(G) = TX/I) and Thm 1.9 (PBW for splays, strongly filtered pi, A_i as in Lemma 1.5), both checked against the library text. Neither is formalised; the comment-only sibling says so. No instance of this criterion."
       }
     ],
     "proof-no-trivial-true": [
@@ -1105,6 +1880,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Rewritten: Prop 2.4 (Groebner basis of I, Dist(G) = TX/I) and Thm 1.9 (PBW for splays, strongly filtered pi, A_i as in Lemma 1.5), both checked against the library text. Neither is formalised; the comment-only sibling says so. No instance of this criterion."
       }
     ],
     "proof-no-false-premise": [
@@ -1120,6 +1911,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Rewritten: Prop 2.4 (Groebner basis of I, Dist(G) = TX/I) and Thm 1.9 (PBW for splays, strongly filtered pi, A_i as in Lemma 1.5), both checked against the library text. Neither is formalised; the comment-only sibling says so. No instance of this criterion."
       }
     ],
     "proof-no-decide-masking": [
@@ -1135,6 +1942,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Rewritten: Prop 2.4 (Groebner basis of I, Dist(G) = TX/I) and Thm 1.9 (PBW for splays, strongly filtered pi, A_i as in Lemma 1.5), both checked against the library text. Neither is formalised; the comment-only sibling says so. No instance of this criterion."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1150,6 +1973,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Rewritten: Prop 2.4 (Groebner basis of I, Dist(G) = TX/I) and Thm 1.9 (PBW for splays, strongly filtered pi, A_i as in Lemma 1.5), both checked against the library text. Neither is formalised; the comment-only sibling says so. No instance of this criterion."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1168,6 +2007,22 @@
         "score": {
           "value": 0.85
         }
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Rewritten: Prop 2.4 (Groebner basis of I, Dist(G) = TX/I) and Thm 1.9 (PBW for splays, strongly filtered pi, A_i as in Lemma 1.5), both checked against the library text. Neither is formalised; the comment-only sibling says so. No instance of this criterion."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1186,6 +2041,22 @@
         "score": {
           "value": 0.85
         }
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Rewritten: Prop 2.4 (Groebner basis of I, Dist(G) = TX/I) and Thm 1.9 (PBW for splays, strongly filtered pi, A_i as in Lemma 1.5), both checked against the library text. Neither is formalised; the comment-only sibling says so. No instance of this criterion."
       }
     ],
     "proof-rater-novelty": [
@@ -1204,6 +2075,22 @@
         "score": {
           "value": 0.85
         }
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Rewritten: Prop 2.4 (Groebner basis of I, Dist(G) = TX/I) and Thm 1.9 (PBW for splays, strongly filtered pi, A_i as in Lemma 1.5), both checked against the library text. Neither is formalised; the comment-only sibling says so. No instance of this criterion."
       }
     ],
     "voice-status-section": [
@@ -1223,6 +2110,24 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5b0082576ba9",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ],
     "trap-negation-contrast": [
@@ -1258,6 +2163,22 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of thm:grobner-shirshov-basis-exists. Two sentences plus a reference line; no constructions from the ten categories.",
         "notes": "NOT A TRAP, reported separately: the .md asserts flatly that 'the q-Serre relations form a Groebner-Shirshov system whose composition lemma (confluence) holds', but the resolved Lean grobner_shirshov_basis_exists is a cited 'sorry' (with the required -- Ref:) whose conclusion has been deliberately weakened to 'exists a b, a != b and reduce a = reduce b'. The q-Serre/confluence content is cited, not derived; the .md carries no such caveat."
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Rewritten: Prop 2.4 (Groebner basis of I, Dist(G) = TX/I) and Thm 1.9 (PBW for splays, strongly filtered pi, A_i as in Lemma 1.5), both checked against the library text. Neither is formalised; the comment-only sibling says so. No instance of this criterion."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1293,6 +2214,22 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of thm:grobner-shirshov-basis-exists. Two sentences plus a reference line; no constructions from the ten categories.",
         "notes": "NOT A TRAP, reported separately: the .md asserts flatly that 'the q-Serre relations form a Groebner-Shirshov system whose composition lemma (confluence) holds', but the resolved Lean grobner_shirshov_basis_exists is a cited 'sorry' (with the required -- Ref:) whose conclusion has been deliberately weakened to 'exists a b, a != b and reduce a = reduce b'. The q-Serre/confluence content is cited, not derived; the .md carries no such caveat."
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Rewritten: Prop 2.4 (Groebner basis of I, Dist(G) = TX/I) and Thm 1.9 (PBW for splays, strongly filtered pi, A_i as in Lemma 1.5), both checked against the library text. Neither is formalised; the comment-only sibling says so. No instance of this criterion."
       }
     ],
     "trap-em-dash": [
@@ -1328,6 +2265,22 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of thm:grobner-shirshov-basis-exists. Two sentences plus a reference line; no constructions from the ten categories.",
         "notes": "NOT A TRAP, reported separately: the .md asserts flatly that 'the q-Serre relations form a Groebner-Shirshov system whose composition lemma (confluence) holds', but the resolved Lean grobner_shirshov_basis_exists is a cited 'sorry' (with the required -- Ref:) whose conclusion has been deliberately weakened to 'exists a b, a != b and reduce a = reduce b'. The q-Serre/confluence content is cited, not derived; the .md carries no such caveat."
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Rewritten: Prop 2.4 (Groebner basis of I, Dist(G) = TX/I) and Thm 1.9 (PBW for splays, strongly filtered pi, A_i as in Lemma 1.5), both checked against the library text. Neither is formalised; the comment-only sibling says so. No instance of this criterion."
       }
     ],
     "trap-triples": [
@@ -1363,6 +2316,22 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of thm:grobner-shirshov-basis-exists. Two sentences plus a reference line; no constructions from the ten categories.",
         "notes": "NOT A TRAP, reported separately: the .md asserts flatly that 'the q-Serre relations form a Groebner-Shirshov system whose composition lemma (confluence) holds', but the resolved Lean grobner_shirshov_basis_exists is a cited 'sorry' (with the required -- Ref:) whose conclusion has been deliberately weakened to 'exists a b, a != b and reduce a = reduce b'. The q-Serre/confluence content is cited, not derived; the .md carries no such caveat."
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Rewritten: Prop 2.4 (Groebner basis of I, Dist(G) = TX/I) and Thm 1.9 (PBW for splays, strongly filtered pi, A_i as in Lemma 1.5), both checked against the library text. Neither is formalised; the comment-only sibling says so. No instance of this criterion."
       }
     ],
     "trap-closing-aphorism": [
@@ -1398,6 +2367,22 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of thm:grobner-shirshov-basis-exists. Two sentences plus a reference line; no constructions from the ten categories.",
         "notes": "NOT A TRAP, reported separately: the .md asserts flatly that 'the q-Serre relations form a Groebner-Shirshov system whose composition lemma (confluence) holds', but the resolved Lean grobner_shirshov_basis_exists is a cited 'sorry' (with the required -- Ref:) whose conclusion has been deliberately weakened to 'exists a b, a != b and reduce a = reduce b'. The q-Serre/confluence content is cited, not derived; the .md carries no such caveat."
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Rewritten: Prop 2.4 (Groebner basis of I, Dist(G) = TX/I) and Thm 1.9 (PBW for splays, strongly filtered pi, A_i as in Lemma 1.5), both checked against the library text. Neither is formalised; the comment-only sibling says so. No instance of this criterion."
       }
     ],
     "trap-meta-commentary": [
@@ -1433,6 +2418,22 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of thm:grobner-shirshov-basis-exists. Two sentences plus a reference line; no constructions from the ten categories.",
         "notes": "NOT A TRAP, reported separately: the .md asserts flatly that 'the q-Serre relations form a Groebner-Shirshov system whose composition lemma (confluence) holds', but the resolved Lean grobner_shirshov_basis_exists is a cited 'sorry' (with the required -- Ref:) whose conclusion has been deliberately weakened to 'exists a b, a != b and reduce a = reduce b'. The q-Serre/confluence content is cited, not derived; the .md carries no such caveat."
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Rewritten: Prop 2.4 (Groebner basis of I, Dist(G) = TX/I) and Thm 1.9 (PBW for splays, strongly filtered pi, A_i as in Lemma 1.5), both checked against the library text. Neither is formalised; the comment-only sibling says so. No instance of this criterion."
       }
     ],
     "trap-thesis-restatement": [
@@ -1468,6 +2469,22 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of thm:grobner-shirshov-basis-exists. Two sentences plus a reference line; no constructions from the ten categories.",
         "notes": "NOT A TRAP, reported separately: the .md asserts flatly that 'the q-Serre relations form a Groebner-Shirshov system whose composition lemma (confluence) holds', but the resolved Lean grobner_shirshov_basis_exists is a cited 'sorry' (with the required -- Ref:) whose conclusion has been deliberately weakened to 'exists a b, a != b and reduce a = reduce b'. The q-Serre/confluence content is cited, not derived; the .md carries no such caveat."
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Rewritten: Prop 2.4 (Groebner basis of I, Dist(G) = TX/I) and Thm 1.9 (PBW for splays, strongly filtered pi, A_i as in Lemma 1.5), both checked against the library text. Neither is formalised; the comment-only sibling says so. No instance of this criterion."
       }
     ],
     "trap-performed-warmth": [
@@ -1503,6 +2520,22 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of thm:grobner-shirshov-basis-exists. Two sentences plus a reference line; no constructions from the ten categories.",
         "notes": "NOT A TRAP, reported separately: the .md asserts flatly that 'the q-Serre relations form a Groebner-Shirshov system whose composition lemma (confluence) holds', but the resolved Lean grobner_shirshov_basis_exists is a cited 'sorry' (with the required -- Ref:) whose conclusion has been deliberately weakened to 'exists a b, a != b and reduce a = reduce b'. The q-Serre/confluence content is cited, not derived; the .md carries no such caveat."
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Rewritten: Prop 2.4 (Groebner basis of I, Dist(G) = TX/I) and Thm 1.9 (PBW for splays, strongly filtered pi, A_i as in Lemma 1.5), both checked against the library text. Neither is formalised; the comment-only sibling says so. No instance of this criterion."
       }
     ],
     "trap-superlative": [
@@ -1538,6 +2571,22 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of thm:grobner-shirshov-basis-exists. Two sentences plus a reference line; no constructions from the ten categories.",
         "notes": "NOT A TRAP, reported separately: the .md asserts flatly that 'the q-Serre relations form a Groebner-Shirshov system whose composition lemma (confluence) holds', but the resolved Lean grobner_shirshov_basis_exists is a cited 'sorry' (with the required -- Ref:) whose conclusion has been deliberately weakened to 'exists a b, a != b and reduce a = reduce b'. The q-Serre/confluence content is cited, not derived; the .md carries no such caveat."
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Rewritten: Prop 2.4 (Groebner basis of I, Dist(G) = TX/I) and Thm 1.9 (PBW for splays, strongly filtered pi, A_i as in Lemma 1.5), both checked against the library text. Neither is formalised; the comment-only sibling says so. No instance of this criterion."
       }
     ],
     "trap-nonspeakable": [
@@ -1573,9 +2622,478 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of thm:grobner-shirshov-basis-exists. Two sentences plus a reference line; no constructions from the ten categories.",
         "notes": "NOT A TRAP, reported separately: the .md asserts flatly that 'the q-Serre relations form a Groebner-Shirshov system whose composition lemma (confluence) holds', but the resolved Lean grobner_shirshov_basis_exists is a cited 'sorry' (with the required -- Ref:) whose conclusion has been deliberately weakened to 'exists a b, a != b and reduce a = reduce b'. The q-Serre/confluence content is cited, not derived; the .md carries no such caveat."
+      },
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). Rewritten: Prop 2.4 (Groebner basis of I, Dist(G) = TX/I) and Thm 1.9 (PBW for splays, strongly filtered pi, A_i as in Lemma 1.5), both checked against the library text. Neither is formalised; the comment-only sibling says so. No instance of this criterion."
+      }
+    ],
+    "voice-probe-narrative": [
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      }
+    ],
+    "cite-named-theorem": [
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      }
+    ],
+    "voice-agent-speak": [
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      }
+    ],
+    "proof-no-placeholder-stub": [
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "de28cc8fe753",
+          "script_commit_sha": "unknown",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      }
+    ],
+    "lean-no-vacuous-instance-data": [
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d86b94a3a99c",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      }
+    ],
+    "lean-no-definitional-laundering": [
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f2d0ac51567e",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "metrics": {
+          "constant_prop_defs": 0,
+          "lambda_constant_fields": 0,
+          "definitional_identities": 0
+        }
+      }
+    ],
+    "lean-docstring-honesty": [
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f16e4db88c07",
+          "script_commit_sha": "unknown",
+          "def_hash": "e9d9f6de595f"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      }
+    ],
+    "proof-not-machine-trivial": [
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-triviality.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "1eebf87b3f20",
+          "script_commit_sha": "unknown",
+          "deps_hash": "458b1a3606a3",
+          "def_hash": "30a1a029710e"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      }
+    ],
+    "acronym-in-glossary": [
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "2 acronym(s) are candidates for the glossary: TX, PBW. Run glossary:acronyms for the folio-wide list with expansions."
+      }
+    ],
+    "proof-compile-cost": [
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-cost.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "3eb5d65c22b2",
+          "script_commit_sha": "unknown",
+          "deps_hash": "4df6f652b039",
+          "def_hash": "6ed1c90f444f"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "no docs/audits/lean-profile.json"
+      }
+    ],
+    "proof-no-cost-regression": [
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-cost.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "96b9bdc29ac9",
+          "script_commit_sha": "unknown",
+          "deps_hash": "4df6f652b039",
+          "def_hash": "928b5cc3cbd7"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "no docs/audits/lean-profile.json"
+      }
+    ],
+    "uses-editorial-hygiene": [
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63814f2a6677",
+          "script_commit_sha": "unknown",
+          "deps_hash": "34af1d8a2365",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "metrics": {
+          "uses_count": 3,
+          "broken_edges": 0,
+          "redundant_edges": 1
+        }
+      }
+    ],
+    "uses-formal-coverage": [
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "82fd1e2e6831",
+          "script_commit_sha": "unknown",
+          "deps_hash": "794eb6c16a59",
+          "def_hash": "ce2b8102b97f"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "metrics": {
+          "formal_only_count": 0,
+          "editorial_only_count": 3
+        }
+      }
+    ],
+    "lean-ref-owns-decl": [
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      }
+    ],
+    "dak-companion-present": [
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "criterion applies to dak; block kind \"theorem\" is mathpaper"
+      }
+    ],
+    "dak-bpmn-has-process": [
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "criterion applies to dak; block kind \"theorem\" is mathpaper"
+      }
+    ],
+    "dak-dmn-has-decision-table": [
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "criterion applies to dak; block kind \"theorem\" is mathpaper"
+      }
+    ],
+    "dak-fsh-declares-kind": [
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "criterion applies to dak; block kind \"theorem\" is mathpaper"
+      }
+    ],
+    "dak-label-prefix-matches-kind": [
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b",
+        "notes": "criterion applies to dak; block kind \"theorem\" is mathpaper"
+      }
+    ],
+    "id-unique": [
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
+      }
+    ],
+    "id-stable": [
+      {
+        "field_hash": {
+          "md": "07da4baafcfd",
+          "ts": "1520f8de4a70",
+          "lean": "08c5d87c9d64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6473b7a89e7e73154c15c82a582a26b4c54ab04b"
       }
     ]
   },
-  "updated_at": "2026-08-22T04:07:41.766Z",
+  "updated_at": "2026-11-21T20:30:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

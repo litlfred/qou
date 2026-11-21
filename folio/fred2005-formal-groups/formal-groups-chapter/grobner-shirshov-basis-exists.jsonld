@@ -2,30 +2,31 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/fred2005-formal-groups/blocks/thm-grobner-shirshov-basis-exists",
   "@type": [
-    "folio-assistant-core:Theorem",
+    "folio-assistant-sci:Theorem",
     "doco:Section"
   ],
   "label": "thm:grobner-shirshov-basis-exists",
   "kind": "theorem",
-  "title": "Existence of Groebner--Shirshov basis",
+  "title": "Presentation of the distribution algebra",
   "uses": [
     "papers/fred2005-formal-groups/blocks/def-non-commutative-formal-group",
-    "papers/fred2005-formal-groups/blocks/def-grobner-shirshov-basis"
+    "papers/fred2005-formal-groups/blocks/def-grobner-shirshov-basis",
+    "papers/fred2005-formal-groups/blocks/def-skewed-poisson-structure"
   ],
   "cites": [
-    "references/fred2005"
+    "references/leitner2006"
   ],
   "tags": [
     "groebner-shirshov",
-    "existence",
-    "flat-deformation"
+    "presentation",
+    "pbw"
   ],
-  "leanRef": "fred2005:Fred2005.grobner_shirshov_basis_exists",
   "text": "grobner-shirshov-basis-exists.md",
   "leanSource": "grobner-shirshov-basis-exists.lean",
   "provenance": "authored"

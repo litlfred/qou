@@ -2,11 +2,11 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:grobner-shirshov-basis",
-  title: "Groebner--Shirshov basis",
-  lean: { ref: "fred2005:Fred2005.GrobnerShirshovBasis",
+  title: "Gröbner basis of the distribution algebra",
+  lean: { ref: "ugb:UGB.GrobnerShirshov.NormalFormBasis",
     validation: "not_checked",
   },
   tags: ["groebner-shirshov", "normal-form", "distribution-algebra"],
   uses: ["def:non-commutative-formal-group"],
-  cites: ["fred2005"],
+  cites: ["leitner2006", "leitnerpawloski2004"],
 });

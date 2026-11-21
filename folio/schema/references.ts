@@ -411,6 +411,8 @@ const ORDER: Array<FileSlot | Reference> = [
 
   // ── Fred 2005 (dissertation) ──────────────────────────────────
   { id: "fred2005" },
+  { id: "leitner2006" },
+  { id: "luweinstein1990" },
 
   // ── Schrijver 1986 ────────────────────────────────────────────
   { id: "schrijver1986theory" },

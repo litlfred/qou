@@ -1,38 +1,34 @@
 import UGB.GrobnerShirshov.Flatness
 
 /-!
-# Strong Multiplicativity from the GS Deformation
+# Tensor-product presentation, and what strong multiplicativity is
 
-The **strong multiplicativity condition** ([fred2005, Theorem 4.12])
-states that the comultiplication (Frobenius relation) on `Dist(G)` is
-preserved under the Gröbner–Shirshov deformation at every filtration
-degree.
+Strong multiplicativity is Def. 1.11 of F. Leitner, *Non-commutative formal groups in
+positive characteristic*, arXiv:math/0602138 (`leitner2006`): for a splay `T` with a
+Poisson structure `π`,
 
-This is the critical compatibility condition ensuring that:
-- The gauge connection (encoded by the comultiplication) survives the
-  passage from characteristic `p` to characteristic `0`.
-- The Frobenius–Hopf structure of the QOU fibre algebra is a genuine
-  bialgebra (not just an algebra).
+    Δ ∘ π = (· ⊗ π + π ⊗ · + π ⊗ π) ∘ (1 ⊗ τ ⊗ 1) ∘ Δ.
 
-## Proof strategy
+Its consequence (Prop. 1.13) is that `Δ` descends to an algebra map `U → U ⊗ U` on
+`U = T / (fg − gf − π(f, g))`. Everything there is over a field of characteristic `p`.
 
-The proof has three steps:
+**Corrected 2026-11-21.** This module used to cite "[fred2005, Theorem 4.12]" for the claim
+that the Frobenius relation is preserved under the deformation and survives the passage
+from characteristic `p` to characteristic `0`. arXiv:math/0602138 has no Theorem 4.12,
+makes no characteristic-`0` claim, and its condition is not the Frobenius relation. Two
+declarations resting on that citation are deleted:
 
-1. **Filtration compatibility** (§1): the comultiplication `Δ` respects
-   the filtration on `Dist(G)`, i.e., `Δ(Fₙ) ⊆ ⊕_{i+j=n} Fᵢ ⊗ Fⱼ`.
+* `frobenius_preserved_by_degree` returned the structure field `comul_is_alg_hom`: a
+  self-assuming projection.
+* `axiom formal_group_is_filtered_bialgebra` asserted a `FilteredBialgebra` for every GS
+  basis and every ring `T`. It was inhabitable trivially (`comul := 0`), so it asserted
+  nothing, and its citation was to the nonexistent theorem.
 
-2. **GS basis for the tensor product** (§2): the GS basis of `Dist(G)`
-   induces a GS basis on `Dist(G) ⊗ Dist(G)` via the disjoint union
-   presentation `k⟨G₁ ⊔ G₂⟩ / (commutativity of G₁ with G₂ + Σ₁ + Σ₂)`.
+Neither had a consumer. The Poisson structure, the quotient `U` and its defining relation
+are in `QOU.FormalGroups.SplayPoisson` (sorry-free).
 
-3. **Frobenius preservation** (§3): the identity `Δ(xy) = Δ(x)·Δ(y)`
-   holds on generators (by direct computation), and extends to all
-   elements by normal-form uniqueness from the composition lemma.
-
-## References
-
-- [fred2005, Theorem 4.12] — strong multiplicativity
-- [fred2005, §4] — proof via filtration-degree induction
+What remains here is the presentation of a tensor product of two GS-presented algebras
+(Bokut–Chen 2014), still axiomatised.
 -/
 
 
@@ -61,8 +57,8 @@ structure FilteredBialgebra (A : Type*) (T : Type*) [Ring A] [Ring T] extends
   comul_filtered : ∀ n a, filt n a → tensor_filt n (comul a)
   /-- The tensor product multiplication `(A ⊗ A) × (A ⊗ A) → A ⊗ A`. -/
   tensor_mul : T → T → T
-  /-- `Δ` is an algebra homomorphism: `Δ(xy) = Δ(x) · Δ(y)`.
-      This is the **Frobenius relation** / strong multiplicativity. -/
+  /-- `Δ` is an algebra homomorphism: `Δ(xy) = Δ(x) · Δ(y)`. (This is neither the
+      Frobenius relation nor strong multiplicativity, Def. 1.11 of `leitner2006`.) -/
   comul_is_alg_hom : ∀ a b : A,
     comul (a * b) = tensor_mul (comul a) (comul b)
 
@@ -162,53 +158,5 @@ degenerate inhabitation shape this corpus already has an audit about.
 No Lean declaration consumed it; the only references are dated audit docs.
 -/
 
-
-/-! ## §4  Frobenius Relation Preservation -/
-
-/-- The Frobenius relation is preserved under the GS deformation:
-    given a filtered bialgebra structure on `Dist(G)`, the identity
-    `Δ(xy) = Δ(x) · Δ(y)` holds at every filtration degree.
-
-    This is the degree-by-degree version of strong multiplicativity.
-    The proof proceeds by induction on filtration degree `n`:
-    - Base case `n = 0`: `F₀` contains only scalars, where `Δ` is
-      trivially multiplicative.
-    - Inductive step: assume `Δ` is multiplicative on `F_{n-1}`.
-      For `x ∈ Fₙ \ F_{n-1}`, write `x` in GS normal form.
-      The normal form has leading term in degree `n` and lower-order
-      terms in `F_{n-1}`.  By the inductive hypothesis and the
-      generator-level computation, `Δ(xy) = Δ(x)·Δ(y)`. -/
-theorem frobenius_preserved_by_degree
-    {A T : Type*} [Ring A] [Ring T]
-    (bialg : FilteredBialgebra A T)
-    (_n _m : ℕ) (x y : A)
-    (_hx : bialg.filt _n x)
-    (_hy : bialg.filt _m y) :
-    bialg.comul (x * y) = bialg.tensor_mul (bialg.comul x) (bialg.comul y) :=
-  bialg.comul_is_alg_hom x y
-
-/-! ## §5  Connection to FormalGroups.lean -/
-
-/-- Bridge theorem: the strong multiplicativity result in this module
-    implies `FormalGroups.strong_multiplicativity_holds`.
-
-    The connection is:
-    - `NoncommutativeFormalGroup.mul` ↔ multiplication on `AlgElement G k`
-    - `NoncommutativeFormalGroup.comul` ↔ `FilteredBialgebra.comul`
-    - `GrobnerShirshovBasis.composition_lemma` ↔ `composition_lemma`
-      from `CompositionLemma.lean`
-
-    The bridge requires constructing a `FilteredBialgebra` instance from
-    a `NoncommutativeFormalGroup` and its associated `GrobnerShirshovBasis`.
-    This construction is axiomatised since it depends on the specific
-    formal group law. -/
--- Ref: [fred2005] §4 (formal group with GS basis yields a filtered bialgebra structure)
-axiom formal_group_is_filtered_bialgebra
-    {G : Type u} {k : Type v} [Field k] [DecidableEq G]
-    (ord : AdmissibleOrder G)
-    (sys : RewritingSystem G k)
-    (hgs : IsGrobnerShirshovBasis G k ord sys)
-    (T : Type*) [Ring (AlgElement G k)] [Ring T] :
-    FilteredBialgebra (AlgElement G k) T
 
 end UGB.GrobnerShirshov

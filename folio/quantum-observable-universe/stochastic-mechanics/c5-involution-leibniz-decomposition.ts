@@ -7,7 +7,7 @@ export default proposition({
     validation: "not_checked",
   },
   title:
-    "$c_5$ decomposes as $-b^2 - 1/2$: pure-$\\sigma$ Kashiwara contribution plus bar-invariant involution fingerprint from averaged-crossing structure. Interpretation of the unique averaging-resonant rung k = 5 identified in `thm:averaging-resonance-rule` (planned, not yet derived); involution supplies the $1/2$ magnitude, while the half-fill cyclic structure supplies the rung selection.",
+    "Decomposition quantity $c_5^{\\mathrm{dec}} = -b^2 - 1/2 = -3/2 + 1/[2]_q^2$",
   uses: ["prop:silver-ratio-beta-decay-null"],
   cites: [
     "wenzl1988",
@@ -40,7 +40,7 @@ export default proposition({
     {
       kind: "caveat",
       date: "2026-11-21",
-      body: "**Lean scope (disclosure, not a change of claim).** The `lean.ref` theorem proves a rational-function identity for `c5Decomposition q`, which the Lean *defines* as −b(q)² − 1/2 with b² the Hoefsmit expression. That this quantity is the rung-5 ladder coefficient c₅ is not derived in the Lean. The narrative proof contains two slips recorded by the audit: it writes h/2 = 1/2, but at the silver ratio h = q − q⁻¹ = 2; and it speaks of two averaged crossings where the second factor is σ₁⁻¹. Found by the blind round-trip audit (docs/audits/2026-11-20-roundtrip-blind-audit-pass1.md, block B01; bean qou-xxa9).",
+      body: "**Statement restated 2026-11-21 to what the Lean proves (owner ruling on the PR #8819 follow-up): it now defines c₅^dec = −b² − 1/2 and states b² = 1 − 1/[2]_q², hence c₅^dec = −3/2 + 1/[2]_q²; the identification with the ladder rung c₅ is explicitly not claimed.** Earlier disclosure: the `lean.ref` theorem proves a rational-function identity for `c5Decomposition q`, which the Lean *defines* as −b(q)² − 1/2 with b² the Hoefsmit expression. That this quantity is the rung-5 ladder coefficient c₅ is not derived in the Lean. The narrative proof contains two slips recorded by the audit: it writes h/2 = 1/2, but at the silver ratio h = q − q⁻¹ = 2; and it speaks of two averaged crossings where the second factor is σ₁⁻¹. Found by the blind round-trip audit (docs/audits/2026-11-20-roundtrip-blind-audit-pass1.md, block B01; bean qou-xxa9).",
     },
   ],
 });

@@ -1,8 +1,7 @@
-Skew-Poisson integration provides the algebraic engine behind jet prolongation when the base field is $\mathbb{Q}_p$ rather than $\mathbb{C}$:
+The [skew-Poisson integration theorem](#prop:skew-poisson-integration) is a statement over a field $k$ of characteristic $p$. Its bearing on the $p$-adic realisation is limited, and this remark records what it does and does not supply.
 
-1. The Frobenius–Hopf object $A$ in the $\mathbb{F}_p$ realisation carries a skewed-Poisson structure induced by the $q$-commutator $[\hat{X},\hat{P}]_q = i\hbar_q$.
-2. The Witt vector lift $\widehat{G}$ is the non-commutative formal group whose distribution algebra deforms $\mathrm{Dist}(H)$. This is the passage from the $\mathbb{F}_p$ fibre algebra to the $\mathbb{Q}_p$ fibre algebra.
-3. Strong multiplicativity is exactly the Frobenius relation used in jet prolongation. This ensures that the comultiplication—hence the gauge connection—is preserved under the lift.
-4. The unit-root condition on the $F$-crystal corresponds to the integrability of the skewed-Poisson structure. The biderivation $\pi_<$ integrates if and only if the associated $F$-crystal is unit-root.
+1. It supplies a construction over $k$: from a strongly filtered, strongly multiplicative Poisson structure on the splay of the distribution algebras of a commutative geometric formal group, it builds a bialgebra $U$ with a PBW basis, which the source identifies with $\mathrm{Dist}(G)$ for a non-commutative formal group $G$ over $k$.
+2. It does not supply a [Witt vector lift](#def:witt-vector-lift). No lift of $G$ or of $H$ to $W(k)$ or $\mathbb{Z}_p$ is constructed in the source, so the passage from the $\mathbb{F}_p$ fibre algebra to a $\mathbb{Q}_p$ fibre algebra is not a consequence of it.
+3. Strong multiplicativity is a compatibility between $\pi$ and the comultiplication of the free product. It is not the Frobenius relation $(\mathrm{Id}\otimes m)\circ(\Delta\otimes\mathrm{Id}) = \Delta\circ m$ used in jet prolongation, and the theorem does not prove that relation.
 
-Without the formal-groups integration theorem, the $p$-adic lifting mechanism would remain a conjecture. The results of Fresse convert it into a proven categorical lift.
+No unit-root $F$-crystal criterion for integrability appears in the source.

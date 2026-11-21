@@ -1,12 +1,18 @@
-A **non-commutative formal group** is the output of the integration
-theorem.  It is a formal group $G$ over $\mathbb{Z}_p$ whose
-distribution algebra $\mathrm{Dist}(G)$ carries:
+A **non-commutative formal group** is a formal group that is not
+required to be commutative: an $n$-dimensional formal group law $F$ over
+$R$ with no condition $F(X, Y) = F(Y, X)$. Every
+[commutative formal group](#def:commutative-formal-group) is one.
 
-- A (generally non-commutative) multiplication $\mu$.
-- A comultiplication $\Delta$ satisfying **strong multiplicativity**:
-  $\Delta(xy) = \Delta(x) \cdot \Delta(y)$ component-wise.
+Its **distribution algebra** $\mathrm{Dist}(G)$ is the $R$-module of
+distributions supported at the identity, the continuous dual of the
+coordinate ring $R[[X_1, \dots, X_n]]$. Dualising $F$ gives the
+multiplication (convolution) on $\mathrm{Dist}(G)$, and dualising the
+product of power series gives the comultiplication $\Delta$, so
+$\mathrm{Dist}(G)$ is a bialgebra. It is commutative exactly when $G$ is.
 
-The base [commutative formal group](#def:commutative-formal-group)
-$H / \mathbb{F}_p$ is recovered by reduction modulo $p$.
+Over a field $k$ of characteristic $p > 0$, with an ordered coordinate
+system $x_1 < \dots < x_n$, $\mathrm{Dist}(G)$ has the *multiplicative
+basis* of ordered products of the divided powers $\delta_{x_j}^{p^r}$
+(\cite{leitner2006}, Lemma/Definition 2.2).
 
-Reference: \cite{fred2005}, Main Theorem.
+Reference: \cite{leitner2006}, §2.

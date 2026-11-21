@@ -1,40 +1,35 @@
-Write $\langle a, b\rangle = \int_A \mu(a \otimes b)$ for the Frobenius
-pairing, non-degenerate by
-[Frobenius pairing exists](#prop:frobenius-pairing-exists). Throughout,
-$R \cong \mathrm{End}(\mathbf{1})$ is the formally-real ordered field and
-$S$ is the pivotal self-adjoint antipode of the hypotheses.
+Write $h(f, g) = \int_A \mu(S(f) \otimes g)$ and $L_x$ for left
+multiplication by $x \in A$.
 
-A positive-definite dagger structure requires two things: that
-$\dagger$ is an involution, and that $f^{\dagger} \circ f$ is strictly
-positive for every non-zero $f$. Each is checked in turn.
-
-**Involutivity.** Because the antipode is pivotal, $S^2 = \mathrm{id}$.
-Expanding
-$(f^{\dagger})^{\dagger} = \int_A \mu(S(f^{\dagger}) \otimes -)$ and
-applying $S^2 = \mathrm{id}$ together with Frobenius associativity
-$\int_A \mu(\mu \otimes \mathrm{id}) = \int_A \mu(\mathrm{id} \otimes \mu)$
-gives $(f^{\dagger})^{\dagger} = f$. Contravariance
-$(g \circ f)^{\dagger} = f^{\dagger} \circ g^{\dagger}$ follows because
-$S$ is an anti-homomorphism. Hence $\dagger$ is an involutive structure.
-
-**Positive-definiteness.** For non-zero $f \colon \mathbf{1} \to X$,
+**Adjoint of $L_x$.** Since $S$ is anti-multiplicative,
+$S(x a) = S(a)\,S(x)$, so
 
 $$
-  f^{\dagger} \circ f
-  = \int_A \mu(S(f) \otimes f)
-  = \langle f, f\rangle \in \mathrm{End}(\mathbf{1}) \cong R.
+  h(L_x a, b) = \int_A \mu\bigl(S(a)\,S(x) \otimes b\bigr)
+  = \int_A \mu\bigl(S(a) \otimes S(x)\, b\bigr) = h(a, L_{S(x)} b).
 $$
 
-By the self-adjoint hypothesis $S = \dagger$, the pairing evaluates $f$
-against its own adjoint, so $\langle f, f\rangle = s^2$ is a square in
-$R$ (the categorical norm-square of $f$). Non-degeneracy of the pairing
-forces $\langle f, f\rangle \neq 0$ whenever $f \neq 0$. In a
-formally-real ordered field a non-zero square is strictly positive, so
-$f^{\dagger} \circ f > 0$. Therefore $\dagger$ is a positive-definite
-involutive structure.
+**Uniqueness.** If $U$ is $R$-linear with $h(L_x a, b) = h(a, U b)$ for all
+$a, b$, put $c = U b - S(x) b$. Then $h(c, c) = h(c, U b) - h(c, S(x) b) =
+h(L_x c, b) - h(L_x c, b) = 0$, so $c = 0$ by positive definiteness.
 
-This is the categorical Frobenius-norm / GNS positivity construction
-(\cite{kock2004}, Ch. 2). The three hypotheses are exactly the inputs the
-argument consumes: non-degeneracy gives $\langle f, f\rangle \neq 0$, the
-pivotal adjoint identification gives the square, and formal reality turns
-a non-zero square into a positive element. $\square$
+**Involution and contravariance.** Applying the adjoint formula to $S(x)$
+gives $h(L_{S(x)} a, b) = h(a, L_{S^2(x)} b) = h(a, L_x b)$, using
+$S^2 = \mathrm{id}$. Applying it to $x y$ gives
+$h(L_{xy} a, b) = h(a, L_{S(y)} L_{S(x)} b)$, using $S(xy) = S(y)\,S(x)$.
+The involution $S^2 = \mathrm{id}$ is a hypothesis: for a pivotal Hopf
+algebra $S^2$ is conjugation by the pivotal element, which is the identity
+only in the involutory case.
+
+**Scalars.** For $r \in R$, $S(r \cdot 1) = r\,S(1) = r \cdot 1$, so on
+$\mathrm{End}(\mathbf{1}) \cong R$ the dagger is $S$ and fixes every scalar.
+
+**Positivity.** $f^{\dagger} \circ f = \int_A \mu(S(f) \otimes f) = h(f, f)$,
+which is positive for $f \neq 0$ by hypothesis. $\square$
+
+Positivity does not follow from non-degeneracy of the pairing: a
+non-degenerate form can have isotropic vectors. On $R^2$ the form
+$\langle x, y\rangle = x_1 y_2 + x_2 y_1$ is non-degenerate and
+$\langle e_1, e_1\rangle = 0$. The positivity of $h$ is therefore an input,
+as in the GNS construction, where it is the positivity of the state
+(\cite{kock2004}, Ch. 2, for the Frobenius side).

@@ -102,7 +102,7 @@ theorem rule_lm : rule.lm degLexOrder = [SU2Gen.K] := by
 
 /-- The one-rule system `{K ↦ 0}` is a Gröbner–Shirshov basis. -/
 theorem sys_isGS :
-    IsGrobnerShirshovBasis SU2Gen ℚ degLexOrder ⟨[rule], by simp⟩ :=
+    IsGrobnerShirshovBasis SU2Gen ℚ degLexOrder (.ofList [rule] (by simp)) :=
   isGrobnerShirshovBasis_of_single_letter_rule degLexOrder rule SU2Gen.K rule_lm
 
 end GsImpliesFlatRefutation
@@ -140,17 +140,12 @@ open in Lean. -/
 /-- The set of normal-form monomials is unchanged between the
     deformed algebra and its associated graded.
 
-    Axiomatised because the proof requires establishing an indexing
-    correspondence between the rule lists of the two systems (matching
-    `List.mem` witnesses to `List.get` indices), then applying
-    `h_same_lm` to transfer the `isInfix` negation.  This bookkeeping
-    requires `List.indexOf`-based lemmas not available in Mathlib's
-    `List.isInfix` API.
-
-    The argument is straightforward: `isNormalForm` only depends on the
-    leading monomials of the rules (via the `isInfix` check), and the
-    hypothesis `h_same_lm` asserts these are identical.  Hence the
-    normal-form predicate is the same for both systems.
+    `isNormalForm` only looks at the leading monomials of the rules (no rule's
+    leading monomial is an infix of a monomial in the support), so two systems
+    with the same **set** of leading monomials have the same normal forms. The
+    hypothesis is stated on sets because rule sets may be infinite
+    (`RewritingSystem.rules` is a `Set`); a rule-by-rule match of two finite
+    lists, the form this theorem had before, implies it.
 
     Reference: Bergman 1978, §5 (filtered deformations preserve
     the leading-term ideal). -/
@@ -159,31 +154,18 @@ theorem normal_forms_preserved
     {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys_deformed sys_graded : RewritingSystem G k)
-    (h_same_lm : ∀ (i : ℕ) (hi_d : i < sys_deformed.rules.length)
-                   (hi_g : i < sys_graded.rules.length),
-      leadingMonomial ord
-        (sys_deformed.rules[i]'hi_d).relation
-        (sys_deformed.rules[i]'hi_d).nonzero =
-      leadingMonomial ord
-        (sys_graded.rules[i]'hi_g).relation
-        (sys_graded.rules[i]'hi_g).nonzero)
-    (h_same_length : sys_deformed.rules.length = sys_graded.rules.length)
+    (h_same_lm : (fun r : ReductionRule G k => r.lm ord) '' sys_deformed.rules =
+      (fun r : ReductionRule G k => r.lm ord) '' sys_graded.rules)
     (f : AlgElement G k) :
     isNormalForm ord sys_deformed f ↔ isNormalForm ord sys_graded f := by
-  -- Was an axiom; proved 2026-11-15: `isNormalForm` only looks at the
-  -- leading monomials of the rules, and these agree index by index.
   constructor
   · intro h r hr m hm hsub
-    obtain ⟨i, hi, rfl⟩ := List.getElem_of_mem hr
-    have hi' : i < sys_deformed.rules.length := h_same_length ▸ hi
-    refine h _ (List.getElem_mem hi') m hm ?_
-    show leadingMonomial ord _ _ <:+: m
-    rw [h_same_lm i hi' hi]; exact hsub
+    obtain ⟨r', hr', he⟩ : r.lm ord ∈ (fun r : ReductionRule G k => r.lm ord) ''
+        sys_deformed.rules := h_same_lm ▸ ⟨r, hr, rfl⟩
+    exact h r' hr' m hm (by simp only at he; rw [he]; exact hsub)
   · intro h r hr m hm hsub
-    obtain ⟨i, hi, rfl⟩ := List.getElem_of_mem hr
-    have hi' : i < sys_graded.rules.length := h_same_length ▸ hi
-    refine h _ (List.getElem_mem hi') m hm ?_
-    show leadingMonomial ord _ _ <:+: m
-    rw [← h_same_lm i hi hi']; exact hsub
+    obtain ⟨r', hr', he⟩ : r.lm ord ∈ (fun r : ReductionRule G k => r.lm ord) ''
+        sys_graded.rules := h_same_lm ▸ ⟨r, hr, rfl⟩
+    exact h r' hr' m hm (by simp only at he; rw [he]; exact hsub)
 
 end UGB.GrobnerShirshov

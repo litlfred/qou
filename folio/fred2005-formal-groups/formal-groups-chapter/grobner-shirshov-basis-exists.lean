@@ -1,14 +1,10 @@
 /-!
-# Fred2005.grobner_shirshov_basis_exists — Existence of the Gröbner–Shirshov basis for Dist(G); flat deformation of Dist(H)
+# Presentation of `Dist(G)` and PBW for splays (not formalised)
 
-**Sibling-resolution stub** for content block
-[`thm:grobner-shirshov-basis-exists`](grobner-shirshov-basis-exists.md).  The buildable formalisation lives in
-[`Fred2005/FormalGroups.lean §5`](../lean/Fred2005/FormalGroups.lean)
-and is compiled by `lake build Fred2005`.
+Sibling stub for content block
+[`thm:grobner-shirshov-basis-exists`](grobner-shirshov-basis-exists.md): Prop. 2.4 and
+Thm. 1.9 of arXiv:math/0602138. Neither is formalised. The general Gröbner–Shirshov
+normal-form machinery is in the `ugb` package (`UGB.GrobnerShirshov`).
 
-Canonical declaration: `Fred2005.grobner_shirshov_basis_exists`.
-
-Existence of the Gröbner–Shirshov basis for Dist(G); flat deformation of Dist(H).
-
--- Ref: [fred2005] L. Fred, PhD thesis, U. Arizona, 2005, §5.
+-- Ref: [leitner2006] F. Leitner, arXiv:math/0602138, Prop. 2.4, Thm. 1.9.
 -/

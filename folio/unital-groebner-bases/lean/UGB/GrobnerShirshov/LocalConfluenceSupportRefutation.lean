@@ -52,7 +52,7 @@ theorem rule_lc : rule.lc degLexOrder = 1 := by
   show rel.coeff (rule.lm degLexOrder) = 1
   rw [rule_lm]; simp [rel]
 
-noncomputable def sys : RewritingSystem SU2Gen ℤ := ⟨[rule], by simp⟩
+noncomputable def sys : RewritingSystem SU2Gen ℤ := .ofList [rule] (by simp)
 
 theorem sys_isGS : IsGrobnerShirshovBasis SU2Gen ℤ degLexOrder sys :=
   isGrobnerShirshovBasis_of_single_letter_rule degLexOrder rule K rule_lm
@@ -62,7 +62,7 @@ theorem sys_noQuasiZeros : NoQuasiZerosFree SU2Gen ℤ :=
 
 theorem sys_lc : ∀ r ∈ sys.rules, IsUnit (r.lc degLexOrder) := by
   intro r hr
-  simp only [sys, List.mem_singleton] at hr
+  simp only [sys, RewritingSystem.mem_ofList_rules, List.mem_singleton] at hr
   subst hr; rw [rule_lc]; exact isUnit_one
 
 noncomputable def f : AlgElement SU2Gen ℤ := single wK 1

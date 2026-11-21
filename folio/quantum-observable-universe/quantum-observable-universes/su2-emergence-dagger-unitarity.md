@@ -1,1 +1,3 @@
-Every tensor automorphism $g \in G$ preserves the Frobenius dagger structure on $\tau(V)$. Consequently, $G \subseteq \mathrm{U}(2)$.
+Identify $\tau(V)$ with $\mathbb{C}^2$ and its Frobenius dagger structure with the standard Hermitian inner product $\langle x, y \rangle = \bar{x}^{\mathsf T} y$. If a $2 \times 2$ complex matrix $g$ satisfies $\langle g x, g y \rangle = \langle x, y \rangle$ for all $x, y \in \mathbb{C}^2$, then $g \in \mathrm{U}(2)$. Consequently, any set $G$ of such matrices satisfies $G \subseteq \mathrm{U}(2)$.
+
+The identification itself (that the dagger structure on $\tau(V)$ is a positive-definite Hermitian form, that $\dim \tau(V) = 2$, and that every tensor automorphism preserves it) is a hypothesis of this statement, not a conclusion.

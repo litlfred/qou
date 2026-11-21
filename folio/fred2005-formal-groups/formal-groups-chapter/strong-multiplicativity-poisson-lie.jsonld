@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/fred2005-formal-groups/blocks/rem-strong-multiplicativity-poisson-lie",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:strong-multiplicativity-poisson-lie",
+  "kind": "remark",
+  "title": "Strong multiplicativity, primitives and Poisson–Lie groups",
+  "uses": [
+    "papers/fred2005-formal-groups/blocks/def-strong-multiplicativity",
+    "papers/fred2005-formal-groups/blocks/def-skewed-poisson-structure"
+  ],
+  "interprets": "papers/fred2005-formal-groups/blocks/def-strong-multiplicativity",
+  "cites": [
+    "references/leitner2006",
+    "references/luweinstein1990"
+  ],
+  "tags": [
+    "strong-multiplicativity",
+    "poisson-lie",
+    "comultiplication"
+  ],
+  "text": "strong-multiplicativity-poisson-lie.md",
+  "provenance": "authored"
+}
