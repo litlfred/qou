@@ -176,8 +176,9 @@ pub fn clear_cache() {
 ///
 /// Mirrors `computations/laurent_q_trace.py
 /// tr_M_word_lq` line-by-line. Phase-1+2 scope: empty / single-top /
-/// multi-top Case A / Case B. Case C raises (caller falls back to
-/// the sympy ocneanu path — same behaviour as Python).
+/// multi-top Case A / Case B / Case C. Case C (two or more σ_{top-1}
+/// between the last two tops) is reduced exactly by `reduce_to_single`.
+/// The Python mirror in `laurent_q_trace.py` still raises on Case C.
 pub fn tr_m_word_lq(
     word: &[u32],
     n_strands: usize,
@@ -317,15 +318,28 @@ fn tr_m_word_lq_body(
     }
     let beta = &segment[first_tm1_in_seg + 1..];
     if beta.iter().any(|&g| g == top - 1) {
-        // Case C — multiple top-1 in segment. Python raises
-        // NotImplementedError and caller routes through the sympy
-        // ocneanu fallback. We do the same here so the Python
-        // caller knows to fall back.
-        return Err(format!(
-            "tr_m_word_lq: Case C (multiple top-1 in segment) \
-             not implemented; word={:?}, n={}",
-            word, n_strands
-        ));
+        // Case C — two or more σ_{top-1} in the segment between the last
+        // two tops. The segment lies in the subalgebra on generators
+        // 0..=top-1, so rewrite it in that subalgebra, with the Hecke
+        // relation and the braid relation only, as a sum h^k · word
+        // where each word holds at most one σ_{top-1}. Each resulting
+        // word then falls into Case A or Case B. The trace is linear,
+        // so the trace of the original word is Σ h^k · tr(word).
+        let prefix = &rest[..inner_pos];
+        let mut acc = ZHLaurent::zero();
+        for (k, seg) in reduce_to_single(segment, top - 1) {
+            let mut w: Vec<u32> = Vec::with_capacity(prefix.len() + seg.len() + 2);
+            w.extend_from_slice(prefix);
+            w.push(top);
+            w.extend_from_slice(&seg);
+            w.push(top);
+            let mut t = tr_m_word_lq_impl(&w, n_strands, max_depth, depth + 1)?;
+            for _ in 0..k {
+                t = t.mul_by_h();
+            }
+            acc = acc.add_ref(&t);
+        }
+        return Ok(acc);
     }
 
     // Build rewritten word:
@@ -338,6 +352,77 @@ fn tr_m_word_lq_body(
     new_word.push(top - 1);
     new_word.extend_from_slice(beta);
     tr_m_word_lq_impl(&new_word, n_strands, max_depth, depth + 1)
+}
+
+/// Rewrite a word on generators `0..=g` as `Σ h^k · w`, an equal
+/// element of the Hecke algebra in which every `w` holds at most one
+/// `σ_g`. Uses only `σ² = hσ + 1` and the braid relations, so it is
+/// exact and needs no trace.
+///
+/// Take the first two `σ_g` and the stretch `U` between them, which
+/// lies on generators `0..=g-1`.
+/// - `U` holds no `σ_{g-1}`: `U` commutes with `σ_g`, so
+///   `σ_g U σ_g = U σ_g² = h·U σ_g + U`. One `σ_g` fewer, or two.
+/// - `U = a σ_{g-1} b` with `a`, `b` on `0..=g-2`: they commute with
+///   `σ_g`, so `σ_g U σ_g = a σ_{g-1} σ_g σ_{g-1} b`. One `σ_g` fewer.
+/// - `U` holds two or more `σ_{g-1}`: rewrite `U` itself for `g-1`
+///   first, then one of the two cases above applies.
+///
+/// Every step lowers the number of `σ_g`, or keeps it and shortens the
+/// stretch `U`, so the rewrite terminates.
+pub(crate) fn reduce_to_single(word: &[u32], g: u32) -> Vec<(u32, Vec<u32>)> {
+    let mut out: Vec<(u32, Vec<u32>)> = Vec::new();
+    let mut work: Vec<(u32, Vec<u32>)> = vec![(0, word.to_vec())];
+    while let Some((k, w)) = work.pop() {
+        let pos: Vec<usize> = w
+            .iter()
+            .enumerate()
+            .filter_map(|(i, &x)| if x == g { Some(i) } else { None })
+            .collect();
+        if pos.len() <= 1 {
+            out.push((k, w));
+            continue;
+        }
+        let (i, j) = (pos[0], pos[1]);
+        let u = &w[i + 1..j];
+        let n_below = if g == 0 { 0 } else { u.iter().filter(|&&x| x == g - 1).count() };
+        if n_below == 0 {
+            // h · (w[..i] U σ_g w[j+1..])  +  (w[..i] U w[j+1..])
+            let mut a: Vec<u32> = Vec::with_capacity(w.len() - 1);
+            a.extend_from_slice(&w[..i]);
+            a.extend_from_slice(u);
+            a.push(g);
+            a.extend_from_slice(&w[j + 1..]);
+            let mut b: Vec<u32> = Vec::with_capacity(w.len() - 2);
+            b.extend_from_slice(&w[..i]);
+            b.extend_from_slice(u);
+            b.extend_from_slice(&w[j + 1..]);
+            work.push((k + 1, a));
+            work.push((k, b));
+        } else if n_below == 1 {
+            let m = u.iter().position(|&x| x == g - 1).unwrap();
+            let mut a: Vec<u32> = Vec::with_capacity(w.len() + 1);
+            a.extend_from_slice(&w[..i]);
+            a.extend_from_slice(&u[..m]);
+            a.push(g - 1);
+            a.push(g);
+            a.push(g - 1);
+            a.extend_from_slice(&u[m + 1..]);
+            a.extend_from_slice(&w[j + 1..]);
+            work.push((k, a));
+        } else {
+            for (k2, u2) in reduce_to_single(u, g - 1) {
+                let mut a: Vec<u32> = Vec::with_capacity(w.len() + u2.len());
+                a.extend_from_slice(&w[..i]);
+                a.push(g);
+                a.extend_from_slice(&u2);
+                a.push(g);
+                a.extend_from_slice(&w[j + 1..]);
+                work.push((k + k2, a));
+            }
+        }
+    }
+    out
 }
 
 // ──────────────────────────────────────────────────────────────────
@@ -463,5 +548,47 @@ mod tests {
         let msg = result.unwrap_err();
         assert!(msg.contains("out of range"),
                 "expected 'out of range' in error message, got: {msg}");
+    }
+
+    // ── Case C: two or more σ_{top-1} between the last two tops ──
+
+    fn tr(w: &[u32], n: usize) -> Vec<((i32, i32), Vec<(i32, String)>)> {
+        clear_cache();
+        tr_m_word_lq(w, n, 400).unwrap().to_ffi()
+    }
+
+    /// [1,0,0,1] at n = 3 is Case C. A cyclic rotation of it,
+    /// [0,0,1,1], takes Case A, and the trace is cyclic, so the two
+    /// must agree. The cache is cleared between them, so the cache
+    /// key (which is rotation-invariant) cannot make them agree.
+    #[test]
+    fn case_c_agrees_with_rotation() {
+        assert_eq!(tr(&[1, 0, 0, 1], 3), tr(&[0, 0, 1, 1], 3));
+    }
+
+    /// σ_1 σ_0² σ_1 = h·σ_1σ_0σ_1 + σ_1², expanded by hand.
+    #[test]
+    fn case_c_matches_hand_expansion() {
+        clear_cache();
+        let a = tr_m_word_lq(&[1, 0, 1], 3, 400).unwrap().mul_by_h();
+        let b = tr_m_word_lq(&[1, 1], 3, 400).unwrap();
+        assert_eq!(tr(&[1, 0, 0, 1], 3), a.add_ref(&b).to_ffi());
+    }
+
+    /// Larger Case C words, each checked against a cyclic rotation
+    /// that avoids Case C at the top level.
+    #[test]
+    fn case_c_rotations_n4_n5() {
+        assert_eq!(tr(&[2, 1, 1, 2], 4), tr(&[1, 1, 2, 2], 4));
+        assert_eq!(tr(&[2, 1, 0, 1, 2], 4), tr(&[1, 0, 1, 2, 2], 4));
+        assert_eq!(tr(&[2, 1, 0, 0, 1, 2], 4), tr(&[1, 0, 0, 1, 2, 2], 4));
+        assert_eq!(tr(&[3, 2, 1, 2, 1, 3, 0], 5), tr(&[2, 1, 2, 1, 3, 0, 3], 5));
+    }
+
+    /// The braid relation σ_0σ_1σ_0 = σ_1σ_0σ_1 inside a Case C segment
+    /// must not change the trace.
+    #[test]
+    fn case_c_braid_invariance() {
+        assert_eq!(tr(&[2, 0, 1, 0, 1, 2], 4), tr(&[2, 1, 0, 1, 1, 2], 4));
     }
 }
