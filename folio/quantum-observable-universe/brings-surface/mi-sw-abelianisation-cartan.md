@@ -5,9 +5,9 @@ Let $\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C})$ be the exceptional divisor at
 
    $$
      A\big|_{\mathcal{S}_c}
-       = A^0 \otimes H
-       + A^+ \otimes E_+
-       + A^- \otimes E_-,
+       = A^0 \otimes H \;+\;
+         A^+ \otimes E_+ \;+\;
+         A^- \otimes E_-,
    $$
 
    with $H, E_\pm$ the standard generators of $\mathfrak{sl}_2(\mathbb{C}) = \mathfrak{su}(2) \otimes_{\mathbb{R}} \mathbb{C}$ (the decomposition uses the complexified form) and $A^0$ a $\mathrm{U}(1)$-valued $1$-form.

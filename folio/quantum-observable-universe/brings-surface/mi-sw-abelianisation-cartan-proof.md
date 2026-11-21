@@ -9,10 +9,8 @@ $1$-form $A|_{\mathcal{S}_c}$.  By the weight-space decomposition
 $$
   A\big|_{\mathcal{S}_c}
   = 
-  A^0 \otimes H
-  + 
-  A^+ \otimes E_+
-  + 
+  A^0 \otimes H \;+\;
+  A^+ \otimes E_+ \;+\;
   A^- \otimes E_-,
 $$
 
