@@ -8,7 +8,7 @@ export default proposition({
     ref: "qou:QOU.Observations.gravity_spectral_prefactor",
     validation: "not_checked",
   },
-  uses: ["prop:confinement-categorical"],
+  uses: ["prop:confinement-categorical", "conj:binding-scale-catalan"],
   tags: [
     "catalan-constant",
     "borromean-volume",
@@ -17,6 +17,20 @@ export default proposition({
     "macroscopic-stratum",
   ],
   authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-11-21",
+      body:
+        "Made conditional. The statement asserted the prefactor $\\alpha = m_e \\cdot 8G$ " +
+        "outright while that formula is the content of " +
+        "`conj:binding-scale-catalan`, which was not in `uses[]` (a conjectural-" +
+        "propagation gap found in the sidecar review). The conjecture is now in " +
+        "`uses[]` and the identification $G_q = G$ is stated as following from it. " +
+        "The Lean already carries the hypothesis explicitly: " +
+        "`tailSpectralRatio_eq_of_borromean` takes `h : α = m_e · 8 · c` as an " +
+        "argument, and `gravity_spectral_prefactor` is unconditional. No class " +
+        "axiomatisation of the conjecture was added.",
+    },
     {
       kind: "deprecated",
       date: "2026-09-14",
