@@ -8959,3 +8959,19 @@ Written before any computation. Corpus object: QEDHigherOrderCovariance §U — 
 **Two readings, both reported:** R-term — neutrality is imposed on each braid-word term of the UNREDUCED expansion of γ(φ)γ(ψ) (coefficient of every non-neutral term must vanish); R-word — neutrality is imposed on the γγ-made braid only (§P: "the colouring is applied to the braid, not term by term"), then FrobeniusSelected over arm B (all twelve terms) and arm A.
 **Questions, no predicted answer:** 1. Under R-term, do the vanishing conditions force φ₀ = φ₁ = ψ₀ = ψ₁ = 0? 2. Under R-word, what is the minimal feasible neutral word in arms A and B, and is it V³? 3. Does R-term conflict with the uud charge assignment (a one-component term merging strands of different charge)?
 **Not allowed:** changing the neutrality definition, arms, bound (10 crossings) or selection after results; choosing by Q_β or any mass. Nothing compared with measurement.
+
+### RESULT D2 (2026-11-21T14:40Z) — colour-neutral route
+
+Formalized first: `QOU/PhotonU1NeutralCut.lean` (core Lean, `lean -DautoImplicit=false` exit 0; `table` no axioms, `writhe_eq_zero_of_neutral` [propext, Quot.sound]).
+- Of the 12 non-identity terms of γ(φ)γ(ψ), only V = σ₀σ₁⁻¹ and V² are U(1)-neutral; V³ = β_Bor is neutral.
+- A neutral word has writhe 0 (proved, general).
+
+Compute (`computations/probes/gg_photon_cut/u1_neutral_cut_probe.py`, witness `u1-neutral-cut-d2.witness.json`, 2/2):
+- R-term (each term of the unreduced expansion must be neutral): forces φ₀=φ₁=ψ₀=ψ₁=0, i.e. exactly the V-only cut. FORCED.
+- R-word, arm B (all photon-product words up to 10 crossings, keep the neutral ones, then reading-3 FrobeniusSelected): 5 neutral, 1 feasible, unique minimum V³ = β_Bor (6 crossings). Arm A: 2 neutral, 0 feasible.
+
+Caveats (stay in force):
+1. R-term is a reading QEDHigherOrderCovariance §P does NOT take ("colouring applied to the braid, not term by term").
+2. V and V² close to ONE component, which cannot carry three different uud charges (pre-reg Q3) — so neutrality here is the trivially-charged case.
+3. Ruled weights (qh, −q⁻¹h) still not derived. Scope (a), ≤10 crossings for R-word.
+Bean stays OPEN.
