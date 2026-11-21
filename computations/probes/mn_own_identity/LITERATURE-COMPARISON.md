@@ -669,3 +669,35 @@ constant is open.
 **Side note (Lean, existing).** `massIntegrand_eq_id_of_frobeniusForm_eq_counit` needs
 `frobeniusForm = counit`. §17's `counit_eq_frobeniusForm_of_coev` supplies it whenever
 `coevaluation = η ≫ Δ`, so that hypothesis is now discharged from a structural one.
+
+## 22. Complex geometry of the holonomy eigenvalue, and the Lean form of §21 (2026-11-21)
+
+Owner: *"fall back to block, but try complex first .. look at complex Geom"*. Pre-registered in
+`PREREGISTRATION-holonomy-complex-geometry.md` (commit a978cc01bf2, before the run).
+Probe `mn_holonomy_complex_geometry_probe.py`, exact sympy, mpmath at the CODATA-2022 muon pin.
+
+**The eigenvalue is a pure phase.** The non-trivial pair satisfies `t² + c₁t + 1 = 0`, so
+`λ+λ− = 1`, and for `1/φ < q < φ` (φ the golden ratio) `|c₁| < 2`: the pair is `e^{±iθ}` on the
+unit circle (elliptic). The boundary is exact: `c₁ − 2 = (q⁴ + 1)²(q² − q − 1)(q² + q − 1)/q⁶`,
+which vanishes at `q = φ` and `q = 1/φ`. Outside that range the pair is real (loxodromic). The pin
+`q₀ ≈ 1.10998` is elliptic: `θ = 0.0762693181392606636463`, `|λ| = 1`, complex length
+`log λ = iθ` (real part zero to working precision): a pure rotation, no hyperbolic translation.
+
+**Closed form of the complex μ.**
+- `|μ|² = 2 + c₁ = h⁴[3]_q` exactly, with `h = q − q⁻¹`, `[3]_q = q² + 1 + q⁻²`.
+- So `|μ| = 2 sin(θ/2) = h²√[3]_q` and `arg μ = (π + θ)/2`:
+  `μ = h²√[3]_q · e^{i(π+θ)/2}`.
+- At the pin: `|μ| = 0.0762508336791316063538`, `arg μ = 1.60893098586452695105`.
+- Near `q = 1`: `θ = 4√3 ε² − 4√3 ε³ + O(ε⁴)` for `q = 1 + ε`, i.e. `θ ≈ √3 h²`.
+- **Block fallback:** `μ + μ̄ = 2 Re μ = −h⁴[3]_q = −(q² − 1)⁴(q⁴ + q² + 1)/q⁶`.
+
+No comparison with a hyperbolic volume, Chern–Simons invariant or measured number was made.
+
+**Lean, sorry-free** (`QOU/MassTheory/HolonomyConnectionSplit.lean`, lean-direct exit 0, axioms
+`propext, Classical.choice, Quot.sound`), over any field, built on the corpus intertwiner `P(q)`:
+- `intertwine_Vpow`, `intertwine_V3`: `P Vpⁿ = Vnⁿ P`.
+- `Vn3_conj`: `Vn³ = P Vp³ P⁻¹` (needs `q ≠ 0`, `q² + 1 ≠ 0`): same spectrum.
+- `eigen_transfer`: `Vp³ψ = λψ` gives `Vn³(Pψ) = λ(Pψ)`, so `μ` is the same for p and n.
+- `trace_Vp3_sub_three`: `tr(Vp³) − 3 = −(q² − 1)⁴(q⁴ + q² + 1)/q⁶` (agrees with §21's probe,
+  which used the 8-dimensional tensor representation: an independent convention check).
+- `two_add_c1_eq`: `2 + c₁ = h⁴[3]_q`; `c1_sub_two_eq`: the golden-ratio boundary.
