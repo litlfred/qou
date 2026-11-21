@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
 /**
- * Working conjecture for the proton's /q^3.
+ * Retired working conjecture for the proton's /q^3 (kept as a negative record).
  *
  * The factor q^{-3} in the normaliser c_sign = [3]_q! q^{-3} of F_Bor is the
  * derivative of the sign-block Markov trace tr_z(x_-) at the convention-D
@@ -24,7 +24,20 @@ export default conjecture({
     "The proton normaliser $q^{-3}$ as a derivative in an integral, bar-invariant coordinate",
   uses: ["def:f-bor-borromean-observable", "def:bar-involution"],
   cites: ["kazhdan-lusztig1979", "geer-patureau-mirand-turaev-2009"],
+  authorNotes: [
+    {
+      kind: "status",
+      date: "2026-11-21",
+      body:
+        "**Retired as a derivation route** (owner: \"All\", picking retire, " +
+        "restate and ready). The derivative reading returns the chosen element's " +
+        "square constant over $[3]_q!$, so the $q^{-3}$ comes from scaling $x_-$ by " +
+        "its identity coefficient. The same criterion applied to the element selects " +
+        "$k = 0$. Audit: docs/audits/2026-11-21-proton-q3-kl-coordinate.md.",
+    },
+  ],
   tags: [
+    "retired",
     "proton",
     "schur-element",
     "kazhdan-lusztig",
