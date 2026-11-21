@@ -1,1 +1,0 @@
-First we must act on $\dot{u}_1(x)_L$ by the monodromy $M=\begin{pmatrix}1&0\\1&1\end{pmatrix}$ to get $$M\dot{u}_1(x)_L = (-a,[a(mi-nj)+nbs]/(ma-nb) - a)$$ Adding the vector $(0,-(k-s))$ to this, with $k = -a$, gives the same result as before for $\dot{u}_1(x)_R$.

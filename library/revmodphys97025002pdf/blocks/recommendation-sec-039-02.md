@@ -1,1 +1,0 @@
-With this in mind, we compare in Table XVI the values of R∞, rp, rd, and rα obtained in different ways and from which the following three conclusions can be drawn. (i) The muonic data have a significant impact on the recommended value of R∞, as a comparison of the values in columns 2 and 3 of Table XVI shows.

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/agt-v12-n2-p04-s/blocks/lem-sec-005-04",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 8,
+  "pageEnd": 13,
+  "text": "lem-sec-005-04.md",
+  "derivedFrom": "library/agt-v12-n2-p04-s/sections/sec-005",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v12-n2-p04-s/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4.5",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-005-41-statement-of-the-result.md (p. 8-13)",
+    "claim_id": "agt-v12-n2-p04-s#lemma:4.5",
+    "lean_status": "unformalized"
+  }
+}

@@ -101,6 +101,6 @@ theorem CategoricalMassMarkov.ofHecke_φ_succ {A : Type*} [CommRing A]
       = Φmass.massElement * (fun a => Φmass.massElement * a)^[n] Φmass.massElement
   rw [Function.iterate_succ_apply']
 
--- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/categorical-mass-markov-trace-endomorphism-intro.ts
+-- Ref: [leitner2026] quantum-observable-universe/mass-endomorphism/categorical-mass-markov-trace-endomorphism-intro.ts
 
 end QOU

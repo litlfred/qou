@@ -1,1 +1,0 @@
-We shall say that a sequence of indices $i_1,\ldots,i_{r}$ has type $c=(c_1,\ldots,c_l)$ with the $c_i$ positive integers and $|c|=\sum_{i=1}^l c_i = r$ if, after reordering, the sequence of indices writes as $$i_1'=i_2'=\ldots=i_{c_1}'<i_{c_1+1}'=i_{c_1+2}'=\cdots = i_{c_1+c_2}'<i_{c_1+c_2+1}' = \cdots.$$ Here, $i_k'$ stands for the $k$-th element of the reordered sequence.

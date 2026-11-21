@@ -102,10 +102,17 @@ fi
 # every paper olean in a directory nothing reads -- LEAN_PATH is built from
 # `folio/*/lean/...`.  Transform on the way out; a no-op once the branch is
 # re-seeded from a `folio/` tree.
-tar xzf "$tgz" -C "$REPO_ROOT" --transform 's,^content/,folio/,' || {
-  echo "lean-cache-restore: tar extraction failed (exit $?)." >&2
-  exit 1
-}
+if tar --version 2>/dev/null | grep -q 'GNU tar'; then
+  tar xzf "$tgz" -C "$REPO_ROOT" --transform 's,^content/,folio/,' || {
+    echo "lean-cache-restore: tar extraction failed (exit $?)." >&2
+    exit 1
+  }
+else
+  tar xzf "$tgz" -s ',^content/,folio/,' -C "$REPO_ROOT" || {
+    echo "lean-cache-restore: tar extraction failed (exit $?)." >&2
+    exit 1
+  }
+fi
 lean_mathlib_url_fix
 
 count=$(find "$REPO_ROOT/.lake/packages/mathlib" -name '*.olean' 2>/dev/null | wc -l | tr -d ' ')

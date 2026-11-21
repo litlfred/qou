@@ -1,1 +1,0 @@
-Due to the canonical bijection between $\{1,2,\dots,n\}$ and $\{1',2',\dots,n'\}$ we can identify $\mathop{\mathrm{NC}}(1,2,\dots,n)$ with $\mathop{\mathrm{NC}}(1',2',\dots,n')$ and in the future we shall sometimes regard $\pi_{\mathop{\mathrm{comp}}}$ as an element of $\mathop{\mathrm{NC}}(1,2,\dots,n)$ and sometimes as an element of $\mathop{\mathrm{NC}}(1',2',\dots,n')$.

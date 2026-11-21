@@ -62,7 +62,7 @@ available for this particular carrier.
 count-channel bridge needs `ℝ` because `countChannel` and the ordering `1 < q`
 are archimedean.  Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-09-05-binding-gap-groupoids-derived-categories-full-tower.md
+-- Ref: [leitner2026] docs/audits/2026-09-05-binding-gap-groupoids-derived-categories-full-tower.md
 -/
 import QOU.Mass.CrossingModelPairLocality
 import QOU.Mass.BrunnianBindingChannel

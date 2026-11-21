@@ -2,20 +2,19 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-jet-filtration-binding-extensive",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:jet-filtration-binding-extensive",
   "kind": "proposition",
   "title": "The jet-filtration binding is extensive (monotone in body order)",
-  "uses": [
-    "papers/quantum-observable-universe/blocks/conj-binding-manybody-eq-jet-filtration"
-  ],
+  "uses": [],
   "tags": [
     "binding",
     "jet-filtration",

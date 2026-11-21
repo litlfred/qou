@@ -1,0 +1,1 @@
+A spherical category is non-degenerate if, for all objects a and b, the pairing 3 is non-degenerate. The next theorem shows that every additive spherical category has a natural quotient which is a non-degenerate spherical category. This con- struction is mentioned in [12].

@@ -1,0 +1,1 @@
+The right-hand side of (1) is equal to 2π√−1 ς, and it is called the complex volume. It is known, see e.g. [45], that the complex volume can be expressed by a critical value of the potential function. It is also known, see e.g. [10], that the complex volume can be regarded as the SL(2, C) Chern-Simons invariant.

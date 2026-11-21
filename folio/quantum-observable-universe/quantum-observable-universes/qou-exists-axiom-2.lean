@@ -22,7 +22,7 @@ LaTeX label: `lem:qou-exists-axiom-2`
 
 ## References
 
-- [manuscript] §1 Quantum Observable Universe, Axiom 2
+- [leitner2026] §1 Quantum Observable Universe, Axiom 2
 - Peter–Weyl theorem for compact quantum groups (Woronowicz)
 -/
 
@@ -42,7 +42,7 @@ universe cObj cHom uk fib
     Type*` (inherited from its `QuantumUniverse` base).  This is the
     carrier of the Peter–Weyl decomposition — the structural input
     for axiom 2's observability conditions. -/
--- Ref: [manuscript] §1 Quantum Observable Universe, Axiom 2
+-- Ref: [leitner2026] §1 Quantum Observable Universe, Axiom 2
 -- NOTE: `def`, not `theorem` — `Functor` is a `Type _` (data,
 -- not a proposition).  Per Copilot review on PR #794.
 def exists_axiom_2_observability_data

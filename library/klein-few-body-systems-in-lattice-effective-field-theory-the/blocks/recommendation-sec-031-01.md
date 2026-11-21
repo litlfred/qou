@@ -1,1 +1,0 @@
-Consequently, the eﬀective 4NF is not necessary any more once the lattice spacing is chosen small enough, and one should also conﬁrm the correlation between 3N and 4N systems, known as the Tjon band [24, 72].

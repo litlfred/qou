@@ -22,8 +22,8 @@ whose witnesses `A-operator-extract-h{n}-{iface}.witness.json` carry the
 matrix entries.  This is a naming/structure block (no semantic claim
 beyond the existence of the operator data), so it introduces no `sorry`.
 
-Ref: [manuscript] prop:lr-coefficient-hecke
-     [manuscript] prop:crystal-r-matrix-sub-lemma
+Ref: [leitner2026] prop:lr-coefficient-hecke
+     [leitner2026] prop:crystal-r-matrix-sub-lemma
      [wenzl1988] Wenzl, Invent. Math. 92 (1988) 349-383
      [hoefsmit1974] http://hdl.handle.net/2429/19407
 -/

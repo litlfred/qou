@@ -17,17 +17,16 @@ through their image under the Wedderburn embedding — a step this
 proof does **not** discharge, and which the corpus still cannot
 supply.
 
-The obstruction is one of shape.  The formalised Wedderburn embedding
-`QOU.HeckeAlgebra.Wedderburn.blockDiagonal` is a concrete construction
-(axiom footprint `propext`, `Classical.choice`, `Quot.sound`), but it has
+The obstruction is one of shape.  The Wedderburn embedding is a
+concrete construction, but it has
 type $\bigoplus_\lambda M_{f^\lambda} \to M_{n!}$: it assembles blocks
 into one matrix rather than splitting one block's scalar $C_{(2,1)}$ into
 three coefficients.  The landing in $M_{n!}$ is additionally conditional on
-the RSK identity $\sum_\lambda (f^\lambda)^2 = n!$, carried as the named
-hypothesis `RSKDimIdentity` and discharged by nothing here.
+the RSK identity $\sum_\lambda (f^\lambda)^2 = n!$, carried as a named
+hypothesis and discharged by nothing here.
 
 That objection is now a **theorem**, not a remark
-(`QOU/HeckeAlgebra/WedderburnTrace.lean`).  The naive form — "three
+.  The naive form — "three
 independent coefficients cannot come from one scalar" — is false, since
 one real encodes three set-theoretically.  Under **linearity**, which
 this corpus already assumes for the Markov trace, it is true: that trace
@@ -35,7 +34,7 @@ factors through the block *traces*, so a functional of that form
 supported at a single $\lambda$ is exactly $c_\lambda \cdot
 \operatorname{tr}(x_\lambda)$ — one coefficient against one number — and
 any three such are linearly dependent, with an explicit witness
-(`three_supported_traceFunctionals_dependent`).
+.
 
 This does not make the clause false; it rules out the route the clause
 names, whenever that route is linear, factors through the Markov trace,
@@ -43,21 +42,18 @@ and is localised at $(2,1)$.  It also says where the room is, which is
 the more useful half: $f^{(2,1)} = 2$, so the block is $M_2(\mathbb{R})$
 — **four** real dimensions, of which the trace reads one.  The
 information wanted is present in the block and destroyed by tracing it
-— itself now a theorem (`trace_does_not_separate`,
-`exists_indistinguishable_by_every_traceFunctional`): whenever a block
+— itself now a theorem: whenever a block
 has dimension at least $2$ there are **distinct** decompositions on
 which every block trace agrees, so every trace-factoring functional,
 the Markov trace included, takes the same value on both.  Instantiating
-that at $(2,1)$ needs $f^{(2,1)} = 2$; that value is now formalised
-(`SeminormalDimSmall.seminormalDim_p21`, via the Frame–Robinson–Thrall
-hook-length formula), so `trace_does_not_separate_p21` holds
-unconditionally.  The general theorems keep the bound as a hypothesis
+that at $(2,1)$ needs $f^{(2,1)} = 2$; that value is established
+(via the Frame–Robinson–Thrall hook-length formula), so the instance at
+$(2,1)$ holds unconditionally.  The general theorems keep the bound as a hypothesis
 because they are about any block of dimension $\geq 2$.  The boundary
 is real: $f^{(1,1)} = 1$, so at the charge shape the block *is* its
 trace and none of this applies.  A derivation reading the block rather than its
 trace is not blocked by any of this — and that is now constructive
-rather than merely permitted: `three_blockEntry_independent_p21`
-exhibits three linearly independent block-reading functionals at
+rather than merely permitted: there exist three linearly independent block-reading functionals at
 $(2,1)$, the exact complement of the three trace-factoring ones being
 dependent.  It does **not** identify those three with volume, surface
 and Coulomb; three independent functionals existing is a *necessary*
@@ -126,7 +122,7 @@ for step = 1..A:
 B_unified = Σ_λ cumulative_λ
 ```
 
-**Witness:** `mass-qvalue-by-level.witness.json` — every isotope
+**Computation record:** a per-level table covering every isotope
 ($^1$H to $^{208}$Pb), per-step rows recording per-partition
 contributions; restartable from any
 $(A, Z_k, N_k, \{\ln|\mathrm{tr}|_\lambda\}, \mathrm{cumulative})$.
@@ -149,6 +145,4 @@ extending $K_{\max}$ above $6$ adds further partitions, with
 shadow prices and $q$-hooks computed by the same formulas.
 
 *Formal asymptotic content. The Féray–Méliot rate $O(1/\sqrt{A})$
-has $\ordw(\text{accumulator}) = -\tfrac{1}{2}\,\ordw(A)$ in the surreal valuation;
-see [Big-O via $\ordw$](#rem:conway-normal-form) and the
-[body asymptotics catalog](#rem:body-asymptotics-catalog).*
+has $\ordw(\text{accumulator}) = -\tfrac{1}{2}\,\ordw(A)$ in the surreal valuation.*

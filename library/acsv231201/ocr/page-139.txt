@@ -1,0 +1,46 @@
+5.3 Real part of phase has a strict minimum 121
+
+Proof of Theorem 5.1. Writing A(z) as a power series up to degree N plus a
+remainder term,
+
+A(z) = [> » oe + R(z),
+
+n=0 |rl=n
+
+where R(z) = O(lzI*'). Using Corollary 5.7 to integrate all the monomial
+terms and Proposition 5.8 to bound the integral of R(z)e~*5) shows that
+
+T(d) = y » ApBpAee)/2 + o(aeenenry ,
+
+n=0 [rl=n
+proving the stated asymptotic expansion. ia)
+
+Exercise 5.6. Let M(t) = sup{|A(z)| : |z| = ¢} and let Kp be a ball of fixed
+radius R. Prove a version of Theorem 5.1 using the fact that if M(t) = O(t*)
+then
+
+R
+f A(z)e"S® dz < f eM(t) dV(K;),
+Kr 0
+where dV(K,) = c,t¢~'dt is the volume of a spherical shell of thickness dt and
+radius ¢ in d dimensions.
+
+5.3. Real part of phase has a strict minimum
+
+We extend our results beyond integrals with standard quadratic phases using
+complex analytic techniques. If N is a neighborhood of the origin in R¢ and ¢ :
+N — Cis analytic on N then ¢ can be viewed as a complex analytic function
+on a neighborhood Ne of the origin in C4 using its power series expansion.
+Suppose that (0) = 0 and the real part of ¢ is nonnegative on N, so that the
+gradient of ¢ must vanish at the origin. Our first key lemma is that, under an
+assumption of nondegeneracy, we can change variables so that ¢ becomes the
+standard quadratic form.
+
+Lemma 5.9 (Complex Morse Lemma). If ¢(a) has vanishing gradient and
+nonsingular Hessian H at the origin then there is a bi-holomorphic change of
+variables x = Wy) around x = y = 0 such that d(W(y)) = S(y) = yan ae
+
+The Jacobian matrix Jy = dO) satisfies (det Jy)? = —
+
+Our proof of Lemma 5.9 is adapted from the proof of the real version given
+in [Ste93, VII:2.3.2].

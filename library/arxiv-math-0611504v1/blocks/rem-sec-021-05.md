@@ -1,0 +1,1 @@
+Formulas for Cheeger-Chern-Simons invariants H1(S3, K0, ρ) of arbitrary PSL(2, C)- characters of S3 \ K come exactly in the same way (See Remark 1.1 and Remark 5.5). In the peculiar situation of the complete hyperbolic structure and its hyperbolic Dehn ﬁllings, they coincide with those of [25], Section 15. ST´EPHANE BASEILHAC1 AND RICCARDO BENEDETTI2

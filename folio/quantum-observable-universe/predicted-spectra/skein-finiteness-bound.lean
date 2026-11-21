@@ -18,7 +18,7 @@ At q = 1.110: A_max ≈ 4.9, consistent with the sign flip at A=6.
 LaTeX label: `prop:skein-finiteness-bound`
 
 ## References
-- [manuscript] §6/skein-finiteness-bound
+- [leitner2026] §6/skein-finiteness-bound
 
 **Ground ring**: `ℝ` (geometric/analytic realisation).
 Uses ℝ-specific analysis (trig, norms, real powers).
@@ -34,7 +34,7 @@ namespace QOU.Archimedean
 
 /-- The Skein polynomial P(q) of N(p,n) — axiomatized as computed
     by the transfer matrix product ∏ V̂_i. -/
--- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
+-- Ref: [leitner2026] §6/skein-polynomial-transfer-matrix
 -- Converted `axiom` -> `opaque` 2026-09-04: this declares a SYMBOL, not a claim.
 -- `axiom f : T` and `opaque f : T := <witness>` are equally opaque, but only the
 -- first is a global axiom contaminating `#print axioms` downstream.  No
@@ -43,7 +43,7 @@ opaque skeinPolynomial (q : ℝ) (p n : ℕ) : ℝ := 0
 
 /-- A nuclear configuration (p,n) is stable at substrate parameter q
     if its Skein polynomial is positive. -/
--- Ref: [manuscript] §6/skein-finiteness-bound
+-- Ref: [leitner2026] §6/skein-finiteness-bound
 structure IsStable (q : ℝ) (p n : ℕ) where
   q_gt_one : 1 < q
   skein_positive : (0 : ℝ) < skeinPolynomial q p n
@@ -55,7 +55,7 @@ structure IsStable (q : ℝ) (p n : ℕ) where
 /- The finiteness bound: [A-1]_q! > [2]_q^{A-1}.
    q-factorial beats q-exponential at A = 5 for all q > 1.
    No classical e or π — purely q-combinatorial. -/
--- Ref: [manuscript] §6/skein-finiteness-bound
+-- Ref: [leitner2026] §6/skein-finiteness-bound
 
 /-- The q-integer [n]_q = (q^n - q^{-n})/(q - q^{-1}). -/
 noncomputable abbrev qInt (q : ℝ) (n : ℕ) : ℝ := QOU.QInteger.qIntBal q n
@@ -66,25 +66,25 @@ noncomputable def qFactorial (q : ℝ) (n : ℕ) : ℝ :=
 
 /-- The critical condition: [A-1]_q! > [2]_q^{A-1}.
     At A = 5: [4]_q! > [2]_q⁴ for q = 1.110. -/
--- Ref: [manuscript] §6/skein-finiteness-bound
+-- Ref: [leitner2026] §6/skein-finiteness-bound
 -- Ref: computations output: [4]! = 25.15 > [2]⁴ = 16.35
 axiom q_factorial_exceeds_at_5 (q : ℝ) (hq : 1 < q) (hq2 : q < 2) :
     qFactorial q 4 > (qInt q 2) ^ 4
 
 /-- Below A = 5: [A-1]_q! ≤ [2]_q^{A-1}. -/
--- Ref: [manuscript] computations output
+-- Ref: [leitner2026] computations output
 axiom q_factorial_bounded_below_5 (q : ℝ) (hq : 1 < q) (hq2 : q < 2) :
     qFactorial q 3 < (qInt q 2) ^ 3
 
 /-- The closed-form bound A_max(q) ~ π / √(4 ln q) — axiomatized as an
     opaque approximation function (its asymptotics are the content of the
     divergence/vanishing axioms below). -/
--- Ref: [manuscript] §6/skein-finiteness-bound
+-- Ref: [leitner2026] §6/skein-finiteness-bound
 opaque A_max_approx (q : ℝ) : ℝ := 0
 
 /-- **External axiom (manuscript §6/skein-finiteness-bound):
     A_max diverges as q → 1⁺.** -/
--- Ref: [manuscript] §6/skein-finiteness-bound
+-- Ref: [leitner2026] §6/skein-finiteness-bound
 axiom A_max_diverges_classical_axiom :
     ∀ M : ℝ, ∃ q : ℝ, 1 < q ∧ A_max_approx q > M
 
@@ -94,7 +94,7 @@ theorem A_max_diverges_classical :
 
 /-- **External axiom (manuscript §6/skein-finiteness-bound):
     A_max vanishes as q → ∞.** -/
--- Ref: [manuscript] §6/skein-finiteness-bound
+-- Ref: [leitner2026] §6/skein-finiteness-bound
 axiom A_max_vanishes_strong_deformation_axiom :
     ∀ ε : ℝ, 0 < ε →
     ∃ Q : ℝ, ∀ q : ℝ, q > Q → A_max_approx q < ε
@@ -110,7 +110,7 @@ theorem A_max_vanishes_strong_deformation :
 
 /- The pp transfer matrix T_pp has eigenvalues q and -q⁻¹.
    Their ratio is -q². -/
--- Ref: [manuscript] §6/skein-finiteness-bound
+-- Ref: [leitner2026] §6/skein-finiteness-bound
 /-- **Proven**: product of eigenvalues = det = −1 for the pp transfer
     matrix (Vieta's formula).
 
@@ -118,7 +118,7 @@ theorem A_max_vanishes_strong_deformation :
     and `tr_T² − disc = tr_T² − (tr_T² − 4·det_T) = 4·det_T = −4`,
     giving `lam_p · lam_m = −1`. Uses `disc = ha² + 4 ≥ 0` so
     `(√disc)² = disc` via `Real.sq_sqrt`. -/
--- Ref: [manuscript] §6/skein-finiteness-bound
+-- Ref: [leitner2026] §6/skein-finiteness-bound
 theorem pp_eigenvalue_ratio (q : ℝ) (hq : 0 < q) :
     let ha := q - 1/q
     let tr_T := ha
@@ -150,14 +150,14 @@ theorem pp_eigenvalue_ratio (q : ℝ) (hq : 0 < q) :
 
 /-- A torus knot T_{m,n} embeds in a surface of genus g
     iff (m-1)(n-1)/2 ≤ g. -/
--- Ref: [manuscript] §6/torus-embeddable-complete
+-- Ref: [leitner2026] §6/torus-embeddable-complete
 def torusEmbeddable (m n g : ℕ) : Prop :=
   (m - 1) * (n - 1) ≤ 2 * g
 
 /-- The Bring surface has genus 4.
     Embeddable torus knots: (m-1)(n-1) ≤ 8.
     Complete list: T_{2,3}, T_{2,5}, T_{2,7}, T_{2,9}, T_{3,4}, T_{3,5}. -/
--- Ref: [manuscript] §6/torus-embeddable-complete
+-- Ref: [leitner2026] §6/torus-embeddable-complete
 theorem bring_surface_torus_knots :
     torusEmbeddable 2 3 4 ∧
     torusEmbeddable 2 5 4 ∧
@@ -172,7 +172,7 @@ theorem bring_surface_torus_knots :
   omega
 
 /-- The number of embeddable torus knots on genus 4 is finite (exactly 6). -/
--- Ref: [manuscript] §6/skein-finiteness-bound
+-- Ref: [leitner2026] §6/skein-finiteness-bound
 theorem particle_finiteness :
     {(m, n) : ℕ × ℕ | 2 ≤ m ∧ m < n ∧ torusEmbeddable m n 4}.Finite := by
   apply Set.Finite.subset (Set.Finite.prod (Set.finite_Icc 2 4) (Set.finite_Icc 3 9))

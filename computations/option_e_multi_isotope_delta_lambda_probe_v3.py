@@ -34,6 +34,7 @@ from codata_constants import (
     AME_B_DEUTERON_MEV_VALIDATION,
     AME_B_TRITIUM_MEV_VALIDATION,
 )
+from codata_constants import AME_B_HE3_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 
 def young_contents(partition):
@@ -80,7 +81,7 @@ mp.dps = 50
 AME_MeV = {
     "deuteron":  AME_B_DEUTERON_MEV_VALIDATION,
     "tritium":   AME_B_TRITIUM_MEV_VALIDATION,
-    "helium-3":  mpf("7.71806"),
+    "helium-3":  AME_B_HE3_MEV_VALIDATION,
 }
 
 M_E_MEV = mpf("0.51099895069")

@@ -1,1 +1,0 @@
-In any case, we want to stress again that the scope of our work is more general and suggests that any proof of the arithmeticity conjecture should be adaptable into a proof of the modularity conjecture via the use of the reciprocity relation [\[eq:mro\]](#eq:mro){reference-type="eqref" reference="eq:mro"}.

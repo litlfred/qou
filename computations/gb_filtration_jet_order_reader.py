@@ -44,9 +44,14 @@ import json
 import sys
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
-from math import factorial
+from math import factorial  # float64-ok: exact integer factorial
 from pathlib import Path
 from typing import Iterable
+
+import mpmath as mp  # noqa: E402
+from _precision import fmt as _fmt, set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 HERE = Path(__file__).parent
 
@@ -64,6 +69,7 @@ class SparsityPattern:
     n_steps: int
     n_hecke_relations_fired: int
     word: list[int] = field(default_factory=list)
+    closure_components: int = 0
 
     @property
     def total_basis_size(self) -> int:
@@ -76,11 +82,11 @@ class SparsityPattern:
         return sum(self.filtration_shape.values())
 
     @property
-    def reduction_factor(self) -> float:
+    def reduction_factor(self) -> mp.mpf:
         """`|H_n| / Σ multiplicity` — speed-up estimate."""
         if self.filtered_basis_size == 0:
-            return 0.0
-        return self.total_basis_size / self.filtered_basis_size
+            return mp.mpf(0)
+        return mp.mpf(self.total_basis_size) / mp.mpf(self.filtered_basis_size)
 
 
 def load_jet_order_witness(
@@ -88,6 +94,7 @@ def load_jet_order_witness(
 ) -> dict[str, SparsityPattern]:
     """Load the GB-filtration / jet-order witness and return one
     `SparsityPattern` per test case keyed by name."""
+    from gb_filtration_jet_tracker import closure_component_count
     p = Path(path)
     if not p.exists():
         raise FileNotFoundError(
@@ -99,14 +106,18 @@ def load_jet_order_witness(
     for tc in d.get("test_cases", []):
         # filtration_shape comes back keyed by string grade in JSON.
         shape = {int(k): int(v) for k, v in tc.get("filtration_shape", {}).items()}
+        n_s = int(tc.get("n", 0))
+        w = list(tc.get("word", []))
+        comp = int(tc.get("closure_components") or (closure_component_count(n_s, w) if n_s and w else 0))
         out[tc["name"]] = SparsityPattern(
             name=tc["name"],
-            n_strands=int(tc.get("n", 0)),
+            n_strands=n_s,
             filtration_shape=shape,
             max_grade=int(max(shape.keys()) if shape else 0),
             n_steps=int(tc.get("n_steps", 0)),
             n_hecke_relations_fired=int(tc.get("n_hecke_relations_fired", 0)),
-            word=list(tc.get("word", [])),
+            word=w,
+            closure_components=comp,
         )
     return out
 
@@ -162,7 +173,7 @@ def report(patterns: dict[str, SparsityPattern]) -> None:
     print("  " + "-" * 86)
     for p in patterns.values():
         speedup = (
-            f"×{p.reduction_factor:.1f}"
+            f"×{float(p.reduction_factor):.1f}"  # float64-ok: stdout display only
             if p.filtered_basis_size > 0
             else "n/a"
         )
@@ -203,11 +214,12 @@ def main() -> int:
             {
                 "name": p.name,
                 "n_strands": p.n_strands,
+                "closure_components": p.closure_components,
                 "max_grade": p.max_grade,
                 "filtered_basis_size": p.filtered_basis_size,
                 "total_basis_size": p.total_basis_size,
                 "speedup_estimate": (
-                    p.reduction_factor if p.filtered_basis_size else None
+                    _fmt(p.reduction_factor) if p.filtered_basis_size else None
                 ),
             }
             for p in patterns.values()
@@ -215,6 +227,11 @@ def main() -> int:
         "audit_reference": "AUDIT-DEEP-2026-05.md §5 P6, docs/coordination/1ppb.md",
         "pr": "#564",
     }
+    _knot_rows = [
+        p for p in patterns.values()
+        if ("4_1" in p.name or "6_2" in p.name or p.name == "electron σ_1^3 in H_2")
+    ]
+    _knot_single = sum(1 for p in _knot_rows if p.closure_components == 1)
     from witness_base import WitnessBuilder
     out_path = (
         WitnessBuilder.wrap_legacy(
@@ -224,11 +241,31 @@ def main() -> int:
             engine="python",
             output_dir=HERE,
         )
+        .add_assertion(
+            "gb_reader_knot_named_rows_have_single_component",
+            computed=str(_knot_single),
+            expected=str(len(_knot_rows)),
+            source="every loaded SparsityPattern naming a prime knot in H_2/H_3 "
+                   "(3_1, 4_1, 6_2) has closure_components == 1 (bean qou-k3te)",
+        )
         .save()
     )
     print(f"\n  Wrote {out_path.name}")
     return 0
 
 
+def _selftest() -> int:
+    patterns = load_jet_order_witness()
+    assert len(patterns) >= 5, f"expected >=5 patterns, got {len(patterns)}"
+    for p in patterns.values():
+        if "4_1" in p.name or "6_2" in p.name:
+            assert p.closure_components == 1, f"knot row {p.name!r} has {p.closure_components} components"
+        assert "8_11" not in p.name or "not 8_11" in p.name, f"mislabelled 8_11 row: {p.name!r}"
+    print(f"self-test: ok ({len(patterns)} patterns loaded, all knot-named rows have 1 component)")
+    return 0
+
+
 if __name__ == "__main__":
+    if "--self-test" in sys.argv[1:] or "--selftest" in sys.argv[1:]:
+        sys.exit(_selftest())
     sys.exit(main())

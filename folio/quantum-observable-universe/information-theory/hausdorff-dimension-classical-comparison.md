@@ -9,6 +9,6 @@ For parameters $c(\varTheta)$ on the main cardioid of the Mandelbrot set, the Ju
 
 The gap $d_{H,q} - d_H \approx 0.041$ arises from differing Manning--McCluskey inputs. See [Table 2](#tbl:hausdorff-dimension-recurrence-table2-data).
 
-The classical $d_H$ arises from conformal dynamics over $\mathbb{C}$. The $q$-deformed $d_{H,q}$ replaces the transcendental $\ln 2$ with the rational $\eta_q$, and the numerical $\chi(c)$ with the algebraic $\chi_q$. We propose that $d_{H,q}$ governs the physical regime.
+The classical $d_H$ arises from conformal dynamics over $\mathbb{C}$. The $q$-deformed $d_{H,q}$ replaces the transcendental $\ln 2$ with the rational $\eta_q$, and the numerical $\chi(c)$ with the algebraic $\chi_q$. One proposes that $d_{H,q}$ governs the physical regime.
 
 No closed form exists for the classical $d_H(J_c)$ over the main cardioid parameter $c$. It appears implicitly as the unique zero of the Bowen--Ruelle pressure function $P(-t\log|f_c'|) = 0$.

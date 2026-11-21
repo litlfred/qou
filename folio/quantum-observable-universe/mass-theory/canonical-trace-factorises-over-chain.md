@@ -44,13 +44,13 @@ $3.1\times10^{-59}$, $^4$He ($n=12$) $4.0\times10^{-59}$; the Jones
 polynomial of the closure equals $\prod_i V(T(2,e_i))$ exactly on both
 classical branches for $A \le 4$. The three constants $-\log(z+d)$ reproduce
 the binding arc's bond constants -- measured there in $H_6$ -- to all sixty
-digits (`the_canonical_mass_trace_factorises_over_the_chain_probe.py`).
+digits.
 
 ## What it means for the binding gap
 
 The [linear-chain closed form](#thm:markov-trace-factorization)
-$B_{\mathrm{sym}} = a\,[(Z-1)L_{pp} + L_{pn} + (N-1)L_{nn}]$, which the Lean
-formalisation of that result took as its *named structural input*, is a
+$B_{\mathrm{sym}} = a\,[(Z-1)L_{pp} + L_{pn} + (N-1)L_{nn}]$, which the proof
+of that result took as its *named structural input*, is a
 corollary of the topology: connected sum $\Rightarrow$ multiplicative trace
 $\Rightarrow$ additive $L$. The canonical closure therefore carries **no
 many-body binding at all** -- not by measurement, by theorem. The many-body
@@ -76,20 +76,19 @@ required offset is $2.43\times$ more negative than the most negative letter
 that exists. No interface offset can close the gap.
 
 The quantity $L$ itself is a free-energy difference over the Markov state
-sum; that it is the binding energy is a separate and open claim, recorded in
-[the free-energy reading](#rem:bond-log-ratio-is-a-free-energy).
+sum; that it is the binding energy is a separate and open claim.
 
 ## The stated form assumes the grouped intra ordering; the conclusion does not
 
 Writing the word as $\prod_i p_i(\sigma_i)$ — one polynomial per generator —
 requires each generator's letters to be **contiguous**. That is a property of
-how the word is assembled, not of the chain topology. The corpus's live builder
-`atom_braid_word_3A` does assemble it that way (all of the $\sigma_0$ chain,
+how the word is assembled, not of the chain topology. The canonical atom
+word is assembled that way (all of the $\sigma_0$ chain,
 then all of the $\sigma_1$ chain), which is why the identity measures exact
-above. Since 2026-09-05 the live builder instead lays each nucleon's six
+above. In contrast, the alternating Borromean builder lays each nucleon's six
 **confinement letters** down alternating, as the $(\sigma_0\sigma_1^{-1})^3$ its
 own source comment always named — the Borromean braid $\beta_{\mathrm{Bor}}$,
-identified against its Lean closed form to $5\times10^{-60}$. Same letter
+identified against its closed form to $5\times10^{-60}$. Same letter
 multiset, different order, and it does **not** satisfy the per-generator form:
 that fails by $2.8\times$ at $A = 2$, rising to $13.3\times$ at $A = 4$.
 
@@ -135,35 +134,34 @@ carrying the difference-based
 $B = Q_\beta\bigl(\mathrm{tr}_M(W_{\text{free}}) - \mathrm{tr}_M(W_{\text{atom}})\bigr)$
 route with it by the same factor.
 
-`QOU.Mass.IntraOrderingInvariance` proves the split. Given the
+The split is proved. Given the
 connected-sum input — $\mathrm{tr}_M(W_{\text{atom}}) = F \prod_i (z + d_i)$ and
 $\mathrm{tr}_M(W_{\text{free}}) = F$ — the ratio is
 $\prod_i (z+d_i)$ for **any** intra factor $F \neq 0$, so two orderings with
 factors $F_1, F_2$ give the same ratio with *no hypothesis relating them*
-(`chainRatio_eq_of_intra`), and hence the same $L$
-(`L_chain_indep_of_intra`, `L_chain_eq_sum_of_intra`). The invariance is
+, and hence the same $L$
+. The invariance is
 cancellation, not coincidence. The difference route instead satisfies
-$F_1(1-P) = (F_1/F_2)\,F_2(1-P)$ (`chainDiff_scales`) and genuinely differs
-whenever $F_1 \neq F_2$ and $P \neq 1$ (`chainDiff_ne`). And the two
+$F_1(1-P) = (F_1/F_2)\,F_2(1-P)$ and genuinely differs
+whenever $F_1 \neq F_2$ and $P \neq 1$. And the two
 confinement words are different objects: at $q = 1$, where both are elementary,
 the per-generator product is $1/4$ and the Borromean closed form is $1$
-(`grouped_ne_borromean`), so the $82\,\%$ gap at $q_0$ is not a deformation
-artefact. Not formalised, as ever, is the connected-sum multiplicativity itself.
-Measured in
-`the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py`; which
-word is $\beta_{\mathrm{Bor}}$ is measured in
-`nf_vs_canonical_word_order_probe.py`.
+, so the $82\,\%$ gap at $q_0$ is not a deformation
+artefact. The connected-sum multiplicativity itself is taken as input
+(classical, cited below), not proved here. The effect of the reordering on the
+absolute traces, and which word is $\beta_{\mathrm{Bor}}$, are numerical
+measurements.
 
-## What is formalised, what is checked, what is cited
+## What is proved, what is checked, what is cited
 
-`QOU.Mass.ChainTraceFactor` proves the factor algebra: the
-affine law $\mathrm{tr}_2(\sigma + d) = z + d$ from the level-2 Wenzl weights
-(`twoStrandTrace_eq`); the mirror factor $z - h = 1/(q(q^2+1))$ and
+The factor algebra is proved: the
+affine law $\mathrm{tr}_2(\sigma + d) = z + d$ from the level-2 Wenzl weights;
+the mirror factor $z - h = 1/(q(q^2+1))$ and
 $\mathrm{tr}_2(\sigma)\,\mathrm{tr}_2(\sigma^{-1}) = 1/[2]_q^2$, hence
 $L_{pp} + L_{nn} = 2\log(q + q^{-1})$; positivity of all three factors for
 $q \ge 1$; and that $-\log$ of a product of positive factors is the sum of the
 $-\log$s. The factorisation of the $H_{3A}$ trace is checked at $A \le 4$ and
 rests on the chain form (verified through $A = 12$) plus the connected-sum
 multiplicativity of the Markov trace, which is classical \cite{birman1974}
-and not formalised. Nothing here says which prime closure would carry
+and is cited rather than proved here. Nothing here says which prime closure would carry
 many-body binding, or that one exists in the framework.

@@ -22,13 +22,11 @@ class KnotIndexedConvolutionGridContext where
   bar_class : KnotConvolution → ℕ
   /-- Bi-filtration depth assigned to each convolution. -/
   depth : KnotConvolution → ℕ
-  /-- Manuscript claim — placement is well-defined (each convolution
-      has a unique (bar_class, depth) cell): if two convolutions have
-      the same bar_class and the same depth, they index the same
-      grid cell. -/
+  /-- Manuscript claim — placement is injective into the bi-filtration grid
+      (each convolution occupies a distinct `(bar_class, depth)` cell):
+      if two convolutions land at the same `(bar_class, depth)` pair, they are equal. -/
   claim_placement_well_defined : ∀ k₁ k₂ : KnotConvolution,
-    bar_class k₁ = bar_class k₂ → depth k₁ = depth k₂ →
-      (bar_class k₁, depth k₁) = (bar_class k₂, depth k₂)
+    (bar_class k₁, depth k₁) = (bar_class k₂, depth k₂) → k₁ = k₂
 
 
 /-! ### Removed 2026-08-30 — self-assuming projections

@@ -33,7 +33,7 @@ derivation — the pretzel is not two-bridge. Nothing here separates `H_Ad` from
 `H_floor` (core `3` under both), and the pretzel's `q → 0` Stokes matrix is still
 not held (GGM record its level as `2`), so the one-sided `H_Ad` test stays open.
 
--- Ref: [manuscript] computations/probes/aomega_m3_pretzel_remainder_from_ptolemy_probe.py
+-- Ref: [leitner2026] computations/probes/aomega_m3_pretzel_remainder_from_ptolemy_probe.py
 -- Ref: [garoufalidis-zagier-2024] library/arxiv-2111.06645v3 §2.1 (the table this checks)
 -/
 

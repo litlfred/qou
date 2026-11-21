@@ -1,1 +1,0 @@
-\item[Case 2] If $\alpha$ and $\beta$ assign different angles to a tetrahedron $T$ and both $\alpha|_T$ and $\beta|_T$ are flat, then, because $\alpha$ and $\beta$ are maximum points, the angles must be $0$, $0$, and $\pi$ (in different orders), and the coordinates of $\mu|_T$ are $0$, $\frac\pi2$, and $\frac\pi2$ in some order.

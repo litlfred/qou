@@ -56,7 +56,7 @@ Archimedean (ℝ): `‖·‖`, ordering `0 < z` — §7c.
   -- Ref: [milnor1982] §1 (the boundary similarity group + inversion generate
   --   the isometry group; two-point transitivity onto the z-axis)
   -- Ref: [ratcliffe] §4.6 (similarities and inversions are hyperbolic isometries)
-  -- Ref: [manuscript] beans qou-0a0z (T2 WALL-2 two-point normalization),
+  -- Ref: [leitner2026] beans qou-0a0z (T2 WALL-2 two-point normalization),
   --   qou-473l (T2), qou-idvt (T2)
 -/
 

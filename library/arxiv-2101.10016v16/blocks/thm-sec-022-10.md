@@ -1,1 +1,1 @@
-Let g be a complex simple Lie algebra of classical Lie type or G2, and
+Let g be a complex simple Lie algebra of classical Lie type or G2, and let k be a positive integer and let Vgkbe the corresponding level k affine unitary vertex operator algebra. Then Rep+(Vgk ) admits the structure of tensor C ∗ -category with unitary braided symmetry such that the forgetful functor : Rep+(Vgk ) → Rep(Vgk ) is a braided tensor equivalence.

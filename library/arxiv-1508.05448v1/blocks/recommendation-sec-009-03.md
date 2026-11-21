@@ -1,1 +1,0 @@
-Since $$\mathbb{P}(F_n>r)\leq 3e^{-\frac{\sqrt{\lambda_1}}{2}r}$$ we must have $$\int F_n d\mu\leq m+r$$ Then, by the monotone convergence theorem, we have $$\int |F|d\mu <\infty$$ We can then apply (2.1) to $\min(\max(F,-n),n)$ and let $n\rightarrow\infty$ to get the final result. ◻ :::

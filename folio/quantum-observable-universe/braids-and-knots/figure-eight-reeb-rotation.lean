@@ -52,13 +52,13 @@ validated (`θ(q₀) ≈ 117.087°`, `dθ/dq ≈ −51°` per unit `q` — smoot
 
 /-- Closed-form trace of `M_{4₁} = (σ₁σ₂⁻¹)²` on `V_(2,1)` as a Laurent polynomial
     in `q` (from the explicit seminormal block). -/
--- Ref: [manuscript] prop:figure-eight-reeb-rotation
+-- Ref: [leitner2026] prop:figure-eight-reeb-rotation
 noncomputable def figureEightTrace (q : ℝ) : ℝ :=
   q ^ 4 - 2 * q ^ 2 + 1 - 2 * q ^ (-2 : ℤ) + q ^ (-4 : ℤ)
 
 /-- **Classical trace value.** `tr M_{4₁}|_{q=1} = −1`: at `q = 1` the seminormal
     block is the `S₃` representation and `(σ₁σ₂)²` is a 3-cycle. -/
--- Ref: [manuscript] prop:figure-eight-reeb-rotation
+-- Ref: [leitner2026] prop:figure-eight-reeb-rotation
 theorem figureEightTrace_one : figureEightTrace 1 = -1 := by
   simp only [figureEightTrace, one_pow, one_zpow]; norm_num
 
@@ -77,13 +77,13 @@ object. Numerically cross-checked in
     `q ≠ 0`: the Reeb rotation never reaches `θ = π` on the real substrate axis
     (it does so only at the complex cusp shape `q² = e^{iπ/3}`, where the square's
     base `q² − 1 + q⁻²` — i.e. `q⁴ − q² + 1 = Φ₆(q²)` — vanishes). -/
--- Ref: [manuscript] prop:figure-eight-reeb-rotation
+-- Ref: [leitner2026] prop:figure-eight-reeb-rotation
 theorem figureEightTrace_add_two {q : ℝ} (hq : q ≠ 0) :
     figureEightTrace q + 2 = (q ^ 2 - 1 + q ^ (-2 : ℤ)) ^ 2 := by
   rw [figureEightTrace]; field_simp; ring
 
 /-- `tr M_{4₁}(q) ≥ −2` on the real axis (`θ ≤ π`, never a full flip). -/
--- Ref: [manuscript] prop:figure-eight-reeb-rotation
+-- Ref: [leitner2026] prop:figure-eight-reeb-rotation
 theorem figureEightTrace_ge_neg_two {q : ℝ} (hq : q ≠ 0) :
     -2 ≤ figureEightTrace q := by
   have hsq := figureEightTrace_add_two hq
@@ -92,7 +92,7 @@ theorem figureEightTrace_ge_neg_two {q : ℝ} (hq : q ≠ 0) :
 /-- **`tr M − 2` factors; the golden root is `q² − q − 1`.** The four factors are
     `(q²−q−1)(q²+q−1)` (the golden pair, real roots `q = φ`, `1/φ` up to sign) and
     `(q²−q+1)(q²+q+1) = Φ₆(q)Φ₆(−q)` (the cusp/cyclotomic pair, no real roots). -/
--- Ref: [manuscript] prop:figure-eight-reeb-rotation
+-- Ref: [leitner2026] prop:figure-eight-reeb-rotation
 theorem figureEightTrace_sub_two_factored {q : ℝ} (hq : q ≠ 0) :
     figureEightTrace q - 2 =
       (q ^ 2 - q - 1) * ((q ^ 2 + q - 1) * (q ^ 2 - q + 1) * (q ^ 2 + q + 1))
@@ -103,7 +103,7 @@ theorem figureEightTrace_sub_two_factored {q : ℝ} (hq : q ≠ 0) :
     then `tr M_{4₁}(q) = 2`, so the Reeb eigenvalue is `+1` (`θ = 0`): the operator
     degenerates exactly at the `A`-polynomial complex-volume branch point
     `u = 2 ln φ`. -/
--- Ref: [manuscript] prop:figure-eight-reeb-rotation
+-- Ref: [leitner2026] prop:figure-eight-reeb-rotation
 theorem figureEightTrace_golden {q : ℝ} (h : q ^ 2 = q + 1) (hq : q ≠ 0) :
     figureEightTrace q = 2 := by
   have hz : q ^ 2 - q - 1 = 0 := by rw [h]; ring

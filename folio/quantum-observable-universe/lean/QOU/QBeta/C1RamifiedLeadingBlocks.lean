@@ -77,8 +77,8 @@ production.
 The base-ring split follows §7c: the edge algebra is stated over a generic
 `CommRing`/`Field`, and only the square-root extraction descends to `ℝ`.
 
--- Ref: [manuscript] computations/qbeta/c3_w2_c1_ramification_leading_blocks.py
--- Ref: [manuscript] computations/qbeta/c3_w2_c1_theta_canonical.py
+-- Ref: [leitner2026] computations/qbeta/c3_w2_c1_ramification_leading_blocks.py
+-- Ref: [leitner2026] computations/qbeta/c3_w2_c1_theta_canonical.py
 -- Ref: [ramis-sauloy-zhang2013] Astérisque 355 §3.3 (Ramis–Sauloy–Zhang)
 -/
 

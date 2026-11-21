@@ -1,1 +1,0 @@
-More precisely, it should reproduce the $g\geq 2$ terms in those parts of the partition function arising from constant maps and genus 0 degenerate contributions: \[ \log \tau(\omega_\bC,t)\sim \chi(X) \sum_{g\geq 2} \frac{ B_{2g} \,B_{2g-2} \, (2\pi t)^{2g-2} }{4g\, (2g-2) \,(2g-2)!}+

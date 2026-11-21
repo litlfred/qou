@@ -1,0 +1,33 @@
+{
+  "round": 117,
+  "lane": "43c1",
+  "beans": [
+    "qou-szd6",
+    "qou-t3bx",
+    "qou-toi3",
+    "qou-tpdg",
+    "qou-u0qy"
+  ],
+  "theorems": [
+    "QOU.BraidKnot.RowStandardTableau.entry_sub_entry_eq_zero_of_lt_row",
+    "QOU.BraidKnot.SYTEncodingBridge.numStandardYoungTableaux_sub_numSYT_eq_zero",
+    "QOU.BraidKnot.SearchCoercivity.sub_join_pos_of_lt_sum",
+    "QOU.BraidKnot.SnIsotypicSpechtSplitInstance.matrixSplit_centralC2_sub_eq_zero",
+    "QOU.BraidKnot.SpechtAbsolutelyIrreducible.simple_end_sub_scalar_eq_zero"
+  ],
+  "scriptPath": "computations/probes/qou_round117_rowstd_sytbridge_searchcoerc_spechtsplit_spechtirred_43c1_probe.py",
+  "scriptCommitSha": "7394899fa3d68e840be952fb8f3164f85b3eb8f6",
+  "scriptHash": "1182874556d11de9b2ac2ef726dd3adb4781327d13ca7cea3b31daf15fe632e9",
+  "scriptSha256": "1182874556d11de9b2ac2ef726dd3adb4781327d13ca7cea3b31daf15fe632e9",
+  "mpmathDps": 80,
+  "metrics": {
+    "col0NatSub": 0,
+    "sytCount5Shape32": "5.0",
+    "sytCountDiff": "0.0",
+    "coercivityMargin": "2.25",
+    "c2ContentSqScalar32": "6.0",
+    "c2ScalarResidual": "0.0",
+    "schurEndomorphismResidual": "0.0",
+    "allChecksPass": true
+  }
+}

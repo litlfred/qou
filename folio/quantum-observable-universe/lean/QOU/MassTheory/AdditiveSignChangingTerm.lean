@@ -140,4 +140,25 @@ theorem fit_hits_physical_residuals :
     ∃ s t : ℝ, 3 * s - t = (4708 : ℝ) / 10000 ∧ 6 * s - 4 * t = -(27080 : ℝ) / 10000 :=
   fit_hits_any_target _ _
 
+/-- **Parameter-free `κ`-elimination invariant across `A = 3` and `A = 4` (`qou-kok7`):**
+For every triangle frustration weight `κ`, `4 · bondFrustA3 κ - bondFrustA4 κ = 6`. -/
+theorem bondFrust_linear_comb_invariant (κ : ℝ) :
+    4 * bondFrustA3 κ - bondFrustA4 κ = 6 := by
+  unfold bondFrustA3 bondFrustA4
+  ring
+
+/-- **Boundary and midpoint evaluations of the `(3/2, 3)` sign-change window (`qou-kok7`):**
+At `κ = 3/2`, `bondFrustA4` vanishes while `bondFrustA3 = 3/2 > 0`; at `κ = 3`, `bondFrustA3`
+vanishes while `bondFrustA4 = -6 < 0`; at the midpoint `κ = 9/4`, `bondFrustA3 = 3/4 > 0`
+and `bondFrustA4 = -3 < 0`. -/
+theorem bondFrust_window_endpoints_and_midpoint :
+    bondFrustA3 (3 / 2) = 3 / 2 ∧
+    bondFrustA4 (3 / 2) = 0 ∧
+    bondFrustA3 3 = 0 ∧
+    bondFrustA4 3 = -6 ∧
+    bondFrustA3 (9 / 4) = 3 / 4 ∧
+    bondFrustA4 (9 / 4) = -3 := by
+  unfold bondFrustA3 bondFrustA4
+  norm_num
+
 end QOU.MassTheory

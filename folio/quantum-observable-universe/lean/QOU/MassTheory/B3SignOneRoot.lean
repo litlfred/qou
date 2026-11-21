@@ -110,7 +110,7 @@ selection against the target, which AGENTS.md §"NO FITTING" forbids. The gap st
 
 It also does not touch magnitude. `qou-brng` is untouched.
 
--- Ref: [manuscript] .beans/qou-q8vl, docs/audits/2026-09-12-ursell-partition-function-for-b3.md
+-- Ref: [leitner2026] .beans/qou-q8vl, docs/audits/2026-09-12-ursell-partition-function-for-b3.md
 -/
 
 import QOU.MassTheory.UrsellPartitionFunctionB3

@@ -1,1 +1,0 @@
-Then the equations (3.13) will read as follows: (φI −φJ + ǫ1) B1,IJ = 0 (φI −φJ + ǫ2) B2,IJ = 0 (φI −al) II,l = 0 (φI + ǫ1 + ǫ2 −al) Jl,I = 0 (3.14) For (3.14) to have a non-trivial solution some of the combinations φIJ + ǫ1,2, φI −al, φI + ǫ1 + ǫ2 −al (3.15) must vanish.

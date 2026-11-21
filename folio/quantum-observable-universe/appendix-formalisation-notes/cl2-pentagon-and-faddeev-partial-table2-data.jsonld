@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-cl2-pentagon-and-faddeev-partial-table2-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:cl2-pentagon-and-faddeev-partial-table2-data",
+  "kind": "table",
+  "title": "Table 2 from prop:cl2-pentagon-and-faddeev-partial",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-cl2-pentagon-and-faddeev-partial"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "cl2-pentagon-and-faddeev-partial-table2-data.md",
+  "provenance": "authored"
+}

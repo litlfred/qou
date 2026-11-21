@@ -1,0 +1,1 @@
+Let m0 ≥1, k ≥1 and n ≥6(m0 −1)2 + 6k(m0 −1) + 11(m0 −1) + 5k + 5 be integers. We have G(n, k, m0) ≥−m0n −5 2m0 + m0k2 −1 6m0k + 3m2 0k + 2m3 0, (2.4) where G(n, k, m0) is deﬁned by G(n, k, m0) := m0−1  j=0 (p3(n −6j2 −6kj −j) −p3(n −6j2 −6kj −5j −2k −1) −p3(n −6j2 −6kj −7j −3k −2) + p3(n −6j2 −6kj −11j −5k −5)). (2.5)

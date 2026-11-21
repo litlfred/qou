@@ -1,0 +1,43 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "82a130ebb993",
+          "ts": "7d32f5e96b88",
+          "lean": "c3a2569f24df",
+          "lean_statement": "12d4d217aada"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T00:43:10.848Z",
+        "reviewed_sha": "0eba507a077106abc6597936dd5f1cfb3cff653b",
+        "severity": "minor",
+        "evidence": "tr_casimir_D covers item 3 under convention D; siblings cover the rest. The block-scalar fact c_lambda d_lambda is only checked (tr_casimir_blocks), not proved, and associativity of the K^6 model is not formalised; the statement does not flag either."
+      },
+      {
+        "field_hash": {
+          "md": "43bd613d5ee8",
+          "ts": "7d32f5e96b88",
+          "lean": "c3a2569f24df",
+          "lean_statement": "12d4d217aada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-17",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-18T04:05:50.268Z",
+        "reviewed_sha": "eb91bc14719e82c5b1b1de645aa5cf69c972bc9f",
+        "evidence": "Statement now names the two cited inputs (c_lambda d_lambda scalar action; associativity of the 6-dim model)."
+      }
+    ]
+  },
+  "updated_at": "2026-11-18T04:05:50.268Z"
+}

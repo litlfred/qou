@@ -1,4 +1,4 @@
-We discretize the continuous Reeb flow $\phi_t^q$ ([$q$-Reeb flow](#ex:q-reeb-flow)) at the Big Bang. Here the substrate parameter $q \to \infty$ and the quantum Planck constant $\hbar_q = 1 - q^{-1} \to 1$ ([quantum Planck constant](#def:quantum-planck-constant)). This limits defines a **Planck step**—the minimal dynamical time unit of the QOU. Time is discrete at the origin.
+One discretizes the continuous Reeb flow $\phi_t^q$ ([$q$-Reeb flow](#ex:q-reeb-flow)) at the Big Bang. Here the substrate parameter $q \to \infty$ and the quantum Planck constant $\hbar_q = 1 - q^{-1} \to 1$ ([quantum Planck constant](#def:quantum-planck-constant)). This limits defines a **Planck step**—the minimal dynamical time unit of the QOU. Time is discrete at the origin.
 
 **Algebraic normalization.**
 The $q$-deformed Reeb flow rotates the affine coordinate $Z$ of a state ([substrate radial coordinate](#prop:substrate-radial-coordinate)):
@@ -7,7 +7,7 @@ $$
   \mathcal{L}_\xi Z = J\hbar_q Z.
 $$
 
-The naive period of this rotation is $T = 2\pi/\hbar_q$. The transcendental factor $2\pi$ obstructs finite-field and $p$-adic realisations ([finite field realisation](#ex:finite-field-realisation), [Witt vector lift](#rem:witt-lift-qou)). To resolve this, we define one full Reeb circuit as **one unit of time**:
+The naive period of this rotation is $T = 2\pi/\hbar_q$. The transcendental factor $2\pi$ obstructs finite-field and $p$-adic realisations ([finite field realisation](#ex:finite-field-realisation), [Witt vector lift](#rem:witt-lift-qou)). To resolve this, one defines one full Reeb circuit as **one unit of time**:
 
 $$
   t_P(q)  :=  \frac{1}{\hbar_q}
@@ -27,7 +27,7 @@ The Planck step acts as the polynomial iteration $f_q(z) = z^2 + c(q)$ ([Julia s
 | Regime | $q$ | $\hbar_q$ | $t_P$ | Interpretation |
 |--------|-----|-----------|-------|----------------|
 | Big Bang | $q \to \infty$ | $\to 1$ | $\to 1$ | Minimal step; time is fastest |
-| Physical | $q = q_0$ ([local substrate $q$](#prop:local-substrate-q)) | $0.0988$ | $\approx 10.1$ | Our Planck time |
+| Physical | $q = q_0$ ([local substrate $q$](#prop:local-substrate-q)) | $0.0988$ | $\approx 10.1$ | The Planck time |
 | Classical | $q \to 1$ | $\to 0$ | $\to \infty$ | No Reeb period; time freezes |
 
 At the Big Bang, $t_P \to 1$. One Planck step exactly equals one unit. The continuous Reeb flow is merely the $\mathbb{R}$-shadow of this discrete iteration. There is no sub-step resolution.
@@ -45,14 +45,14 @@ $$
 This is the **normalised total** --- one full Reeb circuit, an angular displacement carrying no length scale --- and it evaluates to $1$ over any field precisely because $\hbar_q$ is its per-step share (see [share versus total](#rem:planck-length-share-vs-total)). It is not the same object as the local $\ell_P^{\mathrm{step}} \sim \hbar_q$ of [the Planck information unit](#sec:planck-info-unit). The angular velocity $\hbar_q$ changes with $q$. At the Big Bang, the fiber is traversed at maximum speed ($\hbar_q = 1$). Near heat death, the rotation halts.
 
 **Discrete time at the Big Bang.**
-The Big Bang initial state ([bundle initial conditions](#def:bundle-initial-conditions)) is a formal sum $\mathcal{S}_0 = \sum_i (p_i, H_i)$. It specifies fiber data without horizontal transport. The **first Planck step** $\phi_1^q$ applies horizontal transport for the first time. It connects neighboring fibers, initiates the $q$-connection, and begins information propagation across the brane.
+The Big Bang initial state is a formal sum $\mathcal{S}_0 = \sum_i (p_i, H_i)$. It specifies fiber data without horizontal transport. The **first Planck step** $\phi_1^q$ applies horizontal transport for the first time. It connects neighboring fibers, initiates the $q$-connection, and begins information propagation across the brane.
 
 Before the first step, position is known exactly but momentum is entirely undetermined. After one step, the $q$-connection $\nabla_q$ correlates adjacent fibers. It produces the first non-trivial holonomy. The Heisenberg commutator $[\hat{X}, \hat{P}]_q = J\hbar_q \approx J$ is near-maximal. The first tick of time maximizes uncertainty.
 
 Over $\mathbb{F}_\pp$, this first step evaluates $f_q$ once: $z_1 = z_0^2 + c(q)$. The first moment after the Big Bang is a single polynomial evaluation.
 
 **Counting Planck steps.**
-The count of Planck steps measures dynamical distance in Reeb time. From the Big Bang ($q_0 \gg 1$) to our universe ($q = q_0$):
+The count of Planck steps measures dynamical distance in Reeb time. From the Big Bang ($q_0 \gg 1$) to the observed universe ($q = q_0$):
 
 $$
   N(q_0, q)

@@ -1,0 +1,1 @@
+Let pp be a composition of n. Then, as an #/-module, M" has a filtration M¥ = M, > Mo > --- > Mi41 = 0 such that fori = 1,2,...,k there exists a partition \; of n with M;/Mj4; = S**. Moreover, for each partition » the number of \; equal to A is the number of semistandard \-tableaur of type pt.

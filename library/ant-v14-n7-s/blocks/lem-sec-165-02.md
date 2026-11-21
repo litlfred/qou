@@ -1,0 +1,1 @@
+Let G be a ﬁnite group and let p be a prime. Suppose that B is a block of G with normal defect group D. Let b be a root of B with canonical character θ. Write A = ⟨σ1⟩≤Gal(Q(ξ|G|)/Q). If λ is a linear character of D, then let Gθ A λ = {g ∈G | (θλ)g = (θλ)a for some a ∈A}. With this deﬁnition Gθ A λ = Gθλ = Gθ ∩Gλ.

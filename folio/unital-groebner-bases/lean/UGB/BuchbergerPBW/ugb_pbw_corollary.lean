@@ -82,7 +82,7 @@ variable {k : Type v} [Field k]
     `NormalForms.pbw_monomials_are_not_all_normal_forms`. What survives is a
     statement about `ReducesToNF` over real `SU2Gen` types, and it no longer
     depends on any refuted claim. -/
--- Ref: [manuscript] unital-groebner-bases/buchberger-and-pbw/ugb-pbw-corollary.ts
+-- Ref: [leitner2026] unital-groebner-bases/buchberger-and-pbw/ugb-pbw-corollary.ts
 theorem ugb_pbw_corollary (qs : QSerreRelations k) :
     (∀ f : AlgElement SU2Gen k,
        (∃ nf : AlgElement SU2Gen k,
@@ -90,7 +90,7 @@ theorem ugb_pbw_corollary (qs : QSerreRelations k) :
        (∀ nf₁ nf₂ : AlgElement SU2Gen k,
           ReducesToNF degLexOrder (qSerreRewritingSystem k qs) f nf₁ →
           ReducesToNF degLexOrder (qSerreRewritingSystem k qs) f nf₂ →
-          nf₁ = nf₂)) := by
+          AlgElement.CoeffEq nf₁ nf₂)) := by
   · intro f
     refine ⟨?_, ?_⟩
     · -- Existence of the normal form: proved, and its unit-leading-coefficient
@@ -109,6 +109,6 @@ theorem ugb_pbw_corollary (qs : QSerreRelations k) :
       -- generators, so left multiplication by one of them is injective.
       exact normal_form_unique degLexOrder (qSerreRewritingSystem k qs)
         (qSerre_is_gs_basis k qs) (noQuasiZerosFree_of_generator SU2Gen.K)
-        f nf₁ nf₂ h₁ h₂
+        (qSerre_rules_monic k qs) f nf₁ nf₂ h₁ h₂
 
 end UGB.BuchbergerPBW

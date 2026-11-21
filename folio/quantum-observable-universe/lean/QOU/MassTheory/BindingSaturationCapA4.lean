@@ -60,7 +60,7 @@ about non-negative `m` and is not claimed off it.
 
 Base ring `ℝ` (§7c): the ordering `0 ≤ m ≤ 1` is archimedean-essential.
 
--- Ref: [manuscript] docs/audits/2026-07-18-deltalambda-saturation-det-ceiling.md §3
+-- Ref: [leitner2026] docs/audits/2026-07-18-deltalambda-saturation-det-ceiling.md §3
 -/
 
 namespace QOU.MassTheory

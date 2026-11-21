@@ -13,9 +13,10 @@
   "pageStart": 19,
   "pageEnd": 20,
   "contains": [
-    "library/disssubmission/blocks/prose-sec-004"
+    "library/disssubmission/blocks/prose-sec-004",
+    "library/disssubmission/blocks/thm-sec-004-01"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/disssubmission",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/disssubmission",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/disssubmission/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/disssubmission/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,1 +1,0 @@
-As we shall see in Section \ref{provebound}, we are quite fortunate in that when $W=\frac{n-1}{\sqrt{2}} \frac{\chi^{\lambda}(12)}{dim(\lambda)}$, it does happen that $E^W(W^*) = (1-\tau)W$ for some $\tau$ (in fact $\tau=\frac{2}{n+1}$).

@@ -1,0 +1,1 @@
+Let m, n ∈N and let λ/µ be a skew-partition of mn. Let ϑ be an irreducible character of Sm. Let g ∈Sn. If g = kh where k ∈Sℓ and h ∈Sn−ℓ, then (Defresϑ Sn χλ/µ)(g) = X τ (Defresϑ Sℓχτ/µ)(k)(Defresϑ Sn−ℓχλ/τ)(h) where the sum is over all partitions τ such that µ ⊆τ ⊆λ and |τ/µ| = mℓ.

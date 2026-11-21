@@ -1,1 +1,0 @@
-= 0, the deﬁnition of Grace pair (Deﬁnition 5.2) then implies p must not be (C1×· · ·×Cm)-stable. ⊓⊔ By Theorem 5.7, this implies the coincidence theorem for circular regions when m > 1 and for any projectively convex regions when m = 1.

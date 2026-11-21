@@ -1,0 +1,1 @@
+Let C be a tensor category with right duality (bρ, dρ), generalised coboundary c satisfying c2(ρ, σ) = c (ρ, σ). (27.13) and ribbon structure v. Then the pivotal structure ω = uv−1is spherical. The corresponding left duality is given by b ℓ ρ = 1ρ∨ ⊗ vρ ◦ c(ρ ∨ , ρ) −1 ◦ bρ, dℓ ρ = dρ ◦ c(ρ, ρ∨ ) ◦ v −1 ρ ⊗ 1ρ∨ (27.14)

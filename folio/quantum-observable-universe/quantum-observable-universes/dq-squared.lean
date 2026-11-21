@@ -16,7 +16,7 @@ LaTeX label: `prop:dq-squared`
 
 ## References
 
-- [manuscript] §1-quantum-observable-universe/dq-squared
+- [leitner2026] §1-quantum-observable-universe/dq-squared
 
 **Base ring** (AGENTS.md §7c): the archimedean realisation of the
 categorical `prop:categorical-dq-squared` obstruction. The formula
@@ -50,7 +50,7 @@ namespace QOU
 /-- **Archimedean dq² data**: substrate `q` (as a unit — the invertibility
     witness is the unit structure itself), the Lie-derivative value `ℒ_ξ α`,
     and the Levi form `dθ`. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 structure ArchimedeanDqSquared (R : Type*) [CommRing R] where
   /-- The substrate parameter q, carried as a unit (algebraic
       invertibility — not the archimedean `0 < q`). -/
@@ -65,7 +65,7 @@ variable {R : Type*} [CommRing R]
 /-- The archimedean dq² value: `dq²(α) = q⁻¹(1 - q⁻¹) · dθ · ℒ_ξ α`.
     Defined as a function of the data so the vanishing theorem is
     non-vacuous. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 def ArchimedeanDqSquared.dqSquared (d : ArchimedeanDqSquared R) : R :=
   (↑d.q⁻¹ : R) * (1 - (↑d.q⁻¹ : R)) * d.levi_form * d.lie_deriv
 
@@ -78,7 +78,7 @@ def ArchimedeanDqSquared.dqSquared (d : ArchimedeanDqSquared R) : R :=
 
     `[IsDomain R]` is essential, not cosmetic — see the module docstring for
     the `ℤ/6` counterexample without it. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 theorem dq_squared [IsDomain R] (d : ArchimedeanDqSquared R)
     (h_levi : d.levi_form ≠ 0) :
     d.dqSquared = 0 ↔ (d.q = 1 ∨ d.lie_deriv = 0) := by
@@ -100,21 +100,21 @@ theorem dq_squared [IsDomain R] (d : ArchimedeanDqSquared R)
     · rw [hlie]; ring
 
 /-- dq² vanishes on Reeb-invariant forms. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 theorem dq_squared_zero_reeb_invariant (d : ArchimedeanDqSquared R)
     (h : d.lie_deriv = 0) : d.dqSquared = 0 := by
   unfold ArchimedeanDqSquared.dqSquared
   rw [h]; ring
 
 /-- dq² vanishes at q = 1 (classical limit). -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 theorem dq_squared_zero_classical (d : ArchimedeanDqSquared R)
     (hq : d.q = 1) : d.dqSquared = 0 := by
   unfold ArchimedeanDqSquared.dqSquared
   rw [hq]; simp
 
 /-- On horizontal ℒ_ξ-invariant forms, dq defines a cochain complex. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 theorem dq_cochain_on_invariant (d : ArchimedeanDqSquared R)
     (h : d.lie_deriv = 0) : d.dqSquared = 0 :=
   dq_squared_zero_reeb_invariant d h

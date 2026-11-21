@@ -237,6 +237,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "1f42afb4d6d7",
+          "ts": "87f8d1c960ba"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:27.158Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "The main identity is proved correctly. I re-checked the Jonquière form, the principal-branch log(−ζ_K) = iπ(2−K)/K (including K = 2), the Bernoulli argument = 1/K, and the n = 2, 3, 4, 5 specialisations by hand (n = 3 gives (K−1)(K−2)π³/(3K³); n = 5 gives −(2π⁵/15)B₅(1/K)). Gaps: the statement's claims that the wrong-parity part \"contributes zero to the Beilinson regulator image\" and that \"new period content isolates precisely to the right-parity part\" (md:9) are not addressed in the prf. K ≥ 2 is unstated in the statement. prf:76 writes \"(n−1)(n−2)π³/(3n³)\" with n standing for K, which clashes with the depth n, and cites an undefined \"Theorem A\".",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: exposition"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1140,7 +1156,7 @@
           "in_degree": 0,
           "cone_size": 3,
           "depth": 3,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1426,7 +1442,7 @@
         "reviewed_at": "2026-08-15T10:31:00.758Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
-        "evidence": "4 stylistic spaced dashes in 150 words (2.67/100w) \u2014 restructure into sentences"
+        "evidence": "4 stylistic spaced dashes in 150 words (2.67/100w) — restructure into sentences"
       },
       {
         "field_hash": {
@@ -1709,6 +1725,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T21:21:05.015Z",
+  "updated_at": "2026-11-15T21:57:27.158Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

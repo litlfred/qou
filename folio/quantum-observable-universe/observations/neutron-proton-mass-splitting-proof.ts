@@ -5,6 +5,7 @@ export default proof({
   title: "Proof of neutron proton mass splitting",
   uses: ["prop:neutron-proton-mass-splitting"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The linear-$E_0$ value is given in (`docs/audits/2026-11-15-np-splitting-error-budget.md` §18). The all-pairs reading is the one used by the producer `computations/level1-qvalues.py`." },
     {
       kind: "note",
       date: "2026-08-25",

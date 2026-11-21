@@ -29,12 +29,12 @@ open CategoryTheory MonoidalCategory BraidedCategory
     (cocommutativity of the coalgebra).
 
     LaTeX: `\label{def:commutative-qou}`
-    Ref: [manuscript] Chapter 3, §Varying Euler + mirror bundle -/
+    Ref: [leitner2026] Chapter 3, §Varying Euler + mirror bundle -/
 class CommutativeQOU
     (C : Type*) [Category C] [MonoidalCategory C] [BraidedCategory C]
     (A : C) (μ : A ⊗ A ⟶ A) : Prop where
   /-- The multiplication is invariant under the braiding on A ⊗ A. -/
-  -- Ref: [manuscript] Chapter 3, §Varying Euler + mirror bundle
+  -- Ref: [leitner2026] Chapter 3, §Varying Euler + mirror bundle
   mul_commutes : (β_ A A).hom ≫ μ = μ
 
 end QOU

@@ -13,9 +13,10 @@
   "pageStart": 10,
   "pageEnd": 10,
   "contains": [
-    "library/4geo-dedi-rev/blocks/prose-sec-008"
+    "library/4geo-dedi-rev/blocks/prose-sec-008",
+    "library/4geo-dedi-rev/blocks/lem-sec-008-01"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/4geo-dedi-rev",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/4geo-dedi-rev",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/4geo-dedi-rev/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/4geo-dedi-rev/manifest.jsonld",
   "provenance": "ingested"
 }

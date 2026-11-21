@@ -1,0 +1,1 @@
+(1) Every morphism φ in D(A, M) can be written as a right fraction φ = ˜Q(a)◦ ˜Q(s)−1 where a, s ∈Cstr(A, M) and s is a quasi-isomorphism. (2) Let a ∈Cstr(A, M). Then ˜Q(a) = 0 in D(A, M) iﬀthere exists a quasi- isomorphism s in Cstr(A, M) such that a ◦s is a coboundary in C(A, M).

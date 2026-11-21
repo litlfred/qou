@@ -1280,6 +1280,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "011fd415c481",
+          "ts": "fd7628dc94b5",
+          "lean": "986cdbe9ee53",
+          "lean_statement": "62feb3f058b6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:59.742Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "Sibling `.lean:207` (ref resolves only there): `hadron_half_life` is a `noncomputable def` (= ln 2 / betaRate), not a proposition; `betaRate` *is* the stated formula, with \\ | 𝒲\\ | ², μ₀, \\ | ℳ_q\\ | ², f(Q) as free positive reals in `BetaRateData` (the file says none has a closed form). Only positivity, the collapse lemma onto (q−q⁻¹)⁵ and the ≈48 sensitivity are theorems. Proof (prf:1-51) is a list of identifications (\"replaces the classical…\"), not a derivation of Γ_β; the statement's \"the decay rate depends only on q and μ₀\" (md:22) is not shown, and f(Q) ∝ Q⁵ is the Sargent rule imported from phenomenology (owner's no-imported-empirical-term rule). Checked: the closed form 𝒲(q) = q²(q¹²+q⁸−1)/(q²+1)² (prf:21) is correct under convention D (sympy: Markov weights w₍₃₎=(q⁴+1)/(q²+1)², w₍₂,₁₎=q²/(q²+1)², w₍₁,₁,₁₎=0; 𝒲(1)=1/4); the sensitivity (q²−1)/(q²+1)+5(q²+1)/(q²−1) ≈ 48 at q₀ is right"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2545,6 +2563,6 @@
       }
     ]
   },
-  "updated_at": "2026-09-04T10:49:30.856Z",
+  "updated_at": "2026-11-15T21:55:59.742Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

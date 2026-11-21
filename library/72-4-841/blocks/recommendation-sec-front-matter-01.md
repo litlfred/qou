@@ -1,1 +1,0 @@
-From this point of view, we should have considered the higher derivative quantum gravity5),6) because the theory is known to be renormalizable6) and asymptotically free7} and 'hence more analogies to lattice gauge theory are expected.

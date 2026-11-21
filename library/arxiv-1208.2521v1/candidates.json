@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1208.2521v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "8d0281aa84043865a2268ae04a97c395a9e97d630c05f973c6a43a0d850ddae8",
   "file": "1208.2521v1.pdf"
@@ -16,91 +19,295 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 5,
+  "candidates": 10,
   "by_kind": {
-   "recommendation": 5
+   "proposition": 6,
+   "remark": 3,
+   "lemma": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 7,
+  "by_domain": {
+   "math": 10
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 7,
+   "explanatory": 3
+  },
+  "by_evidence_location": {
+   "in-paper": 6,
+   "elsewhere": 4
+  },
+  "by_lean_status": {
+   "doc-cited-in-lean-unlinked-claim": 7
+  },
+  "needs_lean_proof": 7
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2.1",
    "name": null,
-   "statement": "SWARTTOUW Our motivation is that (i) the r\u03c6s notation is fairly well known nowadays and clari- \ufb01es the position of these q-Bessel functions among other q-hypergeometric functions; (ii) q-analysis should not depend too much on the q = 1 case, so scaling factors making the limit transition q \u21911 easy should not be hidden in the de\ufb01nitions of q-special functions; and (iii) the classical de\ufb01nition (1.1) of Bessel functions is very natural in the context of the generating function (1.4) and for analysis concentrat- ing on J0, but it is less fortunate when the focus is on another Bessel function of \ufb01xed order (cf.",
-   "strength": "should-not",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-004.md",
-   "section_title": "Page 4",
-   "pages": "4-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "The series in (2.2) de\ufb01nes an entire analytic function in z, w, which is also symmetric in z, w: (2.3) (w; q)\u221e1\u03c61(0; w; q, z) = (z; q)\u221e1\u03c61(0; z; q, w). Both sides can be majorized by (2.4) (\u2212|z|; q)\u221e(\u2212|w|; q)\u221e.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/page-005.md (p. 5-5)",
+   "external_refs": [],
+   "proof_excerpt": "Substitute for (qkw; q)\u221ein (2.2) the 0\u03c60 series given by (1.7): (w; q)\u221e1\u03c61(0; w; q, z) = \u221e X k=0 \u221e X l=0 qkl (\u22121)l ql(l\u22121)/2 wl (q; q)l (\u22121)k qk(k\u22121)/2 zk (q; q)k . The summand of the double series can be majorized by ql(l\u22121)/2 |w|l (q; q)l qk(k\u22121)/2 |z|k (q; q)k . Thus the doubl",
+   "section_file": "sections/page-005.md",
+   "section_title": "Page 5",
+   "pages": "5-5",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/page-005.md (p. 5-5)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-page-005-01",
+   "block_iri": "library/arxiv-1208.2521v1/blocks/prop-page-005-01",
+   "claim_id": "arxiv-1208.2521v1#proposition:2.1",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneSelfDualSpectralNarrowing.lean:sTransform_pow_four"
+   ],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.2",
    "name": null,
-   "statement": "J\u22121/2(x) versus cos x), so one should be very careful before \ufb01xing the de\ufb01nition and notation of a q-Bessel function.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-004.md",
-   "section_title": "Page 4",
-   "pages": "4-4",
+   "statement": "Formula (2.3) is a limit case of Heine\u2019s transformation formula (2.5) 2\u03c61 \u0014a, b c ; q, z \u0015 = (b, az; q)\u221e (c, z; q)\u221e 2\u03c61 \u0014c/b, z az ; q, b \u0015 (cf. [6, (1.4.1)]). Indeed, \ufb01rst let b \u21920, then replace z by z/a and let a \u2192\u221e. At least formally, by termwise limits, we obtain (2.3).",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [6, (1.4.1)] in sections/page-005.md",
+   "external_refs": [
+    "[6, (1.4.1)]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/page-005.md",
+   "section_title": "Page 5",
+   "pages": "5-5",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "rem-page-005-02",
+   "block_iri": "library/arxiv-1208.2521v1/blocks/rem-page-005-02",
+   "claim_id": "arxiv-1208.2521v1#remark:2.2"
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2.5",
    "name": null,
-   "statement": "Therefore, the notations for q- Bessel functions, q-cosines and q-sines in \u00a7\u00a73 and 5 should be considered as ad hoc notations, which are only used locally in this paper for clarifying the analogy of the functions with the q = 1 case.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-004.md",
-   "section_title": "Page 4",
-   "pages": "4-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "For z, t \u2208C such that 0 < |t| < |z|\u22121 there is the absolutely convergent expansion eq(tz) Eq(\u2212t\u22121z) = (t\u22121z; q)\u221e (tz; q)\u221e = \u221e X n=\u2212\u221e tn zn (qn+1; q)\u221e (q; q)\u221e 1\u03c61(0; qn+1; q, z2) (2.7) = \u221e X n=\u2212\u221e tn zn (z2; q)\u221e (q; q)\u221e 1\u03c61(0; z2; q, qn+1). (2.8)",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/page-006.md (p. 6-6)",
+   "external_refs": [],
+   "proof_excerpt": "Expansion of the left-hand side of (2.7) gives \u221e X k=0 \u221e X l=0 (\u22121)k qk(k\u22121)/2 tl\u2212k zl+k (q; q)k (q; q)l = \u221e X k=0 \u221e X l=\u2212\u221e (ql+1; q)\u221e(\u22121)k qk(k\u22121)/2 tl\u2212k zl+k (q; q)\u221e(q; q)k , which is an absolutely convergent double sum for z, t \u2208C such that 0 < |t| < |z|\u22121. Now pass to new sum",
+   "section_file": "sections/page-006.md",
+   "section_title": "Page 6",
+   "pages": "6-6",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/page-006.md (p. 6-6)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-page-006-01",
+   "block_iri": "library/arxiv-1208.2521v1/blocks/prop-page-006-01",
+   "claim_id": "arxiv-1208.2521v1#proposition:2.5",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneSelfDualSpectralNarrowing.lean:sTransform_pow_four"
+   ],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2.6",
    "name": null,
-   "statement": "Here we should exclude the case that both 1 + n and n + q log(s\u22121xy\u22121) are non- positive integers, or that both 1 \u2212n and \u2212n + q log(s\u22121yx\u22121) are non-positive integers.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "For |z| < 1 and n, m \u2208Z we have (2.10) \u221e X k=\u2212\u221e zk+n (qn+k+1; q)\u221e (q; q)\u221e 1\u03c61(0; qn+k+1; q, z2) \u00d7 zk+m (qm+k+1; q)\u221e (q; q)\u221e 1\u03c61(0; qm+k+1; q, z2) = \u03b4nm and (2.11) \u221e X k=\u2212\u221e zk+n (z2; q)\u221e (q; q)\u221e 1\u03c61(0; z2; q, qn+k+1) \u00d7 zk+m (z2; q)\u221e (q; q)\u221e 1\u03c61(0; z2; q, qm+k+1) = \u03b4nm, where the sums at the left-hand sides are absolutely convergent, uniformly on com- pact subsets of the open unit disk. Formula (2.11) follows from (2.10) by the symmetry (2.3). In \u00a73 we will show that (2.11) is a q-version of Hankel\u2019s Fourier-Bessel integral (1.9).",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/page-007.md (p. 7-7)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/page-007.md",
+   "section_title": "Page 7",
+   "pages": "7-7",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/page-007.md (p. 7-7)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-page-007-01",
+   "block_iri": "library/arxiv-1208.2521v1/blocks/prop-page-007-01",
+   "claim_id": "arxiv-1208.2521v1#proposition:2.6",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneSelfDualSpectralNarrowing.lean:sTransform_pow_four"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.7",
+   "name": null,
+   "statement": "Analogous to Proposition 2.5 there are the two generating functions for the q-Bessel functions J(1) \u03b1 (x; q) and J(2) \u03b1 (x; q) of Jackson and Ismail [10]: (2.12) eq(tz) eq(\u2212t\u22121z) = (tz; q)\u221e(\u2212t\u22121z; q)\u221e = \u221e X n=\u2212\u221e tn zn (qn+1; q)\u221e (q; q)\u221e 2\u03c61(0, 0; qn+1; q, \u2212z2), |z| < |t| < |z|\u22121, and (2.13) Eq(tz) Eq(\u2212t\u22121z) = (\u2212tz; q)\u221e(t\u22121z; q)\u221e = \u221e X n=\u2212\u221e tn zn qn(n\u22121)/2 (qn+1; q)\u221e (q; q)\u221e 0\u03c61(\u2212; qn+1; q, \u2212qn z2). In a way similar to (2.10) we can now derive the biorthogonality relations (2.14) \u221e X k=\u2212\u221e zk+n (qn+k+1; q)\u221e (q; q)\u221e 2\u03c61(0, 0; qn+k+1; q, \u2212z2) \u00d7 zk+m q(m+k)(m+k\u22121)/2 (qm+k+1; q)\u221e (q; q)\u221e 0\u03c61(\u2212; qm+k+1; q, \u2212qm+k z2) = \u03b4nm, valid for |z| < 1 and n, m",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [10] in sections/page-007.md",
+   "external_refs": [
+    "[10]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/page-007.md",
+   "section_title": "Page 7",
+   "pages": "7-7",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "rem-page-007-02",
+   "block_iri": "library/arxiv-1208.2521v1/blocks/rem-page-007-02",
+   "claim_id": "arxiv-1208.2521v1#remark:2.7"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4.1",
+   "name": null,
+   "statement": "For |sxy| < 1 we have (4.5) \u221e X k=\u2212\u221e sk yn+k (qn+k+1; q)\u221e (q; q)\u221e 1\u03c61(0; qn+k+1; q, y2) xk (qk+1; q)\u221e (q; q)\u221e 1\u03c61(0; qk+1; q, x2) = \uf8f1 \uf8f4 \uf8f4 \uf8f2 \uf8f4 \uf8f4 \uf8f3 yn (s\u22121xy\u22121; q)n (q; q)n 2\u03c61 \u0014s\u22121yx\u22121, qns\u22121xy\u22121 qn+1 ; q, sxy \u0015 if n \u22650, s\u2212nx\u2212n (s\u22121yx\u22121; q)\u2212n (q; q)\u2212n 2\u03c61 \u0014s\u22121xy\u22121, q\u2212ns\u22121yx\u22121 q\u2212n+1 ; q, sxy \u0015 if n < 0.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/page-011.md (p. 11-11)",
+   "external_refs": [],
+   "proof_excerpt": null,
    "section_file": "sections/page-011.md",
    "section_title": "Page 11",
    "pages": "11-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/page-011.md (p. 11-11)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-page-011-01",
+   "block_iri": "library/arxiv-1208.2521v1/blocks/prop-page-011-01",
+   "claim_id": "arxiv-1208.2521v1#proposition:4.1",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneSelfDualSpectralNarrowing.lean:sTransform_pow_four"
+   ],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "4.3",
    "name": null,
-   "statement": "(The functions introduced above should not be confused with the functions cosq and sinq considered in [6, Exercise 1.14].) Clearly we have the formal (termwise) limits cos((1 \u2212q)z; q2) \u2212\u2192cos z and sin((1 \u2212q)z; q2) \u2212\u2192sin z as q \u21911.",
-   "strength": "should-not",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-015.md",
-   "section_title": "Page 15",
-   "pages": "15-15",
+   "statement": "Analogous to (4.2) we have (4.9) (xs\u22121t; q)\u221e(\u2212xst\u22121; q)\u221e (yt; q)\u221e(\u2212yt\u22121; q)\u221e = \u221e X n=\u2212\u221e tn yn (s\u22121xy\u22121, qn+1; q)\u221e (qns\u22121xy\u22121, q; q)\u221e \u00d7 2\u03c61 \u0014qns\u22121xy\u22121, sxy\u22121 qn+1 ; q, \u2212y2 \u0015 , |y| < |t| < |y|\u22121. The case s = 1 of (4.9) goes back to Heine [9, p.121] (see also Hahn [7, \u00a78]). Its special cases (x, y, s) = (0, z, 1) and (\u2212z, 0, 1) are the formulas (2.12) and (2.13). Like (4.2), formula (4.9) is a q-analogue of (1.4) with z and t replaced by 2(y \u2212 s\u22121x)1/2(y \u2212sx)1/2 and t(y \u2212s\u22121x)1/2(y \u2212sx)\u22121/2, respectively. Similarly to (4.5) we obtain from (2.12), (2.13) and (4.9) that, for |y| < 1: (4.10) yn (s\u22121xy\u22121, qn+1; q)\u221e (qns\u22121xy\u22121, q; q)\u221e 2\u03c61 \u0014qns\u22121xy\u22121",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [9, p.121], [7, \u00a78] in sections/page-014.md",
+   "external_refs": [
+    "[9, p.121]",
+    "[7, \u00a78]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/page-014.md",
+   "section_title": "Page 14",
+   "pages": "14-14",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "rem-page-014-01",
+   "block_iri": "library/arxiv-1208.2521v1/blocks/rem-page-014-01",
+   "claim_id": "arxiv-1208.2521v1#remark:4.3"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "A",
+   "name": null,
+   "statement": "1. For 0 < a < q\u22121, 0 \u2264b < q\u22121 we have lim n\u2192\u221e2\u03c61(q\u2212n, qn+1ab; qa; q, qnx) = 1\u03c61(0; qa; q, x), uniformly for x in compact subsets of C.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/page-017.md (p. 17-17)",
+   "external_refs": [],
+   "proof_excerpt": "Put Rn(x) := 2\u03c61(q\u2212n, qn+1ab; qa; q, qnx) \u22121\u03c61(0; qa; q, x) = \u221e X k=1 (\u22121)k qk(k\u22121)/2 xk (qa; q)k (q; q)k \u0012 \u22121 + k Y j=1 (1 \u2212qn\u2212j+1) (1 \u2212qn+jab) \u0013 . Since k Y j=1 (1 \u2212xj) \u22651 \u2212 k X j=1 xj if 0 \u2264xj \u22641, j = 1, . . ., k, we have \u22121 + k Y j=1 (1 \u2212qn\u2212j+1) (1 \u2212qn+jab) \u2264 k X j=1 qn\u2212j+1 +",
+   "section_file": "sections/page-017.md",
+   "section_title": "Page 17",
+   "pages": "17-17",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/page-017.md (p. 17-17)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-page-017-01",
+   "block_iri": "library/arxiv-1208.2521v1/blocks/prop-page-017-01",
+   "claim_id": "arxiv-1208.2521v1#proposition:A",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneSelfDualSpectralNarrowing.lean:sTransform_pow_four"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "A",
+   "name": null,
+   "statement": "2. For \u03b1 > \u22121 we have lim q\u21911 1\u03c61(0; q\u03b1+1; q, (1 \u2212q)2z) = 0F1(\u2212; \u03b1 + 1; \u2212z), uniformly for z in compact subsets of C.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/page-017.md (p. 17-17)",
+   "external_refs": [],
+   "proof_excerpt": "1\u03c61(0; q\u03b1+1; q, (1 \u2212q)2z) = \u221e X k=0 (\u22121)k qk(k\u22121)/2 (1 \u2212q)2k zk (q\u03b1+1; q)k (q; q)k and the summand in the sum at the right-hand side can be majorized by (A.1) (q\u2212\u03b1/2|z|)k k\u22121 Y j=0 (q(\u03b1+j)/2 \u2212q1+(\u03b1+j)/2) (qj/2 \u2212q1+j/2) (1 \u2212q1+\u03b1+j) (1 \u2212q1+j) .",
+   "section_file": "sections/page-017.md",
+   "section_title": "Page 17",
+   "pages": "17-17",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/page-017.md (p. 17-17)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-page-017-02",
+   "block_iri": "library/arxiv-1208.2521v1/blocks/prop-page-017-02",
+   "claim_id": "arxiv-1208.2521v1#proposition:A",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneSelfDualSpectralNarrowing.lean:sTransform_pow_four"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "B",
+   "name": null,
+   "statement": "1. Formula (B.3) is valid for integer n if c, qb/a, q/a, qn+1/a, q\u2212nc/b, c/b are not a non-positive integer power of q and a, b, c\u0338 = 0. Now consider (2.5). Initially this is proved (see [6, (1.4.1)]) for |z|, |b| < 1 and c, az not a non-positive integer power of q. By analytic continuation (2.5) is more generally valid for z, b, c, az not a non-positive integer power of q. Let us turn to the proof of Proposition 4.2. Proceed with (4.5) as written just before Proposition 4.2 and take into account the constraints for (2.5) as just men- tioned. Then we initially obtain, under the assumptions that |sxy| < 1 and x2, y2 are not non-positive intege",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [6, (1.4.1)] in sections/page-019.md",
+   "external_refs": [
+    "[6, (1.4.1)]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/page-019.md",
+   "section_title": "Page 19",
+   "pages": "19-19",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: elsewhere, Cites external source [6, (1.4.1)] in sections/page-019.md). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-page-019-01",
+   "block_iri": "library/arxiv-1208.2521v1/blocks/lem-page-019-01",
+   "claim_id": "arxiv-1208.2521v1#lemma:B",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneSelfDualSpectralNarrowing.lean:sTransform_pow_four"
+   ],
+   "needs_lean_proof": true
   }
  ]
 }

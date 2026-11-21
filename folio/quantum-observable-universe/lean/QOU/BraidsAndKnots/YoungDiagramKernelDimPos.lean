@@ -26,7 +26,7 @@ discharges the hypothesis**:
 Pure `ℕ` combinatorics; no fit; kernel conjecture untouched. Standalone library file (no
 `.ts`/`.md` sibling), verified per-file by `lean`-direct, like its parents.
 
--- Ref: [manuscript] docs/audits/2026-07-18-deltalambda-covariance-kernel-frontier.md
+-- Ref: [leitner2026] docs/audits/2026-07-18-deltalambda-covariance-kernel-frontier.md
 -/
 
 namespace QOU.BraidsAndKnots.YoungDiagramKernelDimPos

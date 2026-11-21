@@ -1,4 +1,4 @@
--- Ref: [manuscript] def:two-q-adic-valuation, appendix-surreals.
+-- Ref: [leitner2026] def:two-q-adic-valuation, appendix-surreals.
 --
 -- Sibling stub for `def:two-q-adic-valuation`.
 --
@@ -13,7 +13,7 @@ namespace QOU.AlgebraicSubstrate
 
 /-- The $[2]_q$-adic valuation on the Skein module. -/
 def TwoQAdicValuation   :=
-  -- Ref: [manuscript] def:two-q-adic-valuation
+  -- Ref: [leitner2026] def:two-q-adic-valuation
   trivial
 
 end QOU.AlgebraicSubstrate

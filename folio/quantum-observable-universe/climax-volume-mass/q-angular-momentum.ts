@@ -20,4 +20,7 @@ export default definition({
     "def:q-casimir",
     "prop:nuclear-spin-parity",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The asymmetry at $q \\neq 1$ connects directly to parity violation ([parity violation](#prop:parity-violation-skein))." },
+  ],
 });

@@ -1,0 +1,1 @@
+The following abstract equalities hold: (16)X µ∪ρ=ν mλ(µ)(l(µ) + 2g −2)! l(µ)! uµuρ = mλ(ν) l(λ) + 2g −1 (l(ν) + 2g −2)! l(ν)! uν; (17) X µ∪ρ=ν mλ(µ)(2g −1)l(µ)z−1 µ z−1 ρ = 2g −1 2g l(λ) mλ(ν)(2g)l(ν)z−1 ν . STRUCTURE OF KEROV CHARACTER POLYNOMIALS

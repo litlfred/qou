@@ -1,6 +1,6 @@
-## Proof
+## Proof sketch
 
-By [α_k derivation procedure](#prop:alpha-k-derivation-procedure),
+By [α_k derivation procedure](#conj:alpha-k-derivation-procedure),
 the depth-$k$ stratum coefficient $\alpha_k(H_n)$ is the Markov pairing
 of $\mathrm{tr}_M$ with a class-function representative $r_k$ that is
 **Wedderburn-orthogonal** to every lower-depth irrep — i.e.\
@@ -34,8 +34,7 @@ uniquely determined.
 **canonical evaluation at $q_0$.**  Hoefsmit characters computed via
 [seminormal matrices](#prop:hoefsmit-seminormal-form) (see
 the formal derivation); the $5 \times 5$
-character matrix at $q_0$ is recorded in
-[`wedderburn-orthogonal-r-3-h4.witness.json`](https://github.com/litlfred/qou/blob/main/computations/wedderburn-orthogonal-r-3-h4.witness.json).
+character matrix at $q_0$ is computed numerically.
 
 **Sanity verification** — central character identity at every class:
 
@@ -51,6 +50,18 @@ This anchors the Hoefsmit character values.
 
 **Solving the system.**  $\mathbf{c} = (-0.3056, +1.4541, -0.6127,
 -1.5593, +1.0000)$.
+
+**Exact check of the table.**  The numerical solve above fixes only the
+$(1^4)$ row at $q_0$. The statement's table is exact: computing the five
+Hoefsmit characters on the class representatives $e$, $T_{s_1}$,
+$T_{s_1 s_3}$, $T_{s_1 s_2}$, $T_{s_1 s_2 s_3}$ symbolically over
+$\mathbb{Q}(q)$, every row $r_\lambda$ of the table satisfies
+$\chi_\mu(r_\lambda) = 0$ for all $\mu \ne \lambda$ and
+$\chi_\lambda(r_\lambda) \ne 0$, as identities of rational functions in
+$q$. So the five rows are the basis of class functions dual to the
+irreducible characters, normalised by $c_{(1234)} = 1$ (for $(2,2)$, where
+$c_{(1234)} = 0$, by $c_{(123)} = 1$). The $(1^4)$ row is the $r_3$ of this
+proof; at $q_0$ it reproduces the numerical solution.
 
 **Markov pairing on $r_3$.**  Markov-trace values on the 5 class
 representatives are universal (Markov reduction):

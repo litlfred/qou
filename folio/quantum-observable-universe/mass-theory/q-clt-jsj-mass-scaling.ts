@@ -27,4 +27,7 @@ export default remark({
     "binding",
   ],
   uses: ["conj:jsj-decomposition-linearity"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): 1. **`m_symbolic`**: the exact\n\n2. **`m_qCLT_approx`**: the JSJ-additive\n\nstep is an unproved Lean stub)\n\n See the computational witness `m-qclt-approx.witness.json`." },
+  ],
 });

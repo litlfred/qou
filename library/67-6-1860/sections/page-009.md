@@ -1,13 +1,15 @@
 ---
 doc_id: 67-6-1860
-doc_title: "Progress of Theoretical Physics, Vol. 67, No. 6, June 1982"
+doc_title: "Quaternionic Weinberg-Salam Theory"
 section_id: page-009
 section_title: "Page 9"
-section_number: null
 pages: 9-9
+pdf_page: 9
 source_pdf: 67-6-1860.pdf
 source_sha256: e2e5d45edd369762
-toc_source: undetermined
+text_source: ocr
+granularity: page
+doc_brief: "Quaternionic Weinberg-Salam Theory — 17 sections: Page 1; Page 2; Page 3"
 ---
 1868 K. Morita
 
@@ -54,4 +56,4 @@ projection, belong to Qz and Qx, respectively. (In this paper we employ the
 Majorana rep of Dirac matrices.) This implies that ¢i.r describe SU(2)i.e dou-
 blets:
 
-9z0z Ainr 90 uo ysanB Aq 79Z2881/0981/9/29/A101112/d}d/Wios'dno-o1wapese//:sdyjy Wo. pepeojuMoq
+9z0z Ainr 06 uo ysanB Aq 79Z2881/0981/9/29/A101112/d}d/Wios'dno-o1wapese//:sdyjy Wo. pepeojuMoq

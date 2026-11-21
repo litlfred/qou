@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1303.5278v1/blocks/thm-sec-031-02",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 51,
+  "pageEnd": 57,
+  "text": "thm-sec-031-02.md",
+  "derivedFrom": "library/arxiv-1303.5278v1/sections/sec-031",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1303.5278v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "A",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-031-appendix-a-the-23-move.md (p. 51-57)",
+    "claim_id": "arxiv-1303.5278v1#theorem:A",
+    "lean_status": "unformalized"
+  }
+}

@@ -1,1 +1,0 @@
-However, in a last step a global search should be carried out which means that random starting values are chosen and, ideally, then all searches converge to the same MLE regardless of their starting values.

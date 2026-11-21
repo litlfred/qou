@@ -1,0 +1,1 @@
+1. We have s(j, n, r) = 6(r + n) [ n−1 ] X k=0 {1 6 −B2 ((n −1 −2k)θ)} −1 4{2n2 + 1 + 3(−1)n}, (1.28) where θ = j + 1 n + r, and B2(x) = −1 π2 ∞ X k=1 cos 2kπx k2 is the second modiﬁed Bernoulli polynomial. 2. (Level - rank duality) s(j, n, r) + s(j, r, n) = nr −1

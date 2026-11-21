@@ -33,4 +33,8 @@ export default remark({
     "open-problem",
     "draft",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): `QOU.Mass.FreeEnergyReadingIsSigned` proves the general statements:\n`minusSummand_neg`, `no_real_energy_for_minus_block`,\n`positivity_would_need_d_gt_inv_q`, `admissible_letters_nonpos`, the\npositive-but-signed pairing at each of the three letters, and\n`pn_blockSum_eq_h_delta_half`. Measured at $q_0$ in\n`the_free_energy_reading_has_no_energy_spectrum_probe.py`." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): (the normalisation is exact: `wPlus_add_wMinus` in `QOU.Mass.ChainTraceFactor`); $L_{pp} + L_{nn} = 2\\log[2]_q$ (all in `QOU.Mass.ChainTraceFactor`)." },
+  ],
 });

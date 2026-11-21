@@ -18,7 +18,7 @@ loci (mechanically gated on `phiBProd`'s now-established zero discreteness).
 
 Verified `lean`-direct against the merged G5 chain + `PhiBProdHrRatio`. Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-07-26-faddeev-keystone-7xvy-canonical-arc.md
+-- Ref: [leitner2026] docs/audits/2026-07-26-faddeev-keystone-7xvy-canonical-arc.md
 -/
 
 open Complex Filter Topology Set

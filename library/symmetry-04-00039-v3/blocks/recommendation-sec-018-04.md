@@ -1,1 +1,0 @@
-And finally, the B of the second fermion must translate to a muon neutrino   in order to match lepton numbers, whereupon we end up with AB*B (see Figure 41) which translates into W    which splits up into an electron and its antineutrino and the muon’s neutrino.

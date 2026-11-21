@@ -15,7 +15,7 @@ LaTeX label: `prop:genus-maximal-descent`
 
 ## References
 
-- [manuscript] §6-archimedean-universe/genus-maximal-descent
+- [leitner2026] §6-archimedean-universe/genus-maximal-descent
 -/
 
 namespace QOU.Archimedean
@@ -39,7 +39,7 @@ structure GenusMaximalDescent where
   gauss_bonnet : 2 * (1 - genus) = eulerChar
 
 /-- From χ = -6 and 2(1 - g) = χ, the genus is 4. -/
--- Ref: [manuscript] Chapter 6, §Genus-maximal descent
+-- Ref: [leitner2026] Chapter 6, §Genus-maximal descent
 theorem genus_eq_four (D : GenusMaximalDescent) : D.genus = 4 := by
   have h1 := D.gauss_bonnet
   have h2 := D.euler_eq
@@ -47,19 +47,19 @@ theorem genus_eq_four (D : GenusMaximalDescent) : D.genus = 4 := by
 
 /-- The Hurwitz bound for genus 4: |Aut(Σ)| ≤ 84(g - 1) = 252.
     Since |S₅| = 120, the S₅ automorphism group fits within the bound. -/
--- Ref: [manuscript] Chapter 6, §Genus-maximal descent
+-- Ref: [leitner2026] Chapter 6, §Genus-maximal descent
 theorem hurwitz_bound_genus_four : 84 * (4 - 1) = (252 : ℤ) := by
   norm_num
 
 /-- S₅ has order 120, which is within the Hurwitz bound of 252 for g = 4. -/
--- Ref: [manuscript] Chapter 6, §Genus-maximal descent
+-- Ref: [leitner2026] Chapter 6, §Genus-maximal descent
 theorem s5_within_hurwitz : (120 : ℤ) ≤ 84 * (4 - 1) := by
   norm_num
 
 /-- The genus 4 is maximal: for genus 5, the Hurwitz bound would be
     84 × 4 = 336, but the Descartes condition forces exactly g = 4,
     not any higher value. We verify that χ = -6 uniquely determines g = 4. -/
--- Ref: [manuscript] Chapter 6, §Genus-maximal descent
+-- Ref: [leitner2026] Chapter 6, §Genus-maximal descent
 theorem genus_unique (g : ℤ) (hgb : 2 * (1 - g) = -6) : g = 4 := by
   linarith
 

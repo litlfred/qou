@@ -1,1 +1,0 @@
-In order to recover $p_N(n)$ as $N,\, n\to\infty$ from [\[eq129\]](#eq129){reference-type="eqref" reference="eq129"} [\[eq130\]](#eq130){reference-type="eqref" reference="eq130"} one must analyze the double-scaling limit for the determinant as $\lambda$, $n\to\infty$.

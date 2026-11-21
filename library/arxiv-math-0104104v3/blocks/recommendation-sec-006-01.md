@@ -1,1 +1,0 @@
-Now, as $B_i \in \BB$, we may write: \begin{displaymath} B_i = \diag{d_1^i,\dots, d_n^i}\diag{r_1^i,\dots,r_n^i}, \ \ \ r_j^i\in\R_+, \ \ d_j^i\in \Sp[1]. \end{displaymath} But as the orbits are parametrized by $\Sph$, we know that $d_j^1$ corresponds to $d_j^2$, which implies that $B_2 B_1^{-1}$ must be in $\RR$ from which it follows that the $K_i$'s lie in the same orbit. \qed

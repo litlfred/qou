@@ -2,6 +2,7 @@ import QOU.QuantumObservableUniverse.CategoricalFoundations
 import Mathlib.Algebra.Category.ModuleCat.Monoidal.Symmetric
 import Mathlib.Tactic.CategoryTheory.Coherence
 import Mathlib.Tactic.Ring
+import Mathlib.Algebra.Category.ModuleCat.Kernels
 
 /-!
 # The trivial quantum universe — `R`-Mod with `A = 𝟙`
@@ -27,7 +28,7 @@ trivial witness would have satisfied the observability axiom via
 `adjointObj := 0`.  QOU existence still requires a non-trivial `A`, which is what
 its `[kassel1995]` §IX citation was always about.
 
--- Ref: [manuscript] §1-quantum-universes/quantum-universe-exists
+-- Ref: [leitner2026] §1-quantum-universes/quantum-universe-exists
 -/
 
 open CategoryTheory MonoidalCategory
@@ -97,7 +98,7 @@ noncomputable def unitFrobHopf (C : Type*) [Category C] [MonoidalCategory C]
 /-- **The trivial quantum universe.**  `C = ModuleCat R`, `A = 𝟙`, one block.
 
     Discharges every field, including the five added under `qou-w1g8`. -/
-noncomputable def trivialQU : QOU.QuantumUniverse.{w + 1, w, w, w, w} R where
+noncomputable def trivialQU : QOU.QuantumUniverse.{w + 1, w, w, w} R where
   C := ModuleCat R
   frobHopf := unitFrobHopf (ModuleCat R)
   fibreFunctor := (forget (ModuleCat R))
@@ -120,13 +121,14 @@ noncomputable def trivialQU : QOU.QuantumUniverse.{w + 1, w, w, w, w} R where
   frobWeight_isUnit _ := isUnit_one
   dimQ _ := 1
   dimQ_isUnit _ := isUnit_one
-  differentialForms := PUnit.{w + 1}
+  differentialForms := ModuleCat.kernelCone (unitFrobHopf (ModuleCat R)).mul
+  differentialForms_isLimit := ModuleCat.kernelIsLimit _
 
 /-- **`QuantumUniverse` is inhabited** — the claim `quantum-universe-exists.lean`
     carries as an `axiom`, now a theorem. -/
--- Ref: [manuscript] §1-quantum-universes/quantum-universe-exists
+-- Ref: [leitner2026] §1-quantum-universes/quantum-universe-exists
 theorem nonempty_quantumUniverse :
-    Nonempty (QOU.QuantumUniverse.{w + 1, w, w, w, w} R) :=
+    Nonempty (QOU.QuantumUniverse.{w + 1, w, w, w} R) :=
   ⟨trivialQU R⟩
 
 end QOU.TrivialWitness

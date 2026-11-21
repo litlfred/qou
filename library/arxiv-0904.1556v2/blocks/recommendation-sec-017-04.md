@@ -1,1 +1,0 @@
-Thus we must include ${\rm U}(1)$ using matrices of this form: $$\left( \begin{array}{c c} \alpha & 0 \\ 0 & \alpha^{-3} \end{array} \right).$$ This gives our map: $$\begin{array}{ccc} {\rm U}(1) \times {\rm SU}(3) &\to& {\rm SU}(4) \\ ( \alpha, h) &\mapsto & \left( \begin{array}{c c} \alpha h & 0 \\ 0 & \alpha^{-3} \end{array} \right) . \end{array}$$

@@ -1,1 +1,0 @@
-This question also arises in the subject of "Quantum Chaos", and it is conjectured that the successive gaps should be randomly distributed according to a Poisson distribution (see [@sarnak], [@rudnick], [@EMM]).

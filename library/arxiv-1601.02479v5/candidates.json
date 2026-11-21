@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1601.02479v5",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "52c2dcd4adf2e72b5d773c0ef933d3a51ba08d4c03631c4c0283c956ad9f6a1e",
   "file": "1601.02479v5.pdf"
  },
  "provenance": {
-  "title": "COHOMOLOGICAL DONALDSON\u2013THOMAS THEORY OF A",
+  "title": "Cohomological Donaldson-Thomas theory of a quiver with potential and quantum enveloping algebras",
   "authors": "QUIVER WITH POTENTIAL AND QUANTUM ENVELOPING",
   "arxiv": {
    "id": "1601.02479",
@@ -16,76 +19,103 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
+  "candidates": 3,
   "by_kind": {
-   "recommendation": 4
+   "theorem": 2,
+   "corollary": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 3,
+  "by_domain": {
+   "math": 3
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 3
+  },
+  "by_evidence_location": {
+   "in-paper": 3
+  },
+  "by_lean_status": {
+   "unformalized": 3
+  },
+  "needs_lean_proof": 3
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "6.12",
    "name": null,
-   "statement": "The main conclusion of this paper is that the introduction of the cohomological Hall algebra structure associated to a quiver, a potential and a Serre subcategory $\\mathcal{S}$ should be seen as a first step towards forging a connection between the theory of refined Donaldson--Thomas invariants and the theory of quantum enveloping algebras, and that the proof of the integrality conjecture is the motivic shadow of a Poincar\u00e9--Birkhoff--Witt theorem for the associated quantum enveloping algebra.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-11-background.md",
-   "section_title": "Background",
-   "pages": "2-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "Let \u03b6 be a generic stability condition, and consider the morphism (104) \u22a0tw \u2295,\u221e \u00b5\u2212\u2192\u2212\u221e \u0010 (\u03c4)Sym\u22a0\u2295 \u0010 H(BC*)vir \u2297q\u03b6 \u00b5,\u2217BPS\u03b6 W,\u00b5 \u0011\u0011 (\u00ac\u03c8)H(\u02dc\u2217W ) \u2212\u2212\u2212\u2212\u2212\u2212\u2212\u2192H (p\u2217ICW ) induced by the inclusions \u03b9\u00b5 and the Hall algebra structure on H((\u03c8)AW ), where the bracketed superscripts indicate that if we are not taking the symmetrizing morphism \u03c4tw to de\ufb01ne the functor \u03c4Sym\u22a0\u2295, then we take the \u03c8-twisted multiplication, for \u03c8 a bilinear form as in (16). Then (104) is an isomorphism.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-029-64-proof-of-theorem-d.md (p. 60-63)",
+   "external_refs": [],
+   "proof_excerpt": "We consider dual compactly supported cohomology, to match Theorem 4.12. In addition, we will assume that W = 0 to ease the notation a little \u2014 applying the vanishing cycles functor to all of our arguments yields the general case by Lemma 5.3. Let d \u2208HNd be a Harder\u2013Narasimhan typ",
+   "section_file": "sections/sec-029-64-proof-of-theorem-d.md",
+   "section_title": "Proof of Theorem D",
+   "pages": "60-63",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-029-64-proof-of-theorem-d.md (p. 60-63)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-029-01",
+   "block_iri": "library/arxiv-1601.02479v5/blocks/thm-sec-029-01",
+   "claim_id": "arxiv-1601.02479v5#theorem:6.12",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "B",
    "name": null,
-   "statement": "[]{#abvsrel label=\"abvsrel\"} For the Donaldson--Thomas theory and cohomological Hall algebras associated to quivers, a vital role is always played by the grading by $\\mathbb{N}^{Q_0}$, the semigroup of dimension vectors, which should be seen as a weight space decomposition in the language of Lie algebras and quantum groups.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-12-absolute-versus-relative-donaldsonthomas-theo.md",
-   "section_title": "Absolute versus relative Donaldson\u2013Thomas theory",
-   "pages": "3-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "the domain and image are isomorphic. Since \u03b7\u2217 \u00b5 is a morphism of monoids, the diagram \u03b7\u2217 \u00b5 (\u03c4)Sym\u22a0\u2295 \u0010 \u03b7\u00b5,\u2217BPS\u03b6 \u00b5 \u2297H(BC*)vir \u0011 \u223c = \u000f / \u03b7\u2217 \u00b5H((\u00ac\u03c8)A\u00b5) \u223c = \u000f (\u03c4)Sym\u22a0\u2295 \u0010 BPS\u03b6 \u00b5 \u2297H(BC*)vir \u0011 / H((\u00ac\u03c8)A\u03b6 \u00b5) commutes, with the horizontal maps de\ufb01ned via the relative multiplications on H((\u03c8)A\u00b5) and H((\u03c8)A\u03b6 \u00b5) respectively. We deduce as above that the theorem is true after passing to the associated graded with respect to the Harder\u2013Narasimhan COHAS AND QUANTUM ENVELOPING ALGEBRAS \ufb01ltration, and so is injective, and hence an isomorphism since the domain and target are isomorphic pure monodromic mixed Hodge modules by Theorems A and B. \u25a1",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-029-64-proof-of-theorem-d.md (p. 60-63)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-029-64-proof-of-theorem-d.md",
+   "section_title": "Proof of Theorem D",
+   "pages": "60-63",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-029-64-proof-of-theorem-d.md (p. 60-63)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-029-02",
+   "block_iri": "library/arxiv-1601.02479v5/blocks/thm-sec-029-02",
+   "claim_id": "arxiv-1601.02479v5#theorem:B",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "6.13",
    "name": null,
-   "statement": "To define this \"appropriate sense\", we must take some care over the signs in the symmetrizing morphism $$\\textbf{sw}:\\mathcal{F}\\boxtimes_+ \\mathcal{F}\\rightarrow \\mathcal{F}\\boxtimes_+\\mathcal{F}.$$ It was noted already in [@KS2] that the cohomological Hall algebra on the graded vector space ([\\[baby\\]](#baby){reference-type=\"ref\" reference=\"baby\"}), while not commutative, becomes commutative after twisting by a simple system of signs.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-16-main-results-for-cohomological-hall-algebras.md",
-   "section_title": "Main results for cohomological Hall algebras",
-   "pages": "9-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The categorification of this picture, then, should be a monoidal category, for which the monoidal product cannot be upgraded to a symmetric monoidal product, except on fixed subcategories indexed by the slope $\\upmu$, for which we should define a symmetric monoidal product.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-015-32-monoidal-products.md",
-   "section_title": "Monoidal products",
-   "pages": "28-32",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "For a generic stability condition \u03b6 there exist embeddings BPS\u03b6,S W,\u00b5 \u2297H(BC*)vir \u2282 H((\u03c8)AW ) such that the induced morphism \u22a0tw \u2295,\u221e \u00b5\u2212\u2192\u2212\u221e \u0010 (\u03c4)Sym\u22a0+ \u0010 BPS\u03b6,S W,\u00b5 \u2297H(BC*)vir \u0011\u0011 (\u00ac\u03c8)H(\u02dc\u2217W ) \u2212\u2212\u2212\u2212\u2212\u2212\u2212\u2192H(AS W ) is an isomorphism. The meaning of the bracketed superscripts is as in Theorem 6.12.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-029-64-proof-of-theorem-d.md (p. 60-63)",
+   "external_refs": [],
+   "proof_excerpt": "By Theorem 6.12 and Proposition 5.7, the corollary is true after replacing H(AS W ) with the perverse associated graded GrP(H(AS W )) = Hc(MS, dim! H(p\u2217ICW )). Then for any lift of the embedding BPS\u03b6,S W,\u00b5 \u2297H(BC*)vir \u2282GrP(H(AS W )) to an em- bedding BPS\u03b6,S W,\u00b5 \u2297H(BC*)vir \u2282H(AS W ",
+   "section_file": "sections/sec-029-64-proof-of-theorem-d.md",
+   "section_title": "Proof of Theorem D",
+   "pages": "60-63",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-029-64-proof-of-theorem-d.md (p. 60-63)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "cor-sec-029-03",
+   "block_iri": "library/arxiv-1601.02479v5/blocks/cor-sec-029-03",
+   "claim_id": "arxiv-1601.02479v5#corollary:6.13",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

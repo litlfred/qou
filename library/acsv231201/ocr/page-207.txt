@@ -1,0 +1,32 @@
+7.2 The smooth case 189
+
+Figure 7.9 The curve y is deformed to a curve yz locally draped over a saddle z
+centered at a critical point for the height function. The tubes around y and yz are
+also pictured.
+
+of lower height that do not affect dominant asymptotic behavior, and attach-
+ments, which describe how to decompose the singular variety by joining to-
+gether topologically simpler spaces. Our discussion here summarizes the main
+points of the machinery developed in the appendices before applying them to
+our situation.
+
+Morse theory represents the topology of a manifold X equipped with a
+smooth map / : X > R in terms of successive attachments. The smooth func-
+tion / is referred to as a height function on X. As discussed above, we say h
+is a Morse if its critical points are nondegenerate, and proper if the inverse
+image of any closed interval is compact. Let X<. denote the subspace of all
+points z € X with h(z) < c and suppose that / is a proper Morse function. As
+described in Section C.3 of Appendix C, Morse theory describes the change
+in topology when the space X<, is increased to X<, using the language of at-
+tachments. Moving from Xz, to X<, is a homotopy equivalence (no change in
+topology) unless h has critical values in [a, b]. When there is a single critical
+point z with height in this interval, the topology changes via a topological at-
+tachment: X<;, is homotopy equivalent to X-, on which a A-ball B is glued via
+an attaching map ¢ : OB > X<q. The value of A is the Morse index of the criti-
+cal point z, which can be thought of as the dimension of the downward facing
+part of the generalized saddle at z and computed in local coordinates using the
+Hessian of h at z.
+
+Figure C.3 in Appendix C shows how the decapitated unit sphere S <;-, be-
+comes the full unit sphere by the attachment of a cap and the north pole (Morse
+index 2), while Figure C.5 in Appendix C shows how a contractible patch near

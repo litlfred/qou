@@ -1,1 +1,0 @@
-In order to be consistent with the specialization $a=q^N$ (also illustrated on the left side of Figure [\[fig:superpolunmial_hier\]](#fig:superpolunmial_hier){reference-type="ref" reference="fig:superpolunmial_hier"}), the $q$-degree of $d_N$ should be $N$ times greater than its $a$-degree and of opposite sign.

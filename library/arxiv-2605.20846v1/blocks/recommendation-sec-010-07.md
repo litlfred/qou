@@ -1,1 +1,0 @@
-Consider the gluing \[ p\setminus \operatorname{int}\Big(D^3\bigsqcup D^3\Big) \cong \Big( p \setminus \operatorname{int}(D^3) \Big) \bigcup_{S^2} \Big( S^3 \setminus \operatorname{int}(\bigsqcup_{i=1}^3 D^3) \Big) .\] Since the sphere boundary of a prime unit is outgoing, one of the sphere boundaries of the $S^3\setminus \operatorname{int}(\sqcup^3 D^3)$ factor must be incoming.

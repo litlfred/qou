@@ -1,0 +1,44 @@
+380 Cone point asymptotics
+
+first sentence of the last paragraph of [BP11, page 3177], “We piece these to-
+gether ... with a partition of unity argument as before,” while not known to be
+wrong, requires considerable justification not provided there. While this will
+be corrected in a forthcoming erratum, we have opted here to provide a more
+direct fix, Lemma 11.27 part (iii), whose hypotheses cover all the examples
+we discuss in Section 11.4 except for one covered by a direct topological anal-
+ysis. Part (iii) of Lemma 11.27 is used to amplify the problematic sentence
+from [BP11] into an argument by cases consuming three paragraphs at the
+end of the proof of Theorem 11.33; the lemma is used crucially in case (iii).
+Most other results in Section 11.2 correspond to [BP11] as follows. Theo-
+rems 11.4, 11.5, 11.33, and 11.42 above correspond to Lemma 5.1, Lemma
+5.3, Theorem 5.8, and Lemma 6.8 of [BP11], respectively. Lemma 11.32 cor-
+responds to [BP11, Theorem 5.6].
+
+There is another possible approach to asymptotics governed by points other
+than smooth and multiple points, namely resolution of singularities. A reso-
+lution at a singular point z is a change of variables which is one-to-one away
+from z and after which the local geometry at z is anormal crossing, that is, one
+or more smooth, transversely intersecting sheets. Resolution of singularities
+is effective [BM97], however the phase function becomes highly degenerate,
+complicating the integral substantially.
+
+Additional exercises
+
+Exercise 11.9. (weak hyperbolicity versus hyperbolicity of the homogeneous
+part) Let f(x, y) = x? + y°. Show that f is weakly hyperbolic in direction (0, 1)
+at the origin but that hom(/, 0) = x? is not hyperbolic in direction (0, 1).
+
+Exercise 11.10. (tangent cones at a cubic point) Let f(x, y,z) = xy + 2. First,
+compute a stratification of the zero set V of f. The tangent cones to V at
+(x, y, Z) vary continuously as (x,y,z) moves within a stratum. Describe these,
+then prove or disprove that there exists a lower semi-continuous choice of tan-
+gent cone K(x, y, z) in some neighborhood of the origin.
+
+Exercise 11.11. (Explicitly constructing the vector field) Let f(x, y, z) = 2 -
+x? — y be the standard Lorentzian quadratic and let B = {(x,y,z) : z <
+— yx? + y*} be the cone of hyperbolicity for f containing the downward di-
+rection. Let 7, = e3, the elementary vector in the positive z-direction. Find a
+projective vector field v(y) such that for all y # 0, the function w > f(iy+w)
+does not vanish on ru + (1 — f)uv(y) for t € [0,1]. You may use the proof of
+
+Lemma 11.32 or provide a sketch.

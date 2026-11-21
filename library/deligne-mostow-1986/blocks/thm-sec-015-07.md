@@ -1,0 +1,1 @@
+— Let X be the algebraic family (12.9. i) and let T be the H^mono- dromy group of the fibering. Assume that ^ satisfies condition (INT) of (3.11). If F is of finite covolume in its ^ariski-closure G(R) in Aut H^XQ , R), then I\ is an arithmetic lattice in U(V, ^).

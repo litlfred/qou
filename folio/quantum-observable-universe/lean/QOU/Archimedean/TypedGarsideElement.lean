@@ -49,7 +49,7 @@ structure TypedGarsideElement where
   /-- The staircase has one factor per nucleon pair: `binom(A, 2)`. -/
   numFactors_eq : numFactors = A.choose 2
 
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/typed-garside-element.ts
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/typed-garside-element.ts
 
 /-- The typed-crossing coefficient is symmetric on a mixed proton–neutron
     pair (manuscript: `d(p,n) = d(n,p)`). -/

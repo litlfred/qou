@@ -1,1 +1,0 @@
-We define $\pi_{\mathop{\mathrm{fat}}}$, called fat partition of $\pi$, to be a pair partition of the $2n$--element ordered set $\{1,1',2,2',\dots,n,n'\}$ given by $$\pi_{\mathop{\mathrm{fat}}}= \big\{ \{ \pi_{s,t}',\pi_{s,t+1} \} : 1\leq s \leq r \text{ and } 1 \leq t \leq l_s \big\},$$ where it should be understood that $\pi_{s,l_s+1}=\pi_{s,1}$.

@@ -1,4 +1,4 @@
--- Ref: [manuscript] Ch. 4, Borromean baryon section
+-- Ref: [leitner2026] Ch. 4, Borromean baryon section
 -- Borromean baryon mass formula with a common Borromean scale.
 --
 -- The conjecture is split into two Lean classes:
@@ -125,7 +125,7 @@ theorem mass_formula_shape
     Header comment at the top of this file documents the planned
     split into `BorromeanCommonScale` + `BorromeanMassFormula` (this
     class). -/
--- Ref: [manuscript] Ch. 4, Borromean baryon section
+-- Ref: [leitner2026] Ch. 4, Borromean baryon section
 class MassFormula where
   /-- Predicted proton mass over m_e at the substrate parameter
       (k = 2 / orientation partition (2, 1)). -/

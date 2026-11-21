@@ -28,7 +28,7 @@ Note this module is *not* the substantive treatment of shell capacity; see
 for the braid-theoretic content. Nothing in the corpus referenced this
 declaration.
 
--- Ref: [manuscript] quantum-observable-universe/molecular-construction/electron-shell-2n2-capacity.md
+-- Ref: [leitner2026] quantum-observable-universe/molecular-construction/electron-shell-2n2-capacity.md
 -/
 
 namespace QOU.Molecular.ElectronShellCapacity

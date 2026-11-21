@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1508.07379v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "c3dbf93d1cac198e6d9fafe655dd69a38ba09aa944daf273017aca0b74e5ce2f",
   "file": "1508.07379v2.pdf"
  },
  "provenance": {
-  "title": "Convergence of Mayer and Virial expansions and the Penrose tree-graph identity Introduction",
+  "title": "Convergence of Mayer and Virial expansions and the Penrose tree-graph identity",
   "authors": "Aldo Procacci\u2217, Sergio A. Yuhjtman\u2020",
   "arxiv": {
    "id": "1508.07379",
@@ -16,76 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
-  "by_kind": {
-   "recommendation": 4
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "\\ Some conditions on the potential $V$ must be imposed to have hope to control the series.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-model-and-results.md",
-   "section_title": "Model and Results",
-   "pages": "3-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "By minimality of $\\tau$ we must have $f(d) \\leq f(\\{i,j\\})$, whence $\\{i,j\\} \\in E_{\\bm M_f(\\tau)}$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-32-partition-scheme-via-minimum-spanning-tree.md",
-   "section_title": "Partition scheme via minimum spanning tree",
-   "pages": "8-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We must show $\\bm T_f(g)=\\tau$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-32-partition-scheme-via-minimum-spanning-tree.md",
-   "section_title": "Partition scheme via minimum spanning tree",
-   "pages": "8-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Thus, if in addition $\\{i,j\\} \\notin E_{\\bm M_f(\\tau)}$, we must have $V_{ij} \\leq V_e \\leq 0$ for some edge $e$ in that path.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-32-partition-scheme-via-minimum-spanning-tree.md",
-   "section_title": "Partition scheme via minimum spanning tree",
-   "pages": "8-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

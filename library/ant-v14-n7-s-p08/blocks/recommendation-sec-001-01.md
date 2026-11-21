@@ -1,1 +1,0 @@
-In our argument, we must instead allow k = (k1, . . . , kn) with ki varying independently; in particular this arises in the step when we deduce a bound for the maximal moment in (2-4) from the nonmaximal moment in (2-5).

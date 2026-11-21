@@ -1,1 +1,1 @@
-Let M be a Riemann surface of the genus g ≥ 2. Let KM
+Let M be a Riemann surface of the genus g ≥ 2. Let KM be the canonical line bundle of M endowed with a Hermitian metric H. Let the curvature ω g of H be positive. ω g gives a K¨ ahler metric of M . Let the curvatureK of ω g satisfy −K1 ≤K ≤K2 for nonnegative constants K1,K 2 ≥ 0 and let δ′ be the injective radius of M . Let δ = min(δ′, 1√K1 +K2 ). Then there is an absolute constant C >0 such that for m ≥ 2, d(m)∑ i=1 ||Si||2 ≥e− Cg3 δ 6 , where {S1, · · ·,S d(m)} is an orthnormal basis of H 0(M,K m M ).

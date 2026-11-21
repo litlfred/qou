@@ -1,0 +1,1 @@
+— The convention about the choice of the generators of the braid group is not uniform in the literature. Many authors use the generators σ′ i = σ−1 i . This remark will help the reader to convince himself or herself that the above Burau representation is indeed the Burau representation [13].

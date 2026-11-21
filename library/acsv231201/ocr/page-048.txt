@@ -1,0 +1,44 @@
+30 Generating functions
+
+If the initial condition is changed to a single particle at position 2, then the
+number of particles ever to reach the origin will have probability generating
+function ¢ o ¢. To see this, apply the analysis of Example 2.12, noting that the
+number of particles ever to reach 1 before any ancestor has reached 1, together
+with their collections of descendants who ever reach 0, form two generations
+of a branching process with offspring distribution the same as X. If the ini-
+tial condition is changed to a single particle at position 0 then the generating
+function is z.
+
+Each of the two children in the first generation is located at 0 with probabil-
+ity 1 — p and at 2 with probability p, so the probability generating function for
+the contribution to X of each child is (1 — p)z+ p¢(¢(z)). The two contributions
+are independent so their sum is a convolution, whose probability generating
+function is therefore the square of this. Thus, we have the identity
+
+(2) = [0 = py + poo). (2.2)
+
+While this does not produce an explicit formula for ¢, it is possible from this
+to derive asymptotics for ¢(t) as t T 1, allowing us to use so-called Tauberian
+theorems to recover asymptotic information about a,,. See Example 3.17 for
+more information. 4
+
+Derivation corresponds to marking an atom
+
+If A(z) = Ynso Ganz" enumerates the class A then the definition of the for-
+mal derivative implies that zA’(z) = )),51 dnz". Thus, zA’(z) can be viewed
+combinatorially as the generating function of a new class obtained from A by
+taking each object and marking, in all possible ways, one of the atomic pieces
+it is composed of. Similarly, if A(z) is a multivariate generating function then
+(z.0;A)(Z) can be interpreted as the generating function of a combinatorial
+class obtained by marking pieces defining the parameter of A tracked by the
+variable z;.
+
+Exercise 2.5. Let f(z) = 29 paz” be the probability generating function
+for the probability that a randomly chosen household in some town consists
+of n people. Let g(z) = zf’(z)/f’(1). Show that g is a probability generating
+function and determine what sampling probability it represents.
+
+2.3 Algebraic generating functions
+
+A formal power series F(z) is called an algebraic power series if there ex-
+ists a polynomial P(z,y) € C[z, y] such that P(z, F(z)) = 0. Algebraic series

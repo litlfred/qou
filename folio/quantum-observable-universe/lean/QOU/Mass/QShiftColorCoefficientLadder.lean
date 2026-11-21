@@ -81,7 +81,7 @@ coefficient data, where the obstruction does not live.
 §7c: everything is over a generic `[CommRing R]`; the `[n]_q` naming specialisation lives
 in the predecessor files and is not repeated. Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-06-25-z2bn-prolongation-qdifference-constraint.md
+-- Ref: [leitner2026] docs/audits/2026-06-25-z2bn-prolongation-qdifference-constraint.md
 -/
 import QOU.Mass.QDiffProlongationBaseOperator
 import QOU.Mass.ColorCurveQIntegerForm

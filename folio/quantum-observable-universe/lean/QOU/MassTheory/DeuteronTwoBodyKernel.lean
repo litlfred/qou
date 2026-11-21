@@ -120,8 +120,8 @@ interchangeable.  Tracked separately — do not "reconcile" them by substitution
 ## References
 
 - [jones1987] https://doi.org/10.2307/1971403
-- [manuscript] prop:flavor-split-substrate (leading `δ(q)`)
-- [manuscript] `QOU.QBeta.WritheNormalisation` (writhe factor, sorry-free)
+- [leitner2026] prop:flavor-split-substrate (leading `δ(q)`)
+- [leitner2026] `QOU.QBeta.WritheNormalisation` (writhe factor, sorry-free)
 - docs/audits/2026-08-25-low-isotope-binding-error-staleness-vs-gap.md §6 GAP-1
 - computations/mass_binding_dashboard.py `_bond_type_L` (production form)
 - computations/deuteron_two_body_kernel_overshoot_probe.py (the mpf numbers)

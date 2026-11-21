@@ -1,0 +1,44 @@
+38 Generating functions
+
+such that € (0) = 0 and Q(x, €)(x)) = 0. Furthermore,
+
+> r
+Axy) =-C| [v- 0) | [o- 2)
+jel j=l
+
+for some algebraic functions C(x), p1(x), ..., p(x) not vanishing at the origin,
+and
+K(x,y)- Uy) Wj - €100) 1
+Fz(x,y) = = = 7 :
+Oxy) Oxy) =C@ Mya - pi@))
+
+Proof We work in the ring C{x}[y] of polynomials in y with coefficients in the
+ring of power series in x converging in a neighborhood of zero. The asserted
+factorization of Q follows from its vanishing to order p at y = 0 and having
+some degree p + r as a polynomial in y. By definition K(x, y) = y? and, recall-
+ing that the degree of U(x, y) in y is at most p — 1, it follows that the degree of
+K(x, y) — U(x, y) in y is exactly p. Since K(x, y) — U(x, y) vanishes in a neigh-
+borhood of zero when y = &;(x) for any j, it is divisible by 0 — E(x).
+The leading coefficient of K — U is the same as the leading coefficient of K,
+namely 1, so K(x, y) — U(x, y) = Har — &j(x)) as claimed. Oo
+
+Dyck, Motzkin, Schréder, and generalized Dyck paths
+
+Let S = {(71, 51),..., (rk, 5x)} be a set of integer vectors with r; > 0 for all j
+and min; s; = —p < 0 < max; s; = P. The class A of generalized Dyck paths
+starting at (0,0) and taking steps in S consists of all finite tuples (o1,...,0¢)
+of any length € € N with elements in S whose partial sums o; +--- +07; for all
+1 < j < € have nonnegative coordinates. The elements of A can be viewed as
+lattice paths starting at the origin which never go below the x-axis. The weight
+of an element in (o),...,0¢) € A is the endpoint (7, s) = o) +--- + o¢ of the
+path.
+
+Let F(x,y) = D550 rsx’y* enumerate this class. Because a generalized
+Dyck path is either empty, or is a smaller generalized Dyck path with a single
+step added we obtain a recurrence of the form treated by the kernel method.
+In fact, we are precisely in the situation covered by Corollary 2.18 where
+O(x,y) = yPd->k, x'y*) and F(x, y) = Fz(x, y). The special case p = P = 1,
+that is, vertical displacement of at most | per step, occurs often in classical ex-
+amples.
+
+Proposition 2.19. Assume the above setup. If p = P = | then the generating

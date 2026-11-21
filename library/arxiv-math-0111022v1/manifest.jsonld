@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0111022v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0111022v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-0111022v1",
+  "title": "Some remarks on q-deformed multiple polylogarithms",
   "contains": [
     "library/arxiv-math-0111022v1/sections/sec-front-matter",
     "library/arxiv-math-0111022v1/sections/sec-000"
@@ -25,7 +25,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0111022v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0111022v1.pdf",
     "source_sha256": "fea7f118014838fe28843b30f7a8f6fb2b913d5198eb668c074eb541ca6ed6b7",
     "pages": 11,
@@ -36,8 +38,8 @@
       "stamp_date": "2 Nov 2001"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

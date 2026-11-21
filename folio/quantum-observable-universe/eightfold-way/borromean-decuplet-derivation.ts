@@ -18,6 +18,9 @@ export default proposition({
     "prop:schur-weyl-eightfold",
     "def:borromean-baryon",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): , whose weight\ndiagram and its degeneracy are treated in\n[the octet proposition](#prop:baryon-octet-decomposition)" },
+  ],
   // Lean backs the DIMENSION claim the block states: the fully-symmetric
   // Schur-Weyl channel at N = 3 has dimension C(5,3) = 10 (the decuplet).
   // `eightfold_channels_at_three` proves sorry-free that weylDimSym 3 = 10

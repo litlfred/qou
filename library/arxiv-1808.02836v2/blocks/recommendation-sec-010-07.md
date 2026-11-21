@@ -1,1 +1,0 @@
-This time two of the boundary curves of $\mathcal{S}$ bound discs in $T_0$ and pasting them in and pushing them into the manifold yields a properly embedded disc, and we conclude again that $\mathcal{S}$ must be boundary parallel.

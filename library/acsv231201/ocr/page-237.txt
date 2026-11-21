@@ -1,0 +1,43 @@
+7.5. Deformations 219
+
+addition, that each cycle in X may be deformed into the union of M,_5 and the
+neighborhoods N(z) by running the flow v,, hence the homotopy equivalence
+is induced by this flow. Finally, having shown that the flow induces a homotopy
+equivalence between (M_,.,M._,) and (X, M,_,), we can pick s sufficiently
+small and N(z) and 6 so that 6 < «, finishing the proof of part (ii). a
+
+Notes
+
+The rigorous foundation of the main theorems of this book in the framework of
+Morse theory is new to the second edition. Before the appearance of [BMP22],
+Morse-theoretic results were not available because hp is not, in general, a
+proper function. Therefore, in the first edition, Morse theory was used only as
+a motivation and individual results were obtained via hands-on deformations
+and surgeries, informed by Morse theory but proved as special cases, tailored
+to the individual hypotheses.
+
+Asymptotic formulae in the presence of smooth strictly minimal points first
+appeared in [PW02], followed by formulae for strictly minimal multiple points
+in [PW04]. Results proving the irrelevance of non-critical minimal points were
+derived in [Bar+10], and then in greater generality in [BP11], with an overview
+presented in [Pem10]. The proof sketch of Lemma 7.6 was suggested to us by
+Tony Pantev.
+
+The second part of Theorem 7.44 is an improvement on the result originally
+published in [BMP22]. There, it was shown that cycles may be pushed down
+into the union of levels below the critical value and neighborhoods of the crit-
+ical points, but not that this union is homotopy equivalent to the space at a
+level above the critical value. The sticking point is that the latter requires a
+deformation remaining at all times within the union, which requires geometric
+facts developed at length throughout [GM88]. The present proof avoids this by
+using the results of [BMP22] to eliminate escape to infinity, then finishing by
+using results of [GM88] as a black box.
+
+Additional exercises
+
+Exercise 7.15. When d = 2, the map Relog : V, — R‘ is locally one-to-one at
+most points. We say that amoeba(f) is a doublet if Relog”'(a) has cardinality
+precisely 2 for all x in the interior of amoeba(f). Give a proof by picture that
+if amoeba(f) is a doublet then there is a natural isomorphism x between the
+reduced homology group A(amoeba(f)°) and H\(V.), defined by x«([a’] -
+[x]) = INT(T(x), T(x’)).

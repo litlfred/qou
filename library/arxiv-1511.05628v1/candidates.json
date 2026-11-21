@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1511.05628v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "3b9da2994233882bdb242798fd1a5f85e53f1d0fd66410809de751d056a07d3a",
   "file": "1511.05628v1.pdf"
@@ -16,91 +19,121 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 5,
+  "candidates": 4,
   "by_kind": {
-   "recommendation": 5
+   "proposition": 3,
+   "lemma": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 1,
+  "by_domain": {
+   "science": 3,
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 3,
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 4
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "- The coefficients of $\\phi^+_{K,\\zeta}(\\hbar)=\\phi_{K,\\zeta}(\\hbar)/\\phi_{K,\\zeta}(0)$ should be elements of the field $F_K(\\zeta)$, where $F_K$ is the trace field of $K$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "This connection was observed at $\\zeta=1$ during conversations of the second author and Zagier in Bonn in the spring of 2012.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-002-12-zagiers-quantum-modularity-conjecture.md (p. 3-4)",
+   "external_refs": [],
+   "quantitative_values": [],
    "section_file": "sections/sec-002-12-zagiers-quantum-modularity-conjecture.md",
    "section_title": "Zagier's Quantum Modularity Conjecture",
    "pages": "3-4",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-002-12-zagiers-quantum-modularity-conjecture.md (p. 3-4)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-002-01",
+   "block_iri": "library/arxiv-1511.05628v1/blocks/prop-sec-002-01",
+   "claim_id": "arxiv-1511.05628v1#prop-sec-002-01"
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "- The constant term (under some mild assumptions on $F_K(\\zeta)$) should factor as follows: $$\\label{eq.phi0factor} \\phi_{K,k}(0) = \\phi_{K,1}(0) \\sqrt[k]{\\varepsilon_K} \\beta_{K,k}$$ where $\\phi_{K,1}(0)^2 \\in F_K(\\zeta)$, $\\varepsilon_K$ is a unit (i.e., an algebraic integer of norm $\\pm 1$) in $F_K(\\zeta)$ that depends only on the element of the Bloch group of $K$ (and $\\zeta$), and $\\beta_{K,k} \\in F_K(\\zeta)$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-12-zagiers-quantum-modularity-conjecture.md",
-   "section_title": "Zagier's Quantum Modularity Conjecture",
-   "pages": "3-4",
+   "statement": "This was observed in [@GZ1] and uses the fact that $\\theta^k$ is a solution to the Neumann-Zagier equations.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-013-31-proof-of-theorem-26.md (p. 12-14)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-013-31-proof-of-theorem-26.md",
+   "section_title": "Proof of Theorem 2.6",
+   "pages": "12-14",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-013-31-proof-of-theorem-26.md (p. 12-14)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-013-01",
+   "block_iri": "library/arxiv-1511.05628v1/blocks/prop-sec-013-01",
+   "claim_id": "arxiv-1511.05628v1#prop-sec-013-01"
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "Moreover, (local) triangulation-invariance of the level-$k$ state integral suggests that $S_{\\gamma,n,k}$ should be independent of triangulation and $\\gamma$ for all $n$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-28-topological-invariance.md",
-   "section_title": "Topological invariance",
-   "pages": "11-12",
+   "statement": "Let $\\sigma_j$ denote the $j$-th generator of the Galois group from Equation [\\[eq.sigma\\]](#eq.sigma){reference-type=\"eqref\" reference=\"eq.sigma\"}, and let $$\\epsilon_j(\\theta)=a_{e_j}(\\theta)^{-1} \\,.$$ The next lemma was observed in [@GZ1].",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-013-31-proof-of-theorem-26.md (p. 12-14)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-013-31-proof-of-theorem-26.md",
+   "section_title": "Proof of Theorem 2.6",
+   "pages": "12-14",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-013-31-proof-of-theorem-26.md (p. 12-14)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-013-02",
+   "block_iri": "library/arxiv-1511.05628v1/blocks/prop-sec-013-02",
+   "claim_id": "arxiv-1511.05628v1#prop-sec-013-02"
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.3",
    "name": null,
-   "statement": "In order for the path-integral measure $\\exp(-iS)$ to be invariant under all gauge transformations of $\\mathcal A$, the levels $t,\\tilde t$ must obey the quantization condition",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-017-41-basic-structure.md",
-   "section_title": "Basic structure",
-   "pages": "15-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The Quantum Modularity Conjecture asserts that the exact element of $F_{K,k}$ should to have the form: $$\\label{eq.xe} x^{\\mathrm{exact}}_{k,\\ell} = \\varepsilon_{K,k} \\beta_{K,k}^k$$ for $\\varepsilon_{K,k} \\in \\mathcal O_{F_K(\\zeta_k)}^{\\times}$ (an algebraic unit) and $\\beta_{K,k} \\in F_K(\\zeta_k)^\\times$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-023-51-how-the-data-was-computed.md",
-   "section_title": "How the data was computed",
-   "pages": "20-21",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "We have: Dk(\u03b6x) = Dk(x)(1 \u2212x)k 1 \u2212xk (35a) D\u2217 k(\u03b6\u22121x) = D\u2217 k(x)(1 \u2212x)k 1 \u2212xk (35b) D\u2217 k(x) = (1 \u2212xk)k\u22121 Dk(\u03b6x) (35c) Dk(x) = e 2\u03c0i 3 (k2\u22121)x k(k\u22121) D\u2217 k(1/x) (35d)",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-014-32-some-identities-of-the-cyclic-dilogarithm.md (p. 14-14)",
+   "external_refs": [],
+   "proof_excerpt": "Parts (a) and (b) are straightforward. For (35c), use D\u2217 k(x) = k\u22121 Y s=1 (1 \u2212\u03b6\u2212sx)s = k\u22121 Y s=1 (1 \u2212\u03b6s\u2212kx)k\u2212s = \u0010Qk\u22121 s=1(1 \u2212\u03b6sx) \u0011k Qk\u22121 s=1(1 \u2212\u03b6sx)s = \u00121 \u2212xk 1 \u2212x \u0013k 1 Dk(x) and then apply (35a). For (35d), use Dk(x) = k\u22121 Y s=1 (1 \u2212\u03b6sx)s = k\u22121 Y s=1 (\u2212\u03b6x)s(1 \u2212\u03b6\u2212sx\u22121)s = e 2\u03c0i",
+   "section_file": "sections/sec-014-32-some-identities-of-the-cyclic-dilogarithm.md",
+   "section_title": "Some identities of the cyclic dilogarithm",
+   "pages": "14-14",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-014-32-some-identities-of-the-cyclic-dilogarithm.md (p. 14-14)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-014-01",
+   "block_iri": "library/arxiv-1511.05628v1/blocks/lem-sec-014-01",
+   "claim_id": "arxiv-1511.05628v1#lemma:3.3",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

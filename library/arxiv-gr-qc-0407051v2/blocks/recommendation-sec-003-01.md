@@ -1,1 +1,0 @@
-For large values of $k$, the number of the paths corresponding to the random walk distance $\delta$ should be given by the Gaussian function $\frac{C}{\sqrt{k}} e^{-\frac{\delta^2}{\beta k}}\, \ \, N^-_k$.

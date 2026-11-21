@@ -281,4 +281,14 @@ theorem simple_end_scalar {n : ℕ} {W : Type} [AddCommGroup W] [Module k W]
     simpa [LinearEquiv.symm_apply_apply, map_smul] using this
   exact e.injective hx
 
+/-- Any equivariant endomorphism of a simple `S_n`-module has a scalar multiple from which its pointwise difference vanishes. -/
+theorem simple_end_sub_scalar_eq_zero {n : ℕ} {W : Type} [AddCommGroup W] [Module k W]
+    (ρ : Representation k (Perm (Fin n)) W)
+    (hsimple : IsSimpleModule (MonoidAlgebra k (Perm (Fin n))) ρ.asModule)
+    (θ : W →ₗ[k] W)
+    (hθ : ∀ (g : Perm (Fin n)) (x : W), θ (ρ g x) = ρ g (θ x)) :
+    ∃ c : k, ∀ x : W, θ x - c • x = 0 := by
+  obtain ⟨c, hc⟩ := simple_end_scalar (k := k) ρ hsimple θ hθ
+  exact ⟨c, fun x => sub_eq_zero.mpr (hc x)⟩
+
 end QOU.BraidKnot.SpechtAbsolutelyIrreducible

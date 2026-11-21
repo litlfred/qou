@@ -1,0 +1,434 @@
+{
+  "computation": "borromean-three-cusp-nz-hessian",
+  "scriptFile": "borromean_three_cusp_nz_hessian_probe.py",
+  "computedAt": "2026-11-15T22:29:23.162903+00:00",
+  "bean": "qou-ay84",
+  "absorbed_beans": [
+    "qou-mcus"
+  ],
+  "epic": "qou-avtq",
+  "engine": "exact Q(i) Gaussian-rational Gauss-Jordan + 60-dps mpmath Newton cross-check",
+  "free_parameters": 0,
+  "sign_flip_resolved": false,
+  "inputs": {
+    "manifold": "L6a4 (Borromean rings complement B_3, 3 cusps, 8 ideal tetrahedra = 2 regular ideal octahedra)",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "q0_pin": "proton (experimental pin, resolved)",
+    "indep_edge_rows": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "complete_shapes_z0": [
+      {
+        "re": "1/2",
+        "im": "1/2",
+        "expr": "1/2+1/2*i"
+      },
+      {
+        "re": "1",
+        "im": "1",
+        "expr": "1+1*i"
+      },
+      {
+        "re": "1",
+        "im": "1",
+        "expr": "1+1*i"
+      },
+      {
+        "re": "1",
+        "im": "1",
+        "expr": "1+1*i"
+      },
+      {
+        "re": "1",
+        "im": "1",
+        "expr": "1+1*i"
+      },
+      {
+        "re": "1/2",
+        "im": "1/2",
+        "expr": "1/2+1/2*i"
+      },
+      {
+        "re": "1/2",
+        "im": "1/2",
+        "expr": "1/2+1/2*i"
+      },
+      {
+        "re": "1/2",
+        "im": "1/2",
+        "expr": "1/2+1/2*i"
+      }
+    ],
+    "complete_shapes_w0": [
+      {
+        "re": "0",
+        "im": "1",
+        "expr": "1*i"
+      },
+      {
+        "re": "-1",
+        "im": "1",
+        "expr": "-1+1*i"
+      },
+      {
+        "re": "-1",
+        "im": "1",
+        "expr": "-1+1*i"
+      },
+      {
+        "re": "-1",
+        "im": "1",
+        "expr": "-1+1*i"
+      },
+      {
+        "re": "-1",
+        "im": "1",
+        "expr": "-1+1*i"
+      },
+      {
+        "re": "0",
+        "im": "1",
+        "expr": "1*i"
+      },
+      {
+        "re": "0",
+        "im": "1",
+        "expr": "1*i"
+      },
+      {
+        "re": "0",
+        "im": "1",
+        "expr": "1*i"
+      }
+    ],
+    "arithmetic": "Exact Q(i) + mpmath at 60 dps (no float64)"
+  },
+  "results": {
+    "det_M_sys": {
+      "re": "0",
+      "im": "-64",
+      "expr": "-64*i"
+    },
+    "abs_det_M_sys": 64,
+    "first_order_shape_jacobian_4_dZ_du": [
+      [
+        {
+          "re": "-1",
+          "im": "-1",
+          "expr": "-1-1*i"
+        },
+        {
+          "re": "-1",
+          "im": "-1",
+          "expr": "-1-1*i"
+        },
+        {
+          "re": "1",
+          "im": "-1",
+          "expr": "1-1*i"
+        }
+      ],
+      [
+        {
+          "re": "1",
+          "im": "-1",
+          "expr": "1-1*i"
+        },
+        {
+          "re": "-1",
+          "im": "1",
+          "expr": "-1+1*i"
+        },
+        {
+          "re": "-1",
+          "im": "-1",
+          "expr": "-1-1*i"
+        }
+      ],
+      [
+        {
+          "re": "1",
+          "im": "1",
+          "expr": "1+1*i"
+        },
+        {
+          "re": "-1",
+          "im": "1",
+          "expr": "-1+1*i"
+        },
+        {
+          "re": "1",
+          "im": "-1",
+          "expr": "1-1*i"
+        }
+      ],
+      [
+        {
+          "re": "-1",
+          "im": "-1",
+          "expr": "-1-1*i"
+        },
+        {
+          "re": "-1",
+          "im": "1",
+          "expr": "-1+1*i"
+        },
+        {
+          "re": "-1",
+          "im": "1",
+          "expr": "-1+1*i"
+        }
+      ],
+      [
+        {
+          "re": "-1",
+          "im": "1",
+          "expr": "-1+1*i"
+        },
+        {
+          "re": "1",
+          "im": "-1",
+          "expr": "1-1*i"
+        },
+        {
+          "re": "-1",
+          "im": "-1",
+          "expr": "-1-1*i"
+        }
+      ],
+      [
+        {
+          "re": "-1",
+          "im": "1",
+          "expr": "-1+1*i"
+        },
+        {
+          "re": "-1",
+          "im": "-1",
+          "expr": "-1-1*i"
+        },
+        {
+          "re": "-1",
+          "im": "-1",
+          "expr": "-1-1*i"
+        }
+      ],
+      [
+        {
+          "re": "1",
+          "im": "-1",
+          "expr": "1-1*i"
+        },
+        {
+          "re": "-1",
+          "im": "-1",
+          "expr": "-1-1*i"
+        },
+        {
+          "re": "1",
+          "im": "1",
+          "expr": "1+1*i"
+        }
+      ],
+      [
+        {
+          "re": "1",
+          "im": "1",
+          "expr": "1+1*i"
+        },
+        {
+          "re": "1",
+          "im": "1",
+          "expr": "1+1*i"
+        },
+        {
+          "re": "1",
+          "im": "-1",
+          "expr": "1-1*i"
+        }
+      ]
+    ],
+    "all_24_shape_sensitivities_nonzero": true,
+    "longitude_jacobian_dv_du": [
+      [
+        {
+          "re": "0",
+          "im": "-2",
+          "expr": "-2*i"
+        },
+        {
+          "re": "0",
+          "im": "0",
+          "expr": "0"
+        },
+        {
+          "re": "0",
+          "im": "0",
+          "expr": "0"
+        }
+      ],
+      [
+        {
+          "re": "0",
+          "im": "0",
+          "expr": "0"
+        },
+        {
+          "re": "0",
+          "im": "-2",
+          "expr": "-2*i"
+        },
+        {
+          "re": "0",
+          "im": "0",
+          "expr": "0"
+        }
+      ],
+      [
+        {
+          "re": "0",
+          "im": "0",
+          "expr": "0"
+        },
+        {
+          "re": "0",
+          "im": "0",
+          "expr": "0"
+        },
+        {
+          "re": "0",
+          "im": "-2",
+          "expr": "-2*i"
+        }
+      ]
+    ],
+    "cusp_modulus_matrix_tau": [
+      [
+        {
+          "re": "0",
+          "im": "2",
+          "expr": "2*i"
+        },
+        {
+          "re": "0",
+          "im": "0",
+          "expr": "0"
+        },
+        {
+          "re": "0",
+          "im": "0",
+          "expr": "0"
+        }
+      ],
+      [
+        {
+          "re": "0",
+          "im": "0",
+          "expr": "0"
+        },
+        {
+          "re": "0",
+          "im": "2",
+          "expr": "2*i"
+        },
+        {
+          "re": "0",
+          "im": "0",
+          "expr": "0"
+        }
+      ],
+      [
+        {
+          "re": "0",
+          "im": "0",
+          "expr": "0"
+        },
+        {
+          "re": "0",
+          "im": "0",
+          "expr": "0"
+        },
+        {
+          "re": "0",
+          "im": "2",
+          "expr": "2*i"
+        }
+      ]
+    ],
+    "hessian_strictly_diagonal": true,
+    "off_diagonal_quadratic_entries_count_nonzero": 0,
+    "second_order_longitude_derivatives_all_zero": true,
+    "third_order_longitude_derivatives": {
+      "d3v_i_du_i3": {
+        "re": "0",
+        "im": "1/2",
+        "expr": "1/2*i"
+      },
+      "d3v_i_du_i_du_j2_for_j_ne_i": {
+        "re": "0",
+        "im": "-1/2",
+        "expr": "-1/2*i"
+      },
+      "d3v_1_du_1_du_2_du_3": {
+        "re": "0",
+        "im": "0",
+        "expr": "0"
+      }
+    },
+    "longitude_taylor_coefficients": {
+      "a1_linear": {
+        "re": "0",
+        "im": "-2",
+        "expr": "-2*i"
+      },
+      "a3_single_cusp_u_i3": {
+        "re": "0",
+        "im": "1/12",
+        "expr": "1/12*i"
+      },
+      "a3_inter_cusp_u_i_u_j2": {
+        "re": "0",
+        "im": "-1/4",
+        "expr": "-1/4*i"
+      },
+      "a3_symmetric_3cusp": {
+        "re": "0",
+        "im": "-5/12",
+        "expr": "-5/12*i"
+      },
+      "symmetric_to_single_cubic_ratio": "-5"
+    },
+    "mpmath_60dps_newton_verification": {
+      "eps": "0.0000000100000000000000000000000000000000000000000000000000000000000",
+      "single_cusp_residual_abs": "5.20833333333333329283476875684701636803748503521151239290034e-43",
+      "symmetric_3cusp_residual_abs": "1.30208333333333339623806283213361498048372338708732104759958e-41",
+      "asymmetric_1_2_3_residual_abs": "4.02083333333333411518139203784357164763497358950352434038265e-40",
+      "extracted_a3_single_imag": "0.0833333333333333328125000000000000040498564586608104654080755",
+      "exact_a3_single_imag": "0.0833333333333333333333333333333333333333333333333333333333333",
+      "extracted_a3_sym_imag": "-0.416666666666666679687500000000000629047294988427202627534235",
+      "exact_a3_sym_imag": "-0.416666666666666666666666666666666666666666666666666666666667"
+    },
+    "quadratic_kappa_comparison": {
+      "kappa_per_cusp_nz_frame": -1,
+      "kappa_off_diagonal_sum": 0,
+      "kappa_bor_sym_nz_frame": -3,
+      "three_times_kappa_per_cusp": -3,
+      "quadratic_sym_equals_three_times_per_cusp": true,
+      "sign_flip_resolved": false
+    }
+  },
+  "verdict": "EXACT ALGEBRAIC & 60-DPS VERIFICATION (scope-(b) at quadratic order, non-trivial inter-cusp coupling at quartic CVol / cubic longitude order): (1) For L6a4 (B_3), the 8x8 linearized gluing system at the regular-octahedral complete structure has det(M_sys) = -64i and a completely dense 8x3 shape sensitivity matrix 4*(dZ_k/du_j) in {+-1+-i}. (2) Despite shared octahedral tetrahedra, the 3x3 longitude Jacobian dv_i/du_j|_{u=0} = -2i*delta_{ij} (cusp modulus matrix tau_{ij} = +2i*delta_{ij}) is STRICTLY DIAGONAL with all 6 off-diagonal entries identically zero, forced by pairwise linking number lk(K_i, K_j) = 0 and (Z/2Z)^3 component-reversal parity. Hence at quadratic order in u, kappa_Bor^sym = 3 * kappa_per_cusp with zero off-diagonal cross-term (`sign_flip_resolved = False`). (3) Inter-cusp coupling from the shared octahedral edges first enters at 3rd order in v_i (4th order O(u^4) in CVol): d^3 v_i / du_i^3 = +i/2 while d^3 v_i / (du_i du_j^2) = -i/2 (j != i), so v_i(u) = -2i*u_i + (i/12)*u_i^3 - (i/4)*u_i*sum_{j!=i} u_j^2 + O(u^5). On the symmetric locus u_1=u_2=u_3=u, the two inter-cusp cross-terms flip the sign of the cubic longitude coefficient from +i/12 to -5i/12 (verified to < 10^{-36} against 60-dps Newton solves).",
+  "lean": "QOU.QBeta.BorromeanThreeCuspNZHessian",
+  "wired": false,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptHash": "8a5617428b30",
+  "scriptCommitSha": "unknown",
+  "commitSha": "86da82a3b9a5b39d716f2807cb043df6e5855837",
+  "durationMs": 0,
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}

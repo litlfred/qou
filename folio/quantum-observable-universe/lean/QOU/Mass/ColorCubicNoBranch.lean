@@ -20,7 +20,7 @@ theorem here is the honest bridge from it to the no-branch obstruction.
 irreducibility, the computed W1 input). Sorry-free. No fit; nothing wired. The S₃
 identification is the witness's; this is its permanent algebraic consequence.
 
--- Ref: [manuscript] docs/audits/2026-08-01-branch-selection-birkhoff-connection-matrix.md (W1)
+-- Ref: [leitner2026] docs/audits/2026-08-01-branch-selection-birkhoff-connection-matrix.md (W1)
 -/
 import Mathlib.Algebra.Polynomial.Div
 import Mathlib.Algebra.Polynomial.Eval.Irreducible

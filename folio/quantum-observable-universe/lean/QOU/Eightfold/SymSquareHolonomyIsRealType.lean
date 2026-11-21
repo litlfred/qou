@@ -58,7 +58,7 @@ No ring and no archimedean content: an abstract duality and an equivalence.
 
 -- Ref: [fulton-harris1991] §11 (Frobenius–Schur; `Sym²` of the standard `SL(2)`
 -- representation is the adjoint, and is orthogonal).
--- Ref: [manuscript] `docs/audits/2026-09-04-route-e-screened-against-the-trichotomy.md`.
+-- Ref: [leitner2026] `docs/audits/2026-09-04-route-e-screened-against-the-trichotomy.md`.
 -/
 
 namespace QOU.Eightfold.SymSquareHolonomyIsRealType
@@ -142,5 +142,14 @@ theorem realType_induced_fails_gate {S : Finset ℕ} {fs : ℕ → FSType}
     (hi : i ∈ S) (hr : fs i = .real) (hpos : 0 < m i) :
     ¬ Passes S fs m dualIdx :=
   real_triple_fails_gate hi hr hpos
+
+/-- Iterated symmetric-square preservation of self-duality: if `V` is self-dual,
+then applying `sym` twice (`sym (sym V)`) also preserves self-duality. -/
+theorem symSquare_iterated_selfDual_of_selfDual
+    {sym dual : Rep → Rep} {iso : Rep → Rep → Prop}
+    (hc : SymSquareDualCompatible sym dual iso)
+    {V : Rep} (hV : IsSelfDual dual iso V) :
+    IsSelfDual dual iso (sym (sym V)) :=
+  symSquare_selfDual_of_selfDual hc (symSquare_selfDual_of_selfDual hc hV)
 
 end QOU.Eightfold.SymSquareHolonomyIsRealType

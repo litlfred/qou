@@ -12,8 +12,4 @@ field.
 Chapter 7 ([fluid dynamics](#chap:fluid-dynamics))
 reduces to this lemma.  See:
 
-* [RH surreal bound](#rem:rh-surreal-bound);
 * [Navier--Stokes surreal bound](#rem:ns-surreal-bound);
-* [Collatz surreal bound](#rem:collatz-surreal-bound);
-* [P vs NP surreal bound](#rem:p-vs-np-surreal-bound);
-* [millennium unification](#rem:millennium-unification).

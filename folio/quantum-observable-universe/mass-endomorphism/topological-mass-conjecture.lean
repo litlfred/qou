@@ -39,17 +39,17 @@ evaluation, no numerical approximation.
 
 ## References
 
-- [manuscript] conj:topological-decomposition-mass
-- [manuscript] thm:topological-mass
-- [manuscript] cor:quantum-dilogarithm
-- [manuscript] def:brane-boundary
+- [leitner2026] conj:topological-decomposition-mass
+- [leitner2026] thm:topological-mass
+- [leitner2026] cor:quantum-dilogarithm
+- [leitner2026] def:brane-boundary
 -/
 
 open Finset BigOperators
 
 namespace QOU.TopologicalMass
 
--- Ref: [manuscript] conj:topological-decomposition-mass
+-- Ref: [leitner2026] conj:topological-decomposition-mass
 
 /-- **Vortex mass decomposition conjecture** (axiomatized as a class).
 
@@ -64,7 +64,7 @@ namespace QOU.TopologicalMass
 
     The `decomp` field is the conjecture itself; instances supply it
     as an axiomatic hypothesis.  All theorems below are sorry-free. -/
--- Ref: [manuscript] conj:topological-decomposition-mass
+-- Ref: [leitner2026] conj:topological-decomposition-mass
 class TopologicalDecompositionMass (R : Type*) [AddCommMonoid R] [PartialOrder R] [IsOrderedAddMonoid R]
     (vortex : Type*) where
   /-- Gauge-holonomy contribution ‖Hol_∇(ϱ₀; G)‖. -/
@@ -90,7 +90,7 @@ class TopologicalDecompositionMass (R : Type*) [AddCommMonoid R] [PartialOrder R
     Any element m agreeing with holonomy + Σ dilog equals the class mass.
     In other words, the decomposition `decomp` has at most one solution
     for `mass` given the holonomy and dilogarithm data. -/
--- Ref: [manuscript] conj:topological-decomposition-mass §"Proof obligations"
+-- Ref: [leitner2026] conj:topological-decomposition-mass §"Proof obligations"
 theorem mass_unique {R : Type*} [AddCommMonoid R] [PartialOrder R] [IsOrderedAddMonoid R] (vortex : Type*)
     [M : TopologicalDecompositionMass R vortex]
     (m : R) (h : m = M.holonomy + ∑ i, M.dilog i) :
@@ -102,7 +102,7 @@ theorem mass_unique {R : Type*} [AddCommMonoid R] [PartialOrder R] [IsOrderedAdd
     Both the holonomy and all dilogarithm values are non-negative, so
     their sum is non-negative.  This is the physical content that
     mass ≥ 0 follows purely from the categorical structure. -/
--- Ref: [manuscript] conj:topological-decomposition-mass
+-- Ref: [leitner2026] conj:topological-decomposition-mass
 theorem mass_nonneg {R : Type*} [AddCommMonoid R] [PartialOrder R] [IsOrderedAddMonoid R] (vortex : Type*)
     [M : TopologicalDecompositionMass R vortex] :
     0 ≤ M.mass := by
@@ -116,7 +116,7 @@ theorem mass_nonneg {R : Type*} [AddCommMonoid R] [PartialOrder R] [IsOrderedAdd
 
     When N = 0 the brane boundary has no exceptional divisors, so the
     transient (dilogarithm) piece vanishes and mass = holonomy. -/
--- Ref: [manuscript] conj:topological-decomposition-mass §"Proof obligations"
+-- Ref: [leitner2026] conj:topological-decomposition-mass §"Proof obligations"
 theorem mass_eq_holonomy_of_flat {R : Type*} [AddCommMonoid R] [PartialOrder R] [IsOrderedAddMonoid R]
     (vortex : Type*) [M : TopologicalDecompositionMass R vortex]
     (hN : M.N = 0) : M.mass = M.holonomy := by
@@ -131,7 +131,7 @@ theorem mass_eq_holonomy_of_flat {R : Type*} [AddCommMonoid R] [PartialOrder R] 
 
     When N ≥ 1 and all dilogarithm values are strictly positive,
     the mass strictly exceeds the holonomy contribution. -/
--- Ref: [manuscript] conj:topological-decomposition-mass
+-- Ref: [leitner2026] conj:topological-decomposition-mass
 theorem mass_gt_holonomy_of_dilog_pos {R : Type*}
     [AddCommMonoid R] [PartialOrder R] [IsOrderedCancelAddMonoid R]
     (vortex : Type*) [M : TopologicalDecompositionMass R vortex]
@@ -146,7 +146,7 @@ theorem mass_gt_holonomy_of_dilog_pos {R : Type*}
 
     If two vortices share the same holonomy and all but one dilogarithm
     value, the one with the extra blow-up centre has mass ≥ the other. -/
--- Ref: [manuscript] conj:topological-decomposition-mass §"Proof obligations"
+-- Ref: [leitner2026] conj:topological-decomposition-mass §"Proof obligations"
 theorem mass_mono_of_extra_dilog {R : Type*} [AddCommMonoid R] [PartialOrder R] [IsOrderedAddMonoid R]
     (vortex₁ vortex₂ : Type*)
     [M₁ : TopologicalDecompositionMass R vortex₁]
@@ -185,7 +185,7 @@ theorem mass_mono_of_extra_dilog {R : Type*} [AddCommMonoid R] [PartialOrder R] 
     Note that `mass` is itself a field of the class, so `decomp` relates
     fields of one instance to each other.  It does not tie `mass` to a mass
     defined independently of the instance. -/
--- Ref: [manuscript] conj:topological-decomposition-mass §"Skeleton"
+-- Ref: [leitner2026] conj:topological-decomposition-mass §"Skeleton"
 def flatVortex (vortex : Type*) :
     TopologicalDecompositionMass ℝ vortex where
   holonomy := 0

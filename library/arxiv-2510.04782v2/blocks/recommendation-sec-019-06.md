@@ -1,1 +1,0 @@
-Since $\W\deRham_{\ov R_\infty/\IF_p}/p\simeq \deRham_{\ov R_\infty/\IF_p}\rightarrow \ov R_\infty$ is surjective by our assumption that $\fil_{\Hodge}^1\deRham_{\ov R_\infty/\IF_p}$ is static, we conclude that the Frobenius on $\ov R_\infty$ must be surjective too. ◻ :::

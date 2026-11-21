@@ -1,1 +1,0 @@
-But don’t be discouraged -- approach them with curiosity and persistence. [...] CRITICAL: You have a large number of ‘search_replace‘ and ‘attempt_goals_with_alphaproof‘ calls available in each episode | you MUST use them exhaustively [...] CRITICAL: You MUST NOT use a single ‘sorry‘ to prove a goal that covers multiple reasoning steps. [...] # 3.

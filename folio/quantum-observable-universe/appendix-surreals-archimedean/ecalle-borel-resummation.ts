@@ -18,6 +18,7 @@ export default definition({
   ],
   cites: ["ecalle1981"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The coefficient-wise division $a_n \\mapsto a_n / n!$ is formalised as `borelCoeff` in the Lean sibling." },
     {
       kind: "note",
       date: "2026-07-13",

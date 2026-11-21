@@ -1,1 +1,0 @@
-Thus all we must do is show that this step, namely [Xu 2018, Proposition 1.6 (a)] can be proved under the alternate assumption that for each i, the reduction of Fi modulo q is (di, q)-admissible, and that deg Fi < q.

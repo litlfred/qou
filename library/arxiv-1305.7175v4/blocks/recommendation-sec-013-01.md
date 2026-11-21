@@ -1,1 +1,0 @@
-In order to capture the full cyclic symmetry of the trace Tr, one should further extend it to a homotopical trace valued in ΩA, or in other words, to the appropriate full cyclic bar construction (of which the above forms only the one-simplices). .

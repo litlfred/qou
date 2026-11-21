@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-reeb-beltrami-regular-flow",
+  "@type": [
+    "folio-assistant-sci:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:reeb-beltrami-regular-flow",
+  "kind": "proof",
+  "title": "Proof of the regular fibre-rotation flow on $\\mathrm{UT}(\\Sigma_4)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-reeb-beltrami-regular-flow"
+  ],
+  "text": "reeb-beltrami-regular-flow-proof.md",
+  "provenance": "authored"
+}

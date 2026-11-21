@@ -1,1 +1,0 @@
-Therefore, since $b > 2\pi/3 = 2.09...$, we have that this configuration cannot exist as $\mathbf w$ must be identified, without loss of generality, with a vertex of the pentagon $C$ contradicting the rather obvious fact that the spherical diameter of any pentagon with side lengths equal to $\pi/3$ is at most $2\pi/3$.

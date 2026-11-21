@@ -718,7 +718,7 @@
           "in_degree": 0,
           "cone_size": 2,
           "depth": 2,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 2,
           "edge_span_mean": 2,
           "worst_target": ""
@@ -939,7 +939,7 @@
         "reviewed_at": "2026-08-22T04:27:25.141Z",
         "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
         "evidence": "'If the electron cloud is not a union of closed sub-links, then at least one trefoil contains an available linking site' is a contrapositive step in an iff proof, not an assert-by-denying construction.",
-        "notes": "pass on all ten trap criteria. THREE FINDINGS, none fixed inline. (1) A PROPOSITION PROVED FROM A CONJECTURE, invisible to the manifest. The reverse direction says in so many words 'follows from the shell conjecture'. The natural referent in the corpus is conj:electron-shell-2n2-capacity. Neither this proof's uses[] (['prop:noble-gas-characterization']) nor the proposition's uses[] (['rem:helium-hopf-diagram']) declares any conj: label, so the conjectural-propagation audit of AGENTS.md 3b cannot see the dependency \u2014 and 3b requires a block downstream of a conjecture to be a conjecture, or to satisfy the 3b-cond conditional-class exception with the conjecture named in uses[] and carried as an explicit instance hypothesis. Neither holds here. Proposed: name the conjecture with a link, add it to uses[], and either demote the proposition or state it conditionally. (2) UNRESOLVED CITATION: 'the Hopf stability proposition' is given without a label. The only Hopf-stability result in the corpus is prop:torus-hopf-stability, 'Torus knot composites on Bring's surface are stable hadrons' \u2014 a statement about HADRONS, not about electron sub-Hopf links, so either the citation points somewhere else or the domains do not match. (3) THE REVERSE DIRECTION'S PHYSICAL STEP IS FALSE AS STATED: 'The atom lowers its energy by capturing an additional electron, contradicting chemical inertness.' An open linking site does not imply a favourable electron capture \u2014 nitrogen, magnesium and manganese all have unfilled shells and non-positive electron affinity, and alkali metals react by donating rather than capturing. The argument needs 'gains or loses an electron', or a restriction to atoms with positive electron affinity."
+        "notes": "pass on all ten trap criteria. THREE FINDINGS, none fixed inline. (1) A PROPOSITION PROVED FROM A CONJECTURE, invisible to the manifest. The reverse direction says in so many words 'follows from the shell conjecture'. The natural referent in the corpus is conj:electron-shell-2n2-capacity. Neither this proof's uses[] (['prop:noble-gas-characterization']) nor the proposition's uses[] (['rem:helium-hopf-diagram']) declares any conj: label, so the conjectural-propagation audit of AGENTS.md 3b cannot see the dependency — and 3b requires a block downstream of a conjecture to be a conjecture, or to satisfy the 3b-cond conditional-class exception with the conjecture named in uses[] and carried as an explicit instance hypothesis. Neither holds here. Proposed: name the conjecture with a link, add it to uses[], and either demote the proposition or state it conditionally. (2) UNRESOLVED CITATION: 'the Hopf stability proposition' is given without a label. The only Hopf-stability result in the corpus is prop:torus-hopf-stability, 'Torus knot composites on Bring's surface are stable hadrons' — a statement about HADRONS, not about electron sub-Hopf links, so either the citation points somewhere else or the domains do not match. (3) THE REVERSE DIRECTION'S PHYSICAL STEP IS FALSE AS STATED: 'The atom lowers its energy by capturing an additional electron, contradicting chemical inertness.' An open linking site does not imply a favourable electron capture — nitrogen, magnesium and manganese all have unfilled shells and non-positive electron affinity, and alkali metals react by donating rather than capturing. The argument needs 'gains or loses an electron', or a restriction to atoms with positive electron affinity."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1275,8 +1275,26 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "26949cb99ed7",
+          "ts": "efe5d2a97c8b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:04.186Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "The reverse direction rests on \"the shell conjecture\" (prf:5), so the iff is not proved. The criterion in the statement (md:12-14: S_i = 2n_i²·T₂,₃, strictly increasing n_i) also contradicts its own table, and the theorem itself is false as stated. Exact enumeration (c_noble.py) shows p ∈ {36, 54, 86} (Kr, Xe, Rn) admit no such partition. The table rows use repeated shells, 2+8+18+8 etc. (table-data:5-8), which violates monotone nesting. Conversely, p = 8 (O) and p = 20 (Ca) do satisfy the criterion. Empirical content: \"six noble gases\", chemical inertness, and ionization peaks in the interpretation block."
+      }
     ]
   },
-  "updated_at": "2026-08-22T04:27:25.141Z",
+  "updated_at": "2026-11-15T21:56:04.186Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

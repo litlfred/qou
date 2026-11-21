@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2402.08782v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "30311f0bd815f93f253a60438c999770726ebcf838e361d5741b564b313389a1",
   "file": "2402.08782v1.pdf"
  },
  "provenance": {
-  "title": "Hecke\u2013Farey coordinates for Bring\u2019s surface Doha Kattan 1 and David Singerman 2",
+  "title": "Hecke\u2013Farey coordinates for Bring\u2019s surface",
   "authors": "Doha Kattan1 and David Singerman2",
   "arxiv": {
    "id": "2402.08782",
@@ -16,46 +19,87 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
   "candidates": 2,
   "by_kind": {
-   "recommendation": 2
+   "lemma": 1,
+   "definition": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 2,
+  "by_domain": {
+   "math": 2
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1,
+   "axiomatic-definition": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 2
+  },
+  "by_lean_status": {
+   "doc-cited-in-lean-unlinked-claim": 2
+  },
+  "needs_lean_proof": 2
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "9.1",
    "name": null,
-   "statement": "Now from (\\ref{dk1c}), $|H_4:H_4(3)|=24$ so that $\\mathscr{M}_4(3)$ has 24 darts, 12 edges, 8 vertices, and 6 faces. $\\mathscr{M}_4 (3)$ is a regular map, it must be the cube.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-6-hecke-farey-fractions-for-the-cube.md",
-   "section_title": "Hecke-Farey fractions for the cube",
-   "pages": "7-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "The map z 7\u2192z + \u221a 2 of the Hecke-Farey coordinates induces a rotation of M4(5) through 2\u03c0/5 about the centre 1 0.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-008-8-poles.md (p. 9-11)",
+   "external_refs": [],
+   "proof_excerpt": "As we are working modulo 5 in in M4(5) the transformation has order 5 and fixes the centre 1 0. (Here we are identifying the Hecke-Farey coordinate with its corresponding vertex.)",
+   "section_file": "sections/sec-008-8-poles.md",
+   "section_title": "Poles",
+   "pages": "9-11",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-008-8-poles.md (p. 9-11)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-008-01",
+   "block_iri": "library/arxiv-2402.08782v1/blocks/lem-sec-008-01",
+   "claim_id": "arxiv-2402.08782v1#lemma:9.1",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/BringLatticeSpanFiniteQuotient.lean:exists_pow_succ_mem_of_mker_le",
+    "folio/quantum-observable-universe/lean/QOU/BringLatticeSpan.lean:rnorm_mul",
+    "folio/quantum-observable-universe/lean/QOU/Brings/HeckeMapFaceSize.lean:regularMap_edge_relation"
+   ],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "definition",
+   "source_kind": "definition",
+   "number": "9.2",
    "name": null,
-   "statement": "We then get $2-2g=3-10+1= -6$ dgiving $g=4$ which it should be.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-10-equivalence-classes-of-vertices.md",
-   "section_title": "Equivalence classes of vertices",
-   "pages": "11-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "A Farey circuit is a collection of points v0, v1, \u00b7 \u00b7 \u00b7 vn each with a Hecke-Farey coordinate such that vi is adjacent to vi+1 and v0 = vn. A Farey circuit on M4(5) is given by H2, E1, F2, B1, J2, K1, C2, L1, E2, B1, F2, D1, H2 (12 vertices). For example H2 = 2 \u221a is adjacent to E1 = \u221a 2 and E1 is adjacent to F2 = \u221a 3 , etc. We continue this Farey sequence just by adding multiples of \u221a",
+   "claim_domain": "math",
+   "evidence_kind": "axiomatic-definition",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper definition in sections/sec-008-8-poles.md",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-008-8-poles.md",
+   "section_title": "Poles",
+   "pages": "9-11",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper definition in sections/sec-008-8-poles.md). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "def-sec-008-02",
+   "block_iri": "library/arxiv-2402.08782v1/blocks/def-sec-008-02",
+   "claim_id": "arxiv-2402.08782v1#definition:9.2",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/BringLatticeSpanFiniteQuotient.lean:exists_pow_succ_mem_of_mker_le",
+    "folio/quantum-observable-universe/lean/QOU/BringLatticeSpan.lean:rnorm_mul",
+    "folio/quantum-observable-universe/lean/QOU/Brings/HeckeMapFaceSize.lean:regularMap_edge_relation"
+   ],
+   "needs_lean_proof": true
   }
  ]
 }

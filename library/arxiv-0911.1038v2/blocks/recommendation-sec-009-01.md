@@ -1,1 +1,0 @@
-We shall explain precisely what this divisibility means and show in Section [\[sec:divisibility\]](#sec:divisibility){reference-type="ref" reference="sec:divisibility"} that it holds indeed by studying the arithmetic properties of Kerov polynomials and their divisibility by prime numbers.

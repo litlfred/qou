@@ -1,0 +1,43 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "9b6f19ffd170",
+          "ts": "344dfd5d0a7d",
+          "lean": "829a333b3d17",
+          "lean_statement": "d725e2b7b731"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T00:43:10.666Z",
+        "reviewed_sha": "0eba507a077106abc6597936dd5f1cfb3cff653b",
+        "severity": "minor",
+        "evidence": "Statement says 'for every integer A'; regime_trichotomy is stated for A : N. Otherwise hypotheses and three regimes match."
+      },
+      {
+        "field_hash": {
+          "md": "f1a45d37a6ca",
+          "ts": "344dfd5d0a7d",
+          "lean": "829a333b3d17",
+          "lean_statement": "d725e2b7b731"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-17",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-18T04:05:49.990Z",
+        "reviewed_sha": "eb91bc14719e82c5b1b1de645aa5cf69c972bc9f",
+        "evidence": "Statement now says natural number A, matching A : N."
+      }
+    ]
+  },
+  "updated_at": "2026-11-18T04:05:49.990Z"
+}

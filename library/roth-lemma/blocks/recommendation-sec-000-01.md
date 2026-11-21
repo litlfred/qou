@@ -1,1 +1,0 @@
-Instead, we may also write because ph = nrh for all h, and so, by the definition of the index, J(W;ri ,..., rm; KI ,..., fm) = n J(W;pi ,...,pm; «i ,-•> «m)- Since from now on only indices of polynomials at the fixed point (KI ,...,/tm) relative to the fixed integers ri ,..., rm will occur, we shall write for these indices simply J(W), J(A), etc.

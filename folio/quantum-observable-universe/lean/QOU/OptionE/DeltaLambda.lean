@@ -54,8 +54,8 @@ This file provides the framework signature; concrete weight
 functions + per-atom predictions live in `DeuteronVerification.lean`.
 
 Refs:
-- [manuscript] docs/audits/2026-05-18-delta-lambda-gating-context.md
-- [manuscript] AGENTS.md §Precision goals (L2)
+- [leitner2026] docs/audits/2026-05-18-delta-lambda-gating-context.md
+- [leitner2026] AGENTS.md §Precision goals (L2)
 -/
 
 namespace QOU.OptionE.DeltaLambda

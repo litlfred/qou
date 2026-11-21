@@ -36,7 +36,7 @@ instances, because two `Algebra ℝ` instances on the quotient type do not unify
 `QBeta.MarkovTraceQuotient.instAlgebraTraceQuot`).  So this is the general-purpose piece —
 the one that would go upstream — and it is **not** on that result's critical path.
 
--- Ref: [manuscript] bean qou-8iru.
+-- Ref: [leitner2026] bean qou-8iru.
 -/
 
 namespace QOU.MathlibExt.RingConLiftAlgHom

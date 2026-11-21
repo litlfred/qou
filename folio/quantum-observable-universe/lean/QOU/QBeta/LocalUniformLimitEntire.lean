@@ -25,7 +25,7 @@ geometric `Multipliable` bounds for `Im b² > 0`.
 Verified `lean`-direct against the Mathlib `LocallyUniformLimit` + `Complex.Analytic` cones
 (built from pinned source) + `PhiBProd`. Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-07-25-faddeev-uniqueness-keystone-state.md
+-- Ref: [leitner2026] docs/audits/2026-07-25-faddeev-uniqueness-keystone-state.md
 -/
 
 open Set Filter Topology

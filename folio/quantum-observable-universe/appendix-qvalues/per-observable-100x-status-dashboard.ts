@@ -40,6 +40,7 @@ export default remark({
     requires: ["mpmath"],
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): *The per-observable accuracy record is the witness `computations/per-observable-100x-status.witness.json`, emitted by `per_observable_100x_status.py`. It records, for each predicted observable, whether the prediction meets its $100\\times$ absolute-accuracy target against experiment. Its `summary` field carries the headline counts. **The accuracy result is `beats_100x_scoreable` out of `scoreable_total`**, which count predictions only. `beats_100x_count` must *not* be quoted as an accuracy result: it also counts the calibration inputs the witness lists in `summary.calibration_inputs`, whose residuals are fixed by construction rather than measured. The remainder do not meet the target, and closing them is open.* || the authoritative values are the witness's per-row\n`pred_err`, `100x_target` and `beats_100x` flags, together with the `summary`\ncounts `beats_100x_scoreable` / `scoreable_total`. The witness is recomputed" },
     {
       kind: "note",
       date: "2026-06-02",

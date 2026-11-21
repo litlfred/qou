@@ -1,1 +1,0 @@
-2 For each integer i with 1 ~ i ~ n-1, the diagrams {eo, c1o ... , Ci-d generate an algebra isomorphic to T LBi ( q, Q), and we shall require infor- mation concerning the restriction of the cell modules Wt ( n) to the sub- algebras TLBi(q, Q).

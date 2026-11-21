@@ -1,1 +1,0 @@
-This kind of VMC calculation is only a first investigation into the p-shell astrophysical reactions, and should be improved in the future by using the more exact GFMC wave functions for both bound and scattering states, and the Hamiltonians with improved $N\!N\!N$ potentials.

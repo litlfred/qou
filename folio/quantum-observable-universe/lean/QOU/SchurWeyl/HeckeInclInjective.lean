@@ -57,7 +57,7 @@ what this unlocks is the *strict*-growth question (bean `qou-p8yg`), not the bri
 `Ring.DirectLimit.of_injective` the lemma to reach for: under the pinned Mathlib v4.24.0 the
 namespace is unified and no lemma of that name exists — `qou-ejde` records this correction.
 
--- Ref: [manuscript] bean qou-ejde, steps 1-3; Geck-Pfeiffer, *Characters of Finite Coxeter
+-- Ref: [leitner2026] bean qou-ejde, steps 1-3; Geck-Pfeiffer, *Characters of Finite Coxeter
 --      Groups and Iwahori-Hecke Algebras*, §8.1 (generic semisimplicity, seminormal form).
 -/
 

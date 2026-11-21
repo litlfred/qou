@@ -1,1 +1,0 @@
-Naively, we would like to view $\DT(\ell)$ as a well-defined holomorphic function on the twisted torus $\bT$, and consider the associated time 1 Hamiltonian flow as a Poisson automorphism \[\bS(\ell)\in \Aut(\bT).\] We refer to this as the BPS automorphism associated to the ray $\ell$; making good sense of it is one of the main technical problems we shall need to deal with.

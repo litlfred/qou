@@ -63,7 +63,7 @@ supplemented by the flavour letters — which is the open point
 Base ring is a generic `CommRing` for the general lemma; the `altChar`
 instantiation inherits `Field` from the imported definition.
 
--- Ref: [manuscript] bean `qou-ales`, owner ruling 2026-09-08
+-- Ref: [leitner2026] bean `qou-ales`, owner ruling 2026-09-08
 -/
 import Mathlib.Tactic
 import QOU.Mass.GammaGammaWordSelection

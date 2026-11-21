@@ -1,1 +1,0 @@
-The $2$-quotient of $(6,4,4,2)$ is $\bigl((2,1), (3,2)\bigr)$, so the $\tau$ we must consider are the partitions $(6,1^2)$, $(4,3,1)$, $(6,2)$, $(4,2^2)$, $(4^2)$, $(3^2,2)$, $(4,2,1^2)$, $(2^4)$, $(3^2,1^2)$.

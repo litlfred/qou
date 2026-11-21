@@ -237,6 +237,38 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0f6df87ec5ad",
+          "ts": "827d59feb17a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:26.209Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "The closed form proof (prf:1-34) is correct: I re-derived V in u = −u³+3u²+u−2, the division remainder 16, and (4+h²−3h⁴−h⁶)/(h²+4), plus the h-series 1−¾h⁴−h⁶/16+h⁸/64 and the per-partition budget ±1/8, χ^{(2,1)} = 2−3h⁴−h⁶ (sympy, exact). False step in prf:167-169 / 180-182: \"at h² order tr_M reduces to Σ[h²]y_λ·d_λ = 0 ... since each χ^λ/d_λ → 1\" drops the y_λ(0)·[h²]χ^λ terms, and \"At H_3 ... the universal identity alone forces h² = 0 with no further constraint on χ^{(2,1)}\" is false. Counterexample: β = σ₁²σ₂⁻² (pure, writhe 0): χ^{(2,1)} = 2+3h²+h⁴, tr_M = (h²+2)²/(h²+4) = 1 + (3/4)h² + …, so the h² coefficient is 3/4 ≠ 0. Borromean h²=0 holds only because its own χ^{(2,1)} has no h² term. The statement's table (md:20-25: 11/4, 9/8, 19/2, which I checked) is not proved in the prf.",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: other"
+      },
+      {
+        "field_hash": {
+          "md": "44959580ecb9",
+          "ts": "827d59feb17a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:12:06.994Z",
+        "reviewed_sha": "5f209b510c5b50294fd755d263c17c75d49be3ed",
+        "severity": "minor",
+        "evidence": "Algebra checked by hand: V = -u^3+3u^2+u-2, the division and the h-form agree. Minor: the normalisation tr_M = V/[2]^2 (n=3, writhe 0) is asserted without a citation."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1141,7 +1173,7 @@
           "in_degree": 0,
           "cone_size": 13,
           "depth": 7,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1359,7 +1391,7 @@
         "reviewed_at": "2026-08-15T10:31:00.307Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
-        "evidence": "1 negation-contrast construction(s): \", not the closed form above.\" \u2014 state the positive claim directly"
+        "evidence": "1 negation-contrast construction(s): \", not the closed form above.\" — state the positive claim directly"
       },
       {
         "field_hash": {
@@ -1430,7 +1462,7 @@
         "reviewed_at": "2026-08-15T10:31:00.307Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
-        "evidence": "8 stylistic spaced dashes in 607 words (1.32/100w) \u2014 restructure into sentences"
+        "evidence": "8 stylistic spaced dashes in 607 words (1.32/100w) — restructure into sentences"
       },
       {
         "field_hash": {
@@ -1678,7 +1710,7 @@
         "reviewed_at": "2026-08-15T10:31:00.307Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
-        "evidence": "2 sentence(s) over 60 words \u2014 written for the eye, not the ear; split"
+        "evidence": "2 sentence(s) over 60 words — written for the eye, not the ear; split"
       },
       {
         "field_hash": {
@@ -1718,6 +1750,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T15:01:35.278Z",
+  "updated_at": "2026-11-16T07:12:06.994Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

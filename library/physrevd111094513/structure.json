@@ -1,0 +1,665 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "physrevd111094513",
+ "source": {
+  "file": "PhysRevD.111.094513.pdf",
+  "sha256": "c05dfaef1f1c2f98a6d74fc8ee2df7d24b02d5cdc26e81180b0f34a49f05745c",
+  "bytes": 668618,
+  "pages": 14,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-18T18:23:09Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.1103/PhysRevD.111.094513",
+  "title": "Lattice QCD calculation of the Compton amplitude subtraction function",
+  "authors_raw": "H. St\u00fcben,5 R. D. Young ,1 and J. M. Zanotti",
+  "title_lines": [
+   "Lattice QCD calculation of the Compton amplitude subtraction function",
+   "K. U. Can ,1 A. Hannaford-Gunn ,1 R. Horsley ,2 P. E. L. Rakow ,3 T. Schar ,1 G. Schierholz ,4"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Title": "Lattice QCD calculation of the Compton amplitude subtraction function",
+   "Producer": "Acrobat Distiller 10.1.16 (Windows)",
+   "Creator": "Published by the American Physical Society",
+   "CreationDate": "D:20250520000000"
+  },
+  "title_raw": "Lattice QCD calculation of the Compton amplitude subtraction function K. U. Can ,1 A. Hannaford-Gunn ,1 R. Horsley ,2 P. E. L. Rakow ,3 T. Schar ,1 G. Schierholz ,4",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Lattice QCD calculation of the Compton amplitude subtraction function",
+   "heading": "PHYSICAL REVIEW D 111, 094513 (2025) Lattice QCD calculation of the Compton amplitude subtraction function",
+   "outline": "Lattice QCD calculation of the Compton amplitude subtraction function",
+   "text": "Lattice QCD calculation of the Compton amplitude subtraction function K. U. Can ,1 A. Hannaford-Gunn ,1 R. Horsley ,2 P. E. L. Rakow ,3 T. Schar ,1 G. Schierholz ,4",
+   "corroborated_by": [
+    "heading",
+    "outline",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Lattice QCD calculation of the Compton amplitude subtraction function",
+   "page": 1,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
+  },
+  {
+   "level": 2,
+   "title": "I. INTRODUCTION",
+   "page": 1,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
+  },
+  {
+   "level": 2,
+   "title": "II. BACKGROUND",
+   "page": 2,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
+  },
+  {
+   "level": 2,
+   "title": "III. FEYNMAN-HELLMANN METHOD",
+   "page": 3,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
+  },
+  {
+   "level": 3,
+   "title": "A. Lattice determination",
+   "page": 4,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 3,
+   "title": "B. Subtraction function results",
+   "page": 4,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 2,
+   "title": "IV. DISCRETIZATION ARTIFACTS",
+   "page": 5,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
+  },
+  {
+   "level": 3,
+   "title": "A. Free fermion",
+   "page": 6,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
+  },
+  {
+   "level": 2,
+   "title": "V. PROTON SUBTRACTION FUNCTION",
+   "page": 7,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  },
+  {
+   "level": 3,
+   "title": "A. Evaluation of the discretization artifact",
+   "page": 7,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  },
+  {
+   "level": 3,
+   "title": "B. Improved subtraction function",
+   "page": 8,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  },
+  {
+   "level": 2,
+   "title": "VI. SUMMARY AND CONCLUSIONS",
+   "page": 8,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  },
+  {
+   "level": 2,
+   "title": "ACKNOWLEDGMENTS",
+   "page": 9,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
+  },
+  {
+   "level": 2,
+   "title": "DATA AVAILABILITY",
+   "page": 9,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
+  },
+  {
+   "level": 2,
+   "title": "APPENDIX A: DETAILS OF LATTICE OPERATOR PRODUCT EXPANSION",
+   "page": 9,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
+  },
+  {
+   "level": 2,
+   "title": "APPENDIX B: TABULATED SUBTRACTION FUNCTION RESULTS",
+   "page": 13,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 13,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The diagram for proton forward Compton scattering, \u03b3\u0003\u00f0q\u00dep\u00f0p\u00de \u2192\u03b3\u0003\u00f0q\u00dep\u00f0p\u00de",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Lattice diagrams for all possible types of current insertion. Only type I and type II are considered here",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The lattice subtraction function as determined from Feynman-Hellmann. Results are labeled according to which quark flavor the currents couple to: u for both (top), d for both (middle), and one on each (bottom)",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Comparison of our 2006 LOPE [49], our lattice OPE,",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Comparison of the LOPE corection, \u0394S\u00f0ff\u00de",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "The two components of the leading lattice artifact to our calculation as in Eq. (16). The upper panel shows CW\u00f0q; m0\u00de for each kinematic point reported in Table II, while the lower panel depicts Z2",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "The subtraction function as determined from Feynman- Hellmann with lattice artifacts removed according to Eq. (18)",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Included in both plots (dotted curve) is the continuum OPE calculated from Eq. (7) using gS and",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-000-lattice-qcd-calculation-of-the-compton-amplitude",
+   "number": null,
+   "title": "Lattice QCD calculation of the Compton amplitude subtraction function",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1640,
+   "n_words": 236,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-001-i-introduction",
+   "number": null,
+   "title": "I. INTRODUCTION",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 5709,
+   "n_words": 842,
+   "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-002-ii-background",
+   "number": null,
+   "title": "II. BACKGROUND",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2614,
+   "n_words": 452,
+   "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-003-iii-feynman-hellmann-method",
+   "number": null,
+   "title": "III. FEYNMAN-HELLMANN METHOD",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 3618,
+   "n_words": 647,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-004-a-lattice-determination",
+   "number": null,
+   "title": "A. Lattice determination",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 664,
+   "n_words": 126,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-005-b-subtraction-function-results",
+   "number": null,
+   "title": "B. Subtraction function results",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2592,
+   "n_words": 427,
+   "label_start": "4",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-006-iv-discretization-artifacts",
+   "number": null,
+   "title": "IV. DISCRETIZATION ARTIFACTS",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 5971,
+   "n_words": 1021,
+   "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-007-a-free-fermion",
+   "number": null,
+   "title": "A. Free fermion",
+   "level": 3,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2400,
+   "n_words": 434,
+   "label_start": "6",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-008-v-proton-subtraction-function",
+   "number": null,
+   "title": "V. PROTON SUBTRACTION FUNCTION",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 182,
+   "n_words": 29,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-009-a-evaluation-of-the-discretization-artifact",
+   "number": null,
+   "title": "A. Evaluation of the discretization artifact",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1903,
+   "n_words": 334,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-010-b-improved-subtraction-function",
+   "number": null,
+   "title": "B. Improved subtraction function",
+   "level": 3,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1661,
+   "n_words": 278,
+   "label_start": "8",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-011-vi-summary-and-conclusions",
+   "number": null,
+   "title": "VI. SUMMARY AND CONCLUSIONS",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2431,
+   "n_words": 377,
+   "label_start": "8",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-012-acknowledgments",
+   "number": null,
+   "title": "ACKNOWLEDGMENTS",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1267,
+   "n_words": 195,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-013-data-availability",
+   "number": null,
+   "title": "DATA AVAILABILITY",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 325,
+   "n_words": 51,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-014-appendix-a-details-of-lattice-operator-product-e",
+   "number": null,
+   "title": "APPENDIX A: DETAILS OF LATTICE OPERATOR PRODUCT EXPANSION",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 13,
+   "n_chars": 10692,
+   "n_words": 1936,
+   "label_start": "9",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-015-appendix-b-tabulated-subtraction-function-result",
+   "number": null,
+   "title": "APPENDIX B: TABULATED SUBTRACTION FUNCTION RESULTS",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 6567,
+   "n_words": 1148,
+   "label_start": "13",
+   "label_end": "14"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 17,
+  "toc_inferred_entries": 0,
+  "figure_entries": 8,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 16,
+  "chars_total": 50236,
+  "furniture_lines_stripped": 40
+ }
+}

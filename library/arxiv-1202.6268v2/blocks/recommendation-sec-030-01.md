@@ -1,1 +1,0 @@
-But this bottom row is precisely what enters the generalized flattening equations [\[uflat\]](#uflat){reference-type="eqref" reference="uflat"}; since both flattenings satisfy these equations, we must have $\mathbf B^{-1}\bm u\cdot (f-\tilde f)=0$.

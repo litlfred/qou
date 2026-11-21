@@ -61,6 +61,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+from _source_normalise import code_and_numeric_strings_only  # noqa: E402
+
 # Scan the whole computations/ tree (HERE.parent) + the qou-substrate package.
 # (Before 2026-06-22 this read `HERE`, which the 2026-06-02 subdir refactor had
 # silently narrowed to computations/audits/ only — contradicting the docstring's
@@ -77,47 +80,42 @@ STALE_TRM_PATTERNS = [
 ]
 ASSIGN_RE = re.compile(r"=\s*['\"]?[-\d.]|q_val\s*=|Rational\(|mpf\(|mpmathify\(")
 MUON_RE = re.compile(r"muon|q_muon|cross[-_ ]?check|crosscheck|prediction|9\.5\s*σ", re.I)
+# Pin recognizers and anti-straddle guards (bean qou-5li4): text that
+# identifies or defends a pin must not be convicted as text that hardcodes one.
+RECOGNIZER_OR_GUARD_RE = re.compile(
+    r"\.startswith\(|\b(?:[A-Z_]*PREFIX|_[A-Z_]*SIG|[A-Z_]*SIG|PINS)\b"
+    r"|\bin\s+(?:raw|text|line|src|s)\b|\bscan_source\(|\bverdict\("
+)
 
 
-def _in_comment_or_doc(line: str, in_doc: bool) -> bool:
-    s = line.lstrip()
-    return in_doc or s.startswith("#")
-
-
-def scan_file(p: Path) -> list[dict]:
+def scan_source(text: str, rel_file: str) -> list[dict]:
     hits: list[dict] = []
-    in_doc = False
-    doc_delim = ""
-    try:
-        lines = p.read_text(errors="ignore").splitlines()
-    except OSError:
-        return hits
-    for i, line in enumerate(lines, 1):
-        # crude triple-quote tracking (good enough for classification)
-        for delim in ('"""', "'''"):
-            cnt = line.count(delim)
-            if cnt:
-                if not in_doc:
-                    in_doc, doc_delim = True, delim
-                    if cnt % 2 == 0:
-                        in_doc = False
-                elif delim == doc_delim and cnt % 2 == 1:
-                    in_doc = False
-        pats = [("old-q0", r) for r in OLD_Q0_PATTERNS] + \
-               [("stale-trM", r) for r in STALE_TRM_PATTERNS]
+    norm_text = code_and_numeric_strings_only(text)
+    raw_lines = text.splitlines()
+    norm_lines = norm_text.splitlines()
+    is_audit_or_test = (
+        "computations/audits/" in rel_file
+        or Path(rel_file).name.startswith("test_")
+    )
+    pats = [("old-q0", r) for r in OLD_Q0_PATTERNS] + [
+        ("stale-trM", r) for r in STALE_TRM_PATTERNS
+    ]
+    for i, (line, norm_line) in enumerate(zip(raw_lines, norm_lines), 1):
         for kind, rx in pats:
             if not rx.search(line):
                 continue
-            if _in_comment_or_doc(line, in_doc):
+            if not rx.search(norm_line):
                 cls = "stale-docstring"
+            elif RECOGNIZER_OR_GUARD_RE.search(line) or is_audit_or_test:
+                cls = "pin-recognizer-or-guard"
             elif MUON_RE.search(line):
                 cls = "legit-muon-xcheck"
-            elif ASSIGN_RE.search(line):
+            elif ASSIGN_RE.search(norm_line):
                 cls = "production-hardcode"
             else:
                 cls = "production-hardcode"
             hits.append({
-                "file": str(p.relative_to(HERE.parent.parent)),
+                "file": rel_file,
                 "line": i,
                 "kind": kind,
                 "classification": cls,
@@ -126,11 +124,54 @@ def scan_file(p: Path) -> list[dict]:
     return hits
 
 
+def scan_file(p: Path) -> list[dict]:
+    try:
+        text = p.read_text(errors="ignore")
+    except OSError:
+        return []
+    return scan_source(text, str(p.relative_to(HERE.parent.parent)))
+
+
+def _selftest() -> int:
+    """Verify guards, pin recognizers, and prose strings do not classify as production-hardcode."""
+    src = (
+        '"""Docstring mentioning 1.10997858275138."""\n'
+        'PROTON_PREFIX = "1.10997858275"\n'
+        '_PROTON_SIG = "1.10997858275"\n'
+        'if not q.startswith("1.10997858275"):\n'
+        '    pass\n'
+        'reason = "anchor (1.1099785827513808075...) because stem is undeclared"\n'
+        'Q_BAD = mp.mpf("1.10997858275138")\n'
+    )
+    hits = {h["line"]: h["classification"] for h in scan_source(src, "computations/probe_example.py")}
+    fails: list[str] = []
+    want = {
+        1: "stale-docstring",
+        2: "pin-recognizer-or-guard",
+        3: "pin-recognizer-or-guard",
+        4: "pin-recognizer-or-guard",
+        6: "stale-docstring",
+        7: "production-hardcode",
+    }
+    for ln, expected in want.items():
+        got = hits.get(ln)
+        if got != expected:
+            fails.append(f"line {ln}: got {got!r}, want {expected!r}")
+    for f in fails:
+        print(f"  FAIL  {f}")
+    print("self-test:", "PASS" if not fails else f"FAIL ({len(fails)})")
+    return 1 if fails else 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 if any production-hardcode remains")
+    ap.add_argument("--self-test", "--selftest", dest="selftest",
+                    action="store_true")
     args = ap.parse_args()
+    if args.selftest:
+        return _selftest()
 
     all_hits: list[dict] = []
     for root in ROOTS:

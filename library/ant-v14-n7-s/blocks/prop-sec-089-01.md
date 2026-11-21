@@ -1,1 +1,1 @@
-Il existe un foncteur monoïdal
+Il existe un foncteur monoïdal eRnew, B : RigDA´et ct( b K; 3) →Db(QCoh(XK, B)) (4-25) qui factorise la restriction de (4-24) aux motifs rigides constructibles. Démonstration. Il s’agit d’un cas particulier du corollaire 4.7. □

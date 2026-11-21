@@ -1,0 +1,1 @@
+Let X1, X2 be stacks, Y a scheme, X1 →Y a safe morphism, and X2 →Y an arbitrary morphism. Then the natural maps are equivalences D(X1) ⊗D(Y ) D(X2) ∼ / D(X1 ×Y X2) ∼ / FunL D(Y )(D(X1), D(X2)) factoring the self-duality of D(X1) over D(Y ).

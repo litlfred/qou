@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/ant-v14-n7-s/blocks/prop-sec-017-02",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 19,
+  "pageEnd": 21,
+  "text": "prop-sec-017-02.md",
+  "derivedFrom": "library/ant-v14-n7-s/sections/sec-017",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.10",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-017-3d-asaieisenstein-elements-in-weight-2.md (p. 19-21)",
+    "claim_id": "ant-v14-n7-s#proposition:3.10",
+    "lean_status": "unformalized"
+  }
+}

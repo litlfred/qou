@@ -1,0 +1,1 @@
+5.1. — Let M, N be two diﬀerence modules over (K, σ). One has a functorial isomorphism of C′-modules: ExtDK′,σ′(C′ ⊗C M, C′ ⊗C N) ≃C′ ⊗C ExtDK,σ(M, N), and a functorial epimorphism of C′-modules: C′ ⊗C HomDK,σ(M, N) →HomDK′,σ′(C′ ⊗C M, C′ ⊗C N).

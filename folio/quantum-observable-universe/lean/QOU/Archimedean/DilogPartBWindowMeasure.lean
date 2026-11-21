@@ -21,7 +21,7 @@ convergence. The remaining ENNReal geometric-sum arithmetic is bean `qou-a0li`.
 
 Archimedean throughout (`ℝ`): `Real.rpow`, `Real.log`, Lebesgue `volume`.
 
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit; docs/coordination/dilog-part-b-cusp-attack.md; bean qou-a0li, qou-zuuz
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit; docs/coordination/dilog-part-b-cusp-attack.md; bean qou-a0li, qou-zuuz
 -/
 
 namespace QOU.Archimedean

@@ -1,0 +1,22 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "32d9bdd4f8a2",
+          "ts": "d514df3ffda0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:04.000Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf"
+      }
+    ]
+  },
+  "updated_at": "2026-11-15T21:56:04.000Z"
+}

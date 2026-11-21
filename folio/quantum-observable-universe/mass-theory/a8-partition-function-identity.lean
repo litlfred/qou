@@ -74,7 +74,7 @@ axiom for another, and is banned by AGENTS.md besides.
 --      Encyclopedia of Mathematics and its Applications 2,
 --      Addison-Wesley 1976.
 -- Ref: [habiro2000] https://doi.org/10.2140/gt.2000.4.227
--- Ref: [manuscript] docs/audits/2026-06-01-qbeta-habiro-a8-partition-function-match.md
+-- Ref: [leitner2026] docs/audits/2026-06-01-qbeta-habiro-a8-partition-function-match.md
 -/
 
 namespace QOU.BraidKnot.A8Partition
@@ -187,7 +187,7 @@ canonical partition function. -/
     instance (`Tactic decide failed`), so this remains a cited external fact
     rather than a discharged lemma; resolution is a one-line `decide` once that
     instance becomes `Decidable`-friendly at small `n`. -/
--- Ref: [manuscript] a8-partition-function-identity — semantic bridge; partition values are the standard Hardy–Ramanujan table (OEIS A000041)
+-- Ref: [leitner2026] a8-partition-function-identity — semantic bridge; partition values are the standard Hardy–Ramanujan table (OEIS A000041)
 axiom partitionCount_eq_fintype_card_partition_small :
     ∀ n ∈ Finset.Icc 1 5,
       partitionCount n = Fintype.card (Nat.Partition n)

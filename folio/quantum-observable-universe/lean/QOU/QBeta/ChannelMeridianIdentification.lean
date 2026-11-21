@@ -56,7 +56,7 @@
 
   -- Ref: [murakami2004] figure-eight & Dehn surgery spaces (math/0401084)
   -- Ref: [murakami-murakami2001] https://doi.org/10.1007/BF02392716
-  -- Ref: [manuscript] conj:binding-qbeta-complex-volume
+  -- Ref: [leitner2026] conj:binding-qbeta-complex-volume
 -/
 
 import QOU.Knot.FigureEightDeformedMeridianWinding

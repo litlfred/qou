@@ -77,7 +77,7 @@
   --      with prescribed dihedral angles — multi-tetrahedron triangulations)
   -- Ref: [rivin1994] https://doi.org/10.2307/2118572 (strict concavity of the
   --      hyperbolic volume on the angle-structure polytope)
-  -- Ref: [manuscript] beans qou-7425, qou-krvm (ii); QOU/Knot/M004AngleStructure.lean
+  -- Ref: [leitner2026] beans qou-7425, qou-krvm (ii); QOU/Knot/M004AngleStructure.lean
   --      (SnapPy m004 gluing data), QOU/Knot/AngleStructureUniqueness.lean
 -/
 

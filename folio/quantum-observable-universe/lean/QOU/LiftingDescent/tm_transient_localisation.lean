@@ -50,7 +50,7 @@ fields of a data class that the all-zero instance satisfies, so the
 "localisation" said nothing; one earlier still defined
 `transientMItotal := 0`.  Bean `tmvac`.
 
--- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.md
 -/
 
 namespace QOU.LiftingDescent

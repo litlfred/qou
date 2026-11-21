@@ -26,7 +26,7 @@ spectral-domain statement is the open refactor.
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/q-resolvent-unique
+- [leitner2026] §2-quantum-observable-universes/q-resolvent-unique
 - [kassel1995] Quantum Groups (Springer GTM 155), §IV.4
 -/
 

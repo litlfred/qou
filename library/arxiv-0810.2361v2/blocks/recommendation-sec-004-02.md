@@ -1,1 +1,0 @@
-A natural transformation $\alpha$ between these should assign, to every object $X \in \boldsymbol{\operatorname{{Vect}}}^n$, a morphism $\alpha_X : T(X) \mathop{\rightarrow}T'(X)$ in $\boldsymbol{\operatorname{{Vect}}}^m$, such that the usual naturality square commutes for every morphism $f : X \mathop{\rightarrow}Y$ in $\boldsymbol{\operatorname{{Vect}}}^n$.

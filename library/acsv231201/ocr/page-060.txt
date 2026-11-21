@@ -1,0 +1,49 @@
+42 Generating functions
+
+Univariate D-finite functions
+
+Because any formal power series with a non-zero constant is invertible, the
+field of fractions of C[[z]] is the field of formal Laurent series
+
+C(() = {x dyz" kK € Zand a, € C forall n
+nk
+
+containing series with a finite number of terms with negative exponents, where
+
+addition is still defined termwise and multiplication is still defined by convo-
+
+lution. Section 6.1 gives further information on Laurent series.
+
+Definition 2.20. A formal power series f(z) € C[[z]] is a D-finite series if
+and only if there is an integer m and polynomials Po(z), ..., Pn(z) € C[z] with
+P.»(z) # 0 such that
+
+Pole) + Pi@f'@ +++ + Pn @ fr = 0. (2.8)
+
+Equivalently, f is D-finite if and only if f and its derivatives span a finite
+dimensional vector space in C((z)) over the field C(z) of rational functions.
+
+Remark. The more natural definition of a D-finite series is one whose deriva-
+tives span a finite dimensional space over the polynomial ring C[z]. Vector
+spaces over fields are simpler than modules over rings, so we phrase this in
+terms of vector space dimension over the rational functions instead. This re-
+quires that the rational functions act on C[[z]], which requires us to extend
+C[[z]] to C((z)).
+
+Remark. If f(z) is a formal power series that satisfies a non-homogeneous
+linear equation
+
+Po(z) f(z) + Pilaf’ (2) + +++ + Plo f(2) = PC2)
+
+with P(z), Po(z),..., Pin(z) € C[z] then repeated differentiation proves that f(z)
+is D-finite.
+
+Variants of this definition are discussed in [Sta99, Proposition 6.4.1]. The
+Venn diagram in Figure 2.4 depicting the hierarchy of generating function class
+is justified by the following classical proposition.
+
+Proposition 2.21. [f f(z) € C[[z]] is algebraic then f(z) is D-finite.
+
+Proof Since f(z) is algebraic there exists P(z,y) = Dito Pj(2y! € Clz,y]
+such that P(z, f(z)) = 0. Assume P is selected among all such polynomials
+to have minimal degree in y, so that the partial derivative P,(z, y), which has

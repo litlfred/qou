@@ -45,7 +45,7 @@ the bond census. The per-block log carries a genuine non-census correlation on t
 says nothing about the sign of *that* piece. What it establishes is that the forced
 component points away from a valley, for every `q > 1`.
 
--- Ref: [manuscript] prop:unified-iterative-correction; the convention-D letters and
+-- Ref: [leitner2026] prop:unified-iterative-correction; the convention-D letters and
 -- `deltaPN_nonneg` are `QOU/Mass/ChainTraceFactor.lean`.
 -/
 import Mathlib.Analysis.SpecialFunctions.Log.Basic

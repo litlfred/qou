@@ -1,1 +1,1 @@
-With the notation used in the proof of the previous Proposition
+With the notation used in the proof of the previous Proposition 6.6 we have Q11 = Q12 = Q22 = 0 and the following equalities: ~B−1~A =     −1 1 1 −Q∗ 1 − Q∗ 1 0 0 Q∗ 1 0 0 Q∗ −Q∗ t − Q∗ t Q∗ t Q∗ t Q∗ − Q∗ tQ∗ 2 − Q∗ tQ∗    , (143) ~B−1~ν =     −(B−1ν )1 − (B−1ν )2 + 1 (B−1ν )1 (B−1ν )2 (B−1ν )∗ − (B−1ν )1Q∗ 2 − (B−1ν )2Q∗    , (144) ~ft~B−1~ν = ftB−1ν + ~f0 − 2(B−1ν )1(B−1ν )2. (145) PERTURBATIVE INV ARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS 39

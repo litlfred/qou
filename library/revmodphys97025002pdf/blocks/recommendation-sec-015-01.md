@@ -1,1 +1,0 @@
-Since there is no new value, the same 3.9 expansion factor applied to their uncertainties in 2018 to reduce their inconsistencies to an acceptable level is also used in 2022; the 2022 and 2018 recommended values of G are therefore identical (see Sec.

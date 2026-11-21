@@ -36,7 +36,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["prop:frobenius-self-duality-forces-lp-dual-extraction"],
-  cites: ["murphy1992", "jucys1974", "kassel1995"],
+  cites: ["murphy1992", "jucys1974", "kassel1995", "mathas1999"],
   tags: [
     "jucys-murphy",
     "central-element",

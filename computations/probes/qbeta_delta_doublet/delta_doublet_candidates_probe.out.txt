@@ -1,0 +1,225 @@
+0. calibration
+  H_3 ruled base = 0.44470040852178 MeV
+  [PASS] reproduces 0.444700408522
+  [PASS] eps(1) = 1
+  [PASS] eps(s3 x) = z_D eps(x) on x = s1 s2
+  [PASS] control: reading 3 rejects -1
+  [PASS] control: reading 3 accepts 1
+  [PASS] label A: X, Y idempotent, orthogonal, nonzero
+  [PASS] label A: X, Y on sigma_1's left line
+  [PASS] label B: X, Y idempotent, orthogonal, nonzero
+  [PASS] label B: X, Y on sigma_1's left line
+1. candidates: Delta = YWY - XWX, eps at z_D, Q = |eps| E_0
+  word                 lab        Q (MeV)    resid %      F_req  reading3 p / n
+  V0.V0.V0             A     1.583511293    102.409 0.49404978  pass / pass
+  V0.V0.V0             B    0.0132769299   -98.3029  58.924271  pass / pass
+  V0.V0.Vb0            A     1.630843464    108.459 0.47971091  pass / pass
+  V0.V0.Vb0            B      0.05721521   -92.6866  13.673522  pass / pass
+  V0.Vb0.V0            A     1.796397993    129.621 0.43550116  pass / pass
+  V0.Vb0.V0            B     0.303776748   -61.1704  2.5753565  pass / pass
+  V0.Vb0.Vb0           A     1.796397993    129.621 0.43550116  pass / pass
+  V0.Vb0.Vb0           B     0.303776748   -61.1704  2.5753565  pass / pass
+  Vb0.V0.V0            A     1.458053175    86.3724 0.53656027  pass / pass
+  Vb0.V0.V0            B     0.200122598   -74.4198  3.9092707  pass / pass
+  Vb0.V0.Vb0           A     1.458053175    86.3724 0.53656027  pass / pass
+  Vb0.V0.Vb0           B     0.200122598   -74.4198  3.9092707  pass / pass
+  Vb0.Vb0.V0           A     1.623607704    107.534 0.48184879  pass / pass
+  Vb0.Vb0.V0           B   0.04643894001    -94.064  16.846496  pass / pass
+  Vb0.Vb0.Vb0          A     1.598299062    104.299 0.48947874  pass / pass
+  Vb0.Vb0.Vb0          B  0.008746600002    -98.882  89.444288  pass / pass
+  V1.V1.V1             A      1.61444966    106.363  0.4845821  pass / pass
+  V1.V1.V1             B   0.01628355862   -97.9186  48.044376  pass / pass
+  V1.V1.Vb1            A     2.096325476    167.958 0.37319272  pass / pass
+  V1.V1.Vb1            B   0.09822919056   -87.4441  7.9643679  pass / pass
+  V1.Vb1.V1            A     1.088526784    39.1385 0.71870846  pass / pass
+  V1.Vb1.V1            B    0.3725685472   -52.3773  2.0998375  pass / pass
+  V1.Vb1.Vb1           A       1.6032024    104.926 0.48798169  pass / pass
+  V1.Vb1.Vb1           B     0.457116066   -41.5702  1.7114546  pass / pass
+  Vb1.V1.V1            A      1.58164986    102.171 0.49463123  pass / pass
+  Vb1.V1.V1            B    0.4454383072   -43.0629  1.7563227  pass / pass
+  Vb1.V1.Vb1           A     2.096325476    167.958 0.37319272  pass / pass
+  Vb1.V1.Vb1           B    0.3608907884     -53.87  2.1677844  pass / pass
+  Vb1.Vb1.V1           A     1.088526784    39.1385 0.71870846  pass / pass
+  Vb1.Vb1.V1           B   0.08655143175   -88.9368  9.0389424  pass / pass
+  Vb1.Vb1.Vb1          A       1.5704026    100.733 0.49817379  pass / pass
+  Vb1.Vb1.Vb1          B   0.01577316805   -97.9838  49.599003  pass / pass
+  V0.V1.V0.V1          A     1.188844497    51.9614 0.65806202  pass / pass
+  V0.V1.V0.V1          B    0.1383907076   -82.3105  5.6530776  pass / pass
+  V0.V1.V0.Vb1         A     1.796397993    129.621 0.43550116  pass / pass
+  V0.V1.V0.Vb1         B    0.2381955926   -69.5532   3.284416  pass / pass
+  V0.V1.Vb0.V1         A     1.088526784    39.1385 0.71870846  pass / pass
+  V0.V1.Vb0.V1         B   0.06732533788   -91.3943  11.620193  pass / pass
+  V0.V1.Vb0.Vb1        A      1.59242613    103.548 0.49128396  pass / pass
+  V0.V1.Vb0.Vb1        B   eps(Delta) = 0 identically or at q0
+  V0.Vb1.V0.V1         A     1.796397993    129.621 0.43550116  pass / pass
+  V0.Vb1.V0.V1         B     0.303776748   -61.1704  2.5753565  pass / pass
+  V0.Vb1.V0.Vb1        A     2.397030392    206.395 0.32637609  pass / pass
+  V0.Vb1.V0.Vb1        B    0.1973398633   -74.7755  3.9643962  pass / pass
+  V0.Vb1.Vb0.V1        A     1.627969797    108.092 0.48055769  pass / pass
+  V0.Vb1.Vb0.V1        B    0.4606956733   -41.1126  1.6981566  pass / pass
+  V0.Vb1.Vb0.Vb1       A     2.096325476    167.958 0.37319272  pass / pass
+  V0.Vb1.Vb0.Vb1       B    0.3608907884     -53.87  2.1677844  pass / pass
+  Vb0.V1.V0.V1         A     1.088526784    39.1385 0.71870846  pass / pass
+  Vb0.V1.V0.V1         B    0.3725685472   -52.3773  2.0998375  pass / pass
+  Vb0.V1.V0.Vb1        A     1.627969797    108.092 0.48055769  pass / pass
+  Vb0.V1.V0.Vb1        B    0.4383181906    -43.973  1.7848527  pass / pass
+  Vb0.V1.Vb0.V1        A     1.005877257     28.574  0.7777623  pass / pass
+  Vb0.V1.Vb0.V1        B    0.1687456216   -78.4305  4.6361701  pass / pass
+  Vb0.V1.Vb0.Vb1       A     1.458053175    86.3724 0.53656027  pass / pass
+  Vb0.V1.Vb0.Vb1       B     0.200122598   -74.4198  3.9092707  pass / pass
+  Vb0.Vb1.V0.V1        A      1.59242613    103.548 0.49128396  pass / pass
+  Vb0.Vb1.V0.V1        B   eps(Delta) = 0 identically or at q0
+  Vb0.Vb1.V0.Vb1       A     2.096325476    167.958 0.37319272  pass / pass
+  Vb0.Vb1.V0.Vb1       B   0.07900309669   -89.9016  9.9025664  pass / pass
+  Vb0.Vb1.Vb0.V1       A     1.458053175    86.3724 0.53656027  pass / pass
+  Vb0.Vb1.Vb0.V1       B    0.1569189253   -79.9422  4.9855899  pass / pass
+  Vb0.Vb1.Vb0.Vb1      A     1.858298371    137.533 0.42099451  pass / pass
+  Vb0.Vb1.Vb0.Vb1      B   0.09116928183   -88.3465  8.5811075  pass / pass
+  V1.V0.V1.V0          A     1.627969797    108.092 0.48055769  pass / pass
+  V1.V0.V1.V0          B    0.4383181906    -43.973  1.7848527  pass / pass
+  V1.V0.V1.Vb0         A      1.58164986    102.171 0.49463123  pass / pass
+  V1.V0.V1.Vb0         B    0.4535755568   -42.0227  1.7248139  pass / pass
+  V1.V0.Vb1.V0         A     1.570901205    100.797 0.49801567  pass / pass
+  V1.V0.Vb1.V0         B     0.457116066   -41.5702  1.7114546  pass / pass
+  V1.V0.Vb1.Vb0        A     1.627969797    108.092 0.48055769  pass / pass
+  V1.V0.Vb1.Vb0        B    0.4383181906    -43.973  1.7848527  pass / pass
+  V1.Vb0.V1.V0         A     1.636716397     109.21  0.4779896  pass / pass
+  V1.Vb0.V1.V0         B   0.04253082248   -94.5636  18.394505  pass / pass
+  V1.Vb0.V1.Vb0        A     1.599405207     104.44 0.48914022  pass / pass
+  V1.Vb0.V1.Vb0        B    0.0284997347   -96.3571  27.450551  pass / pass
+  V1.Vb0.Vb1.V0        A      1.59242613    103.548 0.49128396  pass / pass
+  V1.Vb0.Vb1.V0        B   eps(Delta) = 0 identically or at q0
+  V1.Vb0.Vb1.Vb0       A     1.623607704    107.534 0.48184879  pass / pass
+  V1.Vb0.Vb1.Vb0       B   0.04643894001    -94.064  16.846496  pass / pass
+  Vb1.V0.V1.V0         A     1.630843464    108.459 0.47971091  pass / pass
+  Vb1.V0.V1.V0         B      0.05721521   -92.6866  13.673522  pass / pass
+  Vb1.V0.V1.Vb0        A      1.59242613    103.548 0.49128396  pass / pass
+  Vb1.V0.V1.Vb0        B   eps(Delta) = 0 identically or at q0
+  Vb1.V0.Vb1.V0        A     1.585580003    102.673 0.49340519  pass / pass
+  Vb1.V0.Vb1.V0        B   0.01554683659   -98.0128  50.321067  pass / pass
+  Vb1.V0.Vb1.Vb0       A     1.614692867    106.394 0.48450911  pass / pass
+  Vb1.V0.Vb1.Vb0       B   0.04178774925   -94.6586  18.721597  pass / pass
+  Vb1.Vb0.V1.V0        A     1.627969797    108.092 0.48055769  pass / pass
+  Vb1.Vb0.V1.V0        B    0.4606956733   -41.1126  1.6981566  pass / pass
+  Vb1.Vb0.V1.Vb0       A     1.607867246    105.522 0.48656592  pass / pass
+  Vb1.Vb0.V1.Vb0       B    0.4454383072   -43.0629  1.7563227  pass / pass
+  Vb1.Vb0.Vb1.V0       A       1.6032024    104.926 0.48798169  pass / pass
+  Vb1.Vb0.Vb1.V0       B     0.441897798   -43.5154  1.7703945  pass / pass
+  Vb1.Vb0.Vb1.Vb0      A     1.627969797    108.092 0.48055769  pass / pass
+  Vb1.Vb0.Vb1.Vb0      B    0.4606956733   -41.1126  1.6981566  pass / pass
+1b. range per label (post hoc summary, not a selection)
+  label A: 48 candidates, 0 with eps = 0, Q in [1.0058773, 2.3970304] MeV vs CODATA 0.78233341
+  label B: 48 candidates, 4 with eps = 0, Q in [0.0087466, 0.46069567] MeV vs CODATA 0.78233341
+  reading-3 failures among p/n states: 0
+2. distinct |eps(Delta)| values (exact)
+  eps^2 = (q**4 + 1)**2*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**6 - 3*q**4 + 2*q**2 - 2)**2/(q**2 + 1)**10
+     <- 1 candidates, e.g. ['A:V0.V0.V0']
+  eps^2 = (q - 1)**6*(q + 1)**6*(q**2 - q + 1)**4*(q**2 + q + 1)**4/(q**2 + 1)**10
+     <- 1 candidates, e.g. ['B:V0.V0.V0']
+  eps^2 = (q**4 + 1)**2*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**4 - q**2 + 2)**2/(q**2 + 1)**10
+     <- 2 candidates, e.g. ['A:V0.V0.Vb0', 'A:Vb1.V0.V1.V0']
+  eps^2 = (q - 1)**4*(q + 1)**4*(q**2 - q + 1)**4*(q**2 + q + 1)**4/(q**2 + 1)**10
+     <- 2 candidates, e.g. ['B:V0.V0.Vb0', 'B:Vb1.V0.V1.V0']
+  eps^2 = (q**4 + 1)**4*(q**2 - q + 1)**2*(q**2 + q + 1)**2/(q**2 + 1)**10
+     <- 4 candidates, e.g. ['A:V0.Vb0.V0', 'A:V0.Vb0.Vb0', 'A:V0.V1.V0.Vb1']
+  eps^2 = q**4*(q - 1)**2*(q + 1)**2*(q**2 - q + 1)**4*(q**2 + q + 1)**4/(q**2 + 1)**10
+     <- 3 candidates, e.g. ['B:V0.Vb0.V0', 'B:V0.Vb0.Vb0', 'B:V0.Vb1.V0.V1']
+  eps^2 = (q**4 + 1)**4*(q**2 - q + 1)**2*(q**2 + q + 1)**2/(q**4*(q**2 + 1)**10)
+     <- 4 candidates, e.g. ['A:Vb0.V0.V0', 'A:Vb0.V0.Vb0', 'A:Vb0.V1.Vb0.Vb1']
+  eps^2 = (q - 1)**2*(q + 1)**2*(q**2 - q + 1)**4*(q**2 + q + 1)**4/(q**4*(q**2 + 1)**10)
+     <- 3 candidates, e.g. ['B:Vb0.V0.V0', 'B:Vb0.V0.Vb0', 'B:Vb0.V1.Vb0.Vb1']
+  eps^2 = (q**4 + 1)**2*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(2*q**4 - q**2 + 1)**2/(q**4*(q**2 + 1)**10)
+     <- 2 candidates, e.g. ['A:Vb0.Vb0.V0', 'A:V1.Vb0.Vb1.Vb0']
+  eps^2 = (q - 1)**4*(q + 1)**4*(q**2 - q + 1)**4*(q**2 + q + 1)**4/(q**4*(q**2 + 1)**10)
+     <- 2 candidates, e.g. ['B:Vb0.Vb0.V0', 'B:V1.Vb0.Vb1.Vb0']
+  eps^2 = (q**4 + 1)**2*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(2*q**6 - 2*q**4 + 3*q**2 - 1)**2/(q**8*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['A:Vb0.Vb0.Vb0']
+  eps^2 = (q - 1)**6*(q + 1)**6*(q**2 - q + 1)**4*(q**2 + q + 1)**4/(q**8*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['B:Vb0.Vb0.Vb0']
+  eps^2 = (q**4 + 1)**2*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**10 - 2*q**8 + 2*q**6 + 2*q**2 - 1)**2/(q**8*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['A:V1.V1.V1']
+  eps^2 = (q - 1)**6*(q + 1)**6*(q**12 + 2*q**10 + 2*q**8 + 3*q**6 + 3*q**4 + q**2 + 1)**2/(q**8*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['B:V1.V1.V1']
+  eps^2 = (q**4 + 1)**2*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**6 + q**4 + q**2 - 1)**2/(q**4*(q**2 + 1)**10)
+     <- 4 candidates, e.g. ['A:V1.V1.Vb1', 'A:Vb1.V1.Vb1', 'A:V0.Vb1.Vb0.Vb1']
+  eps^2 = (q - 1)**2*(q + 1)**2*(q**12 + q**10 - q**8 + q**6 + 1)**2/(q**4*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['B:V1.V1.Vb1']
+  eps^2 = (q**4 + 1)**2*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**6 - q**4 - q**2 - 1)**2/(q**4*(q**2 + 1)**10)
+     <- 4 candidates, e.g. ['A:V1.Vb1.V1', 'A:Vb1.Vb1.V1', 'A:V0.V1.Vb0.V1']
+  eps^2 = (q - 1)**2*(q + 1)**2*(q**12 + 2*q**10 + 2*q**8 + 3*q**6 + 3*q**4 + q**2 + 1)**2/(q**4*(q**2 + 1)**10)
+     <- 2 candidates, e.g. ['B:V1.Vb1.V1', 'B:Vb0.V1.V0.V1']
+  eps^2 = (q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**10 - q**8 + 2*q**6 + 3*q**2 - 1)**2/(q**4*(q**2 + 1)**10)
+     <- 2 candidates, e.g. ['A:V1.Vb1.Vb1', 'A:Vb1.Vb0.Vb1.V0']
+  eps^2 = (q - 1)**2*(q + 1)**2*(q**12 + 3*q**10 + 2*q**8 + 4*q**6 + 3*q**4 + 2*q**2 + 1)**2/(q**4*(q**2 + 1)**10)
+     <- 2 candidates, e.g. ['B:V1.Vb1.Vb1', 'B:V1.V0.Vb1.V0']
+  eps^2 = (q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**10 - 3*q**8 - 2*q**4 + q**2 - 1)**2/(q**4*(q**2 + 1)**10)
+     <- 2 candidates, e.g. ['A:Vb1.V1.V1', 'A:V1.V0.V1.Vb0']
+  eps^2 = (q - 1)**2*(q + 1)**2*(q**12 + 2*q**10 + 3*q**8 + 4*q**6 + 2*q**4 + 3*q**2 + 1)**2/(q**4*(q**2 + 1)**10)
+     <- 2 candidates, e.g. ['B:Vb1.V1.V1', 'B:Vb1.Vb0.V1.Vb0']
+  eps^2 = (q - 1)**2*(q + 1)**2*(q**12 + q**10 + 3*q**8 + 3*q**6 + 2*q**4 + 2*q**2 + 1)**2/(q**4*(q**2 + 1)**10)
+     <- 2 candidates, e.g. ['B:Vb1.V1.Vb1', 'B:V0.Vb1.Vb0.Vb1']
+  eps^2 = (q - 1)**2*(q + 1)**2*(q**12 + q**6 - q**4 + q**2 + 1)**2/(q**4*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['B:Vb1.Vb1.V1']
+  eps^2 = (q**4 + 1)**2*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**10 - 2*q**8 - 2*q**4 + 2*q**2 - 1)**2/(q**8*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['A:Vb1.Vb1.Vb1']
+  eps^2 = (q - 1)**6*(q + 1)**6*(q**12 + q**10 + 3*q**8 + 3*q**6 + 2*q**4 + 2*q**2 + 1)**2/(q**8*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['B:Vb1.Vb1.Vb1']
+  eps^2 = (q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**6 - q**4 - q**2 - 1)**2/(q**2 + 1)**8
+     <- 1 candidates, e.g. ['A:V0.V1.V0.V1']
+  eps^2 = q**4*(q - 1)**2*(q + 1)**2*(q**4 - q**2 + 1)**2/(q**2 + 1)**6
+     <- 1 candidates, e.g. ['B:V0.V1.V0.V1']
+  eps^2 = q**4*(q - 1)**2*(q + 1)**2*(q**8 + 2*q**6 + q**4 + 2*q**2 + 1)**2/(q**2 + 1)**10
+     <- 1 candidates, e.g. ['B:V0.V1.V0.Vb1']
+  eps^2 = (q - 1)**2*(q + 1)**2*(q**12 - 2*q**8 - q**6 - q**4 - q**2 + 1)**2/(q**4*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['B:V0.V1.Vb0.V1']
+  eps^2 = (q**4 + 1)**2*(q**2 - q + 1)**2*(q**2 + q + 1)**2/(q**2 + 1)**8
+     <- 4 candidates, e.g. ['A:V0.V1.Vb0.Vb1', 'A:Vb0.Vb1.V0.V1', 'A:V1.Vb0.Vb1.V0']
+  eps^2 = 0
+     <- 4 candidates, e.g. ['B:V0.V1.Vb0.Vb1', 'B:Vb0.Vb1.V0.V1', 'B:V1.Vb0.Vb1.V0']
+  eps^2 = (q**4 + 1)**2*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**10 - 2*q**8 + 4*q**6 - 2*q**4 + 2*q**2 - 1)**2/(q**4*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['A:V0.Vb1.V0.Vb1']
+  eps^2 = (q - 1)**2*(q + 1)**2*(q**4 - q**2 + 1)**2*(q**12 + q**8 + q**4 + 2*q**2 + 1)**2/(q**4*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['B:V0.Vb1.V0.Vb1']
+  eps^2 = (q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**8 - 2*q**6 + 4*q**4 - 2*q**2 + 1)**2/(q**4*(q**2 + 1)**8)
+     <- 6 candidates, e.g. ['A:V0.Vb1.Vb0.V1', 'A:Vb0.V1.V0.Vb1', 'A:V1.V0.V1.V0']
+  eps^2 = (q - 1)**2*(q + 1)**2*(q**10 + q**8 + 3*q**6 + q**4 + q**2 + 1)**2/(q**4*(q**2 + 1)**8)
+     <- 3 candidates, e.g. ['B:V0.Vb1.Vb0.V1', 'B:Vb1.Vb0.V1.V0', 'B:Vb1.Vb0.Vb1.Vb0']
+  eps^2 = (q - 1)**2*(q + 1)**2*(q**10 + q**8 + q**6 + 3*q**4 + q**2 + 1)**2/(q**4*(q**2 + 1)**8)
+     <- 3 candidates, e.g. ['B:Vb0.V1.V0.Vb1', 'B:V1.V0.V1.V0', 'B:V1.V0.Vb1.Vb0']
+  eps^2 = (q**4 + 1)**2*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**10 - 2*q**8 + 2*q**6 - 4*q**4 + 2*q**2 - 1)**2/(q**12*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['A:Vb0.V1.Vb0.V1']
+  eps^2 = (q - 1)**2*(q + 1)**2*(q**4 - q**2 + 1)**2*(q**12 + 2*q**10 + q**8 + q**4 + 1)**2/(q**12*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['B:Vb0.V1.Vb0.V1']
+  eps^2 = (q - 1)**2*(q + 1)**2*(q**12 - q**10 - q**8 - q**6 - 2*q**4 + 1)**2/(q**4*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['B:Vb0.Vb1.V0.Vb1']
+  eps^2 = (q - 1)**2*(q + 1)**2*(q**8 + 2*q**6 + q**4 + 2*q**2 + 1)**2/(q**4*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['B:Vb0.Vb1.Vb0.V1']
+  eps^2 = (q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**6 + q**4 + q**2 - 1)**2/(q**4*(q**2 + 1)**8)
+     <- 1 candidates, e.g. ['A:Vb0.Vb1.Vb0.Vb1']
+  eps^2 = (q - 1)**2*(q + 1)**2*(q**4 - q**2 + 1)**2/(q**4*(q**2 + 1)**6)
+     <- 1 candidates, e.g. ['B:Vb0.Vb1.Vb0.Vb1']
+  eps^2 = (q - 1)**2*(q + 1)**2*(q**12 + 2*q**10 + 3*q**8 + 4*q**6 + 4*q**4 + q**2 + 1)**2/(q**4*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['B:V1.V0.V1.Vb0']
+  eps^2 = (q**2 - q + 1)**2*(q**2 + q + 1)**2*(2*q**4 - q**2 + 1)**2*(q**8 - 2*q**6 - 1)**2/(q**4*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['A:V1.V0.Vb1.V0']
+  eps^2 = (q**4 + 1)**2*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**8 - q**4 + 3*q**2 - 1)**2/(q**8*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['A:V1.Vb0.V1.V0']
+  eps^2 = (q - 1)**4*(q + 1)**4*(q**12 + 2*q**10 + q**8 + q**6 + q**4 + 1)**2/(q**8*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['B:V1.Vb0.V1.V0']
+  eps^2 = (q**4 + 1)**2*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(3*q**8 - 6*q**6 + 9*q**4 - 5*q**2 + 1)**2/(q**12*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['A:V1.Vb0.V1.Vb0']
+  eps^2 = (q - 1)**4*(q + 1)**4*(q**4 - q**2 + 1)**2*(q**10 + 2*q**8 + 2*q**6 - 1)**2/(q**12*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['B:V1.Vb0.V1.Vb0']
+  eps^2 = (q**4 + 1)**2*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**8 - 5*q**6 + 9*q**4 - 6*q**2 + 3)**2/(q**2 + 1)**10
+     <- 1 candidates, e.g. ['A:Vb1.V0.Vb1.V0']
+  eps^2 = (q - 1)**4*(q + 1)**4*(q**4 - q**2 + 1)**2*(q**10 - 2*q**4 - 2*q**2 - 1)**2/(q**4*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['B:Vb1.V0.Vb1.V0']
+  eps^2 = (q**4 + 1)**2*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**8 - 3*q**6 + q**4 - 1)**2/(q**4*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['A:Vb1.V0.Vb1.Vb0']
+  eps^2 = (q - 1)**4*(q + 1)**4*(q**12 + q**8 + q**6 + q**4 + 2*q**2 + 1)**2/(q**4*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['B:Vb1.V0.Vb1.Vb0']
+  eps^2 = (q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**4 - q**2 + 2)**2*(q**8 + 2*q**2 - 1)**2/(q**8*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['A:Vb1.Vb0.V1.Vb0']
+  eps^2 = (q - 1)**2*(q + 1)**2*(q**12 + q**10 + 4*q**8 + 4*q**6 + 3*q**4 + 2*q**2 + 1)**2/(q**4*(q**2 + 1)**10)
+     <- 1 candidates, e.g. ['B:Vb1.Vb0.Vb1.V0']
+ALL PASS

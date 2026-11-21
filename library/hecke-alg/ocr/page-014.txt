@@ -1,0 +1,50 @@
+CHAPTER 2
+
+Cellular algebras
+
+Cellular algebras were introduced by Graham and Lehrer in [25,26]. Although
+it is possible to give a basis-free approach to the theory of cellular algebras [50],
+our perspective is that a cellular algebra is an algebra which has a basis which is
+particularly well-adapted to its representation theory.
+
+This Chapter describes the simple modules and blocks of a cellular algebra;
+in Chapters 3 and 4 this theory is applied to the Iwahori-Hecke algebras of the
+symmetric groups and the g-Schur algebras.
+
+1. Cellular bases
+
+Let R be a commutative integral domain with | and A an associative unital
+R-algebra.
+
+2.1 Suppose that (A,>) is a (finite) poset and that for each \ € A we have a finite
+set J (A) and elements c2, € A for all s,t € T(A) such that
+
+© ={A|A\eAand 5,tETO)}
+
+is a basis of A. For cach X € A let A* be the R-submodule of A with basis
+
+{ets | EA, > A and u,v € T(z) }. The pair (@, A) is acellular basis of A if
+
+(i) the RHinear map * : A—> A determined by 2,” = cd, for all A € A and all s
+and ¢ in 7 (A), is an algebra anti-isomorphism of A; and,
+
+(ii) for any \ € A, t€ T(A) anda € A there exist rp € Rsuch that for all s € T(A)
+
+a= > rect, mod A.
+veT (A)
+
+If A has a cellular basis we say that A is a cellular algebra.
+It should be emphasized that a cellular algebra may have more than one cellular
+basis (up to an automorphism of A).
+
+2.2 Examples (i) First an easy example which illustrates some of the properties
+of cellular algebras. Let A = R[z], where x is in indeterminate over R, and take
+A to be the non-negative integers with their natural ordering. For each n € A let
+T(n) = {o} and set c?, = 2”. It is easy to check that { x” | n > 0} is acellular basis
+of A. Here A” is the set of polynomials of degree greater than n and A"/A"+! = R
+is simple for all n.
+
+(ii) Let # = %#p,,(Gs) and let A = {(3), (2,1), (1°)}, the set of partitions of 3
+ordered lexicographically. Let s = TEE). t = Tt = f] and set
+
+9

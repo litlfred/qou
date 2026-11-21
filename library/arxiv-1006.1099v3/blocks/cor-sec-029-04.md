@@ -1,0 +1,1 @@
+The triangulated embedding Φ+ : DπF(Q0 ∩Q1)֒ →DπF(Z) is compatible with the natural weak actions of the hyperelliptic pointed mapping class group, in the sense that for any element f ∈Γhyp g,1 there is some quasi-equivalence of functors Φ+ ◦f|DπF(Q0∩Q1) ≃f|DπF(Z) ◦Φ+.

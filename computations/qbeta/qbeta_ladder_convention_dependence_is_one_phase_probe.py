@@ -51,6 +51,7 @@ Scope (a) throughout. Nothing wired; no value proposed for any c_k.
 
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import sys
 from pathlib import Path
 
@@ -207,7 +208,7 @@ def main() -> int:
     # 6. The sharpening: exactly one ingredient of the ladder carries z.
     hbar = (q - 1) / q
     eps = (h / 2) * h - h
-    QA = sp.Abs(eps / (q * (q - 1)))          # m_e factored out; it is z-free
+    QA = sp.Abs(_qbeta_e0.order_zero_scaled(eps, q))          # m_e factored out; it is z-free
     rungs = [1 - b**2 * hbar**4, 1 - 2 * b**3 * hbar**6,
              1 - 2 * b**4 * b**4 * hbar**8,
              1 - (b**2 + sp.Rational(1, 2)) * b**5 * hbar**10]

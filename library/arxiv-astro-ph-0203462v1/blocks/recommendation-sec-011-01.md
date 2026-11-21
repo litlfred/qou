@@ -1,1 +1,0 @@
-Second, the initial production ratio of the neighboring nuclides $^{238}$U and $^{232}$Th should be far less sensitive to variations in the poorly-known characteristics of the neutron exposure(s) occurring in the explosion of progenitor than the ratios of nuclides more widely separated in mass, such as $^{232}$Th and $^{151-153}$Eu (Goriely & Clerbaux [@goriely99]).

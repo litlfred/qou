@@ -1,0 +1,1 @@
+If K is a two-bridge knot (a knot that can be put in R3 = S3 \ {∞} in such a way that it has only two maxima), we can express its SL(2; C)-character variety as follows [37, 3.3.1 Theorem] (see also [53,

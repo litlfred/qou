@@ -75,7 +75,7 @@ from the 13 categorical drivers, does **not** bridge to c₃, and does
 **not** pick a normalization.
 
 -- Ref: [garoufalidis-gu-marino2021] GGM 2012.00062 (5₂ DT spectrum, eqs 96/97/98)
--- Ref: [manuscript] docs/audits/2026-08-02-fivetwo-crossknot-34-resolution.md
+-- Ref: [leitner2026] docs/audits/2026-08-02-fivetwo-crossknot-34-resolution.md
 -/
 
 namespace QOU.QBeta.FiveTwoDTSpectrumSplit
@@ -198,7 +198,7 @@ milestone M0 of Route C: it turns the proved "no scalar" negative into the
 positive statement *"the DT count is the bar-graded object"*, connecting the split
 to the corpus bar-parity programme (`c1-ggm-bar-parity-faces`,
 `OhtsukiTowerBarParity`).
--- Ref: [manuscript] docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md (Route C M0) -/
+-- Ref: [leitner2026] docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md (Route C M0) -/
 
 /-- The chirality involution `τ` on the ordered pair of `S⁺`/`S⁻` Stokes
 constants (the mirror / `q ↦ q⁻¹` swap exchanging the two factorization

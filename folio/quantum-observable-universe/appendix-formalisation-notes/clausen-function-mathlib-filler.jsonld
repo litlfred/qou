@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-clausen-function-mathlib-filler",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:clausen-function-mathlib-filler",
+  "kind": "remark",
+  "title": "Clausen function $\\mathrm{Cl}_2$ as repo-internal Mathlib filler",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-em-coupling-bring-zero-mode"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-figure-8-archimedean-illustration",
+  "cites": [
+    "references/thurston1978",
+    "references/zagier1986"
+  ],
+  "tags": [
+    "mathlib-filler",
+    "clausen-function",
+    "bloch-wigner",
+    "hyperbolic-volume",
+    "figure-8-knot",
+    "borromean-rings",
+    "catalan-constant",
+    "lean-infrastructure"
+  ],
+  "text": "clausen-function-mathlib-filler.md",
+  "provenance": "authored"
+}

@@ -56,7 +56,7 @@ Wedderburn decomposition) and have the theorem *derive* the three
 clauses from them.  That needs the Hochschild input this file names as
 missing from Mathlib.  Bean `qou-mtc9`.
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory/confinement-categorical.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/confinement-categorical.md
 -/
 
 namespace QOU.WedderburnMass
@@ -134,8 +134,8 @@ owned elsewhere. What is fixed is the false claim.
 **Keep the tripwire, and read it.** The check above is still the right test —
 its failure mode was never the test, it was that nothing ran it. The audit now
 does: `bun run content/pipeline/lean-vacuity-axiom-audit.ts`. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/confinement-categorical.md
--- Ref: [manuscript] prop:spectral-sequence-collapse (HH^k(A)=0, k≥1, Whitehead's lemma)
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/confinement-categorical.md
+-- Ref: [leitner2026] prop:spectral-sequence-collapse (HH^k(A)=0, k≥1, Whitehead's lemma)
 theorem confinement_categorical [ctx : ConfinementCategoricalContext] :
     haveI := ctx.ringR;
     ctx.E_infinity_00 = (Finset.range ctx.n_blocks).sum

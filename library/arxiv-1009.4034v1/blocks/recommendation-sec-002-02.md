@@ -1,1 +1,0 @@
-These calculations are of course unessential, but we shall need the precise expression of the moments $\tilp_{n}(\Omega_{c})$ in our study of the fluctuations $\Delta_{\lambda,c}(s)=\lambda^{*}(s)-\Omega_{c}(s)$.

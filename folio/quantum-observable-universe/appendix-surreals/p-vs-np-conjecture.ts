@@ -2,6 +2,7 @@ import { conjecture } from "../../schema/builders";
 
 export default conjecture({
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): It is formulated in the Reeb--surreal framework but lacks a Lean formalisation. A formal proof would ..." },
     {
       kind: "note",
       date: "2026-08-08",
@@ -15,6 +16,7 @@ export default conjecture({
         "Over a generic ring there is no `0 <` to quantify, so `ℝ` is " +
         "load-bearing rather than gratuitous.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): See [Surreal bound for P vs NP](#rem:p-vs-np-surreal-bound) for the squeeze-inequality statement implied by this conjecture." },
   ],
   label: "conj:p-vs-np-qou",
   title:

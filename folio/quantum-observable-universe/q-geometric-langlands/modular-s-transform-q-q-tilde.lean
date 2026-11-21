@@ -28,7 +28,7 @@ This file carries two things:
    the analytic side — the residual assembly conjecture (that the Hecke data
    *is* such a theta) is what stays open.
 
--- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.ts
+-- Ref: [leitner2026] quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.ts
 -/
 
 namespace QOU.BraidsAndKnots

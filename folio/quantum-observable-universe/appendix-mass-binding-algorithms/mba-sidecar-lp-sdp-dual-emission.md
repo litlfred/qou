@@ -39,7 +39,7 @@ present.
 
 ### Correctness conditions
 
-*[`prop:operator-selection-lp`](#prop:operator-selection-lp) §
+*[Knot operator selection as linear program with LP duality](#prop:operator-selection-lp) §
 *dual program* establishes strong duality (`primal_obj = dual_obj`
 to solver tolerance) and the interpretation of $y^*$ as the
 binding-energy shadow prices.*

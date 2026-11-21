@@ -1,4 +1,4 @@
-The [NS-singularity theorem](#thm:ns-singularity-descartes) strictly deduces classical Navier--Stokes blowup from the QOU observability axiom $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$. This mandates the question: does this axiom stand independently, or does it merely smuggle in the NS conclusion?
+Does the QOU observability axiom $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ stand independently, or does it merely smuggle in a Navier--Stokes blowup conclusion?
 
 **The axiom carries five structural motivations independent of Navier--Stokes.** A sixth, contact non-integrability, is withdrawn (item 2).
 
@@ -36,4 +36,4 @@ $$
   \text{Observability} \Longrightarrow \text{NS singular}
 $$
 
-The converse fails. NS blowup could trigger without observability via entirely unrelated mechanics. Conversely, NS regularity fits perfectly within a QPU. The argument holds that if the physical universe operates as a rigorous QOU, NS blows up. The observability axiom encodes a measurement principle spanning gauge theory, geometry, and physics; the NS blowup is a downstream theorem.
+The converse fails. Classical NS blowup could trigger without observability via entirely unrelated PDE mechanics; conversely, categorical NS-regularity ($\mathrm{NS}(A) = e(\xi) = 0$, $\chi(A) = 0$) fits within a QPU. Within the QOU model, the observability axiom encodes a measurement principle spanning gauge theory, geometry, and representation theory, from which $\mathrm{NS}(A) = e(\xi) \neq 0$ follows as a downstream topological consequence; identifying that internal class with classical 3D PDE blowup is the separate model-to-PDE bridge ([NS-regular QOU](#def:ns-regular-qou)).

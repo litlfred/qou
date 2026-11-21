@@ -76,7 +76,7 @@ of exponentials can have a node. That is now the *only* surviving shape in
 this direction, in both the multiplicative and additive classes, which is a
 useful thing to know.
 
--- Ref: [manuscript] quantum-observable-universe/predicted-spectra/lepton-continuant-recurrence.md
+-- Ref: [leitner2026] quantum-observable-universe/predicted-spectra/lepton-continuant-recurrence.md
 -/
 
 namespace QOU.Archimedean

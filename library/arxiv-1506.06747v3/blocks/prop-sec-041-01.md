@@ -1,0 +1,1 @@
+The calculation yet needs to be improved to account for the scaling violations, but we doubt that this will signiﬁcantly aﬀect the numerics – in [4], the contribution from the entire deep inelastic region was found to be small.

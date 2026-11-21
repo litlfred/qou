@@ -1,1 +1,0 @@
-Instead it will be argued that the issue of fusion rules is intimately linked to the issue of spectral decomposition: If Φj2[v|σ)Ψj1 is a normalizable vector then it should be possible to expand it in terms of contributions from the representations Pj, j = −1/2 + iρ constituting the spectrum.

@@ -1,1 +1,0 @@
-Thus the quantity $R(a_j,a_j)$ appearing in (\ref{dlog_tau}) must be interpreted to mean \[ \lim_{y\rightarrow a_j \atop y\in J} R(a_j,y); \] similarly for $p_j$ and $q_j$ in (\ref{qp_defn}) and like quantities appearing later.

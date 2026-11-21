@@ -1,0 +1,46 @@
+202 Overview of analytic methods for multivariate GFs
+The sequence (7.14) gives rise to the short exact sequence
+0 > Ha(M,,-) > Ha(Me,+) = G > 0. (7.15)
+
+As we are working with coefficients in C, there is no torsion, hence the short
+exact sequence implies a (not natural) direct sum
+
+Ha(M¢j+) = Ha(Me,-) ® Ha(Mej+, Me;-) « (7.16)
+Assuming Lemmas 7.25 and 7.28, we have proved the following.
+
+Theorem 7.30. Suppose there are no critical values at infinity above height a
+and finitely many critical values c, > +++ > Cy in [a, 0). Then the homology of
+M is given by
+
+HM) = Ha (Mea) ® GD GO),
+Pp
+
+where G(p) is defined in Definition 7.29 and the sum is over critical points p
+such that ha(p) > a. If there are no critical values at infinity and finitely many
+critical values then
+
+HM, Mo) = DG)
+Pp
+
+where M_.. denotes Mzq for any a less than the least critical value, and the
+sum is over all critical points. ia)
+
+Description of the attachments
+Next we describe the attachment cycles for M. We could also develop the at-
+tachment cycles for ‘V, in the stratified setting, however our asymptotic results
+don’t need them so we skip this extra step.
+
+The key to understanding attachments in Whitney stratified spaces is a lo-
+cal product structure described in Theorem D.9 of Appendix D, which follows
+from the famous (and somewhat difficult) Thom’s Isotopy Lemma (Lemma
+D.16 in Appendix D). The Isotopy Lemma says that for a fixed stratum S of
+dimension j and any point p € S there is a neighborhood of p where the space
+YV looks like R/ x N where N is the normal slice of the strata (see Defini-
+tion 7.32 and Figure 7.18 below).
+
+What does the local product structure imply for our attachments? Let p € S
+be a critical point for the height function /, and consider S as a complex mani-
+fold of dimension i (where it has dimension j = 2i as a real manifold). Because
+h is the real part of (a branch of) an analytic function, it is harmonic and all
+critical points have Morse index i. Thus, when S$ is arranged by height near
+p there is an i-dimensional part that ‘bends downwards’ and an i-dimensional

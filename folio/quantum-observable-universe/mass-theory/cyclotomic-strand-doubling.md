@@ -4,7 +4,4 @@ $$
   \Phi_8(X) \;=\; \Phi_4(X^2).
 $$
 
-**Universal atomic-step cyclotomic.**
-The Habiro elements for successive atomic-step pairs—from deuteron to helium—universally extract a $\Phi_8^2$ cyclotomic prefactor. The appearance of $\Phi_8$ precedes the mechanical $m=8$ Pochhammer boundary, confirming it as a structural interference signature amongst the Habiro coefficients themselves.
-
-The prior hypothesis interpreting $X \mapsto X^2$ as a categorical strand-doubling map failed empirical tests. The substitution does not generate a powers-of-two cyclotomic tower for heavier nuclei. The algebraic identity remains valid, but the categorical mechanism producing the universal $\Phi_8^2$ signature remains open.
+A computed observation about atomic-step Habiro elements that motivated this identity is recorded in [this remark](#rem:cyclotomic-strand-doubling-habiro-observation).

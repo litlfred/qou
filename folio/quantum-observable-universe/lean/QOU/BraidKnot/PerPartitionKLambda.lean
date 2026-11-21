@@ -40,8 +40,8 @@ it makes the propositional content checkable.
 
 ## References
 
-- [manuscript] conj:brane-tower-z-habiro §"Status of n_⋆"
-- [manuscript] rem:per-partition-k-lambda-rule (the sibling md)
+- [leitner2026] conj:brane-tower-z-habiro §"Status of n_⋆"
+- [leitner2026] rem:per-partition-k-lambda-rule (the sibling md)
 - [hoefsmit1974] Hoefsmit seminormal form
 - [#638] scalar / per-eigenvalue refutation
 - [#639] per-partition empirical evidence
@@ -191,7 +191,7 @@ def OpenPerPartitionConjecture : Prop :=
        |perPartitionTowerSigned lamDom| < 2)
 
 -- See PR #639 probe_phiq_per_partition_klambda.py
--- Ref: [manuscript] rem:per-partition-k-lambda-rule
+-- Ref: [leitner2026] rem:per-partition-k-lambda-rule
 /-- The OpenPerPartitionConjecture is **CONDITIONALLY** witnessed
     by the empirical max-|μ| selector — but the predicate
     `isMaxEigSpectrum` is itself decidable only via eigenvalue

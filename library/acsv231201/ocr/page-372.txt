@@ -1,0 +1,45 @@
+354 Cone point asymptotics
+
+(iii) With q as in (ii) and G = hom(q, z) for fixed z, suppose further that for u
+in some cone of hyperbolicity K of G corresponding to the component B
+
+of amoeba(Q)°,
+
+q(zt+iy + su) # 0 for real non-zero s in some interval [-c,c] and ally.
+(11.7)
+Then
+
+KA 3(z +9) C liminf K7"(z + y,)
+as Yn > O with Yn/lYnl > Y-
+
+Remark 11.28. The first conclusion in Lemma 11.27 is nearly a specialization
+of the second conclusion to homogeneous functions, except that not every ho-
+mogeneous function is the homogenization of a Laurent polynomial composed
+with the exponential function. Assumption (11.7) is satisfied whenever a gener-
+ating function is symmetric under mapping all coordinates to their reciprocals.
+This seems to be a common feature of recursions arising from cluster algebras.
+In particular, this is true for the quadratic cone functions (Aztec diamond, cube
+grove, fortress) arising later in this chapter, as well as their products with bino-
+mial such as (1 — yz). Though not symmetric under reciprocals, the spacetime
+generating function for quantum walks also satisfies Assumption (11.7) as a
+consequence of the defining matrix being unitary.
+
+Proof Sketch Suppose an analytic function q is strongly hyperbolic in the
+direction v at the point z = x + iy and let A = hom(@, z). Theorem 2.14
+of [BP11] implies that if u € K’(q) then q is strongly hyperbolic in direction
+tv + (1 — t)u for any ¢ € [0, 1]. The first two conclusions follow from this, and
+are stated as [BP11, Corollary 2.15].
+
+To prove (iii), let m be the lowest homogeneous degree of g and write q =
+q+R with R analytic and vanishing to degree m+ 1 at the origin. By our choice
+of u we know G(w) # 0, and by homogeneity we know that g(su) = s’"G(u).
+Using the Weierstrass Preparation Theorem, then expanding, gives
+
+gz + su) = h(z)(s" + ay(z)s™! +--+ + an(2)) (11.8)
+m
+=h(z)| [Os + plz.) (11.9)
+k=l
+where h, a),...,@m are holomorphic functions of z with all a; vanishing at the
+
+origin, 4 does not vanish at the origin, and the roots —4,(z, w) tend to zero as
+z — 0. Specializing to some line z = tv, we write (with a slight abuse of

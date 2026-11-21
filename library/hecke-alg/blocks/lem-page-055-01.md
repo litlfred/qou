@@ -1,0 +1,1 @@
+Suppose that t is a standard \-tableau, T = p(t) and s = first(T). (i) If T is semistandard then gyprem = (ak, where v = Ad Ap and w is the element of ©, such that d(t) = d(s)w. (ii) If T is not semistandard then there exist cs € R such that pyprem = Sesys. SDT

@@ -1,0 +1,1 @@
+Given a ﬂattening of K, the element P i ǫi[xi; pi, qi] ∈bP(C) lies in bB(C). Proof For any Q–vector-space V , the skew-symmetric bilinear form ⟨⟩on J induces a symmetric bilinear map B : (J ⊗V ) ⊗(J ⊗V ) →V ∧V , (a ⊗v) ⊗(b ⊗w) 7→⟨a, b⟩v ∧w .

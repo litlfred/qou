@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-11-15T08:24:36.382306+00:00",
-  "commitSha": "bb74b000edb913689389e3e66bea468bc83ff3c2",
+  "computedAt": "2026-11-20T15:21:03.202095+00:00",
+  "commitSha": "40ea11e76e34296773847bc25bc442a00441d161",
   "assertions": [
     {
       "name": "deuteron_f_is_unity",
-      "computed": "4.04018192636953934225839091235",
+      "computed": "4.04018228960281058433791044635",
       "expected": "1.0",
       "passed": false,
       "tolerance": "0.01",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 69,
+  "durationMs": 78,
   "computation": "binding-factor-f-decomposition",
   "scriptFile": "binding_factor_f_decomposition.py",
-  "scriptHash": "9f58af188ff5",
-  "scriptCommitSha": "d9573481fce67572354918f91b289cf0995ab922",
+  "scriptHash": "57cab4c99716",
+  "scriptCommitSha": "40ea11e76e34296773847bc25bc442a00441d161",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,7 +34,7 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "cvxpy": "absent",
-    "pyhecke_native_build": "f78d45e8bc0b9ef6"
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [
@@ -64,8 +64,8 @@
         "tr_M_free": "0.29901501718464007670216042677098383227494947439703",
         "tr_M_atom": "0.15196833920423160759266569775106614127124096465526",
         "delta_tr": "0.14704667798040846910949472902",
-        "B_AME_MeV": "2.224566",
-        "f_AME_extracted": "4.04018192636953934225839091235"
+        "B_AME_MeV": "2.2245662",
+        "f_AME_extracted": "4.04018228960281058433791044635"
       },
       {
         "atom": "T",
@@ -75,8 +75,8 @@
         "tr_M_free": "0.14207205679730479747049860425505585620688877446834",
         "tr_M_atom": "0.029144042360972065357254218791869844065838803564741",
         "delta_tr": "0.112928014436332732113244385463",
-        "B_AME_MeV": "8.481798",
-        "f_AME_extracted": "20.0584364491332484463288218692"
+        "B_AME_MeV": "8.4817962",
+        "f_AME_extracted": "20.0584321923488250917703658211"
       },
       {
         "atom": "3He",
@@ -86,8 +86,8 @@
         "tr_M_free": "0.18817864299948877926347903714586689992069257358944",
         "tr_M_atom": "0.058596253654436380218956715452130256830877107284187",
         "delta_tr": "0.129582389345052399044522321694",
-        "B_AME_MeV": "7.718043",
-        "f_AME_extracted": "15.906405662844109259206614303"
+        "B_AME_MeV": "7.71804132",
+        "f_AME_extracted": "15.9064022004688007026070261086"
       },
       {
         "atom": "4He",
@@ -97,11 +97,11 @@
         "tr_M_free": "0.089409980501930600382047565819885657048241375217184",
         "tr_M_atom": "0.011237417659767421564199549374410607269662696081262",
         "delta_tr": "0.0781725628421631788178480164455",
-        "B_AME_MeV": "28.295673",
-        "f_AME_extracted": "96.6666173098990266054921300974"
+        "B_AME_MeV": "28.2956624",
+        "f_AME_extracted": "96.6665810970779537534810816867"
       }
     ],
-    "mirror_split_T_minus_He3": "4.15203078628913918712220756623",
+    "mirror_split_T_minus_He3": "4.15202999188002438916333971259",
     "bondcount_test": {
       "model": "f = A(A-1)/2 - kappa*Z(Z-1)/2, kappa from A=3 mirror",
       "rows": [
@@ -110,32 +110,32 @@
           "A": 2,
           "pairs": 1,
           "f_pred_bondcount": "1.0",
-          "f_extracted": "4.0401819263695393423",
-          "err_pct": "304.01819263695393423"
+          "f_extracted": "4.0401822896028105843",
+          "err_pct": "304.01822896028105843"
         },
         {
           "atom": "T",
           "A": 3,
           "pairs": 3,
           "f_pred_bondcount": "3.0",
-          "f_extracted": "20.058436449133248446",
-          "err_pct": "568.61454830444161488"
+          "f_extracted": "20.058432192348825092",
+          "err_pct": "568.61440641162750306"
         },
         {
           "atom": "3He",
           "A": 3,
           "pairs": 3,
-          "f_pred_bondcount": "-1.1520307862891391871",
-          "f_extracted": "15.906405662844109259",
-          "err_pct": "-1480.7274816049824768"
+          "f_pred_bondcount": "-1.1520299918800243892",
+          "f_extracted": "15.906402200468800703",
+          "err_pct": "-1480.7281331721906867"
         },
         {
           "atom": "4He",
           "A": 4,
           "pairs": 6,
-          "f_pred_bondcount": "1.8479692137108608129",
-          "f_extracted": "96.666617309899026605",
-          "err_pct": "5130.9647039944570976"
+          "f_pred_bondcount": "1.8479700081199756108",
+          "f_extracted": "96.666581097077953753",
+          "err_pct": "5130.9604956966421149"
         }
       ],
       "verdict": "canonical traces: D err 304.0%, 4He err 5131.0%. The model asserts f(D) = 1 by construction (pairs = 1, no pp pair)."

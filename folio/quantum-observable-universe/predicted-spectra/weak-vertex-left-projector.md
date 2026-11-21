@@ -34,4 +34,17 @@ At the proton parameter $q_0$ this is $-9.33\,\%$ of $\tau_D\bigl((\sigma_1\sigm
 
 This is a property of every trace of this shape, not only of convention D. Write a trace on $H_3(q)$ as $\tau = y_{(3)}\chi_{(3)} + y_{(2,1)}\chi_{(2,1)} + y_{(1^3)}\chi_{(1^3)}$. Assume $|q| > 1$, so that $P_R = P_-$, and $[3]_q \neq 0$. Then $\tau(x P_R) = 0$ for every $x$ if and only if $y_{(2,1)} = y_{(1^3)} = 0$. With $\tau(1) = 1$, such a trace is the augmentation $\sigma_i \mapsto q$. It already suffices that $\tau$ vanish on $P_R$ and on $\sigma_2 P_R$. Convention D has $y_{(2,1)} \neq 0$, so no word-level one-sidedness is available under it.
 
+**Where the weak vertex comes from.** The definition of $W$ rests on two inputs that are chosen, not derived.
+
+1. *The one-sided requirement.* $W$ is required to act as $\sigma^{-1}$ on one eigenline of $\sigma$ and as $\sigma$ on the other. This is an ansatz.
+2. *The side.* The eigenline on which $W$ acts as $\sigma^{-1}$ is the left line, by the definition of $P_L$ above.
+
+Given the two inputs, $W$ is unique: an element $x$ with $x P_+ = a P_+$ and $x P_- = b P_-$ equals $a P_+ + b P_-$. With $J = P_+ - P_-$ and $|q| > 1$, the two one-sided elements are
+
+$$
+\sigma^{-1} P_+ + \sigma P_- \;=\; q^{-1} J, \qquad \sigma P_+ + \sigma^{-1} P_- \;=\; q\, J .
+$$
+
+So $W = q^{-1}J$, and the element with the opposite side, $qJ$, differs from it only by the scalar $q^2$. The Proposition above follows from the inputs and is, in this sense, close to a restatement of them.
+
 **What this does not say.** It does not identify $W$ with the physical weak coupling.

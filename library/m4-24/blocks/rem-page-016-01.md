@@ -1,0 +1,1 @@
+Va«(—1) is just Ag(—1), which is the order of the torsion in the homology of the double cover of S? branched over K. log Vx(—1) is one of the first terms of the volume conjecture (Conjecture 1.19). Figure 4 suggests that for alternating knots with a fixed number of crossings, log Vx (—1) is almost a linear function of the volume.

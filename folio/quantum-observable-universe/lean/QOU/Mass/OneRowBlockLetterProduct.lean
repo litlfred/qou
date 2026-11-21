@@ -49,7 +49,7 @@ parameter `q : R` is the common image of the generators. No `ℝ`, no ordering,
 no logarithm: the additive statement is the multiplicative one read through
 `log`, which lives on the archimedean side and is not needed for the algebra.
 
--- Ref: [manuscript] §"Frobenius pairing", per-block characters of `H_n(q)`
+-- Ref: [leitner2026] §"Frobenius pairing", per-block characters of `H_n(q)`
 -/
 
 import Mathlib.Algebra.Algebra.Hom

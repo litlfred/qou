@@ -1,0 +1,1 @@
+Let Q(z) be a polynomial vanishing to degree m ≥1 at the origin. Deﬁne the m- homogeneous part A(z) = hom(Q), the remainder R(z) = Q(z) −A(z), and, for ε > 0, the scaled polynomial Qε(z) = ε−mQ(εz). If Vε denotes the intersection of the zero set of Qε with the unit sphere S 1 and V0 denotes the intersection of the zero set of A with S 1 then Vε →V0 in the Hausdorﬀmetric as ε →0.

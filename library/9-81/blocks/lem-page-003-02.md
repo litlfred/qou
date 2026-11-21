@@ -1,0 +1,1 @@
+If the condition of Lemma 2.1 is satisﬁed, then the objective function Fðu; vÞ of the dual program of P is nonpositive, and it is equal to 0 if and only if there exists a value u such that ut ¼ ve ¼ u for all t 2 FðSÞ and all e 2 EðSÞ.

@@ -1,6 +1,6 @@
 {
   "$schema": "block-qa/v1",
-  "label": "prop:joint-tower-sdp-confinement",
+  "label": "conj:joint-tower-sdp-confinement",
   "kind": "proposition",
   "paths": {
     "ts": "folio/quantum-observable-universe/mass-theory/joint-tower-sdp-confinement.ts",
@@ -48,6 +48,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "7e488beb270d",
+          "ts": "a23555cd6def",
+          "lean": "fd1636e7c72a",
+          "lean_statement": "22245804e92f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:24.871Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "lean/QOU/BraidKnot/joint_tower_sdp_confinement.lean:4 'intentionally empty'; sibling `def WedderburnBlockPositivity … := vars.n_0 ≥ 1`, `def JointTowerSdpFeasible … := sdp.registry ≠ []` replace md:9 'ρ_λ(T_w(𝔥)) ⪰ 0'; md states an SDP (design spec), no proposition",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2118,6 +2136,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T21:18:51.100Z",
+  "updated_at": "2026-11-15T21:57:24.871Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

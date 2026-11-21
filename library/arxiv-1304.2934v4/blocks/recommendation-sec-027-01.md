@@ -1,1 +1,0 @@
-One can then ask for an asymptotic lower bound on $\proba[X_{n} \in t_{n} B]$, and in view of the classical theory of large deviations, this lower bound should be related to open sets and to the exponent $F(B^{\mathrm{o}})$.

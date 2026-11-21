@@ -1,1 +1,0 @@
-Throughout, we shall adopt the convention that if $\alpha$ is a partition of $r \in \mathbf{N}$, then $g_\alpha \in S_r$ is an element of cycle type $\alpha$, and $z_\alpha$ is the size of the centralizer of $g_\alpha$ in $S_r$.

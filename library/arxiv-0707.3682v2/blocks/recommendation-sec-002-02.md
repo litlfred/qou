@@ -1,1 +1,0 @@
-::: remark []{#CM label="CM"} For a CM field $k$ with $k/\Q$ Galois, its maximal totally real subfield is Galois over $\Q$ and is the fixed field of an element of order two in the centre of $\Gal(k/\Q)$, which we shall refer to as the complex conjugation of $k$. :::

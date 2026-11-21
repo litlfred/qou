@@ -1,1 +1,0 @@
-So, in order for the entry mi,j to contribute to inv(A), it must have a SE neighbor in the (m, n, k)-Gog trapezoid and this neighbor must be equal to mi,j; however, mi,j need not to have a SW neighbor.

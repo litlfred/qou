@@ -1,0 +1,1 @@
+Physicists often consider solutions of Newton’s equation on the whole line rather than on a fixed interval [a,b]. In this case, the naive definition of an extremal does not make sense, since the action integral S(q) = fy £(q)dt is improper and in general diverges. Instead, one makes the following “correct” definition: a function g(t) on R is an extremal of S if the expression

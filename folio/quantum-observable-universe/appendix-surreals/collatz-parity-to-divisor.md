@@ -8,7 +8,7 @@ $$
 
 This locus degenerates the halving step.
 
-The point $q = -1$ belongs to $\mu_2$. The Kummer obstruction ([root-of-unity truncation](#prop:root-of-unity-truncation)) at level $n = 2$ asks whether $2$ divides $\chi(A) = -6$. It does. The obstruction vanishes. At $q = -1$, the residue ring is $\mathbb{Z}[q^{\pm 1}]/(q+1) \cong \mathbb{Z}$, and the $[2]_q$-adic valuation specializes to the ordinary $2$-adic valuation.
+The point $q = -1$ belongs to $\mu_2$. The Kummer obstruction ([root-of-unity truncation](#prop:root-of-unity-truncation)) at level $n = 2$ asks whether $2$ divides $\chi_{\mathrm{eu}}(M_0) = -6$. It does. The obstruction vanishes. At $q = -1$, the residue ring is $\mathbb{Z}[q^{\pm 1}]/(q+1) \cong \mathbb{Z}$, and the $[2]_q$-adic valuation specializes to the ordinary $2$-adic valuation.
 
 The Skein-Collatz map has two branches:
 

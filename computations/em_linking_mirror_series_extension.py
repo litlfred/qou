@@ -63,8 +63,15 @@ SCOPING = HERE / "em-linking-invariant-scoping.witness.json"
 # main() is unaffected.
 set_compute_dps()
 
-# Derived per-pair Coulomb unit tanh(ln q0)*B_pp, fixed at the A=3 H_6
-# value by the corpus (mirror-pair-coulomb-sign-correction.witness.json).
+# Per-pair Coulomb unit tanh(ln q0)*B_pp with the JUNE 2026 diproton bond
+# B_pp = 2.28608834 MeV (docs/audits/2026-06-18-he3-tower-charge-asymmetry-and-pairknot.md).
+# It is NOT the current corpus value: charge-coulomb-tn3he-derived.witness.json and
+# mirror-pair-coulomb-sign-correction.witness.json now give B_pp = 2.12836095,
+# unit 0.2212723003, after E0 moved. Kept deliberately (owner, 2026-11-15) so the
+# published kappa of em-linking-invariant-scoping.witness.json still validate:
+# swapping it raises every kappa by 7.41 % and leaves the hypothesis ranking
+# unchanged. The bond is on the single-crossing interface letters, which the
+# gamma-gamma ruling superseded; the redo waits on a gamma-gamma word (#7876).
 PER_PAIR_UNIT = mpf("0.237670225314853041078773435698")
 
 

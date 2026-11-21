@@ -33,7 +33,7 @@ This is the multi-nucleon counterpart of the existing H_3 cases.
 The tracker class itself is already parameterized by n; this script
 only feeds it the canonical disjoint braid words.
 
-Ref: [manuscript] prop:jet-prefix-gb-filtration
+Ref: [manuscript] conj:jet-prefix-gb-filtration
 Ref: [manuscript] prop:atomic-mass-gb-nf
 Ref: [manuscript] thm:wedderburn-mass-formula
 """
@@ -133,7 +133,7 @@ def main() -> int:
             "counts. Multi-nucleon counterpart of the existing H_3 "
             "test cases on main."
         )
-        .add_data("narrative_block", "prop:jet-prefix-gb-filtration")
+        .add_data("narrative_block", "conj:jet-prefix-gb-filtration")
         .add_data("downstream_consumers", [
             "prop:atomic-mass-gb-nf",
             "thm:wedderburn-mass-formula",

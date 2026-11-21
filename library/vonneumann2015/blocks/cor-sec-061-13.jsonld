@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/vonneumann2015/blocks/cor-sec-061-13",
+  "@type": [
+    "folio-assistant-sci:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "pageStart": 141,
+  "pageEnd": 146,
+  "text": "cor-sec-061-13.md",
+  "derivedFrom": "library/vonneumann2015/sections/sec-061",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "19.2.22",
+    "source_kind": "corollary",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-061-192-index.md (p. 141-146)"
+  }
+}

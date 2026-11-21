@@ -1,0 +1,47 @@
+B.1 Chain complexes and homology theory 465
+
+Homology groups are preserved under more than just homeomorphism. If
+X and Y are topological spaces then two maps f,g : X — Y are said to be
+homotopic maps if there is a continuous map H : X x [0,1] — Y, called a
+homotopy, such that H(x,0) = f(x) and H(x, 1) = g(x) for all x. A topological
+map f : X > Y is called a homotopy equivalence if there is a topological map
+g : Y > X such that f o g is homotopic to the identity on Y and go f is
+homotopic to the identity on X. If f : X > Y is a homotopy equivalence then
+we say that X and Y are homotopic spaces.
+
+We claim that homotopic maps induce equal maps on homology, hence
+homotopy equivalent spaces have naturally identical homology. To see this
+one proves, on the chain level, that a homotopy equivalence between topo-
+logical spaces induces a chain homotopy equivalence between the singular
+chain complexes, which in turn induces an isomorphism between the homol-
+
+ogy groups.
+
+Proposition B.4. [fa topological map f : X > Y is a homotopy equivalence
+then the singular homology groups H,,(X) and H,(Y) are isomorphic for all n,
+with f, inducing one such isomorphism.
+
+Proof See Theorem 2.10 and Corollary 2.11 of [Hat02]. ia)
+
+Exercise B.1. Explain why a homeomorphism is always a homotopy equiva-
+lence.
+
+Suppose H : X x [0,1] — X is a homotopy with H(x,0) = x for all X, and
+Y C X is a subspace such that H(x, 1) € Y for all x. If H(y,f) € Y for all y and
+t (so that X ends in Y and Y stays in Y) then we call H a weak deformation
+retract and say Y is a weak deformation retract of X. If H(y, t) = y for all y and
+t then we call H a strong deformation retract (or simply deformation retract)
+and say that Y is a strong deformation retract of X.
+
+Exercise B.2. Prove that if Y is a weak deformation retract of X then X and Y
+are homotopy equivalent.
+
+Remark. Imagine looking at a space X that starts deforming in a continuous
+manner, with points allowed to collide and pass through each other, ultimately
+ending up in a different space Y. The space Y can be smaller, even a single
+point, but Exercise B.2 implies that as long as every point that starts in Y stays
+in Y then the homology of X is isomorphic to the homology of Y.
+
+Various homologies and their equivalence
+Working with the homology of smooth chains is nice because they are what we
+integrate over, but this approach has some disadvantages. Most prominently,

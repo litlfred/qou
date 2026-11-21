@@ -1,1 +1,1 @@
-Let C be a tensor category and let aρ,σ ∈ (ρ ⊗ σ, ρ ⊗ σ) be a tensor
+Let C be a tensor category and let aρ,σ ∈ (ρ ⊗ σ, ρ ⊗ σ) be a tensor structure for the identity functor. a) A balancing structure for a is a natural isomorphism v ∈ (1, 1) making the identity functor 1 with tensor structure a monoidally isomorphic to the trivial tensor structure of 1, so aρ,σ = vρ ⊗ vσ ◦ v −1 ρ⊗σ . (27.9) b) If C has a right duality (ρ ∨ , bρ, dρ), a ribbon structure for a is a balancing structure compatible with duality, see Def. 5.3.

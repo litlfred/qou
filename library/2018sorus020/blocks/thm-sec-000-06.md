@@ -1,0 +1,1 @@
+Let x ∈ˆX be an ideal point in the smooth projective model of X, and assume that an associated incompressible surface Σ is a union of parallel homeomorphic copies Σi such that M \ Σi is a (union of) handlebodie(s). If the curve γ = ∂Σ ∈π1(M) has trivial eigenvalues, then the torsion function tor(M, ρ) has a pole at x. We deduce the following corollary :

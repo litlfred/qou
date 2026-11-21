@@ -1,0 +1,1 @@
+Pick constants (λ, µ1, µ2, µ3) ∈(C∗)4. Let p(·) be a polynomial of degree 4 ≤ deg(p) ≤2g + 1, with vanishing coeﬃcients of the monomials v2g+1 i . The A∞-structure deﬁned by any Z2g+1-invariant Maurer-Cartan pair (W, 0) with W = λv1v2v3 + p(v1, v2, v3) + µ1v2g+1 + µ2v2g+1 + µ3v2g+1 + O(2g + 2) is A∞-isomorphic to the structure deﬁned by (Q, 0). IVAN SMITH

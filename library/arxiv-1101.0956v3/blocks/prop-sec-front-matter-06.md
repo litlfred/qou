@@ -1,0 +1,1 @@
+The set AFTN put = S (U,ξU )∈AFT N , (V,sV )∈AF F U∩h−1(V )̸=φ n U ∩h−1 (V ) , ¯ξU∩h−1(V ) o is a vector ﬁbred n + n-atlas for the vector bundle (TN, τ N, N) . If X = X˜ı ∂ ∂κ˜ı ∈Γ (TN, τ N, N) , then we obtain the section ¯X = ¯X˜ı ◦h ∂ ∂¯κ˜ı ∈Γ (TN, τ N, N) , such that ¯X (¯κ) = X (h (¯κ)) , for any ¯κ ∈U ∩h−1 (V ) . The set  ∂ ∂¯κ˜ı , ˜ı ∈1, n

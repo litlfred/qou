@@ -1,0 +1,44 @@
+8.4 Further computations for asymptotics 243
+
+near tf = —1/4. Translating these singular expansions into asymptotic behavior
+implies
+
+dn = ~ ([0.036 +3-10°]+0(n"')).
+
+The constants here are given to three decimal places for readability, but can be
+computed to hundreds of decimal places in under a second on modern comput-
+ers. 4
+
+Example 8.24. Let b,, denote the number of lattice paths with the set of allow-
+able steps {(0, 1),(—1,-1), (0,-1), 1, —1)} that start at the origin and stay in
+the nonnegative quadrant N*. The kernel method now implies that the generat-
+ing function B(t) of (b,) satisfies a D-finite equation of order 3 whose leading
+coefficient has a root at t = 1/4, and no non-zero roots closer to the origin,
+suggesting that this might be a dominant singularity of B(t). The Sage package
+of Mezzarobba can be used to compute an expansion
+
+B(t) = [101000°] (¢-1/4y lv? +.
+
+near t = 1/4, whose leading coefficient is zero to 1000 decimal places. In fact,
+although t = 1/4 is a singular point of this ODE satisfied by B, it is not a
+singularity of B. The dominant singularities of B(t) occur at t = + V3/6 and
+by ~ Cn(2 V3)" where c, takes one value when n is even, and another when
+nis odd, but this cannot be proven without using additional information beyond
+properties of this ODE. 4
+
+Asymptotics for many lattice path problems, including those in Examples 8.23
+and 8.24, can be derived using ACSV [Mel21, Chapters 6 and 10].
+
+Notes
+
+Modern methods for solving polynomial systems can be traced back at least to
+work of Newton in the seventeenth century. After the work of Newton, and later
+work of Cramer and Bézout bounding the number of solutions to multivariate
+polynomial systems, the nineteenth century work of Sylvester illustrated the
+power of the resultant in effectively solving polynomial systems. Further work
+by Macaulay and his contemporaries developed a mature theory of multivariate
+resultants for use beyond bivariate systems; see [GKZ08] for a modern and far-
+reaching generalization of these techniques. Grobner bases were introduced
+by Buchberger [Buc65] in his 1965 PhD thesis, and form the backbone of
+much modern work in computer algebra. The theory of effective methods for
+algebraic geometry is eloquently presented in the splendid volumes [CLO07;

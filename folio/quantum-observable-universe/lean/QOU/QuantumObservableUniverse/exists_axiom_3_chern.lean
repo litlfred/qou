@@ -47,7 +47,7 @@ We **name** the vanishing as a `Prop` over the context's primitive
 Chern-class data, rather than projecting it from self-assuming
 `c_1_eq_zero`/`c_2_eq_zero` fields.  An instance of this proposition
 is the open vanishing claim. -/
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-3.ts
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-3.ts
 def exists_axiom_3_chern [ctx : ExistsAxiom3ChernContext] : Prop :=
     ctx.c_1 = 0 ∧ ctx.c_2 = 0
 

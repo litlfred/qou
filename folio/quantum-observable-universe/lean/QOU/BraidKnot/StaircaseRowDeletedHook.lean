@@ -36,7 +36,7 @@ is what makes the loss vanish — the corners' shifted cells re-form a second st
 
 No ring: hooks are `ℕ`, and the identity is stated for an arbitrary `AddCommMonoid` target.
 
--- Ref: [manuscript] computations/deltalambda/rev_bounded_excess_lower_bound_probe.py
+-- Ref: [leitner2026] computations/deltalambda/rev_bounded_excess_lower_bound_probe.py
 -/
 
 namespace QOU.BraidKnot.HookSum

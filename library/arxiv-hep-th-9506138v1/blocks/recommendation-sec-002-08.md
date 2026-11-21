@@ -1,1 +1,0 @@
-Nevertheless, the nice-slice energy of the conﬁguration remains low, and this state must therefore be regarded as an unavoidable part of the nice-slice theory, which could never have been discovered if we had ﬁrst truncated the theory to the massless ﬁelds.

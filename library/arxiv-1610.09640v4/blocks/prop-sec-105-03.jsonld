@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/blocks/prop-sec-105-03",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 345,
+  "pageEnd": 351,
+  "text": "prop-sec-105-03.md",
+  "derivedFrom": "library/arxiv-1610.09640v4/sections/sec-105",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "15.4.10",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/sec-105-154-artin-schelter-regular-graded-rings.md (p. 345-351) citing [72, Theorem 4.5]",
+    "claim_id": "arxiv-1610.09640v4#proposition:15.4.10",
+    "lean_status": "unformalized"
+  }
+}

@@ -1,0 +1,1 @@
+Suppose (p, q) ∈Z× 1 2Z is not in N. τ = τ(W(p, q)) is not an algebraic integer if and only if p = 0 and |q| is an odd prime power. π1W ′(p, 2q) fails to have integral traces if and only if p = 0 or −4q and |q| is an odd prime power.

@@ -1,0 +1,44 @@
+14 Introduction
+
+pected that the reader will go through these in advance. Rather, they serve as
+references so that frequent library visits will not be necessary. Appendix A
+presents for beginners all relevant knowledge about calculus on manifolds and
+algebraic topology. Manifolds and tangent and cotangent vectors are defined,
+differential forms in R” are constructed from scratch, and integration of forms
+is developed. The appendix ends with a short treatment of complex differential
+forms. Appendix B reviews the essentials of algebraic topology: chain com-
+plexes, homology and cohomology, relative homology, Stokes’s Theorem, and
+some important exact sequences. Appendix C summarizes classical Morse the-
+ory — roughly the first few chapters of Milnor’s classic text [Mil63] — after
+which Appendix D introduces the notion of stratified spaces and describes
+stratified Morse theory as developed by Goresky and MacPherson [GM88].
+Part II and the appendices also have a second function: some of the results
+used in Part III are often quoted in the literature from sources that do not pro-
+vide a proof. On more than one occasion, when organizing the material in this
+book, we found that a purported reference to a proof ultimately led to nothing.
+Beyond serving as a mini-reference library, therefore, the background sections
+provide some key proofs and corrected citations to eliminate ghost references
+and the misquoting of existing results.
+
+The heart of this book, Part III, is devoted to new results in the asymptotic
+analysis of multivariate generating functions. Chapter 7 sets out the theory
+by which multivariate asymptotics are derived, greatly expanding the outline
+given in Section 1.2. The internal structure of Chapter 7 is described at length
+in the beginning of the chapter. Because some of the material in this long chap-
+ter relies on specialized topological knowledge, it is possible to take a concep-
+tual off-ramp after most sections, which get progressively more general as the
+chapter proceeds. We begin with extended examples in Section 7.1, before de-
+scribing the argument in the simpler case when ‘V is a smooth manifold in
+Section 7.2. Section 7.3 covers the general case, ultimately deriving the fun-
+damental result of the chapter: a decomposition (7.2) for a, as an integer sum
+of quasi-local cycles near critical points, without any specification of the set
+contrib(r) or the asymptotic series ®,.
+
+Having reduced the computation of a, to saddle point integrals with com-
+putable parameters, plugging in results on saddle point integration yields the-
+orems for the end user. These break into several types. Chapter 9 discusses the
+case when the singular variety V is smooth near the contributing points. This
+case is simpler than the general case in several respects: the residues are more
+straightforward, so multivariate residue theory is not always needed, and only
+classical Morse theory is required. Chapter 10 discusses the case where V
+is locally the union of smooth hypersurfaces near contributing points, which

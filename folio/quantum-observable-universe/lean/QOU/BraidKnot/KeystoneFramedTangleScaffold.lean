@@ -56,7 +56,7 @@ explicitly-named open obligation, tracked in `.beans/rttg--rt-framed-tangle-func
 Base ring (§7c): purely categorical over any Mathlib `[BraidedCategory 𝒞] [RightRigidCategory 𝒞]`;
 no `ℝ`, no ordering, no archimedean construct. `TangleObject`/`Sign` are `Bool`-combinatorial.
 
--- Ref: [manuscript] docs/coordination/s5-so3-keystone.md ; Turaev, *Quantum Invariants of Knots and
+-- Ref: [leitner2026] docs/coordination/s5-so3-keystone.md ; Turaev, *Quantum Invariants of Knots and
    3-Manifolds*, ch. I–II (framed tangle category + RT functor); Reshetikhin–Turaev 1990.
 -/
 import Mathlib.CategoryTheory.Monoidal.Rigid.Basic

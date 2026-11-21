@@ -1,1 +1,0 @@
-Because there are no topological strips in the base joining different intersection points of the base paths, we conclude that $\pi \circ u$ must be constant, and the image of $u$ is contained in a fiber.

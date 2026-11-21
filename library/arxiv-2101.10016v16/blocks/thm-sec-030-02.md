@@ -1,1 +1,1 @@
-([185] Proposition 2.4) Let λ be a dominant weight and
+([185] Proposition 2.4) Let λ be a dominant weight and I = {q = e iπt : |t| < m − d } where m = ⟨λ + ρ, θ⟩. Then Vλ(q) is simple and the Hermitian form defined in Prop. 2.2 in [185] is positive definite for q ∈ I.

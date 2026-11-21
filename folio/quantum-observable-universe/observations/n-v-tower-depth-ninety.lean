@@ -34,7 +34,7 @@ theorem tower_depth_m_e_to_v_is_ninety
     (level_m_e level_v : C)
     [hi : TowerDepthNinetyConjecture (tower := tower) level_m_e level_v] :
     tower_depth (tower := tower) level_m_e level_v = 90 := by
-  -- Ref: [manuscript] conj:n-v-tower-depth-ninety
+  -- Ref: [leitner2026] conj:n-v-tower-depth-ninety
   exact hi.is_ninety
 
 end QOU.Observations

@@ -1,0 +1,1 @@
+Flat knots possess the following three invariants: the Kauﬀ- man bracket ⟨K⟩, the Whitney index w(K), and the twisting number τ(K). Together, w(K) and τ(K) constitute a complete system of invariants for ﬂat unknots.

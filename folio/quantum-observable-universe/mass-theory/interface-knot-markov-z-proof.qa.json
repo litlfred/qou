@@ -237,6 +237,37 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "689ae16b3a81",
+          "ts": "593f7d61f1f6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:27.131Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "S↔L: the ref `interface_knot_markov_z` (lean:164-172) is about `interfaceTrace`, a fold *defined* as the product of z and (z−h) factors (l.149-151), with no link to τ_M. It is a tautology over the claimed form. The single-step lemmas project the class field `markov_axiom` (l.96-100), and `isInterface`/`isBelow` are free predicates. The negative step assumes trace linearity as the hypothesis `h_tau_linear` (l.214-216). The docstrings still use the convention-C z = 1/(q^{1/2}+q^{−1/2}) ≈ 0.4993 (l.11, 118), and `markovParam_le_half` (l.506) proves z ≤ 1/2 for C, which is false for z_D = q³/(q²+1) ≈ 0.6127. S↔P: the factors are right. σ⁻¹ = σ − h, and z̄ = 1/(q(q²+1)) = z − h (checked by hand). T: z(z−h) = 0.61269·0.40364 = 0.24730 matches the prf table. But the iteration step \"each one is 'topmost' relative to the constituent sub-braid below it\" (prf:17-20) is not literally the Markov setting: in D = p·σ₃·n the n block sits on strands above σ₃. The identity needs block-multiplicativity tr(x σ_k y) = z·tr(x)·tr(y), which the prf does not state; only the 10⁻⁵⁰ numerics (prf:155-160) support it.",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: exposition"
+      },
+      {
+        "field_hash": {
+          "md": "471aef532cc9",
+          "ts": "593f7d61f1f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:13:24.112Z",
+        "reviewed_sha": "5f209b510c5b50294fd755d263c17c75d49be3ed",
+        "evidence": "Markov axiom and skein give z and z-h. The block-multiplicativity lemma is proved by induction over the coset basis with cyclicity; the q=2 exact check is corroboration only."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -662,7 +693,7 @@
         "reviewed_at": "2026-08-26T06:39:54.274Z",
         "reviewed_sha": "c5c3acd56fcbb42158b340f49a1bf31ffce900d5",
         "severity": "major",
-        "evidence": "folio/quantum-observable-universe/mass-theory/interface-knot-markov-z-proof.md:125: so the **entire** obstruction is the $\\hbar_q^{2}$ prefactor \u2014 the two quanta of"
+        "evidence": "folio/quantum-observable-universe/mass-theory/interface-knot-markov-z-proof.md:125: so the **entire** obstruction is the $\\hbar_q^{2}$ prefactor — the two quanta of"
       }
     ],
     "voice-title-scholarly": [
@@ -1150,7 +1181,7 @@
           "in_degree": 0,
           "cone_size": 10,
           "depth": 7,
-          "pagerank": 7.6e-05,
+          "pagerank": 0.000076,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1371,7 +1402,7 @@
         "reviewed_at": "2026-08-15T10:31:00.374Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
-        "evidence": "1 negation-contrast construction(s): \", not phenomenologically fit.\" \u2014 state the positive claim directly"
+        "evidence": "1 negation-contrast construction(s): \", not phenomenologically fit.\" — state the positive claim directly"
       },
       {
         "field_hash": {
@@ -1440,7 +1471,7 @@
         "reviewed_at": "2026-08-15T10:31:00.374Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
-        "evidence": "12 stylistic spaced dashes in 418 words (2.87/100w) \u2014 restructure into sentences"
+        "evidence": "12 stylistic spaced dashes in 418 words (2.87/100w) — restructure into sentences"
       },
       {
         "field_hash": {
@@ -1683,7 +1714,7 @@
         "reviewed_at": "2026-08-15T10:31:00.374Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
-        "evidence": "2 sentence(s) over 60 words \u2014 written for the eye, not the ear; split"
+        "evidence": "2 sentence(s) over 60 words — written for the eye, not the ear; split"
       },
       {
         "field_hash": {
@@ -1760,6 +1791,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-26T07:19:59.765Z",
+  "updated_at": "2026-11-16T07:13:24.112Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

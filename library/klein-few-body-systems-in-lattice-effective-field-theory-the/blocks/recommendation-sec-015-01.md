@@ -1,1 +1,0 @@
-Hence, a formalism must be used that puts together the diﬀerent pieces of diﬀerent representations to restore the rotational invariant state where the angular momentum is a good quantum number, see for example in [80, 81].

@@ -101,7 +101,7 @@ and the Binet recurrence are then *derived*:
 * (ii) `λ_+ + λ_- = q − q⁻¹`   (Vieta sum = linear coefficient);
 * (iii) the matrix-power entries `(Tⁿ)_{21} = binet n` satisfy the
   second-kind Chebyshev recurrence `U_{n+1} = (q−q⁻¹) U_n + U_{n−1}`. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/shell-structure-eigenvalues.ts
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/shell-structure-eigenvalues.ts
 theorem shell_structure_eigenvalues (q lp lm : ℝ)
     (hp : lp ^ 2 - (q - q⁻¹) * lp - 1 = 0)
     (hm : lm ^ 2 - (q - q⁻¹) * lm - 1 = 0)

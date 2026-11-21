@@ -124,7 +124,7 @@ recorded as tested and refuted."* Nothing here changes that.
 central shift; that the nucleon words are in that shape is established by the
 `_GEN_CHAINS` reading above and re-verified numerically, not proved here.
 
--- Ref: [manuscript] `knots-particles-confinement/up-quark-properties.md`
+-- Ref: [leitner2026] `knots-particles-confinement/up-quark-properties.md`
 -/
 import Mathlib.Tactic
 

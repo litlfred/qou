@@ -20,7 +20,7 @@ the maximal-cell branch-point gap is `≈ {j√D}·(q_j − 1) ≥ (c/j)·(q_j �
 
 `sqrt_badlyApproximable` : `∃ c > 0, ∀ j ≥ 1, c/j ≤ ‖j√D‖`.
 
--- Ref: [manuscript] bean qou-jplv; Liouville-type bound for quadratic irrationals
+-- Ref: [leitner2026] bean qou-jplv; Liouville-type bound for quadratic irrationals
 -/
 
 namespace QOU.MathlibExt

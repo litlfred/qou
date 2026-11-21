@@ -42,7 +42,7 @@ to `deg_q cₙ = n²` **from the recursion** rather than from a docstring claim.
 taken from the witness is the recursion itself.
 The Stokes summation is NOT here. §7c: `ℕ` degrees. Sorry-free. No fit; nothing wired.
 
--- Ref: [manuscript] docs/audits/2026-08-01-c1-inf-slope-half-rsz-stokes.md (W2 ∞)
+-- Ref: [leitner2026] docs/audits/2026-08-01-c1-inf-slope-half-rsz-stokes.md (W2 ∞)
 -- Ref: [ramis-sauloy-zhang2013] https://arxiv.org/abs/0903.0853 (§1.3.2 order/level; §4-5 summation/Stokes)
 -/
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic

@@ -58,8 +58,7 @@ therefore a consistency computation internal to convention D, and it is not
 evidence for selecting D over the full-Hecke Ocneanu trace (convention C) in
 any channel — using it that way would be circular. The independent
 characterisation of D is the Temperley–Lieb uniqueness argument
-($y_{(1^3)}(z) = 0$ has the unique non-degenerate root $z = q^3/(q^2+1)$;
-`QOU.BraidsAndKnots.MarkovTraceTLUniqueness`), whose premise — that the
+($y_{(1^3)}(z) = 0$ has the unique non-degenerate root $z = q^3/(q^2+1)$), whose premise — that the
 relevant fibre functor lands in $\mathrm{Rep}(\mathrm{SU}_q(2)) \simeq
 \mathrm{TL}_3$ — is a separate question. See the
 [trace-convention registry](../../../docs/coordination/trace-convention-registry.md).

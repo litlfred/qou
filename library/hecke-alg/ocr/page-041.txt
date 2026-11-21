@@ -1,0 +1,60 @@
+CHAPTER 4
+
+The q-Schur Algebra
+
+The g-Schur algebra was introduced by Dipper and James [15] who showed
+that this algebra completely determines the decomposition matrices of the finite
+general linear groups in non-defining characteristic. The g-Schur algebras also
+have applications to the representation theory of the general linear groups over
+other fields. We do not explore these connections here. Instead, in this Chapter we
+‘lift’ the Murphy basis of .# to give a cellular basis of the g—-Schur algebra.
+
+1. Semistandard tableaux
+
+4.1 LetA(d,n) be a set of compositions of n with a most d non-zero parts. The
+q-Schur algebra is the endomorphism algebra
+
+Sdn) =Ende ( GM").
+AEA(d,n)
+Note that the g-Schur algebra, like #, is dependent upon the choices of R and q.
+By definition, W(d,n) = 8, vea(an) Home (M” M*); accordingly, much of
+this Chapter is devoted to understanding the ideals M"“ and the homomorphisms
+between them. To this end we now introduce another kind a tableaux.
+
+4.2 Let p and v be compositions of n. A p-tableau of type indextableau!type v is
+a map T:[#] —+N such that vj = # {2 € [4] | T(z) =7} fori > 1. Again we write
+Shape(T) = pu.
+
+For example, if w = (1”) then the tableaux of Chapter 3 are precisely the
+tableaux of type w. We continue to use lower case letters for tableaux of type w;
+tableaux of arbitrary type will be denoted by upper case letters.
+
+A pe-tableau T is row semistandard if the entries in each row of T are non-
+decreasing; T is semistandard if (i) is a partition, and (ii) T is row semistandard
+and the entries in each column of T are strictly increasing. Let T(t, 1) be the set
+of row semistandard p-tableaux of type v and i To(y1,v) be the set of semistandard
+p-tableaux of type v.
+
+4.3 Examples Suppose that y is a composition of n.
+
+(i) LetT! be the tableau of type ye such that T(ij) = 7 for all (7,7) € [#]. Then
+
+T# is the unique semistandard y-tableau T” of type yt. For example, if ye = (3,2, 1)
+
+then T# = ae
+
+(ii) All of the semistandard tableaux of type A can be obtained from T! by
+‘moving nodes up’ in T’. Continuing example (i), the other semistandard tableaux
+
+12]
+djifa djifit2 pays iifif2}2 iii [243
+of type (3, 2,1) are BEE REE. ee and (tT PPE).
+
+Next we describe a way of converting tableaux of type w into tableaux of type v.
+Let t be a tableau of type w and let v be a composition. Then v(t) the tableau of
+
+PRE
+
+BSE
+
+36

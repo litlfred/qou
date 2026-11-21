@@ -138,14 +138,38 @@ M_N_MEV_ERR = _M_N_MEV_ERR
 M_N_MINUS_P_MEV     = _M_N_MINUS_P_MEV
 M_N_MINUS_P_MEV_ERR = _M_N_MINUS_P_MEV_ERR
 
-Q_NEUTRON_MEV     = M_N_MEV - M_P_MEV - M_E_MEV            # 0.78233341 MeV
+# Computed below, inside the precision pin (it was here, at the importer's ambient
+# dps -- 53-bit on a default import, so it held a binary64 value in an mpf).
 # `_math.sqrt` here, on three mpf arguments, is the exact hazard named in the
 # header: it does not raise, it returns a binary64 float. So the quadrature
 # sum was silently the one float64 quantity left in this module the moment the
 # casts came off. `_mpm.sqrt` keeps it mpf.
 import mpmath as _mpm  # noqa: E402
+
+# --- PRECISION PIN -----------------------------------------------------------------------------
+# Every mpf below is built inside `_mpm.workdps(_CONST_DPS)`, so these constants carry the SAME
+# digits no matter what precision the importer happened to have.
+#
+# WHY THIS IS NEEDED, MEASURED. Without it the module builds at the caller's AMBIENT dps, which
+# for a fresh importer is mpmath's default 15. `VOL_FIGURE_EIGHT = 2*clsin(2, pi/3)` -- the value
+# #6904 exactified precisely so it would stop being a float64 -- then came out **6.995e-17
+# relative from true** on a default import, and exact only if the importer happened to raise dps
+# BEFORE the import. Same file, same commit, two different values depending on import order,
+# across 213 importers. Exactifying a constant does not help if it is then evaluated at binary64
+# precision, and nothing in the module said which precision it was evaluated at.
+#
+# 60 dps is above `qou_substrate.precision`'s 50-dps compute floor with room to spare; an mpf is a
+# fixed binary object once built, so a lower-precision consumer rounds it in arithmetic exactly as
+# it rounds anything else.
+_CONST_DPS = 60
+# -----------------------------------------------------------------------------------------------
 from codata_constants import M_P_MEV_VALIDATION
-Q_NEUTRON_MEV_ERR = _mpm.sqrt(M_N_MEV_ERR**2 + M_P_MEV_ERR**2 + M_E_MEV_ERR**2)
+with _mpm.workdps(_CONST_DPS):
+    # Inside the pin: at ambient dps-15 both differences below were binary64 values in an mpf
+    # (measured 2026-10-05: m_n_derived_3input == mpf(float(...)) was True and it differed from
+    # M_N_MEV, the value the comment below says it equals by construction).
+    Q_NEUTRON_MEV     = M_N_MEV - M_P_MEV - M_E_MEV            # 0.78233341 MeV
+    Q_NEUTRON_MEV_ERR = _mpm.sqrt(M_N_MEV_ERR**2 + M_P_MEV_ERR**2 + M_E_MEV_ERR**2)
 
 # m_n via the 3-input scheme (m_n = m_p + Q_β + m_e) — the canonical anchor
 # list pins m_p, m_e and the β-decay sector, deriving m_n rather than using
@@ -153,25 +177,49 @@ Q_NEUTRON_MEV_ERR = _mpm.sqrt(M_N_MEV_ERR**2 + M_P_MEV_ERR**2 + M_E_MEV_ERR**2)
 # (Q_NEUTRON_MEV = M_N_MEV − M_P_MEV − M_E_MEV), so this is the same CODATA
 # value, named for the 3-input consumers. Restores the missing export that
 # delta_lambda_empirical_tabulation.py imports (bean t2vq).
-m_n_derived_3input = M_P_MEV + Q_NEUTRON_MEV + M_E_MEV     # = M_N_MEV
+with _mpm.workdps(_CONST_DPS):
+    m_n_derived_3input = M_P_MEV + Q_NEUTRON_MEV + M_E_MEV     # = M_N_MEV
 
-G_F_MEV     = 1.1663788e-11   # ± 0.0000006e-11 MeV⁻²
-G_F_MEV_ERR = 0.0000006e-11
+# NO FLOAT (owner ruling, 2026-09-07). The CODATA masses were flipped to mpf
+# earlier; these four were the residue, and they were bare binary64 literals
+# rather than casts -- so float64 round-tripped their digits and no VALUE was
+# lost, but every consumer inherited a 17-digit floor it had to know to undo
+# with `mpf(str(...))`. Carrying them as mpf removes the floor at the source.
+#
+# Measured before flipping: ZERO f-string format-spec uses across all four
+# (17 + 6 + 4 + 4 importers), so the `f"{x:.6f}"` break that made three
+# producers un-runnable in qou-9q4h has no site to fire at here.
+with _mpm.workdps(_CONST_DPS):
+    G_F_MEV     = _mpm.mpf("1.1663788e-11")   # ± 0.0000006e-11 MeV⁻²
+    G_F_MEV_ERR = _mpm.mpf("0.0000006e-11")
 
-HBAR_MEV_S  = 6.582119569e-22 # ± 0.000000030e-22 MeV·s (exact in SI since 2019)
-HBAR_MEV_S_ERR = 0.0          # exact by definition
+# DERIVED EXACTLY, not stored. Since the 2019 SI redefinition both h and e are
+# exact defining constants, so hbar in MeV·s = h / (2 pi) / (e · 1e6) is exact
+# to any precision -- irrational only through pi. The stored 6.582119569e-22
+# was a 10-digit TRUNCATION of that, 7.734e-11 relative from the true value,
+# while the line's own comment said "exact in SI since 2019" and the ERR below
+# says 0.0. The corpus already knew it was exact and stored it truncated --
+# the same shape as the Vol(4₁) float64 this file carried until #6904
+# (bean qou-9ies).
+with _mpm.workdps(_CONST_DPS):
+    _H_SI_EXACT = _mpm.mpf("6.62607015e-34")    # J·s,  exact by SI definition
+    _E_SI_EXACT = _mpm.mpf("1.602176634e-19")   # C,    exact by SI definition
+    HBAR_MEV_S  = _H_SI_EXACT / (2 * _mpm.pi) / (_E_SI_EXACT * _mpm.mpf("1e6"))
+    HBAR_MEV_S_ERR = _mpm.mpf(0)  # exact by definition -- and now actually exact
 
 # noqa: P31 - DELIBERATE determination choice, not a stale edition. The
 # Cs-recoil value is retained on purpose; CODATA-2022 would be a
 # different determination, not merely newer digits.
-ALPHA_EM_INV     = 137.035999084  # noqa: P31 - CODATA 2018, Cs recoil, +/- 21e-9
-ALPHA_EM_INV_ERR = 0.000000021
+with _mpm.workdps(_CONST_DPS):
+    ALPHA_EM_INV     = _mpm.mpf("137.035999084")  # noqa: P31 - CODATA 2018, Cs recoil, +/- 21e-9
+    ALPHA_EM_INV_ERR = _mpm.mpf("0.000000021")
 
 MU_OVER_E        = _M_MU_OVER_M_E      # was 206.7682830 (CODATA-2018)
 MU_OVER_E_ERR    = _M_MU_OVER_M_E_ERR
 
-TAU_OVER_E       = 3477.23        # ± 0.23 (CODATA 2022; m_τ = 1776.86 MeV, m_e = 0.511 MeV)
-TAU_OVER_E_ERR   = 0.23
+with _mpm.workdps(_CONST_DPS):
+    TAU_OVER_E       = _mpm.mpf("3477.23")   # ± 0.23 (CODATA 2022; m_τ = 1776.86 MeV, m_e = 0.511 MeV)
+    TAU_OVER_E_ERR   = _mpm.mpf("0.23")
 
 # ── Molecular bond dissociation energies (experimental comparison) ─
 # Observed D_0 values used purely as comparison targets for the
@@ -218,7 +266,8 @@ G_A_PDG_ERR = 0.0013
 #
 # Computed at the caller's ambient precision, so it is exact to whatever dps is
 # in force rather than frozen at any digit count.
-VOL_FIGURE_EIGHT     = 2 * _mpm.clsin(2, _mpm.pi / 3)
+with _mpm.workdps(_CONST_DPS):
+    VOL_FIGURE_EIGHT     = 2 * _mpm.clsin(2, _mpm.pi / 3)
 # Retained at 0: an exact constant has no measurement uncertainty, and the term
 # is consumed by mass-from-q-symbolic's error budget. Dropping the NAME would
 # break that import; giving it a fictitious 1e-12 inflates the budget with an
@@ -291,12 +340,15 @@ VOL_4_1_50DPS_STR       = "2.0298832128193072500424051085490405718833786150606"
 # uncertainty" convention). For true high-precision (50 dp+)
 # evaluation, callers should compute via SnapPy / mpmath at the
 # call site.
+# witness-copy-intentional: source constant (SnapPy); downstream witnesses copy it, not
+# the reverse.
 VOL_6_2          = 4.400832516123046  # SnapPy 6_2 volume
 VOL_6_2_ERR      = 1e-15
 VOL_8_11         = 8.286316817806593  # SnapPy 8_11 volume
 VOL_8_11_ERR     = 1e-15
 VOL_L6A4         = 7.3277247534177521  # Borromean = 8·G (per VOL_BORROMEAN above)
 VOL_L6A4_ERR     = 1e-15
+# witness-copy-intentional: source constant (SnapPy), as VOL_6_2.
 VOL_7_SQ_1       = 4.749499981874439  # Whitehead-pair / α-α coupling knot
 VOL_7_SQ_1_ERR   = 1e-15
 # EIGHT_G defined later (depends on CATALAN constant defined below).

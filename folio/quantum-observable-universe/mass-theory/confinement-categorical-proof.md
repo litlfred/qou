@@ -30,7 +30,7 @@ in QCD:*
 
 *The curvature 2-cocycle $F$ encoding the Hecke + Yang–Baxter
 relations
-([curvature-rank stratification](#prop:curvature-rank-gb-stratification))
+([curvature-rank stratification](#conj:curvature-rank-gb-stratification))
 plays the role of the **string tension** categorically: $F$ is the
 obstruction to extracting a non-central element through the GB
 filtration, just as the QCD string tension is the obstruction to

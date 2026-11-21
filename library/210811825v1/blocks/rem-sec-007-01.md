@@ -1,0 +1,1 @@
+R and U are orientation preserving actions, whereas S and T are ori- entation reversing. Therefore the orientation preserving elements of Isom(B), denoted Isom+(B), will have the form Ri(ST)jU l. The orientation reversing elements will take the form either RiSU l or RiTU l.

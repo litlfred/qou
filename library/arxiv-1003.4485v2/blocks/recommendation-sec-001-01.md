@@ -1,1 +1,0 @@
-A category consists of objects, which we draw as dots: \[ \bullet \,\, x \] and morphisms between objects, which we draw as arrows between dots: \[ \xymatrix{ x \bullet \ar@/^1pc/[rr]^{f} && \bullet y } \] You should think of objects as `things' and morphisms as `processes'.

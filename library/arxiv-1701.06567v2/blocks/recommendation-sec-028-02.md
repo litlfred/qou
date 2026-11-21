@@ -1,1 +1,0 @@
-The reader should keep in mind that there are two non-trivial maps (dualities) involved in the study of knots.[^4] First, there is a rather non-trivial map [\[Line-UV\]](#Line-UV){reference-type="eqref" reference="Line-UV"} between line operators in the IR theory $T[M_3]$ and its UV description (or, rather, one of many UV descriptions).

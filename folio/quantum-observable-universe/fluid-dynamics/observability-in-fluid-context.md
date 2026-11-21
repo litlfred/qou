@@ -1,4 +1,4 @@
-Before formalising [NS regularity](#def:ns-regular-qou), we clarify the QOU observability axiom $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ structurally within the fluid-dynamical setting.
+Before defining [NS regularity](#def:ns-regular-qou), the QOU observability axiom $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ is clarified structurally within the fluid-dynamical setting.
 
 **Categorical statement.**
 No morphism $\phi \colon \mathbf{1} \to \mathrm{Ad}(A)$ exists within $\mathbf{C}$. The adjoint representation of the Frobenius--Hopf object $A$ admits no trivial sub-object.

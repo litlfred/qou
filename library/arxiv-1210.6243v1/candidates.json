@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1210.6243v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "3ff2f5358b25586e10469081d9b0a6e07671cced9d3f3a5074e55f5f6c749c74",
   "file": "1210.6243v1.pdf"
@@ -16,31 +19,45 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
   "candidates": 1,
   "by_kind": {
-   "recommendation": 1
+   "proposition": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "He went on to describe a thought experiment for which he stated \"that you should not try to set up\" because \"the apparatus would have to be made on an impossibly small scale to show the effects we are interested in.\" He used these effects to help illustrate the phenomena of wave-particle duality, which is a postulate that all particles exhibit both wave and particle properties.",
-   "strength": "should-not",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-3",
+   "statement": "By placing a movable mask in front of a double-slit to control the transmission through the individual slits, probability distributions for single- and double-slit arrangements were observed.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-front-matter.md (p. 1-2)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-2",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-front-matter.md (p. 1-2)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-front-matter-01",
+   "block_iri": "library/arxiv-1210.6243v1/blocks/prop-sec-front-matter-01",
+   "claim_id": "arxiv-1210.6243v1#prop-sec-front-matter-01"
   }
  ]
 }

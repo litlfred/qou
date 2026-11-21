@@ -1,4 +1,4 @@
--- Ref: [manuscript] Ch. 10, §molecular-braid
+-- Ref: [leitner2026] Ch. 10, §molecular-braid
 -- Molecular braid in H_{N_mol}(q)
 
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic

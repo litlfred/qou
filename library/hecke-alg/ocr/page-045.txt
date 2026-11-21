@@ -1,0 +1,56 @@
+AO 4, THE q-SCHUR ALGEBRA
+
+form. Oo
+
+This allows us to give a Specht series for M™"; that is, a filtration of M" with
+each composition factor isomorphic to a Specht module.
+
+4.11 Corollary Let pp be a composition of n. Then, as an #/-module, M" has a
+filtration M¥ = M, > Mo > --- > Mi41 = 0 such that fori = 1,2,...,k there
+exists a partition \; of n with M;/Mj4; = S**. Moreover, for each partition » the
+number of \; equal to A is the number of semistandard \-tableaur of type pt.
+Proof. Let {S1,...,S,} be the set of semistandard tableaux of type ys where
+8; € Toi.) and A; & A; whenever i > j. For i = 1,2,...,4+1 let M; be the
+R-module of M“ with basis {ms,. |i <j < & and t € Std(A; }. Then
+
+M" = M, > My>-+-> Mp > Miyi = 0
+
+and by Theorem 3.18 each M; is a right #-module.
+
+Fix an integer i with 1 <i < k. Then Mj .#*' C Mjy1. Consequently,
+there is a well-defined homomorphism @ : $** — M;/Mi41 of #-modules given by
+A(m_) = ms,1+Mi41 for all t € Std(A). The map @ is certainly surjective; moreover,
+both modules have the same rank, so @ is an isomorphism. oO
+
+The last result in this section requires some more notation. Let A be a partition
+of n and let ys and v be compositions of n. Suppose that S$ € Jo(A, 4) and T €
+
+To(A, v). Now define
+Mst = So mse
+st
+
+where the sum is over all pairs (s, t) of standard \-tableaux such that j(s) = $ and
+v(t) =T. Then, by (4.7), msr € M" 0 M”*. This allows us to prove the following
+result whose importance derives from Corollary 4.9.
+
+4.12 Corollary Suppose that ys and v are compositions of n. Then M"# 1 M”* is
+free as an R-module with basis
+
+{ mss SE To(A, 1) and TE THM YY
+
+for some partition of n
+
+Proof. Suppose that h is a non-zero element of M47 M’*. Then, with respect to
+the Murphy basis of # we may write h = > rsymg_ for some rs, €E R. Nowhe M",
+so by Theorem 4.10 if rs, # 0 then j(s) is semistandard and rs, = ri, whenever
+u(s) = p(s’). Similarly, because h € M’™ if rs, # 0 then v(t) is semistandard and
+rst = Psu Whenever v(t) = v(t’). Consequently, if u(s) = p(s’) and v(t) = v(t!)
+then rs, = Psp = Psy. The result follows. oO
+
+3. The semistandard basis theorem
+
+We are now ready to prove that the g-Schur algebras are cellular. In fact, we
+shall see that they are quasi—hereditary.
+
+Recall that A(d,n) is the set of compositions and let A*(d,n) be the set of
+partitions contained in A(d,n). Suppose that \ € At+(d,n), pv € A(d,n) and that

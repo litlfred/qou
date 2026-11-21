@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/disssubmission/blocks/cor-sec-015-02",
+  "@type": [
+    "folio-assistant-sci:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "pageStart": 46,
+  "pageEnd": 49,
+  "text": "cor-sec-015-02.md",
+  "derivedFrom": "library/disssubmission/sections/sec-015",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/disssubmission/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2.14",
+    "source_kind": "corollary",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/sec-015-27-the-main-argument.md (p. 46-49) citing [31, th. 7.1]",
+    "claim_id": "disssubmission#corollary:2.14",
+    "lean_status": "unformalized"
+  }
+}

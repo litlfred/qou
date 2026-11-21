@@ -1,0 +1,1 @@
+3 Let H satisfy the (equivalent) conditions of Lemma A.1. Then there are two-sided integrals Λ ∈H, µ ∈ˆH which are traces in the sense that ⟨µ, ab⟩= ⟨µ, ba⟩, ⟨αβ, Λ⟩= ⟨βα, Λ⟩ for all a, b ∈H, αβ ∈ˆH. The category Rep D(H) is a spherical category.

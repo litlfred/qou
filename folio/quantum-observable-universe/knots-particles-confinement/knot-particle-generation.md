@@ -7,8 +7,8 @@ $$
   m + n \leq N(\chi) \bigr\},
 $$
 
-*where $T_{m,n}$ winds $m$ times around the meridian and $n$ times around the longitude of $\mathbb{T}^2$, and $N(\chi)$ is a cutoff determined by the Euler characteristic of the Frobenius--Hopf object.* For the Descartes universe with $\chi(A) = -6$, the bound is $N(-6) = 9$, admitting:
+*where $T_{m,n}$ winds $m$ times around the meridian and $n$ times around the longitude of $\mathbb{T}^2$, and $N(\chi)$ is a cutoff determined by the Euler characteristic of the Frobenius--Hopf object.* For the Descartes universe with $\chi_{\mathrm{eu}}(M_0) = -6$, the bound is $N(-6) = 9$, admitting:
 
 See [Table](#tbl:knot-particle-generation-table-data).
 
-We reserve $q$ for the substrate parameter and $p$ for base points. The winding indices are always $(m,n)$.
+One reserves $q$ for the substrate parameter and $p$ for base points. The winding indices are always $(m,n)$.

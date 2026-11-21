@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1712.03058v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "ba48c5bbb246737456538f59546e1946a6f6613203828797e55aa000af7900d2",
   "file": "1712.03058v3.pdf"
@@ -16,121 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 7,
-  "by_kind": {
-   "recommendation": 7
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This procedure might seem overly complicated at first sight because, intuitively, the parameter swarm we obtain as an output from the iterated filtering algorithm should contain some measure of uncertainty.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-014-153-inference.md",
-   "section_title": "Inference",
-   "pages": "14-17",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Then the algorithm can be applied to the simulated set and it should give back the values used for simulation.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-015-154-practical-advice.md",
-   "section_title": "Practical advice",
-   "pages": "17-18",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "As a last step before applying the iterated filtering algorithm to our observations we recommend to fit the data first to the simpler, deterministic model in order to get a feeling for how the parameters behave and identify possible problems with the likelihood surface etc.",
-   "strength": null,
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-015-154-practical-advice.md",
-   "section_title": "Practical advice",
-   "pages": "17-18",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "However, in a last step a global search should be carried out which means that random starting values are chosen and, ideally, then all searches converge to the same MLE regardless of their starting values.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-015-154-practical-advice.md",
-   "section_title": "Practical advice",
-   "pages": "17-18",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For the reader new to the theory of splines we recommend [@Stoer2002].",
-   "strength": null,
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-016-16-extensions.md",
-   "section_title": "Extensions",
-   "pages": "18-21",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Further reading For the reader interested in more details about the theoretical background of iterated \ufb01ltering methods we recommend Ionides et al.",
-   "strength": null,
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-020-182-further-reading.md",
-   "section_title": "Further reading",
-   "pages": "25-29",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For the reader interested in learning how to work with the R package pomp we recommend the study of King et al.",
-   "strength": null,
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-020-182-further-reading.md",
-   "section_title": "Further reading",
-   "pages": "25-29",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

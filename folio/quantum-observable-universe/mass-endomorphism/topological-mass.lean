@@ -23,7 +23,7 @@ idempotent splitting of End_𝒞(A_{n+1}) and the linearity of the trace.
 
 ## References
 
-- [manuscript] §3 Lifting and Descent
+- [leitner2026] §3 Lifting and Descent
 
 **Ground ring**: `ℝ` (geometric/analytic realisation).
 Uses ℝ-specific analysis (trig, norms, real powers).
@@ -66,7 +66,7 @@ structure MassDecomposition (R : Type*) [NormedCommRing R] where
 
     This is always valid. Equality holds when the descended and transient
     components are "Frobenius-orthogonal" (norm-additive). -/
--- Ref: [manuscript] §3, Theorem: Topological decomposition of mass
+-- Ref: [leitner2026] §3, Theorem: Topological decomposition of mass
 theorem mass_upper_bound (md : MassDecomposition R) :
     categoricalMass md.totalTrace ≤
     categoricalMass md.descendedTrace + categoricalMass md.transientTrace := by
@@ -91,7 +91,7 @@ theorem mass_upper_bound (md : MassDecomposition R) :
     non-negative reals: the descended trace is `‖Hol_{∇_A}(γ₀)‖ ≥ 0`
     and each transient trace is `‖Φ_q(zᵢ)‖ ≥ 0`.  For non-negative
     reals, `‖a + b‖ = |a + b| = a + b = |a| + |b| = ‖a‖ + ‖b‖`. -/
--- Ref: [manuscript] §3, Theorem: Topological decomposition of mass
+-- Ref: [leitner2026] §3, Theorem: Topological decomposition of mass
 -- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 theorem norm_additivity_of_nonneg_traces
     (md : MassDecomposition ℝ)
@@ -105,7 +105,7 @@ theorem norm_additivity_of_nonneg_traces
 
 /-- **Exact mass decomposition** under non-negativity of traces:
     m(γ) = m_desc(γ) + m_trans(γ). -/
--- Ref: [manuscript] §3, Theorem: Topological decomposition of mass
+-- Ref: [leitner2026] §3, Theorem: Topological decomposition of mass
 theorem mass_decomposition_exact
     (md : MassDecomposition ℝ)
     (h_desc_nonneg : 0 ≤ md.descendedTrace)
@@ -117,7 +117,7 @@ theorem mass_decomposition_exact
 
 /-- The descended trace equals the trace of the base-level cycle γ₀,
     because τₙ projects onto im(ℓₙ) ≅ End_𝒞(Aₙ). -/
--- Ref: [manuscript] §3, Theorem: Topological decomposition of mass
+-- Ref: [leitner2026] §3, Theorem: Topological decomposition of mass
 theorem descended_trace_is_base_level
     {N : Type*} [AddCommGroup N] [Module R N]
     {M : Type*} [AddCommGroup M] [Module R M]
@@ -131,7 +131,7 @@ theorem descended_trace_is_base_level
   simpa [LinearMap.comp_apply] using congr_fun (congr_arg DFunLike.coe retraction) γ₀
 
 /-- The idempotent decomposition produces a valid MassDecomposition. -/
--- Ref: [manuscript] §3
+-- Ref: [leitner2026] §3
 theorem idempotent_gives_mass_decomposition
     {M : Type*} [AddCommGroup M] [Module R M]
     (τ : M →ₗ[R] M) (h_idem : τ ∘ₗ τ = τ)

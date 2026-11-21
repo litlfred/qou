@@ -16,7 +16,7 @@ an axiom with full bibliographic citation.
 ## References
 
 - [yekutieli2015] Nonabelian multiplicative integration on surfaces
-- [manuscript] §3
+- [leitner2026] §3
 
 **Ground ring**: `ℝ` (geometric/analytic realisation).
 Uses ℝ-specific analysis (trig, norms, real powers).

@@ -1,1 +1,0 @@
-So the orthocomplement K⊥of any embedding i : K ,→L must be a negative deﬁnite even lattice of rank six with discriminant 3, hence abstractly isomorphic to E6(−1) by the classiﬁcation of lattices with small discriminant in [21].

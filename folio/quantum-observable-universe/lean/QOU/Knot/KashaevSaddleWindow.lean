@@ -23,8 +23,8 @@
   and `W` that belongs to the caller.  Lumping it into a closed form would fix
   a particular window scaling into the statement.
 
-  -- Ref: [manuscript] QOU/Knot/KashaevWindowAssembly.lean
-  -- Ref: [manuscript] QOU/Knot/KashaevRatioExpansion.lean
+  -- Ref: [leitner2026] QOU/Knot/KashaevWindowAssembly.lean
+  -- Ref: [leitner2026] QOU/Knot/KashaevRatioExpansion.lean
 -/
 import QOU.Knot.KashaevWindowAssembly
 

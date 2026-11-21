@@ -1,1 +1,0 @@
-Although we do not have an answer to these questions, let us note that from the point of view of the boundary ensemble we already know that we have not incorporated all of the constraints that the moments of a fully consistent statistical ensemble of 2d CFTs should obey.

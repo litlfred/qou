@@ -1,0 +1,1 @@
+For the unitarization result of [185], one only needs λ, γ ∈ Λ +(q0) (but to construct pγ for γ = λ in the F4 one also needs pν with ν ∈ Λ+(q0), see the proof of the proposition at page 274 in [185]). On the other hand, for our purposes (a search of strongly unitary structures), see Theorem 2.8, we need the stronger positivity results of

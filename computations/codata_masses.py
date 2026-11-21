@@ -81,7 +81,7 @@ def main() -> int:
         "values registry can pin Lean and Markdown literals via "
         ":leanval[m_e_MeV] / :leanval[m_p_MeV] / :leanval[m_n_MeV]."
     )
-    w.set_content_block("prop:three-calibration-inputs")
+    w.set_content_block("def:three-calibration-discipline")
     w.add_parameter("source", "CODATA 2022 (m_e, m_p); AME 2020 + Q_β (m_n, codata_2022_source.M_N_MEV_AME_DERIVED)")
 
     w.add_assertion(

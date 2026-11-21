@@ -8,4 +8,4 @@ $$
 
 Standard analysis asks whether supplying perfectly smooth initial data $v_0 \in C^\infty(\mathbb{R}^3)$ featuring $\nabla \cdot v_0 = 0$ alongside finite energy guarantees a smooth global solution, or whether a singularity triggers abruptly in finite time.
 
-The defined [NS obstruction](#def:ns-obstruction) $\mathrm{NS}(A)$ resolves this exactly using the categorical properties native to the quantum universe. $\mathrm{NS}(A) = 0$ enforces regularity. $\mathrm{NS}(A) \neq 0$ guarantees blowup. The obstruction rests on $\chi(A)$. An anchor of $\chi(A) = 0$ ([torus example](#ex:torus-ns-regular)) forces global regularity. An anchor of $\chi(A) = -6$ ([Descartes universe](#thm:ns-singularity-descartes)) forces finite-time singularities.
+The defined [NS obstruction](#def:ns-obstruction) $\mathrm{NS}(A)$ resolves this exactly using the categorical properties native to the quantum universe. $\mathrm{NS}(A) = 0$ enforces regularity. $\mathrm{NS}(A) \neq 0$ guarantees blowup. The obstruction rests on $\chi(A)$.

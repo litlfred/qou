@@ -1,0 +1,1 @@
+Let V is a finite dimensional odd vector space, and Y = V @ V*. The space Y has a canonical volume element dudv*, defined as follows: if e1,...,e€m be a basis of V and e?, ...,e% is the dual basis of V* then dudu* = e; Aej... Aen Aen. Let dy = (dvdv*)~' be the corresponding supervolume element.

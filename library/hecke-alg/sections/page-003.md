@@ -1,229 +1,82 @@
 ---
 doc_id: hecke-alg
-doc_title: "symmetric group Andrew Mathas Author address: School thema University Sydney, Sydney 00. ustralia"
+doc_title: "Hecke algebras and Schur algebras of the symmetric group"
 section_id: page-003
 section_title: "Page 3"
-section_number: null
 pages: 3-3
+pdf_page: 3
 source_pdf: hecke_alg.pdf
 source_sha256: 4ac08dfd165fb366
-toc_source: undetermined
+text_source: ocr
+granularity: page
+doc_brief: "Hecke algebras and Schur algebras of the symmetric group — 78 sections: Page 1; Page 2; Page 3"
 ---
-Con
-ten
-ts
-In
-tro
-duction
+Contents
+
+Introduction
+
+Chapter 1. The Iwahori—Hecke algebra of the Symmetric Group
+1. The Symmetric group
+2. The Iwahori—Hecke algebra
+3. The 0-Hecke algebra
+Notes on Chapter 1
+
+Chapter 2. Cellular algebras
+1. Cellular bases
+2. Simple modules in a cellular algebra
+Notes on Chapter 2
+
+Chapter 3. The Modular representation theory of .#
+1. The combinatorics of tableaux
+2. The Murphy basis
+3. Specht modules and Jucys-Murphy elements
+4. The irreducible #-—modules
+Notes on Chapter 3
+
+Chapter 4. The g-Schur Algebra
+1. Semistandard tableaux
+2. A Specht series for M”
+3. The semistandard basis theorem
+Notes on Chapter 4
+
+Chapter 5. The Jantzen-Schaper theorem
+1. The Gram determinant of W*
+2. The Jantzen sum formula
+3. The blocks of .W(d.n) and #
+4. Irreducible Specht modules and Weyl modules
+Notes on Chapter 5
+
+Notational Index
+Bibliography
+
+Index
+
 iv
-Chapter
-.
-The
-Iw
-ahori{Hec
-k
-e
-algebra
-of
-the
-Symmetric
-Group
-
-.
-The
-Symmetric
-group
-
-.
-The
-Iw
-ahori{Hec
-k
-e
-algebra
-
-.
-The
-0{Hec
-k
-e
-algebra
-
-Notes
-on
-Chapter
-
-
-Chapter
-.
-Cellular
-algebras
-	
-.
-Cellular
-bases
-	
-.
-Simple
-mo
-dules
-in
-a
-cellular
-algebra
-
-Notes
-on
-Chapter
-
-
-Chapter
-.
-The
-Mo
-dular
-represen
-tation
-theory
-of
-H
-
-.
-The
-com
-binatorics
-of
-tableaux
-
-.
-The
-Murph
-y
-basis
-0
-.
-Sp
-ec
-h
-t
-mo
-dules
-and
-Jucys{Murph
-y
-elemen
-ts
-
-.
-The
-irreducible
-H
-{mo
-dules
-
-Notes
-on
-Chapter
-
-
-Chapter
-.
-The
-q
-{Sc
-h
-ur
-Algebra
-
-.
-Semistandard
-tableaux
-
-.
-A
-Sp
-ec
-h
-t
-series
-for
-M
-
-	
-.
-The
-semistandard
-basis
-theorem
-0
-Notes
-on
-Chapter
-
-
-Chapter
-.
-The
-Jan
-tzen{Sc
-hap
-er
-theorem
-
-.
-The
-Gram
-determinan
-t
-of
-W
-
-
-.
-The
-Jan
-tzen
-sum
-form
-ula
-
-.
-The
-blo
-c
-ks
-of
-S
-(d;
-n)
-and
-H
-0
-.
-Irreducible
-Sp
-ec
-h
-t
-mo
-dules
-and
-W
-eyl
-mo
-dules
-
-Notes
-on
-Chapter
-
-
-Notational
-Index
-
-Bibliograph
-y
-
-Index
-
-iii
+
+Oo NOwrue
+
+16
+
+17
+17
+20
+26
+31
+34
+
+36
+36
+39
+40
+44
+
+46
+46
+57
+60
+63
+65
+
+67
+71
+73

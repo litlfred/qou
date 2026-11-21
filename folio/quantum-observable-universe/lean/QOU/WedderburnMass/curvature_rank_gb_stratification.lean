@@ -23,7 +23,11 @@ class CurvatureRankGbStratificationContext extends QOU.Shared.MarkovTraceContext
   quotient_subset_rank : ∀ r : ℕ, quotient_set r ⊆ {T_w : A | rank_T_w T_w = r}
   /-- The reverse inclusion of the stratification. -/
   rank_subset_quotient : ∀ r : ℕ, {T_w : A | rank_T_w T_w = r} ⊆ quotient_set r
-/-- **Proposition statement** (from manuscript):
+/-- **Conjecture statement** (`conj:curvature-rank-gb-stratification`; demoted from
+`prop:` 2026-11-20 because its proof does not go through, bean `qou-6qbv`). The
+class above carries the two inclusions as fields and has no instance.
+
+From the manuscript:
 
 The curvature-rank stratifies the GB filtration:*
 
@@ -48,7 +52,7 @@ $$
 *Consequence: the
 
     The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/curvature-rank-gb-stratification.ts
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/curvature-rank-gb-stratification.ts
 def curvature_rank_gb_stratification [ctx : CurvatureRankGbStratificationContext] :
     ∀ r : ℕ, ctx.quotient_set r = {T_w : ctx.A | ctx.rank_T_w T_w = r} := by
   intro r

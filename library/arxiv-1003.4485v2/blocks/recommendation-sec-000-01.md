@@ -1,1 +1,0 @@
-This should not be surprising, since while these rival approaches to quantum gravity disagree about almost everything, they both agree that point particles are not enough: we need higher-dimensional extended objects to build a theory sufficiently rich to describe the quantum geometry of spacetime.

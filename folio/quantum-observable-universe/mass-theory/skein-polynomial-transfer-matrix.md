@@ -30,6 +30,6 @@ Markov parameter.  The product $P_{\mathcal{N}}(q)$ is the **Skein polynomial of
 It is computed by exactly $\binom{A}{2}$ transfer matrix
 multiplications — one per nucleon pair.*
 
-Until 2026-10-10 this proposition used the excised convention-C parameter $z = 1/(q^{1/2} + q^{-1/2})$, under which each factor is a Laurent polynomial in $q^{1/2}$ and $P_{\mathcal{N}}$ is a polynomial in $q^{1/2}$ of degree $\leq A^2 - 1$. At the canonical parameter the $z$ denominator does not cancel in general: for a single $\mathfrak{p}$-$\mathfrak{p}$ crossing, $\hat{V}_0 = zh + 1 = (q^4+1)/(q^2+1)$.
+Under the alternative Convention-C parameter $z_C = 1/(q^{1/2} + q^{-1/2})$, each factor is a Laurent polynomial in $q^{1/2}$ and $P_{\mathcal{N}}$ is a polynomial in $q^{1/2}$ of degree $\leq A^2 - 1$. At the canonical parameter the $z$ denominator does not cancel in general: for a single $\mathfrak{p}$-$\mathfrak{p}$ crossing, $\hat{V}_0 = zh + 1 = (q^4+1)/(q^2+1)$.
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

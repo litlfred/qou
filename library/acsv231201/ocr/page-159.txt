@@ -1,0 +1,52 @@
+6.2 Polynomial amoebas 141
+
+sentation
+
+1 d
+foo) =(21) Y) seny {| —@ az 6)
+
+ndaby! 1, (1 — Wi)++* a = Wa)
+
+for all w € Relog!(B’), where T,, = Relog"!(r) with rz = ay if m = a and
+rp = by if ny, = b. Since ax < |wy| < by for all k, we have the series expansions
+= ghey! if kal = la
+1 = n<0 .
+ewe |S "wt if keel = lal
+
+n20
+
+In particular, each summand in (6.2) is a distinct Laurent series in w uniformly
+converging on compact subsets and, taking the sgn(77) coefficient into account,
+we obtain the desired representation
+
+= 1 -r-1 r
+fw) = yy (cai nun Ju
+
+rez
+
+for w € B’. By independence of the Cauchy integral on the point « in B, this
+holds for all x € B. im
+
+Example 6.10. For d = 1, we obtain the classical representation
+
+jo- bf £244 f a,
+
+2ni Jy, Z-W 2ni Jy, Z-W
+
+Aw) fiw)
+where y, and y> are the inner and outer boundaries of an annulus A = {z : e* <
+zl < e°}, the point w € A, and the analytic function f is represented by the
+convergent series >) ,<z @,z" on A. The function f;(w) is analytic on the disk of
+radius e° while the function f,(1/w) is analytic on the disk of radius e~“, so
+Ai) = Lnzo Anw" while fiw) = — Dinc-1 an". 4
+
+6.2 Polynomial amoebas
+
+If f(z) is a Laurent polynomial then the algebraic hypersurface or algebraic
+variety defined by f is the zero set V(f) = {z € C4: f(z) = 0}. The amoeba
+of f is the set
+
+amoeba(f) := {Relog z :z€ C4 and f(z) = o} cR!
+
+consisting of the image under Relog of the non-zero points in the algebraic
+hypersurface defined by f.

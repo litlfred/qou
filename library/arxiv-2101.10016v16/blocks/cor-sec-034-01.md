@@ -1,1 +1,1 @@
-Let H2 and H3 be finite energy unitary projective representations of
+Let H2 and H3 be finite energy unitary projective representations of LG such that Connes fusion tensor product is multiplicity-free. Then braiding operator c(H2, H3) acts between the corresponding lowest energy spaces V2 and V3 respectively as Σe iπ 2(k+h∨) Ω : V2 ⊗ V3 → V3 ⊗ V2 (35.1) where Ω acts as multiplication by C2+C3−C4 on a simple module V4 of the tensor product.

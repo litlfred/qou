@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-no-goedel-closed-chains",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:no-goedel-closed-chains",
+  "kind": "remark",
+  "title": "No closed causal chains under the tick definition: the Gödel universe",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-braiding-induced-ordering",
+    "papers/quantum-observable-universe/blocks/prf-braiding-induced-ordering",
+    "papers/quantum-observable-universe/blocks/lem-crossing-application-chains"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/lem-crossing-application-chains",
+  "cites": [
+    "references/goedel1949"
+  ],
+  "tags": [
+    "arrow-of-time",
+    "causality",
+    "well-ordering",
+    "closed-timelike-curves",
+    "goedel-universe",
+    "scope-limit",
+    "writhe",
+    "symmetric-braiding"
+  ],
+  "leanRef": "qou:QOU.word_no_closedChainAt",
+  "sorryFree": true,
+  "text": "no-goedel-closed-chains-remark.md",
+  "provenance": "authored"
+}

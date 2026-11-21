@@ -19,7 +19,7 @@ universe u
 
 /-- A Markov-equivalence class of closed braids in `H_n(q)`,
     represented canonically by its Gröbner-Shirshov normal form. -/
--- Ref: [manuscript] braids-and-knots/hecke-normal-form
+-- Ref: [leitner2026] braids-and-knots/hecke-normal-form
 structure MarkovClass where
   /-- Canonical GS-NF representative as a formal word. -/
   gsNormalForm : String
@@ -29,7 +29,7 @@ structure MarkovClass where
 /-- **Confined particle.** A named tuple at a confinement level
     with an underlying Markov-class of closed braid and coarse
     strand count. Stability predicates layer on top. -/
--- Ref: [manuscript] braids-and-knots/confined-particle
+-- Ref: [leitner2026] braids-and-knots/confined-particle
 structure ConfinedParticle where
   /-- Symbol from the particle-shortcut registry (e.g. `proton`, `\He4`). -/
   name : String

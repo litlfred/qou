@@ -14,9 +14,11 @@
   "pageEnd": 10,
   "contains": [
     "library/amc-2730/blocks/prose-sec-002",
-    "library/amc-2730/blocks/recommendation-sec-002-01"
+    "library/amc-2730/blocks/ex-sec-002-01",
+    "library/amc-2730/blocks/ex-sec-002-02",
+    "library/amc-2730/blocks/ex-sec-002-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/amc-2730",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/amc-2730",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/amc-2730/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/amc-2730/manifest.jsonld",
   "provenance": "ingested"
 }

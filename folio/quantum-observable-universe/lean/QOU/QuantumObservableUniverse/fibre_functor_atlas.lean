@@ -32,7 +32,7 @@ class FibreFunctorAtlasContext (G : Type) [Group G] where
       — the lone structural hypothesis. -/
   cocycle : ∀ i j k : FFIdx, g i k = g j k * g i j
 
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/fibre-functor-atlas.ts
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/fibre-functor-atlas.ts
 /-- **Proposition (fibre-functor atlas).** Let `(C, A, τ)` be a quantum
     observable universe with `G = Aut⊗(τ)` and fibre-functor transition data
     `g` satisfying the cocycle condition. Then the four manuscript sub-claims

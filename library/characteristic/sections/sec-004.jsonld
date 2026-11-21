@@ -13,9 +13,16 @@
   "pageStart": 3,
   "pageEnd": 3,
   "contains": [
-    "library/characteristic/blocks/prose-sec-004"
+    "library/characteristic/blocks/prose-sec-004",
+    "library/characteristic/blocks/conj-sec-004-01",
+    "library/characteristic/blocks/cor-sec-004-02",
+    "library/characteristic/blocks/rem-sec-004-03",
+    "library/characteristic/blocks/prop-sec-004-04",
+    "library/characteristic/blocks/rem-sec-004-05",
+    "library/characteristic/blocks/rem-sec-004-06",
+    "library/characteristic/blocks/rem-sec-004-07"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/characteristic",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/characteristic",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/characteristic/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/characteristic/manifest.jsonld",
   "provenance": "ingested"
 }

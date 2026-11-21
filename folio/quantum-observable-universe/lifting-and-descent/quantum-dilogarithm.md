@@ -1,1 +1,0 @@
-In the archimedean realisation, the transient trace contribution $\mathrm{tr}_{\mathrm{trans}}(\varrho, p_i)$ from the [topological decomposition of mass](#thm:topological-mass) identically evaluates to the quantum dilogarithm $\Phi_q(z_i)$. Here, $z_i$ denotes the exact spectral coordinate of $p_i$ within the Briggs–Klein chart ([Briggs–Klein chart](#def:briggs-klein-chart)).

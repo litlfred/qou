@@ -10,7 +10,7 @@
     f^{λ⁺/μ} = Σ_{λ: λ⁺ covers λ} f^{λ/μ}
 
   Ref: [hoefsmit1974], [wenzl1988]
-       [manuscript] §5.12, prop:universal-braid-branching
+       [leitner2026] §5.12, prop:universal-braid-branching
 -/
 import Mathlib.Tactic
 import Mathlib.Data.Real.Basic
@@ -301,7 +301,7 @@ theorem universal_braid_branching
   -- Strong induction on lam.sum: the step interchanges the removal sum
   -- with the three-term decomposition and closes with pieri_skew_syt;
   -- the base case is h_base after enumerating the partitions of 3.
-  -- Ref: [hoefsmit1974] §2.3; [wenzl1988]; [manuscript] §5.12 prop:universal-braid-branching
+  -- Ref: [hoefsmit1974] §2.3; [wenzl1988]; [leitner2026] §5.12 prop:universal-braid-branching
   obtain ⟨hb3, hb21, hb111⟩ := h_base
   generalize hn : lam.sum = n
   induction n using Nat.strong_induction_on generalizing lam with
@@ -395,7 +395,7 @@ theorem chebyshev_sl2_cube {R : Type*} [CommRing R]
     Kerov–Vershik `|f_k - f_inf| ≤ C_q / (k-3)`, carried as a class with
     a proved reflexivity instance. It is a different bound (`1/(k-3)`,
     not exponential in `k`), so it is not this one restated. -/
--- Ref: [manuscript] §5.13
+-- Ref: [leitner2026] §5.13
 theorem convergence_bound_envelope_nonneg
     (q : ℝ) (hq : q > 1) (C₀ : ℝ) (hC : C₀ > 0)
     (_k : ℕ) :

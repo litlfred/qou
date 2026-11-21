@@ -1,1 +1,0 @@
-First of all, note that $\MP^2$ and $\MQ^2$ must refine $\MP^1$ and $\MQ^1$ respectively, and we must have $W^1_O\subseteq W^2_O$ since additional refinements can only turn bipolar variables into unipolar variables, but not the other way around.

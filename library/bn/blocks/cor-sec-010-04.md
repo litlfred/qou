@@ -1,0 +1,1 @@
+The map B3 →Sp(X)T d is almost onto if and only if the Fuchsian (2, 3, p) triangle group is ﬁnite or arithmetic, where p is the order of (d −2) in Z/2d. (Explicitly, using Table 9, we ﬁnd B3 →Sp(X)T d is almost onto iﬀd = 2, 3, 4, 5, 6, 7, 9, 10, 14, 15, 16, 18, 22 or 24.)

@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T12:34:56.313455+00:00",
-  "commitSha": "60234841f28baad4485b0af968fd7580e2934169",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-15T20:11:13.668403+00:00",
+  "commitSha": "6898a93de88af7d81d0c34b80d3a9160e6ba9680",
   "assertions": [
     {
       "name": "general_n_reducer_reproduces_the_corpus_h3_tables",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6207,
+  "durationMs": 7693,
   "computation": "qbeta-gamma-gamma-submonoid-h4",
   "scriptFile": "qbeta_gamma_gamma_submonoid_h4_probe.py",
-  "scriptHash": "006676e72fb5",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "25972a140ecf",
+  "scriptCommitSha": "547b78208f6bb667ec8b3580f16390a74dbb9ce4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,14 +60,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "24ca776b0ad05497"
   },
   "invocation": {
     "argv": [
@@ -306,5 +307,7 @@
       "QOU.Mass.AltCharShiftMultiset.gammaGamma_index_lt -- on n strands only indices i with i+1 < n-1 are available",
       "QOU.Mass.AltCharShiftMultiset.gammaGamma_threeStrand -- the n = 3 collapse, which CHECK 2 recovers numerically"
     ]
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "growth and Q(h)-rank of the gamma-gamma submonoid computed symbolically in the generic Hecke algebra (sympy, h a symbol); the census module it loads supplies only the symbol h and the H_3 multiplication table, so q0 is never evaluated"
 }

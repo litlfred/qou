@@ -1,1 +1,0 @@
-This simple fact and the multiplicativity of the irreducible characters of $\mathfrak{S}_{\infty}$ will now be used in Section [\[largenumbers\]](#largenumbers){reference-type="ref" reference="largenumbers"}, in which we shall recall the results of Kerov and Vershik (see [@KV81a]) and their proofs.

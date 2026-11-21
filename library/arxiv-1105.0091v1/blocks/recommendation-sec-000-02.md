@@ -1,1 +1,0 @@
-In the following, we shall denote by $V^{\lambda}$ the irreducible module over $\mathfrak{S}_{n}$ associated to the polynomial $\Delta^{\lambda'}$; this is the usual convention for encoding the values of the irreducible characters in the algebra of symmetric functions, see §[0.2](#symfunc){reference-type="ref" reference="symfunc"}.

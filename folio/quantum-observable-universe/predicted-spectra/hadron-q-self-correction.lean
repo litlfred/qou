@@ -21,7 +21,7 @@ the effective Q-value and shortening the half-life.
 LaTeX label: `prop:hadron-q-self-correction`
 
 ## References
-- [manuscript] §6/hadron-q-self-correction
+- [leitner2026] §6/hadron-q-self-correction
 
 **Ground ring**: `ℝ` (archimedean realisation). The self-deformation
 `δq` uses the field inverse `q₀⁻¹` and division by `A²`, and the
@@ -34,26 +34,26 @@ count stays an integer (`ℤ`).
 namespace QOU.Archimedean
 
 /-- Net signed crossing number: ℓ_net(p,n) = C(p,2) - C(n,2). -/
--- Ref: [manuscript] §6/hadron-q-self-correction
+-- Ref: [leitner2026] §6/hadron-q-self-correction
 def netSignedCrossing (p n : ℕ) : ℤ :=
   (p * (p - 1) : ℤ) / 2 - (n * (n - 1) : ℤ) / 2
 
 /-- Self-deformation of the substrate parameter by a nucleus.
     δq(p,n) = ℓ_net(p,n)/A² · ℏ_q² where ℏ_q = 1 - q₀⁻¹. -/
--- Ref: [manuscript] §6/hadron-q-self-correction
+-- Ref: [leitner2026] §6/hadron-q-self-correction
 noncomputable def deltaQ (q₀ : ℝ) (p n : ℕ) : ℝ :=
   let A := (p + n : ℝ)
   let hbar := 1 - q₀⁻¹
   (netSignedCrossing p n : ℝ) / A ^ 2 * hbar ^ 2
 
 /-- Effective substrate parameter: q_eff = q₀ + δq. -/
--- Ref: [manuscript] §6/hadron-q-self-correction
+-- Ref: [leitner2026] §6/hadron-q-self-correction
 noncomputable def qEff (q₀ : ℝ) (p n : ℕ) : ℝ :=
   q₀ + deltaQ q₀ p n
 
 /-- The net signed crossing count is non-positive for neutron-rich
     nuclei (`p < n`): the triangular number `C(n,2)` dominates `C(p,2)`. -/
--- Ref: [manuscript] §6/hadron-q-self-correction
+-- Ref: [leitner2026] §6/hadron-q-self-correction
 theorem netSignedCrossing_nonpos (p n : ℕ) (hn : p < n) :
     netSignedCrossing p n ≤ 0 := by
   unfold netSignedCrossing
@@ -64,7 +64,7 @@ theorem netSignedCrossing_nonpos (p n : ℕ) (hn : p < n) :
 
 /-- For neutron-rich nuclei (n > p), the self-deformation is negative:
     the excess of negative crossings slightly reduces q. -/
--- Ref: [manuscript] §6/hadron-q-self-correction
+-- Ref: [leitner2026] §6/hadron-q-self-correction
 theorem deltaQ_neg_neutron_rich (q₀ : ℝ) (p n : ℕ) (hn : p < n) :
     deltaQ q₀ p n ≤ 0 := by
   unfold deltaQ
@@ -82,19 +82,19 @@ theorem deltaQ_neg_neutron_rich (q₀ : ℝ) (p n : ℕ) (hn : p < n) :
     This is the physically relevant quantity for half-lives:
     it determines how the effective Q-value differs from the
     background-q prediction. -/
--- Ref: [manuscript] §6/hadron-q-self-correction
+-- Ref: [leitner2026] §6/hadron-q-self-correction
 noncomputable def deltaDeltaQ (q₀ : ℝ) (p n : ℕ) : ℝ :=
   deltaQ q₀ (p + 1) (n - 1) - deltaQ q₀ p n
 
 /-- The differential shift equals (A-1)/A² · ℏ_q² and is always
     positive: the daughter nucleus (one more proton) has a higher
     effective q than the parent. -/
--- Ref: [manuscript] §6/hadron-q-self-correction
+-- Ref: [leitner2026] §6/hadron-q-self-correction
 noncomputable def differentialShift (q₀ : ℝ) (A : ℕ) : ℝ :=
   ((A : ℝ) - 1) / (A : ℝ) ^ 2 * (1 - q₀⁻¹) ^ 2
 
 /-- The differential shift is non-negative when A ≥ 1 and q₀ > 0. -/
--- Ref: [manuscript] §6/hadron-q-self-correction
+-- Ref: [leitner2026] §6/hadron-q-self-correction
 theorem differentialShift_nonneg (q₀ : ℝ) (A : ℕ) (hA : 1 ≤ A) :
     0 ≤ differentialShift q₀ A := by
   unfold differentialShift
@@ -107,7 +107,7 @@ theorem differentialShift_nonneg (q₀ : ℝ) (A : ℕ) (hA : 1 ≤ A) :
 
 /-- The differential shift is small: for all A and q₀ = 1.1097,
     Δq_eff < ℏ_q² < 0.01. -/
--- Ref: [manuscript] §6/hadron-q-self-correction
+-- Ref: [leitner2026] §6/hadron-q-self-correction
 theorem differentialShift_small (A : ℕ) (hA : 1 ≤ A) :
     differentialShift 1.1097 A < 0.01 := by
   unfold differentialShift
@@ -127,7 +127,7 @@ theorem differentialShift_small (A : ℕ) (hA : 1 ≤ A) :
 
 /-- q_eff > 1 when q₀ > 1: the effective parameter stays in the
     non-classical regime (self-deformation is too small to change this). -/
--- Ref: [manuscript] §6/hadron-q-self-correction
+-- Ref: [leitner2026] §6/hadron-q-self-correction
 theorem qEff_gt_one (q₀ : ℝ) (hq : 1 < q₀) (p n : ℕ)
     (hsmall : |deltaQ q₀ p n| < q₀ - 1) :
     1 < qEff q₀ p n := by
@@ -138,7 +138,7 @@ theorem qEff_gt_one (q₀ : ℝ) (hq : 1 < q₀) (p n : ℕ)
 /-- Top-level alias matching the manifest declaration: the
     self-deformation is the net signed crossing count over `A²`,
     weighted by `ℏ_q² = (1 - q₀⁻¹)²`. -/
--- Ref: [manuscript] §6/hadron-q-self-correction
+-- Ref: [leitner2026] §6/hadron-q-self-correction
 theorem hadron_q_self_correction (q₀ : ℝ) (p n : ℕ) :
     deltaQ q₀ p n
       = (netSignedCrossing p n : ℝ) / (p + n : ℝ) ^ 2 * (1 - q₀⁻¹) ^ 2 := rfl

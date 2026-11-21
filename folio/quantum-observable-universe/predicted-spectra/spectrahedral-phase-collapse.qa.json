@@ -1279,6 +1279,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f8df93736141",
+          "ts": "9f7f0a6d8643",
+          "lean": "68d6ed666660",
+          "lean_statement": "711267b2b8a4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:59.013Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "Ref (library `QOU/Archimedean/spectrahedral_phase_collapse.lean:20` = sibling `:20`) proves only det G(u)=0 *at* a root of u³+u−1 (one implication at one point). The statement's content (\"on u>0 the form degenerates at exactly two points\", u=1, multiplicities 5 and 1) is not encoded, though the proved factorisation `gramMatrix_det_eq_factorization` (`GramMatrixH3Symbolic.lean:514`, sorry-free) would give it. Sibling and library differ: the library file adds `cross_coupling_non_vanishing : q^6 > 0` and `continuous_substrate_evolution : q+1 > 1` (:50,:59), names that claim physics for trivial facts; the sibling has `hadronic_melt_at_supergolden` and `lepton_unconditional_stability : 0 < q^n`. Narrative math checks: 1/ψ is the root of u³+u−1; −ψ the root of u³+u²+1; both sextics have no real roots (sympy `real_roots` = []). Convention-C scope is stated honestly (md:20-32)"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2533,6 +2551,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-24T06:59:45.728Z",
+  "updated_at": "2026-11-15T21:55:59.013Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

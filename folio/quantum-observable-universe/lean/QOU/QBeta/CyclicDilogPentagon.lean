@@ -53,7 +53,7 @@ No `c_k` is produced or wired; registry untouched; scope-(a) throughout.
 --        Mod. Phys. Lett. A 9 (1994) 427. https://doi.org/10.1142/S0217732394002446
 -- Ref: [faddeev1995] Faddeev, "Discrete Heisenberg–Weyl group and modular group",
 --        Lett. Math. Phys. 34 (1995) 249. https://doi.org/10.1007/BF01872779
--- Ref: [manuscript] docs/workplans/2026-07-13-phib-combinatorial-fibre-lean-workplan.md (L4)
+-- Ref: [leitner2026] docs/workplans/2026-07-13-phib-combinatorial-fibre-lean-workplan.md (L4)
 -/
 
 namespace QOU.QBeta.CyclicDilogPentagon

@@ -1,0 +1,1 @@
+With the above notation, we suppose that the twisted chain complex C.M I V.t// is acyclic. Then the twisted chain complex C.  M I Vy.t// is also acyclic and the polynomial torsion is expressed as (4-2)  y '˝y   M .t/ D   Y 2 yG .'˝/˝ M .t/ where  is a sign equal to 0.  M /m  0.M /mjGj and m D dim V .

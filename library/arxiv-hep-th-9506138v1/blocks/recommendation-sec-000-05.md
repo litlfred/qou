@@ -1,1 +1,0 @@
-Since the process of gravitational collapse and subsequent evaporation of a very large black hole begins and ends with very low-energy particles, and since the evolution of the black hole is very slow on microscopic time scales, the adiabatic theorem should ensure that high-energy degrees of freedom decouple.

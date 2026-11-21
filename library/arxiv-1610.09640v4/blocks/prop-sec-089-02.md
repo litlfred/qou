@@ -1,0 +1,1 @@
+In the situation of Theorem 12.7.2, assume that A and B are weakly commutative. (1) The restriction functor Restu : D(B) →D(A) is an equivalence of H0(A)- linear triangulated categories, with quasi-inverse LIndu. Derived Categories | Amnon Yekutieli |

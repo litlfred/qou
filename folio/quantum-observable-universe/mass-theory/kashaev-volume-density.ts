@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:topological-mass-formula",
+  interprets: "conj:topological-mass-formula",
   label: "rem:kashaev-volume-density",
   title: "Topological mass as volume $\\times$ density, via the Kashaev limit",
   tags: [

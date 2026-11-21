@@ -1,0 +1,1 @@
+Let D be an R-graded vector space with a diﬀerential dD of order [0; ∞). Suppose that D has gap [ǫ; 2ǫ) for some ǫ > 0. One can then write dD = δ + (dD −δ) with δ of order [0; ǫ), satisfying δ2 = 0, and (dD −δ) of order [2ǫ; ∞). Suppose that in addition, H(D, δ) = 0; then H(D, dD) = 0.

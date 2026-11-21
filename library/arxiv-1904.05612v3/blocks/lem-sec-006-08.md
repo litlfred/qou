@@ -1,0 +1,1 @@
+Let N ⊂P ⊂M be an inclusion of ﬁnite von Neumann algebras with a faithful tracial state tr on M and {λi : 1 ≤i ≤m} be a basis for P/N. Then, for any u ∈NM(P) ∩NM(N), {uλiu∗: 1 ≤i ≤m} is also a basis for P/N.

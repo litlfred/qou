@@ -1,1 +1,0 @@
-As we already discussed in the previous subsection, linear constraints like (\ref{predcogra}) are not restrictive enough to fix the shape of the $\tau$-function (the point $G$ in the universal module space) unambigously: string equation should be also imposed.

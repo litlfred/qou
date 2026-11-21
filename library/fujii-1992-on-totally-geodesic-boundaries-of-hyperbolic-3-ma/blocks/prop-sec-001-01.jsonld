@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/blocks/prop-sec-001-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 10,
+  "pageEnd": 14,
+  "text": "prop-sec-001-01.md",
+  "derivedFrom": "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/sections/sec-001",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.1",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-001-f-udc.md (p. 10-14)",
+    "claim_id": "fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma#proposition:3.1",
+    "lean_status": "unformalized"
+  }
+}

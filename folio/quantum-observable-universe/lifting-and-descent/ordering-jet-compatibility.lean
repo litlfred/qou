@@ -16,19 +16,19 @@ and remains well-founded.
 LaTeX label: `prop:ordering-jet-compatibility`
 
 ## References
-- [manuscript] §3/ordering-jet-compatibility
+- [leitner2026] §3/ordering-jet-compatibility
 -/
 
 namespace QOU.Torsion
 
 /-- A monomial basis element: a reduced positive braid word
     (list of generator indices). -/
--- Ref: [manuscript] §3/ordering-jet-compatibility
+-- Ref: [leitner2026] §3/ordering-jet-compatibility
 abbrev MonomialBasis := List ℕ
 
 /-- Degree-lexicographic ordering on braid monomials:
     compare by length first, then lexicographically. -/
--- Ref: [manuscript] §2/quantum-observable-universe (axiom 5)
+-- Ref: [leitner2026] §2/quantum-observable-universe (axiom 5)
 def degLex : MonomialBasis → MonomialBasis → Prop :=
   fun w w' =>
     w.length < w'.length ∨
@@ -106,8 +106,8 @@ private theorem degLexRList_wf : WellFounded degLexRList :=
     `w ↦ (w.length, w)` into `Prod.Lex Nat.lt degLexRList`; the length component
     is `Nat.lt` (well-founded) and the equal-length lex `degLexRList` is
     well-founded by `degLexRList_wf`. -/
--- Ref: [manuscript] §2/quantum-observable-universe (axiom 5)
--- Ref: [manuscript] §3/ordering-jet-compatibility
+-- Ref: [leitner2026] §2/quantum-observable-universe (axiom 5)
+-- Ref: [leitner2026] §3/ordering-jet-compatibility
 private theorem degLex_wf_unrestricted :
     WellFounded (fun (w w' : MonomialBasis) => degLex w w') := by
   have key : WellFounded (Prod.Lex (· < · : ℕ → ℕ → Prop) degLexRList) :=
@@ -133,7 +133,7 @@ theorem degLex_wellFounded (n : ℕ) (hn : 0 < n) :
 /-- At brane level k, the jet prolongation introduces new generators
     (Ω¹ directions) ordered after all level-k generators. The
     resulting ordering on B_{k+1} extends B_k. -/
--- Ref: [manuscript] §3/ordering-jet-compatibility
+-- Ref: [leitner2026] §3/ordering-jet-compatibility
 structure JetExtension where
   level : ℕ
   /-- Number of generators at this level. -/
@@ -141,41 +141,75 @@ structure JetExtension where
   /-- Number of new Ω¹ directions per prolongation (= 3 for SU(2)). -/
   numNewDirs : ℕ := 3
 
-/-- **The former `ordering_extends` axiom was `P → P`.**
+/-- Lexicographic order on `ℕ`-words is preserved by any strictly monotone
+    relabelling of the letters. -/
+theorem lex_map_strictMono {φ : ℕ → ℕ} (hφ : StrictMono φ) :
+    ∀ {a b : List ℕ}, List.Lex (· < ·) a b → List.Lex (· < ·) (a.map φ) (b.map φ)
+  | _, _, List.Lex.nil => List.Lex.nil
+  | _, _, List.Lex.cons h => List.Lex.cons (lex_map_strictMono hφ h)
+  | _, _, List.Lex.rel h => List.Lex.rel (hφ h)
 
-    It stood as an `axiom` for
+/-- **Ordering extends through the jet embedding.**
 
-        (k : ℕ) (a b : MonomialBasis) (hab : degLex a b) : degLex a b
+    The jet prolongation `ℓ_n : B_n → B_{n+1}` relabels each level-`n`
+    generator index by a map `φ : ℕ → ℕ` on the alphabet; the new `Ω¹`
+    directions are inserted without reordering the old generators, which is
+    exactly the hypothesis that `φ` is strictly monotone. Under that
+    hypothesis `a ≺_n b` implies `ℓ_n(a) ≺_{n+1} ℓ_n(b)`, with
+    `ℓ_n(w) = w.map φ`.
 
-    -- the conclusion is the hypothesis, so `exact hab` closes it and the
-    axiom asserted nothing.  `k` did not appear in the statement at all.
+    The hypothesis is load-bearing: a non-injective relabelling collapses
+    `[0] ≺ [1]` to `[0] = [0]`, so the statement fails without it.
 
-    The docstring described a different claim: *"if `a ≺_n b` in `B_n`,
-    then `ℓ_n(a) ≺_{n+1} ℓ_n(b)` in `B_{n+1}`"*.  The jet embedding
-    `ℓ_n` occurs nowhere in the type, and neither does the level index,
-    so nothing about prolongation was ever stated.
-
-    Stating it needs `ℓ_n` as a map `MonomialBasis → MonomialBasis` and
-    a hypothesis relating `degLex` across it; that is a real claim and
-    is left open rather than replaced by a guess.  The identity below is
-    kept only so the name resolves and the vacuity is on the record. -/
--- Ref: [manuscript] §3/ordering-jet-compatibility
+    History (bean qou-6qbv): until 2026-11-20 this declaration was
+    `(hab : degLex a b) : degLex a b := hab`, a `P → P` in which neither the
+    embedding nor the level index appeared. -/
+-- Ref: [leitner2026] §3/ordering-jet-compatibility
 -- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
-theorem ordering_extends (_k : ℕ) (a b : MonomialBasis)
-    (hab : degLex a b) :
-    degLex a b := hab
+theorem ordering_extends {φ : ℕ → ℕ} (hφ : StrictMono φ) {a b : MonomialBasis}
+    (hab : degLex a b) : degLex (a.map φ) (b.map φ) := by
+  rcases hab with h | ⟨hlen, hlt⟩
+  · left; simpa using h
+  · right
+    refine ⟨by simpa using hlen, ?_⟩
+    exact (List.lt_iff_lex_lt _ _).mpr
+      (lex_map_strictMono hφ ((List.lt_iff_lex_lt a b).mp hlt))
+
+/-- Equal-length lexicographic order is preserved by appending a common
+    suffix (the difference lies inside the equal-length prefix). -/
+theorem lex_append_right {d : List ℕ} : ∀ {a b : List ℕ}, a.length = b.length →
+    List.Lex (· < ·) a b → List.Lex (· < ·) (a ++ d) (b ++ d)
+  | _, _, _, List.Lex.nil => by simp_all
+  | _ :: _, _ :: _, h, List.Lex.cons hl =>
+      List.Lex.cons (lex_append_right (by simpa using h) hl)
+  | _, _, _, List.Lex.rel h => List.Lex.rel h
+
+/-- Lexicographic order is preserved by prepending a common prefix. -/
+theorem lex_append_left (c : List ℕ) {a b : List ℕ} (h : List.Lex (· < ·) a b) :
+    List.Lex (· < ·) (c ++ a) (c ++ b) := by
+  induction c with
+  | nil => simpa
+  | cons x xs ih => exact List.Lex.cons ih
 
 /-- Left and right compatibility with multiplication at each level:
-    a ≺ b implies c·a·d ≺ c·b·d (when products are nonzero). -/
--- Ref: [manuscript] §3/ordering-jet-compatibility
--- Ref: [manuscript] unital-groebner-bases/admissible-system
-axiom ordering_compatible (a b c d : MonomialBasis)
+    a ≺ b implies c·a·d ≺ c·b·d. Proved (was an `axiom` until 2026-11-20,
+    bean qou-6qbv): a length difference survives concatenation, and an
+    equal-length lex difference lives inside the middle factor. -/
+-- Ref: [leitner2026] §3/ordering-jet-compatibility
+-- Ref: [leitner2026] unital-groebner-bases/admissible-system
+theorem ordering_compatible (a b c d : MonomialBasis)
     (hab : degLex a b) :
-    degLex (c ++ a ++ d) (c ++ b ++ d)
+    degLex (c ++ a ++ d) (c ++ b ++ d) := by
+  rcases hab with h | ⟨hlen, hlt⟩
+  · left; simp only [List.length_append]; omega
+  · right
+    refine ⟨by simp [hlen], (List.lt_iff_lex_lt _ _).mpr ?_⟩
+    simpa [List.append_assoc] using
+      lex_append_left c (lex_append_right (d := d) hlen ((List.lt_iff_lex_lt a b).mp hlt))
 
 /-- Well-foundedness at each level n: no infinite descending chains
     in B_n.  Immediate from `degLex_wellFounded`. -/
--- Ref: [manuscript] §3/ordering-jet-compatibility
+-- Ref: [leitner2026] §3/ordering-jet-compatibility
 theorem wellfounded_at_level (n : ℕ) (hn : 0 < n) :
     WellFounded (fun (w w' : MonomialBasis) =>
       degLex w w' ∧ ∀ g ∈ w, g < n) :=
@@ -185,17 +219,21 @@ theorem wellfounded_at_level (n : ℕ) (hn : 0 < n) :
     admissible ordering ≺_∞ = ⋃_n ≺_n. The Gröbner reduction
     algorithm terminates on every element belonging to some finite
     level A_n. -/
--- Ref: [manuscript] §3/ordering-jet-compatibility
+-- Ref: [leitner2026] §3/ordering-jet-compatibility
 -- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
-axiom direct_limit_terminates (n : ℕ) (w : MonomialBasis)
-    (hw : ∀ g ∈ w, g < n) :
-    ∃ (w' : MonomialBasis), ¬ degLex w' w  -- reduction terminates to a normal form
+theorem direct_limit_terminates (n : ℕ) (w : MonomialBasis)
+    (_hw : ∀ g ∈ w, g < n) :
+    Acc (fun (u v : MonomialBasis) => degLex u v ∧ ∀ g ∈ u, g < n) w :=
+  -- Was `axiom … : ∃ w', ¬ degLex w' w`, which `w' := w` satisfies for every
+  -- word (degLex is irreflexive) and so asserted nothing. Termination is
+  -- accessibility: no infinite descending reduction chain starts at `w`.
+  (Subrelation.wf (fun ⟨h, _⟩ => h) degLex_wf_unrestricted).apply w
 
 /-- **Consequence for time**: the braiding-induced ordering ≺_c on
     A₀ propagates through the entire jet tower. Forward time
     (Gröbner reduction, braiding) and backward time (anti-involution,
     unbraiding) are well-defined at every brane level. -/
--- Ref: [manuscript] §3/ordering-jet-compatibility
+-- Ref: [leitner2026] §3/ordering-jet-compatibility
 noncomputable def ordering_jet_compatibility : Prop :=
   ∀ n : ℕ, WellFounded (fun (w w' : MonomialBasis) =>
     degLex w w' ∧ ∀ g ∈ w, g < n)

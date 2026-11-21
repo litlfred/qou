@@ -93,7 +93,7 @@ class GeomYekutieliAlignmentContext (R : Type*) [CommRing R] where
     purely from the class fields — the conjectural content is the
     instance (the holonomy↔trM identification), per AGENTS.md §3b. -/
 -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
--- Ref: [manuscript] §5.14, prop:hoefsmit-scattering-pipeline (Stage 3–4)
+-- Ref: [leitner2026] §5.14, prop:hoefsmit-scattering-pipeline (Stage 3–4)
 theorem geom_yekutieli_per_block_alignment {R : Type*} [CommRing R]
     [ctx : GeomYekutieliAlignmentContext R] :
     ctx.boundaryHolonomy = ctx.trM ∧
@@ -110,7 +110,7 @@ and
 [`rem:baryon-period-ratio`](#rem:baryon-period-ratio)).**
 *The piecewise geometric invariant
 $\mathrm{Geom}(K)$
-([topological mass formula](#prop:topological-mass-formula))
+([topological mass formula](#conj:topological-mass-formula))
 is the evaluation of the Yekutieli rigid dualizing complex
 $\omega_A^\bullet$ on the algebraic stratification of the braid
 $\beta$ with closure $K = \widehat\beta$ (per
@@ -174,7 +174,7 @@ non-commutative setting.
 
     The Lean encoding below derives the piecewise formula from the
     single master algebraic identity. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.ts
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.ts
 theorem geom_yekutieli_alignment {R : Type*} [CommRing R] [ctx : GeomYekutieliAlignmentContext R] :
     (ctx.is_hyperbolic → ctx.Geom = ctx.Vol_q * ctx.hbar_q_inv ^ 2) ∧
     (ctx.is_torus → ctx.Geom = ctx.CS_q * ctx.hbar_q ^ 2) ∧

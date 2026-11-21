@@ -1,0 +1,1 @@
+The point p ∈V is an arrangement point if and only if both hom(Q, p) and Q factor into smooth factors (the former will be linear polynomials in C[z] and the latter will be in Op) and the two intersection lattices agree. □

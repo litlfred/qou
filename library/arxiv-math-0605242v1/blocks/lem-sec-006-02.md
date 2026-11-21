@@ -1,0 +1,1 @@
+Fix any pair of integer matrices A ∈Zr×q and B ∈Zs×q. Then there is a polynomial time algorithm that, given n and demand vector b ∈Ns+nr, either ﬁnds a feasible solution x ∈Nnq to the generalized n-fold integer programming problem (2), or asserts that no feasible solution exists.

@@ -237,6 +237,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e70366ef85fb",
+          "ts": "edabd50f6c4d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:32.042Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "proof.md:36-37 'a further step, not stated there and assumed here'; proof.md:80-84 telescoping Σ_k α_k[Φ^{≤k}−Φ^{≤k−1}] = Φ^{≤k★} false unless all α_k=1; proof.md:126-139 'the uniform canonical bound … is the open part'",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: binding"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1143,7 +1159,7 @@
           "in_degree": 0,
           "cone_size": 48,
           "depth": 20,
-          "pagerank": 7.7e-05,
+          "pagerank": 0.000077,
           "edge_span_max": 7,
           "edge_span_mean": 4.5,
           "worst_target": ""
@@ -1445,7 +1461,7 @@
         },
         "reviewed_at": "2026-08-21T21:59:55.291Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "evidence": "Seven em-dashes in 778 words (9 per 1000), and each of the five in the closing sections sets off a genuine appositive on a technical noun ('That identity is unstratified \u2014 it equates the whole transient trace with the whole dilogarithm'; 'The structural content of the proposition \u2014 that the brane tower is centre-stratified ... \u2014 is closed modulo'). Below the density that reads as a substitute for sentence structure."
+        "evidence": "Seven em-dashes in 778 words (9 per 1000), and each of the five in the closing sections sets off a genuine appositive on a technical noun ('That identity is unstratified — it equates the whole transient trace with the whole dilogarithm'; 'The structural content of the proposition — that the brane tower is centre-stratified ... — is closed modulo'). Below the density that reads as a substitute for sentence structure."
       }
     ],
     "trap-triples": [
@@ -1513,7 +1529,7 @@
         },
         "reviewed_at": "2026-08-21T21:59:55.446Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "evidence": "Ends 'if it reflects a genuine k_star(T) = 9 rather than a strand-padding artifact, the proposition fails.' \u2014 a stated falsification condition, the opposite of a placed quotable closer."
+        "evidence": "Ends 'if it reflects a genuine k_star(T) = 9 rather than a strand-padding artifact, the proposition fails.' — a stated falsification condition, the opposite of a placed quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1581,7 +1597,7 @@
         },
         "reviewed_at": "2026-08-21T21:59:55.548Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "evidence": "The closing paragraphs state what is closed, what is open, and what would falsify \u2014 none of it a restatement."
+        "evidence": "The closing paragraphs state what is closed, what is open, and what would falsify — none of it a restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1684,7 +1700,7 @@
         "reviewed_at": "2026-08-21T21:59:55.875Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "Step structure keeps it speakable despite the density.",
-        "notes": "RIGOR. This proof is unusually honest about its own gaps (it names an unstated bridge, cites the audit doc, and separates the structural from the canonical gap), and the .ts uses[] comment even explains why conj:brane-tower-z-habiro is deliberately NOT listed. Two defects survive that. (1) THE TELESCOPE NEEDS alpha_k = 1 AND SAYS SO NOWHERE. Step 3 introduces m = Sum_{k=0}^{k_star} alpha_k * m^{(k)}; Step 4 sets m^{(k)}|_i = Phi^{[<=k]}(z_i) - Phi^{[<=k-1]}(z_i) and then asserts Sum_k alpha_k * m^{(k)}|_i = Phi^{[<=k_star]}(z_i). A telescoping sum of consecutive differences collapses to the top term only when every coefficient is 1 (and with the convention Phi^{[<=-1]} = 0, which is also unstated; note Phi^{[<=0]} is the empty product 1, so the k = 0 term is 1). With general alpha_k the sum is Sum_k (alpha_k - alpha_{k+1}) Phi^{[<=k]} + alpha_{k_star} Phi^{[<=k_star]}, which is not the claimed value. Either define alpha_k = 1 and remove them, or carry them through Step 4. (2) MINOR, typography: the display closing Step 4's telescope ends with a comma and is followed by a new sentence beginning 'The brane-tower contribution ...' with a capital letter \u2014 the comma should be a full stop. VERIFIED OK: Phi_q^{[<=k]}(z) = prod_{j=1}^{k} (1 - q^{-j} z)^{-1} does have exactly k factors as claimed ('a finite product of k_star(T_w) factors'), and with q_0 > 1 the q^{-j} convention is the convergent one."
+        "notes": "RIGOR. This proof is unusually honest about its own gaps (it names an unstated bridge, cites the audit doc, and separates the structural from the canonical gap), and the .ts uses[] comment even explains why conj:brane-tower-z-habiro is deliberately NOT listed. Two defects survive that. (1) THE TELESCOPE NEEDS alpha_k = 1 AND SAYS SO NOWHERE. Step 3 introduces m = Sum_{k=0}^{k_star} alpha_k * m^{(k)}; Step 4 sets m^{(k)}|_i = Phi^{[<=k]}(z_i) - Phi^{[<=k-1]}(z_i) and then asserts Sum_k alpha_k * m^{(k)}|_i = Phi^{[<=k_star]}(z_i). A telescoping sum of consecutive differences collapses to the top term only when every coefficient is 1 (and with the convention Phi^{[<=-1]} = 0, which is also unstated; note Phi^{[<=0]} is the empty product 1, so the k = 0 term is 1). With general alpha_k the sum is Sum_k (alpha_k - alpha_{k+1}) Phi^{[<=k]} + alpha_{k_star} Phi^{[<=k_star]}, which is not the claimed value. Either define alpha_k = 1 and remove them, or carry them through Step 4. (2) MINOR, typography: the display closing Step 4's telescope ends with a comma and is followed by a new sentence beginning 'The brane-tower contribution ...' with a capital letter — the comma should be a full stop. VERIFIED OK: Phi_q^{[<=k]}(z) = prod_{j=1}^{k} (1 - q^{-j} z)^{-1} does have exactly k factors as claimed ('a finite product of k_star(T_w) factors'), and with q_0 > 1 the q^{-j} convention is the convergent one."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1707,6 +1723,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T21:59:55.875Z",
+  "updated_at": "2026-11-15T21:57:32.042Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

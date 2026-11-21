@@ -124,7 +124,8 @@ def main() -> int:
     m_e = mp.mpf(str(M_E_MEV))
     # E_0 = m_e/(q₀(q₀−1)) — the scale of the many-body-ceiling audit
     # (its per-bond values 2.379/2.492/2.532 MeV are Δtr·E_0).
-    e0_full = m_e / (q0 * (q0 - 1))
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    e0_full = _qbeta_e0.order_zero_scaled(m_e, q0)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
     # magic-A ⁴He value: B = 2·m_e·A·Vol(L6a4) = 2·m_e·4·8G (G = Catalan)
     b_magic_4he = 2 * m_e * 4 * 8 * mp.catalan
 

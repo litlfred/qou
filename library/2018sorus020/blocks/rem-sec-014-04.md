@@ -1,0 +1,1 @@
+Since for any g ∈SL(V ), v(det(g)) = 0, we know that the distance d([L], g · [L]) = |n −m| is even, in particular SL(V ) acts without inversion on T, that is it can not ﬁx an edge and exchange its end points. Deﬁnition 1.3.6. Given g ∈SL(V ), we deﬁne the translation lenght of g to be equal to l(g) = min [L]∈T d([L], g · [L]). There are two ways for g ∈SL(V ) acting on the tree :

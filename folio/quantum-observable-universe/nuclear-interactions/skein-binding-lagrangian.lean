@@ -10,7 +10,7 @@ Hopf link: L_bind = L_vol - L_surf - L_Coul - L_Pauli + L_pair.
 LaTeX label: `def:skein-binding-lagrangian`
 
 ## References
-- [manuscript] §4/skein-binding-lagrangian
+- [leitner2026] §4/skein-binding-lagrangian
 
 **Base ring**: the individual binding terms use rational coefficients
 (`/2`, `/4`) and real exponents on the mass number (`A^{2/3}`, `A^{1/3}`),
@@ -30,7 +30,7 @@ open scoped Real
     The substrate parameter is carried as its archimedean evaluation
     `q : ℝ` with `q₀ > 1` (the `1 < q` hypothesis is recorded on the
     structure for the order-dependent terms). -/
--- Ref: [manuscript] §4/skein-binding-lagrangian
+-- Ref: [leitner2026] §4/skein-binding-lagrangian
 structure SkeinBindingLagrangian where
   /-- Number of protons. -/
   p : ℕ
@@ -70,7 +70,7 @@ noncomputable def SkeinBindingLagrangian.L_Pauli (L : SkeinBindingLagrangian) : 
 /-- The volume binding is non-negative when the volume scale is
     non-negative: the average Skein weight `(q + q⁻¹)/2` is positive in
     the substrate regime `q > 1`, and `A ≥ 0`. -/
--- Ref: [manuscript] §4/skein-binding-lagrangian
+-- Ref: [leitner2026] §4/skein-binding-lagrangian
 theorem SkeinBindingLagrangian.L_vol_nonneg (L : SkeinBindingLagrangian)
     (hV : 0 ≤ L.lambda_V) : 0 ≤ L.L_vol := by
   have hq : (0 : ℝ) < L.q := lt_trans one_pos L.q_gt_one

@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/hecke-alg/blocks/prose-page-009",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
   "title": "Page 9",
   "pageStart": 9,
   "pageEnd": 9,
   "text": "../sections/page-009.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hecke-alg",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hecke-alg",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hecke-alg/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hecke-alg/manifest.jsonld",
   "provenance": "ingested"
 }

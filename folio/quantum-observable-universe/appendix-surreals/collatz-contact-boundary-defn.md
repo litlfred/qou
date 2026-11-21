@@ -4,7 +4,7 @@ $$
 \langle v_{[2]} \rangle_N(P) := \frac{1}{N_{\mathrm{odd}}} \sum_{\substack{0 \leq k < N \\ \mathcal{C}_q^k(P) \text{ is } q\text{-odd}}} v_{[2]}\bigl(\mathcal{C}_q^{k+1}(P)\bigr).
 $$
 
-We define the orbit contact average as $\langle v_{[2]} \rangle(P) := \lim_{N \to \infty} \langle v_{[2]} \rangle_N(P)$.
+Define the orbit contact average as $\langle v_{[2]} \rangle(P) := \lim_{N \to \infty} \langle v_{[2]} \rangle_N(P)$.
 
 The Collatz contact boundary is the codimension-$1$ locus where the orbit's contact with $D_{[2]}$ is exactly critical:
 

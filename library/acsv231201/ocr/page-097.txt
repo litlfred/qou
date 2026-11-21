@@ -1,0 +1,38 @@
+3.5 The saddle point method 719
+
+1
+
+I= Bn
+
+Figure 3.3 The circle |z| = 1 — , can be deformed to a rectangle with right edge
+(bold) on the line x = 1 — B,, and other edges arbitrarily far from the origin.
+
+that holds for any 0 < € < | (in fact, we will select € to vary with n, with e > 0
+as n — 0d).
+Following the outline of the saddle point method above, we let
+1) = 1,2) = -(n + I loge + oe
+be the logarithm of the integrand and begin by computing the points where the
+derivative
+—n-1 1
+
+(= + a-»
+
+vanishes. The closest solution of /’(z) = 0 to the origin is 1 — 8, where
+1
+Bran! Sn! +0(n*?), (3.14)
+
+and we thus take the Cauchy contour of integration to be the circle of radius
+e = 1-8, (which is less than one for all n sufficiently large). Because the
+only singularities of the Cauchy integrand lie at the origin and the point z = 1,
+without changing the value of the Cauchy integral we can deform this circle to
+arectangle with right edge on the line x = 1 —8,, and all other points arbitrarily
+far from the origin (see Figure 3.3). When |z| > 2 the modulus of the Cauchy
+integrand is upper bounded by exp( 45 ) ld"! < e?|z\-""!, meaning we can
+take the left, top, and bottom edges of the rectangle in Figure 3.3 to infinity
+and use the change of variables z = 1 — 8, + it to obtain
+
+nl 2
+
+on x f exp(I(1 — By + it) (dt) (3.15)
+
+for n sufficiently large, fulfilling the second step of the saddle point method.

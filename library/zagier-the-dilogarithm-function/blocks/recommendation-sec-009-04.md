@@ -1,1 +1,0 @@
-Moreover, x must be totally real if [x] is to be torsion in BC, since this condition implies that D(xσ) = 0 for all conjugates xσ and D is non-zero for non-real arguments (cf. the picture in §3 of Chapter I), so we must in fact have x = ±t, 1−x = ±tq with t totally real.

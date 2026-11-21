@@ -1,1 +1,0 @@
-However, the potential is not directly observable and its expansion must be judged according to its effects on renormalized amplitudes.}} We might expect increasingly accurate results as newly developed fitting-optimization procedures are applied to higher-order potentials.

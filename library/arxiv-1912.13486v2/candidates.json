@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1912.13486v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "9a8dbc1a143f7448e02fc7a60e40955738c1a63fc2badf03771a875897d0701b",
   "file": "1912.13486v2.pdf"
@@ -16,76 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
-  "by_kind": {
-   "recommendation": 4
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Therefore, the contribution from the ends of two edges should cancel the contribution from the vertex.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-31-engineering-a-3d-n2-theory-tm3-from-homologic.md",
-   "section_title": "Engineering a 3d N=2 theory T[M3] from homological blocks",
-   "pages": "11-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "At the level of homological block, the boundary condition needs to be imposed and for a proper cancellation discussed above, $\\Phi^{-}_{R=0}$ and $\\Phi^{0}_{R=0}$ should satisfy the Dirichlet and the Neumann boundary condition, respectively.\\ For $M_3=\\mathcal{O}(-p) \\rightarrow \\Sigma_g$ in [@Gukov-Pei-Putrov-Vafa], $T[M_3]$ is given by a vector multiplet with the CS level $p$ and an adjoint chiral multiplet $\\Phi_{R=2}^+$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-31-engineering-a-3d-n2-theory-tm3-from-homologic.md",
-   "section_title": "Engineering a 3d N=2 theory T[M3] from homological blocks",
-   "pages": "11-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "When considering a theory on $S^2\\times_q S^1$ there wouldn't be an issue, but when considering a theory on $D^2 \\times_q S^1$ anomaly inflow should be taken into account.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-31-engineering-a-3d-n2-theory-tm3-from-homologic.md",
-   "section_title": "Engineering a 3d N=2 theory T[M3] from homological blocks",
-   "pages": "11-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The 3d bulk fields and the Chern-Simons term lead to the anomaly inflow to the boundary and this must be canceled by introducing appropriate boundary degrees of freedom.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-31-engineering-a-3d-n2-theory-tm3-from-homologic.md",
-   "section_title": "Engineering a 3d N=2 theory T[M3] from homological blocks",
-   "pages": "11-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

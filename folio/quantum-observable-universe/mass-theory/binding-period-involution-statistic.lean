@@ -42,7 +42,7 @@ operator built on this statistic:
 
 - [stanley1999] Enumerative Combinatorics 2 (q-hook-maj / fake degrees)
 - [sagan2001] The Symmetric Group (RSK, Schützenberger `Des(w) = Des(P(w))`)
-- [manuscript] §mass-theory/binding-period-involution-statistic
+- [leitner2026] §mass-theory/binding-period-involution-statistic
 
 ## Ground ring (§7c) — a `CommRing` with `q` carried as a unit
 

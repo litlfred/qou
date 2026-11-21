@@ -1005,6 +1005,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "df92cad23979",
+          "ts": "338b07148116"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:03.004Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "(S↔P column of prop:mass-identity-unique row) Lean (sibling only; no library decl) is `(m₁ m₂ : R) (h : m₁ = m₂) : ‖m₁‖ = ‖m₂‖` — a tautology; the scaling law m₁ = | c | ·m₂ is not encoded. Proof: \"the norm transforms by | c | \" needs a multiplicative (absolute-value) norm, not given for R (a NormedCommRing only has ‖cx‖ ≤ ‖c‖‖x‖; | c | for c ∈ R is undefined); \"QU/QOU axioms uniquely determine Δ, ϱ, tr\" is asserted without argument. Statement and proof also use the formula ‖tr((∫_A⊗id)∘Δ∘ϱ)‖, which def:mass-identity (mass-identity.md) now says is wrong: the composite is in End(1) and \"no trace is applied\""
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1852,6 +1868,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-29T15:52:33.383Z",
+  "updated_at": "2026-11-15T21:56:03.004Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

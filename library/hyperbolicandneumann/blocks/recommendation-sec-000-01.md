@@ -1,1 +1,0 @@
-Ideal triangulations and the gluing equations The starting point of the paper [31] was Thurston’s amazing insight in the 1980’s that all 3-dimensional manifolds should be canonically divisible into pieces having a well-deﬁned geometric structure of one of 8 types, the most important of which is the hyperbolic one.

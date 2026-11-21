@@ -65,4 +65,14 @@ theorem sum_map_eq_sum_partitionIndex {M : Type*} [AddCommMonoid M] (n : ℕ)
   rw [(hperm.map fun Λ => g (partitionEquivIndex n Λ)).sum_eq]
   rw [Finset.sum_map_toList (Finset.univ : Finset (Partition n)) fun Λ => g (partitionEquivIndex n Λ)]
 
+/-- Subtracting the full Fintype sum over PartitionIndex from the mapped partition list sum yields zero. -/
+theorem sum_map_sub_sum_partitionIndex_eq_zero {M : Type*} [AddCommGroup M] (n : ℕ)
+    (partitions : List (Partition n))
+    (hcomplete : ∀ μ : Partition n, μ.parts ∈ partitions.map Partition.parts)
+    (hnodup : (partitions.map Partition.parts).Nodup)
+    (g : PartitionIndex n → M) :
+    (partitions.map fun Λ => g (partitionEquivIndex n Λ)).sum
+      - ∑ i : PartitionIndex n, g i = 0 := by
+  rw [sum_map_eq_sum_partitionIndex n partitions hcomplete hnodup g, sub_self]
+
 end QOU.BraidKnot.PartitionReindex

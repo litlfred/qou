@@ -1,0 +1,1 @@
+We can discard 2k equations from C(T ) thus obtaining an equivalent set C∗(T ) of n−2k equations, where n is the dimension of the moduli space of geometric realizations of the tetrahedra of T . Algebraic & Geometric Topology 6 (2006) Deforming hyperbolic 3—manifolds with boundary 445

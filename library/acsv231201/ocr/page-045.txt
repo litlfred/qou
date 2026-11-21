@@ -1,0 +1,46 @@
+2.2 Rational operations on generating functions 27
+
+so the entries of
+
+“1 1 1 Zz
+Q=U-zM) | - lez |
+enumerate binary strings without consecutive ones, depending on their starting
+and ending symbols. The paths from 0 to 0 having n > 0 transitions are in one-
+to-one correspondence, via stripping off the last 0, to the words in Example 2.1
+of length n. Thus, the generating function for the class in Example 2.1 is the
+(0, 0)-entry of Q, namely 1/(1 — zz’). <
+
+Composition corresponds to block substitution
+
+Let F(z) be a d-variate formal power series and G,,...,Ga be d formal power
+series in any number of variables, all with vanishing constant terms. We define
+the formal composition F(G,,...,G,) as a limit in the formal power series
+ring,
+
+FG1,..-,Ga) := lim » arG(z)” . (2.1)
+
+Ir|sn
+
+The degree of the term G(z)" := Gi(z)"--- Ga(z)" is at least |r| = Dia rj
+by the assumption that G;(0) = 0 for all j, hence the coefficients of degree at
+most 6 in the sum in (2.1) do not change once n > 6, and the limit exists in the
+formal power series ring.
+
+Remark. Even if some G; has a non-zero constant term, it may still happen
+that the sum converges in the ring of analytic functions, meaning that the in-
+finitely many contributions to all coefficients are absolutely summable. The
+composition exp(1 — x) is not formally allowed in C[[x]] because, for instance,
+the constant term cannot be computed in a finite number of operations, but
+exp(1 -—x) =e 5 ar represents the composition as a convergent series for
+all x € C, meaning it belongs to C{x}.
+
+A slightly unwieldy combinatorial interpretation of composition is given
+in [GJ04, Section 2.2.20]. Suppose A = O(S) where ® is a specification built
+from the combinatorial sum, product and sequence operations described above
+and S = {s),...,8q} is a class with d distinct elements such that (s;) is
+the elementary basis vector e;. If B,,..., 8, are combinatorial classes with no
+objects of weight zero, then the composition class Ao(B,,...,8q) enumerated
+by A(B,,..., By) is the class obtained from A by replacing each occurrence of
+s, by an element of 8, in all possible ways.
+
+Example 2.10 (queries). Queries from a database have integer computation

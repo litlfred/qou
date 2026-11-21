@@ -1,1 +1,0 @@
-We can represent this situation by a diagram of the following shape, where each horizontal line of the triangle contains the composition factors of the corresponding graded piece shown on the left (for the arrows labelled N one must of course ignore the Tate twists in the diagram, which have only been 4.3.

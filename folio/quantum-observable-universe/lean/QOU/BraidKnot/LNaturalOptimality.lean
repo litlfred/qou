@@ -42,7 +42,7 @@ which `LNaturalConcaveForm` proves for the arc's objective (`concave_exchange_in
 Values lie in any linearly ordered cancellative additive monoid (§7c: an order is needed; no ring,
 no `ℝ`).
 
--- Ref: [manuscript] computations/deltalambda/rev_e_infinity_xbot_lnatural_probe.py (M5);
+-- Ref: [leitner2026] computations/deltalambda/rev_e_infinity_xbot_lnatural_probe.py (M5);
 --      Murota, Discrete Convex Analysis (SIAM 2003), Thm 7.14 (not held in the corpus).
 -/
 
@@ -148,5 +148,65 @@ theorem global_of_local (D : Set (ι → ℤ)) (g : (ι → ℤ) → V)
   intro y hy
   obtain ⟨d, hd⟩ := exists_near x y
   exact key d y hy hd
+
+/-! ## Midpoint closure of the L♮-convex polyhedron (box + pairwise difference bounds)
+
+The `Xbot` integer domain is cut out by box constraints `lo i ≤ u i ≤ hi i` together with pairwise
+difference bounds `u i - u j ≤ c i j` (ordering / gap-wall constraints).  Wait-free discharge of the
+domain midpoint-closure hypothesis `hmidD` of `global_of_local`: any such polyhedron is closed under
+both `ceilMid` and `floorMid`. -/
+
+/-- The standard L♮-convex integer domain defined by coordinatewise box bounds `lo ≤ u ≤ hi` and
+pairwise difference bounds `u i - u j ≤ c i j`. -/
+def boxDiffDomain (lo hi : ι → ℤ) (c : ι → ι → ℤ) : Set (ι → ℤ) :=
+  {u | (∀ i, lo i ≤ u i ∧ u i ≤ hi i) ∧ ∀ i j, u i - u j ≤ c i j}
+
+omit [Fintype ι] [DecidableEq ι] in
+/-- The upper midpoint `⌈(x+y)/2⌉` preserves all box and pairwise-difference bounds. -/
+theorem ceilMid_mem_boxDiffDomain (lo hi : ι → ℤ) (c : ι → ι → ℤ)
+    {x y : ι → ℤ} (hx : x ∈ boxDiffDomain lo hi c) (hy : y ∈ boxDiffDomain lo hi c) :
+    ceilMid x y ∈ boxDiffDomain lo hi c := by
+  refine ⟨fun i => ?_, fun i j => ?_⟩
+  · have hxi := hx.1 i
+    have hyi := hy.1 i
+    simp only [ceilMid]
+    omega
+  · have hxij := hx.2 i j
+    have hyij := hy.2 i j
+    simp only [ceilMid]
+    omega
+
+omit [Fintype ι] [DecidableEq ι] in
+/-- The lower midpoint `⌊(x+y)/2⌋` preserves all box and pairwise-difference bounds. -/
+theorem floorMid_mem_boxDiffDomain (lo hi : ι → ℤ) (c : ι → ι → ℤ)
+    {x y : ι → ℤ} (hx : x ∈ boxDiffDomain lo hi c) (hy : y ∈ boxDiffDomain lo hi c) :
+    floorMid x y ∈ boxDiffDomain lo hi c := by
+  refine ⟨fun i => ?_, fun i j => ?_⟩
+  · have hxi := hx.1 i
+    have hyi := hy.1 i
+    simp only [floorMid]
+    omega
+  · have hxij := hx.2 i j
+    have hyij := hy.2 i j
+    simp only [floorMid]
+    omega
+
+omit [Fintype ι] [DecidableEq ι] in
+/-- Combined midpoint-closure witness for `boxDiffDomain`, ready to feed `global_of_local`. -/
+theorem boxDiffDomain_midpoint_closed (lo hi : ι → ℤ) (c : ι → ι → ℤ) :
+    ∀ x ∈ boxDiffDomain lo hi c, ∀ y ∈ boxDiffDomain lo hi c,
+      ceilMid x y ∈ boxDiffDomain lo hi c ∧ floorMid x y ∈ boxDiffDomain lo hi c :=
+  fun _ hx _ hy => ⟨ceilMid_mem_boxDiffDomain lo hi c hx hy, floorMid_mem_boxDiffDomain lo hi c hx hy⟩
+
+/-- **The L♮ optimality criterion on a box-plus-difference domain**, with domain midpoint closure
+discharged automatically by `boxDiffDomain_midpoint_closed`. -/
+theorem global_of_local_boxDiffDomain (lo hi : ι → ℤ) (c : ι → ι → ℤ) (g : (ι → ℤ) → V)
+    (hmid : ∀ x ∈ boxDiffDomain lo hi c, ∀ y ∈ boxDiffDomain lo hi c,
+      g x + g y ≤ g (ceilMid x y) + g (floorMid x y))
+    {x : ι → ℤ} (hx : x ∈ boxDiffDomain lo hi c)
+    (hup : ∀ S : Finset ι, x + chi S ∈ boxDiffDomain lo hi c → g (x + chi S) ≤ g x)
+    (hdown : ∀ S : Finset ι, x - chi S ∈ boxDiffDomain lo hi c → g (x - chi S) ≤ g x) :
+    ∀ y ∈ boxDiffDomain lo hi c, g y ≤ g x :=
+  global_of_local (boxDiffDomain lo hi c) g (boxDiffDomain_midpoint_closed lo hi c) hmid hx hup hdown
 
 end QOU.BraidKnot.LNaturalOptimality

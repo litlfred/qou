@@ -1,0 +1,53 @@
+12.8 Limit laws from probability theory 417
+
+weaken our hypotheses to allow F to be a (non-rational) meromorphic function
+in a suitable domain.
+
+Before giving a limit theorem we need a lemma describing Ornstein—Zernike
+behavior in this setting. We use the notation e; for the jth elementary unit
+vector and recall the notation T.(a) for the set of complex vectors z with
+(log|zi|,.--, log |zal) = x.
+
+Lemma 12.35. Let F(Z) = Di pezi-1,7 dr 2” be a d-variate series with logarith-
+mic domain of convergence of convergence B © R¢. Suppose that B intersects
+the negative eg-axis in the ray (—09, t] for some real number t, that F is mero-
+morphic on a neighborhood of the torus T.(0,t) with F(z) = P(z)/Q(z) for
+analytic functions P and Q in a neighborhood of w = (1, e'), and that w is a
+strictly minimal pole of F where Q.,(w) # 0. Then the logarithmic pole vari-
+ety log V of F is a smooth complex analytic hypersurface in a neighborhood
+of log w = (0,1).
+
+Let m denote the vector (Vjog Q)(1, e) scaled so that mg = 1, and let g
+be the function parametrizing (a°, xa) € logV by xa = g(x°) near log w. If
+the Hessian matrix H for g is nonsingular at the origin then as r varies over
+a neighborhood of m in S = R¢-' x {1} the point w(r) € V near w with
+(Viog Q)(w(r)) = 7 varies smoothly. In this case there is an Ornstein—Zernike
+estimate
+
+Cntr? —san(ra)PCw(r))
+
+a ysen(ra) detH 7Qz,(w(r))
+
+Proof The first conclusion, that log V is a smooth complex analytic hypersur-
+face near log w, follows from the implicit function theorem, since V(Q o exp)
+is nonvanishing at log w under our assumptions. Proposition 9.44 implies that
+nonsingularity of the Jacobian of the Gauss map is equivalent to nondegener-
+acy of the critical point w, and to nonvanishing of the Gaussian curvature of
+‘YY. Thus, the inverse of the map z > (Vjog Q)(z) is smooth near w and w(r)
+varies smoothly with r. Theorem 9.4 and Remark 9.19 from Chapter 9 then
+yield (12.23). ia]
+
+-exp(-r- w(r)). (12.23)
+
+Theorem 12.36 (LCLT). Let F be a d-variate generating function satisfying
+the hypotheses of Lemma 12.35 and let M = H(0) denote the Hessian matrix
+of g at the origin. If M is nonsingular then there is a constant c such that
+
+ef aps ~ CY (9°)
+
+as k > 9 with |r° — km| = o(k?!?), where
+(2nk)'-O?
+Vdet M
+
+1
+my (r°) = exp rae — km)! M"\(r° — km) (12.24)

@@ -1,10 +1,10 @@
 **Proposition (conditional on
-[`conj:q-aubin-lions`](#conj:q-aubin-lions),
-[`conj:ns-counterexample`](#conj:ns-counterexample),
-[`conj:critical-exponent`](#conj:critical-exponent),
-[`prop:blowup-yekutieli`](#prop:blowup-yekutieli),
+[q-deformed Aubin--Lions lemma: compactness of the solution family as $q \to 1$](#conj:q-aubin-lions),
+[Counter-example to Navier--Stokes regularity via $q \to 1$ degeneration](#conj:ns-counterexample),
+[Critical exponent of the enstrophy divergence at $q = 1$](#conj:critical-exponent),
+[Blowup mechanism as Yekutieli lifting obstruction in the brane tower](#prop:blowup-yekutieli),
 and
-[`conj:regularity-breakdown`](#conj:regularity-breakdown);
+[Regularity breakdown at $q = 1$: the classical limit as a phase transition](#conj:regularity-breakdown);
 "NS obstruction tower").**
 
 Let $(\mathbf{C}, A, \tau)$ define a QOU carrying Euler characteristic $\chi(A)$ and [obstruction classes](#def:quantum-characteristic-classes) $\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$. Let $\Sigma \subset \mathcal{S}$ denote the precise collision locus of two anti-parallel vortex filaments.
@@ -103,4 +103,4 @@ $$
 
 where $\mathrm{lk}(\varrho_1, \varrho_2)$ tracks the explicit linking number separating the two filaments, and $e(\xi)|_\Sigma$ evaluates the Euler class of the Reeb bundle precisely on $\Sigma$.
 
-Mapped onto the Descartes universe ($\chi(A) = -6$, anchored on Bring's surface): $e(\xi) = -6 \cdot [\Sigma_4]$ evaluated inside $H^2(\Sigma_4, \mathbb{Z})$. The local restriction $e(\xi)|_\Sigma$ registers as nonzero strictly when $\Sigma$ behaves homologically nontrivially inside $\Sigma_4$. The anti-parallel pair (carrying linking number 1) satisfies this identically.
+Mapped onto the Descartes universe ($\chi_{\mathrm{eu}}(M_0) = -6$, anchored on Bring's surface): $e(\xi) = -6 \cdot [\Sigma_4]$ evaluated inside $H^2(\Sigma_4, \mathbb{Z})$. The local restriction $e(\xi)|_\Sigma$ registers as nonzero strictly when $\Sigma$ behaves homologically nontrivially inside $\Sigma_4$. The anti-parallel pair (carrying linking number 1) satisfies this identically.

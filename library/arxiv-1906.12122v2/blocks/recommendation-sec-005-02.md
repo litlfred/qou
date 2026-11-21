@@ -1,1 +1,0 @@
-Its Fourier transform, which involves three powers of momentum, has mass dimension $+1$, as it should.} the $\tilde{F}^{(\mu)}$ are functions obtained from irreducible diagrams, the $\tilde \gamma^{(\mu)}=\OO(1)$ are dimensionless combinations of the $c_i$, and $\mu$ is a counting index for the potential.

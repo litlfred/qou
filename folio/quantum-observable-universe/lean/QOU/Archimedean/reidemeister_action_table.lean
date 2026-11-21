@@ -160,7 +160,7 @@ Markov I &
     The Lean encoding below splits the manuscript claim into named
     sub-claim fields; concretisation requires per-block manuscript
     translation. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/reidemeister-action-table.ts
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/reidemeister-action-table.ts
 theorem reidemeister_action_table [ctx : ReidemeisterActionTableContext] :
     ctx.trM ctx.β_R1 = ctx.z * ctx.trM ctx.β ∧
     ctx.trM ctx.β_R2q_split_one + ctx.trM ctx.β_R2q_split_two =

@@ -10,7 +10,7 @@ the recursive brane tower satisfy the Yekutieli lifting condition.
 ## References
 
 - [yekutieli2010] Central Extensions of Gerbes, Theorem 4.17
-- [manuscript] §3 Proposition: Yekutieli Lifting
+- [leitner2026] §3 Proposition: Yekutieli Lifting
 -/
 
 namespace QOU
@@ -59,7 +59,7 @@ structure YekutieliLifting where
 
     The key insight: κ₀ and the jet corrections at level n live in
     complementary subgroups of H²(S, B), so corrections cannot cancel κ₀. -/
--- Ref: [manuscript] §3, Item (3)
+-- Ref: [leitner2026] §3, Item (3)
 theorem perpetual_obstruction
     (yl : YekutieliLifting)
     (h_nontorsion : yl.kappa 0 ≠ yl.zero) :

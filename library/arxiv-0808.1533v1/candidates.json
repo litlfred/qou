@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-0808.1533v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "85bb9732afdd70ea2b62816da6f471ba3dce6ce2c4647b23eb7e4b62cbc277f7",
   "file": "0808.1533v1.pdf"
@@ -16,166 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 10,
-  "by_kind": {
-   "recommendation": 10
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Consider a 3-component link $L=\\{L_1, L_2, L_3\\}$ in $S^3$ parametrized by $\\{\\mathsf{x}(s),\\mathsf{y}(t),\\mathsf{z}(u)\\}$ and the following map $$\\begin{gathered} \\label{eq:F} F_L:S^1\\times S^1\\times S^1\\stackrel{L}{\\longrightarrow} \\text{Conf}(S^3,3)\\stackrel{H}{\\longrightarrow} S^2,\\qquad L(s,t,u)=(\\mathsf{x}(s), \\mathsf{y}(t), \\mathsf{z}(u))\\ . \\end{gathered}$$ In order to explain the map $H:\\text{Conf}(S^3,3)\\longrightarrow S^2$, one must notice that $\\text{Conf}(S^3,3)\\subset S^3\\times S^3\\times S^3$ is diffeomorphic to $S^3\\times \\text{Conf}(\\mbox{\\bbb R}^3,2)=S^3\\times \\mbox{\\bbb R}^3\\times (\\mbox{\\bbb R}^3\\setminus\\{0\\})$, and consequently deformation retracts onto $S^3\\times S^2$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-the-milnor-123-invariant-and-the-hopf-degree.md",
-   "section_title": "The Milnor 123-invariant and the Hopf degree.",
-   "pages": "2-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Thus in order to determine a diagram of $l_{S,N}$, we must keep track of the \"head\" and \"tail\" of the vector $\\mathsf{v}_s=L^s_2(t)-L^s_3(u)$, for various values of $s$ and record values of $t$ and $u$ for which $\\mathsf{v}_s$ points \"North\" and \"South\" (Figure [2](#fig:4-pos){reference-type=\"ref\" reference=\"fig:4-pos\"}).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-the-milnor-123-invariant-and-the-hopf-degree.md",
-   "section_title": "The Milnor 123-invariant and the Hopf degree.",
-   "pages": "2-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Let $\\mathcal{T}(t)=\\hat{g}(t)(\\mathcal{T}(0))\\subset \\text{Conf}(S^3,3)$ we must show $\\frac{d}{dt} \\mathsf{H}_{123}(X^t_1,X^t_2,X^t_3)=0$ at every $t=t_0$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-definition-of-123-helicity-on-invariant-unlinked.md",
-   "section_title": "Definition of ``123-helicity'' on invariant unlinked handlebodies.",
-   "pages": "14-18",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Before we start we must point out the following identity (valid for any 3-form $\\gamma$ on $M\\times M\\times M$ and vector fields $X_1,X_2,X_3$ on $M$) $$(\\iota_{X_1}\\iota_{X_2}\\iota_{X_3}\\gamma)\\wedge\\mu\\wedge\\mu\\wedge\\mu= \\gamma(X_1,X_2,X_3)\\,\\mu\\wedge\\mu\\wedge\\mu=\\gamma\\wedge\\iota_{X_1}\\mu\\wedge\\iota_{X_2}\\mu\\wedge\\iota_{X_3}\\mu\\ .$$ The first equation follows from the definition, the second equation is a consequence of the fact that $\\iota_X$ is an antiderivation i.e. $$\\label{eq:iota-antiderivation} \\iota_X(\\alpha\\wedge\\beta)=(\\iota_X\\alpha)\\wedge\\beta+(-1)^{|\\alpha|}\\alpha\\wedge(\\iota_X\\beta),$$ and $\\iota_{X_i}\\mu_j\\equiv 0$ for $i\\neq j$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-the-ergodic-interpretation-of-h123xt.md",
-   "section_title": "The ergodic interpretation of H123(X;T)",
-   "pages": "18-23",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For the proof of $(ii)$ we must show the following $$\\int_\\mathcal{T} m_{X_1,X_2,X_3}\\,\\mu_1\\wedge \\mu_2\\wedge \\mu_3=\\int_{g(\\mathcal{T})} m_{g_\\ast X_1,g_\\ast X_2, g_\\ast X_3}\\,\\mu_1\\wedge \\mu_2\\wedge \\mu_3\\ .$$ Theorem [\\[th:multi-ergodic\\]](#th:multi-ergodic){reference-type=\"ref\" reference=\"th:multi-ergodic\"}, tells us that $m_{X_1,X_2,X_3}$ and $m_{g_\\ast X_1,g_\\ast X_2, g_\\ast X_3}$ admit $L^1$-averages $\\bar{m}_{X_1,X_2,X_3}$ and $\\bar{m}_{g_\\ast X_1,g_\\ast X_2, g_\\ast X_3}$, under actions of $X_i$ and $g_\\ast X_i$ respectively.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-the-ergodic-interpretation-of-h123xt.md",
-   "section_title": "The ergodic interpretation of H123(X;T)",
-   "pages": "18-23",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Clearly, for $\\mathsf{H}_{123}(X;\\mathcal{T})$ to be nontrivial $\\mathcal{T}$ must be of nonzero measure.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-the-ergodic-interpretation-of-h123xt.md",
-   "section_title": "The ergodic interpretation of H123(X;T)",
-   "pages": "18-23",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This clearly must be the case as we deal with the same topological invariants of links via a different approach.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-the-ergodic-interpretation-of-h123xt.md",
-   "section_title": "The ergodic interpretation of H123(X;T)",
-   "pages": "18-23",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "These approaches should be equivalent to the one presented here in the sense that invariants obtained this way measure the same topological information.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-comparison-to-the-known-approaches-via-massey-pr.md",
-   "section_title": "Comparison to the known approaches via Massey products.",
-   "pages": "27-31",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "When $\\mathcal{T}_i$ are handlebodies there are multiple Massey products in the complement $S^3\\setminus \\mathcal{T}$, but the formula [\\[eq:massey123\\]](#eq:massey123){reference-type=\"eqref\" reference=\"eq:massey123\"} should still be valid.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-comparison-to-the-known-approaches-via-massey-pr.md",
-   "section_title": "Comparison to the known approaches via Massey products.",
-   "pages": "27-31",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It is clear when $\\beta\\in \\Omega^3(\\widetilde{\\mathcal{T}})$ is at least a $C^1$ on $\\widetilde{\\mathcal{T}}\\subset S^3\\times S^3\\times S^3$, then $f=\\beta(X_1,X_2,X_3)$ is continuous on $\\widetilde{\\mathcal{T}}$ and $$\\begin{gathered} \\int_{\\bar{\\mathscr{O}}^1_T(x)}\\int_{\\bar{\\mathscr{O}}^2_T(y)}\\int_{\\bar{\\mathscr{O}}^3_T(z)} f=\\\\ \\bigl(\\int_{\\mathscr{O}^1_T(x)}+\\int_{\\sigma(\\Phi^1(x,T),x)}\\bigr) \\bigl(\\int_{\\mathscr{O}^2_T(y)}+\\int_{\\sigma(\\Phi^2(y,T),y)}\\bigr) \\bigl(\\int_{\\mathscr{O}^3_T(z)}+\\int_{\\sigma(\\Phi^3(z,T),z)}\\bigr)f\\ . \\end{gathered}$$ After expanding, it is obvious that we must show the following (for all choices), when $T\\to \\infty$: $$\\begin{aligned} \\label{eq:lim-sp1} \\frac{1}{T^3}\\int_{\\sigma(\\Phi^1(x,T),x)}\\int_{\\mathscr{O}^2_{T}(y)}\\int_{\\mathscr{O}^3_{T}(z)} f & \\longrightarrow & 0,\\\\ \\label{eq:lim-sp2}\\frac{1}{T^3}\\int_{\\sigma(\\Phi^1(x,T),x)}\\int_{\\sigma(\\Phi^2(y,T),y)}\\int_{\\mathscr{O}^3_{T}(z)} f & \\longrightarrow & 0,\\\\ \\label{eq:lim-sp3}\\frac{1}{T^3}\\int_{\\sigma(\\Phi^1(x,T),x)}\\int_{\\sigma(\\Phi^2(y,T),y)}\\int_{\\sigma(\\Phi^3(z,T),z)} f & \\longrightarrow & 0. \\end{aligned}$$ Since the lengths of the short paths in $\\mathcal{S}$ are bounded by a common con",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-comparison-to-the-known-approaches-via-massey-pr.md",
-   "section_title": "Comparison to the known approaches via Massey products.",
-   "pages": "27-31",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

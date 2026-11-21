@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/cd2018-045/blocks/prop-page-008-03",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 8,
+  "pageEnd": 8,
+  "text": "prop-page-008-03.md",
+  "derivedFrom": "library/cd2018-045/sections/page-008",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cd2018-045/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "theoretical-claim",
+    "claim_domain": "science",
+    "evidence_kind": "analytic-derivation",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper analytic derivation in sections/page-008.md (p. 8-8)"
+  }
+}

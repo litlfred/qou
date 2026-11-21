@@ -1,172 +1,27 @@
 ---
 doc_id: hecke-alg
-doc_title: "symmetric group Andrew Mathas Author address: School thema University Sydney, Sydney 00. ustralia"
+doc_title: "Hecke algebras and Schur algebras of the symmetric group"
 section_id: page-002
 section_title: "Page 2"
-section_number: null
 pages: 2-2
+pdf_page: 2
 source_pdf: hecke_alg.pdf
 source_sha256: 4ac08dfd165fb366
-toc_source: undetermined
+text_source: ocr
+granularity: page
+doc_brief: "Hecke algebras and Schur algebras of the symmetric group — 78 sections: Page 1; Page 2; Page 3"
 ---
-		
-Mathematics
-Subje
-ct
-Classic
-ation.
-Primary
-0C0,
-G		;
-Secondary
-0G0,
-0C0.
-The
-author
-gratefully
-ac
-kno
-wledges
-the
-supp
-ort
-of
-the
-Sonderforsc
-h
-ungsb
-ereic
-h
-
-at
-the
-Univ
-ersit
-at
-Bielefeld.
-Abstra
-ct.
-These
-notes
-giv
-e
-a
-fully
-self{con
-taine
-d
-in
-tro
-duction
-to
-the
-(mo
-du-
-lar)
-represen
-tati
-on
-theory
-of
-the
-Iw
-ahori{Hec
-k
-e
-algebras
-and
-the
-q
-{Sc
-h
-ur
-alge-
-bras
-of
-the
-symmetric
-groups.
-The
-cen
-tral
-aim
-of
-this
-w
-ork
-is
-to
-giv
-e
-a
-concise,
-but
-complete,
-and
-an
-elegan
-t,
-y
-et
-quic
-k,
-treatmen
-t
-of
-the
-classication
-of
-the
-simple
-mo
-dules
-and
-of
-the
-blo
-c
-ks
-of
-these
-t
-w
-o
-imp
-ortan
-t
-classes
-of
-algebras.
-Our
-approac
-h
-is
-com
-binatori
-al
-in
-nature
-and
-is
-based
-up
-on
-the
-construction
-of
-(cellular)
-bases
-whic
-h
-are
-particularly
-w
-ell
-adapted
-to
-the
-represen
-tatio
-n
-theory
-.
+1991 Mathematics Subject Classification. Primary 20030, 16G99;
+Secondary 20G05, 20C20.
+
+The author gratefully acknowledges the support of the
+Sonderforschungsbereich 343 at the Universitat Bielefeld.
+
+ABSTRACT. These notes give a fully self-contained introduction to the (modu-
+lar) representation theory of the Iwahori-Hecke algebras and the q—Schur alge-
+bras of the symmetric groups. The central aim of this work is to give a concise,
+but complete, and an elegant, yet quick, treatment of the classification of the
+simple modules and of the blocks of these two important classes of algebras.
+Our approach is combinatorial in nature and is based upon the construction
+of (cellular) bases which are particularly well adapted to the representation
+theory.

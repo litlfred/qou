@@ -27,8 +27,8 @@ resolution, a trap recorded in bean `qou-cu0a`.
 
 namespace QOU.MassComputationChain
 
--- Ref: [manuscript] prop:typed-crossings-quark-content
--- Ref: [manuscript] §four-term-pair-nucleon
+-- Ref: [leitner2026] prop:typed-crossings-quark-content
+-- Ref: [leitner2026] §four-term-pair-nucleon
 /-- **Typed-crossings encoding (derived).**
 
 Work in a field `A` (the Hecke algebra image, where the `½` average
@@ -48,7 +48,7 @@ theorem typed_crossings_encoding_unique
     {A : Type*} [Field A] (h2 : (2 : A) ≠ 0) (σ σinv : A) (h : A)
     (hinv : σinv = σ - h * 1) :
     σinv = σ - h ∧ (1 / 2 : A) * (σ + σinv) = σ - (h / 2) := by
-  -- Ref: [manuscript] prop:typed-crossings-quark-content
+  -- Ref: [leitner2026] prop:typed-crossings-quark-content
   refine ⟨by rw [hinv]; ring, ?_⟩
   rw [hinv]
   field_simp

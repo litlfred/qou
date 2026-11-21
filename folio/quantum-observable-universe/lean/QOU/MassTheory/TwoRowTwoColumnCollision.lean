@@ -67,7 +67,7 @@ above is specific to this family and does not generalise as written. That is a
 Mathlib-shaped statement and remains open — but it is no longer what stands
 between the two halves of this corpus.
 
--- Ref: [manuscript] rem:hecke-radical-is-temperley-lieb — the block this
+-- Ref: [leitner2026] rem:hecke-radical-is-temperley-lieb — the block this
 -- collision was found in; see also QOU.MathlibExt.WenzlSchurElement.
 -/
 

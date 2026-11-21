@@ -1,1 +1,0 @@
-(The vertex must also be marked to identify which edge corresponds to the ﬁrst factor in the tensor product; however there is an identiﬁcation between the sets of colors allowed for two diﬀerent markings.

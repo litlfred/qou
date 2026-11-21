@@ -1,0 +1,46 @@
+350 Cone point asymptotics
+
+Example 11.18. Let S(a@) = xj - x3 -— --- — x2 be the standard Lorentzian
+quadratic and let C = C,, be the cone of hyperbolicity at the origin described
+in Example 11.14. For a € OB, if « # 0 then K*(a) is the tangent halfspace
+{at+y:y-(VS)(a) > 0}. If = 0 then K*“(a) = C. A Lorentzian quadratic
+is a quadratic polynomial obtained from S by a real linear transformation. The
+boundary of the cone of hyperbolicity for any Lorentzian quadratic is an alge-
+braic tangent cone and the cones of hyperbolicity at these points are halfspaces
+whose boundaries are support hyperplanes to time-like cones. 4
+
+Exercise 11.4. Describe the two cones of hyperbolicity of A(x,y) = x + y at
+(x,y) = (5, —5) and, letting C denote one of these cones, find K“:©(5, —5).
+
+11.2.2 Cones of hyperbolicity in the general case
+
+Although the definition of hyperbolicity in the homogeneous case is valid for
+complex polynomials and involves complex roots, the role played by the real
+subspace is essential. In this section we generalize by defining cones of hyper-
+bolicity K*(z) for functions g = Qo exp where Q is a Laurent polynomial.
+Our definitions are valid only at points z = a +iy for some x on the boundary
+of a component B of the complement of amoeba(Q). We do not know whether
+K*(z) may be defined in such a way that semi-continuity results still hold
+when z is not on the amoeba boundary, or when q is not a log-Laurent polyno-
+mial.
+
+Definition 11.19 (hyperbolicity and normal cones). Let Q be a Laurent poly-
+nomial, let B be a component of R“\ amoeba(Q), and let exp(z) = exp(atiy) €
+Vo with x € OB. If gq = Qo exp then we define
+
+K(z) = K?8(z) = K“(hom(q, « + iy)) for any u € B (11.6)
+
+to be the (open) cone of hyperbolicity of A = hom(q, x + iy) that contains B.
+The existence of this cone is guaranteed by Proposition 11.26 below.
+
+Remarks. (i) Defining K%? using hom(g, 2 +iy) may seem obvious, but the
+difficulty proving properties in this case illustrates that the extension is
+quite non-trivial.
+
+(ii) We may extend the definition of K to all of T(a) by taking K(z) = R¢
+when q(z) # 0.
+(iii) When z = a + iy and a is understood, we sometimes write K*4(y).
+
+Before going further we give a few examples.
+
+Example 11.20 (cones of hyperbolicity at smooth points). Suppose exp(z) =

@@ -1,0 +1,1 @@
+— For d ∈(−π, π) and λ /∈(−qZ) we have: (4.5) [n]! q = q −1 ln q Z ∞eid tn eq(qt)dt = q −1 ln q Z ∞eid tnep(−qt)dt, (4.6) [n]! q = q Z λpZ tn eq(qt)dpt = q Z λpZ tnep(−qt)dpt, (4.7) qn(n−1)/2 = q ln q Z ∞eid tn θp(qt)dt, (4.8) qn(n−1)/2 = q 1 −p Z λpZ tn θp(qt)dpt.

@@ -1,1 +1,0 @@
-This means that the objects labeling the regions and the 1-morphisms labeling lines of the diagrams must coincide, while the 2-morphisms at the vertices are composed with the (co)evaluations of the 1-morphisms at the incident lines.

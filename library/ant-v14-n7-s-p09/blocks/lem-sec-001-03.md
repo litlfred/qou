@@ -1,0 +1,1 @@
+Let G be a ﬁnite group and let p be a prime. Suppose that B is a block of G with a normal defect group D. Let b be a root of B with canonical character θ. Then Irr0(B)σ1 = [ λ∈Irr(D/8(D)) Irr(G | θλ), where 8(D) is the Frattini subgroup of D. Moreover, if c ∈Bl(Gb | D) is the Fong–Reynolds correspon- dent of B, then |Irr0(B)σ1| = |Irr0(c)σ1|.

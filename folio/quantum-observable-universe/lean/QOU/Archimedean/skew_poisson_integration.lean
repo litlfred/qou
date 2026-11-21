@@ -67,7 +67,7 @@ $\pi_<$ a skewed-Poisson structure on $H$.  Then there exists a
     The Lean encoding below splits the manuscript claim into named
     sub-claim fields; concretisation requires per-block manuscript
     translation. -/
--- Ref: [manuscript] quantum-observable-universe/models-of-qous/skew-poisson-integration.ts
+-- Ref: [leitner2026] quantum-observable-universe/models-of-qous/skew-poisson-integration.ts
 theorem skew_poisson_integration [ctx : SkewPoissonIntegrationContext] :
     (∃ (f : ctx.G_mod_p → ctx.H) (g : ctx.H → ctx.G_mod_p),
       Function.LeftInverse g f ∧ Function.RightInverse g f) ∧

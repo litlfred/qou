@@ -408,7 +408,7 @@ def main() -> int:
         "the documented purges durable against silent sibling-branch "
         "re-entry."
     )
-    w.set_content_block("prop:three-calibration-inputs")
+    w.set_content_block("def:three-calibration-discipline")
     w.add_data("production_scripts_scanned", len(py_files))
     w.add_data("banned_symbols", BANNED_SYMBOLS)
     w.add_data("banned_modules", BANNED_MODULES)

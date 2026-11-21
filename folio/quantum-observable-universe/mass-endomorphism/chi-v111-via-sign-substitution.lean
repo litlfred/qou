@@ -58,7 +58,7 @@ noncomputable def chi_V111_beta_n (q : ℝ) : ℝ :=
 noncomputable def chi_V111_difference_factored (q : ℝ) : ℝ :=
   -(q^2 + 1)^2 * (q^2 - 1) / (4 * q^5)
 
--- Ref: [manuscript] rem:chi-v111-via-sign-substitution
+-- Ref: [leitner2026] rem:chi-v111-via-sign-substitution
 -- Ref: [kassel1995] GTM 155 §V.5 (sign-rep character substitution)
 /-- **V_(1,1,1) closed-form derivation** (sign-rep on typed-B_3).
     Closed by `field_simp + ring` from the scalar arithmetic. -/
@@ -85,7 +85,7 @@ implements as a specific transformation of the V_(3) closed form. -/
 noncomputable def chi_V3_closed_form_local (q : ℝ) : ℝ :=
   -(q^2 + 1)^2 * (q^2 - 1) / (4 * q)
 
--- Ref: [manuscript] rem:chi-v111-via-sign-substitution §"substitution"
+-- Ref: [leitner2026] rem:chi-v111-via-sign-substitution §"substitution"
 /-- **The conjugate-partition (sign-rep) symmetry**: V_(1,1,1)'s
     closed form equals V_(3)'s closed form divided by `q^4`.
     This is the structural reason the two share the same numerator

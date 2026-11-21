@@ -1,0 +1,1 @@
+Assume that g = sln (we have similar results for son and spn). Write n = mq + s, with m, q > 0 and s ≥0. Assume that (q, s) = 1 and that the partition associated with the nilpotent orbit Gf is (qm, 1s). Then W−n+n/q(sln, f) ∼= L−s+s/q(sls) so that k = −n + n/q is a collapsing level.

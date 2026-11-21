@@ -1,1 +1,1 @@
-If G is an abelian, transitive subgroup of SN and if σ ∈G is an element of order ℓ, then
+Let G be an abelian, transitive subgroup of S2n which is not a subgroup of A2n. Then G is cyclic.

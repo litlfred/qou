@@ -51,7 +51,7 @@ class NsObstructionComputationContext (R : Type*) [CommRing R] where
     (i) `lk · e(ξ)|_p ≠ 0 ↔` Reeb zero at `p`; (ii) `δ_n|_Σ ≠ 0 ↔` the
     `n`-th jet diverges (`n ≥ 1`).  Both iffs are *derived* by `Iff.intro`
     from the four directional hypotheses. -/
--- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-obstruction-computation.ts
+-- Ref: [leitner2026] quantum-observable-universe/fluid-dynamics/ns-obstruction-computation.ts
 theorem ns_obstruction_computation {R : Type*} [CommRing R]
     [ctx : NsObstructionComputationContext R] :
     (((ctx.lk : R) * ctx.e_xi_at_p ≠ 0) ↔ ctx.reeb_zero_at_p) ∧

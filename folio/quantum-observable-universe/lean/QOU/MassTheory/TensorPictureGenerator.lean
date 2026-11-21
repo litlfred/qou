@@ -39,7 +39,7 @@ second-order coefficients of `D(1+ε)` are the `Y = diag(0, −1, 1, 0)` and
 
 Everything is over a generic field `K` (§7c); no `ℝ`, no numerics.
 
--- Ref: [manuscript] bean qou-qqm4
+-- Ref: [leitner2026] bean qou-qqm4
 -/
 
 namespace QOU.MassTheory

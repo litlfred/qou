@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-0911.1038v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "3bc566efaefd44c65b2a9536bde79ff211e9facffa8e7387762583d9a986378c",
   "file": "0911.1038v2.pdf"
@@ -16,196 +19,82 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 12,
+  "candidates": 2,
   "by_kind": {
-   "recommendation": 12
+   "theorem": 1,
+   "lemma": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 2,
+  "by_domain": {
+   "math": 2
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 2
+  },
+  "by_evidence_location": {
+   "elsewhere": 1,
+   "in-paper": 1
+  },
+  "by_lean_status": {
+   "unformalized": 2
+  },
+  "needs_lean_proof": 2
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Such a dilated Young diagram is usually no longer a Young diagram but is a *generalized Young diagram* and we should not regard it as a combinatorial object but rather as a geometric one.",
-   "strength": "should-not",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-12-asymptotic-shape-of-young-diagrams.md",
-   "section_title": "Asymptotic shape of Young diagrams",
-   "pages": "1-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2.5",
+   "name": "Goulden and Rattan [GR07]",
+   "statement": "For g \u22651, k \u22652g \u22121, (12) \u03a3k,k+1\u22122g = \u22121 k[tk+1\u22122g] X |\u03bb|=2g \u02c6m\u03bb P\u03bb(t) C(t) .",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "External attribution (Goulden and Rattan [GR07]) [[GR]",
+   "external_refs": [
+    "Goulden and Rattan [GR07]",
+    "[GR07]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-013-23-goulden-rattan-formula.md",
+   "section_title": "Goulden-Rattan formula",
+   "pages": "12-12",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: elsewhere, External attribution (Goulden and Rattan [GR07]) [[GR]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-013-01",
+   "block_iri": "library/arxiv-0911.1038v2/blocks/thm-sec-013-01",
+   "claim_id": "arxiv-0911.1038v2#theorem:2.5",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.1",
    "name": null,
-   "statement": "*How should we normalize the characters of the symmetric groups in order to obtain some meaningful asymptotic quantities?* The answer for this question was given by [@Biane2003] who gave the following definition.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-13-how-to-normalize-the-characters.md",
-   "section_title": "How to normalize the characters?",
-   "pages": "2-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For any permutation $\\pi\\in \\mathfrak{S}(k)$ and an irreducible representation $\\rho^\\lambda$ of the symmetric group $\\mathfrak{S}(n)$ corresponding to the Young diagram $\\lambda$ we define the *normalized character* $$\\label{eq:character} \\Sigma^\\lambda_\\pi =\\begin{cases} \\underbrace{n(n-1)\\cdots (n-k+1)}_{k \\text{ factors}} \\frac{\\mathop{\\mathrm{Tr}}\\rho^\\lambda(\\pi)}{\\text{dimension of $\\rho^\\lambda$}} & \\text{if } k\\leq n, \\\\ 0 & \\text{otherwise.} \\end{cases}$$ An interesting feature of this definition is that we do not require that $k$, the index of the symmetric group to which $\\pi$ belongs, must be equal to $n$, the number of boxes of $\\lambda$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-13-how-to-normalize-the-characters.md",
-   "section_title": "How to normalize the characters?",
-   "pages": "2-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Explicit but rather complicated formulas for the general genus $K_{k,k+1-2g}$ were found by Goulden and Rattan [@GouldenRattan2007] (for a more elementary proof we refer to the work of Biane [@Biane2005/07]) and we shall discuss their result in Section [\\[sec:Goulden-Rattan\\]](#sec:Goulden-Rattan){reference-type=\"ref\" reference=\"sec:Goulden-Rattan\"}.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-17-genus-expansion.md",
-   "section_title": "Genus expansion",
-   "pages": "5-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall explain precisely what this divisibility means and show in Section [\\[sec:divisibility\\]](#sec:divisibility){reference-type=\"ref\" reference=\"sec:divisibility\"} that it holds indeed by studying the arithmetic properties of Kerov polynomials and their divisibility by prime numbers.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-19-general-idea-of-the-proof.md",
-   "section_title": "General idea of the proof",
-   "pages": "7-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall do it in Section [\\[sec:existence\\]](#sec:existence){reference-type=\"ref\" reference=\"sec:existence\"} by analysis of the Goulden-Rattan formula.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-19-general-idea-of-the-proof.md",
-   "section_title": "General idea of the proof",
-   "pages": "7-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It has a property that $\\Sigma_\\Pi=\\Sigma_\\pi$, where the right-hand side should be understood as in [\\[eq:character\\]](#eq:character){reference-type=\"eqref\" reference=\"eq:character\"} for some $\\pi\\in\\mathfrak{S}(l)$, $l\\geq 1$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-022-43-arithmetic-properties-of-kerov-polynomials.md",
-   "section_title": "Arithmetic properties of Kerov polynomials",
-   "pages": "21-25",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "::: proof *Proof of Lemma [\\[lem:div\\]](#lem:div){reference-type=\"ref\" reference=\"lem:div\"}.* In the following we shall prove that the coefficients are integer numbers.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-022-43-arithmetic-properties-of-kerov-polynomials.md",
-   "section_title": "Arithmetic properties of Kerov polynomials",
-   "pages": "21-25",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In the following we shall use the notations and results presented in the paper of Biane [@Biane2003].",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-022-43-arithmetic-properties-of-kerov-polynomials.md",
-   "section_title": "Arithmetic properties of Kerov polynomials",
-   "pages": "21-25",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The coefficient of $z^{-1}$ in [\\[eq:iloczynn2\\]](#eq:iloczynn2){reference-type=\"eqref\" reference=\"eq:iloczynn2\"} can be viewed as a polynomial in $a$; we shall denote it by $P(a)$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-022-43-arithmetic-properties-of-kerov-polynomials.md",
-   "section_title": "Arithmetic properties of Kerov polynomials",
-   "pages": "21-25",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It follows that $P-\\widetilde{P}$ has degree at most $p-2$ which takes the same value for all $a\\in\\{1,\\dots,p-1\\}$ hence it must be equal to the constant.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-022-43-arithmetic-properties-of-kerov-polynomials.md",
-   "section_title": "Arithmetic properties of Kerov polynomials",
-   "pages": "21-25",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It follows that P \u2212eP has degree at most p \u22122 which takes the same value for all a \u2208{1, . . . , p \u22121} hence it must be equal to the constant.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-024-references.md",
-   "section_title": "References",
-   "pages": "25-26",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "The following abstract equalities hold: (16)X \u00b5\u222a\u03c1=\u03bd m\u03bb(\u00b5)(l(\u00b5) + 2g \u22122)! l(\u00b5)! u\u00b5u\u03c1 = m\u03bb(\u03bd) l(\u03bb) + 2g \u22121 (l(\u03bd) + 2g \u22122)! l(\u03bd)! u\u03bd; (17) X \u00b5\u222a\u03c1=\u03bd m\u03bb(\u00b5)(2g \u22121)l(\u00b5)z\u22121 \u00b5 z\u22121 \u03c1 = \u00122g \u22121 2g \u0013l(\u03bb) m\u03bb(\u03bd)(2g)l(\u03bd)z\u22121 \u03bd . STRUCTURE OF KEROV CHARACTER POLYNOMIALS",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-020-41-identities-on-symmetric-functions.md (p. 18-20)",
+   "external_refs": [],
+   "proof_excerpt": "From the de\ufb01nition of the monomial symmetric function we know that m\u03bb(\u00b5) = 0 for all partitions \u00b5 such that l(\u00b5) < l(\u03bb). We use an identity that for every integer n such that l(\u03bb) \u2264n \u2264l(\u03bd) we have (18) \u0012l(\u03bd) \u2212l(\u03bb) n \u2212l(\u03bb) \u0013 m\u03bb(\u03bd) = X \u00b5\u222a\u03c1=\u03bd, l(\u00b5)=n m\u03bb(\u00b5) Y i\u22651 mi(\u03bd)! mi(\u00b5)! mi(\u03c1)!",
+   "section_file": "sections/sec-020-41-identities-on-symmetric-functions.md",
+   "section_title": "Identities on symmetric functions",
+   "pages": "18-20",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-020-41-identities-on-symmetric-functions.md (p. 18-20)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-020-01",
+   "block_iri": "library/arxiv-0911.1038v2/blocks/lem-sec-020-01",
+   "claim_id": "arxiv-0911.1038v2#lemma:4.1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

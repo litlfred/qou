@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/104171-rmi-1356/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Handlebody Temperley–Lieb and blob algebras",
+  "pageStart": 20,
+  "pageEnd": 34,
+  "contains": [
+    "library/104171-rmi-1356/blocks/prose-sec-003",
+    "library/104171-rmi-1356/blocks/rem-sec-003-01",
+    "library/104171-rmi-1356/blocks/def-sec-003-02",
+    "library/104171-rmi-1356/blocks/ex-sec-003-03",
+    "library/104171-rmi-1356/blocks/def-sec-003-04",
+    "library/104171-rmi-1356/blocks/rem-sec-003-05",
+    "library/104171-rmi-1356/blocks/lem-sec-003-06",
+    "library/104171-rmi-1356/blocks/rem-sec-003-07",
+    "library/104171-rmi-1356/blocks/rem-sec-003-08",
+    "library/104171-rmi-1356/blocks/prop-sec-003-09",
+    "library/104171-rmi-1356/blocks/ex-sec-003-10",
+    "library/104171-rmi-1356/blocks/thm-sec-003-11",
+    "library/104171-rmi-1356/blocks/rem-sec-003-12",
+    "library/104171-rmi-1356/blocks/def-sec-003-13",
+    "library/104171-rmi-1356/blocks/ex-sec-003-14",
+    "library/104171-rmi-1356/blocks/ex-sec-003-15",
+    "library/104171-rmi-1356/blocks/rem-sec-003-16",
+    "library/104171-rmi-1356/blocks/rem-sec-003-17",
+    "library/104171-rmi-1356/blocks/lem-sec-003-18",
+    "library/104171-rmi-1356/blocks/ex-sec-003-19",
+    "library/104171-rmi-1356/blocks/lem-sec-003-20",
+    "library/104171-rmi-1356/blocks/prop-sec-003-21",
+    "library/104171-rmi-1356/blocks/ex-sec-003-22",
+    "library/104171-rmi-1356/blocks/prop-sec-003-23",
+    "library/104171-rmi-1356/blocks/thm-sec-003-24",
+    "library/104171-rmi-1356/blocks/rem-sec-003-25",
+    "library/104171-rmi-1356/blocks/def-sec-003-26",
+    "library/104171-rmi-1356/blocks/def-sec-003-27",
+    "library/104171-rmi-1356/blocks/rem-sec-003-28",
+    "library/104171-rmi-1356/blocks/lem-sec-003-29",
+    "library/104171-rmi-1356/blocks/def-sec-003-30",
+    "library/104171-rmi-1356/blocks/lem-sec-003-31",
+    "library/104171-rmi-1356/blocks/rem-sec-003-32",
+    "library/104171-rmi-1356/blocks/rem-sec-003-33",
+    "library/104171-rmi-1356/blocks/rem-sec-003-34",
+    "library/104171-rmi-1356/blocks/def-sec-003-35",
+    "library/104171-rmi-1356/blocks/lem-sec-003-36",
+    "library/104171-rmi-1356/blocks/lem-sec-003-37"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-rmi-1356/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-rmi-1356/manifest.jsonld",
+  "provenance": "ingested"
+}

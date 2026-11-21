@@ -12,7 +12,7 @@ the operator-matrix construction:
      Hoefsmit seminormal matrices ρ_λ(σ_i) at q = q_0 via the
      existing infra `hecke/hecke_characters.py`.
   2. Compute the per-block trace Tr ρ_λ(β) of the electron word
-     β = σ_0 σ_1 σ_0 (the trefoil = (0,1,0)) and the partial
+     β = σ_0 σ_1 σ_0 (the electron word = (0,1,0); closure Hopf link) and the partial
      intermediate words.
   3. Form the per-block Δ(net)_λ = Tr ρ_λ(after) - Tr ρ_λ(before)
      (the operator-valued analog of the scalar Δ(net) from

@@ -5,8 +5,8 @@ $[k]_q = (q^k - q^{-k})/(q - q^{-1})$ vanishes for $k \geq 1$. (The
 older $\mathbb{Q}(q^{1/2})$ hypothesis was an artefact of convention
 C, whose $z = 1/(q^{1/2}+q^{-1/2})$ needs the square root; convention
 D's $z = q^{3}/(q^{2}+1)$ does not, and nothing below leaves
-$\mathbb{Q}(q)$.) We
-write $z$ for the Markov parameter of the framework normalisation
+$\mathbb{Q}(q)$.) Write
+$z$ for the Markov parameter of the framework normalisation
 $\mathrm{tr}_M(\sigma_i) = z$ — deliberately left **undetermined**
 here, since Step 3b derives it rather than stipulating it — and a
 *Markov trace* means a compatible family of linear functionals
@@ -76,7 +76,7 @@ $x$ and $z_{-} = z - (q - q^{-1})$ is the negative-crossing loop
 value ([Markov axioms](#rem:markov-axioms-primitive)). This is the
 Ocneanu weight formula at framing ratio $a^2 = z/z_{-}$, verified
 exactly for every $\lambda \vdash n \leq 5$
-([witness](computations/markov-trace-weights-wenzl.witness.json) —
+([witness](../../../computations/markov-trace-weights-wenzl.witness.json) —
 note that that witness was computed at **convention C**,
 $z = 1/(q^{1/2}+q^{-1/2})$, per its own `description` field; what it
 certifies is the hook–content *formula*, which is
@@ -117,8 +117,8 @@ $\mathrm{TL}_n(q) = H_n(q)/I_n$ is non-degenerate.
 
 **Step 3: uniqueness.**
 Let $\tau$ be any Markov trace on the tower satisfying M1–M3 with
-the same parameter $z$. We show $\tau = \mathrm{tr}_M$ at every
-level, by induction on $n$.
+the same parameter $z$. Induction on $n$ shows $\tau = \mathrm{tr}_M$ at every
+level.
 
 *Base case.* $H_1(R, q) = R$, and M1 forces
 $\tau(c) = c = \mathrm{tr}_M(c)$ for all $c \in R$.
@@ -220,14 +220,12 @@ $z$, so the $n = 3$ system already pins the parameter for the whole
 tower, and the Ocneanu formula then returns
 $y_{(n-k,k)} = [\,n-2k+1\,]_q / [2]_q^{\,n}$.
 
-*Formal status.* The elimination above is
-`QOU.BraidsAndKnots.markovWeights_eq_jones_of_threeRow_eq_zero`
-(division-free, over a commutative domain), the spurious
-branch is `markovWeights_degenerate_root`, and the fibre-side
-antecedent is `markovWeights_eq_jones_of_fibre_categorical`. The
-general-$n$ closed form is *not* proved by induction in Lean: what is
+*Status.* The elimination above is proved division-free, over a
+commutative domain, together with the spurious branch and the
+fibre-side antecedent. The
+general-$n$ closed form is *not* proved by induction: what is
 proved is the recursion $[m+2]_q + [m]_q = [2]_q [m+1]_q$ behind it
-(`qint_three_term_pair`, `markov_branching_general`) plus fixed-$n$
+ plus fixed-$n$
 instances at $n = 3, 4$; the closed form itself is verified against
 every partition of $n \leq 7$ to a worst residual of
 $1.34 \times 10^{-51}$.

@@ -40,7 +40,7 @@ another parameter. The `d_kind` series are the probe's measured coefficients, ca
 here as truncations at second order and used only through their vanishing at
 `ε = 0`. Generic field of characteristic zero (§7c); no numerics; no `sorry`.
 
--- Ref: [manuscript] bean qou-olxi; computations/probes/bond_factors_are_z_plus_d_probe.py
+-- Ref: [leitner2026] bean qou-olxi; computations/probes/bond_factors_are_z_plus_d_probe.py
 -/
 
 namespace QOU.MassTheory
@@ -52,9 +52,10 @@ variable {K : Type*} [Field K]
 /-- The convention-D Markov parameter `z_D = q³/(q² + 1)`. -/
 def zD (q : K) : K := q ^ 3 / (q ^ 2 + 1)
 
-/-- **At the classical point the Markov parameter is `1/2`.** -/
+/-- **At the classical point `q = 1`, the parameter `z_D` is `1/2`.** -/
 theorem zD_one : zD (1 : K) = 1 / 2 := by
-  norm_num [zD]
+  change (1 : K) ^ 3 / ((1 : K) ^ 2 + 1) = 1 / 2
+  norm_num
 
 /-- The three interface kinds of the canonical atom word. -/
 inductive InterfaceKind
@@ -74,7 +75,10 @@ def bondFactor (k : InterfaceKind) (ε : K) : K := zD (1 + ε) + dKind k ε
 
 /-- **Every bond factor is `1/2` at the classical point**, whatever its kind. -/
 theorem bondFactor_classical (k : InterfaceKind) : bondFactor k (0 : K) = 1 / 2 := by
-  cases k <;> simp [bondFactor, dKind, zD] <;> norm_num
+  cases k with
+  | pp => change (1 + (0 : K)) ^ 3 / ((1 + 0) ^ 2 + 1) + 0 = 1 / 2; norm_num
+  | pn => change (1 + (0 : K)) ^ 3 / ((1 + 0) ^ 2 + 1) + (-0 + 0 ^ 2 / 2) = 1 / 2; norm_num
+  | nn => change (1 + (0 : K)) ^ 3 / ((1 + 0) ^ 2 + 1) + (-2 * 0 + 0 ^ 2) = 1 / 2; norm_num
 
 /-- The Mayer variable of a classical bond is `−1/2`. -/
 theorem mayer_classical [CharZero K] : mayer (1 / 2 : K) = -(1 / 2) := by
@@ -97,5 +101,44 @@ theorem b3_bondModel_classical [CharZero K] (k₁ k₂ k₃ : InterfaceKind) :
     b3corpus (bondFactor k₁ (0 : K)) (bondFactor k₂ 0) (bondFactor k₃ 0) = -(5 / 8) := by
   rw [bondFactor_classical, bondFactor_classical, bondFactor_classical]
   exact b3corpus_classical
+
+/-- **Exact deviation of `z_D(1 + ε)` from the classical floor `1/2` (`qou-olxi`).** -/
+theorem zD_sub_half [CharZero K] (ε : K) (h : (1 + ε) ^ 2 + 1 ≠ 0) :
+    zD (1 + ε) - 1 / 2 =
+      ε * (4 + 5 * ε + 2 * ε ^ 2) / (2 * ((1 + ε) ^ 2 + 1)) := by
+  unfold zD
+  have h2 : (2 : K) ≠ 0 := two_ne_zero
+  field_simp [h, h2]
+  ring
+
+/-- **Quadratic Taylor remainder of `z_D(1 + ε)` around `ε = 0` (`qou-olxi`).**
+    `z_D(1 + ε) - (1/2 + ε + ε²/4) = -ε³(2 + ε) / (4((1 + ε)² + 1))`. -/
+theorem zD_quadratic_remainder [CharZero K] (ε : K) (h : (1 + ε) ^ 2 + 1 ≠ 0) :
+    zD (1 + ε) - (1 / 2 + ε + ε ^ 2 / 4) =
+      -(ε ^ 3 * (2 + ε)) / (4 * ((1 + ε) ^ 2 + 1)) := by
+  unfold zD
+  have h2 : (2 : K) ≠ 0 := two_ne_zero
+  have h4 : (4 : K) ≠ 0 := by norm_num
+  field_simp [h, h2, h4]
+  ring
+
+/-- The quadratic truncation of `bondFactor k ε` around `ε = 0` displayed in the
+    module table (`qou-olxi`). -/
+def bondFactorQuadApprox : InterfaceKind → K → K
+  | .pp, ε => 1 / 2 + ε + ε ^ 2 / 4
+  | .pn, ε => 1 / 2 + 3 * ε ^ 2 / 4
+  | .nn, ε => 1 / 2 - ε + 5 * ε ^ 2 / 4
+
+/-- **All three interface kinds (`pp`, `pn`, `nn`) match the module table's
+    quadratic expansion with the same exact rational remainder (`qou-olxi`).** -/
+theorem bondFactor_sub_quadApprox [CharZero K] (k : InterfaceKind) (ε : K)
+    (h : (1 + ε) ^ 2 + 1 ≠ 0) :
+    bondFactor k ε - bondFactorQuadApprox k ε =
+      -(ε ^ 3 * (2 + ε)) / (4 * ((1 + ε) ^ 2 + 1)) := by
+  have hz := zD_quadratic_remainder ε h
+  cases k <;> {
+    simp only [bondFactor, dKind, bondFactorQuadApprox]
+    linear_combination hz
+  }
 
 end QOU.MassTheory

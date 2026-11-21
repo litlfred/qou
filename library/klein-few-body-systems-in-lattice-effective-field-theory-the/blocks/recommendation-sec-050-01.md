@@ -1,1 +1,0 @@
-Similar issues strategies are used in non-relativistic QCD for heavy quarks on the lattice, where the lattice spacing should not be much smaller than the Compton wavelength of the heavy quark [160–162].

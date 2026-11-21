@@ -1,12 +1,9 @@
-Three blocks address the $q \to 1$ classical limit:
+Two blocks address the $q \to 1$ classical limit:
 
 | Block | Scope | Status |
 |---|---|---|
 | [classical limit functor](#def:classical-limit-functor) | Topological definition $\mathcal{L} : \mathbf{C}_q \to \mathbf{C}_1$ | Definition (with obstruction) |
 | **This result** | Single-functor surreal replacement: $\mathcal{L} \cong \mathrm{St} \circ \mathrm{ev}_{1+\varepsilon}$ | Conjecture (open) |
-| [archimedean QOU is standard-part of surreal](#conj:archimedean-stpart) | Whole-tuple surreal replacement on $(\mathbf{C}, \varTheta, G, \mathcal{S})$ | Conjecture (open) |
-
-The current block provides the single-functor version; the whole-tuple version is the appendix companion. Both are likely equivalent modulo functoriality.
 
 The [classical limit functor](#def:classical-limit-functor) $\mathrm{cl} : \mathbf{C}_q \to \mathbf{C}_{q=1}$ takes the $q \to 1$ limit of categorical structures parametrised by the substrate parameter $q$. Classically, this requires a topological notion of limit on the parameter space or a careful Hochschild-cohomology construction ([classical limit obstruction](#def:classical-limit-obstruction)). This conjecture proposes a clean replacement: the classical-limit functor is the standard-part of evaluation at $q = 1 + \varepsilon$.
 

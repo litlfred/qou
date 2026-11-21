@@ -34,7 +34,7 @@ is a theorem of Weil, but its $q$-deformation --- the $[\rho]_q$, $\ln_q$ and
 $\Omega_q$ terms --- is a claim of this framework.
 
 **The finite-spectrum form is refuted, and the reason names what a repair must
-do.** Formalised with the spectral side as a *finite* list of eigenvalues, the
+do.** Stated with the spectral side as a *finite* list of eigenvalues, the
 identity holds for **no datum at all** --- any ideals, any spectrum, any
 $\Omega_q$, any $q>1$. The mechanism is a mismatch of boundedness. The geometric
 side $\psi_q(X)$ is a sum over finitely many maximal ideals whose terms are
@@ -44,7 +44,7 @@ being finitely many terms of norm $X^{\mathrm{Re}\,\rho}$ with $X \le \sqrt2$; w
 $-\tfrac{1}{2}\ln_q\!\left(1 - X^{-2}\right)$ diverges to $+\infty$ as
 $X \to 1^{+}$. A bounded function cannot equal an unbounded one.
 
-This is a defect of the formalisation, not of the mathematics. The classical
+This is a defect of the finite-spectrum formulation, not of the mathematics. The classical
 explicit formula carries the same $-\tfrac{1}{2}\log(1-x^{-2})$ term and is
 true, because there the spectral sum runs over *infinitely many* zeros and
 converges only conditionally: that term is the closed form of the trivial-zero

@@ -1,0 +1,1 @@
+3. An even subgraph G of Gx is admissible if each indegree is at most one. In other words, G is a vertex-disjoint collection of directed cycles. Let S(Gx_) denote the collection of admissible subgraphs of the arc-graph Gx.

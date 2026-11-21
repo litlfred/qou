@@ -1,7 +1,7 @@
 # Mathas' route to the Murphy basis — the exact chain, and where the corpus stands
 
 **Date:** 2026-09-04 · **Bean:** `qou-phir` · **Branch:** `claude/garnir-shape-construction-2026-09-04`
-**Source:** [`library/hecke-alg/sections/sec-000-document.md`](../../library/hecke-alg/sections/sec-000-document.md)
+**Source:** [`library/hecke-alg/sections/`](../../library/hecke-alg/sections/) (one file per page since the 2026-11-15 re-ingest; the line numbers below are of the earlier single-file text)
 (Mathas, *Hecke algebras and Schur algebras of the symmetric group*), lines 4112, 4343, 4451, 4489, 5132.
 
 ## Why this document

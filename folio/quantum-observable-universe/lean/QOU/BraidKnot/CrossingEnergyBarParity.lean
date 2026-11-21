@@ -148,4 +148,9 @@ theorem eCross_bar (p m q : R) : eCross m p q⁻¹ = -eCross p m q := by
   · simp
   · rw [inv_inv]; ring
 
+/-- Adding the crossing energy to its bar-involution image cancels to zero (`qou-jjge`). -/
+theorem eCross_bar_add_eq_zero (p m q : R) :
+    eCross m p q⁻¹ + eCross p m q = 0 := by
+  rw [eCross_bar p m q, neg_add_cancel]
+
 end QOU.BraidKnot

@@ -1,0 +1,1 @@
+Given a diagram of groupoids S B T p ? ? ? ? ? ? ? ? ? ? ? ? ? ? q   F / α ;C      where F is an equivalence of groupoids, the restriction of F to the full inverse image p−1(b) F|p−1(b) : p−1(b) →q−1(b) is an equivalence of groupoids, for any object b ∈B.

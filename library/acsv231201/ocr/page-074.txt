@@ -1,0 +1,42 @@
+56 Generating functions
+
+cycles of length one and two, then dividing by 2 to account for orientation.
+The exponential generating function for labeled 2-regular graphs is thus
+
+4
+
+Example 2.53 (surjections). A surjection of size n is any mapping from [n]
+to a set [k] for any positive integer k. Because a surjection of size n onto [k]
+can be viewed as the sequence (f~!(1),..., f~!(k)) of nonempty sets, and the
+exponential generating function of nonempty sets is e* — 1, the exponential
+generating function of surjections is 1/(2 — e’). 4
+
+A wide variety of additional combinatorial constructions, for labeled and
+unlabeled classes, can be found in [FS09].
+
+Notes
+
+The transfer matrix method is classical, and discussed in [Sta97, Section 4.7]
+and [GJ04, Chapter 2], among many other places. Our discussion of the ker-
+nel method borrows liberally from [BPOO]. The method itself, which appears
+to have been re-discovered several times, has been taken much further; a his-
+torical account and survey of recent results can be found in [Mel21, Section
+4.2.1].
+
+Several of our proofs in Section 2.4 are taken from [Sta99]. An earlier defini-
+tion of P-recursiveness appeared in the literature but it was discarded, due to its
+failure to be equivalent to D-finiteness; counterexamples are given in [Lip89].
+Lipshitz’s Theorem replaced two earlier proofs [Ges81; Zei82] with gaps and
+solved a problem of Stanley [Sta80, Question 4e]. Algorithms for finding a
+differential equation satisfied by an algebraic function go back at least to Abel,
+and work on efficient algorithms for this purpose is still ongoing [Bos+07].
+The approach of Exercise 2.14 is due to Comtet [Com64].
+
+The method of Denef and Lipshitz [DL87] for expressing a d-variate alge-
+braic function as the diagonal of a 2d-variate rational function is not, to our
+knowledge, computationally effective, as it relies on the existence of a gener-
+ator for a certain type of ring extension. Further discussion can be found in
+[AB 13], which gives a different, computationally effective, embedding proce-
+dure. Denef and Lipshitz also give an embedding as an M-diagonal in dimen-
+sion d + 1, and they allow a wider range of substitutions than do the other
+methods.

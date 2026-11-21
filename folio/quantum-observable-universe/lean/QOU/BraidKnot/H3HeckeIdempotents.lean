@@ -94,7 +94,7 @@ dim_q identity:
 
 This is a non-trivial substantive scalar identity in `q`. -/
 
--- Ref: [manuscript] rem:h3-hecke-idempotents
+-- Ref: [leitner2026] rem:h3-hecke-idempotents
 -- Ref: [wenzl1988] doi:10.1007/BF01239526
 /-- The sum of the three q-dimensions at H_3 equals `q + q⁻¹ + 2`. -/
 theorem dimQ_sum_H3 (q : R) :
@@ -108,7 +108,7 @@ These concrete q-dimension values provide the substantive scalar
 content for the `QYoungSymmetrizers 3 q` class instance: the
 residual scalar is naturally `0` by the additive identity above. -/
 
--- Ref: [manuscript] rem:h3-hecke-idempotents
+-- Ref: [leitner2026] rem:h3-hecke-idempotents
 -- Ref: [wenzl1988] doi:10.1007/BF01239526
 /-- The residual `(dim_q V_(3) + dim_q V_(2,1) + dim_q V_(1,1,1))
     − (q + q⁻¹ + 2)` vanishes at every `q`. -/
@@ -135,14 +135,14 @@ def sigma_eigval_V3 (q : R) (_i : Fin 2) : R := q
 /-- σ_i eigenvalue on V_(1,1,1): always `-q⁻¹`. -/
 noncomputable def sigma_eigval_V111 (q : R) (_i : Fin 2) : R := -q⁻¹
 
--- Ref: [manuscript] rem:h3-hecke-idempotents
+-- Ref: [leitner2026] rem:h3-hecke-idempotents
 -- Ref: [hoefsmit1974]
 omit [Field R] in
 /-- On V_(3), both generators have the same eigenvalue `q`. -/
 theorem sigma_eigval_V3_eq (q : R) (i : Fin 2) :
     sigma_eigval_V3 q i = q := rfl
 
--- Ref: [manuscript] rem:h3-hecke-idempotents
+-- Ref: [leitner2026] rem:h3-hecke-idempotents
 -- Ref: [hoefsmit1974]
 /-- On V_(1,1,1), both generators have the same eigenvalue `-q⁻¹`. -/
 theorem sigma_eigval_V111_eq (q : R) (i : Fin 2) :

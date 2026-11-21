@@ -1,1 +1,0 @@
-Then since $K$ is an L-space knot, Hom \cite{hom-cabling} proved that $C$ is an L-space knot and that \[ \frac{m}{n} \geq 2g(C) - 1; \] in fact, the inequality must be strict since $n \nmid m$, so $\frac{m-1}{n} \geq 2g(C)-1$.

@@ -8,7 +8,7 @@ export default remark({
   uses: [
     "prop:photon-threading-mass",
     "ex:mass-identity-su2",
-    "thm:mass-energy-equivalence",
+    "def:mass-energy",
     "thm:groebner-shirshov-energy",
     "ex:photon-wavefront",
   ],

@@ -1,0 +1,1 @@
+M. de Divitiis et al., Isospin breaking effects due to the up-down mass difference in Lattice QCD, JHEP 04 (2012) 124 [1110.6294]. [31] QCDSF, UKQCD collaboration, Isospin breaking in octet baryon mass splittings, Phys.

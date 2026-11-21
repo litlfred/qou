@@ -22,10 +22,17 @@ Each factor (σ₀ σ₁⁻¹) is a γγ̄ pair-production element:
 
 The product σ₀·σ₁⁻¹ creates a γγ̄ pair on overlapping strand pairs,
 exactly the categorical analogue of a γγ → e⁺e⁻ QED vertex (with the
-σ₀σ₁σ₀ = trefoil = e⁻ identification of the existing
-`knot-operator-table.py`).  β_Bor is therefore THREE sequential γγ̄
+σ₀σ₁σ₀ = e⁻ identification of the existing
+`knot-operator-table.py`; its closure is the Hopf link, owner ruling 2026-11-21).  β_Bor is therefore THREE sequential γγ̄
 pair-production events whose linking pattern is the Borromean
 3-component link.
+
+Scope note (2026-11-20). Owner ruling (bean qou-99qc, 2026-11-18, confirmed 2026-11-20):
+def:photon is gamma(phi) = 1 + phi0 s0 + phi1 s1 + phi01 s0 s1^-1, so V = s0 s1^-1 is ONE
+photon's fourth term, not a photon / anti-photon pair. beta_Bor = V^3 = gamma(0,0,qh) gamma(0,0,-q^-1 h),
+TWO four-term photons (mass-theory/borromean-two-photon-factorisation; checked exactly in
+probes/photon_chiral/photon_chiral_ports_probe.py section C). Every Markov-trace number below is a
+property of the braid and does not move; only the event count reading (3 gamma-gammabar) is superseded.
 
 ## The GS filtration
 
@@ -134,7 +141,8 @@ from codata_constants import M_E_MEV, M_P_MEV_VALIDATION  # noqa: E402
 # polynomial of its closure, which is equivalent and cleaner.
 
 BORROMEAN_BRAID_WORD = "(σ₀·σ₁⁻¹)³"
-BORROMEAN_GAMMA_GAMMA_BAR_FACTORS = 3  # three γγ̄ pair-production events
+BORROMEAN_GAMMA_GAMMA_BAR_FACTORS = 3  # three V = σ₀σ₁⁻¹ letters (record reading: γγ̄ events)
+BORROMEAN_FOUR_TERM_PHOTONS = 2  # V³ = γ(0,0,qh)·γ(0,0,−q⁻¹h) under def:photon (ruling 2026-11-18/20)
 
 
 def jones_borromean(q):
@@ -296,7 +304,8 @@ def main():
     print(f"  q₀ = {mp.nstr(q, 12)}  h₀ = {mp.nstr(h0, 12)}")
     print("=" * 72)
     print()
-    print(f"  γγ̄ factors in β_Bor:    {BORROMEAN_GAMMA_GAMMA_BAR_FACTORS}")
+    print(f"  V letters in β_Bor:     {BORROMEAN_GAMMA_GAMMA_BAR_FACTORS}")
+    print(f"  four-term photons:      {BORROMEAN_FOUR_TERM_PHOTONS}  (V³ = γ₊γ₋, def:photon)")
     print(f"  Borromean braid word:   {BORROMEAN_BRAID_WORD}")
     print()
     print("  Point evaluations at q₀:")
@@ -350,6 +359,7 @@ def main():
     w.add_parameter("h0", mp.nstr(h0, 20))
     w.add_parameter("borromean_braid_word", BORROMEAN_BRAID_WORD)
     w.add_parameter("gamma_gamma_bar_factors", BORROMEAN_GAMMA_GAMMA_BAR_FACTORS)
+    w.add_parameter("four_term_photons_in_beta_Bor", BORROMEAN_FOUR_TERM_PHOTONS)
     w.add_parameter("max_h_order", max_order)
 
     w.add_data("point_eval_at_q0", {

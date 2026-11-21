@@ -1,1 +1,0 @@
-So, the scaled Frobenius coordinates under $q$-Plancherel measures should converge towards the vector $(1-q,(1-q)q,(1-q)q^{2},\ldots;0,0,\dots)$, which is exactly our Theorem [\[th:first_order_as_rows\]](#th:first_order_as_rows){reference-type="ref" reference="th:first_order_as_rows"} and Remark [\[RemColumns\]](#RemColumns){reference-type="ref" reference="RemColumns"}.

@@ -1,0 +1,47 @@
+2.4 D-finite generating functions and diagonals 47
+
+Because many other operations on power series can be phrased as diagonals,
+Theorem 2.30 finds a wide variety of applications.
+
+Example 2.31. The Hadamard product of two formal power series F(z) =
+Drent pz” and G(Z) = Vipena by Z” is the series (F OG)(Z) = Vipeqe Arbpz”.
+The repeated diagonal expression
+
+(F OG)(Z) = Ag=y, ++ Aeiay, P@GY)
+
+implies that F © G is D-finite whenever F and G are D-finite. See [CS98]
+for an algorithm to compute an annihilating D-finite equation for F © G from
+annihilating D-finite equations for F and G. 4
+
+Exercise 2.9. The z-constant term of an analytic series F(z,t) € C[[z,¢]]
+is the series F(0,t) € C[[¢]]. Prove that the z-constant term of F is the main
+diagonal of F(z, z1 - ++ Zaf).
+
+Finally, we note that the class of D-finite series is not closed under compo-
+sition or division.
+
+Exercise 2.10. Let f(x) = sin x and g(x) = 1/x. Prove that f and g are D-finite
+but g(f(x)) is not.
+
+Algebraic series and diagonals
+
+The family of series obtained as main diagonals of rational functions appears
+in many combinatorial applications, and sits naturally between the classes of
+algebraic and D-finite series. Indeed, it turns out that the diagonals of bivariate
+rational series form precisely the set of algebraic series. This means that com-
+putation of asymptotics for the main diagonal of a bivariate rational series can
+be reduced to computing asymptotics of a univariate algebraic series (see the
+discussion in Section 13.1) or vice versa (see Section 9.3.1).
+
+The proof that the diagonal of a bivariate rational series is algebraic was
+sketched by Furstenberg [Fur67] and given in more detail by Hautus and Klarner
+[HK71]. Because we work with series over the complex numbers, we give a
+straightforward analytic proof that helps compute an annihilating polynomial
+for the diagonal. Stanley [Sta99, Theorem 6.3.3] gives an algebraic proof hold-
+ing over arbitrary fields.
+
+Theorem 2.32 (bivariate diagonal extraction). If F(x,y) is a rational power
+series in two variables then AF is algebraic.
+
+Proof Write F(x, y) = P(x, y)/Q(x, y) for coprime polynomials P and Q with
+Q(0,0) # 0, and let h(y) = (AF)(y). Since F converges in a neighborhood of

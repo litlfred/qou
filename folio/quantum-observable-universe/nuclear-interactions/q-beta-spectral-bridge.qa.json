@@ -1331,6 +1331,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "556a47238e88",
+          "ts": "a4fa218e2420",
+          "lean": "012669f55248",
+          "lean_statement": "1f967a9758dd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:01.919Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "The ref (`.lean:254`) proves three identities in free h, z; it never mentions Q^A, Q^B, V_pp/V_nn, the Borromean hypothesis or the exponential remainder. The md says \"conditional\"; the ref is unconditional; `BorromeanQuark` is a disclosed self-projection. The proof derives only ln(V_pp/V_nn)=zh+O(h²), then asserts \"=ln(1+zh)+O(h³)\" (`:21-25`); the claimed ratio needs the h² coefficient to be exactly −z²/2 (sympy: ratio = 1+(−c/z−½)h). The exponential remainder (md:28) is a separate conjecture, not a stated hypothesis. Empirical in proof: `:45` \"+1.31 keV\", `:65` CODATA \"within 7%\". V_pp, V_nn undefined. `:69` says steps are deferred via `sorry`; there is none"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2576,6 +2594,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T05:56:08.214Z",
+  "updated_at": "2026-11-15T21:56:01.919Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

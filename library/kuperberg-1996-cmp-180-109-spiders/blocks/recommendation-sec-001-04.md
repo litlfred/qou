@@ -1,1 +1,0 @@
-Stitch is only defined when the two adjacent boundary points have opposite sign, to preserve the orientation structure of A2 webs, and it may produce elliptic faces, which must be reduced to obtain a linear combination of basis webs.

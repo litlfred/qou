@@ -1,0 +1,46 @@
+8.1 Techniques for polynomial systems 223
+
+some a(z) € K[z]. The (univariate) polynomial division algorithm for f(z)/g(z)
+produces a quotient a(z) and a remainder r(z) such that f(z) = a(z)g(z) + r(z)
+and the degree of r is less than the degree of g. Thus, f € J if and only if the
+division algorithm returns a remainder of zero.
+
+The division algorithm works because we can repeatedly divide the high-
+est degree term of g into the highest degree term of f until the degree of the
+remainder is less than the degree of g. To duplicate this approach in several
+variables we therefore need to define an ordering on multivariate monomials.
+Our ordering must be compatible with multiplication, and there must be no
+infinite chains of ever-smaller elements, motivating the following definition.
+
+Definition 8.1. A monomial order on K[z] is a relation > on the set of mono-
+mials z” such that
+
+(i) > is a well-order (i.e., it is a total order and every nonempty subset of
+K{[z] has a minimal element), and
+(ii) if a,B,y € N4 and z® > 2 then z°*7 > 28+,
+
+One common term order is the lexicographic term order, where z° > 2° if
+and only if @; > 6; for some index j and a; = f; for all i < j. Another common
+order is the total degree term order, in which z* > 2? if and only if either
+the degree of 2” is greater than the degree of 2? or the degrees are equal and
+z® > 2 in the lexicographic order.
+
+Exercise 8.2. Rank the monomials
+
+yOoox yz Pz xyz
+in increasing order, first under the lexicographic term order and then under the
+total degree term order.
+
+Definition 8.2. For a polynomial p(z) = Yigca Coz” with non-zero coefficients
+Co for a € A, the leading term of the polynomial p under a monomial ordering
+> is the term LT(p) := cgz® with maximum monomial z° according to >.
+
+Monomial orders allow one to run a multivariate division algorithm to divide
+a polynomial f by a list of polynomials L = [g1,..., gm] to obtain quotients a;
+and a remainder r such that p(z) = >); ai(z)gi(z) + r(z) and LT(r) is not divis-
+ible by any LT(g;). Roughly, we run through the elements of L in order, trying
+to divide the leading term of f by the leading term of the g; under considera-
+tion. If LT(g;) divides LT(f) then we add c = LT(f)/ LT(g;) to the quotient a;,
+replace f by f — cg;, and repeat. If the leading term of f is not divisible by
+any LT(g;) then we add the leading term of f to the remainder r, replace f by
+f —LT(f), and repeat from the previous step.

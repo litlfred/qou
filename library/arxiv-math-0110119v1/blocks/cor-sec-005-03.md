@@ -1,0 +1,1 @@
+We have ˆti = (s1−2i −s)vhi for any integer i. Proof From lemma 6.2 and the skein relation in ﬁgure 11 we deduce that ˆti = (s−i −si)vs1−ihi = (s1−2i −s)vhi for any integer i ≥0. This equation holds for negative integers i as well because hi and ti are equal to zero for negative i. ⋄

@@ -1,0 +1,1 @@
+Let A and B be DG rings. (1) If P ∈C(A ⊗Bop) is K-ﬂat, then P is K-ﬂat over A. (2) If I ∈C(A ⊗Bop) is K-injective, then I is K-injective over A. (3) If B is K-projective as a DG K-module, and if P ∈C(A ⊗K Bop) is K- projective, then P is K-projective over A. (4) If B is a semi-free DG K-ring, and if P ∈C(A ⊗K Bop) is semi-free, then P is semi-free over A.

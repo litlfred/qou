@@ -1,0 +1,54 @@
+10.3 Main results on coefficient asymptotics 309
+
+Q: (],.--.2Za)  (Q1(Z),..., Qa(z)). The Jacobian of this change of coor-
+dinates is dQ/dz, hence sgn(t,,7) = sgn(det Py) and establishing (10.13)
+and (10.11).
+
+Case 2 (positive dimension): To establish (10.12), we need to check that
+
+Tjex Pj _ Tl jer pil
+
+detTy ~— |det©y| *
+The linking torus tg is homologically a product of a k-dimensional torus 7’ in
+the normal slice with the (d — k)-dimensional imaginary contour y’ through 7
+within the stratum. The tangent plane to 7’ coincides up to orientation with the
+tangent plane to J. As we have seen above, the orientation sgn(t’,7 ) is the
+sign of det 'y. Therefore it remains to show that the orientations to y’ and y
+of the imaginary space in the stratum are related by [] jen sgn(p;). The plane
+y’ is oriented by the imaginary coordinates y,1),...,¥,(d-x) listed in that order
+and all increasing. The plane y is parametrized by these same coordinates in
+the same order, inheriting the orientation from dz,(1) A - ++ A dZq(a-x. Thus, the
+imaginary part is increasing when the real part is positive, and decreasing when
+the real part is negative. This establishes (10.14), hence (10.12), finishing the
+proof of the theorem. ia)
+
+sgn(tz,T,7) (10.14)
+
+Remark 10.26. Theorem 10.25 holds when the numerator P(z) is any analytic
+function, provided that an error term that decreases faster than any exponential
+function is added to the right-hand side of (10.10).
+
+Example 10.27. Suppose that a and b are positive integers and let F(x, y) =
+1/Q(x, y) where Q(x, y) = (1 - Bx- ty)"(1 - 5x - ay)". For a general direc-
+tion (7, 8) = (7, s)/(r + 5) there are contributing points
+
+3r 35 d 3r 35
+= | ——, ——__] an = ({—_, ——_
+Pl r+s 2r+s) Pp 2Wr+s)r+s
+on each of the individual smooth divisors. Letting 2 = r/s, the exponential
+rates contributed by these smooth critical points are
+
+_ d+ ay | (2 + 1/a)
+
+a
+'="36p) 73 3 Java
+
+_ wea) 2/141/a
+2" 38a) 3) 3
+
+The detailed asymptotic contributions of p; and p> can be worked out either
+from the results of Chapter 9 or from (10.7). The point p = (1, 1) is a minimal
+critical multiple point for every direction 7, but is only contributing when 2 €
+
+a
+(+A).

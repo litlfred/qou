@@ -1136,6 +1136,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f494490a0ff1",
+          "ts": "18abdb76d760",
+          "lean": "33acba9d5025",
+          "lean_statement": "a5a1f04cad5b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:00:11.301Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "minor",
+        "evidence": "[sidecar review 2026-11-15, issue #8030] Lean genuinely proves the arithmetic: coprime 2 ≤ m < n with (m−1)(n−1) ≤ 8 forces (m,n) into the six-element list (interval_cases, sorry-free); I re-did the enumeration by hand and it is right. The \"iff\" converse is not encoded (trivial). Not encoded and not proved anywhere: \"T_{m,n} embeds in Σ₄ iff its Seifert genus ≤ 4\", which is taken as a definition and is not a meaningful topological condition (a knot is a circle and embeds in every surface). The Lean also carries `three_lepton_generations`, a physical reading inside the formal file"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2118,6 +2136,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T22:00:11.301Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

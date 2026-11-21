@@ -35,7 +35,7 @@ Each $S_3$ acts on one color fiber. Elements of $S_5$ outside all three $S_3$ su
 
 Just as spectral colors require negative primary coefficients, some Skein elements carry negative coefficients in the color-tube basis.
 
-An individual quark forms a trefoil $T_{2,3}$ within a single color tube. This primary color fails to span the full Skein module with positive coefficients. Generic physical processes resolve into Skein sums containing $-q^{-1}$ factors. These terms hold physical meaning only upon evaluation of the complete Skein sum. Isolated evaluation of a single color component yields a meaningless negative probability.
+An individual quark is an unknot strand carrying one crossing letter within a single color tube; the trefoil $T_{2,3}$ is the lepton partner of $\mathfrak{u}$ and $\mathfrak{d}$, not their knot type. This primary color fails to span the full Skein module with positive coefficients. Generic physical processes resolve into Skein sums containing $-q^{-1}$ factors. These terms hold physical meaning only upon evaluation of the complete Skein sum. Isolated evaluation of a single color component yields a meaningless negative probability.
 
 Confinement resolves this negativity. Combinations invariant under all three $S_3$ subgroups remain invariant under the full $S_5$ color permutation. Only these color-neutral combinations guarantee positive evaluations under the fibre functor:
 

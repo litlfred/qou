@@ -1,0 +1,1 @@
+Let λ ∈R+ be given and let φ be a faithful ultraweakly continuous state on a von Neumann algebra M. Let ψ ∈M∗be such that |ψ(y∗x)| ≤ p φ(x∗x) p φ(y∗y). Then there is an a ∈M1/2 (elements of norm ≤1/2) so that ψ(x) = λφ(ax) + λ−1φ(xa).

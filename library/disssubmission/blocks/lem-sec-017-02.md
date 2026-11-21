@@ -1,0 +1,1 @@
+In the above setting, for every perverse sheaf P ∈P(Y) there exists a subset U ⊆Π(Yb) which meets every irreducible component and has the property that the forget support morphism Rf!(Pχ) −→R f∗(Pχ) is an isomorphism for all characters χ ∈Π(Y) with pull-back i∗(χ) ∈U.

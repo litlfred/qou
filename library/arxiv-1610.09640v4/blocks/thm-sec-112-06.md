@@ -1,0 +1,1 @@
+Let A and B be graded K-rings, and let (P, σ) be an idempotent copointed object in D(Aen, gr). Consider the trian- gulated functors F, G : D(A ⊗Bop, gr) →D(A ⊗Bop, gr) Derived Categories | Amnon Yekutieli |

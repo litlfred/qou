@@ -1,1 +1,0 @@
-Finally we can prove Theorem~\ref{Archive:complete}: if $g$ is tame plane graph, Theorem~\ref{thm:TameEnum_comp} and the definition of \textit{tameEnum} tell us that $g$ must be contained in \textit{tameEnum$_p$} for some $p=0,\dots,5$.

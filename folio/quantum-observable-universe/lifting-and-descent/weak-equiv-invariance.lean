@@ -18,7 +18,7 @@ LaTeX label: `prop:weak-equiv-invariance`
 ## References
 
 - [yekutieli2010] https://doi.org/10.1016/j.aim.2009.12.006
-- [manuscript] §3-lifting-of-quantum-torsion/weak-equiv-invariance
+- [leitner2026] §3-lifting-of-quantum-torsion/weak-equiv-invariance
 -/
 
 namespace QOU.Torsion
@@ -70,7 +70,7 @@ attribute [instance] WeakEquivalence.instDLAddCommGroup WeakEquivalence.instDL
     checker's own limits section warns it cannot distinguish. Making them match
     would merge two different things; renaming is the fix. The block that owns
     the bare name is `prop:vacuum-state`, so this one yields it. -/
--- Ref: [manuscript] §3
+-- Ref: [leitner2026] §3
 structure LinearVacuumState (R : Type*) [CommRing R] (DL : Type*) [AddCommGroup DL]
     [Module R DL] where
   /-- The vacuum state as a linear functional. -/
@@ -81,7 +81,7 @@ structure LinearVacuumState (R : Type*) [CommRing R] (DL : Type*) [AddCommGroup 
 
     This ensures that physical predictions do not depend on which
     level of the brane tower we compute them at. -/
--- Ref: [yekutieli2010] §3, [manuscript] §3
+-- Ref: [yekutieli2010] §3, [leitner2026] §3
 structure WeakEquivInvariance (R : Type*) [CommRing R] where
   /-- The weak equivalence data. -/
   weq : WeakEquivalence R

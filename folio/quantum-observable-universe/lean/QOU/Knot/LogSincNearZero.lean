@@ -48,8 +48,8 @@
   needed is `logSinc′(x) → 0` as `x → 0⁺`, and `|logSinc′ x| ≤ x` is the
   cheapest clean way to say it.
 
-  -- Ref: [manuscript] QOU/Knot/KashaevEndpointSplit.lean          (defines logSinc)
-  -- Ref: [manuscript] QOU/MathlibExt/CompositeEulerMaclaurin.lean (the rule applied)
+  -- Ref: [leitner2026] QOU/Knot/KashaevEndpointSplit.lean          (defines logSinc)
+  -- Ref: [leitner2026] QOU/MathlibExt/CompositeEulerMaclaurin.lean (the rule applied)
 -/
 import QOU.Knot.KashaevEndpointSplit
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv

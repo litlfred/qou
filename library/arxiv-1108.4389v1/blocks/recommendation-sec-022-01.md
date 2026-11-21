@@ -1,1 +1,0 @@
-Given a 3-manifold $M$ with boundary phase space $\mathcal{P}_{\partial M}$, as defined here in Section [\[sec:geom\]](#sec:geom){reference-type="ref" reference="sec:geom"}, Chern-Simons theory should promote $\mathcal{P}_{\partial M}$ to a Hilbert space

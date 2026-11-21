@@ -1,1 +1,0 @@
-In particular, we shall compute in Sections [\[largenumbers\]](#largenumbers){reference-type="ref" reference="largenumbers"} and [\[clt\]](#clt){reference-type="ref" reference="clt"} the joint moments of the Frobenius observables $p_{k}$; they will provide information on the geometry of the random partitions under the probability measures $\mathbb{P}_{n,\omega}$.

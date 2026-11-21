@@ -1,1 +1,0 @@
-Our starting point in this paper is the following fact, which shall be reviewed in Section 2, and which goes back to the categorical notion of Euler characteristic introduced by Dold and Puppe [1980].

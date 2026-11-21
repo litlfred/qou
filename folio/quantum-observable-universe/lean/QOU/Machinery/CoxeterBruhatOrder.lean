@@ -56,7 +56,7 @@ Bruhat order. `BruhatReflection.bruhatLe_of_reflLe` proves one direction; the co
 follow from lifting, and that file records the obstacle that actually remains.
 
 -- Ref: [bjornerbrenti2005] Combinatorics of Coxeter Groups, §2.2
--- Ref: [manuscript] beans qou-phir, qou-06h7
+-- Ref: [leitner2026] beans qou-phir, qou-06h7
 -/
 
 namespace QOU.Machinery.CoxeterBruhatOrder

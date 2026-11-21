@@ -28,7 +28,7 @@ and projected it (`:= ctx.claim_chirality_factor`); that was a vacuous
 self-assuming projection and is removed in favour of the genuine derivations
 below.
 
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/chirality-from-frobenius-self-pairing.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/chirality-from-frobenius-self-pairing.md
 -/
 
 -- Declarations here are nested one namespace deeper than `QOU.BraidKnot` so
@@ -75,7 +75,7 @@ The figure-eight character in the standard `(2,1)` representation of
 `H_3(R, q)` is `χ_{4_1}((2,1)) = 2 − [3]_q`, and this equals `−1 − h²`
 with `h = q − q⁻¹`. The identity is exactly `−2·(q·q⁻¹ − 1)`, i.e. a
 multiple of the unit relation. -/
--- Ref: [manuscript] prop:chirality-from-frobenius-self-pairing (Fricke trace relation in H_3)
+-- Ref: [leitner2026] prop:chirality-from-frobenius-self-pairing (Fricke trace relation in H_3)
 theorem chirality_figure_eight_character (q : Rˣ) :
     2 - qInt3 q = -1 - heckeH q ^ 2 := by
   unfold qInt3 heckeH
@@ -90,7 +90,7 @@ form is `1 − h² = 4 − [3]_q` (since `[3]_q = q² + 1 + q⁻²` and
 `h² = q² − 2 + q⁻²`). This is the normalisation-free algebraic face
 of the chirality factor; like the Fricke identity it is a multiple of
 the unit relation, here `+2·(q·q⁻¹ − 1)`. -/
--- Ref: [manuscript] prop:chirality-from-frobenius-self-pairing (a_{4_1} = 1 − h²)
+-- Ref: [leitner2026] prop:chirality-from-frobenius-self-pairing (a_{4_1} = 1 − h²)
 theorem chirality_amphichiral_via_qInt3 (q : Rˣ) :
     1 - heckeH q ^ 2 = 4 - qInt3 q := by
   unfold qInt3 heckeH

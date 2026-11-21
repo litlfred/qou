@@ -76,7 +76,7 @@ quadratic relation: σ_i · (σ_i - (q - q⁻¹)) = σ_i² - (q-q⁻¹)σ_i = 1.
 theorem inv_formula (i : Generator n) :
     HA.embed i * (HA.embed i - (q - q⁻¹) • 1) = 1 ∧
     (HA.embed i - (q - q⁻¹) • 1) * HA.embed i = 1 := by
-  -- Ref: [manuscript] Kassel (1995), §XII.1; Hecke quadratic ⇒ σ_i^{-1} = σ_i - (q-q⁻¹).
+  -- Ref: [leitner2026] Kassel (1995), §XII.1; Hecke quadratic ⇒ σ_i^{-1} = σ_i - (q-q⁻¹).
   -- Proof: from HeckeQuadratic, σ_i² = (q-q⁻¹)·σ_i + 1.
   -- LHS1: σ_i·(σ_i - (q-q⁻¹)·1) = σ_i² - (q-q⁻¹)·σ_i = 1. ✓
   -- LHS2: (σ_i - (q-q⁻¹)·1)·σ_i = σ_i² - (q-q⁻¹)·σ_i = 1. ✓

@@ -51,6 +51,9 @@ import re
 import sys
 
 REPO = pathlib.Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO / "computations" / "audits"))
+from _source_normalise import code_only  # noqa: E402
+
 WITNESS_REF = re.compile(r"[A-Za-z0-9._-]+[.-]witness\.json")
 #: NOTE the [.-]: 13 witnesses are named `foo-witness.json`, not
 #: `foo.witness.json`, and the y_lambda family — the most-read upstream
@@ -125,26 +128,26 @@ def _read_source(root: pathlib.Path, prod: str,
     name = pathlib.Path(prod).name
     for d in (hint_dirs or []):
         try:
-            return (d / name).read_text()
+            return code_only((d / name).read_text())
         except OSError:
             continue
     for cand in (root / prod, root / name):
         try:
-            return cand.read_text()
+            return code_only(cand.read_text())
         except OSError:
             continue
     for hit in sorted(root.rglob(name)):
         if ("_deprecated" in hit.parts or "fsh-guts" in hit.parts):
             continue
         try:
-            return hit.read_text()
+            return code_only(hit.read_text())
         except OSError:
             continue
     return ""
 
 
 def _module_sources(root: pathlib.Path) -> dict:
-    """module stem -> source text, for every .py under computations/."""
+    """module stem -> code_only source text, for every .py under computations/."""
     out = {}
     # sorted: `setdefault` is first-wins, and rglob yields in os.scandir order,
     # so for a duplicated module stem the surviving source was whichever copy
@@ -154,7 +157,7 @@ def _module_sources(root: pathlib.Path) -> dict:
         if ("_deprecated" in str(p) or "fsh-guts" in str(p)):
             continue
         try:
-            out.setdefault(p.stem, p.read_text())
+            out.setdefault(p.stem, code_only(p.read_text()))
         except OSError:
             continue
     return out
@@ -205,7 +208,7 @@ _READ_CTX = re.compile(r"read_text|open\(|json\.load|loads\(|read_bytes")
 
 def _read_context_refs(body: str) -> set:
     """Witness names appearing within a few lines of an actual file read."""
-    lines = body.splitlines()
+    lines = code_only(body).splitlines()
     out = set()
     for i, line in enumerate(lines):
         names = WITNESS_REF.findall(line)
@@ -278,6 +281,10 @@ def selftest() -> int:
     body_read = 'p = HERE / "y-lambda-mpfr-witness.json"\nd = json.loads(p.read_text())'
     body_doc = '"""Superseded by y-lambda-mpfr-witness.json; see the audit."""\nx = 1'
     body_table = 'TABLE = {"proton": "y-lambda-mpfr-proton-witness.json"}  # not read here'
+    body_comment_near_read = (
+        '# Does NOT touch y-lambda-mpfr-witness.json\n'
+        'd = json.loads((HERE / "clean.witness.json").read_text())\n'
+    )
     cases += [
         ("witness next to read_text counts",
          "y-lambda-mpfr-witness.json" in _read_context_refs(body_read)),
@@ -285,6 +292,9 @@ def selftest() -> int:
          "y-lambda-mpfr-witness.json" not in _read_context_refs(body_doc)),
         ("witness in a bare lookup table does NOT count",
          "y-lambda-mpfr-proton-witness.json" not in _read_context_refs(body_table)),
+        ("witness in a comment adjacent to read_text does NOT count",
+         "y-lambda-mpfr-witness.json" not in _read_context_refs(body_comment_near_read)
+         and "y-lambda-mpfr-witness.json" not in WITNESS_REF.findall(code_only(body_comment_near_read))),
     ]
 
     for name, ok in cases:

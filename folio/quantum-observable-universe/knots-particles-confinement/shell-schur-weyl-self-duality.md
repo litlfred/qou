@@ -1,4 +1,10 @@
-*Let $\mathcal{U}_q(\mathfrak{gl}_k)$ denote the quantum enveloping algebra and $H_n(R, q)$ the Iwahori–Hecke algebra. Under Schur–Weyl duality*
+*Let $H_n(R, q)$ be the Iwahori–Hecke algebra with generators $\sigma_i$ satisfying $\sigma_i^2 = h\,\sigma_i + 1$, where $h = q - q^{-1}$. The assignment*
+
+$$
+  \#\colon \sigma_i \;\longmapsto\; -\sigma_i^{-1} \;=\; h - \sigma_i
+$$
+
+*extends to an algebra automorphism of $H_n(R, q)$. When $H_n(R, q)$ is split semisimple, $\#$ maps the central primitive idempotent $e_\lambda$ to $e_{\lambda^*}$, where $\lambda^*$ is the conjugate partition. Under quantum Schur–Weyl duality*
 
 $$
   V^{\otimes n}
@@ -9,39 +15,25 @@ $$
     V_{H_n(R, q)}(\lambda),
 $$
 
-*the $S_n$-transpose involution $\lambda \leftrightarrow \lambda^*$ on Young diagrams is the image of the representation-duality involution $V \leftrightarrow V^*$ on $\mathcal{U}_q(\mathfrak{gl}_k)$-modules:*
+*this is the Hecke-side form of the transpose $\lambda \leftrightarrow \lambda^*$.*
 
-$$
-  V_{\mathcal{U}_q(\mathfrak{gl}_k)}(\lambda^*)
-  \;\cong\;
-  V_{\mathcal{U}_q(\mathfrak{gl}_k)}(\lambda)^*
-$$
-
-*Equivalently, on the Hecke side:*
-
-$$
-  V_{H_n(R, q)}(\lambda) \,\otimes\, V_{H_n(R, q)}(1^n)
-  \;\cong\;
-  V_{H_n(R, q)}(\lambda^*),
-$$
-
-*where $V_{H_n(R, q)}(1^n)$ is the sign representation.*
-
-*Consequently, the **shell-operator self-duality constraint***
-
-$$
-  x_\lambda \;=\; x_{\lambda^*}
-  \qquad\text{for all}\quad \lambda \vdash A_{\mathrm{magic}}
-$$
-
-*on the Wedderburn decomposition*
+*Consequently, for*
 
 $$
   \sigma_{\mathrm{shell}}
   \;=\;
   \sum_{\lambda\,\vdash\, A_{\mathrm{magic}}}
     x_\lambda \cdot e_\lambda
-  \;\in\; H_{A_{\mathrm{magic}}}(q)
+  \;\in\; H_{A_{\mathrm{magic}}}(q),
 $$
 
-*is equivalent to $\mathrm{GL}_k$-charge-conjugate invariance of the underlying quantum-group module structure under Schur–Weyl transport.*
+*the **shell-operator self-duality constraint***
+
+$$
+  x_\lambda \;=\; x_{\lambda^*}
+  \qquad\text{for all}\quad \lambda \vdash A_{\mathrm{magic}}
+$$
+
+*holds if and only if $\#(\sigma_{\mathrm{shell}}) = \sigma_{\mathrm{shell}}$.*
+
+*The transpose is **not** representation duality on the quantum-group side: in general $V_{\mathcal{U}_q(\mathfrak{gl}_k)}(\lambda^*) \not\cong V_{\mathcal{U}_q(\mathfrak{gl}_k)}(\lambda)^*$. For $k = 2$ and $\lambda = (2)$ the two sides have dimensions $1$ and $3$.*

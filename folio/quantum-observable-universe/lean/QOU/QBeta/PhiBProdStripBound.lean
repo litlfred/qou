@@ -27,7 +27,7 @@ infrastructure.
 Verified `lean`-direct against the pinned Mathlib `Log.Summable` + `InfiniteSum.Field`
 cones + `PhiBProd`. Sorry-free.
 
--- Ref: [manuscript] docs/workplans/2026-07-26-faddeev-growth-estimate-epic-scope.md
+-- Ref: [leitner2026] docs/workplans/2026-07-26-faddeev-growth-estimate-epic-scope.md
 -/
 
 open Complex

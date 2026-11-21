@@ -1,1 +1,0 @@
-Nevertheless, given the importance of the discovery of a magnetic monopole as noted above, allowance should be made for the lack of certainty in our understanding of the pattern of GUT symmetry-breaking.

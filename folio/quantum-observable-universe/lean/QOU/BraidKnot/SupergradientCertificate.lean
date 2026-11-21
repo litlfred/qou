@@ -4,6 +4,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Positivity
+import QOU.BraidKnot.SearchCoercivity
 
 /-!
 # Certifying a concave maximum, and what a capped enumeration does not tell you
@@ -84,7 +85,7 @@ padded coordinate may have gradient exactly zero and there the `if` takes the *o
 | `sum_charge_extend_le` | and when they are not — the bottom edge's case — the bound grows by at most their total |
 | `capped_lt_not_sufficient` | a capped maximum falling short of a bound proves nothing about the true one |
 
--- Ref: [manuscript] `computations/deltalambda/rev_e_infinity_block_sup_relaxation_probe.py`
+-- Ref: [leitner2026] `computations/deltalambda/rev_e_infinity_block_sup_relaxation_probe.py`
 -/
 
 namespace QOU.BraidKnot.SupergradientCertificate
@@ -256,5 +257,67 @@ theorem antitone_hypothesis_is_necessary :
   intro h
   have := h (fun j => if j = 0 then 1 else 2) 1 (by norm_num) 1 (Nat.zero_le 1)
   norm_num at this
+
+/-! ## Machine-checked bridge to `SearchCoercivity`
+
+`qou-hok7` noted that `SupergradientCertificate` previously named `SearchCoercivity` only in prose.
+The two theorems below compose `SearchCoercivity.sub_le_mul_of_antitone_step` and
+`SearchCoercivity.sum_ghatBot_frame_bound` directly with `box_mul_sub_le` so the linearisation
+steps of `SearchCoercivity` feed the box-maximised supergradient certificate in Lean. -/
+
+/-- **Single-pair bridge (`SearchCoercivity.sub_le_mul_of_antitone_step` + `box_mul_sub_le`).**
+For `e` with antitone downward steps `δ` (`e m - e (m + 1) = δ m`), any displacement `D : ℕ` confined
+to `[lo, hi]` satisfies the supergradient box bound around any reference point `w`. -/
+theorem antitone_step_box_bound {e δ : ℕ → ℝ}
+    (hstep : ∀ m, e m - e (m + 1) = δ m) (hδ : Antitone δ)
+    (a D : ℕ) (w lo hi : ℝ) (hlo : lo ≤ (D : ℝ)) (hhi : (D : ℝ) ≤ hi) :
+    e a - e (a + D) ≤ w * δ a + (if 0 ≤ δ a then δ a * (hi - w) else δ a * (lo - w)) := by
+  have hlin := QOU.BraidKnot.SearchCoercivity.sub_le_mul_of_antitone_step hstep hδ a D
+  have hbox := box_mul_sub_le (δ a) w lo hi (D : ℝ) hlo hhi
+  have hid : (D : ℝ) * δ a = w * δ a + δ a * ((D : ℝ) - w) := by ring
+  linarith
+
+/-- **Multi-row frame bridge (`SearchCoercivity.sum_ghatBot_frame_bound` + `box_mul_sub_le`).**
+For any displacement profile `u : ι → ℕ` respecting the upper-row gaps (`u a ≤ b0 j - b0 a` for
+`b0 a < b0 j`) and confined to the box `[lo, hi]`, the total frame-linearised excess bounded by
+`SearchCoercivity.sum_ghatBot_frame_bound` is bounded above by the supergradient box certificate at
+reference `w` with slope `SearchCoercivity.ghatBot e δ b0`. -/
+theorem sup_ghatBot_frame_certificate {ι : Type*} [Fintype ι]
+    {e δ fi : ℕ → ℝ}
+    (hfi : ∀ m, fi (m + 1) - fi m = e (m + 1))
+    (he : Antitone e)
+    (hstep : ∀ m, e m - e (m + 1) = δ m)
+    (hδ : Antitone δ)
+    (b0 u : ι → ℕ) (w lo hi : ι → ℝ)
+    (hu : ∀ a j, b0 a < b0 j → u a ≤ b0 j - b0 a)
+    (hlo : ∀ a, lo a ≤ (u a : ℝ))
+    (hhi : ∀ a, (u a : ℝ) ≤ hi a) :
+    (∑ a : ι,
+      ((fi (b0 a + u a) - fi (b0 a))
+        + (∑ j ∈ Finset.univ.filter (fun j => b0 j < b0 a),
+            (e (b0 a - b0 j) - e (b0 a - b0 j + u a)))
+        + (∑ j ∈ Finset.univ.filter (fun j => b0 a < b0 j),
+            (e (b0 j - b0 a) - e (b0 j - b0 a - u a)))))
+      ≤ (∑ a : ι, w a * QOU.BraidKnot.SearchCoercivity.ghatBot e δ b0 a)
+        + ∑ a : ι,
+            if 0 ≤ QOU.BraidKnot.SearchCoercivity.ghatBot e δ b0 a then
+              QOU.BraidKnot.SearchCoercivity.ghatBot e δ b0 a * (hi a - w a)
+            else
+              QOU.BraidKnot.SearchCoercivity.ghatBot e δ b0 a * (lo a - w a) := by
+  have hframe := QOU.BraidKnot.SearchCoercivity.sum_ghatBot_frame_bound hfi he hstep hδ b0 u hu
+  have hsum :
+      (∑ a : ι, (u a : ℝ) * QOU.BraidKnot.SearchCoercivity.ghatBot e δ b0 a)
+        ≤ (∑ a : ι, w a * QOU.BraidKnot.SearchCoercivity.ghatBot e δ b0 a)
+          + ∑ a : ι,
+              if 0 ≤ QOU.BraidKnot.SearchCoercivity.ghatBot e δ b0 a then
+                QOU.BraidKnot.SearchCoercivity.ghatBot e δ b0 a * (hi a - w a)
+              else
+                QOU.BraidKnot.SearchCoercivity.ghatBot e δ b0 a * (lo a - w a) := by
+    rw [← Finset.sum_add_distrib]
+    refine Finset.sum_le_sum fun a _ => ?_
+    have hbox := box_mul_sub_le (QOU.BraidKnot.SearchCoercivity.ghatBot e δ b0 a)
+      (w a) (lo a) (hi a) (u a : ℝ) (hlo a) (hhi a)
+    linarith
+  exact le_trans hframe hsum
 
 end QOU.BraidKnot.SupergradientCertificate

@@ -54,6 +54,7 @@ the block was written in; the D-frame ladder does not exist (qou-cds1).
 Exact mpmath at 50 dps; no float64; no mpf(str(<f64>)) of an f64 constant.
 Emits no witness -- it audits published text against published code.
 """
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import json
 import pathlib
 import sys
@@ -100,7 +101,7 @@ def ladder(q, c5_form, n_rungs=5):
     b = mp.sqrt(q**4 + q**2 + 1) / (q**2 + 1)
     z = zC(q)
     eps = w_blind(q) * h - h
-    QA = abs(eps * ME / (q * (q - 1)))
+    QA = abs(_qbeta_e0.order_zero_scaled(eps * ME, q))
     al = (z - 1) * h / 2
 
     c3 = mp.mpf(-2)                       # Hopf Jones at q=1

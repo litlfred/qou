@@ -1,0 +1,1 @@
+The literature has several diﬀerent meanings for the word “tilt- ing”. See Remark 14.2.39 for a historical survey. The commonly perceived meaning of a tilting object, say as in the book [3], is very close to what we call a pretilting DG bimodule (when A and B are rings).

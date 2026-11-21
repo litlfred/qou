@@ -74,7 +74,7 @@ $\mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{s})$ linked
 by the Hopf link $\mathcal{L}_H$.  Then:
 
 The Lean encoding below derives the equalities and inequalities from the hypothesis class. -/
--- Ref: [manuscript] quantum-observable-universe/observations/strangelet-crossing-energy.ts
+-- Ref: [leitner2026] quantum-observable-universe/observations/strangelet-crossing-energy.ts
 theorem strangelet_crossing_energy (ctx : StrangeletCrossingEnergyContext)
     [hc : StrangeletCrossingEnergyConjecture ctx] :
     ctx.Q_uds = 0 ∧

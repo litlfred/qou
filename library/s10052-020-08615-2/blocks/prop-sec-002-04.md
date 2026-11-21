@@ -1,0 +1,1 @@
+The discovery of QCD and asymptotic freedom led to a fully transparent picture for the properties of the Compton amplitude in the region where both ν and q2 are large and where the divergence of the Cottingham formula arises [14– 17].

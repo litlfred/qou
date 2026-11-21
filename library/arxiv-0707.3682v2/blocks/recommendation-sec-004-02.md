@@ -1,1 +1,0 @@
-Beilinson's conjecture [@bei85 Conjecture 3.4] states that the order of vanishing at $s=1-n$ of $\L s {\chi_\pi^\vee\tensor\id} {\Q}$ should be $\dim_E(\pi \KnE k )$ and that the first non-vanishing coefficient at $s=1-n$ equals $$\Lsharp {1-n} {\chi_\pi^\vee\tensor\id} {\Q} = e R_\Bei$$ for some $e$ in $E^*$.

@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2011.13340v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "e73876ed2c923608a5efcf6053a7d21c0148bfd9c3b1d63bc32fe6ba91179480",
   "file": "2011.13340v1.pdf"
@@ -16,46 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
-  "by_kind": {
-   "recommendation": 2
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Our strategy seems general enough that it should work for proving Matrix concentration for a large class of interesting Markov chains for which scalar spectral gap inequalities are proved using the chain decomposition idea of \\cite{JSTV04}.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-5-conclusion-and-open-questions.md",
-   "section_title": "Conclusion and Open Questions",
-   "pages": "15-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We also believe our techniques should be extendible to prove similar concentration for strong log-concave polynomials \\cite{ALGV19,CGM19} and would hence imply matrix concentration for uniform distributions on any matroid.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-5-conclusion-and-open-questions.md",
-   "section_title": "Conclusion and Open Questions",
-   "pages": "15-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

@@ -25,4 +25,7 @@ export default conjecture({
     "markov-trace",
     "open-problem",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The conjecture is class-axiomatised over the closed-braid space $B$, the trace $\\mathrm{tr}$ and the CPT action $\\mathrm{cpt}$ it concerns. Downstream blocks that require CPT closure as an explicit hypothesis take `[CPTClosure R B tr cpt]` as a class hypothesis, where $R$ is the coefficient ring of the trace." },
+  ],
 });

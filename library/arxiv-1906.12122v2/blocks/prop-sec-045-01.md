@@ -1,0 +1,1 @@
+Equation~\eqref{eq:BE1corr} can also be used to obtain the charge radius of the {$1/2^-$} state {$\langle r_E^2 \rangle_{^{11}{\rm Be}^*}$} directly from the measured value of ${\rm B(E1)}$ and the neutron separation energies $B_1$ and $B_0$.

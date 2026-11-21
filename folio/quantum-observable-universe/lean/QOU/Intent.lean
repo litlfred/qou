@@ -46,6 +46,6 @@ theorem discrepancy_swap (a : A) :
 
 end Intent
 
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/observation.ts
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/observation.ts
 
 end QOU

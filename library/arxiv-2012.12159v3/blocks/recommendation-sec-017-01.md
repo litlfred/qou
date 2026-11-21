@@ -1,1 +1,0 @@
-We should find an $\mathbb{R}^3$-valued $\mathop{\mathrm{Stab}}(x)=\mathop{\mathrm{SO}}(2)$-equivariant $1$-form $\eta_z$ on $S^2_\xi$ with $$\label{eqn:eta_differential}d_\xi\eta_z=\frac{1-\langle x,\xi\rangle^{z+1}}{1-\langle x,\xi\rangle^2} \sigma_\xi \xi,$$ whence we may take $\omega_z= \frac{1}{z+1} \langle x\times dx, \eta_z\rangle$.

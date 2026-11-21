@@ -1,0 +1,66 @@
+---
+doc_id: 9710022v2
+doc_title: "Harmonic Analysis on the quantum Lorentz group"
+section_id: page-013
+section_title: "Page 13"
+pages: 13-13
+pdf_page: 13
+source_pdf: 9710022v2.pdf
+source_sha256: e5ff373a1ec6884a
+text_source: ocr
+granularity: page
+doc_brief: "Harmonic Analysis on the quantum Lorentz group — This w ork b egins with a review of complexi cation and reali cation of Hopf algebras."
+---
+The first equation implies the exchange relations
+
+IJ I. J J I Id
+RL L® = LPL Ry» (56)
+
+I
+Explicit relations between generators of {q(su(2)) and matrix elements of I/*) are recalled in
+the Appendix.
+
+The quantum double of {,(su(2)) is the Hopf algebra D = {,(su(2))@Pol(SU,(2))?”. We
+will denote by of the elements ue embedded in Pol(SU,(2))°” C D. This is a star algebra with
+the following definition of star: (gt)* = S719) and also (55).
+
+The algebra law satisfies the relations (46) (with i replaced by 9) and also the exchange
+relations:
+
+Weylays 3 Lae .
+RY) LY) 99 = GLY) Ria). (57)
+The coproduct on D satisfies
+Tey Toy Toy I I, 1 .
+An(L§) = SI LOF@LO?2 , An(gh) = D295 @ 92. (58)
+
+D is a quantum deformation of the envelopping algebra of s/(2,C)p [36][34][16]. In order to
+understand this point it is important to recall the principle of quantum duality which appears
+first in [17] and developed in [39]. Let * be the involution on s/(2,C) selecting the compact form
+su(2). Uq(su(2)) being a star Hopf algebra, (s/(2,C),*) inherits a star Lie bialgebra structure.
+By duality it gives on sl(2,C)* a structure of star Lie bialgebra which real form is isomorphic as
+a R Lie algebra to the Lie algebra an(2), the real Lie algebra of 2 x 2 lower triangular complex
+matrices with real diagonal of zero trace. At the quantum level, an easy application of the quan-
+tum duality principle, shows that Pol(SU4(2)) = Uq(su(2))* = Ug(su(2)*) = Uq(an(2)) (at this
+point we are quite unprecise on the exact signification of the dual, this will be corrected later on).
+As a result D = U,(su(2)) ®@ Ug(an(2)) as a vector space, containing {,(su(2)) and U,(an(2))
+as subalgebras. It can be shown that the classical limit of D is the Lie algebra sl(2,C)p, and
+the classical limit of the previous decomposition is the Iwasawa decomposition. In the appendix
+the reader will find the complete defining set of commutation relations of D. We will use the
+notation D = \,(sl(2,C)r).
+
+Another natural decomposition, in the classical case, of {(s/(2,C)r)®@C as a complex algebra
+is the decomposition in two commuting copies {(sl(2,C)) ® LU(sl(2,C)). In order to obtain such
+a description in the quantum case, let us now describe the factorization theorem applied to D.
+Using the explicit form of the isomorphism ¢ and the expressions of the coproduct (58), we can
+write:
+
+I I I
+o(L) = Mey (59)
+I I
+69) = Meu) (60)
+
+I I
+where the components of M('*) (resp. M("+)) are located in the subalgebra A @ 1 (resp.
+1@ A) of A@A.
+
+13

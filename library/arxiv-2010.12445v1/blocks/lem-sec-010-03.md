@@ -1,0 +1,1 @@
+Let t be any of the following operations of sheaves t = −∨, Symm, Λm and E ∈C be such that t(E) ∈C. Then Gt(E) ≃t(GE) on FibX ,C. In particular for any Γ ∈FibX ,C(A) we get an isomorphism Γt(E) ≃t(ΓE) by testing the previous isomorphism in Γ.

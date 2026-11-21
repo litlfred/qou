@@ -1,1 +1,0 @@
-Moreover, since there is a unique solution to the equations~\eqref{eq:qdiff.proofs}, if we $p$-complete and re-expand by $x\mapsto x+\z_{pm}-\z_m$ then we must find an equality after applying a Frobenius, which maps $t\mapsto t^p$.

@@ -1,1 +1,0 @@
-Finally, we should say that some of the structures which appeared in this paper have appeared before in the WKB literature (although we arrived at them independently.) In the case $K=2$, our constructions here and in \cite{Gaiotto:2009hg} seem to be closely related to a line of development pursued by Voros and others (e.g. \cite{Bender1969,Zinn-Justin1984,MR729194,MR1209700}).

@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-mass-endomorphism-tower-phi-q-history",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:mass-endomorphism-tower-phi-q-history",
+  "kind": "remark",
+  "title": "Why $\\mathrm{Li}_2^q$ replaced the Faddeev $\\Phi_q$ form in the mass tower",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-mass-endomorphism-tower"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-mass-endomorphism-tower",
+  "tags": [
+    "mass-tower",
+    "dilogarithm",
+    "comparison-with-measurement"
+  ],
+  "text": "mass-endomorphism-tower-phi-q-history.md",
+  "provenance": "authored"
+}

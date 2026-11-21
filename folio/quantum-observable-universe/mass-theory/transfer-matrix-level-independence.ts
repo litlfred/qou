@@ -17,6 +17,7 @@ export default proposition({
   ],
   proofs: ["prf:transfer-matrix-level-independence"],
   authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): ([isotopy equivalence](#def:bundle-isotopy-equivalence))" },
     {
       kind: "status",
       date: "2026-09-06",

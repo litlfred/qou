@@ -1,0 +1,535 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-1406.4088v2",
+  "figures": [
+    {
+      "id": "vfig-p008",
+      "file": "figures/vfig-p008.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 8
+      },
+      "page": 8,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": [
+        170.2,
+        73.92,
+        523.85,
+        335.77
+      ],
+      "assembly": {
+        "drawings": 49,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              170.2,
+              161.22,
+              523.85,
+              335.77
+            ],
+            "drawings": 30,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "χ2/dof= 0.90",
+              "(B)",
+              "LO",
+              "NLO",
+              "NNLO"
+            ]
+          },
+          {
+            "bbox": [
+              170.2,
+              73.92,
+              523.85,
+              161.17
+            ],
+            "drawings": 19,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "χ2/dof= 0.86",
+              "(A)"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              170.2,
+              161.22,
+              523.85,
+              335.77
+            ],
+            "parent": null,
+            "labels": [
+              "χ2/dof= 0.90",
+              "(B)",
+              "LO",
+              "NLO",
+              "NNLO"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              170.2,
+              73.92,
+              523.85,
+              161.17
+            ],
+            "parent": null,
+            "labels": [
+              "χ2/dof= 0.86",
+              "(A)"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 10,
+        "connectors": [],
+        "between": [],
+        "outside": 23
+      }
+    },
+    {
+      "id": "vfig-p009",
+      "file": "figures/vfig-p009.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 9
+      },
+      "page": 9,
+      "rotation": 0,
+      "captionLabels": [
+        "2"
+      ],
+      "region": [
+        119.95,
+        75.53,
+        530.66,
+        351.29
+      ],
+      "assembly": {
+        "drawings": 70,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              119.95,
+              75.53,
+              530.66,
+              351.29
+            ],
+            "drawings": 70,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "ΔN",
+              "ΔΣ",
+              "ΔΞ",
+              "ΔD",
+              "ΔCG",
+              "ΔΞcc",
+              "experiment",
+              "QCD+QED",
+              "prediction",
+              "BMW 2014    HCH"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              476.71,
+              286.01,
+              516.4,
+              310.24
+            ],
+            "parent": "b3",
+            "labels": [
+              "ΔCG"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              408.0,
+              233.73,
+              447.68,
+              257.96
+            ],
+            "parent": "b3",
+            "labels": [
+              "ΔΞcc"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              272.58,
+              120.39,
+              311.6,
+              141.92
+            ],
+            "parent": "b3",
+            "labels": [
+              "ΔΞ"
+            ]
+          },
+          {
+            "id": "b3",
+            "bbox": [
+              119.95,
+              75.53,
+              530.66,
+              351.29
+            ],
+            "parent": null,
+            "labels": [
+              "ΔN",
+              "ΔΣ",
+              "ΔD",
+              "BMW 2014    HCH"
+            ]
+          },
+          {
+            "id": "b4",
+            "bbox": [
+              393.18,
+              95.23,
+              506.79,
+              155.74
+            ],
+            "parent": "b3",
+            "labels": [
+              "experiment",
+              "QCD+QED",
+              "prediction"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 15,
+        "connectors": [],
+        "between": [],
+        "outside": 17
+      }
+    },
+    {
+      "id": "vfig-p010",
+      "file": "figures/vfig-p010.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 10
+      },
+      "page": 10,
+      "rotation": 0,
+      "captionLabels": [
+        "3"
+      ],
+      "region": [
+        111.27,
+        74.24,
+        529.32,
+        305.11
+      ],
+      "assembly": {
+        "drawings": 43,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              111.27,
+              74.24,
+              529.32,
+              305.11
+            ],
+            "drawings": 43,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "physical point",
+              "1 MeV",
+              "2 MeV",
+              "3 MeV",
+              "4 MeV",
+              "Inverse β decay region"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              111.3,
+              139.7,
+              529.28,
+              225.41
+            ],
+            "parent": null,
+            "labels": [
+              "1 MeV",
+              "Inverse β decay region"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              111.3,
+              98.48,
+              529.28,
+              184.15
+            ],
+            "parent": null,
+            "labels": [
+              "physical point",
+              "2 MeV"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              111.3,
+              74.28,
+              446.15,
+              142.93
+            ],
+            "parent": null,
+            "labels": [
+              "3 MeV"
+            ]
+          },
+          {
+            "id": "b3",
+            "bbox": [
+              111.3,
+              74.28,
+              244.99,
+              101.68
+            ],
+            "parent": null,
+            "labels": [
+              "4 MeV"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 3,
+        "connectors": [
+          {
+            "from": null,
+            "to": "b3",
+            "bbox": [
+              111.3,
+              74.28,
+              111.3,
+              305.11
+            ]
+          },
+          {
+            "from": null,
+            "to": "b2",
+            "bbox": [
+              320.28,
+              74.28,
+              320.28,
+              305.11
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              529.28,
+              74.28,
+              529.28,
+              305.11
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              111.3,
+              266.63,
+              529.28,
+              266.63
+            ]
+          },
+          {
+            "from": "b3",
+            "to": null,
+            "bbox": [
+              111.3,
+              74.28,
+              529.28,
+              74.28
+            ]
+          },
+          {
+            "from": "b1",
+            "to": "b0",
+            "bbox": [
+              111.27,
+              144.91,
+              529.32,
+              222.11
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              111.3,
+              305.11,
+              529.28,
+              305.11
+            ]
+          },
+          {
+            "from": "b3",
+            "to": null,
+            "bbox": [
+              111.3,
+              74.28,
+              529.28,
+              74.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              215.81,
+              301.81,
+              215.81,
+              305.11
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              424.78,
+              301.81,
+              424.78,
+              305.11
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              111.3,
+              305.11,
+              111.3,
+              305.11
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              320.28,
+              305.11,
+              320.28,
+              305.11
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              529.28,
+              305.11,
+              529.28,
+              305.11
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              529.28,
+              74.28,
+              529.28,
+              74.28
+            ]
+          },
+          {
+            "from": null,
+            "to": "b3",
+            "bbox": [
+              111.3,
+              74.28,
+              111.3,
+              305.11
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              529.28,
+              74.28,
+              529.28,
+              305.11
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              111.3,
+              266.63,
+              111.3,
+              266.63
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              529.28,
+              266.63,
+              529.28,
+              266.63
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              529.28,
+              74.28,
+              529.28,
+              74.28
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 17
+      }
+    }
+  ]
+}

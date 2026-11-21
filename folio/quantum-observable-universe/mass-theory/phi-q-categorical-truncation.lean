@@ -24,8 +24,8 @@ projection identity (tilde w_λ = dim_q²/[n]_q!; cf.
 prop:plancherel-weight-boundedness for the classical Plancherel
 measure).
 
--- Ref: [manuscript] prop:phi-q-categorical-truncation
--- Ref: [manuscript] prop:spectral-sequence-collapse
+-- Ref: [leitner2026] conj:phi-q-categorical-truncation
+-- Ref: [leitner2026] prop:spectral-sequence-collapse
 -/
 
 namespace QOU.WedderburnMass
@@ -49,7 +49,7 @@ structure GBStratifiedAlgebra (R : Type*) [CommRing R] where
     result — packaged here as a typeclass-style record so the
     truncation theorem **derives** the higher-depth vanishing rather
     than assuming it. -/
--- Ref: [manuscript] prop:spectral-sequence-collapse
+-- Ref: [leitner2026] prop:spectral-sequence-collapse
 structure SpectralSequenceCollapse {R : Type*} [CommRing R]
     (G : GBStratifiedAlgebra R) (T_w : G.algebra)
     (mass_at_depth : ℕ → R) where
@@ -59,12 +59,12 @@ structure SpectralSequenceCollapse {R : Type*} [CommRing R]
       the depth-j stratum contributes zero whenever j > k_star. This is
       the substantive content extracted from
       `prop:spectral-sequence-collapse`. -/
-  -- Ref: [manuscript] prop:spectral-sequence-collapse
+  -- Ref: [leitner2026] prop:spectral-sequence-collapse
   vanishing : ∀ j, j > k_star → mass_at_depth j = 0
 
 /-- The categorical brane-tower contribution: a finite sum over
     curvature-rank strata up to the NF-support depth k★(T_w). -/
--- Ref: [manuscript] prop:phi-q-categorical-truncation
+-- Ref: [leitner2026] conj:phi-q-categorical-truncation
 def categoricalBraneTower {R : Type*} [CommRing R]
     (G : GBStratifiedAlgebra R) (T_w : G.algebra)
     (k_star : ℕ) (mass_at_depth : ℕ → R) : R :=
@@ -74,8 +74,8 @@ def categoricalBraneTower {R : Type*} [CommRing R]
     derived from the `SpectralSequenceCollapse` bundle, not assumed —
     The theorem is non-tautological: it asserts that the structural
     spectral-sequence input *forces* the truncation invariance. -/
--- Ref: [manuscript] prop:phi-q-categorical-truncation
--- Ref: [manuscript] prop:spectral-sequence-collapse
+-- Ref: [leitner2026] conj:phi-q-categorical-truncation
+-- Ref: [leitner2026] prop:spectral-sequence-collapse
 theorem phi_q_categorical_truncation {R : Type*} [CommRing R]
     (G : GBStratifiedAlgebra R) (T_w : G.algebra)
     (mass_at_depth : ℕ → R)
@@ -88,7 +88,7 @@ theorem phi_q_categorical_truncation {R : Type*} [CommRing R]
   -- hypothesis. The remaining argument is sum-splitting on
   -- Finset.range (k + 1) = Finset.range (k_star + 1) ∪ [k_star + 1, k]
   -- with the second piece vanishing termwise.
-  -- Ref: [manuscript] prop:spectral-sequence-collapse
+  -- Ref: [leitner2026] prop:spectral-sequence-collapse
   have hsub : Finset.range (collapse.k_star + 1) ⊆ Finset.range (k + 1) := by
     intro j hj
     simp only [Finset.mem_range] at *

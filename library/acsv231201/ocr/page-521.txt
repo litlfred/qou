@@ -1,0 +1,43 @@
+C.3 Classical Morse theory 503
+
+then the set X<, is a patch in the shape of a 2-cell with two disjoint segments
+of its boundary attached to two disjoint segments of the geometric boundary of
+X<q; see Figure C.5.
+
+aw «bh ~ 7
+
+Figure C.5 Crossing the critical value c.
+
+The critical point at height 4 adds another 1-cell modulo its boundary, mak-
+ing the homotopy type of X<, for 4 < a < 6 the union of two circles touching
+at a point. Finally, crossing the top of the sphere a 2-cell B is added modulo
+its boundary. There is more than one choice for the homotopy type of the at-
+tachment, and keeping track only of the homotopy type throughout the process
+of attaching cannot resolve this choice — one must look at the geometry of the
+attachment. In this case, because the attachment is to a topological circle (the
+6—« level set) and results in a nonintersecting surface in R?, there are only two
+possibilities for the attaching map in homology: OB is mapped to the circle in
+one of two orientations. Either choice results in a torus.
+
+We remark that knowing the mapping of the last attachment in homology
+is not sufficient to compute the homotopy type of the space. For example, at-
+taching a 2-cell to two circles joined at a point by mapping the boundary of the
+2-cell to the common point produces a sphere with two circular handles, which
+is not homotopy equivalent to a torus. 4
+
+Although Theorem C.28 specifies the attachment pair when the topology of
+X changes, Example C.30 shows that the computation of the attaching map is
+not automatic. It will help to have some results that narrow down this compu-
+tation to certain constructions local to the critical point: the homotopy in the
+Morse Lemma may be improved so that outside of a neighborhood of p, every
+point is pushed down at least to a level c — e.
+
+Let p be a critical point with height c = h(p) and suppose a < c < b are
+such that p is the only critical point with height in [a,b]. Given ¢ > 0, let
+B,(p) denote the ¢-neighborhood of p. We will see a formal version of the
+local Morse Lemma, in a more general context, in Appendix D. For now, we
+note that the local Morse Lemma implies that the homotopy type of X<, is the
+same as the homotopy type of X<--- U B,(p) for sufficiently small e.
+
+Definition C.31. Let X,.+ := Xzc U B,(p) for any sufficiently small ¢ > 0,
+and let X?'°° denote the pair (X,-, X<c-.) depicted in Figure C.6.

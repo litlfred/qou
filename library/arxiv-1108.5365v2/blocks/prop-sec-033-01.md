@@ -1,0 +1,1 @@
+The pairing between E, F, K, K0 and the z-variable zij, i = 1, 2 is given by ⟨E, z21⟩= c, ⟨F, z12⟩= c−1, ⟨K, z11⟩= q−1/2, ⟨K, z22⟩= q1/2, ⟨K0, z11⟩= q−1/2, ⟨K0, z22⟩= q−1/2, ⟨E, N⟩= 0, ⟨F, N⟩= 0, ⟨K, N⟩= 1, ⟨K0, N⟩= q−1, and zero otherwise, where c ∈C is any constant. The pairing is then extended to any monomial by the coproduct and induction.

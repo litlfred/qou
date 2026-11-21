@@ -1,1 +1,0 @@
-Which is a little unfortunate, for however essential a part has the Volterra system been playing in the soliton theory, there must be something wrong about a nonlinear equation emulating a linear one.

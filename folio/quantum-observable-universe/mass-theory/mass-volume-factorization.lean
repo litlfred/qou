@@ -22,7 +22,7 @@
   statement.  Downstream results can be proved conditional on
   [MassVolumeFactorization].
 
-  Ref: [manuscript] Ch 11 §8 / mass-volume-factorization
+  Ref: [leitner2026] Ch 11 §8 / mass-volume-factorization
   Ref: [thurston1978] http://library.msri.org/books/gt3m/
   Ref: [murakami-murakami2001] https://doi.org/10.1007/BF02392716
 -/
@@ -44,11 +44,11 @@ namespace QOU.ParticleInteractions
     `cpt-orbit-closure-density.lean` (deduplication tracked as a
     follow-up: `Mathlib.Combinatorics.Young.YoungDiagram` is the
     long-term target). -/
--- Ref: [manuscript] prop:cpt-orbit-closure-density
+-- Ref: [leitner2026] prop:cpt-orbit-closure-density
 axiom PartitionMVF (n : ℕ) : Type
 
 /-- The Type-B fold involution on partitions (transpose). -/
--- Ref: [manuscript] prop:cpt-orbit-closure-density
+-- Ref: [leitner2026] prop:cpt-orbit-closure-density
 axiom partitionTransposeMVF {n : ℕ} : PartitionMVF n → PartitionMVF n
 
 /-- Equality on the abstract partition carrier is decidable.  Supplied
@@ -156,7 +156,7 @@ noncomputable def bindingFromJSJ
     closes by `mul_zero`.  Discharges §3b-cond while encoding the
     one piece of physics that has a canonical value: the m_e
     Frobenius scale. -/
--- Ref: [manuscript] Ch 11 §8 / mass-volume-factorization
+-- Ref: [leitner2026] Ch 11 §8 / mass-volume-factorization
 -- Ref: [codata2022] CODATA 2022 electron rest energy
 instance canonical (K : Type*) : MassVolumeFactorization K 0 where
   density := fun _ => { scaleMe := 0.51099895069, populatedBlocks := [] }

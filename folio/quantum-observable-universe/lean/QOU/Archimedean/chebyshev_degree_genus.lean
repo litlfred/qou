@@ -41,7 +41,7 @@ i.e. the `u = s²` re-expression has degree `(p − 1)/2 = g`.
 
 ## References
 
-- [manuscript] brings-surface/chebyshev-degree-genus.md.
+- [leitner2026] brings-surface/chebyshev-degree-genus.md.
 - [kassel2008] Kassel–Turaev, *Braid Groups* (GTM 247), §4.
 -/
 
@@ -137,7 +137,7 @@ theorem hecke_deg_monic : ∀ n : ℕ, 0 < n →
     **Derived** from `hecke_deg_monic` (degree + monicity); the `odd`
     hypothesis fixes the torus-knot family `T_{2,p}` for the genus
     interpretation. -/
--- Ref: [manuscript] brings-surface/chebyshev-degree-genus.md
+-- Ref: [leitner2026] brings-surface/chebyshev-degree-genus.md
 -- Ref: [kassel2008] Braid Groups (GTM 247), §4 (Hecke recurrence)
 theorem chebyshev_degree_genus
     (p : ℕ) (_hp_odd : Odd p) (hp_pos : 0 < p) :

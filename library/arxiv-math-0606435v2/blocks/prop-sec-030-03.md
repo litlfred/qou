@@ -1,0 +1,1 @@
+If a braid β has MWF(β) ≤4, then V(ˆβ) and ∆(ˆβ) together with the exponent sum [β] = e, determine P(ˆβ). 1The second duplication was noted in the remarks after Jones’s table, but not referred to correctly in its last column.

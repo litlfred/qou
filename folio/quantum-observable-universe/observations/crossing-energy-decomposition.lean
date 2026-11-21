@@ -15,7 +15,7 @@ and antisymmetric (sinh) channels under the mirror operation.
 LaTeX label: `prop:crossing-energy-decomposition`
 
 ## References
-- [manuscript] Ch. 7, §crossing-energy-decomposition
+- [leitner2026] Ch. 7, §crossing-energy-decomposition
 
 **Ground ring**: `ℝ` (archimedean realisation).
 Evaluates formal results at q₀ ≈ 1.1098 for comparison with
@@ -26,14 +26,14 @@ See `GroundRingAnnotations.lean`.
 namespace QOU.Braiding
 
 /-- q decomposes as cosh + sinh. -/
--- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+-- Ref: [leitner2026] Ch. 7, §crossing-energy-decomposition
 theorem q_decomposition (q : ℝ) (hq : 0 < q) :
     q = symmetricWeight q + antisymmetricWeight q := by
   unfold symmetricWeight antisymmetricWeight
   ring
 
 /-- q⁻¹ decomposes as cosh - sinh. -/
--- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+-- Ref: [leitner2026] Ch. 7, §crossing-energy-decomposition
 theorem q_inv_decomposition (q : ℝ) (hq : 0 < q) :
     q⁻¹ = symmetricWeight q - antisymmetricWeight q := by
   unfold symmetricWeight antisymmetricWeight
@@ -43,7 +43,7 @@ theorem q_inv_decomposition (q : ℝ) (hq : 0 < q) :
     This is what makes the "cosh channel" name a derived identity, not a
     definition: the symmetric crossing weight IS the hyperbolic cosine of
     the crossing rapidity λ = ln q. -/
--- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+-- Ref: [leitner2026] Ch. 7, §crossing-energy-decomposition
 theorem symmetricWeight_eq_cosh (q : ℝ) (hq : 0 < q) :
     symmetricWeight q = Real.cosh (Real.log q) := by
   unfold symmetricWeight
@@ -53,7 +53,7 @@ theorem symmetricWeight_eq_cosh (q : ℝ) (hq : 0 < q) :
     The "Coulomb / sinh channel" is therefore a derived identity — the
     antisymmetric crossing weight IS the hyperbolic sine of λ = ln q,
     not a fitted parameter. -/
--- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+-- Ref: [leitner2026] Ch. 7, §crossing-energy-decomposition
 theorem antisymmetricWeight_eq_sinh (q : ℝ) (hq : 0 < q) :
     antisymmetricWeight q = Real.sinh (Real.log q) := by
   unfold antisymmetricWeight
@@ -62,7 +62,7 @@ theorem antisymmetricWeight_eq_sinh (q : ℝ) (hq : 0 < q) :
 /-- General identity: q = cosh(ln q) + sinh(ln q), for any q > 0.
     This is `eˣ = cosh x + sinh x` at x = ln q (so the RHS is e^{ln q} = q).
     It holds for every q > 0 — it is NOT specific to the substrate value. -/
--- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+-- Ref: [leitner2026] Ch. 7, §crossing-energy-decomposition
 theorem q_eq_cosh_add_sinh (q : ℝ) (hq : 0 < q) :
     q = Real.cosh (Real.log q) + Real.sinh (Real.log q) := by
   rw [← symmetricWeight_eq_cosh q hq, ← antisymmetricWeight_eq_sinh q hq]
@@ -70,7 +70,7 @@ theorem q_eq_cosh_add_sinh (q : ℝ) (hq : 0 < q) :
   ring
 
 /-- General identity: q⁻¹ = cosh(ln q) - sinh(ln q), for any q > 0. -/
--- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+-- Ref: [leitner2026] Ch. 7, §crossing-energy-decomposition
 theorem q_inv_eq_cosh_sub_sinh (q : ℝ) (hq : 0 < q) :
     q⁻¹ = Real.cosh (Real.log q) - Real.sinh (Real.log q) := by
   rw [← symmetricWeight_eq_cosh q hq, ← antisymmetricWeight_eq_sinh q hq]
@@ -80,7 +80,7 @@ theorem q_inv_eq_cosh_sub_sinh (q : ℝ) (hq : 0 < q) :
 /-- Algebraic→hyperbolic bridge (powers): for q > 0 and n : ℕ,
     qⁿ = cosh(n·ln q) + sinh(n·ln q). The algebraic q-power is the
     exponential of a hyperbolic length n·ln q. -/
--- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+-- Ref: [leitner2026] Ch. 7, §crossing-energy-decomposition
 theorem q_pow_eq_cosh_add_sinh (q : ℝ) (hq : 0 < q) (n : ℕ) :
     q ^ n = Real.cosh (n * Real.log q) + Real.sinh (n * Real.log q) := by
   have h1 : q ^ n = Real.exp ((n : ℝ) * Real.log q) := by
@@ -89,7 +89,7 @@ theorem q_pow_eq_cosh_add_sinh (q : ℝ) (hq : 0 < q) (n : ℕ) :
 
 /-- The quantum-integer numerator qⁿ − q⁻ⁿ = 2·sinh(n·ln q), for q > 0.
     The algebraic Hecke datum is twice a hyperbolic sine. -/
--- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+-- Ref: [leitner2026] Ch. 7, §crossing-energy-decomposition
 theorem two_sinh_nat_log (q : ℝ) (hq : 0 < q) (n : ℕ) :
     q ^ n - (q ^ n)⁻¹ = 2 * Real.sinh (n * Real.log q) := by
   have h1 : q ^ n = Real.exp ((n : ℝ) * Real.log q) := by
@@ -101,7 +101,7 @@ theorem two_sinh_nat_log (q : ℝ) (hq : 0 < q) (n : ℕ) :
     This is the precise sense in which the algebraic quantum integer is
     archimedean (hyperbolic-geometric) — the bridge underlying the
     Kashaev volume realisation (`kashaev-as-archimedean-realization`). -/
--- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+-- Ref: [leitner2026] Ch. 7, §crossing-energy-decomposition
 theorem qbracket_eq_sinh_ratio (q : ℝ) (hq : 0 < q) (n : ℕ) :
     (q ^ n - (q ^ n)⁻¹) / (q - q⁻¹)
       = Real.sinh (n * Real.log q) / Real.sinh (Real.log q) := by
@@ -116,7 +116,7 @@ noncomputable def emStrongRatio (q : ℝ) : ℝ :=
 /-- EM/strong ratio equals tanh(ln q) for q > 1.
     Proof: tanh(ln q) = (e^{ln q} - e^{-ln q})/(e^{ln q} + e^{-ln q})
            = (q - q⁻¹)/(q + q⁻¹) = emStrongRatio q. -/
--- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+-- Ref: [leitner2026] Ch. 7, §crossing-energy-decomposition
 theorem em_strong_ratio_tanh (q : ℝ) (hq : 1 < q) :
     emStrongRatio q = Real.tanh (Real.log q) := by
   have hq0 : 0 < q := by linarith
@@ -125,7 +125,7 @@ theorem em_strong_ratio_tanh (q : ℝ) (hq : 1 < q) :
     Real.tanh_eq_sinh_div_cosh]
 
 /-- Symmetric weight is positive for q > 0. -/
--- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+-- Ref: [leitner2026] Ch. 7, §crossing-energy-decomposition
 theorem symmetric_pos (q : ℝ) (hq : 0 < q) :
     0 < symmetricWeight q := by
   unfold symmetricWeight
@@ -133,7 +133,7 @@ theorem symmetric_pos (q : ℝ) (hq : 0 < q) :
   linarith
 
 /-- Antisymmetric weight is positive for q > 1. -/
--- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+-- Ref: [leitner2026] Ch. 7, §crossing-energy-decomposition
 theorem antisymmetric_pos (q : ℝ) (hq : 1 < q) :
     0 < antisymmetricWeight q := by
   unfold antisymmetricWeight
@@ -159,7 +159,7 @@ That multiplicity mismatch is exactly what makes pair creation work
 "ratio is independent of `𝔥`" claim (`ratio_general` below). -/
 
 /-- The composite splits into its two channels. -/
--- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+-- Ref: [leitner2026] Ch. 7, §crossing-energy-decomposition
 theorem crossingEnergy_split (p m : ℕ) (q : ℝ) :
     crossingEnergy p m q = symChannel p m q + asymChannel p m q := by
   unfold crossingEnergy symChannel asymChannel symmetricWeight antisymmetricWeight
@@ -167,7 +167,7 @@ theorem crossingEnergy_split (p m : ℕ) (q : ℝ) :
 
 /-- The mirror `σ` (which reverses every crossing, i.e. swaps `p` and `m`)
 negates the symmetric channel. -/
--- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+-- Ref: [leitner2026] Ch. 7, §crossing-energy-decomposition
 theorem symChannel_mirror (p m : ℕ) (q : ℝ) :
     symChannel m p q = -symChannel p m q := by
   unfold symChannel; ring
@@ -175,7 +175,7 @@ theorem symChannel_mirror (p m : ℕ) (q : ℝ) :
 /-- The mirror `σ` fixes the antisymmetric channel — this is the sign-blindness
 of the `sinh` part, and the reason a particle–antiparticle pair retains a
 net Coulomb energy. -/
--- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+-- Ref: [leitner2026] Ch. 7, §crossing-energy-decomposition
 theorem asymChannel_mirror (p m : ℕ) (q : ℝ) :
     asymChannel m p q = asymChannel p m q := by
   unfold asymChannel; ring
@@ -184,7 +184,7 @@ theorem asymChannel_mirror (p m : ℕ) (q : ℝ) :
 (`m = 0`, every crossing positive) with at least one crossing, the
 antisymmetric-to-symmetric ratio is `tanh(ln q)`, independent of the
 crossing number `p`. -/
--- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+-- Ref: [leitner2026] Ch. 7, §crossing-energy-decomposition
 theorem ratio_positive_braid (p : ℕ) (hp : p ≠ 0) (q : ℝ) (hq : 1 < q) :
     asymChannel p 0 q / symChannel p 0 q = Real.tanh (Real.log q) := by
   have hq0 : 0 < q := by linarith
@@ -202,7 +202,7 @@ crossing signs the ratio picks up the multiplicity factor `(p+m)/(p-m)`:
 The ratio equals `tanh(ln q)` exactly on the positive-braid locus
 `m = 0` (and, symmetrically, `-tanh(ln q)` on `p = 0`); it is **not**
 independent of the composite in general. -/
--- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+-- Ref: [leitner2026] Ch. 7, §crossing-energy-decomposition
 theorem ratio_general (p m : ℕ) (q : ℝ) (hq : 1 < q)
     (hpm : (p : ℝ) - (m : ℝ) ≠ 0) :
     asymChannel p m q / symChannel p m q
@@ -216,7 +216,7 @@ theorem ratio_general (p m : ℕ) (q : ℝ) (hq : 1 < q)
 /-- The multiplicity factor is genuinely non-trivial: a composite with two
 positive and one negative crossing has ratio `3·tanh(ln q)`, not
 `tanh(ln q)`. Concrete witness that `ratio_general` is not vacuous. -/
--- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+-- Ref: [leitner2026] Ch. 7, §crossing-energy-decomposition
 theorem ratio_two_one_ne_tanh (q : ℝ) (hq : 1 < q) :
     asymChannel 2 1 q / symChannel 2 1 q = 3 * Real.tanh (Real.log q) := by
   have h : ((2 : ℕ) : ℝ) - ((1 : ℕ) : ℝ) ≠ 0 := by norm_num

@@ -13,9 +13,19 @@
   "pageStart": 20,
   "pageEnd": 25,
   "contains": [
-    "library/sm10137-eng/blocks/prose-sec-007"
+    "library/sm10137-eng/blocks/prose-sec-007",
+    "library/sm10137-eng/blocks/prop-sec-007-01",
+    "library/sm10137-eng/blocks/cor-sec-007-02",
+    "library/sm10137-eng/blocks/rem-sec-007-03",
+    "library/sm10137-eng/blocks/prop-sec-007-04",
+    "library/sm10137-eng/blocks/thm-sec-007-05",
+    "library/sm10137-eng/blocks/lem-sec-007-06",
+    "library/sm10137-eng/blocks/cor-sec-007-07",
+    "library/sm10137-eng/blocks/thm-sec-007-08",
+    "library/sm10137-eng/blocks/lem-sec-007-09",
+    "library/sm10137-eng/blocks/lem-sec-007-10"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/sm10137-eng",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/sm10137-eng",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/sm10137-eng/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/sm10137-eng/manifest.jsonld",
   "provenance": "ingested"
 }

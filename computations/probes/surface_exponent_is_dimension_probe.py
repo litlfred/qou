@@ -64,7 +64,8 @@ from binding_log_free_energy import M_E_MEV  # noqa: E402
 mp.mp.dps = 50
 Q, TOL = ct.Q, ct.TOL
 M_E = mp.mpf(str(M_E_MEV))
-E0 = M_E / (Q * (Q - 1))
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+E0 = _qbeta_e0.order_zero_scaled(M_E, Q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
 EPS = E0 * mp.log((Q ** 2 + 1) / Q)
 ROOT = Path(__file__).resolve().parents[2]
 AME = ROOT / "qou-mass/src/qou_mass/data/ame2020.json"

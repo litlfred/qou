@@ -1,0 +1,1 @@
+Suppose given diagonal matrices δ↑and δ↓with positive and distinct eigen- values. Two pairs of the form (δ↑, C δ↓C∗) are equivalent iﬀthere exists diagonal unitary matrices A, B ∈N such that A C = C′ B.

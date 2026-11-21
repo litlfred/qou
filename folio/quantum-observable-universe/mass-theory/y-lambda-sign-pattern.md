@@ -1,5 +1,5 @@
 **Remark (Jones-Markov weight sign pattern).**
-**Withdrawn (2026-08-09).** Under the excised convention C the Jones–Markov coefficients were sign-indefinite for $n \geq 4$ — $y_{(1^4)} = -0.00084253$ at $q_0$ was the first negative entry, with $y_{(2,1,1,1)}$ negative at $n = 5$. Under the production convention D no $y_\lambda$ is negative: $y_\lambda = [n-2k+1]_q/[2]_q^n \geq 0$ on the two-row stratum $\lambda = (n-k,k)$, and $y_\lambda = 0$ identically for $\ell(\lambda) \geq 3$ ([`TemperleyLiebTower.lean`](../lean/QOU/QBeta/TemperleyLiebTower.lean)).
+Under the alternative Convention-C trace, the Jones–Markov coefficients become sign-indefinite for $n \geq 4$ ($y_{(1^4)} = -0.00084253$ at $q_0$). Under the canonical Convention-D trace, by contrast, no weight $y_\lambda$ is negative: $y_\lambda = [n-2k+1]_q/[2]_q^n \geq 0$ on the two-row stratum $\lambda = (n-k,k)$, and $y_\lambda = 0$ identically for $\ell(\lambda) \geq 3$.
 
 The distinction this remark drew from the non-negative operator-selection LP dual variables $u_\lambda$ therefore collapses on the sign axis. What still separates the two is that $y_\lambda$ is a trace weight and $u_\lambda$ a dual price, and that $y_\lambda$ has a radical — the $\ell(\lambda) \geq 3$ blocks, on which the trace form vanishes — while $u_\lambda$ does not.
 

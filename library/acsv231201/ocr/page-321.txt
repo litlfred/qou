@@ -1,0 +1,44 @@
+10.3 Main results on coefficient asymptotics 303
+
+Kw in (10.1). We first give results when ‘V is a hyperplane arrangement: Sec-
+tion 10.3.1 assumes transverse intersections and gives a method to compute all
+coefficients, while Section 10.3.2 reduces a general hyperplane arrangement
+to transverse arrangements using algebraic reductions. Next, we show how
+to compute dominant asymptotics for non-linear divisors. As in the smooth
+case, we need to characterize which minimal critical points contribute to dom-
+inant asymptotic behavior. Section 10.3.3 deals with transverse intersections
+and Section 10.3.4 deals with non-transverse intersections that are arrange-
+ment points.
+
+Notation and terminology
+For each point o on the boundary of the amoeba of a smooth algebraic hyper-
+surface Vg, some complex scalar multiple of (Vjog Q)(@) will be real and point
+into amoeba(Q). We use this to define contributing points on the boundary of
+the amoeba.
+
+Definition 10.17 (lognormal cones and contributing multiple points). Suppose
+that o is a transverse multiple point in a stratum of codimension k, such that
+F(z) = P(z)/Q(z)" +>» Q(z)" near o with the gradients of the Q; linearly
+independent at z = a. If Relog(a) € d amoeba(Q) then the lognormal cone
+N(@) to V at @ is the positive real span of the lognormals to the Q; at o,
+scaled so that the lognormal of Q; is a real vector pointing into amoeba(Qj)
+at Relog(o). The set W(#) of contributing multiple points in the direction
+f consists of the critical points 7 for which Relog(7) € 6 amoeba(Q) and
+PENT).
+
+Remark 10.18. The height function hp(z) = —? - Relog(z) is minimized on
+the closure B of a component of amoeba(Q)° at o € OB if and only if o
+is a contributing multiple point. Definition 10.17 fails when amoeba(Q) has
+codimension one near o, for instance in the case of the line amoeba(1 — xy).
+However, when the component B of amoeba(Q)° is fixed then contributing
+multiple points can still be defined in this pathological case for any o € 0B by
+scaling the lognormals defining N() so that they point away from B.
+
+Exercise 10.7. Let P = 1 and Q = (1—2x/3-y/3)(1—x/3-2y/3). First, deter-
+mine the directions 7 for which the point (1, 1) is a contributing multiple point.
+Second, find all contributing multiple points in the main diagonal direction.
+
+10.3.1 Linear divisors: transverse arrangements
+
+Suppose that F(z) = P(z)/Q(z) such that for polynomials P and Q such
+that Q(z) = ¢)(z)"---€,(z)"" for positive integers m, and real linear fac-

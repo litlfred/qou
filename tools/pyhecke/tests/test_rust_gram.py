@@ -1,43 +1,121 @@
 """Integration: Rust `hecke-gram` vs Python `pyhecke.gram.G`.
 
-Only runs if the Rust binary has been built (release mode). Otherwise
-the test is skipped — the package must work even when the Rust engine
-is absent.
+Schema-contract and Python-mirror checks run UNCONDITIONALLY in every
+environment (bean `qou-mt4n`), so a schema/struct key break or a convention-D
+quotient-inverse violation cannot hide behind an unbuilt Rust binary. Only the
+tests that invoke the compiled `hecke-gram` subprocess are skipped when the
+release binary is absent.
 """
 
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 import pytest
 
 from pyhecke import bridge
 
+_HECKE_ENGINE_DIR = Path(__file__).resolve().parents[2] / "hecke-engine"
+_SCHEMA_PATH = _HECKE_ENGINE_DIR / "schemas" / "gram.schema.json"
+_GRAM_RS_PATH = _HECKE_ENGINE_DIR / "src" / "gram.rs"
+
 
 def _rust_gram_available() -> bool:
     return bridge.binary_path("hecke-gram") is not None
 
 
-pytestmark = pytest.mark.skipif(
+_requires_rust_gram = pytest.mark.skipif(
     not _rust_gram_available(),
     reason="hecke-gram binary not built (run `cargo build --release` in tools/hecke-engine/)",
 )
 
 
+def _load_gram_schema() -> dict:
+    with _SCHEMA_PATH.open(encoding="utf-8") as f:
+        return json.load(f)
+
+
+def test_gram_schema_is_valid_and_requires_convention_d_keys():
+    """Unconditional schema check (bean qou-mt4n): gram.schema.json must be a
+    valid Draft 2020-12 schema requiring `quotient_inverse` + `radical` and
+    excluding the pre-convention-D `inverse` key."""
+    import jsonschema
+
+    schema = _load_gram_schema()
+    jsonschema.Draft202012Validator.check_schema(schema)
+    required = set(schema.get("required", []))
+    props = set(schema.get("properties", {}).keys())
+    assert "quotient_inverse" in required
+    assert "radical" in required
+    assert "inverse" not in required
+    assert "inverse" not in props
+    assert required == props
+
+
+def test_rust_gram_struct_fields_match_schema_contract():
+    """Unconditional source-to-schema contract check (bean qou-mt4n): the
+    serialized fields of `pub struct GramCertificate` in `src/gram.rs` must
+    match `gram.schema.json` even when the Rust binary is not compiled."""
+    schema = _load_gram_schema()
+    src = _GRAM_RS_PATH.read_text(encoding="utf-8")
+    m = re.search(r"pub\s+struct\s+GramCertificate\s*\{([^}]*)\}", src, re.DOTALL)
+    assert m is not None, "pub struct GramCertificate not found in tools/hecke-engine/src/gram.rs"
+    struct_fields = set(re.findall(r"pub\s+([a-zA-Z0-9_]+)\s*:", m.group(1)))
+    assert struct_fields == set(schema["required"]), (
+        f"GramCertificate fields {sorted(struct_fields)} != "
+        f"schema required {sorted(schema['required'])}"
+    )
+    assert "inverse" not in struct_fields
+
+
+def test_python_gram_certificate_validates_against_schema():
+    """Unconditional Python-mirror contract check (bean qou-mt4n): a
+    certificate assembled from `pyhecke.gram` validates against
+    `gram.schema.json` and satisfies the convention-D quotient-inverse and
+    radical identities (`G @ rad = 0`, `G_pinv @ rad = 0`, `G @ G_pinv @ G = G`)."""
+    import jsonschema
+    import numpy as np
+
+    from pyhecke import gram as pg
+
+    schema = _load_gram_schema()
+    G = np.asarray(pg.G, dtype=float)
+    GP = np.linalg.pinv(G)
+    # Closed-form three-strand q-antisymmetriser (-1/q)^len(w) on NF_BASIS
+    lengths = [len(w) for w in pg.NF_BASIS]
+    rad = np.array([(-1.0 / float(pg.q0)) ** k for k in lengths], dtype=float)
+
+    cert = {
+        "q": float(pg.q0),
+        "z": float(pg.z),
+        "h": float(pg.h),
+        "n": 3,
+        "basis": list(pg.NF_NAMES),
+        "trace_weights": [float(x) for x in pg.TR_M],
+        "matrix": G.tolist(),
+        "quotient_inverse": GP.tolist(),
+        "radical": rad.tolist(),
+        "determinant": float(np.linalg.det(G)),
+    }
+    jsonschema.validate(cert, schema)
+    assert np.linalg.norm(G @ rad) < 1e-10
+    assert np.linalg.norm(GP @ rad) < 1e-10
+    assert np.allclose(G @ GP @ G, G, atol=1e-10)
+
+
+@_requires_rust_gram
 def test_rust_gram_validates_against_schema():
     """Rust output must validate against gram.schema.json."""
     import jsonschema
 
     cert = bridge.gram_from_rust()
-    schema_path = (
-        Path(__file__).resolve().parents[2] / "hecke-engine" / "schemas" / "gram.schema.json"
-    )
-    with schema_path.open() as f:
-        schema = json.load(f)
+    schema = _load_gram_schema()
     jsonschema.validate(cert, schema)
 
 
+@_requires_rust_gram
 def test_rust_and_python_gram_agree():
     """Rust and Python Gram matrices must agree at f64 precision."""
     import numpy as np
@@ -51,6 +129,7 @@ def test_rust_and_python_gram_agree():
     assert max_diff < 1e-14, f"Rust and Python Gram disagree: max diff {max_diff:.2e}"
 
 
+@_requires_rust_gram
 def test_rust_gram_det_matches_python():
     import numpy as np
 
@@ -62,6 +141,7 @@ def test_rust_gram_det_matches_python():
     assert abs(rust_det - py_det) < 1e-10
 
 
+@_requires_rust_gram
 def test_rust_cert_has_no_full_inverse_and_quotient_inverse_kills_the_radical():
     """Under convention D there is NO 6x6 inverse, so the certificate must not
     offer one, and what it does offer must be the inverse on the quotient.
@@ -94,6 +174,7 @@ def test_rust_cert_has_no_full_inverse_and_quotient_inverse_kills_the_radical():
     assert np.allclose(G @ GP @ G, G, atol=1e-10)
 
 
+@_requires_rust_gram
 def test_rust_gram_at_custom_q():
     """Different q values produce different G matrices."""
     import numpy as np

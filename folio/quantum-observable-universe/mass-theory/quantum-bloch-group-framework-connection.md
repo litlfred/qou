@@ -55,11 +55,11 @@ the complex numbers:
 
 The bar-involution form $\tfrac{1}{2}\ln(V \cdot \overline{V})$ at
 the pre-archimedean level is what the framework uses for $\rho_K$'s
-single-generator piece (`[prop:rho-k-graded-expansion`](rho-k-graded-expansion.md)).
+single-generator piece (`[prop:rho-k-graded-expansion`](../mass-endomorphism/rho-k-graded-expansion.md)).
 At the archimedean specialization with real $q_0$ and real $\hat{V}_i$,
 this reduces to the classical Borel regulator $\sum \ln\lvert\hat{V}_i\rvert$ —
 the form that appears in
-[`conj:borromean-bloch-group-element`](borromean-bloch-group-element.md)
+[Borromean rings represent a non-trivial element of $K_3(\mathbb{C})$ / Bloch group with regulator $r_2 = 8G$](borromean-bloch-group-element.md)
 under the Beilinson regulator $r_2: K_3(\mathbb{C}) \to \mathbb{R}$.
 
 This makes the QOU framework's K-theoretic content categorically
@@ -70,7 +70,7 @@ the Hecke bar-involution; the archimedean form respects the standard
 $\mathbb{R}$-valued K-theory.
 
 This refines the discussion in
-[`conj:borromean-bloch-group-element`](borromean-bloch-group-element.md):
+[Borromean rings represent a non-trivial element of $K_3(\mathbb{C})$ / Bloch group with regulator $r_2 = 8G$](borromean-bloch-group-element.md):
 the framework's working object is the **pre-archimedean
 $\mathfrak{B}(\widehat{\mathbb{Z}[q]})$**, and the Beilinson regulator
 $r_2$ is the archimedean realization of the graded $\rho_K$.

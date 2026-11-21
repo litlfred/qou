@@ -1,1 +1,0 @@
-For the $N$-node chain to be correctly entangled, the entanglement generation procedure must be repeated on average a certain number of times $\bar{n}\left(P_{0},N\right)$, whose expression is calculated in Appendix.

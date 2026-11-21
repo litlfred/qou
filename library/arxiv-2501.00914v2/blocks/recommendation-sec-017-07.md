@@ -1,1 +1,0 @@
-We have now shown that the companion torus must compress in $S^3_r(K)$, so we can apply Lemma~\ref{lem:prelim-satellite-surgeries} to see that $r$-surgery on $P$ is a solid torus -- in other words, that $P$ is a \emph{Berge--Gabai knot} -- and that \[ S^3_r(K) \cong S^3_{r/w^2}(C), \] where $w \geq 2$ is the winding number of $P$.

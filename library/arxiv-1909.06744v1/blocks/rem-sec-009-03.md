@@ -1,0 +1,1 @@
+In the Lie algebra case, put g−θ nil = g−θ ∩gnil, where gnil is the set of nilpotent elements in g. Then g−θ nil is an H-stable closed subset of g−θ. The ﬁniteness property also holds in the Lie algebra case. But this does not hold for Gιθ uni if p = 2.

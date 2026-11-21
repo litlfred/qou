@@ -1,1 +1,0 @@
-\begin{rmk} Cerf-theoretically, we have shown that given two Morse functions on $p\setminus \operatorname{int}(D^3 \sqcup D^3)$ and a path connecting them, new critical points coming from CF generators must together cancel to an identity cylinder, attached to the incoming or the outgoing part of $p\setminus \operatorname{int}(D^3 \sqcup D^3)$.

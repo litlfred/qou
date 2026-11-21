@@ -2,7 +2,7 @@
   Status of the fibre functor τ at all orders of the h-expansion:
   order-mixing map or distinct invariants?
 
-  Ref: [manuscript] §Mass Theory / Geom bridge status,
+  Ref: [leitner2026] §Mass Theory / Geom bridge status,
        conj:tau-all-orders-bridge
   Ref: [yekutieli2015] https://arxiv.org/abs/1007.1250
   Ref: [neumann-zagier1985] https://doi.org/10.1016/0040-9383(85)90004-7

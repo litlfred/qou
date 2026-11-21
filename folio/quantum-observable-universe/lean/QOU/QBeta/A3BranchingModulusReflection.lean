@@ -36,7 +36,7 @@ no axiom. `r*`/`μ₃`/`c₃`/`x` are never inverted to fit; the numbers live on
 witness. This file adds no closure — it proves the Pythagorean structure and names the wall.
 
 ## References
-- [manuscript] `QOU.QBeta.A3OffBlockDerivation` (`magnitudeFactor_eq`, `magnitudeFactor_le_one`,
+- [leitner2026] `QOU.QBeta.A3OffBlockDerivation` (`magnitudeFactor_eq`, `magnitudeFactor_le_one`,
   the branching blocks `A=D=(a+b)/2`, `B=(a−b)/2`); `QOU.QBeta.BirkhoffBarOddPythagorasBridge`
   (`barOdd_unitModulus_sq_eq_neg_one`, `affine_modulus_quadrature`); beans `qou-wiub`,
   `qou-jqof`, `qou-prjo`.

@@ -13,4 +13,8 @@ export default definition({
     "littlewood-richardson",
     "support-contraction",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The Lean sibling proves, kernel-checked without `sorry`:" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The Lean carries its own executable Littlewood–Richardson positivity (skew ballot tableaux) and independently reproduces the counts of the computational probe, so the two implementations cross-validate." },
+  ],
 });

@@ -41,7 +41,7 @@ For `q > 1` (the physical range), the gap is strictly positive.
 
 ## References
 
-- [manuscript] Chapter 5, rem:substrate-gm-torsion
+- [leitner2026] Chapter 5, rem:substrate-gm-torsion
 - [jaffe2006] Jaffe & Witten, Yang–Mills millennium problem
 - [bokut2001] Bokut & Shiao, GS bases for Coxeter groups
 -/

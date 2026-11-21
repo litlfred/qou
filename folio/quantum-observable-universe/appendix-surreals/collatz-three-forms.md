@@ -1,4 +1,4 @@
-The contact boundary ([prop:collatz-contact-boundary](#prop:collatz-contact-boundary)) establishes that the $q$-Collatz orbit contracts if and only if each tripling is followed by at least two halvings on average. This condition has equivalent categorical, arithmetic, and residue faces.
+The contact boundary ([conj:collatz-contact-boundary](#conj:collatz-contact-boundary)) establishes that the $q$-Collatz orbit contracts if and only if each tripling is followed by at least two halvings on average. This condition has equivalent categorical, arithmetic, and residue faces.
 
 In the Iwahori--Hecke algebra $H_n(q)$, the Collatz step composes Hecke reduction ($T^2 = (q-q^{-1})T + 1$) and Markov destabilization ($\mathrm{tr}_M(xT_n) = z \cdot \mathrm{tr}_M(x)$). The Markov trace $\mathrm{tr}_M \colon H_n(q) \to \mathbb{Z}[q^{\pm 1}]$ sends braid words to Jones polynomials.
 

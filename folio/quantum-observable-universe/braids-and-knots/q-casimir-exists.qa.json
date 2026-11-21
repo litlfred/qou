@@ -1311,6 +1311,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4520815f2e62",
+          "ts": "b035714497ee",
+          "lean": "e57b20052d0d",
+          "lean_statement": "06763b345d63"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:05:10.899Z",
+        "reviewed_sha": "d452093fabf877690aeba624197ad015c6b9aa74",
+        "severity": "major",
+        "evidence": "lean.ref is QCasimir.not_exists_unconstrained, a refutation, not the claim. The repair UqSl2.Uq.casimir_central proves centrality only, over a field with q!=0 and q-q^-1!=0, with the constant shift dropped; the eigenvalue [j][j+1] on V_j is not proved (its docstring says so). The statement says any ground ring; the Lean needs a field."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2534,6 +2552,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-16T07:05:10.899Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

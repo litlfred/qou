@@ -27,7 +27,7 @@ lemma `chebyshev_degree_genus`).  The statement records the
 recurrence itself; downstream specialisation to specific
 `n ∈ {3, 5, 7}` recovers the `e⁻/μ⁻/τ⁻` lepton-tower NF entries.
 
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
 -/
 
 namespace QOU.Archimedean
@@ -58,14 +58,14 @@ noncomputable def netCoeff (n : ℕ) : Polynomial ℤ :=
     Holds by definition: this is the second equation of the Morgan–
     Voyce recurrence packaged as a Lean theorem so downstream
     consumers can `rw` against it. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
 theorem morganVoyceB_recurrence (n : ℕ) :
     morganVoyceB (n + 2) = Polynomial.X * morganVoyceB (n + 1) + morganVoyceB n := by
   rfl
 
 /-- **a_n = b_{n−1}** identity, packaging the first equation of the
     Morgan–Voyce recurrence. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
 theorem morganVoyceA_succ (n : ℕ) : morganVoyceA (n + 1) = morganVoyceB n := by
   rfl
 
@@ -73,7 +73,7 @@ theorem morganVoyceA_succ (n : ℕ) : morganVoyceA (n + 1) = morganVoyceB n := b
 
     Discharged by unfolding `netCoeff`, `morganVoyceA`, and applying
     `morganVoyceA_succ`. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
 theorem netCoeff_succ (n : ℕ) :
     netCoeff (n + 1) = morganVoyceB n + morganVoyceB (n + 1) := by
   simp [netCoeff, morganVoyceA, morganVoyceA_succ]
@@ -82,7 +82,7 @@ theorem netCoeff_succ (n : ℕ) :
     Voyce recurrence into a single conjunction: for every `n`, the
     sequences `a_n` and `b_n` jointly satisfy the four characterising
     relations of `prop:lepton-continuant-recurrence`. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
 theorem lepton_continuant_recurrence (n : ℕ) :
     morganVoyceA (n + 1) = morganVoyceB n ∧
     morganVoyceB (n + 2)

@@ -1,4 +1,4 @@
-The $q$-weighted method ([derivation chain](#rem:qvalue-derivation-chain)) predicts $\beta^-$ decay $Q$-values from $q$ alone, with no fitted parameters. Every figure in the first three paragraphs below was obtained under the excised Markov convention C, $z = q^{1/2}/(q+1)$, by a float64 implementation. They are recorded here as the convention-C output of that method. Under the canonical convention D, $z = q^3/(q^2+1)$, they are not reproduced; the convention-D values are in the [interpretation table](#rem:spectral-decomposition-qvalue-interpretation).
+The $q$-weighted method predicts $\beta^-$ decay $Q$-values from $q$ alone, with no fitted parameters. Every figure in the first three paragraphs below was obtained under the excised Markov convention C, $z = q^{1/2}/(q+1)$, by a float64 implementation. They are recorded here as the convention-C output of that method. Under the canonical convention D, $z = q^3/(q^2+1)$, they are not reproduced; the convention-D values are in the [interpretation table](#rem:spectral-decomposition-qvalue-interpretation).
 
 **Predicted vs observed $Q$-values (convention C, $q$-weighted method).**
 

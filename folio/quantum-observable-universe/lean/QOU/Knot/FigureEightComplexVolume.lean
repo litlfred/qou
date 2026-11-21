@@ -56,10 +56,10 @@
 
   -- Ref: [murakami-murakami2001] https://doi.org/10.1007/BF02392716
   -- Ref: [murakami2004] figure-eight & Dehn surgery spaces (math/0401084)
-  -- Ref: [manuscript] conj:binding-qbeta-complex-volume;
+  -- Ref: [leitner2026] conj:binding-qbeta-complex-volume;
        docs/audits/2026-07-11-complex-volume-conditional-mass-binding.md;
        docs/audits/2026-07-26-sdeformed-channel-signflip.md
-  -- Ref: [manuscript] O(u⁴) even NZ tail: exact literature 𝔙₄₁ beyond the
+  -- Ref: [leitner2026] O(u⁴) even NZ tail: exact literature 𝔙₄₁ beyond the
        leading a₂·u² is even (QOU.Knot.NeumannZagierParity.no_odd_rung); the
        higher even coefficients (v₃ = ∓i√3/3, ℚ(√−3)) are the residual carried
        by this citation and do not alter the Im-sign structure proved below.

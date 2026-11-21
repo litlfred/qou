@@ -40,7 +40,7 @@ open QOU.Archimedean
     multiplicity. We adopt the upper bound here so `kMax` is a
     closed-form definition; per-instance refinements live in
     `LevelSufficient` witnesses. -/
--- Ref: [manuscript] braids-and-knots/confinement-level
+-- Ref: [leitner2026] braids-and-knots/confinement-level
 def kMax (P : ConfinedParticle) (_q : R_q) : ℕ :=
   P.markovClass.strandCount
 
@@ -50,7 +50,7 @@ def kMax (P : ConfinedParticle) (_q : R_q) : ℕ :=
     or via the full Hecke-character tower (Jones, n ≥ 4). Replacing
     the previous `opaque` with a class makes the data choice
     visible at every use site. -/
--- Ref: [manuscript] braids-and-knots/wedderburn-mass-formula
+-- Ref: [leitner2026] braids-and-knots/wedderburn-mass-formula
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
@@ -72,7 +72,7 @@ noncomputable def markovTrace (P : ConfinedParticle) (q : R_q)
     property (Jones), but its formalisation in Lean depends on the
     full `HeckeRep.character` machinery; until then, callers supply
     the witness for the pairs they actually use. -/
--- Ref: [manuscript] braids-and-knots/level-sufficiency
+-- Ref: [leitner2026] braids-and-knots/level-sufficiency
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
@@ -104,7 +104,7 @@ instance levelSufficient_refl
     of a proof performed here. The statement is genuinely conditional (`P`,
     `P'`, `q` are arbitrary), so it may not be strengthened to a global
     `axiom`. -/
--- Ref: [manuscript] braids-and-knots/level-sufficiency
+-- Ref: [leitner2026] braids-and-knots/level-sufficiency
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
@@ -121,7 +121,7 @@ def LevelSufficiency
 /-- **Default-coarse corollary.** The Markov trace at the coarsest
     level satisfying `k_max ≤ n` is exact; deeper unfolding
     produces the same value. -/
--- Ref: [manuscript] braids-and-knots/level-sufficiency
+-- Ref: [leitner2026] braids-and-knots/level-sufficiency
 theorem default_coarse_exact
     (P : ConfinedParticle) (q : R_q)
     [HasMarkovTrace P q]

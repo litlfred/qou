@@ -1,1 +1,0 @@
-One should read carefully brackets, as in our notation $$Ob(\CC(\k))\ne (Ob(\CC))(\k)=:Ob(\CC^{naive}(\k))\,,$$ contrary to the case of $\kk$ where we have $$Ob(\CC(\kk))=(Ob(\CC))(\kk)\,.$$ We will see also the "set of isomorphism classes of objects" in $\CC$ should be better understood as an ind-constructible stack[^1].

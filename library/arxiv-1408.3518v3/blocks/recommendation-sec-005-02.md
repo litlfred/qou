@@ -1,1 +1,0 @@
-This contradicts the fact that z1 was a steepest-descent augmentation for xk. □ Lemma 6 states that once the sign pattern of a steepest-descent augmentation strictly changes, the steepness must decrease.

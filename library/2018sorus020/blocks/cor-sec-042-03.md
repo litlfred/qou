@@ -1,0 +1,1 @@
+Let M be a hyperbolic manifold and X be a geometric component of its SL2(C) character variety. Assume that an ideal point of X detects an incom- pressible surface which is connected or union of parallel free copies, and such that

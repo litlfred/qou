@@ -1,0 +1,1 @@
+Assume we are in the situation of Definition 3.10. Further assume that h2 λ(µ) > 2r. (i) Assume that αµ ∈Bn. Then |(µ)∼| = 4. Moreover, (µ)∼is odd. (ii) Assume that αµ̸ ∈Bn. Then |(µ)∼| = 3. Moreover, OddRank(λ) > 0, D(µ) is an odd branch of D(λ) and (µ)∼is odd if and only if {D(µ)} ⊆Podd D(λ) is odd.

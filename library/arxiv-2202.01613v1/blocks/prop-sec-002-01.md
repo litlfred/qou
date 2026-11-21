@@ -1,0 +1,1 @@
+(12) 4 𝑀𝑛−𝑀𝑝in Lattice QCD+QED at LO in IB Simone Romiti Finally the IB correction to 𝑀Ω−is: Δ𝑀Ω−= −Δ𝑚𝑠[ΩM 1 + ΩM 2 + ΩM 3 ] + Δ𝑚(𝑐𝑟) 𝑠 [ΩC 1 + ΩC 2 + ΩC 3 ] + 𝑞2 𝑠[Ωself 1 + Ωself 2 + Ωself 3 + Ωexch 3 + Ωexch 2 + Ωexch 1 ] + ∑︁ 𝑓∈(𝑠𝑒𝑎) 𝑞𝑓𝑞𝑠 h Ωloop 1 𝑓 + Ωloop 2 𝑓 + Ωloop 3 𝑓 i + [isosymm. vac. pol. diag.] .

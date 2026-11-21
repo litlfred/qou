@@ -56,10 +56,10 @@ LaTeX label: `prop:phi-k-weight-family-requirements`
 
 ## References
 
-- [manuscript] docs/audits/2026-09-05-phi-k-weight-family.md (the requirement derivation + prune)
-- [manuscript] docs/audits/2026-09-04-plancherel-convention-gap.md (the `c_n` cross-atom artifact)
-- [manuscript] content/.../lean/QOU/BraidKnot/WLambdaNormalizationInvariance.lean (same-`n` invariance)
-- [manuscript] content/.../lean/QOU/Eightfold/RowCapObstruction.lean (the `y_λ` row cap)
+- [leitner2026] docs/audits/2026-09-05-phi-k-weight-family.md (the requirement derivation + prune)
+- [leitner2026] docs/audits/2026-09-04-plancherel-convention-gap.md (the `c_n` cross-atom artifact)
+- [leitner2026] content/.../lean/QOU/BraidKnot/WLambdaNormalizationInvariance.lean (same-`n` invariance)
+- [leitner2026] content/.../lean/QOU/Eightfold/RowCapObstruction.lean (the `y_λ` row cap)
 -/
 
 namespace QOU.BraidKnot.DepthWeightReq

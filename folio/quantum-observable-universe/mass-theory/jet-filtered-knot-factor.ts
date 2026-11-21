@@ -24,4 +24,7 @@ export default conjecture({
     witness: "computations/nf-transition-lifting.witness.json",
     status: "experimental",
   },
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): a rule fixing the word, not just its crossing content.\n`the_nuclear_jet_level_is_the_retired_all_pairs_object_probe.py`." },
+  ],
 });

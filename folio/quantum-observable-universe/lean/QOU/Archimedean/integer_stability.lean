@@ -24,7 +24,7 @@ The Lean encoding records the quadratic shape + the convexity claim
 (`α(A) > 0`) as a single proposition.  Concretising `a_C` and `a_A`
 to the substrate-derived Coulomb/Pauli scales is downstream work.
 
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/integer-stability.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/integer-stability.md
 -/
 
 namespace QOU.Archimedean
@@ -60,7 +60,7 @@ noncomputable def bindingEnergy (ctx : IntegerStabilityContext) (p : ℝ) : ℝ 
   alphaCoeff ctx * p ^ 2 - ctx.a_A * p + ctx.δ_A
 
 /-- **Coulomb coefficient is positive at `q > 1`**. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/integer-stability.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/integer-stability.md
 theorem coulombCoeff_pos (ctx : IntegerStabilityContext) :
     0 < coulombCoeff ctx := by
   unfold coulombCoeff
@@ -75,7 +75,7 @@ theorem coulombCoeff_pos (ctx : IntegerStabilityContext) :
 
     The binding-energy function `E(p, A)` is a convex quadratic in
     `p`: its leading coefficient `α(A)` is strictly positive. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/integer-stability.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/integer-stability.md
 theorem integer_stability (ctx : IntegerStabilityContext) :
     0 < alphaCoeff ctx := by
   unfold alphaCoeff

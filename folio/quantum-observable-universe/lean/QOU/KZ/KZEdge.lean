@@ -18,7 +18,7 @@ three-point KZ solution `G`.  Taking for `G` the solutions normalised at `s = 0`
 constants `a`, `b` with `N a = F G₀`, `N b = F G₁`, and `a = b Φ_KZ(P, Q)` (`edge`).
 
 -- Ref: [drinfeld1990] Leningrad Math. J. 1 (1990) 1419–1457, §2
--- Ref: [manuscript] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §2 Step 1
+-- Ref: [leitner2026] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §2 Step 1
 -/
 
 namespace QOU.KZ.KZEdge

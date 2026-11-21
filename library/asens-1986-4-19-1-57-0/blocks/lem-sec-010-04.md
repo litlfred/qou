@@ -1,0 +1,1 @@
+— Let BcM ^ a uon Neumann subalgebra and {fn}n>i a sequence of projections in M with || /„— 1 \\^ -> 0. (i) J/^eB, n^l, then H(M|B)=lim H(M^ B^). n (ii) Iff^ e W H M and B 15 a factor then again H (M | B) = lim H (M^ | B^). n [In both (i), (ii) the entropy H(M^ B^) is considered with respect to the induced trace T^ (/.x/,) = T (/,) -1 T (/^).]

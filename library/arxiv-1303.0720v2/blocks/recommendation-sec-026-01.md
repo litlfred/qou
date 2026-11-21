@@ -1,1 +1,0 @@
-As for the meaning of an asymptotic expansion like [\[eq-asseries1\]](#eq-asseries1){reference-type="eqref" reference="eq-asseries1"}, we should require that $$a(z,w)=\sum_{j=0}^{k} m^{-j+1} a_j(z,w)+\mathrm{O}(m^{-k}).$$

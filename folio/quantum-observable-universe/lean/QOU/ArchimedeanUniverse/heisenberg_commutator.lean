@@ -26,7 +26,7 @@ that already asserts them (pattern B):
 
 ## References
 
-- [manuscript] quantum-observable-universe/models-of-qous/heisenberg-commutator-prop.ts.
+- [leitner2026] quantum-observable-universe/models-of-qous/heisenberg-commutator-prop.ts.
 -/
 
 namespace QOU.ArchimedeanUniverse
@@ -49,7 +49,7 @@ limit `q = 1 → [X̂, P̂]_q = 0` follows by computation.
 * `hbarQ q = 1 − q⁻¹` — by definition;
 * `commutator_q q J = J · ℏ_q` — by definition;
 * `q = 1 → commutator_q q J = 0` — **derived**: `ℏ_q(1) = 0`. -/
--- Ref: [manuscript] quantum-observable-universe/models-of-qous/heisenberg-commutator-prop.ts
+-- Ref: [leitner2026] quantum-observable-universe/models-of-qous/heisenberg-commutator-prop.ts
 theorem heisenberg_commutator (q J : ℝ) :
     hbarQ q = 1 - q⁻¹ ∧
     commutator_q q J = J * hbarQ q ∧

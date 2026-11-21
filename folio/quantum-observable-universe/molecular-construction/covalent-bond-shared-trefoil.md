@@ -1,5 +1,5 @@
 **Definition.**
-*A **covalent bond of order $k$** between atoms $i$ and $j$ is the Hopf linking of $k$ electron trefoils across the two nuclei. Specifically, let $e_1, \ldots, e_k$ be electrons from atom $i$. Each electron is a trefoil $T_{2,3} = \sigma_0\sigma_1\sigma_0$ in its local $H_3(q)$.*
+*A **covalent bond of order $k$** between atoms $i$ and $j$ is the Hopf linking of $k$ electrons across the two nuclei. Specifically, let $e_1, \ldots, e_k$ be electrons from atom $i$. Each electron is the word $\sigma_0\sigma_1\sigma_0$ in its local $H_3(q)$, whose closure is the Hopf link.*
 
 *In the molecular braid, the covalent bond operator for bond $b$ connecting atoms $i$ and $j$ is:*
 

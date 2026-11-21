@@ -13,7 +13,7 @@ LaTeX: `\label{prop:categorical-instanton-exists}`
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/categorical-instanton-exists
+- [leitner2026] §2-quantum-observable-universes/categorical-instanton-exists
 - [atiyah1978] https://doi.org/10.1098/rspa.1978.0143
 -/
 

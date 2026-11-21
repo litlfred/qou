@@ -1,0 +1,1 @@
+An apex of an A-module M is a  2 ƒ such that AnnA.M/ D J>ƒ D S >ƒ J and  is not constant zero. Recall that in the setting of non-unital algebras simple modules are defined using the usual assumption of having no non-trivial submodules but one also additionally assumes that at least one element acts not as zero.

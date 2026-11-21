@@ -1,0 +1,1 @@
+Let A be a graded ring. (1) The category M(A, gr) has enough projectives. (2) The category M(A, gr) has enough injectives. Moreover, every M ∈ M(A, gr) has an injective hull, namely there is a graded-essential mono- morphism M ↣I to a graded-injective module I.

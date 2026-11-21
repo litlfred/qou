@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1904.05612v3/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Generalized Weyl group and orthonormal systems",
+  "pageStart": 8,
+  "pageEnd": 9,
+  "contains": [
+    "library/arxiv-1904.05612v3/blocks/prose-sec-004",
+    "library/arxiv-1904.05612v3/blocks/lem-sec-004-01",
+    "library/arxiv-1904.05612v3/blocks/cor-sec-004-02",
+    "library/arxiv-1904.05612v3/blocks/cor-sec-004-03",
+    "library/arxiv-1904.05612v3/blocks/rem-sec-004-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1904.05612v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1904.05612v3/manifest.jsonld",
+  "provenance": "ingested"
+}
