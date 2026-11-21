@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T11:14:56Z
-updated_at: 2026-10-04T15:24:52Z
+updated_at: 2026-11-21T02:29:11Z
 parent: qou-5vkl
 ---
 
@@ -564,3 +564,7 @@ comments, and `he3_tritium_cosh_asymmetry_diagnosis.py` cites
 `strong_channel_rho`. Both cite D/T/³He quantities, which are byte-stable,
 so they are probably unaffected — but that is an inference from the
 byte-identity above, not a measurement of those two files.
+
+## 2026-11-21 (PR #8697)
+
+binding-a3plus-full-theta-assembly and binding-a3plus-joint-ji-combiner re-run on the 2026-09-13 Reeb witness (y_λ unchanged, every Δθ moved). ³He volume-scaled μ₀ |rel_err| 4.9 % → 78.5 %; D 264 % → 19.6 %. Combiner read-check now reads the assembly witness live (was literal 0.7587) and passes.
