@@ -130,4 +130,148 @@ theorem hook_kernel (y1 y2 u v : Fin (m + 1)) :
 
 end Hook
 
+section Cup
+
+variable {q : 𝕜} (m : ℕ) (hq : q ≠ 0) (hint : ∀ i, 0 < i → i ≤ m → qint q i ≠ 0)
+
+include hq hint in
+/-- **First snake identity**, coefficientwise: `Σ_z cap(b,z) cup(z,v) = δ_{bv}`. -/
+theorem sum_cap_cup (b v : Fin (m + 1)) :
+    ∑ z : Fin (m + 1), capVec q m (b, z) * cupVec q m (z, v) = if b = v then 1 else 0 := by
+  rw [sum_capVec q m b (fun z => cupVec q m (z, v))]
+  by_cases h : b = v
+  · subst h; rw [if_pos rfl]; exact cap_mul_cup_rev m hq hint b
+  · rw [if_neg h, cupVec_eq_zero q m (a := b.rev) (b := v) (fun h' => h (Fin.rev_inj.mp h')),
+      mul_zero]
+
+include hq hint in
+/-- **A cup on the second output of a turned operator.** If `rot² M = M`, then
+`Σ_z (rot M)_{(y₁,y₂),(u,z)} cup(z,v) = Σ_c cup(y₁,c) M_{(y₂,v),(c,u)}`. -/
+theorem sum_rotOp_cup_out (M : Matrix (Fin (m + 1) × Fin (m + 1)) (Fin (m + 1) × Fin (m + 1)) 𝕜)
+    (hM : rotOp q m (rotOp q m M) = M) (y1 y2 u v : Fin (m + 1)) :
+    ∑ z : Fin (m + 1), rotOp q m M (y1, y2) (u, z) * cupVec q m (z, v)
+      = ∑ c : Fin (m + 1), cupVec q m (y1, c) * M (y2, v) (c, u) := by
+  have h : ∀ z : Fin (m + 1), rotOp q m M (y1, y2) (u, z) = ∑ c : Fin (m + 1),
+      ∑ b : Fin (m + 1), cupVec q m (y1, c) * M (y2, b) (c, u) * capVec q m (b, z) := by
+    intro z
+    have := sum_cup_rotOp_cap m hq hint (rotOp q m M) y1 y2 u z
+    rw [hM] at this
+    exact this.symm
+  simp only [h, Finset.sum_mul]
+  rw [Finset.sum_comm]
+  refine Finset.sum_congr rfl fun c _ => ?_
+  rw [Finset.sum_comm]
+  have e : ∀ b : Fin (m + 1), ∑ z : Fin (m + 1), cupVec q m (y1, c) * M (y2, b) (c, u)
+      * capVec q m (b, z) * cupVec q m (z, v)
+      = cupVec q m (y1, c) * M (y2, b) (c, u)
+        * ∑ z : Fin (m + 1), capVec q m (b, z) * cupVec q m (z, v) := by
+    intro b; rw [Finset.mul_sum]; refine Finset.sum_congr rfl fun z _ => ?_; ring
+  simp only [e, sum_cap_cup m hq hint, mul_ite, mul_one, mul_zero, Finset.sum_ite_eq',
+    Finset.mem_univ, if_true]
+
+end Cup
+
+section Reorder
+
+variable {ι : Type*} [Fintype ι]
+
+/-- Move the third and sixth indices of a six-fold sum outward. -/
+theorem sum_reorder6 (T : ι → ι → ι → ι → ι → ι → 𝕜) :
+    ∑ a : ι, ∑ d : ι, ∑ r : ι, ∑ u : ι, ∑ w : ι, ∑ v : ι, T a d r u w v
+      = ∑ a : ι, ∑ u : ι, ∑ v : ι, ∑ d : ι, ∑ r : ι, ∑ w : ι, T a d r u w v := by
+  refine Finset.sum_congr rfl fun a _ => ?_
+  calc ∑ d : ι, ∑ r : ι, ∑ u : ι, ∑ w : ι, ∑ v : ι, T a d r u w v
+      = ∑ d : ι, ∑ u : ι, ∑ r : ι, ∑ w : ι, ∑ v : ι, T a d r u w v :=
+        Finset.sum_congr rfl fun _ _ => Finset.sum_comm
+    _ = ∑ u : ι, ∑ d : ι, ∑ r : ι, ∑ w : ι, ∑ v : ι, T a d r u w v := Finset.sum_comm
+    _ = ∑ u : ι, ∑ d : ι, ∑ r : ι, ∑ v : ι, ∑ w : ι, T a d r u w v :=
+        Finset.sum_congr rfl fun _ _ => Finset.sum_congr rfl fun _ _ =>
+          Finset.sum_congr rfl fun _ _ => Finset.sum_comm
+    _ = ∑ u : ι, ∑ d : ι, ∑ v : ι, ∑ r : ι, ∑ w : ι, T a d r u w v :=
+        Finset.sum_congr rfl fun _ _ => Finset.sum_congr rfl fun _ _ => Finset.sum_comm
+    _ = ∑ u : ι, ∑ v : ι, ∑ d : ι, ∑ r : ι, ∑ w : ι, T a d r u w v :=
+        Finset.sum_congr rfl fun _ _ => Finset.sum_comm
+
+/-- Reorder a four-fold sum `(z₁, z₂, a, d) ↦ (a, z₁, d, z₂)`. -/
+theorem sum_reorder4 (T : ι → ι → ι → ι → 𝕜) :
+    ∑ z1 : ι, ∑ z2 : ι, ∑ a : ι, ∑ d : ι, T z1 z2 a d
+      = ∑ a : ι, ∑ z1 : ι, ∑ d : ι, ∑ z2 : ι, T z1 z2 a d := by
+  calc ∑ z1 : ι, ∑ z2 : ι, ∑ a : ι, ∑ d : ι, T z1 z2 a d
+      = ∑ z1 : ι, ∑ a : ι, ∑ z2 : ι, ∑ d : ι, T z1 z2 a d :=
+        Finset.sum_congr rfl fun _ _ => Finset.sum_comm
+    _ = ∑ a : ι, ∑ z1 : ι, ∑ z2 : ι, ∑ d : ι, T z1 z2 a d := Finset.sum_comm
+    _ = ∑ a : ι, ∑ z1 : ι, ∑ d : ι, ∑ z2 : ι, T z1 z2 a d :=
+        Finset.sum_congr rfl fun _ _ => Finset.sum_congr rfl fun _ _ => Finset.sum_comm
+
+end Reorder
+
+section HookOp
+
+variable (q : 𝕜) (m : ℕ)
+
+/-- **The hook.** Close the third strand of `Ř₂ (Y ⊗ 1) Ř₂` with the weight `K`:
+`X(Y)_{(a,b),(c,d)} = Σ_{r,u,w,v} K_r R_{(b,r),(u,w)} Y_{(a,u),(c,v)} R_{(v,w),(d,r)}`. -/
+def hookOp (R Y : Matrix (Fin (m + 1) × Fin (m + 1)) (Fin (m + 1) × Fin (m + 1)) 𝕜) :
+    Matrix (Fin (m + 1) × Fin (m + 1)) (Fin (m + 1) × Fin (m + 1)) 𝕜 :=
+  fun y x => ∑ r : Fin (m + 1), ∑ u : Fin (m + 1), ∑ w : Fin (m + 1), ∑ v : Fin (m + 1),
+    q ^ wt m r * R (y.2, r) (u, w) * Y (y.1, u) (x.1, v) * R (v, w) (x.2, r)
+
+/-- The weight `K ⊗ K` as a diagonal matrix. -/
+def kk : Matrix (Fin (m + 1) × Fin (m + 1)) (Fin (m + 1) × Fin (m + 1)) 𝕜 :=
+  diagonal fun x => q ^ wt m x.1 * q ^ wt m x.2
+
+end HookOp
+
+section Loop
+
+variable (s : 𝕜) (hs : s ≠ 0) (m : ℕ) (hq2 : s ^ 2 - (s ^ 2)⁻¹ ≠ 0)
+  (hint : ∀ i, 0 < i → i ≤ m → qint (s ^ 2) i ≠ 0)
+
+include hq2 hint in
+/-- **The loop lemma.** Bending the hook turns the closed loop into a mirror clasp:
+`nat((K ⊗ K) X(Y)) = (−1)^m rot(Ř⁻¹ Ř⁻¹) · nat((K ⊗ K) Y)`, with `Ř⁻¹ = rot Ř`. -/
+theorem natOp_hookOp (Y : Matrix (Fin (m + 1) × Fin (m + 1)) (Fin (m + 1) × Fin (m + 1)) 𝕜) :
+    natOp (s ^ 2) m (kk (s ^ 2) m * hookOp (s ^ 2) m (rCheckMat s hs m m) Y)
+      = ((-1) ^ m : 𝕜) • (rotOp (s ^ 2) m
+          (rotOp (s ^ 2) m (rCheckMat s hs m m) * rotOp (s ^ 2) m (rCheckMat s hs m m))
+          * natOp (s ^ 2) m (kk (s ^ 2) m * Y)) := by
+  have hq : s ^ 2 ≠ 0 := pow_ne_zero 2 hs
+  set R := rCheckMat s hs m m with hRdef
+  set Ri := rotOp (s ^ 2) m R with hRidef
+  have hRR : rotOp (s ^ 2) m Ri = R := rotOp_rotOp_rCheck s hs m hq2 hint
+  have hM : rotOp (s ^ 2) m (rotOp (s ^ 2) m (Ri * Ri)) = Ri * Ri := by
+    rw [rotOp_rotOp_mul m hq hint, hRidef, hRR]
+  ext ⟨y1, y2⟩ ⟨x1, x2⟩
+  have eL : natOp (s ^ 2) m (kk (s ^ 2) m * hookOp (s ^ 2) m R Y) (y1, y2) (x1, x2)
+      = ∑ a : Fin (m + 1), ∑ u : Fin (m + 1), ∑ v : Fin (m + 1),
+          capVec (s ^ 2) m (a, x1) * (s ^ 2) ^ wt m a * Y (a, u) (x2, v)
+          * ((s ^ 2) ^ wt m y1 * ∑ d : Fin (m + 1), ∑ r : Fin (m + 1), ∑ w : Fin (m + 1),
+            (s ^ 2) ^ wt m r * R (y1, r) (u, w) * R (v, w) (d, r) * cupVec (s ^ 2) m (y2, d)) := by
+    simp only [natOp, kk, diagonal_mul, hookOp, Finset.mul_sum, Finset.sum_mul]
+    rw [sum_reorder6]
+    refine Finset.sum_congr rfl fun a _ => Finset.sum_congr rfl fun u _ =>
+      Finset.sum_congr rfl fun v _ => Finset.sum_congr rfl fun d _ =>
+      Finset.sum_congr rfl fun r _ => Finset.sum_congr rfl fun w _ => ?_
+    ring
+  have eR : (((-1) ^ m : 𝕜) • (rotOp (s ^ 2) m (Ri * Ri) * natOp (s ^ 2) m (kk (s ^ 2) m * Y)))
+        (y1, y2) (x1, x2)
+      = ∑ a : Fin (m + 1), ∑ u : Fin (m + 1), ∑ v : Fin (m + 1),
+          capVec (s ^ 2) m (a, x1) * (s ^ 2) ^ wt m a * Y (a, u) (x2, v)
+          * ((-1) ^ m * (s ^ 2) ^ wt m u * ∑ c : Fin (m + 1),
+            cupVec (s ^ 2) m (y1, c) * (Ri * Ri) (y2, v) (c, u)) := by
+    simp only [← sum_rotOp_cup_out m hq hint (Ri * Ri) hM]
+    simp only [smul_apply, smul_eq_mul, mul_apply, Fintype.sum_prod_type]
+    simp only [natOp, kk, diagonal_mul]
+    simp only [Finset.mul_sum]
+    rw [sum_reorder4]
+    refine Finset.sum_congr rfl fun a _ => Finset.sum_congr rfl fun u _ =>
+      Finset.sum_congr rfl fun v _ => Finset.sum_congr rfl fun z _ => ?_
+    ring
+  rw [eL, eR]
+  refine Finset.sum_congr rfl fun a _ => Finset.sum_congr rfl fun u _ =>
+    Finset.sum_congr rfl fun v _ => ?_
+  rw [hook_kernel s hs m hq2 hint y1 y2 u v]
+
+end Loop
+
 end QOU.Mass.QuantumSl2
