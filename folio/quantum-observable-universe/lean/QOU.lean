@@ -1793,6 +1793,7 @@ import QOU.Mass.BridgeADeligneGauge
 import QOU.Mass.BridgeADeligneKZ
 import QOU.Mass.KZHolonomy.FlatCocycle
 import QOU.Mass.KZHolonomy.FlatGauge
+import QOU.Mass.KZHolonomy.ODETransport
 import QOU.QBeta.BorromeanThreeCuspNZHessian
 import QOU.QBeta.McPhailSnyderBridgeExclusion
 import QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm

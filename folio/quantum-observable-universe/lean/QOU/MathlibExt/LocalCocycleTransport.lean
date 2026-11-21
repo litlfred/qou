@@ -182,6 +182,32 @@ theorem lift_of_subset {x y : X} (γ : Path x y) (g : G) (i : X) (hγ : ∀ t, �
   rw [← hval t]
   exact (congrFun this t).symm
 
+/-- **Recognising a lift.**  If `v : I → G` starts at `g` and is locally of the form
+`v t = v t₀ · P (γ t₀) (γ t)`, then `t ↦ (γ t, v t)` is the lift of `γ` from `g`. -/
+theorem lift_eq_of_local {x y : X} (γ : Path x y) (g : G) (v : I → G) (hv0 : v 0 = g)
+    (hv : ∀ t₀, ∀ᶠ t in nhds t₀, v t = v t₀ * C.P (γ t₀) (γ t)) (t : I) :
+    C.lift γ g t = C.pt (γ t) (v t) := by
+  have hcont : Continuous fun s => C.pt (γ s) (v s) := by
+    refine continuous_iff_continuousAt.mpr fun t₀ => ?_
+    rw [FiberBundle.continuousAt_totalSpace]
+    refine ⟨γ.continuous.continuousAt, ?_⟩
+    refine (continuousAt_const (y := (Disc.of (v t₀) : Disc G))).congr ?_
+    filter_upwards [hv t₀] with s hs
+    show Disc.of (v t₀) = C.core.coordChange (γ s) (γ t₀) (γ s) (Disc.of (v s))
+    rw [core_coordChange, C.P_self, hs]
+    simp
+  have := (C.isCoveringMap.eq_liftPath_iff (Γ := fun s => C.pt (γ s) (v s))
+    (γ := γ.toContinuousMap) (e := C.pt x g) γ.source).mpr
+    ⟨hcont, funext fun s => rfl, by simp [hv0, pt]⟩
+  exact (congrFun this t).symm
+
+/-- The transport of `γ` read off from a local description of its lift from `1`. -/
+theorem transport_eq_of_local {x y : X} (γ : Path x y) (v : I → G) (hv0 : v 0 = 1)
+    (hv : ∀ t₀, ∀ᶠ t in nhds t₀, v t = v t₀ * C.P (γ t₀) (γ t)) :
+    C.transport γ = v 1 := by
+  rw [transport, C.lift_eq_of_local γ 1 v hv0 hv]
+  rfl
+
 /-- A path inside `U x` from `x` to `y` has transport `P x y`. -/
 theorem transport_of_subset {x y : X} (γ : Path x y) (hγ : ∀ t, γ t ∈ C.U x) :
     C.transport γ = C.P x y := by
