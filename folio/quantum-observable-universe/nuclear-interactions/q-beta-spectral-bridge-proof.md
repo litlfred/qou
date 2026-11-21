@@ -45,7 +45,7 @@ $$
 
 The intermediate identity $\mathfrak{Q}_\beta^{\mathrm{B}}/E_0 \cdot z = z h - (z h)^2/2 + O(h^3)$ isolates the dimensional content of the $1/z$ factor. Form B requires $z$ to normalize the eigenfunction basis to the Markov-traced volume. This does not mean that Form A and Form B measure different observables.
 
-*Exponential remainder.* Both truncations inhabit the spectral decomposition of the q-Hamiltonian along the Gröbner basis filtration of the free-neutron sector $K \subset H_3(q)$ at $q = q_0$. Following conj:archimedean-remainder-exponential-decay, each finite-depth truncation $\mathfrak{Q}_\beta^{(N)}$ incurs an error bounded by $C(K) \cdot e^{-c(K) N}$, where $C, c > 0$ are structural constants. At $N = 0$, this yields the observed $+1.31$ keV residual. At $N \geq 1$, the bound is sub-keV. $\square$
+*Exponential remainder.* Both truncations inhabit the spectral decomposition of the q-Hamiltonian along the Gröbner basis filtration of the free-neutron sector $K \subset H_3(q)$ at $q = q_0$. Following conj:archimedean-remainder-exponential-decay, each finite-depth truncation $\mathfrak{Q}_\beta^{(N)}$ incurs an error bounded by $C(K) \cdot e^{-c(K) N}$, where $C, c > 0$ are structural constants. At $N = 0$, this yields the observed $+1.31$ keV residual. At $N \geq 1$, the bound is sub-keV.
 
 ## Reading
 

@@ -22,7 +22,7 @@ producer's own mp mirror reads the float64 table, which caps precision).
 
 The identification "signed descended piece = Π V̂_full" is the producer's.
 Whether the signed TRANSIENT trace value equals Φ_q(V̂) (rather than only its
-norm, which is all `lem:topological-mass-dilogarithm` asserts) is NOT fixed by
+norm, which is all `conj:topological-mass-dilogarithm` asserts) is NOT fixed by
 the corpus; it is reported as a reading, not as a finding.
 
 No witness is written (probe). mpmath only.

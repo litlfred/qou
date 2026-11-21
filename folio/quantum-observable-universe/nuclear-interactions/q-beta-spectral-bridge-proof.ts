@@ -5,6 +5,7 @@ import { remark } from "../../schema/builders";
 // argument is recorded as an interpretive sketch, not a proof (AGENTS.md §3b).
 export default remark({
   label: "rem:q-beta-spectral-bridge-sketch",
+  renamedFrom: ["prf:q-beta-spectral-bridge"],
   title: "Argument sketch for the Q_β spectral bridge",
   interprets: "conj:q-beta-spectral-bridge",
   uses: ["conj:q-beta-spectral-bridge"],

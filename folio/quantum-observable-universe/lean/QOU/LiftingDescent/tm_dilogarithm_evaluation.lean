@@ -4,11 +4,11 @@ import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 /-!
 # QOU.LiftingDescent.tm_dilogarithm_evaluation
 
-**Lemma** ([`lem:topological-mass-dilogarithm`](../../../quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.md)).
+**Conjecture** ([`conj:topological-mass-dilogarithm`](../../../quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.md)).
 
-*Each exceptional-divisor summand evaluates to the quantum dilogarithm:*
+*Each exceptional-divisor summand evaluates to the symmetric q-dilogarithm:*
 
-    ‖ MI∫_{E_i} (∇_A q, L ∧ F⁺) ‖ = Φ_q(z_i) = ∫₀^{z_i} ln_q(1+t)/t dt,
+    ‖ MI∫_{E_i} (∇_A q, L ∧ F⁺) ‖ = ∫₀^{z_i} ln_q(1+t)/t dt = −Li₂^q(−z_i),
 
 *in the spectral coordinates of the Briggs–Klein chart at `E_i`.*
 
@@ -16,24 +16,23 @@ import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 
 The `.md` displays a chain of **two** equalities.
 
-- The **second** equality — `Φ_q(z) = ∫₀^{z} ln_q(1+t)/t dt` — is
-  realised *definitionally*: `Phi_q` is **defined** below as a genuine
-  Mathlib interval integral of the q-logarithm integrand, and the
-  representation is recorded as the proved lemma
-  `phi_q_integral_representation`.  `Φ_q` is no longer an opaque
-  constant; only the q-logarithm `ln_q` itself remains opaque (its
-  q-series theory is not in Mathlib).
+- The **second** equality — `∫₀^{z} ln_q(1+t)/t dt = −Li₂^q(−z)` — is
+  termwise integration of the series for `ln_q` (proved in prose in the
+  mass-endomorphism tower proof). Here `negLi2q` is **defined** as the
+  Mathlib interval integral, recorded by `negLi2q_integral_representation`;
+  the series form is not proved in Lean, since `ln_q` stays opaque.
 - The **first** equality — the Briggs–Klein chart evaluation of the
   multiplicative-integral norm to that integral — is the genuine open
-  analytic input (Yekutieli multiplicative integration + the
-  Faddeev–Kashaev saddle evaluation), stated as the sub-lemma
-  `tm_divisor_chart_evaluation` with an honest `sorry` + citations
-  (AGENTS.md §1, §1a item 2).
+  analytic input (Yekutieli multiplicative integration evaluated in the
+  Briggs–Klein chart). It is carried as the field
+  `chart_eval` of the class `TmDivisorChartInputs`, and
+  `tm_divisor_chart_evaluation` returns that field. There is no `sorry`;
+  the input is a hypothesis.
 
-The main theorem *derives* the .md identity by chaining the sorried
-chart evaluation with the proved integral representation — it does not
-assume its conclusion (lean-proof-vacuity-audit fix recipe; AGENTS.md
-§3b-cond item 5).
+The main theorem chains that hypothesis with the definitional integral
+representation. Since the hypothesis is the first equality and the second
+holds by definition, the theorem is the statement itself under a
+hypothesis. For this reason the block is a conjecture (2026-11-21).
 
 ## Base ring (§7c)
 
@@ -49,7 +48,7 @@ very integral that `tm_divisor_chart_evaluation` claims it equals, which made
 that "open analytic input" a `rfl` tautology — the Briggs-Klein chart
 evaluation was assumed by definition rather than stated.  (It also created a
 forward reference, since the definition mentioned `z`/`lnq` before either was
-declared.)  Bean `qou-t4cv`.  `Phi_q` below is a *genuine* definition and its
+declared.)  Bean `qou-t4cv`.  `negLi2q` below is a *genuine* definition and its
 integral representation is honestly definitional, as its docstring says. -/
 
 /-- The norm of the divisor-`i` non-abelian multiplicative integral
@@ -58,23 +57,27 @@ opaque MI : ℕ → ℝ
 
 /-- The q-logarithm `ln_q` (at the ambient deformation parameter `q`).
     Its q-series theory is not in Mathlib, so it stays opaque; the
-    dilogarithm `Phi_q` below is a genuine integral of it. -/
+    dilogarithm `negLi2q` below is a genuine integral of it. -/
 opaque lnq : ℝ → ℝ
 
 /-- The Briggs–Klein spectral coordinate `z_i` at the exceptional
     divisor `E_i`. -/
 opaque z : ℕ → ℝ
 
-/-- The Faddeev–Kashaev quantum dilogarithm, **defined** by its
-    integral representation `Φ_q(w) = ∫₀^{w} ln_q(1+t)/t dt` (the
-    .md's second equality) as a Mathlib interval integral. -/
--- Ref: [faddeev_kashaev1994] https://doi.org/10.1142/S0217732394000447
-noncomputable def Phi_q (w : ℝ) : ℝ := ∫ t in (0 : ℝ)..w, lnq (1 + t) / t
+/-- The integral `∫₀^{w} ln_q(1+t)/t dt` as a Mathlib interval integral.
+    With the symmetric q-integer it equals `−Li₂^q(−w)`, the symmetric
+    q-dilogarithm (termwise integration; not proved here). It is **not** the
+    Faddeev–Kashaev product `Φ_q(w) = ∏(1 − q^{-k} w)⁻¹`: the corpus records
+    that identification as false (`def:quantum-dilogarithm-disambiguation`),
+    and a 40-digit check at the proton `q₀` gives 0.2802 for this integral at
+    `w = 0.3` against `Φ_q(0.3) ≈ 19.13`. Until 2026-11-21 this was named
+    `Phi_q`. -/
+noncomputable def negLi2q (w : ℝ) : ℝ := ∫ t in (0 : ℝ)..w, lnq (1 + t) / t
 
-/-- **Integral representation of `Φ_q`** — the .md's second equality,
+/-- **Integral representation of `negLi2q`** — the .md's second equality,
     proved (definitionally) rather than assumed. -/
-theorem phi_q_integral_representation (w : ℝ) :
-    Phi_q w = ∫ t in (0 : ℝ)..w, lnq (1 + t) / t := rfl
+theorem negLi2q_integral_representation (w : ℝ) :
+    negLi2q w = ∫ t in (0 : ℝ)..w, lnq (1 + t) / t := rfl
 
 class TmDivisorChartInputs : Prop where
   /-- Open analytic input — Briggs–Klein chart evaluation. -/
@@ -83,23 +86,26 @@ class TmDivisorChartInputs : Prop where
 /-- **Open analytic input — Briggs–Klein chart evaluation.**  In the
     spectral coordinates of the Briggs–Klein chart at `E_i`, the
     multiplicative-integral norm evaluates to the q-dilogarithm
-    integral at `z_i`.  Needs Yekutieli multiplicative integration and
-    the Faddeev–Kashaev evaluation (neither in Mathlib). -/
--- Ref: [faddeev_kashaev1994] https://doi.org/10.1142/S0217732394000447
+    integral at `z_i`.  Needs Yekutieli multiplicative integration
+    evaluated for a connection on `E_i`. The corpus has the discrete layer
+    (`QOU.MathlibExt.YekutieliIntegration`), the continuum Stokes theorem
+    only as the class `NonAbelianStokes`, and the abstract `∇_q`
+    (`CategoricalQConnection.nabla_q`), but no explicit connection on `E_i`
+    whose integral is computed. -/
 -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
 theorem tm_divisor_chart_evaluation [ctx : TmDivisorChartInputs] :
     ∀ i : ℕ, MI i = ∫ t in (0 : ℝ)..(z i), lnq (1 + t) / t :=
   ctx.chart_eval
 
 /-- **Exceptional-divisor summand = quantum dilogarithm**
-    ([`lem:topological-mass-dilogarithm`]).
+    ([`conj:topological-mass-dilogarithm`]).
 
-`‖MI∫_{E_i}‖ = Φ_q(z_i)` for every exceptional divisor `E_i`.
-*Derived* (not assumed): chain the chart evaluation with the proved
-integral representation of `Φ_q`. -/
-theorem tm_dilogarithm_evaluation [TmDivisorChartInputs] : ∀ i : ℕ, MI i = Phi_q (z i) :=
+`‖MI∫_{E_i}‖ = negLi2q(z_i)` for every exceptional divisor `E_i`.
+Conditional on `TmDivisorChartInputs`, which carries the first equality;
+the second is the definition of `negLi2q`. -/
+theorem tm_dilogarithm_evaluation [TmDivisorChartInputs] : ∀ i : ℕ, MI i = negLi2q (z i) :=
   fun i =>
     (tm_divisor_chart_evaluation i).trans
-      (phi_q_integral_representation (z i)).symm
+      (negLi2q_integral_representation (z i)).symm
 
 end QOU.LiftingDescent

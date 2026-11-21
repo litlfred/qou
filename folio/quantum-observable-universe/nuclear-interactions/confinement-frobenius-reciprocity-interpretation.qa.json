@@ -7,8 +7,8 @@
     "md": "folio/quantum-observable-universe/nuclear-interactions/confinement-frobenius-reciprocity-interpretation.md"
   },
   "source_hashes": {
-    "md": "c2ee727a8c04",
-    "ts": "a019faddf955"
+    "md": "cb63bd2cb0d4",
+    "ts": "1761308b8d52"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -41,6 +41,25 @@
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -65,6 +84,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "voice-probe-narrative": [
@@ -83,6 +119,23 @@
         },
         "reviewed_at": "2026-08-09T11:33:35.560Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "cite-named-theorem": [
@@ -101,6 +154,23 @@
         },
         "reviewed_at": "2026-08-09T11:33:35.560Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "voice-agent-speak": [
@@ -119,6 +189,23 @@
         },
         "reviewed_at": "2026-08-09T11:33:35.560Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "voice-emoji-content": [
@@ -137,6 +224,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "voice-first-person-work": [
@@ -155,6 +259,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "voice-time-stamped-notes": [
@@ -173,6 +294,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "voice-unicode-crash": [
@@ -191,6 +329,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "voice-editorializing": [
@@ -209,6 +364,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "voice-scholarly-default": [
@@ -242,6 +414,38 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f077b322fe6b71f60c1b9dc8b6ee6d594335d937",
+        "evidence": "Re-read at f077b32. The only text change is 'This conjecture, if it holds, provides the master formula...' (was 'This proposition provides'), and the .ts interprets/uses now name conj:confinement-frobenius-reciprocity. No issue."
       }
     ],
     "voice-title-scholarly": [
@@ -260,6 +464,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9566207ee882",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "voice-ai-slop": [
@@ -293,6 +514,38 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f077b322fe6b71f60c1b9dc8b6ee6d594335d937",
+        "evidence": "Re-read at f077b32. The only text change is 'This conjecture, if it holds, provides the master formula...' (was 'This proposition provides'), and the .ts interprets/uses now name conj:confinement-frobenius-reciprocity. No issue."
       }
     ],
     "voice-author-notes-pollution": [
@@ -311,6 +564,23 @@
         },
         "reviewed_at": "2026-08-09T11:33:35.560Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "voice-status-section": [
@@ -329,6 +599,23 @@
         },
         "reviewed_at": "2026-08-09T11:33:35.560Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5b0082576ba9",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "framework-canonical": [
@@ -347,6 +634,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "wall-side-correct": [
@@ -365,6 +669,24 @@
         },
         "reviewed_at": "2026-08-09T22:20:05.350Z",
         "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -499,6 +821,25 @@
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d83daee37fd8",
+          "script_commit_sha": "unknown",
+          "deps_hash": "21d9ff417741",
+          "def_hash": "83422bec2bb4"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "canonical-calibration-count": [
@@ -517,6 +858,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "canonical-no-numerology": [
@@ -535,6 +893,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "52b4ba95f5c3",
+          "script_commit_sha": "unknown",
+          "def_hash": "bfbb93c220cc"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "canonical-witness-pinned": [
@@ -553,6 +928,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -571,6 +963,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e81239fd83a2",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "canonical-dilogarithm-context": [
@@ -589,6 +998,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -607,6 +1033,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -625,6 +1068,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "852b0645c90b",
+          "script_commit_sha": "unknown",
+          "def_hash": "c8836d721722"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "canonical-no-negative-result-in-paper": [
@@ -643,6 +1103,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ee603ee4f369",
+          "script_commit_sha": "unknown",
+          "def_hash": "791b80875ca1"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "compute-witness-exists": [
@@ -661,6 +1138,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "13ec1960e3ad",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "compute-lp-dual-present": [
@@ -679,6 +1173,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6c278b93ad12",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "detangler-no-forward-ref": [
@@ -697,6 +1208,24 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52",
+          "graph": "db4ae75e4d06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9555791a2758",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "detangler-section-band": [
@@ -715,6 +1244,24 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52",
+          "graph": "db4ae75e4d06"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -733,6 +1280,25 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52",
+          "graph": "db4ae75e4d06"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-archimedean-wall": [
@@ -751,6 +1317,25 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52",
+          "graph": "db4ae75e4d06"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c17b282a7de7",
+          "script_commit_sha": "unknown",
+          "def_hash": "19a5005a8bb6"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -783,6 +1368,37 @@
           "edge_span_mean": 3.5,
           "worst_target": "emits fwd-ref to quantum-observable-universe/mass-theory: conj:knot-factor-frobenius-pairing"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52",
+          "graph": "db4ae75e4d06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c94bd6f761f1",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 5,
+          "in_degree": 0,
+          "cone_size": 66,
+          "depth": 17,
+          "pagerank": 7.6e-05,
+          "edge_span_max": 6,
+          "edge_span_mean": 3.5,
+          "worst_target": ""
+        }
       }
     ],
     "detangler-graph-energy": [
@@ -806,6 +1422,29 @@
           "fwd_edge_count": 0,
           "worst_span": 0
         }
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52",
+          "graph": "db4ae75e4d06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "858efa00043a",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
       }
     ],
     "detangler-topic-coherence": [
@@ -824,6 +1463,24 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52",
+          "graph": "db4ae75e4d06"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -842,6 +1499,24 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52",
+          "graph": "db4ae75e4d06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "aa75d0ebd53e",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -861,6 +1536,25 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -882,6 +1576,25 @@
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -901,6 +1614,25 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -944,6 +1676,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-vacuous": [
@@ -959,6 +1706,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-circular": [
@@ -974,6 +1736,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-overclaim": [
@@ -989,6 +1766,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-hidden-dof": [
@@ -1004,6 +1796,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-non-sequitur": [
@@ -1019,6 +1826,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1034,6 +1856,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-citation-misuse": [
@@ -1049,6 +1886,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1064,6 +1916,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-empirical-fragility": [
@@ -1079,6 +1946,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-physical-implausibility": [
@@ -1094,6 +1976,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-reproducibility": [
@@ -1109,6 +2006,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-referee-verdict": [
@@ -1124,6 +2036,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "expo-milnor-clarity": [
@@ -1178,6 +2105,29 @@
           "broken_edges": 0,
           "redundant_edges": 3
         }
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63814f2a6677",
+          "script_commit_sha": "unknown",
+          "deps_hash": "34af1d8a2365",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "metrics": {
+          "uses_count": 5,
+          "broken_edges": 0,
+          "redundant_edges": 3
+        }
       }
     ],
     "uses-formal-coverage": [
@@ -1198,6 +2148,25 @@
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "82fd1e2e6831",
+          "script_commit_sha": "unknown",
+          "deps_hash": "794eb6c16a59",
+          "def_hash": "ce2b8102b97f"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "lean-ref-owns-decl": [
@@ -1217,6 +2186,24 @@
         },
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ],
     "trap-negation-contrast": [
@@ -1253,6 +2240,21 @@
         "severity": "major",
         "evidence": "Full-context read of rem:confinement-frobenius-reciprocity-interpretation (discussion, 3 ingredients, 2 corollaries, 4-step protocol). Verified the mathematics: dim H_n = n! is right; the corollary that tr_M(beta X beta^-1) = tr_M(X) independent of beta is correct (the trace is a class function); and the convention-D claim checks out exactly - I solved the H_3 Markov weights independently and the (1^3) block does carry y = 0 under z = q^3/(q^2+1), so it IS the radical, and dim H_3 - dim rad = 6 - 1 = 5 = Catalan(3) = dim TL_3, confirming H_n/rad = TL_n. This block is convention-D-current. Two defects reported: it contradicts its own proposition sibling, which asserts tr_M is a NON-DEGENERATE Frobenius form on H_n(q); and item 1 ends with a markdown artifact, a bolded full stop '**.**'.",
         "notes": "No trap of this category."
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f077b322fe6b71f60c1b9dc8b6ee6d594335d937",
+        "evidence": "Re-read at f077b32. The only text change is 'This conjecture, if it holds, provides the master formula...' (was 'This proposition provides'), and the .ts interprets/uses now name conj:confinement-frobenius-reciprocity. No instance."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1289,6 +2291,21 @@
         "severity": "major",
         "evidence": "Full-context read of rem:confinement-frobenius-reciprocity-interpretation (discussion, 3 ingredients, 2 corollaries, 4-step protocol). Verified the mathematics: dim H_n = n! is right; the corollary that tr_M(beta X beta^-1) = tr_M(X) independent of beta is correct (the trace is a class function); and the convention-D claim checks out exactly - I solved the H_3 Markov weights independently and the (1^3) block does carry y = 0 under z = q^3/(q^2+1), so it IS the radical, and dim H_3 - dim rad = 6 - 1 = 5 = Catalan(3) = dim TL_3, confirming H_n/rad = TL_n. This block is convention-D-current. Two defects reported: it contradicts its own proposition sibling, which asserts tr_M is a NON-DEGENERATE Frobenius form on H_n(q); and item 1 ends with a markdown artifact, a bolded full stop '**.**'.",
         "notes": "No trap of this category."
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f077b322fe6b71f60c1b9dc8b6ee6d594335d937",
+        "evidence": "Re-read at f077b32. The only text change is 'This conjecture, if it holds, provides the master formula...' (was 'This proposition provides'), and the .ts interprets/uses now name conj:confinement-frobenius-reciprocity. No instance."
       }
     ],
     "trap-em-dash": [
@@ -1325,6 +2342,21 @@
         "severity": "minor",
         "evidence": "Full-context read of rem:confinement-frobenius-reciprocity-interpretation (discussion, 3 ingredients, 2 corollaries, 4-step protocol). Verified the mathematics: dim H_n = n! is right; the corollary that tr_M(beta X beta^-1) = tr_M(X) independent of beta is correct (the trace is a class function); and the convention-D claim checks out exactly - I solved the H_3 Markov weights independently and the (1^3) block does carry y = 0 under z = q^3/(q^2+1), so it IS the radical, and dim H_3 - dim rad = 6 - 1 = 5 = Catalan(3) = dim TL_3, confirming H_n/rad = TL_n. This block is convention-D-current. Two defects reported: it contradicts its own proposition sibling, which asserts tr_M is a NON-DEGENERATE Frobenius form on H_n(q); and item 1 ends with a markdown artifact, a bolded full stop '**.**'.",
         "notes": "No trap of this category."
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f077b322fe6b71f60c1b9dc8b6ee6d594335d937",
+        "evidence": "Re-read at f077b32. The only text change is 'This conjecture, if it holds, provides the master formula...' (was 'This proposition provides'), and the .ts interprets/uses now name conj:confinement-frobenius-reciprocity. No instance."
       }
     ],
     "trap-triples": [
@@ -1361,6 +2393,21 @@
         "severity": "minor",
         "evidence": "Full-context read of rem:confinement-frobenius-reciprocity-interpretation (discussion, 3 ingredients, 2 corollaries, 4-step protocol). Verified the mathematics: dim H_n = n! is right; the corollary that tr_M(beta X beta^-1) = tr_M(X) independent of beta is correct (the trace is a class function); and the convention-D claim checks out exactly - I solved the H_3 Markov weights independently and the (1^3) block does carry y = 0 under z = q^3/(q^2+1), so it IS the radical, and dim H_3 - dim rad = 6 - 1 = 5 = Catalan(3) = dim TL_3, confirming H_n/rad = TL_n. This block is convention-D-current. Two defects reported: it contradicts its own proposition sibling, which asserts tr_M is a NON-DEGENERATE Frobenius form on H_n(q); and item 1 ends with a markdown artifact, a bolded full stop '**.**'.",
         "notes": "'Three distinct ingredients are required' is followed by exactly three, each a distinct object (Gram inverse, active set, shadow prices); the other list (binding energies, form factors, axial couplings, magnetic moments) has four items."
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f077b322fe6b71f60c1b9dc8b6ee6d594335d937",
+        "evidence": "Re-read at f077b32. The only text change is 'This conjecture, if it holds, provides the master formula...' (was 'This proposition provides'), and the .ts interprets/uses now name conj:confinement-frobenius-reciprocity. No instance."
       }
     ],
     "trap-closing-aphorism": [
@@ -1397,6 +2444,21 @@
         "severity": "major",
         "evidence": "Full-context read of rem:confinement-frobenius-reciprocity-interpretation (discussion, 3 ingredients, 2 corollaries, 4-step protocol). Verified the mathematics: dim H_n = n! is right; the corollary that tr_M(beta X beta^-1) = tr_M(X) independent of beta is correct (the trace is a class function); and the convention-D claim checks out exactly - I solved the H_3 Markov weights independently and the (1^3) block does carry y = 0 under z = q^3/(q^2+1), so it IS the radical, and dim H_3 - dim rad = 6 - 1 = 5 = Catalan(3) = dim TL_3, confirming H_n/rad = TL_n. This block is convention-D-current. Two defects reported: it contradicts its own proposition sibling, which asserts tr_M is a NON-DEGENERATE Frobenius form on H_n(q); and item 1 ends with a markdown artifact, a bolded full stop '**.**'.",
         "notes": "No trap of this category."
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f077b322fe6b71f60c1b9dc8b6ee6d594335d937",
+        "evidence": "Re-read at f077b32. The only text change is 'This conjecture, if it holds, provides the master formula...' (was 'This proposition provides'), and the .ts interprets/uses now name conj:confinement-frobenius-reciprocity. No instance."
       }
     ],
     "trap-meta-commentary": [
@@ -1433,6 +2495,21 @@
         "severity": "major",
         "evidence": "Full-context read of rem:confinement-frobenius-reciprocity-interpretation (discussion, 3 ingredients, 2 corollaries, 4-step protocol). Verified the mathematics: dim H_n = n! is right; the corollary that tr_M(beta X beta^-1) = tr_M(X) independent of beta is correct (the trace is a class function); and the convention-D claim checks out exactly - I solved the H_3 Markov weights independently and the (1^3) block does carry y = 0 under z = q^3/(q^2+1), so it IS the radical, and dim H_3 - dim rad = 6 - 1 = 5 = Catalan(3) = dim TL_3, confirming H_n/rad = TL_n. This block is convention-D-current. Two defects reported: it contradicts its own proposition sibling, which asserts tr_M is a NON-DEGENERATE Frobenius form on H_n(q); and item 1 ends with a markdown artifact, a bolded full stop '**.**'.",
         "notes": "No trap of this category."
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f077b322fe6b71f60c1b9dc8b6ee6d594335d937",
+        "evidence": "Re-read at f077b32. The only text change is 'This conjecture, if it holds, provides the master formula...' (was 'This proposition provides'), and the .ts interprets/uses now name conj:confinement-frobenius-reciprocity. No instance."
       }
     ],
     "trap-thesis-restatement": [
@@ -1469,6 +2546,21 @@
         "severity": "major",
         "evidence": "Full-context read of rem:confinement-frobenius-reciprocity-interpretation (discussion, 3 ingredients, 2 corollaries, 4-step protocol). Verified the mathematics: dim H_n = n! is right; the corollary that tr_M(beta X beta^-1) = tr_M(X) independent of beta is correct (the trace is a class function); and the convention-D claim checks out exactly - I solved the H_3 Markov weights independently and the (1^3) block does carry y = 0 under z = q^3/(q^2+1), so it IS the radical, and dim H_3 - dim rad = 6 - 1 = 5 = Catalan(3) = dim TL_3, confirming H_n/rad = TL_n. This block is convention-D-current. Two defects reported: it contradicts its own proposition sibling, which asserts tr_M is a NON-DEGENERATE Frobenius form on H_n(q); and item 1 ends with a markdown artifact, a bolded full stop '**.**'.",
         "notes": "No trap of this category."
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f077b322fe6b71f60c1b9dc8b6ee6d594335d937",
+        "evidence": "Re-read at f077b32. The only text change is 'This conjecture, if it holds, provides the master formula...' (was 'This proposition provides'), and the .ts interprets/uses now name conj:confinement-frobenius-reciprocity. No instance."
       }
     ],
     "trap-performed-warmth": [
@@ -1505,6 +2597,21 @@
         "severity": "minor",
         "evidence": "Full-context read of rem:confinement-frobenius-reciprocity-interpretation (discussion, 3 ingredients, 2 corollaries, 4-step protocol). Verified the mathematics: dim H_n = n! is right; the corollary that tr_M(beta X beta^-1) = tr_M(X) independent of beta is correct (the trace is a class function); and the convention-D claim checks out exactly - I solved the H_3 Markov weights independently and the (1^3) block does carry y = 0 under z = q^3/(q^2+1), so it IS the radical, and dim H_3 - dim rad = 6 - 1 = 5 = Catalan(3) = dim TL_3, confirming H_n/rad = TL_n. This block is convention-D-current. Two defects reported: it contradicts its own proposition sibling, which asserts tr_M is a NON-DEGENERATE Frobenius form on H_n(q); and item 1 ends with a markdown artifact, a bolded full stop '**.**'.",
         "notes": "No trap of this category."
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f077b322fe6b71f60c1b9dc8b6ee6d594335d937",
+        "evidence": "Re-read at f077b32. The only text change is 'This conjecture, if it holds, provides the master formula...' (was 'This proposition provides'), and the .ts interprets/uses now name conj:confinement-frobenius-reciprocity. No instance."
       }
     ],
     "trap-superlative": [
@@ -1541,6 +2648,21 @@
         "severity": "minor",
         "evidence": "Full-context read of rem:confinement-frobenius-reciprocity-interpretation (discussion, 3 ingredients, 2 corollaries, 4-step protocol). Verified the mathematics: dim H_n = n! is right; the corollary that tr_M(beta X beta^-1) = tr_M(X) independent of beta is correct (the trace is a class function); and the convention-D claim checks out exactly - I solved the H_3 Markov weights independently and the (1^3) block does carry y = 0 under z = q^3/(q^2+1), so it IS the radical, and dim H_3 - dim rad = 6 - 1 = 5 = Catalan(3) = dim TL_3, confirming H_n/rad = TL_n. This block is convention-D-current. Two defects reported: it contradicts its own proposition sibling, which asserts tr_M is a NON-DEGENERATE Frobenius form on H_n(q); and item 1 ends with a markdown artifact, a bolded full stop '**.**'.",
         "notes": "No trap of this category."
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f077b322fe6b71f60c1b9dc8b6ee6d594335d937",
+        "evidence": "Re-read at f077b32. The only text change is 'This conjecture, if it holds, provides the master formula...' (was 'This proposition provides'), and the .ts interprets/uses now name conj:confinement-frobenius-reciprocity. No instance."
       }
     ],
     "trap-nonspeakable": [
@@ -1577,6 +2699,21 @@
         "severity": "minor",
         "evidence": "Full-context read of rem:confinement-frobenius-reciprocity-interpretation (discussion, 3 ingredients, 2 corollaries, 4-step protocol). Verified the mathematics: dim H_n = n! is right; the corollary that tr_M(beta X beta^-1) = tr_M(X) independent of beta is correct (the trace is a class function); and the convention-D claim checks out exactly - I solved the H_3 Markov weights independently and the (1^3) block does carry y = 0 under z = q^3/(q^2+1), so it IS the radical, and dim H_3 - dim rad = 6 - 1 = 5 = Catalan(3) = dim TL_3, confirming H_n/rad = TL_n. This block is convention-D-current. Two defects reported: it contradicts its own proposition sibling, which asserts tr_M is a NON-DEGENERATE Frobenius form on H_n(q); and item 1 ends with a markdown artifact, a bolded full stop '**.**'.",
         "notes": "No trap of this category."
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "f077b322fe6b71f60c1b9dc8b6ee6d594335d937",
+        "evidence": "Re-read at f077b32. The only text change is 'This conjecture, if it holds, provides the master formula...' (was 'This proposition provides'), and the .ts interprets/uses now name conj:confinement-frobenius-reciprocity. No instance."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1596,9 +2733,226 @@
         "reviewed_at": "2026-08-15T21:15:41.696Z",
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c3dab60e46d6",
+          "script_commit_sha": "unknown",
+          "def_hash": "10db4d17cd96"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
+      }
+    ],
+    "acronym-in-glossary": [
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "3 acronym(s) are candidates for the glossary: TL, NF, LP. Run glossary:acronyms for the folio-wide list with expansions."
+      }
+    ],
+    "foreshadows-point-forward": [
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52",
+          "graph": "db4ae75e4d06"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
+      }
+    ],
+    "da-arity-conflation": [
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "dak-companion-present": [
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
+      }
+    ],
+    "dak-bpmn-has-process": [
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
+      }
+    ],
+    "dak-dmn-has-decision-table": [
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
+      }
+    ],
+    "dak-fsh-declares-kind": [
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
+      }
+    ],
+    "dak-label-prefix-matches-kind": [
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
+      }
+    ],
+    "id-unique": [
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
+      }
+    ],
+    "id-stable": [
+      {
+        "field_hash": {
+          "md": "cb63bd2cb0d4",
+          "ts": "1761308b8d52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "dd7e8543ac122af2939b2892fe68a5e0900d128f"
       }
     ]
   },
-  "updated_at": "2026-08-22T03:05:35.291Z",
+  "updated_at": "2026-11-21T19:30:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

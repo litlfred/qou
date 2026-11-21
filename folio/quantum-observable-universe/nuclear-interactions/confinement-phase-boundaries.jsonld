@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-confinement-phase-boundaries",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:confinement-phase-boundaries",
+  "kind": "conjecture",
+  "title": "Phase boundaries of the confinement locus",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-confinement-phase-stratification",
+    "papers/quantum-observable-universe/blocks/prop-level-sufficiency",
+    "papers/quantum-observable-universe/blocks/prop-shell-closure-stability",
+    "papers/quantum-observable-universe/blocks/thm-parity-regime-selection",
+    "papers/quantum-observable-universe/blocks/rem-deconfinement-golden-threshold"
+  ],
+  "tags": [
+    "phase",
+    "phase-boundary",
+    "stratification",
+    "regime-switch",
+    "deconfinement",
+    "strict-complementarity"
+  ],
+  "text": "confinement-phase-boundaries.md",
+  "provenance": "authored"
+}
