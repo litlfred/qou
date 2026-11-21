@@ -358,3 +358,142 @@ theorem QuadData.inId_of_mk_eq_zero {X : MA G k}
   exact inId_of_mem_ctxSpan _ this
 
 end UGB.GrobnerShirshov.Quadratic
+
+/-! ## Weighted orders with a rank in any well-founded linear order
+
+`weightedOrder` takes an injective rank `G → ℕ`, and `swap_lt` needs that rank to
+increase with the block. With two or more blocks each holding infinitely many
+letters (the divided-power coordinates of `Dist(Hᵢ)`) no such `ℕ`-valued rank
+exists. The versions below take the rank in any linear order with well-founded
+`<`, for example the lexicographic order on `(block, index in block)`. The proofs
+are the ones of `mkDegLexOrder` and `weightedOrder`, with `ℕ` replaced by `β`. -/
+
+namespace UGB.GrobnerShirshov.BlockSplay
+
+open UGB.GrobnerShirshov
+
+variable {G : Type*} [DecidableEq G] {β : Type*} [LinearOrder β] [WellFoundedLT β]
+
+/-- Deg-lex order on words with the letters compared through an injective rank in
+a well-founded linear order. -/
+noncomputable def degLexOrderWF (rank : G → β) (rank_inj : Function.Injective rank) :
+    AdmissibleOrder G where
+  lt := fun a b =>
+    a.length < b.length ∨
+    (a.length = b.length ∧ List.Lex (fun x y => rank x < rank y) a b)
+  trichotomy := by
+    intro a b
+    by_cases h1 : a.length < b.length
+    · left; left; exact h1
+    · by_cases h2 : b.length < a.length
+      · right; right; left; exact h2
+      · have heq : a.length = b.length := by omega
+        have : ∀ (x y : List G), x.length = y.length →
+            List.Lex (fun a b => rank a < rank b) x y ∨
+            x = y ∨
+            List.Lex (fun a b => rank a < rank b) y x := by
+          intro x
+          induction x with
+          | nil => intro y hy; cases y with
+            | nil => right; left; rfl
+            | cons _ _ => simp at hy
+          | cons g gs ih => intro y hy; cases y with
+            | nil => simp at hy
+            | cons h hs =>
+              simp [List.length_cons] at hy
+              rcases lt_trichotomy (rank g) (rank h) with hr1 | hge | hr2
+              · left; exact List.Lex.rel hr1
+              · have hgh : g = h := rank_inj hge
+                subst hgh
+                rcases ih hs hy with hlx | heq | hrx
+                · left; exact List.Lex.cons hlx
+                · right; left; rw [heq]
+                · right; right; exact List.Lex.cons hrx
+              · right; right; exact List.Lex.rel hr2
+        rcases this a b heq with hlx | heq' | hrx
+        · left; right; exact ⟨heq, hlx⟩
+        · right; left; exact heq'
+        · right; right; right; exact ⟨heq.symm, hrx⟩
+  wf := shortLex_wellFounded (InvImage.wf rank wellFounded_lt)
+  left_compat := by
+    intro a b c h
+    rcases h with hlen | ⟨heq, hlex⟩
+    · left; simp; omega
+    · right; refine ⟨?_, ?_⟩
+      · simp; omega
+      · induction c with
+        | nil => simpa
+        | cons x xs ih =>
+          simp only [List.cons_append]
+          exact List.Lex.cons ih
+  right_compat := by
+    intro a b d h
+    rcases h with hlen | ⟨heq, hlex⟩
+    · left; simp; omega
+    · right; refine ⟨by simp; omega, ?_⟩
+      induction a generalizing b with
+      | nil =>
+        cases b with
+        | nil => cases hlex
+        | cons _ _ => simp at heq
+      | cons x xs ih =>
+        cases b with
+        | nil => simp at heq
+        | cons y ys =>
+          simp only [List.cons_append]
+          cases hlex with
+          | cons h =>
+            have heq' : xs.length = ys.length := by
+              simp [List.length_cons] at heq; exact heq
+            exact List.Lex.cons (ih ys heq' h)
+          | rel h => exact List.Lex.rel h
+
+/-- Weight first, then `degLexOrderWF`. -/
+noncomputable def weightedOrderWF (wt : G → ℕ) (rank : G → β)
+    (rank_inj : Function.Injective rank) : AdmissibleOrder G where
+  lt a b := wsum wt a < wsum wt b ∨
+    (wsum wt a = wsum wt b ∧ (degLexOrderWF rank rank_inj).lt a b)
+  trichotomy a b := by
+    rcases lt_trichotomy (wsum wt a) (wsum wt b) with h | h | h
+    · exact Or.inl (Or.inl h)
+    · rcases (degLexOrderWF rank rank_inj).trichotomy a b with h' | h' | h'
+      · exact Or.inl (Or.inr ⟨h, h'⟩)
+      · exact Or.inr (Or.inl h')
+      · exact Or.inr (Or.inr (Or.inr ⟨h.symm, h'⟩))
+    · exact Or.inr (Or.inr (Or.inl h))
+  wf := by
+    refine Subrelation.wf (r := InvImage (Prod.Lex (· < ·) (degLexOrderWF rank rank_inj).lt)
+      (fun a => (wsum wt a, a))) (fun {a b} h => ?_)
+      (InvImage.wf _ (WellFounded.prod_lex wellFounded_lt (degLexOrderWF rank rank_inj).wf))
+    simp only [InvImage, Prod.lex_def]
+    exact h
+  left_compat a b c h := by
+    rcases h with h | ⟨h, h'⟩
+    · exact Or.inl (by simp; omega)
+    · exact Or.inr ⟨by simp; omega, (degLexOrderWF rank rank_inj).left_compat a b c h'⟩
+  right_compat a b d h := by
+    rcases h with h | ⟨h, h'⟩
+    · exact Or.inl (by simp; omega)
+    · exact Or.inr ⟨by simp; omega, (degLexOrderWF rank rank_inj).right_compat a b d h'⟩
+
+section WeightedOrderWF
+
+variable (wt : G → ℕ) (rank : G → β) (rank_inj : Function.Injective rank)
+
+theorem weightedOrderWF_lt_of_wsum_lt (x y : List G) (h : wsum wt x < wsum wt y) :
+    (weightedOrderWF wt rank rank_inj).lt x y := Or.inl h
+
+theorem weightedOrderWF_lt_of_wt (x y : List G) (h : (x.map wt).sum ≤ (y.map wt).sum)
+    (hl : x.length < y.length) : (weightedOrderWF wt rank rank_inj).lt x y := by
+  change wsum wt x ≤ wsum wt y at h
+  rcases lt_or_eq_of_le h with h | h
+  · exact Or.inl h
+  · exact Or.inr ⟨h, Or.inl hl⟩
+
+theorem weightedOrderWF_swap_lt {a b : G} (h : rank b < rank a) :
+    (weightedOrderWF wt rank rank_inj).lt [b, a] [a, b] :=
+  Or.inr ⟨by simp; omega, Or.inr ⟨rfl, List.Lex.rel h⟩⟩
+
+end WeightedOrderWF
+
+end UGB.GrobnerShirshov.BlockSplay

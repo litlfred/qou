@@ -33,9 +33,8 @@ Hypotheses on the block-splay data `F` (each is the paper's input, written in th
 basis): the block of `⟨i, x⟩` is `i`; the block product `μ` is the structure
 constants of `Aᵢ` in `bᵢ`; and each correction `π(a, b)` is a preimage of the bracket
 of the two letters. The *strong filtration* of Thm. 3.7 is the field `F.π_wt`: those
-preimages are lighter than `a b`. Constructing such an `F` from a strongly filtered
-`π` (choosing the preimages, the weights and the admissible order) is the next step
-and is not done here.
+preimages are lighter than `a b`. `PBWFilteredData.lean` constructs such an `F`
+from the bases, the weights and a strongly filtered `π`.
 
 No `sorry`, no axiom beyond Lean's three.
 -/
