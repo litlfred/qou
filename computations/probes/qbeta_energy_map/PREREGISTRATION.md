@@ -58,3 +58,26 @@ Where S comes from in the corpus (none of these mentions Q_β's value):
 Before writing this file I had seen: error-budget §14 (2E₀^full·log q = 0.88220 MeV, i.e. row LT),
 and I estimated row L0 by hand while planning. So rows L0 and LT are not blind. The premise S and
 the four rows are fixed here and nothing will be added after the comparison is printed.
+
+## Addendum 1 (owner: "Try to derive" the scale |c|), written before any new code
+
+S fixes the form E = c·log ε + d and forces |c| to be independent of the trace normalisation
+(a scale that rescaled with ε would break S). So |c| = m_e·φ(q). The corpus already reads the
+Markov trace as a partition function. Two definitions on record fix |c| as a temperature,
+E(X) = −k_B T·log ε(X) (free energy):
+
+| id | route | |c| | cell | corpus source |
+|---|---|---|---|---|
+| T | quantum temperature T_q = ℏ_q (k_B = 1, natural units), converted with 𝔈 = 𝔪·c_q² and the CAL-1 mass unit m_e | m_e·c_q²·ℏ_q = m_e/(q(q−1)) = E₀ | 2E₀·log q (row L0) | `def:quantum-temperature`, `def:boltzmann-constant`, `def:information-speed-of-light` |
+| D | β = ln q dictionary: E_λ = −ln y_λ / ln q | 1/ln q in the dictionary's units | exactly 2 units; MeV per unit not fixed by the dictionary | `prop:beta-eq-ln-q-dictionary`, `QBetaEnergyDictionary.lean` |
+
+Questions:
+1. Lean: kT in MeV equals E₀ exactly (route T); route D gives exactly 2 units; the two inverse
+   temperatures differ (ln q vs 1/ℏ_q) for every 1 < q < 2, so the corpus has two inconsistent
+   temperatures and they must be reported, not reconciled by choice.
+2. Probe: the route-T number is row L0, already computed. Route D in MeV needs a unit the
+   dictionary does not give; report the cell for the two units the corpus uses for energy,
+   m_e·c_q² and m_e, as diagnostics. None selected.
+
+Contamination: route T reproduces row L0, which I had computed. I found route T after seeing L0,
+by reading the corpus for a temperature; I did not search for it by its number.
