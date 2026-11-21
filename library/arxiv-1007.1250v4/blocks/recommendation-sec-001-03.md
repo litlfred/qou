@@ -1,1 +1,0 @@
-In case $X$ is the cube $\mbf{I}^n$, embedded in $\mbf{A}^{n}$, we shall look at the following linearly independent vertices: $v_0$ is the origin $(0, \ldots, 0)$, and for $i = 1, \ldots, n$ we take \begin{equation} \label{eqn:1} v_i := (0, \ldots, 1, \ldots, 0) , \end{equation} with $1$ in the $i$-th position.

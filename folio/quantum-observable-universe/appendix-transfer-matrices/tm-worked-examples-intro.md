@@ -1,1 +1,1 @@
-Before applying the transfer-matrix construction at scale, we make its mechanics concrete on the smallest tractable nuclei, where each evaluation can be followed step by step. The worked examples that follow carry this out for the light nuclei, from hydrogen through carbon.
+Before applying the transfer-matrix construction at scale, its mechanics are made concrete on the smallest tractable nuclei, where each evaluation can be followed step by step. The worked examples that follow carry this out for the light nuclei, from hydrogen through carbon.

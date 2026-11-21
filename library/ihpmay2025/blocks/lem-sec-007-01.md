@@ -1,0 +1,1 @@
+(Milnor-Svarc Lemma) If Γ acts properly discontinuously, cocompactly and by isometries on a proper, length space X and x ∈X then Γ has a finite generating set S so that the orbit map Γ →X given by γ 7→γ(x), for all γ ∈Γ, is a quasi-isometry from (Γ, dS) to X.

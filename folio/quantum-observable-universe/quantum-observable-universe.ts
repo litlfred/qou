@@ -17,18 +17,28 @@ export default paper({
   affiliations: [],
   date: paperIdentity.date,
   abstract:
-    "This paper develops the mathematical framework of the Quantum Observable " +
+    "This monograph develops the mathematical framework of the Quantum Observable " +
     "Universe (QOU): a rigid braided monoidal category equipped with a " +
-    "Frobenius--Hopf object whose differential geometry is controlled by a " +
-    "substrate parameter $q$.  Part~I (Chapters 1--3) establishes the " +
-    "categorical foundations and the recursive brane tower.  Part~II " +
-    "(Chapters 4--8) develops the structural consequences: braiding and " +
-    "knot theory, models over various ground fields, the algebraic " +
-    "substrate, fluid dynamics, and information-theoretic " +
-    "perspectives.  Part~III (Chapters 9--10) specialises to the Descartes " +
-    "universe on Bring's surface ($\\chi = -6$) and collects physical " +
-    "predictions.  Chapter~11 develops the $q$-geometric Langlands " +
-    "correspondence.",
+    "Frobenius--Hopf object $A$ and a fibre functor $\\tau$ whose differential " +
+    "geometry is governed by a substrate parameter $q$.  Every observable passes " +
+    "through a five-step categorical trace pipeline: from the categorical action " +
+    "$\\mathfrak{S}_q = \\mathrm{tr}(\\Phi)$, to the Iwahori--Hecke quotient " +
+    "$H_n(q)$ and its Jones--Markov trace, to hyperbolic knot complements embedded " +
+    "in the genus-four Bring surface $\\Sigma_4$ ($\\chi = -6$), to Archimedean " +
+    "period evaluations at the substrate parameter $q_0$, and finally to " +
+    "dimensionless mass ratios, binding energies, and couplings.  " +
+    "Part~I establishes the categorical axioms, the five-step framing arc across " +
+    "Archimedean and non-Archimedean models, and the Yekutieli lifting and descent " +
+    "tower.  Part~II develops the structural mechanics: braid and Hecke " +
+    "representations, the geometry of Bring's surface, the knot--particle and " +
+    "confinement hierarchy, the Eightfold Way flavour and octonionic colour " +
+    "structure, the categorical mass endomorphism and $q$-hyperbolic kinematics, " +
+    "the elementary-particle and nuclear mass pipeline, many-body Gröbner--Shirshov " +
+    "binding, and the emergence of contact-geometric gravity.  Part~III compares " +
+    "the resulting spectra against experimental data and extends the braid " +
+    "formalism to molecular and organic chemistry.  Part~IV treats brane fluid " +
+    "dynamics, Markov-trace stochastic mechanics, information-theoretic complexity, " +
+    "internalised measurement, and the $q$-geometric Langlands correspondence.",
   macros: {
     // NOTE: `\pp` is intentionally NOT defined here. The shared preamble
     // (latex/preamble.tex) defines `\pp` = `p` (the p-adic / finite-field
@@ -72,33 +82,20 @@ export default paper({
     chapterRef({ dir: "lifting-and-descent" }),                // Yekutieli tower / brane tower (descent, jets, Gröbner-Shirshov filtration)
 
     // ── Part II: Structural Mechanics ─────────────────────────────────
-    // The structural mechanism: algebra → geometry → particles → mass →
-    // gravity. Closes with the non-abelian Stokes mass identity and its
-    // long-range gravitational consequence.
-    //
-    // Phase 6 (2026-05-25): inserted scaffolds for Statistics &
-    // Symmetrisation (Pauli, spin-statistics) between Bring's content
-    // and Particles; Gravity & Spacetime Emergence after Particle
-    // Interactions. Phase 4+5 (TBD) will split braids-and-knots and
-    // archimedean-universe into focused destination chapters.
+    // The structural mechanism: algebra → geometry → particles & flavor →
+    // mass endomorphism & q-hyperbolic geometry → mass analysis →
+    // nuclear interactions → gravity.
     chapterRef({
       dir: "braids-and-knots",
       partTitle: "Structural Mechanics",
-    }),                                                       // Braids, knots, Hecke, mass machinery (further split per remaining Phase 4 chunks)
+    }),                                                       // Braids, knots, Hecke quotient, Jones-Markov trace, quantum groups
     chapterRef({ dir: "brings-surface" }),                     // Bring's surface (deep): χ = −6, S_5/A_5 action, cohomological defect
-    // statistics-symmetrisation dissolved (2026-05-27): 7-block scaffold
-    // never populated; 5 orphan blocks redistributed to braids-and-knots
-    // (pontryagin-dual-coxeter-character) and particle-interactions
-    // (spin-from-so3-fiber, type-b-folding-cpt, weinberg-angle-categorical,
-    // wigner-su4-from-spin-isospin). Pauli/spin-stats content remains a
-    // future authoring goal — will create a new chapter when content exists.
-    chapterRef({ dir: "mass-endomorphism" }),                   // The Mass Endomorphism: categorical opener + algebraic core (~80 blocks). Generic Yekutieli path — before particles.
-    chapterRef({ dir: "knots-particles-confinement" }),         // Knots, Particles, and Confinement: particle definitions, hadron algebra, knot-particle dictionary, confinement/shell hierarchy (definitional core — upstream of eightfold-way + mass-theory)
-    chapterRef({ dir: "eightfold-way" }),                      // The Eightfold Way and Flavor Structure: A₂ from 3-strand braiding, SU(3) flavor multiplets, q-deformation, color algebra
-    chapterRef({ dir: "nuclear-interactions" }),                // Nuclear Interactions and Binding: Gröbner–Shirshov, LP/SDP, beta decay, atomic braid mass, Q-values (computational engine)
-    chapterRef({ dir: "climax-volume-mass" }),                 // q-Hyperbolic Geometry: Möbius energy, crossing energy, Lagrange resolvents, braiding relations (42 blocks)
-    chapterRef({ dir: "mass-theory" }),                        // Mass Analysis: geometric face, archimedean face, physical predictions, compute (~470 blocks). Consumes particles + q-hyperbolic geometry.
-    // mass-application merged into mass-theory (2026-05-27)
+    chapterRef({ dir: "knots-particles-confinement" }),         // Knots, Particles, and Confinement: particle definitions, hadron algebra, Borromean nucleons, electroweak torus-link triplet, confinement/shell hierarchy
+    chapterRef({ dir: "eightfold-way" }),                      // The Eightfold Way and Flavor Structure: A₂ from 3-strand braiding, SU(3) flavor multiplets, U-spin, octonionic color algebra, q-deformation
+    chapterRef({ dir: "mass-endomorphism" }),                   // The Mass Endomorphism: categorical mass identity, topological mass decomposition, complex volume, Markov-trace endomorphism, χ-character closed forms
+    chapterRef({ dir: "climax-volume-mass" }),                 // q-Hyperbolic Geometry: Möbius energy, crossing energy & skein asymmetry, Lagrange resolvents, knot-operator energy, spectral filter
+    chapterRef({ dir: "mass-theory" }),                        // Mass Analysis: geometric face, archimedean face, elementary particle, gauge, and nuclear mass pipeline
+    chapterRef({ dir: "nuclear-interactions" }),                // Nuclear Interactions and Binding: Gröbner–Shirshov reduction, LP/SDP operator selection, beta decay, atomic braid mass, Q-values
     chapterRef({ dir: "gravity-spacetime" }),                  // Gravity emergence: contact geometry + geodesic Madelung
 
     // ── Part III: Physical Realization ────────────────────────────────
@@ -139,6 +136,7 @@ export default paper({
     chapterRef({ dir: "appendix-qvalues" }),
     chapterRef({ dir: "appendix-surreals" }),                  // Surreal-number lift (categorical lobe) + Millennium-problem surreal bounds
     chapterRef({ dir: "appendix-surreals-archimedean" }),      // Surreal-number lift (archimedean lobe) — substrate-q_0-pinned content split out per q-usage audit
+    chapterRef({ dir: "appendix-formalisation-notes" }),       // Formalisation notes: Lean/Mathlib infrastructure blocks moved out of the chapters (owner ruling 2026-11-20, qou-d4kh)
     chapterRef({ dir: "index-of-definitions" }),
     chapterRef({ dir: "notation" }),                          // Symbol register — moved out of the front matter to its own appendix (too long for the front). Forward refs ignored by the detangler (preview chapter).
 

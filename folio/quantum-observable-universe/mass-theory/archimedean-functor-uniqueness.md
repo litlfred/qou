@@ -1,4 +1,4 @@
-**Proposition (conditional on [`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit) and on the Bloch-Suslin pentagon-uniqueness theorem [`suslin1991`]).**
+**Proposition (conditional on [$(1{-}q)\,\log\Phi_n(x; q) \to \mathrm{Li}_2(x)$ under $\tau_{\mathrm{arch}}$](#conj:dilogarithm-archimedean-limit) and on the Bloch-Suslin pentagon-uniqueness theorem [`suslin1991`]).**
 *Let $\tau_{\text{arch}} = \pi_\infty \circ \tau$ be the archimedean
 realization functor of the QOU substrate
 ([archimedean realization functor](#def:archimedean-realization-functor)),
@@ -22,10 +22,9 @@ $z \in \mathbb{C} \setminus \{0,1\}$, where:*
    $\tau_{\text{arch}}$ is a continuous, antisymmetric, real-valued
    functional on $B(\mathbb{C})$ — the structural content provided by
    the cosimplicial / Yekutieli triple machinery
-   ([`prop:cosimplicial-crossed-groupoid`](#prop:cosimplicial-crossed-groupoid))
-   together with the archimedean-limit class
-   `QOU.QPochhammer.ArchimedeanLimit`
-   ([`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)).*
+   ([Cosimplicial crossed groupoid](#prop:cosimplicial-crossed-groupoid))
+   together with the archimedean limit assumed in the opening
+   banner.*
 - *(C2) Bloch-Suslin pentagon-uniqueness [`suslin1991`,
    `bloch2000`]: any continuous antisymmetric pentagon-coherent
    real-valued function on $\mathbb{C} \setminus \{0,1\}$ is a
@@ -43,15 +42,11 @@ $$
   + D\!\left(\tfrac{1-y}{1-x}\right) \;=\; 0.
 $$
 
-> **Theorem (conditional on [`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)).**
-> The upstream conjecture is axiomatised in Lean as the typeclass
-> [`QOU.QPochhammer.ArchimedeanLimit`](dilogarithm-archimedean-limit.lean);
+> **Theorem (conditional on [$(1{-}q)\,\log\Phi_n(x; q) \to \mathrm{Li}_2(x)$ under $\tau_{\mathrm{arch}}$](#conj:dilogarithm-archimedean-limit)).**
+> The upstream archimedean-limit conjecture is taken as a hypothesis, and
 > the Bloch-Suslin pentagon-uniqueness theorem [`suslin1991`,
-> `bloch2000`] is similarly axiomatised as
-> [`QOU.Archimedean.BlochSuslinUniqueness`](archimedean-functor-uniqueness.lean).
-> The Lean theorem
-> [`QOU.Archimedean.archimedean_functor_uniqueness`](archimedean-functor-uniqueness.lean)
-> takes both classes as `[Instance]` hypotheses and is proved
-> **without `sorry`**; the uniqueness statement therefore qualifies as a
+> `bloch2000`] is likewise taken as a hypothesis (cited, not re-proved).
+> The uniqueness statement is proved from these two hypotheses alone,
+> and therefore qualifies as a
 > *rigorous conditional result* rather than an unproved
 > conjecture.

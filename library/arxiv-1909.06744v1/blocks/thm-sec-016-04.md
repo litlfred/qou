@@ -1,0 +1,1 @@
+For each m ∈Qa,r, (πm)∗eK(m) ξ is a semisimple perverse sheaf on Xm, equipped with Wa,r-action, and is decomposed as (πm)∗eK(m) ξ ≃ M λ∈P(m) eVλ ⊗IC(Xλ, Eλ)[dim Xλ]. In particular, for each ξ ∈SGιθ, we have a bijection {Xλ | λ ∈Pa,r} = a m∈Qa,r {Xλ | λ ∈P(m)} ≃ a m∈Qa,r {eVλ | λ ∈P(m)} = W ∧ a,r

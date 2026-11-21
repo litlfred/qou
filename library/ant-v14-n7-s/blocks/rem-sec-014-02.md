@@ -1,0 +1,1 @@
+It is conventional to “normalise away” the factor of 2πi by deﬁning C(φ) as an element of H1(Y1(N), Z(1)), where Z(1) = 2πi · Z ⊂C. However, this formalism does not work well when considering the cohomology of nonalgebraic manifolds, so we shall not use it here.

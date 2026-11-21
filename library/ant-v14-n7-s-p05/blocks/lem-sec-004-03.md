@@ -1,0 +1,1 @@
+Let (E, th(−)) be an SL-oriented motivic spectrum in SH(B). Suppose given X ∈SmB of dimension dX over B, i : Z →X a closed subset, and p : L →X a line bundle. Then the isomorphism ϑE L−TX/B : 61−det(L−TX/B)π∗ XE →6rL−TX/B −L+TX/Bπ∗ XE induces an isomorphism ρX,Z,L : Ea,b Z (X; ωX/B ⊗L) ≃Ea−2dX,b−dX(X Z/BB.M.; L), where the right-hand side is as deﬁned in Remark 3.9.

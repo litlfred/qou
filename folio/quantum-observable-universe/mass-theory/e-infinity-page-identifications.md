@@ -11,4 +11,4 @@ $$
   m_e \cdot \tau\bigl(C_{\dim_q}\bigr).
 $$
 
-*Term 1 descends directly to the identity base mapping cleanly to $E_\infty^{0, *}$. Terms 2 and 3 isolate single-generator and pair-tower functional limits mapping explicitly to $E_\infty^{1, *}$ and $E_\infty^{2, *}$. Term 6 aggregates all deeper-strata residues spanning $\ell \geq 3$ mapping to the algebraic elliptic-curve residues without requiring speculative contour assumptions.*
+*Term 1 descends directly to the identity base mapping directly to $E_\infty^{0, *}$. Terms 2 and 3 isolate single-generator and pair-tower functional limits mapping explicitly to $E_\infty^{1, *}$ and $E_\infty^{2, *}$. Term 6 aggregates all deeper-strata residues spanning $\ell \geq 3$ mapping to the algebraic elliptic-curve residues without requiring speculative contour assumptions.*

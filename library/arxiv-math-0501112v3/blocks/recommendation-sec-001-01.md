@@ -1,1 +1,0 @@
-In order to deal with such questions in the asymptotic region when $q\to\infty$ we should be more modest and ask questions of a more statistical flavor: what is the typical shape of a Young diagram contributing to a given representation? what are the fluctuations of the Young diagrams around the most probable shape?

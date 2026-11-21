@@ -1,1 +1,0 @@
-(Working in a left ideal means that we are allowed to add and subtract operators [\[tetiops2\]](#tetiops2){reference-type="eqref" reference="tetiops2"}, and to multiply only on the *left* --- since some index should be sitting on the right.) What remains are $\tfrac 12\dim \mathcal{P}_{\partial M}$ pairs

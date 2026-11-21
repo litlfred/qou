@@ -1,1 +1,0 @@
-Furthermore, in a quantum theory, the holonomy $x$ should be parametrised as \begin{equation} x = \exp\left(\frac{2\pi \bb\mu}{k} - \frac{2\pi\ri n}{k}\right), \end{equation} where $\mu\in\IC$, $n\in\IZ_k$, and the parameter $\bb$ is related to the levels $k,s$ by \begin{equation} \bb^2 = \frac{k-\ri s}{k + \ri s}. \end{equation}

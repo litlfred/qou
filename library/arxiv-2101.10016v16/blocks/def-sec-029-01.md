@@ -1,1 +1,1 @@
-A Hermitian coboundary weak quasi-Hopf algebra (A, ∆, Φ, R, v, w, ∗, S, α, β)
+A Hermitian coboundary weak quasi-Hopf algebra (A, ∆, Φ, R, v, w, ∗, S, α, β) is called compatible with the ∗-involution if it satisfies one of the following equivalent conditions, 1) E = ∆(I) ∗ = ∆op(I), 2) ∆(a) ∗ = ∆op(a∗ ), a ∈ A, 3) Ω = R, 4) R is selfadjoint. Thus axiom d) of Def. 28.1 is replaced by the stronger axiom d’) A˜ = Aop as quasitriangular weak quasi-bialgebras. In particular we have R∗−1 = R21. Unitary, discrete, or weak Hopf versions are naturally defined.

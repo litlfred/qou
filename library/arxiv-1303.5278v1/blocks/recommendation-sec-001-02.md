@@ -1,1 +1,0 @@
-Before we get to the details, we should stress that the origin of the 3D index is the exciting work of Dimofte-Gaiotto-Gukov [@DGG1; @DGG2] (see also [@holo-blocks]) who studied gauge theories with $N=2$ supersymmetry that are associated to an ideal triangulation $\mathcal{T}$ of an oriented 3-manifold $M$ with at least one cusp.

@@ -1,0 +1,1 @@
+Let S (z) = Pd j=1 z2 j and r ∈Nd. Then Z Rd zre−λS (z) dz = βrλ−(d+|r|)/2 for any λ > 0, where βr = Qd j=1 βrj if all the components r j are even and βr = 0 otherwise. Proof If n ∈N then making the change of variables x = yλ−1/2 and applying

@@ -1,0 +1,1 @@
+Let {Mk}k∈N be an inverse system in Cstr(A), with inverse limit M = lim←k Mk. Assume the system satisﬁes these two conditions: (a) For every i ∈Z the inverse system {M i k}k∈N in M(K) has the Mittag-Leﬄer property. (b) For every i ∈Z the inverse system {Hi(Mk)}k∈N in M(K) has the Mittag- Leﬄer property. Then the canonical homomorphisms Hi(M) →lim←k Hi(Mk) are bijective for all i.

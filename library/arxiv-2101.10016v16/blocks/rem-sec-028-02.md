@@ -1,0 +1,1 @@
+a) In the particular case of a trivial R-matrix, trivial ribbon element, ordinary discrete (cocommutative) Hopf C ∗ -algebra, the categorical definition of unitary coboundary weak quasi-Hopf algebra reduces to the property that embedding tensor functor Rep(A) → Hilb to the category of Hilbert spaces is a symmetric functor , by Theorem

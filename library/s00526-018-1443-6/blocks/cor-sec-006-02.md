@@ -1,0 +1,1 @@
+Let f ∈C∞( , Rn). Then f is analytic on R/Z if and only if for every compact set K ⊂ there are constants rK > 0, CK < ∞such that ∥∂α f ∥W 1(K) ≤CK |α|! r|α| K holds for every multiindex α ∈Nm 0 . From the equivalence of the W 1- and the H1-norm on R/Z we hence get

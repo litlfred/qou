@@ -12,7 +12,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:alpha-k-derivation-procedure",
+    // conj:alpha-k-derivation-procedure removed (qou-tm3c): the closed form is Wenzl's Schur-element formula (wenzl1988, orellana1998) with Chlouveraki's uniqueness; it avoids the linear-system route that conjecture describes.
   ],
   cites: ["wenzl1988", "orellana1998", "chlouveraki2016"],
   tags: [

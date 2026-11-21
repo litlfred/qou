@@ -1,1 +1,0 @@
-If $\mathcal{I}^{\mathcal{C}'}=24$, then $\mathcal{C}'$ is a K3 model, and by comparing this formula with [\[secondIg\]](#secondIg){reference-type="eqref" reference="secondIg"}, we conclude that $\mathcal{Q}$ must correspond to a cycle shape $\prod_{a|N}a^{m(N/a)}$.

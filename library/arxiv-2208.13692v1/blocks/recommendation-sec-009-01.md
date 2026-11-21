@@ -1,1 +1,0 @@
-A fixed point of $\mathcal{B}$ under this, given by projective coordinates $x_i, i=1, \dots, 5$, must have $$(x_1 , x_4 , x_5 , x_2 , x_3) = (\lambda x_1 , \lambda x_2 , \lambda x_3 , \lambda x_4 , \lambda x_5) .$$ From this we can see $\lambda = \pm 1$.

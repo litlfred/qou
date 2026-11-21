@@ -1,0 +1,1 @@
+For p, q ∈VR(λ), ap + bq is weakly real stable for all a, b ∈R if and only if either p ≪q or q ≪p. This result will be crucial to our consideration of real polynomials and real stability (as it was in [1]). Its main use for us in this direction is made explicit in the following.

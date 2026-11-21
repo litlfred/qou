@@ -1,1 +1,0 @@
-In our paper, we shall set up a general approximation scheme for sequences of lattice-valued random variables, which will allow us: • to obtain signed measure approximations whose distances to the laws of the variables Xn are arbitrary negative powers of the pa- rameter λn; • to compute the asymptotics of these distances (instead of an un- conditional upper bound).

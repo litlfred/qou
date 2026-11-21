@@ -1,1 +1,0 @@
-The idea is quite natural: using the exponential torus we shall "vibrate" the alien derivation ${\dot{\Delta}}_{\bf d}$ and extracts the "Fourier coefficients" ${\dot{\Delta}}_{q,{\bf d}}$ (for $q$ supported by $d$).

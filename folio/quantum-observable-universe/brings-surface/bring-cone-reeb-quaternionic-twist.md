@@ -29,10 +29,6 @@ exists on it. (Dimension alone excludes nothing about $3$-Sasakian structures,
 which allow $4n+3$ with $n = 0$: $S^3$ is $3$-Sasakian. It is (ii), not a
 dimension count, that excludes that reading.)*
 
-*The $\mathfrak{su}(2)$ does survive in this layer, as the structure group of
-the quaternionic resolvent bundle rather than as a Reeb triad — see*
-[the gauge reading](#rem:tetraplectic-su2-gauge-reading).
-
 *Following Foth–Leitner \cite{fothleitner2003} for quaternionic flag manifolds,
 model the triad on the quaternions by right-multiplication by the imaginary
 units — $M_x(p) = p\,x$ for $x \in \{\mathbf{i}, \mathbf{j}, \mathbf{k}\}$, or

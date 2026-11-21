@@ -1,0 +1,1 @@
+We have Rest=qmx θ(t; q)2 θ(tx; q)θ(tx−1; q)g(0,x−1)(t, x, q) dt 2πit = −θ(x; q)2f (−1)(qmx, x, q) θ(x2; q)(q; q)3 ∞ Rest=qmx−1 θ(t; q)2 θ(tx; q)θ(tx−1; q)g(0,x)(t, x, q) dt 2πit = −θ(x−1; q)2f (−1)(qmx−1, x, q) θ(x−2; q)(q; q)3 ∞ (304) while g(0,1)(t, x, q) is holomorphic for t ∈C× ∪{∞}.

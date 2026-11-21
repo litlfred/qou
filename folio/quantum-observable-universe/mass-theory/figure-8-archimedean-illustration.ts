@@ -23,6 +23,9 @@ export default remark({
     "illustration",
   ],
   uses: ["prop:archimedean-functor-uniqueness"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): **Cross-reference: $\\alpha_{EM}$.** The same dichotomy underlies\nthe additive Bring zero-mode candidate\n[additive Bring zero-mode form of $1/\\alpha_{EM}$](#prop:em-coupling-bring-zero-mode):\nthe $\\pi$ in $4_1$'s archimedean image\n$2\\,\\mathrm{Cl}_2(\\pi/3)$ and the $\\pi$ in $1/\\alpha_{EM}$'s\ncorrection $2/(3\\pi) = 2g/(4\\pi(g-1))$ at $g=4$ share a single\nprovenance — the unique archimedean shadow of pentagon-coherent\nsubstrate data on Bring's surface, factored through the\nBloch-Wigner dilogarithm." },
+  ],
   cites: [
     "thurston1978",
     "suslin1991",

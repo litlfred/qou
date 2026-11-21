@@ -1,1 +1,0 @@
-To prove that the above field systems are inequivalent it suffices to show that $U$ has a nontrivial holonomy, in fact the immersion $id_{F_*} : \EuFrak{F}_* \to BH$ has trivial holonomy and ([\[eq.gauge3\]](#eq.gauge3){reference-type="ref" reference="eq.gauge3"}) implies that the holonomy of $U$ should be trivial too.

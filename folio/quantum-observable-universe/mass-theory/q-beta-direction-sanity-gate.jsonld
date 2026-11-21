@@ -2,22 +2,24 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-q-beta-direction-sanity-gate",
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-beta-direction-sanity-gate",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-core:Remark",
     "doco:Section"
   ],
   "label": "rem:q-beta-direction-sanity-gate",
-  "kind": "proposition",
+  "kind": "remark",
   "title": "$\\mathfrak{Q}_\\beta$ precision-ladder $\\S 4(d)$ formalize-first gate — any candidate Habiro element $F(q_0)$ must have magnitude consistent with the target observable's order of magnitude; the $z(q_0) \\approx 0.6127 < 1$ direction obstruction is the canonical refutation precedent",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-q-beta-q-eq-one-shadow-gate",
     "papers/quantum-observable-universe/blocks/prop-q-beta-bar-even-kernel-invariant",
     "papers/quantum-observable-universe/blocks/prop-q-beta-c-k-recursion-from-habiro-q-difference"
   ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-q-beta-q-eq-one-shadow-gate",
   "cites": [
     "references/jones1987",
     "references/wenzl1988",

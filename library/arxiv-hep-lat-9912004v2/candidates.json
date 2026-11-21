@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-hep-lat-9912004v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "7033719ec7a8a0bc039bb89901312db8d7f59859d85a7c83676bc4228da3da20",
   "file": "9912004v2.pdf"
@@ -16,121 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 7,
-  "by_kind": {
-   "recommendation": 7
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Here we will examine an- other such approach, which should allow the extrapola- tion to in\ufb01nite volume and vanishing fermion mass: Chi- ral Random Matrix Theory (chRMT).",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "On coarse lattices the so defined fermions should show at least $U(1)\\simeq O(2)$ scaling behavior.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-12-temperature-transition.md",
-   "section_title": "Temperature transition",
-   "pages": "2-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Of course, in this the mild condition ([\\[QCDrange\\]](#QCDrange){reference-type=\"ref\" reference=\"QCDrange\"}) must be satisfied.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-2-expectations-from-chrmt.md",
-   "section_title": "Expectations from chRMT",
-   "pages": "2-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The \"microscopic\" distributions should be in the chUE universality class and prediction ([\\[Pmin\\]](#Pmin){reference-type=\"ref\" reference=\"Pmin\"}) should apply in particular for the smallest eigenvalue for $T<T_c$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-41-eigenvalue-density.md",
-   "section_title": "Eigenvalue density",
-   "pages": "4-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "From our fits -- if the data follows chRMT formulas -- $\\Sigma$ should therefore be independent of the spatial lattice size $L_x$ and the fermion mass $m$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-41-eigenvalue-density.md",
-   "section_title": "Eigenvalue density",
-   "pages": "4-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The advantage here is, that the level spacing should not be influenced by possible distortions of the smallest eigenvalues due to the unknown topological charge of the configurations (if the smallest eigenvalues are removed from the data).",
-   "strength": "should-not",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-42-level-spacing-distribution.md",
-   "section_title": "Level spacing distribution",
-   "pages": "6-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The consistency with the prediction ([\\[qi\\]](#qi){reference-type=\"ref\" reference=\"qi\"}) for $u=0$ and the approximate validity of chRMTcorrelations in the level spacing statistics above $T_c$ suggest that the Airy-density ([\\[AiDens\\]](#AiDens){reference-type=\"ref\" reference=\"AiDens\"}) corresponding to the value $u=0$ should fit the spectral density.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-43-soft-inner-edge.md",
-   "section_title": "Soft inner edge",
-   "pages": "7-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

@@ -1,1 +1,0 @@
-Now, in $(b-t)e^{-t}$ the coefficient of $t^n$ is $$b \frac{(-1)^{n}}{n!} -\frac{(-1)^{n-1}}{(n-1)!} = \frac{(-1)^{n-1}}{(n-1)!}(1-b/n)\;.$$ It is easy to see that for the equation [\[conds\]](#conds){reference-type="eqref" reference="conds"} with $l=n-1$ to be satisfied, this coefficient must be $0$ and hence $b=n$.

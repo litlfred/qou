@@ -1,0 +1,1 @@
+The equation Uc = d (equation (∗) of the Introduction) is equivalent to the following conditions: C1. the sum of the η ’s around any edge E of the triangulation is 2; C2. for any path C as above in a torus section of an end of M, the signed sum of the η ’s over the vertices adjacent to the path C is zero.

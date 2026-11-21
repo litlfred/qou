@@ -1,8 +1,8 @@
 {
   "engine": "python+numpy+scipy+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T08:31:28.369887+00:00",
-  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "computedAt": "2026-09-19T08:09:56.495590+00:00",
+  "commitSha": "37f363545087c0ff6bd4359090d620a162eeadbc",
   "assertions": [
     {
       "name": "hoefsmit_chi_finite_per_block_for_n3",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 8,
   "computation": "qbeta-hoefsmit-tbeta-matrix-build-probe",
   "scriptFile": "qbeta_hoefsmit_tbeta_matrix_build_probe.py",
   "scriptHash": "d19ab02fd176",
-  "scriptCommitSha": "ab8268c14522a812f28d3da419909e8321ed8c5f",
+  "scriptCommitSha": "eb491d0440b6a56bd393d9c7b3d268b428ff5f86",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -69,7 +69,7 @@
         "lambda": [
           3
         ],
-        "dim_q": "0.9999999955842753",
+        "dim_q": "0.9999999955842754475157023",
         "chi_identity": "1.0",
         "chi_hopf": "1.2320524827850277",
         "chi_electron_trefoil": "1.367551884599875"
@@ -79,7 +79,7 @@
           2,
           1
         ],
-        "dim_q": "2.0108968602555946",
+        "dim_q": "2.010896860255594669178854",
         "chi_identity": "2.0",
         "chi_hopf": "-1.0000000000000002",
         "chi_electron_trefoil": "-1.6653345369377348e-16"
@@ -90,7 +90,7 @@
           1,
           1
         ],
-        "dim_q": "0.9999999955842753",
+        "dim_q": "0.9999999955842754475157023",
         "chi_identity": "1.0",
         "chi_hopf": "0.8116537355125671",
         "chi_electron_trefoil": "-0.7312336820716572"

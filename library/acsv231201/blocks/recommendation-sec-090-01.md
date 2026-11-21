@@ -1,1 +1,0 @@
-There is more than one choice for the homotopy type of the at- tachment, and keeping track only of the homotopy type throughout the process of attaching cannot resolve this choice – one must look at the geometry of the attachment.

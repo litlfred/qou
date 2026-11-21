@@ -1,1 +1,0 @@
-For a multi-channel device with a non-scalar $\mathcal U^{\alpha\beta}(E)$, the full matrix form $C=S^*NS^T$ must be retained, and the correlator acquires a channel-dependent prefactor (see Sec. [\[sec:discrete-bessel\]](#sec:discrete-bessel){reference-type="ref" reference="sec:discrete-bessel"} for the conditions under which it reduces to a Bessel kernel).

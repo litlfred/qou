@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1172-2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1172-2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -36,8 +36,8 @@
     "pages": 26,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

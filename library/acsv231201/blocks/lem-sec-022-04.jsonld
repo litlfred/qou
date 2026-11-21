@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/acsv231201/blocks/lem-sec-022-04",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 123,
+  "pageEnd": 132,
+  "text": "lem-sec-022-04.md",
+  "derivedFrom": "library/acsv231201/sections/sec-022",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4.13",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "Inline argument in sections/sec-022-analytic-versus-smooth-functions.md citing [0, ∞) and deﬁne I−(λ, k, ℓ, δ) by restricting the do- main of integration to (−∞, 0]",
+    "claim_id": "acsv231201#lemma:4.13",
+    "lean_status": "unformalized"
+  }
+}

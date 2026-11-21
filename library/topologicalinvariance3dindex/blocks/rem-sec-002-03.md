@@ -1,0 +1,1 @@
+If K is the connected sum of the 41 and 52 knots, or K′ is the Whitehead double of the 41 knot and T is any ideal triangulation of the complement of K or K′, then T is not 1-e cient, thus IT never exists. On the other hand, the (coloured) Jones polynomial, the Kashaev invariant and the PSL(2, C)-character variety of K and K′ happily exist; see [Jon87, Kas97, CCG+94].

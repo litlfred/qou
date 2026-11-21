@@ -1,1 +1,0 @@
-Only after specifying a point on the moduli space, we can obtain a low energy eﬀective ﬁeld theory which describes the physics near that point.2 In other words, T 6d[M, K] is not a genuine 3d theory, but should be considered more appropriately as the 6d theory compactiﬁed on M.

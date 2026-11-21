@@ -20,7 +20,7 @@ $$
 \;=\; -\frac{\pi^{2}}{6} - \frac{(\log t)^{2}}{2} + \frac{2}{3}\bigl(\arg a - \pi\bigr)^{2} .
 $$
 
-We call this the *$5_2$ saddle sum rule*.
+This is the *$5_2$ saddle sum rule*.
 
 ## What the statement says
 
@@ -75,8 +75,8 @@ form the gluing relation sees them.
 
 The proof chain is: the complex five-term identity at $(y_3, y_1)$ and
 $(y_3, y_2)$; the anharmonic evaluations; the branch equations from
-$y^{2} = (1-y)^{3}$; the root data; and the logarithm evaluations. Every step uses
-only the standard axioms, and `SaddleRoots` is inhabited via the
+$y^{2} = (1-y)^{3}$; the root data; and the logarithm evaluations. Every step is
+unconditional, and the existence of the three saddle roots follows from the
 intermediate value theorem — so the closed form is a statement about the
 **actual** roots of $X^{3} - 2X^{2} + 3X - 1$, rather than about a structure
 that might be empty.
@@ -102,7 +102,7 @@ be conflated:
 
 1. the sum rule above, which is proved;
 2. $\mathrm{Vol}(S^3 \setminus 5_2) = 3\,D(y_1)$, a statement about a
-   hyperbolic manifold, which is not formalised here;
+   hyperbolic manifold, which is not proved here;
 3. $\lim_{N} \frac{2\pi}{N}\log\langle 5_2\rangle_N =
    \mathrm{Vol}(S^3 \setminus 5_2)$, the volume conjecture for $5_2$ —
    Ohtsuki's theorem \cite{ohtsuki2016}, untouched.

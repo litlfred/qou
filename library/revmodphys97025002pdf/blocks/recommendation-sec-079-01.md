@@ -1,1 +1,0 @@
-Table XXXVIII and its accompanying discussion of the importance of α for the determination of the recommended values of other constants, and the fact that the uncertainties of the six input data that determine its 2022 recommended value have to be increased by a factor 2.5, make clear why work to improve our knowledge of the value of α should be given high priority.

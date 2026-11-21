@@ -1,5 +1,5 @@
 The categorical action $S = \mathrm{tr}(\Phi)$
-([topological mass](#thm:topological-mass)) evaluates differently
+([topological mass](#conj:topological-mass)) evaluates differently
 depending on the geometry of the knot complement $S^3 \setminus K$.
 The piecewise geometric invariant
 
@@ -76,7 +76,7 @@ multiplicatively because the torus knot's phase *is* the pairing.
 The figure-eight knot $4_1$ is special: it is **amphicheiral**
 ($K = K^*$), so the self-pairing is manifestly real.  This underlies
 the figure-eight BW modification factors $1 - h^2$ and $h[2]_q$
-([figure-eight BW coefficients](#thm:six-term-mass-formula-complete)),
+([figure-eight BW coefficients](#conj:six-term-mass-formula-complete)),
 both of which are real algebraic expressions in $q$.
 
 **5. The unknot: vacuum normalisation.**

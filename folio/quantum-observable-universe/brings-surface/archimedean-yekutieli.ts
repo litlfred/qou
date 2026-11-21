@@ -9,8 +9,15 @@ export default example({
     "rem:mass-geometric-drag",
     "rem:chirality-trefoil",
     "rem:kummer-tower",
+    "prop:ns-kummer-specialisation",
   ],
   authorNotes: [
+    {
+      kind: "status",
+      date: "2026-11-17",
+      body:
+        "**PARTLY RESOLVED 2026-11-17.** The `chi(A) = -6` is now `chi_eu(M_0) = -6`, the integer of the Kummer obstructions under the unit-tangent-bundle hypothesis stated in `prop:ns-kummer-specialisation`; no trace of `A` enters. **Still OPEN:** the reading of the six branch points as three pairs under `S_3 < S_5`, and of three lepton generations as cyclotomic Galois orbits on them. Bean `qou-qhcr` records that the six Weierstrass points in Bring's curve are the fixed points of one transposition, not an `S_3` orbit structure, so the three-pairs reading has no derivation in the corpus. PR #8365.",
+    },
     {
       kind: "refined-framing",
       date: "2026-11-15",
@@ -23,5 +30,6 @@ export default example({
       body:
         "Re-scoped 2026-11-15 (owner decision, PR #7747, bean qou-lx8f): the previous text read: \"The non-vanishing obstruction classes $\\kappa_n$ obstruct smooth lifting at every level, creating\"",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ; by [Kummer specialisation](#prop:ns-kummer-specialisation) this is the integer that controls the Kummer obstructions when the base circle bundle is the unit tangent bundle" },
   ],
 });

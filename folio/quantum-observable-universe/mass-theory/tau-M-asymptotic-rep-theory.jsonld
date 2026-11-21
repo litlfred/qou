@@ -1,0 +1,47 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-tau-M-asymptotic-rep-theory",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:tau-M-asymptotic-rep-theory",
+  "kind": "proposition",
+  "title": "$\\mathrm{tr}_M^{V_\\lambda}(\\beta) = \\mathrm{Tr}\\,\\rho_\\lambda(\\beta) \\cdot \\cos(\\alpha_\\lambda - b_\\lambda\\hbar_q^2/2) \\cdot \\prod_k(1 + c_k^{(\\lambda)} u_\\lambda^k)$: canonical $u$-ladder of the Markov-traced character",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hoefsmit-V21-cos-symmetrization",
+    "papers/quantum-observable-universe/blocks/prop-habiro-residue-sum-equivalence",
+    "papers/quantum-observable-universe/blocks/prop-q-beta-categorical-precision-ladder",
+    "papers/quantum-observable-universe/blocks/prop-q-beta-cos-resummation",
+    "papers/quantum-observable-universe/blocks/prop-q-beta-c-k-recursion-from-habiro-q-difference",
+    "papers/quantum-observable-universe/blocks/prop-hecke-1d-irrep-closed-form-character"
+  ],
+  "cites": [
+    "references/kashiwara1990",
+    "references/macdonald1995",
+    "references/habiro2002",
+    "references/jones1985",
+    "references/wenzl1988",
+    "references/hoefsmit1974"
+  ],
+  "tags": [
+    "hecke-algebra",
+    "asymptotic-expansion",
+    "kashiwara-crystal",
+    "jucys-murphy",
+    "macdonald-polynomial",
+    "habiro-residue",
+    "rep-theory-prediction",
+    "1ppb-roadmap"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.tau_M_asymptotic_rep_theory",
+  "text": "tau-M-asymptotic-rep-theory.md",
+  "leanSource": "tau-M-asymptotic-rep-theory.lean",
+  "provenance": "authored"
+}

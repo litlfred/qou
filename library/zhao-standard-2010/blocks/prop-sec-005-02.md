@@ -1,0 +1,1 @@
+The map Z : A0x −→C is an algebra homomorphism. On the other hand, MPVs are known to satisfy the series stuﬄe relations. For example LN(2|5)LN(3|4) = LN(2, 3|5, 4) + LN(3, 2|4, 5) + LN(5|9). To study such relations in general one has the following deﬁnition. Documenta Mathematica 15 (2010) 1–34 Jianqiang Zhao

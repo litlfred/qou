@@ -1,0 +1,1 @@
+The equation A(t) = d expg (2) can be solved by 2' = d expy' A(t) for an arbitrary n x n matrix A if and only if none of the differences between any two of the eigenvalues of 92 equals 2xim, where m = +1, +2,..., (m# 0).

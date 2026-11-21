@@ -1,1 +1,0 @@
-We know it looks as sketched because the cyclic order of the six points on A! must be 1, 2, ... , 6 and because the axis A' can't do anything more complicated than to simply loop under the / th braid strand between the pierce-points 2i-1 and 2i, because we began with an initial fiber.

@@ -1,0 +1,1 @@
+Let p be a prime number and 0<k<p. Let W=) ap,/?' be a polynomial in variables I’, !~?. We say that W is regular if the sum a2;+ 43; of two consecutive coefficients is equal to 0, except possibly when 2i+1=+k(mod p).

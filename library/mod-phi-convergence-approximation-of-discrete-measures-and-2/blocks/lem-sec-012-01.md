@@ -1,0 +1,1 @@
+— Denote ν(0) n the inﬁnitely divisible discrete law on Z with exponent λnφ. The signed measure ρn whose Fourier transform is c ρn(ξ) = eλnφ(ξ) (ψn(ξ) −βn (eiξ −1)r+1) is given by ρn({k}) = µn({k}) −βn r+1 X l=0 (−1)r+1−l r + 1 l  ν(0) n ({k −l}).

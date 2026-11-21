@@ -1,0 +1,1 @@
+We have a natural isomorphism CH.LA; A/ Š H  c .SJet.A//. The parameter w should, very roughly, correspond to the natural action filtration on full contact homology. Note that for many examples these groups can be nontrivial in both positive and negative degrees. The following conjecture provides evidence for Conjec- ture 2.8.

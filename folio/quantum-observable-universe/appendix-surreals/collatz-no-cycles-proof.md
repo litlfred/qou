@@ -92,4 +92,4 @@ affine ($A \neq 1$) cycle problem.
    $q$-analog of classical nontrivial-cycle exclusion.
 2. **No divergent orbits**: the contact condition
    $\langle v_{[2]} \rangle \geq 2$
-   ([contact boundary](#prop:collatz-contact-boundary)).
+   ([contact boundary](#conj:collatz-contact-boundary)).

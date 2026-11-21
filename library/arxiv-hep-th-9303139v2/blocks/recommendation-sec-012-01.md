@@ -1,1 +1,0 @@
-Let us proceed now to Kontsevich integral, \be {\cal F}_{V,n}\{ L\} = \int_{n\times n} dX e^{- {\rm tr} V(X) + {\rm tr} L X}. \label{KI'} \ee We shall see shortly that it in fact depends only on the eigenvalues of the matrix $ L$ (this fact was already used in the previous section), however, this time somewhat more sophisticated unitary matrix integrals will be involved.

@@ -170,6 +170,7 @@ from codata_constants import (
     AME_B_HE4_MEV_VALIDATION,
     AME_B_TRITIUM_MEV_VALIDATION,
 )
+from codata_constants import AME_B_HE3_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 mp.mp.dps = 40
 
@@ -177,7 +178,7 @@ M_E = mp.mpf("0.51099895069")
 
 # AME2020 binding energies (MeV). Independent of the framework.
 B_AME = {"D": AME_B_DEUTERON_MEV_VALIDATION, "T": AME_B_TRITIUM_MEV_VALIDATION,
-         "3He": mp.mpf("7.71805"), "4He": AME_B_HE4_MEV_VALIDATION}
+         "3He": AME_B_HE3_MEV_VALIDATION, "4He": AME_B_HE4_MEV_VALIDATION}
 
 # SW jet-prolongation periods a_D^(n) = lw(n-1), transcribed from
 # binding_manybody_jet_filtration.py's own output.

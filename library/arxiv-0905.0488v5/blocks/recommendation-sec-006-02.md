@@ -1,1 +1,0 @@
-We shall see in Corollary \ref{cor:4} that for the stacks with inner gauge groups \lb $\twocat{AssDef}(R,\mcal{O}_X)$ and $\twocat{PoisDef}(R, \mcal{O}_X)$ there do exist totally trivializing open coverings. \end{rem}

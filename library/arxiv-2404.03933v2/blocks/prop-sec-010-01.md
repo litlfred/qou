@@ -1,0 +1,1 @@
+1. Let m = lm1 + m0, where 0 ≤m0 ≤l −1, m1 ∈Z, r = r1l + r0, where 0 ≤r0 ≤l −1, r1 ∈Z≥0. For the specialization v →q we have  lm1 lr1  = (−1)(m1+1)r1 m1 r1  . TENSOR POWERS  m r  = (−1)(m0r1−m1r0)+(m1+1)r1 m1 r1   m0 r0  . This follows from [Lus94], 34.1.2.

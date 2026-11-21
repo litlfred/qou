@@ -1,0 +1,1 @@
+For every J ∈J(E, π, j, {Je}) there is a closed subset K ⊂E \ ∂hE such that π|K : K →S is proper, and which over the ends has the form Γ−1 e (K) = R±×[0; 1]×Ke for some compact Ke ⊂M \∂M, such that u(S) ⊂K for all u ∈MJ({xe}) and all points {xe}.

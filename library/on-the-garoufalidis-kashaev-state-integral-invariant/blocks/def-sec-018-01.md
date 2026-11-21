@@ -1,0 +1,1 @@
+Let G be a locally compact abelian (LCA) group. A Gaussian group is a pair (G, ⟨·⟩) where ⟨·⟩: G →T is a continuous function, called a quadratic exponential, satisfying: 1. Evenness: ⟨x⟩= ⟨−x⟩for all x ∈G.

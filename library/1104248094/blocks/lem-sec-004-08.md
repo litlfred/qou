@@ -1,0 +1,1 @@
+[28]. Y a coincides with the infinitesimal left translation of J αeg* c gc on the open Kc orbit of the Gc homogeneous space GC/ACNC. Therefore the Y a action on A0 coincides with the left translation by g* c gc on , (4.13) where C ?(GC) denotes either C α(Gc) or C f(Gc) depending on whether A0 is algebraic or formal functions on Kc.

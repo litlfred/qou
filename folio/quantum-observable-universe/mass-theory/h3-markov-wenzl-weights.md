@@ -2,7 +2,7 @@
 expansion $\mathrm{tr}_M^{\mathrm{Jones}} = \sum_{\lambda \vdash 3} y_\lambda \,
 \chi^\lambda$ of the **Jones-normalised** Markov trace on $\mathrm{H}_3(q)$ —
 the $V_{\mathrm{Jones}} / [2]_q^{\,c-1}$ Temperley–Lieb closure of
-[`prop:borromean-markov-trace-closed-form`](borromean-markov-trace-closed-form.md),
+[Borromean Markov trace $\mathrm{tr}_M(\beta_{\mathrm{Bor}}) = (4 + h^2 - 3h^4 - h^6)/(h^2 + 4)$](borromean-markov-trace-closed-form.md),
 i.e. the trace computing the **Borromean rings' Jones polynomial**. (This is
 **not** the full-Hecke Ocneanu trace consumed by the mass/binding pipeline —
 see the **Scope** note below.) Then for all $q$:*

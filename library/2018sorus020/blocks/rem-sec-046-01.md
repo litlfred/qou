@@ -1,0 +1,1 @@
+We observe that each time we have found a zero for the torsion, it had multiplicity 2 and {tor(M, ρ) = 0} ⊂X ∩{x = y}. We have checked that this inclusion is strict. We have no precise interpretation of those phenomenon, we think that it comes from the computation of the torsion on the character variety of the Whitehead link .

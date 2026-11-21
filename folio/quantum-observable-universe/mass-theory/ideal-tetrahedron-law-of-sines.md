@@ -50,7 +50,7 @@ which is the theorem after multiplying both sines by $2$ and taking logarithms.
 
 ## The proof is elementary
 
-No analysis is involved. Mathlib's $\sin(\arg x) = \mathrm{Im}\, x / \lVert x \rVert$ holds *unconditionally*, so no $x \neq 0$ bookkeeping is needed for the sine computations themselves. Applying it to the two edge parameters,
+No analysis is involved. The identity $\sin(\arg x) = \mathrm{Im}\, x / \lVert x \rVert$ for $x \neq 0$ applies directly, since $z$ and $1 - z$ are nonzero on the upper half plane. Applying it to the two edge parameters,
 
 $$
   \sin\theta_2 = \frac{\mathrm{Im}\, z}{\lVert 1 - z\rVert},
@@ -68,6 +68,6 @@ That number requires care, because "the $5_2$ shape" is ambiguous. Two cubics fo
 
 ## Scope
 
-This is one lemma about one ideal tetrahedron. It is not new mathematics: the ideal-tetrahedron angle structure is Thurston's, and the dilogarithm identities are classical, with the shape-field setting due to Neumann and Zagier. What the corpus supplies is the machine-checked proof and, more usefully, the observation that the general Kummer identity needs only this one-variable reduction rather than a two-variable argument.
+This is one lemma about one ideal tetrahedron. It is not new mathematics: the ideal-tetrahedron angle structure is Thurston's, and the dilogarithm identities are classical, with the shape-field setting due to Neumann and Zagier. What is supplied here is a complete proof and, more usefully, the observation that the general Kummer identity needs only this one-variable reduction rather than a two-variable argument.
 
-As throughout this arc, nothing here establishes that any triangulation is a triangulation *of* a knot complement — that is Thurston hyperbolisation together with Mostow rigidity, which needs a theory of hyperbolic $3$-manifolds that neither Mathlib nor this corpus has. No volume conjecture is touched.
+As throughout this arc, nothing here establishes that any triangulation is a triangulation *of* a knot complement — that is Thurston hyperbolisation together with Mostow rigidity, which needs a theory of hyperbolic $3$-manifolds not developed here. No volume conjecture is touched.

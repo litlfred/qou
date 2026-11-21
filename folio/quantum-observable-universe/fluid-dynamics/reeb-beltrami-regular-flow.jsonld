@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-reeb-beltrami-regular-flow",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:reeb-beltrami-regular-flow",
+  "kind": "proposition",
+  "title": "The fibre-rotation field of $\\mathrm{UT}(\\Sigma_4)$ is a regular Navier--Stokes flow",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-brings-surface",
+    "papers/quantum-observable-universe/blocks/thm-ns-singularity-descartes"
+  ],
+  "cites": [
+    "references/ebin-marsden1970"
+  ],
+  "tags": [
+    "navier-stokes",
+    "euler",
+    "beltrami",
+    "killing-field",
+    "reeb",
+    "descartes",
+    "regularity"
+  ],
+  "leanRef": "qou:QOU.FluidDynamics.BeltramiSteadyEuler.L3.deformation_V",
+  "text": "reeb-beltrami-regular-flow.md",
+  "provenance": "authored"
+}

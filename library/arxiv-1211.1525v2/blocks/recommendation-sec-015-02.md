@@ -1,1 +1,0 @@
-The fac- tors (Pi) which are matched should be removed, each unmatched factor Pj (there are q −2r of them) should be replaced by Pj+δ where δ denotes the number of factors (Pi) which are matched and are on the left from Pj, thus j + δ ≤q −1.

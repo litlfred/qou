@@ -1,1 +1,0 @@
-[]{#randompermutation label="randompermutation"} In this section, we shall explain how the coherent systems of measures on $\mathfrak{Y}$ are related to models of random permutations that can be defined by using generalized riffle shuffles in the sense of [@Stan01; @Ful02].

@@ -2,24 +2,28 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-corrected-markov-trace",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:corrected-markov-trace",
   "kind": "proposition",
-  "title": "Corrected Markov trace of the trefoil braid",
+  "title": "Markov trace of $\\sigma_0\\sigma_1\\sigma_0$",
   "uses": [
     "papers/quantum-observable-universe/blocks/thm-jones-markov-trace"
+  ],
+  "cites": [
+    "references/jones1987"
   ],
   "tags": [
     "markov-trace",
     "correction",
-    "trefoil",
+    "hopf-link",
     "yang-baxter",
     "adjacent-generators"
   ],

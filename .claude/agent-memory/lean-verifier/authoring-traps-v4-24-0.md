@@ -628,3 +628,14 @@ environment with `sorryAx`, so `#print axioms` on it reads
 `[propext, sorryAx, Classical.choice, Quot.sound]`. That is the tell that
 separates "this decl failed" from "this decl is fine" when a multi-error file
 still produces axiom output.
+
+## TRAP — applying a matrix EXPRESSION to an index: "Function expected … ?m" (2026-11-15)
+
+`(A * B - C * D) ((i, j), (k, l)) = …` does not elaborate: the `HSub`/`HMul` result type is a
+metavariable at application time, so Lean reports `Function expected` and the statement becomes
+`sorry () = …` (the file is red, not vacuous). Two fixes, both needed: ascribe the type,
+`(A * B - C * D : Matrix ι ι R)`, and apply CURRIED, `… (i, j) (k, l)` — a `Matrix` is `ι → ι → R`,
+so a single pair argument is ill-typed even once ascribed. Same for helper lemmas `(P * M) a b`.
+Also: an 81-case `fin_cases <;> simp` over `Fin 3 × Fin 3` matrix products hit the 200k heartbeat
+cap; at `q = qi = 1` `rCheckN` is the flip matrix, and `(flip * M) a b = M a.swap b` closes the
+identity for a GENERIC `x` in 3 s with no case split (`QOU/IwahoriHecke/JimboClassicalLimit.lean`).

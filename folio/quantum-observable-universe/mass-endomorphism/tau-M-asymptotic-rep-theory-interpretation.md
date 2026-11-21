@@ -12,7 +12,7 @@ This single edge has weight $b_\lambda = b$. The $N=1$ eigenphase shift $-b\,\hb
 
 ### 2. Jucys–Murphy elements (diagonal eigenphase envelope)
 
-We rigorously evaluate the canonical values using formal trace definitions.
+One rigorously evaluates the canonical values using formal trace definitions.
 
 ### 3. Macdonald $(q,t)$-degeneration at $t = q^2$
 
@@ -20,7 +20,7 @@ The degeneration $t = q^2$ carries the Macdonald pairing onto the coordinate in 
 
 ### 4. Habiro residue at roots of unity
 
-At $q = \zeta_N$, a primitive $N$-th root of unity, the Habiro ring evaluation ([`prop:habiro-residue-sum-equivalence`](#prop:habiro-residue-sum-equivalence)) yields a finite residue sum. Near $q = 1$, the coefficients of a Habiro element match its Ohtsuki invariants. Thus, $c_k^{(\lambda)}$ is the $k$-th Ohtsuki invariant of $F$. This forms the canonical home of the rungs. We fix the recursion's kernel $R(q,\xi)$ once $F$ is exhibited as a quantum-modular form on the brane-tower (contraction) limit (the open $s5$–$so_3$ fibre action). At leading order, this reproduces the $N=1$ coupling $b$ through the residue-sum equivalence. We refute the real-$x$ archimedean closure of $c_3$. The identification remains strictly fibre-level, and the rungs stay cal-anchored pending that fibre action.
+At $q = \zeta_N$, a primitive $N$-th root of unity, the Habiro ring evaluation yields a finite residue sum. Near $q = 1$, the coefficients of a Habiro element match its Ohtsuki invariants. Thus, $c_k^{(\lambda)}$ is the $k$-th Ohtsuki invariant of $F$. This forms the canonical home of the rungs. One fixes the recursion's kernel $R(q,\xi)$ once $F$ is exhibited as a quantum-modular form on the brane-tower (contraction) limit (the open $s5$–$so_3$ fibre action). At leading order, this reproduces the $N=1$ coupling $b$ through the residue-sum equivalence. One refutes the real-$x$ archimedean closure of $c_3$. The identification remains strictly fibre-level, and the rungs stay cal-anchored pending that fibre action.
 
 ## Synthesis
 

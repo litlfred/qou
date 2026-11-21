@@ -74,9 +74,79 @@ structure HeckeCharValue where
   /-- The character value. -/
   val : ℝ
 
-/-! ## §2  Ribbon twist eigenvalue -/
+/-! ## §2  Ribbon twist eigenvalue and small-`n` Hecke derivations (bean `qou-00c5`)
 
-/-- **Ribbon twist eigenvalue.**
+Two distinct objects in the corpus both carry the name "ribbon twist":
+- `QOU.BraidKnot.Keystone.theta` evaluates `q ^ κ_λ` (the half-twist scalar magnitude on `V_λ`),
+- `RibbonTwistEigenvalue` below axiomatises the **full-twist** central element
+  `θ_n = Δ_n² ∈ Z(H_n(q))`, which acts on `V_λ` by `q^{2κ_λ} = (q^{κ_λ})²`.
+
+For general `n`, `RibbonTwistEigenvalue` is an **axiom class** (cited from
+[kassel1995] Ch. XIV / [mathas1999] §3), NOT a general-`n` theorem of this module.
+For `n = 2` (`H_2(q)`, where `θ_2 = σ_1²`) and `n = 3` (`H_3(q)`, where
+`κ_{[3]} = 3`, `κ_{[2,1]} = 0`, `κ_{[1,1,1]} = -3`), we derive the full-twist
+eigenvalues directly from the Hecke quadratic relation `σ² = (q - q⁻¹)σ + 1`
+and the half-twist square relation `(±q^{κ_λ})² = q^{2κ_λ}` below. -/
+
+/-- **Half-twist vs full-twist exponent square identity (`Δ_n² = θ_n`).**
+    Resolves the factor-of-2 convention split between `Keystone.theta` (`q^κ`)
+    and `RibbonTwistEigenvalue` (`q^{2κ}`): squaring the half-twist scalar
+    `(q^κ)²` or `(-q^κ)²` yields the full-twist eigenvalue `q^{2κ}`. -/
+theorem halfTwist_sq_eq_fullTwist (q : ℝ) (κ : ℤ) :
+    (q ^ κ) ^ 2 = q ^ (2 * κ) ∧ (- (q ^ κ)) ^ 2 = q ^ (2 * κ) := by
+  have hsq : (q ^ κ) ^ 2 = q ^ (2 * κ) := by
+    rw [← zpow_natCast (q ^ κ) 2, ← zpow_mul,
+        show κ * ((2 : ℕ) : ℤ) = 2 * κ by ring]
+  exact ⟨hsq, by rw [neg_sq, hsq]⟩
+
+/-- **`H_2(q)` full-twist eigenvalue on the symmetric channel `λ = [2]` (`κ_{[2]} = 1`).**
+    From the Hecke quadratic relation `σ₁² = (q - q⁻¹)σ₁ + 1` evaluated at the
+    symmetric eigenvalue `σ₁ = q` (`q ≠ 0`), the full twist `θ₂ = σ₁²` acts by
+    `q² = q^{2 · 1} = q^{2κ_{[2]}}`. -/
+theorem h2_fullTwist_eigenvalue_sym (q : ℝ) (hq : q ≠ 0) :
+    (q - q⁻¹) * q + 1 = q ^ (2 * (1 : ℤ)) := by
+  have h1 : (q - q⁻¹) * q + 1 = q ^ 2 := by
+    rw [sub_mul, inv_mul_cancel₀ hq]
+    ring
+  rw [h1]
+  exact (zpow_natCast q 2).symm
+
+/-- **`H_2(q)` full-twist eigenvalue on the alternating channel `λ = [1,1]` (`κ_{[1,1]} = -1`).**
+    From the Hecke quadratic relation `σ₁² = (q - q⁻¹)σ₁ + 1` evaluated at the
+    alternating eigenvalue `σ₁ = -q⁻¹` (`q ≠ 0`), the full twist `θ₂ = σ₁²` acts
+    by `q⁻² = q^{2 · (-1)} = q^{2κ_{[1,1]}}`. -/
+theorem h2_fullTwist_eigenvalue_alt (q : ℝ) (hq : q ≠ 0) :
+    (q - q⁻¹) * (-q⁻¹) + 1 = q ^ (2 * (-1 : ℤ)) := by
+  have h1 : (q - q⁻¹) * (-q⁻¹) + 1 = (q⁻¹) ^ 2 := by
+    have hqinv : q * (-q⁻¹) = -1 := by
+      rw [mul_neg, mul_inv_cancel₀ hq]
+    calc
+      (q - q⁻¹) * (-q⁻¹) + 1 = q * (-q⁻¹) - q⁻¹ * (-q⁻¹) + 1 := by ring
+      _ = -1 - q⁻¹ * (-q⁻¹) + 1 := by rw [hqinv]
+      _ = (q⁻¹) ^ 2 := by ring
+  rw [h1]
+  have h2 : (q⁻¹) ^ 2 = q ^ (-2 : ℤ) := by
+    rw [inv_pow, ← zpow_natCast q 2, ← zpow_neg]
+    rfl
+  rw [h2]
+  norm_num
+
+/-- **`H_3(q)` full-twist eigenvalues across all three Wedderburn channels
+    `[3], [2,1], [1,1,1]`.**
+    The Jucys–Murphy content sums are `κ_{[3]} = 0 + 1 + 2 = 3`,
+    `κ_{[2,1]} = 0 + 1 - 1 = 0`, and `κ_{[1,1,1]} = 0 - 1 - 2 = -3`.
+    Squaring the half-twist eigenvalues `Δ₃|_{[3]} = q³`,
+    `Δ₃|_{[2,1]}² = 1`, `Δ₃|_{[1,1,1]} = -q⁻³` yields
+    `(q^6, 1, q^{-6}) = (q^{2·3}, q^{2·0}, q^{2·(-3)})`. -/
+theorem h3_fullTwist_eigenvalues (q : ℝ) :
+    ((0 : ℤ) + 1 + 2 = 3 ∧ (q ^ (3 : ℤ)) ^ 2 = q ^ (2 * (3 : ℤ))) ∧
+    ((0 : ℤ) + 1 - 1 = 0 ∧ (1 : ℝ) ^ 2 = q ^ (2 * (0 : ℤ))) ∧
+    ((0 : ℤ) - 1 - 2 = -3 ∧ (-(q ^ (-3 : ℤ))) ^ 2 = q ^ (2 * (-3 : ℤ))) := by
+  refine ⟨⟨by decide, (halfTwist_sq_eq_fullTwist q 3).1⟩,
+          ⟨by decide, by simp⟩,
+          ⟨by decide, (halfTwist_sq_eq_fullTwist q (-3)).2⟩⟩
+
+/-- **Ribbon twist eigenvalue (general-`n` axiom class).**
     The full-twist central element `θ_n ∈ Z(H_n(q))` acts on the
     irreducible Hecke module `V_λ` by the scalar `q^{2κ_λ}`.
     We expose this as an axiom class; it is a standard consequence of
@@ -95,6 +165,15 @@ class RibbonTwistEigenvalue (q : ℝ) where
     ∀ (w kappa : ℤ),
       framing_eigenvalue w kappa = q ^ (2 * w * kappa)
 
+/-- Explicit model of `RibbonTwistEigenvalue q` for any `q > 0` (kept as a `def`
+    rather than a global `instance` so `[RibbonTwistEigenvalue q]` hypotheses
+    remain visible at call sites per `qou-00c5`). -/
+noncomputable def canonicalRibbonTwistEigenvalue (q : ℝ) (hq : 0 < q) :
+    RibbonTwistEigenvalue q where
+  q_pos := hq
+  framing_eigenvalue w kappa := q ^ (2 * w * kappa)
+  framing_formula _ _ := rfl
+
 /-! ## §3  Chirality factor as a Wedderburn-weighted ratio -/
 
 /-- The **chirality factor** for a braid `β` with writhe `w` is the
@@ -109,7 +188,7 @@ noncomputable def chiralityFactor
     (channels : List WedderburnChannel)
     (chars : List HeckeCharValue)
     (writhe : ℤ)
-    (h_len : channels.length = chars.length) : ℝ :=
+    (_h_len : channels.length = chars.length) : ℝ :=
   let twisted := List.zipWith (fun ch cv =>
     ch.weight * cv.val * RT.framing_eigenvalue writhe ch.kappa)
     channels chars
@@ -292,6 +371,11 @@ structure PNCrossing where
   sign : ℤ
   sign_pm : sign = 1 ∨ sign = -1
 
+/-- Concrete product over a list of signed `pn` crossings:
+    `∏_{c ∈ crossings} (1 + sign(c) · (q - q⁻¹))`. -/
+noncomputable def pnCrossingProduct (q : ℝ) (crossings : List PNCrossing) : ℝ :=
+  crossings.foldl (fun acc c => acc * (1 + (c.sign : ℝ) * (q - q⁻¹))) 1
+
 /-- **Empirical multiplicative crossing rule (conjecture).**
 
     For nuclear knots (`D`, `T`, `³He`, `⁴He`), paper assigns
@@ -299,25 +383,46 @@ structure PNCrossing where
       `a_K = Π_{c ∈ pn-crossings(β)} (1 + sign(c)·h)`.
 
     This rule reproduces all three paper assignments:
-    - `D` (1 positive crossing): `a_D = 1 + h`.
-    - `T`, `³He` (1 positive + 1 negative): `a = 1 - h²`.
-    - `⁴He` (2 positive + 2 negative): `a = (1 - h²)²`.
+    - `D` (1 positive crossing): `a_D = 1 + h` (`pnCrossingProduct_deuteron`).
+    - `T`, `³He` (1 positive + 1 negative): `a = 1 - h²` (`pnCrossingProduct_triton`).
+    - `⁴He` (2 positive + 2 negative): `a = (1 - h²)²` (`pnCrossingProduct_alpha`).
 
     A categorical derivation of **why** each pn crossing contributes
     `(1 ± h)` requires specifying the pn coupling in Schur–Weyl terms
-    and is left open. The most structurally natural origin is the
-    spin-½ braiding eigenvalue of `U_q(𝔰𝔩₂)` on the symmetric
-    component of `V₁ ⊗ V₁`. -/
+    and is left open. -/
 -- Ref: [leitner2026] braids-and-knots / chirality-writhe-ribbon-derivation
 class PNCrossingRule (q : ℝ) where
   /-- `q > 0` (substrate regime). -/
   q_pos : 0 < q
-  /-- The chirality factor factorises as a product over pn crossings. -/
+  /-- Chirality factor assigned to a signed `pn`-crossing list. -/
+  a_K_of_crossings : List PNCrossing → ℝ
+  /-- The chirality factor equals the product over `pn` crossings. -/
   pn_product_formula :
     ∀ (crossings : List PNCrossing),
-      ∃ (a_K : ℝ),
-        a_K = crossings.foldl
-          (fun acc c => acc * (1 + (c.sign : ℝ) * (q - q⁻¹)))
-          1
+      a_K_of_crossings crossings = pnCrossingProduct q crossings
+
+/-- Deuteron (`1` positive `pn` crossing): `a_D = 1 + (q - q⁻¹)`. -/
+theorem pnCrossingProduct_deuteron (q : ℝ) :
+    pnCrossingProduct q [⟨1, Or.inl rfl⟩] = 1 + (q - q⁻¹) := by
+  unfold pnCrossingProduct
+  simp
+
+/-- Triton / `³He` (`1` positive + `1` negative `pn` crossing): `a_T = 1 - (q - q⁻¹)²`. -/
+theorem pnCrossingProduct_triton (q : ℝ) :
+    pnCrossingProduct q [⟨1, Or.inl rfl⟩, ⟨-1, Or.inr rfl⟩] =
+      1 - (q - q⁻¹) ^ 2 := by
+  unfold pnCrossingProduct
+  simp only [List.foldl_cons, List.foldl_nil, Int.cast_one, Int.cast_neg]
+  ring
+
+/-- Alpha particle `⁴He` (`2` positive + `2` negative `pn` crossings):
+    `a_{⁴He} = (1 - (q - q⁻¹)²)²`. -/
+theorem pnCrossingProduct_alpha (q : ℝ) :
+    pnCrossingProduct q
+      [⟨1, Or.inl rfl⟩, ⟨-1, Or.inr rfl⟩, ⟨1, Or.inl rfl⟩, ⟨-1, Or.inr rfl⟩] =
+      (1 - (q - q⁻¹) ^ 2) ^ 2 := by
+  unfold pnCrossingProduct
+  simp only [List.foldl_cons, List.foldl_nil, Int.cast_one, Int.cast_neg]
+  ring
 
 end QOU.BraidKnot.ChiralityWritheRibbon

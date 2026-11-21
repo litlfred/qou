@@ -5,8 +5,8 @@ basis encodes all interaction pairings, and its inverse
 $G^{-1}$ gives the explicit dual construction
 $K^\vee = \sum_{i,j} c_i (G^{-1})_{ij} b_j$.
 
-> **$G$ is singular on $H_3$ under convention D — read $G^{-1}$ on the
-> quotient.** Corrected 2026-08-09. The paragraph above, and the dual
+> **$G$ is singular on $H_3$ under Convention D — read $G^{-1}$ on the
+> Temperley–Lieb quotient.** The dual
 > construction it defines, presuppose $\det G \neq 0$. That holds under the
 > excised **convention C**, where the antisymmetric weight
 > $y_{(1^3)} = 0.0227449\ldots$ is small but nonzero. It fails under the
@@ -23,11 +23,8 @@ $K^\vee = \sum_{i,j} c_i (G^{-1})_{ij} b_j$.
 > that $5$-dimensional quotient ($\sum \dim^2 = C_3 = 5$), not on the
 > $6$-dimensional $H_3$.
 >
-> Proved in
-> [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean):
-> `block_mem_radical` (a zero-weight block lies in the radical) →
-> `gram_det_eq_zero_of_radical_combination` ($\det G = 0$), with
-> `pairing_descends` and `mem_radical_of_pairing_zero` giving the descent.
+> Proved: a zero-weight block lies in the radical, hence $\det G = 0$, and
+> the pairing descends to the quotient by the radical.
 
 ## Markov trace of NF basis elements
 
@@ -49,8 +46,7 @@ $\sigma_0 \in H_1$).
 
 At the proton-pinned $q_0 \approx 1.1099785828$ with $z = q^3/(q^2+1)$,
 $hz^2 + z \approx 0.6912$, and the naive $z^3 \approx 0.2300$ is off by a
-factor of 3.0. (Until 2026-10-10 this line quoted $0.5514$ and $0.1245$, the
-excised convention-C values at the muon pin.)
+factor of 3.0 (compared with $0.5514$ and $0.1245$ under Convention C at the muon anchor).
 
 ## Operator identification via the dual
 

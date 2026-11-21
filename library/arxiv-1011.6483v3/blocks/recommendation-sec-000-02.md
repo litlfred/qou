@@ -1,1 +1,0 @@
-It should satisfy a ''cosheaf-like'' condition, meaning that $\mathcal{F}(V)$ can be computed by Čech complexes indexed on nice enough covers, called factorizing covers, see [@CG] and Section [\[S:Factorization\]](#S:Factorization){reference-type="ref" reference="S:Factorization"}.

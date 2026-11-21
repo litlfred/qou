@@ -1,1 +1,0 @@
-Two new approaches that may eventually provide a reliable value of G and the pursuit of which should be encouraged have also been proposed, one by using atom interferometry (Rosi, 2018; Jain et al., 2021) and the other using precision displacement sensors (Kawasaki, 2020).

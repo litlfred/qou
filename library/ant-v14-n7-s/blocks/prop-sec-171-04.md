@@ -1,1 +1,1 @@
-Let q be a power of 3. Let S = PSp2n(q), P2n+1(q), or P±
+Let q be a power of 3. Let S = PSp2n(q), P2n+1(q), or P± 2n(q) be simple with n ≥2, 3, 4 respectively. Then there exist nontrivial χ1, χ2, χ3 ∈Irr3′(B0(S))σ1 that are pairwise not Aut(S)-conjugate and such that χ1 is invariant under Aut(S).

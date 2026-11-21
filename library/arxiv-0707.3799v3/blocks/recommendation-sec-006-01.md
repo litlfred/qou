@@ -1,1 +1,0 @@
-In view of this identification, one should compare Lemma [\[MIt\]](#MIt){reference-type="ref" reference="MIt"} in subsection [\[secr\]](#secr){reference-type="ref" reference="secr"} below with Ginzburg's description in [@G] of ${\bf G_O}$-equivariant Intersection Cohomology of a ${\bf G_O}$-orbit in $\Gr$ as a ${\frak z}$-module.

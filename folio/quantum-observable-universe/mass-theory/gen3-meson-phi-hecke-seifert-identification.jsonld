@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-gen3-meson-phi-hecke-seifert-identification",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:gen3-meson-phi-hecke-seifert-identification",
+  "kind": "remark",
+  "title": "Third-generation meson ratio: value at $q_0$ and identification with $\\phi(1020)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-gen3-meson-phi-hecke-seifert"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-gen3-meson-phi-hecke-seifert",
+  "tags": [
+    "meson",
+    "phi-1020",
+    "comparison-with-measurement"
+  ],
+  "text": "gen3-meson-phi-hecke-seifert-identification.md",
+  "provenance": "authored"
+}

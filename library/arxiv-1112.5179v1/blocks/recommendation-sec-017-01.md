@@ -1,1 +1,0 @@
-In order to make a more precise statement, note that superconformal theories $T_M$ (and more generally theories in class $\mathcal{R}$) should have an index $\mathcal{I}_M(m,e;q)$ such that the powers of $q$ appearing at fixed $(m,e)$ are bounded from below (*cf.* Section [\[sec:actions\]](#sec:actions){reference-type="ref" reference="sec:actions"}).

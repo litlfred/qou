@@ -30,7 +30,11 @@ export default proposition({
   },
   title: "Terminal Resolution of Hadronic Mass",
   uses: [
-    "rem:skein-mass-relation",
+    // Was rem:skein-mass-relation, reached only for "q = q_0 fixed by the
+    // lepton mass ratio". q_0 is fixed by the CAL-2 calibration, which is a
+    // definition; the remark's route went through conj:topological-mass-formula.
+    // Retargeted 2026-11-20 (owner, option 2 on the q_0 pair; bean qou-tm3c).
+    "def:three-calibration-discipline",
     "cor:mass-identity-C",
   ],
   proofs: ["prf:terminal-resolution"],

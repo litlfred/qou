@@ -1,0 +1,1 @@
+For any framed braid α ∈Fn, we deﬁne Φd,D(bα) := Λn−1 D ( p λD)ϵ(α) trd,D(α) , where ϵ(α) is the sum of the exponents of the braiding generators σi in the word α. Then the map Φd,D(q, z) : Lf →RD, L 7→Φd,D(L) is a 2-variable isotopy invariant of oriented framed links.

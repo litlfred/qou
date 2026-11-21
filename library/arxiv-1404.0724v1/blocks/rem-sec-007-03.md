@@ -1,0 +1,1 @@
+The Burau representation is known to be faithful for n ≤3 and not faithful for n ≥5. It is not known whether it is faithful for n = 4. A theorem of Bigelow asserts that ψ4 is faithful if and only if the Jones polynomial detects the unknot.

@@ -1,0 +1,371 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "vonneumann2015",
+ "source_sha256": "781c6912b7d7b9a4",
+ "brief": "Von Neumann Algebras — 70 sections: Front matter; Hilbert Space; The Spectral Theorem",
+ "extended": "**Von Neumann Algebras**\n\n*November 13, 2015*\n\n161 pp, 70 sections.\n\n**Outline.** Front matter; 2.1 Hilbert Space; 2.2 The Spectral Theorem; 2.3 Polar decomposition; 2.4 Tensor product of Hilbert Spaces.; 3.2 The bicommutant theorem.; 2 M is strongly closed.; 3.3 Examples.; 3.4 Elementary properties of von Neumann algeb; 4.1 Deﬁnition of type I factor.; 4.2 Classiﬁcation of all type I factors; 4.3 Tensor product of von Neumann algebras.; 4.4 Multiplicity and ﬁnite dimensional von Neu; 4.5 A digression on index.; 5.1 Some simple but telling results on linear ; 5.2 The theorem; 6.1 Order on projections; 6.2 The GNS construction\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.1.2: If C is a closed convex subset of H and ξ is any vector in\n- Theorem 3.2.1: Let M be a self-adjoint subalgebra of B(H) containing 1,\n- Theorem 3.2.2: (von Neumann) Let M be a self-adjoint subalgebra of B(H)\n- Theorem 3.4.2: If {aα} is a net of self-adjoint operators with aα ≤aβ\n- Theorem 4.1.1: If M is a factor and p and q are non-zero projections in\n- Theorem 4.2.1: If M is a type I factor of a Hilbert space L, there are Hilbert",
+ "tokens": {
+  "brief": 21,
+  "extended": 283
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-5"
+  },
+  {
+   "id": "sec-000-21-hilbert-space",
+   "title": "Hilbert Space",
+   "pages": "5-8"
+  },
+  {
+   "id": "sec-001-22-the-spectral-theorem",
+   "title": "The Spectral Theorem",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-002-23-polar-decomposition",
+   "title": "Polar decomposition",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-003-24-tensor-product-of-hilbert-spaces",
+   "title": "Tensor product of Hilbert Spaces.",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-004-32-the-bicommutant-theorem",
+   "title": "The bicommutant theorem.",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-005-2-m-is-strongly-closed",
+   "title": "M is strongly closed.",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-006-33-examples",
+   "title": "Examples.",
+   "pages": "13-19"
+  },
+  {
+   "id": "sec-007-34-elementary-properties-of-von-neumann-algebras",
+   "title": "Elementary properties of von Neumann algebras.",
+   "pages": "19-25"
+  },
+  {
+   "id": "sec-008-41-deﬁnition-of-type-i-factor",
+   "title": "Deﬁnition of type I factor.",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-009-42-classiﬁcation-of-all-type-i-factors",
+   "title": "Classiﬁcation of all type I factors",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-010-43-tensor-product-of-von-neumann-algebras",
+   "title": "Tensor product of von Neumann algebras.",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-011-44-multiplicity-and-ﬁnite-dimensional-von-neuman",
+   "title": "Multiplicity and ﬁnite dimensional von Neumann algebras.",
+   "pages": "27-29"
+  },
+  {
+   "id": "sec-012-45-a-digression-on-index",
+   "title": "A digression on index.",
+   "pages": "29-31"
+  },
+  {
+   "id": "sec-013-51-some-simple-but-telling-results-on-linear-fun",
+   "title": "Some simple but telling results on linear functionals.",
+   "pages": "31-32"
+  },
+  {
+   "id": "sec-014-52-the-theorem",
+   "title": "The theorem",
+   "pages": "32-35"
+  },
+  {
+   "id": "sec-015-61-order-on-projections",
+   "title": "Order on projections",
+   "pages": "35-40"
+  },
+  {
+   "id": "sec-016-62-the-gns-construction",
+   "title": "The GNS construction",
+   "pages": "40-43"
+  },
+  {
+   "id": "sec-017-71-normal-states",
+   "title": "Normal states.",
+   "pages": "43-46"
+  },
+  {
+   "id": "sec-018-72-isomorphisms-are-spatial",
+   "title": "Isomorphisms are spatial.",
+   "pages": "46-47"
+  },
+  {
+   "id": "sec-019-73-exercises-on-two-projections",
+   "title": "Exercises on two projections.",
+   "pages": "47-47"
+  },
+  {
+   "id": "sec-020-0-0-and-q-corresponding-to",
+   "title": "0 ) and q corresponding to",
+   "pages": "47-49"
+  },
+  {
+   "id": "sec-021-81-trace-class-and-hilbert-schmidt-operators",
+   "title": "Trace class and Hilbert Schmidt operators.",
+   "pages": "49-54"
+  },
+  {
+   "id": "sec-022-82-a-technical-lemma",
+   "title": "A technical lemma.",
+   "pages": "54-55"
+  },
+  {
+   "id": "sec-023-91-standard-form",
+   "title": "Standard form.",
+   "pages": "55-69"
+  },
+  {
+   "id": "sec-024-111-group-actions",
+   "title": "Group actions.",
+   "pages": "69-71"
+  },
+  {
+   "id": "sec-025-112-the-crossed-product",
+   "title": "The crossed product",
+   "pages": "71-76"
+  },
+  {
+   "id": "sec-026-113-the-type-of-the-crossed-product",
+   "title": "The type of the crossed product.",
+   "pages": "76-79"
+  },
+  {
+   "id": "sec-027-114-a-wrinkle-2-cohomology",
+   "title": "A wrinkle: 2-cohomology.",
+   "pages": "79-81"
+  },
+  {
+   "id": "sec-028-115-more-on-the-group-measure-space-construc",
+   "title": "More on the group-measure space construc-",
+   "pages": "81-83"
+  },
+  {
+   "id": "sec-029-116-the-normaliser-the-full-group",
+   "title": "The normaliser-the full group.",
+   "pages": "83-85"
+  },
+  {
+   "id": "sec-030-121-unbounded-operators",
+   "title": "Unbounded Operators",
+   "pages": "85-86"
+  },
+  {
+   "id": "sec-031-0-r-inﬁnitely-diﬀerentiable-functions-with-compa",
+   "title": "(R) (inﬁnitely diﬀerentiable functions with compact support), Sf = f ′. Show that S is preclosed.",
+   "pages": "86-87"
+  },
+  {
+   "id": "sec-032-1-t-is-closed",
+   "title": "T ∗is closed.",
+   "pages": "87-87"
+  },
+  {
+   "id": "sec-033-2-dt-is-dense-iﬀt-is-preclosed-in-that-case-t-t",
+   "title": "D(T ∗) is dense iﬀT is preclosed. In that case T = T ∗∗.",
+   "pages": "87-88"
+  },
+  {
+   "id": "sec-034-122-spectral-theory-for-unbounded-operators",
+   "title": "Spectral Theory for Unbounded Operators",
+   "pages": "88-88"
+  },
+  {
+   "id": "sec-035-123-polar-decomposition",
+   "title": "Polar Decomposition",
+   "pages": "88-90"
+  },
+  {
+   "id": "sec-036-124-unbounded-operators-aﬃliated-with-a-von-neum",
+   "title": "Unbounded operators aﬃliated with a von Neumann algebra.",
+   "pages": "90-91"
+  },
+  {
+   "id": "sec-037-1-the-projection-onto-γt-is-a-2-2-matrix-of-oper",
+   "title": "The projection onto Γ(T) is a 2 × 2 matrix of operators in M.",
+   "pages": "91-91"
+  },
+  {
+   "id": "sec-038-2-if-t-ut-is-the-polar-decomposition-of-t-then-u",
+   "title": "If T = u|T| is the polar decomposition of T then u ∈M and f(|T|) ∈M for any bounded Borel function of |T|.",
+   "pages": "91-94"
+  },
+  {
+   "id": "sec-039-131-sf-and-their-graphs",
+   "title": "S,F and their graphs.",
+   "pages": "94-96"
+  },
+  {
+   "id": "sec-040-132-proof-of-the-main-theorem",
+   "title": "Proof of the main theorem.",
+   "pages": "96-98"
+  },
+  {
+   "id": "sec-041-133-examples",
+   "title": "Examples.",
+   "pages": "98-102"
+  },
+  {
+   "id": "sec-042-134-the-kms-condition",
+   "title": "The KMS condition.",
+   "pages": "102-105"
+  },
+  {
+   "id": "sec-043-141-the-connes-unitary-cocycle-radon-nikodym-the",
+   "title": "The Connes unitary cocycle Radon-Nikodym theorem.",
+   "pages": "105-109"
+  },
+  {
+   "id": "sec-044-151-the-hyperﬁnite-type-ii1-factor-r",
+   "title": "The hyperﬁnite type II1 factor R",
+   "pages": "109-112"
+  },
+  {
+   "id": "sec-045-152-the-type-iii-case",
+   "title": "The type III case.",
+   "pages": "112-113"
+  },
+  {
+   "id": "sec-046-161-generalities",
+   "title": "Generalities.",
+   "pages": "113-113"
+  },
+  {
+   "id": "sec-047-162-central-sequences-in-r",
+   "title": "Central sequences in R",
+   "pages": "113-114"
+  },
+  {
+   "id": "sec-048-163-type-ii1-factors-without-property-γ",
+   "title": "Type II1 factors without property Γ.",
+   "pages": "114-120"
+  },
+  {
+   "id": "sec-049-181-the-fock-spaces",
+   "title": "The Fock spaces.",
+   "pages": "120-120"
+  },
+  {
+   "id": "sec-050-1811-full-fock-space",
+   "title": "Full Fock space",
+   "pages": "120-121"
+  },
+  {
+   "id": "sec-051-1816-fermionic-fock-space",
+   "title": "Fermionic Fock space.",
+   "pages": "121-122"
+  },
+  {
+   "id": "sec-052-1821-car-algebra",
+   "title": "CAR algebra",
+   "pages": "122-122"
+  },
+  {
+   "id": "sec-053-182-car-algebra-ccr-algebra-and-the-extended-cun",
+   "title": "CAR algebra, CCR algebra and the (extended) Cuntz algebra.",
+   "pages": "122-124"
+  },
+  {
+   "id": "sec-054-183-vacuum-expectation-value",
+   "title": "Vacuum expectation value",
+   "pages": "124-125"
+  },
+  {
+   "id": "sec-055-184-quasi-free-states",
+   "title": "Quasi-free states",
+   "pages": "125-126"
+  },
+  {
+   "id": "sec-056-185-complex-structure",
+   "title": "Complex structure",
+   "pages": "126-128"
+  },
+  {
+   "id": "sec-057-18510-ccr-algebra",
+   "title": "CCR algebra",
+   "pages": "128-128"
+  },
+  {
+   "id": "sec-058-18511-cuntz-algebra",
+   "title": "Cuntz algebra",
+   "pages": "128-138"
+  },
+  {
+   "id": "sec-059-n-etracew-exists-and-is-equal-to-the-voiculescu",
+   "title": "E(Trace(w)) exists and is equal to the Voiculescu trace of the same word viewed as an element of C⟨X1, X2, · · · Xn⟩.",
+   "pages": "138-139"
+  },
+  {
+   "id": "sec-060-191-warmup-finite-groups",
+   "title": "Warmup. Finite Groups.",
+   "pages": "139-141"
+  },
+  {
+   "id": "sec-061-192-index",
+   "title": "Index.",
+   "pages": "141-146"
+  },
+  {
+   "id": "sec-062-193-the-tower-of-type-ii1-factors-and-the-eis",
+   "title": "The tower of type II1 factors and the ei’s.",
+   "pages": "146-147"
+  },
+  {
+   "id": "sec-063-194-index-restrictions",
+   "title": "Index restrictions",
+   "pages": "147-149"
+  },
+  {
+   "id": "sec-064-195-finite-dimensions",
+   "title": "Finite dimensions",
+   "pages": "149-155"
+  },
+  {
+   "id": "sec-065-appendix-a",
+   "title": "Appendix A",
+   "pages": "155-157"
+  },
+  {
+   "id": "sec-066-appendix-b",
+   "title": "Appendix B",
+   "pages": "157-157"
+  },
+  {
+   "id": "sec-067-m-then-the-modular-group-σφ",
+   "title": "Then the modular group σφ",
+   "pages": "157-161"
+  },
+  {
+   "id": "sec-068-bibliography",
+   "title": "Bibliography",
+   "pages": "161-161"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

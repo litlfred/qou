@@ -202,14 +202,16 @@ map cannot, because `ρ_λ 1 = 1` and the trace of an identity matrix is its
 size. -/
 theorem chi_lambda_one (lam : Partition n) :
     chi_lambda (WD := WD) lam 1 = (blockDim lam : R) := by
-  simp [chi_lambda]
+  change Matrix.trace (WD.rho lam 1) = (blockDim lam : R)
+  have h1 : WD.rho lam 1 = 1 := map_one (WD.rho lam)
+  rw [h1, Matrix.trace_one, Fintype.card_fin]
 
 /-- **`y_λ` is determined.** `block_scaling` at `x = 1`, with `χ^λ(1) = f^λ`:
 
   `tr_M(π_λ) = y_λ · f^λ`.
 
 The weight is no longer a free parameter: it is the block trace against the
-block dimension. Contrast `QOU.Hecke.RankOneDegeneracy`, where against the
+block dimension. Contrast `RankOneDegeneracy`, where against the
 previous class every nonzero rational was realisable as `y_λ` at every
 partition. -/
 theorem yLambda_determined (lam : Partition n) :
@@ -248,7 +250,7 @@ only internally to bridge to the `parts`-keyed `orthogonal` axiom. Makes the
 block algebra directly usable.
 
 The *standing* §9.4 debt is to **discharge** the `orthogonal` axiom itself
-(and `y_lambda` uniqueness, L-1) from the Hecke structure via Schur
+(and `y_lambda` uniqueness, L-1) from the algebra structure via
 character-orthogonality — Mathas (1999) §3.43, not yet in Mathlib. This lemma
 is the immediate consequence of the current axioms, not that discharge. -/
 theorem pi_mul_pi (lam mu : Partition n) :
@@ -283,7 +285,7 @@ theorem trace_exhaustive (x : A) :
     _ = WD.all_parts.sum (fun lam => MT.trace (x * WD.pi_lambda lam)) :=
           map_sum MT.trace _ WD.all_parts
 
-/-- **Wedderburn decomposition of the Markov trace, derived**:
+/-- **Block decomposition of the trace, derived**:
 `tr_M(x) = Σ_λ y_λ · χ^λ(x)`, the sum running over `WD.all_parts` (the
 complete set of irreducibles).
 
@@ -292,13 +294,7 @@ Two inputs, neither of them the conclusion: `complete` (via
 (which contributes the weights, one block at a time). Note where each enters —
 the `y_λ` are *not* a consequence of completeness, which is why assuming the
 whole identity was never necessary, and they are *not* free either, which is
-why the honest axiom is the block scaling.
-
-Previously this projected a `trace_decomp` field, i.e. proved nothing; see
-`block_scaling`'s docstring for what that field asserted and why it was worse
-than redundant. The general form of this argument, stated on a bare
-`AddMonoidHom` with no Hecke structure at all, is
-`QOU.QBeta.WedderburnTraceDecomposition.trace_eq_sum_weighted_characters`. -/
+why the honest axiom is the block scaling. -/
 theorem trace_decomposition (x : A) :
     MT.trace x = WD.all_parts.sum (fun lam =>
       WD.y_lambda lam * chi_lambda (WD := WD) lam x) := by
@@ -317,19 +313,16 @@ theorem pi_mul_shift (lam mu : Partition n) (a b : A) :
   rw [← mul_assoc, WD.central lam b, mul_assoc]
 
 variable (n) (q) in
-/-- The Hecke-side **Frobenius pairing** `⟨a,b⟩_F = tr_M(a·b)`
-(cf. `def:frobenius-hopf-substrate`: `⟨a,b⟩_F = ∫_A(a·b)` with the
-Markov trace as the integral). Symmetric by the Markov cyclicity
-axiom (M2). `n` and `q` are explicit because they are not inferable
-from `a b : A` alone. -/
+/-- The algebra-side **bilinear trace pairing** `⟨a,b⟩_F = tr_M(a·b)`.
+Symmetric by the cyclicity axiom (M2). `n` and `q` are explicit because
+they are not inferable from `a b : A` alone. -/
 def frobPairing (a b : A) : R := MT.trace (a * b)
 
 open Classical in
-/-- **(§9.4 L-3, cross-block vanishing)** — the Frobenius pairing of
-elements in *distinct* Wedderburn blocks vanishes:
+/-- **(§9.4 L-3, cross-block vanishing)** — the bilinear trace pairing of
+elements in *distinct* simple blocks vanishes:
 `⟨a·π_λ, b·π_μ⟩_F = 0` for `λ ≠ μ`. Derived from centrality
-(`pi_mul_shift`) + Kronecker orthogonality (`pi_mul_pi`); no new
-axiom beyond the `WedderburnDecomp` class. -/
+(`pi_mul_shift`) + Kronecker orthogonality (`pi_mul_pi`). -/
 theorem frobPairing_block_orthogonal (lam mu : Partition n) (h : lam ≠ mu)
     (a b : A) :
     frobPairing n q (a * WD.pi_lambda lam) (b * WD.pi_lambda mu) = (0 : R) := by
@@ -337,14 +330,12 @@ theorem frobPairing_block_orthogonal (lam mu : Partition n) (h : lam ≠ mu)
   unfold frobPairing
   rw [pi_mul_shift, pi_mul_pi, if_neg h, mul_zero, map_zero]
 
-/-- **(§9.4 L-3, block decomposition)** — the Frobenius pairing splits
-over the Wedderburn blocks with no residue:
+/-- **(§9.4 L-3, block decomposition)** — the bilinear trace pairing splits
+over the simple blocks with no residue:
 `⟨a,b⟩_F = Σ_λ ⟨a·π_λ, b·π_λ⟩_F`. Together with
 `frobPairing_block_orthogonal` this is the per-λ block-orthogonality
 `⟨·,·⟩_F = ⊕_λ ⟨·,·⟩_F^λ` of §9.4 L-3, derived from the resolution of
-identity (`trace_exhaustive`) + centrality + idempotency — conditional
-on the same `WedderburnDecomp` class as L-2's `pi_mul_pi`, with the
-class-axiom discharge (Mathas §3.43) remaining the L-1/L-2 debt. -/
+identity (`trace_exhaustive`) + centrality + idempotency. -/
 theorem frobPairing_block_decomp (a b : A) :
     frobPairing n q a b
       = WD.all_parts.sum (fun lam =>
@@ -363,6 +354,38 @@ theorem frobPairing_block_decomp (a b : A) :
           MT.trace ((a * WD.pi_lambda lam) * (b * WD.pi_lambda lam))) := by
         refine Finset.sum_congr rfl (fun lam _ => ?_)
         rw [h lam]
+
+/-- **Dimension-weighted sum of `y_λ` (`qou-6dzi`).**
+Evaluating `trace_decomposition` at `1` and substituting `chi_lambda_one`
+gives `∑_{λ ∈ all_parts} y_λ · f^λ = tr_M(1)`. -/
+theorem sum_yLambda_mul_blockDim :
+    WD.all_parts.sum (fun lam => WD.y_lambda lam * (blockDim lam : R)) = MT.trace 1 := by
+  have h := trace_decomposition (WD := WD) 1
+  rw [h]
+  refine Finset.sum_congr rfl (fun lam _ => ?_)
+  rw [chi_lambda_one (WD := WD) lam]
+
+/-- **Orthogonality excludes a unit idempotent alongside any non-zero block (`qou-6dzi`).**
+If `π_λ = 1` for some partition `λ`, then every distinct partition `μ` (`λ.parts ≠ μ.parts`)
+must have `π_μ = 0`. -/
+theorem pi_lambda_eq_one_forces_other_zero {lam mu : Partition n}
+    (h : lam.parts ≠ mu.parts) (h1 : WD.pi_lambda lam = 1) :
+    WD.pi_lambda mu = 0 := by
+  have horth := WD.orthogonal lam mu h
+  rw [h1, one_mul] at horth
+  exact horth
+
+/-- **No trivial constant-unit block decomposition over a nontrivial algebra (`qou-6dzi`).**
+In any nontrivial ring `A` (`(1 : A) ≠ 0`), two distinct partitions `λ.parts ≠ μ.parts`
+cannot both be assigned the unit projector `1`, machine-certifying why the trivial instance's
+`block_proj _ := 1` requires `Subsingleton` and fails on any nontrivial carrier. -/
+theorem not_both_pi_lambda_eq_one [Nontrivial A] {lam mu : Partition n}
+    (h : lam.parts ≠ mu.parts) :
+    ¬ (WD.pi_lambda lam = 1 ∧ WD.pi_lambda mu = 1) := by
+  rintro ⟨hlam, hmu⟩
+  have hzero := pi_lambda_eq_one_forces_other_zero (WD := WD) h hlam
+  rw [hmu] at hzero
+  exact one_ne_zero hzero
 
 end WedderburnDecomp
 

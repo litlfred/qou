@@ -8,7 +8,7 @@ $$
 
 ## Proof
 
-Under the bar involution $q \mapsto q^{-1}$ we have $\overline{h} = -h$ and $\overline{z} = z - h$, since $q^{-3}/(q^{-2}+1) = 1/(q(q^{2}+1)) = z - h$. Hence $\overline{\sigma_c} = z - h + \overline{c}\,h$, and $\sigma_c - \overline{\sigma_c} = (c + \overline{c} - 1)\,h$. For constant $c$ this is $(2c-1)\,h$, which vanishes with $h \neq 0$ only when $2c = 1$. $\square$
+Under the bar involution $q \mapsto q^{-1}$ one has $\overline{h} = -h$ and $\overline{z} = z - h$, since $q^{-3}/(q^{-2}+1) = 1/(q(q^{2}+1)) = z - h$. Hence $\overline{\sigma_c} = z - h + \overline{c}\,h$, and $\sigma_c - \overline{\sigma_c} = (c + \overline{c} - 1)\,h$. For constant $c$ this is $(2c-1)\,h$, which vanishes with $h \neq 0$ only when $2c = 1$. $\square$
 
 The result does not single out a canonical averaging. A $q$-dependent coefficient with $c + \overline{c} = 1$ is also bar-invariant, so uniqueness holds only among constant coefficients.
 
@@ -30,7 +30,7 @@ The QOU mass identity at $A \geq 2$ contracts a per-interface averaging function
 > about $1.67 \times 10^{-5}$ at the substrate anchor, whereas the uniform form
 > is bar-invariant exactly — it is the bar-symmetriser $\tfrac12(z + \overline{z})$
 > of the p-p factor, since $\overline{z} = z - h$
-> ([`prf:interface-knot-markov-z`](#prf:interface-knot-markov-z)).
+> ([Proof of interface knot markov z](#prf:interface-knot-markov-z)).
 >
 > The colour-weighted coefficient $c = 1/2 - \delta/4$ depends on $q$ and has
 > $c + \overline{c} - 1 = -\delta(1-q^{2})/4 \neq 0$, which is the computation above.
@@ -46,15 +46,10 @@ The QOU mass identity at $A \geq 2$ contracts a per-interface averaging function
 The substrate evaluation $w(t, t', q) = 1/(1 - h_q \cdot q^{10})$ derives from Bring's surface geometry:
 - Bring's surface has genus $g = 4$.
 - The genus-4 force-carrier pair is $\{T(2,9), T(3,5)\}$.
-- We prove $\alpha_{\text{shift}}(T_{p,k}) = k \cdot (p-1)$. For $T(3,5)$, $\alpha_{\text{shift}}(T(3,5)) = 10$. This specifies the pole order of $\sigma$.
+- $\alpha_{\text{shift}}(T_{p,k}) = k \cdot (p-1)$. For $T(3,5)$, $\alpha_{\text{shift}}(T(3,5)) = 10$. This specifies the pole order of $\sigma$.
 - The Bring color-tube weight inherits this derived pole order $q^{10}$.
 
-## Lean structure
-
-- `pnZD_inv`: $\overline{z} = z - h$ under convention D.
-- `pn_averaging_bar_iff`: the bar-invariance criterion $(c + \overline{c} - 1)h = 0$.
-- `pn_averaging_unique`: constant $c$ and $h \neq 0$ force $2c = 1$.
-- `pn_averaging_uniform_bar`: $z - h/2$ is bar-invariant.
-- `pn_averaging_unique_via_weight`: two averagings with the same 9-pair colour weight agree. Choosing that weight is open.
-
-All are sorry-free.
+All statements above are proved: $\overline{z} = z - h$ under convention D,
+the bar-invariance criterion, the uniqueness among constant coefficients, and
+the bar-invariance of $z - h/2$. In addition, two averagings with the same
+9-pair colour weight agree. Choosing that weight is open.

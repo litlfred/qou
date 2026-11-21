@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1203.3404v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "2318b14fb270266595726034523a964843a87d07b6f89e85a50a9a914f9fd70a",
   "file": "1203.3404v1.pdf"
@@ -16,13 +19,104 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 3,
+  "by_kind": {
+   "proposition": 1,
+   "theorem": 1,
+   "lemma": 1
+  },
+  "formalization_candidates": 3,
+  "by_domain": {
+   "math": 3
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 3
+  },
+  "by_evidence_location": {
+   "in-paper": 3
+  },
+  "by_lean_status": {
+   "unformalized": 3
+  },
+  "needs_lean_proof": 3
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2",
+   "name": null,
+   "statement": "With q = e\u2212\u03b43 2 , x = \u22122ie\u2212s 2\u03b42 as \u03b4 \u21920, 1\u03d51(0; \u2212q; q, \u2212qx) = 2\u03c0 2\u03b4\u22121 2e\u2212( \u03c0i \u03b43) ln 2+( \u03c0i 2\u03b4)s+ \u03c0i h Ai \u0010 se \u03c0i \u0011 + O(\u03b42) i , 1\u03d51(0; \u2212q; q, qx) = 2\u03c0 2\u03b4\u22121 2e\u2212( \u03c0i \u03b43) ln 2\u2212( \u03c0i 2\u03b4)s\u2212\u03c0i h Ai \u0010 se\u2212\u03c0i \u0011 + O(\u03b42) i for s in any compact domain of C. Here, Ai(\u00b7) is the Airy function. From this proposition, we can regard the q-Airy function as a q-analogue of the Airy function. We can easily check out that the q-Airy function satis\ufb01es the second order linear q-di\ufb00erence equation \u0000\u03c32 q + x\u03c3q \u22121 \u0001 u(x) = 0. (10) Another solution of the equation (10) is given by u(x) = e\u03c0i( log x log q) 1\u03d51(0; \u2212q; q, x) = e\u03c0i( log x log q) Aiq(\u2212x).",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-004-32-the-q-airy-function-aiqx.md (p. 9-10)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-004-32-the-q-airy-function-aiqx.md",
+   "section_title": "The q-Airy function Aiq(x)",
+   "pages": "9-10",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-004-32-the-q-airy-function-aiqx.md (p. 9-10)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-004-01",
+   "block_iri": "library/arxiv-1203.3404v1/blocks/prop-sec-004-01",
+   "claim_id": "arxiv-1203.3404v1#proposition:2",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3",
+   "name": null,
+   "statement": "For any x \u2208C\u2217\\ [\u2212\u03bb; q], \u03b8q(x)2f0 \u0012 0, 0; \u2212; q, \u2212x q \u0013 = (q; q)\u221e \u03b8q(x)\u03b8q2 \u0010 \u2212\u03bb2 qx \u0011 \u03b8q \u0010 \u2212\u03bb q \u0011 \u03b8q \u0000 \u03bb x \u0001 1\u03d51 \u0012 0; q; q2, q2 x \u0013 + (q; q)\u221e 1 \u2212q \u03b8q(x)\u03b8q2 \u0010 \u2212\u03bb2 x \u0011 \u03b8q \u0010 \u2212\u03bb q \u0011 \u03b8q \u0000 \u03bb x \u0001 \u03bb x 1\u03d51 \u0012 0; q3; q2, q3 x \u0013 . We de\ufb01ne the q-Borel-Laplace transformations of the \ufb01rst kind to obtain the connection formula between the origin and the in\ufb01nity. De\ufb01nition 3. For any analytic function f(x), the q-Borel transformation of the \ufb01rst kind B+ q is \u0000B+ q f \u0001 (\u03be) := X n\u22650 anq n(n\u22121) \u03ben =: \u03d5(\u03be), the q-Laplace transformation of the \ufb01rst kind L+ q is \u0000L+ q \u03d5 \u0001 (x) := X n\u2208Z \u03d5(\u03bbqn) \u03b8q \u0000\u03bbqn x \u0001. We remark that the q-Borel transformation B+ q is formal inver",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-012-43-the-connection-formula-of-the-series-2000-q.md (p. 15-19)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-012-43-the-connection-formula-of-the-series-2000-q.md",
+   "section_title": "The connection formula of the series 20(0,0;-;q,)",
+   "pages": "15-19",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-012-43-the-connection-formula-of-the-series-2000-q.md (p. 15-19)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-012-01",
+   "block_iri": "library/arxiv-1203.3404v1/blocks/thm-sec-012-01",
+   "claim_id": "arxiv-1203.3404v1#theorem:3",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "6",
+   "name": null,
+   "statement": "For any entire function f(x), we have L+ q \u25e6B+ q f = f. We give the proof of theorem 3.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-012-43-the-connection-formula-of-the-series-2000-q.md (p. 15-19)",
+   "external_refs": [],
+   "proof_excerpt": "We apply the q-Borel transformation B+ q to the divergent series v(x) = 2\u03d50(0, 0; \u2212; q, \u2212x/q). We obtain \u0000B+ q v \u0001 (\u03be) = 1\u03d50 \u0012 0; \u2212; q, \u03be q \u0013 =: \u03d5(\u03be). From lemma 5, \u03d5(\u03be) = (q; q)\u221e \u03b8q \u0010 \u2212\u03be q \u0011 0\u03d51 \u0012 \u2212; q; q2, q5 \u03be2 \u0013 \u2212(q; q)\u221e \u03b8q \u0010 \u2212\u03be q \u0011 q2 (1 \u2212q)\u03be 0\u03d51 \u0012 \u2212; q3; q2, q7 \u03be2 \u0013 16 wher",
+   "section_file": "sections/sec-012-43-the-connection-formula-of-the-series-2000-q.md",
+   "section_title": "The connection formula of the series 20(0,0;-;q,)",
+   "pages": "15-19",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-012-43-the-connection-formula-of-the-series-2000-q.md (p. 15-19)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-012-02",
+   "block_iri": "library/arxiv-1203.3404v1/blocks/lem-sec-012-02",
+   "claim_id": "arxiv-1203.3404v1#lemma:6",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  }
+ ]
 }

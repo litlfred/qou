@@ -1,0 +1,1 @@
+Let Lie(X) be a free Lie algebra over a set X and a ﬁeld k. Let S ⊂Lie(X) be a nonempty set of monic Lie polynomials. Then, with a deg-lex ordering on X∗, S is a Gröbner-Shirshov basis in Lie(X) if and only if S(−) is a Gröbner-Shirshov basis in k⟨X⟩where S(−) is just S but all [xy] substituted by xy −yx.

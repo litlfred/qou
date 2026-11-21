@@ -6,9 +6,15 @@ import Mathlib.Data.List.Basic
 # QOU.Archimedean.nuclear_groebner_reduction — Unique nuclear normal form via Gröbner reduction
 
 The Hecke algebra H_A(q) = R[B_A] / Skein has an admissible system
-(positive braid monomials, length-lex ordering) with Gröbner basis
-G = {Hecke, Yang-Baxter, far commutativity}. The division algorithm
-gives the unique normal form N̄(p,n).
+(positive braid monomials, length-lex ordering). Its Gröbner–Shirshov basis
+is the Hecke relation, far commutativity and the Bokut–Shiao family (which
+contains Yang–Baxter); the three defining families alone are NOT a GS basis
+for A ≥ 4 (`UGB.GrobnerShirshov.Hecke.NotAGSBasis.hecke_not_gs_basis_four`;
+completed system: `heckeCompleted_isGrobnerShirshovBasis`). The division
+algorithm gives the normal form N̄(p,n).
+
+This module formalises only the reduced-word predicate for the three defining
+families and a length bound; it does not formalise the basis or uniqueness.
 
 LaTeX label: `prop:nuclear-groebner-reduction`
 
@@ -71,8 +77,9 @@ structure HeckeRelation where
     rw [sub_pos, div_lt_one (by linarith : (0 : ℝ) < q)]
     nlinarith [q_gt_one]
 
-/-- The Gröbner basis for the Hecke algebra consists of three
-    types of relations. -/
+/-- The three defining relation families of the Hecke algebra. They are
+    NOT a Gröbner–Shirshov basis for `A ≥ 4`; the basis adds the Bokut–Shiao
+    family (see `UGB.GrobnerShirshov.Hecke.heckeCompleted_isGrobnerShirshovBasis`). -/
 -- Ref: [leitner2026] §6/nuclear-groebner-reduction
 inductive GroebnerRelation
   | hecke (i : ℕ)         -- σ_i² = (q-q⁻¹)σ_i + 1

@@ -99,10 +99,10 @@ and T_1 T_0 is the 3-cycle of S_3, whose eigenvalues in the standard 2-dim rep
 are the primitive cube roots of unity. Hence eigenvalues -exp(+-i pi/3), modulus
 1, and eigenphase EXACTLY 2 pi / 3 = 2.0943951... as q -> 1+.
 
-Note where the trefoil is in that expansion: e^- — the longest element
+Note where the electron word is in that expansion: e^- — the longest element
 T_0 T_1 T_0, the corpus's electron word — enters only at SECOND order, while the
 leading decay direction is 1 + L_-. The operator that does the decay is not the
-trefoil at leading order; the trefoil is its first correction.
+electron word at leading order; e^- is its first correction.
 
 ======================================================================
 5. THE ELLIPTICITY WINDOW, AND THE CLOSURE BY MEASUREMENT
@@ -688,7 +688,7 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
             "the CODATA proton pin. The cyclotomic tower q = zeta_N is a genuine tower with "
             "phi_3 = phi_6 = 2 pi / 3 exactly, but its minimum over N <= 120 still exceeds "
             "the required phase by 24x."),
-        "contentBlock": "prop:three-calibration-inputs",
+        "contentBlock": "def:three-calibration-discipline",
         "assertions": a,
         "allPassed": ok,
         "parameters": {"pin": "experimental (proton)", "dps": 40,

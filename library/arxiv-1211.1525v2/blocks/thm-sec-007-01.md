@@ -1,0 +1,1 @@
+Suppose mn l →a with 0 ≤a < ∞and m ≥n. Then, as n →∞, the empirical measure of mnρΓ converges weakly almost surely to the semicircle distribution SC1,√a. Here, we think of m = mn and l = ln as sequences which implicitly depend on n. Before presenting the proof we remark that in the case a = 0 the limit distribution SC1,0 = δ1 becomes a delta measure.

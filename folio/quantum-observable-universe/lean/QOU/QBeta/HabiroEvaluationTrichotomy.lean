@@ -216,4 +216,13 @@ theorem no_continuous_evaluation_of_one_lt {q : ℝ} (N : ℕ)
     (h : Filter.Tendsto (fun n => qPoch q n) Filter.atTop (nhds 0)) : ¬ (1 < q) :=
   fun hq => qPoch_not_tendsto_zero_of_one_lt hq N hN h
 
+
+/-- **Closed forms for `(q;q)₁` and `(q;q)₂` and their vanishing at `q = 1` (`qou-qb8e`).** -/
+theorem qPoch_one_two_and_eval_one {R : Type*} [CommRing R] (q : R) :
+    qPoch q 1 = 1 - q ∧
+      qPoch q 2 = (1 - q) * (1 - q ^ 2) ∧
+      qPoch (1 : R) 1 = 0 ∧
+      qPoch (1 : R) 2 = 0 := by
+  refine ⟨by simp [qPoch], by simp [qPoch], by simp [qPoch], by simp [qPoch]⟩
+
 end QOU.QBeta.HabiroEvaluationTrichotomy

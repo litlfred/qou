@@ -4,6 +4,13 @@ import QOU.AlgebraicSubstrate.QGenericBase
 import QOU.AlgebraicSubstrate.QGenericBaseReal
 import QOU.AlgebraicSubstrate.TwistSignTorsor
 import QOU.BringsSurface.CoveringDegreeRamification
+import QOU.RiemannSurface.GermStabiliserCyclic
+import QOU.RiemannSurface.CombinatorialMapQuotient
+import QOU.RiemannSurface.CombinatorialMapEuler
+import QOU.RiemannSurface.CycleCountSwap
+import QOU.RiemannSurface.MapGenusNonneg
+import QOU.BringsSurface.GenusFourFromEquivariantMap
+import QOU.BringsSurface.GenusFourFromGermStabilisers
 import QOU.Eightfold.AmbientInvolutionDoesNotDecideType
 import QOU.Eightfold.CommutativeImageDegeneration
 import QOU.Eightfold.ConnectedSumAnnihilator
@@ -22,6 +29,7 @@ import QOU.Eightfold.PointwiseAgreementOnReduced
 import QOU.Eightfold.GaugeAnsatzNesting
 import QOU.Eightfold.PtolemyTwist
 import QOU.Eightfold.SubgroupExtensionObstruction
+import QOU.Eightfold.Sym2AdjointSpinTwo
 -- This project formalizes the mathematical content of the QOU manuscript.
 -- Each chapter has a corresponding Lean file.
 --
@@ -76,6 +84,8 @@ import QOU.MathlibExt.ComplexRogersDilog
 -- window). All Mathlib gaps; all sorry-free.
 import QOU.MathlibExt.ImplicitScalar
 import QOU.Archimedean.ConstantOffOnePoint
+import QOU.Archimedean.ClausenDoubleAngleSeries
+import QOU.Archimedean.Cl2PentagonFromBlochWigner
 import QOU.Archimedean.BranchIntegerPinning
 -- Weierstrass primary-factor estimate ‖1 - E_p(z)‖ ≤ ‖z‖^{p+1}: the Mathlib-gap
 -- infrastructure that closes PI-2 of QOU.Mathlib.HadamardFactorization.
@@ -96,6 +106,9 @@ import QOU.Mathlib.BorelCaratheodory
 -- factor vanishes at an explicit point for every b /= 0, so it is not entire and
 -- IsEntireOfOrderLE cannot be assumed for it. Sorry-free.
 import QOU.Mathlib.HadamardApplicability
+-- Littlewood-Richardson coefficients c^nu_{lambda mu} as a count of LR tableaux
+-- (decidable; small values by kernel `decide`). Sorry-free.
+import QOU.Mathlib.LittlewoodRichardson
 -- Faddeev rigidity: the ratio of two FaddeevPhi solutions is ib- and i/b-periodic
 -- (the prefactor cancels), and given an entire ratio that extends from the dense
 -- complement of the prefactor zeros to everywhere. Collapses the open input
@@ -136,7 +149,10 @@ import QOU.MathlibExt.GramNondegenerate
 import QOU.MathlibExt.GroupAlgebraCenter
 import QOU.MathlibExt.RepresentationCharacter
 import QOU.MathlibExt.QPlancherel
+import QOU.MathlibExt.OcneanuChainFactorisation
+import QOU.MathlibExt.QPlancherelPartitionInstance
 import QOU.MathlibExt.MonoidalCalcVar
+import QOU.FrobeniusHopfData.PairingGaugeFluctuation
 import QOU.MathlibExt.QGaussianBinomialPascal
 import QOU.MathlibExt.DerivationRankNullity
 import QOU.MathlibExt.Dolbeault
@@ -152,6 +168,7 @@ import QOU.MathlibExt.OctonionComplexStructure
 import QOU.QuantumObservableUniverse.CalculusDimensionObstruction
 import QOU.QuantumObservableUniverse.SelfDualityDegree
 import QOU.StandardModel.ColourStabilizerAction
+import QOU.StandardModel.ColourBridge
 import QOU.StandardModel.ThetaQcdFramingCp
 import QOU.StandardModel.SecondCrossingInvariant
 -- Information content of the eightfold-way hypercharge battery: the RH half
@@ -229,6 +246,7 @@ import QOU.KZ.AssociatorKZ
 import QOU.KZ.BlockResidues
 import QOU.KZ.Drinfeld.Assoc
 import QOU.KZ.Drinfeld.Braiding
+import QOU.KZ.Drinfeld.BraidingVV
 import QOU.KZ.Drinfeld.Braided
 import QOU.KZ.Drinfeld.Hexagon
 import QOU.KZ.Drinfeld.Category
@@ -442,6 +460,7 @@ import QOU.Mass.WStdSuperExponential
 import QOU.Mathlib.YoungLatticeExchange
 import QOU.Mathlib.YoungLatticeCornerCount
 import QOU.Mass.LinearChainBondCount
+import QOU.Mass.WedderburnMassFormulaCoefficients
 import QOU.Mass.KappaWritheAsymptote
 import QOU.Mass.LinearChainBondFactorization
 import QOU.Mass.MilnorSignRepObstruction
@@ -462,6 +481,11 @@ import QOU.HadronicMass
 import QOU.AtomicMass
 import QOU.QuantumObservableUniverse
 import QOU.QuantumObservableUniverses.DilogPentagonAssociator
+import QOU.QuantumObservableUniverses.NoClosedCausalChains
+import QOU.QuantumObservableUniverses.HiggsVacuumResidual
+import QOU.QuantumObservableUniverses.NSymHostStructure
+import QOU.QuantumObservableUniverses.NSymSlotDerivation
+import QOU.QuantumObservableUniverses.NSymTraceAlgebra
 import QOU.QuantumObservableUniverses.QAnalysis
 import QOU.QuantumObservableUniverses.QBetaEnergyDictionary
 import QOU.QuantumObservableUniverses.QExpEntire
@@ -471,6 +495,9 @@ import QOU.SchurWeyl.BurnsideSpan
 import QOU.SchurWeyl.PiBlockSeparation
 import QOU.SchurWeyl.HeckeProductSurjective
 import QOU.SchurWeyl.HeckeWedderburnGeneral
+import QOU.SchurWeyl.OcneanuMarkovTraceEveryZ
+import QOU.SchurWeyl.OcneanuTraceFaithful
+import QOU.SchurWeyl.SpinSectorMeasure
 import QOU.SchurWeyl.HeckeSemisimpleGeneral
 import QOU.SchurWeyl.HeckeSemisimpleReal
 import QOU.SchurWeyl.HeckeCarrierEquiv
@@ -607,6 +634,7 @@ import QOU.Archimedean.LobMonotonicity
 import QOU.Archimedean.BlochWignerNonneg
 import QOU.Archimedean.BlochWignerPositive
 import QOU.Archimedean.HyperbolicVolumeMeasure
+import QOU.Archimedean.HyperbolicVolumeInversion
 import QOU.Archimedean.HyperbolicQuotient
 import QOU.Archimedean.HyperbolicVolumeFubini
 import QOU.Archimedean.IdealTetrahedronRegion
@@ -641,8 +669,13 @@ import QOU.BraidKnot
 -- (`SpechtStandardBasisCore`) still carry the Garnir straightening stub —
 -- that is pre-existing and now visible in the package build rather than
 -- hidden outside it.
+import QOU.BraidKnot.MesonFusionIndexSelection
+import QOU.BraidKnot.ElectronWordCandidates
+import QOU.BraidKnot.LongestWordNotTwoPhoton
+import QOU.BraidKnot.LongestWordNotTwoPhotonHecke
 import QOU.BraidKnot.SpechtBaseChange
 import QOU.BraidKnot.SpechtIrreducible
+import QOU.BraidKnot.GBRewriteDifferential
 import QOU.BraidKnot.SpechtCrossDominance
 import QOU.BraidKnot.SpechtCrossKappa
 -- Absolute irreducibility (W2 of the Wedderburn epic): the commutant of every
@@ -675,7 +708,12 @@ import QOU.BraidKnot.CentralC2Transport
 import QOU.BraidKnot.SpechtCentralC2Scalar
 import QOU.BraidKnot.SnIsotypicSpechtSplitInstance
 import QOU.BraidKnot.WedderburnUnconditional
-import QOU.BraidKnot.ExplicitCentralIdempotent
+import QOU.BraidKnot.ExplicitCentralIdempotentHecke
+import QOU.SchurWeyl.HeckeWedderburnAnyChar
+import QOU.BraidKnot.ExplicitCentralIdempotentGeneral
+import QOU.BraidKnot.CentralIdempotentInvolution
+import QOU.BraidKnot.CentralIdempotentSignTwist
+import QOU.BraidKnot.CentralIdempotentLaurent
 import QOU.BraidKnot.ContentSqSumBridge
 import QOU.BraidKnot.PlancherelSnDataGeneral
 import QOU.BraidKnot.KeystoneDefectGeneral
@@ -755,6 +793,7 @@ import QOU.substrate_radial_coordinate
 -- CI type-checks it (not an orphan).
 import QOU.SelectionRules
 import QOU.Braiding.non_self_intersection
+import QOU.Braiding.MarkovTraceClassicalLimit
 -- Keystone geometric-angle fingerprint: the ℓ=1 icosahedral character on the
 -- 5-fold rotation is the golden ratio (parameter-free; validates irrepToRotation).
 import QOU.BraidsAndKnots.IcosahedralCharacterGoldenRatio
@@ -1115,11 +1154,13 @@ import QOU.Archimedean.TauFunctorTargetSpec
 import QOU.Archimedean.DeckRealityEquivariance
 import QOU.Archimedean.BorelProperTimeMoment
 import QOU.MathlibExt.FrechetShohat
+import QOU.MathlibExt.StieltjesCompactDeterminacy
 import QOU.Archimedean.BalancedKernelConfluence
 import QOU.Archimedean.BalancedMomentConfluence
 import QOU.Archimedean.BalancedKernelTightness
 import QOU.Archimedean.BalancedCarrierJacobi
 import QOU.Archimedean.SWJacksonMomentFactorization
+import QOU.Archimedean.SWGaussianLogNormalMoments
 import QOU.Archimedean.SWCoreJacobi
 import QOU.Archimedean.TropicalClassTransport
 import QOU.Archimedean.AwZeroLocalization
@@ -1154,7 +1195,18 @@ import QOU.Mathlib.QGevreyOrder
 -- Liouville's third theorem (Σ ord = 0) stated open; f'/f-periodicity + divisor-
 -- lattice-periodicity bricks proved sorry-free.
 import QOU.Mathlib.EllipticDivisorDegree
+import QOU.Mathlib.EllipticAnnulusDescent
+import QOU.Mathlib.ArgumentPrincipleAnnulus
+import QOU.Mathlib.EllipticAnnulusWinding
+import QOU.Mathlib.LiouvilleThird
 import QOU.Mathlib.HadamardFactorization
+import QOU.Mathlib.JensenZeroCounting
+import QOU.Mathlib.ExponentOfConvergence
+import QOU.Mathlib.HadamardZeroFree
+import QOU.Mathlib.CanonicalProductGrowth
+import QOU.Mathlib.HadamardQuotient
+import QOU.Mathlib.HadamardMinimumModulus
+import QOU.Mathlib.HadamardAssembly
 -- Argument-principle scaffold (epic qou-lbth / bean qou-bmyx, brick PI-3):
 -- (1/2πi)∮ f'/f = #zeros − #poles stated open (residue-of-logDeriv = order is the
 -- Mathlib gap); #zeros−#poles=Σ ord counting brick + 2πi≠0 proved sorry-free.
@@ -1573,6 +1625,10 @@ import QOU.Mathlib.RothInductionHypothesis
 import QOU.Mathlib.KazhdanLusztigBasis
 import QOU.Mathlib.ConcentratedColumnCollapse
 import QOU.Mathlib.StandardYoungCountInstance
+import QOU.Mathlib.LieValuedForms
+import QOU.Mathlib.ManifoldForms
+import QOU.Mathlib.ContactForms
+import QOU.Mathlib.SDPStrongDuality
 
 -- The p-n interface bar structure, in three files.  `ClosedFormInterfaceFactors`
 -- carries the convention-D factors f_pp = z, f_nn = z - h, f_pn and their q-bar
@@ -1732,5 +1788,35 @@ import QOU.Mass.KZPullbackHypothesis
 import QOU.Mass.KohnoTwoPoint
 import QOU.KZ.Drinfeld.HeckeStrands
 import QOU.Mass.LagrangianKZInputs
+import QOU.Mass.BridgeADeligneGauge
+import QOU.Mass.BridgeADeligneKZ
 import QOU.QBeta.BorromeanThreeCuspNZHessian
 import QOU.QBeta.McPhailSnyderBridgeExclusion
+import QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm
+import QOU.BraidsAndKnots.NucleonWeightSpaceQTrace
+import QOU.BraidsAndKnots.NucleonIdempotentModifiedTrace
+import QOU.QuantumObservableUniverses.CategoricalLagrangianTwoTermBridge
+import QOU.MassTheory.GPMTThreeRowCumulantBridge
+import QOU.MassTheory.ThreeRowSpringerSYTDerivation
+import QOU.MassTheory.H4GPMTModifiedDimensionCumulants
+import QOU.Eightfold.USpinColemanGlashowLambdaSigma
+import QOU.StandardModel.OctonionColourTripletSplitting
+import QOU.StandardModel.ElectroweakBringSchwingerBridge
+import QOU.StandardModel.ElectroweakVevFixedPointDecomposition
+import QOU.StandardModel.ElectroweakVevGaps
+import QOU.Archimedean.BringSchwingerNormalizationDerivation
+import QOU.QBeta.CoshHolonomyAndGPMTBaseBridge
+import QOU.ShellCondensation.SelectorPrune
+import QOU.ShellCondensation.BringLatticeRanks
+import QOU.ShellCondensation.CoefficientPurity
+import QOU.ShellCondensation.GammaGammaAtom
+import QOU.Machinery.HeckeBraidedCategoryScaffoldInstances
+import QOU.Machinery.HeckeTowerBasicConstructionInstances
+import QOU.Machinery.KashiwaraCrystalBasicInstances
+import QOU.Machinery.MarkovTraceOnHeckeInstances
+import QOU.Machinery.SpectralSequenceBasicInstances
+import QOU.Machinery.StrongAJFigureEightInstances
+import QOU.MathlibExt.RSZIsoformalInterfaceInstances
+import QOU.MathlibExt.WenzlSchurElementInstances
+import QOU.QBeta.BringRiemannHurwitzRozanskyOhtsukiLoopTripleLinkingHopfSeifertBorelPolesTransseriesPartialConvergenceBridge
+import QOU.QBeta.RationalStateIntegralCuspTorsionBringHomologyGoldenDilogCostinTransseriesBridge

@@ -1,0 +1,1 @@
+Let A and B be positive contractions such that A ≤B and let µ and ν be their corresponding determinantal measures. Then µ  ν and thus µ ≼ν. In [57, Theorem 8.1] Lyons proved the last statement (µ ≼ν) in Theorem 4.13 under the additional hypothesis [A, B] = 0.

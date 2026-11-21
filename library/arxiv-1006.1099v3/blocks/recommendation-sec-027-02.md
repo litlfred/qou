@@ -1,1 +1,0 @@
-This also partially explains the particular choice of Spin- structure on T ; it should be equipped with a Spin-structure which in the Γ2-direction is inherited from the ambient correspondence S3, hence on that circle factor we must pick the bounding structure.

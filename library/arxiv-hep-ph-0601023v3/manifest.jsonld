@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-0601023v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0601023v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-ph-0601023v3",
+  "title": "Proton Stability in Grand Unified Theories, in Strings and in Branes",
   "contains": [
     "library/arxiv-hep-ph-0601023v3/sections/sec-front-matter",
     "library/arxiv-hep-ph-0601023v3/sections/sec-000",
@@ -90,7 +90,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-ph-0601023v3",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0601023v3.pdf",
     "source_sha256": "875ab040b50487a16a60aa5340395bbc110ab3551b601df3419ab433759e699d",
     "pages": 258,
@@ -101,8 +103,8 @@
       "stamp_date": "23 Apr 2007"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

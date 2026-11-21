@@ -5,7 +5,7 @@ This closes the gap the q-degree probe left. `symbolic_nf_q_degree_magic_probe`
 measured the **q-degree** of the six normal-form coefficients and found no
 magic signal (A = 2..20, merged as 09af8355f9). But the q-degree is NOT the
 Groebner-Shirshov filtration. The corpus's grading -- the one
-`prop:jet-prefix-gb-filtration` and `bond-order-eq-jet-degree-proof` are about
+`conj:jet-prefix-gb-filtration` and `bond-order-eq-jet-degree-proof` are about
 -- indexes by the **Coxeter length of the normal-form word**, not by degree in
 q. That grading had not been measured.
 
@@ -112,7 +112,7 @@ import os
 import sys
 import time
 from fractions import Fraction
-from math import comb
+from math import comb  # float64-ok: exact integer binomial coefficient
 
 sys.path[:0] = ['/home/user/qou/computations/probes',
                 '/home/user/qou/computations',
@@ -283,11 +283,11 @@ def main() -> int:
         per_level[A] = {"n_magic": len(mg), "n_non_magic": len(nm),
                         "null_p_per_observable": str(p), "directions": dirs}
         if any(d != "interleaved" for d in dirs):
-            print(f"  A={A:<2} {len(mg)}v{len(nm)}  P={float(p):.3f}/obs  {dirs}",
+            print(f"  A={A:<2} {len(mg)}v{len(nm)}  P={float(p):.3f}/obs  {dirs}",  # float64-ok: stdout display of exact Fraction
                   flush=True)
 
     print(f"\n  observed clean separations : {observed}", flush=True)
-    print(f"  expected under the null    : {float(expected):.2f}", flush=True)
+    print(f"  expected under the null    : {float(expected):.2f}", flush=True)  # float64-ok: stdout display of exact Fraction
 
     print("\n=== cross-level replication per grade ===", flush=True)
     replication = {}
@@ -307,7 +307,7 @@ def main() -> int:
         v = [r["_f"][g] for r in rows]
         spreads[str(g)] = {"min": str(min(v)), "max": str(max(v))}
         print(f"  grade {g} range over all {len(rows)} configs: "
-              f"{float(min(v)):.4f} .. {float(max(v)):.4f}", flush=True)
+              f"{float(min(v)):.4f} .. {float(max(v)):.4f}", flush=True)  # float64-ok: stdout display of exact Fraction
 
     any_consistent = any(v["consistent"] for v in replication.values())
     print(f"\n  ANY grade replicating across levels: {any_consistent}", flush=True)
@@ -442,21 +442,21 @@ def main() -> int:
                          computed=str(ctrl_ok), expected="True")
         wb.add_assertion("h3_grades_vs_bond_product_grades_at_A4",
                          computed=f"{MAX_GRADE + 1} vs {comb(4, 2) + 1}",
-                         expected=f"{MAX_GRADE + 1} vs {comb(4, 2) + 1}")
+                         expected="4 vs 7")
         wb.add_assertion("bond_sweep_distinct_shapes_over_configurations",
-                         computed=f"{len(sweep_seen)}/{len(sweep_rows)}",
-                         expected=f"{len(sweep_seen)}/{len(sweep_rows)}")
+                         computed=str(0 < len(sweep_seen) < len(sweep_rows)),
+                         expected="True")
         wb.add_assertion("z2n2_shapes_over_bond_counts",
-                         computed=f"{z2n2_distinct}/{len(z2n2)}",
-                         expected=f"{z2n2_distinct}/{len(z2n2)}")
-        for A in (2, 20):
+                         computed=str(0 < z2n2_distinct < len(z2n2)),
+                         expected="True")
+        for A, exp_grade in ((2, 15), (20, 1770)):
             wb.add_assertion(f"full_tower_max_grade_at_A{A}",
                              computed=str(comb(3 * A, 2)),
-                             expected=str(comb(3 * A, 2)))
+                             expected=str(exp_grade))
         for A, v in per_level.items():
             wb.add_assertion(f"both_groups_non_empty_at_A{A}",
-                             computed=f"{v['n_magic']}/{v['n_non_magic']}",
-                             expected=f"{v['n_magic']}/{v['n_non_magic']}")
+                             computed=str(v["n_magic"] > 0 and v["n_non_magic"] > 0),
+                             expected="True")
         out = wb.save(extra={"auditOnly": True})
         print(f"\nWrote {out}", flush=True)
     except Exception as exc:  # pragma: no cover

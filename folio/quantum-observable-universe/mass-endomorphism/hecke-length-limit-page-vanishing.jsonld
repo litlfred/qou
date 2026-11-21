@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/cor-hecke-length-limit-page-vanishing",
+  "@type": [
+    "folio-assistant-sci:Corollary",
+    "doco:Section"
+  ],
+  "label": "cor:hecke-length-limit-page-vanishing",
+  "kind": "corollary",
+  "title": "Vanishing above the diagonal of the length-filtered limit page, at every $n$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-gb-spectral-sequence",
+    "papers/quantum-observable-universe/blocks/prop-spectral-sequence-collapse"
+  ],
+  "cites": [
+    "references/dipper-james1986",
+    "references/weibel1994"
+  ],
+  "tags": [
+    "spectral-sequence",
+    "hochschild",
+    "coxeter-length",
+    "shell-condensation"
+  ],
+  "text": "hecke-length-limit-page-vanishing.md",
+  "provenance": "authored"
+}

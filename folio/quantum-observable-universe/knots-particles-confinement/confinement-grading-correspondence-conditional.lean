@@ -12,7 +12,7 @@
   it derives the confinement = KLR-grading correspondence directly
   from the class fields.
 
-  Refs: thm:confinement-grading-correspondence-conditional (this block),
+  Refs: conj:confinement-grading-correspondence-conditional (this block),
         conj:crystal-graph-realization,
         conj:confinement-grading-correspondence,
         def:confinement-level,

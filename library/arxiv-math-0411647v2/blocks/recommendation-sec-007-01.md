@@ -1,1 +1,0 @@
-There are many equivalent definitions of the transition measure of a Young diagram [@VershikKerov1995asymptoticbehavior; @Kerov1993transition; @Kerov1999differential; @OkounkovVershik1996; @Biane1998; @Okounkov2000randompermutations] and for the sake of completeness we shall recall them in the following.

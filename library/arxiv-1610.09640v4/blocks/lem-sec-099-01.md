@@ -1,0 +1,1 @@
+Let T ∈D(B ⊗Aop) and S, S′ ∈D(A ⊗Bop) satisfy S ⊗L B T ∼= A in D(Aen) and T ⊗L A S′ ∼= B in D(Ben). Then S′ ∼= S in D(A ⊗Bop). Therefore T is a tilting DG B-A-bimodule, and S is a tilting DG A-B-bimodule.

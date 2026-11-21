@@ -1,0 +1,1 @@
+Let q be a boundary marking on one of the interior pieces of D which gives us an evaluation map evq with values in Lin. The moduli space of broken discs with point constraint, MBr(M[l], L[l], p) is defined as the space ev−1 q (p). The expected dimension of the point constrained moduli space at a broken disc (u, D) is vir(u) −n.

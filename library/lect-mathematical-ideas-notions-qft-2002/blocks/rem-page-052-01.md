@@ -1,0 +1,1 @@
+More informally speaking, we see that the partition function Z for the theory with U = m?q?/2 has the form SHRSTTS): where C is a constant of our choice. Our choice from now on will be C = 1/2; we will see later why such a choice is convenient.

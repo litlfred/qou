@@ -252,4 +252,26 @@ theorem quad_max_le (C L x : ℝ) (hL : 0 < L) :
   rw [le_div_iff₀ (by positivity)]
   nlinarith [sq_nonneg (C - x * L), hL]
 
+
+/-- **Polynomial closed form for `6 · hminClosed k r` (`qou-0ie7`).** -/
+theorem six_mul_hminClosed (k r : ℕ) :
+    6 * hminClosed k r =
+      (k : ℤ) * ((k : ℤ) + 1) * (2 * (k : ℤ) + 1) + 6 * (r : ℤ) * ((k : ℤ) + 1) := by
+  have e2 := six_mul_sum_range_sq (k + 1)
+  push_cast at e2
+  have hpoly : ((k : ℤ) + 1) * ((k : ℤ) + 1 - 1) * (2 * ((k : ℤ) + 1) - 1) =
+      (k : ℤ) * ((k : ℤ) + 1) * (2 * (k : ℤ) + 1) := by ring
+  unfold hminClosed
+  linarith [e2, hpoly]
+
+/-- **Staircase boundary continuity of `hminClosed` (`qou-0ie7`).**
+Completing row `r = k + 1` above `T_k` matches the base of the next staircase `T_{k+1}`:
+`hminClosed k (k + 1) = hminClosed (k + 1) 0`. -/
+theorem hminClosed_step_continuity (k : ℕ) :
+    hminClosed k (k + 1) = hminClosed (k + 1) 0 := by
+  unfold hminClosed
+  rw [Finset.sum_range_succ (fun d : ℕ => (d : ℤ) ^ 2) (k + 1)]
+  push_cast
+  ring
+
 end QOU.BraidKnot.HookSum

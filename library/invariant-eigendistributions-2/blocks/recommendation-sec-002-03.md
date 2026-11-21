@@ -1,1 +1,0 @@
-We require that for suﬃciently small ϵ > 0, the inclusion i : B∗(V ) →B∗(U) should admit a proper homotopy inverse p : B∗(U) →B∗(V ), i.e. p ◦i ∼1 on B∗(V ), and i ◦p ∼1 on B∗(U) (4) with “∼” meaning “properly homotopic”.

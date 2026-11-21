@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-11T14:47:22.725921+00:00",
-  "commitSha": "61d93c97ff032466b7c745d4ceb2be7f6f1042f3",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T04:34:10.746117+00:00",
+  "commitSha": "37a281c359874db2715c3fddd74a2aa775d5fe24",
   "assertions": [
     {
       "name": "gram_rank_5_of_6",
@@ -38,10 +38,10 @@
     },
     {
       "name": "one_dot_v_nonzero",
-      "computed": "0.0902372332705994579014310982262099510435920130424363768152072",
-      "expected": "0.0902372332705994579014310982262099510435920130424363768152072",
+      "computed": "1",
+      "expected": "1",
       "passed": true,
-      "tolerance": "1e-50",
+      "tolerance": "0",
       "source": "1'v != 0 => the net row is satisfiable along the kernel whenever Gx = nf is; recorded so the value is on file"
     },
     {
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18051,
+  "durationMs": 17762,
   "computation": "frobenius-admissibility-net-row-probe",
   "scriptFile": "frobenius_admissibility_net_row_probe.py",
-  "scriptHash": "c7c993af72ad",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "6babad153298",
+  "scriptCommitSha": "04e50cefb45294986cff4c32b1e8323b1f050302",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -66,14 +66,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [

@@ -1,0 +1,1 @@
+The algebra homomorphism (65) induces isomorphisms HC∗(˜σ) : HC∗(H ⋊Γ) → L w∈⟨W ′⟩ c(w) L i=1 HC∗(O(T σw,i))Gσw,i , HPev/odd(˜σ) : HPev/odd(H ⋊Γ) → L w∈⟨W ′⟩ c(w) L i=1 Hev/odd DR (T σw,i)Gσw,i ∼= Hev/odd DR ( ˜T)W ′.

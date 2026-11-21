@@ -1,0 +1,1 @@
+The colored Jones function can be deﬁned for every simple Lie algebra g. Our proof of Theorem 1 generalizes and proves that the g–colored Jones function of a knot is q–holonomic (except for G2), see Theorem 6 below.

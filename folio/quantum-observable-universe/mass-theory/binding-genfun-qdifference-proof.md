@@ -19,8 +19,7 @@ shift operator $x\mapsto qx$: the multiplicative $q$-shift degenerates to the
 infinitesimal generator $x\,\partial_x$ (the confluent limit of a $q$-difference
 operator), so $G(qx;q)=R(q,x)G(x;q)$ passes to a linear differential equation
 $x\,\partial_x \widehat{G} = \rho(x)\,\widehat{G}$ on the realised
-$\widehat{G}=\tau G$ — the Dirac-type equation. The Lean witness
-[`QOU.Mass.binding_qdifference_recurrence`](#prop:binding-genfun-qdifference)
-packages the depth-$d$ recurrence, with position-dependent coefficients, as
-a structure and extracts the term identity; the existence of $R$ for the binding $G$ is the conjectural input
-(carried as the structure hypothesis). $\qquad\blacksquare$
+$\widehat{G}=\tau G$ — the Dirac-type equation. Given the depth-$d$
+recurrence, with position-dependent coefficients, the term identity follows;
+the existence of $R$ for the binding $G$ is the conjectural input
+(carried as a hypothesis). $\qquad\blacksquare$

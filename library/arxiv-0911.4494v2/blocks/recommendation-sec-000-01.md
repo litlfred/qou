@@ -1,1 +1,0 @@
-In the course of our proof, we must show the following result, which is of some independent interest: \begin{theorem*} Any simple $B\! \times \!B$-equivariant perverse sheaf on $G$ is $\BD$-equivariantly formal.

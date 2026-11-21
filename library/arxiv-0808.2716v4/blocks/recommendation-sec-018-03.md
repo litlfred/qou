@@ -1,1 +1,0 @@
-[Case 2: $f$ is shorter than $\ln(2)$.]{.underline} Then, by Lemma [\[lemma:length-non-canonical\]](#lemma:length-non-canonical){reference-type="ref" reference="lemma:length-non-canonical"}, $f$ must be an edge of the canonical triangulation.

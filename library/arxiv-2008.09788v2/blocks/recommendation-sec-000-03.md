@@ -1,1 +1,0 @@
-It should be noted, however, that Tsuchimoto's thorough inquiry into $p$-cur\-va\-tur\-es has exposed a multitude of problems of independent interest, in which certain statements from the present paper might appear.

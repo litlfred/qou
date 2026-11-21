@@ -19,6 +19,7 @@ export default definition({
     validation: "not_checked",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): The QOU framework's algebraic substrate appears through two faces: the [Frobenius–Hopf substrate](#def:frobenius-hopf-substrate) and the [adelic substrate](#def:adelic-substrate). Both realize a single underlying object: the **motivic substrate**, a Grothendieck-ring datum equipped with a tower of realization functors." },
     {
       kind: "note",
       body:
@@ -29,5 +30,9 @@ export default definition({
         "substrate axiom (not a missing proof), and downstream results take " +
         "a `[MotivicSubstrate]` instance as an explicit hypothesis.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([motivic mass measure](#def:motivic-mass-measure))" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): One assigns one realization functor per place $v$ of $\\mathbb{Q}$ ([adelic substrate](#def:adelic-substrate))." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The archimedean realization $\\rho_\\infty$ is the [archimedean realization functor](#def:archimedean-realization-functor), landing in $\\mathbb{R}$." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([Habiro completion](#prop:full-pole-structure-mass-trace))" },
   ],
 });

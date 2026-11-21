@@ -1,1 +1,0 @@
-In Section [\[sec-numerical\]](#sec-numerical){reference-type="ref" reference="sec-numerical"} we sketch how a version of the proof with explicit constants can deliver $c\geq 0.00000087$ (although this should not be taken too seriously, and can certainly be improved with a little more effort).

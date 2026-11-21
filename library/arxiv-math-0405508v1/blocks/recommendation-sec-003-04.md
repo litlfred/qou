@@ -1,1 +1,0 @@
-We shall prove the following claim, for all $N \geq 0$. \begin{itemize} \item[(*)] {\em Let $h \in H_n$ and $d_{n+i}^{*} \in {\cal D}_{n+i,0}'$ (for some $n,m \geq 1$ and $i=1,\ldots,m$) such that $hd_{n+1}^{*}\cdots d_{n+m}^{*} \in H(\leq N)$.

@@ -1,0 +1,1 @@
+Note that w2 and w1 = wN = (1 −wN 2 )−1 and w0 = 1 −w−1 are determined by ρλ, but the choice of N-th root w1 (or w0) is free; this choice determines w, and hence ρλ′, completely by the relation w0w1w2 = −q. Also, we have ρλ(X5) = y3 1y1 0A1 ⊗A0 = −q−1w2A1 ⊗A0, ρλ′(X′ 5) = −qw−1 2 A2 ⊗A1, so that ρλ(XN 5 ) = −w2IN ⊗IN, ρλ′((X′ 5)N) = −w−1 2 IN ⊗IN.

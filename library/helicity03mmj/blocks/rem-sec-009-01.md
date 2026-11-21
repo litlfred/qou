@@ -1,0 +1,1 @@
+Note that the proof of Arnold’s theorem 2.5 is achieved similarly by applying the Birkhoﬀergodic theorem to the ﬁeld ξ × ξ on M × M, and using the short path properties (Section 3.4). For more details on the case of a general transverse holonomy-invariant measure we refer to [17].

@@ -1,6 +1,6 @@
 # Recomputed low-isotope mass table
 
-Following the $q$-Hecke character closure ([`prop:q-hecke-seminormal-character-closure`](#prop:q-hecke-seminormal-character-closure)) and the $\rho_K$ refinement, three independent production paths to the Markov trace $\mathrm{tr}_M(\mathcal{B}_K)$ at $q = q_0$ agree to the 60-digit serialization floor (relative residual $\lesssim 10^{-49}$) across the proton, neutron, deuteron, tritium, and ${}^{3}\mathrm{He}$. Both tabulated paths are convention D on the borromean word at the proton pin, so the agreement certifies the character closure, not the choice of convention.
+Following the $q$-Hecke character closure ([Partition-sum form of $\mathrm{tr}_M$](#prop:q-hecke-seminormal-character-closure)) and the $\rho_K$ refinement, three independent production paths to the Markov trace $\mathrm{tr}_M(\mathcal{B}_K)$ at $q = q_0$ agree to the 60-digit serialization floor (relative residual $\lesssim 10^{-49}$) across the proton, neutron, deuteron, tritium, and ${}^{3}\mathrm{He}$. Both tabulated paths are convention D on the borromean word at the proton pin, so the agreement certifies the character closure, not the choice of convention.
 
 ## Cross-check
 
@@ -15,13 +15,11 @@ $$
   \mathrm{Binding}(K) = m_e \sum_{\lambda \vdash 3A} y_\lambda(q) \chi^\lambda(\mathcal{B}_K) \Delta_\lambda(K).
 $$
 
-This direct form supersedes the equivalent factorisation $\mathfrak{m}(K) = \rho_K m_e |\mathrm{tr}_M(K)|$, where $\rho_K = \rho_K^{\mathrm{LO}} + (\Sigma_\lambda y_\lambda \chi^\lambda \Delta_\lambda)/|\mathrm{tr}_M|$. In the factorisation, the leading-order term $\rho_K^{\mathrm{LO}} = (Z m_p + N m_n)/(m_e |\mathrm{tr}_M|)$ forces the $|\mathrm{tr}_M|$ factor to cancel identically against the outer multiplier, recovering the constituent mass $Z m_p + N m_n$. While $\rho_K$ packages constituent and binding masses into a single symbol, the sole physical content resides in the $\Delta_\lambda$ correction. We therefore write the constituent sum and binding terms side by side.
+This direct form supersedes the equivalent factorisation $\mathfrak{m}(K) = \rho_K m_e |\mathrm{tr}_M(K)|$, where $\rho_K = \rho_K^{\mathrm{LO}} + (\Sigma_\lambda y_\lambda \chi^\lambda \Delta_\lambda)/|\mathrm{tr}_M|$. In the factorisation, the leading-order term $\rho_K^{\mathrm{LO}} = (Z m_p + N m_n)/(m_e |\mathrm{tr}_M|)$ forces the $|\mathrm{tr}_M|$ factor to cancel identically against the outer multiplier, recovering the constituent mass $Z m_p + N m_n$. While $\rho_K$ packages constituent and binding masses into a single symbol, the sole physical content resides in the $\Delta_\lambda$ correction. One therefore writes the constituent sum and binding terms side by side.
 
 ### Calibrated form
 
-We present the calibrated form, where $\rho_K^{\mathrm{LO}}$ consumes CODATA $m_p$ and $m_n$ as upstream inputs. This violates the [three-calibration discipline](../mass-theory/three-calibration-inputs.md) by injecting $m_p$ and $m_n$ as extraneous calibration constants. The proton and neutron rows are tautological by construction.
-
-Witness: [`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json).
+One presents the calibrated form, where $\rho_K^{\mathrm{LO}}$ consumes CODATA $m_p$ and $m_n$ as upstream inputs. This violates the [three-calibration discipline](../mass-theory/three-calibration-inputs.md) by injecting $m_p$ and $m_n$ as extraneous calibration constants. The proton and neutron rows are tautological by construction.
 
 See [Table 2](#tbl:recomputed-low-isotope-mass-table-table2-data).
 
@@ -29,9 +27,9 @@ See [Table 2](#tbl:recomputed-low-isotope-mass-table-table2-data).
 
 ### Full $\mathfrak{Q}_\beta$ prediction
 
-The framework predicts the $\beta$-decay $Q$-value using only the electron mass (CAL-1) and the substrate parameter $q_0$ (CAL-2) ([`prop:neutron-qvalue-symbolic`](../nuclear-interactions/neutron-qvalue-symbolic.md)). We inject no CODATA nucleon masses and do not use $\mathfrak{Q}_\beta$ as an input. Rather, $\mathfrak{Q}_\beta$ becomes an output.
+The framework predicts the $\beta$-decay $Q$-value using only the electron mass (CAL-1) and the substrate parameter $q_0$ (CAL-2) ([Symbolic $Q$-value of free neutron decay](../nuclear-interactions/neutron-qvalue-symbolic.md)). One injects no CODATA nucleon masses and does not use $\mathfrak{Q}_\beta$ as an input. Rather, $\mathfrak{Q}_\beta$ becomes an output.
 
-The ruled convention-D base at single wrap (owner ruling 2026-09-08: $\varepsilon$ is the Markov trace at $z_D = q_0^3/(q_0^2+1)$) is:
+The Convention-D base evaluation at single wrap ($\varepsilon$ evaluated via the Markov trace at $z_D = q_0^3/(q_0^2+1)$) is:
 
 $$
 \boxed{
@@ -51,7 +49,7 @@ See [Table 3](#tbl:recomputed-low-isotope-mass-table-table3-data).
 
 #### Single-wrap symbolic versus typed-crossings 6-term form
 
-The typed-crossings 6-term decomposition ([`beta-decay-energy-scale.md`](../nuclear-interactions/beta-decay-energy-scale.md)) has $|\Delta(\mathrm{net})| = 0.18829$ and yields $\mathfrak{Q}_\beta^{(\text{6-term})} = 0.7882$ MeV ($+0.747\%$). The single-wrap form is tighter by a factor of 4.46. The $L_\pm$ and $e^-$ contributions vanish exactly in the symbolic single-wrap difference, but pick up small asymmetric finite-size contributions in the typed-crossings basis. Both of these are Form A (weight-$1$) evaluations and are retired with it; the typed-crossings form remains in the witness solely for cross-checking.
+The typed-crossings 6-term decomposition ([Energy scale of the Hecke normal form](../nuclear-interactions/beta-decay-energy-scale.md)) has $|\Delta(\mathrm{net})| = 0.18829$ and yields $\mathfrak{Q}_\beta^{(\text{6-term})} = 0.7882$ MeV ($+0.747\%$). The single-wrap form is tighter by a factor of 4.46. The $L_\pm$ and $e^-$ contributions vanish exactly in the symbolic single-wrap difference, but pick up small asymmetric finite-size contributions in the typed-crossings basis. Both of these are Form A (weight-$1$) evaluations and are retired with it; the typed-crossings form remains in the witness solely for cross-checking.
 
 #### Basis dependence
 
@@ -87,7 +85,7 @@ These orders are rigorously exact, as lower-order poles cannot cancel a strict m
 
 ## Cross-references
 
-- [`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md): The master mass formula $\mathfrak{m}(K) = \rho_K m_e |\mathrm{tr}_M|$.
-- [`prop:q-hecke-seminormal-character-closure`](q-hecke-seminormal-character-closure.md): Partition-sum and canonical-reducer agreement.
-- [`prop:hecke-branching-trace-decomposition`](hecke-branching-trace-decomposition.md): Operator-valued Littlewood-Richardson block formula.
-- [`prop:per-nucleon-shift-additive-linearity`](../mass-theory/per-nucleon-shift-additive-linearity.md): the categorical verification.
+- [Atomic mass as Markov trace of the Gröbner–Shirshov normal form](atomic-mass-gb-nf.md): The master mass formula $\mathfrak{m}(K) = \rho_K m_e |\mathrm{tr}_M|$.
+- [Partition-sum form of $\mathrm{tr}_M$](q-hecke-seminormal-character-closure.md): Partition-sum and canonical-reducer agreement.
+- [Hecke branching trace decomposition](hecke-branching-trace-decomposition.md): Operator-valued Littlewood-Richardson block formula.
+- [Per-new-nucleon additive linearity: $\mathrm{shift}(Z, N) = 18Z + 21N + 1$ on canonical pppnnn ordering](../mass-theory/per-nucleon-shift-additive-linearity.md): the categorical verification.

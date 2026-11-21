@@ -1,1 +1,0 @@
-But the only elements of ${\rm SU}(5)$ that commute with everybody in the ${\rm SU}(2) \times {\rm SU}(3)$ subgroup are diagonal, since they must separately commute with ${\rm SU}(2) \times 1$ and $1 \times {\rm SU}(3)$, and the only elements doing so are diagonal.

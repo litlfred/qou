@@ -1,0 +1,1 @@
+There is an invariant for regular isotopy of projections of links and tangled trivalent graphs called ⟨·⟩A2 which is given by the following recursive rules: | 〉A2 = (q+1+q -1)| 〉A2 | 〉A2 = (q 1/2−q -1/2)| 〉A2 | 〉A2 = | 〉A2 + | 〉A2 | 〉A2 = −q 1/6| 〉A2 + q -1/3| 〉A2 | 〉A2 = −q -1/6| 〉A2 + q 1/3| 〉A2 where q is an indeterminate and ⟨∅⟩A2 = 1.

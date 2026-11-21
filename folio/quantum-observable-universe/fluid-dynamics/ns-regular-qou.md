@@ -14,7 +14,7 @@ $$
 
 whose degree is the Euler characteristic $\deg e(\xi) = \mathrm{tr}(\kappa_0) = \chi(A)$ ([Descartes theorem](#thm:ns-singularity-descartes), item 1).
 
-We categorise $(\mathbf{C}, A, \tau)$ as:
+Then $(\mathbf{C}, A, \tau)$ is classified as:
 
 - **NS-regular** if $\mathrm{NS}(A) = 0$ (equivalently $\chi(A) = 0$);
 - **NS-singular** if $\mathrm{NS}(A) \neq 0$ (equivalently $\chi(A) \neq 0$).
@@ -26,7 +26,7 @@ The NS obstruction tracks only the rigid categorical topology of $(\mathbf{C}, A
 | $\neq 0$ | $\neq 0$ | NS-singular (internal QOU label) |
 | $= 0$ | $= 0$ | NS-regular (internal QPU label) |
 
-*Why $\mathrm{NS}(A)$ is defined on the global surface $\mathcal{S}$ rather than on $\Sigma$.* An earlier version of this definition set $\mathrm{NS}(A) = \kappa_0|_\Sigma \in H^2(\Sigma, \mathcal{B})$ on a one-dimensional vortex-collision locus $\Sigma \subset \mathcal{S}$ and invoked Kummer non-divisibility to infer $\mathrm{NS}(A) \neq 0$ from $\chi(A) \neq 0$. Because $\Sigma$ is one-dimensional, $H^2(\Sigma, \cdot) = 0$ and every surface class restricts to zero on $\Sigma$ ([Descartes theorem](#thm:ns-singularity-descartes), item 3), making the $\Sigma$-restriction identically zero for every $\chi(A)$. Restating $\mathrm{NS}(A)$ as the global surface class $e(\xi) \in H^2(\mathcal{S}, \mathbb{Z})$ restores a non-degenerate topological invariant determined directly by $\deg e(\xi) = \chi(A)$ (matching `QOU.FluidDynamics.qou_ns_in_qou`), at the cost that $\mathrm{NS}(A)$ no longer localises on a collision curve $\Sigma$.
+*Why $\mathrm{NS}(A)$ is defined on the global surface $\mathcal{S}$ rather than on $\Sigma$.* An earlier version of this definition set $\mathrm{NS}(A) = \kappa_0|_\Sigma \in H^2(\Sigma, \mathcal{B})$ on a one-dimensional vortex-collision locus $\Sigma \subset \mathcal{S}$ and invoked Kummer non-divisibility to infer $\mathrm{NS}(A) \neq 0$ from $\chi(A) \neq 0$. Because $\Sigma$ is one-dimensional, $H^2(\Sigma, \cdot) = 0$ and every surface class restricts to zero on $\Sigma$, making the $\Sigma$-restriction identically zero for every $\chi(A)$. Restating $\mathrm{NS}(A)$ as the global surface class $e(\xi) \in H^2(\mathcal{S}, \mathbb{Z})$ restores a non-degenerate topological invariant determined directly by $\deg e(\xi) = \chi(A)$, at the cost that $\mathrm{NS}(A)$ no longer localises on a collision curve $\Sigma$.
 
 The defining observability axiom $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ acts as a **sufficient condition** guaranteeing $\chi(A) \neq 0$ (forcing rigid irreducibility on the adjoint representation to guarantee a nonzero Euler class). Consequently every quantum observable universe satisfies $\mathrm{NS}(A) = e(\xi) \neq 0$ and is internally NS-singular; a $\chi(A) = 0$ universe is a quantum pre-universe (QPU), not a QOU.
 

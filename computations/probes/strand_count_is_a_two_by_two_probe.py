@@ -209,7 +209,7 @@ def main() -> int:
 
     # --- 7. H_A is a coarsening, not a fourth disputant ---------------------
     print("CHECK 7 -- the fourth cell H_A is an approximation, not a claim")
-    lvl = read("folio/quantum-observable-universe/knots-particles-confinement/level-sufficiency-interprets.md")
+    lvl = read("folio/quantum-observable-universe/nuclear-interactions/level-sufficiency-interprets.md")
     has_ha = "H_A(R, q)" in lvl
     is_coarse = "Default-coarse" in lvl or "default-coarse" in lvl
     print(f"    level-sufficiency-interprets mentions H_A(R,q) -> {has_ha}")

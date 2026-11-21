@@ -10,6 +10,15 @@ import Mathlib.Data.Multiset.Basic
 
 ## Two structural obstructions to a canonical D-meson flux-tube braid
 
+**Reading of the quark labels in Obstruction B (owner rulings 2026-11-20 and
+2026-11-21).** A quark is an **unknot strand** carrying one crossing letter,
+not a torus knot. The numbers `3, 5, 7` that Obstruction B attaches to quarks
+are the **crossing counts of their lepton partners** `T(2,3), T(2,5), T(2,7)`,
+i.e. generation labels; "the quark's winding" below means that label. The
+theorems are unchanged: `windingContent` is a multiset of labels, and the
+D/kaon collision is a collision of labels. Obstruction A (the 2-strand
+reduction) is about the tube braid and is not affected.
+
 Formalises the pruning invariants behind the honest negative in
 `docs/audits/2026-08-02-meson-fluxtube-junction-reduction.md`
 (bean `qou-qpj9`, the underived meson-binding braid from PR #4608).
@@ -46,8 +55,8 @@ content.
 
 The owner-redirected route (D meson `c̄u`, the asymmetric single tube
 `c̄`(n) | light(3)) fixes the braid via the symbolic gg→`c̄c`
-operator-selection, which selects a torus-knot *generation winding*
-`n ∈ {3,5,7}`.
+operator-selection, which selects a *generation label* `n ∈ {3,5,7}` (the
+crossing count of the quark's lepton partner `T(2,n)`).
 
 **CORRECTED 2026-08-24.** This docstring claimed the corpus assigns
 **charm two incompatible windings**, `T(2,5)` and `T(2,7)`. It does
@@ -130,9 +139,11 @@ inductive Meson
   | Dmeson  -- c̄ u  (open charm)
 deriving DecidableEq
 
-/-- The **generation-winding content** the `T(2,n)` dictionary sees:
-    the unordered pair `{n₁, n₂}` of the two quark windings, with the
-    corpus assignment `u,d = 3`, `s = 5`, and **charm `= 5`**
+/-- The **generation-label content** the `T(2,n)` dictionary sees:
+    the unordered pair `{n₁, n₂}` of the two quarks' generation labels
+    (each the crossing count of the quark's lepton partner; the quarks
+    themselves are unknot strands), with the corpus assignment
+    `u,d = 3`, `s = 5`, and **charm `= 5`**
     (`knot-formula-table` row 11). The operator-selection / crossing-
     count rule is a symmetric function of this multiset. -/
 def windingContent : Meson → Multiset ℕ

@@ -1,0 +1,1 @@
+Li(p) n (ζ) is in Qp(ζ) the same holds for Lin(ζ) by Proposition 4.2. The claim about the coeﬃcients is then clear from the inductive formulae. □ For use in some of the estimates in the following sections we also prove a few results about the absolute values of Li(p) n (z) and Lin(z) (cf. [3]). Note that if |z| < 1, then |Li(p) n (z)| = |z| by (3.3). AMNON BESSER AND ROB DE JEU

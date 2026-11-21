@@ -1,1 +1,0 @@
-It follows that $\sigma$ must be isotopic relative to $\partial D \cup P$ to $(\Delta^2)^k$ for some $k \in {\bf{Z}}$, where $\Delta^2$ is a Dehn twist about the boundary of a collar neighborhood of $\partial D$.

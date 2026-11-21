@@ -1,0 +1,1 @@
+If K is a coideal ∗-subalgebra of B then the principal graph of the subfactor N ⊂N>⊳K is given by the connected component of the Bratteli diagram of the inclusion δ(K) ⊂bB containing the trivial representation of bB.

@@ -9,7 +9,7 @@ gate).**
 > near-match ($\approx 3b$, $-2.9\%$); the saturation count $\binom{k}{2}$ is
 > data-selected. Model G derives the *composite structure* — **which** $\alpha
 > \cdot \alpha$ pairs activate, via the proved gate
-> [`prop:alpha-cluster-activation-gate`](#prop:alpha-cluster-activation-gate) —
+> [The $\alpha$-cluster activation gate](#prop:alpha-cluster-activation-gate) —
 > **not** the absolute cluster base. It is recorded here for its structural
 > content alone, and must not be cited as an ab-initio prediction.
 
@@ -48,11 +48,11 @@ closure):
 
 | ingredient | tier |
 |---|---|
-| bond-count multiplicity $M_n = n-1$ | proved-Lean (`prop:linear-chain-bond-count`) |
-| $\bar\mu$ sign-rep obstruction (coupling through $\lvert\bar\mu\rvert$ only) | proved-Lean |
-| Milnor-indeterminacy gate (Hopf spectator $\Rightarrow$ inactive; $\alpha$-only activation) | proved-Lean (+ literature `milnor1954`) |
-| W-plane annihilation on $\mathrm{Vol}=0$ bond channels | proved-Lean |
-| CAL-3 bond-channel class selection | conditional (on the `BindingVolumeLedger` class) |
+| bond-count multiplicity $M_n = n-1$ | proved ([linear-chain bond count](#prop:linear-chain-bond-count)) |
+| $\bar\mu$ sign-rep obstruction (coupling through $\lvert\bar\mu\rvert$ only) | proved |
+| Milnor-indeterminacy gate (Hopf spectator $\Rightarrow$ inactive; $\alpha$-only activation) | proved (+ literature `milnor1954`) |
+| W-plane annihilation on $\mathrm{Vol}=0$ bond channels | proved |
+| CAL-3 bond-channel class selection | conditional (on an open binding-volume ledger hypothesis) |
 | $\alpha\cdot\alpha$ activation applied to specific isotopes ($^8\mathrm{Be}\approx 0$, $k\ge 3$) | conditional on the Brunnian arrangement model |
 | $b = 0.78\ \mathrm{MeV/nucleon}$ | **empirical** (calibrated on 3 one-bond composites) |
 | $\binom{k}{2}$ saturation counting | **data-selected** |
@@ -61,11 +61,11 @@ closure):
 
 Numerical verification (checks only; no result elsewhere in this paper
 depends on them):
-[`alpha-activation-brunnian.witness.json`](../../../computations/deltalambda/alpha-activation-brunnian.witness.json)
+[Brunnian activation check](../../../computations/deltalambda/alpha-activation-brunnian.witness.json)
 (9/9), building on
-[`alpha-cluster-volume-additivity.witness.json`](../../../computations/deltalambda/alpha-cluster-volume-additivity.witness.json)
+[cluster volume-additivity check](../../../computations/deltalambda/alpha-cluster-volume-additivity.witness.json)
 (7/7) and
-[`inter-cluster-bond-term.witness.json`](../../../computations/deltalambda/inter-cluster-bond-term.witness.json)
+[inter-cluster bond-term check](../../../computations/deltalambda/inter-cluster-bond-term.witness.json)
 (10/10). The ab-initio route for the cluster bases (replacing the AME input) is
 the separate bond-count tower — $^3\mathrm{H}$ to $\approx 0.16\%$ with no fit;
 $^4\mathrm{He}$ remains open (the $\mathrm{Vol}_4$ census gap).

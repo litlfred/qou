@@ -1,4 +1,4 @@
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Ring.Defs
 import Mathlib.GroupTheory.Perm.Sign
 import Mathlib.Tactic.Ring
 
@@ -6,14 +6,16 @@ import Mathlib.Tactic.Ring
 /-!
 # QOU.Archimedean.baryonProductFromAlt — Alt-isotype identification of the baryon integrand
 
-The product `∏_k dc_k/dz` of the three colour-tube prolongations equals the
-projection of `(dc_1/dz) ⊗ (dc_2/dz) ⊗ (dc_3/dz)` onto the sign isotype of
-`R[S_3]`.  In determinantal form this is the `3×3` Vandermonde determinant in the
-colour-sheet velocities, which factors as the discriminant product.  This is
+The baryon integrand is the Vandermonde `∏_{i<j} (v_j − v_i)` in the colour-sheet
+velocities `v_k = dc_k/dz`, the lowest-degree sign-isotypic polynomial under the
+`S_3` action permuting the sheets. In determinantal form it is the `3×3`
+Vandermonde determinant, which factors as the discriminant product. (Until
+2026-11-20 this docstring and the `.md` called the plain product `∏_k v_k` the
+sign-isotype projection; that product is symmetric. Owner ruling, bean `qou-w8cg`.)  This is
 purely algebraic — it lives over the categorical base ring `R` and does not
 invoke the archimedean embedding `R ↪ ℂ`.
 
-LaTeX label: `prop:baryon-product-from-alt`
+LaTeX label: `conj:baryon-product-from-alt`
 
 ## References
 
@@ -23,9 +25,9 @@ LaTeX label: `prop:baryon-product-from-alt`
 
 ## Witness
 
-- [baryon-product-from-alt.witness.json](../../../computations/baryon-product-from-alt.witness.json)
-  — pointwise + thimble-period numerical certificate of the Alt^3
-  isotype identification.
+None. A `baryon-product-from-alt.witness.json` was cited here but does not exist.
+The monodromy of the colour-tube cubic is certified by
+`computations/probes/bring-cubic-monodromy-probe.witness.json`.
 -/
 
 namespace QOU.Archimedean
@@ -76,7 +78,7 @@ lemma signCharacter_one : signCharacter (1 : Equiv.Perm (Fin 3)) = 1 := by
 -- Ref: [fulton-harris1991] §2 (Frobenius character formula, sign-isotype projection)
 -- Ref: [macdonald1995] §I.2 (Vandermonde discriminant identity)
 -- Ref: [leitner2026] https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/predicted-spectra/baryon-product-from-alt.md
-theorem baryonProductFromAlt (a b c : ℝ) :
+theorem baryonProductFromAlt {R : Type*} [CommRing R] (a b c : R) :
     (b * c ^ 2 - c * b ^ 2) - a * (c ^ 2 - b ^ 2) + a ^ 2 * (c - b)
       = (b - a) * (c - a) * (c - b) := by
   ring

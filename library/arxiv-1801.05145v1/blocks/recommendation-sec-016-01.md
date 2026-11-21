@@ -1,1 +1,0 @@
-When the $L$-commuting family $\{[M_i]\}_{i\in\K}$ of elements of $\Z[q^{\pm1/2}]\tens_{\Z[q^{\pm1}]}K(\shc)$ is algebraically independent, we shall define a quantum seed $[\seed]$ in $\Z[q^{\pm1/2}]\tens_{\Z[q^{\pm1}]}K(\shc)$ by \eqn&&[\seed]=(\{q^{-(d_i,d_i)/4}[M_i]\}_{i\in\K}, L,\widetilde B). \eneqn

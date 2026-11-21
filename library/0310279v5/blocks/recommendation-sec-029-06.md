@@ -1,1 +1,0 @@
-(Recall we are making the simplifying assumption that R1 and R2 only have two singularities.) So the angular support of Rs must overlap with the angular support of ∂R1 forcing X+ ∩(R1 ∪Rs) to have angular length greater than 2π.

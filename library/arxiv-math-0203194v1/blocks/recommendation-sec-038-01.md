@@ -1,1 +1,0 @@
-\begin{para}\label{para:3.6.3} The advantage of convergent isocrystals over ``crystals up to isogeny'' lies in their strong ``continuity property'', which allows to remove the restriction $e<p$ on ramification (as we shall do henceforth), and work conveniently with singular schemes $S_0$ (while divided powers present certain ``pathologies'' in the singular case).

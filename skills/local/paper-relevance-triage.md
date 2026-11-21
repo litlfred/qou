@@ -112,11 +112,18 @@ or a paper whose relevance genuinely turns on a question you cannot settle, is
 `undetermined` with a rationale saying why. Guessing `tangential` to clear the
 queue is the failure mode this skill exists to prevent.
 
-### 4. Extract key results — only the usable ones
+### 4. Extract key results — only the usable ones, differentiating math+logic vs science+empirical and in-paper vs elsewhere
+
+Consult `library/<doc-id>/candidates.json` (`ingest-candidates/v1`), which pre-classifies each extracted candidate by:
+- **`claim_domain`**: `"math"` (formal mathematical theorem/proposition/lemma/definition backed by deductive logic) vs `"science"` (empirical measurement, lattice/numerical simulation, or theoretical physics derivation).
+- **`evidence_kind`**: `"deductive-proof"`, `"axiomatic-definition"`, `"analytic-derivation"`, `"empirical-measurement"`, `"computational-simulation"`, `"conjectural"`, or `"explanatory"`.
+- **`evidence_location`**: `"in-paper"` (proved, derived, or measured in this document), `"elsewhere"` (attributed to an external citation `[14]` or `(Rumer, Teller, Weyl)` — do not credit a paper for proving a theorem it merely quotes from elsewhere!), `"both"`, or `"none"`.
+- **`block_iri` and `claim_id`**: deterministic claim-level node IRI (`library/<doc-id>/blocks/<block-id>`) and identifier (`<doc-id>#<kind>:<number>`). **Every citation in QOU must link to the actual result/claim in the paper (`block_iri` / `claim_id`), never just the bare paper.**
+- **`lean_status`, `lean_decls`, and `needs_lean_proof`** (for `"math"` claims): indicates whether the math claim is already proved in a sorry-free `.lean` module (`"proved-here"` or `"proved-in-mathlib"`, `needs_lean_proof: false`) or still needs a Lean proof (`"unformalized"`, `"sorry-in-lean"`, or `"doc-cited-in-lean-unlinked-claim"`, `needs_lean_proof: true`). **If QOU cites a math claim that is not yet Lean-proved (`needs_lean_proof: true`), it must be proved in Lean** (check with `python3 scripts/library-claim-citation-audit.py`).
 
 For `core` and `supporting`, list the results the folio could actually consume.
 Each needs an in-source locator (`Thm 3.2`, `§4.1`, `eq. (12)`, `p. 87`), the
-statement in one sentence, and — the field that earns the entry — what this
+statement in one sentence, whether the proof/evidence is **in-paper** or **elsewhere** (and whether it is a deductive math claim for `aid-proof`/`new-block` or an empirical/computational science claim for `compute-check`), and — the field that earns the entry — what this
 folio would *do* with it.
 
 Do not list a paper's main theorem because it is the main theorem. List it

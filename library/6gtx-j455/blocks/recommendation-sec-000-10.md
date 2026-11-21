@@ -1,1 +1,0 @@
-As observables at this level should not depend on the choice of frame (e.g., [36]), let us transform to the Einstein frame, where more intuition can be gained since the fðRÞ theory becomes equivalent to GR with a scalar field.

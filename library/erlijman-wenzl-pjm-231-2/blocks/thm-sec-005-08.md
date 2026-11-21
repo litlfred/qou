@@ -1,0 +1,1 @@
+If the S-matrix for the category C′ is invertible, the dual principal graph for the inclusion N ⊂M coincides with its principal graph. In particular, each M–M bimodule M⃗λ, with⃗λ = (λi) such that each λi labels a simple object in C′ is irreducible. SUBFACTORS FROM BRAIDED C∗TENSOR CATEGORIES

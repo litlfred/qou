@@ -1,0 +1,1 @@
+Suppose A is a ﬁnite dimensional F-algebra. For a ∈A, let φa denote the F-linear map A →A given by x 7→ax. Deﬁne the trace form on A by (a, b) := tr (φaφb). Then A is a semisimple algebra if and only if the trace form on A is non-degenerate.

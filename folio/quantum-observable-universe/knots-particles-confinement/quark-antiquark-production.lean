@@ -1,7 +1,7 @@
 /-
   Quark–antiquark production from pair creation.
 
-  The Hopf link operator L₊ = σ₀σ₁ acts as a quark creation operator,
+  The operator L₊ = σ₀σ₁ (closure in B₃: unknot) acts as a quark creation operator,
   transmuting the leptonic trefoil channel into a hadronic channel.
   Two independent pair productions create quark–antiquark pairs that
   bind via the Hopf link to form mesons.
@@ -24,7 +24,7 @@ def heckeH {R : Type*} [CommRing R] (q : Rˣ) : R := (q : R) - (↑q⁻¹ : R)
 /-- **Normal-form coefficients of `L₊ · e⁻`** — the heart of the
     quark-creation computation in `def:quark-antiquark-production`.
 
-    Applying the positive Hopf link `L₊ = σ₀σ₁` to the trefoil electron
+    Applying `L₊ = σ₀σ₁` to the electron word
     `e⁻ = σ₀σ₁σ₀` produces the five-letter word `σ₀σ₁σ₀σ₁σ₀`, which
     reduces in `H₃(q)` (braid relation + Hecke relation
     `σᵢ² = h σᵢ + 1`) to the normal form
@@ -39,7 +39,7 @@ def hopfTrefoilNFCoeffs {R : Type*} [CommRing R] (q : Rˣ) : R × R × R × R :=
 
 /-- **Quark-antiquark production from Hopf-link pair creation.**
 
-    The Hopf link operator `L₊ = σ₀σ₁` acts as a quark creation
+    The operator `L₊ = σ₀σ₁` acts as a quark creation
     operator: its action on the leptonic trefoil `e⁻` yields the
     normal form `σ₁ + h L₊ + h L₋ + h² e⁻` (the dominant `σ₁` is the
     hadronic crossing, the residual `h² e⁻` is the surviving lepton
@@ -56,7 +56,7 @@ theorem quarkAntiquarkProduction {R : Type*} [CommRing R] (q : Rˣ) :
   simp only [hopfTrefoilNFCoeffs]
   ring
 
-/-- Witness: the two cross-color Hopf channels `L₊` (from `φ₀ψ₁`) and
+/-- Witness: the two cross-color channels `L₊` (from `φ₀ψ₁`) and
     `L₋` (from `φ₁ψ₀`) carry equal NF coefficient `h` in `L₊ · e⁻`,
     reflecting the chiral `quark/antiquark` symmetry of the two
     independent pair productions. -/

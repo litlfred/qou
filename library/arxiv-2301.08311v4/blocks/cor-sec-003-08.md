@@ -1,0 +1,1 @@
+If u is a holomorphic strip R × [0, 1] →R × Z that exponentially converges to a trivial Reeb strip uγ (i.e., satisfies equation (3.2.1)), we have that for all δ < π n there exists a c > 0 such that ||x||W 1,p,δ(R×[0,1]) ≤c||Dux||Lp,δ(R×[0,1]).

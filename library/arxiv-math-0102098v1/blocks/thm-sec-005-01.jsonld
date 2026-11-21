@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-math-0102098v1/blocks/thm-sec-005-01",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 13,
+  "pageEnd": 16,
+  "text": "thm-sec-005-01.md",
+  "derivedFrom": "library/arxiv-math-0102098v1/sections/sec-005",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0102098v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.9",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-005-32-symmetric-functions-of-the-murphy-operators.md (p. 13-16)"
+  }
+}

@@ -1,0 +1,1 @@
+The 2-variable q-Legendre polynomials Sn,q(x, y) satisfy the following operational identities: Sn,q(x, y) = eq(D−1 q,x ˆD2 q,y){yn}, (52) Sn,q(x, y) = C0,q(−x ˆD2 q,y){yn}, (53) and Eq(−ˆD−1 q,x ˆD2 q,y)Sn,q(x, y) = {yn}. (54)

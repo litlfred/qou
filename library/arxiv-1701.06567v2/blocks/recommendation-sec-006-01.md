@@ -1,1 +1,0 @@
-In fact, this phenomenon is not limited to theories $T[M_3]$ associated with 3-manifolds and should be regarded more broadly, as a decomposition of BPS quantities in gapless (conformal) theories into BPS spectra of its massive deformations.

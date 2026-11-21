@@ -1,0 +1,1 @@
+Let A and A′ be k–algebras of dimension at least 2, and let x, y, x′, y′ be nonzero scalars. Then the YB operators Rx,y and Rx′,y′ associated to A and A′ respectively are isomorphic if, and only if, x = x′, y = y′ and the k–algebras A and A′ are isomorphic.

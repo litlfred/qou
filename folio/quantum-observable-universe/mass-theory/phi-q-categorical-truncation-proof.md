@@ -31,7 +31,7 @@ This sum is intrinsically finite (over partitions $\lambda \vdash n$)
 and supported on $\mathrm{supp}(T_w) = \{\lambda : \chi_\lambda(\rho(\beta)) \neq 0\}$.
 
 *Step 3 (curvature-rank stratification).*
-[Curvature-rank stratification](#prop:curvature-rank-gb-stratification)
+[Curvature-rank stratification](#conj:curvature-rank-gb-stratification)
 supplies the filtration of $H_n(R, q)$ by the curvature rank $r(T_w)$ of
 **words**. The grading of the centre by *partition* depth used below is a
 further step, not stated there and assumed here.
@@ -63,7 +63,7 @@ the transient trace contribution at $p_i$ evaluates to $\Phi_q(z_i)$.
 That identity is **unstratified** — it equates the whole transient
 trace with the whole dilogarithm and says nothing about levels. The
 level-by-level refinement this step needs is
-[partition-depth stratification of $\Phi_q$](#prop:quantum-dilogarithm-stratified),
+[partition-depth stratification of $\Phi_q$](#conj:quantum-dilogarithm-stratified),
 and with it the analytic representation of the curvature-rank-$k$
 stratum on the $i$-th exceptional divisor is
 
@@ -108,7 +108,7 @@ contribution. $\square$
 **Proof gap closure (partial).**
 The structural bridge for Step 4 — identifying the level-$k$ factor of
 $\Phi_q$ with the depth-$k$ centre stratum — is now provided by
-[partition-depth stratification of $\Phi_q$](#prop:quantum-dilogarithm-stratified).
+[partition-depth stratification of $\Phi_q$](#conj:quantum-dilogarithm-stratified).
 That proposition gives the depth-$k$ Frobenius-dual coefficients
 $\phi_q^{(k)}(z_i) \in Z^{(k)}(A)$ such that the partial product
 $\Phi_q^{[\leq k]}(z_i) = \sum_{j \leq k} \phi_q^{(j)}(z_i)$ on the
@@ -144,7 +144,7 @@ $k_\star(T_w)$ structurally determined by NF support, and the analytic
 $\Phi_q$ infinite product is a faithful Frobenius-pairing
 representation up to the depth-$k_\star$ truncation — is closed
 modulo the depth-stratified version of $\Phi_q$
-([prop:quantum-dilogarithm-stratified](#prop:quantum-dilogarithm-stratified)).
+([conj:quantum-dilogarithm-stratified](#conj:quantum-dilogarithm-stratified)).
 The remaining gap is between the categorical equality and its
 real-valued canonical evaluation at $|\hat{V}|\approx 1$.
 
@@ -156,10 +156,10 @@ $k_\star(T_w)=n$; neither is $\le 2$ at the relevant $n$. The witness value
 $k_{\max}=9$ for tritium is a Coxeter-length quantity and is not compared with
 $k_\star$ here.
 
-*Status (2026-11-16).* Steps 4–5 together assert that the level-$K$ partial
+*Scope of Steps 4–5.* Steps 4–5 together assert that the level-$K$ partial
 sum equals $\sum_i\Phi_q^{[\le K]}(z_i)$ for every $K$ and is constant for
 $K\ge k_\star$. These cannot both hold, since
 $\Phi_q^{[\le K+1]}(z)\ne\Phi_q^{[\le K]}(z)$ for $z\ne0$
-([`prop:cell-depth-truncation`](#prop:cell-depth-truncation), item 5). The
+([Cell-depth truncation of a trace](#prop:cell-depth-truncation), item 5). The
 correct centre-projection statement, with its proof, is items 1–3 of that
 proposition; Step 1's spectral-sequence reduction is not needed for it.

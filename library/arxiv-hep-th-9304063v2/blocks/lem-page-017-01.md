@@ -1,0 +1,1 @@
+Let λ be a simple eigenvalue of an integral operator on (0, 1) with symmetric kernel of the form s K(sx, sy) where K(x, y) is smooth and symmetric. Let f be a corresponding eigenfunction. Then dλ ds = λ s f(1)2 R 1 0 f(x)2 dx .

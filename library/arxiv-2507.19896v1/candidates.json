@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2507.19896v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "a3f23d5a08b397ee8c3dab8dcb02dc2f16f7f1626a377624435ce916a749e49c",
   "file": "2507.19896v1.pdf"
@@ -16,31 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 1,
-  "by_kind": {
-   "recommendation": 1
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The functionals $\\phi_{n-1}$ and $\\phi_n$, $n \\geq 2$ must satisfy \\myitem[.]{(U1)}\\label{item:5} \\( \\phi_n(\\iota(h)) = \\rho \\phi_{n-1}(h). \\) This property is a generalization of a rule for removing an unlinked circle in the theory of link invariants. \\myitem[.]{(M2)}\\label{item:6} \\( \\phi_n(\\iota(h)t_n) = \\mu \\phi_{n-1}(h). \\) This property is a generalization of the second Markov move from the theory of link invariants. \\end{enumerate}",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-markov-traces-via-jucys-murphy-elements.md",
-   "section_title": "Markov traces via Jucys-Murphy elements.",
-   "pages": "5-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

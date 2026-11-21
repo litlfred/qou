@@ -1,1 +1,1 @@
-With the notation used in the proof of the previous Proposition 6.2,
+With the notation used in the proof of the previous Proposition 6.2, ~B−1~A =       Q11 + 2Q12 + Q22 − 1 Q11 + Q12 − 1 Q12 + Q22 − 1 Q∗ 1 + Q∗ Q11 + Q12 − 1 Q11 Q12 − 1 Q∗ Q12 + Q22 − 1 Q12 − 1 Q22 Q∗ Q∗ t + Q∗ t Q∗ t Q∗ t Q∗       (105) ~B−1~ν = ( (B−1ν)1 + (B−1ν)2 − 1 B−1ν ) (106) ~ft~B−1~ν = ftB−1ν − ~f0 (107)

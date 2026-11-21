@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9306069v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9306069v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-th-9306069v2",
+  "title": "The stretched horizon and black hole complementarity",
   "contains": [
     "library/arxiv-hep-th-9306069v2/sections/sec-front-matter",
     "library/arxiv-hep-th-9306069v2/sections/sec-000",
@@ -31,7 +31,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-th-9306069v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9306069v2.pdf",
     "source_sha256": "a140d10424f732333b390701057b3dbc73d34eb7871ea46d85ee4f7c50285d3a",
     "pages": 48,
@@ -42,8 +44,8 @@
       "stamp_date": "28 Jun 1993"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

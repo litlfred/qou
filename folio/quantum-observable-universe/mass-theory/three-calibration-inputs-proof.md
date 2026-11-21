@@ -1,7 +1,7 @@
-## Proof
+## Argument sketch
 
 The three-parameter count follows directly from
-[`prop:three-parameters-wedderburn`](#prop:three-parameters-wedderburn):
+[Three calibration parameters from Wedderburn-Artin decomposition of $H_3(q)$](#prop:three-parameters-wedderburn):
 on-shell + gauge-invariance restricts the categorical action to a
 3-dimensional real parameter family. The choice of which three
 external measurements pin the three parameters is conventional but
@@ -30,7 +30,7 @@ constrained by:
    environment).
 
 The categorical mass identity
-[`prop:categorical-mass-markov`](#prop:categorical-mass-markov)
+[Categorical mass as Markov trace](#prop:categorical-mass-markov)
 gives every mass as $\mathfrak{m}(\varrho) = |\mathrm{tr}_M(\rho(\beta))|$
 with $\rho(\beta) \in H_n(R, q_0)$; multiplication by $m_e$ converts
 to MeV. For Q-values, the brane-tower correction in the hadronic

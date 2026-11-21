@@ -1,0 +1,425 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-endomorphism/higgs-vacuum-residual-graviton",
+    "path": "folio/quantum-observable-universe/mass-endomorphism/higgs-vacuum-residual-graviton"
+  },
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "md": "b793d354aa21",
+          "ts": "9b8d1dce5a4c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:31.001Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "md": "b793d354aa21",
+          "ts": "9b8d1dce5a4c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:31.058Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "respects_archimedean_wall": [
+      {
+        "field_hash": {
+          "md": "b793d354aa21",
+          "ts": "9b8d1dce5a4c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:31.119Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "code_is_commented": [
+      {
+        "field_hash": {
+          "md": "b793d354aa21",
+          "ts": "9b8d1dce5a4c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:31.189Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "variables_typed": [
+      {
+        "field_hash": {
+          "md": "b793d354aa21",
+          "ts": "9b8d1dce5a4c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:31.313Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "has_references_to_paper": [
+      {
+        "field_hash": {
+          "md": "b793d354aa21",
+          "ts": "9b8d1dce5a4c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:31.424Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "connected_to_ci_pipeline": [
+      {
+        "field_hash": {
+          "md": "b793d354aa21",
+          "ts": "9b8d1dce5a4c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:31.467Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "deprecated": [
+      {
+        "field_hash": {
+          "md": "b793d354aa21",
+          "ts": "9b8d1dce5a4c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:31.532Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "uses_library_framework_appropriately": [
+      {
+        "field_hash": {
+          "md": "b793d354aa21",
+          "ts": "9b8d1dce5a4c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:31.617Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "assertions_are_falsifiable": [
+      {
+        "field_hash": {
+          "md": "b793d354aa21",
+          "ts": "9b8d1dce5a4c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:31.661Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b793d354aa21",
+          "ts": "9b8d1dce5a4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:31.702Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Remark interprets prop:higgs-vacuum-residual-idempotent in the same chapter; makes no new provable claim (md:3 states the identification is not derived)."
+      }
+    ],
+    "uses-editorial-completeness": [
+      {
+        "field_hash": {
+          "md": "b793d354aa21",
+          "ts": "9b8d1dce5a4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:31.726Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "uses[] = the interpreted prop, conj:mass-endomorphism (quoted md:1), conj:g-action-on-substrate (G-2/G-4, Table 1); all leaned on. Table 1 data block is covered via its conjecture.",
+        "notes": "Optional: add tbl:g-action-on-substrate-table1-data, which md:7 links directly."
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "b793d354aa21",
+          "ts": "9b8d1dce5a4c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:31.757Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "md:3 'This is a choice of identification. It is not derived.' then two more sentences make the same disclaimer.",
+        "notes": "Score H1=1 H2=2 H3=2 H4=1 H5=2 H6=2 H7=2 H8=2 = 14/16. Fixes: H1 compress md:3 to one disclaimer sentence; H4 md:1 introduces e, r, R, P_+ in one sentence; state once that e_H := e for X = A^(H) so item 4's e_H is not a new glyph."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "field_hash": {
+          "md": "b793d354aa21",
+          "ts": "9b8d1dce5a4c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:31.829Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "md:3 'It is not derived' vs 'It does not prove that any of them is the graviton' (class differs).",
+        "notes": "k=1 differs, no deletion. Merge: 'This identification is a choice: the proposition proves only that r, R, P_pm∘R are complementary idempotents, not that any is the graviton.' Item 4 restates prop item 8 but adds the (G-2)/(G-4) reconciliation; keep."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "b793d354aa21",
+          "ts": "9b8d1dce5a4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:31.889Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Negations md:3, md:7 'not (j_L, j_R)', md:8 'one, not three', md:10 are mathematical contrasts that are the claim (scope of the identification)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "b793d354aa21",
+          "ts": "9b8d1dce5a4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:31.924Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "No announced emphasis. md:7 'A text search of the corpus finds no custodial group' narrates method, not emphasis.",
+        "notes": "Consider 'No custodial group is defined or formalised in this paper.' to state the fact without the search narrative."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "b793d354aa21",
+          "ts": "9b8d1dce5a4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:31.953Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md:1-12: no instance; block ends on content (md:12 'only t != 0 is used')."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "b793d354aa21",
+          "ts": "9b8d1dce5a4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:31.997Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md:1-12: no instance; block ends on content (md:12 'only t != 0 is used')."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "b793d354aa21",
+          "ts": "9b8d1dce5a4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:32.030Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md:1-12: no instance; block ends on content (md:12 'only t != 0 is used')."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "b793d354aa21",
+          "ts": "9b8d1dce5a4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:32.063Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md:1-12: no instance; block ends on content (md:12 'only t != 0 is used')."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "b793d354aa21",
+          "ts": "9b8d1dce5a4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:32.124Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md:1-12: no instance; block ends on content (md:12 'only t != 0 is used')."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "b793d354aa21",
+          "ts": "9b8d1dce5a4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:32.207Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md:1-12: no instance; block ends on content (md:12 'only t != 0 is used')."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "b793d354aa21",
+          "ts": "9b8d1dce5a4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:32.331Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md:1-12: no instance; block ends on content (md:12 'only t != 0 is used')."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "b793d354aa21",
+          "ts": "9b8d1dce5a4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-C",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:32.396Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md:1-12: no instance; block ends on content (md:12 'only t != 0 is used')."
+      }
+    ]
+  }
+}

@@ -1,1 +1,0 @@
-We shall detail the Stokes phenomenon for a family of similar equations in [\[section:qEuler\]](#section:qEuler){reference-type="ref" reference="section:qEuler"} and we shall apply it to some confluent basic hypergeometric series.

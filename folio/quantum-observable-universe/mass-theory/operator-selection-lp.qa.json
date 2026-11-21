@@ -94,6 +94,23 @@
         "reviewed_at": "2026-11-16T07:08:36.707Z",
         "reviewed_sha": "06a3439cc5ff0cdc91182a4199f03868f80ab9b8",
         "evidence": "operator_selection_lp proves feasibility and optimality of x* given a dual certificate with zero gap; zero_gap_of_complementary_slackness derives the gap from complementary slackness, and the y_0 = 0 degeneracy is proved (y_0_eq_zero_of_radical). Matches the md."
+      },
+      {
+        "field_hash": {
+          "md": "85eec87f5d10",
+          "ts": "59bb4e49be1b",
+          "lean": "8678efaf76b3",
+          "lean_statement": "07bdfbc29c7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T18:12:42.530Z",
+        "reviewed_sha": "677b0a1284456bd582792110bdc22f48ab47322d",
+        "evidence": "Re-read 2026-11-17. operator_selection_lp proves feasibility and optimality of x* from a dual certificate with zero gap (weak duality via dual_bound_le_objective), matching the boxed claim that the certificate certifies optimality. The degeneracy section's y_0 = 0 is proved (y_0_eq_zero_of_radical); the 'at least six vertices at n = 3' remark is computational and outside the boxed statement."
       }
     ],
     "proof-statement-integrity": [
@@ -2511,6 +2528,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-16T07:08:36.707Z",
+  "updated_at": "2026-11-17T18:12:42.530Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

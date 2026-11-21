@@ -1,1 +1,0 @@
-[^1]: However, we should mention that there is a bigger algebra of observables of diagrams that contains $\mathscr{O}$, is isomorphic to $\mathbf{QSym}$ and allows to decompose the observables of $\mathscr{O}$ in combinatorial summands; see in particular [@DFS10].

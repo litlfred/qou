@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-math-0108046v3/blocks/thm-page-022-01",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 22,
+  "pageEnd": 22,
+  "text": "thm-page-022-01.md",
+  "derivedFrom": "library/arxiv-math-0108046v3/sections/page-022",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0108046v3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2.1",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/page-022.md (p. 22-22)",
+    "claim_id": "arxiv-math-0108046v3#theorem:2.1",
+    "lean_status": "unformalized"
+  }
+}

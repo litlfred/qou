@@ -1,0 +1,1 @@
+6 ([34]) For a quasitriangular Hopf algebra the selfdual Fourier trans- forms S+, S−are deﬁned by the linear endomorphisms of H: S+(b) = (id ⊗µ)(R21(1 ⊗b)R12), S−(b) = (id ⊗µ)(R−1 12 (1 ⊗b)R−1 21 ), where µ is a left integral in ˆH. If H is ribbon the map T : H →H is deﬁned by T (b) = θb.

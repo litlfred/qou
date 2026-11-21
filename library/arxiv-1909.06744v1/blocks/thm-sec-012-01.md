@@ -1,0 +1,1 @@
+Let H = SpN. Then π∗¯Ql[dim Gιθ uni] is a semisimple complex, equipped with Sn-action, and is decomposed as π∗¯Ql[dim Gιθ uni] ≃H•(Pn 1) ⊗ M λ∈Pn Vλ ⊗IC(O2λ, ¯Ql)[dim O2λ], where H•(Pn 1) = L i≥0 H2i(Pn 1, ¯Ql) is a complex of vector spaces, and Vλ is the irreducible Sn-module corresponding to λ ∈Pn.

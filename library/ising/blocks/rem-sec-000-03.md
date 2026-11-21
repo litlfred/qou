@@ -1,0 +1,1 @@
+To prove the convergence of cluster expansion, it is actually enough to prove a weaker version of this lemma, where E⋆and B⋆fulﬁl B⋆∆Vo(E⋆) ⊆A and where the sum only runs over pairs (E, B) with the additional conditions E ⊆EΛ, B ⊆Λ and B∆Vo(E) ⊆A. The stronger version stated here will be useful in the proof of Lemma 3.6 below.

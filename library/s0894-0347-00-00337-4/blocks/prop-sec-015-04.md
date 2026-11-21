@@ -1,0 +1,1 @@
+4. If L ∈L1|2(H), then X X det LX = det(1 + L), (A.2) where summation is taken over all ﬁnite subsets X ⊂X including the empty set with the understanding that det L∅= 1. The exact meaning of the sum in the left-hand side is explained in the proof. A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI

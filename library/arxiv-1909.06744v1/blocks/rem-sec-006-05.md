@@ -1,0 +1,1 @@
+For z = (x, v) ∈Guni × V , the stabilizer ZG(z) in G is connected. Hence the G-equivariant simple local system on a G-orbit O in Xuni is a constant sheaf ¯Ql, and we are in a quite similar situation as in the case of GLn.

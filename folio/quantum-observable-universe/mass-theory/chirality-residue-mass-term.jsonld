@@ -2,19 +2,19 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-chirality-residue-mass-term",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:chirality-residue-mass-term",
   "kind": "proposition",
   "title": "Chirality / non-chirality split: $\\mathfrak{m} = \\mathfrak{m}^{\\mathrm{chir}} + \\mathfrak{m}^{\\neg\\mathrm{chir}}$ refining the unified mass formula",
   "uses": [
-    "papers/quantum-observable-universe/blocks/rem-confinement-curvature-rank",
     "papers/quantum-observable-universe/blocks/prop-mass-tower-coefficient-stratification"
   ],
   "leanRef": "qou:QOU.WedderburnMass.chirality_residue_mass_term",

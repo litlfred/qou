@@ -1,1 +1,1 @@
-Suppose f : A → B is a ﬁnite centralizing homomorphism and F
+Suppose f : A → B is a ﬁnite centralizing homomorphism and F is a noetherian connected ﬁltration on A. Then there is a noetherian connected ﬁltration F on B such that f preserves the ﬁltrations and ReesF (f ) : Rees FA → ReesFB is ﬁnite.

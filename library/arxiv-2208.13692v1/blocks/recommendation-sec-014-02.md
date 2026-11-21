@@ -1,1 +1,0 @@
-In order to not have a contradiction with Proposition [\[prop: JB Q-isogeny class\]](#prop: JB Q-isogeny class){reference-type="ref" reference="prop: JB Q-isogeny class"}, we must have that the $\mathbb{Q}$-isogeny classes 50b and 50a merge over $\mathbb{Q}[\sqrt{5}]$, and that the isogeny classes 450b and 50a merge over $\mathbb{Q}[\rho]$, which is indeed the case.[^1]

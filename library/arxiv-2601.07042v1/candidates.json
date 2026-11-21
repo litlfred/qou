@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2601.07042v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "c2f3e302624e7abbb7516137ad7e9faa828eda570f211604863674015ae4352e",
   "file": "2601.07042v1.pdf"
@@ -16,121 +19,79 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 7,
+  "candidates": 2,
   "by_kind": {
-   "recommendation": 7
+   "theorem": 1,
+   "remark": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 2
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1,
+   "explanatory": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1,
+   "elsewhere": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2.11",
    "name": null,
-   "statement": "The image of the refined correspondence map should be contained in the set of pairs $(\\phi, \\rho)$ such that $\\rho \\in \\mathop{\\mathrm{Irr}}(\\pi_0(S_{\\phi}/Z(\\widehat{G})^{\\Gamma_F}))$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-11-motivation-and-overview.md",
-   "section_title": "Motivation and overview",
-   "pages": "1-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "The Galois gerbe given associated to the gerbe of fiber functors of RigIsocF represents the class \u00b41 P pZ \u2013 H2p\u0393F{F , upFqq. In particular, we may identify RigIsocF with ReppEKalq.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-011-27-the-category-rigisocf.md (p. 16-17)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-011-27-the-category-rigisocf.md",
+   "section_title": "The category RigIsocF",
+   "pages": "16-17",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-011-27-the-category-rigisocf.md (p. 16-17)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-011-01",
+   "block_iri": "library/arxiv-2601.07042v1/blocks/thm-sec-011-01",
+   "claim_id": "arxiv-2601.07042v1#theorem:2.11",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.12",
    "name": null,
-   "statement": "Vogan ([@VoganLLC]) proposed that in order to upgrade the correspondence to contain $\\mathop{\\mathrm{Irr}}(\\pi_0(S_{\\phi})) \\subset \\mathop{\\mathrm{Irr}}(S_{\\phi})$ in its image, one should enlarge the domain by adding in irreducible representations of inner forms of $G$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-11-motivation-and-overview.md",
-   "section_title": "Motivation and overview",
-   "pages": "1-3",
+   "statement": "As noted in the introduction, we use an alternative presentation of the group scheme u to the presentation u1 (a priori a different group) used in [Kal16a]. Nevertheless, the map u \u00d1 u1 is an isomorphism. It suffices to show this at the level of character modules, where the map is the inclusion lim \u00dd\u00d1 E{F pQ{Zqr\u0393E{F s0 \u00d1 lim \u00dd\u00d1 E{F pQ{Zqr\u0393E{F s, where the direct limit is over all finite Galois extensions. Surjectivity comes from the fact that for a fixed x P Q{Zr\u0393E{F s which is m-torsion, if we take K{E{F finite Galois with m | rK : Es then the image of x in Q{Zr\u0393K{F s lies in Q{Zr\u0393K{F s0. We warn that this result is false when F \u201c R.",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [Kal16a] in sections/sec-011-27-the-category-rigisocf.md",
+   "external_refs": [
+    "[Kal16a]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-011-27-the-category-rigisocf.md",
+   "section_title": "The category RigIsocF",
+   "pages": "16-17",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For a nice discussion of this topic, we recommend the survey article [@KalSurvey].",
-   "strength": null,
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-11-motivation-and-overview.md",
-   "section_title": "Motivation and overview",
-   "pages": "1-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Our fixed representation $\\rho$ gives an $\\mathfrak{f}_{E}$-semilinear automorphism $\\Phi := \\rho((1_{\\sigma}), \\mathfrak{f}_{E})$ of $V$, which is such that $\\Phi^{s}$ acts by $\\rho((\\sigma(\\varpi_{E})), 1)$; note also that $\\rho \\colon \\prod_{\\Gamma_{E/F}} \\mathbb{G}_{m}(E_{s}) \\to \\mathrm{GL}_{V}$ must be an algebraic homomorphism.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-21-products-of-gerbes.md",
-   "section_title": "Products of gerbes",
-   "pages": "4-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Note that each subspace $V_{(h_{\\sigma})}$ is $\\Phi$-stable, and also that $\\Phi^{s}$ must act on $V_{(h_{\\sigma})}$ by the scalar $\\prod_{\\Gamma_{E/F}} \\sigma(\\varpi_{E})^{h_{\\sigma}}$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-21-products-of-gerbes.md",
-   "section_title": "Products of gerbes",
-   "pages": "4-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Explicitly, if $\\sigma_i = \\mathfrak{f}_{E}^{n_i} s_E(\\gamma_i)$, then we must show that $$(\\Phi^{n_1} \\circ f^{-1}_{\\gamma_1}) \\circ (\\Phi^{n_2} \\circ f^{-1}_{\\gamma_2}) = \\Phi^{n_1+n_2 + c_E(\\gamma_1,\\gamma_2)}f^{-1}_{\\gamma_1\\gamma_2}.$$ By construction, we have $$f^{-1}_{\\gamma_1\\gamma_2} = f^{-1}_{\\gamma_1} \\circ f^{-1}_{\\gamma_2} \\circ \\Phi^{-c_E(\\gamma_1,\\gamma_2)},$$ which implies the desired equality.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-25-concrete-tannakian-categories.md",
-   "section_title": "Concrete Tannakian categories",
-   "pages": "12-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Then we have $$\\tilde{\\Phi}(s_E(\\gamma))(V_{(a_{\\sigma}/s)_{\\sigma}}) = f^{-1}_{\\gamma}(V_{(a_{\\sigma}/s)_{\\sigma}}\\otimes 1)=f^{-1}_{\\gamma}(\\beta_{\\gamma}(V)_{(a_{\\gamma^{-1}\\sigma}/s)_{\\sigma}})=V_{(a_{\\gamma^{-1}\\sigma}/s)_{\\sigma}}.$$ Finally, $T$ is a functor because morphisms of $\\mathcal{W}_{E/F,s}$ must necessarily commute with the $\\Phi$ and $f_{\\gamma}$ maps.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-25-concrete-tannakian-categories.md",
-   "section_title": "Concrete Tannakian categories",
-   "pages": "12-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "rem-sec-011-02",
+   "block_iri": "library/arxiv-2601.07042v1/blocks/rem-sec-011-02",
+   "claim_id": "arxiv-2601.07042v1#remark:2.12"
   }
  ]
 }

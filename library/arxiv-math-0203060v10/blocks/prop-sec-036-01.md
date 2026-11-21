@@ -1,0 +1,1 @@
+Let A be a weak Hopf algebra, B a weak Hopf subalgebra in A, C = Rep(A), C′ = Rep(B), and F : C →C′ be the restriction functor. Then the complex C• F (C) coincides with the complex C•(A, B) deﬁned in Section 6.

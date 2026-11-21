@@ -1,1 +1,0 @@
-It implies furthermore that the QHI must actually depend not only on the choice of an augmented character r of π1(M) in PSL(2, C), but also on some cohomological classes, called weights, which cannot be recovered from the holonomy of local representations of the quantum Teichm¨uller spaces.

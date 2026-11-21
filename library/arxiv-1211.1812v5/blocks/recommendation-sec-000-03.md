@@ -1,1 +1,0 @@
-We shall show in a forthcoming paper ([@VasX]) that $\EuFrak{S}^\bullet$ defines a *unique* dual group gerbe $\check \EuFrak{G}$, which *may* collapse to several, possibly inequivalent, group bundles having the same dual.

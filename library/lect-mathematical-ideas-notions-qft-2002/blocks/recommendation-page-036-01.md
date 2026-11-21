@@ -1,1 +1,0 @@
-This subset completely determines the gluing o if (A,,o’) are given: namely, we should choose v; such that v; + 16 1% for any k, and glue the two edges adjacent to v;; then relabel by 1,...,2n — 2 the remaining vertices (in increasing order of “old” labels), and continue the step again, and so on.

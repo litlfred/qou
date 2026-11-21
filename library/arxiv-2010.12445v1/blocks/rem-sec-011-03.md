@@ -1,0 +1,1 @@
+Conjecture 5.15 holds in two special cases. The ﬁrst one is when X is quasi- compact with quasi-aﬃne diagonal and C generates QCoh(X): by 3.2 the map X →FibX ,C is actually an equivalence. The second is when X is quasi-compact and quasi-separated and C = {OX }, the simplest category: the Conjecture is veriﬁed thanks to 5.20, that we are going to prove.

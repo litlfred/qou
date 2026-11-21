@@ -3,7 +3,7 @@ Let $\ell_n \colon A_n \hookrightarrow A_{n+1}$ be the ascent embedding ([jet pr
 $$
   \hat{\tau}_n = \ell_n \circ \mathfrak{d}_{n+1} \colon \mathrm{End}_{\mathbf{C}}(A_{n+1}) \longrightarrow \mathrm{End}_{\mathbf{C}}(A_{n+1}).
 $$
-The map $\ell_n$ embeds $A_n$ as a direct summand retracted by $\mathfrak{d}_{n+1}$. We have $\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}$ on $\mathrm{End}_{\mathbf{C}}(A_n)$. Therefore:
+The map $\ell_n$ embeds $A_n$ as a direct summand retracted by $\mathfrak{d}_{n+1}$. One has $\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}$ on $\mathrm{End}_{\mathbf{C}}(A_n)$. Therefore:
 $$
   \hat{\tau}_n^2 = \ell_n \circ \mathfrak{d}_{n+1} \circ \ell_n \circ \mathfrak{d}_{n+1} = \ell_n \circ (\mathfrak{d}_{n+1} \circ \ell_n) \circ \mathfrak{d}_{n+1} = \ell_n \circ \mathrm{id} \circ \mathfrak{d}_{n+1} = \hat{\tau}_n.
 $$

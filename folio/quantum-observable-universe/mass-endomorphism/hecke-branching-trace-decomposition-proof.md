@@ -13,7 +13,7 @@ $$
 \bigoplus_{\substack{\mu \vdash n \\ \nu \vdash m}}
 \bigl(V_\mu \boxtimes V_\nu\bigr)^{\oplus c^\lambda_{\mu,\nu}},
 $$
-where $c^\lambda_{\mu,\nu}$ are the Littlewood–Richardson coefficients. We choose the branching isomorphism that respects the Hoefsmit seminormal basis on each $V_\mu \otimes V_\nu$ component.
+where $c^\lambda_{\mu,\nu}$ are the Littlewood–Richardson coefficients. One chooses the branching isomorphism that respects the Hoefsmit seminormal basis on each $V_\mu \otimes V_\nu$ component.
 
 An interface element $I \in H_{n+m}(q)$ acts on $V_\lambda$. Restricting to the $(\mu, \nu)$-isotypic component and writing the resulting endomorphism in the LR-multiplied basis defines the operator-valued matrix coefficient:
 $$

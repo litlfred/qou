@@ -25,6 +25,7 @@ export default proposition({
   },
   uses: ["prop:qbeta-c8-c10-silver-rationals"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The Lean proofs use `norm_num` pure rational arithmetic." },
     {
       kind: "status",
       body: "Wires the sorry-free norm_num Lean theorem c4_eq_c8_div_c3_at_silver: the product identities c_3·c_4=c_8 (c_4=−49/32) and c_3·c_6=c_9 (c_6=7/2) are verified exact at the silver ratio b²=7/8. Shares the silver-rationals verification script.",

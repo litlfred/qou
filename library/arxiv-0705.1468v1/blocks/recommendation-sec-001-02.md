@@ -1,1 +1,0 @@
-Note that this notation does not display the Hopf charge of the configuration, which is determined by the twist number as well as the crossing number, but this should not cause any confusion in what follows.

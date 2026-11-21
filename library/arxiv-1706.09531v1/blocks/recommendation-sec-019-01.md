@@ -1,1 +1,0 @@
-Thus in SUSY grand uniﬁcation based on symmetries like SU(5) or SO(10), it is crucial, for consistency with the empirical lower limit on proton life time, that a suitable doublet-triplet splitting mechanism should exist that assigns GUT-scale masses to the color triplets in the 10H of SO(10), or in the 5H + 5H of SU(5), while keeping their electroweak doublet partners light.

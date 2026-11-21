@@ -1,1 +1,0 @@
-To obtain [\[eqn:f2\]](#eqn:f2){reference-type="eqref" reference="eqn:f2"} and [\[eqn:f3\]](#eqn:f3){reference-type="eqref" reference="eqn:f3"}, we must extract the coefficients of $z^0$, $z^{1}$, $z^2$ in the right hand side of the above equality, and it is easy to see that one obtains $1-q$, $0$ and $\frac {q-1}{qt[\mathcal{L}_n]}$, respectively. ◻ :::

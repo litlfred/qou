@@ -1,0 +1,1 @@
+The series in (2.2) deﬁnes an entire analytic function in z, w, which is also symmetric in z, w: (2.3) (w; q)∞1φ1(0; w; q, z) = (z; q)∞1φ1(0; z; q, w). Both sides can be majorized by (2.4) (−|z|; q)∞(−|w|; q)∞.

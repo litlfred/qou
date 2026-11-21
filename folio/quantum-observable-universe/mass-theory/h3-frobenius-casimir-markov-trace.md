@@ -23,6 +23,8 @@ $$
 \sum_{\lambda\vdash 3}\frac{1}{\dim_q\lambda} = \frac{1}{[3]_q!}\sum_{\lambda\vdash3}q^{-\kappa(\lambda)}c_\lambda = 2+\frac{1}{[2]_q},
 $$
 *and over the blocks on which $\mathrm{tr}^{z_D}$ is nonzero the sum is $1+1/[2]_q=(q^2+q+1)/(q^2+1)$.*
-5. *(The element $C_{\dim_q}$ is not the Frobenius Casimir.) For any trace $t$ on $H_3$ with $t(e_\lambda)\ne0$ for all $\lambda$, the central element $C_{\dim_q}=\sum_\lambda e_\lambda/(\dim_q(\lambda)\,t(e_\lambda))$ of [`thm:frobenius-codim-universal`](#thm:frobenius-codim-universal) has $t(C_{\dim_q})=\sum_\lambda 1/\dim_q\lambda$ by construction. Under convention D it is undefined, because $\mathrm{tr}^{z_D}(e_{(1^3)})=0$.*
+5. *(The element $C_{\dim_q}$ is not the Frobenius Casimir.) For any trace $t$ on $H_3$ with $t(e_\lambda)\ne0$ for all $\lambda$, the central element $C_{\dim_q}=\sum_\lambda e_\lambda/(\dim_q(\lambda)\,t(e_\lambda))$ of [Universal Frobenius co-dimension trace: $\tau(C_{\dim_q}) = \sum_\lambda 1/\dim_q(\lambda)$](#thm:frobenius-codim-universal) has $t(C_{\dim_q})=\sum_\lambda 1/\dim_q\lambda$ by construction. Under convention D it is undefined, because $\mathrm{tr}^{z_D}(e_{(1^3)})=0$.*
 
-So the identity $\sum_\lambda 1/\dim_q\lambda=2+1/[2]_q$ used in [`conj:partition-sum-proton-residual`](#conj:partition-sum-proton-residual) is a formal sum (item 4), and it is not the Markov trace of the Frobenius Casimir (item 3).
+Two inputs are cited rather than proved here: that $C_{\mathrm{Frob}}$ acts on block $\lambda$ by the scalar $c_\lambda d_\lambda$ in item 1, of which only the implied trace identity is established, and the associativity of the six-dimensional matrix model of $H_3$ used to compute in it.
+
+So the identity $\sum_\lambda 1/\dim_q\lambda=2+1/[2]_q$ is a formal sum (item 4), and it is not the Markov trace of the Frobenius Casimir (item 3).

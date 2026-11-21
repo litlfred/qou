@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-0508100v6",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "9cc100a86b40c33640dfebb0d0e308915f4e2e3beca48ea77992d02602e255f1",
   "file": "0508100v6.pdf"
@@ -16,91 +19,250 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 5,
+  "candidates": 8,
   "by_kind": {
-   "recommendation": 5
+   "conjecture": 1,
+   "theorem": 2,
+   "lemma": 5
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 7,
+  "by_domain": {
+   "math": 8
+  },
+  "by_evidence_kind": {
+   "conjectural": 1,
+   "deductive-proof": 7
+  },
+  "by_evidence_location": {
+   "none": 1,
+   "in-paper": 4,
+   "both": 2,
+   "elsewhere": 1
+  },
+  "by_lean_status": {
+   "doc-cited-in-lean-unlinked-claim": 7
+  },
+  "needs_lean_proof": 7
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "conjecture",
+   "source_kind": "conjecture",
    "number": null,
    "name": null,
-   "statement": "The idea of the Generalized Volume Conjecture (formulated in part by Gukov in \\cite{Gu}) is that we should use other representations of the knot complement in $\\SL(2,\\BC)$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-12-the-generalized-volume-conjecture.md",
-   "section_title": "The generalized volume conjecture",
-   "pages": "4-5",
+   "statement": "\\begin{theorem} \\lbl{thm.11} {\\rm (Proof in Section \\ref{sub.complex})} For every knot $K$ there exists an open neighborhood $U_K$ of $0 \\in \\BC$ such that in $U_K$, we have \\begin{equation*} \\slim_{n\\to\\infty} f_{K,n}(z)=\\frac{1}{\\D_K(e^{z})}. \\end{equation*} \\end{theorem}",
+   "claim_domain": "math",
+   "evidence_kind": "conjectural",
+   "evidence_location": "none",
+   "evidence_locator": "Open conjecture stated in sections/sec-001-11-asymptotics-of-the-colored-jones-function-of.md",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-001-11-asymptotics-of-the-colored-jones-function-of.md",
+   "section_title": "Asymptotics of the colored Jones function of a knot",
+   "pages": "2-4",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "conj-sec-001-01",
+   "block_iri": "library/arxiv-math-0508100v6/blocks/conj-sec-001-01",
+   "claim_id": "arxiv-math-0508100v6#conj-sec-001-01"
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5.3",
    "name": null,
-   "statement": "Namely, when $\\a/(2 \\pi i)$ is rational, we should distinguish two cases: $\\a/(2 \\pi i)=1 $ or $\\a/(2 \\pi i)\\neq 1$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-12-the-generalized-volume-conjecture.md",
-   "section_title": "The generalized volume conjecture",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "For every knot K there exists an open neighborhood \u02dcUK of 0 \u2208C such that for every N \u22650 there exists a positive number MN such that for \u03b1 \u2208\u02dcUK, and all n \u22650, we have:",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-020-52-theorem-42-implies-theorem-16.md (p. 13-14)",
+   "external_refs": [],
+   "proof_excerpt": "(of Theorem 5.3, assuming Theorem 4.2) We have the following identities, where the second follows from (14) and (15): f [N] K,n(\u03b1) = fK,n(\u03b1) \u2212 N\u22121 X p=0 RK,p(\u03b1) \u0010\u03b1 n \u0011p = \u221e X k=0 hK,k(\u03b1, \u03b1 n) \u2212 N\u22121 X p=0 \u221e X k=0 dk,p(\u03b1) ! \u0010\u03b1 n \u0011p = \u221e X k=0 \" hK,k(\u03b1, \u03b1 n) \u2212 N\u22121 X p=0 dk,p(\u03b1) \u0010\u03b1 n ",
+   "section_file": "sections/sec-020-52-theorem-42-implies-theorem-16.md",
+   "section_title": "Theorem 4.2 implies Theorem 1.6",
+   "pages": "13-14",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-020-52-theorem-42-implies-theorem-16.md (p. 13-14)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-020-01",
+   "block_iri": "library/arxiv-math-0508100v6/blocks/thm-sec-020-01",
+   "claim_id": "arxiv-math-0508100v6#theorem:5.3",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Knot/BorromeanVolume.lean:borromeanDen_pos"
+   ],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "A",
    "name": null,
-   "statement": "In the loop expansion, as well as in the cyclotomic expansion, one should treat $q^n$ and $q$ (where $n$ is the color) as two independent variables.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-014-33-comparing-the-cyclotomic-and-the-loop-expansi.md",
-   "section_title": "Comparing the cyclotomic and the loop expansion",
-   "pages": "10-10",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "1. Let B be the Borromean rings, then lim n\u2192\u221e log |JB,n(e2\u03c0i/n)| n = 1 2\u03c0 vol(S3 \u2212B).",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-039-appendix-a-the-volume-conjecture-for-the-borrome.md (p. 25-27) citing [Hab00, Hab08]",
+   "external_refs": [
+    "[Hab00, Hab08]"
+   ],
+   "proof_excerpt": "For an integer j and a positive integer k let xj = 2 sin(j\u03c0/n) and zk = Qk j=1 xj. Then, see (38), xj = xn\u2212j = \u2212xn+j, (46) zk = n/zn\u22121\u2212k for 1 \u2264k \u2264n \u22121. (47) Using Habiro\u2019s formula for \u02dcJL of the Borromean ring [Hab00, Hab08], one has JB,n(q) = n\u22121 X l=0 (\u22121)l {n}2 \u0010Ql j=1{n + j}",
+   "section_file": "sections/sec-039-appendix-a-the-volume-conjecture-for-the-borrome.md",
+   "section_title": "Appendix A. The volume conjecture for the Borromean rings",
+   "pages": "25-27",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-039-appendix-a-the-volume-conjecture-for-the-borrome.md (p. 25-27) citing [Hab00, Hab08]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-039-01",
+   "block_iri": "library/arxiv-math-0508100v6/blocks/thm-sec-039-01",
+   "claim_id": "arxiv-math-0508100v6#theorem:A",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Knot/BorromeanVolume.lean:borromeanDen_pos"
+   ],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "B",
    "name": null,
-   "statement": "To get from $c+2$ to $c$ in the estimate, we will choose the $(1,1)$-tangle $T$ such that (1) when going along $T$, starting at the bottom boundary point, we must pass the very first crossing (resp. very last crossing) by an overpass (respectively, an underpass) and (2) the two strands at each crossing are pointing upwards, as in the following figure: \\begin{equation} \\lbl{cross} \\psdraw{R+}{0.5in} \\qquad \\psdraw{R-}{0.5in} \\end{equation}",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-022-62-bounds-for-the-coefficients.md",
-   "section_title": "Bounds for the coefficients",
-   "pages": "14-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "1. (a) The xj, as a function of j, is increasing for j \u2208[0, n/2] and decreasing for j \u2208[n/2, n]. In particular, for j \u2264l \u2264n \u2212j we have xj \u2264xl. (b) For every 1 \u2264j \u2264n \u22121, one has 2 \u2265xj. For n/4 \u2264j \u22643n/4, one has 2 \u2264(xj)2.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [0, n/2] in sections/sec-041-b1-preliminary-estimates.md",
+   "external_refs": [
+    "[0, n/2]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-041-b1-preliminary-estimates.md",
+   "section_title": "B.1. Preliminary estimates",
+   "pages": "27-28",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: elsewhere, Cites external source [0, n/2] in sections/sec-041-b1-preliminary-estimates.md). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-041-01",
+   "block_iri": "library/arxiv-math-0508100v6/blocks/lem-sec-041-01",
+   "claim_id": "arxiv-math-0508100v6#lemma:B",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Knot/BorromeanVolume.lean:borromeanDen_pos"
+   ],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "B",
    "name": null,
-   "statement": "Hence there must be an arc which starts at an underpass and ends at an overpass, assuming there is at leat one crossing.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-022-62-bounds-for-the-coefficients.md",
-   "section_title": "Bounds for the coefficients",
-   "pages": "14-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "2. For a \ufb01xed k, 1 \u2264k \u2264n \u22121, the value of yb(k) := Qb+k j=b+1 xj achieves maximum at (50) b = \u03b2(k) := \u230a(n \u2212k)/2\u230b.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-041-b1-preliminary-estimates.md (p. 27-28)",
+   "external_refs": [],
+   "proof_excerpt": "We will prove that if b < \u03b2(k), then yb(k) \u2264yb+1(k), while if b > \u03b2(k) then yb(k) \u2264yb\u22121(k). This will prove the lemma. Suppose b < \u03b2(k). Then b \u2264\u230a(n\u2212k)/2\u230b\u22121 \u2264(n\u2212k)/2\u22121. It follows that (b+1) \u2264b+k+1 \u2264n\u2212(b+1). From Lemma B.1(a) we get xb+1 \u2264xb+k+1. Hence yb+1(k)/yb(k) = xb+k+1/xb+1",
+   "section_file": "sections/sec-041-b1-preliminary-estimates.md",
+   "section_title": "B.1. Preliminary estimates",
+   "pages": "27-28",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-041-b1-preliminary-estimates.md (p. 27-28)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-041-02",
+   "block_iri": "library/arxiv-math-0508100v6/blocks/lem-sec-041-02",
+   "claim_id": "arxiv-math-0508100v6#lemma:B",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Knot/BorromeanVolume.lean:borromeanDen_pos"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "B",
+   "name": null,
+   "statement": "3. One has (53) s(k + 1) s(k) = (x\u03b2(k))2 xk+1 with the denominator satisfying (54) xk+1 = ( x2\u03b2(k)\u22121 if n \u2212k is even x2\u03b2(k) if n \u2212k is odd",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-041-b1-preliminary-estimates.md (p. 27-28)",
+   "external_refs": [],
+   "proof_excerpt": "By de\ufb01nition (55) s(k) = \u0000y\u03b2(k)(k) \u00012 y0(k) = \u0010Qk j=1 x\u03b2(k)+j \u00112 Qk j=1 xj . Note that, with \u03b2(k) = \u230a(n \u2212k)/2\u230b, we have (56) \u03b2(k + 1) = ( \u03b2(k) \u22121 if n \u2212k is even \u03b2(k) if n \u2212k is odd We consider two cases: n \u2212k is even and n \u2212k odd. (a) n \u2212k is even. Replacing k with k + 1 in (55)",
+   "section_file": "sections/sec-041-b1-preliminary-estimates.md",
+   "section_title": "B.1. Preliminary estimates",
+   "pages": "27-28",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-041-b1-preliminary-estimates.md (p. 27-28)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-041-03",
+   "block_iri": "library/arxiv-math-0508100v6/blocks/lem-sec-041-03",
+   "claim_id": "arxiv-math-0508100v6#lemma:B",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Knot/BorromeanVolume.lean:borromeanDen_pos"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "B",
+   "name": null,
+   "statement": "4. (a) If n \u22657 then s(k) achieves maximum at an integer k such that \u03b2(k) = \u230a(n \u22121)/4\u230b. (b) s(k) achieves maximum at k which is the smallest integer such that \u03b2(k) = \u230a(n \u22121)/4\u230b.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-041-b1-preliminary-estimates.md (p. 27-28)",
+   "external_refs": [],
+   "proof_excerpt": "(a) We will show that (a1) if \u03b2(k) > (n \u22121)/4 then s(k + 1) \u2265s(k), and (a2) if \u03b2(k) \u2264(n \u22121)/4 \u22121 then s(k \u22121) > s(k). This will show that the maximum can be achieved for a k such that \u03b2(k) = \u230a(n \u22121)/4\u230b. Proof of (a1). Suppose \u03b2(k) > n\u22121 4 . There is no integer in the interval ( n",
+   "section_file": "sections/sec-041-b1-preliminary-estimates.md",
+   "section_title": "B.1. Preliminary estimates",
+   "pages": "27-28",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-041-b1-preliminary-estimates.md (p. 27-28)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-041-04",
+   "block_iri": "library/arxiv-math-0508100v6/blocks/lem-sec-041-04",
+   "claim_id": "arxiv-math-0508100v6#lemma:B",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Knot/BorromeanVolume.lean:borromeanDen_pos"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "B",
+   "name": null,
+   "statement": "5. For 1 \u2264j \u2264n\u22121 4 , with n \u22657, one has x2j\u22121 > x2 j.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-042-b2-proof-of-proposition-89.md (p. 28-30) citing [1, n\u22121\n4 ]",
+   "external_refs": [
+    "[1, n\u22121\n4 ]"
+   ],
+   "proof_excerpt": "With xj = 2 sin(j\u03c0/n), the statement is equivalent to sin((2j \u22121)\u03c0/n) > 2 sin2(j\u03c0/n), which, using 2 sin2(x) = 1 \u2212cos(2x), is equivalent to (58) sin((2j \u22121)\u03c0/n) + cos(2j\u03c0/n) > 1 for 1 \u2264j \u2264n \u22121 4 . We will prove (58) not only for integer j, but for all real j \u2208[1, n\u22121 4 ]. The fun",
+   "section_file": "sections/sec-042-b2-proof-of-proposition-89.md",
+   "section_title": "B.2. Proof of Proposition 8.9",
+   "pages": "28-30",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-042-b2-proof-of-proposition-89.md (p. 28-30) citing [1, n\u22121\n4 ]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-042-01",
+   "block_iri": "library/arxiv-math-0508100v6/blocks/lem-sec-042-01",
+   "claim_id": "arxiv-math-0508100v6#lemma:B",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Knot/BorromeanVolume.lean:borromeanDen_pos"
+   ],
+   "needs_lean_proof": true
   }
  ]
 }

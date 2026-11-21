@@ -1,1 +1,0 @@
-The twist operator g turns out to be given by g = e 2πiφP, where P is the translation operator, and we should require the bosonic momenta to lie on the shifted lattice (n + θ), where n is any integer.

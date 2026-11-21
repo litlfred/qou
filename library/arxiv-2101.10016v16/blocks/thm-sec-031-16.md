@@ -1,1 +1,1 @@
-Let q be a minimal root of order in the sense of Def. 19.1, then
+Let q be a minimal root of order in the sense of Def. 19.1, then a) (G˜ ℓ , ⊠, α) is a unitary semisimple tensor category and the tensor equivalence (E, E) : (G˜ ℓ , ⊠, α) → (Gℓ, ⊗, 1) is unitary, b) AW (g, q, ℓ) = Nat0(W) becomes a unitary coboundary weak weak Hopf algebra with compatible involution, weak tensor structure defined by (F, G) and antipode of Kac type such that Gℓ → Rep(AW (g, q, ℓ)) is a unitary equivalence of ribbon categories.

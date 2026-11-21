@@ -1,0 +1,1 @@
+tells us that the morphism I(Q(φ)) in D′ can be written as a left fraction (8.3.16) I(Q(φ)) = Q′(ψ1)−1 ◦Q′(ψ0) of morphisms ψ0 ∈K′ and ψ1 ∈S′. We get these diagrams: (8.3.17) M φ / ρM  N ρN  I(M) ψ0

@@ -1,1 +1,0 @@
-(We could also have eliminated all but these and (6, 6) by the observation that a cusped arithmetic orbifold can have torsion only of order 2, 3, 4, or 6, since the trace of the square of the torsion element must be in some Od.) To show that the above cases do give arithmetic orbifolds we use the characterization of arithmeticity in Proposition 4.4.

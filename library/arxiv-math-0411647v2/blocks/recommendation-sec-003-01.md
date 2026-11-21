@@ -1,1 +1,0 @@
-For the purpose of this article we shall concentrate on the combinatorial aspect of this theory connected with non--crossing partitions [@Kreweras] and mentioned above free cumulants, which were introduced by Speicher [@Speicher1994; @Speicher1997; @Speicher1998].

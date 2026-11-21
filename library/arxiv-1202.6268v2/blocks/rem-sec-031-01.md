@@ -1,0 +1,1 @@
+It is interesting to observe that the numerator of (4.23) is exactly ∂Ageom /∂ℓ. That the numerator of the geometric torsion typically carries a factor of ∂Ageom /∂ℓmight be gleaned from the structure of “ ˆA-polynomials” in [DGLZ09, GS], and will also be explored elsewhere. THE QUANTUM CONTENT OF THE GLUING EQUATIONS

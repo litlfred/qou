@@ -1,1 +1,0 @@
-Third, w must be connected, for if one of its connected components meets « but not £, « is not a minimal cut path; if one of its components meets f but not «, it may be discarded to produce a smaller counterexample; and if all components meet both « and f£, one of them is a smaller counterexample:

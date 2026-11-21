@@ -1,1 +1,0 @@
-Since evaluating a stuff type at a groupoid (whose cardinality is a real number) yields another groupoid (whose cardinality is again a real number), we should be able to repeat this process as many times as we like.

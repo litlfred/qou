@@ -1,1 +1,0 @@
-It should be noted that the authors of [@DeiGio1; @DeiGio2] based their analysis on Widom's papers [@95; @96] where important relations between symplectic, orthogonal and unitary ensembles were established for finite $N$.

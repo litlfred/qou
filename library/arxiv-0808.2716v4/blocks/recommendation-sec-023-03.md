@@ -1,1 +1,0 @@
-As a consequence, $K$ must be a *generalized torus link*: a link that is embedded on an unknotted torus $T$ (this is called an $(m,n)$ torus link) plus possibly one or both cores of the solid tori in the complement of $T$.

@@ -1,1 +1,0 @@
-Roughly, one should think of \eqref{DI.fact} as expanding the integration cycle in the Chern-Simons path integral into a sum of integration cycles $\Gamma_\alpha$ defined by gradient flow off of each critical point with respect to the Chern-Simons action.

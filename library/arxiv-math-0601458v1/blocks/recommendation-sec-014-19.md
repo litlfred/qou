@@ -1,1 +1,0 @@
-Note that, in contrast to the case in figure [8](#fig:mstuffmorphism){reference-type="ref" reference="fig:mstuffmorphism"}, the objects $x \in \boldsymbol{\operatorname{{X}}}$ and $y \in \boldsymbol{\operatorname{{Y}}}$ are not in the same groupoid, hence not related by any morphism, so there is no requirement that $m_1$ and $m_2$ should be equal.

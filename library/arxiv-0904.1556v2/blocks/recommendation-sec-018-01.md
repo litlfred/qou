@@ -1,1 +1,0 @@
-Yet thinking of leptons as 'white' should be strangely familiar, not just from the Pati--Salam perspective, but from the binary code that underlies both the ${\rm SU}(5)$ and the ${\rm Spin}(10)$ theories.

@@ -1,1 +1,0 @@
-To make good on our claim, we must show these subgroups are equal: $${G_{\mbox{\rm SM}}}/{\mathbb Z}_6 = {\rm SU}(5) \cap \left( \frac{{\rm Spin}(4) \times {\rm Spin}(6)}{{\mathbb Z}_2} \right) .$$ In other words, our commutative square of inclusions is a 'pullback square'.

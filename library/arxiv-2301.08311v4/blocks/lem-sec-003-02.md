@@ -1,0 +1,1 @@
+The J-holomorphic trivial strip uγ : R×[0, 1] →R×Z for a Reeb chord γ of length T with boundary on R × Λ has linearized Cauchy-Riemann operator Duγ : Γ(u∗ γϵ ⊕u∗ γξ, ∂u∗ γTR ⊕∂u∗ γTΛ) →Ω0,1(R × [0, 1], u∗ γϵ ⊕u∗ γξ) given by (Duγη)∂s = ∂sη +  i∂t −Aγ  η.

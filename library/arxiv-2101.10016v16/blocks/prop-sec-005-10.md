@@ -1,1 +1,1 @@
-Let A be a weak quasi-Hopf algebra with antipode (S, α, β). Then for
+Let A be a weak quasi-Hopf algebra with antipode (S, α, β). Then for every invertible u ∈ A, the triple (S, α, β) defined by S(a) = uS(a)u −1 , (6.12) α = uα, β = βu−1(6.13) is another antipode of A. Conversely, any antipode is of this form with u ∈ A uniquely determined by (6.12) and one of the equations in (6.13).

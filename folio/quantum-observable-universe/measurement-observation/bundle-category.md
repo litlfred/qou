@@ -1,4 +1,4 @@
-This category serves as the categorical counterpart of the Feynman path integral. Rather than integrating over all field configurations, we follow a single deterministic flow on a finite bundle. A configuration is a fixed collection of knots pinned to base points in the projective fibres. The content of the theory is the trajectory that configuration traces as the torsion flow carries it forward.
+This category serves as the categorical counterpart of the Feynman path integral. Rather than integrating over all field configurations, the construction follows a single deterministic flow on a finite bundle. A configuration is a fixed collection of knots pinned to base points in the projective fibres. The content of the theory is the trajectory that configuration traces as the torsion flow carries it forward.
 
 The bundle initial conditions and the torsion-driven knot flow define a category $\mathrm{Bun}(\mathbb{P}(V))$:
 

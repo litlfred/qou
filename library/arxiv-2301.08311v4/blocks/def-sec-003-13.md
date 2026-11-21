@@ -1,0 +1,1 @@
+Given a pair of transversely intersecting Lagrangians L, K of M such that L is locally mutable, a submanifold D of codimension two that doesn’t intersect L ∪K ∪Lsing is called a “ nice divisor” if M \ D is exact symplectic manifold and Lsing is exact Lagrangian in M \ D. A nice divisor is called “adapted” to a complex structure J if the tangent bundle TD is preserved by J.

@@ -1,1 +1,0 @@
-Since the adjunction is ambidextrous, it applies in both cases, but to describe the unit and counit properly, we should note that in general the canonical description of the left and right adjunctions are different.

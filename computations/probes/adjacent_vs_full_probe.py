@@ -370,7 +370,7 @@ if __name__ == "__main__":
           + "  ".join(f"{h:>9}" for h in headers))
     print("  " + "-" * 90)
     for r in all_results:
-        line = f"  {r['atom']:>6} {r['A']:>3} {r['B_AME']:>8.3f}  "
+        line = f"  {r['atom']:>6} {r['A']:>3} {float(r['B_AME']):>8.3f}  "
         for k in keys:
             v = r.get(k)
             if v is None:
@@ -378,7 +378,7 @@ if __name__ == "__main__":
             elif not math.isfinite(v):
                 line += f"{'inf':>9}  "
             else:
-                line += f"{v:>8.3f}%  "
+                line += f"{float(v):>8.3f}%  "
         print(line)
 
     # Summary per variant
@@ -389,8 +389,8 @@ if __name__ == "__main__":
                  if r.get(k) is not None and math.isfinite(r[k])]
         if vals:
             print(f"  {hdr:>10}: min={min(vals):.3f}% "
-                  f"max={max(vals):.3f}% "
-                  f"mean={sum(vals)/len(vals):.3f}% "
+                  f"max={float(max(vals)):.3f}% "
+                  f"mean={float(sum(vals)/len(vals)):.3f}% "
                   f"(n={len(vals)}/{len(all_results)})")
         else:
             print(f"  {hdr:>10}: no finite entries")

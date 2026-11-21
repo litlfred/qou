@@ -1,1 +1,0 @@
-(The reader might feel that this phenomenon should not occur generically; indeed, three arbitrary trajectories of types $ij$, $jk$, $ik$ would be unlikely to intersect at a single point, but the $\cS$-walls are not arbitrary trajectories.

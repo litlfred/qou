@@ -1,1 +1,0 @@
-The groupoid is the fibrewise product $\boldsymbol{\operatorname{{X}}} \times_{\boldsymbol{\operatorname{{FinSet_0}}}} \boldsymbol{\operatorname{{Y}}}$, where we must use the tensor product of $M$-groupoids rather than the cartesian product of groupoids to assign elements of $M$ to its objects.

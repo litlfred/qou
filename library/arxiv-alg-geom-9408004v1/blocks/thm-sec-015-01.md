@@ -1,0 +1,1 @@
+For the symplectic structure on f J constructed in Theorem 3, the image ν(A0( f X/ f M)) is isotropic. In other words, the normal func- tion of any (multivalued) family of null-homologous 1-cycles on Calabi-Yau threefolds gives an isotropic subvariety of f J .

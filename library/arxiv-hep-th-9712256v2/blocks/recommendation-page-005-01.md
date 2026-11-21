@@ -1,1 +1,0 @@
-One should note however an important diﬀerence between the free ﬁeld representation that appears here and the usual free ﬁeld representation of sl2 current algebra: The deﬁnition of the Fock vacuum Ωdoes not involve the condition Πv,0Ω= 0, Π¯v,0Ω= 0, which is usually imposed to get highest weight representations of the current algebra.

@@ -12,7 +12,7 @@ export default remark({
     "cor:quantum-dilogarithm",
     // The level-by-level refinement Step 4 actually consumes, and which the
     // gap-closure section already names as the structural bridge for it.
-    "prop:quantum-dilogarithm-stratified",
+    "conj:quantum-dilogarithm-stratified",
     // conj:brane-tower-z-habiro is NOT listed although the prose cites it
     // twice: once naming it as the open target, once observing the empirical
     // k=2 sweet spot is consistent with this proposition. Corroboration and

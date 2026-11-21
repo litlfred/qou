@@ -1,1 +1,0 @@
-Whenever a circuit forces such sector changes—rather than remaining conﬁned to a single associative copy of H—the naive compilation overhead can grow rapidly, since one must keep track of associator corrections and update the complex encoding accordingly.

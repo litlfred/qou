@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-categorical-chain-convergence-mechanisms-neutron-truncation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:categorical-chain-convergence-mechanisms-neutron-truncation",
+  "kind": "remark",
+  "title": "Truncation depth needed for free-neutron $\\beta$-decay at 1 ppb",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-chain-convergence-mechanisms"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-categorical-chain-convergence-mechanisms",
+  "tags": [
+    "q-beta",
+    "truncation",
+    "comparison-with-measurement"
+  ],
+  "text": "categorical-chain-convergence-mechanisms-neutron-truncation.md",
+  "provenance": "authored"
+}

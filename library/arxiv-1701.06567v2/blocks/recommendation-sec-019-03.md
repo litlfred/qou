@@ -1,1 +1,0 @@
-For example, for p = 5 we should check I(β)(q) = 2 bZ(β) 0 (q) bZ(β) 0 (1/q) + bZ(β) 1 (q) bZ(β) 1 (1/q) + bZ(β) 2 (q) bZ(β) 2 (1/q) (3.64) and I(β) top(q) = bZ(β) 0 (q) · 2 bZ(−β) 0 (1/q) + bZ(β) 1 (q) bZ(−β) 1 (1/q) + bZ(β) 2 (q) bZ(−β) 2 (1/q).

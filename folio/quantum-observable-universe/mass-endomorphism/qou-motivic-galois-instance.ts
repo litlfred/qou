@@ -23,6 +23,7 @@ export default conjecture({
     status: "verified",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Lean status.** There is no Lean formalization of this instance. The\nmodule `QOU.LiftingDescent.MotivicPerpetualObstructionFromTrace`\n(prime-ideal collapse, $C = a_0(-1) + 2 a_1(-1)$) proves statements\nabout the perpetual obstruction and constructs no\n`MotivicGaloisCharacter`; it is a different result." },
     {
       kind: "status",
       date: "2026-08-23",

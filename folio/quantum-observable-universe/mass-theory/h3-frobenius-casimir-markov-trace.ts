@@ -11,6 +11,8 @@ export default proposition({
   cites: ["jones1987", "geckpfeiffer2000"],
   tags: ["frobenius", "casimir", "schur-elements", "markov-trace", "convention-D", "hecke-algebra"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): used in [proton tower residual vs $m_e\\sum_\\lambda 1/\\dim_q\\lambda$](#conj:partition-sum-proton-residual)" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Two inputs are cited rather than formalised: that $C_{\\mathrm{Frob}}$ acts on block $\\lambda$ by the scalar $c_\\lambda d_\\lambda$ in item 1, which the Lean checks only through the trace identity it implies, and" },
     {
       kind: "status",
       date: "2026-11-16",

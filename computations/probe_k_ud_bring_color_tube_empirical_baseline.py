@@ -44,7 +44,7 @@ References:
 - prop:pn-averaging-uniqueness (PR #1445) — ColorFlavorCompatible class
 - lambda_scale_refinement_h4_correction_bring.py — current production
   flavor-blind form
-- prop:proton-mass-substrate-identity — the m_p anchor identity
+- conj:proton-mass-substrate-identity — the m_p anchor identity
 - docs/workplans/2026-05-30-mass-asymmetric-flavor-split.md
 """
 from __future__ import annotations

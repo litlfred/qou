@@ -25,7 +25,7 @@ export default proposition({
         "$G$ to be Newton's gravitational constant in Planck units " +
         "($G_{\\mathrm{Planck}} = 1$), asserting the same formula " +
         "$\\alpha = m_e \\cdot 8G$ that " +
-        "[`prop:binding-scale-catalan`](../mass-theory/binding-scale-catalan.md) " +
+        "[`conj:binding-scale-catalan`](../mass-theory/binding-scale-catalan.md) " +
         "states with $G$ = Catalan's constant. The two readings give " +
         "$3.744459659941610$ MeV and $4.087991605520000$ MeV; the corpus's own " +
         "quoted value is $3.7445$ MeV, so the Catalan reading is the one " +
@@ -33,7 +33,7 @@ export default proposition({
         "collision rather than a second result. Newton's constant does not " +
         "appear anywhere in this repository: there is no witness, no producer, " +
         "and no CODATA comparison.",
-      see: "prop:binding-scale-catalan",
+      see: "conj:binding-scale-catalan",
     },
     {
       kind: "note",

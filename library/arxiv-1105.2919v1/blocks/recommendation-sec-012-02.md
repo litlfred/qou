@@ -1,1 +1,0 @@
-Finally, we note that normalizing the nucleon states in a box to a Kronecker-$\delta$ (instead of using the Dirac $\delta$-function normalization of the continuum) should lead to Eq.~(\ref{eq_nu}) in a straightforward fashion.

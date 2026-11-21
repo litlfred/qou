@@ -1,0 +1,1 @@
+Deﬁnition 12.9.5 can be adapted to other kinds of boundedness conditions. It can also be adapted to Hom displacement, in the ﬁrst or second argument, to give reﬁned notions of projective and injective displacements.

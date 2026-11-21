@@ -1,0 +1,1 @@
+Let A be a quasi-triangular bialgebra with universal r-matrix R, and V a module over A. Then τR,V,V ∈AutA(V ) is a solution of the Yang-Baxter equation. In particular, the vector space V ⊗n is a representation of the braid group Bn.

@@ -1,1 +1,0 @@
-By commutativity for the span of span maps (which is necessarily strict here!), we also must have that $$\bigoplus_{[y'] | t(y') \cong t(y)} \mathbb{C}[Aut(t(y))] \otimes_{\mathbb{C}[Aut(y')]}G(y') \cong \bigoplus_{[y'] | s(y') \cong s(y)} \mathbb{C}[Aut(s(y))] \otimes_{\mathbb{C}[Aut(y)]}\mathbb{C}$$

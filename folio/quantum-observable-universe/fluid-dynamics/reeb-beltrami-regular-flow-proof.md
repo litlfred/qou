@@ -5,14 +5,8 @@ Items 1 and 2 are computations in the basis $(X, Y, V)$. The Koszul formula dete
 
 For item 3 write $u(t) = a(t)\,V$. Then $\mathrm{div}\,u = 0$ and $\nabla_u u = a^2\,\nabla_V V = 0$ by item 1, so with constant $p$ the equations reduce to $a'(t)\,V = \nu\,a(t)\,L V$. By items 1 and 2, $L_{\mathrm{Def}} V = -(s^2 - s^2)\,V = 0$, $L_H V = -s^2 V$ and $L_B V = -\tfrac{s^2}{2} V$. This gives $a' = 0$, $a' = -\nu s^2 a$ and $a' = -\tfrac{\nu s^2}{2} a$ respectively, with the stated solutions. Each $u(t)$ is a smooth multiple of the smooth field $V$ for all $t$. $\square$
 
-**Formal verification.** The Lie-algebra computations are proved in Lean, sorry-free, in `QOU/FluidDynamics/BeltramiSteadyEuler.lean`, namespace `QOU.FluidDynamics.BeltramiSteadyEuler`:
+**Exact verification.** The Lie-algebra computations above are checked exactly: the brackets, as $2 \times 2$ matrix commutators; the identification of the Koszul connection used with the Levi-Civita connection on left-invariant fields; the Killing property of $V$, which fails for $X$; the formulas for $\nabla_V V$, $\mathrm{curl}\,V$, $\mathrm{curl}\,\mathrm{curl}\,V$, $\mathrm{Ric}\,V$, $\mathrm{Ric}\,X$, $\nabla^*\nabla V$ and the Weitzenböck identity for $V$; and the identity $(\Delta_H - 2\,\mathrm{Ric})\,V = 0$.
 
-- `sl2_brackets` and `L3.toMat_br` for the brackets, checked as $2 \times 2$ matrix commutators;
-- `L3.nab_torsion_free` and `L3.nab_metric`, which identify the Koszul connection used with the Levi-Civita connection on left-invariant fields;
-- `L3.V_killing`, with the non-vacuity check `L3.X_not_killing`;
-- `L3.nab_VV`, `L3.curl_V`, `L3.curl_curl_V`, `L3.ric_V`, `L3.ric_X`, `L3.rough_V` and `L3.weitzenbock_V`;
-- `L3.deformation_V`, the identity $(\Delta_H - 2\,\mathrm{Ric})\,V = 0$.
+The flat analogue is also proved end to end: a Beltrami eigenfield yields an exact Navier--Stokes solution, and the ABC field gives the solution $e^{-\nu t} u_{\mathrm{ABC}}$ on the three-torus.
 
-The same file proves the flat analogue end to end with Mathlib derivatives: a Beltrami eigenfield yields an exact Navier--Stokes solution (`beltrami_eigen_ns`), and the ABC field gives the solution $e^{-\nu t} u_{\mathrm{ABC}}$ on the three-torus (`abc_ns_exact`).
-
-Two standard steps are not formalised: the descent of left-invariant data from $\mathrm{PSL}_2(\mathbb{R})$ to $\Gamma\backslash\mathrm{PSL}_2(\mathbb{R})$, and the identification of the manifold operators $\nabla$, $\mathrm{Ric}$, $\nabla^*\nabla$ and $\Delta_H$ on left-invariant fields with the Lie-algebra formulas above. The reduction of the equations to the scalar equation for $a(t)$ in item 3 is carried out by hand.
+Two standard steps are not verified here and are taken from the standard theory: the descent of left-invariant data from $\mathrm{PSL}_2(\mathbb{R})$ to $\Gamma\backslash\mathrm{PSL}_2(\mathbb{R})$, and the identification of the manifold operators $\nabla$, $\mathrm{Ric}$, $\nabla^*\nabla$ and $\Delta_H$ on left-invariant fields with the Lie-algebra formulas above. The reduction of the equations to the scalar equation for $a(t)$ in item 3 is carried out by hand.

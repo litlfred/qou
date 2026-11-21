@@ -111,14 +111,14 @@ def bohr_radius_from_hartree [QOU.Archimedean.EHartreeCategoricalDerivation] :
 
 /-- **CONDITIONAL.** If the Hartree derivation holds, then the
     force-carrier intertwining correspondence
-    (prop:force-carrier-intertwining-correspondence) follows —
+    (conj:force-carrier-intertwining-correspondence) follows —
     the Hartree energy scale connects electromagnetic and
     strong-force scales through the categorical α_EM. -/
 def force_carrier_from_hartree [QOU.Archimedean.EHartreeCategoricalDerivation] :
     True :=
   -- The intertwining maps Hecke σ_i ↔ gauge boson vertices.
   -- E_h provides the energy scale at which the intertwining is exact.
-  -- Ref: [leitner2026] prop:force-carrier-intertwining-correspondence
+  -- Ref: [leitner2026] conj:force-carrier-intertwining-correspondence
   trivial
 
 /-- **STRUCTURAL (sorry-free).** The Hartree identity is consistent

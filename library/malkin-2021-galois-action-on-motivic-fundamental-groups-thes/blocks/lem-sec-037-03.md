@@ -1,0 +1,1 @@
+(a) Let 푥be an element of D of weight 2. Then CorH(푥) has a logarithmic singularity at 푞= 0, and there are constants 푐, 퐶such that lim푡→∞Cor(퐸휏) H (푥) −퐶 푡−푐Cor(P1) H (휋퐷(푥)) = 0. (b) Let 푥= 푥0 ⊗· · · ⊗푥푛, where each 푥푖∈{푠푎, 휔, 휔}, be a generator in D of weight 푤> 2. Suppose lim푡→∞Cor(퐸휏) H (푥) −Cor(P1) H (휋퐷(푥)) is independent of the choice of 푍푆. Then this diﬀerence is 0.

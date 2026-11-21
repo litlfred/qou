@@ -1,0 +1,188 @@
+--- a/pipeline/liquid-values.ts
++++ b/pipeline/liquid-values.ts
+@@ -44,7 +44,7 @@
+  * @module pipeline/liquid-values
+  */
+ 
+-import { existsSync, readFileSync } from "fs";
++import { existsSync, readFileSync, statSync } from "fs";
+ import { dirname, join, relative } from "path";
+ import {
+   findDeclarationFile,
+@@ -176,18 +176,40 @@
+     return { state: "unresolved", reason: `${inst.name} declares no scalar field "${rest[0]}"` };
+   }
+ 
+-  const [dirId, entry, ...path] = rest as [string, string, ...string[]];
++  const [dirId, ...afterDir] = rest as [string, ...string[]];
+   const dir = inst.directories.get(dirId);
+   if (!dir) {
+     return { state: "unresolved", reason: `${inst.name} declares no directory "${dirId}" (only declared directories are addressable)` };
+   }
+-  if (!path.length) return { state: "unresolved", reason: `"${key}" names an entry but no field inside it` };
++  // The entry may sit in a SUBDIRECTORY of the declared directory:
++  // `{{ qou.computations.qbeta.<entry>.<path> }}` reads
++  // `computations/qbeta/<entry>.witness.json` (qou bean `qou-h59j`, defect 1).
++  // Leading segments are taken as subdirectories only while each names an
++  // existing directory, and the SHALLOWEST match wins, so every flat address
++  // that resolved before resolves to the same file. Segments are already
++  // restricted to `SEG`, so no `..` or `/` can escape the declared directory.
+   // A witness, a JSON entry, or a library DATASET entry (`<entry>/values.json`,
+   // written by an ingest tool such as `codata-ingest`, bean uyp8).
+-  const candidates = [join(dir, `${entry}.witness.json`), join(dir, `${entry}.json`), join(dir, entry, "values.json")];
+-  const file = candidates.find((f) => existsSync(f));
++  const candidatesIn = (d: string, e: string) => [join(d, `${e}.witness.json`), join(d, `${e}.json`), join(d, e, "values.json")];
++  let file: string | undefined;
++  let entry = afterDir[0]!;
++  let path: string[] = [];
++  let at = dir;
++  for (let i = 0; i < afterDir.length - 1; i++) {
++    const found = candidatesIn(at, afterDir[i]!).find((f) => existsSync(f));
++    if (found) {
++      file = found;
++      entry = afterDir[i]!;
++      path = afterDir.slice(i + 1);
++      break;
++    }
++    const sub = join(at, afterDir[i]!);
++    if (!existsSync(sub) || !statSync(sub).isDirectory()) break;
++    at = sub;
++  }
+   if (!file) {
+-    return { state: "unresolved", reason: `no ${entry}.witness.json, ${entry}.json or ${entry}/values.json in ${relative(scope.repoRoot, dir)}` };
++    if (afterDir.length < 2) return { state: "unresolved", reason: `"${key}" names an entry but no field inside it` };
++    return { state: "unresolved", reason: `no ${entry}.witness.json, ${entry}.json or ${entry}/values.json in ${relative(scope.repoRoot, dir)} or a subdirectory named by the address` };
+   }
+   const doc = readJson(file);
+   if (doc === undefined) return { state: "unresolved", reason: `${relative(scope.repoRoot, file)} is not valid JSON` };
+--- a/pipeline/liquid-values.test.ts
++++ b/pipeline/liquid-values.test.ts
+@@ -32,6 +32,14 @@
+     join(demo, "computations", "codata-masses.witness.json"),
+     JSON.stringify({ commitSha: "abc123", scriptHash: "def456", data: { m_e_MeV: "0.51099895069" } }),
+   );
++  mkdirSync(join(demo, "computations", "qbeta", "deep"), { recursive: true });
++  writeFileSync(join(demo, "computations", "qbeta", "probe-x.witness.json"), JSON.stringify({ data: { v: "1.25" } }));
++  writeFileSync(join(demo, "computations", "qbeta", "deep", "probe-y.witness.json"), JSON.stringify({ data: { v: "2.5" } }));
++  // A flat witness named like a subdirectory: the flat file must still win,
++  // so no address that resolved before the subdirectory walk changes file.
++  mkdirSync(join(demo, "computations", "shadow"), { recursive: true });
++  writeFileSync(join(demo, "computations", "shadow.witness.json"), JSON.stringify({ data: { v: "flat" } }));
++  writeFileSync(join(demo, "computations", "shadow", "data.witness.json"), JSON.stringify({ v: "nested" }));
+   mkdirSync(join(demo, "stray"), { recursive: true });
+   writeFileSync(join(demo, "stray", "x.witness.json"), JSON.stringify({ data: { v: 1 } }));
+   writeDeclaration(demo, {
+@@ -65,6 +73,24 @@
+     });
+   });
+ 
++  test("a witness in a SUBDIRECTORY of a declared directory resolves (qou-h59j)", () => {
++    const r = resolveKey("demo.computations.qbeta.probe-x.data.v", scope);
++    expect(r.state === "resolved" && r.text).toBe("1.25");
++    if (r.state === "resolved") expect(r.provenance.file).toBe("demo/computations/qbeta/probe-x.witness.json");
++    const deep = resolveKey("demo.computations.qbeta.deep.probe-y.data.v", scope);
++    expect(deep.state === "resolved" && deep.text).toBe("2.5");
++  });
++
++  test("a flat entry shadowing a subdirectory name still resolves to the flat file", () => {
++    const r = resolveKey("demo.computations.shadow.data.v", scope);
++    expect(r.state === "resolved" && r.text).toBe("flat");
++  });
++
++  test("a subdirectory with no such entry is unresolved, not a crash", () => {
++    expect(resolveKey("demo.computations.qbeta.nope.data.v", scope).state).toBe("unresolved");
++    expect(resolveKey("demo.computations.qbeta.probe-x", scope).state).toBe("unresolved");
++  });
++
+   test("a declaration scalar resolves: {{ demo.version }}", () => {
+     const r = resolveKey("demo.version", scope);
+     expect(r.state === "resolved" && r.text).toBe("1.2.3");
+--- a/pipeline/render-markdown.ts
++++ b/pipeline/render-markdown.ts
+@@ -32,6 +32,7 @@
+  */
+ 
+ import { resolveLiquidValues } from "./liquid-values";
++import { substituteValuesInMarkdown } from "./render-value";
+ import { existsSync, readFileSync } from "fs";
+ import { basename, dirname, isAbsolute, join, resolve } from "path";
+ 
+@@ -222,7 +223,7 @@
+   // so. needs _light_ styling", "make more condensed", "look at all the
+   // structured assets"). Rendering only; the source text is unchanged.
+   if (heading && !NUMBERED_KINDS.has(block.kind)) {
+-    const prose = resolveLiquidValues(mdContent).trim();
++    const prose = substituteValuesInMarkdown(resolveLiquidValues(mdContent)).trim();
+     const body = entry.dmnTable ? placeDmnTable(prose, entry.dmnTable) : prose;
+     return structuredBlockMarkdown(block, heading, title, caption, body, lines);
+   }
+@@ -250,7 +251,7 @@
+   // Same resolver as the LaTeX path (`liquid-values.ts`, bean kott), so the
+   // site and the PDF print one number; pass-through prefixes (`site.data`)
+   // are left for Jekyll / the IG Publisher.
+-  const prose = resolveLiquidValues(mdContent).trim();
++  const prose = substituteValuesInMarkdown(resolveLiquidValues(mdContent)).trim();
+   const body = entry.dmnTable ? placeDmnTable(prose, entry.dmnTable) : prose;
+   if (body) lines.push(body);
+ 
+--- a/pipeline/render-value.ts
++++ b/pipeline/render-value.ts
+@@ -20,6 +20,7 @@
+ import { findContentRepoRoot } from "./repo-root";
+ import {
+   WITNESSED_VALUES,
++  getValueRegistry,
+   lookupValue,
+   type WitnessedValueEntry,
+   type WitnessedValueFormat,
+@@ -407,6 +408,50 @@
+   });
+ }
+ 
++/**
++ * Substitute every `:val[…]` in a MARKDOWN source string, for the site
++ * renderer (`render-markdown.ts`). The LaTeX renderer resolves `:val` per
++ * mdast node; the Markdown renderer emits text, so this pass splits the
++ * source into math and prose spans by `$`/`$$` delimiters:
++ *
++ * - inside math, a reference becomes the bare numeral (`substituteValuesInMath`);
++ * - in prose, it becomes the numeral wrapped as inline math (`$…$`), because the
++ *   LaTeX text-mode form (`$v$\\,units`) leaves a literal `\\,` in a web page.
++ *
++ * Without it every `:val[…]` reached the published site as a raw token
++ * (qou bean `qou-h59j`, defect 2). Fenced code is left untouched.
++ */
++export function substituteValuesInMarkdown(md: string): string {
++  if (!md.includes(":val[")) return md;
++  // A renderer run with no registry configured (a repo that has none) keeps
++  // the old behaviour, the visible raw token, rather than crashing the build.
++  try {
++    getValueRegistry();
++  } catch {
++    return md;
++  }
++  const FENCE = /(```[\s\S]*?```)/;
++  return md
++    .split(FENCE)
++    .map((chunk, i) => {
++      if (i % 2 === 1) return chunk; // fenced block
++      return chunk
++        .split(/(\$\$[\s\S]*?\$\$|\$[^$\n]+\$)/)
++        .map((seg, j) => {
++          if (j % 2 === 1) return substituteValuesInMath(seg);
++          return seg.replace(MATH_VAL_PATTERN, (_m, name: string, attrStr?: string) => {
++            const attrs = parseValAttrs(parseInlineAttrs(attrStr ?? ""));
++            const out = renderValue(name, attrs, "math");
++            // An unresolved reference comes back as the literal token: keep it
++            // visible, but do not wrap it in math.
++            return out.startsWith(":val[") ? out : `$${out}$`;
++          });
++        })
++        .join("");
++    })
++    .join("");
++}
++
+ // ── Directive extraction (for validators / auto-link) ────────────
+ 
+ /** A single `:val[…]` occurrence found in a `.md` file. */

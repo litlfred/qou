@@ -1,1 +1,0 @@
-Since ${\mathbf v}_{ba}\mathop{\mathrm{{\scriptstyle \bullet}}}_{k}v\neq{\mathbf 0}$, $b$ must be left of $\raisebox{-1pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{11pt}}\hspace{0.55pt}$ and hence left of $c$.

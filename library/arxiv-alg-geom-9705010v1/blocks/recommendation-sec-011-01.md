@@ -1,1 +1,0 @@
-There is less ambiguity in choosing these ai, aD i than in the coordinates zi, wi on the base of an algebraically integrable system: the group of their linear combinations Σniai + nD i aD i (with integer coeﬃcients ni) should be uniquely de- termined in the pure SYM case, and determined modulo the masses of the added particles in general.

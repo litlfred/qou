@@ -1,0 +1,1 @@
+(1) If n, l, l′ ≥0, l̸ = l′ and j ∈Z, then we have trPn q ( ˜F (l)K2jel′) = 0. (2) If 0 ≤n < l and j ∈Z, then we have trPn q ( ˜F (l)K2jel) = 0. (3) If 0 ≤l ≤n and j ∈Z, then we have trPn q ( ˜F (l)K2jel) = vnq−nj+2lj+l2−ln{n}q!{n −l}q! j + n −1 n −l  q j −1 n −l  q . (8.6)

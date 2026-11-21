@@ -1,6 +1,6 @@
 ## Statement
 
-> **Scope note (2026-11-15).** As stated, $\rho_K$ is a free positive scalar with no independent definition, so the identity $\mathfrak{m}(K) = m_e\,\rho_K\,|\cdot|$ fixes nothing: any mass is reproduced by choosing $\rho_K$. The formula has content only once $\rho_K$ is defined without reference to $\mathfrak{m}(K)$; that definition is open.
+**Scope of the categorical density $\rho_K$.** As stated below, $\rho_K$ is a positive scalar without an independent definition in this block alone, so the relation $\mathfrak{m}(K) = m_e\,\rho_K\,|\cdot|$ acquires predictive content only once $\rho_K$ is specified without reference to $\mathfrak{m}(K)$ via the graded expansion of Proposition \ref{prop:rho-k-graded-expansion}.
 
 
 *Let $(Z, N)$ be a neutral atom with nuclear-core braid $\mathcal{B}_K \in B_{n}$, where $n = 3A$ (three quark strands per nucleon, no electron strands) and $A = Z + N$. This is the electron-free core of the [atomic braid](#def:atomic-braid) $\mathcal{A} \in H_{A+Z}(q)$, not $\mathcal{A}$ itself. Let $\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K) \in H_n(R, q_0)$ denote the Gröbner–Shirshov normal form of $\mathcal{B}_K$ in the Iwahori–Hecke algebra under the PBW Gröbner–Shirshov basis ([PBW corollary](unital-groebner-bases:cor:pbw)). The atomic mass admits the unified categorical expression:*

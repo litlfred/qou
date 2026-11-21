@@ -1,0 +1,1 @@
+For any δ ∈(0, iΛ) and holomorphic strip u : [0, ∞) × [0, 1] →R × Z , that satisfies the following, • EH(u) < ∞, • u satisfies the boundary condition u ( [0, ∞) × {0, 1}) ⊂R × Λ, • the projection on R , πR(u) is unbounded; there is an s0 > 0, a trivial strip uγ over a Reeb chord γ and a C > 0 such that (3.2.1) dcyl(u(s, t), uγ(s, t)) < Ce−δs ∀s ≥s0.

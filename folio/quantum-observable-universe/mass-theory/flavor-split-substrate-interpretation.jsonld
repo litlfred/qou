@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-flavor-split-substrate-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:flavor-split-substrate-interpretation",
+  "kind": "remark",
+  "title": "Bring-surface origin and the precision limitation of the flavor-split formula",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-flavor-split-substrate"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-flavor-split-substrate",
+  "tags": [
+    "flavor-split",
+    "bring-surface",
+    "picard-lefschetz",
+    "precision",
+    "interpretation"
+  ],
+  "text": "flavor-split-substrate-interpretation.md",
+  "provenance": "authored"
+}

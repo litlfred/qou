@@ -1,0 +1,1 @@
+Let F=(a,f) : R+×[0, 1] →(R×Z, R×Λ) be a J holomorphic map of finite energy EH(u) < ∞, assume that image of F is unbounded, then there is a number T and a Reeb chord γ of length T such that lim s→∞f(s, t) = γ(tT) and lim s→∞ a(s, t) s = T in C∞[0, 1]. This lemma is a direct consequence of our asymptotic convergence proved in Theorem 3.5.

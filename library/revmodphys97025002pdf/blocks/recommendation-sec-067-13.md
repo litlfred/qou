@@ -1,1 +1,0 @@
-Nevertheless, they are retained for the same reason, namely, because of the significant disagreements among some of the data and the desirabil- ity of having the recommended values reflect all of the relevant data.

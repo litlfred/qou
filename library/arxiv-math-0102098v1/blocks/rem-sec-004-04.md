@@ -1,0 +1,1 @@
+Aiston uses the notation Qcn and Qdn in [1], in place of en and hn which are used here to suggest the terminology and techniques of symmetric functions from [11]. Write H(t) = 1 + ∞ X n=1 hntn for the generating function of the elements {hn}, regarded as a formal power series with coeﬃcients in C, and similarly set E(t) = 1 + P∞ n=1 entn. In [1] Aiston showed that

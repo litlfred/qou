@@ -1,0 +1,1 @@
+Let I ∈C(A, gr) be a complex such that each of the modules Iq is right F-acyclic. If I is a bounded below complex, or if F has ﬁnite right cohomological dimension, then I is a right F-acyclic complex.

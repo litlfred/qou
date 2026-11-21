@@ -1,0 +1,1 @@
+A solution to the edge equations with all shape coordinates in C \ {0, 1} uniquely (up to conjugation) determines a representation ρ: π1(M) →PGL(2, C). If the solution also satisﬁes the cusp equations, ρ is boundary-unipotent, i.e. takes peripheral curves to a conjugate of N.

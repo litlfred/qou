@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T09:21:37.936416+00:00",
-  "commitSha": "6d27d1c8a45eead7b77f2d006aaf7c2a5bb89293",
+  "computedAt": "2026-11-17T07:15:37.575898+00:00",
+  "commitSha": "d3dcd4c4757a988299ad0246ed502bd2358a90e4",
   "assertions": [
     {
       "name": "component_acn_exceeds_genus_lower_bound",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 32,
+  "durationMs": 10,
   "computation": "em-linking-fh-link-bound-correction",
   "scriptFile": "em_linking_fh_link_bound_correction.py",
-  "scriptHash": "4fdaefea4102",
-  "scriptCommitSha": "42e321adfd7b4c0fad2a4975e6da86e6dd44a33c",
+  "scriptHash": "9a7614b52d4b",
+  "scriptCommitSha": "d3dcd4c4757a988299ad0246ed502bd2358a90e4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,6 +40,12 @@
     "numpy": "2.4.6",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/em_linking_fh_link_bound_correction.py"
+    ],
+    "reproduce": "python3 -u computations/em_linking_fh_link_bound_correction.py"
   },
   "description": "CORRECTION probe (beans qou-b5yi, qou-a9li). A close read of Komendarczyk eq. (43) and Khesin Thm 3.6 overturns two things this branch was building on. (1) The Freedman-He asymptotic crossing number in the LINK bound is ac(L_k, L) -- one component against the whole link, summed over n COMPONENTS -- so the per-pair object computed in em-linking-borromean-acn.witness.json is the wrong index and the wrong sum. (2) Eq. (43) carries (pi/16)^(1/4), a pure constant, and NO volume factor; the Vol^(-1/3) treated here as 'the Freedman-He template' is Khesin's SINGLE-knotted-torus bound, misapplied to a multi-component configuration. This probe computes the correctly-indexed object and records both corrections against work already committed on this branch.",
   "auditOnly": "docs/audits/2026-08-01-em-linking-reads-round1.md",
@@ -69,7 +75,7 @@
         "upper_bound_summed": "9.8558260906387468358",
         "reading": "2*genus_cx(L_k) - 1 <= ac(L_k,L) <= ACN(L_k,L)[realisation]. The realisation value bounds the minimised topological value from ABOVE; the genus estimate bounds it from below. The bracket is wide and is reported as a bracket, not collapsed to a number."
       },
-      "genus_step_is_my_inference": "Komendarczyk bounds ac(L_k, L) below by the smallest genus among surfaces in R^3 minus the other components, with boundary L_k. For Borromean, L_k is null-homologous there (pairwise lk = 0) so a surface exists, while mu-bar_123 = 1 != 0 obstructs a genus-0 spanning disk, giving genus >= 1 and hence ac >= 1. NEITHER SOURCE COMPUTES THIS -- the obstruction step is my inference and is flagged as such."
+      "genus_step_is_my_inference": "Komendarczyk bounds ac(L_k, L) below by the smallest genus among surfaces in R^3 minus the other components, with boundary L_k. For Borromean, L_k is null-homologous there (pairwise lk = 0) so a surface exists, while mu-bar_123 = +/-1 != 0 (now proved sorry-free via faithful nilpotent Magnus realization in QOU/MassTheory/MilnorMagnusCoefficient.lean: milnorMagnusCoeff_eq, milnorMagnusCoeff_ne_zero) obstructs a genus-0 spanning disk, giving genus >= 1 and hence ac >= 1. With non-vanishing proved in Lean, the remaining unformalised inference is the single topological implication 'mu-bar != 0 => genus >= 1 in the complement' (bean qou-my0j)."
     },
     "what_eq43_actually_predicts": {
       "structure": "with a fixed local Borromean configuration the topological factor sum_k ac(L_k,L) is A-INDEPENDENT, and there is no volume factor, so ALL A-dependence of kappa must be carried by the flux: E ~ ac * Flux^2.",

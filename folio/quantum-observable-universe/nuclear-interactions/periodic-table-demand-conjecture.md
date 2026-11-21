@@ -42,7 +42,7 @@ $$
 
 ## Inductive verification
 
-We verify this conjecture computationally by inductive Gröbner--Shirshov reduction ([derived atom](#def:derived-atom)). For each $A$:
+This conjecture is verified computationally by inductive Gröbner--Shirshov reduction ([derived atom](#def:derived-atom)). For each $A$:
 
 1. Compute $\mathcal{A}(Z, A - Z)$ for all $0 \leq Z \leq A$.
 2. Evaluate $|\mathrm{dem}|$ for each.

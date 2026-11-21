@@ -1,1 +1,0 @@
-The product state is obtained by linear Schr¨odinger evolution from the initial state |Ψ(Σ)⟩, but as seen above, the external fac- tor |χ(Σout)⟩alone depends linearly on |Ψ(Σ)⟩, so we arrive at the conclusion that the state inside the black hole, |Φ(Σbh)⟩, must be independent of the initial state.

@@ -1,1 +1,0 @@
-We have now identiﬁed the system relevant for the Turaev-Viro invariant: T[M3] on R × S2 with the insertion of a exotic defect, given by a linear combination of vortex loops,63 whose BPS Hilbert space should categorify the TV invariant.

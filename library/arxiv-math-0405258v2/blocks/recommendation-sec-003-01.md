@@ -1,1 +1,0 @@
-Fix $m,n\in\NN$ and denote by $\gamma_{m,n}$ the product of the two cycles $$\gamma_{m,n}=(1, 2,\dots, m)(m+1, m+2,\dots, m+n).$$ More generally, we shall denote by $\gamma_{m_1,\dots,m_k}$ the product of the corresponding $k$ cycles.

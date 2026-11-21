@@ -1,0 +1,1 @@
+? 5.4 General nondegenerate phase with ﬁnite critical set In this section we prove Theorem 5.3 by moving the chain of integration of I so that Re φ is minimized only at the ﬁnite set of critical points, then applying

@@ -1,0 +1,1 @@
+The inferred multiplicities from the numerical calculations of eigenvalues, shown in Table D.1, support this corollary. In particular, they suggest that the ﬁrst eigenspace is 8 dimensional. Chapter 5

@@ -1,0 +1,1 @@
+The following are equivalent: 1. The map Bn →Sp(X)T d is almost onto. 2. The map Mod(X)T →Sp(X)T d is almost onto. 3. There is a primitive dth root of unity q such that ρq(Bn) has ﬁnite index in U(Λn,q).

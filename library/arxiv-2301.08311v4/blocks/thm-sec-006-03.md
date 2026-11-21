@@ -1,0 +1,1 @@
+If the disc potentials of the Lagrangians in the monotone pair match, i.e. W(eL) = W( eK), for a generic choice of perturbation scheme domain dependent almost complex structure P, we have that ∂P D 2 = 0. We define the bulk D deformed Lagrangian Intersection Floer homology HF P D of (eL, eK) as the homology of the chain complex (CF(eL, eK), ∂). HF P D (eL, eK) = ker ∂P D im ∂P D

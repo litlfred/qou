@@ -1,0 +1,1 @@
+(a). Then on the space of Vλ⊗V the braiding of Rep(A(Vgk )) is given by c(Vλ, V ) = Σe iπ 2(k+h∨) A where A is the selfadjoint operator with eigenvalue ⟨⟨γ, γ+2ρ⟩⟩−⟨⟨λ, λ+2ρ⟩⟩−⟨⟨κ, κ+2ρ⟩⟩ on a simple addendum Vγ and κ is the dominant weight of V (the last addendum is replaced by the sum of the addenda of the dominant weights κi, i = 1, 2 of V in the type D case).

@@ -13,4 +13,4 @@ $$
 
 The canonical evaluation verifies this equivalence to 50 decimal places. The Bring-orbit functional equation confirms the sum identically without relying on specific polylogarithm implementations, supplying a strict 50-digit cross-validation.
 
-The algebraic depth cleanly matches the Goncharov period depth. The specific geometric realization remains open, though hyperbolic 4-manifold volumes on Bring-cusped quotients constitute the primary candidate. This constitutes the first depth-3 canonical witness, subjecting the graded-Mikusiński correspondence to falsifiability tests at depths 2 and 3.
+The algebraic depth matches the Goncharov period depth. The specific geometric realization remains open, though hyperbolic 4-manifold volumes on Bring-cusped quotients constitute the primary candidate. This constitutes the first depth-3 canonical witness, subjecting the graded-Mikusiński correspondence to falsifiability tests at depths 2 and 3.

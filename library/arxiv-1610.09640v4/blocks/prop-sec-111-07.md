@@ -1,0 +1,1 @@
+(1) If A satisﬁes the χ condition, then it satisﬁes the special χ condition. (2) If A satisﬁes the χ condition, then every M ∈Db (f,f)(Aen, gr) has weakly symmetric derived m-torsion. (3) If A satisﬁes the special χ condition, then the bimodule A has weakly sym- metric derived m-torsion.

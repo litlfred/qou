@@ -7,18 +7,16 @@ Temperley–Lieb quotient annihilates the three-row partition. In the
 [trace-convention registry](../../../docs/coordination/trace-convention-registry.md)
 this is **convention D**, with Ocneanu parameter $z = q^3/(q^2+1)$.
 
-The **binding channel uses convention D** as well, since the owner ruling of
-2026-08-09 excised convention C. There is now **one** trace in the framework's
-compute, not two.
+Both the mass and binding channels use the canonical Convention-D trace uniformly across the framework.
 
-The mass and binding channels use convention D, and the choice is forced: `lem:feynman-eigenbasis-decomposition` puts the row cap $\ell(\lambda) \leq 2$ in the mass channel's decomposition, giving $y_{(1^3)} = 0$, and `markovWeights_eq_jones_of_threeRow_eq_zero` then makes $z = q^3/(q^2+1)$ the unique faithful normalised Markov trace. The full-Hecke Ocneanu trace of convention C, $z = 1/(q^{1/2}+q^{-1/2})$, has $y_{(1^3)}(q) \neq 0$ for $q \neq 1$ and is not used.
+The mass and binding channels use convention D, and the choice is forced: the [eigenbasis decomposition for the Feynman amplitude](#lem:feynman-eigenbasis-decomposition) puts the row cap $\ell(\lambda) \leq 2$ in the mass channel's decomposition, giving $y_{(1^3)} = 0$, and the [Markov-trace selection theorem](#prop:markov-trace-frobenius-selection) then makes $z = q^3/(q^2+1)$ the unique faithful normalised Markov trace. The full-Hecke Ocneanu trace of convention C, $z = 1/(q^{1/2}+q^{-1/2})$, has $y_{(1^3)}(q) \neq 0$ for $q \neq 1$ and is not used.
 
 By contrast, **the production mass channel uses convention D** — the closed form
-of this proposition, entering as `trM_borromean` $\to$ `F_Bor` $\to$
-`canonical_mass`.
+of this proposition, entering through the Borromean Markov trace and the
+dressing factor $F_{\mathrm{Bor}}$ into the canonical nucleon mass.
 
 **The mass channel is convention D.** The two blocks that *define* the mass channel already
-fix its fibre: `lem:feynman-eigenbasis-decomposition` carries the row cap
+fix its fibre: the [eigenbasis decomposition for the Feynman amplitude](#lem:feynman-eigenbasis-decomposition) carries the row cap
 $\ell(\lambda) \leq 2$ inside the index set of
 $V^{\otimes n} \cong \bigoplus V_\lambda \otimes S_\lambda$, and
 `feynman-markov-identification` carries it inside $\mathrm{tr}_M$ itself, with
@@ -28,12 +26,12 @@ Independently, the Ocneanu parameter determines the fibre dimension through
 $z \cdot [N]_q = q^N$, which is injective in $N$: convention D gives $N = 2$
 exactly, while convention C gives $N \approx 2.5995$ — **no integer fibre
 dimension at all.** Convention C is a legitimate Markov trace on
-$\mathrm{H}_3(q)$; it is simply not the trace of any fibre, so it cannot be the
+$\mathrm{H}_3(q)$; it is not the trace of any fibre, so it cannot be the
 mass trace.
 
 What remains is a **definitional erratum, not a production defect**: the $z$
-stipulated in `rem:markov-axioms-primitive` selects C, while that block and
-[`prop:categorical-mass-markov`](../mass-endomorphism/categorical-mass-markov.md)
+stipulated in the [primitive Markov-trace axioms (M1–M4)](#rem:markov-axioms-primitive) selects C, while that block and
+[Categorical mass as Markov trace](../mass-endomorphism/categorical-mass-markov.md)
 both *name* the Jones–Markov trace, which is D. The stipulated value
 $1/(q^{1/2}+q^{-1/2})$ is the Temperley–Lieb loop reciprocal $1/\delta$ —
 correct for the TL generator $e_i$, but applied there to the Hecke generator
@@ -116,10 +114,10 @@ independent data:
 - $\chi^\lambda(g)$ — character: trace of the $V_\lambda$-representation
   on a specific element $g$ (e.g. a braid).
 - $\mu_\lambda(q)$ — $q$-Laplacian eigenvalue on $V_\lambda$
-  ([`prop:q-heat-kernel-peter-weyl`](../information-theory/q-heat-kernel-peter-weyl.md)):
+  ([Peter--Weyl decomposition of the $q$-heat kernel (archimedean)](../information-theory/q-heat-kernel-peter-weyl.md)):
   the heat-kernel decay rate, *not* a Markov-trace ingredient.
 - $w_\lambda(q) = [n]_q! / H_q(\lambda)^2$ — Plancherel measure
-  ([`rem:symmetric-point-resolution-loss`](../models-of-qous/symmetric-point-resolution-loss.md)):
+  ([The symmetric point loses resolution, not spectrum](../models-of-qous/symmetric-point-resolution-loss.md)):
   normalised by $\sum_\lambda w_\lambda(1) = 1$ at $q = 1$ only — the $q$-deformed sum $\sum_\lambda w_\lambda(q)$ is **not** $1$ (0.987 at $n = 3$, 1.051 at $n = 8$); at $q = 1$ it is
   non-uniform in a *different* pattern ($\tfrac16, \tfrac23, \tfrac16$
   for $n = 3$) from the Wenzl weights of this proposition

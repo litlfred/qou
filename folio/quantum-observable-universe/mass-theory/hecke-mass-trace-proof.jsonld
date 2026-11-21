@@ -2,20 +2,22 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prf-hecke-mass-trace",
+  "@id": "papers/quantum-observable-universe/blocks/rem-hecke-mass-trace-sketch",
   "@type": [
-    "folio-assistant-core:Proof",
+    "folio-assistant-core:Remark",
     "doco:Section"
   ],
-  "label": "prf:hecke-mass-trace",
-  "kind": "proof",
-  "title": "Proof of hecke mass trace",
+  "label": "rem:hecke-mass-trace-sketch",
+  "kind": "remark",
+  "title": "Argument sketch for the Hecke mass trace conjecture",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-hecke-mass-trace"
+    "papers/quantum-observable-universe/blocks/conj-hecke-mass-trace"
   ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-hecke-mass-trace",
   "text": "hecke-mass-trace-proof.md",
   "provenance": "authored"
 }

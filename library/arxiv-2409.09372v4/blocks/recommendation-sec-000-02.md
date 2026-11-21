@@ -1,1 +1,0 @@
-Notably, since all generators $s_i$ and all $t_i^k$ ($k=1, \ldots,m-1$) for $i=1,2,\ldots$, are respectively conjugate in $H_{\infty}(\boldsymbol{u})$, any trace function must assign identical values to these elements.

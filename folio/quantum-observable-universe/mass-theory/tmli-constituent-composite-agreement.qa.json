@@ -1291,6 +1291,24 @@
         "reviewed_sha": "06a3439cc5ff0cdc91182a4199f03868f80ab9b8",
         "severity": "major",
         "evidence": "Aggregate is derived by induction, but the per-constituent peel (trace multiplies by tr_M(constituent k)) is a context field, i.e. the multiplicativity is assumed step by step. The generator-monotone hypothesis of the md is never used; it should be what discharges peel (via thm:markov-trace-product)."
+      },
+      {
+        "field_hash": {
+          "md": "5188d0455921",
+          "ts": "8e1f4523b63d",
+          "lean": "6419591b237f",
+          "lean_statement": "f90a2e17f51c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T18:12:15.045Z",
+        "reviewed_sha": "677b0a1284456bd582792110bdc22f48ab47322d",
+        "severity": "major",
+        "evidence": "Re-read 2026-11-17 (was warn major; re-graded: the Lean assumes the statement's content). The aggregate is derived by induction, but each step uses ctx.peel, a context field asserting the trace multiplies by the constituent trace; that multiplicativity is the claim. The generator-monotone hypothesis is never used. The counterexample checks: for s0 s1 s0 s1, tr - (hz+1)^2 = z^2 - hz - 1 = -(q^4+q^2+1)/(q^2+1)^2 under convention D."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2460,6 +2478,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-16T07:06:46.167Z",
+  "updated_at": "2026-11-17T18:12:15.045Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

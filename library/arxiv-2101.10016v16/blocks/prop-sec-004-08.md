@@ -1,0 +1,1 @@
+Let (F, F, G) : C → C ′ be a weak tensor functor between tensor categories. If ρ ∨ is a right dual of ρ defined by d ∈ (ρ ∨ ⊗ ρ, ι) and b ∈ (ι, ρ ⊗ ρ∨ ) then F(ρ ∨ ) is a right dual of F(ρ) defined by d1 = F(d) ◦ Fρ∨,ρ and b1 = Gρ,ρ∨ ◦ F(b), similarly for left duals.

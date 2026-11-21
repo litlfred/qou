@@ -1,0 +1,1 @@
+Let N = 2, 3, 4 or 8. Assuming a variant of Grothendieck’s period conjecture, Deligne [16] constructed explicitly a set of basis for MPV(w, N). His results would also imply that d(w, 2) is given by the Fibonacci numbers, d(w, 3) = d(w, 4) = 2w, and d(w, 8) = 3w under Grothendieck’s period conjec- ture. Documenta Mathematica 15 (2010) 1–34 Jianqiang Zhao

@@ -51,7 +51,7 @@ export default proposition({
   title:
     "Borromean baryon $\\lambda_{\\text{scale}}$ empirical form $5/2 - h^2 \\cdot G$",
   uses: [
-    "conj:borromean-baryon-mass-formula",
+    // conj:borromean-baryon-mass-formula removed (qou-tm3c): the claim is the identity sum of dim_q V_lambda over lambda of 4 = 10 + 3h^2; no mass formula is used.
     "prop:plancherel-weight-boundedness",
   ],
   cites: [

@@ -1,0 +1,1 @@
+— (1) If ˆf ∈C{x}[λ;q] q , we deﬁne its sums in the direction [λ; q] as follows: S[λ] q ˆf = L[λ] q (Bq ˆf), S[λ] q ˆf = L[λ] q (Bq ˆf). (2) If ˆf ∈C{x}d q, deﬁne its sums in the direction d as follows: Sd q ˆf = Ld q(Bq ˆf), Sd q ˆf = Ld q(Bq ˆf). ANNALES DE L’INSTITUT FOURIER ON q-SUMMATION AND CONFLUENCE

@@ -1,1 +1,0 @@
-For reasons of space, it was unfortunately not possible to review the large 2In fact, we should never need to compute relations explicitly using ‘standard operations’ such as those described in [28]; these are taken care of automatically by the Tannakian formalism, and the bound on the Ext groups of MT (Z) coming from Borel’s theorems on algebraic K-theory.

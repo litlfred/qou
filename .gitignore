@@ -70,6 +70,8 @@ _site/
 .lake-build.lock
 lake-packages/
 folio/*/lean/.lake/
+# A .lake that is a symlink is a file, so `.lake/` does not match it (bean qou-w12g, 2026-11-21).
+folio/*/lean/.lake
 folio/*/lean/lake-packages/
 folio/*/lean/build/
 

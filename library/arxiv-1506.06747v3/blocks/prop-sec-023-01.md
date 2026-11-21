@@ -1,0 +1,1 @@
+The explicit choice made in [36] for the coeﬃcient c implicitly assumes that the contribution from the subtracted dispersion integral, mdisp γ , stays ﬁnite when the cut-oﬀis removed, so that the logarithmic diver- gence then exclusively arises from the term mS γ , which stems from the subtraction function.

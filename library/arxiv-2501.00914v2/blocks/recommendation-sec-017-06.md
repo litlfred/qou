@@ -1,1 +1,0 @@
-In the latter case we must have $r=0$, and then $K$ must be fibered of genus 1 \cite{gabai-foliations3}; but the only genus-1 fibered knots are the trefoils and the figure eight, and none of these are satellites, so in fact $S^3_r(K) \cong S^3_r(T_{p,q})$ must be atoroidal.

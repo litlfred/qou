@@ -147,9 +147,28 @@ elif printf '%s' "$REF" | grep -Eq '^[0-9a-f]{40}$' && ! git -C "$CLONE_DIR" rev
   info "platform clone exists at $CLONE_DIR — fetching only the pinned commit $REF"
   git_retry git -C "$CLONE_DIR" fetch --quiet --depth 1 origin "$REF" \
     || info "fetch failed (offline?) — using existing clone as-is"
+elif printf '%s' "$REF" | grep -Eq '^[0-9a-f]{40}$'; then
+  # The pinned commit is already in the clone, and a SHA cannot move, so there
+  # is nothing to fetch. This branch used to fall through to the `fetch --tags
+  # origin` below, which in a cloud session is a disaster: the session's own
+  # shallow checkout of litlfred/folio-assistant sits at ../folio-assistant
+  # (the default CLONE_DIR) and usually already contains the pin, and a
+  # refspec-wide fetch from a shallow clone pulls the FULL history of all
+  # ~4,200 branches. Measured 2026-11-17: 10.7 million objects, the pack past
+  # 4.9 GB and still growing after 6 minutes, so the agent's timeout killed
+  # setup before the layer mount and the symlink were made, and no
+  # folio-assistant/ link was left behind.
+  info "platform clone exists at $CLONE_DIR and already has $REF — no fetch needed"
 else
+  # A branch or tag name. Fetch only that ref, shallow if the clone is shallow,
+  # never every branch: see the SHA case above for what a full fetch costs.
   info "platform clone exists at $CLONE_DIR — fetching $REF"
-  git_retry git -C "$CLONE_DIR" fetch --tags origin \
+  _depth=""
+  [ "$(git -C "$CLONE_DIR" rev-parse --is-shallow-repository 2>/dev/null)" = true ] && _depth="--depth 1"
+  # shellcheck disable=SC2086
+  git_retry git -C "$CLONE_DIR" fetch --quiet $_depth origin \
+      "+refs/heads/$REF:refs/remotes/origin/$REF" 2>/dev/null \
+    || git_retry git -C "$CLONE_DIR" fetch --quiet $_depth origin "refs/tags/$REF:refs/tags/$REF" \
     || info "fetch failed (offline?) — using existing clone as-is"
 fi
 [ -d "$CLONE_DIR/.git" ] || die "clone directory $CLONE_DIR not present after setup"

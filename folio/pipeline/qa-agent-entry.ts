@@ -101,7 +101,7 @@ const REPO_ROOT = resolve(import.meta.dir, "..", "..");
  * on a Lean-reading criterion could never be fresh — `entryIsFresh` sees an
  * expected hash absent and a current hash present, returns false, and the
  * criterion re-queues for an agent forever. That is how a `proof-statement-
- * integrity` adjudication recorded on `thm:six-term-mass-formula-complete`
+ * integrity` adjudication recorded on `conj:six-term-mass-formula-complete`
  * left `needs-agent` at 1 immediately after being written.
  *
  * Resolution is DELEGATED, not reimplemented. `resolveCanonicalLean` is the
@@ -125,6 +125,21 @@ async function resolveLean(): Promise<string | undefined> {
   const m = readFileSync(tsPath, "utf8").match(/ref:\s*"([^"]+)"/);
   if (!m) return undefined;
   try {
+    // The platform resolver returns `undefined` for EVERY ref until a
+    // formalism layer is installed (it logs "[formal-ref] No formalism layer
+    // is installed"). This entry point never installed one, so the
+    // library-path branch above was a silent no-op again: measured
+    // 2026-11-16, 48 agent verdicts written by this script on library-Lean
+    // blocks carry no `lean` hash and read stale from the moment they were
+    // written. Install the Lean layer with qou's package list, exactly as
+    // `scripts/run-validate.ts` does.
+    const sci = join(REPO_ROOT, "folio-assistant/folio-assistant-sci/pipeline/lean-formal-ref.ts");
+    const pkgs = join(REPO_ROOT, "schemas/lean-packages.ts");
+    if (existsSync(sci) && existsSync(pkgs)) {
+      const { configureLeanPackages } = await import(sci);
+      const { LEAN_PACKAGES } = await import(pkgs);
+      configureLeanPackages(LEAN_PACKAGES);
+    }
     const { resolveCanonicalLean } = await import(utils);
     return resolveCanonicalLean(m[1], REPO_ROOT);
   } catch {

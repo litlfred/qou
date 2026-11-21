@@ -1,1 +1,0 @@
-One inevitably has to dig into the Morse theory of 2-dimensional manifolds to show, among other things, that two different ways of glu- ing the generators into the same cobordism [M] must be related by only commutative Frobenius relations.

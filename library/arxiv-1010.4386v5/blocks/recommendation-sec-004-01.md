@@ -1,1 +1,0 @@
-Then \begin{equation} \label{eqn:tel.13} \opn{tel}_{\bsym{a}, M}(f) = \sum_{(i_1, \ldots, i_n) \in \N^n} \ p(a_1, i_1) \cdots p(a_n, i_n) f(i_1, \ldots, i_n) \in \Lambda_{\a} (M) . \end{equation} We shall not require this formula. \end{rem}

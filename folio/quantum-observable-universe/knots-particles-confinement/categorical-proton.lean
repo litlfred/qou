@@ -5,8 +5,10 @@ import Mathlib.Tactic.NormNum
 /-!
 # QOU.Torsion.CategoricalProton — Proton as color-linked quark triple
 
-The categorical proton is 𝔭 = [u, u, d]_c ⋈ L_H where u = T_{2,3}
-(trefoil) and d = σ(T_{2,3}) (three-twist, Skein descendant).
+The categorical proton is 𝔭 = [u, u, d]_c ⋈ L_H where u and d are unknot
+strands of the Borromean braid B₃ with positive and negative crossing
+orientation (`def:up-quark`); their lepton partners are T_{2,3} and its
+mirror σ(T_{2,3}).
 
 LaTeX label: `def:categorical-proton`
 

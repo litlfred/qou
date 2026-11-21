@@ -1,1 +1,0 @@
-If we want to apply the algebra homomorphism ˜σ (or ˜σun, that comes down to the same thing) to FGP,δ ξ ⊗eP,δZ(H⋊Γ) eP,δH ⋊Γ, we must replace the target by FGP,δ ξ ⊗eP,δZ(H⋊Γ) M w∈⟨W ′⟩ c(w) M i=1 O(T σw,i) ⊗EndC(Vσw,i) = M σw,i≺(P,δ) \ O(T σw,i)pr(ξ) ⊗EndC(Vσw,i).

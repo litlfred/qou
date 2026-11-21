@@ -1,1 +1,0 @@
-This component FLOER COHOMOLOGY AND PENCILS OF QUADRICS 57 is determined by the non-degeneracy of Poincar´e duality, via its trace, hence will be independent of the compactiﬁcation to Z. □ To compute the algebra structure on H(A) (taken inside Z) completely, we must therefore understand Floer products amongst 3 diﬀerent Lagrangians.

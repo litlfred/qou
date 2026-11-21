@@ -1,0 +1,1 @@
+In section VI we determine the light quark mass diﬀerence bmd −bmu using the experimental value of the kaon mass splitting MK+ −MK0, while section VII is devoted to the evaluation of the ϵK0 parameter.

@@ -1,0 +1,1 @@
+concrete form of such a power series for a TQFT derived from a quantum group is given by Verlinde formula [394]. For example, such a power series of the TQFT derived from U,(slz) at level k is presented by

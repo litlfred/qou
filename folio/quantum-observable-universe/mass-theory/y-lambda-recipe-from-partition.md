@@ -1,4 +1,4 @@
-*For any partition $\lambda \,\vdash\, n$, we determine $y_\lambda(q)$ mechanically as a rational function in $q$.*
+*For any partition $\lambda \,\vdash\, n$, $y_\lambda(q)$ is determined mechanically as a rational function in $q$.*
 
 1. *Extract cell contents $c(i, j) = j - i$ and hook lengths $h(i, j)$. Define $n(\lambda) = \sum_i (i-1)\lambda_i$.*
 2. *Fix the universal substitution at the Wenzl level $r = 2$, with $Q = q^2$:*
@@ -25,7 +25,7 @@
 
 This deterministic process produces the exact $y_\lambda(q)$ closed form in $O(|\lambda| \cdot \max h)$ steps — the cost of one Schur specialisation, the normaliser being closed-form.
 
-**Convention.** The substitution above is convention D, $z_D = q^3/(q^2+1)$, canonical since the ruling of 2026-08-15. An earlier form of this recipe fixed
+**Convention.** The substitution above uses the canonical Convention-D parameter $z_D = q^3/(q^2+1)$. By contrast, the Convention-C parameterization sets
 
 $$
   X \;=\; \frac{q^{3/2}}{1 + q - q^2 - q^3 + q^{3/2}},

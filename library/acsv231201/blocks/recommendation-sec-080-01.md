@@ -1,1 +1,0 @@
-Any additional charts that are compatible with the charts deﬁning a manifold must also be compatible with each other, so any collection of charts covering a manifold is contained in a uniquely deﬁned maximal set of compatible charts, known as an atlas.

@@ -1,0 +1,1 @@
+Let C be a tensor category with generalised coboundary c and right duality (ρ ∨ , bρ, dρ). Then the isomorphism c2(ρ, σ) ∈ (ρ ⊗ σ, ρ ⊗ σ) is a tensor structure of the identity functor which does not depend on the choice of the right duality.

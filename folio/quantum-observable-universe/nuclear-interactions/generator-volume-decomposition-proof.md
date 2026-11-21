@@ -1,14 +1,14 @@
 ## Proof
 
-> **Scope note (2026-11-15).** Step 2 gives the wrong reason. The Markov trace does not factorize across generators in general: $\mathrm{tr}(\sigma_1^2) = hz + 1 \neq z^2$ and $\mathrm{tr}(\sigma_0\sigma_1\sigma_0) = hz^2 + z \neq z^3$. The additive form in step 2 holds only where the word splits into commuting, disjoint-support factors. For a general normal form it is an assumption, not a consequence of far commutativity.
+> **Scope of Step 2 (disjoint-support factorisation).** The Markov trace does not factorize across generators in general: $\mathrm{tr}(\sigma_1^2) = hz + 1 \neq z^2$ and $\mathrm{tr}(\sigma_0\sigma_1\sigma_0) = hz^2 + z \neq z^3$. The additive form in step 2 holds only where the word splits into commuting, disjoint-support factors. For a general normal form it is an assumption, not a consequence of far commutativity.
 
 
 The three claims—exact transfer-matrix reduction, additive energy decomposition, and the $\binom{A}{2}$ step count—follow from the Hecke relation and far commutativity.
 
 1. **Exact reduction at each generator.** At $\sigma_i$, the product of the $k_i = A - i - 1$ crossing factors $C_{ij}(\sigma_i) = c_j\sigma_i + d_j$ reduces to a single linear form $a_i\sigma_i + b_i$. This reduction uses $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$. The coefficients $(a_i, b_i)$ obey the stated $2\times2$ transfer recurrence from $(a_0, b_0) = (0, 1)$. This reduction is exact. The Hecke relation closes the span $\{1, \sigma_i\}$, leaving no higher powers (the $\infty$-jet equals the $k_i$-jet).
 
-2. **Additivity.** Distant generators commute. On the Gröbner--Shirshov normal form ([nuclear reduction](#prop:nuclear-groebner-reduction)), the Markov trace factorizes across generators. This yields $\tfrac12\ln(\mathrm{tr}\,\overline{\mathrm{tr}}) = \tfrac12\sum_i \ln(\hat V_i \overline{\hat V_i})$ with $\hat V_i = z\,a_i + b_i$. This formalizes `energy_additive`.
+2. **Additivity.** Distant generators commute. On the Gröbner--Shirshov normal form ([nuclear reduction](#prop:nuclear-groebner-reduction)), the Markov trace factorizes across generators. This yields $\tfrac12\ln(\mathrm{tr}\,\overline{\mathrm{tr}}) = \tfrac12\sum_i \ln(\hat V_i \overline{\hat V_i})$ with $\hat V_i = z\,a_i + b_i$.
 
-3. **Step count and $\beta$-decay locality.** The total work is $\sum_{i=0}^{A-2} k_i = \sum_{i=0}^{A-2}(A - i - 1) = \binom{A}{2}$. A single type-change at position $p$ alters only generators $i \le p$. The higher generators cancel exactly to yield the 1-jet variation. This formalizes `beta_decay_locality`.
+3. **Step count and $\beta$-decay locality.** The total work is $\sum_{i=0}^{A-2} k_i = \sum_{i=0}^{A-2}(A - i - 1) = \binom{A}{2}$. A single type-change at position $p$ alters only generators $i \le p$. The higher generators cancel exactly to yield the 1-jet variation.
 
-The Lean formalization proves `energy_additive` and `beta_decay_locality` directly. It states the assembly `generator_volume_decomposition_prop` as the decomposition identity itself. By construction, the categorically-defined energy `generator_volume_decomposition` equals the generator-volume sum $\sum_i V_i$ (proved by `rfl`). The sublemmas above carry the substantive transfer-matrix, additivity, and locality content. $\square$
+The additivity and locality statements of Steps 2 and 3 are proved directly, subject to the scope note on Step 2 above. The assembly is the decomposition identity itself: by construction, the categorically-defined energy equals the generator-volume sum $\sum_i V_i$ definitionally. Steps 1–3 carry the substantive transfer-matrix, additivity, and locality content. $\square$

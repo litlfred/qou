@@ -1,0 +1,1 @@
+If s = 3, part (b) of the last proposition completely determines the number of edges in the dual principal graph except for the decomposition of the bimodule M⃗λ with⃗λ = (l/2,l/2,l/2), which could decompose into the direct sum of four nonisomorphic irreducible M–M bimodules or into the direct sum of two isomorphic irreducible M–M bimodules.

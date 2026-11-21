@@ -1,0 +1,1 @@
+In [NZ, Theorem 2.2 to Proposition 2.5] combinatorial results equivalent to the above Theorem were proved under the extra assumption that the complement of the vertices, K −K0, carries a complete hyperbolic structure of ﬁnite volume.

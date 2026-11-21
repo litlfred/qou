@@ -1,0 +1,1 @@
+The squaring operation is related to Hochschild cohomology. Assume for simplicity that A is a ﬁeld and M is a B-module. Then for each i the cohomology Hi(SqB/A(M)) = Exti B⊗AB(B, M ⊗A M) is the i-th Hochschild cohomology with values in the B-bimodule M ⊗A M. For more on this material see [14], [137] and [138].

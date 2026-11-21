@@ -1,0 +1,1 @@
+For P ∈P the following holds. (a) If the subcategory N satisﬁes the twisting axiom (N2) and if P is an N-multiplier, then H•(X,Pχ) is concentrated in degree zero for most characters χ. (b) Conversely, suppose that N satisﬁes the acyclicity axiom (N3) and that the hard Lefschetz axiom (D5) holds. Then P is an N-multiplier if H•(X,P) is concentrated in degree zero.

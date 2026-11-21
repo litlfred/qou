@@ -1,0 +1,1 @@
+Let X be a quasi-compact ﬁbered category over R. The morphism X →FibX ,C is universal among maps from X to quasi-compact fpqc stacks with quasi-aﬃne diagonal and with the resolution property, that is (5.1) Hom(FibX ,Vect(X ), Y) →Hom(X, Y) is an equivalence for all such stacks Y.

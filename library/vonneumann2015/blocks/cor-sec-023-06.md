@@ -1,0 +1,1 @@
+Let M be a II∞factor on a separable Hilbert space and tr be the trace supplied by a decomposition II1 ⊗B(H). Then tr deﬁnes an isomorphism of the totally ordered set of equivalence classes of projections in M to the interval [0, ∞].

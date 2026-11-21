@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/s10052-020-08615-2/blocks/prop-sec-030-03",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 21,
+  "pageEnd": 23,
+  "text": "prop-sec-030-03.md",
+  "derivedFrom": "library/s10052-020-08615-2/sections/sec-030",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10052-020-08615-2/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "computational-claim",
+    "claim_domain": "science",
+    "evidence_kind": "computational-simulation",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "Cites external source [74] in sections/sec-030-25-summary-and-conclusions.md"
+  }
+}

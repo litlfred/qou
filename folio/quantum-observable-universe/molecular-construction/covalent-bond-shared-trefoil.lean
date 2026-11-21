@@ -1,9 +1,9 @@
 -- Ref: [leitner2026] Ch. 10, §covalent-bond-shared-trefoil
--- Covalent bond as shared electron trefoil
+-- Covalent bond as shared electrons (each the word σ₀σ₁σ₀, closure: Hopf link)
 
 namespace QOU.Molecular
 
-/-- A **covalent bond** of order k consists of k electron trefoils
+/-- A **covalent bond** of order k consists of k electrons (words σ₀σ₁σ₀)
     Hopf-linked across two nuclei via 2k attractive σ⁻¹ crossings
     (one pair per nucleus per electron).
 

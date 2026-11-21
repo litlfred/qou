@@ -1,0 +1,1 @@
+Let S be a simple sporadic group, alternating group An with n ≥5, or one of the simple groups PSL2(4), PSL3(2), PSL3(4), PSU4(2), PSU4(3), PSLϵ 6(2), 2B2(8), B3(2), B3(3), D4(2), F4(2), 2F4(2)′, E6(2), 2E6(2), G2(2)′, G2(3), or G2(4). Then Theorem C holds for S and the prime p = 2.

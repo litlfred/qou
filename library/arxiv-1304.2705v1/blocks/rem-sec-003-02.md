@@ -1,0 +1,1 @@
+A computation gives that P (A, B) = P (B − A, B) for ( A, B) = (1 , 2) and (A, B) = (2 , 3) corresponding to the invariants of the 4 1 and 5 2 knots. In all other cases that we tried, we found that P (A, B) is not equal to P (B − A, B).

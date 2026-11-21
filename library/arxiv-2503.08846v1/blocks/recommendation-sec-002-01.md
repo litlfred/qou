@@ -1,1 +1,0 @@
-The so-called Markov trace TrM should satisfy the following two properties: • (cyclicity) for two braids α and β TrM(α · β) = TrM(β · α) (15) • (Markov property) for braid βn ∈Bn and its embedding βn · bn in Bn+1, TrM(βn) = TrM(βn · b±1 n ) (16) Markov property can be expressed diagrammatically as βn ∼ βn , (17) which is a particular expression of the I Reidemeister move.

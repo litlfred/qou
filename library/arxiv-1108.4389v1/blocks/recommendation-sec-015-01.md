@@ -1,1 +1,0 @@
-We know that SQED also has two monopole operators $v_+$ and $v_-$, and from the form of the FI term in [\[SQEDbip\]](#SQEDbip){reference-type="eqref" reference="SQEDbip"} we see that they must be charged under the combinations $V_{X_2}$ and $-V_{X_1}-V_{X_2}$, respectively.

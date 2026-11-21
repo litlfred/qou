@@ -1,0 +1,1 @@
+— Let 9 : X ->Y be a continuous map with Y locally connected and X Hausdorjf. Assume that each y e Y admits a neighborhood V such that each x e (p'^V) has an open neighborhood U with <p(U) 3 V such that 9 induces a homeomorphismfrom U to 9(U). Then 9 is a covering map. We first prove the

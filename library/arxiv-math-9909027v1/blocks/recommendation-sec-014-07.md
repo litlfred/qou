@@ -1,1 +1,0 @@
-This is because one may ﬁrst isotope the big picture so that all the maxima and cusps in the 0-picture have y coordinates in an uninterrupted sequence in S, and the last singular- ity must be a maximum, shaded below, the ﬁrst being a minimum, shaded above.

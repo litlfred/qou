@@ -1,0 +1,1 @@
+Let ρ : π1(M) →SL2(k( ¯X)) be the tautological representation, then H0(M, Ad ◦ρ) = Hi(M, Ad ◦ρ) = 0 for i ≥3 ; H1(M, Ad ◦ρ) is one dimensional and H2(M, Ad ◦ρ) ≃k( ¯X), via the homomorphism η 7→Tr((r∗η)H).

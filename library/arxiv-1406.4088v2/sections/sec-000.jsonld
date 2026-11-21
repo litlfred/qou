@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1406.4088v2/sections/sec-000",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "1",
+  "pageStart": 2,
+  "pageEnd": 13,
+  "contains": [
+    "library/arxiv-1406.4088v2/blocks/prose-sec-000",
+    "library/arxiv-1406.4088v2/blocks/prop-sec-000-01",
+    "library/arxiv-1406.4088v2/blocks/prop-sec-000-02",
+    "library/arxiv-1406.4088v2/blocks/prop-sec-000-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1406.4088v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1406.4088v2/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -212,4 +212,29 @@ theorem markovWeight2_conventionD (q : ℝ) (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
   field_simp
   ring
 
+
+/-- **Direct `n = 3` Markov weight sum identity, Plancherel `(1, 0)` values, and `(1, 1/3)` values (`qou-bsec`).**
+For every `q, z : ℝ`, `markovWeight0 q z + 2 * markovWeight2 q z + markovWeight1 q z = 1`,
+at `(q, z) = (1, 0)` the weights equal `(1/6, 1/6, 1/3)`, and at `(q, z) = (1, 1/3)` they equal `(10/27, 1/27, 8/27)`. -/
+theorem markovWeights_three_sum_and_classical_values (q z : ℝ) :
+    markovWeight0 q z + 2 * markovWeight2 q z + markovWeight1 q z = 1 ∧
+      markovWeight0 1 0 = 1 / 6 ∧
+      markovWeight1 1 0 = 1 / 6 ∧
+      markovWeight2 1 0 = 1 / 3 ∧
+      markovWeight0 1 (1 / 3) = 10 / 27 ∧
+      markovWeight1 1 (1 / 3) = 1 / 27 ∧
+      markovWeight2 1 (1 / 3) = 8 / 27 := by
+  refine ⟨?_,
+    by rw [markovWeight0]; norm_num,
+    by rw [markovWeight1]; norm_num,
+    by rw [markovWeight2]; norm_num,
+    by rw [markovWeight0]; norm_num,
+    by rw [markovWeight1]; norm_num,
+    by rw [markovWeight2]; norm_num⟩
+  rw [markovWeight0, markovWeight1, markovWeight2]
+  have hp : (q ^ 2 + 1 : ℝ) ≠ 0 := by positivity
+  have hp' : (q ^ 4 + q ^ 2 + 1 : ℝ) ≠ 0 := by positivity
+  field_simp
+  ring
+
 end QOU.SchurWeyl
