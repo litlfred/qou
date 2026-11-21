@@ -4,7 +4,7 @@ import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 /-!
 # QOU.LiftingDescent.tm_dilogarithm_evaluation
 
-**Lemma** ([`lem:topological-mass-dilogarithm`](../../../quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.md)).
+**Conjecture** ([`conj:topological-mass-dilogarithm`](../../../quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.md)).
 
 *Each exceptional-divisor summand evaluates to the quantum dilogarithm:*
 
@@ -26,14 +26,15 @@ The `.md` displays a chain of **two** equalities.
 - The **first** equality — the Briggs–Klein chart evaluation of the
   multiplicative-integral norm to that integral — is the genuine open
   analytic input (Yekutieli multiplicative integration + the
-  Faddeev–Kashaev saddle evaluation), stated as the sub-lemma
-  `tm_divisor_chart_evaluation` with an honest `sorry` + citations
-  (AGENTS.md §1, §1a item 2).
+  Faddeev–Kashaev saddle evaluation). It is carried as the field
+  `chart_eval` of the class `TmDivisorChartInputs`, and
+  `tm_divisor_chart_evaluation` returns that field. There is no `sorry`;
+  the input is a hypothesis.
 
-The main theorem *derives* the .md identity by chaining the sorried
-chart evaluation with the proved integral representation — it does not
-assume its conclusion (lean-proof-vacuity-audit fix recipe; AGENTS.md
-§3b-cond item 5).
+The main theorem chains that hypothesis with the definitional integral
+representation. Since the hypothesis is the first equality and the second
+holds by definition, the theorem is the statement itself under a
+hypothesis. For this reason the block is a conjecture (2026-11-21).
 
 ## Base ring (§7c)
 
@@ -92,11 +93,11 @@ theorem tm_divisor_chart_evaluation [ctx : TmDivisorChartInputs] :
   ctx.chart_eval
 
 /-- **Exceptional-divisor summand = quantum dilogarithm**
-    ([`lem:topological-mass-dilogarithm`]).
+    ([`conj:topological-mass-dilogarithm`]).
 
 `‖MI∫_{E_i}‖ = Φ_q(z_i)` for every exceptional divisor `E_i`.
-*Derived* (not assumed): chain the chart evaluation with the proved
-integral representation of `Φ_q`. -/
+Conditional on `TmDivisorChartInputs`, which carries the first equality;
+the second is the definition of `Φ_q`. -/
 theorem tm_dilogarithm_evaluation [TmDivisorChartInputs] : ∀ i : ℕ, MI i = Phi_q (z i) :=
   fun i =>
     (tm_divisor_chart_evaluation i).trans

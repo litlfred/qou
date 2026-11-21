@@ -39,6 +39,6 @@ in both inequalities above. Both are open: neither is forced by the disc
 splitting and support hypotheses.  Each
 exceptional-divisor summand equals the quantum dilogarithm
 $\Phi_q(z_i)$ by
-([quantum dilogarithm evaluation](#lem:topological-mass-dilogarithm)),
+([quantum dilogarithm evaluation](#conj:topological-mass-dilogarithm)),
 so the bound reads
 $\mathfrak{m}(\varrho) \le \lVert \mathrm{Hol}_{\nabla_A}(\varrho_0; \mathfrak{G}) \rVert + \sum_{i=1}^{N} \Phi_q(z_i)$.  $\square$
