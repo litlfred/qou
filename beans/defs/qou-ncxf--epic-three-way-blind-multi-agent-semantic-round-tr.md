@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: critical
 created_at: 2026-11-19T16:50:58Z
-updated_at: 2026-11-21T16:00:00Z
+updated_at: 2026-11-21T15:51:20Z
 ---
 
 End-to-end blind multi-agent round-trip audit architecture across all 741 provable claims (and definitions/conjectures) in QOU, using strictly isolated, tool-free blind agents at every leg plus deterministic comment/spoiler scrubbing (`folio/pipeline/roundtrip-blind-packets.ts`).
@@ -23,3 +23,7 @@ Stalled-claim takeover: last touch 2026-11-19T17:42Z (>3 h); no backing branch o
 ## 2026-11-21 (honesty-audits sibling)
 
 Pass 2 done (20 blocks, offset 15; PR #8888, docs/audits/2026-11-21-roundtrip-blind-audit-pass2.md). Class A in 9/20, tautology 2, genuine 9. New: C12 `wigner_coefficient_axiom` is an axiom carrying an empirical 3 % bound at the retired CODATA-2018 muon pin (see also qou-wg3c); C09 and C13 narrative proofs verified wrong; C19/C20 agent findings checked and rejected. Five decl-not-found refs in the window. Pass-1 restatements and the confinement sorry also landed in #8888. Next cursor: offset 40.
+
+## 2026-11-21 (honesty-audits sibling, fixes)
+
+All pass-2 findings acted on in PR #8888 (§6 of the pass-2 audit doc). Self-assuming fields deleted with honest `sorry` + Ref: C04, C06, C09, C17. C12 empirical axiom deleted. C16 conjunct 2 derived. Narrative proofs rewritten: C01, C04, C06, C09, C13. Restated: C03, C11. Minor slips: C02, C08, C18, C20. C13 reclassified genuine → B (scalar-only Lean). New, unfixed: `models-of-qous/skew-poisson-integration.lean` stores Bool flags and reads them back (Class A family). Epic stays in-progress; next cursor offset 40.

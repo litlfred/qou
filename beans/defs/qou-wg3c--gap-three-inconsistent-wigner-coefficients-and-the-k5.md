@@ -6,7 +6,7 @@ pr: 8192
 type: task
 priority: normal
 created_at: 2026-10-11T07:35:00Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T15:51:20Z
 parent: qou-8lxd
 ---
 
@@ -166,3 +166,7 @@ route; the question of which C_lambda definition is meant stays open.
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8192, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-10-12: "qou-wg3c: neither Wigner candidate is derived; C_lambda has two definitions"). The work may be partly or fully done. Read the bean before you close it.
+
+## 2026-11-21 (honesty-audits sibling, PR #8888)
+
+`axiom wigner_coefficient_axiom` (|[5]_q!·m_e − 68.896|/68.896 < 0.03 at the retired CODATA-2018 muon q₀) is deleted. `wigner_coefficient` now proves only the product expansion `[5]_q!·m_e = [1][2][3][4][5]·m_e`, sorry-free. The proof .md no longer quotes 67.1 vs 68.9, and its false header Σ_λ dim_q(λ)² = [n]_q! is corrected. The gap this bean records (three inconsistent coefficients, k = 5 row cap) is NOT resolved; stays todo.
