@@ -1,0 +1,1011 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-21T15:49:35.195085+00:00",
+  "commitSha": "0e083dfc960f0ad2170bc912af743377491f0fe6",
+  "assertions": [
+    {
+      "name": "C1_short_candidates_match_gg_atom_bonds",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "length<=3 kept: ['V4.V4.V4', 'V5.V5.V5'] (Lean gg_atom_bonds)"
+    },
+    {
+      "name": "C2_V3_rows_reproduce_h2_ruled_electron",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "8/8 verdicts match, max ratio diff 3.0573e-21"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "h2-bond-min-action",
+  "scriptFile": "h2_bond_min_action_probe.py",
+  "scriptHash": "bf5f65c83233",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/h2_bond_min_action/h2_bond_min_action_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/h2_bond_min_action/h2_bond_min_action_probe.py"
+  },
+  "q0Anchor": "proton",
+  "q0AnchorReason": "q0 enters through cf.Q (committed y-lambda-at-q0 witness, proton pin)",
+  "description": "PROBE (issue #8879): H2 bond by minimum Markov trace (prop:confinement-lp read on words) over gamma-gamma V4/V5 words of length 1..6 that are atom-preserving and not split; reading 3 at every level 1..12, convention D, proton pin. Pre-registered. Nothing fitted or wired.",
+  "weight_family": "markov_y_lambda_convention_D",
+  "hypothesis_H_all_cells": false,
+  "candidates": [
+    "V4.V4.V4",
+    "V5.V5.V5",
+    "V5.V4.V5.V4",
+    "V5.V5.V4.V4",
+    "V4.V4.V4.V4.V5",
+    "V4.V5.V4.V4.V4",
+    "V4.V5.V5.V5.V5",
+    "V5.V5.V5.V4.V5",
+    "V4.V4.V4.V4.V4.V4",
+    "V4.V4.V4.V5.V5.V5",
+    "V4.V4.V5.V4.V5.V5",
+    "V4.V4.V5.V5.V5.V4",
+    "V4.V5.V5.V4.V5.V4",
+    "V4.V5.V5.V5.V4.V4",
+    "V5.V4.V4.V4.V5.V5",
+    "V5.V4.V4.V5.V5.V4",
+    "V5.V4.V5.V4.V4.V5",
+    "V5.V5.V4.V4.V4.V5",
+    "V5.V5.V5.V4.V4.V4",
+    "V5.V5.V5.V5.V5.V5"
+  ],
+  "summary": {
+    "nucleon=V^3,atom2=pe": {
+      "n_candidates": 20,
+      "n_pass": 11,
+      "argmin_ratio": [
+        "V4.V4.V4.V4.V4.V4"
+      ],
+      "min_ratio": "0.9922005613009204304914207",
+      "ranked_passing": [
+        [
+          "V4.V4.V4.V4.V4.V4",
+          "0.9922005613009204304914207"
+        ],
+        [
+          "V5.V5.V5.V5.V5.V5",
+          "0.9941151436189189096276606"
+        ],
+        [
+          "V4.V4.V5.V5.V5.V4",
+          "0.9946986090982126476672571"
+        ],
+        [
+          "V4.V4.V4.V5.V5.V5",
+          "0.9957733037518386720103909"
+        ],
+        [
+          "V4.V5.V5.V5.V4.V4",
+          "0.9957733037518386720103909"
+        ],
+        [
+          "V5.V5.V4.V4.V4.V5",
+          "0.9957733037518386720103909"
+        ],
+        [
+          "V5.V5.V5.V4.V4.V4",
+          "0.995883452570336736155501"
+        ],
+        [
+          "V5.V4.V4.V4.V5.V5",
+          "0.9966455837022510426101862"
+        ],
+        [
+          "V4.V4.V4",
+          "0.9973951387167527934969427"
+        ],
+        [
+          "V5.V5.V5",
+          "0.9984971606328126471579442"
+        ],
+        [
+          "V5.V4.V5.V4",
+          "1.032910387423430130858805"
+        ]
+      ],
+      "failing": [
+        "V5.V5.V4.V4",
+        "V4.V4.V4.V4.V5",
+        "V4.V5.V4.V4.V4",
+        "V4.V5.V5.V5.V5",
+        "V5.V5.V5.V4.V5",
+        "V4.V4.V5.V4.V5.V5",
+        "V4.V5.V5.V4.V5.V4",
+        "V5.V4.V4.V5.V5.V4",
+        "V5.V4.V5.V4.V4.V5"
+      ],
+      "H_holds": false
+    },
+    "nucleon=V^3,atom2=ep": {
+      "n_candidates": 20,
+      "n_pass": 11,
+      "argmin_ratio": [
+        "V4.V4.V4.V4.V4.V4"
+      ],
+      "min_ratio": "0.9922005613009204304914207",
+      "ranked_passing": [
+        [
+          "V4.V4.V4.V4.V4.V4",
+          "0.9922005613009204304914207"
+        ],
+        [
+          "V4.V4.V5.V5.V5.V4",
+          "0.9941858129799640867281994"
+        ],
+        [
+          "V5.V5.V5.V4.V4.V4",
+          "0.9973687198672958117363758"
+        ],
+        [
+          "V4.V4.V4",
+          "0.9973951387167527934969427"
+        ],
+        [
+          "V4.V4.V4.V5.V5.V5",
+          "0.9973951387167527934969427"
+        ],
+        [
+          "V4.V5.V5.V5.V4.V4",
+          "0.9973951387167527934969427"
+        ],
+        [
+          "V5.V5.V4.V4.V4.V5",
+          "0.9973951387167527934969427"
+        ],
+        [
+          "V5.V5.V5.V5.V5.V5",
+          "0.9973951387167527934969427"
+        ],
+        [
+          "V5.V5.V5",
+          "1.0"
+        ],
+        [
+          "V5.V4.V4.V4.V5.V5",
+          "1.0"
+        ],
+        [
+          "V5.V4.V5.V4",
+          "1.032618344668723533163806"
+        ]
+      ],
+      "failing": [
+        "V5.V5.V4.V4",
+        "V4.V4.V4.V4.V5",
+        "V4.V5.V4.V4.V4",
+        "V4.V5.V5.V5.V5",
+        "V5.V5.V5.V4.V5",
+        "V4.V4.V5.V4.V5.V5",
+        "V4.V5.V5.V4.V5.V4",
+        "V5.V4.V4.V5.V5.V4",
+        "V5.V4.V5.V4.V4.V5"
+      ],
+      "H_holds": false
+    },
+    "nucleon=V^6,atom2=pe": {
+      "n_candidates": 20,
+      "n_pass": 11,
+      "argmin_ratio": [
+        "V4.V4.V4.V4.V4.V4"
+      ],
+      "min_ratio": "0.9922005613009204304914207",
+      "ranked_passing": [
+        [
+          "V4.V4.V4.V4.V4.V4",
+          "0.9922005613009204304914207"
+        ],
+        [
+          "V5.V5.V5.V5.V5.V5",
+          "0.9940059360683287135492961"
+        ],
+        [
+          "V4.V4.V5.V5.V5.V4",
+          "0.9947156826627625060535551"
+        ],
+        [
+          "V4.V4.V4.V5.V5.V5",
+          "0.9957193047004081451719995"
+        ],
+        [
+          "V4.V5.V5.V5.V4.V4",
+          "0.9957193047004081451719995"
+        ],
+        [
+          "V5.V5.V4.V4.V4.V5",
+          "0.9957193047004081451719995"
+        ],
+        [
+          "V5.V5.V5.V4.V4.V4",
+          "0.99583400054414933701577"
+        ],
+        [
+          "V5.V4.V4.V4.V5.V5",
+          "0.996533898295227440331802"
+        ],
+        [
+          "V4.V4.V4",
+          "0.9973951387167527934969427"
+        ],
+        [
+          "V5.V5.V5",
+          "0.9984471235439372896181907"
+        ],
+        [
+          "V5.V4.V5.V4",
+          "1.032920110997081257161214"
+        ]
+      ],
+      "failing": [
+        "V5.V5.V4.V4",
+        "V4.V4.V4.V4.V5",
+        "V4.V5.V4.V4.V4",
+        "V4.V5.V5.V5.V5",
+        "V5.V5.V5.V4.V5",
+        "V4.V4.V5.V4.V5.V5",
+        "V4.V5.V5.V4.V5.V4",
+        "V5.V4.V4.V5.V5.V4",
+        "V5.V4.V5.V4.V4.V5"
+      ],
+      "H_holds": false
+    },
+    "nucleon=V^6,atom2=ep": {
+      "n_candidates": 20,
+      "n_pass": 11,
+      "argmin_ratio": [
+        "V4.V4.V4.V4.V4.V4"
+      ],
+      "min_ratio": "0.9922005613009204304914207",
+      "ranked_passing": [
+        [
+          "V4.V4.V4.V4.V4.V4",
+          "0.9922005613009204304914207"
+        ],
+        [
+          "V4.V4.V5.V5.V5.V4",
+          "0.9941858129799640867281994"
+        ],
+        [
+          "V5.V5.V5.V4.V4.V4",
+          "0.9973687198672958117363758"
+        ],
+        [
+          "V4.V4.V4",
+          "0.9973951387167527934969427"
+        ],
+        [
+          "V4.V4.V4.V5.V5.V5",
+          "0.9973951387167527934969427"
+        ],
+        [
+          "V4.V5.V5.V5.V4.V4",
+          "0.9973951387167527934969427"
+        ],
+        [
+          "V5.V5.V4.V4.V4.V5",
+          "0.9973951387167527934969427"
+        ],
+        [
+          "V5.V5.V5.V5.V5.V5",
+          "0.9973951387167527934969427"
+        ],
+        [
+          "V5.V5.V5",
+          "1.0"
+        ],
+        [
+          "V5.V4.V4.V4.V5.V5",
+          "1.0"
+        ],
+        [
+          "V5.V4.V5.V4",
+          "1.032618344668723533163806"
+        ]
+      ],
+      "failing": [
+        "V5.V5.V4.V4",
+        "V4.V4.V4.V4.V5",
+        "V4.V5.V4.V4.V4",
+        "V4.V5.V5.V5.V5",
+        "V5.V5.V5.V4.V5",
+        "V4.V4.V5.V4.V5.V5",
+        "V4.V5.V5.V4.V5.V4",
+        "V5.V4.V4.V5.V5.V4",
+        "V5.V4.V5.V4.V4.V5"
+      ],
+      "H_holds": false
+    }
+  },
+  "results": {
+    "nucleon=V^3,atom2=pe": {
+      "m": 3,
+      "atom2": "pe",
+      "tr_x": "0.476338347820750380938921426301",
+      "rows": [
+        {
+          "K": "V4.V4.V4",
+          "photons": 3,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9973951387167527934969427"
+        },
+        {
+          "K": "V5.V5.V5",
+          "photons": 3,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9984971606328126471579442"
+        },
+        {
+          "K": "V5.V4.V5.V4",
+          "photons": 4,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "1.032910387423430130858805"
+        },
+        {
+          "K": "V5.V5.V4.V4",
+          "photons": 4,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6,
+            7
+          ],
+          "ratio": "0.3305714457801628153388445"
+        },
+        {
+          "K": "V4.V4.V4.V4.V5",
+          "photons": 5,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.2961129128407732638477386"
+        },
+        {
+          "K": "V4.V5.V4.V4.V4",
+          "photons": 5,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.2961129128407732638477386"
+        },
+        {
+          "K": "V4.V5.V5.V5.V5",
+          "photons": 5,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.3042935907453119941345711"
+        },
+        {
+          "K": "V5.V5.V5.V4.V5",
+          "photons": 5,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.3042935907453119941345711"
+        },
+        {
+          "K": "V4.V4.V4.V4.V4.V4",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9922005613009204304914207"
+        },
+        {
+          "K": "V4.V4.V4.V5.V5.V5",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9957733037518386720103909"
+        },
+        {
+          "K": "V4.V4.V5.V4.V5.V5",
+          "photons": 6,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.3011236102644384520157188"
+        },
+        {
+          "K": "V4.V4.V5.V5.V5.V4",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9946986090982126476672571"
+        },
+        {
+          "K": "V4.V5.V5.V4.V5.V4",
+          "photons": 6,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.3011236102644384520157188"
+        },
+        {
+          "K": "V4.V5.V5.V5.V4.V4",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9957733037518386720103909"
+        },
+        {
+          "K": "V5.V4.V4.V4.V5.V5",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9966455837022510426101862"
+        },
+        {
+          "K": "V5.V4.V4.V5.V5.V4",
+          "photons": 6,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6,
+            7
+          ],
+          "ratio": "0.3329365959753543827765646"
+        },
+        {
+          "K": "V5.V4.V5.V4.V4.V5",
+          "photons": 6,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.3011236102644384520157188"
+        },
+        {
+          "K": "V5.V5.V4.V4.V4.V5",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9957733037518386720103909"
+        },
+        {
+          "K": "V5.V5.V5.V4.V4.V4",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.995883452570336736155501"
+        },
+        {
+          "K": "V5.V5.V5.V5.V5.V5",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9941151436189189096276606"
+        }
+      ]
+    },
+    "nucleon=V^3,atom2=ep": {
+      "m": 3,
+      "atom2": "ep",
+      "tr_x": "0.476338347820750380938921426301",
+      "rows": [
+        {
+          "K": "V4.V4.V4",
+          "photons": 3,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9973951387167527934969427"
+        },
+        {
+          "K": "V5.V5.V5",
+          "photons": 3,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "1.0"
+        },
+        {
+          "K": "V5.V4.V5.V4",
+          "photons": 4,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "1.032618344668723533163806"
+        },
+        {
+          "K": "V5.V5.V4.V4",
+          "photons": 4,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6,
+            7
+          ],
+          "ratio": "0.4082289444814311133028023"
+        },
+        {
+          "K": "V4.V4.V4.V4.V5",
+          "photons": 5,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.4047729823790613795024295"
+        },
+        {
+          "K": "V4.V5.V4.V4.V4",
+          "photons": 5,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.4047729823790613795024295"
+        },
+        {
+          "K": "V4.V5.V5.V5.V5",
+          "photons": 5,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.4131105307578777547321168"
+        },
+        {
+          "K": "V5.V5.V5.V4.V5",
+          "photons": 5,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.4131105307578777547321168"
+        },
+        {
+          "K": "V4.V4.V4.V4.V4.V4",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9922005613009204304914207"
+        },
+        {
+          "K": "V4.V4.V4.V5.V5.V5",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9973951387167527934969427"
+        },
+        {
+          "K": "V4.V4.V5.V4.V5.V5",
+          "photons": 6,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.4152919156864972455959836"
+        },
+        {
+          "K": "V4.V4.V5.V5.V5.V4",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9941858129799640867281994"
+        },
+        {
+          "K": "V4.V5.V5.V4.V5.V4",
+          "photons": 6,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.4152919156864972455959836"
+        },
+        {
+          "K": "V4.V5.V5.V5.V4.V4",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9973951387167527934969427"
+        },
+        {
+          "K": "V5.V4.V4.V4.V5.V5",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "1.0"
+        },
+        {
+          "K": "V5.V4.V4.V5.V5.V4",
+          "photons": 6,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6,
+            7
+          ],
+          "ratio": "0.4152919156864972455959836"
+        },
+        {
+          "K": "V5.V4.V5.V4.V4.V5",
+          "photons": 6,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.4152919156864972455959836"
+        },
+        {
+          "K": "V5.V5.V4.V4.V4.V5",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9973951387167527934969427"
+        },
+        {
+          "K": "V5.V5.V5.V4.V4.V4",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9973687198672958117363758"
+        },
+        {
+          "K": "V5.V5.V5.V5.V5.V5",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9973951387167527934969427"
+        }
+      ]
+    },
+    "nucleon=V^6,atom2=pe": {
+      "m": 6,
+      "atom2": "pe",
+      "tr_x": "0.472239881428232801821726791808",
+      "rows": [
+        {
+          "K": "V4.V4.V4",
+          "photons": 3,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9973951387167527934969427"
+        },
+        {
+          "K": "V5.V5.V5",
+          "photons": 3,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9984471235439372896181907"
+        },
+        {
+          "K": "V5.V4.V5.V4",
+          "photons": 4,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "1.032920110997081257161214"
+        },
+        {
+          "K": "V5.V5.V4.V4",
+          "photons": 4,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6,
+            7
+          ],
+          "ratio": "0.32798583666637859855404"
+        },
+        {
+          "K": "V4.V4.V4.V4.V5",
+          "photons": 5,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.2924950720552570030140102"
+        },
+        {
+          "K": "V4.V5.V4.V4.V4",
+          "photons": 5,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.2924950720552570030140102"
+        },
+        {
+          "K": "V4.V5.V5.V5.V5",
+          "photons": 5,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.3006705269519116368873031"
+        },
+        {
+          "K": "V5.V5.V5.V4.V5",
+          "photons": 5,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.3006705269519116368873031"
+        },
+        {
+          "K": "V4.V4.V4.V4.V4.V4",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9922005613009204304914207"
+        },
+        {
+          "K": "V4.V4.V4.V5.V5.V5",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9957193047004081451719995"
+        },
+        {
+          "K": "V4.V4.V5.V4.V5.V5",
+          "photons": 6,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.2973223725740497178330617"
+        },
+        {
+          "K": "V4.V4.V5.V5.V5.V4",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9947156826627625060535551"
+        },
+        {
+          "K": "V4.V5.V5.V4.V5.V4",
+          "photons": 6,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.2973223725740497178330617"
+        },
+        {
+          "K": "V4.V5.V5.V5.V4.V4",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9957193047004081451719995"
+        },
+        {
+          "K": "V5.V4.V4.V4.V5.V5",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.996533898295227440331802"
+        },
+        {
+          "K": "V5.V4.V4.V5.V5.V4",
+          "photons": 6,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6,
+            7
+          ],
+          "ratio": "0.3301945727480434800200496"
+        },
+        {
+          "K": "V5.V4.V5.V4.V4.V5",
+          "photons": 6,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.2973223725740497178330617"
+        },
+        {
+          "K": "V5.V5.V4.V4.V4.V5",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9957193047004081451719995"
+        },
+        {
+          "K": "V5.V5.V5.V4.V4.V4",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.99583400054414933701577"
+        },
+        {
+          "K": "V5.V5.V5.V5.V5.V5",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9940059360683287135492961"
+        }
+      ]
+    },
+    "nucleon=V^6,atom2=ep": {
+      "m": 6,
+      "atom2": "ep",
+      "tr_x": "0.472239881428232801821726791808",
+      "rows": [
+        {
+          "K": "V4.V4.V4",
+          "photons": 3,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9973951387167527934969427"
+        },
+        {
+          "K": "V5.V5.V5",
+          "photons": 3,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "1.0"
+        },
+        {
+          "K": "V5.V4.V5.V4",
+          "photons": 4,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "1.032618344668723533163806"
+        },
+        {
+          "K": "V5.V5.V4.V4",
+          "photons": 4,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6,
+            7
+          ],
+          "ratio": "0.4082289444814311133028023"
+        },
+        {
+          "K": "V4.V4.V4.V4.V5",
+          "photons": 5,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.4047729823790613795024295"
+        },
+        {
+          "K": "V4.V5.V4.V4.V4",
+          "photons": 5,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.4047729823790613795024295"
+        },
+        {
+          "K": "V4.V5.V5.V5.V5",
+          "photons": 5,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.4131105307578777547321168"
+        },
+        {
+          "K": "V5.V5.V5.V4.V5",
+          "photons": 5,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.4131105307578777547321168"
+        },
+        {
+          "K": "V4.V4.V4.V4.V4.V4",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9922005613009204304914207"
+        },
+        {
+          "K": "V4.V4.V4.V5.V5.V5",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9973951387167527934969427"
+        },
+        {
+          "K": "V4.V4.V5.V4.V5.V5",
+          "photons": 6,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.4152919156864972455959836"
+        },
+        {
+          "K": "V4.V4.V5.V5.V5.V4",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9941858129799640867281994"
+        },
+        {
+          "K": "V4.V5.V5.V4.V5.V4",
+          "photons": 6,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.4152919156864972455959836"
+        },
+        {
+          "K": "V4.V5.V5.V5.V4.V4",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9973951387167527934969427"
+        },
+        {
+          "K": "V5.V4.V4.V4.V5.V5",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "1.0"
+        },
+        {
+          "K": "V5.V4.V4.V5.V5.V4",
+          "photons": 6,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6,
+            7
+          ],
+          "ratio": "0.4152919156864972455959836"
+        },
+        {
+          "K": "V5.V4.V5.V4.V4.V5",
+          "photons": 6,
+          "reading3_every_level": false,
+          "failing_levels": [
+            6
+          ],
+          "ratio": "0.4152919156864972455959836"
+        },
+        {
+          "K": "V5.V5.V4.V4.V4.V5",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9973951387167527934969427"
+        },
+        {
+          "K": "V5.V5.V5.V4.V4.V4",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9973687198672958117363758"
+        },
+        {
+          "K": "V5.V5.V5.V5.V5.V5",
+          "photons": 6,
+          "reading3_every_level": true,
+          "failing_levels": [],
+          "ratio": "0.9973951387167527934969427"
+        }
+      ]
+    }
+  },
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
