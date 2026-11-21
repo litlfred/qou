@@ -824,6 +824,21 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "a182377e39f23ecc4b68109058657a28da39c56f"
+      },
+      {
+        "field_hash": {
+          "ts": "340a34fc77ec",
+          "md": "88e9676913b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "b87258043bb80d4c49a88acc2e29b32b1ab31865",
+        "evidence": "QA re-check of #8917 at b87258043bb. Resolves the earlier minor warn: the remark now evaluates at the proton pin, the same q0 value the witness records. Residual note on the witness, not the block: its q0_source string still says \"muon-anchored canonical q0\" over a proton value, and its masses are CODATA 2018."
       }
     ],
     "canonical-script-not-deprecated": [
@@ -1590,6 +1605,21 @@
         },
         "reviewed_tree": "a182377e39f23ecc4b68109058657a28da39c56f",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "ts": "340a34fc77ec",
+          "md": "88e9676913b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "b87258043bb80d4c49a88acc2e29b32b1ab31865",
+        "evidence": "QA re-check of #8917 at b87258043bb. Recomputed independently with mpmath at 50 dps, proton pin q0 = 1.10997858275138080759166909561 (qou_substrate.constants.q_at), CODATA 2022 from qou_substrate.codata (m_p 938.27208943, m_n 939.56542194, M_N = 938.918755685 MeV): (q0-1)^2 = 0.0120953, 1-q0^-4 = 0.341218, formula = 1.37571e-3 against (m_n-m_p)/M_N = 1.37747e-3, residual -0.12772 %; row 2 with mu_avg = M_N/3 (Step 6): 4.12713e-3 against 4.13241e-3, -0.12772 %; row 3: 1.29168 MeV against 1.29333 MeV, -0.12772 %. Every figure in the remark matches to the digits shown. The block witness (computations/probes/flavor-split-substrate-probe.witness.json) records the same q0, delta_pred 1.375711e-3 and rel_error -0.127708 %; it uses CODATA-2018 masses (938.27208816 / 939.56542052), which moves the residual only in the fifth digit. Resolves the earlier major fail. The statement that the three rows carry one residual is correct (they differ by the factors 3 and M_N)."
       }
     ],
     "da-vacuous": [
@@ -2611,5 +2641,5 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T19:05:16.000Z"
+  "updated_at": "2026-11-21T19:30:00.000Z"
 }
