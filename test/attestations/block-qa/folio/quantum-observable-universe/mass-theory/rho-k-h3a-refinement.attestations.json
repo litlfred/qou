@@ -55,6 +55,21 @@
         "reviewed_at": "2026-11-21T08:16:36.016Z",
         "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
         "evidence": "Full review 2026-11-21. Diff dropped the banner 'conditional on conj:hoefsmit-scattering-pipeline'; the .ts uses[] agrees (pipeline not used). The md (md:3-25) now supposes the division-free balance and concludes the quotient form at |tr_M|>0, collapse when all Delta_lambda=0, and vanishing correction sum at |tr_M|=0. Lean ref QOU.BraidKnot.rho_k_h3a_refinement (rho-k-h3a-refinement.lean, class RhoKH3ARefinement field consistent = the balance as hypothesis H1; theorem derives the quotient via eq_div_iff), rho_k_eq_LO_of_isLeadingOrder (collapse) and rho_k_refinement_degenerate (trace-zero case) encode all three; not_rhoKH3ARefinementNaive proves the for-every-list refutation (md:31). Not self-assuming: the field is the premise, not the conclusion. Remaining wording residue: md:29 still ends 'conditional on the scattering pipeline', which the banner and uses[] no longer say. No owner-ruling conflict."
+      },
+      {
+        "field_hash": {
+          "md": "788502a22616",
+          "ts": "08aab473fce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Re-read at 68ebfb21a05. #8889 changes the .md and the BlockBindingFraction docstring identically (Hecke word in H_{3A}(q)); lean-direct -DautoImplicit=false -s 65536 exit 0, empty output; #print axioms on the file's theorems shows no sorryAx. The md's balance, quotient form at |tr_M|>0, collapse at Delta=0 and trace-zero case are encoded by RhoKH3ARefinement.consistent, rho_k_h3a_refinement, rho_k_eq_LO_of_isLeadingOrder and rho_k_refinement_degenerate; not_rhoKH3ARefinementNaive proves the for-every-list refutation."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -335,6 +350,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "788502a22616",
+          "ts": "08aab473fce1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Read at 68ebfb21a05.",
+        "notes": "'The result is a decomposition parallel to the phenomenological six-term narrative, conditional on the scattering pipeline.' The .ts records that conj:hoefsmit-scattering-pipeline was removed from uses[] because it is not used, and the six-term narrative is not linked. The sentence contradicts the manifest. Pre-existing.",
+        "severity": "minor"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -535,6 +567,23 @@
         "reviewed_at": "2026-08-22T02:30:04.412Z",
         "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
         "evidence": "No assert-by-denying constructions."
+      },
+      {
+        "field_hash": {
+          "md": "788502a22616",
+          "ts": "08aab473fce1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of rho-k-h3a-refinement.md at 68ebfb21a05. #8889 changes 'braid word B_K in B_{3A}' to 'nuclear-core Hecke word B_K in H_{3A}(q)', matching the .lean docstring change and notation-collisions.md. The 2026-08-22 pivot ('The true binding energy lives entirely within Delta_lambda') and the 'exact' superlatives are gone from the current text; the block now says the decomposition locates the binding contribution given the balance, which is the honest defined-residual reading.",
+        "notes": "'That is not a presentational choice:' and 'says where the binding contribution sits rather than how accurate M(K) is' are contrast framings; both can be stated positively. Pre-existing.",
+        "severity": "minor"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -554,6 +603,21 @@
         "severity": "major",
         "evidence": "'If we force $\\Delta_\\lambda \\equiv 0$, the sum collapses exactly to the constituent nucleon mass. The true binding energy lives entirely within the partition-indexed $\\Delta_\\lambda$ profile.' Setup counterfactual, then a reframe sentence that carries the entire physical claim.",
         "notes": "PROPOSED (structural): the reframe is a DEFINED RESIDUAL restated as a discovery, the class AGENTS.md 2026-08-08 targets. Sentence 1 is true BY DEFINITION — the block itself says 'The leading-order piece rho_K^LO isolates the constituent mass' — so 'the true binding energy lives entirely within Delta_lambda' says only that Delta_lambda was defined as the remainder. The CITED WITNESS states this outright: computations/rho-k-h3a-refinement.witness.json describes 'extracts Delta_lambda(D) under the singleton-support hypothesis ... Both reconstruct M(D) = 1875.61294257 MeV exactly by construction (single equation, single unknown)' — a one-parameter fit at one isotope. The witness carries NO assertions at all, and records data/balanced_321_heuristic/Delta_lambda = inf: the block's own prior heuristic partition (3,2,1) makes the inversion diverge, consistent with (3,2,1) being the self-conjugate bar-odd block of H_6 (see rem-ohtsuki-tower-bar-parity). Replace with: 'Delta_lambda is DEFINED as the residual rho_K - rho_K^LO; the decomposition is therefore an identity, and the content of the proposition is whatever independent determination of Delta_lambda can be supplied.'"
+      },
+      {
+        "field_hash": {
+          "md": "788502a22616",
+          "ts": "08aab473fce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of rho-k-h3a-refinement.md at 68ebfb21a05. #8889 changes 'braid word B_K in B_{3A}' to 'nuclear-core Hecke word B_K in H_{3A}(q)', matching the .lean docstring change and notation-collisions.md. The 2026-08-22 pivot ('The true binding energy lives entirely within Delta_lambda') and the 'exact' superlatives are gone from the current text; the block now says the decomposition locates the binding contribution given the balance, which is the honest defined-residual reading."
       }
     ],
     "trap-em-dash": [
@@ -571,6 +635,21 @@
         "reviewed_at": "2026-08-22T02:30:04.503Z",
         "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
         "evidence": "Zero em-dashes."
+      },
+      {
+        "field_hash": {
+          "md": "788502a22616",
+          "ts": "08aab473fce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of rho-k-h3a-refinement.md at 68ebfb21a05. #8889 changes 'braid word B_K in B_{3A}' to 'nuclear-core Hecke word B_K in H_{3A}(q)', matching the .lean docstring change and notation-collisions.md. The 2026-08-22 pivot ('The true binding energy lives entirely within Delta_lambda') and the 'exact' superlatives are gone from the current text; the block now says the decomposition locates the binding contribution given the balance, which is the honest defined-residual reading."
       }
     ],
     "trap-triples": [
@@ -588,6 +667,21 @@
         "reviewed_at": "2026-08-22T02:30:04.553Z",
         "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
         "evidence": "No three-item lists."
+      },
+      {
+        "field_hash": {
+          "md": "788502a22616",
+          "ts": "08aab473fce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of rho-k-h3a-refinement.md at 68ebfb21a05. #8889 changes 'braid word B_K in B_{3A}' to 'nuclear-core Hecke word B_K in H_{3A}(q)', matching the .lean docstring change and notation-collisions.md. The 2026-08-22 pivot ('The true binding energy lives entirely within Delta_lambda') and the 'exact' superlatives are gone from the current text; the block now says the decomposition locates the binding contribution given the balance, which is the honest defined-residual reading."
       }
     ],
     "trap-closing-aphorism": [
@@ -605,6 +699,23 @@
         "reviewed_at": "2026-08-22T02:30:04.597Z",
         "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
         "evidence": "'This provides a mathematically exact decomposition parallel to the phenomenological six-term narrative' asserts significance but points at a named sibling construction, so it functions as a cross-reference closer."
+      },
+      {
+        "field_hash": {
+          "md": "788502a22616",
+          "ts": "08aab473fce1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of rho-k-h3a-refinement.md at 68ebfb21a05. #8889 changes 'braid word B_K in B_{3A}' to 'nuclear-core Hecke word B_K in H_{3A}(q)', matching the .lean docstring change and notation-collisions.md. The 2026-08-22 pivot ('The true binding energy lives entirely within Delta_lambda') and the 'exact' superlatives are gone from the current text; the block now says the decomposition locates the binding contribution given the balance, which is the honest defined-residual reading.",
+        "notes": "The block ends 'That refutation is proved.' with the Lean name relocated to authorNotes, so the reader gets a bare assertion with no pointer (not_rhoKH3ARefinementNaive). Pre-existing.",
+        "severity": "minor"
       }
     ],
     "trap-meta-commentary": [
@@ -622,6 +733,23 @@
         "reviewed_at": "2026-08-22T02:30:04.647Z",
         "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
         "evidence": "No narrated emphasis."
+      },
+      {
+        "field_hash": {
+          "md": "788502a22616",
+          "ts": "08aab473fce1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of rho-k-h3a-refinement.md at 68ebfb21a05. #8889 changes 'braid word B_K in B_{3A}' to 'nuclear-core Hecke word B_K in H_{3A}(q)', matching the .lean docstring change and notation-collisions.md. The 2026-08-22 pivot ('The true binding energy lives entirely within Delta_lambda') and the 'exact' superlatives are gone from the current text; the block now says the decomposition locates the binding contribution given the balance, which is the honest defined-residual reading.",
+        "notes": "'The collapse at Delta_lambda = 0 is stated as part of the claim rather than as commentary because it follows from the balance and is not a separate assertion.' narrates the block's own presentation. Delete. Pre-existing.",
+        "severity": "minor"
       }
     ],
     "trap-thesis-restatement": [
@@ -639,6 +767,21 @@
         "reviewed_at": "2026-08-22T02:30:04.690Z",
         "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
         "evidence": "The closing sentence adds the six-term parallel; not a pure echo."
+      },
+      {
+        "field_hash": {
+          "md": "788502a22616",
+          "ts": "08aab473fce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of rho-k-h3a-refinement.md at 68ebfb21a05. #8889 changes 'braid word B_K in B_{3A}' to 'nuclear-core Hecke word B_K in H_{3A}(q)', matching the .lean docstring change and notation-collisions.md. The 2026-08-22 pivot ('The true binding energy lives entirely within Delta_lambda') and the 'exact' superlatives are gone from the current text; the block now says the decomposition locates the binding contribution given the balance, which is the honest defined-residual reading."
       }
     ],
     "trap-performed-warmth": [
@@ -656,6 +799,21 @@
         "reviewed_at": "2026-08-22T02:30:04.734Z",
         "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
         "evidence": "No personal register."
+      },
+      {
+        "field_hash": {
+          "md": "788502a22616",
+          "ts": "08aab473fce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of rho-k-h3a-refinement.md at 68ebfb21a05. #8889 changes 'braid word B_K in B_{3A}' to 'nuclear-core Hecke word B_K in H_{3A}(q)', matching the .lean docstring change and notation-collisions.md. The 2026-08-22 pivot ('The true binding energy lives entirely within Delta_lambda') and the 'exact' superlatives are gone from the current text; the block now says the decomposition locates the binding contribution given the balance, which is the honest defined-residual reading."
       }
     ],
     "trap-superlative": [
@@ -675,6 +833,21 @@
         "severity": "minor",
         "evidence": "'exact' / 'exactly' / 'mathematically exact' three times plus 'entirely' and 'The TRUE binding energy' in a four-sentence block, all unqualified, against a compute the witness itself calls 'exactly by construction (single equation, single unknown)'.",
         "notes": "PROPOSED: keep 'exact' for the algebraic identity only, and qualify the physical readings. FURTHER NON-TRAP FINDINGS: (1) SS3b PROPAGATION VIOLATION — kind is proposition, uses[] contains conj:hoefsmit-scattering-pipeline, and there is NO conditional banner in the .md; demote to conjecture or add the 3b-cond banner plus the Lean class hypothesis. (2) ABSOLUTE MASS — 'The mass formula $M(K) = \\rho_K m_e |tr_M(B_K)|$ is exact' and the witness's M(D) = 1875.61294257 MeV are absolute masses, excised as predictions 2026-08-11. (3) THIRD MASS FORM — rho_K m_e |tr_M| is neither the volume-density form m_e Vol(K) rho(K)/hbar_q^2 nor the canonical muon-anchored Hecke facade (computations/canonical_mass.py); its relation to either is unstated. (4) SYMBOL COLLISION — Delta_lambda(K) here is K-DEPENDENT, while the Delta_lambda proved sorry-free on 2026-08-02 (Delta_lambda = (-1)^{n(lambda)} dim V_lambda) is K-INDEPENDENT; two objects, one glyph. (5) 'Wedderburn-Schur' carries a hyphen where the corpus uses an en-dash. The witness does correctly use the proton pin q_0 = 1.10997858275138080759166909561076887987449912187."
+      },
+      {
+        "field_hash": {
+          "md": "788502a22616",
+          "ts": "08aab473fce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of rho-k-h3a-refinement.md at 68ebfb21a05. #8889 changes 'braid word B_K in B_{3A}' to 'nuclear-core Hecke word B_K in H_{3A}(q)', matching the .lean docstring change and notation-collisions.md. The 2026-08-22 pivot ('The true binding energy lives entirely within Delta_lambda') and the 'exact' superlatives are gone from the current text; the block now says the decomposition locates the binding contribution given the balance, which is the honest defined-residual reading."
       }
     ],
     "trap-nonspeakable": [
@@ -692,6 +865,21 @@
         "reviewed_at": "2026-08-22T02:30:04.914Z",
         "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
         "evidence": "'The residual block-binding correction Delta_lambda(K) encodes the specific interaction mass added by each Wedderburn block' is noun-heavy but parses aloud."
+      },
+      {
+        "field_hash": {
+          "md": "788502a22616",
+          "ts": "08aab473fce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of rho-k-h3a-refinement.md at 68ebfb21a05. #8889 changes 'braid word B_K in B_{3A}' to 'nuclear-core Hecke word B_K in H_{3A}(q)', matching the .lean docstring change and notation-collisions.md. The 2026-08-22 pivot ('The true binding energy lives entirely within Delta_lambda') and the 'exact' superlatives are gone from the current text; the block now says the decomposition locates the binding contribution given the balance, which is the honest defined-residual reading."
       }
     ]
   }
