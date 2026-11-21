@@ -1,11 +1,11 @@
 ---
 # qou-4jhp
 title: 'GAP: qa-sweep cannot load at platform pin b61e856 (sci layer imports moved cat-harness/schemas); first fixing pin a6e5884 needs owner ruling'
-status: in-progress
+status: completed
 type: bug
 priority: high
 created_at: 2026-11-15T09:00:38Z
-updated_at: 2026-11-16T19:28:00Z
+updated_at: 2026-11-21T12:30:00Z
 parent: qou-n4r9
 ---
 
@@ -100,3 +100,11 @@ Parent `(none)` → `qou-n4r9`. The old parent was missing or absent, so the bea
 
 - **Verified at current `.folio-assistant-pin` (`82b389982a73701b77f723d34d42c77acf41b5b4` on `origin/main`):**
   - `bun /Users/litlfred/space_cats/folio-assistant/cat-harness-tools/pipeline/qa-sweep.ts --help` loads cleanly (`EXIT=0`) with zero missing-module errors (`cat-harness-tools/schemas/kg/cat-harness` resolves cleanly).
+
+
+## 2026-11-21 — verified on main and closed (bean drain wave 1, cat-harness-migr)
+
+Session: https://claude.ai/code/session_01Qmmkt7b8yRZEmMY5Qwa33W. Checked against `origin/main` `2ae54ab4010`.
+
+- `.folio-assistant-pin` = `82b389982a73701b77f723d34d42c77acf41b5b4` (bumped by PR #7842, owner ruling P1 = B). The 2026-11-16 note above measured `qa-sweep.ts --help` loading at that pin with no missing-module error. Both open questions are answered: P1 = B (pin moved), and the verdict-destination question was moved to `qou-6ccl`.
+- Still true and NOT closed by this: the `build.yml` `uses:` names `publish.yml`, which platform 0c5468ac46 deleted (recorded in the pin file). That is a separate defect about the render entry point, not about qa-sweep loading.

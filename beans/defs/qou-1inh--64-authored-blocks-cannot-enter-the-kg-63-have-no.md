@@ -1,13 +1,13 @@
 ---
 # qou-1inh
 title: 64 authored blocks cannot enter the KG — 63 have no label, 1 is in a nested subdir
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-27T05:11:12Z
-updated_at: 2026-11-15T20:55:00Z
+updated_at: 2026-11-21T12:30:00Z
 parent: qou-n4r9
 ---
 
@@ -86,3 +86,10 @@ and a graph consumer cannot find at all.
   - Generated `.jsonld` companions for all 67 newly-labeled `prose` blocks plus `folio/quantum-observable-universe/nuclear-interactions/audit/wigner-su4-alpha-cluster-probe.jsonld` (`rem:wigner-su4-alpha-cluster-probe`) at the pinned platform (`82b389982a73701b77f723d34d42c77acf41b5b4`).
   - Verified zero `.md` or `.lean` changes and unchanged `scripts/run-validate.ts` baseline (14 issues, 0 new issues).
   - Kept `status: in-progress` pending merge of `litlfred/qou#7999`.
+
+
+## 2026-11-21 — verified on main and closed (bean drain wave 1, cat-harness-migr)
+
+Session: https://claude.ai/code/session_01Qmmkt7b8yRZEmMY5Qwa33W. Checked against `origin/main` `2ae54ab4010`.
+
+- PR #7999 is merged. On main, 88 `.ts` manifests under `folio/quantum-observable-universe/` carry `label: "prose:…"` (67 were added by #7999; the rest were labelled since), and `nuclear-interactions/audit/wigner-su4-alpha-cluster-probe.jsonld` exists. Both causes in the title are fixed.

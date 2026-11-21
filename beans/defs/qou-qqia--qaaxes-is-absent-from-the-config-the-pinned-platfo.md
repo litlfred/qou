@@ -1,7 +1,7 @@
 ---
 # qou-qqia
 title: qaAxes is absent from the config the pinned platform actually reads
-status: todo
+status: completed
 type: bug
 priority: normal
 tags:
@@ -10,7 +10,7 @@ tags:
     - qa
     - reorg-2026-10-04
 created_at: 2026-09-26T10:32:26Z
-updated_at: 2026-10-04T15:15:48Z
+updated_at: 2026-11-21T12:30:00Z
 parent: qou-n4r9
 ---
 
@@ -68,3 +68,11 @@ what turning it on would report.
 
 Adding `qaAxes` to `folio.config.json`: one line, no-op at the pin, correct after
 a bump. Deciding `q-usage`: an owner call, unmeasured.
+
+
+## 2026-11-21 — verified on main and closed (bean drain wave 1, cat-harness-migr)
+
+Session: https://claude.ai/code/session_01Qmmkt7b8yRZEmMY5Qwa33W. Checked against `origin/main` `2ae54ab4010`.
+
+- The pin now reads `qou.config.json`, which carries `qaAxes` (line 19) and a correction comment (line 41) recording this bean's finding. The title's defect (`qaAxes` absent from the config the platform reads) is gone.
+- Still open, and an owner question, not this bean's: whether the `q-usage` axis should be on. The comment at `qou.config.json:41` records it as undecided.

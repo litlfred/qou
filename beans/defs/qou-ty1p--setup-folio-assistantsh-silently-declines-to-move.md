@@ -1,7 +1,7 @@
 ---
 # qou-ty1p
 title: setup-folio-assistant.sh silently declines to move a dirty platform clone
-status: todo
+status: completed
 type: bug
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - tooling
     - reorg-2026-10-04
 created_at: 2026-09-26T10:33:30Z
-updated_at: 2026-10-04T15:15:50Z
+updated_at: 2026-11-21T12:30:00Z
 parent: qou-n4r9
 ---
 
@@ -73,3 +73,10 @@ justifies skipping a checkout.
 **Recommendation (agent judgement): option 1.** It closes the reporting gap
 without touching the guard or anyone's workflow, and the pin file's whole purpose
 is that the platform cannot move under qou unnoticed.
+
+
+## 2026-11-21 — verified on main and closed (bean drain wave 1, cat-harness-migr)
+
+Session: https://claude.ai/code/session_01Qmmkt7b8yRZEmMY5Qwa33W. Checked against `origin/main` `2ae54ab4010`.
+
+- Option 1 (the recommendation) landed: `scripts/setup-folio-assistant.sh:203-204` now calls `report_off_ref` right after the 'clone has local changes' message, so a dirty, off-pin clone reports the distance instead of saying nothing. The guard itself is unchanged, as option 1 asked.

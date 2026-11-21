@@ -1,13 +1,13 @@
 ---
 # qou-80ul
 title: 'qou-gwe9 has a COUNTEREXAMPLE: Copilot reviewed #6112 (5 comments). n=5 zero-review measurement is falsified'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T07:47:23Z
-updated_at: 2026-10-04T15:23:04Z
+updated_at: 2026-11-21T12:30:00Z
 parent: qou-nu9d
 ---
 
@@ -42,3 +42,10 @@ So the operational advice "do not WAIT for Copilot" may still be right on
 median, while "Copilot never enqueues" is now false. Rule 10's table row and
 prepare-merge-auto's banner should be re-measured rather than edited from this
 single observation.
+
+
+## 2026-11-21 — verified on main and closed (bean drain wave 1, cat-harness-migr)
+
+Session: https://claude.ai/code/session_01Qmmkt7b8yRZEmMY5Qwa33W. Checked against `origin/main` `2ae54ab4010`.
+
+- The counterexample was taken in: AGENTS.md rule 10's Copilot row now reads 'CORRECTED 2026-08-30 — reviews DO arrive, and are RATIONED', citing `docs/audits/2026-08-30-copilot-review-works-again.md` and reopening `qou-gwe9`. The re-measurement this bean asked for continues in `qou-gwe9`.

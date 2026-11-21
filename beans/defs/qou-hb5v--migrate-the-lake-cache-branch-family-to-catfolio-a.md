@@ -1,11 +1,11 @@
 ---
 # qou-hb5v
 title: Migrate the lake-cache branch family to cat/folio-assistant-sci/lake-cache/ (declared in qou.json)
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-10-05T15:07:33Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-21T12:30:00Z
 parent: qou-n4r9
 ---
 
@@ -37,3 +37,11 @@ date) ever becomes dispatchable.
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+
+## 2026-11-21 — verified on main and closed (bean drain wave 1, cat-harness-migr)
+
+Session: https://claude.ai/code/session_01Qmmkt7b8yRZEmMY5Qwa33W. Checked against `origin/main` `2ae54ab4010`.
+
+- `qou.json` declares `lake-cache` with `branchPrefix: cat/folio-assistant-sci/lake-cache/`, `keyedBy: family`; `scripts/lib/lake-cache-family.sh` is on main. Both open done-when items are met: the PR merged, and 17 new-name branches exist (`git ls-remote origin 'refs/heads/cat/folio-assistant-sci/lake-cache/*'`, including `qou-v4-24-0`).
+- Noted, not acted on: the same ls-remote shows NO legacy `refs/heads/lake-cache/*` branches today, although this bean said they are kept. Who removed them was not checked. The payload staleness in `qou-wu38` is a separate bean.

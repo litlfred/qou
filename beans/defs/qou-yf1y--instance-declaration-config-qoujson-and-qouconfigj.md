@@ -1,7 +1,7 @@
 ---
 # qou-yf1y
 title: 'Instance declaration + config: qou.json and qou.config.json replace three retired spellings'
-status: todo
+status: completed
 type: feature
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - config
     - reorg-2026-10-04
 created_at: 2026-09-26T11:18:46Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:30:00Z
 parent: qou-n4r9
 ---
 
@@ -150,3 +150,10 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8167, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+
+## 2026-11-21 — verified on main and closed (bean drain wave 1, cat-harness-migr)
+
+Session: https://claude.ai/code/session_01Qmmkt7b8yRZEmMY5Qwa33W. Checked against `origin/main` `2ae54ab4010`.
+
+- `qou.json` (`name: qou`) and `qou.config.json` are at the root; the three retired spellings are absent. Steps 1–5 of the work list are done (step 5 landed with the pin bump `5369ef849`). Same evidence as the 2026-11-16 note above, re-checked today.
