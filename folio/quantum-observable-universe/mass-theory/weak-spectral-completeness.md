@@ -73,7 +73,7 @@ proves that two elements with a nonzero bracket cannot both lie in it.
 A reading of "EW content" that included the gauge bracket would make
 item 1 false by that proposition, not open.
 
-### Statement (formal)
+### The two-strand idempotents
 
 Over the categorical ring $R$ with $q$ generic (not a root of
 unity), the Hecke algebra $H_2(q)$ has Wedderburn decomposition
@@ -86,7 +86,7 @@ $$
 $$
 
 ([Two-strand spectral completeness over a commutative ring $R$](#thm:em-spectral-completeness)).
-The torus link $T(2, 2k) = \sigma^{2k}$ acts on the two blocks by
+The carrier $\sigma^{2k}$, whose closure is the link named $T(2, 2k)$, acts on the two blocks by
 $(q^{2k}, q^{-2k})$; its eigenvalues distinguish the two blocks of one
 copy of $H_2(q)$ but do not produce new idempotents, so a single
 $H_2(q)$ cannot carry more than two orthogonal projectors.
@@ -132,12 +132,12 @@ The argument mirrors
 applied to the two-strand idempotent decomposition $w_+ + w_- = 1$
 on the EM sector:
 
-**Step 1 — Per-host two-strand completeness.**
-For each $T(2, 2k)$, the two-strand braiding
-$\sigma_1 \in B_2$ has the standard Hecke decomposition
-$w_+^{(k)} + w_-^{(k)} = \mathbf{1}_{H_2(q)}$ where $w_\pm^{(k)}$
-are the (sym, alt) idempotents acting on $V \otimes V$ for the
-$k$-th host's natural representation $V_k$.
+**Step 1 — Two-strand completeness per carrier.**
+For each generator $\sigma_i$ ($i = 1, 3, 5$) the Hecke relation gives
+$e^{+}(\sigma_i) + e^{-}(\sigma_i) = \mathbf{1}$ and
+$e^{+}(\sigma_i)\, e^{-}(\sigma_i) = 0$, and the carrier
+$\sigma_i^{2k}$ acts by $q^{2k}$ on the image of $e^{+}(\sigma_i)$ and by
+$q^{-2k}$ on the image of $e^{-}(\sigma_i)$.
 
 **Step 2 — Joint decomposition on disjoint strand pairs.**
 The three carriers do not share one copy of $H_2(q)$: $H_2(q)$ has only
@@ -237,5 +237,3 @@ the basis $\{[2]_q, [4]_q, [6]_q, [8]_q, q^k, h^k,
 \mathrm{tr}_{\rm pure}\}$ would be an integer-relation fit against the
 measured value, not a derivation; the same holds for any expression of
 $G_F = 1/(\sqrt{2}\,N_v^2 E_\times^2 \mu_0^2)$ built on such a fit.
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

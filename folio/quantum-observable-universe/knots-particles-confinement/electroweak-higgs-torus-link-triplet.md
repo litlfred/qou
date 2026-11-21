@@ -39,7 +39,7 @@ Given the sector assignment ($H$ singlet, $W^\pm, Z$ doublets), spin and charge 
 
 **The $\sigma_5^8$ bar-grading is derived from spin.**
 
-The Weinberg-angle block reads the Hoefsmit slot $\sigma_5^8$ as the $\mathrm{U}(1)_Y$ hypercharge gauge boson $B$. It reads $\sigma_5^8$ ($= T(2,8)$, strands $5$–$6$) as the Higgs. There is no conflict: $\sigma_5^8$ carries both, bar-graded by the spin involution. The Higgs boson $H$ is the $A_+$ (bar-even, scalar) part. The hypercharge gauge boson $B$ is the $A_-$ (bar-odd, vector) part.
+The Weinberg-angle block reads the Hoefsmit slot $\sigma_5^8$ as the $\mathrm{U}(1)_Y$ hypercharge gauge boson $B$. This block reads $\sigma_5^8$ ($= T(2,8)$, strands $5$–$6$) as the Higgs. There is no conflict: $\sigma_5^8$ carries both, bar-graded by the spin involution. The Higgs boson $H$ is the $A_+$ (bar-even, scalar) part. The hypercharge gauge boson $B$ is the $A_-$ (bar-odd, vector) part.
 
 This bar-grading is derived from the two carriers' spins. The sector$\to$spin map is injective and inverts. Spin determines the sector. The Higgs is a scalar and $B$ a vector as independent physical inputs, so $H \in A_+$ and $B \in A_-$ are forced. The residual postulate is that both $H$ and $B$ inhabit the one $\sigma_5^8$ slot. The self-dual figure-eight $4_1$ is the Higgs mass mechanism, not the $125\,$GeV Higgs boson. The boson is the electroweak-slot link $T(2,8) = A_+$ of $\sigma_5^8$.
 
@@ -50,7 +50,7 @@ Spin fixes each carrier's sector (scalar $H \to A_+$; vectors $W, Z \to A_-$). I
 **Supporting evidence.**
 
 1. **Mass ordering.** The standard-model ordering $m_{W^\pm} < m_Z < m_H$ maps monotonically onto the crossing-number ordering $4 < 6 < 8$.
-2. **PSD-feasibility probe.** An exploratory SDP-feasibility probe shows PSD discrimination. Only the even-twist torus-link triplet $\{T(2,4), T(2,6), T(2,8)\}$ produced positive-semidefinite Hecke certificates on every Wedderburn block. 
+2. **PSD-feasibility probe.** An exploratory SDP-feasibility probe shows PSD discrimination. Among the candidates tested, only the even-twist torus links, here the triplet $\{T(2,4), T(2,6), T(2,8)\}$, produced positive-semidefinite Hecke certificates on every Wedderburn block. 
 
 PSD-feasibility is necessary but not sufficient. It holds for every even-twist $T(2, 2k)$ at any $k \geq 1$.
 
@@ -63,7 +63,7 @@ If true, the identification supplies the categorical structure for the weak scal
    $$
      T_{\mathrm{zero}}^{\mathrm{EW}} \;=\; \frac{2(g_W + g_Z + g_H)}{4\pi(g - 1)}\Bigg|_{g=4} \;=\; \frac{12}{12\pi} \;=\; \frac{1}{\pi} \;=\; \frac{3}{2}\cdot\frac{2}{3\pi}
    $$
-. Combining the $2$-strand quantum-dimension-dressed tree complexity $N_v^{\mathrm{tree}}(q) = q\,\tfrac{[2]_q}{2}\,[4]_q\,[6]_q\,[8]_q$ with $1/\pi$ and the 1-loop Schwinger/Habiro self-consistency term ($H = [2]_q/(8\pi)$, $\hbar_q = 1 - q^{-1}$; the fixed-point relation is equivalent to a cubic in $\alpha_v$),
+   Combining the $2$-strand quantum-dimension-dressed tree complexity $N_v^{\mathrm{tree}}(q) = q\,\tfrac{[2]_q}{2}\,[4]_q\,[6]_q\,[8]_q$ with $1/\pi$ and the 1-loop Schwinger/Habiro self-consistency term ($H = [2]_q/(8\pi)$, $\hbar_q = 1 - q^{-1}$; the fixed-point relation is equivalent to a cubic in $\alpha_v$),
    $$
      N_v \;=\; \frac{1}{\alpha_v} \;=\; \underbrace{q\,\frac{[2]_q}{2}\,[4]_q\,[6]_q\,[8]_q + \frac{1}{\pi}}_{T_{\mathrm{EW}}(q)} \;-\; \alpha_v\,H\,\bigl(1 - \hbar_q^2\,\alpha_v\bigr),
    $$
