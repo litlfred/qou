@@ -5,16 +5,20 @@ import QOU.Mass.QuantumSl2MarkovTrace
 
 The invariant of `QuantumSl2MarkovTrace` is `J(β) = θ^{−w(β)} tr(K^{⊗(n+1)} ρ_n(β))`. This file
 computes it on the closure of `σ³ ∈ B₂`, the trefoil, in the fundamental colour `N = 2`
-(`d = 1`), and shows that it differs from the unknot.
+(`d = 1`), and shows that its value differs from the value on the unknot.
 
 * `rCheck1_eq`: on `V₂ ⊗ V₂`, `Ř` is the explicit matrix `R1` (diagonal `s` on `v₀⊗v₀`,
   `v₁⊗v₁`; the block `[[0, s⁻¹], [s⁻¹, s⁻¹(q − q⁻¹)]]` on `v₀⊗v₁, v₁⊗v₀`).
 * `R1_sq`: the Hecke relation `Ř² = (s − s⁻³) Ř + s⁻²`.
+* `R1_hecke`: with `q = s²` and `σ = q^{1/2} Ř = s Ř`, this is the repo's Hecke form
+  `(σ − q)(σ + q⁻¹) = 0` (convention §7a).
 * `jonesSl2_trefoil`: `J(trefoil) = [2] · (q⁻² + q⁻⁶ − q⁻⁸)`, `q = s²`, `[2] = q + q⁻¹`.
   Up to the variable `t = q²` this is the Jones polynomial `t⁻¹ + t⁻³ − t⁻⁴` of a trefoil.
 * `jonesSl2_unknot`: `J(unknot) = [2]`.
-* `jonesSl2_trefoil_ne_unknot`: at `s = 2` over `ℚ` the two values differ, so the invariant
-  separates the trefoil from the unknot and is not constant.
+* `jonesSl2_trefoil_ne_unknot`: at `s = 2` over `ℚ` the values on the braids `σ³ ∈ B₂` and
+  `1 ∈ B₁` differ, so the invariant is not constant. Reading this as "the trefoil and the
+  unknot are different knots" also needs Markov's theorem (braids with the same closure are
+  related by Markov moves), which is not formalised here (issue #8902).
 
 The trace of `σ³` is computed from the Hecke relation and the two traces the Markov moves
 already give: `tr(K⊗K · 1) = [2]²` and `tr(K⊗K · Ř) = θ[2]` (positive stabilisation of the
@@ -60,6 +64,17 @@ theorem R1_sq : R1 s * R1 s
   simp [R1, mul_apply, Fintype.sum_prod_type, Fin.sum_univ_two]
   all_goals (try field_simp)
   all_goals first | ring1 | simp
+
+include hs in
+/-- **The repo's Hecke form.** With `q = s²` and `σ = q^{1/2} Ř = s Ř`, the relation `R1_sq`
+is `(σ − q)(σ + q⁻¹) = 0`. -/
+theorem R1_hecke :
+    (s • R1 s - (s ^ 2) • (1 : Matrix (Fin 2 × Fin 2) (Fin 2 × Fin 2) 𝕜))
+      * (s • R1 s + (s ^ 2)⁻¹ • (1 : Matrix (Fin 2 × Fin 2) (Fin 2 × Fin 2) 𝕜)) = 0 := by
+  have h := R1_sq s hs
+  simp only [sub_mul, mul_add, smul_mul_assoc, mul_smul_comm,
+    Matrix.mul_one, Matrix.one_mul, h, smul_add, smul_smul]
+  match_scalars <;> field_simp <;> ring
 
 section Linear
 
@@ -179,8 +194,9 @@ theorem hint_two : ∀ k, 0 < k → k ≤ 2 * 1 → qint ((2 : ℚ) ^ 2) k ≠ 0
   intro k hk hk2
   interval_cases k <;> norm_num [qint]
 
-/-- **The invariant is not constant.** At `s = 2` it separates the trefoil from the unknot:
-`J(trefoil) = 69887/262144 ≠ 17/4 = J(unknot)`. -/
+/-- **The invariant is not constant.** At `s = 2` its values on the braids `σ³ ∈ B₂` and
+`1 ∈ B₁` differ: `69887/262144 ≠ 17/4`. That the trefoil and the unknot are different knots
+also needs Markov's theorem, which is not formalised here (issue #8902). -/
 theorem jonesSl2_trefoil_ne_unknot :
     normalise artinFraming (thetaU (2 : ℚ) two_ne_zero 1)⁻¹ 1
         (qtrace (2 : ℚ) two_ne_zero 1 hq2_two hint_two) ⟨1, sig ^ 3⟩
