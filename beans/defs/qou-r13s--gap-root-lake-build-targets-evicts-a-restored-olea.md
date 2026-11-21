@@ -1,13 +1,13 @@
 ---
 # qou-r13s
 title: 'GAP: root `lake build <targets>` EVICTS a restored olean cache — 6990 to 334 measured'
-status: in-progress
+status: completed
 type: bug
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T21:04:18Z
-updated_at: 2026-11-21T15:07:34Z
+updated_at: 2026-11-21T15:14:27Z
 parent: qou-5vkl
 ---
 
@@ -158,3 +158,5 @@ and left **2** oleans. `--no-build` did not prevent it: the deletion happens whi
 **Fix on branch `claude/lean-build-red-2026-11-21`** (`33a0869e7c`): new `scripts/lake-restore-package-git.sh` gives each restored git package a shallow checkout at its manifest rev (about 11 s for all 8); `lean-cache-restore.sh` calls it on both paths, non-fatal. Re-tested from a clean copy: script exit 0, then `lake build --no-build Mathlib.Tactic Mathlib.Analysis.Complex.Basic` "All targets up-to-date (3085 jobs)". Scope: dependency oleans only. QOU oleans rebuilt by lean-direct have no matching traces, so `lake build QOU` still recompiles QOU (without evicting Mathlib). Stays in-progress until the branch merges.
 
 2026-11-21: fix on draft PR #8878 (scripts/lake-restore-package-git.sh, wired into lean-cache-restore.sh). Stays in-progress until merge.
+
+2026-11-21: merged in PR #8878 (main 1ec5ab23d9).
