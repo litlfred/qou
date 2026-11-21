@@ -1,0 +1,358 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T04:12:32.847167+00:00",
+  "commitSha": "2d55b095ace49ae99faee7656ba4157953f277be",
+  "assertions": [
+    {
+      "name": "right_line_dim_1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "the −q⁻¹ eigenspace of Ř is one line"
+    },
+    {
+      "name": "left_line_dim_3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "the q eigenspace (left line, q>1) is the triplet"
+    },
+    {
+      "name": "sing_is_right_eigenvector",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Ř s = −q⁻¹ s, s = q·ud − du"
+    },
+    {
+      "name": "cosing_is_left_eigenvector",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "s* Ř = −q⁻¹ s*"
+    },
+    {
+      "name": "PR_idempotent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "P_R = [2]⁻¹(q − Ř) is idempotent"
+    },
+    {
+      "name": "PR_rank_one_form",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "P_R = s s*/[2]"
+    },
+    {
+      "name": "singlet_is_Uq_invariant",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "for the coproduct Ř intertwines (['E⊗K+1⊗E, F⊗1+K⁻¹⊗F']), ΔE s = ΔF s = 0: s is a U_q(sl2) singlet"
+    },
+    {
+      "name": "T3_zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "(K⊗K) s = s: T³ = 0"
+    },
+    {
+      "name": "qdim_right_line",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Tr((K⊗K)P_R) = 1"
+    },
+    {
+      "name": "qdim_left_line",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Tr((K⊗K)P_L) = q² + 1 + q⁻² = [3]"
+    },
+    {
+      "name": "weak_insertion_blind",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "−h·P_L annihilates the singlet (WeakVertexLeftProjector form)"
+    },
+    {
+      "name": "hypercharge_adds",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "strand gradings x·diag(r, r⁻¹): singlet weight x₁x₂ (T³ factor cancels)"
+    },
+    {
+      "name": "vertex_forced_up_to_scalar",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "φ Ř = −q⁻¹ φ leaves one free component: [{p0: 0, p1: -p2*q, p3: 0}]"
+    },
+    {
+      "name": "charge_e_R",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "6Q = -6 (both components), 6Y = -12"
+    },
+    {
+      "name": "charge_d_R",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "6Q = -2 (both components), 6Y = -4"
+    },
+    {
+      "name": "charge_u_R",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "6Q = 4 (both components), 6Y = 8"
+    },
+    {
+      "name": "charge_nu_R",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "6Q = 0 (both components), 6Y = 0"
+    },
+    {
+      "name": "B2_rh_row",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "6Y ∈ {8, −4, −12, 0} = B2 right-handed {4/3, −2/3, −2, 0} (entailed by Q at T³=0)"
+    },
+    {
+      "name": "diag_entries",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "diag P_R = (0, q²/(q²+1), 1/(q²+1), 0)"
+    },
+    {
+      "name": "entries_sum_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "the two entries sum to 1"
+    },
+    {
+      "name": "entries_half_at_q1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "both are 1/2 at q = 1"
+    },
+    {
+      "name": "split_formula_matter_left",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "one-term qtrace split = (y_d²−y_e²)c̃ + (y_ν²−y_u²)c = (q**2*(y_nu**2 - y_u**2) + y_d**2 - y_e**2)/(q**2 + 1)"
+    },
+    {
+      "name": "equal_yukawa_zero_matter_left",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "equal strengths give split 0"
+    },
+    {
+      "name": "split_formula_higgs_left",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "one-term qtrace split = (y_d²−y_e²)c̃ + (y_ν²−y_u²)c = (q**2*(y_d**2 - y_e**2) + y_nu**2 - y_u**2)/(q**2 + 1)"
+    },
+    {
+      "name": "equal_yukawa_zero_higgs_left",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "equal strengths give split 0"
+    },
+    {
+      "name": "q0_is_proton_pin",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "q_at(70) proton pin"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1286,
+  "computation": "qbeta-yukawa-er-singlet",
+  "scriptFile": "qbeta_yukawa_er_singlet_probe.py",
+  "scriptHash": "31b929fd1230",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "ae1028699afd20c5"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_yukawa_er_singlet/qbeta_yukawa_er_singlet_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_yukawa_er_singlet/qbeta_yukawa_er_singlet_probe.py"
+  },
+  "description": "qou-99qc route Y step 2: the right line of the matter⊗Higgs crossing as the e_R channel; forced vs free; both trace forms. Exact sympy; q0 comparison only.",
+  "parameters": {
+    "q0": "1.109978582751380807591669095610768879874499121873578736072814240181799"
+  },
+  "data": {
+    "question": "owner 2026-11-21: find e_R in corpus",
+    "candidates": {
+      "C1_rightLine_of_matter_x_Higgs_crossing": "QUALIFIES on T³=0, charge, distinct-from-e_L (Lean RightHandedSingletChannel); identification as e_R is scope (a), owner call",
+      "C2_weak_insertion_P_R": "same object as C1 on two strands (insertion = −h·P_triplet)",
+      "C3_rightLine_sigma1_in_H4_(3,1)": "fails: Hecke-side multiplicity line, commutes with U_q, carries no T³ (FlavourDoubletFourStrands scoping note)",
+      "C4_mirror_bar_image_of_doublet": "fails: maps a doublet to a doublet (leftLine_mirror)",
+      "C5_photon_chiral_term_s0_s1inv": "fails: a Hecke operator, not a state; no T³ (sibling #8696 owns mirror vertices)",
+      "C6_sign_block_(1^3)": "fails: Λ³V = 0 for sl2; convention D weight 0",
+      "C7_Gen1Quark_u_R_labels_and_B2": "labels only, no object; B2 gives the target charges",
+      "C8_Furey_minimal_right_ideal (library/arxiv-1611.09182v1)": "literature, not a corpus object; supports the idempotent mechanism"
+    },
+    "coproduct_check": {
+      "E⊗K+1⊗E, F⊗1+K⁻¹⊗F": {
+        "Rc_commutes": true,
+        "kills_singlet": true
+      },
+      "E⊗1+K⊗E, F⊗K⁻¹+1⊗F": {
+        "Rc_commutes": false,
+        "kills_singlet": false
+      }
+    },
+    "channel_charges": {
+      "e_R (lepton⊗Φ̃)": {
+        "sixQ": -6,
+        "sixY": -12,
+        "components_agree": true
+      },
+      "d_R (quark⊗Φ̃)": {
+        "sixQ": -2,
+        "sixY": -4,
+        "components_agree": true
+      },
+      "u_R (quark⊗Φ)": {
+        "sixQ": 4,
+        "sixY": 8,
+        "components_agree": true
+      },
+      "nu_R (lepton⊗Φ)": {
+        "sixQ": 0,
+        "sixY": 0,
+        "components_agree": true
+      }
+    },
+    "vev_compression_cases": {
+      "matter_left/vev_u": {
+        "matter_slot": "d",
+        "state": "du",
+        "energy": "1/(q**2 + 1)"
+      },
+      "matter_left/vev_d": {
+        "matter_slot": "u",
+        "state": "ud",
+        "energy": "q**2/(q**2 + 1)"
+      },
+      "higgs_left/vev_u": {
+        "matter_slot": "d",
+        "state": "ud",
+        "energy": "q**2/(q**2 + 1)"
+      },
+      "higgs_left/vev_d": {
+        "matter_slot": "u",
+        "state": "du",
+        "energy": "1/(q**2 + 1)"
+      }
+    },
+    "split": {
+      "matter_left": {
+        "cPhi": "q**2/(q**2 + 1)",
+        "cConj": "1/(q**2 + 1)",
+        "split_one_term_qtrace": "(q**2*y_nu**2 - q**2*y_u**2 + y_d**2 - y_e**2)/(q**2 + 1)",
+        "split_two_term_covariant_all_pairs": "(q**2*y_nu**2 - q**2*y_u**2 + y_d**2 - y_e**2)/(q**2 + 1)  (argued: no pair term from a one-strand energy)",
+        "split_noncovariant_adjacent_comparison": "(q**2*y_nu**2 - q**2*y_u**2 + y_d**2 - y_e**2)/(q**2 + 1)  (argued; labelled comparison)",
+        "SM_no_nuR": "(-q**2*y_u**2 + y_d**2 - y_e**2)/(q**2 + 1)"
+      },
+      "higgs_left": {
+        "cPhi": "1/(q**2 + 1)",
+        "cConj": "q**2/(q**2 + 1)",
+        "split_one_term_qtrace": "(q**2*y_d**2 - q**2*y_e**2 + y_nu**2 - y_u**2)/(q**2 + 1)",
+        "split_two_term_covariant_all_pairs": "(q**2*y_d**2 - q**2*y_e**2 + y_nu**2 - y_u**2)/(q**2 + 1)  (argued: no pair term from a one-strand energy)",
+        "split_noncovariant_adjacent_comparison": "(q**2*y_d**2 - q**2*y_e**2 + y_nu**2 - y_u**2)/(q**2 + 1)  (argued; labelled comparison)",
+        "SM_no_nuR": "(q**2*y_d**2 - q**2*y_e**2 - y_u**2)/(q**2 + 1)"
+      }
+    },
+    "forced": [
+      "right line is one line (s = q·ud − du)",
+      "T³ = 0, qdim 1",
+      "vertex shape up to one scalar per channel",
+      "which Higgs slot (Φ vs Φ̃) by target charge"
+    ],
+    "free": [
+      "y_u, y_d, y_nu, y_e (one per channel)",
+      "strand order (matter left / Higgs left): a selection, enumerated",
+      "energy scale"
+    ],
+    "q_to_1_order": "c, c̃ → 1/2 (order q⁰); split is order q⁰ in the strengths",
+    "numbers": {
+      "q0": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+      "c_hi_q2_over_q2p1": "0.5519818550262050728383264292681950677830993020809",
+      "c_lo_1_over_q2p1": "0.4480181449737949271616735707318049322169006979191",
+      "c_hi_q_to_1_series_in_t": "-t**2/4 + t/2 + 1/2",
+      "codata_Qbeta_over_me_comparison_only": "1.53098828921980775193047392987"
+    },
+    "qbeta_number": "not produced: no magnitude forced (pre-registered)",
+    "scope": "(b) for equal strengths ⇒ 0 and for the forced shape; magnitudes free",
+    "selected": "none"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
