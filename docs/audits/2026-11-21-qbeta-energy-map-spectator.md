@@ -534,3 +534,24 @@ no map Φ(ε) can be calibrated by it. The corpus does not fix |c|. Readings L (
 0.8735 MeV) and S (E₀ per factor q, cell 2E₀ = 8.37 MeV) both remain, together with the per-crossing
 normalisation W above. This is a statement about what the corpus contains. It does not show that |c|
 is underivable.
+
+## 22. Correction to §20 (iii) and §21: |c| is derived (§8–9), not open
+
+§20 (iii) said "the scale |c| is still open, as it was in §1", and §21 said "The corpus does not fix
+|c|". **Both are wrong, and the error is mine: §8–9 of this same audit derive |c| = E₀ (route T),
+given three premises:** (1) S, which §10 derives; (2) the corpus's Gibbs reading of the trace; (3)
+`def:quantum-temperature` (k_B T_q = ℏ_q) with the CAL-1 energy unit m_e·c_q². That gives
+k_B T = E₀ exactly (`kT_eq_e0`). §21's lemma `reduction_step_preserves_channels` is correct but
+narrower than stated. It shows only that the *reduction-step sentence* of `rem:energy-scale-planck`
+cannot fix |c|. Route T does not use that sentence. So reading L (E₀ per unit ln ε, cell 0.873537
+MeV) is the derived one, and reading S (8.37 MeV) has no derivation.
+
+**What this does to §19–§21.** Route T makes |c| a temperature of one Gibbs state, so quark and
+nucleon energies share it. Then a nucleon energy that is the log of a product of strand factors
+is Σμ_a with weight exactly 1. Consistency therefore requires the crossing rule to have W = 1:
+- #8923's per-pair formula has factor (q² + q⁻²)/[2]_q = 1.016316 at q₀ (→ 1 at q = 1);
+- the six-crossing sum with #8923's per-crossing weights has W = 2(q² + q⁻²)/[2]_q (→ 2 at q = 1),
+  which counts each pair twice.
+So under route T, §19's mismatch stands: premise (Q) plus the #8923 weights are not one Gibbs
+energy at q ≠ 1. The §20 "log map up to scale" escape is closed, because the scale is not free.
+Scope (a): this does not say which of (Q) or the #8923 weights changes.
