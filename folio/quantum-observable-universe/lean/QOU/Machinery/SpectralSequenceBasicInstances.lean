@@ -1,7 +1,7 @@
 import QOU.Machinery.SpectralSequenceBasic
 
 /-!
-# `E2Degenerates` is a page property; `KLRSpectralSequenceAtE2` is vacuous
+# `E2Degenerates` is a page property
 
 **`E2Degenerates` (parameter property, not a debt).** It says every
 differential `d_r` with `r ≥ 2` vanishes on the page structure `S` that is
@@ -16,11 +16,8 @@ names (degeneration of the KLR / Hochschild spectral sequence of the residue-A
 setting) needs that spectral sequence to be *constructed* first; the class
 cannot express it until `S` is.
 
-**`KLRSpectralSequenceAtE2` (VACUOUS — defect).** Its only field is
-`e2_is_canonical_basis : True`. `klr_vacuous` records that every page
-satisfies it. It asserts nothing and should be either deleted or given a real
-field; that is an owner decision and is not done here. It should not be
-counted as Mathlib debt.
+**`KLRSpectralSequenceAtE2` (removed 2026-11-21).** Its only field was
+`True`, so it asserted nothing; the class was deleted from the source file.
 
 -- Ref: [leitner2026] QOU.Machinery.SpectralSequenceBasic; [mccleary2001]
 -- J. McCleary, A User's Guide to Spectral Sequences, 2nd ed., Def. 2.1
@@ -60,10 +57,5 @@ theorem d1Page_d1_ne_zero : d1Page.d 1 0 0 (1 : ℤ) ≠ 0 := by
 theorem not_e2Degenerates_d2Page : ¬ E2Degenerates d2Page :=
   not_e2Degenerates_of_d2_ne_zero d2Page (p := 0) (q := 0) (1 : ℤ)
     (by show (if (2 : ℕ) = 2 then (1 : ℤ) else 0) ≠ 0; simp)
-
-/-- **Vacuity record**: every page satisfies `KLRSpectralSequenceAtE2`
-because its only field is `True`. This is a defect report, not a result. -/
-theorem klr_vacuous (S : SpectralSequencePage) : KLRSpectralSequenceAtE2 S :=
-  ⟨trivial⟩
 
 end QOU.Machinery.Instances
