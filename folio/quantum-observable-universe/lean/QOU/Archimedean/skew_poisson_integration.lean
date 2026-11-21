@@ -64,9 +64,11 @@ $\pi_<$ a skewed-Poisson structure on $H$.  Then there exists a
 
     Formal-group infrastructure now exists in `QOU.FormalGroups.FormalGroupLaw`
     (n-dimensional, possibly non-commutative laws over any commutative ring, base change =
-    reduction mod p, the lift relation `IsLift`, sorry-free). Still missing before this
-    statement can be restated on it and proved: the distribution algebra `Dist(G)`, the
-    skewed-Poisson bracket on `H`, and the Gröbner–Shirshov deformation. -/
+    reduction mod p, the lift relation `IsLift`, sorry-free), and the distribution algebra
+    `Dist(G)` exists in `QOU.FormalGroups.Distributions` (convolution algebra, associative
+    and unital, sorry-free). Still missing before this statement can be restated on them and
+    proved: the skewed-Poisson bracket on `H` (needs the definition from [leitner2026]) and
+    the Gröbner–Shirshov deformation. -/
 -- Ref: [leitner2026] quantum-observable-universe/models-of-qous/skew-poisson-integration.ts
 theorem skew_poisson_integration [ctx : SkewPoissonIntegrationContext] :
     (∃ (f : ctx.G_mod_p → ctx.H) (g : ctx.H → ctx.G_mod_p),

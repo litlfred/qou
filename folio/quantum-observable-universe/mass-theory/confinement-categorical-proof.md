@@ -41,7 +41,7 @@ in QCD:*
 |---|---|---|
 | (1) | $\pi_Z$ sends every element into the centre $Z(A)$ | Free quarks not observed |
 | (2) | every trace $\tau$ factors through $\pi_Z$ | All observables are gauge-invariant |
-| (3) | Observables = sum of Wedderburn residues | Hadrons = sum of color-singlet projections |
+| (3) | $\pi_Z$ fixes every central $x$ | Colour-singlet states are unchanged by the projection |
 
 *The curvature 2-cocycle $F$ encoding the Hecke + Yang–Baxter
 relations
@@ -55,11 +55,10 @@ extracting an isolated quark.*
 
 *The strata $J^k / J^{k+1}$ index "confinement layers": deeper $k$ =
 more commutator load = harder to extract.  At $k = 0$ (the centre)
-elements carry no commutator load; at $k \geq 1$ extraction requires
-energy proportional to $F$.  The chirality channel $D_q^2 = 0$
+elements carry no commutator load; at $k \geq 1$ they lie in the
+$k$-th commutator stratum.  The chirality channel $D_q^2 = 0$
 (q-Dirac cell scanner witness) supplies the persistent
-gauge-invariant background analogous to the gluon condensate, with
-$\mathrm{Vol}(B_3) = 8 G$ matching $\dim \mathfrak{su}(3) = 8$.*
+gauge-invariant background analogous to the gluon condensate.*
 
 **Predictive consequence.**
 
