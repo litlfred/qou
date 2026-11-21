@@ -204,7 +204,6 @@ export default chapter({
         "atomic-braid-mass-intro",
         "atomic-lp-stability",
         "atomic-lp-stability-dressing",
-        "universal-ilp-algorithm",
         "gram-matrix-h3-symbolic",
         "gram-matrix-h3-symbolic-eval-role",
         "color-pairing-binding",

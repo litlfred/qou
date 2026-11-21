@@ -79,6 +79,7 @@ export default chapter({
         "confinement-universality",
         "confinement-universality-proof",
         "derived-atom",
+        "universal-ilp-algorithm",
         "nucleon-from-photons-summary",
         // `gluon-stabiliser-ledger` was here on landing (2026-08-24) and moved
         // to §12 the same day — see the note there. Placed by `interprets`,
