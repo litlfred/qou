@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-12T20:47:33Z
-updated_at: 2026-11-21T03:35:00Z
+updated_at: 2026-11-21T04:15:00Z
 parent: qou-9nnz
 ---
 
@@ -527,3 +527,45 @@ Also logged by D-r2 and subject to the same caveat going forward (it is post-mer
 **Two producer refusals in the same window, neither a defect** — both guards exiting non-zero by design, which AGENTS.md records as *"a non-zero exit is not a defect"*: `qbeta_ladder_verification_1ppq` (*"Run its producer first."* — a witness dependency it will not fabricate), and the environment guard above.
 
 **Process change for the rest of this refresh:** every batch is verified against **both** gates before commit, not the value gate alone.
+
+### 2026-11-21 — D COMPLETE; both deferred items closed
+
+**D finished for real this time**: `DONE wall=1504s kept=32 gated_out=9 fail=5 timeout=3`, and `/tmp/refresh6_result.json` exists — that file, not the completion notification, is the signal that distinguishes a finish from the two turn-boundary deaths above.
+
+**Landed: 34 witnesses** across 10 commits, every one verified against **both** gates independently of the driver. Refusals came from three distinct reasons, so neither gate is rubber-stamping:
+
+| reason | count | examples |
+|---|---:|---|
+| value move over 1e-9 | 8 distinct | `qbeta-habiro-tower-1ppq` **4.50e+04**, `qbeta-sa-qa-chain-gamma` **4.70e+02**, `qbeta-ohtsuki-kappa-vs-ck` 1.49e-01, `two-nucleon-binding-law-comparison` 1.00e+00 **FLIP** |
+| **provenance regression** | **3** | `qbeta_per_block_chi_borromean_closed_forms`, `shell-binding-transfer-matrix`, `gamma-gamma-nn-pn-selection` |
+| producer guard, non-zero by design | 2 | `"Run its producer first."`; the environment guard |
+
+**All three provenance catches passed the value gate at `worst = 0.00e+00` or `6.17e-46`** — i.e. they were exemplary keeps by value and each recorded **three** libraries weaker than the file it replaced. They are 3 of the 7 this container was predicted to downgrade, so the check confirmed a measurement rather than finding an unrelated class.
+
+#### Deferred item 1 — the `1.33e+01` gate-out: real cone drift, and my diagnosis had used the wrong window
+
+`5f5ffd55cc3`. Re-measured post-merge: **still 1.33e+01**, 36 fields, provenance an *upgrade* — so not environmental. **My earlier "direct cone drift is ruled out" was an artifact of comparing against the MERGE BASE (yesterday).** The committed witness was written **2026-09-05** (`commitSha 7082789bfa6`), two and a half months earlier. Over the correct window the whole cone moved: `tr_m_atom_via_transfer.py` **+46/−11**, `b_over_a_evaluator.py` **+20/−4**, the probe itself **+8/−4**.
+
+**The refresh is more correct, which is why it lands** under the gate's attributable clause: the producer confirms the derived floor `c₀(A) = 2^{−A} − 2^{1−2A}`, and the fresh run sits closer to the exact rational — `A=2` err `1.01e-09 → 6.25e-11` (16× tighter), `A=5` `9.41e-09 → 2.40e-10` (**39× tighter**). Closed form unchanged, `allPassed` still True.
+
+**The interpretive moves are large and are flagged, not buried**: classical share at q₀ `4.88 % → 69.96 %` (⁴He) and `22.46 % → 85.01 %` (D). Consumers checked first: **no content block** reads this witness, and the two sibling probes naming `classical_share_percent` both **recompute** it rather than reading the file. But `classical_floor_derivation_probe`'s docstring *cites* the finding as *"confirming it at `A = 5` to 9e-9"* — exactly the figure the refresh tightens — so that was corrected to `2.4e-10` inline.
+
+#### Deferred item 2 — `precision-gates.sh --changed`: exit 1, and it is NOT this branch's
+
+One blocking failure, the **q0-anchor refill ratchet**: baseline 1463, live 1474, 25 drained, **36 NEW unstamped**. Established rather than argued:
+
+- **zero** of the 36 are files this branch committed (my 35 are all refreshes of already-stamped files — intersection empty);
+- the baseline file is **untouched** by my commits and **byte-identical** to `origin/main`'s;
+- **zero** of the 36 differ between this HEAD and `origin/main`.
+
+So main's ratchet reads the same baseline against the same live set and is red there too — the *"red on the base branch"* case. Attribution of the two resolvable ones points at `806d5146227`, the **shallow-boundary** commit, whose `--diff-filter=A` attribution is unreliable for exactly that reason; the rest lie beyond the shallow horizon.
+
+**The baseline was NOT regenerated.** The ratchet's own output invites it (*"regenerate the baseline to bank these"*), and doing so would bank the 36 NEW along with the 25 drains — growth. Baselines drain, never grow.
+
+Every other blocking gate reads 0 or PASS (`Q0_FLIP: 0`; both detector selftests pass). The 13 tree-measuring audit witnesses the run wrote were reverted per `qou-v0t8`, as the gate's own banner instructs.
+
+#### Still open
+
+- **8 value gate-outs undiagnosed**, two of them large: `qbeta-habiro-tower-1ppq` at **4.50e+04** and `qbeta-sa-qa-chain-gamma` at **4.70e+02**. Both plausibly the same 2.5-month cone-drift class just established for the 13× — the correct window is each witness's **own** `commitSha`, not the merge base.
+- **The 3 provenance-blocked refreshes need python 3.13 with `sympy` and `pyhecke_native` installed**, which this container lacks under 3.13. Nothing was installed mid-flight.
+- **5 producers failed and 3 timed out** at the 400 s budget; the timeouts may simply be long compute and need a real budget before any of them is called broken.
