@@ -1799,3 +1799,4 @@ import QOU.QBeta.CoshHolonomyAndGPMTBaseBridge
 import QOU.ShellCondensation.SelectorPrune
 import QOU.ShellCondensation.BringLatticeRanks
 import QOU.ShellCondensation.CoefficientPurity
+import QOU.ShellCondensation.GammaGammaAtom
