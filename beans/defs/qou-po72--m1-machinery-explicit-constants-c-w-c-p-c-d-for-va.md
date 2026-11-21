@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T01:34:21Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T14:00:00Z
 parent: qou-m6dn
 ---
 
@@ -33,3 +33,7 @@ Was in-progress with no bean update since 2026-08-29 and no main commit naming i
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8343, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-08-29: "po72(qou-k5r5): de-poissonized (CS) leading constants in closed form; rho_P = 2 sqrt(6)/5"). The work may be partly or fully done. Read the bean before you close it.
+
+## 2026-11-21: premise check (hecke-gs-conj sibling, session_01Qmmkt5sJX34MCerjRMERJN; owner: nothing rests on replaced results)
+The "Round NN progress" entries above cite batch PRs closed on 2026-11-20 as vacuous or superseded. Their Lean/probe/witness paths are ABSENT on main (checked against main 2ae54ab40 file list). Do not build on them or cite them. Leading CS constants on main (CSMarginCorrelationConstant.lean, rho_P^2=24/25); finite-n remainder constants C_W/C_P/C_D are NOT derived.
+No physics premise in this bean is affected by the rulings in docs/coordination/owner-rulings.md (pure Plancherel combinatorics). Kernel proved for 3<=k<=20 (YoungDiagramKernel.lean:200, kernelValue_nonpos_of_le_twenty); general k open. Status unchanged: an open conjecture stays open.
