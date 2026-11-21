@@ -368,7 +368,33 @@ state carries the weight `q` too. The Coulomb piece of the bridge should be re-c
 **The normalisation.** `categorical-lagrangian.md` defines `ψ* = λ ∘ S(ψ)` with `λ` the Frobenius
 form. In `FrobeniusHopfData` the form `λ` is constrained only by the two snake identities with the
 coevaluation. Those are unchanged under `λ ↦ sλ`, `coev ↦ s⁻¹ coev`, so the axioms do not fix the
-scale of `ψ* ψ`. (Read off the structure; not yet a Lean theorem.) So the corpus does not currently
+scale of `ψ* ψ`. (Now a Lean theorem: `FrobeniusFormScaleFree.lean`, §12.) So the corpus does not currently
 fix `φ ψ`, and therefore does not fix `c = 12` through the normalisation either. A normalisation
 law for `λ` (for instance the Markov `τ(1) = 1`, which fixes a trace, not `λ`) would have to be added
 or derived.
+
+## 12. The weighted bridge and the free Frobenius scale (2026-11-21, owner: "1 3")
+
+**The bridge with Cartan weights (`WeightedTwoTermBridge.lean`, sorry-free).**
+`trace_lagrangian_diff_weighted_borromean` restates the concrete bridge theorem with two changes. It
+drops `hHoriz` and uses horizontal matter traces `q·c` (proton) and `q⁻¹·c` (neutron). It also gives
+the Coulomb (matter-Reeb) traces their Cartan weights, `q·tr((Q₁₂+Q₂₃)V³_A)` and
+`q⁻¹·tr((Q₁₂+Q₂₃)V³_B)`. The bosonic hypotheses are unchanged. Result:
+
+    τℒ_n − τℒ_p = (1−q⁻¹)²(q⁻¹−q)·tr V³   (unchanged bosonic term)
+                 + (q⁻² − 1)·c              (horizontal own-sector constant, K1)
+                 + (1−q⁻¹)·W(q),
+    W(q) = (2q¹⁴ − 2q¹² − 9q¹⁰ + 20q⁸ − 26q⁶ + 18q⁴ − 13q² + 4)/(9q⁷).
+
+`W` replaces the bridge's unweighted Coulomb function `U(q) = (2q¹² − 7q¹⁰ + … + 2)/(3q⁶)`. Both
+equal `−2/3` at `q = 1`, so the classical limit is unchanged. At the CODATA-2022 muon pin (40-digit
+mpmath, model evaluation, not a comparison) `W = −0.597423649217` against `U = −0.663427284748`;
+after the factor `(1 − q⁻¹)`, `−0.0591937666` against `−0.0657335208`, about 10 % smaller. The value
+of `c`, and the units in which these traces become MeV, are not fixed here.
+
+**The free scale (`FrobeniusFormScaleFree.lean`, sorry-free).** `snake_left_rescale` and
+`snake_right_rescale`: both snake identities survive `λ ↦ s•λ`, `coev ↦ s⁻¹•coev` for any `s ≠ 0`.
+`pairing_rescale`: the pairing then scales by `s`. So the axioms as written do not fix the
+normalisation of `ψ*ψ`, and the constant `c = φ∇ψ` inherits that freedom. Fixing `c = 12` needs a
+normalisation law for `λ` that the current `FrobeniusHopfData` does not contain. Adding one is an
+axiom change and is an owner decision; nothing here proposes a value.
