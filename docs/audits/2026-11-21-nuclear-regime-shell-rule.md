@@ -107,6 +107,122 @@ is new. It is sorry-free, generic over a linear order, and its axioms are only
 | `not_shellRuleT2_of_bounded_index` | torus indices bounded by `M`, plus a Regime-I shell larger than `M`, refutes the rule |
 | `isSelected_smul_iff` | positive rescaling of the costs leaves the selection unchanged |
 
-## 4. Measured
+## 4. Measured (run 2026-11-21, after §2 was committed)
 
-(Filled in after the run. See below.)
+Command: `python3 -u computations/nuclear_regime_shell_rule_probe.py 2>&1 | tee /tmp/nrsr.log`.
+Wall time is about 4 s. Witness: `computations/nuclear-regime-shell-rule.witness.json`
+(`q0Anchor: proton`). The runs at 80 and 120 dps select the same operator at
+every step of every run. The smallest nonzero gap between the selected cost
+and the runner-up cost is `5.07e-4`, so precision decides nothing here.
+
+### 4.1 Rule test (`T(2, n_s)` with `n_s` the shell size)
+
+| candidate set / cost | steps passing | of |
+|---|---|---|
+| C0 / K1 (the original) | 3 | 65 |
+| C0 / K2 | 3 | 65 |
+| C1 / K1 | 3 | 65 |
+| C1 / K2 | 1 | 65 |
+
+Every pass is the same case: `e⁻ = σ₀σ₁σ₀` (Hopf link, index 2) selected
+while the first `s`-shell (`n_s = 2`) is filling, at the first or second
+neutron of `n²⁰` / `(pn)¹⁰`. The rule never passes past the first shell. In
+C1, with a genuine `T(2,n)` available for every `n ≤ 12`, the selection does
+not move to the index the rule predicts at any `n_s = 6` or `n_s = 12` step.
+In `p²⁰` only two steps pick a torus word at all.
+
+### 4.2 Per-step selection, cost K1
+
+`*` means the step was decided by the `tr_M` tie-break among several
+candidates whose demand is exactly 0, not by the demand.
+
+| sequence | C0 (original 10) | C1 (C0 + `σ₀ⁿσ₁`, n = 2..12) |
+|---|---|---|
+| `ppnn` | Φ, L₊\*, L₊\* | σ₀³σ₁\*, L₊\*, L₋\* |
+| `ppnnpn` | Φ, L₊\*, L₊\*, L₋\*, C_pn\* | σ₀³σ₁\*, L₊\*, L₋\*, C_pn\*, B₃\* |
+| `p²⁰` | Φ, L₋\*, C_nn\*, B₃\*×7, C_nn\*×4, 1\*, C_nn\*, B₃\*, C_nn\*×2 | σ₀³σ₁\*, σ₀²σ₁\*, B₃\*×5, C_nn\*×7, 1\*, C_nn\*×4 |
+| `n²⁰` | e⁻, L₋, Φ, e⁻\*, 1\*, C_pn\*, L₊\*, e⁻\*, 1\*, C_nn\*, L₊\*, L₋\*×8 | e⁻, L₋, Φ, σ₀²σ₁\*×2, L₋\*, 1\*×2, C_pn\*, L₊\*, σ₀²σ₁\*×2, L₋\*, C_nn\*, L₊\*, L₋\*, C_nn\*, L₋\*, C_nn\* |
+| `(pn)¹⁰` | e⁻, L₊, e⁻\*, B₃\*×6, L₋\*, 1\*, C_pn\*, 1\*, L₊\*, C_pp\*, 1\*, C_nn\*, 1\*, C_nn\* | same as C0, except step 2 becomes a tie-break |
+
+Here Φ = `(σ₀σ₁)²σ₀`. The full per-step record is in the witness under
+`data.selection`. For every step it holds the selected operator(s), the runner-up
+and its cost gap, the number of candidates at the minimum cost, the selection
+under a convention-C tie-break, and the exact LP duals `y0_star`, `y_star`,
+`active_set`, `primal_obj`, `dual_obj` and `duality_gap`.
+
+### 4.3 What the numbers say
+
+1. **The recorded transition table does reproduce, and it rests mostly on a
+   tie-break.** On the original orders with the original candidates (C0), the
+   sequence is Φ → L₊ → L₊ → L₋ → C_pn, which is exactly the block's Regime
+   I → II → III sequence. Only the first step, `p → pp` (Φ), is decided by the
+   demand. Steps 2–5 are `tr_M` tie-breaks among 4, 6, 9 and 9 candidates of
+   demand exactly 0. So Regimes II and III, as recorded, are artifacts of the
+   trace tie-break, not of the demand.
+2. **The single Regime-I datum is an artifact of the candidate set.** At
+   `p → pp`, Φ has demand `0.0046181`, which is **not zero**. It wins in C0
+   only because none of the ten C0 operators reaches zero. Once C1 adds the
+   `σ₀ⁿσ₁` words, ten candidates reach zero demand and the tie-break picks
+   `σ₀³σ₁` (`T(2,3)`, against `n_s = 2`). In the C1 LP, Φ's reduced cost is
+   `y*_Φ = 0.0046181 > 0`, which puts it in the active set (excluded).
+3. **The primary criterion is degenerate.** Across all runs, **57 of 65**
+   (C0) and **61 of 65** (C1) steps are tie-breaks among zero-demand
+   candidates, with up to 21 of 21 candidates tied. From about step 3 on,
+   "minimise demand" selects nothing. What selects is "minimise `tr_M`", and
+   that is not scale-free, so it favours operators by size. K2 does not
+   remove the degeneracy, because a demand of zero normalises to zero.
+4. **The tie-break depends on the trace convention.** Re-breaking the same
+   ties with the convention-C trace changes the selection at 4 of 65 steps
+   (C0) and 14 of 65 (C1). The 2026-04 run used convention C. Its table
+   happens to agree on the original orders, but in general the regime
+   assignments are not convention-stable.
+5. **B₃ is selected at the nuclear level in this model.** In `p²⁰` (C0) it is
+   picked at 8 steps, the first at step 4 (A = 5), and in `(pn)¹⁰` at 6 steps
+   (A = 5…10). Every one is a tie-break. `NuclearOperatorRegimes.lean` §5
+   (`borromean3_not_nuclear_level`) says *"For A ≤ 8 … B₃ is NOT selected …
+   Verified computationally in nuclear-binding-lp.witness.json"*. The witness
+   never held that check, and this model contradicts the statement on the
+   pure-proton and alternating orders. It holds on the original `ppnn` /
+   `ppnnpn` orders. This is a scope-(a) statement about this model only. The
+   Lean theorem itself proves only `hopfPlus ≠ hopfMinus` and is untouched.
+
+## 5. Conjectures and scope
+
+- **No shell rule is supported by this data.** On the pre-registered test,
+  `T(2, n_s)` fails at 62 of 65 steps in C0/K1 and C1/K1, and never passes
+  past the first shell. This is **scope (a)**. It is a negative for this
+  construction: the legacy nucleons, the greedy `N·o·n` step in `H₃(q)`,
+  demand with a `tr_M` tie-break, and these candidate sets. It is not a
+  structural exclusion of shell rules.
+- **The structural limit is a Lean statement, scope (b).**
+  `not_shellRuleT2_of_bounded_index` proves that any candidate set with
+  torus indices `≤ M` cannot satisfy the rule at a shell larger than `M`.
+  That rules out the 2026-04 set (`M = 5`) for the `n_s = 6, 12` shells,
+  whatever the costs are.
+- **The model has no room for shell structure, and this is an observation,
+  not a theorem.** The nucleus never leaves the six-dimensional `H₃(q)`, so
+  nothing in the construction grows with nucleon number apart from
+  coefficient magnitudes. A shell rule indexed by shell size would need an
+  object whose size tracks occupancy, for example `H_{3A}(q)` with γγ-selected
+  nucleon words, as the atom words already do.
+- **One observed regularity, stated as a conjecture only.** At the very first
+  step, the demand criterion has a unique minimiser with a positive gap. The
+  minimiser is `e⁻` (Hopf link) for `n + n` (first step of `n²⁰`) and for
+  `p + n` (first step of `(pn)¹⁰`), and Φ (`T(2,4)`) for `p + p`. That is one
+  step per pair type, three data points in all, which cannot support a rule. **Falsifier:** any candidate with lower demand at that
+  step. C1 already falsifies it for `p → pp` (zero-demand `σ₀ⁿσ₁`), so it
+  survives only as "e⁻ minimises demand at the first step for `nn` / `pn`
+  within C0 ∪ C1".
+
+## 6. What was not changed
+
+- The block's claim is unchanged. The `.ts` gets an `authorNotes` caveat
+  pointing here and naming the reproduced table and its tie-break character.
+  Any restated rule needs the owner.
+- `QOU/Interactions/NuclearOperatorRegimes.lean` is not edited: a sibling
+  branch, `claude/hopf-electron-relabel-2026-11-21`, is relabelling it. Its §5
+  docstring cites a witness that never held the check (§4.3 item 5), and that
+  should be fixed after the relabel lands.
+- Nothing here was resource-limited, so there is no Antigravity bean. The
+  natural next measurement is the same selection on γγ-selected nucleon words
+  in `H_{3A}(q)`. That is a new model, not a re-run, and it needs owner scoping.
