@@ -3,9 +3,9 @@
   "label": "prop:confinement-phase-stratification",
   "kind": "proposition",
   "paths": {
-    "ts": "folio/quantum-observable-universe/knots-particles-confinement/confinement-phase-stratification.ts",
-    "md": "folio/quantum-observable-universe/knots-particles-confinement/confinement-phase-stratification.md",
-    "lean": "folio/quantum-observable-universe/knots-particles-confinement/confinement-phase-stratification.lean"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/confinement-phase-stratification.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/confinement-phase-stratification.md",
+    "lean": "folio/quantum-observable-universe/nuclear-interactions/confinement-phase-stratification.lean"
   },
   "source_hashes": {
     "md": "c7f6c6f3b2f9",
@@ -333,7 +333,7 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
-        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"knots-particles-confinement\",\"expected\":null}"
+        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"nuclear-interactions\",\"expected\":null}"
       }
     ],
     "q-usage-fixed-q0-leak": [
@@ -637,7 +637,7 @@
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/confinement-phase-stratification.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "folio/quantum-observable-universe/nuclear-interactions/confinement-phase-stratification.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -659,7 +659,7 @@
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/confinement-phase-stratification.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "folio/quantum-observable-universe/nuclear-interactions/confinement-phase-stratification.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
