@@ -7,7 +7,7 @@
     "md": "folio/quantum-observable-universe/nuclear-interactions/phase-scoped-applicability.md"
   },
   "source_hashes": {
-    "md": "a72b7b9b4a78",
+    "md": "94908f297ce7",
     "ts": "bb84c064663d"
   },
   "criteria": {
@@ -73,6 +73,23 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "voice-emoji-content": [
@@ -125,6 +142,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "voice-first-person-work": [
@@ -177,6 +211,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "voice-time-stamped-notes": [
@@ -229,6 +280,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "voice-unicode-crash": [
@@ -281,6 +349,23 @@
           "def_hash": "63a6e57fead9"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "voice-editorializing": [
@@ -333,6 +418,23 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "voice-scholarly-default": [
@@ -415,6 +517,39 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The first sentence now reads 'The phase-boundary conjecture (conj:confinement-phase-boundaries) proposes the scope caveat ...' in place of 'The phase stratification proposition is the scope caveat ...'. The 'proposition' wording is fixed. Left: the list header 'Phase-scoped theorems (these hold only within a single Omega_alpha)' still states the conjectured scope as fact."
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed the list header 'Phase-scoped theorems (these hold only within a single Omega_alpha)' to 'Conjecturally phase-scoped results (conjectured to hold only within a single Omega_alpha)'. Nothing else changed. The header is fixed. Left: two later sentences still call the scoped results theorems: 'Boundary phenomena — not covered by within-phase theorems' and 'all within-phase theorems apply' in 'Practical reading'."
       }
     ],
     "voice-title-scholarly": [
@@ -530,6 +665,38 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The first sentence now reads 'The phase-boundary conjecture (conj:confinement-phase-boundaries) proposes the scope caveat ...' in place of 'The phase stratification proposition is the scope caveat ...'. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed the list header 'Phase-scoped theorems (these hold only within a single Omega_alpha)' to 'Conjecturally phase-scoped results (conjectured to hold only within a single Omega_alpha)'. Nothing else changed. No issue for this criterion."
       }
     ],
     "voice-author-notes-pollution": [
@@ -582,6 +749,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "voice-status-section": [
@@ -634,6 +818,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5b0082576ba9",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "framework-canonical": [
@@ -686,6 +887,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "wall-side-correct": [
@@ -740,6 +958,24 @@
           "def_hash": "2ff53167ead5"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -906,6 +1142,23 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "canonical-no-numerology": [
@@ -958,6 +1211,23 @@
           "def_hash": "bfbb93c220cc"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "52b4ba95f5c3",
+          "script_commit_sha": "unknown",
+          "def_hash": "bfbb93c220cc"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "canonical-witness-pinned": [
@@ -1010,6 +1280,23 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -1097,6 +1384,23 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -1149,6 +1453,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -1201,6 +1522,23 @@
           "def_hash": "c8836d721722"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "852b0645c90b",
+          "script_commit_sha": "unknown",
+          "def_hash": "c8836d721722"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "canonical-no-negative-result-in-paper": [
@@ -1253,6 +1591,23 @@
           "def_hash": "791b80875ca1"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ee603ee4f369",
+          "script_commit_sha": "unknown",
+          "def_hash": "791b80875ca1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "compute-witness-exists": [
@@ -1763,6 +2118,25 @@
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1820,6 +2194,25 @@
           "def_hash": "e08cc9c741f6"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1879,6 +2272,25 @@
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -1936,6 +2348,25 @@
           "def_hash": "17f40a4ba0f4"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -2048,6 +2479,21 @@
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-vacuous": [
@@ -2092,6 +2538,21 @@
           "version": "v1"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -2138,6 +2599,21 @@
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-overclaim": [
@@ -2182,6 +2658,21 @@
           "version": "v1"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -2228,6 +2719,21 @@
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-non-sequitur": [
@@ -2272,6 +2778,21 @@
           "version": "v1"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -2318,6 +2839,21 @@
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-citation-misuse": [
@@ -2362,6 +2898,21 @@
           "version": "v1"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -2408,6 +2959,21 @@
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-empirical-fragility": [
@@ -2452,6 +3018,21 @@
           "version": "v1"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -2498,6 +3079,21 @@
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-reproducibility": [
@@ -2543,6 +3139,21 @@
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-referee-verdict": [
@@ -2587,6 +3198,21 @@
           "version": "v1"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -2646,6 +3272,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "cite-named-theorem": [
@@ -2698,6 +3341,23 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "voice-agent-speak": [
@@ -2750,6 +3410,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "expo-milnor-clarity": [
@@ -2911,6 +3588,24 @@
           "def_hash": "d292915cbf8a"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "trap-negation-contrast": [
@@ -2975,6 +3670,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The first sentence now reads 'The phase-boundary conjecture (conj:confinement-phase-boundaries) proposes the scope caveat ...' in place of 'The phase stratification proposition is the scope caveat ...'. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed the list header 'Phase-scoped theorems (these hold only within a single Omega_alpha)' to 'Conjecturally phase-scoped results (conjectured to hold only within a single Omega_alpha)'. Nothing else changed. No issue for this criterion."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -3039,6 +3749,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The first sentence now reads 'The phase-boundary conjecture (conj:confinement-phase-boundaries) proposes the scope caveat ...' in place of 'The phase stratification proposition is the scope caveat ...'. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed the list header 'Phase-scoped theorems (these hold only within a single Omega_alpha)' to 'Conjecturally phase-scoped results (conjectured to hold only within a single Omega_alpha)'. Nothing else changed. No issue for this criterion."
       }
     ],
     "trap-em-dash": [
@@ -3106,6 +3831,22 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The first sentence now reads 'The phase-boundary conjecture (conj:confinement-phase-boundaries) proposes the scope caveat ...' in place of 'The phase stratification proposition is the scope caveat ...'. Unchanged: 5 spaced em dashes in about 240 words."
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed the list header 'Phase-scoped theorems (these hold only within a single Omega_alpha)' to 'Conjecturally phase-scoped results (conjectured to hold only within a single Omega_alpha)'. Nothing else changed. Unchanged: 5 spaced em dashes in about 240 words ('— a single confinement phase', 'Level sufficiency —', 'Shell-closure stability —', 'Multi-operator binding structure —', 'Boundary phenomena —')."
       }
     ],
     "trap-triples": [
@@ -3170,6 +3911,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The first sentence now reads 'The phase-boundary conjecture (conj:confinement-phase-boundaries) proposes the scope caveat ...' in place of 'The phase stratification proposition is the scope caveat ...'. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed the list header 'Phase-scoped theorems (these hold only within a single Omega_alpha)' to 'Conjecturally phase-scoped results (conjectured to hold only within a single Omega_alpha)'. Nothing else changed. No issue for this criterion."
       }
     ],
     "trap-closing-aphorism": [
@@ -3234,6 +3990,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The first sentence now reads 'The phase-boundary conjecture (conj:confinement-phase-boundaries) proposes the scope caveat ...' in place of 'The phase stratification proposition is the scope caveat ...'. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed the list header 'Phase-scoped theorems (these hold only within a single Omega_alpha)' to 'Conjecturally phase-scoped results (conjectured to hold only within a single Omega_alpha)'. Nothing else changed. No issue for this criterion."
       }
     ],
     "trap-meta-commentary": [
@@ -3298,6 +4069,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The first sentence now reads 'The phase-boundary conjecture (conj:confinement-phase-boundaries) proposes the scope caveat ...' in place of 'The phase stratification proposition is the scope caveat ...'. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed the list header 'Phase-scoped theorems (these hold only within a single Omega_alpha)' to 'Conjecturally phase-scoped results (conjectured to hold only within a single Omega_alpha)'. Nothing else changed. No issue for this criterion."
       }
     ],
     "trap-thesis-restatement": [
@@ -3362,6 +4148,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The first sentence now reads 'The phase-boundary conjecture (conj:confinement-phase-boundaries) proposes the scope caveat ...' in place of 'The phase stratification proposition is the scope caveat ...'. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed the list header 'Phase-scoped theorems (these hold only within a single Omega_alpha)' to 'Conjecturally phase-scoped results (conjectured to hold only within a single Omega_alpha)'. Nothing else changed. No issue for this criterion."
       }
     ],
     "trap-performed-warmth": [
@@ -3426,6 +4227,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The first sentence now reads 'The phase-boundary conjecture (conj:confinement-phase-boundaries) proposes the scope caveat ...' in place of 'The phase stratification proposition is the scope caveat ...'. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed the list header 'Phase-scoped theorems (these hold only within a single Omega_alpha)' to 'Conjecturally phase-scoped results (conjectured to hold only within a single Omega_alpha)'. Nothing else changed. No issue for this criterion."
       }
     ],
     "trap-superlative": [
@@ -3490,6 +4306,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The first sentence now reads 'The phase-boundary conjecture (conj:confinement-phase-boundaries) proposes the scope caveat ...' in place of 'The phase stratification proposition is the scope caveat ...'. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed the list header 'Phase-scoped theorems (these hold only within a single Omega_alpha)' to 'Conjecturally phase-scoped results (conjectured to hold only within a single Omega_alpha)'. Nothing else changed. No issue for this criterion."
       }
     ],
     "trap-nonspeakable": [
@@ -3554,6 +4385,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The first sentence now reads 'The phase-boundary conjecture (conj:confinement-phase-boundaries) proposes the scope caveat ...' in place of 'The phase stratification proposition is the scope caveat ...'. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed the list header 'Phase-scoped theorems (these hold only within a single Omega_alpha)' to 'Conjecturally phase-scoped results (conjectured to hold only within a single Omega_alpha)'. Nothing else changed. No issue for this criterion."
       }
     ],
     "wall-base-ring-minimal": [
@@ -3627,6 +4473,23 @@
           "def_hash": "440226b73b33"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "acronym-in-glossary": [
@@ -3663,6 +4526,23 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "foreshadows-point-forward": [
@@ -3733,6 +4613,21 @@
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
       }
     ],
     "dak-companion-present": [
@@ -3764,6 +4659,21 @@
           "version": "v1"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
         "notes": "criterion applies to dak; block kind \"remark\" is document"
       }
     ],
@@ -3848,6 +4758,21 @@
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
         "notes": "criterion applies to dak; block kind \"remark\" is document"
+      },
+      {
+        "field_hash": {
+          "md": "94908f297ce7",
+          "ts": "bb84c064663d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
       }
     ],
     "id-unique": [
@@ -3889,6 +4814,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T20:15:00.000Z",
+  "updated_at": "2026-11-21T19:59:59.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

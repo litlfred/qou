@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "624d3737529c",
-    "ts": "3bac54af3cef"
+    "ts": "2c5416dd4666"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -76,6 +76,23 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "voice-emoji-content": [
@@ -446,6 +463,21 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "voice-title-scholarly": [
@@ -500,6 +532,23 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9566207ee882",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "voice-ai-slop": [
@@ -582,6 +631,21 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "voice-author-notes-pollution": [
@@ -800,6 +864,24 @@
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
       }
     ],
     "q-usage-regime-detected": [
@@ -974,6 +1056,23 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "canonical-no-numerology": [
@@ -1082,6 +1181,23 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -1136,6 +1252,23 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e81239fd83a2",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "canonical-dilogarithm-context": [
@@ -1190,6 +1323,23 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -1298,6 +1448,23 @@
           "def_hash": "b5e2fdf9d66a"
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "da489d748555",
+          "script_commit_sha": "unknown",
+          "def_hash": "b5e2fdf9d66a"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -1352,6 +1519,23 @@
           "def_hash": "c8836d721722"
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "852b0645c90b",
+          "script_commit_sha": "unknown",
+          "def_hash": "c8836d721722"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "canonical-no-negative-result-in-paper": [
@@ -1466,6 +1650,23 @@
           "def_hash": "bcd452a1177c"
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "13ec1960e3ad",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "compute-lp-dual-present": [
@@ -1520,6 +1721,23 @@
           "def_hash": "bcd452a1177c"
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6c278b93ad12",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "detangler-no-forward-ref": [
@@ -2539,6 +2757,21 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -2588,6 +2821,21 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "fit-section-chapter": [
@@ -2665,6 +2913,21 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "wall-side-statement": [
@@ -2714,6 +2977,21 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "wall-side-proof": [
@@ -2763,6 +3041,21 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -3029,6 +3322,36 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. The false identification MI = Phi_q(z_i) reported against this block is removed."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "da-vacuous": [
@@ -3121,6 +3444,36 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "da-circular": [
@@ -3214,6 +3567,36 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "da-overclaim": [
@@ -3306,6 +3689,36 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "da-hidden-dof": [
@@ -3399,6 +3812,36 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "da-non-sequitur": [
@@ -3492,6 +3935,36 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -3586,6 +4059,36 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. In Lean, negLi2q is defined as the integral, so the .md's second equality (integral = series) is not formalised; the Lean docstring says so. The first 2026-11-21 status note in the .ts still says the second equality 'holds by definition', which was true of the old Phi_q definition and is not true of the new series definition of Li2^q."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. The finding at 0def288 (the status note said the second equality 'holds by definition') is fixed: the note now gives the termwise-integration argument, which matches the 40-digit check recorded earlier (z = 0.3: integral 0.2801635352... = -Li2^q(-0.3)). The Lean docstring of negLi2q says the series identity is not proved there, and tm_dilogarithm_evaluation's docstring ('the second is the definition of negLi2q') is correct for the Lean definition, so narrative and Lean no longer disagree."
       }
     ],
     "da-citation-misuse": [
@@ -3679,6 +4182,36 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "da-definitional-ambiguity": [
@@ -3773,6 +4306,37 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. The title 'Quantum dilogarithm evaluation of exceptional-divisor contributions', the tag quantum-dilogarithm and the Lean headline '= quantum dilogarithm' still use the name that def:quantum-dilogarithm-disambiguation gives to the product Phi_q, while the statement is now about the symmetric q-dilogarithm. The domain of z_i is not stated (both series converge for |z| < q)."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. Title and tag fixed. Left: (1) the Lean headline of tm_dilogarithm_evaluation (tm_dilogarithm_evaluation.lean line 100) still reads 'Exceptional-divisor summand = quantum dilogarithm', the name def:quantum-dilogarithm-disambiguation gives to Phi_q; (2) the new title calls the function the 'Rogers q-dilogarithm' while the .md and the disambiguation table call it the 'symmetric q-dilogarithm (Kashaev limit)', and elsewhere in the corpus 'Rogers dilogarithm' names the classical Bloch-group function; (3) the domain of z_i is still not stated (the series converges for |z| < q), so 'holds unconditionally' in the status note is unqualified."
       }
     ],
     "da-empirical-fragility": [
@@ -3866,6 +4430,36 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "da-physical-implausibility": [
@@ -3959,6 +4553,36 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "da-reproducibility": [
@@ -4052,6 +4676,36 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "da-referee-verdict": [
@@ -4147,6 +4801,36 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -4195,6 +4879,21 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "expo-milnor-clarity": [
@@ -4525,6 +5224,29 @@
           "broken_edges": 0,
           "redundant_edges": 0
         }
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63814f2a6677",
+          "script_commit_sha": "unknown",
+          "deps_hash": "34af1d8a2365",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "metrics": {
+          "uses_count": 3,
+          "broken_edges": 0,
+          "redundant_edges": 0
+        }
       }
     ],
     "uses-formal-coverage": [
@@ -4587,6 +5309,25 @@
           "def_hash": "ce2b8102b97f"
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "82fd1e2e6831",
+          "script_commit_sha": "unknown",
+          "deps_hash": "794eb6c16a59",
+          "def_hash": "ce2b8102b97f"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -4651,6 +5392,27 @@
           "def_hash": "d292915cbf8a"
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4",
+        "metrics": {
+          "decl_claimants": 1
+        }
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
         "metrics": {
           "decl_claimants": 1
         }
@@ -4719,6 +5481,21 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -4784,6 +5561,21 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "trap-em-dash": [
@@ -4849,6 +5641,21 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "trap-triples": [
@@ -4914,6 +5721,21 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "trap-closing-aphorism": [
@@ -4979,6 +5801,21 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "trap-meta-commentary": [
@@ -5044,6 +5881,21 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "trap-thesis-restatement": [
@@ -5109,6 +5961,21 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "trap-performed-warmth": [
@@ -5174,6 +6041,21 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "trap-superlative": [
@@ -5239,6 +6121,21 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "trap-nonspeakable": [
@@ -5304,6 +6201,21 @@
         "reviewed_at": "2026-11-21T20:45:00.000Z",
         "reviewed_sha": "0def28803bc9152fdafc6ca8846916f25fc1560a",
         "evidence": "Re-read at 0def288. The statement now reads ||MI int_{E_i}(nabla_A q, L ∧ F+)|| = int_0^{z_i} ln_q(1+t)/t dt = -Li2^q(-z_i), with Li2^q(z) = sum z^n/(n [n]_q) and an explicit pointer that this is not the product Phi_q; uses[] adds def:quantum-dilogarithm-disambiguation. Lean: Phi_q renamed negLi2q (defined as the interval integral; integral representation by rfl); tm_dilogarithm_evaluation is conditional on the class TmDivisorChartInputs carrying the first equality. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound. Checked independently at 40 digits at the proton q0 with [n]_q = (q^n - q^-n)/(q - q^-1) and ln_q(1+t) = sum (-1)^(n+1) t^n/[n]_q: at z = 0.3 the integral is 0.280163535240839858..., -Li2^q(-0.3) agrees to all 40 digits, and Phi_q(0.3) = 19.1252..., so the old middle equality was false and the new second equality holds (termwise integration). This agrees with def:quantum-dilogarithm-disambiguation, which the block now uses. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
       }
     ],
     "wall-base-ring-minimal": [
@@ -5504,6 +6416,21 @@
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4",
         "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
       }
     ],
     "dak-bpmn-has-process": [
@@ -5597,6 +6524,21 @@
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4",
         "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
       }
     ],
     "dak-label-prefix-matches-kind": [
@@ -5647,6 +6589,21 @@
           "version": "v1"
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
         "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
       }
     ],
@@ -5716,6 +6673,21 @@
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
       }
     ],
     "id-unique": [
@@ -5752,6 +6724,23 @@
           "def_hash": "bcd452a1177c"
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "id-stable": [
@@ -5790,9 +6779,27 @@
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4",
         "notes": "renamed from \"lem:topological-mass-dilogarithm\" (declared in renamedFrom)"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "2c5416dd4666"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "renamed from \"lem:topological-mass-dilogarithm\" (declared in renamedFrom)"
       }
     ]
   },
-  "updated_at": "2026-11-21T20:45:00.000Z",
+  "updated_at": "2026-11-21T19:59:59.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

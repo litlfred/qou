@@ -8,7 +8,7 @@
     "lean": "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean"
   },
   "source_hashes": {
-    "md": "e75454de9330",
+    "md": "82aa666e918a",
     "ts": "06b1233bbfba"
   },
   "criteria": {
@@ -93,6 +93,23 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "voice-emoji-content": [
@@ -164,6 +181,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "voice-first-person-work": [
@@ -235,6 +269,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "voice-time-stamped-notes": [
@@ -306,6 +357,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "voice-unicode-crash": [
@@ -377,6 +445,23 @@
           "def_hash": "63a6e57fead9"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "voice-editorializing": [
@@ -448,6 +533,23 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "voice-scholarly-default": [
@@ -564,6 +666,38 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "voice-title-scholarly": [
@@ -732,6 +866,38 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "voice-author-notes-pollution": [
@@ -803,6 +969,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "voice-status-section": [
@@ -874,6 +1057,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5b0082576ba9",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "framework-canonical": [
@@ -945,6 +1145,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "wall-side-correct": [
@@ -1018,6 +1235,24 @@
           "def_hash": "2ff53167ead5"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1210,6 +1445,23 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "canonical-no-numerology": [
@@ -1281,6 +1533,23 @@
           "def_hash": "bfbb93c220cc"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "52b4ba95f5c3",
+          "script_commit_sha": "unknown",
+          "def_hash": "bfbb93c220cc"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "canonical-witness-pinned": [
@@ -1352,6 +1621,23 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -1477,6 +1763,23 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -1548,6 +1851,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "canonical-cal4-acknowledged": [
@@ -1619,6 +1939,23 @@
           "def_hash": "b5e2fdf9d66a"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "da489d748555",
+          "script_commit_sha": "unknown",
+          "def_hash": "b5e2fdf9d66a"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -1690,6 +2027,23 @@
           "def_hash": "c8836d721722"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "852b0645c90b",
+          "script_commit_sha": "unknown",
+          "def_hash": "c8836d721722"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "canonical-no-negative-result-in-paper": [
@@ -2659,6 +3013,25 @@
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -2736,6 +3109,25 @@
           "def_hash": "e08cc9c741f6"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -2815,6 +3207,25 @@
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -2892,6 +3303,25 @@
           "def_hash": "17f40a4ba0f4"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -3268,6 +3698,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -3333,6 +3778,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "fit-section-chapter": [
@@ -3425,6 +3885,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "wall-side-statement": [
@@ -3489,6 +3964,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "wall-side-proof": [
@@ -3553,6 +4043,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -3643,6 +4148,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. The banner 'Conjecture (conditional on stationarity)' and the Lean's explicit hypotheses match."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -3788,6 +4308,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -3848,6 +4383,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "proof-no-trivial-true": [
@@ -3938,6 +4488,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "proof-no-decide-masking": [
@@ -4062,6 +4627,36 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "da-vacuous": [
@@ -4170,6 +4765,36 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "da-circular": [
@@ -4279,6 +4904,36 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "da-overclaim": [
@@ -4387,6 +5042,36 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "da-hidden-dof": [
@@ -4496,6 +5181,36 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "da-non-sequitur": [
@@ -4605,6 +5320,36 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -4714,6 +5459,36 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "da-citation-misuse": [
@@ -4823,6 +5598,36 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "da-definitional-ambiguity": [
@@ -4932,6 +5737,36 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "da-empirical-fragility": [
@@ -5041,6 +5876,36 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "da-physical-implausibility": [
@@ -5150,6 +6015,36 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "da-reproducibility": [
@@ -5259,6 +6154,36 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "da-referee-verdict": [
@@ -5372,6 +6297,36 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. Unchanged point: 'Sketch of Proof', Part 2, still says 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' as a step. The next paragraph says that substitution is the open stationarity hypothesis, so this is a wording issue, not a hidden assumption."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. The minor at 85c994b is fixed: Part 2 no longer presents the substitution as a step; it says the boxed formula would follow from it and that the linear program does not justify it, consistent with 'The open step' and the conditional banner."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -5449,6 +6404,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "cite-named-theorem": [
@@ -5520,6 +6492,23 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "voice-agent-speak": [
@@ -5591,6 +6580,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "expo-milnor-clarity": [
@@ -5637,6 +6643,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. The garbled inline math reported at 2e45b66 is fixed; the paragraph renders."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "milnor-brevity": [
@@ -6030,6 +7051,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -6096,6 +7132,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "trap-em-dash": [
@@ -6162,6 +7213,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "trap-triples": [
@@ -6228,6 +7294,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "trap-closing-aphorism": [
@@ -6294,6 +7375,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "trap-meta-commentary": [
@@ -6360,6 +7456,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "trap-thesis-restatement": [
@@ -6426,6 +7537,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "trap-performed-warmth": [
@@ -6492,6 +7618,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "trap-superlative": [
@@ -6558,6 +7699,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "trap-nonspeakable": [
@@ -6624,6 +7780,21 @@
         "reviewed_at": "2026-11-21T20:15:00.000Z",
         "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
         "evidence": "Re-read at 85c994b. The only .md change restores the backslash-r of both rangle macros in 'The open step' (line 42): the linearity hypothesis now reads <O>_T = sum_j x_j^* <O, b_j>. The Lean (confinement_frobenius_reciprocity, conditional on hsymm, hlin, hstat, hsupp, hnontriv; sorry-free) is unchanged since the last review. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:59:59.000Z",
+        "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
+        "evidence": "Re-read at e7cbb8f. 28b40d0730 changed one sentence of 'Sketch of Proof' Part 2: 'Substituting x_i^* = (G^-1 u^*)_i on the active set A*(T) gives the boxed formula' now reads 'The boxed formula would follow from the substitution x_i^* = (G^-1 u^*)_i on the active set A*(T), which is not justified by the linear program (see the open step below).' Nothing else changed; the Lean is unchanged. No issue for this criterion."
       }
     ],
     "wall-base-ring-minimal": [
@@ -6715,6 +7886,23 @@
           "def_hash": "440226b73b33"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
       }
     ],
     "lean-no-vacuous-instance-data": [
@@ -6831,6 +8019,24 @@
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
         "notes": "1 acronym(s) are candidates for the glossary: LP. Run glossary:acronyms for the folio-wide list with expansions."
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "1 acronym(s) are candidates for the glossary: LP. Run glossary:acronyms for the folio-wide list with expansions."
       }
     ],
     "foreshadows-point-forward": [
@@ -6934,6 +8140,21 @@
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
       }
     ],
     "dak-companion-present": [
@@ -6980,6 +8201,21 @@
           "version": "v1"
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
         "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
       }
     ],
@@ -7094,6 +8330,21 @@
         },
         "reviewed_tree": "2b6c2338351e50e456f23e20f4a07337afb12c8b",
         "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "82aa666e918a",
+          "ts": "06b1233bbfba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
       }
     ],
     "id-unique": [
@@ -7171,6 +8422,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T20:15:00.000Z",
+  "updated_at": "2026-11-21T19:59:59.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
