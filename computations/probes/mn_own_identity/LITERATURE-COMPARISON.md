@@ -830,3 +830,38 @@ by this second-order difference.
 **Status.** There is a corpus reason (the mass identity's TL expansion) for reading ∇ as hol − 1
 on this word. That is a reading of how the mass identity uses the holonomy; it is not a proof
 that the ∇ in 𝒟 equals hol − 1. The choice is still open for the owner.
+
+## §28 Energy map for Δ, fixed by CAL-1 on the electron (pre-registered f3df20ab89a)
+
+**What the corpus has.** No block converts a 𝒟² or ℒ trace to MeV. E₀ = m_e/(q(q − 1)) is a
+definition (`hadronicScale`). The Q_β audit (`docs/audits/2026-11-21-qbeta-np-error-budget.md`
+§12–§14) excludes monotone maps of the Markov trace for the one-sided Q_β reading; that concerns
+ε, not tr(𝒟²).
+
+**Derivation under one stated assumption (linearity).** E(X) = λ·T(𝒟_X²). The only state with a
+ruled energy is the electron (CAL-1), and that fixes λ = m_e/T(𝒟_e²), including its sign. The
+connection follows the mass-identity reading, extended to any word: ∇ = hol − q^{writhe}·1 (this
+is hol − 1 for V³, and X_e − q³·1 for the electron σ₀σ₁σ₀). Probe `mn_energy_map_electron_probe.py`.
+
+| arm | T(𝒟_e²) | λ | (E_n − E_p)/m_e | at q₀ (proton pin) |
+|---|---|---|---|---|
+| P, plain trace | 2(2q⁶+3q²−6q+5)/q², = 8 at q = 1 | > 0 | Δ_N/T_e = O(h⁵) | 1.1069e-4 → **56.6 eV** |
+| K, Tr(K^{⊗3}·)/[2]³ (ruled weighting) | O(1), 1.1535 at q₀ | > 0 | O(h³) | 1.5692e-4 → **80.2 eV** |
+
+- **Sign.** λ > 0 in both arms, so the sign of E_n − E_p is the sign of Δ_N. Arm P: positive for
+  every q > 1 (neutron heavier). Arm K: Δ_N = −(q−1)³(q+1)P₂₂(q)/(4q¹²(q²+1)³). The degree-22
+  factor P₂₂ has a root at q ≈ 1.07684, so the neutron is lighter for 1 < q < 1.0768 and heavier
+  above that, including at q₀.
+- **Magnitude, scope (a) negative.** CODATA m_n − m_p = 1.29333 MeV (printed after) is about
+  2.3 × 10⁴ (P) and 1.6 × 10⁴ (K) times larger than these values.
+- **Why (structural).** The electron's term does not vanish at q = 1, because X_e − 1 is a
+  nonzero permutation-minus-identity. So T(𝒟_e²) is O(1). The nucleon difference vanishes at
+  q = 1 (O(h⁵) or O(h³)). Any linear map calibrated on the electron therefore gives
+  E_n − E_p = O(h^k)·m_e with k ≥ 3. At q₀, h ≈ 0.21, while the target ratio is ≈ 2.53 m_e. A
+  linear map would need a nucleon difference that survives at q = 1, and under any connection
+  F(hol) it cannot, because p and n are conjugate (§26).
+
+**Result.** Under linearity plus CAL-1, the sign is derived (neutron heavier at q₀, both arms),
+and the magnitude misses by about 10⁴. That rules out the linear map with this calibration
+(scope (a)). It does not rule out a nonlinear map, a calibration through a different ruled
+quantity, or a 𝒟² term outside the F(hol) class.
