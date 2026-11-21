@@ -375,3 +375,24 @@ as ε_p·f_L, which confirms the normalisation matches.
 across this word set, flavour/colour linking does not lift the final-state trace into the window;
 it stays at or below the product scale. With option 2 already excluded (§14) and option 1 not yet
 computed, no γγ final state on record supports a one-sided reading.
+
+## 16. With the lepton normalisation forced by invariance (eigenphase thread)
+
+Source: PR #8836, commit a0a6ae8303; witness `qbeta-lepton-normalisation.witness.json`. Three
+premises force the lepton normalisation [2]^(−components), with the lepton strands summed over
+rather than restricted to one sector (Lean, sorry-free there): agreement with D1, invariance
+under adding an idle strand, and Markov invariance. This **replaces** the sector-restricted
+f = q/[2]⁴ of §11. The unlinked factor becomes f = 0.7432.
+
+What changes and what does not, at q₀:
+- *Ordering still holds:* f = 0.7432 < q⁻² = 0.8116. So `monotone_excluded` (§13) still applies,
+  and every increasing or decreasing map of a product trace fails.
+- *Window, which is in nucleon units and does not change:* (0.33174, 0.40872).
+  - Unlinked e⁻ν̄: x = 0.7432·ε_p = 0.3038, below the window.
+  - Linked e⁻ν̄ over 1560 words: [0.1747, 0.3151], all below.
+  - Mirror (e⁺ν): [0.4094, 0.5884], all above. Its lower edge misses the window's upper edge by
+    only 0.0007.
+- So the window falls in the gap between the e⁻ν̄ values and the mirror values: **no hits, scope
+  (a)**.
+- The one-sided linear F from §11 shrinks to ε_n − 0.7432·ε_p = 0.0280, which is E₀F ≈ 0.118 MeV.
+  The 1.285 MeV figure of §11 belonged to the superseded sector-restricted f.
