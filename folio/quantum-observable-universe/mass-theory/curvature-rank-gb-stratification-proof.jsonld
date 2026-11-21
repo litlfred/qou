@@ -3,20 +3,21 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prf-curvature-rank-gb-stratification",
+  "@id": "papers/quantum-observable-universe/blocks/rem-curvature-rank-gb-stratification-proof-sketch",
   "@type": [
-    "folio-assistant-sci:Proof",
+    "folio-assistant-core:Remark",
     "doco:Section"
   ],
-  "label": "prf:curvature-rank-gb-stratification",
-  "kind": "proof",
-  "title": "Proof of curvature rank gb stratification",
+  "label": "rem:curvature-rank-gb-stratification-proof-sketch",
+  "kind": "remark",
+  "title": "Proof sketch for the curvature-rank stratification",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-curvature-rank-gb-stratification"
+    "papers/quantum-observable-universe/blocks/conj-curvature-rank-gb-stratification"
   ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-curvature-rank-gb-stratification",
   "text": "curvature-rank-gb-stratification-proof.md",
   "provenance": "authored"
 }

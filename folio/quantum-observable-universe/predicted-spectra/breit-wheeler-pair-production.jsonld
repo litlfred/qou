@@ -14,6 +14,9 @@
   "label": "def:breit-wheeler-pair-production",
   "kind": "definition",
   "title": "Breit--Wheeler pair production (categorical)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-photon"
+  ],
   "tags": [
     "breit-wheeler",
     "pair-production",
