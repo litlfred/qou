@@ -1,0 +1,275 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T06:27:40.854030+00:00",
+  "commitSha": "0adf9e81ebfe2fb35b9c5ea342ce13a5a7f543fb",
+  "assertions": [
+    {
+      "name": "C_R_C_eq_P_R_P",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "C·Ř·C = P·Ř·P"
+    },
+    {
+      "name": "PRflip_eq_C_PR_C",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "flipped singlet projector = C·P_R·C"
+    },
+    {
+      "name": "PRflip_idempotent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "P_R(flip) idempotent"
+    },
+    {
+      "name": "entries_swap",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "ud/du entries (q**2/(q**2 + 1), 1/(q**2 + 1)) vs flipped (1/(q**2 + 1), q**2/(q**2 + 1))"
+    },
+    {
+      "name": "swap_is_bar",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "q²/(q²+1) at q⁻¹ = 1/(q²+1)"
+    },
+    {
+      "name": "DeltaE_kills_corpus_singlet",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Δ(E)·(q·ud − du) = 0 (coproduct E⊗K + 1⊗E)"
+    },
+    {
+      "name": "DeltaE_on_flipped_singlet_nonzero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "the flipped singlet is NOT invariant under the same Δ: it is the invariant of the opposite coproduct, i.e. of W⊗V in the other order — the order is a choice of tensor product, not of basis"
+    },
+    {
+      "name": "weak_kills_both",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "−h·(1 − P_R) kills the singlet in both orders"
+    },
+    {
+      "name": "ptrR_form",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "(id⊗tr)((1⊗diag(a,b))P_R) = diag(b q²/(q²+1), a/(q²+1))"
+    },
+    {
+      "name": "ptrR_scalar_iff_a_eq_q2b",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "scalar iff a = q²·b"
+    },
+    {
+      "name": "ptrR_K",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "bare K: [2]⁻¹·1"
+    },
+    {
+      "name": "ptrL_Kinv",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Higgs-left, left trace K⁻¹: [2]⁻¹·1"
+    },
+    {
+      "name": "ptrL_K_not_scalar",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Higgs-left with K (wrong side) is not a module map"
+    },
+    {
+      "name": "vev_restricted",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "with the vacuum (one Higgs slot, weight 1 per tr e_H = 1): plain, order-dependent entries"
+    },
+    {
+      "name": "slot_only_zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "flavour-slot-only strengths: 0"
+    },
+    {
+      "name": "type_only_ML",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "type-only matter-left = −(y_q² − y_ℓ²)(q²−1)/(q²+1)"
+    },
+    {
+      "name": "type_only_odd",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Higgs-left = − matter-left"
+    },
+    {
+      "name": "type_only_balanced_zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "balanced: 0"
+    },
+    {
+      "name": "one_term_eq_formula_matter_left",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "one-term K⊗4 sector trace = strand-sum split"
+    },
+    {
+      "name": "one_term_eq_formula_higgs_left",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "one-term K⊗4 sector trace = strand-sum split"
+    },
+    {
+      "name": "q0_is_proton_pin",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "q_at(70) proton pin"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1737,
+  "computation": "qbeta-yukawa-strand-order",
+  "scriptFile": "qbeta_yukawa_strand_order_probe.py",
+  "scriptHash": "2a92ea2f615e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "ae1028699afd20c5"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_yukawa_strand_order/qbeta_yukawa_strand_order_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_yukawa_strand_order/qbeta_yukawa_strand_order_probe.py"
+  },
+  "description": "qou-99qc: strand order and Yukawa strengths of the e_R singlet channels; exact sympy; structural factors at proton q0, no comparison.",
+  "parameters": {
+    "q0": "1.109978582751380807591669095610768879874499121873578736072814240181799"
+  },
+  "data": {
+    "question": "owner 2026-11-21: derive strand order and Yukawa strengths of the e_R singlet channels",
+    "strand_order": {
+      "verdict": "NOT forced by the corpus",
+      "reasons": [
+        "C·Ř·C = P·Ř·P: the orders are charge-conjugate; swap = q↦q⁻¹ on the vev entries",
+        "a fixed coproduct makes the singlet invariant in each tensor product; which product (matter⊗Higgs or Higgs⊗matter) is the choice — no corpus object places the Higgs strand",
+        "the weak insertion −h·P_L kills the singlet in both orders; leftLine/rightLine are letter-level",
+        "the only order-free reduction (pivotal partial trace over the Higgs strand, [2]⁻¹·1) sums both Higgs slots: it does not use the vacuum and is flavour-blind",
+        "with the vacuum and tr e_H = 1 (vev weight 1) the reduction is the order-dependent compression",
+        "#8638 puts quark left / lepton right in the β vertex: a quark–lepton convention, no Higgs"
+      ]
+    },
+    "strengths": {
+      "verdict": "NOT derived",
+      "candidates": {
+        "generation_label_(lepton_partner_crossing_count)": "all four first-generation fields carry 3 (#8698): any rule through the label alone is slot-blind ⇒ split 0. Rule itself is NEW.",
+        "channel_quantum_dimension": "every singlet channel has qdim 1 (qtrace_PR) ⇒ equal ⇒ 0. Rule NEW.",
+        "tr_eH_eq_1": "one normalisation shared by all four channels ⇒ type-blind ⇒ 0. Owner-ruled normalisation; as a STRENGTH rule it is NEW.",
+        "partner_knot_volume_Vol·rho": "unknot (quark strand) and Hopf link / trefoil (electron, owner ruling 2026-11-21 + backup) all have Vol 0 ⇒ no strength. Not usable.",
+        "Vol(4_1)/hbar_q^2_(cal2-higgs-knot-coupling)": "interpretive (block says so); a μ/e generation ratio only, CAL-2; does not reach the first-generation four.",
+        "Jones/Markov_trace_of_partner": "would distinguish quark (unknot) from lepton (Hopf link) ⇒ type-only class; no corpus artifact makes it a Yukawa strength. NEW, not adopted.",
+        "CategoricalHiggsIdempotent": "fields v, g, g', λ; no Yukawa field; no instance."
+      }
+    },
+    "split_by_class": {
+      "general": {
+        "matter_left": "(q**2*y_nu**2 - q**2*y_u**2 + y_d**2 - y_e**2)/(q**2 + 1)",
+        "higgs_left": "(q**2*y_d**2 - q**2*y_e**2 + y_nu**2 - y_u**2)/(q**2 + 1)",
+        "balanced_pivotal_1_over_[2]": "q*(y_d**2 - y_e**2 + y_nu**2 - y_u**2)/(q**2 + 1)"
+      },
+      "flavour_blind_equal": {
+        "matter_left": "0",
+        "higgs_left": "0",
+        "balanced_pivotal_1_over_[2]": "0"
+      },
+      "slot_only_(generation_label/qdim/tr_eH)": {
+        "matter_left": "0",
+        "higgs_left": "0",
+        "balanced_pivotal_1_over_[2]": "0"
+      },
+      "type_only": {
+        "matter_left": "(q - 1)*(q + 1)*(y_l - y_q)*(y_l + y_q)/(q**2 + 1)",
+        "higgs_left": "-(q - 1)*(q + 1)*(y_l - y_q)*(y_l + y_q)/(q**2 + 1)",
+        "balanced_pivotal_1_over_[2]": "0"
+      },
+      "SM_like_no_nuR": {
+        "matter_left": "-(q**2*y_u**2 - y_d**2 + y_e**2)/(q**2 + 1)",
+        "higgs_left": "(q**2*y_d**2 - q**2*y_e**2 - y_u**2)/(q**2 + 1)",
+        "balanced_pivotal_1_over_[2]": "q*(y_d**2 - y_e**2 - y_u**2)/(q**2 + 1)"
+      }
+    },
+    "numbers": {
+      "q0": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+      "c_hi_q2_over_q2p1": "0.5519818550262050728383264292681950677830993020809",
+      "c_lo_1_over_q2p1": "0.4480181449737949271616735707318049322169006979191",
+      "balanced_1_over_bracket2": "0.49729054560491555599583923166486963184819073032851",
+      "type_only_factor_(q2-1)/(q2+1)": "0.10396371005241014567665285853639013556619860416179",
+      "type_only_factor_series_q=1+t": "-t**2/2 + t"
+    },
+    "qbeta_number": "not produced (pre-registered: order and strengths not derived)",
+    "scope": "(b) for: slot-only strengths ⇒ 0 in both orders; type-only ⇒ order-odd; pivotal partial trace ⇒ [2]⁻¹·1. (a) everywhere else; no magnitude forced",
+    "selected": "none"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
