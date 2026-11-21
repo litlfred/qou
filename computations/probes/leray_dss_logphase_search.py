@@ -758,9 +758,9 @@ def refine_chain(sy, x, pj, log=LOG):
         if ok and rec['cls'] == 'periodic': persisted += 1
     return out, persisted
 
-def damped_newton(sy, x0, theta, pj, maxit=20, log=LOG, on_iter=None, t_end=None, stall=4):
+def damped_newton(sy, x0, theta, pj, maxit=20, log=LOG, on_iter=None, t_end=None, stall=4, ls=7):
     """Phase 5: least-squares Gauss-Newton with a backtracking line search on |F|.
-    Accepts the largest lam in {1, 1/2, ..., 1/64} with |F(x - lam dx)| < |F(x)| (and omega > 0).
+    Accepts the largest lam in {1, 1/2, ..., 2^-(ls-1)} with |F(x - lam dx)| < |F(x)| (and omega > 0).
     Stops on convergence (|F| < 1e-(DPS-20)(1+|A|)), no admissible step, |F| stalled (< 1 digit gain
     over `stall` iterations), omega -> 0 (S > 1e3), escape (|A| > 1e6), or the time limit.
     Returns (x, |F|, history, ok, stop_reason)."""
@@ -794,7 +794,7 @@ def damped_newton(sy, x0, theta, pj, maxit=20, log=LOG, on_iter=None, t_end=None
         for i in range(D): N_[i, i] += shift
         dx = N_.solve(Jt * arb_mat(D, 1, F), algorithm="approx")
         lam = arb(1); acc = None
-        for _ in range(7):
+        for _ in range(ls):
             xt = [mid(x[i] - lam * dx[i, 0]) for i in range(D)]
             if xt[-1] > 0:
                 r = evalF(xt)
@@ -935,7 +935,8 @@ def main():
                    phase_condition_index=pj,
                    method='least-squares Gauss-Newton (normal equations, 1e-%d Tikhonov shift) with backtracking '
                           'line search on |F|; d/domega by FD (h=1e-%d)' % (DPS - 15, DPS // 2),
-                   stall_window=int(os.environ.get('LERAY_STALL', '4')), runs=[], verdict='running')
+                   stall_window=int(os.environ.get('LERAY_STALL', '4')),
+                   line_search_halvings=int(os.environ.get('LERAY_LS', '7')), runs=[], verdict='running')
         for S0 in S0s:
             for a in amps:
                 if time.time() > t_end: break
@@ -947,7 +948,8 @@ def main():
                 t0 = time.time()
                 xr, nf, h, ok, why = damped_newton(sy, x0, arb(1), pj, maxit=int(os.environ.get('LERAY_MAXIT', '20')),
                                                    on_iter=oi, t_end=t_end,
-                                                   stall=int(os.environ.get('LERAY_STALL', '4')))
+                                                   stall=int(os.environ.get('LERAY_STALL', '4')),
+                                                   ls=int(os.environ.get('LERAY_LS', '7')))
                 sm = summary(xr, sy, nf, ok, arb(1))
                 rec.update(status=why, final_residual=nf.str(6, radius=False), final_S=sm['period_S'],
                            final_amp=s40(norm(xr[:-1]), 16), cls=sm['cls'], mode_norms=sm['mode_norms'],
